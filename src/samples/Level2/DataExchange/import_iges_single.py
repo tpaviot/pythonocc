@@ -19,7 +19,7 @@ from OCC.Utils.DataExchange.IGES import IGESImporter
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 
-my_iges_importer = IGESImporter('../../data/IGES/surf128.igs')
+my_iges_importer = IGESImporter('../../data/IGES/3PART.IGS')
 my_iges_importer.ReadFile()
 the_shapes = my_iges_importer.GetShapes()
 the_compound = my_iges_importer.GetCompound()

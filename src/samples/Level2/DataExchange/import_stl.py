@@ -19,7 +19,7 @@ from OCC.Utils.DataExchange.STL import STLImporter
 from OCC.Display.SimpleGui import *
 
 # open/parse STL file and get the resulting TopoDS_Shape instance
-my_stl_importer = STLImporter("../../data/STL/littlestar.stl")
+my_stl_importer = STLImporter("../../data/STL/venus.stl")
 my_stl_importer.ReadFile()
 the_shape = my_stl_importer.GetShape()
 
