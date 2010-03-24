@@ -1,4 +1,5 @@
 import ode
+
 from OCC.GProp import *
 from OCC.BRepGProp import *
 from OCC.gp import *
@@ -6,6 +7,8 @@ from OCC.BRepBuilderAPI import *
 from OCC.TopLoc import *
 from OCC.TColgp import *
 from OCC.GeomAPI import *
+
+from OCC.Utils.Common import get_boundingbox
 
 EPSILON = 1e-8
 import time
@@ -98,6 +101,7 @@ class DynamicShape(ode.Body):
  
         M = ode.Mass()
         M.mass = 2.
+#        M.mass = 20.
         M.setParameters(mass,0,0,0,i11,i22,i33,i12,i13,i23)
         self.setMass(M)
         
@@ -108,6 +112,7 @@ class DynamicSimulationContext(ode.World):
         ode.World.__init__(self,**kargs)
         #self.setGravity([0,0,-9.81])
         self._shapes = []
+        self._dyn_shapes = []
         self._DISPLAY_INITIALIZED = False
         self._COLLISION_DETECTION = False
         self._delta_t = 0.01 #timestep default value
@@ -135,19 +140,47 @@ class DynamicSimulationContext(ode.World):
         self._display = display
         self._DISPLAY_INITIALIZED = True
     
-    def add_shape(self, topods_shape):
+    def add_shape(self, topods_shape, use_bbox=True, use_mesh=False):
         ''' Adds a TopoDS_Shape to the DYN context
         '''
         dynamic_shape = DynamicShape(self)
         dynamic_shape.set_shape(topods_shape)
-        self.add_dynamic_shape(dynamic_shape)
+        
+        if use_bbox and use_mesh:
+            raise AssertionError('either set use_bbox OR use_mesh')
+
+        if self._COLLISION_DETECTION:
+            self._add_dynamic_shape(dynamic_shape, topods_shape, use_bbox, use_mesh)
         return dynamic_shape
     
-    def add_dynamic_shape(self, dynamic_shape):
+    def _add_dynamic_shape(self, dynamic_shape, topods_shape, use_bbox, use_mesh):
+        '''
+        THOMAS PLEASE CHECK... 
+        when collision detection is enabled this method is also called
+        I do not really understand why precisely... 
+        Surely the user of this API should not be confronted with those details ;')
+        '''
         self._shapes.append(dynamic_shape)
         if self._DISPLAY_INITIALIZED:
             ais_shape = self._display.DisplayShape(dynamic_shape.get_shape())
             dynamic_shape.set_ais_shape(ais_shape)
+        
+        if use_bbox:
+            bbox = get_boundingbox(topods_shape, EPSILON)
+            xmin,ymin,zmin, xmax,ymax,zmax = bbox.Get()
+            dx,dy,dz = xmax-xmin, ymax-ymin, zmax-zmin
+            geom_box = ode.GeomBox(self._space, lengths=(dx,dy,dz))
+            geom_box.setBody(dynamic_shape)
+            self._dyn_shapes.append(geom_box)
+            '''
+            d2 = DynamicShape(dyn_context)
+            d2.set_shape(transformed_shape)
+            geom_box2 = ode.GeomBox(dyn_context._space, lengths=(10,20,30))
+            geom_box2.setBody(d2)
+            '''
+            
+        if use_mesh:
+            raise NotImplementedError
     
     def set_time_step(self,delta_t):
         self._delta_t = delta_t
@@ -238,4 +271,10 @@ class DynamicSimulationContext(ode.World):
                 self._display.FitAll()
 
     def stop_loop(self):
+        pass
+    
+    def clear(self):
+        '''
+        deletes all the ode geometry in the scene
+        '''
         pass
