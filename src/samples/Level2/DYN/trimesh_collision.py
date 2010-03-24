@@ -22,7 +22,7 @@ from OCC.GC import *
 from OCC.Geom import *
 from OCC.gp import *
 from OCC.BRepBuilderAPI import *
-from OCC.Utils.Construct import translate_topods_from_vector
+from OCC.Utils.Construct import translate_topods_from_vector, make_plane
 from OCC.DYN.Context import DynamicSimulationContext, DynamicShape
 from OCC.TopoDS import *
 from OCC.BRep import *
@@ -50,11 +50,7 @@ def falling_torus(event=None):
     # The plane (note: this plane is not a dynamic shape, it's just displayed)
     P1 = gp_Pnt(0,0,-100)
     V1 = gp_Vec(0,0,1)
-    PL = gp_Pln(P1,gp_Dir(V1))                     
-    aPlane = GC_MakePlane(PL).Value()
-    aSurface = Geom_RectangularTrimmedSurface( aPlane, - 100., 100., - 60., 60., 1, 1 )
-    face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
-    face.Build()
+    face = make_plane(P1,V1, -100., 100., -60., 60.)
     # Then create a geom for this plane
     # Create a plane geom which prevent the objects from falling forever
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
@@ -76,20 +72,14 @@ def falling_torus_torus(event=None):
     d = dyn_context.add_shape(s1, enable_collision_detection=True,use_trimesh=True)
     # The box
     s2 = BRepPrimAPI_MakeTorus(10,6).Shape()
-    t2 = gp_Trsf()
-    t2.SetTranslation(gp_Vec(0, 0, 100))
-    transformed_shape_2 = BRepBuilderAPI_Transform(s2,t2).Shape()
+    transformed_shape_2 = translate_topods_from_vector(s2, gp_Vec(0,0,100))
     d2 = dyn_context.add_shape(transformed_shape_2,enable_collision_detection=True,use_trimesh=True)
 
     d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
     # The plane (note: this plane is not a dynamic shape, it's just displayed)
     P1 = gp_Pnt(0,0,-100)
     V1 = gp_Vec(0,0,1)
-    PL = gp_Pln(P1,gp_Dir(V1))                     
-    aPlane = GC_MakePlane(PL).Value()
-    aSurface = Geom_RectangularTrimmedSurface( aPlane, - 100., 100., - 60., 60., 1, 1 )
-    face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
-    face.Build()
+    face = make_plane(P1,V1,-100., 100., -60., 60.)
     # Then create a geom for this plane
     # Create a plane geom which prevent the objects from falling forever
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
@@ -122,11 +112,7 @@ def falling_pump(event=None):
     # The plane (note: this plane is not a dynamic shape, it's just displayed)
     P1 = gp_Pnt(0,0,-1000)
     V1 = gp_Vec(0,0,1)
-    PL = gp_Pln(P1,gp_Dir(V1))                     
-    aPlane = GC_MakePlane(PL).Value()
-    aSurface = Geom_RectangularTrimmedSurface( aPlane, - 1000., 1000., - 600., 600., 1, 1 )
-    face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
-    face.Build()
+    face = make_plane(P1,V1, -1000., 1000., -600., 600.)
     # Then create a geom for this plane
     # Create a plane geom which prevent the objects from falling forever
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), -1000)

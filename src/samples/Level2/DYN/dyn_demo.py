@@ -29,7 +29,7 @@ from OCC.DYN.Context import DynamicSimulationContext, DynamicShape
 import ode
 
 from OCC.Display.SimpleGui import *
-from OCC.Utils.Construct import translate_topods_from_vector, make_face
+from OCC.Utils.Construct import translate_topods_from_vector, make_plane
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 def rotating_box(event=None):
@@ -71,8 +71,7 @@ def box_plane_collision(event=None):
     # The plane (note: this plane is not a dynamic shape, it's just displayed)
     P1 = gp_Pnt(0,0,-100)
     V1 = gp_Vec(0,0,1)
-    PL = gp_Pln(P1,gp_Dir(V1))                     
-    face = make_face(PL, -100., 100., -60., 60)
+    face = make_plane(P1, V1, -100., 100., -60., 60)
     # Then create a geom for this plane
     # Create a plane geom which prevent the objects from falling forever
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
@@ -100,8 +99,7 @@ def two_boxes_sphere_plane_collision(event=None):
     sphere = translate_topods_from_vector(sphere, gp_Vec(0,0,250))
     d3 = dyn_context.add_shape(sphere,enable_collision_detection=True,use_sphere=True)
     # Draw a plane (note: this plane is not a dynamic shape, it's just displayed)
-    PL = gp_Pln(gp_Pnt(0,0,-100),gp_Dir(gp_Vec(0,0,1)))
-    face = make_face(PL, -100., 100., -100., 100.)
+    face = make_plane( gp_Pnt(0,0,-100), gp_Vec(0,0,1), -100., 100., -100., 100.)
     display.DisplayColoredShape(face,'RED')
     display.FitAll()
     # Then create a geom for this plane
@@ -137,8 +135,7 @@ def dominos(event=None):
     # Create a 'ground'
     P1 = gp_Pnt(0,0,-h_table)
     V1 = gp_Vec(0,0,1)
-    PL = gp_Pln(P1,gp_Dir(V1))                     
-    face = make_face(PL, -150., 150., -100., 100.,)
+    face = make_plane(P1, V1,-150., 150., -100., 100.,)
     display.DisplayColoredShape(face,color='RED')
     # wrap a texture on the plane
     texture_filename = os.path.join(os.path.split(os.path.abspath(__file__))[0], 'ground.bmp')
