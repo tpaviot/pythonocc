@@ -50,6 +50,9 @@ def vector_to_point(self):
 def dir_to_vec(self):
     return gp_Vec(self)
 
+def vec_to_dir(self):
+    return gp_Dir(self)
+
 def add_vector_to_point(self, vec):
     return (self.as_vec() + vec).as_pnt() 
 
@@ -57,6 +60,7 @@ gp_Vec.as_pnt  = vector_to_point
 gp_Pnt.as_vec  = point_to_vector
 gp_Pnt.add_vec = add_vector_to_point
 gp_Dir.as_vec  = dir_to_vec 
+gp_Dir.as_dir  = vec_to_dir 
 
 #===============================================================================
 # ---TOPOLOGY---
@@ -235,8 +239,7 @@ def make_plane(center=gp_Pnt(0,0,0),
     if depth!=0:
         P1 = center.add_vec(gp_Vec(0,0,depth))
     
-    V1 = gp_Vec(0,0,1)
-    PL = gp_Pln(P1,gp_Dir(V1))                     
+    PL = gp_Pln(center,vec_normal.as_dir())                     
     face = make_face(PL,
                       extent_x_min,
                        extent_x_max,
