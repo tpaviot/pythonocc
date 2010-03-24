@@ -86,7 +86,7 @@ def two_boxes_sphere_plane_collision(event=None):
     dyn_context.set_display(display)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
-    # The fist box
+    # The first box
     s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
     d = dyn_context.add_shape(s1,enable_collision_detection=True,use_boundingbox=True)
     d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
@@ -97,7 +97,7 @@ def two_boxes_sphere_plane_collision(event=None):
     # The sphere
     sphere = BRepPrimAPI_MakeSphere(10).Shape()
     sphere = translate_topods_from_vector(sphere, gp_Vec(0,0,250))
-    d3 = dyn_context.add_shape(sphere,enable_collision_detection=True,use_boundingbox=True)
+    d3 = dyn_context.add_shape(sphere,enable_collision_detection=True,use_sphere=True)
     # Draw a plane (note: this plane is not a dynamic shape, it's just displayed)
     PL = gp_Pln(gp_Pnt(0,0,-100),gp_Dir(gp_Vec(0,0,1)))
     face = make_face(PL, -100., 100., -100., 100.)

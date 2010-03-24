@@ -50,24 +50,19 @@ class DynamicShape(ode.Body):
         dx,dy,dz = xmax-xmin, ymax-ymin, zmax-zmin
         self._collision_geometry = ode.GeomBox(self._space, lengths=(dx,dy,dz))
         self._collision_geometry.setBody(self)
-#        self._dyn_shapes.append(geom_box)
-#        '''
-#        d2 = DynamicShape(dyn_context)
-#        d2.set_shape(transformed_shape)
-#        geom_box2 = ode.GeomBox(dyn_context._space, lengths=(10,20,30))
-#        geom_box2.setBody(d2)
-##            '''
-        
-#    def set_collision_space(self,space):
-#        ''' This method stores the collision space from the DynamicContext
-#        '''
-#        self._space = space
-        
-#    def store_cog_position(self,pos):
-#        ''' This fonction appends the cog position to a list, in order for instance
-#        to draw a spline from these positions, i.e. the trajectory of the point
-#        '''
-#        self._cog_pos.append(pos)
+    
+    def use_sphere(self):
+        ''' Connect a ode.GeomSphere to the body
+        The sphere radius is computed as the mean of the bounding box dimensions. As a consequence,
+        if the TopoDS_Shape is a sphere, then the radius of the ode.GeomSphere will be the radius
+        of the sphere
+        '''
+        bbox = get_boundingbox(self._shape, EPSILON)
+        xmin,ymin,zmin, xmax,ymax,zmax = bbox.Get()
+        dx,dy,dz = xmax-xmin, ymax-ymin, zmax-zmin
+        r = (dx+dy+dz)/3.
+        self._collision_geometry = ode.GeomSphere(self._space, radius = r)
+        self._collision_geometry.setBody(self)
     
     def use_trimesh(self):
         self._compute_trimesh()
@@ -118,13 +113,7 @@ class DynamicShape(ode.Body):
         td.build(vertices,a_mesh.get_faces())
         self._collision_geometry = ode.GeomTriMesh(td,self._parent_context.get_collision_space())
         self._collision_geometry.setBody(self)
-   
-#    def enable_collision(self):
-#        ''' Adds a geom to the body. In the simpliest case, the geom is the bounding box
-#        of the shape
-#        '''
-#        self._in_collision_space = True
-        
+           
     def set_ais_shape(self,ais_shape):
         self._ais_shape = ais_shape
     
@@ -239,7 +228,7 @@ class DynamicSimulationContext(ode.World):
         self._display = display
         self._DISPLAY_INITIALIZED = True
     
-    def add_shape(self, topods_shape, enable_collision_detection=False, use_boundingbox=False, use_trimesh=False):
+    def add_shape(self, topods_shape, enable_collision_detection=False, use_boundingbox=False, use_sphere = False, use_trimesh=False):
         ''' Adds a TopoDS_Shape to the DYN context.
         
         @param topods_shape : the shape to add to the dynamic context
@@ -249,11 +238,11 @@ class DynamicSimulationContext(ode.World):
         
         @return dynamic_shape : the dynamic_shape added to the context
         '''
-        if use_boundingbox and use_trimesh:
-            raise AssertionError('use_boundingbox and use_mesh are exclusive')
+        #if use_boundingbox and use_trimesh:
+        #    raise AssertionError('use_boundingbox and use_mesh are exclusive')
 
-        if enable_collision_detection and not(use_boundingbox) and not(use_trimesh):
-            raise AssertionError('either use_boundingbox or use_mesh has to be set')
+        #if enable_collision_detection and not(use_boundingbox) and not(use_trimesh):
+        #    raise AssertionError('either use_boundingbox or use_mesh has to be set')
 
         # create the dynamic shape
         dynamic_shape = DynamicShape(self)
@@ -263,6 +252,8 @@ class DynamicSimulationContext(ode.World):
             dynamic_shape.enable_collision_detection()
             if use_boundingbox:
                 dynamic_shape.use_bounding_box()
+            elif use_sphere:
+                dynamic_shape.use_sphere()
             elif use_trimesh:
                 dynamic_shape.use_trimesh()
             else:
