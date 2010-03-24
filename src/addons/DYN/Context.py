@@ -206,7 +206,7 @@ class DynamicSimulationContext(ode.World):
         ''' Append the function to a list. These functions are called after each simulation step
         is completed. It can be useful, for instance, to refersh GUI, or send results to a queue etc.
         '''
-        if not callable(function):
+        if callable(function):
             self._post_step_callable.append(function)
         else:
             raise AssertionError('Argument must be callable (a function)')
