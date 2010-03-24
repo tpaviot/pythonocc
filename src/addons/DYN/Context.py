@@ -9,7 +9,7 @@ from OCC.TColgp import *
 from OCC.GeomAPI import *
 
 # For trimesh collision
-from OCC.MSH.Mesh import *
+#from OCC.MSH.Mesh import *
 import time
 
 from OCC.Utils.Common import get_boundingbox
@@ -45,11 +45,11 @@ class DynamicShape(ode.Body):
         self._space = self._parent_context.get_collision_space()
     
     def use_bounding_box(self):
-        bbox = get_boundingbox(topods_shape, EPSILON)
+        bbox = get_boundingbox(self._shape, EPSILON)
         xmin,ymin,zmin, xmax,ymax,zmax = bbox.Get()
         dx,dy,dz = xmax-xmin, ymax-ymin, zmax-zmin
         self._collision_geometry = ode.GeomBox(self._space, lengths=(dx,dy,dz))
-        self._collision_geometry.setBody(dynamic_shape)
+        self._collision_geometry.setBody(self)
 #        self._dyn_shapes.append(geom_box)
 #        '''
 #        d2 = DynamicShape(dyn_context)
@@ -190,13 +190,13 @@ class DynamicSimulationContext(ode.World):
         self._DISPLAY_INITIALIZED = False
         self._COLLISION_DETECTION = False
         self._delta_t = 0.01 #timestep default value
-        self._max_integration_steps = 1100
         # A joint group for the contact joints that are generated whenever
         # two bodies collide
         self._contactgroup = None
         self._space = None
         # callback after each integration step
         self._post_step_callable = []
+        self._duration = 10
         print 'Dynamic simulation context initialized.'
     
     def enable_gravity(self):
@@ -239,7 +239,7 @@ class DynamicSimulationContext(ode.World):
         self._display = display
         self._DISPLAY_INITIALIZED = True
     
-    def add_shape(self, topods_shape, enable_collision_detection = False, use_boundingbox=False, use_trimesh=False):
+    def add_shape(self, topods_shape, enable_collision_detection=True, use_boundingbox=True, use_trimesh=False):
         ''' Adds a TopoDS_Shape to the DYN context.
         
         @param topods_shape : the shape to add to the dynamic context
@@ -251,6 +251,10 @@ class DynamicSimulationContext(ode.World):
         '''
         if use_boundingbox and use_trimesh:
             raise AssertionError('use_boundingbox and use_mesh are exclusive')
+
+        if not(use_boundingbox) and not(use_trimesh):
+            raise AssertionError('either use_boundingbox or use_mesh has to be set')
+
         # create the dynamic shape
         dynamic_shape = DynamicShape(self)
         # connects the topods_shape to this dynamic_shape
