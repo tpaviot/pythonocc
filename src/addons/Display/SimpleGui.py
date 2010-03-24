@@ -45,7 +45,7 @@ if HAVE_WX:
 elif HAVE_QT:
     DEFAULT_BACKEND = 'qt'
 elif HAVE_XLIB:
-    DEFAULT_BACKEND = 'X'
+    DEFAULT_BACKEND = 'x'
 else:
     raise NameError('No backend.')
 # By default, used backend is the default_backend
@@ -55,13 +55,15 @@ def set_backend(str_backend):
     ''' Overload the default used backend
     '''
     global USED_BACKEND
-    if str_backend not in ['wx','qt','X']:
-        raise NameError('Backend must either be "wx", "qt" or "X"')
+    # make str_backend case unsensitive
+    str_backend = str_backend.lower()
+    if str_backend not in ['wx','qt','x']:
+        raise NameError('Backend must either be "wx", "qt" or "x"')
     elif str_backend == 'qt' and not HAVE_QT:
         raise NameError('PyQt library not installed or not found.')
     elif str_backend == 'wx' and not HAVE_WX:
         raise NameError('wxPython library not installed or not found.')
-    elif str_backend == 'X' and not HAVE_XLIB:
+    elif str_backend == 'x' and not HAVE_XLIB:
         raise NameError('python-xlib library not installed or not found.')
     else:
         USED_BACKEND = str_backend
@@ -72,7 +74,7 @@ def get_bg_abs_filename():
     occ_package = sys.modules['OCC']
     bg_abs_filename = os.path.join(occ_package.__path__[0],'Display','default_background.bmp')
     if not os.path.isfile(bg_abs_filename):
-        raise NameError('Not image background file found.')
+        raise NameError('No image background file found.')
     else:
         return bg_abs_filename
     
@@ -97,11 +99,11 @@ def init_display():
             def add_function_to_menu(self, menu_name, _callable):
                 # point on curve
                 _id = wx.NewId()
-                assert callable(_callable), 'the function supplied isnt callable'
+                assert callable(_callable), 'the function supplied is not callable'
                 try:
                     self._menus[menu_name].Append(_id, _callable.__name__.replace('_', ' ').lower())
                 except KeyError:
-                    raise ValueError, 'the menu item %s doesnt exist' % (menu_name) 
+                    raise ValueError, 'the menu item %s does not exist' % (menu_name) 
                 self.Bind(wx.EVT_MENU, _callable, id=_id)
         app = wx.PySimpleApp()
         wx.InitAllImageHandlers()
@@ -143,7 +145,7 @@ def init_display():
                     self.connect(_action, QtCore.SIGNAL("triggered()"), _callable)
                     self._menus[menu_name].addAction(_action)
                 except KeyError:
-                    raise ValueError, 'the menu item %s doesnt exist' % (menu_name)
+                    raise ValueError, 'the menu item %s does not exist' % (menu_name)
         app = QtGui.QApplication(sys.argv)
         win = MainWindow()
         win.show()
@@ -177,7 +179,7 @@ def init_display():
     return display, start_display, add_menu, add_function_to_menu
     
 if __name__ == '__main__':
-    set_backend('X')
+    set_backend('x')
     init_display()
     from OCC.BRepPrimAPI import *
     def sphere(event=None):
