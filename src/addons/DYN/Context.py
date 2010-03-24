@@ -252,7 +252,7 @@ class DynamicSimulationContext(ode.World):
         if use_boundingbox and use_trimesh:
             raise AssertionError('use_boundingbox and use_mesh are exclusive')
 
-        if not(use_boundingbox) and not(use_trimesh):
+        if enable_collision_detection and not(use_boundingbox) and not(use_trimesh):
             raise AssertionError('either use_boundingbox or use_mesh has to be set')
 
         # create the dynamic shape
