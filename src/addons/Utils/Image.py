@@ -27,7 +27,7 @@ class Texture(object):
     """
     def __init__(self, filename):
         if not os.path.isfile(filename):
-            raise "File doesn't exist"
+            raise "File doesn't exist\n%s" % ( filename)
         self._filename = filename
         self._toScaleU = 1.0
         self._toScaleV = 1.0
