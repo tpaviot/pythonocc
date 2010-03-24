@@ -1,4 +1,4 @@
-##Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2010 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -207,7 +207,8 @@ class MEFISTOTriangleMesh(MeshBase):
             #if face_normal.Modulus()>0:
             #    face_normal.Normalize()
             #fn = [face_normal.X(),face_normal.Y(),face_normal.Z()]
-            fn = [n_x/n_magnitude, n_y/n_magnitude, n_z/n_magnitude]
+            if n_magnitude>0:
+                fn = [n_x/n_magnitude, n_y/n_magnitude, n_z/n_magnitude]
             face_normals.append(fn)
             face_normals.append(fn)
             face_normals.append(fn)
@@ -215,9 +216,22 @@ class MEFISTOTriangleMesh(MeshBase):
         #faces = range(self.get_nb_faces()*3)
         #print faces
         print "build_list method performed in %f seconds."%(time.time()-init_time)
-        return vertices, faces, face_normals
-
-    def build_lists_old(self):
+        self._vertices = vertices
+        self._faces = faces
+        self._face_normals = face_normals
+        return True#return vertices, faces, face_normals
+    
+    def get_vertices(self):
+        ''' Returns the list of vertices coordinates
+        '''
+        return self._vertices
+    
+    def get_faces(self):
+        ''' Returns the face indices list
+        '''
+        return self._faces
+    
+    def build_lists_shared_vertices(self):
         ''' build 3 lists: faces, normals, vertices
         '''
         # will return 3 lists
