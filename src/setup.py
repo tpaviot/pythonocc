@@ -490,11 +490,18 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
                          'OCC.Toolkits':os.path.join(os.getcwd(),'wrapper','Toolkits'),
                          'OCC.Toolkits.FoundationClasses':os.path.join(os.getcwd(),'wrapper','Toolkits','FoundationClasses'),
                          'OCC.Toolkits.ModelingData':os.path.join(os.getcwd(),'wrapper','Toolkits','ModelingData'),
+                         'OCC.MSH':os.path.join(os.getcwd(),'addons','MSH'),
                          'OCC.PAF':os.path.join(os.getcwd(),'addons','PAF'),
                          'OCC.KBE':os.path.join(os.getcwd(),'addons','KBE'),
                          'OCC.DYN':os.path.join(os.getcwd(),'addons','DYN')},
-          packages = ['OCC.Display','OCC.Utils','OCC.Utils.DataExchange','OCC.PAF','OCC.Toolkits',\
-                      'OCC.KBE','OCC.DYN',\
+          packages = ['OCC.Display',
+                      'OCC.Utils',
+                      'OCC.Utils.DataExchange',
+                      'OCC.MSH',\
+                      'OCC.PAF',
+                      'OCC.Toolkits',\
+                      'OCC.KBE',
+                      'OCC.DYN',\
                       'OCC.Toolkits.FoundationClasses',\
                       'OCC.Toolkits.ModelingData'],
           #py_modules = ['OCC.Standard'],
