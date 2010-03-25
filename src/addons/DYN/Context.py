@@ -60,7 +60,7 @@ class DynamicShape(ode.Body):
         bbox = get_boundingbox(self._shape, EPSILON)
         xmin,ymin,zmin, xmax,ymax,zmax = bbox.Get()
         dx,dy,dz = xmax-xmin, ymax-ymin, zmax-zmin
-        r = (dx+dy+dz)/3.
+        r = (dx+dy+dz)/6.# /3 gives the mean diameter, so divide by 2 for the radius
         self._collision_geometry = ode.GeomSphere(self._space, radius = r)
         self._collision_geometry.setBody(self)
     
