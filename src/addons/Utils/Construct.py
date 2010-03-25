@@ -60,7 +60,7 @@ gp_Vec.as_pnt  = vector_to_point
 gp_Pnt.as_vec  = point_to_vector
 gp_Pnt.add_vec = add_vector_to_point
 gp_Dir.as_vec  = dir_to_vec 
-gp_Dir.as_dir  = vec_to_dir 
+gp_Vec.as_dir  = vec_to_dir 
 
 #===============================================================================
 # ---TOPOLOGY---

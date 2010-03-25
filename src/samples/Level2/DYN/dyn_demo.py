@@ -24,7 +24,7 @@ from OCC.gp import *
 from OCC.BRepBuilderAPI import *
 from OCC.Utils.Image import Texture
 from OCC.Graphic3d import *
-from OCC.Utils.Construct import translate_topods_from_vector
+from OCC.Utils.Construct import *
 from OCC.DYN.Context import DynamicSimulationContext, DynamicShape
 import ode
 
