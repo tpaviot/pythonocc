@@ -54,7 +54,7 @@ def falling_torus(event=None):
     # Then create a geom for this plane
     # Create a plane geom which prevent the objects from falling forever
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
-    display.DisplayColoredShape(face.Shape(),'RED')
+    display.DisplayColoredShape(face,'RED')
     display.FitAll()
     #Starts the simulation
     dyn_context.set_simulation_duration(20) #1s forthe simulation
@@ -83,7 +83,7 @@ def falling_torus_torus(event=None):
     # Then create a geom for this plane
     # Create a plane geom which prevent the objects from falling forever
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
-    display.DisplayColoredShape(face.Shape(),'RED')
+    display.DisplayColoredShape(face,'RED')
     display.FitAll()
     #Starts the simulation
     dyn_context.set_simulation_duration(20) #1s forthe simulation
@@ -116,7 +116,7 @@ def falling_pump(event=None):
     # Then create a geom for this plane
     # Create a plane geom which prevent the objects from falling forever
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), -1000)
-    display.DisplayColoredShape(face.Shape(),'RED')
+    display.DisplayColoredShape(face,'RED')
     display.FitAll()
     #Starts the simulation
     dyn_context.set_simulation_duration(30) #1s forthe simulation
