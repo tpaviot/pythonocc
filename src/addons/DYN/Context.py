@@ -368,4 +368,6 @@ class DynamicSimulationContext(ode.World):
         '''
         deletes all the ode geometry in the scene
         '''
-        pass
+        for i in self._space.getNumGeoms():
+            self._space.remove(self._space.getGeom(i))
+
