@@ -18,9 +18,11 @@
 ''' This module provides an high level API built on top of BRepMesh and SMESH low level
 objects. '''
 
+import random
 from math import sqrt as math_sqrt
 from OCC.Utils.Topology import *
 from OCC.TopoDS import *
+from OCC.TopAbs import *
 # to determine default precision
 from OCC.Bnd import *
 from OCC.BRepBndLib import *
@@ -45,12 +47,31 @@ class MeshBase(object):
     def __init__(self):
         self._shape = None
         self._precision = 0.0 #by default
+        self._vertices = []
+        self._faces = []
+        self._face_normals = []
     
     def set_shape(self,shape):
         ''' @param shape: the TopoDS_Shape to mesh
         '''
         self._shape = shape
         self.compute_default_precision()
+    
+    def get_vertices(self):
+        ''' Returns the list of vertices coordinates
+        '''
+        return self._vertices
+
+    def get_nb_nodes(self):
+        return len(self._vertices)
+
+    def get_nb_faces(self):
+        return len(self._faces)
+    
+    def get_faces(self):
+        ''' Returns the face indices list
+        '''
+        return self._faces
     
     def get_precision(self):
         return self._precision
@@ -84,44 +105,51 @@ class QuickTriangleMesh(MeshBase):
     def __init__(self):
         MeshBase.__init__(self)
     
-    def to_compound(self):
-        ''' Create a compound from the mesh nodes/edges/faces
-        '''
-        pass
-    
     def compute(self):
         ''' Compute the mesh
         '''
+        print 'start mesh computation...'
+        init_time = time.time()
         if self._shape is None:
             raise "Error: first set a shape"
             return False
         BRepMesh().Mesh(self._shape,self.get_precision()) #Precision should be computed from BndBox
-        builder = BRep_Builder()
-        Comp = TopoDS_Compound()
-        builder.MakeCompound(Comp)
+        #BRepMesh_IncrementalMesh(self._shape,self.get_precision(),False,0.05)
+        points = []
+        faces = []
         
         faces_iterator = Topo(self._shape).faces()
         L = TopLoc_Location()
+        j = 0
         for F in faces_iterator:
             facing = (BRep_Tool().Triangulation(F,L)).GetObject()
             tab = facing.Nodes()
             tri = facing.Triangles()
             for i in range(1,facing.NbTriangles()+1):
                 trian = tri.Value(i)
-                #print trian
                 index1, index2, index3 = trian.Get()
-                for j in range(1,4):
-                    if j==1:    
-                        M = index1
-                        N = index2
-                    elif j==2:    
-                        N = index3
-                    elif j==3:
-                        M = index2  
-                    ME = BRepBuilderAPI_MakeEdge(tab.Value(M),tab.Value(N))
-                    if ME.IsDone():
-                        builder.Add(Comp,ME.Edge())
-        return Comp
+                
+                p1 = tab.Value(index1).XYZ().Coord()
+                p2 = tab.Value(index2).XYZ().Coord()
+                p3 = tab.Value(index3).XYZ().Coord()
+                if not p1 in points:
+                    points.append(p1)   
+                if not p2 in points:
+                    points.append(p2)   
+                if not p3 in points:
+                    points.append(p3)
+
+                i1 = points.index(p1)
+                i2 = points.index(p2)
+                i3 = points.index(p3)            
+                if F.Orientation() == TopAbs_REVERSED:
+                    faces.append([i1,i3,i2])                 
+                else:         
+                    faces.append([i1,i2,i3])
+        self._vertices = points
+        self._faces = faces
+        print 'end computation in %fs'%(time.time()-init_time)
+        return True
 
 class MEFISTOTriangleMesh(MeshBase):
     ''' A mesh based on the MEFISTO2 triangle mesher.
@@ -154,6 +182,8 @@ class MEFISTOTriangleMesh(MeshBase):
         face_normals=[]
         vertex_normals = []
         normals = []
+        
+        #print v.GetNodeNormal()
         #dict_vert_normals={}
         # first, build nodes list:
         #nodes_this = []
@@ -221,84 +251,75 @@ class MEFISTOTriangleMesh(MeshBase):
         self._face_normals = face_normals
         return True#return vertices, faces, face_normals
     
-    def get_vertices(self):
-        ''' Returns the list of vertices coordinates
-        '''
-        return self._vertices
-    
-    def get_faces(self):
-        ''' Returns the face indices list
-        '''
-        return self._faces
-    
+
     def build_lists_shared_vertices(self):
         ''' build 3 lists: faces, normals, vertices
         '''
         # will return 3 lists
-        vertices = []
+        #vertices = []
         faces = []
         face_normals=[]
         vertex_normals = []
         normals = []
-        dict_vert_normals={}
+        #dict_vert_normals={}
+        # build the vertex list
+        # each vertex is added to the list according to its Mesh ID
+        vertices = range(self.get_nb_nodes())
+        vertex_normals = range(self.get_nb_nodes())
+        
+        v = SMESH_MeshVSLink(self.get_mesh())
         # first, build nodes list:
-        nodes_this = []
+        #nodes_this = []
         for i in range(self.get_nb_nodes()):
             node = self._mesh_data_source.nodeValue(i)
-            vertices.append([node.X(),node.Y(), node.Z()])
-            nodes_this.append(node.this)
+            node_id = node.GetID()
+            vertices[node_id-1] = [node.X(),node.Y(), node.Z()]
+            # At the same time, build vertex normals list
+            #bool_var, node_normal_x, node_normal_y, node_normal_z = v.GetNormal(node_id,3)
+            #vertex_normals[node_id-1] = [node_normal_x, node_normal_y, node_normal_z]
+            #vertices.append([node.X(),node.Y(), node.Z()])
+            #nodes_this.append(node.this)
         # Traverse faces for this triangular mesh
+        self._hashes = []
         for i in range(self.get_nb_faces()):
             triangle_face = self._mesh_data_source.faceValue(i)
-            node_0 = triangle_face.GetNode(0)
-            index_0 = nodes_this.index(node_0.this)
-            node_1 = triangle_face.GetNode(1)
-            index_1 = nodes_this.index(node_1.this)
-            node_2 = triangle_face.GetNode(2)
-            index_2 = nodes_this.index(node_2.this)
-            faces.append([index_0,index_1,index_2])
-            # Compute normal for this face
-            P0 = gp_XYZ(node_0.X(),node_0.Y(),node_0.Z())
-            P1 = gp_XYZ(node_1.X(),node_1.Y(),node_1.Z())
-            P2 = gp_XYZ(node_2.X(),node_2.Y(),node_2.Z())
-            face_normal = (P1-P0)^(P2-P0)
-            if face_normal.Modulus()>0:
-                face_normal.Normalize()
-            face_normals.append([face_normal.X(),face_normal.Y(),face_normal.Z()])
-        # Compute vertex normals
-        # First determine which vertices belong to which face
-        vertex_in_face = {}
-        i=0
-        for indices in faces:
-            P0 = indices[0]
-            P1 = indices[1]
-            P2 = indices[2]
-            if not vertex_in_face.has_key(P0):
-                vertex_in_face[P0]=[i]
-            else:
-                vertex_in_face[P0].append(i)
-            if not vertex_in_face.has_key(P1):
-                vertex_in_face[P1]=[i]
-            else:
-                vertex_in_face[P1].append(i)
-            if not vertex_in_face.has_key(P2):
-                vertex_in_face[P2]=[i]
-            else:
-                vertex_in_face[P2].append(i)
-            i+=1
-        # Then, for each vertex, determine the 'mean' normal
-        for vertex_indice in vertex_in_face.keys():
-            #print vertex_indice
-            #n = gp_XYZ(0,0,0)
-            for f in vertex_in_face[vertex_indice]:
-                face_normal = face_normals[f]
-                #norm = gp_XYZ(face_normal[0],face_normal[1],face_normal[2])
-                #n = n + norm
-                vertex_normals.append(face_normal)
-            #n.Normalize()
-            
+            triangle_face_id = triangle_face.GetID()
 
-        return vertices, faces, vertex_normals
+            node_0_index = triangle_face.GetNode(0).GetID()-1
+            node_1_index = triangle_face.GetNode(1).GetID()-1
+            node_2_index = triangle_face.GetNode(2).GetID()-1
+            # Try de check whether the face is FORWARD or REVERSED
+            #try:
+                #print triangle_face_id
+                #topods_shape = self._mesh_data_source.IndexToShape(triangle_face_id)
+                #print topods_shape.ShapeType()
+                #print 'oui'
+                #if not hash(topods_shape) in self._hashes:
+                #    self._hashes.append(hash(topods_shape))
+            #print hash(topods_shape)
+            #    if topods_shape.Orientation() == TopAbs_REVERSED:
+            #        faces.append([node_2_index,node_1_index,node_0_index])
+            #        print 'REVERSED!!'
+            #    else:
+            #        faces.append([node_0_index,node_1_index,node_2_index])
+            #except:
+                #print 'bozozo'
+            into = random.randint(1,2)
+            if int==1:    
+                faces.append([node_0_index,node_1_index,node_2_index])
+            else:
+                faces.append([node_2_index,node_1_index,node_0_index])
+            # Compute normal for this face
+            true_or_false, n_x,n_y,n_z = v.GetNormal(triangle_face_id,3)
+            face_normals.append([n_x,n_y,n_z])
+        #for i in range(self.get_nb_faces()):
+        #    print face_normals[i]
+        # Compute vertex normals
+        print self._hashes
+        self._vertices = vertices
+        self._faces = faces
+        self._face_normals = face_normals
+        return True
             
     def compute(self):
         aMeshGen = SMESH_Gen()
@@ -323,6 +344,7 @@ class MEFISTOTriangleMesh(MeshBase):
         self._mesh = aMesh
         self._mesh_data_source = aMesh.GetMeshDS()
         #print self._mesh_data_source
+        self.build_lists()
         return True
 
 def test():
@@ -330,15 +352,15 @@ def test():
     from OCC.Display.SimpleGui import *
     display, start_display, add_menu, add_function_to_menu = init_display()
     from OCC.BRepPrimAPI import *
-    box_shape = BRepPrimAPI_MakeTorus(10,3).Shape()
+    box_shape = BRepPrimAPI_MakeBox(1,1,1).Shape()
     init_time = time.time()
     a_mesh = MEFISTOTriangleMesh()
     a_mesh.set_shape(box_shape)
-    a_mesh.set_precision(0.2)
+    a_mesh.set_precision(0.3)
     a_mesh.compute()
     print 'Number of triangles: %i'%a_mesh.get_nb_faces()
     print 'Number of vertices: %i'%a_mesh.get_nb_nodes()
-    a_mesh.build_lists()
+    a_mesh.build_lists_shared_vertices()
     print 'All done in %f seconds.'%(time.time()-init_time)
     # Display
     from Visualization import MeshVisualization
