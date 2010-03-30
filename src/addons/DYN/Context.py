@@ -306,7 +306,6 @@ class DynamicSimulationContext(ode.World):
                 self._space.collide((self,self._contactgroup), self._collision_callback)
             # step world
             self.step(self._delta_t)
-            
             # call post-step callable, if its there...
             #if self.post_step_callable is not None:
             #    self.post_step_callable()
@@ -340,7 +339,7 @@ class DynamicSimulationContext(ode.World):
                         # Not necessary by default : shape.store_cog_position([x,y,z])
                     # Then update the viewer to show new shapes position
                 self._display.Context.UpdateCurrentViewer()
-                #self._display.FitAll()
+                self._display.FitAll()
             # Increment time
             self._perform_callbacks()
             # Then increment time and loop simulation
@@ -368,6 +367,17 @@ class DynamicSimulationContext(ode.World):
         '''
         deletes all the ode geometry in the scene
         '''
-        for i in self._space.getNumGeoms():
-            self._space.remove(self._space.getGeom(i))
+        if self._DISPLAY_INITIALIZED:
+            self._display.EraseAll()
+        for i in self._dynamic_shapes:
+            if i._collision_geometry is None:
+                continue
+            else:
+                if self._space.query(i._collision_geometry):
+                    self._space.remove(i._collision_geometry)
+        
+        self._space = ode.Space()
+        self._contactgroup = ode.JointGroup()
+        self._dynamic_shapes = []
+        print 'all clear'
 
