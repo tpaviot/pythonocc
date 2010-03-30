@@ -91,14 +91,15 @@ class DynamicShape(ode.Body):
         - if quality_factor<1, the mesh will be less precise.
         By default, this argument is set to 1 : the default precision of the mesher is used. 
         '''
-        a_mesh = MEFISTOTriangleMesh()
+        #a_mesh = MEFISTOTriangleMesh()
+        a_mesh = QuickTriangleMesh()
         a_mesh.set_shape(self._shape)
         # define precision for the mesh
         a_mesh.set_precision(a_mesh.get_precision()/quality_factor)
         # then compute the mesh
         a_mesh.compute()
         # The results of the mesh computation are passed to the trimesh manager
-        a_mesh.build_lists()
+        #a_mesh.build_lists()
         vertices = a_mesh.get_vertices()
         # Before we set the vertices list to the trimesh, we must translate them:
         # TODO : there might be a simplier way to achieve that point
