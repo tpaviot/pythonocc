@@ -22,6 +22,7 @@ import random
 from math import sqrt as math_sqrt
 from OCC.Utils.Topology import *
 from OCC.TopoDS import *
+topods = TopoDS()
 from OCC.TopAbs import *
 # to determine default precision
 from OCC.Bnd import *
@@ -113,39 +114,47 @@ class QuickTriangleMesh(MeshBase):
         if self._shape is None:
             raise "Error: first set a shape"
             return False
-        BRepMesh().Mesh(self._shape,self.get_precision()) #Precision should be computed from BndBox
-        #BRepMesh_IncrementalMesh(self._shape,self.get_precision(),False,0.05)
+        BRepMesh().Mesh(self._shape,self.get_precision())
+        
         points = []
         faces = []
-        
+        #####
         faces_iterator = Topo(self._shape).faces()
-        L = TopLoc_Location()
-        j = 0
+        brp_tool = BRep_Tool()
+
         for F in faces_iterator:
-            facing = (BRep_Tool().Triangulation(F,L)).GetObject()
+            face_location = F.Location()
+            facing = brp_tool.Triangulation(F,face_location).GetObject()
             tab = facing.Nodes()
             tri = facing.Triangles()
             for i in range(1,facing.NbTriangles()+1):
                 trian = tri.Value(i)
                 index1, index2, index3 = trian.Get()
+                # Transform points
+                P1 = tab.Value(index1).Transformed(face_location.Transformation())
+                P2 = tab.Value(index2).Transformed(face_location.Transformation())
+                P3 = tab.Value(index3).Transformed(face_location.Transformation())
                 
-                p1 = tab.Value(index1).XYZ().Coord()
-                p2 = tab.Value(index2).XYZ().Coord()
-                p3 = tab.Value(index3).XYZ().Coord()
-                if not p1 in points:
-                    points.append(p1)   
-                if not p2 in points:
-                    points.append(p2)   
-                if not p3 in points:
-                    points.append(p3)
+                p1_coord = P1.XYZ().Coord()
+                p2_coord = P2.XYZ().Coord()
+                p3_coord = P3.XYZ().Coord()
 
-                i1 = points.index(p1)
-                i2 = points.index(p2)
-                i3 = points.index(p3)            
+                if not p1_coord in points:
+                    points.append(p1_coord)   
+                if not p2_coord in points:
+                    points.append(p2_coord)   
+                if not p3_coord in points:
+                    points.append(p3_coord)
+
+                i1 = points.index(p1_coord)
+                i2 = points.index(p2_coord)
+                i3 = points.index(p3_coord)
+                         
                 if F.Orientation() == TopAbs_REVERSED:
                     faces.append([i1,i3,i2])                 
                 else:         
                     faces.append([i1,i2,i3])
+
         self._vertices = points
         self._faces = faces
         print 'end computation in %fs'%(time.time()-init_time)
