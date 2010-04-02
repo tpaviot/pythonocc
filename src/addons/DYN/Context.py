@@ -91,8 +91,8 @@ class DynamicShape(ode.Body):
         - if quality_factor<1, the mesh will be less precise.
         By default, this argument is set to 1 : the default precision of the mesher is used. 
         '''
-        #a_mesh = MEFISTOTriangleMesh()
-        a_mesh = QuickTriangleMesh()
+        a_mesh = MEFISTOTriangleMesh()
+        #a_mesh = QuickTriangleMesh()
         a_mesh.set_shape(self._shape)
         # define precision for the mesh
         a_mesh.set_precision(a_mesh.get_precision()/quality_factor)
@@ -117,7 +117,7 @@ class DynamicShape(ode.Body):
            
     def set_ais_shape(self,ais_shape):
         self._ais_shape = ais_shape
-    
+ 
     def get_ais_shape(self):
         return self._ais_shape
     
@@ -148,6 +148,7 @@ class DynamicShape(ode.Body):
         # Get inertia properties of the TopoDS_Shape
         #
         mass = props.Mass()
+        print mass
         inertia_matrix = props.MatrixOfInertia()
         i11 = inertia_matrix.Value(1,1)
         i22 = inertia_matrix.Value(2,2)
@@ -181,6 +182,7 @@ class DynamicSimulationContext(ode.World):
         self._COLLISION_DETECTION = False
         self._delta_t = 0.01 #timestep default value
         self._duration = 10.0 #default duration set to 10s
+        self._frame_rate = 24 #default frame rate is 24img/sec
         # A joint group for the contact joints that are generated whenever
         # two bodies collide
         self._contactgroup = None
@@ -232,7 +234,17 @@ class DynamicSimulationContext(ode.World):
         # during the simulation.
         if yield_function is not None:
             self.register_post_step_callback(yield_function)
-    
+
+    def set_animation_frame_rate(self, frame_rate):
+        ''' Define the frame rate, i.e. the number of frames displayed in one second of simulation.
+        ex: set_frame_rate(24), means 24 images/seconds are displayed.
+        The number of frames displayed depends on the time step.
+        For instance, if the time_step is 0.1s, the max frame rate is 10 (display updated.
+        '''
+        if frame_rate>1/self._delta_t:
+            raise AssertionError('Frame rate can not be greater than 1/time_step')
+        self._frame_rate = frame_rate
+            
     def add_shape(self, topods_shape, enable_collision_detection=False, use_boundingbox=False, use_sphere = False, use_trimesh=False):
         ''' Adds a TopoDS_Shape to the DYN context.
         
@@ -301,6 +313,10 @@ class DynamicSimulationContext(ode.World):
     def start_open_loop(self):
         #delta_t = 0.01
         t = 0
+        current_time_step_index = 0 #it will be incremented at each time step
+        frame_delta = int(1/self._delta_t)/self._frame_rate
+        # Create the shape transformer outside the loop to have an faster algorithm
+        shape_trsf = gp_Trsf()
         while t<self._duration:
             #i = i+1
             if self._COLLISION_DETECTION: 
@@ -314,8 +330,12 @@ class DynamicSimulationContext(ode.World):
             # remove all contact joints
             if self._COLLISION_DETECTION:
                 self._contactgroup.empty()
-
-            if self._DISPLAY_INITIALIZED:
+            # Check whether the display has to be updated.
+            MUST_REDISPLAY = False
+            if current_time_step_index%frame_delta==0:
+                MUST_REDISPLAY = True
+            
+            if self._DISPLAY_INITIALIZED and MUST_REDISPLAY:
                 for shape in self._dynamic_shapes:
                     if not shape.get_fixed():
                         x, y, z = shape.getPosition()
@@ -328,7 +348,7 @@ class DynamicSimulationContext(ode.World):
                         v=y-(xg*a21+yg*a22+zg*a23)#COG coordinate in the global referential
                         w=z-(xg*a31+yg*a32+zg*a33)
                         # Move the shape according to its new position/rotation
-                        shape_trsf = gp_Trsf()
+                        GarbageCollector.garbage.push_context() #prevent memory leak
                         # Set new position/rotation
                         shape_trsf.SetValues(a11,a12,a13,u,
                                              a21,a22,a23,v,
@@ -336,6 +356,9 @@ class DynamicSimulationContext(ode.World):
                                              0.1,0.1)
                         shape_location = TopLoc_Location(shape_trsf)
                         self._display.Context.SetLocation(shape.get_ais_shape(),shape_location)
+                        # free memory and restore the gc context
+                        GarbageCollector.garbage.smart_purge()
+                        GarbageCollector.garbage.pop_context()
                         # Store COG position for each shape
                         # Not necessary by default : shape.store_cog_position([x,y,z])
                     # Then update the viewer to show new shapes position
@@ -345,6 +368,8 @@ class DynamicSimulationContext(ode.World):
             self._perform_callbacks()
             # Then increment time and loop simulation
             t += self._delta_t
+            # increment the step index
+            current_time_step_index += 1
         # When the simulation is finished, draw cog positions for each shape
         # Should rather call a kind of 'post simulation processing' function
 #        for shape in self._shapes:
