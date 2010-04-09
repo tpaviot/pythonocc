@@ -137,7 +137,7 @@ def init_display():
                 apply(QtGui.QMainWindow.__init__,(self,)+args)
                 self.canva = qtViewer3d(self)
                 self.setWindowTitle("pythonOCC-%s 3d viewer ('qt' backend)"%VERSION)
-                self.resize(1200,850)
+                self.resize(1024,768)
                 self.canva = qtViewer3d(self)
                 self.setCentralWidget(self.canva)
                 self.menuBar = self.menuBar()
