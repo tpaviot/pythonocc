@@ -73,9 +73,10 @@ if '--reverse' in sys.argv and sys.platform=='win32':
 if '--smesh-only' in sys.argv:
     SMESH_ONLY = True #overload default behaviour
     sys.argv.remove('--smesh-only')
+    WRAP_SALOME_SMESH = True
 else:
     SMESH_ONLY = False
-    
+        
 #Check whether the -j nprocs option is passed
 nprocs = 1 #by default, jut 1 proc
 for elem in sys.argv:
@@ -85,11 +86,11 @@ for elem in sys.argv:
         break
 
 #Check whether the --with-boost-include option is passed
-for elem in sys.argv:
-    if elem.startswith('--with-boost-include='):
-        environment.BOOST_INC = elem.split('--with-boost-include=')[1]
-        sys.argv.remove(elem)
-        break
+#for elem in sys.argv:
+#    if elem.startswith('--with-boost-include='):
+#        environment.BOOST_INC = elem.split('--with-boost-include=')[1]
+#        sys.argv.remove(elem)
+#        break
     
 #Check whether the --with-occ-include option is passed
 for elem in sys.argv:

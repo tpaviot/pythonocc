@@ -31,7 +31,7 @@ import subprocess
 # VARIABLES
 #===============================================================================
 
-VERSION = '0.4'         # Define pythonOCC version
+VERSION = '0.5dev'         # Define pythonOCC version
 
 #===============================================================================
 # UTILITIES
@@ -122,9 +122,15 @@ SWIG_OUT_DIR = os.path.join(os.getcwd(),'build','swig_output_%s_py%s%s'%(sys.pla
 if sys.platform=='win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
     # Try to find OCC paths from environment analysis
-    BOOST_INC = 'Z:\\boost_1_40_0'
-    SALOME_GEOM_LIB = os.path.join('Z:\\Salome\\salomegeometry\\trunk\\win32\\lib')
-    SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','salomesmesh_no_netgen','win32','lib')
+
+    if sys.version_info[0]==2 and sys.version_info[1]==5:#Python2.5
+        print "Python2.5"
+        SALOME_GEOM_LIB = os.path.join('Z:\\Salome\\salomegeometry\\trunk\\win32\\msvc71\\lib')
+        SALOME_SMESH_LIB = os.path.join('Z:\\Salome\\salomesmesh\\trunk\\win32\\msvc71\\lib')
+    elif sys.version_info[0]==2 and sys.version_info[1]==6:#Python2.6
+        print "Python2.6"
+        SALOME_GEOM_LIB = os.path.join('Z:\\Salome\\salomegeometry\\trunk\\msvc9\\cmake-build\\release')
+        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','salomesmesh_no_netgen','win32','lib')
     GCC_XML_PATH = os.path.join(os.getcwd(),'..','..','pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
@@ -139,7 +145,7 @@ if sys.platform=='win32':
     EXTRA_LIBS = []
     
 elif sys.platform=='linux2':
-    BOOST_INC = '/usr/include'
+
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
@@ -198,7 +204,7 @@ elif sys.platform=='darwin':
     SALOME_GEOM_LIB = '/usr/local/lib/GEOM-5.3.0.0'
     SALOME_SMESH_LIB = '/usr/local/lib/SMESH-5.3.0.0/'        
     GCC_XML_PATH = which('gccxml')
-    BOOST_INC = os.path.join(os.getcwd(),'..','..','boost_1_40_0')
+
     if GCC_XML_PATH == '':
         print 'gccxml was not found'
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
@@ -223,5 +229,6 @@ PYTHON_LIB = sysconfig.get_python_lib()
 VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
+BOOST_INC = os.path.join(os.getcwd(),'contrib')
 SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','SalomeGeometry','inc_pythonocc')
 SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','salomesmesh','inc')
