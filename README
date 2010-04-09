@@ -45,10 +45,6 @@ sudo make install
 
 NOTE: when installation is done, you should add the GEOM_ROOT env var to your .bash_profile
 
-- boost headers >= 1.38.0 (http://www.boost.org). boost headers are required by salomesmesh (see next item).
-Just download the boost archive and extract the content of this file.
-NOTE: it's not necessary to build boost.python or anything else. Just the headers are required.
-
 - salomesmesh 5.1.2.2 . Download the file smesh-5.1.2.2.zip from http://sourceforge.net/projects/salomesmesh/.
 Exract the content of this file to any temporary folder then:
 cd smesh-5.1.1.2
@@ -57,11 +53,6 @@ autoreconf --install
 ./configure --prefix=/somewhere_else
 make
 sudo make install
-
-Note: it may be necessary that you provide the boost headers path to the configure script. To do so, just export the
-CPPFLAGS env var before you call the configure script:
-export CPPFLAGS=-I/me/boost-1.38.0
-
  
 BUILD:
 ======
@@ -78,7 +69,7 @@ the command line:
 
 python setup.py build install --enable-geom --enable-smesh --with-geom-lib=/path_to_geom_libs 
 --with-smesh-lib=/path_to_smesh_libs
---with-boost-include=/path_to_boost_headers --with-occ-include=/path_to_opencascade_inc
+--with-occ-include=/path_to_opencascade_inc
 --with-occ-lib=/path_to_opencascade_libs
 
 NOTE: you can speed up the compilation process with multiprocessing. If you have a dual core machine, just add the -j flag
