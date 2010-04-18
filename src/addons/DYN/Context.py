@@ -9,7 +9,7 @@ from OCC.TColgp import *
 from OCC.GeomAPI import *
 
 # For trimesh collision
-from OCC.MSH.Mesh import *
+from OCC.MSH.Mesh import QuickTriangleMesh
 import time
 
 from OCC.Utils.Common import get_boundingbox
@@ -148,7 +148,7 @@ class DynamicShape(ode.Body):
         # Get inertia properties of the TopoDS_Shape
         #
         mass = props.Mass()
-        print mass
+
         inertia_matrix = props.MatrixOfInertia()
         i11 = inertia_matrix.Value(1,1)
         i22 = inertia_matrix.Value(2,2)
@@ -157,15 +157,7 @@ class DynamicShape(ode.Body):
         i13 = inertia_matrix.Value(1,3)
         i23 = inertia_matrix.Value(2,3)
         # TODO : is it really necessary to round these values?
-        i11 = round(i11,comma)
-        i22 = round(i22,comma)
-        i33 = round(i33,comma)
-        i12 = round(i12,comma)
-        i13 = round(i13,comma)
-        i23 = round(i23,comma)
-        #
-        # Then pass these properties to the body
-        #
+        # let me answer that question: a definitive, absolute 100% clear, *NO*
         M = ode.Mass()
         M.setParameters(mass,0,0,0,i11,i22,i33,i12,i13,i23)
         self.setMass(M)
@@ -305,8 +297,8 @@ class DynamicSimulationContext(ode.World):
         # Create contact joints
         world,contactgroup = args
         for c in contacts:
-            c.setBounce(0.25)
-            c.setMu(4000)
+            c.setBounce(0.25)   # Restitution parameter
+            c.setMu(4000)       # Coulomb friction
             j = ode.ContactJoint(world, contactgroup, c)
             j.attach(geom1.getBody(), geom2.getBody())
 
@@ -331,9 +323,9 @@ class DynamicSimulationContext(ode.World):
             if self._COLLISION_DETECTION:
                 self._contactgroup.empty()
             # Check whether the display has to be updated.
-            MUST_REDISPLAY = False
-            if current_time_step_index%frame_delta==0:
-                MUST_REDISPLAY = True
+            MUST_REDISPLAY = True
+#            if current_time_step_index%frame_delta==0:
+#                MUST_REDISPLAY = True
             
             if self._DISPLAY_INITIALIZED and MUST_REDISPLAY:
                 for shape in self._dynamic_shapes:
@@ -364,6 +356,7 @@ class DynamicSimulationContext(ode.World):
                     # Then update the viewer to show new shapes position
                 self._display.Context.UpdateCurrentViewer()
                 self._display.FitAll()
+                time.sleep(0.1)
             # Increment time
             self._perform_callbacks()
             # Then increment time and loop simulation
@@ -405,5 +398,4 @@ class DynamicSimulationContext(ode.World):
         self._space = ode.Space()
         self._contactgroup = ode.JointGroup()
         self._dynamic_shapes = []
-        print 'all clear'
 
