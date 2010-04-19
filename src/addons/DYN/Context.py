@@ -323,9 +323,9 @@ class DynamicSimulationContext(ode.World):
             if self._COLLISION_DETECTION:
                 self._contactgroup.empty()
             # Check whether the display has to be updated.
-            MUST_REDISPLAY = True
-#            if current_time_step_index%frame_delta==0:
-#                MUST_REDISPLAY = True
+            MUST_REDISPLAY = False
+            if current_time_step_index%frame_delta==0:
+                MUST_REDISPLAY = True
             
             if self._DISPLAY_INITIALIZED and MUST_REDISPLAY:
                 for shape in self._dynamic_shapes:
@@ -356,7 +356,7 @@ class DynamicSimulationContext(ode.World):
                     # Then update the viewer to show new shapes position
                 self._display.Context.UpdateCurrentViewer()
                 self._display.FitAll()
-                time.sleep(0.1)
+
             # Increment time
             self._perform_callbacks()
             # Then increment time and loop simulation
