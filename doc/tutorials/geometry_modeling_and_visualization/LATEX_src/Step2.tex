@@ -52,16 +52,16 @@ Listing~\ref{LISTING_STEP2_1_PY_A} shows how the menu and menu-items were change
 As you can see in listing~\ref{LISTING_STEP2_1_PY_B} there are two functions {\tt draw\_sphere\_1} and {\tt draw\_sphere\_2} added under menu {\tt Draw}.
 The new menu {\tt Erase} is bound to function {\tt erase\_all}.
 These functions are presented in listing~~\ref{LISTING_STEP2_1_PY_B}.
-It should also be noted that we have to add two additional modules {\tt OCC.gp} and {\tt OCC.BRepPrimAPI}.
+It should also be noted that we have to import two additional modules {\tt OCC.gp} and {\tt OCC.BRepPrimAPI}.
 %
 \begin{python}[moreemph={[4], 46, 48},caption={Step2\_1.py - Extending the functionality},label=LISTING_STEP2_1_PY_B]
 # =============================================================================
 # Packages to import
 # =============================================================================
-import OCC.Display.SimpleGui 
 import sys
-import OCC.gp 
-import OCC.BRepPrimAPI 
+from OCC.Display.SimpleGui import *
+from OCC.gp import *
+from OCC.BRepPrimAPI import * 
 
 # =============================================================================
 # Functions called from some menu-items
@@ -74,8 +74,8 @@ def draw_sphere_1(event=None):
     Y1 = 0.0
     Z1 = 0.0
     # create OCC.gp.gp_Pnt-Point from vector
-    Point = OCC.gp.gp_Pnt( X1, Y1, Z1 )     
-    MySphere = OCC.BRepPrimAPI.BRepPrimAPI_MakeSphere( Point, Radius )  
+    Point = gp_Pnt( X1, Y1, Z1 )     
+    MySphere = BRepPrimAPI_MakeSphere( Point, Radius )  
     MySphereShape = MySphere.Shape()
     display.DisplayColoredShape( MySphereShape , 'RED' ) 
 
@@ -87,8 +87,8 @@ def draw_sphere_2(event=None):
     Y1 = 50.0
     Z1 = 50.0
     # create OCC.gp.gp_Pnt-Point from vector
-    Point = OCC.gp.gp_Pnt( X1, Y1, Z1 )     
-    MySphere = OCC.BRepPrimAPI.BRepPrimAPI_MakeSphere( Point, Radius )  
+    Point = gp_Pnt( X1, Y1, Z1 )     
+    MySphere = BRepPrimAPI_MakeSphere( Point, Radius )  
     MySphereShape = MySphere.Shape()
     display.DisplayColoredShape( MySphereShape , 'YELLOW' ) 
 
@@ -109,7 +109,7 @@ The latter does not contain every possibility so I recommend to read the documen
 If we want to create and draw a primitive we always perform three steps.
 \begin{enumerate}
 \item Generate the primitive utilzing a constructor like \\ 
-		{\tt MySphere=OCC.BRepPrimAPI.BRepPrimAPI\_MakeSphere(Point,Radius)}
+		{\tt MySphere=BRepPrimAPI\_MakeSphere(Point,Radius)}
 \item Create the shape of the primitive\footnote{Until now I did not find out why this has to be done and what exactly is the difference of the primitive and its shape. But believe me we are able to make use of {\tt pythonOCC} for our visualization purposes without that knowledge. As soon as I understand the background I will update the document. Thomas Paviot recommended to read 
 Roman Lygin's blog \href{http://opencascade.blogspot.com/2009/02/topology-and-geometry-in-open-cascade.html}{http://opencascade.blogspot.com/2009/02/topology-and-geometry-in-open-cascade.html} especially the pages dedicated to the topology data model. Thomas also announced some document concerning that topic.
 }\\
@@ -120,11 +120,11 @@ Roman Lygin's blog \href{http://opencascade.blogspot.com/2009/02/topology-and-ge
 
 The constructor used in our code receives a variable {\tt Point} and a variable  {\tt Radius}.
 {\tt Radius} is obviously just a floating point value but {\tt Point} is something that has to be created by\\
-{\tt Point = OCC.gp.gp\_Pnt( X1, Y1, Z1 ) }\\
+{\tt Point = gp\_Pnt( X1, Y1, Z1 ) }\\
 where {\tt X1}, {\tt X2} and {\tt X3} are floating point values.
 Module {\tt OCC.gp} contains definitions of different geometric objects like points, circles, axes, directions and so on which are accepted by {\tt pythonOCC}.
 The natural way to define a sphere is to specify a point at the center and a radius.
-Because we are talking to {\tt pythonOCC} we have to enter the point in a way  {\tt pythonOCC} understands and thats in this case done by the specification of a {\tt OCC.gp.gp\_Pnt} object\footnote{In {\tt pythonOCC} objects carry their module names as a prefix. This helps if you have to read samples containing functions imported via {\tt from some\_module import~*}. Simply look at the prefix and you know the home module of the object.}.
+Because we are talking to {\tt pythonOCC} we have to enter the point in a way  {\tt pythonOCC} understands and thats in this case done by the specification of a {\tt gp\_Pnt} object\footnote{In {\tt pythonOCC} objects carry their module names as a prefix. This helps if you have to read samples containing functions imported via {\tt from some\_module import~*}. Simply look at the prefix and you know the home module of the object.}.
 %
 \subsection{Drawing spheres from Scipy arrays}
 At this point it is time for {\tt Scipy} to enter the scene.
@@ -136,10 +136,10 @@ So have a look at {\tt Step2\_2.py} and see that we changed the beginning of the
 # =============================================================================
 # Packages to import
 # =============================================================================
-import OCC.Display.SimpleGui 
 import sys
-import OCC.gp 
-import OCC.BRepPrimAPI 
+from OCC.Display.SimpleGui import *
+from OCC.gp import *
+from OCC.BRepPrimAPI import * 
 import scipy
 # =============================================================================
 # Functions generating primitives from Scipy arrays
@@ -159,9 +159,9 @@ def sphere_from_vector_and_radius(  vector,
     Y1 = float( vector[ 1, 0] )
     Z1 = float( vector[ 2, 0] )
     # create OCC.gp.gp_Pnt-Point from vector
-    Point = OCC.gp.gp_Pnt( X1, Y1, Z1 )
+    Point = gp_Pnt( X1, Y1, Z1 )
     # create sphere
-    sphere = OCC.BRepPrimAPI.BRepPrimAPI_MakeSphere( Point, radius )
+    sphere = BRepPrimAPI_MakeSphere( Point, radius )
     # retrurn the sphere
     return sphere 
 
@@ -193,7 +193,7 @@ def draw_sphere_2(event=None):
 \end{python}
 If you run {\tt Step2\_2.py} you get the same result as you got from {\tt Step2\_1.py}.
 The difference between these programs lies in the construction of the sphere.
-In {\tt Step2\_1.py} we defined three floating point values and generated a {\tt \tt OCC.gp.gp\_Pnt} object.
+In {\tt Step2\_1.py} we defined three floating point values and generated a {\tt \tt gp\_Pnt} object.
 In {\tt Step2\_2.py} a {\tt Scipy} array is used for that purpose.
 
 Functions {\tt draw\_sphere\_1} and  {\tt draw\_sphere\_2} are creating an array.
