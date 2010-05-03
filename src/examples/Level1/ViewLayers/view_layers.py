@@ -17,6 +17,12 @@
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+#===PLEASE NOTE==
+# WORK IN PROGRESS!!!
+# THIS EXAMPLE DOES NOT WORK FOR THE MOMENT
+# MORE OF A PLACEHOLDER OF THINGS TO COME
+#===PLEASE NOTE==
+
 from OCC.Visual3d import *
 from OCC.Quantity import *
 from OCC.Aspect import *
