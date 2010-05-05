@@ -160,6 +160,21 @@ def check_file(file,message):
         print 'no'
         return False
 
+def build_smesh_library():
+    ''' Launch compilation of SMESH from a python pipe
+    '''
+    print 'This will build SMESH library and install shared library to /usr/local/lib'
+    confirm_build = raw_input('Do you want to continue (y/n)?')
+    if confirm_build not in ['Y','yes','Yes']:
+        return False
+    else:
+        os.system('sh ./wrapper/build_smesh.sh')
+        # Check that the library was installed
+        if check_salomesmesh_lib('SMESH'):
+            return True
+        else:
+            return False
+
 def check_config():
     ''' Checks all
     '''
@@ -192,16 +207,21 @@ def check_config():
         if not h:
             print 'SMESH_Mesh.hxx header file not found. pythonOCC compilation aborted'
             sys.exit(0)
-        l = check_salomesmesh_lib('SMESH')
-        if not l:
-            print 'libSMESH not found (part of salomesmesh). pythonOCC compilation aborted'
-            sys.exit(0)
         # BOOST
         shared_ptr_header = os.path.join(environment.BOOST_INC,'boost','shared_ptr.hpp')
         b = check_file(shared_ptr_header,'boost/shared_ptr.hpp header')
         if not b:
             print 'boost/shared_ptr.hpp header not found. pythonOCC compilation aborted'
             sys.exit(0)
+        smesh_lib_found = check_salomesmesh_lib('SMESH')
+        if not smesh_lib_found:
+            print 'SMESH library not found on your system.'
+            # suggest building SMESH
+            success = build_smesh_library()
+            if not success:
+                print 'pythonOCC building aborted'
+                sys.exit(0)
+
 
 check_config()
 
@@ -355,11 +375,17 @@ if WRAP_SALOME_GEOM:
 #                     ]
 SMESH_LIBS = ['SMESH']
 
-if WRAP_SALOME_SMESH:
-    for smesh_library in SMESH_LIBS:
-        if not check_salomesmesh_lib(smesh_library):
-            print 'lib%s not found (part of salomesmesh). pythonOCC compilation aborted'%smesh_library
-            sys.exit(0)
+#if WRAP_SALOME_SMESH:
+#    raw_input('bozozo')
+#    for smesh_library in SMESH_LIBS:
+#        if not check_salomesmesh_lib(smesh_library):
+#            # libSMESH not found, suggest building
+#            success = build_smesh_library()
+#            if not success:
+#                print 'libSMESH not found (part of salomesmesh). pythonOCC compilation aborted'%smesh_library
+#                sys.exit(0)
+
+
 
 if __name__=='__main__': #hack to enable multiprocessing under Windows
     extension = []
