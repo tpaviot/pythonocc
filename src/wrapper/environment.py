@@ -154,7 +154,7 @@ elif sys.platform=='linux2':
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
     else:
         OCC_INC = '/opt/OpenCASCADE6.3.0/inc'
-        OCC_LIB = '/opt/OpenCASCADE6.3.0/lib' # Ubuntu 8.04 Hardy default installation path for libraries
+        OCC_LIB = '/opt/OpenCASCADE6.3.0/lib' # Ubuntu 8.04 default installation path for libraries
     try:
         GEOM_ROOT = os.environ['GEOMROOT']
         SALOME_GEOM_LIB = os.path.join(GEOM_ROOT,'lib')
@@ -169,7 +169,7 @@ elif sys.platform=='linux2':
                      ('LIN',None),('LININTEL',None),('_GNU_SOURCE','1'),\
                      ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]      
     SWIG_OPTS = ['-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-                 '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
+                 '-w302,401,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%SWIG_OUT_DIR]
     ECA = []
     if bits==64:
@@ -186,7 +186,7 @@ elif sys.platform=='linux2':
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     SWIG_OPTS = ['-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
+                  '-w302,401,314,509,512','-DOCC_CONVERT_SIGNALS',\
                   '-outdir','%s'%SWIG_OUT_DIR]
     if bits==64:
         SWIG_OPTS.append('-D_OCC64')
