@@ -115,3 +115,10 @@ ADD_LIBRARY(SMESH SHARED ${libSMESH_source_files} ${MEFISTO2_source_files})
 TARGET_LINK_LIBRARIES(SMESH TKernel TKMath TKG2d TKG3d TKMeshVS
                       TKPrim TKGeomBase TKGeomAlgo TKBRep TKTopAlgo TKShHealing
                       TKAdvTools)
+
+#################################
+# Install lib in /usr/local/lib #
+#################################
+IF (UNIX)
+    INSTALL(TARGETS SMESH DESTINATION /usr/local/lib)
+ENDIF(UNIX)
