@@ -99,6 +99,7 @@ FILE(GLOB libSMESH_source_files src/SMDS/*.cpp
                                 src/DriverUNV/*.cpp
                                 src/SMESHDS/*.cpp
                                 src/SMESH/*.cpp src/Controls/*.cpp
+                                src/StdMeshers/*.cpp
 )
 
 IF(WIN32)
@@ -110,13 +111,7 @@ ENDIF(WIN32)
 ##################################
 # Build a single dynamic library #
 ##################################
-ADD_LIBRARY(SMESH_dynamic SHARED ${libSMESH_source_files} ${MEFISTO2_source_files})
-TARGET_LINK_LIBRARIES(SMESH_dynamic TKernel TKMath TKG2d TKG3d TKMeshVS
+ADD_LIBRARY(SMESH SHARED ${libSMESH_source_files} ${MEFISTO2_source_files})
+TARGET_LINK_LIBRARIES(SMESH TKernel TKMath TKG2d TKG3d TKMeshVS
                       TKPrim TKGeomBase TKGeomAlgo TKBRep TKTopAlgo TKShHealing
                       TKAdvTools)
-
-###############################
-# Also build a static library #
-###############################
-ADD_LIBRARY(SMESH_static STATIC ${libSMESH_source_files} ${MEFISTO2_source_files})
-
