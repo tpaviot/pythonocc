@@ -153,8 +153,8 @@ elif sys.platform=='linux2':
         OCC_INC = os.path.join(OCC_ROOT,'inc')
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
     else:
-        OCC_INC = '/opt/OpenCASCADE6.3.0/inc'
-        OCC_LIB = '/opt/OpenCASCADE6.3.0/lib' # Ubuntu 8.04 default installation path for libraries
+        OCC_INC = '/usr/include/opencascade'
+        OCC_LIB = '/usr/lib'
     try:
         GEOM_ROOT = os.environ['GEOMROOT']
         SALOME_GEOM_LIB = os.path.join(GEOM_ROOT,'lib')
