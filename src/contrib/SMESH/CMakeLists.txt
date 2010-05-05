@@ -1,30 +1,22 @@
 # SGEOM cmake build file
 if (WIN32) #Problem with Fortran with MSVC
     PROJECT(SMESH CXX)
+    MESSAGE("-- Build Win32")
 ELSE(WIN32)
+    MESSAGE("-- Build Unix")
     PROJECT(SMESH Fortran CXX)
 ENDIF(WIN32)
-
-SET(SMESH_VERSION_MAJOR 5)
-SET(SMESH_VERSION_MINOR 3)
-SET(SMESH_VERSION_PATCH 0)
-SET(SMESH_VERSION_TWEAK 0)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
 SET(CMAKE_BUILD_TYPE "Release") # By default, build in release mode
-SET(BUILD_SHARED_LIBS ON)
-SET(LIBRARY_OUTPUT_PATH cmake-build)
+SET(BUILD_SHARED_LIBS OFF) # library will be statically linked
+SET(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake-build)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
+MESSAGE(${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(inc)
-
-#############
-# FindBoost #
-#############
-FIND_PACKAGE(Boost REQUIRED)
-MESSAGE("-- Boost found: ${Boost_FOUND}")
-INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
-#MESSAGE("Popo: ${Boost_INCLUDE_DIR}")
+# Include boost includes directory
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../)
 
 ################
 # Check Fortran#
@@ -51,8 +43,8 @@ ELSE(WIN32) #Unix
 ENDIF(WIN32)
 
 # Check that these paths are ok
-MESSAGE("-- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
-MESSAGE("-- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
+#MESSAGE("-- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
+#MESSAGE("-- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${OCC_INCLUDE_PATH})
@@ -85,104 +77,46 @@ ELSE(UNIX)
   ENDIF(WIN32)
 ENDIF(UNIX)
 
-#########
-# SMDS #
-#########
-FILE(GLOB SMDS_source_files src/SMDS/*.cpp)
+#####################
+# Add include paths #
+#####################
 INCLUDE_DIRECTORIES(src/SMDS)
-ADD_LIBRARY(SMDS SHARED ${SMDS_source_files})
-TARGET_LINK_LIBRARIES(SMDS TKernel)
-
-##########
-# Driver #
-##########
-FILE(GLOB Driver_source_files src/Driver/*.cpp)
 INCLUDE_DIRECTORIES(src/Driver)
-ADD_LIBRARY(Driver SHARED ${Driver_source_files})
-
-#############
-# DriverSTL #
-#############
-FILE(GLOB DriverSTL_source_files src/DriverSTL/*.cpp)
 INCLUDE_DIRECTORIES(src/DriverSTL)
-ADD_LIBRARY(DriverSTL SHARED ${DriverSTL_source_files})
-TARGET_LINK_LIBRARIES(DriverSTL TKernel TKMath Driver SMDS)
-
-#############
-# DriverDAT #
-#############
-FILE(GLOB DriverDAT_source_files src/DriverDAT/*.cpp)
 INCLUDE_DIRECTORIES(src/DriverDAT)
-ADD_LIBRARY(DriverDAT SHARED ${DriverDAT_source_files})
-TARGET_LINK_LIBRARIES(DriverDAT SMDS Driver)
-
-#############
-# DriverUNV #
-#############
-FILE(GLOB DriverUNV_source_files src/DriverUNV/*.cpp)
 INCLUDE_DIRECTORIES(src/DriverUNV)
-ADD_LIBRARY(DriverUNV SHARED ${DriverUNV_source_files})
-TARGET_LINK_LIBRARIES(DriverUNV SMDS Driver)
-
-###########
-# SMESHDS #
-###########
-FILE(GLOB SMESHDS_source_files src/SMESHDS/*.cpp)
 INCLUDE_DIRECTORIES(src/SMESHDS)
-ADD_LIBRARY(SMESHDS SHARED ${SMESHDS_source_files})
-TARGET_LINK_LIBRARIES(SMESHDS SMDS TKernel TKMath TKBRep)
-
-#########
-# SMESH #
-#########
-FILE(GLOB SMESH_source_files src/SMESH/*.cpp src/Controls/*.cpp)
 INCLUDE_DIRECTORIES(src/SMESH)
-ADD_LIBRARY(SMESH SHARED ${SMESH_source_files})
-TARGET_LINK_LIBRARIES(SMESH SMDS SMESHDS TKernel TKMath TKG2d TKG3d TKMeshVS
-                      TKPrim TKGeomBase TKGeomAlgo TKBRep TKTopAlgo TKShHealing
-                      Driver DriverSTL DriverDAT DriverUNV)
+INCLUDE_DIRECTORIES(src/MEFISTO2)
 
-############
-# MEFISTO2 #
-############
+#######################
+# Define source files #
+#######################
+FILE(GLOB libSMESH_source_files src/SMDS/*.cpp
+                                src/Driver/*.cpp
+                                src/DriverSTL/*.cpp
+                                src/DriverDAT/*.cpp
+                                src/DriverUNV/*.cpp
+                                src/SMESHDS/*.cpp
+                                src/SMESH/*.cpp src/Controls/*.cpp
+)
+
 IF(WIN32)
     FILE(GLOB MEFISTO2_source_files src/MEFISTO2/aptrte.cpp src/MEFISTO2/MEFISTO2F.def)
 ELSE(WIN32)
-    FILE(GLOB src/MEFISTO2/*.cpp src/MEFISTO2/trte.f)
-ENDIF(WIN32)
-INCLUDE_DIRECTORIES(src/MEFISTO2)
-
-ADD_LIBRARY(MEFISTO2 SHARED ${MEFISTO2_source_files})
-IF(WIN32)
-TARGET_LINK_LIBRARIES(MEFISTO2 MEFISTO2F)
-ELSE(WIN32)
-TARGET_LINK_LIBRARIES(MEFISTO2 f2c)
+    FILE(GLOB MEFISTO2_source_files src/MEFISTO2/*.cpp src/MEFISTO2/trte.f)
 ENDIF(WIN32)
 
-##############
-# StdMeshers #
-##############
-FILE(GLOB StdMeshers_source_files src/StdMeshers/*.cpp)
+##################################
+# Build a single dynamic library #
+##################################
+ADD_LIBRARY(SMESH_dynamic SHARED ${libSMESH_source_files} ${MEFISTO2_source_files})
+TARGET_LINK_LIBRARIES(SMESH_dynamic TKernel TKMath TKG2d TKG3d TKMeshVS
+                      TKPrim TKGeomBase TKGeomAlgo TKBRep TKTopAlgo TKShHealing
+                      TKAdvTools)
 
-INCLUDE_DIRECTORIES(src/StdMeshers)
+###############################
+# Also build a static library #
+###############################
+ADD_LIBRARY(SMESH_static STATIC ${libSMESH_source_files} ${MEFISTO2_source_files})
 
-ADD_LIBRARY(StdMeshers SHARED ${StdMeshers_source_files})
-TARGET_LINK_LIBRARIES(StdMeshers SMESH TKernel TKMath TKAdvTools MEFISTO2)
-
-###########
-# INSTALL #
-###########
-
-# Path name install: for instance, SMESH-5.1.2.7
-SET(INSTALL_PATH_NAME SMESH-${SMESH_VERSION_MAJOR}.${SMESH_VERSION_MINOR}.${SMESH_VERSION_PATCH}.${SMESH_VERSION_TWEAK})
-
-IF(UNIX)
-    # Libraries are installed by default in /usr/local/lib/SMESH-5.1.2.7
-    INSTALL(TARGETS SMDS Driver DriverSTL DriverDAT DriverUNV
-            SMESHDS SMESH StdMeshers
-            DESTINATION /usr/local/lib/${INSTALL_PATH_NAME})
-    # Headers are installed by default in /usr/local/include/SMESH-5.1.2.7
-    INSTALL(DIRECTORY inc/
-            DESTINATION /usr/local/include/${INSTALL_PATH_NAME}
-            FILES_MATCHING PATTERN "*.h*")
-ENDIF(UNIX)
