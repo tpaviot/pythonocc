@@ -160,11 +160,8 @@ elif sys.platform=='linux2':
         SALOME_GEOM_LIB = os.path.join(GEOM_ROOT,'lib')
     except:
         SALOME_GEOM_LIB = '/opt/SalomeGeometry/lib'
-    try:
-        SMESH_ROOT = os.environ['SMESHROOT']
-        SALOME_SMESH_LIB = os.path.join(SMESH_ROOT,'lib')
-    except:
-        SALOME_SMESH_LIB = '/opt/salomesmesh/lib'
+
+    SALOME_SMESH_LIB = '/usr/local/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
@@ -173,7 +170,7 @@ elif sys.platform=='linux2':
                      ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]      
     SWIG_OPTS = ['-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
-                 '-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
+                 '-outdir','%s'%SWIG_OUT_DIR]
     ECA = []
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
@@ -190,7 +187,7 @@ elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     SWIG_OPTS = ['-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                   '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
-                  '-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
+                  '-outdir','%s'%SWIG_OUT_DIR]
     if bits==64:
         SWIG_OPTS.append('-D_OCC64')
     os.environ['CC'] = 'g++'
@@ -202,8 +199,10 @@ elif sys.platform=='darwin':
       OCC_LIB = '/Library/OpenCASCADE/6.3.0/lib'
       OCC_INC = '/Library/OpenCASCADE/6.3.0/inc'
     SALOME_GEOM_LIB = '/usr/local/lib/GEOM-5.3.0.0'
-    SALOME_SMESH_LIB = '/usr/local/lib/SMESH-5.3.0.0/'        
+    SALOME_SMESH_LIB = '/usr/local/lib'        
     GCC_XML_PATH = which('gccxml')
+    print GCC_XML_PATH
+    GCC_XML_PATH='/usr/local/bin/bin'
 
     if GCC_XML_PATH == '':
         print 'gccxml was not found'
@@ -215,7 +214,7 @@ elif sys.platform=='darwin':
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
         ECA.append('-I/usr/include/c++/4.2.1/x86_64-apple-darwin10') # Snow Leopard
-    ELA = []#'-lf2c']
+    ELA = []
     EXTRA_LIBS = ['-framework Python']
 
 else:
@@ -231,4 +230,5 @@ MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
 BOOST_INC = os.path.join(os.getcwd(),'contrib')
 SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','SalomeGeometry','inc_pythonocc')
-SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','salomesmesh','inc')
+SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','SMESH','inc')
+

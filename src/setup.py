@@ -85,13 +85,6 @@ for elem in sys.argv:
         sys.argv.remove(elem)
         break
 
-#Check whether the --with-boost-include option is passed
-#for elem in sys.argv:
-#    if elem.startswith('--with-boost-include='):
-#        environment.BOOST_INC = elem.split('--with-boost-include=')[1]
-#        sys.argv.remove(elem)
-#        break
-    
 #Check whether the --with-occ-include option is passed
 for elem in sys.argv:
     if elem.startswith('--with-occ-include='):
@@ -199,9 +192,9 @@ def check_config():
         if not h:
             print 'SMESH_Mesh.hxx header file not found. pythonOCC compilation aborted'
             sys.exit(0)
-        l = check_salomesmesh_lib('Driver')
+        l = check_salomesmesh_lib('SMESH')
         if not l:
-            print 'libDriver not found (part of salomesmesh). pythonOCC compilation aborted'
+            print 'libSMESH not found (part of salomesmesh). pythonOCC compilation aborted'
             sys.exit(0)
         # BOOST
         shared_ptr_header = os.path.join(environment.BOOST_INC,'boost','shared_ptr.hpp')
@@ -223,12 +216,11 @@ With [options]:
     --with-occ-include: location of opencascade includes
     --with-occ-lib: location of opencascade libs
     --with-salomegeom: location of salomegeom libs
-    --with-smesh-lib: location of salomesmesh libs
-    --with-boost-include: boost include directory location
+    --with-smesh-lib: location of SMESH library (default is /usr/local/lib on Unix) 
     -ccompiler: compiler can be either 'gcc', 'mingw32' or 'msvc'
 Examples:
-    - under Windows: python setup.py build --enable_geom -j2 -cmsvc install
-    - under Windows, without the GEOM module: python setup.py build -cmsvc install
+    - under Windows: python setup.py build --enable_geom --enable-smesh -j2 -cmsvc install
+    - under Windows, without the GEOM and SMESH wrappers: python setup.py build -cmsvc install
     - under Linux: python setup.py build --enable_geom --enable_smesh -j2
     """
     print help_str
@@ -360,11 +352,9 @@ if WRAP_SALOME_GEOM:
             sys.exit(0)
 #
 # Salome SMESH libs
-#
-SMESH_LIBS = ['Driver','DriverDAT','DriverSTL','DriverUNV',\
-                        'SMDS','SMESH',
-                        'SMESHDS','StdMeshers'
-                        ]
+#                     ]
+SMESH_LIBS = ['SMESH']
+
 if WRAP_SALOME_SMESH:
     for smesh_library in SMESH_LIBS:
         if not check_salomesmesh_lib(smesh_library):
