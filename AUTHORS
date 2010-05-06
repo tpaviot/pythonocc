@@ -1,9 +1,10 @@
-The python wrapper has been developed by:
+The pythonOCC project was founded by Thomas Paviot
+
+It's currently maintained by Thomas Paviot and Jelle Feringa.
+
+For any question, please contact:
 
 Thomas Paviot - tpaviot@gmail.com
 Jelle Feringa - jelleferinga@gmail.com
 
-The samples directory is distributed as a separated package. Contributors to these files are:
-Andy Haywood : InteractiveViewer application
-Bryan Cole: OCAF stuff
-Thomas Paviot and Jelle Feringa developed other scripts.
+The example folder was contributed by many contributors. Please refer to file headers to have details.

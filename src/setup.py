@@ -22,7 +22,6 @@ import os,os.path
 import sys
 
 import shutil
-import time
 # distutils stuff, necessary to customize compiler settings and setup the pythonOCC package
 import distutils
 from distutils.core import setup, Extension
@@ -30,99 +29,207 @@ from distutils import sysconfig
 from distutils.command.build_ext import build_ext as _build_ext
 
 sys.path.append(os.path.join(os.getcwd(),'wrapper'))
-import Modules
-#from environment import VERSION
 import environment
+import Modules
+import customize_build
+
+#
+# Package Name
+#
+PACKAGE = 'OCC'
+
 # Try to import multiprocessing(python2.6 or higher) or processing(python2.5) packages
 try:
     import multiprocessing as processing
     ncpus = processing.cpu_count()
-    #print "Enabled multiprocess compilation for %i cpu(s)"%nprocs
     HAVE_MULTIPROCESSING = True
 except:
     HAVE_MULTIPROCESSING = False
 
-init_time = time.time()
+#Check whether the -j nprocs is passed
+if ('-help' in sys.argv) or ('-h' in sys.argv):
+    help_str="""pythonOCC setup - (c) Thomas Paviot, 2008-2009.
+Usage: python setup.py build install[options]
+With [options]:
+    --disable-GEOM: disable wrapper for the GEOM library
+    --disable-SMESH: disable wrapper for the Salome_SMESH library
+    -jNPROCS: number of processes to use
+    --with-occ-include: location of opencascade includes
+    --with-occ-lib: location of opencascade libs
+    --with-salomegeom: location of salomegeom libs
+    --with-smesh-lib: location of SMESH library (default is /usr/local/lib on Unix) 
+    -ccompiler: compiler can be either 'gcc', 'mingw32' or 'msvc'
+Examples:
+    - under Windows: python setup.py build -j2 -cmsvc install
+    - under Windows, without the GEOM and SMESH wrappers: python setup.py build --disable-GEOM --disable-SMESH -cmsvc install
+    - under Linux: python setup.py build -j2
+    """
+    print help_str
+    sys.exit(0)
 
-if '--enable-geom' in sys.argv:
-    WRAP_SALOME_GEOM = True #overload default behaviour
-    sys.argv.remove('--enable-geom')
-else:
-    WRAP_SALOME_GEOM = False
+#
+# OpenCascade libs
+#
+libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
+             'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
+             'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', 'TKCDLFront', 'TKCPPClient', 'TKCPPExt',\
+             'TKCPPIntExt', 'TKCPPJini', 'TKCSFDBSchema', 'TKernel',\
+             'TKFeat', 'TKFillet', 'TKG2d', 'TKG3d', 'TKGeomAlgo', 'TKGeomBase', 'TKHLR', 'TKIDLFront',\
+             'TKIGES', 'TKLCAF', 'TKMath', 'TKMesh', 'TKMeshVS', 'TKNIS', 'TKOffset',\
+             'TKOpenGl', 'TKPCAF', 'TKPLCAF', 'TKPrim', 'TKPShape', 'TKService', 'TKShapeSchema',\
+             'TKShHealing', 'TKStdLSchema', 'TKStdSchema', 'TKSTEP', 'TKSTEP209', 'TKSTEPAttr',\
+             'TKSTEPBase', 'TKSTL', 'TKTCPPExt', 'TKTObj', 'TKTopAlgo', \
+             'TKV2d', 'TKV3d', 'TKVRML', 'TKXCAF', 'TKXCAFSchema',\
+             'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
+             'TKXmlXCAF', 'TKXSBase', 'XCAFPlugin',\
+             'XmlLPlugin', 'XmlPlugin', 'XmlXCAFPlugin']
+#
+# GEOM libraries
+#
+GEOM_LIBS = ['GEOM']
+#
+# SMESH libraries
+#                     ]
+SMESH_LIBS = ['SMESH']
 
-# Check whether Salome GEOM package must be wrapped. True by default.
-if '--enable-smesh' in sys.argv:
-    WRAP_SALOME_SMESH = True #overload default behaviour
-    sys.argv.remove('--enable-smesh')
-else:
-    WRAP_SALOME_SMESH = False
+LIBS = libraries
 
-#Check whether build a 'all_in_one' distro (for Win32)
-if '--all_in_one' in sys.argv and sys.platform=='win32':
-    ALL_IN_ONE = True #overload default behaviour
-    sys.argv.remove('--all_in_one')
-else:
-    ALL_IN_ONE = False
+def parse_opt():
+    global BUILD, INSTALL, WRAP_SALOME_GEOM, WRAP_SALOME_SMESH,\
+           ALL_IN_ONE, SMESH_ONLY, nprocs, MULTI_PROCESS_COMPILATION
+    # Check build mode
+    if 'build' in sys.argv:
+        BUILD = True
+    else:
+        BUILD = False
+    # Check install mode
+    if 'install' in sys.argv:
+        INSTALL = True
+    else:
+        INSTALL = False
+    # Check clean
+    if 'clean' in sys.argv:
+        clean()
+        sys.exit(0)
+    # By default, GEOM is wrapped
+    if '--disable-GEOM' in sys.argv:
+        WRAP_SALOME_GEOM = False
+        sys.argv.remove('--disable-GEOM')
+    else:
+        WRAP_SALOME_GEOM = True
+    # By default, SMESH is wrapped
+    if '--disable-SMESH' in sys.argv:
+        WRAP_SALOME_SMESH = False
+        sys.argv.remove('--disable-SMESH')
+    else:
+        WRAP_SALOME_SMESH = True
+    #Check whether build a 'all_in_one' distro (for Win32)
+    if '--all_in_one' in sys.argv and sys.platform=='win32':
+        ALL_IN_ONE = True #overload default behaviour
+        sys.argv.remove('--all_in_one')
+    else:
+        ALL_IN_ONE = False
+    #Windows hack to enable 'multiprocess compilation'
+    if '--reverse' in sys.argv and sys.platform=='win32':
+        sys.argv.remove('--reverse')
+        Modules.MODULES.reverse()
+    #Add an option to tell setup.py to build only SMESH
+    if '--smesh-only' in sys.argv:
+        SMESH_ONLY = True #overload default behaviour
+        sys.argv.remove('--smesh-only')
+        WRAP_SALOME_SMESH = True
+    else:
+        SMESH_ONLY = False 
+    #Check whether the -j nprocs option is passed
+    nprocs = 1 #by default, jut 1 proc
+    MULTI_PROCESS_COMPILATION = False
+    for elem in sys.argv:
+        if elem[:2]=='-j':
+            nprocs = int(elem.split('-j')[1])
+            sys.argv.remove(elem)
+            check_multiprocessing()
+            break
+    #Check whether the --with-occ-include option is passed
+    for elem in sys.argv:
+        if elem.startswith('--with-occ-include='):
+            environment.OCC_INC = elem.split('--with-occ-include=')[1]
+            sys.argv.remove(elem)
+            break
+    #Check whether the --with-occ-lib option is passed
+    for elem in sys.argv:
+        if elem.startswith('--with-occ-lib='):
+            environment.OCC_LIB = elem.split('--with-occ-lib=')[1]
+            sys.argv.remove(elem)
+            break
+    #Check whether the --with-smesh-lib option is passed
+    for elem in sys.argv:
+        if elem.startswith('--with-smesh-lib='):
+            environment.SALOME_SMESH_LIB = elem.split('--with-smesh-lib=')[1]
+            sys.argv.remove(elem)
+            break
+    #Check whether the --with-geom-lib option is passed
+    for elem in sys.argv:
+        if elem.startswith('--with-geom-lib='):
+            environment.SALOME_GEOM_LIB = elem.split('--with-geom-lib=')[1]
+            sys.argv.remove(elem)
+            break
 
-#Windows hack to enable 'multiprocess compilation'
-if '--reverse' in sys.argv and sys.platform=='win32':
-    sys.argv.remove('--reverse')
-    Modules.MODULES.reverse()
+def check_multiprocessing():
+    ''' Check whether the multiprocessing module are available
+    '''
+    global MULTI_PROCESS_COMPILATION
+    if nprocs>1 and HAVE_MULTIPROCESSING:
+        if ncpus == 1:#just one CPU, no need for multiprocess:
+            MULTI_PROCESS_COMPILATION = False
+        else:
+            #nprocs = int(options.nprocs)
+            MULTI_PROCESS_COMPILATION = True
+    elif nprocs>1 and not HAVE_MULTIPROCESSING:
+        print 'The multiprocessing module can not be found. pythonOCC will be buildin single process mode.'
+    else:
+        MULTI_PROCESS_COMPILATION = False
 
-#Add an option to tell setup.py to build only SMESH
-if '--smesh-only' in sys.argv:
-    SMESH_ONLY = True #overload default behaviour
-    sys.argv.remove('--smesh-only')
-    WRAP_SALOME_SMESH = True
-else:
-    SMESH_ONLY = False
+def create_path_for_building():
+    ''' Create ./OCC, ./build and SWIG_OUT_DIR directories
+    '''
+    if not (os.path.isdir(os.path.join(os.getcwd(),'OCC'))):
+            os.mkdir(os.path.join(os.getcwd(),'OCC'))
+    if not (os.path.isdir(os.path.join(os.getcwd(),'build'))):
+            os.mkdir(os.path.join(os.getcwd(),'build'))
+    if not (os.path.isdir(environment.SWIG_OUT_DIR)):
+            os.mkdir(environment.SWIG_OUT_DIR) 
+
+def clean():
+    ''' Remove paths created during compilation. This function is required by the
+    Debian packaging tool that calls python setup.py clean.
+    '''
+    OCC_directory = os.path.join(os.getcwd(),'OCC')
+    build_directory = os.path.join(os.getcwd(),'build')
+    if os.path.isdir(OCC_directory):
+        shutil.rmtree(OCC_directory)
+    if os.path.isdir(environment.SWIG_OUT_DIR):
+        shutil.rmtree(environment.SWIG_OUT_DIR)
+    # Remove all cpp wrappers created by SWIG
+    if os.path.isdir(environment.SWIG_FILES_PATH_MODULAR):
+        cpp_files_to_remove = glob.glob(os.path.join(environment.SWIG_FILES_PATH_MODULAR,'*.cpp'))
+        for cpp_file_to_remove in cpp_files_to_remove:
+            os.remove(cpp_file_to_remove)
+    # Remove all hxx wrapper files that might have been create when generating SWIG source files
+        hxx_files_to_remove = glob.glob(os.path.join(environment.SWIG_FILES_PATH_MODULAR,'*.hxx'))
+        for hxx_file_to_remove in hxx_files_to_remove:
+            if 'TopOpeBRepDS_tools.hxx' not in hxx_file_to_remove:
+                os.remove(hxx_file_to_remove)
         
-#Check whether the -j nprocs option is passed
-nprocs = 1 #by default, jut 1 proc
-for elem in sys.argv:
-    if elem[:2]=='-j':
-        nprocs = int(elem.split('-j')[1])
-        sys.argv.remove(elem)
-        break
-
-#Check whether the --with-occ-include option is passed
-for elem in sys.argv:
-    if elem.startswith('--with-occ-include='):
-        environment.OCC_INC = elem.split('--with-occ-include=')[1]
-        sys.argv.remove(elem)
-        break
-
-#Check whether the --with-occ-lib option is passed
-for elem in sys.argv:
-    if elem.startswith('--with-occ-lib='):
-        environment.OCC_LIB = elem.split('--with-occ-lib=')[1]
-        sys.argv.remove(elem)
-        break
-    
-#Check whether the --with-smesh-lib option is passed
-for elem in sys.argv:
-    if elem.startswith('--with-smesh-lib='):
-        environment.SALOME_SMESH_LIB = elem.split('--with-smesh-lib=')[1]
-        sys.argv.remove(elem)
-        break
-    
-#Check whether the --with-geom-lib option is passed
-for elem in sys.argv:
-    if elem.startswith('--with-geom-lib='):
-        environment.SALOME_GEOM_LIB = elem.split('--with-geom-lib=')[1]
-        sys.argv.remove(elem)
-        break
-
 def check_occ_lib(library):
     ''' Find OCC shared library
     '''
-    print 'Checking OCC %s library ...'%library,
+    print '%s '%library,
     found = glob.glob(os.path.join(environment.OCC_LIB,'*%s*'%library))
     if len(found)>0:
-        print 'yes'
+        #print 'yes'
         return True
     else:
-        print 'no'
+        print 'not found',
         return False
 
 def check_salomegeom_lib(library):
@@ -131,10 +238,10 @@ def check_salomegeom_lib(library):
     print 'Checking salomegeometry %s library ...'%library,
     found = glob.glob(os.path.join(environment.SALOME_GEOM_LIB,'*%s*'%library))
     if len(found)>0:
-        print 'yes'
+        print 'found'
         return True
     else:
-        print 'no'
+        print 'not found'
         return False
 
 def check_salomesmesh_lib(library):
@@ -143,27 +250,28 @@ def check_salomesmesh_lib(library):
     print 'Checking salomesmesh %s library ...'%library,
     found = glob.glob(os.path.join(environment.SALOME_SMESH_LIB,'*%s*'%library))
     if len(found)>0:
-        print 'yes'
+        print 'found'
         return True
     else:
-        print 'no'
+        print 'not found'
         return False
     
 def check_file(file,message):
-    ''' Function used to find headers, lib etc. necessary for compilation
+    ''' Check if a file can be found. Returns True or False.
+    This function used to find headers, lib etc. necessary for compilation
     '''
     print 'Checking %s ...'%message,
     if os.path.isfile(file):
-        print 'yes'
+        print 'found'
         return True
     else:
-        print 'no'
+        print 'not found'
         return False
 
 def build_smesh_library():
     ''' Launch compilation of SMESH from a python pipe
     '''
-    print 'This will build SMESH library and install shared library to /usr/local/lib'
+    print 'This will build the SMESH project and install shared library to /usr/local/lib'
     confirm_build = raw_input('Do you want to continue (y/n)?')
     if confirm_build not in ['Y','yes','Yes']:
         return False
@@ -175,9 +283,25 @@ def build_smesh_library():
         else:
             return False
 
-def check_config():
-    ''' Checks all
+def build_geom_library():
+    ''' Launch compilation of GEOM from a python pipe
     '''
+    print 'This will build the GEOM project and install shared library to /usr/local/lib'
+    confirm_build = raw_input('Do you want to continue (y/n)?')
+    if confirm_build not in ['Y','yes','Yes']:
+        return False
+    else:
+        os.system('sh ./wrapper/build_geom.sh')
+        # Check that the library was installed
+        if check_salomesmesh_lib('GEOM'):
+            return True
+        else:
+            return False
+
+def check_config():
+    ''' Checks all required dependencies
+    '''
+    global WRAP_SALOME_GEOM, WRAP_SALOME_SMESH, LIBS
     print "Building pythonOCC-%s for %s"%(environment.VERSION,sys.platform)
     # OCC includes and lib
     h = standard_transient_header = os.path.join(environment.OCC_INC,'Standard_Transient.hxx')
@@ -185,22 +309,31 @@ def check_config():
         print 'Error: the include path provided (%s) does not seem to contain all OCC headers. Please check that all OCC headers are located in this directory.'%environment.OCC_INC
         print 'pythonOCC compilation failed.'
         sys.exit(0) #exits, since compilation will fail
-    l = check_occ_lib('TKernel')
-    if not l:
-        print 'libTKernel not found (part of OpenCASCADE). pythonOCC compilation aborted'
-        sys.exit(0)
-    # salomegeometry
+    # check occ libraries
+    print 'Checking OpenCASCADE libraries ',
+    LIBS = []
+    for library in libraries:
+        if check_occ_lib(library):
+            LIBS.append(library)
+        else:
+            print 'Missing library %s. Compilation aborted.'%library
+            sys.exit(0)
+    print '... found.'
+    # GEOM
     if WRAP_SALOME_GEOM:
         geom_object_header = os.path.join(environment.SALOME_GEOM_INC,'GEOMAlgo_Algo.hxx')
-        h = check_file(geom_object_header,'salomegeometry GEOMAlgo_Algo.hxx header')
-        if not h:
+        geom_header_found = check_file(geom_object_header,'salomegeometry GEOMAlgo_Algo.hxx header')
+        if not geom_header_found:
             print 'GEOMAlgo_Algo.hxx header file not found. pythonOCC compilation aborted'
             sys.exit(0)
-        l = check_salomegeom_lib('Sketcher')
+        l = check_salomegeom_lib('GEOM')
         if not l:
-            print 'libSketcher not found (part of salomegeometry). pythonOCC compilation aborted'
-            sys.exit(0)
-    # salomesmesh
+            print 'GEOM library not found on your system'
+            success = build_geom_library()
+            if not success:
+                print 'Failed to build the GEOM library. pythonOCC will be built without the GEOM support'
+                WRAP_SALOME_GEOM = False
+    # SMESH
     if WRAP_SALOME_SMESH:
         smesh_mesh_header = os.path.join(environment.SALOME_SMESH_INC,'SMESH_Mesh.hxx')
         h = check_file(smesh_mesh_header,'salomesmesh SMESH_Mesh.hxx header')
@@ -209,8 +342,8 @@ def check_config():
             sys.exit(0)
         # BOOST
         shared_ptr_header = os.path.join(environment.BOOST_INC,'boost','shared_ptr.hpp')
-        b = check_file(shared_ptr_header,'boost/shared_ptr.hpp header')
-        if not b:
+        boost_header_found = check_file(shared_ptr_header,'boost/shared_ptr.hpp header')
+        if not boost_header_found:
             print 'boost/shared_ptr.hpp header not found. pythonOCC compilation aborted'
             sys.exit(0)
         smesh_lib_found = check_salomesmesh_lib('SMESH')
@@ -219,46 +352,13 @@ def check_config():
             # suggest building SMESH
             success = build_smesh_library()
             if not success:
-                print 'pythonOCC building aborted'
-                sys.exit(0)
+                print 'Failed to build the SMESH library. pythonOCC will be built without the SMESH support'
+                WRAP_SALOME_SMESH = False
 
-
+parse_opt()
 check_config()
 
-#Check whether the -j nprocs is passed
-if ('-help' in sys.argv) or ('-h' in sys.argv):
-    help_str="""pythonOCC setup - (c) Thomas Paviot, 2008-2009.
-Usage: python setup.py build install[options]
-With [options]:
-    --enable-geom: tells setup.py to wrap Salome_GEOM library
-    --enable-smesh: tells setup.py to wrap Salome_SMESH library
-    -jNPROCS: number of processes to use
-    --with-occ-include: location of opencascade includes
-    --with-occ-lib: location of opencascade libs
-    --with-salomegeom: location of salomegeom libs
-    --with-smesh-lib: location of SMESH library (default is /usr/local/lib on Unix) 
-    -ccompiler: compiler can be either 'gcc', 'mingw32' or 'msvc'
-Examples:
-    - under Windows: python setup.py build --enable_geom --enable-smesh -j2 -cmsvc install
-    - under Windows, without the GEOM and SMESH wrappers: python setup.py build -cmsvc install
-    - under Linux: python setup.py build --enable_geom --enable_smesh -j2
-    """
-    print help_str
-    sys.exit(0)
 
-
-if nprocs>1 and HAVE_MULTIPROCESSING:
-    if ncpus == 1:#just one CPU, no need for multiprocess:
-        MULTI_PROCESS_COMPILATION = False
-    else:
-        #nprocs = int(options.nprocs)
-        MULTI_PROCESS_COMPILATION = True
-elif nprocs>1 and not HAVE_MULTIPROCESSING:
-    raise NameError('The multiprocessing module connt be found. You can''t compile in multiprocess mode.')
-else:
-    MULTI_PROCESS_COMPILATION = False
-
-import customize_build
 
 
 def get_build_ext_instance():
@@ -275,7 +375,7 @@ class build_ext(_build_ext):
     def build_extension(self,ext):
         ''' This method take the extensions, append them to a list, and pass it to a multiprocessing.Pool
         '''
-        global build_lib
+        global build_lib, MULTI_PROCESS_COMPILATION
         build_lib = self.build_lib #stores the build_lib path in order to copy data files
         if MULTI_PROCESS_COMPILATION:
             self._extensions.append(ext)
@@ -286,25 +386,13 @@ class build_ext(_build_ext):
         else:
             customize_build.build_extension(ext)
 
-# Create paths for compilation process
-if not (os.path.isdir(os.path.join(os.getcwd(),'OCC'))):
-        os.mkdir(os.path.join(os.getcwd(),'OCC'))
-if not (os.path.isdir(os.path.join(os.getcwd(),'build'))):
-        os.mkdir(os.path.join(os.getcwd(),'build'))
-if not (os.path.isdir(environment.SWIG_OUT_DIR)):
-        os.mkdir(environment.SWIG_OUT_DIR)                 
-#
-# Package Name
-#
-PACKAGE = 'OCC'
-
-def Create__init__():
+def create_init_script():
     """
     Create the __init__.py file for OCC package.
     just create domething like: __all__ = ['gp,'gce']
     """
     print "Creating __init__.py script."
-    init_directory = environment.SWIG_OUT_DIR#os.path.join(os.getcwd(),'OCC')
+    init_directory = environment.SWIG_OUT_DIR
     if not os.path.isdir(init_directory):
         os.mkdir(init_directory)
     init_fp = open(os.path.join(init_directory,'__init__.py'),'w')
@@ -338,53 +426,16 @@ def install_file(full_filename):
     print 'Copying %s->%s'%(full_filename,install_dir)
     
 #
-# OpenCascade libs
-#
-libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
-             'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
-             'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', 'TKCDLFront', 'TKCPPClient', 'TKCPPExt',\
-             'TKCPPIntExt', 'TKCPPJini', 'TKCSFDBSchema', 'TKDCAF', 'TKDraw', 'TKernel',\
-             'TKFeat', 'TKFillet', 'TKG2d', 'TKG3d', 'TKGeomAlgo', 'TKGeomBase', 'TKHLR', 'TKIDLFront',\
-             'TKIGES', 'TKjcas','TKLCAF', 'TKMath', 'TKMesh', 'TKMeshVS', 'TKNIS', 'TKOffset',\
-             'TKOpenGl', 'TKPCAF', 'TKPLCAF', 'TKPrim', 'TKPShape', 'TKService', 'TKShapeSchema',\
-             'TKShHealing', 'TKStdLSchema', 'TKStdSchema', 'TKSTEP', 'TKSTEP209', 'TKSTEPAttr',\
-             'TKSTEPBase', 'TKSTL', 'TKTCPPExt', 'TKTObj', 'TKTObjDRAW', 'TKTopAlgo', 'TKTopTest',\
-             'TKV2d', 'TKV3d', 'TKViewerTest', 'TKVRML', 'TKWOK', 'TKWOKTcl', 'TKXCAF', 'TKXCAFSchema',\
-             'TKXDEDRAW', 'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
-             'TKXmlXCAF', 'TKXSBase', 'TKXSDRAW', 'XCAFPlugin',\
-             'XmlLPlugin', 'XmlPlugin', 'XmlXCAFPlugin']
-# Find the lib in OCC_LIB path and add it to the LIBS list
-LIBS = []
-for library in libraries:
-    if check_occ_lib(library):
-        LIBS.append(library)
-    
-#
 # Salome Geom libs
 #
-GEOM_LIBS = ['Sketcher','ShHealOper','Partition','NMTTools',\
-                        'NMTDS','GEOM','GEOMImpl',
-                        'GEOMAlgo','Archimede']
-if WRAP_SALOME_GEOM:
-    for geom_library in GEOM_LIBS:
-        if not check_salomegeom_lib(geom_library):
-            print 'lib%s not found (part of salomegeom). pythonOCC compilation aborted'%geom_library
-            sys.exit(0)
-#
-# Salome SMESH libs
-#                     ]
-SMESH_LIBS = ['SMESH']
-
-#if WRAP_SALOME_SMESH:
-#    raw_input('bozozo')
-#    for smesh_library in SMESH_LIBS:
-#        if not check_salomesmesh_lib(smesh_library):
-#            # libSMESH not found, suggest building
-#            success = build_smesh_library()
-#            if not success:
-#                print 'libSMESH not found (part of salomesmesh). pythonOCC compilation aborted'%smesh_library
-#                sys.exit(0)
-
+#GEOM_LIBS = ['Sketcher','ShHealOper','Partition','NMTTools',\
+#                        'NMTDS','GEOM','GEOMImpl',
+#                        'GEOMAlgo','Archimede']
+#if WRAP_SALOME_GEOM:
+#    for geom_library in GEOM_LIBS:
+#        if not check_salomegeom_lib(geom_library):
+#            print 'lib%s not found (part of salomegeom). pythonOCC compilation aborted'%geom_library
+#            sys.exit(0)
 
 
 if __name__=='__main__': #hack to enable multiprocessing under Windows
@@ -484,10 +535,12 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
         package_name = "pythonOCC-all_in_one"
     else:
         package_name = "pythonOCC"
+    
     #
     # Create __init__ script
     #
-    Create__init__()
+    if BUILD:
+        create_init_script()
 
     setup(cmdclass={'build_ext': build_ext},
           name = package_name,
@@ -521,14 +574,12 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
                       'OCC.DYN',\
                       'OCC.Toolkits.FoundationClasses',\
                       'OCC.Toolkits.ModelingData'],
-          #py_modules = ['OCC.Standard'],
-          #data_files = data,
           **KARGS
           )
     #
     # Copy all the python modules to the root package dir
-    # It's done only when 'build' or 'install' is in sys.argv
-    if 'build' in sys.argv:
+    # It's done only when 'build' is in sys.argv
+    if BUILD:
         modules_to_install = glob.glob(os.path.join(environment.SWIG_OUT_DIR,'*.py'))
         for module_to_install in modules_to_install:
             install_file(module_to_install)
@@ -544,6 +595,4 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
         image_file = os.path.join(os.getcwd(),'addons','Display','default_background.bmp')
         bg_image_dest = os.path.join(os.getcwd(),build_lib,'OCC','Display','default_background.bmp')
         shutil.copy(image_file, bg_image_dest)
-        
-    final_time = time.time()
-    print 'Compilation processed in %fs'%(final_time-init_time)
+

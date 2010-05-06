@@ -39,7 +39,8 @@ from OCC.STEPCAFControl import *
 from OCC.XSControl import *
 from OCC.STEPControl import *
 from OCC.Quantity import *
-
+from OCC.Utils.Topology import Topo
+from OCC.TopAbs import *
 import os
 
 class STEPImporter(object):
@@ -148,6 +149,59 @@ class STEPExporter(object):
         else:
             return False
 
+class STEPOCAF_Import(object):
+    '''
+    Imports STEP file that support layers & colors
+    '''
+    def __init__(self, filename, layer_name='layer-00'):
+        self.filename = filename
+        self._shapes = [] #an empty string
+    
+    def get_shapes(self):
+        return self._shapes
+    
+    def read(self):
+        h_doc = TDocStd.Handle_TDocStd_Document()
+        print "Empty Doc?", h_doc.IsNull()
+        
+        # Create the application
+        app = XCAFApp.GetApplication().GetObject()
+        app.NewDocument(TCollection.TCollection_ExtendedString("MDTV-CAF"),h_doc)
+        
+        # Get root assembly
+        doc = h_doc.GetObject()
+        h_shape_tool = XCAFDoc.XCAFDoc_DocumentTool().ShapeTool(doc.Main())
+        l_Colors = XCAFDoc.XCAFDoc_DocumentTool().ColorTool(doc.Main())
+        l_Layers = XCAFDoc.XCAFDoc_DocumentTool().LayerTool(doc.Main())
+        
+        STEPReader = STEPCAFControl_Reader()
+        STEPReader.SetColorMode(True)
+        STEPReader.SetLayerMode(True)
+        STEPReader.SetNameMode(True)
+        STEPReader.SetMatMode(True)
+        
+        status = STEPReader.ReadFile(str(self.filename))         
+        if status == IFSelect_RetDone:
+            STEPReader.Transfer(doc.GetHandle())
+        Labels = TDF_LabelSequence()
+        ColorLabels = TDF_LabelSequence()
+          #TopoDS_Shape aShape;
+        h_shape_tool.GetObject().GetFreeShapes(Labels)
+        print Labels.Length()
+        l_Colors.GetObject().GetColors(ColorLabels)
+        print 'Number of colors=%i'%ColorLabels.Length()
+#          if(CL_Len>0)
+#               ColorTool->GetColor(ColorLabels.Value(1),DefaultColor);
+        for i in range(Labels.Length()):
+            #print i
+            aShape = h_shape_tool.GetObject().GetShape(Labels.Value(i+1))
+            #print aShape,aShape.ShapeType()
+            if aShape.ShapeType() == TopAbs_COMPOUND:
+                t = Topo(aShape)
+                for t in t.solids():
+                    self._shapes.append(t)
+        return True
+
 class StepOCAF_Export(object):
     '''
     STEP export that support layers & colors
@@ -166,6 +220,9 @@ class StepOCAF_Export(object):
         h_shape_tool = XCAFDoc.XCAFDoc_DocumentTool().ShapeTool(doc.Main())
         l_Colors = XCAFDoc.XCAFDoc_DocumentTool().ColorTool(doc.Main())
         l_Layers = XCAFDoc.XCAFDoc_DocumentTool().LayerTool(doc.Main())
+        labels = TDF_LabelSequence()
+        ColorLabels = TDF_LabelSequence()
+          #TopoDS_Shape aShape;
         
         self.shape_tool = h_shape_tool.GetObject()
         self.top_label = self.shape_tool.NewShape()
@@ -229,12 +286,6 @@ class StepOCAF_Export(object):
             self.layers.SetLayer(shp_label, self.current_layer)
         
     def write(self):
-#        assert os.path.isdir(path), '%s not a valid directory'
-#        if filename.sub('step') or filename.sub('stp'):
-#            filename = os.path.join(path, filename)
-#        else:
-#            filename = os.path.join(path, filename+'.step')
-        
         WS = XSControl_WorkSession()
         writer = STEPCAFControl_Writer( WS.GetHandle(), False )
         writer.Transfer(self.h_doc, STEPControl_AsIs)

@@ -388,6 +388,8 @@ class ModularBuilder(object):
             elif (len(argument_types)==2 and argument_types[1]!="&"):#ex: Aspect_Handle const
                 to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
                 param_list.append([argument_types[0],argument_name])
+                print 'On y est'
+                print argument_types
             elif len(argument_types)==4:
                 to_write += "%s %s%s"%(argument_types[0],argument_types[1],argument_name)
                 param_list.append([argument_types[1],argument_name])
@@ -426,6 +428,7 @@ class ModularBuilder(object):
             END_WITH_CONST = True
         else:
             END_WITH_CONST = False
+        print 'avant:%s'%param_list
         return to_write, return_list, param_list, arguments, default_value, END_WITH_CONST, param_names,FUNCTION_MODIFIED
     
     def write_function( self , mem_fun , parent_is_abstract):
@@ -526,6 +529,7 @@ class ModularBuilder(object):
         # Write arguments of the method
         #
         str,return_list,param_list,arguments, default_value,END_WITH_CONST, param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun)
+        print param_list
         to_write += str
         if END_WITH_CONST:
             to_write += ") const;\n"
@@ -562,11 +566,10 @@ class ModularBuilder(object):
             self.AddFunctionTransformation("%s::%s\n"%(class_parent_name,function_name))
         # Write docstring to file
         if FUNCTION_MODIFIED: # The docstring has to be changed
-            #for arg in mem_fun.arguments:
-            #    print arg
             meth_doc = "%s("%function_name
             index=1
             for param in param_list:
+                #print param
                 meth_doc+=param[0]
                 meth_doc+=" "
                 meth_doc+=param[1]
@@ -581,7 +584,6 @@ class ModularBuilder(object):
             if len(return_list)<=1:#just one value
                 docstring+=' -> %s'%return_list[0][0]
             else:
-                print docstring
                 docstring+=' -> ['
                 index_2=1
                 for rt in return_list:
@@ -590,7 +592,11 @@ class ModularBuilder(object):
                         docstring+=", "
                     index_2+=1
                 docstring+=']'
-            docstring+='");\n\n'            
+            docstring+='");\n\n'
+            if function_name=='Edge':
+                print param_list
+                print docstring
+                m
         else:
             # automatically generated docstring by SWUG is perfect
             docstring = '\t\t%feature("autodoc", "1");\n'

@@ -20,59 +20,57 @@ pythonOCC needs the following libraries to be installed in order to provide full
 
 - the python programming language (http://www.python.org). Python 2.5 or higher is required,
 
-- a fortran compiler. Linux users should use gfortran.
-
-NOTE FOR MACOSX USERS: you must use f77/f2c. To install/build f77/f2c, just download and run the script
-named 'buildf2c' available from this url: http://hpc.sourceforge.net/buildf2c
-then:
-sudo buildf2c
-Now you have a working f2c/f77. 
-
+- a fortran compiler. Linux and MacOSX users should use gfortran. The Watcom Fortran compiler appears
+to be the best choice for Windows users.
+ 
 - SWIG 1.3.36 or higher,
 
-- OpenCASCADE 6.3.0 (download from http://www.opencascade.org).
+- OpenCASCADE 6.3.0 (download from http://www.opencascade.org),
+
+- CMake 2.6 or higher.
 
 At the end of the compilation process, be sure the CASROOT env var is set.
 
-- salomegeometry 5.1.2.7. Download the file geom-5.1.2.7.zip from http://sourceforge.net/projects/salomegeometry/
-Extract the content of this file to any temporary folder then:
-cd geom-5.1.2.7
-cd adm/lin
-autoreconf -- install
-./configure --prefix=/somewhere
-make
-sudo make install
-
-NOTE: when installation is done, you should add the GEOM_ROOT env var to your .bash_profile
-
-- salomesmesh 5.1.2.2 . Download the file smesh-5.1.2.2.zip from http://sourceforge.net/projects/salomesmesh/.
-Exract the content of this file to any temporary folder then:
-cd smesh-5.1.1.2
-cd adm/lin
-autoreconf --install
-./configure --prefix=/somewhere_else
-make
-sudo make install
- 
-BUILD:
-======
-
-cd pythonOCC-0.4
+Step 1 : build and install the SMESH library
+============================================
 cd src
+sh ./wrapper/build_smesh.sh
 
-The setup.py script hat to be run.
-python setup.py build --enable-geom --enable-smesh install
+You will be prompted to enter your admin password just before installation.
+At the end of the process, the shared library libSMESH.dylib (libSMESH.so on Linux) is installed to /usr/local/lib
 
-NOTE: the setup.py script looks for the CASROOT, GEOM_ROOT and SMESH_ROOT to find where dynamic libraries are located.
-If the libraries are not found (i.e. the compilation process fails), you have to specify the path of these libraries from
-the command line:
+Step 2 : build and install the GEOM library
+============================================
+from the same directory:
+sh ./wrapper/build_geom.sh
 
-python setup.py build install --enable-geom --enable-smesh --with-geom-lib=/path_to_geom_libs 
+You will be prompted to enter your admin password just before installation.
+At the end of the process, the shared library libGEOM.dylib (libGEOM.so on Linux) is installed to /usr/local/lib
+
+** Note ** if either the Step 1 or Step 2 fails, you will not be able to compile pythonOCC with SMESH and GEOM support.
+As a consequence, you will only benefit from poor meshing features and you'll miss the parametric modeling framework. You will
+however be able to run most of OCC based examples.
+
+Step 3 : build and install pythonOCC
+====================================
+from the same directory:
+python setup.py build
+sudo python setup.py install
+
+You can disable the GEOM or SMESH suport by passing arguments to the command line. For instance:
+python setup.py build --disable-GEOM --disable-SMESH
+
+Additional information:
+=======================
+
+You can use the following arguments to overload default parameters:
+--with-geom-lib=/path_to_geom_libs 
 --with-smesh-lib=/path_to_smesh_libs
 --with-occ-include=/path_to_opencascade_inc
 --with-occ-lib=/path_to_opencascade_libs
 
-NOTE: you can speed up the compilation process with multiprocessing. If you have a dual core machine, just add the -j flag
-with the number of cores:
-python setup.py build install --enable-geom --enable-smesh -j2
+To have details about the available customizations:
+python setup.py --help 
+
+
 

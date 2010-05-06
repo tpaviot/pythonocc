@@ -155,12 +155,12 @@ elif sys.platform=='linux2':
     else:
         OCC_INC = '/usr/include/opencascade'
         OCC_LIB = '/usr/lib'
-    try:
-        GEOM_ROOT = os.environ['GEOMROOT']
-        SALOME_GEOM_LIB = os.path.join(GEOM_ROOT,'lib')
-    except:
-        SALOME_GEOM_LIB = '/opt/SalomeGeometry/lib'
-
+#    try:
+#        GEOM_ROOT = os.environ['GEOMROOT']
+#        SALOME_GEOM_LIB = os.path.join(GEOM_ROOT,'lib')
+#    except:
+#        SALOME_GEOM_LIB = '/opt/SalomeGeometry/lib'
+    SALOME_GEOM_LIB = '/usr/local/lib'
     SALOME_SMESH_LIB = '/usr/local/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
@@ -198,11 +198,9 @@ elif sys.platform=='darwin':
     else:
       OCC_LIB = '/Library/OpenCASCADE/6.3.0/lib'
       OCC_INC = '/Library/OpenCASCADE/6.3.0/inc'
-    SALOME_GEOM_LIB = '/usr/local/lib/GEOM-5.3.0.0'
+    SALOME_GEOM_LIB = '/usr/local/lib'
     SALOME_SMESH_LIB = '/usr/local/lib'        
     GCC_XML_PATH = which('gccxml')
-    print GCC_XML_PATH
-    GCC_XML_PATH='/usr/local/bin/bin'
 
     if GCC_XML_PATH == '':
         print 'gccxml was not found'
@@ -229,6 +227,6 @@ VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
 BOOST_INC = os.path.join(os.getcwd(),'contrib')
-SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','SalomeGeometry','inc_pythonocc')
+SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','GEOM','inc_pythonocc')
 SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','SMESH','inc')
 
