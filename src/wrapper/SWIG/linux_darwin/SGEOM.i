@@ -501,6 +501,12 @@ class GEOM_Application : public TDocStd_Application {
 		%feature("autodoc", "1");
 		virtual		char * ResourcesName();
 		%feature("autodoc", "1");
+		virtual		void OnOpenTransaction(const Handle_TDocStd_Document &theDoc);
+		%feature("autodoc", "1");
+		virtual		void OnCommitTransaction(const Handle_TDocStd_Document &theDoc);
+		%feature("autodoc", "1");
+		virtual		void OnAbortTransaction(const Handle_TDocStd_Document &theDoc);
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsKind(const Handle_Standard_Type &arg0) const;
