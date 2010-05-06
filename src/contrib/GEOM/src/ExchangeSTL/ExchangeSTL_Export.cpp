@@ -44,7 +44,7 @@
 extern "C"
 {
 SALOME_WNT_EXPORT
-  int Export(const TopoDS_Shape& theShape,
+  int ExportSTL(const TopoDS_Shape& theShape,
              const TCollection_AsciiString& theFileName,
              const TCollection_AsciiString& theFormatName)
   {
