@@ -123,14 +123,14 @@ if sys.platform=='win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
     # Try to find OCC paths from environment analysis
 
-    if sys.version_info[0]==2 and sys.version_info[1]==5:#Python2.5
-        print "Python2.5"
-        SALOME_GEOM_LIB = os.path.join('Z:\\Salome\\salomegeometry\\trunk\\win32\\msvc71\\lib')
-        SALOME_SMESH_LIB = os.path.join('Z:\\Salome\\salomesmesh\\trunk\\win32\\msvc71\\lib')
-    elif sys.version_info[0]==2 and sys.version_info[1]==6:#Python2.6
-        print "Python2.6"
-        SALOME_GEOM_LIB = os.path.join('Z:\\Salome\\salomegeometry\\trunk\\msvc9\\cmake-build\\release')
-        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','salomesmesh_no_netgen','win32','lib')
+    if sys.version_info[0]==2 and sys.version_info[1]==5:
+        # Python2.5 on Windows needs msvc71 GEOM and SMESH librariesprint "Python2.5"
+        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','GEOM','win32','msvc71','release')
+        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','SMESH','win32','msvc71','release')
+    elif sys.version_info[0]==2 and sys.version_info[1]==6:
+        # Python 2.6 and higher needs msvc8 or higher
+        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','GEOM','win32','msvc8-9-10','lib','release')
+        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','SMESH','win32','msvc8-9-10','lib','release')
     GCC_XML_PATH = os.path.join(os.getcwd(),'..','..','pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
@@ -138,7 +138,7 @@ if sys.platform=='win32':
                      ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]
     if sys.version_info[:3] >= (2,6,0):
         DEFINE_MACROS += [('HAVE_ACOSH',None),('HAVE_ASINH',None),('HAVE_ATANH',None)]
-    ECA = ['/EHsc','/GL','/link']
+    ECA = ['/EHsc','/GL','/link','/w4251']
     SWIG_OPTS = ['-O','-c++','-DWNT',\
                  '-w302,401,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
     ELA = ['/LTCG']
