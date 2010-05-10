@@ -513,13 +513,6 @@ if sys.platform=='win32':
              #('WNT',[],[]), gccxml error
              ('MeshVS',['Aspect','Graphic3d','PrsMgr','Prs3d'],[]),
              ])
-    MODULES.extend([
-               ('XDEDRAW',[],[]),
-
-               ('EDL',[],[]),
-               ('HeaderSection',['Interface','MoniTool','TCollection'],['HeaderSection_Protocol']),
-               ('DNaming',[],[]),
-               ])
 else:
     MODULES.extend([
                     ('Xw',['OSD','TCollection'],[]),
