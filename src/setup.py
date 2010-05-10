@@ -424,19 +424,6 @@ def install_file(full_filename):
     filename = os.path.basename(full_filename)
     shutil.copy(full_filename, os.path.join(install_dir,filename))
     print 'Copying %s->%s'%(full_filename,install_dir)
-    
-#
-# Salome Geom libs
-#
-#GEOM_LIBS = ['Sketcher','ShHealOper','Partition','NMTTools',\
-#                        'NMTDS','GEOM','GEOMImpl',
-#                        'GEOMAlgo','Archimede']
-#if WRAP_SALOME_GEOM:
-#    for geom_library in GEOM_LIBS:
-#        if not check_salomegeom_lib(geom_library):
-#            print 'lib%s not found (part of salomegeom). pythonOCC compilation aborted'%geom_library
-#            sys.exit(0)
-
 
 if __name__=='__main__': #hack to enable multiprocessing under Windows
     extension = []
@@ -579,6 +566,7 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
     #
     # Copy all the python modules to the root package dir
     # It's done only when 'build' is in sys.argv
+    #
     if BUILD:
         modules_to_install = glob.glob(os.path.join(environment.SWIG_OUT_DIR,'*.py'))
         for module_to_install in modules_to_install:
@@ -595,4 +583,20 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
         image_file = os.path.join(os.getcwd(),'addons','Display','default_background.bmp')
         bg_image_dest = os.path.join(os.getcwd(),build_lib,'OCC','Display','default_background.bmp')
         shutil.copy(image_file, bg_image_dest)
+        # Under Windows, copy GEOM.dll and SMESH.dll to site-packages/OCC
+        if sys.platform=='win32':
+            if WRAP_SALOME_GEOM:
+                geom_dll = os.path.join(environment.SALOME_GEOM_LIB,'GEOM.dll')
+                geom_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC','GEOM.dll')
+                shutil.copy(geom_dll, geom_dll_dest)
+            if WRAP_SALOME_SMESH:
+                smesh_dll = os.path.join(environment.SALOME_SMESH_LIB,'SMESH.dll')
+                smesh_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC','SMESH.dll')
+                shutil.copy(smesh_dll, smesh_dll_dest)
+                # Windows also need the MEFISTO2F.dll file that comes from the WATCOM Fortran compiler
+                mefisto2f_dll = os.path.join(environment.SALOME_SMESH_LIB,'MEFISTO2F.dll')
+                mefisto2f_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC','MEFISTO2F.dll')
+                shutil.copy(mefisto2f_dll, mefisto2f_dll_dest)
+                
+                
 
