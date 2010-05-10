@@ -10,6 +10,15 @@ SET(LIBRARY_OUTPUT_PATH cmake-build)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(inc)
 
+###########################
+# Win32 specific settings #
+###########################
+IF(WIN32)
+  SET(CMAKE_CXX_FLAGS_RELEASE "/nologo /O2 /Ob1 /GF /EHsc /MD /GS /Gd /Gy /TP")
+  SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "/INCREMENTAL:NO /NOLOGO")
+  SET(LIBRARY_OUTPUT_PATH  ${CMAKE_BINARY_DIR}/win32/lib)
+ENDIF(WIN32)
+
 ########################################
 # OpenCASCADE include and lib location #
 ########################################
@@ -56,7 +65,7 @@ ELSE(UNIX)
   IF(WIN32)
     ######### Windows ###########
     MESSAGE("-- Windows system detected")
-    ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB)
+    ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DNo_Exception -DCSFDB)
   ELSE(WIN32)
     MESSAGE("Unknown platform")
   ENDIF(WIN32)
