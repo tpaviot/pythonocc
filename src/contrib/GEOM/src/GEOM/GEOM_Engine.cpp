@@ -88,6 +88,10 @@
 #define TEXTURE_LABEL_HEIGHT   4
 #define TEXTURE_LABEL_DATA     5
 
+#ifndef M_PI
+#define M_PI 3.14159265359
+#endif
+
 //used for replace variables in script
 #ifdef _DEBUG_
 static int MYDEBUG = 0;
