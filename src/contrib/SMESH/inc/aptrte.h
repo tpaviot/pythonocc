@@ -49,13 +49,10 @@
 #endif
 
 #ifdef WNT
- #if defined MEFISTO2D_EXPORTS
-  #define MEFISTO2D_EXPORT __declspec( dllexport )
- #else
-  #define MEFISTO2D_EXPORT __declspec( dllimport )
- #endif
+  #define MEFISTO2D_EXPORT __declspec(dllexport)
+  #define MEFISTO2D_STDCALL
 #else
- #define MEFISTO2D_EXPORT
+  #define MEFISTO2D_EXPORT
 #endif
 
 MEFISTO2D_EXPORT
@@ -136,7 +133,7 @@ MEFISTO2D_EXPORT
 
   #define MEFISTO2D_STDCALL
   
-#else //Lin and MacOSX use f77
+#elif !defined(WIN32)//Lin and MacOSX use f77
 
   #define MEFISTO2D_STDCALL
 

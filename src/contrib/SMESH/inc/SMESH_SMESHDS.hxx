@@ -27,13 +27,9 @@
 #define _SMESH_SMESHDS_HXX_
 
 #ifdef WNT
- #if defined SMESHDS_EXPORTS
-  #define SMESHDS_EXPORT __declspec( dllexport )
- #else
-  #define SMESHDS_EXPORT __declspec( dllimport )
- #endif
+  #define SMESHDS_EXPORT __declspec(dllexport)
 #else
- #define SMESHDS_EXPORT
+  #define SMESHDS_EXPORT
 #endif
 
 #endif

@@ -46,13 +46,9 @@
 #include "SMESH_Controls.hxx"
 
 #ifdef WNT
- #if defined SMESHCONTROLS_EXPORTS || defined SMESHControls_EXPORTS
   #define SMESHCONTROLS_EXPORT __declspec( dllexport )
- #else
-  #define SMESHCONTROLS_EXPORT __declspec( dllimport )
- #endif
 #else
- #define SMESHCONTROLS_EXPORT
+  #define SMESHCONTROLS_EXPORT
 #endif
 
 class SMDS_MeshElement;

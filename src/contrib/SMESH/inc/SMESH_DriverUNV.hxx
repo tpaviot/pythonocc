@@ -27,13 +27,9 @@
 #define _SMESH_DriverUNV_HXX_
 
 #ifdef WNT
- #if defined MESHDRIVERUNV_EXPORTS || defined MeshDriverUNV_EXPORTS
   #define MESHDRIVERUNV_EXPORT __declspec( dllexport )
- #else
-  #define MESHDRIVERUNV_EXPORT __declspec( dllimport )
- #endif
 #else
- #define MESHDRIVERUNV_EXPORT
+  #define MESHDRIVERUNV_EXPORT
 #endif
 
 #endif

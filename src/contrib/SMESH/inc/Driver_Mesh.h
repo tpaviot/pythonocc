@@ -28,15 +28,13 @@
 
 #include <string>
 
+
 #ifdef WNT
- #if defined MESHDRIVER_EXPORTS || defined MeshDriver_EXPORTS
   #define MESHDRIVER_EXPORT __declspec( dllexport )
- #else
-  #define MESHDRIVER_EXPORT __declspec( dllimport )
- #endif
 #else
  #define MESHDRIVER_EXPORT
 #endif
+
 
 class MESHDRIVER_EXPORT Driver_Mesh
 {

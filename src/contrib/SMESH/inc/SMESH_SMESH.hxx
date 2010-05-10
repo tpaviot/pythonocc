@@ -27,13 +27,12 @@
 #define _SMESH_SMESH_HXX_
 
 #ifdef WNT
- #if defined SMESHimpl_EXPORTS
-  #define SMESH_EXPORT __declspec( dllexport )
- #else
-  #define SMESH_EXPORT __declspec( dllimport )
- #endif
+  #ifndef SMESH_EXPORT
+    #define SMESH_EXPORT __declspec(dllexport)
+  #endif
 #else
- #define SMESH_EXPORT
+  #define SMESH_EXPORT
 #endif
 
 #endif
+

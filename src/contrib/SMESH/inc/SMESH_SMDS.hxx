@@ -27,13 +27,9 @@
 #define _SMESH_SMDS_HXX_
 
 #ifdef WNT
- #if defined SMDS_EXPORTS
-  #define SMDS_EXPORT __declspec( dllexport )
- #else
-  #define SMDS_EXPORT __declspec( dllimport )
- #endif
+  #define SMDS_EXPORT __declspec(dllexport)
 #else
- #define SMDS_EXPORT
+  #define SMDS_EXPORT
 #endif
 
 #endif

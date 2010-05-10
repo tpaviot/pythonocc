@@ -28,13 +28,9 @@
 #define _SMESH_StdMeshers_HXX_
 
 #ifdef WNT
- #if defined STDMESHERS_EXPORTS || defined StdMeshers_EXPORTS
   #define STDMESHERS_EXPORT __declspec( dllexport )
- #else
-  #define STDMESHERS_EXPORT __declspec( dllimport )
- #endif
 #else
- #define STDMESHERS_EXPORT
+  #define STDMESHERS_EXPORT
 #endif
 
 #endif
