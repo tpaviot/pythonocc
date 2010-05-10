@@ -70,15 +70,15 @@ Examples:
 #
 # OpenCascade libs
 #
-libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
+libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'PTKernel',\
              'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
-             'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', 'TKCDLFront', 'TKCPPClient', 'TKCPPExt',\
-             'TKCPPIntExt', 'TKCPPJini', 'TKCSFDBSchema', 'TKernel',\
-             'TKFeat', 'TKFillet', 'TKG2d', 'TKG3d', 'TKGeomAlgo', 'TKGeomBase', 'TKHLR', 'TKIDLFront',\
+             'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', \
+             'TKernel',\
+             'TKFeat', 'TKFillet', 'TKG2d', 'TKG3d', 'TKGeomAlgo', 'TKGeomBase', 'TKHLR',\
              'TKIGES', 'TKLCAF', 'TKMath', 'TKMesh', 'TKMeshVS', 'TKNIS', 'TKOffset',\
              'TKOpenGl', 'TKPCAF', 'TKPLCAF', 'TKPrim', 'TKPShape', 'TKService', 'TKShapeSchema',\
              'TKShHealing', 'TKStdLSchema', 'TKStdSchema', 'TKSTEP', 'TKSTEP209', 'TKSTEPAttr',\
-             'TKSTEPBase', 'TKSTL', 'TKTCPPExt', 'TKTObj', 'TKTopAlgo', \
+             'TKSTEPBase', 'TKSTL', 'TKTObj', 'TKTopAlgo', \
              'TKV2d', 'TKV3d', 'TKVRML', 'TKXCAF', 'TKXCAFSchema',\
              'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
              'TKXmlXCAF', 'TKXSBase', 'XCAFPlugin',\
