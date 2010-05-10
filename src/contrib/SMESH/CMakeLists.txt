@@ -1,4 +1,4 @@
-# SGEOM cmake build file
+# SMESH cmake build file
 if (WIN32) #Problem with Fortran with MSVC
     PROJECT(SMESH CXX)
     MESSAGE("-- Build Win32")
@@ -24,6 +24,30 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../)
 IF(UNIX)
     INCLUDE(CMakeDetermineFortranCompiler)
 ENDIF(UNIX)
+# Under Apple MacOSX 10.6 64 bit, problems with macresearch gfortran
+# -> should use f77 from http://hpc.sourceforge.net/
+IF(APPLE)
+  IF(CMAKE_Fortran_COMPILER MATCHES "/bin/f77")
+    SET(F77 True)
+  ELSE(CMAKE_Fortran_COMPILER MATCHES "/bin/f77")
+    SET(F77 False)
+  ENDIF(CMAKE_Fortran_COMPILER MATCHES "/bin/f77")
+ENDIF(APPLE)
+
+###########################
+# Win32 specific settings #
+###########################
+IF(WIN32)
+  SET(CMAKE_CXX_FLAGS_RELEASE "/nologo /O2 /Ob1 /GF /EHsc /MD /GS /Gd /Gy /TP /GR /w4005 /wd4290 /wd4251 /wd4018 /wd4800 /wd4996 /wd4244 /wd4806 /wd4275 /wd4273 /wd4390")
+  SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "/INCREMENTAL:NO /NOLOGO")
+  IF(MSVC71)
+    SET(LIBRARY_OUTPUT_PATH  ${CMAKE_BINARY_DIR}/win32/msvc71/lib)
+  ELSE(MSVC71) # More recent MSVC releases
+    SET(LIBRARY_OUTPUT_PATH  ${CMAKE_BINARY_DIR}/win32/msvc8-9-10/lib)
+  ENDIF(MSVC71)
+  LINK_DIRECTORIES(${CMAKE_BINARY_DIR}/win32/MEFISTO2F_lib)
+ENDIF(WIN32)
+
 
 ########################################
 # OpenCASCADE include and lib location #
@@ -115,7 +139,12 @@ ADD_LIBRARY(SMESH SHARED ${libSMESH_source_files} ${MEFISTO2_source_files})
 TARGET_LINK_LIBRARIES(SMESH TKernel TKMath TKG2d TKG3d TKMeshVS
                       TKPrim TKGeomBase TKGeomAlgo TKBRep TKTopAlgo TKShHealing
                       TKAdvTools)
-
+IF(F77)
+  TARGET_LINK_LIBRARIES(SMESH f2c)
+ENDIF(F77)
+IF(WIN32)
+  TARGET_LINK_LIBRARIES(SMESH MEFISTO2F)
+ENDIF(WIN32)
 #################################
 # Install lib in /usr/local/lib #
 #################################
