@@ -595,18 +595,16 @@ class Curve(object):
         return self.brep_adaptor.Value(_mid)
         
     def divide_by_number_of_points(self, n_pts, lbound=None, ubound=None):
-        from OCC.GCPnts import GCPnts_UniformAbscissa
         _lbound, _ubound = self.domain()
-        
         if lbound:
             _lbound = lbound
         elif ubound:
             _ubound = ubound
-        
-        npts = GCPnts_UniformAbscissa(self.crv, n_pts, _lbound, _ubound)
+            
+        npts = GCPnts_UniformAbscissa(self.brep_adaptor, n_pts, _lbound, _ubound)
         if npts.IsDone():
             for i in xrange(npts.NbPoints()):
-                yield npts.Parameter(i)
+                yield npts.Parameter(i+1)
         else:
             yield None
     
@@ -716,10 +714,11 @@ class Curve(object):
 #    Curve.
 #===============================================================================
     
-    def parameter_to_coordinate(self, u):
+    def parameter_to_point(self, u):
         '''returns the coordinate at parameter u
         '''
-        self._lprops_curve_tool(self.crv).Value(u)
+        #self._lprops_curve_tool(self.crv).Value(u)
+        return self.crv.Value(u)
     
     def coordinate_to_parameter(self, coord):
         '''returns the parameters on face at world coordinate `coord`
@@ -932,12 +931,12 @@ class Face(object):
         sa = ShapeAnalysis_Surface(self.srf)
         return sa.IsUClosed(), sa.IsVClosed()
 
-    def uv_to_coordinate(self, u, v):
+    def parameter_to_point(self, u, v):
         '''returns the coordinate at u,v
         '''
         return self.srf.Value(u,v)
         
-    def coordinate_to_uv(self, pt):
+    def point_to_parameter(self, pt):
         '''
         returns the uv value of a point on a surface
         @param pt:
