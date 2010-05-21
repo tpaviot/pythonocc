@@ -117,6 +117,10 @@ TARGET_LINK_LIBRARIES(GEOM TKernel TKBRep TKBO TKMath
 #################################
 # Install lib in /usr/local/lib #
 #################################
+IF(NOT GEOM_INSTALL_LIB_DIR)
+  SET(GEOM_INSTALL_LIB_DIR ${CMAKE_INSTALL_PREFIX}/lib)
+ENDIF(NOT GEOM_INSTALL_LIB_DIR)
+
 IF (UNIX)
-    INSTALL(TARGETS GEOM DESTINATION /usr/local/lib)
+    INSTALL(TARGETS GEOM DESTINATION ${GEOM_INSTALL_LIB_DIR})
 ENDIF(UNIX)
