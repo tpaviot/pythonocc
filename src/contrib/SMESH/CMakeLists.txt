@@ -148,6 +148,10 @@ ENDIF(WIN32)
 #################################
 # Install lib in /usr/local/lib #
 #################################
+IF(NOT SMESH_INSTALL_LIB_DIR)
+  SET(SMESH_INSTALL_LIB_DIR ${CMAKE_INSTALL_PREFIX}/lib)
+ENDIF(NOT SMESH_INSTALL_LIB_DIR)
+
 IF (UNIX)
-    INSTALL(TARGETS SMESH DESTINATION /usr/local/lib)
+    INSTALL(TARGETS SMESH DESTINATION ${SMESH_INSTALL_LIB_DIR})
 ENDIF(UNIX)
