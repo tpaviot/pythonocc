@@ -42,6 +42,7 @@ void Display3d::Init(int window_handle)
 	printf("WNT Graphic device created.\n");
 	myWindow = new WNT_Window( gd ,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo));
 	printf("WNT window created.\n");
+	myWindow->SetFlags(WDF_NOERASEBKGRND); //prevent flickering
 	#else
 	gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"));
 	printf("Graphic device created.\n");
