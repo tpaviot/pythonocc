@@ -57,11 +57,15 @@ IF(WIN32)
     # Under Windows, check the CASROOT env variable
     FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx 
               $ENV{CASROOT}\\inc)
-    SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
+    IF(NOT OCC_LIB_PATH)
+        SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
+    ENDIF(NOT OCC_LIB_PATH)
     # Find the Standard_Real.hxx header in this path
 ELSE(WIN32) #Unix
     FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx $ENV{CASROOT}/inc)
-    SET(OCC_LIB_PATH "$ENV{CASROOT}/lib")
+    IF(NOT OCC_LIB_PATH)
+        SET(OCC_LIB_PATH "$ENV{CASROOT}/lib")
+    ENDIF(NOT OCC_LIB_PATH)
     #FIND_LIBRARY(OCC_LIB_PATH TKernel PATHS $ENV{CASROOT}/lib)
     #MESSAGE(${OCC_LIB_PATH})
 ENDIF(WIN32)
