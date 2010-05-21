@@ -394,7 +394,7 @@ def create_init_script():
     print "Creating __init__.py script."
     init_directory = environment.SWIG_OUT_DIR
     if not os.path.isdir(init_directory):
-        os.mkdir(init_directory)
+        os.makedirs(init_directory)
     init_fp = open(os.path.join(init_directory,'__init__.py'),'w')
     #
     # if it is 'all_in_one' build, then the __init__.py script sets the env CSF_GraphicShr:
