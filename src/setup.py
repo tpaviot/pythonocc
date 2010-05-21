@@ -56,7 +56,7 @@ With [options]:
     -jNPROCS: number of processes to use
     --with-occ-include: location of opencascade includes
     --with-occ-lib: location of opencascade libs
-    --with-salomegeom: location of salomegeom libs
+    --with-geom-lib: location of salomegeom libs
     --with-smesh-lib: location of SMESH library (default is /usr/local/lib on Unix) 
     -ccompiler: compiler can be either 'gcc', 'mingw32' or 'msvc'
 Examples:
