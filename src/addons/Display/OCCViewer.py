@@ -65,7 +65,7 @@ class BaseDriver(object):
     def SetWindow(self,window_handle):
         self._window_handle = window_handle
         
-    def Create(self):
+    def Create(self, create_default_lights = True):
         try:
             os.environ["CSF_GraphicShr"]
         except KeyError:
@@ -81,6 +81,9 @@ class BaseDriver(object):
         self.View_handle = self.GetView()
         self.Context = self.Context_handle.GetObject()
         self.Viewer = self.Viewer_handle.GetObject()
+        if create_default_lights:
+            self.Viewer.SetDefaultLights()
+            self.Viewer.SetLightOn()
         self.View = self.View_handle.GetObject()
         self._inited = True
         
