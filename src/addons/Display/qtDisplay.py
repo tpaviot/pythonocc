@@ -60,10 +60,6 @@ class qtViewer2d(qtBaseViewer):
         print "qtViewer2d inited"
     
     def InitDriver(self):
-        try:
-            os.environ["CSF_GraphicShr"]
-        except KeyError:
-            raise "Please set the CSF_GraphicShr environment variable."
         self._display = OCCViewer.Viewer2d(self.GetHandle())
         self._display.Create()
         self._inited = True
