@@ -401,6 +401,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend ShapeExtend_ComplexCurve {
+	ShapeExtend_ComplexCurve () {}
+};
 
 
 %nodefaultctor ShapeExtend_WireData;

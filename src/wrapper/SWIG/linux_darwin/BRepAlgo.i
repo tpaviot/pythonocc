@@ -400,6 +400,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRepAlgo_BooleanOperation {
+	BRepAlgo_BooleanOperation () {}
+};
 
 
 %nodefaultctor BRepAlgo_Common;

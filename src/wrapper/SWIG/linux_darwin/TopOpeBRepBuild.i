@@ -1094,6 +1094,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TopOpeBRepBuild_CompositeClassifier {
+	TopOpeBRepBuild_CompositeClassifier () {}
+};
 
 
 %nodefaultctor TopOpeBRepBuild_ShellFaceClassifier;

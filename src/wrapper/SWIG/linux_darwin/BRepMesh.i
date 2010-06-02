@@ -1905,6 +1905,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRepMesh_DiscretRoot {
+	BRepMesh_DiscretRoot () {}
+};
 
 
 %nodefaultctor BRepMesh_Vertex;

@@ -1256,6 +1256,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend IGESData_IGESEntity {
+	IGESData_IGESEntity () {}
+};
 
 
 %nodefaultctor IGESData_TransfEntity;
@@ -2619,6 +2622,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend IGESData_FileRecognizer {
+	IGESData_FileRecognizer () {}
 };
 
 

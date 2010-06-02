@@ -1605,6 +1605,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Interface_FileReaderData {
+	Interface_FileReaderData () {}
+};
 
 
 %nodefaultctor Interface_DataMapIteratorOfDataMapOfIntegerTransient;
@@ -3043,6 +3046,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Interface_FileReaderTool {
+	Interface_FileReaderTool () {}
 };
 
 
@@ -4583,6 +4589,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Interface_InterfaceModel {
+	Interface_InterfaceModel () {}
 };
 
 

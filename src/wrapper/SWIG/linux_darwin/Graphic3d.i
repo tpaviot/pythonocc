@@ -2399,6 +2399,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Graphic3d_ArrayOfPrimitives {
+	Graphic3d_ArrayOfPrimitives () {}
+};
 
 
 %nodefaultctor Graphic3d_ArrayOfQuadrangleStrips;
@@ -2730,6 +2733,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Graphic3d_TextureRoot {
+	Graphic3d_TextureRoot () {}
 };
 
 
@@ -3418,6 +3424,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Graphic3d_TextureMap {
+	Graphic3d_TextureMap () {}
+};
 
 
 %nodefaultctor Graphic3d_ListOfPArray;
@@ -3869,6 +3878,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Graphic3d_Texture2D {
+	Graphic3d_Texture2D () {}
 };
 
 
@@ -4738,6 +4750,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Graphic3d_StructureManager {
+	Graphic3d_StructureManager () {}
+};
 
 
 %nodefaultctor Graphic3d_Texture2Dmanual;
@@ -5045,6 +5060,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Graphic3d_Texture1D {
+	Graphic3d_Texture1D () {}
+};
 
 
 %nodefaultctor Graphic3d_Texture1Dmanual;
@@ -5255,6 +5273,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Graphic3d_DataStructureManager {
+	Graphic3d_DataStructureManager () {}
 };
 
 
@@ -6762,6 +6783,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Graphic3d_Plotter {
+	Graphic3d_Plotter () {}
 };
 
 

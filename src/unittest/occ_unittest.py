@@ -179,6 +179,7 @@ class Test(unittest.TestCase):
         Checks that OCC objects can be subclassed, and passed as parameters. In this test, we create
         a MyPoint and MyVec class, inheriting from gp_Pnt and gp_Vec.
         '''
+        print 'Test: subclass'
         class MyPoint(gp_Pnt):
             def __init__(self,*kargs):
                 gp_Pnt.__init__(self,*kargs)
@@ -202,6 +203,15 @@ class Test(unittest.TestCase):
         vec = MyVec(point1,point2)
         self.assertEqual(vec.Magnitude(),1.)
         self.assertEqual(vec.get_attribute(),"something")
+    
+    def testProtectedConstructor(self):
+        ''' test if the classes with protected constructors can be created
+        '''
+        print 'Test: protected constructor'
+        # 1st, class with no subclass
+        from OCC.TopoDS import TopoDS_Builder
+        tds_builder = TopoDS_Builder()
+        self.assertTrue(hasattr(tds_builder,"MakeCompound"))
                          
 
 

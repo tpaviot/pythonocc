@@ -1562,6 +1562,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend StepData_FileRecognizer {
+	StepData_FileRecognizer () {}
+};
 
 
 %nodefaultctor StepData_PDescr;
@@ -2250,6 +2253,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend StepData_Described {
+	StepData_Described () {}
 };
 
 

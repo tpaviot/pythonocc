@@ -465,6 +465,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Image_Image {
+	Image_Image () {}
+};
 
 
 %nodefaultctor Image_IndexPixelMapHasher;
@@ -709,6 +712,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Image_DColorImage {
+	Image_DColorImage () {}
 };
 
 
@@ -1231,6 +1237,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Image_DIndexedImage {
+	Image_DIndexedImage () {}
 };
 
 

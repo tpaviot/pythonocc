@@ -579,6 +579,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TFunction_Driver {
+	TFunction_Driver () {}
+};
 
 
 %nodefaultctor TFunction_DataMapOfGUIDDriver;

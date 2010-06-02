@@ -617,6 +617,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Intf_Interference {
+	Intf_Interference () {}
+};
 
 
 %nodefaultctor Intf_SectionLine;

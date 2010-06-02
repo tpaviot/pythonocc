@@ -498,6 +498,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend ExprIntrp_Generator {
+	ExprIntrp_Generator () {}
+};
 
 
 %nodefaultctor ExprIntrp_GenFct;

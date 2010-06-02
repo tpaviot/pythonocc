@@ -539,6 +539,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TCollection_BasicMapIterator {
+	TCollection_BasicMapIterator () {}
+};
 
 
 %nodefaultctor TCollection;
@@ -631,6 +634,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend TCollection_Array2Descriptor {
+	TCollection_Array2Descriptor () {}
 };
 
 
@@ -1053,6 +1059,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TCollection_BaseSequence {
+	TCollection_BaseSequence () {}
+};
 
 
 %nodefaultctor TCollection_Array1Descriptor;
@@ -1079,6 +1088,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend TCollection_Array1Descriptor {
+	TCollection_Array1Descriptor () {}
 };
 
 
@@ -1141,6 +1153,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend TCollection_BasicMap {
+	TCollection_BasicMap () {}
 };
 
 

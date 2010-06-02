@@ -731,6 +731,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend AlienImage_AlienImage {
+	AlienImage_AlienImage () {}
+};
 
 
 %nodefaultctor AlienImage_AlienImageData;
@@ -765,6 +768,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend AlienImage_AlienImageData {
+	AlienImage_AlienImageData () {}
 };
 
 
@@ -845,6 +851,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend AlienImage_AlienUserImage {
+	AlienImage_AlienUserImage () {}
 };
 
 

@@ -92,6 +92,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRepAlgoAPI_BooleanOperation {
+	BRepAlgoAPI_BooleanOperation () {}
+};
 
 
 %nodefaultctor BRepAlgoAPI_Fuse;

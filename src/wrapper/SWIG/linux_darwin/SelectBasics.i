@@ -588,6 +588,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend SelectBasics_SensitiveEntity {
+	SelectBasics_SensitiveEntity () {}
+};
 
 
 %nodefaultctor SelectBasics;
@@ -790,6 +793,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend SelectBasics_EntityOwner {
+	SelectBasics_EntityOwner () {}
 };
 
 

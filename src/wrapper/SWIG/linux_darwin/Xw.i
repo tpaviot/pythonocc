@@ -669,6 +669,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Xw_GraphicDevice {
+	Xw_GraphicDevice () {}
+};
 
 
 %nodefaultctor Xw_HListOfMFTFonts;
@@ -949,6 +952,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Xw_WidthMap {
+	Xw_WidthMap () {}
+};
 
 
 %nodefaultctor Xw_ColorMap;
@@ -1034,6 +1040,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Xw_ColorMap {
+	Xw_ColorMap () {}
 };
 
 
@@ -1510,6 +1519,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Xw_FontMap {
+	Xw_FontMap () {}
+};
 
 
 %nodefaultctor Xw_ListOfMFTFonts;
@@ -1603,6 +1615,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Xw_TypeMap {
+	Xw_TypeMap () {}
 };
 
 
@@ -1707,6 +1722,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Xw_MarkMap {
+	Xw_MarkMap () {}
 };
 
 

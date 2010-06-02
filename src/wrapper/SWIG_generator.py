@@ -388,8 +388,8 @@ class ModularBuilder(object):
             elif (len(argument_types)==2 and argument_types[1]!="&"):#ex: Aspect_Handle const
                 to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
                 param_list.append([argument_types[0],argument_name])
-                print 'On y est'
-                print argument_types
+                #print 'On y est'
+                #print argument_types
             elif len(argument_types)==4:
                 to_write += "%s %s%s"%(argument_types[0],argument_types[1],argument_name)
                 param_list.append([argument_types[1],argument_name])
@@ -596,7 +596,7 @@ class ModularBuilder(object):
             if function_name=='Edge':
                 print param_list
                 print docstring
-                m
+                # TODO : a problem with this docstring
         else:
             # automatically generated docstring by SWUG is perfect
             docstring = '\t\t%feature("autodoc", "1");\n'
@@ -701,6 +701,13 @@ class ModularBuilder(object):
         # The implementation is a loop over the methods found by pygccxml      
         print "\t### Member functions for class %s ###"%class_declaration.name
         HAVE_HASHCODE = False
+        # Check protected constructors
+        PROTECTED_CONSTRUCTOR = False
+        for protected_method in class_declaration.protected_members:
+            if class_name == protected_method.name:
+                PROTECTED_CONSTRUCTOR = True
+                print 'class %s has protected constructor'%class_name
+        # process all public methods
         for mem_fun in class_declaration.public_members:#member_functions():
             # Member functions to exclude
             function_name = mem_fun.name
@@ -840,6 +847,12 @@ class ModularBuilder(object):
             self.fp.write('\t\t\titerator->next();}\n')
             self.fp.write('\t\treturn iterator->next();\n')
             self.fp.write('\t}\n};\n')
+        
+        if PROTECTED_CONSTRUCTOR:
+            self.fp.write('%extend ')
+            self.fp.write('%s {\n'%class_name)
+            self.fp.write('\t%s () {}\n'%class_name)
+            self.fp.write('};\n')
           
 #            %extend SMDS_Mesh {
 #    const SMDS_MeshNode * nodesValue(int index) {

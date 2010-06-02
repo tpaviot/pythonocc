@@ -1388,6 +1388,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Dynamic_Method {
+	Dynamic_Method () {}
+};
 
 
 %nodefaultctor Dynamic_MethodDefinition;
@@ -1428,6 +1431,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Dynamic_MethodDefinition {
+	Dynamic_MethodDefinition () {}
 };
 
 
@@ -1756,6 +1762,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Dynamic_Parameter {
+	Dynamic_Parameter () {}
+};
 
 
 %nodefaultctor Dynamic_InstanceParameter;
@@ -1873,6 +1882,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Dynamic_FuzzyClass {
+	Dynamic_FuzzyClass () {}
 };
 
 
@@ -2789,6 +2801,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Dynamic_AbstractVariableInstance {
+	Dynamic_AbstractVariableInstance () {}
+};
 
 
 %nodefaultctor Dynamic_FuzzyDefinitionsDictionary;
@@ -2841,6 +2856,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Dynamic_FuzzyDefinitionsDictionary {
+	Dynamic_FuzzyDefinitionsDictionary () {}
 };
 
 
@@ -3160,6 +3178,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Dynamic_MethodDefinitionsDictionary {
+	Dynamic_MethodDefinitionsDictionary () {}
 };
 
 

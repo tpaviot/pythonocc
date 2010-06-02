@@ -1969,6 +1969,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend PGeom_Vector {
+	PGeom_Vector () {}
+};
 
 
 %nodefaultctor PGeom_Conic;
@@ -2009,6 +2012,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend PGeom_Conic {
+	PGeom_Conic () {}
 };
 
 
@@ -2385,6 +2391,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend PGeom_ElementarySurface {
+	PGeom_ElementarySurface () {}
+};
 
 
 %nodefaultctor PGeom_ToroidalSurface;
@@ -2562,6 +2571,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend PGeom_AxisPlacement {
+	PGeom_AxisPlacement () {}
 };
 
 
@@ -2835,6 +2847,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend PGeom_SweptSurface {
+	PGeom_SweptSurface () {}
 };
 
 

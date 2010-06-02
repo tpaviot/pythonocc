@@ -799,6 +799,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRepBlend_AppFuncRoot {
+	BRepBlend_AppFuncRoot () {}
+};
 
 
 %nodefaultctor BRepBlend_AppFuncRst;

@@ -357,6 +357,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Select2D_SensitiveEntity {
+	Select2D_SensitiveEntity () {}
+};
 
 
 %nodefaultctor Select2D_SensitiveCircle;
@@ -577,6 +580,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Select2D_Projector {
+	Select2D_Projector () {}
 };
 
 

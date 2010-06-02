@@ -1542,6 +1542,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend GeomFill_Boundary {
+	GeomFill_Boundary () {}
+};
 
 
 %nodefaultctor GeomFill_DegeneratedBound;

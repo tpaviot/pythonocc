@@ -261,6 +261,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend StepToTopoDS_Root {
+	StepToTopoDS_Root () {}
+};
 
 
 %nodefaultctor StepToTopoDS_MakeTransformed;

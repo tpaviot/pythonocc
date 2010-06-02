@@ -505,6 +505,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend IntRes2d_Intersection {
+	IntRes2d_Intersection () {}
+};
 
 
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;

@@ -558,6 +558,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TPrsStd_Driver {
+	TPrsStd_Driver () {}
+};
 
 
 %nodefaultctor TPrsStd_NamedShapeDriver;

@@ -3428,6 +3428,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Expr_PolyExpression {
+	Expr_PolyExpression () {}
+};
 
 
 %nodefaultctor Expr_PolyFunction;

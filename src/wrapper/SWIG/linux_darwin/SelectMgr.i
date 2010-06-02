@@ -1895,6 +1895,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend SelectMgr_SelectableObject {
+	SelectMgr_SelectableObject () {}
+};
 
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelection;
@@ -2412,6 +2415,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend SelectMgr_ViewerSelector {
+	SelectMgr_ViewerSelector () {}
 };
 
 

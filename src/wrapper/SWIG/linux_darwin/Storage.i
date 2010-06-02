@@ -2766,6 +2766,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Storage_BaseDriver {
+	Storage_BaseDriver () {}
+};
 
 
 %nodefaultctor Storage_SequenceNodeOfSeqOfCallBack;

@@ -858,6 +858,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TopoDS_TShape {
+	TopoDS_TShape () {}
+};
 
 
 %nodefaultctor TopoDS_CompSolid;
@@ -1298,6 +1301,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TopoDS_TEdge {
+	TopoDS_TEdge () {}
+};
 
 
 %nodefaultctor TopoDS_Compound;
@@ -1389,6 +1395,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TopoDS_Builder {
+	TopoDS_Builder () {}
+};
 
 
 %nodefaultctor TopoDS_Builder3D;
@@ -1415,6 +1424,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend TopoDS_Builder3D {
+	TopoDS_Builder3D () {}
 };
 
 
@@ -1551,6 +1563,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend TopoDS_TVertex {
+	TopoDS_TVertex () {}
 };
 
 

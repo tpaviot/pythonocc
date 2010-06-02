@@ -773,6 +773,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TDocStd_Application {
+	TDocStd_Application () {}
+};
 
 
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;

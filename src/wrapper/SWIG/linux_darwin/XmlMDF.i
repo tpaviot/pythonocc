@@ -433,6 +433,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend XmlMDF_ADriver {
+	XmlMDF_ADriver () {}
+};
 
 
 %nodefaultctor XmlMDF_TagSourceDriver;

@@ -108,3 +108,6 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend PMMgt_PManaged {
+	PMMgt_PManaged () {}
+};

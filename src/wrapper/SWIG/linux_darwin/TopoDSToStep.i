@@ -107,6 +107,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TopoDSToStep_Root {
+	TopoDSToStep_Root () {}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeStepVertex;

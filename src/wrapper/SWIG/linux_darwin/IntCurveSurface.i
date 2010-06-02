@@ -195,6 +195,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend IntCurveSurface_Intersection {
+	IntCurveSurface_Intersection () {}
+};
 
 
 %nodefaultctor IntCurveSurface_SequenceOfPnt;

@@ -497,6 +497,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend CDF_Application {
+	CDF_Application () {}
+};
 
 
 %nodefaultctor CDF_MetaDataDriver;
@@ -561,6 +564,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend CDF_MetaDataDriver {
+	CDF_MetaDataDriver () {}
 };
 
 

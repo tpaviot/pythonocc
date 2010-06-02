@@ -809,7 +809,10 @@ class GEOMAlgo_Algo {
 		%feature("autodoc", "1");
 		Standard_Integer WarningStatus() const;
 
+};%extend GEOMAlgo_Algo {
+	GEOMAlgo_Algo () {}
 };
+
 
 %nodefaultctor GEOMAlgo_BuilderArea;
 
@@ -828,7 +831,10 @@ class GEOMAlgo_BuilderArea : public GEOMAlgo_Algo {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Areas() const;
 
+};%extend GEOMAlgo_BuilderArea {
+	GEOMAlgo_BuilderArea () {}
 };
+
 
 %nodefaultctor GEOMAlgo_BuilderSolid;
 
@@ -885,7 +891,10 @@ class GEOMAlgo_ShapeAlgo : public GEOMAlgo_Algo {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Result() const;
 
+};%extend GEOMAlgo_ShapeAlgo {
+	GEOMAlgo_ShapeAlgo () {}
 };
+
 
 %nodefaultctor GEOMAlgo_FinderShapeOn;
 
@@ -978,7 +987,10 @@ class GEOMAlgo_BuilderShape : public GEOMAlgo_Algo {
 		%feature("autodoc", "1");
 		const TopTools_IndexedDataMapOfShapeListOfShape & ImagesResult() const;
 
+};%extend GEOMAlgo_BuilderShape {
+	GEOMAlgo_BuilderShape () {}
 };
+
 
 %nodefaultctor GEOMAlgo_Builder;
 
@@ -1181,7 +1193,10 @@ class GEOMAlgo_ShapeSolid : public GEOMAlgo_Algo {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Shapes(const TopAbs_State aState) const;
 
+};%extend GEOMAlgo_ShapeSolid {
+	GEOMAlgo_ShapeSolid () {}
 };
+
 
 %nodefaultctor GEOMAlgo_ShellSolid;
 
@@ -1419,7 +1434,10 @@ class GEOMAlgo_HAlgo : public MMgt_TShared {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
+};%extend GEOMAlgo_HAlgo {
+	GEOMAlgo_HAlgo () {}
 };
+
 
 %nodefaultctor GEOMAlgo_Clsf;
 
@@ -1452,7 +1470,10 @@ class GEOMAlgo_Clsf : public GEOMAlgo_HAlgo {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
+};%extend GEOMAlgo_Clsf {
+	GEOMAlgo_Clsf () {}
 };
+
 
 %nodefaultctor GEOMAlgo_ClsfBox;
 

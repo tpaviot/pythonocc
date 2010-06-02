@@ -2409,6 +2409,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Aspect_GraphicDevice {
+	Aspect_GraphicDevice () {}
+};
 
 
 %nodefaultctor Aspect_GraphicCallbackStruct;
@@ -2519,6 +2522,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Aspect_PixMap {
+	Aspect_PixMap () {}
+};
 
 
 %nodefaultctor Aspect_UndefinedMap;
@@ -2604,6 +2610,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Aspect_AspectMarker {
+	Aspect_AspectMarker () {}
+};
 
 
 %nodefaultctor Aspect_ColorMap;
@@ -2656,6 +2665,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Aspect_ColorMap {
+	Aspect_ColorMap () {}
 };
 
 
@@ -2721,6 +2733,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Aspect_Pixel {
+	Aspect_Pixel () {}
 };
 
 
@@ -3083,6 +3098,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Aspect_Driver {
+	Aspect_Driver () {}
+};
 
 
 %nodefaultctor Aspect_AspectFillAreaDefinitionError;
@@ -3245,6 +3263,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Aspect_Grid {
+	Aspect_Grid () {}
 };
 
 
@@ -3934,6 +3955,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Aspect_AspectFillArea {
+	Aspect_AspectFillArea () {}
+};
 
 
 %nodefaultctor Aspect_MarkMapDefinitionError;
@@ -4467,6 +4491,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Aspect_Window {
+	Aspect_Window () {}
 };
 
 
@@ -5583,6 +5610,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Aspect_WindowDriver {
+	Aspect_WindowDriver () {}
+};
 
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfWidthMapEntry;
@@ -5765,6 +5795,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Aspect_GraphicDriver {
+	Aspect_GraphicDriver () {}
+};
 
 
 %nodefaultctor Aspect_WidthMapDefinitionError;
@@ -5892,6 +5925,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Aspect_AspectLine {
+	Aspect_AspectLine () {}
 };
 
 
@@ -6071,4 +6107,7 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Aspect_ColorScale {
+	Aspect_ColorScale () {}
 };

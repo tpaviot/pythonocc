@@ -107,6 +107,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRepFeat_Builder {
+	BRepFeat_Builder () {}
+};
 
 
 %nodefaultctor BRepFeat_MakeCylindricalHole;
@@ -246,6 +249,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend BRepFeat_Form {
+	BRepFeat_Form () {}
 };
 
 
@@ -455,6 +461,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend BRepFeat_RibSlot {
+	BRepFeat_RibSlot () {}
 };
 
 

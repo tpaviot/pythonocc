@@ -848,6 +848,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend SMESH_Mesh {
+	SMESH_Mesh () {}
+};
 
 
 %nodefaultctor SMESH_HypoFilter;
@@ -906,6 +909,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend SMESH_HypoFilter {
+	SMESH_HypoFilter () {}
 };
 
 

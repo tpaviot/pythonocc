@@ -1009,6 +1009,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend PBRep_CurveRepresentation {
+	PBRep_CurveRepresentation () {}
+};
 
 
 %nodefaultctor PBRep_PolygonOnTriangulation;
@@ -1112,6 +1115,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend PBRep_GCurve {
+	PBRep_GCurve () {}
 };
 
 
@@ -1306,6 +1312,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend PBRep_PointRepresentation {
+	PBRep_PointRepresentation () {}
+};
 
 
 %nodefaultctor PBRep_PointsOnSurface;
@@ -1346,6 +1355,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend PBRep_PointsOnSurface {
+	PBRep_PointsOnSurface () {}
 };
 
 

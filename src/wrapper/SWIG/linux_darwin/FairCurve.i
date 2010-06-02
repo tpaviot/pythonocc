@@ -187,6 +187,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend FairCurve_Energy {
+	FairCurve_Energy () {}
+};
 
 
 %nodefaultctor FairCurve_EnergyOfMVC;
@@ -240,6 +243,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend FairCurve_DistributionOfEnergy {
+	FairCurve_DistributionOfEnergy () {}
 };
 
 

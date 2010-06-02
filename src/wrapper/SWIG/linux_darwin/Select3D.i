@@ -683,6 +683,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Select3D_SensitiveEntity {
+	Select3D_SensitiveEntity () {}
+};
 
 
 %nodefaultctor Select3D_SensitiveBox;
@@ -1020,6 +1023,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Select3D_SensitivePoly {
+	Select3D_SensitivePoly () {}
 };
 
 

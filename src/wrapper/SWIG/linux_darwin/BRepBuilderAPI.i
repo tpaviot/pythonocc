@@ -154,6 +154,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRepBuilderAPI_Command {
+	BRepBuilderAPI_Command () {}
+};
 
 
 %nodefaultctor BRepBuilderAPI_MakeShape;
@@ -185,6 +188,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRepBuilderAPI_MakeShape {
+	BRepBuilderAPI_MakeShape () {}
+};
 
 
 %nodefaultctor BRepBuilderAPI_ModifyShape;
@@ -207,6 +213,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend BRepBuilderAPI_ModifyShape {
+	BRepBuilderAPI_ModifyShape () {}
 };
 
 

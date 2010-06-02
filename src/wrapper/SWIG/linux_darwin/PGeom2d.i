@@ -1023,6 +1023,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend PGeom2d_Vector {
+	PGeom2d_Vector () {}
+};
 
 
 %nodefaultctor PGeom2d_Direction;
@@ -1100,6 +1103,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend PGeom2d_Conic {
+	PGeom2d_Conic () {}
 };
 
 

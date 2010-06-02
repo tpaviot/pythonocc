@@ -570,6 +570,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Message_ProgressIndicator {
+	Message_ProgressIndicator () {}
+};
 
 
 %nodefaultctor Message_ProgressScale;
