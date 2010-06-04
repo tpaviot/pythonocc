@@ -2623,9 +2623,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend IGESData_FileRecognizer {
-	IGESData_FileRecognizer () {}
-};
 
 
 %nodefaultctor IGESData_NodeOfWriterLib;

@@ -931,6 +931,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend V3d_Light {
+	V3d_Light () {}
+};
 
 
 %nodefaultctor V3d_PositionLight;
@@ -1894,6 +1897,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend V3d_View {
+	V3d_View () {}
 };
 
 

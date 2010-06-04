@@ -190,9 +190,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend ChFi3d_Builder {
-	ChFi3d_Builder () {}
-};
 
 
 %nodefaultctor ChFi3d_ChBuilder;

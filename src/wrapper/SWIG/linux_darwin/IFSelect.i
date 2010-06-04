@@ -3084,9 +3084,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend IFSelect_Editor {
-	IFSelect_Editor () {}
-};
 
 
 %nodefaultctor IFSelect_SelectionIterator;
@@ -3350,9 +3347,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend IFSelect_SelectExtract {
-	IFSelect_SelectExtract () {}
 };
 
 
@@ -4047,9 +4041,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend IFSelect_SelectCombine {
-	IFSelect_SelectCombine () {}
-};
 
 
 %nodefaultctor IFSelect_SelectUnion;
@@ -4305,9 +4296,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend IFSelect_Signature {
-	IFSelect_Signature () {}
 };
 
 
@@ -4685,9 +4673,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend IFSelect_WorkLibrary {
-	IFSelect_WorkLibrary () {}
-};
 
 
 %nodefaultctor IFSelect_EditForm;
@@ -4926,9 +4911,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend IFSelect_SelectExplore {
-	IFSelect_SelectExplore () {}
 };
 
 
@@ -5767,9 +5749,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend IFSelect_Activator {
-	IFSelect_Activator () {}
-};
 
 
 %nodefaultctor IFSelect_SessionPilot;
@@ -6367,9 +6346,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend IFSelect_SessionDumper {
-	IFSelect_SessionDumper () {}
-};
 
 
 %nodefaultctor IFSelect_BasicDumper;
@@ -6732,9 +6708,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend IFSelect_GeneralModifier {
-	IFSelect_GeneralModifier () {}
 };
 
 
@@ -7241,9 +7214,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend IFSelect_Modifier {
-	IFSelect_Modifier () {}
 };
 
 

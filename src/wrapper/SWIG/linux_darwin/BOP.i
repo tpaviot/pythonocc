@@ -2503,9 +2503,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend BOP_CompositeClassifier {
-	BOP_CompositeClassifier () {}
-};
 
 
 %nodefaultctor BOP_ListIteratorOfListOfCheckResult;

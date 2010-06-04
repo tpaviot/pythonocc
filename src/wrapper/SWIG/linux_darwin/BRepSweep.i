@@ -181,9 +181,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend BRepSweep_NumLinearRegularSweep {
-	BRepSweep_NumLinearRegularSweep () {}
-};
 
 
 %nodefaultctor BRepSweep_Trsf;
@@ -242,9 +239,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend BRepSweep_Trsf {
-	BRepSweep_Trsf () {}
 };
 
 

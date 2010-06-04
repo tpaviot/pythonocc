@@ -1665,9 +1665,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend Transfer_Binder {
-	Transfer_Binder () {}
-};
 
 
 %nodefaultctor Transfer_SimpleBinderOfTransient;

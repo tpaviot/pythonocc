@@ -1316,9 +1316,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend MDF_ARDriver {
-	MDF_ARDriver () {}
-};
 
 
 %nodefaultctor MDF_TagSourceRetrievalDriver;
@@ -1505,9 +1502,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend MDF_ASDriver {
-	MDF_ASDriver () {}
 };
 
 

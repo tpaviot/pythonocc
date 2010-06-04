@@ -1128,9 +1128,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend V3d_PositionLight {
-	V3d_PositionLight () {}
-};
 
 
 %nodefaultctor V3d_RectangularGrid;

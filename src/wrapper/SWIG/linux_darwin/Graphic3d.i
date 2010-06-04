@@ -4750,9 +4750,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend Graphic3d_StructureManager {
-	Graphic3d_StructureManager () {}
-};
 
 
 %nodefaultctor Graphic3d_Texture2Dmanual;
@@ -6783,9 +6780,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend Graphic3d_Plotter {
-	Graphic3d_Plotter () {}
 };
 
 

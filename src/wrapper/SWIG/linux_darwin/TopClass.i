@@ -66,9 +66,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend TopClass_Intersection3d {
-	TopClass_Intersection3d () {}
-};
 
 
 %nodefaultctor TopClass_SolidExplorer;

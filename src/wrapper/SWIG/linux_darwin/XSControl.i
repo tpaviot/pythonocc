@@ -746,9 +746,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend XSControl_Controller {
-	XSControl_Controller () {}
-};
 
 
 %nodefaultctor XSControl_Reader;

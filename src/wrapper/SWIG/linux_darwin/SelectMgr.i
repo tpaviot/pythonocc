@@ -1895,9 +1895,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend SelectMgr_SelectableObject {
-	SelectMgr_SelectableObject () {}
-};
 
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelection;

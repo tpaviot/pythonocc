@@ -181,6 +181,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRepPrim_Revolution {
+	BRepPrim_Revolution () {}
+};
 
 
 %nodefaultctor BRepPrim_Sphere;

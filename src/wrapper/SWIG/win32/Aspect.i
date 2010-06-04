@@ -2826,6 +2826,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Aspect_AspectMarker {
+	Aspect_AspectMarker () {}
+};
 
 
 %nodefaultctor Aspect_ColorMap;
@@ -4000,6 +4003,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Aspect_AspectFillArea {
+	Aspect_AspectFillArea () {}
+};
 
 
 %nodefaultctor Aspect_FontStyleDefinitionError;
@@ -4932,6 +4938,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Aspect_AspectLine {
+	Aspect_AspectLine () {}
+};
 
 
 %nodefaultctor Aspect_BadAccess;
@@ -5728,6 +5737,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Aspect_GraphicDriver {
+	Aspect_GraphicDriver () {}
 };
 
 

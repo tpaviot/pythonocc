@@ -1695,9 +1695,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend MeshVS_PrsBuilder {
-	MeshVS_PrsBuilder () {}
-};
 
 
 %nodefaultctor MeshVS_VectorPrsBuilder;

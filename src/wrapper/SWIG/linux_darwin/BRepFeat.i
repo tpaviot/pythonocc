@@ -250,9 +250,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend BRepFeat_Form {
-	BRepFeat_Form () {}
-};
 
 
 %nodefaultctor BRepFeat_MakePipe;

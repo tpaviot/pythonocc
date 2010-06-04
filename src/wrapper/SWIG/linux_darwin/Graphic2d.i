@@ -2151,9 +2151,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend Graphic2d_Primitive {
-	Graphic2d_Primitive () {}
-};
 
 
 %nodefaultctor Graphic2d_Line;
@@ -2208,9 +2205,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend Graphic2d_Line {
-	Graphic2d_Line () {}
 };
 
 
@@ -2385,9 +2379,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend Graphic2d_VectorialMarker {
-	Graphic2d_VectorialMarker () {}
 };
 
 

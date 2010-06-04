@@ -910,6 +910,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TopoDS_Builder {
+	TopoDS_Builder () {}
+};
 
 
 %nodefaultctor TopoDS_CompSolid;
@@ -1372,6 +1375,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend TopoDS_Builder3D {
+	TopoDS_Builder3D () {}
 };
 
 

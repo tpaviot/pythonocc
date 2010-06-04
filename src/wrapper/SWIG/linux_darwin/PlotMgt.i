@@ -1023,9 +1023,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend PlotMgt_PlotterDriver {
-	PlotMgt_PlotterDriver () {}
-};
 
 
 %nodefaultctor PlotMgt_Plotter;

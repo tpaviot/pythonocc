@@ -298,9 +298,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend StepSelect_FileModifier {
-	StepSelect_FileModifier () {}
-};
 
 
 %nodefaultctor StepSelect_WorkLibrary;
@@ -512,7 +509,4 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend StepSelect_ModelModifier {
-	StepSelect_ModelModifier () {}
 };

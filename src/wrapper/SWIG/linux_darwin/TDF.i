@@ -1478,9 +1478,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend TDF_Attribute {
-	TDF_Attribute () {}
-};
 
 
 %nodefaultctor TDF_ListIteratorOfAttributeDeltaList;
@@ -1562,9 +1559,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend TDF_AttributeDelta {
-	TDF_AttributeDelta () {}
 };
 
 
@@ -4857,9 +4851,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend TDF_DeltaOnRemoval {
-	TDF_DeltaOnRemoval () {}
 };
 
 

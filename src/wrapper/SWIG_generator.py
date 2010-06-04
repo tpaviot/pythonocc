@@ -848,7 +848,7 @@ class ModularBuilder(object):
             self.fp.write('\t\treturn iterator->next();\n')
             self.fp.write('\t}\n};\n')
         
-        if PROTECTED_CONSTRUCTOR:
+        if PROTECTED_CONSTRUCTOR and not CURRENT_CLASS_IS_ABSTRACT:
             self.fp.write('%extend ')
             self.fp.write('%s {\n'%class_name)
             self.fp.write('\t%s () {}\n'%class_name)

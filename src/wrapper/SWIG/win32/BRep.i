@@ -902,6 +902,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRep_PointRepresentation {
+	BRep_PointRepresentation () {}
+};
 
 
 %nodefaultctor BRep_CurveRepresentation;
@@ -1214,6 +1217,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend BRep_PointsOnSurface {
+	BRep_PointsOnSurface () {}
 };
 
 

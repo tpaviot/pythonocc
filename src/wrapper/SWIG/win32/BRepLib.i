@@ -103,6 +103,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRepLib_Command {
+	BRepLib_Command () {}
+};
 
 
 %nodefaultctor BRepLib_MakeShape;
@@ -139,6 +142,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend BRepLib_MakeShape {
+	BRepLib_MakeShape () {}
 };
 
 

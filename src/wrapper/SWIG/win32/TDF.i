@@ -2788,6 +2788,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend TDF_DeltaOnModification {
+	TDF_DeltaOnModification () {}
+};
 
 
 %nodefaultctor TDF_ListIteratorOfLabelList;

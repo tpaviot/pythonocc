@@ -1822,9 +1822,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend IGESSelect_ModelModifier {
-	IGESSelect_ModelModifier () {}
-};
 
 
 %nodefaultctor IGESSelect_UpdateLastChange;
@@ -2531,9 +2528,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend IGESSelect_FileModifier {
-	IGESSelect_FileModifier () {}
 };
 
 

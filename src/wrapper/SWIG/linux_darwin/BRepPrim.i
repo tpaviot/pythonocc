@@ -370,9 +370,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend BRepPrim_OneAxis {
-	BRepPrim_OneAxis () {}
-};
 
 
 %nodefaultctor BRepPrim_Revolution;

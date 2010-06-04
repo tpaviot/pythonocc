@@ -459,9 +459,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend PrsMgr_Presentation {
-	PrsMgr_Presentation () {}
-};
 
 
 %nodefaultctor PrsMgr_Presentation2d;
@@ -817,9 +814,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend PrsMgr_PresentationManager {
-	PrsMgr_PresentationManager () {}
 };
 
 

@@ -2776,9 +2776,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend AIS_InteractiveObject {
-	AIS_InteractiveObject () {}
-};
 
 
 %nodefaultctor AIS_Relation;
@@ -2857,9 +2854,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend AIS_Relation {
-	AIS_Relation () {}
 };
 
 
@@ -2940,9 +2934,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend AIS_EllipseRadiusDimension {
-	AIS_EllipseRadiusDimension () {}
 };
 
 

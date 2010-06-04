@@ -190,9 +190,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend Viewer_View {
-	Viewer_View () {}
-};
 
 
 %nodefaultctor Viewer_Viewer;
@@ -233,9 +230,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend Viewer_Viewer {
-	Viewer_Viewer () {}
 };
 
 

@@ -2386,6 +2386,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend OSD_FileNode {
+	OSD_FileNode () {}
+};
 
 
 %nodefaultctor OSD_File;

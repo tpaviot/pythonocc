@@ -394,9 +394,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend HatchGen_IntersectionPoint {
-	HatchGen_IntersectionPoint () {}
-};
 
 
 %nodefaultctor HatchGen_PointOnHatching;

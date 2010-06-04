@@ -512,9 +512,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend BRepCheck_Result {
-	BRepCheck_Result () {}
-};
 
 
 %nodefaultctor BRepCheck_Shell;

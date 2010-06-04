@@ -790,6 +790,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BOP_HistoryCollector {
+	BOP_HistoryCollector () {}
+};
 
 
 %nodefaultctor BOP_SectionHistoryCollector;
@@ -883,6 +886,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend BOP_Builder {
+	BOP_Builder () {}
 };
 
 

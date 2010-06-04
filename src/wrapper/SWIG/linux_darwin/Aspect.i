@@ -2409,9 +2409,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend Aspect_GraphicDevice {
-	Aspect_GraphicDevice () {}
-};
 
 
 %nodefaultctor Aspect_GraphicCallbackStruct;
@@ -2521,9 +2518,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend Aspect_PixMap {
-	Aspect_PixMap () {}
 };
 
 
@@ -2666,9 +2660,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend Aspect_ColorMap {
-	Aspect_ColorMap () {}
-};
 
 
 %nodefaultctor Aspect_ColorCubeColorMap;
@@ -2733,9 +2724,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend Aspect_Pixel {
-	Aspect_Pixel () {}
 };
 
 
@@ -3098,9 +3086,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend Aspect_Driver {
-	Aspect_Driver () {}
-};
 
 
 %nodefaultctor Aspect_AspectFillAreaDefinitionError;
@@ -3263,9 +3248,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend Aspect_Grid {
-	Aspect_Grid () {}
 };
 
 
@@ -4492,9 +4474,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend Aspect_Window {
-	Aspect_Window () {}
-};
 
 
 %nodefaultctor Aspect_PolyStyleDefinitionError;
@@ -5610,9 +5589,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend Aspect_WindowDriver {
-	Aspect_WindowDriver () {}
-};
 
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfWidthMapEntry;
@@ -6107,7 +6083,4 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend Aspect_ColorScale {
-	Aspect_ColorScale () {}
 };

@@ -133,9 +133,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend SMDS_MeshElement {
-	SMDS_MeshElement () {}
-};
 
 
 %nodefaultctor SMDS_MeshNode;
@@ -217,9 +214,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend SMDS_Position {
-	SMDS_Position () {}
 };
 
 

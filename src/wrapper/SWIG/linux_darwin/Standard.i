@@ -2096,9 +2096,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend Standard_ErrorHandlerCallback {
-	Standard_ErrorHandlerCallback () {}
-};
 
 
 %nodefaultctor Standard_NegativeValue;

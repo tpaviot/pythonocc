@@ -1051,9 +1051,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend BRep_CurveRepresentation {
-	BRep_CurveRepresentation () {}
-};
 
 
 %nodefaultctor BRep_GCurve;
@@ -1101,9 +1098,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend BRep_GCurve {
-	BRep_GCurve () {}
 };
 
 

@@ -346,9 +346,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend BinMDF_ADriver {
-	BinMDF_ADriver () {}
-};
 
 
 %nodefaultctor BinMDF_DataMapIteratorOfStringIdMap;

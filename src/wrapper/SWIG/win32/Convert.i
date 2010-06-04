@@ -206,6 +206,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend Convert_ConicToBSplineCurve {
+	Convert_ConicToBSplineCurve () {}
+};
 
 
 %nodefaultctor Convert_ElementarySurfaceToBSplineSurface;
@@ -254,6 +257,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend Convert_ElementarySurfaceToBSplineSurface {
+	Convert_ElementarySurfaceToBSplineSurface () {}
 };
 
 
