@@ -582,7 +582,11 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
         # install background image
         image_file = os.path.join(os.getcwd(),'addons','Display','default_background.bmp')
         bg_image_dest = os.path.join(os.getcwd(),build_lib,'OCC','Display','default_background.bmp')
-        shutil.copy(image_file, bg_image_dest)
+        try:
+            shutil.copy(image_file, bg_image_dest)
+        except:
+            pass
+        
         # Under Windows, copy GEOM.dll and SMESH.dll to site-packages/OCC
         if sys.platform=='win32':
             if WRAP_SALOME_GEOM:
