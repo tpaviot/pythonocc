@@ -47,6 +47,7 @@ aMeshGen.Compute(aMesh,aMesh.GetShapeToMesh())
 
 # Export the data
 aMesh.ExportDAT("_TEST.DAT")
+aMesh.ExportMED("_TEST.MED")
 
 # Display the data
 aDS = SMESH_MeshVSLink(aMesh)
