@@ -1,0 +1,70 @@
+# PATRON 
+# ANALYSE STATIQUE
+# 3D
+
+DEBUT();
+
+# MISE EN DONNEES
+
+PRE_IDEAS();
+
+MAIL=LIRE_MAILLAGE();
+
+
+#MAIL=LIRE_MAILLAGE(FORMAT='MED',);
+
+MAIL=DEFI_GROUP(reuse =MAIL,
+                MAILLAGE=MAIL,
+                CREA_GROUP_MA=_F(NOM='TOUT',
+                                 TOUT='OUI',),);
+
+MODMECA1=AFFE_MODELE(MAILLAGE=MAIL,
+                     AFFE=_F(GROUP_MA='TOUT',
+                             PHENOMENE='MECANIQUE',
+                             MODELISATION='3D',),);
+
+ACIER=DEFI_MATERIAU(ELAS=_F(E=2.E11,
+                            NU=0.3,),);
+
+CHMAT=AFFE_MATERIAU(MAILLAGE=MAIL,
+                    AFFE=_F(TOUT='OUI',
+                            MATER=ACIER,),);
+
+# CONDITIONS AUX LIMITES ET CHARGEMENT
+#POINT A : ENCASTREMENT
+
+BLOQUAGE=AFFE_CHAR_MECA(MODELE=MODMECA1,
+                        DDL_IMPO=_F(GROUP_MA='lock',
+                                    LIAISON='ENCASTRE',),);
+
+#POINT B : FORCE IMPOSEE
+
+CHARGT=AFFE_CHAR_MECA(MODELE=MODMECA1,
+                      DDL_IMPO=_F(GROUP_MA='load',
+                                  DX=10.0,
+                                  DY=-1110.0,
+                                  DZ=10.0,),);
+
+#                                  DZ=-1000.0,),);
+# RESOLUTION DU PROBLEME ELASTIQUE
+
+RESU1=MECA_STATIQUE(MODELE=MODMECA1,
+                    CHAM_MATER=CHMAT,
+                    EXCIT=(_F(CHARGE=BLOQUAGE,),
+                           _F(CHARGE=CHARGT,),),);
+
+# CALCUL DES EFFORTS
+
+RESU1=CALC_ELEM(reuse =RESU1,
+                RESULTAT=RESU1,
+                OPTION='EFGE_ELNO_DEPL',);
+
+#write .med file for post-processing in salome
+
+IMPR_RESU(MODELE=MODMECA1,
+          FORMAT='MED',
+          RESU=_F(MAILLAGE=MAIL,
+                  RESULTAT=RESU1,
+                  NOM_CHAM='DEPL',),);
+
+FIN();
