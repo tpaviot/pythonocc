@@ -26,6 +26,8 @@ from OCC.StdMeshers import *
 from OCC.MeshVS import *
 
 from OCC.Display.SimpleGui import *
+from OCC.SMDSAbs import SMDSAbs_Face
+from OCC.SMESHDS import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 # First create a 'complex' shape (actually a boolean op between a box and a cylinder)
@@ -36,7 +38,6 @@ aShape = BRepAlgoAPI_Cut(box,sphere).Shape()
 # Create the Mesh
 aMeshGen = SMESH_Gen()
 aMesh = aMeshGen.CreateMesh(0,True)
-
 
 # 1D
 an1DHypothesis = StdMeshers_Arithmetic1D(0,0,aMeshGen)#discretization of the wire
@@ -67,9 +68,85 @@ aMesh.AddHypothesis(aShape,4)
 #Compute the data
 aMeshGen.Compute(aMesh,aMesh.GetShapeToMesh())
 
+#===============================================================================
+# BOUNDARY CONDITIONS
+#===============================================================================
+
+class GroupOnGeom(object):
+    def __init__(self):
+        self.indx = 0
+    def __call__(self, aMesh, aShape, meshType, groupName ):
+        '''
+        MAKE SURE YOUR MESH IS COMPUTED BEFORE CALLING!!!
+        
+        add a group to a FEM mesh 
+        
+        @param aMesh:     SMESH_Mesh
+        @param aShape:    TopoDS_*
+        the topology you'd like to group
+        so, if you lock a vertex, use SMDSAbs_Node
+        as your meshType argument 
+        
+        TODO: this can / should be delegated automagically 
+        
+        @param meshType:  SMDSAbs_*
+        @param groupName: string
+        the name of the resulting group
+        this will correspond to the group you'll use
+        for instance in your code_aster .comm file
+        
+        '''
+        
+        assert aMesh.NbNodes() != 0, 'the mesh has not yet been built ( no nodes on the mesh ).\ncompute the mesh before creating groups'
+        
+        self.indx += 1
+        
+        try:
+            
+            group_load = SMESHDS_GroupOnGeom( self.indx,
+                                               aMesh.GetMeshDS(),
+                                                meshType,
+                                                 aShape
+                                                  )
+            
+            aMesh.AddGroup( group_load.GetType(),
+                             groupName,
+                              self.indx,
+                               group_load.GetShape()
+                               )
+            
+            return True
+        except:
+            print 'FAILED GROUPING'
+            return False
+
+
+from OCC.KBE.Level2API import *
+from OCC.Utils.Topology import Topo
+
+# compute and sort faces by area
+# use the 2 smallest areas as faces on which boundary conditions will be set 
+topo = Topo(aShape)
+faces = [Face(i) for i in topo.faces()]
+small_faces = sorted([(i.global_properties.area(), i) for i in faces])[:2]
+
+# create the groups 
+# note that groups can only be created when the mesh is computed
+# calling group will check if any nodes are present in the mesh
+# and assumes that its computed when it finds any nodes
+group =  GroupOnGeom()
+group(aMesh, small_faces[0][1].face, SMDSAbs_Face, 'load')
+group(aMesh, small_faces[1][1].face, SMDSAbs_Face, 'lock')
+
+#===============================================================================
+# EXPORT
+#===============================================================================
+
 # Export the data
 aMesh.ExportDAT("_TEST.DAT")
-aMesh.ExportMED("_TEST.MED")
+aMesh.ExportUNV("_TEST.UNV")
+#import ipdb; ipdb.set_trace()
+#aMesh.ExportMED("_TEST.MED")
 
 # Display the data
 aDS = SMESH_MeshVSLink(aMesh)
