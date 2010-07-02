@@ -28,8 +28,18 @@ from OCC.TopAbs import *
 from OCC.TColgp import *
 
 import time, math, sys
+from OCC.Utils.Construct import *
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
+    
+def fuse(event=None):
+    display.EraseAll()
+    box1 = BRepPrimAPI_MakeBox(2,1,1).Shape()
+    box2 = BRepPrimAPI_MakeBox(2,1,1).Shape()
+    box1 = translate_topods_from_vector(box1, gp_Vec(.5,.5,0))
+    #sph = BRepPrimAPI_MakeSphere(.5,.5,.5).Shape()
+    fuse = BRepAlgoAPI_Fuse(box1,box2).Shape()
+    display.DisplayShape(fuse)
     
 def common(event=None):
     # Create Box
@@ -41,10 +51,10 @@ def common(event=None):
     CommonSurface = BRepAlgoAPI_Common(Box,Wedge).Shape()
 
     display.EraseAll()
-    display.DisplayShape(Box)
-    display.DisplayShape(Wedge)
-    # TODO VisualLayer
-    display.EraseAll()
+    ais_box = display.DisplayShape(Box)
+    ais_wedge = display.DisplayShape(Wedge)
+    display.Context.SetTransparency(ais_box, 0.8)
+    display.Context.SetTransparency(ais_wedge, 0.8)
     display.DisplayShape(CommonSurface)
 
 def slicer(event=None):
@@ -144,10 +154,9 @@ def cut(event=None):
     # Cut: the shere is cut 'by' the box
     Cut = BRepAlgoAPI_Cut(Sphere,Box).Shape()
     display.EraseAll()
-    display.DisplayShape(Box)
-    display.DisplayShape(Sphere)
+    ais_box = display.DisplayShape(Box)
+    display.Context.SetTransparency(ais_box, 0.8)
     # TODO VisualLayer
-    display.EraseAll()
     display.DisplayShape(Cut)
 
 def variable_filleting(event=None):
@@ -219,6 +228,7 @@ def exit(event=None):
 
 if __name__ == '__main__':
     add_menu('topology operations')
+    add_function_to_menu('topology operations', fuse)
     add_function_to_menu('topology operations', common)
     add_function_to_menu('topology operations', cut)
     add_function_to_menu('topology operations', section)
