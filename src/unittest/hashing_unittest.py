@@ -36,9 +36,14 @@ class Test(unittest.TestCase):
         topo2 = Topo(box2)
         faces1 = [f for f in topo1.faces()]
         faces2 = [f for f in topo2.faces()]
-        self.assertEqual(faces1[0], faces2[0])
+        #self.assertEqual(faces1[0], faces2[0])
         self.assertEqual(faces1[0], faces1.index(faces1[0]))
         self.assertNotEqual(faces1[0], faces2[1])
+        for n,i in enumerate(faces1):
+            if n==0:
+                self.assertEqual(faces1[0], i)
+            else:
+                self.assertNotEqual(faces1[0], i)
 
 if __name__ == "__main__":
     unittest.main()
