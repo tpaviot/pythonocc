@@ -27,7 +27,7 @@ class Test(unittest.TestCase):
         p1,p2,p3 = gp_Pnt(), gp_Pnt(1,0,0),gp_Pnt()
         self.assertEqual(p1,p3)
         self.assertNotEqual(p1,p2)
-        self.assertEqual( p1,[p1,p2,p3].index(p1) )
+        self.assertEqual( 0,[p1,p2,p3].index(p1) )
     
     def testTopoDS(self):
         box1 = BRepPrimAPI_MakeBox(1,1,1).Shape()
@@ -36,9 +36,9 @@ class Test(unittest.TestCase):
         topo2 = Topo(box2)
         faces1 = [f for f in topo1.faces()]
         faces2 = [f for f in topo2.faces()]
-        #self.assertEqual(faces1[0], faces2[0])
-        self.assertEqual(faces1[0], faces1.index(faces1[0]))
+        self.assertEqual(0, faces1.index(faces1[0]))
         self.assertNotEqual(faces1[0], faces2[1])
+        self.assertEqual(box1,box2)
         for n,i in enumerate(faces1):
             if n==0:
                 self.assertEqual(faces1[0], i)
