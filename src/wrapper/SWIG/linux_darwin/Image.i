@@ -65,15 +65,15 @@ class Handle_Image_Image : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Image_Image();
 		%feature("autodoc", "1");
-		Handle_Image_Image(const Handle_Image_Image &aHandle);
+		Handle_Image_Image(const Image_Image *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_Image(const Image_Image *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_Image & operator=(const Handle_Image_Image &aHandle);
+		Handle_Image_Image & operator=(const Image_Image *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_Image & operator=(const Image_Image *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_Image const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Image_Image const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Image_Image {
@@ -103,15 +103,15 @@ class Handle_Image_DColorImage : public Handle_Image_Image {
 		%feature("autodoc", "1");
 		Handle_Image_DColorImage();
 		%feature("autodoc", "1");
-		Handle_Image_DColorImage(const Handle_Image_DColorImage &aHandle);
+		Handle_Image_DColorImage(const Image_DColorImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DColorImage(const Image_DColorImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DColorImage & operator=(const Handle_Image_DColorImage &aHandle);
+		Handle_Image_DColorImage & operator=(const Image_DColorImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DColorImage & operator=(const Image_DColorImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DColorImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Image_DColorImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Image_DColorImage {
@@ -141,15 +141,15 @@ class Handle_Image_DIndexedImage : public Handle_Image_Image {
 		%feature("autodoc", "1");
 		Handle_Image_DIndexedImage();
 		%feature("autodoc", "1");
-		Handle_Image_DIndexedImage(const Handle_Image_DIndexedImage &aHandle);
+		Handle_Image_DIndexedImage(const Image_DIndexedImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DIndexedImage(const Image_DIndexedImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DIndexedImage & operator=(const Handle_Image_DIndexedImage &aHandle);
+		Handle_Image_DIndexedImage & operator=(const Image_DIndexedImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DIndexedImage & operator=(const Image_DIndexedImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DIndexedImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Image_DIndexedImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Image_DIndexedImage {
@@ -179,15 +179,15 @@ class Handle_Image_PseudoColorImage : public Handle_Image_DIndexedImage {
 		%feature("autodoc", "1");
 		Handle_Image_PseudoColorImage();
 		%feature("autodoc", "1");
-		Handle_Image_PseudoColorImage(const Handle_Image_PseudoColorImage &aHandle);
+		Handle_Image_PseudoColorImage(const Image_PseudoColorImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_PseudoColorImage(const Image_PseudoColorImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_PseudoColorImage & operator=(const Handle_Image_PseudoColorImage &aHandle);
+		Handle_Image_PseudoColorImage & operator=(const Image_PseudoColorImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_PseudoColorImage & operator=(const Image_PseudoColorImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_PseudoColorImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Image_PseudoColorImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Image_PseudoColorImage {
@@ -217,15 +217,15 @@ class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfLookupTable();
 		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable(const Handle_Image_DataMapNodeOfLookupTable &aHandle);
+		Handle_Image_DataMapNodeOfLookupTable(const Image_DataMapNodeOfLookupTable *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfLookupTable(const Image_DataMapNodeOfLookupTable *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable & operator=(const Handle_Image_DataMapNodeOfLookupTable &aHandle);
+		Handle_Image_DataMapNodeOfLookupTable & operator=(const Image_DataMapNodeOfLookupTable *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfLookupTable & operator=(const Image_DataMapNodeOfLookupTable *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Image_DataMapNodeOfLookupTable const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Image_DataMapNodeOfLookupTable {
@@ -255,15 +255,15 @@ class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfColorPixelDataMap();
 		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfColorPixelDataMap(const Handle_Image_DataMapNodeOfColorPixelDataMap &aHandle);
+		Handle_Image_DataMapNodeOfColorPixelDataMap(const Image_DataMapNodeOfColorPixelDataMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfColorPixelDataMap(const Image_DataMapNodeOfColorPixelDataMap *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Handle_Image_DataMapNodeOfColorPixelDataMap &aHandle);
+		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Image_DataMapNodeOfColorPixelDataMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Image_DataMapNodeOfColorPixelDataMap *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfColorPixelDataMap const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Image_DataMapNodeOfColorPixelDataMap const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Image_DataMapNodeOfColorPixelDataMap {
@@ -293,15 +293,15 @@ class Handle_Image_ColorImage : public Handle_Image_DColorImage {
 		%feature("autodoc", "1");
 		Handle_Image_ColorImage();
 		%feature("autodoc", "1");
-		Handle_Image_ColorImage(const Handle_Image_ColorImage &aHandle);
+		Handle_Image_ColorImage(const Image_ColorImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_ColorImage(const Image_ColorImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_ColorImage & operator=(const Handle_Image_ColorImage &aHandle);
+		Handle_Image_ColorImage & operator=(const Image_ColorImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_ColorImage & operator=(const Image_ColorImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_ColorImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Image_ColorImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Image_ColorImage {
@@ -382,8 +382,6 @@ class Image_Image : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean isSamePixel(const Standard_Integer X, const Standard_Integer Y, const Handle_Image_Image &anotherImage, const Standard_Integer anotherX, const Standard_Integer anotherY) const;
-		%feature("autodoc", "1");
 		virtual		const Quantity_Color & PixelColor(const Standard_Integer X, const Standard_Integer Y) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Quantity_HArray1OfColor RowColor(const Standard_Integer Y) const;
@@ -393,8 +391,6 @@ class Image_Image : public MMgt_TShared {
 		Handle_Standard_Type PixelType() const;
 		%feature("autodoc", "1");
 		Standard_Integer Size() const;
-		%feature("autodoc", "1");
-		virtual		void InternalDup(const Handle_Image_Image &anImage);
 		%feature("autodoc", "1");
 		virtual		void SetOrigin(const Standard_Integer x, const Standard_Integer y);
 		%feature("autodoc", "1");
@@ -427,10 +423,6 @@ class Image_Image : public MMgt_TShared {
 		virtual		void Clip(const Standard_Integer X, const Standard_Integer Y, const Standard_Integer Width, const Standard_Integer Height);
 		%feature("autodoc", "1");
 		virtual		void Shift(const Standard_Integer XShift, const Standard_Integer YShift);
-		%feature("autodoc", "1");
-		virtual		void Fill(const Handle_Image_Image &SrcImage);
-		%feature("autodoc", "1");
-		virtual		void Fill(const Handle_Image_Image &SrcImage, const Standard_Integer SrcX, const Standard_Integer SrcY, const Standard_Integer SrcWidth, const Standard_Integer SrcHeight, const Standard_Integer X, const Standard_Integer Y);
 		%feature("autodoc", "1");
 		virtual		void Clear();
 		%feature("autodoc", "1");
@@ -500,11 +492,11 @@ class Image_PixelInterpolation {
 		%feature("autodoc", "1");
 		Image_PixelInterpolation();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real X, const Standard_Real Y, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_Image *aImage, const Standard_Real X, const Standard_Real Y, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_DColorImage *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_DIndexedImage *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
 %feature("shadow") Image_PixelInterpolation::~Image_PixelInterpolation %{
@@ -529,9 +521,9 @@ class Image_PlanarPixelInterpolation : public Image_PixelInterpolation {
 		%feature("autodoc", "1");
 		Image_PlanarPixelInterpolation();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real X, const Standard_Real Y, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_DColorImage *aImage, const Standard_Real X, const Standard_Real Y, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real X, const Standard_Real Y, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_DIndexedImage *aImage, const Standard_Real X, const Standard_Real Y, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
 %feature("shadow") Image_PlanarPixelInterpolation::~Image_PlanarPixelInterpolation %{
@@ -633,7 +625,7 @@ class Image_DColorImage : public Image_Image {
 		%feature("autodoc", "1");
 		void Affine(const Image_PixelInterpolation &anInterpolation, const gp_Trsf &Trsf);
 		%feature("autodoc", "1");
-		virtual		void InternalDup(const Handle_Image_Image &anImage);
+		virtual		void InternalDup(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		void SetOrigin(const Standard_Integer x, const Standard_Integer y);
 		%feature("autodoc", "1");
@@ -653,7 +645,7 @@ class Image_DColorImage : public Image_Image {
 		%feature("autodoc", "1");
 		virtual		Image_TypeOfImage Type() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean isSamePixel(const Standard_Integer X, const Standard_Integer Y, const Handle_Image_Image &anotherImage, const Standard_Integer anotherX, const Standard_Integer anotherY) const;
+		virtual		Standard_Boolean isSamePixel(const Standard_Integer X, const Standard_Integer Y, const Image_Image *anotherImage, const Standard_Integer anotherX, const Standard_Integer anotherY) const;
 		%feature("autodoc", "1");
 		virtual		void Pixel(const Standard_Integer X, const Standard_Integer Y, Aspect_Pixel & aPixel) const;
 		%feature("autodoc", "1");
@@ -669,9 +661,9 @@ class Image_DColorImage : public Image_Image {
 		%feature("autodoc", "1");
 		virtual		void Shift(const Standard_Integer XShifth, const Standard_Integer YShift);
 		%feature("autodoc", "1");
-		virtual		void Fill(const Handle_Image_Image &SrcImage);
+		virtual		void Fill(const Image_Image *SrcImage);
 		%feature("autodoc", "1");
-		virtual		void Fill(const Handle_Image_Image &SrcImage, const Standard_Integer SrcX, const Standard_Integer SrcY, const Standard_Integer SrcWidth, const Standard_Integer SrcHeight, const Standard_Integer X, const Standard_Integer Y);
+		virtual		void Fill(const Image_Image *SrcImage, const Standard_Integer SrcX, const Standard_Integer SrcY, const Standard_Integer SrcWidth, const Standard_Integer SrcHeight, const Standard_Integer X, const Standard_Integer Y);
 		%feature("autodoc", "1");
 		void FillRect(const Aspect_ColorPixel &aPixel, const Standard_Integer X, const Standard_Integer Y, const Standard_Integer Width, const Standard_Integer Height);
 		%feature("autodoc", "1");
@@ -759,25 +751,25 @@ class Image {
 		%feature("autodoc", "1");
 		Image();
 		%feature("autodoc", "1");
-		void Zoom(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Standard_Real aCoefX, const Standard_Real aCoefY);
+		void Zoom(const Image_Image *aImage, const Image_PixelInterpolation &aInterpolation, const Standard_Real aCoefX, const Standard_Real aCoefY);
 		%feature("autodoc", "1");
-		void Zoom(const Handle_Image_Image &aImage, const Standard_Real aCoefX, const Standard_Real aCoefY);
+		void Zoom(const Image_Image *aImage, const Standard_Real aCoefX, const Standard_Real aCoefY);
 		%feature("autodoc", "1");
-		void Rotate(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Quantity_PlaneAngle aAngle);
+		void Rotate(const Image_Image *aImage, const Image_PixelInterpolation &aInterpolation, const Quantity_PlaneAngle aAngle);
 		%feature("autodoc", "1");
-		void Rotate(const Handle_Image_Image &aImage, const Quantity_PlaneAngle aAngle);
+		void Rotate(const Image_Image *aImage, const Quantity_PlaneAngle aAngle);
 		%feature("autodoc", "1");
-		void Translate(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Standard_Real DX, const Standard_Real DY);
+		void Translate(const Image_Image *aImage, const Image_PixelInterpolation &aInterpolation, const Standard_Real DX, const Standard_Real DY);
 		%feature("autodoc", "1");
-		void Translate(const Handle_Image_Image &aImage, const Standard_Real DX, const Standard_Real DY);
+		void Translate(const Image_Image *aImage, const Standard_Real DX, const Standard_Real DY);
 		%feature("autodoc", "1");
-		void Affine(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const gp_GTrsf2d &Trsf);
+		void Affine(const Image_Image *aImage, const Image_PixelInterpolation &aInterpolation, const gp_GTrsf2d &Trsf);
 		%feature("autodoc", "1");
-		void Affine(const Handle_Image_Image &aImage, const gp_GTrsf2d &Trsf);
+		void Affine(const Image_Image *aImage, const gp_GTrsf2d &Trsf);
 		%feature("autodoc", "1");
-		void Affine(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const gp_Trsf &Trsf);
+		void Affine(const Image_Image *aImage, const Image_PixelInterpolation &aInterpolation, const gp_Trsf &Trsf);
 		%feature("autodoc", "1");
-		void Affine(const Handle_Image_Image &aImage, const gp_Trsf &Trsf);
+		void Affine(const Image_Image *aImage, const gp_Trsf &Trsf);
 
 };
 %feature("shadow") Image::~Image %{
@@ -802,11 +794,11 @@ class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
 		%feature("autodoc", "1");
 		Image_AveragePixelInterpolation();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_Image *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_DColorImage *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_DIndexedImage *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
 %feature("shadow") Image_AveragePixelInterpolation::~Image_AveragePixelInterpolation %{
@@ -870,11 +862,11 @@ class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
 		%feature("autodoc", "1");
 		Image_BilinearPixelInterpolation();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_Image *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_DColorImage *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_DIndexedImage *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
 %feature("shadow") Image_BilinearPixelInterpolation::~Image_BilinearPixelInterpolation %{
@@ -901,11 +893,11 @@ class Image_Convertor {
 		%feature("autodoc", "1");
 		void SetDitheringMethod(const Image_DitheringMethod aMethod);
 		%feature("autodoc", "1");
-		Handle_Image_PseudoColorImage Convert(const Handle_Image_ColorImage &aColorImage, const Handle_Aspect_ColorMap &aColorMap) const;
+		Handle_Image_PseudoColorImage Convert(const Image_ColorImage *aColorImage, const Aspect_ColorMap *aColorMap) const;
 		%feature("autodoc", "1");
-		Handle_Image_PseudoColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage, const Handle_Aspect_ColorMap &aColorMap) const;
+		Handle_Image_PseudoColorImage Convert(const Image_PseudoColorImage *aPseudoColorImage, const Aspect_ColorMap *aColorMap) const;
 		%feature("autodoc", "1");
-		Handle_Image_ColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage) const;
+		Handle_Image_ColorImage Convert(const Image_PseudoColorImage *aPseudoColorImage) const;
 
 };
 %feature("shadow") Image_Convertor::~Image_Convertor %{
@@ -1094,11 +1086,11 @@ class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
 		%feature("autodoc", "1");
 		Image_BalancedPixelInterpolation();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_Image *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_DColorImage *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+		virtual		Standard_Boolean Interpolate(const Image_DIndexedImage *aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
 %feature("shadow") Image_BalancedPixelInterpolation::~Image_BalancedPixelInterpolation %{
@@ -1155,7 +1147,7 @@ class Image_DIndexedImage : public Image_Image {
 		%feature("autodoc", "1");
 		void Affine(const Image_PixelInterpolation &anInterpolation, const gp_Trsf &Trsf);
 		%feature("autodoc", "1");
-		virtual		void InternalDup(const Handle_Image_Image &anImage);
+		virtual		void InternalDup(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		void SetOrigin(const Standard_Integer x, const Standard_Integer y);
 		%feature("autodoc", "1");
@@ -1175,7 +1167,7 @@ class Image_DIndexedImage : public Image_Image {
 		%feature("autodoc", "1");
 		virtual		Image_TypeOfImage Type() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean isSamePixel(const Standard_Integer X, const Standard_Integer Y, const Handle_Image_Image &anotherImage, const Standard_Integer anotherX, const Standard_Integer anotherY) const;
+		virtual		Standard_Boolean isSamePixel(const Standard_Integer X, const Standard_Integer Y, const Image_Image *anotherImage, const Standard_Integer anotherX, const Standard_Integer anotherY) const;
 		%feature("autodoc", "1");
 		virtual		void Pixel(const Standard_Integer X, const Standard_Integer Y, Aspect_Pixel & aPixel) const;
 		%feature("autodoc", "1");
@@ -1191,9 +1183,9 @@ class Image_DIndexedImage : public Image_Image {
 		%feature("autodoc", "1");
 		virtual		void Shift(const Standard_Integer XShifth, const Standard_Integer YShift);
 		%feature("autodoc", "1");
-		virtual		void Fill(const Handle_Image_Image &SrcImage);
+		virtual		void Fill(const Image_Image *SrcImage);
 		%feature("autodoc", "1");
-		virtual		void Fill(const Handle_Image_Image &SrcImage, const Standard_Integer SrcX, const Standard_Integer SrcY, const Standard_Integer SrcWidth, const Standard_Integer SrcHeight, const Standard_Integer X, const Standard_Integer Y);
+		virtual		void Fill(const Image_Image *SrcImage, const Standard_Integer SrcX, const Standard_Integer SrcY, const Standard_Integer SrcWidth, const Standard_Integer SrcHeight, const Standard_Integer X, const Standard_Integer Y);
 		%feature("autodoc", "1");
 		void FillRect(const Aspect_IndexPixel &aPixel, const Standard_Integer X, const Standard_Integer Y, const Standard_Integer Width, const Standard_Integer Height);
 		%feature("autodoc", "1");
@@ -1269,9 +1261,9 @@ def __del__(self):
 class Image_PseudoColorImage : public Image_DIndexedImage {
 	public:
 		%feature("autodoc", "1");
-		Image_PseudoColorImage(const Standard_Integer x, const Standard_Integer y, const Standard_Integer dx, const Standard_Integer dy, const Handle_Aspect_ColorMap &aColorMap);
+		Image_PseudoColorImage(const Standard_Integer x, const Standard_Integer y, const Standard_Integer dx, const Standard_Integer dy, const Aspect_ColorMap *aColorMap);
 		%feature("autodoc", "1");
-		Image_PseudoColorImage(const Standard_Integer x, const Standard_Integer y, const Standard_Integer dx, const Standard_Integer dy, const Handle_Aspect_ColorMap &aColorMap, const Aspect_IndexPixel &BackPixel);
+		Image_PseudoColorImage(const Standard_Integer x, const Standard_Integer y, const Standard_Integer dx, const Standard_Integer dy, const Aspect_ColorMap *aColorMap, const Aspect_IndexPixel &BackPixel);
 		%feature("autodoc", "1");
 		virtual		Image_TypeOfImage Type() const;
 		%feature("autodoc", "1");

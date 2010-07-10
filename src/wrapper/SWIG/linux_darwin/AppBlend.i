@@ -43,15 +43,15 @@ class Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d();
 		%feature("autodoc", "1");
-		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d(const Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d &aHandle);
+		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d(const AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d(const AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d &aHandle);
+		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
@@ -79,7 +79,7 @@ def __del__(self):
 class AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d(const Handle_TColgp_HArray1OfPnt2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d(const TColgp_HArray1OfPnt2d *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt2d & Value() const;
 		%feature("autodoc", "1");
@@ -190,19 +190,19 @@ class AppBlend_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const AppBlend_SequenceOfArray1OfPnt2d & operator=(const AppBlend_SequenceOfArray1OfPnt2d &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HArray1OfPnt2d &T);
+		void Append(const TColgp_HArray1OfPnt2d *T);
 		%feature("autodoc", "1");
 		void Append(AppBlend_SequenceOfArray1OfPnt2d & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HArray1OfPnt2d &T);
+		void Prepend(const TColgp_HArray1OfPnt2d *T);
 		%feature("autodoc", "1");
 		void Prepend(AppBlend_SequenceOfArray1OfPnt2d & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
+		void InsertBefore(const Standard_Integer Index, const TColgp_HArray1OfPnt2d *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, AppBlend_SequenceOfArray1OfPnt2d & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &T);
+		void InsertAfter(const Standard_Integer Index, const TColgp_HArray1OfPnt2d *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, AppBlend_SequenceOfArray1OfPnt2d & S);
 		%feature("autodoc", "1");
@@ -216,7 +216,7 @@ class AppBlend_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
+		void SetValue(const Standard_Integer Index, const TColgp_HArray1OfPnt2d *I);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt2d & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");

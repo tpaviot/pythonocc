@@ -43,15 +43,15 @@ class Handle_IntStart_SITopolTool : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IntStart_SITopolTool();
 		%feature("autodoc", "1");
-		Handle_IntStart_SITopolTool(const Handle_IntStart_SITopolTool &aHandle);
+		Handle_IntStart_SITopolTool(const IntStart_SITopolTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntStart_SITopolTool(const IntStart_SITopolTool *anItem);
 		%feature("autodoc", "1");
-		Handle_IntStart_SITopolTool & operator=(const Handle_IntStart_SITopolTool &aHandle);
+		Handle_IntStart_SITopolTool & operator=(const IntStart_SITopolTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntStart_SITopolTool & operator=(const IntStart_SITopolTool *anItem);
 		%feature("autodoc", "1");
-		Handle_IntStart_SITopolTool const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntStart_SITopolTool const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntStart_SITopolTool {

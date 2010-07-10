@@ -43,15 +43,15 @@ class Handle_PColPGeom2d_HArray1OfBezierCurve : public Handle_Standard_Persisten
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfBezierCurve();
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBezierCurve(const Handle_PColPGeom2d_HArray1OfBezierCurve &aHandle);
+		Handle_PColPGeom2d_HArray1OfBezierCurve(const PColPGeom2d_HArray1OfBezierCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfBezierCurve(const PColPGeom2d_HArray1OfBezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBezierCurve & operator=(const Handle_PColPGeom2d_HArray1OfBezierCurve &aHandle);
+		Handle_PColPGeom2d_HArray1OfBezierCurve & operator=(const PColPGeom2d_HArray1OfBezierCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfBezierCurve & operator=(const PColPGeom2d_HArray1OfBezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColPGeom2d_HArray1OfBezierCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PColPGeom2d_HArray1OfBezierCurve {
@@ -81,15 +81,15 @@ class Handle_PColPGeom2d_HArray1OfCurve : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfCurve();
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfCurve(const Handle_PColPGeom2d_HArray1OfCurve &aHandle);
+		Handle_PColPGeom2d_HArray1OfCurve(const PColPGeom2d_HArray1OfCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfCurve(const PColPGeom2d_HArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfCurve & operator=(const Handle_PColPGeom2d_HArray1OfCurve &aHandle);
+		Handle_PColPGeom2d_HArray1OfCurve & operator=(const PColPGeom2d_HArray1OfCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfCurve & operator=(const PColPGeom2d_HArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColPGeom2d_HArray1OfCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PColPGeom2d_HArray1OfCurve {
@@ -119,15 +119,15 @@ class Handle_PColPGeom2d_HArray1OfBSplineCurve : public Handle_Standard_Persiste
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfBSplineCurve();
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBSplineCurve(const Handle_PColPGeom2d_HArray1OfBSplineCurve &aHandle);
+		Handle_PColPGeom2d_HArray1OfBSplineCurve(const PColPGeom2d_HArray1OfBSplineCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfBSplineCurve(const PColPGeom2d_HArray1OfBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBSplineCurve & operator=(const Handle_PColPGeom2d_HArray1OfBSplineCurve &aHandle);
+		Handle_PColPGeom2d_HArray1OfBSplineCurve & operator=(const PColPGeom2d_HArray1OfBSplineCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfBSplineCurve & operator=(const PColPGeom2d_HArray1OfBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBSplineCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColPGeom2d_HArray1OfBSplineCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PColPGeom2d_HArray1OfBSplineCurve {
@@ -157,15 +157,15 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public Handle
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve();
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve(const Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve &aHandle);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve & operator=(const Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve &aHandle);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve & operator=(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve & operator=(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve {
@@ -195,15 +195,15 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handl
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve();
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve(const Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve &aHandle);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve & operator=(const Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve &aHandle);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve & operator=(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve & operator=(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
@@ -233,15 +233,15 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStan
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve();
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve(const Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve &aHandle);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve & operator=(const Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve &aHandle);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve & operator=(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve & operator=(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve {
@@ -271,15 +271,15 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public Handl
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve();
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve(const Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve &aHandle);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve & operator=(const Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve &aHandle);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve & operator=(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve & operator=(const PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
@@ -309,15 +309,15 @@ class Handle_PColPGeom2d_HArray1OfBoundedCurve : public Handle_Standard_Persiste
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfBoundedCurve();
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBoundedCurve(const Handle_PColPGeom2d_HArray1OfBoundedCurve &aHandle);
+		Handle_PColPGeom2d_HArray1OfBoundedCurve(const PColPGeom2d_HArray1OfBoundedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfBoundedCurve(const PColPGeom2d_HArray1OfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBoundedCurve & operator=(const Handle_PColPGeom2d_HArray1OfBoundedCurve &aHandle);
+		Handle_PColPGeom2d_HArray1OfBoundedCurve & operator=(const PColPGeom2d_HArray1OfBoundedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PColPGeom2d_HArray1OfBoundedCurve & operator=(const PColPGeom2d_HArray1OfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBoundedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColPGeom2d_HArray1OfBoundedCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PColPGeom2d_HArray1OfBoundedCurve {
@@ -347,9 +347,9 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
 		%feature("autodoc", "1");
 		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve();
 		%feature("autodoc", "1");
-		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve(const Handle_PGeom2d_Curve &aValue);
+		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve(const PGeom2d_Curve *aValue);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_Curve &aValue);
+		void SetValue(const PGeom2d_Curve *aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -376,13 +376,13 @@ class PColPGeom2d_HArray1OfBoundedCurve : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColPGeom2d_HArray1OfBoundedCurve(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColPGeom2d_HArray1OfBoundedCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_PGeom2d_BoundedCurve &V);
+		PColPGeom2d_HArray1OfBoundedCurve(const Standard_Integer Low, const Standard_Integer Up, const PGeom2d_BoundedCurve *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_BoundedCurve &Value);
+		void SetValue(const Standard_Integer Index, const PGeom2d_BoundedCurve *Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -447,9 +447,9 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
 		%feature("autodoc", "1");
 		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve();
 		%feature("autodoc", "1");
-		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve(const Handle_PGeom2d_BezierCurve &aValue);
+		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve(const PGeom2d_BezierCurve *aValue);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_BezierCurve &aValue);
+		void SetValue(const PGeom2d_BezierCurve *aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -486,7 +486,7 @@ class PColPGeom2d_FieldOfHArray1OfCurve : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColPGeom2d_FieldOfHArray1OfCurve &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_Curve &Value);
+		void SetValue(const Standard_Integer Index, const PGeom2d_Curve *Value);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Curve & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -517,13 +517,13 @@ class PColPGeom2d_HArray1OfCurve : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColPGeom2d_HArray1OfCurve(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColPGeom2d_HArray1OfCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_PGeom2d_Curve &V);
+		PColPGeom2d_HArray1OfCurve(const Standard_Integer Low, const Standard_Integer Up, const PGeom2d_Curve *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_Curve &Value);
+		void SetValue(const Standard_Integer Index, const PGeom2d_Curve *Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -588,9 +588,9 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 		%feature("autodoc", "1");
 		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve();
 		%feature("autodoc", "1");
-		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve(const Handle_PGeom2d_BSplineCurve &aValue);
+		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve(const PGeom2d_BSplineCurve *aValue);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_BSplineCurve &aValue);
+		void SetValue(const PGeom2d_BSplineCurve *aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -617,9 +617,9 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_Ar
 		%feature("autodoc", "1");
 		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve();
 		%feature("autodoc", "1");
-		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve(const Handle_PGeom2d_BoundedCurve &aValue);
+		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve(const PGeom2d_BoundedCurve *aValue);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_BoundedCurve &aValue);
+		void SetValue(const PGeom2d_BoundedCurve *aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
@@ -627,7 +627,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_Ar
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BoundedCurve _CSFDB_GetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurvemyValue() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurvemyValue(const Handle_PGeom2d_BoundedCurve &p);
+		void _CSFDB_SetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurvemyValue(const PGeom2d_BoundedCurve *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -674,7 +674,7 @@ class PColPGeom2d_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColPGeom2d_FieldOfHArray1OfBezierCurve &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_BezierCurve &Value);
+		void SetValue(const Standard_Integer Index, const PGeom2d_BezierCurve *Value);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BezierCurve & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -705,9 +705,9 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_Arr
 		%feature("autodoc", "1");
 		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve();
 		%feature("autodoc", "1");
-		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve(const Handle_PGeom2d_BezierCurve &aValue);
+		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve(const PGeom2d_BezierCurve *aValue);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_BezierCurve &aValue);
+		void SetValue(const PGeom2d_BezierCurve *aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
@@ -715,7 +715,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_Arr
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BezierCurve _CSFDB_GetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurvemyValue() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurvemyValue(const Handle_PGeom2d_BezierCurve &p);
+		void _CSFDB_SetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurvemyValue(const PGeom2d_BezierCurve *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -752,9 +752,9 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 		%feature("autodoc", "1");
 		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve();
 		%feature("autodoc", "1");
-		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve(const Handle_PGeom2d_BoundedCurve &aValue);
+		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve(const PGeom2d_BoundedCurve *aValue);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_BoundedCurve &aValue);
+		void SetValue(const PGeom2d_BoundedCurve *aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -781,9 +781,9 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_Ar
 		%feature("autodoc", "1");
 		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve();
 		%feature("autodoc", "1");
-		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve(const Handle_PGeom2d_BSplineCurve &aValue);
+		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve(const PGeom2d_BSplineCurve *aValue);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_BSplineCurve &aValue);
+		void SetValue(const PGeom2d_BSplineCurve *aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
@@ -791,7 +791,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_Ar
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BSplineCurve _CSFDB_GetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurvemyValue() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurvemyValue(const Handle_PGeom2d_BSplineCurve &p);
+		void _CSFDB_SetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurvemyValue(const PGeom2d_BSplineCurve *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -838,7 +838,7 @@ class PColPGeom2d_FieldOfHArray1OfBSplineCurve : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColPGeom2d_FieldOfHArray1OfBSplineCurve &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_BSplineCurve &Value);
+		void SetValue(const Standard_Integer Index, const PGeom2d_BSplineCurve *Value);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BSplineCurve & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -869,13 +869,13 @@ class PColPGeom2d_HArray1OfBSplineCurve : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColPGeom2d_HArray1OfBSplineCurve(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColPGeom2d_HArray1OfBSplineCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_PGeom2d_BSplineCurve &V);
+		PColPGeom2d_HArray1OfBSplineCurve(const Standard_Integer Low, const Standard_Integer Up, const PGeom2d_BSplineCurve *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_BSplineCurve &Value);
+		void SetValue(const Standard_Integer Index, const PGeom2d_BSplineCurve *Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -940,9 +940,9 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode
 		%feature("autodoc", "1");
 		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve();
 		%feature("autodoc", "1");
-		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve(const Handle_PGeom2d_Curve &aValue);
+		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve(const PGeom2d_Curve *aValue);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_Curve &aValue);
+		void SetValue(const PGeom2d_Curve *aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
@@ -950,7 +950,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Curve _CSFDB_GetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurvemyValue() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurvemyValue(const Handle_PGeom2d_Curve &p);
+		void _CSFDB_SetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurvemyValue(const PGeom2d_Curve *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -997,7 +997,7 @@ class PColPGeom2d_FieldOfHArray1OfBoundedCurve : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColPGeom2d_FieldOfHArray1OfBoundedCurve &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_BoundedCurve &Value);
+		void SetValue(const Standard_Integer Index, const PGeom2d_BoundedCurve *Value);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BoundedCurve & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1028,13 +1028,13 @@ class PColPGeom2d_HArray1OfBezierCurve : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColPGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColPGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_PGeom2d_BezierCurve &V);
+		PColPGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up, const PGeom2d_BezierCurve *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_BezierCurve &Value);
+		void SetValue(const Standard_Integer Index, const PGeom2d_BezierCurve *Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");

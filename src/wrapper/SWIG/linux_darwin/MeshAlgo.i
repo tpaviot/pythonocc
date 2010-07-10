@@ -44,15 +44,15 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc();
 		%feature("autodoc", "1");
-		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc(const Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc &aHandle);
+		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc(const MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc *aHandle);
 		%feature("autodoc", "1");
 		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc(const MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc & operator=(const Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc &aHandle);
+		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc & operator=(const MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc *aHandle);
 		%feature("autodoc", "1");
 		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc & operator=(const MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {

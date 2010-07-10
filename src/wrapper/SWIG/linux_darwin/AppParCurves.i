@@ -50,15 +50,15 @@ class Handle_AppParCurves_HArray1OfMultiCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiCurve();
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiCurve(const Handle_AppParCurves_HArray1OfMultiCurve &aHandle);
+		Handle_AppParCurves_HArray1OfMultiCurve(const AppParCurves_HArray1OfMultiCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiCurve(const AppParCurves_HArray1OfMultiCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiCurve & operator=(const Handle_AppParCurves_HArray1OfMultiCurve &aHandle);
+		Handle_AppParCurves_HArray1OfMultiCurve & operator=(const AppParCurves_HArray1OfMultiCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiCurve & operator=(const AppParCurves_HArray1OfMultiCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AppParCurves_HArray1OfMultiCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfMultiCurve {
@@ -88,15 +88,15 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve();
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve(const Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve &aHandle);
+		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve(const AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve(const AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve & operator=(const Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve &aHandle);
+		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve & operator=(const AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve & operator=(const AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
@@ -126,15 +126,15 @@ class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SmoothCriterion();
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion(const Handle_AppParCurves_SmoothCriterion &aHandle);
+		Handle_AppParCurves_SmoothCriterion(const AppParCurves_SmoothCriterion *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SmoothCriterion(const AppParCurves_SmoothCriterion *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion & operator=(const Handle_AppParCurves_SmoothCriterion &aHandle);
+		Handle_AppParCurves_SmoothCriterion & operator=(const AppParCurves_SmoothCriterion *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SmoothCriterion & operator=(const AppParCurves_SmoothCriterion *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AppParCurves_SmoothCriterion const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AppParCurves_SmoothCriterion {
@@ -164,15 +164,15 @@ class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiPoint();
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiPoint(const Handle_AppParCurves_HArray1OfMultiPoint &aHandle);
+		Handle_AppParCurves_HArray1OfMultiPoint(const AppParCurves_HArray1OfMultiPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiPoint(const AppParCurves_HArray1OfMultiPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiPoint & operator=(const Handle_AppParCurves_HArray1OfMultiPoint &aHandle);
+		Handle_AppParCurves_HArray1OfMultiPoint & operator=(const AppParCurves_HArray1OfMultiPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiPoint & operator=(const AppParCurves_HArray1OfMultiPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AppParCurves_HArray1OfMultiPoint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfMultiPoint {
@@ -202,15 +202,15 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve();
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve(const Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve &aHandle);
+		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve(const AppParCurves_SequenceNodeOfSequenceOfMultiCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve(const AppParCurves_SequenceNodeOfSequenceOfMultiCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve & operator=(const Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve &aHandle);
+		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve & operator=(const AppParCurves_SequenceNodeOfSequenceOfMultiCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve & operator=(const AppParCurves_SequenceNodeOfSequenceOfMultiCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
@@ -240,15 +240,15 @@ class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfConstraintCouple();
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfConstraintCouple(const Handle_AppParCurves_HArray1OfConstraintCouple &aHandle);
+		Handle_AppParCurves_HArray1OfConstraintCouple(const AppParCurves_HArray1OfConstraintCouple *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfConstraintCouple(const AppParCurves_HArray1OfConstraintCouple *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfConstraintCouple & operator=(const Handle_AppParCurves_HArray1OfConstraintCouple &aHandle);
+		Handle_AppParCurves_HArray1OfConstraintCouple & operator=(const AppParCurves_HArray1OfConstraintCouple *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfConstraintCouple & operator=(const AppParCurves_HArray1OfConstraintCouple *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfConstraintCouple const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AppParCurves_HArray1OfConstraintCouple const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfConstraintCouple {
@@ -278,15 +278,15 @@ class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiBSpCurve();
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve(const Handle_AppParCurves_HArray1OfMultiBSpCurve &aHandle);
+		Handle_AppParCurves_HArray1OfMultiBSpCurve(const AppParCurves_HArray1OfMultiBSpCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiBSpCurve(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const Handle_AppParCurves_HArray1OfMultiBSpCurve &aHandle);
+		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const AppParCurves_HArray1OfMultiBSpCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AppParCurves_HArray1OfMultiBSpCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
@@ -675,9 +675,9 @@ def __del__(self):
 class AppParCurves_SmoothCriterion : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		void SetParameters(const Handle_TColStd_HArray1OfReal &Parameters);
+		virtual		void SetParameters(const TColStd_HArray1OfReal *Parameters);
 		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_FEmTool_Curve &C);
+		virtual		void SetCurve(const FEmTool_Curve *C);
 		%feature("autodoc", "1");
 		virtual		void GetCurve(Handle_FEmTool_Curve & C) const;
 		%feature("autodoc", "1");
@@ -712,7 +712,7 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Gradient(const Standard_Integer Element, const Standard_Integer Dimension, math_Vector & G);
 		%feature("autodoc", "1");
-		virtual		void InputVector(const math_Vector &X, const Handle_FEmTool_HAssemblyTable &AssTable);
+		virtual		void InputVector(const math_Vector &X, const FEmTool_HAssemblyTable *AssTable);
 		%feature("autodoc", "1");
 		virtual		void SetWeight(const Standard_Real QuadraticWeight, const Standard_Real QualityWeight, const Standard_Real percentJ1, const Standard_Real percentJ2, const Standard_Real percentJ3);
 		%feature("autodoc","GetWeight() -> [Standard_Real, Standard_Real]");

@@ -43,15 +43,15 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion();
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const MAT2d_DataMapNodeOfDataMapOfIntegerConnexion *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const MAT2d_DataMapNodeOfDataMapOfIntegerConnexion *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerConnexion *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerConnexion *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
@@ -81,15 +81,15 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfConnexion : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion();
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const Handle_MAT2d_SequenceNodeOfSequenceOfConnexion &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const MAT2d_SequenceNodeOfSequenceOfConnexion *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const MAT2d_SequenceNodeOfSequenceOfConnexion *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion & operator=(const Handle_MAT2d_SequenceNodeOfSequenceOfConnexion &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion & operator=(const MAT2d_SequenceNodeOfSequenceOfConnexion *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion & operator=(const MAT2d_SequenceNodeOfSequenceOfConnexion *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
@@ -119,15 +119,15 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public Han
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion();
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
@@ -157,15 +157,15 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry();
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry(const Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry(const MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry(const MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry & operator=(const Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry & operator=(const MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry & operator=(const MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
@@ -195,15 +195,15 @@ class Handle_MAT2d_Circuit : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT2d_Circuit();
 		%feature("autodoc", "1");
-		Handle_MAT2d_Circuit(const Handle_MAT2d_Circuit &aHandle);
+		Handle_MAT2d_Circuit(const MAT2d_Circuit *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_Circuit(const MAT2d_Circuit *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_Circuit & operator=(const Handle_MAT2d_Circuit &aHandle);
+		Handle_MAT2d_Circuit & operator=(const MAT2d_Circuit *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_Circuit & operator=(const MAT2d_Circuit *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_Circuit const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_Circuit const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_Circuit {
@@ -233,15 +233,15 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger();
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger(const Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger(const MAT2d_DataMapNodeOfDataMapOfBiIntInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger(const MAT2d_DataMapNodeOfDataMapOfBiIntInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger & operator=(const MAT2d_DataMapNodeOfDataMapOfBiIntInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger & operator=(const MAT2d_DataMapNodeOfDataMapOfBiIntInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
@@ -271,15 +271,15 @@ class Handle_MAT2d_Connexion : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion();
 		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion(const Handle_MAT2d_Connexion &aHandle);
+		Handle_MAT2d_Connexion(const MAT2d_Connexion *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion(const MAT2d_Connexion *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion & operator=(const Handle_MAT2d_Connexion &aHandle);
+		Handle_MAT2d_Connexion & operator=(const MAT2d_Connexion *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion & operator=(const MAT2d_Connexion *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_Connexion const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_Connexion {
@@ -309,15 +309,15 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d();
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
@@ -347,15 +347,15 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve();
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve(const Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve(const MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve(const MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve & operator=(const Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve & operator=(const MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve & operator=(const MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
@@ -385,15 +385,15 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean();
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean(const Handle_MAT2d_SequenceNodeOfSequenceOfBoolean &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean(const MAT2d_SequenceNodeOfSequenceOfBoolean *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean(const MAT2d_SequenceNodeOfSequenceOfBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean & operator=(const Handle_MAT2d_SequenceNodeOfSequenceOfBoolean &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean & operator=(const MAT2d_SequenceNodeOfSequenceOfBoolean *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean & operator=(const MAT2d_SequenceNodeOfSequenceOfBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfBoolean {
@@ -423,15 +423,15 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec();
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec(const MAT2d_DataMapNodeOfDataMapOfIntegerBisec *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec(const MAT2d_DataMapNodeOfDataMapOfIntegerBisec *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerBisec *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerBisec *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
@@ -461,15 +461,15 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d();
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d(const MAT2d_DataMapNodeOfDataMapOfIntegerVec2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d(const MAT2d_DataMapNodeOfDataMapOfIntegerVec2d *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerVec2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerVec2d *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
@@ -499,15 +499,15 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public Handle_
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger();
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger &aHandle);
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger & operator=(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger & operator=(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
@@ -744,7 +744,7 @@ def __del__(self):
 class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		MAT2d_SequenceNodeOfSequenceOfConnexion(const Handle_MAT2d_Connexion &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		MAT2d_SequenceNodeOfSequenceOfConnexion(const MAT2d_Connexion *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion & Value() const;
 		%feature("autodoc", "1");
@@ -885,19 +885,19 @@ class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const MAT2d_SequenceOfConnexion & operator=(const MAT2d_SequenceOfConnexion &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_MAT2d_Connexion &T);
+		void Append(const MAT2d_Connexion *T);
 		%feature("autodoc", "1");
 		void Append(MAT2d_SequenceOfConnexion & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_MAT2d_Connexion &T);
+		void Prepend(const MAT2d_Connexion *T);
 		%feature("autodoc", "1");
 		void Prepend(MAT2d_SequenceOfConnexion & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_MAT2d_Connexion &I);
+		void InsertBefore(const Standard_Integer Index, const MAT2d_Connexion *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_MAT2d_Connexion &T);
+		void InsertAfter(const Standard_Integer Index, const MAT2d_Connexion *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
 		%feature("autodoc", "1");
@@ -911,7 +911,7 @@ class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_MAT2d_Connexion & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MAT2d_Connexion &I);
+		void SetValue(const Standard_Integer Index, const MAT2d_Connexion *I);
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -991,7 +991,7 @@ class MAT2d_Tool2d {
 		%feature("autodoc", "1");
 		void Sense(const MAT_Side aside);
 		%feature("autodoc", "1");
-		void InitItems(const Handle_MAT2d_Circuit &aCircuit);
+		void InitItems(const MAT2d_Circuit *aCircuit);
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfItems() const;
 		%feature("autodoc", "1");
@@ -1006,16 +1006,16 @@ class MAT2d_Tool2d {
 		%feature("autodoc", "1");
 		Standard_Integer Tangent(const Standard_Integer bisector);
 		%feature("autodoc", "1");
-		void CreateBisector(const Handle_MAT_Bisector &abisector);
+		void CreateBisector(const MAT_Bisector *abisector);
 		%feature("autodoc", "1");
-		Standard_Boolean TrimBisector(const Handle_MAT_Bisector &abisector);
+		Standard_Boolean TrimBisector(const MAT_Bisector *abisector);
 		%feature("autodoc", "1");
-		Standard_Boolean TrimBisector(const Handle_MAT_Bisector &abisector, const Standard_Integer apoint);
+		Standard_Boolean TrimBisector(const MAT_Bisector *abisector, const Standard_Integer apoint);
 		%feature("autodoc","IntersectBisector(const bisectorone, const bisectortwo) -> Standard_Integer");
 
-		Standard_Real IntersectBisector(const Handle_MAT_Bisector &bisectorone, const Handle_MAT_Bisector &bisectortwo, Standard_Integer &OutValue);
+		Standard_Real IntersectBisector(const MAT_Bisector *bisectorone, const MAT_Bisector *bisectortwo, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		Standard_Real Distance(const Handle_MAT_Bisector &abisector, const Standard_Real param1, const Standard_Real param2) const;
+		Standard_Real Distance(const MAT_Bisector *abisector, const Standard_Real param1, const Standard_Real param2) const;
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer bisector, const Standard_Integer erease) const;
 		%feature("autodoc", "1");
@@ -1199,9 +1199,9 @@ class MAT2d_Array2OfConnexion {
 		%feature("autodoc", "1");
 		MAT2d_Array2OfConnexion(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		MAT2d_Array2OfConnexion(const Handle_MAT2d_Connexion &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		MAT2d_Array2OfConnexion(const MAT2d_Connexion *Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		void Init(const Handle_MAT2d_Connexion &V);
+		void Init(const MAT2d_Connexion *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -1221,7 +1221,7 @@ class MAT2d_Array2OfConnexion {
 		%feature("autodoc", "1");
 		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_MAT2d_Connexion &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const MAT2d_Connexion *Value);
 		%feature("autodoc", "1");
 		const Handle_MAT2d_Connexion & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
@@ -1320,8 +1320,6 @@ class MAT2d_Connexion : public MMgt_TShared {
 		void Distance(const Standard_Real aDistance);
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion Reverse() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAfter(const Handle_MAT2d_Connexion &aConnexion, const Standard_Real aSense) const;
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer Deep=0, const Standard_Integer Offset=0) const;
 		%feature("autodoc", "1");
@@ -1880,7 +1878,7 @@ class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT2d_Connexion &I);
+		Standard_Boolean Bind(const Standard_Integer &K, const MAT2d_Connexion *I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
@@ -2052,7 +2050,7 @@ def __del__(self):
 class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const Standard_Integer &K, const Handle_MAT2d_Connexion &I, const TCollection_MapNodePtr &n);
+		MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const Standard_Integer &K, const MAT2d_Connexion *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey() {

@@ -75,15 +75,15 @@ class Handle_IGESData_ReadWriteModule : public Handle_Interface_ReaderModule {
 		%feature("autodoc", "1");
 		Handle_IGESData_ReadWriteModule();
 		%feature("autodoc", "1");
-		Handle_IGESData_ReadWriteModule(const Handle_IGESData_ReadWriteModule &aHandle);
+		Handle_IGESData_ReadWriteModule(const IGESData_ReadWriteModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_ReadWriteModule(const IGESData_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_ReadWriteModule & operator=(const Handle_IGESData_ReadWriteModule &aHandle);
+		Handle_IGESData_ReadWriteModule & operator=(const IGESData_ReadWriteModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_ReadWriteModule & operator=(const IGESData_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_ReadWriteModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_ReadWriteModule {
@@ -113,15 +113,15 @@ class Handle_IGESData_GeneralModule : public Handle_Interface_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESData_GeneralModule();
 		%feature("autodoc", "1");
-		Handle_IGESData_GeneralModule(const Handle_IGESData_GeneralModule &aHandle);
+		Handle_IGESData_GeneralModule(const IGESData_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_GeneralModule(const IGESData_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_GeneralModule & operator=(const Handle_IGESData_GeneralModule &aHandle);
+		Handle_IGESData_GeneralModule & operator=(const IGESData_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_GeneralModule & operator=(const IGESData_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_GeneralModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_GeneralModule {
@@ -151,15 +151,15 @@ class Handle_IGESData_ToolLocation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESData_ToolLocation();
 		%feature("autodoc", "1");
-		Handle_IGESData_ToolLocation(const Handle_IGESData_ToolLocation &aHandle);
+		Handle_IGESData_ToolLocation(const IGESData_ToolLocation *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_ToolLocation(const IGESData_ToolLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_ToolLocation & operator=(const Handle_IGESData_ToolLocation &aHandle);
+		Handle_IGESData_ToolLocation & operator=(const IGESData_ToolLocation *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_ToolLocation & operator=(const IGESData_ToolLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_ToolLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_ToolLocation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_ToolLocation {
@@ -189,15 +189,15 @@ class Handle_IGESData_IGESEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity(const Handle_IGESData_IGESEntity &aHandle);
+		Handle_IGESData_IGESEntity(const IGESData_IGESEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity(const IGESData_IGESEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity & operator=(const Handle_IGESData_IGESEntity &aHandle);
+		Handle_IGESData_IGESEntity & operator=(const IGESData_IGESEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity & operator=(const IGESData_IGESEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_IGESEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_IGESEntity {
@@ -227,15 +227,15 @@ class Handle_IGESData_UndefinedEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_UndefinedEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_UndefinedEntity(const Handle_IGESData_UndefinedEntity &aHandle);
+		Handle_IGESData_UndefinedEntity(const IGESData_UndefinedEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_UndefinedEntity(const IGESData_UndefinedEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_UndefinedEntity & operator=(const Handle_IGESData_UndefinedEntity &aHandle);
+		Handle_IGESData_UndefinedEntity & operator=(const IGESData_UndefinedEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_UndefinedEntity & operator=(const IGESData_UndefinedEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_UndefinedEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_UndefinedEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_UndefinedEntity {
@@ -265,15 +265,15 @@ class Handle_IGESData_FreeFormatEntity : public Handle_IGESData_UndefinedEntity 
 		%feature("autodoc", "1");
 		Handle_IGESData_FreeFormatEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_FreeFormatEntity(const Handle_IGESData_FreeFormatEntity &aHandle);
+		Handle_IGESData_FreeFormatEntity(const IGESData_FreeFormatEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_FreeFormatEntity(const IGESData_FreeFormatEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_FreeFormatEntity & operator=(const Handle_IGESData_FreeFormatEntity &aHandle);
+		Handle_IGESData_FreeFormatEntity & operator=(const IGESData_FreeFormatEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_FreeFormatEntity & operator=(const IGESData_FreeFormatEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_FreeFormatEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_FreeFormatEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_FreeFormatEntity {
@@ -303,15 +303,15 @@ class Handle_IGESData_Protocol : public Handle_Interface_Protocol {
 		%feature("autodoc", "1");
 		Handle_IGESData_Protocol();
 		%feature("autodoc", "1");
-		Handle_IGESData_Protocol(const Handle_IGESData_Protocol &aHandle);
+		Handle_IGESData_Protocol(const IGESData_Protocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_Protocol(const IGESData_Protocol *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_Protocol & operator=(const Handle_IGESData_Protocol &aHandle);
+		Handle_IGESData_Protocol & operator=(const IGESData_Protocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_Protocol & operator=(const IGESData_Protocol *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_Protocol const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_Protocol {
@@ -341,15 +341,15 @@ class Handle_IGESData_NodeOfSpecificLib : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESData_NodeOfSpecificLib();
 		%feature("autodoc", "1");
-		Handle_IGESData_NodeOfSpecificLib(const Handle_IGESData_NodeOfSpecificLib &aHandle);
+		Handle_IGESData_NodeOfSpecificLib(const IGESData_NodeOfSpecificLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_NodeOfSpecificLib(const IGESData_NodeOfSpecificLib *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_NodeOfSpecificLib & operator=(const Handle_IGESData_NodeOfSpecificLib &aHandle);
+		Handle_IGESData_NodeOfSpecificLib & operator=(const IGESData_NodeOfSpecificLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_NodeOfSpecificLib & operator=(const IGESData_NodeOfSpecificLib *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_NodeOfSpecificLib const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_NodeOfSpecificLib const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_NodeOfSpecificLib {
@@ -379,15 +379,15 @@ class Handle_IGESData_SpecificModule : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_IGESData_SpecificModule();
 		%feature("autodoc", "1");
-		Handle_IGESData_SpecificModule(const Handle_IGESData_SpecificModule &aHandle);
+		Handle_IGESData_SpecificModule(const IGESData_SpecificModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_SpecificModule(const IGESData_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_SpecificModule & operator=(const Handle_IGESData_SpecificModule &aHandle);
+		Handle_IGESData_SpecificModule & operator=(const IGESData_SpecificModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_SpecificModule & operator=(const IGESData_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_SpecificModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_SpecificModule {
@@ -417,15 +417,15 @@ class Handle_IGESData_DefaultSpecific : public Handle_IGESData_SpecificModule {
 		%feature("autodoc", "1");
 		Handle_IGESData_DefaultSpecific();
 		%feature("autodoc", "1");
-		Handle_IGESData_DefaultSpecific(const Handle_IGESData_DefaultSpecific &aHandle);
+		Handle_IGESData_DefaultSpecific(const IGESData_DefaultSpecific *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_DefaultSpecific(const IGESData_DefaultSpecific *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_DefaultSpecific & operator=(const Handle_IGESData_DefaultSpecific &aHandle);
+		Handle_IGESData_DefaultSpecific & operator=(const IGESData_DefaultSpecific *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_DefaultSpecific & operator=(const IGESData_DefaultSpecific *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_DefaultSpecific const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_DefaultSpecific const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_DefaultSpecific {
@@ -455,15 +455,15 @@ class Handle_IGESData_LevelListEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_LevelListEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_LevelListEntity(const Handle_IGESData_LevelListEntity &aHandle);
+		Handle_IGESData_LevelListEntity(const IGESData_LevelListEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_LevelListEntity(const IGESData_LevelListEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_LevelListEntity & operator=(const Handle_IGESData_LevelListEntity &aHandle);
+		Handle_IGESData_LevelListEntity & operator=(const IGESData_LevelListEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_LevelListEntity & operator=(const IGESData_LevelListEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_LevelListEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_LevelListEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_LevelListEntity {
@@ -493,15 +493,15 @@ class Handle_IGESData_NameEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_NameEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_NameEntity(const Handle_IGESData_NameEntity &aHandle);
+		Handle_IGESData_NameEntity(const IGESData_NameEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_NameEntity(const IGESData_NameEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_NameEntity & operator=(const Handle_IGESData_NameEntity &aHandle);
+		Handle_IGESData_NameEntity & operator=(const IGESData_NameEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_NameEntity & operator=(const IGESData_NameEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_NameEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_NameEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_NameEntity {
@@ -531,15 +531,15 @@ class Handle_IGESData_ColorEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_ColorEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_ColorEntity(const Handle_IGESData_ColorEntity &aHandle);
+		Handle_IGESData_ColorEntity(const IGESData_ColorEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_ColorEntity(const IGESData_ColorEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_ColorEntity & operator=(const Handle_IGESData_ColorEntity &aHandle);
+		Handle_IGESData_ColorEntity & operator=(const IGESData_ColorEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_ColorEntity & operator=(const IGESData_ColorEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_ColorEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_ColorEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_ColorEntity {
@@ -569,15 +569,15 @@ class Handle_IGESData_LineFontEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_LineFontEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_LineFontEntity(const Handle_IGESData_LineFontEntity &aHandle);
+		Handle_IGESData_LineFontEntity(const IGESData_LineFontEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_LineFontEntity(const IGESData_LineFontEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_LineFontEntity & operator=(const Handle_IGESData_LineFontEntity &aHandle);
+		Handle_IGESData_LineFontEntity & operator=(const IGESData_LineFontEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_LineFontEntity & operator=(const IGESData_LineFontEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_LineFontEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_LineFontEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_LineFontEntity {
@@ -607,15 +607,15 @@ class Handle_IGESData_TransfEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_TransfEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_TransfEntity(const Handle_IGESData_TransfEntity &aHandle);
+		Handle_IGESData_TransfEntity(const IGESData_TransfEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_TransfEntity(const IGESData_TransfEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_TransfEntity & operator=(const Handle_IGESData_TransfEntity &aHandle);
+		Handle_IGESData_TransfEntity & operator=(const IGESData_TransfEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_TransfEntity & operator=(const IGESData_TransfEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_TransfEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_TransfEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_TransfEntity {
@@ -645,15 +645,15 @@ class Handle_IGESData_FileProtocol : public Handle_IGESData_Protocol {
 		%feature("autodoc", "1");
 		Handle_IGESData_FileProtocol();
 		%feature("autodoc", "1");
-		Handle_IGESData_FileProtocol(const Handle_IGESData_FileProtocol &aHandle);
+		Handle_IGESData_FileProtocol(const IGESData_FileProtocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_FileProtocol(const IGESData_FileProtocol *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_FileProtocol & operator=(const Handle_IGESData_FileProtocol &aHandle);
+		Handle_IGESData_FileProtocol & operator=(const IGESData_FileProtocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_FileProtocol & operator=(const IGESData_FileProtocol *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_FileProtocol const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_FileProtocol const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_FileProtocol {
@@ -683,15 +683,15 @@ class Handle_IGESData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_IGESData_GlobalNodeOfWriterLib();
 		%feature("autodoc", "1");
-		Handle_IGESData_GlobalNodeOfWriterLib(const Handle_IGESData_GlobalNodeOfWriterLib &aHandle);
+		Handle_IGESData_GlobalNodeOfWriterLib(const IGESData_GlobalNodeOfWriterLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_GlobalNodeOfWriterLib(const IGESData_GlobalNodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_GlobalNodeOfWriterLib & operator=(const Handle_IGESData_GlobalNodeOfWriterLib &aHandle);
+		Handle_IGESData_GlobalNodeOfWriterLib & operator=(const IGESData_GlobalNodeOfWriterLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_GlobalNodeOfWriterLib & operator=(const IGESData_GlobalNodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_GlobalNodeOfWriterLib const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_GlobalNodeOfWriterLib const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_GlobalNodeOfWriterLib {
@@ -721,15 +721,15 @@ class Handle_IGESData_HArray1OfIGESEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESData_HArray1OfIGESEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_HArray1OfIGESEntity(const Handle_IGESData_HArray1OfIGESEntity &aHandle);
+		Handle_IGESData_HArray1OfIGESEntity(const IGESData_HArray1OfIGESEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_HArray1OfIGESEntity(const IGESData_HArray1OfIGESEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_HArray1OfIGESEntity & operator=(const Handle_IGESData_HArray1OfIGESEntity &aHandle);
+		Handle_IGESData_HArray1OfIGESEntity & operator=(const IGESData_HArray1OfIGESEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_HArray1OfIGESEntity & operator=(const IGESData_HArray1OfIGESEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_HArray1OfIGESEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_HArray1OfIGESEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_HArray1OfIGESEntity {
@@ -759,15 +759,15 @@ class Handle_IGESData_ViewKindEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_ViewKindEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_ViewKindEntity(const Handle_IGESData_ViewKindEntity &aHandle);
+		Handle_IGESData_ViewKindEntity(const IGESData_ViewKindEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_ViewKindEntity(const IGESData_ViewKindEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_ViewKindEntity & operator=(const Handle_IGESData_ViewKindEntity &aHandle);
+		Handle_IGESData_ViewKindEntity & operator=(const IGESData_ViewKindEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_ViewKindEntity & operator=(const IGESData_ViewKindEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_ViewKindEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_ViewKindEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_ViewKindEntity {
@@ -797,15 +797,15 @@ class Handle_IGESData_GlobalNodeOfSpecificLib : public Handle_Standard_Transient
 		%feature("autodoc", "1");
 		Handle_IGESData_GlobalNodeOfSpecificLib();
 		%feature("autodoc", "1");
-		Handle_IGESData_GlobalNodeOfSpecificLib(const Handle_IGESData_GlobalNodeOfSpecificLib &aHandle);
+		Handle_IGESData_GlobalNodeOfSpecificLib(const IGESData_GlobalNodeOfSpecificLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_GlobalNodeOfSpecificLib(const IGESData_GlobalNodeOfSpecificLib *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_GlobalNodeOfSpecificLib & operator=(const Handle_IGESData_GlobalNodeOfSpecificLib &aHandle);
+		Handle_IGESData_GlobalNodeOfSpecificLib & operator=(const IGESData_GlobalNodeOfSpecificLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_GlobalNodeOfSpecificLib & operator=(const IGESData_GlobalNodeOfSpecificLib *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_GlobalNodeOfSpecificLib const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_GlobalNodeOfSpecificLib const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_GlobalNodeOfSpecificLib {
@@ -835,15 +835,15 @@ class Handle_IGESData_FileRecognizer : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_IGESData_FileRecognizer();
 		%feature("autodoc", "1");
-		Handle_IGESData_FileRecognizer(const Handle_IGESData_FileRecognizer &aHandle);
+		Handle_IGESData_FileRecognizer(const IGESData_FileRecognizer *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_FileRecognizer(const IGESData_FileRecognizer *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_FileRecognizer & operator=(const Handle_IGESData_FileRecognizer &aHandle);
+		Handle_IGESData_FileRecognizer & operator=(const IGESData_FileRecognizer *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_FileRecognizer & operator=(const IGESData_FileRecognizer *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_FileRecognizer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_FileRecognizer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_FileRecognizer {
@@ -873,15 +873,15 @@ class Handle_IGESData_DefaultGeneral : public Handle_IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESData_DefaultGeneral();
 		%feature("autodoc", "1");
-		Handle_IGESData_DefaultGeneral(const Handle_IGESData_DefaultGeneral &aHandle);
+		Handle_IGESData_DefaultGeneral(const IGESData_DefaultGeneral *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_DefaultGeneral(const IGESData_DefaultGeneral *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_DefaultGeneral & operator=(const Handle_IGESData_DefaultGeneral &aHandle);
+		Handle_IGESData_DefaultGeneral & operator=(const IGESData_DefaultGeneral *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_DefaultGeneral & operator=(const IGESData_DefaultGeneral *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_DefaultGeneral const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_DefaultGeneral const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_DefaultGeneral {
@@ -911,15 +911,15 @@ class Handle_IGESData_SingleParentEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_SingleParentEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_SingleParentEntity(const Handle_IGESData_SingleParentEntity &aHandle);
+		Handle_IGESData_SingleParentEntity(const IGESData_SingleParentEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_SingleParentEntity(const IGESData_SingleParentEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_SingleParentEntity & operator=(const Handle_IGESData_SingleParentEntity &aHandle);
+		Handle_IGESData_SingleParentEntity & operator=(const IGESData_SingleParentEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_SingleParentEntity & operator=(const IGESData_SingleParentEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_SingleParentEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_SingleParentEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_SingleParentEntity {
@@ -949,15 +949,15 @@ class Handle_IGESData_NodeOfWriterLib : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESData_NodeOfWriterLib();
 		%feature("autodoc", "1");
-		Handle_IGESData_NodeOfWriterLib(const Handle_IGESData_NodeOfWriterLib &aHandle);
+		Handle_IGESData_NodeOfWriterLib(const IGESData_NodeOfWriterLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_NodeOfWriterLib(const IGESData_NodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_NodeOfWriterLib & operator=(const Handle_IGESData_NodeOfWriterLib &aHandle);
+		Handle_IGESData_NodeOfWriterLib & operator=(const IGESData_NodeOfWriterLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_NodeOfWriterLib & operator=(const IGESData_NodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_NodeOfWriterLib const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_NodeOfWriterLib const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_NodeOfWriterLib {
@@ -987,15 +987,15 @@ class Handle_IGESData_IGESModel : public Handle_Interface_InterfaceModel {
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESModel();
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESModel(const Handle_IGESData_IGESModel &aHandle);
+		Handle_IGESData_IGESModel(const IGESData_IGESModel *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESModel(const IGESData_IGESModel *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESModel & operator=(const Handle_IGESData_IGESModel &aHandle);
+		Handle_IGESData_IGESModel & operator=(const IGESData_IGESModel *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESModel & operator=(const IGESData_IGESModel *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESModel const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_IGESModel const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_IGESModel {
@@ -1025,15 +1025,15 @@ class Handle_IGESData_LabelDisplayEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_LabelDisplayEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_LabelDisplayEntity(const Handle_IGESData_LabelDisplayEntity &aHandle);
+		Handle_IGESData_LabelDisplayEntity(const IGESData_LabelDisplayEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_LabelDisplayEntity(const IGESData_LabelDisplayEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_LabelDisplayEntity & operator=(const Handle_IGESData_LabelDisplayEntity &aHandle);
+		Handle_IGESData_LabelDisplayEntity & operator=(const IGESData_LabelDisplayEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_LabelDisplayEntity & operator=(const IGESData_LabelDisplayEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_LabelDisplayEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_LabelDisplayEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_LabelDisplayEntity {
@@ -1063,15 +1063,15 @@ class Handle_IGESData_IGESReaderData : public Handle_Interface_FileReaderData {
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESReaderData();
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESReaderData(const Handle_IGESData_IGESReaderData &aHandle);
+		Handle_IGESData_IGESReaderData(const IGESData_IGESReaderData *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESReaderData(const IGESData_IGESReaderData *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESReaderData & operator=(const Handle_IGESData_IGESReaderData &aHandle);
+		Handle_IGESData_IGESReaderData & operator=(const IGESData_IGESReaderData *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESReaderData & operator=(const IGESData_IGESReaderData *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESReaderData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_IGESReaderData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESData_IGESReaderData {
@@ -1167,23 +1167,19 @@ class IGESData_IGESEntity : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer SubScriptNumber() const;
 		%feature("autodoc", "1");
-		void InitDirFieldEntity(const Standard_Integer fieldnum, const Handle_IGESData_IGESEntity &ent);
+		void InitTransf(const IGESData_TransfEntity *ent);
 		%feature("autodoc", "1");
-		void InitTransf(const Handle_IGESData_TransfEntity &ent);
+		void InitView(const IGESData_ViewKindEntity *ent);
 		%feature("autodoc", "1");
-		void InitView(const Handle_IGESData_ViewKindEntity &ent);
+		void InitLineFont(const IGESData_LineFontEntity *ent, const Standard_Integer rank=0);
 		%feature("autodoc", "1");
-		void InitLineFont(const Handle_IGESData_LineFontEntity &ent, const Standard_Integer rank=0);
+		void InitLevel(const IGESData_LevelListEntity *ent, const Standard_Integer val=0);
 		%feature("autodoc", "1");
-		void InitLevel(const Handle_IGESData_LevelListEntity &ent, const Standard_Integer val=0);
-		%feature("autodoc", "1");
-		void InitColor(const Handle_IGESData_ColorEntity &ent, const Standard_Integer rank=0);
+		void InitColor(const IGESData_ColorEntity *ent, const Standard_Integer rank=0);
 		%feature("autodoc", "1");
 		void InitStatus(const Standard_Integer blank, const Standard_Integer subordinate, const Standard_Integer useflag, const Standard_Integer hierarchy);
 		%feature("autodoc", "1");
-		void SetLabel(const Handle_TCollection_HAsciiString &label, const Standard_Integer sub=-0x000000001);
-		%feature("autodoc", "1");
-		void InitMisc(const Handle_IGESData_IGESEntity &str, const Handle_IGESData_LabelDisplayEntity &lab, const Standard_Integer weightnum);
+		void SetLabel(const TCollection_HAsciiString *label, const Standard_Integer sub=-0x000000001);
 		%feature("autodoc", "1");
 		Standard_Boolean HasOneParent() const;
 		%feature("autodoc", "1");
@@ -1205,13 +1201,9 @@ class IGESData_IGESEntity : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_EntityIterator Associativities() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbTypedAssociativities(const Handle_Standard_Type &atype) const;
+		Standard_Integer NbTypedAssociativities(const Standard_Type *atype) const;
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TypedAssociativity(const Handle_Standard_Type &atype) const;
-		%feature("autodoc", "1");
-		void Associate(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		void Dissociate(const Handle_IGESData_IGESEntity &ent) const;
+		Handle_IGESData_IGESEntity TypedAssociativity(const Standard_Type *atype) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ArePresentProperties() const;
 		%feature("autodoc", "1");
@@ -1219,13 +1211,9 @@ class IGESData_IGESEntity : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_EntityIterator Properties() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbTypedProperties(const Handle_Standard_Type &atype) const;
+		Standard_Integer NbTypedProperties(const Standard_Type *atype) const;
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TypedProperty(const Handle_Standard_Type &atype, const Standard_Integer anum=0) const;
-		%feature("autodoc", "1");
-		void AddProperty(const Handle_IGESData_IGESEntity &ent);
-		%feature("autodoc", "1");
-		void RemoveProperty(const Handle_IGESData_IGESEntity &ent);
+		Handle_IGESData_IGESEntity TypedProperty(const Standard_Type *atype, const Standard_Integer anum=0) const;
 		%feature("autodoc", "1");
 		void SetLineWeight(const Standard_Real defw, const Standard_Real maxw, const Standard_Integer gradw);
 		%feature("autodoc", "1");
@@ -1298,9 +1286,9 @@ def __del__(self):
 class IGESData_SpecificModule : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		virtual		void OwnDump(const Standard_Integer CN, const IGESData_IGESEntity *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1368,15 +1356,15 @@ def __del__(self):
 class IGESData_ReadWriteModule : public Interface_ReaderModule {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Interface_FileReaderData &data, const Standard_Integer num) const;
+		virtual		Standard_Integer CaseNum(const Interface_FileReaderData *data, const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
 		%feature("autodoc", "1");
-		virtual		void Read(const Standard_Integer CN, const Handle_Interface_FileReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
+		virtual		void Read(const Standard_Integer CN, const Interface_FileReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		virtual		void ReadOwnParams(const Standard_Integer CN, const IGESData_IGESEntity *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
+		virtual		void WriteOwnParams(const Standard_Integer CN, const IGESData_IGESEntity *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1509,15 +1497,15 @@ def __del__(self):
 class IGESData_IGESDumper {
 	public:
 		%feature("autodoc", "1");
-		IGESData_IGESDumper(const Handle_IGESData_IGESModel &model, const Handle_IGESData_Protocol &protocol);
+		IGESData_IGESDumper(const IGESData_IGESModel *model, const IGESData_Protocol *protocol);
 		%feature("autodoc", "1");
-		void PrintDNum(const Handle_IGESData_IGESEntity &ent, const Handle_Message_Messenger &S) const;
+		void PrintDNum(const IGESData_IGESEntity *ent, const Message_Messenger *S) const;
 		%feature("autodoc", "1");
-		void PrintShort(const Handle_IGESData_IGESEntity &ent, const Handle_Message_Messenger &S) const;
+		void PrintShort(const IGESData_IGESEntity *ent, const Message_Messenger *S) const;
 		%feature("autodoc", "1");
-		void Dump(const Handle_IGESData_IGESEntity &ent, const Handle_Message_Messenger &S, const Standard_Integer own, const Standard_Integer attached=-0x000000001) const;
+		void Dump(const IGESData_IGESEntity *ent, const Message_Messenger *S, const Standard_Integer own, const Standard_Integer attached=-0x000000001) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESData_IGESEntity &ent, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESData_IGESEntity *ent, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESData_IGESDumper::~IGESData_IGESDumper %{
@@ -1602,39 +1590,39 @@ def __del__(self):
 class IGESData_ToolLocation : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		IGESData_ToolLocation(const Handle_IGESData_IGESModel &amodel, const Handle_IGESData_Protocol &protocol);
+		IGESData_ToolLocation(const IGESData_IGESModel *amodel, const IGESData_Protocol *protocol);
 		%feature("autodoc", "1");
 		void Load();
 		%feature("autodoc", "1");
 		void SetPrecision(const Standard_Real prec);
 		%feature("autodoc", "1");
-		void SetReference(const Handle_IGESData_IGESEntity &parent, const Handle_IGESData_IGESEntity &child);
+		void SetReference(const IGESData_IGESEntity *parent, const IGESData_IGESEntity *child);
 		%feature("autodoc", "1");
-		void SetParentAssoc(const Handle_IGESData_IGESEntity &parent, const Handle_IGESData_IGESEntity &child);
+		void SetParentAssoc(const IGESData_IGESEntity *parent, const IGESData_IGESEntity *child);
 		%feature("autodoc", "1");
-		void ResetDependences(const Handle_IGESData_IGESEntity &child);
+		void ResetDependences(const IGESData_IGESEntity *child);
 		%feature("autodoc", "1");
-		void SetOwnAsDependent(const Handle_IGESData_IGESEntity &ent);
+		void SetOwnAsDependent(const IGESData_IGESEntity *ent);
 		%feature("autodoc", "1");
-		Standard_Boolean IsTransf(const Handle_IGESData_IGESEntity &ent) const;
+		Standard_Boolean IsTransf(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsAssociativity(const Handle_IGESData_IGESEntity &ent) const;
+		Standard_Boolean IsAssociativity(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasTransf(const Handle_IGESData_IGESEntity &ent) const;
+		Standard_Boolean HasTransf(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		gp_GTrsf ExplicitLocation(const Handle_IGESData_IGESEntity &ent) const;
+		gp_GTrsf ExplicitLocation(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsAmbiguous(const Handle_IGESData_IGESEntity &ent) const;
+		Standard_Boolean IsAmbiguous(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasParent(const Handle_IGESData_IGESEntity &ent) const;
+		Standard_Boolean HasParent(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Parent(const Handle_IGESData_IGESEntity &ent) const;
+		Handle_IGESData_IGESEntity Parent(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasParentByAssociativity(const Handle_IGESData_IGESEntity &ent) const;
+		Standard_Boolean HasParentByAssociativity(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		gp_GTrsf ParentLocation(const Handle_IGESData_IGESEntity &ent) const;
+		gp_GTrsf ParentLocation(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		gp_GTrsf EffectiveLocation(const Handle_IGESData_IGESEntity &ent) const;
+		gp_GTrsf EffectiveLocation(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
 		Standard_Boolean AnalyseLocation(const gp_GTrsf &loc, gp_Trsf & result) const;
 		%feature("autodoc", "1");
@@ -1673,7 +1661,7 @@ def __del__(self):
 class IGESData_ParamReader {
 	public:
 		%feature("autodoc", "1");
-		IGESData_ParamReader(const Handle_Interface_ParamList &list, const Handle_Interface_Check &ach, const Standard_Integer base=1, const Standard_Integer nbpar=0, const Standard_Integer num=0);
+		IGESData_ParamReader(const Interface_ParamList *list, const Interface_Check *ach, const Standard_Integer base=1, const Standard_Integer nbpar=0, const Standard_Integer num=0);
 		%feature("autodoc", "1");
 		Standard_Integer EntityNumber() const;
 		%feature("autodoc", "1");
@@ -1701,7 +1689,7 @@ class IGESData_ParamReader {
 		%feature("autodoc", "1");
 		Standard_Integer ParamNumber(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity ParamEntity(const Handle_IGESData_IGESReaderData &IR, const Standard_Integer num);
+		Handle_IGESData_IGESEntity ParamEntity(const IGESData_IGESReaderData *IR, const Standard_Integer num);
 		%feature("autodoc", "1");
 		IGESData_ParamCursor Current() const;
 		%feature("autodoc", "1");
@@ -1737,13 +1725,13 @@ class IGESData_ParamReader {
 		%feature("autodoc", "1");
 		Standard_Boolean ReadText(const IGESData_ParamCursor &PC, const char * mess, Handle_TCollection_HAsciiString & val);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, IGESData_Status & aStatus, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
+		Standard_Boolean ReadEntity(const IGESData_IGESReaderData *IR, const IGESData_ParamCursor &PC, IGESData_Status & aStatus, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
+		Standard_Boolean ReadEntity(const IGESData_IGESReaderData *IR, const IGESData_ParamCursor &PC, const char * mess, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, IGESData_Status & aStatus, const Handle_Standard_Type &type, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
+		Standard_Boolean ReadEntity(const IGESData_IGESReaderData *IR, const IGESData_ParamCursor &PC, IGESData_Status & aStatus, const Standard_Type *type, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, const Handle_Standard_Type &type, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
+		Standard_Boolean ReadEntity(const IGESData_IGESReaderData *IR, const IGESData_ParamCursor &PC, const char * mess, const Standard_Type *type, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
 		%feature("autodoc", "1");
 		Standard_Boolean ReadInts(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_TColStd_HArray1OfInteger & val, const Standard_Integer index=1);
 		%feature("autodoc", "1");
@@ -1757,13 +1745,13 @@ class IGESData_ParamReader {
 		%feature("autodoc", "1");
 		Standard_Boolean ReadTexts(const IGESData_ParamCursor &PC, const char * mess, Handle_Interface_HArray1OfHAsciiString & val, const Standard_Integer index=1);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadEnts(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_IGESData_HArray1OfIGESEntity & val, const Standard_Integer index=1);
+		Standard_Boolean ReadEnts(const IGESData_IGESReaderData *IR, const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_IGESData_HArray1OfIGESEntity & val, const Standard_Integer index=1);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadEnts(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, Handle_IGESData_HArray1OfIGESEntity & val, const Standard_Integer index=1);
+		Standard_Boolean ReadEnts(const IGESData_IGESReaderData *IR, const IGESData_ParamCursor &PC, const char * mess, Handle_IGESData_HArray1OfIGESEntity & val, const Standard_Integer index=1);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadEntList(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, Message_Msg & amsg, Interface_EntityList & val, const Standard_Boolean ord=1);
+		Standard_Boolean ReadEntList(const IGESData_IGESReaderData *IR, const IGESData_ParamCursor &PC, Message_Msg & amsg, Interface_EntityList & val, const Standard_Boolean ord=1);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadEntList(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, Interface_EntityList & val, const Standard_Boolean ord=1);
+		Standard_Boolean ReadEntList(const IGESData_IGESReaderData *IR, const IGESData_ParamCursor &PC, const char * mess, Interface_EntityList & val, const Standard_Boolean ord=1);
 		%feature("autodoc","ReadingReal(Standard_Integer num) -> Standard_Real");
 
 		Standard_Boolean ReadingReal(const Standard_Integer num, Standard_Real &OutValue);
@@ -1783,11 +1771,11 @@ class IGESData_ParamReader {
 		%feature("autodoc", "1");
 		void AddFail(const char * afail, const char * bfail="");
 		%feature("autodoc", "1");
-		void AddFail(const Handle_TCollection_HAsciiString &af, const Handle_TCollection_HAsciiString &bf);
+		void AddFail(const TCollection_HAsciiString *af, const TCollection_HAsciiString *bf);
 		%feature("autodoc", "1");
 		void AddWarning(const char * awarn, const char * bwarn="");
 		%feature("autodoc", "1");
-		void AddWarning(const Handle_TCollection_HAsciiString &aw, const Handle_TCollection_HAsciiString &bw);
+		void AddWarning(const TCollection_HAsciiString *aw, const TCollection_HAsciiString *bw);
 		%feature("autodoc", "1");
 		void Mend(const char * pref="");
 		%feature("autodoc", "1");
@@ -1822,7 +1810,7 @@ class IGESData_GlobalNodeOfSpecificLib : public Standard_Transient {
 		%feature("autodoc", "1");
 		IGESData_GlobalNodeOfSpecificLib();
 		%feature("autodoc", "1");
-		void Add(const Handle_IGESData_SpecificModule &amodule, const Handle_IGESData_Protocol &aprotocol);
+		void Add(const IGESData_SpecificModule *amodule, const IGESData_Protocol *aprotocol);
 		%feature("autodoc", "1");
 		const Handle_IGESData_SpecificModule & Module() const;
 		%feature("autodoc", "1");
@@ -1865,9 +1853,9 @@ class IGESData_Array1OfIGESEntity {
 		%feature("autodoc", "1");
 		IGESData_Array1OfIGESEntity(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		IGESData_Array1OfIGESEntity(const Handle_IGESData_IGESEntity &Item, const Standard_Integer Low, const Standard_Integer Up);
+		IGESData_Array1OfIGESEntity(const IGESData_IGESEntity *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &V);
+		void Init(const IGESData_IGESEntity *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -1883,7 +1871,7 @@ class IGESData_Array1OfIGESEntity {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESData_IGESEntity &Value);
+		void SetValue(const Standard_Integer Index, const IGESData_IGESEntity *Value);
 		%feature("autodoc", "1");
 		const Handle_IGESData_IGESEntity & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1969,7 +1957,7 @@ class IGESData_UndefinedEntity : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_Interface_UndefinedContent ChangeableContent();
 		%feature("autodoc", "1");
-		void SetNewContent(const Handle_Interface_UndefinedContent &cont);
+		void SetNewContent(const Interface_UndefinedContent *cont);
 		%feature("autodoc", "1");
 		Standard_Boolean IsOKDirPart() const;
 		%feature("autodoc", "1");
@@ -1987,9 +1975,9 @@ class IGESData_UndefinedEntity : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasSubScriptNumber() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean ReadDir(const Handle_IGESData_IGESReaderData &IR, IGESData_DirPart & DP, Handle_Interface_Check & ach);
+		virtual		Standard_Boolean ReadDir(const IGESData_IGESReaderData *IR, IGESData_DirPart & DP, Handle_Interface_Check & ach);
 		%feature("autodoc", "1");
-		virtual		void ReadOwnParams(const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR);
+		virtual		void ReadOwnParams(const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR);
 		%feature("autodoc", "1");
 		virtual		void WriteOwnParams(IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
@@ -2079,9 +2067,9 @@ class IGESData_HArray1OfIGESEntity : public MMgt_TShared {
 		%feature("autodoc", "1");
 		IGESData_HArray1OfIGESEntity(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		IGESData_HArray1OfIGESEntity(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESData_IGESEntity &V);
+		IGESData_HArray1OfIGESEntity(const Standard_Integer Low, const Standard_Integer Up, const IGESData_IGESEntity *V);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &V);
+		void Init(const IGESData_IGESEntity *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2089,7 +2077,7 @@ class IGESData_HArray1OfIGESEntity : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESData_IGESEntity &Value);
+		void SetValue(const Standard_Integer Index, const IGESData_IGESEntity *Value);
 		%feature("autodoc", "1");
 		const Handle_IGESData_IGESEntity & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -2134,7 +2122,7 @@ class IGESData_FileProtocol : public IGESData_Protocol {
 		%feature("autodoc", "1");
 		IGESData_FileProtocol();
 		%feature("autodoc", "1");
-		void Add(const Handle_IGESData_Protocol &protocol);
+		void Add(const IGESData_Protocol *protocol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbResources() const;
 		%feature("autodoc", "1");
@@ -2173,20 +2161,20 @@ def __del__(self):
 class IGESData_WriterLib {
 	public:
 		%feature("autodoc", "1");
-		void SetGlobal(const Handle_IGESData_ReadWriteModule &amodule, const Handle_IGESData_Protocol &aprotocol);
+		void SetGlobal(const IGESData_ReadWriteModule *amodule, const IGESData_Protocol *aprotocol);
 		%feature("autodoc", "1");
-		IGESData_WriterLib(const Handle_IGESData_Protocol &aprotocol);
+		IGESData_WriterLib(const IGESData_Protocol *aprotocol);
 		%feature("autodoc", "1");
 		IGESData_WriterLib();
 		%feature("autodoc", "1");
-		void AddProtocol(const Handle_Standard_Transient &aprotocol);
+		void AddProtocol(const Standard_Transient *aprotocol);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc","Select(const obj) -> Standard_Integer");
 
-		Standard_Boolean Select(const Handle_IGESData_IGESEntity &obj, Handle_IGESData_ReadWriteModule & module, Standard_Integer &OutValue) const;
+		Standard_Boolean Select(const IGESData_IGESEntity *obj, Handle_IGESData_ReadWriteModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -2260,7 +2248,7 @@ class IGESData_NodeOfSpecificLib : public MMgt_TShared {
 		%feature("autodoc", "1");
 		IGESData_NodeOfSpecificLib();
 		%feature("autodoc", "1");
-		void AddNode(const Handle_IGESData_GlobalNodeOfSpecificLib &anode);
+		void AddNode(const IGESData_GlobalNodeOfSpecificLib *anode);
 		%feature("autodoc", "1");
 		const Handle_IGESData_SpecificModule & Module() const;
 		%feature("autodoc", "1");
@@ -2336,20 +2324,20 @@ def __del__(self):
 class IGESData_SpecificLib {
 	public:
 		%feature("autodoc", "1");
-		void SetGlobal(const Handle_IGESData_SpecificModule &amodule, const Handle_IGESData_Protocol &aprotocol);
+		void SetGlobal(const IGESData_SpecificModule *amodule, const IGESData_Protocol *aprotocol);
 		%feature("autodoc", "1");
-		IGESData_SpecificLib(const Handle_IGESData_Protocol &aprotocol);
+		IGESData_SpecificLib(const IGESData_Protocol *aprotocol);
 		%feature("autodoc", "1");
 		IGESData_SpecificLib();
 		%feature("autodoc", "1");
-		void AddProtocol(const Handle_Standard_Transient &aprotocol);
+		void AddProtocol(const Standard_Transient *aprotocol);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc","Select(const obj) -> Standard_Integer");
 
-		Standard_Boolean Select(const Handle_IGESData_IGESEntity &obj, Handle_IGESData_SpecificModule & module, Standard_Integer &OutValue) const;
+		Standard_Boolean Select(const IGESData_IGESEntity *obj, Handle_IGESData_SpecificModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -2404,15 +2392,15 @@ class IGESData_FreeFormatEntity : public IGESData_UndefinedEntity {
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfInteger NegativePointers() const;
 		%feature("autodoc", "1");
-		void AddLiteral(const Interface_ParamType ptype, const Handle_TCollection_HAsciiString &val);
+		void AddLiteral(const Interface_ParamType ptype, const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
 		void AddLiteral(const Interface_ParamType ptype, const char * val);
 		%feature("autodoc", "1");
-		void AddEntity(const Interface_ParamType ptype, const Handle_IGESData_IGESEntity &ent, const Standard_Boolean negative=0);
+		void AddEntity(const Interface_ParamType ptype, const IGESData_IGESEntity *ent, const Standard_Boolean negative=0);
 		%feature("autodoc", "1");
-		void AddEntities(const Handle_IGESData_HArray1OfIGESEntity &ents);
+		void AddEntities(const IGESData_HArray1OfIGESEntity *ents);
 		%feature("autodoc", "1");
-		void AddNegativePointers(const Handle_TColStd_HSequenceOfInteger &list);
+		void AddNegativePointers(const TColStd_HSequenceOfInteger *list);
 		%feature("autodoc", "1");
 		void ClearNegativePointers();
 		%feature("autodoc", "1");
@@ -2490,37 +2478,37 @@ def __del__(self):
 class IGESData_GeneralModule : public Interface_GeneralModule {
 	public:
 		%feature("autodoc", "1");
-		virtual		void FillSharedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void FillSharedCase(const Standard_Integer CN, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
+		virtual		void OwnSharedCase(const Standard_Integer CN, const IGESData_IGESEntity *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void ListImpliedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void ListImpliedCase(const Standard_Integer CN, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void OwnImpliedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
+		virtual		void OwnImpliedCase(const Standard_Integer CN, const IGESData_IGESEntity *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void CheckCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void CheckCase(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void OwnCheckCase(const Standard_Integer CN, const IGESData_IGESEntity *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean CanCopy(const Standard_Integer CN, const Handle_Standard_Transient &ent) const;
+		virtual		Standard_Boolean CanCopy(const Standard_Integer CN, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
 		%feature("autodoc", "1");
-		virtual		void CopyCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
+		virtual		void CopyCase(const Standard_Integer CN, const Standard_Transient *entfrom, const Standard_Transient *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
+		virtual		void OwnCopyCase(const Standard_Integer CN, const IGESData_IGESEntity *entfrom, const IGESData_IGESEntity *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		virtual		void RenewImpliedCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, const Interface_CopyTool &TC) const;
+		virtual		void RenewImpliedCase(const Standard_Integer CN, const Standard_Transient *entfrom, const Standard_Transient *entto, const Interface_CopyTool &TC) const;
 		%feature("autodoc", "1");
-		virtual		void OwnRenewCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, const Interface_CopyTool &TC) const;
+		virtual		void OwnRenewCase(const Standard_Integer CN, const IGESData_IGESEntity *entfrom, const IGESData_IGESEntity *entto, const Interface_CopyTool &TC) const;
 		%feature("autodoc", "1");
-		virtual		void WhenDeleteCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Standard_Boolean dispatched) const;
+		virtual		void WhenDeleteCase(const Standard_Integer CN, const Standard_Transient *ent, const Standard_Boolean dispatched) const;
 		%feature("autodoc", "1");
-		virtual		void OwnDeleteCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		virtual		void OwnDeleteCase(const Standard_Integer CN, const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString Name(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		virtual		Handle_TCollection_HAsciiString Name(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2594,8 +2582,6 @@ class IGESData_FileRecognizer : public Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity Result() const;
 		%feature("autodoc", "1");
-		void Add(const Handle_IGESData_FileRecognizer &reco);
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -2631,7 +2617,7 @@ class IGESData_NodeOfWriterLib : public MMgt_TShared {
 		%feature("autodoc", "1");
 		IGESData_NodeOfWriterLib();
 		%feature("autodoc", "1");
-		void AddNode(const Handle_IGESData_GlobalNodeOfWriterLib &anode);
+		void AddNode(const IGESData_GlobalNodeOfWriterLib *anode);
 		%feature("autodoc", "1");
 		const Handle_IGESData_ReadWriteModule & Module() const;
 		%feature("autodoc", "1");
@@ -2713,7 +2699,7 @@ class IGESData_IGESModel : public Interface_InterfaceModel {
 		%feature("autodoc", "1");
 		virtual		void ClearHeader();
 		%feature("autodoc", "1");
-		virtual		void DumpHeader(const Handle_Message_Messenger &S, const Standard_Integer level=0) const;
+		virtual		void DumpHeader(const Message_Messenger *S, const Standard_Integer level=0) const;
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfHAsciiString StartSection() const;
 		%feature("autodoc", "1");
@@ -2723,7 +2709,7 @@ class IGESData_IGESModel : public Interface_InterfaceModel {
 		%feature("autodoc", "1");
 		void ClearStartSection();
 		%feature("autodoc", "1");
-		void SetStartSection(const Handle_TColStd_HSequenceOfHAsciiString &list, const Standard_Boolean copy=1);
+		void SetStartSection(const TColStd_HSequenceOfHAsciiString *list, const Standard_Boolean copy=1);
 		%feature("autodoc", "1");
 		void AddStartLine(const char * line, const Standard_Integer atnum=0);
 		%feature("autodoc", "1");
@@ -2735,9 +2721,9 @@ class IGESData_IGESModel : public Interface_InterfaceModel {
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity Entity(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Standard_Integer DNum(const Handle_IGESData_IGESEntity &ent) const;
+		Standard_Integer DNum(const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		virtual		void GetFromAnother(const Handle_Interface_InterfaceModel &other);
+		virtual		void GetFromAnother(const Interface_InterfaceModel *other);
 		%feature("autodoc", "1");
 		virtual		Handle_Interface_InterfaceModel NewEmptyModel() const;
 		%feature("autodoc", "1");
@@ -2747,13 +2733,13 @@ class IGESData_IGESModel : public Interface_InterfaceModel {
 		%feature("autodoc", "1");
 		virtual		void ClearLabels();
 		%feature("autodoc", "1");
-		virtual		void PrintLabel(const Handle_Standard_Transient &ent, const Handle_Message_Messenger &S) const;
+		virtual		void PrintLabel(const Standard_Transient *ent, const Message_Messenger *S) const;
 		%feature("autodoc", "1");
-		virtual		void PrintToLog(const Handle_Standard_Transient &ent, const Handle_Message_Messenger &S) const;
+		virtual		void PrintToLog(const Standard_Transient *ent, const Message_Messenger *S) const;
 		%feature("autodoc", "1");
-		void PrintInfo(const Handle_Standard_Transient &ent, const Handle_Message_Messenger &S) const;
+		void PrintInfo(const Standard_Transient *ent, const Message_Messenger *S) const;
 		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString StringLabel(const Handle_Standard_Transient &ent) const;
+		virtual		Handle_TCollection_HAsciiString StringLabel(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2829,15 +2815,15 @@ class IGESData_DefaultGeneral : public IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		IGESData_DefaultGeneral();
 		%feature("autodoc", "1");
-		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
+		virtual		void OwnSharedCase(const Standard_Integer CN, const IGESData_IGESEntity *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void OwnCheckCase(const Standard_Integer CN, const IGESData_IGESEntity *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
 		%feature("autodoc", "1");
-		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
+		virtual		void OwnCopyCase(const Standard_Integer CN, const IGESData_IGESEntity *entfrom, const IGESData_IGESEntity *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2910,11 +2896,11 @@ class IGESData_DirChecker {
 		%feature("autodoc", "1");
 		void HierarchyStatusRequired(const Standard_Integer val);
 		%feature("autodoc", "1");
-		void Check(Handle_Interface_Check & ach, const Handle_IGESData_IGESEntity &ent) const;
+		void Check(Handle_Interface_Check & ach, const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		void CheckTypeAndForm(Handle_Interface_Check & ach, const Handle_IGESData_IGESEntity &ent) const;
+		void CheckTypeAndForm(Handle_Interface_Check & ach, const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Correct(const Handle_IGESData_IGESEntity &ent) const;
+		Standard_Boolean Correct(const IGESData_IGESEntity *ent) const;
 
 };
 %feature("shadow") IGESData_DirChecker::~IGESData_DirChecker %{
@@ -2974,13 +2960,13 @@ class IGESData_GlobalSection {
 		%feature("autodoc", "1");
 		IGESData_GlobalSection();
 		%feature("autodoc", "1");
-		void Init(const Handle_Interface_ParamSet &params, Handle_Interface_Check & ach);
+		void Init(const Interface_ParamSet *params, Handle_Interface_Check & ach);
 		%feature("autodoc", "1");
 		void CopyRefs();
 		%feature("autodoc", "1");
 		Handle_Interface_ParamSet Params() const;
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString TranslatedFromHollerith(const Handle_TCollection_HAsciiString &astr) const;
+		Handle_TCollection_HAsciiString TranslatedFromHollerith(const TCollection_HAsciiString *astr) const;
 		%feature("autodoc", "1");
 		Standard_Character Separator() const;
 		%feature("autodoc", "1");
@@ -3044,7 +3030,7 @@ class IGESData_GlobalSection {
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString NewDateString(const Standard_Integer year, const Standard_Integer month, const Standard_Integer day, const Standard_Integer hour, const Standard_Integer minut, const Standard_Integer second, const Standard_Integer mode=-0x000000001);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString NewDateString(const Handle_TCollection_HAsciiString &date, const Standard_Integer mode=1);
+		Handle_TCollection_HAsciiString NewDateString(const TCollection_HAsciiString *date, const Standard_Integer mode=1);
 		%feature("autodoc", "1");
 		Standard_Real UnitValue() const;
 		%feature("autodoc", "1");
@@ -3052,13 +3038,13 @@ class IGESData_GlobalSection {
 		%feature("autodoc", "1");
 		void SetEndMark(const Standard_Character val);
 		%feature("autodoc", "1");
-		void SetSendName(const Handle_TCollection_HAsciiString &val);
+		void SetSendName(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
-		void SetFileName(const Handle_TCollection_HAsciiString &val);
+		void SetFileName(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
-		void SetSystemId(const Handle_TCollection_HAsciiString &val);
+		void SetSystemId(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
-		void SetInterfaceVersion(const Handle_TCollection_HAsciiString &val);
+		void SetInterfaceVersion(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
 		void SetIntegerBits(const Standard_Integer val);
 		%feature("autodoc", "1");
@@ -3070,19 +3056,19 @@ class IGESData_GlobalSection {
 		%feature("autodoc", "1");
 		void SetMaxDigitsDouble(const Standard_Integer val);
 		%feature("autodoc", "1");
-		void SetReceiveName(const Handle_TCollection_HAsciiString &val);
+		void SetReceiveName(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
 		void SetScale(const Standard_Real val);
 		%feature("autodoc", "1");
 		void SetUnitFlag(const Standard_Integer val);
 		%feature("autodoc", "1");
-		void SetUnitName(const Handle_TCollection_HAsciiString &val);
+		void SetUnitName(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
 		void SetLineWeightGrad(const Standard_Integer val);
 		%feature("autodoc", "1");
 		void SetMaxLineWeight(const Standard_Real val);
 		%feature("autodoc", "1");
-		void SetDate(const Handle_TCollection_HAsciiString &val);
+		void SetDate(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
 		void SetResolution(const Standard_Real val);
 		%feature("autodoc", "1");
@@ -3092,17 +3078,17 @@ class IGESData_GlobalSection {
 		%feature("autodoc", "1");
 		void MaxMaxCoords(const gp_XYZ &xyz);
 		%feature("autodoc", "1");
-		void SetAuthorName(const Handle_TCollection_HAsciiString &val);
+		void SetAuthorName(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
-		void SetCompanyName(const Handle_TCollection_HAsciiString &val);
+		void SetCompanyName(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
 		void SetIGESVersion(const Standard_Integer val);
 		%feature("autodoc", "1");
 		void SetDraftingStandard(const Standard_Integer val);
 		%feature("autodoc", "1");
-		void SetLastChangeDate(const Handle_TCollection_HAsciiString &val);
+		void SetLastChangeDate(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
-		void SetApplicationProtocol(const Handle_TCollection_HAsciiString &val);
+		void SetApplicationProtocol(const TCollection_HAsciiString *val);
 
 };
 %feature("shadow") IGESData_GlobalSection::~IGESData_GlobalSection %{
@@ -3127,7 +3113,7 @@ class IGESData_GlobalNodeOfWriterLib : public Standard_Transient {
 		%feature("autodoc", "1");
 		IGESData_GlobalNodeOfWriterLib();
 		%feature("autodoc", "1");
-		void Add(const Handle_IGESData_ReadWriteModule &amodule, const Handle_IGESData_Protocol &aprotocol);
+		void Add(const IGESData_ReadWriteModule *amodule, const IGESData_Protocol *aprotocol);
 		%feature("autodoc", "1");
 		const Handle_IGESData_ReadWriteModule & Module() const;
 		%feature("autodoc", "1");
@@ -3168,9 +3154,9 @@ def __del__(self):
 class IGESData_BasicEditor {
 	public:
 		%feature("autodoc", "1");
-		IGESData_BasicEditor(const Handle_IGESData_Protocol &protocol);
+		IGESData_BasicEditor(const IGESData_Protocol *protocol);
 		%feature("autodoc", "1");
-		IGESData_BasicEditor(const Handle_IGESData_IGESModel &model, const Handle_IGESData_Protocol &protocol);
+		IGESData_BasicEditor(const IGESData_IGESModel *model, const IGESData_Protocol *protocol);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESModel Model() const;
 		%feature("autodoc", "1");
@@ -3184,7 +3170,7 @@ class IGESData_BasicEditor {
 		%feature("autodoc", "1");
 		void ComputeStatus();
 		%feature("autodoc", "1");
-		Standard_Boolean AutoCorrect(const Handle_IGESData_IGESEntity &ent);
+		Standard_Boolean AutoCorrect(const IGESData_IGESEntity *ent);
 		%feature("autodoc", "1");
 		Standard_Integer AutoCorrectModel();
 		%feature("autodoc", "1");
@@ -3273,7 +3259,7 @@ def __del__(self):
 class IGESData_IGESWriter {
 	public:
 		%feature("autodoc", "1");
-		IGESData_IGESWriter(const Handle_IGESData_IGESModel &amodel);
+		IGESData_IGESWriter(const IGESData_IGESModel *amodel);
 		%feature("autodoc", "1");
 		IGESData_IGESWriter();
 		%feature("autodoc", "1");
@@ -3295,7 +3281,7 @@ class IGESData_IGESWriter {
 		%feature("autodoc", "1");
 		void SendStartLine(const char * startline);
 		%feature("autodoc", "1");
-		void SendModel(const Handle_IGESData_Protocol &protocol);
+		void SendModel(const IGESData_Protocol *protocol);
 		%feature("autodoc", "1");
 		void SectionS();
 		%feature("autodoc", "1");
@@ -3305,13 +3291,13 @@ class IGESData_IGESWriter {
 		%feature("autodoc", "1");
 		void SectionT();
 		%feature("autodoc", "1");
-		void DirPart(const Handle_IGESData_IGESEntity &anent);
+		void DirPart(const IGESData_IGESEntity *anent);
 		%feature("autodoc", "1");
-		void OwnParams(const Handle_IGESData_IGESEntity &anent);
+		void OwnParams(const IGESData_IGESEntity *anent);
 		%feature("autodoc", "1");
-		void Associativities(const Handle_IGESData_IGESEntity &anent);
+		void Associativities(const IGESData_IGESEntity *anent);
 		%feature("autodoc", "1");
-		void Properties(const Handle_IGESData_IGESEntity &anent);
+		void Properties(const IGESData_IGESEntity *anent);
 		%feature("autodoc", "1");
 		void EndEntity();
 		%feature("autodoc", "1");
@@ -3323,11 +3309,11 @@ class IGESData_IGESWriter {
 		%feature("autodoc", "1");
 		void Send(const Standard_Real val);
 		%feature("autodoc", "1");
-		void Send(const Handle_TCollection_HAsciiString &val);
+		void Send(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
-		void Send(const Handle_IGESData_IGESEntity &val, const Standard_Boolean negative=0);
+		void Send(const IGESData_IGESEntity *val, const Standard_Boolean negative=0);
 		%feature("autodoc", "1");
-		void SendString(const Handle_TCollection_HAsciiString &val);
+		void SendString(const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
 		void Send(const gp_XY &val);
 		%feature("autodoc", "1");
@@ -3364,25 +3350,25 @@ def __del__(self):
 class IGESData_IGESReaderTool : public Interface_FileReaderTool {
 	public:
 		%feature("autodoc", "1");
-		IGESData_IGESReaderTool(const Handle_IGESData_IGESReaderData &reader, const Handle_IGESData_Protocol &protocol);
+		IGESData_IGESReaderTool(const IGESData_IGESReaderData *reader, const IGESData_Protocol *protocol);
 		%feature("autodoc", "1");
-		void Prepare(const Handle_IGESData_FileRecognizer &reco);
+		void Prepare(const IGESData_FileRecognizer *reco);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Recognize(const Standard_Integer num, Handle_Interface_Check & ach, Handle_Standard_Transient & ent);
 		%feature("autodoc", "1");
-		virtual		void BeginRead(const Handle_Interface_InterfaceModel &amodel);
+		virtual		void BeginRead(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Handle_Standard_Transient &anent, Handle_Interface_Check & acheck);
+		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Standard_Transient *anent, Handle_Interface_Check & acheck);
 		%feature("autodoc", "1");
-		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
+		virtual		void EndRead(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
-		void ReadDir(const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, const IGESData_DirPart &DP, Handle_Interface_Check & ach) const;
+		void ReadDir(const IGESData_IGESEntity *ent, const IGESData_IGESReaderData *IR, const IGESData_DirPart &DP, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESData_IGESEntity *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void ReadProps(const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadProps(const IGESData_IGESEntity *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void ReadAssocs(const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadAssocs(const IGESData_IGESEntity *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 
 };
 %feature("shadow") IGESData_IGESReaderTool::~IGESData_IGESReaderTool %{

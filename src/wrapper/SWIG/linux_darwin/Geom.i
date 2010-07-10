@@ -43,15 +43,15 @@ class Handle_Geom_UndefinedValue : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Geom_UndefinedValue();
 		%feature("autodoc", "1");
-		Handle_Geom_UndefinedValue(const Handle_Geom_UndefinedValue &aHandle);
+		Handle_Geom_UndefinedValue(const Geom_UndefinedValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_UndefinedValue(const Geom_UndefinedValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_UndefinedValue & operator=(const Handle_Geom_UndefinedValue &aHandle);
+		Handle_Geom_UndefinedValue & operator=(const Geom_UndefinedValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_UndefinedValue & operator=(const Geom_UndefinedValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_UndefinedValue const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_UndefinedValue const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_UndefinedValue {
@@ -81,15 +81,15 @@ class Handle_Geom_Geometry : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Geom_Geometry();
 		%feature("autodoc", "1");
-		Handle_Geom_Geometry(const Handle_Geom_Geometry &aHandle);
+		Handle_Geom_Geometry(const Geom_Geometry *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Geometry(const Geom_Geometry *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Geometry & operator=(const Handle_Geom_Geometry &aHandle);
+		Handle_Geom_Geometry & operator=(const Geom_Geometry *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Geometry & operator=(const Geom_Geometry *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Geometry const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Geometry const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Geometry {
@@ -119,15 +119,15 @@ class Handle_Geom_Vector : public Handle_Geom_Geometry {
 		%feature("autodoc", "1");
 		Handle_Geom_Vector();
 		%feature("autodoc", "1");
-		Handle_Geom_Vector(const Handle_Geom_Vector &aHandle);
+		Handle_Geom_Vector(const Geom_Vector *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Vector(const Geom_Vector *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Vector & operator=(const Handle_Geom_Vector &aHandle);
+		Handle_Geom_Vector & operator=(const Geom_Vector *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Vector & operator=(const Geom_Vector *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Vector const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Vector const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Vector {
@@ -157,15 +157,15 @@ class Handle_Geom_VectorWithMagnitude : public Handle_Geom_Vector {
 		%feature("autodoc", "1");
 		Handle_Geom_VectorWithMagnitude();
 		%feature("autodoc", "1");
-		Handle_Geom_VectorWithMagnitude(const Handle_Geom_VectorWithMagnitude &aHandle);
+		Handle_Geom_VectorWithMagnitude(const Geom_VectorWithMagnitude *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_VectorWithMagnitude(const Geom_VectorWithMagnitude *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_VectorWithMagnitude & operator=(const Handle_Geom_VectorWithMagnitude &aHandle);
+		Handle_Geom_VectorWithMagnitude & operator=(const Geom_VectorWithMagnitude *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_VectorWithMagnitude & operator=(const Geom_VectorWithMagnitude *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_VectorWithMagnitude const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_VectorWithMagnitude const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_VectorWithMagnitude {
@@ -195,15 +195,15 @@ class Handle_Geom_Surface : public Handle_Geom_Geometry {
 		%feature("autodoc", "1");
 		Handle_Geom_Surface();
 		%feature("autodoc", "1");
-		Handle_Geom_Surface(const Handle_Geom_Surface &aHandle);
+		Handle_Geom_Surface(const Geom_Surface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface(const Geom_Surface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Surface & operator=(const Handle_Geom_Surface &aHandle);
+		Handle_Geom_Surface & operator=(const Geom_Surface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface & operator=(const Geom_Surface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Surface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Surface {
@@ -233,15 +233,15 @@ class Handle_Geom_ElementarySurface : public Handle_Geom_Surface {
 		%feature("autodoc", "1");
 		Handle_Geom_ElementarySurface();
 		%feature("autodoc", "1");
-		Handle_Geom_ElementarySurface(const Handle_Geom_ElementarySurface &aHandle);
+		Handle_Geom_ElementarySurface(const Geom_ElementarySurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_ElementarySurface(const Geom_ElementarySurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_ElementarySurface & operator=(const Handle_Geom_ElementarySurface &aHandle);
+		Handle_Geom_ElementarySurface & operator=(const Geom_ElementarySurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_ElementarySurface & operator=(const Geom_ElementarySurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_ElementarySurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_ElementarySurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_ElementarySurface {
@@ -271,15 +271,15 @@ class Handle_Geom_ToroidalSurface : public Handle_Geom_ElementarySurface {
 		%feature("autodoc", "1");
 		Handle_Geom_ToroidalSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_ToroidalSurface(const Handle_Geom_ToroidalSurface &aHandle);
+		Handle_Geom_ToroidalSurface(const Geom_ToroidalSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_ToroidalSurface(const Geom_ToroidalSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_ToroidalSurface & operator=(const Handle_Geom_ToroidalSurface &aHandle);
+		Handle_Geom_ToroidalSurface & operator=(const Geom_ToroidalSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_ToroidalSurface & operator=(const Geom_ToroidalSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_ToroidalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_ToroidalSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_ToroidalSurface {
@@ -309,15 +309,15 @@ class Handle_Geom_Curve : public Handle_Geom_Geometry {
 		%feature("autodoc", "1");
 		Handle_Geom_Curve();
 		%feature("autodoc", "1");
-		Handle_Geom_Curve(const Handle_Geom_Curve &aHandle);
+		Handle_Geom_Curve(const Geom_Curve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Curve(const Geom_Curve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Curve & operator=(const Handle_Geom_Curve &aHandle);
+		Handle_Geom_Curve & operator=(const Geom_Curve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Curve & operator=(const Geom_Curve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Curve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Curve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Curve {
@@ -347,15 +347,15 @@ class Handle_Geom_Conic : public Handle_Geom_Curve {
 		%feature("autodoc", "1");
 		Handle_Geom_Conic();
 		%feature("autodoc", "1");
-		Handle_Geom_Conic(const Handle_Geom_Conic &aHandle);
+		Handle_Geom_Conic(const Geom_Conic *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Conic(const Geom_Conic *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Conic & operator=(const Handle_Geom_Conic &aHandle);
+		Handle_Geom_Conic & operator=(const Geom_Conic *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Conic & operator=(const Geom_Conic *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Conic const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Conic const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Conic {
@@ -385,15 +385,15 @@ class Handle_Geom_Circle : public Handle_Geom_Conic {
 		%feature("autodoc", "1");
 		Handle_Geom_Circle();
 		%feature("autodoc", "1");
-		Handle_Geom_Circle(const Handle_Geom_Circle &aHandle);
+		Handle_Geom_Circle(const Geom_Circle *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Circle(const Geom_Circle *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Circle & operator=(const Handle_Geom_Circle &aHandle);
+		Handle_Geom_Circle & operator=(const Geom_Circle *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Circle & operator=(const Geom_Circle *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Circle const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Circle const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Circle {
@@ -423,15 +423,15 @@ class Handle_Geom_BoundedCurve : public Handle_Geom_Curve {
 		%feature("autodoc", "1");
 		Handle_Geom_BoundedCurve();
 		%feature("autodoc", "1");
-		Handle_Geom_BoundedCurve(const Handle_Geom_BoundedCurve &aHandle);
+		Handle_Geom_BoundedCurve(const Geom_BoundedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BoundedCurve(const Geom_BoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BoundedCurve & operator=(const Handle_Geom_BoundedCurve &aHandle);
+		Handle_Geom_BoundedCurve & operator=(const Geom_BoundedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BoundedCurve & operator=(const Geom_BoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_BoundedCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_BoundedCurve {
@@ -461,15 +461,15 @@ class Handle_Geom_AxisPlacement : public Handle_Geom_Geometry {
 		%feature("autodoc", "1");
 		Handle_Geom_AxisPlacement();
 		%feature("autodoc", "1");
-		Handle_Geom_AxisPlacement(const Handle_Geom_AxisPlacement &aHandle);
+		Handle_Geom_AxisPlacement(const Geom_AxisPlacement *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_AxisPlacement(const Geom_AxisPlacement *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_AxisPlacement & operator=(const Handle_Geom_AxisPlacement &aHandle);
+		Handle_Geom_AxisPlacement & operator=(const Geom_AxisPlacement *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_AxisPlacement & operator=(const Geom_AxisPlacement *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_AxisPlacement const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_AxisPlacement const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_AxisPlacement {
@@ -499,15 +499,15 @@ class Handle_Geom_Axis1Placement : public Handle_Geom_AxisPlacement {
 		%feature("autodoc", "1");
 		Handle_Geom_Axis1Placement();
 		%feature("autodoc", "1");
-		Handle_Geom_Axis1Placement(const Handle_Geom_Axis1Placement &aHandle);
+		Handle_Geom_Axis1Placement(const Geom_Axis1Placement *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Axis1Placement(const Geom_Axis1Placement *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Axis1Placement & operator=(const Handle_Geom_Axis1Placement &aHandle);
+		Handle_Geom_Axis1Placement & operator=(const Geom_Axis1Placement *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Axis1Placement & operator=(const Geom_Axis1Placement *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Axis1Placement const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Axis1Placement const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Axis1Placement {
@@ -537,15 +537,15 @@ class Handle_Geom_SequenceNodeOfSequenceOfSurface : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_Geom_SequenceNodeOfSequenceOfSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_SequenceNodeOfSequenceOfSurface(const Handle_Geom_SequenceNodeOfSequenceOfSurface &aHandle);
+		Handle_Geom_SequenceNodeOfSequenceOfSurface(const Geom_SequenceNodeOfSequenceOfSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SequenceNodeOfSequenceOfSurface(const Geom_SequenceNodeOfSequenceOfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SequenceNodeOfSequenceOfSurface & operator=(const Handle_Geom_SequenceNodeOfSequenceOfSurface &aHandle);
+		Handle_Geom_SequenceNodeOfSequenceOfSurface & operator=(const Geom_SequenceNodeOfSequenceOfSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SequenceNodeOfSequenceOfSurface & operator=(const Geom_SequenceNodeOfSequenceOfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SequenceNodeOfSequenceOfSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_SequenceNodeOfSequenceOfSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_SequenceNodeOfSequenceOfSurface {
@@ -575,15 +575,15 @@ class Handle_Geom_Axis2Placement : public Handle_Geom_AxisPlacement {
 		%feature("autodoc", "1");
 		Handle_Geom_Axis2Placement();
 		%feature("autodoc", "1");
-		Handle_Geom_Axis2Placement(const Handle_Geom_Axis2Placement &aHandle);
+		Handle_Geom_Axis2Placement(const Geom_Axis2Placement *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Axis2Placement(const Geom_Axis2Placement *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Axis2Placement & operator=(const Handle_Geom_Axis2Placement &aHandle);
+		Handle_Geom_Axis2Placement & operator=(const Geom_Axis2Placement *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Axis2Placement & operator=(const Geom_Axis2Placement *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Axis2Placement const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Axis2Placement const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Axis2Placement {
@@ -613,15 +613,15 @@ class Handle_Geom_Transformation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Geom_Transformation();
 		%feature("autodoc", "1");
-		Handle_Geom_Transformation(const Handle_Geom_Transformation &aHandle);
+		Handle_Geom_Transformation(const Geom_Transformation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Transformation(const Geom_Transformation *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Transformation & operator=(const Handle_Geom_Transformation &aHandle);
+		Handle_Geom_Transformation & operator=(const Geom_Transformation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Transformation & operator=(const Geom_Transformation *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Transformation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Transformation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Transformation {
@@ -651,15 +651,15 @@ class Handle_Geom_Hyperbola : public Handle_Geom_Conic {
 		%feature("autodoc", "1");
 		Handle_Geom_Hyperbola();
 		%feature("autodoc", "1");
-		Handle_Geom_Hyperbola(const Handle_Geom_Hyperbola &aHandle);
+		Handle_Geom_Hyperbola(const Geom_Hyperbola *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Hyperbola(const Geom_Hyperbola *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Hyperbola & operator=(const Handle_Geom_Hyperbola &aHandle);
+		Handle_Geom_Hyperbola & operator=(const Geom_Hyperbola *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Hyperbola & operator=(const Geom_Hyperbola *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Hyperbola const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Hyperbola const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Hyperbola {
@@ -689,15 +689,15 @@ class Handle_Geom_Point : public Handle_Geom_Geometry {
 		%feature("autodoc", "1");
 		Handle_Geom_Point();
 		%feature("autodoc", "1");
-		Handle_Geom_Point(const Handle_Geom_Point &aHandle);
+		Handle_Geom_Point(const Geom_Point *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Point(const Geom_Point *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Point & operator=(const Handle_Geom_Point &aHandle);
+		Handle_Geom_Point & operator=(const Geom_Point *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Point & operator=(const Geom_Point *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Point const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Point const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Point {
@@ -727,15 +727,15 @@ class Handle_Geom_Parabola : public Handle_Geom_Conic {
 		%feature("autodoc", "1");
 		Handle_Geom_Parabola();
 		%feature("autodoc", "1");
-		Handle_Geom_Parabola(const Handle_Geom_Parabola &aHandle);
+		Handle_Geom_Parabola(const Geom_Parabola *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Parabola(const Geom_Parabola *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Parabola & operator=(const Handle_Geom_Parabola &aHandle);
+		Handle_Geom_Parabola & operator=(const Geom_Parabola *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Parabola & operator=(const Geom_Parabola *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Parabola const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Parabola const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Parabola {
@@ -765,15 +765,15 @@ class Handle_Geom_BoundedSurface : public Handle_Geom_Surface {
 		%feature("autodoc", "1");
 		Handle_Geom_BoundedSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_BoundedSurface(const Handle_Geom_BoundedSurface &aHandle);
+		Handle_Geom_BoundedSurface(const Geom_BoundedSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BoundedSurface(const Geom_BoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BoundedSurface & operator=(const Handle_Geom_BoundedSurface &aHandle);
+		Handle_Geom_BoundedSurface & operator=(const Geom_BoundedSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BoundedSurface & operator=(const Geom_BoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_BoundedSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_BoundedSurface {
@@ -803,15 +803,15 @@ class Handle_Geom_RectangularTrimmedSurface : public Handle_Geom_BoundedSurface 
 		%feature("autodoc", "1");
 		Handle_Geom_RectangularTrimmedSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_RectangularTrimmedSurface(const Handle_Geom_RectangularTrimmedSurface &aHandle);
+		Handle_Geom_RectangularTrimmedSurface(const Geom_RectangularTrimmedSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_RectangularTrimmedSurface(const Geom_RectangularTrimmedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_RectangularTrimmedSurface & operator=(const Handle_Geom_RectangularTrimmedSurface &aHandle);
+		Handle_Geom_RectangularTrimmedSurface & operator=(const Geom_RectangularTrimmedSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_RectangularTrimmedSurface & operator=(const Geom_RectangularTrimmedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_RectangularTrimmedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_RectangularTrimmedSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_RectangularTrimmedSurface {
@@ -841,15 +841,15 @@ class Handle_Geom_TrimmedCurve : public Handle_Geom_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_Geom_TrimmedCurve();
 		%feature("autodoc", "1");
-		Handle_Geom_TrimmedCurve(const Handle_Geom_TrimmedCurve &aHandle);
+		Handle_Geom_TrimmedCurve(const Geom_TrimmedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_TrimmedCurve(const Geom_TrimmedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_TrimmedCurve & operator=(const Handle_Geom_TrimmedCurve &aHandle);
+		Handle_Geom_TrimmedCurve & operator=(const Geom_TrimmedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_TrimmedCurve & operator=(const Geom_TrimmedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_TrimmedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_TrimmedCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_TrimmedCurve {
@@ -879,15 +879,15 @@ class Handle_Geom_BezierSurface : public Handle_Geom_BoundedSurface {
 		%feature("autodoc", "1");
 		Handle_Geom_BezierSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_BezierSurface(const Handle_Geom_BezierSurface &aHandle);
+		Handle_Geom_BezierSurface(const Geom_BezierSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BezierSurface(const Geom_BezierSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BezierSurface & operator=(const Handle_Geom_BezierSurface &aHandle);
+		Handle_Geom_BezierSurface & operator=(const Geom_BezierSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BezierSurface & operator=(const Geom_BezierSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BezierSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_BezierSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_BezierSurface {
@@ -917,15 +917,15 @@ class Handle_Geom_SphericalSurface : public Handle_Geom_ElementarySurface {
 		%feature("autodoc", "1");
 		Handle_Geom_SphericalSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_SphericalSurface(const Handle_Geom_SphericalSurface &aHandle);
+		Handle_Geom_SphericalSurface(const Geom_SphericalSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SphericalSurface(const Geom_SphericalSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SphericalSurface & operator=(const Handle_Geom_SphericalSurface &aHandle);
+		Handle_Geom_SphericalSurface & operator=(const Geom_SphericalSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SphericalSurface & operator=(const Geom_SphericalSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SphericalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_SphericalSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_SphericalSurface {
@@ -955,15 +955,15 @@ class Handle_Geom_SweptSurface : public Handle_Geom_Surface {
 		%feature("autodoc", "1");
 		Handle_Geom_SweptSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface(const Handle_Geom_SweptSurface &aHandle);
+		Handle_Geom_SweptSurface(const Geom_SweptSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SweptSurface(const Geom_SweptSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface & operator=(const Handle_Geom_SweptSurface &aHandle);
+		Handle_Geom_SweptSurface & operator=(const Geom_SweptSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SweptSurface & operator=(const Geom_SweptSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_SweptSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_SweptSurface {
@@ -993,15 +993,15 @@ class Handle_Geom_SurfaceOfLinearExtrusion : public Handle_Geom_SweptSurface {
 		%feature("autodoc", "1");
 		Handle_Geom_SurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfLinearExtrusion(const Handle_Geom_SurfaceOfLinearExtrusion &aHandle);
+		Handle_Geom_SurfaceOfLinearExtrusion(const Geom_SurfaceOfLinearExtrusion *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SurfaceOfLinearExtrusion(const Geom_SurfaceOfLinearExtrusion *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfLinearExtrusion & operator=(const Handle_Geom_SurfaceOfLinearExtrusion &aHandle);
+		Handle_Geom_SurfaceOfLinearExtrusion & operator=(const Geom_SurfaceOfLinearExtrusion *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SurfaceOfLinearExtrusion & operator=(const Geom_SurfaceOfLinearExtrusion *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfLinearExtrusion const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_SurfaceOfLinearExtrusion const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_SurfaceOfLinearExtrusion {
@@ -1031,15 +1031,15 @@ class Handle_Geom_CartesianPoint : public Handle_Geom_Point {
 		%feature("autodoc", "1");
 		Handle_Geom_CartesianPoint();
 		%feature("autodoc", "1");
-		Handle_Geom_CartesianPoint(const Handle_Geom_CartesianPoint &aHandle);
+		Handle_Geom_CartesianPoint(const Geom_CartesianPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_CartesianPoint(const Geom_CartesianPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_CartesianPoint & operator=(const Handle_Geom_CartesianPoint &aHandle);
+		Handle_Geom_CartesianPoint & operator=(const Geom_CartesianPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_CartesianPoint & operator=(const Geom_CartesianPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_CartesianPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_CartesianPoint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_CartesianPoint {
@@ -1069,15 +1069,15 @@ class Handle_Geom_BSplineSurface : public Handle_Geom_BoundedSurface {
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface(const Handle_Geom_BSplineSurface &aHandle);
+		Handle_Geom_BSplineSurface(const Geom_BSplineSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface(const Geom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface & operator=(const Handle_Geom_BSplineSurface &aHandle);
+		Handle_Geom_BSplineSurface & operator=(const Geom_BSplineSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface & operator=(const Geom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_BSplineSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_BSplineSurface {
@@ -1107,15 +1107,15 @@ class Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface(const Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface &aHandle);
+		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface(const Geom_SequenceNodeOfSequenceOfBSplineSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface(const Geom_SequenceNodeOfSequenceOfBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface & operator=(const Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface &aHandle);
+		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface & operator=(const Geom_SequenceNodeOfSequenceOfBSplineSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface & operator=(const Geom_SequenceNodeOfSequenceOfBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface {
@@ -1145,15 +1145,15 @@ class Handle_Geom_CylindricalSurface : public Handle_Geom_ElementarySurface {
 		%feature("autodoc", "1");
 		Handle_Geom_CylindricalSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_CylindricalSurface(const Handle_Geom_CylindricalSurface &aHandle);
+		Handle_Geom_CylindricalSurface(const Geom_CylindricalSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_CylindricalSurface(const Geom_CylindricalSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_CylindricalSurface & operator=(const Handle_Geom_CylindricalSurface &aHandle);
+		Handle_Geom_CylindricalSurface & operator=(const Geom_CylindricalSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_CylindricalSurface & operator=(const Geom_CylindricalSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_CylindricalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_CylindricalSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_CylindricalSurface {
@@ -1183,15 +1183,15 @@ class Handle_Geom_OffsetCurve : public Handle_Geom_Curve {
 		%feature("autodoc", "1");
 		Handle_Geom_OffsetCurve();
 		%feature("autodoc", "1");
-		Handle_Geom_OffsetCurve(const Handle_Geom_OffsetCurve &aHandle);
+		Handle_Geom_OffsetCurve(const Geom_OffsetCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_OffsetCurve(const Geom_OffsetCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_OffsetCurve & operator=(const Handle_Geom_OffsetCurve &aHandle);
+		Handle_Geom_OffsetCurve & operator=(const Geom_OffsetCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_OffsetCurve & operator=(const Geom_OffsetCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_OffsetCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_OffsetCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_OffsetCurve {
@@ -1221,15 +1221,15 @@ class Handle_Geom_HSequenceOfBSplineSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Geom_HSequenceOfBSplineSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_HSequenceOfBSplineSurface(const Handle_Geom_HSequenceOfBSplineSurface &aHandle);
+		Handle_Geom_HSequenceOfBSplineSurface(const Geom_HSequenceOfBSplineSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_HSequenceOfBSplineSurface(const Geom_HSequenceOfBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_HSequenceOfBSplineSurface & operator=(const Handle_Geom_HSequenceOfBSplineSurface &aHandle);
+		Handle_Geom_HSequenceOfBSplineSurface & operator=(const Geom_HSequenceOfBSplineSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_HSequenceOfBSplineSurface & operator=(const Geom_HSequenceOfBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_HSequenceOfBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_HSequenceOfBSplineSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_HSequenceOfBSplineSurface {
@@ -1259,15 +1259,15 @@ class Handle_Geom_ConicalSurface : public Handle_Geom_ElementarySurface {
 		%feature("autodoc", "1");
 		Handle_Geom_ConicalSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface(const Handle_Geom_ConicalSurface &aHandle);
+		Handle_Geom_ConicalSurface(const Geom_ConicalSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_ConicalSurface(const Geom_ConicalSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface & operator=(const Handle_Geom_ConicalSurface &aHandle);
+		Handle_Geom_ConicalSurface & operator=(const Geom_ConicalSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_ConicalSurface & operator=(const Geom_ConicalSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_ConicalSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_ConicalSurface {
@@ -1297,15 +1297,15 @@ class Handle_Geom_OffsetSurface : public Handle_Geom_Surface {
 		%feature("autodoc", "1");
 		Handle_Geom_OffsetSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_OffsetSurface(const Handle_Geom_OffsetSurface &aHandle);
+		Handle_Geom_OffsetSurface(const Geom_OffsetSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_OffsetSurface(const Geom_OffsetSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_OffsetSurface & operator=(const Handle_Geom_OffsetSurface &aHandle);
+		Handle_Geom_OffsetSurface & operator=(const Geom_OffsetSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_OffsetSurface & operator=(const Geom_OffsetSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_OffsetSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_OffsetSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_OffsetSurface {
@@ -1335,15 +1335,15 @@ class Handle_Geom_BSplineCurve : public Handle_Geom_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve();
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve(const Handle_Geom_BSplineCurve &aHandle);
+		Handle_Geom_BSplineCurve(const Geom_BSplineCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve(const Geom_BSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve & operator=(const Handle_Geom_BSplineCurve &aHandle);
+		Handle_Geom_BSplineCurve & operator=(const Geom_BSplineCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve & operator=(const Geom_BSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_BSplineCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_BSplineCurve {
@@ -1373,15 +1373,15 @@ class Handle_Geom_Line : public Handle_Geom_Curve {
 		%feature("autodoc", "1");
 		Handle_Geom_Line();
 		%feature("autodoc", "1");
-		Handle_Geom_Line(const Handle_Geom_Line &aHandle);
+		Handle_Geom_Line(const Geom_Line *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Line(const Geom_Line *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Line & operator=(const Handle_Geom_Line &aHandle);
+		Handle_Geom_Line & operator=(const Geom_Line *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Line & operator=(const Geom_Line *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Line const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Line const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Line {
@@ -1411,15 +1411,15 @@ class Handle_Geom_Direction : public Handle_Geom_Vector {
 		%feature("autodoc", "1");
 		Handle_Geom_Direction();
 		%feature("autodoc", "1");
-		Handle_Geom_Direction(const Handle_Geom_Direction &aHandle);
+		Handle_Geom_Direction(const Geom_Direction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Direction(const Geom_Direction *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Direction & operator=(const Handle_Geom_Direction &aHandle);
+		Handle_Geom_Direction & operator=(const Geom_Direction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Direction & operator=(const Geom_Direction *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Direction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Direction const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Direction {
@@ -1449,15 +1449,15 @@ class Handle_Geom_HSequenceOfSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Geom_HSequenceOfSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_HSequenceOfSurface(const Handle_Geom_HSequenceOfSurface &aHandle);
+		Handle_Geom_HSequenceOfSurface(const Geom_HSequenceOfSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_HSequenceOfSurface(const Geom_HSequenceOfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_HSequenceOfSurface & operator=(const Handle_Geom_HSequenceOfSurface &aHandle);
+		Handle_Geom_HSequenceOfSurface & operator=(const Geom_HSequenceOfSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_HSequenceOfSurface & operator=(const Geom_HSequenceOfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_HSequenceOfSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_HSequenceOfSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_HSequenceOfSurface {
@@ -1487,15 +1487,15 @@ class Handle_Geom_BezierCurve : public Handle_Geom_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_Geom_BezierCurve();
 		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve(const Handle_Geom_BezierCurve &aHandle);
+		Handle_Geom_BezierCurve(const Geom_BezierCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BezierCurve(const Geom_BezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve & operator=(const Handle_Geom_BezierCurve &aHandle);
+		Handle_Geom_BezierCurve & operator=(const Geom_BezierCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_BezierCurve & operator=(const Geom_BezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_BezierCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_BezierCurve {
@@ -1525,15 +1525,15 @@ class Handle_Geom_UndefinedDerivative : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Geom_UndefinedDerivative();
 		%feature("autodoc", "1");
-		Handle_Geom_UndefinedDerivative(const Handle_Geom_UndefinedDerivative &aHandle);
+		Handle_Geom_UndefinedDerivative(const Geom_UndefinedDerivative *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_UndefinedDerivative(const Geom_UndefinedDerivative *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_UndefinedDerivative & operator=(const Handle_Geom_UndefinedDerivative &aHandle);
+		Handle_Geom_UndefinedDerivative & operator=(const Geom_UndefinedDerivative *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_UndefinedDerivative & operator=(const Geom_UndefinedDerivative *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_UndefinedDerivative const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_UndefinedDerivative const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_UndefinedDerivative {
@@ -1563,15 +1563,15 @@ class Handle_Geom_Ellipse : public Handle_Geom_Conic {
 		%feature("autodoc", "1");
 		Handle_Geom_Ellipse();
 		%feature("autodoc", "1");
-		Handle_Geom_Ellipse(const Handle_Geom_Ellipse &aHandle);
+		Handle_Geom_Ellipse(const Geom_Ellipse *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Ellipse(const Geom_Ellipse *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Ellipse & operator=(const Handle_Geom_Ellipse &aHandle);
+		Handle_Geom_Ellipse & operator=(const Geom_Ellipse *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Ellipse & operator=(const Geom_Ellipse *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Ellipse const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Ellipse const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Ellipse {
@@ -1601,15 +1601,15 @@ class Handle_Geom_SurfaceOfRevolution : public Handle_Geom_SweptSurface {
 		%feature("autodoc", "1");
 		Handle_Geom_SurfaceOfRevolution();
 		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution(const Handle_Geom_SurfaceOfRevolution &aHandle);
+		Handle_Geom_SurfaceOfRevolution(const Geom_SurfaceOfRevolution *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SurfaceOfRevolution(const Geom_SurfaceOfRevolution *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution & operator=(const Handle_Geom_SurfaceOfRevolution &aHandle);
+		Handle_Geom_SurfaceOfRevolution & operator=(const Geom_SurfaceOfRevolution *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_SurfaceOfRevolution & operator=(const Geom_SurfaceOfRevolution *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_SurfaceOfRevolution const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_SurfaceOfRevolution {
@@ -1639,15 +1639,15 @@ class Handle_Geom_Plane : public Handle_Geom_ElementarySurface {
 		%feature("autodoc", "1");
 		Handle_Geom_Plane();
 		%feature("autodoc", "1");
-		Handle_Geom_Plane(const Handle_Geom_Plane &aHandle);
+		Handle_Geom_Plane(const Geom_Plane *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Plane(const Geom_Plane *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Plane & operator=(const Handle_Geom_Plane &aHandle);
+		Handle_Geom_Plane & operator=(const Geom_Plane *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom_Plane & operator=(const Geom_Plane *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Plane const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Plane const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom_Plane {
@@ -1683,19 +1683,19 @@ class Geom_SequenceOfSurface : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Geom_SequenceOfSurface & operator=(const Geom_SequenceOfSurface &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_Geom_Surface &T);
+		void Append(const Geom_Surface *T);
 		%feature("autodoc", "1");
 		void Append(Geom_SequenceOfSurface & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_Surface &T);
+		void Prepend(const Geom_Surface *T);
 		%feature("autodoc", "1");
 		void Prepend(Geom_SequenceOfSurface & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Geom_Surface &I);
+		void InsertBefore(const Standard_Integer Index, const Geom_Surface *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Geom_SequenceOfSurface & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Geom_Surface &T);
+		void InsertAfter(const Standard_Integer Index, const Geom_Surface *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Geom_SequenceOfSurface & S);
 		%feature("autodoc", "1");
@@ -1709,7 +1709,7 @@ class Geom_SequenceOfSurface : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_Surface &I);
+		void SetValue(const Standard_Integer Index, const Geom_Surface *I);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -1923,9 +1923,9 @@ def __del__(self):
 class Geom_OffsetSurface : public Geom_Surface {
 	public:
 		%feature("autodoc", "1");
-		Geom_OffsetSurface(const Handle_Geom_Surface &S, const Standard_Real Offset);
+		Geom_OffsetSurface(const Geom_Surface *S, const Standard_Real Offset);
 		%feature("autodoc", "1");
-		void SetBasisSurface(const Handle_Geom_Surface &S);
+		void SetBasisSurface(const Geom_Surface *S);
 		%feature("autodoc", "1");
 		void SetOffsetValue(const Standard_Real D);
 		%feature("autodoc", "1");
@@ -2374,10 +2374,6 @@ class Geom_Vector : public Geom_Geometry {
 		void Reverse();
 		%feature("autodoc", "1");
 		Handle_Geom_Vector Reversed() const;
-		%feature("autodoc", "1");
-		Standard_Real Angle(const Handle_Geom_Vector &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real AngleWithRef(const Handle_Geom_Vector &Other, const Handle_Geom_Vector &VRef) const;
 		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -2391,18 +2387,6 @@ class Geom_Vector : public Geom_Geometry {
 		Standard_Real Y() const;
 		%feature("autodoc", "1");
 		Standard_Real Z() const;
-		%feature("autodoc", "1");
-		virtual		void Cross(const Handle_Geom_Vector &Other);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Vector Crossed(const Handle_Geom_Vector &Other) const;
-		%feature("autodoc", "1");
-		virtual		void CrossCross(const Handle_Geom_Vector &V1, const Handle_Geom_Vector &V2);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Vector CrossCrossed(const Handle_Geom_Vector &V1, const Handle_Geom_Vector &V2) const;
-		%feature("autodoc", "1");
-		Standard_Real Dot(const Handle_Geom_Vector &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real DotCross(const Handle_Geom_Vector &V1, const Handle_Geom_Vector &V2) const;
 		%feature("autodoc", "1");
 		const gp_Vec & Vec() const;
 		%feature("autodoc", "1");
@@ -2454,6 +2438,14 @@ class Geom_Direction : public Geom_Vector {
 		void SetZ(const Standard_Real Z);
 		%feature("autodoc", "1");
 		gp_Dir Dir() const;
+		%feature("autodoc", "1");
+		virtual		void Cross(const Geom_Vector *Other);
+		%feature("autodoc", "1");
+		virtual		void CrossCross(const Geom_Vector *V1, const Geom_Vector *V2);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Vector Crossed(const Geom_Vector *Other) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Vector CrossCrossed(const Geom_Vector *V1, const Geom_Vector *V2) const;
 		%feature("autodoc", "1");
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
@@ -2614,7 +2606,7 @@ def __del__(self):
 class Geom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Geom_SequenceNodeOfSequenceOfSurface(const Handle_Geom_Surface &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Geom_SequenceNodeOfSequenceOfSurface(const Geom_Surface *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface & Value() const;
 		%feature("autodoc", "1");
@@ -2656,8 +2648,6 @@ class Geom_AxisPlacement : public Geom_Geometry {
 		virtual		void SetDirection(const gp_Dir &V);
 		%feature("autodoc", "1");
 		void SetLocation(const gp_Pnt &P);
-		%feature("autodoc", "1");
-		Standard_Real Angle(const Handle_Geom_AxisPlacement &Other) const;
 		%feature("autodoc", "1");
 		const gp_Ax1 & Axis() const;
 		%feature("autodoc", "1");
@@ -2749,13 +2739,13 @@ def __del__(self):
 class Geom_OffsetCurve : public Geom_Curve {
 	public:
 		%feature("autodoc", "1");
-		Geom_OffsetCurve(const Handle_Geom_Curve &C, const Standard_Real Offset, const gp_Dir &V);
+		Geom_OffsetCurve(const Geom_Curve *C, const Standard_Real Offset, const gp_Dir &V);
 		%feature("autodoc", "1");
 		virtual		void Reverse();
 		%feature("autodoc", "1");
 		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
 		%feature("autodoc", "1");
-		void SetBasisCurve(const Handle_Geom_Curve &C);
+		void SetBasisCurve(const Geom_Curve *C);
 		%feature("autodoc", "1");
 		void SetDirection(const gp_Dir &V);
 		%feature("autodoc", "1");
@@ -2899,17 +2889,17 @@ class Geom_VectorWithMagnitude : public Geom_Vector {
 		%feature("autodoc", "1");
 		virtual		Standard_Real SquareMagnitude() const;
 		%feature("autodoc", "1");
-		void Add(const Handle_Geom_Vector &Other);
+		void Add(const Geom_Vector *Other);
 		%feature("autodoc", "1");
-		Handle_Geom_VectorWithMagnitude Added(const Handle_Geom_Vector &Other) const;
+		Handle_Geom_VectorWithMagnitude Added(const Geom_Vector *Other) const;
 		%feature("autodoc", "1");
-		virtual		void Cross(const Handle_Geom_Vector &Other);
+		virtual		void Cross(const Geom_Vector *Other);
 		%feature("autodoc", "1");
-		virtual		Handle_Geom_Vector Crossed(const Handle_Geom_Vector &Other) const;
+		virtual		Handle_Geom_Vector Crossed(const Geom_Vector *Other) const;
 		%feature("autodoc", "1");
-		virtual		void CrossCross(const Handle_Geom_Vector &V1, const Handle_Geom_Vector &V2);
+		virtual		void CrossCross(const Geom_Vector *V1, const Geom_Vector *V2);
 		%feature("autodoc", "1");
-		virtual		Handle_Geom_Vector CrossCrossed(const Handle_Geom_Vector &V1, const Handle_Geom_Vector &V2) const;
+		virtual		Handle_Geom_Vector CrossCrossed(const Geom_Vector *V1, const Geom_Vector *V2) const;
 		%feature("autodoc", "1");
 		void Divide(const Standard_Real Scalar);
 		%feature("autodoc", "1");
@@ -2923,9 +2913,9 @@ class Geom_VectorWithMagnitude : public Geom_Vector {
 		%feature("autodoc", "1");
 		Handle_Geom_VectorWithMagnitude Normalized() const;
 		%feature("autodoc", "1");
-		void Subtract(const Handle_Geom_Vector &Other);
+		void Subtract(const Geom_Vector *Other);
 		%feature("autodoc", "1");
-		Handle_Geom_VectorWithMagnitude Subtracted(const Handle_Geom_Vector &Other) const;
+		Handle_Geom_VectorWithMagnitude Subtracted(const Geom_Vector *Other) const;
 		%feature("autodoc", "1");
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
@@ -2972,19 +2962,19 @@ class Geom_SequenceOfBSplineSurface : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Geom_SequenceOfBSplineSurface & operator=(const Geom_SequenceOfBSplineSurface &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_Geom_BSplineSurface &T);
+		void Append(const Geom_BSplineSurface *T);
 		%feature("autodoc", "1");
 		void Append(Geom_SequenceOfBSplineSurface & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_BSplineSurface &T);
+		void Prepend(const Geom_BSplineSurface *T);
 		%feature("autodoc", "1");
 		void Prepend(Geom_SequenceOfBSplineSurface & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Geom_BSplineSurface &I);
+		void InsertBefore(const Standard_Integer Index, const Geom_BSplineSurface *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Geom_SequenceOfBSplineSurface & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Geom_BSplineSurface &T);
+		void InsertAfter(const Standard_Integer Index, const Geom_BSplineSurface *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Geom_SequenceOfBSplineSurface & S);
 		%feature("autodoc", "1");
@@ -2998,7 +2988,7 @@ class Geom_SequenceOfBSplineSurface : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_Geom_BSplineSurface & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_BSplineSurface &I);
+		void SetValue(const Standard_Integer Index, const Geom_BSplineSurface *I);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -3040,10 +3030,6 @@ class Geom_Point : public Geom_Geometry {
 		%feature("autodoc", "1");
 		virtual		Standard_Real Z() const;
 		%feature("autodoc", "1");
-		Standard_Real Distance(const Handle_Geom_Point &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Handle_Geom_Point &Other) const;
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -3077,13 +3063,13 @@ def __del__(self):
 class Geom_SurfaceOfRevolution : public Geom_SweptSurface {
 	public:
 		%feature("autodoc", "1");
-		Geom_SurfaceOfRevolution(const Handle_Geom_Curve &C, const gp_Ax1 &A1);
+		Geom_SurfaceOfRevolution(const Geom_Curve *C, const gp_Ax1 &A1);
 		%feature("autodoc", "1");
 		void SetAxis(const gp_Ax1 &A1);
 		%feature("autodoc", "1");
 		void SetDirection(const gp_Dir &V);
 		%feature("autodoc", "1");
-		void SetBasisCurve(const Handle_Geom_Curve &C);
+		void SetBasisCurve(const Geom_Curve *C);
 		%feature("autodoc", "1");
 		void SetLocation(const gp_Pnt &P);
 		%feature("autodoc", "1");
@@ -3225,9 +3211,9 @@ def __del__(self):
 class Geom_RectangularTrimmedSurface : public Geom_BoundedSurface {
 	public:
 		%feature("autodoc", "1");
-		Geom_RectangularTrimmedSurface(const Handle_Geom_Surface &S, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Boolean USense=1, const Standard_Boolean VSense=1);
+		Geom_RectangularTrimmedSurface(const Geom_Surface *S, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Boolean USense=1, const Standard_Boolean VSense=1);
 		%feature("autodoc", "1");
-		Geom_RectangularTrimmedSurface(const Handle_Geom_Surface &S, const Standard_Real Param1, const Standard_Real Param2, const Standard_Boolean UTrim, const Standard_Boolean Sense=1);
+		Geom_RectangularTrimmedSurface(const Geom_Surface *S, const Standard_Real Param1, const Standard_Real Param2, const Standard_Boolean UTrim, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
 		void SetTrim(const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Boolean USense=1, const Standard_Boolean VSense=1);
 		%feature("autodoc", "1");
@@ -3601,29 +3587,21 @@ class Geom_HSequenceOfBSplineSurface : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_Geom_BSplineSurface &anItem);
+		void Append(const Geom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_Geom_HSequenceOfBSplineSurface &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_BSplineSurface &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_HSequenceOfBSplineSurface &aSequence);
+		void Prepend(const Geom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom_BSplineSurface &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const Geom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom_HSequenceOfBSplineSurface &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom_BSplineSurface &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom_HSequenceOfBSplineSurface &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const Geom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_Geom_HSequenceOfBSplineSurface Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Geom_BSplineSurface &anItem);
+		void SetValue(const Standard_Integer anIndex, const Geom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
 		const Handle_Geom_BSplineSurface & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -3674,9 +3652,9 @@ class Geom_OsculatingSurface {
 		%feature("autodoc", "1");
 		Geom_OsculatingSurface();
 		%feature("autodoc", "1");
-		Geom_OsculatingSurface(const Handle_Geom_Surface &BS, const Standard_Real Tol);
+		Geom_OsculatingSurface(const Geom_Surface *BS, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &BS, const Standard_Real Tol);
+		void Init(const Geom_Surface *BS, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface BasisSurface() const;
 		%feature("autodoc", "1");
@@ -3973,7 +3951,7 @@ def __del__(self):
 class Geom_TrimmedCurve : public Geom_BoundedCurve {
 	public:
 		%feature("autodoc", "1");
-		Geom_TrimmedCurve(const Handle_Geom_Curve &C, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean Sense=1);
+		Geom_TrimmedCurve(const Geom_Curve *C, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
 		virtual		void Reverse();
 		%feature("autodoc", "1");
@@ -4230,7 +4208,7 @@ def __del__(self):
 class Geom_SequenceNodeOfSequenceOfBSplineSurface : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Geom_SequenceNodeOfSequenceOfBSplineSurface(const Handle_Geom_BSplineSurface &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Geom_SequenceNodeOfSequenceOfBSplineSurface(const Geom_BSplineSurface *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface & Value() const;
 		%feature("autodoc", "1");
@@ -4561,11 +4539,11 @@ def __del__(self):
 class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
 	public:
 		%feature("autodoc", "1");
-		Geom_SurfaceOfLinearExtrusion(const Handle_Geom_Curve &C, const gp_Dir &V);
+		Geom_SurfaceOfLinearExtrusion(const Geom_Curve *C, const gp_Dir &V);
 		%feature("autodoc", "1");
 		void SetDirection(const gp_Dir &V);
 		%feature("autodoc", "1");
-		void SetBasisCurve(const Handle_Geom_Curve &C);
+		void SetBasisCurve(const Geom_Curve *C);
 		%feature("autodoc", "1");
 		virtual		void UReverse();
 		%feature("autodoc", "1");
@@ -4664,29 +4642,21 @@ class Geom_HSequenceOfSurface : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_Geom_Surface &anItem);
+		void Append(const Geom_Surface *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_Geom_HSequenceOfSurface &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_Surface &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_HSequenceOfSurface &aSequence);
+		void Prepend(const Geom_Surface *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom_Surface &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const Geom_Surface *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom_HSequenceOfSurface &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom_Surface &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom_HSequenceOfSurface &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const Geom_Surface *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_Geom_HSequenceOfSurface Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Geom_Surface &anItem);
+		void SetValue(const Standard_Integer anIndex, const Geom_Surface *anItem);
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -4773,15 +4743,9 @@ class Geom_Transformation : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Geom_Transformation Inverted() const;
 		%feature("autodoc", "1");
-		Handle_Geom_Transformation Multiplied(const Handle_Geom_Transformation &Other) const;
-		%feature("autodoc", "1");
-		void Multiply(const Handle_Geom_Transformation &Other);
-		%feature("autodoc", "1");
 		void Power(const Standard_Integer N);
 		%feature("autodoc", "1");
 		Handle_Geom_Transformation Powered(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void PreMultiply(const Handle_Geom_Transformation &Other);
 		%feature("autodoc","Transforms() -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;

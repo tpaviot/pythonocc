@@ -43,15 +43,15 @@ class Handle_HLRBRep_InternalAlgo : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRBRep_InternalAlgo();
 		%feature("autodoc", "1");
-		Handle_HLRBRep_InternalAlgo(const Handle_HLRBRep_InternalAlgo &aHandle);
+		Handle_HLRBRep_InternalAlgo(const HLRBRep_InternalAlgo *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_InternalAlgo(const HLRBRep_InternalAlgo *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_InternalAlgo & operator=(const Handle_HLRBRep_InternalAlgo &aHandle);
+		Handle_HLRBRep_InternalAlgo & operator=(const HLRBRep_InternalAlgo *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_InternalAlgo & operator=(const HLRBRep_InternalAlgo *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_InternalAlgo const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRBRep_InternalAlgo const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRBRep_InternalAlgo {
@@ -81,15 +81,15 @@ class Handle_HLRBRep_Algo : public Handle_HLRBRep_InternalAlgo {
 		%feature("autodoc", "1");
 		Handle_HLRBRep_Algo();
 		%feature("autodoc", "1");
-		Handle_HLRBRep_Algo(const Handle_HLRBRep_Algo &aHandle);
+		Handle_HLRBRep_Algo(const HLRBRep_Algo *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_Algo(const HLRBRep_Algo *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_Algo & operator=(const Handle_HLRBRep_Algo &aHandle);
+		Handle_HLRBRep_Algo & operator=(const HLRBRep_Algo *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_Algo & operator=(const HLRBRep_Algo *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_Algo const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRBRep_Algo const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRBRep_Algo {
@@ -119,15 +119,15 @@ class Handle_HLRBRep_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_HLRBRep_ListNodeOfListOfBPoint();
 		%feature("autodoc", "1");
-		Handle_HLRBRep_ListNodeOfListOfBPoint(const Handle_HLRBRep_ListNodeOfListOfBPoint &aHandle);
+		Handle_HLRBRep_ListNodeOfListOfBPoint(const HLRBRep_ListNodeOfListOfBPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_ListNodeOfListOfBPoint(const HLRBRep_ListNodeOfListOfBPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_ListNodeOfListOfBPoint & operator=(const Handle_HLRBRep_ListNodeOfListOfBPoint &aHandle);
+		Handle_HLRBRep_ListNodeOfListOfBPoint & operator=(const HLRBRep_ListNodeOfListOfBPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_ListNodeOfListOfBPoint & operator=(const HLRBRep_ListNodeOfListOfBPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_ListNodeOfListOfBPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRBRep_ListNodeOfListOfBPoint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRBRep_ListNodeOfListOfBPoint {
@@ -157,15 +157,15 @@ class Handle_HLRBRep_AreaLimit : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRBRep_AreaLimit();
 		%feature("autodoc", "1");
-		Handle_HLRBRep_AreaLimit(const Handle_HLRBRep_AreaLimit &aHandle);
+		Handle_HLRBRep_AreaLimit(const HLRBRep_AreaLimit *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_AreaLimit(const HLRBRep_AreaLimit *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_AreaLimit & operator=(const Handle_HLRBRep_AreaLimit &aHandle);
+		Handle_HLRBRep_AreaLimit & operator=(const HLRBRep_AreaLimit *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_AreaLimit & operator=(const HLRBRep_AreaLimit *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_AreaLimit const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRBRep_AreaLimit const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRBRep_AreaLimit {
@@ -195,15 +195,15 @@ class Handle_HLRBRep_ListNodeOfListOfBPnt2D : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_HLRBRep_ListNodeOfListOfBPnt2D();
 		%feature("autodoc", "1");
-		Handle_HLRBRep_ListNodeOfListOfBPnt2D(const Handle_HLRBRep_ListNodeOfListOfBPnt2D &aHandle);
+		Handle_HLRBRep_ListNodeOfListOfBPnt2D(const HLRBRep_ListNodeOfListOfBPnt2D *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_ListNodeOfListOfBPnt2D(const HLRBRep_ListNodeOfListOfBPnt2D *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_ListNodeOfListOfBPnt2D & operator=(const Handle_HLRBRep_ListNodeOfListOfBPnt2D &aHandle);
+		Handle_HLRBRep_ListNodeOfListOfBPnt2D & operator=(const HLRBRep_ListNodeOfListOfBPnt2D *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_ListNodeOfListOfBPnt2D & operator=(const HLRBRep_ListNodeOfListOfBPnt2D *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_ListNodeOfListOfBPnt2D const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRBRep_ListNodeOfListOfBPnt2D const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRBRep_ListNodeOfListOfBPnt2D {
@@ -233,15 +233,15 @@ class Handle_HLRBRep_PolyAlgo : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRBRep_PolyAlgo();
 		%feature("autodoc", "1");
-		Handle_HLRBRep_PolyAlgo(const Handle_HLRBRep_PolyAlgo &aHandle);
+		Handle_HLRBRep_PolyAlgo(const HLRBRep_PolyAlgo *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_PolyAlgo(const HLRBRep_PolyAlgo *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_PolyAlgo & operator=(const Handle_HLRBRep_PolyAlgo &aHandle);
+		Handle_HLRBRep_PolyAlgo & operator=(const HLRBRep_PolyAlgo *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_PolyAlgo & operator=(const HLRBRep_PolyAlgo *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_PolyAlgo const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRBRep_PolyAlgo const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRBRep_PolyAlgo {
@@ -271,15 +271,15 @@ class Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds();
 		%feature("autodoc", "1");
-		Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds(const Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds &aHandle);
+		Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds(const HLRBRep_SequenceNodeOfSeqOfShapeBounds *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds(const HLRBRep_SequenceNodeOfSeqOfShapeBounds *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds & operator=(const Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds &aHandle);
+		Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds & operator=(const HLRBRep_SequenceNodeOfSeqOfShapeBounds *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds & operator=(const HLRBRep_SequenceNodeOfSeqOfShapeBounds *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds {
@@ -309,15 +309,15 @@ class Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfC
 		%feature("autodoc", "1");
 		Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter();
 		%feature("autodoc", "1");
-		Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter(const Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter &aHandle);
+		Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter(const HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter(const HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & operator=(const Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter &aHandle);
+		Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & operator=(const HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter & operator=(const HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
@@ -347,15 +347,15 @@ class Handle_HLRBRep_Data : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRBRep_Data();
 		%feature("autodoc", "1");
-		Handle_HLRBRep_Data(const Handle_HLRBRep_Data &aHandle);
+		Handle_HLRBRep_Data(const HLRBRep_Data *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_Data(const HLRBRep_Data *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_Data & operator=(const Handle_HLRBRep_Data &aHandle);
+		Handle_HLRBRep_Data & operator=(const HLRBRep_Data *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRBRep_Data & operator=(const HLRBRep_Data *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRBRep_Data const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRBRep_Data const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRBRep_Data {
@@ -586,23 +586,21 @@ class HLRBRep_InternalAlgo : public MMgt_TShared {
 		%feature("autodoc", "1");
 		HLRBRep_InternalAlgo();
 		%feature("autodoc", "1");
-		HLRBRep_InternalAlgo(const Handle_HLRBRep_InternalAlgo &A);
-		%feature("autodoc", "1");
 		void Projector(const HLRAlgo_Projector &P);
 		%feature("autodoc", "1");
 		HLRAlgo_Projector & Projector();
 		%feature("autodoc", "1");
 		void Update();
 		%feature("autodoc", "1");
-		void Load(const Handle_HLRTopoBRep_OutLiner &S, const Handle_MMgt_TShared &SData, const Standard_Integer nbIso=0);
+		void Load(const HLRTopoBRep_OutLiner *S, const MMgt_TShared *SData, const Standard_Integer nbIso=0);
 		%feature("autodoc", "1");
-		void Load(const Handle_HLRTopoBRep_OutLiner &S, const Standard_Integer nbIso=0);
+		void Load(const HLRTopoBRep_OutLiner *S, const Standard_Integer nbIso=0);
 		%feature("autodoc", "1");
-		Standard_Integer Index(const Handle_HLRTopoBRep_OutLiner &S) const;
+		Standard_Integer Index(const HLRTopoBRep_OutLiner *S) const;
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer I);
 		%feature("autodoc", "1");
-		void ShapeData(const Standard_Integer I, const Handle_MMgt_TShared &SData);
+		void ShapeData(const Standard_Integer I, const MMgt_TShared *SData);
 		%feature("autodoc", "1");
 		HLRBRep_SeqOfShapeBounds & SeqOfShapeBounds();
 		%feature("autodoc", "1");
@@ -828,7 +826,7 @@ class HLRBRep_ShapeToHLR {
 		%feature("autodoc", "1");
 		HLRBRep_ShapeToHLR();
 		%feature("autodoc", "1");
-		Handle_HLRBRep_Data Load(const Handle_HLRTopoBRep_OutLiner &S, const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso=0);
+		Handle_HLRBRep_Data Load(const HLRTopoBRep_OutLiner *S, const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso=0);
 
 };
 %feature("shadow") HLRBRep_ShapeToHLR::~HLRBRep_ShapeToHLR %{
@@ -1025,7 +1023,7 @@ def __del__(self):
 class HLRBRep_Hider {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_Hider(const Handle_HLRBRep_Data &DS);
+		HLRBRep_Hider(const HLRBRep_Data *DS);
 		%feature("autodoc", "1");
 		void OwnHiding(const Standard_Integer FI);
 		%feature("autodoc", "1");
@@ -1252,7 +1250,7 @@ def __del__(self):
 class HLRBRep_HLRToShape {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_HLRToShape(const Handle_HLRBRep_Algo &A);
+		HLRBRep_HLRToShape(const HLRBRep_Algo *A);
 		%feature("autodoc", "1");
 		TopoDS_Shape VCompound();
 		%feature("autodoc", "1");
@@ -1444,9 +1442,7 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 		%feature("autodoc", "1");
 		HLRBRep_Algo();
 		%feature("autodoc", "1");
-		HLRBRep_Algo(const Handle_HLRBRep_Algo &A);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &S, const Handle_MMgt_TShared &SData, const Standard_Integer nbIso=0);
+		void Add(const TopoDS_Shape &S, const MMgt_TShared *SData, const Standard_Integer nbIso=0);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Shape &S, const Standard_Integer nbIso=0);
 		%feature("autodoc", "1");
@@ -2074,8 +2070,6 @@ class HLRBRep_Data : public MMgt_TShared {
 		%feature("autodoc", "1");
 		HLRBRep_Data(const Standard_Integer NV, const Standard_Integer NE, const Standard_Integer NF);
 		%feature("autodoc", "1");
-		void Write(const Handle_HLRBRep_Data &DS, const Standard_Integer dv, const Standard_Integer de, const Standard_Integer df);
-		%feature("autodoc", "1");
 		HLRBRep_Array1OfEData & EDataArray();
 		%feature("autodoc", "1");
 		HLRBRep_Array1OfFData & FDataArray();
@@ -2307,7 +2301,7 @@ def __del__(self):
 class HLRBRep_EdgeInterferenceTool {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_EdgeInterferenceTool(const Handle_HLRBRep_Data &DS);
+		HLRBRep_EdgeInterferenceTool(const HLRBRep_Data *DS);
 		%feature("autodoc", "1");
 		void LoadEdge();
 		%feature("autodoc", "1");
@@ -2525,10 +2519,6 @@ class HLRBRep_AreaLimit : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void EdgeAfter(const TopAbs_State St);
 		%feature("autodoc", "1");
-		void Previous(const Handle_HLRBRep_AreaLimit &P);
-		%feature("autodoc", "1");
-		void Next(const Handle_HLRBRep_AreaLimit &N);
-		%feature("autodoc", "1");
 		const HLRAlgo_Intersection & Vertex() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsBoundary() const;
@@ -2583,8 +2573,6 @@ class HLRBRep_PolyAlgo : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
 		HLRBRep_PolyAlgo();
-		%feature("autodoc", "1");
-		HLRBRep_PolyAlgo(const Handle_HLRBRep_PolyAlgo &A);
 		%feature("autodoc", "1");
 		HLRBRep_PolyAlgo(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
@@ -3211,7 +3199,7 @@ class HLRBRep_PolyHLRToShape {
 		%feature("autodoc", "1");
 		HLRBRep_PolyHLRToShape();
 		%feature("autodoc", "1");
-		void Update(const Handle_HLRBRep_PolyAlgo &A);
+		void Update(const HLRBRep_PolyAlgo *A);
 		%feature("autodoc", "1");
 		void Show();
 		%feature("autodoc", "1");
@@ -3475,17 +3463,17 @@ class HLRBRep_ShapeBounds {
 		%feature("autodoc", "1");
 		HLRBRep_ShapeBounds();
 		%feature("autodoc", "1");
-		HLRBRep_ShapeBounds(const Handle_HLRTopoBRep_OutLiner &S, const Handle_MMgt_TShared &SData, const Standard_Integer nbIso, const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer E1, const Standard_Integer E2, const Standard_Integer F1, const Standard_Integer F2);
+		HLRBRep_ShapeBounds(const HLRTopoBRep_OutLiner *S, const MMgt_TShared *SData, const Standard_Integer nbIso, const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer E1, const Standard_Integer E2, const Standard_Integer F1, const Standard_Integer F2);
 		%feature("autodoc", "1");
-		HLRBRep_ShapeBounds(const Handle_HLRTopoBRep_OutLiner &S, const Standard_Integer nbIso, const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer E1, const Standard_Integer E2, const Standard_Integer F1, const Standard_Integer F2);
+		HLRBRep_ShapeBounds(const HLRTopoBRep_OutLiner *S, const Standard_Integer nbIso, const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer E1, const Standard_Integer E2, const Standard_Integer F1, const Standard_Integer F2);
 		%feature("autodoc", "1");
 		void Translate(const Standard_Integer NV, const Standard_Integer NE, const Standard_Integer NF);
 		%feature("autodoc", "1");
-		void Shape(const Handle_HLRTopoBRep_OutLiner &S);
+		void Shape(const HLRTopoBRep_OutLiner *S);
 		%feature("autodoc", "1");
 		const Handle_HLRTopoBRep_OutLiner & Shape() const;
 		%feature("autodoc", "1");
-		void ShapeData(const Handle_MMgt_TShared &SD);
+		void ShapeData(const MMgt_TShared *SD);
 		%feature("autodoc", "1");
 		const Handle_MMgt_TShared & ShapeData() const;
 		%feature("autodoc", "1");

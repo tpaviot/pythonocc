@@ -43,15 +43,15 @@ class Handle_BRepApprox_ApproxLine : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepApprox_ApproxLine();
 		%feature("autodoc", "1");
-		Handle_BRepApprox_ApproxLine(const Handle_BRepApprox_ApproxLine &aHandle);
+		Handle_BRepApprox_ApproxLine(const BRepApprox_ApproxLine *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepApprox_ApproxLine(const BRepApprox_ApproxLine *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepApprox_ApproxLine & operator=(const Handle_BRepApprox_ApproxLine &aHandle);
+		Handle_BRepApprox_ApproxLine & operator=(const BRepApprox_ApproxLine *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepApprox_ApproxLine & operator=(const BRepApprox_ApproxLine *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepApprox_ApproxLine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepApprox_ApproxLine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepApprox_ApproxLine {
@@ -79,7 +79,7 @@ def __del__(self):
 class BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox : public math_MultipleVarFunctionWithGradient {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
+		BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
@@ -101,9 +101,9 @@ class BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox : public 
 		%feature("autodoc", "1");
 		Standard_Real MaxError2d() const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
+		AppParCurves_Constraint FirstConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
+		AppParCurves_Constraint LastConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer LastPoint) const;
 
 };
 %feature("shadow") BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox::~BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox %{
@@ -216,7 +216,7 @@ def __del__(self):
 class BRepApprox_MyGradientbisOfTheComputeLineOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_MyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
+		BRepApprox_MyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -251,9 +251,9 @@ def __del__(self):
 class BRepApprox_ApproxLine : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_ApproxLine(const Handle_Geom_BSplineCurve &CurveXYZ, const Handle_Geom2d_BSplineCurve &CurveUV1, const Handle_Geom2d_BSplineCurve &CurveUV2);
+		BRepApprox_ApproxLine(const Geom_BSplineCurve *CurveXYZ, const Geom2d_BSplineCurve *CurveUV1, const Geom2d_BSplineCurve *CurveUV2);
 		%feature("autodoc", "1");
-		BRepApprox_ApproxLine(const Handle_IntSurf_LineOn2S &lin, const Standard_Boolean Tang);
+		BRepApprox_ApproxLine(const IntSurf_LineOn2S *lin, const Standard_Boolean Tang);
 		%feature("autodoc", "1");
 		Standard_Integer NbPnts() const;
 		%feature("autodoc", "1");
@@ -292,7 +292,7 @@ def __del__(self):
 class BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox : public math_MultipleVarFunctionWithGradient {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
+		BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
@@ -314,9 +314,9 @@ class BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox : public mat
 		%feature("autodoc", "1");
 		Standard_Real MaxError2d() const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
+		AppParCurves_Constraint FirstConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
+		AppParCurves_Constraint LastConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer LastPoint) const;
 
 };
 %feature("shadow") BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox %{
@@ -516,7 +516,7 @@ def __del__(self):
 class BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
+		BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -549,7 +549,7 @@ def __del__(self):
 class BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox : public math_MultipleVarFunctionWithGradient {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer NbPol);
+		BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const math_Vector &Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
@@ -577,9 +577,9 @@ class BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox : public
 		%feature("autodoc", "1");
 		const math_IntegerVector & Index() const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
+		AppParCurves_Constraint FirstConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
+		AppParCurves_Constraint LastConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer LastPoint) const;
 		%feature("autodoc", "1");
 		void SetFirstLambda(const Standard_Real l1);
 		%feature("autodoc", "1");
@@ -744,7 +744,7 @@ def __del__(self):
 class BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_MyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
+		BRepApprox_MyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -896,9 +896,9 @@ def __del__(self):
 class BRepApprox_TheMultiLineOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_TheMultiLineOfApprox(const Handle_BRepApprox_ApproxLine &line, const Standard_Address PtrSvSurfaces, const Standard_Integer NbP3d, const Standard_Integer NbP2d, const Standard_Real xo, const Standard_Real ax, const Standard_Real yo, const Standard_Real ay, const Standard_Real zo, const Standard_Real az, const Standard_Real u1o, const Standard_Real a1u, const Standard_Real v1o, const Standard_Real a1v, const Standard_Real u2o, const Standard_Real a2u, const Standard_Real v2o, const Standard_Real a2v, const Standard_Boolean P2DOnFirst, const Standard_Integer IndMin=0, const Standard_Integer IndMax=0);
+		BRepApprox_TheMultiLineOfApprox(const BRepApprox_ApproxLine *line, const Standard_Address PtrSvSurfaces, const Standard_Integer NbP3d, const Standard_Integer NbP2d, const Standard_Real xo, const Standard_Real ax, const Standard_Real yo, const Standard_Real ay, const Standard_Real zo, const Standard_Real az, const Standard_Real u1o, const Standard_Real a1u, const Standard_Real v1o, const Standard_Real a1v, const Standard_Real u2o, const Standard_Real a2u, const Standard_Real v2o, const Standard_Real a2v, const Standard_Boolean P2DOnFirst, const Standard_Integer IndMin=0, const Standard_Integer IndMax=0);
 		%feature("autodoc", "1");
-		BRepApprox_TheMultiLineOfApprox(const Handle_BRepApprox_ApproxLine &line, const Standard_Integer NbP3d, const Standard_Integer NbP2d, const Standard_Real xo, const Standard_Real ax, const Standard_Real yo, const Standard_Real ay, const Standard_Real zo, const Standard_Real az, const Standard_Real u1o, const Standard_Real a1u, const Standard_Real v1o, const Standard_Real a1v, const Standard_Real u2o, const Standard_Real a2u, const Standard_Real v2o, const Standard_Real a2v, const Standard_Boolean P2DOnFirst, const Standard_Integer IndMin=0, const Standard_Integer IndMax=0);
+		BRepApprox_TheMultiLineOfApprox(const BRepApprox_ApproxLine *line, const Standard_Integer NbP3d, const Standard_Integer NbP2d, const Standard_Real xo, const Standard_Real ax, const Standard_Real yo, const Standard_Real ay, const Standard_Real zo, const Standard_Real az, const Standard_Real u1o, const Standard_Real a1u, const Standard_Real v1o, const Standard_Real a1v, const Standard_Real u2o, const Standard_Real a2u, const Standard_Real v2o, const Standard_Real a2v, const Standard_Boolean P2DOnFirst, const Standard_Integer IndMin=0, const Standard_Integer IndMax=0);
 		%feature("autodoc", "1");
 		Standard_Integer FirstPoint() const;
 		%feature("autodoc", "1");
@@ -945,7 +945,7 @@ def __del__(self):
 class BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
+		BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -1120,9 +1120,9 @@ def __del__(self):
 class BRepApprox_MyBSplGradientOfTheComputeLineOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_MyBSplGradientOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=1);
+		BRepApprox_MyBSplGradientOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=1);
 		%feature("autodoc", "1");
-		BRepApprox_MyBSplGradientOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations, const Standard_Real lambda1, const Standard_Real lambda2);
+		BRepApprox_MyBSplGradientOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations, const Standard_Real lambda1, const Standard_Real lambda2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");

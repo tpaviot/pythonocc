@@ -43,15 +43,15 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public Ha
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt();
 		%feature("autodoc", "1");
-		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt(const Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt &aHandle);
+		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt(const BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt(const BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt & operator=(const Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt &aHandle);
+		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt & operator=(const BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt & operator=(const BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
@@ -81,15 +81,15 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape();
 		%feature("autodoc", "1");
-		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape(const Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape &aHandle);
+		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape(const BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape(const BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape & operator=(const Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape &aHandle);
+		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape & operator=(const BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape & operator=(const BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
@@ -119,15 +119,15 @@ class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt();
 		%feature("autodoc", "1");
-		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt &aHandle);
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt & operator=(const Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt &aHandle);
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt & operator=(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt & operator=(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
@@ -171,11 +171,11 @@ class BRepMAT2d_BisectingLocus {
 		%feature("autodoc", "1");
 		Handle_MAT_BasicElt BasicElt(const Standard_Integer IndLine, const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Geometry GeomElt(const Handle_MAT_BasicElt &aBasicElt) const;
+		Handle_Geom2d_Geometry GeomElt(const MAT_BasicElt *aBasicElt) const;
 		%feature("autodoc", "1");
-		gp_Pnt2d GeomElt(const Handle_MAT_Node &aNode) const;
+		gp_Pnt2d GeomElt(const MAT_Node *aNode) const;
 		%feature("autodoc", "1");
-		Bisector_Bisec GeomBis(const Handle_MAT_Arc &anArc, Standard_Boolean & Reverse) const;
+		Bisector_Bisec GeomBis(const MAT_Arc *anArc, Standard_Boolean & Reverse) const;
 
 };
 %feature("shadow") BRepMAT2d_BisectingLocus::~BRepMAT2d_BisectingLocus %{
@@ -198,7 +198,7 @@ def __del__(self):
 class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const Handle_MAT_BasicElt &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const MAT_BasicElt *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_MAT_BasicElt & Value() const;
 		%feature("autodoc", "1");
@@ -432,7 +432,7 @@ def __del__(self):
 class BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape(const Handle_MAT_BasicElt &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
+		BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape(const MAT_BasicElt *K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_MAT_BasicElt & Key() const;
 		%feature("autodoc", "1");
@@ -481,19 +481,19 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_MAT_BasicElt &K, const TopoDS_Shape &I);
+		Standard_Boolean Bind(const MAT_BasicElt *K, const TopoDS_Shape &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_MAT_BasicElt &K) const;
+		Standard_Boolean IsBound(const MAT_BasicElt *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_MAT_BasicElt &K);
+		Standard_Boolean UnBind(const MAT_BasicElt *K);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Find(const Handle_MAT_BasicElt &K) const;
+		const TopoDS_Shape & Find(const MAT_BasicElt *K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const Handle_MAT_BasicElt &K) const;
+		const TopoDS_Shape & operator()(const MAT_BasicElt *K) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFind(const Handle_MAT_BasicElt &K);
+		TopoDS_Shape & ChangeFind(const MAT_BasicElt *K);
 		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const Handle_MAT_BasicElt &K);
+		TopoDS_Shape & operator()(const MAT_BasicElt *K);
 
 };
 %feature("shadow") BRepMAT2d_DataMapOfBasicEltShape::~BRepMAT2d_DataMapOfBasicEltShape %{
@@ -530,7 +530,7 @@ class BRepMAT2d_LinkTopoBilo {
 		%feature("autodoc", "1");
 		Handle_MAT_BasicElt Value() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape GeneratingShape(const Handle_MAT_BasicElt &aBE) const;
+		TopoDS_Shape GeneratingShape(const MAT_BasicElt *aBE) const;
 
 };
 %feature("shadow") BRepMAT2d_LinkTopoBilo::~BRepMAT2d_LinkTopoBilo %{
@@ -561,19 +561,19 @@ class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const BRepMAT2d_SequenceOfBasicElt & operator=(const BRepMAT2d_SequenceOfBasicElt &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_MAT_BasicElt &T);
+		void Append(const MAT_BasicElt *T);
 		%feature("autodoc", "1");
 		void Append(BRepMAT2d_SequenceOfBasicElt & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_MAT_BasicElt &T);
+		void Prepend(const MAT_BasicElt *T);
 		%feature("autodoc", "1");
 		void Prepend(BRepMAT2d_SequenceOfBasicElt & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_MAT_BasicElt &I);
+		void InsertBefore(const Standard_Integer Index, const MAT_BasicElt *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, BRepMAT2d_SequenceOfBasicElt & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_MAT_BasicElt &T);
+		void InsertAfter(const Standard_Integer Index, const MAT_BasicElt *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, BRepMAT2d_SequenceOfBasicElt & S);
 		%feature("autodoc", "1");
@@ -587,7 +587,7 @@ class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_MAT_BasicElt & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MAT_BasicElt &I);
+		void SetValue(const Standard_Integer Index, const MAT_BasicElt *I);
 		%feature("autodoc", "1");
 		Handle_MAT_BasicElt & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");

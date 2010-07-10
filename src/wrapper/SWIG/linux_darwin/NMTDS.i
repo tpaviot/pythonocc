@@ -57,15 +57,15 @@ class Handle_NMTDS_StdMapNodeOfMapOfPassKey : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_NMTDS_StdMapNodeOfMapOfPassKey();
 		%feature("autodoc", "1");
-		Handle_NMTDS_StdMapNodeOfMapOfPassKey(const Handle_NMTDS_StdMapNodeOfMapOfPassKey &aHandle);
+		Handle_NMTDS_StdMapNodeOfMapOfPassKey(const NMTDS_StdMapNodeOfMapOfPassKey *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_StdMapNodeOfMapOfPassKey(const NMTDS_StdMapNodeOfMapOfPassKey *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_StdMapNodeOfMapOfPassKey & operator=(const Handle_NMTDS_StdMapNodeOfMapOfPassKey &aHandle);
+		Handle_NMTDS_StdMapNodeOfMapOfPassKey & operator=(const NMTDS_StdMapNodeOfMapOfPassKey *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_StdMapNodeOfMapOfPassKey & operator=(const NMTDS_StdMapNodeOfMapOfPassKey *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_StdMapNodeOfMapOfPassKey const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NMTDS_StdMapNodeOfMapOfPassKey const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NMTDS_StdMapNodeOfMapOfPassKey {
@@ -95,15 +95,15 @@ class Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean();
 		%feature("autodoc", "1");
-		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean(const Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean &aHandle);
+		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean(const NMTDS_StdMapNodeOfMapOfPassKeyBoolean *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean(const NMTDS_StdMapNodeOfMapOfPassKeyBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean & operator=(const Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean &aHandle);
+		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean & operator=(const NMTDS_StdMapNodeOfMapOfPassKeyBoolean *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean & operator=(const NMTDS_StdMapNodeOfMapOfPassKeyBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
@@ -133,15 +133,15 @@ class Handle_NMTDS_ListNodeOfListOfPassKey : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfPassKey();
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKey(const Handle_NMTDS_ListNodeOfListOfPassKey &aHandle);
+		Handle_NMTDS_ListNodeOfListOfPassKey(const NMTDS_ListNodeOfListOfPassKey *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfPassKey(const NMTDS_ListNodeOfListOfPassKey *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKey & operator=(const Handle_NMTDS_ListNodeOfListOfPassKey &aHandle);
+		Handle_NMTDS_ListNodeOfListOfPassKey & operator=(const NMTDS_ListNodeOfListOfPassKey *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfPassKey & operator=(const NMTDS_ListNodeOfListOfPassKey *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKey const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NMTDS_ListNodeOfListOfPassKey const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NMTDS_ListNodeOfListOfPassKey {
@@ -171,15 +171,15 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfSh
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger();
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger &aHandle);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger & operator=(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger &aHandle);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
@@ -209,15 +209,15 @@ class Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger();
 		%feature("autodoc", "1");
-		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger &aHandle);
+		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger & operator=(const Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger &aHandle);
+		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger & operator=(const NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger & operator=(const NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
@@ -247,15 +247,15 @@ class Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors : pu
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors();
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors(const Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors &aHandle);
+		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors(const NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors(const NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors &aHandle);
+		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
@@ -285,15 +285,15 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Handle_
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox();
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox &aHandle);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox &aHandle);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
@@ -323,15 +323,15 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public Han
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape();
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape &aHandle);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape & operator=(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape &aHandle);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
@@ -361,15 +361,15 @@ class Handle_NMTDS_ListNodeOfListOfPassKeyBoolean : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean();
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean(const Handle_NMTDS_ListNodeOfListOfPassKeyBoolean &aHandle);
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean(const NMTDS_ListNodeOfListOfPassKeyBoolean *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean(const NMTDS_ListNodeOfListOfPassKeyBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean & operator=(const Handle_NMTDS_ListNodeOfListOfPassKeyBoolean &aHandle);
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean & operator=(const NMTDS_ListNodeOfListOfPassKeyBoolean *aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean & operator=(const NMTDS_ListNodeOfListOfPassKeyBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NMTDS_ListNodeOfListOfPassKeyBoolean {

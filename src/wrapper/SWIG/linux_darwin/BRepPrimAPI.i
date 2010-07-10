@@ -111,21 +111,21 @@ def __del__(self):
 class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
 	public:
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian);
+		BRepPrimAPI_MakeRevolution(const Geom_Curve *Meridian);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian, const Standard_Real angle);
+		BRepPrimAPI_MakeRevolution(const Geom_Curve *Meridian, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax);
+		BRepPrimAPI_MakeRevolution(const Geom_Curve *Meridian, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
+		BRepPrimAPI_MakeRevolution(const Geom_Curve *Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Handle_Geom_Curve &Meridian);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Geom_Curve *Meridian);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Handle_Geom_Curve &Meridian, const Standard_Real angle);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Geom_Curve *Meridian, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Geom_Curve *Meridian, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Geom_Curve *Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
 		%feature("autodoc", "1");
 		virtual		Standard_Address OneAxis();
 		%feature("autodoc", "1");

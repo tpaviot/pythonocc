@@ -72,15 +72,15 @@ class Handle_GccIter_IsParallel : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_GccIter_IsParallel();
 		%feature("autodoc", "1");
-		Handle_GccIter_IsParallel(const Handle_GccIter_IsParallel &aHandle);
+		Handle_GccIter_IsParallel(const GccIter_IsParallel *aHandle);
 		%feature("autodoc", "1");
 		Handle_GccIter_IsParallel(const GccIter_IsParallel *anItem);
 		%feature("autodoc", "1");
-		Handle_GccIter_IsParallel & operator=(const Handle_GccIter_IsParallel &aHandle);
+		Handle_GccIter_IsParallel & operator=(const GccIter_IsParallel *aHandle);
 		%feature("autodoc", "1");
 		Handle_GccIter_IsParallel & operator=(const GccIter_IsParallel *anItem);
 		%feature("autodoc", "1");
-		Handle_GccIter_IsParallel const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GccIter_IsParallel const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GccIter_IsParallel {

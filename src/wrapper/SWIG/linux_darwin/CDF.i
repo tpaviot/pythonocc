@@ -100,15 +100,15 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriver();
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver(const Handle_CDF_MetaDataDriver &aHandle);
+		Handle_CDF_MetaDataDriver(const CDF_MetaDataDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriver(const CDF_MetaDataDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver & operator=(const Handle_CDF_MetaDataDriver &aHandle);
+		Handle_CDF_MetaDataDriver & operator=(const CDF_MetaDataDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriver & operator=(const CDF_MetaDataDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_CDF_MetaDataDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_CDF_MetaDataDriver {
@@ -138,15 +138,15 @@ class Handle_CDF_StoreList : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_StoreList();
 		%feature("autodoc", "1");
-		Handle_CDF_StoreList(const Handle_CDF_StoreList &aHandle);
+		Handle_CDF_StoreList(const CDF_StoreList *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_StoreList(const CDF_StoreList *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_StoreList & operator=(const Handle_CDF_StoreList &aHandle);
+		Handle_CDF_StoreList & operator=(const CDF_StoreList *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_StoreList & operator=(const CDF_StoreList *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_StoreList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_CDF_StoreList const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_CDF_StoreList {
@@ -176,15 +176,15 @@ class Handle_CDF_Directory : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_Directory();
 		%feature("autodoc", "1");
-		Handle_CDF_Directory(const Handle_CDF_Directory &aHandle);
+		Handle_CDF_Directory(const CDF_Directory *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_Directory(const CDF_Directory *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_Directory & operator=(const Handle_CDF_Directory &aHandle);
+		Handle_CDF_Directory & operator=(const CDF_Directory *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_Directory & operator=(const CDF_Directory *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_Directory const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_CDF_Directory const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_CDF_Directory {
@@ -214,15 +214,15 @@ class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverError();
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError(const Handle_CDF_MetaDataDriverError &aHandle);
+		Handle_CDF_MetaDataDriverError(const CDF_MetaDataDriverError *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverError(const CDF_MetaDataDriverError *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError & operator=(const Handle_CDF_MetaDataDriverError &aHandle);
+		Handle_CDF_MetaDataDriverError & operator=(const CDF_MetaDataDriverError *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverError & operator=(const CDF_MetaDataDriverError *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_CDF_MetaDataDriverError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_CDF_MetaDataDriverError {
@@ -252,15 +252,15 @@ class Handle_CDF_Application : public Handle_CDM_Application {
 		%feature("autodoc", "1");
 		Handle_CDF_Application();
 		%feature("autodoc", "1");
-		Handle_CDF_Application(const Handle_CDF_Application &aHandle);
+		Handle_CDF_Application(const CDF_Application *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_Application(const CDF_Application *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_Application & operator=(const Handle_CDF_Application &aHandle);
+		Handle_CDF_Application & operator=(const CDF_Application *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_Application & operator=(const CDF_Application *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_Application const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_CDF_Application const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_CDF_Application {
@@ -290,15 +290,15 @@ class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverFactory();
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverFactory(const Handle_CDF_MetaDataDriverFactory &aHandle);
+		Handle_CDF_MetaDataDriverFactory(const CDF_MetaDataDriverFactory *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverFactory(const CDF_MetaDataDriverFactory *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverFactory & operator=(const Handle_CDF_MetaDataDriverFactory &aHandle);
+		Handle_CDF_MetaDataDriverFactory & operator=(const CDF_MetaDataDriverFactory *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverFactory & operator=(const CDF_MetaDataDriverFactory *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverFactory const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_CDF_MetaDataDriverFactory const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_CDF_MetaDataDriverFactory {
@@ -328,15 +328,15 @@ class Handle_CDF_Session : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_Session();
 		%feature("autodoc", "1");
-		Handle_CDF_Session(const Handle_CDF_Session &aHandle);
+		Handle_CDF_Session(const CDF_Session *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_Session(const CDF_Session *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_Session & operator=(const Handle_CDF_Session &aHandle);
+		Handle_CDF_Session & operator=(const CDF_Session *aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_Session & operator=(const CDF_Session *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_Session const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_CDF_Session const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_CDF_Session {
@@ -436,11 +436,11 @@ class CDF_Application : public CDM_Application {
 		%feature("autodoc", "1");
 		Handle_CDF_Application Load(const Standard_GUID &aGUID);
 		%feature("autodoc", "1");
-		void Open(const Handle_CDM_Document &aDocument);
+		void Open(const CDM_Document *aDocument);
 		%feature("autodoc", "1");
-		CDM_CanCloseStatus CanClose(const Handle_CDM_Document &aDocument);
+		CDM_CanCloseStatus CanClose(const CDM_Document *aDocument);
 		%feature("autodoc", "1");
-		void Close(const Handle_CDM_Document &aDocument);
+		void Close(const CDM_Document *aDocument);
 		%feature("autodoc", "1");
 		Handle_CDM_Document Retrieve(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName, const Standard_Boolean UseStorageConfiguration=1);
 		%feature("autodoc", "1");
@@ -505,15 +505,15 @@ class CDF_MetaDataDriver : public Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasVersionCapability();
 		%feature("autodoc", "1");
-		virtual		void CreateDependsOn(const Handle_CDM_MetaData &aFirstData, const Handle_CDM_MetaData &aSecondData);
+		virtual		void CreateDependsOn(const CDM_MetaData *aFirstData, const CDM_MetaData *aSecondData);
 		%feature("autodoc", "1");
-		virtual		void CreateReference(const Handle_CDM_MetaData &aFrom, const Handle_CDM_MetaData &aTo, const Standard_Integer aReferenceIdentifier, const Standard_Integer aToDocumentVersion);
+		virtual		void CreateReference(const CDM_MetaData *aFrom, const CDM_MetaData *aTo, const Standard_Integer aReferenceIdentifier, const Standard_Integer aToDocumentVersion);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasVersion(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName);
 		%feature("autodoc", "1");
-		virtual		TCollection_ExtendedString BuildFileName(const Handle_CDM_Document &aDocument);
+		virtual		TCollection_ExtendedString BuildFileName(const CDM_Document *aDocument);
 		%feature("autodoc", "1");
-		virtual		TCollection_ExtendedString SetName(const Handle_CDM_Document &aDocument, const TCollection_ExtendedString &aName);
+		virtual		TCollection_ExtendedString SetName(const CDM_Document *aDocument, const TCollection_ExtendedString &aName);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Find(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName, const TCollection_ExtendedString &aVersion);
 		%feature("autodoc", "1");
@@ -521,9 +521,9 @@ class CDF_MetaDataDriver : public Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		Handle_CDM_MetaData MetaData(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName, const TCollection_ExtendedString &aVersion);
 		%feature("autodoc", "1");
-		virtual		Handle_CDM_MetaData LastVersion(const Handle_CDM_MetaData &aMetaData);
+		virtual		Handle_CDM_MetaData LastVersion(const CDM_MetaData *aMetaData);
 		%feature("autodoc", "1");
-		virtual		Handle_CDM_MetaData CreateMetaData(const Handle_CDM_Document &aDocument, const TCollection_ExtendedString &aFileName);
+		virtual		Handle_CDM_MetaData CreateMetaData(const CDM_Document *aDocument, const TCollection_ExtendedString &aFileName);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean FindFolder(const TCollection_ExtendedString &aFolder);
 		%feature("autodoc", "1");
@@ -597,7 +597,7 @@ def __del__(self):
 class CDF_StoreList : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		CDF_StoreList(const Handle_CDM_Document &aDocument);
+		CDF_StoreList(const CDM_Document *aDocument);
 		%feature("autodoc", "1");
 		Standard_Boolean IsConsistent() const;
 		%feature("autodoc", "1");
@@ -681,11 +681,11 @@ class CDF_Directory : public Standard_Transient {
 		%feature("autodoc", "1");
 		CDF_Directory();
 		%feature("autodoc", "1");
-		void Add(const Handle_CDM_Document &aDocument);
+		void Add(const CDM_Document *aDocument);
 		%feature("autodoc", "1");
-		void Remove(const Handle_CDM_Document &aDocument);
+		void Remove(const CDM_Document *aDocument);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_CDM_Document &aDocument) const;
+		Standard_Boolean Contains(const CDM_Document *aDocument) const;
 		%feature("autodoc", "1");
 		Handle_CDM_Document Last();
 		%feature("autodoc", "1");
@@ -738,7 +738,7 @@ class CDF_Session : public Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_Application CurrentApplication() const;
 		%feature("autodoc", "1");
-		void SetCurrentApplication(const Handle_CDF_Application &anApplication);
+		void SetCurrentApplication(const CDF_Application *anApplication);
 		%feature("autodoc", "1");
 		void UnsetCurrentApplication();
 		%feature("autodoc", "1");
@@ -781,7 +781,7 @@ class CDF_DirectoryIterator {
 		%feature("autodoc", "1");
 		CDF_DirectoryIterator();
 		%feature("autodoc", "1");
-		CDF_DirectoryIterator(const Handle_CDF_Directory &aDirectory);
+		CDF_DirectoryIterator(const CDF_Directory *aDirectory);
 		%feature("autodoc", "1");
 		Standard_Boolean MoreDocument();
 		%feature("autodoc", "1");
@@ -810,7 +810,7 @@ def __del__(self):
 class CDF_Store {
 	public:
 		%feature("autodoc", "1");
-		CDF_Store(const Handle_CDM_Document &aDocument);
+		CDF_Store(const CDM_Document *aDocument);
 		%feature("autodoc", "1");
 		CDF_TryStoreStatus Check();
 		%feature("autodoc", "1");

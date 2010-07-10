@@ -43,15 +43,15 @@ class Handle_PStandard_ArrayNode : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PStandard_ArrayNode();
 		%feature("autodoc", "1");
-		Handle_PStandard_ArrayNode(const Handle_PStandard_ArrayNode &aHandle);
+		Handle_PStandard_ArrayNode(const PStandard_ArrayNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_PStandard_ArrayNode(const PStandard_ArrayNode *anItem);
 		%feature("autodoc", "1");
-		Handle_PStandard_ArrayNode & operator=(const Handle_PStandard_ArrayNode &aHandle);
+		Handle_PStandard_ArrayNode & operator=(const PStandard_ArrayNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_PStandard_ArrayNode & operator=(const PStandard_ArrayNode *anItem);
 		%feature("autodoc", "1");
-		Handle_PStandard_ArrayNode const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PStandard_ArrayNode const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PStandard_ArrayNode {

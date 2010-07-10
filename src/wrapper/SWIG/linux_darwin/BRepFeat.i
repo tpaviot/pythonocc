@@ -167,10 +167,10 @@ class BRepFeat {
 		%feature("autodoc", "1");
 		void Barycenter(const TopoDS_Shape &S, gp_Pnt & Pt);
 		%feature("autodoc", "1");
-		Standard_Real ParametricBarycenter(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
+		Standard_Real ParametricBarycenter(const TopoDS_Shape &S, const Geom_Curve *C);
 		%feature("autodoc","ParametricMinMax(const S, const C, Standard_Boolean Ori=0) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void ParametricMinMax(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & flag, const Standard_Boolean Ori=0);
+		void ParametricMinMax(const TopoDS_Shape &S, const Geom_Curve *C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & flag, const Standard_Boolean Ori=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsInside(const TopoDS_Face &F1, const TopoDS_Face &F2);
 		%feature("autodoc", "1");
@@ -438,9 +438,9 @@ class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & TgtEdges() const;
 		%feature("autodoc", "1");
-		Standard_Real IntPar(const Handle_Geom_Curve &C, const gp_Pnt &P);
+		Standard_Real IntPar(const Geom_Curve *C, const gp_Pnt &P);
 		%feature("autodoc", "1");
-		TopoDS_Face ChoiceOfFaces(TopTools_ListOfShape & faces, const Handle_Geom_Curve &cc, const Standard_Real par, const Standard_Real bnd, const Handle_Geom_Plane &Pln);
+		TopoDS_Face ChoiceOfFaces(TopTools_ListOfShape & faces, const Geom_Curve *cc, const Standard_Real par, const Standard_Real bnd, const Geom_Plane *Pln);
 		%feature("autodoc", "1");
 		BRepFeat_StatusError CurrentStatusError() const;
 
@@ -470,9 +470,9 @@ class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 		%feature("autodoc", "1");
 		BRepFeat_MakeLinearForm();
 		%feature("autodoc", "1");
-		BRepFeat_MakeLinearForm(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Handle_Geom_Plane &P, const gp_Vec &Direc, const gp_Vec &Direc1, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		BRepFeat_MakeLinearForm(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Geom_Plane *P, const gp_Vec &Direc, const gp_Vec &Direc1, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Handle_Geom_Plane &P, const gp_Vec &Direction, const gp_Vec &Direction1, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		void Init(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Geom_Plane *P, const gp_Vec &Direction, const gp_Vec &Direction1, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Edge &E, const TopoDS_Face &OnFace);
 		%feature("autodoc", "1");
@@ -503,9 +503,9 @@ class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 		%feature("autodoc", "1");
 		BRepFeat_MakeRevolutionForm();
 		%feature("autodoc", "1");
-		BRepFeat_MakeRevolutionForm(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Handle_Geom_Plane &P, const gp_Ax1 &Axis, const Standard_Real H1, const Standard_Real H2, const Standard_Integer Fuse, Standard_Boolean & Sliding);
+		BRepFeat_MakeRevolutionForm(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Geom_Plane *P, const gp_Ax1 &Axis, const Standard_Real H1, const Standard_Real H2, const Standard_Integer Fuse, Standard_Boolean & Sliding);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Handle_Geom_Plane &Plane, const gp_Ax1 &Axis, const Standard_Real Height1, const Standard_Real Height2, const Standard_Integer Fuse, Standard_Boolean & Sliding);
+		void Init(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Geom_Plane *Plane, const gp_Ax1 &Axis, const Standard_Real Height1, const Standard_Real Height2, const Standard_Integer Fuse, Standard_Boolean & Sliding);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Edge &E, const TopoDS_Face &OnFace);
 		%feature("autodoc", "1");

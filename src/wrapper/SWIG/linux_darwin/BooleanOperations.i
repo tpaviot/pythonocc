@@ -70,15 +70,15 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger 
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger();
 		%feature("autodoc", "1");
-		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger(const Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger &aHandle);
+		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger & operator=(const Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger &aHandle);
+		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger & operator=(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger & operator=(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
@@ -108,15 +108,15 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestor
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors();
 		%feature("autodoc", "1");
-		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors(const Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors &aHandle);
+		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors *aHandle);
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors *anItem);
 		%feature("autodoc", "1");
-		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors &aHandle);
+		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors *aHandle);
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors *anItem);
 		%feature("autodoc", "1");
-		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {

@@ -43,15 +43,15 @@ class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool();
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool(const Handle_BRepTopAdaptor_TopolTool &aHandle);
+		Handle_BRepTopAdaptor_TopolTool(const BRepTopAdaptor_TopolTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool(const BRepTopAdaptor_TopolTool *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool & operator=(const Handle_BRepTopAdaptor_TopolTool &aHandle);
+		Handle_BRepTopAdaptor_TopolTool & operator=(const BRepTopAdaptor_TopolTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool & operator=(const BRepTopAdaptor_TopolTool *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepTopAdaptor_TopolTool const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_TopolTool {
@@ -81,15 +81,15 @@ class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_HVertex();
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_HVertex(const Handle_BRepTopAdaptor_HVertex &aHandle);
+		Handle_BRepTopAdaptor_HVertex(const BRepTopAdaptor_HVertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_HVertex(const BRepTopAdaptor_HVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_HVertex & operator=(const Handle_BRepTopAdaptor_HVertex &aHandle);
+		Handle_BRepTopAdaptor_HVertex & operator=(const BRepTopAdaptor_HVertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_HVertex & operator=(const BRepTopAdaptor_HVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_HVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepTopAdaptor_HVertex const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_HVertex {
@@ -119,15 +119,15 @@ class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool();
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool &aHandle);
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool &aHandle);
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
@@ -157,15 +157,15 @@ class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr();
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr &aHandle);
+		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const BRepTopAdaptor_SequenceNodeOfSeqOfPtr *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const BRepTopAdaptor_SequenceNodeOfSeqOfPtr *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr & operator=(const Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr &aHandle);
+		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr & operator=(const BRepTopAdaptor_SequenceNodeOfSeqOfPtr *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr & operator=(const BRepTopAdaptor_SequenceNodeOfSeqOfPtr *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
@@ -234,15 +234,15 @@ class BRepTopAdaptor_Tool {
 		%feature("autodoc", "1");
 		BRepTopAdaptor_Tool(const TopoDS_Face &F, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
+		BRepTopAdaptor_Tool(const Adaptor3d_HSurface *Surface, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Face &F, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
+		void Init(const Adaptor3d_HSurface *Surface, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool GetTopolTool();
 		%feature("autodoc", "1");
-		void SetTopolTool(const Handle_BRepTopAdaptor_TopolTool &TT);
+		void SetTopolTool(const BRepTopAdaptor_TopolTool *TT);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurface GetSurface();
 		%feature("autodoc", "1");
@@ -300,7 +300,7 @@ def __del__(self):
 class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 	public:
 		%feature("autodoc", "1");
-		BRepTopAdaptor_HVertex(const TopoDS_Vertex &Vtx, const Handle_BRepAdaptor_HCurve2d &Curve);
+		BRepTopAdaptor_HVertex(const TopoDS_Vertex &Vtx, const BRepAdaptor_HCurve2d *Curve);
 		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex() const;
 		%feature("autodoc", "1");
@@ -308,13 +308,13 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Value();
 		%feature("autodoc", "1");
-		virtual		Standard_Real Parameter(const Handle_Adaptor2d_HCurve2d &C);
+		virtual		Standard_Real Parameter(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		virtual		Standard_Real Resolution(const Handle_Adaptor2d_HCurve2d &C);
+		virtual		Standard_Real Resolution(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
 		virtual		TopAbs_Orientation Orientation();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSame(const Handle_Adaptor3d_HVertex &Other);
+		virtual		Standard_Boolean IsSame(const Adaptor3d_HVertex *Other);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -386,13 +386,13 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 		%feature("autodoc", "1");
 		BRepTopAdaptor_TopolTool();
 		%feature("autodoc", "1");
-		BRepTopAdaptor_TopolTool(const Handle_Adaptor3d_HSurface &Surface);
+		BRepTopAdaptor_TopolTool(const Adaptor3d_HSurface *Surface);
 		%feature("autodoc", "1");
 		virtual		void Initialize();
 		%feature("autodoc", "1");
-		virtual		void Initialize(const Handle_Adaptor3d_HSurface &S);
+		virtual		void Initialize(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		virtual		void Initialize(const Handle_Adaptor2d_HCurve2d &Curve);
+		virtual		void Initialize(const Adaptor2d_HCurve2d *Curve);
 		%feature("autodoc", "1");
 		virtual		void Init();
 		%feature("autodoc", "1");
@@ -416,19 +416,19 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsThePointOn(const gp_Pnt2d &P2d, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1);
 		%feature("autodoc", "1");
-		virtual		TopAbs_Orientation Orientation(const Handle_Adaptor2d_HCurve2d &C);
+		virtual		TopAbs_Orientation Orientation(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		virtual		TopAbs_Orientation Orientation(const Handle_Adaptor3d_HVertex &C);
+		virtual		TopAbs_Orientation Orientation(const Adaptor3d_HVertex *C);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Has3d() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real Tol3d(const Handle_Adaptor2d_HCurve2d &C) const;
+		virtual		Standard_Real Tol3d(const Adaptor2d_HCurve2d *C) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real Tol3d(const Handle_Adaptor3d_HVertex &V) const;
+		virtual		Standard_Real Tol3d(const Adaptor3d_HVertex *V) const;
 		%feature("autodoc", "1");
-		virtual		gp_Pnt Pnt(const Handle_Adaptor3d_HVertex &V) const;
+		virtual		gp_Pnt Pnt(const Adaptor3d_HVertex *V) const;
 		%feature("autodoc", "1");
 		virtual		void ComputeSamplePoints();
 		%feature("autodoc", "1");

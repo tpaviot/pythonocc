@@ -43,15 +43,15 @@ class Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher();
 		%feature("autodoc", "1");
-		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher(const Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher &aHandle);
+		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher(const Geom2dHatch_DataMapNodeOfHatchingsOfHatcher *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher(const Geom2dHatch_DataMapNodeOfHatchingsOfHatcher *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher & operator=(const Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher &aHandle);
+		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher & operator=(const Geom2dHatch_DataMapNodeOfHatchingsOfHatcher *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher & operator=(const Geom2dHatch_DataMapNodeOfHatchingsOfHatcher *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
@@ -81,15 +81,15 @@ class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public 
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher();
 		%feature("autodoc", "1");
-		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher &aHandle);
+		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher & operator=(const Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher &aHandle);
+		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher & operator=(const Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher & operator=(const Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {

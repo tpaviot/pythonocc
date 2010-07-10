@@ -55,7 +55,7 @@ class BRepToIGESBRep_Entity : public BRepToIGES_BREntity {
 		%feature("autodoc", "1");
 		Standard_Integer IndexEdge(const TopoDS_Edge &myedge) const;
 		%feature("autodoc", "1");
-		Standard_Integer AddEdge(const TopoDS_Edge &myedge, const Handle_IGESData_IGESEntity &mycurve3d);
+		Standard_Integer AddEdge(const TopoDS_Edge &myedge, const IGESData_IGESEntity *mycurve3d);
 		%feature("autodoc", "1");
 		virtual		Handle_IGESData_IGESEntity TransferShape(const TopoDS_Shape &start);
 		%feature("autodoc", "1");

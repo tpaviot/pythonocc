@@ -41,9 +41,9 @@ import GarbageCollector
 class AdvApprox_ApproxAFunction {
 	public:
 		%feature("autodoc", "1");
-		AdvApprox_ApproxAFunction(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const Handle_TColStd_HArray1OfReal &OneDTol, const Handle_TColStd_HArray1OfReal &TwoDTol, const Handle_TColStd_HArray1OfReal &ThreeDTol, const Standard_Real First, const Standard_Real Last, const GeomAbs_Shape Continuity, const Standard_Integer MaxDeg, const Standard_Integer MaxSeg, const AdvApprox_EvaluatorFunction &Func);
+		AdvApprox_ApproxAFunction(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const TColStd_HArray1OfReal *OneDTol, const TColStd_HArray1OfReal *TwoDTol, const TColStd_HArray1OfReal *ThreeDTol, const Standard_Real First, const Standard_Real Last, const GeomAbs_Shape Continuity, const Standard_Integer MaxDeg, const Standard_Integer MaxSeg, const AdvApprox_EvaluatorFunction &Func);
 		%feature("autodoc", "1");
-		AdvApprox_ApproxAFunction(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const Handle_TColStd_HArray1OfReal &OneDTol, const Handle_TColStd_HArray1OfReal &TwoDTol, const Handle_TColStd_HArray1OfReal &ThreeDTol, const Standard_Real First, const Standard_Real Last, const GeomAbs_Shape Continuity, const Standard_Integer MaxDeg, const Standard_Integer MaxSeg, const AdvApprox_EvaluatorFunction &Func, const AdvApprox_Cutting &CutTool);
+		AdvApprox_ApproxAFunction(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const TColStd_HArray1OfReal *OneDTol, const TColStd_HArray1OfReal *TwoDTol, const TColStd_HArray1OfReal *ThreeDTol, const Standard_Real First, const Standard_Real Last, const GeomAbs_Shape Continuity, const Standard_Integer MaxDeg, const Standard_Integer MaxSeg, const AdvApprox_EvaluatorFunction &Func, const AdvApprox_Cutting &CutTool);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -214,7 +214,7 @@ def __del__(self):
 class AdvApprox_SimpleApprox {
 	public:
 		%feature("autodoc", "1");
-		AdvApprox_SimpleApprox(const Standard_Integer TotalDimension, const Standard_Integer TotalNumSS, const GeomAbs_Shape Continuity, const Standard_Integer WorkDegree, const Standard_Integer NbGaussPoints, const Handle_PLib_JacobiPolynomial &JacobiBase, const AdvApprox_EvaluatorFunction &Func);
+		AdvApprox_SimpleApprox(const Standard_Integer TotalDimension, const Standard_Integer TotalNumSS, const GeomAbs_Shape Continuity, const Standard_Integer WorkDegree, const Standard_Integer NbGaussPoints, const PLib_JacobiPolynomial *JacobiBase, const AdvApprox_EvaluatorFunction &Func);
 		%feature("autodoc", "1");
 		void Perform(const TColStd_Array1OfInteger &LocalDimension, const TColStd_Array1OfReal &LocalTolerancesArray, const Standard_Real First, const Standard_Real Last, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");

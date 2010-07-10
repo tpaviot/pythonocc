@@ -149,13 +149,13 @@ class BRepPrim_FaceBuilder {
 		%feature("autodoc", "1");
 		BRepPrim_FaceBuilder();
 		%feature("autodoc", "1");
-		BRepPrim_FaceBuilder(const BRep_Builder &B, const Handle_Geom_Surface &S);
+		BRepPrim_FaceBuilder(const BRep_Builder &B, const Geom_Surface *S);
 		%feature("autodoc", "1");
-		BRepPrim_FaceBuilder(const BRep_Builder &B, const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		BRepPrim_FaceBuilder(const BRep_Builder &B, const Geom_Surface *S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
-		void Init(const BRep_Builder &B, const Handle_Geom_Surface &S);
+		void Init(const BRep_Builder &B, const Geom_Surface *S);
 		%feature("autodoc", "1");
-		void Init(const BRep_Builder &B, const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		void Init(const BRep_Builder &B, const Geom_Surface *S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
 		%feature("autodoc", "1");
@@ -376,7 +376,7 @@ def __del__(self):
 class BRepPrim_Revolution : public BRepPrim_OneAxis {
 	public:
 		%feature("autodoc", "1");
-		BRepPrim_Revolution(const gp_Ax2 &A, const Standard_Real VMin, const Standard_Real VMax, const Handle_Geom_Curve &M, const Handle_Geom2d_Curve &PM);
+		BRepPrim_Revolution(const gp_Ax2 &A, const Standard_Real VMin, const Standard_Real VMax, const Geom_Curve *M, const Geom2d_Curve *PM);
 		%feature("autodoc", "1");
 		virtual		TopoDS_Face MakeEmptyLateralFace() const;
 		%feature("autodoc", "1");

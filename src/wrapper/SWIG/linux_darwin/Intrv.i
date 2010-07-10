@@ -59,15 +59,15 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_Intrv_SequenceNodeOfSequenceOfInterval();
 		%feature("autodoc", "1");
-		Handle_Intrv_SequenceNodeOfSequenceOfInterval(const Handle_Intrv_SequenceNodeOfSequenceOfInterval &aHandle);
+		Handle_Intrv_SequenceNodeOfSequenceOfInterval(const Intrv_SequenceNodeOfSequenceOfInterval *aHandle);
 		%feature("autodoc", "1");
 		Handle_Intrv_SequenceNodeOfSequenceOfInterval(const Intrv_SequenceNodeOfSequenceOfInterval *anItem);
 		%feature("autodoc", "1");
-		Handle_Intrv_SequenceNodeOfSequenceOfInterval & operator=(const Handle_Intrv_SequenceNodeOfSequenceOfInterval &aHandle);
+		Handle_Intrv_SequenceNodeOfSequenceOfInterval & operator=(const Intrv_SequenceNodeOfSequenceOfInterval *aHandle);
 		%feature("autodoc", "1");
 		Handle_Intrv_SequenceNodeOfSequenceOfInterval & operator=(const Intrv_SequenceNodeOfSequenceOfInterval *anItem);
 		%feature("autodoc", "1");
-		Handle_Intrv_SequenceNodeOfSequenceOfInterval const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Intrv_SequenceNodeOfSequenceOfInterval const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Intrv_SequenceNodeOfSequenceOfInterval {

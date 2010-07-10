@@ -50,15 +50,15 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_Voxel_Prs();
 		%feature("autodoc", "1");
-		Handle_Voxel_Prs(const Handle_Voxel_Prs &aHandle);
+		Handle_Voxel_Prs(const Voxel_Prs *aHandle);
 		%feature("autodoc", "1");
 		Handle_Voxel_Prs(const Voxel_Prs *anItem);
 		%feature("autodoc", "1");
-		Handle_Voxel_Prs & operator=(const Handle_Voxel_Prs &aHandle);
+		Handle_Voxel_Prs & operator=(const Voxel_Prs *aHandle);
 		%feature("autodoc", "1");
 		Handle_Voxel_Prs & operator=(const Voxel_Prs *anItem);
 		%feature("autodoc", "1");
-		Handle_Voxel_Prs const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Voxel_Prs const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Voxel_Prs {
@@ -269,13 +269,13 @@ class Voxel_Prs : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		void SetColorVoxels(const Standard_Address theVoxels);
 		%feature("autodoc", "1");
-		void SetTriangulation(const Handle_Poly_Triangulation &theTriangulation);
+		void SetTriangulation(const Poly_Triangulation *theTriangulation);
 		%feature("autodoc", "1");
 		void SetDisplayMode(const Voxel_VoxelDisplayMode theMode);
 		%feature("autodoc", "1");
 		virtual		void SetColor(const Quantity_Color &theColor);
 		%feature("autodoc", "1");
-		void SetColors(const Handle_Quantity_HArray1OfColor &theColors);
+		void SetColors(const Quantity_HArray1OfColor *theColors);
 		%feature("autodoc", "1");
 		void SetPointSize(const Standard_Real theSize);
 		%feature("autodoc", "1");
@@ -434,9 +434,9 @@ class Voxel_Selector {
 		%feature("autodoc", "1");
 		Voxel_Selector();
 		%feature("autodoc", "1");
-		Voxel_Selector(const Handle_V3d_View &view);
+		Voxel_Selector(const V3d_View *view);
 		%feature("autodoc", "1");
-		void Init(const Handle_V3d_View &view);
+		void Init(const V3d_View *view);
 		%feature("autodoc", "1");
 		void SetVoxels(const Voxel_BoolDS &voxels);
 		%feature("autodoc", "1");

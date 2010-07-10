@@ -49,15 +49,15 @@ class Handle_Hatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfLine();
 		%feature("autodoc", "1");
-		Handle_Hatch_SequenceNodeOfSequenceOfLine(const Handle_Hatch_SequenceNodeOfSequenceOfLine &aHandle);
+		Handle_Hatch_SequenceNodeOfSequenceOfLine(const Hatch_SequenceNodeOfSequenceOfLine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfLine(const Hatch_SequenceNodeOfSequenceOfLine *anItem);
 		%feature("autodoc", "1");
-		Handle_Hatch_SequenceNodeOfSequenceOfLine & operator=(const Handle_Hatch_SequenceNodeOfSequenceOfLine &aHandle);
+		Handle_Hatch_SequenceNodeOfSequenceOfLine & operator=(const Hatch_SequenceNodeOfSequenceOfLine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfLine & operator=(const Hatch_SequenceNodeOfSequenceOfLine *anItem);
 		%feature("autodoc", "1");
-		Handle_Hatch_SequenceNodeOfSequenceOfLine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Hatch_SequenceNodeOfSequenceOfLine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Hatch_SequenceNodeOfSequenceOfLine {
@@ -87,15 +87,15 @@ class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfParameter();
 		%feature("autodoc", "1");
-		Handle_Hatch_SequenceNodeOfSequenceOfParameter(const Handle_Hatch_SequenceNodeOfSequenceOfParameter &aHandle);
+		Handle_Hatch_SequenceNodeOfSequenceOfParameter(const Hatch_SequenceNodeOfSequenceOfParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfParameter(const Hatch_SequenceNodeOfSequenceOfParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Hatch_SequenceNodeOfSequenceOfParameter & operator=(const Handle_Hatch_SequenceNodeOfSequenceOfParameter &aHandle);
+		Handle_Hatch_SequenceNodeOfSequenceOfParameter & operator=(const Hatch_SequenceNodeOfSequenceOfParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfParameter & operator=(const Hatch_SequenceNodeOfSequenceOfParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Hatch_SequenceNodeOfSequenceOfParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Hatch_SequenceNodeOfSequenceOfParameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Hatch_SequenceNodeOfSequenceOfParameter {

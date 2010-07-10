@@ -50,15 +50,15 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public H
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString();
 		%feature("autodoc", "1");
-		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString(const Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString &aHandle);
+		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString(const Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString *aHandle);
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString(const Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString & operator=(const Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString &aHandle);
+		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString & operator=(const Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString *aHandle);
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString & operator=(const Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
@@ -88,15 +88,15 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Hand
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString();
 		%feature("autodoc", "1");
-		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString(const Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString &aHandle);
+		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString(const Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString(const Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString & operator=(const Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString &aHandle);
+		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString & operator=(const Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString & operator=(const Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
@@ -126,15 +126,15 @@ class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 		%feature("autodoc", "1");
 		Handle_Resource_NoSuchResource();
 		%feature("autodoc", "1");
-		Handle_Resource_NoSuchResource(const Handle_Resource_NoSuchResource &aHandle);
+		Handle_Resource_NoSuchResource(const Resource_NoSuchResource *aHandle);
 		%feature("autodoc", "1");
 		Handle_Resource_NoSuchResource(const Resource_NoSuchResource *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_NoSuchResource & operator=(const Handle_Resource_NoSuchResource &aHandle);
+		Handle_Resource_NoSuchResource & operator=(const Resource_NoSuchResource *aHandle);
 		%feature("autodoc", "1");
 		Handle_Resource_NoSuchResource & operator=(const Resource_NoSuchResource *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_NoSuchResource const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Resource_NoSuchResource const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Resource_NoSuchResource {
@@ -164,15 +164,15 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Resource_Manager();
 		%feature("autodoc", "1");
-		Handle_Resource_Manager(const Handle_Resource_Manager &aHandle);
+		Handle_Resource_Manager(const Resource_Manager *aHandle);
 		%feature("autodoc", "1");
 		Handle_Resource_Manager(const Resource_Manager *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_Manager & operator=(const Handle_Resource_Manager &aHandle);
+		Handle_Resource_Manager & operator=(const Resource_Manager *aHandle);
 		%feature("autodoc", "1");
 		Handle_Resource_Manager & operator=(const Resource_Manager *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_Manager const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Resource_Manager const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Resource_Manager {

@@ -43,15 +43,15 @@ class Handle_BinMDocStd_XLinkDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDocStd_XLinkDriver();
 		%feature("autodoc", "1");
-		Handle_BinMDocStd_XLinkDriver(const Handle_BinMDocStd_XLinkDriver &aHandle);
+		Handle_BinMDocStd_XLinkDriver(const BinMDocStd_XLinkDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMDocStd_XLinkDriver(const BinMDocStd_XLinkDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDocStd_XLinkDriver & operator=(const Handle_BinMDocStd_XLinkDriver &aHandle);
+		Handle_BinMDocStd_XLinkDriver & operator=(const BinMDocStd_XLinkDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMDocStd_XLinkDriver & operator=(const BinMDocStd_XLinkDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDocStd_XLinkDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMDocStd_XLinkDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMDocStd_XLinkDriver {
@@ -81,7 +81,7 @@ class BinMDocStd {
 		%feature("autodoc", "1");
 		BinMDocStd();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+		void AddDrivers(const BinMDF_ADriverTable *theDriverTable, const CDM_MessageDriver *aMsgDrv);
 
 };
 %feature("shadow") BinMDocStd::~BinMDocStd %{
@@ -104,13 +104,13 @@ def __del__(self):
 class BinMDocStd_XLinkDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMDocStd_XLinkDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		BinMDocStd_XLinkDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const TDF_Attribute *Target, BinObjMgt_RRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		virtual		void Paste(const TDF_Attribute *Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

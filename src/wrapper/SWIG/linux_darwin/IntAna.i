@@ -56,15 +56,15 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_IntAna_ListNodeOfListOfCurve();
 		%feature("autodoc", "1");
-		Handle_IntAna_ListNodeOfListOfCurve(const Handle_IntAna_ListNodeOfListOfCurve &aHandle);
+		Handle_IntAna_ListNodeOfListOfCurve(const IntAna_ListNodeOfListOfCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntAna_ListNodeOfListOfCurve(const IntAna_ListNodeOfListOfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_IntAna_ListNodeOfListOfCurve & operator=(const Handle_IntAna_ListNodeOfListOfCurve &aHandle);
+		Handle_IntAna_ListNodeOfListOfCurve & operator=(const IntAna_ListNodeOfListOfCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntAna_ListNodeOfListOfCurve & operator=(const IntAna_ListNodeOfListOfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_IntAna_ListNodeOfListOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntAna_ListNodeOfListOfCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntAna_ListNodeOfListOfCurve {

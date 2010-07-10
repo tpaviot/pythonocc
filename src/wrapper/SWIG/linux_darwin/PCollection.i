@@ -53,15 +53,15 @@ class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNotRoot();
 		%feature("autodoc", "1");
-		Handle_PCollection_IsNotRoot(const Handle_PCollection_IsNotRoot &aHandle);
+		Handle_PCollection_IsNotRoot(const PCollection_IsNotRoot *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNotRoot(const PCollection_IsNotRoot *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsNotRoot & operator=(const Handle_PCollection_IsNotRoot &aHandle);
+		Handle_PCollection_IsNotRoot & operator=(const PCollection_IsNotRoot *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNotRoot & operator=(const PCollection_IsNotRoot *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsNotRoot const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCollection_IsNotRoot const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCollection_IsNotRoot {
@@ -91,15 +91,15 @@ class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_PCollection_IsContained();
 		%feature("autodoc", "1");
-		Handle_PCollection_IsContained(const Handle_PCollection_IsContained &aHandle);
+		Handle_PCollection_IsContained(const PCollection_IsContained *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_IsContained(const PCollection_IsContained *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsContained & operator=(const Handle_PCollection_IsContained &aHandle);
+		Handle_PCollection_IsContained & operator=(const PCollection_IsContained *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_IsContained & operator=(const PCollection_IsContained *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsContained const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCollection_IsContained const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCollection_IsContained {
@@ -129,15 +129,15 @@ class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNullTree();
 		%feature("autodoc", "1");
-		Handle_PCollection_IsNullTree(const Handle_PCollection_IsNullTree &aHandle);
+		Handle_PCollection_IsNullTree(const PCollection_IsNullTree *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNullTree(const PCollection_IsNullTree *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsNullTree & operator=(const Handle_PCollection_IsNullTree &aHandle);
+		Handle_PCollection_IsNullTree & operator=(const PCollection_IsNullTree *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNullTree & operator=(const PCollection_IsNullTree *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsNullTree const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCollection_IsNullTree const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCollection_IsNullTree {
@@ -167,15 +167,15 @@ class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString();
 		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString(const Handle_PCollection_HAsciiString &aHandle);
+		Handle_PCollection_HAsciiString(const PCollection_HAsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString(const PCollection_HAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString & operator=(const Handle_PCollection_HAsciiString &aHandle);
+		Handle_PCollection_HAsciiString & operator=(const PCollection_HAsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString & operator=(const PCollection_HAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PCollection_HAsciiString const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PCollection_HAsciiString {
@@ -205,15 +205,15 @@ class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString();
 		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString(const Handle_PCollection_HExtendedString &aHandle);
+		Handle_PCollection_HExtendedString(const PCollection_HExtendedString *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString(const PCollection_HExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString & operator=(const Handle_PCollection_HExtendedString &aHandle);
+		Handle_PCollection_HExtendedString & operator=(const PCollection_HExtendedString *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString & operator=(const PCollection_HExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PCollection_HExtendedString const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PCollection_HExtendedString {
@@ -405,15 +405,11 @@ class PCollection_HAsciiString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PCollection_HAsciiString(const Standard_Character C);
 		%feature("autodoc", "1");
-		PCollection_HAsciiString(const Handle_PCollection_HAsciiString &S, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		PCollection_HAsciiString(const Handle_PCollection_HExtendedString &S);
+		PCollection_HAsciiString(const PCollection_HExtendedString *S);
 		%feature("autodoc", "1");
 		PCollection_HAsciiString(const Standard_Real R, const char * F="%f");
 		%feature("autodoc", "1");
 		PCollection_HAsciiString(const Standard_Integer I, const char * F="%d");
-		%feature("autodoc", "1");
-		void Append(const Handle_PCollection_HAsciiString &S);
 		%feature("autodoc", "1");
 		void Capitalize();
 		%feature("autodoc", "1");
@@ -425,31 +421,13 @@ class PCollection_HAsciiString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		TCollection_AsciiString Convert() const;
 		%feature("autodoc", "1");
-		Standard_Integer FirstLocationInSet(const Handle_PCollection_HAsciiString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		Standard_Integer FirstLocationNotInSet(const Handle_PCollection_HAsciiString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_PCollection_HAsciiString &S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_PCollection_HAsciiString &S);
-		%feature("autodoc", "1");
 		Standard_Integer IntegerValue() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDifferent(const Handle_PCollection_HAsciiString &other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsGreater(const Handle_PCollection_HAsciiString &other) const;
-		%feature("autodoc", "1");
 		Standard_Boolean IsIntegerValue() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsLess(const Handle_PCollection_HAsciiString &other) const;
-		%feature("autodoc", "1");
 		Standard_Boolean IsRealValue() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameString(const Handle_PCollection_HAsciiString &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameString(const Handle_PCollection_HAsciiString &S, const Standard_Boolean CaseSensitive) const;
 		%feature("autodoc", "1");
 		void LeftAdjust();
 		%feature("autodoc", "1");
@@ -459,11 +437,7 @@ class PCollection_HAsciiString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const Standard_Character C, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Handle_PCollection_HAsciiString &S, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
 		void Lowercase();
-		%feature("autodoc", "1");
-		void Prepend(const Handle_PCollection_HAsciiString &S);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -486,8 +460,6 @@ class PCollection_HAsciiString : public Standard_Persistent {
 		void RightJustify(const Standard_Integer Width, const Standard_Character Filler);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Character C);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PCollection_HAsciiString &S);
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString Split(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -579,13 +551,9 @@ class PCollection_HExtendedString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PCollection_HExtendedString(const Standard_ExtCharacter C);
 		%feature("autodoc", "1");
-		PCollection_HExtendedString(const Handle_PCollection_HExtendedString &S, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
 		PCollection_HExtendedString(const char * astring);
 		%feature("autodoc", "1");
-		PCollection_HExtendedString(const Handle_PCollection_HAsciiString &S);
-		%feature("autodoc", "1");
-		void Append(const Handle_PCollection_HExtendedString &S);
+		PCollection_HExtendedString(const PCollection_HAsciiString *S);
 		%feature("autodoc", "1");
 		void Center(const Standard_Integer Width, const Standard_ExtCharacter Filler);
 		%feature("autodoc", "1");
@@ -595,25 +563,9 @@ class PCollection_HExtendedString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		TCollection_ExtendedString Convert() const;
 		%feature("autodoc", "1");
-		Standard_Integer FirstLocationInSet(const Handle_PCollection_HExtendedString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		Standard_Integer FirstLocationNotInSet(const Handle_PCollection_HExtendedString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_PCollection_HExtendedString &S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_PCollection_HExtendedString &S);
-		%feature("autodoc", "1");
 		Standard_Boolean IsAscii() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDifferent(const Handle_PCollection_HExtendedString &other) const;
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsGreater(const Handle_PCollection_HExtendedString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLess(const Handle_PCollection_HExtendedString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameString(const Handle_PCollection_HExtendedString &S) const;
 		%feature("autodoc", "1");
 		void LeftAdjust();
 		%feature("autodoc", "1");
@@ -622,10 +574,6 @@ class PCollection_HExtendedString : public Standard_Persistent {
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const Standard_ExtCharacter C, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Handle_PCollection_HExtendedString &S, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_PCollection_HExtendedString &S);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -646,8 +594,6 @@ class PCollection_HExtendedString : public Standard_Persistent {
 		void RightJustify(const Standard_Integer Width, const Standard_ExtCharacter Filler);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_ExtCharacter C);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PCollection_HExtendedString &S);
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString Split(const Standard_Integer Index);
 		%feature("autodoc", "1");

@@ -43,15 +43,15 @@ class Handle_BRepBlend_AppFuncRoot : public Handle_Approx_SweepFunction {
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRoot();
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFuncRoot(const Handle_BRepBlend_AppFuncRoot &aHandle);
+		Handle_BRepBlend_AppFuncRoot(const BRepBlend_AppFuncRoot *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRoot(const BRepBlend_AppFuncRoot *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFuncRoot & operator=(const Handle_BRepBlend_AppFuncRoot &aHandle);
+		Handle_BRepBlend_AppFuncRoot & operator=(const BRepBlend_AppFuncRoot *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRoot & operator=(const BRepBlend_AppFuncRoot *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFuncRoot const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepBlend_AppFuncRoot const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepBlend_AppFuncRoot {
@@ -81,15 +81,15 @@ class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRstRst();
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFuncRstRst(const Handle_BRepBlend_AppFuncRstRst &aHandle);
+		Handle_BRepBlend_AppFuncRstRst(const BRepBlend_AppFuncRstRst *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRstRst(const BRepBlend_AppFuncRstRst *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFuncRstRst & operator=(const Handle_BRepBlend_AppFuncRstRst &aHandle);
+		Handle_BRepBlend_AppFuncRstRst & operator=(const BRepBlend_AppFuncRstRst *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRstRst & operator=(const BRepBlend_AppFuncRstRst *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFuncRstRst const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepBlend_AppFuncRstRst const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepBlend_AppFuncRstRst {
@@ -119,15 +119,15 @@ class Handle_BRepBlend_SequenceNodeOfSequenceOfLine : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfLine();
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfLine(const Handle_BRepBlend_SequenceNodeOfSequenceOfLine &aHandle);
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine(const BRepBlend_SequenceNodeOfSequenceOfLine *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfLine(const BRepBlend_SequenceNodeOfSequenceOfLine *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfLine & operator=(const Handle_BRepBlend_SequenceNodeOfSequenceOfLine &aHandle);
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine & operator=(const BRepBlend_SequenceNodeOfSequenceOfLine *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfLine & operator=(const BRepBlend_SequenceNodeOfSequenceOfLine *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfLine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepBlend_SequenceNodeOfSequenceOfLine {
@@ -157,15 +157,15 @@ class Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst();
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst(const Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst &aHandle);
+		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst(const BRepBlend_SequenceNodeOfSequenceOfPointOnRst *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst(const BRepBlend_SequenceNodeOfSequenceOfPointOnRst *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst & operator=(const Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst &aHandle);
+		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst & operator=(const BRepBlend_SequenceNodeOfSequenceOfPointOnRst *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst & operator=(const BRepBlend_SequenceNodeOfSequenceOfPointOnRst *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
@@ -195,15 +195,15 @@ class Handle_BRepBlend_Line : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepBlend_Line();
 		%feature("autodoc", "1");
-		Handle_BRepBlend_Line(const Handle_BRepBlend_Line &aHandle);
+		Handle_BRepBlend_Line(const BRepBlend_Line *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_Line(const BRepBlend_Line *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_Line & operator=(const Handle_BRepBlend_Line &aHandle);
+		Handle_BRepBlend_Line & operator=(const BRepBlend_Line *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_Line & operator=(const BRepBlend_Line *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_Line const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepBlend_Line const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepBlend_Line {
@@ -233,15 +233,15 @@ class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFunc();
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFunc(const Handle_BRepBlend_AppFunc &aHandle);
+		Handle_BRepBlend_AppFunc(const BRepBlend_AppFunc *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFunc(const BRepBlend_AppFunc *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFunc & operator=(const Handle_BRepBlend_AppFunc &aHandle);
+		Handle_BRepBlend_AppFunc & operator=(const BRepBlend_AppFunc *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFunc & operator=(const BRepBlend_AppFunc *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFunc const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepBlend_AppFunc const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepBlend_AppFunc {
@@ -271,15 +271,15 @@ class Handle_BRepBlend_AppFuncRst : public Handle_BRepBlend_AppFuncRoot {
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRst();
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFuncRst(const Handle_BRepBlend_AppFuncRst &aHandle);
+		Handle_BRepBlend_AppFuncRst(const BRepBlend_AppFuncRst *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRst(const BRepBlend_AppFuncRst *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFuncRst & operator=(const Handle_BRepBlend_AppFuncRst &aHandle);
+		Handle_BRepBlend_AppFuncRst & operator=(const BRepBlend_AppFuncRst *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRst & operator=(const BRepBlend_AppFuncRst *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFuncRst const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepBlend_AppFuncRst const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepBlend_AppFuncRst {
@@ -307,9 +307,9 @@ def __del__(self):
 class BRepBlend_ChamfInv : public Blend_FuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_ChamfInv(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		BRepBlend_ChamfInv(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
+		virtual		void Set(const Standard_Boolean OnFirst, const Adaptor2d_HCurve2d *COnSurf);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
@@ -348,7 +348,7 @@ def __del__(self):
 class BRepBlend_ConstRad : public Blend_Function {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_ConstRad(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		BRepBlend_ConstRad(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
@@ -519,7 +519,7 @@ def __del__(self):
 class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_SurfCurvEvolRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &Cg, const Handle_Law_Function &Evol);
+		BRepBlend_SurfCurvEvolRadInv(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *C, const Adaptor3d_HCurve *Cg, const Law_Function *Evol);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer Choix);
 		%feature("autodoc", "1");
@@ -531,7 +531,7 @@ class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		virtual		void Set(const Handle_Adaptor2d_HCurve2d &Rst);
+		virtual		void Set(const Adaptor2d_HCurve2d *Rst);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
@@ -560,7 +560,7 @@ def __del__(self):
 class BRepBlend_CSCircular : public Blend_CSFunction {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_CSCircular(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &CGuide, const Handle_Law_Function &L);
+		BRepBlend_CSCircular(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *C, const Adaptor3d_HCurve *CGuide, const Law_Function *L);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -664,9 +664,9 @@ class BRepBlend_AppSurf : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		void Init(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
 		%feature("autodoc", "1");
-		void Perform(const Handle_BRepBlend_Line &Lin, Blend_AppFunction & SecGen, const Standard_Boolean SpApprox=0);
+		void Perform(const BRepBlend_Line *Lin, Blend_AppFunction & SecGen, const Standard_Boolean SpApprox=0);
 		%feature("autodoc", "1");
-		void Perform(const Handle_BRepBlend_Line &Lin, Blend_AppFunction & SecGen, const Standard_Integer NbMaxP);
+		void Perform(const BRepBlend_Line *Lin, Blend_AppFunction & SecGen, const Standard_Integer NbMaxP);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
 		%feature("autodoc","SurfShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
@@ -838,9 +838,9 @@ def __del__(self):
 class BRepBlend_ConstRadInv : public Blend_FuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_ConstRadInv(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		BRepBlend_ConstRadInv(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
+		virtual		void Set(const Standard_Boolean OnFirst, const Adaptor2d_HCurve2d *COnSurf);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
@@ -916,7 +916,7 @@ def __del__(self):
 class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_SurfRstConstRad(const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_HSurface &SurfRst, const Handle_Adaptor2d_HCurve2d &Rst, const Handle_Adaptor3d_HCurve &CGuide);
+		BRepBlend_SurfRstConstRad(const Adaptor3d_HSurface *Surf, const Adaptor3d_HSurface *SurfRst, const Adaptor2d_HCurve2d *Rst, const Adaptor3d_HCurve *CGuide);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -928,7 +928,7 @@ class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &SurfRef, const Handle_Adaptor2d_HCurve2d &RstRef);
+		void Set(const Adaptor3d_HSurface *SurfRef, const Adaptor2d_HCurve2d *RstRef);
 		%feature("autodoc", "1");
 		virtual		void Set(const Standard_Real Param);
 		%feature("autodoc", "1");
@@ -1020,7 +1020,7 @@ def __del__(self):
 class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_RstRstEvolRad(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor2d_HCurve2d &Rst1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor2d_HCurve2d &Rst2, const Handle_Adaptor3d_HCurve &CGuide, const Handle_Law_Function &Evol);
+		BRepBlend_RstRstEvolRad(const Adaptor3d_HSurface *Surf1, const Adaptor2d_HCurve2d *Rst1, const Adaptor3d_HSurface *Surf2, const Adaptor2d_HCurve2d *Rst2, const Adaptor3d_HCurve *CGuide, const Law_Function *Evol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -1032,7 +1032,7 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &SurfRef1, const Handle_Adaptor2d_HCurve2d &RstRef1, const Handle_Adaptor3d_HSurface &SurfRef2, const Handle_Adaptor2d_HCurve2d &RstRef2);
+		void Set(const Adaptor3d_HSurface *SurfRef1, const Adaptor2d_HCurve2d *RstRef1, const Adaptor3d_HSurface *SurfRef2, const Adaptor2d_HCurve2d *RstRef2);
 		%feature("autodoc", "1");
 		virtual		void Set(const Standard_Real Param);
 		%feature("autodoc", "1");
@@ -1128,9 +1128,9 @@ def __del__(self):
 class BRepBlend_EvolRadInv : public Blend_FuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_EvolRadInv(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C, const Handle_Law_Function &Law);
+		BRepBlend_EvolRadInv(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Adaptor3d_HCurve *C, const Law_Function *Law);
 		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
+		virtual		void Set(const Standard_Boolean OnFirst, const Adaptor2d_HCurve2d *COnSurf);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
@@ -1169,7 +1169,7 @@ def __del__(self):
 class BRepBlend_ChAsym : public Blend_Function {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_ChAsym(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		BRepBlend_ChAsym(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
@@ -1267,7 +1267,7 @@ def __del__(self):
 class BRepBlend_CSWalking {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_CSWalking(const Handle_Adaptor3d_HCurve &Curv, const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_TopolTool &Domain);
+		BRepBlend_CSWalking(const Adaptor3d_HCurve *Curv, const Adaptor3d_HSurface *Surf, const Adaptor3d_TopolTool *Domain);
 		%feature("autodoc", "1");
 		void Perform(Blend_CSFunction & F, const Standard_Real Pdep, const Standard_Real Pmax, const Standard_Real MaxStep, const Standard_Real TolGuide, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real Fleche, const Standard_Boolean Appro=0);
 		%feature("autodoc", "1");
@@ -1380,13 +1380,13 @@ class BRepBlend_Extremity {
 		%feature("autodoc", "1");
 		BRepBlend_Extremity(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const Standard_Real Param, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		BRepBlend_Extremity(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const Standard_Real Param, const Standard_Real Tol, const Handle_Adaptor3d_HVertex &Vtx);
+		BRepBlend_Extremity(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const Standard_Real Param, const Standard_Real Tol, const Adaptor3d_HVertex *Vtx);
 		%feature("autodoc", "1");
 		BRepBlend_Extremity(const gp_Pnt &P, const Standard_Real W, const Standard_Real Param, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void SetValue(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const Standard_Real Param, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const Standard_Real Param, const Standard_Real Tol, const Handle_Adaptor3d_HVertex &Vtx);
+		void SetValue(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const Standard_Real Param, const Standard_Real Tol, const Adaptor3d_HVertex *Vtx);
 		%feature("autodoc", "1");
 		void SetValue(const gp_Pnt &P, const Standard_Real W, const Standard_Real Param, const Standard_Real Tol);
 		%feature("autodoc", "1");
@@ -1400,9 +1400,9 @@ class BRepBlend_Extremity {
 		%feature("autodoc", "1");
 		Standard_Real Tolerance() const;
 		%feature("autodoc", "1");
-		void SetVertex(const Handle_Adaptor3d_HVertex &V);
+		void SetVertex(const Adaptor3d_HVertex *V);
 		%feature("autodoc", "1");
-		void AddArc(const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
+		void AddArc(const Adaptor2d_HCurve2d *A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
 		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
 
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -1440,7 +1440,7 @@ def __del__(self):
 class BRepBlend_Chamfer : public Blend_Function {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_Chamfer(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &CG);
+		BRepBlend_Chamfer(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Adaptor3d_HCurve *CG);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
@@ -1532,7 +1532,7 @@ def __del__(self):
 class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_SurfPointConstRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
+		BRepBlend_SurfPointConstRadInv(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
 		void Set(const Standard_Real R, const Standard_Integer Choix);
 		%feature("autodoc", "1");
@@ -1573,7 +1573,7 @@ def __del__(self):
 class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_SurfPointEvolRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Law_Function &Evol);
+		BRepBlend_SurfPointEvolRadInv(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *C, const Law_Function *Evol);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer Choix);
 		%feature("autodoc", "1");
@@ -1614,7 +1614,7 @@ def __del__(self):
 class BRepBlend_Corde {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_Corde(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &CGuide);
+		BRepBlend_Corde(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *CGuide);
 		%feature("autodoc", "1");
 		void SetParam(const Standard_Real Param);
 		%feature("autodoc", "1");
@@ -1663,53 +1663,53 @@ class BRepBlend_HCurve2dTool {
 		%feature("autodoc", "1");
 		BRepBlend_HCurve2dTool();
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_Adaptor2d_HCurve2d &C);
+		Standard_Real FirstParameter(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_Adaptor2d_HCurve2d &C);
+		Standard_Real LastParameter(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const Handle_Adaptor2d_HCurve2d &C);
+		GeomAbs_Shape Continuity(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const Handle_Adaptor2d_HCurve2d &C, const GeomAbs_Shape Sh);
+		Standard_Integer NbIntervals(const Adaptor2d_HCurve2d *C, const GeomAbs_Shape Sh);
 		%feature("autodoc", "1");
-		void Intervals(const Handle_Adaptor2d_HCurve2d &C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
+		void Intervals(const Adaptor2d_HCurve2d *C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
 		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const Handle_Adaptor2d_HCurve2d &C);
+		Standard_Boolean IsClosed(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic(const Handle_Adaptor2d_HCurve2d &C);
+		Standard_Boolean IsPeriodic(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		Standard_Real Period(const Handle_Adaptor2d_HCurve2d &C);
+		Standard_Real Period(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		gp_Pnt2d Value(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U);
+		gp_Pnt2d Value(const Adaptor2d_HCurve2d *C, const Standard_Real U);
 		%feature("autodoc", "1");
-		void D0(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P);
+		void D0(const Adaptor2d_HCurve2d *C, const Standard_Real U, gp_Pnt2d & P);
 		%feature("autodoc", "1");
-		void D1(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
+		void D1(const Adaptor2d_HCurve2d *C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
 		%feature("autodoc", "1");
-		void D2(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
+		void D2(const Adaptor2d_HCurve2d *C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
 		%feature("autodoc", "1");
-		void D3(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
+		void D3(const Adaptor2d_HCurve2d *C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
 		%feature("autodoc", "1");
-		gp_Vec2d DN(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, const Standard_Integer N);
+		gp_Vec2d DN(const Adaptor2d_HCurve2d *C, const Standard_Real U, const Standard_Integer N);
 		%feature("autodoc", "1");
-		Standard_Real Resolution(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real R3d);
+		Standard_Real Resolution(const Adaptor2d_HCurve2d *C, const Standard_Real R3d);
 		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType(const Handle_Adaptor2d_HCurve2d &C);
+		GeomAbs_CurveType GetType(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		gp_Lin2d Line(const Handle_Adaptor2d_HCurve2d &C);
+		gp_Lin2d Line(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		gp_Circ2d Circle(const Handle_Adaptor2d_HCurve2d &C);
+		gp_Circ2d Circle(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		gp_Elips2d Ellipse(const Handle_Adaptor2d_HCurve2d &C);
+		gp_Elips2d Ellipse(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		gp_Hypr2d Hyperbola(const Handle_Adaptor2d_HCurve2d &C);
+		gp_Hypr2d Hyperbola(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		gp_Parab2d Parabola(const Handle_Adaptor2d_HCurve2d &C);
+		gp_Parab2d Parabola(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		Handle_Geom2d_BezierCurve Bezier(const Handle_Adaptor2d_HCurve2d &C);
+		Handle_Geom2d_BezierCurve Bezier(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve BSpline(const Handle_Adaptor2d_HCurve2d &C);
+		Handle_Geom2d_BSplineCurve BSpline(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U0, const Standard_Real U1);
+		Standard_Integer NbSamples(const Adaptor2d_HCurve2d *C, const Standard_Real U0, const Standard_Real U1);
 
 };
 %feature("shadow") BRepBlend_HCurve2dTool::~BRepBlend_HCurve2dTool %{
@@ -1732,7 +1732,7 @@ def __del__(self):
 class BRepBlend_CurvPointRadInv : public Blend_CurvPointFuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_CurvPointRadInv(const Handle_Adaptor3d_HCurve &C1, const Handle_Adaptor3d_HCurve &C2);
+		BRepBlend_CurvPointRadInv(const Adaptor3d_HCurve *C1, const Adaptor3d_HCurve *C2);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer Choix);
 		%feature("autodoc", "1");
@@ -1773,7 +1773,7 @@ def __del__(self):
 class BRepBlend_CSConstRad : public Blend_CSFunction {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_CSConstRad(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &CGuide);
+		BRepBlend_CSConstRad(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *C, const Adaptor3d_HCurve *CGuide);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
@@ -1869,9 +1869,9 @@ def __del__(self):
 class BRepBlend_RuledInv : public Blend_FuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_RuledInv(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		BRepBlend_RuledInv(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
+		virtual		void Set(const Standard_Boolean OnFirst, const Adaptor2d_HCurve2d *COnSurf);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
@@ -1949,53 +1949,53 @@ class BRepBlend_HCurveTool {
 		%feature("autodoc", "1");
 		BRepBlend_HCurveTool();
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_Adaptor3d_HCurve &C);
+		Standard_Real FirstParameter(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_Adaptor3d_HCurve &C);
+		Standard_Real LastParameter(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const Handle_Adaptor3d_HCurve &C);
+		GeomAbs_Shape Continuity(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const Handle_Adaptor3d_HCurve &C, const GeomAbs_Shape Sh);
+		Standard_Integer NbIntervals(const Adaptor3d_HCurve *C, const GeomAbs_Shape Sh);
 		%feature("autodoc", "1");
-		void Intervals(const Handle_Adaptor3d_HCurve &C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
+		void Intervals(const Adaptor3d_HCurve *C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
 		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const Handle_Adaptor3d_HCurve &C);
+		Standard_Boolean IsClosed(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic(const Handle_Adaptor3d_HCurve &C);
+		Standard_Boolean IsPeriodic(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		Standard_Real Period(const Handle_Adaptor3d_HCurve &C);
+		Standard_Real Period(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
+		gp_Pnt Value(const Adaptor3d_HCurve *C, const Standard_Real U);
 		%feature("autodoc", "1");
-		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
+		void D0(const Adaptor3d_HCurve *C, const Standard_Real U, gp_Pnt & P);
 		%feature("autodoc", "1");
-		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T);
+		void D1(const Adaptor3d_HCurve *C, const Standard_Real U, gp_Pnt & P, gp_Vec & T);
 		%feature("autodoc", "1");
-		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T, gp_Vec & N);
+		void D2(const Adaptor3d_HCurve *C, const Standard_Real U, gp_Pnt & P, gp_Vec & T, gp_Vec & N);
 		%feature("autodoc", "1");
-		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		void D3(const Adaptor3d_HCurve *C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
 		%feature("autodoc", "1");
-		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
+		gp_Vec DN(const Adaptor3d_HCurve *C, const Standard_Real U, const Standard_Integer N);
 		%feature("autodoc", "1");
-		Standard_Real Resolution(const Handle_Adaptor3d_HCurve &C, const Standard_Real R3d);
+		Standard_Real Resolution(const Adaptor3d_HCurve *C, const Standard_Real R3d);
 		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType(const Handle_Adaptor3d_HCurve &C);
+		GeomAbs_CurveType GetType(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		gp_Lin Line(const Handle_Adaptor3d_HCurve &C);
+		gp_Lin Line(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		gp_Circ Circle(const Handle_Adaptor3d_HCurve &C);
+		gp_Circ Circle(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		gp_Elips Ellipse(const Handle_Adaptor3d_HCurve &C);
+		gp_Elips Ellipse(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		gp_Hypr Hyperbola(const Handle_Adaptor3d_HCurve &C);
+		gp_Hypr Hyperbola(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		gp_Parab Parabola(const Handle_Adaptor3d_HCurve &C);
+		gp_Parab Parabola(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve Bezier(const Handle_Adaptor3d_HCurve &C);
+		Handle_Geom_BezierCurve Bezier(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve BSpline(const Handle_Adaptor3d_HCurve &C);
+		Handle_Geom_BSplineCurve BSpline(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1);
+		Standard_Integer NbSamples(const Adaptor3d_HCurve *C, const Standard_Real U0, const Standard_Real U1);
 
 };
 %feature("shadow") BRepBlend_HCurveTool::~BRepBlend_HCurveTool %{
@@ -2018,9 +2018,9 @@ def __del__(self):
 class BRepBlend_ChAsymInv : public Blend_FuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_ChAsymInv(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		BRepBlend_ChAsymInv(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
+		virtual		void Set(const Standard_Boolean OnFirst, const Adaptor2d_HCurve2d *COnSurf);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
@@ -2061,7 +2061,7 @@ def __del__(self):
 class BRepBlend_SurfRstLineBuilder {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_SurfRstLineBuilder(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_TopolTool &Domain1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor2d_HCurve2d &Rst, const Handle_Adaptor3d_TopolTool &Domain2);
+		BRepBlend_SurfRstLineBuilder(const Adaptor3d_HSurface *Surf1, const Adaptor3d_TopolTool *Domain1, const Adaptor3d_HSurface *Surf2, const Adaptor2d_HCurve2d *Rst, const Adaptor3d_TopolTool *Domain2);
 		%feature("autodoc", "1");
 		void Perform(Blend_SurfRstFunction & Func, Blend_FuncInv & Finv, Blend_SurfPointFuncInv & FinvP, Blend_SurfCurvFuncInv & FinvC, const Standard_Real Pdep, const Standard_Real Pmax, const Standard_Real MaxStep, const Standard_Real TolGuide, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real Fleche, const Standard_Boolean Appro=0);
 		%feature("autodoc","PerformFirstSection(Standard_Real Pdep, Standard_Real Pmax, const Soldep, Standard_Real Tolesp, Standard_Real TolGuide, Standard_Boolean RecRst, Standard_Boolean RecP, Standard_Boolean RecS) -> Standard_Real");
@@ -2143,83 +2143,83 @@ class BRepBlend_HSurfaceTool {
 		%feature("autodoc", "1");
 		BRepBlend_HSurfaceTool();
 		%feature("autodoc", "1");
-		Standard_Real FirstUParameter(const Handle_Adaptor3d_HSurface &Surf);
+		Standard_Real FirstUParameter(const Adaptor3d_HSurface *Surf);
 		%feature("autodoc", "1");
-		Standard_Real FirstVParameter(const Handle_Adaptor3d_HSurface &Surf);
+		Standard_Real FirstVParameter(const Adaptor3d_HSurface *Surf);
 		%feature("autodoc", "1");
-		Standard_Real LastUParameter(const Handle_Adaptor3d_HSurface &Surf);
+		Standard_Real LastUParameter(const Adaptor3d_HSurface *Surf);
 		%feature("autodoc", "1");
-		Standard_Real LastVParameter(const Handle_Adaptor3d_HSurface &Surf);
+		Standard_Real LastVParameter(const Adaptor3d_HSurface *Surf);
 		%feature("autodoc", "1");
-		Standard_Integer NbUIntervals(const Handle_Adaptor3d_HSurface &Surf, const GeomAbs_Shape S);
+		Standard_Integer NbUIntervals(const Adaptor3d_HSurface *Surf, const GeomAbs_Shape S);
 		%feature("autodoc", "1");
-		Standard_Integer NbVIntervals(const Handle_Adaptor3d_HSurface &Surf, const GeomAbs_Shape S);
+		Standard_Integer NbVIntervals(const Adaptor3d_HSurface *Surf, const GeomAbs_Shape S);
 		%feature("autodoc", "1");
-		void UIntervals(const Handle_Adaptor3d_HSurface &Surf, TColStd_Array1OfReal & Tab, const GeomAbs_Shape S);
+		void UIntervals(const Adaptor3d_HSurface *Surf, TColStd_Array1OfReal & Tab, const GeomAbs_Shape S);
 		%feature("autodoc", "1");
-		void VIntervals(const Handle_Adaptor3d_HSurface &Surf, TColStd_Array1OfReal & Tab, const GeomAbs_Shape S);
+		void VIntervals(const Adaptor3d_HSurface *Surf, TColStd_Array1OfReal & Tab, const GeomAbs_Shape S);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface UTrim(const Handle_Adaptor3d_HSurface &Surf, const Standard_Real F, const Standard_Real L, const Standard_Real Tol);
+		Handle_Adaptor3d_HSurface UTrim(const Adaptor3d_HSurface *Surf, const Standard_Real F, const Standard_Real L, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface VTrim(const Handle_Adaptor3d_HSurface &Surf, const Standard_Real F, const Standard_Real L, const Standard_Real Tol);
+		Handle_Adaptor3d_HSurface VTrim(const Adaptor3d_HSurface *Surf, const Standard_Real F, const Standard_Real L, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Boolean IsUClosed(const Handle_Adaptor3d_HSurface &S);
+		Standard_Boolean IsUClosed(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsVClosed(const Handle_Adaptor3d_HSurface &S);
+		Standard_Boolean IsVClosed(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsUPeriodic(const Handle_Adaptor3d_HSurface &S);
+		Standard_Boolean IsUPeriodic(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Standard_Real UPeriod(const Handle_Adaptor3d_HSurface &S);
+		Standard_Real UPeriod(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsVPeriodic(const Handle_Adaptor3d_HSurface &S);
+		Standard_Boolean IsVPeriodic(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Standard_Real VPeriod(const Handle_Adaptor3d_HSurface &S);
+		Standard_Real VPeriod(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		gp_Pnt Value(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V);
+		gp_Pnt Value(const Adaptor3d_HSurface *S, const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
-		void D0(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
+		void D0(const Adaptor3d_HSurface *S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
 		%feature("autodoc", "1");
-		void D1(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
+		void D1(const Adaptor3d_HSurface *S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
 		%feature("autodoc", "1");
-		void D2(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV);
+		void D2(const Adaptor3d_HSurface *S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV);
 		%feature("autodoc", "1");
-		void D3(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV);
+		void D3(const Adaptor3d_HSurface *S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV);
 		%feature("autodoc", "1");
-		gp_Vec DN(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
+		gp_Vec DN(const Adaptor3d_HSurface *S, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
 		%feature("autodoc", "1");
-		Standard_Real UResolution(const Handle_Adaptor3d_HSurface &S, const Standard_Real R3d);
+		Standard_Real UResolution(const Adaptor3d_HSurface *S, const Standard_Real R3d);
 		%feature("autodoc", "1");
-		Standard_Real VResolution(const Handle_Adaptor3d_HSurface &S, const Standard_Real R3d);
+		Standard_Real VResolution(const Adaptor3d_HSurface *S, const Standard_Real R3d);
 		%feature("autodoc", "1");
-		GeomAbs_SurfaceType GetType(const Handle_Adaptor3d_HSurface &S);
+		GeomAbs_SurfaceType GetType(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		gp_Pln Plane(const Handle_Adaptor3d_HSurface &S);
+		gp_Pln Plane(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		gp_Cylinder Cylinder(const Handle_Adaptor3d_HSurface &S);
+		gp_Cylinder Cylinder(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		gp_Cone Cone(const Handle_Adaptor3d_HSurface &S);
+		gp_Cone Cone(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		gp_Torus Torus(const Handle_Adaptor3d_HSurface &S);
+		gp_Torus Torus(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		gp_Sphere Sphere(const Handle_Adaptor3d_HSurface &S);
+		gp_Sphere Sphere(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Handle_Geom_BezierSurface Bezier(const Handle_Adaptor3d_HSurface &S);
+		Handle_Geom_BezierSurface Bezier(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface BSpline(const Handle_Adaptor3d_HSurface &S);
+		Handle_Geom_BSplineSurface BSpline(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		gp_Ax1 AxeOfRevolution(const Handle_Adaptor3d_HSurface &S);
+		gp_Ax1 AxeOfRevolution(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		gp_Dir Direction(const Handle_Adaptor3d_HSurface &S);
+		gp_Dir Direction(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurve BasisCurve(const Handle_Adaptor3d_HSurface &S);
+		Handle_Adaptor3d_HCurve BasisCurve(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamplesU(const Handle_Adaptor3d_HSurface &S);
+		Standard_Integer NbSamplesU(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S);
+		Standard_Integer NbSamplesV(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamplesU(const Handle_Adaptor3d_HSurface &S, const Standard_Real u1, const Standard_Real u2);
+		Standard_Integer NbSamplesU(const Adaptor3d_HSurface *S, const Standard_Real u1, const Standard_Real u2);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S, const Standard_Real v1, const Standard_Real v2);
+		Standard_Integer NbSamplesV(const Adaptor3d_HSurface *S, const Standard_Real v1, const Standard_Real v2);
 
 };
 %feature("shadow") BRepBlend_HSurfaceTool::~BRepBlend_HSurfaceTool %{
@@ -2307,7 +2307,7 @@ def __del__(self):
 class BRepBlend_Ruled : public Blend_Function {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_Ruled(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		BRepBlend_Ruled(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
@@ -2398,7 +2398,7 @@ def __del__(self):
 class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_SequenceNodeOfSequenceOfLine(const Handle_BRepBlend_Line &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		BRepBlend_SequenceNodeOfSequenceOfLine(const BRepBlend_Line *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_Line & Value() const;
 		%feature("autodoc", "1");
@@ -2435,7 +2435,7 @@ def __del__(self):
 class BRepBlend_SurfCurvConstRadInv : public Blend_SurfCurvFuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_SurfCurvConstRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &Cg);
+		BRepBlend_SurfCurvConstRadInv(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *C, const Adaptor3d_HCurve *Cg);
 		%feature("autodoc", "1");
 		void Set(const Standard_Real R, const Standard_Integer Choix);
 		%feature("autodoc", "1");
@@ -2447,7 +2447,7 @@ class BRepBlend_SurfCurvConstRadInv : public Blend_SurfCurvFuncInv {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		virtual		void Set(const Handle_Adaptor2d_HCurve2d &Rst);
+		virtual		void Set(const Adaptor2d_HCurve2d *Rst);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
@@ -2478,9 +2478,9 @@ class BRepBlend_PointOnRst {
 		%feature("autodoc", "1");
 		BRepBlend_PointOnRst();
 		%feature("autodoc", "1");
-		BRepBlend_PointOnRst(const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
+		BRepBlend_PointOnRst(const Adaptor2d_HCurve2d *A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
 		%feature("autodoc", "1");
-		void SetArc(const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
+		void SetArc(const Adaptor2d_HCurve2d *A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
 		%feature("autodoc", "1");
 		const Handle_Adaptor2d_HCurve2d & Arc() const;
 		%feature("autodoc", "1");
@@ -2511,9 +2511,9 @@ def __del__(self):
 class BRepBlend_Walking {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_Walking(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor3d_TopolTool &Domain1, const Handle_Adaptor3d_TopolTool &Domain2);
+		BRepBlend_Walking(const Adaptor3d_HSurface *Surf1, const Adaptor3d_HSurface *Surf2, const Adaptor3d_TopolTool *Domain1, const Adaptor3d_TopolTool *Domain2);
 		%feature("autodoc", "1");
-		void SetDomainsToRecadre(const Handle_Adaptor3d_TopolTool &RecDomain1, const Handle_Adaptor3d_TopolTool &RecDomain2);
+		void SetDomainsToRecadre(const Adaptor3d_TopolTool *RecDomain1, const Adaptor3d_TopolTool *RecDomain2);
 		%feature("autodoc", "1");
 		void AddSingularPoint(const Blend_Point &P);
 		%feature("autodoc", "1");
@@ -2575,19 +2575,19 @@ class BRepBlend_SequenceOfLine : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const BRepBlend_SequenceOfLine & operator=(const BRepBlend_SequenceOfLine &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_BRepBlend_Line &T);
+		void Append(const BRepBlend_Line *T);
 		%feature("autodoc", "1");
 		void Append(BRepBlend_SequenceOfLine & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_BRepBlend_Line &T);
+		void Prepend(const BRepBlend_Line *T);
 		%feature("autodoc", "1");
 		void Prepend(BRepBlend_SequenceOfLine & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_BRepBlend_Line &I);
+		void InsertBefore(const Standard_Integer Index, const BRepBlend_Line *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, BRepBlend_SequenceOfLine & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_BRepBlend_Line &T);
+		void InsertAfter(const Standard_Integer Index, const BRepBlend_Line *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, BRepBlend_SequenceOfLine & S);
 		%feature("autodoc", "1");
@@ -2601,7 +2601,7 @@ class BRepBlend_SequenceOfLine : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_BRepBlend_Line & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_BRepBlend_Line &I);
+		void SetValue(const Standard_Integer Index, const BRepBlend_Line *I);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_Line & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -2635,23 +2635,31 @@ class BRepBlend_BlendTool {
 		BRepBlend_BlendTool();
 		%feature("autodoc","Project(const P, const S, const C) -> [Standard_Real, Standard_Real]");
 
-		Standard_Boolean Project(const gp_Pnt2d &P, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &C, Standard_Real &OutValue, Standard_Real &OutValue);
+		Standard_Boolean Project(const gp_Pnt2d &P, const Adaptor3d_HSurface *S, const Adaptor2d_HCurve2d *C, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","Inters(const P1, const P2, const S, const C) -> [Standard_Real, Standard_Real]");
 
-		Standard_Boolean Inters(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &C, Standard_Real &OutValue, Standard_Real &OutValue);
+		Standard_Boolean Inters(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Adaptor3d_HSurface *S, const Adaptor2d_HCurve2d *C, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Real Parameter(const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &C);
+		Standard_Real Parameter(const Adaptor3d_HVertex *V, const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		Standard_Real Tolerance(const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &A);
+		Standard_Real Tolerance(const Adaptor3d_HVertex *V, const Adaptor2d_HCurve2d *A);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamplesU(const Handle_Adaptor3d_HSurface &S, const Standard_Real u1, const Standard_Real u2);
+		Standard_Boolean SingularOnUMin(const Adaptor3d_HSurface *arg0);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S, const Standard_Real v1, const Standard_Real v2);
+		Standard_Boolean SingularOnUMax(const Adaptor3d_HSurface *arg0);
+		%feature("autodoc", "1");
+		Standard_Boolean SingularOnVMin(const Adaptor3d_HSurface *arg0);
+		%feature("autodoc", "1");
+		Standard_Boolean SingularOnVMax(const Adaptor3d_HSurface *arg0);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamplesU(const Adaptor3d_HSurface *S, const Standard_Real u1, const Standard_Real u2);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamplesV(const Adaptor3d_HSurface *S, const Standard_Real v1, const Standard_Real v2);
 		%feature("autodoc","Bounds(const C) -> [Standard_Real, Standard_Real]");
 
-		void Bounds(const Handle_Adaptor2d_HCurve2d &C, Standard_Real &OutValue, Standard_Real &OutValue);
+		void Bounds(const Adaptor2d_HCurve2d *C, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Handle_Adaptor2d_HCurve2d CurveOnSurf(const Handle_Adaptor2d_HCurve2d &C, const Handle_Adaptor3d_HSurface &arg1);
+		Handle_Adaptor2d_HCurve2d CurveOnSurf(const Adaptor2d_HCurve2d *C, const Adaptor3d_HSurface *arg1);
 
 };
 %feature("shadow") BRepBlend_BlendTool::~BRepBlend_BlendTool %{
@@ -2674,7 +2682,7 @@ def __del__(self):
 class BRepBlend_RstRstLineBuilder {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_RstRstLineBuilder(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor2d_HCurve2d &Rst1, const Handle_Adaptor3d_TopolTool &Domain1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor2d_HCurve2d &Rst2, const Handle_Adaptor3d_TopolTool &Domain2);
+		BRepBlend_RstRstLineBuilder(const Adaptor3d_HSurface *Surf1, const Adaptor2d_HCurve2d *Rst1, const Adaptor3d_TopolTool *Domain1, const Adaptor3d_HSurface *Surf2, const Adaptor2d_HCurve2d *Rst2, const Adaptor3d_TopolTool *Domain2);
 		%feature("autodoc", "1");
 		void Perform(Blend_RstRstFunction & Func, Blend_SurfCurvFuncInv & Finv1, Blend_CurvPointFuncInv & FinvP1, Blend_SurfCurvFuncInv & Finv2, Blend_CurvPointFuncInv & FinvP2, const Standard_Real Pdep, const Standard_Real Pmax, const Standard_Real MaxStep, const Standard_Real TolGuide, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real Fleche, const Standard_Boolean Appro=0);
 		%feature("autodoc","PerformFirstSection(Standard_Real Pdep, Standard_Real Pmax, const Soldep, Standard_Real Tolesp, Standard_Real TolGuide, Standard_Boolean RecRst1, Standard_Boolean RecP1, Standard_Boolean RecRst2, Standard_Boolean RecP2) -> Standard_Real");
@@ -2716,7 +2724,7 @@ def __del__(self):
 class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_RstRstConstRad(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor2d_HCurve2d &Rst1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor2d_HCurve2d &Rst2, const Handle_Adaptor3d_HCurve &CGuide);
+		BRepBlend_RstRstConstRad(const Adaptor3d_HSurface *Surf1, const Adaptor2d_HCurve2d *Rst1, const Adaptor3d_HSurface *Surf2, const Adaptor2d_HCurve2d *Rst2, const Adaptor3d_HCurve *CGuide);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -2728,7 +2736,7 @@ class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &SurfRef1, const Handle_Adaptor2d_HCurve2d &RstRef1, const Handle_Adaptor3d_HSurface &SurfRef2, const Handle_Adaptor2d_HCurve2d &RstRef2);
+		void Set(const Adaptor3d_HSurface *SurfRef1, const Adaptor2d_HCurve2d *RstRef1, const Adaptor3d_HSurface *SurfRef2, const Adaptor2d_HCurve2d *RstRef2);
 		%feature("autodoc", "1");
 		virtual		void Set(const Standard_Real Param);
 		%feature("autodoc", "1");
@@ -2824,7 +2832,7 @@ def __del__(self):
 class BRepBlend_EvolRad : public Blend_Function {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_EvolRad(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C, const Handle_Law_Function &Law);
+		BRepBlend_EvolRad(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Adaptor3d_HCurve *C, const Law_Function *Law);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
@@ -2922,7 +2930,7 @@ def __del__(self):
 class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_SurfRstEvolRad(const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_HSurface &SurfRst, const Handle_Adaptor2d_HCurve2d &Rst, const Handle_Adaptor3d_HCurve &CGuide, const Handle_Law_Function &Evol);
+		BRepBlend_SurfRstEvolRad(const Adaptor3d_HSurface *Surf, const Adaptor3d_HSurface *SurfRst, const Adaptor2d_HCurve2d *Rst, const Adaptor3d_HCurve *CGuide, const Law_Function *Evol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -2934,7 +2942,7 @@ class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &SurfRef, const Handle_Adaptor2d_HCurve2d &RstRef);
+		void Set(const Adaptor3d_HSurface *SurfRef, const Adaptor2d_HCurve2d *RstRef);
 		%feature("autodoc", "1");
 		virtual		void Set(const Standard_Real Param);
 		%feature("autodoc", "1");

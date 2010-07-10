@@ -67,15 +67,15 @@ class Handle_ChFiDS_SecHArray1 : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SecHArray1();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SecHArray1(const Handle_ChFiDS_SecHArray1 &aHandle);
+		Handle_ChFiDS_SecHArray1(const ChFiDS_SecHArray1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SecHArray1(const ChFiDS_SecHArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SecHArray1 & operator=(const Handle_ChFiDS_SecHArray1 &aHandle);
+		Handle_ChFiDS_SecHArray1 & operator=(const ChFiDS_SecHArray1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SecHArray1 & operator=(const ChFiDS_SecHArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SecHArray1 const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_SecHArray1 const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_SecHArray1 {
@@ -105,15 +105,15 @@ class Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : pub
 		%feature("autodoc", "1");
 		Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe(const Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe &aHandle);
+		Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe(const ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe(const ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe & operator=(const Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe &aHandle);
+		Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe & operator=(const ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe & operator=(const ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
@@ -143,15 +143,15 @@ class Handle_ChFiDS_Stripe : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Stripe();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe(const Handle_ChFiDS_Stripe &aHandle);
+		Handle_ChFiDS_Stripe(const ChFiDS_Stripe *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Stripe(const ChFiDS_Stripe *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe & operator=(const Handle_ChFiDS_Stripe &aHandle);
+		Handle_ChFiDS_Stripe & operator=(const ChFiDS_Stripe *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Stripe & operator=(const ChFiDS_Stripe *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_Stripe const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_Stripe {
@@ -181,15 +181,15 @@ class Handle_ChFiDS_ListNodeOfListOfHElSpine : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfListOfHElSpine();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ListNodeOfListOfHElSpine(const Handle_ChFiDS_ListNodeOfListOfHElSpine &aHandle);
+		Handle_ChFiDS_ListNodeOfListOfHElSpine(const ChFiDS_ListNodeOfListOfHElSpine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfListOfHElSpine(const ChFiDS_ListNodeOfListOfHElSpine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ListNodeOfListOfHElSpine & operator=(const Handle_ChFiDS_ListNodeOfListOfHElSpine &aHandle);
+		Handle_ChFiDS_ListNodeOfListOfHElSpine & operator=(const ChFiDS_ListNodeOfListOfHElSpine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfListOfHElSpine & operator=(const ChFiDS_ListNodeOfListOfHElSpine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ListNodeOfListOfHElSpine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_ListNodeOfListOfHElSpine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_ListNodeOfListOfHElSpine {
@@ -219,15 +219,15 @@ class Handle_ChFiDS_Spine : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Spine();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Spine(const Handle_ChFiDS_Spine &aHandle);
+		Handle_ChFiDS_Spine(const ChFiDS_Spine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Spine(const ChFiDS_Spine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Spine & operator=(const Handle_ChFiDS_Spine &aHandle);
+		Handle_ChFiDS_Spine & operator=(const ChFiDS_Spine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Spine & operator=(const ChFiDS_Spine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Spine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_Spine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_Spine {
@@ -257,15 +257,15 @@ class Handle_ChFiDS_ChamfSpine : public Handle_ChFiDS_Spine {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ChamfSpine();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ChamfSpine(const Handle_ChFiDS_ChamfSpine &aHandle);
+		Handle_ChFiDS_ChamfSpine(const ChFiDS_ChamfSpine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ChamfSpine(const ChFiDS_ChamfSpine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ChamfSpine & operator=(const Handle_ChFiDS_ChamfSpine &aHandle);
+		Handle_ChFiDS_ChamfSpine & operator=(const ChFiDS_ChamfSpine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ChamfSpine & operator=(const ChFiDS_ChamfSpine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ChamfSpine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_ChamfSpine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_ChamfSpine {
@@ -295,15 +295,15 @@ class Handle_ChFiDS_HElSpine : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HElSpine();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_HElSpine(const Handle_ChFiDS_HElSpine &aHandle);
+		Handle_ChFiDS_HElSpine(const ChFiDS_HElSpine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HElSpine(const ChFiDS_HElSpine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_HElSpine & operator=(const Handle_ChFiDS_HElSpine &aHandle);
+		Handle_ChFiDS_HElSpine & operator=(const ChFiDS_HElSpine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HElSpine & operator=(const ChFiDS_HElSpine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_HElSpine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_HElSpine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_HElSpine {
@@ -333,15 +333,15 @@ class Handle_ChFiDS_ListNodeOfListOfStripe : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfListOfStripe();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ListNodeOfListOfStripe(const Handle_ChFiDS_ListNodeOfListOfStripe &aHandle);
+		Handle_ChFiDS_ListNodeOfListOfStripe(const ChFiDS_ListNodeOfListOfStripe *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfListOfStripe(const ChFiDS_ListNodeOfListOfStripe *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ListNodeOfListOfStripe & operator=(const Handle_ChFiDS_ListNodeOfListOfStripe &aHandle);
+		Handle_ChFiDS_ListNodeOfListOfStripe & operator=(const ChFiDS_ListNodeOfListOfStripe *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfListOfStripe & operator=(const ChFiDS_ListNodeOfListOfStripe *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ListNodeOfListOfStripe const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_ListNodeOfListOfStripe const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_ListNodeOfListOfStripe {
@@ -371,15 +371,15 @@ class Handle_ChFiDS_FilSpine : public Handle_ChFiDS_Spine {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_FilSpine();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_FilSpine(const Handle_ChFiDS_FilSpine &aHandle);
+		Handle_ChFiDS_FilSpine(const ChFiDS_FilSpine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_FilSpine(const ChFiDS_FilSpine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_FilSpine & operator=(const Handle_ChFiDS_FilSpine &aHandle);
+		Handle_ChFiDS_FilSpine & operator=(const ChFiDS_FilSpine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_FilSpine & operator=(const ChFiDS_FilSpine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_FilSpine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_FilSpine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_FilSpine {
@@ -409,15 +409,15 @@ class Handle_ChFiDS_SequenceNodeOfSequenceOfSpine : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine(const Handle_ChFiDS_SequenceNodeOfSequenceOfSpine &aHandle);
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine(const ChFiDS_SequenceNodeOfSequenceOfSpine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine(const ChFiDS_SequenceNodeOfSequenceOfSpine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine & operator=(const Handle_ChFiDS_SequenceNodeOfSequenceOfSpine &aHandle);
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine & operator=(const ChFiDS_SequenceNodeOfSequenceOfSpine *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine & operator=(const ChFiDS_SequenceNodeOfSequenceOfSpine *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_SequenceNodeOfSequenceOfSpine {
@@ -447,15 +447,15 @@ class Handle_ChFiDS_SurfData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SurfData();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SurfData(const Handle_ChFiDS_SurfData &aHandle);
+		Handle_ChFiDS_SurfData(const ChFiDS_SurfData *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SurfData(const ChFiDS_SurfData *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SurfData & operator=(const Handle_ChFiDS_SurfData &aHandle);
+		Handle_ChFiDS_SurfData & operator=(const ChFiDS_SurfData *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SurfData & operator=(const ChFiDS_SurfData *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SurfData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_SurfData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_SurfData {
@@ -485,15 +485,15 @@ class Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData(const Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData &aHandle);
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData(const ChFiDS_SequenceNodeOfSequenceOfSurfData *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData(const ChFiDS_SequenceNodeOfSequenceOfSurfData *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData & operator=(const Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData &aHandle);
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData & operator=(const ChFiDS_SequenceNodeOfSequenceOfSurfData *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData & operator=(const ChFiDS_SequenceNodeOfSequenceOfSurfData *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData {
@@ -523,15 +523,15 @@ class Handle_ChFiDS_ListNodeOfRegularities : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfRegularities();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ListNodeOfRegularities(const Handle_ChFiDS_ListNodeOfRegularities &aHandle);
+		Handle_ChFiDS_ListNodeOfRegularities(const ChFiDS_ListNodeOfRegularities *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfRegularities(const ChFiDS_ListNodeOfRegularities *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ListNodeOfRegularities & operator=(const Handle_ChFiDS_ListNodeOfRegularities &aHandle);
+		Handle_ChFiDS_ListNodeOfRegularities & operator=(const ChFiDS_ListNodeOfRegularities *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_ListNodeOfRegularities & operator=(const ChFiDS_ListNodeOfRegularities *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_ListNodeOfRegularities const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_ListNodeOfRegularities const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_ListNodeOfRegularities {
@@ -561,15 +561,15 @@ class Handle_ChFiDS_HData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HData();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_HData(const Handle_ChFiDS_HData &aHandle);
+		Handle_ChFiDS_HData(const ChFiDS_HData *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HData(const ChFiDS_HData *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_HData & operator=(const Handle_ChFiDS_HData &aHandle);
+		Handle_ChFiDS_HData & operator=(const ChFiDS_HData *aHandle);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HData & operator=(const ChFiDS_HData *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_HData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ChFiDS_HData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ChFiDS_HData {
@@ -738,7 +738,7 @@ class ChFiDS_Spine : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetLastStatus(const ChFiDS_State S);
 		%feature("autodoc", "1");
-		virtual		void AppendElSpine(const Handle_ChFiDS_HElSpine &Els);
+		virtual		void AppendElSpine(const ChFiDS_HElSpine *Els);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HElSpine ElSpine(const Standard_Integer IE) const;
 		%feature("autodoc", "1");
@@ -897,7 +897,7 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 		%feature("autodoc", "1");
 		void SetRadius(const Standard_Real Radius);
 		%feature("autodoc", "1");
-		void SetRadius(const Handle_Law_Function &C, const Standard_Integer IinC);
+		void SetRadius(const Law_Function *C, const Standard_Integer IinC);
 		%feature("autodoc", "1");
 		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
@@ -909,7 +909,7 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 		%feature("autodoc", "1");
 		Standard_Real Radius(const TopoDS_Edge &E) const;
 		%feature("autodoc", "1");
-		Handle_Law_Composite Law(const Handle_ChFiDS_HElSpine &Els) const;
+		Handle_Law_Composite Law(const ChFiDS_HElSpine *Els) const;
 		%feature("autodoc", "1");
 		Handle_Law_Function & ChangeLaw(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
@@ -1007,19 +1007,19 @@ class ChFiDS_SequenceOfSpine : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const ChFiDS_SequenceOfSpine & operator=(const ChFiDS_SequenceOfSpine &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_ChFiDS_Spine &T);
+		void Append(const ChFiDS_Spine *T);
 		%feature("autodoc", "1");
 		void Append(ChFiDS_SequenceOfSpine & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_ChFiDS_Spine &T);
+		void Prepend(const ChFiDS_Spine *T);
 		%feature("autodoc", "1");
 		void Prepend(ChFiDS_SequenceOfSpine & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_ChFiDS_Spine &I);
+		void InsertBefore(const Standard_Integer Index, const ChFiDS_Spine *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, ChFiDS_SequenceOfSpine & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_ChFiDS_Spine &T);
+		void InsertAfter(const Standard_Integer Index, const ChFiDS_Spine *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, ChFiDS_SequenceOfSpine & S);
 		%feature("autodoc", "1");
@@ -1033,7 +1033,7 @@ class ChFiDS_SequenceOfSpine : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_ChFiDS_Spine & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_ChFiDS_Spine &I);
+		void SetValue(const Standard_Integer Index, const ChFiDS_Spine *I);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Spine & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -1120,8 +1120,6 @@ class ChFiDS_SurfData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ChFiDS_SurfData();
 		%feature("autodoc", "1");
-		void Copy(const Handle_ChFiDS_SurfData &Other);
-		%feature("autodoc", "1");
 		Standard_Integer IndexOfS1() const;
 		%feature("autodoc", "1");
 		Standard_Integer IndexOfS2() const;
@@ -1206,7 +1204,7 @@ class ChFiDS_SurfData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MMgt_TShared Simul() const;
 		%feature("autodoc", "1");
-		void SetSimul(const Handle_MMgt_TShared &S);
+		void SetSimul(const MMgt_TShared *S);
 		%feature("autodoc", "1");
 		void ResetSimul();
 		%feature("autodoc", "1");
@@ -1257,7 +1255,7 @@ def __del__(self):
 class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		ChFiDS_ListNodeOfListOfHElSpine(const Handle_ChFiDS_HElSpine &I, const TCollection_MapNodePtr &n);
+		ChFiDS_ListNodeOfListOfHElSpine(const ChFiDS_HElSpine *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HElSpine & Value() const;
 		%feature("autodoc", "1");
@@ -1436,7 +1434,7 @@ class ChFiDS_ElSpine : public Adaptor3d_Curve {
 		%feature("autodoc", "1");
 		void SetLastPointAndTgt(const gp_Pnt &P, const gp_Vec &T);
 		%feature("autodoc", "1");
-		void SetCurve(const Handle_Geom_Curve &C);
+		void SetCurve(const Geom_Curve *C);
 		%feature("autodoc", "1");
 		const Handle_ChFiDS_SurfData & Previous() const;
 		%feature("autodoc", "1");
@@ -1483,7 +1481,7 @@ class ChFiDS_StripeMap {
 		%feature("autodoc", "1");
 		ChFiDS_StripeMap();
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Vertex &V, const Handle_ChFiDS_Stripe &F);
+		void Add(const TopoDS_Vertex &V, const ChFiDS_Stripe *F);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -1569,15 +1567,15 @@ class ChFiDS_ListOfStripe {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_ChFiDS_Stripe &I);
+		void Prepend(const ChFiDS_Stripe *I);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & theIt);
+		void Prepend(const ChFiDS_Stripe *I, ChFiDS_ListIteratorOfListOfStripe & theIt);
 		%feature("autodoc", "1");
 		void Prepend(ChFiDS_ListOfStripe & Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_ChFiDS_Stripe &I);
+		void Append(const ChFiDS_Stripe *I);
 		%feature("autodoc", "1");
-		void Append(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & theIt);
+		void Append(const ChFiDS_Stripe *I, ChFiDS_ListIteratorOfListOfStripe & theIt);
 		%feature("autodoc", "1");
 		void Append(ChFiDS_ListOfStripe & Other);
 		%feature("autodoc", "1");
@@ -1589,11 +1587,11 @@ class ChFiDS_ListOfStripe {
 		%feature("autodoc", "1");
 		void Remove(ChFiDS_ListIteratorOfListOfStripe & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & It);
+		void InsertBefore(const ChFiDS_Stripe *I, ChFiDS_ListIteratorOfListOfStripe & It);
 		%feature("autodoc", "1");
 		void InsertBefore(ChFiDS_ListOfStripe & Other, ChFiDS_ListIteratorOfListOfStripe & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & It);
+		void InsertAfter(const ChFiDS_Stripe *I, ChFiDS_ListIteratorOfListOfStripe & It);
 		%feature("autodoc", "1");
 		void InsertAfter(ChFiDS_ListOfStripe & Other, ChFiDS_ListIteratorOfListOfStripe & It);
 
@@ -1620,7 +1618,7 @@ class ChFiDS_FaceInterference {
 		%feature("autodoc", "1");
 		ChFiDS_FaceInterference();
 		%feature("autodoc", "1");
-		void SetInterference(const Standard_Integer LineIndex, const TopAbs_Orientation Trans, const Handle_Geom2d_Curve &PCurv1, const Handle_Geom2d_Curve &PCurv2);
+		void SetInterference(const Standard_Integer LineIndex, const TopAbs_Orientation Trans, const Geom2d_Curve *PCurv1, const Geom2d_Curve *PCurv2);
 		%feature("autodoc", "1");
 		void SetTransition(const TopAbs_Orientation Trans);
 		%feature("autodoc", "1");
@@ -1679,29 +1677,21 @@ class ChFiDS_HData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_ChFiDS_SurfData &anItem);
+		void Append(const ChFiDS_SurfData *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_ChFiDS_HData &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ChFiDS_SurfData &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ChFiDS_HData &aSequence);
+		void Prepend(const ChFiDS_SurfData *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_ChFiDS_SurfData &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const ChFiDS_SurfData *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_ChFiDS_HData &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_ChFiDS_SurfData &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_ChFiDS_HData &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const ChFiDS_SurfData *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HData Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_ChFiDS_SurfData &anItem);
+		void SetValue(const Standard_Integer anIndex, const ChFiDS_SurfData *anItem);
 		%feature("autodoc", "1");
 		const Handle_ChFiDS_SurfData & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -1844,7 +1834,7 @@ def __del__(self):
 class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		ChFiDS_SequenceNodeOfSequenceOfSpine(const Handle_ChFiDS_Spine &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		ChFiDS_SequenceNodeOfSequenceOfSpine(const ChFiDS_Spine *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Spine & Value() const;
 		%feature("autodoc", "1");
@@ -1881,7 +1871,7 @@ def __del__(self):
 class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		ChFiDS_ListNodeOfListOfStripe(const Handle_ChFiDS_Stripe &I, const TCollection_MapNodePtr &n);
+		ChFiDS_ListNodeOfListOfStripe(const ChFiDS_Stripe *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_Stripe & Value() const;
 		%feature("autodoc", "1");
@@ -1920,9 +1910,9 @@ class ChFiDS_StripeArray1 {
 		%feature("autodoc", "1");
 		ChFiDS_StripeArray1(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		ChFiDS_StripeArray1(const Handle_ChFiDS_Stripe &Item, const Standard_Integer Low, const Standard_Integer Up);
+		ChFiDS_StripeArray1(const ChFiDS_Stripe *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_ChFiDS_Stripe &V);
+		void Init(const ChFiDS_Stripe *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -1938,7 +1928,7 @@ class ChFiDS_StripeArray1 {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_ChFiDS_Stripe &Value);
+		void SetValue(const Standard_Integer Index, const ChFiDS_Stripe *Value);
 		%feature("autodoc", "1");
 		const Handle_ChFiDS_Stripe & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1977,19 +1967,19 @@ class ChFiDS_SequenceOfSurfData : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const ChFiDS_SequenceOfSurfData & operator=(const ChFiDS_SequenceOfSurfData &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_ChFiDS_SurfData &T);
+		void Append(const ChFiDS_SurfData *T);
 		%feature("autodoc", "1");
 		void Append(ChFiDS_SequenceOfSurfData & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_ChFiDS_SurfData &T);
+		void Prepend(const ChFiDS_SurfData *T);
 		%feature("autodoc", "1");
 		void Prepend(ChFiDS_SequenceOfSurfData & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_ChFiDS_SurfData &I);
+		void InsertBefore(const Standard_Integer Index, const ChFiDS_SurfData *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, ChFiDS_SequenceOfSurfData & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_ChFiDS_SurfData &T);
+		void InsertAfter(const Standard_Integer Index, const ChFiDS_SurfData *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, ChFiDS_SequenceOfSurfData & S);
 		%feature("autodoc", "1");
@@ -2003,7 +1993,7 @@ class ChFiDS_SequenceOfSurfData : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_ChFiDS_SurfData & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_ChFiDS_SurfData &I);
+		void SetValue(const Standard_Integer Index, const ChFiDS_SurfData *I);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SurfData & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -2146,15 +2136,15 @@ class ChFiDS_ListOfHElSpine {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_ChFiDS_HElSpine &I);
+		void Prepend(const ChFiDS_HElSpine *I);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_ChFiDS_HElSpine &I, ChFiDS_ListIteratorOfListOfHElSpine & theIt);
+		void Prepend(const ChFiDS_HElSpine *I, ChFiDS_ListIteratorOfListOfHElSpine & theIt);
 		%feature("autodoc", "1");
 		void Prepend(ChFiDS_ListOfHElSpine & Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_ChFiDS_HElSpine &I);
+		void Append(const ChFiDS_HElSpine *I);
 		%feature("autodoc", "1");
-		void Append(const Handle_ChFiDS_HElSpine &I, ChFiDS_ListIteratorOfListOfHElSpine & theIt);
+		void Append(const ChFiDS_HElSpine *I, ChFiDS_ListIteratorOfListOfHElSpine & theIt);
 		%feature("autodoc", "1");
 		void Append(ChFiDS_ListOfHElSpine & Other);
 		%feature("autodoc", "1");
@@ -2166,11 +2156,11 @@ class ChFiDS_ListOfHElSpine {
 		%feature("autodoc", "1");
 		void Remove(ChFiDS_ListIteratorOfListOfHElSpine & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const Handle_ChFiDS_HElSpine &I, ChFiDS_ListIteratorOfListOfHElSpine & It);
+		void InsertBefore(const ChFiDS_HElSpine *I, ChFiDS_ListIteratorOfListOfHElSpine & It);
 		%feature("autodoc", "1");
 		void InsertBefore(ChFiDS_ListOfHElSpine & Other, ChFiDS_ListIteratorOfListOfHElSpine & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const Handle_ChFiDS_HElSpine &I, ChFiDS_ListIteratorOfListOfHElSpine & It);
+		void InsertAfter(const ChFiDS_HElSpine *I, ChFiDS_ListIteratorOfListOfHElSpine & It);
 		%feature("autodoc", "1");
 		void InsertAfter(ChFiDS_ListOfHElSpine & Other, ChFiDS_ListIteratorOfListOfHElSpine & It);
 
@@ -2454,7 +2444,7 @@ def __del__(self):
 class ChFiDS_SequenceNodeOfSequenceOfSurfData : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		ChFiDS_SequenceNodeOfSequenceOfSurfData(const Handle_ChFiDS_SurfData &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		ChFiDS_SequenceNodeOfSequenceOfSurfData(const ChFiDS_SurfData *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SurfData & Value() const;
 		%feature("autodoc", "1");

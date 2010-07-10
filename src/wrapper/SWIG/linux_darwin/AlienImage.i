@@ -52,15 +52,15 @@ class Handle_AlienImage_AlienImage : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienImage();
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImage(const Handle_AlienImage_AlienImage &aHandle);
+		Handle_AlienImage_AlienImage(const AlienImage_AlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienImage(const AlienImage_AlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImage & operator=(const Handle_AlienImage_AlienImage &aHandle);
+		Handle_AlienImage_AlienImage & operator=(const AlienImage_AlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienImage & operator=(const AlienImage_AlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_AlienImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_AlienImage {
@@ -90,15 +90,15 @@ class Handle_AlienImage_AlienUserImage : public Handle_AlienImage_AlienImage {
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienUserImage();
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienUserImage(const Handle_AlienImage_AlienUserImage &aHandle);
+		Handle_AlienImage_AlienUserImage(const AlienImage_AlienUserImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienUserImage(const AlienImage_AlienUserImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienUserImage & operator=(const Handle_AlienImage_AlienUserImage &aHandle);
+		Handle_AlienImage_AlienUserImage & operator=(const AlienImage_AlienUserImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienUserImage & operator=(const AlienImage_AlienUserImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienUserImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_AlienUserImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_AlienUserImage {
@@ -128,15 +128,15 @@ class Handle_AlienImage_SGIRGBAlienImage : public Handle_AlienImage_AlienUserIma
 		%feature("autodoc", "1");
 		Handle_AlienImage_SGIRGBAlienImage();
 		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage(const Handle_AlienImage_SGIRGBAlienImage &aHandle);
+		Handle_AlienImage_SGIRGBAlienImage(const AlienImage_SGIRGBAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_SGIRGBAlienImage(const AlienImage_SGIRGBAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage & operator=(const Handle_AlienImage_SGIRGBAlienImage &aHandle);
+		Handle_AlienImage_SGIRGBAlienImage & operator=(const AlienImage_SGIRGBAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_SGIRGBAlienImage & operator=(const AlienImage_SGIRGBAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_SGIRGBAlienImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_SGIRGBAlienImage {
@@ -166,15 +166,15 @@ class Handle_AlienImage_EuclidAlienImage : public Handle_AlienImage_AlienUserIma
 		%feature("autodoc", "1");
 		Handle_AlienImage_EuclidAlienImage();
 		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienImage(const Handle_AlienImage_EuclidAlienImage &aHandle);
+		Handle_AlienImage_EuclidAlienImage(const AlienImage_EuclidAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_EuclidAlienImage(const AlienImage_EuclidAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienImage & operator=(const Handle_AlienImage_EuclidAlienImage &aHandle);
+		Handle_AlienImage_EuclidAlienImage & operator=(const AlienImage_EuclidAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_EuclidAlienImage & operator=(const AlienImage_EuclidAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_EuclidAlienImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_EuclidAlienImage {
@@ -204,15 +204,15 @@ class Handle_AlienImage_AlienImageData : public Handle_AlienImage_AlienImage {
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienImageData();
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImageData(const Handle_AlienImage_AlienImageData &aHandle);
+		Handle_AlienImage_AlienImageData(const AlienImage_AlienImageData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienImageData(const AlienImage_AlienImageData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImageData & operator=(const Handle_AlienImage_AlienImageData &aHandle);
+		Handle_AlienImage_AlienImageData & operator=(const AlienImage_AlienImageData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienImageData & operator=(const AlienImage_AlienImageData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImageData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_AlienImageData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_AlienImageData {
@@ -242,15 +242,15 @@ class Handle_AlienImage_AidaAlienImage : public Handle_AlienImage_AlienUserImage
 		%feature("autodoc", "1");
 		Handle_AlienImage_AidaAlienImage();
 		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage(const Handle_AlienImage_AidaAlienImage &aHandle);
+		Handle_AlienImage_AidaAlienImage(const AlienImage_AidaAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_AidaAlienImage(const AlienImage_AidaAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage & operator=(const Handle_AlienImage_AidaAlienImage &aHandle);
+		Handle_AlienImage_AidaAlienImage & operator=(const AlienImage_AidaAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_AidaAlienImage & operator=(const AlienImage_AidaAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_AidaAlienImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_AidaAlienImage {
@@ -280,15 +280,15 @@ class Handle_AlienImage_SunRFAlienData : public Handle_AlienImage_AlienImageData
 		%feature("autodoc", "1");
 		Handle_AlienImage_SunRFAlienData();
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData(const Handle_AlienImage_SunRFAlienData &aHandle);
+		Handle_AlienImage_SunRFAlienData(const AlienImage_SunRFAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_SunRFAlienData(const AlienImage_SunRFAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData & operator=(const Handle_AlienImage_SunRFAlienData &aHandle);
+		Handle_AlienImage_SunRFAlienData & operator=(const AlienImage_SunRFAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_SunRFAlienData & operator=(const AlienImage_SunRFAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_SunRFAlienData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_SunRFAlienData {
@@ -318,15 +318,15 @@ class Handle_AlienImage_EuclidAlienData : public Handle_AlienImage_AlienImageDat
 		%feature("autodoc", "1");
 		Handle_AlienImage_EuclidAlienData();
 		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienData(const Handle_AlienImage_EuclidAlienData &aHandle);
+		Handle_AlienImage_EuclidAlienData(const AlienImage_EuclidAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_EuclidAlienData(const AlienImage_EuclidAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienData & operator=(const Handle_AlienImage_EuclidAlienData &aHandle);
+		Handle_AlienImage_EuclidAlienData & operator=(const AlienImage_EuclidAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_EuclidAlienData & operator=(const AlienImage_EuclidAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_EuclidAlienData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_EuclidAlienData {
@@ -356,15 +356,15 @@ class Handle_AlienImage_SGIRGBAlienData : public Handle_AlienImage_AlienImageDat
 		%feature("autodoc", "1");
 		Handle_AlienImage_SGIRGBAlienData();
 		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienData(const Handle_AlienImage_SGIRGBAlienData &aHandle);
+		Handle_AlienImage_SGIRGBAlienData(const AlienImage_SGIRGBAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_SGIRGBAlienData(const AlienImage_SGIRGBAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienData & operator=(const Handle_AlienImage_SGIRGBAlienData &aHandle);
+		Handle_AlienImage_SGIRGBAlienData & operator=(const AlienImage_SGIRGBAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_SGIRGBAlienData & operator=(const AlienImage_SGIRGBAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_SGIRGBAlienData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_SGIRGBAlienData {
@@ -394,15 +394,15 @@ class Handle_AlienImage_XAlienImage : public Handle_AlienImage_AlienUserImage {
 		%feature("autodoc", "1");
 		Handle_AlienImage_XAlienImage();
 		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage(const Handle_AlienImage_XAlienImage &aHandle);
+		Handle_AlienImage_XAlienImage(const AlienImage_XAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_XAlienImage(const AlienImage_XAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage & operator=(const Handle_AlienImage_XAlienImage &aHandle);
+		Handle_AlienImage_XAlienImage & operator=(const AlienImage_XAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_XAlienImage & operator=(const AlienImage_XAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_XAlienImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_XAlienImage {
@@ -432,15 +432,15 @@ class Handle_AlienImage_GIFAlienImage : public Handle_AlienImage_AlienUserImage 
 		%feature("autodoc", "1");
 		Handle_AlienImage_GIFAlienImage();
 		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienImage(const Handle_AlienImage_GIFAlienImage &aHandle);
+		Handle_AlienImage_GIFAlienImage(const AlienImage_GIFAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_GIFAlienImage(const AlienImage_GIFAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienImage & operator=(const Handle_AlienImage_GIFAlienImage &aHandle);
+		Handle_AlienImage_GIFAlienImage & operator=(const AlienImage_GIFAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_GIFAlienImage & operator=(const AlienImage_GIFAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_GIFAlienImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_GIFAlienImage {
@@ -470,15 +470,15 @@ class Handle_AlienImage_X11XWDAlienData : public Handle_AlienImage_AlienImageDat
 		%feature("autodoc", "1");
 		Handle_AlienImage_X11XWDAlienData();
 		%feature("autodoc", "1");
-		Handle_AlienImage_X11XWDAlienData(const Handle_AlienImage_X11XWDAlienData &aHandle);
+		Handle_AlienImage_X11XWDAlienData(const AlienImage_X11XWDAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_X11XWDAlienData(const AlienImage_X11XWDAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_X11XWDAlienData & operator=(const Handle_AlienImage_X11XWDAlienData &aHandle);
+		Handle_AlienImage_X11XWDAlienData & operator=(const AlienImage_X11XWDAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_X11XWDAlienData & operator=(const AlienImage_X11XWDAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_X11XWDAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_X11XWDAlienData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_X11XWDAlienData {
@@ -508,15 +508,15 @@ class Handle_AlienImage_BMPAlienImage : public Handle_AlienImage_AlienUserImage 
 		%feature("autodoc", "1");
 		Handle_AlienImage_BMPAlienImage();
 		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienImage(const Handle_AlienImage_BMPAlienImage &aHandle);
+		Handle_AlienImage_BMPAlienImage(const AlienImage_BMPAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_BMPAlienImage(const AlienImage_BMPAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienImage & operator=(const Handle_AlienImage_BMPAlienImage &aHandle);
+		Handle_AlienImage_BMPAlienImage & operator=(const AlienImage_BMPAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_BMPAlienImage & operator=(const AlienImage_BMPAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_BMPAlienImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_BMPAlienImage {
@@ -546,15 +546,15 @@ class Handle_AlienImage_BMPAlienData : public Handle_AlienImage_AlienImageData {
 		%feature("autodoc", "1");
 		Handle_AlienImage_BMPAlienData();
 		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienData(const Handle_AlienImage_BMPAlienData &aHandle);
+		Handle_AlienImage_BMPAlienData(const AlienImage_BMPAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_BMPAlienData(const AlienImage_BMPAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienData & operator=(const Handle_AlienImage_BMPAlienData &aHandle);
+		Handle_AlienImage_BMPAlienData & operator=(const AlienImage_BMPAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_BMPAlienData & operator=(const AlienImage_BMPAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_BMPAlienData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_BMPAlienData {
@@ -584,15 +584,15 @@ class Handle_AlienImage_GIFAlienData : public Handle_AlienImage_AlienImageData {
 		%feature("autodoc", "1");
 		Handle_AlienImage_GIFAlienData();
 		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienData(const Handle_AlienImage_GIFAlienData &aHandle);
+		Handle_AlienImage_GIFAlienData(const AlienImage_GIFAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_GIFAlienData(const AlienImage_GIFAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienData & operator=(const Handle_AlienImage_GIFAlienData &aHandle);
+		Handle_AlienImage_GIFAlienData & operator=(const AlienImage_GIFAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_GIFAlienData & operator=(const AlienImage_GIFAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_GIFAlienData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_GIFAlienData {
@@ -622,15 +622,15 @@ class Handle_AlienImage_SunRFAlienImage : public Handle_AlienImage_AlienUserImag
 		%feature("autodoc", "1");
 		Handle_AlienImage_SunRFAlienImage();
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienImage(const Handle_AlienImage_SunRFAlienImage &aHandle);
+		Handle_AlienImage_SunRFAlienImage(const AlienImage_SunRFAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_SunRFAlienImage(const AlienImage_SunRFAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienImage & operator=(const Handle_AlienImage_SunRFAlienImage &aHandle);
+		Handle_AlienImage_SunRFAlienImage & operator=(const AlienImage_SunRFAlienImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_SunRFAlienImage & operator=(const AlienImage_SunRFAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_SunRFAlienImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_SunRFAlienImage {
@@ -660,15 +660,15 @@ class Handle_AlienImage_AidaAlienData : public Handle_AlienImage_AlienImageData 
 		%feature("autodoc", "1");
 		Handle_AlienImage_AidaAlienData();
 		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienData(const Handle_AlienImage_AidaAlienData &aHandle);
+		Handle_AlienImage_AidaAlienData(const AlienImage_AidaAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_AidaAlienData(const AlienImage_AidaAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienData & operator=(const Handle_AlienImage_AidaAlienData &aHandle);
+		Handle_AlienImage_AidaAlienData & operator=(const AlienImage_AidaAlienData *aHandle);
 		%feature("autodoc", "1");
 		Handle_AlienImage_AidaAlienData & operator=(const AlienImage_AidaAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_AidaAlienData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AlienImage_AidaAlienData {
@@ -702,7 +702,7 @@ class AlienImage_AlienImage : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -817,7 +817,7 @@ class AlienImage_AlienUserImage : public AlienImage_AlienImage {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -905,7 +905,7 @@ class AlienImage_X11XWDAlienData : public AlienImage_AlienImageData {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -946,7 +946,7 @@ class AlienImage_SunRFAlienImage : public AlienImage_AlienUserImage {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Read(OSD_File & afile);
 		%feature("autodoc", "1");
@@ -1022,7 +1022,7 @@ class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1090,7 +1090,7 @@ class AlienImage_GIFAlienImage : public AlienImage_AlienUserImage {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Read(OSD_File & afile);
 		%feature("autodoc", "1");
@@ -1213,13 +1213,13 @@ class AlienImage_AidaAlienImage : public AlienImage_AlienUserImage {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Read(OSD_File & afile);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Write(OSD_File & afile) const;
 		%feature("autodoc", "1");
-		void SetColorImageDitheringMethod(const Image_DitheringMethod aMethod, const Handle_Aspect_ColorMap &aColorMap);
+		void SetColorImageDitheringMethod(const Image_DitheringMethod aMethod, const Aspect_ColorMap *aColorMap);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1264,11 +1264,11 @@ class AlienImage_EuclidAlienData : public AlienImage_AlienImageData {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
-		void FromPseudoColorImage(const Handle_Image_PseudoColorImage &anImage);
+		void FromPseudoColorImage(const Image_PseudoColorImage *anImage);
 		%feature("autodoc", "1");
-		void FromColorImage(const Handle_Image_ColorImage &anImage);
+		void FromColorImage(const Image_ColorImage *anImage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1313,9 +1313,9 @@ class AlienImage_AidaAlienData : public AlienImage_AlienImageData {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
-		void SetColorImageDitheringMethod(const Image_DitheringMethod aMethod, const Handle_Aspect_ColorMap &aColorMap);
+		void SetColorImageDitheringMethod(const Image_DitheringMethod aMethod, const Aspect_ColorMap *aColorMap);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1360,7 +1360,7 @@ class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Read(OSD_File & afile);
 		%feature("autodoc", "1");
@@ -1415,11 +1415,11 @@ class AlienImage_SunRFAlienData : public AlienImage_AlienImageData {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
-		void FromPseudoColorImage(const Handle_Image_PseudoColorImage &anImage);
+		void FromPseudoColorImage(const Image_PseudoColorImage *anImage);
 		%feature("autodoc", "1");
-		void FromColorImage(const Handle_Image_ColorImage &anImage);
+		void FromColorImage(const Image_ColorImage *anImage);
 		%feature("autodoc", "1");
 		Standard_Boolean ReadPixelRow(OSD_File & afile, const Standard_Address aAddress, const Standard_Integer TheRowSize);
 		%feature("autodoc", "1");
@@ -1464,7 +1464,7 @@ class AlienImage_EuclidAlienImage : public AlienImage_AlienUserImage {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Read(OSD_File & afile);
 		%feature("autodoc", "1");
@@ -1540,7 +1540,7 @@ class AlienImage_GIFAlienData : public AlienImage_AlienImageData {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1585,7 +1585,7 @@ class AlienImage_BMPAlienImage : public AlienImage_AlienUserImage {
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
+		virtual		void FromImage(const Image_Image *anImage);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Read(OSD_File & afile);
 		%feature("autodoc", "1");

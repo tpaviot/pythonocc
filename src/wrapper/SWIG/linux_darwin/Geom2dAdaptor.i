@@ -43,15 +43,15 @@ class Handle_Geom2dAdaptor_GHCurve : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_GHCurve();
 		%feature("autodoc", "1");
-		Handle_Geom2dAdaptor_GHCurve(const Handle_Geom2dAdaptor_GHCurve &aHandle);
+		Handle_Geom2dAdaptor_GHCurve(const Geom2dAdaptor_GHCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_GHCurve(const Geom2dAdaptor_GHCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2dAdaptor_GHCurve & operator=(const Handle_Geom2dAdaptor_GHCurve &aHandle);
+		Handle_Geom2dAdaptor_GHCurve & operator=(const Geom2dAdaptor_GHCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_GHCurve & operator=(const Geom2dAdaptor_GHCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2dAdaptor_GHCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom2dAdaptor_GHCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom2dAdaptor_GHCurve {
@@ -81,15 +81,15 @@ class Handle_Geom2dAdaptor_HCurve : public Handle_Geom2dAdaptor_GHCurve {
 		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_HCurve();
 		%feature("autodoc", "1");
-		Handle_Geom2dAdaptor_HCurve(const Handle_Geom2dAdaptor_HCurve &aHandle);
+		Handle_Geom2dAdaptor_HCurve(const Geom2dAdaptor_HCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_HCurve(const Geom2dAdaptor_HCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2dAdaptor_HCurve & operator=(const Handle_Geom2dAdaptor_HCurve &aHandle);
+		Handle_Geom2dAdaptor_HCurve & operator=(const Geom2dAdaptor_HCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_HCurve & operator=(const Geom2dAdaptor_HCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2dAdaptor_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom2dAdaptor_HCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Geom2dAdaptor_HCurve {
@@ -119,13 +119,13 @@ class Geom2dAdaptor_Curve : public Adaptor2d_Curve2d {
 		%feature("autodoc", "1");
 		Geom2dAdaptor_Curve();
 		%feature("autodoc", "1");
-		Geom2dAdaptor_Curve(const Handle_Geom2d_Curve &C);
+		Geom2dAdaptor_Curve(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
-		Geom2dAdaptor_Curve(const Handle_Geom2d_Curve &C, const Standard_Real UFirst, const Standard_Real ULast);
+		Geom2dAdaptor_Curve(const Geom2d_Curve *C, const Standard_Real UFirst, const Standard_Real ULast);
 		%feature("autodoc", "1");
-		void Load(const Handle_Geom2d_Curve &C);
+		void Load(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
-		void Load(const Handle_Geom2d_Curve &C, const Standard_Real UFirst, const Standard_Real ULast);
+		void Load(const Geom2d_Curve *C, const Standard_Real UFirst, const Standard_Real ULast);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Curve & Curve() const;
 		%feature("autodoc", "1");
@@ -278,9 +278,9 @@ class Geom2dAdaptor_HCurve : public Geom2dAdaptor_GHCurve {
 		%feature("autodoc", "1");
 		Geom2dAdaptor_HCurve(const Geom2dAdaptor_Curve &AS);
 		%feature("autodoc", "1");
-		Geom2dAdaptor_HCurve(const Handle_Geom2d_Curve &S);
+		Geom2dAdaptor_HCurve(const Geom2d_Curve *S);
 		%feature("autodoc", "1");
-		Geom2dAdaptor_HCurve(const Handle_Geom2d_Curve &S, const Standard_Real UFirst, const Standard_Real ULast);
+		Geom2dAdaptor_HCurve(const Geom2d_Curve *S, const Standard_Real UFirst, const Standard_Real ULast);
 
 };
 %extend Geom2dAdaptor_HCurve {

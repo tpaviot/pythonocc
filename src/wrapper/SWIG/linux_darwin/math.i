@@ -51,15 +51,15 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 		%feature("autodoc", "1");
 		Handle_math_NotSquare();
 		%feature("autodoc", "1");
-		Handle_math_NotSquare(const Handle_math_NotSquare &aHandle);
+		Handle_math_NotSquare(const math_NotSquare *aHandle);
 		%feature("autodoc", "1");
 		Handle_math_NotSquare(const math_NotSquare *anItem);
 		%feature("autodoc", "1");
-		Handle_math_NotSquare & operator=(const Handle_math_NotSquare &aHandle);
+		Handle_math_NotSquare & operator=(const math_NotSquare *aHandle);
 		%feature("autodoc", "1");
 		Handle_math_NotSquare & operator=(const math_NotSquare *anItem);
 		%feature("autodoc", "1");
-		Handle_math_NotSquare const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_math_NotSquare const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_math_NotSquare {
@@ -89,15 +89,15 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_math_SingularMatrix();
 		%feature("autodoc", "1");
-		Handle_math_SingularMatrix(const Handle_math_SingularMatrix &aHandle);
+		Handle_math_SingularMatrix(const math_SingularMatrix *aHandle);
 		%feature("autodoc", "1");
 		Handle_math_SingularMatrix(const math_SingularMatrix *anItem);
 		%feature("autodoc", "1");
-		Handle_math_SingularMatrix & operator=(const Handle_math_SingularMatrix &aHandle);
+		Handle_math_SingularMatrix & operator=(const math_SingularMatrix *aHandle);
 		%feature("autodoc", "1");
 		Handle_math_SingularMatrix & operator=(const math_SingularMatrix *anItem);
 		%feature("autodoc", "1");
-		Handle_math_SingularMatrix const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_math_SingularMatrix const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_math_SingularMatrix {

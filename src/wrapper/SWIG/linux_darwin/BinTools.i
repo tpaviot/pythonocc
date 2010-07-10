@@ -264,11 +264,11 @@ class BinTools_SurfaceSet {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Handle_Geom_Surface &S);
+		Standard_Integer Add(const Geom_Surface *S);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface Surface(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer Index(const Handle_Geom_Surface &S) const;
+		Standard_Integer Index(const Geom_Surface *S) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -285,7 +285,7 @@ class BinTools_SurfaceSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void WriteSurface(const Handle_Geom_Surface &S, Standard_OStream & OS);
+		void WriteSurface(const Geom_Surface *S, Standard_OStream & OS);
 		%feature("autodoc", "1");
 		std::istream & ReadSurface(std::istream & IS, Handle_Geom_Surface & S);
 
@@ -314,11 +314,11 @@ class BinTools_CurveSet {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Handle_Geom_Curve &C);
+		Standard_Integer Add(const Geom_Curve *C);
 		%feature("autodoc", "1");
 		Handle_Geom_Curve Curve(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer Index(const Handle_Geom_Curve &C) const;
+		Standard_Integer Index(const Geom_Curve *C) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -335,7 +335,7 @@ class BinTools_CurveSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void WriteCurve(const Handle_Geom_Curve &C, Standard_OStream & OS);
+		void WriteCurve(const Geom_Curve *C, Standard_OStream & OS);
 		%feature("autodoc", "1");
 		std::istream & ReadCurve(std::istream & IS, Handle_Geom_Curve & C);
 
@@ -364,11 +364,11 @@ class BinTools_Curve2dSet {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Handle_Geom2d_Curve &C);
+		Standard_Integer Add(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve Curve2d(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer Index(const Handle_Geom2d_Curve &C) const;
+		Standard_Integer Index(const Geom2d_Curve *C) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -385,7 +385,7 @@ class BinTools_Curve2dSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void WriteCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
+		void WriteCurve2d(const Geom2d_Curve *C, Standard_OStream & OS);
 		%feature("autodoc", "1");
 		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
 

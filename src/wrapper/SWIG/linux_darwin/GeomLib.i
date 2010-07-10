@@ -49,7 +49,7 @@ enum GeomLib_InterpolationErrors {
 class GeomLib_CheckBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		GeomLib_CheckBSplineCurve(const Handle_Geom_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
+		GeomLib_CheckBSplineCurve(const Geom_BSplineCurve *Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -80,7 +80,7 @@ def __del__(self):
 class GeomLib_DenominatorMultiplier {
 	public:
 		%feature("autodoc", "1");
-		GeomLib_DenominatorMultiplier(const Handle_Geom_BSplineSurface &Surface, const TColStd_Array1OfReal &KnotVector);
+		GeomLib_DenominatorMultiplier(const Geom_BSplineSurface *Surface, const TColStd_Array1OfReal &KnotVector);
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Real UParameter, const Standard_Real VParameter) const;
 
@@ -108,13 +108,13 @@ class GeomLib_Tool {
 		GeomLib_Tool();
 		%feature("autodoc","Parameter(const Curve, const Point, Standard_Real Tolerance) -> Standard_Real");
 
-		Standard_Boolean Parameter(const Handle_Geom_Curve &Curve, const gp_Pnt &Point, const Standard_Real Tolerance, Standard_Real &OutValue);
+		Standard_Boolean Parameter(const Geom_Curve *Curve, const gp_Pnt &Point, const Standard_Real Tolerance, Standard_Real &OutValue);
 		%feature("autodoc","Parameters(const Surface, const Point, Standard_Real Tolerance) -> [Standard_Real, Standard_Real]");
 
-		Standard_Boolean Parameters(const Handle_Geom_Surface &Surface, const gp_Pnt &Point, const Standard_Real Tolerance, Standard_Real &OutValue, Standard_Real &OutValue);
+		Standard_Boolean Parameters(const Geom_Surface *Surface, const gp_Pnt &Point, const Standard_Real Tolerance, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","Parameter(const Curve, const Point, Standard_Real Tolerance) -> Standard_Real");
 
-		Standard_Boolean Parameter(const Handle_Geom2d_Curve &Curve, const gp_Pnt2d &Point, const Standard_Real Tolerance, Standard_Real &OutValue);
+		Standard_Boolean Parameter(const Geom2d_Curve *Curve, const gp_Pnt2d &Point, const Standard_Real Tolerance, Standard_Real &OutValue);
 
 };
 %feature("shadow") GeomLib_Tool::~GeomLib_Tool %{
@@ -235,7 +235,7 @@ def __del__(self):
 class GeomLib_IsPlanarSurface {
 	public:
 		%feature("autodoc", "1");
-		GeomLib_IsPlanarSurface(const Handle_Geom_Surface &S, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
+		GeomLib_IsPlanarSurface(const Geom_Surface *S, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
 		%feature("autodoc", "1");
 		Standard_Boolean IsPlanar() const;
 		%feature("autodoc", "1");
@@ -291,7 +291,7 @@ def __del__(self):
 class GeomLib_Check2dBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		GeomLib_Check2dBSplineCurve(const Handle_Geom2d_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
+		GeomLib_Check2dBSplineCurve(const Geom2d_BSplineCurve *Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -375,11 +375,11 @@ class GeomLib {
 		%feature("autodoc", "1");
 		GeomLib();
 		%feature("autodoc", "1");
-		Handle_Geom_Curve To3d(const gp_Ax2 &Position, const Handle_Geom2d_Curve &Curve2d);
+		Handle_Geom_Curve To3d(const gp_Ax2 &Position, const Geom2d_Curve *Curve2d);
 		%feature("autodoc", "1");
-		Handle_Geom2d_Curve GTransform(const Handle_Geom2d_Curve &Curve, const gp_GTrsf2d &GTrsf);
+		Handle_Geom2d_Curve GTransform(const Geom2d_Curve *Curve, const gp_GTrsf2d &GTrsf);
 		%feature("autodoc", "1");
-		void SameRange(const Standard_Real Tolerance, const Handle_Geom2d_Curve &Curve2dPtr, const Standard_Real First, const Standard_Real Last, const Standard_Real RequestedFirst, const Standard_Real RequestedLast, Handle_Geom2d_Curve & NewCurve2dPtr);
+		void SameRange(const Standard_Real Tolerance, const Geom2d_Curve *Curve2dPtr, const Standard_Real First, const Standard_Real Last, const Standard_Real RequestedFirst, const Standard_Real RequestedLast, Handle_Geom2d_Curve & NewCurve2dPtr);
 		%feature("autodoc","BuildCurve3d(Standard_Real Tolerance, Standard_Real FirstParameter, Standard_Real LastParameter, GeomAbs_Shape Continuity=GeomAbs_, Standard_Integer MaxDegree=14, Standard_Integer MaxSegment=30) -> [Standard_Real, Standard_Real]");
 
 		void BuildCurve3d(const Standard_Real Tolerance, Adaptor3d_CurveOnSurface & CurvePtr, const Standard_Real FirstParameter, const Standard_Real LastParameter, Handle_Geom_Curve & NewCurvePtr, Standard_Real &OutValue, Standard_Real &OutValue, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Integer MaxDegree=14, const Standard_Integer MaxSegment=30);
@@ -409,7 +409,7 @@ class GeomLib {
 		%feature("autodoc", "1");
 		void CancelDenominatorDerivative(Handle_Geom_BSplineSurface & BSurf, const Standard_Boolean UDirection, const Standard_Boolean VDirection);
 		%feature("autodoc", "1");
-		Standard_Integer NormEstim(const Handle_Geom_Surface &S, const gp_Pnt2d &UV, const Standard_Real Tol, gp_Dir & N);
+		Standard_Integer NormEstim(const Geom_Surface *S, const gp_Pnt2d &UV, const Standard_Real Tol, gp_Dir & N);
 
 };
 %feature("shadow") GeomLib::~GeomLib %{

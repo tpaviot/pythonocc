@@ -43,15 +43,15 @@ class Handle_GeomAdaptor_GHCurve : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHCurve();
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_GHCurve(const Handle_GeomAdaptor_GHCurve &aHandle);
+		Handle_GeomAdaptor_GHCurve(const GeomAdaptor_GHCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHCurve(const GeomAdaptor_GHCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_GHCurve & operator=(const Handle_GeomAdaptor_GHCurve &aHandle);
+		Handle_GeomAdaptor_GHCurve & operator=(const GeomAdaptor_GHCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHCurve & operator=(const GeomAdaptor_GHCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_GHCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomAdaptor_GHCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomAdaptor_GHCurve {
@@ -81,15 +81,15 @@ class Handle_GeomAdaptor_HCurve : public Handle_GeomAdaptor_GHCurve {
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HCurve();
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_HCurve(const Handle_GeomAdaptor_HCurve &aHandle);
+		Handle_GeomAdaptor_HCurve(const GeomAdaptor_HCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HCurve(const GeomAdaptor_HCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_HCurve & operator=(const Handle_GeomAdaptor_HCurve &aHandle);
+		Handle_GeomAdaptor_HCurve & operator=(const GeomAdaptor_HCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HCurve & operator=(const GeomAdaptor_HCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomAdaptor_HCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomAdaptor_HCurve {
@@ -119,15 +119,15 @@ class Handle_GeomAdaptor_GHSurface : public Handle_Adaptor3d_HSurface {
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHSurface();
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_GHSurface(const Handle_GeomAdaptor_GHSurface &aHandle);
+		Handle_GeomAdaptor_GHSurface(const GeomAdaptor_GHSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHSurface(const GeomAdaptor_GHSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_GHSurface & operator=(const Handle_GeomAdaptor_GHSurface &aHandle);
+		Handle_GeomAdaptor_GHSurface & operator=(const GeomAdaptor_GHSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHSurface & operator=(const GeomAdaptor_GHSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_GHSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomAdaptor_GHSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomAdaptor_GHSurface {
@@ -157,15 +157,15 @@ class Handle_GeomAdaptor_HSurface : public Handle_GeomAdaptor_GHSurface {
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HSurface();
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_HSurface(const Handle_GeomAdaptor_HSurface &aHandle);
+		Handle_GeomAdaptor_HSurface(const GeomAdaptor_HSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HSurface(const GeomAdaptor_HSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_HSurface & operator=(const Handle_GeomAdaptor_HSurface &aHandle);
+		Handle_GeomAdaptor_HSurface & operator=(const GeomAdaptor_HSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HSurface & operator=(const GeomAdaptor_HSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_HSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomAdaptor_HSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomAdaptor_HSurface {
@@ -242,9 +242,9 @@ class GeomAdaptor_HCurve : public GeomAdaptor_GHCurve {
 		%feature("autodoc", "1");
 		GeomAdaptor_HCurve(const GeomAdaptor_Curve &AS);
 		%feature("autodoc", "1");
-		GeomAdaptor_HCurve(const Handle_Geom_Curve &S);
+		GeomAdaptor_HCurve(const Geom_Curve *S);
 		%feature("autodoc", "1");
-		GeomAdaptor_HCurve(const Handle_Geom_Curve &S, const Standard_Real UFirst, const Standard_Real ULast);
+		GeomAdaptor_HCurve(const Geom_Curve *S, const Standard_Real UFirst, const Standard_Real ULast);
 
 };
 %extend GeomAdaptor_HCurve {
@@ -324,9 +324,9 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 		%feature("autodoc", "1");
 		GeomAdaptor_HSurface(const GeomAdaptor_Surface &AS);
 		%feature("autodoc", "1");
-		GeomAdaptor_HSurface(const Handle_Geom_Surface &S);
+		GeomAdaptor_HSurface(const Geom_Surface *S);
 		%feature("autodoc", "1");
-		GeomAdaptor_HSurface(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
+		GeomAdaptor_HSurface(const Geom_Surface *S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
 
 };
 %extend GeomAdaptor_HSurface {
@@ -388,13 +388,13 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("autodoc", "1");
 		GeomAdaptor_Curve();
 		%feature("autodoc", "1");
-		GeomAdaptor_Curve(const Handle_Geom_Curve &C);
+		GeomAdaptor_Curve(const Geom_Curve *C);
 		%feature("autodoc", "1");
-		GeomAdaptor_Curve(const Handle_Geom_Curve &C, const Standard_Real UFirst, const Standard_Real ULast);
+		GeomAdaptor_Curve(const Geom_Curve *C, const Standard_Real UFirst, const Standard_Real ULast);
 		%feature("autodoc", "1");
-		void Load(const Handle_Geom_Curve &C);
+		void Load(const Geom_Curve *C);
 		%feature("autodoc", "1");
-		void Load(const Handle_Geom_Curve &C, const Standard_Real UFirst, const Standard_Real ULast);
+		void Load(const Geom_Curve *C, const Standard_Real UFirst, const Standard_Real ULast);
 		%feature("autodoc", "1");
 		const Handle_Geom_Curve & Curve() const;
 		%feature("autodoc", "1");
@@ -477,13 +477,13 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("autodoc", "1");
 		GeomAdaptor_Surface();
 		%feature("autodoc", "1");
-		GeomAdaptor_Surface(const Handle_Geom_Surface &S);
+		GeomAdaptor_Surface(const Geom_Surface *S);
 		%feature("autodoc", "1");
-		GeomAdaptor_Surface(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
+		GeomAdaptor_Surface(const Geom_Surface *S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
 		%feature("autodoc", "1");
-		void Load(const Handle_Geom_Surface &S);
+		void Load(const Geom_Surface *S);
 		%feature("autodoc", "1");
-		void Load(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
+		void Load(const Geom_Surface *S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & Surface() const;
 		%feature("autodoc", "1");

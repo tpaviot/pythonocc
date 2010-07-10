@@ -67,15 +67,15 @@ class Handle_SMESH_MeshVSLink : public Handle_MeshVS_DataSource3D {
 		%feature("autodoc", "1");
 		Handle_SMESH_MeshVSLink();
 		%feature("autodoc", "1");
-		Handle_SMESH_MeshVSLink(const Handle_SMESH_MeshVSLink &aHandle);
+		Handle_SMESH_MeshVSLink(const SMESH_MeshVSLink *aHandle);
 		%feature("autodoc", "1");
 		Handle_SMESH_MeshVSLink(const SMESH_MeshVSLink *anItem);
 		%feature("autodoc", "1");
-		Handle_SMESH_MeshVSLink & operator=(const Handle_SMESH_MeshVSLink &aHandle);
+		Handle_SMESH_MeshVSLink & operator=(const SMESH_MeshVSLink *aHandle);
 		%feature("autodoc", "1");
 		Handle_SMESH_MeshVSLink & operator=(const SMESH_MeshVSLink *anItem);
 		%feature("autodoc", "1");
-		Handle_SMESH_MeshVSLink const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_SMESH_MeshVSLink const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_SMESH_MeshVSLink {
@@ -193,7 +193,7 @@ class SMESH_MesherHelper {
 		%feature("autodoc", "1");
 		bool CheckNodeUV(const TopoDS_Face &F, const SMDS_MeshNode *n, gp_XY & uv, const double tol) const;
 		%feature("autodoc", "1");
-		gp_XY GetMiddleUV(const Handle_Geom_Surface &surface, const gp_XY &uv1, const gp_XY &uv2);
+		gp_XY GetMiddleUV(const Geom_Surface *surface, const gp_XY &uv1, const gp_XY &uv2);
 		%feature("autodoc", "1");
 		bool GetNodeUVneedInFaceNode(const TopoDS_Face &F=TopoDS_Face( )) const;
 		%feature("autodoc", "1");

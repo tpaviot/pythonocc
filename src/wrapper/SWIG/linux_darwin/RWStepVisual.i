@@ -43,11 +43,11 @@ class RWStepVisual_RWAreaInSet {
 		%feature("autodoc", "1");
 		RWStepVisual_RWAreaInSet();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_AreaInSet &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_AreaInSet *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_AreaInSet &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_AreaInSet *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_AreaInSet &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_AreaInSet *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWAreaInSet::~RWStepVisual_RWAreaInSet %{
@@ -72,11 +72,11 @@ class RWStepVisual_RWCompositeTextWithExtent {
 		%feature("autodoc", "1");
 		RWStepVisual_RWCompositeTextWithExtent();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CompositeTextWithExtent &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_CompositeTextWithExtent *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CompositeTextWithExtent &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_CompositeTextWithExtent *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CompositeTextWithExtent &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_CompositeTextWithExtent *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWCompositeTextWithExtent::~RWStepVisual_RWCompositeTextWithExtent %{
@@ -101,11 +101,11 @@ class RWStepVisual_RWBackgroundColour {
 		%feature("autodoc", "1");
 		RWStepVisual_RWBackgroundColour();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_BackgroundColour &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_BackgroundColour *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_BackgroundColour &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_BackgroundColour *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_BackgroundColour &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_BackgroundColour *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWBackgroundColour::~RWStepVisual_RWBackgroundColour %{
@@ -130,11 +130,11 @@ class RWStepVisual_RWContextDependentInvisibility {
 		%feature("autodoc", "1");
 		RWStepVisual_RWContextDependentInvisibility();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ContextDependentInvisibility &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_ContextDependentInvisibility *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ContextDependentInvisibility &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_ContextDependentInvisibility *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_ContextDependentInvisibility &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_ContextDependentInvisibility *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWContextDependentInvisibility::~RWStepVisual_RWContextDependentInvisibility %{
@@ -159,11 +159,11 @@ class RWStepVisual_RWTextStyle {
 		%feature("autodoc", "1");
 		RWStepVisual_RWTextStyle();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_TextStyle &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_TextStyle *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_TextStyle &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_TextStyle *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_TextStyle &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_TextStyle *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWTextStyle::~RWStepVisual_RWTextStyle %{
@@ -188,11 +188,11 @@ class RWStepVisual_RWFillAreaStyle {
 		%feature("autodoc", "1");
 		RWStepVisual_RWFillAreaStyle();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_FillAreaStyle &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_FillAreaStyle *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_FillAreaStyle &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_FillAreaStyle *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_FillAreaStyle &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_FillAreaStyle *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWFillAreaStyle::~RWStepVisual_RWFillAreaStyle %{
@@ -217,11 +217,11 @@ class RWStepVisual_RWCompositeText {
 		%feature("autodoc", "1");
 		RWStepVisual_RWCompositeText();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CompositeText &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_CompositeText *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CompositeText &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_CompositeText *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CompositeText &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_CompositeText *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWCompositeText::~RWStepVisual_RWCompositeText %{
@@ -246,11 +246,11 @@ class RWStepVisual_RWCameraModelD2 {
 		%feature("autodoc", "1");
 		RWStepVisual_RWCameraModelD2();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraModelD2 &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_CameraModelD2 *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraModelD2 &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_CameraModelD2 *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CameraModelD2 &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_CameraModelD2 *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWCameraModelD2::~RWStepVisual_RWCameraModelD2 %{
@@ -275,11 +275,11 @@ class RWStepVisual_RWSurfaceStyleSilhouette {
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleSilhouette();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleSilhouette &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_SurfaceStyleSilhouette *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceStyleSilhouette &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_SurfaceStyleSilhouette *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_SurfaceStyleSilhouette &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_SurfaceStyleSilhouette *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleSilhouette::~RWStepVisual_RWSurfaceStyleSilhouette %{
@@ -304,11 +304,11 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
 		%feature("autodoc", "1");
 		RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_MechanicalDesignGeometricPresentationRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_MechanicalDesignGeometricPresentationRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_MechanicalDesignGeometricPresentationRepresentation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation::~RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation %{
@@ -333,11 +333,11 @@ class RWStepVisual_RWPresentedItemRepresentation {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentedItemRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PresentedItemRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PresentedItemRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentedItemRepresentation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PresentedItemRepresentation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPresentedItemRepresentation::~RWStepVisual_RWPresentedItemRepresentation %{
@@ -362,11 +362,11 @@ class RWStepVisual_RWSurfaceStyleUsage {
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleUsage();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleUsage &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_SurfaceStyleUsage *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceStyleUsage &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_SurfaceStyleUsage *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_SurfaceStyleUsage &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_SurfaceStyleUsage *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleUsage::~RWStepVisual_RWSurfaceStyleUsage %{
@@ -391,9 +391,9 @@ class RWStepVisual_RWPreDefinedColour {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPreDefinedColour();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PreDefinedColour &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PreDefinedColour *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedColour &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PreDefinedColour *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWPreDefinedColour::~RWStepVisual_RWPreDefinedColour %{
@@ -418,9 +418,9 @@ class RWStepVisual_RWPreDefinedCurveFont {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPreDefinedCurveFont();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PreDefinedCurveFont &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PreDefinedCurveFont *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedCurveFont &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PreDefinedCurveFont *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWPreDefinedCurveFont::~RWStepVisual_RWPreDefinedCurveFont %{
@@ -445,11 +445,11 @@ class RWStepVisual_RWPresentationLayerUsage {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationLayerUsage();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationLayerUsage &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PresentationLayerUsage *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationLayerUsage &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PresentationLayerUsage *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentationLayerUsage &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PresentationLayerUsage *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPresentationLayerUsage::~RWStepVisual_RWPresentationLayerUsage %{
@@ -474,11 +474,11 @@ class RWStepVisual_RWSurfaceStyleControlGrid {
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleControlGrid();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleControlGrid &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_SurfaceStyleControlGrid *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceStyleControlGrid &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_SurfaceStyleControlGrid *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_SurfaceStyleControlGrid &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_SurfaceStyleControlGrid *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleControlGrid::~RWStepVisual_RWSurfaceStyleControlGrid %{
@@ -503,11 +503,11 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
 		%feature("autodoc", "1");
 		RWStepVisual_RWMechanicalDesignGeometricPresentationArea();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_MechanicalDesignGeometricPresentationArea &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_MechanicalDesignGeometricPresentationArea *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_MechanicalDesignGeometricPresentationArea &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_MechanicalDesignGeometricPresentationArea *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_MechanicalDesignGeometricPresentationArea &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_MechanicalDesignGeometricPresentationArea *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWMechanicalDesignGeometricPresentationArea::~RWStepVisual_RWMechanicalDesignGeometricPresentationArea %{
@@ -532,11 +532,11 @@ class RWStepVisual_RWPresentationView {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationView();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationView &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PresentationView *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationView &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PresentationView *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentationView &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PresentationView *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPresentationView::~RWStepVisual_RWPresentationView %{
@@ -561,11 +561,11 @@ class RWStepVisual_RWPresentationSize {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationSize();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationSize &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PresentationSize *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationSize &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PresentationSize *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentationSize &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PresentationSize *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPresentationSize::~RWStepVisual_RWPresentationSize %{
@@ -590,11 +590,11 @@ class RWStepVisual_RWPresentationStyleByContext {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationStyleByContext();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationStyleByContext &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PresentationStyleByContext *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationStyleByContext &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PresentationStyleByContext *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentationStyleByContext &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PresentationStyleByContext *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPresentationStyleByContext::~RWStepVisual_RWPresentationStyleByContext %{
@@ -619,9 +619,9 @@ class RWStepVisual_RWPresentationSet {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationSet();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationSet &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PresentationSet *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationSet &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PresentationSet *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWPresentationSet::~RWStepVisual_RWPresentationSet %{
@@ -646,11 +646,11 @@ class RWStepVisual_RWContextDependentOverRidingStyledItem {
 		%feature("autodoc", "1");
 		RWStepVisual_RWContextDependentOverRidingStyledItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_ContextDependentOverRidingStyledItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_ContextDependentOverRidingStyledItem *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_ContextDependentOverRidingStyledItem *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWContextDependentOverRidingStyledItem::~RWStepVisual_RWContextDependentOverRidingStyledItem %{
@@ -675,11 +675,11 @@ class RWStepVisual_RWSurfaceStyleSegmentationCurve {
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleSegmentationCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleSegmentationCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_SurfaceStyleSegmentationCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceStyleSegmentationCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_SurfaceStyleSegmentationCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_SurfaceStyleSegmentationCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_SurfaceStyleSegmentationCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleSegmentationCurve::~RWStepVisual_RWSurfaceStyleSegmentationCurve %{
@@ -704,11 +704,11 @@ class RWStepVisual_RWPresentationArea {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationArea();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationArea &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PresentationArea *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationArea &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PresentationArea *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentationArea &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PresentationArea *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPresentationArea::~RWStepVisual_RWPresentationArea %{
@@ -733,11 +733,11 @@ class RWStepVisual_RWOverRidingStyledItem {
 		%feature("autodoc", "1");
 		RWStepVisual_RWOverRidingStyledItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_OverRidingStyledItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_OverRidingStyledItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_OverRidingStyledItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_OverRidingStyledItem *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_OverRidingStyledItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_OverRidingStyledItem *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWOverRidingStyledItem::~RWStepVisual_RWOverRidingStyledItem %{
@@ -762,11 +762,11 @@ class RWStepVisual_RWTextStyleWithBoxCharacteristics {
 		%feature("autodoc", "1");
 		RWStepVisual_RWTextStyleWithBoxCharacteristics();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_TextStyleWithBoxCharacteristics *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_TextStyleWithBoxCharacteristics *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_TextStyleWithBoxCharacteristics *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWTextStyleWithBoxCharacteristics::~RWStepVisual_RWTextStyleWithBoxCharacteristics %{
@@ -791,11 +791,11 @@ class RWStepVisual_RWSurfaceSideStyle {
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceSideStyle();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceSideStyle &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_SurfaceSideStyle *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceSideStyle &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_SurfaceSideStyle *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_SurfaceSideStyle &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_SurfaceSideStyle *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWSurfaceSideStyle::~RWStepVisual_RWSurfaceSideStyle %{
@@ -820,11 +820,11 @@ class RWStepVisual_RWDraughtingModel {
 		%feature("autodoc", "1");
 		RWStepVisual_RWDraughtingModel();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_DraughtingModel &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_DraughtingModel *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_DraughtingModel &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_DraughtingModel *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_DraughtingModel &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_DraughtingModel *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWDraughtingModel::~RWStepVisual_RWDraughtingModel %{
@@ -849,11 +849,11 @@ class RWStepVisual_RWPresentationLayerAssignment {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationLayerAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationLayerAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PresentationLayerAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationLayerAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PresentationLayerAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentationLayerAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PresentationLayerAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPresentationLayerAssignment::~RWStepVisual_RWPresentationLayerAssignment %{
@@ -878,9 +878,9 @@ class RWStepVisual_RWPlanarExtent {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPlanarExtent();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PlanarExtent &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PlanarExtent *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PlanarExtent &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PlanarExtent *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWPlanarExtent::~RWStepVisual_RWPlanarExtent %{
@@ -905,11 +905,11 @@ class RWStepVisual_RWInvisibility {
 		%feature("autodoc", "1");
 		RWStepVisual_RWInvisibility();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_Invisibility &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_Invisibility *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_Invisibility &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_Invisibility *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_Invisibility &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_Invisibility *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWInvisibility::~RWStepVisual_RWInvisibility %{
@@ -934,11 +934,11 @@ class RWStepVisual_RWStyledItem {
 		%feature("autodoc", "1");
 		RWStepVisual_RWStyledItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_StyledItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_StyledItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_StyledItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_StyledItem *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_StyledItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_StyledItem *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWStyledItem::~RWStepVisual_RWStyledItem %{
@@ -963,11 +963,11 @@ class RWStepVisual_RWPlanarBox {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPlanarBox();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PlanarBox &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PlanarBox *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PlanarBox &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PlanarBox *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PlanarBox &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PlanarBox *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPlanarBox::~RWStepVisual_RWPlanarBox %{
@@ -992,11 +992,11 @@ class RWStepVisual_RWSurfaceStyleBoundary {
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleBoundary();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleBoundary &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_SurfaceStyleBoundary *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceStyleBoundary &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_SurfaceStyleBoundary *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_SurfaceStyleBoundary &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_SurfaceStyleBoundary *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleBoundary::~RWStepVisual_RWSurfaceStyleBoundary %{
@@ -1021,11 +1021,11 @@ class RWStepVisual_RWCameraImage {
 		%feature("autodoc", "1");
 		RWStepVisual_RWCameraImage();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraImage &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_CameraImage *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraImage &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_CameraImage *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CameraImage &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_CameraImage *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWCameraImage::~RWStepVisual_RWCameraImage %{
@@ -1050,9 +1050,9 @@ class RWStepVisual_RWPreDefinedItem {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPreDefinedItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PreDefinedItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PreDefinedItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PreDefinedItem *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWPreDefinedItem::~RWStepVisual_RWPreDefinedItem %{
@@ -1077,9 +1077,9 @@ class RWStepVisual_RWColourSpecification {
 		%feature("autodoc", "1");
 		RWStepVisual_RWColourSpecification();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ColourSpecification &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_ColourSpecification *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ColourSpecification &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_ColourSpecification *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWColourSpecification::~RWStepVisual_RWColourSpecification %{
@@ -1104,11 +1104,11 @@ class RWStepVisual_RWFillAreaStyleColour {
 		%feature("autodoc", "1");
 		RWStepVisual_RWFillAreaStyleColour();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_FillAreaStyleColour &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_FillAreaStyleColour *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_FillAreaStyleColour &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_FillAreaStyleColour *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_FillAreaStyleColour &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_FillAreaStyleColour *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWFillAreaStyleColour::~RWStepVisual_RWFillAreaStyleColour %{
@@ -1133,11 +1133,11 @@ class RWStepVisual_RWTemplateInstance {
 		%feature("autodoc", "1");
 		RWStepVisual_RWTemplateInstance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_TemplateInstance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_TemplateInstance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_TemplateInstance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_TemplateInstance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_TemplateInstance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_TemplateInstance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWTemplateInstance::~RWStepVisual_RWTemplateInstance %{
@@ -1162,11 +1162,11 @@ class RWStepVisual_RWTextLiteral {
 		%feature("autodoc", "1");
 		RWStepVisual_RWTextLiteral();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_TextLiteral &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_TextLiteral *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_TextLiteral &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_TextLiteral *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_TextLiteral &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_TextLiteral *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWTextLiteral::~RWStepVisual_RWTextLiteral %{
@@ -1191,11 +1191,11 @@ class RWStepVisual_RWSurfaceStyleFillArea {
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleFillArea();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleFillArea &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_SurfaceStyleFillArea *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceStyleFillArea &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_SurfaceStyleFillArea *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_SurfaceStyleFillArea &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_SurfaceStyleFillArea *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleFillArea::~RWStepVisual_RWSurfaceStyleFillArea %{
@@ -1220,11 +1220,11 @@ class RWStepVisual_RWViewVolume {
 		%feature("autodoc", "1");
 		RWStepVisual_RWViewVolume();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ViewVolume &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_ViewVolume *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ViewVolume &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_ViewVolume *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_ViewVolume &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_ViewVolume *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWViewVolume::~RWStepVisual_RWViewVolume %{
@@ -1249,9 +1249,9 @@ class RWStepVisual_RWDraughtingPreDefinedCurveFont {
 		%feature("autodoc", "1");
 		RWStepVisual_RWDraughtingPreDefinedCurveFont();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_DraughtingPreDefinedCurveFont &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_DraughtingPreDefinedCurveFont *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_DraughtingPreDefinedCurveFont &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_DraughtingPreDefinedCurveFont *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWDraughtingPreDefinedCurveFont::~RWStepVisual_RWDraughtingPreDefinedCurveFont %{
@@ -1276,11 +1276,11 @@ class RWStepVisual_RWCurveStyle {
 		%feature("autodoc", "1");
 		RWStepVisual_RWCurveStyle();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CurveStyle &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_CurveStyle *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CurveStyle &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_CurveStyle *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CurveStyle &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_CurveStyle *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWCurveStyle::~RWStepVisual_RWCurveStyle %{
@@ -1305,11 +1305,11 @@ class RWStepVisual_RWTemplate {
 		%feature("autodoc", "1");
 		RWStepVisual_RWTemplate();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_Template &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_Template *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_Template &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_Template *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_Template &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_Template *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWTemplate::~RWStepVisual_RWTemplate %{
@@ -1334,9 +1334,9 @@ class RWStepVisual_RWColourRgb {
 		%feature("autodoc", "1");
 		RWStepVisual_RWColourRgb();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ColourRgb &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_ColourRgb *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ColourRgb &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_ColourRgb *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWColourRgb::~RWStepVisual_RWColourRgb %{
@@ -1361,9 +1361,9 @@ class RWStepVisual_RWCameraModel {
 		%feature("autodoc", "1");
 		RWStepVisual_RWCameraModel();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraModel &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_CameraModel *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraModel &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_CameraModel *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWCameraModel::~RWStepVisual_RWCameraModel %{
@@ -1388,11 +1388,11 @@ class RWStepVisual_RWPointStyle {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPointStyle();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PointStyle &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PointStyle *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PointStyle &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PointStyle *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PointStyle &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PointStyle *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPointStyle::~RWStepVisual_RWPointStyle %{
@@ -1417,9 +1417,9 @@ class RWStepVisual_RWCurveStyleFontPattern {
 		%feature("autodoc", "1");
 		RWStepVisual_RWCurveStyleFontPattern();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CurveStyleFontPattern &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_CurveStyleFontPattern *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CurveStyleFontPattern &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_CurveStyleFontPattern *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWCurveStyleFontPattern::~RWStepVisual_RWCurveStyleFontPattern %{
@@ -1444,11 +1444,11 @@ class RWStepVisual_RWCameraUsage {
 		%feature("autodoc", "1");
 		RWStepVisual_RWCameraUsage();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraUsage &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_CameraUsage *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraUsage &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_CameraUsage *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CameraUsage &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_CameraUsage *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWCameraUsage::~RWStepVisual_RWCameraUsage %{
@@ -1473,11 +1473,11 @@ class RWStepVisual_RWTextStyleForDefinedFont {
 		%feature("autodoc", "1");
 		RWStepVisual_RWTextStyleForDefinedFont();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_TextStyleForDefinedFont &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_TextStyleForDefinedFont *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_TextStyleForDefinedFont &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_TextStyleForDefinedFont *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_TextStyleForDefinedFont &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_TextStyleForDefinedFont *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWTextStyleForDefinedFont::~RWStepVisual_RWTextStyleForDefinedFont %{
@@ -1502,9 +1502,9 @@ class RWStepVisual_RWColour {
 		%feature("autodoc", "1");
 		RWStepVisual_RWColour();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_Colour &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_Colour *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_Colour &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_Colour *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWColour::~RWStepVisual_RWColour %{
@@ -1529,11 +1529,11 @@ class RWStepVisual_RWPresentationRepresentation {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationRepresentation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PresentationRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationRepresentation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PresentationRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentationRepresentation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PresentationRepresentation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPresentationRepresentation::~RWStepVisual_RWPresentationRepresentation %{
@@ -1558,11 +1558,11 @@ class RWStepVisual_RWCurveStyleFont {
 		%feature("autodoc", "1");
 		RWStepVisual_RWCurveStyleFont();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CurveStyleFont &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_CurveStyleFont *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CurveStyleFont &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_CurveStyleFont *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CurveStyleFont &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_CurveStyleFont *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWCurveStyleFont::~RWStepVisual_RWCurveStyleFont %{
@@ -1587,11 +1587,11 @@ class RWStepVisual_RWSurfaceStyleParameterLine {
 		%feature("autodoc", "1");
 		RWStepVisual_RWSurfaceStyleParameterLine();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleParameterLine &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_SurfaceStyleParameterLine *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceStyleParameterLine &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_SurfaceStyleParameterLine *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_SurfaceStyleParameterLine &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_SurfaceStyleParameterLine *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleParameterLine::~RWStepVisual_RWSurfaceStyleParameterLine %{
@@ -1616,11 +1616,11 @@ class RWStepVisual_RWExternallyDefinedCurveFont {
 		%feature("autodoc", "1");
 		RWStepVisual_RWExternallyDefinedCurveFont();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ExternallyDefinedCurveFont &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_ExternallyDefinedCurveFont *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ExternallyDefinedCurveFont &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_ExternallyDefinedCurveFont *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_ExternallyDefinedCurveFont &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_ExternallyDefinedCurveFont *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWExternallyDefinedCurveFont::~RWStepVisual_RWExternallyDefinedCurveFont %{
@@ -1645,11 +1645,11 @@ class RWStepVisual_RWPresentationStyleAssignment {
 		%feature("autodoc", "1");
 		RWStepVisual_RWPresentationStyleAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationStyleAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_PresentationStyleAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationStyleAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_PresentationStyleAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentationStyleAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_PresentationStyleAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWPresentationStyleAssignment::~RWStepVisual_RWPresentationStyleAssignment %{
@@ -1674,11 +1674,11 @@ class RWStepVisual_RWCameraModelD3 {
 		%feature("autodoc", "1");
 		RWStepVisual_RWCameraModelD3();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraModelD3 &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_CameraModelD3 *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraModelD3 &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_CameraModelD3 *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CameraModelD3 &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepVisual_CameraModelD3 *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepVisual_RWCameraModelD3::~RWStepVisual_RWCameraModelD3 %{
@@ -1703,9 +1703,9 @@ class RWStepVisual_RWDraughtingPreDefinedColour {
 		%feature("autodoc", "1");
 		RWStepVisual_RWDraughtingPreDefinedColour();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_DraughtingPreDefinedColour &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepVisual_DraughtingPreDefinedColour *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_DraughtingPreDefinedColour &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepVisual_DraughtingPreDefinedColour *ent) const;
 
 };
 %feature("shadow") RWStepVisual_RWDraughtingPreDefinedColour::~RWStepVisual_RWDraughtingPreDefinedColour %{

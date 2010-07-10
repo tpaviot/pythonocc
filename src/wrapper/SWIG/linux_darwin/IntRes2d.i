@@ -62,15 +62,15 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint();
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint &aHandle);
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint &aHandle);
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
@@ -100,15 +100,15 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handl
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment();
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment &aHandle);
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment(const IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment(const IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment *anItem);
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment & operator=(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment &aHandle);
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment *anItem);
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {

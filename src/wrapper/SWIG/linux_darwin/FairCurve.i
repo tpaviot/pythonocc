@@ -193,7 +193,7 @@ def __del__(self):
 class FairCurve_EnergyOfMVC : public FairCurve_Energy {
 	public:
 		%feature("autodoc", "1");
-		FairCurve_EnergyOfMVC(const Standard_Integer BSplOrder, const Handle_TColStd_HArray1OfReal &FlatKnots, const Handle_TColgp_HArray1OfPnt2d &Poles, const Standard_Integer ContrOrder1, const Standard_Integer ContrOrder2, const FairCurve_BattenLaw &Law, const Standard_Real PhysicalRatio, const Standard_Real LengthSliding, const Standard_Boolean FreeSliding=1, const Standard_Real Angle1=0, const Standard_Real Angle2=0, const Standard_Real Curvature1=0, const Standard_Real Curvature2=0);
+		FairCurve_EnergyOfMVC(const Standard_Integer BSplOrder, const TColStd_HArray1OfReal *FlatKnots, const TColgp_HArray1OfPnt2d *Poles, const Standard_Integer ContrOrder1, const Standard_Integer ContrOrder2, const FairCurve_BattenLaw &Law, const Standard_Real PhysicalRatio, const Standard_Real LengthSliding, const Standard_Boolean FreeSliding=1, const Standard_Real Angle1=0, const Standard_Real Angle2=0, const Standard_Real Curvature1=0, const Standard_Real Curvature2=0);
 		%feature("autodoc", "1");
 		Standard_Real LengthSliding() const;
 		%feature("autodoc", "1");
@@ -247,7 +247,7 @@ def __del__(self):
 class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
 	public:
 		%feature("autodoc", "1");
-		FairCurve_DistributionOfSagging(const Standard_Integer BSplOrder, const Handle_TColStd_HArray1OfReal &FlatKnots, const Handle_TColgp_HArray1OfPnt2d &Poles, const Standard_Integer DerivativeOrder, const FairCurve_BattenLaw &Law, const Standard_Integer NbValAux=0);
+		FairCurve_DistributionOfSagging(const Standard_Integer BSplOrder, const TColStd_HArray1OfReal *FlatKnots, const TColgp_HArray1OfPnt2d *Poles, const Standard_Integer DerivativeOrder, const FairCurve_BattenLaw &Law, const Standard_Integer NbValAux=0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 
@@ -304,7 +304,7 @@ def __del__(self):
 class FairCurve_DistributionOfJerk : public FairCurve_DistributionOfEnergy {
 	public:
 		%feature("autodoc", "1");
-		FairCurve_DistributionOfJerk(const Standard_Integer BSplOrder, const Handle_TColStd_HArray1OfReal &FlatKnots, const Handle_TColgp_HArray1OfPnt2d &Poles, const Standard_Integer DerivativeOrder, const FairCurve_BattenLaw &Law, const Standard_Integer NbValAux=0);
+		FairCurve_DistributionOfJerk(const Standard_Integer BSplOrder, const TColStd_HArray1OfReal *FlatKnots, const TColgp_HArray1OfPnt2d *Poles, const Standard_Integer DerivativeOrder, const FairCurve_BattenLaw &Law, const Standard_Integer NbValAux=0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 
@@ -375,7 +375,7 @@ def __del__(self):
 class FairCurve_DistributionOfTension : public FairCurve_DistributionOfEnergy {
 	public:
 		%feature("autodoc", "1");
-		FairCurve_DistributionOfTension(const Standard_Integer BSplOrder, const Handle_TColStd_HArray1OfReal &FlatKnots, const Handle_TColgp_HArray1OfPnt2d &Poles, const Standard_Integer DerivativeOrder, const Standard_Real LengthSliding, const FairCurve_BattenLaw &Law, const Standard_Integer NbValAux=0, const Standard_Boolean Uniform=0);
+		FairCurve_DistributionOfTension(const Standard_Integer BSplOrder, const TColStd_HArray1OfReal *FlatKnots, const TColgp_HArray1OfPnt2d *Poles, const Standard_Integer DerivativeOrder, const Standard_Real LengthSliding, const FairCurve_BattenLaw &Law, const Standard_Integer NbValAux=0, const Standard_Boolean Uniform=0);
 		%feature("autodoc", "1");
 		void SetLengthSliding(const Standard_Real LengthSliding);
 		%feature("autodoc", "1");
@@ -402,7 +402,7 @@ def __del__(self):
 class FairCurve_EnergyOfBatten : public FairCurve_Energy {
 	public:
 		%feature("autodoc", "1");
-		FairCurve_EnergyOfBatten(const Standard_Integer BSplOrder, const Handle_TColStd_HArray1OfReal &FlatKnots, const Handle_TColgp_HArray1OfPnt2d &Poles, const Standard_Integer ContrOrder1, const Standard_Integer ContrOrder2, const FairCurve_BattenLaw &Law, const Standard_Real LengthSliding, const Standard_Boolean FreeSliding=1, const Standard_Real Angle1=0, const Standard_Real Angle2=0);
+		FairCurve_EnergyOfBatten(const Standard_Integer BSplOrder, const TColStd_HArray1OfReal *FlatKnots, const TColgp_HArray1OfPnt2d *Poles, const Standard_Integer ContrOrder1, const Standard_Integer ContrOrder2, const FairCurve_BattenLaw &Law, const Standard_Real LengthSliding, const Standard_Boolean FreeSliding=1, const Standard_Real Angle1=0, const Standard_Real Angle2=0);
 		%feature("autodoc", "1");
 		Standard_Real LengthSliding() const;
 		%feature("autodoc", "1");

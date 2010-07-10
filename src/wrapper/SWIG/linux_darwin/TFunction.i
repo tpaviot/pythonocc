@@ -51,15 +51,15 @@ class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_TFunction_HArray1OfDataMapOfGUIDDriver();
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const Handle_TFunction_HArray1OfDataMapOfGUIDDriver &aHandle);
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const TFunction_HArray1OfDataMapOfGUIDDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const Handle_TFunction_HArray1OfDataMapOfGUIDDriver &aHandle);
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const TFunction_HArray1OfDataMapOfGUIDDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
@@ -89,15 +89,15 @@ class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TFunction_DriverTable();
 		%feature("autodoc", "1");
-		Handle_TFunction_DriverTable(const Handle_TFunction_DriverTable &aHandle);
+		Handle_TFunction_DriverTable(const TFunction_DriverTable *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_DriverTable(const TFunction_DriverTable *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DriverTable & operator=(const Handle_TFunction_DriverTable &aHandle);
+		Handle_TFunction_DriverTable & operator=(const TFunction_DriverTable *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_DriverTable & operator=(const TFunction_DriverTable *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DriverTable const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TFunction_DriverTable const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TFunction_DriverTable {
@@ -127,15 +127,15 @@ class Handle_TFunction_GraphNode : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TFunction_GraphNode();
 		%feature("autodoc", "1");
-		Handle_TFunction_GraphNode(const Handle_TFunction_GraphNode &aHandle);
+		Handle_TFunction_GraphNode(const TFunction_GraphNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_GraphNode(const TFunction_GraphNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_GraphNode & operator=(const Handle_TFunction_GraphNode &aHandle);
+		Handle_TFunction_GraphNode & operator=(const TFunction_GraphNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_GraphNode & operator=(const TFunction_GraphNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_GraphNode const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TFunction_GraphNode const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TFunction_GraphNode {
@@ -165,15 +165,15 @@ class Handle_TFunction_Scope : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TFunction_Scope();
 		%feature("autodoc", "1");
-		Handle_TFunction_Scope(const Handle_TFunction_Scope &aHandle);
+		Handle_TFunction_Scope(const TFunction_Scope *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_Scope(const TFunction_Scope *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_Scope & operator=(const Handle_TFunction_Scope &aHandle);
+		Handle_TFunction_Scope & operator=(const TFunction_Scope *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_Scope & operator=(const TFunction_Scope *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_Scope const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TFunction_Scope const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TFunction_Scope {
@@ -203,15 +203,15 @@ class Handle_TFunction_Driver : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TFunction_Driver();
 		%feature("autodoc", "1");
-		Handle_TFunction_Driver(const Handle_TFunction_Driver &aHandle);
+		Handle_TFunction_Driver(const TFunction_Driver *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_Driver(const TFunction_Driver *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_Driver & operator=(const Handle_TFunction_Driver &aHandle);
+		Handle_TFunction_Driver & operator=(const TFunction_Driver *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_Driver & operator=(const TFunction_Driver *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_Driver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TFunction_Driver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TFunction_Driver {
@@ -241,15 +241,15 @@ class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver();
 		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver(const Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver &aHandle);
+		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver(const TFunction_DataMapNodeOfDataMapOfGUIDDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver(const TFunction_DataMapNodeOfDataMapOfGUIDDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver & operator=(const Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver &aHandle);
+		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver & operator=(const TFunction_DataMapNodeOfDataMapOfGUIDDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver & operator=(const TFunction_DataMapNodeOfDataMapOfGUIDDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver {
@@ -279,15 +279,15 @@ class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel();
 		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel &aHandle);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel &aHandle);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
@@ -317,15 +317,15 @@ class Handle_TFunction_Function : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TFunction_Function();
 		%feature("autodoc", "1");
-		Handle_TFunction_Function(const Handle_TFunction_Function &aHandle);
+		Handle_TFunction_Function(const TFunction_Function *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_Function(const TFunction_Function *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_Function & operator=(const Handle_TFunction_Function &aHandle);
+		Handle_TFunction_Function & operator=(const TFunction_Function *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_Function & operator=(const TFunction_Function *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_Function const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TFunction_Function const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TFunction_Function {
@@ -355,15 +355,15 @@ class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel();
 		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel(const Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel &aHandle);
+		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel(const TFunction_DataMapNodeOfDataMapOfLabelListOfLabel *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel(const TFunction_DataMapNodeOfDataMapOfLabelListOfLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel & operator=(const Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel &aHandle);
+		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel & operator=(const TFunction_DataMapNodeOfDataMapOfLabelListOfLabel *aHandle);
 		%feature("autodoc", "1");
 		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel & operator=(const TFunction_DataMapNodeOfDataMapOfLabelListOfLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
@@ -595,7 +595,7 @@ class TFunction_DataMapOfGUIDDriver : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_GUID &K, const Handle_TFunction_Driver &I);
+		Standard_Boolean Bind(const Standard_GUID &K, const TFunction_Driver *I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_GUID &K) const;
 		%feature("autodoc", "1");
@@ -650,13 +650,13 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
+		virtual		void References(const TDF_DataSet *aDataSet) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -787,7 +787,7 @@ def __del__(self):
 class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TFunction_DataMapNodeOfDataMapOfGUIDDriver(const Standard_GUID &K, const Handle_TFunction_Driver &I, const TCollection_MapNodePtr &n);
+		TFunction_DataMapNodeOfDataMapOfGUIDDriver(const Standard_GUID &K, const TFunction_Driver *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Standard_GUID & Key() const;
 		%feature("autodoc", "1");
@@ -932,7 +932,7 @@ class TFunction_DriverTable : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TFunction_DriverTable();
 		%feature("autodoc", "1");
-		Standard_Boolean AddDriver(const Standard_GUID &guid, const Handle_TFunction_Driver &driver, const Standard_Integer thread=0);
+		Standard_Boolean AddDriver(const Standard_GUID &guid, const TFunction_Driver *driver, const Standard_Integer thread=0);
 		%feature("autodoc", "1");
 		Standard_Boolean HasDriver(const Standard_GUID &guid, const Standard_Integer thread=0) const;
 		%feature("autodoc", "1");
@@ -1195,13 +1195,13 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
+		virtual		void References(const TDF_DataSet *aDataSet) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1301,9 +1301,9 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");

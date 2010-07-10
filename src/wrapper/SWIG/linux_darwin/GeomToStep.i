@@ -70,9 +70,9 @@ class GeomToStep_MakeLine : public GeomToStep_Root {
 		%feature("autodoc", "1");
 		GeomToStep_MakeLine(const gp_Lin2d &L);
 		%feature("autodoc", "1");
-		GeomToStep_MakeLine(const Handle_Geom_Line &C);
+		GeomToStep_MakeLine(const Geom_Line *C);
 		%feature("autodoc", "1");
-		GeomToStep_MakeLine(const Handle_Geom2d_Line &C);
+		GeomToStep_MakeLine(const Geom2d_Line *C);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Line & Value() const;
 
@@ -97,7 +97,7 @@ def __del__(self):
 class GeomToStep_MakeSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeSurface(const Handle_Geom_Surface &C);
+		GeomToStep_MakeSurface(const Geom_Surface *C);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Surface & Value() const;
 
@@ -122,7 +122,7 @@ def __del__(self):
 class GeomToStep_MakeSurfaceOfLinearExtrusion : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeSurfaceOfLinearExtrusion(const Handle_Geom_SurfaceOfLinearExtrusion &CSurf);
+		GeomToStep_MakeSurfaceOfLinearExtrusion(const Geom_SurfaceOfLinearExtrusion *CSurf);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_SurfaceOfLinearExtrusion & Value() const;
 
@@ -151,9 +151,9 @@ class GeomToStep_MakeAxis1Placement : public GeomToStep_Root {
 		%feature("autodoc", "1");
 		GeomToStep_MakeAxis1Placement(const gp_Ax2d &A);
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis1Placement(const Handle_Geom_Axis1Placement &A);
+		GeomToStep_MakeAxis1Placement(const Geom_Axis1Placement *A);
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis1Placement(const Handle_Geom2d_AxisPlacement &A);
+		GeomToStep_MakeAxis1Placement(const Geom2d_AxisPlacement *A);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Axis1Placement & Value() const;
 
@@ -205,7 +205,7 @@ def __del__(self):
 class GeomToStep_MakeElementarySurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeElementarySurface(const Handle_Geom_ElementarySurface &S);
+		GeomToStep_MakeElementarySurface(const Geom_ElementarySurface *S);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_ElementarySurface & Value() const;
 
@@ -230,7 +230,7 @@ def __del__(self):
 class GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface(const Handle_Geom_BSplineSurface &Bsplin);
+		GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface(const Geom_BSplineSurface *Bsplin);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface & Value() const;
 
@@ -255,9 +255,9 @@ def __del__(self):
 class GeomToStep_MakeParabola : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeParabola(const Handle_Geom2d_Parabola &C);
+		GeomToStep_MakeParabola(const Geom2d_Parabola *C);
 		%feature("autodoc", "1");
-		GeomToStep_MakeParabola(const Handle_Geom_Parabola &C);
+		GeomToStep_MakeParabola(const Geom_Parabola *C);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Parabola & Value() const;
 
@@ -286,9 +286,9 @@ class GeomToStep_MakeDirection : public GeomToStep_Root {
 		%feature("autodoc", "1");
 		GeomToStep_MakeDirection(const gp_Dir2d &D);
 		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const Handle_Geom_Direction &D);
+		GeomToStep_MakeDirection(const Geom_Direction *D);
 		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const Handle_Geom2d_Direction &D);
+		GeomToStep_MakeDirection(const Geom2d_Direction *D);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Direction & Value() const;
 
@@ -313,7 +313,7 @@ def __del__(self):
 class GeomToStep_MakeSweptSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeSweptSurface(const Handle_Geom_SweptSurface &S);
+		GeomToStep_MakeSweptSurface(const Geom_SweptSurface *S);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_SweptSurface & Value() const;
 
@@ -338,7 +338,7 @@ def __del__(self):
 class GeomToStep_MakeSurfaceOfRevolution : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeSurfaceOfRevolution(const Handle_Geom_SurfaceOfRevolution &RevSurf);
+		GeomToStep_MakeSurfaceOfRevolution(const Geom_SurfaceOfRevolution *RevSurf);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_SurfaceOfRevolution & Value() const;
 
@@ -365,7 +365,7 @@ class GeomToStep_MakePlane : public GeomToStep_Root {
 		%feature("autodoc", "1");
 		GeomToStep_MakePlane(const gp_Pln &P);
 		%feature("autodoc", "1");
-		GeomToStep_MakePlane(const Handle_Geom_Plane &P);
+		GeomToStep_MakePlane(const Geom_Plane *P);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Plane & Value() const;
 
@@ -390,7 +390,7 @@ def __del__(self):
 class GeomToStep_MakeConicalSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeConicalSurface(const Handle_Geom_ConicalSurface &CSurf);
+		GeomToStep_MakeConicalSurface(const Geom_ConicalSurface *CSurf);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_ConicalSurface & Value() const;
 
@@ -415,7 +415,7 @@ def __del__(self):
 class GeomToStep_MakeToroidalSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeToroidalSurface(const Handle_Geom_ToroidalSurface &TorSurf);
+		GeomToStep_MakeToroidalSurface(const Geom_ToroidalSurface *TorSurf);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_ToroidalSurface & Value() const;
 
@@ -440,9 +440,9 @@ def __del__(self):
 class GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve(const Handle_Geom_BSplineCurve &Bsplin);
+		GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve(const Geom_BSplineCurve *Bsplin);
 		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve(const Handle_Geom2d_BSplineCurve &Bsplin);
+		GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve(const Geom2d_BSplineCurve *Bsplin);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve & Value() const;
 
@@ -467,9 +467,9 @@ def __del__(self):
 class GeomToStep_MakeHyperbola : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeHyperbola(const Handle_Geom2d_Hyperbola &C);
+		GeomToStep_MakeHyperbola(const Geom2d_Hyperbola *C);
 		%feature("autodoc", "1");
-		GeomToStep_MakeHyperbola(const Handle_Geom_Hyperbola &C);
+		GeomToStep_MakeHyperbola(const Geom_Hyperbola *C);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Hyperbola & Value() const;
 
@@ -502,7 +502,7 @@ class GeomToStep_MakeAxis2Placement3d : public GeomToStep_Root {
 		%feature("autodoc", "1");
 		GeomToStep_MakeAxis2Placement3d(const gp_Trsf &T);
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement3d(const Handle_Geom_Axis2Placement &A);
+		GeomToStep_MakeAxis2Placement3d(const Geom_Axis2Placement *A);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Axis2Placement3d & Value() const;
 
@@ -527,7 +527,7 @@ def __del__(self):
 class GeomToStep_MakeRectangularTrimmedSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeRectangularTrimmedSurface(const Handle_Geom_RectangularTrimmedSurface &RTSurf);
+		GeomToStep_MakeRectangularTrimmedSurface(const Geom_RectangularTrimmedSurface *RTSurf);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_RectangularTrimmedSurface & Value() const;
 
@@ -552,7 +552,7 @@ def __del__(self):
 class GeomToStep_MakeBSplineSurfaceWithKnots : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineSurfaceWithKnots(const Handle_Geom_BSplineSurface &Bsplin);
+		GeomToStep_MakeBSplineSurfaceWithKnots(const Geom_BSplineSurface *Bsplin);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_BSplineSurfaceWithKnots & Value() const;
 
@@ -608,9 +608,9 @@ class GeomToStep_MakeCartesianPoint : public GeomToStep_Root {
 		%feature("autodoc", "1");
 		GeomToStep_MakeCartesianPoint(const gp_Pnt2d &P);
 		%feature("autodoc", "1");
-		GeomToStep_MakeCartesianPoint(const Handle_Geom_CartesianPoint &P);
+		GeomToStep_MakeCartesianPoint(const Geom_CartesianPoint *P);
 		%feature("autodoc", "1");
-		GeomToStep_MakeCartesianPoint(const Handle_Geom2d_CartesianPoint &P);
+		GeomToStep_MakeCartesianPoint(const Geom2d_CartesianPoint *P);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_CartesianPoint & Value() const;
 
@@ -637,9 +637,9 @@ class GeomToStep_MakeEllipse : public GeomToStep_Root {
 		%feature("autodoc", "1");
 		GeomToStep_MakeEllipse(const gp_Elips &C);
 		%feature("autodoc", "1");
-		GeomToStep_MakeEllipse(const Handle_Geom_Ellipse &C);
+		GeomToStep_MakeEllipse(const Geom_Ellipse *C);
 		%feature("autodoc", "1");
-		GeomToStep_MakeEllipse(const Handle_Geom2d_Ellipse &C);
+		GeomToStep_MakeEllipse(const Geom2d_Ellipse *C);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Ellipse & Value() const;
 
@@ -664,7 +664,7 @@ def __del__(self):
 class GeomToStep_MakeSphericalSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeSphericalSurface(const Handle_Geom_SphericalSurface &CSurf);
+		GeomToStep_MakeSphericalSurface(const Geom_SphericalSurface *CSurf);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_SphericalSurface & Value() const;
 
@@ -689,7 +689,7 @@ def __del__(self):
 class GeomToStep_MakeBoundedSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeBoundedSurface(const Handle_Geom_BoundedSurface &C);
+		GeomToStep_MakeBoundedSurface(const Geom_BoundedSurface *C);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_BoundedSurface & Value() const;
 
@@ -716,9 +716,9 @@ class GeomToStep_MakeCircle : public GeomToStep_Root {
 		%feature("autodoc", "1");
 		GeomToStep_MakeCircle(const gp_Circ &C);
 		%feature("autodoc", "1");
-		GeomToStep_MakeCircle(const Handle_Geom_Circle &C);
+		GeomToStep_MakeCircle(const Geom_Circle *C);
 		%feature("autodoc", "1");
-		GeomToStep_MakeCircle(const Handle_Geom2d_Circle &C);
+		GeomToStep_MakeCircle(const Geom2d_Circle *C);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Circle & Value() const;
 
@@ -743,7 +743,7 @@ def __del__(self):
 class GeomToStep_MakeCylindricalSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeCylindricalSurface(const Handle_Geom_CylindricalSurface &CSurf);
+		GeomToStep_MakeCylindricalSurface(const Geom_CylindricalSurface *CSurf);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_CylindricalSurface & Value() const;
 
@@ -768,9 +768,9 @@ def __del__(self):
 class GeomToStep_MakeBoundedCurve : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeBoundedCurve(const Handle_Geom_BoundedCurve &C);
+		GeomToStep_MakeBoundedCurve(const Geom_BoundedCurve *C);
 		%feature("autodoc", "1");
-		GeomToStep_MakeBoundedCurve(const Handle_Geom2d_BoundedCurve &C);
+		GeomToStep_MakeBoundedCurve(const Geom2d_BoundedCurve *C);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_BoundedCurve & Value() const;
 
@@ -795,9 +795,9 @@ def __del__(self):
 class GeomToStep_MakeBSplineCurveWithKnots : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineCurveWithKnots(const Handle_Geom_BSplineCurve &Bsplin);
+		GeomToStep_MakeBSplineCurveWithKnots(const Geom_BSplineCurve *Bsplin);
 		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineCurveWithKnots(const Handle_Geom2d_BSplineCurve &Bsplin);
+		GeomToStep_MakeBSplineCurveWithKnots(const Geom2d_BSplineCurve *Bsplin);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_BSplineCurveWithKnots & Value() const;
 
@@ -822,9 +822,9 @@ def __del__(self):
 class GeomToStep_MakeConic : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeConic(const Handle_Geom_Conic &C);
+		GeomToStep_MakeConic(const Geom_Conic *C);
 		%feature("autodoc", "1");
-		GeomToStep_MakeConic(const Handle_Geom2d_Conic &C);
+		GeomToStep_MakeConic(const Geom2d_Conic *C);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Conic & Value() const;
 
@@ -849,9 +849,9 @@ def __del__(self):
 class GeomToStep_MakeCurve : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeCurve(const Handle_Geom_Curve &C);
+		GeomToStep_MakeCurve(const Geom_Curve *C);
 		%feature("autodoc", "1");
-		GeomToStep_MakeCurve(const Handle_Geom2d_Curve &C);
+		GeomToStep_MakeCurve(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Curve & Value() const;
 
@@ -880,9 +880,9 @@ class GeomToStep_MakeVector : public GeomToStep_Root {
 		%feature("autodoc", "1");
 		GeomToStep_MakeVector(const gp_Vec2d &V);
 		%feature("autodoc", "1");
-		GeomToStep_MakeVector(const Handle_Geom_Vector &V);
+		GeomToStep_MakeVector(const Geom_Vector *V);
 		%feature("autodoc", "1");
-		GeomToStep_MakeVector(const Handle_Geom2d_Vector &V);
+		GeomToStep_MakeVector(const Geom2d_Vector *V);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Vector & Value() const;
 

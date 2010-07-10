@@ -43,15 +43,15 @@ class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_HArray1OfTriangle();
 		%feature("autodoc", "1");
-		Handle_PPoly_HArray1OfTriangle(const Handle_PPoly_HArray1OfTriangle &aHandle);
+		Handle_PPoly_HArray1OfTriangle(const PPoly_HArray1OfTriangle *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_HArray1OfTriangle(const PPoly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_HArray1OfTriangle & operator=(const Handle_PPoly_HArray1OfTriangle &aHandle);
+		Handle_PPoly_HArray1OfTriangle & operator=(const PPoly_HArray1OfTriangle *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_HArray1OfTriangle & operator=(const PPoly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_HArray1OfTriangle const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PPoly_HArray1OfTriangle const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PPoly_HArray1OfTriangle {
@@ -81,15 +81,15 @@ class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon2D();
 		%feature("autodoc", "1");
-		Handle_PPoly_Polygon2D(const Handle_PPoly_Polygon2D &aHandle);
+		Handle_PPoly_Polygon2D(const PPoly_Polygon2D *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon2D(const PPoly_Polygon2D *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_Polygon2D & operator=(const Handle_PPoly_Polygon2D &aHandle);
+		Handle_PPoly_Polygon2D & operator=(const PPoly_Polygon2D *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon2D & operator=(const PPoly_Polygon2D *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_Polygon2D const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PPoly_Polygon2D const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PPoly_Polygon2D {
@@ -119,15 +119,15 @@ class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon3D();
 		%feature("autodoc", "1");
-		Handle_PPoly_Polygon3D(const Handle_PPoly_Polygon3D &aHandle);
+		Handle_PPoly_Polygon3D(const PPoly_Polygon3D *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon3D(const PPoly_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_Polygon3D & operator=(const Handle_PPoly_Polygon3D &aHandle);
+		Handle_PPoly_Polygon3D & operator=(const PPoly_Polygon3D *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon3D & operator=(const PPoly_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_Polygon3D const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PPoly_Polygon3D const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PPoly_Polygon3D {
@@ -157,15 +157,15 @@ class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_Triangulation();
 		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation(const Handle_PPoly_Triangulation &aHandle);
+		Handle_PPoly_Triangulation(const PPoly_Triangulation *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_Triangulation(const PPoly_Triangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation & operator=(const Handle_PPoly_Triangulation &aHandle);
+		Handle_PPoly_Triangulation & operator=(const PPoly_Triangulation *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_Triangulation & operator=(const PPoly_Triangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PPoly_Triangulation const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PPoly_Triangulation {
@@ -195,15 +195,15 @@ class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandar
 		%feature("autodoc", "1");
 		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle();
 		%feature("autodoc", "1");
-		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle(const Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle &aHandle);
+		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle(const PPoly_VArrayNodeOfFieldOfHArray1OfTriangle *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle(const PPoly_VArrayNodeOfFieldOfHArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle & operator=(const Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle &aHandle);
+		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle & operator=(const PPoly_VArrayNodeOfFieldOfHArray1OfTriangle *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle & operator=(const PPoly_VArrayNodeOfFieldOfHArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
@@ -233,15 +233,15 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation(const Handle_PPoly_PolygonOnTriangulation &aHandle);
+		Handle_PPoly_PolygonOnTriangulation(const PPoly_PolygonOnTriangulation *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_PolygonOnTriangulation(const PPoly_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation & operator=(const Handle_PPoly_PolygonOnTriangulation &aHandle);
+		Handle_PPoly_PolygonOnTriangulation & operator=(const PPoly_PolygonOnTriangulation *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_PolygonOnTriangulation & operator=(const PPoly_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PPoly_PolygonOnTriangulation const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PPoly_PolygonOnTriangulation {
@@ -269,9 +269,9 @@ def __del__(self):
 class PPoly_Triangulation : public Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		PPoly_Triangulation(const Standard_Real Defl, const Handle_PColgp_HArray1OfPnt &Nodes, const Handle_PPoly_HArray1OfTriangle &Triangles);
+		PPoly_Triangulation(const Standard_Real Defl, const PColgp_HArray1OfPnt *Nodes, const PPoly_HArray1OfTriangle *Triangles);
 		%feature("autodoc", "1");
-		PPoly_Triangulation(const Standard_Real Defl, const Handle_PColgp_HArray1OfPnt &Nodes, const Handle_PColgp_HArray1OfPnt2d &UVNodes, const Handle_PPoly_HArray1OfTriangle &Triangles);
+		PPoly_Triangulation(const Standard_Real Defl, const PColgp_HArray1OfPnt *Nodes, const PColgp_HArray1OfPnt2d *UVNodes, const PPoly_HArray1OfTriangle *Triangles);
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
 		%feature("autodoc", "1");
@@ -299,15 +299,15 @@ class PPoly_Triangulation : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt _CSFDB_GetPPoly_TriangulationmyNodes() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_TriangulationmyNodes(const Handle_PColgp_HArray1OfPnt &p);
+		void _CSFDB_SetPPoly_TriangulationmyNodes(const PColgp_HArray1OfPnt *p);
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt2d _CSFDB_GetPPoly_TriangulationmyUVNodes() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_TriangulationmyUVNodes(const Handle_PColgp_HArray1OfPnt2d &p);
+		void _CSFDB_SetPPoly_TriangulationmyUVNodes(const PColgp_HArray1OfPnt2d *p);
 		%feature("autodoc", "1");
 		Handle_PPoly_HArray1OfTriangle _CSFDB_GetPPoly_TriangulationmyTriangles() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_TriangulationmyTriangles(const Handle_PPoly_HArray1OfTriangle &p);
+		void _CSFDB_SetPPoly_TriangulationmyTriangles(const PPoly_HArray1OfTriangle *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -344,9 +344,9 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PPoly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
-		PPoly_PolygonOnTriangulation(const Handle_PColStd_HArray1OfInteger &Nodes, const Standard_Real Defl);
+		PPoly_PolygonOnTriangulation(const PColStd_HArray1OfInteger *Nodes, const Standard_Real Defl);
 		%feature("autodoc", "1");
-		PPoly_PolygonOnTriangulation(const Handle_PColStd_HArray1OfInteger &Nodes, const Standard_Real Defl, const Handle_PColStd_HArray1OfReal &Parameters);
+		PPoly_PolygonOnTriangulation(const PColStd_HArray1OfInteger *Nodes, const Standard_Real Defl, const PColStd_HArray1OfReal *Parameters);
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
 		%feature("autodoc", "1");
@@ -356,13 +356,13 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfInteger Nodes() const;
 		%feature("autodoc", "1");
-		void Nodes(const Handle_PColStd_HArray1OfInteger &Nodes);
+		void Nodes(const PColStd_HArray1OfInteger *Nodes);
 		%feature("autodoc", "1");
 		Standard_Boolean HasParameters() const;
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfReal Parameters() const;
 		%feature("autodoc", "1");
-		void Parameters(const Handle_PColStd_HArray1OfReal &Param);
+		void Parameters(const PColStd_HArray1OfReal *Param);
 		%feature("autodoc", "1");
 		PPoly_PolygonOnTriangulation(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
@@ -372,11 +372,11 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfInteger _CSFDB_GetPPoly_PolygonOnTriangulationmyNodes() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_PolygonOnTriangulationmyNodes(const Handle_PColStd_HArray1OfInteger &p);
+		void _CSFDB_SetPPoly_PolygonOnTriangulationmyNodes(const PColStd_HArray1OfInteger *p);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfReal _CSFDB_GetPPoly_PolygonOnTriangulationmyParameters() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_PolygonOnTriangulationmyParameters(const Handle_PColStd_HArray1OfReal &p);
+		void _CSFDB_SetPPoly_PolygonOnTriangulationmyParameters(const PColStd_HArray1OfReal *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -511,9 +511,9 @@ def __del__(self):
 class PPoly_Polygon3D : public Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		PPoly_Polygon3D(const Handle_PColgp_HArray1OfPnt &Nodes, const Standard_Real Defl);
+		PPoly_Polygon3D(const PColgp_HArray1OfPnt *Nodes, const Standard_Real Defl);
 		%feature("autodoc", "1");
-		PPoly_Polygon3D(const Handle_PColgp_HArray1OfPnt &Nodes, const Handle_PColStd_HArray1OfReal &Parameters, const Standard_Real Defl);
+		PPoly_Polygon3D(const PColgp_HArray1OfPnt *Nodes, const PColStd_HArray1OfReal *Parameters, const Standard_Real Defl);
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
 		%feature("autodoc", "1");
@@ -523,11 +523,11 @@ class PPoly_Polygon3D : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt Nodes() const;
 		%feature("autodoc", "1");
-		void Nodes(const Handle_PColgp_HArray1OfPnt &Nodes);
+		void Nodes(const PColgp_HArray1OfPnt *Nodes);
 		%feature("autodoc", "1");
 		Standard_Boolean HasParameters() const;
 		%feature("autodoc", "1");
-		void Parameters(const Handle_PColStd_HArray1OfReal &Parameters);
+		void Parameters(const PColStd_HArray1OfReal *Parameters);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfReal Parameters() const;
 		%feature("autodoc", "1");
@@ -541,11 +541,11 @@ class PPoly_Polygon3D : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt _CSFDB_GetPPoly_Polygon3DmyNodes() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_Polygon3DmyNodes(const Handle_PColgp_HArray1OfPnt &p);
+		void _CSFDB_SetPPoly_Polygon3DmyNodes(const PColgp_HArray1OfPnt *p);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfReal _CSFDB_GetPPoly_Polygon3DmyParameters() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_Polygon3DmyParameters(const Handle_PColStd_HArray1OfReal &p);
+		void _CSFDB_SetPPoly_Polygon3DmyParameters(const PColStd_HArray1OfReal *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -580,7 +580,7 @@ def __del__(self):
 class PPoly_Polygon2D : public Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		PPoly_Polygon2D(const Handle_PColgp_HArray1OfPnt2d &Nodes, const Standard_Real Defl);
+		PPoly_Polygon2D(const PColgp_HArray1OfPnt2d *Nodes, const Standard_Real Defl);
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
 		%feature("autodoc", "1");
@@ -590,7 +590,7 @@ class PPoly_Polygon2D : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt2d Nodes() const;
 		%feature("autodoc", "1");
-		void Nodes(const Handle_PColgp_HArray1OfPnt2d &Nodes);
+		void Nodes(const PColgp_HArray1OfPnt2d *Nodes);
 		%feature("autodoc", "1");
 		PPoly_Polygon2D();
 		%feature("autodoc", "1");
@@ -602,7 +602,7 @@ class PPoly_Polygon2D : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt2d _CSFDB_GetPPoly_Polygon2DmyNodes() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_Polygon2DmyNodes(const Handle_PColgp_HArray1OfPnt2d &p);
+		void _CSFDB_SetPPoly_Polygon2DmyNodes(const PColgp_HArray1OfPnt2d *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

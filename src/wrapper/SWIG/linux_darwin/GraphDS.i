@@ -55,15 +55,15 @@ class Handle_GraphDS_DataMapNodeOfEntityRoleMap : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_GraphDS_DataMapNodeOfEntityRoleMap();
 		%feature("autodoc", "1");
-		Handle_GraphDS_DataMapNodeOfEntityRoleMap(const Handle_GraphDS_DataMapNodeOfEntityRoleMap &aHandle);
+		Handle_GraphDS_DataMapNodeOfEntityRoleMap(const GraphDS_DataMapNodeOfEntityRoleMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_GraphDS_DataMapNodeOfEntityRoleMap(const GraphDS_DataMapNodeOfEntityRoleMap *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphDS_DataMapNodeOfEntityRoleMap & operator=(const Handle_GraphDS_DataMapNodeOfEntityRoleMap &aHandle);
+		Handle_GraphDS_DataMapNodeOfEntityRoleMap & operator=(const GraphDS_DataMapNodeOfEntityRoleMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_GraphDS_DataMapNodeOfEntityRoleMap & operator=(const GraphDS_DataMapNodeOfEntityRoleMap *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphDS_DataMapNodeOfEntityRoleMap const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GraphDS_DataMapNodeOfEntityRoleMap const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GraphDS_DataMapNodeOfEntityRoleMap {
@@ -101,19 +101,19 @@ class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Transient &K, const GraphDS_EntityRole &I);
+		Standard_Boolean Bind(const Standard_Transient *K, const GraphDS_EntityRole &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
+		Standard_Boolean IsBound(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
+		Standard_Boolean UnBind(const Standard_Transient *K);
 		%feature("autodoc", "1");
-		const GraphDS_EntityRole & Find(const Handle_Standard_Transient &K) const;
+		const GraphDS_EntityRole & Find(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		const GraphDS_EntityRole & operator()(const Handle_Standard_Transient &K) const;
+		const GraphDS_EntityRole & operator()(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		GraphDS_EntityRole & ChangeFind(const Handle_Standard_Transient &K);
+		GraphDS_EntityRole & ChangeFind(const Standard_Transient *K);
 		%feature("autodoc", "1");
-		GraphDS_EntityRole & operator()(const Handle_Standard_Transient &K);
+		GraphDS_EntityRole & operator()(const Standard_Transient *K);
 
 };
 %feature("shadow") GraphDS_EntityRoleMap::~GraphDS_EntityRoleMap %{
@@ -136,7 +136,7 @@ def __del__(self):
 class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GraphDS_DataMapNodeOfEntityRoleMap(const Handle_Standard_Transient &K, const GraphDS_EntityRole &I, const TCollection_MapNodePtr &n);
+		GraphDS_DataMapNodeOfEntityRoleMap(const Standard_Transient *K, const GraphDS_EntityRole &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key() const;
 		%feature("autodoc", "1");

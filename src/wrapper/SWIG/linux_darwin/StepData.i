@@ -49,15 +49,15 @@ class Handle_StepData_EDescr : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_EDescr();
 		%feature("autodoc", "1");
-		Handle_StepData_EDescr(const Handle_StepData_EDescr &aHandle);
+		Handle_StepData_EDescr(const StepData_EDescr *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_EDescr(const StepData_EDescr *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_EDescr & operator=(const Handle_StepData_EDescr &aHandle);
+		Handle_StepData_EDescr & operator=(const StepData_EDescr *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_EDescr & operator=(const StepData_EDescr *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_EDescr const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_EDescr const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_EDescr {
@@ -87,15 +87,15 @@ class Handle_StepData_Described : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_Described();
 		%feature("autodoc", "1");
-		Handle_StepData_Described(const Handle_StepData_Described &aHandle);
+		Handle_StepData_Described(const StepData_Described *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_Described(const StepData_Described *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_Described & operator=(const Handle_StepData_Described &aHandle);
+		Handle_StepData_Described & operator=(const StepData_Described *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_Described & operator=(const StepData_Described *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_Described const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_Described const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_Described {
@@ -125,15 +125,15 @@ class Handle_StepData_Plex : public Handle_StepData_Described {
 		%feature("autodoc", "1");
 		Handle_StepData_Plex();
 		%feature("autodoc", "1");
-		Handle_StepData_Plex(const Handle_StepData_Plex &aHandle);
+		Handle_StepData_Plex(const StepData_Plex *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_Plex(const StepData_Plex *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_Plex & operator=(const Handle_StepData_Plex &aHandle);
+		Handle_StepData_Plex & operator=(const StepData_Plex *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_Plex & operator=(const StepData_Plex *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_Plex const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_Plex const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_Plex {
@@ -163,15 +163,15 @@ class Handle_StepData_ReadWriteModule : public Handle_Interface_ReaderModule {
 		%feature("autodoc", "1");
 		Handle_StepData_ReadWriteModule();
 		%feature("autodoc", "1");
-		Handle_StepData_ReadWriteModule(const Handle_StepData_ReadWriteModule &aHandle);
+		Handle_StepData_ReadWriteModule(const StepData_ReadWriteModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_ReadWriteModule(const StepData_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_ReadWriteModule & operator=(const Handle_StepData_ReadWriteModule &aHandle);
+		Handle_StepData_ReadWriteModule & operator=(const StepData_ReadWriteModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_ReadWriteModule & operator=(const StepData_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_ReadWriteModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_ReadWriteModule {
@@ -201,15 +201,15 @@ class Handle_StepData_DescrReadWrite : public Handle_StepData_ReadWriteModule {
 		%feature("autodoc", "1");
 		Handle_StepData_DescrReadWrite();
 		%feature("autodoc", "1");
-		Handle_StepData_DescrReadWrite(const Handle_StepData_DescrReadWrite &aHandle);
+		Handle_StepData_DescrReadWrite(const StepData_DescrReadWrite *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_DescrReadWrite(const StepData_DescrReadWrite *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_DescrReadWrite & operator=(const Handle_StepData_DescrReadWrite &aHandle);
+		Handle_StepData_DescrReadWrite & operator=(const StepData_DescrReadWrite *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_DescrReadWrite & operator=(const StepData_DescrReadWrite *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_DescrReadWrite const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_DescrReadWrite const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_DescrReadWrite {
@@ -239,15 +239,15 @@ class Handle_StepData_ESDescr : public Handle_StepData_EDescr {
 		%feature("autodoc", "1");
 		Handle_StepData_ESDescr();
 		%feature("autodoc", "1");
-		Handle_StepData_ESDescr(const Handle_StepData_ESDescr &aHandle);
+		Handle_StepData_ESDescr(const StepData_ESDescr *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_ESDescr(const StepData_ESDescr *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_ESDescr & operator=(const Handle_StepData_ESDescr &aHandle);
+		Handle_StepData_ESDescr & operator=(const StepData_ESDescr *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_ESDescr & operator=(const StepData_ESDescr *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_ESDescr const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_ESDescr const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_ESDescr {
@@ -277,15 +277,15 @@ class Handle_StepData_SelectMember : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_SelectMember();
 		%feature("autodoc", "1");
-		Handle_StepData_SelectMember(const Handle_StepData_SelectMember &aHandle);
+		Handle_StepData_SelectMember(const StepData_SelectMember *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectMember(const StepData_SelectMember *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_SelectMember & operator=(const Handle_StepData_SelectMember &aHandle);
+		Handle_StepData_SelectMember & operator=(const StepData_SelectMember *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectMember & operator=(const StepData_SelectMember *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_SelectMember const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_SelectMember const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_SelectMember {
@@ -315,15 +315,15 @@ class Handle_StepData_SelectReal : public Handle_StepData_SelectMember {
 		%feature("autodoc", "1");
 		Handle_StepData_SelectReal();
 		%feature("autodoc", "1");
-		Handle_StepData_SelectReal(const Handle_StepData_SelectReal &aHandle);
+		Handle_StepData_SelectReal(const StepData_SelectReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectReal(const StepData_SelectReal *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_SelectReal & operator=(const Handle_StepData_SelectReal &aHandle);
+		Handle_StepData_SelectReal & operator=(const StepData_SelectReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectReal & operator=(const StepData_SelectReal *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_SelectReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_SelectReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_SelectReal {
@@ -353,15 +353,15 @@ class Handle_StepData_ECDescr : public Handle_StepData_EDescr {
 		%feature("autodoc", "1");
 		Handle_StepData_ECDescr();
 		%feature("autodoc", "1");
-		Handle_StepData_ECDescr(const Handle_StepData_ECDescr &aHandle);
+		Handle_StepData_ECDescr(const StepData_ECDescr *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_ECDescr(const StepData_ECDescr *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_ECDescr & operator=(const Handle_StepData_ECDescr &aHandle);
+		Handle_StepData_ECDescr & operator=(const StepData_ECDescr *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_ECDescr & operator=(const StepData_ECDescr *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_ECDescr const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_ECDescr const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_ECDescr {
@@ -391,15 +391,15 @@ class Handle_StepData_UndefinedEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_UndefinedEntity();
 		%feature("autodoc", "1");
-		Handle_StepData_UndefinedEntity(const Handle_StepData_UndefinedEntity &aHandle);
+		Handle_StepData_UndefinedEntity(const StepData_UndefinedEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_UndefinedEntity(const StepData_UndefinedEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_UndefinedEntity & operator=(const Handle_StepData_UndefinedEntity &aHandle);
+		Handle_StepData_UndefinedEntity & operator=(const StepData_UndefinedEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_UndefinedEntity & operator=(const StepData_UndefinedEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_UndefinedEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_UndefinedEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_UndefinedEntity {
@@ -429,15 +429,15 @@ class Handle_StepData_SelectInt : public Handle_StepData_SelectMember {
 		%feature("autodoc", "1");
 		Handle_StepData_SelectInt();
 		%feature("autodoc", "1");
-		Handle_StepData_SelectInt(const Handle_StepData_SelectInt &aHandle);
+		Handle_StepData_SelectInt(const StepData_SelectInt *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectInt(const StepData_SelectInt *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_SelectInt & operator=(const Handle_StepData_SelectInt &aHandle);
+		Handle_StepData_SelectInt & operator=(const StepData_SelectInt *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectInt & operator=(const StepData_SelectInt *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_SelectInt const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_SelectInt const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_SelectInt {
@@ -467,15 +467,15 @@ class Handle_StepData_PDescr : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_PDescr();
 		%feature("autodoc", "1");
-		Handle_StepData_PDescr(const Handle_StepData_PDescr &aHandle);
+		Handle_StepData_PDescr(const StepData_PDescr *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_PDescr(const StepData_PDescr *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_PDescr & operator=(const Handle_StepData_PDescr &aHandle);
+		Handle_StepData_PDescr & operator=(const StepData_PDescr *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_PDescr & operator=(const StepData_PDescr *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_PDescr const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_PDescr const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_PDescr {
@@ -505,15 +505,15 @@ class Handle_StepData_Protocol : public Handle_Interface_Protocol {
 		%feature("autodoc", "1");
 		Handle_StepData_Protocol();
 		%feature("autodoc", "1");
-		Handle_StepData_Protocol(const Handle_StepData_Protocol &aHandle);
+		Handle_StepData_Protocol(const StepData_Protocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_Protocol(const StepData_Protocol *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_Protocol & operator=(const Handle_StepData_Protocol &aHandle);
+		Handle_StepData_Protocol & operator=(const StepData_Protocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_Protocol & operator=(const StepData_Protocol *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_Protocol const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_Protocol {
@@ -543,15 +543,15 @@ class Handle_StepData_FileProtocol : public Handle_StepData_Protocol {
 		%feature("autodoc", "1");
 		Handle_StepData_FileProtocol();
 		%feature("autodoc", "1");
-		Handle_StepData_FileProtocol(const Handle_StepData_FileProtocol &aHandle);
+		Handle_StepData_FileProtocol(const StepData_FileProtocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_FileProtocol(const StepData_FileProtocol *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_FileProtocol & operator=(const Handle_StepData_FileProtocol &aHandle);
+		Handle_StepData_FileProtocol & operator=(const StepData_FileProtocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_FileProtocol & operator=(const StepData_FileProtocol *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_FileProtocol const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_FileProtocol const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_FileProtocol {
@@ -581,15 +581,15 @@ class Handle_StepData_StepModel : public Handle_Interface_InterfaceModel {
 		%feature("autodoc", "1");
 		Handle_StepData_StepModel();
 		%feature("autodoc", "1");
-		Handle_StepData_StepModel(const Handle_StepData_StepModel &aHandle);
+		Handle_StepData_StepModel(const StepData_StepModel *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_StepModel(const StepData_StepModel *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_StepModel & operator=(const Handle_StepData_StepModel &aHandle);
+		Handle_StepData_StepModel & operator=(const StepData_StepModel *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_StepModel & operator=(const StepData_StepModel *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_StepModel const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_StepModel const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_StepModel {
@@ -619,15 +619,15 @@ class Handle_StepData_StepReaderData : public Handle_Interface_FileReaderData {
 		%feature("autodoc", "1");
 		Handle_StepData_StepReaderData();
 		%feature("autodoc", "1");
-		Handle_StepData_StepReaderData(const Handle_StepData_StepReaderData &aHandle);
+		Handle_StepData_StepReaderData(const StepData_StepReaderData *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_StepReaderData(const StepData_StepReaderData *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_StepReaderData & operator=(const Handle_StepData_StepReaderData &aHandle);
+		Handle_StepData_StepReaderData & operator=(const StepData_StepReaderData *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_StepReaderData & operator=(const StepData_StepReaderData *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_StepReaderData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_StepReaderData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_StepReaderData {
@@ -657,15 +657,15 @@ class Handle_StepData_DescrProtocol : public Handle_StepData_FileProtocol {
 		%feature("autodoc", "1");
 		Handle_StepData_DescrProtocol();
 		%feature("autodoc", "1");
-		Handle_StepData_DescrProtocol(const Handle_StepData_DescrProtocol &aHandle);
+		Handle_StepData_DescrProtocol(const StepData_DescrProtocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_DescrProtocol(const StepData_DescrProtocol *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_DescrProtocol & operator=(const Handle_StepData_DescrProtocol &aHandle);
+		Handle_StepData_DescrProtocol & operator=(const StepData_DescrProtocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_DescrProtocol & operator=(const StepData_DescrProtocol *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_DescrProtocol const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_DescrProtocol const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_DescrProtocol {
@@ -695,15 +695,15 @@ class Handle_StepData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_StepData_GlobalNodeOfWriterLib();
 		%feature("autodoc", "1");
-		Handle_StepData_GlobalNodeOfWriterLib(const Handle_StepData_GlobalNodeOfWriterLib &aHandle);
+		Handle_StepData_GlobalNodeOfWriterLib(const StepData_GlobalNodeOfWriterLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_GlobalNodeOfWriterLib(const StepData_GlobalNodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_GlobalNodeOfWriterLib & operator=(const Handle_StepData_GlobalNodeOfWriterLib &aHandle);
+		Handle_StepData_GlobalNodeOfWriterLib & operator=(const StepData_GlobalNodeOfWriterLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_GlobalNodeOfWriterLib & operator=(const StepData_GlobalNodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_GlobalNodeOfWriterLib const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_GlobalNodeOfWriterLib const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_GlobalNodeOfWriterLib {
@@ -733,15 +733,15 @@ class Handle_StepData_SelectNamed : public Handle_StepData_SelectMember {
 		%feature("autodoc", "1");
 		Handle_StepData_SelectNamed();
 		%feature("autodoc", "1");
-		Handle_StepData_SelectNamed(const Handle_StepData_SelectNamed &aHandle);
+		Handle_StepData_SelectNamed(const StepData_SelectNamed *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectNamed(const StepData_SelectNamed *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_SelectNamed & operator=(const Handle_StepData_SelectNamed &aHandle);
+		Handle_StepData_SelectNamed & operator=(const StepData_SelectNamed *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectNamed & operator=(const StepData_SelectNamed *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_SelectNamed const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_SelectNamed const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_SelectNamed {
@@ -771,15 +771,15 @@ class Handle_StepData_SelectArrReal : public Handle_StepData_SelectNamed {
 		%feature("autodoc", "1");
 		Handle_StepData_SelectArrReal();
 		%feature("autodoc", "1");
-		Handle_StepData_SelectArrReal(const Handle_StepData_SelectArrReal &aHandle);
+		Handle_StepData_SelectArrReal(const StepData_SelectArrReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectArrReal(const StepData_SelectArrReal *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_SelectArrReal & operator=(const Handle_StepData_SelectArrReal &aHandle);
+		Handle_StepData_SelectArrReal & operator=(const StepData_SelectArrReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectArrReal & operator=(const StepData_SelectArrReal *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_SelectArrReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_SelectArrReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_SelectArrReal {
@@ -809,15 +809,15 @@ class Handle_StepData_HArray1OfField : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_HArray1OfField();
 		%feature("autodoc", "1");
-		Handle_StepData_HArray1OfField(const Handle_StepData_HArray1OfField &aHandle);
+		Handle_StepData_HArray1OfField(const StepData_HArray1OfField *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_HArray1OfField(const StepData_HArray1OfField *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_HArray1OfField & operator=(const Handle_StepData_HArray1OfField &aHandle);
+		Handle_StepData_HArray1OfField & operator=(const StepData_HArray1OfField *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_HArray1OfField & operator=(const StepData_HArray1OfField *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_HArray1OfField const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_HArray1OfField const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_HArray1OfField {
@@ -847,15 +847,15 @@ class Handle_StepData_FileRecognizer : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_StepData_FileRecognizer();
 		%feature("autodoc", "1");
-		Handle_StepData_FileRecognizer(const Handle_StepData_FileRecognizer &aHandle);
+		Handle_StepData_FileRecognizer(const StepData_FileRecognizer *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_FileRecognizer(const StepData_FileRecognizer *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_FileRecognizer & operator=(const Handle_StepData_FileRecognizer &aHandle);
+		Handle_StepData_FileRecognizer & operator=(const StepData_FileRecognizer *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_FileRecognizer & operator=(const StepData_FileRecognizer *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_FileRecognizer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_FileRecognizer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_FileRecognizer {
@@ -885,15 +885,15 @@ class Handle_StepData_NodeOfWriterLib : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_NodeOfWriterLib();
 		%feature("autodoc", "1");
-		Handle_StepData_NodeOfWriterLib(const Handle_StepData_NodeOfWriterLib &aHandle);
+		Handle_StepData_NodeOfWriterLib(const StepData_NodeOfWriterLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_NodeOfWriterLib(const StepData_NodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_NodeOfWriterLib & operator=(const Handle_StepData_NodeOfWriterLib &aHandle);
+		Handle_StepData_NodeOfWriterLib & operator=(const StepData_NodeOfWriterLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_NodeOfWriterLib & operator=(const StepData_NodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_NodeOfWriterLib const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_NodeOfWriterLib const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_NodeOfWriterLib {
@@ -923,15 +923,15 @@ class Handle_StepData_FreeFormEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_FreeFormEntity();
 		%feature("autodoc", "1");
-		Handle_StepData_FreeFormEntity(const Handle_StepData_FreeFormEntity &aHandle);
+		Handle_StepData_FreeFormEntity(const StepData_FreeFormEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_FreeFormEntity(const StepData_FreeFormEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_FreeFormEntity & operator=(const Handle_StepData_FreeFormEntity &aHandle);
+		Handle_StepData_FreeFormEntity & operator=(const StepData_FreeFormEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_FreeFormEntity & operator=(const StepData_FreeFormEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_FreeFormEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_FreeFormEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_FreeFormEntity {
@@ -961,15 +961,15 @@ class Handle_StepData_Simple : public Handle_StepData_Described {
 		%feature("autodoc", "1");
 		Handle_StepData_Simple();
 		%feature("autodoc", "1");
-		Handle_StepData_Simple(const Handle_StepData_Simple &aHandle);
+		Handle_StepData_Simple(const StepData_Simple *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_Simple(const StepData_Simple *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_Simple & operator=(const Handle_StepData_Simple &aHandle);
+		Handle_StepData_Simple & operator=(const StepData_Simple *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_Simple & operator=(const StepData_Simple *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_Simple const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_Simple const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_Simple {
@@ -999,15 +999,15 @@ class Handle_StepData_GeneralModule : public Handle_Interface_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_StepData_GeneralModule();
 		%feature("autodoc", "1");
-		Handle_StepData_GeneralModule(const Handle_StepData_GeneralModule &aHandle);
+		Handle_StepData_GeneralModule(const StepData_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_GeneralModule(const StepData_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_GeneralModule & operator=(const Handle_StepData_GeneralModule &aHandle);
+		Handle_StepData_GeneralModule & operator=(const StepData_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_GeneralModule & operator=(const StepData_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_GeneralModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_GeneralModule {
@@ -1037,15 +1037,15 @@ class Handle_StepData_DescrGeneral : public Handle_StepData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_StepData_DescrGeneral();
 		%feature("autodoc", "1");
-		Handle_StepData_DescrGeneral(const Handle_StepData_DescrGeneral &aHandle);
+		Handle_StepData_DescrGeneral(const StepData_DescrGeneral *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_DescrGeneral(const StepData_DescrGeneral *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_DescrGeneral & operator=(const Handle_StepData_DescrGeneral &aHandle);
+		Handle_StepData_DescrGeneral & operator=(const StepData_DescrGeneral *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_DescrGeneral & operator=(const StepData_DescrGeneral *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_DescrGeneral const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_DescrGeneral const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_DescrGeneral {
@@ -1075,15 +1075,15 @@ class Handle_StepData_DefaultGeneral : public Handle_StepData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_StepData_DefaultGeneral();
 		%feature("autodoc", "1");
-		Handle_StepData_DefaultGeneral(const Handle_StepData_DefaultGeneral &aHandle);
+		Handle_StepData_DefaultGeneral(const StepData_DefaultGeneral *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_DefaultGeneral(const StepData_DefaultGeneral *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_DefaultGeneral & operator=(const Handle_StepData_DefaultGeneral &aHandle);
+		Handle_StepData_DefaultGeneral & operator=(const StepData_DefaultGeneral *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_DefaultGeneral & operator=(const StepData_DefaultGeneral *anItem);
 		%feature("autodoc", "1");
-		Handle_StepData_DefaultGeneral const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepData_DefaultGeneral const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepData_DefaultGeneral {
@@ -1113,7 +1113,7 @@ class StepData_NodeOfWriterLib : public MMgt_TShared {
 		%feature("autodoc", "1");
 		StepData_NodeOfWriterLib();
 		%feature("autodoc", "1");
-		void AddNode(const Handle_StepData_GlobalNodeOfWriterLib &anode);
+		void AddNode(const StepData_GlobalNodeOfWriterLib *anode);
 		%feature("autodoc", "1");
 		const Handle_StepData_ReadWriteModule & Module() const;
 		%feature("autodoc", "1");
@@ -1154,7 +1154,7 @@ def __del__(self):
 class StepData_HeaderTool {
 	public:
 		%feature("autodoc", "1");
-		StepData_HeaderTool(const Handle_StepData_StepReaderData &data);
+		StepData_HeaderTool(const StepData_StepReaderData *data);
 		%feature("autodoc", "1");
 		StepData_HeaderTool(const TColStd_SequenceOfAsciiString &names);
 		%feature("autodoc", "1");
@@ -1164,7 +1164,7 @@ class StepData_HeaderTool {
 		%feature("autodoc", "1");
 		Handle_StepData_Protocol NamedProtocol(const TCollection_AsciiString &name) const;
 		%feature("autodoc", "1");
-		void Build(const Handle_StepData_FileProtocol &protocol);
+		void Build(const StepData_FileProtocol *protocol);
 		%feature("autodoc", "1");
 		Handle_StepData_Protocol Protocol();
 		%feature("autodoc", "1");
@@ -1203,11 +1203,11 @@ def __del__(self):
 class StepData_SelectType {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		virtual		Standard_Integer CaseNum(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Matches(const Handle_Standard_Transient &ent) const;
+		Standard_Boolean Matches(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		void SetValue(const Handle_Standard_Transient &ent);
+		void SetValue(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void Nullify();
 		%feature("autodoc", "1");
@@ -1223,7 +1223,7 @@ class StepData_SelectType {
 		%feature("autodoc", "1");
 		virtual		Handle_StepData_SelectMember NewMember() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseMem(const Handle_StepData_SelectMember &ent) const;
+		virtual		Standard_Integer CaseMem(const StepData_SelectMember *ent) const;
 		%feature("autodoc", "1");
 		Standard_Integer CaseMember() const;
 		%feature("autodoc", "1");
@@ -1361,33 +1361,33 @@ class StepData_StepModel : public Interface_InterfaceModel {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Entity(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		virtual		void GetFromAnother(const Handle_Interface_InterfaceModel &other);
+		virtual		void GetFromAnother(const Interface_InterfaceModel *other);
 		%feature("autodoc", "1");
 		virtual		Handle_Interface_InterfaceModel NewEmptyModel() const;
 		%feature("autodoc", "1");
 		Interface_EntityIterator Header() const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasHeaderEntity(const Handle_Standard_Type &atype) const;
+		Standard_Boolean HasHeaderEntity(const Standard_Type *atype) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Transient HeaderEntity(const Handle_Standard_Type &atype) const;
+		Handle_Standard_Transient HeaderEntity(const Standard_Type *atype) const;
 		%feature("autodoc", "1");
 		virtual		void ClearHeader();
 		%feature("autodoc", "1");
-		void AddHeaderEntity(const Handle_Standard_Transient &ent);
+		void AddHeaderEntity(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		virtual		void VerifyCheck(Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		virtual		void DumpHeader(const Handle_Message_Messenger &S, const Standard_Integer level=0) const;
+		virtual		void DumpHeader(const Message_Messenger *S, const Standard_Integer level=0) const;
 		%feature("autodoc", "1");
 		virtual		void ClearLabels();
 		%feature("autodoc", "1");
-		void SetIdentLabel(const Handle_Standard_Transient &ent, const Standard_Integer ident);
+		void SetIdentLabel(const Standard_Transient *ent, const Standard_Integer ident);
 		%feature("autodoc", "1");
-		Standard_Integer IdentLabel(const Handle_Standard_Transient &ent) const;
+		Standard_Integer IdentLabel(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		virtual		void PrintLabel(const Handle_Standard_Transient &ent, const Handle_Message_Messenger &S) const;
+		virtual		void PrintLabel(const Standard_Transient *ent, const Message_Messenger *S) const;
 		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString StringLabel(const Handle_Standard_Transient &ent) const;
+		virtual		Handle_TCollection_HAsciiString StringLabel(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1446,9 +1446,9 @@ class StepData_Field {
 		%feature("autodoc", "1");
 		void SetEnum(const Standard_Integer val=-0x000000001, const char * text="");
 		%feature("autodoc", "1");
-		void SetSelectMember(const Handle_StepData_SelectMember &val);
+		void SetSelectMember(const StepData_SelectMember *val);
 		%feature("autodoc", "1");
-		void SetEntity(const Handle_Standard_Transient &val);
+		void SetEntity(const Standard_Transient *val);
 		%feature("autodoc", "1");
 		void SetEntity();
 		%feature("autodoc", "1");
@@ -1456,7 +1456,7 @@ class StepData_Field {
 		%feature("autodoc", "1");
 		void SetList2(const Standard_Integer siz1, const Standard_Integer siz2, const Standard_Integer f1=1, const Standard_Integer f2=1);
 		%feature("autodoc", "1");
-		void Set(const Handle_Standard_Transient &val);
+		void Set(const Standard_Transient *val);
 		%feature("autodoc", "1");
 		void ClearItem(const Standard_Integer num);
 		%feature("autodoc", "1");
@@ -1474,7 +1474,7 @@ class StepData_Field {
 		%feature("autodoc", "1");
 		void SetString(const Standard_Integer num, const char * val);
 		%feature("autodoc", "1");
-		void SetEntity(const Standard_Integer num, const Handle_Standard_Transient &val);
+		void SetEntity(const Standard_Integer num, const Standard_Transient *val);
 		%feature("autodoc", "1");
 		Standard_Boolean IsSet(const Standard_Integer n1=1, const Standard_Integer n2=1) const;
 		%feature("autodoc", "1");
@@ -1533,8 +1533,6 @@ class StepData_FileRecognizer : public Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Result() const;
 		%feature("autodoc", "1");
-		void Add(const Handle_StepData_FileRecognizer &reco);
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1576,8 +1574,6 @@ class StepData_PDescr : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetSelect();
 		%feature("autodoc", "1");
-		void AddMember(const Handle_StepData_PDescr &member);
-		%feature("autodoc", "1");
 		void SetMemberName(const char * memname);
 		%feature("autodoc", "1");
 		void SetInteger();
@@ -1594,15 +1590,13 @@ class StepData_PDescr : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void AddEnumDef(const char * enumdef);
 		%feature("autodoc", "1");
-		void SetType(const Handle_Standard_Type &atype);
+		void SetType(const Standard_Type *atype);
 		%feature("autodoc", "1");
 		void SetDescr(const char * dscnam);
 		%feature("autodoc", "1");
 		void AddArity(const Standard_Integer arity=1);
 		%feature("autodoc", "1");
 		void SetArity(const Standard_Integer arity=1);
-		%feature("autodoc", "1");
-		void SetFrom(const Handle_StepData_PDescr &other);
 		%feature("autodoc", "1");
 		void SetOptional(const Standard_Boolean opt=1);
 		%feature("autodoc", "1");
@@ -1634,11 +1628,11 @@ class StepData_PDescr : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEntity() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsType(const Handle_Standard_Type &atype) const;
+		Standard_Boolean IsType(const Standard_Type *atype) const;
 		%feature("autodoc", "1");
 		Handle_Standard_Type Type() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDescr(const Handle_StepData_EDescr &descr) const;
+		Standard_Boolean IsDescr(const StepData_EDescr *descr) const;
 		%feature("autodoc", "1");
 		char * DescrName() const;
 		%feature("autodoc", "1");
@@ -1691,7 +1685,7 @@ def __del__(self):
 class StepData_ReadWriteModule : public Interface_ReaderModule {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Interface_FileReaderData &data, const Standard_Integer num) const;
+		virtual		Standard_Integer CaseNum(const Interface_FileReaderData *data, const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer CaseStep(const TCollection_AsciiString &atype) const;
 		%feature("autodoc", "1");
@@ -1705,11 +1699,11 @@ class StepData_ReadWriteModule : public Interface_ReaderModule {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean ComplexType(const Standard_Integer CN, TColStd_SequenceOfAsciiString & types) const;
 		%feature("autodoc", "1");
-		virtual		void Read(const Standard_Integer CN, const Handle_Interface_FileReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
+		virtual		void Read(const Standard_Integer CN, const Interface_FileReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		virtual		void ReadStep(const Standard_Integer CN, const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
+		virtual		void ReadStep(const Standard_Integer CN, const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Handle_Standard_Transient &ent) const;
+		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1744,7 +1738,7 @@ def __del__(self):
 class StepData_DescrReadWrite : public StepData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		StepData_DescrReadWrite(const Handle_StepData_Protocol &proto);
+		StepData_DescrReadWrite(const StepData_Protocol *proto);
 
 };
 %extend StepData_DescrReadWrite {
@@ -1779,7 +1773,7 @@ class StepData_GlobalNodeOfWriterLib : public Standard_Transient {
 		%feature("autodoc", "1");
 		StepData_GlobalNodeOfWriterLib();
 		%feature("autodoc", "1");
-		void Add(const Handle_StepData_ReadWriteModule &amodule, const Handle_StepData_Protocol &aprotocol);
+		void Add(const StepData_ReadWriteModule *amodule, const StepData_Protocol *aprotocol);
 		%feature("autodoc", "1");
 		const Handle_StepData_ReadWriteModule & Module() const;
 		%feature("autodoc", "1");
@@ -1863,11 +1857,11 @@ def __del__(self):
 class StepData_GeneralModule : public Interface_GeneralModule {
 	public:
 		%feature("autodoc", "1");
-		virtual		void FillSharedCase(const Standard_Integer casenum, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void FillSharedCase(const Standard_Integer casenum, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void CheckCase(const Standard_Integer casenum, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void CheckCase(const Standard_Integer casenum, const Standard_Transient *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		virtual		void CopyCase(const Standard_Integer casenum, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
+		virtual		void CopyCase(const Standard_Integer casenum, const Standard_Transient *entfrom, const Standard_Transient *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1930,15 +1924,15 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 
 		Standard_Boolean ReadSubList(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue, const Standard_Boolean optional=0, const Standard_Integer lenmin=0, const Standard_Integer lenmax=0) const;
 		%feature("autodoc", "1");
-		Standard_Integer ReadSub(const Standard_Integer numsub, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, Handle_Standard_Transient & val) const;
+		Standard_Integer ReadSub(const Standard_Integer numsub, const char * mess, Handle_Interface_Check & ach, const StepData_PDescr *descr, Handle_Standard_Transient & val) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReadMember(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Handle_StepData_SelectMember & val) const;
 		%feature("autodoc", "1");
-		Standard_Boolean ReadField(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, StepData_Field & fild) const;
+		Standard_Boolean ReadField(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const StepData_PDescr *descr, StepData_Field & fild) const;
 		%feature("autodoc", "1");
-		Standard_Boolean ReadList(const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepData_ESDescr &descr, StepData_FieldList & list) const;
+		Standard_Boolean ReadList(const Standard_Integer num, Handle_Interface_Check & ach, const StepData_ESDescr *descr, StepData_FieldList & list) const;
 		%feature("autodoc", "1");
-		Standard_Boolean ReadAny(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, Handle_Standard_Transient & val) const;
+		Standard_Boolean ReadAny(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const StepData_PDescr *descr, Handle_Standard_Transient & val) const;
 		%feature("autodoc","ReadXY(Standard_Integer num, Standard_Integer nump, Standard_CString mess) -> [Standard_Real, Standard_Real]");
 
 		Standard_Boolean ReadXY(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -1949,7 +1943,7 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 
 		Standard_Boolean ReadReal(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_Standard_Type &atype, Handle_Standard_Transient & ent) const;
+		Standard_Boolean ReadEntity(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Standard_Type *atype, Handle_Standard_Transient & ent) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReadEntity(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, StepData_SelectType & sel) const;
 		%feature("autodoc","ReadInteger(Standard_Integer num, Standard_Integer nump, Standard_CString mess) -> Standard_Integer");
@@ -2257,9 +2251,9 @@ def __del__(self):
 class StepData_Plex : public StepData_Described {
 	public:
 		%feature("autodoc", "1");
-		StepData_Plex(const Handle_StepData_ECDescr &descr);
+		StepData_Plex(const StepData_ECDescr *descr);
 		%feature("autodoc", "1");
-		void Add(const Handle_StepData_Simple &member);
+		void Add(const StepData_Simple *member);
 		%feature("autodoc", "1");
 		Handle_StepData_ECDescr ECDescr() const;
 		%feature("autodoc", "1");
@@ -2300,13 +2294,13 @@ def __del__(self):
 class StepData_StepDumper {
 	public:
 		%feature("autodoc", "1");
-		StepData_StepDumper(const Handle_StepData_StepModel &amodel, const Handle_StepData_Protocol &protocol, const Standard_Integer mode=0);
+		StepData_StepDumper(const StepData_StepModel *amodel, const StepData_Protocol *protocol, const Standard_Integer mode=0);
 		%feature("autodoc", "1");
 		StepData_StepWriter & StepWriter();
 		%feature("autodoc", "1");
-		Standard_Boolean Dump(const Handle_Message_Messenger &S, const Handle_Standard_Transient &ent, const Standard_Integer level);
+		Standard_Boolean Dump(const Message_Messenger *S, const Standard_Transient *ent, const Standard_Integer level);
 		%feature("autodoc", "1");
-		Standard_Boolean Dump(const Handle_Message_Messenger &S, const Standard_Integer num, const Standard_Integer level);
+		Standard_Boolean Dump(const Message_Messenger *S, const Standard_Integer num, const Standard_Integer level);
 
 };
 %feature("shadow") StepData_StepDumper::~StepData_StepDumper %{
@@ -2384,13 +2378,13 @@ def __del__(self):
 class StepData_DescrGeneral : public StepData_GeneralModule {
 	public:
 		%feature("autodoc", "1");
-		StepData_DescrGeneral(const Handle_StepData_Protocol &proto);
+		StepData_DescrGeneral(const StepData_Protocol *proto);
 		%feature("autodoc", "1");
-		virtual		void FillSharedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void FillSharedCase(const Standard_Integer CN, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void CheckCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void CheckCase(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		virtual		void CopyCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
+		virtual		void CopyCase(const Standard_Integer CN, const Standard_Transient *entfrom, const Standard_Transient *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & ent) const;
 		%feature("autodoc", "1");
@@ -2431,7 +2425,7 @@ class StepData {
 		%feature("autodoc", "1");
 		Handle_StepData_Protocol HeaderProtocol();
 		%feature("autodoc", "1");
-		void AddHeaderProtocol(const Handle_StepData_Protocol &headerproto);
+		void AddHeaderProtocol(const StepData_Protocol *headerproto);
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -2501,11 +2495,7 @@ class StepData_ESDescr : public StepData_EDescr {
 		%feature("autodoc", "1");
 		void SetNbFields(const Standard_Integer nb);
 		%feature("autodoc", "1");
-		void SetField(const Standard_Integer num, const char * name, const Handle_StepData_PDescr &descr);
-		%feature("autodoc", "1");
-		void SetBase(const Handle_StepData_ESDescr &base);
-		%feature("autodoc", "1");
-		void SetSuper(const Handle_StepData_ESDescr &super);
+		void SetField(const Standard_Integer num, const char * name, const StepData_PDescr *descr);
 		%feature("autodoc", "1");
 		char * TypeName() const;
 		%feature("autodoc", "1");
@@ -2514,8 +2504,6 @@ class StepData_ESDescr : public StepData_EDescr {
 		Handle_StepData_ESDescr Base() const;
 		%feature("autodoc", "1");
 		Handle_StepData_ESDescr Super() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSub(const Handle_StepData_ESDescr &other) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbFields() const;
 		%feature("autodoc", "1");
@@ -2646,7 +2634,7 @@ class StepData_SelectArrReal : public StepData_SelectNamed {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal ArrReal() const;
 		%feature("autodoc", "1");
-		void SetArrReal(const Handle_TColStd_HArray1OfReal &arr);
+		void SetArrReal(const TColStd_HArray1OfReal *arr);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2681,7 +2669,7 @@ def __del__(self):
 class StepData_Simple : public StepData_Described {
 	public:
 		%feature("autodoc", "1");
-		StepData_Simple(const Handle_StepData_ESDescr &descr);
+		StepData_Simple(const StepData_ESDescr *descr);
 		%feature("autodoc", "1");
 		Handle_StepData_ESDescr ESDescr() const;
 		%feature("autodoc", "1");
@@ -2748,13 +2736,13 @@ class StepData_FileProtocol : public StepData_Protocol {
 		%feature("autodoc", "1");
 		StepData_FileProtocol();
 		%feature("autodoc", "1");
-		void Add(const Handle_StepData_Protocol &protocol);
+		void Add(const StepData_Protocol *protocol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbResources() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Interface_Protocol Resource(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer TypeNumber(const Handle_Standard_Type &atype) const;
+		virtual		Standard_Integer TypeNumber(const Standard_Type *atype) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean GlobalCheck(const Interface_Graph &G, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
@@ -2793,20 +2781,20 @@ def __del__(self):
 class StepData_WriterLib {
 	public:
 		%feature("autodoc", "1");
-		void SetGlobal(const Handle_StepData_ReadWriteModule &amodule, const Handle_StepData_Protocol &aprotocol);
+		void SetGlobal(const StepData_ReadWriteModule *amodule, const StepData_Protocol *aprotocol);
 		%feature("autodoc", "1");
-		StepData_WriterLib(const Handle_StepData_Protocol &aprotocol);
+		StepData_WriterLib(const StepData_Protocol *aprotocol);
 		%feature("autodoc", "1");
 		StepData_WriterLib();
 		%feature("autodoc", "1");
-		void AddProtocol(const Handle_Standard_Transient &aprotocol);
+		void AddProtocol(const Standard_Transient *aprotocol);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc","Select(const obj) -> Standard_Integer");
 
-		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_StepData_ReadWriteModule & module, Standard_Integer &OutValue) const;
+		Standard_Boolean Select(const Standard_Transient *obj, Handle_StepData_ReadWriteModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -2842,8 +2830,6 @@ class StepData_FreeFormEntity : public MMgt_TShared {
 		void SetStepType(const char * typenam);
 		%feature("autodoc", "1");
 		char * StepType() const;
-		%feature("autodoc", "1");
-		void SetNext(const Handle_StepData_FreeFormEntity &next, const Standard_Boolean last=1);
 		%feature("autodoc", "1");
 		Handle_StepData_FreeFormEntity Next() const;
 		%feature("autodoc", "1");
@@ -2896,7 +2882,7 @@ def __del__(self):
 class StepData_StepWriter {
 	public:
 		%feature("autodoc", "1");
-		StepData_StepWriter(const Handle_StepData_StepModel &amodel);
+		StepData_StepWriter(const StepData_StepModel *amodel);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetLabelMode() {
@@ -2928,7 +2914,7 @@ class StepData_StepWriter {
 		%feature("autodoc", "1");
 		Standard_Boolean IsInScope(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void SendModel(const Handle_StepData_Protocol &protocol, const Standard_Boolean headeronly=0);
+		void SendModel(const StepData_Protocol *protocol, const Standard_Boolean headeronly=0);
 		%feature("autodoc", "1");
 		void SendHeader();
 		%feature("autodoc", "1");
@@ -2954,7 +2940,7 @@ class StepData_StepWriter {
 		%feature("autodoc", "1");
 		void Comment(const Standard_Boolean mode);
 		%feature("autodoc", "1");
-		void SendComment(const Handle_TCollection_HAsciiString &text);
+		void SendComment(const TCollection_HAsciiString *text);
 		%feature("autodoc", "1");
 		void SendComment(const char * text);
 		%feature("autodoc", "1");
@@ -2964,11 +2950,11 @@ class StepData_StepWriter {
 		%feature("autodoc", "1");
 		void EndComplex();
 		%feature("autodoc", "1");
-		void SendField(const StepData_Field &fild, const Handle_StepData_PDescr &descr);
+		void SendField(const StepData_Field &fild, const StepData_PDescr *descr);
 		%feature("autodoc", "1");
-		void SendSelect(const Handle_StepData_SelectMember &sm, const Handle_StepData_PDescr &descr);
+		void SendSelect(const StepData_SelectMember *sm, const StepData_PDescr *descr);
 		%feature("autodoc", "1");
-		void SendList(const StepData_FieldList &list, const Handle_StepData_ESDescr &descr);
+		void SendList(const StepData_FieldList &list, const StepData_ESDescr *descr);
 		%feature("autodoc", "1");
 		void OpenSub();
 		%feature("autodoc", "1");
@@ -2984,7 +2970,7 @@ class StepData_StepWriter {
 		%feature("autodoc", "1");
 		void Send(const TCollection_AsciiString &val);
 		%feature("autodoc", "1");
-		void Send(const Handle_Standard_Transient &val);
+		void Send(const Standard_Transient *val);
 		%feature("autodoc", "1");
 		void SendBoolean(const Standard_Boolean val);
 		%feature("autodoc", "1");
@@ -2998,7 +2984,7 @@ class StepData_StepWriter {
 		%feature("autodoc", "1");
 		void SendEnum(const char * val);
 		%feature("autodoc", "1");
-		void SendArrReal(const Handle_TColStd_HArray1OfReal &anArr);
+		void SendArrReal(const TColStd_HArray1OfReal *anArr);
 		%feature("autodoc", "1");
 		void SendUndef();
 		%feature("autodoc", "1");
@@ -3043,7 +3029,7 @@ class StepData_ECDescr : public StepData_EDescr {
 		%feature("autodoc", "1");
 		StepData_ECDescr();
 		%feature("autodoc", "1");
-		void Add(const Handle_StepData_ESDescr &member);
+		void Add(const StepData_ESDescr *member);
 		%feature("autodoc", "1");
 		Standard_Integer NbMembers() const;
 		%feature("autodoc", "1");
@@ -3145,11 +3131,9 @@ class StepData_UndefinedEntity : public MMgt_TShared {
 		%feature("autodoc", "1");
 		char * StepType() const;
 		%feature("autodoc", "1");
-		void ReadRecord(const Handle_StepData_StepReaderData &SR, const Standard_Integer num, Handle_Interface_Check & ach);
+		void ReadRecord(const StepData_StepReaderData *SR, const Standard_Integer num, Handle_Interface_Check & ach);
 		%feature("autodoc", "1");
 		void WriteParams(StepData_StepWriter & SW) const;
-		%feature("autodoc", "1");
-		void GetFromAnother(const Handle_StepData_UndefinedEntity &other, Interface_CopyTool & TC);
 		%feature("autodoc", "1");
 		void FillShared(Interface_EntityIterator & list) const;
 		%feature("autodoc", "1");
@@ -3186,21 +3170,21 @@ def __del__(self):
 class StepData_StepReaderTool : public Interface_FileReaderTool {
 	public:
 		%feature("autodoc", "1");
-		StepData_StepReaderTool(const Handle_StepData_StepReaderData &reader, const Handle_StepData_Protocol &protocol);
+		StepData_StepReaderTool(const StepData_StepReaderData *reader, const StepData_Protocol *protocol);
 		%feature("autodoc", "1");
 		void Prepare(const Standard_Boolean optimize=1);
 		%feature("autodoc", "1");
-		void Prepare(const Handle_StepData_FileRecognizer &reco, const Standard_Boolean optimize=1);
+		void Prepare(const StepData_FileRecognizer *reco, const Standard_Boolean optimize=1);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Recognize(const Standard_Integer num, Handle_Interface_Check & ach, Handle_Standard_Transient & ent);
 		%feature("autodoc", "1");
-		void PrepareHeader(const Handle_StepData_FileRecognizer &reco);
+		void PrepareHeader(const StepData_FileRecognizer *reco);
 		%feature("autodoc", "1");
-		virtual		void BeginRead(const Handle_Interface_InterfaceModel &amodel);
+		virtual		void BeginRead(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Handle_Standard_Transient &anent, Handle_Interface_Check & acheck);
+		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Standard_Transient *anent, Handle_Interface_Check & acheck);
 		%feature("autodoc", "1");
-		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
+		virtual		void EndRead(const Interface_InterfaceModel *amodel);
 
 };
 %feature("shadow") StepData_StepReaderTool::~StepData_StepReaderTool %{
@@ -3225,13 +3209,13 @@ class StepData_DefaultGeneral : public StepData_GeneralModule {
 		%feature("autodoc", "1");
 		StepData_DefaultGeneral();
 		%feature("autodoc", "1");
-		virtual		void FillSharedCase(const Standard_Integer casenum, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void FillSharedCase(const Standard_Integer casenum, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void CheckCase(const Standard_Integer casenum, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void CheckCase(const Standard_Integer casenum, const Standard_Transient *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
 		%feature("autodoc", "1");
-		virtual		void CopyCase(const Standard_Integer casenum, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
+		virtual		void CopyCase(const Standard_Integer casenum, const Standard_Transient *entfrom, const Standard_Transient *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

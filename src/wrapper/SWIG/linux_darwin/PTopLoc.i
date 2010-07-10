@@ -43,15 +43,15 @@ class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D();
 		%feature("autodoc", "1");
-		Handle_PTopLoc_Datum3D(const Handle_PTopLoc_Datum3D &aHandle);
+		Handle_PTopLoc_Datum3D(const PTopLoc_Datum3D *aHandle);
 		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D(const PTopLoc_Datum3D *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopLoc_Datum3D & operator=(const Handle_PTopLoc_Datum3D &aHandle);
+		Handle_PTopLoc_Datum3D & operator=(const PTopLoc_Datum3D *aHandle);
 		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D & operator=(const PTopLoc_Datum3D *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopLoc_Datum3D const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PTopLoc_Datum3D const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PTopLoc_Datum3D {
@@ -81,15 +81,15 @@ class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PTopLoc_ItemLocation();
 		%feature("autodoc", "1");
-		Handle_PTopLoc_ItemLocation(const Handle_PTopLoc_ItemLocation &aHandle);
+		Handle_PTopLoc_ItemLocation(const PTopLoc_ItemLocation *aHandle);
 		%feature("autodoc", "1");
 		Handle_PTopLoc_ItemLocation(const PTopLoc_ItemLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopLoc_ItemLocation & operator=(const Handle_PTopLoc_ItemLocation &aHandle);
+		Handle_PTopLoc_ItemLocation & operator=(const PTopLoc_ItemLocation *aHandle);
 		%feature("autodoc", "1");
 		Handle_PTopLoc_ItemLocation & operator=(const PTopLoc_ItemLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopLoc_ItemLocation const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PTopLoc_ItemLocation const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PTopLoc_ItemLocation {
@@ -162,7 +162,7 @@ class PTopLoc_Location {
 		%feature("autodoc", "1");
 		PTopLoc_Location();
 		%feature("autodoc", "1");
-		PTopLoc_Location(const Handle_PTopLoc_Datum3D &D, const Standard_Integer P, const PTopLoc_Location &N);
+		PTopLoc_Location(const PTopLoc_Datum3D *D, const Standard_Integer P, const PTopLoc_Location &N);
 		%feature("autodoc", "1");
 		Standard_Boolean IsIdentity() const;
 		%feature("autodoc", "1");
@@ -174,7 +174,7 @@ class PTopLoc_Location {
 		%feature("autodoc", "1");
 		Handle_PTopLoc_ItemLocation _CSFDB_GetPTopLoc_LocationmyData() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPTopLoc_LocationmyData(const Handle_PTopLoc_ItemLocation &p);
+		void _CSFDB_SetPTopLoc_LocationmyData(const PTopLoc_ItemLocation *p);
 
 };
 %feature("shadow") PTopLoc_Location::~PTopLoc_Location %{
@@ -197,7 +197,7 @@ def __del__(self):
 class PTopLoc_ItemLocation : public Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		PTopLoc_ItemLocation(const Handle_PTopLoc_Datum3D &D, const Standard_Integer P, const PTopLoc_Location &N);
+		PTopLoc_ItemLocation(const PTopLoc_Datum3D *D, const Standard_Integer P, const PTopLoc_Location &N);
 		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D Datum3D() const;
 		%feature("autodoc", "1");
@@ -211,7 +211,7 @@ class PTopLoc_ItemLocation : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D _CSFDB_GetPTopLoc_ItemLocationmyDatum() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPTopLoc_ItemLocationmyDatum(const Handle_PTopLoc_Datum3D &p);
+		void _CSFDB_SetPTopLoc_ItemLocationmyDatum(const PTopLoc_Datum3D *p);
 		%feature("autodoc", "1");
 		Standard_Integer _CSFDB_GetPTopLoc_ItemLocationmyPower() const;
 		%feature("autodoc", "1");

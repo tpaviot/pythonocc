@@ -43,15 +43,15 @@ class Handle_NIS_Drawer : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_NIS_Drawer();
 		%feature("autodoc", "1");
-		Handle_NIS_Drawer(const Handle_NIS_Drawer &aHandle);
+		Handle_NIS_Drawer(const NIS_Drawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_Drawer(const NIS_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_Drawer & operator=(const Handle_NIS_Drawer &aHandle);
+		Handle_NIS_Drawer & operator=(const NIS_Drawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_Drawer & operator=(const NIS_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NIS_Drawer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NIS_Drawer {
@@ -81,15 +81,15 @@ class Handle_NIS_SurfaceDrawer : public Handle_NIS_Drawer {
 		%feature("autodoc", "1");
 		Handle_NIS_SurfaceDrawer();
 		%feature("autodoc", "1");
-		Handle_NIS_SurfaceDrawer(const Handle_NIS_SurfaceDrawer &aHandle);
+		Handle_NIS_SurfaceDrawer(const NIS_SurfaceDrawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_SurfaceDrawer(const NIS_SurfaceDrawer *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_SurfaceDrawer & operator=(const Handle_NIS_SurfaceDrawer &aHandle);
+		Handle_NIS_SurfaceDrawer & operator=(const NIS_SurfaceDrawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_SurfaceDrawer & operator=(const NIS_SurfaceDrawer *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_SurfaceDrawer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NIS_SurfaceDrawer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NIS_SurfaceDrawer {
@@ -119,15 +119,15 @@ class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_NIS_SelectFilter();
 		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter(const Handle_NIS_SelectFilter &aHandle);
+		Handle_NIS_SelectFilter(const NIS_SelectFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_SelectFilter(const NIS_SelectFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter & operator=(const Handle_NIS_SelectFilter &aHandle);
+		Handle_NIS_SelectFilter & operator=(const NIS_SelectFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_SelectFilter & operator=(const NIS_SelectFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NIS_SelectFilter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NIS_SelectFilter {
@@ -157,15 +157,15 @@ class Handle_NIS_TriangulatedDrawer : public Handle_NIS_Drawer {
 		%feature("autodoc", "1");
 		Handle_NIS_TriangulatedDrawer();
 		%feature("autodoc", "1");
-		Handle_NIS_TriangulatedDrawer(const Handle_NIS_TriangulatedDrawer &aHandle);
+		Handle_NIS_TriangulatedDrawer(const NIS_TriangulatedDrawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_TriangulatedDrawer(const NIS_TriangulatedDrawer *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_TriangulatedDrawer & operator=(const Handle_NIS_TriangulatedDrawer &aHandle);
+		Handle_NIS_TriangulatedDrawer & operator=(const NIS_TriangulatedDrawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_TriangulatedDrawer & operator=(const NIS_TriangulatedDrawer *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_TriangulatedDrawer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NIS_TriangulatedDrawer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NIS_TriangulatedDrawer {
@@ -195,15 +195,15 @@ class Handle_NIS_InteractiveObject : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveObject();
 		%feature("autodoc", "1");
-		Handle_NIS_InteractiveObject(const Handle_NIS_InteractiveObject &aHandle);
+		Handle_NIS_InteractiveObject(const NIS_InteractiveObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveObject(const NIS_InteractiveObject *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_InteractiveObject & operator=(const Handle_NIS_InteractiveObject &aHandle);
+		Handle_NIS_InteractiveObject & operator=(const NIS_InteractiveObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveObject & operator=(const NIS_InteractiveObject *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_InteractiveObject const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NIS_InteractiveObject const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NIS_InteractiveObject {
@@ -233,15 +233,15 @@ class Handle_NIS_Triangulated : public Handle_NIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_NIS_Triangulated();
 		%feature("autodoc", "1");
-		Handle_NIS_Triangulated(const Handle_NIS_Triangulated &aHandle);
+		Handle_NIS_Triangulated(const NIS_Triangulated *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_Triangulated(const NIS_Triangulated *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_Triangulated & operator=(const Handle_NIS_Triangulated &aHandle);
+		Handle_NIS_Triangulated & operator=(const NIS_Triangulated *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_Triangulated & operator=(const NIS_Triangulated *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_Triangulated const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NIS_Triangulated const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NIS_Triangulated {
@@ -271,15 +271,15 @@ class Handle_NIS_Surface : public Handle_NIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_NIS_Surface();
 		%feature("autodoc", "1");
-		Handle_NIS_Surface(const Handle_NIS_Surface &aHandle);
+		Handle_NIS_Surface(const NIS_Surface *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_Surface(const NIS_Surface *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_Surface & operator=(const Handle_NIS_Surface &aHandle);
+		Handle_NIS_Surface & operator=(const NIS_Surface *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_Surface & operator=(const NIS_Surface *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NIS_Surface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NIS_Surface {
@@ -309,15 +309,15 @@ class Handle_NIS_InteractiveContext : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveContext();
 		%feature("autodoc", "1");
-		Handle_NIS_InteractiveContext(const Handle_NIS_InteractiveContext &aHandle);
+		Handle_NIS_InteractiveContext(const NIS_InteractiveContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveContext(const NIS_InteractiveContext *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_InteractiveContext & operator=(const Handle_NIS_InteractiveContext &aHandle);
+		Handle_NIS_InteractiveContext & operator=(const NIS_InteractiveContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveContext & operator=(const NIS_InteractiveContext *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_InteractiveContext const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NIS_InteractiveContext const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NIS_InteractiveContext {
@@ -347,15 +347,15 @@ class Handle_NIS_View : public Handle_V3d_OrthographicView {
 		%feature("autodoc", "1");
 		Handle_NIS_View();
 		%feature("autodoc", "1");
-		Handle_NIS_View(const Handle_NIS_View &aHandle);
+		Handle_NIS_View(const NIS_View *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_View(const NIS_View *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_View & operator=(const Handle_NIS_View &aHandle);
+		Handle_NIS_View & operator=(const NIS_View *aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_View & operator=(const NIS_View *anItem);
 		%feature("autodoc", "1");
-		Handle_NIS_View const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_NIS_View const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_NIS_View {
@@ -383,13 +383,15 @@ def __del__(self):
 class NIS_View : public V3d_OrthographicView {
 	public:
 		%feature("autodoc", "1");
-		NIS_View(const Handle_V3d_Viewer &theViewer, const Handle_Aspect_Window &theWindow=0);
+		NIS_View(const V3d_Viewer *theViewer, const Aspect_Window *theWindow=0);
 		%feature("autodoc", "1");
-		void SetWindow(const Handle_Aspect_Window &theWindow);
+		void SetWindow(const Aspect_Window *theWindow);
 		%feature("autodoc", "1");
 		void FitAll3d();
 		%feature("autodoc", "1");
 		void DynamicHilight(const Standard_Integer theX, const Standard_Integer theY);
+		%feature("autodoc", "1");
+		void DynamicUnhilight(const NIS_InteractiveObject *arg0);
 		%feature("autodoc", "1");
 		void Select(const Standard_Integer theX, const Standard_Integer theY, const Standard_Boolean isForceMult=0);
 		%feature("autodoc", "1");
@@ -434,7 +436,7 @@ class NIS_DrawList {
 		%feature("autodoc", "1");
 		NIS_DrawList();
 		%feature("autodoc", "1");
-		NIS_DrawList(const Handle_NIS_View &theView);
+		NIS_DrawList(const NIS_View *theView);
 		%feature("autodoc", "1");
 		Standard_Integer GetListID(const Standard_Integer theType);
 		%feature("autodoc", "1");
@@ -452,7 +454,7 @@ class NIS_DrawList {
 		%feature("autodoc", "1");
 		const Handle_NIS_View & GetView() const;
 		%feature("autodoc", "1");
-		Standard_Boolean SetDynHilighted(const Standard_Boolean isHilight, const Handle_NIS_InteractiveObject &theObj);
+		Standard_Boolean SetDynHilighted(const Standard_Boolean isHilight, const NIS_InteractiveObject *theObj);
 
 };
 %feature("shadow") NIS_DrawList::~NIS_DrawList %{
@@ -483,8 +485,6 @@ class NIS_Drawer : public Standard_Transient {
 		%feature("autodoc", "1");
 		NIS_InteractiveContext * GetContext() const;
 		%feature("autodoc", "1");
-		virtual		void Assign(const Handle_NIS_Drawer &theOther);
-		%feature("autodoc", "1");
 		virtual		const Bnd_B3f & GetBox(const NIS_View *pView=0l) const;
 		%feature("autodoc", "1");
 		void SetUpdated(const NIS_Drawer::DrawType theType) const;
@@ -493,11 +493,9 @@ class NIS_Drawer : public Standard_Transient {
 		%feature("autodoc", "1");
 		void SetUpdated(const NIS_Drawer::DrawType theType1, const NIS_Drawer::DrawType theType2, const NIS_Drawer::DrawType theType3) const;
 		%feature("autodoc", "1");
-		void SetDynamicHilighted(const Standard_Boolean isHilighted, const Handle_NIS_InteractiveObject &theObj, const Handle_NIS_View &theView=0l);
+		void SetDynamicHilighted(const Standard_Boolean isHilighted, const NIS_InteractiveObject *theObj, const NIS_View *theView=0l);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Standard_Integer theN) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsEqual(const Handle_NIS_Drawer &theOth) const;
 		%feature("autodoc", "1");
 		TColStd_MapIteratorOfPackedMapOfInteger ObjectIterator() const;
 		%feature("autodoc", "1");
@@ -548,11 +546,15 @@ class NIS_SurfaceDrawer : public NIS_Drawer {
 		%feature("autodoc", "1");
 		Standard_Real GetPolygonOffset() const;
 		%feature("autodoc", "1");
+		virtual		void Assign(const NIS_Drawer *theOther);
+		%feature("autodoc", "1");
 		virtual		void BeforeDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
 		%feature("autodoc", "1");
 		virtual		void AfterDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
 		%feature("autodoc", "1");
-		virtual		void Draw(const Handle_NIS_InteractiveObject &arg0, const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
+		virtual		void Draw(const NIS_InteractiveObject *arg0, const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsEqual(const NIS_Drawer *theOth) const;
 
 };
 %extend NIS_SurfaceDrawer {
@@ -593,9 +595,9 @@ class NIS_InteractiveContext : public Standard_Transient {
 		%feature("autodoc", "1");
 		NIS_InteractiveContext();
 		%feature("autodoc", "1");
-		void AttachView(const Handle_NIS_View &theView);
+		void AttachView(const NIS_View *theView);
 		%feature("autodoc", "1");
-		void DetachView(const Handle_NIS_View &theView);
+		void DetachView(const NIS_View *theView);
 		%feature("autodoc", "1");
 		const Handle_NIS_InteractiveObject & GetObject(const Standard_Integer theID) const;
 		%feature("autodoc", "1");
@@ -605,11 +607,11 @@ class NIS_InteractiveContext : public Standard_Transient {
 		%feature("autodoc", "1");
 		const Handle_NCollection_IncAllocator & Allocator() const;
 		%feature("autodoc", "1");
-		void Display(const Handle_NIS_InteractiveObject &theObj, const Handle_NIS_Drawer &theDrawer=0, const Standard_Boolean isUpdateViews=1);
+		void Display(const NIS_InteractiveObject *theObj, const NIS_Drawer *theDrawer=0, const Standard_Boolean isUpdateViews=1);
 		%feature("autodoc", "1");
-		void Erase(const Handle_NIS_InteractiveObject &theObj, const Standard_Boolean isUpdateViews=1);
+		void Erase(const NIS_InteractiveObject *theObj, const Standard_Boolean isUpdateViews=1);
 		%feature("autodoc", "1");
-		void Remove(const Handle_NIS_InteractiveObject &theObj, const Standard_Boolean isUpdateViews=1);
+		void Remove(const NIS_InteractiveObject *theObj, const Standard_Boolean isUpdateViews=1);
 		%feature("autodoc", "1");
 		void DisplayAll(const Standard_Boolean isUpdateViews=1);
 		%feature("autodoc", "1");
@@ -623,21 +625,21 @@ class NIS_InteractiveContext : public Standard_Transient {
 		%feature("autodoc", "1");
 		const Handle_NIS_SelectFilter & GetFilter() const;
 		%feature("autodoc", "1");
-		void SetFilter(const Handle_NIS_SelectFilter &theFilter);
+		void SetFilter(const NIS_SelectFilter *theFilter);
 		%feature("autodoc", "1");
 		NIS_InteractiveContext::SelectionMode GetSelectionMode() const;
 		%feature("autodoc", "1");
 		void SetSelectionMode(const NIS_InteractiveContext::SelectionMode theMode);
 		%feature("autodoc", "1");
-		Standard_Boolean ProcessSelection(const Handle_NIS_InteractiveObject &O, const Standard_Boolean isMultiple=0);
+		Standard_Boolean ProcessSelection(const NIS_InteractiveObject *O, const Standard_Boolean isMultiple=0);
 		%feature("autodoc", "1");
 		void ProcessSelection(const TColStd_PackedMapOfInteger &map, const Standard_Boolean isMultiple=0);
 		%feature("autodoc", "1");
-		Standard_Boolean SetSelected(const Handle_NIS_InteractiveObject &theObj, const Standard_Boolean isSelected=1);
+		Standard_Boolean SetSelected(const NIS_InteractiveObject *theObj, const Standard_Boolean isSelected=1);
 		%feature("autodoc", "1");
 		void SetSelected(const TColStd_PackedMapOfInteger &map, const Standard_Boolean isAdded=0);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSelected(const Handle_NIS_InteractiveObject &theOb);
+		Standard_Boolean IsSelected(const NIS_InteractiveObject *theOb);
 		%feature("autodoc", "1");
 		void ClearSelected();
 		%feature("autodoc", "1");
@@ -682,9 +684,9 @@ class NIS_ObjectsIterator {
 		%feature("autodoc", "1");
 		NIS_ObjectsIterator();
 		%feature("autodoc", "1");
-		NIS_ObjectsIterator(const Handle_NIS_InteractiveContext &theCtx);
+		NIS_ObjectsIterator(const NIS_InteractiveContext *theCtx);
 		%feature("autodoc", "1");
-		void Initialize(const Handle_NIS_InteractiveContext &theCtx);
+		void Initialize(const NIS_InteractiveContext *theCtx);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
@@ -715,15 +717,15 @@ class NIS_TriangulatedDrawer : public NIS_Drawer {
 		%feature("autodoc", "1");
 		NIS_TriangulatedDrawer(const Quantity_Color theNormal, const Quantity_Color theHilight=Quantity_NOC_GRAY80, const Quantity_Color theDynHilight=Quantity_NOC_CYAN1);
 		%feature("autodoc", "1");
-		virtual		void Assign(const Handle_NIS_Drawer &theOther);
+		virtual		void Assign(const NIS_Drawer *theOther);
 		%feature("autodoc", "1");
 		virtual		void BeforeDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
 		%feature("autodoc", "1");
 		virtual		void AfterDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
 		%feature("autodoc", "1");
-		virtual		void Draw(const Handle_NIS_InteractiveObject &arg0, const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
+		virtual		void Draw(const NIS_InteractiveObject *arg0, const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsEqual(const Handle_NIS_Drawer &theOth) const;
+		virtual		Standard_Boolean IsEqual(const NIS_Drawer *theOth) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -762,7 +764,7 @@ class NIS_InteractiveObject : public Standard_Transient {
 		%feature("autodoc", "1");
 		NIS_Drawer::DrawType DrawType() const;
 		%feature("autodoc", "1");
-		const Handle_NIS_Drawer & SetDrawer(const Handle_NIS_Drawer &theDrawer);
+		const Handle_NIS_Drawer & SetDrawer(const NIS_Drawer *theDrawer);
 		%feature("autodoc", "1");
 		const Handle_NIS_Drawer & GetDrawer() const;
 		%feature("autodoc", "1");
@@ -831,7 +833,7 @@ class NIS_SelectFilter : public Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsOk(const NIS_InteractiveObject *theObject) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean ActsOn(const Handle_Standard_Type &theType) const;
+		virtual		Standard_Boolean ActsOn(const Standard_Type *theType) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -866,9 +868,9 @@ def __del__(self):
 class NIS_Surface : public NIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		NIS_Surface(const Handle_Poly_Triangulation &theTri, const Handle_NCollection_BaseAllocator &theAlloc=0l);
+		NIS_Surface(const Poly_Triangulation *theTri, const NCollection_BaseAllocator *theAlloc=0l);
 		%feature("autodoc", "1");
-		NIS_Surface(const TopoDS_Shape &theShape, const Handle_NCollection_BaseAllocator &theAlloc=0l);
+		NIS_Surface(const TopoDS_Shape &theShape, const NCollection_BaseAllocator *theAlloc=0l);
 		%feature("autodoc", "1");
 		Standard_Integer NNodes() const;
 		%feature("autodoc", "1");

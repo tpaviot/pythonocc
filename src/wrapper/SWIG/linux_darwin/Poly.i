@@ -43,15 +43,15 @@ class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
-		Handle_Poly_PolygonOnTriangulation(const Handle_Poly_PolygonOnTriangulation &aHandle);
+		Handle_Poly_PolygonOnTriangulation(const Poly_PolygonOnTriangulation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_PolygonOnTriangulation(const Poly_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_PolygonOnTriangulation & operator=(const Handle_Poly_PolygonOnTriangulation &aHandle);
+		Handle_Poly_PolygonOnTriangulation & operator=(const Poly_PolygonOnTriangulation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_PolygonOnTriangulation & operator=(const Poly_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_PolygonOnTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Poly_PolygonOnTriangulation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Poly_PolygonOnTriangulation {
@@ -81,15 +81,15 @@ class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_HArray1OfTriangle();
 		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle(const Handle_Poly_HArray1OfTriangle &aHandle);
+		Handle_Poly_HArray1OfTriangle(const Poly_HArray1OfTriangle *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_HArray1OfTriangle(const Poly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle & operator=(const Handle_Poly_HArray1OfTriangle &aHandle);
+		Handle_Poly_HArray1OfTriangle & operator=(const Poly_HArray1OfTriangle *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_HArray1OfTriangle & operator=(const Poly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Poly_HArray1OfTriangle const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Poly_HArray1OfTriangle {
@@ -119,15 +119,15 @@ class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon3D();
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D(const Handle_Poly_Polygon3D &aHandle);
+		Handle_Poly_Polygon3D(const Poly_Polygon3D *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon3D(const Poly_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D & operator=(const Handle_Poly_Polygon3D &aHandle);
+		Handle_Poly_Polygon3D & operator=(const Poly_Polygon3D *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon3D & operator=(const Poly_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Poly_Polygon3D const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Poly_Polygon3D {
@@ -157,15 +157,15 @@ class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon2D();
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon2D(const Handle_Poly_Polygon2D &aHandle);
+		Handle_Poly_Polygon2D(const Poly_Polygon2D *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon2D(const Poly_Polygon2D *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon2D & operator=(const Handle_Poly_Polygon2D &aHandle);
+		Handle_Poly_Polygon2D & operator=(const Poly_Polygon2D *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon2D & operator=(const Poly_Polygon2D *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon2D const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Poly_Polygon2D const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Poly_Polygon2D {
@@ -195,15 +195,15 @@ class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Poly_CoherentTriangulation();
 		%feature("autodoc", "1");
-		Handle_Poly_CoherentTriangulation(const Handle_Poly_CoherentTriangulation &aHandle);
+		Handle_Poly_CoherentTriangulation(const Poly_CoherentTriangulation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_CoherentTriangulation(const Poly_CoherentTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_CoherentTriangulation & operator=(const Handle_Poly_CoherentTriangulation &aHandle);
+		Handle_Poly_CoherentTriangulation & operator=(const Poly_CoherentTriangulation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_CoherentTriangulation & operator=(const Poly_CoherentTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_CoherentTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Poly_CoherentTriangulation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Poly_CoherentTriangulation {
@@ -233,15 +233,15 @@ class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_Triangulation();
 		%feature("autodoc", "1");
-		Handle_Poly_Triangulation(const Handle_Poly_Triangulation &aHandle);
+		Handle_Poly_Triangulation(const Poly_Triangulation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_Triangulation(const Poly_Triangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_Triangulation & operator=(const Handle_Poly_Triangulation &aHandle);
+		Handle_Poly_Triangulation & operator=(const Poly_Triangulation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_Triangulation & operator=(const Poly_Triangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_Triangulation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Poly_Triangulation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Poly_Triangulation {
@@ -299,7 +299,7 @@ class Poly_Triangulation : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Poly_Array1OfTriangle & ChangeTriangles();
 		%feature("autodoc", "1");
-		void SetNormals(const Handle_TShort_HArray1OfShortReal &theNormals);
+		void SetNormals(const TShort_HArray1OfShortReal *theNormals);
 		%feature("autodoc", "1");
 		const TShort_Array1OfShortReal & Normals() const;
 		%feature("autodoc", "1");
@@ -340,7 +340,7 @@ def __del__(self):
 class Poly_Connect {
 	public:
 		%feature("autodoc", "1");
-		Poly_Connect(const Handle_Poly_Triangulation &T);
+		Poly_Connect(const Poly_Triangulation *T);
 		%feature("autodoc", "1");
 		Handle_Poly_Triangulation Triangulation() const;
 		%feature("autodoc", "1");
@@ -403,9 +403,11 @@ class Poly_CoherentNode : public gp_XYZ {
 		%feature("autodoc", "1");
 		Standard_Boolean IsFreeNode() const;
 		%feature("autodoc", "1");
-		void AddTriangle(const Poly_CoherentTriangle &theTri, const Handle_NCollection_BaseAllocator &theA);
+		void Clear(const NCollection_BaseAllocator *arg0);
 		%feature("autodoc", "1");
-		Standard_Boolean RemoveTriangle(const Poly_CoherentTriangle &theTri, const Handle_NCollection_BaseAllocator &theA);
+		void AddTriangle(const Poly_CoherentTriangle &theTri, const NCollection_BaseAllocator *theA);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveTriangle(const Poly_CoherentTriangle &theTri, const NCollection_BaseAllocator *theA);
 		%feature("autodoc", "1");
 		Poly_CoherentTriPtr::Iterator TriangleIterator() const;
 		%feature("autodoc", "1");
@@ -680,17 +682,17 @@ class Poly {
 		%feature("autodoc", "1");
 		Poly();
 		%feature("autodoc", "1");
-		void Write(const Handle_Poly_Triangulation &T, Standard_OStream & OS, const Standard_Boolean Compact=1);
+		void Write(const Poly_Triangulation *T, Standard_OStream & OS, const Standard_Boolean Compact=1);
 		%feature("autodoc", "1");
-		void Write(const Handle_Poly_Polygon3D &P, Standard_OStream & OS, const Standard_Boolean Compact=1);
+		void Write(const Poly_Polygon3D *P, Standard_OStream & OS, const Standard_Boolean Compact=1);
 		%feature("autodoc", "1");
-		void Write(const Handle_Poly_Polygon2D &P, Standard_OStream & OS, const Standard_Boolean Compact=1);
+		void Write(const Poly_Polygon2D *P, Standard_OStream & OS, const Standard_Boolean Compact=1);
 		%feature("autodoc", "1");
-		void Dump(const Handle_Poly_Triangulation &T, Standard_OStream & OS);
+		void Dump(const Poly_Triangulation *T, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Dump(const Handle_Poly_Polygon3D &P, Standard_OStream & OS);
+		void Dump(const Poly_Polygon3D *P, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Dump(const Handle_Poly_Polygon2D &P, Standard_OStream & OS);
+		void Dump(const Poly_Polygon2D *P, Standard_OStream & OS);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -713,7 +715,7 @@ class Poly {
 			self->ReadPolygon2D(s);}
 		};
 		%feature("autodoc", "1");
-		void ComputeNormals(const Handle_Poly_Triangulation &Tri);
+		void ComputeNormals(const Poly_Triangulation *Tri);
 
 };
 %feature("shadow") Poly::~Poly %{

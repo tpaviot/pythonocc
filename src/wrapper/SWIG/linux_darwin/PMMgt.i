@@ -43,15 +43,15 @@ class Handle_PMMgt_PManaged : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PMMgt_PManaged();
 		%feature("autodoc", "1");
-		Handle_PMMgt_PManaged(const Handle_PMMgt_PManaged &aHandle);
+		Handle_PMMgt_PManaged(const PMMgt_PManaged *aHandle);
 		%feature("autodoc", "1");
 		Handle_PMMgt_PManaged(const PMMgt_PManaged *anItem);
 		%feature("autodoc", "1");
-		Handle_PMMgt_PManaged & operator=(const Handle_PMMgt_PManaged &aHandle);
+		Handle_PMMgt_PManaged & operator=(const PMMgt_PManaged *aHandle);
 		%feature("autodoc", "1");
 		Handle_PMMgt_PManaged & operator=(const PMMgt_PManaged *anItem);
 		%feature("autodoc", "1");
-		Handle_PMMgt_PManaged const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PMMgt_PManaged const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PMMgt_PManaged {

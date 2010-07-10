@@ -43,15 +43,15 @@ class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 		%feature("autodoc", "1");
 		Handle_StepSelect_ModelModifier();
 		%feature("autodoc", "1");
-		Handle_StepSelect_ModelModifier(const Handle_StepSelect_ModelModifier &aHandle);
+		Handle_StepSelect_ModelModifier(const StepSelect_ModelModifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_ModelModifier(const StepSelect_ModelModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_ModelModifier & operator=(const Handle_StepSelect_ModelModifier &aHandle);
+		Handle_StepSelect_ModelModifier & operator=(const StepSelect_ModelModifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_ModelModifier & operator=(const StepSelect_ModelModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_ModelModifier const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepSelect_ModelModifier const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepSelect_ModelModifier {
@@ -81,15 +81,15 @@ class Handle_StepSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 		%feature("autodoc", "1");
 		Handle_StepSelect_FileModifier();
 		%feature("autodoc", "1");
-		Handle_StepSelect_FileModifier(const Handle_StepSelect_FileModifier &aHandle);
+		Handle_StepSelect_FileModifier(const StepSelect_FileModifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_FileModifier(const StepSelect_FileModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_FileModifier & operator=(const Handle_StepSelect_FileModifier &aHandle);
+		Handle_StepSelect_FileModifier & operator=(const StepSelect_FileModifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_FileModifier & operator=(const StepSelect_FileModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_FileModifier const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepSelect_FileModifier const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepSelect_FileModifier {
@@ -119,15 +119,15 @@ class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 		%feature("autodoc", "1");
 		Handle_StepSelect_FloatFormat();
 		%feature("autodoc", "1");
-		Handle_StepSelect_FloatFormat(const Handle_StepSelect_FloatFormat &aHandle);
+		Handle_StepSelect_FloatFormat(const StepSelect_FloatFormat *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_FloatFormat(const StepSelect_FloatFormat *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_FloatFormat & operator=(const Handle_StepSelect_FloatFormat &aHandle);
+		Handle_StepSelect_FloatFormat & operator=(const StepSelect_FloatFormat *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_FloatFormat & operator=(const StepSelect_FloatFormat *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_FloatFormat const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepSelect_FloatFormat const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepSelect_FloatFormat {
@@ -157,15 +157,15 @@ class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 		%feature("autodoc", "1");
 		Handle_StepSelect_WorkLibrary();
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary(const Handle_StepSelect_WorkLibrary &aHandle);
+		Handle_StepSelect_WorkLibrary(const StepSelect_WorkLibrary *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_WorkLibrary(const StepSelect_WorkLibrary *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary & operator=(const Handle_StepSelect_WorkLibrary &aHandle);
+		Handle_StepSelect_WorkLibrary & operator=(const StepSelect_WorkLibrary *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_WorkLibrary & operator=(const StepSelect_WorkLibrary *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepSelect_WorkLibrary const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepSelect_WorkLibrary {
@@ -195,15 +195,15 @@ class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 		%feature("autodoc", "1");
 		Handle_StepSelect_Activator();
 		%feature("autodoc", "1");
-		Handle_StepSelect_Activator(const Handle_StepSelect_Activator &aHandle);
+		Handle_StepSelect_Activator(const StepSelect_Activator *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_Activator(const StepSelect_Activator *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_Activator & operator=(const Handle_StepSelect_Activator &aHandle);
+		Handle_StepSelect_Activator & operator=(const StepSelect_Activator *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_Activator & operator=(const StepSelect_Activator *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_Activator const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepSelect_Activator const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepSelect_Activator {
@@ -233,15 +233,15 @@ class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 		%feature("autodoc", "1");
 		Handle_StepSelect_StepType();
 		%feature("autodoc", "1");
-		Handle_StepSelect_StepType(const Handle_StepSelect_StepType &aHandle);
+		Handle_StepSelect_StepType(const StepSelect_StepType *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_StepType(const StepSelect_StepType *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_StepType & operator=(const Handle_StepSelect_StepType &aHandle);
+		Handle_StepSelect_StepType & operator=(const StepSelect_StepType *aHandle);
 		%feature("autodoc", "1");
 		Handle_StepSelect_StepType & operator=(const StepSelect_StepType *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_StepType const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepSelect_StepType const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StepSelect_StepType {
@@ -308,13 +308,13 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 		%feature("autodoc", "1");
 		void SetDumpLabel(const Standard_Integer mode);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer ReadFile(const char * name, Handle_Interface_InterfaceModel & model, const Handle_Interface_Protocol &protocol) const;
+		virtual		Standard_Integer ReadFile(const char * name, Handle_Interface_InterfaceModel & model, const Interface_Protocol *protocol) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean WriteFile(IFSelect_ContextWrite & ctx) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean CopyModel(const Handle_Interface_InterfaceModel &original, const Handle_Interface_InterfaceModel &newmodel, const Interface_EntityIterator &list, Interface_CopyTool & TC) const;
+		virtual		Standard_Boolean CopyModel(const Interface_InterfaceModel *original, const Interface_InterfaceModel *newmodel, const Interface_EntityIterator &list, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		virtual		void DumpEntity(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &protocol, const Handle_Standard_Transient &entity, const Handle_Message_Messenger &S, const Standard_Integer level) const;
+		virtual		void DumpEntity(const Interface_InterfaceModel *model, const Interface_Protocol *protocol, const Standard_Transient *entity, const Message_Messenger *S, const Standard_Integer level) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -351,7 +351,7 @@ class StepSelect_Activator : public IFSelect_Activator {
 		%feature("autodoc", "1");
 		StepSelect_Activator();
 		%feature("autodoc", "1");
-		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const Handle_IFSelect_SessionPilot &pilot);
+		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const IFSelect_SessionPilot *pilot);
 		%feature("autodoc", "1");
 		virtual		char * Help(const Standard_Integer number) const;
 		%feature("autodoc", "1");
@@ -390,9 +390,9 @@ class StepSelect_StepType : public IFSelect_Signature {
 		%feature("autodoc", "1");
 		StepSelect_StepType();
 		%feature("autodoc", "1");
-		void SetProtocol(const Handle_Interface_Protocol &proto);
+		void SetProtocol(const Interface_Protocol *proto);
 		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		virtual		char * Value(const Standard_Transient *ent, const Interface_InterfaceModel *model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -477,11 +477,11 @@ def __del__(self):
 class StepSelect_ModelModifier : public IFSelect_Modifier {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Perform(IFSelect_ContextModif & ctx, const Handle_Interface_InterfaceModel &target, const Handle_Interface_Protocol &protocol, Interface_CopyTool & TC) const;
+		virtual		void Perform(IFSelect_ContextModif & ctx, const Interface_InterfaceModel *target, const Interface_Protocol *protocol, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		virtual		void PerformProtocol(IFSelect_ContextModif & ctx, const Handle_StepData_StepModel &target, const Handle_StepData_Protocol &proto, Interface_CopyTool & TC) const;
+		virtual		void PerformProtocol(IFSelect_ContextModif & ctx, const StepData_StepModel *target, const StepData_Protocol *proto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_StepData_StepModel &target, Interface_CopyTool & TC) const;
+		virtual		void Performing(IFSelect_ContextModif & ctx, const StepData_StepModel *target, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

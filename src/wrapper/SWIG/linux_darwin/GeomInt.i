@@ -43,15 +43,15 @@ class Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public Ha
 		%feature("autodoc", "1");
 		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation();
 		%feature("autodoc", "1");
-		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation(const Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation &aHandle);
+		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation(const GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation(const GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation & operator=(const Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation &aHandle);
+		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation & operator=(const GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation & operator=(const GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
@@ -79,7 +79,7 @@ def __del__(self):
 class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
+		GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -114,9 +114,9 @@ def __del__(self):
 class GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=1);
+		GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=1);
 		%feature("autodoc", "1");
-		GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations, const Standard_Real lambda1, const Standard_Real lambda2);
+		GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations, const Standard_Real lambda1, const Standard_Real lambda2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -153,11 +153,11 @@ class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_Functio
 		%feature("autodoc", "1");
 		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox();
 		%feature("autodoc", "1");
-		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &PS, const IntSurf_Quadric &IS);
+		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const Adaptor3d_HSurface *PS, const IntSurf_Quadric &IS);
 		%feature("autodoc", "1");
 		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &IS);
 		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &PS);
+		void Set(const Adaptor3d_HSurface *PS);
 		%feature("autodoc", "1");
 		void SetImplicitSurface(const IntSurf_Quadric &IS);
 		%feature("autodoc", "1");
@@ -210,7 +210,7 @@ def __del__(self):
 class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public math_MultipleVarFunctionWithGradient {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer NbPol);
+		GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const math_Vector &Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
@@ -238,9 +238,9 @@ class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public 
 		%feature("autodoc", "1");
 		const math_IntegerVector & Index() const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
+		AppParCurves_Constraint FirstConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
+		AppParCurves_Constraint LastConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer LastPoint) const;
 		%feature("autodoc", "1");
 		void SetFirstLambda(const Standard_Real l1);
 		%feature("autodoc", "1");
@@ -267,7 +267,7 @@ def __del__(self):
 class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_MyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
+		GeomInt_MyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -302,7 +302,7 @@ def __del__(self):
 class GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox : public math_MultipleVarFunctionWithGradient {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
+		GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
@@ -324,9 +324,9 @@ class GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox : public m
 		%feature("autodoc", "1");
 		Standard_Real MaxError2d() const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
+		AppParCurves_Constraint FirstConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
+		AppParCurves_Constraint LastConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer LastPoint) const;
 
 };
 %feature("shadow") GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox::~GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox %{
@@ -451,9 +451,9 @@ def __del__(self):
 class GeomInt_TheMultiLineOfWLApprox {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_TheMultiLineOfWLApprox(const Handle_IntPatch_TheWLineOfIntersection &line, const Standard_Address PtrSvSurfaces, const Standard_Integer NbP3d, const Standard_Integer NbP2d, const Standard_Real xo, const Standard_Real ax, const Standard_Real yo, const Standard_Real ay, const Standard_Real zo, const Standard_Real az, const Standard_Real u1o, const Standard_Real a1u, const Standard_Real v1o, const Standard_Real a1v, const Standard_Real u2o, const Standard_Real a2u, const Standard_Real v2o, const Standard_Real a2v, const Standard_Boolean P2DOnFirst, const Standard_Integer IndMin=0, const Standard_Integer IndMax=0);
+		GeomInt_TheMultiLineOfWLApprox(const IntPatch_TheWLineOfIntersection *line, const Standard_Address PtrSvSurfaces, const Standard_Integer NbP3d, const Standard_Integer NbP2d, const Standard_Real xo, const Standard_Real ax, const Standard_Real yo, const Standard_Real ay, const Standard_Real zo, const Standard_Real az, const Standard_Real u1o, const Standard_Real a1u, const Standard_Real v1o, const Standard_Real a1v, const Standard_Real u2o, const Standard_Real a2u, const Standard_Real v2o, const Standard_Real a2v, const Standard_Boolean P2DOnFirst, const Standard_Integer IndMin=0, const Standard_Integer IndMax=0);
 		%feature("autodoc", "1");
-		GeomInt_TheMultiLineOfWLApprox(const Handle_IntPatch_TheWLineOfIntersection &line, const Standard_Integer NbP3d, const Standard_Integer NbP2d, const Standard_Real xo, const Standard_Real ax, const Standard_Real yo, const Standard_Real ay, const Standard_Real zo, const Standard_Real az, const Standard_Real u1o, const Standard_Real a1u, const Standard_Real v1o, const Standard_Real a1v, const Standard_Real u2o, const Standard_Real a2u, const Standard_Real v2o, const Standard_Real a2v, const Standard_Boolean P2DOnFirst, const Standard_Integer IndMin=0, const Standard_Integer IndMax=0);
+		GeomInt_TheMultiLineOfWLApprox(const IntPatch_TheWLineOfIntersection *line, const Standard_Integer NbP3d, const Standard_Integer NbP2d, const Standard_Real xo, const Standard_Real ax, const Standard_Real yo, const Standard_Real ay, const Standard_Real zo, const Standard_Real az, const Standard_Real u1o, const Standard_Real a1u, const Standard_Real v1o, const Standard_Real a1v, const Standard_Real u2o, const Standard_Real a2u, const Standard_Real v2o, const Standard_Real a2v, const Standard_Boolean P2DOnFirst, const Standard_Integer IndMin=0, const Standard_Integer IndMax=0);
 		%feature("autodoc", "1");
 		Standard_Integer FirstPoint() const;
 		%feature("autodoc", "1");
@@ -525,7 +525,7 @@ def __del__(self):
 class GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox : public math_MultipleVarFunctionWithGradient {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
+		GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
@@ -547,9 +547,9 @@ class GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox : public math
 		%feature("autodoc", "1");
 		Standard_Real MaxError2d() const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
+		AppParCurves_Constraint FirstConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer FirstPoint) const;
 		%feature("autodoc", "1");
-		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
+		AppParCurves_Constraint LastConstraint(const AppParCurves_HArray1OfConstraintCouple *TheConstraints, const Standard_Integer LastPoint) const;
 
 };
 %feature("shadow") GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox %{
@@ -574,7 +574,7 @@ class GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox : public math
 		%feature("autodoc", "1");
 		GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox();
 		%feature("autodoc", "1");
-		GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2);
+		GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -690,7 +690,7 @@ def __del__(self):
 class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_ThePrmPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
+		GeomInt_ThePrmPrmSvSurfacesOfWLApprox(const Adaptor3d_HSurface *Surf1, const Adaptor3d_HSurface *Surf2);
 		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
@@ -939,13 +939,13 @@ class GeomInt_LineTool {
 		%feature("autodoc", "1");
 		GeomInt_LineTool();
 		%feature("autodoc", "1");
-		Standard_Integer NbVertex(const Handle_IntPatch_Line &L);
+		Standard_Integer NbVertex(const IntPatch_Line *L);
 		%feature("autodoc", "1");
-		const IntPatch_ThePointOfIntersection & Vertex(const Handle_IntPatch_Line &L, const Standard_Integer I);
+		const IntPatch_ThePointOfIntersection & Vertex(const IntPatch_Line *L, const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_IntPatch_Line &L);
+		Standard_Real FirstParameter(const IntPatch_Line *L);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_IntPatch_Line &L);
+		Standard_Real LastParameter(const IntPatch_Line *L);
 
 };
 %feature("shadow") GeomInt_LineTool::~GeomInt_LineTool %{
@@ -1145,9 +1145,9 @@ class GeomInt_LineConstructor {
 		%feature("autodoc", "1");
 		GeomInt_LineConstructor();
 		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_TopolTool &D2, const Handle_GeomAdaptor_HSurface &S1, const Handle_GeomAdaptor_HSurface &S2);
+		void Load(const Adaptor3d_TopolTool *D1, const Adaptor3d_TopolTool *D2, const GeomAdaptor_HSurface *S1, const GeomAdaptor_HSurface *S2);
 		%feature("autodoc", "1");
-		void Perform(const Handle_IntPatch_Line &L);
+		void Perform(const IntPatch_Line *L);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -1179,9 +1179,9 @@ class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 		%feature("autodoc", "1");
 		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox();
 		%feature("autodoc", "1");
-		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const TColStd_Array1OfReal &Param, const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Standard_Real TolTangency);
+		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const TColStd_Array1OfReal &Param, const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Standard_Real TolTangency);
 		%feature("autodoc", "1");
-		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Standard_Real TolTangency);
+		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Standard_Real TolTangency);
 		%feature("autodoc", "1");
 		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld);
 		%feature("autodoc", "1");
@@ -1224,9 +1224,9 @@ def __del__(self):
 class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const IntSurf_Quadric &Surf2);
+		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const Adaptor3d_HSurface *Surf1, const IntSurf_Quadric &Surf2);
 		%feature("autodoc", "1");
-		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
+		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &Surf1, const Adaptor3d_HSurface *Surf2);
 		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);

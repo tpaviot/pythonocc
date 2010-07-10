@@ -45,7 +45,7 @@ class Geom2dToIGES_Geom2dEntity {
 		%feature("autodoc", "1");
 		Geom2dToIGES_Geom2dEntity(const Geom2dToIGES_Geom2dEntity &GE);
 		%feature("autodoc", "1");
-		void SetModel(const Handle_IGESData_IGESModel &model);
+		void SetModel(const IGESData_IGESModel *model);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESModel GetModel() const;
 		%feature("autodoc", "1");
@@ -78,7 +78,7 @@ class Geom2dToIGES_Geom2dCurve : public Geom2dToIGES_Geom2dEntity {
 		%feature("autodoc", "1");
 		Geom2dToIGES_Geom2dCurve(const Geom2dToIGES_Geom2dEntity &G2dE);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Transfer2dCurve(const Handle_Geom2d_Curve &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		Handle_IGESData_IGESEntity Transfer2dCurve(const Geom2d_Curve *start, const Standard_Real Udeb, const Standard_Real Ufin);
 
 };
 %feature("shadow") Geom2dToIGES_Geom2dCurve::~Geom2dToIGES_Geom2dCurve %{
@@ -105,9 +105,9 @@ class Geom2dToIGES_Geom2dPoint : public Geom2dToIGES_Geom2dEntity {
 		%feature("autodoc", "1");
 		Geom2dToIGES_Geom2dPoint(const Geom2dToIGES_Geom2dEntity &G2dE);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Point Transfer2dPoint(const Handle_Geom2d_Point &start);
+		Handle_IGESGeom_Point Transfer2dPoint(const Geom2d_Point *start);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Point Transfer2dPoint(const Handle_Geom2d_CartesianPoint &start);
+		Handle_IGESGeom_Point Transfer2dPoint(const Geom2d_CartesianPoint *start);
 
 };
 %feature("shadow") Geom2dToIGES_Geom2dPoint::~Geom2dToIGES_Geom2dPoint %{
@@ -134,11 +134,11 @@ class Geom2dToIGES_Geom2dVector : public Geom2dToIGES_Geom2dEntity {
 		%feature("autodoc", "1");
 		Geom2dToIGES_Geom2dVector(const Geom2dToIGES_Geom2dEntity &G2dE);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction Transfer2dVector(const Handle_Geom2d_Vector &start);
+		Handle_IGESGeom_Direction Transfer2dVector(const Geom2d_Vector *start);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction Transfer2dVector(const Handle_Geom2d_VectorWithMagnitude &start);
+		Handle_IGESGeom_Direction Transfer2dVector(const Geom2d_VectorWithMagnitude *start);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction Transfer2dVector(const Handle_Geom2d_Direction &start);
+		Handle_IGESGeom_Direction Transfer2dVector(const Geom2d_Direction *start);
 
 };
 %feature("shadow") Geom2dToIGES_Geom2dVector::~Geom2dToIGES_Geom2dVector %{

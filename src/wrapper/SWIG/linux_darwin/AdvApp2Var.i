@@ -53,15 +53,15 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch();
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch &aHandle);
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch(const AdvApp2Var_SequenceNodeOfSequenceOfPatch *aHandle);
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch(const AdvApp2Var_SequenceNodeOfSequenceOfPatch *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch & operator=(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch &aHandle);
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfPatch *aHandle);
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfPatch *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch {
@@ -91,15 +91,15 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip();
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip &aHandle);
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *aHandle);
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip &aHandle);
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *aHandle);
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip {
@@ -129,15 +129,15 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode();
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode &aHandle);
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode(const AdvApp2Var_SequenceNodeOfSequenceOfNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode(const AdvApp2Var_SequenceNodeOfSequenceOfNode *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode & operator=(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode &aHandle);
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfNode *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode {
@@ -167,15 +167,15 @@ class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode 
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfStrip();
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfStrip(const Handle_AdvApp2Var_SequenceNodeOfStrip &aHandle);
+		Handle_AdvApp2Var_SequenceNodeOfStrip(const AdvApp2Var_SequenceNodeOfStrip *aHandle);
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfStrip(const AdvApp2Var_SequenceNodeOfStrip *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfStrip & operator=(const Handle_AdvApp2Var_SequenceNodeOfStrip &aHandle);
+		Handle_AdvApp2Var_SequenceNodeOfStrip & operator=(const AdvApp2Var_SequenceNodeOfStrip *aHandle);
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfStrip & operator=(const AdvApp2Var_SequenceNodeOfStrip *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AdvApp2Var_SequenceNodeOfStrip const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfStrip {
@@ -556,7 +556,7 @@ class AdvApp2Var_Context {
 		%feature("autodoc", "1");
 		AdvApp2Var_Context();
 		%feature("autodoc", "1");
-		AdvApp2Var_Context(const Standard_Integer ifav, const Standard_Integer iu, const Standard_Integer iv, const Standard_Integer nlimu, const Standard_Integer nlimv, const Standard_Integer iprecis, const Standard_Integer nb1Dss, const Standard_Integer nb2Dss, const Standard_Integer nb3Dss, const Handle_TColStd_HArray1OfReal &tol1D, const Handle_TColStd_HArray1OfReal &tol2D, const Handle_TColStd_HArray1OfReal &tol3D, const Handle_TColStd_HArray2OfReal &tof1D, const Handle_TColStd_HArray2OfReal &tof2D, const Handle_TColStd_HArray2OfReal &tof3D);
+		AdvApp2Var_Context(const Standard_Integer ifav, const Standard_Integer iu, const Standard_Integer iv, const Standard_Integer nlimu, const Standard_Integer nlimv, const Standard_Integer iprecis, const Standard_Integer nb1Dss, const Standard_Integer nb2Dss, const Standard_Integer nb3Dss, const TColStd_HArray1OfReal *tol1D, const TColStd_HArray1OfReal *tol2D, const TColStd_HArray1OfReal *tol3D, const TColStd_HArray2OfReal *tof1D, const TColStd_HArray2OfReal *tof2D, const TColStd_HArray2OfReal *tof3D);
 		%feature("autodoc", "1");
 		Standard_Integer TotalDimension() const;
 		%feature("autodoc", "1");
@@ -864,9 +864,9 @@ def __del__(self):
 class AdvApp2Var_ApproxAFunc2Var {
 	public:
 		%feature("autodoc", "1");
-		AdvApp2Var_ApproxAFunc2Var(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const Handle_TColStd_HArray1OfReal &OneDTol, const Handle_TColStd_HArray1OfReal &TwoDTol, const Handle_TColStd_HArray1OfReal &ThreeDTol, const Handle_TColStd_HArray2OfReal &OneDTolFr, const Handle_TColStd_HArray2OfReal &TwoDTolFr, const Handle_TColStd_HArray2OfReal &ThreeDTolFr, const Standard_Real FirstInU, const Standard_Real LastInU, const Standard_Real FirstInV, const Standard_Real LastInV, const GeomAbs_IsoType FavorIso, const GeomAbs_Shape ContInU, const GeomAbs_Shape ContInV, const Standard_Integer PrecisCode, const Standard_Integer MaxDegInU, const Standard_Integer MaxDegInV, const Standard_Integer MaxPatch, const AdvApp2Var_EvaluatorFunc2Var &Func, AdvApprox_Cutting & UChoice, AdvApprox_Cutting & VChoice);
+		AdvApp2Var_ApproxAFunc2Var(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const TColStd_HArray1OfReal *OneDTol, const TColStd_HArray1OfReal *TwoDTol, const TColStd_HArray1OfReal *ThreeDTol, const TColStd_HArray2OfReal *OneDTolFr, const TColStd_HArray2OfReal *TwoDTolFr, const TColStd_HArray2OfReal *ThreeDTolFr, const Standard_Real FirstInU, const Standard_Real LastInU, const Standard_Real FirstInV, const Standard_Real LastInV, const GeomAbs_IsoType FavorIso, const GeomAbs_Shape ContInU, const GeomAbs_Shape ContInV, const Standard_Integer PrecisCode, const Standard_Integer MaxDegInU, const Standard_Integer MaxDegInV, const Standard_Integer MaxPatch, const AdvApp2Var_EvaluatorFunc2Var &Func, AdvApprox_Cutting & UChoice, AdvApprox_Cutting & VChoice);
 		%feature("autodoc", "1");
-		AdvApp2Var_ApproxAFunc2Var(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const Handle_TColStd_HArray1OfReal &OneDTol, const Handle_TColStd_HArray1OfReal &TwoDTol, const Handle_TColStd_HArray1OfReal &ThreeDTol, const Handle_TColStd_HArray2OfReal &OneDTolFr, const Handle_TColStd_HArray2OfReal &TwoDTolFr, const Handle_TColStd_HArray2OfReal &ThreeDTolFr, const Standard_Real FirstInU, const Standard_Real LastInU, const Standard_Real FirstInV, const Standard_Real LastInV, const GeomAbs_IsoType FavorIso, const GeomAbs_Shape ContInU, const GeomAbs_Shape ContInV, const Standard_Integer PrecisCode, const Standard_Integer MaxDegInU, const Standard_Integer MaxDegInV, const Standard_Integer MaxPatch, const AdvApp2Var_EvaluatorFunc2Var &Func, const AdvApp2Var_Criterion &Crit, AdvApprox_Cutting & UChoice, AdvApprox_Cutting & VChoice);
+		AdvApp2Var_ApproxAFunc2Var(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const TColStd_HArray1OfReal *OneDTol, const TColStd_HArray1OfReal *TwoDTol, const TColStd_HArray1OfReal *ThreeDTol, const TColStd_HArray2OfReal *OneDTolFr, const TColStd_HArray2OfReal *TwoDTolFr, const TColStd_HArray2OfReal *ThreeDTolFr, const Standard_Real FirstInU, const Standard_Real LastInU, const Standard_Real FirstInV, const Standard_Real LastInV, const GeomAbs_IsoType FavorIso, const GeomAbs_Shape ContInU, const GeomAbs_Shape ContInV, const Standard_Integer PrecisCode, const Standard_Integer MaxDegInU, const Standard_Integer MaxDegInV, const Standard_Integer MaxPatch, const AdvApp2Var_EvaluatorFunc2Var &Func, const AdvApp2Var_Criterion &Crit, AdvApprox_Cutting & UChoice, AdvApprox_Cutting & VChoice);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");

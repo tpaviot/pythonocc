@@ -43,15 +43,15 @@ class Handle_PTColStd_DataMapNodeOfTransientPersistentMap : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfTransientPersistentMap();
 		%feature("autodoc", "1");
-		Handle_PTColStd_DataMapNodeOfTransientPersistentMap(const Handle_PTColStd_DataMapNodeOfTransientPersistentMap &aHandle);
+		Handle_PTColStd_DataMapNodeOfTransientPersistentMap(const PTColStd_DataMapNodeOfTransientPersistentMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfTransientPersistentMap(const PTColStd_DataMapNodeOfTransientPersistentMap *anItem);
 		%feature("autodoc", "1");
-		Handle_PTColStd_DataMapNodeOfTransientPersistentMap & operator=(const Handle_PTColStd_DataMapNodeOfTransientPersistentMap &aHandle);
+		Handle_PTColStd_DataMapNodeOfTransientPersistentMap & operator=(const PTColStd_DataMapNodeOfTransientPersistentMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfTransientPersistentMap & operator=(const PTColStd_DataMapNodeOfTransientPersistentMap *anItem);
 		%feature("autodoc", "1");
-		Handle_PTColStd_DataMapNodeOfTransientPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PTColStd_DataMapNodeOfTransientPersistentMap const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PTColStd_DataMapNodeOfTransientPersistentMap {
@@ -81,15 +81,15 @@ class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfPersistentTransientMap();
 		%feature("autodoc", "1");
-		Handle_PTColStd_DataMapNodeOfPersistentTransientMap(const Handle_PTColStd_DataMapNodeOfPersistentTransientMap &aHandle);
+		Handle_PTColStd_DataMapNodeOfPersistentTransientMap(const PTColStd_DataMapNodeOfPersistentTransientMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfPersistentTransientMap(const PTColStd_DataMapNodeOfPersistentTransientMap *anItem);
 		%feature("autodoc", "1");
-		Handle_PTColStd_DataMapNodeOfPersistentTransientMap & operator=(const Handle_PTColStd_DataMapNodeOfPersistentTransientMap &aHandle);
+		Handle_PTColStd_DataMapNodeOfPersistentTransientMap & operator=(const PTColStd_DataMapNodeOfPersistentTransientMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfPersistentTransientMap & operator=(const PTColStd_DataMapNodeOfPersistentTransientMap *anItem);
 		%feature("autodoc", "1");
-		Handle_PTColStd_DataMapNodeOfPersistentTransientMap const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PTColStd_DataMapNodeOfPersistentTransientMap const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PTColStd_DataMapNodeOfPersistentTransientMap {
@@ -119,15 +119,15 @@ class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Han
 		%feature("autodoc", "1");
 		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent();
 		%feature("autodoc", "1");
-		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent &aHandle);
+		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent *aHandle);
 		%feature("autodoc", "1");
 		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent *anItem);
 		%feature("autodoc", "1");
-		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent & operator=(const Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent &aHandle);
+		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent & operator=(const PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent *aHandle);
 		%feature("autodoc", "1");
 		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent & operator=(const PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent *anItem);
 		%feature("autodoc", "1");
-		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
@@ -157,9 +157,9 @@ class PTColStd_MapPersistentHasher {
 		%feature("autodoc", "1");
 		PTColStd_MapPersistentHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Handle_Standard_Persistent &K, const Standard_Integer Upper);
+		Standard_Integer HashCode(const Standard_Persistent *K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Handle_Standard_Persistent &K1, const Handle_Standard_Persistent &K2);
+		Standard_Boolean IsEqual(const Standard_Persistent *K1, const Standard_Persistent *K2);
 
 };
 %feature("shadow") PTColStd_MapPersistentHasher::~PTColStd_MapPersistentHasher %{
@@ -182,7 +182,7 @@ def __del__(self):
 class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		PTColStd_DataMapNodeOfPersistentTransientMap(const Handle_Standard_Persistent &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		PTColStd_DataMapNodeOfPersistentTransientMap(const Standard_Persistent *K, const Standard_Transient *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Standard_Persistent & Key() const;
 		%feature("autodoc", "1");
@@ -293,19 +293,19 @@ class PTColStd_PersistentTransientMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Persistent &K, const Handle_Standard_Transient &I);
+		Standard_Boolean Bind(const Standard_Persistent *K, const Standard_Transient *I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Persistent &K) const;
+		Standard_Boolean IsBound(const Standard_Persistent *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Persistent &K);
+		Standard_Boolean UnBind(const Standard_Persistent *K);
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const Handle_Standard_Persistent &K) const;
+		const Handle_Standard_Transient & Find(const Standard_Persistent *K) const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const Handle_Standard_Persistent &K) const;
+		const Handle_Standard_Transient & operator()(const Standard_Persistent *K) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const Handle_Standard_Persistent &K);
+		Handle_Standard_Transient & ChangeFind(const Standard_Persistent *K);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const Handle_Standard_Persistent &K);
+		Handle_Standard_Transient & operator()(const Standard_Persistent *K);
 
 };
 %feature("shadow") PTColStd_PersistentTransientMap::~PTColStd_PersistentTransientMap %{
@@ -338,21 +338,21 @@ class PTColStd_DoubleMapOfTransientPersistent : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Bind(const Handle_Standard_Transient &K1, const Handle_Standard_Persistent &K2);
+		void Bind(const Standard_Transient *K1, const Standard_Persistent *K2);
 		%feature("autodoc", "1");
-		Standard_Boolean AreBound(const Handle_Standard_Transient &K1, const Handle_Standard_Persistent &K2) const;
+		Standard_Boolean AreBound(const Standard_Transient *K1, const Standard_Persistent *K2) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound1(const Handle_Standard_Transient &K) const;
+		Standard_Boolean IsBound1(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound2(const Handle_Standard_Persistent &K) const;
+		Standard_Boolean IsBound2(const Standard_Persistent *K) const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Find1(const Handle_Standard_Transient &K) const;
+		const Handle_Standard_Persistent & Find1(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find2(const Handle_Standard_Persistent &K) const;
+		const Handle_Standard_Transient & Find2(const Standard_Persistent *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind1(const Handle_Standard_Transient &K);
+		Standard_Boolean UnBind1(const Standard_Transient *K);
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind2(const Handle_Standard_Persistent &K);
+		Standard_Boolean UnBind2(const Standard_Persistent *K);
 
 };
 %feature("shadow") PTColStd_DoubleMapOfTransientPersistent::~PTColStd_DoubleMapOfTransientPersistent %{
@@ -385,19 +385,19 @@ class PTColStd_TransientPersistentMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Handle_Standard_Persistent &I);
+		Standard_Boolean Bind(const Standard_Transient *K, const Standard_Persistent *I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
+		Standard_Boolean IsBound(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
+		Standard_Boolean UnBind(const Standard_Transient *K);
 		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Find(const Handle_Standard_Transient &K) const;
+		const Handle_Standard_Persistent & Find(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & operator()(const Handle_Standard_Transient &K) const;
+		const Handle_Standard_Persistent & operator()(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Persistent & ChangeFind(const Handle_Standard_Transient &K);
+		Handle_Standard_Persistent & ChangeFind(const Standard_Transient *K);
 		%feature("autodoc", "1");
-		Handle_Standard_Persistent & operator()(const Handle_Standard_Transient &K);
+		Handle_Standard_Persistent & operator()(const Standard_Transient *K);
 
 };
 %feature("shadow") PTColStd_TransientPersistentMap::~PTColStd_TransientPersistentMap %{
@@ -420,7 +420,7 @@ def __del__(self):
 class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const Handle_Standard_Transient &K1, const Handle_Standard_Persistent &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const Standard_Transient *K1, const Standard_Persistent *K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key1() const;
 		%feature("autodoc", "1");
@@ -492,7 +492,7 @@ def __del__(self):
 class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		PTColStd_DataMapNodeOfTransientPersistentMap(const Handle_Standard_Transient &K, const Handle_Standard_Persistent &I, const TCollection_MapNodePtr &n);
+		PTColStd_DataMapNodeOfTransientPersistentMap(const Standard_Transient *K, const Standard_Persistent *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key() const;
 		%feature("autodoc", "1");

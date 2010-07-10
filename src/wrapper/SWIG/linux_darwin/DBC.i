@@ -44,15 +44,15 @@ class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfInteger();
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfInteger(const DBC_VArrayNodeOfVArrayOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfInteger(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger & operator=(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfInteger & operator=(const DBC_VArrayNodeOfVArrayOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfInteger & operator=(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_DBC_VArrayNodeOfVArrayOfInteger const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
@@ -82,15 +82,15 @@ class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_Arra
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter();
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter(const Handle_DBC_VArrayNodeOfVArrayOfExtCharacter &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter(const DBC_VArrayNodeOfVArrayOfExtCharacter *aHandle);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter(const DBC_VArrayNodeOfVArrayOfExtCharacter *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter & operator=(const Handle_DBC_VArrayNodeOfVArrayOfExtCharacter &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter & operator=(const DBC_VArrayNodeOfVArrayOfExtCharacter *aHandle);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter & operator=(const DBC_VArrayNodeOfVArrayOfExtCharacter *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_DBC_VArrayNodeOfVArrayOfExtCharacter {
@@ -120,15 +120,15 @@ class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNo
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfCharacter();
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfCharacter(const Handle_DBC_VArrayNodeOfVArrayOfCharacter &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfCharacter(const DBC_VArrayNodeOfVArrayOfCharacter *aHandle);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfCharacter(const DBC_VArrayNodeOfVArrayOfCharacter *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfCharacter & operator=(const Handle_DBC_VArrayNodeOfVArrayOfCharacter &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfCharacter & operator=(const DBC_VArrayNodeOfVArrayOfCharacter *aHandle);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfCharacter & operator=(const DBC_VArrayNodeOfVArrayOfCharacter *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfCharacter const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_DBC_VArrayNodeOfVArrayOfCharacter const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_DBC_VArrayNodeOfVArrayOfCharacter {
@@ -158,15 +158,15 @@ class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfReal();
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfReal(const DBC_VArrayNodeOfVArrayOfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfReal(const DBC_VArrayNodeOfVArrayOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const DBC_VArrayNodeOfVArrayOfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const DBC_VArrayNodeOfVArrayOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_DBC_VArrayNodeOfVArrayOfReal const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_DBC_VArrayNodeOfVArrayOfReal {

@@ -43,15 +43,15 @@ class Handle_PS_Driver : public Handle_PlotMgt_PlotterDriver {
 		%feature("autodoc", "1");
 		Handle_PS_Driver();
 		%feature("autodoc", "1");
-		Handle_PS_Driver(const Handle_PS_Driver &aHandle);
+		Handle_PS_Driver(const PS_Driver *aHandle);
 		%feature("autodoc", "1");
 		Handle_PS_Driver(const PS_Driver *anItem);
 		%feature("autodoc", "1");
-		Handle_PS_Driver & operator=(const Handle_PS_Driver &aHandle);
+		Handle_PS_Driver & operator=(const PS_Driver *aHandle);
 		%feature("autodoc", "1");
 		Handle_PS_Driver & operator=(const PS_Driver *anItem);
 		%feature("autodoc", "1");
-		Handle_PS_Driver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PS_Driver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PS_Driver {
@@ -81,7 +81,7 @@ class PS_Driver : public PlotMgt_PlotterDriver {
 		%feature("autodoc", "1");
 		PS_Driver(const char * aName, const Quantity_Length aDX, const Quantity_Length aDY, const Aspect_TypeOfColorSpace aTypeOfColorSpace=Aspect_TOCS_RGB, const Aspect_FormatOfSheetPaper aSheetFormat=Aspect_FOSP_A4);
 		%feature("autodoc", "1");
-		PS_Driver(const Handle_PlotMgt_Plotter &aPlotter, const char * aName, const Quantity_Length aPaperX, const Quantity_Length aPaperY, const Aspect_TypeOfColorSpace aTypeOfColorSpace=Aspect_TOCS_RGB);
+		PS_Driver(const PlotMgt_Plotter *aPlotter, const char * aName, const Quantity_Length aPaperX, const Quantity_Length aPaperY, const Aspect_TypeOfColorSpace aTypeOfColorSpace=Aspect_TOCS_RGB);
 		%feature("autodoc", "1");
 		virtual		void BeginDraw();
 		%feature("autodoc", "1");

@@ -86,13 +86,13 @@ class VrmlAPI_Writer {
 		%feature("autodoc", "1");
 		void SetShininessToMaterial(Handle_Vrml_Material & aMaterial, const Standard_Real aShininess);
 		%feature("autodoc", "1");
-		void SetAmbientColorToMaterial(Handle_Vrml_Material & aMaterial, const Handle_Quantity_HArray1OfColor &Color);
+		void SetAmbientColorToMaterial(Handle_Vrml_Material & aMaterial, const Quantity_HArray1OfColor *Color);
 		%feature("autodoc", "1");
-		void SetDiffuseColorToMaterial(Handle_Vrml_Material & aMaterial, const Handle_Quantity_HArray1OfColor &Color);
+		void SetDiffuseColorToMaterial(Handle_Vrml_Material & aMaterial, const Quantity_HArray1OfColor *Color);
 		%feature("autodoc", "1");
-		void SetSpecularColorToMaterial(Handle_Vrml_Material & aMaterial, const Handle_Quantity_HArray1OfColor &Color);
+		void SetSpecularColorToMaterial(Handle_Vrml_Material & aMaterial, const Quantity_HArray1OfColor *Color);
 		%feature("autodoc", "1");
-		void SetEmissiveColorToMaterial(Handle_Vrml_Material & aMaterial, const Handle_Quantity_HArray1OfColor &Color);
+		void SetEmissiveColorToMaterial(Handle_Vrml_Material & aMaterial, const Quantity_HArray1OfColor *Color);
 		%feature("autodoc", "1");
 		VrmlAPI_RepresentationOfShape GetRepresentation() const;
 		%feature("autodoc", "1");

@@ -43,15 +43,15 @@ class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		Handle_XmlLDrivers_DocumentStorageDriver(const Handle_XmlLDrivers_DocumentStorageDriver &aHandle);
+		Handle_XmlLDrivers_DocumentStorageDriver(const XmlLDrivers_DocumentStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentStorageDriver(const XmlLDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlLDrivers_DocumentStorageDriver & operator=(const Handle_XmlLDrivers_DocumentStorageDriver &aHandle);
+		Handle_XmlLDrivers_DocumentStorageDriver & operator=(const XmlLDrivers_DocumentStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentStorageDriver & operator=(const XmlLDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlLDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlLDrivers_DocumentStorageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XmlLDrivers_DocumentStorageDriver {
@@ -81,15 +81,15 @@ class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef();
 		%feature("autodoc", "1");
-		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef(const Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef &aHandle);
+		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef(const XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef(const XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef & operator=(const Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef &aHandle);
+		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef & operator=(const XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef & operator=(const XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
@@ -119,15 +119,15 @@ class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_XmlLDrivers_DocumentRetrievalDriver(const Handle_XmlLDrivers_DocumentRetrievalDriver &aHandle);
+		Handle_XmlLDrivers_DocumentRetrievalDriver(const XmlLDrivers_DocumentRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentRetrievalDriver(const XmlLDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlLDrivers_DocumentRetrievalDriver & operator=(const Handle_XmlLDrivers_DocumentRetrievalDriver &aHandle);
+		Handle_XmlLDrivers_DocumentRetrievalDriver & operator=(const XmlLDrivers_DocumentRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentRetrievalDriver & operator=(const XmlLDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlLDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlLDrivers_DocumentRetrievalDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XmlLDrivers_DocumentRetrievalDriver {
@@ -159,13 +159,13 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 		%feature("autodoc", "1");
 		virtual		TCollection_ExtendedString SchemaName() const;
 		%feature("autodoc", "1");
-		virtual		void Make(const Handle_PCDM_Document &PD, const Handle_CDM_Document &TD);
+		virtual		void Make(const PCDM_Document *PD, const CDM_Document *TD);
 		%feature("autodoc", "1");
 		virtual		Handle_CDM_Document CreateDocument();
 		%feature("autodoc", "1");
-		virtual		void Read(const TCollection_ExtendedString &theFileName, const Handle_CDM_Document &theNewDocument, const Handle_CDM_Application &theApplication);
+		virtual		void Read(const TCollection_ExtendedString &theFileName, const CDM_Document *theNewDocument, const CDM_Application *theApplication);
 		%feature("autodoc", "1");
-		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -204,11 +204,11 @@ class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 		%feature("autodoc", "1");
 		virtual		TCollection_ExtendedString SchemaName() const;
 		%feature("autodoc", "1");
-		virtual		void Write(const Handle_CDM_Document &theDocument, const TCollection_ExtendedString &theFileName);
+		virtual		void Write(const CDM_Document *theDocument, const TCollection_ExtendedString &theFileName);
 		%feature("autodoc", "1");
 		Standard_Boolean IsError() const;
 		%feature("autodoc", "1");
-		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -380,7 +380,7 @@ class XmlLDrivers {
 		%feature("autodoc", "1");
 		TCollection_AsciiString CreationDate();
 		%feature("autodoc", "1");
-		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		Handle_XmlMDF_ADriverTable AttributeDrivers(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		TCollection_AsciiString StorageVersion();
 

@@ -43,15 +43,15 @@ class Handle_Bisector_Curve : public Handle_Geom2d_Curve {
 		%feature("autodoc", "1");
 		Handle_Bisector_Curve();
 		%feature("autodoc", "1");
-		Handle_Bisector_Curve(const Handle_Bisector_Curve &aHandle);
+		Handle_Bisector_Curve(const Bisector_Curve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bisector_Curve(const Bisector_Curve *anItem);
 		%feature("autodoc", "1");
-		Handle_Bisector_Curve & operator=(const Handle_Bisector_Curve &aHandle);
+		Handle_Bisector_Curve & operator=(const Bisector_Curve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bisector_Curve & operator=(const Bisector_Curve *anItem);
 		%feature("autodoc", "1");
-		Handle_Bisector_Curve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Bisector_Curve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Bisector_Curve {
@@ -81,15 +81,15 @@ class Handle_Bisector_BisecAna : public Handle_Bisector_Curve {
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecAna();
 		%feature("autodoc", "1");
-		Handle_Bisector_BisecAna(const Handle_Bisector_BisecAna &aHandle);
+		Handle_Bisector_BisecAna(const Bisector_BisecAna *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecAna(const Bisector_BisecAna *anItem);
 		%feature("autodoc", "1");
-		Handle_Bisector_BisecAna & operator=(const Handle_Bisector_BisecAna &aHandle);
+		Handle_Bisector_BisecAna & operator=(const Bisector_BisecAna *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecAna & operator=(const Bisector_BisecAna *anItem);
 		%feature("autodoc", "1");
-		Handle_Bisector_BisecAna const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Bisector_BisecAna const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Bisector_BisecAna {
@@ -119,15 +119,15 @@ class Handle_Bisector_BisecCC : public Handle_Bisector_Curve {
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecCC();
 		%feature("autodoc", "1");
-		Handle_Bisector_BisecCC(const Handle_Bisector_BisecCC &aHandle);
+		Handle_Bisector_BisecCC(const Bisector_BisecCC *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecCC(const Bisector_BisecCC *anItem);
 		%feature("autodoc", "1");
-		Handle_Bisector_BisecCC & operator=(const Handle_Bisector_BisecCC &aHandle);
+		Handle_Bisector_BisecCC & operator=(const Bisector_BisecCC *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecCC & operator=(const Bisector_BisecCC *anItem);
 		%feature("autodoc", "1");
-		Handle_Bisector_BisecCC const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Bisector_BisecCC const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Bisector_BisecCC {
@@ -157,15 +157,15 @@ class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecPC();
 		%feature("autodoc", "1");
-		Handle_Bisector_BisecPC(const Handle_Bisector_BisecPC &aHandle);
+		Handle_Bisector_BisecPC(const Bisector_BisecPC *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecPC(const Bisector_BisecPC *anItem);
 		%feature("autodoc", "1");
-		Handle_Bisector_BisecPC & operator=(const Handle_Bisector_BisecPC &aHandle);
+		Handle_Bisector_BisecPC & operator=(const Bisector_BisecPC *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecPC & operator=(const Bisector_BisecPC *anItem);
 		%feature("autodoc", "1");
-		Handle_Bisector_BisecPC const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Bisector_BisecPC const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Bisector_BisecPC {
@@ -222,9 +222,9 @@ class Bisector_FunctionInter : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		Bisector_FunctionInter();
 		%feature("autodoc", "1");
-		Bisector_FunctionInter(const Handle_Geom2d_Curve &C, const Handle_Bisector_Curve &Bis1, const Handle_Bisector_Curve &Bis2);
+		Bisector_FunctionInter(const Geom2d_Curve *C, const Bisector_Curve *Bis1, const Bisector_Curve *Bis2);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &C, const Handle_Bisector_Curve &Bis1, const Handle_Bisector_Curve &Bis2);
+		void Perform(const Geom2d_Curve *C, const Bisector_Curve *Bis1, const Bisector_Curve *Bis2);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
@@ -303,9 +303,9 @@ class Bisector_BisecCC : public Bisector_Curve {
 		%feature("autodoc", "1");
 		Bisector_BisecCC();
 		%feature("autodoc", "1");
-		Bisector_BisecCC(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const Standard_Real Side1, const Standard_Real Side2, const gp_Pnt2d &Origin, const Standard_Real DistMax=500);
+		Bisector_BisecCC(const Geom2d_Curve *Cu1, const Geom2d_Curve *Cu2, const Standard_Real Side1, const Standard_Real Side2, const gp_Pnt2d &Origin, const Standard_Real DistMax=500);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const Standard_Real Side1, const Standard_Real Side2, const gp_Pnt2d &Origin, const Standard_Real DistMax=500);
+		void Perform(const Geom2d_Curve *Cu1, const Geom2d_Curve *Cu2, const Standard_Real Side1, const Standard_Real Side2, const gp_Pnt2d &Origin, const Standard_Real DistMax=500);
 		%feature("autodoc", "1");
 		virtual		void Reverse();
 		%feature("autodoc", "1");
@@ -392,11 +392,11 @@ class Bisector_BisecPC : public Bisector_Curve {
 		%feature("autodoc", "1");
 		Bisector_BisecPC();
 		%feature("autodoc", "1");
-		Bisector_BisecPC(const Handle_Geom2d_Curve &Cu, const gp_Pnt2d &P, const Standard_Real Side, const Standard_Real DistMax=500);
+		Bisector_BisecPC(const Geom2d_Curve *Cu, const gp_Pnt2d &P, const Standard_Real Side, const Standard_Real DistMax=500);
 		%feature("autodoc", "1");
-		Bisector_BisecPC(const Handle_Geom2d_Curve &Cu, const gp_Pnt2d &P, const Standard_Real Side, const Standard_Real UMin, const Standard_Real UMax);
+		Bisector_BisecPC(const Geom2d_Curve *Cu, const gp_Pnt2d &P, const Standard_Real Side, const Standard_Real UMin, const Standard_Real UMax);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu, const gp_Pnt2d &P, const Standard_Real Side, const Standard_Real DistMax=500);
+		void Perform(const Geom2d_Curve *Cu, const gp_Pnt2d &P, const Standard_Real Side, const Standard_Real DistMax=500);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsExtendAtStart() const;
 		%feature("autodoc", "1");
@@ -487,21 +487,21 @@ class Bisector_BisecAna : public Bisector_Curve {
 		%feature("autodoc", "1");
 		Bisector_BisecAna();
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		void Perform(const Geom2d_Curve *Cu1, const Geom2d_Curve *Cu2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu, const Handle_Geom2d_Point &Pnt, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		void Perform(const Geom2d_Curve *Cu, const Geom2d_Point *Pnt, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt, const Handle_Geom2d_Curve &Cu, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		void Perform(const Geom2d_Point *Pnt, const Geom2d_Curve *Cu, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt1, const Handle_Geom2d_Point &Pnt2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
+		void Perform(const Geom2d_Point *Pnt1, const Geom2d_Point *Pnt2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_TrimmedCurve &bisector);
+		void Init(const Geom2d_TrimmedCurve *bisector);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsExtendAtStart() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsExtendAtEnd() const;
 		%feature("autodoc", "1");
-		void SetTrim(const Handle_Geom2d_Curve &Cu);
+		void SetTrim(const Geom2d_Curve *Cu);
 		%feature("autodoc", "1");
 		void SetTrim(const Standard_Real uf, const Standard_Real ul);
 		%feature("autodoc", "1");
@@ -676,7 +676,7 @@ class Bisector {
 		%feature("autodoc", "1");
 		Bisector();
 		%feature("autodoc", "1");
-		Standard_Boolean IsConvex(const Handle_Geom2d_Curve &Cu, const Standard_Real Sign);
+		Standard_Boolean IsConvex(const Geom2d_Curve *Cu, const Standard_Real Sign);
 
 };
 %feature("shadow") Bisector::~Bisector %{
@@ -699,7 +699,7 @@ def __del__(self):
 class Bisector_FunctionH : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		Bisector_FunctionH(const Handle_Geom2d_Curve &C2, const gp_Pnt2d &P1, const gp_Vec2d &T1);
+		Bisector_FunctionH(const Geom2d_Curve *C2, const gp_Pnt2d &P1, const gp_Vec2d &T1);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
@@ -733,13 +733,13 @@ class Bisector_Bisec {
 		%feature("autodoc", "1");
 		Bisector_Bisec();
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		void Perform(const Geom2d_Curve *Cu1, const Geom2d_Curve *Cu2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu, const Handle_Geom2d_Point &Pnt, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		void Perform(const Geom2d_Curve *Cu, const Geom2d_Point *Pnt, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt, const Handle_Geom2d_Curve &Cu, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		void Perform(const Geom2d_Point *Pnt, const Geom2d_Curve *Cu, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt1, const Handle_Geom2d_Point &Pnt2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
+		void Perform(const Geom2d_Point *Pnt1, const Geom2d_Point *Pnt2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_TrimmedCurve & Value() const;
 		%feature("autodoc", "1");

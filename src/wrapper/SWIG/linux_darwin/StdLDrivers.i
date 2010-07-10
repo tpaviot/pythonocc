@@ -43,15 +43,15 @@ class Handle_StdLDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentS
 		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		Handle_StdLDrivers_DocumentStorageDriver(const Handle_StdLDrivers_DocumentStorageDriver &aHandle);
+		Handle_StdLDrivers_DocumentStorageDriver(const StdLDrivers_DocumentStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentStorageDriver(const StdLDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_StdLDrivers_DocumentStorageDriver & operator=(const Handle_StdLDrivers_DocumentStorageDriver &aHandle);
+		Handle_StdLDrivers_DocumentStorageDriver & operator=(const StdLDrivers_DocumentStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentStorageDriver & operator=(const StdLDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_StdLDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StdLDrivers_DocumentStorageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StdLDrivers_DocumentStorageDriver {
@@ -81,15 +81,15 @@ class Handle_StdLDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_StdLDrivers_DocumentRetrievalDriver(const Handle_StdLDrivers_DocumentRetrievalDriver &aHandle);
+		Handle_StdLDrivers_DocumentRetrievalDriver(const StdLDrivers_DocumentRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentRetrievalDriver(const StdLDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_StdLDrivers_DocumentRetrievalDriver & operator=(const Handle_StdLDrivers_DocumentRetrievalDriver &aHandle);
+		Handle_StdLDrivers_DocumentRetrievalDriver & operator=(const StdLDrivers_DocumentRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentRetrievalDriver & operator=(const StdLDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_StdLDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StdLDrivers_DocumentRetrievalDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StdLDrivers_DocumentRetrievalDriver {
@@ -144,9 +144,9 @@ class StdLDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 		%feature("autodoc", "1");
 		StdLDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		virtual		void Make(const Handle_CDM_Document &aDocument, PCDM_SequenceOfDocument & Documents);
+		virtual		void Make(const CDM_Document *aDocument, PCDM_SequenceOfDocument & Documents);
 		%feature("autodoc", "1");
-		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
+		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -183,7 +183,7 @@ class StdLDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 		%feature("autodoc", "1");
 		StdLDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		virtual		Handle_MDF_ARDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
+		virtual		Handle_MDF_ARDriverTable AttributeDrivers(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -43,15 +43,15 @@ class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_PositionDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_PositionDriver(const Handle_XmlMPrsStd_PositionDriver &aHandle);
+		Handle_XmlMPrsStd_PositionDriver(const XmlMPrsStd_PositionDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_PositionDriver(const XmlMPrsStd_PositionDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_PositionDriver & operator=(const Handle_XmlMPrsStd_PositionDriver &aHandle);
+		Handle_XmlMPrsStd_PositionDriver & operator=(const XmlMPrsStd_PositionDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_PositionDriver & operator=(const XmlMPrsStd_PositionDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_PositionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlMPrsStd_PositionDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XmlMPrsStd_PositionDriver {
@@ -81,15 +81,15 @@ class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_AISPresentationDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
+		Handle_XmlMPrsStd_AISPresentationDriver(const XmlMPrsStd_AISPresentationDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_AISPresentationDriver(const XmlMPrsStd_AISPresentationDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
+		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const XmlMPrsStd_AISPresentationDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const XmlMPrsStd_AISPresentationDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlMPrsStd_AISPresentationDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XmlMPrsStd_AISPresentationDriver {
@@ -119,7 +119,7 @@ class XmlMPrsStd {
 		%feature("autodoc", "1");
 		XmlMPrsStd();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
+		void AddDrivers(const XmlMDF_ADriverTable *aDriverTable, const CDM_MessageDriver *theMessageDriver);
 
 };
 %feature("shadow") XmlMPrsStd::~XmlMPrsStd %{
@@ -142,13 +142,13 @@ def __del__(self):
 class XmlMPrsStd_AISPresentationDriver : public XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		XmlMPrsStd_AISPresentationDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		XmlMPrsStd_AISPresentationDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const TDF_Attribute *Target, XmlObjMgt_RRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		virtual		void Paste(const TDF_Attribute *Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -183,13 +183,13 @@ def __del__(self):
 class XmlMPrsStd_PositionDriver : public XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		XmlMPrsStd_PositionDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		XmlMPrsStd_PositionDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const TDF_Attribute *Target, XmlObjMgt_RRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		virtual		void Paste(const TDF_Attribute *Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

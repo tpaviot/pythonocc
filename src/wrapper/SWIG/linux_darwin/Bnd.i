@@ -43,15 +43,15 @@ class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox();
 		%feature("autodoc", "1");
-		Handle_Bnd_SequenceNodeOfSeqOfBox(const Handle_Bnd_SequenceNodeOfSeqOfBox &aHandle);
+		Handle_Bnd_SequenceNodeOfSeqOfBox(const Bnd_SequenceNodeOfSeqOfBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox(const Bnd_SequenceNodeOfSeqOfBox *anItem);
 		%feature("autodoc", "1");
-		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Handle_Bnd_SequenceNodeOfSeqOfBox &aHandle);
+		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Bnd_SequenceNodeOfSeqOfBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Bnd_SequenceNodeOfSeqOfBox *anItem);
 		%feature("autodoc", "1");
-		Handle_Bnd_SequenceNodeOfSeqOfBox const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Bnd_SequenceNodeOfSeqOfBox const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Bnd_SequenceNodeOfSeqOfBox {
@@ -81,15 +81,15 @@ class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox2d();
 		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfBox2d(const Handle_Bnd_HArray1OfBox2d &aHandle);
+		Handle_Bnd_HArray1OfBox2d(const Bnd_HArray1OfBox2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox2d(const Bnd_HArray1OfBox2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfBox2d & operator=(const Handle_Bnd_HArray1OfBox2d &aHandle);
+		Handle_Bnd_HArray1OfBox2d & operator=(const Bnd_HArray1OfBox2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox2d & operator=(const Bnd_HArray1OfBox2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfBox2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Bnd_HArray1OfBox2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Bnd_HArray1OfBox2d {
@@ -119,15 +119,15 @@ class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox();
 		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfBox(const Handle_Bnd_HArray1OfBox &aHandle);
+		Handle_Bnd_HArray1OfBox(const Bnd_HArray1OfBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox(const Bnd_HArray1OfBox *anItem);
 		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfBox & operator=(const Handle_Bnd_HArray1OfBox &aHandle);
+		Handle_Bnd_HArray1OfBox & operator=(const Bnd_HArray1OfBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox & operator=(const Bnd_HArray1OfBox *anItem);
 		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfBox const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Bnd_HArray1OfBox const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Bnd_HArray1OfBox {
@@ -558,9 +558,9 @@ class Bnd_BoundSortBox2d {
 		%feature("autodoc", "1");
 		Bnd_BoundSortBox2d();
 		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box2d &CompleteBox, const Handle_Bnd_HArray1OfBox2d &SetOfBox);
+		void Initialize(const Bnd_Box2d &CompleteBox, const Bnd_HArray1OfBox2d *SetOfBox);
 		%feature("autodoc", "1");
-		void Initialize(const Handle_Bnd_HArray1OfBox2d &SetOfBox);
+		void Initialize(const Bnd_HArray1OfBox2d *SetOfBox);
 		%feature("autodoc", "1");
 		void Initialize(const Bnd_Box2d &CompleteBox, const Standard_Integer nbComponents);
 		%feature("autodoc", "1");
@@ -833,9 +833,9 @@ class Bnd_BoundSortBox {
 		%feature("autodoc", "1");
 		Bnd_BoundSortBox();
 		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box &CompleteBox, const Handle_Bnd_HArray1OfBox &SetOfBox);
+		void Initialize(const Bnd_Box &CompleteBox, const Bnd_HArray1OfBox *SetOfBox);
 		%feature("autodoc", "1");
-		void Initialize(const Handle_Bnd_HArray1OfBox &SetOfBox);
+		void Initialize(const Bnd_HArray1OfBox *SetOfBox);
 		%feature("autodoc", "1");
 		void Initialize(const Bnd_Box &CompleteBox, const Standard_Integer nbComponents);
 		%feature("autodoc", "1");

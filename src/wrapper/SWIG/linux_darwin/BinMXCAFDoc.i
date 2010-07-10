@@ -43,15 +43,15 @@ class Handle_BinMXCAFDoc_ColorToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorToolDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ColorToolDriver(const Handle_BinMXCAFDoc_ColorToolDriver &aHandle);
+		Handle_BinMXCAFDoc_ColorToolDriver(const BinMXCAFDoc_ColorToolDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorToolDriver(const BinMXCAFDoc_ColorToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ColorToolDriver & operator=(const Handle_BinMXCAFDoc_ColorToolDriver &aHandle);
+		Handle_BinMXCAFDoc_ColorToolDriver & operator=(const BinMXCAFDoc_ColorToolDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorToolDriver & operator=(const BinMXCAFDoc_ColorToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ColorToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_ColorToolDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_ColorToolDriver {
@@ -81,15 +81,15 @@ class Handle_BinMXCAFDoc_DocumentToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_DocumentToolDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_DocumentToolDriver(const Handle_BinMXCAFDoc_DocumentToolDriver &aHandle);
+		Handle_BinMXCAFDoc_DocumentToolDriver(const BinMXCAFDoc_DocumentToolDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_DocumentToolDriver(const BinMXCAFDoc_DocumentToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_DocumentToolDriver & operator=(const Handle_BinMXCAFDoc_DocumentToolDriver &aHandle);
+		Handle_BinMXCAFDoc_DocumentToolDriver & operator=(const BinMXCAFDoc_DocumentToolDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_DocumentToolDriver & operator=(const BinMXCAFDoc_DocumentToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_DocumentToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_DocumentToolDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_DocumentToolDriver {
@@ -119,15 +119,15 @@ class Handle_BinMXCAFDoc_GraphNodeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_GraphNodeDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_GraphNodeDriver(const Handle_BinMXCAFDoc_GraphNodeDriver &aHandle);
+		Handle_BinMXCAFDoc_GraphNodeDriver(const BinMXCAFDoc_GraphNodeDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_GraphNodeDriver(const BinMXCAFDoc_GraphNodeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_GraphNodeDriver & operator=(const Handle_BinMXCAFDoc_GraphNodeDriver &aHandle);
+		Handle_BinMXCAFDoc_GraphNodeDriver & operator=(const BinMXCAFDoc_GraphNodeDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_GraphNodeDriver & operator=(const BinMXCAFDoc_GraphNodeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_GraphNodeDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_GraphNodeDriver {
@@ -157,15 +157,15 @@ class Handle_BinMXCAFDoc_VolumeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_VolumeDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_VolumeDriver(const Handle_BinMXCAFDoc_VolumeDriver &aHandle);
+		Handle_BinMXCAFDoc_VolumeDriver(const BinMXCAFDoc_VolumeDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_VolumeDriver(const BinMXCAFDoc_VolumeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_VolumeDriver & operator=(const Handle_BinMXCAFDoc_VolumeDriver &aHandle);
+		Handle_BinMXCAFDoc_VolumeDriver & operator=(const BinMXCAFDoc_VolumeDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_VolumeDriver & operator=(const BinMXCAFDoc_VolumeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_VolumeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_VolumeDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_VolumeDriver {
@@ -195,15 +195,15 @@ class Handle_BinMXCAFDoc_ShapeToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ShapeToolDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ShapeToolDriver(const Handle_BinMXCAFDoc_ShapeToolDriver &aHandle);
+		Handle_BinMXCAFDoc_ShapeToolDriver(const BinMXCAFDoc_ShapeToolDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ShapeToolDriver(const BinMXCAFDoc_ShapeToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ShapeToolDriver & operator=(const Handle_BinMXCAFDoc_ShapeToolDriver &aHandle);
+		Handle_BinMXCAFDoc_ShapeToolDriver & operator=(const BinMXCAFDoc_ShapeToolDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ShapeToolDriver & operator=(const BinMXCAFDoc_ShapeToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ShapeToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_ShapeToolDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_ShapeToolDriver {
@@ -233,15 +233,15 @@ class Handle_BinMXCAFDoc_CentroidDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_CentroidDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_CentroidDriver(const Handle_BinMXCAFDoc_CentroidDriver &aHandle);
+		Handle_BinMXCAFDoc_CentroidDriver(const BinMXCAFDoc_CentroidDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_CentroidDriver(const BinMXCAFDoc_CentroidDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_CentroidDriver & operator=(const Handle_BinMXCAFDoc_CentroidDriver &aHandle);
+		Handle_BinMXCAFDoc_CentroidDriver & operator=(const BinMXCAFDoc_CentroidDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_CentroidDriver & operator=(const BinMXCAFDoc_CentroidDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_CentroidDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_CentroidDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_CentroidDriver {
@@ -271,15 +271,15 @@ class Handle_BinMXCAFDoc_LocationDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LocationDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver(const Handle_BinMXCAFDoc_LocationDriver &aHandle);
+		Handle_BinMXCAFDoc_LocationDriver(const BinMXCAFDoc_LocationDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LocationDriver(const BinMXCAFDoc_LocationDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver & operator=(const Handle_BinMXCAFDoc_LocationDriver &aHandle);
+		Handle_BinMXCAFDoc_LocationDriver & operator=(const BinMXCAFDoc_LocationDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LocationDriver & operator=(const BinMXCAFDoc_LocationDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_LocationDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_LocationDriver {
@@ -309,15 +309,15 @@ class Handle_BinMXCAFDoc_ColorDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ColorDriver(const Handle_BinMXCAFDoc_ColorDriver &aHandle);
+		Handle_BinMXCAFDoc_ColorDriver(const BinMXCAFDoc_ColorDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorDriver(const BinMXCAFDoc_ColorDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ColorDriver & operator=(const Handle_BinMXCAFDoc_ColorDriver &aHandle);
+		Handle_BinMXCAFDoc_ColorDriver & operator=(const BinMXCAFDoc_ColorDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorDriver & operator=(const BinMXCAFDoc_ColorDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ColorDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_ColorDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_ColorDriver {
@@ -347,15 +347,15 @@ class Handle_BinMXCAFDoc_AreaDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_AreaDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_AreaDriver(const Handle_BinMXCAFDoc_AreaDriver &aHandle);
+		Handle_BinMXCAFDoc_AreaDriver(const BinMXCAFDoc_AreaDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_AreaDriver(const BinMXCAFDoc_AreaDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_AreaDriver & operator=(const Handle_BinMXCAFDoc_AreaDriver &aHandle);
+		Handle_BinMXCAFDoc_AreaDriver & operator=(const BinMXCAFDoc_AreaDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_AreaDriver & operator=(const BinMXCAFDoc_AreaDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_AreaDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_AreaDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_AreaDriver {
@@ -385,15 +385,15 @@ class Handle_BinMXCAFDoc_LayerToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LayerToolDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LayerToolDriver(const Handle_BinMXCAFDoc_LayerToolDriver &aHandle);
+		Handle_BinMXCAFDoc_LayerToolDriver(const BinMXCAFDoc_LayerToolDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LayerToolDriver(const BinMXCAFDoc_LayerToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LayerToolDriver & operator=(const Handle_BinMXCAFDoc_LayerToolDriver &aHandle);
+		Handle_BinMXCAFDoc_LayerToolDriver & operator=(const BinMXCAFDoc_LayerToolDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LayerToolDriver & operator=(const BinMXCAFDoc_LayerToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LayerToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_LayerToolDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_LayerToolDriver {
@@ -421,13 +421,13 @@ def __del__(self):
 class BinMXCAFDoc_ColorToolDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMXCAFDoc_ColorToolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		BinMXCAFDoc_ColorToolDriver(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -462,13 +462,13 @@ def __del__(self):
 class BinMXCAFDoc_VolumeDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMXCAFDoc_VolumeDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		BinMXCAFDoc_VolumeDriver(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -503,13 +503,13 @@ def __del__(self):
 class BinMXCAFDoc_DocumentToolDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMXCAFDoc_DocumentToolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		BinMXCAFDoc_DocumentToolDriver(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -544,13 +544,13 @@ def __del__(self):
 class BinMXCAFDoc_LayerToolDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMXCAFDoc_LayerToolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		BinMXCAFDoc_LayerToolDriver(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -585,13 +585,13 @@ def __del__(self):
 class BinMXCAFDoc_AreaDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMXCAFDoc_AreaDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		BinMXCAFDoc_AreaDriver(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -626,13 +626,13 @@ def __del__(self):
 class BinMXCAFDoc_CentroidDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMXCAFDoc_CentroidDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		BinMXCAFDoc_CentroidDriver(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -667,13 +667,13 @@ def __del__(self):
 class BinMXCAFDoc_ColorDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMXCAFDoc_ColorDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		BinMXCAFDoc_ColorDriver(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -708,13 +708,13 @@ def __del__(self):
 class BinMXCAFDoc_GraphNodeDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMXCAFDoc_GraphNodeDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		BinMXCAFDoc_GraphNodeDriver(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -751,7 +751,7 @@ class BinMXCAFDoc {
 		%feature("autodoc", "1");
 		BinMXCAFDoc();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMsgDrv);
+		void AddDrivers(const BinMDF_ADriverTable *theDriverTable, const CDM_MessageDriver *theMsgDrv);
 
 };
 %feature("shadow") BinMXCAFDoc::~BinMXCAFDoc %{
@@ -774,13 +774,13 @@ def __del__(self):
 class BinMXCAFDoc_LocationDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMXCAFDoc_LocationDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		BinMXCAFDoc_LocationDriver(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Translate(const BinObjMgt_Persistent &theSource, TopLoc_Location & theLoc, BinObjMgt_RRelocationTable & theMap);
 		%feature("autodoc", "1");
@@ -819,13 +819,13 @@ def __del__(self):
 class BinMXCAFDoc_ShapeToolDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMXCAFDoc_ShapeToolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		BinMXCAFDoc_ShapeToolDriver(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

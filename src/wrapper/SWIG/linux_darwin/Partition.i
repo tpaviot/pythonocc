@@ -186,7 +186,7 @@ class Partition_Inter3d {
 		%feature("autodoc", "1");
 		Partition_Inter3d();
 		%feature("autodoc", "1");
-		Partition_Inter3d(const Handle_BRepAlgo_AsDes &AsDes);
+		Partition_Inter3d(const BRepAlgo_AsDes *AsDes);
 		%feature("autodoc", "1");
 		void CompletPart3d(const TopTools_ListOfShape &SetOfFaces1, const TopTools_DataMapOfShapeShape &FaceShapeMap);
 		%feature("autodoc", "1");
@@ -241,14 +241,14 @@ class Partition_Inter2d {
 		%feature("autodoc", "1");
 		Partition_Inter2d();
 		%feature("autodoc", "1");
-		void CompletPart2d(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges);
+		void CompletPart2d(const BRepAlgo_AsDes *AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges);
 		%feature("autodoc","FindEndVertex(const VertList, Standard_Real f, Standard_Real l, const E) -> Standard_Real");
 
 		TopoDS_Vertex FindEndVertex(const TopTools_ListOfShape &VertList, const Standard_Real f, const Standard_Real l, const TopoDS_Edge &E, Standard_Boolean & First, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		TopoDS_Vertex AddVonE(const TopoDS_Vertex &V, const TopoDS_Edge &E1, const TopoDS_Edge &E2, const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F);
+		TopoDS_Vertex AddVonE(const TopoDS_Vertex &V, const TopoDS_Edge &E1, const TopoDS_Edge &E2, const BRepAlgo_AsDes *AsDes, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		Standard_Real GetTolerance(const TopoDS_Vertex &theV, const Standard_Real theU, const TopoDS_Edge &theE, const Handle_BRepAlgo_AsDes &theAsDes);
+		Standard_Real GetTolerance(const TopoDS_Vertex &theV, const Standard_Real theU, const TopoDS_Edge &theE, const BRepAlgo_AsDes *theAsDes);
 
 };
 %feature("shadow") Partition_Inter2d::~Partition_Inter2d %{

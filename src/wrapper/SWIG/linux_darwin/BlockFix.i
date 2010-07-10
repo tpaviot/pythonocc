@@ -43,15 +43,15 @@ class Handle_BlockFix_SphereSpaceModifier : public Handle_BRepTools_Modification
 		%feature("autodoc", "1");
 		Handle_BlockFix_SphereSpaceModifier();
 		%feature("autodoc", "1");
-		Handle_BlockFix_SphereSpaceModifier(const Handle_BlockFix_SphereSpaceModifier &aHandle);
+		Handle_BlockFix_SphereSpaceModifier(const BlockFix_SphereSpaceModifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_BlockFix_SphereSpaceModifier(const BlockFix_SphereSpaceModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_BlockFix_SphereSpaceModifier & operator=(const Handle_BlockFix_SphereSpaceModifier &aHandle);
+		Handle_BlockFix_SphereSpaceModifier & operator=(const BlockFix_SphereSpaceModifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_BlockFix_SphereSpaceModifier & operator=(const BlockFix_SphereSpaceModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_BlockFix_SphereSpaceModifier const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BlockFix_SphereSpaceModifier const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BlockFix_SphereSpaceModifier {
@@ -81,15 +81,15 @@ class Handle_BlockFix_PeriodicSurfaceModifier : public Handle_BRepTools_Modifica
 		%feature("autodoc", "1");
 		Handle_BlockFix_PeriodicSurfaceModifier();
 		%feature("autodoc", "1");
-		Handle_BlockFix_PeriodicSurfaceModifier(const Handle_BlockFix_PeriodicSurfaceModifier &aHandle);
+		Handle_BlockFix_PeriodicSurfaceModifier(const BlockFix_PeriodicSurfaceModifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_BlockFix_PeriodicSurfaceModifier(const BlockFix_PeriodicSurfaceModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_BlockFix_PeriodicSurfaceModifier & operator=(const Handle_BlockFix_PeriodicSurfaceModifier &aHandle);
+		Handle_BlockFix_PeriodicSurfaceModifier & operator=(const BlockFix_PeriodicSurfaceModifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_BlockFix_PeriodicSurfaceModifier & operator=(const BlockFix_PeriodicSurfaceModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_BlockFix_PeriodicSurfaceModifier const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BlockFix_PeriodicSurfaceModifier const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BlockFix_PeriodicSurfaceModifier {
@@ -119,15 +119,15 @@ class Handle_BlockFix_BlockFixAPI : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BlockFix_BlockFixAPI();
 		%feature("autodoc", "1");
-		Handle_BlockFix_BlockFixAPI(const Handle_BlockFix_BlockFixAPI &aHandle);
+		Handle_BlockFix_BlockFixAPI(const BlockFix_BlockFixAPI *aHandle);
 		%feature("autodoc", "1");
 		Handle_BlockFix_BlockFixAPI(const BlockFix_BlockFixAPI *anItem);
 		%feature("autodoc", "1");
-		Handle_BlockFix_BlockFixAPI & operator=(const Handle_BlockFix_BlockFixAPI &aHandle);
+		Handle_BlockFix_BlockFixAPI & operator=(const BlockFix_BlockFixAPI *aHandle);
 		%feature("autodoc", "1");
 		Handle_BlockFix_BlockFixAPI & operator=(const BlockFix_BlockFixAPI *anItem);
 		%feature("autodoc", "1");
-		Handle_BlockFix_BlockFixAPI const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BlockFix_BlockFixAPI const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BlockFix_BlockFixAPI {
@@ -230,7 +230,7 @@ class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &arg0) const;
+		Standard_Boolean IsKind(const Standard_Type *arg0) const;
 
 };
 %extend BlockFix_SphereSpaceModifier {
@@ -325,7 +325,7 @@ class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &arg0) const;
+		Standard_Boolean IsKind(const Standard_Type *arg0) const;
 
 };
 %extend BlockFix_PeriodicSurfaceModifier {
@@ -447,7 +447,7 @@ class BlockFix_BlockFixAPI : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &arg0) const;
+		Standard_Boolean IsKind(const Standard_Type *arg0) const;
 
 };
 %extend BlockFix_BlockFixAPI {

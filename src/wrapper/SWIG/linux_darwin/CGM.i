@@ -43,15 +43,15 @@ class Handle_CGM_Driver : public Handle_PlotMgt_PlotterDriver {
 		%feature("autodoc", "1");
 		Handle_CGM_Driver();
 		%feature("autodoc", "1");
-		Handle_CGM_Driver(const Handle_CGM_Driver &aHandle);
+		Handle_CGM_Driver(const CGM_Driver *aHandle);
 		%feature("autodoc", "1");
 		Handle_CGM_Driver(const CGM_Driver *anItem);
 		%feature("autodoc", "1");
-		Handle_CGM_Driver & operator=(const Handle_CGM_Driver &aHandle);
+		Handle_CGM_Driver & operator=(const CGM_Driver *aHandle);
 		%feature("autodoc", "1");
 		Handle_CGM_Driver & operator=(const CGM_Driver *anItem);
 		%feature("autodoc", "1");
-		Handle_CGM_Driver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_CGM_Driver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_CGM_Driver {

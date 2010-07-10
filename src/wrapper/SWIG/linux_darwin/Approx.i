@@ -55,15 +55,15 @@ class Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d();
 		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d(const Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d &aHandle);
+		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d(const Approx_SequenceNodeOfSequenceOfArray1OfPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d(const Approx_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d &aHandle);
+		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const Approx_SequenceNodeOfSequenceOfArray1OfPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const Approx_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
@@ -93,15 +93,15 @@ class Handle_Approx_CurvlinFunc : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_CurvlinFunc();
 		%feature("autodoc", "1");
-		Handle_Approx_CurvlinFunc(const Handle_Approx_CurvlinFunc &aHandle);
+		Handle_Approx_CurvlinFunc(const Approx_CurvlinFunc *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_CurvlinFunc(const Approx_CurvlinFunc *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_CurvlinFunc & operator=(const Handle_Approx_CurvlinFunc &aHandle);
+		Handle_Approx_CurvlinFunc & operator=(const Approx_CurvlinFunc *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_CurvlinFunc & operator=(const Approx_CurvlinFunc *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_CurvlinFunc const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Approx_CurvlinFunc const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Approx_CurvlinFunc {
@@ -131,15 +131,15 @@ class Handle_Approx_SweepFunction : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_SweepFunction();
 		%feature("autodoc", "1");
-		Handle_Approx_SweepFunction(const Handle_Approx_SweepFunction &aHandle);
+		Handle_Approx_SweepFunction(const Approx_SweepFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_SweepFunction(const Approx_SweepFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_SweepFunction & operator=(const Handle_Approx_SweepFunction &aHandle);
+		Handle_Approx_SweepFunction & operator=(const Approx_SweepFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_SweepFunction & operator=(const Approx_SweepFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_SweepFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Approx_SweepFunction const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Approx_SweepFunction {
@@ -169,15 +169,15 @@ class Handle_Approx_HArray1OfAdHSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfAdHSurface();
 		%feature("autodoc", "1");
-		Handle_Approx_HArray1OfAdHSurface(const Handle_Approx_HArray1OfAdHSurface &aHandle);
+		Handle_Approx_HArray1OfAdHSurface(const Approx_HArray1OfAdHSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfAdHSurface(const Approx_HArray1OfAdHSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_HArray1OfAdHSurface & operator=(const Handle_Approx_HArray1OfAdHSurface &aHandle);
+		Handle_Approx_HArray1OfAdHSurface & operator=(const Approx_HArray1OfAdHSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfAdHSurface & operator=(const Approx_HArray1OfAdHSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_HArray1OfAdHSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Approx_HArray1OfAdHSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Approx_HArray1OfAdHSurface {
@@ -207,15 +207,15 @@ class Handle_Approx_HArray1OfGTrsf2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfGTrsf2d();
 		%feature("autodoc", "1");
-		Handle_Approx_HArray1OfGTrsf2d(const Handle_Approx_HArray1OfGTrsf2d &aHandle);
+		Handle_Approx_HArray1OfGTrsf2d(const Approx_HArray1OfGTrsf2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfGTrsf2d(const Approx_HArray1OfGTrsf2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_HArray1OfGTrsf2d & operator=(const Handle_Approx_HArray1OfGTrsf2d &aHandle);
+		Handle_Approx_HArray1OfGTrsf2d & operator=(const Approx_HArray1OfGTrsf2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfGTrsf2d & operator=(const Approx_HArray1OfGTrsf2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_HArray1OfGTrsf2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Approx_HArray1OfGTrsf2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Approx_HArray1OfGTrsf2d {
@@ -245,15 +245,15 @@ class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal();
 		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal(const Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal &aHandle);
+		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal(const Approx_SequenceNodeOfSequenceOfHArray1OfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal(const Approx_SequenceNodeOfSequenceOfHArray1OfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal & operator=(const Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal &aHandle);
+		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal & operator=(const Approx_SequenceNodeOfSequenceOfHArray1OfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal & operator=(const Approx_SequenceNodeOfSequenceOfHArray1OfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal {
@@ -281,7 +281,7 @@ def __del__(self):
 class Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Approx_SequenceNodeOfSequenceOfArray1OfPnt2d(const Handle_TColgp_HArray1OfPnt2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Approx_SequenceNodeOfSequenceOfArray1OfPnt2d(const TColgp_HArray1OfPnt2d *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt2d & Value() const;
 		%feature("autodoc", "1");
@@ -318,7 +318,7 @@ def __del__(self):
 class Approx_Curve3d {
 	public:
 		%feature("autodoc", "1");
-		Approx_Curve3d(const Handle_Adaptor3d_HCurve &Curve, const Standard_Real Tol3d, const GeomAbs_Shape Order, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
+		Approx_Curve3d(const Adaptor3d_HCurve *Curve, const Standard_Real Tol3d, const GeomAbs_Shape Order, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve Curve() const;
 		%feature("autodoc", "1");
@@ -456,11 +456,11 @@ def __del__(self):
 class Approx_CurvilinearParameter {
 	public:
 		%feature("autodoc", "1");
-		Approx_CurvilinearParameter(const Handle_Adaptor3d_HCurve &C3D, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
+		Approx_CurvilinearParameter(const Adaptor3d_HCurve *C3D, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
 		%feature("autodoc", "1");
-		Approx_CurvilinearParameter(const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &Surf, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
+		Approx_CurvilinearParameter(const Adaptor2d_HCurve2d *C2D, const Adaptor3d_HSurface *Surf, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
 		%feature("autodoc", "1");
-		Approx_CurvilinearParameter(const Handle_Adaptor2d_HCurve2d &C2D1, const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor2d_HCurve2d &C2D2, const Handle_Adaptor3d_HSurface &Surf2, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
+		Approx_CurvilinearParameter(const Adaptor2d_HCurve2d *C2D1, const Adaptor3d_HSurface *Surf1, const Adaptor2d_HCurve2d *C2D2, const Adaptor3d_HSurface *Surf2, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -542,7 +542,7 @@ def __del__(self):
 class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Approx_SequenceNodeOfSequenceOfHArray1OfReal(const Handle_TColStd_HArray1OfReal &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Approx_SequenceNodeOfSequenceOfHArray1OfReal(const TColStd_HArray1OfReal *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal & Value() const;
 		%feature("autodoc", "1");
@@ -632,9 +632,9 @@ class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up, const Handle_Adaptor3d_HSurface &V);
+		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up, const Adaptor3d_HSurface *V);
 		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HSurface &V);
+		void Init(const Adaptor3d_HSurface *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -642,7 +642,7 @@ class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Adaptor3d_HSurface &Value);
+		void SetValue(const Standard_Integer Index, const Adaptor3d_HSurface *Value);
 		%feature("autodoc", "1");
 		const Handle_Adaptor3d_HSurface & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -685,7 +685,7 @@ def __del__(self):
 class Approx_Curve2d {
 	public:
 		%feature("autodoc", "1");
-		Approx_Curve2d(const Handle_Adaptor2d_HCurve2d &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real TolU, const Standard_Real TolV, const GeomAbs_Shape Continuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
+		Approx_Curve2d(const Adaptor2d_HCurve2d *C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real TolU, const Standard_Real TolV, const GeomAbs_Shape Continuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -867,7 +867,7 @@ def __del__(self):
 class Approx_CurveOnSurface {
 	public:
 		%feature("autodoc", "1");
-		Approx_CurveOnSurface(const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &Surf, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol, const GeomAbs_Shape Continuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments, const Standard_Boolean Only3d=0, const Standard_Boolean Only2d=0);
+		Approx_CurveOnSurface(const Adaptor2d_HCurve2d *C2D, const Adaptor3d_HSurface *Surf, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol, const GeomAbs_Shape Continuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments, const Standard_Boolean Only3d=0, const Standard_Boolean Only2d=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -904,11 +904,11 @@ def __del__(self):
 class Approx_CurvlinFunc : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Approx_CurvlinFunc(const Handle_Adaptor3d_HCurve &C, const Standard_Real Tol);
+		Approx_CurvlinFunc(const Adaptor3d_HCurve *C, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Approx_CurvlinFunc(const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		Approx_CurvlinFunc(const Adaptor2d_HCurve2d *C2D, const Adaptor3d_HSurface *S, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Approx_CurvlinFunc(const Handle_Adaptor2d_HCurve2d &C2D1, const Handle_Adaptor2d_HCurve2d &C2D2, const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Standard_Real Tol);
+		Approx_CurvlinFunc(const Adaptor2d_HCurve2d *C2D1, const Adaptor2d_HCurve2d *C2D2, const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void SetTol(const Standard_Real Tol);
 		%feature("autodoc", "1");
@@ -1003,9 +1003,9 @@ class Approx_Array1OfAdHSurface {
 		%feature("autodoc", "1");
 		Approx_Array1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Approx_Array1OfAdHSurface(const Handle_Adaptor3d_HSurface &Item, const Standard_Integer Low, const Standard_Integer Up);
+		Approx_Array1OfAdHSurface(const Adaptor3d_HSurface *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HSurface &V);
+		void Init(const Adaptor3d_HSurface *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -1021,7 +1021,7 @@ class Approx_Array1OfAdHSurface {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Adaptor3d_HSurface &Value);
+		void SetValue(const Standard_Integer Index, const Adaptor3d_HSurface *Value);
 		%feature("autodoc", "1");
 		const Handle_Adaptor3d_HSurface & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1060,19 +1060,19 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Approx_SequenceOfArray1OfPnt2d & operator=(const Approx_SequenceOfArray1OfPnt2d &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HArray1OfPnt2d &T);
+		void Append(const TColgp_HArray1OfPnt2d *T);
 		%feature("autodoc", "1");
 		void Append(Approx_SequenceOfArray1OfPnt2d & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HArray1OfPnt2d &T);
+		void Prepend(const TColgp_HArray1OfPnt2d *T);
 		%feature("autodoc", "1");
 		void Prepend(Approx_SequenceOfArray1OfPnt2d & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
+		void InsertBefore(const Standard_Integer Index, const TColgp_HArray1OfPnt2d *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Approx_SequenceOfArray1OfPnt2d & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &T);
+		void InsertAfter(const Standard_Integer Index, const TColgp_HArray1OfPnt2d *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Approx_SequenceOfArray1OfPnt2d & S);
 		%feature("autodoc", "1");
@@ -1086,7 +1086,7 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
+		void SetValue(const Standard_Integer Index, const TColgp_HArray1OfPnt2d *I);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt2d & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -1117,11 +1117,11 @@ def __del__(self):
 class Approx_SameParameter {
 	public:
 		%feature("autodoc", "1");
-		Approx_SameParameter(const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Geom_Surface &S, const Standard_Real Tol);
+		Approx_SameParameter(const Geom_Curve *C3D, const Geom2d_Curve *C2D, const Geom_Surface *S, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		Approx_SameParameter(const Adaptor3d_HCurve *C3D, const Geom2d_Curve *C2D, const Adaptor3d_HSurface *S, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		Approx_SameParameter(const Adaptor3d_HCurve *C3D, const Adaptor2d_HCurve2d *C2D, const Adaptor3d_HSurface *S, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -1160,19 +1160,19 @@ class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Approx_SequenceOfHArray1OfReal & operator=(const Approx_SequenceOfHArray1OfReal &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_TColStd_HArray1OfReal &T);
+		void Append(const TColStd_HArray1OfReal *T);
 		%feature("autodoc", "1");
 		void Append(Approx_SequenceOfHArray1OfReal & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_TColStd_HArray1OfReal &T);
+		void Prepend(const TColStd_HArray1OfReal *T);
 		%feature("autodoc", "1");
 		void Prepend(Approx_SequenceOfHArray1OfReal & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &I);
+		void InsertBefore(const Standard_Integer Index, const TColStd_HArray1OfReal *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &T);
+		void InsertAfter(const Standard_Integer Index, const TColStd_HArray1OfReal *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
 		%feature("autodoc", "1");
@@ -1186,7 +1186,7 @@ class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &I);
+		void SetValue(const Standard_Integer Index, const TColStd_HArray1OfReal *I);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -1217,7 +1217,7 @@ def __del__(self):
 class Approx_SweepApproximation {
 	public:
 		%feature("autodoc", "1");
-		Approx_SweepApproximation(const Handle_Approx_SweepFunction &Func);
+		Approx_SweepApproximation(const Approx_SweepFunction *Func);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const Standard_Real BoundTol, const Standard_Real Tol2d, const Standard_Real TolAngular, const GeomAbs_Shape Continuity=GeomAbs_C0, const Standard_Integer Degmax=11, const Standard_Integer Segmax=50);
 		%feature("autodoc","Eval(Standard_Real Parameter, Standard_Integer DerivativeRequest, Standard_Real First, Standard_Real Last) -> Standard_Real");

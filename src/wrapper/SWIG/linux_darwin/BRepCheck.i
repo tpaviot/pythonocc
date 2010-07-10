@@ -80,15 +80,15 @@ class Handle_BRepCheck_Result : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Result();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Result(const Handle_BRepCheck_Result &aHandle);
+		Handle_BRepCheck_Result(const BRepCheck_Result *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Result(const BRepCheck_Result *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Result & operator=(const Handle_BRepCheck_Result &aHandle);
+		Handle_BRepCheck_Result & operator=(const BRepCheck_Result *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Result & operator=(const BRepCheck_Result *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Result const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepCheck_Result const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepCheck_Result {
@@ -118,15 +118,15 @@ class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Vertex();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Vertex(const Handle_BRepCheck_Vertex &aHandle);
+		Handle_BRepCheck_Vertex(const BRepCheck_Vertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Vertex(const BRepCheck_Vertex *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Vertex & operator=(const Handle_BRepCheck_Vertex &aHandle);
+		Handle_BRepCheck_Vertex & operator=(const BRepCheck_Vertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Vertex & operator=(const BRepCheck_Vertex *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Vertex const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepCheck_Vertex const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepCheck_Vertex {
@@ -156,15 +156,15 @@ class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Shell();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Shell(const Handle_BRepCheck_Shell &aHandle);
+		Handle_BRepCheck_Shell(const BRepCheck_Shell *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Shell(const BRepCheck_Shell *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Shell & operator=(const Handle_BRepCheck_Shell &aHandle);
+		Handle_BRepCheck_Shell & operator=(const BRepCheck_Shell *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Shell & operator=(const BRepCheck_Shell *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Shell const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepCheck_Shell const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepCheck_Shell {
@@ -194,15 +194,15 @@ class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Face();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Face(const Handle_BRepCheck_Face &aHandle);
+		Handle_BRepCheck_Face(const BRepCheck_Face *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Face(const BRepCheck_Face *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Face & operator=(const Handle_BRepCheck_Face &aHandle);
+		Handle_BRepCheck_Face & operator=(const BRepCheck_Face *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Face & operator=(const BRepCheck_Face *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Face const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepCheck_Face const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepCheck_Face {
@@ -232,15 +232,15 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_T
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus &aHandle);
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus & operator=(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus &aHandle);
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus & operator=(const BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus & operator=(const BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
@@ -270,15 +270,15 @@ class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Wire();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire(const Handle_BRepCheck_Wire &aHandle);
+		Handle_BRepCheck_Wire(const BRepCheck_Wire *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Wire(const BRepCheck_Wire *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire & operator=(const Handle_BRepCheck_Wire &aHandle);
+		Handle_BRepCheck_Wire & operator=(const BRepCheck_Wire *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Wire & operator=(const BRepCheck_Wire *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepCheck_Wire const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepCheck_Wire {
@@ -308,15 +308,15 @@ class Handle_BRepCheck_ListNodeOfListOfStatus : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_BRepCheck_ListNodeOfListOfStatus();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_ListNodeOfListOfStatus(const Handle_BRepCheck_ListNodeOfListOfStatus &aHandle);
+		Handle_BRepCheck_ListNodeOfListOfStatus(const BRepCheck_ListNodeOfListOfStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_ListNodeOfListOfStatus(const BRepCheck_ListNodeOfListOfStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_ListNodeOfListOfStatus & operator=(const Handle_BRepCheck_ListNodeOfListOfStatus &aHandle);
+		Handle_BRepCheck_ListNodeOfListOfStatus & operator=(const BRepCheck_ListNodeOfListOfStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_ListNodeOfListOfStatus & operator=(const BRepCheck_ListNodeOfListOfStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_ListNodeOfListOfStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepCheck_ListNodeOfListOfStatus const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepCheck_ListNodeOfListOfStatus {
@@ -346,15 +346,15 @@ class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Edge();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Edge(const Handle_BRepCheck_Edge &aHandle);
+		Handle_BRepCheck_Edge(const BRepCheck_Edge *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Edge(const BRepCheck_Edge *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Edge & operator=(const Handle_BRepCheck_Edge &aHandle);
+		Handle_BRepCheck_Edge & operator=(const BRepCheck_Edge *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Edge & operator=(const BRepCheck_Edge *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Edge const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepCheck_Edge const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepCheck_Edge {
@@ -384,15 +384,15 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult &aHandle);
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult & operator=(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult &aHandle);
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult & operator=(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult & operator=(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
@@ -610,7 +610,7 @@ class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepCheck_Result &I);
+		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepCheck_Result *I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
@@ -700,7 +700,7 @@ def __del__(self):
 class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepCheck_DataMapNodeOfDataMapOfShapeResult(const TopoDS_Shape &K, const Handle_BRepCheck_Result &I, const TCollection_MapNodePtr &n);
+		BRepCheck_DataMapNodeOfDataMapOfShapeResult(const TopoDS_Shape &K, const BRepCheck_Result *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");

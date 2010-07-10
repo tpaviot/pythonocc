@@ -43,15 +43,15 @@ class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : p
 		%feature("autodoc", "1");
 		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep();
 		%feature("autodoc", "1");
-		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep(const Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep &aHandle);
+		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep(const BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep(const BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep & operator=(const Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep &aHandle);
+		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep & operator=(const BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep & operator=(const BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {

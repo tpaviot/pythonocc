@@ -48,15 +48,15 @@ class Handle_BinDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_Docu
 		%feature("autodoc", "1");
 		Handle_BinDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentRetrievalDriver(const Handle_BinDrivers_DocumentRetrievalDriver &aHandle);
+		Handle_BinDrivers_DocumentRetrievalDriver(const BinDrivers_DocumentRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinDrivers_DocumentRetrievalDriver(const BinDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentRetrievalDriver & operator=(const Handle_BinDrivers_DocumentRetrievalDriver &aHandle);
+		Handle_BinDrivers_DocumentRetrievalDriver & operator=(const BinDrivers_DocumentRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinDrivers_DocumentRetrievalDriver & operator=(const BinDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinDrivers_DocumentRetrievalDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinDrivers_DocumentRetrievalDriver {
@@ -86,15 +86,15 @@ class Handle_BinDrivers_DocumentStorageDriver : public Handle_BinLDrivers_Docume
 		%feature("autodoc", "1");
 		Handle_BinDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentStorageDriver(const Handle_BinDrivers_DocumentStorageDriver &aHandle);
+		Handle_BinDrivers_DocumentStorageDriver(const BinDrivers_DocumentStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinDrivers_DocumentStorageDriver(const BinDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentStorageDriver & operator=(const Handle_BinDrivers_DocumentStorageDriver &aHandle);
+		Handle_BinDrivers_DocumentStorageDriver & operator=(const BinDrivers_DocumentStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinDrivers_DocumentStorageDriver & operator=(const BinDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinDrivers_DocumentStorageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinDrivers_DocumentStorageDriver {
@@ -124,7 +124,7 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 		%feature("autodoc", "1");
 		BinDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -163,7 +163,7 @@ class BinDrivers {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
 		%feature("autodoc", "1");
-		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
+		Handle_BinMDF_ADriverTable AttributeDrivers(const CDM_MessageDriver *MsgDrv);
 		%feature("autodoc", "1");
 		TCollection_AsciiString StorageVersion();
 
@@ -190,7 +190,7 @@ class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalD
 		%feature("autodoc", "1");
 		BinDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

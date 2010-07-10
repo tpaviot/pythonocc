@@ -43,15 +43,15 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt();
 		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
@@ -81,15 +81,15 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d();
 		%feature("autodoc", "1");
-		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d &aHandle);
+		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d & operator=(const Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d &aHandle);
+		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d & operator=(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d & operator=(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
@@ -119,15 +119,15 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d();
 		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d &aHandle);
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d & operator=(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d &aHandle);
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
@@ -157,15 +157,15 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt();
 		%feature("autodoc", "1");
-		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt(const Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt &aHandle);
+		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt & operator=(const Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt &aHandle);
+		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt & operator=(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt & operator=(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt {

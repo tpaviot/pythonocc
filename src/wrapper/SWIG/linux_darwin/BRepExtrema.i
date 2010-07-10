@@ -49,15 +49,15 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_UnCompatibleShape();
 		%feature("autodoc", "1");
-		Handle_BRepExtrema_UnCompatibleShape(const Handle_BRepExtrema_UnCompatibleShape &aHandle);
+		Handle_BRepExtrema_UnCompatibleShape(const BRepExtrema_UnCompatibleShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_UnCompatibleShape(const BRepExtrema_UnCompatibleShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepExtrema_UnCompatibleShape & operator=(const Handle_BRepExtrema_UnCompatibleShape &aHandle);
+		Handle_BRepExtrema_UnCompatibleShape & operator=(const BRepExtrema_UnCompatibleShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_UnCompatibleShape & operator=(const BRepExtrema_UnCompatibleShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepExtrema_UnCompatibleShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepExtrema_UnCompatibleShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepExtrema_UnCompatibleShape {
@@ -87,15 +87,15 @@ class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution();
 		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const BRepExtrema_SequenceNodeOfSeqOfSolution *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const BRepExtrema_SequenceNodeOfSeqOfSolution *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {

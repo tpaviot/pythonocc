@@ -43,11 +43,11 @@ class RWStepRepr_RWShapeAspectRelationship {
 		%feature("autodoc", "1");
 		RWStepRepr_RWShapeAspectRelationship();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ShapeAspectRelationship &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ShapeAspectRelationship *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ShapeAspectRelationship &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ShapeAspectRelationship *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ShapeAspectRelationship &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ShapeAspectRelationship *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWShapeAspectRelationship::~RWStepRepr_RWShapeAspectRelationship %{
@@ -72,11 +72,11 @@ class RWStepRepr_RWQuantifiedAssemblyComponentUsage {
 		%feature("autodoc", "1");
 		RWStepRepr_RWQuantifiedAssemblyComponentUsage();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_QuantifiedAssemblyComponentUsage &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_QuantifiedAssemblyComponentUsage *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_QuantifiedAssemblyComponentUsage &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_QuantifiedAssemblyComponentUsage *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_QuantifiedAssemblyComponentUsage &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_QuantifiedAssemblyComponentUsage *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWQuantifiedAssemblyComponentUsage::~RWStepRepr_RWQuantifiedAssemblyComponentUsage %{
@@ -101,11 +101,11 @@ class RWStepRepr_RWDefinitionalRepresentation {
 		%feature("autodoc", "1");
 		RWStepRepr_RWDefinitionalRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_DefinitionalRepresentation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_DefinitionalRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_DefinitionalRepresentation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_DefinitionalRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_DefinitionalRepresentation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_DefinitionalRepresentation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWDefinitionalRepresentation::~RWStepRepr_RWDefinitionalRepresentation %{
@@ -130,11 +130,11 @@ class RWStepRepr_RWCompoundRepresentationItem {
 		%feature("autodoc", "1");
 		RWStepRepr_RWCompoundRepresentationItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_CompoundRepresentationItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_CompoundRepresentationItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_CompoundRepresentationItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_CompoundRepresentationItem *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_CompoundRepresentationItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_CompoundRepresentationItem *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWCompoundRepresentationItem::~RWStepRepr_RWCompoundRepresentationItem %{
@@ -159,11 +159,11 @@ class RWStepRepr_RWDerivedShapeAspect {
 		%feature("autodoc", "1");
 		RWStepRepr_RWDerivedShapeAspect();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_DerivedShapeAspect &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_DerivedShapeAspect *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_DerivedShapeAspect &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_DerivedShapeAspect *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_DerivedShapeAspect &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_DerivedShapeAspect *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWDerivedShapeAspect::~RWStepRepr_RWDerivedShapeAspect %{
@@ -188,11 +188,11 @@ class RWStepRepr_RWCompositeShapeAspect {
 		%feature("autodoc", "1");
 		RWStepRepr_RWCompositeShapeAspect();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_CompositeShapeAspect &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_CompositeShapeAspect *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_CompositeShapeAspect &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_CompositeShapeAspect *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_CompositeShapeAspect &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_CompositeShapeAspect *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWCompositeShapeAspect::~RWStepRepr_RWCompositeShapeAspect %{
@@ -217,11 +217,11 @@ class RWStepRepr_RWExtension {
 		%feature("autodoc", "1");
 		RWStepRepr_RWExtension();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_Extension &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_Extension *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_Extension &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_Extension *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_Extension &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_Extension *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWExtension::~RWStepRepr_RWExtension %{
@@ -246,11 +246,11 @@ class RWStepRepr_RWShapeAspectDerivingRelationship {
 		%feature("autodoc", "1");
 		RWStepRepr_RWShapeAspectDerivingRelationship();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ShapeAspectDerivingRelationship &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ShapeAspectDerivingRelationship *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ShapeAspectDerivingRelationship &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ShapeAspectDerivingRelationship *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ShapeAspectDerivingRelationship &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ShapeAspectDerivingRelationship *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWShapeAspectDerivingRelationship::~RWStepRepr_RWShapeAspectDerivingRelationship %{
@@ -275,11 +275,11 @@ class RWStepRepr_RWRepresentationRelationship {
 		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentationRelationship();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_RepresentationRelationship &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_RepresentationRelationship *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_RepresentationRelationship &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_RepresentationRelationship *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_RepresentationRelationship &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_RepresentationRelationship *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWRepresentationRelationship::~RWStepRepr_RWRepresentationRelationship %{
@@ -304,11 +304,11 @@ class RWStepRepr_RWAssemblyComponentUsageSubstitute {
 		%feature("autodoc", "1");
 		RWStepRepr_RWAssemblyComponentUsageSubstitute();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_AssemblyComponentUsageSubstitute &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_AssemblyComponentUsageSubstitute *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_AssemblyComponentUsageSubstitute &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_AssemblyComponentUsageSubstitute *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_AssemblyComponentUsageSubstitute &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_AssemblyComponentUsageSubstitute *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWAssemblyComponentUsageSubstitute::~RWStepRepr_RWAssemblyComponentUsageSubstitute %{
@@ -333,11 +333,11 @@ class RWStepRepr_RWConfigurationItem {
 		%feature("autodoc", "1");
 		RWStepRepr_RWConfigurationItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ConfigurationItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ConfigurationItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ConfigurationItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ConfigurationItem *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ConfigurationItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ConfigurationItem *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWConfigurationItem::~RWStepRepr_RWConfigurationItem %{
@@ -362,9 +362,9 @@ class RWStepRepr_RWFunctionallyDefinedTransformation {
 		%feature("autodoc", "1");
 		RWStepRepr_RWFunctionallyDefinedTransformation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_FunctionallyDefinedTransformation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_FunctionallyDefinedTransformation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_FunctionallyDefinedTransformation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_FunctionallyDefinedTransformation *ent) const;
 
 };
 %feature("shadow") RWStepRepr_RWFunctionallyDefinedTransformation::~RWStepRepr_RWFunctionallyDefinedTransformation %{
@@ -389,11 +389,11 @@ class RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
 		%feature("autodoc", "1");
 		RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_StructuralResponsePropertyDefinitionRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_StructuralResponsePropertyDefinitionRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_StructuralResponsePropertyDefinitionRepresentation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation::~RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation %{
@@ -418,11 +418,11 @@ class RWStepRepr_RWConfigurationEffectivity {
 		%feature("autodoc", "1");
 		RWStepRepr_RWConfigurationEffectivity();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ConfigurationEffectivity &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ConfigurationEffectivity *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ConfigurationEffectivity &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ConfigurationEffectivity *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ConfigurationEffectivity &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ConfigurationEffectivity *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWConfigurationEffectivity::~RWStepRepr_RWConfigurationEffectivity %{
@@ -447,11 +447,11 @@ class RWStepRepr_RWMakeFromUsageOption {
 		%feature("autodoc", "1");
 		RWStepRepr_RWMakeFromUsageOption();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_MakeFromUsageOption &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_MakeFromUsageOption *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_MakeFromUsageOption &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_MakeFromUsageOption *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_MakeFromUsageOption &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_MakeFromUsageOption *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWMakeFromUsageOption::~RWStepRepr_RWMakeFromUsageOption %{
@@ -476,11 +476,11 @@ class RWStepRepr_RWMappedItem {
 		%feature("autodoc", "1");
 		RWStepRepr_RWMappedItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_MappedItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_MappedItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_MappedItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_MappedItem *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_MappedItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_MappedItem *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWMappedItem::~RWStepRepr_RWMappedItem %{
@@ -505,9 +505,9 @@ class RWStepRepr_RWRepresentationContext {
 		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentationContext();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_RepresentationContext &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_RepresentationContext *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_RepresentationContext &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_RepresentationContext *ent) const;
 
 };
 %feature("shadow") RWStepRepr_RWRepresentationContext::~RWStepRepr_RWRepresentationContext %{
@@ -532,9 +532,9 @@ class RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
 		%feature("autodoc", "1");
 		RWStepRepr_RWReprItemAndLengthMeasureWithUnit();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ReprItemAndLengthMeasureWithUnit &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ReprItemAndLengthMeasureWithUnit *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ReprItemAndLengthMeasureWithUnit &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ReprItemAndLengthMeasureWithUnit *ent) const;
 
 };
 %feature("shadow") RWStepRepr_RWReprItemAndLengthMeasureWithUnit::~RWStepRepr_RWReprItemAndLengthMeasureWithUnit %{
@@ -559,11 +559,11 @@ class RWStepRepr_RWMaterialPropertyRepresentation {
 		%feature("autodoc", "1");
 		RWStepRepr_RWMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_MaterialPropertyRepresentation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_MaterialPropertyRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_MaterialPropertyRepresentation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_MaterialPropertyRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_MaterialPropertyRepresentation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_MaterialPropertyRepresentation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWMaterialPropertyRepresentation::~RWStepRepr_RWMaterialPropertyRepresentation %{
@@ -588,11 +588,11 @@ class RWStepRepr_RWStructuralResponseProperty {
 		%feature("autodoc", "1");
 		RWStepRepr_RWStructuralResponseProperty();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_StructuralResponseProperty &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_StructuralResponseProperty *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_StructuralResponseProperty &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_StructuralResponseProperty *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_StructuralResponseProperty &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_StructuralResponseProperty *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWStructuralResponseProperty::~RWStepRepr_RWStructuralResponseProperty %{
@@ -617,9 +617,9 @@ class RWStepRepr_RWParametricRepresentationContext {
 		%feature("autodoc", "1");
 		RWStepRepr_RWParametricRepresentationContext();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ParametricRepresentationContext &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ParametricRepresentationContext *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ParametricRepresentationContext &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ParametricRepresentationContext *ent) const;
 
 };
 %feature("shadow") RWStepRepr_RWParametricRepresentationContext::~RWStepRepr_RWParametricRepresentationContext %{
@@ -644,11 +644,11 @@ class RWStepRepr_RWMaterialDesignation {
 		%feature("autodoc", "1");
 		RWStepRepr_RWMaterialDesignation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_MaterialDesignation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_MaterialDesignation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_MaterialDesignation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_MaterialDesignation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_MaterialDesignation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_MaterialDesignation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWMaterialDesignation::~RWStepRepr_RWMaterialDesignation %{
@@ -673,11 +673,11 @@ class RWStepRepr_RWProductDefinitionShape {
 		%feature("autodoc", "1");
 		RWStepRepr_RWProductDefinitionShape();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ProductDefinitionShape &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ProductDefinitionShape *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ProductDefinitionShape &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ProductDefinitionShape *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ProductDefinitionShape &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ProductDefinitionShape *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWProductDefinitionShape::~RWStepRepr_RWProductDefinitionShape %{
@@ -702,11 +702,11 @@ class RWStepRepr_RWDataEnvironment {
 		%feature("autodoc", "1");
 		RWStepRepr_RWDataEnvironment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_DataEnvironment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_DataEnvironment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_DataEnvironment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_DataEnvironment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_DataEnvironment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_DataEnvironment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWDataEnvironment::~RWStepRepr_RWDataEnvironment %{
@@ -731,11 +731,11 @@ class RWStepRepr_RWPropertyDefinition {
 		%feature("autodoc", "1");
 		RWStepRepr_RWPropertyDefinition();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_PropertyDefinition &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_PropertyDefinition *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_PropertyDefinition &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_PropertyDefinition *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_PropertyDefinition &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_PropertyDefinition *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWPropertyDefinition::~RWStepRepr_RWPropertyDefinition %{
@@ -760,11 +760,11 @@ class RWStepRepr_RWConfigurationDesign {
 		%feature("autodoc", "1");
 		RWStepRepr_RWConfigurationDesign();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ConfigurationDesign &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ConfigurationDesign *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ConfigurationDesign &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ConfigurationDesign *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ConfigurationDesign &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ConfigurationDesign *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWConfigurationDesign::~RWStepRepr_RWConfigurationDesign %{
@@ -789,11 +789,11 @@ class RWStepRepr_RWRepresentationMap {
 		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentationMap();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_RepresentationMap &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_RepresentationMap *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_RepresentationMap &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_RepresentationMap *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_RepresentationMap &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_RepresentationMap *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWRepresentationMap::~RWStepRepr_RWRepresentationMap %{
@@ -818,11 +818,11 @@ class RWStepRepr_RWMaterialProperty {
 		%feature("autodoc", "1");
 		RWStepRepr_RWMaterialProperty();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_MaterialProperty &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_MaterialProperty *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_MaterialProperty &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_MaterialProperty *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_MaterialProperty &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_MaterialProperty *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWMaterialProperty::~RWStepRepr_RWMaterialProperty %{
@@ -847,9 +847,9 @@ class RWStepRepr_RWDescriptiveRepresentationItem {
 		%feature("autodoc", "1");
 		RWStepRepr_RWDescriptiveRepresentationItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_DescriptiveRepresentationItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_DescriptiveRepresentationItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_DescriptiveRepresentationItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_DescriptiveRepresentationItem *ent) const;
 
 };
 %feature("shadow") RWStepRepr_RWDescriptiveRepresentationItem::~RWStepRepr_RWDescriptiveRepresentationItem %{
@@ -874,11 +874,11 @@ class RWStepRepr_RWShapeAspectTransition {
 		%feature("autodoc", "1");
 		RWStepRepr_RWShapeAspectTransition();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ShapeAspectTransition &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ShapeAspectTransition *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ShapeAspectTransition &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ShapeAspectTransition *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ShapeAspectTransition &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ShapeAspectTransition *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWShapeAspectTransition::~RWStepRepr_RWShapeAspectTransition %{
@@ -903,11 +903,11 @@ class RWStepRepr_RWSpecifiedHigherUsageOccurrence {
 		%feature("autodoc", "1");
 		RWStepRepr_RWSpecifiedHigherUsageOccurrence();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_SpecifiedHigherUsageOccurrence &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_SpecifiedHigherUsageOccurrence *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_SpecifiedHigherUsageOccurrence &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_SpecifiedHigherUsageOccurrence *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_SpecifiedHigherUsageOccurrence &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_SpecifiedHigherUsageOccurrence *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWSpecifiedHigherUsageOccurrence::~RWStepRepr_RWSpecifiedHigherUsageOccurrence %{
@@ -932,11 +932,11 @@ class RWStepRepr_RWGlobalUncertaintyAssignedContext {
 		%feature("autodoc", "1");
 		RWStepRepr_RWGlobalUncertaintyAssignedContext();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_GlobalUncertaintyAssignedContext &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_GlobalUncertaintyAssignedContext *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_GlobalUncertaintyAssignedContext &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_GlobalUncertaintyAssignedContext *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_GlobalUncertaintyAssignedContext &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_GlobalUncertaintyAssignedContext *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWGlobalUncertaintyAssignedContext::~RWStepRepr_RWGlobalUncertaintyAssignedContext %{
@@ -961,11 +961,11 @@ class RWStepRepr_RWShapeAspect {
 		%feature("autodoc", "1");
 		RWStepRepr_RWShapeAspect();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ShapeAspect &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ShapeAspect *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ShapeAspect &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ShapeAspect *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ShapeAspect &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ShapeAspect *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWShapeAspect::~RWStepRepr_RWShapeAspect %{
@@ -990,11 +990,11 @@ class RWStepRepr_RWGlobalUnitAssignedContext {
 		%feature("autodoc", "1");
 		RWStepRepr_RWGlobalUnitAssignedContext();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_GlobalUnitAssignedContext &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_GlobalUnitAssignedContext *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_GlobalUnitAssignedContext &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_GlobalUnitAssignedContext *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_GlobalUnitAssignedContext &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_GlobalUnitAssignedContext *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWGlobalUnitAssignedContext::~RWStepRepr_RWGlobalUnitAssignedContext %{
@@ -1019,11 +1019,11 @@ class RWStepRepr_RWPropertyDefinitionRelationship {
 		%feature("autodoc", "1");
 		RWStepRepr_RWPropertyDefinitionRelationship();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_PropertyDefinitionRelationship &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_PropertyDefinitionRelationship *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_PropertyDefinitionRelationship &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_PropertyDefinitionRelationship *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_PropertyDefinitionRelationship &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_PropertyDefinitionRelationship *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWPropertyDefinitionRelationship::~RWStepRepr_RWPropertyDefinitionRelationship %{
@@ -1048,11 +1048,11 @@ class RWStepRepr_RWPropertyDefinitionRepresentation {
 		%feature("autodoc", "1");
 		RWStepRepr_RWPropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_PropertyDefinitionRepresentation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_PropertyDefinitionRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_PropertyDefinitionRepresentation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_PropertyDefinitionRepresentation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_PropertyDefinitionRepresentation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_PropertyDefinitionRepresentation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWPropertyDefinitionRepresentation::~RWStepRepr_RWPropertyDefinitionRepresentation %{
@@ -1077,11 +1077,11 @@ class RWStepRepr_RWRepresentation {
 		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_Representation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_Representation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_Representation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_Representation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_Representation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_Representation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWRepresentation::~RWStepRepr_RWRepresentation %{
@@ -1106,11 +1106,11 @@ class RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
 		%feature("autodoc", "1");
 		RWStepRepr_RWShapeRepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ShapeRepresentationRelationshipWithTransformation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ShapeRepresentationRelationshipWithTransformation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ShapeRepresentationRelationshipWithTransformation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWShapeRepresentationRelationshipWithTransformation::~RWStepRepr_RWShapeRepresentationRelationshipWithTransformation %{
@@ -1135,9 +1135,9 @@ class RWStepRepr_RWRepresentationItem {
 		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentationItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_RepresentationItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_RepresentationItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_RepresentationItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_RepresentationItem *ent) const;
 
 };
 %feature("shadow") RWStepRepr_RWRepresentationItem::~RWStepRepr_RWRepresentationItem %{
@@ -1162,11 +1162,11 @@ class RWStepRepr_RWRepresentationRelationshipWithTransformation {
 		%feature("autodoc", "1");
 		RWStepRepr_RWRepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_RepresentationRelationshipWithTransformation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_RepresentationRelationshipWithTransformation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_RepresentationRelationshipWithTransformation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_RepresentationRelationshipWithTransformation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_RepresentationRelationshipWithTransformation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_RepresentationRelationshipWithTransformation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWRepresentationRelationshipWithTransformation::~RWStepRepr_RWRepresentationRelationshipWithTransformation %{
@@ -1191,11 +1191,11 @@ class RWStepRepr_RWItemDefinedTransformation {
 		%feature("autodoc", "1");
 		RWStepRepr_RWItemDefinedTransformation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ItemDefinedTransformation &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ItemDefinedTransformation *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ItemDefinedTransformation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ItemDefinedTransformation *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ItemDefinedTransformation &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ItemDefinedTransformation *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWItemDefinedTransformation::~RWStepRepr_RWItemDefinedTransformation %{
@@ -1220,11 +1220,11 @@ class RWStepRepr_RWMeasureRepresentationItem {
 		%feature("autodoc", "1");
 		RWStepRepr_RWMeasureRepresentationItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_MeasureRepresentationItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_MeasureRepresentationItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_MeasureRepresentationItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_MeasureRepresentationItem *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_MeasureRepresentationItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_MeasureRepresentationItem *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWMeasureRepresentationItem::~RWStepRepr_RWMeasureRepresentationItem %{
@@ -1249,11 +1249,11 @@ class RWStepRepr_RWProductConcept {
 		%feature("autodoc", "1");
 		RWStepRepr_RWProductConcept();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ProductConcept &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_ProductConcept *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ProductConcept &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_ProductConcept *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ProductConcept &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_ProductConcept *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWProductConcept::~RWStepRepr_RWProductConcept %{
@@ -1278,11 +1278,11 @@ class RWStepRepr_RWAssemblyComponentUsage {
 		%feature("autodoc", "1");
 		RWStepRepr_RWAssemblyComponentUsage();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_AssemblyComponentUsage &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepRepr_AssemblyComponentUsage *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_AssemblyComponentUsage &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepRepr_AssemblyComponentUsage *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_AssemblyComponentUsage &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepRepr_AssemblyComponentUsage *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepRepr_RWAssemblyComponentUsage::~RWStepRepr_RWAssemblyComponentUsage %{

@@ -43,15 +43,15 @@ class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
+		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver & operator=(const Handle_MDocStd_DocumentStorageDriver &aHandle);
+		Handle_MDocStd_DocumentStorageDriver & operator=(const MDocStd_DocumentStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentStorageDriver & operator=(const MDocStd_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MDocStd_DocumentStorageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MDocStd_DocumentStorageDriver {
@@ -81,15 +81,15 @@ class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDrive
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentRetrievalDriver(const Handle_MDocStd_DocumentRetrievalDriver &aHandle);
+		Handle_MDocStd_DocumentRetrievalDriver(const MDocStd_DocumentRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentRetrievalDriver(const MDocStd_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentRetrievalDriver & operator=(const Handle_MDocStd_DocumentRetrievalDriver &aHandle);
+		Handle_MDocStd_DocumentRetrievalDriver & operator=(const MDocStd_DocumentRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentRetrievalDriver & operator=(const MDocStd_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MDocStd_DocumentRetrievalDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MDocStd_DocumentRetrievalDriver {
@@ -119,15 +119,15 @@ class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkRetrievalDriver(const Handle_MDocStd_XLinkRetrievalDriver &aHandle);
+		Handle_MDocStd_XLinkRetrievalDriver(const MDocStd_XLinkRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkRetrievalDriver(const MDocStd_XLinkRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkRetrievalDriver & operator=(const Handle_MDocStd_XLinkRetrievalDriver &aHandle);
+		Handle_MDocStd_XLinkRetrievalDriver & operator=(const MDocStd_XLinkRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkRetrievalDriver & operator=(const MDocStd_XLinkRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MDocStd_XLinkRetrievalDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MDocStd_XLinkRetrievalDriver {
@@ -157,15 +157,15 @@ class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkStorageDriver();
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkStorageDriver(const Handle_MDocStd_XLinkStorageDriver &aHandle);
+		Handle_MDocStd_XLinkStorageDriver(const MDocStd_XLinkStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkStorageDriver(const MDocStd_XLinkStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkStorageDriver & operator=(const Handle_MDocStd_XLinkStorageDriver &aHandle);
+		Handle_MDocStd_XLinkStorageDriver & operator=(const MDocStd_XLinkStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkStorageDriver & operator=(const MDocStd_XLinkStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MDocStd_XLinkStorageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MDocStd_XLinkStorageDriver {
@@ -195,15 +195,15 @@ class Handle_MDocStd_ListNodeOfDocEntryList : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_MDocStd_ListNodeOfDocEntryList();
 		%feature("autodoc", "1");
-		Handle_MDocStd_ListNodeOfDocEntryList(const Handle_MDocStd_ListNodeOfDocEntryList &aHandle);
+		Handle_MDocStd_ListNodeOfDocEntryList(const MDocStd_ListNodeOfDocEntryList *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_ListNodeOfDocEntryList(const MDocStd_ListNodeOfDocEntryList *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_ListNodeOfDocEntryList & operator=(const Handle_MDocStd_ListNodeOfDocEntryList &aHandle);
+		Handle_MDocStd_ListNodeOfDocEntryList & operator=(const MDocStd_ListNodeOfDocEntryList *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_ListNodeOfDocEntryList & operator=(const MDocStd_ListNodeOfDocEntryList *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_ListNodeOfDocEntryList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MDocStd_ListNodeOfDocEntryList const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MDocStd_ListNodeOfDocEntryList {
@@ -233,15 +233,15 @@ class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_MDocStd_StdMapNodeOfPersistentMap();
 		%feature("autodoc", "1");
-		Handle_MDocStd_StdMapNodeOfPersistentMap(const Handle_MDocStd_StdMapNodeOfPersistentMap &aHandle);
+		Handle_MDocStd_StdMapNodeOfPersistentMap(const MDocStd_StdMapNodeOfPersistentMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_StdMapNodeOfPersistentMap(const MDocStd_StdMapNodeOfPersistentMap *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_StdMapNodeOfPersistentMap & operator=(const Handle_MDocStd_StdMapNodeOfPersistentMap &aHandle);
+		Handle_MDocStd_StdMapNodeOfPersistentMap & operator=(const MDocStd_StdMapNodeOfPersistentMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_StdMapNodeOfPersistentMap & operator=(const MDocStd_StdMapNodeOfPersistentMap *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_StdMapNodeOfPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MDocStd_StdMapNodeOfPersistentMap const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MDocStd_StdMapNodeOfPersistentMap {
@@ -271,11 +271,11 @@ class MDocStd {
 		%feature("autodoc", "1");
 		MDocStd();
 		%feature("autodoc", "1");
-		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		void AddStorageDrivers(const MDF_ASDriverHSequence *aDriverSeq, const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
-		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		void AddRetrievalDrivers(const MDF_ARDriverHSequence *aDriverSeq, const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
-		void WeightWatcher(const Handle_TDF_Data &aSource, const Handle_MDF_SRelocationTable &aReloc, const MDocStd_DocEntryList &aEntry);
+		void WeightWatcher(const TDF_Data *aSource, const MDF_SRelocationTable *aReloc, const MDocStd_DocEntryList &aEntry);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 
@@ -341,13 +341,13 @@ class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
 		%feature("autodoc", "1");
 		virtual		Handle_PCDM_Document CreateDocument();
 		%feature("autodoc", "1");
-		void Paste(const Handle_TDocStd_Document &TDOC, const Handle_PDocStd_Document &PDOC, const Handle_MDF_SRelocationTable &aReloc);
+		void Paste(const TDocStd_Document *TDOC, const PDocStd_Document *PDOC, const MDF_SRelocationTable *aReloc);
 		%feature("autodoc", "1");
-		virtual		Handle_PCDM_Document Make(const Handle_CDM_Document &aDocument);
+		virtual		Handle_PCDM_Document Make(const CDM_Document *aDocument);
 		%feature("autodoc", "1");
 		virtual		TCollection_ExtendedString SchemaName() const;
 		%feature("autodoc", "1");
-		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
+		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -392,11 +392,11 @@ class MDocStd_PersistentMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Standard_Persistent &aKey);
+		Standard_Boolean Add(const Standard_Persistent *aKey);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Standard_Persistent &aKey) const;
+		Standard_Boolean Contains(const Standard_Persistent *aKey) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Standard_Persistent &aKey);
+		Standard_Boolean Remove(const Standard_Persistent *aKey);
 
 };
 %feature("shadow") MDocStd_PersistentMap::~MDocStd_PersistentMap %{
@@ -421,15 +421,15 @@ class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 		%feature("autodoc", "1");
 		MDocStd_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		void Paste(const Handle_PDocStd_Document &PDOC, const Handle_TDocStd_Document &TDOC, const Handle_MDF_RRelocationTable &aReloc);
+		void Paste(const PDocStd_Document *PDOC, const TDocStd_Document *TDOC, const MDF_RRelocationTable *aReloc);
 		%feature("autodoc", "1");
-		virtual		void Make(const Handle_PCDM_Document &aPCDM, const Handle_CDM_Document &aCDM);
+		virtual		void Make(const PCDM_Document *aPCDM, const CDM_Document *aCDM);
 		%feature("autodoc", "1");
 		virtual		TCollection_ExtendedString SchemaName() const;
 		%feature("autodoc", "1");
 		virtual		Handle_CDM_Document CreateDocument();
 		%feature("autodoc", "1");
-		virtual		Handle_MDF_ARDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
+		virtual		Handle_MDF_ARDriverTable AttributeDrivers(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -464,7 +464,7 @@ def __del__(self):
 class MDocStd_XLinkRetrievalDriver : public MDF_ARDriver {
 	public:
 		%feature("autodoc", "1");
-		MDocStd_XLinkRetrievalDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		MDocStd_XLinkRetrievalDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer VersionNumber() const;
 		%feature("autodoc", "1");
@@ -472,7 +472,7 @@ class MDocStd_XLinkRetrievalDriver : public MDF_ARDriver {
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_PDF_Attribute &aSource, const Handle_TDF_Attribute &aTarget, const Handle_MDF_RRelocationTable &aRelocTable) const;
+		virtual		void Paste(const PDF_Attribute *aSource, const TDF_Attribute *aTarget, const MDF_RRelocationTable *aRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -536,7 +536,7 @@ def __del__(self):
 class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 	public:
 		%feature("autodoc", "1");
-		MDocStd_XLinkStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		MDocStd_XLinkStorageDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer VersionNumber() const;
 		%feature("autodoc", "1");
@@ -544,7 +544,7 @@ class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 		%feature("autodoc", "1");
 		virtual		Handle_PDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &aSource, const Handle_PDF_Attribute &aTarget, const Handle_MDF_SRelocationTable &aRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *aSource, const PDF_Attribute *aTarget, const MDF_SRelocationTable *aRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -673,7 +673,7 @@ def __del__(self):
 class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MDocStd_StdMapNodeOfPersistentMap(const Handle_Standard_Persistent &K, const TCollection_MapNodePtr &n);
+		MDocStd_StdMapNodeOfPersistentMap(const Standard_Persistent *K, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Standard_Persistent & Key() const;
 		%feature("autodoc", "1");

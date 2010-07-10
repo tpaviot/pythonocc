@@ -51,15 +51,15 @@ class Handle_Prs3d_Drawer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Prs3d_Drawer();
 		%feature("autodoc", "1");
-		Handle_Prs3d_Drawer(const Handle_Prs3d_Drawer &aHandle);
+		Handle_Prs3d_Drawer(const Prs3d_Drawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_Drawer(const Prs3d_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_Drawer & operator=(const Handle_Prs3d_Drawer &aHandle);
+		Handle_Prs3d_Drawer & operator=(const Prs3d_Drawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_Drawer & operator=(const Prs3d_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_Drawer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_Drawer {
@@ -89,15 +89,15 @@ class Handle_Prs3d_BasicAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Prs3d_BasicAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_BasicAspect(const Handle_Prs3d_BasicAspect &aHandle);
+		Handle_Prs3d_BasicAspect(const Prs3d_BasicAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_BasicAspect(const Prs3d_BasicAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_BasicAspect & operator=(const Handle_Prs3d_BasicAspect &aHandle);
+		Handle_Prs3d_BasicAspect & operator=(const Prs3d_BasicAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_BasicAspect & operator=(const Prs3d_BasicAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_BasicAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_BasicAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_BasicAspect {
@@ -127,15 +127,15 @@ class Handle_Prs3d_PlaneSet : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Prs3d_PlaneSet();
 		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneSet(const Handle_Prs3d_PlaneSet &aHandle);
+		Handle_Prs3d_PlaneSet(const Prs3d_PlaneSet *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_PlaneSet(const Prs3d_PlaneSet *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneSet & operator=(const Handle_Prs3d_PlaneSet &aHandle);
+		Handle_Prs3d_PlaneSet & operator=(const Prs3d_PlaneSet *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_PlaneSet & operator=(const Prs3d_PlaneSet *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneSet const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_PlaneSet const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_PlaneSet {
@@ -165,15 +165,15 @@ class Handle_Prs3d_CompositeAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Prs3d_CompositeAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_CompositeAspect(const Handle_Prs3d_CompositeAspect &aHandle);
+		Handle_Prs3d_CompositeAspect(const Prs3d_CompositeAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_CompositeAspect(const Prs3d_CompositeAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_CompositeAspect & operator=(const Handle_Prs3d_CompositeAspect &aHandle);
+		Handle_Prs3d_CompositeAspect & operator=(const Prs3d_CompositeAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_CompositeAspect & operator=(const Prs3d_CompositeAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_CompositeAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_CompositeAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_CompositeAspect {
@@ -203,15 +203,15 @@ class Handle_Prs3d_LengthAspect : public Handle_Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_LengthAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_LengthAspect(const Handle_Prs3d_LengthAspect &aHandle);
+		Handle_Prs3d_LengthAspect(const Prs3d_LengthAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_LengthAspect(const Prs3d_LengthAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_LengthAspect & operator=(const Handle_Prs3d_LengthAspect &aHandle);
+		Handle_Prs3d_LengthAspect & operator=(const Prs3d_LengthAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_LengthAspect & operator=(const Prs3d_LengthAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_LengthAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_LengthAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_LengthAspect {
@@ -241,15 +241,15 @@ class Handle_Prs3d_LineAspect : public Handle_Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_LineAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect(const Handle_Prs3d_LineAspect &aHandle);
+		Handle_Prs3d_LineAspect(const Prs3d_LineAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_LineAspect(const Prs3d_LineAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect & operator=(const Handle_Prs3d_LineAspect &aHandle);
+		Handle_Prs3d_LineAspect & operator=(const Prs3d_LineAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_LineAspect & operator=(const Prs3d_LineAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_LineAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_LineAspect {
@@ -279,15 +279,15 @@ class Handle_Prs3d_IsoAspect : public Handle_Prs3d_LineAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_IsoAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_IsoAspect(const Handle_Prs3d_IsoAspect &aHandle);
+		Handle_Prs3d_IsoAspect(const Prs3d_IsoAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_IsoAspect(const Prs3d_IsoAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_IsoAspect & operator=(const Handle_Prs3d_IsoAspect &aHandle);
+		Handle_Prs3d_IsoAspect & operator=(const Prs3d_IsoAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_IsoAspect & operator=(const Prs3d_IsoAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_IsoAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_IsoAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_IsoAspect {
@@ -317,15 +317,15 @@ class Handle_Prs3d_ShadingAspect : public Handle_Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_ShadingAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_ShadingAspect(const Handle_Prs3d_ShadingAspect &aHandle);
+		Handle_Prs3d_ShadingAspect(const Prs3d_ShadingAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_ShadingAspect(const Prs3d_ShadingAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_ShadingAspect & operator=(const Handle_Prs3d_ShadingAspect &aHandle);
+		Handle_Prs3d_ShadingAspect & operator=(const Prs3d_ShadingAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_ShadingAspect & operator=(const Prs3d_ShadingAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_ShadingAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_ShadingAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_ShadingAspect {
@@ -355,15 +355,15 @@ class Handle_Prs3d_PointAspect : public Handle_Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_PointAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_PointAspect(const Handle_Prs3d_PointAspect &aHandle);
+		Handle_Prs3d_PointAspect(const Prs3d_PointAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_PointAspect(const Prs3d_PointAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_PointAspect & operator=(const Handle_Prs3d_PointAspect &aHandle);
+		Handle_Prs3d_PointAspect & operator=(const Prs3d_PointAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_PointAspect & operator=(const Prs3d_PointAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_PointAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_PointAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_PointAspect {
@@ -393,15 +393,15 @@ class Handle_Prs3d_ArrowAspect : public Handle_Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_ArrowAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect(const Handle_Prs3d_ArrowAspect &aHandle);
+		Handle_Prs3d_ArrowAspect(const Prs3d_ArrowAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_ArrowAspect(const Prs3d_ArrowAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect & operator=(const Handle_Prs3d_ArrowAspect &aHandle);
+		Handle_Prs3d_ArrowAspect & operator=(const Prs3d_ArrowAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_ArrowAspect & operator=(const Prs3d_ArrowAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_ArrowAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_ArrowAspect {
@@ -431,15 +431,15 @@ class Handle_Prs3d_Projector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Prs3d_Projector();
 		%feature("autodoc", "1");
-		Handle_Prs3d_Projector(const Handle_Prs3d_Projector &aHandle);
+		Handle_Prs3d_Projector(const Prs3d_Projector *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_Projector(const Prs3d_Projector *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_Projector & operator=(const Handle_Prs3d_Projector &aHandle);
+		Handle_Prs3d_Projector & operator=(const Prs3d_Projector *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_Projector & operator=(const Prs3d_Projector *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_Projector const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_Projector const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_Projector {
@@ -469,15 +469,15 @@ class Handle_Prs3d_RadiusAspect : public Handle_Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_RadiusAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect(const Handle_Prs3d_RadiusAspect &aHandle);
+		Handle_Prs3d_RadiusAspect(const Prs3d_RadiusAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_RadiusAspect(const Prs3d_RadiusAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect & operator=(const Handle_Prs3d_RadiusAspect &aHandle);
+		Handle_Prs3d_RadiusAspect & operator=(const Prs3d_RadiusAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_RadiusAspect & operator=(const Prs3d_RadiusAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_RadiusAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_RadiusAspect {
@@ -507,15 +507,15 @@ class Handle_Prs3d_InvalidAngle : public Handle_Standard_RangeError {
 		%feature("autodoc", "1");
 		Handle_Prs3d_InvalidAngle();
 		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle(const Handle_Prs3d_InvalidAngle &aHandle);
+		Handle_Prs3d_InvalidAngle(const Prs3d_InvalidAngle *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_InvalidAngle(const Prs3d_InvalidAngle *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle & operator=(const Handle_Prs3d_InvalidAngle &aHandle);
+		Handle_Prs3d_InvalidAngle & operator=(const Prs3d_InvalidAngle *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_InvalidAngle & operator=(const Prs3d_InvalidAngle *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_InvalidAngle const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_InvalidAngle {
@@ -545,15 +545,15 @@ class Handle_Prs3d_DatumAspect : public Handle_Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_DatumAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_DatumAspect(const Handle_Prs3d_DatumAspect &aHandle);
+		Handle_Prs3d_DatumAspect(const Prs3d_DatumAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_DatumAspect(const Prs3d_DatumAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_DatumAspect & operator=(const Handle_Prs3d_DatumAspect &aHandle);
+		Handle_Prs3d_DatumAspect & operator=(const Prs3d_DatumAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_DatumAspect & operator=(const Prs3d_DatumAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_DatumAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_DatumAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_DatumAspect {
@@ -583,15 +583,15 @@ class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_PlaneAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneAspect(const Handle_Prs3d_PlaneAspect &aHandle);
+		Handle_Prs3d_PlaneAspect(const Prs3d_PlaneAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_PlaneAspect(const Prs3d_PlaneAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneAspect & operator=(const Handle_Prs3d_PlaneAspect &aHandle);
+		Handle_Prs3d_PlaneAspect & operator=(const Prs3d_PlaneAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_PlaneAspect & operator=(const Prs3d_PlaneAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_PlaneAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_PlaneAspect {
@@ -621,15 +621,15 @@ class Handle_Prs3d_AngleAspect : public Handle_Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_AngleAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_AngleAspect(const Handle_Prs3d_AngleAspect &aHandle);
+		Handle_Prs3d_AngleAspect(const Prs3d_AngleAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_AngleAspect(const Prs3d_AngleAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_AngleAspect & operator=(const Handle_Prs3d_AngleAspect &aHandle);
+		Handle_Prs3d_AngleAspect & operator=(const Prs3d_AngleAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_AngleAspect & operator=(const Prs3d_AngleAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_AngleAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_AngleAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_AngleAspect {
@@ -659,15 +659,15 @@ class Handle_Prs3d_Presentation : public Handle_Graphic3d_Structure {
 		%feature("autodoc", "1");
 		Handle_Prs3d_Presentation();
 		%feature("autodoc", "1");
-		Handle_Prs3d_Presentation(const Handle_Prs3d_Presentation &aHandle);
+		Handle_Prs3d_Presentation(const Prs3d_Presentation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_Presentation(const Prs3d_Presentation *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_Presentation & operator=(const Handle_Prs3d_Presentation &aHandle);
+		Handle_Prs3d_Presentation & operator=(const Prs3d_Presentation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_Presentation & operator=(const Prs3d_Presentation *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_Presentation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_Presentation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_Presentation {
@@ -697,15 +697,15 @@ class Handle_Prs3d_TextAspect : public Handle_Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_TextAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_TextAspect(const Handle_Prs3d_TextAspect &aHandle);
+		Handle_Prs3d_TextAspect(const Prs3d_TextAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_TextAspect(const Prs3d_TextAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_TextAspect & operator=(const Handle_Prs3d_TextAspect &aHandle);
+		Handle_Prs3d_TextAspect & operator=(const Prs3d_TextAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs3d_TextAspect & operator=(const Prs3d_TextAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_TextAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_TextAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Prs3d_TextAspect {
@@ -733,15 +733,15 @@ def __del__(self):
 class Prs3d_Presentation : public Graphic3d_Structure {
 	public:
 		%feature("autodoc", "1");
-		Prs3d_Presentation(const Handle_Graphic3d_StructureManager &aStructureManager, const Standard_Boolean Init=1);
+		Prs3d_Presentation(const Graphic3d_StructureManager *aStructureManager, const Standard_Boolean Init=1);
 		%feature("autodoc", "1");
-		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector);
+		virtual		Handle_Graphic3d_Structure Compute(const Graphic3d_DataStructureManager *aProjector);
 		%feature("autodoc", "1");
-		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix);
+		virtual		Handle_Graphic3d_Structure Compute(const Graphic3d_DataStructureManager *aProjector, const TColStd_Array2OfReal &AMatrix);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, Handle_Graphic3d_Structure & aStructure);
+		virtual		void Compute(const Graphic3d_DataStructureManager *aProjector, Handle_Graphic3d_Structure & aStructure);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix, Handle_Graphic3d_Structure & aStructure);
+		virtual		void Compute(const Graphic3d_DataStructureManager *aProjector, const TColStd_Array2OfReal &AMatrix, Handle_Graphic3d_Structure & aStructure);
 		%feature("autodoc", "1");
 		void Highlight();
 		%feature("autodoc", "1");
@@ -751,25 +751,21 @@ class Prs3d_Presentation : public Graphic3d_Structure {
 		%feature("autodoc", "1");
 		virtual		void Display();
 		%feature("autodoc", "1");
-		void SetShadingAspect(const Handle_Prs3d_ShadingAspect &aShadingAspect);
+		void SetShadingAspect(const Prs3d_ShadingAspect *aShadingAspect);
 		%feature("autodoc", "1");
 		Standard_Boolean IsPickable() const;
 		%feature("autodoc", "1");
-		void Transform(const Handle_Geom_Transformation &aTransformation);
+		void Transform(const Geom_Transformation *aTransformation);
 		%feature("autodoc", "1");
 		void Place(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
 		%feature("autodoc", "1");
-		void Multiply(const Handle_Geom_Transformation &aTransformation);
+		void Multiply(const Geom_Transformation *aTransformation);
 		%feature("autodoc", "1");
 		void Move(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
 		%feature("autodoc", "1");
 		Handle_Geom_Transformation Transformation() const;
 		%feature("autodoc", "1");
 		virtual		void Clear(const Standard_Boolean WithDestruction=1);
-		%feature("autodoc", "1");
-		void Connect(const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		void Remove(const Handle_Prs3d_Presentation &aPresentation);
 		%feature("autodoc", "1");
 		void RemoveAll();
 		%feature("autodoc", "1");
@@ -812,9 +808,9 @@ class Prs3d_Root {
 		%feature("autodoc", "1");
 		Prs3d_Root();
 		%feature("autodoc", "1");
-		Handle_Graphic3d_Group CurrentGroup(const Handle_Prs3d_Presentation &Prs3d);
+		Handle_Graphic3d_Group CurrentGroup(const Prs3d_Presentation *Prs3d);
 		%feature("autodoc", "1");
-		Handle_Graphic3d_Group NewGroup(const Handle_Prs3d_Presentation &Prs3d);
+		Handle_Graphic3d_Group NewGroup(const Prs3d_Presentation *Prs3d);
 
 };
 %feature("shadow") Prs3d_Root::~Prs3d_Root %{
@@ -839,7 +835,7 @@ class Prs3d_AnglePresentation : public Prs3d_Root {
 		%feature("autodoc", "1");
 		Prs3d_AnglePresentation();
 		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &AttachmentPoint3, const gp_Pnt &OffsetPoint);
+		void Draw(const Prs3d_Presentation *aPresentation, const Prs3d_Drawer *aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &AttachmentPoint3, const gp_Pnt &OffsetPoint);
 
 };
 %feature("shadow") Prs3d_AnglePresentation::~Prs3d_AnglePresentation %{
@@ -901,15 +897,15 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_LineAspect LineAspect() const;
 		%feature("autodoc", "1");
-		void SetLineAspect(const Handle_Prs3d_LineAspect &anAspect);
+		void SetLineAspect(const Prs3d_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		Handle_Prs3d_TextAspect TextAspect() const;
 		%feature("autodoc", "1");
-		void SetTextAspect(const Handle_Prs3d_TextAspect &anAspect);
+		void SetTextAspect(const Prs3d_TextAspect *anAspect);
 		%feature("autodoc", "1");
 		Handle_Prs3d_ArrowAspect ArrowAspect() const;
 		%feature("autodoc", "1");
-		void SetArrowAspect(const Handle_Prs3d_ArrowAspect &anAspect);
+		void SetArrowAspect(const Prs3d_ArrowAspect *anAspect);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -952,7 +948,7 @@ class Prs3d_LengthPresentation : public Prs3d_Root {
 		%feature("autodoc", "1");
 		Prs3d_LengthPresentation();
 		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &OffsetPoint);
+		void Draw(const Prs3d_Presentation *aPresentation, const Prs3d_Drawer *aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &OffsetPoint);
 
 };
 %feature("shadow") Prs3d_LengthPresentation::~Prs3d_LengthPresentation %{
@@ -1079,7 +1075,7 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Prs3d_PointAspect(const Aspect_TypeOfMarker aType, const Quantity_NameOfColor aColor, const Standard_Real aScale);
 		%feature("autodoc", "1");
-		Prs3d_PointAspect(const Quantity_Color &AColor, const Standard_Real AnId, const Standard_Integer AWidth, const Standard_Integer AHeight, const Handle_Graphic3d_HArray1OfBytes &ATexture);
+		Prs3d_PointAspect(const Quantity_Color &AColor, const Standard_Real AnId, const Standard_Integer AWidth, const Standard_Integer AHeight, const Graphic3d_HArray1OfBytes *ATexture);
 		%feature("autodoc", "1");
 		void SetColor(const Quantity_Color &aColor);
 		%feature("autodoc", "1");
@@ -1433,15 +1429,15 @@ class Prs3d_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_IsoAspect UIsoAspect();
 		%feature("autodoc", "1");
-		virtual		void SetUIsoAspect(const Handle_Prs3d_IsoAspect &anAspect);
+		virtual		void SetUIsoAspect(const Prs3d_IsoAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_IsoAspect VIsoAspect();
 		%feature("autodoc", "1");
-		virtual		void SetVIsoAspect(const Handle_Prs3d_IsoAspect &anAspect);
+		virtual		void SetVIsoAspect(const Prs3d_IsoAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LineAspect FreeBoundaryAspect();
 		%feature("autodoc", "1");
-		virtual		void SetFreeBoundaryAspect(const Handle_Prs3d_LineAspect &anAspect);
+		virtual		void SetFreeBoundaryAspect(const Prs3d_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		void SetFreeBoundaryDraw(const Standard_Boolean OnOff);
 		%feature("autodoc", "1");
@@ -1449,7 +1445,7 @@ class Prs3d_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LineAspect WireAspect();
 		%feature("autodoc", "1");
-		virtual		void SetWireAspect(const Handle_Prs3d_LineAspect &anAspect);
+		virtual		void SetWireAspect(const Prs3d_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		void SetWireDraw(const Standard_Boolean OnOff);
 		%feature("autodoc", "1");
@@ -1457,7 +1453,7 @@ class Prs3d_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LineAspect UnFreeBoundaryAspect();
 		%feature("autodoc", "1");
-		virtual		void SetUnFreeBoundaryAspect(const Handle_Prs3d_LineAspect &anAspect);
+		virtual		void SetUnFreeBoundaryAspect(const Prs3d_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		void SetUnFreeBoundaryDraw(const Standard_Boolean OnOff);
 		%feature("autodoc", "1");
@@ -1465,11 +1461,11 @@ class Prs3d_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LineAspect LineAspect();
 		%feature("autodoc", "1");
-		virtual		void SetLineAspect(const Handle_Prs3d_LineAspect &anAspect);
+		virtual		void SetLineAspect(const Prs3d_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_TextAspect TextAspect();
 		%feature("autodoc", "1");
-		virtual		void SetTextAspect(const Handle_Prs3d_TextAspect &anAspect);
+		virtual		void SetTextAspect(const Prs3d_TextAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		void SetLineArrowDraw(const Standard_Boolean OnOff);
 		%feature("autodoc", "1");
@@ -1477,15 +1473,15 @@ class Prs3d_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_ArrowAspect ArrowAspect();
 		%feature("autodoc", "1");
-		virtual		void SetArrowAspect(const Handle_Prs3d_ArrowAspect &anAspect);
+		virtual		void SetArrowAspect(const Prs3d_ArrowAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_PointAspect PointAspect();
 		%feature("autodoc", "1");
-		virtual		void SetPointAspect(const Handle_Prs3d_PointAspect &anAspect);
+		virtual		void SetPointAspect(const Prs3d_PointAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_ShadingAspect ShadingAspect();
 		%feature("autodoc", "1");
-		virtual		void SetShadingAspect(const Handle_Prs3d_ShadingAspect &anAspect);
+		virtual		void SetShadingAspect(const Prs3d_ShadingAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		void SetShadingAspectGlobal(const Standard_Boolean aValue);
 		%feature("autodoc", "1");
@@ -1499,39 +1495,39 @@ class Prs3d_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LineAspect HiddenLineAspect();
 		%feature("autodoc", "1");
-		virtual		void SetHiddenLineAspect(const Handle_Prs3d_LineAspect &anAspect);
+		virtual		void SetHiddenLineAspect(const Prs3d_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LineAspect SeenLineAspect();
 		%feature("autodoc", "1");
-		virtual		void SetSeenLineAspect(const Handle_Prs3d_LineAspect &anAspect);
+		virtual		void SetSeenLineAspect(const Prs3d_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_PlaneAspect PlaneAspect();
 		%feature("autodoc", "1");
-		virtual		void SetPlaneAspect(const Handle_Prs3d_PlaneAspect &anAspect);
+		virtual		void SetPlaneAspect(const Prs3d_PlaneAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LineAspect VectorAspect();
 		%feature("autodoc", "1");
-		virtual		void SetVectorAspect(const Handle_Prs3d_LineAspect &anAspect);
+		virtual		void SetVectorAspect(const Prs3d_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_DatumAspect DatumAspect();
 		%feature("autodoc", "1");
-		virtual		void SetDatumAspect(const Handle_Prs3d_DatumAspect &anAspect);
+		virtual		void SetDatumAspect(const Prs3d_DatumAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LengthAspect LengthAspect();
 		%feature("autodoc", "1");
-		virtual		void SetLengthAspect(const Handle_Prs3d_LengthAspect &anAspect);
+		virtual		void SetLengthAspect(const Prs3d_LengthAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_AngleAspect AngleAspect();
 		%feature("autodoc", "1");
-		virtual		void SetAngleAspect(const Handle_Prs3d_AngleAspect &anAspect);
+		virtual		void SetAngleAspect(const Prs3d_AngleAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_RadiusAspect RadiusAspect() const;
 		%feature("autodoc", "1");
-		virtual		void SetRadiusAspect(const Handle_Prs3d_RadiusAspect &anAspect);
+		virtual		void SetRadiusAspect(const Prs3d_RadiusAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LineAspect SectionAspect();
 		%feature("autodoc", "1");
-		virtual		void SetSectionAspect(const Handle_Prs3d_LineAspect &anAspect);
+		virtual		void SetSectionAspect(const Prs3d_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1861,9 +1857,9 @@ class Prs3d_Text : public Prs3d_Root {
 		%feature("autodoc", "1");
 		Prs3d_Text();
 		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
+		void Draw(const Prs3d_Presentation *aPresentation, const Prs3d_Drawer *aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
 		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
+		void Draw(const Prs3d_Presentation *aPresentation, const Prs3d_TextAspect *anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
 
 };
 %feature("shadow") Prs3d_Text::~Prs3d_Text %{
@@ -1933,7 +1929,7 @@ class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		void SetTransparency(const Standard_Real aValue, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
 		%feature("autodoc", "1");
-		void SetAspect(const Handle_Graphic3d_AspectFillArea3d &Asp);
+		void SetAspect(const Graphic3d_AspectFillArea3d *Asp);
 		%feature("autodoc", "1");
 		Quantity_Color Color(const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_FRONT_SIDE) const;
 		%feature("autodoc", "1");
@@ -1978,9 +1974,9 @@ class Prs3d_Arrow : public Prs3d_Root {
 		%feature("autodoc", "1");
 		Prs3d_Arrow();
 		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const gp_Pnt &aLocation, const gp_Dir &aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
+		void Draw(const Prs3d_Presentation *aPresentation, const gp_Pnt &aLocation, const gp_Dir &aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
 		%feature("autodoc", "1");
-		void Fill(const Handle_Prs3d_Presentation &aPresentation, const gp_Pnt &aLocation, const gp_Dir &aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
+		void Fill(const Prs3d_Presentation *aPresentation, const gp_Pnt &aLocation, const gp_Dir &aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
 
 };
 %feature("shadow") Prs3d_Arrow::~Prs3d_Arrow %{
@@ -2007,19 +2003,19 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Prs3d_LineAspect LineAspect() const;
 		%feature("autodoc", "1");
-		void SetLineAspect(const Handle_Prs3d_LineAspect &anAspect);
+		void SetLineAspect(const Prs3d_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		Handle_Prs3d_ArrowAspect Arrow1Aspect() const;
 		%feature("autodoc", "1");
-		void SetArrow1Aspect(const Handle_Prs3d_ArrowAspect &anAspect);
+		void SetArrow1Aspect(const Prs3d_ArrowAspect *anAspect);
 		%feature("autodoc", "1");
 		Handle_Prs3d_ArrowAspect Arrow2Aspect() const;
 		%feature("autodoc", "1");
-		void SetArrow2Aspect(const Handle_Prs3d_ArrowAspect &anAspect);
+		void SetArrow2Aspect(const Prs3d_ArrowAspect *anAspect);
 		%feature("autodoc", "1");
 		Handle_Prs3d_TextAspect TextAspect() const;
 		%feature("autodoc", "1");
-		void SetTextAspect(const Handle_Prs3d_TextAspect &anAspect);
+		void SetTextAspect(const Prs3d_TextAspect *anAspect);
 		%feature("autodoc", "1");
 		void SetDrawFirstArrow(const Standard_Boolean draw);
 		%feature("autodoc", "1");

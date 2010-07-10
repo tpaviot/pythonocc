@@ -43,15 +43,15 @@ class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation();
 		%feature("autodoc", "1");
-		Handle_PPrsStd_AISPresentation(const Handle_PPrsStd_AISPresentation &aHandle);
+		Handle_PPrsStd_AISPresentation(const PPrsStd_AISPresentation *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation(const PPrsStd_AISPresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_PPrsStd_AISPresentation & operator=(const Handle_PPrsStd_AISPresentation &aHandle);
+		Handle_PPrsStd_AISPresentation & operator=(const PPrsStd_AISPresentation *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation & operator=(const PPrsStd_AISPresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_PPrsStd_AISPresentation const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PPrsStd_AISPresentation const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PPrsStd_AISPresentation {
@@ -81,15 +81,15 @@ class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation_1();
 		%feature("autodoc", "1");
-		Handle_PPrsStd_AISPresentation_1(const Handle_PPrsStd_AISPresentation_1 &aHandle);
+		Handle_PPrsStd_AISPresentation_1(const PPrsStd_AISPresentation_1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation_1(const PPrsStd_AISPresentation_1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PPrsStd_AISPresentation_1 & operator=(const Handle_PPrsStd_AISPresentation_1 &aHandle);
+		Handle_PPrsStd_AISPresentation_1 & operator=(const PPrsStd_AISPresentation_1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation_1 & operator=(const PPrsStd_AISPresentation_1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PPrsStd_AISPresentation_1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PPrsStd_AISPresentation_1 const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PPrsStd_AISPresentation_1 {
@@ -123,7 +123,7 @@ class PPrsStd_AISPresentation_1 : public PDF_Attribute {
 		%feature("autodoc", "1");
 		void SetDisplayed(const Standard_Boolean B);
 		%feature("autodoc", "1");
-		void SetDriverGUID(const Handle_PCollection_HExtendedString &guid);
+		void SetDriverGUID(const PCollection_HExtendedString *guid);
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString GetDriverGUID() const;
 		%feature("autodoc", "1");
@@ -155,7 +155,7 @@ class PPrsStd_AISPresentation_1 : public PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString _CSFDB_GetPPrsStd_AISPresentation_1myDriverGUID() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPPrsStd_AISPresentation_1myDriverGUID(const Handle_PCollection_HExtendedString &p);
+		void _CSFDB_SetPPrsStd_AISPresentation_1myDriverGUID(const PCollection_HExtendedString *p);
 		%feature("autodoc", "1");
 		Standard_Real _CSFDB_GetPPrsStd_AISPresentation_1myTransparency() const;
 		%feature("autodoc", "1");
@@ -216,7 +216,7 @@ class PPrsStd_AISPresentation : public PDF_Attribute {
 		%feature("autodoc", "1");
 		void SetDisplayed(const Standard_Boolean B);
 		%feature("autodoc", "1");
-		void SetDriverGUID(const Handle_PCollection_HExtendedString &guid);
+		void SetDriverGUID(const PCollection_HExtendedString *guid);
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString GetDriverGUID() const;
 		%feature("autodoc", "1");
@@ -244,7 +244,7 @@ class PPrsStd_AISPresentation : public PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString _CSFDB_GetPPrsStd_AISPresentationmyDriverGUID() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPPrsStd_AISPresentationmyDriverGUID(const Handle_PCollection_HExtendedString &p);
+		void _CSFDB_SetPPrsStd_AISPresentationmyDriverGUID(const PCollection_HExtendedString *p);
 		%feature("autodoc", "1");
 		Standard_Real _CSFDB_GetPPrsStd_AISPresentationmyTransparency() const;
 		%feature("autodoc", "1");

@@ -45,7 +45,7 @@ class IntCurvesFace_Intersector {
 		%feature("autodoc", "1");
 		void Perform(const gp_Lin &L, const Standard_Real PInf, const Standard_Real PSup);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &HCu, const Standard_Real PInf, const Standard_Real PSup);
+		void Perform(const Adaptor3d_HCurve *HCu, const Standard_Real PInf, const Standard_Real PSup);
 		%feature("autodoc", "1");
 		GeomAbs_SurfaceType SurfaceType() const;
 		%feature("autodoc", "1");
@@ -102,7 +102,7 @@ class IntCurvesFace_ShapeIntersector {
 		%feature("autodoc", "1");
 		void PerformNearest(const gp_Lin &L, const Standard_Real PInf, const Standard_Real PSup);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &HCu, const Standard_Real PInf, const Standard_Real PSup);
+		void Perform(const Adaptor3d_HCurve *HCu, const Standard_Real PInf, const Standard_Real PSup);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");

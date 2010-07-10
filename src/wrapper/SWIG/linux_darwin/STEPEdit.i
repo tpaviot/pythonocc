@@ -43,15 +43,15 @@ class Handle_STEPEdit_EditSDR : public Handle_IFSelect_Editor {
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditSDR();
 		%feature("autodoc", "1");
-		Handle_STEPEdit_EditSDR(const Handle_STEPEdit_EditSDR &aHandle);
+		Handle_STEPEdit_EditSDR(const STEPEdit_EditSDR *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditSDR(const STEPEdit_EditSDR *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPEdit_EditSDR & operator=(const Handle_STEPEdit_EditSDR &aHandle);
+		Handle_STEPEdit_EditSDR & operator=(const STEPEdit_EditSDR *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditSDR & operator=(const STEPEdit_EditSDR *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPEdit_EditSDR const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPEdit_EditSDR const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPEdit_EditSDR {
@@ -81,15 +81,15 @@ class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditContext();
 		%feature("autodoc", "1");
-		Handle_STEPEdit_EditContext(const Handle_STEPEdit_EditContext &aHandle);
+		Handle_STEPEdit_EditContext(const STEPEdit_EditContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditContext(const STEPEdit_EditContext *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPEdit_EditContext & operator=(const Handle_STEPEdit_EditContext &aHandle);
+		Handle_STEPEdit_EditContext & operator=(const STEPEdit_EditContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditContext & operator=(const STEPEdit_EditContext *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPEdit_EditContext const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPEdit_EditContext const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPEdit_EditContext {
@@ -156,13 +156,13 @@ class STEPEdit_EditContext : public IFSelect_Editor {
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_IFSelect_EditForm &form) const;
+		virtual		Standard_Boolean Recognize(const IFSelect_EditForm *form) const;
 		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString StringValue(const Handle_IFSelect_EditForm &form, const Standard_Integer num) const;
+		virtual		Handle_TCollection_HAsciiString StringValue(const IFSelect_EditForm *form, const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Apply(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		virtual		Standard_Boolean Apply(const IFSelect_EditForm *form, const Standard_Transient *ent, const Interface_InterfaceModel *model) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Load(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		virtual		Standard_Boolean Load(const IFSelect_EditForm *form, const Standard_Transient *ent, const Interface_InterfaceModel *model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -201,13 +201,13 @@ class STEPEdit_EditSDR : public IFSelect_Editor {
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_IFSelect_EditForm &form) const;
+		virtual		Standard_Boolean Recognize(const IFSelect_EditForm *form) const;
 		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString StringValue(const Handle_IFSelect_EditForm &form, const Standard_Integer num) const;
+		virtual		Handle_TCollection_HAsciiString StringValue(const IFSelect_EditForm *form, const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Apply(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		virtual		Standard_Boolean Apply(const IFSelect_EditForm *form, const Standard_Transient *ent, const Interface_InterfaceModel *model) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Load(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		virtual		Standard_Boolean Load(const IFSelect_EditForm *form, const Standard_Transient *ent, const Interface_InterfaceModel *model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -43,15 +43,15 @@ class Handle_StlMesh_MeshDomain : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshDomain();
 		%feature("autodoc", "1");
-		Handle_StlMesh_MeshDomain(const Handle_StlMesh_MeshDomain &aHandle);
+		Handle_StlMesh_MeshDomain(const StlMesh_MeshDomain *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshDomain(const StlMesh_MeshDomain *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_MeshDomain & operator=(const Handle_StlMesh_MeshDomain &aHandle);
+		Handle_StlMesh_MeshDomain & operator=(const StlMesh_MeshDomain *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshDomain & operator=(const StlMesh_MeshDomain *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_MeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StlMesh_MeshDomain const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StlMesh_MeshDomain {
@@ -81,15 +81,15 @@ class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StlMesh_Mesh();
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh(const Handle_StlMesh_Mesh &aHandle);
+		Handle_StlMesh_Mesh(const StlMesh_Mesh *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_Mesh(const StlMesh_Mesh *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh & operator=(const Handle_StlMesh_Mesh &aHandle);
+		Handle_StlMesh_Mesh & operator=(const StlMesh_Mesh *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_Mesh & operator=(const StlMesh_Mesh *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StlMesh_Mesh const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StlMesh_Mesh {
@@ -119,15 +119,15 @@ class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshTriangle();
 		%feature("autodoc", "1");
-		Handle_StlMesh_MeshTriangle(const Handle_StlMesh_MeshTriangle &aHandle);
+		Handle_StlMesh_MeshTriangle(const StlMesh_MeshTriangle *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshTriangle(const StlMesh_MeshTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_MeshTriangle & operator=(const Handle_StlMesh_MeshTriangle &aHandle);
+		Handle_StlMesh_MeshTriangle & operator=(const StlMesh_MeshTriangle *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshTriangle & operator=(const StlMesh_MeshTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_MeshTriangle const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StlMesh_MeshTriangle const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StlMesh_MeshTriangle {
@@ -157,15 +157,15 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain();
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
@@ -195,15 +195,15 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle();
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle &aHandle);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle(const StlMesh_SequenceNodeOfSequenceOfMeshTriangle *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle(const StlMesh_SequenceNodeOfSequenceOfMeshTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle & operator=(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle &aHandle);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshTriangle *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
@@ -233,15 +233,15 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMesh();
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMesh(const Handle_StlMesh_SequenceNodeOfSequenceOfMesh &aHandle);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMesh(const StlMesh_SequenceNodeOfSequenceOfMesh *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMesh(const StlMesh_SequenceNodeOfSequenceOfMesh *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMesh & operator=(const Handle_StlMesh_SequenceNodeOfSequenceOfMesh &aHandle);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMesh & operator=(const StlMesh_SequenceNodeOfSequenceOfMesh *aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMesh & operator=(const StlMesh_SequenceNodeOfSequenceOfMesh *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMesh const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMesh const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_StlMesh_SequenceNodeOfSequenceOfMesh {
@@ -330,19 +330,19 @@ class StlMesh_SequenceOfMeshDomain : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const StlMesh_SequenceOfMeshDomain & operator=(const StlMesh_SequenceOfMeshDomain &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_StlMesh_MeshDomain &T);
+		void Append(const StlMesh_MeshDomain *T);
 		%feature("autodoc", "1");
 		void Append(StlMesh_SequenceOfMeshDomain & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_StlMesh_MeshDomain &T);
+		void Prepend(const StlMesh_MeshDomain *T);
 		%feature("autodoc", "1");
 		void Prepend(StlMesh_SequenceOfMeshDomain & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_StlMesh_MeshDomain &I);
+		void InsertBefore(const Standard_Integer Index, const StlMesh_MeshDomain *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, StlMesh_SequenceOfMeshDomain & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_StlMesh_MeshDomain &T);
+		void InsertAfter(const Standard_Integer Index, const StlMesh_MeshDomain *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, StlMesh_SequenceOfMeshDomain & S);
 		%feature("autodoc", "1");
@@ -356,7 +356,7 @@ class StlMesh_SequenceOfMeshDomain : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_StlMesh_MeshDomain & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StlMesh_MeshDomain &I);
+		void SetValue(const Standard_Integer Index, const StlMesh_MeshDomain *I);
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshDomain & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -387,7 +387,7 @@ def __del__(self):
 class StlMesh_MeshExplorer {
 	public:
 		%feature("autodoc", "1");
-		StlMesh_MeshExplorer(const Handle_StlMesh_Mesh &M);
+		StlMesh_MeshExplorer(const StlMesh_Mesh *M);
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
 		%feature("autodoc", "1");
@@ -424,7 +424,7 @@ def __del__(self):
 class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		StlMesh_SequenceNodeOfSequenceOfMeshDomain(const Handle_StlMesh_MeshDomain &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		StlMesh_SequenceNodeOfSequenceOfMeshDomain(const StlMesh_MeshDomain *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshDomain & Value() const;
 		%feature("autodoc", "1");
@@ -461,7 +461,7 @@ def __del__(self):
 class StlMesh_SequenceNodeOfSequenceOfMesh : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		StlMesh_SequenceNodeOfSequenceOfMesh(const Handle_StlMesh_Mesh &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		StlMesh_SequenceNodeOfSequenceOfMesh(const StlMesh_Mesh *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_StlMesh_Mesh & Value() const;
 		%feature("autodoc", "1");
@@ -500,7 +500,7 @@ class StlMesh {
 		%feature("autodoc", "1");
 		StlMesh();
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh Merge(const Handle_StlMesh_Mesh &mesh1, const Handle_StlMesh_Mesh &mesh2);
+		Handle_StlMesh_Mesh Merge(const StlMesh_Mesh *mesh1, const StlMesh_Mesh *mesh2);
 
 };
 %feature("shadow") StlMesh::~StlMesh %{
@@ -598,19 +598,19 @@ class StlMesh_SequenceOfMeshTriangle : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const StlMesh_SequenceOfMeshTriangle & operator=(const StlMesh_SequenceOfMeshTriangle &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_StlMesh_MeshTriangle &T);
+		void Append(const StlMesh_MeshTriangle *T);
 		%feature("autodoc", "1");
 		void Append(StlMesh_SequenceOfMeshTriangle & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_StlMesh_MeshTriangle &T);
+		void Prepend(const StlMesh_MeshTriangle *T);
 		%feature("autodoc", "1");
 		void Prepend(StlMesh_SequenceOfMeshTriangle & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_StlMesh_MeshTriangle &I);
+		void InsertBefore(const Standard_Integer Index, const StlMesh_MeshTriangle *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, StlMesh_SequenceOfMeshTriangle & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_StlMesh_MeshTriangle &T);
+		void InsertAfter(const Standard_Integer Index, const StlMesh_MeshTriangle *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, StlMesh_SequenceOfMeshTriangle & S);
 		%feature("autodoc", "1");
@@ -624,7 +624,7 @@ class StlMesh_SequenceOfMeshTriangle : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_StlMesh_MeshTriangle & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StlMesh_MeshTriangle &I);
+		void SetValue(const Standard_Integer Index, const StlMesh_MeshTriangle *I);
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshTriangle & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -702,7 +702,7 @@ def __del__(self):
 class StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		StlMesh_SequenceNodeOfSequenceOfMeshTriangle(const Handle_StlMesh_MeshTriangle &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		StlMesh_SequenceNodeOfSequenceOfMeshTriangle(const StlMesh_MeshTriangle *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshTriangle & Value() const;
 		%feature("autodoc", "1");
@@ -747,19 +747,19 @@ class StlMesh_SequenceOfMesh : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const StlMesh_SequenceOfMesh & operator=(const StlMesh_SequenceOfMesh &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_StlMesh_Mesh &T);
+		void Append(const StlMesh_Mesh *T);
 		%feature("autodoc", "1");
 		void Append(StlMesh_SequenceOfMesh & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_StlMesh_Mesh &T);
+		void Prepend(const StlMesh_Mesh *T);
 		%feature("autodoc", "1");
 		void Prepend(StlMesh_SequenceOfMesh & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_StlMesh_Mesh &I);
+		void InsertBefore(const Standard_Integer Index, const StlMesh_Mesh *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, StlMesh_SequenceOfMesh & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_StlMesh_Mesh &T);
+		void InsertAfter(const Standard_Integer Index, const StlMesh_Mesh *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, StlMesh_SequenceOfMesh & S);
 		%feature("autodoc", "1");
@@ -773,7 +773,7 @@ class StlMesh_SequenceOfMesh : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_StlMesh_Mesh & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StlMesh_Mesh &I);
+		void SetValue(const Standard_Integer Index, const StlMesh_Mesh *I);
 		%feature("autodoc", "1");
 		Handle_StlMesh_Mesh & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");

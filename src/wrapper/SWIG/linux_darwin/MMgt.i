@@ -43,15 +43,15 @@ class Handle_MMgt_TShared : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_MMgt_TShared();
 		%feature("autodoc", "1");
-		Handle_MMgt_TShared(const Handle_MMgt_TShared &aHandle);
+		Handle_MMgt_TShared(const MMgt_TShared *aHandle);
 		%feature("autodoc", "1");
 		Handle_MMgt_TShared(const MMgt_TShared *anItem);
 		%feature("autodoc", "1");
-		Handle_MMgt_TShared & operator=(const Handle_MMgt_TShared &aHandle);
+		Handle_MMgt_TShared & operator=(const MMgt_TShared *aHandle);
 		%feature("autodoc", "1");
 		Handle_MMgt_TShared & operator=(const MMgt_TShared *anItem);
 		%feature("autodoc", "1");
-		Handle_MMgt_TShared const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MMgt_TShared const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MMgt_TShared {

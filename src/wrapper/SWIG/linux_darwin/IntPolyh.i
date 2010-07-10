@@ -44,15 +44,15 @@ class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints();
 		%feature("autodoc", "1");
-		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints(const Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints &aHandle);
+		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints(const IntPolyh_SequenceNodeOfSeqOfStartPoints *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints(const IntPolyh_SequenceNodeOfSeqOfStartPoints *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints & operator=(const Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints &aHandle);
+		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints & operator=(const IntPolyh_SequenceNodeOfSeqOfStartPoints *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints & operator=(const IntPolyh_SequenceNodeOfSeqOfStartPoints *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints {
@@ -465,7 +465,7 @@ class IntPolyh_Point {
 		%feature("autodoc", "1");
 		void SetPartOfCommon(const Standard_Integer ii);
 		%feature("autodoc", "1");
-		void Middle(const Handle_Adaptor3d_HSurface &MySurface, const IntPolyh_Point &P1, const IntPolyh_Point &P2);
+		void Middle(const Adaptor3d_HSurface *MySurface, const IntPolyh_Point &P1, const IntPolyh_Point &P2);
 		%feature("autodoc", "1");
 		IntPolyh_Point Add(const IntPolyh_Point &P1) const;
 		%feature("autodoc", "1");
@@ -696,11 +696,11 @@ def __del__(self):
 class IntPolyh_Intersection {
 	public:
 		%feature("autodoc", "1");
-		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2);
+		IntPolyh_Intersection(const Adaptor3d_HSurface *S1, const Adaptor3d_HSurface *S2);
 		%feature("autodoc", "1");
-		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const Standard_Integer NbSU1, const Standard_Integer NbSV1, const Handle_Adaptor3d_HSurface &S2, const Standard_Integer NbSU2, const Standard_Integer NbSV2);
+		IntPolyh_Intersection(const Adaptor3d_HSurface *S1, const Standard_Integer NbSU1, const Standard_Integer NbSV1, const Adaptor3d_HSurface *S2, const Standard_Integer NbSU2, const Standard_Integer NbSV2);
 		%feature("autodoc", "1");
-		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const TColStd_Array1OfReal &anUpars1, const TColStd_Array1OfReal &aVpars1, const Handle_Adaptor3d_HSurface &S2, const TColStd_Array1OfReal &anUpars2, const TColStd_Array1OfReal &aVpars2);
+		IntPolyh_Intersection(const Adaptor3d_HSurface *S1, const TColStd_Array1OfReal &anUpars1, const TColStd_Array1OfReal &aVpars1, const Adaptor3d_HSurface *S2, const TColStd_Array1OfReal &anUpars2, const TColStd_Array1OfReal &aVpars2);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");

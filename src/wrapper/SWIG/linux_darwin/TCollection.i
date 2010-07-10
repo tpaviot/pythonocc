@@ -51,15 +51,15 @@ class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_SeqNode();
 		%feature("autodoc", "1");
-		Handle_TCollection_SeqNode(const Handle_TCollection_SeqNode &aHandle);
+		Handle_TCollection_SeqNode(const TCollection_SeqNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_SeqNode(const TCollection_SeqNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_SeqNode & operator=(const Handle_TCollection_SeqNode &aHandle);
+		Handle_TCollection_SeqNode & operator=(const TCollection_SeqNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_SeqNode & operator=(const TCollection_SeqNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_SeqNode const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TCollection_SeqNode const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TCollection_SeqNode {
@@ -89,15 +89,15 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString();
 		%feature("autodoc", "1");
-		Handle_TCollection_HExtendedString(const Handle_TCollection_HExtendedString &aHandle);
+		Handle_TCollection_HExtendedString(const TCollection_HExtendedString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString(const TCollection_HExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_HExtendedString & operator=(const Handle_TCollection_HExtendedString &aHandle);
+		Handle_TCollection_HExtendedString & operator=(const TCollection_HExtendedString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString & operator=(const TCollection_HExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_HExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TCollection_HExtendedString const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TCollection_HExtendedString {
@@ -127,15 +127,15 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_AVLBaseNode();
 		%feature("autodoc", "1");
-		Handle_TCollection_AVLBaseNode(const Handle_TCollection_AVLBaseNode &aHandle);
+		Handle_TCollection_AVLBaseNode(const TCollection_AVLBaseNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_AVLBaseNode(const TCollection_AVLBaseNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_AVLBaseNode & operator=(const Handle_TCollection_AVLBaseNode &aHandle);
+		Handle_TCollection_AVLBaseNode & operator=(const TCollection_AVLBaseNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_AVLBaseNode & operator=(const TCollection_AVLBaseNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_AVLBaseNode const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TCollection_AVLBaseNode const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TCollection_AVLBaseNode {
@@ -165,15 +165,15 @@ class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString();
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString(const Handle_TCollection_HAsciiString &aHandle);
+		Handle_TCollection_HAsciiString(const TCollection_HAsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString(const TCollection_HAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString & operator=(const Handle_TCollection_HAsciiString &aHandle);
+		Handle_TCollection_HAsciiString & operator=(const TCollection_HAsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString & operator=(const TCollection_HAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TCollection_HAsciiString const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TCollection_HAsciiString {
@@ -203,15 +203,15 @@ class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_MapNode();
 		%feature("autodoc", "1");
-		Handle_TCollection_MapNode(const Handle_TCollection_MapNode &aHandle);
+		Handle_TCollection_MapNode(const TCollection_MapNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_MapNode(const TCollection_MapNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_MapNode & operator=(const Handle_TCollection_MapNode &aHandle);
+		Handle_TCollection_MapNode & operator=(const TCollection_MapNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_MapNode & operator=(const TCollection_MapNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_MapNode const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TCollection_MapNode const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TCollection_MapNode {
@@ -933,13 +933,7 @@ class TCollection_HExtendedString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TCollection_HExtendedString(const TCollection_ExtendedString &aString);
 		%feature("autodoc", "1");
-		TCollection_HExtendedString(const Handle_TCollection_HAsciiString &aString);
-		%feature("autodoc", "1");
-		TCollection_HExtendedString(const Handle_TCollection_HExtendedString &aString);
-		%feature("autodoc", "1");
-		void AssignCat(const Handle_TCollection_HExtendedString &other);
-		%feature("autodoc", "1");
-		Handle_TCollection_HExtendedString Cat(const Handle_TCollection_HExtendedString &other) const;
+		TCollection_HExtendedString(const TCollection_HAsciiString *aString);
 		%feature("autodoc", "1");
 		void ChangeAll(const Standard_ExtCharacter aChar, const Standard_ExtCharacter NewChar);
 		%feature("autodoc", "1");
@@ -948,12 +942,6 @@ class TCollection_HExtendedString : public MMgt_TShared {
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		void Insert(const Standard_Integer where, const Standard_ExtCharacter what);
-		%feature("autodoc", "1");
-		void Insert(const Standard_Integer where, const Handle_TCollection_HExtendedString &what);
-		%feature("autodoc", "1");
-		Standard_Boolean IsLess(const Handle_TCollection_HExtendedString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsGreater(const Handle_TCollection_HExtendedString &other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsAscii() const;
 		%feature("autodoc", "1");
@@ -965,13 +953,7 @@ class TCollection_HExtendedString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer where, const Standard_ExtCharacter what);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer where, const Handle_TCollection_HExtendedString &what);
-		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString Split(const Standard_Integer where);
-		%feature("autodoc", "1");
-		Standard_Integer Search(const Handle_TCollection_HExtendedString &what) const;
-		%feature("autodoc", "1");
-		Standard_Integer SearchFromEnd(const Handle_TCollection_HExtendedString &what) const;
 		%feature("autodoc", "1");
 		Standard_ExtString const ToExtString() const;
 		%feature("autodoc", "1");
@@ -1000,8 +982,6 @@ class TCollection_HExtendedString : public MMgt_TShared {
 			self->ShallowDump(s);
 			return s.str();}
 		};
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameState(const Handle_TCollection_HExtendedString &other) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1177,19 +1157,13 @@ class TCollection_HAsciiString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TCollection_HAsciiString(const TCollection_AsciiString &aString);
 		%feature("autodoc", "1");
-		TCollection_HAsciiString(const Handle_TCollection_HAsciiString &aString);
-		%feature("autodoc", "1");
-		TCollection_HAsciiString(const Handle_TCollection_HExtendedString &aString, const Standard_Character replaceNonAscii);
+		TCollection_HAsciiString(const TCollection_HExtendedString *aString, const Standard_Character replaceNonAscii);
 		%feature("autodoc", "1");
 		void AssignCat(const char * other);
-		%feature("autodoc", "1");
-		void AssignCat(const Handle_TCollection_HAsciiString &other);
 		%feature("autodoc", "1");
 		void Capitalize();
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Cat(const char * other) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Cat(const Handle_TCollection_HAsciiString &other) const;
 		%feature("autodoc", "1");
 		void Center(const Standard_Integer Width, const Standard_Character Filler);
 		%feature("autodoc", "1");
@@ -1197,25 +1171,11 @@ class TCollection_HAsciiString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer FirstLocationInSet(const Handle_TCollection_HAsciiString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		Standard_Integer FirstLocationNotInSet(const Handle_TCollection_HAsciiString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
 		void Insert(const Standard_Integer where, const Standard_Character what);
 		%feature("autodoc", "1");
 		void Insert(const Standard_Integer where, const char * what);
 		%feature("autodoc", "1");
-		void Insert(const Standard_Integer where, const Handle_TCollection_HAsciiString &what);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TCollection_HAsciiString &other);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TCollection_HAsciiString &other);
-		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLess(const Handle_TCollection_HAsciiString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsGreater(const Handle_TCollection_HAsciiString &other) const;
 		%feature("autodoc", "1");
 		Standard_Integer IntegerValue() const;
 		%feature("autodoc", "1");
@@ -1225,25 +1185,15 @@ class TCollection_HAsciiString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsAscii() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDifferent(const Handle_TCollection_HAsciiString &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameString(const Handle_TCollection_HAsciiString &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameString(const Handle_TCollection_HAsciiString &S, const Standard_Boolean CaseSensitive) const;
-		%feature("autodoc", "1");
 		void LeftAdjust();
 		%feature("autodoc", "1");
 		void LeftJustify(const Standard_Integer Width, const Standard_Character Filler);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Handle_TCollection_HAsciiString &other, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
 		Standard_Integer Location(const Standard_Integer N, const Standard_Character C, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
 		%feature("autodoc", "1");
 		void LowerCase();
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TCollection_HAsciiString &other);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1267,17 +1217,11 @@ class TCollection_HAsciiString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Search(const char * what) const;
 		%feature("autodoc", "1");
-		Standard_Integer Search(const Handle_TCollection_HAsciiString &what) const;
-		%feature("autodoc", "1");
 		Standard_Integer SearchFromEnd(const char * what) const;
-		%feature("autodoc", "1");
-		Standard_Integer SearchFromEnd(const Handle_TCollection_HAsciiString &what) const;
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer where, const Standard_Character what);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer where, const char * what);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer where, const Handle_TCollection_HAsciiString &what);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Split(const Standard_Integer where);
 		%feature("autodoc", "1");
@@ -1306,8 +1250,6 @@ class TCollection_HAsciiString : public MMgt_TShared {
 			self->ShallowDump(s);
 			return s.str();}
 		};
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameState(const Handle_TCollection_HAsciiString &other) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -43,15 +43,15 @@ class Handle_XmlMDocStd_XLinkDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDocStd_XLinkDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMDocStd_XLinkDriver(const Handle_XmlMDocStd_XLinkDriver &aHandle);
+		Handle_XmlMDocStd_XLinkDriver(const XmlMDocStd_XLinkDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDocStd_XLinkDriver(const XmlMDocStd_XLinkDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMDocStd_XLinkDriver & operator=(const Handle_XmlMDocStd_XLinkDriver &aHandle);
+		Handle_XmlMDocStd_XLinkDriver & operator=(const XmlMDocStd_XLinkDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDocStd_XLinkDriver & operator=(const XmlMDocStd_XLinkDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMDocStd_XLinkDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlMDocStd_XLinkDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XmlMDocStd_XLinkDriver {
@@ -81,7 +81,7 @@ class XmlMDocStd {
 		%feature("autodoc", "1");
 		XmlMDocStd();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
+		void AddDrivers(const XmlMDF_ADriverTable *aDriverTable, const CDM_MessageDriver *theMessageDriver);
 
 };
 %feature("shadow") XmlMDocStd::~XmlMDocStd %{
@@ -104,13 +104,13 @@ def __del__(self):
 class XmlMDocStd_XLinkDriver : public XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		XmlMDocStd_XLinkDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		XmlMDocStd_XLinkDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const TDF_Attribute *Target, XmlObjMgt_RRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		virtual		void Paste(const TDF_Attribute *Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

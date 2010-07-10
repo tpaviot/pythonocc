@@ -43,15 +43,15 @@ class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modificati
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_BSplineRestriction();
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_BSplineRestriction(const Handle_ShapeCustom_BSplineRestriction &aHandle);
+		Handle_ShapeCustom_BSplineRestriction(const ShapeCustom_BSplineRestriction *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_BSplineRestriction(const ShapeCustom_BSplineRestriction *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_BSplineRestriction & operator=(const Handle_ShapeCustom_BSplineRestriction &aHandle);
+		Handle_ShapeCustom_BSplineRestriction & operator=(const ShapeCustom_BSplineRestriction *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_BSplineRestriction & operator=(const ShapeCustom_BSplineRestriction *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_BSplineRestriction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeCustom_BSplineRestriction const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeCustom_BSplineRestriction {
@@ -81,15 +81,15 @@ class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModifica
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_TrsfModification();
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_TrsfModification(const Handle_ShapeCustom_TrsfModification &aHandle);
+		Handle_ShapeCustom_TrsfModification(const ShapeCustom_TrsfModification *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_TrsfModification(const ShapeCustom_TrsfModification *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_TrsfModification & operator=(const Handle_ShapeCustom_TrsfModification &aHandle);
+		Handle_ShapeCustom_TrsfModification & operator=(const ShapeCustom_TrsfModification *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_TrsfModification & operator=(const ShapeCustom_TrsfModification *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_TrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeCustom_TrsfModification const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeCustom_TrsfModification {
@@ -119,15 +119,15 @@ class Handle_ShapeCustom_SweptToElementary : public Handle_BRepTools_Modificatio
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_SweptToElementary();
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_SweptToElementary(const Handle_ShapeCustom_SweptToElementary &aHandle);
+		Handle_ShapeCustom_SweptToElementary(const ShapeCustom_SweptToElementary *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_SweptToElementary(const ShapeCustom_SweptToElementary *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_SweptToElementary & operator=(const Handle_ShapeCustom_SweptToElementary &aHandle);
+		Handle_ShapeCustom_SweptToElementary & operator=(const ShapeCustom_SweptToElementary *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_SweptToElementary & operator=(const ShapeCustom_SweptToElementary *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_SweptToElementary const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeCustom_SweptToElementary const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeCustom_SweptToElementary {
@@ -157,15 +157,15 @@ class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_RestrictionParameters();
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_RestrictionParameters(const Handle_ShapeCustom_RestrictionParameters &aHandle);
+		Handle_ShapeCustom_RestrictionParameters(const ShapeCustom_RestrictionParameters *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_RestrictionParameters(const ShapeCustom_RestrictionParameters *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_RestrictionParameters & operator=(const Handle_ShapeCustom_RestrictionParameters &aHandle);
+		Handle_ShapeCustom_RestrictionParameters & operator=(const ShapeCustom_RestrictionParameters *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_RestrictionParameters & operator=(const ShapeCustom_RestrictionParameters *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_RestrictionParameters const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeCustom_RestrictionParameters const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeCustom_RestrictionParameters {
@@ -195,15 +195,15 @@ class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToBSpline();
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToBSpline(const Handle_ShapeCustom_ConvertToBSpline &aHandle);
+		Handle_ShapeCustom_ConvertToBSpline(const ShapeCustom_ConvertToBSpline *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToBSpline(const ShapeCustom_ConvertToBSpline *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToBSpline & operator=(const Handle_ShapeCustom_ConvertToBSpline &aHandle);
+		Handle_ShapeCustom_ConvertToBSpline & operator=(const ShapeCustom_ConvertToBSpline *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToBSpline & operator=(const ShapeCustom_ConvertToBSpline *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToBSpline const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeCustom_ConvertToBSpline const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeCustom_ConvertToBSpline {
@@ -233,15 +233,15 @@ class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modificat
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToRevolution();
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToRevolution(const Handle_ShapeCustom_ConvertToRevolution &aHandle);
+		Handle_ShapeCustom_ConvertToRevolution(const ShapeCustom_ConvertToRevolution *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToRevolution(const ShapeCustom_ConvertToRevolution *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToRevolution & operator=(const Handle_ShapeCustom_ConvertToRevolution &aHandle);
+		Handle_ShapeCustom_ConvertToRevolution & operator=(const ShapeCustom_ConvertToRevolution *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToRevolution & operator=(const ShapeCustom_ConvertToRevolution *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToRevolution const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeCustom_ConvertToRevolution const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeCustom_ConvertToRevolution {
@@ -271,15 +271,15 @@ class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modificati
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_DirectModification();
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_DirectModification(const Handle_ShapeCustom_DirectModification &aHandle);
+		Handle_ShapeCustom_DirectModification(const ShapeCustom_DirectModification *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_DirectModification(const ShapeCustom_DirectModification *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_DirectModification & operator=(const Handle_ShapeCustom_DirectModification &aHandle);
+		Handle_ShapeCustom_DirectModification & operator=(const ShapeCustom_DirectModification *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_DirectModification & operator=(const ShapeCustom_DirectModification *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_DirectModification const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeCustom_DirectModification const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeCustom_DirectModification {
@@ -423,7 +423,7 @@ class ShapeCustom_Curve2d {
 		Standard_Boolean IsLinear(const TColgp_Array1OfPnt2d &thePoles, const Standard_Real theTolerance, Standard_Real &OutValue);
 		%feature("autodoc","ConvertToLine2d(const theCurve, Standard_Real theFirstIn, Standard_Real theLastIn, Standard_Real theTolerance) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		Handle_Geom2d_Line ConvertToLine2d(const Handle_Geom2d_Curve &theCurve, const Standard_Real theFirstIn, const Standard_Real theLastIn, const Standard_Real theTolerance, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		Handle_Geom2d_Line ConvertToLine2d(const Geom2d_Curve *theCurve, const Standard_Real theFirstIn, const Standard_Real theLastIn, const Standard_Real theTolerance, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean SimplifyBSpline2d(Handle_Geom2d_BSplineCurve & theBSpline2d, const Standard_Real theTolerance);
 
@@ -679,9 +679,9 @@ class ShapeCustom_Curve {
 		%feature("autodoc", "1");
 		ShapeCustom_Curve();
 		%feature("autodoc", "1");
-		ShapeCustom_Curve(const Handle_Geom_Curve &C);
+		ShapeCustom_Curve(const Geom_Curve *C);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &C);
+		void Init(const Geom_Curve *C);
 		%feature("autodoc", "1");
 		Handle_Geom_Curve ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
 
@@ -708,9 +708,9 @@ class ShapeCustom_Surface {
 		%feature("autodoc", "1");
 		ShapeCustom_Surface();
 		%feature("autodoc", "1");
-		ShapeCustom_Surface(const Handle_Geom_Surface &S);
+		ShapeCustom_Surface(const Geom_Surface *S);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S);
+		void Init(const Geom_Surface *S);
 		%feature("autodoc", "1");
 		Standard_Real Gap() const;
 		%feature("autodoc", "1");
@@ -793,7 +793,7 @@ class ShapeCustom {
 		%feature("autodoc", "1");
 		ShapeCustom();
 		%feature("autodoc", "1");
-		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & context, BRepTools_Modifier & MD);
+		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const BRepTools_Modification *M, TopTools_DataMapOfShapeShape & context, BRepTools_Modifier & MD);
 		%feature("autodoc", "1");
 		TopoDS_Shape DirectFaces(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
@@ -824,7 +824,7 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 		%feature("autodoc", "1");
 		ShapeCustom_BSplineRestriction(const Standard_Boolean anApproxSurfaceFlag, const Standard_Boolean anApproxCurve3dFlag, const Standard_Boolean anApproxCurve2dFlag, const Standard_Real aTol3d, const Standard_Real aTol2d, const GeomAbs_Shape aContinuity3d, const GeomAbs_Shape aContinuity2d, const Standard_Integer aMaxDegree, const Standard_Integer aNbMaxSeg, const Standard_Boolean Degree, const Standard_Boolean Rational);
 		%feature("autodoc", "1");
-		ShapeCustom_BSplineRestriction(const Standard_Boolean anApproxSurfaceFlag, const Standard_Boolean anApproxCurve3dFlag, const Standard_Boolean anApproxCurve2dFlag, const Standard_Real aTol3d, const Standard_Real aTol2d, const GeomAbs_Shape aContinuity3d, const GeomAbs_Shape aContinuity2d, const Standard_Integer aMaxDegree, const Standard_Integer aNbMaxSeg, const Standard_Boolean Degree, const Standard_Boolean Rational, const Handle_ShapeCustom_RestrictionParameters &aModes);
+		ShapeCustom_BSplineRestriction(const Standard_Boolean anApproxSurfaceFlag, const Standard_Boolean anApproxCurve3dFlag, const Standard_Boolean anApproxCurve2dFlag, const Standard_Real aTol3d, const Standard_Real aTol2d, const GeomAbs_Shape aContinuity3d, const GeomAbs_Shape aContinuity2d, const Standard_Integer aMaxDegree, const Standard_Integer aNbMaxSeg, const Standard_Boolean Degree, const Standard_Boolean Rational, const ShapeCustom_RestrictionParameters *aModes);
 		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
@@ -835,7 +835,7 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean ConvertSurface(const Handle_Geom_Surface &aSurface, Handle_Geom_Surface & S, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL, const Standard_Boolean IsOf=1);
+		Standard_Boolean ConvertSurface(const Geom_Surface *aSurface, Handle_Geom_Surface & S, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL, const Standard_Boolean IsOf=1);
 		%feature("autodoc","ConvertCurve(Standard_Boolean IsConvert, Standard_Real First, Standard_Real Last, Standard_Boolean IsOf=1) -> Standard_Real");
 
 		Standard_Boolean ConvertCurve(Handle_Geom_Curve & aCurve, Handle_Geom_Curve & C, const Standard_Boolean IsConvert, const Standard_Real First, const Standard_Real Last, Standard_Real &OutValue, const Standard_Boolean IsOf=1);
@@ -897,7 +897,7 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_RestrictionParameters GetRestrictionParameters() const;
 		%feature("autodoc", "1");
-		void SetRestrictionParameters(const Handle_ShapeCustom_RestrictionParameters &aModes);
+		void SetRestrictionParameters(const ShapeCustom_RestrictionParameters *aModes);
 		%feature("autodoc", "1");
 		Standard_Real Curve3dError() const;
 		%feature("autodoc", "1");

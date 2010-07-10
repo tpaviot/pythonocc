@@ -43,15 +43,15 @@ class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingSize();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingSize(const Handle_IGESGraph_DrawingSize &aHandle);
+		Handle_IGESGraph_DrawingSize(const IGESGraph_DrawingSize *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingSize(const IGESGraph_DrawingSize *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingSize & operator=(const Handle_IGESGraph_DrawingSize &aHandle);
+		Handle_IGESGraph_DrawingSize & operator=(const IGESGraph_DrawingSize *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingSize & operator=(const IGESGraph_DrawingSize *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingSize const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_DrawingSize const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_DrawingSize {
@@ -81,15 +81,15 @@ class Handle_IGESGraph_LineFontDefPattern : public Handle_IGESData_LineFontEntit
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefPattern();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_LineFontDefPattern(const Handle_IGESGraph_LineFontDefPattern &aHandle);
+		Handle_IGESGraph_LineFontDefPattern(const IGESGraph_LineFontDefPattern *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefPattern(const IGESGraph_LineFontDefPattern *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_LineFontDefPattern & operator=(const Handle_IGESGraph_LineFontDefPattern &aHandle);
+		Handle_IGESGraph_LineFontDefPattern & operator=(const IGESGraph_LineFontDefPattern *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefPattern & operator=(const IGESGraph_LineFontDefPattern *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_LineFontDefPattern const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_LineFontDefPattern const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_LineFontDefPattern {
@@ -119,15 +119,15 @@ class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Pick();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_Pick(const Handle_IGESGraph_Pick &aHandle);
+		Handle_IGESGraph_Pick(const IGESGraph_Pick *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Pick(const IGESGraph_Pick *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_Pick & operator=(const Handle_IGESGraph_Pick &aHandle);
+		Handle_IGESGraph_Pick & operator=(const IGESGraph_Pick *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Pick & operator=(const IGESGraph_Pick *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_Pick const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_Pick const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_Pick {
@@ -157,15 +157,15 @@ class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_GeneralModule();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_GeneralModule(const Handle_IGESGraph_GeneralModule &aHandle);
+		Handle_IGESGraph_GeneralModule(const IGESGraph_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_GeneralModule(const IGESGraph_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_GeneralModule & operator=(const Handle_IGESGraph_GeneralModule &aHandle);
+		Handle_IGESGraph_GeneralModule & operator=(const IGESGraph_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_GeneralModule & operator=(const IGESGraph_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_GeneralModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_GeneralModule {
@@ -195,15 +195,15 @@ class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfColor();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HArray1OfColor(const Handle_IGESGraph_HArray1OfColor &aHandle);
+		Handle_IGESGraph_HArray1OfColor(const IGESGraph_HArray1OfColor *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfColor(const IGESGraph_HArray1OfColor *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HArray1OfColor & operator=(const Handle_IGESGraph_HArray1OfColor &aHandle);
+		Handle_IGESGraph_HArray1OfColor & operator=(const IGESGraph_HArray1OfColor *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfColor & operator=(const IGESGraph_HArray1OfColor *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HArray1OfColor const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_HArray1OfColor const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_HArray1OfColor {
@@ -233,15 +233,15 @@ class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Protocol();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_Protocol(const Handle_IGESGraph_Protocol &aHandle);
+		Handle_IGESGraph_Protocol(const IGESGraph_Protocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Protocol(const IGESGraph_Protocol *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_Protocol & operator=(const Handle_IGESGraph_Protocol &aHandle);
+		Handle_IGESGraph_Protocol & operator=(const IGESGraph_Protocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Protocol & operator=(const IGESGraph_Protocol *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_Protocol const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_Protocol {
@@ -271,15 +271,15 @@ class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingUnits();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingUnits(const Handle_IGESGraph_DrawingUnits &aHandle);
+		Handle_IGESGraph_DrawingUnits(const IGESGraph_DrawingUnits *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingUnits(const IGESGraph_DrawingUnits *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingUnits & operator=(const Handle_IGESGraph_DrawingUnits &aHandle);
+		Handle_IGESGraph_DrawingUnits & operator=(const IGESGraph_DrawingUnits *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingUnits & operator=(const IGESGraph_DrawingUnits *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingUnits const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_DrawingUnits const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_DrawingUnits {
@@ -309,15 +309,15 @@ class Handle_IGESGraph_HArray1OfTextFontDef : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextFontDef();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HArray1OfTextFontDef(const Handle_IGESGraph_HArray1OfTextFontDef &aHandle);
+		Handle_IGESGraph_HArray1OfTextFontDef(const IGESGraph_HArray1OfTextFontDef *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextFontDef(const IGESGraph_HArray1OfTextFontDef *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HArray1OfTextFontDef & operator=(const Handle_IGESGraph_HArray1OfTextFontDef &aHandle);
+		Handle_IGESGraph_HArray1OfTextFontDef & operator=(const IGESGraph_HArray1OfTextFontDef *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextFontDef & operator=(const IGESGraph_HArray1OfTextFontDef *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HArray1OfTextFontDef const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_HArray1OfTextFontDef const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_HArray1OfTextFontDef {
@@ -347,15 +347,15 @@ class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 		%feature("autodoc", "1");
 		Handle_IGESGraph_ReadWriteModule();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_ReadWriteModule(const Handle_IGESGraph_ReadWriteModule &aHandle);
+		Handle_IGESGraph_ReadWriteModule(const IGESGraph_ReadWriteModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_ReadWriteModule(const IGESGraph_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_ReadWriteModule & operator=(const Handle_IGESGraph_ReadWriteModule &aHandle);
+		Handle_IGESGraph_ReadWriteModule & operator=(const IGESGraph_ReadWriteModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_ReadWriteModule & operator=(const IGESGraph_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_ReadWriteModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_ReadWriteModule {
@@ -385,15 +385,15 @@ class Handle_IGESGraph_DefinitionLevel : public Handle_IGESData_LevelListEntity 
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DefinitionLevel();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DefinitionLevel(const Handle_IGESGraph_DefinitionLevel &aHandle);
+		Handle_IGESGraph_DefinitionLevel(const IGESGraph_DefinitionLevel *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DefinitionLevel(const IGESGraph_DefinitionLevel *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DefinitionLevel & operator=(const Handle_IGESGraph_DefinitionLevel &aHandle);
+		Handle_IGESGraph_DefinitionLevel & operator=(const IGESGraph_DefinitionLevel *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DefinitionLevel & operator=(const IGESGraph_DefinitionLevel *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DefinitionLevel const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_DefinitionLevel const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_DefinitionLevel {
@@ -423,15 +423,15 @@ class Handle_IGESGraph_HArray1OfTextDisplayTemplate : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextDisplayTemplate();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HArray1OfTextDisplayTemplate(const Handle_IGESGraph_HArray1OfTextDisplayTemplate &aHandle);
+		Handle_IGESGraph_HArray1OfTextDisplayTemplate(const IGESGraph_HArray1OfTextDisplayTemplate *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextDisplayTemplate(const IGESGraph_HArray1OfTextDisplayTemplate *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HArray1OfTextDisplayTemplate & operator=(const Handle_IGESGraph_HArray1OfTextDisplayTemplate &aHandle);
+		Handle_IGESGraph_HArray1OfTextDisplayTemplate & operator=(const IGESGraph_HArray1OfTextDisplayTemplate *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextDisplayTemplate & operator=(const IGESGraph_HArray1OfTextDisplayTemplate *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HArray1OfTextDisplayTemplate const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_HArray1OfTextDisplayTemplate const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_HArray1OfTextDisplayTemplate {
@@ -461,15 +461,15 @@ class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontPredefined();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_LineFontPredefined(const Handle_IGESGraph_LineFontPredefined &aHandle);
+		Handle_IGESGraph_LineFontPredefined(const IGESGraph_LineFontPredefined *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontPredefined(const IGESGraph_LineFontPredefined *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_LineFontPredefined & operator=(const Handle_IGESGraph_LineFontPredefined &aHandle);
+		Handle_IGESGraph_LineFontPredefined & operator=(const IGESGraph_LineFontPredefined *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontPredefined & operator=(const IGESGraph_LineFontPredefined *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_LineFontPredefined const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_LineFontPredefined const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_LineFontPredefined {
@@ -499,15 +499,15 @@ class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_SpecificModule();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_SpecificModule(const Handle_IGESGraph_SpecificModule &aHandle);
+		Handle_IGESGraph_SpecificModule(const IGESGraph_SpecificModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_SpecificModule(const IGESGraph_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_SpecificModule & operator=(const Handle_IGESGraph_SpecificModule &aHandle);
+		Handle_IGESGraph_SpecificModule & operator=(const IGESGraph_SpecificModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_SpecificModule & operator=(const IGESGraph_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_SpecificModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_SpecificModule {
@@ -537,15 +537,15 @@ class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Color();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_Color(const Handle_IGESGraph_Color &aHandle);
+		Handle_IGESGraph_Color(const IGESGraph_Color *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Color(const IGESGraph_Color *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_Color & operator=(const Handle_IGESGraph_Color &aHandle);
+		Handle_IGESGraph_Color & operator=(const IGESGraph_Color *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Color & operator=(const IGESGraph_Color *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_Color const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_Color const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_Color {
@@ -575,15 +575,15 @@ class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_UniformRectGrid();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_UniformRectGrid(const Handle_IGESGraph_UniformRectGrid &aHandle);
+		Handle_IGESGraph_UniformRectGrid(const IGESGraph_UniformRectGrid *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_UniformRectGrid(const IGESGraph_UniformRectGrid *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_UniformRectGrid & operator=(const Handle_IGESGraph_UniformRectGrid &aHandle);
+		Handle_IGESGraph_UniformRectGrid & operator=(const IGESGraph_UniformRectGrid *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_UniformRectGrid & operator=(const IGESGraph_UniformRectGrid *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_UniformRectGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_UniformRectGrid const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_UniformRectGrid {
@@ -613,15 +613,15 @@ class Handle_IGESGraph_TextDisplayTemplate : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextDisplayTemplate();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_TextDisplayTemplate(const Handle_IGESGraph_TextDisplayTemplate &aHandle);
+		Handle_IGESGraph_TextDisplayTemplate(const IGESGraph_TextDisplayTemplate *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextDisplayTemplate(const IGESGraph_TextDisplayTemplate *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_TextDisplayTemplate & operator=(const Handle_IGESGraph_TextDisplayTemplate &aHandle);
+		Handle_IGESGraph_TextDisplayTemplate & operator=(const IGESGraph_TextDisplayTemplate *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextDisplayTemplate & operator=(const IGESGraph_TextDisplayTemplate *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_TextDisplayTemplate const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_TextDisplayTemplate const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_TextDisplayTemplate {
@@ -651,15 +651,15 @@ class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HighLight();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HighLight(const Handle_IGESGraph_HighLight &aHandle);
+		Handle_IGESGraph_HighLight(const IGESGraph_HighLight *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HighLight(const IGESGraph_HighLight *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HighLight & operator=(const Handle_IGESGraph_HighLight &aHandle);
+		Handle_IGESGraph_HighLight & operator=(const IGESGraph_HighLight *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HighLight & operator=(const IGESGraph_HighLight *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_HighLight const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_HighLight const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_HighLight {
@@ -689,15 +689,15 @@ class Handle_IGESGraph_LineFontDefTemplate : public Handle_IGESData_LineFontEnti
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefTemplate();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_LineFontDefTemplate(const Handle_IGESGraph_LineFontDefTemplate &aHandle);
+		Handle_IGESGraph_LineFontDefTemplate(const IGESGraph_LineFontDefTemplate *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefTemplate(const IGESGraph_LineFontDefTemplate *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_LineFontDefTemplate & operator=(const Handle_IGESGraph_LineFontDefTemplate &aHandle);
+		Handle_IGESGraph_LineFontDefTemplate & operator=(const IGESGraph_LineFontDefTemplate *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefTemplate & operator=(const IGESGraph_LineFontDefTemplate *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_LineFontDefTemplate const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_LineFontDefTemplate const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_LineFontDefTemplate {
@@ -727,15 +727,15 @@ class Handle_IGESGraph_NominalSize : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_NominalSize();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_NominalSize(const Handle_IGESGraph_NominalSize &aHandle);
+		Handle_IGESGraph_NominalSize(const IGESGraph_NominalSize *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_NominalSize(const IGESGraph_NominalSize *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_NominalSize & operator=(const Handle_IGESGraph_NominalSize &aHandle);
+		Handle_IGESGraph_NominalSize & operator=(const IGESGraph_NominalSize *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_NominalSize & operator=(const IGESGraph_NominalSize *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_NominalSize const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_NominalSize const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_NominalSize {
@@ -765,15 +765,15 @@ class Handle_IGESGraph_TextFontDef : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextFontDef();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_TextFontDef(const Handle_IGESGraph_TextFontDef &aHandle);
+		Handle_IGESGraph_TextFontDef(const IGESGraph_TextFontDef *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextFontDef(const IGESGraph_TextFontDef *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_TextFontDef & operator=(const Handle_IGESGraph_TextFontDef &aHandle);
+		Handle_IGESGraph_TextFontDef & operator=(const IGESGraph_TextFontDef *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextFontDef & operator=(const IGESGraph_TextFontDef *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_TextFontDef const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_TextFontDef const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_TextFontDef {
@@ -803,15 +803,15 @@ class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity
 		%feature("autodoc", "1");
 		Handle_IGESGraph_IntercharacterSpacing();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_IntercharacterSpacing(const Handle_IGESGraph_IntercharacterSpacing &aHandle);
+		Handle_IGESGraph_IntercharacterSpacing(const IGESGraph_IntercharacterSpacing *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_IntercharacterSpacing(const IGESGraph_IntercharacterSpacing *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_IntercharacterSpacing & operator=(const Handle_IGESGraph_IntercharacterSpacing &aHandle);
+		Handle_IGESGraph_IntercharacterSpacing & operator=(const IGESGraph_IntercharacterSpacing *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_IntercharacterSpacing & operator=(const IGESGraph_IntercharacterSpacing *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_IntercharacterSpacing const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_IntercharacterSpacing const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESGraph_IntercharacterSpacing {
@@ -884,21 +884,21 @@ class IGESGraph_ToolDrawingUnits {
 		%feature("autodoc", "1");
 		IGESGraph_ToolDrawingUnits();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_DrawingUnits &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_DrawingUnits *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_DrawingUnits &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_DrawingUnits *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_DrawingUnits &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_DrawingUnits *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_DrawingUnits &ent) const;
+		Standard_Boolean OwnCorrect(const IGESGraph_DrawingUnits *ent) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_DrawingUnits &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_DrawingUnits *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_DrawingUnits &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_DrawingUnits *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_DrawingUnits &entfrom, const Handle_IGESGraph_DrawingUnits &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_DrawingUnits *entfrom, const IGESGraph_DrawingUnits *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_DrawingUnits &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_DrawingUnits *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolDrawingUnits::~IGESGraph_ToolDrawingUnits %{
@@ -923,7 +923,7 @@ class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGraph_DrawingUnits();
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbProps, const Standard_Integer aFlag, const Handle_TCollection_HAsciiString &aUnit);
+		void Init(const Standard_Integer nbProps, const Standard_Integer aFlag, const TCollection_HAsciiString *aUnit);
 		%feature("autodoc", "1");
 		Standard_Integer NbPropertyValues() const;
 		%feature("autodoc", "1");
@@ -968,19 +968,19 @@ class IGESGraph_ToolLineFontDefPattern {
 		%feature("autodoc", "1");
 		IGESGraph_ToolLineFontDefPattern();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_LineFontDefPattern &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_LineFontDefPattern *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_LineFontDefPattern &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_LineFontDefPattern *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_LineFontDefPattern &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_LineFontDefPattern *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_LineFontDefPattern &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_LineFontDefPattern *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_LineFontDefPattern &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_LineFontDefPattern *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_LineFontDefPattern &entfrom, const Handle_IGESGraph_LineFontDefPattern &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_LineFontDefPattern *entfrom, const IGESGraph_LineFontDefPattern *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_LineFontDefPattern &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_LineFontDefPattern *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolLineFontDefPattern::~IGESGraph_ToolLineFontDefPattern %{
@@ -1005,9 +1005,9 @@ class IGESGraph_Array1OfTextFontDef {
 		%feature("autodoc", "1");
 		IGESGraph_Array1OfTextFontDef(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		IGESGraph_Array1OfTextFontDef(const Handle_IGESGraph_TextFontDef &Item, const Standard_Integer Low, const Standard_Integer Up);
+		IGESGraph_Array1OfTextFontDef(const IGESGraph_TextFontDef *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESGraph_TextFontDef &V);
+		void Init(const IGESGraph_TextFontDef *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -1023,7 +1023,7 @@ class IGESGraph_Array1OfTextFontDef {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESGraph_TextFontDef &Value);
+		void SetValue(const Standard_Integer Index, const IGESGraph_TextFontDef *Value);
 		%feature("autodoc", "1");
 		const Handle_IGESGraph_TextFontDef & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1056,19 +1056,19 @@ class IGESGraph_ToolTextDisplayTemplate {
 		%feature("autodoc", "1");
 		IGESGraph_ToolTextDisplayTemplate();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_TextDisplayTemplate &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_TextDisplayTemplate *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_TextDisplayTemplate &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_TextDisplayTemplate *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_TextDisplayTemplate &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_TextDisplayTemplate *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_TextDisplayTemplate &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_TextDisplayTemplate *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_TextDisplayTemplate &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_TextDisplayTemplate *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_TextDisplayTemplate &entfrom, const Handle_IGESGraph_TextDisplayTemplate &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_TextDisplayTemplate *entfrom, const IGESGraph_TextDisplayTemplate *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_TextDisplayTemplate &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_TextDisplayTemplate *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolTextDisplayTemplate::~IGESGraph_ToolTextDisplayTemplate %{
@@ -1146,21 +1146,21 @@ class IGESGraph_ToolUniformRectGrid {
 		%feature("autodoc", "1");
 		IGESGraph_ToolUniformRectGrid();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_UniformRectGrid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_UniformRectGrid *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_UniformRectGrid &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_UniformRectGrid *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_UniformRectGrid &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_UniformRectGrid *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_UniformRectGrid &ent) const;
+		Standard_Boolean OwnCorrect(const IGESGraph_UniformRectGrid *ent) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_UniformRectGrid &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_UniformRectGrid *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_UniformRectGrid &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_UniformRectGrid *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_UniformRectGrid &entfrom, const Handle_IGESGraph_UniformRectGrid &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_UniformRectGrid *entfrom, const IGESGraph_UniformRectGrid *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_UniformRectGrid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_UniformRectGrid *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolUniformRectGrid::~IGESGraph_ToolUniformRectGrid %{
@@ -1185,21 +1185,21 @@ class IGESGraph_ToolNominalSize {
 		%feature("autodoc", "1");
 		IGESGraph_ToolNominalSize();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_NominalSize &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_NominalSize *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_NominalSize &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_NominalSize *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_NominalSize &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_NominalSize *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_NominalSize &ent) const;
+		Standard_Boolean OwnCorrect(const IGESGraph_NominalSize *ent) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_NominalSize &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_NominalSize *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_NominalSize &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_NominalSize *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_NominalSize &entfrom, const Handle_IGESGraph_NominalSize &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_NominalSize *entfrom, const IGESGraph_NominalSize *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_NominalSize &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_NominalSize *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolNominalSize::~IGESGraph_ToolNominalSize %{
@@ -1224,9 +1224,9 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 		%feature("autodoc", "1");
 		IGESGraph_HArray1OfTextDisplayTemplate(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		IGESGraph_HArray1OfTextDisplayTemplate(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESGraph_TextDisplayTemplate &V);
+		IGESGraph_HArray1OfTextDisplayTemplate(const Standard_Integer Low, const Standard_Integer Up, const IGESGraph_TextDisplayTemplate *V);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESGraph_TextDisplayTemplate &V);
+		void Init(const IGESGraph_TextDisplayTemplate *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1234,7 +1234,7 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESGraph_TextDisplayTemplate &Value);
+		void SetValue(const Standard_Integer Index, const IGESGraph_TextDisplayTemplate *Value);
 		%feature("autodoc", "1");
 		const Handle_IGESGraph_TextDisplayTemplate & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1279,21 +1279,21 @@ class IGESGraph_ToolIntercharacterSpacing {
 		%feature("autodoc", "1");
 		IGESGraph_ToolIntercharacterSpacing();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_IntercharacterSpacing &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_IntercharacterSpacing *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_IntercharacterSpacing &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_IntercharacterSpacing *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_IntercharacterSpacing &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_IntercharacterSpacing *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_IntercharacterSpacing &ent) const;
+		Standard_Boolean OwnCorrect(const IGESGraph_IntercharacterSpacing *ent) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_IntercharacterSpacing &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_IntercharacterSpacing *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_IntercharacterSpacing &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_IntercharacterSpacing *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_IntercharacterSpacing &entfrom, const Handle_IGESGraph_IntercharacterSpacing &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_IntercharacterSpacing *entfrom, const IGESGraph_IntercharacterSpacing *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_IntercharacterSpacing &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_IntercharacterSpacing *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolIntercharacterSpacing::~IGESGraph_ToolIntercharacterSpacing %{
@@ -1318,21 +1318,21 @@ class IGESGraph_ToolDrawingSize {
 		%feature("autodoc", "1");
 		IGESGraph_ToolDrawingSize();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_DrawingSize &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_DrawingSize *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_DrawingSize &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_DrawingSize *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_DrawingSize &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_DrawingSize *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_DrawingSize &ent) const;
+		Standard_Boolean OwnCorrect(const IGESGraph_DrawingSize *ent) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_DrawingSize &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_DrawingSize *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_DrawingSize &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_DrawingSize *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_DrawingSize &entfrom, const Handle_IGESGraph_DrawingSize &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_DrawingSize *entfrom, const IGESGraph_DrawingSize *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_DrawingSize &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_DrawingSize *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolDrawingSize::~IGESGraph_ToolDrawingSize %{
@@ -1398,19 +1398,19 @@ class IGESGraph_ToolTextFontDef {
 		%feature("autodoc", "1");
 		IGESGraph_ToolTextFontDef();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_TextFontDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_TextFontDef *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_TextFontDef &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_TextFontDef *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_TextFontDef &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_TextFontDef *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_TextFontDef &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_TextFontDef *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_TextFontDef &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_TextFontDef *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_TextFontDef &entfrom, const Handle_IGESGraph_TextFontDef &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_TextFontDef *entfrom, const IGESGraph_TextFontDef *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_TextFontDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_TextFontDef *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolTextFontDef::~IGESGraph_ToolTextFontDef %{
@@ -1435,7 +1435,7 @@ class IGESGraph_LineFontDefTemplate : public IGESData_LineFontEntity {
 		%feature("autodoc", "1");
 		IGESGraph_LineFontDefTemplate();
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer anOrientation, const Handle_IGESBasic_SubfigureDef &aTemplate, const Standard_Real aDistance, const Standard_Real aScale);
+		void Init(const Standard_Integer anOrientation, const IGESBasic_SubfigureDef *aTemplate, const Standard_Real aDistance, const Standard_Real aScale);
 		%feature("autodoc", "1");
 		Standard_Integer Orientation() const;
 		%feature("autodoc", "1");
@@ -1507,19 +1507,19 @@ class IGESGraph_ToolColor {
 		%feature("autodoc", "1");
 		IGESGraph_ToolColor();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_Color &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_Color *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_Color &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_Color *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_Color &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_Color *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_Color &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_Color *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_Color &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_Color *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_Color &entfrom, const Handle_IGESGraph_Color &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_Color *entfrom, const IGESGraph_Color *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_Color &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_Color *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolColor::~IGESGraph_ToolColor %{
@@ -1544,19 +1544,19 @@ class IGESGraph_ToolLineFontDefTemplate {
 		%feature("autodoc", "1");
 		IGESGraph_ToolLineFontDefTemplate();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_LineFontDefTemplate &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_LineFontDefTemplate *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_LineFontDefTemplate &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_LineFontDefTemplate *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_LineFontDefTemplate &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_LineFontDefTemplate *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_LineFontDefTemplate &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_LineFontDefTemplate *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_LineFontDefTemplate &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_LineFontDefTemplate *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_LineFontDefTemplate &entfrom, const Handle_IGESGraph_LineFontDefTemplate &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_LineFontDefTemplate *entfrom, const IGESGraph_LineFontDefTemplate *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_LineFontDefTemplate &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_LineFontDefTemplate *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolLineFontDefTemplate::~IGESGraph_ToolLineFontDefTemplate %{
@@ -1581,7 +1581,7 @@ class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
 		%feature("autodoc", "1");
 		IGESGraph_DefinitionLevel();
 		%feature("autodoc", "1");
-		void Init(const Handle_TColStd_HArray1OfInteger &allLevelNumbers);
+		void Init(const TColStd_HArray1OfInteger *allLevelNumbers);
 		%feature("autodoc", "1");
 		Standard_Integer NbPropertyValues() const;
 		%feature("autodoc", "1");
@@ -1624,19 +1624,19 @@ class IGESGraph_ToolDefinitionLevel {
 		%feature("autodoc", "1");
 		IGESGraph_ToolDefinitionLevel();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_DefinitionLevel &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_DefinitionLevel *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_DefinitionLevel &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_DefinitionLevel *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_DefinitionLevel &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_DefinitionLevel *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_DefinitionLevel &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_DefinitionLevel *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_DefinitionLevel &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_DefinitionLevel *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_DefinitionLevel &entfrom, const Handle_IGESGraph_DefinitionLevel &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_DefinitionLevel *entfrom, const IGESGraph_DefinitionLevel *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_DefinitionLevel &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_DefinitionLevel *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolDefinitionLevel::~IGESGraph_ToolDefinitionLevel %{
@@ -1661,7 +1661,7 @@ class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGraph_TextDisplayTemplate();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real aWidth, const Standard_Real aHeight, const Standard_Integer aFontCode, const Handle_IGESGraph_TextFontDef &aFontEntity, const Standard_Real aSlantAngle, const Standard_Real aRotationAngle, const Standard_Integer aMirrorFlag, const Standard_Integer aRotationFlag, const gp_XYZ &aCorner);
+		void Init(const Standard_Real aWidth, const Standard_Real aHeight, const Standard_Integer aFontCode, const IGESGraph_TextFontDef *aFontEntity, const Standard_Real aSlantAngle, const Standard_Real aRotationAngle, const Standard_Integer aMirrorFlag, const Standard_Integer aRotationFlag, const gp_XYZ &aCorner);
 		%feature("autodoc", "1");
 		void SetIncremental(const Standard_Boolean mode);
 		%feature("autodoc", "1");
@@ -1724,21 +1724,21 @@ class IGESGraph_ToolPick {
 		%feature("autodoc", "1");
 		IGESGraph_ToolPick();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_Pick &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_Pick *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_Pick &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_Pick *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_Pick &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_Pick *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_Pick &ent) const;
+		Standard_Boolean OwnCorrect(const IGESGraph_Pick *ent) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_Pick &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_Pick *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_Pick &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_Pick *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_Pick &entfrom, const Handle_IGESGraph_Pick &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_Pick *entfrom, const IGESGraph_Pick *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_Pick &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_Pick *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolPick::~IGESGraph_ToolPick %{
@@ -1763,9 +1763,9 @@ class IGESGraph_Array1OfTextDisplayTemplate {
 		%feature("autodoc", "1");
 		IGESGraph_Array1OfTextDisplayTemplate(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		IGESGraph_Array1OfTextDisplayTemplate(const Handle_IGESGraph_TextDisplayTemplate &Item, const Standard_Integer Low, const Standard_Integer Up);
+		IGESGraph_Array1OfTextDisplayTemplate(const IGESGraph_TextDisplayTemplate *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESGraph_TextDisplayTemplate &V);
+		void Init(const IGESGraph_TextDisplayTemplate *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -1781,7 +1781,7 @@ class IGESGraph_Array1OfTextDisplayTemplate {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESGraph_TextDisplayTemplate &Value);
+		void SetValue(const Standard_Integer Index, const IGESGraph_TextDisplayTemplate *Value);
 		%feature("autodoc", "1");
 		const Handle_IGESGraph_TextDisplayTemplate & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1813,8 +1813,6 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
 		IGESGraph_TextFontDef();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer aFontCode, const Handle_TCollection_HAsciiString &aFontName, const Standard_Integer aSupersededFont, const Handle_IGESGraph_TextFontDef &aSupersededEntity, const Standard_Integer aScale, const Handle_TColStd_HArray1OfInteger &allASCIICodes, const Handle_TColStd_HArray1OfInteger &allNextCharX, const Handle_TColStd_HArray1OfInteger &allNextCharY, const Handle_TColStd_HArray1OfInteger &allPenMotions, const Handle_IGESBasic_HArray1OfHArray1OfInteger &allPenFlags, const Handle_IGESBasic_HArray1OfHArray1OfInteger &allMovePenToX, const Handle_IGESBasic_HArray1OfHArray1OfInteger &allMovePenToY);
 		%feature("autodoc", "1");
 		Standard_Integer FontCode() const;
 		%feature("autodoc", "1");
@@ -1877,7 +1875,7 @@ class IGESGraph_NominalSize : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGraph_NominalSize();
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbProps, const Standard_Real aNominalSizeValue, const Handle_TCollection_HAsciiString &aNominalSizeName, const Handle_TCollection_HAsciiString &aStandardName);
+		void Init(const Standard_Integer nbProps, const Standard_Real aNominalSizeValue, const TCollection_HAsciiString *aNominalSizeName, const TCollection_HAsciiString *aStandardName);
 		%feature("autodoc", "1");
 		Standard_Integer NbPropertyValues() const;
 		%feature("autodoc", "1");
@@ -1967,9 +1965,9 @@ class IGESGraph_HArray1OfTextFontDef : public MMgt_TShared {
 		%feature("autodoc", "1");
 		IGESGraph_HArray1OfTextFontDef(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		IGESGraph_HArray1OfTextFontDef(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESGraph_TextFontDef &V);
+		IGESGraph_HArray1OfTextFontDef(const Standard_Integer Low, const Standard_Integer Up, const IGESGraph_TextFontDef *V);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESGraph_TextFontDef &V);
+		void Init(const IGESGraph_TextFontDef *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1977,7 +1975,7 @@ class IGESGraph_HArray1OfTextFontDef : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESGraph_TextFontDef &Value);
+		void SetValue(const Standard_Integer Index, const IGESGraph_TextFontDef *Value);
 		%feature("autodoc", "1");
 		const Handle_IGESGraph_TextFontDef & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -2063,9 +2061,9 @@ class IGESGraph_SpecificModule : public IGESData_SpecificModule {
 		%feature("autodoc", "1");
 		IGESGraph_SpecificModule();
 		%feature("autodoc", "1");
-		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		virtual		void OwnDump(const Standard_Integer CN, const IGESData_IGESEntity *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2102,21 +2100,21 @@ class IGESGraph_ToolHighLight {
 		%feature("autodoc", "1");
 		IGESGraph_ToolHighLight();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_HighLight &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_HighLight *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_HighLight &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_HighLight *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_HighLight &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_HighLight *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_HighLight &ent) const;
+		Standard_Boolean OwnCorrect(const IGESGraph_HighLight *ent) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_HighLight &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_HighLight *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_HighLight &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_HighLight *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_HighLight &entfrom, const Handle_IGESGraph_HighLight &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_HighLight *entfrom, const IGESGraph_HighLight *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_HighLight &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_HighLight *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolHighLight::~IGESGraph_ToolHighLight %{
@@ -2141,7 +2139,7 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 		%feature("autodoc", "1");
 		IGESGraph_Color();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real red, const Standard_Real green, const Standard_Real blue, const Handle_TCollection_HAsciiString &aColorName);
+		void Init(const Standard_Real red, const Standard_Real green, const Standard_Real blue, const TCollection_HAsciiString *aColorName);
 		%feature("autodoc","RGBIntensity() -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		void RGBIntensity(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -2236,9 +2234,9 @@ class IGESGraph_ReadWriteModule : public IGESData_ReadWriteModule {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
 		%feature("autodoc", "1");
-		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		virtual		void ReadOwnParams(const Standard_Integer CN, const IGESData_IGESEntity *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
+		virtual		void WriteOwnParams(const Standard_Integer CN, const IGESData_IGESEntity *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2275,9 +2273,9 @@ class IGESGraph_Array1OfColor {
 		%feature("autodoc", "1");
 		IGESGraph_Array1OfColor(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		IGESGraph_Array1OfColor(const Handle_IGESGraph_Color &Item, const Standard_Integer Low, const Standard_Integer Up);
+		IGESGraph_Array1OfColor(const IGESGraph_Color *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESGraph_Color &V);
+		void Init(const IGESGraph_Color *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -2293,7 +2291,7 @@ class IGESGraph_Array1OfColor {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESGraph_Color &Value);
+		void SetValue(const Standard_Integer Index, const IGESGraph_Color *Value);
 		%feature("autodoc", "1");
 		const Handle_IGESGraph_Color & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -2326,17 +2324,17 @@ class IGESGraph_GeneralModule : public IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		IGESGraph_GeneralModule();
 		%feature("autodoc", "1");
-		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
+		virtual		void OwnSharedCase(const Standard_Integer CN, const IGESData_IGESEntity *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const IGESData_IGESEntity *ent) const;
 		%feature("autodoc", "1");
-		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void OwnCheckCase(const Standard_Integer CN, const IGESData_IGESEntity *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
 		%feature("autodoc", "1");
-		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
+		virtual		void OwnCopyCase(const Standard_Integer CN, const IGESData_IGESEntity *entfrom, const IGESData_IGESEntity *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2373,21 +2371,21 @@ class IGESGraph_ToolLineFontPredefined {
 		%feature("autodoc", "1");
 		IGESGraph_ToolLineFontPredefined();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_LineFontPredefined &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const IGESGraph_LineFontPredefined *ent, const IGESData_IGESReaderData *IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_LineFontPredefined &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const IGESGraph_LineFontPredefined *ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_LineFontPredefined &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const IGESGraph_LineFontPredefined *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_LineFontPredefined &ent) const;
+		Standard_Boolean OwnCorrect(const IGESGraph_LineFontPredefined *ent) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_LineFontPredefined &ent) const;
+		IGESData_DirChecker DirChecker(const IGESGraph_LineFontPredefined *ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_LineFontPredefined &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const IGESGraph_LineFontPredefined *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_LineFontPredefined &entfrom, const Handle_IGESGraph_LineFontPredefined &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const IGESGraph_LineFontPredefined *entfrom, const IGESGraph_LineFontPredefined *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_LineFontPredefined &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const IGESGraph_LineFontPredefined *ent, const IGESData_IGESDumper &dumper, const Message_Messenger *S, const Standard_Integer own) const;
 
 };
 %feature("shadow") IGESGraph_ToolLineFontPredefined::~IGESGraph_ToolLineFontPredefined %{
@@ -2412,9 +2410,9 @@ class IGESGraph_HArray1OfColor : public MMgt_TShared {
 		%feature("autodoc", "1");
 		IGESGraph_HArray1OfColor(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		IGESGraph_HArray1OfColor(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESGraph_Color &V);
+		IGESGraph_HArray1OfColor(const Standard_Integer Low, const Standard_Integer Up, const IGESGraph_Color *V);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESGraph_Color &V);
+		void Init(const IGESGraph_Color *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2422,7 +2420,7 @@ class IGESGraph_HArray1OfColor : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESGraph_Color &Value);
+		void SetValue(const Standard_Integer Index, const IGESGraph_Color *Value);
 		%feature("autodoc", "1");
 		const Handle_IGESGraph_Color & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -2467,7 +2465,7 @@ class IGESGraph_LineFontDefPattern : public IGESData_LineFontEntity {
 		%feature("autodoc", "1");
 		IGESGraph_LineFontDefPattern();
 		%feature("autodoc", "1");
-		void Init(const Handle_TColStd_HArray1OfReal &allSegLength, const Handle_TCollection_HAsciiString &aPattern);
+		void Init(const TColStd_HArray1OfReal *allSegLength, const TCollection_HAsciiString *aPattern);
 		%feature("autodoc", "1");
 		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");

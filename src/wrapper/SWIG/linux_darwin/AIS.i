@@ -204,15 +204,15 @@ class Handle_AIS_InteractiveObject : public Handle_SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject();
 		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject(const Handle_AIS_InteractiveObject &aHandle);
+		Handle_AIS_InteractiveObject(const AIS_InteractiveObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject(const AIS_InteractiveObject *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject & operator=(const Handle_AIS_InteractiveObject &aHandle);
+		Handle_AIS_InteractiveObject & operator=(const AIS_InteractiveObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject & operator=(const AIS_InteractiveObject *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_InteractiveObject const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_InteractiveObject {
@@ -242,15 +242,15 @@ class Handle_AIS_Relation : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Relation();
 		%feature("autodoc", "1");
-		Handle_AIS_Relation(const Handle_AIS_Relation &aHandle);
+		Handle_AIS_Relation(const AIS_Relation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Relation(const AIS_Relation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Relation & operator=(const Handle_AIS_Relation &aHandle);
+		Handle_AIS_Relation & operator=(const AIS_Relation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Relation & operator=(const AIS_Relation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Relation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Relation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Relation {
@@ -280,15 +280,15 @@ class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_MidPointRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_MidPointRelation(const Handle_AIS_MidPointRelation &aHandle);
+		Handle_AIS_MidPointRelation(const AIS_MidPointRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MidPointRelation(const AIS_MidPointRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_MidPointRelation & operator=(const Handle_AIS_MidPointRelation &aHandle);
+		Handle_AIS_MidPointRelation & operator=(const AIS_MidPointRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MidPointRelation & operator=(const AIS_MidPointRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_MidPointRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_MidPointRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_MidPointRelation {
@@ -318,15 +318,15 @@ class Handle_AIS_DiameterDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_DiameterDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_DiameterDimension(const Handle_AIS_DiameterDimension &aHandle);
+		Handle_AIS_DiameterDimension(const AIS_DiameterDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DiameterDimension(const AIS_DiameterDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DiameterDimension & operator=(const Handle_AIS_DiameterDimension &aHandle);
+		Handle_AIS_DiameterDimension & operator=(const AIS_DiameterDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DiameterDimension & operator=(const AIS_DiameterDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DiameterDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_DiameterDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_DiameterDimension {
@@ -356,15 +356,15 @@ class Handle_AIS_MultipleConnectedInteractive : public Handle_AIS_InteractiveObj
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedInteractive();
 		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedInteractive(const Handle_AIS_MultipleConnectedInteractive &aHandle);
+		Handle_AIS_MultipleConnectedInteractive(const AIS_MultipleConnectedInteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedInteractive(const AIS_MultipleConnectedInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedInteractive & operator=(const Handle_AIS_MultipleConnectedInteractive &aHandle);
+		Handle_AIS_MultipleConnectedInteractive & operator=(const AIS_MultipleConnectedInteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedInteractive & operator=(const AIS_MultipleConnectedInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_MultipleConnectedInteractive const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_MultipleConnectedInteractive {
@@ -394,15 +394,15 @@ class Handle_AIS_FixRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_FixRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_FixRelation(const Handle_AIS_FixRelation &aHandle);
+		Handle_AIS_FixRelation(const AIS_FixRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_FixRelation(const AIS_FixRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_FixRelation & operator=(const Handle_AIS_FixRelation &aHandle);
+		Handle_AIS_FixRelation & operator=(const AIS_FixRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_FixRelation & operator=(const AIS_FixRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_FixRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_FixRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_FixRelation {
@@ -432,15 +432,15 @@ class Handle_AIS_EqualDistanceRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_EqualDistanceRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_EqualDistanceRelation(const Handle_AIS_EqualDistanceRelation &aHandle);
+		Handle_AIS_EqualDistanceRelation(const AIS_EqualDistanceRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_EqualDistanceRelation(const AIS_EqualDistanceRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_EqualDistanceRelation & operator=(const Handle_AIS_EqualDistanceRelation &aHandle);
+		Handle_AIS_EqualDistanceRelation & operator=(const AIS_EqualDistanceRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_EqualDistanceRelation & operator=(const AIS_EqualDistanceRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_EqualDistanceRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_EqualDistanceRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_EqualDistanceRelation {
@@ -470,15 +470,15 @@ class Handle_AIS_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfIOStatus();
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfIOStatus(const Handle_AIS_DataMapNodeOfDataMapOfIOStatus &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapOfIOStatus(const AIS_DataMapNodeOfDataMapOfIOStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfIOStatus(const AIS_DataMapNodeOfDataMapOfIOStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfIOStatus & operator=(const Handle_AIS_DataMapNodeOfDataMapOfIOStatus &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapOfIOStatus & operator=(const AIS_DataMapNodeOfDataMapOfIOStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfIOStatus & operator=(const AIS_DataMapNodeOfDataMapOfIOStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfIOStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_DataMapNodeOfDataMapOfIOStatus const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfIOStatus {
@@ -508,15 +508,15 @@ class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_TangentRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation(const Handle_AIS_TangentRelation &aHandle);
+		Handle_AIS_TangentRelation(const AIS_TangentRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_TangentRelation(const AIS_TangentRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation & operator=(const Handle_AIS_TangentRelation &aHandle);
+		Handle_AIS_TangentRelation & operator=(const AIS_TangentRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_TangentRelation & operator=(const AIS_TangentRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_TangentRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_TangentRelation {
@@ -546,15 +546,15 @@ class Handle_AIS_ConnectedInteractive : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedInteractive();
 		%feature("autodoc", "1");
-		Handle_AIS_ConnectedInteractive(const Handle_AIS_ConnectedInteractive &aHandle);
+		Handle_AIS_ConnectedInteractive(const AIS_ConnectedInteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedInteractive(const AIS_ConnectedInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ConnectedInteractive & operator=(const Handle_AIS_ConnectedInteractive &aHandle);
+		Handle_AIS_ConnectedInteractive & operator=(const AIS_ConnectedInteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedInteractive & operator=(const AIS_ConnectedInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ConnectedInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_ConnectedInteractive const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_ConnectedInteractive {
@@ -584,15 +584,15 @@ class Handle_AIS_ConnectedShape : public Handle_AIS_ConnectedInteractive {
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedShape();
 		%feature("autodoc", "1");
-		Handle_AIS_ConnectedShape(const Handle_AIS_ConnectedShape &aHandle);
+		Handle_AIS_ConnectedShape(const AIS_ConnectedShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedShape(const AIS_ConnectedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ConnectedShape & operator=(const Handle_AIS_ConnectedShape &aHandle);
+		Handle_AIS_ConnectedShape & operator=(const AIS_ConnectedShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedShape & operator=(const AIS_ConnectedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ConnectedShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_ConnectedShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_ConnectedShape {
@@ -622,15 +622,15 @@ class Handle_AIS_Trihedron : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Trihedron();
 		%feature("autodoc", "1");
-		Handle_AIS_Trihedron(const Handle_AIS_Trihedron &aHandle);
+		Handle_AIS_Trihedron(const AIS_Trihedron *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Trihedron(const AIS_Trihedron *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Trihedron & operator=(const Handle_AIS_Trihedron &aHandle);
+		Handle_AIS_Trihedron & operator=(const AIS_Trihedron *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Trihedron & operator=(const AIS_Trihedron *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Trihedron const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Trihedron const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Trihedron {
@@ -660,15 +660,15 @@ class Handle_AIS_RadiusDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_RadiusDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_RadiusDimension(const Handle_AIS_RadiusDimension &aHandle);
+		Handle_AIS_RadiusDimension(const AIS_RadiusDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_RadiusDimension(const AIS_RadiusDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_RadiusDimension & operator=(const Handle_AIS_RadiusDimension &aHandle);
+		Handle_AIS_RadiusDimension & operator=(const AIS_RadiusDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_RadiusDimension & operator=(const AIS_RadiusDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_RadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_RadiusDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_RadiusDimension {
@@ -698,15 +698,15 @@ class Handle_AIS_Point : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Point();
 		%feature("autodoc", "1");
-		Handle_AIS_Point(const Handle_AIS_Point &aHandle);
+		Handle_AIS_Point(const AIS_Point *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Point(const AIS_Point *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Point & operator=(const Handle_AIS_Point &aHandle);
+		Handle_AIS_Point & operator=(const AIS_Point *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Point & operator=(const AIS_Point *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Point const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Point const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Point {
@@ -736,15 +736,15 @@ class Handle_AIS_LengthDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_LengthDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_LengthDimension(const Handle_AIS_LengthDimension &aHandle);
+		Handle_AIS_LengthDimension(const AIS_LengthDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_LengthDimension(const AIS_LengthDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_LengthDimension & operator=(const Handle_AIS_LengthDimension &aHandle);
+		Handle_AIS_LengthDimension & operator=(const AIS_LengthDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_LengthDimension & operator=(const AIS_LengthDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_LengthDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_LengthDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_LengthDimension {
@@ -774,15 +774,15 @@ class Handle_AIS_MultipleConnectedShape : public Handle_AIS_MultipleConnectedInt
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedShape();
 		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedShape(const Handle_AIS_MultipleConnectedShape &aHandle);
+		Handle_AIS_MultipleConnectedShape(const AIS_MultipleConnectedShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedShape(const AIS_MultipleConnectedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedShape & operator=(const Handle_AIS_MultipleConnectedShape &aHandle);
+		Handle_AIS_MultipleConnectedShape & operator=(const AIS_MultipleConnectedShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedShape & operator=(const AIS_MultipleConnectedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_MultipleConnectedShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_MultipleConnectedShape {
@@ -812,15 +812,15 @@ class Handle_AIS_ConcentricRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_ConcentricRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_ConcentricRelation(const Handle_AIS_ConcentricRelation &aHandle);
+		Handle_AIS_ConcentricRelation(const AIS_ConcentricRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ConcentricRelation(const AIS_ConcentricRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ConcentricRelation & operator=(const Handle_AIS_ConcentricRelation &aHandle);
+		Handle_AIS_ConcentricRelation & operator=(const AIS_ConcentricRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ConcentricRelation & operator=(const AIS_ConcentricRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ConcentricRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_ConcentricRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_ConcentricRelation {
@@ -850,15 +850,15 @@ class Handle_AIS_Chamf2dDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf2dDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_Chamf2dDimension(const Handle_AIS_Chamf2dDimension &aHandle);
+		Handle_AIS_Chamf2dDimension(const AIS_Chamf2dDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf2dDimension(const AIS_Chamf2dDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Chamf2dDimension & operator=(const Handle_AIS_Chamf2dDimension &aHandle);
+		Handle_AIS_Chamf2dDimension & operator=(const AIS_Chamf2dDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf2dDimension & operator=(const AIS_Chamf2dDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Chamf2dDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Chamf2dDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Chamf2dDimension {
@@ -888,15 +888,15 @@ class Handle_AIS_ExclusionFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_ExclusionFilter();
 		%feature("autodoc", "1");
-		Handle_AIS_ExclusionFilter(const Handle_AIS_ExclusionFilter &aHandle);
+		Handle_AIS_ExclusionFilter(const AIS_ExclusionFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ExclusionFilter(const AIS_ExclusionFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ExclusionFilter & operator=(const Handle_AIS_ExclusionFilter &aHandle);
+		Handle_AIS_ExclusionFilter & operator=(const AIS_ExclusionFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ExclusionFilter & operator=(const AIS_ExclusionFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ExclusionFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_ExclusionFilter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_ExclusionFilter {
@@ -926,15 +926,15 @@ class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfILC();
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapOfILC(const AIS_DataMapNodeOfDataMapOfILC *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfILC(const AIS_DataMapNodeOfDataMapOfILC *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const AIS_DataMapNodeOfDataMapOfILC *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const AIS_DataMapNodeOfDataMapOfILC *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_DataMapNodeOfDataMapOfILC const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfILC {
@@ -964,15 +964,15 @@ class Handle_AIS_AttributeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_AttributeFilter();
 		%feature("autodoc", "1");
-		Handle_AIS_AttributeFilter(const Handle_AIS_AttributeFilter &aHandle);
+		Handle_AIS_AttributeFilter(const AIS_AttributeFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_AttributeFilter(const AIS_AttributeFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_AttributeFilter & operator=(const Handle_AIS_AttributeFilter &aHandle);
+		Handle_AIS_AttributeFilter & operator=(const AIS_AttributeFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_AttributeFilter & operator=(const AIS_AttributeFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_AttributeFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_AttributeFilter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_AttributeFilter {
@@ -1002,15 +1002,15 @@ class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
+		Handle_AIS_SequenceNodeOfSequenceOfDimension(const AIS_SequenceNodeOfSequenceOfDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfDimension(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
+		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const AIS_SequenceNodeOfSequenceOfDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_SequenceNodeOfSequenceOfDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
@@ -1040,15 +1040,15 @@ class Handle_AIS_EqualRadiusRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_EqualRadiusRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_EqualRadiusRelation(const Handle_AIS_EqualRadiusRelation &aHandle);
+		Handle_AIS_EqualRadiusRelation(const AIS_EqualRadiusRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_EqualRadiusRelation(const AIS_EqualRadiusRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_EqualRadiusRelation & operator=(const Handle_AIS_EqualRadiusRelation &aHandle);
+		Handle_AIS_EqualRadiusRelation & operator=(const AIS_EqualRadiusRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_EqualRadiusRelation & operator=(const AIS_EqualRadiusRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_EqualRadiusRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_EqualRadiusRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_EqualRadiusRelation {
@@ -1078,15 +1078,15 @@ class Handle_AIS_GlobalStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_GlobalStatus();
 		%feature("autodoc", "1");
-		Handle_AIS_GlobalStatus(const Handle_AIS_GlobalStatus &aHandle);
+		Handle_AIS_GlobalStatus(const AIS_GlobalStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_GlobalStatus(const AIS_GlobalStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_GlobalStatus & operator=(const Handle_AIS_GlobalStatus &aHandle);
+		Handle_AIS_GlobalStatus & operator=(const AIS_GlobalStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_GlobalStatus & operator=(const AIS_GlobalStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_GlobalStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_GlobalStatus const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_GlobalStatus {
@@ -1116,15 +1116,15 @@ class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Line();
 		%feature("autodoc", "1");
-		Handle_AIS_Line(const Handle_AIS_Line &aHandle);
+		Handle_AIS_Line(const AIS_Line *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Line(const AIS_Line *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Line & operator=(const Handle_AIS_Line &aHandle);
+		Handle_AIS_Line & operator=(const AIS_Line *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Line & operator=(const AIS_Line *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Line const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Line const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Line {
@@ -1154,15 +1154,15 @@ class Handle_AIS_DimensionOwner : public Handle_SelectMgr_EntityOwner {
 		%feature("autodoc", "1");
 		Handle_AIS_DimensionOwner();
 		%feature("autodoc", "1");
-		Handle_AIS_DimensionOwner(const Handle_AIS_DimensionOwner &aHandle);
+		Handle_AIS_DimensionOwner(const AIS_DimensionOwner *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DimensionOwner(const AIS_DimensionOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DimensionOwner & operator=(const Handle_AIS_DimensionOwner &aHandle);
+		Handle_AIS_DimensionOwner & operator=(const AIS_DimensionOwner *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DimensionOwner & operator=(const AIS_DimensionOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DimensionOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_DimensionOwner const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_DimensionOwner {
@@ -1192,15 +1192,15 @@ class Handle_AIS_PerpendicularRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_PerpendicularRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_PerpendicularRelation(const Handle_AIS_PerpendicularRelation &aHandle);
+		Handle_AIS_PerpendicularRelation(const AIS_PerpendicularRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_PerpendicularRelation(const AIS_PerpendicularRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_PerpendicularRelation & operator=(const Handle_AIS_PerpendicularRelation &aHandle);
+		Handle_AIS_PerpendicularRelation & operator=(const AIS_PerpendicularRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_PerpendicularRelation & operator=(const AIS_PerpendicularRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_PerpendicularRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_PerpendicularRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_PerpendicularRelation {
@@ -1230,15 +1230,15 @@ class Handle_AIS_TypeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_TypeFilter();
 		%feature("autodoc", "1");
-		Handle_AIS_TypeFilter(const Handle_AIS_TypeFilter &aHandle);
+		Handle_AIS_TypeFilter(const AIS_TypeFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_TypeFilter(const AIS_TypeFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_TypeFilter & operator=(const Handle_AIS_TypeFilter &aHandle);
+		Handle_AIS_TypeFilter & operator=(const AIS_TypeFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_TypeFilter & operator=(const AIS_TypeFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_TypeFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_TypeFilter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_TypeFilter {
@@ -1268,15 +1268,15 @@ class Handle_AIS_SignatureFilter : public Handle_AIS_TypeFilter {
 		%feature("autodoc", "1");
 		Handle_AIS_SignatureFilter();
 		%feature("autodoc", "1");
-		Handle_AIS_SignatureFilter(const Handle_AIS_SignatureFilter &aHandle);
+		Handle_AIS_SignatureFilter(const AIS_SignatureFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SignatureFilter(const AIS_SignatureFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_SignatureFilter & operator=(const Handle_AIS_SignatureFilter &aHandle);
+		Handle_AIS_SignatureFilter & operator=(const AIS_SignatureFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SignatureFilter & operator=(const AIS_SignatureFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_SignatureFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_SignatureFilter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_SignatureFilter {
@@ -1306,15 +1306,15 @@ class Handle_AIS_InteractiveContext : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveContext();
 		%feature("autodoc", "1");
-		Handle_AIS_InteractiveContext(const Handle_AIS_InteractiveContext &aHandle);
+		Handle_AIS_InteractiveContext(const AIS_InteractiveContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveContext(const AIS_InteractiveContext *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_InteractiveContext & operator=(const Handle_AIS_InteractiveContext &aHandle);
+		Handle_AIS_InteractiveContext & operator=(const AIS_InteractiveContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveContext & operator=(const AIS_InteractiveContext *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_InteractiveContext const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_InteractiveContext const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_InteractiveContext {
@@ -1344,15 +1344,15 @@ class Handle_AIS_OffsetDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_OffsetDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_OffsetDimension(const Handle_AIS_OffsetDimension &aHandle);
+		Handle_AIS_OffsetDimension(const AIS_OffsetDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_OffsetDimension(const AIS_OffsetDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_OffsetDimension & operator=(const Handle_AIS_OffsetDimension &aHandle);
+		Handle_AIS_OffsetDimension & operator=(const AIS_OffsetDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_OffsetDimension & operator=(const AIS_OffsetDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_OffsetDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_OffsetDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_OffsetDimension {
@@ -1382,15 +1382,15 @@ class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_EllipseRadiusDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension(const Handle_AIS_EllipseRadiusDimension &aHandle);
+		Handle_AIS_EllipseRadiusDimension(const AIS_EllipseRadiusDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_EllipseRadiusDimension(const AIS_EllipseRadiusDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension & operator=(const Handle_AIS_EllipseRadiusDimension &aHandle);
+		Handle_AIS_EllipseRadiusDimension & operator=(const AIS_EllipseRadiusDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_EllipseRadiusDimension & operator=(const AIS_EllipseRadiusDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_EllipseRadiusDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_EllipseRadiusDimension {
@@ -1420,15 +1420,15 @@ class Handle_AIS_Axis : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Axis();
 		%feature("autodoc", "1");
-		Handle_AIS_Axis(const Handle_AIS_Axis &aHandle);
+		Handle_AIS_Axis(const AIS_Axis *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Axis(const AIS_Axis *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Axis & operator=(const Handle_AIS_Axis &aHandle);
+		Handle_AIS_Axis & operator=(const AIS_Axis *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Axis & operator=(const AIS_Axis *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Axis const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Axis const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Axis {
@@ -1458,15 +1458,15 @@ class Handle_AIS_MinRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 		%feature("autodoc", "1");
 		Handle_AIS_MinRadiusDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_MinRadiusDimension(const Handle_AIS_MinRadiusDimension &aHandle);
+		Handle_AIS_MinRadiusDimension(const AIS_MinRadiusDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MinRadiusDimension(const AIS_MinRadiusDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_MinRadiusDimension & operator=(const Handle_AIS_MinRadiusDimension &aHandle);
+		Handle_AIS_MinRadiusDimension & operator=(const AIS_MinRadiusDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MinRadiusDimension & operator=(const AIS_MinRadiusDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_MinRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_MinRadiusDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_MinRadiusDimension {
@@ -1496,15 +1496,15 @@ class Handle_AIS_C0RegularityFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_C0RegularityFilter();
 		%feature("autodoc", "1");
-		Handle_AIS_C0RegularityFilter(const Handle_AIS_C0RegularityFilter &aHandle);
+		Handle_AIS_C0RegularityFilter(const AIS_C0RegularityFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_C0RegularityFilter(const AIS_C0RegularityFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_C0RegularityFilter & operator=(const Handle_AIS_C0RegularityFilter &aHandle);
+		Handle_AIS_C0RegularityFilter & operator=(const AIS_C0RegularityFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_C0RegularityFilter & operator=(const AIS_C0RegularityFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_C0RegularityFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_C0RegularityFilter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_C0RegularityFilter {
@@ -1534,15 +1534,15 @@ class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive();
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
@@ -1572,15 +1572,15 @@ class Handle_AIS_Plane : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Plane();
 		%feature("autodoc", "1");
-		Handle_AIS_Plane(const Handle_AIS_Plane &aHandle);
+		Handle_AIS_Plane(const AIS_Plane *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Plane(const AIS_Plane *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Plane & operator=(const Handle_AIS_Plane &aHandle);
+		Handle_AIS_Plane & operator=(const AIS_Plane *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Plane & operator=(const AIS_Plane *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Plane const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Plane const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Plane {
@@ -1610,15 +1610,15 @@ class Handle_AIS_MaxRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 		%feature("autodoc", "1");
 		Handle_AIS_MaxRadiusDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_MaxRadiusDimension(const Handle_AIS_MaxRadiusDimension &aHandle);
+		Handle_AIS_MaxRadiusDimension(const AIS_MaxRadiusDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MaxRadiusDimension(const AIS_MaxRadiusDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_MaxRadiusDimension & operator=(const Handle_AIS_MaxRadiusDimension &aHandle);
+		Handle_AIS_MaxRadiusDimension & operator=(const AIS_MaxRadiusDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MaxRadiusDimension & operator=(const AIS_MaxRadiusDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_MaxRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_MaxRadiusDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_MaxRadiusDimension {
@@ -1648,15 +1648,15 @@ class Handle_AIS_LocalStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_LocalStatus();
 		%feature("autodoc", "1");
-		Handle_AIS_LocalStatus(const Handle_AIS_LocalStatus &aHandle);
+		Handle_AIS_LocalStatus(const AIS_LocalStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_LocalStatus(const AIS_LocalStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_LocalStatus & operator=(const Handle_AIS_LocalStatus &aHandle);
+		Handle_AIS_LocalStatus & operator=(const AIS_LocalStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_LocalStatus & operator=(const AIS_LocalStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_LocalStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_LocalStatus const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_LocalStatus {
@@ -1686,15 +1686,15 @@ class Handle_AIS_LocalContext : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_LocalContext();
 		%feature("autodoc", "1");
-		Handle_AIS_LocalContext(const Handle_AIS_LocalContext &aHandle);
+		Handle_AIS_LocalContext(const AIS_LocalContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_LocalContext(const AIS_LocalContext *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_LocalContext & operator=(const Handle_AIS_LocalContext &aHandle);
+		Handle_AIS_LocalContext & operator=(const AIS_LocalContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_LocalContext & operator=(const AIS_LocalContext *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_LocalContext const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_LocalContext const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_LocalContext {
@@ -1724,15 +1724,15 @@ class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_BadEdgeFilter();
 		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter(const Handle_AIS_BadEdgeFilter &aHandle);
+		Handle_AIS_BadEdgeFilter(const AIS_BadEdgeFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_BadEdgeFilter(const AIS_BadEdgeFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter & operator=(const Handle_AIS_BadEdgeFilter &aHandle);
+		Handle_AIS_BadEdgeFilter & operator=(const AIS_BadEdgeFilter *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_BadEdgeFilter & operator=(const AIS_BadEdgeFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_BadEdgeFilter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_BadEdgeFilter {
@@ -1762,15 +1762,15 @@ class Handle_AIS_Circle : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Circle();
 		%feature("autodoc", "1");
-		Handle_AIS_Circle(const Handle_AIS_Circle &aHandle);
+		Handle_AIS_Circle(const AIS_Circle *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Circle(const AIS_Circle *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Circle & operator=(const Handle_AIS_Circle &aHandle);
+		Handle_AIS_Circle & operator=(const AIS_Circle *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Circle & operator=(const AIS_Circle *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Circle const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Circle const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Circle {
@@ -1800,15 +1800,15 @@ class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_AIS_StdMapNodeOfMapOfInteractive();
 		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		Handle_AIS_StdMapNodeOfMapOfInteractive(const AIS_StdMapNodeOfMapOfInteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_StdMapNodeOfMapOfInteractive(const AIS_StdMapNodeOfMapOfInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const AIS_StdMapNodeOfMapOfInteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const AIS_StdMapNodeOfMapOfInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_StdMapNodeOfMapOfInteractive const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_StdMapNodeOfMapOfInteractive {
@@ -1838,15 +1838,15 @@ class Handle_AIS_SequenceNodeOfSequenceOfInteractive : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfInteractive();
 		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfInteractive(const Handle_AIS_SequenceNodeOfSequenceOfInteractive &aHandle);
+		Handle_AIS_SequenceNodeOfSequenceOfInteractive(const AIS_SequenceNodeOfSequenceOfInteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfInteractive(const AIS_SequenceNodeOfSequenceOfInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfInteractive & operator=(const Handle_AIS_SequenceNodeOfSequenceOfInteractive &aHandle);
+		Handle_AIS_SequenceNodeOfSequenceOfInteractive & operator=(const AIS_SequenceNodeOfSequenceOfInteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfInteractive & operator=(const AIS_SequenceNodeOfSequenceOfInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_SequenceNodeOfSequenceOfInteractive const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_SequenceNodeOfSequenceOfInteractive {
@@ -1876,15 +1876,15 @@ class Handle_AIS_Shape : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Shape();
 		%feature("autodoc", "1");
-		Handle_AIS_Shape(const Handle_AIS_Shape &aHandle);
+		Handle_AIS_Shape(const AIS_Shape *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Shape(const AIS_Shape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Shape & operator=(const Handle_AIS_Shape &aHandle);
+		Handle_AIS_Shape & operator=(const AIS_Shape *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Shape & operator=(const AIS_Shape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Shape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Shape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Shape {
@@ -1914,15 +1914,15 @@ class Handle_AIS_SymmetricRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_SymmetricRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_SymmetricRelation(const Handle_AIS_SymmetricRelation &aHandle);
+		Handle_AIS_SymmetricRelation(const AIS_SymmetricRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SymmetricRelation(const AIS_SymmetricRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_SymmetricRelation & operator=(const Handle_AIS_SymmetricRelation &aHandle);
+		Handle_AIS_SymmetricRelation & operator=(const AIS_SymmetricRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SymmetricRelation & operator=(const AIS_SymmetricRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_SymmetricRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_SymmetricRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_SymmetricRelation {
@@ -1952,15 +1952,15 @@ class Handle_AIS_DataMapNodeOfDataMapOfTransientTransient : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient();
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient(const Handle_AIS_DataMapNodeOfDataMapOfTransientTransient &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient(const AIS_DataMapNodeOfDataMapOfTransientTransient *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient(const AIS_DataMapNodeOfDataMapOfTransientTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient & operator=(const Handle_AIS_DataMapNodeOfDataMapOfTransientTransient &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient & operator=(const AIS_DataMapNodeOfDataMapOfTransientTransient *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient & operator=(const AIS_DataMapNodeOfDataMapOfTransientTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfTransientTransient {
@@ -1990,15 +1990,15 @@ class Handle_AIS_Selection : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_Selection();
 		%feature("autodoc", "1");
-		Handle_AIS_Selection(const Handle_AIS_Selection &aHandle);
+		Handle_AIS_Selection(const AIS_Selection *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Selection(const AIS_Selection *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Selection & operator=(const Handle_AIS_Selection &aHandle);
+		Handle_AIS_Selection & operator=(const AIS_Selection *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Selection & operator=(const AIS_Selection *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Selection const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Selection const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Selection {
@@ -2028,15 +2028,15 @@ class Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs();
 		%feature("autodoc", "1");
-		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs(const Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs &aHandle);
+		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs(const AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs(const AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs & operator=(const Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs &aHandle);
+		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs & operator=(const AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs & operator=(const AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
@@ -2066,15 +2066,15 @@ class Handle_AIS_ParallelRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_ParallelRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_ParallelRelation(const Handle_AIS_ParallelRelation &aHandle);
+		Handle_AIS_ParallelRelation(const AIS_ParallelRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ParallelRelation(const AIS_ParallelRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ParallelRelation & operator=(const Handle_AIS_ParallelRelation &aHandle);
+		Handle_AIS_ParallelRelation & operator=(const AIS_ParallelRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ParallelRelation & operator=(const AIS_ParallelRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ParallelRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_ParallelRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_ParallelRelation {
@@ -2104,15 +2104,15 @@ class Handle_AIS_DataMapNodeOfDataMapOfSelStat : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfSelStat();
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfSelStat(const Handle_AIS_DataMapNodeOfDataMapOfSelStat &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapOfSelStat(const AIS_DataMapNodeOfDataMapOfSelStat *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfSelStat(const AIS_DataMapNodeOfDataMapOfSelStat *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfSelStat & operator=(const Handle_AIS_DataMapNodeOfDataMapOfSelStat &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapOfSelStat & operator=(const AIS_DataMapNodeOfDataMapOfSelStat *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfSelStat & operator=(const AIS_DataMapNodeOfDataMapOfSelStat *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfSelStat const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_DataMapNodeOfDataMapOfSelStat const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfSelStat {
@@ -2142,15 +2142,15 @@ class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
 		%feature("autodoc", "1");
 		Handle_AIS_TexturedShape();
 		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape(const Handle_AIS_TexturedShape &aHandle);
+		Handle_AIS_TexturedShape(const AIS_TexturedShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_TexturedShape(const AIS_TexturedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape & operator=(const Handle_AIS_TexturedShape &aHandle);
+		Handle_AIS_TexturedShape & operator=(const AIS_TexturedShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_TexturedShape & operator=(const AIS_TexturedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_TexturedShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_TexturedShape {
@@ -2180,15 +2180,15 @@ class Handle_AIS_IdenticRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_IdenticRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_IdenticRelation(const Handle_AIS_IdenticRelation &aHandle);
+		Handle_AIS_IdenticRelation(const AIS_IdenticRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_IdenticRelation(const AIS_IdenticRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_IdenticRelation & operator=(const Handle_AIS_IdenticRelation &aHandle);
+		Handle_AIS_IdenticRelation & operator=(const AIS_IdenticRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_IdenticRelation & operator=(const AIS_IdenticRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_IdenticRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_IdenticRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_IdenticRelation {
@@ -2218,15 +2218,15 @@ class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
 		%feature("autodoc", "1");
 		Handle_AIS_Drawer();
 		%feature("autodoc", "1");
-		Handle_AIS_Drawer(const Handle_AIS_Drawer &aHandle);
+		Handle_AIS_Drawer(const AIS_Drawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Drawer(const AIS_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Drawer & operator=(const Handle_AIS_Drawer &aHandle);
+		Handle_AIS_Drawer & operator=(const AIS_Drawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Drawer & operator=(const AIS_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Drawer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Drawer {
@@ -2256,15 +2256,15 @@ class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_AIS_ListNodeOfListOfInteractive();
 		%feature("autodoc", "1");
-		Handle_AIS_ListNodeOfListOfInteractive(const Handle_AIS_ListNodeOfListOfInteractive &aHandle);
+		Handle_AIS_ListNodeOfListOfInteractive(const AIS_ListNodeOfListOfInteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ListNodeOfListOfInteractive(const AIS_ListNodeOfListOfInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ListNodeOfListOfInteractive & operator=(const Handle_AIS_ListNodeOfListOfInteractive &aHandle);
+		Handle_AIS_ListNodeOfListOfInteractive & operator=(const AIS_ListNodeOfListOfInteractive *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ListNodeOfListOfInteractive & operator=(const AIS_ListNodeOfListOfInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_ListNodeOfListOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_ListNodeOfListOfInteractive const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_ListNodeOfListOfInteractive {
@@ -2294,15 +2294,15 @@ class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_AngleDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension(const Handle_AIS_AngleDimension &aHandle);
+		Handle_AIS_AngleDimension(const AIS_AngleDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_AngleDimension(const AIS_AngleDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension & operator=(const Handle_AIS_AngleDimension &aHandle);
+		Handle_AIS_AngleDimension & operator=(const AIS_AngleDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_AngleDimension & operator=(const AIS_AngleDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_AngleDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_AngleDimension {
@@ -2332,15 +2332,15 @@ class Handle_AIS_PlaneTrihedron : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_PlaneTrihedron();
 		%feature("autodoc", "1");
-		Handle_AIS_PlaneTrihedron(const Handle_AIS_PlaneTrihedron &aHandle);
+		Handle_AIS_PlaneTrihedron(const AIS_PlaneTrihedron *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_PlaneTrihedron(const AIS_PlaneTrihedron *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_PlaneTrihedron & operator=(const Handle_AIS_PlaneTrihedron &aHandle);
+		Handle_AIS_PlaneTrihedron & operator=(const AIS_PlaneTrihedron *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_PlaneTrihedron & operator=(const AIS_PlaneTrihedron *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_PlaneTrihedron const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_PlaneTrihedron const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_PlaneTrihedron {
@@ -2370,15 +2370,15 @@ class Handle_AIS_Chamf3dDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf3dDimension();
 		%feature("autodoc", "1");
-		Handle_AIS_Chamf3dDimension(const Handle_AIS_Chamf3dDimension &aHandle);
+		Handle_AIS_Chamf3dDimension(const AIS_Chamf3dDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf3dDimension(const AIS_Chamf3dDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Chamf3dDimension & operator=(const Handle_AIS_Chamf3dDimension &aHandle);
+		Handle_AIS_Chamf3dDimension & operator=(const AIS_Chamf3dDimension *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf3dDimension & operator=(const AIS_Chamf3dDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Chamf3dDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_Chamf3dDimension const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS_Chamf3dDimension {
@@ -2530,7 +2530,7 @@ class AIS_Drawer : public Prs3d_Drawer {
 		%feature("autodoc", "1");
 		Standard_Boolean HasLink() const;
 		%feature("autodoc", "1");
-		void Link(const Handle_Prs3d_Drawer &aDrawer);
+		void Link(const Prs3d_Drawer *aDrawer);
 		%feature("autodoc", "1");
 		virtual		void ClearLocalAttributes();
 		%feature("autodoc", "1");
@@ -2636,13 +2636,13 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveContext GetContext() const;
 		%feature("autodoc", "1");
-		virtual		void SetContext(const Handle_AIS_InteractiveContext &aCtx);
+		virtual		void SetContext(const AIS_InteractiveContext *aCtx);
 		%feature("autodoc", "1");
 		Standard_Boolean HasOwner() const;
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & GetOwner() const;
 		%feature("autodoc", "1");
-		void SetOwner(const Handle_Standard_Transient &ApplicativeEntity);
+		void SetOwner(const Standard_Transient *ApplicativeEntity);
 		%feature("autodoc", "1");
 		void ClearOwner();
 		%feature("autodoc", "1");
@@ -2650,7 +2650,7 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		const TColStd_ListOfTransient & Users() const;
 		%feature("autodoc", "1");
-		void AddUser(const Handle_Standard_Transient &aUser);
+		void AddUser(const Standard_Transient *aUser);
 		%feature("autodoc", "1");
 		void ClearUsers();
 		%feature("autodoc", "1");
@@ -2714,7 +2714,7 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		virtual		void UnsetTransparency();
 		%feature("autodoc", "1");
-		virtual		void SetAttributes(const Handle_AIS_Drawer &aDrawer);
+		virtual		void SetAttributes(const AIS_Drawer *aDrawer);
 		%feature("autodoc", "1");
 		const Handle_AIS_Drawer & Attributes() const;
 		%feature("autodoc", "1");
@@ -2728,7 +2728,7 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		virtual		Aspect_TypeOfDegenerateModel DegenerateModel(Quantity_Ratio & aRatio) const;
 		%feature("autodoc", "1");
-		void SetTransformation(const Handle_Geom_Transformation &aTranformation, const Standard_Boolean postConcatenate=0, const Standard_Boolean updateSelection=1);
+		void SetTransformation(const Geom_Transformation *aTranformation, const Standard_Boolean postConcatenate=0, const Standard_Boolean updateSelection=1);
 		%feature("autodoc", "1");
 		void UnsetTransformation();
 		%feature("autodoc", "1");
@@ -2740,7 +2740,7 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		Handle_Prs3d_Presentation Presentation() const;
 		%feature("autodoc", "1");
-		void SetAspect(const Handle_Prs3d_BasicAspect &anAspect, const Standard_Boolean globalChange=1);
+		void SetAspect(const Prs3d_BasicAspect *anAspect, const Standard_Boolean globalChange=1);
 		%feature("autodoc", "1");
 		virtual		void SetPolygonOffsets(const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0);
 		%feature("autodoc", "1");
@@ -2800,7 +2800,7 @@ class AIS_Relation : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		const Handle_Geom_Plane & Plane() const;
 		%feature("autodoc", "1");
-		void SetPlane(const Handle_Geom_Plane &aPlane);
+		void SetPlane(const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
 		%feature("autodoc", "1");
@@ -2869,7 +2869,7 @@ class AIS_DiameterDimension : public AIS_Relation {
 		%feature("autodoc", "1");
 		void SetDiamSymbol(const Standard_Boolean aDiamSymbol);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 
 };
 %extend AIS_DiameterDimension {
@@ -2941,7 +2941,7 @@ def __del__(self):
 class AIS_DataMapNodeOfDataMapOfSelStat : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS_DataMapNodeOfDataMapOfSelStat(const Handle_SelectMgr_SelectableObject &K, const Handle_AIS_LocalStatus &I, const TCollection_MapNodePtr &n);
+		AIS_DataMapNodeOfDataMapOfSelStat(const SelectMgr_SelectableObject *K, const AIS_LocalStatus *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SelectableObject & Key() const;
 		%feature("autodoc", "1");
@@ -2990,19 +2990,19 @@ class AIS_DataMapOfSelStat : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_SelectMgr_SelectableObject &K, const Handle_AIS_LocalStatus &I);
+		Standard_Boolean Bind(const SelectMgr_SelectableObject *K, const AIS_LocalStatus *I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_SelectMgr_SelectableObject &K) const;
+		Standard_Boolean IsBound(const SelectMgr_SelectableObject *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_SelectMgr_SelectableObject &K);
+		Standard_Boolean UnBind(const SelectMgr_SelectableObject *K);
 		%feature("autodoc", "1");
-		const Handle_AIS_LocalStatus & Find(const Handle_SelectMgr_SelectableObject &K) const;
+		const Handle_AIS_LocalStatus & Find(const SelectMgr_SelectableObject *K) const;
 		%feature("autodoc", "1");
-		const Handle_AIS_LocalStatus & operator()(const Handle_SelectMgr_SelectableObject &K) const;
+		const Handle_AIS_LocalStatus & operator()(const SelectMgr_SelectableObject *K) const;
 		%feature("autodoc", "1");
-		Handle_AIS_LocalStatus & ChangeFind(const Handle_SelectMgr_SelectableObject &K);
+		Handle_AIS_LocalStatus & ChangeFind(const SelectMgr_SelectableObject *K);
 		%feature("autodoc", "1");
-		Handle_AIS_LocalStatus & operator()(const Handle_SelectMgr_SelectableObject &K);
+		Handle_AIS_LocalStatus & operator()(const SelectMgr_SelectableObject *K);
 
 };
 %feature("shadow") AIS_DataMapOfSelStat::~AIS_DataMapOfSelStat %{
@@ -3031,7 +3031,7 @@ class AIS_ExclusionFilter : public SelectMgr_Filter {
 		%feature("autodoc", "1");
 		AIS_ExclusionFilter(const AIS_KindOfInteractive TypeToExclude, const Standard_Integer SignatureInType, const Standard_Boolean ExclusionFlagOn=1);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anObj) const;
+		virtual		Standard_Boolean IsOk(const SelectMgr_EntityOwner *anObj) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const AIS_KindOfInteractive TypeToExclude);
 		%feature("autodoc", "1");
@@ -3094,19 +3094,19 @@ class AIS_SequenceOfDimension : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const AIS_SequenceOfDimension & operator=(const AIS_SequenceOfDimension &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS_Relation &T);
+		void Append(const AIS_Relation *T);
 		%feature("autodoc", "1");
 		void Append(AIS_SequenceOfDimension & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS_Relation &T);
+		void Prepend(const AIS_Relation *T);
 		%feature("autodoc", "1");
 		void Prepend(AIS_SequenceOfDimension & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_AIS_Relation &I);
+		void InsertBefore(const Standard_Integer Index, const AIS_Relation *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, AIS_SequenceOfDimension & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_AIS_Relation &T);
+		void InsertAfter(const Standard_Integer Index, const AIS_Relation *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, AIS_SequenceOfDimension & S);
 		%feature("autodoc", "1");
@@ -3120,7 +3120,7 @@ class AIS_SequenceOfDimension : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_AIS_Relation & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_AIS_Relation &I);
+		void SetValue(const Standard_Integer Index, const AIS_Relation *I);
 		%feature("autodoc", "1");
 		Handle_AIS_Relation & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -3151,7 +3151,7 @@ def __del__(self):
 class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs(const Handle_SelectMgr_EntityOwner &K1, const Standard_Integer K2, const Handle_Prs3d_Presentation &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs(const SelectMgr_EntityOwner *K1, const Standard_Integer K2, const Prs3d_Presentation *I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_SelectMgr_EntityOwner & Key1() const;
 		%feature("autodoc","1");
@@ -3210,9 +3210,9 @@ class AIS_ConnectedInteractive : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
+		virtual		void Connect(const AIS_InteractiveObject *anotherIObj);
 		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
+		virtual		void Connect(const AIS_InteractiveObject *anotherIobj, const TopLoc_Location &aLocation);
 		%feature("autodoc", "1");
 		Standard_Boolean HasConnection() const;
 		%feature("autodoc", "1");
@@ -3220,17 +3220,17 @@ class AIS_ConnectedInteractive : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		void Disconnect();
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
+		virtual		void Compute(const PrsMgr_PresentationManager2d *aPresentationManager, const Graphic2d_GraphicObject *aPresentation, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean AcceptShapeDecomposition() const;
 		%feature("autodoc", "1");
 		virtual		void UpdateLocation();
 		%feature("autodoc", "1");
-		virtual		void UpdateLocation(const Handle_SelectMgr_Selection &aSel);
+		virtual		void UpdateLocation(const SelectMgr_Selection *aSel);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3267,11 +3267,9 @@ class AIS_ConnectedShape : public AIS_ConnectedInteractive {
 		%feature("autodoc", "1");
 		AIS_ConnectedShape(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
 		%feature("autodoc", "1");
-		AIS_ConnectedShape(const Handle_AIS_Shape &aInteractiveShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
+		AIS_ConnectedShape(const AIS_Shape *aInteractiveShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
 		%feature("autodoc", "1");
-		AIS_ConnectedShape(const Handle_AIS_ConnectedShape &aConnectedShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager3d &aPresentationManager, const Handle_Prs3d_Presentation &aPresentation, const Standard_Integer aMode=0);
+		virtual		void Compute(const PrsMgr_PresentationManager3d *aPresentationManager, const Prs3d_Presentation *aPresentation, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Shape();
 
@@ -3386,7 +3384,7 @@ class AIS_Shape : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Standard_Integer SelectionMode(const TopAbs_ShapeEnum aShapeType);
 		%feature("autodoc", "1");
-		Standard_Real GetDeflection(const TopoDS_Shape &aShape, const Handle_Prs3d_Drawer &aDrawer);
+		Standard_Real GetDeflection(const TopoDS_Shape &aShape, const Prs3d_Drawer *aDrawer);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3510,19 +3508,19 @@ class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const AIS_SequenceOfInteractive & operator=(const AIS_SequenceOfInteractive &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS_InteractiveObject &T);
+		void Append(const AIS_InteractiveObject *T);
 		%feature("autodoc", "1");
 		void Append(AIS_SequenceOfInteractive & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS_InteractiveObject &T);
+		void Prepend(const AIS_InteractiveObject *T);
 		%feature("autodoc", "1");
 		void Prepend(AIS_SequenceOfInteractive & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_AIS_InteractiveObject &I);
+		void InsertBefore(const Standard_Integer Index, const AIS_InteractiveObject *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, AIS_SequenceOfInteractive & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_AIS_InteractiveObject &T);
+		void InsertAfter(const Standard_Integer Index, const AIS_InteractiveObject *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, AIS_SequenceOfInteractive & S);
 		%feature("autodoc", "1");
@@ -3536,7 +3534,7 @@ class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_AIS_InteractiveObject & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_AIS_InteractiveObject &I);
+		void SetValue(const Standard_Integer Index, const AIS_InteractiveObject *I);
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -3567,11 +3565,11 @@ def __del__(self):
 class AIS_Line : public AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		AIS_Line(const Handle_Geom_Line &aLine);
+		AIS_Line(const Geom_Line *aLine);
 		%feature("autodoc", "1");
-		AIS_Line(const Handle_Geom_Point &aStartPoint, const Handle_Geom_Point &aEndPoint);
+		AIS_Line(const Geom_Point *aStartPoint, const Geom_Point *aEndPoint);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
@@ -3581,9 +3579,9 @@ class AIS_Line : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		void Points(Handle_Geom_Point & PStart, Handle_Geom_Point & PEnd) const;
 		%feature("autodoc", "1");
-		void SetLine(const Handle_Geom_Line &L);
+		void SetLine(const Geom_Line *L);
 		%feature("autodoc", "1");
-		void SetPoints(const Handle_Geom_Point &PStart, const Handle_Geom_Point &PEnd);
+		void SetPoints(const Geom_Point *PStart, const Geom_Point *PEnd);
 		%feature("autodoc", "1");
 		virtual		void SetColor(const Quantity_NameOfColor aColor);
 		%feature("autodoc", "1");
@@ -3646,7 +3644,7 @@ class AIS_AttributeFilter : public SelectMgr_Filter {
 		%feature("autodoc", "1");
 		void UnsetWidth();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anObj) const;
+		virtual		Standard_Boolean IsOk(const SelectMgr_EntityOwner *anObj) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3712,7 +3710,7 @@ def __del__(self):
 class AIS_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS_DataMapNodeOfDataMapOfTransientTransient(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		AIS_DataMapNodeOfDataMapOfTransientTransient(const Standard_Transient *K, const Standard_Transient *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key() const;
 		%feature("autodoc", "1");
@@ -3755,7 +3753,7 @@ class AIS_BadEdgeFilter : public SelectMgr_Filter {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean ActsOn(const TopAbs_ShapeEnum aType) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &EO) const;
+		virtual		Standard_Boolean IsOk(const SelectMgr_EntityOwner *EO) const;
 		%feature("autodoc", "1");
 		void SetContour(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -3798,7 +3796,7 @@ class AIS_TypeFilter : public SelectMgr_Filter {
 		%feature("autodoc", "1");
 		AIS_TypeFilter(const AIS_KindOfInteractive aGivenKind);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anobj) const;
+		virtual		Standard_Boolean IsOk(const SelectMgr_EntityOwner *anobj) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3868,7 +3866,7 @@ class AIS_OffsetDimension : public AIS_Relation {
 		%feature("autodoc", "1");
 		AIS_OffsetDimension(const TopoDS_Shape &FistShape, const TopoDS_Shape &SecondShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		AIS_KindOfDimension KindOfDimension() const;
 		%feature("autodoc", "1");
@@ -3909,21 +3907,21 @@ def __del__(self):
 class AIS_Axis : public AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		AIS_Axis(const Handle_Geom_Line &aComponent);
+		AIS_Axis(const Geom_Line *aComponent);
 		%feature("autodoc", "1");
-		AIS_Axis(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfAxis anAxisType);
+		AIS_Axis(const Geom_Axis2Placement *aComponent, const AIS_TypeOfAxis anAxisType);
 		%feature("autodoc", "1");
-		AIS_Axis(const Handle_Geom_Axis1Placement &anAxis);
+		AIS_Axis(const Geom_Axis1Placement *anAxis);
 		%feature("autodoc", "1");
 		const Handle_Geom_Line & Component() const;
 		%feature("autodoc", "1");
-		void SetComponent(const Handle_Geom_Line &aComponent);
+		void SetComponent(const Geom_Line *aComponent);
 		%feature("autodoc", "1");
 		const Handle_Geom_Axis2Placement & Axis2Placement() const;
 		%feature("autodoc", "1");
-		void SetAxis2Placement(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfAxis anAxisType);
+		void SetAxis2Placement(const Geom_Axis2Placement *aComponent, const AIS_TypeOfAxis anAxisType);
 		%feature("autodoc", "1");
-		void SetAxis1Placement(const Handle_Geom_Axis1Placement &anAxis);
+		void SetAxis1Placement(const Geom_Axis1Placement *anAxis);
 		%feature("autodoc", "1");
 		AIS_TypeOfAxis TypeOfAxis() const;
 		%feature("autodoc", "1");
@@ -3933,7 +3931,7 @@ class AIS_Axis : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
@@ -4026,7 +4024,7 @@ class AIS_LocalStatus : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SubIntensityOff();
 		%feature("autodoc", "1");
-		void SetPreviousState(const Handle_Standard_Transient &stat);
+		void SetPreviousState(const Standard_Transient *stat);
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & PreviousState() const;
 		%feature("autodoc", "1");
@@ -4063,13 +4061,13 @@ def __del__(self):
 class AIS_FixRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_FixRelation(const TopoDS_Shape &aShape, const Handle_Geom_Plane &aPlane, const TopoDS_Wire &aWire);
+		AIS_FixRelation(const TopoDS_Shape &aShape, const Geom_Plane *aPlane, const TopoDS_Wire &aWire);
 		%feature("autodoc", "1");
-		AIS_FixRelation(const TopoDS_Shape &aShape, const Handle_Geom_Plane &aPlane, const TopoDS_Wire &aWire, const gp_Pnt &aPosition, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
+		AIS_FixRelation(const TopoDS_Shape &aShape, const Geom_Plane *aPlane, const TopoDS_Wire &aWire, const gp_Pnt &aPosition, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
 		%feature("autodoc", "1");
-		AIS_FixRelation(const TopoDS_Shape &aShape, const Handle_Geom_Plane &aPlane);
+		AIS_FixRelation(const TopoDS_Shape &aShape, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
-		AIS_FixRelation(const TopoDS_Shape &aShape, const Handle_Geom_Plane &aPlane, const gp_Pnt &aPosition, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
+		AIS_FixRelation(const TopoDS_Shape &aShape, const Geom_Plane *aPlane, const gp_Pnt &aPosition, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
 		%feature("autodoc", "1");
 		TopoDS_Wire Wire();
 		%feature("autodoc", "1");
@@ -4077,7 +4075,7 @@ class AIS_FixRelation : public AIS_Relation {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4155,15 +4153,15 @@ class AIS_ListOfInteractive {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS_InteractiveObject &I);
+		void Prepend(const AIS_InteractiveObject *I);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS_InteractiveObject &I, AIS_ListIteratorOfListOfInteractive & theIt);
+		void Prepend(const AIS_InteractiveObject *I, AIS_ListIteratorOfListOfInteractive & theIt);
 		%feature("autodoc", "1");
 		void Prepend(AIS_ListOfInteractive & Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS_InteractiveObject &I);
+		void Append(const AIS_InteractiveObject *I);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS_InteractiveObject &I, AIS_ListIteratorOfListOfInteractive & theIt);
+		void Append(const AIS_InteractiveObject *I, AIS_ListIteratorOfListOfInteractive & theIt);
 		%feature("autodoc", "1");
 		void Append(AIS_ListOfInteractive & Other);
 		%feature("autodoc", "1");
@@ -4175,11 +4173,11 @@ class AIS_ListOfInteractive {
 		%feature("autodoc", "1");
 		void Remove(AIS_ListIteratorOfListOfInteractive & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const Handle_AIS_InteractiveObject &I, AIS_ListIteratorOfListOfInteractive & It);
+		void InsertBefore(const AIS_InteractiveObject *I, AIS_ListIteratorOfListOfInteractive & It);
 		%feature("autodoc", "1");
 		void InsertBefore(AIS_ListOfInteractive & Other, AIS_ListIteratorOfListOfInteractive & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const Handle_AIS_InteractiveObject &I, AIS_ListIteratorOfListOfInteractive & It);
+		void InsertAfter(const AIS_InteractiveObject *I, AIS_ListIteratorOfListOfInteractive & It);
 		%feature("autodoc", "1");
 		void InsertAfter(AIS_ListOfInteractive & Other, AIS_ListIteratorOfListOfInteractive & It);
 
@@ -4204,11 +4202,11 @@ def __del__(self):
 class AIS_PerpendicularRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_PerpendicularRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Handle_Geom_Plane &aPlane);
+		AIS_PerpendicularRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
 		AIS_PerpendicularRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4251,7 +4249,7 @@ class AIS_Chamf3dDimension : public AIS_Relation {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4288,7 +4286,7 @@ class AIS_MultipleConnectedInteractive : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		AIS_MultipleConnectedInteractive(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation3d=PrsMgr_TOP_AllView);
 		%feature("autodoc", "1");
-		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
+		void Connect(const AIS_InteractiveObject *anotherIObj);
 		%feature("autodoc", "1");
 		virtual		AIS_KindOfInteractive Type() const;
 		%feature("autodoc", "1");
@@ -4298,15 +4296,15 @@ class AIS_MultipleConnectedInteractive : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		const AIS_SequenceOfInteractive & ConnectedTo() const;
 		%feature("autodoc", "1");
-		void Disconnect(const Handle_AIS_InteractiveObject &anotherIObj);
+		void Disconnect(const AIS_InteractiveObject *anotherIObj);
 		%feature("autodoc", "1");
 		void DisconnectAll();
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
+		virtual		void Compute(const PrsMgr_PresentationManager2d *aPresentationManager, const Graphic2d_GraphicObject *aPresentation, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4341,11 +4339,11 @@ def __del__(self):
 class AIS_Trihedron : public AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		AIS_Trihedron(const Handle_Geom_Axis2Placement &aComponent);
+		AIS_Trihedron(const Geom_Axis2Placement *aComponent);
 		%feature("autodoc", "1");
 		const Handle_Geom_Axis2Placement & Component() const;
 		%feature("autodoc", "1");
-		void SetComponent(const Handle_Geom_Axis2Placement &aComponent);
+		void SetComponent(const Geom_Axis2Placement *aComponent);
 		%feature("autodoc", "1");
 		Standard_Boolean HasOwnSize() const;
 		%feature("autodoc", "1");
@@ -4369,11 +4367,11 @@ class AIS_Trihedron : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Plane YZPlane() const;
 		%feature("autodoc", "1");
-		virtual		void SetContext(const Handle_AIS_InteractiveContext &aCtx);
+		virtual		void SetContext(const AIS_InteractiveContext *aCtx);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
@@ -4434,7 +4432,7 @@ def __del__(self):
 class AIS_MidPointRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_MidPointRelation(const TopoDS_Shape &aSymmTool, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Handle_Geom_Plane &aPlane);
+		AIS_MidPointRelation(const TopoDS_Shape &aSymmTool, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
@@ -4442,7 +4440,7 @@ class AIS_MidPointRelation : public AIS_Relation {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & GetTool() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4487,13 +4485,13 @@ class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Handle_SelectMgr_EntityOwner &K, const Handle_Prs3d_Presentation &I);
+		Standard_Integer Add(const SelectMgr_EntityOwner *K, const Prs3d_Presentation *I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const Handle_SelectMgr_EntityOwner &K, const Handle_Prs3d_Presentation &T);
+		void Substitute(const Standard_Integer I, const SelectMgr_EntityOwner *K, const Prs3d_Presentation *T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_SelectMgr_EntityOwner &K) const;
+		Standard_Boolean Contains(const SelectMgr_EntityOwner *K) const;
 		%feature("autodoc", "1");
 		const Handle_SelectMgr_EntityOwner & FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -4505,11 +4503,11 @@ class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Prs3d_Presentation & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const Handle_SelectMgr_EntityOwner &K) const;
+		Standard_Integer FindIndex(const SelectMgr_EntityOwner *K) const;
 		%feature("autodoc", "1");
-		const Handle_Prs3d_Presentation & FindFromKey(const Handle_SelectMgr_EntityOwner &K) const;
+		const Handle_Prs3d_Presentation & FindFromKey(const SelectMgr_EntityOwner *K) const;
 		%feature("autodoc", "1");
-		Handle_Prs3d_Presentation & ChangeFromKey(const Handle_SelectMgr_EntityOwner &K);
+		Handle_Prs3d_Presentation & ChangeFromKey(const SelectMgr_EntityOwner *K);
 
 };
 %feature("shadow") AIS_IndexedDataMapOfOwnerPrs::~AIS_IndexedDataMapOfOwnerPrs %{
@@ -4532,7 +4530,7 @@ def __del__(self):
 class AIS_Point : public AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		AIS_Point(const Handle_Geom_Point &aComponent);
+		AIS_Point(const Geom_Point *aComponent);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
@@ -4540,11 +4538,11 @@ class AIS_Point : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_Geom_Point Component();
 		%feature("autodoc", "1");
-		void SetComponent(const Handle_Geom_Point &aComponent);
+		void SetComponent(const Geom_Point *aComponent);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		void SetColor(const Quantity_NameOfColor aColor);
 		%feature("autodoc", "1");
@@ -4634,19 +4632,19 @@ class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_AIS_InteractiveObject &K, const Handle_AIS_GlobalStatus &I);
+		Standard_Boolean Bind(const AIS_InteractiveObject *K, const AIS_GlobalStatus *I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_AIS_InteractiveObject &K) const;
+		Standard_Boolean IsBound(const AIS_InteractiveObject *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_AIS_InteractiveObject &K);
+		Standard_Boolean UnBind(const AIS_InteractiveObject *K);
 		%feature("autodoc", "1");
-		const Handle_AIS_GlobalStatus & Find(const Handle_AIS_InteractiveObject &K) const;
+		const Handle_AIS_GlobalStatus & Find(const AIS_InteractiveObject *K) const;
 		%feature("autodoc", "1");
-		const Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K) const;
+		const Handle_AIS_GlobalStatus & operator()(const AIS_InteractiveObject *K) const;
 		%feature("autodoc", "1");
-		Handle_AIS_GlobalStatus & ChangeFind(const Handle_AIS_InteractiveObject &K);
+		Handle_AIS_GlobalStatus & ChangeFind(const AIS_InteractiveObject *K);
 		%feature("autodoc", "1");
-		Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K);
+		Handle_AIS_GlobalStatus & operator()(const AIS_InteractiveObject *K);
 
 };
 %feature("shadow") AIS_DataMapOfIOStatus::~AIS_DataMapOfIOStatus %{
@@ -4677,16 +4675,16 @@ class AIS {
 		%feature("autodoc", "1");
 		Standard_Boolean ComputeGeometry(const TopoDS_Edge &anEdge, Handle_Geom_Curve & aCurve, gp_Pnt & FirstPnt, gp_Pnt & LastPnt);
 		%feature("autodoc", "1");
-		Standard_Boolean ComputeGeometry(const TopoDS_Edge &anEdge, Handle_Geom_Curve & aCurve, gp_Pnt & FirstPnt, gp_Pnt & LastPnt, Handle_Geom_Curve & extCurve, Standard_Boolean & isinfinite, Standard_Boolean & isOnPlane, const Handle_Geom_Plane &aPlane);
+		Standard_Boolean ComputeGeometry(const TopoDS_Edge &anEdge, Handle_Geom_Curve & aCurve, gp_Pnt & FirstPnt, gp_Pnt & LastPnt, Handle_Geom_Curve & extCurve, Standard_Boolean & isinfinite, Standard_Boolean & isOnPlane, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
-		Standard_Boolean ComputeGeometry(const TopoDS_Edge &anEdge1, const TopoDS_Edge &anEdge2, Handle_Geom_Curve & aCurve1, Handle_Geom_Curve & aCurve2, gp_Pnt & FirstPnt1, gp_Pnt & LastPnt1, gp_Pnt & FirstPnt2, gp_Pnt & LastPnt2, const Handle_Geom_Plane &aPlane);
+		Standard_Boolean ComputeGeometry(const TopoDS_Edge &anEdge1, const TopoDS_Edge &anEdge2, Handle_Geom_Curve & aCurve1, Handle_Geom_Curve & aCurve2, gp_Pnt & FirstPnt1, gp_Pnt & LastPnt1, gp_Pnt & FirstPnt2, gp_Pnt & LastPnt2, const Geom_Plane *aPlane);
 		%feature("autodoc","ComputeGeometry(const anEdge1, const anEdge2, const aPlane) -> Standard_Integer");
 
-		Standard_Boolean ComputeGeometry(const TopoDS_Edge &anEdge1, const TopoDS_Edge &anEdge2, Standard_Integer &OutValue, Handle_Geom_Curve & aCurve1, Handle_Geom_Curve & aCurve2, gp_Pnt & FirstPnt1, gp_Pnt & LastPnt1, gp_Pnt & FirstPnt2, gp_Pnt & LastPnt2, Handle_Geom_Curve & ExtCurve, Standard_Boolean & isinfinite1, Standard_Boolean & isinfinite2, const Handle_Geom_Plane &aPlane);
+		Standard_Boolean ComputeGeometry(const TopoDS_Edge &anEdge1, const TopoDS_Edge &anEdge2, Standard_Integer &OutValue, Handle_Geom_Curve & aCurve1, Handle_Geom_Curve & aCurve2, gp_Pnt & FirstPnt1, gp_Pnt & LastPnt1, gp_Pnt & FirstPnt2, gp_Pnt & LastPnt2, Handle_Geom_Curve & ExtCurve, Standard_Boolean & isinfinite1, Standard_Boolean & isinfinite2, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
-		Standard_Boolean ComputeGeomCurve(Handle_Geom_Curve & aCurve, const Standard_Real first1, const Standard_Real last1, gp_Pnt & FirstPnt1, gp_Pnt & LastPnt1, const Handle_Geom_Plane &aPlane, Standard_Boolean & isOnPlane);
+		Standard_Boolean ComputeGeomCurve(Handle_Geom_Curve & aCurve, const Standard_Real first1, const Standard_Real last1, gp_Pnt & FirstPnt1, gp_Pnt & LastPnt1, const Geom_Plane *aPlane, Standard_Boolean & isOnPlane);
 		%feature("autodoc", "1");
-		Standard_Boolean ComputeGeometry(const TopoDS_Vertex &aVertex, gp_Pnt & point, const Handle_Geom_Plane &aPlane, Standard_Boolean & isOnPlane);
+		Standard_Boolean ComputeGeometry(const TopoDS_Vertex &aVertex, gp_Pnt & point, const Geom_Plane *aPlane, Standard_Boolean & isOnPlane);
 		%feature("autodoc","GetPlaneFromFace(const aFace) -> Standard_Real");
 
 		Standard_Boolean GetPlaneFromFace(const TopoDS_Face &aFace, gp_Pln & aPlane, Handle_Geom_Surface & aSurf, AIS_KindOfSurface & aSurfType, Standard_Real &OutValue);
@@ -4700,9 +4698,9 @@ class AIS {
 
 		void ComputeLengthBetweenCurvilinearFaces(const TopoDS_Face &FirstFace, const TopoDS_Face &SecondFace, Handle_Geom_Surface & FirstSurf, Handle_Geom_Surface & SecondSurf, const Standard_Boolean AutomaticPos, Standard_Real &OutValue, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Dir & DirAttach);
 		%feature("autodoc", "1");
-		void ComputeAngleBetweenPlanarFaces(const TopoDS_Face &FirstFace, const TopoDS_Face &SecondFace, const Handle_Geom_Surface &Surf2, const gp_Ax1 &Axis, const Standard_Real Value, const Standard_Boolean AutomaticPos, gp_Pnt & Position, gp_Pnt & Center, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Dir & FirstDir, gp_Dir & SecondDir);
+		void ComputeAngleBetweenPlanarFaces(const TopoDS_Face &FirstFace, const TopoDS_Face &SecondFace, const Geom_Surface *Surf2, const gp_Ax1 &Axis, const Standard_Real Value, const Standard_Boolean AutomaticPos, gp_Pnt & Position, gp_Pnt & Center, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Dir & FirstDir, gp_Dir & SecondDir);
 		%feature("autodoc", "1");
-		void ComputeAngleBetweenCurvilinearFaces(const TopoDS_Face &FirstFace, const TopoDS_Face &SecondFace, const Handle_Geom_Surface &FirstSurf, const Handle_Geom_Surface &SecondSurf, const AIS_KindOfSurface FirstSurfType, const AIS_KindOfSurface SecondSurfType, const gp_Ax1 &Axis, const Standard_Real Value, const Standard_Boolean AutomaticPos, gp_Pnt & Position, gp_Pnt & Center, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Dir & FirstDir, gp_Dir & SecondDir, Handle_Geom_Plane & Plane);
+		void ComputeAngleBetweenCurvilinearFaces(const TopoDS_Face &FirstFace, const TopoDS_Face &SecondFace, const Geom_Surface *FirstSurf, const Geom_Surface *SecondSurf, const AIS_KindOfSurface FirstSurfType, const AIS_KindOfSurface SecondSurfType, const gp_Ax1 &Axis, const Standard_Real Value, const Standard_Boolean AutomaticPos, gp_Pnt & Position, gp_Pnt & Center, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Dir & FirstDir, gp_Dir & SecondDir, Handle_Geom_Plane & Plane);
 		%feature("autodoc", "1");
 		gp_Pnt ProjectPointOnPlane(const gp_Pnt &aPoint, const gp_Pln &aPlane);
 		%feature("autodoc", "1");
@@ -4716,9 +4714,9 @@ class AIS {
 		%feature("autodoc", "1");
 		Standard_Real DistanceFromApex(const gp_Elips &elips, const gp_Pnt &Apex, const Standard_Real par);
 		%feature("autodoc", "1");
-		void ComputeProjEdgePresentation(const Handle_Prs3d_Presentation &aPres, const Handle_AIS_Drawer &aDrawer, const TopoDS_Edge &anEdge, const Handle_Geom_Curve &ProjCurve, const gp_Pnt &FirstP, const gp_Pnt &LastP, const Quantity_NameOfColor aColor=Quantity_NOC_PURPLE, const Standard_Real aWidth=2, const Aspect_TypeOfLine aProjTOL=Aspect_TOL_DASH, const Aspect_TypeOfLine aCallTOL=Aspect_TOL_DOT);
+		void ComputeProjEdgePresentation(const Prs3d_Presentation *aPres, const AIS_Drawer *aDrawer, const TopoDS_Edge &anEdge, const Geom_Curve *ProjCurve, const gp_Pnt &FirstP, const gp_Pnt &LastP, const Quantity_NameOfColor aColor=Quantity_NOC_PURPLE, const Standard_Real aWidth=2, const Aspect_TypeOfLine aProjTOL=Aspect_TOL_DASH, const Aspect_TypeOfLine aCallTOL=Aspect_TOL_DOT);
 		%feature("autodoc", "1");
-		void ComputeProjVertexPresentation(const Handle_Prs3d_Presentation &aPres, const Handle_AIS_Drawer &aDrawer, const TopoDS_Vertex &aVertex, const gp_Pnt &ProjPoint, const Quantity_NameOfColor aColor=Quantity_NOC_PURPLE, const Standard_Real aWidth=2, const Aspect_TypeOfMarker aProjTOM=Aspect_TOM_PLUS, const Aspect_TypeOfLine aCallTOL=Aspect_TOL_DOT);
+		void ComputeProjVertexPresentation(const Prs3d_Presentation *aPres, const AIS_Drawer *aDrawer, const TopoDS_Vertex &aVertex, const gp_Pnt &ProjPoint, const Quantity_NameOfColor aColor=Quantity_NOC_PURPLE, const Standard_Real aWidth=2, const Aspect_TypeOfMarker aProjTOM=Aspect_TOM_PLUS, const Aspect_TypeOfLine aCallTOL=Aspect_TOL_DOT);
 
 };
 %feature("shadow") AIS::~AIS %{
@@ -4741,13 +4739,13 @@ def __del__(self):
 class AIS_ParallelRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_ParallelRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Handle_Geom_Plane &aPlane);
+		AIS_ParallelRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
-		AIS_ParallelRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Handle_Geom_Plane &aPlane, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
+		AIS_ParallelRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Geom_Plane *aPlane, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4786,7 +4784,7 @@ class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
 		%feature("autodoc", "1");
 		AIS_MaxRadiusDimension(const TopoDS_Shape &aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4825,7 +4823,7 @@ class AIS_C0RegularityFilter : public SelectMgr_Filter {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean ActsOn(const TopAbs_ShapeEnum aType) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &EO) const;
+		virtual		Standard_Boolean IsOk(const SelectMgr_EntityOwner *EO) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4860,7 +4858,7 @@ def __del__(self):
 class AIS_ListNodeOfListOfInteractive : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS_ListNodeOfListOfInteractive(const Handle_AIS_InteractiveObject &I, const TCollection_MapNodePtr &n);
+		AIS_ListNodeOfListOfInteractive(const AIS_InteractiveObject *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject & Value() const;
 		%feature("autodoc", "1");
@@ -4897,7 +4895,7 @@ def __del__(self):
 class AIS_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS_DataMapNodeOfDataMapOfIOStatus(const Handle_AIS_InteractiveObject &K, const Handle_AIS_GlobalStatus &I, const TCollection_MapNodePtr &n);
+		AIS_DataMapNodeOfDataMapOfIOStatus(const AIS_InteractiveObject *K, const AIS_GlobalStatus *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject & Key() const;
 		%feature("autodoc", "1");
@@ -4936,7 +4934,7 @@ def __del__(self):
 class AIS_DimensionOwner : public SelectMgr_EntityOwner {
 	public:
 		%feature("autodoc", "1");
-		AIS_DimensionOwner(const Handle_SelectMgr_SelectableObject &aSO, const Standard_Integer aPriority=0);
+		AIS_DimensionOwner(const SelectMgr_SelectableObject *aSO, const Standard_Integer aPriority=0);
 		%feature("autodoc", "1");
 		void SetShape(const TopoDS_Shape &aShape);
 		%feature("autodoc", "1");
@@ -4977,13 +4975,13 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		AIS_LocalContext();
 		%feature("autodoc", "1");
-		AIS_LocalContext(const Handle_AIS_InteractiveContext &aCtx, const Standard_Integer anIndex, const Standard_Boolean LoadDisplayed=1, const Standard_Boolean AcceptStandardModes=1, const Standard_Boolean AcceptErase=0, const Standard_Boolean UseBothViewers=0);
+		AIS_LocalContext(const AIS_InteractiveContext *aCtx, const Standard_Integer anIndex, const Standard_Boolean LoadDisplayed=1, const Standard_Boolean AcceptStandardModes=1, const Standard_Boolean AcceptErase=0, const Standard_Boolean UseBothViewers=0);
 		%feature("autodoc", "1");
 		void AcceptErase(const Standard_Boolean aStatus);
 		%feature("autodoc", "1");
 		Standard_Boolean AcceptErase() const;
 		%feature("autodoc", "1");
-		void SetContext(const Handle_AIS_InteractiveContext &aCtx);
+		void SetContext(const AIS_InteractiveContext *aCtx);
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & SelectionName() const;
 		%feature("autodoc", "1");
@@ -4991,25 +4989,25 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean HasSameProjector(const Select3D_Projector &aPrj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Display(const Handle_AIS_InteractiveObject &anInteractive, const Standard_Integer DisplayMode=0, const Standard_Boolean AllowShapeDecomposition=1, const Standard_Integer ActivationMode=0);
+		Standard_Boolean Display(const AIS_InteractiveObject *anInteractive, const Standard_Integer DisplayMode=0, const Standard_Boolean AllowShapeDecomposition=1, const Standard_Integer ActivationMode=0);
 		%feature("autodoc", "1");
-		Standard_Boolean Load(const Handle_AIS_InteractiveObject &anInteractive, const Standard_Boolean AllowShapeDecomposition=1, const Standard_Integer ActivationMode=0);
+		Standard_Boolean Load(const AIS_InteractiveObject *anInteractive, const Standard_Boolean AllowShapeDecomposition=1, const Standard_Integer ActivationMode=0);
 		%feature("autodoc", "1");
-		Standard_Boolean Erase(const Handle_AIS_InteractiveObject &anInteractive);
+		Standard_Boolean Erase(const AIS_InteractiveObject *anInteractive);
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_AIS_InteractiveObject &aSelectable);
+		Standard_Boolean Remove(const AIS_InteractiveObject *aSelectable);
 		%feature("autodoc", "1");
-		Standard_Boolean ClearPrs(const Handle_AIS_InteractiveObject &anInteractive, const Standard_Integer aMode);
+		Standard_Boolean ClearPrs(const AIS_InteractiveObject *anInteractive, const Standard_Integer aMode);
 		%feature("autodoc", "1");
-		void SetShapeDecomposition(const Handle_AIS_InteractiveObject &aStoredObject, const Standard_Boolean aStatus);
+		void SetShapeDecomposition(const AIS_InteractiveObject *aStoredObject, const Standard_Boolean aStatus);
 		%feature("autodoc", "1");
 		void Clear(const AIS_ClearMode atype=AIS_CM_All);
 		%feature("autodoc", "1");
-		void ActivateMode(const Handle_AIS_InteractiveObject &aSelectable, const Standard_Integer aMode);
+		void ActivateMode(const AIS_InteractiveObject *aSelectable, const Standard_Integer aMode);
 		%feature("autodoc", "1");
-		void DeactivateMode(const Handle_AIS_InteractiveObject &aSelectable, const Standard_Integer aMode);
+		void DeactivateMode(const AIS_InteractiveObject *aSelectable, const Standard_Integer aMode);
 		%feature("autodoc", "1");
-		void Deactivate(const Handle_AIS_InteractiveObject &aSelectable);
+		void Deactivate(const AIS_InteractiveObject *aSelectable);
 		%feature("autodoc", "1");
 		void ActivateStandardMode(const TopAbs_ShapeEnum aType);
 		%feature("autodoc", "1");
@@ -5017,9 +5015,9 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const TColStd_ListOfInteger & StandardModes() const;
 		%feature("autodoc", "1");
-		void AddFilter(const Handle_SelectMgr_Filter &aFilter);
+		void AddFilter(const SelectMgr_Filter *aFilter);
 		%feature("autodoc", "1");
-		void RemoveFilter(const Handle_SelectMgr_Filter &aFilter);
+		void RemoveFilter(const SelectMgr_Filter *aFilter);
 		%feature("autodoc", "1");
 		const SelectMgr_ListOfFilter & ListOfFilter() const;
 		%feature("autodoc", "1");
@@ -5029,27 +5027,27 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean AutomaticHilight() const;
 		%feature("autodoc", "1");
-		AIS_StatusOfDetection MoveTo(const Standard_Integer Xpix, const Standard_Integer Ypix, const Handle_V3d_View &aview);
+		AIS_StatusOfDetection MoveTo(const Standard_Integer Xpix, const Standard_Integer Ypix, const V3d_View *aview);
 		%feature("autodoc", "1");
 		Standard_Boolean HasNextDetected() const;
 		%feature("autodoc", "1");
-		Standard_Integer HilightNextDetected(const Handle_V3d_View &aView);
+		Standard_Integer HilightNextDetected(const V3d_View *aView);
 		%feature("autodoc", "1");
-		Standard_Integer HilightPreviousDetected(const Handle_V3d_View &aView);
+		Standard_Integer HilightPreviousDetected(const V3d_View *aView);
 		%feature("autodoc", "1");
-		Standard_Boolean UnhilightLastDetected(const Handle_V3d_View &aView);
+		Standard_Boolean UnhilightLastDetected(const V3d_View *aView);
 		%feature("autodoc", "1");
 		AIS_StatusOfPick Select(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		AIS_StatusOfPick ShiftSelect(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		AIS_StatusOfPick Select(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		AIS_StatusOfPick Select(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const V3d_View *aView, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		AIS_StatusOfPick ShiftSelect(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		AIS_StatusOfPick ShiftSelect(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const V3d_View *aView, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		AIS_StatusOfPick Select(const TColgp_Array1OfPnt2d &Polyline, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		AIS_StatusOfPick Select(const TColgp_Array1OfPnt2d &Polyline, const V3d_View *aView, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		AIS_StatusOfPick ShiftSelect(const TColgp_Array1OfPnt2d &Polyline, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		AIS_StatusOfPick ShiftSelect(const TColgp_Array1OfPnt2d &Polyline, const V3d_View *aView, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void HilightPicked(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
@@ -5057,15 +5055,15 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void UpdateSelected(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void UpdateSelected(const Handle_AIS_InteractiveObject &anobj, const Standard_Boolean updateviewer=1);
+		void UpdateSelected(const AIS_InteractiveObject *anobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetSelected(const Handle_AIS_InteractiveObject &anobj, const Standard_Boolean updateviewer=1);
+		void SetSelected(const AIS_InteractiveObject *anobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void AddOrRemoveSelected(const Handle_AIS_InteractiveObject &anobj, const Standard_Boolean updateviewer=1);
+		void AddOrRemoveSelected(const AIS_InteractiveObject *anobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void AddOrRemoveSelected(const TopoDS_Shape &aShape, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void AddOrRemoveSelected(const Handle_SelectMgr_EntityOwner &Ownr, const Standard_Boolean updateviewer=1);
+		void AddOrRemoveSelected(const SelectMgr_EntityOwner *Ownr, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void ClearSelected(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
@@ -5101,9 +5099,9 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectMgr_EntityOwner SelectedOwner() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSelected(const Handle_AIS_InteractiveObject &aniobj) const;
+		Standard_Boolean IsSelected(const AIS_InteractiveObject *aniobj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSelected(const Handle_SelectMgr_EntityOwner &anOwner) const;
+		Standard_Boolean IsSelected(const SelectMgr_EntityOwner *anOwner) const;
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject SelectedInteractive() const;
 		%feature("autodoc", "1");
@@ -5111,31 +5109,31 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & SelectedApplicative() const;
 		%feature("autodoc", "1");
-		void SetDisplayPriority(const Handle_AIS_InteractiveObject &anObject, const Standard_Integer Prior);
+		void SetDisplayPriority(const AIS_InteractiveObject *anObject, const Standard_Integer Prior);
 		%feature("autodoc", "1");
 		Standard_Integer DisplayedObjects(TColStd_MapOfTransient & theMapToFill) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsIn(const Handle_AIS_InteractiveObject &anObject) const;
+		Standard_Boolean IsIn(const AIS_InteractiveObject *anObject) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_AIS_InteractiveObject &anObject) const;
+		Standard_Boolean IsDisplayed(const AIS_InteractiveObject *anObject) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_AIS_InteractiveObject &anObject, const Standard_Integer aMode) const;
+		Standard_Boolean IsDisplayed(const AIS_InteractiveObject *anObject, const Standard_Integer aMode) const;
 		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & SelectionModes(const Handle_AIS_InteractiveObject &anObject) const;
+		const TColStd_ListOfInteger & SelectionModes(const AIS_InteractiveObject *anObject) const;
 		%feature("autodoc", "1");
-		void SubIntensityOn(const Handle_AIS_InteractiveObject &anObject);
+		void SubIntensityOn(const AIS_InteractiveObject *anObject);
 		%feature("autodoc", "1");
-		void SubIntensityOff(const Handle_AIS_InteractiveObject &anObject);
+		void SubIntensityOff(const AIS_InteractiveObject *anObject);
 		%feature("autodoc", "1");
-		void Hilight(const Handle_AIS_InteractiveObject &anObject);
+		void Hilight(const AIS_InteractiveObject *anObject);
 		%feature("autodoc", "1");
-		void Hilight(const Handle_AIS_InteractiveObject &anObject, const Quantity_NameOfColor aCol);
+		void Hilight(const AIS_InteractiveObject *anObject, const Quantity_NameOfColor aCol);
 		%feature("autodoc", "1");
-		void Unhilight(const Handle_AIS_InteractiveObject &anObject);
+		void Unhilight(const AIS_InteractiveObject *anObject);
 		%feature("autodoc", "1");
-		Standard_Boolean IsHilighted(const Handle_AIS_InteractiveObject &anObject) const;
+		Standard_Boolean IsHilighted(const AIS_InteractiveObject *anObject) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsHilighted(const Handle_AIS_InteractiveObject &anObject, Standard_Boolean & WithColor, Quantity_NameOfColor & HiCol) const;
+		Standard_Boolean IsHilighted(const AIS_InteractiveObject *anObject, Standard_Boolean & WithColor, Quantity_NameOfColor & HiCol) const;
 		%feature("autodoc", "1");
 		void SetSensitivity(const Standard_Real aPrecision);
 		%feature("autodoc", "1");
@@ -5143,11 +5141,11 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean BeginImmediateDraw();
 		%feature("autodoc", "1");
-		Standard_Boolean ImmediateAdd(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer aMode=0);
+		Standard_Boolean ImmediateAdd(const AIS_InteractiveObject *anIObj, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
-		Standard_Boolean ImmediateRemove(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer aMode=0);
+		Standard_Boolean ImmediateRemove(const AIS_InteractiveObject *anIObj, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
-		Standard_Boolean EndImmediateDraw(const Handle_V3d_View &aView, const Standard_Boolean DoubleBuf=0);
+		Standard_Boolean EndImmediateDraw(const V3d_View *aView, const Standard_Boolean DoubleBuf=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsImmediateModeOn() const;
 		%feature("autodoc", "1");
@@ -5159,13 +5157,13 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void UnloadContextObjects();
 		%feature("autodoc", "1");
-		void DisplayAreas(const Handle_V3d_View &aviou);
+		void DisplayAreas(const V3d_View *aviou);
 		%feature("autodoc", "1");
-		void ClearAreas(const Handle_V3d_View &aView);
+		void ClearAreas(const V3d_View *aView);
 		%feature("autodoc", "1");
-		void DisplaySensitive(const Handle_V3d_View &aView);
+		void DisplaySensitive(const V3d_View *aView);
 		%feature("autodoc", "1");
-		void ClearSensitive(const Handle_V3d_View &aView);
+		void ClearSensitive(const V3d_View *aView);
 		%feature("autodoc", "1");
 		const Handle_StdSelect_ViewerSelector3d & MainSelector() const;
 		%feature("autodoc", "1");
@@ -5202,7 +5200,7 @@ def __del__(self):
 class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS_DataMapNodeOfDataMapOfILC(const Standard_Integer &K, const Handle_AIS_LocalContext &I, const TCollection_MapNodePtr &n);
+		AIS_DataMapNodeOfDataMapOfILC(const Standard_Integer &K, const AIS_LocalContext *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey() {
@@ -5261,11 +5259,11 @@ class AIS_MapOfInteractive : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_AIS_InteractiveObject &aKey);
+		Standard_Boolean Add(const AIS_InteractiveObject *aKey);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_AIS_InteractiveObject &aKey) const;
+		Standard_Boolean Contains(const AIS_InteractiveObject *aKey) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_AIS_InteractiveObject &aKey);
+		Standard_Boolean Remove(const AIS_InteractiveObject *aKey);
 
 };
 %feature("shadow") AIS_MapOfInteractive::~AIS_MapOfInteractive %{
@@ -5288,13 +5286,13 @@ def __del__(self):
 class AIS_Plane : public AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Plane &aComponent, const Standard_Boolean aCurrentMode=0);
+		AIS_Plane(const Geom_Plane *aComponent, const Standard_Boolean aCurrentMode=0);
 		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Plane &aComponent, const gp_Pnt &aCenter, const Standard_Boolean aCurrentMode=0);
+		AIS_Plane(const Geom_Plane *aComponent, const gp_Pnt &aCenter, const Standard_Boolean aCurrentMode=0);
 		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Plane &aComponent, const gp_Pnt &aCenter, const gp_Pnt &aPmin, const gp_Pnt &aPmax, const Standard_Boolean aCurrentMode=0);
+		AIS_Plane(const Geom_Plane *aComponent, const gp_Pnt &aCenter, const gp_Pnt &aPmin, const gp_Pnt &aPmax, const Standard_Boolean aCurrentMode=0);
 		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfPlane aPlaneType, const Standard_Boolean aCurrentMode=0);
+		AIS_Plane(const Geom_Axis2Placement *aComponent, const AIS_TypeOfPlane aPlaneType, const Standard_Boolean aCurrentMode=0);
 		%feature("autodoc", "1");
 		void SetSize(const Standard_Real aValue);
 		%feature("autodoc", "1");
@@ -5313,17 +5311,17 @@ class AIS_Plane : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		const Handle_Geom_Plane & Component();
 		%feature("autodoc", "1");
-		void SetComponent(const Handle_Geom_Plane &aComponent);
+		void SetComponent(const Geom_Plane *aComponent);
 		%feature("autodoc", "1");
 		Standard_Boolean PlaneAttributes(Handle_Geom_Plane & aComponent, gp_Pnt & aCenter, gp_Pnt & aPmin, gp_Pnt & aPmax);
 		%feature("autodoc", "1");
-		void SetPlaneAttributes(const Handle_Geom_Plane &aComponent, const gp_Pnt &aCenter, const gp_Pnt &aPmin, const gp_Pnt &aPmax);
+		void SetPlaneAttributes(const Geom_Plane *aComponent, const gp_Pnt &aCenter, const gp_Pnt &aPmin, const gp_Pnt &aPmax);
 		%feature("autodoc", "1");
 		const gp_Pnt & Center() const;
 		%feature("autodoc", "1");
 		void SetCenter(const gp_Pnt &aCenter);
 		%feature("autodoc", "1");
-		void SetAxis2Placement(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfPlane aPlaneType);
+		void SetAxis2Placement(const Geom_Axis2Placement *aComponent, const AIS_TypeOfPlane aPlaneType);
 		%feature("autodoc", "1");
 		Handle_Geom_Axis2Placement Axis2Placement();
 		%feature("autodoc", "1");
@@ -5337,11 +5335,11 @@ class AIS_Plane : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
 		%feature("autodoc", "1");
-		virtual		void SetContext(const Handle_AIS_InteractiveContext &aCtx);
+		virtual		void SetContext(const AIS_InteractiveContext *aCtx);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
-		virtual		void ComputeSelection(const Handle_SelectMgr_Selection &aSelection, const Standard_Integer aMode);
+		virtual		void ComputeSelection(const SelectMgr_Selection *aSelection, const Standard_Integer aMode);
 		%feature("autodoc", "1");
 		virtual		void SetColor(const Quantity_NameOfColor aColor);
 		%feature("autodoc", "1");
@@ -5415,9 +5413,9 @@ def __del__(self):
 class AIS_ConcentricRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_ConcentricRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Handle_Geom_Plane &aPlane);
+		AIS_ConcentricRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5452,11 +5450,11 @@ def __del__(self):
 class AIS_IdenticRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_IdenticRelation(const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Handle_Geom_Plane &aPlane);
+		AIS_IdenticRelation(const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5507,13 +5505,13 @@ class AIS_Selection : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Select();
 		%feature("autodoc", "1");
-		AIS_SelectStatus Select(const Handle_Standard_Transient &anObject);
+		AIS_SelectStatus Select(const Standard_Transient *anObject);
 		%feature("autodoc", "1");
-		AIS_SelectStatus AddSelect(const Handle_Standard_Transient &anObject);
+		AIS_SelectStatus AddSelect(const Standard_Transient *anObject);
 		%feature("autodoc", "1");
-		void ClearAndSelect(const Handle_Standard_Transient &anObject);
+		void ClearAndSelect(const Standard_Transient *anObject);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSelected(const Handle_Standard_Transient &anObject);
+		Standard_Boolean IsSelected(const Standard_Transient *anObject);
 		%feature("autodoc", "1");
 		Standard_Integer Extent();
 		%feature("autodoc", "1");
@@ -5566,7 +5564,7 @@ def __del__(self):
 class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_InteractiveObject &K, const TCollection_MapNodePtr &n);
+		AIS_StdMapNodeOfMapOfInteractive(const AIS_InteractiveObject *K, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject & Key() const;
 		%feature("autodoc", "1");
@@ -5603,7 +5601,7 @@ def __del__(self):
 class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		AIS_SequenceNodeOfSequenceOfInteractive(const Handle_AIS_InteractiveObject &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		AIS_SequenceNodeOfSequenceOfInteractive(const AIS_InteractiveObject *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject & Value() const;
 		%feature("autodoc", "1");
@@ -5640,11 +5638,11 @@ def __del__(self):
 class AIS_Circle : public AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		AIS_Circle(const Handle_Geom_Circle &aCircle);
+		AIS_Circle(const Geom_Circle *aCircle);
 		%feature("autodoc", "1");
-		AIS_Circle(const Handle_Geom_Circle &aCircle, const Standard_Real aUStart, const Standard_Real aUEnd, const Standard_Boolean aSens=1);
+		AIS_Circle(const Geom_Circle *aCircle, const Standard_Real aUStart, const Standard_Real aUEnd, const Standard_Boolean aSens=1);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
@@ -5655,7 +5653,7 @@ class AIS_Circle : public AIS_InteractiveObject {
 
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void SetCircle(const Handle_Geom_Circle &C);
+		void SetCircle(const Geom_Circle *C);
 		%feature("autodoc", "1");
 		void SetFirstParam(const Standard_Real U);
 		%feature("autodoc", "1");
@@ -5704,7 +5702,7 @@ def __del__(self):
 class AIS_SymmetricRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_SymmetricRelation(const TopoDS_Shape &aSymmTool, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Handle_Geom_Plane &aPlane);
+		AIS_SymmetricRelation(const TopoDS_Shape &aSymmTool, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
@@ -5712,7 +5710,7 @@ class AIS_SymmetricRelation : public AIS_Relation {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & GetTool() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5747,15 +5745,15 @@ def __del__(self):
 class AIS_Chamf2dDimension : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_Chamf2dDimension(const TopoDS_Shape &aFShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		AIS_Chamf2dDimension(const TopoDS_Shape &aFShape, const Geom_Plane *aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
 		%feature("autodoc", "1");
-		AIS_Chamf2dDimension(const TopoDS_Shape &aFShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		AIS_Chamf2dDimension(const TopoDS_Shape &aFShape, const Geom_Plane *aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
 		%feature("autodoc", "1");
 		virtual		AIS_KindOfDimension KindOfDimension() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5896,9 +5894,9 @@ def __del__(self):
 class AIS_InteractiveContext : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		AIS_InteractiveContext(const Handle_V3d_Viewer &MainViewer);
+		AIS_InteractiveContext(const V3d_Viewer *MainViewer);
 		%feature("autodoc", "1");
-		AIS_InteractiveContext(const Handle_V3d_Viewer &MainViewer, const Handle_V3d_Viewer &Collector);
+		AIS_InteractiveContext(const V3d_Viewer *MainViewer, const V3d_Viewer *Collector);
 		%feature("autodoc", "1");
 		virtual		void Delete() const;
 		%feature("autodoc", "1");
@@ -5912,108 +5910,108 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean GetAutoActivateSelection() const;
 		%feature("autodoc", "1");
-		void Display(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean updateviewer=1);
+		void Display(const AIS_InteractiveObject *anIobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void Display(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer amode, const Standard_Integer aSelectionMode, const Standard_Boolean updateviewer=1, const Standard_Boolean allowdecomposition=1);
+		void Display(const AIS_InteractiveObject *anIobj, const Standard_Integer amode, const Standard_Integer aSelectionMode, const Standard_Boolean updateviewer=1, const Standard_Boolean allowdecomposition=1);
 		%feature("autodoc", "1");
-		void Load(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer SelectionMode=-0x000000001, const Standard_Boolean AllowDecomp=0);
+		void Load(const AIS_InteractiveObject *aniobj, const Standard_Integer SelectionMode=-0x000000001, const Standard_Boolean AllowDecomp=0);
 		%feature("autodoc", "1");
-		void Erase(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean PutInCollector=1);
+		void Erase(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean PutInCollector=1);
 		%feature("autodoc", "1");
-		void EraseMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode, const Standard_Boolean updateviewer=1);
+		void EraseMode(const AIS_InteractiveObject *aniobj, const Standard_Integer aMode, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void EraseAll(const Standard_Boolean PutInCollector=1, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void DisplayAll(const Standard_Boolean OnlyFromCollector=1, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void DisplayFromCollector(const Handle_AIS_InteractiveObject &anIObj, const Standard_Boolean updateviewer=1);
+		void DisplayFromCollector(const AIS_InteractiveObject *anIObj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void EraseSelected(const Standard_Boolean PutInCollector=1, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void DisplaySelected(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		Standard_Boolean KeepTemporary(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer InWhichLocal=-0x000000001);
+		Standard_Boolean KeepTemporary(const AIS_InteractiveObject *anIObj, const Standard_Integer InWhichLocal=-0x000000001);
 		%feature("autodoc", "1");
-		void Clear(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void Clear(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void ClearPrs(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode=0, const Standard_Boolean updateviewer=1);
+		void ClearPrs(const AIS_InteractiveObject *aniobj, const Standard_Integer aMode=0, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void Remove(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void Remove(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void RemoveAll(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void Hilight(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void Hilight(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void HilightWithColor(const Handle_AIS_InteractiveObject &aniobj, const Quantity_NameOfColor aCol, const Standard_Boolean updateviewer=1);
+		void HilightWithColor(const AIS_InteractiveObject *aniobj, const Quantity_NameOfColor aCol, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void Unhilight(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void Unhilight(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetDisplayPriority(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer aPriority);
+		void SetDisplayPriority(const AIS_InteractiveObject *anIobj, const Standard_Integer aPriority);
 		%feature("autodoc", "1");
-		void Redisplay(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean allmodes=0);
+		void Redisplay(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean allmodes=0);
 		%feature("autodoc", "1");
 		void Redisplay(const AIS_KindOfInteractive aTypeOfObject, const Standard_Integer Signature=-0x000000001, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void RecomputePrsOnly(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean updateviewer=1, const Standard_Boolean allmodes=0);
+		void RecomputePrsOnly(const AIS_InteractiveObject *anIobj, const Standard_Boolean updateviewer=1, const Standard_Boolean allmodes=0);
 		%feature("autodoc", "1");
-		void RecomputeSelectionOnly(const Handle_AIS_InteractiveObject &anIObj);
+		void RecomputeSelectionOnly(const AIS_InteractiveObject *anIObj);
 		%feature("autodoc", "1");
-		void Update(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean updateviewer=1);
+		void Update(const AIS_InteractiveObject *anIobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetDisplayMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode, const Standard_Boolean updateviewer=1);
+		void SetDisplayMode(const AIS_InteractiveObject *aniobj, const Standard_Integer aMode, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void UnsetDisplayMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void UnsetDisplayMode(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetSelectionMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode);
+		void SetSelectionMode(const AIS_InteractiveObject *aniobj, const Standard_Integer aMode);
 		%feature("autodoc", "1");
-		void UnsetSelectionMode(const Handle_AIS_InteractiveObject &aniobj);
+		void UnsetSelectionMode(const AIS_InteractiveObject *aniobj);
 		%feature("autodoc", "1");
 		void SetSensitivity(const Standard_Real aPrecision);
 		%feature("autodoc", "1");
 		void SetSensitivity(const Standard_Integer aPrecision=4);
 		%feature("autodoc", "1");
-		void SetLocation(const Handle_AIS_InteractiveObject &aniobj, const TopLoc_Location &aLocation);
+		void SetLocation(const AIS_InteractiveObject *aniobj, const TopLoc_Location &aLocation);
 		%feature("autodoc", "1");
-		void ResetLocation(const Handle_AIS_InteractiveObject &aniobj);
+		void ResetLocation(const AIS_InteractiveObject *aniobj);
 		%feature("autodoc", "1");
-		Standard_Boolean HasLocation(const Handle_AIS_InteractiveObject &aniobj) const;
+		Standard_Boolean HasLocation(const AIS_InteractiveObject *aniobj) const;
 		%feature("autodoc", "1");
-		const TopLoc_Location & Location(const Handle_AIS_InteractiveObject &aniobj) const;
+		const TopLoc_Location & Location(const AIS_InteractiveObject *aniobj) const;
 		%feature("autodoc", "1");
-		void SetCurrentFacingModel(const Handle_AIS_InteractiveObject &aniobj, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
+		void SetCurrentFacingModel(const AIS_InteractiveObject *aniobj, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
 		%feature("autodoc", "1");
-		void SetColor(const Handle_AIS_InteractiveObject &aniobj, const Quantity_NameOfColor aColor, const Standard_Boolean updateviewer=1);
+		void SetColor(const AIS_InteractiveObject *aniobj, const Quantity_NameOfColor aColor, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetColor(const Handle_AIS_InteractiveObject &aniobj, const Quantity_Color &aColor, const Standard_Boolean updateviewer=1);
+		void SetColor(const AIS_InteractiveObject *aniobj, const Quantity_Color &aColor, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void UnsetColor(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void UnsetColor(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		virtual		void SetWidth(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aValue, const Standard_Boolean updateviewer=1);
+		virtual		void SetWidth(const AIS_InteractiveObject *aniobj, const Standard_Real aValue, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		virtual		void UnsetWidth(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		virtual		void UnsetWidth(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetMaterial(const Handle_AIS_InteractiveObject &aniobj, const Graphic3d_NameOfMaterial aName, const Standard_Boolean updateviewer=1);
+		void SetMaterial(const AIS_InteractiveObject *aniobj, const Graphic3d_NameOfMaterial aName, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void UnsetMaterial(const Handle_AIS_InteractiveObject &anObj, const Standard_Boolean updateviewer=1);
+		void UnsetMaterial(const AIS_InteractiveObject *anObj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetTransparency(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1, const Standard_Boolean updateviewer=1);
+		void SetTransparency(const AIS_InteractiveObject *aniobj, const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void UnsetTransparency(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void UnsetTransparency(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetDegenerateModel(const Handle_AIS_InteractiveObject &aniobj, const Aspect_TypeOfDegenerateModel aModel=Aspect_TDM_WIREFRAME, const Quantity_Ratio aRatio=0.0);
+		void SetDegenerateModel(const AIS_InteractiveObject *aniobj, const Aspect_TypeOfDegenerateModel aModel=Aspect_TDM_WIREFRAME, const Quantity_Ratio aRatio=0.0);
 		%feature("autodoc", "1");
 		void SetDegenerateModel(const Aspect_TypeOfDegenerateModel aModel, const Quantity_Ratio aSkipRatio=0.0);
 		%feature("autodoc", "1");
-		void SetLocalAttributes(const Handle_AIS_InteractiveObject &aniobj, const Handle_AIS_Drawer &aDrawer, const Standard_Boolean updateviewer=1);
+		void SetLocalAttributes(const AIS_InteractiveObject *aniobj, const AIS_Drawer *aDrawer, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void UnsetLocalAttributes(const Handle_AIS_InteractiveObject &anObj, const Standard_Boolean updateviewer=1);
+		void UnsetLocalAttributes(const AIS_InteractiveObject *anObj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetPolygonOffsets(const Handle_AIS_InteractiveObject &anObj, const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0, const Standard_Boolean updateviewer=1);
+		void SetPolygonOffsets(const AIS_InteractiveObject *anObj, const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		Standard_Boolean HasPolygonOffsets(const Handle_AIS_InteractiveObject &anObj) const;
+		Standard_Boolean HasPolygonOffsets(const AIS_InteractiveObject *anObj) const;
 		%feature("autodoc","PolygonOffsets(const anObj) -> [Standard_Integer, Standard_Real, Standard_Real]");
 
-		void PolygonOffsets(const Handle_AIS_InteractiveObject &anObj, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void PolygonOffsets(const AIS_InteractiveObject *anObj, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetTrihedronSize(const Standard_Real aSize, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
@@ -6026,31 +6024,31 @@ class AIS_InteractiveContext : public MMgt_TShared {
 
 		Standard_Boolean PlaneSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		AIS_DisplayStatus DisplayStatus(const Handle_AIS_InteractiveObject &anIobj) const;
+		AIS_DisplayStatus DisplayStatus(const AIS_InteractiveObject *anIobj) const;
 		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & DisplayedModes(const Handle_AIS_InteractiveObject &aniobj) const;
+		const TColStd_ListOfInteger & DisplayedModes(const AIS_InteractiveObject *aniobj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_AIS_InteractiveObject &anIobj) const;
+		Standard_Boolean IsDisplayed(const AIS_InteractiveObject *anIobj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode) const;
+		Standard_Boolean IsDisplayed(const AIS_InteractiveObject *aniobj, const Standard_Integer aMode) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsHilighted(const Handle_AIS_InteractiveObject &aniobj) const;
+		Standard_Boolean IsHilighted(const AIS_InteractiveObject *aniobj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsHilighted(const Handle_AIS_InteractiveObject &anIobj, Standard_Boolean & WithColor, Quantity_NameOfColor & theHiCol) const;
+		Standard_Boolean IsHilighted(const AIS_InteractiveObject *anIobj, Standard_Boolean & WithColor, Quantity_NameOfColor & theHiCol) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsInCollector(const Handle_AIS_InteractiveObject &anIObj) const;
+		Standard_Boolean IsInCollector(const AIS_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		Standard_Integer DisplayPriority(const Handle_AIS_InteractiveObject &anIobj) const;
+		Standard_Integer DisplayPriority(const AIS_InteractiveObject *anIobj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasColor(const Handle_AIS_InteractiveObject &aniobj) const;
+		Standard_Boolean HasColor(const AIS_InteractiveObject *aniobj) const;
 		%feature("autodoc", "1");
-		Quantity_NameOfColor Color(const Handle_AIS_InteractiveObject &aniobj) const;
+		Quantity_NameOfColor Color(const AIS_InteractiveObject *aniobj) const;
 		%feature("autodoc", "1");
-		void Color(const Handle_AIS_InteractiveObject &aniobj, Quantity_Color & acolor) const;
+		void Color(const AIS_InteractiveObject *aniobj, Quantity_Color & acolor) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real Width(const Handle_AIS_InteractiveObject &aniobj) const;
+		virtual		Standard_Real Width(const AIS_InteractiveObject *aniobj) const;
 		%feature("autodoc", "1");
-		void Status(const Handle_AIS_InteractiveObject &anObj, TCollection_ExtendedString & astatus) const;
+		void Status(const AIS_InteractiveObject *anObj, TCollection_ExtendedString & astatus) const;
 		%feature("autodoc", "1");
 		void UpdateCurrentViewer();
 		%feature("autodoc", "1");
@@ -6078,17 +6076,17 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetDisplayMode(const AIS_DisplayMode AMode, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetDeviationCoefficient(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aCoefficient, const Standard_Boolean updateviewer=1);
+		void SetDeviationCoefficient(const AIS_InteractiveObject *aniobj, const Standard_Real aCoefficient, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetDeviationAngle(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
+		void SetDeviationAngle(const AIS_InteractiveObject *aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetAngleAndDeviation(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
+		void SetAngleAndDeviation(const AIS_InteractiveObject *aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetHLRDeviationCoefficient(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aCoefficient, const Standard_Boolean updateviewer=1);
+		void SetHLRDeviationCoefficient(const AIS_InteractiveObject *aniobj, const Standard_Real aCoefficient, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetHLRDeviationAngle(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
+		void SetHLRDeviationAngle(const AIS_InteractiveObject *aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetHLRAngleAndDeviation(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
+		void SetHLRAngleAndDeviation(const AIS_InteractiveObject *aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void SetDeviationCoefficient(const Standard_Real aCoefficient);
 		%feature("autodoc", "1");
@@ -6110,7 +6108,7 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Prs3d_LineAspect HiddenLineAspect() const;
 		%feature("autodoc", "1");
-		void SetHiddenLineAspect(const Handle_Prs3d_LineAspect &anAspect) const;
+		void SetHiddenLineAspect(const Prs3d_LineAspect *anAspect) const;
 		%feature("autodoc", "1");
 		Standard_Boolean DrawHiddenLine() const;
 		%feature("autodoc", "1");
@@ -6126,35 +6124,35 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsoOnPlane() const;
 		%feature("autodoc", "1");
-		void SetSelectedAspect(const Handle_Prs3d_BasicAspect &anAspect, const Standard_Boolean globalChange=1, const Standard_Boolean updateViewer=1);
+		void SetSelectedAspect(const Prs3d_BasicAspect *anAspect, const Standard_Boolean globalChange=1, const Standard_Boolean updateViewer=1);
 		%feature("autodoc", "1");
-		AIS_StatusOfDetection MoveTo(const Standard_Integer XPix, const Standard_Integer YPix, const Handle_V3d_View &aView);
+		AIS_StatusOfDetection MoveTo(const Standard_Integer XPix, const Standard_Integer YPix, const V3d_View *aView);
 		%feature("autodoc", "1");
 		Standard_Boolean HasNextDetected() const;
 		%feature("autodoc", "1");
-		Standard_Integer HilightNextDetected(const Handle_V3d_View &aView);
+		Standard_Integer HilightNextDetected(const V3d_View *aView);
 		%feature("autodoc", "1");
-		Standard_Integer HilightPreviousDetected(const Handle_V3d_View &aView);
+		Standard_Integer HilightPreviousDetected(const V3d_View *aView);
 		%feature("autodoc", "1");
-		AIS_StatusOfPick Select(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		AIS_StatusOfPick Select(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const V3d_View *aView, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		AIS_StatusOfPick Select(const TColgp_Array1OfPnt2d &Polyline, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		AIS_StatusOfPick Select(const TColgp_Array1OfPnt2d &Polyline, const V3d_View *aView, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		AIS_StatusOfPick Select(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		AIS_StatusOfPick ShiftSelect(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		AIS_StatusOfPick ShiftSelect(const TColgp_Array1OfPnt2d &Polyline, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		AIS_StatusOfPick ShiftSelect(const TColgp_Array1OfPnt2d &Polyline, const V3d_View *aView, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		AIS_StatusOfPick ShiftSelect(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		AIS_StatusOfPick ShiftSelect(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const V3d_View *aView, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void SetToHilightSelected(const Standard_Boolean toHilight);
 		%feature("autodoc", "1");
 		Standard_Boolean ToHilightSelected() const;
 		%feature("autodoc", "1");
-		void SetCurrentObject(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void SetCurrentObject(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void AddOrRemoveCurrentObject(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void AddOrRemoveCurrentObject(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void UpdateCurrent();
 		%feature("autodoc", "1");
@@ -6162,7 +6160,7 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetOkCurrent();
 		%feature("autodoc", "1");
-		Standard_Boolean IsCurrent(const Handle_AIS_InteractiveObject &aniobj) const;
+		Standard_Boolean IsCurrent(const AIS_InteractiveObject *aniobj) const;
 		%feature("autodoc", "1");
 		void InitCurrent();
 		%feature("autodoc", "1");
@@ -6182,13 +6180,13 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ClearCurrents(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetSelected(const Handle_AIS_InteractiveObject &aniObj, const Standard_Boolean updateviewer=1);
+		void SetSelected(const AIS_InteractiveObject *aniObj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void SetSelectedCurrent();
 		%feature("autodoc", "1");
 		void UpdateSelected(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void AddOrRemoveSelected(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void AddOrRemoveSelected(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void HilightSelected(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
@@ -6198,9 +6196,9 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void AddOrRemoveSelected(const TopoDS_Shape &aShape, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void AddOrRemoveSelected(const Handle_SelectMgr_EntityOwner &anOwner, const Standard_Boolean updateviewer=1);
+		void AddOrRemoveSelected(const SelectMgr_EntityOwner *anOwner, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSelected(const Handle_AIS_InteractiveObject &aniobj) const;
+		Standard_Boolean IsSelected(const AIS_InteractiveObject *aniobj) const;
 		%feature("autodoc", "1");
 		void InitSelected();
 		%feature("autodoc", "1");
@@ -6216,7 +6214,7 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectMgr_EntityOwner SelectedOwner() const;
 		%feature("autodoc", "1");
-		void EntityOwners(SelectMgr_IndexedMapOfOwner & theOwners, const Handle_AIS_InteractiveObject &theIObj, const Standard_Integer theMode=-0x000000001) const;
+		void EntityOwners(SelectMgr_IndexedMapOfOwner & theOwners, const AIS_InteractiveObject *theIObj, const Standard_Integer theMode=-0x000000001) const;
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject Interactive() const;
 		%feature("autodoc", "1");
@@ -6264,17 +6262,17 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean BeginImmediateDraw();
 		%feature("autodoc", "1");
-		Standard_Boolean ImmediateAdd(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer aMode=0);
+		Standard_Boolean ImmediateAdd(const AIS_InteractiveObject *anIObj, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
-		Standard_Boolean ImmediateRemove(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer aMode=0);
+		Standard_Boolean ImmediateRemove(const AIS_InteractiveObject *anIObj, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
-		Standard_Boolean EndImmediateDraw(const Handle_V3d_View &aView, const Standard_Boolean DoubleBuf=0);
+		Standard_Boolean EndImmediateDraw(const V3d_View *aView, const Standard_Boolean DoubleBuf=0);
 		%feature("autodoc", "1");
 		Standard_Boolean EndImmediateDraw(const Standard_Boolean DoubleBuf=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsImmediateModeOn() const;
 		%feature("autodoc", "1");
-		void Drag(const Handle_V3d_View &aView, const Handle_AIS_InteractiveObject &anObject, const Handle_Geom_Transformation &aTranformation, const Standard_Boolean postConcatenate=0, const Standard_Boolean update=0, const Standard_Boolean zBuffer=0);
+		void Drag(const V3d_View *aView, const AIS_InteractiveObject *anObject, const Geom_Transformation *aTranformation, const Standard_Boolean postConcatenate=0, const Standard_Boolean update=0, const Standard_Boolean zBuffer=0);
 		%feature("autodoc", "1");
 		void SetAutomaticHilight(const Standard_Boolean aStatus);
 		%feature("autodoc", "1");
@@ -6284,29 +6282,29 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean ZDetection() const;
 		%feature("autodoc", "1");
-		void Activate(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer aMode=0);
+		void Activate(const AIS_InteractiveObject *anIobj, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
-		void Deactivate(const Handle_AIS_InteractiveObject &anIObj);
+		void Deactivate(const AIS_InteractiveObject *anIObj);
 		%feature("autodoc", "1");
-		void Deactivate(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer aMode);
+		void Deactivate(const AIS_InteractiveObject *anIobj, const Standard_Integer aMode);
 		%feature("autodoc", "1");
-		void ActivatedModes(const Handle_AIS_InteractiveObject &anIobj, TColStd_ListOfInteger & theList) const;
+		void ActivatedModes(const AIS_InteractiveObject *anIobj, TColStd_ListOfInteger & theList) const;
 		%feature("autodoc", "1");
-		void SetShapeDecomposition(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean aStatus);
+		void SetShapeDecomposition(const AIS_InteractiveObject *anIobj, const Standard_Boolean aStatus);
 		%feature("autodoc", "1");
-		void SetTemporaryAttributes(const Handle_AIS_InteractiveObject &anObj, const Handle_Prs3d_Drawer &aDrawer, const Standard_Boolean updateviewer=1);
+		void SetTemporaryAttributes(const AIS_InteractiveObject *anObj, const Prs3d_Drawer *aDrawer, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SubIntensityOn(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void SubIntensityOn(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SubIntensityOff(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		void SubIntensityOff(const AIS_InteractiveObject *aniobj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void SubIntensityOn(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void SubIntensityOff(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void AddFilter(const Handle_SelectMgr_Filter &aFilter);
+		void AddFilter(const SelectMgr_Filter *aFilter);
 		%feature("autodoc", "1");
-		void RemoveFilter(const Handle_SelectMgr_Filter &aFilter);
+		void RemoveFilter(const SelectMgr_Filter *aFilter);
 		%feature("autodoc", "1");
 		void RemoveFilters();
 		%feature("autodoc", "1");
@@ -6368,20 +6366,20 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer HighestIndex() const;
 		%feature("autodoc", "1");
-		void DisplayActiveAreas(const Handle_V3d_View &aView);
+		void DisplayActiveAreas(const V3d_View *aView);
 		%feature("autodoc", "1");
-		void ClearActiveAreas(const Handle_V3d_View &aView);
+		void ClearActiveAreas(const V3d_View *aView);
 		%feature("autodoc", "1");
-		void DisplayActiveSensitive(const Handle_V3d_View &aView);
+		void DisplayActiveSensitive(const V3d_View *aView);
 		%feature("autodoc", "1");
-		void ClearActiveSensitive(const Handle_V3d_View &aView);
+		void ClearActiveSensitive(const V3d_View *aView);
 		%feature("autodoc", "1");
-		void DisplayActiveSensitive(const Handle_AIS_InteractiveObject &anObject, const Handle_V3d_View &aView);
+		void DisplayActiveSensitive(const AIS_InteractiveObject *anObject, const V3d_View *aView);
 		%feature("autodoc", "1");
-		void DisplayActiveAreas(const Handle_AIS_InteractiveObject &anObject, const Handle_V3d_View &aView);
+		void DisplayActiveAreas(const AIS_InteractiveObject *anObject, const V3d_View *aView);
 		%feature("autodoc","IsInLocal(const anObject) -> Standard_Integer");
 
-		Standard_Boolean IsInLocal(const Handle_AIS_InteractiveObject &anObject, Standard_Integer &OutValue) const;
+		Standard_Boolean IsInLocal(const AIS_InteractiveObject *anObject, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6416,11 +6414,11 @@ def __del__(self):
 class AIS_PlaneTrihedron : public AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		AIS_PlaneTrihedron(const Handle_Geom_Plane &aPlane);
+		AIS_PlaneTrihedron(const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
 		Handle_Geom_Plane Component();
 		%feature("autodoc", "1");
-		void SetComponent(const Handle_Geom_Plane &aPlane);
+		void SetComponent(const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
 		Handle_AIS_Line XAxis() const;
 		%feature("autodoc", "1");
@@ -6434,7 +6432,7 @@ class AIS_PlaneTrihedron : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
@@ -6528,22 +6526,22 @@ class AIS_GraphicTool {
 		%feature("autodoc", "1");
 		AIS_GraphicTool();
 		%feature("autodoc", "1");
-		Quantity_NameOfColor GetLineColor(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
+		Quantity_NameOfColor GetLineColor(const Prs3d_Drawer *aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
 		%feature("autodoc", "1");
-		void GetLineColor(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes, Quantity_Color & TheLineColor);
+		void GetLineColor(const Prs3d_Drawer *aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes, Quantity_Color & TheLineColor);
 		%feature("autodoc", "1");
-		Standard_Real GetLineWidth(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
+		Standard_Real GetLineWidth(const Prs3d_Drawer *aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
 		%feature("autodoc", "1");
-		Aspect_TypeOfLine GetLineType(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
+		Aspect_TypeOfLine GetLineType(const Prs3d_Drawer *aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
 		%feature("autodoc","GetLineAtt(const aDrawer, AIS_TypeOfAttribute TheTypeOfAttributes) -> Standard_Real");
 
-		void GetLineAtt(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes, Quantity_NameOfColor & aCol, Standard_Real &OutValue, Aspect_TypeOfLine & aTyp);
+		void GetLineAtt(const Prs3d_Drawer *aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes, Quantity_NameOfColor & aCol, Standard_Real &OutValue, Aspect_TypeOfLine & aTyp);
 		%feature("autodoc", "1");
-		Quantity_NameOfColor GetInteriorColor(const Handle_Prs3d_Drawer &aDrawer);
+		Quantity_NameOfColor GetInteriorColor(const Prs3d_Drawer *aDrawer);
 		%feature("autodoc", "1");
-		void GetInteriorColor(const Handle_Prs3d_Drawer &aDrawer, Quantity_Color & aColor);
+		void GetInteriorColor(const Prs3d_Drawer *aDrawer, Quantity_Color & aColor);
 		%feature("autodoc", "1");
-		Graphic3d_MaterialAspect GetMaterial(const Handle_Prs3d_Drawer &aDrawer);
+		Graphic3d_MaterialAspect GetMaterial(const Prs3d_Drawer *aDrawer);
 
 };
 %feature("shadow") AIS_GraphicTool::~AIS_GraphicTool %{
@@ -6578,7 +6576,7 @@ class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Shape() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
+		virtual		void Compute(const PrsMgr_PresentationManager2d *aPresentationManager, const Graphic2d_GraphicObject *aPresentation, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6662,9 +6660,9 @@ def __del__(self):
 class AIS_AngleDimension : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_AngleDimension(const TopoDS_Edge &aFirstEdge, const TopoDS_Edge &aSecondEdge, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		AIS_AngleDimension(const TopoDS_Edge &aFirstEdge, const TopoDS_Edge &aSecondEdge, const Geom_Plane *aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
 		%feature("autodoc", "1");
-		AIS_AngleDimension(const TopoDS_Edge &aFirstEdge, const TopoDS_Edge &aSecondEdge, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		AIS_AngleDimension(const TopoDS_Edge &aFirstEdge, const TopoDS_Edge &aSecondEdge, const Geom_Plane *aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
 		%feature("autodoc", "1");
 		AIS_AngleDimension(const TopoDS_Face &aCone, const Standard_Real aVal, const TCollection_ExtendedString &aText);
 		%feature("autodoc", "1");
@@ -6692,7 +6690,7 @@ class AIS_AngleDimension : public AIS_Relation {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6737,19 +6735,19 @@ class AIS_DataMapOfTransientTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I);
+		Standard_Boolean Bind(const Standard_Transient *K, const Standard_Transient *I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
+		Standard_Boolean IsBound(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
+		Standard_Boolean UnBind(const Standard_Transient *K);
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const Handle_Standard_Transient &K) const;
+		const Handle_Standard_Transient & Find(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K) const;
+		const Handle_Standard_Transient & operator()(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const Handle_Standard_Transient &K);
+		Handle_Standard_Transient & ChangeFind(const Standard_Transient *K);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K);
+		Handle_Standard_Transient & operator()(const Standard_Transient *K);
 
 };
 %feature("shadow") AIS_DataMapOfTransientTransient::~AIS_DataMapOfTransientTransient %{
@@ -6782,7 +6780,7 @@ class AIS_DataMapOfILC : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_AIS_LocalContext &I);
+		Standard_Boolean Bind(const Standard_Integer &K, const AIS_LocalContext *I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
@@ -6817,13 +6815,13 @@ def __del__(self):
 class AIS_TangentRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_TangentRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Handle_Geom_Plane &aPlane, const Standard_Integer anExternRef=0);
+		AIS_TangentRelation(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Geom_Plane *aPlane, const Standard_Integer anExternRef=0);
 		%feature("autodoc", "1");
 		Standard_Integer ExternRef();
 		%feature("autodoc", "1");
 		void SetExternRef(const Standard_Integer aRef);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6858,9 +6856,9 @@ def __del__(self):
 class AIS_EqualRadiusRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_EqualRadiusRelation(const TopoDS_Edge &aFirstEdge, const TopoDS_Edge &aSecondEdge, const Handle_Geom_Plane &aPlane);
+		AIS_EqualRadiusRelation(const TopoDS_Edge &aFirstEdge, const TopoDS_Edge &aSecondEdge, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6909,7 +6907,7 @@ class AIS_RadiusDimension : public AIS_Relation {
 		%feature("autodoc", "1");
 		void SetDrawFromCenter(const Standard_Boolean drawfromcenter);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6973,7 +6971,7 @@ def __del__(self):
 class AIS_EqualDistanceRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_EqualDistanceRelation(const TopoDS_Shape &aShape1, const TopoDS_Shape &aShape2, const TopoDS_Shape &aShape3, const TopoDS_Shape &aShape4, const Handle_Geom_Plane &aPlane);
+		AIS_EqualDistanceRelation(const TopoDS_Shape &aShape1, const TopoDS_Shape &aShape2, const TopoDS_Shape &aShape3, const TopoDS_Shape &aShape4, const Geom_Plane *aPlane);
 		%feature("autodoc", "1");
 		void SetShape3(const TopoDS_Shape &aShape);
 		%feature("autodoc", "1");
@@ -6983,13 +6981,13 @@ class AIS_EqualDistanceRelation : public AIS_Relation {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Shape4() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
-		void ComputeTwoEdgesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const Standard_Real ArrowSize, const TopoDS_Edge &FirstEdge, const TopoDS_Edge &SecondEdge, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
+		void ComputeTwoEdgesLength(const Prs3d_Presentation *aPresentation, const AIS_Drawer *aDrawer, const Standard_Real ArrowSize, const TopoDS_Edge &FirstEdge, const TopoDS_Edge &SecondEdge, const Geom_Plane *Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
 		%feature("autodoc", "1");
-		void ComputeTwoVerticesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const Standard_Real ArrowSize, const TopoDS_Vertex &FirstVertex, const TopoDS_Vertex &SecondVertex, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, const AIS_TypeOfDist TypeDist, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
+		void ComputeTwoVerticesLength(const Prs3d_Presentation *aPresentation, const AIS_Drawer *aDrawer, const Standard_Real ArrowSize, const TopoDS_Vertex &FirstVertex, const TopoDS_Vertex &SecondVertex, const Geom_Plane *Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, const AIS_TypeOfDist TypeDist, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
 		%feature("autodoc", "1");
-		void ComputeOneEdgeOneVertexLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const Standard_Real ArrowSize, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
+		void ComputeOneEdgeOneVertexLength(const Prs3d_Presentation *aPresentation, const AIS_Drawer *aDrawer, const Standard_Real ArrowSize, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Geom_Plane *Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -7030,9 +7028,9 @@ class AIS_LengthDimension : public AIS_Relation {
 		%feature("autodoc", "1");
 		AIS_LengthDimension(const TopoDS_Face &Face, const TopoDS_Edge &Edge, const Standard_Real Val, const TCollection_ExtendedString &Text);
 		%feature("autodoc", "1");
-		AIS_LengthDimension(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		AIS_LengthDimension(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Geom_Plane *aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
 		%feature("autodoc", "1");
-		AIS_LengthDimension(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const AIS_TypeOfDist aTypeDist, const Standard_Real anArrowSize=0.0);
+		AIS_LengthDimension(const TopoDS_Shape &aFShape, const TopoDS_Shape &aSShape, const Geom_Plane *aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const AIS_TypeOfDist aTypeDist, const Standard_Real anArrowSize=0.0);
 		%feature("autodoc", "1");
 		virtual		void SetFirstShape(const TopoDS_Shape &aFShape);
 		%feature("autodoc", "1");
@@ -7046,16 +7044,16 @@ class AIS_LengthDimension : public AIS_Relation {
 		%feature("autodoc", "1");
 		void SetTypeOfDist(const AIS_TypeOfDist aTypeDist);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc","ComputeTwoEdgesLength(const aPresentation, const aDrawer, const aText, Standard_Real ArrowSize, const FirstEdge, const SecondEdge, const Plane, Standard_Boolean AutomaticPos, Standard_Boolean IsSetBndBox, const BndBox) -> [Standard_Integer, Standard_Real]");
 
-		void ComputeTwoEdgesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Edge &FirstEdge, const TopoDS_Edge &SecondEdge, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
+		void ComputeTwoEdgesLength(const Prs3d_Presentation *aPresentation, const AIS_Drawer *aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Edge &FirstEdge, const TopoDS_Edge &SecondEdge, const Geom_Plane *Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
 		%feature("autodoc","ComputeOneEdgeOneVertexLength(const aPresentation, const aDrawer, const aText, Standard_Real ArrowSize, const FirstShape, const SecondShape, const Plane, Standard_Boolean AutomaticPos, Standard_Boolean IsSetBndBox, const BndBox) -> [Standard_Integer, Standard_Real]");
 
-		void ComputeOneEdgeOneVertexLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
+		void ComputeOneEdgeOneVertexLength(const Prs3d_Presentation *aPresentation, const AIS_Drawer *aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Geom_Plane *Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
 		%feature("autodoc","ComputeTwoVerticesLength(const aPresentation, const aDrawer, const aText, Standard_Real ArrowSize, const FirstVertex, const SecondVertex, const Plane, Standard_Boolean AutomaticPos, Standard_Boolean IsSetBndBox, const BndBox, AIS_TypeOfDist TypeDist) -> [Standard_Integer, Standard_Real]");
 
-		void ComputeTwoVerticesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Vertex &FirstVertex, const TopoDS_Vertex &SecondVertex, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, const AIS_TypeOfDist TypeDist, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
+		void ComputeTwoVerticesLength(const Prs3d_Presentation *aPresentation, const AIS_Drawer *aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Vertex &FirstVertex, const TopoDS_Vertex &SecondVertex, const Geom_Plane *Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, const AIS_TypeOfDist TypeDist, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -7094,7 +7092,7 @@ class AIS_MinRadiusDimension : public AIS_EllipseRadiusDimension {
 		%feature("autodoc", "1");
 		AIS_MinRadiusDimension(const TopoDS_Shape &aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		virtual		void Compute(const Prs3d_Projector *aProjector, const Geom_Transformation *aTrsf, const Prs3d_Presentation *aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -7129,7 +7127,7 @@ def __del__(self):
 class AIS_SequenceNodeOfSequenceOfDimension : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		AIS_SequenceNodeOfSequenceOfDimension(const Handle_AIS_Relation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		AIS_SequenceNodeOfSequenceOfDimension(const AIS_Relation *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_AIS_Relation & Value() const;
 		%feature("autodoc", "1");

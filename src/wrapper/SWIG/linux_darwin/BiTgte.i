@@ -52,15 +52,15 @@ class Handle_BiTgte_HCurveOnEdge : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnEdge();
 		%feature("autodoc", "1");
-		Handle_BiTgte_HCurveOnEdge(const Handle_BiTgte_HCurveOnEdge &aHandle);
+		Handle_BiTgte_HCurveOnEdge(const BiTgte_HCurveOnEdge *aHandle);
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnEdge(const BiTgte_HCurveOnEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_BiTgte_HCurveOnEdge & operator=(const Handle_BiTgte_HCurveOnEdge &aHandle);
+		Handle_BiTgte_HCurveOnEdge & operator=(const BiTgte_HCurveOnEdge *aHandle);
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnEdge & operator=(const BiTgte_HCurveOnEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_BiTgte_HCurveOnEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BiTgte_HCurveOnEdge const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BiTgte_HCurveOnEdge {
@@ -90,15 +90,15 @@ class Handle_BiTgte_HCurveOnVertex : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnVertex();
 		%feature("autodoc", "1");
-		Handle_BiTgte_HCurveOnVertex(const Handle_BiTgte_HCurveOnVertex &aHandle);
+		Handle_BiTgte_HCurveOnVertex(const BiTgte_HCurveOnVertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnVertex(const BiTgte_HCurveOnVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_BiTgte_HCurveOnVertex & operator=(const Handle_BiTgte_HCurveOnVertex &aHandle);
+		Handle_BiTgte_HCurveOnVertex & operator=(const BiTgte_HCurveOnVertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnVertex & operator=(const BiTgte_HCurveOnVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_BiTgte_HCurveOnVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BiTgte_HCurveOnVertex const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BiTgte_HCurveOnVertex {
@@ -128,15 +128,15 @@ class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox();
 		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const BiTgte_DataMapNodeOfDataMapOfShapeBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
 		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const BiTgte_DataMapNodeOfDataMapOfShapeBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
 		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {

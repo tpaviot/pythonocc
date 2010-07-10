@@ -43,15 +43,15 @@ class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfTransient();
 		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient(const Handle_Dico_DictionaryOfTransient &aHandle);
+		Handle_Dico_DictionaryOfTransient(const Dico_DictionaryOfTransient *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfTransient(const Dico_DictionaryOfTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient & operator=(const Handle_Dico_DictionaryOfTransient &aHandle);
+		Handle_Dico_DictionaryOfTransient & operator=(const Dico_DictionaryOfTransient *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfTransient & operator=(const Dico_DictionaryOfTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dico_DictionaryOfTransient const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dico_DictionaryOfTransient {
@@ -81,15 +81,15 @@ class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfTransient();
 		%feature("autodoc", "1");
-		Handle_Dico_StackItemOfDictionaryOfTransient(const Handle_Dico_StackItemOfDictionaryOfTransient &aHandle);
+		Handle_Dico_StackItemOfDictionaryOfTransient(const Dico_StackItemOfDictionaryOfTransient *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfTransient(const Dico_StackItemOfDictionaryOfTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Dico_StackItemOfDictionaryOfTransient & operator=(const Handle_Dico_StackItemOfDictionaryOfTransient &aHandle);
+		Handle_Dico_StackItemOfDictionaryOfTransient & operator=(const Dico_StackItemOfDictionaryOfTransient *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfTransient & operator=(const Dico_StackItemOfDictionaryOfTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Dico_StackItemOfDictionaryOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dico_StackItemOfDictionaryOfTransient const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dico_StackItemOfDictionaryOfTransient {
@@ -119,15 +119,15 @@ class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfInteger();
 		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &aHandle);
+		Handle_Dico_DictionaryOfInteger(const Dico_DictionaryOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfInteger(const Dico_DictionaryOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfInteger & operator=(const Handle_Dico_DictionaryOfInteger &aHandle);
+		Handle_Dico_DictionaryOfInteger & operator=(const Dico_DictionaryOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfInteger & operator=(const Dico_DictionaryOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dico_DictionaryOfInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dico_DictionaryOfInteger {
@@ -157,15 +157,15 @@ class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfInteger();
 		%feature("autodoc", "1");
-		Handle_Dico_StackItemOfDictionaryOfInteger(const Handle_Dico_StackItemOfDictionaryOfInteger &aHandle);
+		Handle_Dico_StackItemOfDictionaryOfInteger(const Dico_StackItemOfDictionaryOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfInteger(const Dico_StackItemOfDictionaryOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_Dico_StackItemOfDictionaryOfInteger & operator=(const Handle_Dico_StackItemOfDictionaryOfInteger &aHandle);
+		Handle_Dico_StackItemOfDictionaryOfInteger & operator=(const Dico_StackItemOfDictionaryOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfInteger & operator=(const Dico_StackItemOfDictionaryOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_Dico_StackItemOfDictionaryOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dico_StackItemOfDictionaryOfInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dico_StackItemOfDictionaryOfInteger {
@@ -284,11 +284,11 @@ def __del__(self):
 class Dico_IteratorOfDictionaryOfTransient {
 	public:
 		%feature("autodoc", "1");
-		Dico_IteratorOfDictionaryOfTransient(const Handle_Dico_DictionaryOfTransient &acell);
+		Dico_IteratorOfDictionaryOfTransient(const Dico_DictionaryOfTransient *acell);
 		%feature("autodoc", "1");
-		Dico_IteratorOfDictionaryOfTransient(const Handle_Dico_DictionaryOfTransient &acell, const char * basename);
+		Dico_IteratorOfDictionaryOfTransient(const Dico_DictionaryOfTransient *acell, const char * basename);
 		%feature("autodoc", "1");
-		Dico_IteratorOfDictionaryOfTransient(const Handle_Dico_DictionaryOfTransient &acell, const TCollection_AsciiString &basename);
+		Dico_IteratorOfDictionaryOfTransient(const Dico_DictionaryOfTransient *acell, const TCollection_AsciiString &basename);
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -323,13 +323,11 @@ class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Dico_StackItemOfDictionaryOfTransient();
 		%feature("autodoc", "1");
-		Dico_StackItemOfDictionaryOfTransient(const Handle_Dico_StackItemOfDictionaryOfTransient &previous);
-		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfTransient Previous() const;
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfTransient Value() const;
 		%feature("autodoc", "1");
-		void SetValue(const Handle_Dico_DictionaryOfTransient &cval);
+		void SetValue(const Dico_DictionaryOfTransient *cval);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -378,9 +376,9 @@ class Dico_DictionaryOfTransient : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean GetItem(const TCollection_AsciiString &name, Handle_Standard_Transient & anitem, const Standard_Boolean exact=1) const;
 		%feature("autodoc", "1");
-		void SetItem(const char * name, const Handle_Standard_Transient &anitem, const Standard_Boolean exact=1);
+		void SetItem(const char * name, const Standard_Transient *anitem, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");
-		void SetItem(const TCollection_AsciiString &name, const Handle_Standard_Transient &anitem, const Standard_Boolean exact=1);
+		void SetItem(const TCollection_AsciiString &name, const Standard_Transient *anitem, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & NewItem(const char * name, Standard_Boolean & isvalued, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");
@@ -433,11 +431,11 @@ def __del__(self):
 class Dico_IteratorOfDictionaryOfInteger {
 	public:
 		%feature("autodoc", "1");
-		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell);
+		Dico_IteratorOfDictionaryOfInteger(const Dico_DictionaryOfInteger *acell);
 		%feature("autodoc", "1");
-		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell, const char * basename);
+		Dico_IteratorOfDictionaryOfInteger(const Dico_DictionaryOfInteger *acell, const char * basename);
 		%feature("autodoc", "1");
-		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell, const TCollection_AsciiString &basename);
+		Dico_IteratorOfDictionaryOfInteger(const Dico_DictionaryOfInteger *acell, const TCollection_AsciiString &basename);
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -472,13 +470,11 @@ class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Dico_StackItemOfDictionaryOfInteger();
 		%feature("autodoc", "1");
-		Dico_StackItemOfDictionaryOfInteger(const Handle_Dico_StackItemOfDictionaryOfInteger &previous);
-		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfInteger Previous() const;
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfInteger Value() const;
 		%feature("autodoc", "1");
-		void SetValue(const Handle_Dico_DictionaryOfInteger &cval);
+		void SetValue(const Dico_DictionaryOfInteger *cval);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

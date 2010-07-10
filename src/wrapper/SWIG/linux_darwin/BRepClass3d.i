@@ -43,15 +43,15 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_BRepClass3d_DataMapNodeOfMapOfInter();
 		%feature("autodoc", "1");
-		Handle_BRepClass3d_DataMapNodeOfMapOfInter(const Handle_BRepClass3d_DataMapNodeOfMapOfInter &aHandle);
+		Handle_BRepClass3d_DataMapNodeOfMapOfInter(const BRepClass3d_DataMapNodeOfMapOfInter *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepClass3d_DataMapNodeOfMapOfInter(const BRepClass3d_DataMapNodeOfMapOfInter *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepClass3d_DataMapNodeOfMapOfInter & operator=(const Handle_BRepClass3d_DataMapNodeOfMapOfInter &aHandle);
+		Handle_BRepClass3d_DataMapNodeOfMapOfInter & operator=(const BRepClass3d_DataMapNodeOfMapOfInter *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepClass3d_DataMapNodeOfMapOfInter & operator=(const BRepClass3d_DataMapNodeOfMapOfInter *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepClass3d_DataMapNodeOfMapOfInter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepClass3d_DataMapNodeOfMapOfInter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepClass3d_DataMapNodeOfMapOfInter {
@@ -146,7 +146,7 @@ class BRepClass3d_SolidExplorer {
 		Standard_Boolean PointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc","PointInTheFace(const F, const surf, Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
 
-		Standard_Boolean PointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, const Handle_BRepAdaptor_HSurface &surf, const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2) const;
+		Standard_Boolean PointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, const BRepAdaptor_HSurface *surf, const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2) const;
 		%feature("autodoc", "1");
 		void InitShell();
 		%feature("autodoc", "1");

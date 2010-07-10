@@ -43,15 +43,15 @@ class Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint();
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint(const Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint &aHandle);
+		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint(const Plate_SequenceNodeOfSequenceOfPinpointConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint(const Plate_SequenceNodeOfSequenceOfPinpointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint & operator=(const Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint &aHandle);
+		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint & operator=(const Plate_SequenceNodeOfSequenceOfPinpointConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint & operator=(const Plate_SequenceNodeOfSequenceOfPinpointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint {
@@ -81,15 +81,15 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public Handle_T
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint();
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint &aHandle);
+		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint & operator=(const Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint &aHandle);
+		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint & operator=(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint & operator=(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
@@ -119,15 +119,15 @@ class Handle_Plate_HArray1OfPinpointConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Plate_HArray1OfPinpointConstraint();
 		%feature("autodoc", "1");
-		Handle_Plate_HArray1OfPinpointConstraint(const Handle_Plate_HArray1OfPinpointConstraint &aHandle);
+		Handle_Plate_HArray1OfPinpointConstraint(const Plate_HArray1OfPinpointConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plate_HArray1OfPinpointConstraint(const Plate_HArray1OfPinpointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_HArray1OfPinpointConstraint & operator=(const Handle_Plate_HArray1OfPinpointConstraint &aHandle);
+		Handle_Plate_HArray1OfPinpointConstraint & operator=(const Plate_HArray1OfPinpointConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plate_HArray1OfPinpointConstraint & operator=(const Plate_HArray1OfPinpointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_HArray1OfPinpointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Plate_HArray1OfPinpointConstraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Plate_HArray1OfPinpointConstraint {
@@ -157,15 +157,15 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public Handl
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint();
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint(const Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint &aHandle);
+		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint(const Plate_SequenceNodeOfSequenceOfLinearScalarConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint(const Plate_SequenceNodeOfSequenceOfLinearScalarConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint & operator=(const Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint &aHandle);
+		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint & operator=(const Plate_SequenceNodeOfSequenceOfLinearScalarConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint & operator=(const Plate_SequenceNodeOfSequenceOfLinearScalarConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {

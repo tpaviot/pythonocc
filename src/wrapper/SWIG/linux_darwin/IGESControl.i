@@ -43,15 +43,15 @@ class Handle_IGESControl_AlgoContainer : public Handle_IGESToBRep_AlgoContainer 
 		%feature("autodoc", "1");
 		Handle_IGESControl_AlgoContainer();
 		%feature("autodoc", "1");
-		Handle_IGESControl_AlgoContainer(const Handle_IGESControl_AlgoContainer &aHandle);
+		Handle_IGESControl_AlgoContainer(const IGESControl_AlgoContainer *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESControl_AlgoContainer(const IGESControl_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_AlgoContainer & operator=(const Handle_IGESControl_AlgoContainer &aHandle);
+		Handle_IGESControl_AlgoContainer & operator=(const IGESControl_AlgoContainer *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESControl_AlgoContainer & operator=(const IGESControl_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESControl_AlgoContainer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESControl_AlgoContainer {
@@ -81,15 +81,15 @@ class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 		%feature("autodoc", "1");
 		Handle_IGESControl_ActorWrite();
 		%feature("autodoc", "1");
-		Handle_IGESControl_ActorWrite(const Handle_IGESControl_ActorWrite &aHandle);
+		Handle_IGESControl_ActorWrite(const IGESControl_ActorWrite *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESControl_ActorWrite(const IGESControl_ActorWrite *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_ActorWrite & operator=(const Handle_IGESControl_ActorWrite &aHandle);
+		Handle_IGESControl_ActorWrite & operator=(const IGESControl_ActorWrite *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESControl_ActorWrite & operator=(const IGESControl_ActorWrite *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_ActorWrite const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESControl_ActorWrite const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESControl_ActorWrite {
@@ -119,15 +119,15 @@ class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 		%feature("autodoc", "1");
 		Handle_IGESControl_Controller();
 		%feature("autodoc", "1");
-		Handle_IGESControl_Controller(const Handle_IGESControl_Controller &aHandle);
+		Handle_IGESControl_Controller(const IGESControl_Controller *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESControl_Controller(const IGESControl_Controller *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_Controller & operator=(const Handle_IGESControl_Controller &aHandle);
+		Handle_IGESControl_Controller & operator=(const IGESControl_Controller *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESControl_Controller & operator=(const IGESControl_Controller *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESControl_Controller const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESControl_Controller {
@@ -157,15 +157,15 @@ class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 		%feature("autodoc", "1");
 		Handle_IGESControl_IGESBoundary();
 		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary(const Handle_IGESControl_IGESBoundary &aHandle);
+		Handle_IGESControl_IGESBoundary(const IGESControl_IGESBoundary *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESControl_IGESBoundary(const IGESControl_IGESBoundary *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary & operator=(const Handle_IGESControl_IGESBoundary &aHandle);
+		Handle_IGESControl_IGESBoundary & operator=(const IGESControl_IGESBoundary *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESControl_IGESBoundary & operator=(const IGESControl_IGESBoundary *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESControl_IGESBoundary const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESControl_IGESBoundary {
@@ -195,15 +195,15 @@ class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer 
 		%feature("autodoc", "1");
 		Handle_IGESControl_ToolContainer();
 		%feature("autodoc", "1");
-		Handle_IGESControl_ToolContainer(const Handle_IGESControl_ToolContainer &aHandle);
+		Handle_IGESControl_ToolContainer(const IGESControl_ToolContainer *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESControl_ToolContainer(const IGESControl_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_ToolContainer & operator=(const Handle_IGESControl_ToolContainer &aHandle);
+		Handle_IGESControl_ToolContainer & operator=(const IGESControl_ToolContainer *aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESControl_ToolContainer & operator=(const IGESControl_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESControl_ToolContainer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IGESControl_ToolContainer {
@@ -233,7 +233,7 @@ class IGESControl_Reader : public XSControl_Reader {
 		%feature("autodoc", "1");
 		IGESControl_Reader();
 		%feature("autodoc", "1");
-		IGESControl_Reader(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		IGESControl_Reader(const XSControl_WorkSession *WS, const Standard_Boolean scratch=1);
 		%feature("autodoc", "1");
 		void SetReadVisible(const Standard_Boolean ReadRoot);
 		%feature("autodoc", "1");
@@ -268,9 +268,9 @@ class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 		%feature("autodoc", "1");
 		IGESControl_ActorWrite();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Transfer_Finder &start);
+		virtual		Standard_Boolean Recognize(const Transfer_Finder *start);
 		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &FP);
+		virtual		Handle_Transfer_Binder Transfer(const Transfer_Finder *start, const Transfer_FinderProcess *FP);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -420,19 +420,19 @@ class IGESControl_Writer {
 		%feature("autodoc", "1");
 		IGESControl_Writer(const char * unit, const Standard_Integer modecr=0);
 		%feature("autodoc", "1");
-		IGESControl_Writer(const Handle_IGESData_IGESModel &model, const Standard_Integer modecr=0);
+		IGESControl_Writer(const IGESData_IGESModel *model, const Standard_Integer modecr=0);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESModel Model() const;
 		%feature("autodoc", "1");
 		Handle_Transfer_FinderProcess TransferProcess() const;
 		%feature("autodoc", "1");
-		void SetTransferProcess(const Handle_Transfer_FinderProcess &TP);
+		void SetTransferProcess(const Transfer_FinderProcess *TP);
 		%feature("autodoc", "1");
 		Standard_Boolean AddShape(const TopoDS_Shape &sh);
 		%feature("autodoc", "1");
-		Standard_Boolean AddGeom(const Handle_Standard_Transient &geom);
+		Standard_Boolean AddGeom(const Standard_Transient *geom);
 		%feature("autodoc", "1");
-		Standard_Boolean AddEntity(const Handle_IGESData_IGESEntity &ent);
+		Standard_Boolean AddEntity(const IGESData_IGESEntity *ent);
 		%feature("autodoc", "1");
 		void ComputeModel();
 		%feature("autodoc", "1");
@@ -467,9 +467,9 @@ class IGESControl_Controller : public XSControl_Controller {
 		%feature("autodoc", "1");
 		virtual		Handle_Interface_InterfaceModel NewModel() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Transfer_ActorOfTransientProcess ActorRead(const Handle_Interface_InterfaceModel &model) const;
+		virtual		Handle_Transfer_ActorOfTransientProcess ActorRead(const Interface_InterfaceModel *model) const;
 		%feature("autodoc", "1");
-		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape &shape, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model, const Standard_Integer modetrans=0) const;
+		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape &shape, const Transfer_FinderProcess *FP, const Interface_InterfaceModel *model, const Standard_Integer modetrans=0) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Init();
 		%feature("autodoc", "1");

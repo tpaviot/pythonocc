@@ -43,15 +43,15 @@ class Handle_GeomPlate_PointConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_PointConstraint();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_PointConstraint(const Handle_GeomPlate_PointConstraint &aHandle);
+		Handle_GeomPlate_PointConstraint(const GeomPlate_PointConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_PointConstraint(const GeomPlate_PointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_PointConstraint & operator=(const Handle_GeomPlate_PointConstraint &aHandle);
+		Handle_GeomPlate_PointConstraint & operator=(const GeomPlate_PointConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_PointConstraint & operator=(const GeomPlate_PointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_PointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomPlate_PointConstraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomPlate_PointConstraint {
@@ -81,15 +81,15 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public Handle_T
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint &aHandle);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const GeomPlate_SequenceNodeOfSequenceOfPointConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const GeomPlate_SequenceNodeOfSequenceOfPointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint & operator=(const Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint &aHandle);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint & operator=(const GeomPlate_SequenceNodeOfSequenceOfPointConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint & operator=(const GeomPlate_SequenceNodeOfSequenceOfPointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
@@ -119,15 +119,15 @@ class Handle_GeomPlate_HArray1OfHCurveOnSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HArray1OfHCurveOnSurface();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfHCurveOnSurface(const Handle_GeomPlate_HArray1OfHCurveOnSurface &aHandle);
+		Handle_GeomPlate_HArray1OfHCurveOnSurface(const GeomPlate_HArray1OfHCurveOnSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HArray1OfHCurveOnSurface(const GeomPlate_HArray1OfHCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfHCurveOnSurface & operator=(const Handle_GeomPlate_HArray1OfHCurveOnSurface &aHandle);
+		Handle_GeomPlate_HArray1OfHCurveOnSurface & operator=(const GeomPlate_HArray1OfHCurveOnSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HArray1OfHCurveOnSurface & operator=(const GeomPlate_HArray1OfHCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfHCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomPlate_HArray1OfHCurveOnSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomPlate_HArray1OfHCurveOnSurface {
@@ -157,15 +157,15 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfAij : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfAij();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfAij(const Handle_GeomPlate_SequenceNodeOfSequenceOfAij &aHandle);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfAij(const GeomPlate_SequenceNodeOfSequenceOfAij *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfAij(const GeomPlate_SequenceNodeOfSequenceOfAij *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfAij & operator=(const Handle_GeomPlate_SequenceNodeOfSequenceOfAij &aHandle);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfAij & operator=(const GeomPlate_SequenceNodeOfSequenceOfAij *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfAij & operator=(const GeomPlate_SequenceNodeOfSequenceOfAij *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfAij const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfAij const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomPlate_SequenceNodeOfSequenceOfAij {
@@ -195,15 +195,15 @@ class Handle_GeomPlate_HSequenceOfPointConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfPointConstraint();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfPointConstraint(const Handle_GeomPlate_HSequenceOfPointConstraint &aHandle);
+		Handle_GeomPlate_HSequenceOfPointConstraint(const GeomPlate_HSequenceOfPointConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfPointConstraint(const GeomPlate_HSequenceOfPointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfPointConstraint & operator=(const Handle_GeomPlate_HSequenceOfPointConstraint &aHandle);
+		Handle_GeomPlate_HSequenceOfPointConstraint & operator=(const GeomPlate_HSequenceOfPointConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfPointConstraint & operator=(const GeomPlate_HSequenceOfPointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomPlate_HSequenceOfPointConstraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomPlate_HSequenceOfPointConstraint {
@@ -233,15 +233,15 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public Handle_T
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint(const Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint &aHandle);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint(const GeomPlate_SequenceNodeOfSequenceOfCurveConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint(const GeomPlate_SequenceNodeOfSequenceOfCurveConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint & operator=(const Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint &aHandle);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint & operator=(const GeomPlate_SequenceNodeOfSequenceOfCurveConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint & operator=(const GeomPlate_SequenceNodeOfSequenceOfCurveConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
@@ -271,15 +271,15 @@ class Handle_GeomPlate_Surface : public Handle_Geom_Surface {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_Surface();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_Surface(const Handle_GeomPlate_Surface &aHandle);
+		Handle_GeomPlate_Surface(const GeomPlate_Surface *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_Surface(const GeomPlate_Surface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_Surface & operator=(const Handle_GeomPlate_Surface &aHandle);
+		Handle_GeomPlate_Surface & operator=(const GeomPlate_Surface *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_Surface & operator=(const GeomPlate_Surface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomPlate_Surface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomPlate_Surface {
@@ -309,15 +309,15 @@ class Handle_GeomPlate_HArray1OfSequenceOfReal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HArray1OfSequenceOfReal();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfSequenceOfReal(const Handle_GeomPlate_HArray1OfSequenceOfReal &aHandle);
+		Handle_GeomPlate_HArray1OfSequenceOfReal(const GeomPlate_HArray1OfSequenceOfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HArray1OfSequenceOfReal(const GeomPlate_HArray1OfSequenceOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfSequenceOfReal & operator=(const Handle_GeomPlate_HArray1OfSequenceOfReal &aHandle);
+		Handle_GeomPlate_HArray1OfSequenceOfReal & operator=(const GeomPlate_HArray1OfSequenceOfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HArray1OfSequenceOfReal & operator=(const GeomPlate_HArray1OfSequenceOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomPlate_HArray1OfSequenceOfReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomPlate_HArray1OfSequenceOfReal {
@@ -347,15 +347,15 @@ class Handle_GeomPlate_CurveConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_CurveConstraint();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_CurveConstraint(const Handle_GeomPlate_CurveConstraint &aHandle);
+		Handle_GeomPlate_CurveConstraint(const GeomPlate_CurveConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_CurveConstraint(const GeomPlate_CurveConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_CurveConstraint & operator=(const Handle_GeomPlate_CurveConstraint &aHandle);
+		Handle_GeomPlate_CurveConstraint & operator=(const GeomPlate_CurveConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_CurveConstraint & operator=(const GeomPlate_CurveConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_CurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomPlate_CurveConstraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomPlate_CurveConstraint {
@@ -385,15 +385,15 @@ class Handle_GeomPlate_HSequenceOfCurveConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfCurveConstraint();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfCurveConstraint(const Handle_GeomPlate_HSequenceOfCurveConstraint &aHandle);
+		Handle_GeomPlate_HSequenceOfCurveConstraint(const GeomPlate_HSequenceOfCurveConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfCurveConstraint(const GeomPlate_HSequenceOfCurveConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfCurveConstraint & operator=(const Handle_GeomPlate_HSequenceOfCurveConstraint &aHandle);
+		Handle_GeomPlate_HSequenceOfCurveConstraint & operator=(const GeomPlate_HSequenceOfCurveConstraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfCurveConstraint & operator=(const GeomPlate_HSequenceOfCurveConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfCurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomPlate_HSequenceOfCurveConstraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomPlate_HSequenceOfCurveConstraint {
@@ -423,9 +423,9 @@ class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 		%feature("autodoc", "1");
 		GeomPlate_HArray1OfHCurveOnSurface(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		GeomPlate_HArray1OfHCurveOnSurface(const Standard_Integer Low, const Standard_Integer Up, const Handle_Adaptor3d_HCurveOnSurface &V);
+		GeomPlate_HArray1OfHCurveOnSurface(const Standard_Integer Low, const Standard_Integer Up, const Adaptor3d_HCurveOnSurface *V);
 		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HCurveOnSurface &V);
+		void Init(const Adaptor3d_HCurveOnSurface *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -433,7 +433,7 @@ class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Adaptor3d_HCurveOnSurface &Value);
+		void SetValue(const Standard_Integer Index, const Adaptor3d_HCurveOnSurface *Value);
 		%feature("autodoc", "1");
 		const Handle_Adaptor3d_HCurveOnSurface & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -484,29 +484,21 @@ class GeomPlate_HSequenceOfCurveConstraint : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_GeomPlate_CurveConstraint &anItem);
+		void Append(const GeomPlate_CurveConstraint *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_GeomPlate_HSequenceOfCurveConstraint &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_GeomPlate_CurveConstraint &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_GeomPlate_HSequenceOfCurveConstraint &aSequence);
+		void Prepend(const GeomPlate_CurveConstraint *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_GeomPlate_CurveConstraint &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const GeomPlate_CurveConstraint *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_GeomPlate_HSequenceOfCurveConstraint &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_GeomPlate_CurveConstraint &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_GeomPlate_HSequenceOfCurveConstraint &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const GeomPlate_CurveConstraint *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfCurveConstraint Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_GeomPlate_CurveConstraint &anItem);
+		void SetValue(const Standard_Integer anIndex, const GeomPlate_CurveConstraint *anItem);
 		%feature("autodoc", "1");
 		const Handle_GeomPlate_CurveConstraint & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -555,7 +547,7 @@ def __del__(self):
 class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const Handle_GeomPlate_PointConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const GeomPlate_PointConstraint *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_PointConstraint & Value() const;
 		%feature("autodoc", "1");
@@ -619,7 +611,7 @@ class GeomPlate_PointConstraint : public MMgt_TShared {
 		%feature("autodoc", "1");
 		GeomPlate_PointConstraint(const gp_Pnt &Pt, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const Handle_Geom_Surface &Surf, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const Geom_Surface *Surf, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
 		%feature("autodoc", "1");
 		void SetOrder(const Standard_Integer Order);
 		%feature("autodoc", "1");
@@ -680,89 +672,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomPlate_CurveConstraint;
-class GeomPlate_CurveConstraint : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_CurveConstraint();
-		%feature("autodoc", "1");
-		GeomPlate_CurveConstraint(const Handle_Adaptor3d_HCurveOnSurface &Boundary, const Standard_Integer Order, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
-		%feature("autodoc", "1");
-		GeomPlate_CurveConstraint(const Handle_Adaptor3d_HCurve &Boundary, const Standard_Integer Tang, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		void SetOrder(const Standard_Integer Order);
-		%feature("autodoc", "1");
-		Standard_Integer Order() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		void SetNbPoints(const Standard_Integer NewNb);
-		%feature("autodoc", "1");
-		void SetG0Criterion(const Handle_Law_Function &G0Crit);
-		%feature("autodoc", "1");
-		void SetG1Criterion(const Handle_Law_Function &G1Crit);
-		%feature("autodoc", "1");
-		void SetG2Criterion(const Handle_Law_Function &G2Crit);
-		%feature("autodoc", "1");
-		Standard_Real G0Criterion(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		Standard_Real G1Criterion(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		Standard_Real G2Criterion(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real Length() const;
-		%feature("autodoc", "1");
-		GeomLProp_SLProps & LPropSurf(const Standard_Real U);
-		%feature("autodoc", "1");
-		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3, gp_Vec & V4, gp_Vec & V5) const;
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurve Curve3d() const;
-		%feature("autodoc", "1");
-		void SetCurve2dOnSurf(const Handle_Geom2d_Curve &Curve2d);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Curve2dOnSurf() const;
-		%feature("autodoc", "1");
-		void SetProjectedCurve(const Handle_Adaptor2d_HCurve2d &Curve2d, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Handle_Adaptor2d_HCurve2d ProjectedCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomPlate_CurveConstraint {
-	Handle_GeomPlate_CurveConstraint GetHandle() {
-	return *(Handle_GeomPlate_CurveConstraint*) &$self;
-	}
-};
-%extend GeomPlate_CurveConstraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomPlate_CurveConstraint::~GeomPlate_CurveConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomPlate_CurveConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomPlate_HSequenceOfPointConstraint;
 class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 	public:
@@ -775,29 +684,21 @@ class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_GeomPlate_PointConstraint &anItem);
+		void Append(const GeomPlate_PointConstraint *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_GeomPlate_HSequenceOfPointConstraint &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_GeomPlate_PointConstraint &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_GeomPlate_HSequenceOfPointConstraint &aSequence);
+		void Prepend(const GeomPlate_PointConstraint *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_GeomPlate_PointConstraint &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const GeomPlate_PointConstraint *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_GeomPlate_HSequenceOfPointConstraint &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_GeomPlate_PointConstraint &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_GeomPlate_HSequenceOfPointConstraint &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const GeomPlate_PointConstraint *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfPointConstraint Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_GeomPlate_PointConstraint &anItem);
+		void SetValue(const Standard_Integer anIndex, const GeomPlate_PointConstraint *anItem);
 		%feature("autodoc", "1");
 		const Handle_GeomPlate_PointConstraint & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -901,9 +802,9 @@ def __del__(self):
 class GeomPlate_BuildAveragePlane {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_BuildAveragePlane(const Handle_TColgp_HArray1OfPnt &Pts, const Standard_Integer NbBoundPoints, const Standard_Real Tol, const Standard_Integer POption, const Standard_Integer NOption);
+		GeomPlate_BuildAveragePlane(const TColgp_HArray1OfPnt *Pts, const Standard_Integer NbBoundPoints, const Standard_Real Tol, const Standard_Integer POption, const Standard_Integer NOption);
 		%feature("autodoc", "1");
-		GeomPlate_BuildAveragePlane(const TColgp_SequenceOfVec &Normals, const Handle_TColgp_HArray1OfPnt &Pts);
+		GeomPlate_BuildAveragePlane(const TColgp_SequenceOfVec &Normals, const TColgp_HArray1OfPnt *Pts);
 		%feature("autodoc", "1");
 		Handle_Geom_Plane Plane() const;
 		%feature("autodoc", "1");
@@ -939,7 +840,7 @@ def __del__(self):
 class GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_SequenceNodeOfSequenceOfCurveConstraint(const Handle_GeomPlate_CurveConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		GeomPlate_SequenceNodeOfSequenceOfCurveConstraint(const GeomPlate_CurveConstraint *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_CurveConstraint & Value() const;
 		%feature("autodoc", "1");
@@ -976,7 +877,7 @@ def __del__(self):
 class GeomPlate_Surface : public Geom_Surface {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_Surface(const Handle_Geom_Surface &Surfinit, const Plate_Plate &Surfinter);
+		GeomPlate_Surface(const Geom_Surface *Surfinit, const Plate_Plate &Surfinter);
 		%feature("autodoc", "1");
 		virtual		void UReverse();
 		%feature("autodoc", "1");
@@ -1099,9 +1000,9 @@ def __del__(self):
 class GeomPlate_MakeApprox {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const AdvApp2Var_Criterion &PlateCrit, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
+		GeomPlate_MakeApprox(const GeomPlate_Surface *SurfPlate, const AdvApp2Var_Criterion &PlateCrit, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
 		%feature("autodoc", "1");
-		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const Standard_Real dmax, const Standard_Integer CritOrder=0, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
+		GeomPlate_MakeApprox(const GeomPlate_Surface *SurfPlate, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const Standard_Real dmax, const Standard_Integer CritOrder=0, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface Surface() const;
 		%feature("autodoc", "1");
@@ -1138,19 +1039,19 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const GeomPlate_SequenceOfPointConstraint & operator=(const GeomPlate_SequenceOfPointConstraint &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_GeomPlate_PointConstraint &T);
+		void Append(const GeomPlate_PointConstraint *T);
 		%feature("autodoc", "1");
 		void Append(GeomPlate_SequenceOfPointConstraint & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_GeomPlate_PointConstraint &T);
+		void Prepend(const GeomPlate_PointConstraint *T);
 		%feature("autodoc", "1");
 		void Prepend(GeomPlate_SequenceOfPointConstraint & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_GeomPlate_PointConstraint &I);
+		void InsertBefore(const Standard_Integer Index, const GeomPlate_PointConstraint *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, GeomPlate_SequenceOfPointConstraint & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_GeomPlate_PointConstraint &T);
+		void InsertAfter(const Standard_Integer Index, const GeomPlate_PointConstraint *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, GeomPlate_SequenceOfPointConstraint & S);
 		%feature("autodoc", "1");
@@ -1164,7 +1065,7 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_GeomPlate_PointConstraint & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_GeomPlate_PointConstraint &I);
+		void SetValue(const Standard_Integer Index, const GeomPlate_PointConstraint *I);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_PointConstraint & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -1195,21 +1096,21 @@ def __del__(self):
 class GeomPlate_BuildPlateSurface {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_BuildPlateSurface(const Handle_TColStd_HArray1OfInteger &NPoints, const Handle_GeomPlate_HArray1OfHCurveOnSurface &TabCurve, const Handle_TColStd_HArray1OfInteger &Tang, const Standard_Integer Degree, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
+		GeomPlate_BuildPlateSurface(const TColStd_HArray1OfInteger *NPoints, const GeomPlate_HArray1OfHCurveOnSurface *TabCurve, const TColStd_HArray1OfInteger *Tang, const Standard_Integer Degree, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
 		%feature("autodoc", "1");
-		GeomPlate_BuildPlateSurface(const Handle_Geom_Surface &Surf, const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=10, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
+		GeomPlate_BuildPlateSurface(const Geom_Surface *Surf, const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=10, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
 		%feature("autodoc", "1");
 		GeomPlate_BuildPlateSurface(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=10, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		void LoadInitSurface(const Handle_Geom_Surface &Surf);
+		void LoadInitSurface(const Geom_Surface *Surf);
 		%feature("autodoc", "1");
-		void Add(const Handle_GeomPlate_CurveConstraint &Cont);
+		void Add(const GeomPlate_CurveConstraint *Cont);
 		%feature("autodoc", "1");
 		void SetNbBounds(const Standard_Integer NbBounds);
 		%feature("autodoc", "1");
-		void Add(const Handle_GeomPlate_PointConstraint &Cont);
+		void Add(const GeomPlate_PointConstraint *Cont);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
@@ -1448,9 +1349,9 @@ class GeomPlate_Array1OfHCurveOnSurface {
 		%feature("autodoc", "1");
 		GeomPlate_Array1OfHCurveOnSurface(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		GeomPlate_Array1OfHCurveOnSurface(const Handle_Adaptor3d_HCurveOnSurface &Item, const Standard_Integer Low, const Standard_Integer Up);
+		GeomPlate_Array1OfHCurveOnSurface(const Adaptor3d_HCurveOnSurface *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HCurveOnSurface &V);
+		void Init(const Adaptor3d_HCurveOnSurface *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -1466,7 +1367,7 @@ class GeomPlate_Array1OfHCurveOnSurface {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Adaptor3d_HCurveOnSurface &Value);
+		void SetValue(const Standard_Integer Index, const Adaptor3d_HCurveOnSurface *Value);
 		%feature("autodoc", "1");
 		const Handle_Adaptor3d_HCurveOnSurface & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1505,19 +1406,19 @@ class GeomPlate_SequenceOfCurveConstraint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const GeomPlate_SequenceOfCurveConstraint & operator=(const GeomPlate_SequenceOfCurveConstraint &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_GeomPlate_CurveConstraint &T);
+		void Append(const GeomPlate_CurveConstraint *T);
 		%feature("autodoc", "1");
 		void Append(GeomPlate_SequenceOfCurveConstraint & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_GeomPlate_CurveConstraint &T);
+		void Prepend(const GeomPlate_CurveConstraint *T);
 		%feature("autodoc", "1");
 		void Prepend(GeomPlate_SequenceOfCurveConstraint & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_GeomPlate_CurveConstraint &I);
+		void InsertBefore(const Standard_Integer Index, const GeomPlate_CurveConstraint *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, GeomPlate_SequenceOfCurveConstraint & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_GeomPlate_CurveConstraint &T);
+		void InsertAfter(const Standard_Integer Index, const GeomPlate_CurveConstraint *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, GeomPlate_SequenceOfCurveConstraint & S);
 		%feature("autodoc", "1");
@@ -1531,7 +1432,7 @@ class GeomPlate_SequenceOfCurveConstraint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_GeomPlate_CurveConstraint & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_GeomPlate_CurveConstraint &I);
+		void SetValue(const Standard_Integer Index, const GeomPlate_CurveConstraint *I);
 		%feature("autodoc", "1");
 		Handle_GeomPlate_CurveConstraint & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");

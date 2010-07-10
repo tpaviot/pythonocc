@@ -99,15 +99,15 @@ class Handle_PlotMgt_PlotterParameter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterParameter();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterParameter(const Handle_PlotMgt_PlotterParameter &aHandle);
+		Handle_PlotMgt_PlotterParameter(const PlotMgt_PlotterParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterParameter(const PlotMgt_PlotterParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterParameter & operator=(const Handle_PlotMgt_PlotterParameter &aHandle);
+		Handle_PlotMgt_PlotterParameter & operator=(const PlotMgt_PlotterParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterParameter & operator=(const PlotMgt_PlotterParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_PlotterParameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_PlotterParameter {
@@ -137,15 +137,15 @@ class Handle_PlotMgt_HListOfMFTSizes : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfMFTSizes();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfMFTSizes(const Handle_PlotMgt_HListOfMFTSizes &aHandle);
+		Handle_PlotMgt_HListOfMFTSizes(const PlotMgt_HListOfMFTSizes *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfMFTSizes(const PlotMgt_HListOfMFTSizes *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfMFTSizes & operator=(const Handle_PlotMgt_HListOfMFTSizes &aHandle);
+		Handle_PlotMgt_HListOfMFTSizes & operator=(const PlotMgt_HListOfMFTSizes *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfMFTSizes & operator=(const PlotMgt_HListOfMFTSizes *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfMFTSizes const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_HListOfMFTSizes const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_HListOfMFTSizes {
@@ -175,15 +175,15 @@ class Handle_PlotMgt_PlotterDefinitionError : public Handle_Standard_OutOfRange 
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterDefinitionError();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterDefinitionError(const Handle_PlotMgt_PlotterDefinitionError &aHandle);
+		Handle_PlotMgt_PlotterDefinitionError(const PlotMgt_PlotterDefinitionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterDefinitionError(const PlotMgt_PlotterDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterDefinitionError & operator=(const Handle_PlotMgt_PlotterDefinitionError &aHandle);
+		Handle_PlotMgt_PlotterDefinitionError & operator=(const PlotMgt_PlotterDefinitionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterDefinitionError & operator=(const PlotMgt_PlotterDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_PlotterDefinitionError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_PlotterDefinitionError {
@@ -213,15 +213,15 @@ class Handle_PlotMgt_PlotterDriver : public Handle_Aspect_Driver {
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterDriver();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterDriver(const Handle_PlotMgt_PlotterDriver &aHandle);
+		Handle_PlotMgt_PlotterDriver(const PlotMgt_PlotterDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterDriver(const PlotMgt_PlotterDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterDriver & operator=(const Handle_PlotMgt_PlotterDriver &aHandle);
+		Handle_PlotMgt_PlotterDriver & operator=(const PlotMgt_PlotterDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterDriver & operator=(const PlotMgt_PlotterDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_PlotterDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_PlotterDriver {
@@ -251,15 +251,15 @@ class Handle_PlotMgt_Plotter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_PlotMgt_Plotter();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_Plotter(const Handle_PlotMgt_Plotter &aHandle);
+		Handle_PlotMgt_Plotter(const PlotMgt_Plotter *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_Plotter(const PlotMgt_Plotter *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_Plotter & operator=(const Handle_PlotMgt_Plotter &aHandle);
+		Handle_PlotMgt_Plotter & operator=(const PlotMgt_Plotter *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_Plotter & operator=(const PlotMgt_Plotter *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_Plotter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_Plotter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_Plotter {
@@ -289,15 +289,15 @@ class Handle_PlotMgt_ImageDriver : public Handle_PlotMgt_PlotterDriver {
 		%feature("autodoc", "1");
 		Handle_PlotMgt_ImageDriver();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_ImageDriver(const Handle_PlotMgt_ImageDriver &aHandle);
+		Handle_PlotMgt_ImageDriver(const PlotMgt_ImageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_ImageDriver(const PlotMgt_ImageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_ImageDriver & operator=(const Handle_PlotMgt_ImageDriver &aHandle);
+		Handle_PlotMgt_ImageDriver & operator=(const PlotMgt_ImageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_ImageDriver & operator=(const PlotMgt_ImageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_ImageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_ImageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_ImageDriver {
@@ -327,15 +327,15 @@ class Handle_PlotMgt_HListOfPlotterParameter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfPlotterParameter();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter(const Handle_PlotMgt_HListOfPlotterParameter &aHandle);
+		Handle_PlotMgt_HListOfPlotterParameter(const PlotMgt_HListOfPlotterParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfPlotterParameter(const PlotMgt_HListOfPlotterParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter & operator=(const Handle_PlotMgt_HListOfPlotterParameter &aHandle);
+		Handle_PlotMgt_HListOfPlotterParameter & operator=(const PlotMgt_HListOfPlotterParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfPlotterParameter & operator=(const PlotMgt_HListOfPlotterParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_HListOfPlotterParameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_HListOfPlotterParameter {
@@ -365,15 +365,15 @@ class Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter(const Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter &aHandle);
+		Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter(const PlotMgt_SequenceNodeOfListOfPlotterParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter(const PlotMgt_SequenceNodeOfListOfPlotterParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter & operator=(const Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter &aHandle);
+		Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter & operator=(const PlotMgt_SequenceNodeOfListOfPlotterParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter & operator=(const PlotMgt_SequenceNodeOfListOfPlotterParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter {
@@ -403,15 +403,15 @@ class Handle_PlotMgt_HListOfMFTFonts : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfMFTFonts();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfMFTFonts(const Handle_PlotMgt_HListOfMFTFonts &aHandle);
+		Handle_PlotMgt_HListOfMFTFonts(const PlotMgt_HListOfMFTFonts *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfMFTFonts(const PlotMgt_HListOfMFTFonts *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfMFTFonts & operator=(const Handle_PlotMgt_HListOfMFTFonts &aHandle);
+		Handle_PlotMgt_HListOfMFTFonts & operator=(const PlotMgt_HListOfMFTFonts *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfMFTFonts & operator=(const PlotMgt_HListOfMFTFonts *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfMFTFonts const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_HListOfMFTFonts const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_HListOfMFTFonts {
@@ -441,15 +441,15 @@ class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
 		%feature("autodoc", "1");
 		Handle_PlotMgt_TextManager();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_TextManager(const Handle_PlotMgt_TextManager &aHandle);
+		Handle_PlotMgt_TextManager(const PlotMgt_TextManager *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_TextManager(const PlotMgt_TextManager *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_TextManager & operator=(const Handle_PlotMgt_TextManager &aHandle);
+		Handle_PlotMgt_TextManager & operator=(const PlotMgt_TextManager *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_TextManager & operator=(const PlotMgt_TextManager *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_TextManager const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_TextManager const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_TextManager {
@@ -479,15 +479,15 @@ class Handle_PlotMgt_PlotterAccessError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterAccessError();
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterAccessError(const Handle_PlotMgt_PlotterAccessError &aHandle);
+		Handle_PlotMgt_PlotterAccessError(const PlotMgt_PlotterAccessError *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterAccessError(const PlotMgt_PlotterAccessError *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterAccessError & operator=(const Handle_PlotMgt_PlotterAccessError &aHandle);
+		Handle_PlotMgt_PlotterAccessError & operator=(const PlotMgt_PlotterAccessError *aHandle);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterAccessError & operator=(const PlotMgt_PlotterAccessError *anItem);
 		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterAccessError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PlotMgt_PlotterAccessError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PlotMgt_PlotterAccessError {
@@ -515,7 +515,7 @@ def __del__(self):
 class PlotMgt_TextManager : public MFT_TextManager {
 	public:
 		%feature("autodoc", "1");
-		PlotMgt_TextManager(const Handle_PlotMgt_PlotterDriver &aDriver);
+		PlotMgt_TextManager(const PlotMgt_PlotterDriver *aDriver);
 		%feature("autodoc", "1");
 		virtual		void BeginString(const Quantity_Length X, const Quantity_Length Y, const Quantity_PlaneAngle anOrientation, const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_PlaneAngle aSlant, const Standard_Integer aPaintType);
 		%feature("autodoc", "1");
@@ -570,7 +570,7 @@ def __del__(self):
 class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		PlotMgt_SequenceNodeOfListOfPlotterParameter(const Handle_PlotMgt_PlotterParameter &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		PlotMgt_SequenceNodeOfListOfPlotterParameter(const PlotMgt_PlotterParameter *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterParameter & Value() const;
 		%feature("autodoc", "1");
@@ -764,19 +764,19 @@ class PlotMgt_ListOfPlotterParameter : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const PlotMgt_ListOfPlotterParameter & operator=(const PlotMgt_ListOfPlotterParameter &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_PlotMgt_PlotterParameter &T);
+		void Append(const PlotMgt_PlotterParameter *T);
 		%feature("autodoc", "1");
 		void Append(PlotMgt_ListOfPlotterParameter & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_PlotMgt_PlotterParameter &T);
+		void Prepend(const PlotMgt_PlotterParameter *T);
 		%feature("autodoc", "1");
 		void Prepend(PlotMgt_ListOfPlotterParameter & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_PlotMgt_PlotterParameter &I);
+		void InsertBefore(const Standard_Integer Index, const PlotMgt_PlotterParameter *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, PlotMgt_ListOfPlotterParameter & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_PlotMgt_PlotterParameter &T);
+		void InsertAfter(const Standard_Integer Index, const PlotMgt_PlotterParameter *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, PlotMgt_ListOfPlotterParameter & S);
 		%feature("autodoc", "1");
@@ -790,7 +790,7 @@ class PlotMgt_ListOfPlotterParameter : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_PlotMgt_PlotterParameter & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PlotMgt_PlotterParameter &I);
+		void SetValue(const Standard_Integer Index, const PlotMgt_PlotterParameter *I);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_PlotterParameter & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -859,7 +859,7 @@ class PlotMgt_PlotterParameter : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetRValue(const Standard_Real aValue);
 		%feature("autodoc", "1");
-		void SetMValue(const Handle_TColStd_HSequenceOfAsciiString &aMap);
+		void SetMValue(const TColStd_HSequenceOfAsciiString *aMap);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -928,22 +928,22 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 		%feature("autodoc", "1");
 		virtual		void ClosePrimitive();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
+		virtual		Standard_Boolean IsKnownImage(const Standard_Transient *anImage);
 		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile) -> [Standard_Integer, Standard_Integer]");
 
 		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
+		virtual		void ClearImage(const Standard_Transient *anImageId);
 		%feature("autodoc", "1");
 		virtual		void ClearImageFile(const char * anImageFile);
 		%feature("autodoc", "1");
-		virtual		void DrawImage(const Handle_Standard_Transient &anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY);
+		virtual		void DrawImage(const Standard_Transient *anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY);
 		%feature("autodoc", "1");
 		virtual		void DrawImageFile(const char * anImageFile, const Standard_ShortReal aX, const Standard_ShortReal aY, const Quantity_Factor aScale=1.0e+0);
 		%feature("autodoc", "1");
-		virtual		void FillAndDrawImage(const Handle_Standard_Transient &anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY, const Standard_Integer aWidth, const Standard_Integer aHeight, const Standard_Address anArrayOfPixels);
+		virtual		void FillAndDrawImage(const Standard_Transient *anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY, const Standard_Integer aWidth, const Standard_Integer aHeight, const Standard_Address anArrayOfPixels);
 		%feature("autodoc", "1");
-		virtual		void FillAndDrawImage(const Handle_Standard_Transient &anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY, const Standard_Integer anIndexOfLine, const Standard_Integer aWidth, const Standard_Integer aHeight, const Standard_Address anArrayOfPixels);
+		virtual		void FillAndDrawImage(const Standard_Transient *anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY, const Standard_Integer anIndexOfLine, const Standard_Integer aWidth, const Standard_Integer aHeight, const Standard_Address anArrayOfPixels);
 		%feature("autodoc", "1");
 		virtual		void DrawPoint(const Standard_ShortReal X, const Standard_ShortReal Y);
 		%feature("autodoc", "1");
@@ -1347,19 +1347,19 @@ class PlotMgt_Plotter : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetPlottingType(const PlotMgt_PlottingType aPlottingType);
 		%feature("autodoc", "1");
-		void SetPenColorIndex(const Handle_TColStd_HSequenceOfInteger &aTable);
+		void SetPenColorIndex(const TColStd_HSequenceOfInteger *aTable);
 		%feature("autodoc", "1");
-		void SetPenWidthIndex(const Handle_TColStd_HSequenceOfInteger &aTable);
+		void SetPenWidthIndex(const TColStd_HSequenceOfInteger *aTable);
 		%feature("autodoc", "1");
-		void SetPenTypeIndex(const Handle_TColStd_HSequenceOfInteger &aTable);
+		void SetPenTypeIndex(const TColStd_HSequenceOfInteger *aTable);
 		%feature("autodoc", "1");
-		void SetColorMap(const Handle_Aspect_ColorMap &aColorMap);
+		void SetColorMap(const Aspect_ColorMap *aColorMap);
 		%feature("autodoc", "1");
-		void SetWidthMap(const Handle_Aspect_WidthMap &aWidthMap);
+		void SetWidthMap(const Aspect_WidthMap *aWidthMap);
 		%feature("autodoc", "1");
-		void SetTypeMap(const Handle_Aspect_TypeMap &aTypeMap);
+		void SetTypeMap(const Aspect_TypeMap *aTypeMap);
 		%feature("autodoc", "1");
-		void SetFontMap(const Handle_Aspect_FontMap &aFontMap);
+		void SetFontMap(const Aspect_FontMap *aFontMap);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1396,9 +1396,9 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 		%feature("autodoc", "1");
 		PlotMgt_HListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PlotMgt_HListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up, const Handle_MFT_FontManager &V);
+		PlotMgt_HListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up, const MFT_FontManager *V);
 		%feature("autodoc", "1");
-		void Init(const Handle_MFT_FontManager &V);
+		void Init(const MFT_FontManager *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1406,7 +1406,7 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MFT_FontManager &Value);
+		void SetValue(const Standard_Integer Index, const MFT_FontManager *Value);
 		%feature("autodoc", "1");
 		const Handle_MFT_FontManager & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1544,7 +1544,7 @@ def __del__(self):
 class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
 	public:
 		%feature("autodoc", "1");
-		PlotMgt_ImageDriver(const Handle_PlotMgt_Plotter &aPlotter, const char * aName);
+		PlotMgt_ImageDriver(const PlotMgt_Plotter *aPlotter, const char * aName);
 		%feature("autodoc", "1");
 		PlotMgt_ImageDriver(const char * aName);
 		%feature("autodoc", "1");
@@ -1593,29 +1593,21 @@ class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_PlotMgt_PlotterParameter &anItem);
+		void Append(const PlotMgt_PlotterParameter *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_PlotMgt_PlotterParameter &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
+		void Prepend(const PlotMgt_PlotterParameter *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_PlotMgt_PlotterParameter &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const PlotMgt_PlotterParameter *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_PlotMgt_PlotterParameter &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const PlotMgt_PlotterParameter *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_PlotMgt_HListOfPlotterParameter Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_PlotMgt_PlotterParameter &anItem);
+		void SetValue(const Standard_Integer anIndex, const PlotMgt_PlotterParameter *anItem);
 		%feature("autodoc", "1");
 		const Handle_PlotMgt_PlotterParameter & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -1666,9 +1658,9 @@ class PlotMgt_ListOfMFTFonts {
 		%feature("autodoc", "1");
 		PlotMgt_ListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PlotMgt_ListOfMFTFonts(const Handle_MFT_FontManager &Item, const Standard_Integer Low, const Standard_Integer Up);
+		PlotMgt_ListOfMFTFonts(const MFT_FontManager *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_MFT_FontManager &V);
+		void Init(const MFT_FontManager *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -1684,7 +1676,7 @@ class PlotMgt_ListOfMFTFonts {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MFT_FontManager &Value);
+		void SetValue(const Standard_Integer Index, const MFT_FontManager *Value);
 		%feature("autodoc", "1");
 		const Handle_MFT_FontManager & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");

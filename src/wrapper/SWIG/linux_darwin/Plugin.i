@@ -43,15 +43,15 @@ class Handle_Plugin_DataMapNodeOfMapOfFunctions : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_Plugin_DataMapNodeOfMapOfFunctions();
 		%feature("autodoc", "1");
-		Handle_Plugin_DataMapNodeOfMapOfFunctions(const Handle_Plugin_DataMapNodeOfMapOfFunctions &aHandle);
+		Handle_Plugin_DataMapNodeOfMapOfFunctions(const Plugin_DataMapNodeOfMapOfFunctions *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plugin_DataMapNodeOfMapOfFunctions(const Plugin_DataMapNodeOfMapOfFunctions *anItem);
 		%feature("autodoc", "1");
-		Handle_Plugin_DataMapNodeOfMapOfFunctions & operator=(const Handle_Plugin_DataMapNodeOfMapOfFunctions &aHandle);
+		Handle_Plugin_DataMapNodeOfMapOfFunctions & operator=(const Plugin_DataMapNodeOfMapOfFunctions *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plugin_DataMapNodeOfMapOfFunctions & operator=(const Plugin_DataMapNodeOfMapOfFunctions *anItem);
 		%feature("autodoc", "1");
-		Handle_Plugin_DataMapNodeOfMapOfFunctions const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Plugin_DataMapNodeOfMapOfFunctions const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Plugin_DataMapNodeOfMapOfFunctions {
@@ -81,15 +81,15 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Plugin_Failure();
 		%feature("autodoc", "1");
-		Handle_Plugin_Failure(const Handle_Plugin_Failure &aHandle);
+		Handle_Plugin_Failure(const Plugin_Failure *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plugin_Failure(const Plugin_Failure *anItem);
 		%feature("autodoc", "1");
-		Handle_Plugin_Failure & operator=(const Handle_Plugin_Failure &aHandle);
+		Handle_Plugin_Failure & operator=(const Plugin_Failure *aHandle);
 		%feature("autodoc", "1");
 		Handle_Plugin_Failure & operator=(const Plugin_Failure *anItem);
 		%feature("autodoc", "1");
-		Handle_Plugin_Failure const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Plugin_Failure const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Plugin_Failure {

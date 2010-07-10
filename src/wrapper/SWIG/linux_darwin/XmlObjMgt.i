@@ -47,15 +47,15 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable();
 		%feature("autodoc", "1");
-		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable(const Handle_XmlObjMgt_DataMapNodeOfRRelocationTable &aHandle);
+		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable(const XmlObjMgt_DataMapNodeOfRRelocationTable *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable(const XmlObjMgt_DataMapNodeOfRRelocationTable *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable & operator=(const Handle_XmlObjMgt_DataMapNodeOfRRelocationTable &aHandle);
+		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable & operator=(const XmlObjMgt_DataMapNodeOfRRelocationTable *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable & operator=(const XmlObjMgt_DataMapNodeOfRRelocationTable *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XmlObjMgt_DataMapNodeOfRRelocationTable {
@@ -163,7 +163,7 @@ def __del__(self):
 class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		XmlObjMgt_DataMapNodeOfRRelocationTable(const Standard_Integer &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		XmlObjMgt_DataMapNodeOfRRelocationTable(const Standard_Integer &K, const Standard_Transient *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey() {
@@ -294,7 +294,7 @@ class XmlObjMgt_RRelocationTable : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_Standard_Transient &I);
+		Standard_Boolean Bind(const Standard_Integer &K, const Standard_Transient *I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");

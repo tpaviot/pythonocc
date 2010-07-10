@@ -56,15 +56,15 @@ class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_ShadingAspect();
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_ShadingAspect(const Handle_VrmlConverter_ShadingAspect &aHandle);
+		Handle_VrmlConverter_ShadingAspect(const VrmlConverter_ShadingAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_ShadingAspect(const VrmlConverter_ShadingAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_ShadingAspect & operator=(const Handle_VrmlConverter_ShadingAspect &aHandle);
+		Handle_VrmlConverter_ShadingAspect & operator=(const VrmlConverter_ShadingAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_ShadingAspect & operator=(const VrmlConverter_ShadingAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_ShadingAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_VrmlConverter_ShadingAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_VrmlConverter_ShadingAspect {
@@ -94,15 +94,15 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Drawer();
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer(const Handle_VrmlConverter_Drawer &aHandle);
+		Handle_VrmlConverter_Drawer(const VrmlConverter_Drawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Drawer(const VrmlConverter_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer & operator=(const Handle_VrmlConverter_Drawer &aHandle);
+		Handle_VrmlConverter_Drawer & operator=(const VrmlConverter_Drawer *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Drawer & operator=(const VrmlConverter_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_VrmlConverter_Drawer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_VrmlConverter_Drawer {
@@ -132,15 +132,15 @@ class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_PointAspect();
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_PointAspect(const Handle_VrmlConverter_PointAspect &aHandle);
+		Handle_VrmlConverter_PointAspect(const VrmlConverter_PointAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_PointAspect(const VrmlConverter_PointAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_PointAspect & operator=(const Handle_VrmlConverter_PointAspect &aHandle);
+		Handle_VrmlConverter_PointAspect & operator=(const VrmlConverter_PointAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_PointAspect & operator=(const VrmlConverter_PointAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_PointAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_VrmlConverter_PointAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_VrmlConverter_PointAspect {
@@ -170,15 +170,15 @@ class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect();
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_LineAspect(const Handle_VrmlConverter_LineAspect &aHandle);
+		Handle_VrmlConverter_LineAspect(const VrmlConverter_LineAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect(const VrmlConverter_LineAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_LineAspect & operator=(const Handle_VrmlConverter_LineAspect &aHandle);
+		Handle_VrmlConverter_LineAspect & operator=(const VrmlConverter_LineAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect & operator=(const VrmlConverter_LineAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_LineAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_VrmlConverter_LineAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_VrmlConverter_LineAspect {
@@ -208,15 +208,15 @@ class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_IsoAspect();
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_IsoAspect(const Handle_VrmlConverter_IsoAspect &aHandle);
+		Handle_VrmlConverter_IsoAspect(const VrmlConverter_IsoAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_IsoAspect(const VrmlConverter_IsoAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_IsoAspect & operator=(const Handle_VrmlConverter_IsoAspect &aHandle);
+		Handle_VrmlConverter_IsoAspect & operator=(const VrmlConverter_IsoAspect *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_IsoAspect & operator=(const VrmlConverter_IsoAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_IsoAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_VrmlConverter_IsoAspect const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_VrmlConverter_IsoAspect {
@@ -246,15 +246,15 @@ class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Projector();
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Projector(const Handle_VrmlConverter_Projector &aHandle);
+		Handle_VrmlConverter_Projector(const VrmlConverter_Projector *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Projector(const VrmlConverter_Projector *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Projector & operator=(const Handle_VrmlConverter_Projector &aHandle);
+		Handle_VrmlConverter_Projector & operator=(const VrmlConverter_Projector *aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Projector & operator=(const VrmlConverter_Projector *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Projector const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_VrmlConverter_Projector const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_VrmlConverter_Projector {
@@ -284,7 +284,7 @@ class VrmlConverter_WFDeflectionShape {
 		%feature("autodoc", "1");
 		VrmlConverter_WFDeflectionShape();
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
+		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const VrmlConverter_Drawer *aDrawer);
 
 };
 %feature("shadow") VrmlConverter_WFDeflectionShape::~VrmlConverter_WFDeflectionShape %{
@@ -309,13 +309,13 @@ class VrmlConverter_WFDeflectionRestrictedFace {
 		%feature("autodoc", "1");
 		VrmlConverter_WFDeflectionRestrictedFace();
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
+		void Add(Standard_OStream & anOStream, const BRepAdaptor_HSurface *aFace, const VrmlConverter_Drawer *aDrawer);
 		%feature("autodoc", "1");
-		void AddUIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
+		void AddUIso(Standard_OStream & anOStream, const BRepAdaptor_HSurface *aFace, const VrmlConverter_Drawer *aDrawer);
 		%feature("autodoc", "1");
-		void AddVIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
+		void AddVIso(Standard_OStream & anOStream, const BRepAdaptor_HSurface *aFace, const VrmlConverter_Drawer *aDrawer);
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
+		void Add(Standard_OStream & anOStream, const BRepAdaptor_HSurface *aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const VrmlConverter_Drawer *aDrawer);
 
 };
 %feature("shadow") VrmlConverter_WFDeflectionRestrictedFace::~VrmlConverter_WFDeflectionRestrictedFace %{
@@ -340,13 +340,13 @@ class VrmlConverter_WFRestrictedFace {
 		%feature("autodoc", "1");
 		VrmlConverter_WFRestrictedFace();
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
+		void Add(Standard_OStream & anOStream, const BRepAdaptor_HSurface *aFace, const VrmlConverter_Drawer *aDrawer);
 		%feature("autodoc", "1");
-		void AddUIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
+		void AddUIso(Standard_OStream & anOStream, const BRepAdaptor_HSurface *aFace, const VrmlConverter_Drawer *aDrawer);
 		%feature("autodoc", "1");
-		void AddVIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
+		void AddVIso(Standard_OStream & anOStream, const BRepAdaptor_HSurface *aFace, const VrmlConverter_Drawer *aDrawer);
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
+		void Add(Standard_OStream & anOStream, const BRepAdaptor_HSurface *aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Standard_Integer NBUiso, const Standard_Integer NBViso, const VrmlConverter_Drawer *aDrawer);
 
 };
 %feature("shadow") VrmlConverter_WFRestrictedFace::~VrmlConverter_WFRestrictedFace %{
@@ -371,7 +371,7 @@ class VrmlConverter_ShadedShape {
 		%feature("autodoc", "1");
 		VrmlConverter_ShadedShape();
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
+		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const VrmlConverter_Drawer *aDrawer);
 		%feature("autodoc", "1");
 		void ComputeNormal(const TopoDS_Face &aFace, Poly_Connect & pc, TColgp_Array1OfDir & Nor);
 
@@ -424,15 +424,15 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_IsoAspect UIsoAspect();
 		%feature("autodoc", "1");
-		void SetUIsoAspect(const Handle_VrmlConverter_IsoAspect &anAspect);
+		void SetUIsoAspect(const VrmlConverter_IsoAspect *anAspect);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_IsoAspect VIsoAspect();
 		%feature("autodoc", "1");
-		void SetVIsoAspect(const Handle_VrmlConverter_IsoAspect &anAspect);
+		void SetVIsoAspect(const VrmlConverter_IsoAspect *anAspect);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect FreeBoundaryAspect();
 		%feature("autodoc", "1");
-		void SetFreeBoundaryAspect(const Handle_VrmlConverter_LineAspect &anAspect);
+		void SetFreeBoundaryAspect(const VrmlConverter_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		void SetFreeBoundaryDraw(const Standard_Boolean OnOff);
 		%feature("autodoc", "1");
@@ -440,7 +440,7 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect WireAspect();
 		%feature("autodoc", "1");
-		void SetWireAspect(const Handle_VrmlConverter_LineAspect &anAspect);
+		void SetWireAspect(const VrmlConverter_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		void SetWireDraw(const Standard_Boolean OnOff);
 		%feature("autodoc", "1");
@@ -448,7 +448,7 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect UnFreeBoundaryAspect();
 		%feature("autodoc", "1");
-		void SetUnFreeBoundaryAspect(const Handle_VrmlConverter_LineAspect &anAspect);
+		void SetUnFreeBoundaryAspect(const VrmlConverter_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		void SetUnFreeBoundaryDraw(const Standard_Boolean OnOff);
 		%feature("autodoc", "1");
@@ -456,15 +456,15 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect LineAspect();
 		%feature("autodoc", "1");
-		void SetLineAspect(const Handle_VrmlConverter_LineAspect &anAspect);
+		void SetLineAspect(const VrmlConverter_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_PointAspect PointAspect();
 		%feature("autodoc", "1");
-		void SetPointAspect(const Handle_VrmlConverter_PointAspect &anAspect);
+		void SetPointAspect(const VrmlConverter_PointAspect *anAspect);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_ShadingAspect ShadingAspect();
 		%feature("autodoc", "1");
-		void SetShadingAspect(const Handle_VrmlConverter_ShadingAspect &anAspect);
+		void SetShadingAspect(const VrmlConverter_ShadingAspect *anAspect);
 		%feature("autodoc", "1");
 		Standard_Boolean DrawHiddenLine() const;
 		%feature("autodoc", "1");
@@ -474,11 +474,11 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect HiddenLineAspect();
 		%feature("autodoc", "1");
-		void SetHiddenLineAspect(const Handle_VrmlConverter_LineAspect &anAspect);
+		void SetHiddenLineAspect(const VrmlConverter_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect SeenLineAspect();
 		%feature("autodoc", "1");
-		void SetSeenLineAspect(const Handle_VrmlConverter_LineAspect &anAspect);
+		void SetSeenLineAspect(const VrmlConverter_LineAspect *anAspect);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -515,7 +515,7 @@ class VrmlConverter_ShadingAspect : public MMgt_TShared {
 		%feature("autodoc", "1");
 		VrmlConverter_ShadingAspect();
 		%feature("autodoc", "1");
-		void SetFrontMaterial(const Handle_Vrml_Material &aMaterial);
+		void SetFrontMaterial(const Vrml_Material *aMaterial);
 		%feature("autodoc", "1");
 		Handle_Vrml_Material FrontMaterial() const;
 		%feature("autodoc", "1");
@@ -566,9 +566,9 @@ class VrmlConverter_LineAspect : public MMgt_TShared {
 		%feature("autodoc", "1");
 		VrmlConverter_LineAspect();
 		%feature("autodoc", "1");
-		VrmlConverter_LineAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff);
+		VrmlConverter_LineAspect(const Vrml_Material *aMaterial, const Standard_Boolean OnOff);
 		%feature("autodoc", "1");
-		void SetMaterial(const Handle_Vrml_Material &aMaterial);
+		void SetMaterial(const Vrml_Material *aMaterial);
 		%feature("autodoc", "1");
 		Handle_Vrml_Material Material() const;
 		%feature("autodoc", "1");
@@ -611,7 +611,7 @@ class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 		%feature("autodoc", "1");
 		VrmlConverter_IsoAspect();
 		%feature("autodoc", "1");
-		VrmlConverter_IsoAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff, const Standard_Integer aNumber);
+		VrmlConverter_IsoAspect(const Vrml_Material *aMaterial, const Standard_Boolean OnOff, const Standard_Integer aNumber);
 		%feature("autodoc", "1");
 		void SetNumber(const Standard_Integer aNumber);
 		%feature("autodoc", "1");
@@ -703,9 +703,9 @@ class VrmlConverter_Curve {
 		%feature("autodoc", "1");
 		VrmlConverter_Curve();
 		%feature("autodoc", "1");
-		void Add(const Adaptor3d_Curve &aCurve, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
+		void Add(const Adaptor3d_Curve &aCurve, const VrmlConverter_Drawer *aDrawer, Standard_OStream & anOStream);
 		%feature("autodoc", "1");
-		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
+		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const VrmlConverter_Drawer *aDrawer, Standard_OStream & anOStream);
 		%feature("autodoc", "1");
 		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, Standard_OStream & anOStream, const Standard_Integer aNbPoints);
 
@@ -732,7 +732,7 @@ class VrmlConverter_HLRShape {
 		%feature("autodoc", "1");
 		VrmlConverter_HLRShape();
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
+		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const VrmlConverter_Drawer *aDrawer, const VrmlConverter_Projector *aProjector);
 
 };
 %feature("shadow") VrmlConverter_HLRShape::~VrmlConverter_HLRShape %{
@@ -757,9 +757,9 @@ class VrmlConverter_PointAspect : public MMgt_TShared {
 		%feature("autodoc", "1");
 		VrmlConverter_PointAspect();
 		%feature("autodoc", "1");
-		VrmlConverter_PointAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff);
+		VrmlConverter_PointAspect(const Vrml_Material *aMaterial, const Standard_Boolean OnOff);
 		%feature("autodoc", "1");
-		void SetMaterial(const Handle_Vrml_Material &aMaterial);
+		void SetMaterial(const Vrml_Material *aMaterial);
 		%feature("autodoc", "1");
 		Handle_Vrml_Material Material() const;
 		%feature("autodoc", "1");
@@ -802,7 +802,7 @@ class VrmlConverter_WFShape {
 		%feature("autodoc", "1");
 		VrmlConverter_WFShape();
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
+		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const VrmlConverter_Drawer *aDrawer);
 
 };
 %feature("shadow") VrmlConverter_WFShape::~VrmlConverter_WFShape %{
@@ -827,13 +827,13 @@ class VrmlConverter_DeflectionCurve {
 		%feature("autodoc", "1");
 		VrmlConverter_DeflectionCurve();
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Handle_VrmlConverter_Drawer &aDrawer);
+		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const VrmlConverter_Drawer *aDrawer);
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_VrmlConverter_Drawer &aDrawer);
+		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const VrmlConverter_Drawer *aDrawer);
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real aDeflection, const Standard_Real aLimit);
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real aDeflection, const Handle_VrmlConverter_Drawer &aDrawer);
+		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real aDeflection, const VrmlConverter_Drawer *aDrawer);
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Standard_Real aDeflection);
 

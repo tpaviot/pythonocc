@@ -43,15 +43,15 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress();
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress(const Handle_SelectBasics_SequenceNodeOfSequenceOfAddress &aHandle);
+		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress(const SelectBasics_SequenceNodeOfSequenceOfAddress *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress(const SelectBasics_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress & operator=(const Handle_SelectBasics_SequenceNodeOfSequenceOfAddress &aHandle);
+		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress & operator=(const SelectBasics_SequenceNodeOfSequenceOfAddress *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress & operator=(const SelectBasics_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_SelectBasics_SequenceNodeOfSequenceOfAddress {
@@ -81,15 +81,15 @@ class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfBox2d();
 		%feature("autodoc", "1");
-		Handle_SelectBasics_ListNodeOfListOfBox2d(const Handle_SelectBasics_ListNodeOfListOfBox2d &aHandle);
+		Handle_SelectBasics_ListNodeOfListOfBox2d(const SelectBasics_ListNodeOfListOfBox2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfBox2d(const SelectBasics_ListNodeOfListOfBox2d *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_ListNodeOfListOfBox2d & operator=(const Handle_SelectBasics_ListNodeOfListOfBox2d &aHandle);
+		Handle_SelectBasics_ListNodeOfListOfBox2d & operator=(const SelectBasics_ListNodeOfListOfBox2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfBox2d & operator=(const SelectBasics_ListNodeOfListOfBox2d *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_ListNodeOfListOfBox2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_SelectBasics_ListNodeOfListOfBox2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_SelectBasics_ListNodeOfListOfBox2d {
@@ -119,15 +119,15 @@ class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfSensitive();
 		%feature("autodoc", "1");
-		Handle_SelectBasics_ListNodeOfListOfSensitive(const Handle_SelectBasics_ListNodeOfListOfSensitive &aHandle);
+		Handle_SelectBasics_ListNodeOfListOfSensitive(const SelectBasics_ListNodeOfListOfSensitive *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfSensitive(const SelectBasics_ListNodeOfListOfSensitive *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_ListNodeOfListOfSensitive & operator=(const Handle_SelectBasics_ListNodeOfListOfSensitive &aHandle);
+		Handle_SelectBasics_ListNodeOfListOfSensitive & operator=(const SelectBasics_ListNodeOfListOfSensitive *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfSensitive & operator=(const SelectBasics_ListNodeOfListOfSensitive *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_ListNodeOfListOfSensitive const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_SelectBasics_ListNodeOfListOfSensitive const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_SelectBasics_ListNodeOfListOfSensitive {
@@ -157,15 +157,15 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner();
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const SelectBasics_SequenceNodeOfSequenceOfOwner *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const SelectBasics_SequenceNodeOfSequenceOfOwner *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
@@ -195,15 +195,15 @@ class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity();
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity(const Handle_SelectBasics_SensitiveEntity &aHandle);
+		Handle_SelectBasics_SensitiveEntity(const SelectBasics_SensitiveEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity(const SelectBasics_SensitiveEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & operator=(const Handle_SelectBasics_SensitiveEntity &aHandle);
+		Handle_SelectBasics_SensitiveEntity & operator=(const SelectBasics_SensitiveEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity & operator=(const SelectBasics_SensitiveEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_SelectBasics_SensitiveEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_SelectBasics_SensitiveEntity {
@@ -233,15 +233,15 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner();
 		%feature("autodoc", "1");
-		Handle_SelectBasics_EntityOwner(const Handle_SelectBasics_EntityOwner &aHandle);
+		Handle_SelectBasics_EntityOwner(const SelectBasics_EntityOwner *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner(const SelectBasics_EntityOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_EntityOwner & operator=(const Handle_SelectBasics_EntityOwner &aHandle);
+		Handle_SelectBasics_EntityOwner & operator=(const SelectBasics_EntityOwner *aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner & operator=(const SelectBasics_EntityOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_EntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_SelectBasics_EntityOwner const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_SelectBasics_EntityOwner {
@@ -271,9 +271,9 @@ class SelectBasics_SortAlgo {
 		%feature("autodoc", "1");
 		SelectBasics_SortAlgo();
 		%feature("autodoc", "1");
-		SelectBasics_SortAlgo(const Bnd_Box2d &ClippingRectangle, const Standard_Real sizeOfSensitiveArea, const Handle_Bnd_HArray1OfBox2d &theRectangles);
+		SelectBasics_SortAlgo(const Bnd_Box2d &ClippingRectangle, const Standard_Real sizeOfSensitiveArea, const Bnd_HArray1OfBox2d *theRectangles);
 		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box2d &ClippingRectangle, const Standard_Real sizeOfSensitiveArea, const Handle_Bnd_HArray1OfBox2d &theRectangles);
+		void Initialize(const Bnd_Box2d &ClippingRectangle, const Standard_Real sizeOfSensitiveArea, const Bnd_HArray1OfBox2d *theRectangles);
 		%feature("autodoc", "1");
 		void InitSelect(const Standard_Real x, const Standard_Real y);
 		%feature("autodoc", "1");
@@ -536,7 +536,7 @@ def __del__(self):
 class SelectBasics_SensitiveEntity : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		void Set(const Handle_SelectBasics_EntityOwner &TheOwnerId);
+		void Set(const SelectBasics_EntityOwner *TheOwnerId);
 		%feature("autodoc", "1");
 		const Handle_SelectBasics_EntityOwner & OwnerId() const;
 		%feature("autodoc", "1");
@@ -662,19 +662,19 @@ class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const SelectBasics_SequenceOfOwner & operator=(const SelectBasics_SequenceOfOwner &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_SelectBasics_EntityOwner &T);
+		void Append(const SelectBasics_EntityOwner *T);
 		%feature("autodoc", "1");
 		void Append(SelectBasics_SequenceOfOwner & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_SelectBasics_EntityOwner &T);
+		void Prepend(const SelectBasics_EntityOwner *T);
 		%feature("autodoc", "1");
 		void Prepend(SelectBasics_SequenceOfOwner & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_SelectBasics_EntityOwner &I);
+		void InsertBefore(const Standard_Integer Index, const SelectBasics_EntityOwner *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, SelectBasics_SequenceOfOwner & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_SelectBasics_EntityOwner &T);
+		void InsertAfter(const Standard_Integer Index, const SelectBasics_EntityOwner *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, SelectBasics_SequenceOfOwner & S);
 		%feature("autodoc", "1");
@@ -688,7 +688,7 @@ class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_SelectBasics_EntityOwner & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_SelectBasics_EntityOwner &I);
+		void SetValue(const Standard_Integer Index, const SelectBasics_EntityOwner *I);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -797,7 +797,7 @@ def __del__(self):
 class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		SelectBasics_SequenceNodeOfSequenceOfOwner(const Handle_SelectBasics_EntityOwner &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		SelectBasics_SequenceNodeOfSequenceOfOwner(const SelectBasics_EntityOwner *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner & Value() const;
 		%feature("autodoc", "1");
@@ -834,7 +834,7 @@ def __del__(self):
 class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		SelectBasics_ListNodeOfListOfSensitive(const Handle_SelectBasics_SensitiveEntity &I, const TCollection_MapNodePtr &n);
+		SelectBasics_ListNodeOfListOfSensitive(const SelectBasics_SensitiveEntity *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity & Value() const;
 		%feature("autodoc", "1");
@@ -883,15 +883,15 @@ class SelectBasics_ListOfSensitive {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_SelectBasics_SensitiveEntity &I);
+		void Prepend(const SelectBasics_SensitiveEntity *I);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & theIt);
+		void Prepend(const SelectBasics_SensitiveEntity *I, SelectBasics_ListIteratorOfListOfSensitive & theIt);
 		%feature("autodoc", "1");
 		void Prepend(SelectBasics_ListOfSensitive & Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_SelectBasics_SensitiveEntity &I);
+		void Append(const SelectBasics_SensitiveEntity *I);
 		%feature("autodoc", "1");
-		void Append(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & theIt);
+		void Append(const SelectBasics_SensitiveEntity *I, SelectBasics_ListIteratorOfListOfSensitive & theIt);
 		%feature("autodoc", "1");
 		void Append(SelectBasics_ListOfSensitive & Other);
 		%feature("autodoc", "1");
@@ -903,11 +903,11 @@ class SelectBasics_ListOfSensitive {
 		%feature("autodoc", "1");
 		void Remove(SelectBasics_ListIteratorOfListOfSensitive & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & It);
+		void InsertBefore(const SelectBasics_SensitiveEntity *I, SelectBasics_ListIteratorOfListOfSensitive & It);
 		%feature("autodoc", "1");
 		void InsertBefore(SelectBasics_ListOfSensitive & Other, SelectBasics_ListIteratorOfListOfSensitive & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & It);
+		void InsertAfter(const SelectBasics_SensitiveEntity *I, SelectBasics_ListIteratorOfListOfSensitive & It);
 		%feature("autodoc", "1");
 		void InsertAfter(SelectBasics_ListOfSensitive & Other, SelectBasics_ListIteratorOfListOfSensitive & It);
 

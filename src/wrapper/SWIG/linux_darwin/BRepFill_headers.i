@@ -567,8 +567,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Adaptor3d_HCurveOnSurface.hxx>
-#include<Handle_Adaptor3d_HCurve.hxx>
 #include<Handle_MAT_Node.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<TopoDS_Shape.hxx>

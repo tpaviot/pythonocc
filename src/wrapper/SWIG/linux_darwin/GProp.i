@@ -65,15 +65,15 @@ class Handle_GProp_UndefinedAxis : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_GProp_UndefinedAxis();
 		%feature("autodoc", "1");
-		Handle_GProp_UndefinedAxis(const Handle_GProp_UndefinedAxis &aHandle);
+		Handle_GProp_UndefinedAxis(const GProp_UndefinedAxis *aHandle);
 		%feature("autodoc", "1");
 		Handle_GProp_UndefinedAxis(const GProp_UndefinedAxis *anItem);
 		%feature("autodoc", "1");
-		Handle_GProp_UndefinedAxis & operator=(const Handle_GProp_UndefinedAxis &aHandle);
+		Handle_GProp_UndefinedAxis & operator=(const GProp_UndefinedAxis *aHandle);
 		%feature("autodoc", "1");
 		Handle_GProp_UndefinedAxis & operator=(const GProp_UndefinedAxis *anItem);
 		%feature("autodoc", "1");
-		Handle_GProp_UndefinedAxis const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GProp_UndefinedAxis const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GProp_UndefinedAxis {

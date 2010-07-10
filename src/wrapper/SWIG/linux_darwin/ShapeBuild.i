@@ -43,15 +43,15 @@ class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape();
 		%feature("autodoc", "1");
-		Handle_ShapeBuild_ReShape(const Handle_ShapeBuild_ReShape &aHandle);
+		Handle_ShapeBuild_ReShape(const ShapeBuild_ReShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape(const ShapeBuild_ReShape *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeBuild_ReShape & operator=(const Handle_ShapeBuild_ReShape &aHandle);
+		Handle_ShapeBuild_ReShape & operator=(const ShapeBuild_ReShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape & operator=(const ShapeBuild_ReShape *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeBuild_ReShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeBuild_ReShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeBuild_ReShape {
@@ -161,32 +161,32 @@ class ShapeBuild_Edge {
 		%feature("autodoc", "1");
 		void RemovePCurve(const TopoDS_Edge &edge, const TopoDS_Face &face) const;
 		%feature("autodoc", "1");
-		void RemovePCurve(const TopoDS_Edge &edge, const Handle_Geom_Surface &surf) const;
+		void RemovePCurve(const TopoDS_Edge &edge, const Geom_Surface *surf) const;
 		%feature("autodoc", "1");
-		void RemovePCurve(const TopoDS_Edge &edge, const Handle_Geom_Surface &surf, const TopLoc_Location &loc) const;
+		void RemovePCurve(const TopoDS_Edge &edge, const Geom_Surface *surf, const TopLoc_Location &loc) const;
 		%feature("autodoc", "1");
-		void ReplacePCurve(const TopoDS_Edge &edge, const Handle_Geom2d_Curve &pcurve, const TopoDS_Face &face) const;
+		void ReplacePCurve(const TopoDS_Edge &edge, const Geom2d_Curve *pcurve, const TopoDS_Face &face) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReassignPCurve(const TopoDS_Edge &edge, const TopoDS_Face &old, const TopoDS_Face &sub) const;
 		%feature("autodoc","TransformPCurve(const pcurve, const trans, Standard_Real uFact) -> [Standard_Real, Standard_Real]");
 
-		Handle_Geom2d_Curve TransformPCurve(const Handle_Geom2d_Curve &pcurve, const gp_Trsf2d &trans, const Standard_Real uFact, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		Handle_Geom2d_Curve TransformPCurve(const Geom2d_Curve *pcurve, const gp_Trsf2d &trans, const Standard_Real uFact, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void RemoveCurve3d(const TopoDS_Edge &edge) const;
 		%feature("autodoc", "1");
 		Standard_Boolean BuildCurve3d(const TopoDS_Edge &edge) const;
 		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & edge, const Handle_Geom_Curve &curve, const TopLoc_Location &L) const;
+		void MakeEdge(TopoDS_Edge & edge, const Geom_Curve *curve, const TopLoc_Location &L) const;
 		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & edge, const Handle_Geom_Curve &curve, const TopLoc_Location &L, const Standard_Real p1, const Standard_Real p2) const;
+		void MakeEdge(TopoDS_Edge & edge, const Geom_Curve *curve, const TopLoc_Location &L, const Standard_Real p1, const Standard_Real p2) const;
 		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & edge, const Handle_Geom2d_Curve &pcurve, const TopoDS_Face &face) const;
+		void MakeEdge(TopoDS_Edge & edge, const Geom2d_Curve *pcurve, const TopoDS_Face &face) const;
 		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & edge, const Handle_Geom2d_Curve &pcurve, const TopoDS_Face &face, const Standard_Real p1, const Standard_Real p2) const;
+		void MakeEdge(TopoDS_Edge & edge, const Geom2d_Curve *pcurve, const TopoDS_Face &face, const Standard_Real p1, const Standard_Real p2) const;
 		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & edge, const Handle_Geom2d_Curve &pcurve, const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		void MakeEdge(TopoDS_Edge & edge, const Geom2d_Curve *pcurve, const Geom_Surface *S, const TopLoc_Location &L) const;
 		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & edge, const Handle_Geom2d_Curve &pcurve, const Handle_Geom_Surface &S, const TopLoc_Location &L, const Standard_Real p1, const Standard_Real p2) const;
+		void MakeEdge(TopoDS_Edge & edge, const Geom2d_Curve *pcurve, const Geom_Surface *S, const TopLoc_Location &L, const Standard_Real p1, const Standard_Real p2) const;
 
 };
 %feature("shadow") ShapeBuild_Edge::~ShapeBuild_Edge %{

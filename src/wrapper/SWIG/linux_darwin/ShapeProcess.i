@@ -43,15 +43,15 @@ class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_T
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_StackItemOfDictionaryOfOperator();
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_StackItemOfDictionaryOfOperator(const Handle_ShapeProcess_StackItemOfDictionaryOfOperator &aHandle);
+		Handle_ShapeProcess_StackItemOfDictionaryOfOperator(const ShapeProcess_StackItemOfDictionaryOfOperator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_StackItemOfDictionaryOfOperator(const ShapeProcess_StackItemOfDictionaryOfOperator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_StackItemOfDictionaryOfOperator & operator=(const Handle_ShapeProcess_StackItemOfDictionaryOfOperator &aHandle);
+		Handle_ShapeProcess_StackItemOfDictionaryOfOperator & operator=(const ShapeProcess_StackItemOfDictionaryOfOperator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_StackItemOfDictionaryOfOperator & operator=(const ShapeProcess_StackItemOfDictionaryOfOperator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_StackItemOfDictionaryOfOperator const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeProcess_StackItemOfDictionaryOfOperator const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
@@ -81,15 +81,15 @@ class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Operator();
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_Operator(const Handle_ShapeProcess_Operator &aHandle);
+		Handle_ShapeProcess_Operator(const ShapeProcess_Operator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Operator(const ShapeProcess_Operator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_Operator & operator=(const Handle_ShapeProcess_Operator &aHandle);
+		Handle_ShapeProcess_Operator & operator=(const ShapeProcess_Operator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Operator & operator=(const ShapeProcess_Operator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_Operator const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeProcess_Operator const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeProcess_Operator {
@@ -119,15 +119,15 @@ class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_UOperator();
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_UOperator(const Handle_ShapeProcess_UOperator &aHandle);
+		Handle_ShapeProcess_UOperator(const ShapeProcess_UOperator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_UOperator(const ShapeProcess_UOperator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_UOperator & operator=(const Handle_ShapeProcess_UOperator &aHandle);
+		Handle_ShapeProcess_UOperator & operator=(const ShapeProcess_UOperator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_UOperator & operator=(const ShapeProcess_UOperator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_UOperator const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeProcess_UOperator const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeProcess_UOperator {
@@ -157,15 +157,15 @@ class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Context();
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context(const Handle_ShapeProcess_Context &aHandle);
+		Handle_ShapeProcess_Context(const ShapeProcess_Context *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Context(const ShapeProcess_Context *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context & operator=(const Handle_ShapeProcess_Context &aHandle);
+		Handle_ShapeProcess_Context & operator=(const ShapeProcess_Context *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Context & operator=(const ShapeProcess_Context *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeProcess_Context const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeProcess_Context {
@@ -195,15 +195,15 @@ class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_DictionaryOfOperator();
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_DictionaryOfOperator(const Handle_ShapeProcess_DictionaryOfOperator &aHandle);
+		Handle_ShapeProcess_DictionaryOfOperator(const ShapeProcess_DictionaryOfOperator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_DictionaryOfOperator(const ShapeProcess_DictionaryOfOperator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_DictionaryOfOperator & operator=(const Handle_ShapeProcess_DictionaryOfOperator &aHandle);
+		Handle_ShapeProcess_DictionaryOfOperator & operator=(const ShapeProcess_DictionaryOfOperator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_DictionaryOfOperator & operator=(const ShapeProcess_DictionaryOfOperator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_DictionaryOfOperator const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeProcess_DictionaryOfOperator const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeProcess_DictionaryOfOperator {
@@ -233,15 +233,15 @@ class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_ShapeContext();
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_ShapeContext(const Handle_ShapeProcess_ShapeContext &aHandle);
+		Handle_ShapeProcess_ShapeContext(const ShapeProcess_ShapeContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_ShapeContext(const ShapeProcess_ShapeContext *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_ShapeContext & operator=(const Handle_ShapeProcess_ShapeContext &aHandle);
+		Handle_ShapeProcess_ShapeContext & operator=(const ShapeProcess_ShapeContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_ShapeContext & operator=(const ShapeProcess_ShapeContext *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_ShapeContext const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeProcess_ShapeContext const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeProcess_ShapeContext {
@@ -269,7 +269,7 @@ def __del__(self):
 class ShapeProcess_Operator : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform(const Handle_ShapeProcess_Context &context);
+		virtual		Standard_Boolean Perform(const ShapeProcess_Context *context);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -341,7 +341,7 @@ class ShapeProcess_OperLibrary {
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
+		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const ShapeProcess_ShapeContext *context, const BRepTools_Modification *M, TopTools_DataMapOfShapeShape & map);
 
 };
 %feature("shadow") ShapeProcess_OperLibrary::~ShapeProcess_OperLibrary %{
@@ -366,11 +366,11 @@ class ShapeProcess {
 		%feature("autodoc", "1");
 		ShapeProcess();
 		%feature("autodoc", "1");
-		Standard_Boolean RegisterOperator(const char * name, const Handle_ShapeProcess_Operator &op);
+		Standard_Boolean RegisterOperator(const char * name, const ShapeProcess_Operator *op);
 		%feature("autodoc", "1");
 		Standard_Boolean FindOperator(const char * name, Handle_ShapeProcess_Operator & op);
 		%feature("autodoc", "1");
-		Standard_Boolean Perform(const Handle_ShapeProcess_Context &context, const char * seq);
+		Standard_Boolean Perform(const ShapeProcess_Context *context, const char * seq);
 
 };
 %feature("shadow") ShapeProcess::~ShapeProcess %{
@@ -395,13 +395,11 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ShapeProcess_StackItemOfDictionaryOfOperator();
 		%feature("autodoc", "1");
-		ShapeProcess_StackItemOfDictionaryOfOperator(const Handle_ShapeProcess_StackItemOfDictionaryOfOperator &previous);
-		%feature("autodoc", "1");
 		Handle_ShapeProcess_StackItemOfDictionaryOfOperator Previous() const;
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_DictionaryOfOperator Value() const;
 		%feature("autodoc", "1");
-		void SetValue(const Handle_ShapeProcess_DictionaryOfOperator &cval);
+		void SetValue(const ShapeProcess_DictionaryOfOperator *cval);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -436,11 +434,11 @@ def __del__(self):
 class ShapeProcess_IteratorOfDictionaryOfOperator {
 	public:
 		%feature("autodoc", "1");
-		ShapeProcess_IteratorOfDictionaryOfOperator(const Handle_ShapeProcess_DictionaryOfOperator &acell);
+		ShapeProcess_IteratorOfDictionaryOfOperator(const ShapeProcess_DictionaryOfOperator *acell);
 		%feature("autodoc", "1");
-		ShapeProcess_IteratorOfDictionaryOfOperator(const Handle_ShapeProcess_DictionaryOfOperator &acell, const char * basename);
+		ShapeProcess_IteratorOfDictionaryOfOperator(const ShapeProcess_DictionaryOfOperator *acell, const char * basename);
 		%feature("autodoc", "1");
-		ShapeProcess_IteratorOfDictionaryOfOperator(const Handle_ShapeProcess_DictionaryOfOperator &acell, const TCollection_AsciiString &basename);
+		ShapeProcess_IteratorOfDictionaryOfOperator(const ShapeProcess_DictionaryOfOperator *acell, const TCollection_AsciiString &basename);
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -507,7 +505,7 @@ class ShapeProcess_Context : public MMgt_TShared {
 		%feature("autodoc", "1");
 		char * StringVal(const char * param, const char * def) const;
 		%feature("autodoc", "1");
-		void SetMessenger(const Handle_Message_Messenger &messenger);
+		void SetMessenger(const Message_Messenger *messenger);
 		%feature("autodoc", "1");
 		Handle_Message_Messenger Messenger() const;
 		%feature("autodoc", "1");
@@ -572,9 +570,9 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("autodoc", "1");
 		void RecordModification(const TopTools_DataMapOfShapeShape &repl);
 		%feature("autodoc", "1");
-		void RecordModification(const Handle_ShapeBuild_ReShape &repl, const Handle_ShapeExtend_MsgRegistrator &msg);
+		void RecordModification(const ShapeBuild_ReShape *repl, const ShapeExtend_MsgRegistrator *msg);
 		%feature("autodoc", "1");
-		void RecordModification(const Handle_ShapeBuild_ReShape &repl);
+		void RecordModification(const ShapeBuild_ReShape *repl);
 		%feature("autodoc", "1");
 		void RecordModification(const TopoDS_Shape &sh, const BRepTools_Modifier &repl);
 		%feature("autodoc", "1");
@@ -631,9 +629,9 @@ class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean GetItem(const TCollection_AsciiString &name, Handle_ShapeProcess_Operator & anitem, const Standard_Boolean exact=1) const;
 		%feature("autodoc", "1");
-		void SetItem(const char * name, const Handle_ShapeProcess_Operator &anitem, const Standard_Boolean exact=1);
+		void SetItem(const char * name, const ShapeProcess_Operator *anitem, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");
-		void SetItem(const TCollection_AsciiString &name, const Handle_ShapeProcess_Operator &anitem, const Standard_Boolean exact=1);
+		void SetItem(const TCollection_AsciiString &name, const ShapeProcess_Operator *anitem, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Operator & NewItem(const char * name, Standard_Boolean & isvalued, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");

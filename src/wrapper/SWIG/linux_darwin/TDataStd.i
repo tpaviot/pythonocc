@@ -90,15 +90,15 @@ class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_De
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfExtStringArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfExtStringArray(const Handle_TDataStd_DeltaOnModificationOfExtStringArray &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfExtStringArray(const TDataStd_DeltaOnModificationOfExtStringArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfExtStringArray(const TDataStd_DeltaOnModificationOfExtStringArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfExtStringArray & operator=(const Handle_TDataStd_DeltaOnModificationOfExtStringArray &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfExtStringArray & operator=(const TDataStd_DeltaOnModificationOfExtStringArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfExtStringArray & operator=(const TDataStd_DeltaOnModificationOfExtStringArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfExtStringArray const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DeltaOnModificationOfExtStringArray const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DeltaOnModificationOfExtStringArray {
@@ -128,15 +128,15 @@ class Handle_TDataStd_Relation : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Relation();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Relation(const Handle_TDataStd_Relation &aHandle);
+		Handle_TDataStd_Relation(const TDataStd_Relation *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Relation(const TDataStd_Relation *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Relation & operator=(const Handle_TDataStd_Relation &aHandle);
+		Handle_TDataStd_Relation & operator=(const TDataStd_Relation *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Relation & operator=(const TDataStd_Relation *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Relation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Relation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Relation {
@@ -166,15 +166,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringByte : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte(const Handle_TDataStd_DataMapNodeOfDataMapOfStringByte &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte(const TDataStd_DataMapNodeOfDataMapOfStringByte *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte(const TDataStd_DataMapNodeOfDataMapOfStringByte *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringByte &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte & operator=(const TDataStd_DataMapNodeOfDataMapOfStringByte *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte & operator=(const TDataStd_DataMapNodeOfDataMapOfStringByte *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringByte {
@@ -204,15 +204,15 @@ class Handle_TDataStd_ListNodeOfListOfExtendedString : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfExtendedString();
 		%feature("autodoc", "1");
-		Handle_TDataStd_ListNodeOfListOfExtendedString(const Handle_TDataStd_ListNodeOfListOfExtendedString &aHandle);
+		Handle_TDataStd_ListNodeOfListOfExtendedString(const TDataStd_ListNodeOfListOfExtendedString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfExtendedString(const TDataStd_ListNodeOfListOfExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ListNodeOfListOfExtendedString & operator=(const Handle_TDataStd_ListNodeOfListOfExtendedString &aHandle);
+		Handle_TDataStd_ListNodeOfListOfExtendedString & operator=(const TDataStd_ListNodeOfListOfExtendedString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfExtendedString & operator=(const TDataStd_ListNodeOfListOfExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ListNodeOfListOfExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_ListNodeOfListOfExtendedString const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_ListNodeOfListOfExtendedString {
@@ -242,15 +242,15 @@ class Handle_TDataStd_ExtStringList : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringList();
 		%feature("autodoc", "1");
-		Handle_TDataStd_ExtStringList(const Handle_TDataStd_ExtStringList &aHandle);
+		Handle_TDataStd_ExtStringList(const TDataStd_ExtStringList *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringList(const TDataStd_ExtStringList *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ExtStringList & operator=(const Handle_TDataStd_ExtStringList &aHandle);
+		Handle_TDataStd_ExtStringList & operator=(const TDataStd_ExtStringList *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringList & operator=(const TDataStd_ExtStringList *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ExtStringList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_ExtStringList const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_ExtStringList {
@@ -280,15 +280,15 @@ class Handle_TDataStd_TreeNode : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_TreeNode();
 		%feature("autodoc", "1");
-		Handle_TDataStd_TreeNode(const Handle_TDataStd_TreeNode &aHandle);
+		Handle_TDataStd_TreeNode(const TDataStd_TreeNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_TreeNode(const TDataStd_TreeNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_TreeNode & operator=(const Handle_TDataStd_TreeNode &aHandle);
+		Handle_TDataStd_TreeNode & operator=(const TDataStd_TreeNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_TreeNode & operator=(const TDataStd_TreeNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_TreeNode const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_TreeNode const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_TreeNode {
@@ -318,15 +318,15 @@ class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanList();
 		%feature("autodoc", "1");
-		Handle_TDataStd_BooleanList(const Handle_TDataStd_BooleanList &aHandle);
+		Handle_TDataStd_BooleanList(const TDataStd_BooleanList *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanList(const TDataStd_BooleanList *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_BooleanList & operator=(const Handle_TDataStd_BooleanList &aHandle);
+		Handle_TDataStd_BooleanList & operator=(const TDataStd_BooleanList *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanList & operator=(const TDataStd_BooleanList *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_BooleanList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_BooleanList const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_BooleanList {
@@ -356,15 +356,15 @@ class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Pattern();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Pattern(const Handle_TDataStd_Pattern &aHandle);
+		Handle_TDataStd_Pattern(const TDataStd_Pattern *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Pattern(const TDataStd_Pattern *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Pattern & operator=(const Handle_TDataStd_Pattern &aHandle);
+		Handle_TDataStd_Pattern & operator=(const TDataStd_Pattern *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Pattern & operator=(const TDataStd_Pattern *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Pattern const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Pattern const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Pattern {
@@ -394,15 +394,15 @@ class Handle_TDataStd_Geometry : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Geometry();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Geometry(const Handle_TDataStd_Geometry &aHandle);
+		Handle_TDataStd_Geometry(const TDataStd_Geometry *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Geometry(const TDataStd_Geometry *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Geometry & operator=(const Handle_TDataStd_Geometry &aHandle);
+		Handle_TDataStd_Geometry & operator=(const TDataStd_Geometry *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Geometry & operator=(const TDataStd_Geometry *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Geometry const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Geometry const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Geometry {
@@ -432,15 +432,15 @@ class Handle_TDataStd_UAttribute : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_UAttribute();
 		%feature("autodoc", "1");
-		Handle_TDataStd_UAttribute(const Handle_TDataStd_UAttribute &aHandle);
+		Handle_TDataStd_UAttribute(const TDataStd_UAttribute *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_UAttribute(const TDataStd_UAttribute *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_UAttribute & operator=(const Handle_TDataStd_UAttribute &aHandle);
+		Handle_TDataStd_UAttribute & operator=(const TDataStd_UAttribute *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_UAttribute & operator=(const TDataStd_UAttribute *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_UAttribute const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_UAttribute const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_UAttribute {
@@ -470,15 +470,15 @@ class Handle_TDataStd_Axis : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Axis();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Axis(const Handle_TDataStd_Axis &aHandle);
+		Handle_TDataStd_Axis(const TDataStd_Axis *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Axis(const TDataStd_Axis *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Axis & operator=(const Handle_TDataStd_Axis &aHandle);
+		Handle_TDataStd_Axis & operator=(const TDataStd_Axis *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Axis & operator=(const TDataStd_Axis *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Axis const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Axis const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Axis {
@@ -508,15 +508,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal(const Handle_TDataStd_DataMapNodeOfDataMapOfStringReal &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal(const TDataStd_DataMapNodeOfDataMapOfStringReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal(const TDataStd_DataMapNodeOfDataMapOfStringReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringReal &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal & operator=(const TDataStd_DataMapNodeOfDataMapOfStringReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal & operator=(const TDataStd_DataMapNodeOfDataMapOfStringReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringReal {
@@ -546,15 +546,15 @@ class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_AsciiString();
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString(const Handle_TDataStd_AsciiString &aHandle);
+		Handle_TDataStd_AsciiString(const TDataStd_AsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_AsciiString(const TDataStd_AsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString & operator=(const Handle_TDataStd_AsciiString &aHandle);
+		Handle_TDataStd_AsciiString & operator=(const TDataStd_AsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_AsciiString & operator=(const TDataStd_AsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_AsciiString const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_AsciiString {
@@ -584,15 +584,15 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfReal : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfReal();
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringHArray1OfReal(const Handle_TDataStd_HDataMapOfStringHArray1OfReal &aHandle);
+		Handle_TDataStd_HDataMapOfStringHArray1OfReal(const TDataStd_HDataMapOfStringHArray1OfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfReal(const TDataStd_HDataMapOfStringHArray1OfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringHArray1OfReal & operator=(const Handle_TDataStd_HDataMapOfStringHArray1OfReal &aHandle);
+		Handle_TDataStd_HDataMapOfStringHArray1OfReal & operator=(const TDataStd_HDataMapOfStringHArray1OfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfReal & operator=(const TDataStd_HDataMapOfStringHArray1OfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_HDataMapOfStringHArray1OfReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_HDataMapOfStringHArray1OfReal {
@@ -622,15 +622,15 @@ class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringByte();
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte(const Handle_TDataStd_HDataMapOfStringByte &aHandle);
+		Handle_TDataStd_HDataMapOfStringByte(const TDataStd_HDataMapOfStringByte *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringByte(const TDataStd_HDataMapOfStringByte *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte & operator=(const Handle_TDataStd_HDataMapOfStringByte &aHandle);
+		Handle_TDataStd_HDataMapOfStringByte & operator=(const TDataStd_HDataMapOfStringByte *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringByte & operator=(const TDataStd_HDataMapOfStringByte *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_HDataMapOfStringByte const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_HDataMapOfStringByte {
@@ -660,15 +660,15 @@ class Handle_TDataStd_ReferenceArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceArray(const Handle_TDataStd_ReferenceArray &aHandle);
+		Handle_TDataStd_ReferenceArray(const TDataStd_ReferenceArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceArray(const TDataStd_ReferenceArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceArray & operator=(const Handle_TDataStd_ReferenceArray &aHandle);
+		Handle_TDataStd_ReferenceArray & operator=(const TDataStd_ReferenceArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceArray & operator=(const TDataStd_ReferenceArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceArray const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_ReferenceArray const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_ReferenceArray {
@@ -698,15 +698,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Hand
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger(const Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger & operator=(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger & operator=(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
@@ -736,15 +736,15 @@ class Handle_TDataStd_HArray1OfByte : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfByte();
 		%feature("autodoc", "1");
-		Handle_TDataStd_HArray1OfByte(const Handle_TDataStd_HArray1OfByte &aHandle);
+		Handle_TDataStd_HArray1OfByte(const TDataStd_HArray1OfByte *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfByte(const TDataStd_HArray1OfByte *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HArray1OfByte & operator=(const Handle_TDataStd_HArray1OfByte &aHandle);
+		Handle_TDataStd_HArray1OfByte & operator=(const TDataStd_HArray1OfByte *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfByte & operator=(const TDataStd_HArray1OfByte *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HArray1OfByte const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_HArray1OfByte const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_HArray1OfByte {
@@ -774,15 +774,15 @@ class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnM
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntArray(const Handle_TDataStd_DeltaOnModificationOfIntArray &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfIntArray(const TDataStd_DeltaOnModificationOfIntArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntArray(const TDataStd_DeltaOnModificationOfIntArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntArray & operator=(const Handle_TDataStd_DeltaOnModificationOfIntArray &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfIntArray & operator=(const TDataStd_DeltaOnModificationOfIntArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntArray & operator=(const TDataStd_DeltaOnModificationOfIntArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntArray const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DeltaOnModificationOfIntArray const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DeltaOnModificationOfIntArray {
@@ -812,15 +812,15 @@ class Handle_TDataStd_Point : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Point();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Point(const Handle_TDataStd_Point &aHandle);
+		Handle_TDataStd_Point(const TDataStd_Point *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Point(const TDataStd_Point *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Point & operator=(const Handle_TDataStd_Point &aHandle);
+		Handle_TDataStd_Point & operator=(const TDataStd_Point *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Point & operator=(const TDataStd_Point *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Point const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Point const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Point {
@@ -850,15 +850,15 @@ class Handle_TDataStd_Constraint : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Constraint();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Constraint(const Handle_TDataStd_Constraint &aHandle);
+		Handle_TDataStd_Constraint(const TDataStd_Constraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Constraint(const TDataStd_Constraint *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Constraint & operator=(const Handle_TDataStd_Constraint &aHandle);
+		Handle_TDataStd_Constraint & operator=(const TDataStd_Constraint *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Constraint & operator=(const TDataStd_Constraint *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Constraint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Constraint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Constraint {
@@ -888,15 +888,15 @@ class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringInteger();
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringInteger(const Handle_TDataStd_HDataMapOfStringInteger &aHandle);
+		Handle_TDataStd_HDataMapOfStringInteger(const TDataStd_HDataMapOfStringInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringInteger(const TDataStd_HDataMapOfStringInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringInteger & operator=(const Handle_TDataStd_HDataMapOfStringInteger &aHandle);
+		Handle_TDataStd_HDataMapOfStringInteger & operator=(const TDataStd_HDataMapOfStringInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringInteger & operator=(const TDataStd_HDataMapOfStringInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_HDataMapOfStringInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_HDataMapOfStringInteger {
@@ -926,15 +926,15 @@ class Handle_TDataStd_DeltaOnModificationOfByteArray : public Handle_TDF_DeltaOn
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfByteArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfByteArray(const Handle_TDataStd_DeltaOnModificationOfByteArray &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfByteArray(const TDataStd_DeltaOnModificationOfByteArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfByteArray(const TDataStd_DeltaOnModificationOfByteArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfByteArray & operator=(const Handle_TDataStd_DeltaOnModificationOfByteArray &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfByteArray & operator=(const TDataStd_DeltaOnModificationOfByteArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfByteArray & operator=(const TDataStd_DeltaOnModificationOfByteArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfByteArray const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DeltaOnModificationOfByteArray const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DeltaOnModificationOfByteArray {
@@ -964,15 +964,15 @@ class Handle_TDataStd_IntegerList : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerList();
 		%feature("autodoc", "1");
-		Handle_TDataStd_IntegerList(const Handle_TDataStd_IntegerList &aHandle);
+		Handle_TDataStd_IntegerList(const TDataStd_IntegerList *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerList(const TDataStd_IntegerList *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_IntegerList & operator=(const Handle_TDataStd_IntegerList &aHandle);
+		Handle_TDataStd_IntegerList & operator=(const TDataStd_IntegerList *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerList & operator=(const TDataStd_IntegerList *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_IntegerList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_IntegerList const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_IntegerList {
@@ -1002,15 +1002,15 @@ class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_Delt
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntPackedMap();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntPackedMap(const Handle_TDataStd_DeltaOnModificationOfIntPackedMap &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfIntPackedMap(const TDataStd_DeltaOnModificationOfIntPackedMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntPackedMap(const TDataStd_DeltaOnModificationOfIntPackedMap *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntPackedMap & operator=(const Handle_TDataStd_DeltaOnModificationOfIntPackedMap &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfIntPackedMap & operator=(const TDataStd_DeltaOnModificationOfIntPackedMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntPackedMap & operator=(const TDataStd_DeltaOnModificationOfIntPackedMap *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntPackedMap const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DeltaOnModificationOfIntPackedMap const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DeltaOnModificationOfIntPackedMap {
@@ -1040,15 +1040,15 @@ class Handle_TDataStd_ExtStringArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_ExtStringArray(const Handle_TDataStd_ExtStringArray &aHandle);
+		Handle_TDataStd_ExtStringArray(const TDataStd_ExtStringArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringArray(const TDataStd_ExtStringArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ExtStringArray & operator=(const Handle_TDataStd_ExtStringArray &aHandle);
+		Handle_TDataStd_ExtStringArray & operator=(const TDataStd_ExtStringArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringArray & operator=(const TDataStd_ExtStringArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ExtStringArray const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_ExtStringArray const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_ExtStringArray {
@@ -1078,15 +1078,15 @@ class Handle_TDataStd_Position : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Position();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Position(const Handle_TDataStd_Position &aHandle);
+		Handle_TDataStd_Position(const TDataStd_Position *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Position(const TDataStd_Position *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Position & operator=(const Handle_TDataStd_Position &aHandle);
+		Handle_TDataStd_Position & operator=(const TDataStd_Position *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Position & operator=(const TDataStd_Position *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Position const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Position const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Position {
@@ -1116,15 +1116,15 @@ class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_IntegerArray(const Handle_TDataStd_IntegerArray &aHandle);
+		Handle_TDataStd_IntegerArray(const TDataStd_IntegerArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerArray(const TDataStd_IntegerArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_IntegerArray & operator=(const Handle_TDataStd_IntegerArray &aHandle);
+		Handle_TDataStd_IntegerArray & operator=(const TDataStd_IntegerArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerArray & operator=(const TDataStd_IntegerArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_IntegerArray const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_IntegerArray const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_IntegerArray {
@@ -1154,15 +1154,15 @@ class Handle_TDataStd_HDataMapOfStringReal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringReal();
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringReal(const Handle_TDataStd_HDataMapOfStringReal &aHandle);
+		Handle_TDataStd_HDataMapOfStringReal(const TDataStd_HDataMapOfStringReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringReal(const TDataStd_HDataMapOfStringReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringReal & operator=(const Handle_TDataStd_HDataMapOfStringReal &aHandle);
+		Handle_TDataStd_HDataMapOfStringReal & operator=(const TDataStd_HDataMapOfStringReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringReal & operator=(const TDataStd_HDataMapOfStringReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_HDataMapOfStringReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_HDataMapOfStringReal {
@@ -1192,15 +1192,15 @@ class Handle_TDataStd_Plane : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Plane();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Plane(const Handle_TDataStd_Plane &aHandle);
+		Handle_TDataStd_Plane(const TDataStd_Plane *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Plane(const TDataStd_Plane *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Plane & operator=(const Handle_TDataStd_Plane &aHandle);
+		Handle_TDataStd_Plane & operator=(const TDataStd_Plane *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Plane & operator=(const TDataStd_Plane *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Plane const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Plane const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Plane {
@@ -1230,15 +1230,15 @@ class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceList();
 		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceList(const Handle_TDataStd_ReferenceList &aHandle);
+		Handle_TDataStd_ReferenceList(const TDataStd_ReferenceList *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceList(const TDataStd_ReferenceList *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceList & operator=(const Handle_TDataStd_ReferenceList &aHandle);
+		Handle_TDataStd_ReferenceList & operator=(const TDataStd_ReferenceList *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceList & operator=(const TDataStd_ReferenceList *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_ReferenceList const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_ReferenceList {
@@ -1268,15 +1268,15 @@ class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringString();
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString(const Handle_TDataStd_HDataMapOfStringString &aHandle);
+		Handle_TDataStd_HDataMapOfStringString(const TDataStd_HDataMapOfStringString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringString(const TDataStd_HDataMapOfStringString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString & operator=(const Handle_TDataStd_HDataMapOfStringString &aHandle);
+		Handle_TDataStd_HDataMapOfStringString & operator=(const TDataStd_HDataMapOfStringString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringString & operator=(const TDataStd_HDataMapOfStringString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_HDataMapOfStringString const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_HDataMapOfStringString {
@@ -1306,15 +1306,15 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfInteger : public Handle_MMgt_TSha
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfInteger();
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringHArray1OfInteger(const Handle_TDataStd_HDataMapOfStringHArray1OfInteger &aHandle);
+		Handle_TDataStd_HDataMapOfStringHArray1OfInteger(const TDataStd_HDataMapOfStringHArray1OfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfInteger(const TDataStd_HDataMapOfStringHArray1OfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringHArray1OfInteger & operator=(const Handle_TDataStd_HDataMapOfStringHArray1OfInteger &aHandle);
+		Handle_TDataStd_HDataMapOfStringHArray1OfInteger & operator=(const TDataStd_HDataMapOfStringHArray1OfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfInteger & operator=(const TDataStd_HDataMapOfStringHArray1OfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringHArray1OfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_HDataMapOfStringHArray1OfInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_HDataMapOfStringHArray1OfInteger {
@@ -1344,15 +1344,15 @@ class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOn
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfRealArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray(const Handle_TDataStd_DeltaOnModificationOfRealArray &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfRealArray(const TDataStd_DeltaOnModificationOfRealArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfRealArray(const TDataStd_DeltaOnModificationOfRealArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray & operator=(const Handle_TDataStd_DeltaOnModificationOfRealArray &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfRealArray & operator=(const TDataStd_DeltaOnModificationOfRealArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfRealArray & operator=(const TDataStd_DeltaOnModificationOfRealArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DeltaOnModificationOfRealArray const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DeltaOnModificationOfRealArray {
@@ -1382,15 +1382,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger(const Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger(const TDataStd_DataMapNodeOfDataMapOfStringInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger(const TDataStd_DataMapNodeOfDataMapOfStringInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger & operator=(const TDataStd_DataMapNodeOfDataMapOfStringInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger & operator=(const TDataStd_DataMapNodeOfDataMapOfStringInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger {
@@ -1420,15 +1420,15 @@ class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Variable();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Variable(const Handle_TDataStd_Variable &aHandle);
+		Handle_TDataStd_Variable(const TDataStd_Variable *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Variable(const TDataStd_Variable *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Variable & operator=(const Handle_TDataStd_Variable &aHandle);
+		Handle_TDataStd_Variable & operator=(const TDataStd_Variable *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Variable & operator=(const TDataStd_Variable *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Variable const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Variable const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Variable {
@@ -1458,15 +1458,15 @@ class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_BooleanArray(const Handle_TDataStd_BooleanArray &aHandle);
+		Handle_TDataStd_BooleanArray(const TDataStd_BooleanArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanArray(const TDataStd_BooleanArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_BooleanArray & operator=(const Handle_TDataStd_BooleanArray &aHandle);
+		Handle_TDataStd_BooleanArray & operator=(const TDataStd_BooleanArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanArray & operator=(const TDataStd_BooleanArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_BooleanArray const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_BooleanArray const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_BooleanArray {
@@ -1496,15 +1496,15 @@ class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
 		%feature("autodoc", "1");
 		Handle_TDataStd_PatternStd();
 		%feature("autodoc", "1");
-		Handle_TDataStd_PatternStd(const Handle_TDataStd_PatternStd &aHandle);
+		Handle_TDataStd_PatternStd(const TDataStd_PatternStd *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_PatternStd(const TDataStd_PatternStd *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_PatternStd & operator=(const Handle_TDataStd_PatternStd &aHandle);
+		Handle_TDataStd_PatternStd & operator=(const TDataStd_PatternStd *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_PatternStd & operator=(const TDataStd_PatternStd *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_PatternStd const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_PatternStd const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_PatternStd {
@@ -1534,15 +1534,15 @@ class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntPackedMap();
 		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap(const Handle_TDataStd_IntPackedMap &aHandle);
+		Handle_TDataStd_IntPackedMap(const TDataStd_IntPackedMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntPackedMap(const TDataStd_IntPackedMap *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap & operator=(const Handle_TDataStd_IntPackedMap &aHandle);
+		Handle_TDataStd_IntPackedMap & operator=(const TDataStd_IntPackedMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntPackedMap & operator=(const TDataStd_IntPackedMap *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_IntPackedMap const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_IntPackedMap {
@@ -1572,15 +1572,15 @@ class Handle_TDataStd_HLabelArray1 : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HLabelArray1();
 		%feature("autodoc", "1");
-		Handle_TDataStd_HLabelArray1(const Handle_TDataStd_HLabelArray1 &aHandle);
+		Handle_TDataStd_HLabelArray1(const TDataStd_HLabelArray1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HLabelArray1(const TDataStd_HLabelArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HLabelArray1 & operator=(const Handle_TDataStd_HLabelArray1 &aHandle);
+		Handle_TDataStd_HLabelArray1 & operator=(const TDataStd_HLabelArray1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HLabelArray1 & operator=(const TDataStd_HLabelArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HLabelArray1 const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_HLabelArray1 const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_HLabelArray1 {
@@ -1610,15 +1610,15 @@ class Handle_TDataStd_HArray1OfTrsf : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfTrsf();
 		%feature("autodoc", "1");
-		Handle_TDataStd_HArray1OfTrsf(const Handle_TDataStd_HArray1OfTrsf &aHandle);
+		Handle_TDataStd_HArray1OfTrsf(const TDataStd_HArray1OfTrsf *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfTrsf(const TDataStd_HArray1OfTrsf *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HArray1OfTrsf & operator=(const Handle_TDataStd_HArray1OfTrsf &aHandle);
+		Handle_TDataStd_HArray1OfTrsf & operator=(const TDataStd_HArray1OfTrsf *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfTrsf & operator=(const TDataStd_HArray1OfTrsf *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_HArray1OfTrsf const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_HArray1OfTrsf const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_HArray1OfTrsf {
@@ -1648,15 +1648,15 @@ class Handle_TDataStd_Name : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Name();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Name(const Handle_TDataStd_Name &aHandle);
+		Handle_TDataStd_Name(const TDataStd_Name *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Name(const TDataStd_Name *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Name & operator=(const Handle_TDataStd_Name &aHandle);
+		Handle_TDataStd_Name & operator=(const TDataStd_Name *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Name & operator=(const TDataStd_Name *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Name const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Name const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Name {
@@ -1686,15 +1686,15 @@ class Handle_TDataStd_ListNodeOfListOfByte : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfByte();
 		%feature("autodoc", "1");
-		Handle_TDataStd_ListNodeOfListOfByte(const Handle_TDataStd_ListNodeOfListOfByte &aHandle);
+		Handle_TDataStd_ListNodeOfListOfByte(const TDataStd_ListNodeOfListOfByte *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfByte(const TDataStd_ListNodeOfListOfByte *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ListNodeOfListOfByte & operator=(const Handle_TDataStd_ListNodeOfListOfByte &aHandle);
+		Handle_TDataStd_ListNodeOfListOfByte & operator=(const TDataStd_ListNodeOfListOfByte *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfByte & operator=(const TDataStd_ListNodeOfListOfByte *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ListNodeOfListOfByte const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_ListNodeOfListOfByte const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_ListNodeOfListOfByte {
@@ -1724,15 +1724,15 @@ class Handle_TDataStd_Tick : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Tick();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Tick(const Handle_TDataStd_Tick &aHandle);
+		Handle_TDataStd_Tick(const TDataStd_Tick *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Tick(const TDataStd_Tick *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Tick & operator=(const Handle_TDataStd_Tick &aHandle);
+		Handle_TDataStd_Tick & operator=(const TDataStd_Tick *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Tick & operator=(const TDataStd_Tick *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Tick const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Tick const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Tick {
@@ -1762,15 +1762,15 @@ class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Expression();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Expression(const Handle_TDataStd_Expression &aHandle);
+		Handle_TDataStd_Expression(const TDataStd_Expression *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Expression(const TDataStd_Expression *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Expression & operator=(const Handle_TDataStd_Expression &aHandle);
+		Handle_TDataStd_Expression & operator=(const TDataStd_Expression *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Expression & operator=(const TDataStd_Expression *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Expression const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Expression const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Expression {
@@ -1800,15 +1800,15 @@ class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Placement();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Placement(const Handle_TDataStd_Placement &aHandle);
+		Handle_TDataStd_Placement(const TDataStd_Placement *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Placement(const TDataStd_Placement *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Placement & operator=(const Handle_TDataStd_Placement &aHandle);
+		Handle_TDataStd_Placement & operator=(const TDataStd_Placement *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Placement & operator=(const TDataStd_Placement *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Placement const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Placement const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Placement {
@@ -1838,15 +1838,15 @@ class Handle_TDataStd_Shape : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Shape();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Shape(const Handle_TDataStd_Shape &aHandle);
+		Handle_TDataStd_Shape(const TDataStd_Shape *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Shape(const TDataStd_Shape *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Shape & operator=(const Handle_TDataStd_Shape &aHandle);
+		Handle_TDataStd_Shape & operator=(const TDataStd_Shape *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Shape & operator=(const TDataStd_Shape *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Shape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Shape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Shape {
@@ -1876,15 +1876,15 @@ class Handle_TDataStd_Comment : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Comment();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Comment(const Handle_TDataStd_Comment &aHandle);
+		Handle_TDataStd_Comment(const TDataStd_Comment *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Comment(const TDataStd_Comment *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Comment & operator=(const Handle_TDataStd_Comment &aHandle);
+		Handle_TDataStd_Comment & operator=(const TDataStd_Comment *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Comment & operator=(const TDataStd_Comment *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Comment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Comment const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Comment {
@@ -1914,15 +1914,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringString : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringString();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringString(const Handle_TDataStd_DataMapNodeOfDataMapOfStringString &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringString(const TDataStd_DataMapNodeOfDataMapOfStringString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringString(const TDataStd_DataMapNodeOfDataMapOfStringString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringString & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringString &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringString & operator=(const TDataStd_DataMapNodeOfDataMapOfStringString *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringString & operator=(const TDataStd_DataMapNodeOfDataMapOfStringString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringString const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringString {
@@ -1952,15 +1952,15 @@ class Handle_TDataStd_Integer : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Integer();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Integer(const Handle_TDataStd_Integer &aHandle);
+		Handle_TDataStd_Integer(const TDataStd_Integer *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Integer(const TDataStd_Integer *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Integer & operator=(const Handle_TDataStd_Integer &aHandle);
+		Handle_TDataStd_Integer & operator=(const TDataStd_Integer *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Integer & operator=(const TDataStd_Integer *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Integer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Integer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Integer {
@@ -1990,15 +1990,15 @@ class Handle_TDataStd_Directory : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Directory();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Directory(const Handle_TDataStd_Directory &aHandle);
+		Handle_TDataStd_Directory(const TDataStd_Directory *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Directory(const TDataStd_Directory *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Directory & operator=(const Handle_TDataStd_Directory &aHandle);
+		Handle_TDataStd_Directory & operator=(const TDataStd_Directory *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Directory & operator=(const TDataStd_Directory *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Directory const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Directory const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Directory {
@@ -2028,15 +2028,15 @@ class Handle_TDataStd_Current : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Current();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Current(const Handle_TDataStd_Current &aHandle);
+		Handle_TDataStd_Current(const TDataStd_Current *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Current(const TDataStd_Current *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Current & operator=(const Handle_TDataStd_Current &aHandle);
+		Handle_TDataStd_Current & operator=(const TDataStd_Current *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Current & operator=(const TDataStd_Current *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Current const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Current const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Current {
@@ -2066,15 +2066,15 @@ class Handle_TDataStd_RealArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_RealArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_RealArray(const Handle_TDataStd_RealArray &aHandle);
+		Handle_TDataStd_RealArray(const TDataStd_RealArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_RealArray(const TDataStd_RealArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_RealArray & operator=(const Handle_TDataStd_RealArray &aHandle);
+		Handle_TDataStd_RealArray & operator=(const TDataStd_RealArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_RealArray & operator=(const TDataStd_RealArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_RealArray const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_RealArray const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_RealArray {
@@ -2104,15 +2104,15 @@ class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_NoteBook();
 		%feature("autodoc", "1");
-		Handle_TDataStd_NoteBook(const Handle_TDataStd_NoteBook &aHandle);
+		Handle_TDataStd_NoteBook(const TDataStd_NoteBook *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_NoteBook(const TDataStd_NoteBook *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_NoteBook & operator=(const Handle_TDataStd_NoteBook &aHandle);
+		Handle_TDataStd_NoteBook & operator=(const TDataStd_NoteBook *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_NoteBook & operator=(const TDataStd_NoteBook *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_NoteBook const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_NoteBook const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_NoteBook {
@@ -2142,15 +2142,15 @@ class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_RealList();
 		%feature("autodoc", "1");
-		Handle_TDataStd_RealList(const Handle_TDataStd_RealList &aHandle);
+		Handle_TDataStd_RealList(const TDataStd_RealList *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_RealList(const TDataStd_RealList *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_RealList & operator=(const Handle_TDataStd_RealList &aHandle);
+		Handle_TDataStd_RealList & operator=(const TDataStd_RealList *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_RealList & operator=(const TDataStd_RealList *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_RealList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_RealList const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_RealList {
@@ -2180,15 +2180,15 @@ class Handle_TDataStd_ByteArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ByteArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_ByteArray(const Handle_TDataStd_ByteArray &aHandle);
+		Handle_TDataStd_ByteArray(const TDataStd_ByteArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ByteArray(const TDataStd_ByteArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ByteArray & operator=(const Handle_TDataStd_ByteArray &aHandle);
+		Handle_TDataStd_ByteArray & operator=(const TDataStd_ByteArray *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ByteArray & operator=(const TDataStd_ByteArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_ByteArray const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_ByteArray const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_ByteArray {
@@ -2218,15 +2218,15 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public Handle_
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal(const Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal &aHandle);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal & operator=(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal & operator=(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
@@ -2256,15 +2256,15 @@ class Handle_TDataStd_Real : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Real();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Real(const Handle_TDataStd_Real &aHandle);
+		Handle_TDataStd_Real(const TDataStd_Real *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Real(const TDataStd_Real *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Real & operator=(const Handle_TDataStd_Real &aHandle);
+		Handle_TDataStd_Real & operator=(const TDataStd_Real *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Real & operator=(const TDataStd_Real *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Real const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Real const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_Real {
@@ -2294,15 +2294,15 @@ class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_NamedData();
 		%feature("autodoc", "1");
-		Handle_TDataStd_NamedData(const Handle_TDataStd_NamedData &aHandle);
+		Handle_TDataStd_NamedData(const TDataStd_NamedData *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_NamedData(const TDataStd_NamedData *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_NamedData & operator=(const Handle_TDataStd_NamedData &aHandle);
+		Handle_TDataStd_NamedData & operator=(const TDataStd_NamedData *aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_NamedData & operator=(const TDataStd_NamedData *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_NamedData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_NamedData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TDataStd_NamedData {
@@ -2416,11 +2416,11 @@ class TDataStd_NoteBook : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -2697,7 +2697,7 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("autodoc", "1");
 		const Handle_TColStd_HArray1OfInteger & GetArrayOfIntegers(const TCollection_ExtendedString &theName);
 		%feature("autodoc", "1");
-		void SetArrayOfIntegers(const TCollection_ExtendedString &theName, const Handle_TColStd_HArray1OfInteger &theArrayOfIntegers);
+		void SetArrayOfIntegers(const TCollection_ExtendedString &theName, const TColStd_HArray1OfInteger *theArrayOfIntegers);
 		%feature("autodoc", "1");
 		const TDataStd_DataMapOfStringHArray1OfInteger & GetArraysOfIntegersContainer();
 		%feature("autodoc", "1");
@@ -2709,7 +2709,7 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("autodoc", "1");
 		const Handle_TColStd_HArray1OfReal & GetArrayOfReals(const TCollection_ExtendedString &theName);
 		%feature("autodoc", "1");
-		void SetArrayOfReals(const TCollection_ExtendedString &theName, const Handle_TColStd_HArray1OfReal &theArrayOfReals);
+		void SetArrayOfReals(const TCollection_ExtendedString &theName, const TColStd_HArray1OfReal *theArrayOfReals);
 		%feature("autodoc", "1");
 		const TDataStd_DataMapOfStringHArray1OfReal & GetArraysOfRealsContainer();
 		%feature("autodoc", "1");
@@ -2717,11 +2717,11 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -2772,11 +2772,11 @@ class TDataStd_Placement : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -2925,23 +2925,23 @@ class TDataStd_PatternStd : public TDataStd_Pattern {
 		%feature("autodoc", "1");
 		void Signature(const Standard_Integer signature);
 		%feature("autodoc", "1");
-		void Axis1(const Handle_TNaming_NamedShape &Axis1);
+		void Axis1(const TNaming_NamedShape *Axis1);
 		%feature("autodoc", "1");
-		void Axis2(const Handle_TNaming_NamedShape &Axis2);
+		void Axis2(const TNaming_NamedShape *Axis2);
 		%feature("autodoc", "1");
 		void Axis1Reversed(const Standard_Boolean Axis1Reversed);
 		%feature("autodoc", "1");
 		void Axis2Reversed(const Standard_Boolean Axis2Reversed);
 		%feature("autodoc", "1");
-		void Value1(const Handle_TDataStd_Real &value);
+		void Value1(const TDataStd_Real *value);
 		%feature("autodoc", "1");
-		void Value2(const Handle_TDataStd_Real &value);
+		void Value2(const TDataStd_Real *value);
 		%feature("autodoc", "1");
-		void NbInstances1(const Handle_TDataStd_Integer &NbInstances1);
+		void NbInstances1(const TDataStd_Integer *NbInstances1);
 		%feature("autodoc", "1");
-		void NbInstances2(const Handle_TDataStd_Integer &NbInstances2);
+		void NbInstances2(const TDataStd_Integer *NbInstances2);
 		%feature("autodoc", "1");
-		void Mirror(const Handle_TNaming_NamedShape &plane);
+		void Mirror(const TNaming_NamedShape *plane);
 		%feature("autodoc", "1");
 		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
@@ -2963,13 +2963,13 @@ class TDataStd_PatternStd : public TDataStd_Pattern {
 		%feature("autodoc", "1");
 		Handle_TNaming_NamedShape Mirror() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
+		virtual		void References(const TDF_DataSet *aDataSet) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -3028,7 +3028,7 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void ChangeArray(const Handle_TColStd_HArray1OfReal &newArray, const Standard_Boolean isCheckItems=1);
+		void ChangeArray(const TColStd_HArray1OfReal *newArray, const Standard_Boolean isCheckItems=1);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal const Array() const;
 		%feature("autodoc", "1");
@@ -3040,11 +3040,11 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -3054,7 +3054,7 @@ class TDataStd_RealArray : public TDF_Attribute {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
+		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const TDF_Attribute *anOldAttribute) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3230,7 +3230,7 @@ def __del__(self):
 class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModification {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DeltaOnModificationOfIntPackedMap(const Handle_TDataStd_IntPackedMap &Arr);
+		TDataStd_DeltaOnModificationOfIntPackedMap(const TDataStd_IntPackedMap *Arr);
 		%feature("autodoc", "1");
 		virtual		void Apply();
 		%feature("autodoc", "1");
@@ -3283,11 +3283,11 @@ class TDataStd_Relation : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -3381,11 +3381,11 @@ class TDataStd_AsciiString : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -3475,11 +3475,11 @@ class TDataStd_Expression : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -3522,7 +3522,7 @@ def __del__(self):
 class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModification {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DeltaOnModificationOfExtStringArray(const Handle_TDataStd_ExtStringArray &Arr);
+		TDataStd_DeltaOnModificationOfExtStringArray(const TDataStd_ExtStringArray *Arr);
 		%feature("autodoc", "1");
 		virtual		void Apply();
 		%feature("autodoc", "1");
@@ -3569,11 +3569,11 @@ class TDataStd_Point : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -3665,11 +3665,11 @@ class TDataStd_Position : public TDF_Attribute {
 		%feature("autodoc", "1");
 		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &anAttribute);
+		virtual		void Restore(const TDF_Attribute *anAttribute);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &intoAttribute, const Handle_TDF_RelocationTable &aRelocTationable) const;
+		virtual		void Paste(const TDF_Attribute *intoAttribute, const TDF_RelocationTable *aRelocTationable) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & GetPosition() const;
 		%feature("autodoc", "1");
@@ -3708,7 +3708,7 @@ def __del__(self):
 class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DeltaOnModificationOfRealArray(const Handle_TDataStd_RealArray &Arr);
+		TDataStd_DeltaOnModificationOfRealArray(const TDataStd_RealArray *Arr);
 		%feature("autodoc", "1");
 		virtual		void Apply();
 		%feature("autodoc", "1");
@@ -3826,17 +3826,17 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		const Handle_TDataStd_HArray1OfByte & InternalArray() const;
 		%feature("autodoc", "1");
-		void SetInternalArray(const Handle_TDataStd_HArray1OfByte &values);
+		void SetInternalArray(const TDataStd_HArray1OfByte *values);
 		%feature("autodoc", "1");
 		TDataStd_BooleanArray();
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -3940,7 +3940,7 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfByte const InternalArray() const;
 		%feature("autodoc", "1");
-		void ChangeArray(const Handle_TDataStd_HArray1OfByte &newArray, const Standard_Boolean isCheckItems=1);
+		void ChangeArray(const TDataStd_HArray1OfByte *newArray, const Standard_Boolean isCheckItems=1);
 		%feature("autodoc", "1");
 		Standard_Boolean GetDelta() const;
 		%feature("autodoc", "1");
@@ -3950,11 +3950,11 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -3964,7 +3964,7 @@ class TDataStd_ByteArray : public TDF_Attribute {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
+		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const TDF_Attribute *anOldAttribute) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4005,7 +4005,7 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 		%feature("autodoc", "1");
 		TDataStd_IntPackedMap();
 		%feature("autodoc", "1");
-		Standard_Boolean ChangeMap(const Handle_TColStd_HPackedMapOfInteger &theMap);
+		Standard_Boolean ChangeMap(const TColStd_HPackedMapOfInteger *theMap);
 		%feature("autodoc", "1");
 		const TColStd_PackedMapOfInteger & GetMap() const;
 		%feature("autodoc", "1");
@@ -4029,11 +4029,11 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -4043,7 +4043,7 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
+		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const TDF_Attribute *anOldAttribute) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4109,7 +4109,7 @@ def __del__(self):
 class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DeltaOnModificationOfByteArray(const Handle_TDataStd_ByteArray &Arr);
+		TDataStd_DeltaOnModificationOfByteArray(const TDataStd_ByteArray *Arr);
 		%feature("autodoc", "1");
 		virtual		void Apply();
 		%feature("autodoc", "1");
@@ -4221,11 +4221,11 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -4278,7 +4278,7 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfInteger &I);
+		Standard_Boolean Bind(const TCollection_ExtendedString &K, const TColStd_HArray1OfInteger *I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
 		%feature("autodoc", "1");
@@ -4325,11 +4325,11 @@ class TDataStd_Integer : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -4435,7 +4435,7 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfReal &I);
+		Standard_Boolean Bind(const TCollection_ExtendedString &K, const TColStd_HArray1OfReal *I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
 		%feature("autodoc", "1");
@@ -4494,11 +4494,11 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -4682,11 +4682,11 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -4729,7 +4729,7 @@ def __del__(self):
 class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DeltaOnModificationOfIntArray(const Handle_TDataStd_IntegerArray &Arr);
+		TDataStd_DeltaOnModificationOfIntArray(const TDataStd_IntegerArray *Arr);
 		%feature("autodoc", "1");
 		virtual		void Apply();
 		%feature("autodoc", "1");
@@ -4766,7 +4766,7 @@ def __del__(self):
 class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfReal &I, const TCollection_MapNodePtr &n);
+		TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal(const TCollection_ExtendedString &K, const TColStd_HArray1OfReal *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & Key() const;
 		%feature("autodoc", "1");
@@ -4868,7 +4868,7 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void ChangeArray(const Handle_TColStd_HArray1OfInteger &newArray, const Standard_Boolean isCheckItems=1);
+		void ChangeArray(const TColStd_HArray1OfInteger *newArray, const Standard_Boolean isCheckItems=1);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger const Array() const;
 		%feature("autodoc", "1");
@@ -4880,11 +4880,11 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -4894,7 +4894,7 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
+		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const TDF_Attribute *anOldAttribute) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4945,11 +4945,11 @@ class TDataStd_Current : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -5131,13 +5131,13 @@ class TDataStd_UAttribute : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		virtual		void References(const TDF_DataSet *DS) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -5351,13 +5351,13 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		virtual		void References(const TDF_DataSet *DS) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -5400,7 +5400,7 @@ def __del__(self):
 class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfInteger &I, const TCollection_MapNodePtr &n);
+		TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger(const TCollection_ExtendedString &K, const TColStd_HArray1OfInteger *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & Key() const;
 		%feature("autodoc", "1");
@@ -5447,11 +5447,11 @@ class TDataStd_Tick : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -5508,13 +5508,13 @@ class TDataStd_Shape : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		virtual		void References(const TDF_DataSet *DS) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -5577,19 +5577,19 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		const Handle_TDataStd_HLabelArray1 & InternalArray() const;
 		%feature("autodoc", "1");
-		void SetInternalArray(const Handle_TDataStd_HLabelArray1 &values);
+		void SetInternalArray(const TDataStd_HLabelArray1 *values);
 		%feature("autodoc", "1");
 		TDataStd_ReferenceArray();
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		virtual		void References(const TDF_DataSet *DS) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -5646,11 +5646,11 @@ class TDataStd_Comment : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -5707,11 +5707,11 @@ class TDataStd_Name : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -5756,9 +5756,9 @@ class TDataStd_ChildNodeIterator {
 		%feature("autodoc", "1");
 		TDataStd_ChildNodeIterator();
 		%feature("autodoc", "1");
-		TDataStd_ChildNodeIterator(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
+		TDataStd_ChildNodeIterator(const TDataStd_TreeNode *aTreeNode, const Standard_Boolean allLevels=0);
 		%feature("autodoc", "1");
-		void Initialize(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
+		void Initialize(const TDataStd_TreeNode *aTreeNode, const Standard_Boolean allLevels=0);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
@@ -5793,23 +5793,19 @@ class TDataStd_Directory : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Directory New(const TDF_Label &label);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Directory AddDirectory(const Handle_TDataStd_Directory &dir);
-		%feature("autodoc", "1");
-		TDF_Label MakeObjectLabel(const Handle_TDataStd_Directory &dir);
-		%feature("autodoc", "1");
 		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		TDataStd_Directory();
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		virtual		void References(const TDF_DataSet *DS) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -5882,11 +5878,11 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -5976,13 +5972,13 @@ class TDataStd_Constraint : public TDF_Attribute {
 		%feature("autodoc", "1");
 		TDataStd_Constraint();
 		%feature("autodoc", "1");
-		void Set(const TDataStd_ConstraintEnum type, const Handle_TNaming_NamedShape &G1);
+		void Set(const TDataStd_ConstraintEnum type, const TNaming_NamedShape *G1);
 		%feature("autodoc", "1");
-		void Set(const TDataStd_ConstraintEnum type, const Handle_TNaming_NamedShape &G1, const Handle_TNaming_NamedShape &G2);
+		void Set(const TDataStd_ConstraintEnum type, const TNaming_NamedShape *G1, const TNaming_NamedShape *G2);
 		%feature("autodoc", "1");
-		void Set(const TDataStd_ConstraintEnum type, const Handle_TNaming_NamedShape &G1, const Handle_TNaming_NamedShape &G2, const Handle_TNaming_NamedShape &G3);
+		void Set(const TDataStd_ConstraintEnum type, const TNaming_NamedShape *G1, const TNaming_NamedShape *G2, const TNaming_NamedShape *G3);
 		%feature("autodoc", "1");
-		void Set(const TDataStd_ConstraintEnum type, const Handle_TNaming_NamedShape &G1, const Handle_TNaming_NamedShape &G2, const Handle_TNaming_NamedShape &G3, const Handle_TNaming_NamedShape &G4);
+		void Set(const TDataStd_ConstraintEnum type, const TNaming_NamedShape *G1, const TNaming_NamedShape *G2, const TNaming_NamedShape *G3, const TNaming_NamedShape *G4);
 		%feature("autodoc", "1");
 		Standard_Boolean Verified() const;
 		%feature("autodoc", "1");
@@ -6004,11 +6000,11 @@ class TDataStd_Constraint : public TDF_Attribute {
 		%feature("autodoc", "1");
 		void SetType(const TDataStd_ConstraintEnum CTR);
 		%feature("autodoc", "1");
-		void SetPlane(const Handle_TNaming_NamedShape &plane);
+		void SetPlane(const TNaming_NamedShape *plane);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_TDataStd_Real &V);
+		void SetValue(const TDataStd_Real *V);
 		%feature("autodoc", "1");
-		void SetGeometry(const Standard_Integer Index, const Handle_TNaming_NamedShape &G);
+		void SetGeometry(const Standard_Integer Index, const TNaming_NamedShape *G);
 		%feature("autodoc", "1");
 		void Verified(const Standard_Boolean status);
 		%feature("autodoc", "1");
@@ -6024,11 +6020,11 @@ class TDataStd_Constraint : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -6038,7 +6034,7 @@ class TDataStd_Constraint : public TDF_Attribute {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		virtual		void References(const TDF_DataSet *DS) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6111,13 +6107,13 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		virtual		void References(const TDF_DataSet *DS) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -6233,11 +6229,11 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -6321,11 +6317,11 @@ class TDataStd_Plane : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -6460,35 +6456,35 @@ class TDataStd_Geometry : public TDF_Attribute {
 		%feature("autodoc", "1");
 		TDataStd_GeometryEnum Type(const TDF_Label &L);
 		%feature("autodoc", "1");
-		TDataStd_GeometryEnum Type(const Handle_TNaming_NamedShape &S);
+		TDataStd_GeometryEnum Type(const TNaming_NamedShape *S);
 		%feature("autodoc", "1");
 		Standard_Boolean Point(const TDF_Label &L, gp_Pnt & G);
 		%feature("autodoc", "1");
-		Standard_Boolean Point(const Handle_TNaming_NamedShape &S, gp_Pnt & G);
+		Standard_Boolean Point(const TNaming_NamedShape *S, gp_Pnt & G);
 		%feature("autodoc", "1");
 		Standard_Boolean Axis(const TDF_Label &L, gp_Ax1 & G);
 		%feature("autodoc", "1");
-		Standard_Boolean Axis(const Handle_TNaming_NamedShape &S, gp_Ax1 & G);
+		Standard_Boolean Axis(const TNaming_NamedShape *S, gp_Ax1 & G);
 		%feature("autodoc", "1");
 		Standard_Boolean Line(const TDF_Label &L, gp_Lin & G);
 		%feature("autodoc", "1");
-		Standard_Boolean Line(const Handle_TNaming_NamedShape &S, gp_Lin & G);
+		Standard_Boolean Line(const TNaming_NamedShape *S, gp_Lin & G);
 		%feature("autodoc", "1");
 		Standard_Boolean Circle(const TDF_Label &L, gp_Circ & G);
 		%feature("autodoc", "1");
-		Standard_Boolean Circle(const Handle_TNaming_NamedShape &S, gp_Circ & G);
+		Standard_Boolean Circle(const TNaming_NamedShape *S, gp_Circ & G);
 		%feature("autodoc", "1");
 		Standard_Boolean Ellipse(const TDF_Label &L, gp_Elips & G);
 		%feature("autodoc", "1");
-		Standard_Boolean Ellipse(const Handle_TNaming_NamedShape &S, gp_Elips & G);
+		Standard_Boolean Ellipse(const TNaming_NamedShape *S, gp_Elips & G);
 		%feature("autodoc", "1");
 		Standard_Boolean Plane(const TDF_Label &L, gp_Pln & G);
 		%feature("autodoc", "1");
-		Standard_Boolean Plane(const Handle_TNaming_NamedShape &S, gp_Pln & G);
+		Standard_Boolean Plane(const TNaming_NamedShape *S, gp_Pln & G);
 		%feature("autodoc", "1");
 		Standard_Boolean Cylinder(const TDF_Label &L, gp_Cylinder & G);
 		%feature("autodoc", "1");
-		Standard_Boolean Cylinder(const Handle_TNaming_NamedShape &S, gp_Cylinder & G);
+		Standard_Boolean Cylinder(const TNaming_NamedShape *S, gp_Cylinder & G);
 		%feature("autodoc", "1");
 		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
@@ -6500,11 +6496,11 @@ class TDataStd_Geometry : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -6557,11 +6553,11 @@ class TDataStd_Axis : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -6614,29 +6610,13 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("autodoc", "1");
 		TDataStd_TreeNode();
 		%feature("autodoc", "1");
-		Standard_Boolean Append(const Handle_TDataStd_TreeNode &Child);
-		%feature("autodoc", "1");
-		Standard_Boolean Prepend(const Handle_TDataStd_TreeNode &Child);
-		%feature("autodoc", "1");
-		Standard_Boolean InsertBefore(const Handle_TDataStd_TreeNode &Node);
-		%feature("autodoc", "1");
-		Standard_Boolean InsertAfter(const Handle_TDataStd_TreeNode &Node);
-		%feature("autodoc", "1");
 		Standard_Boolean Remove();
 		%feature("autodoc", "1");
 		Standard_Integer Depth() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsAscendant(const Handle_TDataStd_TreeNode &of) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDescendant(const Handle_TDataStd_TreeNode &of) const;
-		%feature("autodoc", "1");
 		Standard_Boolean IsRoot() const;
 		%feature("autodoc", "1");
 		Handle_TDataStd_TreeNode Root() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsFather(const Handle_TDataStd_TreeNode &of) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsChild(const Handle_TDataStd_TreeNode &of) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasFather() const;
 		%feature("autodoc", "1");
@@ -6660,35 +6640,25 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("autodoc", "1");
 		void SetTreeID(const Standard_GUID &explicitID);
 		%feature("autodoc", "1");
-		void SetFather(const Handle_TDataStd_TreeNode &F);
-		%feature("autodoc", "1");
-		void SetNext(const Handle_TDataStd_TreeNode &F);
-		%feature("autodoc", "1");
-		void SetPrevious(const Handle_TDataStd_TreeNode &F);
-		%feature("autodoc", "1");
-		void SetFirst(const Handle_TDataStd_TreeNode &F);
-		%feature("autodoc", "1");
-		void SetLast(const Handle_TDataStd_TreeNode &F);
-		%feature("autodoc", "1");
 		virtual		void AfterAddition();
 		%feature("autodoc", "1");
 		virtual		void BeforeForget();
 		%feature("autodoc", "1");
 		virtual		void AfterResume();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean BeforeUndo(const Handle_TDF_AttributeDelta &anAttDelta, const Standard_Boolean forceIt=0);
+		virtual		Standard_Boolean BeforeUndo(const TDF_AttributeDelta *anAttDelta, const Standard_Boolean forceIt=0);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean AfterUndo(const Handle_TDF_AttributeDelta &anAttDelta, const Standard_Boolean forceIt=0);
+		virtual		Standard_Boolean AfterUndo(const TDF_AttributeDelta *anAttDelta, const Standard_Boolean forceIt=0);
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const TDF_Attribute *with);
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
+		virtual		void References(const TDF_DataSet *aDataSet) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -6749,7 +6719,7 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void ChangeArray(const Handle_TColStd_HArray1OfExtendedString &newArray, const Standard_Boolean isCheckItems=1);
+		void ChangeArray(const TColStd_HArray1OfExtendedString *newArray, const Standard_Boolean isCheckItems=1);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfExtendedString const Array() const;
 		%feature("autodoc", "1");
@@ -6761,11 +6731,11 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		virtual		void Restore(const TDF_Attribute *With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const TDF_Attribute *Into, const TDF_RelocationTable *RT) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -6775,7 +6745,7 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
+		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const TDF_Attribute *anOldAttribute) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

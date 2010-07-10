@@ -50,15 +50,15 @@ class Handle_Intf_SequenceNodeOfSeqOfTangentZone : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfTangentZone();
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfTangentZone(const Handle_Intf_SequenceNodeOfSeqOfTangentZone &aHandle);
+		Handle_Intf_SequenceNodeOfSeqOfTangentZone(const Intf_SequenceNodeOfSeqOfTangentZone *aHandle);
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfTangentZone(const Intf_SequenceNodeOfSeqOfTangentZone *anItem);
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfTangentZone & operator=(const Handle_Intf_SequenceNodeOfSeqOfTangentZone &aHandle);
+		Handle_Intf_SequenceNodeOfSeqOfTangentZone & operator=(const Intf_SequenceNodeOfSeqOfTangentZone *aHandle);
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfTangentZone & operator=(const Intf_SequenceNodeOfSeqOfTangentZone *anItem);
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfTangentZone const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Intf_SequenceNodeOfSeqOfTangentZone const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Intf_SequenceNodeOfSeqOfTangentZone {
@@ -88,15 +88,15 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionLine : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionLine();
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfSectionLine(const Handle_Intf_SequenceNodeOfSeqOfSectionLine &aHandle);
+		Handle_Intf_SequenceNodeOfSeqOfSectionLine(const Intf_SequenceNodeOfSeqOfSectionLine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionLine(const Intf_SequenceNodeOfSeqOfSectionLine *anItem);
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfSectionLine & operator=(const Handle_Intf_SequenceNodeOfSeqOfSectionLine &aHandle);
+		Handle_Intf_SequenceNodeOfSeqOfSectionLine & operator=(const Intf_SequenceNodeOfSeqOfSectionLine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionLine & operator=(const Intf_SequenceNodeOfSeqOfSectionLine *anItem);
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfSectionLine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Intf_SequenceNodeOfSeqOfSectionLine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Intf_SequenceNodeOfSeqOfSectionLine {
@@ -126,15 +126,15 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionPoint : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionPoint();
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfSectionPoint(const Handle_Intf_SequenceNodeOfSeqOfSectionPoint &aHandle);
+		Handle_Intf_SequenceNodeOfSeqOfSectionPoint(const Intf_SequenceNodeOfSeqOfSectionPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionPoint(const Intf_SequenceNodeOfSeqOfSectionPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfSectionPoint & operator=(const Handle_Intf_SequenceNodeOfSeqOfSectionPoint &aHandle);
+		Handle_Intf_SequenceNodeOfSeqOfSectionPoint & operator=(const Intf_SequenceNodeOfSeqOfSectionPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionPoint & operator=(const Intf_SequenceNodeOfSeqOfSectionPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfSectionPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Intf_SequenceNodeOfSeqOfSectionPoint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Intf_SequenceNodeOfSeqOfSectionPoint {

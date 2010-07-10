@@ -43,15 +43,15 @@ class Handle_GeomTools_UndefinedTypeHandler : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomTools_UndefinedTypeHandler();
 		%feature("autodoc", "1");
-		Handle_GeomTools_UndefinedTypeHandler(const Handle_GeomTools_UndefinedTypeHandler &aHandle);
+		Handle_GeomTools_UndefinedTypeHandler(const GeomTools_UndefinedTypeHandler *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomTools_UndefinedTypeHandler(const GeomTools_UndefinedTypeHandler *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomTools_UndefinedTypeHandler & operator=(const Handle_GeomTools_UndefinedTypeHandler &aHandle);
+		Handle_GeomTools_UndefinedTypeHandler & operator=(const GeomTools_UndefinedTypeHandler *aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomTools_UndefinedTypeHandler & operator=(const GeomTools_UndefinedTypeHandler *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomTools_UndefinedTypeHandler const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomTools_UndefinedTypeHandler const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GeomTools_UndefinedTypeHandler {
@@ -83,11 +83,11 @@ class GeomTools_Curve2dSet {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Handle_Geom2d_Curve &C);
+		Standard_Integer Add(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve Curve2d(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer Index(const Handle_Geom2d_Curve &C) const;
+		Standard_Integer Index(const Geom2d_Curve *C) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -112,11 +112,11 @@ class GeomTools_Curve2dSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void PrintCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS, const Standard_Boolean compact=0);
+		void PrintCurve2d(const Geom2d_Curve *C, Standard_OStream & OS, const Standard_Boolean compact=0);
 		%feature("autodoc", "1");
 		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
 		%feature("autodoc", "1");
-		void SetProgress(const Handle_Message_ProgressIndicator &PR);
+		void SetProgress(const Message_ProgressIndicator *PR);
 		%feature("autodoc", "1");
 		Handle_Message_ProgressIndicator GetProgress() const;
 
@@ -145,11 +145,11 @@ class GeomTools_CurveSet {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Handle_Geom_Curve &C);
+		Standard_Integer Add(const Geom_Curve *C);
 		%feature("autodoc", "1");
 		Handle_Geom_Curve Curve(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer Index(const Handle_Geom_Curve &C) const;
+		Standard_Integer Index(const Geom_Curve *C) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -174,11 +174,11 @@ class GeomTools_CurveSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void PrintCurve(const Handle_Geom_Curve &C, Standard_OStream & OS, const Standard_Boolean compact=0);
+		void PrintCurve(const Geom_Curve *C, Standard_OStream & OS, const Standard_Boolean compact=0);
 		%feature("autodoc", "1");
 		std::istream & ReadCurve(std::istream & IS, Handle_Geom_Curve & C);
 		%feature("autodoc", "1");
-		void SetProgress(const Handle_Message_ProgressIndicator &PR);
+		void SetProgress(const Message_ProgressIndicator *PR);
 		%feature("autodoc", "1");
 		Handle_Message_ProgressIndicator GetProgress() const;
 
@@ -205,25 +205,25 @@ class GeomTools {
 		%feature("autodoc", "1");
 		GeomTools();
 		%feature("autodoc", "1");
-		void Dump(const Handle_Geom_Surface &S, Standard_OStream & OS);
+		void Dump(const Geom_Surface *S, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Write(const Handle_Geom_Surface &S, Standard_OStream & OS);
+		void Write(const Geom_Surface *S, Standard_OStream & OS);
 		%feature("autodoc", "1");
 		void Read(Handle_Geom_Surface & S, std::istream & IS);
 		%feature("autodoc", "1");
-		void Dump(const Handle_Geom_Curve &C, Standard_OStream & OS);
+		void Dump(const Geom_Curve *C, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Write(const Handle_Geom_Curve &C, Standard_OStream & OS);
+		void Write(const Geom_Curve *C, Standard_OStream & OS);
 		%feature("autodoc", "1");
 		void Read(Handle_Geom_Curve & C, std::istream & IS);
 		%feature("autodoc", "1");
-		void Dump(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
+		void Dump(const Geom2d_Curve *C, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Write(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
+		void Write(const Geom2d_Curve *C, Standard_OStream & OS);
 		%feature("autodoc", "1");
 		void Read(Handle_Geom2d_Curve & C, std::istream & IS);
 		%feature("autodoc", "1");
-		void SetUndefinedTypeHandler(const Handle_GeomTools_UndefinedTypeHandler &aHandler);
+		void SetUndefinedTypeHandler(const GeomTools_UndefinedTypeHandler *aHandler);
 		%feature("autodoc", "1");
 		Handle_GeomTools_UndefinedTypeHandler GetUndefinedTypeHandler();
 
@@ -252,11 +252,11 @@ class GeomTools_SurfaceSet {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Handle_Geom_Surface &S);
+		Standard_Integer Add(const Geom_Surface *S);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface Surface(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer Index(const Handle_Geom_Surface &S) const;
+		Standard_Integer Index(const Geom_Surface *S) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -281,11 +281,11 @@ class GeomTools_SurfaceSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void PrintSurface(const Handle_Geom_Surface &S, Standard_OStream & OS, const Standard_Boolean compact=0);
+		void PrintSurface(const Geom_Surface *S, Standard_OStream & OS, const Standard_Boolean compact=0);
 		%feature("autodoc", "1");
 		std::istream & ReadSurface(std::istream & IS, Handle_Geom_Surface & S);
 		%feature("autodoc", "1");
-		void SetProgress(const Handle_Message_ProgressIndicator &PR);
+		void SetProgress(const Message_ProgressIndicator *PR);
 		%feature("autodoc", "1");
 		Handle_Message_ProgressIndicator GetProgress() const;
 
@@ -312,15 +312,15 @@ class GeomTools_UndefinedTypeHandler : public MMgt_TShared {
 		%feature("autodoc", "1");
 		GeomTools_UndefinedTypeHandler();
 		%feature("autodoc", "1");
-		virtual		void PrintCurve(const Handle_Geom_Curve &C, Standard_OStream & OS, const Standard_Boolean compact=0) const;
+		virtual		void PrintCurve(const Geom_Curve *C, Standard_OStream & OS, const Standard_Boolean compact=0) const;
 		%feature("autodoc", "1");
 		virtual		std::istream & ReadCurve(const Standard_Integer ctype, std::istream & IS, Handle_Geom_Curve & C) const;
 		%feature("autodoc", "1");
-		virtual		void PrintCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS, const Standard_Boolean compact=0) const;
+		virtual		void PrintCurve2d(const Geom2d_Curve *C, Standard_OStream & OS, const Standard_Boolean compact=0) const;
 		%feature("autodoc", "1");
 		virtual		std::istream & ReadCurve2d(const Standard_Integer ctype, std::istream & IS, Handle_Geom2d_Curve & C) const;
 		%feature("autodoc", "1");
-		virtual		void PrintSurface(const Handle_Geom_Surface &S, Standard_OStream & OS, const Standard_Boolean compact=0) const;
+		virtual		void PrintSurface(const Geom_Surface *S, Standard_OStream & OS, const Standard_Boolean compact=0) const;
 		%feature("autodoc", "1");
 		virtual		std::istream & ReadSurface(const Standard_Integer ctype, std::istream & IS, Handle_Geom_Surface & S) const;
 		%feature("autodoc", "1");

@@ -43,11 +43,11 @@ class RWStepDimTol_RWDatumFeature {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWDatumFeature();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumFeature &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_DatumFeature *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_DatumFeature &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_DatumFeature *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_DatumFeature &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_DatumFeature *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWDatumFeature::~RWStepDimTol_RWDatumFeature %{
@@ -72,11 +72,11 @@ class RWStepDimTol_RWDatumReference {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWDatumReference();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumReference &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_DatumReference *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_DatumReference &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_DatumReference *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_DatumReference &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_DatumReference *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWDatumReference::~RWStepDimTol_RWDatumReference %{
@@ -101,11 +101,11 @@ class RWStepDimTol_RWParallelismTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWParallelismTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_ParallelismTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_ParallelismTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_ParallelismTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_ParallelismTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_ParallelismTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_ParallelismTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWParallelismTolerance::~RWStepDimTol_RWParallelismTolerance %{
@@ -130,11 +130,11 @@ class RWStepDimTol_RWRoundnessTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWRoundnessTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_RoundnessTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_RoundnessTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_RoundnessTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_RoundnessTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_RoundnessTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_RoundnessTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWRoundnessTolerance::~RWStepDimTol_RWRoundnessTolerance %{
@@ -159,11 +159,11 @@ class RWStepDimTol_RWAngularityTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWAngularityTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_AngularityTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_AngularityTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_AngularityTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_AngularityTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_AngularityTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_AngularityTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWAngularityTolerance::~RWStepDimTol_RWAngularityTolerance %{
@@ -188,11 +188,11 @@ class RWStepDimTol_RWSurfaceProfileTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWSurfaceProfileTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_SurfaceProfileTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_SurfaceProfileTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_SurfaceProfileTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_SurfaceProfileTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWSurfaceProfileTolerance::~RWStepDimTol_RWSurfaceProfileTolerance %{
@@ -217,11 +217,11 @@ class RWStepDimTol_RWCommonDatum {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWCommonDatum();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_CommonDatum &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_CommonDatum *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_CommonDatum &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_CommonDatum *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_CommonDatum &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_CommonDatum *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWCommonDatum::~RWStepDimTol_RWCommonDatum %{
@@ -246,11 +246,11 @@ class RWStepDimTol_RWPlacedDatumTargetFeature {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWPlacedDatumTargetFeature();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PlacedDatumTargetFeature &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_PlacedDatumTargetFeature *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PlacedDatumTargetFeature &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_PlacedDatumTargetFeature *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_PlacedDatumTargetFeature &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_PlacedDatumTargetFeature *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWPlacedDatumTargetFeature::~RWStepDimTol_RWPlacedDatumTargetFeature %{
@@ -275,11 +275,11 @@ class RWStepDimTol_RWPerpendicularityTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWPerpendicularityTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PerpendicularityTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_PerpendicularityTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PerpendicularityTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_PerpendicularityTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_PerpendicularityTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_PerpendicularityTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWPerpendicularityTolerance::~RWStepDimTol_RWPerpendicularityTolerance %{
@@ -304,11 +304,11 @@ class RWStepDimTol_RWSymmetryTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWSymmetryTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_SymmetryTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_SymmetryTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_SymmetryTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_SymmetryTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_SymmetryTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_SymmetryTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWSymmetryTolerance::~RWStepDimTol_RWSymmetryTolerance %{
@@ -333,11 +333,11 @@ class RWStepDimTol_RWCircularRunoutTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWCircularRunoutTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_CircularRunoutTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_CircularRunoutTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_CircularRunoutTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_CircularRunoutTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_CircularRunoutTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_CircularRunoutTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWCircularRunoutTolerance::~RWStepDimTol_RWCircularRunoutTolerance %{
@@ -362,11 +362,11 @@ class RWStepDimTol_RWPositionTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWPositionTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PositionTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_PositionTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PositionTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_PositionTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_PositionTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_PositionTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWPositionTolerance::~RWStepDimTol_RWPositionTolerance %{
@@ -391,11 +391,11 @@ class RWStepDimTol_RWLineProfileTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWLineProfileTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_LineProfileTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_LineProfileTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_LineProfileTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_LineProfileTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_LineProfileTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_LineProfileTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWLineProfileTolerance::~RWStepDimTol_RWLineProfileTolerance %{
@@ -420,11 +420,11 @@ class RWStepDimTol_RWDatumTarget {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWDatumTarget();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumTarget &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_DatumTarget *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_DatumTarget &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_DatumTarget *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_DatumTarget &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_DatumTarget *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWDatumTarget::~RWStepDimTol_RWDatumTarget %{
@@ -449,11 +449,11 @@ class RWStepDimTol_RWFlatnessTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWFlatnessTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_FlatnessTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_FlatnessTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_FlatnessTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_FlatnessTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_FlatnessTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_FlatnessTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWFlatnessTolerance::~RWStepDimTol_RWFlatnessTolerance %{
@@ -478,11 +478,11 @@ class RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol::~RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol %{
@@ -507,11 +507,11 @@ class RWStepDimTol_RWGeometricTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeometricTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_GeometricTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_GeometricTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_GeometricTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_GeometricTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_GeometricTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_GeometricTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWGeometricTolerance::~RWStepDimTol_RWGeometricTolerance %{
@@ -536,11 +536,11 @@ class RWStepDimTol_RWStraightnessTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWStraightnessTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_StraightnessTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_StraightnessTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_StraightnessTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_StraightnessTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_StraightnessTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_StraightnessTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWStraightnessTolerance::~RWStepDimTol_RWStraightnessTolerance %{
@@ -565,11 +565,11 @@ class RWStepDimTol_RWCylindricityTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWCylindricityTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_CylindricityTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_CylindricityTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_CylindricityTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_CylindricityTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_CylindricityTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_CylindricityTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWCylindricityTolerance::~RWStepDimTol_RWCylindricityTolerance %{
@@ -594,11 +594,11 @@ class RWStepDimTol_RWGeometricToleranceRelationship {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeometricToleranceRelationship();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_GeometricToleranceRelationship &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_GeometricToleranceRelationship *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_GeometricToleranceRelationship &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_GeometricToleranceRelationship *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_GeometricToleranceRelationship &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_GeometricToleranceRelationship *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWGeometricToleranceRelationship::~RWStepDimTol_RWGeometricToleranceRelationship %{
@@ -623,11 +623,11 @@ class RWStepDimTol_RWCoaxialityTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWCoaxialityTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_CoaxialityTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_CoaxialityTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_CoaxialityTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_CoaxialityTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_CoaxialityTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_CoaxialityTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWCoaxialityTolerance::~RWStepDimTol_RWCoaxialityTolerance %{
@@ -652,11 +652,11 @@ class RWStepDimTol_RWTotalRunoutTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWTotalRunoutTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_TotalRunoutTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_TotalRunoutTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_TotalRunoutTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_TotalRunoutTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_TotalRunoutTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_TotalRunoutTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWTotalRunoutTolerance::~RWStepDimTol_RWTotalRunoutTolerance %{
@@ -681,11 +681,11 @@ class RWStepDimTol_RWModifiedGeometricTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWModifiedGeometricTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_ModifiedGeometricTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_ModifiedGeometricTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_ModifiedGeometricTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_ModifiedGeometricTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_ModifiedGeometricTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_ModifiedGeometricTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWModifiedGeometricTolerance::~RWStepDimTol_RWModifiedGeometricTolerance %{
@@ -710,11 +710,11 @@ class RWStepDimTol_RWConcentricityTolerance {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWConcentricityTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_ConcentricityTolerance &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_ConcentricityTolerance *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_ConcentricityTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_ConcentricityTolerance *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_ConcentricityTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_ConcentricityTolerance *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWConcentricityTolerance::~RWStepDimTol_RWConcentricityTolerance %{
@@ -739,11 +739,11 @@ class RWStepDimTol_RWDatum {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWDatum();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_Datum &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_Datum *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_Datum &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_Datum *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_Datum &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_Datum *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWDatum::~RWStepDimTol_RWDatum %{
@@ -768,11 +768,11 @@ class RWStepDimTol_RWGeometricToleranceWithDatumReference {
 		%feature("autodoc", "1");
 		RWStepDimTol_RWGeometricToleranceWithDatumReference();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepDimTol_GeometricToleranceWithDatumReference *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepDimTol_GeometricToleranceWithDatumReference *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepDimTol_GeometricToleranceWithDatumReference *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepDimTol_RWGeometricToleranceWithDatumReference::~RWStepDimTol_RWGeometricToleranceWithDatumReference %{

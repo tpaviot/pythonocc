@@ -69,15 +69,15 @@ class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfReference();
 		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
+		Handle_PCDM_SequenceNodeOfSequenceOfReference(const PCDM_SequenceNodeOfSequenceOfReference *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfReference(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
+		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const PCDM_SequenceNodeOfSequenceOfReference *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCDM_SequenceNodeOfSequenceOfReference const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
@@ -107,15 +107,15 @@ class Handle_PCDM_Document : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PCDM_Document();
 		%feature("autodoc", "1");
-		Handle_PCDM_Document(const Handle_PCDM_Document &aHandle);
+		Handle_PCDM_Document(const PCDM_Document *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_Document(const PCDM_Document *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_Document & operator=(const Handle_PCDM_Document &aHandle);
+		Handle_PCDM_Document & operator=(const PCDM_Document *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_Document & operator=(const PCDM_Document *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_Document const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PCDM_Document const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PCDM_Document {
@@ -145,15 +145,15 @@ class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfDocument();
 		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfDocument(const Handle_PCDM_SequenceNodeOfSequenceOfDocument &aHandle);
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument(const PCDM_SequenceNodeOfSequenceOfDocument *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfDocument(const PCDM_SequenceNodeOfSequenceOfDocument *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfDocument & operator=(const Handle_PCDM_SequenceNodeOfSequenceOfDocument &aHandle);
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument & operator=(const PCDM_SequenceNodeOfSequenceOfDocument *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfDocument & operator=(const PCDM_SequenceNodeOfSequenceOfDocument *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCDM_SequenceNodeOfSequenceOfDocument {
@@ -183,15 +183,15 @@ class Handle_PCDM_DriverError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_PCDM_DriverError();
 		%feature("autodoc", "1");
-		Handle_PCDM_DriverError(const Handle_PCDM_DriverError &aHandle);
+		Handle_PCDM_DriverError(const PCDM_DriverError *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_DriverError(const PCDM_DriverError *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_DriverError & operator=(const Handle_PCDM_DriverError &aHandle);
+		Handle_PCDM_DriverError & operator=(const PCDM_DriverError *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_DriverError & operator=(const PCDM_DriverError *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_DriverError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCDM_DriverError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCDM_DriverError {
@@ -221,15 +221,15 @@ class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter();
 		%feature("autodoc", "1");
-		Handle_PCDM_ReadWriter(const Handle_PCDM_ReadWriter &aHandle);
+		Handle_PCDM_ReadWriter(const PCDM_ReadWriter *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter(const PCDM_ReadWriter *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_ReadWriter & operator=(const Handle_PCDM_ReadWriter &aHandle);
+		Handle_PCDM_ReadWriter & operator=(const PCDM_ReadWriter *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter & operator=(const PCDM_ReadWriter *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_ReadWriter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCDM_ReadWriter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCDM_ReadWriter {
@@ -259,15 +259,15 @@ class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter_1();
 		%feature("autodoc", "1");
-		Handle_PCDM_ReadWriter_1(const Handle_PCDM_ReadWriter_1 &aHandle);
+		Handle_PCDM_ReadWriter_1(const PCDM_ReadWriter_1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter_1(const PCDM_ReadWriter_1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_ReadWriter_1 & operator=(const Handle_PCDM_ReadWriter_1 &aHandle);
+		Handle_PCDM_ReadWriter_1 & operator=(const PCDM_ReadWriter_1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter_1 & operator=(const PCDM_ReadWriter_1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_ReadWriter_1 const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCDM_ReadWriter_1 const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCDM_ReadWriter_1 {
@@ -297,15 +297,15 @@ class Handle_PCDM_Reader : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_PCDM_Reader();
 		%feature("autodoc", "1");
-		Handle_PCDM_Reader(const Handle_PCDM_Reader &aHandle);
+		Handle_PCDM_Reader(const PCDM_Reader *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_Reader(const PCDM_Reader *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_Reader & operator=(const Handle_PCDM_Reader &aHandle);
+		Handle_PCDM_Reader & operator=(const PCDM_Reader *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_Reader & operator=(const PCDM_Reader *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_Reader const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCDM_Reader const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCDM_Reader {
@@ -335,15 +335,15 @@ class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
 		%feature("autodoc", "1");
 		Handle_PCDM_RetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_PCDM_RetrievalDriver(const Handle_PCDM_RetrievalDriver &aHandle);
+		Handle_PCDM_RetrievalDriver(const PCDM_RetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_RetrievalDriver(const PCDM_RetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_RetrievalDriver & operator=(const Handle_PCDM_RetrievalDriver &aHandle);
+		Handle_PCDM_RetrievalDriver & operator=(const PCDM_RetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_RetrievalDriver & operator=(const PCDM_RetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_RetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCDM_RetrievalDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCDM_RetrievalDriver {
@@ -373,15 +373,15 @@ class Handle_PCDM_Writer : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_PCDM_Writer();
 		%feature("autodoc", "1");
-		Handle_PCDM_Writer(const Handle_PCDM_Writer &aHandle);
+		Handle_PCDM_Writer(const PCDM_Writer *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_Writer(const PCDM_Writer *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_Writer & operator=(const Handle_PCDM_Writer &aHandle);
+		Handle_PCDM_Writer & operator=(const PCDM_Writer *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_Writer & operator=(const PCDM_Writer *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_Writer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCDM_Writer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCDM_Writer {
@@ -411,15 +411,15 @@ class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
 		%feature("autodoc", "1");
 		Handle_PCDM_StorageDriver();
 		%feature("autodoc", "1");
-		Handle_PCDM_StorageDriver(const Handle_PCDM_StorageDriver &aHandle);
+		Handle_PCDM_StorageDriver(const PCDM_StorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_StorageDriver(const PCDM_StorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_StorageDriver & operator=(const Handle_PCDM_StorageDriver &aHandle);
+		Handle_PCDM_StorageDriver & operator=(const PCDM_StorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_StorageDriver & operator=(const PCDM_StorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_StorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCDM_StorageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCDM_StorageDriver {
@@ -449,15 +449,15 @@ class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_PCDM_ReferenceIterator();
 		%feature("autodoc", "1");
-		Handle_PCDM_ReferenceIterator(const Handle_PCDM_ReferenceIterator &aHandle);
+		Handle_PCDM_ReferenceIterator(const PCDM_ReferenceIterator *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_ReferenceIterator(const PCDM_ReferenceIterator *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_ReferenceIterator & operator=(const Handle_PCDM_ReferenceIterator &aHandle);
+		Handle_PCDM_ReferenceIterator & operator=(const PCDM_ReferenceIterator *aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_ReferenceIterator & operator=(const PCDM_ReferenceIterator *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_ReferenceIterator const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PCDM_ReferenceIterator const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_PCDM_ReferenceIterator {
@@ -485,7 +485,7 @@ def __del__(self):
 class PCDM_Writer : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Write(const Handle_CDM_Document &aDocument, const TCollection_ExtendedString &aFileName);
+		virtual		void Write(const CDM_Document *aDocument, const TCollection_ExtendedString &aFileName);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -565,7 +565,7 @@ class PCDM_Reader : public Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		Handle_CDM_Document CreateDocument();
 		%feature("autodoc", "1");
-		virtual		void Read(const TCollection_ExtendedString &aFileName, const Handle_CDM_Document &aNewDocument, const Handle_CDM_Application &anApplication);
+		virtual		void Read(const TCollection_ExtendedString &aFileName, const CDM_Document *aNewDocument, const CDM_Application *anApplication);
 		%feature("autodoc", "1");
 		PCDM_ReaderStatus GetStatus() const;
 		%feature("autodoc", "1");
@@ -602,17 +602,17 @@ def __del__(self):
 class PCDM_RetrievalDriver : public PCDM_Reader {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Make(const Handle_PCDM_Document &aPCDM, const Handle_CDM_Document &aNewDocument);
+		virtual		void Make(const PCDM_Document *aPCDM, const CDM_Document *aNewDocument);
 		%feature("autodoc", "1");
 		virtual		TCollection_ExtendedString SchemaName() const;
 		%feature("autodoc", "1");
-		virtual		void LoadExtensions(const Handle_Storage_Schema &aSchema, const TColStd_SequenceOfExtendedString &Extensions, const Handle_CDM_MessageDriver &theMsgDriver);
+		virtual		void LoadExtensions(const Storage_Schema *aSchema, const TColStd_SequenceOfExtendedString &Extensions, const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
-		void RaiseIfUnknownTypes(const Handle_Storage_Schema &aSchema, const TCollection_ExtendedString &aFileName);
+		void RaiseIfUnknownTypes(const Storage_Schema *aSchema, const TCollection_ExtendedString &aFileName);
 		%feature("autodoc", "1");
-		Standard_Integer DocumentVersion(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
+		Standard_Integer DocumentVersion(const TCollection_ExtendedString &aFileName, const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
-		Standard_Integer ReferenceCounter(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
+		Standard_Integer ReferenceCounter(const TCollection_ExtendedString &aFileName, const CDM_MessageDriver *theMsgDriver);
 		%feature("autodoc", "1");
 		void SetFormat(const TCollection_ExtendedString &aformat);
 		%feature("autodoc", "1");
@@ -649,11 +649,11 @@ def __del__(self):
 class PCDM_ReferenceIterator : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		PCDM_ReferenceIterator(const Handle_CDM_MessageDriver &theMessageDriver);
+		PCDM_ReferenceIterator(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
-		void LoadReferences(const Handle_CDM_Document &aDocument, const Handle_CDM_MetaData &aMetaData, const Handle_CDM_Application &anApplication, const Standard_Boolean UseStorageConfiguration);
+		void LoadReferences(const CDM_Document *aDocument, const CDM_MetaData *aMetaData, const CDM_Application *anApplication, const Standard_Boolean UseStorageConfiguration);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_CDM_MetaData &aMetaData);
+		virtual		void Init(const CDM_MetaData *aMetaData);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -727,21 +727,21 @@ class PCDM_ReadWriter : public Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Version() const;
 		%feature("autodoc", "1");
-		virtual		void WriteReferenceCounter(const Handle_Storage_Data &aData, const Handle_CDM_Document &aDocument) const;
+		virtual		void WriteReferenceCounter(const Storage_Data *aData, const CDM_Document *aDocument) const;
 		%feature("autodoc", "1");
-		virtual		void WriteReferences(const Handle_Storage_Data &aData, const Handle_CDM_Document &aDocument, const TCollection_ExtendedString &theReferencerFileName) const;
+		virtual		void WriteReferences(const Storage_Data *aData, const CDM_Document *aDocument, const TCollection_ExtendedString &theReferencerFileName) const;
 		%feature("autodoc", "1");
-		virtual		void WriteExtensions(const Handle_Storage_Data &aData, const Handle_CDM_Document &aDocument) const;
+		virtual		void WriteExtensions(const Storage_Data *aData, const CDM_Document *aDocument) const;
 		%feature("autodoc", "1");
-		virtual		void WriteVersion(const Handle_Storage_Data &aData, const Handle_CDM_Document &aDocument) const;
+		virtual		void WriteVersion(const Storage_Data *aData, const CDM_Document *aDocument) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer ReadReferenceCounter(const TCollection_ExtendedString &theFileName, const Handle_CDM_MessageDriver &theMsgDriver) const;
+		virtual		Standard_Integer ReadReferenceCounter(const TCollection_ExtendedString &theFileName, const CDM_MessageDriver *theMsgDriver) const;
 		%feature("autodoc", "1");
-		virtual		void ReadReferences(const TCollection_ExtendedString &aFileName, PCDM_SequenceOfReference & theReferences, const Handle_CDM_MessageDriver &theMsgDriver) const;
+		virtual		void ReadReferences(const TCollection_ExtendedString &aFileName, PCDM_SequenceOfReference & theReferences, const CDM_MessageDriver *theMsgDriver) const;
 		%feature("autodoc", "1");
-		virtual		void ReadExtensions(const TCollection_ExtendedString &aFileName, TColStd_SequenceOfExtendedString & theExtensions, const Handle_CDM_MessageDriver &theMsgDriver) const;
+		virtual		void ReadExtensions(const TCollection_ExtendedString &aFileName, TColStd_SequenceOfExtendedString & theExtensions, const CDM_MessageDriver *theMsgDriver) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer ReadDocumentVersion(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver) const;
+		virtual		Standard_Integer ReadDocumentVersion(const TCollection_ExtendedString &aFileName, const CDM_MessageDriver *theMsgDriver) const;
 		%feature("autodoc", "1");
 		void Open(Storage_BaseDriver & aDriver, const TCollection_ExtendedString &aFileName, const Storage_OpenMode anOpenMode);
 		%feature("autodoc", "1");
@@ -749,7 +749,7 @@ class PCDM_ReadWriter : public Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter Writer();
 		%feature("autodoc", "1");
-		void WriteFileFormat(const Handle_Storage_Data &aData, const Handle_CDM_Document &aDocument);
+		void WriteFileFormat(const Storage_Data *aData, const CDM_Document *aDocument);
 		%feature("autodoc", "1");
 		TCollection_ExtendedString FileFormat(const TCollection_ExtendedString &aFileName);
 		%feature("autodoc", "1");
@@ -788,7 +788,7 @@ class PCDM_ReadWriter_1 : public PCDM_ReadWriter {
 		%feature("autodoc", "1");
 		PCDM_ReadWriter_1();
 		%feature("autodoc", "1");
-		virtual		Standard_Integer ReadReferenceCounter(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver) const;
+		virtual		Standard_Integer ReadReferenceCounter(const TCollection_ExtendedString &aFileName, const CDM_MessageDriver *theMsgDriver) const;
 
 };
 %extend PCDM_ReadWriter_1 {
@@ -854,9 +854,9 @@ class PCDM {
 		%feature("autodoc", "1");
 		PCDM();
 		%feature("autodoc", "1");
-		Standard_Boolean FindStorageDriver(const Handle_CDM_Document &aDocument);
+		Standard_Boolean FindStorageDriver(const CDM_Document *aDocument);
 		%feature("autodoc", "1");
-		Handle_Storage_Schema Schema(const TCollection_ExtendedString &aSchemaName, const Handle_CDM_Application &anApplication);
+		Handle_Storage_Schema Schema(const TCollection_ExtendedString &aSchemaName, const CDM_Application *anApplication);
 
 };
 %feature("shadow") PCDM::~PCDM %{
@@ -887,19 +887,19 @@ class PCDM_SequenceOfDocument : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const PCDM_SequenceOfDocument & operator=(const PCDM_SequenceOfDocument &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_PCDM_Document &T);
+		void Append(const PCDM_Document *T);
 		%feature("autodoc", "1");
 		void Append(PCDM_SequenceOfDocument & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_PCDM_Document &T);
+		void Prepend(const PCDM_Document *T);
 		%feature("autodoc", "1");
 		void Prepend(PCDM_SequenceOfDocument & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_PCDM_Document &I);
+		void InsertBefore(const Standard_Integer Index, const PCDM_Document *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, PCDM_SequenceOfDocument & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_PCDM_Document &T);
+		void InsertAfter(const Standard_Integer Index, const PCDM_Document *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, PCDM_SequenceOfDocument & S);
 		%feature("autodoc", "1");
@@ -913,7 +913,7 @@ class PCDM_SequenceOfDocument : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_PCDM_Document & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PCDM_Document &I);
+		void SetValue(const Standard_Integer Index, const PCDM_Document *I);
 		%feature("autodoc", "1");
 		Handle_PCDM_Document & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -1009,7 +1009,7 @@ def __del__(self):
 class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		PCDM_SequenceNodeOfSequenceOfDocument(const Handle_PCDM_Document &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		PCDM_SequenceNodeOfSequenceOfDocument(const PCDM_Document *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_PCDM_Document & Value() const;
 		%feature("autodoc", "1");

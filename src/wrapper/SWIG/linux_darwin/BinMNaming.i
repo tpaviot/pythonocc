@@ -43,15 +43,15 @@ class Handle_BinMNaming_NamingDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamingDriver();
 		%feature("autodoc", "1");
-		Handle_BinMNaming_NamingDriver(const Handle_BinMNaming_NamingDriver &aHandle);
+		Handle_BinMNaming_NamingDriver(const BinMNaming_NamingDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamingDriver(const BinMNaming_NamingDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMNaming_NamingDriver & operator=(const Handle_BinMNaming_NamingDriver &aHandle);
+		Handle_BinMNaming_NamingDriver & operator=(const BinMNaming_NamingDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamingDriver & operator=(const BinMNaming_NamingDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMNaming_NamingDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMNaming_NamingDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMNaming_NamingDriver {
@@ -81,15 +81,15 @@ class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamedShapeDriver();
 		%feature("autodoc", "1");
-		Handle_BinMNaming_NamedShapeDriver(const Handle_BinMNaming_NamedShapeDriver &aHandle);
+		Handle_BinMNaming_NamedShapeDriver(const BinMNaming_NamedShapeDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamedShapeDriver(const BinMNaming_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMNaming_NamedShapeDriver & operator=(const Handle_BinMNaming_NamedShapeDriver &aHandle);
+		Handle_BinMNaming_NamedShapeDriver & operator=(const BinMNaming_NamedShapeDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamedShapeDriver & operator=(const BinMNaming_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMNaming_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMNaming_NamedShapeDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinMNaming_NamedShapeDriver {
@@ -119,7 +119,7 @@ class BinMNaming {
 		%feature("autodoc", "1");
 		BinMNaming();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+		void AddDrivers(const BinMDF_ADriverTable *theDriverTable, const CDM_MessageDriver *aMsgDrv);
 
 };
 %feature("shadow") BinMNaming::~BinMNaming %{
@@ -142,13 +142,13 @@ def __del__(self):
 class BinMNaming_NamingDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMNaming_NamingDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		BinMNaming_NamingDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const TDF_Attribute *Target, BinObjMgt_RRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		virtual		void Paste(const TDF_Attribute *Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -183,13 +183,13 @@ def __del__(self):
 class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMNaming_NamedShapeDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		BinMNaming_NamedShapeDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const TDF_Attribute *Target, BinObjMgt_RRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		virtual		void Paste(const TDF_Attribute *Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{

@@ -103,9 +103,9 @@ class Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient(const Standard_Transient *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient(const Handle_Standard_Transient &aTid);
+		Handle_Standard_Transient(const Standard_Transient *aTid);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator=(const Handle_Standard_Transient &aHandle);
+		Handle_Standard_Transient & operator=(const Standard_Transient *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator=(const Standard_Transient *anItem);
 		%feature("autodoc", "1");
@@ -117,15 +117,11 @@ class Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		const Standard_Transient * Access() const;
 		%feature("autodoc", "1");
-		int operator==(const Handle_Standard_Transient &right) const;
-		%feature("autodoc", "1");
 		int operator==(const Standard_Transient *right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Handle_Standard_Transient &right) const;
 		%feature("autodoc", "1");
 		int operator!=(const Standard_Transient *right) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Transient const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_Transient const DownCast(const Standard_Transient *AnObject);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -163,15 +159,15 @@ class Handle_Standard_Failure : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Standard_Failure();
 		%feature("autodoc", "1");
-		Handle_Standard_Failure(const Handle_Standard_Failure &aHandle);
+		Handle_Standard_Failure(const Standard_Failure *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_Failure(const Standard_Failure *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Failure & operator=(const Handle_Standard_Failure &aHandle);
+		Handle_Standard_Failure & operator=(const Standard_Failure *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_Failure & operator=(const Standard_Failure *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Failure const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_Failure const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_Failure {
@@ -201,15 +197,15 @@ class Handle_Standard_DomainError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Standard_DomainError();
 		%feature("autodoc", "1");
-		Handle_Standard_DomainError(const Handle_Standard_DomainError &aHandle);
+		Handle_Standard_DomainError(const Standard_DomainError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_DomainError(const Standard_DomainError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_DomainError & operator=(const Handle_Standard_DomainError &aHandle);
+		Handle_Standard_DomainError & operator=(const Standard_DomainError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_DomainError & operator=(const Standard_DomainError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_DomainError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_DomainError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_DomainError {
@@ -239,15 +235,15 @@ class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_RangeError();
 		%feature("autodoc", "1");
-		Handle_Standard_RangeError(const Handle_Standard_RangeError &aHandle);
+		Handle_Standard_RangeError(const Standard_RangeError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_RangeError(const Standard_RangeError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_RangeError & operator=(const Handle_Standard_RangeError &aHandle);
+		Handle_Standard_RangeError & operator=(const Standard_RangeError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_RangeError & operator=(const Standard_RangeError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_RangeError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_RangeError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_RangeError {
@@ -277,15 +273,15 @@ class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 		%feature("autodoc", "1");
 		Handle_Standard_NullValue();
 		%feature("autodoc", "1");
-		Handle_Standard_NullValue(const Handle_Standard_NullValue &aHandle);
+		Handle_Standard_NullValue(const Standard_NullValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NullValue(const Standard_NullValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NullValue & operator=(const Handle_Standard_NullValue &aHandle);
+		Handle_Standard_NullValue & operator=(const Standard_NullValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NullValue & operator=(const Standard_NullValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NullValue const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_NullValue const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_NullValue {
@@ -315,15 +311,15 @@ class Handle_Standard_LicenseError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseError();
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseError(const Handle_Standard_LicenseError &aHandle);
+		Handle_Standard_LicenseError(const Standard_LicenseError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseError(const Standard_LicenseError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseError & operator=(const Handle_Standard_LicenseError &aHandle);
+		Handle_Standard_LicenseError & operator=(const Standard_LicenseError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseError & operator=(const Standard_LicenseError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_LicenseError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_LicenseError {
@@ -353,15 +349,15 @@ class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseNotFound();
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseNotFound(const Handle_Standard_LicenseNotFound &aHandle);
+		Handle_Standard_LicenseNotFound(const Standard_LicenseNotFound *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseNotFound(const Standard_LicenseNotFound *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseNotFound & operator=(const Handle_Standard_LicenseNotFound &aHandle);
+		Handle_Standard_LicenseNotFound & operator=(const Standard_LicenseNotFound *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseNotFound & operator=(const Standard_LicenseNotFound *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseNotFound const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_LicenseNotFound const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_LicenseNotFound {
@@ -391,15 +387,15 @@ class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_TypeMismatch();
 		%feature("autodoc", "1");
-		Handle_Standard_TypeMismatch(const Handle_Standard_TypeMismatch &aHandle);
+		Handle_Standard_TypeMismatch(const Standard_TypeMismatch *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_TypeMismatch(const Standard_TypeMismatch *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_TypeMismatch & operator=(const Handle_Standard_TypeMismatch &aHandle);
+		Handle_Standard_TypeMismatch & operator=(const Standard_TypeMismatch *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_TypeMismatch & operator=(const Standard_TypeMismatch *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_TypeMismatch const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_TypeMismatch const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_TypeMismatch {
@@ -429,15 +425,15 @@ class Handle_Standard_OutOfRange : public Handle_Standard_RangeError {
 		%feature("autodoc", "1");
 		Handle_Standard_OutOfRange();
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfRange(const Handle_Standard_OutOfRange &aHandle);
+		Handle_Standard_OutOfRange(const Standard_OutOfRange *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_OutOfRange(const Standard_OutOfRange *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfRange & operator=(const Handle_Standard_OutOfRange &aHandle);
+		Handle_Standard_OutOfRange & operator=(const Standard_OutOfRange *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_OutOfRange & operator=(const Standard_OutOfRange *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfRange const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_OutOfRange const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_OutOfRange {
@@ -467,15 +463,15 @@ class Handle_Standard_NumericError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Standard_NumericError();
 		%feature("autodoc", "1");
-		Handle_Standard_NumericError(const Handle_Standard_NumericError &aHandle);
+		Handle_Standard_NumericError(const Standard_NumericError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NumericError(const Standard_NumericError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NumericError & operator=(const Handle_Standard_NumericError &aHandle);
+		Handle_Standard_NumericError & operator=(const Standard_NumericError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NumericError & operator=(const Standard_NumericError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NumericError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_NumericError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_NumericError {
@@ -505,15 +501,15 @@ class Handle_Standard_NoMoreObject : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_NoMoreObject();
 		%feature("autodoc", "1");
-		Handle_Standard_NoMoreObject(const Handle_Standard_NoMoreObject &aHandle);
+		Handle_Standard_NoMoreObject(const Standard_NoMoreObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NoMoreObject(const Standard_NoMoreObject *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NoMoreObject & operator=(const Handle_Standard_NoMoreObject &aHandle);
+		Handle_Standard_NoMoreObject & operator=(const Standard_NoMoreObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NoMoreObject & operator=(const Standard_NoMoreObject *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NoMoreObject const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_NoMoreObject const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_NoMoreObject {
@@ -543,15 +539,15 @@ class Handle_Standard_ProgramError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Standard_ProgramError();
 		%feature("autodoc", "1");
-		Handle_Standard_ProgramError(const Handle_Standard_ProgramError &aHandle);
+		Handle_Standard_ProgramError(const Standard_ProgramError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_ProgramError(const Standard_ProgramError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_ProgramError & operator=(const Handle_Standard_ProgramError &aHandle);
+		Handle_Standard_ProgramError & operator=(const Standard_ProgramError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_ProgramError & operator=(const Standard_ProgramError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_ProgramError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_ProgramError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_ProgramError {
@@ -581,15 +577,15 @@ class Handle_Standard_NotImplemented : public Handle_Standard_ProgramError {
 		%feature("autodoc", "1");
 		Handle_Standard_NotImplemented();
 		%feature("autodoc", "1");
-		Handle_Standard_NotImplemented(const Handle_Standard_NotImplemented &aHandle);
+		Handle_Standard_NotImplemented(const Standard_NotImplemented *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NotImplemented(const Standard_NotImplemented *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NotImplemented & operator=(const Handle_Standard_NotImplemented &aHandle);
+		Handle_Standard_NotImplemented & operator=(const Standard_NotImplemented *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NotImplemented & operator=(const Standard_NotImplemented *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NotImplemented const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_NotImplemented const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_NotImplemented {
@@ -619,15 +615,15 @@ class Handle_Standard_NullObject : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_NullObject();
 		%feature("autodoc", "1");
-		Handle_Standard_NullObject(const Handle_Standard_NullObject &aHandle);
+		Handle_Standard_NullObject(const Standard_NullObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NullObject(const Standard_NullObject *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NullObject & operator=(const Handle_Standard_NullObject &aHandle);
+		Handle_Standard_NullObject & operator=(const Standard_NullObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NullObject & operator=(const Standard_NullObject *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NullObject const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_NullObject const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_NullObject {
@@ -657,7 +653,7 @@ class Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_Standard_Persistent();
 		%feature("autodoc", "1");
-		Handle_Standard_Persistent(const Handle_Standard_Persistent &aTid);
+		Handle_Standard_Persistent(const Standard_Persistent *aTid);
 		%feature("autodoc", "1");
 		Handle_Standard_Persistent(const Standard_Persistent *anItem);
 		%feature("autodoc", "1");
@@ -669,11 +665,7 @@ class Handle_Standard_Persistent {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		int operator==(const Handle_Standard_Persistent &right) const;
-		%feature("autodoc", "1");
 		int operator==(const Standard_Persistent *right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Handle_Standard_Persistent &right) const;
 		%feature("autodoc", "1");
 		int operator!=(const Standard_Persistent *right) const;
 		%feature("autodoc", "1");
@@ -683,11 +675,11 @@ class Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Persistent * Access() const;
 		%feature("autodoc", "1");
-		Handle_Standard_Persistent & operator=(const Handle_Standard_Persistent &aHandle);
+		Handle_Standard_Persistent & operator=(const Standard_Persistent *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_Persistent & operator=(const Standard_Persistent *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Persistent const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_Standard_Persistent const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_Standard_Persistent {
@@ -717,15 +709,15 @@ class Handle_Standard_AbortiveTransaction : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Standard_AbortiveTransaction();
 		%feature("autodoc", "1");
-		Handle_Standard_AbortiveTransaction(const Handle_Standard_AbortiveTransaction &aHandle);
+		Handle_Standard_AbortiveTransaction(const Standard_AbortiveTransaction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_AbortiveTransaction(const Standard_AbortiveTransaction *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_AbortiveTransaction & operator=(const Handle_Standard_AbortiveTransaction &aHandle);
+		Handle_Standard_AbortiveTransaction & operator=(const Standard_AbortiveTransaction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_AbortiveTransaction & operator=(const Standard_AbortiveTransaction *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_AbortiveTransaction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_AbortiveTransaction const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_AbortiveTransaction {
@@ -755,15 +747,15 @@ class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionError();
 		%feature("autodoc", "1");
-		Handle_Standard_DimensionError(const Handle_Standard_DimensionError &aHandle);
+		Handle_Standard_DimensionError(const Standard_DimensionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionError(const Standard_DimensionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_DimensionError & operator=(const Handle_Standard_DimensionError &aHandle);
+		Handle_Standard_DimensionError & operator=(const Standard_DimensionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionError & operator=(const Standard_DimensionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_DimensionError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_DimensionError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_DimensionError {
@@ -793,15 +785,15 @@ class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
 		%feature("autodoc", "1");
 		Handle_Standard_DivideByZero();
 		%feature("autodoc", "1");
-		Handle_Standard_DivideByZero(const Handle_Standard_DivideByZero &aHandle);
+		Handle_Standard_DivideByZero(const Standard_DivideByZero *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_DivideByZero(const Standard_DivideByZero *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_DivideByZero & operator=(const Handle_Standard_DivideByZero &aHandle);
+		Handle_Standard_DivideByZero & operator=(const Standard_DivideByZero *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_DivideByZero & operator=(const Standard_DivideByZero *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_DivideByZero const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_DivideByZero const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_DivideByZero {
@@ -831,15 +823,15 @@ class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_NoSuchObject();
 		%feature("autodoc", "1");
-		Handle_Standard_NoSuchObject(const Handle_Standard_NoSuchObject &aHandle);
+		Handle_Standard_NoSuchObject(const Standard_NoSuchObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NoSuchObject(const Standard_NoSuchObject *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NoSuchObject & operator=(const Handle_Standard_NoSuchObject &aHandle);
+		Handle_Standard_NoSuchObject & operator=(const Standard_NoSuchObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NoSuchObject & operator=(const Standard_NoSuchObject *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NoSuchObject const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_NoSuchObject const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_NoSuchObject {
@@ -869,15 +861,15 @@ class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_ConstructionError();
 		%feature("autodoc", "1");
-		Handle_Standard_ConstructionError(const Handle_Standard_ConstructionError &aHandle);
+		Handle_Standard_ConstructionError(const Standard_ConstructionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_ConstructionError(const Standard_ConstructionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_ConstructionError & operator=(const Handle_Standard_ConstructionError &aHandle);
+		Handle_Standard_ConstructionError & operator=(const Standard_ConstructionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_ConstructionError & operator=(const Standard_ConstructionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_ConstructionError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_ConstructionError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_ConstructionError {
@@ -907,15 +899,15 @@ class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError 
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionMismatch();
 		%feature("autodoc", "1");
-		Handle_Standard_DimensionMismatch(const Handle_Standard_DimensionMismatch &aHandle);
+		Handle_Standard_DimensionMismatch(const Standard_DimensionMismatch *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionMismatch(const Standard_DimensionMismatch *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_DimensionMismatch & operator=(const Handle_Standard_DimensionMismatch &aHandle);
+		Handle_Standard_DimensionMismatch & operator=(const Standard_DimensionMismatch *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionMismatch & operator=(const Standard_DimensionMismatch *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_DimensionMismatch const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_DimensionMismatch const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_DimensionMismatch {
@@ -945,15 +937,15 @@ class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
 		%feature("autodoc", "1");
 		Handle_Standard_OutOfMemory();
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory(const Handle_Standard_OutOfMemory &aHandle);
+		Handle_Standard_OutOfMemory(const Standard_OutOfMemory *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_OutOfMemory(const Standard_OutOfMemory *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory & operator=(const Handle_Standard_OutOfMemory &aHandle);
+		Handle_Standard_OutOfMemory & operator=(const Standard_OutOfMemory *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_OutOfMemory & operator=(const Standard_OutOfMemory *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_OutOfMemory const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_OutOfMemory {
@@ -983,15 +975,15 @@ class Handle_Standard_Type : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Standard_Type();
 		%feature("autodoc", "1");
-		Handle_Standard_Type(const Handle_Standard_Type &aHandle);
+		Handle_Standard_Type(const Standard_Type *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_Type(const Standard_Type *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Type & operator=(const Handle_Standard_Type &aHandle);
+		Handle_Standard_Type & operator=(const Standard_Type *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_Type & operator=(const Standard_Type *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Type const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_Type const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_Type {
@@ -1021,15 +1013,15 @@ class Handle_Standard_Overflow : public Handle_Standard_NumericError {
 		%feature("autodoc", "1");
 		Handle_Standard_Overflow();
 		%feature("autodoc", "1");
-		Handle_Standard_Overflow(const Handle_Standard_Overflow &aHandle);
+		Handle_Standard_Overflow(const Standard_Overflow *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_Overflow(const Standard_Overflow *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Overflow & operator=(const Handle_Standard_Overflow &aHandle);
+		Handle_Standard_Overflow & operator=(const Standard_Overflow *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_Overflow & operator=(const Standard_Overflow *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Overflow const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_Overflow const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_Overflow {
@@ -1059,15 +1051,15 @@ class Handle_Standard_NegativeValue : public Handle_Standard_RangeError {
 		%feature("autodoc", "1");
 		Handle_Standard_NegativeValue();
 		%feature("autodoc", "1");
-		Handle_Standard_NegativeValue(const Handle_Standard_NegativeValue &aHandle);
+		Handle_Standard_NegativeValue(const Standard_NegativeValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NegativeValue(const Standard_NegativeValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NegativeValue & operator=(const Handle_Standard_NegativeValue &aHandle);
+		Handle_Standard_NegativeValue & operator=(const Standard_NegativeValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_NegativeValue & operator=(const Standard_NegativeValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_NegativeValue const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_NegativeValue const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_NegativeValue {
@@ -1097,15 +1089,15 @@ class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_ImmutableObject();
 		%feature("autodoc", "1");
-		Handle_Standard_ImmutableObject(const Handle_Standard_ImmutableObject &aHandle);
+		Handle_Standard_ImmutableObject(const Standard_ImmutableObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_ImmutableObject(const Standard_ImmutableObject *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_ImmutableObject & operator=(const Handle_Standard_ImmutableObject &aHandle);
+		Handle_Standard_ImmutableObject & operator=(const Standard_ImmutableObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_ImmutableObject & operator=(const Standard_ImmutableObject *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_ImmutableObject const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_ImmutableObject const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_ImmutableObject {
@@ -1135,15 +1127,15 @@ class Handle_Standard_Underflow : public Handle_Standard_NumericError {
 		%feature("autodoc", "1");
 		Handle_Standard_Underflow();
 		%feature("autodoc", "1");
-		Handle_Standard_Underflow(const Handle_Standard_Underflow &aHandle);
+		Handle_Standard_Underflow(const Standard_Underflow *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_Underflow(const Standard_Underflow *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Underflow & operator=(const Handle_Standard_Underflow &aHandle);
+		Handle_Standard_Underflow & operator=(const Standard_Underflow *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_Underflow & operator=(const Standard_Underflow *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Underflow const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_Underflow const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_Underflow {
@@ -1173,15 +1165,15 @@ class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_MultiplyDefined();
 		%feature("autodoc", "1");
-		Handle_Standard_MultiplyDefined(const Handle_Standard_MultiplyDefined &aHandle);
+		Handle_Standard_MultiplyDefined(const Standard_MultiplyDefined *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_MultiplyDefined(const Standard_MultiplyDefined *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_MultiplyDefined & operator=(const Handle_Standard_MultiplyDefined &aHandle);
+		Handle_Standard_MultiplyDefined & operator=(const Standard_MultiplyDefined *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_MultiplyDefined & operator=(const Standard_MultiplyDefined *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_MultiplyDefined const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_MultiplyDefined const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_MultiplyDefined {
@@ -1211,15 +1203,15 @@ class Handle_Standard_TooManyUsers : public Handle_Standard_LicenseError {
 		%feature("autodoc", "1");
 		Handle_Standard_TooManyUsers();
 		%feature("autodoc", "1");
-		Handle_Standard_TooManyUsers(const Handle_Standard_TooManyUsers &aHandle);
+		Handle_Standard_TooManyUsers(const Standard_TooManyUsers *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_TooManyUsers(const Standard_TooManyUsers *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_TooManyUsers & operator=(const Handle_Standard_TooManyUsers &aHandle);
+		Handle_Standard_TooManyUsers & operator=(const Standard_TooManyUsers *aHandle);
 		%feature("autodoc", "1");
 		Handle_Standard_TooManyUsers & operator=(const Standard_TooManyUsers *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_TooManyUsers const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_TooManyUsers const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Standard_TooManyUsers {
@@ -1263,11 +1255,11 @@ class Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsInstance(const Handle_Standard_Type &theType) const;
+		Standard_Boolean IsInstance(const Standard_Type *theType) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsInstance(const char * theTypeName) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &theType) const;
+		Standard_Boolean IsKind(const Standard_Type *theType) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsKind(const char * theTypeName) const;
 		%feature("autodoc", "1");
@@ -2008,8 +2000,6 @@ class Standard_Type : public Standard_Transient {
 		%feature("autodoc", "1");
 		Standard_Type(const char * aName, const Standard_Integer aSize, const Standard_Integer aNumberOfParent, const Standard_Address anAncestors, const Standard_Address aFields);
 		%feature("autodoc", "1");
-		Standard_Boolean SubType(const Handle_Standard_Type &aOther) const;
-		%feature("autodoc", "1");
 		Standard_Boolean SubType(const char * theName) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsImported() const;
@@ -2262,7 +2252,7 @@ class Standard_AncestorIterator {
 		%feature("autodoc", "1");
 		Standard_AncestorIterator(const Standard_AncestorIterator &anOther);
 		%feature("autodoc", "1");
-		Standard_AncestorIterator(const Handle_Standard_Type &aType);
+		Standard_AncestorIterator(const Standard_Type *aType);
 		%feature("autodoc", "1");
 		void Assign(const Standard_AncestorIterator &anOther);
 		%feature("autodoc", "1");
@@ -2753,7 +2743,7 @@ class Standard_ErrorHandler {
 		%feature("autodoc", "1");
 		void Unlink();
 		%feature("autodoc", "1");
-		Standard_Boolean Catches(const Handle_Standard_Type &aType);
+		Standard_Boolean Catches(const Standard_Type *aType);
 		%feature("autodoc", "1");
 		Handle_Standard_Failure Error() const;
 		%feature("autodoc", "1");
@@ -2792,9 +2782,9 @@ class Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &arg0) const;
+		Standard_Boolean IsKind(const Standard_Type *arg0) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsInstance(const Handle_Standard_Type &arg0) const;
+		Standard_Boolean IsInstance(const Standard_Type *arg0) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");

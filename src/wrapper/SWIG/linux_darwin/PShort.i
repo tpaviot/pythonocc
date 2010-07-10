@@ -43,15 +43,15 @@ class Handle_PShort_HArray2OfShortReal : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PShort_HArray2OfShortReal();
 		%feature("autodoc", "1");
-		Handle_PShort_HArray2OfShortReal(const Handle_PShort_HArray2OfShortReal &aHandle);
+		Handle_PShort_HArray2OfShortReal(const PShort_HArray2OfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_HArray2OfShortReal(const PShort_HArray2OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_HArray2OfShortReal & operator=(const Handle_PShort_HArray2OfShortReal &aHandle);
+		Handle_PShort_HArray2OfShortReal & operator=(const PShort_HArray2OfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_HArray2OfShortReal & operator=(const PShort_HArray2OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_HArray2OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PShort_HArray2OfShortReal const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PShort_HArray2OfShortReal {
@@ -81,15 +81,15 @@ class Handle_PShort_HSequenceOfShortReal : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PShort_HSequenceOfShortReal();
 		%feature("autodoc", "1");
-		Handle_PShort_HSequenceOfShortReal(const Handle_PShort_HSequenceOfShortReal &aHandle);
+		Handle_PShort_HSequenceOfShortReal(const PShort_HSequenceOfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_HSequenceOfShortReal(const PShort_HSequenceOfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_HSequenceOfShortReal & operator=(const Handle_PShort_HSequenceOfShortReal &aHandle);
+		Handle_PShort_HSequenceOfShortReal & operator=(const PShort_HSequenceOfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_HSequenceOfShortReal & operator=(const PShort_HSequenceOfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_HSequenceOfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PShort_HSequenceOfShortReal const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PShort_HSequenceOfShortReal {
@@ -119,15 +119,15 @@ class Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public Handle_PStand
 		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal();
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal(const Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal &aHandle);
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal(const PShort_VArrayNodeOfFieldOfHArray2OfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal(const PShort_VArrayNodeOfFieldOfHArray2OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal & operator=(const Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal &aHandle);
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal & operator=(const PShort_VArrayNodeOfFieldOfHArray2OfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal & operator=(const PShort_VArrayNodeOfFieldOfHArray2OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
@@ -157,15 +157,15 @@ class Handle_PShort_HArray1OfShortReal : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PShort_HArray1OfShortReal();
 		%feature("autodoc", "1");
-		Handle_PShort_HArray1OfShortReal(const Handle_PShort_HArray1OfShortReal &aHandle);
+		Handle_PShort_HArray1OfShortReal(const PShort_HArray1OfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_HArray1OfShortReal(const PShort_HArray1OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_HArray1OfShortReal & operator=(const Handle_PShort_HArray1OfShortReal &aHandle);
+		Handle_PShort_HArray1OfShortReal & operator=(const PShort_HArray1OfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_HArray1OfShortReal & operator=(const PShort_HArray1OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_HArray1OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PShort_HArray1OfShortReal const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PShort_HArray1OfShortReal {
@@ -195,15 +195,15 @@ class Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public Handle_PStand
 		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal();
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal &aHandle);
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const PShort_VArrayNodeOfFieldOfHArray1OfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const PShort_VArrayNodeOfFieldOfHArray1OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal & operator=(const Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal &aHandle);
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal & operator=(const PShort_VArrayNodeOfFieldOfHArray1OfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal & operator=(const PShort_VArrayNodeOfFieldOfHArray1OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
@@ -233,15 +233,15 @@ class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal();
 		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &aHandle);
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal(const PShort_SeqNodeOfHSequenceOfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal(const PShort_SeqNodeOfHSequenceOfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal & operator=(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &aHandle);
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal & operator=(const PShort_SeqNodeOfHSequenceOfShortReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal & operator=(const PShort_SeqNodeOfHSequenceOfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PShort_SeqNodeOfHSequenceOfShortReal {
@@ -371,21 +371,13 @@ class PShort_HSequenceOfShortReal : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Append(const Standard_ShortReal &T);
 		%feature("autodoc", "1");
-		void Append(const Handle_PShort_HSequenceOfShortReal &S);
-		%feature("autodoc", "1");
 		void Prepend(const Standard_ShortReal &T);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_PShort_HSequenceOfShortReal &S);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, const Standard_ShortReal &T);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_PShort_HSequenceOfShortReal &S);
-		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, const Standard_ShortReal &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_PShort_HSequenceOfShortReal &S);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer I, const Standard_Integer J);
 		%feature("autodoc", "1");
@@ -423,11 +415,11 @@ class PShort_HSequenceOfShortReal : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_HSequenceOfShortRealFirstItem() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_HSequenceOfShortRealFirstItem(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
+		void _CSFDB_SetPShort_HSequenceOfShortRealFirstItem(const PShort_SeqNodeOfHSequenceOfShortReal *p);
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_HSequenceOfShortRealLastItem() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_HSequenceOfShortRealLastItem(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
+		void _CSFDB_SetPShort_HSequenceOfShortRealLastItem(const PShort_SeqNodeOfHSequenceOfShortReal *p);
 		%feature("autodoc", "1");
 		Standard_Integer _CSFDB_GetPShort_HSequenceOfShortRealSize() const;
 		%feature("autodoc", "1");
@@ -554,7 +546,7 @@ def __del__(self):
 class PShort_SeqExplorerOfHSequenceOfShortReal {
 	public:
 		%feature("autodoc", "1");
-		PShort_SeqExplorerOfHSequenceOfShortReal(const Handle_PShort_HSequenceOfShortReal &S);
+		PShort_SeqExplorerOfHSequenceOfShortReal(const PShort_HSequenceOfShortReal *S);
 		%feature("autodoc", "1");
 		Standard_ShortReal Value(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -614,12 +606,6 @@ def __del__(self):
 class PShort_SeqNodeOfHSequenceOfShortReal : public PMMgt_PManaged {
 	public:
 		%feature("autodoc", "1");
-		PShort_SeqNodeOfHSequenceOfShortReal(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &TheLast, const Standard_ShortReal &TheItem);
-		%feature("autodoc", "1");
-		PShort_SeqNodeOfHSequenceOfShortReal(const Standard_ShortReal &TheItem, const Handle_PShort_SeqNodeOfHSequenceOfShortReal &TheFirst);
-		%feature("autodoc", "1");
-		PShort_SeqNodeOfHSequenceOfShortReal(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &ThePrevious, const Handle_PShort_SeqNodeOfHSequenceOfShortReal &TheNext, const Standard_ShortReal &TheItem);
-		%feature("autodoc", "1");
 		Standard_ShortReal Value() const;
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal Next() const;
@@ -628,25 +614,17 @@ class PShort_SeqNodeOfHSequenceOfShortReal : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		void SetValue(const Standard_ShortReal &AnItem);
 		%feature("autodoc", "1");
-		void SetNext(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &ANode);
-		%feature("autodoc", "1");
-		void SetPrevious(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &ANode);
-		%feature("autodoc", "1");
 		PShort_SeqNodeOfHSequenceOfShortReal();
 		%feature("autodoc", "1");
 		PShort_SeqNodeOfHSequenceOfShortReal(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_SeqNodeOfHSequenceOfShortRealMyPrevious() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_SeqNodeOfHSequenceOfShortRealMyPrevious(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
-		%feature("autodoc", "1");
 		Standard_ShortReal _CSFDB_GetPShort_SeqNodeOfHSequenceOfShortRealMyItem() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPShort_SeqNodeOfHSequenceOfShortRealMyItem(const Standard_ShortReal p);
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_SeqNodeOfHSequenceOfShortRealMyNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_SeqNodeOfHSequenceOfShortRealMyNext(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

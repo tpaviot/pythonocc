@@ -48,15 +48,15 @@ class Handle_MgtBRep_TranslateTool1 : public Handle_MgtTopoDS_TranslateTool1 {
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool1();
 		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool1(const Handle_MgtBRep_TranslateTool1 &aHandle);
+		Handle_MgtBRep_TranslateTool1(const MgtBRep_TranslateTool1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool1(const MgtBRep_TranslateTool1 *anItem);
 		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool1 & operator=(const Handle_MgtBRep_TranslateTool1 &aHandle);
+		Handle_MgtBRep_TranslateTool1 & operator=(const MgtBRep_TranslateTool1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool1 & operator=(const MgtBRep_TranslateTool1 *anItem);
 		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool1 const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MgtBRep_TranslateTool1 const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MgtBRep_TranslateTool1 {
@@ -86,15 +86,15 @@ class Handle_MgtBRep_TranslateTool : public Handle_MgtTopoDS_TranslateTool {
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool();
 		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool(const Handle_MgtBRep_TranslateTool &aHandle);
+		Handle_MgtBRep_TranslateTool(const MgtBRep_TranslateTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool(const MgtBRep_TranslateTool *anItem);
 		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool & operator=(const Handle_MgtBRep_TranslateTool &aHandle);
+		Handle_MgtBRep_TranslateTool & operator=(const MgtBRep_TranslateTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool & operator=(const MgtBRep_TranslateTool *anItem);
 		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MgtBRep_TranslateTool const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MgtBRep_TranslateTool {
@@ -209,7 +209,7 @@ class MgtBRep {
 		%feature("autodoc", "1");
 		void Translate1(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, PTopoDS_Shape1 & aResult, const MgtBRep_TriangleMode aTriMode);
 		%feature("autodoc", "1");
-		void Translate(const Handle_PTopoDS_HShape &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
+		void Translate(const PTopoDS_HShape *aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
 		%feature("autodoc", "1");
 		void Translate1(const PTopoDS_Shape1 &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
 
@@ -240,47 +240,47 @@ class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 		%feature("autodoc", "1");
 		virtual		void MakeVertex(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
-		virtual		void MakeVertex(const Handle_PTopoDS_HShape &S) const;
+		virtual		void MakeVertex(const PTopoDS_HShape *S) const;
 		%feature("autodoc", "1");
 		virtual		void MakeEdge(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
-		virtual		void MakeEdge(const Handle_PTopoDS_HShape &S) const;
+		virtual		void MakeEdge(const PTopoDS_HShape *S) const;
 		%feature("autodoc", "1");
 		virtual		void MakeWire(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
-		virtual		void MakeWire(const Handle_PTopoDS_HShape &S) const;
+		virtual		void MakeWire(const PTopoDS_HShape *S) const;
 		%feature("autodoc", "1");
 		virtual		void MakeFace(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
-		virtual		void MakeFace(const Handle_PTopoDS_HShape &S) const;
+		virtual		void MakeFace(const PTopoDS_HShape *S) const;
 		%feature("autodoc", "1");
 		virtual		void MakeShell(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
-		virtual		void MakeShell(const Handle_PTopoDS_HShape &S) const;
+		virtual		void MakeShell(const PTopoDS_HShape *S) const;
 		%feature("autodoc", "1");
 		virtual		void MakeSolid(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
-		virtual		void MakeSolid(const Handle_PTopoDS_HShape &S) const;
+		virtual		void MakeSolid(const PTopoDS_HShape *S) const;
 		%feature("autodoc", "1");
 		virtual		void MakeCompSolid(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
-		virtual		void MakeCompSolid(const Handle_PTopoDS_HShape &S) const;
+		virtual		void MakeCompSolid(const PTopoDS_HShape *S) const;
 		%feature("autodoc", "1");
 		virtual		void MakeCompound(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
-		virtual		void MakeCompound(const Handle_PTopoDS_HShape &S) const;
+		virtual		void MakeCompound(const PTopoDS_HShape *S) const;
 		%feature("autodoc", "1");
-		virtual		void UpdateVertex(const TopoDS_Shape &S1, const Handle_PTopoDS_HShape &S2, PTColStd_TransientPersistentMap & M) const;
+		virtual		void UpdateVertex(const TopoDS_Shape &S1, const PTopoDS_HShape *S2, PTColStd_TransientPersistentMap & M) const;
 		%feature("autodoc", "1");
-		virtual		void UpdateVertex(const Handle_PTopoDS_HShape &S1, TopoDS_Shape & S2, PTColStd_PersistentTransientMap & M) const;
+		virtual		void UpdateVertex(const PTopoDS_HShape *S1, TopoDS_Shape & S2, PTColStd_PersistentTransientMap & M) const;
 		%feature("autodoc", "1");
-		virtual		void UpdateEdge(const TopoDS_Shape &S1, const Handle_PTopoDS_HShape &S2, PTColStd_TransientPersistentMap & M) const;
+		virtual		void UpdateEdge(const TopoDS_Shape &S1, const PTopoDS_HShape *S2, PTColStd_TransientPersistentMap & M) const;
 		%feature("autodoc", "1");
-		virtual		void UpdateEdge(const Handle_PTopoDS_HShape &S1, TopoDS_Shape & S2, PTColStd_PersistentTransientMap & M) const;
+		virtual		void UpdateEdge(const PTopoDS_HShape *S1, TopoDS_Shape & S2, PTColStd_PersistentTransientMap & M) const;
 		%feature("autodoc", "1");
-		virtual		void UpdateFace(const TopoDS_Shape &S1, const Handle_PTopoDS_HShape &S2, PTColStd_TransientPersistentMap & M) const;
+		virtual		void UpdateFace(const TopoDS_Shape &S1, const PTopoDS_HShape *S2, PTColStd_TransientPersistentMap & M) const;
 		%feature("autodoc", "1");
-		virtual		void UpdateFace(const Handle_PTopoDS_HShape &S1, TopoDS_Shape & S2, PTColStd_PersistentTransientMap & M) const;
+		virtual		void UpdateFace(const PTopoDS_HShape *S1, TopoDS_Shape & S2, PTColStd_PersistentTransientMap & M) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

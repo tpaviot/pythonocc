@@ -43,15 +43,15 @@ class Handle_ShapeUpgrade_Tool : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_Tool();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_Tool(const Handle_ShapeUpgrade_Tool &aHandle);
+		Handle_ShapeUpgrade_Tool(const ShapeUpgrade_Tool *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_Tool(const ShapeUpgrade_Tool *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_Tool & operator=(const Handle_ShapeUpgrade_Tool &aHandle);
+		Handle_ShapeUpgrade_Tool & operator=(const ShapeUpgrade_Tool *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_Tool & operator=(const ShapeUpgrade_Tool *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_Tool const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_Tool const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_Tool {
@@ -81,15 +81,15 @@ class Handle_ShapeUpgrade_FaceDivide : public Handle_ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FaceDivide();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivide(const Handle_ShapeUpgrade_FaceDivide &aHandle);
+		Handle_ShapeUpgrade_FaceDivide(const ShapeUpgrade_FaceDivide *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FaceDivide(const ShapeUpgrade_FaceDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivide & operator=(const Handle_ShapeUpgrade_FaceDivide &aHandle);
+		Handle_ShapeUpgrade_FaceDivide & operator=(const ShapeUpgrade_FaceDivide *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FaceDivide & operator=(const ShapeUpgrade_FaceDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivide const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_FaceDivide const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_FaceDivide {
@@ -119,15 +119,15 @@ class Handle_ShapeUpgrade_FaceDivideArea : public Handle_ShapeUpgrade_FaceDivide
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FaceDivideArea();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivideArea(const Handle_ShapeUpgrade_FaceDivideArea &aHandle);
+		Handle_ShapeUpgrade_FaceDivideArea(const ShapeUpgrade_FaceDivideArea *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FaceDivideArea(const ShapeUpgrade_FaceDivideArea *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivideArea & operator=(const Handle_ShapeUpgrade_FaceDivideArea &aHandle);
+		Handle_ShapeUpgrade_FaceDivideArea & operator=(const ShapeUpgrade_FaceDivideArea *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FaceDivideArea & operator=(const ShapeUpgrade_FaceDivideArea *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivideArea const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_FaceDivideArea const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_FaceDivideArea {
@@ -157,15 +157,15 @@ class Handle_ShapeUpgrade_SplitSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurface();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurface(const Handle_ShapeUpgrade_SplitSurface &aHandle);
+		Handle_ShapeUpgrade_SplitSurface(const ShapeUpgrade_SplitSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurface(const ShapeUpgrade_SplitSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurface & operator=(const Handle_ShapeUpgrade_SplitSurface &aHandle);
+		Handle_ShapeUpgrade_SplitSurface & operator=(const ShapeUpgrade_SplitSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurface & operator=(const ShapeUpgrade_SplitSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_SplitSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_SplitSurface {
@@ -195,15 +195,15 @@ class Handle_ShapeUpgrade_SplitSurfaceAngle : public Handle_ShapeUpgrade_SplitSu
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurfaceAngle();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceAngle(const Handle_ShapeUpgrade_SplitSurfaceAngle &aHandle);
+		Handle_ShapeUpgrade_SplitSurfaceAngle(const ShapeUpgrade_SplitSurfaceAngle *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurfaceAngle(const ShapeUpgrade_SplitSurfaceAngle *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceAngle & operator=(const Handle_ShapeUpgrade_SplitSurfaceAngle &aHandle);
+		Handle_ShapeUpgrade_SplitSurfaceAngle & operator=(const ShapeUpgrade_SplitSurfaceAngle *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurfaceAngle & operator=(const ShapeUpgrade_SplitSurfaceAngle *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceAngle const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_SplitSurfaceAngle const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_SplitSurfaceAngle {
@@ -233,15 +233,15 @@ class Handle_ShapeUpgrade_EdgeDivide : public Handle_ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_EdgeDivide();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_EdgeDivide(const Handle_ShapeUpgrade_EdgeDivide &aHandle);
+		Handle_ShapeUpgrade_EdgeDivide(const ShapeUpgrade_EdgeDivide *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_EdgeDivide(const ShapeUpgrade_EdgeDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_EdgeDivide & operator=(const Handle_ShapeUpgrade_EdgeDivide &aHandle);
+		Handle_ShapeUpgrade_EdgeDivide & operator=(const ShapeUpgrade_EdgeDivide *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_EdgeDivide & operator=(const ShapeUpgrade_EdgeDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_EdgeDivide const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_EdgeDivide const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_EdgeDivide {
@@ -271,15 +271,15 @@ class Handle_ShapeUpgrade_ClosedEdgeDivide : public Handle_ShapeUpgrade_EdgeDivi
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ClosedEdgeDivide();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedEdgeDivide(const Handle_ShapeUpgrade_ClosedEdgeDivide &aHandle);
+		Handle_ShapeUpgrade_ClosedEdgeDivide(const ShapeUpgrade_ClosedEdgeDivide *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ClosedEdgeDivide(const ShapeUpgrade_ClosedEdgeDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedEdgeDivide & operator=(const Handle_ShapeUpgrade_ClosedEdgeDivide &aHandle);
+		Handle_ShapeUpgrade_ClosedEdgeDivide & operator=(const ShapeUpgrade_ClosedEdgeDivide *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ClosedEdgeDivide & operator=(const ShapeUpgrade_ClosedEdgeDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedEdgeDivide const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_ClosedEdgeDivide const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_ClosedEdgeDivide {
@@ -309,15 +309,15 @@ class Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis : public Handle_ShapeUpgra
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis(const Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis &aHandle);
+		Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis(const ShapeUpgrade_ConvertSurfaceToBezierBasis *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis(const ShapeUpgrade_ConvertSurfaceToBezierBasis *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis & operator=(const Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis &aHandle);
+		Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis & operator=(const ShapeUpgrade_ConvertSurfaceToBezierBasis *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis & operator=(const ShapeUpgrade_ConvertSurfaceToBezierBasis *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis {
@@ -347,15 +347,15 @@ class Handle_ShapeUpgrade_RemoveLocations : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_RemoveLocations();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveLocations(const Handle_ShapeUpgrade_RemoveLocations &aHandle);
+		Handle_ShapeUpgrade_RemoveLocations(const ShapeUpgrade_RemoveLocations *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_RemoveLocations(const ShapeUpgrade_RemoveLocations *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveLocations & operator=(const Handle_ShapeUpgrade_RemoveLocations &aHandle);
+		Handle_ShapeUpgrade_RemoveLocations & operator=(const ShapeUpgrade_RemoveLocations *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_RemoveLocations & operator=(const ShapeUpgrade_RemoveLocations *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveLocations const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_RemoveLocations const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_RemoveLocations {
@@ -385,15 +385,15 @@ class Handle_ShapeUpgrade_RemoveInternalWires : public Handle_ShapeUpgrade_Tool 
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_RemoveInternalWires();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveInternalWires(const Handle_ShapeUpgrade_RemoveInternalWires &aHandle);
+		Handle_ShapeUpgrade_RemoveInternalWires(const ShapeUpgrade_RemoveInternalWires *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_RemoveInternalWires(const ShapeUpgrade_RemoveInternalWires *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveInternalWires & operator=(const Handle_ShapeUpgrade_RemoveInternalWires &aHandle);
+		Handle_ShapeUpgrade_RemoveInternalWires & operator=(const ShapeUpgrade_RemoveInternalWires *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_RemoveInternalWires & operator=(const ShapeUpgrade_RemoveInternalWires *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveInternalWires const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_RemoveInternalWires const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_RemoveInternalWires {
@@ -423,15 +423,15 @@ class Handle_ShapeUpgrade_SplitSurfaceArea : public Handle_ShapeUpgrade_SplitSur
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurfaceArea();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea(const Handle_ShapeUpgrade_SplitSurfaceArea &aHandle);
+		Handle_ShapeUpgrade_SplitSurfaceArea(const ShapeUpgrade_SplitSurfaceArea *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurfaceArea(const ShapeUpgrade_SplitSurfaceArea *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const Handle_ShapeUpgrade_SplitSurfaceArea &aHandle);
+		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const ShapeUpgrade_SplitSurfaceArea *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const ShapeUpgrade_SplitSurfaceArea *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_SplitSurfaceArea const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_SplitSurfaceArea {
@@ -461,15 +461,15 @@ class Handle_ShapeUpgrade_FixSmallCurves : public Handle_ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FixSmallCurves();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallCurves(const Handle_ShapeUpgrade_FixSmallCurves &aHandle);
+		Handle_ShapeUpgrade_FixSmallCurves(const ShapeUpgrade_FixSmallCurves *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FixSmallCurves(const ShapeUpgrade_FixSmallCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallCurves & operator=(const Handle_ShapeUpgrade_FixSmallCurves &aHandle);
+		Handle_ShapeUpgrade_FixSmallCurves & operator=(const ShapeUpgrade_FixSmallCurves *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FixSmallCurves & operator=(const ShapeUpgrade_FixSmallCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_FixSmallCurves const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_FixSmallCurves {
@@ -499,15 +499,15 @@ class Handle_ShapeUpgrade_FixSmallBezierCurves : public Handle_ShapeUpgrade_FixS
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FixSmallBezierCurves();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallBezierCurves(const Handle_ShapeUpgrade_FixSmallBezierCurves &aHandle);
+		Handle_ShapeUpgrade_FixSmallBezierCurves(const ShapeUpgrade_FixSmallBezierCurves *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FixSmallBezierCurves(const ShapeUpgrade_FixSmallBezierCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallBezierCurves & operator=(const Handle_ShapeUpgrade_FixSmallBezierCurves &aHandle);
+		Handle_ShapeUpgrade_FixSmallBezierCurves & operator=(const ShapeUpgrade_FixSmallBezierCurves *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FixSmallBezierCurves & operator=(const ShapeUpgrade_FixSmallBezierCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallBezierCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_FixSmallBezierCurves const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_FixSmallBezierCurves {
@@ -537,15 +537,15 @@ class Handle_ShapeUpgrade_SplitSurfaceContinuity : public Handle_ShapeUpgrade_Sp
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurfaceContinuity();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity(const Handle_ShapeUpgrade_SplitSurfaceContinuity &aHandle);
+		Handle_ShapeUpgrade_SplitSurfaceContinuity(const ShapeUpgrade_SplitSurfaceContinuity *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurfaceContinuity(const ShapeUpgrade_SplitSurfaceContinuity *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const Handle_ShapeUpgrade_SplitSurfaceContinuity &aHandle);
+		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const ShapeUpgrade_SplitSurfaceContinuity *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const ShapeUpgrade_SplitSurfaceContinuity *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_SplitSurfaceContinuity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
@@ -575,15 +575,15 @@ class Handle_ShapeUpgrade_SplitCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve(const Handle_ShapeUpgrade_SplitCurve &aHandle);
+		Handle_ShapeUpgrade_SplitCurve(const ShapeUpgrade_SplitCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve(const ShapeUpgrade_SplitCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve & operator=(const Handle_ShapeUpgrade_SplitCurve &aHandle);
+		Handle_ShapeUpgrade_SplitCurve & operator=(const ShapeUpgrade_SplitCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve & operator=(const ShapeUpgrade_SplitCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_SplitCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_SplitCurve {
@@ -613,15 +613,15 @@ class Handle_ShapeUpgrade_SplitCurve2d : public Handle_ShapeUpgrade_SplitCurve {
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve2d();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve2d(const Handle_ShapeUpgrade_SplitCurve2d &aHandle);
+		Handle_ShapeUpgrade_SplitCurve2d(const ShapeUpgrade_SplitCurve2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve2d(const ShapeUpgrade_SplitCurve2d *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve2d & operator=(const Handle_ShapeUpgrade_SplitCurve2d &aHandle);
+		Handle_ShapeUpgrade_SplitCurve2d & operator=(const ShapeUpgrade_SplitCurve2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve2d & operator=(const ShapeUpgrade_SplitCurve2d *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_SplitCurve2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_SplitCurve2d {
@@ -651,15 +651,15 @@ class Handle_ShapeUpgrade_SplitCurve2dContinuity : public Handle_ShapeUpgrade_Sp
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve2dContinuity();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve2dContinuity(const Handle_ShapeUpgrade_SplitCurve2dContinuity &aHandle);
+		Handle_ShapeUpgrade_SplitCurve2dContinuity(const ShapeUpgrade_SplitCurve2dContinuity *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve2dContinuity(const ShapeUpgrade_SplitCurve2dContinuity *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve2dContinuity & operator=(const Handle_ShapeUpgrade_SplitCurve2dContinuity &aHandle);
+		Handle_ShapeUpgrade_SplitCurve2dContinuity & operator=(const ShapeUpgrade_SplitCurve2dContinuity *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve2dContinuity & operator=(const ShapeUpgrade_SplitCurve2dContinuity *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve2dContinuity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_SplitCurve2dContinuity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_SplitCurve2dContinuity {
@@ -689,15 +689,15 @@ class Handle_ShapeUpgrade_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve {
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve3d();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3d(const Handle_ShapeUpgrade_SplitCurve3d &aHandle);
+		Handle_ShapeUpgrade_SplitCurve3d(const ShapeUpgrade_SplitCurve3d *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve3d(const ShapeUpgrade_SplitCurve3d *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3d & operator=(const Handle_ShapeUpgrade_SplitCurve3d &aHandle);
+		Handle_ShapeUpgrade_SplitCurve3d & operator=(const ShapeUpgrade_SplitCurve3d *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve3d & operator=(const ShapeUpgrade_SplitCurve3d *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_SplitCurve3d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_SplitCurve3d {
@@ -727,15 +727,15 @@ class Handle_ShapeUpgrade_SplitCurve3dContinuity : public Handle_ShapeUpgrade_Sp
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve3dContinuity();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3dContinuity(const Handle_ShapeUpgrade_SplitCurve3dContinuity &aHandle);
+		Handle_ShapeUpgrade_SplitCurve3dContinuity(const ShapeUpgrade_SplitCurve3dContinuity *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve3dContinuity(const ShapeUpgrade_SplitCurve3dContinuity *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3dContinuity & operator=(const Handle_ShapeUpgrade_SplitCurve3dContinuity &aHandle);
+		Handle_ShapeUpgrade_SplitCurve3dContinuity & operator=(const ShapeUpgrade_SplitCurve3dContinuity *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_SplitCurve3dContinuity & operator=(const ShapeUpgrade_SplitCurve3dContinuity *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3dContinuity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_SplitCurve3dContinuity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_SplitCurve3dContinuity {
@@ -765,15 +765,15 @@ class Handle_ShapeUpgrade_ConvertCurve2dToBezier : public Handle_ShapeUpgrade_Sp
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ConvertCurve2dToBezier();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve2dToBezier(const Handle_ShapeUpgrade_ConvertCurve2dToBezier &aHandle);
+		Handle_ShapeUpgrade_ConvertCurve2dToBezier(const ShapeUpgrade_ConvertCurve2dToBezier *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ConvertCurve2dToBezier(const ShapeUpgrade_ConvertCurve2dToBezier *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve2dToBezier & operator=(const Handle_ShapeUpgrade_ConvertCurve2dToBezier &aHandle);
+		Handle_ShapeUpgrade_ConvertCurve2dToBezier & operator=(const ShapeUpgrade_ConvertCurve2dToBezier *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ConvertCurve2dToBezier & operator=(const ShapeUpgrade_ConvertCurve2dToBezier *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve2dToBezier const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_ConvertCurve2dToBezier const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_ConvertCurve2dToBezier {
@@ -803,15 +803,15 @@ class Handle_ShapeUpgrade_ConvertCurve3dToBezier : public Handle_ShapeUpgrade_Sp
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ConvertCurve3dToBezier();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const Handle_ShapeUpgrade_ConvertCurve3dToBezier &aHandle);
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const ShapeUpgrade_ConvertCurve3dToBezier *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const ShapeUpgrade_ConvertCurve3dToBezier *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const Handle_ShapeUpgrade_ConvertCurve3dToBezier &aHandle);
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const ShapeUpgrade_ConvertCurve3dToBezier *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const ShapeUpgrade_ConvertCurve3dToBezier *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
@@ -841,15 +841,15 @@ class Handle_ShapeUpgrade_WireDivide : public Handle_ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_WireDivide();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_WireDivide(const Handle_ShapeUpgrade_WireDivide &aHandle);
+		Handle_ShapeUpgrade_WireDivide(const ShapeUpgrade_WireDivide *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_WireDivide(const ShapeUpgrade_WireDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_WireDivide & operator=(const Handle_ShapeUpgrade_WireDivide &aHandle);
+		Handle_ShapeUpgrade_WireDivide & operator=(const ShapeUpgrade_WireDivide *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_WireDivide & operator=(const ShapeUpgrade_WireDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_WireDivide const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_WireDivide const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_WireDivide {
@@ -879,15 +879,15 @@ class Handle_ShapeUpgrade_ClosedFaceDivide : public Handle_ShapeUpgrade_FaceDivi
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ClosedFaceDivide();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedFaceDivide(const Handle_ShapeUpgrade_ClosedFaceDivide &aHandle);
+		Handle_ShapeUpgrade_ClosedFaceDivide(const ShapeUpgrade_ClosedFaceDivide *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ClosedFaceDivide(const ShapeUpgrade_ClosedFaceDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedFaceDivide & operator=(const Handle_ShapeUpgrade_ClosedFaceDivide &aHandle);
+		Handle_ShapeUpgrade_ClosedFaceDivide & operator=(const ShapeUpgrade_ClosedFaceDivide *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_ClosedFaceDivide & operator=(const ShapeUpgrade_ClosedFaceDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedFaceDivide const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_ClosedFaceDivide const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeUpgrade_ClosedFaceDivide {
@@ -919,7 +919,7 @@ class ShapeUpgrade_SplitCurve : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Init(const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
-		void SetSplitValues(const Handle_TColStd_HSequenceOfReal &SplitValues);
+		void SetSplitValues(const TColStd_HSequenceOfReal *SplitValues);
 		%feature("autodoc", "1");
 		virtual		void Build(const Standard_Boolean Segment);
 		%feature("autodoc", "1");
@@ -966,9 +966,9 @@ class ShapeUpgrade_SplitCurve3d : public ShapeUpgrade_SplitCurve {
 		%feature("autodoc", "1");
 		ShapeUpgrade_SplitCurve3d();
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &C);
+		void Init(const Geom_Curve *C);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &C, const Standard_Real First, const Standard_Real Last);
+		void Init(const Geom_Curve *C, const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
 		const Handle_TColGeom_HArray1OfCurve & GetCurves() const;
 
@@ -1052,13 +1052,13 @@ class ShapeUpgrade_SplitSurface : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ShapeUpgrade_SplitSurface();
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S);
+		void Init(const Geom_Surface *S);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast);
+		void Init(const Geom_Surface *S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast);
 		%feature("autodoc", "1");
-		void SetUSplitValues(const Handle_TColStd_HSequenceOfReal &UValues);
+		void SetUSplitValues(const TColStd_HSequenceOfReal *UValues);
 		%feature("autodoc", "1");
-		void SetVSplitValues(const Handle_TColStd_HSequenceOfReal &VValues);
+		void SetVSplitValues(const TColStd_HSequenceOfReal *VValues);
 		%feature("autodoc", "1");
 		virtual		void Build(const Standard_Boolean Segment);
 		%feature("autodoc", "1");
@@ -1129,11 +1129,11 @@ class ShapeUpgrade_ShapeDivide {
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape GetContext() const;
 		%feature("autodoc", "1");
-		void SetContext(const Handle_ShapeBuild_ReShape &context);
+		void SetContext(const ShapeBuild_ReShape *context);
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
-		void SetSplitFaceTool(const Handle_ShapeUpgrade_FaceDivide &splitFaceTool);
+		void SetSplitFaceTool(const ShapeUpgrade_FaceDivide *splitFaceTool);
 		%feature("autodoc", "1");
 		void SetEdgeMode(const Standard_Integer aEdgeMode);
 
@@ -1238,9 +1238,7 @@ class ShapeUpgrade_Tool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ShapeUpgrade_Tool();
 		%feature("autodoc", "1");
-		void Set(const Handle_ShapeUpgrade_Tool &tool);
-		%feature("autodoc", "1");
-		void SetContext(const Handle_ShapeBuild_ReShape &context);
+		void SetContext(const ShapeBuild_ReShape *context);
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape Context() const;
 		%feature("autodoc", "1");
@@ -1371,9 +1369,9 @@ class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 
 		virtual		Standard_Boolean Approx(Handle_Geom_Curve & Curve3d, Handle_Geom2d_Curve & Curve2d, Handle_Geom2d_Curve & Curve2dR, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void SetSplitCurve3dTool(const Handle_ShapeUpgrade_SplitCurve3d &splitCurve3dTool);
+		void SetSplitCurve3dTool(const ShapeUpgrade_SplitCurve3d *splitCurve3dTool);
 		%feature("autodoc", "1");
-		void SetSplitCurve2dTool(const Handle_ShapeUpgrade_SplitCurve2d &splitCurve2dTool);
+		void SetSplitCurve2dTool(const ShapeUpgrade_SplitCurve2d *splitCurve2dTool);
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
@@ -1451,9 +1449,9 @@ class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfReal Knots3d() const;
 		%feature("autodoc", "1");
-		void SetSplitCurve2dTool(const Handle_ShapeUpgrade_SplitCurve2d &splitCurve2dTool);
+		void SetSplitCurve2dTool(const ShapeUpgrade_SplitCurve2d *splitCurve2dTool);
 		%feature("autodoc", "1");
-		void SetSplitCurve3dTool(const Handle_ShapeUpgrade_SplitCurve3d &splitCurve3dTool);
+		void SetSplitCurve3dTool(const ShapeUpgrade_SplitCurve3d *splitCurve3dTool);
 		%feature("autodoc", "1");
 		virtual		Handle_ShapeUpgrade_SplitCurve2d GetSplitCurve2dTool() const;
 		%feature("autodoc", "1");
@@ -1529,9 +1527,9 @@ class ShapeUpgrade {
 		%feature("autodoc", "1");
 		ShapeUpgrade();
 		%feature("autodoc", "1");
-		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom_BSplineCurve &BS, Handle_TColGeom_HSequenceOfBoundedCurve & seqBS);
+		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Geom_BSplineCurve *BS, Handle_TColGeom_HSequenceOfBoundedCurve & seqBS);
 		%feature("autodoc", "1");
-		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HSequenceOfBoundedCurve & seqBS);
+		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Geom2d_BSplineCurve *BS, Handle_TColGeom2d_HSequenceOfBoundedCurve & seqBS);
 
 };
 %feature("shadow") ShapeUpgrade::~ShapeUpgrade %{
@@ -1744,9 +1742,9 @@ class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
 		%feature("autodoc", "1");
 		ShapeUpgrade_SplitCurve2d();
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_Curve &C);
+		void Init(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_Curve &C, const Standard_Real First, const Standard_Real Last);
+		void Init(const Geom2d_Curve *C, const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
 		virtual		void Build(const Standard_Boolean Segment);
 		%feature("autodoc", "1");
@@ -1803,9 +1801,9 @@ class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
-		void SetSplitSurfaceTool(const Handle_ShapeUpgrade_SplitSurface &splitSurfaceTool);
+		void SetSplitSurfaceTool(const ShapeUpgrade_SplitSurface *splitSurfaceTool);
 		%feature("autodoc", "1");
-		void SetWireDivideTool(const Handle_ShapeUpgrade_WireDivide &wireDivideTool);
+		void SetWireDivideTool(const ShapeUpgrade_WireDivide *wireDivideTool);
 		%feature("autodoc", "1");
 		virtual		Handle_ShapeUpgrade_WireDivide GetWireDivideTool() const;
 		%feature("autodoc", "1");
@@ -2046,7 +2044,7 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Wire &W, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &W, const Handle_Geom_Surface &S);
+		void Init(const TopoDS_Wire &W, const Geom_Surface *S);
 		%feature("autodoc", "1");
 		void Load(const TopoDS_Wire &W);
 		%feature("autodoc", "1");
@@ -2054,9 +2052,9 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		void SetFace(const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void SetSurface(const Handle_Geom_Surface &S);
+		void SetSurface(const Geom_Surface *S);
 		%feature("autodoc", "1");
-		void SetSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		void SetSurface(const Geom_Surface *S, const TopLoc_Location &L);
 		%feature("autodoc", "1");
 		virtual		void Perform();
 		%feature("autodoc", "1");
@@ -2064,13 +2062,13 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
-		void SetSplitCurve3dTool(const Handle_ShapeUpgrade_SplitCurve3d &splitCurve3dTool);
+		void SetSplitCurve3dTool(const ShapeUpgrade_SplitCurve3d *splitCurve3dTool);
 		%feature("autodoc", "1");
-		void SetSplitCurve2dTool(const Handle_ShapeUpgrade_SplitCurve2d &splitCurve2dTool);
+		void SetSplitCurve2dTool(const ShapeUpgrade_SplitCurve2d *splitCurve2dTool);
 		%feature("autodoc", "1");
-		void SetTransferParamTool(const Handle_ShapeAnalysis_TransferParameters &TransferParam);
+		void SetTransferParamTool(const ShapeAnalysis_TransferParameters *TransferParam);
 		%feature("autodoc", "1");
-		void SetEdgeDivideTool(const Handle_ShapeUpgrade_EdgeDivide &edgeDivideTool);
+		void SetEdgeDivideTool(const ShapeUpgrade_EdgeDivide *edgeDivideTool);
 		%feature("autodoc", "1");
 		virtual		Handle_ShapeUpgrade_EdgeDivide GetEdgeDivideTool() const;
 		%feature("autodoc", "1");
@@ -2078,7 +2076,7 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		void SetEdgeMode(const Standard_Integer EdgeMode);
 		%feature("autodoc", "1");
-		void SetFixSmallCurveTool(const Handle_ShapeUpgrade_FixSmallCurves &FixSmallCurvesTool);
+		void SetFixSmallCurveTool(const ShapeUpgrade_FixSmallCurves *FixSmallCurvesTool);
 		%feature("autodoc", "1");
 		Handle_ShapeUpgrade_FixSmallCurves GetFixSmallCurveTool() const;
 		%feature("autodoc", "1");

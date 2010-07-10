@@ -43,13 +43,13 @@ class Geom2dAPI_InterCurveCurve {
 		%feature("autodoc", "1");
 		Geom2dAPI_InterCurveCurve();
 		%feature("autodoc", "1");
-		Geom2dAPI_InterCurveCurve(const Handle_Geom2d_Curve &C1, const Handle_Geom2d_Curve &C2, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-7);
+		Geom2dAPI_InterCurveCurve(const Geom2d_Curve *C1, const Geom2d_Curve *C2, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
-		Geom2dAPI_InterCurveCurve(const Handle_Geom2d_Curve &C1, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-7);
+		Geom2dAPI_InterCurveCurve(const Geom2d_Curve *C1, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_Curve &C1, const Handle_Geom2d_Curve &C2, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-7);
+		void Init(const Geom2d_Curve *C1, const Geom2d_Curve *C2, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_Curve &C1, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-7);
+		void Init(const Geom2d_Curve *C1, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
@@ -119,13 +119,13 @@ class Geom2dAPI_ProjectPointOnCurve {
 		%feature("autodoc", "1");
 		Geom2dAPI_ProjectPointOnCurve();
 		%feature("autodoc", "1");
-		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve);
+		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d &P, const Geom2d_Curve *Curve);
 		%feature("autodoc", "1");
-		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d &P, const Geom2d_Curve *Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
 		%feature("autodoc", "1");
-		void Init(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve);
+		void Init(const gp_Pnt2d &P, const Geom2d_Curve *Curve);
 		%feature("autodoc", "1");
-		void Init(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		void Init(const gp_Pnt2d &P, const Geom2d_Curve *Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
@@ -167,13 +167,13 @@ def __del__(self):
 class Geom2dAPI_Interpolate {
 	public:
 		%feature("autodoc", "1");
-		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		Geom2dAPI_Interpolate(const TColgp_HArray1OfPnt2d *Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		Geom2dAPI_Interpolate(const TColgp_HArray1OfPnt2d *Points, const TColStd_HArray1OfReal *Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		void Load(const gp_Vec2d &InitialTangent, const gp_Vec2d &FinalTangent);
 		%feature("autodoc", "1");
-		void Load(const TColgp_Array1OfVec2d &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
+		void Load(const TColgp_Array1OfVec2d &Tangents, const TColStd_HArray1OfBoolean *TangentFlags);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
@@ -202,7 +202,7 @@ def __del__(self):
 class Geom2dAPI_ExtremaCurveCurve {
 	public:
 		%feature("autodoc", "1");
-		Geom2dAPI_ExtremaCurveCurve(const Handle_Geom2d_Curve &C1, const Handle_Geom2d_Curve &C2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max);
+		Geom2dAPI_ExtremaCurveCurve(const Geom2d_Curve *C1, const Geom2d_Curve *C2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max);
 		%feature("autodoc", "1");
 		Standard_Integer NbExtrema() const;
 		%feature("autodoc", "1");

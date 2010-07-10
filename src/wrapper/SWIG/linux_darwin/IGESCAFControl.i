@@ -70,13 +70,13 @@ class IGESCAFControl_Writer : public IGESControl_Writer {
 		%feature("autodoc", "1");
 		IGESCAFControl_Writer();
 		%feature("autodoc", "1");
-		IGESCAFControl_Writer(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		IGESCAFControl_Writer(const XSControl_WorkSession *WS, const Standard_Boolean scratch=1);
 		%feature("autodoc", "1");
-		Standard_Boolean Transfer(const Handle_TDocStd_Document &doc);
+		Standard_Boolean Transfer(const TDocStd_Document *doc);
 		%feature("autodoc", "1");
-		Standard_Boolean Perform(const Handle_TDocStd_Document &doc, const TCollection_AsciiString &filename);
+		Standard_Boolean Perform(const TDocStd_Document *doc, const TCollection_AsciiString &filename);
 		%feature("autodoc", "1");
-		Standard_Boolean Perform(const Handle_TDocStd_Document &doc, const char * filename);
+		Standard_Boolean Perform(const TDocStd_Document *doc, const char * filename);
 		%feature("autodoc", "1");
 		void SetColorMode(const Standard_Boolean colormode);
 		%feature("autodoc", "1");
@@ -113,7 +113,7 @@ class IGESCAFControl_Reader : public IGESControl_Reader {
 		%feature("autodoc", "1");
 		IGESCAFControl_Reader();
 		%feature("autodoc", "1");
-		IGESCAFControl_Reader(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		IGESCAFControl_Reader(const XSControl_WorkSession *WS, const Standard_Boolean scratch=1);
 		%feature("autodoc", "1");
 		Standard_Boolean Transfer(Handle_TDocStd_Document & doc);
 		%feature("autodoc", "1");

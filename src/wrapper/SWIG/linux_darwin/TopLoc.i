@@ -44,15 +44,15 @@ class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_TopLoc_SListNodeOfSListOfItemLocation();
 		%feature("autodoc", "1");
-		Handle_TopLoc_SListNodeOfSListOfItemLocation(const Handle_TopLoc_SListNodeOfSListOfItemLocation &aHandle);
+		Handle_TopLoc_SListNodeOfSListOfItemLocation(const TopLoc_SListNodeOfSListOfItemLocation *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopLoc_SListNodeOfSListOfItemLocation(const TopLoc_SListNodeOfSListOfItemLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_SListNodeOfSListOfItemLocation & operator=(const Handle_TopLoc_SListNodeOfSListOfItemLocation &aHandle);
+		Handle_TopLoc_SListNodeOfSListOfItemLocation & operator=(const TopLoc_SListNodeOfSListOfItemLocation *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopLoc_SListNodeOfSListOfItemLocation & operator=(const TopLoc_SListNodeOfSListOfItemLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_SListNodeOfSListOfItemLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopLoc_SListNodeOfSListOfItemLocation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopLoc_SListNodeOfSListOfItemLocation {
@@ -82,15 +82,15 @@ class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopLoc_Datum3D();
 		%feature("autodoc", "1");
-		Handle_TopLoc_Datum3D(const Handle_TopLoc_Datum3D &aHandle);
+		Handle_TopLoc_Datum3D(const TopLoc_Datum3D *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopLoc_Datum3D(const TopLoc_Datum3D *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_Datum3D & operator=(const Handle_TopLoc_Datum3D &aHandle);
+		Handle_TopLoc_Datum3D & operator=(const TopLoc_Datum3D *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopLoc_Datum3D & operator=(const TopLoc_Datum3D *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_Datum3D const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopLoc_Datum3D const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopLoc_Datum3D {
@@ -120,15 +120,15 @@ class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_TopLoc_StdMapNodeOfMapOfLocation();
 		%feature("autodoc", "1");
-		Handle_TopLoc_StdMapNodeOfMapOfLocation(const Handle_TopLoc_StdMapNodeOfMapOfLocation &aHandle);
+		Handle_TopLoc_StdMapNodeOfMapOfLocation(const TopLoc_StdMapNodeOfMapOfLocation *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopLoc_StdMapNodeOfMapOfLocation(const TopLoc_StdMapNodeOfMapOfLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_StdMapNodeOfMapOfLocation & operator=(const Handle_TopLoc_StdMapNodeOfMapOfLocation &aHandle);
+		Handle_TopLoc_StdMapNodeOfMapOfLocation & operator=(const TopLoc_StdMapNodeOfMapOfLocation *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopLoc_StdMapNodeOfMapOfLocation & operator=(const TopLoc_StdMapNodeOfMapOfLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_StdMapNodeOfMapOfLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopLoc_StdMapNodeOfMapOfLocation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopLoc_StdMapNodeOfMapOfLocation {
@@ -158,15 +158,15 @@ class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation();
 		%feature("autodoc", "1");
-		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation(const Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation &aHandle);
+		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation & operator=(const Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation &aHandle);
+		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation & operator=(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation & operator=(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
@@ -323,7 +323,7 @@ class TopLoc_Location {
 		%feature("autodoc", "1");
 		TopLoc_Location(const gp_Trsf &T);
 		%feature("autodoc", "1");
-		TopLoc_Location(const Handle_TopLoc_Datum3D &D);
+		TopLoc_Location(const TopLoc_Datum3D *D);
 		%feature("autodoc", "1");
 		Standard_Boolean IsIdentity() const;
 		%feature("autodoc", "1");
@@ -602,7 +602,7 @@ def __del__(self):
 class TopLoc_ItemLocation {
 	public:
 		%feature("autodoc", "1");
-		TopLoc_ItemLocation(const Handle_TopLoc_Datum3D &D, const Standard_Integer P, const Standard_Boolean fromTrsf=0);
+		TopLoc_ItemLocation(const TopLoc_Datum3D *D, const Standard_Integer P, const Standard_Boolean fromTrsf=0);
 		%feature("autodoc", "1");
 		TopLoc_ItemLocation(const TopLoc_ItemLocation &anOther);
 		%feature("autodoc", "1");

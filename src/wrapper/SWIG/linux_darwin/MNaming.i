@@ -43,15 +43,15 @@ class Handle_MNaming_NamingRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MNaming_NamingRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingRetrievalDriver(const Handle_MNaming_NamingRetrievalDriver &aHandle);
+		Handle_MNaming_NamingRetrievalDriver(const MNaming_NamingRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamingRetrievalDriver(const MNaming_NamingRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingRetrievalDriver & operator=(const Handle_MNaming_NamingRetrievalDriver &aHandle);
+		Handle_MNaming_NamingRetrievalDriver & operator=(const MNaming_NamingRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamingRetrievalDriver & operator=(const MNaming_NamingRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MNaming_NamingRetrievalDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MNaming_NamingRetrievalDriver {
@@ -81,15 +81,15 @@ class Handle_MNaming_NamingStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MNaming_NamingStorageDriver();
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingStorageDriver(const Handle_MNaming_NamingStorageDriver &aHandle);
+		Handle_MNaming_NamingStorageDriver(const MNaming_NamingStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamingStorageDriver(const MNaming_NamingStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingStorageDriver & operator=(const Handle_MNaming_NamingStorageDriver &aHandle);
+		Handle_MNaming_NamingStorageDriver & operator=(const MNaming_NamingStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamingStorageDriver & operator=(const MNaming_NamingStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MNaming_NamingStorageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MNaming_NamingStorageDriver {
@@ -119,15 +119,15 @@ class Handle_MNaming_NamedShapeRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MNaming_NamedShapeRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeRetrievalDriver(const Handle_MNaming_NamedShapeRetrievalDriver &aHandle);
+		Handle_MNaming_NamedShapeRetrievalDriver(const MNaming_NamedShapeRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamedShapeRetrievalDriver(const MNaming_NamedShapeRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeRetrievalDriver & operator=(const Handle_MNaming_NamedShapeRetrievalDriver &aHandle);
+		Handle_MNaming_NamedShapeRetrievalDriver & operator=(const MNaming_NamedShapeRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamedShapeRetrievalDriver & operator=(const MNaming_NamedShapeRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MNaming_NamedShapeRetrievalDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MNaming_NamedShapeRetrievalDriver {
@@ -157,15 +157,15 @@ class Handle_MNaming_NamedShapeStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MNaming_NamedShapeStorageDriver();
 		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeStorageDriver(const Handle_MNaming_NamedShapeStorageDriver &aHandle);
+		Handle_MNaming_NamedShapeStorageDriver(const MNaming_NamedShapeStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamedShapeStorageDriver(const MNaming_NamedShapeStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeStorageDriver & operator=(const Handle_MNaming_NamedShapeStorageDriver &aHandle);
+		Handle_MNaming_NamedShapeStorageDriver & operator=(const MNaming_NamedShapeStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamedShapeStorageDriver & operator=(const MNaming_NamedShapeStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MNaming_NamedShapeStorageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MNaming_NamedShapeStorageDriver {
@@ -195,9 +195,9 @@ class MNaming {
 		%feature("autodoc", "1");
 		MNaming();
 		%feature("autodoc", "1");
-		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		void AddStorageDrivers(const MDF_ASDriverHSequence *aDriverSeq, const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
-		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		void AddRetrievalDrivers(const MDF_ARDriverHSequence *aDriverSeq, const CDM_MessageDriver *theMessageDriver);
 
 };
 %feature("shadow") MNaming::~MNaming %{
@@ -220,7 +220,7 @@ def __del__(self):
 class MNaming_NamingRetrievalDriver : public MDF_ARDriver {
 	public:
 		%feature("autodoc", "1");
-		MNaming_NamingRetrievalDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		MNaming_NamingRetrievalDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer VersionNumber() const;
 		%feature("autodoc", "1");
@@ -228,7 +228,7 @@ class MNaming_NamingRetrievalDriver : public MDF_ARDriver {
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
+		virtual		void Paste(const PDF_Attribute *Source, const TDF_Attribute *Target, const MDF_RRelocationTable *RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -263,7 +263,7 @@ def __del__(self):
 class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
 	public:
 		%feature("autodoc", "1");
-		MNaming_NamedShapeRetrievalDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		MNaming_NamedShapeRetrievalDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer VersionNumber() const;
 		%feature("autodoc", "1");
@@ -271,7 +271,7 @@ class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
+		virtual		void Paste(const PDF_Attribute *Source, const TDF_Attribute *Target, const MDF_RRelocationTable *RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -306,7 +306,7 @@ def __del__(self):
 class MNaming_NamingStorageDriver : public MDF_ASDriver {
 	public:
 		%feature("autodoc", "1");
-		MNaming_NamingStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		MNaming_NamingStorageDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer VersionNumber() const;
 		%feature("autodoc", "1");
@@ -314,7 +314,7 @@ class MNaming_NamingStorageDriver : public MDF_ASDriver {
 		%feature("autodoc", "1");
 		virtual		Handle_PDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
+		virtual		void Paste(const TDF_Attribute *Source, const PDF_Attribute *Target, const MDF_SRelocationTable *RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -349,7 +349,7 @@ def __del__(self):
 class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
 	public:
 		%feature("autodoc", "1");
-		MNaming_NamedShapeStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		MNaming_NamedShapeStorageDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer VersionNumber() const;
 		%feature("autodoc", "1");
@@ -357,7 +357,7 @@ class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
 		%feature("autodoc", "1");
 		virtual		Handle_PDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
+		virtual		void Paste(const TDF_Attribute *Source, const PDF_Attribute *Target, const MDF_SRelocationTable *RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

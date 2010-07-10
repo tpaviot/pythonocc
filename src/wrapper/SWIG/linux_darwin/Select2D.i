@@ -48,15 +48,15 @@ class Handle_Select2D_Projector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Select2D_Projector();
 		%feature("autodoc", "1");
-		Handle_Select2D_Projector(const Handle_Select2D_Projector &aHandle);
+		Handle_Select2D_Projector(const Select2D_Projector *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_Projector(const Select2D_Projector *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_Projector & operator=(const Handle_Select2D_Projector &aHandle);
+		Handle_Select2D_Projector & operator=(const Select2D_Projector *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_Projector & operator=(const Select2D_Projector *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_Projector const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Select2D_Projector const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Select2D_Projector {
@@ -86,15 +86,15 @@ class Handle_Select2D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveEntity();
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveEntity(const Handle_Select2D_SensitiveEntity &aHandle);
+		Handle_Select2D_SensitiveEntity(const Select2D_SensitiveEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveEntity(const Select2D_SensitiveEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveEntity & operator=(const Handle_Select2D_SensitiveEntity &aHandle);
+		Handle_Select2D_SensitiveEntity & operator=(const Select2D_SensitiveEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveEntity & operator=(const Select2D_SensitiveEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Select2D_SensitiveEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Select2D_SensitiveEntity {
@@ -124,15 +124,15 @@ class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveBox();
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox(const Handle_Select2D_SensitiveBox &aHandle);
+		Handle_Select2D_SensitiveBox(const Select2D_SensitiveBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveBox(const Select2D_SensitiveBox *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox & operator=(const Handle_Select2D_SensitiveBox &aHandle);
+		Handle_Select2D_SensitiveBox & operator=(const Select2D_SensitiveBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveBox & operator=(const Select2D_SensitiveBox *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Select2D_SensitiveBox const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Select2D_SensitiveBox {
@@ -162,15 +162,15 @@ class Handle_Select2D_SensitivePoint : public Handle_Select2D_SensitiveEntity {
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitivePoint();
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitivePoint(const Handle_Select2D_SensitivePoint &aHandle);
+		Handle_Select2D_SensitivePoint(const Select2D_SensitivePoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitivePoint(const Select2D_SensitivePoint *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitivePoint & operator=(const Handle_Select2D_SensitivePoint &aHandle);
+		Handle_Select2D_SensitivePoint & operator=(const Select2D_SensitivePoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitivePoint & operator=(const Select2D_SensitivePoint *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitivePoint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Select2D_SensitivePoint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Select2D_SensitivePoint {
@@ -200,15 +200,15 @@ class Handle_Select2D_SensitiveArc : public Handle_Select2D_SensitiveEntity {
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveArc();
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveArc(const Handle_Select2D_SensitiveArc &aHandle);
+		Handle_Select2D_SensitiveArc(const Select2D_SensitiveArc *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveArc(const Select2D_SensitiveArc *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveArc & operator=(const Handle_Select2D_SensitiveArc &aHandle);
+		Handle_Select2D_SensitiveArc & operator=(const Select2D_SensitiveArc *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveArc & operator=(const Select2D_SensitiveArc *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveArc const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Select2D_SensitiveArc const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Select2D_SensitiveArc {
@@ -238,15 +238,15 @@ class Handle_Select2D_SensitiveSegment : public Handle_Select2D_SensitiveEntity 
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveSegment();
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveSegment(const Handle_Select2D_SensitiveSegment &aHandle);
+		Handle_Select2D_SensitiveSegment(const Select2D_SensitiveSegment *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveSegment(const Select2D_SensitiveSegment *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveSegment & operator=(const Handle_Select2D_SensitiveSegment &aHandle);
+		Handle_Select2D_SensitiveSegment & operator=(const Select2D_SensitiveSegment *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveSegment & operator=(const Select2D_SensitiveSegment *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveSegment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Select2D_SensitiveSegment const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Select2D_SensitiveSegment {
@@ -276,15 +276,15 @@ class Handle_Select2D_SensitiveCircle : public Handle_Select2D_SensitiveEntity {
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveCircle();
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveCircle(const Handle_Select2D_SensitiveCircle &aHandle);
+		Handle_Select2D_SensitiveCircle(const Select2D_SensitiveCircle *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveCircle(const Select2D_SensitiveCircle *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveCircle & operator=(const Handle_Select2D_SensitiveCircle &aHandle);
+		Handle_Select2D_SensitiveCircle & operator=(const Select2D_SensitiveCircle *aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveCircle & operator=(const Select2D_SensitiveCircle *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveCircle const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Select2D_SensitiveCircle const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Select2D_SensitiveCircle {
@@ -314,7 +314,7 @@ class Select2D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NeedsConversion() const;
 		%feature("autodoc", "1");
-		virtual		void Convert(const Handle_Select2D_Projector &aProjector);
+		virtual		void Convert(const Select2D_Projector *aProjector);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer MaxBoxes() const;
 		%feature("autodoc", "1");
@@ -363,7 +363,7 @@ def __del__(self):
 class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		Select2D_SensitiveCircle(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Circ2d &TheCirc, const Select2D_TypeOfSelection TheType=Select2D_TOS_BOUNDARY);
+		Select2D_SensitiveCircle(const SelectBasics_EntityOwner *OwnerId, const gp_Circ2d &TheCirc, const Select2D_TypeOfSelection TheType=Select2D_TOS_BOUNDARY);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
@@ -409,7 +409,7 @@ def __del__(self):
 class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		Select2D_SensitiveSegment(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt2d &FirstP, const gp_Pnt2d &LastP, const Standard_Integer MaxRect=3);
+		Select2D_SensitiveSegment(const SelectBasics_EntityOwner *OwnerId, const gp_Pnt2d &FirstP, const gp_Pnt2d &LastP, const Standard_Integer MaxRect=3);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer nbrect);
 		%feature("autodoc", "1");
@@ -463,7 +463,7 @@ def __del__(self):
 class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		Select2D_SensitiveArc(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Ax2d &OriginAxis, const Standard_Real Angle, const Standard_Real Radius, const Standard_Integer MaxPoints=9);
+		Select2D_SensitiveArc(const SelectBasics_EntityOwner *OwnerId, const gp_Ax2d &OriginAxis, const Standard_Real Angle, const Standard_Real Radius, const Standard_Integer MaxPoints=9);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
@@ -505,9 +505,9 @@ def __del__(self):
 class Select2D_SensitiveBox : public Select2D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		Select2D_SensitiveBox(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt2d &Center, const Standard_Real Height, const Standard_Real Width, const Select2D_TypeOfSelection Type=Select2D_TOS_INTERIOR);
+		Select2D_SensitiveBox(const SelectBasics_EntityOwner *OwnerId, const gp_Pnt2d &Center, const Standard_Real Height, const Standard_Real Width, const Select2D_TypeOfSelection Type=Select2D_TOS_INTERIOR);
 		%feature("autodoc", "1");
-		Select2D_SensitiveBox(const Handle_SelectBasics_EntityOwner &OwnerId, const Standard_Real Xmin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Select2D_TypeOfSelection Type=Select2D_TOS_INTERIOR);
+		Select2D_SensitiveBox(const SelectBasics_EntityOwner *OwnerId, const Standard_Real Xmin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Select2D_TypeOfSelection Type=Select2D_TOS_INTERIOR);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
@@ -584,7 +584,7 @@ def __del__(self):
 class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		Select2D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt2d &Location, const Standard_Real InitSensitivity=0);
+		Select2D_SensitivePoint(const SelectBasics_EntityOwner *OwnerId, const gp_Pnt2d &Location, const Standard_Real InitSensitivity=0);
 		%feature("autodoc", "1");
 		void Set(const Standard_Real aSensitivity);
 		%feature("autodoc", "1");

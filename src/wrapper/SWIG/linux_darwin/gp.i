@@ -55,15 +55,15 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_gp_VectorWithNullMagnitude();
 		%feature("autodoc", "1");
-		Handle_gp_VectorWithNullMagnitude(const Handle_gp_VectorWithNullMagnitude &aHandle);
+		Handle_gp_VectorWithNullMagnitude(const gp_VectorWithNullMagnitude *aHandle);
 		%feature("autodoc", "1");
 		Handle_gp_VectorWithNullMagnitude(const gp_VectorWithNullMagnitude *anItem);
 		%feature("autodoc", "1");
-		Handle_gp_VectorWithNullMagnitude & operator=(const Handle_gp_VectorWithNullMagnitude &aHandle);
+		Handle_gp_VectorWithNullMagnitude & operator=(const gp_VectorWithNullMagnitude *aHandle);
 		%feature("autodoc", "1");
 		Handle_gp_VectorWithNullMagnitude & operator=(const gp_VectorWithNullMagnitude *anItem);
 		%feature("autodoc", "1");
-		Handle_gp_VectorWithNullMagnitude const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_gp_VectorWithNullMagnitude const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_gp_VectorWithNullMagnitude {

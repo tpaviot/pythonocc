@@ -43,15 +43,15 @@ class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_TopBas_ListNodeOfListOfTestInterference();
 		%feature("autodoc", "1");
-		Handle_TopBas_ListNodeOfListOfTestInterference(const Handle_TopBas_ListNodeOfListOfTestInterference &aHandle);
+		Handle_TopBas_ListNodeOfListOfTestInterference(const TopBas_ListNodeOfListOfTestInterference *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopBas_ListNodeOfListOfTestInterference(const TopBas_ListNodeOfListOfTestInterference *anItem);
 		%feature("autodoc", "1");
-		Handle_TopBas_ListNodeOfListOfTestInterference & operator=(const Handle_TopBas_ListNodeOfListOfTestInterference &aHandle);
+		Handle_TopBas_ListNodeOfListOfTestInterference & operator=(const TopBas_ListNodeOfListOfTestInterference *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopBas_ListNodeOfListOfTestInterference & operator=(const TopBas_ListNodeOfListOfTestInterference *anItem);
 		%feature("autodoc", "1");
-		Handle_TopBas_ListNodeOfListOfTestInterference const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopBas_ListNodeOfListOfTestInterference const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopBas_ListNodeOfListOfTestInterference {

@@ -43,15 +43,15 @@ class Handle_AppStd_Application : public Handle_TDocStd_Application {
 		%feature("autodoc", "1");
 		Handle_AppStd_Application();
 		%feature("autodoc", "1");
-		Handle_AppStd_Application(const Handle_AppStd_Application &aHandle);
+		Handle_AppStd_Application(const AppStd_Application *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppStd_Application(const AppStd_Application *anItem);
 		%feature("autodoc", "1");
-		Handle_AppStd_Application & operator=(const Handle_AppStd_Application &aHandle);
+		Handle_AppStd_Application & operator=(const AppStd_Application *aHandle);
 		%feature("autodoc", "1");
 		Handle_AppStd_Application & operator=(const AppStd_Application *anItem);
 		%feature("autodoc", "1");
-		Handle_AppStd_Application const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AppStd_Application const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AppStd_Application {

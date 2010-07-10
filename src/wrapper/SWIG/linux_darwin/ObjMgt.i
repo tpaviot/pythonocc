@@ -43,15 +43,15 @@ class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef();
 		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const ObjMgt_SeqNodeOfPSeqOfExtRef *aHandle);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const ObjMgt_SeqNodeOfPSeqOfExtRef *aHandle);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
@@ -81,15 +81,15 @@ class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternRef();
 		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternRef(const Handle_ObjMgt_ExternRef &aHandle);
+		Handle_ObjMgt_ExternRef(const ObjMgt_ExternRef *aHandle);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternRef(const ObjMgt_ExternRef *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternRef & operator=(const Handle_ObjMgt_ExternRef &aHandle);
+		Handle_ObjMgt_ExternRef & operator=(const ObjMgt_ExternRef *aHandle);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternRef & operator=(const ObjMgt_ExternRef *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternRef const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_ObjMgt_ExternRef const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_ObjMgt_ExternRef {
@@ -119,15 +119,15 @@ class Handle_ObjMgt_ExternShareable : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternShareable();
 		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternShareable(const Handle_ObjMgt_ExternShareable &aHandle);
+		Handle_ObjMgt_ExternShareable(const ObjMgt_ExternShareable *aHandle);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternShareable(const ObjMgt_ExternShareable *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternShareable & operator=(const Handle_ObjMgt_ExternShareable &aHandle);
+		Handle_ObjMgt_ExternShareable & operator=(const ObjMgt_ExternShareable *aHandle);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternShareable & operator=(const ObjMgt_ExternShareable *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternShareable const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_ObjMgt_ExternShareable const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_ObjMgt_ExternShareable {
@@ -157,15 +157,15 @@ class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_PSeqOfExtRef();
 		%feature("autodoc", "1");
-		Handle_ObjMgt_PSeqOfExtRef(const Handle_ObjMgt_PSeqOfExtRef &aHandle);
+		Handle_ObjMgt_PSeqOfExtRef(const ObjMgt_PSeqOfExtRef *aHandle);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_PSeqOfExtRef(const ObjMgt_PSeqOfExtRef *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_PSeqOfExtRef & operator=(const Handle_ObjMgt_PSeqOfExtRef &aHandle);
+		Handle_ObjMgt_PSeqOfExtRef & operator=(const ObjMgt_PSeqOfExtRef *aHandle);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_PSeqOfExtRef & operator=(const ObjMgt_PSeqOfExtRef *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_PSeqOfExtRef const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_ObjMgt_PSeqOfExtRef const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_ObjMgt_PSeqOfExtRef {
@@ -193,15 +193,15 @@ def __del__(self):
 class ObjMgt_SeqExplorerOfPSeqOfExtRef {
 	public:
 		%feature("autodoc", "1");
-		ObjMgt_SeqExplorerOfPSeqOfExtRef(const Handle_ObjMgt_PSeqOfExtRef &S);
+		ObjMgt_SeqExplorerOfPSeqOfExtRef(const ObjMgt_PSeqOfExtRef *S);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternRef Value(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_ObjMgt_ExternRef &T);
+		Standard_Boolean Contains(const ObjMgt_ExternRef *T);
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Handle_ObjMgt_ExternRef &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Standard_Integer Location(const Standard_Integer N, const ObjMgt_ExternRef *T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Handle_ObjMgt_ExternRef &T);
+		Standard_Integer Location(const Standard_Integer N, const ObjMgt_ExternRef *T);
 
 };
 %feature("shadow") ObjMgt_SeqExplorerOfPSeqOfExtRef::~ObjMgt_SeqExplorerOfPSeqOfExtRef %{
@@ -224,23 +224,13 @@ def __del__(self):
 class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
 	public:
 		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheLast, const Handle_ObjMgt_ExternRef &TheItem);
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_ExternRef &TheItem, const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheFirst);
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ThePrevious, const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheNext, const Handle_ObjMgt_ExternRef &TheItem);
-		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternRef Value() const;
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef Next() const;
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef Previous() const;
 		%feature("autodoc", "1");
-		void SetValue(const Handle_ObjMgt_ExternRef &AnItem);
-		%feature("autodoc", "1");
-		void SetNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ANode);
-		%feature("autodoc", "1");
-		void SetPrevious(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ANode);
+		void SetValue(const ObjMgt_ExternRef *AnItem);
 		%feature("autodoc", "1");
 		ObjMgt_SeqNodeOfPSeqOfExtRef();
 		%feature("autodoc", "1");
@@ -248,15 +238,11 @@ class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyPrevious() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyPrevious(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
-		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyItem() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyItem(const Handle_ObjMgt_ExternRef &p);
+		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyItem(const ObjMgt_ExternRef *p);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -303,23 +289,15 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_ObjMgt_ExternRef &T);
+		void Append(const ObjMgt_ExternRef *T);
 		%feature("autodoc", "1");
-		void Append(const Handle_ObjMgt_PSeqOfExtRef &S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ObjMgt_ExternRef &T);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ObjMgt_PSeqOfExtRef &S);
+		void Prepend(const ObjMgt_ExternRef *T);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_ObjMgt_ExternRef &T);
+		void InsertBefore(const Standard_Integer Index, const ObjMgt_ExternRef *T);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_ObjMgt_PSeqOfExtRef &S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_ObjMgt_ExternRef &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_ObjMgt_PSeqOfExtRef &S);
+		void InsertAfter(const Standard_Integer Index, const ObjMgt_ExternRef *T);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer I, const Standard_Integer J);
 		%feature("autodoc", "1");
@@ -327,15 +305,15 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_PSeqOfExtRef Split(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_ObjMgt_ExternRef &T);
+		void SetValue(const Standard_Integer Index, const ObjMgt_ExternRef *T);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternRef Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_ObjMgt_ExternRef &T) const;
+		Standard_Boolean Contains(const ObjMgt_ExternRef *T) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Handle_ObjMgt_ExternRef &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		Standard_Integer Location(const Standard_Integer N, const ObjMgt_ExternRef *T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Handle_ObjMgt_ExternRef &T) const;
+		Standard_Integer Location(const Standard_Integer N, const ObjMgt_ExternRef *T) const;
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -357,11 +335,11 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_PSeqOfExtRefFirstItem() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_PSeqOfExtRefFirstItem(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
+		void _CSFDB_SetObjMgt_PSeqOfExtRefFirstItem(const ObjMgt_SeqNodeOfPSeqOfExtRef *p);
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_PSeqOfExtRefLastItem() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_PSeqOfExtRefLastItem(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
+		void _CSFDB_SetObjMgt_PSeqOfExtRefLastItem(const ObjMgt_SeqNodeOfPSeqOfExtRef *p);
 		%feature("autodoc", "1");
 		Standard_Integer _CSFDB_GetObjMgt_PSeqOfExtRefSize() const;
 		%feature("autodoc", "1");
@@ -406,7 +384,7 @@ class ObjMgt_ExternRef : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString _CSFDB_GetObjMgt_ExternRefmyEntryId() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_ExternRefmyEntryId(const Handle_PCollection_HAsciiString &p);
+		void _CSFDB_SetObjMgt_ExternRefmyEntryId(const PCollection_HAsciiString *p);
 		%feature("autodoc", "1");
 		Standard_Integer _CSFDB_GetObjMgt_ExternRefmyBindingIndex() const;
 		%feature("autodoc", "1");
@@ -451,7 +429,7 @@ class ObjMgt_ExternShareable : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString _CSFDB_GetObjMgt_ExternShareablemyEntry() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_ExternShareablemyEntry(const Handle_PCollection_HAsciiString &p);
+		void _CSFDB_SetObjMgt_ExternShareablemyEntry(const PCollection_HAsciiString *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

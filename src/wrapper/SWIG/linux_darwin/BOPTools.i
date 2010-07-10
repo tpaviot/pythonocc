@@ -69,15 +69,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public 
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState();
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState(const Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState & operator=(const Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
@@ -107,15 +107,15 @@ class Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock();
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock(const Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock &aHandle);
+		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock(const BOPTools_IndexedMapNodeOfIMapOfPaveBlock *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock(const BOPTools_IndexedMapNodeOfIMapOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock & operator=(const Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock &aHandle);
+		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock & operator=(const BOPTools_IndexedMapNodeOfIMapOfPaveBlock *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock & operator=(const BOPTools_IndexedMapNodeOfIMapOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
@@ -145,15 +145,15 @@ class Handle_BOPTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCommonBlock();
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCommonBlock(const Handle_BOPTools_ListNodeOfListOfCommonBlock &aHandle);
+		Handle_BOPTools_ListNodeOfListOfCommonBlock(const BOPTools_ListNodeOfListOfCommonBlock *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCommonBlock(const BOPTools_ListNodeOfListOfCommonBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCommonBlock & operator=(const Handle_BOPTools_ListNodeOfListOfCommonBlock &aHandle);
+		Handle_BOPTools_ListNodeOfListOfCommonBlock & operator=(const BOPTools_ListNodeOfListOfCommonBlock *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCommonBlock & operator=(const BOPTools_ListNodeOfListOfCommonBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCommonBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_ListNodeOfListOfCommonBlock const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfCommonBlock {
@@ -183,15 +183,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo();
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo(const Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo & operator=(const Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
@@ -221,15 +221,15 @@ class Handle_BOPTools_ListNodeOfListOfCheckResults : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCheckResults();
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCheckResults(const Handle_BOPTools_ListNodeOfListOfCheckResults &aHandle);
+		Handle_BOPTools_ListNodeOfListOfCheckResults(const BOPTools_ListNodeOfListOfCheckResults *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCheckResults(const BOPTools_ListNodeOfListOfCheckResults *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCheckResults & operator=(const Handle_BOPTools_ListNodeOfListOfCheckResults &aHandle);
+		Handle_BOPTools_ListNodeOfListOfCheckResults & operator=(const BOPTools_ListNodeOfListOfCheckResults *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCheckResults & operator=(const BOPTools_ListNodeOfListOfCheckResults *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCheckResults const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_ListNodeOfListOfCheckResults const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfCheckResults {
@@ -259,15 +259,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : publi
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet();
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet(const Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet & operator=(const Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
@@ -297,15 +297,15 @@ class Handle_BOPTools_ListNodeOfListOfInterference : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfInterference();
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfInterference(const Handle_BOPTools_ListNodeOfListOfInterference &aHandle);
+		Handle_BOPTools_ListNodeOfListOfInterference(const BOPTools_ListNodeOfListOfInterference *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfInterference(const BOPTools_ListNodeOfListOfInterference *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfInterference & operator=(const Handle_BOPTools_ListNodeOfListOfInterference &aHandle);
+		Handle_BOPTools_ListNodeOfListOfInterference & operator=(const BOPTools_ListNodeOfListOfInterference *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfInterference & operator=(const BOPTools_ListNodeOfListOfInterference *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfInterference const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_ListNodeOfListOfInterference const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfInterference {
@@ -335,15 +335,15 @@ class Handle_BOPTools_ListNodeOfListOfShapeEnum : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfShapeEnum();
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfShapeEnum(const Handle_BOPTools_ListNodeOfListOfShapeEnum &aHandle);
+		Handle_BOPTools_ListNodeOfListOfShapeEnum(const BOPTools_ListNodeOfListOfShapeEnum *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfShapeEnum(const BOPTools_ListNodeOfListOfShapeEnum *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfShapeEnum & operator=(const Handle_BOPTools_ListNodeOfListOfShapeEnum &aHandle);
+		Handle_BOPTools_ListNodeOfListOfShapeEnum & operator=(const BOPTools_ListNodeOfListOfShapeEnum *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfShapeEnum & operator=(const BOPTools_ListNodeOfListOfShapeEnum *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfShapeEnum const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_ListNodeOfListOfShapeEnum const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfShapeEnum {
@@ -373,15 +373,15 @@ class Handle_BOPTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BOPTools_SequenceNodeOfSequenceOfCurves();
 		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfCurves(const Handle_BOPTools_SequenceNodeOfSequenceOfCurves &aHandle);
+		Handle_BOPTools_SequenceNodeOfSequenceOfCurves(const BOPTools_SequenceNodeOfSequenceOfCurves *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_SequenceNodeOfSequenceOfCurves(const BOPTools_SequenceNodeOfSequenceOfCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfCurves & operator=(const Handle_BOPTools_SequenceNodeOfSequenceOfCurves &aHandle);
+		Handle_BOPTools_SequenceNodeOfSequenceOfCurves & operator=(const BOPTools_SequenceNodeOfSequenceOfCurves *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_SequenceNodeOfSequenceOfCurves & operator=(const BOPTools_SequenceNodeOfSequenceOfCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_SequenceNodeOfSequenceOfCurves const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_SequenceNodeOfSequenceOfCurves {
@@ -411,15 +411,15 @@ class Handle_BOPTools_HArray2OfIntersectionStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BOPTools_HArray2OfIntersectionStatus();
 		%feature("autodoc", "1");
-		Handle_BOPTools_HArray2OfIntersectionStatus(const Handle_BOPTools_HArray2OfIntersectionStatus &aHandle);
+		Handle_BOPTools_HArray2OfIntersectionStatus(const BOPTools_HArray2OfIntersectionStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_HArray2OfIntersectionStatus(const BOPTools_HArray2OfIntersectionStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_HArray2OfIntersectionStatus & operator=(const Handle_BOPTools_HArray2OfIntersectionStatus &aHandle);
+		Handle_BOPTools_HArray2OfIntersectionStatus & operator=(const BOPTools_HArray2OfIntersectionStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_HArray2OfIntersectionStatus & operator=(const BOPTools_HArray2OfIntersectionStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_HArray2OfIntersectionStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_HArray2OfIntersectionStatus const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_HArray2OfIntersectionStatus {
@@ -449,15 +449,15 @@ class Handle_BOPTools_ListNodeOfListOfPaveBlock : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfPaveBlock();
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPaveBlock(const Handle_BOPTools_ListNodeOfListOfPaveBlock &aHandle);
+		Handle_BOPTools_ListNodeOfListOfPaveBlock(const BOPTools_ListNodeOfListOfPaveBlock *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfPaveBlock(const BOPTools_ListNodeOfListOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPaveBlock & operator=(const Handle_BOPTools_ListNodeOfListOfPaveBlock &aHandle);
+		Handle_BOPTools_ListNodeOfListOfPaveBlock & operator=(const BOPTools_ListNodeOfListOfPaveBlock *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfPaveBlock & operator=(const BOPTools_ListNodeOfListOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_ListNodeOfListOfPaveBlock const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfPaveBlock {
@@ -487,15 +487,15 @@ class Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock();
 		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock(const Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock &aHandle);
+		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock(const BOPTools_SequenceNodeOfSequenceOfPaveBlock *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock(const BOPTools_SequenceNodeOfSequenceOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock & operator=(const Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock &aHandle);
+		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock & operator=(const BOPTools_SequenceNodeOfSequenceOfPaveBlock *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock & operator=(const BOPTools_SequenceNodeOfSequenceOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock {
@@ -525,15 +525,15 @@ class Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public Handl
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger();
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger(const Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger &aHandle);
+		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger(const BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger(const BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger & operator=(const Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger &aHandle);
+		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger & operator=(const BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger & operator=(const BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
@@ -563,15 +563,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : publ
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock();
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock(const Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock(const BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock(const BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock & operator=(const Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock & operator=(const BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock & operator=(const BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
@@ -601,15 +601,15 @@ class Handle_BOPTools_ListNodeOfListOfCoupleOfInteger : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger();
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger(const Handle_BOPTools_ListNodeOfListOfCoupleOfInteger &aHandle);
+		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger(const BOPTools_ListNodeOfListOfCoupleOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger(const BOPTools_ListNodeOfListOfCoupleOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger & operator=(const Handle_BOPTools_ListNodeOfListOfCoupleOfInteger &aHandle);
+		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger & operator=(const BOPTools_ListNodeOfListOfCoupleOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger & operator=(const BOPTools_ListNodeOfListOfCoupleOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfCoupleOfInteger {
@@ -639,15 +639,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : publi
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState();
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState(const Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState & operator=(const Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
@@ -677,15 +677,15 @@ class Handle_BOPTools_ListNodeOfListOfPave : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfPave();
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPave(const Handle_BOPTools_ListNodeOfListOfPave &aHandle);
+		Handle_BOPTools_ListNodeOfListOfPave(const BOPTools_ListNodeOfListOfPave *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfPave(const BOPTools_ListNodeOfListOfPave *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPave & operator=(const Handle_BOPTools_ListNodeOfListOfPave &aHandle);
+		Handle_BOPTools_ListNodeOfListOfPave & operator=(const BOPTools_ListNodeOfListOfPave *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfPave & operator=(const BOPTools_ListNodeOfListOfPave *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPave const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_ListNodeOfListOfPave const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfPave {
@@ -715,15 +715,15 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger();
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger(const Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger(const BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger(const BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger & operator=(const Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger &aHandle);
+		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger & operator=(const BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger & operator=(const BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
@@ -3999,14 +3999,14 @@ class BOPTools_Tools2D {
 		void Make2D(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
 		%feature("autodoc","MakePCurveOnFace(const aF, const C3D) -> Standard_Real");
 
-		void MakePCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, Handle_Geom2d_Curve & aC, Standard_Real &OutValue);
+		void MakePCurveOnFace(const TopoDS_Face &aF, const Geom_Curve *C3D, Handle_Geom2d_Curve & aC, Standard_Real &OutValue);
 		%feature("autodoc","MakePCurveOnFace(const aF, const C3D, Standard_Real aT1, Standard_Real aT2) -> Standard_Real");
 
-		void MakePCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, const Standard_Real aT1, const Standard_Real aT2, Handle_Geom2d_Curve & aC, Standard_Real &OutValue);
+		void MakePCurveOnFace(const TopoDS_Face &aF, const Geom_Curve *C3D, const Standard_Real aT1, const Standard_Real aT2, Handle_Geom2d_Curve & aC, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void AdjustPCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &aC2D, Handle_Geom2d_Curve & aC2DA);
+		void AdjustPCurveOnFace(const TopoDS_Face &aF, const Geom_Curve *C3D, const Geom2d_Curve *aC2D, Handle_Geom2d_Curve & aC2DA);
 		%feature("autodoc", "1");
-		void AdjustPCurveOnFace(const TopoDS_Face &aF, const Standard_Real aT1, const Standard_Real aT2, const Handle_Geom2d_Curve &aC2D, Handle_Geom2d_Curve & aC2DA);
+		void AdjustPCurveOnFace(const TopoDS_Face &aF, const Standard_Real aT1, const Standard_Real aT2, const Geom2d_Curve *aC2D, Handle_Geom2d_Curve & aC2DA);
 		%feature("autodoc", "1");
 		void MakePCurveOfType(const ProjLib_ProjectedCurve &PC, Handle_Geom2d_Curve & aC);
 		%feature("autodoc", "1");
@@ -4084,7 +4084,7 @@ class BOPTools_Tools3D {
 		%feature("autodoc", "1");
 		Standard_Integer SenseFlag(const gp_Dir &aNF1, const gp_Dir &aNF2);
 		%feature("autodoc", "1");
-		Standard_Boolean GetNormalToSurface(const Handle_Geom_Surface &aS, const Standard_Real U, const Standard_Real V, gp_Dir & aD);
+		Standard_Boolean GetNormalToSurface(const Geom_Surface *aS, const Standard_Real U, const Standard_Real V, gp_Dir & aD);
 		%feature("autodoc", "1");
 		void GetPlanes(const TopoDS_Edge &aSp, const TopoDS_Edge &aE2, const TopTools_IndexedDataMapOfShapeListOfShape &aEFMap2, const TopoDS_Edge &aE1, const TopoDS_Face &aF1, TopAbs_State & aST1, IntTools_Context & aContext);
 		%feature("autodoc", "1");
@@ -4337,7 +4337,7 @@ class BOPTools_CheckResult {
 		%feature("autodoc", "1");
 		BOPTools_CheckStatus GetCheckStatus() const;
 		%feature("autodoc", "1");
-		void SetInterferenceGeometry(const Handle_Geom_Geometry &TheGeometry);
+		void SetInterferenceGeometry(const Geom_Geometry *TheGeometry);
 		%feature("autodoc", "1");
 		const Handle_Geom_Geometry & GetInterferenceGeometry() const;
 

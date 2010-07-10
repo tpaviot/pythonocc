@@ -65,10 +65,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Pnt.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<gp_Pnt2d.hxx>
-#include<Handle_Adaptor3d_HCurve.hxx>
-#include<Handle_Law_Function.hxx>
-#include<Handle_Geom2d_Curve.hxx>
-#include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<TColStd_SequenceOfReal.hxx>
 #include<Handle_TColgp_HArray1OfPnt.hxx>
 #include<TColgp_SequenceOfVec.hxx>

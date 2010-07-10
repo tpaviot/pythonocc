@@ -54,15 +54,15 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles();
 		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles(const Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles &aHandle);
+		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles(const Convert_SequenceNodeOfSequenceOfArray1OfPoles *aHandle);
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles(const Convert_SequenceNodeOfSequenceOfArray1OfPoles *anItem);
 		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles & operator=(const Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles &aHandle);
+		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles & operator=(const Convert_SequenceNodeOfSequenceOfArray1OfPoles *aHandle);
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles & operator=(const Convert_SequenceNodeOfSequenceOfArray1OfPoles *anItem);
 		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles {
@@ -92,15 +92,15 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d();
 		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d(const Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d &aHandle);
+		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d(const Convert_SequenceNodeOfSequenceOfArray1OfPoles2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d(const Convert_SequenceNodeOfSequenceOfArray1OfPoles2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d & operator=(const Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d &aHandle);
+		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d & operator=(const Convert_SequenceNodeOfSequenceOfArray1OfPoles2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d & operator=(const Convert_SequenceNodeOfSequenceOfArray1OfPoles2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
@@ -363,11 +363,11 @@ def __del__(self):
 class Convert_GridPolynomialToPoles {
 	public:
 		%feature("autodoc", "1");
-		Convert_GridPolynomialToPoles(const Standard_Integer MaxUDegree, const Standard_Integer MaxVDegree, const Handle_TColStd_HArray1OfInteger &NumCoeff, const Handle_TColStd_HArray1OfReal &Coefficients, const Handle_TColStd_HArray1OfReal &PolynomialUIntervals, const Handle_TColStd_HArray1OfReal &PolynomialVIntervals);
+		Convert_GridPolynomialToPoles(const Standard_Integer MaxUDegree, const Standard_Integer MaxVDegree, const TColStd_HArray1OfInteger *NumCoeff, const TColStd_HArray1OfReal *Coefficients, const TColStd_HArray1OfReal *PolynomialUIntervals, const TColStd_HArray1OfReal *PolynomialVIntervals);
 		%feature("autodoc", "1");
-		Convert_GridPolynomialToPoles(const Standard_Integer NbUSurfaces, const Standard_Integer NBVSurfaces, const Standard_Integer UContinuity, const Standard_Integer VContinuity, const Standard_Integer MaxUDegree, const Standard_Integer MaxVDegree, const Handle_TColStd_HArray2OfInteger &NumCoeffPerSurface, const Handle_TColStd_HArray1OfReal &Coefficients, const Handle_TColStd_HArray1OfReal &PolynomialUIntervals, const Handle_TColStd_HArray1OfReal &PolynomialVIntervals, const Handle_TColStd_HArray1OfReal &TrueUIntervals, const Handle_TColStd_HArray1OfReal &TrueVIntervals);
+		Convert_GridPolynomialToPoles(const Standard_Integer NbUSurfaces, const Standard_Integer NBVSurfaces, const Standard_Integer UContinuity, const Standard_Integer VContinuity, const Standard_Integer MaxUDegree, const Standard_Integer MaxVDegree, const TColStd_HArray2OfInteger *NumCoeffPerSurface, const TColStd_HArray1OfReal *Coefficients, const TColStd_HArray1OfReal *PolynomialUIntervals, const TColStd_HArray1OfReal *PolynomialVIntervals, const TColStd_HArray1OfReal *TrueUIntervals, const TColStd_HArray1OfReal *TrueVIntervals);
 		%feature("autodoc", "1");
-		void Perform(const Standard_Integer UContinuity, const Standard_Integer VContinuity, const Standard_Integer MaxUDegree, const Standard_Integer MaxVDegree, const Handle_TColStd_HArray2OfInteger &NumCoeffPerSurface, const Handle_TColStd_HArray1OfReal &Coefficients, const Handle_TColStd_HArray1OfReal &PolynomialUIntervals, const Handle_TColStd_HArray1OfReal &PolynomialVIntervals, const Handle_TColStd_HArray1OfReal &TrueUIntervals, const Handle_TColStd_HArray1OfReal &TrueVIntervals);
+		void Perform(const Standard_Integer UContinuity, const Standard_Integer VContinuity, const Standard_Integer MaxUDegree, const Standard_Integer MaxVDegree, const TColStd_HArray2OfInteger *NumCoeffPerSurface, const TColStd_HArray1OfReal *Coefficients, const TColStd_HArray1OfReal *PolynomialUIntervals, const TColStd_HArray1OfReal *PolynomialVIntervals, const TColStd_HArray1OfReal *TrueUIntervals, const TColStd_HArray1OfReal *TrueVIntervals);
 		%feature("autodoc", "1");
 		Standard_Integer NbUPoles() const;
 		%feature("autodoc", "1");
@@ -524,7 +524,7 @@ def __del__(self):
 class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Convert_SequenceNodeOfSequenceOfArray1OfPoles(const Handle_TColgp_HArray1OfPnt &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Convert_SequenceNodeOfSequenceOfArray1OfPoles(const TColgp_HArray1OfPnt *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt & Value() const;
 		%feature("autodoc", "1");
@@ -561,7 +561,7 @@ def __del__(self):
 class Convert_CompPolynomialToPoles {
 	public:
 		%feature("autodoc", "1");
-		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Continuity, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const Handle_TColStd_HArray1OfInteger &NumCoeffPerCurve, const Handle_TColStd_HArray1OfReal &Coefficients, const Handle_TColStd_HArray2OfReal &PolynomialIntervals, const Handle_TColStd_HArray1OfReal &TrueIntervals);
+		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Continuity, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const TColStd_HArray1OfInteger *NumCoeffPerCurve, const TColStd_HArray1OfReal *Coefficients, const TColStd_HArray2OfReal *PolynomialIntervals, const TColStd_HArray1OfReal *TrueIntervals);
 		%feature("autodoc", "1");
 		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const TColStd_Array1OfInteger &Continuity, const TColStd_Array1OfInteger &NumCoeffPerCurve, const TColStd_Array1OfReal &Coefficients, const TColStd_Array2OfReal &PolynomialIntervals, const TColStd_Array1OfReal &TrueIntervals);
 		%feature("autodoc", "1");
@@ -610,19 +610,19 @@ class Convert_SequenceOfArray1OfPoles : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Convert_SequenceOfArray1OfPoles & operator=(const Convert_SequenceOfArray1OfPoles &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HArray1OfPnt &T);
+		void Append(const TColgp_HArray1OfPnt *T);
 		%feature("autodoc", "1");
 		void Append(Convert_SequenceOfArray1OfPoles & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HArray1OfPnt &T);
+		void Prepend(const TColgp_HArray1OfPnt *T);
 		%feature("autodoc", "1");
 		void Prepend(Convert_SequenceOfArray1OfPoles & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt &I);
+		void InsertBefore(const Standard_Integer Index, const TColgp_HArray1OfPnt *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt &T);
+		void InsertAfter(const Standard_Integer Index, const TColgp_HArray1OfPnt *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles & S);
 		%feature("autodoc", "1");
@@ -636,7 +636,7 @@ class Convert_SequenceOfArray1OfPoles : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_TColgp_HArray1OfPnt & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt &I);
+		void SetValue(const Standard_Integer Index, const TColgp_HArray1OfPnt *I);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -675,19 +675,19 @@ class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Convert_SequenceOfArray1OfPoles2d & operator=(const Convert_SequenceOfArray1OfPoles2d &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HArray1OfPnt2d &T);
+		void Append(const TColgp_HArray1OfPnt2d *T);
 		%feature("autodoc", "1");
 		void Append(Convert_SequenceOfArray1OfPoles2d & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HArray1OfPnt2d &T);
+		void Prepend(const TColgp_HArray1OfPnt2d *T);
 		%feature("autodoc", "1");
 		void Prepend(Convert_SequenceOfArray1OfPoles2d & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
+		void InsertBefore(const Standard_Integer Index, const TColgp_HArray1OfPnt2d *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &T);
+		void InsertAfter(const Standard_Integer Index, const TColgp_HArray1OfPnt2d *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
 		%feature("autodoc", "1");
@@ -701,7 +701,7 @@ class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
+		void SetValue(const Standard_Integer Index, const TColgp_HArray1OfPnt2d *I);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt2d & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -732,7 +732,7 @@ def __del__(self):
 class Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Convert_SequenceNodeOfSequenceOfArray1OfPoles2d(const Handle_TColgp_HArray1OfPnt2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Convert_SequenceNodeOfSequenceOfArray1OfPoles2d(const TColgp_HArray1OfPnt2d *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt2d & Value() const;
 		%feature("autodoc", "1");

@@ -43,11 +43,11 @@ class RWStepAP203_RWCcDesignSecurityClassification {
 		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignSecurityClassification();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignSecurityClassification &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_CcDesignSecurityClassification *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignSecurityClassification &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_CcDesignSecurityClassification *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignSecurityClassification &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_CcDesignSecurityClassification *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWCcDesignSecurityClassification::~RWStepAP203_RWCcDesignSecurityClassification %{
@@ -72,11 +72,11 @@ class RWStepAP203_RWStartRequest {
 		%feature("autodoc", "1");
 		RWStepAP203_RWStartRequest();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_StartRequest &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_StartRequest *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_StartRequest &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_StartRequest *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_StartRequest &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_StartRequest *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWStartRequest::~RWStepAP203_RWStartRequest %{
@@ -101,11 +101,11 @@ class RWStepAP203_RWStartWork {
 		%feature("autodoc", "1");
 		RWStepAP203_RWStartWork();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_StartWork &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_StartWork *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_StartWork &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_StartWork *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_StartWork &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_StartWork *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWStartWork::~RWStepAP203_RWStartWork %{
@@ -130,11 +130,11 @@ class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignPersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignPersonAndOrganizationAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_CcDesignPersonAndOrganizationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignPersonAndOrganizationAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_CcDesignPersonAndOrganizationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignPersonAndOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_CcDesignPersonAndOrganizationAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWCcDesignPersonAndOrganizationAssignment::~RWStepAP203_RWCcDesignPersonAndOrganizationAssignment %{
@@ -159,11 +159,11 @@ class RWStepAP203_RWCcDesignContract {
 		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignContract();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignContract &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_CcDesignContract *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignContract &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_CcDesignContract *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignContract &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_CcDesignContract *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWCcDesignContract::~RWStepAP203_RWCcDesignContract %{
@@ -188,11 +188,11 @@ class RWStepAP203_RWChangeRequest {
 		%feature("autodoc", "1");
 		RWStepAP203_RWChangeRequest();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_ChangeRequest &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_ChangeRequest *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_ChangeRequest &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_ChangeRequest *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_ChangeRequest &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_ChangeRequest *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWChangeRequest::~RWStepAP203_RWChangeRequest %{
@@ -217,11 +217,11 @@ class RWStepAP203_RWCcDesignSpecificationReference {
 		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignSpecificationReference();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignSpecificationReference &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_CcDesignSpecificationReference *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignSpecificationReference &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_CcDesignSpecificationReference *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignSpecificationReference &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_CcDesignSpecificationReference *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWCcDesignSpecificationReference::~RWStepAP203_RWCcDesignSpecificationReference %{
@@ -246,11 +246,11 @@ class RWStepAP203_RWCcDesignDateAndTimeAssignment {
 		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignDateAndTimeAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_CcDesignDateAndTimeAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_CcDesignDateAndTimeAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_CcDesignDateAndTimeAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWCcDesignDateAndTimeAssignment::~RWStepAP203_RWCcDesignDateAndTimeAssignment %{
@@ -275,11 +275,11 @@ class RWStepAP203_RWCcDesignCertification {
 		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignCertification();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignCertification &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_CcDesignCertification *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignCertification &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_CcDesignCertification *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignCertification &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_CcDesignCertification *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWCcDesignCertification::~RWStepAP203_RWCcDesignCertification %{
@@ -304,11 +304,11 @@ class RWStepAP203_RWCcDesignApproval {
 		%feature("autodoc", "1");
 		RWStepAP203_RWCcDesignApproval();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignApproval &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_CcDesignApproval *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignApproval &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_CcDesignApproval *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignApproval &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_CcDesignApproval *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWCcDesignApproval::~RWStepAP203_RWCcDesignApproval %{
@@ -333,11 +333,11 @@ class RWStepAP203_RWChange {
 		%feature("autodoc", "1");
 		RWStepAP203_RWChange();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_Change &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP203_Change *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_Change &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP203_Change *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_Change &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP203_Change *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP203_RWChange::~RWStepAP203_RWChange %{

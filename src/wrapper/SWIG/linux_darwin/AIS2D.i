@@ -162,15 +162,15 @@ class Handle_AIS2D_ListNodeOfListOfIO : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_AIS2D_ListNodeOfListOfIO();
 		%feature("autodoc", "1");
-		Handle_AIS2D_ListNodeOfListOfIO(const Handle_AIS2D_ListNodeOfListOfIO &aHandle);
+		Handle_AIS2D_ListNodeOfListOfIO(const AIS2D_ListNodeOfListOfIO *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_ListNodeOfListOfIO(const AIS2D_ListNodeOfListOfIO *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_ListNodeOfListOfIO & operator=(const Handle_AIS2D_ListNodeOfListOfIO &aHandle);
+		Handle_AIS2D_ListNodeOfListOfIO & operator=(const AIS2D_ListNodeOfListOfIO *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_ListNodeOfListOfIO & operator=(const AIS2D_ListNodeOfListOfIO *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_ListNodeOfListOfIO const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_ListNodeOfListOfIO const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_ListNodeOfListOfIO {
@@ -200,15 +200,15 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit();
 		%feature("autodoc", "1");
-		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit(const Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit &aHandle);
+		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit(const AIS2D_SequenceNodeOfSequenceOfPrimArchit *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit(const AIS2D_SequenceNodeOfSequenceOfPrimArchit *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit & operator=(const Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit &aHandle);
+		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit & operator=(const AIS2D_SequenceNodeOfSequenceOfPrimArchit *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit & operator=(const AIS2D_SequenceNodeOfSequenceOfPrimArchit *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit {
@@ -238,15 +238,15 @@ class Handle_AIS2D_GlobalStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_GlobalStatus();
 		%feature("autodoc", "1");
-		Handle_AIS2D_GlobalStatus(const Handle_AIS2D_GlobalStatus &aHandle);
+		Handle_AIS2D_GlobalStatus(const AIS2D_GlobalStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_GlobalStatus(const AIS2D_GlobalStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_GlobalStatus & operator=(const Handle_AIS2D_GlobalStatus &aHandle);
+		Handle_AIS2D_GlobalStatus & operator=(const AIS2D_GlobalStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_GlobalStatus & operator=(const AIS2D_GlobalStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_GlobalStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_GlobalStatus const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_GlobalStatus {
@@ -276,15 +276,15 @@ class Handle_AIS2D_LocalContext : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalContext();
 		%feature("autodoc", "1");
-		Handle_AIS2D_LocalContext(const Handle_AIS2D_LocalContext &aHandle);
+		Handle_AIS2D_LocalContext(const AIS2D_LocalContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalContext(const AIS2D_LocalContext *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_LocalContext & operator=(const Handle_AIS2D_LocalContext &aHandle);
+		Handle_AIS2D_LocalContext & operator=(const AIS2D_LocalContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalContext & operator=(const AIS2D_LocalContext *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_LocalContext const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_LocalContext const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_LocalContext {
@@ -314,15 +314,15 @@ class Handle_AIS2D_InteractiveObject : public Handle_Graphic2d_GraphicObject {
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject();
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveObject(const Handle_AIS2D_InteractiveObject &aHandle);
+		Handle_AIS2D_InteractiveObject(const AIS2D_InteractiveObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject(const AIS2D_InteractiveObject *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveObject & operator=(const Handle_AIS2D_InteractiveObject &aHandle);
+		Handle_AIS2D_InteractiveObject & operator=(const AIS2D_InteractiveObject *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject & operator=(const AIS2D_InteractiveObject *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveObject const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_InteractiveObject const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_InteractiveObject {
@@ -352,15 +352,15 @@ class Handle_AIS2D_ProjShape : public Handle_AIS2D_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS2D_ProjShape();
 		%feature("autodoc", "1");
-		Handle_AIS2D_ProjShape(const Handle_AIS2D_ProjShape &aHandle);
+		Handle_AIS2D_ProjShape(const AIS2D_ProjShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_ProjShape(const AIS2D_ProjShape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_ProjShape & operator=(const Handle_AIS2D_ProjShape &aHandle);
+		Handle_AIS2D_ProjShape & operator=(const AIS2D_ProjShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_ProjShape & operator=(const AIS2D_ProjShape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_ProjShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_ProjShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_ProjShape {
@@ -390,15 +390,15 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLC : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfLC();
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLC(const Handle_AIS2D_DataMapNodeOfDataMapOfLC &aHandle);
+		Handle_AIS2D_DataMapNodeOfDataMapOfLC(const AIS2D_DataMapNodeOfDataMapOfLC *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfLC(const AIS2D_DataMapNodeOfDataMapOfLC *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLC & operator=(const Handle_AIS2D_DataMapNodeOfDataMapOfLC &aHandle);
+		Handle_AIS2D_DataMapNodeOfDataMapOfLC & operator=(const AIS2D_DataMapNodeOfDataMapOfLC *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfLC & operator=(const AIS2D_DataMapNodeOfDataMapOfLC *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLC const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_DataMapNodeOfDataMapOfLC const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfLC {
@@ -428,15 +428,15 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfIO : public Handle_TCollection_SeqNod
 		%feature("autodoc", "1");
 		Handle_AIS2D_SequenceNodeOfSequenceOfIO();
 		%feature("autodoc", "1");
-		Handle_AIS2D_SequenceNodeOfSequenceOfIO(const Handle_AIS2D_SequenceNodeOfSequenceOfIO &aHandle);
+		Handle_AIS2D_SequenceNodeOfSequenceOfIO(const AIS2D_SequenceNodeOfSequenceOfIO *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_SequenceNodeOfSequenceOfIO(const AIS2D_SequenceNodeOfSequenceOfIO *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_SequenceNodeOfSequenceOfIO & operator=(const Handle_AIS2D_SequenceNodeOfSequenceOfIO &aHandle);
+		Handle_AIS2D_SequenceNodeOfSequenceOfIO & operator=(const AIS2D_SequenceNodeOfSequenceOfIO *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_SequenceNodeOfSequenceOfIO & operator=(const AIS2D_SequenceNodeOfSequenceOfIO *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_SequenceNodeOfSequenceOfIO const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_SequenceNodeOfSequenceOfIO const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_SequenceNodeOfSequenceOfIO {
@@ -466,15 +466,15 @@ class Handle_AIS2D_LocalStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalStatus();
 		%feature("autodoc", "1");
-		Handle_AIS2D_LocalStatus(const Handle_AIS2D_LocalStatus &aHandle);
+		Handle_AIS2D_LocalStatus(const AIS2D_LocalStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalStatus(const AIS2D_LocalStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_LocalStatus & operator=(const Handle_AIS2D_LocalStatus &aHandle);
+		Handle_AIS2D_LocalStatus & operator=(const AIS2D_LocalStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalStatus & operator=(const AIS2D_LocalStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_LocalStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_LocalStatus const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_LocalStatus {
@@ -504,15 +504,15 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLocStat : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat();
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat(const Handle_AIS2D_DataMapNodeOfDataMapOfLocStat &aHandle);
+		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat(const AIS2D_DataMapNodeOfDataMapOfLocStat *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat(const AIS2D_DataMapNodeOfDataMapOfLocStat *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat & operator=(const Handle_AIS2D_DataMapNodeOfDataMapOfLocStat &aHandle);
+		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat & operator=(const AIS2D_DataMapNodeOfDataMapOfLocStat *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat & operator=(const AIS2D_DataMapNodeOfDataMapOfLocStat *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfLocStat {
@@ -542,15 +542,15 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects();
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects(const Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects &aHandle);
+		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects(const AIS2D_DataMapNodeOfDataMapOfPrimAspects *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects(const AIS2D_DataMapNodeOfDataMapOfPrimAspects *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects & operator=(const Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects &aHandle);
+		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects & operator=(const AIS2D_DataMapNodeOfDataMapOfPrimAspects *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects & operator=(const AIS2D_DataMapNodeOfDataMapOfPrimAspects *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects {
@@ -580,15 +580,15 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus();
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus(const Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus &aHandle);
+		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus(const AIS2D_DataMapNodeOfDataMapOfIOStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus(const AIS2D_DataMapNodeOfDataMapOfIOStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus & operator=(const Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus &aHandle);
+		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus & operator=(const AIS2D_DataMapNodeOfDataMapOfIOStatus *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus & operator=(const AIS2D_DataMapNodeOfDataMapOfIOStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus {
@@ -618,15 +618,15 @@ class Handle_AIS2D_HSequenceOfPrimArchit : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfPrimArchit();
 		%feature("autodoc", "1");
-		Handle_AIS2D_HSequenceOfPrimArchit(const Handle_AIS2D_HSequenceOfPrimArchit &aHandle);
+		Handle_AIS2D_HSequenceOfPrimArchit(const AIS2D_HSequenceOfPrimArchit *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfPrimArchit(const AIS2D_HSequenceOfPrimArchit *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_HSequenceOfPrimArchit & operator=(const Handle_AIS2D_HSequenceOfPrimArchit &aHandle);
+		Handle_AIS2D_HSequenceOfPrimArchit & operator=(const AIS2D_HSequenceOfPrimArchit *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfPrimArchit & operator=(const AIS2D_HSequenceOfPrimArchit *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_HSequenceOfPrimArchit const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_HSequenceOfPrimArchit const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_HSequenceOfPrimArchit {
@@ -656,15 +656,15 @@ class Handle_AIS2D_PrimitiveArchit : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_PrimitiveArchit();
 		%feature("autodoc", "1");
-		Handle_AIS2D_PrimitiveArchit(const Handle_AIS2D_PrimitiveArchit &aHandle);
+		Handle_AIS2D_PrimitiveArchit(const AIS2D_PrimitiveArchit *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_PrimitiveArchit(const AIS2D_PrimitiveArchit *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_PrimitiveArchit & operator=(const Handle_AIS2D_PrimitiveArchit &aHandle);
+		Handle_AIS2D_PrimitiveArchit & operator=(const AIS2D_PrimitiveArchit *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_PrimitiveArchit & operator=(const AIS2D_PrimitiveArchit *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_PrimitiveArchit const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_PrimitiveArchit const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_PrimitiveArchit {
@@ -694,15 +694,15 @@ class Handle_AIS2D_HSequenceOfIO : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfIO();
 		%feature("autodoc", "1");
-		Handle_AIS2D_HSequenceOfIO(const Handle_AIS2D_HSequenceOfIO &aHandle);
+		Handle_AIS2D_HSequenceOfIO(const AIS2D_HSequenceOfIO *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfIO(const AIS2D_HSequenceOfIO *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_HSequenceOfIO & operator=(const Handle_AIS2D_HSequenceOfIO &aHandle);
+		Handle_AIS2D_HSequenceOfIO & operator=(const AIS2D_HSequenceOfIO *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfIO & operator=(const AIS2D_HSequenceOfIO *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_HSequenceOfIO const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_HSequenceOfIO const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_HSequenceOfIO {
@@ -732,15 +732,15 @@ class Handle_AIS2D_InteractiveContext : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveContext();
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveContext(const Handle_AIS2D_InteractiveContext &aHandle);
+		Handle_AIS2D_InteractiveContext(const AIS2D_InteractiveContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveContext(const AIS2D_InteractiveContext *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveContext & operator=(const Handle_AIS2D_InteractiveContext &aHandle);
+		Handle_AIS2D_InteractiveContext & operator=(const AIS2D_InteractiveContext *aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveContext & operator=(const AIS2D_InteractiveContext *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveContext const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS2D_InteractiveContext const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_AIS2D_InteractiveContext {
@@ -776,19 +776,19 @@ class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const AIS2D_SequenceOfPrimArchit & operator=(const AIS2D_SequenceOfPrimArchit &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_PrimitiveArchit &T);
+		void Append(const AIS2D_PrimitiveArchit *T);
 		%feature("autodoc", "1");
 		void Append(AIS2D_SequenceOfPrimArchit & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_PrimitiveArchit &T);
+		void Prepend(const AIS2D_PrimitiveArchit *T);
 		%feature("autodoc", "1");
 		void Prepend(AIS2D_SequenceOfPrimArchit & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &I);
+		void InsertBefore(const Standard_Integer Index, const AIS2D_PrimitiveArchit *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &T);
+		void InsertAfter(const Standard_Integer Index, const AIS2D_PrimitiveArchit *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
 		%feature("autodoc", "1");
@@ -802,7 +802,7 @@ class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_AIS2D_PrimitiveArchit & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &I);
+		void SetValue(const Standard_Integer Index, const AIS2D_PrimitiveArchit *I);
 		%feature("autodoc", "1");
 		Handle_AIS2D_PrimitiveArchit & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -876,7 +876,7 @@ class AIS2D_DataMapOfLC : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_AIS2D_LocalContext &I);
+		Standard_Boolean Bind(const Standard_Integer &K, const AIS2D_LocalContext *I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
@@ -955,7 +955,7 @@ class AIS2D_LocalStatus : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SubIntensityOff();
 		%feature("autodoc", "1");
-		void SetPreviousState(const Handle_Standard_Transient &aStatus);
+		void SetPreviousState(const Standard_Transient *aStatus);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient PreviousState() const;
 		%feature("autodoc", "1");
@@ -996,23 +996,23 @@ class AIS2D_InteractiveObject : public Graphic2d_GraphicObject {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Drawer Attributes() const;
 		%feature("autodoc", "1");
-		virtual		void SetAttributes(const Handle_Prs2d_Drawer &aDrawer);
+		virtual		void SetAttributes(const Prs2d_Drawer *aDrawer);
 		%feature("autodoc", "1");
 		virtual		void UnsetAttributes();
 		%feature("autodoc", "1");
-		void SetAspect(const Handle_Prs2d_AspectRoot &anAspect);
+		void SetAspect(const Prs2d_AspectRoot *anAspect);
 		%feature("autodoc", "1");
-		void SetAspect(const Handle_Prs2d_AspectRoot &anAspect, const Handle_Graphic2d_Primitive &aPrimitive);
+		void SetAspect(const Prs2d_AspectRoot *anAspect, const Graphic2d_Primitive *aPrimitive);
 		%feature("autodoc", "1");
-		Handle_Prs2d_AspectRoot GetAspect(const Handle_Graphic2d_Primitive &aPrimitive) const;
+		Handle_Prs2d_AspectRoot GetAspect(const Graphic2d_Primitive *aPrimitive) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasAspect(const Handle_Graphic2d_Primitive &aPrimitive) const;
+		Standard_Boolean HasAspect(const Graphic2d_Primitive *aPrimitive) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasInteractiveContext() const;
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveContext GetContext() const;
 		%feature("autodoc", "1");
-		virtual		void SetContext(const Handle_AIS2D_InteractiveContext &aCntx);
+		virtual		void SetContext(const AIS2D_InteractiveContext *aCntx);
 		%feature("autodoc", "1");
 		Standard_Integer DisplayMode() const;
 		%feature("autodoc", "1");
@@ -1089,7 +1089,7 @@ def __del__(self):
 class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_DataMapNodeOfDataMapOfPrimAspects(const Handle_Graphic2d_Primitive &K, const Handle_Prs2d_AspectRoot &I, const TCollection_MapNodePtr &n);
+		AIS2D_DataMapNodeOfDataMapOfPrimAspects(const Graphic2d_Primitive *K, const Prs2d_AspectRoot *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Primitive & Key() const;
 		%feature("autodoc", "1");
@@ -1246,15 +1246,15 @@ class AIS2D_ListOfIO {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_InteractiveObject &I);
+		void Prepend(const AIS2D_InteractiveObject *I);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_InteractiveObject &I, AIS2D_ListIteratorOfListOfIO & theIt);
+		void Prepend(const AIS2D_InteractiveObject *I, AIS2D_ListIteratorOfListOfIO & theIt);
 		%feature("autodoc", "1");
 		void Prepend(AIS2D_ListOfIO & Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_InteractiveObject &I);
+		void Append(const AIS2D_InteractiveObject *I);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_InteractiveObject &I, AIS2D_ListIteratorOfListOfIO & theIt);
+		void Append(const AIS2D_InteractiveObject *I, AIS2D_ListIteratorOfListOfIO & theIt);
 		%feature("autodoc", "1");
 		void Append(AIS2D_ListOfIO & Other);
 		%feature("autodoc", "1");
@@ -1266,11 +1266,11 @@ class AIS2D_ListOfIO {
 		%feature("autodoc", "1");
 		void Remove(AIS2D_ListIteratorOfListOfIO & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const Handle_AIS2D_InteractiveObject &I, AIS2D_ListIteratorOfListOfIO & It);
+		void InsertBefore(const AIS2D_InteractiveObject *I, AIS2D_ListIteratorOfListOfIO & It);
 		%feature("autodoc", "1");
 		void InsertBefore(AIS2D_ListOfIO & Other, AIS2D_ListIteratorOfListOfIO & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const Handle_AIS2D_InteractiveObject &I, AIS2D_ListIteratorOfListOfIO & It);
+		void InsertAfter(const AIS2D_InteractiveObject *I, AIS2D_ListIteratorOfListOfIO & It);
 		%feature("autodoc", "1");
 		void InsertAfter(AIS2D_ListOfIO & Other, AIS2D_ListIteratorOfListOfIO & It);
 
@@ -1295,7 +1295,7 @@ def __del__(self):
 class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_DataMapNodeOfDataMapOfLocStat(const Handle_AIS2D_InteractiveObject &K, const Handle_AIS2D_LocalStatus &I, const TCollection_MapNodePtr &n);
+		AIS2D_DataMapNodeOfDataMapOfLocStat(const AIS2D_InteractiveObject *K, const AIS2D_LocalStatus *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject & Key() const;
 		%feature("autodoc", "1");
@@ -1334,7 +1334,7 @@ def __del__(self):
 class AIS2D_ListNodeOfListOfIO : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_ListNodeOfListOfIO(const Handle_AIS2D_InteractiveObject &I, const TCollection_MapNodePtr &n);
+		AIS2D_ListNodeOfListOfIO(const AIS2D_InteractiveObject *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject & Value() const;
 		%feature("autodoc", "1");
@@ -1461,19 +1461,19 @@ def __del__(self):
 class AIS2D_InteractiveContext : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_InteractiveContext(const Handle_V2d_Viewer &MainViewer);
+		AIS2D_InteractiveContext(const V2d_Viewer *MainViewer);
 		%feature("autodoc", "1");
-		AIS2D_InteractiveContext(const Handle_V2d_Viewer &MainViewer, const Handle_V2d_Viewer &aCollector);
+		AIS2D_InteractiveContext(const V2d_Viewer *MainViewer, const V2d_Viewer *aCollector);
 		%feature("autodoc", "1");
-		void Display(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1);
+		void Display(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
-		void Display(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer aDispMode, const Standard_Integer aSelectMode, const Standard_Boolean UpdateVwr=1, const Standard_Boolean AllowDecomp=1);
+		void Display(const AIS2D_InteractiveObject *anIObj, const Standard_Integer aDispMode, const Standard_Integer aSelectMode, const Standard_Boolean UpdateVwr=1, const Standard_Boolean AllowDecomp=1);
 		%feature("autodoc", "1");
-		void Load(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer SelMode=-0x000000001, const Standard_Boolean AllowDecomp=0);
+		void Load(const AIS2D_InteractiveObject *anIObj, const Standard_Integer SelMode=-0x000000001, const Standard_Boolean AllowDecomp=0);
 		%feature("autodoc", "1");
-		void Erase(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1, const Standard_Boolean PutInCollector=1);
+		void Erase(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean UpdateVwr=1, const Standard_Boolean PutInCollector=1);
 		%feature("autodoc", "1");
-		void EraseMode(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer aMode, const Standard_Boolean UpdateVwr=1);
+		void EraseMode(const AIS2D_InteractiveObject *anIObj, const Standard_Integer aMode, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
 		void EraseAll(const Standard_Boolean PutInCollector=1, const Standard_Boolean updateVwr=1);
 		%feature("autodoc", "1");
@@ -1483,39 +1483,39 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void DisplaySelected(const Standard_Boolean updateVwr=1);
 		%feature("autodoc", "1");
-		Standard_Boolean KeepTemporary(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer InWhichLocal=-0x000000001);
+		Standard_Boolean KeepTemporary(const AIS2D_InteractiveObject *anIObj, const Standard_Integer InWhichLocal=-0x000000001);
 		%feature("autodoc", "1");
-		void Redisplay(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean updateVwr=1, const Standard_Boolean allModes=0);
+		void Redisplay(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean updateVwr=1, const Standard_Boolean allModes=0);
 		%feature("autodoc", "1");
-		Standard_Boolean IsCurrent(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		Standard_Boolean IsCurrent(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSelected(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		Standard_Boolean IsSelected(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		void Highlight(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean updateVwr=1);
+		void Highlight(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean updateVwr=1);
 		%feature("autodoc", "1");
-		void HighlightWithColor(const Handle_AIS2D_InteractiveObject &anIObj, const Quantity_NameOfColor aCol, const Standard_Boolean updateVwr=1);
+		void HighlightWithColor(const AIS2D_InteractiveObject *anIObj, const Quantity_NameOfColor aCol, const Standard_Boolean updateVwr=1);
 		%feature("autodoc", "1");
-		void Unhighlight(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean updateVwr=1);
+		void Unhighlight(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean updateVwr=1);
 		%feature("autodoc", "1");
 		void SetPrecision(const Standard_Integer aPrec);
 		%feature("autodoc", "1");
 		Standard_Integer DetectPrecision() const;
 		%feature("autodoc", "1");
-		void Place(const Standard_Integer XPix, const Standard_Integer YPix, const Handle_V2d_View &aView, const Handle_AIS2D_InteractiveObject &anIO, const Standard_Boolean isTemporary=0);
+		void Place(const Standard_Integer XPix, const Standard_Integer YPix, const V2d_View *aView, const AIS2D_InteractiveObject *anIO, const Standard_Boolean isTemporary=0);
 		%feature("autodoc", "1");
-		void Drag(const Standard_Integer XPix, const Standard_Integer YPix, const Handle_V2d_View &aView, const Standard_Boolean isTemporary=1);
+		void Drag(const Standard_Integer XPix, const Standard_Integer YPix, const V2d_View *aView, const Standard_Boolean isTemporary=1);
 		%feature("autodoc", "1");
-		AIS2D_StatusOfDetection MoveTo(const Standard_Integer XPix, const Standard_Integer YPix, const Handle_V2d_View &aView);
+		AIS2D_StatusOfDetection MoveTo(const Standard_Integer XPix, const Standard_Integer YPix, const V2d_View *aView);
 		%feature("autodoc", "1");
-		AIS2D_StatusOfDetection MoveCircleTo(const Standard_Integer XPix, const Standard_Integer YPix, const Standard_Integer Radius, const Handle_V2d_View &aView);
+		AIS2D_StatusOfDetection MoveCircleTo(const Standard_Integer XPix, const Standard_Integer YPix, const Standard_Integer Radius, const V2d_View *aView);
 		%feature("autodoc", "1");
-		AIS2D_StatusOfDetection MoveTo(const Standard_Integer Xmin, const Standard_Integer Ymin, const Standard_Integer Xmax, const Standard_Integer Ymax, const Handle_V2d_View &aView);
+		AIS2D_StatusOfDetection MoveTo(const Standard_Integer Xmin, const Standard_Integer Ymin, const Standard_Integer Xmax, const Standard_Integer Ymax, const V2d_View *aView);
 		%feature("autodoc", "1");
 		AIS2D_StatusOfPick Select(const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
 		AIS2D_StatusOfPick ShiftSelect(const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
-		AIS2D_StatusOfPick ShiftSelect(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const Handle_V2d_View &aView, const Standard_Boolean UpdateVwr=1);
+		AIS2D_StatusOfPick ShiftSelect(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const V2d_View *aView, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
 		void SetHighlightColor(const Quantity_NameOfColor aCol);
 		%feature("autodoc", "1");
@@ -1531,9 +1531,9 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Quantity_NameOfColor SubIntensityColor() const;
 		%feature("autodoc", "1");
-		void SubIntensityOn(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1);
+		void SubIntensityOn(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
-		void SubIntensityOff(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1);
+		void SubIntensityOff(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
 		Standard_Boolean IsCollectorClosed() const;
 		%feature("autodoc", "1");
@@ -1549,9 +1549,9 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void CloseAllContext(const Standard_Boolean updateVwr=1);
 		%feature("autodoc", "1");
-		void SetCurrentObject(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1);
+		void SetCurrentObject(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
-		void AddOrRemoveCurObject(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1);
+		void AddOrRemoveCurObject(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
 		void UpdateCurrent();
 		%feature("autodoc", "1");
@@ -1563,13 +1563,13 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ClearCurrent(const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
-		void SetSelected(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1);
+		void SetSelected(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
 		void SetSelectedCurrent();
 		%feature("autodoc", "1");
 		void UpdateSelected(const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
-		void AddOrRemoveSelected(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1);
+		void AddOrRemoveSelected(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
 		void HighlightSelected(const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
@@ -1587,21 +1587,21 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MMgt_TShared SelectedObject() const;
 		%feature("autodoc", "1");
-		AIS2D_DisplayStatus DisplayStatus(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		AIS2D_DisplayStatus DisplayStatus(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		AIS2D_PToListOfInt DisplayedModes(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		AIS2D_PToListOfInt DisplayedModes(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		Standard_Boolean IsDisplayed(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer aMode) const;
+		Standard_Boolean IsDisplayed(const AIS2D_InteractiveObject *anIObj, const Standard_Integer aMode) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsHighlighted(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		Standard_Boolean IsHighlighted(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsHighlighted(const Handle_AIS2D_InteractiveObject &anIObj, Standard_Boolean & WithColor, Quantity_NameOfColor & theHiCol) const;
+		Standard_Boolean IsHighlighted(const AIS2D_InteractiveObject *anIObj, Standard_Boolean & WithColor, Quantity_NameOfColor & theHiCol) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsInCollector(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		Standard_Boolean IsInCollector(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		void Status(const Handle_AIS2D_InteractiveObject &anIObj, TCollection_ExtendedString & aStatus) const;
+		void Status(const AIS2D_InteractiveObject *anIObj, TCollection_ExtendedString & aStatus) const;
 		%feature("autodoc", "1");
 		void UpdateCurrentViewer();
 		%feature("autodoc", "1");
@@ -1631,13 +1631,13 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ResetOriginalState(const Standard_Boolean updateVwr=1);
 		%feature("autodoc", "1");
-		void BeginImmediateDraw(const Handle_V2d_View &aView);
+		void BeginImmediateDraw(const V2d_View *aView);
 		%feature("autodoc", "1");
-		void ImmediateDraw(const Handle_AIS2D_InteractiveObject &anIObj, const Handle_V2d_View &aView);
+		void ImmediateDraw(const AIS2D_InteractiveObject *anIObj, const V2d_View *aView);
 		%feature("autodoc", "1");
-		void EndImmediateDraw(const Handle_V2d_View &aView);
+		void EndImmediateDraw(const V2d_View *aView);
 		%feature("autodoc", "1");
-		Standard_Boolean IsImmediateModeOn(const Handle_V2d_View &aView) const;
+		Standard_Boolean IsImmediateModeOn(const V2d_View *aView) const;
 		%feature("autodoc", "1");
 		void SetDetectionMode(const AIS2D_TypeOfDetection mode);
 		%feature("autodoc", "1");
@@ -1684,19 +1684,19 @@ class AIS2D_DataMapOfIOStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_AIS2D_InteractiveObject &K, const Handle_AIS2D_GlobalStatus &I);
+		Standard_Boolean Bind(const AIS2D_InteractiveObject *K, const AIS2D_GlobalStatus *I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_AIS2D_InteractiveObject &K) const;
+		Standard_Boolean IsBound(const AIS2D_InteractiveObject *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_AIS2D_InteractiveObject &K);
+		Standard_Boolean UnBind(const AIS2D_InteractiveObject *K);
 		%feature("autodoc", "1");
-		const Handle_AIS2D_GlobalStatus & Find(const Handle_AIS2D_InteractiveObject &K) const;
+		const Handle_AIS2D_GlobalStatus & Find(const AIS2D_InteractiveObject *K) const;
 		%feature("autodoc", "1");
-		const Handle_AIS2D_GlobalStatus & operator()(const Handle_AIS2D_InteractiveObject &K) const;
+		const Handle_AIS2D_GlobalStatus & operator()(const AIS2D_InteractiveObject *K) const;
 		%feature("autodoc", "1");
-		Handle_AIS2D_GlobalStatus & ChangeFind(const Handle_AIS2D_InteractiveObject &K);
+		Handle_AIS2D_GlobalStatus & ChangeFind(const AIS2D_InteractiveObject *K);
 		%feature("autodoc", "1");
-		Handle_AIS2D_GlobalStatus & operator()(const Handle_AIS2D_InteractiveObject &K);
+		Handle_AIS2D_GlobalStatus & operator()(const AIS2D_InteractiveObject *K);
 
 };
 %feature("shadow") AIS2D_DataMapOfIOStatus::~AIS2D_DataMapOfIOStatus %{
@@ -1719,7 +1719,7 @@ def __del__(self):
 class AIS2D_SequenceNodeOfSequenceOfIO : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_SequenceNodeOfSequenceOfIO(const Handle_AIS2D_InteractiveObject &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		AIS2D_SequenceNodeOfSequenceOfIO(const AIS2D_InteractiveObject *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject & Value() const;
 		%feature("autodoc", "1");
@@ -1764,29 +1764,21 @@ class AIS2D_HSequenceOfIO : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_InteractiveObject &anItem);
+		void Append(const AIS2D_InteractiveObject *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_HSequenceOfIO &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_InteractiveObject &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_HSequenceOfIO &aSequence);
+		void Prepend(const AIS2D_InteractiveObject *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_AIS2D_InteractiveObject &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const AIS2D_InteractiveObject *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_AIS2D_HSequenceOfIO &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_AIS2D_InteractiveObject &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_AIS2D_HSequenceOfIO &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const AIS2D_InteractiveObject *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfIO Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_AIS2D_InteractiveObject &anItem);
+		void SetValue(const Standard_Integer anIndex, const AIS2D_InteractiveObject *anItem);
 		%feature("autodoc", "1");
 		const Handle_AIS2D_InteractiveObject & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -1835,7 +1827,7 @@ def __del__(self):
 class AIS2D_DataMapNodeOfDataMapOfLC : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_DataMapNodeOfDataMapOfLC(const Standard_Integer &K, const Handle_AIS2D_LocalContext &I, const TCollection_MapNodePtr &n);
+		AIS2D_DataMapNodeOfDataMapOfLC(const Standard_Integer &K, const AIS2D_LocalContext *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey() {
@@ -1894,19 +1886,19 @@ class AIS2D_DataMapOfPrimAspects : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Graphic2d_Primitive &K, const Handle_Prs2d_AspectRoot &I);
+		Standard_Boolean Bind(const Graphic2d_Primitive *K, const Prs2d_AspectRoot *I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Graphic2d_Primitive &K) const;
+		Standard_Boolean IsBound(const Graphic2d_Primitive *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Graphic2d_Primitive &K);
+		Standard_Boolean UnBind(const Graphic2d_Primitive *K);
 		%feature("autodoc", "1");
-		const Handle_Prs2d_AspectRoot & Find(const Handle_Graphic2d_Primitive &K) const;
+		const Handle_Prs2d_AspectRoot & Find(const Graphic2d_Primitive *K) const;
 		%feature("autodoc", "1");
-		const Handle_Prs2d_AspectRoot & operator()(const Handle_Graphic2d_Primitive &K) const;
+		const Handle_Prs2d_AspectRoot & operator()(const Graphic2d_Primitive *K) const;
 		%feature("autodoc", "1");
-		Handle_Prs2d_AspectRoot & ChangeFind(const Handle_Graphic2d_Primitive &K);
+		Handle_Prs2d_AspectRoot & ChangeFind(const Graphic2d_Primitive *K);
 		%feature("autodoc", "1");
-		Handle_Prs2d_AspectRoot & operator()(const Handle_Graphic2d_Primitive &K);
+		Handle_Prs2d_AspectRoot & operator()(const Graphic2d_Primitive *K);
 
 };
 %feature("shadow") AIS2D_DataMapOfPrimAspects::~AIS2D_DataMapOfPrimAspects %{
@@ -1929,7 +1921,7 @@ def __del__(self):
 class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_DataMapNodeOfDataMapOfIOStatus(const Handle_AIS2D_InteractiveObject &K, const Handle_AIS2D_GlobalStatus &I, const TCollection_MapNodePtr &n);
+		AIS2D_DataMapNodeOfDataMapOfIOStatus(const AIS2D_InteractiveObject *K, const AIS2D_GlobalStatus *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject & Key() const;
 		%feature("autodoc", "1");
@@ -1976,19 +1968,19 @@ class AIS2D_SequenceOfIO : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const AIS2D_SequenceOfIO & operator=(const AIS2D_SequenceOfIO &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_InteractiveObject &T);
+		void Append(const AIS2D_InteractiveObject *T);
 		%feature("autodoc", "1");
 		void Append(AIS2D_SequenceOfIO & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_InteractiveObject &T);
+		void Prepend(const AIS2D_InteractiveObject *T);
 		%feature("autodoc", "1");
 		void Prepend(AIS2D_SequenceOfIO & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_AIS2D_InteractiveObject &I);
+		void InsertBefore(const Standard_Integer Index, const AIS2D_InteractiveObject *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, AIS2D_SequenceOfIO & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_AIS2D_InteractiveObject &T);
+		void InsertAfter(const Standard_Integer Index, const AIS2D_InteractiveObject *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, AIS2D_SequenceOfIO & S);
 		%feature("autodoc", "1");
@@ -2002,7 +1994,7 @@ class AIS2D_SequenceOfIO : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_AIS2D_InteractiveObject & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_AIS2D_InteractiveObject &I);
+		void SetValue(const Standard_Integer Index, const AIS2D_InteractiveObject *I);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -2035,9 +2027,9 @@ class AIS2D {
 		%feature("autodoc", "1");
 		AIS2D();
 		%feature("autodoc", "1");
-		Standard_Boolean Save(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
+		Standard_Boolean Save(const AIS2D_InteractiveContext *aCntx, const char * aFile);
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveObject Retrieve(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
+		Handle_AIS2D_InteractiveObject Retrieve(const AIS2D_InteractiveContext *aCntx, const char * aFile);
 
 };
 %feature("shadow") AIS2D::~AIS2D %{
@@ -2060,7 +2052,7 @@ def __del__(self):
 class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_SequenceNodeOfSequenceOfPrimArchit(const Handle_AIS2D_PrimitiveArchit &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		AIS2D_SequenceNodeOfSequenceOfPrimArchit(const AIS2D_PrimitiveArchit *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_AIS2D_PrimitiveArchit & Value() const;
 		%feature("autodoc", "1");
@@ -2128,7 +2120,7 @@ def __del__(self):
 class AIS2D_PrimitiveArchit : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_PrimitiveArchit(const Handle_Graphic2d_Primitive &aPrim, const Standard_Integer ind);
+		AIS2D_PrimitiveArchit(const Graphic2d_Primitive *aPrim, const Standard_Integer ind);
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Primitive GetPrimitive() const;
 		%feature("autodoc", "1");
@@ -2175,29 +2167,21 @@ class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_PrimitiveArchit &anItem);
+		void Append(const AIS2D_PrimitiveArchit *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_HSequenceOfPrimArchit &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_PrimitiveArchit &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_HSequenceOfPrimArchit &aSequence);
+		void Prepend(const AIS2D_PrimitiveArchit *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_AIS2D_PrimitiveArchit &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const AIS2D_PrimitiveArchit *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_AIS2D_HSequenceOfPrimArchit &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_AIS2D_PrimitiveArchit &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_AIS2D_HSequenceOfPrimArchit &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const AIS2D_PrimitiveArchit *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfPrimArchit Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_AIS2D_PrimitiveArchit &anItem);
+		void SetValue(const Standard_Integer anIndex, const AIS2D_PrimitiveArchit *anItem);
 		%feature("autodoc", "1");
 		const Handle_AIS2D_PrimitiveArchit & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -2248,15 +2232,15 @@ class AIS2D_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		AIS2D_LocalContext();
 		%feature("autodoc", "1");
-		AIS2D_LocalContext(const Handle_AIS2D_InteractiveContext &aCtx, const Standard_Integer anIndex, const Standard_Boolean LoadDisplayed=1, const Standard_Boolean AcceptStdModes=1, const Standard_Boolean AcceptErase=0);
+		AIS2D_LocalContext(const AIS2D_InteractiveContext *aCtx, const Standard_Integer anIndex, const Standard_Boolean LoadDisplayed=1, const Standard_Boolean AcceptStdModes=1, const Standard_Boolean AcceptErase=0);
 		%feature("autodoc", "1");
-		Standard_Boolean Display(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer DisplayMode=0, const Standard_Boolean AllowDecomp=1, const Standard_Integer ActivationMode=0);
+		Standard_Boolean Display(const AIS2D_InteractiveObject *anIObj, const Standard_Integer DisplayMode=0, const Standard_Boolean AllowDecomp=1, const Standard_Integer ActivationMode=0);
 		%feature("autodoc", "1");
-		Standard_Boolean Load(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean AllowDecomp=1, const Standard_Integer ActivationMode=0);
+		Standard_Boolean Load(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean AllowDecomp=1, const Standard_Integer ActivationMode=0);
 		%feature("autodoc", "1");
-		Standard_Boolean Erase(const Handle_AIS2D_InteractiveObject &anIObj);
+		Standard_Boolean Erase(const AIS2D_InteractiveObject *anIObj);
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_AIS2D_InteractiveObject &aSelObj);
+		Standard_Boolean Remove(const AIS2D_InteractiveObject *aSelObj);
 		%feature("autodoc", "1");
 		void LoadContextObjects();
 		%feature("autodoc", "1");
@@ -2272,37 +2256,37 @@ class AIS2D_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void UpdateSelected(const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
-		void SetSelected(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1);
+		void SetSelected(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
-		void AddOrRemoveSelected(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1);
+		void AddOrRemoveSelected(const AIS2D_InteractiveObject *anIObj, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSelected(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		Standard_Boolean IsSelected(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject SelectedIO() const;
 		%feature("autodoc", "1");
-		void SetDisplayPriority(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer Prior);
+		void SetDisplayPriority(const AIS2D_InteractiveObject *anIObj, const Standard_Integer Prior);
 		%feature("autodoc", "1");
 		Standard_Integer DisplayedObjects(TColStd_MapOfTransient & theMapToFill) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		Standard_Boolean IsDisplayed(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer aMode) const;
+		Standard_Boolean IsDisplayed(const AIS2D_InteractiveObject *anIObj, const Standard_Integer aMode) const;
 		%feature("autodoc", "1");
-		void Unhighlight(const Handle_AIS2D_InteractiveObject &anIObj);
+		void Unhighlight(const AIS2D_InteractiveObject *anIObj);
 		%feature("autodoc", "1");
-		Standard_Boolean IsHighlight(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		Standard_Boolean IsHighlight(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsHighlight(const Handle_AIS2D_InteractiveObject &anIObj, Standard_Boolean & WithColor, Quantity_NameOfColor & HiCol) const;
+		Standard_Boolean IsHighlight(const AIS2D_InteractiveObject *anIObj, Standard_Boolean & WithColor, Quantity_NameOfColor & HiCol) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsIn(const Handle_AIS2D_InteractiveObject &anIObj) const;
+		Standard_Boolean IsIn(const AIS2D_InteractiveObject *anIObj) const;
 		%feature("autodoc", "1");
-		void SubIntensityOn(const Handle_AIS2D_InteractiveObject &anIObj);
+		void SubIntensityOn(const AIS2D_InteractiveObject *anIObj);
 		%feature("autodoc", "1");
-		void SubIntensityOff(const Handle_AIS2D_InteractiveObject &anIObj);
+		void SubIntensityOff(const AIS2D_InteractiveObject *anIObj);
 		%feature("autodoc", "1");
-		Standard_Boolean UnhighLastDetect(const Handle_V2d_View &aView);
+		Standard_Boolean UnhighLastDetect(const V2d_View *aView);
 		%feature("autodoc", "1");
-		AIS2D_StatusOfDetection MoveTo(const Standard_Integer Xpix, const Standard_Integer Ypix, const Handle_V2d_View &aView);
+		AIS2D_StatusOfDetection MoveTo(const Standard_Integer Xpix, const Standard_Integer Ypix, const V2d_View *aView);
 		%feature("autodoc", "1");
 		AIS2D_StatusOfPick Select(const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
@@ -2353,19 +2337,19 @@ class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_AIS2D_InteractiveObject &K, const Handle_AIS2D_LocalStatus &I);
+		Standard_Boolean Bind(const AIS2D_InteractiveObject *K, const AIS2D_LocalStatus *I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_AIS2D_InteractiveObject &K) const;
+		Standard_Boolean IsBound(const AIS2D_InteractiveObject *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_AIS2D_InteractiveObject &K);
+		Standard_Boolean UnBind(const AIS2D_InteractiveObject *K);
 		%feature("autodoc", "1");
-		const Handle_AIS2D_LocalStatus & Find(const Handle_AIS2D_InteractiveObject &K) const;
+		const Handle_AIS2D_LocalStatus & Find(const AIS2D_InteractiveObject *K) const;
 		%feature("autodoc", "1");
-		const Handle_AIS2D_LocalStatus & operator()(const Handle_AIS2D_InteractiveObject &K) const;
+		const Handle_AIS2D_LocalStatus & operator()(const AIS2D_InteractiveObject *K) const;
 		%feature("autodoc", "1");
-		Handle_AIS2D_LocalStatus & ChangeFind(const Handle_AIS2D_InteractiveObject &K);
+		Handle_AIS2D_LocalStatus & ChangeFind(const AIS2D_InteractiveObject *K);
 		%feature("autodoc", "1");
-		Handle_AIS2D_LocalStatus & operator()(const Handle_AIS2D_InteractiveObject &K);
+		Handle_AIS2D_LocalStatus & operator()(const AIS2D_InteractiveObject *K);
 
 };
 %feature("shadow") AIS2D_DataMapOfLocStat::~AIS2D_DataMapOfLocStat %{

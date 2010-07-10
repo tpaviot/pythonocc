@@ -61,15 +61,15 @@ class Handle_Blend_SequenceNodeOfSequenceOfPoint : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_Blend_SequenceNodeOfSequenceOfPoint();
 		%feature("autodoc", "1");
-		Handle_Blend_SequenceNodeOfSequenceOfPoint(const Handle_Blend_SequenceNodeOfSequenceOfPoint &aHandle);
+		Handle_Blend_SequenceNodeOfSequenceOfPoint(const Blend_SequenceNodeOfSequenceOfPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Blend_SequenceNodeOfSequenceOfPoint(const Blend_SequenceNodeOfSequenceOfPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_Blend_SequenceNodeOfSequenceOfPoint & operator=(const Handle_Blend_SequenceNodeOfSequenceOfPoint &aHandle);
+		Handle_Blend_SequenceNodeOfSequenceOfPoint & operator=(const Blend_SequenceNodeOfSequenceOfPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_Blend_SequenceNodeOfSequenceOfPoint & operator=(const Blend_SequenceNodeOfSequenceOfPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_Blend_SequenceNodeOfSequenceOfPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Blend_SequenceNodeOfSequenceOfPoint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Blend_SequenceNodeOfSequenceOfPoint {
@@ -107,7 +107,7 @@ class Blend_SurfCurvFuncInv : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		virtual		void Set(const Handle_Adaptor2d_HCurve2d &Rst);
+		virtual		void Set(const Adaptor2d_HCurve2d *Rst);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
@@ -501,7 +501,7 @@ class Blend_FuncInv : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
+		virtual		void Set(const Standard_Boolean OnFirst, const Adaptor2d_HCurve2d *COnSurf);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
 		%feature("autodoc", "1");

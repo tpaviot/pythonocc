@@ -43,15 +43,15 @@ class Handle_PDF_Attribute : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PDF_Attribute();
 		%feature("autodoc", "1");
-		Handle_PDF_Attribute(const Handle_PDF_Attribute &aHandle);
+		Handle_PDF_Attribute(const PDF_Attribute *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_Attribute(const PDF_Attribute *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_Attribute & operator=(const Handle_PDF_Attribute &aHandle);
+		Handle_PDF_Attribute & operator=(const PDF_Attribute *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_Attribute & operator=(const PDF_Attribute *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_Attribute const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PDF_Attribute const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PDF_Attribute {
@@ -81,15 +81,15 @@ class Handle_PDF_TagSource : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PDF_TagSource();
 		%feature("autodoc", "1");
-		Handle_PDF_TagSource(const Handle_PDF_TagSource &aHandle);
+		Handle_PDF_TagSource(const PDF_TagSource *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_TagSource(const PDF_TagSource *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_TagSource & operator=(const Handle_PDF_TagSource &aHandle);
+		Handle_PDF_TagSource & operator=(const PDF_TagSource *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_TagSource & operator=(const PDF_TagSource *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_TagSource const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PDF_TagSource const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PDF_TagSource {
@@ -119,15 +119,15 @@ class Handle_PDF_Reference : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PDF_Reference();
 		%feature("autodoc", "1");
-		Handle_PDF_Reference(const Handle_PDF_Reference &aHandle);
+		Handle_PDF_Reference(const PDF_Reference *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_Reference(const PDF_Reference *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_Reference & operator=(const Handle_PDF_Reference &aHandle);
+		Handle_PDF_Reference & operator=(const PDF_Reference *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_Reference & operator=(const PDF_Reference *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_Reference const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PDF_Reference const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PDF_Reference {
@@ -157,15 +157,15 @@ class Handle_PDF_HAttributeArray1 : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PDF_HAttributeArray1();
 		%feature("autodoc", "1");
-		Handle_PDF_HAttributeArray1(const Handle_PDF_HAttributeArray1 &aHandle);
+		Handle_PDF_HAttributeArray1(const PDF_HAttributeArray1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_HAttributeArray1(const PDF_HAttributeArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_HAttributeArray1 & operator=(const Handle_PDF_HAttributeArray1 &aHandle);
+		Handle_PDF_HAttributeArray1 & operator=(const PDF_HAttributeArray1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_HAttributeArray1 & operator=(const PDF_HAttributeArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_HAttributeArray1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PDF_HAttributeArray1 const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PDF_HAttributeArray1 {
@@ -195,15 +195,15 @@ class Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 : public Handle_PStandard_A
 		%feature("autodoc", "1");
 		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1();
 		%feature("autodoc", "1");
-		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1(const Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 &aHandle);
+		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1(const PDF_VArrayNodeOfFieldOfHAttributeArray1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1(const PDF_VArrayNodeOfFieldOfHAttributeArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 & operator=(const Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 &aHandle);
+		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 & operator=(const PDF_VArrayNodeOfFieldOfHAttributeArray1 *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 & operator=(const PDF_VArrayNodeOfFieldOfHAttributeArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 {
@@ -233,15 +233,15 @@ class Handle_PDF_Data : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PDF_Data();
 		%feature("autodoc", "1");
-		Handle_PDF_Data(const Handle_PDF_Data &aHandle);
+		Handle_PDF_Data(const PDF_Data *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_Data(const PDF_Data *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_Data & operator=(const Handle_PDF_Data &aHandle);
+		Handle_PDF_Data & operator=(const PDF_Data *aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_Data & operator=(const PDF_Data *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_Data const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PDF_Data const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PDF_Data {
@@ -353,17 +353,17 @@ class PDF_Reference : public PDF_Attribute {
 		%feature("autodoc", "1");
 		PDF_Reference();
 		%feature("autodoc", "1");
-		PDF_Reference(const Handle_PCollection_HAsciiString &V);
+		PDF_Reference(const PCollection_HAsciiString *V);
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString ReferencedLabel() const;
 		%feature("autodoc", "1");
-		void ReferencedLabel(const Handle_PCollection_HAsciiString &V);
+		void ReferencedLabel(const PCollection_HAsciiString *V);
 		%feature("autodoc", "1");
 		PDF_Reference(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString _CSFDB_GetPDF_ReferencemyValue() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPDF_ReferencemyValue(const Handle_PCollection_HAsciiString &p);
+		void _CSFDB_SetPDF_ReferencemyValue(const PCollection_HAsciiString *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -400,9 +400,9 @@ class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PDF_VArrayNodeOfFieldOfHAttributeArray1();
 		%feature("autodoc", "1");
-		PDF_VArrayNodeOfFieldOfHAttributeArray1(const Handle_PDF_Attribute &aValue);
+		PDF_VArrayNodeOfFieldOfHAttributeArray1(const PDF_Attribute *aValue);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_PDF_Attribute &aValue);
+		void SetValue(const PDF_Attribute *aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
@@ -410,7 +410,7 @@ class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		Handle_PDF_Attribute _CSFDB_GetPDF_VArrayNodeOfFieldOfHAttributeArray1myValue() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPDF_VArrayNodeOfFieldOfHAttributeArray1myValue(const Handle_PDF_Attribute &p);
+		void _CSFDB_SetPDF_VArrayNodeOfFieldOfHAttributeArray1myValue(const PDF_Attribute *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -451,11 +451,11 @@ class PDF_Data : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer VersionNumber() const;
 		%feature("autodoc", "1");
-		void Labels(const Handle_PColStd_HArray1OfInteger &theLabels);
+		void Labels(const PColStd_HArray1OfInteger *theLabels);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfInteger Labels() const;
 		%feature("autodoc", "1");
-		void Attributes(const Handle_PDF_HAttributeArray1 &theAttributes);
+		void Attributes(const PDF_HAttributeArray1 *theAttributes);
 		%feature("autodoc", "1");
 		Handle_PDF_HAttributeArray1 Attributes() const;
 		%feature("autodoc", "1");
@@ -467,11 +467,11 @@ class PDF_Data : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfInteger _CSFDB_GetPDF_DatamyLabels() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPDF_DatamyLabels(const Handle_PColStd_HArray1OfInteger &p);
+		void _CSFDB_SetPDF_DatamyLabels(const PColStd_HArray1OfInteger *p);
 		%feature("autodoc", "1");
 		Handle_PDF_HAttributeArray1 _CSFDB_GetPDF_DatamyAttributes() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPDF_DatamyAttributes(const Handle_PDF_HAttributeArray1 &p);
+		void _CSFDB_SetPDF_DatamyAttributes(const PDF_HAttributeArray1 *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -508,13 +508,13 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PDF_HAttributeArray1(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PDF_HAttributeArray1(const Standard_Integer Low, const Standard_Integer Up, const Handle_PDF_Attribute &V);
+		PDF_HAttributeArray1(const Standard_Integer Low, const Standard_Integer Up, const PDF_Attribute *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PDF_Attribute &Value);
+		void SetValue(const Standard_Integer Index, const PDF_Attribute *Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -589,7 +589,7 @@ class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PDF_FieldOfHAttributeArray1 &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PDF_Attribute &Value);
+		void SetValue(const Standard_Integer Index, const PDF_Attribute *Value);
 		%feature("autodoc", "1");
 		Handle_PDF_Attribute & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -620,9 +620,9 @@ class PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
 		%feature("autodoc", "1");
 		PDF_VArrayTNodeOfFieldOfHAttributeArray1();
 		%feature("autodoc", "1");
-		PDF_VArrayTNodeOfFieldOfHAttributeArray1(const Handle_PDF_Attribute &aValue);
+		PDF_VArrayTNodeOfFieldOfHAttributeArray1(const PDF_Attribute *aValue);
 		%feature("autodoc", "1");
-		void SetValue(const Handle_PDF_Attribute &aValue);
+		void SetValue(const PDF_Attribute *aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 

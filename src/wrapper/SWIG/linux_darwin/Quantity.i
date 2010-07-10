@@ -718,15 +718,15 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError();
 		%feature("autodoc", "1");
-		Handle_Quantity_ColorDefinitionError(const Handle_Quantity_ColorDefinitionError &aHandle);
+		Handle_Quantity_ColorDefinitionError(const Quantity_ColorDefinitionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError(const Quantity_ColorDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_ColorDefinitionError & operator=(const Handle_Quantity_ColorDefinitionError &aHandle);
+		Handle_Quantity_ColorDefinitionError & operator=(const Quantity_ColorDefinitionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError & operator=(const Quantity_ColorDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_ColorDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Quantity_ColorDefinitionError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Quantity_ColorDefinitionError {
@@ -756,15 +756,15 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError();
 		%feature("autodoc", "1");
-		Handle_Quantity_PeriodDefinitionError(const Handle_Quantity_PeriodDefinitionError &aHandle);
+		Handle_Quantity_PeriodDefinitionError(const Quantity_PeriodDefinitionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError(const Quantity_PeriodDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_PeriodDefinitionError & operator=(const Handle_Quantity_PeriodDefinitionError &aHandle);
+		Handle_Quantity_PeriodDefinitionError & operator=(const Quantity_PeriodDefinitionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError & operator=(const Quantity_PeriodDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_PeriodDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Quantity_PeriodDefinitionError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Quantity_PeriodDefinitionError {
@@ -794,15 +794,15 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor();
 		%feature("autodoc", "1");
-		Handle_Quantity_HArray1OfColor(const Handle_Quantity_HArray1OfColor &aHandle);
+		Handle_Quantity_HArray1OfColor(const Quantity_HArray1OfColor *aHandle);
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor(const Quantity_HArray1OfColor *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_HArray1OfColor & operator=(const Handle_Quantity_HArray1OfColor &aHandle);
+		Handle_Quantity_HArray1OfColor & operator=(const Quantity_HArray1OfColor *aHandle);
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor & operator=(const Quantity_HArray1OfColor *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_HArray1OfColor const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Quantity_HArray1OfColor const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Quantity_HArray1OfColor {
@@ -832,15 +832,15 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError();
 		%feature("autodoc", "1");
-		Handle_Quantity_DateDefinitionError(const Handle_Quantity_DateDefinitionError &aHandle);
+		Handle_Quantity_DateDefinitionError(const Quantity_DateDefinitionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError(const Quantity_DateDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_DateDefinitionError & operator=(const Handle_Quantity_DateDefinitionError &aHandle);
+		Handle_Quantity_DateDefinitionError & operator=(const Quantity_DateDefinitionError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError & operator=(const Quantity_DateDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_DateDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Quantity_DateDefinitionError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Quantity_DateDefinitionError {

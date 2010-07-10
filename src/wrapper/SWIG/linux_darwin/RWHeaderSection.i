@@ -43,15 +43,15 @@ class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteM
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_ReadWriteModule();
 		%feature("autodoc", "1");
-		Handle_RWHeaderSection_ReadWriteModule(const Handle_RWHeaderSection_ReadWriteModule &aHandle);
+		Handle_RWHeaderSection_ReadWriteModule(const RWHeaderSection_ReadWriteModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_ReadWriteModule(const RWHeaderSection_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWHeaderSection_ReadWriteModule & operator=(const Handle_RWHeaderSection_ReadWriteModule &aHandle);
+		Handle_RWHeaderSection_ReadWriteModule & operator=(const RWHeaderSection_ReadWriteModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_ReadWriteModule & operator=(const RWHeaderSection_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWHeaderSection_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_RWHeaderSection_ReadWriteModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_RWHeaderSection_ReadWriteModule {
@@ -81,15 +81,15 @@ class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModul
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_GeneralModule();
 		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule(const Handle_RWHeaderSection_GeneralModule &aHandle);
+		Handle_RWHeaderSection_GeneralModule(const RWHeaderSection_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_GeneralModule(const RWHeaderSection_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule & operator=(const Handle_RWHeaderSection_GeneralModule &aHandle);
+		Handle_RWHeaderSection_GeneralModule & operator=(const RWHeaderSection_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_GeneralModule & operator=(const RWHeaderSection_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_RWHeaderSection_GeneralModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_RWHeaderSection_GeneralModule {
@@ -119,9 +119,9 @@ class RWHeaderSection_RWFileDescription {
 		%feature("autodoc", "1");
 		RWHeaderSection_RWFileDescription();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_HeaderSection_FileDescription &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const HeaderSection_FileDescription *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_HeaderSection_FileDescription &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const HeaderSection_FileDescription *ent) const;
 
 };
 %feature("shadow") RWHeaderSection_RWFileDescription::~RWHeaderSection_RWFileDescription %{
@@ -154,9 +154,9 @@ class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 		%feature("autodoc", "1");
 		virtual		const TCollection_AsciiString & StepType(const Standard_Integer CN) const;
 		%feature("autodoc", "1");
-		virtual		void ReadStep(const Standard_Integer CN, const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
+		virtual		void ReadStep(const Standard_Integer CN, const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Handle_Standard_Transient &ent) const;
+		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -218,9 +218,9 @@ class RWHeaderSection_RWFileName {
 		%feature("autodoc", "1");
 		RWHeaderSection_RWFileName();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_HeaderSection_FileName &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const HeaderSection_FileName *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_HeaderSection_FileName &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const HeaderSection_FileName *ent) const;
 
 };
 %feature("shadow") RWHeaderSection_RWFileName::~RWHeaderSection_RWFileName %{
@@ -245,9 +245,9 @@ class RWHeaderSection_RWFileSchema {
 		%feature("autodoc", "1");
 		RWHeaderSection_RWFileSchema();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_HeaderSection_FileSchema &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const HeaderSection_FileSchema *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_HeaderSection_FileSchema &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const HeaderSection_FileSchema *ent) const;
 
 };
 %feature("shadow") RWHeaderSection_RWFileSchema::~RWHeaderSection_RWFileSchema %{
@@ -272,11 +272,11 @@ class RWHeaderSection_GeneralModule : public StepData_GeneralModule {
 		%feature("autodoc", "1");
 		RWHeaderSection_GeneralModule();
 		%feature("autodoc", "1");
-		virtual		void FillSharedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void FillSharedCase(const Standard_Integer CN, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void CheckCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void CheckCase(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		virtual		void CopyCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
+		virtual		void CopyCase(const Standard_Integer CN, const Standard_Transient *entfrom, const Standard_Transient *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & ent) const;
 		%feature("autodoc", "1");

@@ -196,7 +196,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<gp_XYZ.hxx>
 #include<gp_Pnt.hxx>
-#include<Handle_IGESBasic_HArray1OfHArray1OfInteger.hxx>
 #include<Handle_IGESData_IGESEntity.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 %}

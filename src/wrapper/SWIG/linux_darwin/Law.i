@@ -43,15 +43,15 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_Law_ListNodeOfLaws();
 		%feature("autodoc", "1");
-		Handle_Law_ListNodeOfLaws(const Handle_Law_ListNodeOfLaws &aHandle);
+		Handle_Law_ListNodeOfLaws(const Law_ListNodeOfLaws *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_ListNodeOfLaws(const Law_ListNodeOfLaws *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_ListNodeOfLaws & operator=(const Handle_Law_ListNodeOfLaws &aHandle);
+		Handle_Law_ListNodeOfLaws & operator=(const Law_ListNodeOfLaws *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_ListNodeOfLaws & operator=(const Law_ListNodeOfLaws *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_ListNodeOfLaws const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Law_ListNodeOfLaws const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Law_ListNodeOfLaws {
@@ -81,15 +81,15 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Law_Function();
 		%feature("autodoc", "1");
-		Handle_Law_Function(const Handle_Law_Function &aHandle);
+		Handle_Law_Function(const Law_Function *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_Function(const Law_Function *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Function & operator=(const Handle_Law_Function &aHandle);
+		Handle_Law_Function & operator=(const Law_Function *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_Function & operator=(const Law_Function *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Function const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Law_Function const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Law_Function {
@@ -119,15 +119,15 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_BSpFunc();
 		%feature("autodoc", "1");
-		Handle_Law_BSpFunc(const Handle_Law_BSpFunc &aHandle);
+		Handle_Law_BSpFunc(const Law_BSpFunc *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_BSpFunc(const Law_BSpFunc *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_BSpFunc & operator=(const Handle_Law_BSpFunc &aHandle);
+		Handle_Law_BSpFunc & operator=(const Law_BSpFunc *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_BSpFunc & operator=(const Law_BSpFunc *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_BSpFunc const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Law_BSpFunc const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Law_BSpFunc {
@@ -157,15 +157,15 @@ class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 		%feature("autodoc", "1");
 		Handle_Law_Interpol();
 		%feature("autodoc", "1");
-		Handle_Law_Interpol(const Handle_Law_Interpol &aHandle);
+		Handle_Law_Interpol(const Law_Interpol *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_Interpol(const Law_Interpol *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Interpol & operator=(const Handle_Law_Interpol &aHandle);
+		Handle_Law_Interpol & operator=(const Law_Interpol *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_Interpol & operator=(const Law_Interpol *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Interpol const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Law_Interpol const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Law_Interpol {
@@ -195,15 +195,15 @@ class Handle_Law_BSpline : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Law_BSpline();
 		%feature("autodoc", "1");
-		Handle_Law_BSpline(const Handle_Law_BSpline &aHandle);
+		Handle_Law_BSpline(const Law_BSpline *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_BSpline(const Law_BSpline *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_BSpline & operator=(const Handle_Law_BSpline &aHandle);
+		Handle_Law_BSpline & operator=(const Law_BSpline *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_BSpline & operator=(const Law_BSpline *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_BSpline const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Law_BSpline const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Law_BSpline {
@@ -233,15 +233,15 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 		%feature("autodoc", "1");
 		Handle_Law_S();
 		%feature("autodoc", "1");
-		Handle_Law_S(const Handle_Law_S &aHandle);
+		Handle_Law_S(const Law_S *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_S(const Law_S *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_S & operator=(const Handle_Law_S &aHandle);
+		Handle_Law_S & operator=(const Law_S *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_S & operator=(const Law_S *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_S const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Law_S const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Law_S {
@@ -271,15 +271,15 @@ class Handle_Law_Linear : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_Linear();
 		%feature("autodoc", "1");
-		Handle_Law_Linear(const Handle_Law_Linear &aHandle);
+		Handle_Law_Linear(const Law_Linear *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_Linear(const Law_Linear *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Linear & operator=(const Handle_Law_Linear &aHandle);
+		Handle_Law_Linear & operator=(const Law_Linear *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_Linear & operator=(const Law_Linear *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Linear const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Law_Linear const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Law_Linear {
@@ -309,15 +309,15 @@ class Handle_Law_Constant : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_Constant();
 		%feature("autodoc", "1");
-		Handle_Law_Constant(const Handle_Law_Constant &aHandle);
+		Handle_Law_Constant(const Law_Constant *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_Constant(const Law_Constant *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Constant & operator=(const Handle_Law_Constant &aHandle);
+		Handle_Law_Constant & operator=(const Law_Constant *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_Constant & operator=(const Law_Constant *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Constant const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Law_Constant const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Law_Constant {
@@ -347,15 +347,15 @@ class Handle_Law_Composite : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_Composite();
 		%feature("autodoc", "1");
-		Handle_Law_Composite(const Handle_Law_Composite &aHandle);
+		Handle_Law_Composite(const Law_Composite *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_Composite(const Law_Composite *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Composite & operator=(const Handle_Law_Composite &aHandle);
+		Handle_Law_Composite & operator=(const Law_Composite *aHandle);
 		%feature("autodoc", "1");
 		Handle_Law_Composite & operator=(const Law_Composite *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Composite const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Law_Composite const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Law_Composite {
@@ -383,7 +383,7 @@ def __del__(self):
 class Law_ListNodeOfLaws : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Law_ListNodeOfLaws(const Handle_Law_Function &I, const TCollection_MapNodePtr &n);
+		Law_ListNodeOfLaws(const Law_Function *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Law_Function & Value() const;
 		%feature("autodoc", "1");
@@ -474,11 +474,11 @@ class Law_BSpFunc : public Law_Function {
 		%feature("autodoc", "1");
 		Law_BSpFunc();
 		%feature("autodoc", "1");
-		Law_BSpFunc(const Handle_Law_BSpline &C, const Standard_Real First, const Standard_Real Last);
+		Law_BSpFunc(const Law_BSpline *C, const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
 		Handle_Law_BSpline Curve() const;
 		%feature("autodoc", "1");
-		void SetCurve(const Handle_Law_BSpline &C);
+		void SetCurve(const Law_BSpline *C);
 
 };
 %extend Law_BSpFunc {
@@ -587,13 +587,13 @@ def __del__(self):
 class Law_Interpolate {
 	public:
 		%feature("autodoc", "1");
-		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		Law_Interpolate(const TColStd_HArray1OfReal *Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		Law_Interpolate(const TColStd_HArray1OfReal *Points, const TColStd_HArray1OfReal *Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		void Load(const Standard_Real InitialTangent, const Standard_Real FinalTangent);
 		%feature("autodoc", "1");
-		void Load(const TColStd_Array1OfReal &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
+		void Load(const TColStd_Array1OfReal &Tangents, const TColStd_HArray1OfBoolean *TangentFlags);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
@@ -857,7 +857,7 @@ def __del__(self):
 class Law_BSplineKnotSplitting {
 	public:
 		%feature("autodoc", "1");
-		Law_BSplineKnotSplitting(const Handle_Law_BSpline &BasisLaw, const Standard_Integer ContinuityRange);
+		Law_BSplineKnotSplitting(const Law_BSpline *BasisLaw, const Standard_Integer ContinuityRange);
 		%feature("autodoc", "1");
 		Standard_Integer NbSplits() const;
 		%feature("autodoc", "1");
@@ -937,15 +937,15 @@ class Law_Laws {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Law_Function &I);
+		void Prepend(const Law_Function *I);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Law_Function &I, Law_ListIteratorOfLaws & theIt);
+		void Prepend(const Law_Function *I, Law_ListIteratorOfLaws & theIt);
 		%feature("autodoc", "1");
 		void Prepend(Law_Laws & Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_Law_Function &I);
+		void Append(const Law_Function *I);
 		%feature("autodoc", "1");
-		void Append(const Handle_Law_Function &I, Law_ListIteratorOfLaws & theIt);
+		void Append(const Law_Function *I, Law_ListIteratorOfLaws & theIt);
 		%feature("autodoc", "1");
 		void Append(Law_Laws & Other);
 		%feature("autodoc", "1");
@@ -957,11 +957,11 @@ class Law_Laws {
 		%feature("autodoc", "1");
 		void Remove(Law_ListIteratorOfLaws & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const Handle_Law_Function &I, Law_ListIteratorOfLaws & It);
+		void InsertBefore(const Law_Function *I, Law_ListIteratorOfLaws & It);
 		%feature("autodoc", "1");
 		void InsertBefore(Law_Laws & Other, Law_ListIteratorOfLaws & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const Handle_Law_Function &I, Law_ListIteratorOfLaws & It);
+		void InsertAfter(const Law_Function *I, Law_ListIteratorOfLaws & It);
 		%feature("autodoc", "1");
 		void InsertAfter(Law_Laws & Other, Law_ListIteratorOfLaws & It);
 
@@ -988,9 +988,9 @@ class Law {
 		%feature("autodoc", "1");
 		Law();
 		%feature("autodoc", "1");
-		Handle_Law_BSpFunc MixBnd(const Handle_Law_Linear &Lin);
+		Handle_Law_BSpFunc MixBnd(const Law_Linear *Lin);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal MixBnd(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Handle_Law_Linear &Lin);
+		Handle_TColStd_HArray1OfReal MixBnd(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Law_Linear *Lin);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal MixTgt(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Boolean NulOnTheRight, const Standard_Integer Index);
 		%feature("autodoc", "1");

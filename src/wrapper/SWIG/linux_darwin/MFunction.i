@@ -43,15 +43,15 @@ class Handle_MFunction_FunctionRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_MFunction_FunctionRetrievalDriver(const Handle_MFunction_FunctionRetrievalDriver &aHandle);
+		Handle_MFunction_FunctionRetrievalDriver(const MFunction_FunctionRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionRetrievalDriver(const MFunction_FunctionRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MFunction_FunctionRetrievalDriver & operator=(const Handle_MFunction_FunctionRetrievalDriver &aHandle);
+		Handle_MFunction_FunctionRetrievalDriver & operator=(const MFunction_FunctionRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionRetrievalDriver & operator=(const MFunction_FunctionRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MFunction_FunctionRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MFunction_FunctionRetrievalDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MFunction_FunctionRetrievalDriver {
@@ -81,15 +81,15 @@ class Handle_MFunction_FunctionStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionStorageDriver();
 		%feature("autodoc", "1");
-		Handle_MFunction_FunctionStorageDriver(const Handle_MFunction_FunctionStorageDriver &aHandle);
+		Handle_MFunction_FunctionStorageDriver(const MFunction_FunctionStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionStorageDriver(const MFunction_FunctionStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MFunction_FunctionStorageDriver & operator=(const Handle_MFunction_FunctionStorageDriver &aHandle);
+		Handle_MFunction_FunctionStorageDriver & operator=(const MFunction_FunctionStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionStorageDriver & operator=(const MFunction_FunctionStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MFunction_FunctionStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MFunction_FunctionStorageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_MFunction_FunctionStorageDriver {
@@ -117,7 +117,7 @@ def __del__(self):
 class MFunction_FunctionStorageDriver : public MDF_ASDriver {
 	public:
 		%feature("autodoc", "1");
-		MFunction_FunctionStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		MFunction_FunctionStorageDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer VersionNumber() const;
 		%feature("autodoc", "1");
@@ -125,7 +125,7 @@ class MFunction_FunctionStorageDriver : public MDF_ASDriver {
 		%feature("autodoc", "1");
 		virtual		Handle_PDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
+		virtual		void Paste(const TDF_Attribute *Source, const PDF_Attribute *Target, const MDF_SRelocationTable *RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -160,7 +160,7 @@ def __del__(self):
 class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 	public:
 		%feature("autodoc", "1");
-		MFunction_FunctionRetrievalDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		MFunction_FunctionRetrievalDriver(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer VersionNumber() const;
 		%feature("autodoc", "1");
@@ -168,7 +168,7 @@ class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
+		virtual		void Paste(const PDF_Attribute *Source, const TDF_Attribute *Target, const MDF_RRelocationTable *RelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -205,9 +205,9 @@ class MFunction {
 		%feature("autodoc", "1");
 		MFunction();
 		%feature("autodoc", "1");
-		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		void AddStorageDrivers(const MDF_ASDriverHSequence *aDriverSeq, const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
-		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		void AddRetrievalDrivers(const MDF_ARDriverHSequence *aDriverSeq, const CDM_MessageDriver *theMessageDriver);
 
 };
 %feature("shadow") MFunction::~MFunction %{

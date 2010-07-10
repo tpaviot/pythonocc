@@ -46,15 +46,15 @@ class Handle_Adaptor3d_HCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurve();
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurve(const Handle_Adaptor3d_HCurve &aHandle);
+		Handle_Adaptor3d_HCurve(const Adaptor3d_HCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurve(const Adaptor3d_HCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurve & operator=(const Handle_Adaptor3d_HCurve &aHandle);
+		Handle_Adaptor3d_HCurve & operator=(const Adaptor3d_HCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurve & operator=(const Adaptor3d_HCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Adaptor3d_HCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Adaptor3d_HCurve {
@@ -84,15 +84,15 @@ class Handle_Adaptor3d_HIsoCurve : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HIsoCurve();
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HIsoCurve(const Handle_Adaptor3d_HIsoCurve &aHandle);
+		Handle_Adaptor3d_HIsoCurve(const Adaptor3d_HIsoCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HIsoCurve(const Adaptor3d_HIsoCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HIsoCurve & operator=(const Handle_Adaptor3d_HIsoCurve &aHandle);
+		Handle_Adaptor3d_HIsoCurve & operator=(const Adaptor3d_HIsoCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HIsoCurve & operator=(const Adaptor3d_HIsoCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HIsoCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Adaptor3d_HIsoCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Adaptor3d_HIsoCurve {
@@ -122,15 +122,15 @@ class Handle_Adaptor3d_HSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurface();
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface(const Handle_Adaptor3d_HSurface &aHandle);
+		Handle_Adaptor3d_HSurface(const Adaptor3d_HSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurface(const Adaptor3d_HSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface & operator=(const Handle_Adaptor3d_HSurface &aHandle);
+		Handle_Adaptor3d_HSurface & operator=(const Adaptor3d_HSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurface & operator=(const Adaptor3d_HSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Adaptor3d_HSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Adaptor3d_HSurface {
@@ -160,15 +160,15 @@ class Handle_Adaptor3d_HSurfaceOfLinearExtrusion : public Handle_Adaptor3d_HSurf
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurfaceOfLinearExtrusion(const Handle_Adaptor3d_HSurfaceOfLinearExtrusion &aHandle);
+		Handle_Adaptor3d_HSurfaceOfLinearExtrusion(const Adaptor3d_HSurfaceOfLinearExtrusion *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfLinearExtrusion(const Adaptor3d_HSurfaceOfLinearExtrusion *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurfaceOfLinearExtrusion & operator=(const Handle_Adaptor3d_HSurfaceOfLinearExtrusion &aHandle);
+		Handle_Adaptor3d_HSurfaceOfLinearExtrusion & operator=(const Adaptor3d_HSurfaceOfLinearExtrusion *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfLinearExtrusion & operator=(const Adaptor3d_HSurfaceOfLinearExtrusion *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurfaceOfLinearExtrusion const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Adaptor3d_HSurfaceOfLinearExtrusion const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Adaptor3d_HSurfaceOfLinearExtrusion {
@@ -198,15 +198,15 @@ class Handle_Adaptor3d_HSurfaceOfRevolution : public Handle_Adaptor3d_HSurface {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfRevolution();
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurfaceOfRevolution(const Handle_Adaptor3d_HSurfaceOfRevolution &aHandle);
+		Handle_Adaptor3d_HSurfaceOfRevolution(const Adaptor3d_HSurfaceOfRevolution *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfRevolution(const Adaptor3d_HSurfaceOfRevolution *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurfaceOfRevolution & operator=(const Handle_Adaptor3d_HSurfaceOfRevolution &aHandle);
+		Handle_Adaptor3d_HSurfaceOfRevolution & operator=(const Adaptor3d_HSurfaceOfRevolution *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfRevolution & operator=(const Adaptor3d_HSurfaceOfRevolution *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Adaptor3d_HSurfaceOfRevolution const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Adaptor3d_HSurfaceOfRevolution {
@@ -236,15 +236,15 @@ class Handle_Adaptor3d_HCurveOnSurface : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurveOnSurface();
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurveOnSurface(const Handle_Adaptor3d_HCurveOnSurface &aHandle);
+		Handle_Adaptor3d_HCurveOnSurface(const Adaptor3d_HCurveOnSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurveOnSurface(const Adaptor3d_HCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurveOnSurface & operator=(const Handle_Adaptor3d_HCurveOnSurface &aHandle);
+		Handle_Adaptor3d_HCurveOnSurface & operator=(const Adaptor3d_HCurveOnSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurveOnSurface & operator=(const Adaptor3d_HCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Adaptor3d_HCurveOnSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Adaptor3d_HCurveOnSurface {
@@ -274,15 +274,15 @@ class Handle_Adaptor3d_HOffsetCurve : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HOffsetCurve();
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HOffsetCurve(const Handle_Adaptor3d_HOffsetCurve &aHandle);
+		Handle_Adaptor3d_HOffsetCurve(const Adaptor3d_HOffsetCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HOffsetCurve(const Adaptor3d_HOffsetCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HOffsetCurve & operator=(const Handle_Adaptor3d_HOffsetCurve &aHandle);
+		Handle_Adaptor3d_HOffsetCurve & operator=(const Adaptor3d_HOffsetCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HOffsetCurve & operator=(const Adaptor3d_HOffsetCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HOffsetCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Adaptor3d_HOffsetCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Adaptor3d_HOffsetCurve {
@@ -312,15 +312,15 @@ class Handle_Adaptor3d_HVertex : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HVertex();
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HVertex(const Handle_Adaptor3d_HVertex &aHandle);
+		Handle_Adaptor3d_HVertex(const Adaptor3d_HVertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HVertex(const Adaptor3d_HVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HVertex & operator=(const Handle_Adaptor3d_HVertex &aHandle);
+		Handle_Adaptor3d_HVertex & operator=(const Adaptor3d_HVertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HVertex & operator=(const Adaptor3d_HVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Adaptor3d_HVertex const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Adaptor3d_HVertex {
@@ -350,15 +350,15 @@ class Handle_Adaptor3d_TopolTool : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_TopolTool();
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_TopolTool(const Handle_Adaptor3d_TopolTool &aHandle);
+		Handle_Adaptor3d_TopolTool(const Adaptor3d_TopolTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_TopolTool(const Adaptor3d_TopolTool *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_TopolTool & operator=(const Handle_Adaptor3d_TopolTool &aHandle);
+		Handle_Adaptor3d_TopolTool & operator=(const Adaptor3d_TopolTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_TopolTool & operator=(const Adaptor3d_TopolTool *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_TopolTool const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Adaptor3d_TopolTool const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Adaptor3d_TopolTool {
@@ -556,13 +556,13 @@ class Adaptor3d_TopolTool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Adaptor3d_TopolTool();
 		%feature("autodoc", "1");
-		Adaptor3d_TopolTool(const Handle_Adaptor3d_HSurface &Surface);
+		Adaptor3d_TopolTool(const Adaptor3d_HSurface *Surface);
 		%feature("autodoc", "1");
 		virtual		void Initialize();
 		%feature("autodoc", "1");
-		virtual		void Initialize(const Handle_Adaptor3d_HSurface &S);
+		virtual		void Initialize(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		virtual		void Initialize(const Handle_Adaptor2d_HCurve2d &Curve);
+		virtual		void Initialize(const Adaptor2d_HCurve2d *Curve);
 		%feature("autodoc", "1");
 		virtual		void Init();
 		%feature("autodoc", "1");
@@ -584,19 +584,19 @@ class Adaptor3d_TopolTool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsThePointOn(const gp_Pnt2d &P, const Standard_Real Tol, const Standard_Boolean ReacdreOnPeriodic=1);
 		%feature("autodoc", "1");
-		virtual		TopAbs_Orientation Orientation(const Handle_Adaptor2d_HCurve2d &C);
+		virtual		TopAbs_Orientation Orientation(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		virtual		TopAbs_Orientation Orientation(const Handle_Adaptor3d_HVertex &V);
+		virtual		TopAbs_Orientation Orientation(const Adaptor3d_HVertex *V);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Identical(const Handle_Adaptor3d_HVertex &V1, const Handle_Adaptor3d_HVertex &V2);
+		virtual		Standard_Boolean Identical(const Adaptor3d_HVertex *V1, const Adaptor3d_HVertex *V2);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Has3d() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real Tol3d(const Handle_Adaptor2d_HCurve2d &C) const;
+		virtual		Standard_Real Tol3d(const Adaptor2d_HCurve2d *C) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real Tol3d(const Handle_Adaptor3d_HVertex &V) const;
+		virtual		Standard_Real Tol3d(const Adaptor3d_HVertex *V) const;
 		%feature("autodoc", "1");
-		virtual		gp_Pnt Pnt(const Handle_Adaptor3d_HVertex &V) const;
+		virtual		gp_Pnt Pnt(const Adaptor3d_HVertex *V) const;
 		%feature("autodoc", "1");
 		virtual		void ComputeSamplePoints();
 		%feature("autodoc", "1");
@@ -776,11 +776,11 @@ class Adaptor3d_SurfaceOfRevolution : public Adaptor3d_Surface {
 		%feature("autodoc", "1");
 		Adaptor3d_SurfaceOfRevolution();
 		%feature("autodoc", "1");
-		Adaptor3d_SurfaceOfRevolution(const Handle_Adaptor3d_HCurve &C);
+		Adaptor3d_SurfaceOfRevolution(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		Adaptor3d_SurfaceOfRevolution(const Handle_Adaptor3d_HCurve &C, const gp_Ax1 &V);
+		Adaptor3d_SurfaceOfRevolution(const Adaptor3d_HCurve *C, const gp_Ax1 &V);
 		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_HCurve &C);
+		void Load(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
 		void Load(const gp_Ax1 &V);
 		%feature("autodoc", "1");
@@ -939,7 +939,7 @@ def __del__(self):
 class Adaptor3d_InterFunc : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		Adaptor3d_InterFunc(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real FixVal, const Standard_Integer Fix);
+		Adaptor3d_InterFunc(const Adaptor2d_HCurve2d *C, const Standard_Real FixVal, const Standard_Integer Fix);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
@@ -977,13 +977,11 @@ class Adaptor3d_HVertex : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Value();
 		%feature("autodoc", "1");
-		virtual		Standard_Real Parameter(const Handle_Adaptor2d_HCurve2d &C);
+		virtual		Standard_Real Parameter(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		virtual		Standard_Real Resolution(const Handle_Adaptor2d_HCurve2d &C);
+		virtual		Standard_Real Resolution(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
 		virtual		TopAbs_Orientation Orientation();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSame(const Handle_Adaptor3d_HVertex &Other);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1101,13 +1099,13 @@ class Adaptor3d_CurveOnSurface : public Adaptor3d_Curve {
 		%feature("autodoc", "1");
 		Adaptor3d_CurveOnSurface();
 		%feature("autodoc", "1");
-		Adaptor3d_CurveOnSurface(const Handle_Adaptor3d_HSurface &S);
+		Adaptor3d_CurveOnSurface(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Adaptor3d_CurveOnSurface(const Handle_Adaptor2d_HCurve2d &C, const Handle_Adaptor3d_HSurface &S);
+		Adaptor3d_CurveOnSurface(const Adaptor2d_HCurve2d *C, const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_HSurface &S);
+		void Load(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor2d_HCurve2d &C);
+		void Load(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
 		const Handle_Adaptor2d_HCurve2d & GetCurve() const;
 		%feature("autodoc", "1");
@@ -1185,11 +1183,11 @@ class Adaptor3d_SurfaceOfLinearExtrusion : public Adaptor3d_Surface {
 		%feature("autodoc", "1");
 		Adaptor3d_SurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
-		Adaptor3d_SurfaceOfLinearExtrusion(const Handle_Adaptor3d_HCurve &C);
+		Adaptor3d_SurfaceOfLinearExtrusion(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		Adaptor3d_SurfaceOfLinearExtrusion(const Handle_Adaptor3d_HCurve &C, const gp_Dir &V);
+		Adaptor3d_SurfaceOfLinearExtrusion(const Adaptor3d_HCurve *C, const gp_Dir &V);
 		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_HCurve &C);
+		void Load(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
 		void Load(const gp_Dir &V);
 		%feature("autodoc", "1");
@@ -1349,13 +1347,13 @@ class Adaptor3d_OffsetCurve : public Adaptor2d_Curve2d {
 		%feature("autodoc", "1");
 		Adaptor3d_OffsetCurve();
 		%feature("autodoc", "1");
-		Adaptor3d_OffsetCurve(const Handle_Adaptor2d_HCurve2d &C);
+		Adaptor3d_OffsetCurve(const Adaptor2d_HCurve2d *C);
 		%feature("autodoc", "1");
-		Adaptor3d_OffsetCurve(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real Offset);
+		Adaptor3d_OffsetCurve(const Adaptor2d_HCurve2d *C, const Standard_Real Offset);
 		%feature("autodoc", "1");
-		Adaptor3d_OffsetCurve(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real Offset, const Standard_Real WFirst, const Standard_Real WLast);
+		Adaptor3d_OffsetCurve(const Adaptor2d_HCurve2d *C, const Standard_Real Offset, const Standard_Real WFirst, const Standard_Real WLast);
 		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor2d_HCurve2d &S);
+		void Load(const Adaptor2d_HCurve2d *S);
 		%feature("autodoc", "1");
 		void Load(const Standard_Real Offset);
 		%feature("autodoc", "1");
@@ -1444,13 +1442,13 @@ class Adaptor3d_IsoCurve : public Adaptor3d_Curve {
 		%feature("autodoc", "1");
 		Adaptor3d_IsoCurve();
 		%feature("autodoc", "1");
-		Adaptor3d_IsoCurve(const Handle_Adaptor3d_HSurface &S);
+		Adaptor3d_IsoCurve(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Adaptor3d_IsoCurve(const Handle_Adaptor3d_HSurface &S, const GeomAbs_IsoType Iso, const Standard_Real Param);
+		Adaptor3d_IsoCurve(const Adaptor3d_HSurface *S, const GeomAbs_IsoType Iso, const Standard_Real Param);
 		%feature("autodoc", "1");
-		Adaptor3d_IsoCurve(const Handle_Adaptor3d_HSurface &S, const GeomAbs_IsoType Iso, const Standard_Real Param, const Standard_Real WFirst, const Standard_Real WLast);
+		Adaptor3d_IsoCurve(const Adaptor3d_HSurface *S, const GeomAbs_IsoType Iso, const Standard_Real Param, const Standard_Real WFirst, const Standard_Real WLast);
 		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_HSurface &S);
+		void Load(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
 		void Load(const GeomAbs_IsoType Iso, const Standard_Real Param);
 		%feature("autodoc", "1");

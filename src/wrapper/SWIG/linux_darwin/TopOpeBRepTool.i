@@ -52,15 +52,15 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public Handl
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF(const Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF &aHandle);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF & operator=(const Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF &aHandle);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF & operator=(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF & operator=(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF {
@@ -90,15 +90,15 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface(const Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface &aHandle);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface & operator=(const Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface &aHandle);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface & operator=(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface & operator=(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface {
@@ -128,15 +128,15 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal(const Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal & operator=(const Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal & operator=(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal & operator=(const TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal {
@@ -166,15 +166,15 @@ class Handle_TopOpeBRepTool_HBoxTool : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_HBoxTool();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_HBoxTool(const Handle_TopOpeBRepTool_HBoxTool &aHandle);
+		Handle_TopOpeBRepTool_HBoxTool(const TopOpeBRepTool_HBoxTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_HBoxTool(const TopOpeBRepTool_HBoxTool *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_HBoxTool & operator=(const Handle_TopOpeBRepTool_HBoxTool &aHandle);
+		Handle_TopOpeBRepTool_HBoxTool & operator=(const TopOpeBRepTool_HBoxTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_HBoxTool & operator=(const TopOpeBRepTool_HBoxTool *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_HBoxTool const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_HBoxTool const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_HBoxTool {
@@ -204,15 +204,15 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : p
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress &aHandle);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress & operator=(const Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress &aHandle);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress & operator=(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress & operator=(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
@@ -242,15 +242,15 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity :
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity(const Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity &aHandle);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity & operator=(const Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity &aHandle);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity & operator=(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity & operator=(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity {
@@ -280,15 +280,15 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public Han
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF(const Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF &aHandle);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF(const TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF(const TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF & operator=(const Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF &aHandle);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF & operator=(const TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF & operator=(const TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF {
@@ -318,15 +318,15 @@ class Handle_TopOpeBRepTool_ListNodeOfListOfC2DF : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_ListNodeOfListOfC2DF();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_ListNodeOfListOfC2DF(const Handle_TopOpeBRepTool_ListNodeOfListOfC2DF &aHandle);
+		Handle_TopOpeBRepTool_ListNodeOfListOfC2DF(const TopOpeBRepTool_ListNodeOfListOfC2DF *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_ListNodeOfListOfC2DF(const TopOpeBRepTool_ListNodeOfListOfC2DF *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_ListNodeOfListOfC2DF & operator=(const Handle_TopOpeBRepTool_ListNodeOfListOfC2DF &aHandle);
+		Handle_TopOpeBRepTool_ListNodeOfListOfC2DF & operator=(const TopOpeBRepTool_ListNodeOfListOfC2DF *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_ListNodeOfListOfC2DF & operator=(const TopOpeBRepTool_ListNodeOfListOfC2DF *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_ListNodeOfListOfC2DF const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_ListNodeOfListOfC2DF const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_ListNodeOfListOfC2DF {
@@ -356,15 +356,15 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier 
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier &aHandle);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier & operator=(const Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier &aHandle);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier & operator=(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier & operator=(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
@@ -394,15 +394,15 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : pub
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d(const Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d &aHandle);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d & operator=(const Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d &aHandle);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d & operator=(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d & operator=(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d {
@@ -432,15 +432,15 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : publi
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox &aHandle);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox &aHandle);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
@@ -762,9 +762,9 @@ class TopOpeBRepTool_BoxSort {
 		%feature("autodoc", "1");
 		TopOpeBRepTool_BoxSort();
 		%feature("autodoc", "1");
-		TopOpeBRepTool_BoxSort(const Handle_TopOpeBRepTool_HBoxTool &T);
+		TopOpeBRepTool_BoxSort(const TopOpeBRepTool_HBoxTool *T);
 		%feature("autodoc", "1");
-		void SetHBoxTool(const Handle_TopOpeBRepTool_HBoxTool &T);
+		void SetHBoxTool(const TopOpeBRepTool_HBoxTool *T);
 		%feature("autodoc", "1");
 		const Handle_TopOpeBRepTool_HBoxTool & HBoxTool() const;
 		%feature("autodoc", "1");
@@ -776,7 +776,7 @@ class TopOpeBRepTool_BoxSort {
 		%feature("autodoc", "1");
 		const Handle_Bnd_HArray1OfBox & HAB() const;
 		%feature("autodoc", "1");
-		void MakeHABCOB(const Handle_Bnd_HArray1OfBox &HAB, Bnd_Box & COB);
+		void MakeHABCOB(const Bnd_HArray1OfBox *HAB, Bnd_Box & COB);
 		%feature("autodoc", "1");
 		const TopoDS_Shape & HABShape(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -1102,16 +1102,16 @@ class TopOpeBRepTool_CurveTool {
 		void SetGeomTool(const TopOpeBRepTool_GeomTool &GT);
 		%feature("autodoc","MakeCurves(Standard_Real min, Standard_Real max, const C3D, const PC1, const PC2, const S1, const S2) -> [Standard_Real, Standard_Real]");
 
-		Standard_Boolean MakeCurves(const Standard_Real min, const Standard_Real max, const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &PC1, const Handle_Geom2d_Curve &PC2, const TopoDS_Shape &S1, const TopoDS_Shape &S2, Handle_Geom_Curve & C3DN, Handle_Geom2d_Curve & PC1N, Handle_Geom2d_Curve & PC2N, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		Standard_Boolean MakeCurves(const Standard_Real min, const Standard_Real max, const Geom_Curve *C3D, const Geom2d_Curve *PC1, const Geom2d_Curve *PC2, const TopoDS_Shape &S1, const TopoDS_Shape &S2, Handle_Geom_Curve & C3DN, Handle_Geom2d_Curve & PC1N, Handle_Geom2d_Curve & PC2N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Geom_Curve MakeBSpline1fromPnt(const TColgp_Array1OfPnt &P);
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve MakeBSpline1fromPnt2d(const TColgp_Array1OfPnt2d &P);
 		%feature("autodoc", "1");
-		Standard_Boolean IsProjectable(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
+		Standard_Boolean IsProjectable(const TopoDS_Shape &S, const Geom_Curve *C);
 		%feature("autodoc","MakePCurveOnFace(const S, const C, Standard_Real first=0.0, Standard_Real last=0.0) -> Standard_Real");
 
-		Handle_Geom2d_Curve MakePCurveOnFace(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, const Standard_Real first=0.0, const Standard_Real last=0.0);
+		Handle_Geom2d_Curve MakePCurveOnFace(const TopoDS_Shape &S, const Geom_Curve *C, Standard_Real &OutValue, const Standard_Real first=0.0, const Standard_Real last=0.0);
 
 };
 %feature("shadow") TopOpeBRepTool_CurveTool::~TopOpeBRepTool_CurveTool %{
@@ -1727,13 +1727,13 @@ class TopOpeBRepTool_TOOL {
 
 		Standard_Boolean CurvF(const TopoDS_Face &F, const gp_Pnt2d &uv, const gp_Dir &tg0, Standard_Real &OutValue, Standard_Boolean & direct);
 		%feature("autodoc", "1");
-		Standard_Boolean UVISO(const Handle_Geom2d_Curve &PC, Standard_Boolean & isou, Standard_Boolean & isov, gp_Dir2d & d2d, gp_Pnt2d & o2d);
+		Standard_Boolean UVISO(const Geom2d_Curve *PC, Standard_Boolean & isou, Standard_Boolean & isov, gp_Dir2d & d2d, gp_Pnt2d & o2d);
 		%feature("autodoc", "1");
 		Standard_Boolean UVISO(const TopOpeBRepTool_C2DF &C2DF, Standard_Boolean & isou, Standard_Boolean & isov, gp_Dir2d & d2d, gp_Pnt2d & o2d);
 		%feature("autodoc", "1");
 		Standard_Boolean UVISO(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Boolean & isou, Standard_Boolean & isov, gp_Dir2d & d2d, gp_Pnt2d & o2d);
 		%feature("autodoc", "1");
-		Standard_Boolean IsonCLO(const Handle_Geom2d_Curve &PC, const Standard_Boolean onU, const Standard_Real xfirst, const Standard_Real xperiod, const Standard_Real xtol);
+		Standard_Boolean IsonCLO(const Geom2d_Curve *PC, const Standard_Boolean onU, const Standard_Real xfirst, const Standard_Real xperiod, const Standard_Real xtol);
 		%feature("autodoc", "1");
 		Standard_Boolean IsonCLO(const TopOpeBRepTool_C2DF &C2DF, const Standard_Boolean onU, const Standard_Real xfirst, const Standard_Real xperiod, const Standard_Real xtol);
 		%feature("autodoc", "1");
@@ -1848,16 +1848,16 @@ class TopOpeBRepTool_ShapeTool {
 		%feature("autodoc", "1");
 		gp_Pnt Pnt(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		Handle_Geom_Curve BASISCURVE(const Handle_Geom_Curve &C);
+		Handle_Geom_Curve BASISCURVE(const Geom_Curve *C);
 		%feature("autodoc", "1");
 		Handle_Geom_Curve BASISCURVE(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
-		Handle_Geom_Surface BASISSURFACE(const Handle_Geom_Surface &S);
+		Handle_Geom_Surface BASISSURFACE(const Geom_Surface *S);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface BASISSURFACE(const TopoDS_Face &F);
 		%feature("autodoc","UVBOUNDS(const S) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void UVBOUNDS(const Handle_Geom_Surface &S, Standard_Boolean & UPeri, Standard_Boolean & VPeri, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		void UVBOUNDS(const Geom_Surface *S, Standard_Boolean & UPeri, Standard_Boolean & VPeri, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","UVBOUNDS(const F) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		void UVBOUNDS(const TopoDS_Face &F, Standard_Boolean & UPeri, Standard_Boolean & VPeri, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -1885,11 +1885,11 @@ class TopOpeBRepTool_ShapeTool {
 
 		Standard_Real EdgeData(const TopoDS_Shape &E, const Standard_Real P, gp_Dir & T, gp_Dir & N, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Real Resolution3dU(const Handle_Geom_Surface &SU, const Standard_Real Tol2d);
+		Standard_Real Resolution3dU(const Geom_Surface *SU, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		Standard_Real Resolution3dV(const Handle_Geom_Surface &SU, const Standard_Real Tol2d);
+		Standard_Real Resolution3dV(const Geom_Surface *SU, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		Standard_Real Resolution3d(const Handle_Geom_Surface &SU, const Standard_Real Tol2d);
+		Standard_Real Resolution3d(const Geom_Surface *SU, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
 		Standard_Real Resolution3d(const TopoDS_Face &F, const Standard_Real Tol2d);
 
@@ -2028,9 +2028,9 @@ class TopOpeBRepTool_C2DF {
 		%feature("autodoc", "1");
 		TopOpeBRepTool_C2DF();
 		%feature("autodoc", "1");
-		TopOpeBRepTool_C2DF(const Handle_Geom2d_Curve &PC, const Standard_Real f2d, const Standard_Real l2d, const Standard_Real tol, const TopoDS_Face &F);
+		TopOpeBRepTool_C2DF(const Geom2d_Curve *PC, const Standard_Real f2d, const Standard_Real l2d, const Standard_Real tol, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void SetPC(const Handle_Geom2d_Curve &PC, const Standard_Real f2d, const Standard_Real l2d, const Standard_Real tol);
+		void SetPC(const Geom2d_Curve *PC, const Standard_Real f2d, const Standard_Real l2d, const Standard_Real tol);
 		%feature("autodoc", "1");
 		void SetFace(const TopoDS_Face &F);
 		%feature("autodoc","PC() -> [Standard_Real, Standard_Real, Standard_Real]");
@@ -2039,7 +2039,7 @@ class TopOpeBRepTool_C2DF {
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsPC(const Handle_Geom2d_Curve &PC) const;
+		Standard_Boolean IsPC(const Geom2d_Curve *PC) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsFace(const TopoDS_Face &F) const;
 

@@ -43,15 +43,15 @@ class Handle_Viewer_BadValue : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Viewer_BadValue();
 		%feature("autodoc", "1");
-		Handle_Viewer_BadValue(const Handle_Viewer_BadValue &aHandle);
+		Handle_Viewer_BadValue(const Viewer_BadValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Viewer_BadValue(const Viewer_BadValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Viewer_BadValue & operator=(const Handle_Viewer_BadValue &aHandle);
+		Handle_Viewer_BadValue & operator=(const Viewer_BadValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Viewer_BadValue & operator=(const Viewer_BadValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Viewer_BadValue const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Viewer_BadValue const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Viewer_BadValue {
@@ -81,15 +81,15 @@ class Handle_Viewer_Viewer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Viewer_Viewer();
 		%feature("autodoc", "1");
-		Handle_Viewer_Viewer(const Handle_Viewer_Viewer &aHandle);
+		Handle_Viewer_Viewer(const Viewer_Viewer *aHandle);
 		%feature("autodoc", "1");
 		Handle_Viewer_Viewer(const Viewer_Viewer *anItem);
 		%feature("autodoc", "1");
-		Handle_Viewer_Viewer & operator=(const Handle_Viewer_Viewer &aHandle);
+		Handle_Viewer_Viewer & operator=(const Viewer_Viewer *aHandle);
 		%feature("autodoc", "1");
 		Handle_Viewer_Viewer & operator=(const Viewer_Viewer *anItem);
 		%feature("autodoc", "1");
-		Handle_Viewer_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Viewer_Viewer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Viewer_Viewer {
@@ -119,15 +119,15 @@ class Handle_Viewer_View : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Viewer_View();
 		%feature("autodoc", "1");
-		Handle_Viewer_View(const Handle_Viewer_View &aHandle);
+		Handle_Viewer_View(const Viewer_View *aHandle);
 		%feature("autodoc", "1");
 		Handle_Viewer_View(const Viewer_View *anItem);
 		%feature("autodoc", "1");
-		Handle_Viewer_View & operator=(const Handle_Viewer_View &aHandle);
+		Handle_Viewer_View & operator=(const Viewer_View *aHandle);
 		%feature("autodoc", "1");
 		Handle_Viewer_View & operator=(const Viewer_View *anItem);
 		%feature("autodoc", "1");
-		Handle_Viewer_View const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Viewer_View const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Viewer_View {

@@ -43,15 +43,15 @@ class Handle_STEPSelections_AssemblyLink : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyLink();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyLink(const Handle_STEPSelections_AssemblyLink &aHandle);
+		Handle_STEPSelections_AssemblyLink(const STEPSelections_AssemblyLink *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyLink(const STEPSelections_AssemblyLink *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyLink & operator=(const Handle_STEPSelections_AssemblyLink &aHandle);
+		Handle_STEPSelections_AssemblyLink & operator=(const STEPSelections_AssemblyLink *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyLink & operator=(const STEPSelections_AssemblyLink *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyLink const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_AssemblyLink const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_AssemblyLink {
@@ -81,15 +81,15 @@ class Handle_STEPSelections_SelectForTransfer : public Handle_XSControl_SelectFo
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectForTransfer();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectForTransfer(const Handle_STEPSelections_SelectForTransfer &aHandle);
+		Handle_STEPSelections_SelectForTransfer(const STEPSelections_SelectForTransfer *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectForTransfer(const STEPSelections_SelectForTransfer *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectForTransfer & operator=(const Handle_STEPSelections_SelectForTransfer &aHandle);
+		Handle_STEPSelections_SelectForTransfer & operator=(const STEPSelections_SelectForTransfer *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectForTransfer & operator=(const STEPSelections_SelectForTransfer *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectForTransfer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_SelectForTransfer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_SelectForTransfer {
@@ -119,15 +119,15 @@ class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplor
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectGSCurves();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectGSCurves(const Handle_STEPSelections_SelectGSCurves &aHandle);
+		Handle_STEPSelections_SelectGSCurves(const STEPSelections_SelectGSCurves *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectGSCurves(const STEPSelections_SelectGSCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectGSCurves & operator=(const Handle_STEPSelections_SelectGSCurves &aHandle);
+		Handle_STEPSelections_SelectGSCurves & operator=(const STEPSelections_SelectGSCurves *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectGSCurves & operator=(const STEPSelections_SelectGSCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectGSCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_SelectGSCurves const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_SelectGSCurves {
@@ -157,15 +157,15 @@ class Handle_STEPSelections_SelectDerived : public Handle_StepSelect_StepType {
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectDerived();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectDerived(const Handle_STEPSelections_SelectDerived &aHandle);
+		Handle_STEPSelections_SelectDerived(const STEPSelections_SelectDerived *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectDerived(const STEPSelections_SelectDerived *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectDerived & operator=(const Handle_STEPSelections_SelectDerived &aHandle);
+		Handle_STEPSelections_SelectDerived & operator=(const STEPSelections_SelectDerived *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectDerived & operator=(const STEPSelections_SelectDerived *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectDerived const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_SelectDerived const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_SelectDerived {
@@ -195,15 +195,15 @@ class Handle_STEPSelections_SelectInstances : public Handle_IFSelect_SelectExplo
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectInstances();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectInstances(const Handle_STEPSelections_SelectInstances &aHandle);
+		Handle_STEPSelections_SelectInstances(const STEPSelections_SelectInstances *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectInstances(const STEPSelections_SelectInstances *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectInstances & operator=(const Handle_STEPSelections_SelectInstances &aHandle);
+		Handle_STEPSelections_SelectInstances & operator=(const STEPSelections_SelectInstances *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectInstances & operator=(const STEPSelections_SelectInstances *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectInstances const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_SelectInstances const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_SelectInstances {
@@ -233,15 +233,15 @@ class Handle_STEPSelections_SelectAssembly : public Handle_IFSelect_SelectExplor
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectAssembly();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectAssembly(const Handle_STEPSelections_SelectAssembly &aHandle);
+		Handle_STEPSelections_SelectAssembly(const STEPSelections_SelectAssembly *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectAssembly(const STEPSelections_SelectAssembly *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectAssembly & operator=(const Handle_STEPSelections_SelectAssembly &aHandle);
+		Handle_STEPSelections_SelectAssembly & operator=(const STEPSelections_SelectAssembly *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectAssembly & operator=(const STEPSelections_SelectAssembly *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectAssembly const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_SelectAssembly const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_SelectAssembly {
@@ -271,15 +271,15 @@ class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_STEPSelections_HSequenceOfAssemblyLink();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink(const Handle_STEPSelections_HSequenceOfAssemblyLink &aHandle);
+		Handle_STEPSelections_HSequenceOfAssemblyLink(const STEPSelections_HSequenceOfAssemblyLink *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_HSequenceOfAssemblyLink(const STEPSelections_HSequenceOfAssemblyLink *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const Handle_STEPSelections_HSequenceOfAssemblyLink &aHandle);
+		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const STEPSelections_HSequenceOfAssemblyLink *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const STEPSelections_HSequenceOfAssemblyLink *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_HSequenceOfAssemblyLink const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_HSequenceOfAssemblyLink {
@@ -309,15 +309,15 @@ class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyComponent();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent(const Handle_STEPSelections_AssemblyComponent &aHandle);
+		Handle_STEPSelections_AssemblyComponent(const STEPSelections_AssemblyComponent *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyComponent(const STEPSelections_AssemblyComponent *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent & operator=(const Handle_STEPSelections_AssemblyComponent &aHandle);
+		Handle_STEPSelections_AssemblyComponent & operator=(const STEPSelections_AssemblyComponent *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyComponent & operator=(const STEPSelections_AssemblyComponent *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_AssemblyComponent const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_AssemblyComponent {
@@ -347,15 +347,15 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public Handle
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink &aHandle);
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const STEPSelections_SequenceNodeOfSequenceOfAssemblyLink *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const STEPSelections_SequenceNodeOfSequenceOfAssemblyLink *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink & operator=(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink &aHandle);
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink & operator=(const STEPSelections_SequenceNodeOfSequenceOfAssemblyLink *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink & operator=(const STEPSelections_SequenceNodeOfSequenceOfAssemblyLink *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
@@ -385,15 +385,15 @@ class Handle_STEPSelections_SelectFaces : public Handle_IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectFaces();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectFaces(const Handle_STEPSelections_SelectFaces &aHandle);
+		Handle_STEPSelections_SelectFaces(const STEPSelections_SelectFaces *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectFaces(const STEPSelections_SelectFaces *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectFaces & operator=(const Handle_STEPSelections_SelectFaces &aHandle);
+		Handle_STEPSelections_SelectFaces & operator=(const STEPSelections_SelectFaces *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SelectFaces & operator=(const STEPSelections_SelectFaces *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectFaces const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_SelectFaces const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_SelectFaces {
@@ -423,15 +423,15 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public H
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent &aHandle);
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent &aHandle);
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
@@ -467,19 +467,19 @@ class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequen
 		%feature("autodoc", "1");
 		const STEPSelections_SequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceOfAssemblyComponent &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_STEPSelections_AssemblyComponent &T);
+		void Append(const STEPSelections_AssemblyComponent *T);
 		%feature("autodoc", "1");
 		void Append(STEPSelections_SequenceOfAssemblyComponent & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_STEPSelections_AssemblyComponent &T);
+		void Prepend(const STEPSelections_AssemblyComponent *T);
 		%feature("autodoc", "1");
 		void Prepend(STEPSelections_SequenceOfAssemblyComponent & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &I);
+		void InsertBefore(const Standard_Integer Index, const STEPSelections_AssemblyComponent *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &T);
+		void InsertAfter(const Standard_Integer Index, const STEPSelections_AssemblyComponent *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
 		%feature("autodoc", "1");
@@ -493,7 +493,7 @@ class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequen
 		%feature("autodoc", "1");
 		const Handle_STEPSelections_AssemblyComponent & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &I);
+		void SetValue(const Standard_Integer Index, const STEPSelections_AssemblyComponent *I);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyComponent & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -536,11 +536,11 @@ class STEPSelections_AssemblyExplorer {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDefinitionRepresentation FindSDRWithProduct(const Handle_StepBasic_ProductDefinition &product) const;
+		Handle_StepShape_ShapeDefinitionRepresentation FindSDRWithProduct(const StepBasic_ProductDefinition *product) const;
 		%feature("autodoc", "1");
-		void FillListWithGraph(const Handle_STEPSelections_AssemblyComponent &cmp);
+		void FillListWithGraph(const STEPSelections_AssemblyComponent *cmp);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient FindItemWithNAUO(const Handle_StepRepr_NextAssemblyUsageOccurrence &nauo) const;
+		Handle_Standard_Transient FindItemWithNAUO(const StepRepr_NextAssemblyUsageOccurrence *nauo) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbAssemblies() const;
 		%feature("autodoc", "1");
@@ -569,15 +569,15 @@ class STEPSelections_AssemblyComponent : public MMgt_TShared {
 		%feature("autodoc", "1");
 		STEPSelections_AssemblyComponent();
 		%feature("autodoc", "1");
-		STEPSelections_AssemblyComponent(const Handle_StepShape_ShapeDefinitionRepresentation &sdr, const Handle_STEPSelections_HSequenceOfAssemblyLink &list);
+		STEPSelections_AssemblyComponent(const StepShape_ShapeDefinitionRepresentation *sdr, const STEPSelections_HSequenceOfAssemblyLink *list);
 		%feature("autodoc", "1");
 		Handle_StepShape_ShapeDefinitionRepresentation GetSDR() const;
 		%feature("autodoc", "1");
 		Handle_STEPSelections_HSequenceOfAssemblyLink GetList() const;
 		%feature("autodoc", "1");
-		void SetSDR(const Handle_StepShape_ShapeDefinitionRepresentation &sdr);
+		void SetSDR(const StepShape_ShapeDefinitionRepresentation *sdr);
 		%feature("autodoc", "1");
-		void SetList(const Handle_STEPSelections_HSequenceOfAssemblyLink &list);
+		void SetList(const STEPSelections_HSequenceOfAssemblyLink *list);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -612,7 +612,7 @@ def __del__(self):
 class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const Handle_STEPSelections_AssemblyComponent &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const STEPSelections_AssemblyComponent *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyComponent & Value() const;
 		%feature("autodoc", "1");
@@ -649,7 +649,7 @@ def __del__(self):
 class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const Handle_STEPSelections_AssemblyLink &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const STEPSelections_AssemblyLink *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyLink & Value() const;
 		%feature("autodoc", "1");
@@ -688,7 +688,7 @@ class STEPSelections_Counter {
 		%feature("autodoc", "1");
 		STEPSelections_Counter();
 		%feature("autodoc", "1");
-		void Count(const Interface_Graph &graph, const Handle_Standard_Transient &start);
+		void Count(const Interface_Graph &graph, const Standard_Transient *start);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
@@ -737,7 +737,7 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Standard_Transient *ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
@@ -776,7 +776,7 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 		%feature("autodoc", "1");
 		STEPSelections_SelectDerived();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
+		virtual		Standard_Boolean Matches(const Standard_Transient *ent, const Interface_InterfaceModel *model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -813,7 +813,7 @@ class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 		%feature("autodoc", "1");
 		STEPSelections_SelectForTransfer();
 		%feature("autodoc", "1");
-		STEPSelections_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
+		STEPSelections_SelectForTransfer(const XSControl_TransferReader *TR);
 		%feature("autodoc", "1");
 		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
 		%feature("autodoc", "1");
@@ -858,29 +858,21 @@ class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_STEPSelections_AssemblyLink &anItem);
+		void Append(const STEPSelections_AssemblyLink *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_STEPSelections_AssemblyLink &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
+		void Prepend(const STEPSelections_AssemblyLink *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_STEPSelections_AssemblyLink &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const STEPSelections_AssemblyLink *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_STEPSelections_AssemblyLink &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const STEPSelections_AssemblyLink *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_HSequenceOfAssemblyLink Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_STEPSelections_AssemblyLink &anItem);
+		void SetValue(const Standard_Integer anIndex, const STEPSelections_AssemblyLink *anItem);
 		%feature("autodoc", "1");
 		const Handle_STEPSelections_AssemblyLink & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -931,7 +923,7 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		STEPSelections_SelectGSCurves();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Standard_Transient *ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
@@ -976,19 +968,19 @@ class STEPSelections_SequenceOfAssemblyLink : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const STEPSelections_SequenceOfAssemblyLink & operator=(const STEPSelections_SequenceOfAssemblyLink &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_STEPSelections_AssemblyLink &T);
+		void Append(const STEPSelections_AssemblyLink *T);
 		%feature("autodoc", "1");
 		void Append(STEPSelections_SequenceOfAssemblyLink & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_STEPSelections_AssemblyLink &T);
+		void Prepend(const STEPSelections_AssemblyLink *T);
 		%feature("autodoc", "1");
 		void Prepend(STEPSelections_SequenceOfAssemblyLink & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_STEPSelections_AssemblyLink &I);
+		void InsertBefore(const Standard_Integer Index, const STEPSelections_AssemblyLink *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyLink & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_STEPSelections_AssemblyLink &T);
+		void InsertAfter(const Standard_Integer Index, const STEPSelections_AssemblyLink *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyLink & S);
 		%feature("autodoc", "1");
@@ -1002,7 +994,7 @@ class STEPSelections_SequenceOfAssemblyLink : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_STEPSelections_AssemblyLink & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_STEPSelections_AssemblyLink &I);
+		void SetValue(const Standard_Integer Index, const STEPSelections_AssemblyLink *I);
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyLink & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -1035,7 +1027,7 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		STEPSelections_SelectAssembly();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Standard_Transient *ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
@@ -1074,7 +1066,7 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 		%feature("autodoc", "1");
 		STEPSelections_AssemblyLink();
 		%feature("autodoc", "1");
-		STEPSelections_AssemblyLink(const Handle_StepRepr_NextAssemblyUsageOccurrence &nauo, const Handle_Standard_Transient &item, const Handle_STEPSelections_AssemblyComponent &part);
+		STEPSelections_AssemblyLink(const StepRepr_NextAssemblyUsageOccurrence *nauo, const Standard_Transient *item, const STEPSelections_AssemblyComponent *part);
 		%feature("autodoc", "1");
 		Handle_StepRepr_NextAssemblyUsageOccurrence GetNAUO() const;
 		%feature("autodoc", "1");
@@ -1082,11 +1074,11 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_STEPSelections_AssemblyComponent GetComponent() const;
 		%feature("autodoc", "1");
-		void SetNAUO(const Handle_StepRepr_NextAssemblyUsageOccurrence &nauo);
+		void SetNAUO(const StepRepr_NextAssemblyUsageOccurrence *nauo);
 		%feature("autodoc", "1");
-		void SetItem(const Handle_Standard_Transient &item);
+		void SetItem(const Standard_Transient *item);
 		%feature("autodoc", "1");
-		void SetComponent(const Handle_STEPSelections_AssemblyComponent &part);
+		void SetComponent(const STEPSelections_AssemblyComponent *part);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1123,7 +1115,7 @@ class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		STEPSelections_SelectFaces();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Standard_Transient *ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");

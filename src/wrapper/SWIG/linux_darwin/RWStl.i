@@ -43,9 +43,9 @@ class RWStl {
 		%feature("autodoc", "1");
 		RWStl();
 		%feature("autodoc", "1");
-		Standard_Boolean WriteBinary(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath);
+		Standard_Boolean WriteBinary(const StlMesh_Mesh *aMesh, const OSD_Path &aPath);
 		%feature("autodoc", "1");
-		Standard_Boolean WriteAscii(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath);
+		Standard_Boolean WriteAscii(const StlMesh_Mesh *aMesh, const OSD_Path &aPath);
 		%feature("autodoc", "1");
 		Handle_StlMesh_Mesh ReadFile(const OSD_Path &aPath);
 		%feature("autodoc", "1");

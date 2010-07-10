@@ -49,15 +49,15 @@ class Handle_ShHealOper_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve3d {
 		%feature("autodoc", "1");
 		Handle_ShHealOper_SplitCurve3d();
 		%feature("autodoc", "1");
-		Handle_ShHealOper_SplitCurve3d(const Handle_ShHealOper_SplitCurve3d &aHandle);
+		Handle_ShHealOper_SplitCurve3d(const ShHealOper_SplitCurve3d *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShHealOper_SplitCurve3d(const ShHealOper_SplitCurve3d *anItem);
 		%feature("autodoc", "1");
-		Handle_ShHealOper_SplitCurve3d & operator=(const Handle_ShHealOper_SplitCurve3d &aHandle);
+		Handle_ShHealOper_SplitCurve3d & operator=(const ShHealOper_SplitCurve3d *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShHealOper_SplitCurve3d & operator=(const ShHealOper_SplitCurve3d *anItem);
 		%feature("autodoc", "1");
-		Handle_ShHealOper_SplitCurve3d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShHealOper_SplitCurve3d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShHealOper_SplitCurve3d {
@@ -87,15 +87,15 @@ class Handle_ShHealOper_SplitCurve2d : public Handle_ShapeUpgrade_SplitCurve2d {
 		%feature("autodoc", "1");
 		Handle_ShHealOper_SplitCurve2d();
 		%feature("autodoc", "1");
-		Handle_ShHealOper_SplitCurve2d(const Handle_ShHealOper_SplitCurve2d &aHandle);
+		Handle_ShHealOper_SplitCurve2d(const ShHealOper_SplitCurve2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShHealOper_SplitCurve2d(const ShHealOper_SplitCurve2d *anItem);
 		%feature("autodoc", "1");
-		Handle_ShHealOper_SplitCurve2d & operator=(const Handle_ShHealOper_SplitCurve2d &aHandle);
+		Handle_ShHealOper_SplitCurve2d & operator=(const ShHealOper_SplitCurve2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShHealOper_SplitCurve2d & operator=(const ShHealOper_SplitCurve2d *anItem);
 		%feature("autodoc", "1");
-		Handle_ShHealOper_SplitCurve2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShHealOper_SplitCurve2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShHealOper_SplitCurve2d {
@@ -246,7 +246,7 @@ class ShHealOper_SplitCurve2d : public ShapeUpgrade_SplitCurve2d {
 		%feature("autodoc", "1");
 		virtual		void Compute();
 		%feature("autodoc", "1");
-		void SetValues(const Handle_TColStd_HSequenceOfReal &theValues);
+		void SetValues(const TColStd_HSequenceOfReal *theValues);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -495,7 +495,7 @@ class ShHealOper_SplitCurve3d : public ShapeUpgrade_SplitCurve3d {
 		%feature("autodoc", "1");
 		virtual		void Compute();
 		%feature("autodoc", "1");
-		void SetValues(const Handle_TColStd_HSequenceOfReal &theValues);
+		void SetValues(const TColStd_HSequenceOfReal *theValues);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

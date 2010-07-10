@@ -43,15 +43,15 @@ class Handle_BRepAdaptor_HCurve : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve();
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HCurve(const Handle_BRepAdaptor_HCurve &aHandle);
+		Handle_BRepAdaptor_HCurve(const BRepAdaptor_HCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve(const BRepAdaptor_HCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HCurve & operator=(const Handle_BRepAdaptor_HCurve &aHandle);
+		Handle_BRepAdaptor_HCurve & operator=(const BRepAdaptor_HCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve & operator=(const BRepAdaptor_HCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepAdaptor_HCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepAdaptor_HCurve {
@@ -81,15 +81,15 @@ class Handle_BRepAdaptor_HCompCurve : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCompCurve();
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HCompCurve(const Handle_BRepAdaptor_HCompCurve &aHandle);
+		Handle_BRepAdaptor_HCompCurve(const BRepAdaptor_HCompCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCompCurve(const BRepAdaptor_HCompCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HCompCurve & operator=(const Handle_BRepAdaptor_HCompCurve &aHandle);
+		Handle_BRepAdaptor_HCompCurve & operator=(const BRepAdaptor_HCompCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCompCurve & operator=(const BRepAdaptor_HCompCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HCompCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepAdaptor_HCompCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepAdaptor_HCompCurve {
@@ -119,15 +119,15 @@ class Handle_BRepAdaptor_HSurface : public Handle_Adaptor3d_HSurface {
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HSurface();
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HSurface(const Handle_BRepAdaptor_HSurface &aHandle);
+		Handle_BRepAdaptor_HSurface(const BRepAdaptor_HSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HSurface(const BRepAdaptor_HSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HSurface & operator=(const Handle_BRepAdaptor_HSurface &aHandle);
+		Handle_BRepAdaptor_HSurface & operator=(const BRepAdaptor_HSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HSurface & operator=(const BRepAdaptor_HSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepAdaptor_HSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepAdaptor_HSurface {
@@ -157,15 +157,15 @@ class Handle_BRepAdaptor_HCurve2d : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve2d();
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HCurve2d(const Handle_BRepAdaptor_HCurve2d &aHandle);
+		Handle_BRepAdaptor_HCurve2d(const BRepAdaptor_HCurve2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve2d(const BRepAdaptor_HCurve2d *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HCurve2d & operator=(const Handle_BRepAdaptor_HCurve2d &aHandle);
+		Handle_BRepAdaptor_HCurve2d & operator=(const BRepAdaptor_HCurve2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve2d & operator=(const BRepAdaptor_HCurve2d *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HCurve2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepAdaptor_HCurve2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepAdaptor_HCurve2d {
@@ -195,15 +195,15 @@ class Handle_BRepAdaptor_HArray1OfCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HArray1OfCurve();
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HArray1OfCurve(const Handle_BRepAdaptor_HArray1OfCurve &aHandle);
+		Handle_BRepAdaptor_HArray1OfCurve(const BRepAdaptor_HArray1OfCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HArray1OfCurve(const BRepAdaptor_HArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HArray1OfCurve & operator=(const Handle_BRepAdaptor_HArray1OfCurve &aHandle);
+		Handle_BRepAdaptor_HArray1OfCurve & operator=(const BRepAdaptor_HArray1OfCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HArray1OfCurve & operator=(const BRepAdaptor_HArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HArray1OfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepAdaptor_HArray1OfCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepAdaptor_HArray1OfCurve {

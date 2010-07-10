@@ -43,15 +43,15 @@ class Handle_GraphTools_SC : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GraphTools_SC();
 		%feature("autodoc", "1");
-		Handle_GraphTools_SC(const Handle_GraphTools_SC &aHandle);
+		Handle_GraphTools_SC(const GraphTools_SC *aHandle);
 		%feature("autodoc", "1");
 		Handle_GraphTools_SC(const GraphTools_SC *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphTools_SC & operator=(const Handle_GraphTools_SC &aHandle);
+		Handle_GraphTools_SC & operator=(const GraphTools_SC *aHandle);
 		%feature("autodoc", "1");
 		Handle_GraphTools_SC & operator=(const GraphTools_SC *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphTools_SC const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GraphTools_SC const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GraphTools_SC {
@@ -81,15 +81,15 @@ class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfSCList();
 		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfSCList(const Handle_GraphTools_ListNodeOfSCList &aHandle);
+		Handle_GraphTools_ListNodeOfSCList(const GraphTools_ListNodeOfSCList *aHandle);
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfSCList(const GraphTools_ListNodeOfSCList *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfSCList & operator=(const Handle_GraphTools_ListNodeOfSCList &aHandle);
+		Handle_GraphTools_ListNodeOfSCList & operator=(const GraphTools_ListNodeOfSCList *aHandle);
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfSCList & operator=(const GraphTools_ListNodeOfSCList *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfSCList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GraphTools_ListNodeOfSCList const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GraphTools_ListNodeOfSCList {
@@ -119,15 +119,15 @@ class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger();
 		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger(const Handle_GraphTools_ListNodeOfListOfSequenceOfInteger &aHandle);
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger(const GraphTools_ListNodeOfListOfSequenceOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger(const GraphTools_ListNodeOfListOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger & operator=(const Handle_GraphTools_ListNodeOfListOfSequenceOfInteger &aHandle);
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger & operator=(const GraphTools_ListNodeOfListOfSequenceOfInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger & operator=(const GraphTools_ListNodeOfListOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GraphTools_ListNodeOfListOfSequenceOfInteger {
@@ -165,11 +165,7 @@ class GraphTools_SC : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer GetVertex(const Standard_Integer index) const;
 		%feature("autodoc", "1");
-		void AddFrontSC(const Handle_GraphTools_SC &SC);
-		%feature("autodoc", "1");
 		const GraphTools_SCList & GetFrontSC() const;
-		%feature("autodoc", "1");
-		void AddBackSC(const Handle_GraphTools_SC &SC);
 		%feature("autodoc", "1");
 		const GraphTools_SCList & GetBackSC() const;
 		%feature("autodoc", "1");
@@ -218,15 +214,15 @@ class GraphTools_SCList {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_GraphTools_SC &I);
+		void Prepend(const GraphTools_SC *I);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_GraphTools_SC &I, GraphTools_ListIteratorOfSCList & theIt);
+		void Prepend(const GraphTools_SC *I, GraphTools_ListIteratorOfSCList & theIt);
 		%feature("autodoc", "1");
 		void Prepend(GraphTools_SCList & Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_GraphTools_SC &I);
+		void Append(const GraphTools_SC *I);
 		%feature("autodoc", "1");
-		void Append(const Handle_GraphTools_SC &I, GraphTools_ListIteratorOfSCList & theIt);
+		void Append(const GraphTools_SC *I, GraphTools_ListIteratorOfSCList & theIt);
 		%feature("autodoc", "1");
 		void Append(GraphTools_SCList & Other);
 		%feature("autodoc", "1");
@@ -238,11 +234,11 @@ class GraphTools_SCList {
 		%feature("autodoc", "1");
 		void Remove(GraphTools_ListIteratorOfSCList & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const Handle_GraphTools_SC &I, GraphTools_ListIteratorOfSCList & It);
+		void InsertBefore(const GraphTools_SC *I, GraphTools_ListIteratorOfSCList & It);
 		%feature("autodoc", "1");
 		void InsertBefore(GraphTools_SCList & Other, GraphTools_ListIteratorOfSCList & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const Handle_GraphTools_SC &I, GraphTools_ListIteratorOfSCList & It);
+		void InsertAfter(const GraphTools_SC *I, GraphTools_ListIteratorOfSCList & It);
 		%feature("autodoc", "1");
 		void InsertAfter(GraphTools_SCList & Other, GraphTools_ListIteratorOfSCList & It);
 
@@ -412,7 +408,7 @@ class GraphTools_RGNode {
 		%feature("autodoc", "1");
 		Standard_Integer GetAdj(const Standard_Integer index) const;
 		%feature("autodoc", "1");
-		void SetSC(const Handle_GraphTools_SC &SC);
+		void SetSC(const GraphTools_SC *SC);
 		%feature("autodoc", "1");
 		Handle_GraphTools_SC GetSC() const;
 
@@ -470,7 +466,7 @@ def __del__(self):
 class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GraphTools_ListNodeOfSCList(const Handle_GraphTools_SC &I, const TCollection_MapNodePtr &n);
+		GraphTools_ListNodeOfSCList(const GraphTools_SC *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_GraphTools_SC & Value() const;
 		%feature("autodoc", "1");

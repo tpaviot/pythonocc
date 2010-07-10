@@ -43,15 +43,15 @@ class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer();
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer(const Handle_ShapeAlgo_ToolContainer &aHandle);
+		Handle_ShapeAlgo_ToolContainer(const ShapeAlgo_ToolContainer *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer(const ShapeAlgo_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer & operator=(const Handle_ShapeAlgo_ToolContainer &aHandle);
+		Handle_ShapeAlgo_ToolContainer & operator=(const ShapeAlgo_ToolContainer *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer & operator=(const ShapeAlgo_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeAlgo_ToolContainer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeAlgo_ToolContainer {
@@ -81,15 +81,15 @@ class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_AlgoContainer();
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_AlgoContainer(const Handle_ShapeAlgo_AlgoContainer &aHandle);
+		Handle_ShapeAlgo_AlgoContainer(const ShapeAlgo_AlgoContainer *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_AlgoContainer(const ShapeAlgo_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_AlgoContainer & operator=(const Handle_ShapeAlgo_AlgoContainer &aHandle);
+		Handle_ShapeAlgo_AlgoContainer & operator=(const ShapeAlgo_AlgoContainer *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_AlgoContainer & operator=(const ShapeAlgo_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeAlgo_AlgoContainer const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeAlgo_AlgoContainer {
@@ -158,35 +158,35 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ShapeAlgo_AlgoContainer();
 		%feature("autodoc", "1");
-		void SetToolContainer(const Handle_ShapeAlgo_ToolContainer &TC);
+		void SetToolContainer(const ShapeAlgo_ToolContainer *TC);
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer ToolContainer() const;
 		%feature("autodoc","ConnectNextWire(const saw, const nextsewd, Standard_Real maxtol) -> Standard_Real");
 
-		virtual		Standard_Boolean ConnectNextWire(const Handle_ShapeAnalysis_Wire &saw, const Handle_ShapeExtend_WireData &nextsewd, const Standard_Real maxtol, Standard_Real &OutValue, Standard_Boolean & revsewd, Standard_Boolean & revnextsewd) const;
+		virtual		Standard_Boolean ConnectNextWire(const ShapeAnalysis_Wire *saw, const ShapeExtend_WireData *nextsewd, const Standard_Real maxtol, Standard_Real &OutValue, Standard_Boolean & revsewd, Standard_Boolean & revnextsewd) const;
 		%feature("autodoc", "1");
-		virtual		void ApproxBSplineCurve(const Handle_Geom_BSplineCurve &bspline, TColGeom_SequenceOfCurve & seq) const;
+		virtual		void ApproxBSplineCurve(const Geom_BSplineCurve *bspline, TColGeom_SequenceOfCurve & seq) const;
 		%feature("autodoc", "1");
-		virtual		void ApproxBSplineCurve(const Handle_Geom2d_BSplineCurve &bspline, TColGeom2d_SequenceOfCurve & seq) const;
+		virtual		void ApproxBSplineCurve(const Geom2d_BSplineCurve *bspline, TColGeom2d_SequenceOfCurve & seq) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom_BSplineCurve &BS, Handle_TColGeom_HSequenceOfBoundedCurve & seqBS) const;
+		virtual		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Geom_BSplineCurve *BS, Handle_TColGeom_HSequenceOfBoundedCurve & seqBS) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HSequenceOfBoundedCurve & seqBS) const;
+		virtual		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Geom2d_BSplineCurve *BS, Handle_TColGeom2d_HSequenceOfBoundedCurve & seqBS) const;
 		%feature("autodoc", "1");
 		virtual		TopoDS_Shape C0ShapeToC1Shape(const TopoDS_Shape &shape, const Standard_Real tol) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Geom_BSplineSurface ConvertSurfaceToBSpline(const Handle_Geom_Surface &surf, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL) const;
+		virtual		Handle_Geom_BSplineSurface ConvertSurfaceToBSpline(const Geom_Surface *surf, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HomoWires(const TopoDS_Wire &wireIn1, const TopoDS_Wire &wireIn2, TopoDS_Wire & wireOut1, TopoDS_Wire & wireOut2, const Standard_Boolean byParam) const;
 		%feature("autodoc", "1");
 		virtual		TopoDS_Wire OuterWire(const TopoDS_Face &face) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Geom_Surface ConvertToPeriodic(const Handle_Geom_Surface &surf) const;
+		virtual		Handle_Geom_Surface ConvertToPeriodic(const Geom_Surface *surf) const;
 		%feature("autodoc","GetFaceUVBounds(const F) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		virtual		void GetFaceUVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Handle_Geom_Curve &C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree) const;
+		virtual		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Geom_Curve *C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

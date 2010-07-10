@@ -51,15 +51,15 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier();
 		%feature("autodoc", "1");
-		Handle_GccEnt_BadQualifier(const Handle_GccEnt_BadQualifier &aHandle);
+		Handle_GccEnt_BadQualifier(const GccEnt_BadQualifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier(const GccEnt_BadQualifier *anItem);
 		%feature("autodoc", "1");
-		Handle_GccEnt_BadQualifier & operator=(const Handle_GccEnt_BadQualifier &aHandle);
+		Handle_GccEnt_BadQualifier & operator=(const GccEnt_BadQualifier *aHandle);
 		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier & operator=(const GccEnt_BadQualifier *anItem);
 		%feature("autodoc", "1");
-		Handle_GccEnt_BadQualifier const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GccEnt_BadQualifier const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GccEnt_BadQualifier {

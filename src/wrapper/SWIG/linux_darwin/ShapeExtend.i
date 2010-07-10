@@ -71,15 +71,15 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg();
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg &aHandle);
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg & operator=(const Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg &aHandle);
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
@@ -109,15 +109,15 @@ class Handle_ShapeExtend_BasicMsgRegistrator : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_BasicMsgRegistrator();
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_BasicMsgRegistrator(const Handle_ShapeExtend_BasicMsgRegistrator &aHandle);
+		Handle_ShapeExtend_BasicMsgRegistrator(const ShapeExtend_BasicMsgRegistrator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_BasicMsgRegistrator(const ShapeExtend_BasicMsgRegistrator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_BasicMsgRegistrator & operator=(const Handle_ShapeExtend_BasicMsgRegistrator &aHandle);
+		Handle_ShapeExtend_BasicMsgRegistrator & operator=(const ShapeExtend_BasicMsgRegistrator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_BasicMsgRegistrator & operator=(const ShapeExtend_BasicMsgRegistrator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_BasicMsgRegistrator const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeExtend_BasicMsgRegistrator const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeExtend_BasicMsgRegistrator {
@@ -147,15 +147,15 @@ class Handle_ShapeExtend_MsgRegistrator : public Handle_ShapeExtend_BasicMsgRegi
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_MsgRegistrator();
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_MsgRegistrator(const Handle_ShapeExtend_MsgRegistrator &aHandle);
+		Handle_ShapeExtend_MsgRegistrator(const ShapeExtend_MsgRegistrator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_MsgRegistrator(const ShapeExtend_MsgRegistrator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_MsgRegistrator & operator=(const Handle_ShapeExtend_MsgRegistrator &aHandle);
+		Handle_ShapeExtend_MsgRegistrator & operator=(const ShapeExtend_MsgRegistrator *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_MsgRegistrator & operator=(const ShapeExtend_MsgRegistrator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_MsgRegistrator const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeExtend_MsgRegistrator const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeExtend_MsgRegistrator {
@@ -185,15 +185,15 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handl
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg & operator=(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
@@ -223,15 +223,15 @@ class Handle_ShapeExtend_ComplexCurve : public Handle_Geom_Curve {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_ComplexCurve();
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_ComplexCurve(const Handle_ShapeExtend_ComplexCurve &aHandle);
+		Handle_ShapeExtend_ComplexCurve(const ShapeExtend_ComplexCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_ComplexCurve(const ShapeExtend_ComplexCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_ComplexCurve & operator=(const Handle_ShapeExtend_ComplexCurve &aHandle);
+		Handle_ShapeExtend_ComplexCurve & operator=(const ShapeExtend_ComplexCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_ComplexCurve & operator=(const ShapeExtend_ComplexCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_ComplexCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeExtend_ComplexCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeExtend_ComplexCurve {
@@ -261,15 +261,15 @@ class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_CompositeSurface();
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface(const Handle_ShapeExtend_CompositeSurface &aHandle);
+		Handle_ShapeExtend_CompositeSurface(const ShapeExtend_CompositeSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_CompositeSurface(const ShapeExtend_CompositeSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface & operator=(const Handle_ShapeExtend_CompositeSurface &aHandle);
+		Handle_ShapeExtend_CompositeSurface & operator=(const ShapeExtend_CompositeSurface *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_CompositeSurface & operator=(const ShapeExtend_CompositeSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeExtend_CompositeSurface const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeExtend_CompositeSurface {
@@ -299,15 +299,15 @@ class Handle_ShapeExtend_WireData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_WireData();
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_WireData(const Handle_ShapeExtend_WireData &aHandle);
+		Handle_ShapeExtend_WireData(const ShapeExtend_WireData *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_WireData(const ShapeExtend_WireData *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_WireData & operator=(const Handle_ShapeExtend_WireData &aHandle);
+		Handle_ShapeExtend_WireData & operator=(const ShapeExtend_WireData *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_WireData & operator=(const ShapeExtend_WireData *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_WireData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeExtend_WireData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeExtend_WireData {
@@ -411,8 +411,6 @@ class ShapeExtend_WireData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ShapeExtend_WireData(const TopoDS_Wire &wire, const Standard_Boolean chained=1, const Standard_Boolean theManifoldMode=1);
 		%feature("autodoc", "1");
-		void Init(const Handle_ShapeExtend_WireData &other);
-		%feature("autodoc", "1");
 		Standard_Boolean Init(const TopoDS_Wire &wire, const Standard_Boolean chained=1, const Standard_Boolean theManifoldMode=1);
 		%feature("autodoc", "1");
 		void Clear();
@@ -426,8 +424,6 @@ class ShapeExtend_WireData : public MMgt_TShared {
 		void Add(const TopoDS_Edge &edge, const Standard_Integer atnum=0);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Wire &wire, const Standard_Integer atnum=0);
-		%feature("autodoc", "1");
-		void Add(const Handle_ShapeExtend_WireData &wire, const Standard_Integer atnum=0);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Shape &shape, const Standard_Integer atnum=0);
 		%feature("autodoc", "1");
@@ -510,7 +506,7 @@ class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ShapeExtend_BasicMsgRegistrator();
 		%feature("autodoc", "1");
-		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
+		virtual		void Send(const Standard_Transient *object, const Message_Msg &message, const Message_Gravity gravity);
 		%feature("autodoc", "1");
 		virtual		void Send(const TopoDS_Shape &shape, const Message_Msg &message, const Message_Gravity gravity);
 		%feature("autodoc", "1");
@@ -580,7 +576,7 @@ class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
 		%feature("autodoc", "1");
 		ShapeExtend_MsgRegistrator();
 		%feature("autodoc", "1");
-		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
+		virtual		void Send(const Standard_Transient *object, const Message_Msg &message, const Message_Gravity gravity);
 		%feature("autodoc", "1");
 		virtual		void Send(const TopoDS_Shape &shape, const Message_Msg &message, const Message_Gravity gravity);
 		%feature("autodoc", "1");
@@ -660,7 +656,7 @@ def __del__(self):
 class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_Standard_Transient &K, const Message_ListOfMsg &I, const TCollection_MapNodePtr &n);
+		ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Standard_Transient *K, const Message_ListOfMsg &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key() const;
 		%feature("autodoc", "1");
@@ -709,19 +705,19 @@ class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Message_ListOfMsg &I);
+		Standard_Boolean Bind(const Standard_Transient *K, const Message_ListOfMsg &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
+		Standard_Boolean IsBound(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
+		Standard_Boolean UnBind(const Standard_Transient *K);
 		%feature("autodoc", "1");
-		const Message_ListOfMsg & Find(const Handle_Standard_Transient &K) const;
+		const Message_ListOfMsg & Find(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		const Message_ListOfMsg & operator()(const Handle_Standard_Transient &K) const;
+		const Message_ListOfMsg & operator()(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		Message_ListOfMsg & ChangeFind(const Handle_Standard_Transient &K);
+		Message_ListOfMsg & ChangeFind(const Standard_Transient *K);
 		%feature("autodoc", "1");
-		Message_ListOfMsg & operator()(const Handle_Standard_Transient &K);
+		Message_ListOfMsg & operator()(const Standard_Transient *K);
 
 };
 %feature("shadow") ShapeExtend_DataMapOfTransientListOfMsg::~ShapeExtend_DataMapOfTransientListOfMsg %{
@@ -853,13 +849,13 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 		%feature("autodoc", "1");
 		ShapeExtend_CompositeSurface();
 		%feature("autodoc", "1");
-		ShapeExtend_CompositeSurface(const Handle_TColGeom_HArray2OfSurface &GridSurf, const ShapeExtend_Parametrisation param=ShapeExtend_Natural);
+		ShapeExtend_CompositeSurface(const TColGeom_HArray2OfSurface *GridSurf, const ShapeExtend_Parametrisation param=ShapeExtend_Natural);
 		%feature("autodoc", "1");
-		ShapeExtend_CompositeSurface(const Handle_TColGeom_HArray2OfSurface &GridSurf, const TColStd_Array1OfReal &UJoints, const TColStd_Array1OfReal &VJoints);
+		ShapeExtend_CompositeSurface(const TColGeom_HArray2OfSurface *GridSurf, const TColStd_Array1OfReal &UJoints, const TColStd_Array1OfReal &VJoints);
 		%feature("autodoc", "1");
-		Standard_Boolean Init(const Handle_TColGeom_HArray2OfSurface &GridSurf, const ShapeExtend_Parametrisation param=ShapeExtend_Natural);
+		Standard_Boolean Init(const TColGeom_HArray2OfSurface *GridSurf, const ShapeExtend_Parametrisation param=ShapeExtend_Natural);
 		%feature("autodoc", "1");
-		Standard_Boolean Init(const Handle_TColGeom_HArray2OfSurface &GridSurf, const TColStd_Array1OfReal &UJoints, const TColStd_Array1OfReal &VJoints);
+		Standard_Boolean Init(const TColGeom_HArray2OfSurface *GridSurf, const TColStd_Array1OfReal &UJoints, const TColStd_Array1OfReal &VJoints);
 		%feature("autodoc", "1");
 		Standard_Integer NbUPatches() const;
 		%feature("autodoc", "1");
@@ -995,11 +991,11 @@ class ShapeExtend_Explorer {
 		%feature("autodoc", "1");
 		ShapeExtend_Explorer();
 		%feature("autodoc", "1");
-		TopoDS_Shape CompoundFromSeq(const Handle_TopTools_HSequenceOfShape &seqval) const;
+		TopoDS_Shape CompoundFromSeq(const TopTools_HSequenceOfShape *seqval) const;
 		%feature("autodoc", "1");
 		Handle_TopTools_HSequenceOfShape SeqFromCompound(const TopoDS_Shape &comp, const Standard_Boolean expcomp) const;
 		%feature("autodoc", "1");
-		void ListFromSeq(const Handle_TopTools_HSequenceOfShape &seqval, TopTools_ListOfShape & lisval, const Standard_Boolean clear=1) const;
+		void ListFromSeq(const TopTools_HSequenceOfShape *seqval, TopTools_ListOfShape & lisval, const Standard_Boolean clear=1) const;
 		%feature("autodoc", "1");
 		Handle_TopTools_HSequenceOfShape SeqFromList(const TopTools_ListOfShape &lisval) const;
 		%feature("autodoc", "1");
@@ -1007,7 +1003,7 @@ class ShapeExtend_Explorer {
 		%feature("autodoc", "1");
 		TopoDS_Shape SortedCompound(const TopoDS_Shape &shape, const TopAbs_ShapeEnum type, const Standard_Boolean explore, const Standard_Boolean compound) const;
 		%feature("autodoc", "1");
-		void DispatchList(const Handle_TopTools_HSequenceOfShape &list, Handle_TopTools_HSequenceOfShape & vertices, Handle_TopTools_HSequenceOfShape & edges, Handle_TopTools_HSequenceOfShape & wires, Handle_TopTools_HSequenceOfShape & faces, Handle_TopTools_HSequenceOfShape & shells, Handle_TopTools_HSequenceOfShape & solids, Handle_TopTools_HSequenceOfShape & compsols, Handle_TopTools_HSequenceOfShape & compounds) const;
+		void DispatchList(const TopTools_HSequenceOfShape *list, Handle_TopTools_HSequenceOfShape & vertices, Handle_TopTools_HSequenceOfShape & edges, Handle_TopTools_HSequenceOfShape & wires, Handle_TopTools_HSequenceOfShape & faces, Handle_TopTools_HSequenceOfShape & shells, Handle_TopTools_HSequenceOfShape & solids, Handle_TopTools_HSequenceOfShape & compsols, Handle_TopTools_HSequenceOfShape & compounds) const;
 
 };
 %feature("shadow") ShapeExtend_Explorer::~ShapeExtend_Explorer %{

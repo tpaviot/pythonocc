@@ -50,15 +50,15 @@ class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo();
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo(const Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo &aHandle);
+		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo(const Draft_DataMapNodeOfDataMapOfFaceFaceInfo *aHandle);
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo(const Draft_DataMapNodeOfDataMapOfFaceFaceInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo & operator=(const Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo &aHandle);
+		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo & operator=(const Draft_DataMapNodeOfDataMapOfFaceFaceInfo *aHandle);
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo & operator=(const Draft_DataMapNodeOfDataMapOfFaceFaceInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
@@ -88,15 +88,15 @@ class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo();
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo(const Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo &aHandle);
+		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo(const Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo *aHandle);
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo(const Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo & operator=(const Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo &aHandle);
+		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo & operator=(const Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo *aHandle);
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo & operator=(const Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
@@ -126,15 +126,15 @@ class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo();
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo &aHandle);
+		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *aHandle);
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo &aHandle);
+		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *aHandle);
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
@@ -164,15 +164,15 @@ class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 		%feature("autodoc", "1");
 		Handle_Draft_Modification();
 		%feature("autodoc", "1");
-		Handle_Draft_Modification(const Handle_Draft_Modification &aHandle);
+		Handle_Draft_Modification(const Draft_Modification *aHandle);
 		%feature("autodoc", "1");
 		Handle_Draft_Modification(const Draft_Modification *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_Modification & operator=(const Handle_Draft_Modification &aHandle);
+		Handle_Draft_Modification & operator=(const Draft_Modification *aHandle);
 		%feature("autodoc", "1");
 		Handle_Draft_Modification & operator=(const Draft_Modification *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_Modification const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Draft_Modification const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Draft_Modification {
@@ -202,7 +202,7 @@ class Draft_FaceInfo {
 		%feature("autodoc", "1");
 		Draft_FaceInfo();
 		%feature("autodoc", "1");
-		Draft_FaceInfo(const Handle_Geom_Surface &S, const Standard_Boolean HasNewGeometry);
+		Draft_FaceInfo(const Geom_Surface *S, const Standard_Boolean HasNewGeometry);
 		%feature("autodoc", "1");
 		void RootFace(const TopoDS_Face &F);
 		%feature("autodoc", "1");

@@ -43,15 +43,15 @@ class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamingDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMNaming_NamingDriver(const Handle_XmlMNaming_NamingDriver &aHandle);
+		Handle_XmlMNaming_NamingDriver(const XmlMNaming_NamingDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamingDriver(const XmlMNaming_NamingDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMNaming_NamingDriver & operator=(const Handle_XmlMNaming_NamingDriver &aHandle);
+		Handle_XmlMNaming_NamingDriver & operator=(const XmlMNaming_NamingDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamingDriver & operator=(const XmlMNaming_NamingDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMNaming_NamingDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlMNaming_NamingDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XmlMNaming_NamingDriver {
@@ -81,15 +81,15 @@ class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamedShapeDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMNaming_NamedShapeDriver(const Handle_XmlMNaming_NamedShapeDriver &aHandle);
+		Handle_XmlMNaming_NamedShapeDriver(const XmlMNaming_NamedShapeDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamedShapeDriver(const XmlMNaming_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMNaming_NamedShapeDriver & operator=(const Handle_XmlMNaming_NamedShapeDriver &aHandle);
+		Handle_XmlMNaming_NamedShapeDriver & operator=(const XmlMNaming_NamedShapeDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamedShapeDriver & operator=(const XmlMNaming_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMNaming_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlMNaming_NamedShapeDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XmlMNaming_NamedShapeDriver {
@@ -117,13 +117,13 @@ def __del__(self):
 class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		XmlMNaming_NamedShapeDriver(const Handle_CDM_MessageDriver &aMessageDriver);
+		XmlMNaming_NamedShapeDriver(const CDM_MessageDriver *aMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, XmlObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, XmlObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		void ReadShapeSection(const XmlObjMgt_Element &anElement);
 		%feature("autodoc", "1");
@@ -260,13 +260,13 @@ def __del__(self):
 class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		XmlMNaming_NamingDriver(const Handle_CDM_MessageDriver &aMessageDriver);
+		XmlMNaming_NamingDriver(const CDM_MessageDriver *aMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, XmlObjMgt_RRelocationTable & theRelocTable) const;
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &theSource, const TDF_Attribute *theTarget, XmlObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
+		virtual		void Paste(const TDF_Attribute *theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -303,7 +303,7 @@ class XmlMNaming {
 		%feature("autodoc", "1");
 		XmlMNaming();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMessageDriver);
+		void AddDrivers(const XmlMDF_ADriverTable *aDriverTable, const CDM_MessageDriver *aMessageDriver);
 
 };
 %feature("shadow") XmlMNaming::~XmlMNaming %{

@@ -44,15 +44,15 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handl
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal();
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal(const Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal &aHandle);
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal & operator=(const Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal &aHandle);
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal & operator=(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal & operator=(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
@@ -82,15 +82,15 @@ class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public H
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape();
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape(const Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape &aHandle);
+		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape(const BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape(const BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape &aHandle);
+		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
@@ -120,15 +120,15 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Hand
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape();
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape(const Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape &aHandle);
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape & operator=(const Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape &aHandle);
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape & operator=(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape & operator=(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
@@ -345,9 +345,9 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Shape &Profile, const TopoDS_Vertex &Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
-		void SetLaw(const TopoDS_Shape &Profile, const Handle_Law_Function &L, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
+		void SetLaw(const TopoDS_Shape &Profile, const Law_Function *L, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
-		void SetLaw(const TopoDS_Shape &Profile, const Handle_Law_Function &L, const TopoDS_Vertex &Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
+		void SetLaw(const TopoDS_Shape &Profile, const Law_Function *L, const TopoDS_Vertex &Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
 		void Delete(const TopoDS_Shape &Profile);
 		%feature("autodoc", "1");
@@ -915,7 +915,7 @@ class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real LengthMax);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom_Surface &Surface, const Standard_Boolean KeepInsideSurface=1);
+		void Perform(const Geom_Surface *Surface, const Standard_Boolean KeepInsideSurface=1);
 		%feature("autodoc", "1");
 		void Perform(const TopoDS_Shape &StopShape, const Standard_Boolean KeepOutSide=1);
 		%feature("autodoc", "1");

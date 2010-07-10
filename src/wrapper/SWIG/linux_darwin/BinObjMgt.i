@@ -50,15 +50,15 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_DataMapNodeOfRRelocationTable();
 		%feature("autodoc", "1");
-		Handle_BinObjMgt_DataMapNodeOfRRelocationTable(const Handle_BinObjMgt_DataMapNodeOfRRelocationTable &aHandle);
+		Handle_BinObjMgt_DataMapNodeOfRRelocationTable(const BinObjMgt_DataMapNodeOfRRelocationTable *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_DataMapNodeOfRRelocationTable(const BinObjMgt_DataMapNodeOfRRelocationTable *anItem);
 		%feature("autodoc", "1");
-		Handle_BinObjMgt_DataMapNodeOfRRelocationTable & operator=(const Handle_BinObjMgt_DataMapNodeOfRRelocationTable &aHandle);
+		Handle_BinObjMgt_DataMapNodeOfRRelocationTable & operator=(const BinObjMgt_DataMapNodeOfRRelocationTable *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_DataMapNodeOfRRelocationTable & operator=(const BinObjMgt_DataMapNodeOfRRelocationTable *anItem);
 		%feature("autodoc", "1");
-		Handle_BinObjMgt_DataMapNodeOfRRelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinObjMgt_DataMapNodeOfRRelocationTable const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinObjMgt_DataMapNodeOfRRelocationTable {
@@ -88,15 +88,15 @@ class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress();
 		%feature("autodoc", "1");
-		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress(const Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress &aHandle);
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress(const BinObjMgt_SequenceNodeOfSequenceOfAddress *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress(const BinObjMgt_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress & operator=(const Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress &aHandle);
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress & operator=(const BinObjMgt_SequenceNodeOfSequenceOfAddress *aHandle);
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress & operator=(const BinObjMgt_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
@@ -182,7 +182,7 @@ class BinObjMgt_Persistent {
 		%feature("autodoc", "1");
 		const BinObjMgt_Persistent & GetExtendedString(TCollection_ExtendedString & theValue) const;
 		%feature("autodoc", "1");
-		const BinObjMgt_Persistent & GetLabel(const Handle_TDF_Data &theDS, TDF_Label & theValue) const;
+		const BinObjMgt_Persistent & GetLabel(const TDF_Data *theDS, TDF_Label & theValue) const;
 		%feature("autodoc", "1");
 		const BinObjMgt_Persistent & GetGUID(Standard_GUID & theValue) const;
 		%feature("autodoc", "1");
@@ -260,7 +260,7 @@ def __del__(self):
 class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BinObjMgt_DataMapNodeOfRRelocationTable(const Standard_Integer &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		BinObjMgt_DataMapNodeOfRRelocationTable(const Standard_Integer &K, const Standard_Transient *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey() {
@@ -319,7 +319,7 @@ class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_Standard_Transient &I);
+		Standard_Boolean Bind(const Standard_Integer &K, const Standard_Transient *I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");

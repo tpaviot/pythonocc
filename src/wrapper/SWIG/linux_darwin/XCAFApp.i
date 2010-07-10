@@ -43,15 +43,15 @@ class Handle_XCAFApp_Application : public Handle_TDocStd_Application {
 		%feature("autodoc", "1");
 		Handle_XCAFApp_Application();
 		%feature("autodoc", "1");
-		Handle_XCAFApp_Application(const Handle_XCAFApp_Application &aHandle);
+		Handle_XCAFApp_Application(const XCAFApp_Application *aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFApp_Application(const XCAFApp_Application *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFApp_Application & operator=(const Handle_XCAFApp_Application &aHandle);
+		Handle_XCAFApp_Application & operator=(const XCAFApp_Application *aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFApp_Application & operator=(const XCAFApp_Application *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFApp_Application const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XCAFApp_Application const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XCAFApp_Application {
@@ -83,7 +83,7 @@ class XCAFApp_Application : public TDocStd_Application {
 		%feature("autodoc", "1");
 		virtual		char * ResourcesName();
 		%feature("autodoc", "1");
-		virtual		void InitDocument(const Handle_TDocStd_Document &aDoc) const;
+		virtual		void InitDocument(const TDocStd_Document *aDoc) const;
 		%feature("autodoc", "1");
 		Handle_XCAFApp_Application GetApplication();
 		%feature("autodoc", "1");

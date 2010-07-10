@@ -43,15 +43,15 @@ class Handle_RWStepAP214_ReadWriteModule : public Handle_StepData_ReadWriteModul
 		%feature("autodoc", "1");
 		Handle_RWStepAP214_ReadWriteModule();
 		%feature("autodoc", "1");
-		Handle_RWStepAP214_ReadWriteModule(const Handle_RWStepAP214_ReadWriteModule &aHandle);
+		Handle_RWStepAP214_ReadWriteModule(const RWStepAP214_ReadWriteModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_RWStepAP214_ReadWriteModule(const RWStepAP214_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWStepAP214_ReadWriteModule & operator=(const Handle_RWStepAP214_ReadWriteModule &aHandle);
+		Handle_RWStepAP214_ReadWriteModule & operator=(const RWStepAP214_ReadWriteModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_RWStepAP214_ReadWriteModule & operator=(const RWStepAP214_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWStepAP214_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_RWStepAP214_ReadWriteModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_RWStepAP214_ReadWriteModule {
@@ -81,15 +81,15 @@ class Handle_RWStepAP214_GeneralModule : public Handle_StepData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_RWStepAP214_GeneralModule();
 		%feature("autodoc", "1");
-		Handle_RWStepAP214_GeneralModule(const Handle_RWStepAP214_GeneralModule &aHandle);
+		Handle_RWStepAP214_GeneralModule(const RWStepAP214_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_RWStepAP214_GeneralModule(const RWStepAP214_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWStepAP214_GeneralModule & operator=(const Handle_RWStepAP214_GeneralModule &aHandle);
+		Handle_RWStepAP214_GeneralModule & operator=(const RWStepAP214_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_RWStepAP214_GeneralModule & operator=(const RWStepAP214_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWStepAP214_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_RWStepAP214_GeneralModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_RWStepAP214_GeneralModule {
@@ -119,11 +119,11 @@ class RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignPersonAndOrganizationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignPersonAndOrganizationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignPersonAndOrganizationAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment::~RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment %{
@@ -148,11 +148,11 @@ class RWStepAP214_RWAppliedDateAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedDateAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedDateAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AppliedDateAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedDateAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AppliedDateAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedDateAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AppliedDateAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAppliedDateAssignment::~RWStepAP214_RWAppliedDateAssignment %{
@@ -177,11 +177,11 @@ class RWStepAP214_RWAutoDesignOrganizationAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignOrganizationAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignOrganizationAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignOrganizationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignOrganizationAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignOrganizationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignOrganizationAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignOrganizationAssignment::~RWStepAP214_RWAutoDesignOrganizationAssignment %{
@@ -206,11 +206,11 @@ class RWStepAP214_RWAutoDesignApprovalAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignApprovalAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignApprovalAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignApprovalAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignApprovalAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignApprovalAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignApprovalAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignApprovalAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignApprovalAssignment::~RWStepAP214_RWAutoDesignApprovalAssignment %{
@@ -235,11 +235,11 @@ class RWStepAP214_RWAppliedPresentedItem {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedPresentedItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedPresentedItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AppliedPresentedItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedPresentedItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AppliedPresentedItem *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedPresentedItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AppliedPresentedItem *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAppliedPresentedItem::~RWStepAP214_RWAppliedPresentedItem %{
@@ -274,9 +274,9 @@ class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean ComplexType(const Standard_Integer CN, TColStd_SequenceOfAsciiString & types) const;
 		%feature("autodoc", "1");
-		virtual		void ReadStep(const Standard_Integer CN, const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
+		virtual		void ReadStep(const Standard_Integer CN, const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Handle_Standard_Transient &ent) const;
+		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -313,11 +313,11 @@ class RWStepAP214_RWAppliedPersonAndOrganizationAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedPersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedPersonAndOrganizationAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AppliedPersonAndOrganizationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedPersonAndOrganizationAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AppliedPersonAndOrganizationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedPersonAndOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AppliedPersonAndOrganizationAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAppliedPersonAndOrganizationAssignment::~RWStepAP214_RWAppliedPersonAndOrganizationAssignment %{
@@ -342,11 +342,11 @@ class RWStepAP214_RWAppliedGroupAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedGroupAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedGroupAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AppliedGroupAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedGroupAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AppliedGroupAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedGroupAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AppliedGroupAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAppliedGroupAssignment::~RWStepAP214_RWAppliedGroupAssignment %{
@@ -371,11 +371,11 @@ class RWStepAP214_RWAppliedDateAndTimeAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedDateAndTimeAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedDateAndTimeAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AppliedDateAndTimeAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedDateAndTimeAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AppliedDateAndTimeAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedDateAndTimeAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AppliedDateAndTimeAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAppliedDateAndTimeAssignment::~RWStepAP214_RWAppliedDateAndTimeAssignment %{
@@ -400,11 +400,11 @@ class RWStepAP214_RWClass {
 		%feature("autodoc", "1");
 		RWStepAP214_RWClass();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_Class &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_Class *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_Class &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_Class *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_Class &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_Class *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWClass::~RWStepAP214_RWClass %{
@@ -429,17 +429,17 @@ class RWStepAP214_GeneralModule : public StepData_GeneralModule {
 		%feature("autodoc", "1");
 		RWStepAP214_GeneralModule();
 		%feature("autodoc", "1");
-		virtual		void FillSharedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void FillSharedCase(const Standard_Integer CN, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void CheckCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void CheckCase(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		virtual		void CopyCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
+		virtual		void CopyCase(const Standard_Integer CN, const Standard_Transient *entfrom, const Standard_Transient *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & ent) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString Name(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		virtual		Handle_TCollection_HAsciiString Name(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -476,11 +476,11 @@ class RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignNominalDateAndTimeAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignNominalDateAndTimeAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignNominalDateAndTimeAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment::~RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment %{
@@ -505,11 +505,11 @@ class RWStepAP214_RWAutoDesignNominalDateAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignNominalDateAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignNominalDateAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignNominalDateAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignNominalDateAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignNominalDateAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignNominalDateAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignNominalDateAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignNominalDateAssignment::~RWStepAP214_RWAutoDesignNominalDateAssignment %{
@@ -534,11 +534,11 @@ class RWStepAP214_RWAutoDesignGroupAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignGroupAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignGroupAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignGroupAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignGroupAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignGroupAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignGroupAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignGroupAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignGroupAssignment::~RWStepAP214_RWAutoDesignGroupAssignment %{
@@ -563,11 +563,11 @@ class RWStepAP214_RWAppliedApprovalAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedApprovalAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedApprovalAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AppliedApprovalAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedApprovalAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AppliedApprovalAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedApprovalAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AppliedApprovalAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAppliedApprovalAssignment::~RWStepAP214_RWAppliedApprovalAssignment %{
@@ -592,11 +592,11 @@ class RWStepAP214_RWAutoDesignPresentedItem {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignPresentedItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignPresentedItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignPresentedItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignPresentedItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignPresentedItem *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignPresentedItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignPresentedItem *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignPresentedItem::~RWStepAP214_RWAutoDesignPresentedItem %{
@@ -646,11 +646,11 @@ class RWStepAP214_RWRepItemGroup {
 		%feature("autodoc", "1");
 		RWStepAP214_RWRepItemGroup();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_RepItemGroup &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_RepItemGroup *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_RepItemGroup &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_RepItemGroup *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_RepItemGroup &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_RepItemGroup *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWRepItemGroup::~RWStepAP214_RWRepItemGroup %{
@@ -675,11 +675,11 @@ class RWStepAP214_RWAppliedSecurityClassificationAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedSecurityClassificationAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedSecurityClassificationAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AppliedSecurityClassificationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedSecurityClassificationAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AppliedSecurityClassificationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedSecurityClassificationAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AppliedSecurityClassificationAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAppliedSecurityClassificationAssignment::~RWStepAP214_RWAppliedSecurityClassificationAssignment %{
@@ -704,11 +704,11 @@ class RWStepAP214_RWAutoDesignActualDateAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignActualDateAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignActualDateAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignActualDateAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignActualDateAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignActualDateAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignActualDateAssignment::~RWStepAP214_RWAutoDesignActualDateAssignment %{
@@ -733,11 +733,11 @@ class RWStepAP214_RWAppliedDocumentReference {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedDocumentReference();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedDocumentReference &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AppliedDocumentReference *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedDocumentReference &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AppliedDocumentReference *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedDocumentReference &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AppliedDocumentReference *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAppliedDocumentReference::~RWStepAP214_RWAppliedDocumentReference %{
@@ -762,11 +762,11 @@ class RWStepAP214_RWAutoDesignDocumentReference {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignDocumentReference();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignDocumentReference &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignDocumentReference *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignDocumentReference &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignDocumentReference *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignDocumentReference &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignDocumentReference *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignDocumentReference::~RWStepAP214_RWAutoDesignDocumentReference %{
@@ -791,11 +791,11 @@ class RWStepAP214_RWExternallyDefinedGeneralProperty {
 		%feature("autodoc", "1");
 		RWStepAP214_RWExternallyDefinedGeneralProperty();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_ExternallyDefinedGeneralProperty *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_ExternallyDefinedGeneralProperty *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_ExternallyDefinedGeneralProperty *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWExternallyDefinedGeneralProperty::~RWStepAP214_RWExternallyDefinedGeneralProperty %{
@@ -820,11 +820,11 @@ class RWStepAP214_RWAppliedExternalIdentificationAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedExternalIdentificationAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AppliedExternalIdentificationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AppliedExternalIdentificationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AppliedExternalIdentificationAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAppliedExternalIdentificationAssignment::~RWStepAP214_RWAppliedExternalIdentificationAssignment %{
@@ -849,11 +849,11 @@ class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignSecurityClassificationAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignSecurityClassificationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignSecurityClassificationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignSecurityClassificationAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignSecurityClassificationAssignment::~RWStepAP214_RWAutoDesignSecurityClassificationAssignment %{
@@ -878,11 +878,11 @@ class RWStepAP214_RWAppliedOrganizationAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAppliedOrganizationAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AppliedOrganizationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AppliedOrganizationAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AppliedOrganizationAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAppliedOrganizationAssignment::~RWStepAP214_RWAppliedOrganizationAssignment %{
@@ -907,11 +907,11 @@ class RWStepAP214_RWExternallyDefinedClass {
 		%feature("autodoc", "1");
 		RWStepAP214_RWExternallyDefinedClass();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedClass &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_ExternallyDefinedClass *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_ExternallyDefinedClass &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_ExternallyDefinedClass *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_ExternallyDefinedClass &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_ExternallyDefinedClass *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWExternallyDefinedClass::~RWStepAP214_RWExternallyDefinedClass %{
@@ -936,11 +936,11 @@ class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignDateAndPersonAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignDateAndPersonAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignDateAndPersonAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignDateAndPersonAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignDateAndPersonAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignDateAndPersonAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignDateAndPersonAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignDateAndPersonAssignment::~RWStepAP214_RWAutoDesignDateAndPersonAssignment %{
@@ -965,11 +965,11 @@ class RWStepAP214_RWAutoDesignActualDateAndTimeAssignment {
 		%feature("autodoc", "1");
 		RWStepAP214_RWAutoDesignActualDateAndTimeAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignActualDateAndTimeAssignment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepAP214_AutoDesignActualDateAndTimeAssignment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignActualDateAndTimeAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepAP214_AutoDesignActualDateAndTimeAssignment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignActualDateAndTimeAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepAP214_AutoDesignActualDateAndTimeAssignment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepAP214_RWAutoDesignActualDateAndTimeAssignment::~RWStepAP214_RWAutoDesignActualDateAndTimeAssignment %{

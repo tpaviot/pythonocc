@@ -43,15 +43,15 @@ class Handle_TColQuantity_HArray1OfLength : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray1OfLength();
 		%feature("autodoc", "1");
-		Handle_TColQuantity_HArray1OfLength(const Handle_TColQuantity_HArray1OfLength &aHandle);
+		Handle_TColQuantity_HArray1OfLength(const TColQuantity_HArray1OfLength *aHandle);
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray1OfLength(const TColQuantity_HArray1OfLength *anItem);
 		%feature("autodoc", "1");
-		Handle_TColQuantity_HArray1OfLength & operator=(const Handle_TColQuantity_HArray1OfLength &aHandle);
+		Handle_TColQuantity_HArray1OfLength & operator=(const TColQuantity_HArray1OfLength *aHandle);
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray1OfLength & operator=(const TColQuantity_HArray1OfLength *anItem);
 		%feature("autodoc", "1");
-		Handle_TColQuantity_HArray1OfLength const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColQuantity_HArray1OfLength const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TColQuantity_HArray1OfLength {
@@ -81,15 +81,15 @@ class Handle_TColQuantity_HArray2OfLength : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray2OfLength();
 		%feature("autodoc", "1");
-		Handle_TColQuantity_HArray2OfLength(const Handle_TColQuantity_HArray2OfLength &aHandle);
+		Handle_TColQuantity_HArray2OfLength(const TColQuantity_HArray2OfLength *aHandle);
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray2OfLength(const TColQuantity_HArray2OfLength *anItem);
 		%feature("autodoc", "1");
-		Handle_TColQuantity_HArray2OfLength & operator=(const Handle_TColQuantity_HArray2OfLength &aHandle);
+		Handle_TColQuantity_HArray2OfLength & operator=(const TColQuantity_HArray2OfLength *aHandle);
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray2OfLength & operator=(const TColQuantity_HArray2OfLength *anItem);
 		%feature("autodoc", "1");
-		Handle_TColQuantity_HArray2OfLength const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColQuantity_HArray2OfLength const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TColQuantity_HArray2OfLength {

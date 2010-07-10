@@ -43,15 +43,15 @@ class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HProjectedCurve();
 		%feature("autodoc", "1");
-		Handle_ProjLib_HProjectedCurve(const Handle_ProjLib_HProjectedCurve &aHandle);
+		Handle_ProjLib_HProjectedCurve(const ProjLib_HProjectedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_ProjLib_HProjectedCurve(const ProjLib_HProjectedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_HProjectedCurve & operator=(const Handle_ProjLib_HProjectedCurve &aHandle);
+		Handle_ProjLib_HProjectedCurve & operator=(const ProjLib_HProjectedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_ProjLib_HProjectedCurve & operator=(const ProjLib_HProjectedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_HProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ProjLib_HProjectedCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ProjLib_HProjectedCurve {
@@ -81,15 +81,15 @@ class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HCompProjectedCurve();
 		%feature("autodoc", "1");
-		Handle_ProjLib_HCompProjectedCurve(const Handle_ProjLib_HCompProjectedCurve &aHandle);
+		Handle_ProjLib_HCompProjectedCurve(const ProjLib_HCompProjectedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_ProjLib_HCompProjectedCurve(const ProjLib_HCompProjectedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_HCompProjectedCurve & operator=(const Handle_ProjLib_HCompProjectedCurve &aHandle);
+		Handle_ProjLib_HCompProjectedCurve & operator=(const ProjLib_HCompProjectedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_ProjLib_HCompProjectedCurve & operator=(const ProjLib_HCompProjectedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_HCompProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ProjLib_HCompProjectedCurve const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ProjLib_HCompProjectedCurve {
@@ -119,15 +119,15 @@ class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt();
 		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt &aHandle);
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *aHandle);
 		%feature("autodoc", "1");
 		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt &aHandle);
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *aHandle);
 		%feature("autodoc", "1");
 		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
@@ -157,15 +157,15 @@ class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HSequenceOfHSequenceOfPnt();
 		%feature("autodoc", "1");
-		Handle_ProjLib_HSequenceOfHSequenceOfPnt(const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aHandle);
+		Handle_ProjLib_HSequenceOfHSequenceOfPnt(const ProjLib_HSequenceOfHSequenceOfPnt *aHandle);
 		%feature("autodoc", "1");
 		Handle_ProjLib_HSequenceOfHSequenceOfPnt(const ProjLib_HSequenceOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_HSequenceOfHSequenceOfPnt & operator=(const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aHandle);
+		Handle_ProjLib_HSequenceOfHSequenceOfPnt & operator=(const ProjLib_HSequenceOfHSequenceOfPnt *aHandle);
 		%feature("autodoc", "1");
 		Handle_ProjLib_HSequenceOfHSequenceOfPnt & operator=(const ProjLib_HSequenceOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_HSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ProjLib_HSequenceOfHSequenceOfPnt const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ProjLib_HSequenceOfHSequenceOfPnt {
@@ -195,15 +195,15 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("autodoc", "1");
 		ProjLib_CompProjectedCurve();
 		%feature("autodoc", "1");
-		ProjLib_CompProjectedCurve(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Standard_Real TolU, const Standard_Real TolV);
+		ProjLib_CompProjectedCurve(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *C, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
-		ProjLib_CompProjectedCurve(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Standard_Real TolU, const Standard_Real TolV, const Standard_Real MaxDist);
+		ProjLib_CompProjectedCurve(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *C, const Standard_Real TolU, const Standard_Real TolV, const Standard_Real MaxDist);
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_HSurface &S);
+		void Load(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_HCurve &C);
+		void Load(const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
 		const Handle_Adaptor3d_HSurface & GetSurface() const;
 		%feature("autodoc", "1");
@@ -280,19 +280,19 @@ class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const ProjLib_SequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceOfHSequenceOfPnt &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HSequenceOfPnt &T);
+		void Append(const TColgp_HSequenceOfPnt *T);
 		%feature("autodoc", "1");
 		void Append(ProjLib_SequenceOfHSequenceOfPnt & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HSequenceOfPnt &T);
+		void Prepend(const TColgp_HSequenceOfPnt *T);
 		%feature("autodoc", "1");
 		void Prepend(ProjLib_SequenceOfHSequenceOfPnt & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &I);
+		void InsertBefore(const Standard_Integer Index, const TColgp_HSequenceOfPnt *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &T);
+		void InsertAfter(const Standard_Integer Index, const TColgp_HSequenceOfPnt *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
 		%feature("autodoc", "1");
@@ -306,7 +306,7 @@ class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_TColgp_HSequenceOfPnt & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &I);
+		void SetValue(const Standard_Integer Index, const TColgp_HSequenceOfPnt *I);
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfPnt & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -339,11 +339,11 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("autodoc", "1");
 		ProjLib_ProjectedCurve();
 		%feature("autodoc", "1");
-		ProjLib_ProjectedCurve(const Handle_Adaptor3d_HSurface &S);
+		ProjLib_ProjectedCurve(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		ProjLib_ProjectedCurve(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
+		ProjLib_ProjectedCurve(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *C);
 		%feature("autodoc", "1");
-		ProjLib_ProjectedCurve(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Standard_Real Tol);
+		ProjLib_ProjectedCurve(const Adaptor3d_HSurface *S, const Adaptor3d_HCurve *C, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		const Handle_Adaptor3d_HSurface & GetSurface() const;
 		%feature("autodoc", "1");
@@ -438,9 +438,9 @@ class ProjLib_Projector {
 		%feature("autodoc", "1");
 		GeomAbs_CurveType GetType() const;
 		%feature("autodoc", "1");
-		void SetBSpline(const Handle_Geom2d_BSplineCurve &C);
+		void SetBSpline(const Geom2d_BSplineCurve *C);
 		%feature("autodoc", "1");
-		void SetBezier(const Handle_Geom2d_BezierCurve &C);
+		void SetBezier(const Geom2d_BezierCurve *C);
 		%feature("autodoc", "1");
 		void SetType(const GeomAbs_CurveType Type);
 		%feature("autodoc", "1");
@@ -710,7 +710,7 @@ class ProjLib_ProjectOnSurface {
 		%feature("autodoc", "1");
 		ProjLib_ProjectOnSurface();
 		%feature("autodoc", "1");
-		ProjLib_ProjectOnSurface(const Handle_Adaptor3d_HSurface &S);
+		ProjLib_ProjectOnSurface(const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
@@ -786,7 +786,7 @@ def __del__(self):
 class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const Handle_TColgp_HSequenceOfPnt &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const TColgp_HSequenceOfPnt *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfPnt & Value() const;
 		%feature("autodoc", "1");
@@ -825,17 +825,17 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("autodoc", "1");
 		ProjLib_ComputeApproxOnPolarSurface();
 		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4);
+		ProjLib_ComputeApproxOnPolarSurface(const Adaptor3d_HCurve *C, const Adaptor3d_HSurface *S, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		ProjLib_ComputeApproxOnPolarSurface(const Adaptor2d_HCurve2d *InitCurve2d, const Adaptor3d_HCurve *C, const Adaptor3d_HSurface *S, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor2d_HCurve2d &InitCurve2dBis, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		ProjLib_ComputeApproxOnPolarSurface(const Adaptor2d_HCurve2d *InitCurve2d, const Adaptor2d_HCurve2d *InitCurve2dBis, const Adaptor3d_HCurve *C, const Adaptor3d_HSurface *S, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Perform(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S);
+		Handle_Geom2d_BSplineCurve Perform(const Adaptor2d_HCurve2d *InitCurve2d, const Adaptor3d_HCurve *C, const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Handle_Adaptor2d_HCurve2d BuildInitialCurve2d(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &S);
+		Handle_Adaptor2d_HCurve2d BuildInitialCurve2d(const Adaptor3d_HCurve *Curve, const Adaptor3d_HSurface *S);
 		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve ProjectUsingInitialCurve2d(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &InitCurve2d);
+		Handle_Geom2d_BSplineCurve ProjectUsingInitialCurve2d(const Adaptor3d_HCurve *Curve, const Adaptor3d_HSurface *S, const Adaptor2d_HCurve2d *InitCurve2d);
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve BSpline() const;
 		%feature("autodoc", "1");
@@ -872,29 +872,21 @@ class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HSequenceOfPnt &anItem);
+		void Append(const TColgp_HSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HSequenceOfPnt &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
+		void Prepend(const TColgp_HSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const TColgp_HSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const TColgp_HSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_ProjLib_HSequenceOfHSequenceOfPnt Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &anItem);
+		void SetValue(const Standard_Integer anIndex, const TColgp_HSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
 		const Handle_TColgp_HSequenceOfPnt & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -978,7 +970,7 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("autodoc", "1");
 		ProjLib_ProjectOnPlane(const gp_Ax3 &Pl, const gp_Dir &D);
 		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_HCurve &C, const Standard_Real Tolerance, const Standard_Boolean KeepParametrization=1);
+		void Load(const Adaptor3d_HCurve *C, const Standard_Real Tolerance, const Standard_Boolean KeepParametrization=1);
 		%feature("autodoc", "1");
 		const gp_Ax3 & GetPlane() const;
 		%feature("autodoc", "1");
@@ -1141,7 +1133,7 @@ def __del__(self):
 class ProjLib_ComputeApprox {
 	public:
 		%feature("autodoc", "1");
-		ProjLib_ComputeApprox(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		ProjLib_ComputeApprox(const Adaptor3d_HCurve *C, const Adaptor3d_HSurface *S, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve BSpline() const;
 		%feature("autodoc", "1");

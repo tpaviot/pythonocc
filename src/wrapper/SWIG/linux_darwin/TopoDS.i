@@ -43,15 +43,15 @@ class Handle_TopoDS_TShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopoDS_TShape();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShape(const Handle_TopoDS_TShape &aHandle);
+		Handle_TopoDS_TShape(const TopoDS_TShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TShape(const TopoDS_TShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShape & operator=(const Handle_TopoDS_TShape &aHandle);
+		Handle_TopoDS_TShape & operator=(const TopoDS_TShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TShape & operator=(const TopoDS_TShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_TShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_TShape {
@@ -81,15 +81,15 @@ class Handle_TopoDS_TVertex : public Handle_TopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_TopoDS_TVertex();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TVertex(const Handle_TopoDS_TVertex &aHandle);
+		Handle_TopoDS_TVertex(const TopoDS_TVertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TVertex(const TopoDS_TVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TVertex & operator=(const Handle_TopoDS_TVertex &aHandle);
+		Handle_TopoDS_TVertex & operator=(const TopoDS_TVertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TVertex & operator=(const TopoDS_TVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_TVertex const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_TVertex {
@@ -119,15 +119,15 @@ class Handle_TopoDS_FrozenShape : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_TopoDS_FrozenShape();
 		%feature("autodoc", "1");
-		Handle_TopoDS_FrozenShape(const Handle_TopoDS_FrozenShape &aHandle);
+		Handle_TopoDS_FrozenShape(const TopoDS_FrozenShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_FrozenShape(const TopoDS_FrozenShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_FrozenShape & operator=(const Handle_TopoDS_FrozenShape &aHandle);
+		Handle_TopoDS_FrozenShape & operator=(const TopoDS_FrozenShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_FrozenShape & operator=(const TopoDS_FrozenShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_FrozenShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_FrozenShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_FrozenShape {
@@ -157,15 +157,15 @@ class Handle_TopoDS_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_TopoDS_ListNodeOfListOfShape();
 		%feature("autodoc", "1");
-		Handle_TopoDS_ListNodeOfListOfShape(const Handle_TopoDS_ListNodeOfListOfShape &aHandle);
+		Handle_TopoDS_ListNodeOfListOfShape(const TopoDS_ListNodeOfListOfShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_ListNodeOfListOfShape(const TopoDS_ListNodeOfListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_ListNodeOfListOfShape & operator=(const Handle_TopoDS_ListNodeOfListOfShape &aHandle);
+		Handle_TopoDS_ListNodeOfListOfShape & operator=(const TopoDS_ListNodeOfListOfShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_ListNodeOfListOfShape & operator=(const TopoDS_ListNodeOfListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_ListNodeOfListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_ListNodeOfListOfShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_ListNodeOfListOfShape {
@@ -195,15 +195,15 @@ class Handle_TopoDS_TFace : public Handle_TopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_TopoDS_TFace();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TFace(const Handle_TopoDS_TFace &aHandle);
+		Handle_TopoDS_TFace(const TopoDS_TFace *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TFace(const TopoDS_TFace *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TFace & operator=(const Handle_TopoDS_TFace &aHandle);
+		Handle_TopoDS_TFace & operator=(const TopoDS_TFace *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TFace & operator=(const TopoDS_TFace *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TFace const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_TFace const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_TFace {
@@ -233,15 +233,15 @@ class Handle_TopoDS_TCompSolid : public Handle_TopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_TopoDS_TCompSolid();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TCompSolid(const Handle_TopoDS_TCompSolid &aHandle);
+		Handle_TopoDS_TCompSolid(const TopoDS_TCompSolid *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TCompSolid(const TopoDS_TCompSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TCompSolid & operator=(const Handle_TopoDS_TCompSolid &aHandle);
+		Handle_TopoDS_TCompSolid & operator=(const TopoDS_TCompSolid *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TCompSolid & operator=(const TopoDS_TCompSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TCompSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_TCompSolid const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_TCompSolid {
@@ -271,15 +271,15 @@ class Handle_TopoDS_TCompound : public Handle_TopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_TopoDS_TCompound();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TCompound(const Handle_TopoDS_TCompound &aHandle);
+		Handle_TopoDS_TCompound(const TopoDS_TCompound *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TCompound(const TopoDS_TCompound *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TCompound & operator=(const Handle_TopoDS_TCompound &aHandle);
+		Handle_TopoDS_TCompound & operator=(const TopoDS_TCompound *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TCompound & operator=(const TopoDS_TCompound *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TCompound const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_TCompound const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_TCompound {
@@ -309,15 +309,15 @@ class Handle_TopoDS_HShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopoDS_HShape();
 		%feature("autodoc", "1");
-		Handle_TopoDS_HShape(const Handle_TopoDS_HShape &aHandle);
+		Handle_TopoDS_HShape(const TopoDS_HShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_HShape(const TopoDS_HShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_HShape & operator=(const Handle_TopoDS_HShape &aHandle);
+		Handle_TopoDS_HShape & operator=(const TopoDS_HShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_HShape & operator=(const TopoDS_HShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_HShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_HShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_HShape {
@@ -347,15 +347,15 @@ class Handle_TopoDS_UnCompatibleShapes : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_TopoDS_UnCompatibleShapes();
 		%feature("autodoc", "1");
-		Handle_TopoDS_UnCompatibleShapes(const Handle_TopoDS_UnCompatibleShapes &aHandle);
+		Handle_TopoDS_UnCompatibleShapes(const TopoDS_UnCompatibleShapes *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_UnCompatibleShapes(const TopoDS_UnCompatibleShapes *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_UnCompatibleShapes & operator=(const Handle_TopoDS_UnCompatibleShapes &aHandle);
+		Handle_TopoDS_UnCompatibleShapes & operator=(const TopoDS_UnCompatibleShapes *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_UnCompatibleShapes & operator=(const TopoDS_UnCompatibleShapes *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_UnCompatibleShapes const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_UnCompatibleShapes const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_UnCompatibleShapes {
@@ -385,15 +385,15 @@ class Handle_TopoDS_TEdge : public Handle_TopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_TopoDS_TEdge();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TEdge(const Handle_TopoDS_TEdge &aHandle);
+		Handle_TopoDS_TEdge(const TopoDS_TEdge *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TEdge(const TopoDS_TEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TEdge & operator=(const Handle_TopoDS_TEdge &aHandle);
+		Handle_TopoDS_TEdge & operator=(const TopoDS_TEdge *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TEdge & operator=(const TopoDS_TEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_TEdge const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_TEdge {
@@ -423,15 +423,15 @@ class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_TopoDS_TShell();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShell(const Handle_TopoDS_TShell &aHandle);
+		Handle_TopoDS_TShell(const TopoDS_TShell *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TShell(const TopoDS_TShell *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShell & operator=(const Handle_TopoDS_TShell &aHandle);
+		Handle_TopoDS_TShell & operator=(const TopoDS_TShell *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TShell & operator=(const TopoDS_TShell *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShell const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_TShell const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_TShell {
@@ -461,15 +461,15 @@ class Handle_TopoDS_TSolid : public Handle_TopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_TopoDS_TSolid();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TSolid(const Handle_TopoDS_TSolid &aHandle);
+		Handle_TopoDS_TSolid(const TopoDS_TSolid *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TSolid(const TopoDS_TSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TSolid & operator=(const Handle_TopoDS_TSolid &aHandle);
+		Handle_TopoDS_TSolid & operator=(const TopoDS_TSolid *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TSolid & operator=(const TopoDS_TSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_TSolid const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_TSolid {
@@ -499,15 +499,15 @@ class Handle_TopoDS_TWire : public Handle_TopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_TopoDS_TWire();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TWire(const Handle_TopoDS_TWire &aHandle);
+		Handle_TopoDS_TWire(const TopoDS_TWire *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TWire(const TopoDS_TWire *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TWire & operator=(const Handle_TopoDS_TWire &aHandle);
+		Handle_TopoDS_TWire & operator=(const TopoDS_TWire *aHandle);
 		%feature("autodoc", "1");
 		Handle_TopoDS_TWire & operator=(const TopoDS_TWire *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TWire const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_TWire const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_TopoDS_TWire {
@@ -656,7 +656,7 @@ class TopoDS_Shape {
 		%feature("autodoc", "1");
 		TopoDS_Shape EmptyCopied() const;
 		%feature("autodoc", "1");
-		void TShape(const Handle_TopoDS_TShape &TS);
+		void TShape(const TopoDS_TShape *TS);
 
 };
 %extend TopoDS_Shape {

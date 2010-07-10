@@ -43,7 +43,7 @@ class IFGraph_Compare : public Interface_GraphContent {
 		%feature("autodoc", "1");
 		IFGraph_Compare(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent, const Standard_Boolean first);
+		void GetFromEntity(const Standard_Transient *ent, const Standard_Boolean first);
 		%feature("autodoc", "1");
 		void GetFromIter(const Interface_EntityIterator &iter, const Standard_Boolean first);
 		%feature("autodoc", "1");
@@ -102,7 +102,7 @@ class IFGraph_SubPartsIterator {
 		%feature("autodoc", "1");
 		void SetPartNum(const Standard_Integer num);
 		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent, const Standard_Boolean shared);
+		void GetFromEntity(const Standard_Transient *ent, const Standard_Boolean shared);
 		%feature("autodoc", "1");
 		void GetFromIter(const Interface_EntityIterator &iter);
 		%feature("autodoc", "1");
@@ -114,11 +114,11 @@ class IFGraph_SubPartsIterator {
 		%feature("autodoc", "1");
 		Interface_Graph LoadedGraph() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsLoaded(const Handle_Standard_Transient &ent) const;
+		Standard_Boolean IsLoaded(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsInPart(const Handle_Standard_Transient &ent) const;
+		Standard_Boolean IsInPart(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		Standard_Integer EntityPartNum(const Handle_Standard_Transient &ent) const;
+		Standard_Integer EntityPartNum(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -236,9 +236,9 @@ class IFGraph_AllConnected : public Interface_GraphContent {
 		%feature("autodoc", "1");
 		IFGraph_AllConnected(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
-		IFGraph_AllConnected(const Interface_Graph &agraph, const Handle_Standard_Transient &ent);
+		IFGraph_AllConnected(const Interface_Graph &agraph, const Standard_Transient *ent);
 		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
+		void GetFromEntity(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void ResetData();
 		%feature("autodoc", "1");
@@ -267,9 +267,9 @@ class IFGraph_AllShared : public Interface_GraphContent {
 		%feature("autodoc", "1");
 		IFGraph_AllShared(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
-		IFGraph_AllShared(const Interface_Graph &agraph, const Handle_Standard_Transient &ent);
+		IFGraph_AllShared(const Interface_Graph &agraph, const Standard_Transient *ent);
 		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
+		void GetFromEntity(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void GetFromIter(const Interface_EntityIterator &iter);
 		%feature("autodoc", "1");
@@ -300,7 +300,7 @@ class IFGraph_ExternalSources : public Interface_GraphContent {
 		%feature("autodoc", "1");
 		IFGraph_ExternalSources(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
+		void GetFromEntity(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void GetFromIter(const Interface_EntityIterator &iter);
 		%feature("autodoc", "1");
@@ -333,7 +333,7 @@ class IFGraph_Articulations : public Interface_GraphContent {
 		%feature("autodoc", "1");
 		IFGraph_Articulations(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
+		void GetFromEntity(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void GetFromIter(const Interface_EntityIterator &iter);
 		%feature("autodoc", "1");
@@ -364,7 +364,7 @@ class IFGraph_Cumulate : public Interface_GraphContent {
 		%feature("autodoc", "1");
 		IFGraph_Cumulate(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
+		void GetFromEntity(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void GetFromIter(const Interface_EntityIterator &iter);
 		%feature("autodoc", "1");
@@ -378,7 +378,7 @@ class IFGraph_Cumulate : public Interface_GraphContent {
 		%feature("autodoc", "1");
 		Interface_EntityIterator PerCount(const Standard_Integer count=1) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbTimes(const Handle_Standard_Transient &ent) const;
+		Standard_Integer NbTimes(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		Standard_Integer HighestNbTimes() const;
 

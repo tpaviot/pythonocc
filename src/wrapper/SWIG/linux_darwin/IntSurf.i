@@ -56,15 +56,15 @@ class Handle_IntSurf_LineOn2S : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IntSurf_LineOn2S();
 		%feature("autodoc", "1");
-		Handle_IntSurf_LineOn2S(const Handle_IntSurf_LineOn2S &aHandle);
+		Handle_IntSurf_LineOn2S(const IntSurf_LineOn2S *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_LineOn2S(const IntSurf_LineOn2S *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_LineOn2S & operator=(const Handle_IntSurf_LineOn2S &aHandle);
+		Handle_IntSurf_LineOn2S & operator=(const IntSurf_LineOn2S *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_LineOn2S & operator=(const IntSurf_LineOn2S *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_LineOn2S const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntSurf_LineOn2S const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntSurf_LineOn2S {
@@ -94,15 +94,15 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint();
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint(const Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint &aHandle);
+		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint(const IntSurf_SequenceNodeOfSequenceOfInteriorPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint(const IntSurf_SequenceNodeOfSequenceOfInteriorPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint & operator=(const Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint &aHandle);
+		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint & operator=(const IntSurf_SequenceNodeOfSequenceOfInteriorPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint & operator=(const IntSurf_SequenceNodeOfSequenceOfInteriorPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
@@ -132,15 +132,15 @@ class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_IntSurf_ListNodeOfListOfPntOn2S();
 		%feature("autodoc", "1");
-		Handle_IntSurf_ListNodeOfListOfPntOn2S(const Handle_IntSurf_ListNodeOfListOfPntOn2S &aHandle);
+		Handle_IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_ListNodeOfListOfPntOn2S *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_ListNodeOfListOfPntOn2S *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_ListNodeOfListOfPntOn2S & operator=(const Handle_IntSurf_ListNodeOfListOfPntOn2S &aHandle);
+		Handle_IntSurf_ListNodeOfListOfPntOn2S & operator=(const IntSurf_ListNodeOfListOfPntOn2S *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_ListNodeOfListOfPntOn2S & operator=(const IntSurf_ListNodeOfListOfPntOn2S *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_ListNodeOfListOfPntOn2S const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntSurf_ListNodeOfListOfPntOn2S const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntSurf_ListNodeOfListOfPntOn2S {
@@ -170,15 +170,15 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint();
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint(const Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint &aHandle);
+		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint(const IntSurf_SequenceNodeOfSequenceOfPathPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint(const IntSurf_SequenceNodeOfSequenceOfPathPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint & operator=(const Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint &aHandle);
+		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint & operator=(const IntSurf_SequenceNodeOfSequenceOfPathPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint & operator=(const IntSurf_SequenceNodeOfSequenceOfPathPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint {
@@ -208,15 +208,15 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfCouple : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfCouple();
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfCouple(const Handle_IntSurf_SequenceNodeOfSequenceOfCouple &aHandle);
+		Handle_IntSurf_SequenceNodeOfSequenceOfCouple(const IntSurf_SequenceNodeOfSequenceOfCouple *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfCouple(const IntSurf_SequenceNodeOfSequenceOfCouple *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfCouple & operator=(const Handle_IntSurf_SequenceNodeOfSequenceOfCouple &aHandle);
+		Handle_IntSurf_SequenceNodeOfSequenceOfCouple & operator=(const IntSurf_SequenceNodeOfSequenceOfCouple *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfCouple & operator=(const IntSurf_SequenceNodeOfSequenceOfCouple *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfCouple const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntSurf_SequenceNodeOfSequenceOfCouple const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntSurf_SequenceNodeOfSequenceOfCouple {
@@ -246,15 +246,15 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S();
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S(const Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S &aHandle);
+		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S(const IntSurf_SequenceNodeOfSequenceOfPntOn2S *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S(const IntSurf_SequenceNodeOfSequenceOfPntOn2S *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S & operator=(const Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S &aHandle);
+		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S & operator=(const IntSurf_SequenceNodeOfSequenceOfPntOn2S *aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S & operator=(const IntSurf_SequenceNodeOfSequenceOfPntOn2S *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S {

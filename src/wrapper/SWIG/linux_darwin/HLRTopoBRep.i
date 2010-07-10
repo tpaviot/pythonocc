@@ -43,15 +43,15 @@ class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData();
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData(const Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData &aHandle);
+		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData(const HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData(const HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData & operator=(const Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData &aHandle);
+		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData & operator=(const HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData & operator=(const HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
@@ -81,15 +81,15 @@ class Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData();
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData &aHandle);
+		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData & operator=(const Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData &aHandle);
+		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData & operator=(const HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData & operator=(const HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
@@ -119,15 +119,15 @@ class Handle_HLRTopoBRep_OutLiner : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_OutLiner();
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_OutLiner(const Handle_HLRTopoBRep_OutLiner &aHandle);
+		Handle_HLRTopoBRep_OutLiner(const HLRTopoBRep_OutLiner *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_OutLiner(const HLRTopoBRep_OutLiner *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_OutLiner & operator=(const Handle_HLRTopoBRep_OutLiner &aHandle);
+		Handle_HLRTopoBRep_OutLiner & operator=(const HLRTopoBRep_OutLiner *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_OutLiner & operator=(const HLRTopoBRep_OutLiner *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_OutLiner const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRTopoBRep_OutLiner const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRTopoBRep_OutLiner {
@@ -157,15 +157,15 @@ class Handle_HLRTopoBRep_ListNodeOfListOfVData : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_ListNodeOfListOfVData();
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_ListNodeOfListOfVData(const Handle_HLRTopoBRep_ListNodeOfListOfVData &aHandle);
+		Handle_HLRTopoBRep_ListNodeOfListOfVData(const HLRTopoBRep_ListNodeOfListOfVData *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_ListNodeOfListOfVData(const HLRTopoBRep_ListNodeOfListOfVData *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_ListNodeOfListOfVData & operator=(const Handle_HLRTopoBRep_ListNodeOfListOfVData &aHandle);
+		Handle_HLRTopoBRep_ListNodeOfListOfVData & operator=(const HLRTopoBRep_ListNodeOfListOfVData *aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_ListNodeOfListOfVData & operator=(const HLRTopoBRep_ListNodeOfListOfVData *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_ListNodeOfListOfVData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_HLRTopoBRep_ListNodeOfListOfVData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_HLRTopoBRep_ListNodeOfListOfVData {
@@ -635,7 +635,7 @@ class HLRTopoBRep_FaceIsoLiner {
 		%feature("autodoc", "1");
 		TopoDS_Vertex MakeVertex(const TopoDS_Edge &E, const gp_Pnt &P, const Standard_Real Par, const Standard_Real Tol, HLRTopoBRep_Data & DS);
 		%feature("autodoc", "1");
-		void MakeIsoLine(const TopoDS_Face &F, const Handle_Geom2d_Line &Iso, TopoDS_Vertex & V1, TopoDS_Vertex & V2, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, HLRTopoBRep_Data & DS);
+		void MakeIsoLine(const TopoDS_Face &F, const Geom2d_Line *Iso, TopoDS_Vertex & V1, TopoDS_Vertex & V2, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, HLRTopoBRep_Data & DS);
 
 };
 %feature("shadow") HLRTopoBRep_FaceIsoLiner::~HLRTopoBRep_FaceIsoLiner %{

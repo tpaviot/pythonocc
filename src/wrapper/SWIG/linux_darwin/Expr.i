@@ -43,15 +43,15 @@ class Handle_Expr_ExprFailure : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Expr_ExprFailure();
 		%feature("autodoc", "1");
-		Handle_Expr_ExprFailure(const Handle_Expr_ExprFailure &aHandle);
+		Handle_Expr_ExprFailure(const Expr_ExprFailure *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ExprFailure(const Expr_ExprFailure *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ExprFailure & operator=(const Handle_Expr_ExprFailure &aHandle);
+		Handle_Expr_ExprFailure & operator=(const Expr_ExprFailure *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ExprFailure & operator=(const Expr_ExprFailure *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ExprFailure const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_ExprFailure const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_ExprFailure {
@@ -81,15 +81,15 @@ class Handle_Expr_NotAssigned : public Handle_Expr_ExprFailure {
 		%feature("autodoc", "1");
 		Handle_Expr_NotAssigned();
 		%feature("autodoc", "1");
-		Handle_Expr_NotAssigned(const Handle_Expr_NotAssigned &aHandle);
+		Handle_Expr_NotAssigned(const Expr_NotAssigned *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NotAssigned(const Expr_NotAssigned *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NotAssigned & operator=(const Handle_Expr_NotAssigned &aHandle);
+		Handle_Expr_NotAssigned & operator=(const Expr_NotAssigned *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NotAssigned & operator=(const Expr_NotAssigned *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NotAssigned const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_NotAssigned const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_NotAssigned {
@@ -119,15 +119,15 @@ class Handle_Expr_GeneralExpression : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression();
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression(const Handle_Expr_GeneralExpression &aHandle);
+		Handle_Expr_GeneralExpression(const Expr_GeneralExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression(const Expr_GeneralExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression & operator=(const Handle_Expr_GeneralExpression &aHandle);
+		Handle_Expr_GeneralExpression & operator=(const Expr_GeneralExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression & operator=(const Expr_GeneralExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_GeneralExpression const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_GeneralExpression {
@@ -157,15 +157,15 @@ class Handle_Expr_UnaryExpression : public Handle_Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryExpression();
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryExpression(const Handle_Expr_UnaryExpression &aHandle);
+		Handle_Expr_UnaryExpression(const Expr_UnaryExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryExpression(const Expr_UnaryExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryExpression & operator=(const Handle_Expr_UnaryExpression &aHandle);
+		Handle_Expr_UnaryExpression & operator=(const Expr_UnaryExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryExpression & operator=(const Expr_UnaryExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryExpression const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_UnaryExpression const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_UnaryExpression {
@@ -195,15 +195,15 @@ class Handle_Expr_LogOf10 : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_LogOf10();
 		%feature("autodoc", "1");
-		Handle_Expr_LogOf10(const Handle_Expr_LogOf10 &aHandle);
+		Handle_Expr_LogOf10(const Expr_LogOf10 *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_LogOf10(const Expr_LogOf10 *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_LogOf10 & operator=(const Handle_Expr_LogOf10 &aHandle);
+		Handle_Expr_LogOf10 & operator=(const Expr_LogOf10 *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_LogOf10 & operator=(const Expr_LogOf10 *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_LogOf10 const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_LogOf10 const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_LogOf10 {
@@ -233,15 +233,15 @@ class Handle_Expr_SquareRoot : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_SquareRoot();
 		%feature("autodoc", "1");
-		Handle_Expr_SquareRoot(const Handle_Expr_SquareRoot &aHandle);
+		Handle_Expr_SquareRoot(const Expr_SquareRoot *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SquareRoot(const Expr_SquareRoot *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_SquareRoot & operator=(const Handle_Expr_SquareRoot &aHandle);
+		Handle_Expr_SquareRoot & operator=(const Expr_SquareRoot *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SquareRoot & operator=(const Expr_SquareRoot *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_SquareRoot const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_SquareRoot const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_SquareRoot {
@@ -271,15 +271,15 @@ class Handle_Expr_Tanh : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Tanh();
 		%feature("autodoc", "1");
-		Handle_Expr_Tanh(const Handle_Expr_Tanh &aHandle);
+		Handle_Expr_Tanh(const Expr_Tanh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Tanh(const Expr_Tanh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Tanh & operator=(const Handle_Expr_Tanh &aHandle);
+		Handle_Expr_Tanh & operator=(const Expr_Tanh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Tanh & operator=(const Expr_Tanh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Tanh const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Tanh const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Tanh {
@@ -309,15 +309,15 @@ class Handle_Expr_ArcSine : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArcSine();
 		%feature("autodoc", "1");
-		Handle_Expr_ArcSine(const Handle_Expr_ArcSine &aHandle);
+		Handle_Expr_ArcSine(const Expr_ArcSine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArcSine(const Expr_ArcSine *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArcSine & operator=(const Handle_Expr_ArcSine &aHandle);
+		Handle_Expr_ArcSine & operator=(const Expr_ArcSine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArcSine & operator=(const Expr_ArcSine *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArcSine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_ArcSine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_ArcSine {
@@ -347,15 +347,15 @@ class Handle_Expr_UnaryMinus : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryMinus();
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryMinus(const Handle_Expr_UnaryMinus &aHandle);
+		Handle_Expr_UnaryMinus(const Expr_UnaryMinus *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryMinus(const Expr_UnaryMinus *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryMinus & operator=(const Handle_Expr_UnaryMinus &aHandle);
+		Handle_Expr_UnaryMinus & operator=(const Expr_UnaryMinus *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryMinus & operator=(const Expr_UnaryMinus *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryMinus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_UnaryMinus const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_UnaryMinus {
@@ -385,15 +385,15 @@ class Handle_Expr_NotEvaluable : public Handle_Expr_ExprFailure {
 		%feature("autodoc", "1");
 		Handle_Expr_NotEvaluable();
 		%feature("autodoc", "1");
-		Handle_Expr_NotEvaluable(const Handle_Expr_NotEvaluable &aHandle);
+		Handle_Expr_NotEvaluable(const Expr_NotEvaluable *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NotEvaluable(const Expr_NotEvaluable *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NotEvaluable & operator=(const Handle_Expr_NotEvaluable &aHandle);
+		Handle_Expr_NotEvaluable & operator=(const Expr_NotEvaluable *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NotEvaluable & operator=(const Expr_NotEvaluable *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NotEvaluable const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_NotEvaluable const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_NotEvaluable {
@@ -423,15 +423,15 @@ class Handle_Expr_NumericValue : public Handle_Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_NumericValue();
 		%feature("autodoc", "1");
-		Handle_Expr_NumericValue(const Handle_Expr_NumericValue &aHandle);
+		Handle_Expr_NumericValue(const Expr_NumericValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NumericValue(const Expr_NumericValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NumericValue & operator=(const Handle_Expr_NumericValue &aHandle);
+		Handle_Expr_NumericValue & operator=(const Expr_NumericValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NumericValue & operator=(const Expr_NumericValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NumericValue const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_NumericValue const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_NumericValue {
@@ -461,15 +461,15 @@ class Handle_Expr_InvalidAssignment : public Handle_Expr_ExprFailure {
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidAssignment();
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidAssignment(const Handle_Expr_InvalidAssignment &aHandle);
+		Handle_Expr_InvalidAssignment(const Expr_InvalidAssignment *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidAssignment(const Expr_InvalidAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidAssignment & operator=(const Handle_Expr_InvalidAssignment &aHandle);
+		Handle_Expr_InvalidAssignment & operator=(const Expr_InvalidAssignment *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidAssignment & operator=(const Expr_InvalidAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_InvalidAssignment const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_InvalidAssignment {
@@ -499,15 +499,15 @@ class Handle_Expr_ArcCosine : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArcCosine();
 		%feature("autodoc", "1");
-		Handle_Expr_ArcCosine(const Handle_Expr_ArcCosine &aHandle);
+		Handle_Expr_ArcCosine(const Expr_ArcCosine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArcCosine(const Expr_ArcCosine *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArcCosine & operator=(const Handle_Expr_ArcCosine &aHandle);
+		Handle_Expr_ArcCosine & operator=(const Expr_ArcCosine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArcCosine & operator=(const Expr_ArcCosine *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArcCosine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_ArcCosine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_ArcCosine {
@@ -537,15 +537,15 @@ class Handle_Expr_GeneralRelation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralRelation();
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralRelation(const Handle_Expr_GeneralRelation &aHandle);
+		Handle_Expr_GeneralRelation(const Expr_GeneralRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralRelation(const Expr_GeneralRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralRelation & operator=(const Handle_Expr_GeneralRelation &aHandle);
+		Handle_Expr_GeneralRelation & operator=(const Expr_GeneralRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralRelation & operator=(const Expr_GeneralRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_GeneralRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_GeneralRelation {
@@ -575,15 +575,15 @@ class Handle_Expr_SingleRelation : public Handle_Expr_GeneralRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_SingleRelation();
 		%feature("autodoc", "1");
-		Handle_Expr_SingleRelation(const Handle_Expr_SingleRelation &aHandle);
+		Handle_Expr_SingleRelation(const Expr_SingleRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SingleRelation(const Expr_SingleRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_SingleRelation & operator=(const Handle_Expr_SingleRelation &aHandle);
+		Handle_Expr_SingleRelation & operator=(const Expr_SingleRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SingleRelation & operator=(const Expr_SingleRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_SingleRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_SingleRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_SingleRelation {
@@ -613,15 +613,15 @@ class Handle_Expr_Different : public Handle_Expr_SingleRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_Different();
 		%feature("autodoc", "1");
-		Handle_Expr_Different(const Handle_Expr_Different &aHandle);
+		Handle_Expr_Different(const Expr_Different *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Different(const Expr_Different *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Different & operator=(const Handle_Expr_Different &aHandle);
+		Handle_Expr_Different & operator=(const Expr_Different *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Different & operator=(const Expr_Different *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Different const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Different const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Different {
@@ -651,15 +651,15 @@ class Handle_Expr_BinaryExpression : public Handle_Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_BinaryExpression();
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryExpression(const Handle_Expr_BinaryExpression &aHandle);
+		Handle_Expr_BinaryExpression(const Expr_BinaryExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_BinaryExpression(const Expr_BinaryExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryExpression & operator=(const Handle_Expr_BinaryExpression &aHandle);
+		Handle_Expr_BinaryExpression & operator=(const Expr_BinaryExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_BinaryExpression & operator=(const Expr_BinaryExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryExpression const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_BinaryExpression const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_BinaryExpression {
@@ -689,15 +689,15 @@ class Handle_Expr_Division : public Handle_Expr_BinaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Division();
 		%feature("autodoc", "1");
-		Handle_Expr_Division(const Handle_Expr_Division &aHandle);
+		Handle_Expr_Division(const Expr_Division *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Division(const Expr_Division *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Division & operator=(const Handle_Expr_Division &aHandle);
+		Handle_Expr_Division & operator=(const Expr_Division *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Division & operator=(const Expr_Division *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Division const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Division const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Division {
@@ -727,15 +727,15 @@ class Handle_Expr_ArgSinh : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArgSinh();
 		%feature("autodoc", "1");
-		Handle_Expr_ArgSinh(const Handle_Expr_ArgSinh &aHandle);
+		Handle_Expr_ArgSinh(const Expr_ArgSinh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArgSinh(const Expr_ArgSinh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArgSinh & operator=(const Handle_Expr_ArgSinh &aHandle);
+		Handle_Expr_ArgSinh & operator=(const Expr_ArgSinh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArgSinh & operator=(const Expr_ArgSinh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArgSinh const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_ArgSinh const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_ArgSinh {
@@ -765,15 +765,15 @@ class Handle_Expr_PolyExpression : public Handle_Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_PolyExpression();
 		%feature("autodoc", "1");
-		Handle_Expr_PolyExpression(const Handle_Expr_PolyExpression &aHandle);
+		Handle_Expr_PolyExpression(const Expr_PolyExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_PolyExpression(const Expr_PolyExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_PolyExpression & operator=(const Handle_Expr_PolyExpression &aHandle);
+		Handle_Expr_PolyExpression & operator=(const Expr_PolyExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_PolyExpression & operator=(const Expr_PolyExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_PolyExpression const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_PolyExpression const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_PolyExpression {
@@ -803,15 +803,15 @@ class Handle_Expr_Exponential : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Exponential();
 		%feature("autodoc", "1");
-		Handle_Expr_Exponential(const Handle_Expr_Exponential &aHandle);
+		Handle_Expr_Exponential(const Expr_Exponential *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Exponential(const Expr_Exponential *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Exponential & operator=(const Handle_Expr_Exponential &aHandle);
+		Handle_Expr_Exponential & operator=(const Expr_Exponential *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Exponential & operator=(const Expr_Exponential *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Exponential const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Exponential const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Exponential {
@@ -841,15 +841,15 @@ class Handle_Expr_Absolute : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Absolute();
 		%feature("autodoc", "1");
-		Handle_Expr_Absolute(const Handle_Expr_Absolute &aHandle);
+		Handle_Expr_Absolute(const Expr_Absolute *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Absolute(const Expr_Absolute *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Absolute & operator=(const Handle_Expr_Absolute &aHandle);
+		Handle_Expr_Absolute & operator=(const Expr_Absolute *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Absolute & operator=(const Expr_Absolute *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Absolute const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Absolute const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Absolute {
@@ -879,15 +879,15 @@ class Handle_Expr_NamedExpression : public Handle_Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_NamedExpression();
 		%feature("autodoc", "1");
-		Handle_Expr_NamedExpression(const Handle_Expr_NamedExpression &aHandle);
+		Handle_Expr_NamedExpression(const Expr_NamedExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedExpression(const Expr_NamedExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NamedExpression & operator=(const Handle_Expr_NamedExpression &aHandle);
+		Handle_Expr_NamedExpression & operator=(const Expr_NamedExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedExpression & operator=(const Expr_NamedExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NamedExpression const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_NamedExpression const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_NamedExpression {
@@ -917,15 +917,15 @@ class Handle_Expr_NamedConstant : public Handle_Expr_NamedExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_NamedConstant();
 		%feature("autodoc", "1");
-		Handle_Expr_NamedConstant(const Handle_Expr_NamedConstant &aHandle);
+		Handle_Expr_NamedConstant(const Expr_NamedConstant *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedConstant(const Expr_NamedConstant *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NamedConstant & operator=(const Handle_Expr_NamedConstant &aHandle);
+		Handle_Expr_NamedConstant & operator=(const Expr_NamedConstant *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedConstant & operator=(const Expr_NamedConstant *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NamedConstant const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_NamedConstant const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_NamedConstant {
@@ -955,15 +955,15 @@ class Handle_Expr_Difference : public Handle_Expr_BinaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Difference();
 		%feature("autodoc", "1");
-		Handle_Expr_Difference(const Handle_Expr_Difference &aHandle);
+		Handle_Expr_Difference(const Expr_Difference *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Difference(const Expr_Difference *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Difference & operator=(const Handle_Expr_Difference &aHandle);
+		Handle_Expr_Difference & operator=(const Expr_Difference *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Difference & operator=(const Expr_Difference *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Difference const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Difference const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Difference {
@@ -993,15 +993,15 @@ class Handle_Expr_NamedUnknown : public Handle_Expr_NamedExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_NamedUnknown();
 		%feature("autodoc", "1");
-		Handle_Expr_NamedUnknown(const Handle_Expr_NamedUnknown &aHandle);
+		Handle_Expr_NamedUnknown(const Expr_NamedUnknown *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedUnknown(const Expr_NamedUnknown *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NamedUnknown & operator=(const Handle_Expr_NamedUnknown &aHandle);
+		Handle_Expr_NamedUnknown & operator=(const Expr_NamedUnknown *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedUnknown & operator=(const Expr_NamedUnknown *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NamedUnknown const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_NamedUnknown const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_NamedUnknown {
@@ -1031,15 +1031,15 @@ class Handle_Expr_Sinh : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Sinh();
 		%feature("autodoc", "1");
-		Handle_Expr_Sinh(const Handle_Expr_Sinh &aHandle);
+		Handle_Expr_Sinh(const Expr_Sinh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Sinh(const Expr_Sinh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Sinh & operator=(const Handle_Expr_Sinh &aHandle);
+		Handle_Expr_Sinh & operator=(const Expr_Sinh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Sinh & operator=(const Expr_Sinh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Sinh const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Sinh const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Sinh {
@@ -1069,15 +1069,15 @@ class Handle_Expr_Sum : public Handle_Expr_PolyExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Sum();
 		%feature("autodoc", "1");
-		Handle_Expr_Sum(const Handle_Expr_Sum &aHandle);
+		Handle_Expr_Sum(const Expr_Sum *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Sum(const Expr_Sum *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Sum & operator=(const Handle_Expr_Sum &aHandle);
+		Handle_Expr_Sum & operator=(const Expr_Sum *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Sum & operator=(const Expr_Sum *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Sum const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Sum const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Sum {
@@ -1107,15 +1107,15 @@ class Handle_Expr_LessThan : public Handle_Expr_SingleRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_LessThan();
 		%feature("autodoc", "1");
-		Handle_Expr_LessThan(const Handle_Expr_LessThan &aHandle);
+		Handle_Expr_LessThan(const Expr_LessThan *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_LessThan(const Expr_LessThan *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_LessThan & operator=(const Handle_Expr_LessThan &aHandle);
+		Handle_Expr_LessThan & operator=(const Expr_LessThan *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_LessThan & operator=(const Expr_LessThan *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_LessThan const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_LessThan const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_LessThan {
@@ -1145,15 +1145,15 @@ class Handle_Expr_Sign : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Sign();
 		%feature("autodoc", "1");
-		Handle_Expr_Sign(const Handle_Expr_Sign &aHandle);
+		Handle_Expr_Sign(const Expr_Sign *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Sign(const Expr_Sign *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Sign & operator=(const Handle_Expr_Sign &aHandle);
+		Handle_Expr_Sign & operator=(const Expr_Sign *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Sign & operator=(const Expr_Sign *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Sign const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Sign const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Sign {
@@ -1183,15 +1183,15 @@ class Handle_Expr_InvalidFunction : public Handle_Expr_ExprFailure {
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidFunction();
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidFunction(const Handle_Expr_InvalidFunction &aHandle);
+		Handle_Expr_InvalidFunction(const Expr_InvalidFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidFunction(const Expr_InvalidFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidFunction & operator=(const Handle_Expr_InvalidFunction &aHandle);
+		Handle_Expr_InvalidFunction & operator=(const Expr_InvalidFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidFunction & operator=(const Expr_InvalidFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_InvalidFunction const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_InvalidFunction {
@@ -1221,15 +1221,15 @@ class Handle_Expr_GreaterThanOrEqual : public Handle_Expr_SingleRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_GreaterThanOrEqual();
 		%feature("autodoc", "1");
-		Handle_Expr_GreaterThanOrEqual(const Handle_Expr_GreaterThanOrEqual &aHandle);
+		Handle_Expr_GreaterThanOrEqual(const Expr_GreaterThanOrEqual *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GreaterThanOrEqual(const Expr_GreaterThanOrEqual *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GreaterThanOrEqual & operator=(const Handle_Expr_GreaterThanOrEqual &aHandle);
+		Handle_Expr_GreaterThanOrEqual & operator=(const Expr_GreaterThanOrEqual *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GreaterThanOrEqual & operator=(const Expr_GreaterThanOrEqual *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GreaterThanOrEqual const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_GreaterThanOrEqual const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_GreaterThanOrEqual {
@@ -1259,15 +1259,15 @@ class Handle_Expr_Tangent : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Tangent();
 		%feature("autodoc", "1");
-		Handle_Expr_Tangent(const Handle_Expr_Tangent &aHandle);
+		Handle_Expr_Tangent(const Expr_Tangent *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Tangent(const Expr_Tangent *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Tangent & operator=(const Handle_Expr_Tangent &aHandle);
+		Handle_Expr_Tangent & operator=(const Expr_Tangent *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Tangent & operator=(const Expr_Tangent *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Tangent const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Tangent const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Tangent {
@@ -1297,15 +1297,15 @@ class Handle_Expr_Equal : public Handle_Expr_SingleRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_Equal();
 		%feature("autodoc", "1");
-		Handle_Expr_Equal(const Handle_Expr_Equal &aHandle);
+		Handle_Expr_Equal(const Expr_Equal *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Equal(const Expr_Equal *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Equal & operator=(const Handle_Expr_Equal &aHandle);
+		Handle_Expr_Equal & operator=(const Expr_Equal *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Equal & operator=(const Expr_Equal *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Equal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Equal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Equal {
@@ -1335,15 +1335,15 @@ class Handle_Expr_Sine : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Sine();
 		%feature("autodoc", "1");
-		Handle_Expr_Sine(const Handle_Expr_Sine &aHandle);
+		Handle_Expr_Sine(const Expr_Sine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Sine(const Expr_Sine *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Sine & operator=(const Handle_Expr_Sine &aHandle);
+		Handle_Expr_Sine & operator=(const Expr_Sine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Sine & operator=(const Expr_Sine *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Sine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Sine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Sine {
@@ -1373,15 +1373,15 @@ class Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression();
 		%feature("autodoc", "1");
-		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression(const Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression &aHandle);
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression(const Expr_SequenceNodeOfSequenceOfGeneralExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression(const Expr_SequenceNodeOfSequenceOfGeneralExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression & operator=(const Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression &aHandle);
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression & operator=(const Expr_SequenceNodeOfSequenceOfGeneralExpression *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression & operator=(const Expr_SequenceNodeOfSequenceOfGeneralExpression *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression {
@@ -1411,15 +1411,15 @@ class Handle_Expr_InvalidOperand : public Handle_Expr_ExprFailure {
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidOperand();
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidOperand(const Handle_Expr_InvalidOperand &aHandle);
+		Handle_Expr_InvalidOperand(const Expr_InvalidOperand *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidOperand(const Expr_InvalidOperand *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidOperand & operator=(const Handle_Expr_InvalidOperand &aHandle);
+		Handle_Expr_InvalidOperand & operator=(const Expr_InvalidOperand *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidOperand & operator=(const Expr_InvalidOperand *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidOperand const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_InvalidOperand const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_InvalidOperand {
@@ -1449,15 +1449,15 @@ class Handle_Expr_ArgCosh : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArgCosh();
 		%feature("autodoc", "1");
-		Handle_Expr_ArgCosh(const Handle_Expr_ArgCosh &aHandle);
+		Handle_Expr_ArgCosh(const Expr_ArgCosh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArgCosh(const Expr_ArgCosh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArgCosh & operator=(const Handle_Expr_ArgCosh &aHandle);
+		Handle_Expr_ArgCosh & operator=(const Expr_ArgCosh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArgCosh & operator=(const Expr_ArgCosh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArgCosh const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_ArgCosh const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_ArgCosh {
@@ -1487,15 +1487,15 @@ class Handle_Expr_PolyFunction : public Handle_Expr_PolyExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_PolyFunction();
 		%feature("autodoc", "1");
-		Handle_Expr_PolyFunction(const Handle_Expr_PolyFunction &aHandle);
+		Handle_Expr_PolyFunction(const Expr_PolyFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_PolyFunction(const Expr_PolyFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_PolyFunction & operator=(const Handle_Expr_PolyFunction &aHandle);
+		Handle_Expr_PolyFunction & operator=(const Expr_PolyFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_PolyFunction & operator=(const Expr_PolyFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_PolyFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_PolyFunction const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_PolyFunction {
@@ -1525,15 +1525,15 @@ class Handle_Expr_ArcTangent : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArcTangent();
 		%feature("autodoc", "1");
-		Handle_Expr_ArcTangent(const Handle_Expr_ArcTangent &aHandle);
+		Handle_Expr_ArcTangent(const Expr_ArcTangent *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArcTangent(const Expr_ArcTangent *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArcTangent & operator=(const Handle_Expr_ArcTangent &aHandle);
+		Handle_Expr_ArcTangent & operator=(const Expr_ArcTangent *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArcTangent & operator=(const Expr_ArcTangent *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArcTangent const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_ArcTangent const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_ArcTangent {
@@ -1563,15 +1563,15 @@ class Handle_Expr_LogOfe : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_LogOfe();
 		%feature("autodoc", "1");
-		Handle_Expr_LogOfe(const Handle_Expr_LogOfe &aHandle);
+		Handle_Expr_LogOfe(const Expr_LogOfe *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_LogOfe(const Expr_LogOfe *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_LogOfe & operator=(const Handle_Expr_LogOfe &aHandle);
+		Handle_Expr_LogOfe & operator=(const Expr_LogOfe *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_LogOfe & operator=(const Expr_LogOfe *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_LogOfe const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_LogOfe const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_LogOfe {
@@ -1601,15 +1601,15 @@ class Handle_Expr_UnaryFunction : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryFunction();
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryFunction(const Handle_Expr_UnaryFunction &aHandle);
+		Handle_Expr_UnaryFunction(const Expr_UnaryFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryFunction(const Expr_UnaryFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryFunction & operator=(const Handle_Expr_UnaryFunction &aHandle);
+		Handle_Expr_UnaryFunction & operator=(const Expr_UnaryFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryFunction & operator=(const Expr_UnaryFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_UnaryFunction const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_UnaryFunction {
@@ -1639,15 +1639,15 @@ class Handle_Expr_GreaterThan : public Handle_Expr_SingleRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_GreaterThan();
 		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan(const Handle_Expr_GreaterThan &aHandle);
+		Handle_Expr_GreaterThan(const Expr_GreaterThan *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GreaterThan(const Expr_GreaterThan *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan & operator=(const Handle_Expr_GreaterThan &aHandle);
+		Handle_Expr_GreaterThan & operator=(const Expr_GreaterThan *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GreaterThan & operator=(const Expr_GreaterThan *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_GreaterThan const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_GreaterThan {
@@ -1677,15 +1677,15 @@ class Handle_Expr_Cosh : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Cosh();
 		%feature("autodoc", "1");
-		Handle_Expr_Cosh(const Handle_Expr_Cosh &aHandle);
+		Handle_Expr_Cosh(const Expr_Cosh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Cosh(const Expr_Cosh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Cosh & operator=(const Handle_Expr_Cosh &aHandle);
+		Handle_Expr_Cosh & operator=(const Expr_Cosh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Cosh & operator=(const Expr_Cosh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Cosh const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Cosh const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Cosh {
@@ -1715,15 +1715,15 @@ class Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown();
 		%feature("autodoc", "1");
-		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown(const Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown &aHandle);
+		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown(const Expr_IndexedMapNodeOfMapOfNamedUnknown *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown(const Expr_IndexedMapNodeOfMapOfNamedUnknown *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown & operator=(const Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown &aHandle);
+		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown & operator=(const Expr_IndexedMapNodeOfMapOfNamedUnknown *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown & operator=(const Expr_IndexedMapNodeOfMapOfNamedUnknown *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown {
@@ -1753,15 +1753,15 @@ class Handle_Expr_Exponentiate : public Handle_Expr_BinaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Exponentiate();
 		%feature("autodoc", "1");
-		Handle_Expr_Exponentiate(const Handle_Expr_Exponentiate &aHandle);
+		Handle_Expr_Exponentiate(const Expr_Exponentiate *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Exponentiate(const Expr_Exponentiate *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Exponentiate & operator=(const Handle_Expr_Exponentiate &aHandle);
+		Handle_Expr_Exponentiate & operator=(const Expr_Exponentiate *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Exponentiate & operator=(const Expr_Exponentiate *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Exponentiate const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Exponentiate const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Exponentiate {
@@ -1791,15 +1791,15 @@ class Handle_Expr_GeneralFunction : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralFunction();
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction(const Handle_Expr_GeneralFunction &aHandle);
+		Handle_Expr_GeneralFunction(const Expr_GeneralFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralFunction(const Expr_GeneralFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction & operator=(const Handle_Expr_GeneralFunction &aHandle);
+		Handle_Expr_GeneralFunction & operator=(const Expr_GeneralFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralFunction & operator=(const Expr_GeneralFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_GeneralFunction const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_GeneralFunction {
@@ -1829,15 +1829,15 @@ class Handle_Expr_NamedFunction : public Handle_Expr_GeneralFunction {
 		%feature("autodoc", "1");
 		Handle_Expr_NamedFunction();
 		%feature("autodoc", "1");
-		Handle_Expr_NamedFunction(const Handle_Expr_NamedFunction &aHandle);
+		Handle_Expr_NamedFunction(const Expr_NamedFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedFunction(const Expr_NamedFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NamedFunction & operator=(const Handle_Expr_NamedFunction &aHandle);
+		Handle_Expr_NamedFunction & operator=(const Expr_NamedFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedFunction & operator=(const Expr_NamedFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_NamedFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_NamedFunction const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_NamedFunction {
@@ -1867,15 +1867,15 @@ class Handle_Expr_SystemRelation : public Handle_Expr_GeneralRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_SystemRelation();
 		%feature("autodoc", "1");
-		Handle_Expr_SystemRelation(const Handle_Expr_SystemRelation &aHandle);
+		Handle_Expr_SystemRelation(const Expr_SystemRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SystemRelation(const Expr_SystemRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_SystemRelation & operator=(const Handle_Expr_SystemRelation &aHandle);
+		Handle_Expr_SystemRelation & operator=(const Expr_SystemRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SystemRelation & operator=(const Expr_SystemRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_SystemRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_SystemRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_SystemRelation {
@@ -1905,15 +1905,15 @@ class Handle_Expr_LessThanOrEqual : public Handle_Expr_SingleRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_LessThanOrEqual();
 		%feature("autodoc", "1");
-		Handle_Expr_LessThanOrEqual(const Handle_Expr_LessThanOrEqual &aHandle);
+		Handle_Expr_LessThanOrEqual(const Expr_LessThanOrEqual *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_LessThanOrEqual(const Expr_LessThanOrEqual *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_LessThanOrEqual & operator=(const Handle_Expr_LessThanOrEqual &aHandle);
+		Handle_Expr_LessThanOrEqual & operator=(const Expr_LessThanOrEqual *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_LessThanOrEqual & operator=(const Expr_LessThanOrEqual *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_LessThanOrEqual const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_LessThanOrEqual const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_LessThanOrEqual {
@@ -1943,15 +1943,15 @@ class Handle_Expr_FunctionDerivative : public Handle_Expr_GeneralFunction {
 		%feature("autodoc", "1");
 		Handle_Expr_FunctionDerivative();
 		%feature("autodoc", "1");
-		Handle_Expr_FunctionDerivative(const Handle_Expr_FunctionDerivative &aHandle);
+		Handle_Expr_FunctionDerivative(const Expr_FunctionDerivative *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_FunctionDerivative(const Expr_FunctionDerivative *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_FunctionDerivative & operator=(const Handle_Expr_FunctionDerivative &aHandle);
+		Handle_Expr_FunctionDerivative & operator=(const Expr_FunctionDerivative *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_FunctionDerivative & operator=(const Expr_FunctionDerivative *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_FunctionDerivative const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_FunctionDerivative const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_FunctionDerivative {
@@ -1981,15 +1981,15 @@ class Handle_Expr_BinaryFunction : public Handle_Expr_BinaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_BinaryFunction();
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryFunction(const Handle_Expr_BinaryFunction &aHandle);
+		Handle_Expr_BinaryFunction(const Expr_BinaryFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_BinaryFunction(const Expr_BinaryFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryFunction & operator=(const Handle_Expr_BinaryFunction &aHandle);
+		Handle_Expr_BinaryFunction & operator=(const Expr_BinaryFunction *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_BinaryFunction & operator=(const Expr_BinaryFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_BinaryFunction const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_BinaryFunction {
@@ -2019,15 +2019,15 @@ class Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation();
 		%feature("autodoc", "1");
-		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation(const Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation &aHandle);
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation(const Expr_SequenceNodeOfSequenceOfGeneralRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation(const Expr_SequenceNodeOfSequenceOfGeneralRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation & operator=(const Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation &aHandle);
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation & operator=(const Expr_SequenceNodeOfSequenceOfGeneralRelation *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation & operator=(const Expr_SequenceNodeOfSequenceOfGeneralRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation {
@@ -2057,15 +2057,15 @@ class Handle_Expr_Product : public Handle_Expr_PolyExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Product();
 		%feature("autodoc", "1");
-		Handle_Expr_Product(const Handle_Expr_Product &aHandle);
+		Handle_Expr_Product(const Expr_Product *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Product(const Expr_Product *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Product & operator=(const Handle_Expr_Product &aHandle);
+		Handle_Expr_Product & operator=(const Expr_Product *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Product & operator=(const Expr_Product *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Product const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Product const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Product {
@@ -2095,15 +2095,15 @@ class Handle_Expr_ArgTanh : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArgTanh();
 		%feature("autodoc", "1");
-		Handle_Expr_ArgTanh(const Handle_Expr_ArgTanh &aHandle);
+		Handle_Expr_ArgTanh(const Expr_ArgTanh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArgTanh(const Expr_ArgTanh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArgTanh & operator=(const Handle_Expr_ArgTanh &aHandle);
+		Handle_Expr_ArgTanh & operator=(const Expr_ArgTanh *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArgTanh & operator=(const Expr_ArgTanh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArgTanh const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_ArgTanh const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_ArgTanh {
@@ -2133,15 +2133,15 @@ class Handle_Expr_Cosine : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Cosine();
 		%feature("autodoc", "1");
-		Handle_Expr_Cosine(const Handle_Expr_Cosine &aHandle);
+		Handle_Expr_Cosine(const Expr_Cosine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Cosine(const Expr_Cosine *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Cosine & operator=(const Handle_Expr_Cosine &aHandle);
+		Handle_Expr_Cosine & operator=(const Expr_Cosine *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Cosine & operator=(const Expr_Cosine *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Cosine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Cosine const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Cosine {
@@ -2171,15 +2171,15 @@ class Handle_Expr_Square : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Square();
 		%feature("autodoc", "1");
-		Handle_Expr_Square(const Handle_Expr_Square &aHandle);
+		Handle_Expr_Square(const Expr_Square *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Square(const Expr_Square *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Square & operator=(const Handle_Expr_Square &aHandle);
+		Handle_Expr_Square & operator=(const Expr_Square *aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Square & operator=(const Expr_Square *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_Square const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Expr_Square const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Expr_Square {
@@ -2217,19 +2217,19 @@ class Expr_MapOfNamedUnknown : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Handle_Expr_NamedUnknown &K);
+		Standard_Integer Add(const Expr_NamedUnknown *K);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const Handle_Expr_NamedUnknown &K);
+		void Substitute(const Standard_Integer I, const Expr_NamedUnknown *K);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Expr_NamedUnknown &K) const;
+		Standard_Boolean Contains(const Expr_NamedUnknown *K) const;
 		%feature("autodoc", "1");
 		const Handle_Expr_NamedUnknown & FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Handle_Expr_NamedUnknown & operator()(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const Handle_Expr_NamedUnknown &K) const;
+		Standard_Integer FindIndex(const Expr_NamedUnknown *K) const;
 
 };
 %feature("shadow") Expr_MapOfNamedUnknown::~Expr_MapOfNamedUnknown %{
@@ -2252,7 +2252,7 @@ def __del__(self):
 class Expr_IndexedMapNodeOfMapOfNamedUnknown : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Expr_IndexedMapNodeOfMapOfNamedUnknown(const Handle_Expr_NamedUnknown &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		Expr_IndexedMapNodeOfMapOfNamedUnknown(const Expr_NamedUnknown *K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedUnknown & Key1() const;
 		%feature("autodoc","1");
@@ -2315,19 +2315,13 @@ class Expr_GeneralExpression : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean ContainsUnknowns() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
-		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsShareable() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression NDerivative(const Handle_Expr_NamedUnknown &X, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
+		virtual		Handle_Expr_GeneralExpression NDerivative(const Expr_NamedUnknown *X, const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -2372,9 +2366,13 @@ class Expr_BinaryExpression : public Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		const Handle_Expr_GeneralExpression & SecondOperand() const;
 		%feature("autodoc", "1");
-		void SetFirstOperand(const Handle_Expr_GeneralExpression &exp);
+		void SetFirstOperand(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
-		void SetSecondOperand(const Handle_Expr_GeneralExpression &exp);
+		void SetSecondOperand(const Expr_GeneralExpression *exp);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Contains(const Expr_GeneralExpression *exp) const;
+		%feature("autodoc", "1");
+		virtual		void Replace(const Expr_NamedUnknown *var, const Expr_GeneralExpression *with);
 
 };
 %extend Expr_BinaryExpression {
@@ -2407,7 +2405,9 @@ def __del__(self):
 class Expr_Division : public Expr_BinaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Division(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_Division(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 
 };
 %extend Expr_Division {
@@ -2442,7 +2442,7 @@ class Expr_UnaryExpression : public Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		const Handle_Expr_GeneralExpression & Operand() const;
 		%feature("autodoc", "1");
-		void SetOperand(const Handle_Expr_GeneralExpression &exp);
+		void SetOperand(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbSubExpressions() const;
 		%feature("autodoc", "1");
@@ -2450,9 +2450,9 @@ class Expr_UnaryExpression : public Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean ContainsUnknowns() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
+		virtual		Standard_Boolean Contains(const Expr_GeneralExpression *exp) const;
 		%feature("autodoc", "1");
-		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
+		virtual		void Replace(const Expr_NamedUnknown *var, const Expr_GeneralExpression *with);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Simplified() const;
 		%feature("autodoc", "1");
@@ -2489,17 +2489,17 @@ def __del__(self):
 class Expr_Sinh : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Sinh(const Handle_Expr_GeneralExpression &exp);
+		Expr_Sinh(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -2536,17 +2536,17 @@ def __del__(self):
 class Expr_ArgSinh : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_ArgSinh(const Handle_Expr_GeneralExpression &exp);
+		Expr_ArgSinh(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -2585,17 +2585,17 @@ def __del__(self):
 class Expr_Exponential : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Exponential(const Handle_Expr_GeneralExpression &exp);
+		Expr_Exponential(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -2650,9 +2650,9 @@ class Expr_GeneralRelation : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralRelation SubRelation(const Standard_Integer index) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
+		virtual		Standard_Boolean Contains(const Expr_GeneralExpression *exp) const;
 		%feature("autodoc", "1");
-		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
+		virtual		void Replace(const Expr_NamedUnknown *var, const Expr_GeneralExpression *with);
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString String() const;
 		%feature("autodoc", "1");
@@ -2689,9 +2689,9 @@ def __del__(self):
 class Expr_SingleRelation : public Expr_GeneralRelation {
 	public:
 		%feature("autodoc", "1");
-		void SetFirstMember(const Handle_Expr_GeneralExpression &exp);
+		void SetFirstMember(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
-		void SetSecondMember(const Handle_Expr_GeneralExpression &exp);
+		void SetSecondMember(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression FirstMember() const;
 		%feature("autodoc", "1");
@@ -2728,7 +2728,7 @@ def __del__(self):
 class Expr_GreaterThanOrEqual : public Expr_SingleRelation {
 	public:
 		%feature("autodoc", "1");
-		Expr_GreaterThanOrEqual(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_GreaterThanOrEqual(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 
 };
 %extend Expr_GreaterThanOrEqual {
@@ -2761,17 +2761,17 @@ def __del__(self):
 class Expr_Cosine : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Cosine(const Handle_Expr_GeneralExpression &Exp);
+		Expr_Cosine(const Expr_GeneralExpression *Exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -2810,17 +2810,17 @@ def __del__(self):
 class Expr_ArcCosine : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_ArcCosine(const Handle_Expr_GeneralExpression &exp);
+		Expr_ArcCosine(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -2859,17 +2859,17 @@ def __del__(self):
 class Expr_Tanh : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Tanh(const Handle_Expr_GeneralExpression &exp);
+		Expr_Tanh(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -2908,7 +2908,7 @@ def __del__(self):
 class Expr_LessThan : public Expr_SingleRelation {
 	public:
 		%feature("autodoc", "1");
-		Expr_LessThan(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_LessThan(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSatisfied() const;
 		%feature("autodoc", "1");
@@ -2953,17 +2953,17 @@ def __del__(self):
 class Expr_LogOfe : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_LogOfe(const Handle_Expr_GeneralExpression &exp);
+		Expr_LogOfe(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -3002,7 +3002,7 @@ def __del__(self):
 class Expr_BinaryFunction : public Expr_BinaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_BinaryFunction(const Handle_Expr_GeneralFunction &func, const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_BinaryFunction(const Expr_GeneralFunction *func, const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralFunction Function() const;
 		%feature("autodoc", "1");
@@ -3010,11 +3010,11 @@ class Expr_BinaryFunction : public Expr_BinaryExpression {
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -3053,7 +3053,7 @@ def __del__(self):
 class Expr_RelationIterator {
 	public:
 		%feature("autodoc", "1");
-		Expr_RelationIterator(const Handle_Expr_GeneralRelation &rel);
+		Expr_RelationIterator(const Expr_GeneralRelation *rel);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
@@ -3164,11 +3164,11 @@ class Expr {
 		%feature("autodoc", "1");
 		Expr();
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression CopyShare(const Handle_Expr_GeneralExpression &exp);
+		Handle_Expr_GeneralExpression CopyShare(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
-		Standard_Integer NbOfFreeVariables(const Handle_Expr_GeneralExpression &exp);
+		Standard_Integer NbOfFreeVariables(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
-		Standard_Integer NbOfFreeVariables(const Handle_Expr_GeneralRelation &exp);
+		Standard_Integer NbOfFreeVariables(const Expr_GeneralRelation *exp);
 		%feature("autodoc", "1");
 		Standard_Real Sign(const Standard_Real val);
 
@@ -3193,7 +3193,7 @@ def __del__(self):
 class Expr_SequenceNodeOfSequenceOfGeneralRelation : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Expr_SequenceNodeOfSequenceOfGeneralRelation(const Handle_Expr_GeneralRelation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Expr_SequenceNodeOfSequenceOfGeneralRelation(const Expr_GeneralRelation *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralRelation & Value() const;
 		%feature("autodoc", "1");
@@ -3236,7 +3236,7 @@ class Expr_NamedExpression : public Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsShareable() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString String() const;
 		%feature("autodoc", "1");
@@ -3289,15 +3289,15 @@ class Expr_NamedConstant : public Expr_NamedExpression {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean ContainsUnknowns() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
+		virtual		Standard_Boolean Contains(const Expr_GeneralExpression *exp) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression NDerivative(const Handle_Expr_NamedUnknown &X, const Standard_Integer N) const;
+		virtual		Handle_Expr_GeneralExpression NDerivative(const Expr_NamedUnknown *X, const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
+		virtual		void Replace(const Expr_NamedUnknown *var, const Expr_GeneralExpression *with);
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 
@@ -3332,19 +3332,19 @@ def __del__(self):
 class Expr_UnaryMinus : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_UnaryMinus(const Handle_Expr_GeneralExpression &exp);
+		Expr_UnaryMinus(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression NDerivative(const Handle_Expr_NamedUnknown &X, const Standard_Integer N) const;
+		virtual		Handle_Expr_GeneralExpression NDerivative(const Expr_NamedUnknown *X, const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -3387,7 +3387,7 @@ class Expr_PolyExpression : public Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		const Handle_Expr_GeneralExpression & Operand(const Standard_Integer index) const;
 		%feature("autodoc", "1");
-		void SetOperand(const Handle_Expr_GeneralExpression &exp, const Standard_Integer index);
+		void SetOperand(const Expr_GeneralExpression *exp, const Standard_Integer index);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbSubExpressions() const;
 		%feature("autodoc", "1");
@@ -3395,9 +3395,9 @@ class Expr_PolyExpression : public Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean ContainsUnknowns() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
+		virtual		Standard_Boolean Contains(const Expr_GeneralExpression *exp) const;
 		%feature("autodoc", "1");
-		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
+		virtual		void Replace(const Expr_NamedUnknown *var, const Expr_GeneralExpression *with);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Simplified() const;
 		%feature("autodoc", "1");
@@ -3434,7 +3434,7 @@ def __del__(self):
 class Expr_PolyFunction : public Expr_PolyExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_PolyFunction(const Handle_Expr_GeneralFunction &func, const Expr_Array1OfGeneralExpression &exps);
+		Expr_PolyFunction(const Expr_GeneralFunction *func, const Expr_Array1OfGeneralExpression &exps);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralFunction Function() const;
 		%feature("autodoc", "1");
@@ -3442,11 +3442,11 @@ class Expr_PolyFunction : public Expr_PolyExpression {
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -3483,17 +3483,17 @@ def __del__(self):
 class Expr_ArcSine : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_ArcSine(const Handle_Expr_GeneralExpression &exp);
+		Expr_ArcSine(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -3532,7 +3532,7 @@ def __del__(self):
 class Expr_UnaryFunction : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_UnaryFunction(const Handle_Expr_GeneralFunction &func, const Handle_Expr_GeneralExpression &exp);
+		Expr_UnaryFunction(const Expr_GeneralFunction *func, const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralFunction Function() const;
 		%feature("autodoc", "1");
@@ -3540,11 +3540,11 @@ class Expr_UnaryFunction : public Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -3583,17 +3583,17 @@ def __del__(self):
 class Expr_SquareRoot : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_SquareRoot(const Handle_Expr_GeneralExpression &exp);
+		Expr_SquareRoot(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -3640,19 +3640,19 @@ class Expr_SequenceOfGeneralRelation : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Expr_SequenceOfGeneralRelation & operator=(const Expr_SequenceOfGeneralRelation &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_Expr_GeneralRelation &T);
+		void Append(const Expr_GeneralRelation *T);
 		%feature("autodoc", "1");
 		void Append(Expr_SequenceOfGeneralRelation & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Expr_GeneralRelation &T);
+		void Prepend(const Expr_GeneralRelation *T);
 		%feature("autodoc", "1");
 		void Prepend(Expr_SequenceOfGeneralRelation & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Expr_GeneralRelation &I);
+		void InsertBefore(const Standard_Integer Index, const Expr_GeneralRelation *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Expr_SequenceOfGeneralRelation & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Expr_GeneralRelation &T);
+		void InsertAfter(const Standard_Integer Index, const Expr_GeneralRelation *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Expr_SequenceOfGeneralRelation & S);
 		%feature("autodoc", "1");
@@ -3666,7 +3666,7 @@ class Expr_SequenceOfGeneralRelation : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_Expr_GeneralRelation & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Expr_GeneralRelation &I);
+		void SetValue(const Standard_Integer Index, const Expr_GeneralRelation *I);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralRelation & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -3703,7 +3703,7 @@ class Expr_NamedUnknown : public Expr_NamedExpression {
 		%feature("autodoc", "1");
 		const Handle_Expr_GeneralExpression & AssignedExpression() const;
 		%feature("autodoc", "1");
-		void Assign(const Handle_Expr_GeneralExpression &exp);
+		void Assign(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		void Deassign();
 		%feature("autodoc", "1");
@@ -3719,13 +3719,9 @@ class Expr_NamedUnknown : public Expr_NamedExpression {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean ContainsUnknowns() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
+		virtual		Standard_Boolean Contains(const Expr_GeneralExpression *exp) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -3762,17 +3758,17 @@ def __del__(self):
 class Expr_ArgCosh : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_ArgCosh(const Handle_Expr_GeneralExpression &exp);
+		Expr_ArgCosh(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -3811,11 +3807,11 @@ def __del__(self):
 class Expr_SystemRelation : public Expr_GeneralRelation {
 	public:
 		%feature("autodoc", "1");
-		Expr_SystemRelation(const Handle_Expr_GeneralRelation &relation);
+		Expr_SystemRelation(const Expr_GeneralRelation *relation);
 		%feature("autodoc", "1");
-		void Add(const Handle_Expr_GeneralRelation &relation);
+		void Add(const Expr_GeneralRelation *relation);
 		%feature("autodoc", "1");
-		void Remove(const Handle_Expr_GeneralRelation &relation);
+		void Remove(const Expr_GeneralRelation *relation);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
@@ -3833,9 +3829,9 @@ class Expr_SystemRelation : public Expr_GeneralRelation {
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralRelation Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
+		virtual		Standard_Boolean Contains(const Expr_GeneralExpression *exp) const;
 		%feature("autodoc", "1");
-		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
+		virtual		void Replace(const Expr_NamedUnknown *var, const Expr_GeneralExpression *with);
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString String() const;
 		%feature("autodoc", "1");
@@ -3872,7 +3868,7 @@ def __del__(self):
 class Expr_Different : public Expr_SingleRelation {
 	public:
 		%feature("autodoc", "1");
-		Expr_Different(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_Different(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSatisfied() const;
 		%feature("autodoc", "1");
@@ -3919,9 +3915,9 @@ class Expr_Array1OfNamedUnknown {
 		%feature("autodoc", "1");
 		Expr_Array1OfNamedUnknown(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Expr_Array1OfNamedUnknown(const Handle_Expr_NamedUnknown &Item, const Standard_Integer Low, const Standard_Integer Up);
+		Expr_Array1OfNamedUnknown(const Expr_NamedUnknown *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_Expr_NamedUnknown &V);
+		void Init(const Expr_NamedUnknown *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -3937,7 +3933,7 @@ class Expr_Array1OfNamedUnknown {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Expr_NamedUnknown &Value);
+		void SetValue(const Standard_Integer Index, const Expr_NamedUnknown *Value);
 		%feature("autodoc", "1");
 		const Handle_Expr_NamedUnknown & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -4013,17 +4009,17 @@ class Expr_Product : public Expr_PolyExpression {
 		%feature("autodoc", "1");
 		Expr_Product(const Expr_SequenceOfGeneralExpression &exps);
 		%feature("autodoc", "1");
-		Expr_Product(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_Product(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -4062,7 +4058,7 @@ def __del__(self):
 class Expr_Equal : public Expr_SingleRelation {
 	public:
 		%feature("autodoc", "1");
-		Expr_Equal(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_Equal(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSatisfied() const;
 		%feature("autodoc", "1");
@@ -4113,13 +4109,11 @@ class Expr_GeneralFunction : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralFunction Copy() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var) const;
+		virtual		Handle_Expr_GeneralFunction Derivative(const Expr_NamedUnknown *var) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var, const Standard_Integer deg) const;
+		virtual		Handle_Expr_GeneralFunction Derivative(const Expr_NamedUnknown *var, const Standard_Integer deg) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralFunction &func) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinearOnVariable(const Standard_Integer index) const;
 		%feature("autodoc", "1");
@@ -4158,7 +4152,7 @@ def __del__(self):
 class Expr_NamedFunction : public Expr_GeneralFunction {
 	public:
 		%feature("autodoc", "1");
-		Expr_NamedFunction(const TCollection_AsciiString &name, const Handle_Expr_GeneralExpression &exp, const Expr_Array1OfNamedUnknown &vars);
+		Expr_NamedFunction(const TCollection_AsciiString &name, const Expr_GeneralExpression *exp, const Expr_Array1OfNamedUnknown &vars);
 		%feature("autodoc", "1");
 		void SetName(const TCollection_AsciiString &newname);
 		%feature("autodoc", "1");
@@ -4166,9 +4160,11 @@ class Expr_NamedFunction : public Expr_GeneralFunction {
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &values) const;
 		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralFunction *func) const;
+		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression Expression() const;
 		%feature("autodoc", "1");
-		void SetExpression(const Handle_Expr_GeneralExpression &exp);
+		void SetExpression(const Expr_GeneralExpression *exp);
 
 };
 %extend Expr_NamedFunction {
@@ -4201,7 +4197,7 @@ def __del__(self):
 class Expr_SequenceNodeOfSequenceOfGeneralExpression : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Expr_SequenceNodeOfSequenceOfGeneralExpression(const Handle_Expr_GeneralExpression &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Expr_SequenceNodeOfSequenceOfGeneralExpression(const Expr_GeneralExpression *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression & Value() const;
 		%feature("autodoc", "1");
@@ -4238,17 +4234,17 @@ def __del__(self):
 class Expr_Tangent : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Tangent(const Handle_Expr_GeneralExpression &exp);
+		Expr_Tangent(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -4289,9 +4285,9 @@ class Expr_Array1OfGeneralExpression {
 		%feature("autodoc", "1");
 		Expr_Array1OfGeneralExpression(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Expr_Array1OfGeneralExpression(const Handle_Expr_GeneralExpression &Item, const Standard_Integer Low, const Standard_Integer Up);
+		Expr_Array1OfGeneralExpression(const Expr_GeneralExpression *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_Expr_GeneralExpression &V);
+		void Init(const Expr_GeneralExpression *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -4307,7 +4303,7 @@ class Expr_Array1OfGeneralExpression {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Expr_GeneralExpression &Value);
+		void SetValue(const Standard_Integer Index, const Expr_GeneralExpression *Value);
 		%feature("autodoc", "1");
 		const Handle_Expr_GeneralExpression & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -4381,7 +4377,7 @@ def __del__(self):
 class Expr_UnknownIterator {
 	public:
 		%feature("autodoc", "1");
-		Expr_UnknownIterator(const Handle_Expr_GeneralExpression &exp);
+		Expr_UnknownIterator(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
@@ -4418,19 +4414,19 @@ class Expr_SequenceOfGeneralExpression : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Expr_SequenceOfGeneralExpression & operator=(const Expr_SequenceOfGeneralExpression &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_Expr_GeneralExpression &T);
+		void Append(const Expr_GeneralExpression *T);
 		%feature("autodoc", "1");
 		void Append(Expr_SequenceOfGeneralExpression & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Expr_GeneralExpression &T);
+		void Prepend(const Expr_GeneralExpression *T);
 		%feature("autodoc", "1");
 		void Prepend(Expr_SequenceOfGeneralExpression & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Expr_GeneralExpression &I);
+		void InsertBefore(const Standard_Integer Index, const Expr_GeneralExpression *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Expr_SequenceOfGeneralExpression & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Expr_GeneralExpression &T);
+		void InsertAfter(const Standard_Integer Index, const Expr_GeneralExpression *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Expr_SequenceOfGeneralExpression & S);
 		%feature("autodoc", "1");
@@ -4444,7 +4440,7 @@ class Expr_SequenceOfGeneralExpression : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_Expr_GeneralExpression & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Expr_GeneralExpression &I);
+		void SetValue(const Standard_Integer Index, const Expr_GeneralExpression *I);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -4477,9 +4473,9 @@ class Expr_Array1OfSingleRelation {
 		%feature("autodoc", "1");
 		Expr_Array1OfSingleRelation(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Expr_Array1OfSingleRelation(const Handle_Expr_SingleRelation &Item, const Standard_Integer Low, const Standard_Integer Up);
+		Expr_Array1OfSingleRelation(const Expr_SingleRelation *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_Expr_SingleRelation &V);
+		void Init(const Expr_SingleRelation *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -4495,7 +4491,7 @@ class Expr_Array1OfSingleRelation {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Expr_SingleRelation &Value);
+		void SetValue(const Standard_Integer Index, const Expr_SingleRelation *Value);
 		%feature("autodoc", "1");
 		const Handle_Expr_SingleRelation & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -4526,17 +4522,17 @@ def __del__(self):
 class Expr_ArgTanh : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_ArgTanh(const Handle_Expr_GeneralExpression &exp);
+		Expr_ArgTanh(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -4577,19 +4573,19 @@ class Expr_Sum : public Expr_PolyExpression {
 		%feature("autodoc", "1");
 		Expr_Sum(const Expr_SequenceOfGeneralExpression &exps);
 		%feature("autodoc", "1");
-		Expr_Sum(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_Sum(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression NDerivative(const Handle_Expr_NamedUnknown &X, const Standard_Integer N) const;
+		virtual		Handle_Expr_GeneralExpression NDerivative(const Expr_NamedUnknown *X, const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -4628,19 +4624,19 @@ def __del__(self):
 class Expr_Difference : public Expr_BinaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Difference(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_Difference(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression NDerivative(const Handle_Expr_NamedUnknown &X, const Standard_Integer N) const;
+		virtual		Handle_Expr_GeneralExpression NDerivative(const Expr_NamedUnknown *X, const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -4679,17 +4675,17 @@ def __del__(self):
 class Expr_Square : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Square(const Handle_Expr_GeneralExpression &exp);
+		Expr_Square(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -4728,7 +4724,7 @@ def __del__(self):
 class Expr_GreaterThan : public Expr_SingleRelation {
 	public:
 		%feature("autodoc", "1");
-		Expr_GreaterThan(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_GreaterThan(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSatisfied() const;
 		%feature("autodoc", "1");
@@ -4773,17 +4769,17 @@ def __del__(self):
 class Expr_Exponentiate : public Expr_BinaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Exponentiate(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_Exponentiate(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -4822,7 +4818,7 @@ def __del__(self):
 class Expr_RUIterator {
 	public:
 		%feature("autodoc", "1");
-		Expr_RUIterator(const Handle_Expr_GeneralRelation &rel);
+		Expr_RUIterator(const Expr_GeneralRelation *rel);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
@@ -4937,17 +4933,17 @@ def __del__(self):
 class Expr_ArcTangent : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_ArcTangent(const Handle_Expr_GeneralExpression &exp);
+		Expr_ArcTangent(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -4986,17 +4982,17 @@ def __del__(self):
 class Expr_Cosh : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Cosh(const Handle_Expr_GeneralExpression &exp);
+		Expr_Cosh(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -5035,7 +5031,7 @@ def __del__(self):
 class Expr_FunctionDerivative : public Expr_GeneralFunction {
 	public:
 		%feature("autodoc", "1");
-		Expr_FunctionDerivative(const Handle_Expr_GeneralFunction &func, const Handle_Expr_NamedUnknown &withX, const Standard_Integer deg);
+		Expr_FunctionDerivative(const Expr_GeneralFunction *func, const Expr_NamedUnknown *withX, const Standard_Integer deg);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbOfVariables() const;
 		%feature("autodoc", "1");
@@ -5045,11 +5041,11 @@ class Expr_FunctionDerivative : public Expr_GeneralFunction {
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralFunction Copy() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var) const;
+		virtual		Handle_Expr_GeneralFunction Derivative(const Expr_NamedUnknown *var) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var, const Standard_Integer deg) const;
+		virtual		Handle_Expr_GeneralFunction Derivative(const Expr_NamedUnknown *var, const Standard_Integer deg) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralFunction &func) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralFunction *func) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinearOnVariable(const Standard_Integer index) const;
 		%feature("autodoc", "1");
@@ -5098,17 +5094,17 @@ def __del__(self):
 class Expr_Absolute : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Absolute(const Handle_Expr_GeneralExpression &exp);
+		Expr_Absolute(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -5147,17 +5143,17 @@ def __del__(self):
 class Expr_LogOf10 : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_LogOf10(const Handle_Expr_GeneralExpression &exp);
+		Expr_LogOf10(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -5214,17 +5210,17 @@ class Expr_NumericValue : public Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean ContainsUnknowns() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
+		virtual		Standard_Boolean Contains(const Expr_GeneralExpression *exp) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression NDerivative(const Handle_Expr_NamedUnknown &X, const Standard_Integer N) const;
+		virtual		Handle_Expr_GeneralExpression NDerivative(const Expr_NamedUnknown *X, const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
+		virtual		void Replace(const Expr_NamedUnknown *var, const Expr_GeneralExpression *with);
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -5263,17 +5259,17 @@ def __del__(self):
 class Expr_Sine : public Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Expr_Sine(const Handle_Expr_GeneralExpression &exp);
+		Expr_Sine(const Expr_GeneralExpression *exp);
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralExpression Copy() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		virtual		Standard_Boolean IsIdentical(const Expr_GeneralExpression *Other) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinear() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		virtual		Handle_Expr_GeneralExpression Derivative(const Expr_NamedUnknown *X) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
@@ -5312,7 +5308,7 @@ def __del__(self):
 class Expr_LessThanOrEqual : public Expr_SingleRelation {
 	public:
 		%feature("autodoc", "1");
-		Expr_LessThanOrEqual(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		Expr_LessThanOrEqual(const Expr_GeneralExpression *exp1, const Expr_GeneralExpression *exp2);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSatisfied() const;
 		%feature("autodoc", "1");

@@ -54,15 +54,15 @@ class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProc
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorRead();
 		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead(const Handle_STEPControl_ActorRead &aHandle);
+		Handle_STEPControl_ActorRead(const STEPControl_ActorRead *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorRead(const STEPControl_ActorRead *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead & operator=(const Handle_STEPControl_ActorRead &aHandle);
+		Handle_STEPControl_ActorRead & operator=(const STEPControl_ActorRead *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorRead & operator=(const STEPControl_ActorRead *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPControl_ActorRead const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPControl_ActorRead {
@@ -92,15 +92,15 @@ class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
 		%feature("autodoc", "1");
 		Handle_STEPControl_Controller();
 		%feature("autodoc", "1");
-		Handle_STEPControl_Controller(const Handle_STEPControl_Controller &aHandle);
+		Handle_STEPControl_Controller(const STEPControl_Controller *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPControl_Controller(const STEPControl_Controller *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPControl_Controller & operator=(const Handle_STEPControl_Controller &aHandle);
+		Handle_STEPControl_Controller & operator=(const STEPControl_Controller *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPControl_Controller & operator=(const STEPControl_Controller *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPControl_Controller const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPControl_Controller {
@@ -130,15 +130,15 @@ class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorWrite();
 		%feature("autodoc", "1");
-		Handle_STEPControl_ActorWrite(const Handle_STEPControl_ActorWrite &aHandle);
+		Handle_STEPControl_ActorWrite(const STEPControl_ActorWrite *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorWrite(const STEPControl_ActorWrite *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPControl_ActorWrite & operator=(const Handle_STEPControl_ActorWrite &aHandle);
+		Handle_STEPControl_ActorWrite & operator=(const STEPControl_ActorWrite *aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorWrite & operator=(const STEPControl_ActorWrite *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPControl_ActorWrite const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPControl_ActorWrite const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_STEPControl_ActorWrite {
@@ -168,7 +168,7 @@ class STEPControl_Reader : public XSControl_Reader {
 		%feature("autodoc", "1");
 		STEPControl_Reader();
 		%feature("autodoc", "1");
-		STEPControl_Reader(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		STEPControl_Reader(const XSControl_WorkSession *WS, const Standard_Boolean scratch=1);
 		%feature("autodoc", "1");
 		Handle_StepData_StepModel StepModel() const;
 		%feature("autodoc", "1");
@@ -199,19 +199,19 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 		%feature("autodoc", "1");
 		STEPControl_ActorRead();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Standard_Transient &start);
+		virtual		Standard_Boolean Recognize(const Standard_Transient *start);
 		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		virtual		Handle_Transfer_Binder Transfer(const Standard_Transient *start, const Transfer_TransientProcess *TP);
 		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferShape(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		Handle_Transfer_Binder TransferShape(const Standard_Transient *start, const Transfer_TransientProcess *TP);
 		%feature("autodoc", "1");
-		void PrepareUnits(const Handle_StepRepr_Representation &rep, const Handle_Transfer_TransientProcess &TP);
+		void PrepareUnits(const StepRepr_Representation *rep, const Transfer_TransientProcess *TP);
 		%feature("autodoc", "1");
 		void ResetUnits();
 		%feature("autodoc", "1");
-		Standard_Boolean ComputeTransformation(const Handle_StepGeom_Axis2Placement3d &Origin, const Handle_StepGeom_Axis2Placement3d &Target, const Handle_StepRepr_Representation &OrigContext, const Handle_StepRepr_Representation &TargContext, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
+		Standard_Boolean ComputeTransformation(const StepGeom_Axis2Placement3d *Origin, const StepGeom_Axis2Placement3d *Target, const StepRepr_Representation *OrigContext, const StepRepr_Representation *TargContext, const Transfer_TransientProcess *TP, gp_Trsf & Trsf);
 		%feature("autodoc", "1");
-		Standard_Boolean ComputeSRRWT(const Handle_StepRepr_RepresentationRelationship &SRR, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
+		Standard_Boolean ComputeSRRWT(const StepRepr_RepresentationRelationship *SRR, const Transfer_TransientProcess *TP, gp_Trsf & Trsf);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -250,11 +250,11 @@ class STEPControl_Controller : public XSControl_Controller {
 		%feature("autodoc", "1");
 		virtual		Handle_Interface_InterfaceModel NewModel() const;
 		%feature("autodoc", "1");
-		virtual		Handle_Transfer_ActorOfTransientProcess ActorRead(const Handle_Interface_InterfaceModel &model) const;
+		virtual		Handle_Transfer_ActorOfTransientProcess ActorRead(const Interface_InterfaceModel *model) const;
 		%feature("autodoc", "1");
 		virtual		void Customise(Handle_XSControl_WorkSession & WS);
 		%feature("autodoc", "1");
-		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape &shape, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model, const Standard_Integer modetrans=0) const;
+		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape &shape, const Transfer_FinderProcess *FP, const Interface_InterfaceModel *model, const Standard_Integer modetrans=0) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Init();
 		%feature("autodoc", "1");
@@ -293,15 +293,15 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 		%feature("autodoc", "1");
 		STEPControl_ActorWrite();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Transfer_Finder &start);
+		virtual		Standard_Boolean Recognize(const Transfer_Finder *start);
 		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &FP);
+		virtual		Handle_Transfer_Binder Transfer(const Transfer_Finder *start, const Transfer_FinderProcess *FP);
 		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferSubShape(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, Handle_StepGeom_Axis2Placement3d & AX1, const Handle_Transfer_FinderProcess &FP);
+		Handle_Transfer_Binder TransferSubShape(const Transfer_Finder *start, const StepShape_ShapeDefinitionRepresentation *SDR, Handle_StepGeom_Axis2Placement3d & AX1, const Transfer_FinderProcess *FP);
 		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferShape(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, const Handle_Transfer_FinderProcess &FP);
+		Handle_Transfer_Binder TransferShape(const Transfer_Finder *start, const StepShape_ShapeDefinitionRepresentation *SDR, const Transfer_FinderProcess *FP);
 		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferCompound(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, const Handle_Transfer_FinderProcess &FP);
+		Handle_Transfer_Binder TransferCompound(const Transfer_Finder *start, const StepShape_ShapeDefinitionRepresentation *SDR, const Transfer_FinderProcess *FP);
 		%feature("autodoc", "1");
 		void SetMode(const STEPControl_StepModelType M);
 		%feature("autodoc", "1");
@@ -350,13 +350,13 @@ class STEPControl_Writer {
 		%feature("autodoc", "1");
 		STEPControl_Writer();
 		%feature("autodoc", "1");
-		STEPControl_Writer(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		STEPControl_Writer(const XSControl_WorkSession *WS, const Standard_Boolean scratch=1);
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void UnsetTolerance();
 		%feature("autodoc", "1");
-		void SetWS(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		void SetWS(const XSControl_WorkSession *WS, const Standard_Boolean scratch=1);
 		%feature("autodoc", "1");
 		Handle_XSControl_WorkSession WS() const;
 		%feature("autodoc", "1");

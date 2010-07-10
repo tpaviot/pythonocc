@@ -43,15 +43,15 @@ class Handle_ShapeFix_EdgeProjAux : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_EdgeProjAux();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_EdgeProjAux(const Handle_ShapeFix_EdgeProjAux &aHandle);
+		Handle_ShapeFix_EdgeProjAux(const ShapeFix_EdgeProjAux *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_EdgeProjAux(const ShapeFix_EdgeProjAux *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_EdgeProjAux & operator=(const Handle_ShapeFix_EdgeProjAux &aHandle);
+		Handle_ShapeFix_EdgeProjAux & operator=(const ShapeFix_EdgeProjAux *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_EdgeProjAux & operator=(const ShapeFix_EdgeProjAux *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_EdgeProjAux const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_EdgeProjAux const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_EdgeProjAux {
@@ -81,15 +81,15 @@ class Handle_ShapeFix_Root : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Root();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Root(const Handle_ShapeFix_Root &aHandle);
+		Handle_ShapeFix_Root(const ShapeFix_Root *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Root(const ShapeFix_Root *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Root & operator=(const Handle_ShapeFix_Root &aHandle);
+		Handle_ShapeFix_Root & operator=(const ShapeFix_Root *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Root & operator=(const ShapeFix_Root *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Root const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_Root const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_Root {
@@ -119,15 +119,15 @@ class Handle_ShapeFix_Face : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Face();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Face(const Handle_ShapeFix_Face &aHandle);
+		Handle_ShapeFix_Face(const ShapeFix_Face *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Face(const ShapeFix_Face *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Face & operator=(const Handle_ShapeFix_Face &aHandle);
+		Handle_ShapeFix_Face & operator=(const ShapeFix_Face *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Face & operator=(const ShapeFix_Face *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Face const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_Face const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_Face {
@@ -157,15 +157,15 @@ class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Edge();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Edge(const Handle_ShapeFix_Edge &aHandle);
+		Handle_ShapeFix_Edge(const ShapeFix_Edge *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Edge(const ShapeFix_Edge *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Edge & operator=(const Handle_ShapeFix_Edge &aHandle);
+		Handle_ShapeFix_Edge & operator=(const ShapeFix_Edge *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Edge & operator=(const ShapeFix_Edge *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Edge const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_Edge const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_Edge {
@@ -195,15 +195,15 @@ class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_ComposeShell();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_ComposeShell(const Handle_ShapeFix_ComposeShell &aHandle);
+		Handle_ShapeFix_ComposeShell(const ShapeFix_ComposeShell *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_ComposeShell(const ShapeFix_ComposeShell *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_ComposeShell & operator=(const Handle_ShapeFix_ComposeShell &aHandle);
+		Handle_ShapeFix_ComposeShell & operator=(const ShapeFix_ComposeShell *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_ComposeShell & operator=(const ShapeFix_ComposeShell *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_ComposeShell const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_ComposeShell const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_ComposeShell {
@@ -233,15 +233,15 @@ class Handle_ShapeFix_Solid : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Solid();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Solid(const Handle_ShapeFix_Solid &aHandle);
+		Handle_ShapeFix_Solid(const ShapeFix_Solid *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Solid(const ShapeFix_Solid *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Solid & operator=(const Handle_ShapeFix_Solid &aHandle);
+		Handle_ShapeFix_Solid & operator=(const ShapeFix_Solid *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Solid & operator=(const ShapeFix_Solid *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Solid const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_Solid const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_Solid {
@@ -271,15 +271,15 @@ class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wire();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Wire(const Handle_ShapeFix_Wire &aHandle);
+		Handle_ShapeFix_Wire(const ShapeFix_Wire *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wire(const ShapeFix_Wire *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Wire & operator=(const Handle_ShapeFix_Wire &aHandle);
+		Handle_ShapeFix_Wire & operator=(const ShapeFix_Wire *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wire & operator=(const ShapeFix_Wire *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Wire const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_Wire const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_Wire {
@@ -309,15 +309,15 @@ class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment &aHandle);
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment & operator=(const Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment &aHandle);
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment & operator=(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment & operator=(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
@@ -347,15 +347,15 @@ class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wireframe();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Wireframe(const Handle_ShapeFix_Wireframe &aHandle);
+		Handle_ShapeFix_Wireframe(const ShapeFix_Wireframe *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wireframe(const ShapeFix_Wireframe *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Wireframe & operator=(const Handle_ShapeFix_Wireframe &aHandle);
+		Handle_ShapeFix_Wireframe & operator=(const ShapeFix_Wireframe *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wireframe & operator=(const ShapeFix_Wireframe *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Wireframe const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_Wireframe const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_Wireframe {
@@ -385,15 +385,15 @@ class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d &aHandle);
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d & operator=(const Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d &aHandle);
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d & operator=(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d & operator=(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
@@ -423,15 +423,15 @@ class Handle_ShapeFix_Shape : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shape();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Shape(const Handle_ShapeFix_Shape &aHandle);
+		Handle_ShapeFix_Shape(const ShapeFix_Shape *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shape(const ShapeFix_Shape *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Shape & operator=(const Handle_ShapeFix_Shape &aHandle);
+		Handle_ShapeFix_Shape & operator=(const ShapeFix_Shape *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shape & operator=(const ShapeFix_Shape *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Shape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_Shape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_Shape {
@@ -461,15 +461,15 @@ class Handle_ShapeFix_FixSmallFace : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_FixSmallFace();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_FixSmallFace(const Handle_ShapeFix_FixSmallFace &aHandle);
+		Handle_ShapeFix_FixSmallFace(const ShapeFix_FixSmallFace *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_FixSmallFace(const ShapeFix_FixSmallFace *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_FixSmallFace & operator=(const Handle_ShapeFix_FixSmallFace &aHandle);
+		Handle_ShapeFix_FixSmallFace & operator=(const ShapeFix_FixSmallFace *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_FixSmallFace & operator=(const ShapeFix_FixSmallFace *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_FixSmallFace const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_FixSmallFace const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_FixSmallFace {
@@ -499,15 +499,15 @@ class Handle_ShapeFix_Shell : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shell();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Shell(const Handle_ShapeFix_Shell &aHandle);
+		Handle_ShapeFix_Shell(const ShapeFix_Shell *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shell(const ShapeFix_Shell *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Shell & operator=(const Handle_ShapeFix_Shell &aHandle);
+		Handle_ShapeFix_Shell & operator=(const ShapeFix_Shell *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shell & operator=(const ShapeFix_Shell *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_Shell const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_Shell const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_Shell {
@@ -537,15 +537,15 @@ class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SplitCommonVertex();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex(const Handle_ShapeFix_SplitCommonVertex &aHandle);
+		Handle_ShapeFix_SplitCommonVertex(const ShapeFix_SplitCommonVertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SplitCommonVertex(const ShapeFix_SplitCommonVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex & operator=(const Handle_ShapeFix_SplitCommonVertex &aHandle);
+		Handle_ShapeFix_SplitCommonVertex & operator=(const ShapeFix_SplitCommonVertex *aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SplitCommonVertex & operator=(const ShapeFix_SplitCommonVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeFix_SplitCommonVertex const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_ShapeFix_SplitCommonVertex {
@@ -575,13 +575,11 @@ class ShapeFix_Root : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ShapeFix_Root();
 		%feature("autodoc", "1");
-		virtual		void Set(const Handle_ShapeFix_Root &Root);
-		%feature("autodoc", "1");
-		virtual		void SetContext(const Handle_ShapeBuild_ReShape &context);
+		virtual		void SetContext(const ShapeBuild_ReShape *context);
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape Context() const;
 		%feature("autodoc", "1");
-		virtual		void SetMsgRegistrator(const Handle_ShapeExtend_BasicMsgRegistrator &msgreg);
+		virtual		void SetMsgRegistrator(const ShapeExtend_BasicMsgRegistrator *msgreg);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_BasicMsgRegistrator MsgRegistrator() const;
 		%feature("autodoc", "1");
@@ -646,7 +644,7 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		ShapeFix_ComposeShell();
 		%feature("autodoc", "1");
-		void Init(const Handle_ShapeExtend_CompositeSurface &Grid, const TopLoc_Location &L, const TopoDS_Face &Face, const Standard_Real Prec);
+		void Init(const ShapeExtend_CompositeSurface *Grid, const TopLoc_Location &L, const TopoDS_Face &Face, const Standard_Real Prec);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Boolean GetClosedMode() {
@@ -670,7 +668,7 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		void DispatchWires(TopTools_SequenceOfShape & faces, ShapeFix_SequenceOfWireSegment & wires) const;
 		%feature("autodoc", "1");
-		void SetTransferParamTool(const Handle_ShapeAnalysis_TransferParameters &TransferParam);
+		void SetTransferParamTool(const ShapeAnalysis_TransferParameters *TransferParam);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParameters GetTransferParamTool() const;
 		%feature("autodoc", "1");
@@ -723,7 +721,7 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Real LastParam() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsIso(const Handle_Geom2d_Curve &C);
+		Standard_Boolean IsIso(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -801,17 +799,17 @@ class ShapeFix_Wire : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Wire &wire, const TopoDS_Face &face, const Standard_Real prec);
 		%feature("autodoc", "1");
-		void Init(const Handle_ShapeAnalysis_Wire &saw);
+		void Init(const ShapeAnalysis_Wire *saw);
 		%feature("autodoc", "1");
 		void Load(const TopoDS_Wire &wire);
 		%feature("autodoc", "1");
-		void Load(const Handle_ShapeExtend_WireData &sbwd);
+		void Load(const ShapeExtend_WireData *sbwd);
 		%feature("autodoc", "1");
 		void SetFace(const TopoDS_Face &face);
 		%feature("autodoc", "1");
-		void SetSurface(const Handle_Geom_Surface &surf);
+		void SetSurface(const Geom_Surface *surf);
 		%feature("autodoc", "1");
-		void SetSurface(const Handle_Geom_Surface &surf, const TopLoc_Location &loc);
+		void SetSurface(const Geom_Surface *surf, const TopLoc_Location &loc);
 		%feature("autodoc", "1");
 		virtual		void SetPrecision(const Standard_Real prec);
 		%feature("autodoc", "1");
@@ -1286,7 +1284,7 @@ class ShapeFix_Solid : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shell FixShellTool() const;
 		%feature("autodoc", "1");
-		virtual		void SetMsgRegistrator(const Handle_ShapeExtend_BasicMsgRegistrator &msgreg);
+		virtual		void SetMsgRegistrator(const ShapeExtend_BasicMsgRegistrator *msgreg);
 		%feature("autodoc", "1");
 		virtual		void SetPrecision(const Standard_Real preci);
 		%feature("autodoc", "1");
@@ -1615,7 +1613,7 @@ class ShapeFix {
 		%feature("autodoc", "1");
 		TopoDS_Shape RemoveSmallEdges(TopoDS_Shape & shape, const Standard_Real Tolerance, Handle_ShapeBuild_ReShape & context);
 		%feature("autodoc", "1");
-		Standard_Boolean FixVertexPosition(TopoDS_Shape & theshape, const Standard_Real theTolerance, const Handle_ShapeBuild_ReShape &thecontext);
+		Standard_Boolean FixVertexPosition(TopoDS_Shape & theshape, const Standard_Real theTolerance, const ShapeBuild_ReShape *thecontext);
 
 };
 %feature("shadow") ShapeFix::~ShapeFix %{
@@ -1638,7 +1636,7 @@ def __del__(self):
 class ShapeFix_IntersectionTool {
 	public:
 		%feature("autodoc", "1");
-		ShapeFix_IntersectionTool(const Handle_ShapeBuild_ReShape &context, const Standard_Real preci, const Standard_Real maxtol=1.0e+0);
+		ShapeFix_IntersectionTool(const ShapeBuild_ReShape *context, const Standard_Real preci, const Standard_Real maxtol=1.0e+0);
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape Context() const;
 		%feature("autodoc", "1");
@@ -1676,7 +1674,7 @@ class ShapeFix_WireVertex {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Wire &wire, const Standard_Real preci);
 		%feature("autodoc", "1");
-		void Init(const Handle_ShapeExtend_WireData &sbwd, const Standard_Real preci);
+		void Init(const ShapeExtend_WireData *sbwd, const Standard_Real preci);
 		%feature("autodoc", "1");
 		void Init(const ShapeAnalysis_WireVertex &sawv);
 		%feature("autodoc", "1");
@@ -1894,7 +1892,7 @@ class ShapeFix_Shell : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Face FixFaceTool();
 		%feature("autodoc", "1");
-		virtual		void SetMsgRegistrator(const Handle_ShapeExtend_BasicMsgRegistrator &msgreg);
+		virtual		void SetMsgRegistrator(const ShapeExtend_BasicMsgRegistrator *msgreg);
 		%feature("autodoc", "1");
 		virtual		void SetPrecision(const Standard_Real preci);
 		%feature("autodoc", "1");
@@ -1967,11 +1965,11 @@ class ShapeFix_Face : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Face &face);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &surf, const Standard_Real preci, const Standard_Boolean fwd=1);
+		void Init(const Geom_Surface *surf, const Standard_Real preci, const Standard_Boolean fwd=1);
 		%feature("autodoc", "1");
-		void Init(const Handle_ShapeAnalysis_Surface &surf, const Standard_Real preci, const Standard_Boolean fwd=1);
+		void Init(const ShapeAnalysis_Surface *surf, const Standard_Real preci, const Standard_Boolean fwd=1);
 		%feature("autodoc", "1");
-		virtual		void SetMsgRegistrator(const Handle_ShapeExtend_BasicMsgRegistrator &msgreg);
+		virtual		void SetMsgRegistrator(const ShapeExtend_BasicMsgRegistrator *msgreg);
 		%feature("autodoc", "1");
 		virtual		void SetPrecision(const Standard_Real preci);
 		%feature("autodoc", "1");
@@ -2160,7 +2158,7 @@ class ShapeFix_Shape : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
-		virtual		void SetMsgRegistrator(const Handle_ShapeExtend_BasicMsgRegistrator &msgreg);
+		virtual		void SetMsgRegistrator(const ShapeExtend_BasicMsgRegistrator *msgreg);
 		%feature("autodoc", "1");
 		virtual		void SetPrecision(const Standard_Real preci);
 		%feature("autodoc", "1");
@@ -2282,7 +2280,7 @@ class ShapeFix_SplitTool {
 		Standard_Boolean CutEdge(const TopoDS_Edge &edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face &face, Standard_Boolean & iscutline) const;
 		%feature("autodoc","SplitEdge(const edge, Standard_Real fp, const V1, Standard_Real lp, const V2, const face, const context, Standard_Real tol3d, Standard_Real tol2d) -> Standard_Integer");
 
-		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer &OutValue, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
+		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer &OutValue, const ShapeBuild_ReShape *context, const Standard_Real tol3d, const Standard_Real tol2d) const;
 
 };
 %feature("shadow") ShapeFix_SplitTool::~ShapeFix_SplitTool %{
@@ -2381,17 +2379,17 @@ class ShapeFix_Edge : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean FixRemovePCurve(const TopoDS_Edge &edge, const TopoDS_Face &face);
 		%feature("autodoc", "1");
-		Standard_Boolean FixRemovePCurve(const TopoDS_Edge &edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location);
+		Standard_Boolean FixRemovePCurve(const TopoDS_Edge &edge, const Geom_Surface *surface, const TopLoc_Location &location);
 		%feature("autodoc", "1");
 		Standard_Boolean FixRemoveCurve3d(const TopoDS_Edge &edge);
 		%feature("autodoc", "1");
 		Standard_Boolean FixAddPCurve(const TopoDS_Edge &edge, const TopoDS_Face &face, const Standard_Boolean isSeam, const Standard_Real prec=0.0);
 		%feature("autodoc", "1");
-		Standard_Boolean FixAddPCurve(const TopoDS_Edge &edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, const Standard_Boolean isSeam, const Standard_Real prec=0.0);
+		Standard_Boolean FixAddPCurve(const TopoDS_Edge &edge, const Geom_Surface *surface, const TopLoc_Location &location, const Standard_Boolean isSeam, const Standard_Real prec=0.0);
 		%feature("autodoc", "1");
-		Standard_Boolean FixAddPCurve(const TopoDS_Edge &edge, const TopoDS_Face &face, const Standard_Boolean isSeam, const Handle_ShapeAnalysis_Surface &surfana, const Standard_Real prec=0.0);
+		Standard_Boolean FixAddPCurve(const TopoDS_Edge &edge, const TopoDS_Face &face, const Standard_Boolean isSeam, const ShapeAnalysis_Surface *surfana, const Standard_Real prec=0.0);
 		%feature("autodoc", "1");
-		Standard_Boolean FixAddPCurve(const TopoDS_Edge &edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, const Standard_Boolean isSeam, const Handle_ShapeAnalysis_Surface &surfana, const Standard_Real prec=0.0);
+		Standard_Boolean FixAddPCurve(const TopoDS_Edge &edge, const Geom_Surface *surface, const TopLoc_Location &location, const Standard_Boolean isSeam, const ShapeAnalysis_Surface *surfana, const Standard_Real prec=0.0);
 		%feature("autodoc", "1");
 		Standard_Boolean FixAddCurve3d(const TopoDS_Edge &edge);
 		%feature("autodoc", "1");
@@ -2401,7 +2399,7 @@ class ShapeFix_Edge : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean FixReversed2d(const TopoDS_Edge &edge, const TopoDS_Face &face);
 		%feature("autodoc", "1");
-		Standard_Boolean FixReversed2d(const TopoDS_Edge &edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location);
+		Standard_Boolean FixReversed2d(const TopoDS_Edge &edge, const Geom_Surface *surface, const TopLoc_Location &location);
 		%feature("autodoc", "1");
 		Standard_Boolean FixSameParameter(const TopoDS_Edge &edge, const Standard_Real tolerance=0.0);
 		%feature("autodoc", "1");

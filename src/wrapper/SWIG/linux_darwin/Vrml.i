@@ -125,15 +125,15 @@ class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_LOD();
 		%feature("autodoc", "1");
-		Handle_Vrml_LOD(const Handle_Vrml_LOD &aHandle);
+		Handle_Vrml_LOD(const Vrml_LOD *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_LOD(const Vrml_LOD *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_LOD & operator=(const Handle_Vrml_LOD &aHandle);
+		Handle_Vrml_LOD & operator=(const Vrml_LOD *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_LOD & operator=(const Vrml_LOD *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_LOD const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Vrml_LOD const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Vrml_LOD {
@@ -163,15 +163,15 @@ class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_Coordinate3();
 		%feature("autodoc", "1");
-		Handle_Vrml_Coordinate3(const Handle_Vrml_Coordinate3 &aHandle);
+		Handle_Vrml_Coordinate3(const Vrml_Coordinate3 *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_Coordinate3(const Vrml_Coordinate3 *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_Coordinate3 & operator=(const Handle_Vrml_Coordinate3 &aHandle);
+		Handle_Vrml_Coordinate3 & operator=(const Vrml_Coordinate3 *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_Coordinate3 & operator=(const Vrml_Coordinate3 *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_Coordinate3 const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Vrml_Coordinate3 const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Vrml_Coordinate3 {
@@ -201,15 +201,15 @@ class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_AsciiText();
 		%feature("autodoc", "1");
-		Handle_Vrml_AsciiText(const Handle_Vrml_AsciiText &aHandle);
+		Handle_Vrml_AsciiText(const Vrml_AsciiText *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_AsciiText(const Vrml_AsciiText *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_AsciiText & operator=(const Handle_Vrml_AsciiText &aHandle);
+		Handle_Vrml_AsciiText & operator=(const Vrml_AsciiText *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_AsciiText & operator=(const Vrml_AsciiText *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_AsciiText const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Vrml_AsciiText const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Vrml_AsciiText {
@@ -239,15 +239,15 @@ class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_SFImage();
 		%feature("autodoc", "1");
-		Handle_Vrml_SFImage(const Handle_Vrml_SFImage &aHandle);
+		Handle_Vrml_SFImage(const Vrml_SFImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_SFImage(const Vrml_SFImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_SFImage & operator=(const Handle_Vrml_SFImage &aHandle);
+		Handle_Vrml_SFImage & operator=(const Vrml_SFImage *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_SFImage & operator=(const Vrml_SFImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_SFImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Vrml_SFImage const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Vrml_SFImage {
@@ -277,15 +277,15 @@ class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_Normal();
 		%feature("autodoc", "1");
-		Handle_Vrml_Normal(const Handle_Vrml_Normal &aHandle);
+		Handle_Vrml_Normal(const Vrml_Normal *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_Normal(const Vrml_Normal *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_Normal & operator=(const Handle_Vrml_Normal &aHandle);
+		Handle_Vrml_Normal & operator=(const Vrml_Normal *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_Normal & operator=(const Vrml_Normal *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_Normal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Vrml_Normal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Vrml_Normal {
@@ -315,15 +315,15 @@ class Handle_Vrml_Material : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_Material();
 		%feature("autodoc", "1");
-		Handle_Vrml_Material(const Handle_Vrml_Material &aHandle);
+		Handle_Vrml_Material(const Vrml_Material *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_Material(const Vrml_Material *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_Material & operator=(const Handle_Vrml_Material &aHandle);
+		Handle_Vrml_Material & operator=(const Vrml_Material *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_Material & operator=(const Vrml_Material *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_Material const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Vrml_Material const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Vrml_Material {
@@ -353,15 +353,15 @@ class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedLineSet();
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedLineSet(const Handle_Vrml_IndexedLineSet &aHandle);
+		Handle_Vrml_IndexedLineSet(const Vrml_IndexedLineSet *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedLineSet(const Vrml_IndexedLineSet *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedLineSet & operator=(const Handle_Vrml_IndexedLineSet &aHandle);
+		Handle_Vrml_IndexedLineSet & operator=(const Vrml_IndexedLineSet *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedLineSet & operator=(const Vrml_IndexedLineSet *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedLineSet const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Vrml_IndexedLineSet const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Vrml_IndexedLineSet {
@@ -391,15 +391,15 @@ class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedFaceSet();
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedFaceSet(const Handle_Vrml_IndexedFaceSet &aHandle);
+		Handle_Vrml_IndexedFaceSet(const Vrml_IndexedFaceSet *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedFaceSet(const Vrml_IndexedFaceSet *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedFaceSet & operator=(const Handle_Vrml_IndexedFaceSet &aHandle);
+		Handle_Vrml_IndexedFaceSet & operator=(const Vrml_IndexedFaceSet *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedFaceSet & operator=(const Vrml_IndexedFaceSet *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedFaceSet const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Vrml_IndexedFaceSet const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Vrml_IndexedFaceSet {
@@ -429,15 +429,15 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_TextureCoordinate2();
 		%feature("autodoc", "1");
-		Handle_Vrml_TextureCoordinate2(const Handle_Vrml_TextureCoordinate2 &aHandle);
+		Handle_Vrml_TextureCoordinate2(const Vrml_TextureCoordinate2 *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_TextureCoordinate2(const Vrml_TextureCoordinate2 *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_TextureCoordinate2 & operator=(const Handle_Vrml_TextureCoordinate2 &aHandle);
+		Handle_Vrml_TextureCoordinate2 & operator=(const Vrml_TextureCoordinate2 *aHandle);
 		%feature("autodoc", "1");
 		Handle_Vrml_TextureCoordinate2 & operator=(const Vrml_TextureCoordinate2 *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_TextureCoordinate2 const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Vrml_TextureCoordinate2 const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Vrml_TextureCoordinate2 {
@@ -689,23 +689,23 @@ def __del__(self):
 class Vrml_IndexedFaceSet : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Vrml_IndexedFaceSet(const Handle_TColStd_HArray1OfInteger &aCoordIndex, const Handle_TColStd_HArray1OfInteger &aMaterialIndex, const Handle_TColStd_HArray1OfInteger &aNormalIndex, const Handle_TColStd_HArray1OfInteger &aTextureCoordIndex);
+		Vrml_IndexedFaceSet(const TColStd_HArray1OfInteger *aCoordIndex, const TColStd_HArray1OfInteger *aMaterialIndex, const TColStd_HArray1OfInteger *aNormalIndex, const TColStd_HArray1OfInteger *aTextureCoordIndex);
 		%feature("autodoc", "1");
 		Vrml_IndexedFaceSet();
 		%feature("autodoc", "1");
-		void SetCoordIndex(const Handle_TColStd_HArray1OfInteger &aCoordIndex);
+		void SetCoordIndex(const TColStd_HArray1OfInteger *aCoordIndex);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger CoordIndex() const;
 		%feature("autodoc", "1");
-		void SetMaterialIndex(const Handle_TColStd_HArray1OfInteger &aMaterialIndex);
+		void SetMaterialIndex(const TColStd_HArray1OfInteger *aMaterialIndex);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger MaterialIndex() const;
 		%feature("autodoc", "1");
-		void SetNormalIndex(const Handle_TColStd_HArray1OfInteger &aNormalIndex);
+		void SetNormalIndex(const TColStd_HArray1OfInteger *aNormalIndex);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger NormalIndex() const;
 		%feature("autodoc", "1");
-		void SetTextureCoordIndex(const Handle_TColStd_HArray1OfInteger &aTextureCoordIndex);
+		void SetTextureCoordIndex(const TColStd_HArray1OfInteger *aTextureCoordIndex);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger TextureCoordIndex() const;
 		%feature("autodoc", "1");
@@ -828,9 +828,9 @@ class Vrml_AsciiText : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Vrml_AsciiText();
 		%feature("autodoc", "1");
-		Vrml_AsciiText(const Handle_TColStd_HArray1OfAsciiString &aString, const Standard_Real aSpacing, const Vrml_AsciiTextJustification aJustification, const Standard_Real aWidth);
+		Vrml_AsciiText(const TColStd_HArray1OfAsciiString *aString, const Standard_Real aSpacing, const Vrml_AsciiTextJustification aJustification, const Standard_Real aWidth);
 		%feature("autodoc", "1");
-		void SetString(const Handle_TColStd_HArray1OfAsciiString &aString);
+		void SetString(const TColStd_HArray1OfAsciiString *aString);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfAsciiString String() const;
 		%feature("autodoc", "1");
@@ -887,23 +887,23 @@ def __del__(self):
 class Vrml_IndexedLineSet : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Vrml_IndexedLineSet(const Handle_TColStd_HArray1OfInteger &aCoordIndex, const Handle_TColStd_HArray1OfInteger &aMaterialIndex, const Handle_TColStd_HArray1OfInteger &aNormalIndex, const Handle_TColStd_HArray1OfInteger &aTextureCoordIndex);
+		Vrml_IndexedLineSet(const TColStd_HArray1OfInteger *aCoordIndex, const TColStd_HArray1OfInteger *aMaterialIndex, const TColStd_HArray1OfInteger *aNormalIndex, const TColStd_HArray1OfInteger *aTextureCoordIndex);
 		%feature("autodoc", "1");
 		Vrml_IndexedLineSet();
 		%feature("autodoc", "1");
-		void SetCoordIndex(const Handle_TColStd_HArray1OfInteger &aCoordIndex);
+		void SetCoordIndex(const TColStd_HArray1OfInteger *aCoordIndex);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger CoordIndex() const;
 		%feature("autodoc", "1");
-		void SetMaterialIndex(const Handle_TColStd_HArray1OfInteger &aMaterialIndex);
+		void SetMaterialIndex(const TColStd_HArray1OfInteger *aMaterialIndex);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger MaterialIndex() const;
 		%feature("autodoc", "1");
-		void SetNormalIndex(const Handle_TColStd_HArray1OfInteger &aNormalIndex);
+		void SetNormalIndex(const TColStd_HArray1OfInteger *aNormalIndex);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger NormalIndex() const;
 		%feature("autodoc", "1");
-		void SetTextureCoordIndex(const Handle_TColStd_HArray1OfInteger &aTextureCoordIndex);
+		void SetTextureCoordIndex(const TColStd_HArray1OfInteger *aTextureCoordIndex);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger TextureCoordIndex() const;
 		%feature("autodoc", "1");
@@ -948,11 +948,11 @@ def __del__(self):
 class Vrml_Normal : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Vrml_Normal(const Handle_TColgp_HArray1OfVec &aVector);
+		Vrml_Normal(const TColgp_HArray1OfVec *aVector);
 		%feature("autodoc", "1");
 		Vrml_Normal();
 		%feature("autodoc", "1");
-		void SetVector(const Handle_TColgp_HArray1OfVec &aVector);
+		void SetVector(const TColgp_HArray1OfVec *aVector);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfVec Vector() const;
 		%feature("autodoc", "1");
@@ -1060,13 +1060,13 @@ class Vrml_Texture2 {
 		%feature("autodoc", "1");
 		Vrml_Texture2();
 		%feature("autodoc", "1");
-		Vrml_Texture2(const TCollection_AsciiString &aFilename, const Handle_Vrml_SFImage &aImage, const Vrml_Texture2Wrap aWrapS, const Vrml_Texture2Wrap aWrapT);
+		Vrml_Texture2(const TCollection_AsciiString &aFilename, const Vrml_SFImage *aImage, const Vrml_Texture2Wrap aWrapS, const Vrml_Texture2Wrap aWrapT);
 		%feature("autodoc", "1");
 		void SetFilename(const TCollection_AsciiString &aFilename);
 		%feature("autodoc", "1");
 		TCollection_AsciiString Filename() const;
 		%feature("autodoc", "1");
-		void SetImage(const Handle_Vrml_SFImage &aImage);
+		void SetImage(const Vrml_SFImage *aImage);
 		%feature("autodoc", "1");
 		Handle_Vrml_SFImage Image() const;
 		%feature("autodoc", "1");
@@ -1109,7 +1109,7 @@ class Vrml_SFImage : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Vrml_SFImage();
 		%feature("autodoc", "1");
-		Vrml_SFImage(const Standard_Integer aWidth, const Standard_Integer aHeight, const Vrml_SFImageNumber aNumber, const Handle_TColStd_HArray1OfInteger &anArray);
+		Vrml_SFImage(const Standard_Integer aWidth, const Standard_Integer aHeight, const Vrml_SFImageNumber aNumber, const TColStd_HArray1OfInteger *anArray);
 		%feature("autodoc", "1");
 		void SetWidth(const Standard_Integer aWidth);
 		%feature("autodoc", "1");
@@ -1123,7 +1123,7 @@ class Vrml_SFImage : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Vrml_SFImageNumber Number() const;
 		%feature("autodoc", "1");
-		void SetArray(const Handle_TColStd_HArray1OfInteger &anArray);
+		void SetArray(const TColStd_HArray1OfInteger *anArray);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger Array() const;
 		%feature("autodoc", "1");
@@ -1620,11 +1620,11 @@ def __del__(self):
 class Vrml_Coordinate3 : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Vrml_Coordinate3(const Handle_TColgp_HArray1OfVec &aPoint);
+		Vrml_Coordinate3(const TColgp_HArray1OfVec *aPoint);
 		%feature("autodoc", "1");
 		Vrml_Coordinate3();
 		%feature("autodoc", "1");
-		void SetPoint(const Handle_TColgp_HArray1OfVec &aPoint);
+		void SetPoint(const TColgp_HArray1OfVec *aPoint);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfVec Point() const;
 		%feature("autodoc", "1");
@@ -1776,9 +1776,9 @@ class Vrml_LOD : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Vrml_LOD();
 		%feature("autodoc", "1");
-		Vrml_LOD(const Handle_TColStd_HArray1OfReal &aRange, const gp_Vec &aCenter);
+		Vrml_LOD(const TColStd_HArray1OfReal *aRange, const gp_Vec &aCenter);
 		%feature("autodoc", "1");
-		void SetRange(const Handle_TColStd_HArray1OfReal &aRange);
+		void SetRange(const TColStd_HArray1OfReal *aRange);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal Range() const;
 		%feature("autodoc", "1");
@@ -1876,31 +1876,31 @@ def __del__(self):
 class Vrml_Material : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Vrml_Material(const Handle_Quantity_HArray1OfColor &aAmbientColor, const Handle_Quantity_HArray1OfColor &aDiffuseColor, const Handle_Quantity_HArray1OfColor &aSpecularColor, const Handle_Quantity_HArray1OfColor &aEmissiveColor, const Handle_TColStd_HArray1OfReal &aShininess, const Handle_TColStd_HArray1OfReal &aTransparency);
+		Vrml_Material(const Quantity_HArray1OfColor *aAmbientColor, const Quantity_HArray1OfColor *aDiffuseColor, const Quantity_HArray1OfColor *aSpecularColor, const Quantity_HArray1OfColor *aEmissiveColor, const TColStd_HArray1OfReal *aShininess, const TColStd_HArray1OfReal *aTransparency);
 		%feature("autodoc", "1");
 		Vrml_Material();
 		%feature("autodoc", "1");
-		void SetAmbientColor(const Handle_Quantity_HArray1OfColor &aAmbientColor);
+		void SetAmbientColor(const Quantity_HArray1OfColor *aAmbientColor);
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor AmbientColor() const;
 		%feature("autodoc", "1");
-		void SetDiffuseColor(const Handle_Quantity_HArray1OfColor &aDiffuseColor);
+		void SetDiffuseColor(const Quantity_HArray1OfColor *aDiffuseColor);
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor DiffuseColor() const;
 		%feature("autodoc", "1");
-		void SetSpecularColor(const Handle_Quantity_HArray1OfColor &aSpecularColor);
+		void SetSpecularColor(const Quantity_HArray1OfColor *aSpecularColor);
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor SpecularColor() const;
 		%feature("autodoc", "1");
-		void SetEmissiveColor(const Handle_Quantity_HArray1OfColor &aEmissiveColor);
+		void SetEmissiveColor(const Quantity_HArray1OfColor *aEmissiveColor);
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor EmissiveColor() const;
 		%feature("autodoc", "1");
-		void SetShininess(const Handle_TColStd_HArray1OfReal &aShininess);
+		void SetShininess(const TColStd_HArray1OfReal *aShininess);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal Shininess() const;
 		%feature("autodoc", "1");
-		void SetTransparency(const Handle_TColStd_HArray1OfReal &aTransparency);
+		void SetTransparency(const TColStd_HArray1OfReal *aTransparency);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal Transparency() const;
 		%feature("autodoc", "1");
@@ -2218,9 +2218,9 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Vrml_TextureCoordinate2();
 		%feature("autodoc", "1");
-		Vrml_TextureCoordinate2(const Handle_TColgp_HArray1OfVec2d &aPoint);
+		Vrml_TextureCoordinate2(const TColgp_HArray1OfVec2d *aPoint);
 		%feature("autodoc", "1");
-		void SetPoint(const Handle_TColgp_HArray1OfVec2d &aPoint);
+		void SetPoint(const TColgp_HArray1OfVec2d *aPoint);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfVec2d Point() const;
 		%feature("autodoc", "1");

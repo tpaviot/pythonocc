@@ -43,11 +43,11 @@ class RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
 		%feature("autodoc", "1");
 		RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx::~RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx %{
@@ -72,11 +72,11 @@ class RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface::~RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface %{
@@ -101,9 +101,9 @@ class RWStepGeom_RWBoundedCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBoundedCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BoundedCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BoundedCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BoundedCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BoundedCurve *ent) const;
 
 };
 %feature("shadow") RWStepGeom_RWBoundedCurve::~RWStepGeom_RWBoundedCurve %{
@@ -128,11 +128,11 @@ class RWStepGeom_RWPointReplica {
 		%feature("autodoc", "1");
 		RWStepGeom_RWPointReplica();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_PointReplica &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_PointReplica *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_PointReplica &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_PointReplica *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_PointReplica &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_PointReplica *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWPointReplica::~RWStepGeom_RWPointReplica %{
@@ -157,11 +157,11 @@ class RWStepGeom_RWDegeneratePcurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWDegeneratePcurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_DegeneratePcurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_DegeneratePcurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_DegeneratePcurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_DegeneratePcurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_DegeneratePcurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_DegeneratePcurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWDegeneratePcurve::~RWStepGeom_RWDegeneratePcurve %{
@@ -186,9 +186,9 @@ class RWStepGeom_RWSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Surface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Surface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Surface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Surface *ent) const;
 
 };
 %feature("shadow") RWStepGeom_RWSurface::~RWStepGeom_RWSurface %{
@@ -213,11 +213,11 @@ class RWStepGeom_RWEvaluatedDegeneratePcurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWEvaluatedDegeneratePcurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_EvaluatedDegeneratePcurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_EvaluatedDegeneratePcurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_EvaluatedDegeneratePcurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_EvaluatedDegeneratePcurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_EvaluatedDegeneratePcurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_EvaluatedDegeneratePcurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWEvaluatedDegeneratePcurve::~RWStepGeom_RWEvaluatedDegeneratePcurve %{
@@ -242,9 +242,9 @@ class RWStepGeom_RWGeometricRepresentationContext {
 		%feature("autodoc", "1");
 		RWStepGeom_RWGeometricRepresentationContext();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationContext &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_GeometricRepresentationContext *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_GeometricRepresentationContext &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_GeometricRepresentationContext *ent) const;
 
 };
 %feature("shadow") RWStepGeom_RWGeometricRepresentationContext::~RWStepGeom_RWGeometricRepresentationContext %{
@@ -269,11 +269,11 @@ class RWStepGeom_RWRectangularTrimmedSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWRectangularTrimmedSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_RectangularTrimmedSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_RectangularTrimmedSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_RectangularTrimmedSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_RectangularTrimmedSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_RectangularTrimmedSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_RectangularTrimmedSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWRectangularTrimmedSurface::~RWStepGeom_RWRectangularTrimmedSurface %{
@@ -298,11 +298,11 @@ class RWStepGeom_RWDegenerateToroidalSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWDegenerateToroidalSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_DegenerateToroidalSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_DegenerateToroidalSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_DegenerateToroidalSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_DegenerateToroidalSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_DegenerateToroidalSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_DegenerateToroidalSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWDegenerateToroidalSurface::~RWStepGeom_RWDegenerateToroidalSurface %{
@@ -327,11 +327,11 @@ class RWStepGeom_RWCompositeCurveSegment {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCompositeCurveSegment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CompositeCurveSegment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_CompositeCurveSegment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_CompositeCurveSegment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_CompositeCurveSegment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_CompositeCurveSegment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_CompositeCurveSegment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWCompositeCurveSegment::~RWStepGeom_RWCompositeCurveSegment %{
@@ -356,13 +356,13 @@ class RWStepGeom_RWVector {
 		%feature("autodoc", "1");
 		RWStepGeom_RWVector();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Vector &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Vector *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Vector &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Vector *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Vector &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Vector *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_Vector &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void Check(const StepGeom_Vector *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
 %feature("shadow") RWStepGeom_RWVector::~RWStepGeom_RWVector %{
@@ -387,11 +387,11 @@ class RWStepGeom_RWOffsetSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWOffsetSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_OffsetSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_OffsetSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_OffsetSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_OffsetSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_OffsetSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_OffsetSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWOffsetSurface::~RWStepGeom_RWOffsetSurface %{
@@ -416,9 +416,9 @@ class RWStepGeom_RWBoundedSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBoundedSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BoundedSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BoundedSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BoundedSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BoundedSurface *ent) const;
 
 };
 %feature("shadow") RWStepGeom_RWBoundedSurface::~RWStepGeom_RWBoundedSurface %{
@@ -443,11 +443,11 @@ class RWStepGeom_RWQuasiUniformCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWQuasiUniformCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_QuasiUniformCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_QuasiUniformCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_QuasiUniformCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_QuasiUniformCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_QuasiUniformCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_QuasiUniformCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWQuasiUniformCurve::~RWStepGeom_RWQuasiUniformCurve %{
@@ -472,11 +472,11 @@ class RWStepGeom_RWCartesianTransformationOperator3d {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCartesianTransformationOperator3d();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CartesianTransformationOperator3d &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_CartesianTransformationOperator3d *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_CartesianTransformationOperator3d &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_CartesianTransformationOperator3d *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_CartesianTransformationOperator3d &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_CartesianTransformationOperator3d *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWCartesianTransformationOperator3d::~RWStepGeom_RWCartesianTransformationOperator3d %{
@@ -501,9 +501,9 @@ class RWStepGeom_RWCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Curve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Curve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Curve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Curve *ent) const;
 
 };
 %feature("shadow") RWStepGeom_RWCurve::~RWStepGeom_RWCurve %{
@@ -528,11 +528,11 @@ class RWStepGeom_RWAxis1Placement {
 		%feature("autodoc", "1");
 		RWStepGeom_RWAxis1Placement();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Axis1Placement &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Axis1Placement *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Axis1Placement &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Axis1Placement *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Axis1Placement &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Axis1Placement *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWAxis1Placement::~RWStepGeom_RWAxis1Placement %{
@@ -557,11 +557,11 @@ class RWStepGeom_RWConicalSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWConicalSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_ConicalSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_ConicalSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_ConicalSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_ConicalSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_ConicalSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_ConicalSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWConicalSurface::~RWStepGeom_RWConicalSurface %{
@@ -586,11 +586,11 @@ class RWStepGeom_RWSurfaceCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWSurfaceCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfaceCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_SurfaceCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SurfaceCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_SurfaceCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SurfaceCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_SurfaceCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWSurfaceCurve::~RWStepGeom_RWSurfaceCurve %{
@@ -615,13 +615,13 @@ class RWStepGeom_RWToroidalSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWToroidalSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_ToroidalSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_ToroidalSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_ToroidalSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_ToroidalSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_ToroidalSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_ToroidalSurface *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_ToroidalSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void Check(const StepGeom_ToroidalSurface *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
 %feature("shadow") RWStepGeom_RWToroidalSurface::~RWStepGeom_RWToroidalSurface %{
@@ -646,11 +646,11 @@ class RWStepGeom_RWBezierCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBezierCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BezierCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BezierCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BezierCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BezierCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BezierCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BezierCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWBezierCurve::~RWStepGeom_RWBezierCurve %{
@@ -675,11 +675,11 @@ class RWStepGeom_RWReparametrisedCompositeCurveSegment {
 		%feature("autodoc", "1");
 		RWStepGeom_RWReparametrisedCompositeCurveSegment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_ReparametrisedCompositeCurveSegment &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_ReparametrisedCompositeCurveSegment *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_ReparametrisedCompositeCurveSegment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_ReparametrisedCompositeCurveSegment *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_ReparametrisedCompositeCurveSegment &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_ReparametrisedCompositeCurveSegment *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWReparametrisedCompositeCurveSegment::~RWStepGeom_RWReparametrisedCompositeCurveSegment %{
@@ -704,11 +704,11 @@ class RWStepGeom_RWElementarySurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWElementarySurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_ElementarySurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_ElementarySurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_ElementarySurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_ElementarySurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_ElementarySurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_ElementarySurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWElementarySurface::~RWStepGeom_RWElementarySurface %{
@@ -733,11 +733,11 @@ class RWStepGeom_RWCylindricalSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCylindricalSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CylindricalSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_CylindricalSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_CylindricalSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_CylindricalSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_CylindricalSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_CylindricalSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWCylindricalSurface::~RWStepGeom_RWCylindricalSurface %{
@@ -762,11 +762,11 @@ class RWStepGeom_RWBoundaryCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBoundaryCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BoundaryCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BoundaryCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BoundaryCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BoundaryCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BoundaryCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BoundaryCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWBoundaryCurve::~RWStepGeom_RWBoundaryCurve %{
@@ -791,13 +791,13 @@ class RWStepGeom_RWRationalBSplineSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWRationalBSplineSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_RationalBSplineSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_RationalBSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_RationalBSplineSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_RationalBSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_RationalBSplineSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_RationalBSplineSurface *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_RationalBSplineSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void Check(const StepGeom_RationalBSplineSurface *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
 %feature("shadow") RWStepGeom_RWRationalBSplineSurface::~RWStepGeom_RWRationalBSplineSurface %{
@@ -822,11 +822,11 @@ class RWStepGeom_RWSeamCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWSeamCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SeamCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_SeamCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SeamCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_SeamCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SeamCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_SeamCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWSeamCurve::~RWStepGeom_RWSeamCurve %{
@@ -851,11 +851,11 @@ class RWStepGeom_RWSurfacePatch {
 		%feature("autodoc", "1");
 		RWStepGeom_RWSurfacePatch();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfacePatch &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_SurfacePatch *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SurfacePatch &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_SurfacePatch *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SurfacePatch &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_SurfacePatch *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWSurfacePatch::~RWStepGeom_RWSurfacePatch %{
@@ -880,11 +880,11 @@ class RWStepGeom_RWOuterBoundaryCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWOuterBoundaryCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_OuterBoundaryCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_OuterBoundaryCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_OuterBoundaryCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_OuterBoundaryCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_OuterBoundaryCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_OuterBoundaryCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWOuterBoundaryCurve::~RWStepGeom_RWOuterBoundaryCurve %{
@@ -909,11 +909,11 @@ class RWStepGeom_RWCompositeCurveOnSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCompositeCurveOnSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CompositeCurveOnSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_CompositeCurveOnSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_CompositeCurveOnSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_CompositeCurveOnSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_CompositeCurveOnSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_CompositeCurveOnSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWCompositeCurveOnSurface::~RWStepGeom_RWCompositeCurveOnSurface %{
@@ -938,11 +938,11 @@ class RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_QuasiUniformCurveAndRationalBSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_QuasiUniformCurveAndRationalBSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_QuasiUniformCurveAndRationalBSplineCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve::~RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve %{
@@ -967,11 +967,11 @@ class RWStepGeom_RWUniformCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWUniformCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_UniformCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_UniformCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_UniformCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_UniformCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_UniformCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_UniformCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWUniformCurve::~RWStepGeom_RWUniformCurve %{
@@ -996,11 +996,11 @@ class RWStepGeom_RWPointOnSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWPointOnSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_PointOnSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_PointOnSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_PointOnSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_PointOnSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_PointOnSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_PointOnSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWPointOnSurface::~RWStepGeom_RWPointOnSurface %{
@@ -1025,11 +1025,11 @@ class RWStepGeom_RWSurfaceOfLinearExtrusion {
 		%feature("autodoc", "1");
 		RWStepGeom_RWSurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfaceOfLinearExtrusion &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_SurfaceOfLinearExtrusion *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SurfaceOfLinearExtrusion &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_SurfaceOfLinearExtrusion *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SurfaceOfLinearExtrusion &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_SurfaceOfLinearExtrusion *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWSurfaceOfLinearExtrusion::~RWStepGeom_RWSurfaceOfLinearExtrusion %{
@@ -1054,11 +1054,11 @@ class RWStepGeom_RWParabola {
 		%feature("autodoc", "1");
 		RWStepGeom_RWParabola();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Parabola &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Parabola *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Parabola &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Parabola *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Parabola &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Parabola *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWParabola::~RWStepGeom_RWParabola %{
@@ -1083,9 +1083,9 @@ class RWStepGeom_RWCartesianPoint {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCartesianPoint();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CartesianPoint &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_CartesianPoint *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_CartesianPoint &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_CartesianPoint *ent) const;
 
 };
 %feature("shadow") RWStepGeom_RWCartesianPoint::~RWStepGeom_RWCartesianPoint %{
@@ -1110,11 +1110,11 @@ class RWStepGeom_RWUniformSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWUniformSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_UniformSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_UniformSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_UniformSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_UniformSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_UniformSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_UniformSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWUniformSurface::~RWStepGeom_RWUniformSurface %{
@@ -1139,13 +1139,13 @@ class RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void Check(const StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
 %feature("shadow") RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve::~RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve %{
@@ -1170,11 +1170,11 @@ class RWStepGeom_RWAxis2Placement3d {
 		%feature("autodoc", "1");
 		RWStepGeom_RWAxis2Placement3d();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Axis2Placement3d &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Axis2Placement3d *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Axis2Placement3d &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Axis2Placement3d *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Axis2Placement3d &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Axis2Placement3d *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWAxis2Placement3d::~RWStepGeom_RWAxis2Placement3d %{
@@ -1199,11 +1199,11 @@ class RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
 		%feature("autodoc", "1");
 		RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext::~RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext %{
@@ -1228,11 +1228,11 @@ class RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_UniformSurfaceAndRationalBSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_UniformSurfaceAndRationalBSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_UniformSurfaceAndRationalBSplineSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface::~RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface %{
@@ -1257,11 +1257,11 @@ class RWStepGeom_RWPlane {
 		%feature("autodoc", "1");
 		RWStepGeom_RWPlane();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Plane &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Plane *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Plane &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Plane *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Plane &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Plane *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWPlane::~RWStepGeom_RWPlane %{
@@ -1286,11 +1286,11 @@ class RWStepGeom_RWPointOnCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWPointOnCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_PointOnCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_PointOnCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_PointOnCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_PointOnCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_PointOnCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_PointOnCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWPointOnCurve::~RWStepGeom_RWPointOnCurve %{
@@ -1315,9 +1315,9 @@ class RWStepGeom_RWGeometricRepresentationItem {
 		%feature("autodoc", "1");
 		RWStepGeom_RWGeometricRepresentationItem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationItem &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_GeometricRepresentationItem *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_GeometricRepresentationItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_GeometricRepresentationItem *ent) const;
 
 };
 %feature("shadow") RWStepGeom_RWGeometricRepresentationItem::~RWStepGeom_RWGeometricRepresentationItem %{
@@ -1342,11 +1342,11 @@ class RWStepGeom_RWCircle {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCircle();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Circle &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Circle *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Circle &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Circle *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Circle &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Circle *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWCircle::~RWStepGeom_RWCircle %{
@@ -1371,11 +1371,11 @@ class RWStepGeom_RWCurveBoundedSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCurveBoundedSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CurveBoundedSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_CurveBoundedSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_CurveBoundedSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_CurveBoundedSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_CurveBoundedSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_CurveBoundedSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWCurveBoundedSurface::~RWStepGeom_RWCurveBoundedSurface %{
@@ -1400,11 +1400,11 @@ class RWStepGeom_RWTrimmedCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWTrimmedCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_TrimmedCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_TrimmedCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_TrimmedCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_TrimmedCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_TrimmedCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_TrimmedCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWTrimmedCurve::~RWStepGeom_RWTrimmedCurve %{
@@ -1429,11 +1429,11 @@ class RWStepGeom_RWRectangularCompositeSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWRectangularCompositeSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_RectangularCompositeSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_RectangularCompositeSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_RectangularCompositeSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_RectangularCompositeSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_RectangularCompositeSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_RectangularCompositeSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWRectangularCompositeSurface::~RWStepGeom_RWRectangularCompositeSurface %{
@@ -1458,11 +1458,11 @@ class RWStepGeom_RWOrientedSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWOrientedSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_OrientedSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_OrientedSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_OrientedSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_OrientedSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_OrientedSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_OrientedSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWOrientedSurface::~RWStepGeom_RWOrientedSurface %{
@@ -1487,11 +1487,11 @@ class RWStepGeom_RWCurveReplica {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCurveReplica();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CurveReplica &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_CurveReplica *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_CurveReplica &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_CurveReplica *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_CurveReplica &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_CurveReplica *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWCurveReplica::~RWStepGeom_RWCurveReplica %{
@@ -1516,11 +1516,11 @@ class RWStepGeom_RWAxis2Placement2d {
 		%feature("autodoc", "1");
 		RWStepGeom_RWAxis2Placement2d();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Axis2Placement2d &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Axis2Placement2d *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Axis2Placement2d &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Axis2Placement2d *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Axis2Placement2d &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Axis2Placement2d *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWAxis2Placement2d::~RWStepGeom_RWAxis2Placement2d %{
@@ -1545,13 +1545,13 @@ class RWStepGeom_RWRationalBSplineCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWRationalBSplineCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_RationalBSplineCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_RationalBSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_RationalBSplineCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_RationalBSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_RationalBSplineCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_RationalBSplineCurve *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_RationalBSplineCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void Check(const StepGeom_RationalBSplineCurve *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
 %feature("shadow") RWStepGeom_RWRationalBSplineCurve::~RWStepGeom_RWRationalBSplineCurve %{
@@ -1576,11 +1576,11 @@ class RWStepGeom_RWDirection {
 		%feature("autodoc", "1");
 		RWStepGeom_RWDirection();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Direction &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Direction *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Direction &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Direction *ent) const;
 		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_Direction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void Check(const StepGeom_Direction *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
 %feature("shadow") RWStepGeom_RWDirection::~RWStepGeom_RWDirection %{
@@ -1605,11 +1605,11 @@ class RWStepGeom_RWBSplineCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BSplineCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BSplineCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BSplineCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BSplineCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWBSplineCurve::~RWStepGeom_RWBSplineCurve %{
@@ -1634,11 +1634,11 @@ class RWStepGeom_RWBSplineSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BSplineSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BSplineSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BSplineSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BSplineSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWBSplineSurface::~RWStepGeom_RWBSplineSurface %{
@@ -1663,11 +1663,11 @@ class RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWUniformCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_UniformCurveAndRationalBSplineCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_UniformCurveAndRationalBSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_UniformCurveAndRationalBSplineCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_UniformCurveAndRationalBSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_UniformCurveAndRationalBSplineCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_UniformCurveAndRationalBSplineCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWUniformCurveAndRationalBSplineCurve::~RWStepGeom_RWUniformCurveAndRationalBSplineCurve %{
@@ -1692,11 +1692,11 @@ class RWStepGeom_RWPlacement {
 		%feature("autodoc", "1");
 		RWStepGeom_RWPlacement();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Placement &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Placement *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Placement &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Placement *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Placement &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Placement *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWPlacement::~RWStepGeom_RWPlacement %{
@@ -1721,9 +1721,9 @@ class RWStepGeom_RWPoint {
 		%feature("autodoc", "1");
 		RWStepGeom_RWPoint();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Point &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Point *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Point &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Point *ent) const;
 
 };
 %feature("shadow") RWStepGeom_RWPoint::~RWStepGeom_RWPoint %{
@@ -1748,11 +1748,11 @@ class RWStepGeom_RWCartesianTransformationOperator {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCartesianTransformationOperator();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CartesianTransformationOperator &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_CartesianTransformationOperator *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_CartesianTransformationOperator &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_CartesianTransformationOperator *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_CartesianTransformationOperator &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_CartesianTransformationOperator *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWCartesianTransformationOperator::~RWStepGeom_RWCartesianTransformationOperator %{
@@ -1777,11 +1777,11 @@ class RWStepGeom_RWPcurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWPcurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Pcurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Pcurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Pcurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Pcurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Pcurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Pcurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWPcurve::~RWStepGeom_RWPcurve %{
@@ -1806,11 +1806,11 @@ class RWStepGeom_RWSurfaceCurveAndBoundedCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWSurfaceCurveAndBoundedCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfaceCurveAndBoundedCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_SurfaceCurveAndBoundedCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SurfaceCurveAndBoundedCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_SurfaceCurveAndBoundedCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SurfaceCurveAndBoundedCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_SurfaceCurveAndBoundedCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWSurfaceCurveAndBoundedCurve::~RWStepGeom_RWSurfaceCurveAndBoundedCurve %{
@@ -1835,13 +1835,13 @@ class RWStepGeom_RWEllipse {
 		%feature("autodoc", "1");
 		RWStepGeom_RWEllipse();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Ellipse &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Ellipse *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Ellipse &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Ellipse *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Ellipse &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Ellipse *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_Ellipse &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void Check(const StepGeom_Ellipse *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
 %feature("shadow") RWStepGeom_RWEllipse::~RWStepGeom_RWEllipse %{
@@ -1866,13 +1866,13 @@ class RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void Check(const StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
 %feature("shadow") RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface::~RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface %{
@@ -1897,13 +1897,13 @@ class RWStepGeom_RWBSplineCurveWithKnots {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineCurveWithKnots();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BSplineCurveWithKnots &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BSplineCurveWithKnots *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BSplineCurveWithKnots &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BSplineCurveWithKnots *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BSplineCurveWithKnots &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BSplineCurveWithKnots *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_BSplineCurveWithKnots &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void Check(const StepGeom_BSplineCurveWithKnots *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
 %feature("shadow") RWStepGeom_RWBSplineCurveWithKnots::~RWStepGeom_RWBSplineCurveWithKnots %{
@@ -1928,11 +1928,11 @@ class RWStepGeom_RWBezierCurveAndRationalBSplineCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBezierCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BezierCurveAndRationalBSplineCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BezierCurveAndRationalBSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BezierCurveAndRationalBSplineCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BezierCurveAndRationalBSplineCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BezierCurveAndRationalBSplineCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BezierCurveAndRationalBSplineCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWBezierCurveAndRationalBSplineCurve::~RWStepGeom_RWBezierCurveAndRationalBSplineCurve %{
@@ -1957,11 +1957,11 @@ class RWStepGeom_RWSphericalSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWSphericalSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SphericalSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_SphericalSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SphericalSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_SphericalSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SphericalSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_SphericalSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWSphericalSurface::~RWStepGeom_RWSphericalSurface %{
@@ -1986,11 +1986,11 @@ class RWStepGeom_RWCompositeCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWCompositeCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_CompositeCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_CompositeCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_CompositeCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_CompositeCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_CompositeCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_CompositeCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWCompositeCurve::~RWStepGeom_RWCompositeCurve %{
@@ -2015,11 +2015,11 @@ class RWStepGeom_RWSurfaceOfRevolution {
 		%feature("autodoc", "1");
 		RWStepGeom_RWSurfaceOfRevolution();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfaceOfRevolution &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_SurfaceOfRevolution *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SurfaceOfRevolution &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_SurfaceOfRevolution *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SurfaceOfRevolution &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_SurfaceOfRevolution *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWSurfaceOfRevolution::~RWStepGeom_RWSurfaceOfRevolution %{
@@ -2044,11 +2044,11 @@ class RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BezierSurfaceAndRationalBSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BezierSurfaceAndRationalBSplineSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BezierSurfaceAndRationalBSplineSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface::~RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface %{
@@ -2073,11 +2073,11 @@ class RWStepGeom_RWSweptSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWSweptSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SweptSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_SweptSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SweptSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_SweptSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SweptSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_SweptSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWSweptSurface::~RWStepGeom_RWSweptSurface %{
@@ -2102,11 +2102,11 @@ class RWStepGeom_RWSurfaceReplica {
 		%feature("autodoc", "1");
 		RWStepGeom_RWSurfaceReplica();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SurfaceReplica &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_SurfaceReplica *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SurfaceReplica &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_SurfaceReplica *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SurfaceReplica &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_SurfaceReplica *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWSurfaceReplica::~RWStepGeom_RWSurfaceReplica %{
@@ -2131,11 +2131,11 @@ class RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationCont
 		%feature("autodoc", "1");
 		RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_GeometricRepresentationContextAndParametricRepresentationContext *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_GeometricRepresentationContextAndParametricRepresentationContext *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_GeometricRepresentationContextAndParametricRepresentationContext *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext::~RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext %{
@@ -2160,11 +2160,11 @@ class RWStepGeom_RWOffsetCurve3d {
 		%feature("autodoc", "1");
 		RWStepGeom_RWOffsetCurve3d();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_OffsetCurve3d &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_OffsetCurve3d *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_OffsetCurve3d &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_OffsetCurve3d *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_OffsetCurve3d &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_OffsetCurve3d *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWOffsetCurve3d::~RWStepGeom_RWOffsetCurve3d %{
@@ -2189,11 +2189,11 @@ class RWStepGeom_RWQuasiUniformSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWQuasiUniformSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_QuasiUniformSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_QuasiUniformSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_QuasiUniformSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_QuasiUniformSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_QuasiUniformSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_QuasiUniformSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWQuasiUniformSurface::~RWStepGeom_RWQuasiUniformSurface %{
@@ -2218,13 +2218,13 @@ class RWStepGeom_RWBSplineSurfaceWithKnots {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBSplineSurfaceWithKnots();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BSplineSurfaceWithKnots &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BSplineSurfaceWithKnots *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BSplineSurfaceWithKnots &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BSplineSurfaceWithKnots *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BSplineSurfaceWithKnots &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BSplineSurfaceWithKnots *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_BSplineSurfaceWithKnots &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void Check(const StepGeom_BSplineSurfaceWithKnots *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
 %feature("shadow") RWStepGeom_RWBSplineSurfaceWithKnots::~RWStepGeom_RWBSplineSurfaceWithKnots %{
@@ -2249,11 +2249,11 @@ class RWStepGeom_RWPolyline {
 		%feature("autodoc", "1");
 		RWStepGeom_RWPolyline();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Polyline &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Polyline *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Polyline &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Polyline *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Polyline &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Polyline *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWPolyline::~RWStepGeom_RWPolyline %{
@@ -2278,11 +2278,11 @@ class RWStepGeom_RWBezierSurface {
 		%feature("autodoc", "1");
 		RWStepGeom_RWBezierSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BezierSurface &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_BezierSurface *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BezierSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_BezierSurface *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BezierSurface &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_BezierSurface *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWBezierSurface::~RWStepGeom_RWBezierSurface %{
@@ -2307,11 +2307,11 @@ class RWStepGeom_RWIntersectionCurve {
 		%feature("autodoc", "1");
 		RWStepGeom_RWIntersectionCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_IntersectionCurve &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_IntersectionCurve *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_IntersectionCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_IntersectionCurve *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_IntersectionCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_IntersectionCurve *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWIntersectionCurve::~RWStepGeom_RWIntersectionCurve %{
@@ -2336,11 +2336,11 @@ class RWStepGeom_RWConic {
 		%feature("autodoc", "1");
 		RWStepGeom_RWConic();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Conic &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Conic *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Conic &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Conic *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Conic &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Conic *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWConic::~RWStepGeom_RWConic %{
@@ -2365,11 +2365,11 @@ class RWStepGeom_RWHyperbola {
 		%feature("autodoc", "1");
 		RWStepGeom_RWHyperbola();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Hyperbola &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Hyperbola *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Hyperbola &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Hyperbola *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Hyperbola &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Hyperbola *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWHyperbola::~RWStepGeom_RWHyperbola %{
@@ -2394,11 +2394,11 @@ class RWStepGeom_RWLine {
 		%feature("autodoc", "1");
 		RWStepGeom_RWLine();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Line &ent) const;
+		void ReadStep(const StepData_StepReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const StepGeom_Line *ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Line &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const StepGeom_Line *ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Line &ent, Interface_EntityIterator & iter) const;
+		void Share(const StepGeom_Line *ent, Interface_EntityIterator & iter) const;
 
 };
 %feature("shadow") RWStepGeom_RWLine::~RWStepGeom_RWLine %{

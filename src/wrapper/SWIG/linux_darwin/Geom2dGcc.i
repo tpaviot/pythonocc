@@ -43,9 +43,9 @@ class Geom2dGcc_Circ2d2TanOn {
 		%feature("autodoc", "1");
 		Geom2dGcc_Circ2d2TanOn(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Geom2dAdaptor_Curve &OnCurve, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real ParamOn);
 		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d2TanOn(const Geom2dGcc_QualifiedCurve &Qualified1, const Handle_Geom2d_Point &Point, const Geom2dAdaptor_Curve &OnCurve, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real ParamOn);
+		Geom2dGcc_Circ2d2TanOn(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2d_Point *Point, const Geom2dAdaptor_Curve &OnCurve, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real ParamOn);
 		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d2TanOn(const Handle_Geom2d_Point &Point1, const Handle_Geom2d_Point &Point2, const Geom2dAdaptor_Curve &OnCurve, const Standard_Real Tolerance);
+		Geom2dGcc_Circ2d2TanOn(const Geom2d_Point *Point1, const Geom2d_Point *Point2, const Geom2dAdaptor_Curve &OnCurve, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		void Results(const GccAna_Circ2d2TanOn &Circ);
 		%feature("autodoc", "1");
@@ -357,11 +357,11 @@ class Geom2dGcc_Circ2d3Tan {
 		%feature("autodoc", "1");
 		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Geom2dGcc_QualifiedCurve &Qualified3, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real Param3);
 		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Handle_Geom2d_Point &Point, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real Param2);
+		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Geom2d_Point *Point, const Standard_Real Tolerance, const Standard_Real Param1, const Standard_Real Param2);
 		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Handle_Geom2d_Point &Point1, const Handle_Geom2d_Point &Point2, const Standard_Real Tolerance, const Standard_Real Param1);
+		Geom2dGcc_Circ2d3Tan(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2d_Point *Point1, const Geom2d_Point *Point2, const Standard_Real Tolerance, const Standard_Real Param1);
 		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d3Tan(const Handle_Geom2d_Point &Point1, const Handle_Geom2d_Point &Point2, const Handle_Geom2d_Point &Point3, const Standard_Real Tolerance);
+		Geom2dGcc_Circ2d3Tan(const Geom2d_Point *Point1, const Geom2d_Point *Point2, const Geom2d_Point *Point3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		void Results(const GccAna_Circ2d3Tan &Circ, const Standard_Integer Rank1, const Standard_Integer Rank2, const Standard_Integer Rank3);
 		%feature("autodoc", "1");
@@ -643,7 +643,7 @@ def __del__(self):
 class Geom2dGcc_Circ2dTanCen {
 	public:
 		%feature("autodoc", "1");
-		Geom2dGcc_Circ2dTanCen(const Geom2dGcc_QualifiedCurve &Qualified1, const Handle_Geom2d_Point &Pcenter, const Standard_Real Tolerance);
+		Geom2dGcc_Circ2dTanCen(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2d_Point *Pcenter, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -932,9 +932,9 @@ class Geom2dGcc_Circ2d2TanRad {
 		%feature("autodoc", "1");
 		Geom2dGcc_Circ2d2TanRad(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dGcc_QualifiedCurve &Qualified2, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d2TanRad(const Geom2dGcc_QualifiedCurve &Qualified1, const Handle_Geom2d_Point &Point, const Standard_Real Radius, const Standard_Real Tolerance);
+		Geom2dGcc_Circ2d2TanRad(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2d_Point *Point, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		Geom2dGcc_Circ2d2TanRad(const Handle_Geom2d_Point &Point1, const Handle_Geom2d_Point &Point2, const Standard_Real Radius, const Standard_Real Tolerance);
+		Geom2dGcc_Circ2d2TanRad(const Geom2d_Point *Point1, const Geom2d_Point *Point2, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		void Results(const GccAna_Circ2d2TanRad &Circ);
 		%feature("autodoc", "1");
@@ -1059,7 +1059,7 @@ class Geom2dGcc_Circ2dTanOnRad {
 		%feature("autodoc", "1");
 		Geom2dGcc_Circ2dTanOnRad(const Geom2dGcc_QualifiedCurve &Qualified1, const Geom2dAdaptor_Curve &OnCurv, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		Geom2dGcc_Circ2dTanOnRad(const Handle_Geom2d_Point &Point1, const Geom2dAdaptor_Curve &OnCurv, const Standard_Real Radius, const Standard_Real Tolerance);
+		Geom2dGcc_Circ2dTanOnRad(const Geom2d_Point *Point1, const Geom2dAdaptor_Curve &OnCurv, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		void Results(const GccAna_Circ2dTanOnRad &Circ);
 		%feature("autodoc", "1");

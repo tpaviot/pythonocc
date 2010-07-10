@@ -301,7 +301,7 @@ class ModularBuilder(object):
                 if not (header_to_add in self.NEEDED_HXX):
                     self.NEEDED_HXX.append('%s.hxx'%return_type)
     
-    def write_function_arguments(self,mem_fun):
+    def write_function_arguments(self,mem_fun,parent_class_name):
         """
         Write the function arguments, comma separated
         """
@@ -383,8 +383,25 @@ class ModularBuilder(object):
                 to_write += "%s%s %s"%(argument_types[0],argument_types[1],argument_name)
                 param_list.append([argument_types[0],argument_name])
             elif len(argument_types)==3: #ex: Handle_WNT_GraphicDevice const &
-                to_write += "%s %s %s%s"%(argument_types[1],argument_types[0],argument_types[2],argument_name)
-                param_list.append([argument_types[1],argument_name])
+                # Transformation of const Handle_Geom.. & to const Geom *
+                if argument_types[0].startswith('Handle_') and argument_types[1]=='const' and argument_types[2]=='&':
+                    #print argument_types
+                    # find the class name from the Handle name
+                    type_name = argument_types[0][7:]
+                    # CAREFUL : if type_name is of the same type than the class,
+                    # an exception 'call is ambiguous' is called by the compiler
+                    # these methods then should not be wrapped
+                    if type_name == parent_class_name:
+                        #raw_input('On y est')
+                        return False # wrapping cancelled
+                    #print type_name
+                    to_write += 'const %s *%s'%(type_name,argument_name)
+                    #raw_input('enter')
+                    #to_write += "%s %s %s%s"%(argument_types[1],argument_types[0],argument_types[2],argument_name)
+                    param_list.append(['const',argument_name])
+                else:
+                    to_write += "%s %s %s%s"%(argument_types[1],argument_types[0],argument_types[2],argument_name)
+                    param_list.append([argument_types[1],argument_name])
             elif (len(argument_types)==2 and argument_types[1]!="&"):#ex: Aspect_Handle const
                 to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
                 param_list.append([argument_types[0],argument_name])
@@ -479,7 +496,7 @@ class ModularBuilder(object):
         #
         if (return_type in ['Standard_Integer &','Standard_Real &','Standard_Boolean &']) and not ('operator' in function_name):
             # First get the string for arguments declaration
-            str_args,return_list,param_list,arguments, default_value,END_WITH_CONST,param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun)
+            str_args,return_list,param_list,arguments, default_value,END_WITH_CONST,param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun,class_parent_name)
             # build param enum from params:
             # ['a','b','c']->'a,b,c'
             po = ''
@@ -528,7 +545,11 @@ class ModularBuilder(object):
         #
         # Write arguments of the method
         #
-        str,return_list,param_list,arguments, default_value,END_WITH_CONST, param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun)
+        return_data = self.write_function_arguments(mem_fun,class_parent_name)
+        if return_data == False:
+            return True # don't wrap
+        else: #it's ok, can continue
+            str,return_list,param_list,arguments, default_value,END_WITH_CONST, param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun,class_parent_name)
         print param_list
         to_write += str
         if END_WITH_CONST:

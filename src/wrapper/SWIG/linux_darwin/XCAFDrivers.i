@@ -43,15 +43,15 @@ class Handle_XCAFDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_XCAFDrivers_DocumentRetrievalDriver(const Handle_XCAFDrivers_DocumentRetrievalDriver &aHandle);
+		Handle_XCAFDrivers_DocumentRetrievalDriver(const XCAFDrivers_DocumentRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentRetrievalDriver(const XCAFDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDrivers_DocumentRetrievalDriver & operator=(const Handle_XCAFDrivers_DocumentRetrievalDriver &aHandle);
+		Handle_XCAFDrivers_DocumentRetrievalDriver & operator=(const XCAFDrivers_DocumentRetrievalDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentRetrievalDriver & operator=(const XCAFDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XCAFDrivers_DocumentRetrievalDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XCAFDrivers_DocumentRetrievalDriver {
@@ -81,15 +81,15 @@ class Handle_XCAFDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentS
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		Handle_XCAFDrivers_DocumentStorageDriver(const Handle_XCAFDrivers_DocumentStorageDriver &aHandle);
+		Handle_XCAFDrivers_DocumentStorageDriver(const XCAFDrivers_DocumentStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentStorageDriver(const XCAFDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDrivers_DocumentStorageDriver & operator=(const Handle_XCAFDrivers_DocumentStorageDriver &aHandle);
+		Handle_XCAFDrivers_DocumentStorageDriver & operator=(const XCAFDrivers_DocumentStorageDriver *aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentStorageDriver & operator=(const XCAFDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XCAFDrivers_DocumentStorageDriver const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_XCAFDrivers_DocumentStorageDriver {
@@ -119,7 +119,7 @@ class XCAFDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 		%feature("autodoc", "1");
 		XCAFDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		virtual		Handle_MDF_ARDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
+		virtual		Handle_MDF_ARDriverTable AttributeDrivers(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -156,7 +156,7 @@ class XCAFDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 		%feature("autodoc", "1");
 		XCAFDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
+		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const CDM_MessageDriver *theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

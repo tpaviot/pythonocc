@@ -73,15 +73,15 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal();
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal(const BRepOffset_DataMapNodeOfDataMapOfShapeReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal(const BRepOffset_DataMapNodeOfDataMapOfShapeReal *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal & operator=(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeReal *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeReal *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal {
@@ -111,15 +111,15 @@ class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_BRepOffset_ListNodeOfListOfInterval();
 		%feature("autodoc", "1");
-		Handle_BRepOffset_ListNodeOfListOfInterval(const Handle_BRepOffset_ListNodeOfListOfInterval &aHandle);
+		Handle_BRepOffset_ListNodeOfListOfInterval(const BRepOffset_ListNodeOfListOfInterval *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffset_ListNodeOfListOfInterval(const BRepOffset_ListNodeOfListOfInterval *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_ListNodeOfListOfInterval & operator=(const Handle_BRepOffset_ListNodeOfListOfInterval &aHandle);
+		Handle_BRepOffset_ListNodeOfListOfInterval & operator=(const BRepOffset_ListNodeOfListOfInterval *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffset_ListNodeOfListOfInterval & operator=(const BRepOffset_ListNodeOfListOfInterval *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_ListNodeOfListOfInterval const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepOffset_ListNodeOfListOfInterval const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepOffset_ListNodeOfListOfInterval {
@@ -149,15 +149,15 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset();
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset &aHandle);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset(const BRepOffset_DataMapNodeOfDataMapOfShapeOffset *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset(const BRepOffset_DataMapNodeOfDataMapOfShapeOffset *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset & operator=(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset &aHandle);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeOffset *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeOffset *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
@@ -187,15 +187,15 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handl
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval();
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval &aHandle);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval(const BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval(const BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval & operator=(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval &aHandle);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
@@ -225,15 +225,15 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape();
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape &aHandle);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape & operator=(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape &aHandle);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
@@ -535,7 +535,7 @@ class BRepOffset {
 		%feature("autodoc", "1");
 		BRepOffset();
 		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface(const Handle_Geom_Surface &Surface, const Standard_Real Offset, BRepOffset_Status & Status);
+		Handle_Geom_Surface Surface(const Geom_Surface *Surface, const Standard_Real Offset, BRepOffset_Status & Status);
 
 };
 %feature("shadow") BRepOffset::~BRepOffset %{
@@ -605,9 +605,9 @@ class BRepOffset_Inter2d {
 		%feature("autodoc", "1");
 		BRepOffset_Inter2d();
 		%feature("autodoc", "1");
-		void Compute(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges, const Standard_Real Tol);
+		void Compute(const BRepAlgo_AsDes *AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void ConnexIntByInt(const TopoDS_Face &FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape &Build, const Handle_BRepAlgo_AsDes &AsDes, const Standard_Real Offset, const Standard_Real Tol);
+		void ConnexIntByInt(const TopoDS_Face &FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape &Build, const BRepAlgo_AsDes *AsDes, const Standard_Real Offset, const Standard_Real Tol);
 
 };
 %feature("shadow") BRepOffset_Inter2d::~BRepOffset_Inter2d %{
@@ -821,11 +821,11 @@ class BRepOffset_MakeLoops {
 		%feature("autodoc", "1");
 		BRepOffset_MakeLoops();
 		%feature("autodoc", "1");
-		void Build(const TopTools_ListOfShape &LF, const Handle_BRepAlgo_AsDes &AsDes, BRepAlgo_Image & Image);
+		void Build(const TopTools_ListOfShape &LF, const BRepAlgo_AsDes *AsDes, BRepAlgo_Image & Image);
 		%feature("autodoc", "1");
-		void BuildOnContext(const TopTools_ListOfShape &LContext, const BRepOffset_Analyse &Analyse, const Handle_BRepAlgo_AsDes &AsDes, BRepAlgo_Image & Image, const Standard_Boolean InSide);
+		void BuildOnContext(const TopTools_ListOfShape &LContext, const BRepOffset_Analyse &Analyse, const BRepAlgo_AsDes *AsDes, BRepAlgo_Image & Image, const Standard_Boolean InSide);
 		%feature("autodoc", "1");
-		void BuildFaces(const TopTools_ListOfShape &LF, const Handle_BRepAlgo_AsDes &AsDes, BRepAlgo_Image & Image);
+		void BuildFaces(const TopTools_ListOfShape &LF, const BRepAlgo_AsDes *AsDes, BRepAlgo_Image & Image);
 
 };
 %feature("shadow") BRepOffset_MakeLoops::~BRepOffset_MakeLoops %{
@@ -1032,7 +1032,7 @@ class BRepOffset_Tool {
 		%feature("autodoc", "1");
 		void CorrectOrientation(const TopoDS_Shape &SI, const TopTools_MapOfShape &NewEdges, Handle_BRepAlgo_AsDes & AsDes, BRepAlgo_Image & InitOffset, const Standard_Real Offset);
 		%feature("autodoc", "1");
-		Standard_Real Gabarit(const Handle_Geom_Curve &aCurve);
+		Standard_Real Gabarit(const Geom_Curve *aCurve);
 
 };
 %feature("shadow") BRepOffset_Tool::~BRepOffset_Tool %{
@@ -1202,7 +1202,7 @@ def __del__(self):
 class BRepOffset_Inter3d {
 	public:
 		%feature("autodoc", "1");
-		BRepOffset_Inter3d(const Handle_BRepAlgo_AsDes &AsDes, const TopAbs_State Side, const Standard_Real Tol);
+		BRepOffset_Inter3d(const BRepAlgo_AsDes *AsDes, const TopAbs_State Side, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void CompletInt(const TopTools_ListOfShape &SetOfFaces, const BRepAlgo_Image &InitOffsetFace);
 		%feature("autodoc", "1");

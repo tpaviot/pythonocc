@@ -51,15 +51,15 @@ class Handle_Dynamic_DynamicInstance : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicInstance();
 		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicInstance(const Handle_Dynamic_DynamicInstance &aHandle);
+		Handle_Dynamic_DynamicInstance(const Dynamic_DynamicInstance *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicInstance(const Dynamic_DynamicInstance *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicInstance & operator=(const Handle_Dynamic_DynamicInstance &aHandle);
+		Handle_Dynamic_DynamicInstance & operator=(const Dynamic_DynamicInstance *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicInstance & operator=(const Dynamic_DynamicInstance *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicInstance const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_DynamicInstance const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_DynamicInstance {
@@ -89,15 +89,15 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethods : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfMethods();
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfMethods(const Handle_Dynamic_SequenceNodeOfSeqOfMethods &aHandle);
+		Handle_Dynamic_SequenceNodeOfSeqOfMethods(const Dynamic_SequenceNodeOfSeqOfMethods *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfMethods(const Dynamic_SequenceNodeOfSeqOfMethods *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfMethods & operator=(const Handle_Dynamic_SequenceNodeOfSeqOfMethods &aHandle);
+		Handle_Dynamic_SequenceNodeOfSeqOfMethods & operator=(const Dynamic_SequenceNodeOfSeqOfMethods *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfMethods & operator=(const Dynamic_SequenceNodeOfSeqOfMethods *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfMethods const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_SequenceNodeOfSeqOfMethods const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfMethods {
@@ -127,15 +127,15 @@ class Handle_Dynamic_Parameter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_Parameter();
 		%feature("autodoc", "1");
-		Handle_Dynamic_Parameter(const Handle_Dynamic_Parameter &aHandle);
+		Handle_Dynamic_Parameter(const Dynamic_Parameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Parameter(const Dynamic_Parameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_Parameter & operator=(const Handle_Dynamic_Parameter &aHandle);
+		Handle_Dynamic_Parameter & operator=(const Dynamic_Parameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Parameter & operator=(const Dynamic_Parameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_Parameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_Parameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_Parameter {
@@ -165,15 +165,15 @@ class Handle_Dynamic_IntegerParameter : public Handle_Dynamic_Parameter {
 		%feature("autodoc", "1");
 		Handle_Dynamic_IntegerParameter();
 		%feature("autodoc", "1");
-		Handle_Dynamic_IntegerParameter(const Handle_Dynamic_IntegerParameter &aHandle);
+		Handle_Dynamic_IntegerParameter(const Dynamic_IntegerParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_IntegerParameter(const Dynamic_IntegerParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_IntegerParameter & operator=(const Handle_Dynamic_IntegerParameter &aHandle);
+		Handle_Dynamic_IntegerParameter & operator=(const Dynamic_IntegerParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_IntegerParameter & operator=(const Dynamic_IntegerParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_IntegerParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_IntegerParameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_IntegerParameter {
@@ -203,15 +203,15 @@ class Handle_Dynamic_SequenceOfMethodDefinitions : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfMethodDefinitions();
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethodDefinitions(const Handle_Dynamic_SequenceOfMethodDefinitions &aHandle);
+		Handle_Dynamic_SequenceOfMethodDefinitions(const Dynamic_SequenceOfMethodDefinitions *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfMethodDefinitions(const Dynamic_SequenceOfMethodDefinitions *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethodDefinitions & operator=(const Handle_Dynamic_SequenceOfMethodDefinitions &aHandle);
+		Handle_Dynamic_SequenceOfMethodDefinitions & operator=(const Dynamic_SequenceOfMethodDefinitions *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfMethodDefinitions & operator=(const Dynamic_SequenceOfMethodDefinitions *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethodDefinitions const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_SequenceOfMethodDefinitions const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_SequenceOfMethodDefinitions {
@@ -241,15 +241,15 @@ class Handle_Dynamic_VariableNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableNode();
 		%feature("autodoc", "1");
-		Handle_Dynamic_VariableNode(const Handle_Dynamic_VariableNode &aHandle);
+		Handle_Dynamic_VariableNode(const Dynamic_VariableNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableNode(const Dynamic_VariableNode *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_VariableNode & operator=(const Handle_Dynamic_VariableNode &aHandle);
+		Handle_Dynamic_VariableNode & operator=(const Dynamic_VariableNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableNode & operator=(const Dynamic_VariableNode *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_VariableNode const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_VariableNode const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_VariableNode {
@@ -279,15 +279,15 @@ class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyDefinitionsDictionary();
 		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary(const Handle_Dynamic_FuzzyDefinitionsDictionary &aHandle);
+		Handle_Dynamic_FuzzyDefinitionsDictionary(const Dynamic_FuzzyDefinitionsDictionary *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyDefinitionsDictionary(const Dynamic_FuzzyDefinitionsDictionary *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary & operator=(const Handle_Dynamic_FuzzyDefinitionsDictionary &aHandle);
+		Handle_Dynamic_FuzzyDefinitionsDictionary & operator=(const Dynamic_FuzzyDefinitionsDictionary *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyDefinitionsDictionary & operator=(const Dynamic_FuzzyDefinitionsDictionary *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_FuzzyDefinitionsDictionary const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_FuzzyDefinitionsDictionary {
@@ -317,15 +317,15 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions();
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions(const Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions &aHandle);
+		Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions(const Dynamic_SequenceNodeOfSeqOfMethodDefinitions *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions(const Dynamic_SequenceNodeOfSeqOfMethodDefinitions *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions & operator=(const Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions &aHandle);
+		Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions & operator=(const Dynamic_SequenceNodeOfSeqOfMethodDefinitions *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions & operator=(const Dynamic_SequenceNodeOfSeqOfMethodDefinitions *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
@@ -355,15 +355,15 @@ class Handle_Dynamic_FuzzyClass : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyClass();
 		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyClass(const Handle_Dynamic_FuzzyClass &aHandle);
+		Handle_Dynamic_FuzzyClass(const Dynamic_FuzzyClass *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyClass(const Dynamic_FuzzyClass *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyClass & operator=(const Handle_Dynamic_FuzzyClass &aHandle);
+		Handle_Dynamic_FuzzyClass & operator=(const Dynamic_FuzzyClass *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyClass & operator=(const Dynamic_FuzzyClass *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyClass const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_FuzzyClass const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_FuzzyClass {
@@ -393,15 +393,15 @@ class Handle_Dynamic_FuzzyDefinition : public Handle_Dynamic_FuzzyClass {
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyDefinition();
 		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinition(const Handle_Dynamic_FuzzyDefinition &aHandle);
+		Handle_Dynamic_FuzzyDefinition(const Dynamic_FuzzyDefinition *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyDefinition(const Dynamic_FuzzyDefinition *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinition & operator=(const Handle_Dynamic_FuzzyDefinition &aHandle);
+		Handle_Dynamic_FuzzyDefinition & operator=(const Dynamic_FuzzyDefinition *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyDefinition & operator=(const Dynamic_FuzzyDefinition *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinition const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_FuzzyDefinition const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_FuzzyDefinition {
@@ -431,15 +431,15 @@ class Handle_Dynamic_Method : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_Method();
 		%feature("autodoc", "1");
-		Handle_Dynamic_Method(const Handle_Dynamic_Method &aHandle);
+		Handle_Dynamic_Method(const Dynamic_Method *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Method(const Dynamic_Method *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_Method & operator=(const Handle_Dynamic_Method &aHandle);
+		Handle_Dynamic_Method & operator=(const Dynamic_Method *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Method & operator=(const Dynamic_Method *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_Method const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_Method const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_Method {
@@ -469,15 +469,15 @@ class Handle_Dynamic_Variable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_Variable();
 		%feature("autodoc", "1");
-		Handle_Dynamic_Variable(const Handle_Dynamic_Variable &aHandle);
+		Handle_Dynamic_Variable(const Dynamic_Variable *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Variable(const Dynamic_Variable *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_Variable & operator=(const Handle_Dynamic_Variable &aHandle);
+		Handle_Dynamic_Variable & operator=(const Dynamic_Variable *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Variable & operator=(const Dynamic_Variable *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_Variable const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_Variable const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_Variable {
@@ -507,15 +507,15 @@ class Handle_Dynamic_AbstractVariableInstance : public Handle_Dynamic_Variable {
 		%feature("autodoc", "1");
 		Handle_Dynamic_AbstractVariableInstance();
 		%feature("autodoc", "1");
-		Handle_Dynamic_AbstractVariableInstance(const Handle_Dynamic_AbstractVariableInstance &aHandle);
+		Handle_Dynamic_AbstractVariableInstance(const Dynamic_AbstractVariableInstance *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_AbstractVariableInstance(const Dynamic_AbstractVariableInstance *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_AbstractVariableInstance & operator=(const Handle_Dynamic_AbstractVariableInstance &aHandle);
+		Handle_Dynamic_AbstractVariableInstance & operator=(const Dynamic_AbstractVariableInstance *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_AbstractVariableInstance & operator=(const Dynamic_AbstractVariableInstance *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_AbstractVariableInstance const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_AbstractVariableInstance const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_AbstractVariableInstance {
@@ -545,15 +545,15 @@ class Handle_Dynamic_RealParameter : public Handle_Dynamic_Parameter {
 		%feature("autodoc", "1");
 		Handle_Dynamic_RealParameter();
 		%feature("autodoc", "1");
-		Handle_Dynamic_RealParameter(const Handle_Dynamic_RealParameter &aHandle);
+		Handle_Dynamic_RealParameter(const Dynamic_RealParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_RealParameter(const Dynamic_RealParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_RealParameter & operator=(const Handle_Dynamic_RealParameter &aHandle);
+		Handle_Dynamic_RealParameter & operator=(const Dynamic_RealParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_RealParameter & operator=(const Dynamic_RealParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_RealParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_RealParameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_RealParameter {
@@ -583,15 +583,15 @@ class Handle_Dynamic_MethodDefinition : public Handle_Dynamic_Method {
 		%feature("autodoc", "1");
 		Handle_Dynamic_MethodDefinition();
 		%feature("autodoc", "1");
-		Handle_Dynamic_MethodDefinition(const Handle_Dynamic_MethodDefinition &aHandle);
+		Handle_Dynamic_MethodDefinition(const Dynamic_MethodDefinition *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_MethodDefinition(const Dynamic_MethodDefinition *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_MethodDefinition & operator=(const Handle_Dynamic_MethodDefinition &aHandle);
+		Handle_Dynamic_MethodDefinition & operator=(const Dynamic_MethodDefinition *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_MethodDefinition & operator=(const Dynamic_MethodDefinition *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_MethodDefinition const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_MethodDefinition const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_MethodDefinition {
@@ -621,15 +621,15 @@ class Handle_Dynamic_CompiledMethod : public Handle_Dynamic_MethodDefinition {
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompiledMethod();
 		%feature("autodoc", "1");
-		Handle_Dynamic_CompiledMethod(const Handle_Dynamic_CompiledMethod &aHandle);
+		Handle_Dynamic_CompiledMethod(const Dynamic_CompiledMethod *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompiledMethod(const Dynamic_CompiledMethod *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_CompiledMethod & operator=(const Handle_Dynamic_CompiledMethod &aHandle);
+		Handle_Dynamic_CompiledMethod & operator=(const Dynamic_CompiledMethod *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompiledMethod & operator=(const Dynamic_CompiledMethod *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_CompiledMethod const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_CompiledMethod const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_CompiledMethod {
@@ -659,15 +659,15 @@ class Handle_Dynamic_InterpretedMethod : public Handle_Dynamic_MethodDefinition 
 		%feature("autodoc", "1");
 		Handle_Dynamic_InterpretedMethod();
 		%feature("autodoc", "1");
-		Handle_Dynamic_InterpretedMethod(const Handle_Dynamic_InterpretedMethod &aHandle);
+		Handle_Dynamic_InterpretedMethod(const Dynamic_InterpretedMethod *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_InterpretedMethod(const Dynamic_InterpretedMethod *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_InterpretedMethod & operator=(const Handle_Dynamic_InterpretedMethod &aHandle);
+		Handle_Dynamic_InterpretedMethod & operator=(const Dynamic_InterpretedMethod *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_InterpretedMethod & operator=(const Dynamic_InterpretedMethod *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_InterpretedMethod const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_InterpretedMethod const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_InterpretedMethod {
@@ -697,15 +697,15 @@ class Handle_Dynamic_SequenceOfFuzzyDefinitions : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfFuzzyDefinitions();
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfFuzzyDefinitions(const Handle_Dynamic_SequenceOfFuzzyDefinitions &aHandle);
+		Handle_Dynamic_SequenceOfFuzzyDefinitions(const Dynamic_SequenceOfFuzzyDefinitions *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfFuzzyDefinitions(const Dynamic_SequenceOfFuzzyDefinitions *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfFuzzyDefinitions & operator=(const Handle_Dynamic_SequenceOfFuzzyDefinitions &aHandle);
+		Handle_Dynamic_SequenceOfFuzzyDefinitions & operator=(const Dynamic_SequenceOfFuzzyDefinitions *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfFuzzyDefinitions & operator=(const Dynamic_SequenceOfFuzzyDefinitions *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfFuzzyDefinitions const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_SequenceOfFuzzyDefinitions const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_SequenceOfFuzzyDefinitions {
@@ -735,15 +735,15 @@ class Handle_Dynamic_ParameterNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_ParameterNode();
 		%feature("autodoc", "1");
-		Handle_Dynamic_ParameterNode(const Handle_Dynamic_ParameterNode &aHandle);
+		Handle_Dynamic_ParameterNode(const Dynamic_ParameterNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_ParameterNode(const Dynamic_ParameterNode *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_ParameterNode & operator=(const Handle_Dynamic_ParameterNode &aHandle);
+		Handle_Dynamic_ParameterNode & operator=(const Dynamic_ParameterNode *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_ParameterNode & operator=(const Dynamic_ParameterNode *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_ParameterNode const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_ParameterNode const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_ParameterNode {
@@ -773,15 +773,15 @@ class Handle_Dynamic_VariableInstance : public Handle_Dynamic_AbstractVariableIn
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableInstance();
 		%feature("autodoc", "1");
-		Handle_Dynamic_VariableInstance(const Handle_Dynamic_VariableInstance &aHandle);
+		Handle_Dynamic_VariableInstance(const Dynamic_VariableInstance *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableInstance(const Dynamic_VariableInstance *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_VariableInstance & operator=(const Handle_Dynamic_VariableInstance &aHandle);
+		Handle_Dynamic_VariableInstance & operator=(const Dynamic_VariableInstance *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableInstance & operator=(const Dynamic_VariableInstance *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_VariableInstance const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_VariableInstance const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_VariableInstance {
@@ -811,15 +811,15 @@ class Handle_Dynamic_VariableGroup : public Handle_Dynamic_Variable {
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableGroup();
 		%feature("autodoc", "1");
-		Handle_Dynamic_VariableGroup(const Handle_Dynamic_VariableGroup &aHandle);
+		Handle_Dynamic_VariableGroup(const Dynamic_VariableGroup *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableGroup(const Dynamic_VariableGroup *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_VariableGroup & operator=(const Handle_Dynamic_VariableGroup &aHandle);
+		Handle_Dynamic_VariableGroup & operator=(const Dynamic_VariableGroup *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableGroup & operator=(const Dynamic_VariableGroup *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_VariableGroup const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_VariableGroup const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_VariableGroup {
@@ -849,15 +849,15 @@ class Handle_Dynamic_CompositVariableInstance : public Handle_Dynamic_AbstractVa
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompositVariableInstance();
 		%feature("autodoc", "1");
-		Handle_Dynamic_CompositVariableInstance(const Handle_Dynamic_CompositVariableInstance &aHandle);
+		Handle_Dynamic_CompositVariableInstance(const Dynamic_CompositVariableInstance *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompositVariableInstance(const Dynamic_CompositVariableInstance *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_CompositVariableInstance & operator=(const Handle_Dynamic_CompositVariableInstance &aHandle);
+		Handle_Dynamic_CompositVariableInstance & operator=(const Dynamic_CompositVariableInstance *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompositVariableInstance & operator=(const Dynamic_CompositVariableInstance *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_CompositVariableInstance const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_CompositVariableInstance const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_CompositVariableInstance {
@@ -887,15 +887,15 @@ class Handle_Dynamic_InstanceParameter : public Handle_Dynamic_Parameter {
 		%feature("autodoc", "1");
 		Handle_Dynamic_InstanceParameter();
 		%feature("autodoc", "1");
-		Handle_Dynamic_InstanceParameter(const Handle_Dynamic_InstanceParameter &aHandle);
+		Handle_Dynamic_InstanceParameter(const Dynamic_InstanceParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_InstanceParameter(const Dynamic_InstanceParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_InstanceParameter & operator=(const Handle_Dynamic_InstanceParameter &aHandle);
+		Handle_Dynamic_InstanceParameter & operator=(const Dynamic_InstanceParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_InstanceParameter & operator=(const Dynamic_InstanceParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_InstanceParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_InstanceParameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_InstanceParameter {
@@ -925,15 +925,15 @@ class Handle_Dynamic_SequenceOfClasses : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfClasses();
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfClasses(const Handle_Dynamic_SequenceOfClasses &aHandle);
+		Handle_Dynamic_SequenceOfClasses(const Dynamic_SequenceOfClasses *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfClasses(const Dynamic_SequenceOfClasses *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfClasses & operator=(const Handle_Dynamic_SequenceOfClasses &aHandle);
+		Handle_Dynamic_SequenceOfClasses & operator=(const Dynamic_SequenceOfClasses *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfClasses & operator=(const Dynamic_SequenceOfClasses *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfClasses const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_SequenceOfClasses const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_SequenceOfClasses {
@@ -963,15 +963,15 @@ class Handle_Dynamic_MethodDefinitionsDictionary : public Handle_Standard_Transi
 		%feature("autodoc", "1");
 		Handle_Dynamic_MethodDefinitionsDictionary();
 		%feature("autodoc", "1");
-		Handle_Dynamic_MethodDefinitionsDictionary(const Handle_Dynamic_MethodDefinitionsDictionary &aHandle);
+		Handle_Dynamic_MethodDefinitionsDictionary(const Dynamic_MethodDefinitionsDictionary *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_MethodDefinitionsDictionary(const Dynamic_MethodDefinitionsDictionary *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_MethodDefinitionsDictionary & operator=(const Handle_Dynamic_MethodDefinitionsDictionary &aHandle);
+		Handle_Dynamic_MethodDefinitionsDictionary & operator=(const Dynamic_MethodDefinitionsDictionary *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_MethodDefinitionsDictionary & operator=(const Dynamic_MethodDefinitionsDictionary *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_MethodDefinitionsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_MethodDefinitionsDictionary const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_MethodDefinitionsDictionary {
@@ -1001,15 +1001,15 @@ class Handle_Dynamic_SequenceOfMethods : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfMethods();
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethods(const Handle_Dynamic_SequenceOfMethods &aHandle);
+		Handle_Dynamic_SequenceOfMethods(const Dynamic_SequenceOfMethods *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfMethods(const Dynamic_SequenceOfMethods *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethods & operator=(const Handle_Dynamic_SequenceOfMethods &aHandle);
+		Handle_Dynamic_SequenceOfMethods & operator=(const Dynamic_SequenceOfMethods *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfMethods & operator=(const Dynamic_SequenceOfMethods *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethods const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_SequenceOfMethods const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_SequenceOfMethods {
@@ -1039,15 +1039,15 @@ class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfClasses();
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfClasses(const Handle_Dynamic_SequenceNodeOfSeqOfClasses &aHandle);
+		Handle_Dynamic_SequenceNodeOfSeqOfClasses(const Dynamic_SequenceNodeOfSeqOfClasses *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfClasses(const Dynamic_SequenceNodeOfSeqOfClasses *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfClasses & operator=(const Handle_Dynamic_SequenceNodeOfSeqOfClasses &aHandle);
+		Handle_Dynamic_SequenceNodeOfSeqOfClasses & operator=(const Dynamic_SequenceNodeOfSeqOfClasses *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfClasses & operator=(const Dynamic_SequenceNodeOfSeqOfClasses *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfClasses const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_SequenceNodeOfSeqOfClasses const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfClasses {
@@ -1077,15 +1077,15 @@ class Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions();
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions(const Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions &aHandle);
+		Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions(const Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions(const Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions & operator=(const Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions &aHandle);
+		Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions & operator=(const Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions & operator=(const Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
@@ -1115,15 +1115,15 @@ class Handle_Dynamic_DynamicClass : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicClass();
 		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicClass(const Handle_Dynamic_DynamicClass &aHandle);
+		Handle_Dynamic_DynamicClass(const Dynamic_DynamicClass *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicClass(const Dynamic_DynamicClass *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicClass & operator=(const Handle_Dynamic_DynamicClass &aHandle);
+		Handle_Dynamic_DynamicClass & operator=(const Dynamic_DynamicClass *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicClass & operator=(const Dynamic_DynamicClass *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicClass const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_DynamicClass const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_DynamicClass {
@@ -1153,15 +1153,15 @@ class Handle_Dynamic_DynamicDerivedClass : public Handle_Dynamic_DynamicClass {
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicDerivedClass();
 		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicDerivedClass(const Handle_Dynamic_DynamicDerivedClass &aHandle);
+		Handle_Dynamic_DynamicDerivedClass(const Dynamic_DynamicDerivedClass *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicDerivedClass(const Dynamic_DynamicDerivedClass *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicDerivedClass & operator=(const Handle_Dynamic_DynamicDerivedClass &aHandle);
+		Handle_Dynamic_DynamicDerivedClass & operator=(const Dynamic_DynamicDerivedClass *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicDerivedClass & operator=(const Dynamic_DynamicDerivedClass *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicDerivedClass const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_DynamicDerivedClass const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_DynamicDerivedClass {
@@ -1191,15 +1191,15 @@ class Handle_Dynamic_BooleanParameter : public Handle_Dynamic_Parameter {
 		%feature("autodoc", "1");
 		Handle_Dynamic_BooleanParameter();
 		%feature("autodoc", "1");
-		Handle_Dynamic_BooleanParameter(const Handle_Dynamic_BooleanParameter &aHandle);
+		Handle_Dynamic_BooleanParameter(const Dynamic_BooleanParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_BooleanParameter(const Dynamic_BooleanParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_BooleanParameter & operator=(const Handle_Dynamic_BooleanParameter &aHandle);
+		Handle_Dynamic_BooleanParameter & operator=(const Dynamic_BooleanParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_BooleanParameter & operator=(const Dynamic_BooleanParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_BooleanParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_BooleanParameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_BooleanParameter {
@@ -1229,15 +1229,15 @@ class Handle_Dynamic_StringParameter : public Handle_Dynamic_Parameter {
 		%feature("autodoc", "1");
 		Handle_Dynamic_StringParameter();
 		%feature("autodoc", "1");
-		Handle_Dynamic_StringParameter(const Handle_Dynamic_StringParameter &aHandle);
+		Handle_Dynamic_StringParameter(const Dynamic_StringParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_StringParameter(const Dynamic_StringParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_StringParameter & operator=(const Handle_Dynamic_StringParameter &aHandle);
+		Handle_Dynamic_StringParameter & operator=(const Dynamic_StringParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_StringParameter & operator=(const Dynamic_StringParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_StringParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_StringParameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_StringParameter {
@@ -1267,15 +1267,15 @@ class Handle_Dynamic_CompositMethod : public Handle_Dynamic_MethodDefinition {
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompositMethod();
 		%feature("autodoc", "1");
-		Handle_Dynamic_CompositMethod(const Handle_Dynamic_CompositMethod &aHandle);
+		Handle_Dynamic_CompositMethod(const Dynamic_CompositMethod *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompositMethod(const Dynamic_CompositMethod *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_CompositMethod & operator=(const Handle_Dynamic_CompositMethod &aHandle);
+		Handle_Dynamic_CompositMethod & operator=(const Dynamic_CompositMethod *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_CompositMethod & operator=(const Dynamic_CompositMethod *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_CompositMethod const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_CompositMethod const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_CompositMethod {
@@ -1305,15 +1305,15 @@ class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
 		%feature("autodoc", "1");
 		Handle_Dynamic_ObjectParameter();
 		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter(const Handle_Dynamic_ObjectParameter &aHandle);
+		Handle_Dynamic_ObjectParameter(const Dynamic_ObjectParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_ObjectParameter(const Dynamic_ObjectParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter & operator=(const Handle_Dynamic_ObjectParameter &aHandle);
+		Handle_Dynamic_ObjectParameter & operator=(const Dynamic_ObjectParameter *aHandle);
 		%feature("autodoc", "1");
 		Handle_Dynamic_ObjectParameter & operator=(const Dynamic_ObjectParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_ObjectParameter const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Dynamic_ObjectParameter {
@@ -1347,7 +1347,7 @@ class Dynamic_Method : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean Variable(const char * avariable) const;
 		%feature("autodoc", "1");
-		void Variable(const Handle_Dynamic_Variable &avariable);
+		void Variable(const Dynamic_Variable *avariable);
 		%feature("autodoc", "1");
 		Standard_Boolean Value(const char * aname, Handle_Dynamic_Parameter & aparameter, Dynamic_ModeEnum & amode) const;
 		%feature("autodoc", "1");
@@ -1394,7 +1394,7 @@ def __del__(self):
 class Dynamic_MethodDefinition : public Dynamic_Method {
 	public:
 		%feature("autodoc", "1");
-		void AddVariable(const Handle_Dynamic_Parameter &aparameter, const Dynamic_ModeEnum amode, const Standard_Boolean agroup=0);
+		void AddVariable(const Dynamic_Parameter *aparameter, const Dynamic_ModeEnum amode, const Standard_Boolean agroup=0);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1485,29 +1485,21 @@ class Dynamic_SequenceOfFuzzyDefinitions : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_FuzzyDefinition &anItem);
+		void Append(const Dynamic_FuzzyDefinition *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_FuzzyDefinition &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
+		void Prepend(const Dynamic_FuzzyDefinition *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_FuzzyDefinition &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const Dynamic_FuzzyDefinition *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_FuzzyDefinition &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const Dynamic_FuzzyDefinition *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfFuzzyDefinitions Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Dynamic_FuzzyDefinition &anItem);
+		void SetValue(const Standard_Integer anIndex, const Dynamic_FuzzyDefinition *anItem);
 		%feature("autodoc", "1");
 		const Handle_Dynamic_FuzzyDefinition & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -1556,7 +1548,7 @@ def __del__(self):
 class Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Dynamic_SequenceNodeOfSeqOfMethodDefinitions(const Handle_Dynamic_MethodDefinition &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Dynamic_SequenceNodeOfSeqOfMethodDefinitions(const Dynamic_MethodDefinition *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_Dynamic_MethodDefinition & Value() const;
 		%feature("autodoc", "1");
@@ -1595,7 +1587,7 @@ class Dynamic_DynamicClass : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Dynamic_DynamicClass(const char * aname);
 		%feature("autodoc", "1");
-		void Parameter(const Handle_Dynamic_Parameter &aparameter);
+		void Parameter(const Dynamic_Parameter *aparameter);
 		%feature("autodoc", "1");
 		void CompiledMethod(const char * amethod, const char * anaddress);
 		%feature("autodoc", "1");
@@ -1685,7 +1677,7 @@ def __del__(self):
 class Dynamic_SequenceNodeOfSeqOfClasses : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Dynamic_SequenceNodeOfSeqOfClasses(const Handle_Dynamic_DynamicClass &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Dynamic_SequenceNodeOfSeqOfClasses(const Dynamic_DynamicClass *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicClass & Value() const;
 		%feature("autodoc", "1");
@@ -1770,11 +1762,11 @@ class Dynamic_InstanceParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		Dynamic_InstanceParameter(const char * aparameter);
 		%feature("autodoc", "1");
-		Dynamic_InstanceParameter(const char * aparameter, const Handle_Dynamic_DynamicInstance &avalue);
+		Dynamic_InstanceParameter(const char * aparameter, const Dynamic_DynamicInstance *avalue);
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicInstance Value() const;
 		%feature("autodoc", "1");
-		void Value(const Handle_Dynamic_DynamicInstance &avalue);
+		void Value(const Dynamic_DynamicInstance *avalue);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1821,7 +1813,7 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean Parameter(const char * aparameter) const;
 		%feature("autodoc", "1");
-		void Parameter(const Handle_Dynamic_Parameter &aparameter);
+		void Parameter(const Dynamic_Parameter *aparameter);
 		%feature("autodoc", "1");
 		virtual		void Parameter(const char * aparameter, const Standard_Boolean avalue);
 		%feature("autodoc", "1");
@@ -1831,7 +1823,7 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Parameter(const char * aparameter, const char * astring);
 		%feature("autodoc", "1");
-		virtual		void Parameter(const char * aparameter, const Handle_Standard_Transient &anobject);
+		virtual		void Parameter(const char * aparameter, const Standard_Transient *anobject);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, Standard_Boolean & avalue) const;
 		%feature("autodoc","Value(Standard_CString aparameter) -> Standard_Integer");
@@ -1894,19 +1886,19 @@ class Dynamic_SeqOfMethods : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Dynamic_SeqOfMethods & operator=(const Dynamic_SeqOfMethods &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_Method &T);
+		void Append(const Dynamic_Method *T);
 		%feature("autodoc", "1");
 		void Append(Dynamic_SeqOfMethods & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_Method &T);
+		void Prepend(const Dynamic_Method *T);
 		%feature("autodoc", "1");
 		void Prepend(Dynamic_SeqOfMethods & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Dynamic_Method &I);
+		void InsertBefore(const Standard_Integer Index, const Dynamic_Method *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Dynamic_SeqOfMethods & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Dynamic_Method &T);
+		void InsertAfter(const Standard_Integer Index, const Dynamic_Method *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Dynamic_SeqOfMethods & S);
 		%feature("autodoc", "1");
@@ -1920,7 +1912,7 @@ class Dynamic_SeqOfMethods : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_Dynamic_Method & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Dynamic_Method &I);
+		void SetValue(const Standard_Integer Index, const Dynamic_Method *I);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Method & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -1953,13 +1945,11 @@ class Dynamic_VariableNode : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Dynamic_VariableNode();
 		%feature("autodoc", "1");
-		Dynamic_VariableNode(const Handle_Dynamic_Variable &anitem);
+		Dynamic_VariableNode(const Dynamic_Variable *anitem);
 		%feature("autodoc", "1");
-		void Object(const Handle_Dynamic_Variable &anitem);
+		void Object(const Dynamic_Variable *anitem);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Variable Object() const;
-		%feature("autodoc", "1");
-		void Next(const Handle_Dynamic_VariableNode &anode);
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableNode Next() const;
 		%feature("autodoc", "1");
@@ -2004,19 +1994,19 @@ class Dynamic_SeqOfMethodDefinitions : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Dynamic_SeqOfMethodDefinitions & operator=(const Dynamic_SeqOfMethodDefinitions &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_MethodDefinition &T);
+		void Append(const Dynamic_MethodDefinition *T);
 		%feature("autodoc", "1");
 		void Append(Dynamic_SeqOfMethodDefinitions & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_MethodDefinition &T);
+		void Prepend(const Dynamic_MethodDefinition *T);
 		%feature("autodoc", "1");
 		void Prepend(Dynamic_SeqOfMethodDefinitions & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Dynamic_MethodDefinition &I);
+		void InsertBefore(const Standard_Integer Index, const Dynamic_MethodDefinition *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Dynamic_SeqOfMethodDefinitions & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Dynamic_MethodDefinition &T);
+		void InsertAfter(const Standard_Integer Index, const Dynamic_MethodDefinition *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Dynamic_SeqOfMethodDefinitions & S);
 		%feature("autodoc", "1");
@@ -2030,7 +2020,7 @@ class Dynamic_SeqOfMethodDefinitions : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_Dynamic_MethodDefinition & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Dynamic_MethodDefinition &I);
+		void SetValue(const Standard_Integer Index, const Dynamic_MethodDefinition *I);
 		%feature("autodoc", "1");
 		Handle_Dynamic_MethodDefinition & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -2069,29 +2059,21 @@ class Dynamic_SequenceOfMethods : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_Method &anItem);
+		void Append(const Dynamic_Method *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_SequenceOfMethods &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_Method &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_SequenceOfMethods &aSequence);
+		void Prepend(const Dynamic_Method *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_Method &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const Dynamic_Method *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfMethods &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_Method &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfMethods &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const Dynamic_Method *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfMethods Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Dynamic_Method &anItem);
+		void SetValue(const Standard_Integer anIndex, const Dynamic_Method *anItem);
 		%feature("autodoc", "1");
 		const Handle_Dynamic_Method & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -2242,7 +2224,7 @@ class Dynamic_DynamicDerivedClass : public Dynamic_DynamicClass {
 		%feature("autodoc", "1");
 		Dynamic_DynamicDerivedClass(const char * aname);
 		%feature("autodoc", "1");
-		void AddClass(const Handle_Dynamic_DynamicClass &aclass);
+		void AddClass(const Dynamic_DynamicClass *aclass);
 		%feature("autodoc", "1");
 		virtual		Handle_Dynamic_Method Method(const char * amethod) const;
 		%feature("autodoc", "1");
@@ -2338,19 +2320,19 @@ class Dynamic_SeqOfClasses : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Dynamic_SeqOfClasses & operator=(const Dynamic_SeqOfClasses &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_DynamicClass &T);
+		void Append(const Dynamic_DynamicClass *T);
 		%feature("autodoc", "1");
 		void Append(Dynamic_SeqOfClasses & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_DynamicClass &T);
+		void Prepend(const Dynamic_DynamicClass *T);
 		%feature("autodoc", "1");
 		void Prepend(Dynamic_SeqOfClasses & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Dynamic_DynamicClass &I);
+		void InsertBefore(const Standard_Integer Index, const Dynamic_DynamicClass *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Dynamic_SeqOfClasses & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Dynamic_DynamicClass &T);
+		void InsertAfter(const Standard_Integer Index, const Dynamic_DynamicClass *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Dynamic_SeqOfClasses & S);
 		%feature("autodoc", "1");
@@ -2364,7 +2346,7 @@ class Dynamic_SeqOfClasses : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_Dynamic_DynamicClass & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Dynamic_DynamicClass &I);
+		void SetValue(const Standard_Integer Index, const Dynamic_DynamicClass *I);
 		%feature("autodoc", "1");
 		Handle_Dynamic_DynamicClass & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -2403,29 +2385,21 @@ class Dynamic_SequenceOfClasses : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_DynamicClass &anItem);
+		void Append(const Dynamic_DynamicClass *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_SequenceOfClasses &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_DynamicClass &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_SequenceOfClasses &aSequence);
+		void Prepend(const Dynamic_DynamicClass *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_DynamicClass &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const Dynamic_DynamicClass *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfClasses &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_DynamicClass &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfClasses &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const Dynamic_DynamicClass *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfClasses Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Dynamic_DynamicClass &anItem);
+		void SetValue(const Standard_Integer anIndex, const Dynamic_DynamicClass *anItem);
 		%feature("autodoc", "1");
 		const Handle_Dynamic_DynamicClass & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -2521,7 +2495,7 @@ class Dynamic_Variable : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Dynamic_Variable();
 		%feature("autodoc", "1");
-		void Parameter(const Handle_Dynamic_Parameter &aparameter);
+		void Parameter(const Dynamic_Parameter *aparameter);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Parameter Parameter() const;
 		%feature("autodoc", "1");
@@ -2572,9 +2546,7 @@ class Dynamic_DynamicInstance : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Dynamic_DynamicInstance();
 		%feature("autodoc", "1");
-		void Parameter(const Handle_Dynamic_Parameter &aparameter);
-		%feature("autodoc", "1");
-		void Parameter(const Handle_Dynamic_DynamicInstance &aninstance) const;
+		void Parameter(const Dynamic_Parameter *aparameter);
 		%feature("autodoc", "1");
 		void Parameter(const char * aparameter, const Standard_Integer avalue) const;
 		%feature("autodoc", "1");
@@ -2582,11 +2554,9 @@ class Dynamic_DynamicInstance : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Parameter(const char * aparameter, const char * avalue) const;
 		%feature("autodoc", "1");
-		void Parameter(const char * aparameter, const Handle_Dynamic_DynamicInstance &avalue) const;
-		%feature("autodoc", "1");
 		Handle_Dynamic_Parameter Parameter(const char * aparameter) const;
 		%feature("autodoc", "1");
-		void Class(const Handle_Dynamic_DynamicClass &aclass);
+		void Class(const Dynamic_DynamicClass *aclass);
 		%feature("autodoc", "1");
 		void Execute(const char * amethod) const;
 		%feature("autodoc", "1");
@@ -2674,7 +2644,7 @@ class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 		%feature("autodoc", "1");
 		Dynamic_CompositMethod(const char * aname);
 		%feature("autodoc", "1");
-		void Method(const Handle_Dynamic_Method &amethod);
+		void Method(const Dynamic_Method *amethod);
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfMethods() const;
 		%feature("autodoc", "1");
@@ -2723,13 +2693,11 @@ class Dynamic_ParameterNode : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Dynamic_ParameterNode();
 		%feature("autodoc", "1");
-		Dynamic_ParameterNode(const Handle_Dynamic_Parameter &anitem);
+		Dynamic_ParameterNode(const Dynamic_Parameter *anitem);
 		%feature("autodoc", "1");
-		void Object(const Handle_Dynamic_Parameter &anitem);
+		void Object(const Dynamic_Parameter *anitem);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Parameter Object() const;
-		%feature("autodoc", "1");
-		void Next(const Handle_Dynamic_ParameterNode &anode);
 		%feature("autodoc", "1");
 		Handle_Dynamic_ParameterNode Next() const;
 		%feature("autodoc", "1");
@@ -2766,7 +2734,7 @@ def __del__(self):
 class Dynamic_AbstractVariableInstance : public Dynamic_Variable {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Variable(const Handle_Dynamic_Variable &avariable);
+		virtual		void Variable(const Dynamic_Variable *avariable);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2859,11 +2827,11 @@ class Dynamic_ObjectParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		Dynamic_ObjectParameter(const char * aparameter);
 		%feature("autodoc", "1");
-		Dynamic_ObjectParameter(const char * aparameter, const Handle_Standard_Transient &anobject);
+		Dynamic_ObjectParameter(const char * aparameter, const Standard_Transient *anobject);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Value() const;
 		%feature("autodoc", "1");
-		void Value(const Handle_Standard_Transient &anobject);
+		void Value(const Standard_Transient *anobject);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -2914,29 +2882,21 @@ class Dynamic_SequenceOfMethodDefinitions : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_MethodDefinition &anItem);
+		void Append(const Dynamic_MethodDefinition *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_MethodDefinition &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
+		void Prepend(const Dynamic_MethodDefinition *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_MethodDefinition &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const Dynamic_MethodDefinition *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_MethodDefinition &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const Dynamic_MethodDefinition *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_Dynamic_SequenceOfMethodDefinitions Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Dynamic_MethodDefinition &anItem);
+		void SetValue(const Standard_Integer anIndex, const Dynamic_MethodDefinition *anItem);
 		%feature("autodoc", "1");
 		const Handle_Dynamic_MethodDefinition & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -2985,7 +2945,7 @@ def __del__(self):
 class Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions(const Handle_Dynamic_FuzzyDefinition &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions(const Dynamic_FuzzyDefinition *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyDefinition & Value() const;
 		%feature("autodoc", "1");
@@ -3024,7 +2984,7 @@ class Dynamic_VariableInstance : public Dynamic_AbstractVariableInstance {
 		%feature("autodoc", "1");
 		Dynamic_VariableInstance();
 		%feature("autodoc", "1");
-		virtual		void Variable(const Handle_Dynamic_Variable &avariable);
+		virtual		void Variable(const Dynamic_Variable *avariable);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Variable Variable() const;
 		%feature("autodoc", "1");
@@ -3123,7 +3083,7 @@ class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
 		%feature("autodoc", "1");
 		void Creates(const char * afilename);
 		%feature("autodoc", "1");
-		Standard_Boolean Definition(const Handle_Dynamic_Method &adefinition);
+		Standard_Boolean Definition(const Dynamic_Method *adefinition);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Parameter Switch(const char * aname, const char * atype, const char * avalue) const;
 		%feature("autodoc", "1");
@@ -3181,7 +3141,7 @@ class Dynamic_CompositVariableInstance : public Dynamic_AbstractVariableInstance
 		%feature("autodoc", "1");
 		Dynamic_CompositVariableInstance();
 		%feature("autodoc", "1");
-		virtual		void Variable(const Handle_Dynamic_Variable &avariable);
+		virtual		void Variable(const Dynamic_Variable *avariable);
 		%feature("autodoc", "1");
 		Handle_Dynamic_VariableNode FirstVariableNode() const;
 		%feature("autodoc", "1");
@@ -3218,7 +3178,7 @@ def __del__(self):
 class Dynamic_SequenceNodeOfSeqOfMethods : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Dynamic_SequenceNodeOfSeqOfMethods(const Handle_Dynamic_Method &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Dynamic_SequenceNodeOfSeqOfMethods(const Dynamic_Method *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_Dynamic_Method & Value() const;
 		%feature("autodoc", "1");
@@ -3263,19 +3223,19 @@ class Dynamic_SeqOfFuzzyDefinitions : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Dynamic_SeqOfFuzzyDefinitions & operator=(const Dynamic_SeqOfFuzzyDefinitions &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_FuzzyDefinition &T);
+		void Append(const Dynamic_FuzzyDefinition *T);
 		%feature("autodoc", "1");
 		void Append(Dynamic_SeqOfFuzzyDefinitions & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_FuzzyDefinition &T);
+		void Prepend(const Dynamic_FuzzyDefinition *T);
 		%feature("autodoc", "1");
 		void Prepend(Dynamic_SeqOfFuzzyDefinitions & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Dynamic_FuzzyDefinition &I);
+		void InsertBefore(const Standard_Integer Index, const Dynamic_FuzzyDefinition *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Dynamic_SeqOfFuzzyDefinitions & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Dynamic_FuzzyDefinition &T);
+		void InsertAfter(const Standard_Integer Index, const Dynamic_FuzzyDefinition *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Dynamic_SeqOfFuzzyDefinitions & S);
 		%feature("autodoc", "1");
@@ -3289,7 +3249,7 @@ class Dynamic_SeqOfFuzzyDefinitions : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_Dynamic_FuzzyDefinition & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Dynamic_FuzzyDefinition &I);
+		void SetValue(const Standard_Integer Index, const Dynamic_FuzzyDefinition *I);
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyDefinition & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");

@@ -241,7 +241,7 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("autodoc", "1");
 		void Add(const Standard_Real R1, const Standard_Real R2, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
-		void Add(const Handle_Law_Function &L, const TopoDS_Edge &E);
+		void Add(const Law_Function *L, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		void Add(const TColgp_Array1OfPnt2d &UandR, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
@@ -249,7 +249,7 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("autodoc", "1");
 		void SetRadius(const Standard_Real R1, const Standard_Real R2, const Standard_Integer IC, const Standard_Integer IinC);
 		%feature("autodoc", "1");
-		void SetRadius(const Handle_Law_Function &L, const Standard_Integer IC, const Standard_Integer IinC);
+		void SetRadius(const Law_Function *L, const Standard_Integer IC, const Standard_Integer IinC);
 		%feature("autodoc", "1");
 		void SetRadius(const TColgp_Array1OfPnt2d &UandR, const Standard_Integer IC, const Standard_Integer IinC);
 		%feature("autodoc", "1");
@@ -272,7 +272,7 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("autodoc", "1");
 		Handle_Law_Function GetLaw(const Standard_Integer IC, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
-		void SetLaw(const Standard_Integer IC, const TopoDS_Edge &E, const Handle_Law_Function &L);
+		void SetLaw(const Standard_Integer IC, const TopoDS_Edge &E, const Law_Function *L);
 		%feature("autodoc", "1");
 		void SetFilletShape(const ChFi3d_FilletShape FShape);
 		%feature("autodoc", "1");

@@ -43,15 +43,15 @@ class Handle_PGeom2d_Geometry : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Geometry();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Geometry(const Handle_PGeom2d_Geometry &aHandle);
+		Handle_PGeom2d_Geometry(const PGeom2d_Geometry *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Geometry(const PGeom2d_Geometry *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Geometry & operator=(const Handle_PGeom2d_Geometry &aHandle);
+		Handle_PGeom2d_Geometry & operator=(const PGeom2d_Geometry *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Geometry & operator=(const PGeom2d_Geometry *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Geometry const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Geometry const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Geometry {
@@ -81,15 +81,15 @@ class Handle_PGeom2d_Curve : public Handle_PGeom2d_Geometry {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Curve();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Curve(const Handle_PGeom2d_Curve &aHandle);
+		Handle_PGeom2d_Curve(const PGeom2d_Curve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Curve(const PGeom2d_Curve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Curve & operator=(const Handle_PGeom2d_Curve &aHandle);
+		Handle_PGeom2d_Curve & operator=(const PGeom2d_Curve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Curve & operator=(const PGeom2d_Curve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Curve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Curve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Curve {
@@ -119,15 +119,15 @@ class Handle_PGeom2d_Line : public Handle_PGeom2d_Curve {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Line();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Line(const Handle_PGeom2d_Line &aHandle);
+		Handle_PGeom2d_Line(const PGeom2d_Line *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Line(const PGeom2d_Line *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Line & operator=(const Handle_PGeom2d_Line &aHandle);
+		Handle_PGeom2d_Line & operator=(const PGeom2d_Line *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Line & operator=(const PGeom2d_Line *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Line const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Line const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Line {
@@ -157,15 +157,15 @@ class Handle_PGeom2d_Conic : public Handle_PGeom2d_Curve {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Conic();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Conic(const Handle_PGeom2d_Conic &aHandle);
+		Handle_PGeom2d_Conic(const PGeom2d_Conic *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Conic(const PGeom2d_Conic *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Conic & operator=(const Handle_PGeom2d_Conic &aHandle);
+		Handle_PGeom2d_Conic & operator=(const PGeom2d_Conic *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Conic & operator=(const PGeom2d_Conic *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Conic const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Conic const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Conic {
@@ -195,15 +195,15 @@ class Handle_PGeom2d_Ellipse : public Handle_PGeom2d_Conic {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Ellipse();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Ellipse(const Handle_PGeom2d_Ellipse &aHandle);
+		Handle_PGeom2d_Ellipse(const PGeom2d_Ellipse *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Ellipse(const PGeom2d_Ellipse *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Ellipse & operator=(const Handle_PGeom2d_Ellipse &aHandle);
+		Handle_PGeom2d_Ellipse & operator=(const PGeom2d_Ellipse *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Ellipse & operator=(const PGeom2d_Ellipse *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Ellipse const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Ellipse const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Ellipse {
@@ -233,15 +233,15 @@ class Handle_PGeom2d_OffsetCurve : public Handle_PGeom2d_Curve {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_OffsetCurve();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_OffsetCurve(const Handle_PGeom2d_OffsetCurve &aHandle);
+		Handle_PGeom2d_OffsetCurve(const PGeom2d_OffsetCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_OffsetCurve(const PGeom2d_OffsetCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_OffsetCurve & operator=(const Handle_PGeom2d_OffsetCurve &aHandle);
+		Handle_PGeom2d_OffsetCurve & operator=(const PGeom2d_OffsetCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_OffsetCurve & operator=(const PGeom2d_OffsetCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_OffsetCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_OffsetCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_OffsetCurve {
@@ -271,15 +271,15 @@ class Handle_PGeom2d_Vector : public Handle_PGeom2d_Geometry {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Vector();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Vector(const Handle_PGeom2d_Vector &aHandle);
+		Handle_PGeom2d_Vector(const PGeom2d_Vector *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Vector(const PGeom2d_Vector *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Vector & operator=(const Handle_PGeom2d_Vector &aHandle);
+		Handle_PGeom2d_Vector & operator=(const PGeom2d_Vector *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Vector & operator=(const PGeom2d_Vector *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Vector const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Vector const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Vector {
@@ -309,15 +309,15 @@ class Handle_PGeom2d_VectorWithMagnitude : public Handle_PGeom2d_Vector {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_VectorWithMagnitude();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_VectorWithMagnitude(const Handle_PGeom2d_VectorWithMagnitude &aHandle);
+		Handle_PGeom2d_VectorWithMagnitude(const PGeom2d_VectorWithMagnitude *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_VectorWithMagnitude(const PGeom2d_VectorWithMagnitude *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_VectorWithMagnitude & operator=(const Handle_PGeom2d_VectorWithMagnitude &aHandle);
+		Handle_PGeom2d_VectorWithMagnitude & operator=(const PGeom2d_VectorWithMagnitude *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_VectorWithMagnitude & operator=(const PGeom2d_VectorWithMagnitude *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_VectorWithMagnitude const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_VectorWithMagnitude const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_VectorWithMagnitude {
@@ -347,15 +347,15 @@ class Handle_PGeom2d_BoundedCurve : public Handle_PGeom2d_Curve {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BoundedCurve();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_BoundedCurve(const Handle_PGeom2d_BoundedCurve &aHandle);
+		Handle_PGeom2d_BoundedCurve(const PGeom2d_BoundedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BoundedCurve(const PGeom2d_BoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_BoundedCurve & operator=(const Handle_PGeom2d_BoundedCurve &aHandle);
+		Handle_PGeom2d_BoundedCurve & operator=(const PGeom2d_BoundedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BoundedCurve & operator=(const PGeom2d_BoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_BoundedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_BoundedCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_BoundedCurve {
@@ -385,15 +385,15 @@ class Handle_PGeom2d_BezierCurve : public Handle_PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BezierCurve();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_BezierCurve(const Handle_PGeom2d_BezierCurve &aHandle);
+		Handle_PGeom2d_BezierCurve(const PGeom2d_BezierCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BezierCurve(const PGeom2d_BezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_BezierCurve & operator=(const Handle_PGeom2d_BezierCurve &aHandle);
+		Handle_PGeom2d_BezierCurve & operator=(const PGeom2d_BezierCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BezierCurve & operator=(const PGeom2d_BezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_BezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_BezierCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_BezierCurve {
@@ -423,15 +423,15 @@ class Handle_PGeom2d_Circle : public Handle_PGeom2d_Conic {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Circle();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Circle(const Handle_PGeom2d_Circle &aHandle);
+		Handle_PGeom2d_Circle(const PGeom2d_Circle *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Circle(const PGeom2d_Circle *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Circle & operator=(const Handle_PGeom2d_Circle &aHandle);
+		Handle_PGeom2d_Circle & operator=(const PGeom2d_Circle *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Circle & operator=(const PGeom2d_Circle *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Circle const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Circle const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Circle {
@@ -461,15 +461,15 @@ class Handle_PGeom2d_Point : public Handle_PGeom2d_Geometry {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Point();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Point(const Handle_PGeom2d_Point &aHandle);
+		Handle_PGeom2d_Point(const PGeom2d_Point *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Point(const PGeom2d_Point *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Point & operator=(const Handle_PGeom2d_Point &aHandle);
+		Handle_PGeom2d_Point & operator=(const PGeom2d_Point *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Point & operator=(const PGeom2d_Point *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Point const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Point const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Point {
@@ -499,15 +499,15 @@ class Handle_PGeom2d_Hyperbola : public Handle_PGeom2d_Conic {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Hyperbola();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Hyperbola(const Handle_PGeom2d_Hyperbola &aHandle);
+		Handle_PGeom2d_Hyperbola(const PGeom2d_Hyperbola *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Hyperbola(const PGeom2d_Hyperbola *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Hyperbola & operator=(const Handle_PGeom2d_Hyperbola &aHandle);
+		Handle_PGeom2d_Hyperbola & operator=(const PGeom2d_Hyperbola *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Hyperbola & operator=(const PGeom2d_Hyperbola *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Hyperbola const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Hyperbola const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Hyperbola {
@@ -537,15 +537,15 @@ class Handle_PGeom2d_TrimmedCurve : public Handle_PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_TrimmedCurve();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_TrimmedCurve(const Handle_PGeom2d_TrimmedCurve &aHandle);
+		Handle_PGeom2d_TrimmedCurve(const PGeom2d_TrimmedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_TrimmedCurve(const PGeom2d_TrimmedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_TrimmedCurve & operator=(const Handle_PGeom2d_TrimmedCurve &aHandle);
+		Handle_PGeom2d_TrimmedCurve & operator=(const PGeom2d_TrimmedCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_TrimmedCurve & operator=(const PGeom2d_TrimmedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_TrimmedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_TrimmedCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_TrimmedCurve {
@@ -575,15 +575,15 @@ class Handle_PGeom2d_Transformation : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Transformation();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Transformation(const Handle_PGeom2d_Transformation &aHandle);
+		Handle_PGeom2d_Transformation(const PGeom2d_Transformation *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Transformation(const PGeom2d_Transformation *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Transformation & operator=(const Handle_PGeom2d_Transformation &aHandle);
+		Handle_PGeom2d_Transformation & operator=(const PGeom2d_Transformation *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Transformation & operator=(const PGeom2d_Transformation *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Transformation const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Transformation const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Transformation {
@@ -613,15 +613,15 @@ class Handle_PGeom2d_Parabola : public Handle_PGeom2d_Conic {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Parabola();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Parabola(const Handle_PGeom2d_Parabola &aHandle);
+		Handle_PGeom2d_Parabola(const PGeom2d_Parabola *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Parabola(const PGeom2d_Parabola *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Parabola & operator=(const Handle_PGeom2d_Parabola &aHandle);
+		Handle_PGeom2d_Parabola & operator=(const PGeom2d_Parabola *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Parabola & operator=(const PGeom2d_Parabola *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Parabola const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Parabola const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Parabola {
@@ -651,15 +651,15 @@ class Handle_PGeom2d_Direction : public Handle_PGeom2d_Vector {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Direction();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Direction(const Handle_PGeom2d_Direction &aHandle);
+		Handle_PGeom2d_Direction(const PGeom2d_Direction *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Direction(const PGeom2d_Direction *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Direction & operator=(const Handle_PGeom2d_Direction &aHandle);
+		Handle_PGeom2d_Direction & operator=(const PGeom2d_Direction *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Direction & operator=(const PGeom2d_Direction *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Direction const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_Direction const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_Direction {
@@ -689,15 +689,15 @@ class Handle_PGeom2d_CartesianPoint : public Handle_PGeom2d_Point {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_CartesianPoint();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_CartesianPoint(const Handle_PGeom2d_CartesianPoint &aHandle);
+		Handle_PGeom2d_CartesianPoint(const PGeom2d_CartesianPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_CartesianPoint(const PGeom2d_CartesianPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_CartesianPoint & operator=(const Handle_PGeom2d_CartesianPoint &aHandle);
+		Handle_PGeom2d_CartesianPoint & operator=(const PGeom2d_CartesianPoint *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_CartesianPoint & operator=(const PGeom2d_CartesianPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_CartesianPoint const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_CartesianPoint const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_CartesianPoint {
@@ -727,15 +727,15 @@ class Handle_PGeom2d_AxisPlacement : public Handle_PGeom2d_Geometry {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_AxisPlacement();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_AxisPlacement(const Handle_PGeom2d_AxisPlacement &aHandle);
+		Handle_PGeom2d_AxisPlacement(const PGeom2d_AxisPlacement *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_AxisPlacement(const PGeom2d_AxisPlacement *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_AxisPlacement & operator=(const Handle_PGeom2d_AxisPlacement &aHandle);
+		Handle_PGeom2d_AxisPlacement & operator=(const PGeom2d_AxisPlacement *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_AxisPlacement & operator=(const PGeom2d_AxisPlacement *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_AxisPlacement const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_AxisPlacement const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_AxisPlacement {
@@ -765,15 +765,15 @@ class Handle_PGeom2d_BSplineCurve : public Handle_PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BSplineCurve();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_BSplineCurve(const Handle_PGeom2d_BSplineCurve &aHandle);
+		Handle_PGeom2d_BSplineCurve(const PGeom2d_BSplineCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BSplineCurve(const PGeom2d_BSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_BSplineCurve & operator=(const Handle_PGeom2d_BSplineCurve &aHandle);
+		Handle_PGeom2d_BSplineCurve & operator=(const PGeom2d_BSplineCurve *aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_BSplineCurve & operator=(const PGeom2d_BSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_BSplineCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PGeom2d_BSplineCurve const DownCast(const Standard_Persistent *AnObject);
 
 };
 %extend Handle_PGeom2d_BSplineCurve {
@@ -1317,9 +1317,9 @@ class PGeom2d_OffsetCurve : public PGeom2d_Curve {
 		%feature("autodoc", "1");
 		PGeom2d_OffsetCurve();
 		%feature("autodoc", "1");
-		PGeom2d_OffsetCurve(const Handle_PGeom2d_Curve &aBasisCurve, const Standard_Real aOffsetValue);
+		PGeom2d_OffsetCurve(const PGeom2d_Curve *aBasisCurve, const Standard_Real aOffsetValue);
 		%feature("autodoc", "1");
-		void BasisCurve(const Handle_PGeom2d_Curve &aBasisCurve);
+		void BasisCurve(const PGeom2d_Curve *aBasisCurve);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Curve BasisCurve() const;
 		%feature("autodoc", "1");
@@ -1331,7 +1331,7 @@ class PGeom2d_OffsetCurve : public PGeom2d_Curve {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Curve _CSFDB_GetPGeom2d_OffsetCurvebasisCurve() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom2d_OffsetCurvebasisCurve(const Handle_PGeom2d_Curve &p);
+		void _CSFDB_SetPGeom2d_OffsetCurvebasisCurve(const PGeom2d_Curve *p);
 		%feature("autodoc", "1");
 		Standard_Real _CSFDB_GetPGeom2d_OffsetCurveoffsetValue() const;
 		%feature("autodoc", "1");
@@ -1501,7 +1501,7 @@ class PGeom2d_TrimmedCurve : public PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		PGeom2d_TrimmedCurve();
 		%feature("autodoc", "1");
-		PGeom2d_TrimmedCurve(const Handle_PGeom2d_Curve &aBasisCurve, const Standard_Real aFirstU, const Standard_Real aLastU);
+		PGeom2d_TrimmedCurve(const PGeom2d_Curve *aBasisCurve, const Standard_Real aFirstU, const Standard_Real aLastU);
 		%feature("autodoc", "1");
 		void FirstU(const Standard_Real aFirstU);
 		%feature("autodoc", "1");
@@ -1511,7 +1511,7 @@ class PGeom2d_TrimmedCurve : public PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Standard_Real LastU() const;
 		%feature("autodoc", "1");
-		void BasisCurve(const Handle_PGeom2d_Curve &aBasisCurve);
+		void BasisCurve(const PGeom2d_Curve *aBasisCurve);
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Curve BasisCurve() const;
 		%feature("autodoc", "1");
@@ -1519,7 +1519,7 @@ class PGeom2d_TrimmedCurve : public PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_PGeom2d_Curve _CSFDB_GetPGeom2d_TrimmedCurvebasisCurve() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom2d_TrimmedCurvebasisCurve(const Handle_PGeom2d_Curve &p);
+		void _CSFDB_SetPGeom2d_TrimmedCurvebasisCurve(const PGeom2d_Curve *p);
 		%feature("autodoc", "1");
 		Standard_Real _CSFDB_GetPGeom2d_TrimmedCurvefirstU() const;
 		%feature("autodoc", "1");
@@ -1609,17 +1609,17 @@ class PGeom2d_BezierCurve : public PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		PGeom2d_BezierCurve();
 		%feature("autodoc", "1");
-		PGeom2d_BezierCurve(const Handle_PColgp_HArray1OfPnt2d &aPoles, const Handle_PColStd_HArray1OfReal &aWeights, const Standard_Boolean aRational);
+		PGeom2d_BezierCurve(const PColgp_HArray1OfPnt2d *aPoles, const PColStd_HArray1OfReal *aWeights, const Standard_Boolean aRational);
 		%feature("autodoc", "1");
 		void Rational(const Standard_Boolean aRational);
 		%feature("autodoc", "1");
 		Standard_Boolean Rational() const;
 		%feature("autodoc", "1");
-		void Poles(const Handle_PColgp_HArray1OfPnt2d &aPoles);
+		void Poles(const PColgp_HArray1OfPnt2d *aPoles);
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt2d Poles() const;
 		%feature("autodoc", "1");
-		void Weights(const Handle_PColStd_HArray1OfReal &aWeights);
+		void Weights(const PColStd_HArray1OfReal *aWeights);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfReal Weights() const;
 		%feature("autodoc", "1");
@@ -1631,11 +1631,11 @@ class PGeom2d_BezierCurve : public PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt2d _CSFDB_GetPGeom2d_BezierCurvepoles() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom2d_BezierCurvepoles(const Handle_PColgp_HArray1OfPnt2d &p);
+		void _CSFDB_SetPGeom2d_BezierCurvepoles(const PColgp_HArray1OfPnt2d *p);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfReal _CSFDB_GetPGeom2d_BezierCurveweights() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom2d_BezierCurveweights(const Handle_PColStd_HArray1OfReal &p);
+		void _CSFDB_SetPGeom2d_BezierCurveweights(const PColStd_HArray1OfReal *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1672,7 +1672,7 @@ class PGeom2d_BSplineCurve : public PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		PGeom2d_BSplineCurve();
 		%feature("autodoc", "1");
-		PGeom2d_BSplineCurve(const Standard_Boolean aRational, const Standard_Boolean aPeriodic, const Standard_Integer aSpineDegree, const Handle_PColgp_HArray1OfPnt2d &aPoles, const Handle_PColStd_HArray1OfReal &aWeights, const Handle_PColStd_HArray1OfReal &aKnots, const Handle_PColStd_HArray1OfInteger &aMultiplicities);
+		PGeom2d_BSplineCurve(const Standard_Boolean aRational, const Standard_Boolean aPeriodic, const Standard_Integer aSpineDegree, const PColgp_HArray1OfPnt2d *aPoles, const PColStd_HArray1OfReal *aWeights, const PColStd_HArray1OfReal *aKnots, const PColStd_HArray1OfInteger *aMultiplicities);
 		%feature("autodoc", "1");
 		void Periodic(const Standard_Boolean aPeriodic);
 		%feature("autodoc", "1");
@@ -1686,19 +1686,19 @@ class PGeom2d_BSplineCurve : public PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Standard_Integer SpineDegree() const;
 		%feature("autodoc", "1");
-		void Poles(const Handle_PColgp_HArray1OfPnt2d &aPoles);
+		void Poles(const PColgp_HArray1OfPnt2d *aPoles);
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt2d Poles() const;
 		%feature("autodoc", "1");
-		void Weights(const Handle_PColStd_HArray1OfReal &aWeights);
+		void Weights(const PColStd_HArray1OfReal *aWeights);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfReal Weights() const;
 		%feature("autodoc", "1");
-		void Knots(const Handle_PColStd_HArray1OfReal &aKnots);
+		void Knots(const PColStd_HArray1OfReal *aKnots);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfReal Knots() const;
 		%feature("autodoc", "1");
-		void Multiplicities(const Handle_PColStd_HArray1OfInteger &aMultiplicities);
+		void Multiplicities(const PColStd_HArray1OfInteger *aMultiplicities);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfInteger Multiplicities() const;
 		%feature("autodoc", "1");
@@ -1718,19 +1718,19 @@ class PGeom2d_BSplineCurve : public PGeom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt2d _CSFDB_GetPGeom2d_BSplineCurvepoles() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom2d_BSplineCurvepoles(const Handle_PColgp_HArray1OfPnt2d &p);
+		void _CSFDB_SetPGeom2d_BSplineCurvepoles(const PColgp_HArray1OfPnt2d *p);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfReal _CSFDB_GetPGeom2d_BSplineCurveweights() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom2d_BSplineCurveweights(const Handle_PColStd_HArray1OfReal &p);
+		void _CSFDB_SetPGeom2d_BSplineCurveweights(const PColStd_HArray1OfReal *p);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfReal _CSFDB_GetPGeom2d_BSplineCurveknots() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom2d_BSplineCurveknots(const Handle_PColStd_HArray1OfReal &p);
+		void _CSFDB_SetPGeom2d_BSplineCurveknots(const PColStd_HArray1OfReal *p);
 		%feature("autodoc", "1");
 		Handle_PColStd_HArray1OfInteger _CSFDB_GetPGeom2d_BSplineCurvemultiplicities() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom2d_BSplineCurvemultiplicities(const Handle_PColStd_HArray1OfInteger &p);
+		void _CSFDB_SetPGeom2d_BSplineCurvemultiplicities(const PColStd_HArray1OfInteger *p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

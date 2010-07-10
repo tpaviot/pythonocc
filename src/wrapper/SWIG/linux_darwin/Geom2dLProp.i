@@ -43,19 +43,19 @@ class Geom2dLProp_Curve2dTool {
 		%feature("autodoc", "1");
 		Geom2dLProp_Curve2dTool();
 		%feature("autodoc", "1");
-		void Value(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P);
+		void Value(const Geom2d_Curve *C, const Standard_Real U, gp_Pnt2d & P);
 		%feature("autodoc", "1");
-		void D1(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1);
+		void D1(const Geom2d_Curve *C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1);
 		%feature("autodoc", "1");
-		void D2(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
+		void D2(const Geom2d_Curve *C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
 		%feature("autodoc", "1");
-		void D3(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
+		void D3(const Geom2d_Curve *C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
 		%feature("autodoc", "1");
-		Standard_Integer Continuity(const Handle_Geom2d_Curve &C);
+		Standard_Integer Continuity(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_Geom2d_Curve &C);
+		Standard_Real FirstParameter(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_Geom2d_Curve &C);
+		Standard_Real LastParameter(const Geom2d_Curve *C);
 
 };
 %feature("shadow") Geom2dLProp_Curve2dTool::~Geom2dLProp_Curve2dTool %{
@@ -78,7 +78,7 @@ def __del__(self):
 class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		Geom2dLProp_FCurExtOfNumericCurInf2d(const Handle_Geom2d_Curve &C, const Standard_Real Tol);
+		Geom2dLProp_FCurExtOfNumericCurInf2d(const Geom2d_Curve *C, const Standard_Real Tol);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
@@ -114,11 +114,11 @@ class Geom2dLProp_CurAndInf2d : public LProp_CurAndInf {
 		%feature("autodoc", "1");
 		Geom2dLProp_CurAndInf2d();
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &C);
+		void Perform(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
-		void PerformCurExt(const Handle_Geom2d_Curve &C);
+		void PerformCurExt(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
-		void PerformInf(const Handle_Geom2d_Curve &C);
+		void PerformInf(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
@@ -145,13 +145,13 @@ class Geom2dLProp_NumericCurInf2d {
 		%feature("autodoc", "1");
 		Geom2dLProp_NumericCurInf2d();
 		%feature("autodoc", "1");
-		void PerformCurExt(const Handle_Geom2d_Curve &C, LProp_CurAndInf & Result);
+		void PerformCurExt(const Geom2d_Curve *C, LProp_CurAndInf & Result);
 		%feature("autodoc", "1");
-		void PerformInf(const Handle_Geom2d_Curve &C, LProp_CurAndInf & Result);
+		void PerformInf(const Geom2d_Curve *C, LProp_CurAndInf & Result);
 		%feature("autodoc", "1");
-		void PerformCurExt(const Handle_Geom2d_Curve &C, const Standard_Real UMin, const Standard_Real UMax, LProp_CurAndInf & Result);
+		void PerformCurExt(const Geom2d_Curve *C, const Standard_Real UMin, const Standard_Real UMax, LProp_CurAndInf & Result);
 		%feature("autodoc", "1");
-		void PerformInf(const Handle_Geom2d_Curve &C, const Standard_Real UMin, const Standard_Real UMax, LProp_CurAndInf & Result);
+		void PerformInf(const Geom2d_Curve *C, const Standard_Real UMin, const Standard_Real UMax, LProp_CurAndInf & Result);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
@@ -176,15 +176,15 @@ def __del__(self):
 class Geom2dLProp_CLProps2d {
 	public:
 		%feature("autodoc", "1");
-		Geom2dLProp_CLProps2d(const Handle_Geom2d_Curve &C, const Standard_Integer N, const Standard_Real Resolution);
+		Geom2dLProp_CLProps2d(const Geom2d_Curve *C, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
-		Geom2dLProp_CLProps2d(const Handle_Geom2d_Curve &C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
+		Geom2dLProp_CLProps2d(const Geom2d_Curve *C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
 		Geom2dLProp_CLProps2d(const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
 		void SetParameter(const Standard_Real U);
 		%feature("autodoc", "1");
-		void SetCurve(const Handle_Geom2d_Curve &C);
+		void SetCurve(const Geom2d_Curve *C);
 		%feature("autodoc", "1");
 		const gp_Pnt2d & Value() const;
 		%feature("autodoc", "1");
@@ -225,7 +225,7 @@ def __del__(self):
 class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		Geom2dLProp_FCurNulOfNumericCurInf2d(const Handle_Geom2d_Curve &C);
+		Geom2dLProp_FCurNulOfNumericCurInf2d(const Geom2d_Curve *C);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);

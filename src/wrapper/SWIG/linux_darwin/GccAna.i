@@ -43,15 +43,15 @@ class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_GccAna_NoSolution();
 		%feature("autodoc", "1");
-		Handle_GccAna_NoSolution(const Handle_GccAna_NoSolution &aHandle);
+		Handle_GccAna_NoSolution(const GccAna_NoSolution *aHandle);
 		%feature("autodoc", "1");
 		Handle_GccAna_NoSolution(const GccAna_NoSolution *anItem);
 		%feature("autodoc", "1");
-		Handle_GccAna_NoSolution & operator=(const Handle_GccAna_NoSolution &aHandle);
+		Handle_GccAna_NoSolution & operator=(const GccAna_NoSolution *aHandle);
 		%feature("autodoc", "1");
 		Handle_GccAna_NoSolution & operator=(const GccAna_NoSolution *anItem);
 		%feature("autodoc", "1");
-		Handle_GccAna_NoSolution const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GccAna_NoSolution const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_GccAna_NoSolution {

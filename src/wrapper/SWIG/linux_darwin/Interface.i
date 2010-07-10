@@ -77,15 +77,15 @@ class Handle_Interface_EntityCluster : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_EntityCluster();
 		%feature("autodoc", "1");
-		Handle_Interface_EntityCluster(const Handle_Interface_EntityCluster &aHandle);
+		Handle_Interface_EntityCluster(const Interface_EntityCluster *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_EntityCluster(const Interface_EntityCluster *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_EntityCluster & operator=(const Handle_Interface_EntityCluster &aHandle);
+		Handle_Interface_EntityCluster & operator=(const Interface_EntityCluster *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_EntityCluster & operator=(const Interface_EntityCluster *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_EntityCluster const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_EntityCluster const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_EntityCluster {
@@ -115,15 +115,15 @@ class Handle_Interface_ReportEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_ReportEntity();
 		%feature("autodoc", "1");
-		Handle_Interface_ReportEntity(const Handle_Interface_ReportEntity &aHandle);
+		Handle_Interface_ReportEntity(const Interface_ReportEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_ReportEntity(const Interface_ReportEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_ReportEntity & operator=(const Handle_Interface_ReportEntity &aHandle);
+		Handle_Interface_ReportEntity & operator=(const Interface_ReportEntity *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_ReportEntity & operator=(const Interface_ReportEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_ReportEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_ReportEntity const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_ReportEntity {
@@ -153,15 +153,15 @@ class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_NodeOfGeneralLib();
 		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib(const Handle_Interface_NodeOfGeneralLib &aHandle);
+		Handle_Interface_NodeOfGeneralLib(const Interface_NodeOfGeneralLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_NodeOfGeneralLib(const Interface_NodeOfGeneralLib *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib & operator=(const Handle_Interface_NodeOfGeneralLib &aHandle);
+		Handle_Interface_NodeOfGeneralLib & operator=(const Interface_NodeOfGeneralLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_NodeOfGeneralLib & operator=(const Interface_NodeOfGeneralLib *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_NodeOfGeneralLib const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_NodeOfGeneralLib {
@@ -191,15 +191,15 @@ class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient
 		%feature("autodoc", "1");
 		Handle_Interface_GlobalNodeOfGeneralLib();
 		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
+		Handle_Interface_GlobalNodeOfGeneralLib(const Interface_GlobalNodeOfGeneralLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_GlobalNodeOfGeneralLib(const Interface_GlobalNodeOfGeneralLib *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
+		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Interface_GlobalNodeOfGeneralLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Interface_GlobalNodeOfGeneralLib *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_GlobalNodeOfGeneralLib const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_GlobalNodeOfGeneralLib {
@@ -229,15 +229,15 @@ class Handle_Interface_InterfaceModel : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel();
 		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel(const Handle_Interface_InterfaceModel &aHandle);
+		Handle_Interface_InterfaceModel(const Interface_InterfaceModel *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel(const Interface_InterfaceModel *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel & operator=(const Handle_Interface_InterfaceModel &aHandle);
+		Handle_Interface_InterfaceModel & operator=(const Interface_InterfaceModel *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel & operator=(const Interface_InterfaceModel *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_InterfaceModel const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_InterfaceModel {
@@ -267,15 +267,15 @@ class Handle_Interface_GlobalNodeOfReaderLib : public Handle_Standard_Transient 
 		%feature("autodoc", "1");
 		Handle_Interface_GlobalNodeOfReaderLib();
 		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfReaderLib(const Handle_Interface_GlobalNodeOfReaderLib &aHandle);
+		Handle_Interface_GlobalNodeOfReaderLib(const Interface_GlobalNodeOfReaderLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_GlobalNodeOfReaderLib(const Interface_GlobalNodeOfReaderLib *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfReaderLib & operator=(const Handle_Interface_GlobalNodeOfReaderLib &aHandle);
+		Handle_Interface_GlobalNodeOfReaderLib & operator=(const Interface_GlobalNodeOfReaderLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_GlobalNodeOfReaderLib & operator=(const Interface_GlobalNodeOfReaderLib *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfReaderLib const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_GlobalNodeOfReaderLib const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_GlobalNodeOfReaderLib {
@@ -305,15 +305,15 @@ class Handle_Interface_ParamSet : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_ParamSet();
 		%feature("autodoc", "1");
-		Handle_Interface_ParamSet(const Handle_Interface_ParamSet &aHandle);
+		Handle_Interface_ParamSet(const Interface_ParamSet *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_ParamSet(const Interface_ParamSet *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_ParamSet & operator=(const Handle_Interface_ParamSet &aHandle);
+		Handle_Interface_ParamSet & operator=(const Interface_ParamSet *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_ParamSet & operator=(const Interface_ParamSet *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_ParamSet const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_ParamSet const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_ParamSet {
@@ -343,15 +343,15 @@ class Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient();
 		%feature("autodoc", "1");
-		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient(const Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient &aHandle);
+		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient(const Interface_DataMapNodeOfDataMapOfIntegerTransient *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient(const Interface_DataMapNodeOfDataMapOfIntegerTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient & operator=(const Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient &aHandle);
+		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient & operator=(const Interface_DataMapNodeOfDataMapOfIntegerTransient *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient & operator=(const Interface_DataMapNodeOfDataMapOfIntegerTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient {
@@ -381,15 +381,15 @@ class Handle_Interface_InterfaceError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceError();
 		%feature("autodoc", "1");
-		Handle_Interface_InterfaceError(const Handle_Interface_InterfaceError &aHandle);
+		Handle_Interface_InterfaceError(const Interface_InterfaceError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceError(const Interface_InterfaceError *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_InterfaceError & operator=(const Handle_Interface_InterfaceError &aHandle);
+		Handle_Interface_InterfaceError & operator=(const Interface_InterfaceError *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceError & operator=(const Interface_InterfaceError *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_InterfaceError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_InterfaceError const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_InterfaceError {
@@ -419,15 +419,15 @@ class Handle_Interface_CheckFailure : public Handle_Interface_InterfaceError {
 		%feature("autodoc", "1");
 		Handle_Interface_CheckFailure();
 		%feature("autodoc", "1");
-		Handle_Interface_CheckFailure(const Handle_Interface_CheckFailure &aHandle);
+		Handle_Interface_CheckFailure(const Interface_CheckFailure *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_CheckFailure(const Interface_CheckFailure *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_CheckFailure & operator=(const Handle_Interface_CheckFailure &aHandle);
+		Handle_Interface_CheckFailure & operator=(const Interface_CheckFailure *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_CheckFailure & operator=(const Interface_CheckFailure *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_CheckFailure const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_CheckFailure const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_CheckFailure {
@@ -457,15 +457,15 @@ class Handle_Interface_Check : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_Check();
 		%feature("autodoc", "1");
-		Handle_Interface_Check(const Handle_Interface_Check &aHandle);
+		Handle_Interface_Check(const Interface_Check *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_Check(const Interface_Check *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_Check & operator=(const Handle_Interface_Check &aHandle);
+		Handle_Interface_Check & operator=(const Interface_Check *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_Check & operator=(const Interface_Check *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_Check const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_Check const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_Check {
@@ -495,15 +495,15 @@ class Handle_Interface_SignType : public Handle_MoniTool_SignText {
 		%feature("autodoc", "1");
 		Handle_Interface_SignType();
 		%feature("autodoc", "1");
-		Handle_Interface_SignType(const Handle_Interface_SignType &aHandle);
+		Handle_Interface_SignType(const Interface_SignType *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_SignType(const Interface_SignType *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_SignType & operator=(const Handle_Interface_SignType &aHandle);
+		Handle_Interface_SignType & operator=(const Interface_SignType *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_SignType & operator=(const Interface_SignType *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_SignType const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_SignType const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_SignType {
@@ -533,15 +533,15 @@ class Handle_Interface_SignLabel : public Handle_MoniTool_SignText {
 		%feature("autodoc", "1");
 		Handle_Interface_SignLabel();
 		%feature("autodoc", "1");
-		Handle_Interface_SignLabel(const Handle_Interface_SignLabel &aHandle);
+		Handle_Interface_SignLabel(const Interface_SignLabel *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_SignLabel(const Interface_SignLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_SignLabel & operator=(const Handle_Interface_SignLabel &aHandle);
+		Handle_Interface_SignLabel & operator=(const Interface_SignLabel *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_SignLabel & operator=(const Interface_SignLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_SignLabel const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_SignLabel const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_SignLabel {
@@ -571,15 +571,15 @@ class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_CopyControl();
 		%feature("autodoc", "1");
-		Handle_Interface_CopyControl(const Handle_Interface_CopyControl &aHandle);
+		Handle_Interface_CopyControl(const Interface_CopyControl *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_CopyControl(const Interface_CopyControl *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_CopyControl & operator=(const Handle_Interface_CopyControl &aHandle);
+		Handle_Interface_CopyControl & operator=(const Interface_CopyControl *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_CopyControl & operator=(const Interface_CopyControl *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_CopyControl const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_CopyControl const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_CopyControl {
@@ -609,15 +609,15 @@ class Handle_Interface_GeneralModule : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_GeneralModule();
 		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule(const Handle_Interface_GeneralModule &aHandle);
+		Handle_Interface_GeneralModule(const Interface_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_GeneralModule(const Interface_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule & operator=(const Handle_Interface_GeneralModule &aHandle);
+		Handle_Interface_GeneralModule & operator=(const Interface_GeneralModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_GeneralModule & operator=(const Interface_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_GeneralModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_GeneralModule {
@@ -647,15 +647,15 @@ class Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public Handle_T
 		%feature("autodoc", "1");
 		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString();
 		%feature("autodoc", "1");
-		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString(const Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString &aHandle);
+		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString(const Interface_IndexedMapNodeOfIndexedMapOfAsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString(const Interface_IndexedMapNodeOfIndexedMapOfAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString & operator=(const Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString &aHandle);
+		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString & operator=(const Interface_IndexedMapNodeOfIndexedMapOfAsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString & operator=(const Interface_IndexedMapNodeOfIndexedMapOfAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
@@ -685,15 +685,15 @@ class Handle_Interface_NodeOfReaderLib : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_NodeOfReaderLib();
 		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib(const Handle_Interface_NodeOfReaderLib &aHandle);
+		Handle_Interface_NodeOfReaderLib(const Interface_NodeOfReaderLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_NodeOfReaderLib(const Interface_NodeOfReaderLib *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib & operator=(const Handle_Interface_NodeOfReaderLib &aHandle);
+		Handle_Interface_NodeOfReaderLib & operator=(const Interface_NodeOfReaderLib *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_NodeOfReaderLib & operator=(const Interface_NodeOfReaderLib *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_NodeOfReaderLib const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_NodeOfReaderLib {
@@ -723,15 +723,15 @@ class Handle_Interface_TypedValue : public Handle_MoniTool_TypedValue {
 		%feature("autodoc", "1");
 		Handle_Interface_TypedValue();
 		%feature("autodoc", "1");
-		Handle_Interface_TypedValue(const Handle_Interface_TypedValue &aHandle);
+		Handle_Interface_TypedValue(const Interface_TypedValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_TypedValue(const Interface_TypedValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_TypedValue & operator=(const Handle_Interface_TypedValue &aHandle);
+		Handle_Interface_TypedValue & operator=(const Interface_TypedValue *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_TypedValue & operator=(const Interface_TypedValue *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_TypedValue const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_TypedValue const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_TypedValue {
@@ -761,15 +761,15 @@ class Handle_Interface_ParamList : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_ParamList();
 		%feature("autodoc", "1");
-		Handle_Interface_ParamList(const Handle_Interface_ParamList &aHandle);
+		Handle_Interface_ParamList(const Interface_ParamList *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_ParamList(const Interface_ParamList *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_ParamList & operator=(const Handle_Interface_ParamList &aHandle);
+		Handle_Interface_ParamList & operator=(const Interface_ParamList *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_ParamList & operator=(const Interface_ParamList *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_ParamList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_ParamList const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_ParamList {
@@ -799,15 +799,15 @@ class Handle_Interface_CopyMap : public Handle_Interface_CopyControl {
 		%feature("autodoc", "1");
 		Handle_Interface_CopyMap();
 		%feature("autodoc", "1");
-		Handle_Interface_CopyMap(const Handle_Interface_CopyMap &aHandle);
+		Handle_Interface_CopyMap(const Interface_CopyMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_CopyMap(const Interface_CopyMap *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_CopyMap & operator=(const Handle_Interface_CopyMap &aHandle);
+		Handle_Interface_CopyMap & operator=(const Interface_CopyMap *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_CopyMap & operator=(const Interface_CopyMap *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_CopyMap const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_CopyMap const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_CopyMap {
@@ -837,15 +837,15 @@ class Handle_Interface_ReaderModule : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_ReaderModule();
 		%feature("autodoc", "1");
-		Handle_Interface_ReaderModule(const Handle_Interface_ReaderModule &aHandle);
+		Handle_Interface_ReaderModule(const Interface_ReaderModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_ReaderModule(const Interface_ReaderModule *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_ReaderModule & operator=(const Handle_Interface_ReaderModule &aHandle);
+		Handle_Interface_ReaderModule & operator=(const Interface_ReaderModule *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_ReaderModule & operator=(const Interface_ReaderModule *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_ReaderModule const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_ReaderModule const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_ReaderModule {
@@ -875,15 +875,15 @@ class Handle_Interface_GTool : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_GTool();
 		%feature("autodoc", "1");
-		Handle_Interface_GTool(const Handle_Interface_GTool &aHandle);
+		Handle_Interface_GTool(const Interface_GTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_GTool(const Interface_GTool *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_GTool & operator=(const Handle_Interface_GTool &aHandle);
+		Handle_Interface_GTool & operator=(const Interface_GTool *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_GTool & operator=(const Interface_GTool *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_GTool const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_GTool const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_GTool {
@@ -913,15 +913,15 @@ class Handle_Interface_SequenceNodeOfSequenceOfCheck : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Interface_SequenceNodeOfSequenceOfCheck();
 		%feature("autodoc", "1");
-		Handle_Interface_SequenceNodeOfSequenceOfCheck(const Handle_Interface_SequenceNodeOfSequenceOfCheck &aHandle);
+		Handle_Interface_SequenceNodeOfSequenceOfCheck(const Interface_SequenceNodeOfSequenceOfCheck *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_SequenceNodeOfSequenceOfCheck(const Interface_SequenceNodeOfSequenceOfCheck *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_SequenceNodeOfSequenceOfCheck & operator=(const Handle_Interface_SequenceNodeOfSequenceOfCheck &aHandle);
+		Handle_Interface_SequenceNodeOfSequenceOfCheck & operator=(const Interface_SequenceNodeOfSequenceOfCheck *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_SequenceNodeOfSequenceOfCheck & operator=(const Interface_SequenceNodeOfSequenceOfCheck *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_SequenceNodeOfSequenceOfCheck const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_SequenceNodeOfSequenceOfCheck const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_SequenceNodeOfSequenceOfCheck {
@@ -951,15 +951,15 @@ class Handle_Interface_HSequenceOfCheck : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_HSequenceOfCheck();
 		%feature("autodoc", "1");
-		Handle_Interface_HSequenceOfCheck(const Handle_Interface_HSequenceOfCheck &aHandle);
+		Handle_Interface_HSequenceOfCheck(const Interface_HSequenceOfCheck *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_HSequenceOfCheck(const Interface_HSequenceOfCheck *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_HSequenceOfCheck & operator=(const Handle_Interface_HSequenceOfCheck &aHandle);
+		Handle_Interface_HSequenceOfCheck & operator=(const Interface_HSequenceOfCheck *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_HSequenceOfCheck & operator=(const Interface_HSequenceOfCheck *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_HSequenceOfCheck const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_HSequenceOfCheck const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_HSequenceOfCheck {
@@ -989,15 +989,15 @@ class Handle_Interface_FileReaderData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_FileReaderData();
 		%feature("autodoc", "1");
-		Handle_Interface_FileReaderData(const Handle_Interface_FileReaderData &aHandle);
+		Handle_Interface_FileReaderData(const Interface_FileReaderData *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_FileReaderData(const Interface_FileReaderData *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_FileReaderData & operator=(const Handle_Interface_FileReaderData &aHandle);
+		Handle_Interface_FileReaderData & operator=(const Interface_FileReaderData *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_FileReaderData & operator=(const Interface_FileReaderData *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_FileReaderData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_FileReaderData const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_FileReaderData {
@@ -1027,15 +1027,15 @@ class Handle_Interface_IntVal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_IntVal();
 		%feature("autodoc", "1");
-		Handle_Interface_IntVal(const Handle_Interface_IntVal &aHandle);
+		Handle_Interface_IntVal(const Interface_IntVal *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_IntVal(const Interface_IntVal *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_IntVal & operator=(const Handle_Interface_IntVal &aHandle);
+		Handle_Interface_IntVal & operator=(const Interface_IntVal *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_IntVal & operator=(const Interface_IntVal *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_IntVal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_IntVal const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_IntVal {
@@ -1065,15 +1065,15 @@ class Handle_Interface_HArray1OfHAsciiString : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_HArray1OfHAsciiString();
 		%feature("autodoc", "1");
-		Handle_Interface_HArray1OfHAsciiString(const Handle_Interface_HArray1OfHAsciiString &aHandle);
+		Handle_Interface_HArray1OfHAsciiString(const Interface_HArray1OfHAsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_HArray1OfHAsciiString(const Interface_HArray1OfHAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_HArray1OfHAsciiString & operator=(const Handle_Interface_HArray1OfHAsciiString &aHandle);
+		Handle_Interface_HArray1OfHAsciiString & operator=(const Interface_HArray1OfHAsciiString *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_HArray1OfHAsciiString & operator=(const Interface_HArray1OfHAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_HArray1OfHAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_HArray1OfHAsciiString const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_HArray1OfHAsciiString {
@@ -1103,15 +1103,15 @@ class Handle_Interface_Static : public Handle_Interface_TypedValue {
 		%feature("autodoc", "1");
 		Handle_Interface_Static();
 		%feature("autodoc", "1");
-		Handle_Interface_Static(const Handle_Interface_Static &aHandle);
+		Handle_Interface_Static(const Interface_Static *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_Static(const Interface_Static *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_Static & operator=(const Handle_Interface_Static &aHandle);
+		Handle_Interface_Static & operator=(const Interface_Static *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_Static & operator=(const Interface_Static *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_Static const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_Static const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_Static {
@@ -1141,15 +1141,15 @@ class Handle_Interface_UndefinedContent : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_UndefinedContent();
 		%feature("autodoc", "1");
-		Handle_Interface_UndefinedContent(const Handle_Interface_UndefinedContent &aHandle);
+		Handle_Interface_UndefinedContent(const Interface_UndefinedContent *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_UndefinedContent(const Interface_UndefinedContent *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_UndefinedContent & operator=(const Handle_Interface_UndefinedContent &aHandle);
+		Handle_Interface_UndefinedContent & operator=(const Interface_UndefinedContent *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_UndefinedContent & operator=(const Interface_UndefinedContent *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_UndefinedContent const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_UndefinedContent const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_UndefinedContent {
@@ -1179,15 +1179,15 @@ class Handle_Interface_InterfaceMismatch : public Handle_Interface_InterfaceErro
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceMismatch();
 		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch(const Handle_Interface_InterfaceMismatch &aHandle);
+		Handle_Interface_InterfaceMismatch(const Interface_InterfaceMismatch *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceMismatch(const Interface_InterfaceMismatch *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch & operator=(const Handle_Interface_InterfaceMismatch &aHandle);
+		Handle_Interface_InterfaceMismatch & operator=(const Interface_InterfaceMismatch *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceMismatch & operator=(const Interface_InterfaceMismatch *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_InterfaceMismatch const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_InterfaceMismatch {
@@ -1217,15 +1217,15 @@ class Handle_Interface_Protocol : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_Protocol();
 		%feature("autodoc", "1");
-		Handle_Interface_Protocol(const Handle_Interface_Protocol &aHandle);
+		Handle_Interface_Protocol(const Interface_Protocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_Protocol(const Interface_Protocol *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_Protocol & operator=(const Handle_Interface_Protocol &aHandle);
+		Handle_Interface_Protocol & operator=(const Interface_Protocol *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_Protocol & operator=(const Interface_Protocol *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_Protocol const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_Protocol {
@@ -1255,15 +1255,15 @@ class Handle_Interface_HGraph : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_HGraph();
 		%feature("autodoc", "1");
-		Handle_Interface_HGraph(const Handle_Interface_HGraph &aHandle);
+		Handle_Interface_HGraph(const Interface_HGraph *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_HGraph(const Interface_HGraph *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_HGraph & operator=(const Handle_Interface_HGraph &aHandle);
+		Handle_Interface_HGraph & operator=(const Interface_HGraph *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_HGraph & operator=(const Interface_HGraph *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_HGraph const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_HGraph const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_HGraph {
@@ -1293,15 +1293,15 @@ class Handle_Interface_DataMapNodeOfDataMapOfTransientInteger : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_Interface_DataMapNodeOfDataMapOfTransientInteger();
 		%feature("autodoc", "1");
-		Handle_Interface_DataMapNodeOfDataMapOfTransientInteger(const Handle_Interface_DataMapNodeOfDataMapOfTransientInteger &aHandle);
+		Handle_Interface_DataMapNodeOfDataMapOfTransientInteger(const Interface_DataMapNodeOfDataMapOfTransientInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_DataMapNodeOfDataMapOfTransientInteger(const Interface_DataMapNodeOfDataMapOfTransientInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_DataMapNodeOfDataMapOfTransientInteger & operator=(const Handle_Interface_DataMapNodeOfDataMapOfTransientInteger &aHandle);
+		Handle_Interface_DataMapNodeOfDataMapOfTransientInteger & operator=(const Interface_DataMapNodeOfDataMapOfTransientInteger *aHandle);
 		%feature("autodoc", "1");
 		Handle_Interface_DataMapNodeOfDataMapOfTransientInteger & operator=(const Interface_DataMapNodeOfDataMapOfTransientInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_DataMapNodeOfDataMapOfTransientInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Interface_DataMapNodeOfDataMapOfTransientInteger const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_Interface_DataMapNodeOfDataMapOfTransientInteger {
@@ -1374,20 +1374,20 @@ def __del__(self):
 class Interface_ReaderLib {
 	public:
 		%feature("autodoc", "1");
-		void SetGlobal(const Handle_Interface_ReaderModule &amodule, const Handle_Interface_Protocol &aprotocol);
+		void SetGlobal(const Interface_ReaderModule *amodule, const Interface_Protocol *aprotocol);
 		%feature("autodoc", "1");
-		Interface_ReaderLib(const Handle_Interface_Protocol &aprotocol);
+		Interface_ReaderLib(const Interface_Protocol *aprotocol);
 		%feature("autodoc", "1");
 		Interface_ReaderLib();
 		%feature("autodoc", "1");
-		void AddProtocol(const Handle_Standard_Transient &aprotocol);
+		void AddProtocol(const Standard_Transient *aprotocol);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc","Select(const obj) -> Standard_Integer");
 
-		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_ReaderModule & module, Standard_Integer &OutValue) const;
+		Standard_Boolean Select(const Standard_Transient *obj, Handle_Interface_ReaderModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -1430,7 +1430,7 @@ class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_Standard_Transient &I);
+		Standard_Boolean Bind(const Standard_Integer &K, const Standard_Transient *I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
@@ -1465,35 +1465,35 @@ def __del__(self):
 class Interface_GeneralModule : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		void FillShared(const Handle_Interface_InterfaceModel &model, const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void FillShared(const Interface_InterfaceModel *model, const Standard_Integer CN, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void FillSharedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void FillSharedCase(const Standard_Integer CN, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void Share(Interface_EntityIterator & iter, const Handle_Standard_Transient &shared) const;
+		void Share(Interface_EntityIterator & iter, const Standard_Transient *shared) const;
 		%feature("autodoc", "1");
-		virtual		void ListImplied(const Handle_Interface_InterfaceModel &model, const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void ListImplied(const Interface_InterfaceModel *model, const Standard_Integer CN, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void ListImpliedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		virtual		void ListImpliedCase(const Standard_Integer CN, const Standard_Transient *ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		void CheckCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void CheckCase(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean CanCopy(const Standard_Integer CN, const Handle_Standard_Transient &ent) const;
+		virtual		Standard_Boolean CanCopy(const Standard_Integer CN, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Dispatch(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, Interface_CopyTool & TC) const;
+		virtual		Standard_Boolean Dispatch(const Standard_Integer CN, const Standard_Transient *entfrom, Handle_Standard_Transient & entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
 		%feature("autodoc", "1");
-		virtual		void CopyCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
+		virtual		void CopyCase(const Standard_Integer CN, const Standard_Transient *entfrom, const Standard_Transient *entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewCopiedCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, Interface_CopyTool & TC) const;
+		virtual		Standard_Boolean NewCopiedCase(const Standard_Integer CN, const Standard_Transient *entfrom, Handle_Standard_Transient & entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		virtual		void RenewImpliedCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, const Interface_CopyTool &TC) const;
+		virtual		void RenewImpliedCase(const Standard_Integer CN, const Standard_Transient *entfrom, const Standard_Transient *entto, const Interface_CopyTool &TC) const;
 		%feature("autodoc", "1");
-		virtual		void WhenDeleteCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Standard_Boolean dispatched) const;
+		virtual		void WhenDeleteCase(const Standard_Integer CN, const Standard_Transient *ent, const Standard_Boolean dispatched) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString Name(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		virtual		Handle_TCollection_HAsciiString Name(const Standard_Integer CN, const Standard_Transient *ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1566,7 +1566,7 @@ class Interface_FileReaderData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & BoundEntity(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void BindEntity(const Standard_Integer num, const Handle_Standard_Transient &ent);
+		void BindEntity(const Standard_Integer num, const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void SetErrorLoad(const Standard_Boolean val);
 		%feature("autodoc", "1");
@@ -1644,7 +1644,7 @@ class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
 		%feature("autodoc", "1");
 		Interface_GlobalNodeOfGeneralLib();
 		%feature("autodoc", "1");
-		void Add(const Handle_Interface_GeneralModule &amodule, const Handle_Interface_Protocol &aprotocol);
+		void Add(const Interface_GeneralModule *amodule, const Interface_Protocol *aprotocol);
 		%feature("autodoc", "1");
 		const Handle_Interface_GeneralModule & Module() const;
 		%feature("autodoc", "1");
@@ -1685,19 +1685,19 @@ def __del__(self):
 class Interface_ShareFlags {
 	public:
 		%feature("autodoc", "1");
-		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		Interface_ShareFlags(const Interface_InterfaceModel *amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
-		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
+		Interface_ShareFlags(const Interface_InterfaceModel *amodel, const Interface_GTool *gtool);
 		%feature("autodoc", "1");
-		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		Interface_ShareFlags(const Interface_InterfaceModel *amodel, const Interface_Protocol *protocol);
 		%feature("autodoc", "1");
-		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel);
+		Interface_ShareFlags(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
 		Interface_ShareFlags(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel Model() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsShared(const Handle_Standard_Transient &ent) const;
+		Standard_Boolean IsShared(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		Interface_EntityIterator RootEntities() const;
 		%feature("autodoc", "1");
@@ -1779,9 +1779,9 @@ class Interface_CopyControl : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Clear();
 		%feature("autodoc", "1");
-		virtual		void Bind(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &res);
+		virtual		void Bind(const Standard_Transient *ent, const Standard_Transient *res);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Search(const Handle_Standard_Transient &ent, Handle_Standard_Transient & res) const;
+		virtual		Standard_Boolean Search(const Standard_Transient *ent, Handle_Standard_Transient & res) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1816,11 +1816,11 @@ def __del__(self):
 class Interface_ReaderModule : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Interface_FileReaderData &data, const Standard_Integer num) const;
+		virtual		Standard_Integer CaseNum(const Interface_FileReaderData *data, const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		virtual		void Read(const Standard_Integer casenum, const Handle_Interface_FileReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
+		virtual		void Read(const Standard_Integer casenum, const Interface_FileReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewRead(const Standard_Integer casenum, const Handle_Interface_FileReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, Handle_Standard_Transient & ent) const;
+		virtual		Standard_Boolean NewRead(const Standard_Integer casenum, const Interface_FileReaderData *data, const Standard_Integer num, Handle_Interface_Check & ach, Handle_Standard_Transient & ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1855,7 +1855,7 @@ def __del__(self):
 class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Interface_DataMapNodeOfDataMapOfTransientInteger(const Handle_Standard_Transient &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		Interface_DataMapNodeOfDataMapOfTransientInteger(const Standard_Transient *K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key() const;
 		%feature("autodoc","1");
@@ -1904,37 +1904,37 @@ def __del__(self):
 class Interface_CopyTool {
 	public:
 		%feature("autodoc", "1");
-		Interface_CopyTool(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		Interface_CopyTool(const Interface_InterfaceModel *amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
-		Interface_CopyTool(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		Interface_CopyTool(const Interface_InterfaceModel *amodel, const Interface_Protocol *protocol);
 		%feature("autodoc", "1");
-		Interface_CopyTool(const Handle_Interface_InterfaceModel &amodel);
+		Interface_CopyTool(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel Model() const;
 		%feature("autodoc", "1");
-		void SetControl(const Handle_Interface_CopyControl &othermap);
+		void SetControl(const Interface_CopyControl *othermap);
 		%feature("autodoc", "1");
 		Handle_Interface_CopyControl Control() const;
 		%feature("autodoc", "1");
 		virtual		void Clear();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Copy(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, const Standard_Boolean mapped, const Standard_Boolean errstat);
+		virtual		Standard_Boolean Copy(const Standard_Transient *entfrom, Handle_Standard_Transient & entto, const Standard_Boolean mapped, const Standard_Boolean errstat);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient Transferred(const Handle_Standard_Transient &ent);
+		Handle_Standard_Transient Transferred(const Standard_Transient *ent);
 		%feature("autodoc", "1");
-		void Bind(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &res);
+		void Bind(const Standard_Transient *ent, const Standard_Transient *res);
 		%feature("autodoc", "1");
-		Standard_Boolean Search(const Handle_Standard_Transient &ent, Handle_Standard_Transient & res) const;
+		Standard_Boolean Search(const Standard_Transient *ent, Handle_Standard_Transient & res) const;
 		%feature("autodoc", "1");
 		void ClearLastFlags();
 		%feature("autodoc", "1");
 		Standard_Integer LastCopiedAfter(const Standard_Integer numfrom, Handle_Standard_Transient & ent, Handle_Standard_Transient & res) const;
 		%feature("autodoc", "1");
-		void TransferEntity(const Handle_Standard_Transient &ent);
+		void TransferEntity(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void RenewImpliedRefs();
 		%feature("autodoc", "1");
-		void FillModel(const Handle_Interface_InterfaceModel &bmodel);
+		void FillModel(const Interface_InterfaceModel *bmodel);
 		%feature("autodoc", "1");
 		Interface_EntityIterator CompleteResult(const Standard_Boolean withreports=0) const;
 		%feature("autodoc", "1");
@@ -1963,7 +1963,7 @@ def __del__(self):
 class Interface_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Interface_DataMapNodeOfDataMapOfIntegerTransient(const Standard_Integer &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		Interface_DataMapNodeOfDataMapOfIntegerTransient(const Standard_Integer &K, const Standard_Transient *I, const TCollection_MapNodePtr &n);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey() {
@@ -2014,7 +2014,7 @@ class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 		%feature("autodoc", "1");
 		Interface_GlobalNodeOfReaderLib();
 		%feature("autodoc", "1");
-		void Add(const Handle_Interface_ReaderModule &amodule, const Handle_Interface_Protocol &aprotocol);
+		void Add(const Interface_ReaderModule *amodule, const Interface_Protocol *aprotocol);
 		%feature("autodoc", "1");
 		const Handle_Interface_ReaderModule & Module() const;
 		%feature("autodoc", "1");
@@ -2055,15 +2055,15 @@ def __del__(self):
 class Interface_CopyMap : public Interface_CopyControl {
 	public:
 		%feature("autodoc", "1");
-		Interface_CopyMap(const Handle_Interface_InterfaceModel &amodel);
+		Interface_CopyMap(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
 		virtual		void Clear();
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel Model() const;
 		%feature("autodoc", "1");
-		virtual		void Bind(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &res);
+		virtual		void Bind(const Standard_Transient *ent, const Standard_Transient *res);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Search(const Handle_Standard_Transient &ent, Handle_Standard_Transient & res) const;
+		virtual		Standard_Boolean Search(const Standard_Transient *ent, Handle_Standard_Transient & res) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2238,20 +2238,20 @@ def __del__(self):
 class Interface_GeneralLib {
 	public:
 		%feature("autodoc", "1");
-		void SetGlobal(const Handle_Interface_GeneralModule &amodule, const Handle_Interface_Protocol &aprotocol);
+		void SetGlobal(const Interface_GeneralModule *amodule, const Interface_Protocol *aprotocol);
 		%feature("autodoc", "1");
-		Interface_GeneralLib(const Handle_Interface_Protocol &aprotocol);
+		Interface_GeneralLib(const Interface_Protocol *aprotocol);
 		%feature("autodoc", "1");
 		Interface_GeneralLib();
 		%feature("autodoc", "1");
-		void AddProtocol(const Handle_Standard_Transient &aprotocol);
+		void AddProtocol(const Standard_Transient *aprotocol);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc","Select(const obj) -> Standard_Integer");
 
-		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_GeneralModule & module, Standard_Integer &OutValue) const;
+		Standard_Boolean Select(const Standard_Transient *obj, Handle_Interface_GeneralModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -2339,9 +2339,9 @@ class Interface_Array1OfHAsciiString {
 		%feature("autodoc", "1");
 		Interface_Array1OfHAsciiString(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Interface_Array1OfHAsciiString(const Handle_TCollection_HAsciiString &Item, const Standard_Integer Low, const Standard_Integer Up);
+		Interface_Array1OfHAsciiString(const TCollection_HAsciiString *Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &V);
+		void Init(const TCollection_HAsciiString *V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -2357,7 +2357,7 @@ class Interface_Array1OfHAsciiString {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TCollection_HAsciiString &Value);
+		void SetValue(const Standard_Integer Index, const TCollection_HAsciiString *Value);
 		%feature("autodoc", "1");
 		const Handle_TCollection_HAsciiString & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -2433,11 +2433,11 @@ class Interface_EntityList {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_Standard_Transient &ent);
+		void Append(const Standard_Transient *ent);
 		%feature("autodoc", "1");
-		void Add(const Handle_Standard_Transient &ent);
+		void Add(const Standard_Transient *ent);
 		%feature("autodoc", "1");
-		void Remove(const Handle_Standard_Transient &ent);
+		void Remove(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer num);
 		%feature("autodoc", "1");
@@ -2447,13 +2447,13 @@ class Interface_EntityList {
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer num, const Handle_Standard_Transient &ent);
+		void SetValue(const Standard_Integer num, const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void FillIterator(Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbTypedEntities(const Handle_Standard_Type &atype) const;
+		Standard_Integer NbTypedEntities(const Standard_Type *atype) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Transient TypedEntity(const Handle_Standard_Type &atype, const Standard_Integer num=0) const;
+		Handle_Standard_Transient TypedEntity(const Standard_Type *atype, const Standard_Integer num=0) const;
 
 };
 %feature("shadow") Interface_EntityList::~Interface_EntityList %{
@@ -2476,19 +2476,19 @@ def __del__(self):
 class Interface_ShareTool {
 	public:
 		%feature("autodoc", "1");
-		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		Interface_ShareTool(const Interface_InterfaceModel *amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
-		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
+		Interface_ShareTool(const Interface_InterfaceModel *amodel, const Interface_GTool *gtool);
 		%feature("autodoc", "1");
-		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		Interface_ShareTool(const Interface_InterfaceModel *amodel, const Interface_Protocol *protocol);
 		%feature("autodoc", "1");
-		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel);
+		Interface_ShareTool(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
 		Interface_ShareTool(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
-		Interface_ShareTool(const Handle_Interface_HGraph &ahgraph);
+		Interface_ShareTool(const Interface_HGraph *ahgraph);
 		%feature("autodoc", "1");
-		void AddImplied(const Handle_Interface_GTool &gtool);
+		void AddImplied(const Interface_GTool *gtool);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel Model() const;
 		%feature("autodoc", "1");
@@ -2496,19 +2496,19 @@ class Interface_ShareTool {
 		%feature("autodoc", "1");
 		Interface_EntityIterator RootEntities() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsShared(const Handle_Standard_Transient &ent) const;
+		Standard_Boolean IsShared(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		Interface_EntityIterator Shareds(const Handle_Standard_Transient &ent) const;
+		Interface_EntityIterator Shareds(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		Interface_EntityIterator Sharings(const Handle_Standard_Transient &ent) const;
+		Interface_EntityIterator Sharings(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbTypedSharings(const Handle_Standard_Transient &ent, const Handle_Standard_Type &atype) const;
+		Standard_Integer NbTypedSharings(const Standard_Transient *ent, const Standard_Type *atype) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Transient TypedSharing(const Handle_Standard_Transient &ent, const Handle_Standard_Type &atype) const;
+		Handle_Standard_Transient TypedSharing(const Standard_Transient *ent, const Standard_Type *atype) const;
 		%feature("autodoc", "1");
-		Interface_EntityIterator All(const Handle_Standard_Transient &ent, const Standard_Boolean rootlast=1) const;
+		Interface_EntityIterator All(const Standard_Transient *ent, const Standard_Boolean rootlast=1) const;
 		%feature("autodoc", "1");
-		void Print(const Interface_EntityIterator &iter, const Handle_Message_Messenger &S) const;
+		void Print(const Interface_EntityIterator &iter, const Message_Messenger *S) const;
 
 };
 %feature("shadow") Interface_ShareTool::~Interface_ShareTool %{
@@ -2539,29 +2539,21 @@ class Interface_HSequenceOfCheck : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_Interface_Check &anItem);
+		void Append(const Interface_Check *anItem);
 		%feature("autodoc", "1");
-		void Append(const Handle_Interface_HSequenceOfCheck &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Interface_Check &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Interface_HSequenceOfCheck &aSequence);
+		void Prepend(const Interface_Check *anItem);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Interface_Check &anItem);
+		void InsertBefore(const Standard_Integer anIndex, const Interface_Check *anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Interface_HSequenceOfCheck &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Interface_Check &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Interface_HSequenceOfCheck &aSequence);
+		void InsertAfter(const Standard_Integer anIndex, const Interface_Check *anItem);
 		%feature("autodoc", "1");
 		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
 		Handle_Interface_HSequenceOfCheck Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Interface_Check &anItem);
+		void SetValue(const Standard_Integer anIndex, const Interface_Check *anItem);
 		%feature("autodoc", "1");
 		const Handle_Interface_Check & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -2612,13 +2604,9 @@ class Interface_Static : public Interface_TypedValue {
 		%feature("autodoc", "1");
 		Interface_Static(const char * family, const char * name, const Interface_ParamType type=Interface_ParamText, const char * init="");
 		%feature("autodoc", "1");
-		Interface_Static(const char * family, const char * name, const Handle_Interface_Static &other);
-		%feature("autodoc", "1");
-		void PrintStatic(const Handle_Message_Messenger &S) const;
+		void PrintStatic(const Message_Messenger *S) const;
 		%feature("autodoc", "1");
 		char * Family() const;
-		%feature("autodoc", "1");
-		void SetWild(const Handle_Interface_Static &wildcard);
 		%feature("autodoc", "1");
 		Handle_Interface_Static Wild() const;
 		%feature("autodoc", "1");
@@ -2737,7 +2725,7 @@ class Interface_NodeOfGeneralLib : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_NodeOfGeneralLib();
 		%feature("autodoc", "1");
-		void AddNode(const Handle_Interface_GlobalNodeOfGeneralLib &anode);
+		void AddNode(const Interface_GlobalNodeOfGeneralLib *anode);
 		%feature("autodoc", "1");
 		const Handle_Interface_GeneralModule & Module() const;
 		%feature("autodoc", "1");
@@ -2778,7 +2766,7 @@ def __del__(self):
 class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Interface_SequenceNodeOfSequenceOfCheck(const Handle_Interface_Check &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Interface_SequenceNodeOfSequenceOfCheck(const Interface_Check *I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
 		Handle_Interface_Check & Value() const;
 		%feature("autodoc", "1");
@@ -2876,21 +2864,19 @@ class Interface_UndefinedContent : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Reservate(const Standard_Integer nb, const Standard_Integer nblit);
 		%feature("autodoc", "1");
-		void AddLiteral(const Interface_ParamType ptype, const Handle_TCollection_HAsciiString &val);
+		void AddLiteral(const Interface_ParamType ptype, const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
-		void AddEntity(const Interface_ParamType ptype, const Handle_Standard_Transient &ent);
+		void AddEntity(const Interface_ParamType ptype, const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void RemoveParam(const Standard_Integer num);
 		%feature("autodoc", "1");
-		void SetLiteral(const Standard_Integer num, const Interface_ParamType ptype, const Handle_TCollection_HAsciiString &val);
+		void SetLiteral(const Standard_Integer num, const Interface_ParamType ptype, const TCollection_HAsciiString *val);
 		%feature("autodoc", "1");
-		void SetEntity(const Standard_Integer num, const Interface_ParamType ptype, const Handle_Standard_Transient &ent);
+		void SetEntity(const Standard_Integer num, const Interface_ParamType ptype, const Standard_Transient *ent);
 		%feature("autodoc", "1");
-		void SetEntity(const Standard_Integer num, const Handle_Standard_Transient &ent);
+		void SetEntity(const Standard_Integer num, const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		Interface_EntityList EntityList() const;
-		%feature("autodoc", "1");
-		void GetFromAnother(const Handle_Interface_UndefinedContent &other, Interface_CopyTool & TC);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2985,17 +2971,17 @@ def __del__(self):
 class Interface_FileReaderTool {
 	public:
 		%feature("autodoc", "1");
-		void SetData(const Handle_Interface_FileReaderData &reader, const Handle_Interface_Protocol &protocol);
+		void SetData(const Interface_FileReaderData *reader, const Interface_Protocol *protocol);
 		%feature("autodoc", "1");
 		Handle_Interface_Protocol Protocol() const;
 		%feature("autodoc", "1");
 		Handle_Interface_FileReaderData Data() const;
 		%feature("autodoc", "1");
-		void SetModel(const Handle_Interface_InterfaceModel &amodel);
+		void SetModel(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel Model() const;
 		%feature("autodoc", "1");
-		void SetMessenger(const Handle_Message_Messenger &messenger);
+		void SetMessenger(const Message_Messenger *messenger);
 		%feature("autodoc", "1");
 		Handle_Message_Messenger Messenger() const;
 		%feature("autodoc", "1");
@@ -3017,17 +3003,17 @@ class Interface_FileReaderTool {
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel NewModel() const;
 		%feature("autodoc", "1");
-		void LoadModel(const Handle_Interface_InterfaceModel &amodel);
+		void LoadModel(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient LoadedEntity(const Standard_Integer num);
 		%feature("autodoc", "1");
-		virtual		void BeginRead(const Handle_Interface_InterfaceModel &amodel);
+		virtual		void BeginRead(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Handle_Standard_Transient &anent, Handle_Interface_Check & acheck);
+		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Standard_Transient *anent, Handle_Interface_Check & acheck);
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
+		virtual		void EndRead(const Interface_InterfaceModel *amodel);
 
 };
 %feature("shadow") Interface_FileReaderTool::~Interface_FileReaderTool %{
@@ -3081,19 +3067,19 @@ def __del__(self):
 class Interface_CheckTool {
 	public:
 		%feature("autodoc", "1");
-		Interface_CheckTool(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &protocol);
+		Interface_CheckTool(const Interface_InterfaceModel *model, const Interface_Protocol *protocol);
 		%feature("autodoc", "1");
-		Interface_CheckTool(const Handle_Interface_InterfaceModel &model);
+		Interface_CheckTool(const Interface_InterfaceModel *model);
 		%feature("autodoc", "1");
 		Interface_CheckTool(const Interface_Graph &graph);
 		%feature("autodoc", "1");
-		Interface_CheckTool(const Handle_Interface_HGraph &hgraph);
+		Interface_CheckTool(const Interface_HGraph *hgraph);
 		%feature("autodoc", "1");
-		void FillCheck(const Handle_Standard_Transient &ent, const Interface_ShareTool &sh, Handle_Interface_Check & ach);
+		void FillCheck(const Standard_Transient *ent, const Interface_ShareTool &sh, Handle_Interface_Check & ach);
 		%feature("autodoc", "1");
-		void Print(const Handle_Interface_Check &ach, const Handle_Message_Messenger &S) const;
+		void Print(const Interface_Check *ach, const Message_Messenger *S) const;
 		%feature("autodoc", "1");
-		void Print(const Interface_CheckIterator &list, const Handle_Message_Messenger &S) const;
+		void Print(const Interface_CheckIterator &list, const Message_Messenger *S) const;
 		%feature("autodoc", "1");
 		Handle_Interface_Check Check(const Standard_Integer num);
 		%feature("autodoc", "1");
@@ -3134,9 +3120,9 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_HArray1OfHAsciiString(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Interface_HArray1OfHAsciiString(const Standard_Integer Low, const Standard_Integer Up, const Handle_TCollection_HAsciiString &V);
+		Interface_HArray1OfHAsciiString(const Standard_Integer Low, const Standard_Integer Up, const TCollection_HAsciiString *V);
 		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &V);
+		void Init(const TCollection_HAsciiString *V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3144,7 +3130,7 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TCollection_HAsciiString &Value);
+		void SetValue(const Standard_Integer Index, const TCollection_HAsciiString *Value);
 		%feature("autodoc", "1");
 		const Handle_TCollection_HAsciiString & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -3187,13 +3173,13 @@ def __del__(self):
 class Interface_Graph {
 	public:
 		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		Interface_Graph(const Interface_InterfaceModel *amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		Interface_Graph(const Interface_InterfaceModel *amodel, const Interface_Protocol *protocol);
 		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
+		Interface_Graph(const Interface_InterfaceModel *amodel, const Interface_GTool *gtool);
 		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel);
+		Interface_Graph(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
 		Interface_Graph(const Interface_Graph &agraph, const Standard_Boolean copied=0);
 		%feature("autodoc", "1");
@@ -3205,11 +3191,11 @@ class Interface_Graph {
 		%feature("autodoc", "1");
 		Standard_Integer Size() const;
 		%feature("autodoc", "1");
-		Standard_Integer EntityNumber(const Handle_Standard_Transient &ent) const;
+		Standard_Integer EntityNumber(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsPresent(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsPresent(const Handle_Standard_Transient &ent) const;
+		Standard_Boolean IsPresent(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Entity(const Standard_Integer num) const;
 		%feature("autodoc","1");
@@ -3241,9 +3227,9 @@ class Interface_Graph {
 		%feature("autodoc", "1");
 		void GetFromModel();
 		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent, const Standard_Boolean shared, const Standard_Integer newstat=0);
+		void GetFromEntity(const Standard_Transient *ent, const Standard_Boolean shared, const Standard_Integer newstat=0);
 		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent, const Standard_Boolean shared, const Standard_Integer newstat, const Standard_Integer overlapstat, const Standard_Boolean cumul);
+		void GetFromEntity(const Standard_Transient *ent, const Standard_Boolean shared, const Standard_Integer newstat, const Standard_Integer overlapstat, const Standard_Boolean cumul);
 		%feature("autodoc", "1");
 		void GetFromIter(const Interface_EntityIterator &iter, const Standard_Integer newstat);
 		%feature("autodoc", "1");
@@ -3253,41 +3239,41 @@ class Interface_Graph {
 		%feature("autodoc", "1");
 		void GetFromGraph(const Interface_Graph &agraph, const Standard_Integer stat);
 		%feature("autodoc", "1");
-		Standard_Boolean HasShareErrors(const Handle_Standard_Transient &ent) const;
+		Standard_Boolean HasShareErrors(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasRedefinedShareds(const Handle_Standard_Transient &ent) const;
+		Standard_Boolean HasRedefinedShareds(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		Interface_EntityIterator Shareds(const Handle_Standard_Transient &ent) const;
+		Interface_EntityIterator Shareds(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		Interface_IntList SharedNums(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Interface_EntityIterator Sharings(const Handle_Standard_Transient &ent) const;
+		Interface_EntityIterator Sharings(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		Interface_IntList SharingNums(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Interface_EntityIterator TypedSharings(const Handle_Standard_Transient &ent, const Handle_Standard_Type &type) const;
+		Interface_EntityIterator TypedSharings(const Standard_Transient *ent, const Standard_Type *type) const;
 		%feature("autodoc", "1");
 		Interface_EntityIterator RootEntities() const;
 		%feature("autodoc", "1");
-		void SetShare(const Handle_Standard_Transient &ent);
+		void SetShare(const Standard_Transient *ent);
 		%feature("autodoc", "1");
-		void SetShare(const Handle_Standard_Transient &ent, const Interface_EntityIterator &list);
+		void SetShare(const Standard_Transient *ent, const Interface_EntityIterator &list);
 		%feature("autodoc", "1");
-		void SetShare(const Handle_Standard_Transient &ent, const Interface_IntList &list);
+		void SetShare(const Standard_Transient *ent, const Interface_IntList &list);
 		%feature("autodoc", "1");
-		void SetNoShare(const Handle_Standard_Transient &ent);
+		void SetNoShare(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void SetNoShare(const Interface_EntityIterator &list);
 		%feature("autodoc", "1");
-		void AddShared(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &shared);
+		void AddShared(const Standard_Transient *ent, const Standard_Transient *shared);
 		%feature("autodoc", "1");
-		void RemoveShared(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &shared);
+		void RemoveShared(const Standard_Transient *ent, const Standard_Transient *shared);
 		%feature("autodoc", "1");
-		void ResetShare(const Handle_Standard_Transient &ent);
+		void ResetShare(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void ResetAllShare();
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name(const Handle_Standard_Transient &ent) const;
+		Handle_TCollection_HAsciiString Name(const Standard_Transient *ent) const;
 
 };
 %feature("shadow") Interface_Graph::~Interface_Graph %{
@@ -3393,11 +3379,11 @@ def __del__(self):
 class Interface_ReportEntity : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Interface_ReportEntity(const Handle_Standard_Transient &unknown);
+		Interface_ReportEntity(const Standard_Transient *unknown);
 		%feature("autodoc", "1");
-		Interface_ReportEntity(const Handle_Interface_Check &acheck, const Handle_Standard_Transient &concerned);
+		Interface_ReportEntity(const Interface_Check *acheck, const Standard_Transient *concerned);
 		%feature("autodoc", "1");
-		void SetContent(const Handle_Standard_Transient &content);
+		void SetContent(const Standard_Transient *content);
 		%feature("autodoc", "1");
 		const Handle_Interface_Check & Check() const;
 		%feature("autodoc", "1");
@@ -3452,7 +3438,7 @@ class Interface_SignLabel : public MoniTool_SignText {
 		%feature("autodoc", "1");
 		virtual		char * Name() const;
 		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Text(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &context) const;
+		virtual		TCollection_AsciiString Text(const Standard_Transient *ent, const Standard_Transient *context) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3538,13 +3524,13 @@ class Interface_HGraph : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_HGraph(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		Interface_HGraph(const Interface_InterfaceModel *amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		Interface_HGraph(const Interface_InterfaceModel *amodel, const Interface_Protocol *protocol);
 		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
+		Interface_HGraph(const Interface_InterfaceModel *amodel, const Interface_GTool *gtool);
 		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel);
+		Interface_HGraph(const Interface_InterfaceModel *amodel);
 		%feature("autodoc", "1");
 		const Interface_Graph & Graph() const;
 		%feature("autodoc", "1");
@@ -3585,33 +3571,31 @@ class Interface_Protocol : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_Protocol Active();
 		%feature("autodoc", "1");
-		void SetActive(const Handle_Interface_Protocol &aprotocol);
-		%feature("autodoc", "1");
 		void ClearActive();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbResources() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Interface_Protocol Resource(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNumber(const Handle_Standard_Transient &obj) const;
+		virtual		Standard_Integer CaseNumber(const Standard_Transient *obj) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDynamicType(const Handle_Standard_Transient &obj) const;
+		virtual		Standard_Boolean IsDynamicType(const Standard_Transient *obj) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbTypes(const Handle_Standard_Transient &obj) const;
+		virtual		Standard_Integer NbTypes(const Standard_Transient *obj) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Type Type(const Handle_Standard_Transient &obj, const Standard_Integer nt=1) const;
+		Handle_Standard_Type Type(const Standard_Transient *obj, const Standard_Integer nt=1) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer TypeNumber(const Handle_Standard_Type &atype) const;
+		virtual		Standard_Integer TypeNumber(const Standard_Type *atype) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean GlobalCheck(const Interface_Graph &G, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Interface_InterfaceModel NewModel() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSuitableModel(const Handle_Interface_InterfaceModel &model) const;
+		virtual		Standard_Boolean IsSuitableModel(const Interface_InterfaceModel *model) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Transient UnknownEntity() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsUnknownEntity(const Handle_Standard_Transient &ent) const;
+		virtual		Standard_Boolean IsUnknownEntity(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3654,19 +3638,19 @@ class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Interface_SequenceOfCheck & operator=(const Interface_SequenceOfCheck &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_Interface_Check &T);
+		void Append(const Interface_Check *T);
 		%feature("autodoc", "1");
 		void Append(Interface_SequenceOfCheck & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Interface_Check &T);
+		void Prepend(const Interface_Check *T);
 		%feature("autodoc", "1");
 		void Prepend(Interface_SequenceOfCheck & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Interface_Check &I);
+		void InsertBefore(const Standard_Integer Index, const Interface_Check *I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, Interface_SequenceOfCheck & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Interface_Check &T);
+		void InsertAfter(const Standard_Integer Index, const Interface_Check *T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, Interface_SequenceOfCheck & S);
 		%feature("autodoc", "1");
@@ -3680,7 +3664,7 @@ class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Handle_Interface_Check & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Interface_Check &I);
+		void SetValue(const Standard_Integer Index, const Interface_Check *I);
 		%feature("autodoc", "1");
 		Handle_Interface_Check & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -3713,13 +3697,13 @@ class Interface_Check : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_Check();
 		%feature("autodoc", "1");
-		Interface_Check(const Handle_Standard_Transient &anentity);
+		Interface_Check(const Standard_Transient *anentity);
 		%feature("autodoc", "1");
 		void SendFail(const Message_Msg &amsg);
 		%feature("autodoc", "1");
-		void AddFail(const Handle_TCollection_HAsciiString &amess);
+		void AddFail(const TCollection_HAsciiString *amess);
 		%feature("autodoc", "1");
-		void AddFail(const Handle_TCollection_HAsciiString &amess, const Handle_TCollection_HAsciiString &orig);
+		void AddFail(const TCollection_HAsciiString *amess, const TCollection_HAsciiString *orig);
 		%feature("autodoc", "1");
 		void AddFail(const char * amess, const char * orig="");
 		%feature("autodoc", "1");
@@ -3737,9 +3721,9 @@ class Interface_Check : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SendWarning(const Message_Msg &amsg);
 		%feature("autodoc", "1");
-		void AddWarning(const Handle_TCollection_HAsciiString &amess);
+		void AddWarning(const TCollection_HAsciiString *amess);
 		%feature("autodoc", "1");
-		void AddWarning(const Handle_TCollection_HAsciiString &amess, const Handle_TCollection_HAsciiString &orig);
+		void AddWarning(const TCollection_HAsciiString *amess, const TCollection_HAsciiString *orig);
 		%feature("autodoc", "1");
 		void AddWarning(const char * amess, const char * orig="");
 		%feature("autodoc", "1");
@@ -3767,7 +3751,7 @@ class Interface_Check : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean Complies(const Interface_CheckStatus status) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Complies(const Handle_TCollection_HAsciiString &mess, const Standard_Integer incl, const Interface_CheckStatus status) const;
+		Standard_Boolean Complies(const TCollection_HAsciiString *mess, const Standard_Integer incl, const Interface_CheckStatus status) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasEntity() const;
 		%feature("autodoc", "1");
@@ -3781,19 +3765,15 @@ class Interface_Check : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ClearInfoMsgs();
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_TCollection_HAsciiString &mess, const Standard_Integer incl, const Interface_CheckStatus status);
+		Standard_Boolean Remove(const TCollection_HAsciiString *mess, const Standard_Integer incl, const Interface_CheckStatus status);
 		%feature("autodoc", "1");
 		Standard_Boolean Mend(const char * pref, const Standard_Integer num=0);
 		%feature("autodoc", "1");
-		void SetEntity(const Handle_Standard_Transient &anentity);
+		void SetEntity(const Standard_Transient *anentity);
 		%feature("autodoc", "1");
-		void GetEntity(const Handle_Standard_Transient &anentity);
+		void GetEntity(const Standard_Transient *anentity);
 		%feature("autodoc", "1");
-		void GetMessages(const Handle_Interface_Check &other);
-		%feature("autodoc", "1");
-		void GetAsWarning(const Handle_Interface_Check &other, const Standard_Boolean failsonly);
-		%feature("autodoc", "1");
-		void Print(const Handle_Message_Messenger &S, const Standard_Integer level, const Standard_Integer final=1) const;
+		void Print(const Message_Messenger *S, const Standard_Integer level, const Standard_Integer final=1) const;
 		%feature("autodoc", "1");
 		void Trace(const Standard_Integer level=-0x000000001, const Standard_Integer final=1) const;
 		%feature("autodoc", "1");
@@ -3832,17 +3812,17 @@ class Interface_GTool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_GTool();
 		%feature("autodoc", "1");
-		Interface_GTool(const Handle_Interface_Protocol &proto, const Standard_Integer nbent=0);
+		Interface_GTool(const Interface_Protocol *proto, const Standard_Integer nbent=0);
 		%feature("autodoc", "1");
-		void SetSignType(const Handle_Interface_SignType &sign);
+		void SetSignType(const Interface_SignType *sign);
 		%feature("autodoc", "1");
 		Handle_Interface_SignType SignType() const;
 		%feature("autodoc", "1");
-		char * SignValue(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		char * SignValue(const Standard_Transient *ent, const Interface_InterfaceModel *model) const;
 		%feature("autodoc", "1");
 		char * SignName() const;
 		%feature("autodoc", "1");
-		void SetProtocol(const Handle_Interface_Protocol &proto, const Standard_Boolean enforce=0);
+		void SetProtocol(const Interface_Protocol *proto, const Standard_Boolean enforce=0);
 		%feature("autodoc", "1");
 		Handle_Interface_Protocol Protocol() const;
 		%feature("autodoc", "1");
@@ -3853,7 +3833,7 @@ class Interface_GTool : public MMgt_TShared {
 		void ClearEntities();
 		%feature("autodoc","Select(const ent, Standard_Boolean enforce=0) -> Standard_Integer");
 
-		Standard_Boolean Select(const Handle_Standard_Transient &ent, Handle_Interface_GeneralModule & gmod, Standard_Integer &OutValue, const Standard_Boolean enforce=0);
+		Standard_Boolean Select(const Standard_Transient *ent, Handle_Interface_GeneralModule & gmod, Standard_Integer &OutValue, const Standard_Boolean enforce=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3890,17 +3870,17 @@ class Interface_Category {
 		%feature("autodoc", "1");
 		Interface_Category();
 		%feature("autodoc", "1");
-		Interface_Category(const Handle_Interface_Protocol &proto);
+		Interface_Category(const Interface_Protocol *proto);
 		%feature("autodoc", "1");
-		Interface_Category(const Handle_Interface_GTool &gtool);
+		Interface_Category(const Interface_GTool *gtool);
 		%feature("autodoc", "1");
-		void SetProtocol(const Handle_Interface_Protocol &proto);
+		void SetProtocol(const Interface_Protocol *proto);
 		%feature("autodoc", "1");
-		Standard_Integer CatNum(const Handle_Standard_Transient &ent, const Interface_ShareTool &shares);
+		Standard_Integer CatNum(const Standard_Transient *ent, const Interface_ShareTool &shares);
 		%feature("autodoc", "1");
 		void ClearNums();
 		%feature("autodoc", "1");
-		void Compute(const Handle_Interface_InterfaceModel &model, const Interface_ShareTool &shares);
+		void Compute(const Interface_InterfaceModel *model, const Interface_ShareTool &shares);
 		%feature("autodoc", "1");
 		Standard_Integer Num(const Standard_Integer nument) const;
 		%feature("autodoc", "1");
@@ -3937,21 +3917,21 @@ class Interface_EntityIterator {
 		%feature("autodoc", "1");
 		Interface_EntityIterator();
 		%feature("autodoc", "1");
-		Interface_EntityIterator(const Handle_TColStd_HSequenceOfTransient &list);
+		Interface_EntityIterator(const TColStd_HSequenceOfTransient *list);
 		%feature("autodoc", "1");
-		void AddList(const Handle_TColStd_HSequenceOfTransient &list);
+		void AddList(const TColStd_HSequenceOfTransient *list);
 		%feature("autodoc", "1");
-		void AddItem(const Handle_Standard_Transient &anentity);
+		void AddItem(const Standard_Transient *anentity);
 		%feature("autodoc", "1");
-		void GetOneItem(const Handle_Standard_Transient &anentity);
+		void GetOneItem(const Standard_Transient *anentity);
 		%feature("autodoc", "1");
-		void SelectType(const Handle_Standard_Type &atype, const Standard_Boolean keep);
+		void SelectType(const Standard_Type *atype, const Standard_Boolean keep);
 		%feature("autodoc", "1");
 		Standard_Integer NbEntities() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbTyped(const Handle_Standard_Type &type) const;
+		Standard_Integer NbTyped(const Standard_Type *type) const;
 		%feature("autodoc", "1");
-		Interface_EntityIterator Typed(const Handle_Standard_Type &type) const;
+		Interface_EntityIterator Typed(const Standard_Type *type) const;
 		%feature("autodoc", "1");
 		virtual		void Start() const;
 		%feature("autodoc", "1");
@@ -3992,7 +3972,7 @@ class Interface_GraphContent : public Interface_EntityIterator {
 		%feature("autodoc", "1");
 		Interface_GraphContent(const Interface_Graph &agraph, const Standard_Integer stat);
 		%feature("autodoc", "1");
-		Interface_GraphContent(const Interface_Graph &agraph, const Handle_Standard_Transient &ent);
+		Interface_GraphContent(const Interface_Graph &agraph, const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void GetFromGraph(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
@@ -4025,9 +4005,9 @@ def __del__(self):
 class Interface_SignType : public MoniTool_SignText {
 	public:
 		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Text(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &context) const;
+		virtual		TCollection_AsciiString Text(const Standard_Transient *ent, const Standard_Transient *context) const;
 		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		virtual		char * Value(const Standard_Transient *ent, const Interface_InterfaceModel *model) const;
 		%feature("autodoc", "1");
 		char * ClassName(const char * typnam);
 		%feature("autodoc", "1");
@@ -4074,29 +4054,29 @@ class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Standard_Integer &I);
+		Standard_Boolean Bind(const Standard_Transient *K, const Standard_Integer &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
+		Standard_Boolean IsBound(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
+		Standard_Boolean UnBind(const Standard_Transient *K);
 		%feature("autodoc", "1");
-		const Standard_Integer & Find(const Handle_Standard_Transient &K) const;
+		const Standard_Integer & Find(const Standard_Transient *K) const;
 		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const Handle_Standard_Transient &K) const;
+		const Standard_Integer & operator()(const Standard_Transient *K) const;
 		%feature("autodoc","1");
 		%extend {
-				Standard_Integer GetChangeFind(const Handle_Standard_Transient &K) {
+				Standard_Integer GetChangeFind(const Standard_Transient *K) {
 				return (Standard_Integer) $self->ChangeFind(K);
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetChangeFind(Standard_Integer value ,const Handle_Standard_Transient &K) {
+				void SetChangeFind(Standard_Integer value ,const Standard_Transient *K) {
 				$self->ChangeFind(K)=value;
 				}
 		};
 		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Handle_Standard_Transient &K);
+		Standard_Integer & operator()(const Standard_Transient *K);
 
 };
 %feature("shadow") Interface_DataMapOfTransientInteger::~Interface_DataMapOfTransientInteger %{
@@ -4170,7 +4150,7 @@ class Interface_CheckIterator {
 		%feature("autodoc", "1");
 		char * Name() const;
 		%feature("autodoc", "1");
-		void SetModel(const Handle_Interface_InterfaceModel &model);
+		void SetModel(const Interface_InterfaceModel *model);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel Model() const;
 		%feature("autodoc", "1");
@@ -4178,15 +4158,15 @@ class Interface_CheckIterator {
 		%feature("autodoc", "1");
 		void Merge(Interface_CheckIterator & other);
 		%feature("autodoc", "1");
-		void Add(const Handle_Interface_Check &ach, const Standard_Integer num=0);
+		void Add(const Interface_Check *ach, const Standard_Integer num=0);
 		%feature("autodoc", "1");
 		const Handle_Interface_Check & Check(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		const Handle_Interface_Check & Check(const Handle_Standard_Transient &ent) const;
+		const Handle_Interface_Check & Check(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		Handle_Interface_Check & CCheck(const Standard_Integer num);
 		%feature("autodoc", "1");
-		Handle_Interface_Check & CCheck(const Handle_Standard_Transient &ent);
+		Handle_Interface_Check & CCheck(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty(const Standard_Boolean failsonly) const;
 		%feature("autodoc", "1");
@@ -4210,9 +4190,9 @@ class Interface_CheckIterator {
 		%feature("autodoc", "1");
 		Standard_Integer Number() const;
 		%feature("autodoc", "1");
-		void Print(const Handle_Message_Messenger &S, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
+		void Print(const Message_Messenger *S, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
 		%feature("autodoc", "1");
-		void Print(const Handle_Message_Messenger &S, const Handle_Interface_InterfaceModel &model, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
+		void Print(const Message_Messenger *S, const Interface_InterfaceModel *model, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -4239,7 +4219,7 @@ class Interface_NodeOfReaderLib : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_NodeOfReaderLib();
 		%feature("autodoc", "1");
-		void AddNode(const Handle_Interface_GlobalNodeOfReaderLib &anode);
+		void AddNode(const Interface_GlobalNodeOfReaderLib *anode);
 		%feature("autodoc", "1");
 		const Handle_Interface_ReaderModule & Module() const;
 		%feature("autodoc", "1");
@@ -4343,7 +4323,7 @@ class Interface_LineBuffer {
 		%feature("autodoc", "1");
 		void Move(TCollection_AsciiString & str);
 		%feature("autodoc", "1");
-		void Move(const Handle_TCollection_HAsciiString &str);
+		void Move(const TCollection_HAsciiString *str);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Moved();
 		%feature("autodoc", "1");
@@ -4429,11 +4409,11 @@ class Interface_InterfaceModel : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		void SetProtocol(const Handle_Interface_Protocol &proto);
+		void SetProtocol(const Interface_Protocol *proto);
 		%feature("autodoc", "1");
 		virtual		Handle_Interface_Protocol Protocol() const;
 		%feature("autodoc", "1");
-		void SetGTool(const Handle_Interface_GTool &gtool);
+		void SetGTool(const Interface_GTool *gtool);
 		%feature("autodoc", "1");
 		Handle_Interface_GTool GTool() const;
 		%feature("autodoc","1");
@@ -4459,17 +4439,17 @@ class Interface_InterfaceModel : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer NbEntities() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Standard_Transient &anentity) const;
+		Standard_Boolean Contains(const Standard_Transient *anentity) const;
 		%feature("autodoc", "1");
-		Standard_Integer Number(const Handle_Standard_Transient &anentity) const;
+		Standard_Integer Number(const Standard_Transient *anentity) const;
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbTypes(const Handle_Standard_Transient &ent) const;
+		Standard_Integer NbTypes(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Type Type(const Handle_Standard_Transient &ent, const Standard_Integer num=1) const;
+		Handle_Standard_Type Type(const Standard_Transient *ent, const Standard_Integer num=1) const;
 		%feature("autodoc", "1");
-		char * TypeName(const Handle_Standard_Transient &ent, const Standard_Boolean complete=1) const;
+		char * TypeName(const Standard_Transient *ent, const Standard_Boolean complete=1) const;
 		%feature("autodoc", "1");
 		char * ClassName(const char * typnam);
 		%feature("autodoc", "1");
@@ -4485,9 +4465,9 @@ class Interface_InterfaceModel : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean ClearReportEntity(const Standard_Integer num);
 		%feature("autodoc", "1");
-		Standard_Boolean SetReportEntity(const Standard_Integer num, const Handle_Interface_ReportEntity &rep);
+		Standard_Boolean SetReportEntity(const Standard_Integer num, const Interface_ReportEntity *rep);
 		%feature("autodoc", "1");
-		Standard_Boolean AddReportEntity(const Handle_Interface_ReportEntity &rep, const Standard_Boolean semantic=0);
+		Standard_Boolean AddReportEntity(const Interface_ReportEntity *rep, const Standard_Boolean semantic=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsUnknownEntity(const Standard_Integer num) const;
 		%feature("autodoc", "1");
@@ -4499,23 +4479,21 @@ class Interface_InterfaceModel : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Reservate(const Standard_Integer nbent);
 		%feature("autodoc", "1");
-		virtual		void AddEntity(const Handle_Standard_Transient &anentity);
+		virtual		void AddEntity(const Standard_Transient *anentity);
 		%feature("autodoc", "1");
-		void AddWithRefs(const Handle_Standard_Transient &anent, const Handle_Interface_Protocol &proto, const Standard_Integer level=0, const Standard_Boolean listall=0);
+		void AddWithRefs(const Standard_Transient *anent, const Interface_Protocol *proto, const Standard_Integer level=0, const Standard_Boolean listall=0);
 		%feature("autodoc", "1");
-		void AddWithRefs(const Handle_Standard_Transient &anent, const Standard_Integer level=0, const Standard_Boolean listall=0);
+		void AddWithRefs(const Standard_Transient *anent, const Standard_Integer level=0, const Standard_Boolean listall=0);
 		%feature("autodoc", "1");
-		void AddWithRefs(const Handle_Standard_Transient &anent, const Interface_GeneralLib &lib, const Standard_Integer level=0, const Standard_Boolean listall=0);
+		void AddWithRefs(const Standard_Transient *anent, const Interface_GeneralLib &lib, const Standard_Integer level=0, const Standard_Boolean listall=0);
 		%feature("autodoc", "1");
-		void ReplaceEntity(const Standard_Integer nument, const Handle_Standard_Transient &anent);
+		void ReplaceEntity(const Standard_Integer nument, const Standard_Transient *anent);
 		%feature("autodoc", "1");
 		void ReverseOrders(const Standard_Integer after=0);
 		%feature("autodoc", "1");
 		void ChangeOrder(const Standard_Integer oldnum, const Standard_Integer newnum, const Standard_Integer count=1);
 		%feature("autodoc", "1");
 		void GetFromTransfer(const Interface_EntityIterator &aniter);
-		%feature("autodoc", "1");
-		virtual		void GetFromAnother(const Handle_Interface_InterfaceModel &other);
 		%feature("autodoc", "1");
 		virtual		Handle_Interface_InterfaceModel NewEmptyModel() const;
 		%feature("autodoc", "1");
@@ -4533,27 +4511,25 @@ class Interface_InterfaceModel : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const Handle_Interface_Check & GlobalCheck(const Standard_Boolean syntactic=1) const;
 		%feature("autodoc", "1");
-		void SetGlobalCheck(const Handle_Interface_Check &ach);
+		void SetGlobalCheck(const Interface_Check *ach);
 		%feature("autodoc", "1");
 		virtual		void VerifyCheck(Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		virtual		void DumpHeader(const Handle_Message_Messenger &S, const Standard_Integer level=0) const;
+		virtual		void DumpHeader(const Message_Messenger *S, const Standard_Integer level=0) const;
 		%feature("autodoc", "1");
-		void Print(const Handle_Standard_Transient &ent, const Handle_Message_Messenger &s, const Standard_Integer mode=0) const;
+		void Print(const Standard_Transient *ent, const Message_Messenger *s, const Standard_Integer mode=0) const;
 		%feature("autodoc", "1");
-		virtual		void PrintLabel(const Handle_Standard_Transient &ent, const Handle_Message_Messenger &S) const;
+		virtual		void PrintLabel(const Standard_Transient *ent, const Message_Messenger *S) const;
 		%feature("autodoc", "1");
-		virtual		void PrintToLog(const Handle_Standard_Transient &ent, const Handle_Message_Messenger &S) const;
+		virtual		void PrintToLog(const Standard_Transient *ent, const Message_Messenger *S) const;
 		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString StringLabel(const Handle_Standard_Transient &ent) const;
+		virtual		Handle_TCollection_HAsciiString StringLabel(const Standard_Transient *ent) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NextNumberForLabel(const char * label, const Standard_Integer lastnum=0, const Standard_Boolean exact=1) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasTemplate(const char * name);
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel Template(const char * name);
-		%feature("autodoc", "1");
-		Standard_Boolean SetTemplate(const char * name, const Handle_Interface_InterfaceModel &model);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfHAsciiString ListTemplates();
 		%feature("autodoc", "1");
@@ -4592,15 +4568,11 @@ class Interface_EntityCluster : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_EntityCluster();
 		%feature("autodoc", "1");
-		Interface_EntityCluster(const Handle_Standard_Transient &ent);
+		Interface_EntityCluster(const Standard_Transient *ent);
 		%feature("autodoc", "1");
-		Interface_EntityCluster(const Handle_Interface_EntityCluster &ec);
+		void Append(const Standard_Transient *ent);
 		%feature("autodoc", "1");
-		Interface_EntityCluster(const Handle_Standard_Transient &ant, const Handle_Interface_EntityCluster &ec);
-		%feature("autodoc", "1");
-		void Append(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Standard_Transient &ent);
+		Standard_Boolean Remove(const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		Standard_Boolean Remove(const Standard_Integer num);
 		%feature("autodoc", "1");
@@ -4608,7 +4580,7 @@ class Interface_EntityCluster : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer num, const Handle_Standard_Transient &ent);
+		void SetValue(const Standard_Integer num, const Standard_Transient *ent);
 		%feature("autodoc", "1");
 		void FillIterator(Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");

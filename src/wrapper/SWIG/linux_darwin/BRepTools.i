@@ -43,15 +43,15 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepTools_Modification();
 		%feature("autodoc", "1");
-		Handle_BRepTools_Modification(const Handle_BRepTools_Modification &aHandle);
+		Handle_BRepTools_Modification(const BRepTools_Modification *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_Modification(const BRepTools_Modification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_Modification & operator=(const Handle_BRepTools_Modification &aHandle);
+		Handle_BRepTools_Modification & operator=(const BRepTools_Modification *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_Modification & operator=(const BRepTools_Modification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_Modification const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepTools_Modification const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepTools_Modification {
@@ -81,15 +81,15 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 		%feature("autodoc", "1");
 		Handle_BRepTools_GTrsfModification();
 		%feature("autodoc", "1");
-		Handle_BRepTools_GTrsfModification(const Handle_BRepTools_GTrsfModification &aHandle);
+		Handle_BRepTools_GTrsfModification(const BRepTools_GTrsfModification *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_GTrsfModification(const BRepTools_GTrsfModification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_GTrsfModification & operator=(const Handle_BRepTools_GTrsfModification &aHandle);
+		Handle_BRepTools_GTrsfModification & operator=(const BRepTools_GTrsfModification *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_GTrsfModification & operator=(const BRepTools_GTrsfModification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_GTrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepTools_GTrsfModification const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepTools_GTrsfModification {
@@ -119,15 +119,15 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 		%feature("autodoc", "1");
 		Handle_BRepTools_TrsfModification();
 		%feature("autodoc", "1");
-		Handle_BRepTools_TrsfModification(const Handle_BRepTools_TrsfModification &aHandle);
+		Handle_BRepTools_TrsfModification(const BRepTools_TrsfModification *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_TrsfModification(const BRepTools_TrsfModification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_TrsfModification & operator=(const Handle_BRepTools_TrsfModification &aHandle);
+		Handle_BRepTools_TrsfModification & operator=(const BRepTools_TrsfModification *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_TrsfModification & operator=(const BRepTools_TrsfModification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_TrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepTools_TrsfModification const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepTools_TrsfModification {
@@ -157,15 +157,15 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepTools_ReShape();
 		%feature("autodoc", "1");
-		Handle_BRepTools_ReShape(const Handle_BRepTools_ReShape &aHandle);
+		Handle_BRepTools_ReShape(const BRepTools_ReShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_ReShape(const BRepTools_ReShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_ReShape & operator=(const Handle_BRepTools_ReShape &aHandle);
+		Handle_BRepTools_ReShape & operator=(const BRepTools_ReShape *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_ReShape & operator=(const BRepTools_ReShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_ReShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepTools_ReShape const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepTools_ReShape {
@@ -195,15 +195,15 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 		%feature("autodoc", "1");
 		Handle_BRepTools_NurbsConvertModification();
 		%feature("autodoc", "1");
-		Handle_BRepTools_NurbsConvertModification(const Handle_BRepTools_NurbsConvertModification &aHandle);
+		Handle_BRepTools_NurbsConvertModification(const BRepTools_NurbsConvertModification *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_NurbsConvertModification(const BRepTools_NurbsConvertModification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_NurbsConvertModification & operator=(const Handle_BRepTools_NurbsConvertModification &aHandle);
+		Handle_BRepTools_NurbsConvertModification & operator=(const BRepTools_NurbsConvertModification *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_NurbsConvertModification & operator=(const BRepTools_NurbsConvertModification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_NurbsConvertModification const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepTools_NurbsConvertModification const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepTools_NurbsConvertModification {
@@ -233,15 +233,15 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d();
 		%feature("autodoc", "1");
-		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d(const Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d &aHandle);
+		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d(const BRepTools_DataMapNodeOfMapOfVertexPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d(const BRepTools_DataMapNodeOfMapOfVertexPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d & operator=(const Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d &aHandle);
+		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d & operator=(const BRepTools_DataMapNodeOfMapOfVertexPnt2d *aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d & operator=(const BRepTools_DataMapNodeOfMapOfVertexPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d const DownCast(const Standard_Transient *AnObject);
 
 };
 %extend Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d {
@@ -273,11 +273,11 @@ class BRepTools_Modifier {
 		%feature("autodoc", "1");
 		BRepTools_Modifier(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		BRepTools_Modifier(const TopoDS_Shape &S, const Handle_BRepTools_Modification &M);
+		BRepTools_Modifier(const TopoDS_Shape &S, const BRepTools_Modification *M);
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		void Perform(const Handle_BRepTools_Modification &M);
+		void Perform(const BRepTools_Modification *M);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -677,13 +677,13 @@ class BRepTools {
 		%feature("autodoc", "1");
 		void Dump(const TopoDS_Shape &Sh, Standard_OStream & S);
 		%feature("autodoc", "1");
-		void Write(const TopoDS_Shape &Sh, Standard_OStream & S, const Handle_Message_ProgressIndicator &PR=0);
+		void Write(const TopoDS_Shape &Sh, Standard_OStream & S, const Message_ProgressIndicator *PR=0);
 		%feature("autodoc", "1");
-		void Read(TopoDS_Shape & Sh, std::istream & S, const BRep_Builder &B, const Handle_Message_ProgressIndicator &PR=0);
+		void Read(TopoDS_Shape & Sh, std::istream & S, const BRep_Builder &B, const Message_ProgressIndicator *PR=0);
 		%feature("autodoc", "1");
-		Standard_Boolean Write(const TopoDS_Shape &Sh, const char * File, const Handle_Message_ProgressIndicator &PR=0);
+		Standard_Boolean Write(const TopoDS_Shape &Sh, const char * File, const Message_ProgressIndicator *PR=0);
 		%feature("autodoc", "1");
-		Standard_Boolean Read(TopoDS_Shape & Sh, const char * File, const BRep_Builder &B, const Handle_Message_ProgressIndicator &PR=0);
+		Standard_Boolean Read(TopoDS_Shape & Sh, const char * File, const BRep_Builder &B, const Message_ProgressIndicator *PR=0);
 
 };
 %feature("shadow") BRepTools::~BRepTools %{
