@@ -76,7 +76,7 @@ def edge(event=None):
     array.SetValue(7,P7)
     array.SetValue(8,P8)
     curve = Geom_BezierCurve(array)
-    ME = BRepBuilderAPI_MakeEdge(curve.GetHandle())    
+    ME = BRepBuilderAPI_MakeEdge(curve) 
     GreenEdge = ME
     V3 = ME.Vertex1()    
     V4 = ME.Vertex2()
@@ -160,7 +160,8 @@ def face(event=None):
     array.SetValue(1,2,P4);     
     array.SetValue(2,2,P5);     
     array.SetValue(3,2,P6);    
-    curve = GeomAPI_PointsToBSplineSurface(array,3,8,GeomAbs_C2,0.001).Surface()
+    curve_handle = GeomAPI_PointsToBSplineSurface(array,3,8,GeomAbs_C2,0.001).Surface()
+    curve = curve_handle.GetObject()
     RedFace = BRepBuilderAPI_MakeFace(curve)
     
     #The brown face    
@@ -193,8 +194,9 @@ def face(event=None):
     array2.SetValue(3,2,P6)
     ##    
     BSplineSurf = GeomAPI_PointsToBSplineSurface(array2,3,8,GeomAbs_C2,0.001)
+    BSplineSurf_surface = BSplineSurf.Surface().GetObject()
     ##    
-    aFace = BRepBuilderAPI_MakeFace(BSplineSurf.Surface()).Face()
+    aFace = BRepBuilderAPI_MakeFace(BSplineSurf_surface).Face()
     ##
     ##//2d lines    
     P12d = gp_Pnt2d(0.9,0.1)
@@ -206,9 +208,9 @@ def face(event=None):
     line3 = Geom2d_Line(P32d,gp_Dir2d((0.9-0.02),(0.1-0.1)))
     ##        
     ##//Edges are on the BSpline surface    
-    Edge1 = BRepBuilderAPI_MakeEdge(line1.GetHandle(),BSplineSurf.Surface(),0,P12d.Distance(P22d)).Edge()
-    Edge2 = BRepBuilderAPI_MakeEdge(line2.GetHandle(),BSplineSurf.Surface(),0,P22d.Distance(P32d)).Edge()
-    Edge3 = BRepBuilderAPI_MakeEdge(line3.GetHandle(),BSplineSurf.Surface(),0,P32d.Distance(P12d)).Edge()
+    Edge1 = BRepBuilderAPI_MakeEdge(line1,BSplineSurf_surface,0,P12d.Distance(P22d)).Edge()
+    Edge2 = BRepBuilderAPI_MakeEdge(line2,BSplineSurf_surface,0,P22d.Distance(P32d)).Edge()
+    Edge3 = BRepBuilderAPI_MakeEdge(line3,BSplineSurf_surface,0,P32d.Distance(P12d)).Edge()
     ##
     Wire1 = BRepBuilderAPI_MakeWire(Edge1,Edge2,Edge3).Wire()
     Wire1.Reverse()
@@ -239,7 +241,7 @@ def draft_angle(event=None):
     
     topo = Topo(S)
     for f in topo.faces():
-        surf = Handle_Geom_Plane().DownCast(BRep_Tool().Surface(f)).GetObject()
+        surf = Handle_Geom_Plane().DownCast(BRep_Tool().Surface(f).GetObject()).GetObject()
         dirf = surf.Pln().Axis().Direction()
         print 'direction',dirf.Coord()
         ddd = gp_Dir(0,0,1)
