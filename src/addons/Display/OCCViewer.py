@@ -56,7 +56,7 @@ class BaseDriver(object):
         #self._objects_displayed = []#list to save in memory displayed objects        
     
     def MoveTo(self,X,Y):
-        self.Context.MoveTo(X,Y,self.View_handle)
+        self.Context.MoveTo(X,Y,self.View)
       
     def FitAll(self):
         self.View.ZFitAll()
@@ -135,13 +135,13 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
                     shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
                     shape_to_display.SetTextureOrigin(True, originU, originV)
                     shape_to_display.SetDisplayMode(3);
-                    ais_shapes.append(shape_to_display.GetHandle())
+                    ais_shapes.append(shape_to_display)
             else:
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
                 if angle:
                     shape_to_display.SetAngleAndDeviation(angle)
-                ais_shapes.append(shape_to_display.GetHandle())
-            self.Context.Display(shape_to_display.GetHandle())
+                ais_shapes.append(shape_to_display)
+            self.Context.Display(shape_to_display)
             self.FitAll()
         if SOLO:
             return ais_shapes[0]
@@ -286,8 +286,8 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         
         aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
         text_aspect = Prs3d.Prs3d_TextAspect()
-        Prs3d.Prs3d_Text().Draw(aPresentation.GetHandle(),
-                                 text_aspect.GetHandle(),
+        Prs3d.Prs3d_Text().Draw(aPresentation,
+                                 text_aspect,
                                   to_string_extended(text_to_write),
                                    point)
         aPresentation.Display()
@@ -325,15 +325,15 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                     shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
                     shape_to_display.SetTextureOrigin(True, originU, originV)
                     shape_to_display.SetDisplayMode(3);
-                ais_shapes.append(shape_to_display.GetHandle())
+                ais_shapes.append(shape_to_display)
             else:
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
-                ais_shapes.append(shape_to_display.GetHandle())
+                ais_shapes.append(shape_to_display)
             if update:
-                self.Context.Display(shape_to_display.GetHandle(), True)
+                self.Context.Display(shape_to_display, True)
                 self.FitAll()
             else:
-                self.Context.Display(shape_to_display.GetHandle(), False)
+                self.Context.Display(shape_to_display, False)
             
         if SOLO:
             return  ais_shapes[0]
@@ -362,8 +362,8 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             SOLO = False
             
         for shape in shapes:
-            shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
-            self.Context.SetColor(shape_to_display,dict_color[color],0)
+            shape_to_display = OCC.AIS.AIS_Shape(shape)
+            #self.Context.SetColor(shape_to_display,dict_color[color],0)
             if update:
                 self.Context.Display(shape_to_display, True)
             else:
@@ -371,7 +371,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 # comes in handy when adding lots and lots of objects 
                 self.Context.Display(shape_to_display, False)
             self.FitAll()
-        ais_shapes.append(shape_to_display)
+            ais_shapes.append(shape_to_display)
         if SOLO:
             return ais_shapes[0]
         else:
