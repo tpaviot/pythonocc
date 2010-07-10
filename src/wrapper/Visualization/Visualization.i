@@ -22,6 +22,8 @@
 #include <Visualization.h>
 %}
 
+%include ../SWIG/ExceptionCatcher.i
+
 class Display2d {
  public:
 	%feature("autodoc", "1");

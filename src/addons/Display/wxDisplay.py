@@ -90,10 +90,6 @@ class wxViewer2d(wxBaseViewer):
         """
         This method is called after __init__ in the wxBaseViewer class
         """
-        try:
-            os.environ["CSF_GraphicShr"]
-        except KeyError:
-            raise "Please set the CSF_GraphicShr environment variable."
         self._display = OCCViewer.Viewer2d(self.GetHandle())
         self._display.Create()
         self._inited = True

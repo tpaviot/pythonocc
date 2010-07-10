@@ -22,15 +22,30 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 /*
 Exception handling
 */
-%{#include <Standard_Failure.hxx>%}
+%{
+#include <Standard_Failure.hxx>
+#include <Standard_ErrorHandler.hxx>
+%}
+
 %exception
 {
     try
     {
+        OCC_CATCH_SIGNALS
         $action
     } 
     catch(Standard_Failure)
     {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
+	    Handle(Standard_Failure) error = Standard_Failure::Caught ();
+	    char *error_name = (char*) error->DynamicType()->Name();
+	    char *error_message = (char*) error->GetMessageString();
+	    // concatenate the two strings
+        char *message = (char *)malloc(strlen(error_name) + strlen(error_message) + 1);
+	    strcpy(message, error_name);
+	    strcat(message,"\n");
+        strcat(message, error_message);
+        // raise the python exception
+        PyErr_SetString(PyExc_RuntimeError, message);
+	    return NULL;
     }
 }

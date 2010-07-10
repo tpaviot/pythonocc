@@ -66,10 +66,6 @@ class BaseDriver(object):
         self._window_handle = window_handle
         
     def Create(self, create_default_lights = True):
-        try:
-            os.environ["CSF_GraphicShr"]
-        except KeyError:
-            raise "Please set the CSF_GraphicShr environment variable."
         if sys.platform!='win32':
             try:
                 os.environ['DISPLAY']
