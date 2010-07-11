@@ -50,6 +50,7 @@ from OCC.BRepOffsetAPI import *
 
 from OCC.Utils.Context import assert_isdone
 from OCC.KBE.TypesLookup import ShapeToTopology
+from OCC.Quantity import *
 
 TOLERANCE = 1e-6
 
@@ -231,18 +232,53 @@ def random_colored_material_aspect():
     asp = Graphic3d.Graphic3d_MaterialAspect()
     cc = asp.Color()
     
-    clrs = [ i for i in dir(Graphic3d) if i.startswith('Graphic3d_NOM_') ]
-    return Graphic3d.Graphic3d_MaterialAspect(getattr(Graphic3d, random.sample(clrs, 1)[0]))
-#    red, green, blue = random.uniform(0,1),random.uniform(0,1),random.uniform(0,1)
-#    cc.SetValues(red,green,blue)
-    #return asp 
+    #clrs = [ i for i in dir(Graphic3d) if i.startswith('Graphic3d_NOM_') ]
+    red, green, blue, opacity = random.uniform(0,1),random.uniform(0,1),random.uniform(0,1), random.uniform(0,1)
+    cc.SetValues(red,green,blue, Quantity_TOC_RGB)
+    #return Graphic3d.Graphic3d_MaterialAspect(getattr(Graphic3d, random.sample(clrs, 1)[0]))
+    return asp 
 
 
 #===============================================================================
 # --- BUILD PATCHES ---
 #===============================================================================
 
+def common_vertex(edg1, edg2):
+    te = TopExp()
+    vert = TopoDS_Vertex()
+    if te.CommonVertex(edg1, edg2, vert):
+        return vert
+    else:
+        raise ValueError('no common vertex found')
 
+def midpoint(pntA, pntB):
+    vec1 = gp_Vec(pntA.XYZ())
+    vec2 = gp_Vec(pntB.XYZ())
+    veccie = (vec1+vec2)/2.
+    return gp_Pnt( veccie.XYZ() )
+
+def intersection_from_three_planes( planeA, planeB, planeC, show=False):
+    '''
+    intersection from 3 planes 
+    accepts both Geom_Plane and gp_Pln
+    @param planeA:
+    @param planeB:
+    @param planeC:
+    @param show:
+    '''
+    planeA = planeA if not hasattr(planeA, 'Pln') else planeA.Pln()
+    planeB = planeB if not hasattr(planeB, 'Pln') else planeB.Pln()
+    planeC = planeC if not hasattr(planeC, 'Pln') else planeC.Pln()
+    
+
+    intersection_planes = IntAna_Int3Pln( planeA,
+                                           planeB,
+                                            planeC
+                                    )
+    pnt = intersection_planes.Value()
+    if show:
+        display.DisplayShape(make_vertex(pnt))
+    return pnt
 
 #===============================================================================
 # --- TRANSFORM ---

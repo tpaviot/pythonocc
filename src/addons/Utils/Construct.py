@@ -1,6 +1,11 @@
 from __future__ import with_statement
-from OCC.Utils.Topology import Topo
+from OCC.Utils.Topology import *
 from OCC.BRep import BRep_Tool
+from OCC.BRepOffset import BRepOffset_Skin
+from OCC.GeomAbs import GeomAbs_Arc
+from OCC.BRepTools import *
+from OCC.GeomLProp import *
+from OCC.TopoDS import TopoDS_Wire, TopoDS_Vertex
 
 # -*- coding: iso-8859-1 -*-
 #!/usr/bin/env python
@@ -27,12 +32,17 @@ from OCC.BRep import BRep_Tool
 This modules makes the construction of geometry a little easier
 
 '''
+# wrapped modules
 from OCC.ShapeFix import *
 from OCC.BRepOffsetAPI import *
 from OCC.BRepBuilderAPI import *
+from OCC.BRepPrimAPI import *
+from OCC.GeomAbs import *
+from OCC.TopAbs import *
+from OCC.TopoDS import *
+# high level
 from OCC.Utils.Context import assert_isdone
 from OCC.gp import *
-
 from OCC.KBE.TypesLookup import GeometryLookup, ShapeToTopology
 
 EPSILON = TOLERANCE = 1e-6
@@ -75,10 +85,12 @@ def make_solid(*args):
 
 def make_shell(*args):
     shell = BRepBuilderAPI_MakeShell( *args )
+    from OCC.KBE.TypesLookup import ShapeToTopology
+    st = ShapeToTopology()
     with assert_isdone(shell, 'failed to produce shell'):
         result = shell.Shell()
         shell.Delete()
-        return result
+        return st(result)
     
 def make_face(*args):
     face = BRepBuilderAPI_MakeFace( *args )
@@ -184,7 +196,10 @@ def make_prism(profile, vec):
     '''
     makes a finite prism
     '''
-    return BRepOffsetAPI_MakePipe()
+    pri =  BRepPrimAPI_MakePrism(profile, vec, True)
+    with assert_isdone(pri, 'failed building prism'):
+        pri.Build()
+        return pri.Shape()
 
 def make_prism_shell(profile, vec):
     '''
@@ -192,11 +207,22 @@ def make_prism_shell(profile, vec):
     '''
     return BRepOffsetAPI_MakePipeShell()
 
-def make_offset(profile, vec):
+def make_offset(shapeToOffset, offsetDistance, tolerance=TOLERANCE, offsetMode=BRepOffset_Skin, intersection=False, selfintersection=False, joinType=GeomAbs_Arc):
     '''
-    makes a finite prism
+    construct an offsetted version of the shape
     '''
-    return BRepOffsetAPI_MakeOffset()
+    try:
+        offset = BRepOffsetAPI_MakeOffsetShape(shapeToOffset,
+                                               offsetDistance,
+                                                tolerance,
+                                                 offsetMode,
+                                                  intersection,
+                                                   selfintersection,
+                                                    joinType
+                                                    )
+        return offset.Shape()
+    except RuntimeError('failed to offset shape'):
+        return None
 
 def make_draft(profile, vec):
     '''
@@ -210,10 +236,15 @@ def make_filling(profile, vec):
     '''
     return BRepOffsetAPI_MakeFilling()
 
-def make_loft(list_of_wires, ruled=False, tolerance=TOLERANCE):
+def make_loft(elements, ruled=False, tolerance=TOLERANCE):
     sections = BRepOffsetAPI_ThruSections(False, ruled, tolerance)
-    for wi in list_of_wires:
-        sections.AddWire(wi)
+    for i in elements:
+        if isinstance(i, TopoDS_Wire):
+            sections.AddWire(i)
+        elif isinstance(i, TopoDS_Vertex):
+            sections.AddVertex(i)
+        else:
+            raise TypeError('elements is a list of TopoDS_Wire or TopoDS_Vertex, found a %s fool' % ( i.__class__ ))
     
     sections.CheckCompatibility(True)
     sections.Build()
@@ -447,5 +478,46 @@ def scale(brep, pnt, scale, copy=False):
         brep_trns.Build()
         return brep_trns.Shape()
 
+#===============================================================================
+# Not so sure where this should be located
+#===============================================================================
 
+def face_normal(face):
+    umin, umax, vmin, vmax = BRepTools.BRepTools().UVBounds(face)  
+    surf=BRep_Tool().Surface(face)
+    props= GeomLProp_SLProps(surf, (umin+umax)/2., (vmin+vmax)/2., 1, TOLERANCE)
+    norm = props.Normal()
+    if face.Orientation()==TopAbs_REVERSED:
+        norm.Reverse()
+    return norm
+
+def face_from_plane(_geom_plane, lowerLimit=-1000, upperLimit=1000, show=False):
+    _trim_plane = make_face( Geom_RectangularTrimmedSurface(_geom_plane.GetHandle(), lowerLimit, upperLimit, lowerLimit, upperLimit).GetHandle() )
+    if show:
+        display.DisplayShape(_trim_plane)
+    return _trim_plane
+
+def find_plane_from_shape(shape, tolerance=TOLERANCE):
+    try:
+        return BRepBuilderAPI_FindPlane(shape, tolerance).Plane().GetObject()
+    except:
+        raise AssertionError('couldnt find plane in %s' % (shape))
+
+def curve_to_bspline(crv_handle, tolerance=TOLERANCE, continuity=GeomAbs_C1, sections=300, degree=12):
+    aaa = GeomConvert_ApproxCurve(crv_handle, tolerance, continuity, sections, degree)
+    with assert_isdone(aaa, 'could not compute bspline from curve'):
+        return aaa.Curve()
+
+def compound(topo):
+    '''
+    accumulate a bunch of TopoDS_* in list `topo` to a TopoDS_Compound
+    @param topo: list of TopoDS_* instances
+    '''
+    bd = TopoDS_Builder()
+    comp = TopoDS_Compound()
+    bd.MakeCompound(comp)
+    for i in topo:
+        print i
+        bd.Add(comp,i)
+    return comp
 
