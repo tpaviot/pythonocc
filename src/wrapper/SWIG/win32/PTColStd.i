@@ -51,7 +51,7 @@ class Handle_PTColStd_DataMapNodeOfTransientPersistentMap : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfTransientPersistentMap & operator=(const PTColStd_DataMapNodeOfTransientPersistentMap *anItem);
 		%feature("autodoc", "1");
-		Handle_PTColStd_DataMapNodeOfTransientPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PTColStd_DataMapNodeOfTransientPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PTColStd_DataMapNodeOfTransientPersistentMap {
@@ -89,7 +89,7 @@ class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfPersistentTransientMap & operator=(const PTColStd_DataMapNodeOfPersistentTransientMap *anItem);
 		%feature("autodoc", "1");
-		Handle_PTColStd_DataMapNodeOfPersistentTransientMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PTColStd_DataMapNodeOfPersistentTransientMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PTColStd_DataMapNodeOfPersistentTransientMap {
@@ -127,7 +127,7 @@ class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Han
 		%feature("autodoc", "1");
 		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent & operator=(const PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent *anItem);
 		%feature("autodoc", "1");
-		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
@@ -227,9 +227,9 @@ class PTColStd_MapPersistentHasher {
 		%feature("autodoc", "1");
 		PTColStd_MapPersistentHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Handle_Standard_Persistent &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const Handle_Standard_Persistent &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Handle_Standard_Persistent &K1, const Handle_Standard_Persistent &K2);
+		static		Standard_Boolean IsEqual(const Handle_Standard_Persistent &K1, const Handle_Standard_Persistent &K2);
 
 };
 %feature("shadow") PTColStd_MapPersistentHasher::~PTColStd_MapPersistentHasher %{

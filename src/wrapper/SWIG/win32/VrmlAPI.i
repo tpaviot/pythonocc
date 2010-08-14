@@ -49,7 +49,7 @@ class VrmlAPI {
 		%feature("autodoc", "1");
 		VrmlAPI();
 		%feature("autodoc", "1");
-		void Write(const TopoDS_Shape &aShape, const char * aFileName);
+		static		void Write(const TopoDS_Shape &aShape, const char * aFileName);
 
 };
 %feature("shadow") VrmlAPI::~VrmlAPI %{

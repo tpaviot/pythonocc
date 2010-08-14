@@ -81,7 +81,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeReal *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal {
@@ -119,7 +119,7 @@ class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_BRepOffset_ListNodeOfListOfInterval & operator=(const BRepOffset_ListNodeOfListOfInterval *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_ListNodeOfListOfInterval const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepOffset_ListNodeOfListOfInterval const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepOffset_ListNodeOfListOfInterval {
@@ -157,7 +157,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
@@ -195,7 +195,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeOffset *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
@@ -233,7 +233,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handl
 		%feature("autodoc", "1");
 		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
@@ -621,7 +621,7 @@ class BRepOffset {
 		%feature("autodoc", "1");
 		BRepOffset();
 		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface(const Handle_Geom_Surface &Surface, const Standard_Real Offset, BRepOffset_Status & Status);
+		static		Handle_Geom_Surface Surface(const Handle_Geom_Surface &Surface, const Standard_Real Offset, BRepOffset_Status & Status);
 
 };
 %feature("shadow") BRepOffset::~BRepOffset %{
@@ -1028,39 +1028,39 @@ class BRepOffset_Tool {
 		%feature("autodoc", "1");
 		BRepOffset_Tool();
 		%feature("autodoc", "1");
-		void EdgeVertices(const TopoDS_Edge &E, TopoDS_Vertex & V1, TopoDS_Vertex & V2);
+		static		void EdgeVertices(const TopoDS_Edge &E, TopoDS_Vertex & V1, TopoDS_Vertex & V2);
 		%feature("autodoc", "1");
-		TopAbs_Orientation OriEdgeInFace(const TopoDS_Edge &E, const TopoDS_Face &F);
+		static		TopAbs_Orientation OriEdgeInFace(const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void OrientSection(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, TopAbs_Orientation & O1, TopAbs_Orientation & O2);
+		static		void OrientSection(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, TopAbs_Orientation & O1, TopAbs_Orientation & O2);
 		%feature("autodoc", "1");
-		Standard_Boolean HasCommonShapes(const TopoDS_Face &F1, const TopoDS_Face &F2, TopTools_ListOfShape & LE, TopTools_ListOfShape & LV);
+		static		Standard_Boolean HasCommonShapes(const TopoDS_Face &F1, const TopoDS_Face &F2, TopTools_ListOfShape & LE, TopTools_ListOfShape & LV);
 		%feature("autodoc", "1");
-		void Inter3D(const TopoDS_Face &F1, const TopoDS_Face &F2, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side, const TopoDS_Edge &RefEdge, const Standard_Boolean IsRefEdgeDefined=0);
+		static		void Inter3D(const TopoDS_Face &F1, const TopoDS_Face &F2, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side, const TopoDS_Edge &RefEdge, const Standard_Boolean IsRefEdgeDefined=0);
 		%feature("autodoc", "1");
-		Standard_Boolean TryProject(const TopoDS_Face &F1, const TopoDS_Face &F2, const TopTools_ListOfShape &Edges, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side, const Standard_Real TolConf);
+		static		Standard_Boolean TryProject(const TopoDS_Face &F1, const TopoDS_Face &F2, const TopTools_ListOfShape &Edges, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side, const Standard_Real TolConf);
 		%feature("autodoc", "1");
-		void PipeInter(const TopoDS_Face &F1, const TopoDS_Face &F2, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side);
+		static		void PipeInter(const TopoDS_Face &F1, const TopoDS_Face &F2, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side);
 		%feature("autodoc", "1");
-		void Inter2d(const TopoDS_Face &F, const TopoDS_Edge &E1, const TopoDS_Edge &E2, TopTools_ListOfShape & LV, const Standard_Real Tol);
+		static		void Inter2d(const TopoDS_Face &F, const TopoDS_Edge &E1, const TopoDS_Edge &E2, TopTools_ListOfShape & LV, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void InterOrExtent(const TopoDS_Face &F1, const TopoDS_Face &F2, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side);
+		static		void InterOrExtent(const TopoDS_Face &F1, const TopoDS_Face &F2, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side);
 		%feature("autodoc", "1");
-		void CheckBounds(const TopoDS_Face &F, const BRepOffset_Analyse &Analyse, Standard_Boolean & enlargeU, Standard_Boolean & enlargeVfirst, Standard_Boolean & enlargeVlast);
+		static		void CheckBounds(const TopoDS_Face &F, const BRepOffset_Analyse &Analyse, Standard_Boolean & enlargeU, Standard_Boolean & enlargeVfirst, Standard_Boolean & enlargeVlast);
 		%feature("autodoc", "1");
-		Standard_Boolean EnLargeFace(const TopoDS_Face &F, TopoDS_Face & NF, const Standard_Boolean ChangeGeom, const Standard_Boolean UpDatePCurve=0, const Standard_Boolean enlargeU=1, const Standard_Boolean enlargeVfirst=1, const Standard_Boolean enlargeVlast=1);
+		static		Standard_Boolean EnLargeFace(const TopoDS_Face &F, TopoDS_Face & NF, const Standard_Boolean ChangeGeom, const Standard_Boolean UpDatePCurve=0, const Standard_Boolean enlargeU=1, const Standard_Boolean enlargeVfirst=1, const Standard_Boolean enlargeVlast=1);
 		%feature("autodoc", "1");
-		void ExtentFace(const TopoDS_Face &F, TopTools_DataMapOfShapeShape & ConstShapes, TopTools_DataMapOfShapeShape & ToBuild, const TopAbs_State Side, const Standard_Real TolConf, TopoDS_Face & NF);
+		static		void ExtentFace(const TopoDS_Face &F, TopTools_DataMapOfShapeShape & ConstShapes, TopTools_DataMapOfShapeShape & ToBuild, const TopAbs_State Side, const Standard_Real TolConf, TopoDS_Face & NF);
 		%feature("autodoc", "1");
-		void BuildNeighbour(const TopoDS_Wire &W, const TopoDS_Face &F, TopTools_DataMapOfShapeShape & NOnV1, TopTools_DataMapOfShapeShape & NOnV2);
+		static		void BuildNeighbour(const TopoDS_Wire &W, const TopoDS_Face &F, TopTools_DataMapOfShapeShape & NOnV1, TopTools_DataMapOfShapeShape & NOnV2);
 		%feature("autodoc", "1");
-		void MapVertexEdges(const TopoDS_Shape &S, TopTools_DataMapOfShapeListOfShape & MVE);
+		static		void MapVertexEdges(const TopoDS_Shape &S, TopTools_DataMapOfShapeListOfShape & MVE);
 		%feature("autodoc", "1");
-		TopoDS_Shape Deboucle3D(const TopoDS_Shape &S, const TopTools_MapOfShape &Boundary);
+		static		TopoDS_Shape Deboucle3D(const TopoDS_Shape &S, const TopTools_MapOfShape &Boundary);
 		%feature("autodoc", "1");
-		void CorrectOrientation(const TopoDS_Shape &SI, const TopTools_MapOfShape &NewEdges, Handle_BRepAlgo_AsDes & AsDes, BRepAlgo_Image & InitOffset, const Standard_Real Offset);
+		static		void CorrectOrientation(const TopoDS_Shape &SI, const TopTools_MapOfShape &NewEdges, Handle_BRepAlgo_AsDes & AsDes, BRepAlgo_Image & InitOffset, const Standard_Real Offset);
 		%feature("autodoc", "1");
-		Standard_Real Gabarit(const Handle_Geom_Curve &aCurve);
+		static		Standard_Real Gabarit(const Handle_Geom_Curve &aCurve);
 
 };
 %feature("shadow") BRepOffset_Tool::~BRepOffset_Tool %{
@@ -1177,9 +1177,9 @@ class BRepOffset_Inter2d {
 		%feature("autodoc", "1");
 		BRepOffset_Inter2d();
 		%feature("autodoc", "1");
-		void Compute(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges, const Standard_Real Tol);
+		static		void Compute(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void ConnexIntByInt(const TopoDS_Face &FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape &Build, const Handle_BRepAlgo_AsDes &AsDes, const Standard_Real Offset, const Standard_Real Tol);
+		static		void ConnexIntByInt(const TopoDS_Face &FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape &Build, const Handle_BRepAlgo_AsDes &AsDes, const Standard_Real Offset, const Standard_Real Tol);
 
 };
 %feature("shadow") BRepOffset_Inter2d::~BRepOffset_Inter2d %{

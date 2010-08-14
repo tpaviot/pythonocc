@@ -346,9 +346,9 @@ class StdMeshers_PrismAsBlock : public SMESH_Block {
 		%feature("autodoc", "1");
 		int ShapeID(const TopoDS_Shape &shape) const;
 		%feature("autodoc", "1");
-		bool IsForwardEdge(SMESHDS_Mesh* meshDS, const TParam2ColumnMap &columnsMap, const TopoDS_Edge &bottomEdge, const int sideFaceID);
+		static		bool IsForwardEdge(SMESHDS_Mesh* meshDS, const TParam2ColumnMap &columnsMap, const TopoDS_Edge &bottomEdge, const int sideFaceID);
 		%feature("autodoc", "1");
-		bool GetWallFaces(SMESH_Mesh* mesh, const TopoDS_Shape &mainShape, const TopoDS_Shape &bottomFace, std::list<TopoDS_Edge>, std::list<TopoDS_Face>);
+		static		bool GetWallFaces(SMESH_Mesh* mesh, const TopoDS_Shape &mainShape, const TopoDS_Shape &bottomFace, std::list<TopoDS_Edge>, std::list<TopoDS_Face>);
 
 };
 %feature("shadow") StdMeshers_PrismAsBlock::~StdMeshers_PrismAsBlock %{
@@ -553,7 +553,7 @@ class StdMeshers_Prism_3D : public SMESH_3D_Algo {
 		%feature("autodoc", "1");
 		void ProjectTriangles();
 		%feature("autodoc", "1");
-		void AddPrisms(std::vector<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*,std::allocator<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*> > & nodeColumns, SMESH_MesherHelper* helper);
+		static		void AddPrisms(std::vector<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*,std::allocator<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*> > & nodeColumns, SMESH_MesherHelper* helper);
 
 };
 %feature("shadow") StdMeshers_Prism_3D::~StdMeshers_Prism_3D %{
@@ -861,11 +861,11 @@ class StdMeshers_Propagation : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		std::string GetName();
+		static		std::string GetName();
 		%feature("autodoc", "1");
-		void SetPropagationMgr(SMESH_subMesh* subMesh);
+		static		void SetPropagationMgr(SMESH_subMesh* subMesh);
 		%feature("autodoc", "1");
-		TopoDS_Edge GetPropagationSource(SMESH_Mesh & theMesh, const TopoDS_Shape &theEdge);
+		static		TopoDS_Edge GetPropagationSource(SMESH_Mesh & theMesh, const TopoDS_Shape &theEdge);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
 		%feature("autodoc", "1");
@@ -1775,7 +1775,7 @@ class StdMeshers_FaceSide {
 		%feature("autodoc", "1");
 		StdMeshers_FaceSide(const SMDS_MeshNode *theNode, const gp_Pnt2d thePnt2d, const StdMeshers_FaceSide *theSide);
 		%feature("autodoc", "1");
-		TSideVector GetFaceWires(const TopoDS_Face &theFace, SMESH_Mesh & theMesh, const bool theIgnoreMediumNodes, TError & theError);
+		static		TSideVector GetFaceWires(const TopoDS_Face &theFace, SMESH_Mesh & theMesh, const bool theIgnoreMediumNodes, TError & theError);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");

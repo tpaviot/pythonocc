@@ -51,7 +51,7 @@ class Handle_PTopoDS_TShape : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TShape & operator=(const PTopoDS_TShape *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TShape const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TShape const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TShape {
@@ -89,7 +89,7 @@ class Handle_PTopoDS_TShell : public Handle_PTopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TShell & operator=(const PTopoDS_TShell *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TShell const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TShell const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TShell {
@@ -127,7 +127,7 @@ class Handle_PTopoDS_TCompound : public Handle_PTopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TCompound & operator=(const PTopoDS_TCompound *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TCompound const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TCompound {
@@ -165,7 +165,7 @@ class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public Handle_PStandar
 		%feature("autodoc", "1");
 		Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape & operator=(const PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
@@ -203,7 +203,7 @@ class Handle_PTopoDS_TShape1 : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TShape1 & operator=(const PTopoDS_TShape1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TShape1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TShape1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TShape1 {
@@ -241,7 +241,7 @@ class Handle_PTopoDS_TShell1 : public Handle_PTopoDS_TShape1 {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TShell1 & operator=(const PTopoDS_TShell1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TShell1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TShell1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TShell1 {
@@ -279,7 +279,7 @@ class Handle_PTopoDS_TEdge1 : public Handle_PTopoDS_TShape1 {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TEdge1 & operator=(const PTopoDS_TEdge1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TEdge1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TEdge1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TEdge1 {
@@ -317,7 +317,7 @@ class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public Handle_PStandar
 		%feature("autodoc", "1");
 		Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 & operator=(const PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
@@ -355,7 +355,7 @@ class Handle_PTopoDS_TCompSolid1 : public Handle_PTopoDS_TShape1 {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TCompSolid1 & operator=(const PTopoDS_TCompSolid1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompSolid1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TCompSolid1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TCompSolid1 {
@@ -393,7 +393,7 @@ class Handle_PTopoDS_TSolid1 : public Handle_PTopoDS_TShape1 {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TSolid1 & operator=(const PTopoDS_TSolid1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TSolid1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TSolid1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TSolid1 {
@@ -431,7 +431,7 @@ class Handle_PTopoDS_TEdge : public Handle_PTopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TEdge & operator=(const PTopoDS_TEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TEdge const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TEdge const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TEdge {
@@ -469,7 +469,7 @@ class Handle_PTopoDS_HShape : public Handle_ObjMgt_ExternShareable {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_HShape & operator=(const PTopoDS_HShape *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_HShape const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_HShape const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_HShape {
@@ -507,7 +507,7 @@ class Handle_PTopoDS_Face : public Handle_PTopoDS_HShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_Face & operator=(const PTopoDS_Face *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_Face const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_Face const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_Face {
@@ -545,7 +545,7 @@ class Handle_PTopoDS_TWire : public Handle_PTopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TWire & operator=(const PTopoDS_TWire *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TWire const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TWire const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TWire {
@@ -583,7 +583,7 @@ class Handle_PTopoDS_Shell : public Handle_PTopoDS_HShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_Shell & operator=(const PTopoDS_Shell *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_Shell const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_Shell const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_Shell {
@@ -621,7 +621,7 @@ class Handle_PTopoDS_TVertex : public Handle_PTopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TVertex & operator=(const PTopoDS_TVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TVertex const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TVertex {
@@ -659,7 +659,7 @@ class Handle_PTopoDS_TCompound1 : public Handle_PTopoDS_TShape1 {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TCompound1 & operator=(const PTopoDS_TCompound1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TCompound1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TCompound1 {
@@ -697,7 +697,7 @@ class Handle_PTopoDS_Vertex : public Handle_PTopoDS_HShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_Vertex & operator=(const PTopoDS_Vertex *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_Vertex const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_Vertex const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_Vertex {
@@ -735,7 +735,7 @@ class Handle_PTopoDS_Edge : public Handle_PTopoDS_HShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_Edge & operator=(const PTopoDS_Edge *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_Edge const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_Edge const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_Edge {
@@ -773,7 +773,7 @@ class Handle_PTopoDS_Wire : public Handle_PTopoDS_HShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_Wire & operator=(const PTopoDS_Wire *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_Wire const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_Wire const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_Wire {
@@ -811,7 +811,7 @@ class Handle_PTopoDS_HArray1OfHShape : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_HArray1OfHShape & operator=(const PTopoDS_HArray1OfHShape *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_HArray1OfHShape const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_HArray1OfHShape const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_HArray1OfHShape {
@@ -849,7 +849,7 @@ class Handle_PTopoDS_TSolid : public Handle_PTopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TSolid & operator=(const PTopoDS_TSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TSolid const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TSolid const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TSolid {
@@ -887,7 +887,7 @@ class Handle_PTopoDS_TCompSolid : public Handle_PTopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TCompSolid & operator=(const PTopoDS_TCompSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompSolid const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TCompSolid const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TCompSolid {
@@ -925,7 +925,7 @@ class Handle_PTopoDS_TVertex1 : public Handle_PTopoDS_TShape1 {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TVertex1 & operator=(const PTopoDS_TVertex1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TVertex1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TVertex1 {
@@ -963,7 +963,7 @@ class Handle_PTopoDS_Compound : public Handle_PTopoDS_HShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_Compound & operator=(const PTopoDS_Compound *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_Compound const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_Compound const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_Compound {
@@ -1001,7 +1001,7 @@ class Handle_PTopoDS_HArray1OfShape1 : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_HArray1OfShape1 & operator=(const PTopoDS_HArray1OfShape1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_HArray1OfShape1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_HArray1OfShape1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_HArray1OfShape1 {
@@ -1039,7 +1039,7 @@ class Handle_PTopoDS_Solid : public Handle_PTopoDS_HShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_Solid & operator=(const PTopoDS_Solid *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_Solid const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_Solid const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_Solid {
@@ -1077,7 +1077,7 @@ class Handle_PTopoDS_CompSolid : public Handle_PTopoDS_HShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_CompSolid & operator=(const PTopoDS_CompSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_CompSolid const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_CompSolid const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_CompSolid {
@@ -1115,7 +1115,7 @@ class Handle_PTopoDS_TWire1 : public Handle_PTopoDS_TShape1 {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TWire1 & operator=(const PTopoDS_TWire1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TWire1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TWire1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TWire1 {
@@ -1153,7 +1153,7 @@ class Handle_PTopoDS_TFace1 : public Handle_PTopoDS_TShape1 {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TFace1 & operator=(const PTopoDS_TFace1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TFace1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TFace1 {
@@ -1191,7 +1191,7 @@ class Handle_PTopoDS_TFace : public Handle_PTopoDS_TShape {
 		%feature("autodoc", "1");
 		Handle_PTopoDS_TFace & operator=(const PTopoDS_TFace *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopoDS_TFace const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopoDS_TFace {

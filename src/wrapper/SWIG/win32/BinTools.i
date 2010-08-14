@@ -91,23 +91,23 @@ class BinTools {
 		%feature("autodoc", "1");
 		BinTools();
 		%feature("autodoc", "1");
-		Standard_OStream & PutReal(Standard_OStream & OS, const Standard_Real theValue);
+		static		Standard_OStream & PutReal(Standard_OStream & OS, const Standard_Real theValue);
 		%feature("autodoc", "1");
-		Standard_OStream & PutInteger(Standard_OStream & OS, const Standard_Integer theValue);
+		static		Standard_OStream & PutInteger(Standard_OStream & OS, const Standard_Integer theValue);
 		%feature("autodoc", "1");
-		Standard_OStream & PutBool(Standard_OStream & OS, const Standard_Boolean theValue);
+		static		Standard_OStream & PutBool(Standard_OStream & OS, const Standard_Boolean theValue);
 		%feature("autodoc", "1");
-		Standard_OStream & PutExtChar(Standard_OStream & OS, const Standard_ExtCharacter theValue);
+		static		Standard_OStream & PutExtChar(Standard_OStream & OS, const Standard_ExtCharacter theValue);
 		%feature("autodoc","GetReal() -> Standard_Real");
 
-		std::istream & GetReal(std::istream & IS, Standard_Real &OutValue);
+		static		std::istream & GetReal(std::istream & IS, Standard_Real &OutValue);
 		%feature("autodoc","GetInteger() -> Standard_Integer");
 
-		std::istream & GetInteger(std::istream & IS, Standard_Integer &OutValue);
+		static		std::istream & GetInteger(std::istream & IS, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		std::istream & GetBool(std::istream & IS, Standard_Boolean & theValue);
+		static		std::istream & GetBool(std::istream & IS, Standard_Boolean & theValue);
 		%feature("autodoc", "1");
-		std::istream & GetExtChar(std::istream & IS, Standard_ExtCharacter & theValue);
+		static		std::istream & GetExtChar(std::istream & IS, Standard_ExtCharacter & theValue);
 
 };
 %feature("shadow") BinTools::~BinTools %{
@@ -285,9 +285,9 @@ class BinTools_Curve2dSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void WriteCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
+		static		void WriteCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
+		static		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
 
 };
 %feature("shadow") BinTools_Curve2dSet::~BinTools_Curve2dSet %{
@@ -335,9 +335,9 @@ class BinTools_SurfaceSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void WriteSurface(const Handle_Geom_Surface &S, Standard_OStream & OS);
+		static		void WriteSurface(const Handle_Geom_Surface &S, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		std::istream & ReadSurface(std::istream & IS, Handle_Geom_Surface & S);
+		static		std::istream & ReadSurface(std::istream & IS, Handle_Geom_Surface & S);
 
 };
 %feature("shadow") BinTools_SurfaceSet::~BinTools_SurfaceSet %{
@@ -385,9 +385,9 @@ class BinTools_CurveSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void WriteCurve(const Handle_Geom_Curve &C, Standard_OStream & OS);
+		static		void WriteCurve(const Handle_Geom_Curve &C, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		std::istream & ReadCurve(std::istream & IS, Handle_Geom_Curve & C);
+		static		std::istream & ReadCurve(std::istream & IS, Handle_Geom_Curve & C);
 
 };
 %feature("shadow") BinTools_CurveSet::~BinTools_CurveSet %{

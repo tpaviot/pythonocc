@@ -59,7 +59,7 @@ class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_SeqNode & operator=(const TCollection_SeqNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_SeqNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TCollection_SeqNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TCollection_SeqNode {
@@ -97,7 +97,7 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString & operator=(const TCollection_HExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_HExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TCollection_HExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TCollection_HExtendedString {
@@ -135,7 +135,7 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_AVLBaseNode & operator=(const TCollection_AVLBaseNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_AVLBaseNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TCollection_AVLBaseNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TCollection_AVLBaseNode {
@@ -173,7 +173,7 @@ class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString & operator=(const TCollection_HAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TCollection_HAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TCollection_HAsciiString {
@@ -211,7 +211,7 @@ class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_MapNode & operator=(const TCollection_MapNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TCollection_MapNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TCollection_MapNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TCollection_MapNode {
@@ -448,15 +448,15 @@ class TCollection_AsciiString {
 		%feature("autodoc", "1");
 		Standard_Character Value(const Standard_Integer where) const;
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const TCollection_AsciiString &astring, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const TCollection_AsciiString &astring, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const TCollection_AsciiString &string1, const TCollection_AsciiString &string2);
+		static		Standard_Boolean IsEqual(const TCollection_AsciiString &string1, const TCollection_AsciiString &string2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const TCollection_AsciiString &string1, const char * string2);
+		static		Standard_Boolean IsEqual(const TCollection_AsciiString &string1, const char * string2);
 		%feature("autodoc", "1");
-		Standard_Integer HASHCODE(const TCollection_AsciiString &astring, const Standard_Integer Upper);
+		static		Standard_Integer HASHCODE(const TCollection_AsciiString &astring, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean ISSIMILAR(const TCollection_AsciiString &string1, const TCollection_AsciiString &string2);
+		static		Standard_Boolean ISSIMILAR(const TCollection_AsciiString &string1, const TCollection_AsciiString &string2);
 
 };
 %feature("shadow") TCollection_AsciiString::~TCollection_AsciiString %{
@@ -481,7 +481,7 @@ class TCollection {
 		%feature("autodoc", "1");
 		TCollection();
 		%feature("autodoc", "1");
-		Standard_Integer NextPrimeForMap(const Standard_Integer I);
+		static		Standard_Integer NextPrimeForMap(const Standard_Integer I);
 
 };
 %feature("shadow") TCollection::~TCollection %{
@@ -574,11 +574,11 @@ class TCollection_AVLBaseNode : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetChild(const TCollection_AVLBaseNodePtr &theNode, const TCollection_Side theSide);
 		%feature("autodoc", "1");
-		Standard_Integer Height(const TCollection_AVLBaseNodePtr &ANode);
+		static		Standard_Integer Height(const TCollection_AVLBaseNodePtr &ANode);
 		%feature("autodoc", "1");
-		Standard_Integer RecursiveExtent(const TCollection_AVLBaseNodePtr &ANode);
+		static		Standard_Integer RecursiveExtent(const TCollection_AVLBaseNodePtr &ANode);
 		%feature("autodoc", "1");
-		Standard_Integer RecursiveTotalExtent(const TCollection_AVLBaseNodePtr &ANode);
+		static		Standard_Integer RecursiveTotalExtent(const TCollection_AVLBaseNodePtr &ANode);
 		%feature("autodoc", "1");
 		TCollection_AVLBaseNodePtr & Right() const;
 		%feature("autodoc", "1");
@@ -819,9 +819,9 @@ class TCollection_ExtendedString {
 		%feature("autodoc", "1");
 		Standard_ExtCharacter Value(const Standard_Integer where) const;
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const TCollection_ExtendedString &astring, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const TCollection_ExtendedString &astring, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const TCollection_ExtendedString &string1, const TCollection_ExtendedString &string2);
+		static		Standard_Boolean IsEqual(const TCollection_ExtendedString &string1, const TCollection_ExtendedString &string2);
 		%feature("autodoc", "1");
 		Standard_Integer ToUTF8CString(Standard_PCharacter & theCString) const;
 		%feature("autodoc", "1");

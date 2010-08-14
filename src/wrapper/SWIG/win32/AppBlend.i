@@ -51,7 +51,7 @@ class Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {

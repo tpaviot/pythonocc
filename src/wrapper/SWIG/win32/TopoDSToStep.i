@@ -363,19 +363,19 @@ class TopoDSToStep {
 		%feature("autodoc", "1");
 		TopoDSToStep();
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeBuilderError(const TopoDSToStep_BuilderError E);
+		static		Handle_TCollection_HAsciiString DecodeBuilderError(const TopoDSToStep_BuilderError E);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeFaceError(const TopoDSToStep_MakeFaceError E);
+		static		Handle_TCollection_HAsciiString DecodeFaceError(const TopoDSToStep_MakeFaceError E);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeWireError(const TopoDSToStep_MakeWireError E);
+		static		Handle_TCollection_HAsciiString DecodeWireError(const TopoDSToStep_MakeWireError E);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeEdgeError(const TopoDSToStep_MakeEdgeError E);
+		static		Handle_TCollection_HAsciiString DecodeEdgeError(const TopoDSToStep_MakeEdgeError E);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeVertexError(const TopoDSToStep_MakeVertexError E);
+		static		Handle_TCollection_HAsciiString DecodeVertexError(const TopoDSToStep_MakeVertexError E);
 		%feature("autodoc", "1");
-		void AddResult(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &Shape, const Handle_Standard_Transient &entity);
+		static		void AddResult(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &Shape, const Handle_Standard_Transient &entity);
 		%feature("autodoc", "1");
-		void AddResult(const Handle_Transfer_FinderProcess &FP, const TopoDSToStep_Tool &Tool);
+		static		void AddResult(const Handle_Transfer_FinderProcess &FP, const TopoDSToStep_Tool &Tool);
 
 };
 %feature("shadow") TopoDSToStep::~TopoDSToStep %{
@@ -545,7 +545,7 @@ class TopoDSToStep_FacetedTool {
 		%feature("autodoc", "1");
 		TopoDSToStep_FacetedTool();
 		%feature("autodoc", "1");
-		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape &SH);
+		static		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape &SH);
 
 };
 %feature("shadow") TopoDSToStep_FacetedTool::~TopoDSToStep_FacetedTool %{

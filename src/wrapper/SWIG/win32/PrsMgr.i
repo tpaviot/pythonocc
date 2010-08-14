@@ -63,7 +63,7 @@ class Handle_PrsMgr_Prs : public Handle_Prs3d_Presentation {
 		%feature("autodoc", "1");
 		Handle_PrsMgr_Prs & operator=(const PrsMgr_Prs *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Prs const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_Prs const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PrsMgr_Prs {
@@ -101,7 +101,7 @@ class Handle_PrsMgr_Presentation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_PrsMgr_Presentation & operator=(const PrsMgr_Presentation *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_Presentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PrsMgr_Presentation {
@@ -139,7 +139,7 @@ class Handle_PrsMgr_Presentation2d : public Handle_PrsMgr_Presentation {
 		%feature("autodoc", "1");
 		Handle_PrsMgr_Presentation2d & operator=(const PrsMgr_Presentation2d *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_Presentation2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PrsMgr_Presentation2d {
@@ -177,7 +177,7 @@ class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
 		%feature("autodoc", "1");
 		Handle_PrsMgr_Presentation3d & operator=(const PrsMgr_Presentation3d *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_Presentation3d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PrsMgr_Presentation3d {
@@ -215,7 +215,7 @@ class Handle_PrsMgr_PresentableObject : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_PrsMgr_PresentableObject & operator=(const PrsMgr_PresentableObject *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentableObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_PresentableObject const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PrsMgr_PresentableObject {
@@ -253,7 +253,7 @@ class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_PrsMgr_PresentationManager & operator=(const PrsMgr_PresentationManager *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_PresentationManager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PrsMgr_PresentationManager {
@@ -291,7 +291,7 @@ class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationMan
 		%feature("autodoc", "1");
 		Handle_PrsMgr_PresentationManager2d & operator=(const PrsMgr_PresentationManager2d *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_PresentationManager2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PrsMgr_PresentationManager2d {
@@ -329,7 +329,7 @@ class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationMan
 		%feature("autodoc", "1");
 		Handle_PrsMgr_PresentationManager3d & operator=(const PrsMgr_PresentationManager3d *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager3d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_PresentationManager3d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PrsMgr_PresentationManager3d {
@@ -367,7 +367,7 @@ class Handle_PrsMgr_SequenceNodeOfPresentations : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_PrsMgr_SequenceNodeOfPresentations & operator=(const PrsMgr_SequenceNodeOfPresentations *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_SequenceNodeOfPresentations const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_SequenceNodeOfPresentations const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PrsMgr_SequenceNodeOfPresentations {
@@ -623,6 +623,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend PrsMgr_PresentableObject {
+	PrsMgr_PresentableObject () {}
 };
 
 

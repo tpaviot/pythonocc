@@ -51,7 +51,7 @@ class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_Actor & operator=(const IGESToBRep_Actor *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESToBRep_Actor const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESToBRep_Actor const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESToBRep_Actor {
@@ -89,7 +89,7 @@ class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_AlgoContainer & operator=(const IGESToBRep_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESToBRep_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESToBRep_AlgoContainer {
@@ -127,7 +127,7 @@ class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_IGESBoundary & operator=(const IGESToBRep_IGESBoundary *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESToBRep_IGESBoundary const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESToBRep_IGESBoundary const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESToBRep_IGESBoundary {
@@ -165,7 +165,7 @@ class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_ToolContainer & operator=(const IGESToBRep_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESToBRep_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESToBRep_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESToBRep_ToolContainer {
@@ -461,29 +461,29 @@ class IGESToBRep {
 		%feature("autodoc", "1");
 		IGESToBRep();
 		%feature("autodoc", "1");
-		void Init();
+		static		void Init();
 		%feature("autodoc", "1");
-		void SetAlgoContainer(const Handle_IGESToBRep_AlgoContainer &aContainer);
+		static		void SetAlgoContainer(const Handle_IGESToBRep_AlgoContainer &aContainer);
 		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer AlgoContainer();
+		static		Handle_IGESToBRep_AlgoContainer AlgoContainer();
 		%feature("autodoc", "1");
-		Standard_Boolean IsCurveAndSurface(const Handle_IGESData_IGESEntity &start);
+		static		Standard_Boolean IsCurveAndSurface(const Handle_IGESData_IGESEntity &start);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBasicCurve(const Handle_IGESData_IGESEntity &start);
+		static		Standard_Boolean IsBasicCurve(const Handle_IGESData_IGESEntity &start);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBasicSurface(const Handle_IGESData_IGESEntity &start);
+		static		Standard_Boolean IsBasicSurface(const Handle_IGESData_IGESEntity &start);
 		%feature("autodoc", "1");
-		Standard_Boolean IsTopoCurve(const Handle_IGESData_IGESEntity &start);
+		static		Standard_Boolean IsTopoCurve(const Handle_IGESData_IGESEntity &start);
 		%feature("autodoc", "1");
-		Standard_Boolean IsTopoSurface(const Handle_IGESData_IGESEntity &start);
+		static		Standard_Boolean IsTopoSurface(const Handle_IGESData_IGESEntity &start);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBRepEntity(const Handle_IGESData_IGESEntity &start);
+		static		Standard_Boolean IsBRepEntity(const Handle_IGESData_IGESEntity &start);
 		%feature("autodoc", "1");
-		void WriteShape(const TopoDS_Shape &shape, const Standard_Integer number);
+		static		void WriteShape(const TopoDS_Shape &shape, const Standard_Integer number);
 		%feature("autodoc", "1");
-		Standard_Integer IGESCurveToSequenceOfIGESCurve(const Handle_IGESData_IGESEntity &curve, Handle_TColStd_HSequenceOfTransient & sequence);
+		static		Standard_Integer IGESCurveToSequenceOfIGESCurve(const Handle_IGESData_IGESEntity &curve, Handle_TColStd_HSequenceOfTransient & sequence);
 		%feature("autodoc", "1");
-		Standard_Boolean TransferPCurve(const TopoDS_Edge &fromedge, const TopoDS_Edge &toedge, const TopoDS_Face &face);
+		static		Standard_Boolean TransferPCurve(const TopoDS_Edge &fromedge, const TopoDS_Edge &toedge, const TopoDS_Face &face);
 
 };
 %feature("shadow") IGESToBRep::~IGESToBRep %{

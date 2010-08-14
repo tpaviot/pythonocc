@@ -57,7 +57,7 @@ class Handle_LocOpe_ProjectedWires : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_LocOpe_ProjectedWires & operator=(const LocOpe_ProjectedWires *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_ProjectedWires const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_LocOpe_ProjectedWires const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_LocOpe_ProjectedWires {
@@ -95,7 +95,7 @@ class Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt & operator=(const LocOpe_DataMapNodeOfDataMapOfShapePnt *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt {
@@ -133,7 +133,7 @@ class Handle_LocOpe_HBuilder : public Handle_TopOpeBRepBuild_HBuilder {
 		%feature("autodoc", "1");
 		Handle_LocOpe_HBuilder & operator=(const LocOpe_HBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_HBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_LocOpe_HBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_LocOpe_HBuilder {
@@ -171,7 +171,7 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfPntFace : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace & operator=(const LocOpe_SequenceNodeOfSequenceOfPntFace *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_LocOpe_SequenceNodeOfSequenceOfPntFace {
@@ -209,7 +209,7 @@ class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_LocOpe_GeneratedShape & operator=(const LocOpe_GeneratedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_GeneratedShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_LocOpe_GeneratedShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_LocOpe_GeneratedShape {
@@ -247,7 +247,7 @@ class Handle_LocOpe_GluedShape : public Handle_LocOpe_GeneratedShape {
 		%feature("autodoc", "1");
 		Handle_LocOpe_GluedShape & operator=(const LocOpe_GluedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_GluedShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_LocOpe_GluedShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_LocOpe_GluedShape {
@@ -285,7 +285,7 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfLin : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_LocOpe_SequenceNodeOfSequenceOfLin & operator=(const LocOpe_SequenceNodeOfSequenceOfLin *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_SequenceNodeOfSequenceOfLin const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_LocOpe_SequenceNodeOfSequenceOfLin const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_LocOpe_SequenceNodeOfSequenceOfLin {
@@ -323,7 +323,7 @@ class Handle_LocOpe_WiresOnShape : public Handle_LocOpe_ProjectedWires {
 		%feature("autodoc", "1");
 		Handle_LocOpe_WiresOnShape & operator=(const LocOpe_WiresOnShape *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_WiresOnShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_LocOpe_WiresOnShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_LocOpe_WiresOnShape {
@@ -361,7 +361,7 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfCirc : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_LocOpe_SequenceNodeOfSequenceOfCirc & operator=(const LocOpe_SequenceNodeOfSequenceOfCirc *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_SequenceNodeOfSequenceOfCirc const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_LocOpe_SequenceNodeOfSequenceOfCirc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_LocOpe_SequenceNodeOfSequenceOfCirc {
@@ -836,13 +836,13 @@ class LocOpe {
 		%feature("autodoc", "1");
 		LocOpe();
 		%feature("autodoc", "1");
-		Standard_Boolean Closed(const TopoDS_Wire &W, const TopoDS_Face &OnF);
+		static		Standard_Boolean Closed(const TopoDS_Wire &W, const TopoDS_Face &OnF);
 		%feature("autodoc", "1");
-		Standard_Boolean Closed(const TopoDS_Edge &E, const TopoDS_Face &OnF);
+		static		Standard_Boolean Closed(const TopoDS_Edge &E, const TopoDS_Face &OnF);
 		%feature("autodoc", "1");
-		Standard_Boolean TgtFaces(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2);
+		static		Standard_Boolean TgtFaces(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2);
 		%feature("autodoc", "1");
-		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
+		static		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
 
 };
 %feature("shadow") LocOpe::~LocOpe %{

@@ -51,7 +51,7 @@ class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_PositionDriver & operator=(const XmlMPrsStd_PositionDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_PositionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMPrsStd_PositionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlMPrsStd_PositionDriver {
@@ -89,7 +89,7 @@ class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const XmlMPrsStd_AISPresentationDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMPrsStd_AISPresentationDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlMPrsStd_AISPresentationDriver {
@@ -119,7 +119,7 @@ class XmlMPrsStd {
 		%feature("autodoc", "1");
 		XmlMPrsStd();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
+		static		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
 %feature("shadow") XmlMPrsStd::~XmlMPrsStd %{

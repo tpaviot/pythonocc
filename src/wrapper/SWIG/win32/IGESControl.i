@@ -51,7 +51,7 @@ class Handle_IGESControl_AlgoContainer : public Handle_IGESToBRep_AlgoContainer 
 		%feature("autodoc", "1");
 		Handle_IGESControl_AlgoContainer & operator=(const IGESControl_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESControl_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESControl_AlgoContainer {
@@ -89,7 +89,7 @@ class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 		%feature("autodoc", "1");
 		Handle_IGESControl_ActorWrite & operator=(const IGESControl_ActorWrite *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_ActorWrite const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESControl_ActorWrite const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESControl_ActorWrite {
@@ -127,7 +127,7 @@ class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 		%feature("autodoc", "1");
 		Handle_IGESControl_Controller & operator=(const IGESControl_Controller *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESControl_Controller {
@@ -165,7 +165,7 @@ class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 		%feature("autodoc", "1");
 		Handle_IGESControl_IGESBoundary & operator=(const IGESControl_IGESBoundary *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESControl_IGESBoundary const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESControl_IGESBoundary {
@@ -203,7 +203,7 @@ class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer 
 		%feature("autodoc", "1");
 		Handle_IGESControl_ToolContainer & operator=(const IGESControl_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESControl_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESControl_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESControl_ToolContainer {
@@ -311,7 +311,7 @@ class IGESControl_Controller : public XSControl_Controller {
 		%feature("autodoc", "1");
 		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape &shape, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model, const Standard_Integer modetrans=0) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Init();
+		static		Standard_Boolean Init();
 		%feature("autodoc", "1");
 		virtual		void Customise(Handle_XSControl_WorkSession & WS);
 		%feature("autodoc", "1");

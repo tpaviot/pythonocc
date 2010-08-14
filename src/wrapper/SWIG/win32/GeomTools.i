@@ -51,7 +51,7 @@ class Handle_GeomTools_UndefinedTypeHandler : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomTools_UndefinedTypeHandler & operator=(const GeomTools_UndefinedTypeHandler *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomTools_UndefinedTypeHandler const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomTools_UndefinedTypeHandler const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomTools_UndefinedTypeHandler {
@@ -112,9 +112,9 @@ class GeomTools_CurveSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void PrintCurve(const Handle_Geom_Curve &C, Standard_OStream & OS, const Standard_Boolean compact=0);
+		static		void PrintCurve(const Handle_Geom_Curve &C, Standard_OStream & OS, const Standard_Boolean compact=0);
 		%feature("autodoc", "1");
-		std::istream & ReadCurve(std::istream & IS, Handle_Geom_Curve & C);
+		static		std::istream & ReadCurve(std::istream & IS, Handle_Geom_Curve & C);
 		%feature("autodoc", "1");
 		void SetProgress(const Handle_Message_ProgressIndicator &PR);
 		%feature("autodoc", "1");
@@ -174,9 +174,9 @@ class GeomTools_SurfaceSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void PrintSurface(const Handle_Geom_Surface &S, Standard_OStream & OS, const Standard_Boolean compact=0);
+		static		void PrintSurface(const Handle_Geom_Surface &S, Standard_OStream & OS, const Standard_Boolean compact=0);
 		%feature("autodoc", "1");
-		std::istream & ReadSurface(std::istream & IS, Handle_Geom_Surface & S);
+		static		std::istream & ReadSurface(std::istream & IS, Handle_Geom_Surface & S);
 		%feature("autodoc", "1");
 		void SetProgress(const Handle_Message_ProgressIndicator &PR);
 		%feature("autodoc", "1");
@@ -236,9 +236,9 @@ class GeomTools_Curve2dSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		void PrintCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS, const Standard_Boolean compact=0);
+		static		void PrintCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS, const Standard_Boolean compact=0);
 		%feature("autodoc", "1");
-		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
+		static		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
 		%feature("autodoc", "1");
 		void SetProgress(const Handle_Message_ProgressIndicator &PR);
 		%feature("autodoc", "1");
@@ -314,27 +314,27 @@ class GeomTools {
 		%feature("autodoc", "1");
 		GeomTools();
 		%feature("autodoc", "1");
-		void Dump(const Handle_Geom_Surface &S, Standard_OStream & OS);
+		static		void Dump(const Handle_Geom_Surface &S, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Write(const Handle_Geom_Surface &S, Standard_OStream & OS);
+		static		void Write(const Handle_Geom_Surface &S, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Read(Handle_Geom_Surface & S, std::istream & IS);
+		static		void Read(Handle_Geom_Surface & S, std::istream & IS);
 		%feature("autodoc", "1");
-		void Dump(const Handle_Geom_Curve &C, Standard_OStream & OS);
+		static		void Dump(const Handle_Geom_Curve &C, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Write(const Handle_Geom_Curve &C, Standard_OStream & OS);
+		static		void Write(const Handle_Geom_Curve &C, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Read(Handle_Geom_Curve & C, std::istream & IS);
+		static		void Read(Handle_Geom_Curve & C, std::istream & IS);
 		%feature("autodoc", "1");
-		void Dump(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
+		static		void Dump(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Write(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
+		static		void Write(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		void Read(Handle_Geom2d_Curve & C, std::istream & IS);
+		static		void Read(Handle_Geom2d_Curve & C, std::istream & IS);
 		%feature("autodoc", "1");
-		void SetUndefinedTypeHandler(const Handle_GeomTools_UndefinedTypeHandler &aHandler);
+		static		void SetUndefinedTypeHandler(const Handle_GeomTools_UndefinedTypeHandler &aHandler);
 		%feature("autodoc", "1");
-		Handle_GeomTools_UndefinedTypeHandler GetUndefinedTypeHandler();
+		static		Handle_GeomTools_UndefinedTypeHandler GetUndefinedTypeHandler();
 
 };
 %feature("shadow") GeomTools::~GeomTools %{

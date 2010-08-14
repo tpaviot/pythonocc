@@ -56,7 +56,7 @@ class Handle_MgtBRep_TranslateTool1 : public Handle_MgtTopoDS_TranslateTool1 {
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool1 & operator=(const MgtBRep_TranslateTool1 *anItem);
 		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool1 const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MgtBRep_TranslateTool1 const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MgtBRep_TranslateTool1 {
@@ -94,7 +94,7 @@ class Handle_MgtBRep_TranslateTool : public Handle_MgtTopoDS_TranslateTool {
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool & operator=(const MgtBRep_TranslateTool *anItem);
 		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MgtBRep_TranslateTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MgtBRep_TranslateTool {
@@ -286,13 +286,13 @@ class MgtBRep {
 		%feature("autodoc", "1");
 		MgtBRep();
 		%feature("autodoc", "1");
-		Handle_PTopoDS_HShape Translate(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, const MgtBRep_TriangleMode aTriMode);
+		static		Handle_PTopoDS_HShape Translate(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, const MgtBRep_TriangleMode aTriMode);
 		%feature("autodoc", "1");
-		void Translate1(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, PTopoDS_Shape1 & aResult, const MgtBRep_TriangleMode aTriMode);
+		static		void Translate1(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, PTopoDS_Shape1 & aResult, const MgtBRep_TriangleMode aTriMode);
 		%feature("autodoc", "1");
-		void Translate(const Handle_PTopoDS_HShape &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
+		static		void Translate(const Handle_PTopoDS_HShape &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
 		%feature("autodoc", "1");
-		void Translate1(const PTopoDS_Shape1 &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
+		static		void Translate1(const PTopoDS_Shape1 &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
 
 };
 %feature("shadow") MgtBRep::~MgtBRep %{

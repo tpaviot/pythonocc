@@ -51,7 +51,7 @@ class Handle_GraphTools_SC : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GraphTools_SC & operator=(const GraphTools_SC *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphTools_SC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GraphTools_SC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GraphTools_SC {
@@ -89,7 +89,7 @@ class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger & operator=(const GraphTools_ListNodeOfListOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GraphTools_ListNodeOfListOfSequenceOfInteger {
@@ -127,7 +127,7 @@ class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfSCList & operator=(const GraphTools_ListNodeOfSCList *anItem);
 		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfSCList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GraphTools_ListNodeOfSCList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GraphTools_ListNodeOfSCList {

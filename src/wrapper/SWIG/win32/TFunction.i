@@ -59,7 +59,7 @@ class Handle_TFunction_GraphNode : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TFunction_GraphNode & operator=(const TFunction_GraphNode *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_GraphNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_GraphNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TFunction_GraphNode {
@@ -97,7 +97,7 @@ class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TFunction_DriverTable & operator=(const TFunction_DriverTable *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DriverTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_DriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TFunction_DriverTable {
@@ -135,7 +135,7 @@ class Handle_TFunction_Scope : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TFunction_Scope & operator=(const TFunction_Scope *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_Scope const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_Scope const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TFunction_Scope {
@@ -173,7 +173,7 @@ class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
@@ -211,7 +211,7 @@ class Handle_TFunction_Function : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TFunction_Function & operator=(const TFunction_Function *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_Function const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_Function const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TFunction_Function {
@@ -249,7 +249,7 @@ class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel & operator=(const TFunction_DataMapNodeOfDataMapOfLabelListOfLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
@@ -287,7 +287,7 @@ class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_HArray1OfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
@@ -325,7 +325,7 @@ class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver & operator=(const TFunction_DataMapNodeOfDataMapOfGUIDDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver {
@@ -363,7 +363,7 @@ class Handle_TFunction_Driver : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TFunction_Driver & operator=(const TFunction_Driver *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_Driver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_Driver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TFunction_Driver {
@@ -532,9 +532,9 @@ def __del__(self):
 class TFunction_Scope : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TFunction_Scope Set(const TDF_Label &Access);
+		static		Handle_TFunction_Scope Set(const TDF_Label &Access);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		TFunction_Scope();
 		%feature("autodoc", "1");
@@ -658,11 +658,11 @@ def __del__(self):
 class TFunction_IFunction {
 	public:
 		%feature("autodoc", "1");
-		Standard_Boolean NewFunction(const TDF_Label &L, const Standard_GUID &ID);
+		static		Standard_Boolean NewFunction(const TDF_Label &L, const Standard_GUID &ID);
 		%feature("autodoc", "1");
-		Standard_Boolean DeleteFunction(const TDF_Label &L);
+		static		Standard_Boolean DeleteFunction(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Standard_Boolean UpdateDependencies(const TDF_Label &Access);
+		static		Standard_Boolean UpdateDependencies(const TDF_Label &Access);
 		%feature("autodoc", "1");
 		TFunction_IFunction();
 		%feature("autodoc", "1");
@@ -766,11 +766,11 @@ def __del__(self):
 class TFunction_Function : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TFunction_Function Set(const TDF_Label &L);
+		static		Handle_TFunction_Function Set(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Handle_TFunction_Function Set(const TDF_Label &L, const Standard_GUID &DriverID);
+		static		Handle_TFunction_Function Set(const TDF_Label &L, const Standard_GUID &DriverID);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		TFunction_Function();
 		%feature("autodoc", "1");
@@ -962,7 +962,7 @@ def __del__(self):
 class TFunction_DriverTable : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TFunction_DriverTable Get();
+		static		Handle_TFunction_DriverTable Get();
 		%feature("autodoc", "1");
 		TFunction_DriverTable();
 		%feature("autodoc", "1");
@@ -1138,9 +1138,9 @@ def __del__(self):
 class TFunction_GraphNode : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TFunction_GraphNode Set(const TDF_Label &L);
+		static		Handle_TFunction_GraphNode Set(const TDF_Label &L);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		TFunction_GraphNode();
 		%feature("autodoc", "1");

@@ -89,7 +89,7 @@ class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNod
 		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontName & operator=(const MFT_SequenceNodeOfListOfFontName *anItem);
 		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontName const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MFT_SequenceNodeOfListOfFontName const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MFT_SequenceNodeOfListOfFontName {
@@ -127,7 +127,7 @@ class Handle_MFT_TextManager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MFT_TextManager & operator=(const MFT_TextManager *anItem);
 		%feature("autodoc", "1");
-		Handle_MFT_TextManager const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MFT_TextManager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MFT_TextManager {
@@ -165,7 +165,7 @@ class Handle_MFT_FontManager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MFT_FontManager & operator=(const MFT_FontManager *anItem);
 		%feature("autodoc", "1");
-		Handle_MFT_FontManager const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MFT_FontManager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MFT_FontManager {
@@ -203,7 +203,7 @@ class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
 		%feature("autodoc", "1");
 		Handle_MFT_FontManagerError & operator=(const MFT_FontManagerError *anItem);
 		%feature("autodoc", "1");
-		Handle_MFT_FontManagerError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MFT_FontManagerError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MFT_FontManagerError {
@@ -241,7 +241,7 @@ class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontHandle & operator=(const MFT_SequenceNodeOfListOfFontHandle *anItem);
 		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontHandle const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MFT_SequenceNodeOfListOfFontHandle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MFT_SequenceNodeOfListOfFontHandle {
@@ -279,7 +279,7 @@ class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontReference & operator=(const MFT_SequenceNodeOfListOfFontReference *anItem);
 		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontReference const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MFT_SequenceNodeOfListOfFontReference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MFT_SequenceNodeOfListOfFontReference {
@@ -317,7 +317,7 @@ class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObjec
 		%feature("autodoc", "1");
 		Handle_MFT_FontManagerDefinitionError & operator=(const MFT_FontManagerDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_MFT_FontManagerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MFT_FontManagerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MFT_FontManagerDefinitionError {
@@ -730,11 +730,11 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 		%feature("autodoc", "1");
 		MFT_FontManagerDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_MFT_FontManagerDefinitionError NewInstance(const char * aMessage);
+		static		Handle_MFT_FontManagerDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -773,11 +773,11 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 		%feature("autodoc", "1");
 		MFT_FontManagerError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_MFT_FontManagerError NewInstance(const char * aMessage);
+		static		Handle_MFT_FontManagerError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -889,15 +889,15 @@ class MFT_FontManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsComposite() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsKnown(const char * anAliasName);
+		static		Standard_Boolean IsKnown(const char * anAliasName);
 		%feature("autodoc", "1");
-		Aspect_FontStyle Font(const char * anAliasName);
+		static		Aspect_FontStyle Font(const char * anAliasName);
 		%feature("autodoc", "1");
-		Standard_Integer FontNumber(const char * aFilter="*");
+		static		Standard_Integer FontNumber(const char * aFilter="*");
 		%feature("autodoc", "1");
-		Aspect_FontStyle Font(const Standard_Integer aRank);
+		static		Aspect_FontStyle Font(const Standard_Integer aRank);
 		%feature("autodoc", "1");
-		Standard_Integer MaxCommandValues();
+		static		Standard_Integer MaxCommandValues();
 		%feature("autodoc", "1");
 		char * Encoding(const Standard_Integer aPosition);
 		%feature("autodoc", "1");
@@ -911,7 +911,7 @@ class MFT_FontManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean Save();
 		%feature("autodoc", "1");
-		Standard_Boolean Restore(const char * anAliasName);
+		static		Standard_Boolean Restore(const char * anAliasName);
 		%feature("autodoc", "1");
 		Quantity_Length UnderlinePosition() const;
 		%feature("autodoc", "1");

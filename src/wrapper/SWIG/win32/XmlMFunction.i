@@ -51,7 +51,7 @@ class Handle_XmlMFunction_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMFunction_GraphNodeDriver & operator=(const XmlMFunction_GraphNodeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMFunction_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlMFunction_GraphNodeDriver {
@@ -89,7 +89,7 @@ class Handle_XmlMFunction_FunctionDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMFunction_FunctionDriver & operator=(const XmlMFunction_FunctionDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMFunction_FunctionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMFunction_FunctionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlMFunction_FunctionDriver {
@@ -127,7 +127,7 @@ class Handle_XmlMFunction_ScopeDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMFunction_ScopeDriver & operator=(const XmlMFunction_ScopeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMFunction_ScopeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMFunction_ScopeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlMFunction_ScopeDriver {
@@ -198,7 +198,7 @@ class XmlMFunction {
 		%feature("autodoc", "1");
 		XmlMFunction();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
+		static		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
 %feature("shadow") XmlMFunction::~XmlMFunction %{

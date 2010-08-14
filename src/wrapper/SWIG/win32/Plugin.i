@@ -51,7 +51,7 @@ class Handle_Plugin_DataMapNodeOfMapOfFunctions : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_Plugin_DataMapNodeOfMapOfFunctions & operator=(const Plugin_DataMapNodeOfMapOfFunctions *anItem);
 		%feature("autodoc", "1");
-		Handle_Plugin_DataMapNodeOfMapOfFunctions const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Plugin_DataMapNodeOfMapOfFunctions const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Plugin_DataMapNodeOfMapOfFunctions {
@@ -89,7 +89,7 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Plugin_Failure & operator=(const Plugin_Failure *anItem);
 		%feature("autodoc", "1");
-		Handle_Plugin_Failure const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Plugin_Failure const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Plugin_Failure {
@@ -187,11 +187,11 @@ class Plugin_Failure : public Standard_Failure {
 		%feature("autodoc", "1");
 		Plugin_Failure(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Plugin_Failure NewInstance(const char * aMessage);
+		static		Handle_Plugin_Failure NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -263,7 +263,7 @@ class Plugin {
 		%feature("autodoc", "1");
 		Plugin();
 		%feature("autodoc", "1");
-		Handle_Standard_Transient Load(const Standard_GUID &aGUID);
+		static		Handle_Standard_Transient Load(const Standard_GUID &aGUID);
 
 };
 %feature("shadow") Plugin::~Plugin %{

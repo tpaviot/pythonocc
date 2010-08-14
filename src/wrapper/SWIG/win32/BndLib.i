@@ -43,9 +43,9 @@ class BndLib_AddSurface {
 		%feature("autodoc", "1");
 		BndLib_AddSurface();
 		%feature("autodoc", "1");
-		void Add(const Adaptor3d_Surface &S, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const Adaptor3d_Surface &S, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const Adaptor3d_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const Adaptor3d_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 
 };
 %feature("shadow") BndLib_AddSurface::~BndLib_AddSurface %{
@@ -70,9 +70,9 @@ class BndLib_Add3dCurve {
 		%feature("autodoc", "1");
 		BndLib_Add3dCurve();
 		%feature("autodoc", "1");
-		void Add(const Adaptor3d_Curve &C, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const Adaptor3d_Curve &C, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const Adaptor3d_Curve &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const Adaptor3d_Curve &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box & B);
 
 };
 %feature("shadow") BndLib_Add3dCurve::~BndLib_Add3dCurve %{
@@ -97,49 +97,49 @@ class BndLib {
 		%feature("autodoc", "1");
 		BndLib();
 		%feature("autodoc", "1");
-		void Add(const gp_Lin &L, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Lin &L, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Lin2d &L, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box2d & B);
+		static		void Add(const gp_Lin2d &L, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Circ &C, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Circ &C, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Circ &C, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Circ &C, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Circ2d &C, const Standard_Real Tol, Bnd_Box2d & B);
+		static		void Add(const gp_Circ2d &C, const Standard_Real Tol, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Circ2d &C, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box2d & B);
+		static		void Add(const gp_Circ2d &C, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Elips &C, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Elips &C, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Elips &C, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Elips &C, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Elips2d &C, const Standard_Real Tol, Bnd_Box2d & B);
+		static		void Add(const gp_Elips2d &C, const Standard_Real Tol, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Elips2d &C, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box2d & B);
+		static		void Add(const gp_Elips2d &C, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Parab &P, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Parab &P, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Parab2d &P, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box2d & B);
+		static		void Add(const gp_Parab2d &P, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Hypr &H, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Hypr &H, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Hypr2d &H, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box2d & B);
+		static		void Add(const gp_Hypr2d &H, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Cylinder &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Cylinder &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Cylinder &S, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Cylinder &S, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Cone &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Cone &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Cone &S, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Cone &S, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Sphere &S, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Sphere &S, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Sphere &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Sphere &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Torus &P, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Torus &P, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void Add(const gp_Torus &P, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
+		static		void Add(const gp_Torus &P, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 
 };
 %feature("shadow") BndLib::~BndLib %{
@@ -164,9 +164,9 @@ class BndLib_Add2dCurve {
 		%feature("autodoc", "1");
 		BndLib_Add2dCurve();
 		%feature("autodoc", "1");
-		void Add(const Adaptor2d_Curve2d &C, const Standard_Real Tol, Bnd_Box2d & B);
+		static		void Add(const Adaptor2d_Curve2d &C, const Standard_Real Tol, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void Add(const Adaptor2d_Curve2d &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box2d & B);
+		static		void Add(const Adaptor2d_Curve2d &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box2d & B);
 
 };
 %feature("shadow") BndLib_Add2dCurve::~BndLib_Add2dCurve %{

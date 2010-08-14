@@ -56,7 +56,7 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
@@ -94,7 +94,7 @@ class Handle_BRepAlgo_AsDes : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_AsDes & operator=(const BRepAlgo_AsDes *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAlgo_AsDes const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_AsDes const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_AsDes {
@@ -132,7 +132,7 @@ class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger & operator=(const BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
@@ -170,7 +170,7 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeInterference *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
@@ -208,7 +208,7 @@ class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_EdgeConnector & operator=(const BRepAlgo_EdgeConnector *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAlgo_EdgeConnector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_EdgeConnector const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_EdgeConnector {
@@ -246,7 +246,7 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_T
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
@@ -276,7 +276,7 @@ class BRepAlgo_Tool {
 		%feature("autodoc", "1");
 		BRepAlgo_Tool();
 		%feature("autodoc", "1");
-		TopoDS_Shape Deboucle3D(const TopoDS_Shape &S, const TopTools_MapOfShape &Boundary);
+		static		TopoDS_Shape Deboucle3D(const TopoDS_Shape &S, const TopTools_MapOfShape &Boundary);
 
 };
 %feature("shadow") BRepAlgo_Tool::~BRepAlgo_Tool %{
@@ -1301,13 +1301,13 @@ class BRepAlgo {
 		%feature("autodoc", "1");
 		BRepAlgo();
 		%feature("autodoc", "1");
-		TopoDS_Wire ConcatenateWire(const TopoDS_Wire &Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		static		TopoDS_Wire ConcatenateWire(const TopoDS_Wire &Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		Standard_Boolean IsValid(const TopoDS_Shape &S);
+		static		Standard_Boolean IsValid(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsValid(const TopTools_ListOfShape &theArgs, const TopoDS_Shape &theResult, const Standard_Boolean closedSolid=0, const Standard_Boolean GeomCtrl=1);
+		static		Standard_Boolean IsValid(const TopTools_ListOfShape &theArgs, const TopoDS_Shape &theResult, const Standard_Boolean closedSolid=0, const Standard_Boolean GeomCtrl=1);
 		%feature("autodoc", "1");
-		Standard_Boolean IsTopologicallyValid(const TopoDS_Shape &S);
+		static		Standard_Boolean IsTopologicallyValid(const TopoDS_Shape &S);
 
 };
 %feature("shadow") BRepAlgo::~BRepAlgo %{

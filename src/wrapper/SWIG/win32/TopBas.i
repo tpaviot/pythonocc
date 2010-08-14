@@ -51,7 +51,7 @@ class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_TopBas_ListNodeOfListOfTestInterference & operator=(const TopBas_ListNodeOfListOfTestInterference *anItem);
 		%feature("autodoc", "1");
-		Handle_TopBas_ListNodeOfListOfTestInterference const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopBas_ListNodeOfListOfTestInterference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopBas_ListNodeOfListOfTestInterference {

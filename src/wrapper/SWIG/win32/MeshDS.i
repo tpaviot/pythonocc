@@ -65,7 +65,7 @@ class Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger & operator=(const MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {

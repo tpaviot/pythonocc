@@ -726,7 +726,7 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError & operator=(const Quantity_ColorDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_ColorDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Quantity_ColorDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Quantity_ColorDefinitionError {
@@ -764,7 +764,7 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError & operator=(const Quantity_PeriodDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_PeriodDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Quantity_PeriodDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Quantity_PeriodDefinitionError {
@@ -802,7 +802,7 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor & operator=(const Quantity_HArray1OfColor *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_HArray1OfColor const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Quantity_HArray1OfColor const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Quantity_HArray1OfColor {
@@ -840,7 +840,7 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError & operator=(const Quantity_DateDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Quantity_DateDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Quantity_DateDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Quantity_DateDefinitionError {
@@ -1008,9 +1008,9 @@ class Quantity_Period {
 		%feature("autodoc", "1");
 		Standard_Boolean operator>(const Quantity_Period &anOther) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsValid(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
+		static		Standard_Boolean IsValid(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
-		Standard_Boolean IsValid(const Standard_Integer ss, const Standard_Integer mics=0);
+		static		Standard_Boolean IsValid(const Standard_Integer ss, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
 		Quantity_Period();
 		%feature("autodoc", "1");
@@ -1047,11 +1047,11 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 		%feature("autodoc", "1");
 		Quantity_ColorDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1090,11 +1090,11 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 		%feature("autodoc", "1");
 		Quantity_PeriodDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Quantity_PeriodDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Quantity_PeriodDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1230,21 +1230,21 @@ class Quantity_Color {
 
 		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Quantity_TypeOfColor AType) const;
 		%feature("autodoc", "1");
-		void SetEpsilon(const Quantity_Parameter AnEpsilon);
+		static		void SetEpsilon(const Quantity_Parameter AnEpsilon);
 		%feature("autodoc", "1");
-		Quantity_Parameter Epsilon();
+		static		Quantity_Parameter Epsilon();
 		%feature("autodoc", "1");
-		Quantity_NameOfColor Name(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B);
+		static		Quantity_NameOfColor Name(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B);
 		%feature("autodoc", "1");
-		char * StringName(const Quantity_NameOfColor AColor);
+		static		char * StringName(const Quantity_NameOfColor AColor);
 		%feature("autodoc","HlsRgb(Quantity_Parameter H, Quantity_Parameter L, Quantity_Parameter S) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","RgbHls(Quantity_Parameter R, Quantity_Parameter G, Quantity_Parameter B) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void Test();
+		static		void Test();
 		%feature("autodoc", "1");
 		Standard_ShortReal _CSFDB_GetQuantity_ColorMyRed() const;
 		%feature("autodoc", "1");
@@ -1326,9 +1326,9 @@ class Quantity_Date {
 		%feature("autodoc", "1");
 		Standard_Boolean operator>(const Quantity_Date &anOther) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsValid(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
+		static		Standard_Boolean IsValid(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
-		Standard_Boolean IsLeap(const Standard_Integer yy);
+		static		Standard_Boolean IsLeap(const Standard_Integer yy);
 		%feature("autodoc", "1");
 		Standard_Integer _CSFDB_GetQuantity_DatemySec() const;
 		%feature("autodoc", "1");
@@ -1363,11 +1363,11 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 		%feature("autodoc", "1");
 		Quantity_DateDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1459,13 +1459,13 @@ class Quantity_Convert {
 		%feature("autodoc", "1");
 		Quantity_Convert();
 		%feature("autodoc", "1");
-		void SetQuantity(const Quantity_PhysicalQuantity aQuantity, const Quantity_Coefficient aCoef);
+		static		void SetQuantity(const Quantity_PhysicalQuantity aQuantity, const Quantity_Coefficient aCoef);
 		%feature("autodoc", "1");
-		Quantity_Coefficient ConvertUserToSI(const Quantity_PhysicalQuantity aQuantity, const Standard_Real aVal);
+		static		Quantity_Coefficient ConvertUserToSI(const Quantity_PhysicalQuantity aQuantity, const Standard_Real aVal);
 		%feature("autodoc", "1");
-		Quantity_Coefficient ConvertSIToUser(const Quantity_PhysicalQuantity aQuantity, const Standard_Real aVal);
+		static		Quantity_Coefficient ConvertSIToUser(const Quantity_PhysicalQuantity aQuantity, const Standard_Real aVal);
 		%feature("autodoc", "1");
-		Standard_Boolean IsPhysicalQuantity(const TCollection_AsciiString &aTypeName, TCollection_AsciiString & anEnum);
+		static		Standard_Boolean IsPhysicalQuantity(const TCollection_AsciiString &aTypeName, TCollection_AsciiString & anEnum);
 
 };
 %feature("shadow") Quantity_Convert::~Quantity_Convert %{

@@ -51,7 +51,7 @@ class Handle_GEOM_SubShapeDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOM_SubShapeDriver & operator=(const GEOM_SubShapeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOM_SubShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOM_SubShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOM_SubShapeDriver {
@@ -89,7 +89,7 @@ class Handle_GEOM_Object : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object & operator=(const GEOM_Object *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOM_Object const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOM_Object {
@@ -127,7 +127,7 @@ class Handle_GEOM_Application : public Handle_TDocStd_Application {
 		%feature("autodoc", "1");
 		Handle_GEOM_Application & operator=(const GEOM_Application *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOM_Application const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOM_Application const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOM_Application {
@@ -165,7 +165,7 @@ class Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient & operator=(const GEOM_DataMapNodeOfDataMapOfAsciiStringTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
@@ -203,7 +203,7 @@ class Handle_GEOM_Function : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GEOM_Function & operator=(const GEOM_Function *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOM_Function const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOM_Function const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOM_Function {
@@ -236,6 +236,12 @@ class GEOM_Application : public TDocStd_Application {
 		virtual		void Formats(TColStd_SequenceOfExtendedString & Formats);
 		%feature("autodoc", "1");
 		virtual		char * ResourcesName();
+		%feature("autodoc", "1");
+		virtual		void OnOpenTransaction(const Handle_TDocStd_Document &theDoc);
+		%feature("autodoc", "1");
+		virtual		void OnCommitTransaction(const Handle_TDocStd_Document &theDoc);
+		%feature("autodoc", "1");
+		virtual		void OnAbortTransaction(const Handle_TDocStd_Document &theDoc);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -315,7 +321,7 @@ class GEOM_Engine {
 		%feature("autodoc", "1");
 		GEOM_Engine();
 		%feature("autodoc", "1");
-		GEOM_Engine * GetEngine();
+		static		GEOM_Engine * GetEngine();
 		%feature("autodoc", "1");
 		bool IsDocumentExistant(int );
 		%feature("autodoc", "1");
@@ -657,11 +663,11 @@ class GEOM_Function : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetFunctionTreeID();
+		static		const Standard_GUID & GetFunctionTreeID();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetDependencyID();
+		static		const Standard_GUID & GetDependencyID();
 		%feature("autodoc", "1");
-		Handle_GEOM_Function GetFunction(const TDF_Label &theEntry);
+		static		Handle_GEOM_Function GetFunction(const TDF_Label &theEntry);
 		%feature("autodoc", "1");
 		GEOM_Function(const TDF_Label &theEntry, const Standard_GUID &theGUID, int );
 		%feature("autodoc", "1");
@@ -723,7 +729,7 @@ class GEOM_Function : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfExtendedString GetStringArray(int );
 		%feature("autodoc", "1");
-		const Standard_GUID & GetReferencesTreeID();
+		static		const Standard_GUID & GetReferencesTreeID();
 		%feature("autodoc", "1");
 		void SetReferenceList(int , const Handle_TColStd_HSequenceOfTransient &theRefList);
 		%feature("autodoc", "1");
@@ -778,13 +784,13 @@ class GEOM_Object : public MMgt_TShared {
 		%feature("autodoc", "1");
 		GEOM_Object(TDF_Label & theEntry, int );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object GetObject(TDF_Label & theLabel);
+		static		Handle_GEOM_Object GetObject(TDF_Label & theLabel);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object GetReferencedObject(TDF_Label & theLabel);
+		static		Handle_GEOM_Object GetReferencedObject(TDF_Label & theLabel);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetObjectID();
+		static		const Standard_GUID & GetObjectID();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetSubShapeID();
+		static		const Standard_GUID & GetSubShapeID();
 		%feature("autodoc", "1");
 		Handle_TDataStd_TreeNode GetRootNode();
 		%feature("autodoc", "1");

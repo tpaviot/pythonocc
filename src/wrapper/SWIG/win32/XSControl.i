@@ -51,7 +51,7 @@ class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract 
 		%feature("autodoc", "1");
 		Handle_XSControl_SelectForTransfer & operator=(const XSControl_SelectForTransfer *anItem);
 		%feature("autodoc", "1");
-		Handle_XSControl_SelectForTransfer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_SelectForTransfer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_SelectForTransfer {
@@ -89,7 +89,7 @@ class Handle_XSControl_TransferWriter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_TransferWriter & operator=(const XSControl_TransferWriter *anItem);
 		%feature("autodoc", "1");
-		Handle_XSControl_TransferWriter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_TransferWriter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_TransferWriter {
@@ -127,7 +127,7 @@ class Handle_XSControl_SignTransferStatus : public Handle_IFSelect_Signature {
 		%feature("autodoc", "1");
 		Handle_XSControl_SignTransferStatus & operator=(const XSControl_SignTransferStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_XSControl_SignTransferStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_SignTransferStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_SignTransferStatus {
@@ -165,7 +165,7 @@ class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_TransferReader & operator=(const XSControl_TransferReader *anItem);
 		%feature("autodoc", "1");
-		Handle_XSControl_TransferReader const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_TransferReader const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_TransferReader {
@@ -203,7 +203,7 @@ class Handle_XSControl_Controller : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_Controller & operator=(const XSControl_Controller *anItem);
 		%feature("autodoc", "1");
-		Handle_XSControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_Controller {
@@ -241,7 +241,7 @@ class Handle_XSControl_Vars : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_Vars & operator=(const XSControl_Vars *anItem);
 		%feature("autodoc", "1");
-		Handle_XSControl_Vars const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_Vars const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_Vars {
@@ -279,7 +279,7 @@ class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
 		%feature("autodoc", "1");
 		Handle_XSControl_WorkSession & operator=(const XSControl_WorkSession *anItem);
 		%feature("autodoc", "1");
-		Handle_XSControl_WorkSession const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_WorkSession const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_WorkSession {
@@ -317,7 +317,7 @@ class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		Handle_XSControl_ConnectedShapes & operator=(const XSControl_ConnectedShapes *anItem);
 		%feature("autodoc", "1");
-		Handle_XSControl_ConnectedShapes const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_ConnectedShapes const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_ConnectedShapes {
@@ -491,9 +491,9 @@ class XSControl_Controller : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Record(const char * name) const;
 		%feature("autodoc", "1");
-		Handle_XSControl_Controller Recorded(const char * name);
+		static		Handle_XSControl_Controller Recorded(const char * name);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString ListRecorded(const Standard_Integer mode=0);
+		static		Handle_TColStd_HSequenceOfHAsciiString ListRecorded(const Standard_Integer mode=0);
 		%feature("autodoc", "1");
 		char * Name(const Standard_Boolean rsc=0) const;
 		%feature("autodoc", "1");
@@ -640,7 +640,7 @@ class XSControl_Functions {
 		%feature("autodoc", "1");
 		XSControl_Functions();
 		%feature("autodoc", "1");
-		void Init();
+		static		void Init();
 
 };
 %feature("shadow") XSControl_Functions::~XSControl_Functions %{
@@ -922,7 +922,7 @@ class XSControl_TransferWriter : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Interface_CheckIterator ResultCheckList(const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
-		void PrintStatsProcess(const Handle_Transfer_FinderProcess &TP, const Standard_Integer what, const Standard_Integer mode=0);
+		static		void PrintStatsProcess(const Handle_Transfer_FinderProcess &TP, const Standard_Integer what, const Standard_Integer mode=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -967,7 +967,7 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient AdjacentEntities(const TopoDS_Shape &ashape, const Handle_Transfer_TransientProcess &TP, const TopAbs_ShapeEnum type);
+		static		Handle_TColStd_HSequenceOfTransient AdjacentEntities(const TopoDS_Shape &ashape, const Handle_Transfer_TransientProcess &TP, const TopAbs_ShapeEnum type);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1092,9 +1092,9 @@ class XSControl_TransferReader : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopTools_HSequenceOfShape ShapeResultList(const Standard_Boolean rec);
 		%feature("autodoc", "1");
-		void PrintStatsProcess(const Handle_Transfer_TransientProcess &TP, const Standard_Integer what, const Standard_Integer mode=0);
+		static		void PrintStatsProcess(const Handle_Transfer_TransientProcess &TP, const Standard_Integer what, const Standard_Integer mode=0);
 		%feature("autodoc", "1");
-		void PrintStatsOnList(const Handle_Transfer_TransientProcess &TP, const Handle_TColStd_HSequenceOfTransient &list, const Standard_Integer what, const Standard_Integer mode=0);
+		static		void PrintStatsOnList(const Handle_Transfer_TransientProcess &TP, const Handle_TColStd_HSequenceOfTransient &list, const Standard_Integer what, const Standard_Integer mode=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1131,9 +1131,9 @@ class XSControl {
 		%feature("autodoc", "1");
 		XSControl();
 		%feature("autodoc", "1");
-		Handle_XSControl_WorkSession Session(const Handle_IFSelect_SessionPilot &pilot);
+		static		Handle_XSControl_WorkSession Session(const Handle_IFSelect_SessionPilot &pilot);
 		%feature("autodoc", "1");
-		Handle_XSControl_Vars Vars(const Handle_IFSelect_SessionPilot &pilot);
+		static		Handle_XSControl_Vars Vars(const Handle_IFSelect_SessionPilot &pilot);
 
 };
 %feature("shadow") XSControl::~XSControl %{
@@ -1158,11 +1158,11 @@ class XSControl_FuncShape {
 		%feature("autodoc", "1");
 		XSControl_FuncShape();
 		%feature("autodoc", "1");
-		void Init();
+		static		void Init();
 		%feature("autodoc", "1");
-		Standard_Integer MoreShapes(const Handle_XSControl_WorkSession &session, Handle_TopTools_HSequenceOfShape & list, const char * name);
+		static		Standard_Integer MoreShapes(const Handle_XSControl_WorkSession &session, Handle_TopTools_HSequenceOfShape & list, const char * name);
 		%feature("autodoc", "1");
-		Standard_Boolean FileAndVar(const Handle_XSControl_WorkSession &session, const char * file, const char * var, const char * def, TCollection_AsciiString & resfile, TCollection_AsciiString & resvar);
+		static		Standard_Boolean FileAndVar(const Handle_XSControl_WorkSession &session, const char * file, const char * var, const char * def, TCollection_AsciiString & resfile, TCollection_AsciiString & resvar);
 
 };
 %feature("shadow") XSControl_FuncShape::~XSControl_FuncShape %{

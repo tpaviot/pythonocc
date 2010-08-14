@@ -113,7 +113,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner : public Handle
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
@@ -151,7 +151,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger : public Ha
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger & operator=(const MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger {
@@ -189,7 +189,7 @@ class Handle_MeshVS_PrsBuilder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MeshVS_PrsBuilder & operator=(const MeshVS_PrsBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_PrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_PrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_PrsBuilder {
@@ -227,7 +227,7 @@ class Handle_MeshVS_MeshPrsBuilder : public Handle_MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Handle_MeshVS_MeshPrsBuilder & operator=(const MeshVS_MeshPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_MeshPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_MeshPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_MeshPrsBuilder {
@@ -265,7 +265,7 @@ class Handle_MeshVS_DataSource : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataSource & operator=(const MeshVS_DataSource *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataSource const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataSource const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataSource {
@@ -303,7 +303,7 @@ class Handle_MeshVS_Mesh : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_MeshVS_Mesh & operator=(const MeshVS_Mesh *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_Mesh const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_Mesh const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_Mesh {
@@ -341,7 +341,7 @@ class Handle_MeshVS_MeshOwner : public Handle_SelectMgr_EntityOwner {
 		%feature("autodoc", "1");
 		Handle_MeshVS_MeshOwner & operator=(const MeshVS_MeshOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_MeshOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_MeshOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_MeshOwner {
@@ -379,7 +379,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors {
@@ -417,7 +417,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerMaterial *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
@@ -455,7 +455,7 @@ class Handle_MeshVS_DummySensitiveEntity : public Handle_SelectBasics_SensitiveE
 		%feature("autodoc", "1");
 		Handle_MeshVS_DummySensitiveEntity & operator=(const MeshVS_DummySensitiveEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DummySensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DummySensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DummySensitiveEntity {
@@ -493,7 +493,7 @@ class Handle_MeshVS_SensitiveMesh : public Handle_Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		Handle_MeshVS_SensitiveMesh & operator=(const MeshVS_SensitiveMesh *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_SensitiveMesh const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SensitiveMesh const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_SensitiveMesh {
@@ -531,7 +531,7 @@ class Handle_MeshVS_Drawer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MeshVS_Drawer & operator=(const MeshVS_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_Drawer {
@@ -569,7 +569,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public Handle_
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger & operator=(const MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
@@ -607,7 +607,7 @@ class Handle_MeshVS_SensitiveSegment : public Handle_Select3D_SensitiveSegment {
 		%feature("autodoc", "1");
 		Handle_MeshVS_SensitiveSegment & operator=(const MeshVS_SensitiveSegment *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_SensitiveSegment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SensitiveSegment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_SensitiveSegment {
@@ -645,7 +645,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString {
@@ -683,7 +683,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
@@ -721,7 +721,7 @@ class Handle_MeshVS_MeshEntityOwner : public Handle_SelectMgr_EntityOwner {
 		%feature("autodoc", "1");
 		Handle_MeshVS_MeshEntityOwner & operator=(const MeshVS_MeshEntityOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_MeshEntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_MeshEntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_MeshEntityOwner {
@@ -759,7 +759,7 @@ class Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder & operator=(const MeshVS_SequenceNodeOfSequenceOfPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
@@ -797,7 +797,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerVector *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector {
@@ -835,7 +835,7 @@ class Handle_MeshVS_DeformedDataSource : public Handle_MeshVS_DataSource {
 		%feature("autodoc", "1");
 		Handle_MeshVS_DeformedDataSource & operator=(const MeshVS_DeformedDataSource *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DeformedDataSource const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DeformedDataSource const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DeformedDataSource {
@@ -873,7 +873,7 @@ class Handle_MeshVS_TextPrsBuilder : public Handle_MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Handle_MeshVS_TextPrsBuilder & operator=(const MeshVS_TextPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_TextPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_TextPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_TextPrsBuilder {
@@ -911,7 +911,7 @@ class Handle_MeshVS_DataSource3D : public Handle_MeshVS_DataSource {
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataSource3D & operator=(const MeshVS_DataSource3D *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataSource3D const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataSource3D const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataSource3D {
@@ -949,7 +949,7 @@ class Handle_MeshVS_SensitiveFace : public Handle_Select3D_SensitiveFace {
 		%feature("autodoc", "1");
 		Handle_MeshVS_SensitiveFace & operator=(const MeshVS_SensitiveFace *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_SensitiveFace const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SensitiveFace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_SensitiveFace {
@@ -987,7 +987,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger & operator=(const MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger {
@@ -1025,7 +1025,7 @@ class Handle_MeshVS_ElementalColorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Handle_MeshVS_ElementalColorPrsBuilder & operator=(const MeshVS_ElementalColorPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_ElementalColorPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_ElementalColorPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_ElementalColorPrsBuilder {
@@ -1063,7 +1063,7 @@ class Handle_MeshVS_StdMapNodeOfMapOfTwoNodes : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes & operator=(const MeshVS_StdMapNodeOfMapOfTwoNodes *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_StdMapNodeOfMapOfTwoNodes {
@@ -1101,7 +1101,7 @@ class Handle_MeshVS_NodalColorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Handle_MeshVS_NodalColorPrsBuilder & operator=(const MeshVS_NodalColorPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_NodalColorPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_NodalColorPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_NodalColorPrsBuilder {
@@ -1139,7 +1139,7 @@ class Handle_MeshVS_SensitivePolyhedron : public Handle_Select3D_SensitiveEntity
 		%feature("autodoc", "1");
 		Handle_MeshVS_SensitivePolyhedron & operator=(const MeshVS_SensitivePolyhedron *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_SensitivePolyhedron const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SensitivePolyhedron const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_SensitivePolyhedron {
@@ -1177,7 +1177,7 @@ class Handle_MeshVS_VectorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Handle_MeshVS_VectorPrsBuilder & operator=(const MeshVS_VectorPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_VectorPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_VectorPrsBuilder {
@@ -1215,7 +1215,7 @@ class Handle_MeshVS_HArray1OfSequenceOfInteger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MeshVS_HArray1OfSequenceOfInteger & operator=(const MeshVS_HArray1OfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_HArray1OfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_HArray1OfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_HArray1OfSequenceOfInteger {
@@ -1253,7 +1253,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean {
@@ -1291,7 +1291,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerColor *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor {
@@ -1461,9 +1461,9 @@ class MeshVS_DataSource3D : public MeshVS_DataSource {
 		%feature("autodoc", "1");
 		Handle_MeshVS_HArray1OfSequenceOfInteger GetPyramidTopology(const Standard_Integer BasePoints) const;
 		%feature("autodoc", "1");
-		Handle_MeshVS_HArray1OfSequenceOfInteger CreatePrismTopology(const Standard_Integer BasePoints);
+		static		Handle_MeshVS_HArray1OfSequenceOfInteger CreatePrismTopology(const Standard_Integer BasePoints);
 		%feature("autodoc", "1");
-		Handle_MeshVS_HArray1OfSequenceOfInteger CreatePyramidTopology(const Standard_Integer BasePoints);
+		static		Handle_MeshVS_HArray1OfSequenceOfInteger CreatePyramidTopology(const Standard_Integer BasePoints);
 
 };
 %extend MeshVS_DataSource3D {
@@ -2016,7 +2016,7 @@ class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		void DrawVector(const gp_Trsf &theTrsf, const Standard_Real Length, const Standard_Real MaxLength, const TColgp_Array1OfPnt &ArrowPoints, const Handle_Graphic3d_ArrayOfPrimitives &Lines, const Handle_Graphic3d_ArrayOfPrimitives &ArrowLines, const Handle_Graphic3d_ArrayOfPrimitives &Triangles) const;
 		%feature("autodoc", "1");
-		Standard_Real calculateArrow(TColgp_Array1OfPnt & Points, const Standard_Real Length, const Standard_Real ArrowPart);
+		static		Standard_Real calculateArrow(TColgp_Array1OfPnt & Points, const Standard_Real Length, const Standard_Real ArrowPart);
 		%feature("autodoc", "1");
 		const MeshVS_DataMapOfIntegerVector & GetVectors(const Standard_Boolean IsElement) const;
 		%feature("autodoc", "1");
@@ -2654,9 +2654,9 @@ class MeshVS_ColorHasher : public TColStd_MapIntegerHasher {
 		%feature("autodoc", "1");
 		MeshVS_ColorHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Quantity_Color &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const Quantity_Color &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Quantity_Color &K1, const Quantity_Color &K2);
+		static		Standard_Boolean IsEqual(const Quantity_Color &K1, const Quantity_Color &K2);
 
 };
 %feature("shadow") MeshVS_ColorHasher::~MeshVS_ColorHasher %{
@@ -2681,9 +2681,9 @@ class MeshVS_TwoColorsHasher {
 		%feature("autodoc", "1");
 		MeshVS_TwoColorsHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const MeshVS_TwoColors &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const MeshVS_TwoColors &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const MeshVS_TwoColors &K1, const MeshVS_TwoColors &K2);
+		static		Standard_Boolean IsEqual(const MeshVS_TwoColors &K1, const MeshVS_TwoColors &K2);
 
 };
 %feature("shadow") MeshVS_TwoColorsHasher::~MeshVS_TwoColorsHasher %{
@@ -2987,9 +2987,9 @@ class MeshVS_TwoNodesHasher {
 		%feature("autodoc", "1");
 		MeshVS_TwoNodesHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const MeshVS_TwoNodes &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const MeshVS_TwoNodes &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const MeshVS_TwoNodes &K1, const MeshVS_TwoNodes &K2);
+		static		Standard_Boolean IsEqual(const MeshVS_TwoNodes &K1, const MeshVS_TwoNodes &K2);
 
 };
 %feature("shadow") MeshVS_TwoNodesHasher::~MeshVS_TwoNodesHasher %{
@@ -3825,19 +3825,19 @@ class MeshVS_Tool {
 		%feature("autodoc", "1");
 		MeshVS_Tool();
 		%feature("autodoc", "1");
-		Handle_Graphic3d_AspectFillArea3d CreateAspectFillArea3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
+		static		Handle_Graphic3d_AspectFillArea3d CreateAspectFillArea3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
 		%feature("autodoc", "1");
-		Handle_Graphic3d_AspectFillArea3d CreateAspectFillArea3d(const Handle_MeshVS_Drawer &theDr, const Graphic3d_MaterialAspect &Mat, const Standard_Boolean UseDefaults=1);
+		static		Handle_Graphic3d_AspectFillArea3d CreateAspectFillArea3d(const Handle_MeshVS_Drawer &theDr, const Graphic3d_MaterialAspect &Mat, const Standard_Boolean UseDefaults=1);
 		%feature("autodoc", "1");
-		Handle_Graphic3d_AspectLine3d CreateAspectLine3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
+		static		Handle_Graphic3d_AspectLine3d CreateAspectLine3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
 		%feature("autodoc", "1");
-		Handle_Graphic3d_AspectMarker3d CreateAspectMarker3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
+		static		Handle_Graphic3d_AspectMarker3d CreateAspectMarker3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
 		%feature("autodoc", "1");
-		Handle_Graphic3d_AspectText3d CreateAspectText3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
+		static		Handle_Graphic3d_AspectText3d CreateAspectText3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
 		%feature("autodoc", "1");
-		Standard_Boolean GetNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
+		static		Standard_Boolean GetNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
 		%feature("autodoc", "1");
-		Standard_Boolean GetAverageNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
+		static		Standard_Boolean GetAverageNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
 
 };
 %feature("shadow") MeshVS_Tool::~MeshVS_Tool %{
@@ -4028,10 +4028,10 @@ class MeshVS_MeshPrsBuilder : public MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		virtual		void BuildHilightPrs(const Handle_Prs3d_Presentation &Prs, const TColStd_PackedMapOfInteger &IDs, const Standard_Boolean IsElement) const;
 		%feature("autodoc", "1");
-		void AddVolumePrs(const Handle_MeshVS_HArray1OfSequenceOfInteger &Topo, const TColStd_Array1OfReal &Nodes, const Standard_Integer NbNodes, const Handle_Graphic3d_ArrayOfPrimitives &Array, const Standard_Boolean IsReflected, const Standard_Boolean IsShrinked, const Standard_Boolean IsSelect, const Standard_Real ShrinkCoef);
+		static		void AddVolumePrs(const Handle_MeshVS_HArray1OfSequenceOfInteger &Topo, const TColStd_Array1OfReal &Nodes, const Standard_Integer NbNodes, const Handle_Graphic3d_ArrayOfPrimitives &Array, const Standard_Boolean IsReflected, const Standard_Boolean IsShrinked, const Standard_Boolean IsSelect, const Standard_Real ShrinkCoef);
 		%feature("autodoc","HowManyPrimitives(const Topo, Standard_Boolean AsPolygons, Standard_Boolean IsSelect, Standard_Integer NbNodes) -> [Standard_Integer, Standard_Integer]");
 
-		void HowManyPrimitives(const Handle_MeshVS_HArray1OfSequenceOfInteger &Topo, const Standard_Boolean AsPolygons, const Standard_Boolean IsSelect, const Standard_Integer NbNodes, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		static		void HowManyPrimitives(const Handle_MeshVS_HArray1OfSequenceOfInteger &Topo, const Standard_Boolean AsPolygons, const Standard_Boolean IsSelect, const Standard_Integer NbNodes, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

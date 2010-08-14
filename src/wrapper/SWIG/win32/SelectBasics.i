@@ -51,7 +51,7 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
@@ -89,7 +89,7 @@ class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfBox2d & operator=(const SelectBasics_ListNodeOfListOfBox2d *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_ListNodeOfListOfBox2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_ListNodeOfListOfBox2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_ListNodeOfListOfBox2d {
@@ -127,7 +127,7 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress & operator=(const SelectBasics_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_SequenceNodeOfSequenceOfAddress {
@@ -165,7 +165,7 @@ class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity & operator=(const SelectBasics_SensitiveEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_SensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_SensitiveEntity {
@@ -203,7 +203,7 @@ class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfSensitive & operator=(const SelectBasics_ListNodeOfListOfSensitive *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_ListNodeOfListOfSensitive const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_ListNodeOfListOfSensitive const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_ListNodeOfListOfSensitive {
@@ -241,7 +241,7 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner & operator=(const SelectBasics_EntityOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_EntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_EntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_EntityOwner {
@@ -554,12 +554,12 @@ class SelectBasics_BasicTool {
 		%feature("autodoc", "1");
 		SelectBasics_BasicTool();
 		%feature("autodoc", "1");
-		Standard_Boolean MatchSegments(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3, const gp_Pnt2d &P4);
+		static		Standard_Boolean MatchSegments(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3, const gp_Pnt2d &P4);
 		%feature("autodoc", "1");
-		Standard_Boolean AutoInter(const TColgp_Array1OfPnt2d &aPolyg2d);
+		static		Standard_Boolean AutoInter(const TColgp_Array1OfPnt2d &aPolyg2d);
 		%feature("autodoc","MatchPolyg2d(const tabpoint, Standard_Real X, Standard_Real Y, Standard_Real aTol) -> [Standard_Real, Standard_Integer]");
 
-		Standard_Boolean MatchPolyg2d(const TColgp_Array1OfPnt2d &tabpoint, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue, Standard_Integer &OutValue);
+		static		Standard_Boolean MatchPolyg2d(const TColgp_Array1OfPnt2d &tabpoint, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue, Standard_Integer &OutValue);
 
 };
 %feature("shadow") SelectBasics_BasicTool::~SelectBasics_BasicTool %{
@@ -584,9 +584,9 @@ class SelectBasics {
 		%feature("autodoc", "1");
 		SelectBasics();
 		%feature("autodoc", "1");
-		Standard_Integer MaxOwnerPriority();
+		static		Standard_Integer MaxOwnerPriority();
 		%feature("autodoc", "1");
-		Standard_Integer MinOwnerPriority();
+		static		Standard_Integer MinOwnerPriority();
 
 };
 %feature("shadow") SelectBasics::~SelectBasics %{

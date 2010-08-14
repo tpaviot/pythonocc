@@ -80,7 +80,7 @@ class Handle_GccIter_IsParallel : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_GccIter_IsParallel & operator=(const GccIter_IsParallel *anItem);
 		%feature("autodoc", "1");
-		Handle_GccIter_IsParallel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccIter_IsParallel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccIter_IsParallel {
@@ -112,11 +112,11 @@ class GccIter_IsParallel : public Standard_DomainError {
 		%feature("autodoc", "1");
 		GccIter_IsParallel(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_GccIter_IsParallel NewInstance(const char * aMessage);
+		static		Handle_GccIter_IsParallel NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

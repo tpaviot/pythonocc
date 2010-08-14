@@ -51,7 +51,7 @@ class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation & operator=(const PPrsStd_AISPresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_PPrsStd_AISPresentation const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PPrsStd_AISPresentation const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PPrsStd_AISPresentation {
@@ -89,7 +89,7 @@ class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation_1 & operator=(const PPrsStd_AISPresentation_1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PPrsStd_AISPresentation_1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PPrsStd_AISPresentation_1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PPrsStd_AISPresentation_1 {

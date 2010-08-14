@@ -51,7 +51,7 @@ class Handle_PDF_Attribute : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PDF_Attribute & operator=(const PDF_Attribute *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_Attribute const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PDF_Attribute const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PDF_Attribute {
@@ -89,7 +89,7 @@ class Handle_PDF_TagSource : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PDF_TagSource & operator=(const PDF_TagSource *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_TagSource const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PDF_TagSource const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PDF_TagSource {
@@ -127,7 +127,7 @@ class Handle_PDF_Reference : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PDF_Reference & operator=(const PDF_Reference *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_Reference const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PDF_Reference const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PDF_Reference {
@@ -165,7 +165,7 @@ class Handle_PDF_Data : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PDF_Data & operator=(const PDF_Data *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_Data const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PDF_Data const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PDF_Data {
@@ -203,7 +203,7 @@ class Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 : public Handle_PStandard_A
 		%feature("autodoc", "1");
 		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 & operator=(const PDF_VArrayNodeOfFieldOfHAttributeArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 {
@@ -241,7 +241,7 @@ class Handle_PDF_HAttributeArray1 : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PDF_HAttributeArray1 & operator=(const PDF_HAttributeArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_HAttributeArray1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PDF_HAttributeArray1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PDF_HAttributeArray1 {

@@ -59,7 +59,7 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 		%feature("autodoc", "1");
 		Handle_math_NotSquare & operator=(const math_NotSquare *anItem);
 		%feature("autodoc", "1");
-		Handle_math_NotSquare const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_math_NotSquare const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_math_NotSquare {
@@ -97,7 +97,7 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_math_SingularMatrix & operator=(const math_SingularMatrix *anItem);
 		%feature("autodoc", "1");
-		Handle_math_SingularMatrix const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_math_SingularMatrix const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_math_SingularMatrix {
@@ -215,11 +215,11 @@ class math_SingularMatrix : public Standard_Failure {
 		%feature("autodoc", "1");
 		math_SingularMatrix(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_math_SingularMatrix NewInstance(const char * aMessage);
+		static		Handle_math_SingularMatrix NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -586,17 +586,17 @@ class math {
 		%feature("autodoc", "1");
 		math();
 		%feature("autodoc", "1");
-		Standard_Integer GaussPointsMax();
+		static		Standard_Integer GaussPointsMax();
 		%feature("autodoc", "1");
-		void GaussPoints(const Standard_Integer Index, math_Vector & Points);
+		static		void GaussPoints(const Standard_Integer Index, math_Vector & Points);
 		%feature("autodoc", "1");
-		void GaussWeights(const Standard_Integer Index, math_Vector & Weights);
+		static		void GaussWeights(const Standard_Integer Index, math_Vector & Weights);
 		%feature("autodoc", "1");
-		Standard_Integer KronrodPointsMax();
+		static		Standard_Integer KronrodPointsMax();
 		%feature("autodoc", "1");
-		Standard_Boolean OrderedGaussPointsAndWeights(const Standard_Integer Index, math_Vector & Points, math_Vector & Weights);
+		static		Standard_Boolean OrderedGaussPointsAndWeights(const Standard_Integer Index, math_Vector & Points, math_Vector & Weights);
 		%feature("autodoc", "1");
-		Standard_Boolean KronrodPointsAndWeights(const Standard_Integer Index, math_Vector & Points, math_Vector & Weights);
+		static		Standard_Boolean KronrodPointsAndWeights(const Standard_Integer Index, math_Vector & Points, math_Vector & Weights);
 
 };
 %feature("shadow") math::~math %{
@@ -883,7 +883,7 @@ class math_QuickSortOfValueAndWeight {
 		%feature("autodoc", "1");
 		math_QuickSortOfValueAndWeight();
 		%feature("autodoc", "1");
-		void Sort(math_Array1OfValueAndWeight & TheArray, const math_CompareOfValueAndWeight &Comp);
+		static		void Sort(math_Array1OfValueAndWeight & TheArray, const math_CompareOfValueAndWeight &Comp);
 
 };
 %feature("shadow") math_QuickSortOfValueAndWeight::~math_QuickSortOfValueAndWeight %{
@@ -1588,11 +1588,11 @@ class math_NotSquare : public Standard_DimensionError {
 		%feature("autodoc", "1");
 		math_NotSquare(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_math_NotSquare NewInstance(const char * aMessage);
+		static		Handle_math_NotSquare NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2131,7 +2131,7 @@ class math_KronrodSingleIntegration {
 		Standard_Integer NbIterReached() const;
 		%feature("autodoc","GKRule(Standard_Real theLower, Standard_Real theUpper, const theGaussP, const theGaussW, const theKronrodP, const theKronrodW) -> [Standard_Real, Standard_Real]");
 
-		Standard_Boolean GKRule(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const math_Vector &theGaussP, const math_Vector &theGaussW, const math_Vector &theKronrodP, const math_Vector &theKronrodW, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		Standard_Boolean GKRule(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const math_Vector &theGaussP, const math_Vector &theGaussW, const math_Vector &theKronrodP, const math_Vector &theKronrodW, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 %feature("shadow") math_KronrodSingleIntegration::~math_KronrodSingleIntegration %{

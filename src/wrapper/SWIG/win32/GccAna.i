@@ -51,7 +51,7 @@ class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_GccAna_NoSolution & operator=(const GccAna_NoSolution *anItem);
 		%feature("autodoc", "1");
-		Handle_GccAna_NoSolution const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccAna_NoSolution const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccAna_NoSolution {
@@ -345,11 +345,11 @@ class GccAna_NoSolution : public Standard_Failure {
 		%feature("autodoc", "1");
 		GccAna_NoSolution(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_GccAna_NoSolution NewInstance(const char * aMessage);
+		static		Handle_GccAna_NoSolution NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

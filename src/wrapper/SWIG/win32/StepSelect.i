@@ -51,7 +51,7 @@ class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 		%feature("autodoc", "1");
 		Handle_StepSelect_WorkLibrary & operator=(const StepSelect_WorkLibrary *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepSelect_WorkLibrary {
@@ -89,7 +89,7 @@ class Handle_StepSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 		%feature("autodoc", "1");
 		Handle_StepSelect_FileModifier & operator=(const StepSelect_FileModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_FileModifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepSelect_FileModifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepSelect_FileModifier {
@@ -127,7 +127,7 @@ class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 		%feature("autodoc", "1");
 		Handle_StepSelect_Activator & operator=(const StepSelect_Activator *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_Activator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepSelect_Activator const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepSelect_Activator {
@@ -165,7 +165,7 @@ class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 		%feature("autodoc", "1");
 		Handle_StepSelect_ModelModifier & operator=(const StepSelect_ModelModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_ModelModifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepSelect_ModelModifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepSelect_ModelModifier {
@@ -203,7 +203,7 @@ class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 		%feature("autodoc", "1");
 		Handle_StepSelect_FloatFormat & operator=(const StepSelect_FloatFormat *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_FloatFormat const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepSelect_FloatFormat const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepSelect_FloatFormat {
@@ -241,7 +241,7 @@ class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 		%feature("autodoc", "1");
 		Handle_StepSelect_StepType & operator=(const StepSelect_StepType *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_StepType const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepSelect_StepType const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepSelect_StepType {

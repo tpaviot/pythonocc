@@ -107,6 +107,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend BRepFeat_Builder {
+	BRepFeat_Builder () {}
+};
 
 
 %nodefaultctor BRepFeat_Form;
@@ -170,22 +173,22 @@ class BRepFeat {
 		%feature("autodoc", "1");
 		BRepFeat();
 		%feature("autodoc", "1");
-		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
+		static		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
 		%feature("autodoc", "1");
-		void Barycenter(const TopoDS_Shape &S, gp_Pnt & Pt);
+		static		void Barycenter(const TopoDS_Shape &S, gp_Pnt & Pt);
 		%feature("autodoc", "1");
-		Standard_Real ParametricBarycenter(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
+		static		Standard_Real ParametricBarycenter(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
 		%feature("autodoc","ParametricMinMax(const S, const C, Standard_Boolean Ori=0) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void ParametricMinMax(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & flag, const Standard_Boolean Ori=0);
+		static		void ParametricMinMax(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & flag, const Standard_Boolean Ori=0);
 		%feature("autodoc", "1");
-		Standard_Boolean IsInside(const TopoDS_Face &F1, const TopoDS_Face &F2);
+		static		Standard_Boolean IsInside(const TopoDS_Face &F1, const TopoDS_Face &F2);
 		%feature("autodoc", "1");
-		void FaceUntil(const TopoDS_Shape &S, TopoDS_Face & F);
+		static		void FaceUntil(const TopoDS_Shape &S, TopoDS_Face & F);
 		%feature("autodoc", "1");
-		TopoDS_Solid Tool(const TopoDS_Shape &SRef, const TopoDS_Face &Fac, const TopAbs_Orientation Orf);
+		static		TopoDS_Solid Tool(const TopoDS_Shape &SRef, const TopoDS_Face &Fac, const TopAbs_Orientation Orf);
 		%feature("autodoc", "1");
-		Standard_OStream & Print(const BRepFeat_StatusError SE, Standard_OStream & S);
+		static		Standard_OStream & Print(const BRepFeat_StatusError SE, Standard_OStream & S);
 
 };
 %feature("shadow") BRepFeat::~BRepFeat %{
@@ -490,9 +493,9 @@ class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & TgtEdges() const;
 		%feature("autodoc", "1");
-		Standard_Real IntPar(const Handle_Geom_Curve &C, const gp_Pnt &P);
+		static		Standard_Real IntPar(const Handle_Geom_Curve &C, const gp_Pnt &P);
 		%feature("autodoc", "1");
-		TopoDS_Face ChoiceOfFaces(TopTools_ListOfShape & faces, const Handle_Geom_Curve &cc, const Standard_Real par, const Standard_Real bnd, const Handle_Geom_Plane &Pln);
+		static		TopoDS_Face ChoiceOfFaces(TopTools_ListOfShape & faces, const Handle_Geom_Curve &cc, const Standard_Real par, const Standard_Real bnd, const Handle_Geom_Plane &Pln);
 		%feature("autodoc", "1");
 		BRepFeat_StatusError CurrentStatusError() const;
 
@@ -510,6 +513,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend BRepFeat_RibSlot {
+	BRepFeat_RibSlot () {}
 };
 
 

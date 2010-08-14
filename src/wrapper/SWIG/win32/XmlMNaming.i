@@ -51,7 +51,7 @@ class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamingDriver & operator=(const XmlMNaming_NamingDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMNaming_NamingDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMNaming_NamingDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlMNaming_NamingDriver {
@@ -89,7 +89,7 @@ class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamedShapeDriver & operator=(const XmlMNaming_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMNaming_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMNaming_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlMNaming_NamedShapeDriver {
@@ -303,7 +303,7 @@ class XmlMNaming {
 		%feature("autodoc", "1");
 		XmlMNaming();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMessageDriver);
+		static		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMessageDriver);
 
 };
 %feature("shadow") XmlMNaming::~XmlMNaming %{

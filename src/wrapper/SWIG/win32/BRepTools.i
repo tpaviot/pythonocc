@@ -51,7 +51,7 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepTools_Modification & operator=(const BRepTools_Modification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_Modification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_Modification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_Modification {
@@ -89,7 +89,7 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 		%feature("autodoc", "1");
 		Handle_BRepTools_GTrsfModification & operator=(const BRepTools_GTrsfModification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_GTrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_GTrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_GTrsfModification {
@@ -127,7 +127,7 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 		%feature("autodoc", "1");
 		Handle_BRepTools_TrsfModification & operator=(const BRepTools_TrsfModification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_TrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_TrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_TrsfModification {
@@ -165,7 +165,7 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepTools_ReShape & operator=(const BRepTools_ReShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_ReShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_ReShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_ReShape {
@@ -203,7 +203,7 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 		%feature("autodoc", "1");
 		Handle_BRepTools_NurbsConvertModification & operator=(const BRepTools_NurbsConvertModification *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_NurbsConvertModification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_NurbsConvertModification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_NurbsConvertModification {
@@ -241,7 +241,7 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d & operator=(const BRepTools_DataMapNodeOfMapOfVertexPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d {
@@ -515,65 +515,65 @@ class BRepTools {
 		BRepTools();
 		%feature("autodoc","UVBounds(const F) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void UVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void UVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","UVBounds(const F, const W) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void UVBounds(const TopoDS_Face &F, const TopoDS_Wire &W, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void UVBounds(const TopoDS_Face &F, const TopoDS_Wire &W, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","UVBounds(const F, const E) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void UVBounds(const TopoDS_Face &F, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void UVBounds(const TopoDS_Face &F, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void AddUVBounds(const TopoDS_Face &F, Bnd_Box2d & B);
+		static		void AddUVBounds(const TopoDS_Face &F, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void AddUVBounds(const TopoDS_Face &F, const TopoDS_Wire &W, Bnd_Box2d & B);
+		static		void AddUVBounds(const TopoDS_Face &F, const TopoDS_Wire &W, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void AddUVBounds(const TopoDS_Face &F, const TopoDS_Edge &E, Bnd_Box2d & B);
+		static		void AddUVBounds(const TopoDS_Face &F, const TopoDS_Edge &E, Bnd_Box2d & B);
 		%feature("autodoc", "1");
-		void Update(const TopoDS_Vertex &V);
+		static		void Update(const TopoDS_Vertex &V);
 		%feature("autodoc", "1");
-		void Update(const TopoDS_Edge &E);
+		static		void Update(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
-		void Update(const TopoDS_Wire &W);
+		static		void Update(const TopoDS_Wire &W);
 		%feature("autodoc", "1");
-		void Update(const TopoDS_Face &F);
+		static		void Update(const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void Update(const TopoDS_Shell &S);
+		static		void Update(const TopoDS_Shell &S);
 		%feature("autodoc", "1");
-		void Update(const TopoDS_Solid &S);
+		static		void Update(const TopoDS_Solid &S);
 		%feature("autodoc", "1");
-		void Update(const TopoDS_CompSolid &C);
+		static		void Update(const TopoDS_CompSolid &C);
 		%feature("autodoc", "1");
-		void Update(const TopoDS_Compound &C);
+		static		void Update(const TopoDS_Compound &C);
 		%feature("autodoc", "1");
-		void Update(const TopoDS_Shape &S);
+		static		void Update(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		void UpdateFaceUVPoints(const TopoDS_Face &F);
+		static		void UpdateFaceUVPoints(const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void Clean(const TopoDS_Shape &S);
+		static		void Clean(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		Standard_Boolean Triangulation(const TopoDS_Shape &S, const Standard_Real deflec);
+		static		Standard_Boolean Triangulation(const TopoDS_Shape &S, const Standard_Real deflec);
 		%feature("autodoc", "1");
-		Standard_Boolean Compare(const TopoDS_Vertex &V1, const TopoDS_Vertex &V2);
+		static		Standard_Boolean Compare(const TopoDS_Vertex &V1, const TopoDS_Vertex &V2);
 		%feature("autodoc", "1");
-		Standard_Boolean Compare(const TopoDS_Edge &E1, const TopoDS_Edge &E2);
+		static		Standard_Boolean Compare(const TopoDS_Edge &E1, const TopoDS_Edge &E2);
 		%feature("autodoc", "1");
-		TopoDS_Wire OuterWire(const TopoDS_Face &F);
+		static		TopoDS_Wire OuterWire(const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		TopoDS_Shell OuterShell(const TopoDS_Solid &S);
+		static		TopoDS_Shell OuterShell(const TopoDS_Solid &S);
 		%feature("autodoc", "1");
-		void Map3DEdges(const TopoDS_Shape &S, TopTools_IndexedMapOfShape & M);
+		static		void Map3DEdges(const TopoDS_Shape &S, TopTools_IndexedMapOfShape & M);
 		%feature("autodoc", "1");
-		Standard_Boolean IsReallyClosed(const TopoDS_Edge &E, const TopoDS_Face &F);
+		static		Standard_Boolean IsReallyClosed(const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void Dump(const TopoDS_Shape &Sh, Standard_OStream & S);
+		static		void Dump(const TopoDS_Shape &Sh, Standard_OStream & S);
 		%feature("autodoc", "1");
-		void Write(const TopoDS_Shape &Sh, Standard_OStream & S, const Handle_Message_ProgressIndicator &PR=0);
+		static		void Write(const TopoDS_Shape &Sh, Standard_OStream & S, const Handle_Message_ProgressIndicator &PR=0);
 		%feature("autodoc", "1");
-		void Read(TopoDS_Shape & Sh, std::istream & S, const BRep_Builder &B, const Handle_Message_ProgressIndicator &PR=0);
+		static		void Read(TopoDS_Shape & Sh, std::istream & S, const BRep_Builder &B, const Handle_Message_ProgressIndicator &PR=0);
 		%feature("autodoc", "1");
-		Standard_Boolean Write(const TopoDS_Shape &Sh, const char * File, const Handle_Message_ProgressIndicator &PR=0);
+		static		Standard_Boolean Write(const TopoDS_Shape &Sh, const char * File, const Handle_Message_ProgressIndicator &PR=0);
 		%feature("autodoc", "1");
-		Standard_Boolean Read(TopoDS_Shape & Sh, const char * File, const BRep_Builder &B, const Handle_Message_ProgressIndicator &PR=0);
+		static		Standard_Boolean Read(TopoDS_Shape & Sh, const char * File, const BRep_Builder &B, const Handle_Message_ProgressIndicator &PR=0);
 
 };
 %feature("shadow") BRepTools::~BRepTools %{

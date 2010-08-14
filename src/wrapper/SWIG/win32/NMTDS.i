@@ -65,7 +65,7 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public Han
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
@@ -103,7 +103,7 @@ class Handle_NMTDS_StdMapNodeOfMapOfPassKey : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_NMTDS_StdMapNodeOfMapOfPassKey & operator=(const NMTDS_StdMapNodeOfMapOfPassKey *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_StdMapNodeOfMapOfPassKey const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTDS_StdMapNodeOfMapOfPassKey const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTDS_StdMapNodeOfMapOfPassKey {
@@ -141,7 +141,7 @@ class Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors : pu
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
@@ -179,7 +179,7 @@ class Handle_NMTDS_ListNodeOfListOfPassKeyBoolean : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean & operator=(const NMTDS_ListNodeOfListOfPassKeyBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTDS_ListNodeOfListOfPassKeyBoolean {
@@ -217,7 +217,7 @@ class Handle_NMTDS_ListNodeOfListOfPassKey : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_NMTDS_ListNodeOfListOfPassKey & operator=(const NMTDS_ListNodeOfListOfPassKey *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKey const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTDS_ListNodeOfListOfPassKey const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTDS_ListNodeOfListOfPassKey {
@@ -255,7 +255,7 @@ class Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger & operator=(const NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
@@ -293,7 +293,7 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Handle_
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
@@ -331,7 +331,7 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfSh
 		%feature("autodoc", "1");
 		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
@@ -369,7 +369,7 @@ class Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean & operator=(const NMTDS_StdMapNodeOfMapOfPassKeyBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
@@ -511,9 +511,9 @@ class NMTDS_PassKeyShapeMapHasher {
 		%feature("autodoc", "1");
 		NMTDS_PassKeyShapeMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const NMTDS_PassKeyShape &aPKey, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const NMTDS_PassKeyShape &aPKey, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const NMTDS_PassKeyShape &aPKey1, const NMTDS_PassKeyShape &aPKey2);
+		static		Standard_Boolean IsEqual(const NMTDS_PassKeyShape &aPKey1, const NMTDS_PassKeyShape &aPKey2);
 
 };
 %feature("shadow") NMTDS_PassKeyShapeMapHasher::~NMTDS_PassKeyShapeMapHasher %{
@@ -1215,9 +1215,9 @@ class NMTDS_PassKeyMapHasher {
 		%feature("autodoc", "1");
 		NMTDS_PassKeyMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const NMTDS_PassKey &aPKey, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const NMTDS_PassKey &aPKey, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const NMTDS_PassKey &aPKey1, const NMTDS_PassKey &aPKey2);
+		static		Standard_Boolean IsEqual(const NMTDS_PassKey &aPKey1, const NMTDS_PassKey &aPKey2);
 
 };
 %feature("shadow") NMTDS_PassKeyMapHasher::~NMTDS_PassKeyMapHasher %{
@@ -1378,7 +1378,7 @@ class NMTDS_Iterator {
 		%feature("autodoc", "1");
 		const TColStd_DataMapOfIntegerListOfInteger & SDVertices() const;
 		%feature("autodoc", "1");
-		void FillMVSD(const TColStd_DataMapOfIntegerListOfInteger &aMVSD1, TColStd_DataMapOfIntegerListOfInteger & aMVSD2);
+		static		void FillMVSD(const TColStd_DataMapOfIntegerListOfInteger &aMVSD1, TColStd_DataMapOfIntegerListOfInteger & aMVSD2);
 
 };
 %feature("shadow") NMTDS_Iterator::~NMTDS_Iterator %{
@@ -1668,15 +1668,15 @@ class NMTDS_Tools {
 		%feature("autodoc", "1");
 		NMTDS_Tools();
 		%feature("autodoc", "1");
-		Standard_Integer TypeToInteger(const TopAbs_ShapeEnum aT1, const TopAbs_ShapeEnum aT2);
+		static		Standard_Integer TypeToInteger(const TopAbs_ShapeEnum aT1, const TopAbs_ShapeEnum aT2);
 		%feature("autodoc", "1");
-		Standard_Boolean HasBRep(const TopAbs_ShapeEnum aT);
+		static		Standard_Boolean HasBRep(const TopAbs_ShapeEnum aT);
 		%feature("autodoc", "1");
-		Standard_Integer ComputeVV(const TopoDS_Vertex &aV1, const TopoDS_Vertex &aV2);
+		static		Standard_Integer ComputeVV(const TopoDS_Vertex &aV1, const TopoDS_Vertex &aV2);
 		%feature("autodoc", "1");
-		void CopyShape(const TopoDS_Shape &aS, TopoDS_Shape & aSC);
+		static		void CopyShape(const TopoDS_Shape &aS, TopoDS_Shape & aSC);
 		%feature("autodoc", "1");
-		void CopyShape(const TopoDS_Shape &aS, TopoDS_Shape & aSC, TopTools_IndexedDataMapOfShapeShape & aMSS);
+		static		void CopyShape(const TopoDS_Shape &aS, TopoDS_Shape & aSC, TopTools_IndexedDataMapOfShapeShape & aMSS);
 
 };
 %feature("shadow") NMTDS_Tools::~NMTDS_Tools %{

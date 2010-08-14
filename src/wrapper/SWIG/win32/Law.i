@@ -51,7 +51,7 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Law_Function & operator=(const Law_Function *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Function const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_Function const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_Function {
@@ -89,7 +89,7 @@ class Handle_Law_Linear : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_Linear & operator=(const Law_Linear *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Linear const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_Linear const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_Linear {
@@ -127,7 +127,7 @@ class Handle_Law_Constant : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_Constant & operator=(const Law_Constant *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Constant const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_Constant const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_Constant {
@@ -165,7 +165,7 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_Law_ListNodeOfLaws & operator=(const Law_ListNodeOfLaws *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_ListNodeOfLaws const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_ListNodeOfLaws const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_ListNodeOfLaws {
@@ -203,7 +203,7 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_BSpFunc & operator=(const Law_BSpFunc *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_BSpFunc const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_BSpFunc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_BSpFunc {
@@ -241,7 +241,7 @@ class Handle_Law_Composite : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_Composite & operator=(const Law_Composite *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Composite const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_Composite const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_Composite {
@@ -279,7 +279,7 @@ class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 		%feature("autodoc", "1");
 		Handle_Law_Interpol & operator=(const Law_Interpol *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_Interpol const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_Interpol const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_Interpol {
@@ -317,7 +317,7 @@ class Handle_Law_BSpline : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Law_BSpline & operator=(const Law_BSpline *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_BSpline const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_BSpline const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_BSpline {
@@ -355,7 +355,7 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 		%feature("autodoc", "1");
 		Handle_Law_S & operator=(const Law_S *anItem);
 		%feature("autodoc", "1");
-		Handle_Law_S const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_S const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_S {
@@ -838,17 +838,17 @@ class Law {
 		%feature("autodoc", "1");
 		Law();
 		%feature("autodoc", "1");
-		Handle_Law_BSpFunc MixBnd(const Handle_Law_Linear &Lin);
+		static		Handle_Law_BSpFunc MixBnd(const Handle_Law_Linear &Lin);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal MixBnd(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Handle_Law_Linear &Lin);
+		static		Handle_TColStd_HArray1OfReal MixBnd(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Handle_Law_Linear &Lin);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal MixTgt(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Boolean NulOnTheRight, const Standard_Integer Index);
+		static		Handle_TColStd_HArray1OfReal MixTgt(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Boolean NulOnTheRight, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Handle_Law_BSpline Reparametrize(const Adaptor3d_Curve &Curve, const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DFirst, const Standard_Real DLast, const Standard_Boolean Rev, const Standard_Integer NbPoints);
+		static		Handle_Law_BSpline Reparametrize(const Adaptor3d_Curve &Curve, const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DFirst, const Standard_Real DLast, const Standard_Boolean Rev, const Standard_Integer NbPoints);
 		%feature("autodoc", "1");
-		Handle_Law_BSpline Scale(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
+		static		Handle_Law_BSpline Scale(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
 		%feature("autodoc", "1");
-		Handle_Law_BSpline ScaleCub(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
+		static		Handle_Law_BSpline ScaleCub(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
 
 };
 %feature("shadow") Law::~Law %{
@@ -1090,7 +1090,7 @@ class Law_BSpline : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Weights(TColStd_Array1OfReal & W) const;
 		%feature("autodoc", "1");
-		Standard_Integer MaxDegree();
+		static		Standard_Integer MaxDegree();
 		%feature("autodoc","MovePointAndTangent(Standard_Real U, Standard_Real NewValue, Standard_Real Derivative, Standard_Real Tolerance, Standard_Integer StartingCondition, Standard_Integer EndingCondition) -> Standard_Integer");
 
 		void MovePointAndTangent(const Standard_Real U, const Standard_Real NewValue, const Standard_Real Derivative, const Standard_Real Tolerance, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Integer &OutValue);

@@ -51,7 +51,7 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 		%feature("autodoc", "1");
 		Handle_AppDef_MyCriterionOfTheVariational & operator=(const AppDef_MyCriterionOfTheVariational *anItem);
 		%feature("autodoc", "1");
-		Handle_AppDef_MyCriterionOfTheVariational const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppDef_MyCriterionOfTheVariational const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppDef_MyCriterionOfTheVariational {
@@ -89,7 +89,7 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppDef_HArray1OfMultiPointConstraint & operator=(const AppDef_HArray1OfMultiPointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_AppDef_HArray1OfMultiPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppDef_HArray1OfMultiPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppDef_HArray1OfMultiPointConstraint {
@@ -119,35 +119,35 @@ class AppDef_MyLineTool {
 		%feature("autodoc", "1");
 		AppDef_MyLineTool();
 		%feature("autodoc", "1");
-		Standard_Integer FirstPoint(const AppDef_MultiLine &ML);
+		static		Standard_Integer FirstPoint(const AppDef_MultiLine &ML);
 		%feature("autodoc", "1");
-		Standard_Integer LastPoint(const AppDef_MultiLine &ML);
+		static		Standard_Integer LastPoint(const AppDef_MultiLine &ML);
 		%feature("autodoc", "1");
-		Standard_Integer NbP2d(const AppDef_MultiLine &ML);
+		static		Standard_Integer NbP2d(const AppDef_MultiLine &ML);
 		%feature("autodoc", "1");
-		Standard_Integer NbP3d(const AppDef_MultiLine &ML);
+		static		Standard_Integer NbP3d(const AppDef_MultiLine &ML);
 		%feature("autodoc", "1");
-		void Value(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfPnt & tabPt);
+		static		void Value(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfPnt & tabPt);
 		%feature("autodoc", "1");
-		void Value(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfPnt2d & tabPt2d);
+		static		void Value(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfPnt2d & tabPt2d);
 		%feature("autodoc", "1");
-		void Value(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfPnt & tabPt, TColgp_Array1OfPnt2d & tabPt2d);
+		static		void Value(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfPnt & tabPt, TColgp_Array1OfPnt2d & tabPt2d);
 		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec & tabV);
+		static		Standard_Boolean Tangency(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec & tabV);
 		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec2d & tabV2d);
+		static		Standard_Boolean Tangency(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec2d & tabV2d);
 		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
+		static		Standard_Boolean Tangency(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
 		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec & tabV);
+		static		Standard_Boolean Curvature(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec & tabV);
 		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec2d & tabV2d);
+		static		Standard_Boolean Curvature(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec2d & tabV2d);
 		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
+		static		Standard_Boolean Curvature(const AppDef_MultiLine &ML, const Standard_Integer MPointIndex, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
 		%feature("autodoc", "1");
-		Approx_Status WhatStatus(const AppDef_MultiLine &ML, const Standard_Integer I1, const Standard_Integer I2);
+		static		Approx_Status WhatStatus(const AppDef_MultiLine &ML, const Standard_Integer I1, const Standard_Integer I2);
 		%feature("autodoc", "1");
-		AppDef_MultiLine & MakeMLBetween(const AppDef_MultiLine &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
+		static		AppDef_MultiLine & MakeMLBetween(const AppDef_MultiLine &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
 
 };
 %feature("shadow") AppDef_MyLineTool::~AppDef_MyLineTool %{

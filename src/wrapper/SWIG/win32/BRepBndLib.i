@@ -43,9 +43,9 @@ class BRepBndLib {
 		%feature("autodoc", "1");
 		BRepBndLib();
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &S, Bnd_Box & B);
+		static		void Add(const TopoDS_Shape &S, Bnd_Box & B);
 		%feature("autodoc", "1");
-		void AddClose(const TopoDS_Shape &S, Bnd_Box & B);
+		static		void AddClose(const TopoDS_Shape &S, Bnd_Box & B);
 
 };
 %feature("shadow") BRepBndLib::~BRepBndLib %{

@@ -52,7 +52,7 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc & operator=(const MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
@@ -82,9 +82,9 @@ class MeshAlgo {
 		%feature("autodoc", "1");
 		MeshAlgo();
 		%feature("autodoc", "1");
-		void SetMesure(const Standard_Boolean val);
+		static		void SetMesure(const Standard_Boolean val);
 		%feature("autodoc", "1");
-		void SetTrace(const Standard_Integer val);
+		static		void SetTrace(const Standard_Integer val);
 
 };
 %feature("shadow") MeshAlgo::~MeshAlgo %{

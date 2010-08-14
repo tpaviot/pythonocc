@@ -51,7 +51,7 @@ class Handle_TPrsStd_Driver : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_Driver & operator=(const TPrsStd_Driver *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_Driver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_Driver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_Driver {
@@ -89,7 +89,7 @@ class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_GeometryDriver & operator=(const TPrsStd_GeometryDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_GeometryDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_GeometryDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_GeometryDriver {
@@ -127,7 +127,7 @@ class Handle_TPrsStd_ConstraintDriver : public Handle_TPrsStd_Driver {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_ConstraintDriver & operator=(const TPrsStd_ConstraintDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_ConstraintDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_ConstraintDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_ConstraintDriver {
@@ -165,7 +165,7 @@ class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_AISPresentation & operator=(const TPrsStd_AISPresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_AISPresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_AISPresentation {
@@ -203,7 +203,7 @@ class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_PointDriver & operator=(const TPrsStd_PointDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_PointDriver {
@@ -241,7 +241,7 @@ class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_DriverTable & operator=(const TPrsStd_DriverTable *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_DriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_DriverTable {
@@ -279,7 +279,7 @@ class Handle_TPrsStd_AxisDriver : public Handle_TPrsStd_Driver {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_AxisDriver & operator=(const TPrsStd_AxisDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_AxisDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_AxisDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_AxisDriver {
@@ -317,7 +317,7 @@ class Handle_TPrsStd_AISViewer : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_AISViewer & operator=(const TPrsStd_AISViewer *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_AISViewer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_AISViewer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_AISViewer {
@@ -355,7 +355,7 @@ class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_PlaneDriver & operator=(const TPrsStd_PlaneDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_PlaneDriver {
@@ -393,7 +393,7 @@ class Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver & operator=(const TPrsStd_DataMapNodeOfDataMapOfGUIDDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
@@ -431,7 +431,7 @@ class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_NamedShapeDriver & operator=(const TPrsStd_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TPrsStd_NamedShapeDriver {
@@ -459,21 +459,21 @@ def __del__(self):
 class TPrsStd_AISViewer : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Standard_Boolean Has(const TDF_Label &acces);
+		static		Standard_Boolean Has(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_AISViewer New(const TDF_Label &access, const Handle_AIS_InteractiveContext &selector);
+		static		Handle_TPrsStd_AISViewer New(const TDF_Label &access, const Handle_AIS_InteractiveContext &selector);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_AISViewer New(const TDF_Label &acces, const Handle_V3d_Viewer &viewer);
+		static		Handle_TPrsStd_AISViewer New(const TDF_Label &acces, const Handle_V3d_Viewer &viewer);
 		%feature("autodoc", "1");
-		Standard_Boolean Find(const TDF_Label &acces, Handle_TPrsStd_AISViewer & A);
+		static		Standard_Boolean Find(const TDF_Label &acces, Handle_TPrsStd_AISViewer & A);
 		%feature("autodoc", "1");
-		Standard_Boolean Find(const TDF_Label &acces, Handle_AIS_InteractiveContext & IC);
+		static		Standard_Boolean Find(const TDF_Label &acces, Handle_AIS_InteractiveContext & IC);
 		%feature("autodoc", "1");
-		Standard_Boolean Find(const TDF_Label &acces, Handle_V3d_Viewer & V);
+		static		Standard_Boolean Find(const TDF_Label &acces, Handle_V3d_Viewer & V);
 		%feature("autodoc", "1");
-		void Update(const TDF_Label &acces);
+		static		void Update(const TDF_Label &acces);
 		%feature("autodoc", "1");
 		TPrsStd_AISViewer();
 		%feature("autodoc", "1");
@@ -635,52 +635,52 @@ class TPrsStd_ConstraintTools {
 		%feature("autodoc", "1");
 		TPrsStd_ConstraintTools();
 		%feature("autodoc", "1");
-		void UpdateOnlyValue(const Handle_TDataStd_Constraint &aConst, const Handle_AIS_InteractiveObject &anAIS);
+		static		void UpdateOnlyValue(const Handle_TDataStd_Constraint &aConst, const Handle_AIS_InteractiveObject &anAIS);
 		%feature("autodoc", "1");
-		void ComputeDistance(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeDistance(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeParallel(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeParallel(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeTangent(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeTangent(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputePerpendicular(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputePerpendicular(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeConcentric(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeConcentric(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeSymmetry(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeSymmetry(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeMidPoint(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeMidPoint(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeAngle(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeAngle(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeRadius(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeRadius(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeMinRadius(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeMinRadius(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeMaxRadius(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeMaxRadius(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeEqualDistance(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeEqualDistance(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeEqualRadius(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeEqualRadius(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeFix(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeFix(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeDiameter(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeDiameter(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeOffset(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeOffset(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputePlacement(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputePlacement(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeCoincident(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeCoincident(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeRound(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeRound(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc", "1");
-		void ComputeOthers(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeOthers(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc","ComputeTextAndValue(const aConst, Standard_Boolean anIsAngle) -> Standard_Real");
 
-		void ComputeTextAndValue(const Handle_TDataStd_Constraint &aConst, Standard_Real &OutValue, TCollection_ExtendedString & aText, const Standard_Boolean anIsAngle);
+		static		void ComputeTextAndValue(const Handle_TDataStd_Constraint &aConst, Standard_Real &OutValue, TCollection_ExtendedString & aText, const Standard_Boolean anIsAngle);
 		%feature("autodoc", "1");
-		void ComputeAngleForOneFace(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
+		static		void ComputeAngleForOneFace(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 
 };
 %feature("shadow") TPrsStd_ConstraintTools::~TPrsStd_ConstraintTools %{
@@ -703,13 +703,13 @@ def __del__(self):
 class TPrsStd_AISPresentation : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation Set(const TDF_Label &L, const Standard_GUID &driver);
+		static		Handle_TPrsStd_AISPresentation Set(const TDF_Label &L, const Standard_GUID &driver);
 		%feature("autodoc", "1");
-		void Unset(const TDF_Label &L);
+		static		void Unset(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation Set(const Handle_TDF_Attribute &master);
+		static		Handle_TPrsStd_AISPresentation Set(const Handle_TDF_Attribute &master);
 		%feature("autodoc", "1");
 		TPrsStd_AISPresentation();
 		%feature("autodoc", "1");
@@ -937,7 +937,7 @@ def __del__(self):
 class TPrsStd_DriverTable : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable Get();
+		static		Handle_TPrsStd_DriverTable Get();
 		%feature("autodoc", "1");
 		TPrsStd_DriverTable();
 		%feature("autodoc", "1");

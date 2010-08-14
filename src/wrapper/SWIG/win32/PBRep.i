@@ -51,7 +51,7 @@ class Handle_PBRep_TFace1 : public Handle_PTopoDS_TFace1 {
 		%feature("autodoc", "1");
 		Handle_PBRep_TFace1 & operator=(const PBRep_TFace1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_TFace1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_TFace1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_TFace1 {
@@ -89,7 +89,7 @@ class Handle_PBRep_PointRepresentation : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PBRep_PointRepresentation & operator=(const PBRep_PointRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_PointRepresentation const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_PointRepresentation const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_PointRepresentation {
@@ -127,7 +127,7 @@ class Handle_PBRep_TVertex1 : public Handle_PTopoDS_TVertex1 {
 		%feature("autodoc", "1");
 		Handle_PBRep_TVertex1 & operator=(const PBRep_TVertex1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_TVertex1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_TVertex1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_TVertex1 {
@@ -165,7 +165,7 @@ class Handle_PBRep_CurveRepresentation : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PBRep_CurveRepresentation & operator=(const PBRep_CurveRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_CurveRepresentation const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_CurveRepresentation const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_CurveRepresentation {
@@ -203,7 +203,7 @@ class Handle_PBRep_GCurve : public Handle_PBRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_PBRep_GCurve & operator=(const PBRep_GCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_GCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_GCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_GCurve {
@@ -241,7 +241,7 @@ class Handle_PBRep_CurveOnSurface : public Handle_PBRep_GCurve {
 		%feature("autodoc", "1");
 		Handle_PBRep_CurveOnSurface & operator=(const PBRep_CurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_CurveOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_CurveOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_CurveOnSurface {
@@ -279,7 +279,7 @@ class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
 		%feature("autodoc", "1");
 		Handle_PBRep_TFace & operator=(const PBRep_TFace *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_TFace const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_TFace const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_TFace {
@@ -317,7 +317,7 @@ class Handle_PBRep_PolygonOnTriangulation : public Handle_PBRep_CurveRepresentat
 		%feature("autodoc", "1");
 		Handle_PBRep_PolygonOnTriangulation & operator=(const PBRep_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnTriangulation const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_PolygonOnTriangulation const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_PolygonOnTriangulation {
@@ -355,7 +355,7 @@ class Handle_PBRep_PointsOnSurface : public Handle_PBRep_PointRepresentation {
 		%feature("autodoc", "1");
 		Handle_PBRep_PointsOnSurface & operator=(const PBRep_PointsOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_PointsOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_PointsOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_PointsOnSurface {
@@ -393,7 +393,7 @@ class Handle_PBRep_CurveOn2Surfaces : public Handle_PBRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_PBRep_CurveOn2Surfaces & operator=(const PBRep_CurveOn2Surfaces *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_CurveOn2Surfaces const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_CurveOn2Surfaces const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_CurveOn2Surfaces {
@@ -431,7 +431,7 @@ class Handle_PBRep_TEdge1 : public Handle_PTopoDS_TEdge1 {
 		%feature("autodoc", "1");
 		Handle_PBRep_TEdge1 & operator=(const PBRep_TEdge1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_TEdge1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_TEdge1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_TEdge1 {
@@ -469,7 +469,7 @@ class Handle_PBRep_PolygonOnSurface : public Handle_PBRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_PBRep_PolygonOnSurface & operator=(const PBRep_PolygonOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_PolygonOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_PolygonOnSurface {
@@ -507,7 +507,7 @@ class Handle_PBRep_PolygonOnClosedSurface : public Handle_PBRep_PolygonOnSurface
 		%feature("autodoc", "1");
 		Handle_PBRep_PolygonOnClosedSurface & operator=(const PBRep_PolygonOnClosedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnClosedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_PolygonOnClosedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_PolygonOnClosedSurface {
@@ -545,7 +545,7 @@ class Handle_PBRep_Polygon3D : public Handle_PBRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_PBRep_Polygon3D & operator=(const PBRep_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_Polygon3D const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_Polygon3D const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_Polygon3D {
@@ -583,7 +583,7 @@ class Handle_PBRep_Curve3D : public Handle_PBRep_GCurve {
 		%feature("autodoc", "1");
 		Handle_PBRep_Curve3D & operator=(const PBRep_Curve3D *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_Curve3D const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_Curve3D const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_Curve3D {
@@ -621,7 +621,7 @@ class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
 		%feature("autodoc", "1");
 		Handle_PBRep_PointOnSurface & operator=(const PBRep_PointOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_PointOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_PointOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_PointOnSurface {
@@ -659,7 +659,7 @@ class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
 		%feature("autodoc", "1");
 		Handle_PBRep_TEdge & operator=(const PBRep_TEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_TEdge const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_TEdge const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_TEdge {
@@ -697,7 +697,7 @@ class Handle_PBRep_CurveOnClosedSurface : public Handle_PBRep_CurveOnSurface {
 		%feature("autodoc", "1");
 		Handle_PBRep_CurveOnClosedSurface & operator=(const PBRep_CurveOnClosedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_CurveOnClosedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_CurveOnClosedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_CurveOnClosedSurface {
@@ -735,7 +735,7 @@ class Handle_PBRep_PolygonOnClosedTriangulation : public Handle_PBRep_PolygonOnT
 		%feature("autodoc", "1");
 		Handle_PBRep_PolygonOnClosedTriangulation & operator=(const PBRep_PolygonOnClosedTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnClosedTriangulation const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_PolygonOnClosedTriangulation const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_PolygonOnClosedTriangulation {
@@ -773,7 +773,7 @@ class Handle_PBRep_TVertex : public Handle_PTopoDS_TVertex {
 		%feature("autodoc", "1");
 		Handle_PBRep_TVertex & operator=(const PBRep_TVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_TVertex const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_TVertex const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_TVertex {
@@ -811,7 +811,7 @@ class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
 		%feature("autodoc", "1");
 		Handle_PBRep_PointOnCurve & operator=(const PBRep_PointOnCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_PointOnCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_PointOnCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_PointOnCurve {
@@ -849,7 +849,7 @@ class Handle_PBRep_PointOnCurveOnSurface : public Handle_PBRep_PointsOnSurface {
 		%feature("autodoc", "1");
 		Handle_PBRep_PointOnCurveOnSurface & operator=(const PBRep_PointOnCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_PointOnCurveOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PBRep_PointOnCurveOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PBRep_PointOnCurveOnSurface {
@@ -939,6 +939,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend PBRep_CurveRepresentation {
+	PBRep_CurveRepresentation () {}
 };
 
 
@@ -1215,6 +1218,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend PBRep_GCurve {
+	PBRep_GCurve () {}
+};
 
 
 %nodefaultctor PBRep_CurveOnSurface;
@@ -1408,6 +1414,9 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend PBRep_PointRepresentation {
+	PBRep_PointRepresentation () {}
+};
 
 
 %nodefaultctor PBRep_PointsOnSurface;
@@ -1448,6 +1457,9 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend PBRep_PointsOnSurface {
+	PBRep_PointsOnSurface () {}
 };
 
 

@@ -51,7 +51,7 @@ class Handle_BlockFix_PeriodicSurfaceModifier : public Handle_BRepTools_Modifica
 		%feature("autodoc", "1");
 		Handle_BlockFix_PeriodicSurfaceModifier & operator=(const BlockFix_PeriodicSurfaceModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_BlockFix_PeriodicSurfaceModifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BlockFix_PeriodicSurfaceModifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BlockFix_PeriodicSurfaceModifier {
@@ -89,7 +89,7 @@ class Handle_BlockFix_SphereSpaceModifier : public Handle_BRepTools_Modification
 		%feature("autodoc", "1");
 		Handle_BlockFix_SphereSpaceModifier & operator=(const BlockFix_SphereSpaceModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_BlockFix_SphereSpaceModifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BlockFix_SphereSpaceModifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BlockFix_SphereSpaceModifier {
@@ -127,7 +127,7 @@ class Handle_BlockFix_BlockFixAPI : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BlockFix_BlockFixAPI & operator=(const BlockFix_BlockFixAPI *anItem);
 		%feature("autodoc", "1");
-		Handle_BlockFix_BlockFixAPI const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BlockFix_BlockFixAPI const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BlockFix_BlockFixAPI {
@@ -157,9 +157,9 @@ class BlockFix {
 		%feature("autodoc", "1");
 		BlockFix();
 		%feature("autodoc", "1");
-		TopoDS_Shape RotateSphereSpace(const TopoDS_Shape &S, const Standard_Real Tol);
+		static		TopoDS_Shape RotateSphereSpace(const TopoDS_Shape &S, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		TopoDS_Shape FixRanges(const TopoDS_Shape &S, const Standard_Real Tol);
+		static		TopoDS_Shape FixRanges(const TopoDS_Shape &S, const Standard_Real Tol);
 
 };
 %feature("shadow") BlockFix::~BlockFix %{

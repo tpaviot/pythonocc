@@ -51,7 +51,7 @@ class Handle_BinMDataStd_RealArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_RealArrayDriver & operator=(const BinMDataStd_RealArrayDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_RealArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_RealArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_RealArrayDriver {
@@ -89,7 +89,7 @@ class Handle_BinMDataStd_NoteBookDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_NoteBookDriver & operator=(const BinMDataStd_NoteBookDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_NoteBookDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_NoteBookDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_NoteBookDriver {
@@ -127,7 +127,7 @@ class Handle_BinMDataStd_PatternStdDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_PatternStdDriver & operator=(const BinMDataStd_PatternStdDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_PatternStdDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_PatternStdDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_PatternStdDriver {
@@ -165,7 +165,7 @@ class Handle_BinMDataStd_PlacementDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_PlacementDriver & operator=(const BinMDataStd_PlacementDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlacementDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_PlacementDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_PlacementDriver {
@@ -203,7 +203,7 @@ class Handle_BinMDataStd_ReferenceArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ReferenceArrayDriver & operator=(const BinMDataStd_ReferenceArrayDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_ReferenceArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ReferenceArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ReferenceArrayDriver {
@@ -241,7 +241,7 @@ class Handle_BinMDataStd_IntegerDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_IntegerDriver & operator=(const BinMDataStd_IntegerDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_IntegerDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_IntegerDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_IntegerDriver {
@@ -279,7 +279,7 @@ class Handle_BinMDataStd_ByteArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ByteArrayDriver & operator=(const BinMDataStd_ByteArrayDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_ByteArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ByteArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ByteArrayDriver {
@@ -317,7 +317,7 @@ class Handle_BinMDataStd_PointDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_PointDriver & operator=(const BinMDataStd_PointDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_PointDriver {
@@ -355,7 +355,7 @@ class Handle_BinMDataStd_ExpressionDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ExpressionDriver & operator=(const BinMDataStd_ExpressionDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_ExpressionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ExpressionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ExpressionDriver {
@@ -393,7 +393,7 @@ class Handle_BinMDataStd_UAttributeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_UAttributeDriver & operator=(const BinMDataStd_UAttributeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_UAttributeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_UAttributeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_UAttributeDriver {
@@ -431,7 +431,7 @@ class Handle_BinMDataStd_NamedDataDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_NamedDataDriver & operator=(const BinMDataStd_NamedDataDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_NamedDataDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_NamedDataDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_NamedDataDriver {
@@ -469,7 +469,7 @@ class Handle_BinMDataStd_PlaneDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_PlaneDriver & operator=(const BinMDataStd_PlaneDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_PlaneDriver {
@@ -507,7 +507,7 @@ class Handle_BinMDataStd_IntegerArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_IntegerArrayDriver & operator=(const BinMDataStd_IntegerArrayDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_IntegerArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_IntegerArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_IntegerArrayDriver {
@@ -545,7 +545,7 @@ class Handle_BinMDataStd_DirectoryDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_DirectoryDriver & operator=(const BinMDataStd_DirectoryDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_DirectoryDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_DirectoryDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_DirectoryDriver {
@@ -583,7 +583,7 @@ class Handle_BinMDataStd_AxisDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_AxisDriver & operator=(const BinMDataStd_AxisDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_AxisDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_AxisDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_AxisDriver {
@@ -621,7 +621,7 @@ class Handle_BinMDataStd_ExtStringListDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ExtStringListDriver & operator=(const BinMDataStd_ExtStringListDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_ExtStringListDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ExtStringListDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ExtStringListDriver {
@@ -659,7 +659,7 @@ class Handle_BinMDataStd_BooleanListDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_BooleanListDriver & operator=(const BinMDataStd_BooleanListDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_BooleanListDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_BooleanListDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_BooleanListDriver {
@@ -697,7 +697,7 @@ class Handle_BinMDataStd_ExtStringArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ExtStringArrayDriver & operator=(const BinMDataStd_ExtStringArrayDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_ExtStringArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ExtStringArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ExtStringArrayDriver {
@@ -735,7 +735,7 @@ class Handle_BinMDataStd_VariableDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_VariableDriver & operator=(const BinMDataStd_VariableDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_VariableDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_VariableDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_VariableDriver {
@@ -773,7 +773,7 @@ class Handle_BinMDataStd_TickDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_TickDriver & operator=(const BinMDataStd_TickDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_TickDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_TickDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_TickDriver {
@@ -811,7 +811,7 @@ class Handle_BinMDataStd_TreeNodeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_TreeNodeDriver & operator=(const BinMDataStd_TreeNodeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_TreeNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_TreeNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_TreeNodeDriver {
@@ -849,7 +849,7 @@ class Handle_BinMDataStd_NameDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_NameDriver & operator=(const BinMDataStd_NameDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_NameDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_NameDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_NameDriver {
@@ -887,7 +887,7 @@ class Handle_BinMDataStd_RealDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_RealDriver & operator=(const BinMDataStd_RealDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_RealDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_RealDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_RealDriver {
@@ -925,7 +925,7 @@ class Handle_BinMDataStd_ShapeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ShapeDriver & operator=(const BinMDataStd_ShapeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_ShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ShapeDriver {
@@ -963,7 +963,7 @@ class Handle_BinMDataStd_ReferenceListDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ReferenceListDriver & operator=(const BinMDataStd_ReferenceListDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_ReferenceListDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ReferenceListDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ReferenceListDriver {
@@ -1001,7 +1001,7 @@ class Handle_BinMDataStd_CommentDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_CommentDriver & operator=(const BinMDataStd_CommentDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_CommentDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_CommentDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_CommentDriver {
@@ -1039,7 +1039,7 @@ class Handle_BinMDataStd_BooleanArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_BooleanArrayDriver & operator=(const BinMDataStd_BooleanArrayDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_BooleanArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_BooleanArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_BooleanArrayDriver {
@@ -1077,7 +1077,7 @@ class Handle_BinMDataStd_ConstraintDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ConstraintDriver & operator=(const BinMDataStd_ConstraintDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_ConstraintDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ConstraintDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ConstraintDriver {
@@ -1115,7 +1115,7 @@ class Handle_BinMDataStd_RelationDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_RelationDriver & operator=(const BinMDataStd_RelationDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_RelationDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_RelationDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_RelationDriver {
@@ -1153,7 +1153,7 @@ class Handle_BinMDataStd_IntegerListDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_IntegerListDriver & operator=(const BinMDataStd_IntegerListDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_IntegerListDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_IntegerListDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_IntegerListDriver {
@@ -1191,7 +1191,7 @@ class Handle_BinMDataStd_IntPackedMapDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_IntPackedMapDriver & operator=(const BinMDataStd_IntPackedMapDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_IntPackedMapDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_IntPackedMapDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_IntPackedMapDriver {
@@ -1229,7 +1229,7 @@ class Handle_BinMDataStd_RealListDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_RealListDriver & operator=(const BinMDataStd_RealListDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_RealListDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_RealListDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_RealListDriver {
@@ -1267,7 +1267,7 @@ class Handle_BinMDataStd_AsciiStringDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_AsciiStringDriver & operator=(const BinMDataStd_AsciiStringDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_AsciiStringDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_AsciiStringDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_AsciiStringDriver {
@@ -1305,7 +1305,7 @@ class Handle_BinMDataStd_GeometryDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_GeometryDriver & operator=(const BinMDataStd_GeometryDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDataStd_GeometryDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_GeometryDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_GeometryDriver {
@@ -2483,11 +2483,11 @@ class BinMDataStd {
 		%feature("autodoc", "1");
 		BinMDataStd();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 		%feature("autodoc", "1");
-		void SetDocumentVersion(const Standard_Integer DocVersion);
+		static		void SetDocumentVersion(const Standard_Integer DocVersion);
 		%feature("autodoc", "1");
-		Standard_Integer DocumentVersion();
+		static		Standard_Integer DocumentVersion();
 
 };
 %feature("shadow") BinMDataStd::~BinMDataStd %{

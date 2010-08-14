@@ -56,7 +56,7 @@ class Handle_BinDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_Docu
 		%feature("autodoc", "1");
 		Handle_BinDrivers_DocumentRetrievalDriver & operator=(const BinDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinDrivers_DocumentRetrievalDriver {
@@ -94,7 +94,7 @@ class Handle_BinDrivers_DocumentStorageDriver : public Handle_BinLDrivers_Docume
 		%feature("autodoc", "1");
 		Handle_BinDrivers_DocumentStorageDriver & operator=(const BinDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinDrivers_DocumentStorageDriver {
@@ -161,11 +161,11 @@ class BinDrivers {
 		%feature("autodoc", "1");
 		BinDrivers();
 		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
+		static		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
 		%feature("autodoc", "1");
-		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
+		static		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
 		%feature("autodoc", "1");
-		TCollection_AsciiString StorageVersion();
+		static		TCollection_AsciiString StorageVersion();
 
 };
 %feature("shadow") BinDrivers::~BinDrivers %{

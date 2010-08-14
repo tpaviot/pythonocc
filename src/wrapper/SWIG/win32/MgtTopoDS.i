@@ -51,7 +51,7 @@ class Handle_MgtTopoDS_TranslateTool : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool & operator=(const MgtTopoDS_TranslateTool *anItem);
 		%feature("autodoc", "1");
-		Handle_MgtTopoDS_TranslateTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MgtTopoDS_TranslateTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MgtTopoDS_TranslateTool {
@@ -89,7 +89,7 @@ class Handle_MgtTopoDS_TranslateTool1 : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool1 & operator=(const MgtTopoDS_TranslateTool1 *anItem);
 		%feature("autodoc", "1");
-		Handle_MgtTopoDS_TranslateTool1 const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MgtTopoDS_TranslateTool1 const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MgtTopoDS_TranslateTool1 {
@@ -325,13 +325,13 @@ class MgtTopoDS {
 		%feature("autodoc", "1");
 		MgtTopoDS();
 		%feature("autodoc", "1");
-		Handle_PTopoDS_HShape Translate(const TopoDS_Shape &S, const Handle_MgtTopoDS_TranslateTool &T, PTColStd_TransientPersistentMap & M);
+		static		Handle_PTopoDS_HShape Translate(const TopoDS_Shape &S, const Handle_MgtTopoDS_TranslateTool &T, PTColStd_TransientPersistentMap & M);
 		%feature("autodoc", "1");
-		void Translate(const Handle_PTopoDS_HShape &S, const Handle_MgtTopoDS_TranslateTool &T, PTColStd_PersistentTransientMap & M, TopoDS_Shape & Sh);
+		static		void Translate(const Handle_PTopoDS_HShape &S, const Handle_MgtTopoDS_TranslateTool &T, PTColStd_PersistentTransientMap & M, TopoDS_Shape & Sh);
 		%feature("autodoc", "1");
-		void Translate1(const TopoDS_Shape &aShape, const Handle_MgtTopoDS_TranslateTool1 &T, PTColStd_TransientPersistentMap & M, PTopoDS_Shape1 & aPShape);
+		static		void Translate1(const TopoDS_Shape &aShape, const Handle_MgtTopoDS_TranslateTool1 &T, PTColStd_TransientPersistentMap & M, PTopoDS_Shape1 & aPShape);
 		%feature("autodoc", "1");
-		void Translate1(const PTopoDS_Shape1 &aPShape, const Handle_MgtTopoDS_TranslateTool1 &T, PTColStd_PersistentTransientMap & M, TopoDS_Shape & aShape);
+		static		void Translate1(const PTopoDS_Shape1 &aPShape, const Handle_MgtTopoDS_TranslateTool1 &T, PTColStd_PersistentTransientMap & M, TopoDS_Shape & aShape);
 
 };
 %feature("shadow") MgtTopoDS::~MgtTopoDS %{

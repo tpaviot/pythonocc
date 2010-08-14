@@ -51,7 +51,7 @@ class Handle_APIHeaderSection_EditHeader : public Handle_IFSelect_Editor {
 		%feature("autodoc", "1");
 		Handle_APIHeaderSection_EditHeader & operator=(const APIHeaderSection_EditHeader *anItem);
 		%feature("autodoc", "1");
-		Handle_APIHeaderSection_EditHeader const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_APIHeaderSection_EditHeader const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_APIHeaderSection_EditHeader {

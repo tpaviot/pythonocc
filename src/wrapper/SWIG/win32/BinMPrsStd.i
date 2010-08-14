@@ -51,7 +51,7 @@ class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMPrsStd_PositionDriver & operator=(const BinMPrsStd_PositionDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMPrsStd_PositionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMPrsStd_PositionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMPrsStd_PositionDriver {
@@ -89,7 +89,7 @@ class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMPrsStd_AISPresentationDriver & operator=(const BinMPrsStd_AISPresentationDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMPrsStd_AISPresentationDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMPrsStd_AISPresentationDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMPrsStd_AISPresentationDriver {
@@ -119,7 +119,7 @@ class BinMPrsStd {
 		%feature("autodoc", "1");
 		BinMPrsStd();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
 %feature("shadow") BinMPrsStd::~BinMPrsStd %{

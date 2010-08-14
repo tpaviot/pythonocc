@@ -464,9 +464,9 @@ class GeomAPI {
 		%feature("autodoc", "1");
 		GeomAPI();
 		%feature("autodoc", "1");
-		Handle_Geom2d_Curve To2d(const Handle_Geom_Curve &C, const gp_Pln &P);
+		static		Handle_Geom2d_Curve To2d(const Handle_Geom_Curve &C, const gp_Pln &P);
 		%feature("autodoc", "1");
-		Handle_Geom_Curve To3d(const Handle_Geom2d_Curve &C, const gp_Pln &P);
+		static		Handle_Geom_Curve To3d(const Handle_Geom2d_Curve &C, const gp_Pln &P);
 
 };
 %feature("shadow") GeomAPI::~GeomAPI %{

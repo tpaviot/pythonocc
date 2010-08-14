@@ -58,7 +58,7 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public H
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString & operator=(const Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
@@ -96,7 +96,7 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Hand
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString & operator=(const Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
@@ -134,7 +134,7 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Resource_Manager & operator=(const Resource_Manager *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_Manager const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Resource_Manager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Resource_Manager {
@@ -172,7 +172,7 @@ class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 		%feature("autodoc", "1");
 		Handle_Resource_NoSuchResource & operator=(const Resource_NoSuchResource *anItem);
 		%feature("autodoc", "1");
-		Handle_Resource_NoSuchResource const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Resource_NoSuchResource const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Resource_NoSuchResource {
@@ -425,7 +425,7 @@ class Resource_QuickSortOfArray1 {
 		%feature("autodoc", "1");
 		Resource_QuickSortOfArray1();
 		%feature("autodoc", "1");
-		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
+		static		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
 
 };
 %feature("shadow") Resource_QuickSortOfArray1::~Resource_QuickSortOfArray1 %{
@@ -477,11 +477,11 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 		%feature("autodoc", "1");
 		Resource_NoSuchResource(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Resource_NoSuchResource NewInstance(const char * aMessage);
+		static		Handle_Resource_NoSuchResource NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -563,31 +563,31 @@ class Resource_Unicode {
 		%feature("autodoc", "1");
 		Resource_Unicode();
 		%feature("autodoc", "1");
-		void ConvertSJISToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		static		void ConvertSJISToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
 		%feature("autodoc", "1");
-		void ConvertEUCToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		static		void ConvertEUCToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
 		%feature("autodoc", "1");
-		void ConvertGBToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		static		void ConvertGBToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
 		%feature("autodoc", "1");
-		void ConvertANSIToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		static		void ConvertANSIToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
 		%feature("autodoc", "1");
-		Standard_Boolean ConvertUnicodeToSJIS(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		static		Standard_Boolean ConvertUnicodeToSJIS(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
 		%feature("autodoc", "1");
-		Standard_Boolean ConvertUnicodeToEUC(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		static		Standard_Boolean ConvertUnicodeToEUC(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
 		%feature("autodoc", "1");
-		Standard_Boolean ConvertUnicodeToGB(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		static		Standard_Boolean ConvertUnicodeToGB(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
 		%feature("autodoc", "1");
-		Standard_Boolean ConvertUnicodeToANSI(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		static		Standard_Boolean ConvertUnicodeToANSI(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
 		%feature("autodoc", "1");
-		void SetFormat(const Resource_FormatType typecode);
+		static		void SetFormat(const Resource_FormatType typecode);
 		%feature("autodoc", "1");
-		Resource_FormatType GetFormat();
+		static		Resource_FormatType GetFormat();
 		%feature("autodoc", "1");
-		void ReadFormat();
+		static		void ReadFormat();
 		%feature("autodoc", "1");
-		void ConvertFormatToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		static		void ConvertFormatToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
 		%feature("autodoc", "1");
-		Standard_Boolean ConvertUnicodeToFormat(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		static		Standard_Boolean ConvertUnicodeToFormat(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
 
 };
 %feature("shadow") Resource_Unicode::~Resource_Unicode %{

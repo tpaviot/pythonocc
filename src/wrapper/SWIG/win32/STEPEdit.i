@@ -51,7 +51,7 @@ class Handle_STEPEdit_EditSDR : public Handle_IFSelect_Editor {
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditSDR & operator=(const STEPEdit_EditSDR *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPEdit_EditSDR const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPEdit_EditSDR const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_STEPEdit_EditSDR {
@@ -89,7 +89,7 @@ class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditContext & operator=(const STEPEdit_EditContext *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPEdit_EditContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPEdit_EditContext const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_STEPEdit_EditContext {
@@ -119,17 +119,17 @@ class STEPEdit {
 		%feature("autodoc", "1");
 		STEPEdit();
 		%feature("autodoc", "1");
-		Handle_Interface_Protocol Protocol();
+		static		Handle_Interface_Protocol Protocol();
 		%feature("autodoc", "1");
-		Handle_StepData_StepModel NewModel();
+		static		Handle_StepData_StepModel NewModel();
 		%feature("autodoc", "1");
-		Handle_IFSelect_Signature SignType();
+		static		Handle_IFSelect_Signature SignType();
 		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature NewSelectSDR();
+		static		Handle_IFSelect_SelectSignature NewSelectSDR();
 		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature NewSelectPlacedItem();
+		static		Handle_IFSelect_SelectSignature NewSelectPlacedItem();
 		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature NewSelectShapeRepr();
+		static		Handle_IFSelect_SelectSignature NewSelectShapeRepr();
 
 };
 %feature("shadow") STEPEdit::~STEPEdit %{

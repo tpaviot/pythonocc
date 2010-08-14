@@ -51,7 +51,7 @@ class Handle_XmlDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Docume
 		%feature("autodoc", "1");
 		Handle_XmlDrivers_DocumentStorageDriver & operator=(const XmlDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlDrivers_DocumentStorageDriver {
@@ -89,7 +89,7 @@ class Handle_XmlDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_Docu
 		%feature("autodoc", "1");
 		Handle_XmlDrivers_DocumentRetrievalDriver & operator=(const XmlDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlDrivers_DocumentRetrievalDriver {
@@ -156,9 +156,9 @@ class XmlDrivers {
 		%feature("autodoc", "1");
 		XmlDrivers();
 		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
+		static		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
 		%feature("autodoc", "1");
-		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		static		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 
 };
 %feature("shadow") XmlDrivers::~XmlDrivers %{

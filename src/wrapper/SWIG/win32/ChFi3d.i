@@ -49,13 +49,13 @@ class ChFi3d {
 		%feature("autodoc", "1");
 		ChFi3d();
 		%feature("autodoc", "1");
-		Standard_Integer ConcaveSide(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const TopoDS_Edge &E, TopAbs_Orientation & Or1, TopAbs_Orientation & Or2);
+		static		Standard_Integer ConcaveSide(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const TopoDS_Edge &E, TopAbs_Orientation & Or1, TopAbs_Orientation & Or2);
 		%feature("autodoc", "1");
-		Standard_Integer NextSide(TopAbs_Orientation & Or1, TopAbs_Orientation & Or2, const TopAbs_Orientation OrSave1, const TopAbs_Orientation OrSave2, const Standard_Integer ChoixSauv);
+		static		Standard_Integer NextSide(TopAbs_Orientation & Or1, TopAbs_Orientation & Or2, const TopAbs_Orientation OrSave1, const TopAbs_Orientation OrSave2, const Standard_Integer ChoixSauv);
 		%feature("autodoc", "1");
-		void NextSide(TopAbs_Orientation & Or, const TopAbs_Orientation OrSave, const TopAbs_Orientation OrFace);
+		static		void NextSide(TopAbs_Orientation & Or, const TopAbs_Orientation OrSave, const TopAbs_Orientation OrFace);
 		%feature("autodoc", "1");
-		Standard_Boolean SameSide(const TopAbs_Orientation Or, const TopAbs_Orientation OrSave1, const TopAbs_Orientation OrSave2, const TopAbs_Orientation OrFace1, const TopAbs_Orientation OrFace2);
+		static		Standard_Boolean SameSide(const TopAbs_Orientation Or, const TopAbs_Orientation OrSave1, const TopAbs_Orientation OrSave2, const TopAbs_Orientation OrFace1, const TopAbs_Orientation OrFace2);
 
 };
 %feature("shadow") ChFi3d::~ChFi3d %{

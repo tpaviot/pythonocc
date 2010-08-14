@@ -61,7 +61,7 @@ class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString & operator=(const PCollection_HAsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PCollection_HAsciiString const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PCollection_HAsciiString {
@@ -99,7 +99,7 @@ class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString & operator=(const PCollection_HExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PCollection_HExtendedString const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PCollection_HExtendedString {
@@ -137,7 +137,7 @@ class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNotRoot & operator=(const PCollection_IsNotRoot *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsNotRoot const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCollection_IsNotRoot const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCollection_IsNotRoot {
@@ -175,7 +175,7 @@ class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_PCollection_IsContained & operator=(const PCollection_IsContained *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsContained const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCollection_IsContained const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCollection_IsContained {
@@ -213,7 +213,7 @@ class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNullTree & operator=(const PCollection_IsNullTree *anItem);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsNullTree const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCollection_IsNullTree const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCollection_IsNullTree {
@@ -245,11 +245,11 @@ class PCollection_IsNullTree : public Standard_Failure {
 		%feature("autodoc", "1");
 		PCollection_IsNullTree(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsNullTree NewInstance(const char * aMessage);
+		static		Handle_PCollection_IsNullTree NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -317,11 +317,11 @@ class PCollection_IsNotRoot : public Standard_Failure {
 		%feature("autodoc", "1");
 		PCollection_IsNotRoot(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsNotRoot NewInstance(const char * aMessage);
+		static		Handle_PCollection_IsNotRoot NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -360,11 +360,11 @@ class PCollection_IsContained : public Standard_Failure {
 		%feature("autodoc", "1");
 		PCollection_IsContained(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_PCollection_IsContained NewInstance(const char * aMessage);
+		static		Handle_PCollection_IsContained NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

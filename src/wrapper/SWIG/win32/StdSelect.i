@@ -78,7 +78,7 @@ class Handle_StdSelect_SensitiveText2d : public Handle_Select2D_SensitiveEntity 
 		%feature("autodoc", "1");
 		Handle_StdSelect_SensitiveText2d & operator=(const StdSelect_SensitiveText2d *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_SensitiveText2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_SensitiveText2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_SensitiveText2d {
@@ -116,7 +116,7 @@ class Handle_StdSelect_TextProjector2d : public Handle_Select2D_Projector {
 		%feature("autodoc", "1");
 		Handle_StdSelect_TextProjector2d & operator=(const StdSelect_TextProjector2d *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_TextProjector2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_TextProjector2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_TextProjector2d {
@@ -154,7 +154,7 @@ class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_StdSelect_EdgeFilter & operator=(const StdSelect_EdgeFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_EdgeFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_EdgeFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_EdgeFilter {
@@ -192,7 +192,7 @@ class Handle_StdSelect_BRepOwner : public Handle_SelectMgr_EntityOwner {
 		%feature("autodoc", "1");
 		Handle_StdSelect_BRepOwner & operator=(const StdSelect_BRepOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_BRepOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_BRepOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_BRepOwner {
@@ -230,7 +230,7 @@ class Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Han
 		%feature("autodoc", "1");
 		Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs & operator=(const StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
@@ -268,7 +268,7 @@ class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
 		%feature("autodoc", "1");
 		Handle_StdSelect_Shape & operator=(const StdSelect_Shape *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_Shape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_Shape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_Shape {
@@ -306,7 +306,7 @@ class Handle_StdSelect_FaceFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_StdSelect_FaceFilter & operator=(const StdSelect_FaceFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_FaceFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_FaceFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_FaceFilter {
@@ -344,7 +344,7 @@ class Handle_StdSelect_ViewerSelector2d : public Handle_SelectMgr_ViewerSelector
 		%feature("autodoc", "1");
 		Handle_StdSelect_ViewerSelector2d & operator=(const StdSelect_ViewerSelector2d *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_ViewerSelector2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_ViewerSelector2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_ViewerSelector2d {
@@ -382,7 +382,7 @@ class Handle_StdSelect_ViewerSelector3d : public Handle_SelectMgr_ViewerSelector
 		%feature("autodoc", "1");
 		Handle_StdSelect_ViewerSelector3d & operator=(const StdSelect_ViewerSelector3d *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_ViewerSelector3d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_ViewerSelector3d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_ViewerSelector3d {
@@ -420,7 +420,7 @@ class Handle_StdSelect_ShapeTypeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_StdSelect_ShapeTypeFilter & operator=(const StdSelect_ShapeTypeFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_ShapeTypeFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_ShapeTypeFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_ShapeTypeFilter {
@@ -458,7 +458,7 @@ class Handle_StdSelect_Prs : public Handle_Prs3d_Presentation {
 		%feature("autodoc", "1");
 		Handle_StdSelect_Prs & operator=(const StdSelect_Prs *anItem);
 		%feature("autodoc", "1");
-		Handle_StdSelect_Prs const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdSelect_Prs const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdSelect_Prs {
@@ -584,9 +584,9 @@ class StdSelect {
 		%feature("autodoc", "1");
 		StdSelect();
 		%feature("autodoc", "1");
-		Select3D_Projector GetProjector(const Handle_V3d_View &aView);
+		static		Select3D_Projector GetProjector(const Handle_V3d_View &aView);
 		%feature("autodoc", "1");
-		void SetDrawerForBRepOwner(const Handle_SelectMgr_Selection &aSelection, const Handle_Prs3d_Drawer &aDrawer);
+		static		void SetDrawerForBRepOwner(const Handle_SelectMgr_Selection &aSelection, const Handle_Prs3d_Drawer &aDrawer);
 
 };
 %feature("shadow") StdSelect::~StdSelect %{
@@ -611,15 +611,15 @@ class StdSelect_BRepSelectionTool {
 		%feature("autodoc", "1");
 		StdSelect_BRepSelectionTool();
 		%feature("autodoc", "1");
-		void Load(const Handle_SelectMgr_Selection &aSelection, const TopoDS_Shape &aShape, const TopAbs_ShapeEnum aType, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
+		static		void Load(const Handle_SelectMgr_Selection &aSelection, const TopoDS_Shape &aShape, const TopAbs_ShapeEnum aType, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
 		%feature("autodoc", "1");
-		void Load(const Handle_SelectMgr_Selection &aSelection, const Handle_SelectMgr_SelectableObject &Origin, const TopoDS_Shape &aShape, const TopAbs_ShapeEnum aType, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
+		static		void Load(const Handle_SelectMgr_Selection &aSelection, const Handle_SelectMgr_SelectableObject &Origin, const TopoDS_Shape &aShape, const TopAbs_ShapeEnum aType, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
 		%feature("autodoc", "1");
-		Standard_Integer GetStandardPriority(const TopoDS_Shape &aShap, const TopAbs_ShapeEnum aType);
+		static		Standard_Integer GetStandardPriority(const TopoDS_Shape &aShap, const TopAbs_ShapeEnum aType);
 		%feature("autodoc", "1");
-		void ComputeSensitive(const TopoDS_Shape &aShape, const Handle_StdSelect_BRepOwner &anOwner, const Handle_SelectMgr_Selection &aSelection, const Standard_Integer NbPOnEdge, const Standard_Real MaximalParameter, const Standard_Boolean AutoTriangulation=1);
+		static		void ComputeSensitive(const TopoDS_Shape &aShape, const Handle_StdSelect_BRepOwner &anOwner, const Handle_SelectMgr_Selection &aSelection, const Standard_Integer NbPOnEdge, const Standard_Real MaximalParameter, const Standard_Boolean AutoTriangulation=1);
 		%feature("autodoc", "1");
-		Standard_Boolean GetSensitiveForFace(const TopoDS_Face &aFace, const Handle_StdSelect_BRepOwner &anOwner, Select3D_ListOfSensitive & OutList, const Standard_Boolean AutoTriangulation=1, const Standard_Integer NbPOnEdge=9, const Standard_Real MaxiParam=500, const Standard_Boolean InteriorFlag=1);
+		static		Standard_Boolean GetSensitiveForFace(const TopoDS_Face &aFace, const Handle_StdSelect_BRepOwner &anOwner, Select3D_ListOfSensitive & OutList, const Standard_Boolean AutoTriangulation=1, const Standard_Integer NbPOnEdge=9, const Standard_Real MaxiParam=500, const Standard_Boolean InteriorFlag=1);
 
 };
 %feature("shadow") StdSelect_BRepSelectionTool::~StdSelect_BRepSelectionTool %{

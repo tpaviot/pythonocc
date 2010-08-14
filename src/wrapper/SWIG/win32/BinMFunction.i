@@ -51,7 +51,7 @@ class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMFunction_ScopeDriver & operator=(const BinMFunction_ScopeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMFunction_ScopeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMFunction_ScopeDriver {
@@ -89,7 +89,7 @@ class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMFunction_GraphNodeDriver & operator=(const BinMFunction_GraphNodeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMFunction_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMFunction_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMFunction_GraphNodeDriver {
@@ -127,7 +127,7 @@ class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMFunction_FunctionDriver & operator=(const BinMFunction_FunctionDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMFunction_FunctionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMFunction_FunctionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMFunction_FunctionDriver {
@@ -157,7 +157,7 @@ class BinMFunction {
 		%feature("autodoc", "1");
 		BinMFunction();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
 };
 %feature("shadow") BinMFunction::~BinMFunction %{

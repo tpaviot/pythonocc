@@ -108,19 +108,19 @@ class Geom2dLProp_Curve2dTool {
 		%feature("autodoc", "1");
 		Geom2dLProp_Curve2dTool();
 		%feature("autodoc", "1");
-		void Value(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P);
+		static		void Value(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P);
 		%feature("autodoc", "1");
-		void D1(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1);
+		static		void D1(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1);
 		%feature("autodoc", "1");
-		void D2(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
+		static		void D2(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
 		%feature("autodoc", "1");
-		void D3(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
+		static		void D3(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
 		%feature("autodoc", "1");
-		Standard_Integer Continuity(const Handle_Geom2d_Curve &C);
+		static		Standard_Integer Continuity(const Handle_Geom2d_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_Geom2d_Curve &C);
+		static		Standard_Real FirstParameter(const Handle_Geom2d_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_Geom2d_Curve &C);
+		static		Standard_Real LastParameter(const Handle_Geom2d_Curve &C);
 
 };
 %feature("shadow") Geom2dLProp_Curve2dTool::~Geom2dLProp_Curve2dTool %{

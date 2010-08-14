@@ -73,7 +73,7 @@ class Handle_GProp_UndefinedAxis : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_GProp_UndefinedAxis & operator=(const GProp_UndefinedAxis *anItem);
 		%feature("autodoc", "1");
-		Handle_GProp_UndefinedAxis const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GProp_UndefinedAxis const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GProp_UndefinedAxis {
@@ -157,15 +157,15 @@ class GProp_PGProps : public GProp_GProps {
 		%feature("autodoc", "1");
 		GProp_PGProps(const TColgp_Array2OfPnt &Pnts, const TColStd_Array2OfReal &Density);
 		%feature("autodoc", "1");
-		gp_Pnt Barycentre(const TColgp_Array1OfPnt &Pnts);
+		static		gp_Pnt Barycentre(const TColgp_Array1OfPnt &Pnts);
 		%feature("autodoc", "1");
-		gp_Pnt Barycentre(const TColgp_Array2OfPnt &Pnts);
+		static		gp_Pnt Barycentre(const TColgp_Array2OfPnt &Pnts);
 		%feature("autodoc","Barycentre(const Pnts, const Density) -> Standard_Real");
 
-		void Barycentre(const TColgp_Array1OfPnt &Pnts, const TColStd_Array1OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
+		static		void Barycentre(const TColgp_Array1OfPnt &Pnts, const TColStd_Array1OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
 		%feature("autodoc","Barycentre(const Pnts, const Density) -> Standard_Real");
 
-		void Barycentre(const TColgp_Array2OfPnt &Pnts, const TColStd_Array2OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
+		static		void Barycentre(const TColgp_Array2OfPnt &Pnts, const TColStd_Array2OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
 
 };
 %feature("shadow") GProp_PGProps::~GProp_PGProps %{
@@ -235,11 +235,11 @@ class GProp_UndefinedAxis : public Standard_DomainError {
 		%feature("autodoc", "1");
 		GProp_UndefinedAxis(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_GProp_UndefinedAxis NewInstance(const char * aMessage);
+		static		Handle_GProp_UndefinedAxis NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -393,7 +393,7 @@ class GProp {
 		%feature("autodoc", "1");
 		GProp();
 		%feature("autodoc", "1");
-		void HOperator(const gp_Pnt &G, const gp_Pnt &Q, const Standard_Real Mass, gp_Mat & Operator);
+		static		void HOperator(const gp_Pnt &G, const gp_Pnt &Q, const Standard_Real Mass, gp_Mat & Operator);
 
 };
 %feature("shadow") GProp::~GProp %{

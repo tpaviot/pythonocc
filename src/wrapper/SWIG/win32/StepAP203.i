@@ -51,7 +51,7 @@ class Handle_StepAP203_Change : public Handle_StepBasic_ActionAssignment {
 		%feature("autodoc", "1");
 		Handle_StepAP203_Change & operator=(const StepAP203_Change *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_Change const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_Change const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_Change {
@@ -89,7 +89,7 @@ class Handle_StepAP203_HArray1OfWorkItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfWorkItem & operator=(const StepAP203_HArray1OfWorkItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfWorkItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_HArray1OfWorkItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_HArray1OfWorkItem {
@@ -127,7 +127,7 @@ class Handle_StepAP203_CcDesignPersonAndOrganizationAssignment : public Handle_S
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignPersonAndOrganizationAssignment & operator=(const StepAP203_CcDesignPersonAndOrganizationAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignPersonAndOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_CcDesignPersonAndOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_CcDesignPersonAndOrganizationAssignment {
@@ -165,7 +165,7 @@ class Handle_StepAP203_StartRequest : public Handle_StepBasic_ActionRequestAssig
 		%feature("autodoc", "1");
 		Handle_StepAP203_StartRequest & operator=(const StepAP203_StartRequest *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_StartRequest const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_StartRequest const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_StartRequest {
@@ -203,7 +203,7 @@ class Handle_StepAP203_CcDesignSpecificationReference : public Handle_StepBasic_
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignSpecificationReference & operator=(const StepAP203_CcDesignSpecificationReference *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignSpecificationReference const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_CcDesignSpecificationReference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_CcDesignSpecificationReference {
@@ -241,7 +241,7 @@ class Handle_StepAP203_HArray1OfPersonOrganizationItem : public Handle_MMgt_TSha
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfPersonOrganizationItem & operator=(const StepAP203_HArray1OfPersonOrganizationItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfPersonOrganizationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_HArray1OfPersonOrganizationItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_HArray1OfPersonOrganizationItem {
@@ -279,7 +279,7 @@ class Handle_StepAP203_ChangeRequest : public Handle_StepBasic_ActionRequestAssi
 		%feature("autodoc", "1");
 		Handle_StepAP203_ChangeRequest & operator=(const StepAP203_ChangeRequest *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_ChangeRequest const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_ChangeRequest const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_ChangeRequest {
@@ -317,7 +317,7 @@ class Handle_StepAP203_CcDesignDateAndTimeAssignment : public Handle_StepBasic_D
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignDateAndTimeAssignment & operator=(const StepAP203_CcDesignDateAndTimeAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignDateAndTimeAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_CcDesignDateAndTimeAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_CcDesignDateAndTimeAssignment {
@@ -355,7 +355,7 @@ class Handle_StepAP203_CcDesignApproval : public Handle_StepBasic_ApprovalAssign
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignApproval & operator=(const StepAP203_CcDesignApproval *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignApproval const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_CcDesignApproval const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_CcDesignApproval {
@@ -393,7 +393,7 @@ class Handle_StepAP203_HArray1OfChangeRequestItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfChangeRequestItem & operator=(const StepAP203_HArray1OfChangeRequestItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfChangeRequestItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_HArray1OfChangeRequestItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_HArray1OfChangeRequestItem {
@@ -431,7 +431,7 @@ class Handle_StepAP203_StartWork : public Handle_StepBasic_ActionAssignment {
 		%feature("autodoc", "1");
 		Handle_StepAP203_StartWork & operator=(const StepAP203_StartWork *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_StartWork const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_StartWork const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_StartWork {
@@ -469,7 +469,7 @@ class Handle_StepAP203_HArray1OfStartRequestItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfStartRequestItem & operator=(const StepAP203_HArray1OfStartRequestItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfStartRequestItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_HArray1OfStartRequestItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_HArray1OfStartRequestItem {
@@ -507,7 +507,7 @@ class Handle_StepAP203_CcDesignSecurityClassification : public Handle_StepBasic_
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignSecurityClassification & operator=(const StepAP203_CcDesignSecurityClassification *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignSecurityClassification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_CcDesignSecurityClassification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_CcDesignSecurityClassification {
@@ -545,7 +545,7 @@ class Handle_StepAP203_HArray1OfApprovedItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfApprovedItem & operator=(const StepAP203_HArray1OfApprovedItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfApprovedItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_HArray1OfApprovedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_HArray1OfApprovedItem {
@@ -583,7 +583,7 @@ class Handle_StepAP203_HArray1OfSpecifiedItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfSpecifiedItem & operator=(const StepAP203_HArray1OfSpecifiedItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfSpecifiedItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_HArray1OfSpecifiedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_HArray1OfSpecifiedItem {
@@ -621,7 +621,7 @@ class Handle_StepAP203_CcDesignContract : public Handle_StepBasic_ContractAssign
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignContract & operator=(const StepAP203_CcDesignContract *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignContract const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_CcDesignContract const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_CcDesignContract {
@@ -659,7 +659,7 @@ class Handle_StepAP203_HArray1OfDateTimeItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfDateTimeItem & operator=(const StepAP203_HArray1OfDateTimeItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfDateTimeItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_HArray1OfDateTimeItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_HArray1OfDateTimeItem {
@@ -697,7 +697,7 @@ class Handle_StepAP203_CcDesignCertification : public Handle_StepBasic_Certifica
 		%feature("autodoc", "1");
 		Handle_StepAP203_CcDesignCertification & operator=(const StepAP203_CcDesignCertification *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignCertification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_CcDesignCertification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_CcDesignCertification {
@@ -735,7 +735,7 @@ class Handle_StepAP203_HArray1OfContractedItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfContractedItem & operator=(const StepAP203_HArray1OfContractedItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfContractedItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_HArray1OfContractedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_HArray1OfContractedItem {
@@ -773,7 +773,7 @@ class Handle_StepAP203_HArray1OfClassifiedItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfClassifiedItem & operator=(const StepAP203_HArray1OfClassifiedItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfClassifiedItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_HArray1OfClassifiedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_HArray1OfClassifiedItem {
@@ -811,7 +811,7 @@ class Handle_StepAP203_HArray1OfCertifiedItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP203_HArray1OfCertifiedItem & operator=(const StepAP203_HArray1OfCertifiedItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfCertifiedItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP203_HArray1OfCertifiedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepAP203_HArray1OfCertifiedItem {

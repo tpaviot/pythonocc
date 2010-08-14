@@ -63,7 +63,7 @@ class Handle_Approx_CurvlinFunc : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_CurvlinFunc & operator=(const Approx_CurvlinFunc *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_CurvlinFunc const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_CurvlinFunc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_CurvlinFunc {
@@ -101,7 +101,7 @@ class Handle_Approx_HArray1OfAdHSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfAdHSurface & operator=(const Approx_HArray1OfAdHSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_HArray1OfAdHSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_HArray1OfAdHSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_HArray1OfAdHSurface {
@@ -139,7 +139,7 @@ class Handle_Approx_SweepFunction : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_SweepFunction & operator=(const Approx_SweepFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_SweepFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_SweepFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_SweepFunction {
@@ -177,7 +177,7 @@ class Handle_Approx_HArray1OfGTrsf2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfGTrsf2d & operator=(const Approx_HArray1OfGTrsf2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_HArray1OfGTrsf2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_HArray1OfGTrsf2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_HArray1OfGTrsf2d {
@@ -215,7 +215,7 @@ class Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const Approx_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
@@ -253,7 +253,7 @@ class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal & operator=(const Approx_SequenceNodeOfSequenceOfHArray1OfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal {

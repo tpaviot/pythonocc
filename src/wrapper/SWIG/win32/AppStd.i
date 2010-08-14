@@ -51,7 +51,7 @@ class Handle_AppStd_Application : public Handle_TDocStd_Application {
 		%feature("autodoc", "1");
 		Handle_AppStd_Application & operator=(const AppStd_Application *anItem);
 		%feature("autodoc", "1");
-		Handle_AppStd_Application const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppStd_Application const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppStd_Application {

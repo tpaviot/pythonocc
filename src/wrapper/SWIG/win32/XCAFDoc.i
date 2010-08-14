@@ -57,7 +57,7 @@ class Handle_XCAFDoc_Location : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Location & operator=(const XCAFDoc_Location *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Location const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Location const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Location {
@@ -95,7 +95,7 @@ class Handle_XCAFDoc_Volume : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Volume & operator=(const XCAFDoc_Volume *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Volume const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Volume const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Volume {
@@ -133,7 +133,7 @@ class Handle_XCAFDoc_Centroid : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Centroid & operator=(const XCAFDoc_Centroid *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Centroid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Centroid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Centroid {
@@ -171,7 +171,7 @@ class Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence & operator=(const XCAFDoc_SequenceNodeOfGraphNodeSequence *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence {
@@ -209,7 +209,7 @@ class Handle_XCAFDoc_Color : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Color & operator=(const XCAFDoc_Color *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Color const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Color const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Color {
@@ -247,7 +247,7 @@ class Handle_XCAFDoc_Material : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Material & operator=(const XCAFDoc_Material *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Material const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Material const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Material {
@@ -285,7 +285,7 @@ class Handle_XCAFDoc_MaterialTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_MaterialTool & operator=(const XCAFDoc_MaterialTool *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_MaterialTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_MaterialTool {
@@ -323,7 +323,7 @@ class Handle_XCAFDoc_ColorTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_ColorTool & operator=(const XCAFDoc_ColorTool *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_ColorTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_ColorTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_ColorTool {
@@ -361,7 +361,7 @@ class Handle_XCAFDoc_DimTolTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_DimTolTool & operator=(const XCAFDoc_DimTolTool *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_DimTolTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_DimTolTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_DimTolTool {
@@ -399,7 +399,7 @@ class Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel & operator=(const XCAFDoc_DataMapNodeOfDataMapOfShapeLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
@@ -437,7 +437,7 @@ class Handle_XCAFDoc_LayerTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_LayerTool & operator=(const XCAFDoc_LayerTool *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_LayerTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_LayerTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_LayerTool {
@@ -475,7 +475,7 @@ class Handle_XCAFDoc_ShapeTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_ShapeTool & operator=(const XCAFDoc_ShapeTool *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_ShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_ShapeTool {
@@ -513,7 +513,7 @@ class Handle_XCAFDoc_DocumentTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_DocumentTool & operator=(const XCAFDoc_DocumentTool *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_DocumentTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_DocumentTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_DocumentTool {
@@ -551,7 +551,7 @@ class Handle_XCAFDoc_ShapeMapTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_ShapeMapTool & operator=(const XCAFDoc_ShapeMapTool *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeMapTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_ShapeMapTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_ShapeMapTool {
@@ -589,7 +589,7 @@ class Handle_XCAFDoc_DimTol : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_DimTol & operator=(const XCAFDoc_DimTol *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_DimTol const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_DimTol const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_DimTol {
@@ -627,7 +627,7 @@ class Handle_XCAFDoc_GraphNode : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_GraphNode & operator=(const XCAFDoc_GraphNode *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_GraphNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_GraphNode {
@@ -665,7 +665,7 @@ class Handle_XCAFDoc_Area : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Area & operator=(const XCAFDoc_Area *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Area const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Area {
@@ -703,7 +703,7 @@ class Handle_XCAFDoc_Datum : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Datum & operator=(const XCAFDoc_Datum *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Datum const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Datum const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Datum {
@@ -733,15 +733,15 @@ class XCAFDoc_Centroid : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_Centroid();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Centroid Set(const TDF_Label &label, const gp_Pnt &pnt);
+		static		Handle_XCAFDoc_Centroid Set(const TDF_Label &label, const gp_Pnt &pnt);
 		%feature("autodoc", "1");
 		void Set(const gp_Pnt &pnt);
 		%feature("autodoc", "1");
 		gp_Pnt Get() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Get(const TDF_Label &label, gp_Pnt & pnt);
+		static		Standard_Boolean Get(const TDF_Label &label, gp_Pnt & pnt);
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
@@ -792,9 +792,9 @@ def __del__(self):
 class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeMapTool Set(const TDF_Label &L);
+		static		Handle_XCAFDoc_ShapeMapTool Set(const TDF_Label &L);
 		%feature("autodoc", "1");
 		XCAFDoc_ShapeMapTool();
 		%feature("autodoc", "1");
@@ -847,9 +847,9 @@ class XCAFDoc_Material : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_Material();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Material Set(const TDF_Label &label, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Standard_Real aDensity, const Handle_TCollection_HAsciiString &aDensName, const Handle_TCollection_HAsciiString &aDensValType);
+		static		Handle_XCAFDoc_Material Set(const TDF_Label &label, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Standard_Real aDensity, const Handle_TCollection_HAsciiString &aDensName, const Handle_TCollection_HAsciiString &aDensValType);
 		%feature("autodoc", "1");
 		void Set(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Standard_Real aDensity, const Handle_TCollection_HAsciiString &aDensName, const Handle_TCollection_HAsciiString &aDensValType);
 		%feature("autodoc", "1");
@@ -951,9 +951,9 @@ class XCAFDoc_DimTol : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_DimTol();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_DimTol Set(const TDF_Label &label, const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
+		static		Handle_XCAFDoc_DimTol Set(const TDF_Label &label, const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
 		%feature("autodoc", "1");
@@ -1006,13 +1006,13 @@ def __del__(self):
 class XCAFDoc_GraphNode : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Standard_Boolean Find(const TDF_Label &L, Handle_XCAFDoc_GraphNode & G);
+		static		Standard_Boolean Find(const TDF_Label &L, Handle_XCAFDoc_GraphNode & G);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode Set(const TDF_Label &L);
+		static		Handle_XCAFDoc_GraphNode Set(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode Set(const TDF_Label &L, const Standard_GUID &ExplicitGraphID);
+		static		Handle_XCAFDoc_GraphNode Set(const TDF_Label &L, const Standard_GUID &ExplicitGraphID);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetDefaultGraphID();
+		static		const Standard_GUID & GetDefaultGraphID();
 		%feature("autodoc", "1");
 		XCAFDoc_GraphNode();
 		%feature("autodoc", "1");
@@ -1101,9 +1101,9 @@ class XCAFDoc_ColorTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_ColorTool();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_ColorTool Set(const TDF_Label &L);
+		static		Handle_XCAFDoc_ColorTool Set(const TDF_Label &L);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		TDF_Label BaseLabel() const;
 		%feature("autodoc", "1");
@@ -1202,27 +1202,27 @@ class XCAFDoc {
 		%feature("autodoc", "1");
 		XCAFDoc();
 		%feature("autodoc", "1");
-		Standard_GUID AssemblyGUID();
+		static		Standard_GUID AssemblyGUID();
 		%feature("autodoc", "1");
-		Standard_GUID ShapeRefGUID();
+		static		Standard_GUID ShapeRefGUID();
 		%feature("autodoc", "1");
-		Standard_GUID ColorRefGUID(const XCAFDoc_ColorType type);
+		static		Standard_GUID ColorRefGUID(const XCAFDoc_ColorType type);
 		%feature("autodoc", "1");
-		Standard_GUID DimTolRefGUID();
+		static		Standard_GUID DimTolRefGUID();
 		%feature("autodoc", "1");
-		Standard_GUID DatumRefGUID();
+		static		Standard_GUID DatumRefGUID();
 		%feature("autodoc", "1");
-		Standard_GUID DatumTolRefGUID();
+		static		Standard_GUID DatumTolRefGUID();
 		%feature("autodoc", "1");
-		Standard_GUID LayerRefGUID();
+		static		Standard_GUID LayerRefGUID();
 		%feature("autodoc", "1");
-		Standard_GUID MaterialRefGUID();
+		static		Standard_GUID MaterialRefGUID();
 		%feature("autodoc", "1");
-		Standard_GUID InvisibleGUID();
+		static		Standard_GUID InvisibleGUID();
 		%feature("autodoc", "1");
-		Standard_GUID ExternRefGUID();
+		static		Standard_GUID ExternRefGUID();
 		%feature("autodoc", "1");
-		Standard_GUID SHUORefGUID();
+		static		Standard_GUID SHUORefGUID();
 
 };
 %feature("shadow") XCAFDoc::~XCAFDoc %{
@@ -1284,18 +1284,18 @@ class XCAFDoc_Volume : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_Volume();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
 		void Set(const Standard_Real vol);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Volume Set(const TDF_Label &label, const Standard_Real vol);
+		static		Handle_XCAFDoc_Volume Set(const TDF_Label &label, const Standard_Real vol);
 		%feature("autodoc", "1");
 		Standard_Real Get() const;
 		%feature("autodoc","Get(const label) -> Standard_Real");
 
-		Standard_Boolean Get(const TDF_Label &label, Standard_Real &OutValue);
+		static		Standard_Boolean Get(const TDF_Label &label, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Restore(const Handle_TDF_Attribute &With);
 		%feature("autodoc", "1");
@@ -1346,9 +1346,9 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_LayerTool();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_LayerTool Set(const TDF_Label &L);
+		static		Handle_XCAFDoc_LayerTool Set(const TDF_Label &L);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		TDF_Label BaseLabel() const;
 		%feature("autodoc", "1");
@@ -1539,29 +1539,29 @@ def __del__(self):
 class XCAFDoc_ShapeTool : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeTool Set(const TDF_Label &L);
+		static		Handle_XCAFDoc_ShapeTool Set(const TDF_Label &L);
 		%feature("autodoc", "1");
 		XCAFDoc_ShapeTool();
 		%feature("autodoc", "1");
 		Standard_Boolean IsTopLevel(const TDF_Label &L) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsFree(const TDF_Label &L);
+		static		Standard_Boolean IsFree(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Standard_Boolean IsShape(const TDF_Label &L);
+		static		Standard_Boolean IsShape(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSimpleShape(const TDF_Label &L);
+		static		Standard_Boolean IsSimpleShape(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Standard_Boolean IsReference(const TDF_Label &L);
+		static		Standard_Boolean IsReference(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAssembly(const TDF_Label &L);
+		static		Standard_Boolean IsAssembly(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Standard_Boolean IsComponent(const TDF_Label &L);
+		static		Standard_Boolean IsComponent(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Standard_Boolean IsCompound(const TDF_Label &L);
+		static		Standard_Boolean IsCompound(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSubShape(const TDF_Label &L);
+		static		Standard_Boolean IsSubShape(const TDF_Label &L);
 		%feature("autodoc", "1");
 		Standard_Boolean IsSubShape(const TDF_Label &shapeL, const TopoDS_Shape &sub) const;
 		%feature("autodoc", "1");
@@ -1573,9 +1573,9 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		TDF_Label FindShape(const TopoDS_Shape &S, const Standard_Boolean findInstance=0) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetShape(const TDF_Label &L, TopoDS_Shape & S);
+		static		Standard_Boolean GetShape(const TDF_Label &L, TopoDS_Shape & S);
 		%feature("autodoc", "1");
-		TopoDS_Shape GetShape(const TDF_Label &L);
+		static		TopoDS_Shape GetShape(const TDF_Label &L);
 		%feature("autodoc", "1");
 		TDF_Label NewShape() const;
 		%feature("autodoc", "1");
@@ -1595,15 +1595,15 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		void GetFreeShapes(TDF_LabelSequence & FreeLabels) const;
 		%feature("autodoc", "1");
-		Standard_Integer GetUsers(const TDF_Label &L, TDF_LabelSequence & Labels, const Standard_Boolean getsubchilds=0);
+		static		Standard_Integer GetUsers(const TDF_Label &L, TDF_LabelSequence & Labels, const Standard_Boolean getsubchilds=0);
 		%feature("autodoc", "1");
-		TopLoc_Location GetLocation(const TDF_Label &L);
+		static		TopLoc_Location GetLocation(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Standard_Boolean GetReferredShape(const TDF_Label &L, TDF_Label & Label);
+		static		Standard_Boolean GetReferredShape(const TDF_Label &L, TDF_Label & Label);
 		%feature("autodoc", "1");
-		Standard_Integer NbComponents(const TDF_Label &L, const Standard_Boolean getsubchilds=0);
+		static		Standard_Integer NbComponents(const TDF_Label &L, const Standard_Boolean getsubchilds=0);
 		%feature("autodoc", "1");
-		Standard_Boolean GetComponents(const TDF_Label &L, TDF_LabelSequence & Labels, const Standard_Boolean getsubchilds=0);
+		static		Standard_Boolean GetComponents(const TDF_Label &L, TDF_LabelSequence & Labels, const Standard_Boolean getsubchilds=0);
 		%feature("autodoc", "1");
 		TDF_Label AddComponent(const TDF_Label &assembly, const TDF_Label &comp, const TopLoc_Location &Loc) const;
 		%feature("autodoc", "1");
@@ -1621,13 +1621,13 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		TDF_Label FindMainShape(const TopoDS_Shape &sub) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetSubShapes(const TDF_Label &L, TDF_LabelSequence & Labels);
+		static		Standard_Boolean GetSubShapes(const TDF_Label &L, TDF_LabelSequence & Labels);
 		%feature("autodoc", "1");
 		TDF_Label BaseLabel() const;
 		%feature("autodoc", "1");
 		void Dump(const Standard_Boolean deep=0) const;
 		%feature("autodoc", "1");
-		void DumpShape(const TDF_Label &L, const Standard_Integer level=0, const Standard_Boolean deep=0);
+		static		void DumpShape(const TDF_Label &L, const Standard_Integer level=0, const Standard_Boolean deep=0);
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
@@ -1637,23 +1637,23 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsExternRef(const TDF_Label &L);
+		static		Standard_Boolean IsExternRef(const TDF_Label &L);
 		%feature("autodoc", "1");
 		TDF_Label SetExternRefs(const TColStd_SequenceOfHAsciiString &SHAS) const;
 		%feature("autodoc", "1");
 		void SetExternRefs(const TDF_Label &L, const TColStd_SequenceOfHAsciiString &SHAS) const;
 		%feature("autodoc", "1");
-		void GetExternRefs(const TDF_Label &L, TColStd_SequenceOfHAsciiString & SHAS);
+		static		void GetExternRefs(const TDF_Label &L, TColStd_SequenceOfHAsciiString & SHAS);
 		%feature("autodoc", "1");
 		Standard_Boolean SetSHUO(const TDF_LabelSequence &Labels, Handle_XCAFDoc_GraphNode & MainSHUOAttr) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetSHUO(const TDF_Label &SHUOLabel, Handle_XCAFDoc_GraphNode & aSHUOAttr);
+		static		Standard_Boolean GetSHUO(const TDF_Label &SHUOLabel, Handle_XCAFDoc_GraphNode & aSHUOAttr);
 		%feature("autodoc", "1");
-		Standard_Boolean GetAllComponentSHUO(const TDF_Label &CompLabel, TDF_AttributeSequence & SHUOAttrs);
+		static		Standard_Boolean GetAllComponentSHUO(const TDF_Label &CompLabel, TDF_AttributeSequence & SHUOAttrs);
 		%feature("autodoc", "1");
-		Standard_Boolean GetSHUOUpperUsage(const TDF_Label &NextUsageL, TDF_LabelSequence & Labels);
+		static		Standard_Boolean GetSHUOUpperUsage(const TDF_Label &NextUsageL, TDF_LabelSequence & Labels);
 		%feature("autodoc", "1");
-		Standard_Boolean GetSHUONextUsage(const TDF_Label &UpperUsageL, TDF_LabelSequence & Labels);
+		static		Standard_Boolean GetSHUONextUsage(const TDF_Label &UpperUsageL, TDF_LabelSequence & Labels);
 		%feature("autodoc", "1");
 		Standard_Boolean RemoveSHUO(const TDF_Label &SHUOLabel) const;
 		%feature("autodoc", "1");
@@ -1665,7 +1665,7 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Standard_Boolean GetAllSHUOInstances(const Handle_XCAFDoc_GraphNode &theSHUO, TopTools_SequenceOfShape & theSHUOShapeSeq) const;
 		%feature("autodoc", "1");
-		Standard_Boolean FindSHUO(const TDF_LabelSequence &Labels, Handle_XCAFDoc_GraphNode & theSHUOAttr);
+		static		Standard_Boolean FindSHUO(const TDF_LabelSequence &Labels, Handle_XCAFDoc_GraphNode & theSHUOAttr);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1702,9 +1702,9 @@ class XCAFDoc_DimTolTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_DimTolTool();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_DimTolTool Set(const TDF_Label &L);
+		static		Handle_XCAFDoc_DimTolTool Set(const TDF_Label &L);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		TDF_Label BaseLabel() const;
 		%feature("autodoc", "1");
@@ -1788,9 +1788,9 @@ class XCAFDoc_MaterialTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_MaterialTool();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool Set(const TDF_Label &L);
+		static		Handle_XCAFDoc_MaterialTool Set(const TDF_Label &L);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		TDF_Label BaseLabel() const;
 		%feature("autodoc", "1");
@@ -1809,7 +1809,7 @@ class XCAFDoc_MaterialTool : public TDF_Attribute {
 
 		Standard_Boolean GetMaterial(const TDF_Label &MatL, Handle_TCollection_HAsciiString & aName, Handle_TCollection_HAsciiString & aDescription, Standard_Real &OutValue, Handle_TCollection_HAsciiString & aDensName, Handle_TCollection_HAsciiString & aDensValType) const;
 		%feature("autodoc", "1");
-		Standard_Real GetDensityForShape(const TDF_Label &ShapeL);
+		static		Standard_Real GetDensityForShape(const TDF_Label &ShapeL);
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
@@ -1852,33 +1852,33 @@ def __del__(self):
 class XCAFDoc_DocumentTool : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_DocumentTool Set(const TDF_Label &L, const Standard_Boolean IsAcces=1);
+		static		Handle_XCAFDoc_DocumentTool Set(const TDF_Label &L, const Standard_Boolean IsAcces=1);
 		%feature("autodoc", "1");
-		Standard_Boolean IsXCAFDocument(const Handle_TDocStd_Document &Doc);
+		static		Standard_Boolean IsXCAFDocument(const Handle_TDocStd_Document &Doc);
 		%feature("autodoc", "1");
-		TDF_Label DocLabel(const TDF_Label &acces);
+		static		TDF_Label DocLabel(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		TDF_Label ShapesLabel(const TDF_Label &acces);
+		static		TDF_Label ShapesLabel(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		TDF_Label ColorsLabel(const TDF_Label &acces);
+		static		TDF_Label ColorsLabel(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		TDF_Label LayersLabel(const TDF_Label &acces);
+		static		TDF_Label LayersLabel(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		TDF_Label DGTsLabel(const TDF_Label &acces);
+		static		TDF_Label DGTsLabel(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		TDF_Label MaterialsLabel(const TDF_Label &acces);
+		static		TDF_Label MaterialsLabel(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeTool ShapeTool(const TDF_Label &acces);
+		static		Handle_XCAFDoc_ShapeTool ShapeTool(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_ColorTool ColorTool(const TDF_Label &acces);
+		static		Handle_XCAFDoc_ColorTool ColorTool(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_LayerTool LayerTool(const TDF_Label &acces);
+		static		Handle_XCAFDoc_LayerTool LayerTool(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_DimTolTool DimTolTool(const TDF_Label &acces);
+		static		Handle_XCAFDoc_DimTolTool DimTolTool(const TDF_Label &acces);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool MaterialTool(const TDF_Label &acces);
+		static		Handle_XCAFDoc_MaterialTool MaterialTool(const TDF_Label &acces);
 		%feature("autodoc", "1");
 		XCAFDoc_DocumentTool();
 		%feature("autodoc", "1");
@@ -1927,13 +1927,13 @@ class XCAFDoc_Color : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_Color();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Quantity_Color &C);
+		static		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Quantity_Color &C);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Quantity_NameOfColor C);
+		static		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Quantity_NameOfColor C);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Standard_Real R, const Standard_Real G, const Standard_Real B);
+		static		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Standard_Real R, const Standard_Real G, const Standard_Real B);
 		%feature("autodoc", "1");
 		void Set(const Quantity_Color &C);
 		%feature("autodoc", "1");
@@ -1991,9 +1991,9 @@ class XCAFDoc_Datum : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_Datum();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Datum Set(const TDF_Label &label, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &anIdentification);
+		static		Handle_XCAFDoc_Datum Set(const TDF_Label &label, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &anIdentification);
 		%feature("autodoc", "1");
 		void Set(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &anIdentification);
 		%feature("autodoc", "1");
@@ -2046,18 +2046,18 @@ class XCAFDoc_Area : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_Area();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
 		void Set(const Standard_Real vol);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area Set(const TDF_Label &label, const Standard_Real area);
+		static		Handle_XCAFDoc_Area Set(const TDF_Label &label, const Standard_Real area);
 		%feature("autodoc", "1");
 		Standard_Real Get() const;
 		%feature("autodoc","Get(const label) -> Standard_Real");
 
-		Standard_Boolean Get(const TDF_Label &label, Standard_Real &OutValue);
+		static		Standard_Boolean Get(const TDF_Label &label, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Restore(const Handle_TDF_Attribute &With);
 		%feature("autodoc", "1");
@@ -2108,9 +2108,9 @@ class XCAFDoc_Location : public TDF_Attribute {
 		%feature("autodoc", "1");
 		XCAFDoc_Location();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Location Set(const TDF_Label &label, const TopLoc_Location &Loc);
+		static		Handle_XCAFDoc_Location Set(const TDF_Label &label, const TopLoc_Location &Loc);
 		%feature("autodoc", "1");
 		void Set(const TopLoc_Location &Loc);
 		%feature("autodoc", "1");

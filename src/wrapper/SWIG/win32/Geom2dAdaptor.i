@@ -51,7 +51,7 @@ class Handle_Geom2dAdaptor_GHCurve : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_GHCurve & operator=(const Geom2dAdaptor_GHCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2dAdaptor_GHCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2dAdaptor_GHCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2dAdaptor_GHCurve {
@@ -89,7 +89,7 @@ class Handle_Geom2dAdaptor_HCurve : public Handle_Geom2dAdaptor_GHCurve {
 		%feature("autodoc", "1");
 		Handle_Geom2dAdaptor_HCurve & operator=(const Geom2dAdaptor_HCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2dAdaptor_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2dAdaptor_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2dAdaptor_HCurve {
@@ -119,7 +119,7 @@ class Geom2dAdaptor {
 		%feature("autodoc", "1");
 		Geom2dAdaptor();
 		%feature("autodoc", "1");
-		Handle_Geom2d_Curve MakeCurve(const Adaptor2d_Curve2d &HC);
+		static		Handle_Geom2d_Curve MakeCurve(const Adaptor2d_Curve2d &HC);
 
 };
 %feature("shadow") Geom2dAdaptor::~Geom2dAdaptor %{

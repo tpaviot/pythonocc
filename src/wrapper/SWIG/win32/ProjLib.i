@@ -51,7 +51,7 @@ class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HProjectedCurve & operator=(const ProjLib_HProjectedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_HProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ProjLib_HProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ProjLib_HProjectedCurve {
@@ -89,7 +89,7 @@ class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
@@ -127,7 +127,7 @@ class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HCompProjectedCurve & operator=(const ProjLib_HCompProjectedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_HCompProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ProjLib_HCompProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ProjLib_HCompProjectedCurve {
@@ -165,7 +165,7 @@ class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HSequenceOfHSequenceOfPnt & operator=(const ProjLib_HSequenceOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_ProjLib_HSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ProjLib_HSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ProjLib_HSequenceOfHSequenceOfPnt {
@@ -771,37 +771,37 @@ class ProjLib {
 		%feature("autodoc", "1");
 		ProjLib();
 		%feature("autodoc", "1");
-		gp_Pnt2d Project(const gp_Pln &Pl, const gp_Pnt &P);
+		static		gp_Pnt2d Project(const gp_Pln &Pl, const gp_Pnt &P);
 		%feature("autodoc", "1");
-		gp_Lin2d Project(const gp_Pln &Pl, const gp_Lin &L);
+		static		gp_Lin2d Project(const gp_Pln &Pl, const gp_Lin &L);
 		%feature("autodoc", "1");
-		gp_Circ2d Project(const gp_Pln &Pl, const gp_Circ &C);
+		static		gp_Circ2d Project(const gp_Pln &Pl, const gp_Circ &C);
 		%feature("autodoc", "1");
-		gp_Elips2d Project(const gp_Pln &Pl, const gp_Elips &E);
+		static		gp_Elips2d Project(const gp_Pln &Pl, const gp_Elips &E);
 		%feature("autodoc", "1");
-		gp_Parab2d Project(const gp_Pln &Pl, const gp_Parab &P);
+		static		gp_Parab2d Project(const gp_Pln &Pl, const gp_Parab &P);
 		%feature("autodoc", "1");
-		gp_Hypr2d Project(const gp_Pln &Pl, const gp_Hypr &H);
+		static		gp_Hypr2d Project(const gp_Pln &Pl, const gp_Hypr &H);
 		%feature("autodoc", "1");
-		gp_Pnt2d Project(const gp_Cylinder &Cy, const gp_Pnt &P);
+		static		gp_Pnt2d Project(const gp_Cylinder &Cy, const gp_Pnt &P);
 		%feature("autodoc", "1");
-		gp_Lin2d Project(const gp_Cylinder &Cy, const gp_Lin &L);
+		static		gp_Lin2d Project(const gp_Cylinder &Cy, const gp_Lin &L);
 		%feature("autodoc", "1");
-		gp_Lin2d Project(const gp_Cylinder &Cy, const gp_Circ &Ci);
+		static		gp_Lin2d Project(const gp_Cylinder &Cy, const gp_Circ &Ci);
 		%feature("autodoc", "1");
-		gp_Pnt2d Project(const gp_Cone &Co, const gp_Pnt &P);
+		static		gp_Pnt2d Project(const gp_Cone &Co, const gp_Pnt &P);
 		%feature("autodoc", "1");
-		gp_Lin2d Project(const gp_Cone &Co, const gp_Lin &L);
+		static		gp_Lin2d Project(const gp_Cone &Co, const gp_Lin &L);
 		%feature("autodoc", "1");
-		gp_Lin2d Project(const gp_Cone &Co, const gp_Circ &Ci);
+		static		gp_Lin2d Project(const gp_Cone &Co, const gp_Circ &Ci);
 		%feature("autodoc", "1");
-		gp_Pnt2d Project(const gp_Sphere &Sp, const gp_Pnt &P);
+		static		gp_Pnt2d Project(const gp_Sphere &Sp, const gp_Pnt &P);
 		%feature("autodoc", "1");
-		gp_Lin2d Project(const gp_Sphere &Sp, const gp_Circ &Ci);
+		static		gp_Lin2d Project(const gp_Sphere &Sp, const gp_Circ &Ci);
 		%feature("autodoc", "1");
-		gp_Pnt2d Project(const gp_Torus &To, const gp_Pnt &P);
+		static		gp_Pnt2d Project(const gp_Torus &To, const gp_Pnt &P);
 		%feature("autodoc", "1");
-		gp_Lin2d Project(const gp_Torus &To, const gp_Circ &Ci);
+		static		gp_Lin2d Project(const gp_Torus &To, const gp_Circ &Ci);
 
 };
 %feature("shadow") ProjLib::~ProjLib %{

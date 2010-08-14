@@ -70,7 +70,7 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handl
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment *anItem);
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
@@ -108,7 +108,7 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {

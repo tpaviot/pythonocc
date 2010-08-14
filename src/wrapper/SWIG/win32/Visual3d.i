@@ -100,7 +100,7 @@ class Handle_Visual3d_SequenceNodeOfSequenceOfPickPath : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_Visual3d_SequenceNodeOfSequenceOfPickPath & operator=(const Visual3d_SequenceNodeOfSequenceOfPickPath *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_SequenceNodeOfSequenceOfPickPath const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_SequenceNodeOfSequenceOfPickPath const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_SequenceNodeOfSequenceOfPickPath {
@@ -138,7 +138,7 @@ class Handle_Visual3d_PickError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Visual3d_PickError & operator=(const Visual3d_PickError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_PickError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_PickError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_PickError {
@@ -176,7 +176,7 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane & operator=(const Visual3d_ListNodeOfSetListOfSetOfClipPlane *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane {
@@ -214,7 +214,7 @@ class Handle_Visual3d_ZClippingDefinitionError : public Handle_Standard_OutOfRan
 		%feature("autodoc", "1");
 		Handle_Visual3d_ZClippingDefinitionError & operator=(const Visual3d_ZClippingDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ZClippingDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ZClippingDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ZClippingDefinitionError {
@@ -252,7 +252,7 @@ class Handle_Visual3d_TransformError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Visual3d_TransformError & operator=(const Visual3d_TransformError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_TransformError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_TransformError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_TransformError {
@@ -290,7 +290,7 @@ class Handle_Visual3d_LightDefinitionError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Visual3d_LightDefinitionError & operator=(const Visual3d_LightDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_LightDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_LightDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_LightDefinitionError {
@@ -328,7 +328,7 @@ class Handle_Visual3d_TransientManager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Visual3d_TransientManager & operator=(const Visual3d_TransientManager *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_TransientManager const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_TransientManager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_TransientManager {
@@ -366,7 +366,7 @@ class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
 		%feature("autodoc", "1");
 		Handle_Visual3d_View & operator=(const Visual3d_View *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_View const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_View const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_View {
@@ -404,7 +404,7 @@ class Handle_Visual3d_ViewManager : public Handle_Graphic3d_StructureManager {
 		%feature("autodoc", "1");
 		Handle_Visual3d_ViewManager & operator=(const Visual3d_ViewManager *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManager const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ViewManager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ViewManager {
@@ -442,7 +442,7 @@ class Handle_Visual3d_LayerDefinitionError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Visual3d_LayerDefinitionError & operator=(const Visual3d_LayerDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_LayerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_LayerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_LayerDefinitionError {
@@ -480,7 +480,7 @@ class Handle_Visual3d_HSetOfClipPlane : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSetOfClipPlane & operator=(const Visual3d_HSetOfClipPlane *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfClipPlane const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_HSetOfClipPlane const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_HSetOfClipPlane {
@@ -518,7 +518,7 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfLight : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_Visual3d_ListNodeOfSetListOfSetOfLight & operator=(const Visual3d_ListNodeOfSetListOfSetOfLight *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ListNodeOfSetListOfSetOfLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ListNodeOfSetListOfSetOfLight const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ListNodeOfSetListOfSetOfLight {
@@ -556,7 +556,7 @@ class Handle_Visual3d_Light : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Visual3d_Light & operator=(const Visual3d_Light *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_Light const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_Light const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_Light {
@@ -594,7 +594,7 @@ class Handle_Visual3d_Layer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Visual3d_Layer & operator=(const Visual3d_Layer *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_Layer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_Layer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_Layer {
@@ -632,7 +632,7 @@ class Handle_Visual3d_ClipDefinitionError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Visual3d_ClipDefinitionError & operator=(const Visual3d_ClipDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ClipDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ClipDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ClipDefinitionError {
@@ -670,7 +670,7 @@ class Handle_Visual3d_HSetOfLight : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSetOfLight & operator=(const Visual3d_HSetOfLight *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_HSetOfLight const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_HSetOfLight {
@@ -708,7 +708,7 @@ class Handle_Visual3d_DepthCueingDefinitionError : public Handle_Standard_OutOfR
 		%feature("autodoc", "1");
 		Handle_Visual3d_DepthCueingDefinitionError & operator=(const Visual3d_DepthCueingDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_DepthCueingDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_DepthCueingDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_DepthCueingDefinitionError {
@@ -746,7 +746,7 @@ class Handle_Visual3d_ClipPlane : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Visual3d_ClipPlane & operator=(const Visual3d_ClipPlane *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ClipPlane const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ClipPlane {
@@ -784,7 +784,7 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfView : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_Visual3d_ListNodeOfSetListOfSetOfView & operator=(const Visual3d_ListNodeOfSetListOfSetOfView *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ListNodeOfSetListOfSetOfView const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ListNodeOfSetListOfSetOfView const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ListNodeOfSetListOfSetOfView {
@@ -822,7 +822,7 @@ class Handle_Visual3d_ViewManagerDefinitionError : public Handle_Standard_OutOfR
 		%feature("autodoc", "1");
 		Handle_Visual3d_ViewManagerDefinitionError & operator=(const Visual3d_ViewManagerDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ViewManagerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ViewManagerDefinitionError {
@@ -860,7 +860,7 @@ class Handle_Visual3d_HSetOfView : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSetOfView & operator=(const Visual3d_HSetOfView *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_HSetOfView const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_HSetOfView {
@@ -898,7 +898,7 @@ class Handle_Visual3d_ViewMappingDefinitionError : public Handle_Standard_OutOfR
 		%feature("autodoc", "1");
 		Handle_Visual3d_ViewMappingDefinitionError & operator=(const Visual3d_ViewMappingDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewMappingDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ViewMappingDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ViewMappingDefinitionError {
@@ -936,7 +936,7 @@ class Handle_Visual3d_TransientDefinitionError : public Handle_Standard_OutOfRan
 		%feature("autodoc", "1");
 		Handle_Visual3d_TransientDefinitionError & operator=(const Visual3d_TransientDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_TransientDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_TransientDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_TransientDefinitionError {
@@ -974,7 +974,7 @@ class Handle_Visual3d_HSequenceOfPickPath : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSequenceOfPickPath & operator=(const Visual3d_HSequenceOfPickPath *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_HSequenceOfPickPath const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_HSequenceOfPickPath const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_HSequenceOfPickPath {
@@ -1012,7 +1012,7 @@ class Handle_Visual3d_ViewOrientationDefinitionError : public Handle_Standard_Ou
 		%feature("autodoc", "1");
 		Handle_Visual3d_ViewOrientationDefinitionError & operator=(const Visual3d_ViewOrientationDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewOrientationDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ViewOrientationDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ViewOrientationDefinitionError {
@@ -1050,7 +1050,7 @@ class Handle_Visual3d_ViewDefinitionError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Visual3d_ViewDefinitionError & operator=(const Visual3d_ViewDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ViewDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ViewDefinitionError {
@@ -1088,7 +1088,7 @@ class Handle_Visual3d_ContextPickDefinitionError : public Handle_Standard_OutOfR
 		%feature("autodoc", "1");
 		Handle_Visual3d_ContextPickDefinitionError & operator=(const Visual3d_ContextPickDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ContextPickDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ContextPickDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Visual3d_ContextPickDefinitionError {
@@ -1251,11 +1251,11 @@ class Visual3d_TransformError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_TransformError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_TransformError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_TransformError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1331,11 +1331,11 @@ class Visual3d_LayerDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_LayerDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_LayerDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_LayerDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1374,11 +1374,11 @@ class Visual3d_DepthCueingDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_DepthCueingDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_DepthCueingDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_DepthCueingDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1471,11 +1471,11 @@ class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_TransientDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_TransientDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_TransientDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1724,11 +1724,11 @@ class Visual3d_ViewOrientationDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_ViewOrientationDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewOrientationDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_ViewOrientationDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1767,11 +1767,11 @@ class Visual3d_ViewManagerDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_ViewManagerDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_ViewManagerDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2210,7 +2210,7 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetPlane(const Standard_Real ACoefA, const Standard_Real ACoefB, const Standard_Real ACoefC, const Standard_Real ACoefD);
 		%feature("autodoc", "1");
-		Standard_Integer Limit();
+		static		Standard_Integer Limit();
 		%feature("autodoc","Plane() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		void Plane(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -2289,11 +2289,11 @@ class Visual3d_ClipDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_ClipDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ClipDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_ClipDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2332,11 +2332,11 @@ class Visual3d_LightDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_LightDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_LightDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_LightDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2496,11 +2496,11 @@ class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_ZClippingDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ZClippingDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_ZClippingDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2575,7 +2575,7 @@ class Visual3d_Light : public MMgt_TShared {
 
 		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Graphic3d_Vector & Direction, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Integer Limit();
+		static		Standard_Integer Limit();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3084,11 +3084,11 @@ class Visual3d_ViewDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_ViewDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_ViewDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3127,53 +3127,53 @@ class Visual3d_TransientManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		Standard_Boolean BeginDraw(const Handle_Visual3d_View &aView, const Standard_Boolean DoubleBuffer=0, const Standard_Boolean RetainMode=0);
+		static		Standard_Boolean BeginDraw(const Handle_Visual3d_View &aView, const Standard_Boolean DoubleBuffer=0, const Standard_Boolean RetainMode=0);
 		%feature("autodoc", "1");
-		void EndDraw(const Standard_Boolean Synchronize=0);
+		static		void EndDraw(const Standard_Boolean Synchronize=0);
 		%feature("autodoc", "1");
-		void ClearDraw(const Handle_Visual3d_View &aView, const Standard_Boolean aFlush=1);
+		static		void ClearDraw(const Handle_Visual3d_View &aView, const Standard_Boolean aFlush=1);
 		%feature("autodoc", "1");
-		Standard_Boolean BeginAddDraw(const Handle_Visual3d_View &aView);
+		static		Standard_Boolean BeginAddDraw(const Handle_Visual3d_View &aView);
 		%feature("autodoc", "1");
-		void EndAddDraw();
+		static		void EndAddDraw();
 		%feature("autodoc", "1");
-		void BeginPolyline();
+		static		void BeginPolyline();
 		%feature("autodoc", "1");
-		void BeginPolygon();
+		static		void BeginPolygon();
 		%feature("autodoc", "1");
-		void BeginTriangleMesh();
+		static		void BeginTriangleMesh();
 		%feature("autodoc", "1");
-		void BeginMarker();
+		static		void BeginMarker();
 		%feature("autodoc", "1");
-		void BeginBezier();
+		static		void BeginBezier();
 		%feature("autodoc", "1");
-		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Boolean AFlag=1);
+		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Boolean AFlag=1);
 		%feature("autodoc", "1");
-		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real W, const Standard_Boolean AFlag=1);
+		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real W, const Standard_Boolean AFlag=1);
 		%feature("autodoc", "1");
-		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real NX, const Standard_Real NY, const Standard_Real NZ, const Standard_Boolean AFlag=1);
+		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real NX, const Standard_Real NY, const Standard_Real NZ, const Standard_Boolean AFlag=1);
 		%feature("autodoc", "1");
-		void ClosePrimitive();
+		static		void ClosePrimitive();
 		%feature("autodoc", "1");
-		void DrawText(const TCollection_ExtendedString &AText, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle=0.0, const Graphic3d_TextPath ATp=Graphic3d_TP_RIGHT, const Graphic3d_HorizontalTextAlignment AHta=Graphic3d_HTA_NORMAL, const Graphic3d_VerticalTextAlignment AVta=Graphic3d_VTA_NORMAL);
+		static		void DrawText(const TCollection_ExtendedString &AText, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle=0.0, const Graphic3d_TextPath ATp=Graphic3d_TP_RIGHT, const Graphic3d_HorizontalTextAlignment AHta=Graphic3d_HTA_NORMAL, const Graphic3d_VerticalTextAlignment AVta=Graphic3d_VTA_NORMAL);
 		%feature("autodoc", "1");
-		void DrawStructure(const Handle_Graphic3d_Structure &AStructure);
+		static		void DrawStructure(const Handle_Graphic3d_Structure &AStructure);
 		%feature("autodoc", "1");
-		void SetPrimitivesAspect(const Handle_Graphic3d_AspectLine3d &CTX);
+		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectLine3d &CTX);
 		%feature("autodoc", "1");
-		void SetPrimitivesAspect(const Handle_Graphic3d_AspectFillArea3d &CTX);
+		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectFillArea3d &CTX);
 		%feature("autodoc", "1");
-		void SetPrimitivesAspect(const Handle_Graphic3d_AspectText3d &CTX);
+		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectText3d &CTX);
 		%feature("autodoc", "1");
-		void SetPrimitivesAspect(const Handle_Graphic3d_AspectMarker3d &CTX);
+		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectMarker3d &CTX);
 		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void SetTransform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType=Graphic3d_TOC_REPLACE);
+		static		void SetTransform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType=Graphic3d_TOC_REPLACE);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3212,11 +3212,11 @@ class Visual3d_PickError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_PickError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_PickError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_PickError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3320,11 +3320,11 @@ class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_ViewMappingDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ViewMappingDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_ViewMappingDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3408,11 +3408,11 @@ class Visual3d_ContextPickDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Visual3d_ContextPickDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Visual3d_ContextPickDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Visual3d_ContextPickDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

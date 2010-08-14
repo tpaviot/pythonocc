@@ -60,7 +60,7 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape :
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape {
@@ -98,7 +98,7 @@ class Handle_TopOpeBRepBuild_Loop : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_Loop & operator=(const TopOpeBRepBuild_Loop *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_Loop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_Loop const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_Loop {
@@ -136,7 +136,7 @@ class Handle_TopOpeBRepBuild_Pave : public Handle_TopOpeBRepBuild_Loop {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_Pave & operator=(const TopOpeBRepBuild_Pave *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_Pave const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_Pave const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_Pave {
@@ -174,7 +174,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape & operator=(const TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape {
@@ -212,7 +212,7 @@ class Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo & operator=(const TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
@@ -250,7 +250,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfLoop : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop & operator=(const TopOpeBRepBuild_ListNodeOfListOfLoop *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_ListNodeOfListOfLoop {
@@ -288,7 +288,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfPave : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfPave & operator=(const TopOpeBRepBuild_ListNodeOfListOfPave *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_ListNodeOfListOfPave const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_ListNodeOfListOfPave const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_ListNodeOfListOfPave {
@@ -326,7 +326,7 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public Handle_
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {
@@ -364,7 +364,7 @@ class Handle_TopOpeBRepBuild_HBuilder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_HBuilder & operator=(const TopOpeBRepBuild_HBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_HBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_HBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_HBuilder {
@@ -402,7 +402,7 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
@@ -440,7 +440,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop & operator=(const TopOpeBRepBuild_ListNodeOfListOfListOfLoop *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop {
@@ -856,7 +856,7 @@ class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 		void ClosedVertices(const Standard_Boolean B);
 		%feature("autodoc","AdjustCase(Standard_Real p1, TopAbs_Orientation o, Standard_Real first, Standard_Real period, Standard_Real tol) -> Standard_Integer");
 
-		Standard_Real AdjustCase(const Standard_Real p1, const TopAbs_Orientation o, const Standard_Real first, const Standard_Real period, const Standard_Real tol, Standard_Integer &OutValue);
+		static		Standard_Real AdjustCase(const Standard_Real p1, const TopAbs_Orientation o, const Standard_Real first, const Standard_Real period, const Standard_Real tol, Standard_Integer &OutValue);
 
 };
 %feature("shadow") TopOpeBRepBuild_PaveClassifier::~TopOpeBRepBuild_PaveClassifier %{
@@ -897,9 +897,9 @@ class TopOpeBRepBuild_CorrectFace2d {
 		%feature("autodoc", "1");
 		TopTools_IndexedDataMapOfShapeShape & MapOfTrans2dInfo();
 		%feature("autodoc", "1");
-		void GetP2dFL(const TopoDS_Face &aFace, const TopoDS_Edge &anEdge, gp_Pnt2d & P2dF, gp_Pnt2d & P2dL);
+		static		void GetP2dFL(const TopoDS_Face &aFace, const TopoDS_Edge &anEdge, gp_Pnt2d & P2dF, gp_Pnt2d & P2dL);
 		%feature("autodoc", "1");
-		void CheckList(const TopoDS_Face &aFace, TopTools_ListOfShape & aHeadList);
+		static		void CheckList(const TopoDS_Face &aFace, TopTools_ListOfShape & aHeadList);
 
 };
 %feature("shadow") TopOpeBRepBuild_CorrectFace2d::~TopOpeBRepBuild_CorrectFace2d %{
@@ -1165,23 +1165,23 @@ class TopOpeBRepBuild_GTool {
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_GTool();
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_GTopo GFusUnsh(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
+		static		TopOpeBRepBuild_GTopo GFusUnsh(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_GTopo GFusSame(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
+		static		TopOpeBRepBuild_GTopo GFusSame(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_GTopo GFusDiff(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
+		static		TopOpeBRepBuild_GTopo GFusDiff(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_GTopo GCutUnsh(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
+		static		TopOpeBRepBuild_GTopo GCutUnsh(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_GTopo GCutSame(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
+		static		TopOpeBRepBuild_GTopo GCutSame(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_GTopo GCutDiff(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
+		static		TopOpeBRepBuild_GTopo GCutDiff(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_GTopo GComUnsh(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
+		static		TopOpeBRepBuild_GTopo GComUnsh(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_GTopo GComSame(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
+		static		TopOpeBRepBuild_GTopo GComSame(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_GTopo GComDiff(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
+		static		TopOpeBRepBuild_GTopo GComDiff(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1398,7 +1398,7 @@ class TopOpeBRepBuild_Area1dBuilder : public TopOpeBRepBuild_AreaBuilder {
 		%feature("autodoc", "1");
 		virtual		void ADD_LISTOFLoop_TO_LISTOFLoop(TopOpeBRepBuild_ListOfLoop & LOL1, TopOpeBRepBuild_ListOfLoop & LOL2, const Standard_Address s=0, const Standard_Address s1=0, const Standard_Address s2=0) const;
 		%feature("autodoc", "1");
-		void DumpList(const TopOpeBRepBuild_ListOfLoop &L);
+		static		void DumpList(const TopOpeBRepBuild_ListOfLoop &L);
 
 };
 %feature("shadow") TopOpeBRepBuild_Area1dBuilder::~TopOpeBRepBuild_Area1dBuilder %{
@@ -1548,11 +1548,11 @@ class TopOpeBRepBuild_Tools2d {
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_Tools2d();
 		%feature("autodoc", "1");
-		void MakeMapOfShapeVertexInfo(const TopoDS_Wire &aWire, TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo & aMap);
+		static		void MakeMapOfShapeVertexInfo(const TopoDS_Wire &aWire, TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo & aMap);
 		%feature("autodoc", "1");
-		void DumpMapOfShapeVertexInfo(const TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo &aMap);
+		static		void DumpMapOfShapeVertexInfo(const TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo &aMap);
 		%feature("autodoc", "1");
-		void Path(const TopoDS_Wire &aWire, TopTools_ListOfShape & aResList);
+		static		void Path(const TopoDS_Wire &aWire, TopTools_ListOfShape & aResList);
 
 };
 %feature("shadow") TopOpeBRepBuild_Tools2d::~TopOpeBRepBuild_Tools2d %{
@@ -1733,11 +1733,11 @@ class TopOpeBRepBuild_Builder {
 		%feature("autodoc", "1");
 		Standard_Boolean KeepShape(const TopoDS_Shape &S, const TopTools_ListOfShape &LS, const TopAbs_State T);
 		%feature("autodoc", "1");
-		TopAbs_ShapeEnum TopType(const TopoDS_Shape &S);
+		static		TopAbs_ShapeEnum TopType(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		Standard_Boolean Reverse(const TopAbs_State T1, const TopAbs_State T2);
+		static		Standard_Boolean Reverse(const TopAbs_State T1, const TopAbs_State T2);
 		%feature("autodoc", "1");
-		TopAbs_Orientation Orient(const TopAbs_Orientation O, const Standard_Boolean R);
+		static		TopAbs_Orientation Orient(const TopAbs_Orientation O, const Standard_Boolean R);
 		%feature("autodoc", "1");
 		void FindSameDomain(TopTools_ListOfShape & L1, TopTools_ListOfShape & L2) const;
 		%feature("autodoc", "1");
@@ -1753,7 +1753,7 @@ class TopOpeBRepBuild_Builder {
 		%feature("autodoc", "1");
 		Standard_Boolean IsShapeOf(const TopoDS_Shape &S, const Standard_Integer I12) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &S, const TopTools_ListOfShape &L);
+		static		Standard_Boolean Contains(const TopoDS_Shape &S, const TopTools_ListOfShape &L);
 		%feature("autodoc", "1");
 		Standard_Integer FindIsKPart();
 		%feature("autodoc", "1");
@@ -1820,9 +1820,9 @@ class TopOpeBRepBuild_Builder {
 
 		void KPisdisjanalyse(const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Integer KPls(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_ListOfShape & L);
+		static		Standard_Integer KPls(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_ListOfShape & L);
 		%feature("autodoc", "1");
-		Standard_Integer KPls(const TopoDS_Shape &S, const TopAbs_ShapeEnum T);
+		static		Standard_Integer KPls(const TopoDS_Shape &S, const TopAbs_ShapeEnum T);
 		%feature("autodoc", "1");
 		TopAbs_State KPclassF(const TopoDS_Shape &F1, const TopoDS_Shape &F2);
 		%feature("autodoc", "1");
@@ -1830,11 +1830,11 @@ class TopOpeBRepBuild_Builder {
 		%feature("autodoc", "1");
 		Standard_Boolean KPiskoleFF(const TopoDS_Shape &F1, const TopoDS_Shape &F2, TopAbs_State & T1, TopAbs_State & T2);
 		%feature("autodoc", "1");
-		Standard_Boolean KPContains(const TopoDS_Shape &S, const TopTools_ListOfShape &L);
+		static		Standard_Boolean KPContains(const TopoDS_Shape &S, const TopTools_ListOfShape &L);
 		%feature("autodoc", "1");
 		TopoDS_Shape KPmakeface(const TopoDS_Shape &F1, const TopTools_ListOfShape &LF2, const TopAbs_State T1, const TopAbs_State T2, const Standard_Boolean R1, const Standard_Boolean R2);
 		%feature("autodoc", "1");
-		Standard_Integer KPreturn(const Standard_Integer KP);
+		static		Standard_Integer KPreturn(const Standard_Integer KP);
 		%feature("autodoc", "1");
 		void SplitEvisoONperiodicF();
 		%feature("autodoc", "1");
@@ -1933,9 +1933,9 @@ class TopOpeBRepBuild_Builder {
 		%feature("autodoc", "1");
 		Standard_Boolean GToMerge(const TopoDS_Shape &S) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GTakeCommonOfSame(const TopOpeBRepBuild_GTopo &G);
+		static		Standard_Boolean GTakeCommonOfSame(const TopOpeBRepBuild_GTopo &G);
 		%feature("autodoc", "1");
-		Standard_Boolean GTakeCommonOfDiff(const TopOpeBRepBuild_GTopo &G);
+		static		Standard_Boolean GTakeCommonOfDiff(const TopOpeBRepBuild_GTopo &G);
 		%feature("autodoc", "1");
 		void GFindSamDom(const TopoDS_Shape &S, TopTools_ListOfShape & L1, TopTools_ListOfShape & L2) const;
 		%feature("autodoc", "1");
@@ -1955,17 +1955,17 @@ class TopOpeBRepBuild_Builder {
 		%feature("autodoc", "1");
 		Standard_Boolean GIsShapeOf(const TopoDS_Shape &S, const Standard_Integer I12) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GContains(const TopoDS_Shape &S, const TopTools_ListOfShape &L);
+		static		Standard_Boolean GContains(const TopoDS_Shape &S, const TopTools_ListOfShape &L);
 		%feature("autodoc", "1");
-		void GCopyList(const TopTools_ListOfShape &Lin, const Standard_Integer i1, const Standard_Integer i2, TopTools_ListOfShape & Lou);
+		static		void GCopyList(const TopTools_ListOfShape &Lin, const Standard_Integer i1, const Standard_Integer i2, TopTools_ListOfShape & Lou);
 		%feature("autodoc", "1");
-		void GCopyList(const TopTools_ListOfShape &Lin, TopTools_ListOfShape & Lou);
+		static		void GCopyList(const TopTools_ListOfShape &Lin, TopTools_ListOfShape & Lou);
 		%feature("autodoc", "1");
 		void GdumpLS(const TopTools_ListOfShape &L) const;
 		%feature("autodoc", "1");
-		void GdumpPNT(const gp_Pnt &P);
+		static		void GdumpPNT(const gp_Pnt &P);
 		%feature("autodoc", "1");
-		void GdumpORIPARPNT(const TopAbs_Orientation o, const Standard_Real p, const gp_Pnt &Pnt);
+		static		void GdumpORIPARPNT(const TopAbs_Orientation o, const Standard_Real p, const gp_Pnt &Pnt);
 		%feature("autodoc", "1");
 		void GdumpSHA(const TopoDS_Shape &S, const Standard_Address str=0) const;
 		%feature("autodoc", "1");
@@ -2006,19 +2006,19 @@ class TopOpeBRepBuild_Builder {
 		%feature("autodoc", "1");
 		Standard_Integer GdumpSHASETindex();
 		%feature("autodoc", "1");
-		void PrintGeo(const TopoDS_Shape &S);
+		static		void PrintGeo(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		void PrintSur(const TopoDS_Face &F);
+		static		void PrintSur(const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void PrintCur(const TopoDS_Edge &E);
+		static		void PrintCur(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
-		void PrintPnt(const TopoDS_Vertex &V);
+		static		void PrintPnt(const TopoDS_Vertex &V);
 		%feature("autodoc", "1");
-		void PrintOri(const TopoDS_Shape &S);
+		static		void PrintOri(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		TCollection_AsciiString StringState(const TopAbs_State S);
+		static		TCollection_AsciiString StringState(const TopAbs_State S);
 		%feature("autodoc", "1");
-		Standard_Boolean GcheckNBOUNDS(const TopoDS_Shape &E);
+		static		Standard_Boolean GcheckNBOUNDS(const TopoDS_Shape &E);
 
 };
 %feature("shadow") TopOpeBRepBuild_Builder::~TopOpeBRepBuild_Builder %{
@@ -2190,7 +2190,7 @@ class TopOpeBRepBuild_GTopo {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		void DumpSSB(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2, const Standard_Boolean b);
+		static		void DumpSSB(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2, const Standard_Boolean b);
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & OS, const Standard_Address s=0) const;
 		%feature("autodoc", "1");
@@ -2351,7 +2351,7 @@ class TopOpeBRepBuild_PaveSet : public TopOpeBRepBuild_LoopSet {
 		%feature("autodoc", "1");
 		Standard_Boolean ClosedVertices();
 		%feature("autodoc", "1");
-		void SortPave(const TopOpeBRepBuild_ListOfPave &Lin, TopOpeBRepBuild_ListOfPave & Lout);
+		static		void SortPave(const TopOpeBRepBuild_ListOfPave &Lin, TopOpeBRepBuild_ListOfPave & Lout);
 
 };
 %feature("shadow") TopOpeBRepBuild_PaveSet::~TopOpeBRepBuild_PaveSet %{
@@ -2963,51 +2963,51 @@ class TopOpeBRepBuild_Tools {
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_Tools();
 		%feature("autodoc", "1");
-		void DumpMapOfShapeWithState(const Standard_Integer iP, const TopOpeBRepDS_IndexedDataMapOfShapeWithState &aMapOfShapeWithState);
+		static		void DumpMapOfShapeWithState(const Standard_Integer iP, const TopOpeBRepDS_IndexedDataMapOfShapeWithState &aMapOfShapeWithState);
 		%feature("autodoc", "1");
-		void FindState(const TopoDS_Shape &aVertex, const TopAbs_State aState, const TopAbs_ShapeEnum aShapeEnum, const TopTools_IndexedDataMapOfShapeListOfShape &aMapVertexEdges, TopTools_MapOfShape & aMapProcessedVertices, TopOpeBRepDS_DataMapOfShapeState & aMapVs);
+		static		void FindState(const TopoDS_Shape &aVertex, const TopAbs_State aState, const TopAbs_ShapeEnum aShapeEnum, const TopTools_IndexedDataMapOfShapeListOfShape &aMapVertexEdges, TopTools_MapOfShape & aMapProcessedVertices, TopOpeBRepDS_DataMapOfShapeState & aMapVs);
 		%feature("autodoc", "1");
-		void PropagateState(const TopOpeBRepDS_DataMapOfShapeState &aSplEdgesState, const TopTools_IndexedMapOfShape &anEdgesToRestMap, const TopAbs_ShapeEnum aShapeEnum1, const TopAbs_ShapeEnum aShapeEnum2, TopOpeBRepTool_ShapeClassifier & aShapeClassifier, TopOpeBRepDS_IndexedDataMapOfShapeWithState & aMapOfShapeWithState, const TopTools_MapOfShape &anUnkStateShapes);
+		static		void PropagateState(const TopOpeBRepDS_DataMapOfShapeState &aSplEdgesState, const TopTools_IndexedMapOfShape &anEdgesToRestMap, const TopAbs_ShapeEnum aShapeEnum1, const TopAbs_ShapeEnum aShapeEnum2, TopOpeBRepTool_ShapeClassifier & aShapeClassifier, TopOpeBRepDS_IndexedDataMapOfShapeWithState & aMapOfShapeWithState, const TopTools_MapOfShape &anUnkStateShapes);
 		%feature("autodoc", "1");
-		TopAbs_State FindStateThroughVertex(const TopoDS_Shape &aShape, TopOpeBRepTool_ShapeClassifier & aShapeClassifier, TopOpeBRepDS_IndexedDataMapOfShapeWithState & aMapOfShapeWithState, const TopTools_MapOfShape &anAvoidSubshMap);
+		static		TopAbs_State FindStateThroughVertex(const TopoDS_Shape &aShape, TopOpeBRepTool_ShapeClassifier & aShapeClassifier, TopOpeBRepDS_IndexedDataMapOfShapeWithState & aMapOfShapeWithState, const TopTools_MapOfShape &anAvoidSubshMap);
 		%feature("autodoc", "1");
-		void PropagateStateForWires(const TopTools_IndexedMapOfShape &aFacesToRestMap, TopOpeBRepDS_IndexedDataMapOfShapeWithState & aMapOfShapeWithState);
+		static		void PropagateStateForWires(const TopTools_IndexedMapOfShape &aFacesToRestMap, TopOpeBRepDS_IndexedDataMapOfShapeWithState & aMapOfShapeWithState);
 		%feature("autodoc", "1");
-		void SpreadStateToChild(const TopoDS_Shape &aShape, const TopAbs_State aState, TopOpeBRepDS_IndexedDataMapOfShapeWithState & aMapOfShapeWithState);
+		static		void SpreadStateToChild(const TopoDS_Shape &aShape, const TopAbs_State aState, TopOpeBRepDS_IndexedDataMapOfShapeWithState & aMapOfShapeWithState);
 		%feature("autodoc", "1");
-		void FindState1(const TopoDS_Shape &anEdge, const TopAbs_State aState, const TopTools_IndexedDataMapOfShapeListOfShape &aMapEdgesFaces, TopTools_MapOfShape & aMapProcessedVertices, TopOpeBRepDS_DataMapOfShapeState & aMapVs);
+		static		void FindState1(const TopoDS_Shape &anEdge, const TopAbs_State aState, const TopTools_IndexedDataMapOfShapeListOfShape &aMapEdgesFaces, TopTools_MapOfShape & aMapProcessedVertices, TopOpeBRepDS_DataMapOfShapeState & aMapVs);
 		%feature("autodoc", "1");
-		void FindState2(const TopoDS_Shape &anEdge, const TopAbs_State aState, const TopTools_IndexedDataMapOfShapeListOfShape &aMapEdgesFaces, TopTools_MapOfShape & aMapProcessedEdges, TopOpeBRepDS_DataMapOfShapeState & aMapVs);
+		static		void FindState2(const TopoDS_Shape &anEdge, const TopAbs_State aState, const TopTools_IndexedDataMapOfShapeListOfShape &aMapEdgesFaces, TopTools_MapOfShape & aMapProcessedEdges, TopOpeBRepDS_DataMapOfShapeState & aMapVs);
 		%feature("autodoc", "1");
-		Standard_Boolean GetAdjacentFace(const TopoDS_Shape &aFaceObj, const TopoDS_Shape &anEObj, const TopTools_IndexedDataMapOfShapeListOfShape &anEdgeFaceMap, TopoDS_Shape & anAdjFaceObj);
+		static		Standard_Boolean GetAdjacentFace(const TopoDS_Shape &aFaceObj, const TopoDS_Shape &anEObj, const TopTools_IndexedDataMapOfShapeListOfShape &anEdgeFaceMap, TopoDS_Shape & anAdjFaceObj);
 		%feature("autodoc", "1");
-		void GetNormalToFaceOnEdge(const TopoDS_Face &aFObj, const TopoDS_Edge &anEdgeObj, gp_Vec & aDirNormal);
+		static		void GetNormalToFaceOnEdge(const TopoDS_Face &aFObj, const TopoDS_Edge &anEdgeObj, gp_Vec & aDirNormal);
 		%feature("autodoc", "1");
-		void GetNormalInNearestPoint(const TopoDS_Face &aFace, const TopoDS_Edge &anEdge, gp_Vec & aNormal);
+		static		void GetNormalInNearestPoint(const TopoDS_Face &aFace, const TopoDS_Edge &anEdge, gp_Vec & aNormal);
 		%feature("autodoc", "1");
-		Standard_Boolean GetTangentToEdgeEdge(const TopoDS_Face &aFObj, const TopoDS_Edge &anEdgeObj, const TopoDS_Edge &aOriEObj, gp_Vec & aTangent);
+		static		Standard_Boolean GetTangentToEdgeEdge(const TopoDS_Face &aFObj, const TopoDS_Edge &anEdgeObj, const TopoDS_Edge &aOriEObj, gp_Vec & aTangent);
 		%feature("autodoc", "1");
-		Standard_Boolean GetTangentToEdge(const TopoDS_Edge &anEdgeObj, gp_Vec & aTangent);
+		static		Standard_Boolean GetTangentToEdge(const TopoDS_Edge &anEdgeObj, gp_Vec & aTangent);
 		%feature("autodoc", "1");
-		void UpdatePCurves(const TopoDS_Wire &aWire, const TopoDS_Face &fromFace, const TopoDS_Face &toFace);
+		static		void UpdatePCurves(const TopoDS_Wire &aWire, const TopoDS_Face &fromFace, const TopoDS_Face &toFace);
 		%feature("autodoc", "1");
-		void UpdateEdgeOnPeriodicalFace(const TopoDS_Edge &aEdgeToUpdate, const TopoDS_Face &OldFace, const TopoDS_Face &NewFace);
+		static		void UpdateEdgeOnPeriodicalFace(const TopoDS_Edge &aEdgeToUpdate, const TopoDS_Face &OldFace, const TopoDS_Face &NewFace);
 		%feature("autodoc", "1");
-		void UpdateEdgeOnFace(const TopoDS_Edge &aEdgeToUpdate, const TopoDS_Face &OldFace, const TopoDS_Face &NewFace);
+		static		void UpdateEdgeOnFace(const TopoDS_Edge &aEdgeToUpdate, const TopoDS_Face &OldFace, const TopoDS_Face &NewFace);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDegEdgesTheSame(const TopoDS_Shape &anE1, const TopoDS_Shape &anE2);
+		static		Standard_Boolean IsDegEdgesTheSame(const TopoDS_Shape &anE1, const TopoDS_Shape &anE2);
 		%feature("autodoc", "1");
-		void NormalizeFace(const TopoDS_Shape &oldFace, TopoDS_Shape & corrFace);
+		static		void NormalizeFace(const TopoDS_Shape &oldFace, TopoDS_Shape & corrFace);
 		%feature("autodoc", "1");
-		void CorrectFace2d(const TopoDS_Shape &oldFace, TopoDS_Shape & corrFace, const TopTools_IndexedMapOfOrientedShape &aSourceShapes, TopTools_IndexedDataMapOfShapeShape & aMapOfCorrect2dEdges);
+		static		void CorrectFace2d(const TopoDS_Shape &oldFace, TopoDS_Shape & corrFace, const TopTools_IndexedMapOfOrientedShape &aSourceShapes, TopTools_IndexedDataMapOfShapeShape & aMapOfCorrect2dEdges);
 		%feature("autodoc", "1");
-		void CorrectTolerances(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectTolerances(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		void CorrectCurveOnSurface(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectCurveOnSurface(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		void CorrectPointOnCurve(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectPointOnCurve(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		Standard_Boolean CheckFaceClosed2d(const TopoDS_Face &theFace);
+		static		Standard_Boolean CheckFaceClosed2d(const TopoDS_Face &theFace);
 
 };
 %feature("shadow") TopOpeBRepBuild_Tools::~TopOpeBRepBuild_Tools %{
@@ -3205,7 +3205,7 @@ class TopOpeBRepBuild_WireEdgeSet : public TopOpeBRepBuild_ShapeSet {
 		%feature("autodoc", "1");
 		Standard_Boolean HasConnexStartElement() const;
 		%feature("autodoc", "1");
-		void IsUVISO(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Boolean & uiso, Standard_Boolean & viso);
+		static		void IsUVISO(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Boolean & uiso, Standard_Boolean & viso);
 		%feature("autodoc", "1");
 		virtual		void DumpSS();
 		%feature("autodoc", "1");

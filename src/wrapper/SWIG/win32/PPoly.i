@@ -51,7 +51,7 @@ class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon2D & operator=(const PPoly_Polygon2D *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_Polygon2D const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PPoly_Polygon2D const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PPoly_Polygon2D {
@@ -89,7 +89,7 @@ class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_HArray1OfTriangle & operator=(const PPoly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_HArray1OfTriangle const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PPoly_HArray1OfTriangle const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PPoly_HArray1OfTriangle {
@@ -127,7 +127,7 @@ class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon3D & operator=(const PPoly_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_Polygon3D const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PPoly_Polygon3D const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PPoly_Polygon3D {
@@ -165,7 +165,7 @@ class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_Triangulation & operator=(const PPoly_Triangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PPoly_Triangulation const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PPoly_Triangulation {
@@ -203,7 +203,7 @@ class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandar
 		%feature("autodoc", "1");
 		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle & operator=(const PPoly_VArrayNodeOfFieldOfHArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
@@ -241,7 +241,7 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_PolygonOnTriangulation & operator=(const PPoly_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PPoly_PolygonOnTriangulation const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PPoly_PolygonOnTriangulation {

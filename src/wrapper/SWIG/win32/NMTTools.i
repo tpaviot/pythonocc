@@ -52,7 +52,7 @@ class Handle_NMTTools_StdMapNodeOfMapOfPaveBlock : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock & operator=(const NMTTools_StdMapNodeOfMapOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTTools_StdMapNodeOfMapOfPaveBlock {
@@ -90,7 +90,7 @@ class Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public Hand
 		%feature("autodoc", "1");
 		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock & operator=(const NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
@@ -128,7 +128,7 @@ class Handle_NMTTools_ListNodeOfListOfCoupleOfShape : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_NMTTools_ListNodeOfListOfCoupleOfShape & operator=(const NMTTools_ListNodeOfListOfCoupleOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTTools_ListNodeOfListOfCoupleOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTTools_ListNodeOfListOfCoupleOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTTools_ListNodeOfListOfCoupleOfShape {
@@ -166,7 +166,7 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape
 		%feature("autodoc", "1");
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
@@ -204,7 +204,7 @@ class Handle_NMTTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_NMTTools_ListNodeOfListOfCommonBlock & operator=(const NMTTools_ListNodeOfListOfCommonBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTTools_ListNodeOfListOfCommonBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTTools_ListNodeOfListOfCommonBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTTools_ListNodeOfListOfCommonBlock {
@@ -242,7 +242,7 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : publi
 		%feature("autodoc", "1");
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock & operator=(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock {
@@ -280,7 +280,7 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : 
 		%feature("autodoc", "1");
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger & operator=(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
@@ -905,25 +905,25 @@ class NMTTools_Tools {
 		%feature("autodoc", "1");
 		NMTTools_Tools();
 		%feature("autodoc", "1");
-		void MakeNewVertex(const TopTools_ListOfShape &aLV, TopoDS_Vertex & aNewVertex);
+		static		void MakeNewVertex(const TopTools_ListOfShape &aLV, TopoDS_Vertex & aNewVertex);
 		%feature("autodoc", "1");
-		void FindChains(const BOPTools_CArray1OfVVInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		static		void FindChains(const BOPTools_CArray1OfVVInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
 		%feature("autodoc", "1");
-		void FindChains(const BOPTools_CArray1OfSSInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		static		void FindChains(const BOPTools_CArray1OfSSInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
 		%feature("autodoc", "1");
-		void FindChains(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &aMCV, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		static		void FindChains(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &aMCV, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSplitInOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF, IntTools_Context & aCtx);
+		static		Standard_Boolean IsSplitInOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
-		Standard_Boolean AreFacesSameDomain(const TopoDS_Face &aF1, const TopoDS_Face &aF2, IntTools_Context & aCtx);
+		static		Standard_Boolean AreFacesSameDomain(const TopoDS_Face &aF1, const TopoDS_Face &aF2, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
-		void FindChains(const NMTTools_ListOfCoupleOfShape &aLCS, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM);
+		static		void FindChains(const NMTTools_ListOfCoupleOfShape &aLCS, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM);
 		%feature("autodoc", "1");
-		void FindChains(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &aM1, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM2);
+		static		void FindChains(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &aM1, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM2);
 		%feature("autodoc", "1");
-		void MakePCurve(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Handle_Geom2d_Curve &aC2D);
+		static		void MakePCurve(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Handle_Geom2d_Curve &aC2D);
 		%feature("autodoc", "1");
-		void UpdateEdge(const TopoDS_Edge &aE, const Standard_Real aTol);
+		static		void UpdateEdge(const TopoDS_Edge &aE, const Standard_Real aTol);
 
 };
 %feature("shadow") NMTTools_Tools::~NMTTools_Tools %{

@@ -79,7 +79,7 @@ class Handle_ShapeExtend_BasicMsgRegistrator : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_BasicMsgRegistrator & operator=(const ShapeExtend_BasicMsgRegistrator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_BasicMsgRegistrator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeExtend_BasicMsgRegistrator const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeExtend_BasicMsgRegistrator {
@@ -117,7 +117,7 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
@@ -155,7 +155,7 @@ class Handle_ShapeExtend_MsgRegistrator : public Handle_ShapeExtend_BasicMsgRegi
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_MsgRegistrator & operator=(const ShapeExtend_MsgRegistrator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_MsgRegistrator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeExtend_MsgRegistrator const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeExtend_MsgRegistrator {
@@ -193,7 +193,7 @@ class Handle_ShapeExtend_ComplexCurve : public Handle_Geom_Curve {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_ComplexCurve & operator=(const ShapeExtend_ComplexCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_ComplexCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeExtend_ComplexCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeExtend_ComplexCurve {
@@ -231,7 +231,7 @@ class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_CompositeSurface & operator=(const ShapeExtend_CompositeSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeExtend_CompositeSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeExtend_CompositeSurface {
@@ -269,7 +269,7 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handl
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
@@ -307,7 +307,7 @@ class Handle_ShapeExtend_WireData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_WireData & operator=(const ShapeExtend_WireData *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_WireData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeExtend_WireData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeExtend_WireData {
@@ -510,11 +510,11 @@ class ShapeExtend {
 		%feature("autodoc", "1");
 		ShapeExtend();
 		%feature("autodoc", "1");
-		void Init();
+		static		void Init();
 		%feature("autodoc", "1");
-		Standard_Integer EncodeStatus(const ShapeExtend_Status status);
+		static		Standard_Integer EncodeStatus(const ShapeExtend_Status status);
 		%feature("autodoc", "1");
-		Standard_Boolean DecodeStatus(const Standard_Integer flag, const ShapeExtend_Status status);
+		static		Standard_Boolean DecodeStatus(const Standard_Integer flag, const ShapeExtend_Status status);
 
 };
 %feature("shadow") ShapeExtend::~ShapeExtend %{

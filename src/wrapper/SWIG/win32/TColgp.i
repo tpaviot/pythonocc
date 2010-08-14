@@ -51,7 +51,7 @@ class Handle_TColgp_HArray2OfPnt : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfPnt & operator=(const TColgp_HArray2OfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray2OfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray2OfPnt {
@@ -89,7 +89,7 @@ class Handle_TColgp_HSequenceOfXYZ : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfXYZ & operator=(const TColgp_HSequenceOfXYZ *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HSequenceOfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HSequenceOfXYZ {
@@ -127,7 +127,7 @@ class Handle_TColgp_HArray2OfXYZ : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfXYZ & operator=(const TColgp_HArray2OfXYZ *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray2OfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray2OfXYZ {
@@ -165,7 +165,7 @@ class Handle_TColgp_HArray2OfDir2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfDir2d & operator=(const TColgp_HArray2OfDir2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray2OfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray2OfDir2d {
@@ -203,7 +203,7 @@ class Handle_TColgp_HArray2OfLin2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfLin2d & operator=(const TColgp_HArray2OfLin2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfLin2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray2OfLin2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray2OfLin2d {
@@ -241,7 +241,7 @@ class Handle_TColgp_HArray1OfXY : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfXY & operator=(const TColgp_HArray1OfXY *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfXY const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray1OfXY const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray1OfXY {
@@ -279,7 +279,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_TColgp_SequenceNodeOfSequenceOfPnt & operator=(const TColgp_SequenceNodeOfSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_SequenceNodeOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfPnt {
@@ -317,7 +317,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfDir2d : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_TColgp_SequenceNodeOfSequenceOfDir2d & operator=(const TColgp_SequenceNodeOfSequenceOfDir2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_SequenceNodeOfSequenceOfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfDir2d {
@@ -355,7 +355,7 @@ class Handle_TColgp_HArray1OfDir2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfDir2d & operator=(const TColgp_HArray1OfDir2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray1OfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray1OfDir2d {
@@ -393,7 +393,7 @@ class Handle_TColgp_HArray1OfLin2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfLin2d & operator=(const TColgp_HArray1OfLin2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray1OfLin2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray1OfLin2d {
@@ -431,7 +431,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfVec : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_TColgp_SequenceNodeOfSequenceOfVec & operator=(const TColgp_SequenceNodeOfSequenceOfVec *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfVec const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_SequenceNodeOfSequenceOfVec const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfVec {
@@ -469,7 +469,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfVec2d : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_TColgp_SequenceNodeOfSequenceOfVec2d & operator=(const TColgp_SequenceNodeOfSequenceOfVec2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_SequenceNodeOfSequenceOfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfVec2d {
@@ -507,7 +507,7 @@ class Handle_TColgp_HArray1OfVec2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfVec2d & operator=(const TColgp_HArray1OfVec2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray1OfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray1OfVec2d {
@@ -545,7 +545,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfDir : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_TColgp_SequenceNodeOfSequenceOfDir & operator=(const TColgp_SequenceNodeOfSequenceOfDir *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_SequenceNodeOfSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfDir {
@@ -583,7 +583,7 @@ class Handle_TColgp_HArray2OfCirc2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfCirc2d & operator=(const TColgp_HArray2OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray2OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray2OfCirc2d {
@@ -621,7 +621,7 @@ class Handle_TColgp_HArray1OfVec : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfVec & operator=(const TColgp_HArray1OfVec *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray1OfVec const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray1OfVec {
@@ -659,7 +659,7 @@ class Handle_TColgp_HSequenceOfVec : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfVec & operator=(const TColgp_HSequenceOfVec *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfVec const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HSequenceOfVec const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HSequenceOfVec {
@@ -697,7 +697,7 @@ class Handle_TColgp_HArray2OfPnt2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfPnt2d & operator=(const TColgp_HArray2OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray2OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray2OfPnt2d {
@@ -735,7 +735,7 @@ class Handle_TColgp_HArray1OfDir : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfDir & operator=(const TColgp_HArray1OfDir *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray1OfDir const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray1OfDir {
@@ -773,7 +773,7 @@ class Handle_TColgp_HArray2OfXY : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfXY & operator=(const TColgp_HArray2OfXY *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfXY const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray2OfXY const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray2OfXY {
@@ -811,7 +811,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfXY : public Handle_TCollection_SeqNo
 		%feature("autodoc", "1");
 		Handle_TColgp_SequenceNodeOfSequenceOfXY & operator=(const TColgp_SequenceNodeOfSequenceOfXY *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXY const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_SequenceNodeOfSequenceOfXY const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfXY {
@@ -849,7 +849,7 @@ class Handle_TColgp_HArray1OfCirc2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfCirc2d & operator=(const TColgp_HArray1OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray1OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray1OfCirc2d {
@@ -887,7 +887,7 @@ class Handle_TColgp_HArray2OfDir : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfDir & operator=(const TColgp_HArray2OfDir *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfDir const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray2OfDir const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray2OfDir {
@@ -925,7 +925,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfPnt2d : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d & operator=(const TColgp_SequenceNodeOfSequenceOfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_SequenceNodeOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfPnt2d {
@@ -963,7 +963,7 @@ class Handle_TColgp_HArray1OfPnt2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt2d & operator=(const TColgp_HArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray1OfPnt2d {
@@ -1001,7 +1001,7 @@ class Handle_TColgp_HArray2OfVec : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfVec & operator=(const TColgp_HArray2OfVec *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfVec const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray2OfVec const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray2OfVec {
@@ -1039,7 +1039,7 @@ class Handle_TColgp_HSequenceOfDir2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfDir2d & operator=(const TColgp_HSequenceOfDir2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HSequenceOfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HSequenceOfDir2d {
@@ -1077,7 +1077,7 @@ class Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d & operator=(const TColgp_DataMapNodeOfDataMapOfIntegerCirc2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
@@ -1115,7 +1115,7 @@ class Handle_TColgp_HArray1OfXYZ : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfXYZ & operator=(const TColgp_HArray1OfXYZ *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray1OfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray1OfXYZ {
@@ -1153,7 +1153,7 @@ class Handle_TColgp_HSequenceOfXY : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfXY & operator=(const TColgp_HSequenceOfXY *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfXY const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HSequenceOfXY const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HSequenceOfXY {
@@ -1191,7 +1191,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfXYZ : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_TColgp_SequenceNodeOfSequenceOfXYZ & operator=(const TColgp_SequenceNodeOfSequenceOfXYZ *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_SequenceNodeOfSequenceOfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfXYZ {
@@ -1229,7 +1229,7 @@ class Handle_TColgp_HArray2OfVec2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray2OfVec2d & operator=(const TColgp_HArray2OfVec2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray2OfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray2OfVec2d {
@@ -1267,7 +1267,7 @@ class Handle_TColgp_HSequenceOfDir : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfDir & operator=(const TColgp_HSequenceOfDir *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HSequenceOfDir {
@@ -1305,7 +1305,7 @@ class Handle_TColgp_HSequenceOfVec2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfVec2d & operator=(const TColgp_HSequenceOfVec2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HSequenceOfVec2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HSequenceOfVec2d {
@@ -1343,7 +1343,7 @@ class Handle_TColgp_HArray1OfPnt : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt & operator=(const TColgp_HArray1OfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HArray1OfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HArray1OfPnt {
@@ -1381,7 +1381,7 @@ class Handle_TColgp_HSequenceOfPnt2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfPnt2d & operator=(const TColgp_HSequenceOfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HSequenceOfPnt2d {
@@ -1419,7 +1419,7 @@ class Handle_TColgp_HSequenceOfPnt : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HSequenceOfPnt & operator=(const TColgp_HSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColgp_HSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColgp_HSequenceOfPnt {

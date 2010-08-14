@@ -58,7 +58,7 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_Voxel_Prs & operator=(const Voxel_Prs *anItem);
 		%feature("autodoc", "1");
-		Handle_Voxel_Prs const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Voxel_Prs const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Voxel_Prs {

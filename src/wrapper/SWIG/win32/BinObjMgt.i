@@ -58,7 +58,7 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_DataMapNodeOfRRelocationTable & operator=(const BinObjMgt_DataMapNodeOfRRelocationTable *anItem);
 		%feature("autodoc", "1");
-		Handle_BinObjMgt_DataMapNodeOfRRelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinObjMgt_DataMapNodeOfRRelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinObjMgt_DataMapNodeOfRRelocationTable {
@@ -96,7 +96,7 @@ class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress & operator=(const BinObjMgt_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {

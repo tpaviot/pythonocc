@@ -51,7 +51,7 @@ class Handle_MMgt_TShared : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_MMgt_TShared & operator=(const MMgt_TShared *anItem);
 		%feature("autodoc", "1");
-		Handle_MMgt_TShared const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MMgt_TShared const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MMgt_TShared {

@@ -65,7 +65,7 @@ class Handle_MoniTool_SignText : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MoniTool_SignText & operator=(const MoniTool_SignText *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_SignText const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_SignText const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_SignText {
@@ -103,7 +103,7 @@ class Handle_MoniTool_CaseData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MoniTool_CaseData & operator=(const MoniTool_CaseData *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_CaseData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_CaseData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_CaseData {
@@ -141,7 +141,7 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfTimer : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_MoniTool_DataMapNodeOfDataMapOfTimer & operator=(const MoniTool_DataMapNodeOfDataMapOfTimer *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_DataMapNodeOfDataMapOfTimer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_DataMapNodeOfDataMapOfTimer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_DataMapNodeOfDataMapOfTimer {
@@ -179,7 +179,7 @@ class Handle_MoniTool_IntVal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MoniTool_IntVal & operator=(const MoniTool_IntVal *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_IntVal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_IntVal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_IntVal {
@@ -217,7 +217,7 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient & operator=(const MoniTool_DataMapNodeOfDataMapOfShapeTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient {
@@ -255,7 +255,7 @@ class Handle_MoniTool_RealVal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MoniTool_RealVal & operator=(const MoniTool_RealVal *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_RealVal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_RealVal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_RealVal {
@@ -293,7 +293,7 @@ class Handle_MoniTool_Element : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MoniTool_Element & operator=(const MoniTool_Element *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_Element const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_Element const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_Element {
@@ -331,7 +331,7 @@ class Handle_MoniTool_TransientElem : public Handle_MoniTool_Element {
 		%feature("autodoc", "1");
 		Handle_MoniTool_TransientElem & operator=(const MoniTool_TransientElem *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_TransientElem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_TransientElem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_TransientElem {
@@ -369,7 +369,7 @@ class Handle_MoniTool_Profile : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MoniTool_Profile & operator=(const MoniTool_Profile *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_Profile const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_Profile const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_Profile {
@@ -407,7 +407,7 @@ class Handle_MoniTool_SequenceNodeOfSequenceOfElement : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_MoniTool_SequenceNodeOfSequenceOfElement & operator=(const MoniTool_SequenceNodeOfSequenceOfElement *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_SequenceNodeOfSequenceOfElement const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_SequenceNodeOfSequenceOfElement const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_SequenceNodeOfSequenceOfElement {
@@ -445,7 +445,7 @@ class Handle_MoniTool_Timer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MoniTool_Timer & operator=(const MoniTool_Timer *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_Timer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_Timer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_Timer {
@@ -483,7 +483,7 @@ class Handle_MoniTool_TypedValue : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MoniTool_TypedValue & operator=(const MoniTool_TypedValue *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_TypedValue const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_TypedValue const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_TypedValue {
@@ -521,7 +521,7 @@ class Handle_MoniTool_Option : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MoniTool_Option & operator=(const MoniTool_Option *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_Option const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_Option const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_Option {
@@ -559,7 +559,7 @@ class Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : publi
 		%feature("autodoc", "1");
 		Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient & operator=(const MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
@@ -597,7 +597,7 @@ class Handle_MoniTool_SignShape : public Handle_MoniTool_SignText {
 		%feature("autodoc", "1");
 		Handle_MoniTool_SignShape & operator=(const MoniTool_SignShape *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_SignShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_SignShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_SignShape {
@@ -635,7 +635,7 @@ class Handle_MoniTool_HSequenceOfElement : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MoniTool_HSequenceOfElement & operator=(const MoniTool_HSequenceOfElement *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_HSequenceOfElement const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_HSequenceOfElement const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MoniTool_HSequenceOfElement {
@@ -783,9 +783,9 @@ class MoniTool_ElemHasher {
 		%feature("autodoc", "1");
 		MoniTool_ElemHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Handle_MoniTool_Element &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const Handle_MoniTool_Element &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Handle_MoniTool_Element &K1, const Handle_MoniTool_Element &K2);
+		static		Standard_Boolean IsEqual(const Handle_MoniTool_Element &K1, const Handle_MoniTool_Element &K2);
 
 };
 %feature("shadow") MoniTool_ElemHasher::~MoniTool_ElemHasher %{
@@ -836,15 +836,15 @@ class MoniTool_Timer : public MMgt_TShared {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		Handle_MoniTool_Timer Timer(const char * name);
+		static		Handle_MoniTool_Timer Timer(const char * name);
 		%feature("autodoc", "1");
-		void Start(const char * name);
+		static		void Start(const char * name);
 		%feature("autodoc", "1");
-		void Stop(const char * name);
+		static		void Stop(const char * name);
 		%feature("autodoc", "1");
-		MoniTool_DataMapOfTimer & Dictionary();
+		static		MoniTool_DataMapOfTimer & Dictionary();
 		%feature("autodoc", "1");
-		void ClearTimers();
+		static		void ClearTimers();
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -854,10 +854,10 @@ class MoniTool_Timer : public MMgt_TShared {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		void ComputeAmendments();
+		static		void ComputeAmendments();
 		%feature("autodoc","GetAmendments() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void GetAmendments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void GetAmendments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1400,15 +1400,15 @@ class MoniTool_CaseData : public MMgt_TShared {
 
 		Standard_Boolean Integer(const Standard_Integer nd, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void SetDefWarning(const char * acode);
+		static		void SetDefWarning(const char * acode);
 		%feature("autodoc", "1");
-		void SetDefFail(const char * acode);
+		static		void SetDefFail(const char * acode);
 		%feature("autodoc", "1");
-		Standard_Integer DefCheck(const char * acode);
+		static		Standard_Integer DefCheck(const char * acode);
 		%feature("autodoc", "1");
-		void SetDefMsg(const char * casecode, const char * mesdef);
+		static		void SetDefMsg(const char * casecode, const char * mesdef);
 		%feature("autodoc", "1");
-		char * DefMsg(const char * casecode);
+		static		char * DefMsg(const char * casecode);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1445,9 +1445,9 @@ class MoniTool_DataInfo {
 		%feature("autodoc", "1");
 		MoniTool_DataInfo();
 		%feature("autodoc", "1");
-		Handle_Standard_Type Type(const Handle_Standard_Transient &ent);
+		static		Handle_Standard_Type Type(const Handle_Standard_Transient &ent);
 		%feature("autodoc", "1");
-		char * TypeName(const Handle_Standard_Transient &ent);
+		static		char * TypeName(const Handle_Standard_Transient &ent);
 
 };
 %feature("shadow") MoniTool_DataInfo::~MoniTool_DataInfo %{
@@ -1472,9 +1472,9 @@ class MoniTool_MTHasher {
 		%feature("autodoc", "1");
 		MoniTool_MTHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const char * Str, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const char * Str, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const char * Str1, const char * Str2);
+		static		Standard_Boolean IsEqual(const char * Str1, const char * Str2);
 
 };
 %feature("shadow") MoniTool_MTHasher::~MoniTool_MTHasher %{
@@ -1633,15 +1633,15 @@ class MoniTool_TypedValue : public MMgt_TShared {
 		%feature("autodoc", "1");
 		char * ObjectTypeName() const;
 		%feature("autodoc", "1");
-		Standard_Boolean AddLib(const Handle_MoniTool_TypedValue &tv, const char * def="");
+		static		Standard_Boolean AddLib(const Handle_MoniTool_TypedValue &tv, const char * def="");
 		%feature("autodoc", "1");
-		Handle_MoniTool_TypedValue Lib(const char * def);
+		static		Handle_MoniTool_TypedValue Lib(const char * def);
 		%feature("autodoc", "1");
-		Handle_MoniTool_TypedValue FromLib(const char * def);
+		static		Handle_MoniTool_TypedValue FromLib(const char * def);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString LibList();
+		static		Handle_TColStd_HSequenceOfAsciiString LibList();
 		%feature("autodoc", "1");
-		Handle_MoniTool_TypedValue StaticValue(const char * name);
+		static		Handle_MoniTool_TypedValue StaticValue(const char * name);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1826,7 +1826,7 @@ class MoniTool_Stat {
 		%feature("autodoc", "1");
 		MoniTool_Stat(const MoniTool_Stat &other);
 		%feature("autodoc", "1");
-		MoniTool_Stat & Current();
+		static		MoniTool_Stat & Current();
 		%feature("autodoc", "1");
 		Standard_Integer Open(const Standard_Integer nb=100);
 		%feature("autodoc", "1");

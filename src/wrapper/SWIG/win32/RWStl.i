@@ -43,15 +43,15 @@ class RWStl {
 		%feature("autodoc", "1");
 		RWStl();
 		%feature("autodoc", "1");
-		Standard_Boolean WriteBinary(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath);
+		static		Standard_Boolean WriteBinary(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath);
 		%feature("autodoc", "1");
-		Standard_Boolean WriteAscii(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath);
+		static		Standard_Boolean WriteAscii(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath);
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh ReadFile(const OSD_Path &aPath);
+		static		Handle_StlMesh_Mesh ReadFile(const OSD_Path &aPath);
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh ReadBinary(const OSD_Path &aPath);
+		static		Handle_StlMesh_Mesh ReadBinary(const OSD_Path &aPath);
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh ReadAscii(const OSD_Path &aPath);
+		static		Handle_StlMesh_Mesh ReadAscii(const OSD_Path &aPath);
 
 };
 %feature("shadow") RWStl::~RWStl %{
