@@ -559,11 +559,11 @@ class StdMeshers_Propagation : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		std::string GetName();
+		static		std::string GetName();
 		%feature("autodoc", "1");
-		void SetPropagationMgr(SMESH_subMesh* subMesh);
+		static		void SetPropagationMgr(SMESH_subMesh* subMesh);
 		%feature("autodoc", "1");
-		TopoDS_Edge GetPropagationSource(SMESH_Mesh & theMesh, const TopoDS_Shape &theEdge);
+		static		TopoDS_Edge GetPropagationSource(SMESH_Mesh & theMesh, const TopoDS_Shape &theEdge);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
 		%feature("autodoc", "1");
@@ -899,9 +899,9 @@ class StdMeshers_PrismAsBlock : public SMESH_Block {
 		%feature("autodoc", "1");
 		int ShapeID(const TopoDS_Shape &shape) const;
 		%feature("autodoc", "1");
-		bool IsForwardEdge(SMESHDS_Mesh* meshDS, const TParam2ColumnMap &columnsMap, const TopoDS_Edge &bottomEdge, const int sideFaceID);
+		static		bool IsForwardEdge(SMESHDS_Mesh* meshDS, const TParam2ColumnMap &columnsMap, const TopoDS_Edge &bottomEdge, const int sideFaceID);
 		%feature("autodoc", "1");
-		bool GetWallFaces(SMESH_Mesh* mesh, const TopoDS_Shape &mainShape, const TopoDS_Shape &bottomFace, std::list<TopoDS_Edge>, std::list<TopoDS_Face>);
+		static		bool GetWallFaces(SMESH_Mesh* mesh, const TopoDS_Shape &mainShape, const TopoDS_Shape &bottomFace, std::list<TopoDS_Edge>, std::list<TopoDS_Face>);
 
 };
 %feature("shadow") StdMeshers_PrismAsBlock::~StdMeshers_PrismAsBlock %{
@@ -1289,7 +1289,7 @@ class StdMeshers_Prism_3D : public SMESH_3D_Algo {
 		%feature("autodoc", "1");
 		void ProjectTriangles();
 		%feature("autodoc", "1");
-		void AddPrisms(std::vector<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*,std::allocator<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*> > & nodeColumns, SMESH_MesherHelper* helper);
+		static		void AddPrisms(std::vector<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*,std::allocator<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*> > & nodeColumns, SMESH_MesherHelper* helper);
 
 };
 %feature("shadow") StdMeshers_Prism_3D::~StdMeshers_Prism_3D %{
@@ -1704,39 +1704,39 @@ class StdMeshers_ProjectionUtils {
 		%feature("autodoc", "1");
 		StdMeshers_ProjectionUtils();
 		%feature("autodoc", "1");
-		bool FindSubShapeAssociation(const TopoDS_Shape &theShape1, SMESH_Mesh* theMesh1, const TopoDS_Shape &theShape2, SMESH_Mesh* theMesh2, TopTools_DataMapOfShapeShape & theAssociationMap);
+		static		bool FindSubShapeAssociation(const TopoDS_Shape &theShape1, SMESH_Mesh* theMesh1, const TopoDS_Shape &theShape2, SMESH_Mesh* theMesh2, TopTools_DataMapOfShapeShape & theAssociationMap);
 		%feature("autodoc", "1");
-		int FindFaceAssociation(const TopoDS_Face &face1, TopoDS_Vertex* VV1, const TopoDS_Face &face2, TopoDS_Vertex* VV2, std::list<TopoDS_Edge>, std::list<TopoDS_Edge>);
+		static		int FindFaceAssociation(const TopoDS_Face &face1, TopoDS_Vertex* VV1, const TopoDS_Face &face2, TopoDS_Vertex* VV2, std::list<TopoDS_Edge>, std::list<TopoDS_Edge>);
 		%feature("autodoc", "1");
-		void InitVertexAssociation(const SMESH_Hypothesis *theHyp, TopTools_DataMapOfShapeShape & theAssociationMap, const TopoDS_Shape &theTargetShape);
+		static		void InitVertexAssociation(const SMESH_Hypothesis *theHyp, TopTools_DataMapOfShapeShape & theAssociationMap, const TopoDS_Shape &theTargetShape);
 		%feature("autodoc", "1");
-		bool InsertAssociation(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2, TopTools_DataMapOfShapeShape & theAssociationMap, const bool theBidirectional=true);
+		static		bool InsertAssociation(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2, TopTools_DataMapOfShapeShape & theAssociationMap, const bool theBidirectional=true);
 		%feature("autodoc", "1");
-		bool IsSubShape(const TopoDS_Shape &shape, SMESH_Mesh* aMesh);
+		static		bool IsSubShape(const TopoDS_Shape &shape, SMESH_Mesh* aMesh);
 		%feature("autodoc", "1");
-		bool IsSubShape(const TopoDS_Shape &shape, const TopoDS_Shape &mainShape);
+		static		bool IsSubShape(const TopoDS_Shape &shape, const TopoDS_Shape &mainShape);
 		%feature("autodoc", "1");
-		TopoDS_Edge GetEdgeByVertices(SMESH_Mesh* aMesh, const TopoDS_Vertex &V1, const TopoDS_Vertex &V2);
+		static		TopoDS_Edge GetEdgeByVertices(SMESH_Mesh* aMesh, const TopoDS_Vertex &V1, const TopoDS_Vertex &V2);
 		%feature("autodoc", "1");
-		TopoDS_Face GetNextFace(const TopTools_IndexedDataMapOfShapeListOfShape &edgeToFaces, const TopoDS_Edge &edge, const TopoDS_Face &face);
+		static		TopoDS_Face GetNextFace(const TopTools_IndexedDataMapOfShapeListOfShape &edgeToFaces, const TopoDS_Edge &edge, const TopoDS_Face &face);
 		%feature("autodoc", "1");
-		TopoDS_Vertex GetNextVertex(const TopoDS_Edge &edge, const TopoDS_Vertex &vertex);
+		static		TopoDS_Vertex GetNextVertex(const TopoDS_Edge &edge, const TopoDS_Vertex &vertex);
 		%feature("autodoc", "1");
-		std::pair<int,TopoDS_Edge> GetPropagationEdge(SMESH_Mesh* aMesh, const TopoDS_Edge &anEdge, const TopoDS_Edge &fromEdge);
+		static		std::pair<int,TopoDS_Edge> GetPropagationEdge(SMESH_Mesh* aMesh, const TopoDS_Edge &anEdge, const TopoDS_Edge &fromEdge);
 		%feature("autodoc", "1");
-		bool FindMatchingNodesOnFaces(const TopoDS_Face &face1, SMESH_Mesh* mesh1, const TopoDS_Face &face2, SMESH_Mesh* mesh2, const TopTools_DataMapOfShapeShape &assocMap, std::map<const SMDS_MeshNode*,const SMDS_MeshNode*,std::less<const SMDS_MeshNode*>,std::allocator<std::pair<const SMDS_MeshNode* const, const SMDS_MeshNode*> > > & nodeIn2OutMap);
+		static		bool FindMatchingNodesOnFaces(const TopoDS_Face &face1, SMESH_Mesh* mesh1, const TopoDS_Face &face2, SMESH_Mesh* mesh2, const TopTools_DataMapOfShapeShape &assocMap, std::map<const SMDS_MeshNode*,const SMDS_MeshNode*,std::less<const SMDS_MeshNode*>,std::allocator<std::pair<const SMDS_MeshNode* const, const SMDS_MeshNode*> > > & nodeIn2OutMap);
 		%feature("autodoc", "1");
-		bool IsClosedEdge(const TopoDS_Edge &anEdge);
+		static		bool IsClosedEdge(const TopoDS_Edge &anEdge);
 		%feature("autodoc", "1");
-		TopoDS_Shape OuterShape(const TopoDS_Face &face, TopAbs_ShapeEnum );
+		static		TopoDS_Shape OuterShape(const TopoDS_Face &face, TopAbs_ShapeEnum );
 		%feature("autodoc", "1");
-		bool MakeComputed(SMESH_subMesh* sm, const int iterationNb=0);
+		static		bool MakeComputed(SMESH_subMesh* sm, const int iterationNb=0);
 		%feature("autodoc", "1");
-		int Count(const TopoDS_Shape &shape, const TopAbs_ShapeEnum type, const bool ignoreSame);
+		static		int Count(const TopoDS_Shape &shape, const TopAbs_ShapeEnum type, const bool ignoreSame);
 		%feature("autodoc", "1");
-		void SetEventListener(SMESH_subMesh* subMesh, TopoDS_Shape , SMESH_Mesh* srcMesh);
+		static		void SetEventListener(SMESH_subMesh* subMesh, TopoDS_Shape , SMESH_Mesh* srcMesh);
 		%feature("autodoc", "1");
-		bool IsBoundaryEdge(const TopoDS_Edge &edge, const TopoDS_Shape &edgeContainer, SMESH_Mesh & mesh);
+		static		bool IsBoundaryEdge(const TopoDS_Edge &edge, const TopoDS_Shape &edgeContainer, SMESH_Mesh & mesh);
 
 };
 %feature("shadow") StdMeshers_ProjectionUtils::~StdMeshers_ProjectionUtils %{
@@ -1796,7 +1796,7 @@ class StdMeshers_FaceSide {
 		%feature("autodoc", "1");
 		StdMeshers_FaceSide(const SMDS_MeshNode *theNode, const gp_Pnt2d thePnt2d, const StdMeshers_FaceSide *theSide);
 		%feature("autodoc", "1");
-		TSideVector GetFaceWires(const TopoDS_Face &theFace, SMESH_Mesh & theMesh, const bool theIgnoreMediumNodes, TError & theError);
+		static		TSideVector GetFaceWires(const TopoDS_Face &theFace, SMESH_Mesh & theMesh, const bool theIgnoreMediumNodes, TError & theError);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");

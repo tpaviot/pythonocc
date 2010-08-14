@@ -51,7 +51,7 @@ class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteM
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_ReadWriteModule & operator=(const RWHeaderSection_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWHeaderSection_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_RWHeaderSection_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_RWHeaderSection_ReadWriteModule {
@@ -89,7 +89,7 @@ class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModul
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_GeneralModule & operator=(const RWHeaderSection_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_RWHeaderSection_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_RWHeaderSection_GeneralModule {
@@ -193,7 +193,7 @@ class RWHeaderSection {
 		%feature("autodoc", "1");
 		RWHeaderSection();
 		%feature("autodoc", "1");
-		void Init();
+		static		void Init();
 
 };
 %feature("shadow") RWHeaderSection::~RWHeaderSection %{

@@ -51,7 +51,7 @@ class Handle_RWStepAP214_ReadWriteModule : public Handle_StepData_ReadWriteModul
 		%feature("autodoc", "1");
 		Handle_RWStepAP214_ReadWriteModule & operator=(const RWStepAP214_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWStepAP214_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_RWStepAP214_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_RWStepAP214_ReadWriteModule {
@@ -89,7 +89,7 @@ class Handle_RWStepAP214_GeneralModule : public Handle_StepData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_RWStepAP214_GeneralModule & operator=(const RWStepAP214_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		Handle_RWStepAP214_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_RWStepAP214_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_RWStepAP214_GeneralModule {
@@ -621,7 +621,7 @@ class RWStepAP214 {
 		%feature("autodoc", "1");
 		RWStepAP214();
 		%feature("autodoc", "1");
-		void Init();
+		static		void Init();
 
 };
 %feature("shadow") RWStepAP214::~RWStepAP214 %{

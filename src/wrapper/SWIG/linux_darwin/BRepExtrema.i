@@ -57,7 +57,7 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_UnCompatibleShape & operator=(const BRepExtrema_UnCompatibleShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepExtrema_UnCompatibleShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepExtrema_UnCompatibleShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepExtrema_UnCompatibleShape {
@@ -95,7 +95,7 @@ class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
@@ -228,7 +228,7 @@ class BRepExtrema_Poly {
 		BRepExtrema_Poly();
 		%feature("autodoc","Distance(const S1, const S2) -> Standard_Real");
 
-		Standard_Boolean Distance(const TopoDS_Shape &S1, const TopoDS_Shape &S2, gp_Pnt & P1, gp_Pnt & P2, Standard_Real &OutValue);
+		static		Standard_Boolean Distance(const TopoDS_Shape &S1, const TopoDS_Shape &S2, gp_Pnt & P1, gp_Pnt & P2, Standard_Real &OutValue);
 
 };
 %feature("shadow") BRepExtrema_Poly::~BRepExtrema_Poly %{
@@ -588,11 +588,11 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 		%feature("autodoc", "1");
 		BRepExtrema_UnCompatibleShape(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_BRepExtrema_UnCompatibleShape NewInstance(const char * aMessage);
+		static		Handle_BRepExtrema_UnCompatibleShape NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

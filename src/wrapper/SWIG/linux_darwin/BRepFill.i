@@ -57,7 +57,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public Ha
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape & operator=(const BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
@@ -95,7 +95,7 @@ class Handle_BRepFill_ListNodeOfListOfOffsetWire : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_BRepFill_ListNodeOfListOfOffsetWire & operator=(const BRepFill_ListNodeOfListOfOffsetWire *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_ListNodeOfListOfOffsetWire const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_ListNodeOfListOfOffsetWire const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_ListNodeOfListOfOffsetWire {
@@ -133,7 +133,7 @@ class Handle_BRepFill_SectionLaw : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepFill_SectionLaw & operator=(const BRepFill_SectionLaw *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_SectionLaw const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_SectionLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_SectionLaw {
@@ -171,7 +171,7 @@ class Handle_BRepFill_NSections : public Handle_BRepFill_SectionLaw {
 		%feature("autodoc", "1");
 		Handle_BRepFill_NSections & operator=(const BRepFill_NSections *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_NSections const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_NSections const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_NSections {
@@ -209,7 +209,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : pub
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape & operator=(const BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
@@ -247,7 +247,7 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfSection : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_BRepFill_SequenceNodeOfSequenceOfSection & operator=(const BRepFill_SequenceNodeOfSequenceOfSection *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfSection const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_SequenceNodeOfSequenceOfSection const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_SequenceNodeOfSequenceOfSection {
@@ -285,7 +285,7 @@ class Handle_BRepFill_LocationLaw : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepFill_LocationLaw & operator=(const BRepFill_LocationLaw *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_LocationLaw const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_LocationLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_LocationLaw {
@@ -323,7 +323,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public Handle_
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal & operator=(const BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
@@ -361,7 +361,7 @@ class Handle_BRepFill_CurveConstraint : public Handle_GeomPlate_CurveConstraint 
 		%feature("autodoc", "1");
 		Handle_BRepFill_CurveConstraint & operator=(const BRepFill_CurveConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_CurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_CurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_CurveConstraint {
@@ -399,7 +399,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public Han
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape & operator=(const BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
@@ -437,7 +437,7 @@ class Handle_BRepFill_PipeShell : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepFill_PipeShell & operator=(const BRepFill_PipeShell *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_PipeShell const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_PipeShell const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_PipeShell {
@@ -475,7 +475,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public Handle_T
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt & operator=(const BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
@@ -513,7 +513,7 @@ class Handle_BRepFill_ACRLaw : public Handle_BRepFill_LocationLaw {
 		%feature("autodoc", "1");
 		Handle_BRepFill_ACRLaw & operator=(const BRepFill_ACRLaw *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_ACRLaw const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_ACRLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_ACRLaw {
@@ -551,7 +551,7 @@ class Handle_BRepFill_ShapeLaw : public Handle_BRepFill_SectionLaw {
 		%feature("autodoc", "1");
 		Handle_BRepFill_ShapeLaw & operator=(const BRepFill_ShapeLaw *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_ShapeLaw const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_ShapeLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_ShapeLaw {
@@ -589,7 +589,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape {
@@ -627,7 +627,7 @@ class Handle_BRepFill_Edge3DLaw : public Handle_BRepFill_LocationLaw {
 		%feature("autodoc", "1");
 		Handle_BRepFill_Edge3DLaw & operator=(const BRepFill_Edge3DLaw *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_Edge3DLaw const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_Edge3DLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_Edge3DLaw {
@@ -665,7 +665,7 @@ class Handle_BRepFill_DraftLaw : public Handle_BRepFill_Edge3DLaw {
 		%feature("autodoc", "1");
 		Handle_BRepFill_DraftLaw & operator=(const BRepFill_DraftLaw *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DraftLaw const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_DraftLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_DraftLaw {
@@ -703,7 +703,7 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public Handle_T
 		%feature("autodoc", "1");
 		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder & operator=(const BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
@@ -741,7 +741,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape & operator=(const BRepFill_DataMapNodeOfDataMapOfNodeShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape {
@@ -779,7 +779,7 @@ class Handle_BRepFill_EdgeOnSurfLaw : public Handle_BRepFill_LocationLaw {
 		%feature("autodoc", "1");
 		Handle_BRepFill_EdgeOnSurfLaw & operator=(const BRepFill_EdgeOnSurfLaw *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_EdgeOnSurfLaw const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_EdgeOnSurfLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_EdgeOnSurfLaw {
@@ -817,7 +817,7 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder & operator=(const BRepFill_SequenceNodeOfSequenceOfFaceAndOrder *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
@@ -1331,25 +1331,25 @@ class BRepFill_MultiLineTool {
 		%feature("autodoc", "1");
 		BRepFill_MultiLineTool();
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const BRepFill_MultiLine &ML);
+		static		Standard_Real FirstParameter(const BRepFill_MultiLine &ML);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const BRepFill_MultiLine &ML);
+		static		Standard_Real LastParameter(const BRepFill_MultiLine &ML);
 		%feature("autodoc", "1");
-		Standard_Integer NbP2d(const BRepFill_MultiLine &ML);
+		static		Standard_Integer NbP2d(const BRepFill_MultiLine &ML);
 		%feature("autodoc", "1");
-		Standard_Integer NbP3d(const BRepFill_MultiLine &ML);
+		static		Standard_Integer NbP3d(const BRepFill_MultiLine &ML);
 		%feature("autodoc", "1");
-		void Value(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfPnt & tabPt);
+		static		void Value(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfPnt & tabPt);
 		%feature("autodoc", "1");
-		void Value(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfPnt2d & tabPt2d);
+		static		void Value(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfPnt2d & tabPt2d);
 		%feature("autodoc", "1");
-		void Value(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfPnt & tabPt, TColgp_Array1OfPnt2d & tabPt2d);
+		static		void Value(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfPnt & tabPt, TColgp_Array1OfPnt2d & tabPt2d);
 		%feature("autodoc", "1");
-		Standard_Boolean D1(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfVec & tabV);
+		static		Standard_Boolean D1(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfVec & tabV);
 		%feature("autodoc", "1");
-		Standard_Boolean D1(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfVec2d & tabV2d);
+		static		Standard_Boolean D1(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfVec2d & tabV2d);
 		%feature("autodoc", "1");
-		Standard_Boolean D1(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
+		static		Standard_Boolean D1(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
 
 };
 %feature("shadow") BRepFill_MultiLineTool::~BRepFill_MultiLineTool %{
@@ -2266,15 +2266,15 @@ class BRepFill {
 		%feature("autodoc", "1");
 		BRepFill();
 		%feature("autodoc", "1");
-		TopoDS_Face Face(const TopoDS_Edge &Edge1, const TopoDS_Edge &Edge2);
+		static		TopoDS_Face Face(const TopoDS_Edge &Edge1, const TopoDS_Edge &Edge2);
 		%feature("autodoc", "1");
-		TopoDS_Shell Shell(const TopoDS_Wire &Wire1, const TopoDS_Wire &Wire2);
+		static		TopoDS_Shell Shell(const TopoDS_Wire &Wire1, const TopoDS_Wire &Wire2);
 		%feature("autodoc", "1");
-		void Axe(const TopoDS_Shape &Spine, const TopoDS_Wire &Profile, gp_Ax3 & AxeProf, Standard_Boolean & ProfOnSpine, const Standard_Real Tol);
+		static		void Axe(const TopoDS_Shape &Spine, const TopoDS_Wire &Profile, gp_Ax3 & AxeProf, Standard_Boolean & ProfOnSpine, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void ComputeACR(const TopoDS_Wire &wire, TColStd_Array1OfReal & ACR);
+		static		void ComputeACR(const TopoDS_Wire &wire, TColStd_Array1OfReal & ACR);
 		%feature("autodoc", "1");
-		TopoDS_Wire InsertACR(const TopoDS_Wire &wire, const TColStd_Array1OfReal &ACRcuts, const Standard_Real prec);
+		static		TopoDS_Wire InsertACR(const TopoDS_Wire &wire, const TColStd_Array1OfReal &ACRcuts, const Standard_Real prec);
 
 };
 %feature("shadow") BRepFill::~BRepFill %{

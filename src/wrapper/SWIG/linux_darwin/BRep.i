@@ -51,7 +51,7 @@ class Handle_BRep_ListNodeOfListOfCurveRepresentation : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfCurveRepresentation & operator=(const BRep_ListNodeOfListOfCurveRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_ListNodeOfListOfCurveRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_ListNodeOfListOfCurveRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_ListNodeOfListOfCurveRepresentation {
@@ -89,7 +89,7 @@ class Handle_BRep_CurveRepresentation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRep_CurveRepresentation & operator=(const BRep_CurveRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_CurveRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_CurveRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_CurveRepresentation {
@@ -127,7 +127,7 @@ class Handle_BRep_GCurve : public Handle_BRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_GCurve & operator=(const BRep_GCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_GCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_GCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_GCurve {
@@ -165,7 +165,7 @@ class Handle_BRep_CurveOnSurface : public Handle_BRep_GCurve {
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOnSurface & operator=(const BRep_CurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_CurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_CurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_CurveOnSurface {
@@ -203,7 +203,7 @@ class Handle_BRep_Curve3D : public Handle_BRep_GCurve {
 		%feature("autodoc", "1");
 		Handle_BRep_Curve3D & operator=(const BRep_Curve3D *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_Curve3D const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_Curve3D const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_Curve3D {
@@ -241,7 +241,7 @@ class Handle_BRep_PointRepresentation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRep_PointRepresentation & operator=(const BRep_PointRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PointRepresentation {
@@ -279,7 +279,7 @@ class Handle_BRep_Polygon3D : public Handle_BRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_Polygon3D & operator=(const BRep_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_Polygon3D const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_Polygon3D const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_Polygon3D {
@@ -317,7 +317,7 @@ class Handle_BRep_TVertex : public Handle_TopoDS_TVertex {
 		%feature("autodoc", "1");
 		Handle_BRep_TVertex & operator=(const BRep_TVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_TVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_TVertex const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_TVertex {
@@ -355,7 +355,7 @@ class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnSurface & operator=(const BRep_PolygonOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PolygonOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PolygonOnSurface {
@@ -393,7 +393,7 @@ class Handle_BRep_PolygonOnClosedSurface : public Handle_BRep_PolygonOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnClosedSurface & operator=(const BRep_PolygonOnClosedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnClosedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PolygonOnClosedSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PolygonOnClosedSurface {
@@ -431,7 +431,7 @@ class Handle_BRep_PointsOnSurface : public Handle_BRep_PointRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_PointsOnSurface & operator=(const BRep_PointsOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_PointsOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointsOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PointsOnSurface {
@@ -469,7 +469,7 @@ class Handle_BRep_PointOnSurface : public Handle_BRep_PointsOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnSurface & operator=(const BRep_PointOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_PointOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PointOnSurface {
@@ -507,7 +507,7 @@ class Handle_BRep_PointOnCurve : public Handle_BRep_PointRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnCurve & operator=(const BRep_PointOnCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointOnCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PointOnCurve {
@@ -545,7 +545,7 @@ class Handle_BRep_TEdge : public Handle_TopoDS_TEdge {
 		%feature("autodoc", "1");
 		Handle_BRep_TEdge & operator=(const BRep_TEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_TEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_TEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_TEdge {
@@ -583,7 +583,7 @@ class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfPointRepresentation & operator=(const BRep_ListNodeOfListOfPointRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_ListNodeOfListOfPointRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_ListNodeOfListOfPointRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_ListNodeOfListOfPointRepresentation {
@@ -621,7 +621,7 @@ class Handle_BRep_CurveOn2Surfaces : public Handle_BRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOn2Surfaces & operator=(const BRep_CurveOn2Surfaces *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_CurveOn2Surfaces const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_CurveOn2Surfaces const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_CurveOn2Surfaces {
@@ -659,7 +659,7 @@ class Handle_BRep_PolygonOnTriangulation : public Handle_BRep_CurveRepresentatio
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnTriangulation & operator=(const BRep_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PolygonOnTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PolygonOnTriangulation {
@@ -697,7 +697,7 @@ class Handle_BRep_PolygonOnClosedTriangulation : public Handle_BRep_PolygonOnTri
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnClosedTriangulation & operator=(const BRep_PolygonOnClosedTriangulation *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnClosedTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PolygonOnClosedTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PolygonOnClosedTriangulation {
@@ -735,7 +735,7 @@ class Handle_BRep_CurveOnClosedSurface : public Handle_BRep_CurveOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOnClosedSurface & operator=(const BRep_CurveOnClosedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_CurveOnClosedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_CurveOnClosedSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_CurveOnClosedSurface {
@@ -773,7 +773,7 @@ class Handle_BRep_TFace : public Handle_TopoDS_TFace {
 		%feature("autodoc", "1");
 		Handle_BRep_TFace & operator=(const BRep_TFace *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_TFace const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_TFace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_TFace {
@@ -811,7 +811,7 @@ class Handle_BRep_PointOnCurveOnSurface : public Handle_BRep_PointsOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnCurveOnSurface & operator=(const BRep_PointOnCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointOnCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PointOnCurveOnSurface {
@@ -1366,112 +1366,112 @@ class BRep_Tool {
 		%feature("autodoc", "1");
 		BRep_Tool();
 		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const TopoDS_Shape &S);
+		static		Standard_Boolean IsClosed(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Surface(const TopoDS_Face &F, TopLoc_Location & L);
+		static		const Handle_Geom_Surface & Surface(const TopoDS_Face &F, TopLoc_Location & L);
 		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface(const TopoDS_Face &F);
+		static		Handle_Geom_Surface Surface(const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		const Handle_Poly_Triangulation & Triangulation(const TopoDS_Face &F, TopLoc_Location & L);
+		static		const Handle_Poly_Triangulation & Triangulation(const TopoDS_Face &F, TopLoc_Location & L);
 		%feature("autodoc", "1");
-		Standard_Real Tolerance(const TopoDS_Face &F);
+		static		Standard_Real Tolerance(const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		Standard_Boolean NaturalRestriction(const TopoDS_Face &F);
+		static		Standard_Boolean NaturalRestriction(const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		Standard_Boolean IsGeometric(const TopoDS_Edge &E);
+		static		Standard_Boolean IsGeometric(const TopoDS_Edge &E);
 		%feature("autodoc","Curve(const E) -> [Standard_Real, Standard_Real]");
 
-		const Handle_Geom_Curve & Curve(const TopoDS_Edge &E, TopLoc_Location & L, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		const Handle_Geom_Curve & Curve(const TopoDS_Edge &E, TopLoc_Location & L, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","Curve(const E) -> [Standard_Real, Standard_Real]");
 
-		Handle_Geom_Curve Curve(const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		Handle_Geom_Curve Curve(const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		const Handle_Poly_Polygon3D & Polygon3D(const TopoDS_Edge &E, TopLoc_Location & L);
+		static		const Handle_Poly_Polygon3D & Polygon3D(const TopoDS_Edge &E, TopLoc_Location & L);
 		%feature("autodoc","CurveOnSurface(const E, const F) -> [Standard_Real, Standard_Real]");
 
-		Handle_Geom2d_Curve CurveOnSurface(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		Handle_Geom2d_Curve CurveOnSurface(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","CurveOnSurface(const E, const S, const L) -> [Standard_Real, Standard_Real]");
 
-		Handle_Geom2d_Curve CurveOnSurface(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		Handle_Geom2d_Curve CurveOnSurface(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","CurveOnSurface(const E) -> [Standard_Real, Standard_Real]");
 
-		void CurveOnSurface(const TopoDS_Edge &E, Handle_Geom2d_Curve & C, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void CurveOnSurface(const TopoDS_Edge &E, Handle_Geom2d_Curve & C, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","CurveOnSurface(const E, Standard_Integer Index) -> [Standard_Real, Standard_Real]");
 
-		void CurveOnSurface(const TopoDS_Edge &E, Handle_Geom2d_Curve & C, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Integer Index);
+		static		void CurveOnSurface(const TopoDS_Edge &E, Handle_Geom2d_Curve & C, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon2D PolygonOnSurface(const TopoDS_Edge &E, const TopoDS_Face &F);
+		static		Handle_Poly_Polygon2D PolygonOnSurface(const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon2D PolygonOnSurface(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		static		Handle_Poly_Polygon2D PolygonOnSurface(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
 		%feature("autodoc", "1");
-		void PolygonOnSurface(const TopoDS_Edge &E, Handle_Poly_Polygon2D & C, Handle_Geom_Surface & S, TopLoc_Location & L);
+		static		void PolygonOnSurface(const TopoDS_Edge &E, Handle_Poly_Polygon2D & C, Handle_Geom_Surface & S, TopLoc_Location & L);
 		%feature("autodoc", "1");
-		void PolygonOnSurface(const TopoDS_Edge &E, Handle_Poly_Polygon2D & C, Handle_Geom_Surface & S, TopLoc_Location & L, const Standard_Integer Index);
+		static		void PolygonOnSurface(const TopoDS_Edge &E, Handle_Poly_Polygon2D & C, Handle_Geom_Surface & S, TopLoc_Location & L, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const Handle_Poly_PolygonOnTriangulation & PolygonOnTriangulation(const TopoDS_Edge &E, const Handle_Poly_Triangulation &T, const TopLoc_Location &L);
+		static		const Handle_Poly_PolygonOnTriangulation & PolygonOnTriangulation(const TopoDS_Edge &E, const Handle_Poly_Triangulation &T, const TopLoc_Location &L);
 		%feature("autodoc", "1");
-		void PolygonOnTriangulation(const TopoDS_Edge &E, Handle_Poly_PolygonOnTriangulation & P, Handle_Poly_Triangulation & T, TopLoc_Location & L);
+		static		void PolygonOnTriangulation(const TopoDS_Edge &E, Handle_Poly_PolygonOnTriangulation & P, Handle_Poly_Triangulation & T, TopLoc_Location & L);
 		%feature("autodoc", "1");
-		void PolygonOnTriangulation(const TopoDS_Edge &E, Handle_Poly_PolygonOnTriangulation & P, Handle_Poly_Triangulation & T, TopLoc_Location & L, const Standard_Integer Index);
+		static		void PolygonOnTriangulation(const TopoDS_Edge &E, Handle_Poly_PolygonOnTriangulation & P, Handle_Poly_Triangulation & T, TopLoc_Location & L, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const TopoDS_Edge &E, const TopoDS_Face &F);
+		static		Standard_Boolean IsClosed(const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		static		Standard_Boolean IsClosed(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
 		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const TopoDS_Edge &E, const Handle_Poly_Triangulation &T);
+		static		Standard_Boolean IsClosed(const TopoDS_Edge &E, const Handle_Poly_Triangulation &T);
 		%feature("autodoc", "1");
-		Standard_Real Tolerance(const TopoDS_Edge &E);
+		static		Standard_Real Tolerance(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
-		Standard_Boolean SameParameter(const TopoDS_Edge &E);
+		static		Standard_Boolean SameParameter(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
-		Standard_Boolean SameRange(const TopoDS_Edge &E);
+		static		Standard_Boolean SameRange(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
-		Standard_Boolean Degenerated(const TopoDS_Edge &E);
+		static		Standard_Boolean Degenerated(const TopoDS_Edge &E);
 		%feature("autodoc","Range(const E) -> [Standard_Real, Standard_Real]");
 
-		void Range(const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Range(const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","Range(const E, const S, const L) -> [Standard_Real, Standard_Real]");
 
-		void Range(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Range(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","Range(const E, const F) -> [Standard_Real, Standard_Real]");
 
-		void Range(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Range(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void UVPoints(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, gp_Pnt2d & PFirst, gp_Pnt2d & PLast);
+		static		void UVPoints(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, gp_Pnt2d & PFirst, gp_Pnt2d & PLast);
 		%feature("autodoc", "1");
-		void UVPoints(const TopoDS_Edge &E, const TopoDS_Face &F, gp_Pnt2d & PFirst, gp_Pnt2d & PLast);
+		static		void UVPoints(const TopoDS_Edge &E, const TopoDS_Face &F, gp_Pnt2d & PFirst, gp_Pnt2d & PLast);
 		%feature("autodoc", "1");
-		void SetUVPoints(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, const gp_Pnt2d &PFirst, const gp_Pnt2d &PLast);
+		static		void SetUVPoints(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, const gp_Pnt2d &PFirst, const gp_Pnt2d &PLast);
 		%feature("autodoc", "1");
-		void SetUVPoints(const TopoDS_Edge &E, const TopoDS_Face &F, const gp_Pnt2d &PFirst, const gp_Pnt2d &PLast);
+		static		void SetUVPoints(const TopoDS_Edge &E, const TopoDS_Face &F, const gp_Pnt2d &PFirst, const gp_Pnt2d &PLast);
 		%feature("autodoc", "1");
-		const Bnd_Box2d & UVBox(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		static		const Bnd_Box2d & UVBox(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
 		%feature("autodoc", "1");
-		const Bnd_Box2d & UVBox(const TopoDS_Edge &E, const TopoDS_Face &F);
+		static		const Bnd_Box2d & UVBox(const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		Bnd_Box2d & ChangeUVBox(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		static		Bnd_Box2d & ChangeUVBox(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
 		%feature("autodoc", "1");
-		Bnd_Box2d & ChangeUVBox(const TopoDS_Edge &E, const TopoDS_Face &F);
+		static		Bnd_Box2d & ChangeUVBox(const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		Standard_Boolean HasContinuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2);
+		static		Standard_Boolean HasContinuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2);
 		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2);
+		static		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2);
 		%feature("autodoc", "1");
-		Standard_Boolean HasContinuity(const TopoDS_Edge &E, const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const TopLoc_Location &L1, const TopLoc_Location &L2);
+		static		Standard_Boolean HasContinuity(const TopoDS_Edge &E, const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const TopLoc_Location &L1, const TopLoc_Location &L2);
 		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const TopLoc_Location &L1, const TopLoc_Location &L2);
+		static		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const TopLoc_Location &L1, const TopLoc_Location &L2);
 		%feature("autodoc", "1");
-		gp_Pnt Pnt(const TopoDS_Vertex &V);
+		static		gp_Pnt Pnt(const TopoDS_Vertex &V);
 		%feature("autodoc", "1");
-		Standard_Real Tolerance(const TopoDS_Vertex &V);
+		static		Standard_Real Tolerance(const TopoDS_Vertex &V);
 		%feature("autodoc", "1");
-		Standard_Real Parameter(const TopoDS_Vertex &V, const TopoDS_Edge &E);
+		static		Standard_Real Parameter(const TopoDS_Vertex &V, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
-		Standard_Real Parameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, const TopoDS_Face &F);
+		static		Standard_Real Parameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		Standard_Real Parameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		static		Standard_Real Parameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
 		%feature("autodoc", "1");
-		gp_Pnt2d Parameters(const TopoDS_Vertex &V, const TopoDS_Face &F);
+		static		gp_Pnt2d Parameters(const TopoDS_Vertex &V, const TopoDS_Face &F);
 
 };
 %feature("shadow") BRep_Tool::~BRep_Tool %{

@@ -51,7 +51,7 @@ class Handle_BinMDF_ADriver : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriver & operator=(const BinMDF_ADriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDF_ADriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_ADriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_ADriver {
@@ -89,7 +89,7 @@ class Handle_BinMDF_ReferenceDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDF_ReferenceDriver & operator=(const BinMDF_ReferenceDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDF_ReferenceDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_ReferenceDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_ReferenceDriver {
@@ -127,7 +127,7 @@ class Handle_BinMDF_DataMapNodeOfStringIdMap : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_BinMDF_DataMapNodeOfStringIdMap & operator=(const BinMDF_DataMapNodeOfStringIdMap *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfStringIdMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_DataMapNodeOfStringIdMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_DataMapNodeOfStringIdMap {
@@ -165,7 +165,7 @@ class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriverTable & operator=(const BinMDF_ADriverTable *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDF_ADriverTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_ADriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_ADriverTable {
@@ -203,7 +203,7 @@ class Handle_BinMDF_TagSourceDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDF_TagSourceDriver & operator=(const BinMDF_TagSourceDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDF_TagSourceDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_TagSourceDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_TagSourceDriver {
@@ -241,7 +241,7 @@ class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_BinMDF_DoubleMapNodeOfTypeIdMap & operator=(const BinMDF_DoubleMapNodeOfTypeIdMap *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDF_DoubleMapNodeOfTypeIdMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_DoubleMapNodeOfTypeIdMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
@@ -279,7 +279,7 @@ class Handle_BinMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_BinMDF_DataMapNodeOfTypeADriverMap & operator=(const BinMDF_DataMapNodeOfTypeADriverMap *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfTypeADriverMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_DataMapNodeOfTypeADriverMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_DataMapNodeOfTypeADriverMap {
@@ -424,7 +424,7 @@ class BinMDF {
 		%feature("autodoc", "1");
 		BinMDF();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
 };
 %feature("shadow") BinMDF::~BinMDF %{

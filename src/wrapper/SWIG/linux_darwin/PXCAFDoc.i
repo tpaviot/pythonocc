@@ -51,7 +51,7 @@ class Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence : public Handle_PMMgt_PManaged 
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence & operator=(const PXCAFDoc_SeqNodeOfGraphNodeSequence *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence {
@@ -89,7 +89,7 @@ class Handle_PXCAFDoc_Location : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Location & operator=(const PXCAFDoc_Location *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Location const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_Location const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_Location {
@@ -127,7 +127,7 @@ class Handle_PXCAFDoc_GraphNodeSequence : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_GraphNodeSequence & operator=(const PXCAFDoc_GraphNodeSequence *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_GraphNodeSequence const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_GraphNodeSequence const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_GraphNodeSequence {
@@ -165,7 +165,7 @@ class Handle_PXCAFDoc_GraphNode : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_GraphNode & operator=(const PXCAFDoc_GraphNode *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_GraphNode const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_GraphNode const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_GraphNode {
@@ -203,7 +203,7 @@ class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_DocumentTool & operator=(const PXCAFDoc_DocumentTool *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_DocumentTool const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_DocumentTool {
@@ -241,7 +241,7 @@ class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_ShapeTool & operator=(const PXCAFDoc_ShapeTool *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ShapeTool const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_ShapeTool const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_ShapeTool {
@@ -279,7 +279,7 @@ class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Volume & operator=(const PXCAFDoc_Volume *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Volume const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_Volume const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_Volume {
@@ -317,7 +317,7 @@ class Handle_PXCAFDoc_Area : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Area & operator=(const PXCAFDoc_Area *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Area const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_Area const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_Area {
@@ -355,7 +355,7 @@ class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_LayerTool & operator=(const PXCAFDoc_LayerTool *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_LayerTool const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_LayerTool const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_LayerTool {
@@ -393,7 +393,7 @@ class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_ColorTool & operator=(const PXCAFDoc_ColorTool *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ColorTool const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_ColorTool const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_ColorTool {
@@ -431,7 +431,7 @@ class Handle_PXCAFDoc_Color : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Color & operator=(const PXCAFDoc_Color *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Color const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_Color const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_Color {
@@ -469,7 +469,7 @@ class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Centroid & operator=(const PXCAFDoc_Centroid *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Centroid const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_Centroid const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_Centroid {

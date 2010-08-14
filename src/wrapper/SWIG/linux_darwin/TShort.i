@@ -51,7 +51,7 @@ class Handle_TShort_HSequenceOfShortReal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TShort_HSequenceOfShortReal & operator=(const TShort_HSequenceOfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TShort_HSequenceOfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TShort_HSequenceOfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TShort_HSequenceOfShortReal {
@@ -89,7 +89,7 @@ class Handle_TShort_HArray1OfShortReal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TShort_HArray1OfShortReal & operator=(const TShort_HArray1OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TShort_HArray1OfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TShort_HArray1OfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TShort_HArray1OfShortReal {
@@ -127,7 +127,7 @@ class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_TShort_SequenceNodeOfSequenceOfShortReal & operator=(const TShort_SequenceNodeOfSequenceOfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TShort_SequenceNodeOfSequenceOfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TShort_SequenceNodeOfSequenceOfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TShort_SequenceNodeOfSequenceOfShortReal {
@@ -165,7 +165,7 @@ class Handle_TShort_HArray2OfShortReal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TShort_HArray2OfShortReal & operator=(const TShort_HArray2OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TShort_HArray2OfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TShort_HArray2OfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TShort_HArray2OfShortReal {

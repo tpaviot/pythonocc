@@ -51,7 +51,7 @@ class Handle_BinMXCAFDoc_ColorToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorToolDriver & operator=(const BinMXCAFDoc_ColorToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ColorToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_ColorToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_ColorToolDriver {
@@ -89,7 +89,7 @@ class Handle_BinMXCAFDoc_DocumentToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_DocumentToolDriver & operator=(const BinMXCAFDoc_DocumentToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_DocumentToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_DocumentToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_DocumentToolDriver {
@@ -127,7 +127,7 @@ class Handle_BinMXCAFDoc_GraphNodeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_GraphNodeDriver & operator=(const BinMXCAFDoc_GraphNodeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_GraphNodeDriver {
@@ -165,7 +165,7 @@ class Handle_BinMXCAFDoc_VolumeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_VolumeDriver & operator=(const BinMXCAFDoc_VolumeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_VolumeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_VolumeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_VolumeDriver {
@@ -203,7 +203,7 @@ class Handle_BinMXCAFDoc_ShapeToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ShapeToolDriver & operator=(const BinMXCAFDoc_ShapeToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ShapeToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_ShapeToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_ShapeToolDriver {
@@ -241,7 +241,7 @@ class Handle_BinMXCAFDoc_CentroidDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_CentroidDriver & operator=(const BinMXCAFDoc_CentroidDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_CentroidDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_CentroidDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_CentroidDriver {
@@ -279,7 +279,7 @@ class Handle_BinMXCAFDoc_LocationDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LocationDriver & operator=(const BinMXCAFDoc_LocationDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_LocationDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_LocationDriver {
@@ -317,7 +317,7 @@ class Handle_BinMXCAFDoc_ColorDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorDriver & operator=(const BinMXCAFDoc_ColorDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_ColorDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_ColorDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_ColorDriver {
@@ -355,7 +355,7 @@ class Handle_BinMXCAFDoc_AreaDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_AreaDriver & operator=(const BinMXCAFDoc_AreaDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_AreaDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_AreaDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_AreaDriver {
@@ -393,7 +393,7 @@ class Handle_BinMXCAFDoc_LayerToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LayerToolDriver & operator=(const BinMXCAFDoc_LayerToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LayerToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_LayerToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_LayerToolDriver {
@@ -751,7 +751,7 @@ class BinMXCAFDoc {
 		%feature("autodoc", "1");
 		BinMXCAFDoc();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMsgDrv);
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMsgDrv);
 
 };
 %feature("shadow") BinMXCAFDoc::~BinMXCAFDoc %{
@@ -782,9 +782,9 @@ class BinMXCAFDoc_LocationDriver : public BinMDF_ADriver {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Translate(const BinObjMgt_Persistent &theSource, TopLoc_Location & theLoc, BinObjMgt_RRelocationTable & theMap);
+		static		Standard_Boolean Translate(const BinObjMgt_Persistent &theSource, TopLoc_Location & theLoc, BinObjMgt_RRelocationTable & theMap);
 		%feature("autodoc", "1");
-		void Translate(const TopLoc_Location &theLoc, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theMap);
+		static		void Translate(const TopLoc_Location &theLoc, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theMap);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

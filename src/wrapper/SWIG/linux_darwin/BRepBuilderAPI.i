@@ -105,7 +105,7 @@ class Handle_BRepBuilderAPI_Sewing : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepBuilderAPI_Sewing & operator=(const BRepBuilderAPI_Sewing *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBuilderAPI_Sewing const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepBuilderAPI_Sewing const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepBuilderAPI_Sewing {
@@ -1034,13 +1034,13 @@ class BRepBuilderAPI {
 		%feature("autodoc", "1");
 		BRepBuilderAPI();
 		%feature("autodoc", "1");
-		void Plane(const Handle_Geom_Plane &P);
+		static		void Plane(const Handle_Geom_Plane &P);
 		%feature("autodoc", "1");
-		const Handle_Geom_Plane & Plane();
+		static		const Handle_Geom_Plane & Plane();
 		%feature("autodoc", "1");
-		void Precision(const Standard_Real P);
+		static		void Precision(const Standard_Real P);
 		%feature("autodoc", "1");
-		Standard_Real Precision();
+		static		Standard_Real Precision();
 
 };
 %feature("shadow") BRepBuilderAPI::~BRepBuilderAPI %{

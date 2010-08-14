@@ -241,9 +241,9 @@ class IntCurve_ProjectOnPConicTool {
 		%feature("autodoc", "1");
 		IntCurve_ProjectOnPConicTool();
 		%feature("autodoc", "1");
-		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
+		static		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
+		static		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 
 };
 %feature("shadow") IntCurve_ProjectOnPConicTool::~IntCurve_ProjectOnPConicTool %{
@@ -315,17 +315,17 @@ class IntCurve_PConicTool {
 		%feature("autodoc", "1");
 		IntCurve_PConicTool();
 		%feature("autodoc", "1");
-		Standard_Real EpsX(const IntCurve_PConic &C);
+		static		Standard_Real EpsX(const IntCurve_PConic &C);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const IntCurve_PConic &C);
+		static		Standard_Integer NbSamples(const IntCurve_PConic &C);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const IntCurve_PConic &C, const Standard_Real U0, const Standard_Real U1);
+		static		Standard_Integer NbSamples(const IntCurve_PConic &C, const Standard_Real U0, const Standard_Real U1);
 		%feature("autodoc", "1");
-		gp_Pnt2d Value(const IntCurve_PConic &C, const Standard_Real X);
+		static		gp_Pnt2d Value(const IntCurve_PConic &C, const Standard_Real X);
 		%feature("autodoc", "1");
-		void D1(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
+		static		void D1(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
 		%feature("autodoc", "1");
-		void D2(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
+		static		void D2(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
 
 };
 %feature("shadow") IntCurve_PConicTool::~IntCurve_PConicTool %{

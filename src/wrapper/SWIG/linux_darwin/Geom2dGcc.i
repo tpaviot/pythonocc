@@ -443,40 +443,40 @@ class Geom2dGcc_MyCurveTool {
 		%feature("autodoc", "1");
 		Geom2dGcc_MyCurveTool();
 		%feature("autodoc", "1");
-		GeomAbs_CurveType TheType(const Adaptor3d_OffsetCurve &C);
+		static		GeomAbs_CurveType TheType(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
-		gp_Lin2d Line(const Adaptor3d_OffsetCurve &C);
+		static		gp_Lin2d Line(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
-		gp_Circ2d Circle(const Adaptor3d_OffsetCurve &C);
+		static		gp_Circ2d Circle(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
-		gp_Elips2d Ellipse(const Adaptor3d_OffsetCurve &C);
+		static		gp_Elips2d Ellipse(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
-		gp_Parab2d Parabola(const Adaptor3d_OffsetCurve &C);
+		static		gp_Parab2d Parabola(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
-		gp_Hypr2d Hyperbola(const Adaptor3d_OffsetCurve &C);
+		static		gp_Hypr2d Hyperbola(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Adaptor3d_OffsetCurve &C);
+		static		Standard_Real FirstParameter(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Adaptor3d_OffsetCurve &C);
+		static		Standard_Real LastParameter(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
-		Standard_Real EpsX(const Adaptor3d_OffsetCurve &C, const Standard_Real Tol);
+		static		Standard_Real EpsX(const Adaptor3d_OffsetCurve &C, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const Adaptor3d_OffsetCurve &C);
+		static		Standard_Integer NbSamples(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
-		gp_Pnt2d Value(const Adaptor3d_OffsetCurve &C, const Standard_Real X);
+		static		gp_Pnt2d Value(const Adaptor3d_OffsetCurve &C, const Standard_Real X);
 		%feature("autodoc", "1");
-		void D1(const Adaptor3d_OffsetCurve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
+		static		void D1(const Adaptor3d_OffsetCurve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
 		%feature("autodoc", "1");
-		void D2(const Adaptor3d_OffsetCurve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
+		static		void D2(const Adaptor3d_OffsetCurve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
 		%feature("autodoc", "1");
-		Standard_Boolean IsComposite(const Adaptor3d_OffsetCurve &C);
+		static		Standard_Boolean IsComposite(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
-		Standard_Integer GetIntervals(const Adaptor3d_OffsetCurve &C);
+		static		Standard_Integer GetIntervals(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc","GetInterval(const C, Standard_Integer Index) -> [Standard_Real, Standard_Real]");
 
-		void GetInterval(const Adaptor3d_OffsetCurve &C, const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void GetInterval(const Adaptor3d_OffsetCurve &C, const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void SetCurrentInterval(Adaptor3d_OffsetCurve & C, const Standard_Integer Index);
+		static		void SetCurrentInterval(Adaptor3d_OffsetCurve & C, const Standard_Integer Index);
 
 };
 %feature("shadow") Geom2dGcc_MyCurveTool::~Geom2dGcc_MyCurveTool %{
@@ -1020,21 +1020,21 @@ class Geom2dGcc_CurveTool {
 		%feature("autodoc", "1");
 		Geom2dGcc_CurveTool();
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Geom2dAdaptor_Curve &C);
+		static		Standard_Real FirstParameter(const Geom2dAdaptor_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Geom2dAdaptor_Curve &C);
+		static		Standard_Real LastParameter(const Geom2dAdaptor_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Real EpsX(const Geom2dAdaptor_Curve &C, const Standard_Real Tol);
+		static		Standard_Real EpsX(const Geom2dAdaptor_Curve &C, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const Geom2dAdaptor_Curve &C);
+		static		Standard_Integer NbSamples(const Geom2dAdaptor_Curve &C);
 		%feature("autodoc", "1");
-		gp_Pnt2d Value(const Geom2dAdaptor_Curve &C, const Standard_Real X);
+		static		gp_Pnt2d Value(const Geom2dAdaptor_Curve &C, const Standard_Real X);
 		%feature("autodoc", "1");
-		void D1(const Geom2dAdaptor_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
+		static		void D1(const Geom2dAdaptor_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
 		%feature("autodoc", "1");
-		void D2(const Geom2dAdaptor_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
+		static		void D2(const Geom2dAdaptor_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
 		%feature("autodoc", "1");
-		void D3(const Geom2dAdaptor_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N, gp_Vec2d & dN);
+		static		void D3(const Geom2dAdaptor_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N, gp_Vec2d & dN);
 
 };
 %feature("shadow") Geom2dGcc_CurveTool::~Geom2dGcc_CurveTool %{
@@ -1104,13 +1104,13 @@ class Geom2dGcc {
 		%feature("autodoc", "1");
 		Geom2dGcc();
 		%feature("autodoc", "1");
-		Geom2dGcc_QualifiedCurve Unqualified(const Geom2dAdaptor_Curve &Obj);
+		static		Geom2dGcc_QualifiedCurve Unqualified(const Geom2dAdaptor_Curve &Obj);
 		%feature("autodoc", "1");
-		Geom2dGcc_QualifiedCurve Enclosing(const Geom2dAdaptor_Curve &Obj);
+		static		Geom2dGcc_QualifiedCurve Enclosing(const Geom2dAdaptor_Curve &Obj);
 		%feature("autodoc", "1");
-		Geom2dGcc_QualifiedCurve Enclosed(const Geom2dAdaptor_Curve &Obj);
+		static		Geom2dGcc_QualifiedCurve Enclosed(const Geom2dAdaptor_Curve &Obj);
 		%feature("autodoc", "1");
-		Geom2dGcc_QualifiedCurve Outside(const Geom2dAdaptor_Curve &Obj);
+		static		Geom2dGcc_QualifiedCurve Outside(const Geom2dAdaptor_Curve &Obj);
 
 };
 %feature("shadow") Geom2dGcc::~Geom2dGcc %{

@@ -51,7 +51,7 @@ class Handle_StdDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentSt
 		%feature("autodoc", "1");
 		Handle_StdDrivers_DocumentStorageDriver & operator=(const StdDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdDrivers_DocumentStorageDriver {
@@ -89,7 +89,7 @@ class Handle_StdDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Document
 		%feature("autodoc", "1");
 		Handle_StdDrivers_DocumentRetrievalDriver & operator=(const StdDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdDrivers_DocumentRetrievalDriver {
@@ -119,7 +119,7 @@ class StdDrivers {
 		%feature("autodoc", "1");
 		StdDrivers();
 		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
+		static		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 
 };
 %feature("shadow") StdDrivers::~StdDrivers %{

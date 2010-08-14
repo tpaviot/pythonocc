@@ -51,7 +51,7 @@ class Handle_StdFail_UndefinedValue : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedValue & operator=(const StdFail_UndefinedValue *anItem);
 		%feature("autodoc", "1");
-		Handle_StdFail_UndefinedValue const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdFail_UndefinedValue const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdFail_UndefinedValue {
@@ -89,7 +89,7 @@ class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_StdFail_NotDone & operator=(const StdFail_NotDone *anItem);
 		%feature("autodoc", "1");
-		Handle_StdFail_NotDone const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdFail_NotDone const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdFail_NotDone {
@@ -127,7 +127,7 @@ class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedDerivative & operator=(const StdFail_UndefinedDerivative *anItem);
 		%feature("autodoc", "1");
-		Handle_StdFail_UndefinedDerivative const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdFail_UndefinedDerivative const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdFail_UndefinedDerivative {
@@ -165,7 +165,7 @@ class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_StdFail_InfiniteSolutions & operator=(const StdFail_InfiniteSolutions *anItem);
 		%feature("autodoc", "1");
-		Handle_StdFail_InfiniteSolutions const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdFail_InfiniteSolutions const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdFail_InfiniteSolutions {
@@ -203,7 +203,7 @@ class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_StdFail_Undefined & operator=(const StdFail_Undefined *anItem);
 		%feature("autodoc", "1");
-		Handle_StdFail_Undefined const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdFail_Undefined const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdFail_Undefined {
@@ -235,11 +235,11 @@ class StdFail_InfiniteSolutions : public Standard_Failure {
 		%feature("autodoc", "1");
 		StdFail_InfiniteSolutions(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_StdFail_InfiniteSolutions NewInstance(const char * aMessage);
+		static		Handle_StdFail_InfiniteSolutions NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -278,11 +278,11 @@ class StdFail_UndefinedDerivative : public Standard_DomainError {
 		%feature("autodoc", "1");
 		StdFail_UndefinedDerivative(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_StdFail_UndefinedDerivative NewInstance(const char * aMessage);
+		static		Handle_StdFail_UndefinedDerivative NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -321,11 +321,11 @@ class StdFail_UndefinedValue : public Standard_DomainError {
 		%feature("autodoc", "1");
 		StdFail_UndefinedValue(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_StdFail_UndefinedValue NewInstance(const char * aMessage);
+		static		Handle_StdFail_UndefinedValue NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -364,11 +364,11 @@ class StdFail_NotDone : public Standard_Failure {
 		%feature("autodoc", "1");
 		StdFail_NotDone(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_StdFail_NotDone NewInstance(const char * aMessage);
+		static		Handle_StdFail_NotDone NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -407,11 +407,11 @@ class StdFail_Undefined : public Standard_Failure {
 		%feature("autodoc", "1");
 		StdFail_Undefined(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_StdFail_Undefined NewInstance(const char * aMessage);
+		static		Handle_StdFail_Undefined NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

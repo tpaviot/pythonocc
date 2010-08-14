@@ -69,17 +69,17 @@ class TopAbs {
 		%feature("autodoc", "1");
 		TopAbs();
 		%feature("autodoc", "1");
-		TopAbs_Orientation Compose(const TopAbs_Orientation Or1, const TopAbs_Orientation Or2);
+		static		TopAbs_Orientation Compose(const TopAbs_Orientation Or1, const TopAbs_Orientation Or2);
 		%feature("autodoc", "1");
-		TopAbs_Orientation Reverse(const TopAbs_Orientation Or);
+		static		TopAbs_Orientation Reverse(const TopAbs_Orientation Or);
 		%feature("autodoc", "1");
-		TopAbs_Orientation Complement(const TopAbs_Orientation Or);
+		static		TopAbs_Orientation Complement(const TopAbs_Orientation Or);
 		%feature("autodoc", "1");
-		Standard_OStream & Print(const TopAbs_ShapeEnum SE, Standard_OStream & S);
+		static		Standard_OStream & Print(const TopAbs_ShapeEnum SE, Standard_OStream & S);
 		%feature("autodoc", "1");
-		Standard_OStream & Print(const TopAbs_Orientation Or, Standard_OStream & S);
+		static		Standard_OStream & Print(const TopAbs_Orientation Or, Standard_OStream & S);
 		%feature("autodoc", "1");
-		Standard_OStream & Print(const TopAbs_State St, Standard_OStream & S);
+		static		Standard_OStream & Print(const TopAbs_State St, Standard_OStream & S);
 
 };
 %feature("shadow") TopAbs::~TopAbs %{

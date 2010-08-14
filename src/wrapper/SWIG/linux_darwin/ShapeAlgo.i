@@ -51,7 +51,7 @@ class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer & operator=(const ShapeAlgo_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAlgo_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAlgo_ToolContainer {
@@ -89,7 +89,7 @@ class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_AlgoContainer & operator=(const ShapeAlgo_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAlgo_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAlgo_AlgoContainer {

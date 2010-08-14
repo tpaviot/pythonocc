@@ -55,7 +55,7 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable & operator=(const XmlObjMgt_DataMapNodeOfRRelocationTable *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlObjMgt_DataMapNodeOfRRelocationTable {
@@ -116,31 +116,31 @@ class XmlObjMgt {
 		%feature("autodoc", "1");
 		XmlObjMgt();
 		%feature("autodoc", "1");
-		const XmlObjMgt_DOMString & IdString();
+		static		const XmlObjMgt_DOMString & IdString();
 		%feature("autodoc", "1");
-		Standard_Boolean SetExtendedString(XmlObjMgt_Element & theElement, const TCollection_ExtendedString &theString);
+		static		Standard_Boolean SetExtendedString(XmlObjMgt_Element & theElement, const TCollection_ExtendedString &theString);
 		%feature("autodoc", "1");
-		Standard_Boolean GetExtendedString(const XmlObjMgt_Element &theElement, TCollection_ExtendedString & theString);
+		static		Standard_Boolean GetExtendedString(const XmlObjMgt_Element &theElement, TCollection_ExtendedString & theString);
 		%feature("autodoc", "1");
-		XmlObjMgt_DOMString GetStringValue(const XmlObjMgt_Element &theElement);
+		static		XmlObjMgt_DOMString GetStringValue(const XmlObjMgt_Element &theElement);
 		%feature("autodoc", "1");
-		void SetStringValue(XmlObjMgt_Element & theElement, const XmlObjMgt_DOMString &theData, const Standard_Boolean isClearText=0);
+		static		void SetStringValue(XmlObjMgt_Element & theElement, const XmlObjMgt_DOMString &theData, const Standard_Boolean isClearText=0);
 		%feature("autodoc", "1");
-		Standard_Boolean GetTagEntryString(const XmlObjMgt_DOMString &theTarget, TCollection_AsciiString & theTagEntry);
+		static		Standard_Boolean GetTagEntryString(const XmlObjMgt_DOMString &theTarget, TCollection_AsciiString & theTagEntry);
 		%feature("autodoc", "1");
-		void SetTagEntryString(XmlObjMgt_DOMString & theSource, const TCollection_AsciiString &theTagEntry);
+		static		void SetTagEntryString(XmlObjMgt_DOMString & theSource, const TCollection_AsciiString &theTagEntry);
 		%feature("autodoc", "1");
-		XmlObjMgt_Element FindChildElement(const XmlObjMgt_Element &theSource, const Standard_Integer theObjId);
+		static		XmlObjMgt_Element FindChildElement(const XmlObjMgt_Element &theSource, const Standard_Integer theObjId);
 		%feature("autodoc", "1");
-		XmlObjMgt_Element FindChildByRef(const XmlObjMgt_Element &theSource, const XmlObjMgt_DOMString &theRefName);
+		static		XmlObjMgt_Element FindChildByRef(const XmlObjMgt_Element &theSource, const XmlObjMgt_DOMString &theRefName);
 		%feature("autodoc", "1");
-		XmlObjMgt_Element FindChildByName(const XmlObjMgt_Element &theSource, const XmlObjMgt_DOMString &theName);
+		static		XmlObjMgt_Element FindChildByName(const XmlObjMgt_Element &theSource, const XmlObjMgt_DOMString &theName);
 		%feature("autodoc","GetReal() -> Standard_Real");
 
-		Standard_Boolean GetReal(char * & theString, Standard_Real &OutValue);
+		static		Standard_Boolean GetReal(char * & theString, Standard_Real &OutValue);
 		%feature("autodoc","GetReal(const theString) -> Standard_Real");
 
-		Standard_Boolean GetReal(const XmlObjMgt_DOMString &theString, Standard_Real &OutValue);
+		static		Standard_Boolean GetReal(const XmlObjMgt_DOMString &theString, Standard_Real &OutValue);
 
 };
 %feature("shadow") XmlObjMgt::~XmlObjMgt %{
@@ -214,17 +214,17 @@ class XmlObjMgt_GP {
 		%feature("autodoc", "1");
 		XmlObjMgt_GP();
 		%feature("autodoc", "1");
-		XmlObjMgt_DOMString Translate(const gp_Trsf &aTrsf);
+		static		XmlObjMgt_DOMString Translate(const gp_Trsf &aTrsf);
 		%feature("autodoc", "1");
-		XmlObjMgt_DOMString Translate(const gp_Mat &aMat);
+		static		XmlObjMgt_DOMString Translate(const gp_Mat &aMat);
 		%feature("autodoc", "1");
-		XmlObjMgt_DOMString Translate(const gp_XYZ &anXYZ);
+		static		XmlObjMgt_DOMString Translate(const gp_XYZ &anXYZ);
 		%feature("autodoc", "1");
-		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_Trsf & T);
+		static		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_Trsf & T);
 		%feature("autodoc", "1");
-		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_Mat & T);
+		static		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_Mat & T);
 		%feature("autodoc", "1");
-		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_XYZ & T);
+		static		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_XYZ & T);
 
 };
 %feature("shadow") XmlObjMgt_GP::~XmlObjMgt_GP %{

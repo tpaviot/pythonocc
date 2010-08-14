@@ -61,7 +61,7 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfPatch *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch {
@@ -99,7 +99,7 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip {
@@ -137,7 +137,7 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfNode *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode {
@@ -175,7 +175,7 @@ class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode 
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfStrip & operator=(const AdvApp2Var_SequenceNodeOfStrip *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AdvApp2Var_SequenceNodeOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfStrip {
@@ -617,27 +617,27 @@ class AdvApp2Var_Data {
 		%feature("autodoc", "1");
 		AdvApp2Var_Data();
 		%feature("autodoc", "1");
-		mdnombr_1_ & Getmdnombr();
+		static		mdnombr_1_ & Getmdnombr();
 		%feature("autodoc", "1");
-		minombr_1_ & Getminombr();
+		static		minombr_1_ & Getminombr();
 		%feature("autodoc", "1");
-		maovpar_1_ & Getmaovpar();
+		static		maovpar_1_ & Getmaovpar();
 		%feature("autodoc", "1");
-		maovpch_1_ & Getmaovpch();
+		static		maovpch_1_ & Getmaovpch();
 		%feature("autodoc", "1");
-		mlgdrtl_1_ & Getmlgdrtl();
+		static		mlgdrtl_1_ & Getmlgdrtl();
 		%feature("autodoc", "1");
-		mmjcobi_1_ & Getmmjcobi();
+		static		mmjcobi_1_ & Getmmjcobi();
 		%feature("autodoc", "1");
-		mmcmcnp_1_ & Getmmcmcnp();
+		static		mmcmcnp_1_ & Getmmcmcnp();
 		%feature("autodoc", "1");
-		mmapgss_1_ & Getmmapgss();
+		static		mmapgss_1_ & Getmmapgss();
 		%feature("autodoc", "1");
-		mmapgs0_1_ & Getmmapgs0();
+		static		mmapgs0_1_ & Getmmapgs0();
 		%feature("autodoc", "1");
-		mmapgs1_1_ & Getmmapgs1();
+		static		mmapgs1_1_ & Getmmapgs1();
 		%feature("autodoc", "1");
-		mmapgs2_1_ & Getmmapgs2();
+		static		mmapgs2_1_ & Getmmapgs2();
 
 };
 %feature("shadow") AdvApp2Var_Data::~AdvApp2Var_Data %{

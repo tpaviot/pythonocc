@@ -58,7 +58,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo & operator=(const Draft_DataMapNodeOfDataMapOfFaceFaceInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
@@ -96,7 +96,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo & operator=(const Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
@@ -134,7 +134,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
@@ -172,7 +172,7 @@ class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 		%feature("autodoc", "1");
 		Handle_Draft_Modification & operator=(const Draft_Modification *anItem);
 		%feature("autodoc", "1");
-		Handle_Draft_Modification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Draft_Modification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Draft_Modification {
@@ -337,7 +337,7 @@ class Draft {
 		%feature("autodoc", "1");
 		Draft();
 		%feature("autodoc", "1");
-		Standard_Real Angle(const TopoDS_Face &F, const gp_Dir &Direction);
+		static		Standard_Real Angle(const TopoDS_Face &F, const gp_Dir &Direction);
 
 };
 %feature("shadow") Draft::~Draft %{

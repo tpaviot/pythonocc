@@ -51,7 +51,7 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : pub
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
@@ -89,7 +89,7 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public 
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
@@ -127,7 +127,7 @@ class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_ListNodeOfListOfListOfShape & operator=(const BOPTColStd_ListNodeOfListOfListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTColStd_ListNodeOfListOfListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTColStd_ListNodeOfListOfListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTColStd_ListNodeOfListOfListOfShape {
@@ -165,7 +165,7 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfI
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
@@ -299,9 +299,9 @@ class BOPTColStd_ShapeWithRankHasher {
 		%feature("autodoc", "1");
 		BOPTColStd_ShapeWithRankHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const BOPTColStd_ShapeWithRank &SR, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const BOPTColStd_ShapeWithRank &SR, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &SR1, const BOPTColStd_ShapeWithRank &SR2);
+		static		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &SR1, const BOPTColStd_ShapeWithRank &SR2);
 
 };
 %feature("shadow") BOPTColStd_ShapeWithRankHasher::~BOPTColStd_ShapeWithRankHasher %{
@@ -979,9 +979,9 @@ class BOPTColStd_Dump {
 		%feature("autodoc", "1");
 		BOPTColStd_Dump();
 		%feature("autodoc", "1");
-		void PrintMessage(const TCollection_AsciiString &aMessage);
+		static		void PrintMessage(const TCollection_AsciiString &aMessage);
 		%feature("autodoc", "1");
-		void PrintMessage(const char * aMessage);
+		static		void PrintMessage(const char * aMessage);
 
 };
 %feature("shadow") BOPTColStd_Dump::~BOPTColStd_Dump %{

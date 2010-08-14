@@ -57,7 +57,7 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public Handl
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient & operator=(const MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
@@ -95,7 +95,7 @@ class Handle_MeshShape_ListNodeOfPolygon : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_MeshShape_ListNodeOfPolygon & operator=(const MeshShape_ListNodeOfPolygon *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshShape_ListNodeOfPolygon const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshShape_ListNodeOfPolygon const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshShape_ListNodeOfPolygon {
@@ -133,7 +133,7 @@ class Handle_MeshShape_ListNodeOfListOfSurfacePoint : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_MeshShape_ListNodeOfListOfSurfacePoint & operator=(const MeshShape_ListNodeOfListOfSurfacePoint *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshShape_ListNodeOfListOfSurfacePoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshShape_ListNodeOfListOfSurfacePoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshShape_ListNodeOfListOfSurfacePoint {
@@ -171,7 +171,7 @@ class Handle_MeshShape_StdMapNodeOfMapOfCouple : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_MeshShape_StdMapNodeOfMapOfCouple & operator=(const MeshShape_StdMapNodeOfMapOfCouple *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshShape_StdMapNodeOfMapOfCouple const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshShape_StdMapNodeOfMapOfCouple const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshShape_StdMapNodeOfMapOfCouple {
@@ -209,7 +209,7 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY & operator=(const MeshShape_DataMapNodeOfDataMapOfIntegerXY *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY {
@@ -247,7 +247,7 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt & operator=(const MeshShape_DataMapNodeOfDataMapOfIntegerPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt {
@@ -407,9 +407,9 @@ class MeshShape_CoupleHasher {
 		%feature("autodoc", "1");
 		MeshShape_CoupleHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const MeshShape_Couple &S, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const MeshShape_Couple &S, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const MeshShape_Couple &S1, const MeshShape_Couple &S2);
+		static		Standard_Boolean IsEqual(const MeshShape_Couple &S1, const MeshShape_Couple &S2);
 
 };
 %feature("shadow") MeshShape_CoupleHasher::~MeshShape_CoupleHasher %{
@@ -434,9 +434,9 @@ class MeshShape {
 		%feature("autodoc", "1");
 		MeshShape();
 		%feature("autodoc", "1");
-		void SetMesure(const Standard_Boolean val);
+		static		void SetMesure(const Standard_Boolean val);
 		%feature("autodoc", "1");
-		void SetTrace(const Standard_Integer val);
+		static		void SetTrace(const Standard_Integer val);
 
 };
 %feature("shadow") MeshShape::~MeshShape %{

@@ -118,9 +118,9 @@ class LocalAnalysis {
 		%feature("autodoc", "1");
 		LocalAnalysis();
 		%feature("autodoc", "1");
-		void Dump(const LocalAnalysis_SurfaceContinuity &surfconti, Standard_OStream & o);
+		static		void Dump(const LocalAnalysis_SurfaceContinuity &surfconti, Standard_OStream & o);
 		%feature("autodoc", "1");
-		void Dump(const LocalAnalysis_CurveContinuity &curvconti, Standard_OStream & o);
+		static		void Dump(const LocalAnalysis_CurveContinuity &curvconti, Standard_OStream & o);
 
 };
 %feature("shadow") LocalAnalysis::~LocalAnalysis %{

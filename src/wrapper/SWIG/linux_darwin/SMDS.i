@@ -227,7 +227,7 @@ class SMDS_SpacePosition : public SMDS_Position {
 		%feature("autodoc", "1");
 		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
 		%feature("autodoc", "1");
-		SMDS_PositionPtr originSpacePosition();
+		static		SMDS_PositionPtr originSpacePosition();
 
 };
 %feature("shadow") SMDS_SpacePosition::~SMDS_SpacePosition %{
@@ -390,15 +390,15 @@ class SMDS_VolumeTool {
 		%feature("autodoc", "1");
 		int GetAllExistingFaces(std::vector<SMDS_MeshElement const*, std::allocator<SMDS_MeshElement const*> > & faces);
 		%feature("autodoc", "1");
-		SMDS_VolumeTool::VolumeType GetType(int );
+		static		SMDS_VolumeTool::VolumeType GetType(int );
 		%feature("autodoc", "1");
-		int NbFaces(SMDS_VolumeTool::VolumeType );
+		static		int NbFaces(SMDS_VolumeTool::VolumeType );
 		%feature("autodoc", "1");
-		const int * GetFaceNodesIndices(SMDS_VolumeTool::VolumeType , int , bool );
+		static		const int * GetFaceNodesIndices(SMDS_VolumeTool::VolumeType , int , bool );
 		%feature("autodoc", "1");
-		int NbFaceNodes(SMDS_VolumeTool::VolumeType , int );
+		static		int NbFaceNodes(SMDS_VolumeTool::VolumeType , int );
 		%feature("autodoc", "1");
-		int NbCornerNodes(SMDS_VolumeTool::VolumeType );
+		static		int NbCornerNodes(SMDS_VolumeTool::VolumeType );
 
 };
 %feature("shadow") SMDS_VolumeTool::~SMDS_VolumeTool %{
@@ -766,13 +766,13 @@ class SMDS_Mesh : public SMDS_MeshObject {
 		%feature("autodoc", "1");
 		const SMDS_MeshElement * FindElement(int ) const;
 		%feature("autodoc", "1");
-		const SMDS_Mesh0DElement * Find0DElement(const SMDS_MeshNode *n);
+		static		const SMDS_Mesh0DElement * Find0DElement(const SMDS_MeshNode *n);
 		%feature("autodoc", "1");
-		const SMDS_MeshEdge * FindEdge(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2);
+		static		const SMDS_MeshEdge * FindEdge(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2);
 		%feature("autodoc", "1");
-		const SMDS_MeshEdge * FindEdge(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3);
+		static		const SMDS_MeshEdge * FindEdge(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3);
 		%feature("autodoc", "1");
-		int CheckMemory(const bool doNotRaise=false);
+		static		int CheckMemory(const bool doNotRaise=false);
 		%feature("autodoc", "1");
 		int MaxNodeID() const;
 		%feature("autodoc", "1");

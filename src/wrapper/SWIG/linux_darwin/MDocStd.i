@@ -51,7 +51,7 @@ class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentStorageDriver & operator=(const MDocStd_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MDocStd_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MDocStd_DocumentStorageDriver {
@@ -89,7 +89,7 @@ class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDrive
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentRetrievalDriver & operator=(const MDocStd_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MDocStd_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MDocStd_DocumentRetrievalDriver {
@@ -127,7 +127,7 @@ class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkRetrievalDriver & operator=(const MDocStd_XLinkRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MDocStd_XLinkRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MDocStd_XLinkRetrievalDriver {
@@ -165,7 +165,7 @@ class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkStorageDriver & operator=(const MDocStd_XLinkStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MDocStd_XLinkStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MDocStd_XLinkStorageDriver {
@@ -203,7 +203,7 @@ class Handle_MDocStd_ListNodeOfDocEntryList : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_MDocStd_ListNodeOfDocEntryList & operator=(const MDocStd_ListNodeOfDocEntryList *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_ListNodeOfDocEntryList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MDocStd_ListNodeOfDocEntryList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MDocStd_ListNodeOfDocEntryList {
@@ -241,7 +241,7 @@ class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_MDocStd_StdMapNodeOfPersistentMap & operator=(const MDocStd_StdMapNodeOfPersistentMap *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_StdMapNodeOfPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MDocStd_StdMapNodeOfPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MDocStd_StdMapNodeOfPersistentMap {
@@ -271,13 +271,13 @@ class MDocStd {
 		%feature("autodoc", "1");
 		MDocStd();
 		%feature("autodoc", "1");
-		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		static		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
-		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		static		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
-		void WeightWatcher(const Handle_TDF_Data &aSource, const Handle_MDF_SRelocationTable &aReloc, const MDocStd_DocEntryList &aEntry);
+		static		void WeightWatcher(const Handle_TDF_Data &aSource, const Handle_MDF_SRelocationTable &aReloc, const MDocStd_DocEntryList &aEntry);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
+		static		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 
 };
 %feature("shadow") MDocStd::~MDocStd %{

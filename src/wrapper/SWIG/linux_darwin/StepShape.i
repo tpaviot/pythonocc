@@ -63,7 +63,7 @@ class Handle_StepShape_TopologicalRepresentationItem : public Handle_StepRepr_Re
 		%feature("autodoc", "1");
 		Handle_StepShape_TopologicalRepresentationItem & operator=(const StepShape_TopologicalRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_TopologicalRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_TopologicalRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_TopologicalRepresentationItem {
@@ -101,7 +101,7 @@ class Handle_StepShape_ConnectedEdgeSet : public Handle_StepShape_TopologicalRep
 		%feature("autodoc", "1");
 		Handle_StepShape_ConnectedEdgeSet & operator=(const StepShape_ConnectedEdgeSet *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedEdgeSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ConnectedEdgeSet const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ConnectedEdgeSet {
@@ -139,7 +139,7 @@ class Handle_StepShape_HArray1OfConnectedEdgeSet : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_HArray1OfConnectedEdgeSet & operator=(const StepShape_HArray1OfConnectedEdgeSet *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfConnectedEdgeSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfConnectedEdgeSet const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HArray1OfConnectedEdgeSet {
@@ -177,7 +177,7 @@ class Handle_StepShape_SolidModel : public Handle_StepGeom_GeometricRepresentati
 		%feature("autodoc", "1");
 		Handle_StepShape_SolidModel & operator=(const StepShape_SolidModel *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_SolidModel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_SolidModel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_SolidModel {
@@ -215,7 +215,7 @@ class Handle_StepShape_SweptFaceSolid : public Handle_StepShape_SolidModel {
 		%feature("autodoc", "1");
 		Handle_StepShape_SweptFaceSolid & operator=(const StepShape_SweptFaceSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_SweptFaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_SweptFaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_SweptFaceSolid {
@@ -253,7 +253,7 @@ class Handle_StepShape_RevolvedFaceSolid : public Handle_StepShape_SweptFaceSoli
 		%feature("autodoc", "1");
 		Handle_StepShape_RevolvedFaceSolid & operator=(const StepShape_RevolvedFaceSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedFaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_RevolvedFaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_RevolvedFaceSolid {
@@ -291,7 +291,7 @@ class Handle_StepShape_ShapeRepresentation : public Handle_StepRepr_Representati
 		%feature("autodoc", "1");
 		Handle_StepShape_ShapeRepresentation & operator=(const StepShape_ShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ShapeRepresentation {
@@ -329,7 +329,7 @@ class Handle_StepShape_FacetedBrepShapeRepresentation : public Handle_StepShape_
 		%feature("autodoc", "1");
 		Handle_StepShape_FacetedBrepShapeRepresentation & operator=(const StepShape_FacetedBrepShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_FacetedBrepShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_FacetedBrepShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_FacetedBrepShapeRepresentation {
@@ -367,7 +367,7 @@ class Handle_StepShape_NonManifoldSurfaceShapeRepresentation : public Handle_Ste
 		%feature("autodoc", "1");
 		Handle_StepShape_NonManifoldSurfaceShapeRepresentation & operator=(const StepShape_NonManifoldSurfaceShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_NonManifoldSurfaceShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_NonManifoldSurfaceShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_NonManifoldSurfaceShapeRepresentation {
@@ -405,7 +405,7 @@ class Handle_StepShape_RightCircularCone : public Handle_StepGeom_GeometricRepre
 		%feature("autodoc", "1");
 		Handle_StepShape_RightCircularCone & operator=(const StepShape_RightCircularCone *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_RightCircularCone const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_RightCircularCone const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_RightCircularCone {
@@ -443,7 +443,7 @@ class Handle_StepShape_Edge : public Handle_StepShape_TopologicalRepresentationI
 		%feature("autodoc", "1");
 		Handle_StepShape_Edge & operator=(const StepShape_Edge *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_Edge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Edge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_Edge {
@@ -481,7 +481,7 @@ class Handle_StepShape_OrientedEdge : public Handle_StepShape_Edge {
 		%feature("autodoc", "1");
 		Handle_StepShape_OrientedEdge & operator=(const StepShape_OrientedEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_OrientedEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_OrientedEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_OrientedEdge {
@@ -519,7 +519,7 @@ class Handle_StepShape_SeamEdge : public Handle_StepShape_OrientedEdge {
 		%feature("autodoc", "1");
 		Handle_StepShape_SeamEdge & operator=(const StepShape_SeamEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_SeamEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_SeamEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_SeamEdge {
@@ -557,7 +557,7 @@ class Handle_StepShape_ManifoldSurfaceShapeRepresentation : public Handle_StepSh
 		%feature("autodoc", "1");
 		Handle_StepShape_ManifoldSurfaceShapeRepresentation & operator=(const StepShape_ManifoldSurfaceShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ManifoldSurfaceShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ManifoldSurfaceShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ManifoldSurfaceShapeRepresentation {
@@ -595,7 +595,7 @@ class Handle_StepShape_HArray1OfFaceBound : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_HArray1OfFaceBound & operator=(const StepShape_HArray1OfFaceBound *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfFaceBound const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfFaceBound const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HArray1OfFaceBound {
@@ -633,7 +633,7 @@ class Handle_StepShape_ConnectedFaceSet : public Handle_StepShape_TopologicalRep
 		%feature("autodoc", "1");
 		Handle_StepShape_ConnectedFaceSet & operator=(const StepShape_ConnectedFaceSet *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedFaceSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ConnectedFaceSet const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ConnectedFaceSet {
@@ -671,7 +671,7 @@ class Handle_StepShape_OpenShell : public Handle_StepShape_ConnectedFaceSet {
 		%feature("autodoc", "1");
 		Handle_StepShape_OpenShell & operator=(const StepShape_OpenShell *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_OpenShell const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_OpenShell const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_OpenShell {
@@ -709,7 +709,7 @@ class Handle_StepShape_OrientedOpenShell : public Handle_StepShape_OpenShell {
 		%feature("autodoc", "1");
 		Handle_StepShape_OrientedOpenShell & operator=(const StepShape_OrientedOpenShell *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_OrientedOpenShell const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_OrientedOpenShell const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_OrientedOpenShell {
@@ -747,7 +747,7 @@ class Handle_StepShape_ExtrudedFaceSolid : public Handle_StepShape_SweptFaceSoli
 		%feature("autodoc", "1");
 		Handle_StepShape_ExtrudedFaceSolid & operator=(const StepShape_ExtrudedFaceSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedFaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ExtrudedFaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ExtrudedFaceSolid {
@@ -785,7 +785,7 @@ class Handle_StepShape_MeasureQualification : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_MeasureQualification & operator=(const StepShape_MeasureQualification *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_MeasureQualification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_MeasureQualification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_MeasureQualification {
@@ -823,7 +823,7 @@ class Handle_StepShape_Loop : public Handle_StepShape_TopologicalRepresentationI
 		%feature("autodoc", "1");
 		Handle_StepShape_Loop & operator=(const StepShape_Loop *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_Loop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Loop const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_Loop {
@@ -861,7 +861,7 @@ class Handle_StepShape_PointRepresentation : public Handle_StepShape_ShapeRepres
 		%feature("autodoc", "1");
 		Handle_StepShape_PointRepresentation & operator=(const StepShape_PointRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_PointRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_PointRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_PointRepresentation {
@@ -899,7 +899,7 @@ class Handle_StepShape_Face : public Handle_StepShape_TopologicalRepresentationI
 		%feature("autodoc", "1");
 		Handle_StepShape_Face & operator=(const StepShape_Face *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_Face const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Face const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_Face {
@@ -937,7 +937,7 @@ class Handle_StepShape_Subface : public Handle_StepShape_Face {
 		%feature("autodoc", "1");
 		Handle_StepShape_Subface & operator=(const StepShape_Subface *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_Subface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Subface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_Subface {
@@ -975,7 +975,7 @@ class Handle_StepShape_BooleanResult : public Handle_StepGeom_GeometricRepresent
 		%feature("autodoc", "1");
 		Handle_StepShape_BooleanResult & operator=(const StepShape_BooleanResult *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_BooleanResult const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_BooleanResult const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_BooleanResult {
@@ -1013,7 +1013,7 @@ class Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem :
 		%feature("autodoc", "1");
 		Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem & operator=(const StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
@@ -1051,7 +1051,7 @@ class Handle_StepShape_PolyLoop : public Handle_StepShape_Loop {
 		%feature("autodoc", "1");
 		Handle_StepShape_PolyLoop & operator=(const StepShape_PolyLoop *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_PolyLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_PolyLoop const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_PolyLoop {
@@ -1089,7 +1089,7 @@ class Handle_StepShape_HArray1OfValueQualifier : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_HArray1OfValueQualifier & operator=(const StepShape_HArray1OfValueQualifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfValueQualifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfValueQualifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HArray1OfValueQualifier {
@@ -1127,7 +1127,7 @@ class Handle_StepShape_HalfSpaceSolid : public Handle_StepGeom_GeometricRepresen
 		%feature("autodoc", "1");
 		Handle_StepShape_HalfSpaceSolid & operator=(const StepShape_HalfSpaceSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HalfSpaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HalfSpaceSolid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HalfSpaceSolid {
@@ -1165,7 +1165,7 @@ class Handle_StepShape_BoxedHalfSpace : public Handle_StepShape_HalfSpaceSolid {
 		%feature("autodoc", "1");
 		Handle_StepShape_BoxedHalfSpace & operator=(const StepShape_BoxedHalfSpace *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_BoxedHalfSpace const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_BoxedHalfSpace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_BoxedHalfSpace {
@@ -1203,7 +1203,7 @@ class Handle_StepShape_Path : public Handle_StepShape_TopologicalRepresentationI
 		%feature("autodoc", "1");
 		Handle_StepShape_Path & operator=(const StepShape_Path *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_Path const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Path const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_Path {
@@ -1241,7 +1241,7 @@ class Handle_StepShape_OrientedPath : public Handle_StepShape_Path {
 		%feature("autodoc", "1");
 		Handle_StepShape_OrientedPath & operator=(const StepShape_OrientedPath *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_OrientedPath const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_OrientedPath const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_OrientedPath {
@@ -1279,7 +1279,7 @@ class Handle_StepShape_FaceBound : public Handle_StepShape_TopologicalRepresenta
 		%feature("autodoc", "1");
 		Handle_StepShape_FaceBound & operator=(const StepShape_FaceBound *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_FaceBound const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_FaceBound const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_FaceBound {
@@ -1317,7 +1317,7 @@ class Handle_StepShape_FaceOuterBound : public Handle_StepShape_FaceBound {
 		%feature("autodoc", "1");
 		Handle_StepShape_FaceOuterBound & operator=(const StepShape_FaceOuterBound *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_FaceOuterBound const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_FaceOuterBound const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_FaceOuterBound {
@@ -1355,7 +1355,7 @@ class Handle_StepShape_HArray1OfOrientedClosedShell : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_StepShape_HArray1OfOrientedClosedShell & operator=(const StepShape_HArray1OfOrientedClosedShell *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedClosedShell const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfOrientedClosedShell const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HArray1OfOrientedClosedShell {
@@ -1393,7 +1393,7 @@ class Handle_StepShape_SolidReplica : public Handle_StepShape_SolidModel {
 		%feature("autodoc", "1");
 		Handle_StepShape_SolidReplica & operator=(const StepShape_SolidReplica *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_SolidReplica const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_SolidReplica const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_SolidReplica {
@@ -1431,7 +1431,7 @@ class Handle_StepShape_HArray1OfGeometricSetSelect : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_StepShape_HArray1OfGeometricSetSelect & operator=(const StepShape_HArray1OfGeometricSetSelect *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfGeometricSetSelect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfGeometricSetSelect const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HArray1OfGeometricSetSelect {
@@ -1469,7 +1469,7 @@ class Handle_StepShape_HArray1OfFace : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_HArray1OfFace & operator=(const StepShape_HArray1OfFace *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfFace const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfFace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HArray1OfFace {
@@ -1507,7 +1507,7 @@ class Handle_StepShape_ClosedShell : public Handle_StepShape_ConnectedFaceSet {
 		%feature("autodoc", "1");
 		Handle_StepShape_ClosedShell & operator=(const StepShape_ClosedShell *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ClosedShell const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ClosedShell const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ClosedShell {
@@ -1545,7 +1545,7 @@ class Handle_StepShape_DimensionalCharacteristicRepresentation : public Handle_M
 		%feature("autodoc", "1");
 		Handle_StepShape_DimensionalCharacteristicRepresentation & operator=(const StepShape_DimensionalCharacteristicRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_DimensionalCharacteristicRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_DimensionalCharacteristicRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_DimensionalCharacteristicRepresentation {
@@ -1583,7 +1583,7 @@ class Handle_StepShape_FaceSurface : public Handle_StepShape_Face {
 		%feature("autodoc", "1");
 		Handle_StepShape_FaceSurface & operator=(const StepShape_FaceSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_FaceSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_FaceSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_FaceSurface {
@@ -1621,7 +1621,7 @@ class Handle_StepShape_LimitsAndFits : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_LimitsAndFits & operator=(const StepShape_LimitsAndFits *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_LimitsAndFits const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_LimitsAndFits const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_LimitsAndFits {
@@ -1659,7 +1659,7 @@ class Handle_StepShape_SweptAreaSolid : public Handle_StepShape_SolidModel {
 		%feature("autodoc", "1");
 		Handle_StepShape_SweptAreaSolid & operator=(const StepShape_SweptAreaSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_SweptAreaSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_SweptAreaSolid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_SweptAreaSolid {
@@ -1697,7 +1697,7 @@ class Handle_StepShape_RevolvedAreaSolid : public Handle_StepShape_SweptAreaSoli
 		%feature("autodoc", "1");
 		Handle_StepShape_RevolvedAreaSolid & operator=(const StepShape_RevolvedAreaSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedAreaSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_RevolvedAreaSolid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_RevolvedAreaSolid {
@@ -1735,7 +1735,7 @@ class Handle_StepShape_DimensionalSize : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_DimensionalSize & operator=(const StepShape_DimensionalSize *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_DimensionalSize const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_DimensionalSize const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_DimensionalSize {
@@ -1773,7 +1773,7 @@ class Handle_StepShape_DimensionalSizeWithPath : public Handle_StepShape_Dimensi
 		%feature("autodoc", "1");
 		Handle_StepShape_DimensionalSizeWithPath & operator=(const StepShape_DimensionalSizeWithPath *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_DimensionalSizeWithPath const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_DimensionalSizeWithPath const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_DimensionalSizeWithPath {
@@ -1811,7 +1811,7 @@ class Handle_StepShape_LoopAndPath : public Handle_StepShape_TopologicalRepresen
 		%feature("autodoc", "1");
 		Handle_StepShape_LoopAndPath & operator=(const StepShape_LoopAndPath *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_LoopAndPath const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_LoopAndPath const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_LoopAndPath {
@@ -1849,7 +1849,7 @@ class Handle_StepShape_HArray1OfConnectedFaceSet : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_HArray1OfConnectedFaceSet & operator=(const StepShape_HArray1OfConnectedFaceSet *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfConnectedFaceSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfConnectedFaceSet const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HArray1OfConnectedFaceSet {
@@ -1887,7 +1887,7 @@ class Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation : public
 		%feature("autodoc", "1");
 		Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation & operator=(const StepShape_DefinitionalRepresentationAndShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation {
@@ -1925,7 +1925,7 @@ class Handle_StepShape_HArray1OfShell : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_HArray1OfShell & operator=(const StepShape_HArray1OfShell *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfShell const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfShell const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HArray1OfShell {
@@ -1963,7 +1963,7 @@ class Handle_StepShape_DimensionalLocation : public Handle_StepRepr_ShapeAspectR
 		%feature("autodoc", "1");
 		Handle_StepShape_DimensionalLocation & operator=(const StepShape_DimensionalLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_DimensionalLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_DimensionalLocation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_DimensionalLocation {
@@ -2001,7 +2001,7 @@ class Handle_StepShape_TransitionalShapeRepresentation : public Handle_StepShape
 		%feature("autodoc", "1");
 		Handle_StepShape_TransitionalShapeRepresentation & operator=(const StepShape_TransitionalShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_TransitionalShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_TransitionalShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_TransitionalShapeRepresentation {
@@ -2039,7 +2039,7 @@ class Handle_StepShape_ManifoldSolidBrep : public Handle_StepShape_SolidModel {
 		%feature("autodoc", "1");
 		Handle_StepShape_ManifoldSolidBrep & operator=(const StepShape_ManifoldSolidBrep *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ManifoldSolidBrep const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ManifoldSolidBrep const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ManifoldSolidBrep {
@@ -2077,7 +2077,7 @@ class Handle_StepShape_FaceBasedSurfaceModel : public Handle_StepGeom_GeometricR
 		%feature("autodoc", "1");
 		Handle_StepShape_FaceBasedSurfaceModel & operator=(const StepShape_FaceBasedSurfaceModel *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_FaceBasedSurfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_FaceBasedSurfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_FaceBasedSurfaceModel {
@@ -2115,7 +2115,7 @@ class Handle_StepShape_CsgSolid : public Handle_StepShape_SolidModel {
 		%feature("autodoc", "1");
 		Handle_StepShape_CsgSolid & operator=(const StepShape_CsgSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_CsgSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_CsgSolid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_CsgSolid {
@@ -2153,7 +2153,7 @@ class Handle_StepShape_GeometricSet : public Handle_StepGeom_GeometricRepresenta
 		%feature("autodoc", "1");
 		Handle_StepShape_GeometricSet & operator=(const StepShape_GeometricSet *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_GeometricSet const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_GeometricSet {
@@ -2191,7 +2191,7 @@ class Handle_StepShape_ExtrudedAreaSolid : public Handle_StepShape_SweptAreaSoli
 		%feature("autodoc", "1");
 		Handle_StepShape_ExtrudedAreaSolid & operator=(const StepShape_ExtrudedAreaSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedAreaSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ExtrudedAreaSolid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ExtrudedAreaSolid {
@@ -2229,7 +2229,7 @@ class Handle_StepShape_PrecisionQualifier : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_PrecisionQualifier & operator=(const StepShape_PrecisionQualifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_PrecisionQualifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_PrecisionQualifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_PrecisionQualifier {
@@ -2267,7 +2267,7 @@ class Handle_StepShape_ToleranceValue : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_ToleranceValue & operator=(const StepShape_ToleranceValue *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ToleranceValue const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ToleranceValue const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ToleranceValue {
@@ -2305,7 +2305,7 @@ class Handle_StepShape_EdgeCurve : public Handle_StepShape_Edge {
 		%feature("autodoc", "1");
 		Handle_StepShape_EdgeCurve & operator=(const StepShape_EdgeCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_EdgeCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_EdgeCurve {
@@ -2343,7 +2343,7 @@ class Handle_StepShape_ConnectedFaceSubSet : public Handle_StepShape_ConnectedFa
 		%feature("autodoc", "1");
 		Handle_StepShape_ConnectedFaceSubSet & operator=(const StepShape_ConnectedFaceSubSet *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedFaceSubSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ConnectedFaceSubSet const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ConnectedFaceSubSet {
@@ -2381,7 +2381,7 @@ class Handle_StepShape_ShapeRepresentationWithParameters : public Handle_StepSha
 		%feature("autodoc", "1");
 		Handle_StepShape_ShapeRepresentationWithParameters & operator=(const StepShape_ShapeRepresentationWithParameters *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ShapeRepresentationWithParameters const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ShapeRepresentationWithParameters const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ShapeRepresentationWithParameters {
@@ -2419,7 +2419,7 @@ class Handle_StepShape_DimensionalLocationWithPath : public Handle_StepShape_Dim
 		%feature("autodoc", "1");
 		Handle_StepShape_DimensionalLocationWithPath & operator=(const StepShape_DimensionalLocationWithPath *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_DimensionalLocationWithPath const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_DimensionalLocationWithPath const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_DimensionalLocationWithPath {
@@ -2457,7 +2457,7 @@ class Handle_StepShape_RightAngularWedge : public Handle_StepGeom_GeometricRepre
 		%feature("autodoc", "1");
 		Handle_StepShape_RightAngularWedge & operator=(const StepShape_RightAngularWedge *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_RightAngularWedge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_RightAngularWedge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_RightAngularWedge {
@@ -2495,7 +2495,7 @@ class Handle_StepShape_CompoundShapeRepresentation : public Handle_StepShape_Sha
 		%feature("autodoc", "1");
 		Handle_StepShape_CompoundShapeRepresentation & operator=(const StepShape_CompoundShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_CompoundShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_CompoundShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_CompoundShapeRepresentation {
@@ -2533,7 +2533,7 @@ class Handle_StepShape_DirectedDimensionalLocation : public Handle_StepShape_Dim
 		%feature("autodoc", "1");
 		Handle_StepShape_DirectedDimensionalLocation & operator=(const StepShape_DirectedDimensionalLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_DirectedDimensionalLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_DirectedDimensionalLocation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_DirectedDimensionalLocation {
@@ -2571,7 +2571,7 @@ class Handle_StepShape_AdvancedBrepShapeRepresentation : public Handle_StepShape
 		%feature("autodoc", "1");
 		Handle_StepShape_AdvancedBrepShapeRepresentation & operator=(const StepShape_AdvancedBrepShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_AdvancedBrepShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_AdvancedBrepShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_AdvancedBrepShapeRepresentation {
@@ -2609,7 +2609,7 @@ class Handle_StepShape_TypeQualifier : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_TypeQualifier & operator=(const StepShape_TypeQualifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_TypeQualifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_TypeQualifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_TypeQualifier {
@@ -2647,7 +2647,7 @@ class Handle_StepShape_ShapeDefinitionRepresentation : public Handle_StepRepr_Pr
 		%feature("autodoc", "1");
 		Handle_StepShape_ShapeDefinitionRepresentation & operator=(const StepShape_ShapeDefinitionRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDefinitionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ShapeDefinitionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ShapeDefinitionRepresentation {
@@ -2685,7 +2685,7 @@ class Handle_StepShape_PlusMinusTolerance : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_PlusMinusTolerance & operator=(const StepShape_PlusMinusTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_PlusMinusTolerance const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_PlusMinusTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_PlusMinusTolerance {
@@ -2723,7 +2723,7 @@ class Handle_StepShape_Torus : public Handle_StepGeom_GeometricRepresentationIte
 		%feature("autodoc", "1");
 		Handle_StepShape_Torus & operator=(const StepShape_Torus *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_Torus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Torus const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_Torus {
@@ -2761,7 +2761,7 @@ class Handle_StepShape_OrientedFace : public Handle_StepShape_Face {
 		%feature("autodoc", "1");
 		Handle_StepShape_OrientedFace & operator=(const StepShape_OrientedFace *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_OrientedFace const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_OrientedFace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_OrientedFace {
@@ -2799,7 +2799,7 @@ class Handle_StepShape_ConnectedFaceShapeRepresentation : public Handle_StepRepr
 		%feature("autodoc", "1");
 		Handle_StepShape_ConnectedFaceShapeRepresentation & operator=(const StepShape_ConnectedFaceShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedFaceShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ConnectedFaceShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ConnectedFaceShapeRepresentation {
@@ -2837,7 +2837,7 @@ class Handle_StepShape_ShellBasedSurfaceModel : public Handle_StepGeom_Geometric
 		%feature("autodoc", "1");
 		Handle_StepShape_ShellBasedSurfaceModel & operator=(const StepShape_ShellBasedSurfaceModel *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ShellBasedSurfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ShellBasedSurfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ShellBasedSurfaceModel {
@@ -2875,7 +2875,7 @@ class Handle_StepShape_BoxDomain : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_BoxDomain & operator=(const StepShape_BoxDomain *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_BoxDomain const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_BoxDomain const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_BoxDomain {
@@ -2913,7 +2913,7 @@ class Handle_StepShape_Sphere : public Handle_StepGeom_GeometricRepresentationIt
 		%feature("autodoc", "1");
 		Handle_StepShape_Sphere & operator=(const StepShape_Sphere *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_Sphere const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Sphere const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_Sphere {
@@ -2951,7 +2951,7 @@ class Handle_StepShape_EdgeBasedWireframeShapeRepresentation : public Handle_Ste
 		%feature("autodoc", "1");
 		Handle_StepShape_EdgeBasedWireframeShapeRepresentation & operator=(const StepShape_EdgeBasedWireframeShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_EdgeBasedWireframeShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_EdgeBasedWireframeShapeRepresentation {
@@ -2989,7 +2989,7 @@ class Handle_StepShape_Block : public Handle_StepGeom_GeometricRepresentationIte
 		%feature("autodoc", "1");
 		Handle_StepShape_Block & operator=(const StepShape_Block *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_Block const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Block const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_Block {
@@ -3027,7 +3027,7 @@ class Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation : public
 		%feature("autodoc", "1");
 		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation & operator=(const StepShape_GeometricallyBoundedWireframeShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation {
@@ -3065,7 +3065,7 @@ class Handle_StepShape_CsgShapeRepresentation : public Handle_StepShape_ShapeRep
 		%feature("autodoc", "1");
 		Handle_StepShape_CsgShapeRepresentation & operator=(const StepShape_CsgShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_CsgShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_CsgShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_CsgShapeRepresentation {
@@ -3103,7 +3103,7 @@ class Handle_StepShape_AngularLocation : public Handle_StepShape_DimensionalLoca
 		%feature("autodoc", "1");
 		Handle_StepShape_AngularLocation & operator=(const StepShape_AngularLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_AngularLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_AngularLocation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_AngularLocation {
@@ -3141,7 +3141,7 @@ class Handle_StepShape_Subedge : public Handle_StepShape_Edge {
 		%feature("autodoc", "1");
 		Handle_StepShape_Subedge & operator=(const StepShape_Subedge *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_Subedge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Subedge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_Subedge {
@@ -3179,7 +3179,7 @@ class Handle_StepShape_Vertex : public Handle_StepShape_TopologicalRepresentatio
 		%feature("autodoc", "1");
 		Handle_StepShape_Vertex & operator=(const StepShape_Vertex *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_Vertex const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Vertex const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_Vertex {
@@ -3217,7 +3217,7 @@ class Handle_StepShape_HArray1OfOrientedEdge : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_HArray1OfOrientedEdge & operator=(const StepShape_HArray1OfOrientedEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfOrientedEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HArray1OfOrientedEdge {
@@ -3255,7 +3255,7 @@ class Handle_StepShape_RightCircularCylinder : public Handle_StepGeom_GeometricR
 		%feature("autodoc", "1");
 		Handle_StepShape_RightCircularCylinder & operator=(const StepShape_RightCircularCylinder *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_RightCircularCylinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_RightCircularCylinder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_RightCircularCylinder {
@@ -3293,7 +3293,7 @@ class Handle_StepShape_EdgeLoop : public Handle_StepShape_Loop {
 		%feature("autodoc", "1");
 		Handle_StepShape_EdgeLoop & operator=(const StepShape_EdgeLoop *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_EdgeLoop const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_EdgeLoop {
@@ -3331,7 +3331,7 @@ class Handle_StepShape_GeometricCurveSet : public Handle_StepShape_GeometricSet 
 		%feature("autodoc", "1");
 		Handle_StepShape_GeometricCurveSet & operator=(const StepShape_GeometricCurveSet *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricCurveSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_GeometricCurveSet const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_GeometricCurveSet {
@@ -3369,7 +3369,7 @@ class Handle_StepShape_EdgeBasedWireframeModel : public Handle_StepGeom_Geometri
 		%feature("autodoc", "1");
 		Handle_StepShape_EdgeBasedWireframeModel & operator=(const StepShape_EdgeBasedWireframeModel *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeModel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_EdgeBasedWireframeModel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_EdgeBasedWireframeModel {
@@ -3407,7 +3407,7 @@ class Handle_StepShape_FacetedBrep : public Handle_StepShape_ManifoldSolidBrep {
 		%feature("autodoc", "1");
 		Handle_StepShape_FacetedBrep & operator=(const StepShape_FacetedBrep *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_FacetedBrep const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_FacetedBrep const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_FacetedBrep {
@@ -3445,7 +3445,7 @@ class Handle_StepShape_AngularSize : public Handle_StepShape_DimensionalSize {
 		%feature("autodoc", "1");
 		Handle_StepShape_AngularSize & operator=(const StepShape_AngularSize *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_AngularSize const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_AngularSize const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_AngularSize {
@@ -3483,7 +3483,7 @@ class Handle_StepShape_VertexPoint : public Handle_StepShape_Vertex {
 		%feature("autodoc", "1");
 		Handle_StepShape_VertexPoint & operator=(const StepShape_VertexPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_VertexPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_VertexPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_VertexPoint {
@@ -3521,7 +3521,7 @@ class Handle_StepShape_VertexLoop : public Handle_StepShape_Loop {
 		%feature("autodoc", "1");
 		Handle_StepShape_VertexLoop & operator=(const StepShape_VertexLoop *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_VertexLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_VertexLoop const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_VertexLoop {
@@ -3559,7 +3559,7 @@ class Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public H
 		%feature("autodoc", "1");
 		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation & operator=(const StepShape_GeometricallyBoundedSurfaceShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation {
@@ -3597,7 +3597,7 @@ class Handle_StepShape_BrepWithVoids : public Handle_StepShape_ManifoldSolidBrep
 		%feature("autodoc", "1");
 		Handle_StepShape_BrepWithVoids & operator=(const StepShape_BrepWithVoids *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_BrepWithVoids const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_BrepWithVoids const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_BrepWithVoids {
@@ -3635,7 +3635,7 @@ class Handle_StepShape_FacetedBrepAndBrepWithVoids : public Handle_StepShape_Man
 		%feature("autodoc", "1");
 		Handle_StepShape_FacetedBrepAndBrepWithVoids & operator=(const StepShape_FacetedBrepAndBrepWithVoids *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_FacetedBrepAndBrepWithVoids const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_FacetedBrepAndBrepWithVoids const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_FacetedBrepAndBrepWithVoids {
@@ -3673,7 +3673,7 @@ class Handle_StepShape_AdvancedFace : public Handle_StepShape_FaceSurface {
 		%feature("autodoc", "1");
 		Handle_StepShape_AdvancedFace & operator=(const StepShape_AdvancedFace *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_AdvancedFace const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_AdvancedFace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_AdvancedFace {
@@ -3711,7 +3711,7 @@ class Handle_StepShape_QualifiedRepresentationItem : public Handle_StepRepr_Repr
 		%feature("autodoc", "1");
 		Handle_StepShape_QualifiedRepresentationItem & operator=(const StepShape_QualifiedRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_QualifiedRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_QualifiedRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_QualifiedRepresentationItem {
@@ -3749,7 +3749,7 @@ class Handle_StepShape_OrientedClosedShell : public Handle_StepShape_ClosedShell
 		%feature("autodoc", "1");
 		Handle_StepShape_OrientedClosedShell & operator=(const StepShape_OrientedClosedShell *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_OrientedClosedShell const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_OrientedClosedShell const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_OrientedClosedShell {
@@ -3787,7 +3787,7 @@ class Handle_StepShape_ShapeDimensionRepresentation : public Handle_StepShape_Sh
 		%feature("autodoc", "1");
 		Handle_StepShape_ShapeDimensionRepresentation & operator=(const StepShape_ShapeDimensionRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDimensionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ShapeDimensionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ShapeDimensionRepresentation {
@@ -3825,7 +3825,7 @@ class Handle_StepShape_HArray1OfEdge : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepShape_HArray1OfEdge & operator=(const StepShape_HArray1OfEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_HArray1OfEdge {
@@ -3863,7 +3863,7 @@ class Handle_StepShape_ContextDependentShapeRepresentation : public Handle_MMgt_
 		%feature("autodoc", "1");
 		Handle_StepShape_ContextDependentShapeRepresentation & operator=(const StepShape_ContextDependentShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ContextDependentShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ContextDependentShapeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepShape_ContextDependentShapeRepresentation {

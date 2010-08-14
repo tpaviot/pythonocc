@@ -43,23 +43,23 @@ class Geom2dConvert {
 		%feature("autodoc", "1");
 		Geom2dConvert();
 		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve SplitBSplineCurve(const Handle_Geom2d_BSplineCurve &C, const Standard_Integer FromK1, const Standard_Integer ToK2, const Standard_Boolean SameOrientation=1);
+		static		Handle_Geom2d_BSplineCurve SplitBSplineCurve(const Handle_Geom2d_BSplineCurve &C, const Standard_Integer FromK1, const Standard_Integer ToK2, const Standard_Boolean SameOrientation=1);
 		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve SplitBSplineCurve(const Handle_Geom2d_BSplineCurve &C, const Standard_Real FromU1, const Standard_Real ToU2, const Standard_Real ParametricTolerance, const Standard_Boolean SameOrientation=1);
+		static		Handle_Geom2d_BSplineCurve SplitBSplineCurve(const Handle_Geom2d_BSplineCurve &C, const Standard_Real FromU1, const Standard_Real ToU2, const Standard_Real ParametricTolerance, const Standard_Boolean SameOrientation=1);
 		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve CurveToBSplineCurve(const Handle_Geom2d_Curve &C, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+		static		Handle_Geom2d_BSplineCurve CurveToBSplineCurve(const Handle_Geom2d_Curve &C, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 		%feature("autodoc", "1");
-		void ConcatG1(TColGeom2d_Array1OfBSplineCurve & ArrayOfCurves, const TColStd_Array1OfReal &ArrayOfToler, Handle_TColGeom2d_HArray1OfBSplineCurve & ArrayOfConcatenated, const Standard_Boolean ClosedFlag, const Standard_Real ClosedTolerance);
+		static		void ConcatG1(TColGeom2d_Array1OfBSplineCurve & ArrayOfCurves, const TColStd_Array1OfReal &ArrayOfToler, Handle_TColGeom2d_HArray1OfBSplineCurve & ArrayOfConcatenated, const Standard_Boolean ClosedFlag, const Standard_Real ClosedTolerance);
 		%feature("autodoc", "1");
-		void ConcatC1(TColGeom2d_Array1OfBSplineCurve & ArrayOfCurves, const TColStd_Array1OfReal &ArrayOfToler, Handle_TColStd_HArray1OfInteger & ArrayOfIndices, Handle_TColGeom2d_HArray1OfBSplineCurve & ArrayOfConcatenated, const Standard_Boolean ClosedFlag, const Standard_Real ClosedTolerance);
+		static		void ConcatC1(TColGeom2d_Array1OfBSplineCurve & ArrayOfCurves, const TColStd_Array1OfReal &ArrayOfToler, Handle_TColStd_HArray1OfInteger & ArrayOfIndices, Handle_TColGeom2d_HArray1OfBSplineCurve & ArrayOfConcatenated, const Standard_Boolean ClosedFlag, const Standard_Real ClosedTolerance);
 		%feature("autodoc", "1");
-		void ConcatC1(TColGeom2d_Array1OfBSplineCurve & ArrayOfCurves, const TColStd_Array1OfReal &ArrayOfToler, Handle_TColStd_HArray1OfInteger & ArrayOfIndices, Handle_TColGeom2d_HArray1OfBSplineCurve & ArrayOfConcatenated, const Standard_Boolean ClosedFlag, const Standard_Real ClosedTolerance, const Standard_Real AngularTolerance);
+		static		void ConcatC1(TColGeom2d_Array1OfBSplineCurve & ArrayOfCurves, const TColStd_Array1OfReal &ArrayOfToler, Handle_TColStd_HArray1OfInteger & ArrayOfIndices, Handle_TColGeom2d_HArray1OfBSplineCurve & ArrayOfConcatenated, const Standard_Boolean ClosedFlag, const Standard_Real ClosedTolerance, const Standard_Real AngularTolerance);
 		%feature("autodoc", "1");
-		void C0BSplineToC1BSplineCurve(Handle_Geom2d_BSplineCurve & BS, const Standard_Real Tolerance);
+		static		void C0BSplineToC1BSplineCurve(Handle_Geom2d_BSplineCurve & BS, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		void C0BSplineToArrayOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HArray1OfBSplineCurve & tabBS, const Standard_Real Tolerance);
+		static		void C0BSplineToArrayOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HArray1OfBSplineCurve & tabBS, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		void C0BSplineToArrayOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HArray1OfBSplineCurve & tabBS, const Standard_Real AngularTolerance, const Standard_Real Tolerance);
+		static		void C0BSplineToArrayOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HArray1OfBSplineCurve & tabBS, const Standard_Real AngularTolerance, const Standard_Real Tolerance);
 
 };
 %feature("shadow") Geom2dConvert::~Geom2dConvert %{

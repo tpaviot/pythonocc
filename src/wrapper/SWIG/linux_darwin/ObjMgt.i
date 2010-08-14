@@ -51,7 +51,7 @@ class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
@@ -89,7 +89,7 @@ class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternRef & operator=(const ObjMgt_ExternRef *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternRef const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_ObjMgt_ExternRef const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_ObjMgt_ExternRef {
@@ -127,7 +127,7 @@ class Handle_ObjMgt_ExternShareable : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_ExternShareable & operator=(const ObjMgt_ExternShareable *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternShareable const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_ObjMgt_ExternShareable const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_ObjMgt_ExternShareable {
@@ -165,7 +165,7 @@ class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_ObjMgt_PSeqOfExtRef & operator=(const ObjMgt_PSeqOfExtRef *anItem);
 		%feature("autodoc", "1");
-		Handle_ObjMgt_PSeqOfExtRef const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_ObjMgt_PSeqOfExtRef const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_ObjMgt_PSeqOfExtRef {

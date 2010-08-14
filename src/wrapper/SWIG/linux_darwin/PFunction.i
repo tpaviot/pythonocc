@@ -51,7 +51,7 @@ class Handle_PFunction_Function : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PFunction_Function & operator=(const PFunction_Function *anItem);
 		%feature("autodoc", "1");
-		Handle_PFunction_Function const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PFunction_Function const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PFunction_Function {

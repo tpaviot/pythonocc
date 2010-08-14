@@ -51,7 +51,7 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient & operator=(const XCAFPrs_DataMapNodeOfDataMapOfStyleTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient {
@@ -89,7 +89,7 @@ class Handle_XCAFPrs_AISObject : public Handle_AIS_Shape {
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_AISObject & operator=(const XCAFPrs_AISObject *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFPrs_AISObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFPrs_AISObject const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFPrs_AISObject {
@@ -127,7 +127,7 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle & operator=(const XCAFPrs_DataMapNodeOfDataMapOfShapeStyle *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
@@ -165,7 +165,7 @@ class Handle_XCAFPrs_Driver : public Handle_TPrsStd_Driver {
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_Driver & operator=(const XCAFPrs_Driver *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFPrs_Driver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFPrs_Driver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFPrs_Driver {
@@ -203,7 +203,7 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape & operator=(const XCAFPrs_DataMapNodeOfDataMapOfStyleShape *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape {
@@ -389,13 +389,13 @@ class XCAFPrs {
 		%feature("autodoc", "1");
 		XCAFPrs();
 		%feature("autodoc", "1");
-		void CollectStyleSettings(const TDF_Label &L, const TopLoc_Location &loc, XCAFPrs_DataMapOfShapeStyle & settings);
+		static		void CollectStyleSettings(const TDF_Label &L, const TopLoc_Location &loc, XCAFPrs_DataMapOfShapeStyle & settings);
 		%feature("autodoc", "1");
-		Standard_Boolean DispatchStyles(const TopoDS_Shape &shape, const XCAFPrs_DataMapOfShapeStyle &settings, XCAFPrs_DataMapOfStyleShape & items, const XCAFPrs_Style &DefStyle, const Standard_Boolean force=1, const TopAbs_ShapeEnum context=TopAbs_SHAPE);
+		static		Standard_Boolean DispatchStyles(const TopoDS_Shape &shape, const XCAFPrs_DataMapOfShapeStyle &settings, XCAFPrs_DataMapOfStyleShape & items, const XCAFPrs_Style &DefStyle, const Standard_Boolean force=1, const TopAbs_ShapeEnum context=TopAbs_SHAPE);
 		%feature("autodoc", "1");
-		void SetViewNameMode(const Standard_Boolean viewNameMode);
+		static		void SetViewNameMode(const Standard_Boolean viewNameMode);
 		%feature("autodoc", "1");
-		Standard_Boolean GetViewNameMode();
+		static		Standard_Boolean GetViewNameMode();
 
 };
 %feature("shadow") XCAFPrs::~XCAFPrs %{
@@ -545,7 +545,7 @@ class XCAFPrs_Driver : public TPrsStd_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -606,9 +606,9 @@ class XCAFPrs_Style {
 		%feature("autodoc", "1");
 		Standard_Boolean operator==(const XCAFPrs_Style &other) const;
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const XCAFPrs_Style &S, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const XCAFPrs_Style &S, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const XCAFPrs_Style &S1, const XCAFPrs_Style &S2);
+		static		Standard_Boolean IsEqual(const XCAFPrs_Style &S1, const XCAFPrs_Style &S2);
 
 };
 %feature("shadow") XCAFPrs_Style::~XCAFPrs_Style %{

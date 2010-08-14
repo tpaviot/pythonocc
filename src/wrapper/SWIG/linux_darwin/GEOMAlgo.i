@@ -111,7 +111,7 @@ class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape : p
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape {
@@ -149,7 +149,7 @@ class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Hand
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
@@ -187,7 +187,7 @@ class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo : publi
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
@@ -225,7 +225,7 @@ class Handle_GEOMAlgo_HAlgo : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_HAlgo & operator=(const GEOMAlgo_HAlgo *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_HAlgo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_HAlgo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_HAlgo {
@@ -263,7 +263,7 @@ class Handle_GEOMAlgo_Clsf : public Handle_GEOMAlgo_HAlgo {
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_Clsf & operator=(const GEOMAlgo_Clsf *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_Clsf const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_Clsf const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_Clsf {
@@ -301,7 +301,7 @@ class Handle_GEOMAlgo_ClsfBox : public Handle_GEOMAlgo_Clsf {
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_ClsfBox & operator=(const GEOMAlgo_ClsfBox *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ClsfBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_ClsfBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_ClsfBox {
@@ -339,7 +339,7 @@ class Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal & operator=(const GEOMAlgo_DataMapNodeOfDataMapOfShapeReal *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal {
@@ -377,7 +377,7 @@ class Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape & operator=(const GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape {
@@ -415,7 +415,7 @@ class Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape & operator=(const GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape {
@@ -453,7 +453,7 @@ class Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet & operator=(const GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet {
@@ -491,7 +491,7 @@ class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShap
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape {
@@ -529,7 +529,7 @@ class Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger & operator=(const GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger {
@@ -567,7 +567,7 @@ class Handle_GEOMAlgo_ClsfSurf : public Handle_GEOMAlgo_Clsf {
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_ClsfSurf & operator=(const GEOMAlgo_ClsfSurf *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ClsfSurf const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_ClsfSurf const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_ClsfSurf {
@@ -605,7 +605,7 @@ class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState : public Ha
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState {
@@ -643,7 +643,7 @@ class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public 
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
@@ -681,7 +681,7 @@ class Handle_GEOMAlgo_ListNodeOfListOfCoupleOfShapes : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_ListNodeOfListOfCoupleOfShapes & operator=(const GEOMAlgo_ListNodeOfListOfCoupleOfShapes *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ListNodeOfListOfCoupleOfShapes const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_ListNodeOfListOfCoupleOfShapes const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_ListNodeOfListOfCoupleOfShapes {
@@ -719,7 +719,7 @@ class Handle_GEOMAlgo_ClsfSolid : public Handle_GEOMAlgo_Clsf {
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_ClsfSolid & operator=(const GEOMAlgo_ClsfSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ClsfSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_ClsfSolid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_ClsfSolid {
@@ -757,7 +757,7 @@ class Handle_GEOMAlgo_ListNodeOfListOfPnt : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_GEOMAlgo_ListNodeOfListOfPnt & operator=(const GEOMAlgo_ListNodeOfListOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ListNodeOfListOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMAlgo_ListNodeOfListOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMAlgo_ListNodeOfListOfPnt {
@@ -790,9 +790,9 @@ class GEOMAlgo_PassKeyShapeMapHasher {
 		%feature("autodoc", "1");
 		GEOMAlgo_PassKeyShapeMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const GEOMAlgo_PassKeyShape &aPKey, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const GEOMAlgo_PassKeyShape &aPKey, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const GEOMAlgo_PassKeyShape &aPKey1, const GEOMAlgo_PassKeyShape &aPKey2);
+		static		Standard_Boolean IsEqual(const GEOMAlgo_PassKeyShape &aPKey1, const GEOMAlgo_PassKeyShape &aPKey2);
 
 };
 
@@ -912,9 +912,9 @@ class GEOMAlgo_FinderShapeOn : public GEOMAlgo_ShapeAlgo {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Shapes() const;
 		%feature("autodoc", "1");
-		void CopySource(const TopoDS_Shape &aS, TopTools_DataMapOfShapeShape & aImages, TopTools_DataMapOfShapeShape & aOriginals, TopoDS_Shape & aSC);
+		static		void CopySource(const TopoDS_Shape &aS, TopTools_DataMapOfShapeShape & aImages, TopTools_DataMapOfShapeShape & aOriginals, TopoDS_Shape & aSC);
 		%feature("autodoc", "1");
-		bool BuildTriangulation(const TopoDS_Shape &theShape);
+		static		bool BuildTriangulation(const TopoDS_Shape &theShape);
 
 };
 
@@ -1700,41 +1700,41 @@ class GEOMAlgo_Tools3D {
 		%feature("autodoc", "1");
 		GEOMAlgo_Tools3D();
 		%feature("autodoc", "1");
-		Standard_Boolean IsSplitToReverse(const TopoDS_Shape &theSplit, const TopoDS_Shape &theShape, IntTools_Context & theContext);
+		static		Standard_Boolean IsSplitToReverse(const TopoDS_Shape &theSplit, const TopoDS_Shape &theShape, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSplitToReverse(const TopoDS_Face &theSplit, const TopoDS_Face &theShape, IntTools_Context & theContext);
+		static		Standard_Boolean IsSplitToReverse(const TopoDS_Face &theSplit, const TopoDS_Face &theShape, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSplitToReverse(const TopoDS_Edge &theEdge, const TopoDS_Edge &theSplit, IntTools_Context & theContext);
+		static		Standard_Boolean IsSplitToReverse(const TopoDS_Edge &theEdge, const TopoDS_Edge &theSplit, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		Standard_Integer Sense(const TopoDS_Face &theF1, const TopoDS_Face &theF2);
+		static		Standard_Integer Sense(const TopoDS_Face &theF1, const TopoDS_Face &theF2);
 		%feature("autodoc", "1");
-		void CopyFace(const TopoDS_Face &theF1, TopoDS_Face & theF2);
+		static		void CopyFace(const TopoDS_Face &theF1, TopoDS_Face & theF2);
 		%feature("autodoc", "1");
-		void MakeContainer(const TopAbs_ShapeEnum theType, TopoDS_Shape & theShape);
+		static		void MakeContainer(const TopAbs_ShapeEnum theType, TopoDS_Shape & theShape);
 		%feature("autodoc", "1");
-		void MakeConnexityBlock(const TopTools_ListOfShape &theLS, const TopTools_IndexedMapOfShape &theMapAvoid, TopTools_ListOfShape & theLSCB);
+		static		void MakeConnexityBlock(const TopTools_ListOfShape &theLS, const TopTools_IndexedMapOfShape &theMapAvoid, TopTools_ListOfShape & theLSCB);
 		%feature("autodoc", "1");
-		TopAbs_State ComputeStateByOnePoint(const TopoDS_Shape &theShape, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		static		TopAbs_State ComputeStateByOnePoint(const TopoDS_Shape &theShape, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		TopAbs_State ComputeState(const gp_Pnt &thePoint, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		static		TopAbs_State ComputeState(const gp_Pnt &thePoint, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		TopAbs_State ComputeState(const TopoDS_Vertex &theVertex, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		static		TopAbs_State ComputeState(const TopoDS_Vertex &theVertex, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		TopAbs_State ComputeState(const TopoDS_Edge &theEdge, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		static		TopAbs_State ComputeState(const TopoDS_Edge &theEdge, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		TopAbs_State ComputeState(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const Standard_Real theTol, const TopTools_IndexedMapOfShape &theBounds, IntTools_Context & theContext);
+		static		TopAbs_State ComputeState(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const Standard_Real theTol, const TopTools_IndexedMapOfShape &theBounds, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopoDS_Face &theFace1, const TopoDS_Face &theFace2, IntTools_Context & theContext);
+		static		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopoDS_Face &theFace1, const TopoDS_Face &theFace2, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopTools_ListOfShape &theLF, IntTools_Context & theContext);
+		static		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopTools_ListOfShape &theLF, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const TopTools_IndexedDataMapOfShapeListOfShape &theMEF, const Standard_Real theTol, IntTools_Context & theContext);
+		static		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const TopTools_IndexedDataMapOfShapeListOfShape &theMEF, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		void GetFaceOff(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, const NMTTools_ListOfCoupleOfShape &theLCEF, TopoDS_Face & theFaceOff);
+		static		void GetFaceOff(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, const NMTTools_ListOfCoupleOfShape &theLCEF, TopoDS_Face & theFaceOff);
 		%feature("autodoc", "1");
-		Standard_Boolean GetEdgeOnFace(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, TopoDS_Edge & theEdgeOnF);
+		static		Standard_Boolean GetEdgeOnFace(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, TopoDS_Edge & theEdgeOnF);
 		%feature("autodoc", "1");
-		Standard_Boolean GetEdgeOff(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, TopoDS_Edge & theEdgeOff);
+		static		Standard_Boolean GetEdgeOff(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, TopoDS_Edge & theEdgeOff);
 
 };
 
@@ -2184,29 +2184,29 @@ class GEOMAlgo_Tools {
 		%feature("autodoc", "1");
 		GEOMAlgo_Tools();
 		%feature("autodoc", "1");
-		Standard_Boolean IsCompositeShape(const TopoDS_Shape &aS);
+		static		Standard_Boolean IsCompositeShape(const TopoDS_Shape &aS);
 		%feature("autodoc", "1");
-		Standard_Integer RefineSDShapes(GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape & aMSD, const Standard_Real aTol, IntTools_Context & aCtx);
+		static		Standard_Integer RefineSDShapes(GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape & aMSD, const Standard_Real aTol, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
-		Standard_Integer FindSDShapes(const TopTools_ListOfShape &aLE, const Standard_Real aTol, TopTools_IndexedDataMapOfShapeListOfShape & aMEE, IntTools_Context & aCtx);
+		static		Standard_Integer FindSDShapes(const TopTools_ListOfShape &aLE, const Standard_Real aTol, TopTools_IndexedDataMapOfShapeListOfShape & aMEE, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
-		Standard_Integer FindSDShapes(const TopoDS_Shape &aE1, const TopTools_ListOfShape &aLE, const Standard_Real aTol, TopTools_ListOfShape & aLESD, IntTools_Context & aCtx);
+		static		Standard_Integer FindSDShapes(const TopoDS_Shape &aE1, const TopTools_ListOfShape &aLE, const Standard_Real aTol, TopTools_ListOfShape & aLESD, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
-		Standard_Boolean ProjectPointOnShape(const gp_Pnt &aP1, const TopoDS_Shape &aS, gp_Pnt & aP2, IntTools_Context & aCtx);
+		static		Standard_Boolean ProjectPointOnShape(const gp_Pnt &aP1, const TopoDS_Shape &aS, gp_Pnt & aP2, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
-		void PointOnShape(const TopoDS_Shape &aS, gp_Pnt & aP3D);
+		static		void PointOnShape(const TopoDS_Shape &aS, gp_Pnt & aP3D);
 		%feature("autodoc", "1");
-		void PointOnEdge(const TopoDS_Edge &aE, gp_Pnt & aP3D);
+		static		void PointOnEdge(const TopoDS_Edge &aE, gp_Pnt & aP3D);
 		%feature("autodoc", "1");
-		void PointOnEdge(const TopoDS_Edge &aE, const Standard_Real aT, gp_Pnt & aP3D);
+		static		void PointOnEdge(const TopoDS_Edge &aE, const Standard_Real aT, gp_Pnt & aP3D);
 		%feature("autodoc", "1");
-		void PointOnFace(const TopoDS_Face &aF, gp_Pnt & aP3D);
+		static		void PointOnFace(const TopoDS_Face &aF, gp_Pnt & aP3D);
 		%feature("autodoc", "1");
-		void PointOnFace(const TopoDS_Face &aF, const Standard_Real aU, const Standard_Real aV, gp_Pnt & aP3D);
+		static		void PointOnFace(const TopoDS_Face &aF, const Standard_Real aU, const Standard_Real aV, gp_Pnt & aP3D);
 		%feature("autodoc", "1");
-		void RefinePCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aU1, const Standard_Real aU2);
+		static		void RefinePCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aU1, const Standard_Real aU2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsUPeriodic(const Handle_Geom_Surface &aS);
+		static		Standard_Boolean IsUPeriodic(const Handle_Geom_Surface &aS);
 
 };
 
@@ -2328,9 +2328,9 @@ class GEOMAlgo_PassKeyMapHasher {
 		%feature("autodoc", "1");
 		GEOMAlgo_PassKeyMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const GEOMAlgo_PassKey &aPKey, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const GEOMAlgo_PassKey &aPKey, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const GEOMAlgo_PassKey &aPKey1, const GEOMAlgo_PassKey &aPKey2);
+		static		Standard_Boolean IsEqual(const GEOMAlgo_PassKey &aPKey1, const GEOMAlgo_PassKey &aPKey2);
 
 };
 
@@ -2577,9 +2577,9 @@ class GEOMAlgo_BuilderTools {
 		%feature("autodoc", "1");
 		GEOMAlgo_BuilderTools();
 		%feature("autodoc", "1");
-		Standard_Boolean IsHole(const TopoDS_Shape &aW, const TopoDS_Shape &aF);
+		static		Standard_Boolean IsHole(const TopoDS_Shape &aW, const TopoDS_Shape &aF);
 		%feature("autodoc", "1");
-		Standard_Boolean IsHole(const TopoDS_Shape &aShell);
+		static		Standard_Boolean IsHole(const TopoDS_Shape &aShell);
 
 };
 
@@ -2728,23 +2728,23 @@ class GEOMAlgo_SurfaceTools {
 		%feature("autodoc", "1");
 		GEOMAlgo_SurfaceTools();
 		%feature("autodoc", "1");
-		Standard_Boolean IsAnalytic(const Handle_Geom_Surface &aS);
+		static		Standard_Boolean IsAnalytic(const Handle_Geom_Surface &aS);
 		%feature("autodoc", "1");
-		Standard_Boolean IsCoaxial(const gp_Pnt &aP1, const gp_Pnt &aP2, const gp_Cylinder &aCyl, const Standard_Real aTol);
+		static		Standard_Boolean IsCoaxial(const gp_Pnt &aP1, const gp_Pnt &aP2, const gp_Cylinder &aCyl, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		Standard_Boolean IsConformState(const TopAbs_State aST1, const GEOMAlgo_State aST2);
+		static		Standard_Boolean IsConformState(const TopAbs_State aST1, const GEOMAlgo_State aST2);
 		%feature("autodoc", "1");
-		Standard_Integer GetState(const gp_Pnt &aP, const GeomAdaptor_Surface &aS, const Standard_Real aTol, TopAbs_State & aSt);
+		static		Standard_Integer GetState(const gp_Pnt &aP, const GeomAdaptor_Surface &aS, const Standard_Real aTol, TopAbs_State & aSt);
 		%feature("autodoc", "1");
-		Standard_Integer GetState(const gp_Pnt &aP, const Handle_Geom_Surface &aS, const Standard_Real aTol, TopAbs_State & aSt);
+		static		Standard_Integer GetState(const gp_Pnt &aP, const Handle_Geom_Surface &aS, const Standard_Real aTol, TopAbs_State & aSt);
 		%feature("autodoc", "1");
-		Standard_Real Distance(const gp_Pnt &aP, const gp_Pln &aPln);
+		static		Standard_Real Distance(const gp_Pnt &aP, const gp_Pln &aPln);
 		%feature("autodoc", "1");
-		Standard_Real Distance(const gp_Pnt &aP, const gp_Cylinder &aCyl);
+		static		Standard_Real Distance(const gp_Pnt &aP, const gp_Cylinder &aCyl);
 		%feature("autodoc", "1");
-		Standard_Real Distance(const gp_Pnt &aP, const gp_Sphere &aSph);
+		static		Standard_Real Distance(const gp_Pnt &aP, const gp_Sphere &aSph);
 		%feature("autodoc", "1");
-		TopAbs_State ReverseState(const TopAbs_State aSt);
+		static		TopAbs_State ReverseState(const TopAbs_State aSt);
 
 };
 

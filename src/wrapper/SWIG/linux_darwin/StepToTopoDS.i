@@ -100,7 +100,7 @@ class Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI & operator=(const StepToTopoDS_DataMapNodeOfDataMapOfTRI *anItem);
 		%feature("autodoc", "1");
-		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI {
@@ -138,7 +138,7 @@ class Handle_StepToTopoDS_DataMapNodeOfPointVertexMap : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap & operator=(const StepToTopoDS_DataMapNodeOfPointVertexMap *anItem);
 		%feature("autodoc", "1");
-		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepToTopoDS_DataMapNodeOfPointVertexMap {
@@ -176,7 +176,7 @@ class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap & operator=(const StepToTopoDS_DataMapNodeOfPointEdgeMap *anItem);
 		%feature("autodoc", "1");
-		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap {
@@ -206,14 +206,14 @@ class StepToTopoDS_GeometricTool {
 		%feature("autodoc", "1");
 		StepToTopoDS_GeometricTool();
 		%feature("autodoc", "1");
-		Standard_Integer PCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, Handle_StepGeom_Pcurve & PC, const Standard_Integer last=0);
+		static		Standard_Integer PCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, Handle_StepGeom_Pcurve & PC, const Standard_Integer last=0);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSeamCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
+		static		Standard_Boolean IsSeamCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
 		%feature("autodoc", "1");
-		Standard_Boolean IsLikeSeam(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
+		static		Standard_Boolean IsLikeSeam(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
 		%feature("autodoc","UpdateParam3d(const C, Standard_Real preci) -> [Standard_Real, Standard_Real]");
 
-		Standard_Boolean UpdateParam3d(const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real preci);
+		static		Standard_Boolean UpdateParam3d(const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real preci);
 
 };
 %feature("shadow") StepToTopoDS_GeometricTool::~StepToTopoDS_GeometricTool %{
@@ -512,9 +512,9 @@ class StepToTopoDS_CartesianPointHasher {
 		%feature("autodoc", "1");
 		StepToTopoDS_CartesianPointHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Handle_StepGeom_CartesianPoint &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const Handle_StepGeom_CartesianPoint &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Handle_StepGeom_CartesianPoint &K1, const Handle_StepGeom_CartesianPoint &K2);
+		static		Standard_Boolean IsEqual(const Handle_StepGeom_CartesianPoint &K1, const Handle_StepGeom_CartesianPoint &K2);
 
 };
 %feature("shadow") StepToTopoDS_CartesianPointHasher::~StepToTopoDS_CartesianPointHasher %{
@@ -570,9 +570,9 @@ class StepToTopoDS_PointPairHasher {
 		%feature("autodoc", "1");
 		StepToTopoDS_PointPairHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const StepToTopoDS_PointPair &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const StepToTopoDS_PointPair &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const StepToTopoDS_PointPair &K1, const StepToTopoDS_PointPair &K2);
+		static		Standard_Boolean IsEqual(const StepToTopoDS_PointPair &K1, const StepToTopoDS_PointPair &K2);
 
 };
 %feature("shadow") StepToTopoDS_PointPairHasher::~StepToTopoDS_PointPairHasher %{
@@ -1019,21 +1019,21 @@ class StepToTopoDS {
 		%feature("autodoc", "1");
 		StepToTopoDS();
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeBuilderError(const StepToTopoDS_BuilderError Error);
+		static		Handle_TCollection_HAsciiString DecodeBuilderError(const StepToTopoDS_BuilderError Error);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeShellError(const StepToTopoDS_TranslateShellError Error);
+		static		Handle_TCollection_HAsciiString DecodeShellError(const StepToTopoDS_TranslateShellError Error);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeFaceError(const StepToTopoDS_TranslateFaceError Error);
+		static		Handle_TCollection_HAsciiString DecodeFaceError(const StepToTopoDS_TranslateFaceError Error);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeEdgeError(const StepToTopoDS_TranslateEdgeError Error);
+		static		Handle_TCollection_HAsciiString DecodeEdgeError(const StepToTopoDS_TranslateEdgeError Error);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeVertexError(const StepToTopoDS_TranslateVertexError Error);
+		static		Handle_TCollection_HAsciiString DecodeVertexError(const StepToTopoDS_TranslateVertexError Error);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodeVertexLoopError(const StepToTopoDS_TranslateVertexLoopError Error);
+		static		Handle_TCollection_HAsciiString DecodeVertexLoopError(const StepToTopoDS_TranslateVertexLoopError Error);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DecodePolyLoopError(const StepToTopoDS_TranslatePolyLoopError Error);
+		static		Handle_TCollection_HAsciiString DecodePolyLoopError(const StepToTopoDS_TranslatePolyLoopError Error);
 		%feature("autodoc", "1");
-		char * DecodeGeometricToolError(const StepToTopoDS_GeometricToolError Error);
+		static		char * DecodeGeometricToolError(const StepToTopoDS_GeometricToolError Error);
 
 };
 %feature("shadow") StepToTopoDS::~StepToTopoDS %{

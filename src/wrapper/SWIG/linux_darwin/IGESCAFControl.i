@@ -43,9 +43,9 @@ class IGESCAFControl {
 		%feature("autodoc", "1");
 		IGESCAFControl();
 		%feature("autodoc", "1");
-		Quantity_Color DecodeColor(const Standard_Integer col);
+		static		Quantity_Color DecodeColor(const Standard_Integer col);
 		%feature("autodoc", "1");
-		Standard_Integer EncodeColor(const Quantity_Color &col);
+		static		Standard_Integer EncodeColor(const Quantity_Color &col);
 
 };
 %feature("shadow") IGESCAFControl::~IGESCAFControl %{

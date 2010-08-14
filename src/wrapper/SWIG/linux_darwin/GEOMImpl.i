@@ -51,7 +51,7 @@ class Handle_GEOMImpl_CircleDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_CircleDriver & operator=(const GEOMImpl_CircleDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_CircleDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_CircleDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_CircleDriver {
@@ -89,7 +89,7 @@ class Handle_GEOMImpl_MeasureDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_MeasureDriver & operator=(const GEOMImpl_MeasureDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_MeasureDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_MeasureDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_MeasureDriver {
@@ -127,7 +127,7 @@ class Handle_GEOMImpl_FillingDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_FillingDriver & operator=(const GEOMImpl_FillingDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_FillingDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_FillingDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_FillingDriver {
@@ -165,7 +165,7 @@ class Handle_GEOMImpl_ScaleDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_ScaleDriver & operator=(const GEOMImpl_ScaleDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ScaleDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_ScaleDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_ScaleDriver {
@@ -203,7 +203,7 @@ class Handle_GEOMImpl_FaceDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_FaceDriver & operator=(const GEOMImpl_FaceDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_FaceDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_FaceDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_FaceDriver {
@@ -241,7 +241,7 @@ class Handle_GEOMImpl_SplineDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_SplineDriver & operator=(const GEOMImpl_SplineDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_SplineDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_SplineDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_SplineDriver {
@@ -279,7 +279,7 @@ class Handle_GEOMImpl_ThickSolidDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_ThickSolidDriver & operator=(const GEOMImpl_ThickSolidDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ThickSolidDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_ThickSolidDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_ThickSolidDriver {
@@ -317,7 +317,7 @@ class Handle_GEOMImpl_MirrorDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_MirrorDriver & operator=(const GEOMImpl_MirrorDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_MirrorDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_MirrorDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_MirrorDriver {
@@ -355,7 +355,7 @@ class Handle_GEOMImpl_BooleanDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_BooleanDriver & operator=(const GEOMImpl_BooleanDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_BooleanDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_BooleanDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_BooleanDriver {
@@ -393,7 +393,7 @@ class Handle_GEOMImpl_ConeDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_ConeDriver & operator=(const GEOMImpl_ConeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ConeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_ConeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_ConeDriver {
@@ -431,7 +431,7 @@ class Handle_GEOMImpl_PositionDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_PositionDriver & operator=(const GEOMImpl_PositionDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_PositionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_PositionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_PositionDriver {
@@ -469,7 +469,7 @@ class Handle_GEOMImpl_CylinderDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_CylinderDriver & operator=(const GEOMImpl_CylinderDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_CylinderDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_CylinderDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_CylinderDriver {
@@ -507,7 +507,7 @@ class Handle_GEOMImpl_PipeDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_PipeDriver & operator=(const GEOMImpl_PipeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_PipeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_PipeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_PipeDriver {
@@ -545,7 +545,7 @@ class Handle_GEOMImpl_ArchimedeDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_ArchimedeDriver & operator=(const GEOMImpl_ArchimedeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ArchimedeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_ArchimedeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_ArchimedeDriver {
@@ -583,7 +583,7 @@ class Handle_GEOMImpl_DiskDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_DiskDriver & operator=(const GEOMImpl_DiskDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_DiskDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_DiskDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_DiskDriver {
@@ -621,7 +621,7 @@ class Handle_GEOMImpl_PolylineDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_PolylineDriver & operator=(const GEOMImpl_PolylineDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_PolylineDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_PolylineDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_PolylineDriver {
@@ -659,7 +659,7 @@ class Handle_GEOMImpl_PointDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_PointDriver & operator=(const GEOMImpl_PointDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_PointDriver {
@@ -697,7 +697,7 @@ class Handle_GEOMImpl_PrismDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_PrismDriver & operator=(const GEOMImpl_PrismDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_PrismDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_PrismDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_PrismDriver {
@@ -735,7 +735,7 @@ class Handle_GEOMImpl_PlaneDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_PlaneDriver & operator=(const GEOMImpl_PlaneDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_PlaneDriver {
@@ -773,7 +773,7 @@ class Handle_GEOMImpl_ThruSectionsDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_ThruSectionsDriver & operator=(const GEOMImpl_ThruSectionsDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ThruSectionsDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_ThruSectionsDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_ThruSectionsDriver {
@@ -811,7 +811,7 @@ class Handle_GEOMImpl_DraftDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_DraftDriver & operator=(const GEOMImpl_DraftDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_DraftDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_DraftDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_DraftDriver {
@@ -849,7 +849,7 @@ class Handle_GEOMImpl_PartitionDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_PartitionDriver & operator=(const GEOMImpl_PartitionDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_PartitionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_PartitionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_PartitionDriver {
@@ -887,7 +887,7 @@ class Handle_GEOMImpl_VariableFilletDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_VariableFilletDriver & operator=(const GEOMImpl_VariableFilletDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_VariableFilletDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_VariableFilletDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_VariableFilletDriver {
@@ -925,7 +925,7 @@ class Handle_GEOMImpl_ShapeDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_ShapeDriver & operator=(const GEOMImpl_ShapeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_ShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_ShapeDriver {
@@ -963,7 +963,7 @@ class Handle_GEOMImpl_GlueDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_GlueDriver & operator=(const GEOMImpl_GlueDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_GlueDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_GlueDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_GlueDriver {
@@ -1001,7 +1001,7 @@ class Handle_GEOMImpl_ExportDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_ExportDriver & operator=(const GEOMImpl_ExportDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ExportDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_ExportDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_ExportDriver {
@@ -1039,7 +1039,7 @@ class Handle_GEOMImpl_RotateDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_RotateDriver & operator=(const GEOMImpl_RotateDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_RotateDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_RotateDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_RotateDriver {
@@ -1077,7 +1077,7 @@ class Handle_GEOMImpl_SphereDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_SphereDriver & operator=(const GEOMImpl_SphereDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_SphereDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_SphereDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_SphereDriver {
@@ -1115,7 +1115,7 @@ class Handle_GEOMImpl_RevolutionDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_RevolutionDriver & operator=(const GEOMImpl_RevolutionDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_RevolutionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_RevolutionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_RevolutionDriver {
@@ -1153,7 +1153,7 @@ class Handle_GEOMImpl_EllipseDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_EllipseDriver & operator=(const GEOMImpl_EllipseDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_EllipseDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_EllipseDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_EllipseDriver {
@@ -1191,7 +1191,7 @@ class Handle_GEOMImpl_TorusDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_TorusDriver & operator=(const GEOMImpl_TorusDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_TorusDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_TorusDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_TorusDriver {
@@ -1229,7 +1229,7 @@ class Handle_GEOMImpl_PlateDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_PlateDriver & operator=(const GEOMImpl_PlateDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_PlateDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_PlateDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_PlateDriver {
@@ -1267,7 +1267,7 @@ class Handle_GEOMImpl_LineDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_LineDriver & operator=(const GEOMImpl_LineDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_LineDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_LineDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_LineDriver {
@@ -1305,7 +1305,7 @@ class Handle_GEOMImpl_HealingDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_HealingDriver & operator=(const GEOMImpl_HealingDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_HealingDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_HealingDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_HealingDriver {
@@ -1343,7 +1343,7 @@ class Handle_GEOMImpl_ImportDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_ImportDriver & operator=(const GEOMImpl_ImportDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ImportDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_ImportDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_ImportDriver {
@@ -1381,7 +1381,7 @@ class Handle_GEOMImpl_3DSketcherDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_3DSketcherDriver & operator=(const GEOMImpl_3DSketcherDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_3DSketcherDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_3DSketcherDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_3DSketcherDriver {
@@ -1419,7 +1419,7 @@ class Handle_GEOMImpl_BoxDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_BoxDriver & operator=(const GEOMImpl_BoxDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_BoxDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_BoxDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_BoxDriver {
@@ -1457,7 +1457,7 @@ class Handle_GEOMImpl_CopyDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_CopyDriver & operator=(const GEOMImpl_CopyDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_CopyDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_CopyDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_CopyDriver {
@@ -1495,7 +1495,7 @@ class Handle_GEOMImpl_TranslateDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_TranslateDriver & operator=(const GEOMImpl_TranslateDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_TranslateDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_TranslateDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_TranslateDriver {
@@ -1533,7 +1533,7 @@ class Handle_GEOMImpl_BlockDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_BlockDriver & operator=(const GEOMImpl_BlockDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_BlockDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_BlockDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_BlockDriver {
@@ -1571,7 +1571,7 @@ class Handle_GEOMImpl_ChamferDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_ChamferDriver & operator=(const GEOMImpl_ChamferDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ChamferDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_ChamferDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_ChamferDriver {
@@ -1609,7 +1609,7 @@ class Handle_GEOMImpl_ArcDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_ArcDriver & operator=(const GEOMImpl_ArcDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ArcDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_ArcDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_ArcDriver {
@@ -1647,7 +1647,7 @@ class Handle_GEOMImpl_Fillet1dDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_Fillet1dDriver & operator=(const GEOMImpl_Fillet1dDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_Fillet1dDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_Fillet1dDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_Fillet1dDriver {
@@ -1685,7 +1685,7 @@ class Handle_GEOMImpl_FilletDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_FilletDriver & operator=(const GEOMImpl_FilletDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_FilletDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_FilletDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_FilletDriver {
@@ -1723,7 +1723,7 @@ class Handle_GEOMImpl_SketcherDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_SketcherDriver & operator=(const GEOMImpl_SketcherDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_SketcherDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_SketcherDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_SketcherDriver {
@@ -1761,7 +1761,7 @@ class Handle_GEOMImpl_VectorDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_VectorDriver & operator=(const GEOMImpl_VectorDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_VectorDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_VectorDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_VectorDriver {
@@ -1799,7 +1799,7 @@ class Handle_GEOMImpl_CurveDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_CurveDriver & operator=(const GEOMImpl_CurveDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_CurveDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_CurveDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_CurveDriver {
@@ -1837,7 +1837,7 @@ class Handle_GEOMImpl_OffsetDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_OffsetDriver & operator=(const GEOMImpl_OffsetDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_OffsetDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_OffsetDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_OffsetDriver {
@@ -1875,7 +1875,7 @@ class Handle_GEOMImpl_MarkerDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOMImpl_MarkerDriver & operator=(const GEOMImpl_MarkerDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_MarkerDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_MarkerDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GEOMImpl_MarkerDriver {
@@ -2019,7 +2019,7 @@ class GEOMImpl_PartitionDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -2064,7 +2064,7 @@ class GEOMImpl_MarkerDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -2109,7 +2109,7 @@ class GEOMImpl_ChamferDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -2197,7 +2197,7 @@ class GEOMImpl_FilletDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -2242,7 +2242,7 @@ class GEOMImpl_SplineDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -2287,7 +2287,7 @@ class GEOMImpl_TorusDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -2332,7 +2332,7 @@ class GEOMImpl_ScaleDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -2472,7 +2472,7 @@ class GEOMImpl_MirrorDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -2589,11 +2589,11 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object GetShapesOnShapeAsCompound(const Handle_GEOM_Object &theCheckShape, const Handle_GEOM_Object &theShape, const Standard_Integer theShapeType, GEOMAlgo_State );
 		%feature("autodoc", "1");
-		void SortShapes(TopTools_ListOfShape & SL);
+		static		void SortShapes(TopTools_ListOfShape & SL);
 		%feature("autodoc", "1");
-		TopoDS_Shape CompsolidToCompound(const TopoDS_Shape &theCompsolid);
+		static		TopoDS_Shape CompsolidToCompound(const TopoDS_Shape &theCompsolid);
 		%feature("autodoc", "1");
-		bool CheckTriangulation(const TopoDS_Shape &theShape);
+		static		bool CheckTriangulation(const TopoDS_Shape &theShape);
 
 };
 %feature("shadow") GEOMImpl_IShapesOperations::~GEOMImpl_IShapesOperations %{
@@ -3009,7 +3009,7 @@ class GEOMImpl_OffsetDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -3054,13 +3054,13 @@ class GEOMImpl_GlueDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		TopoDS_Shape GlueFaces(const TopoDS_Shape &theShape, const Standard_Real theTolerance, const Standard_Boolean doKeepNonSolids=1);
+		static		TopoDS_Shape GlueFaces(const TopoDS_Shape &theShape, const Standard_Real theTolerance, const Standard_Boolean doKeepNonSolids=1);
 		%feature("autodoc", "1");
 		TopoDS_Shape GlueFacesWithWarnings(const TopoDS_Shape &theShape, const Standard_Real theTolerance, Standard_Boolean , TCollection_AsciiString & theWarning) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape GlueFacesByList(const TopoDS_Shape &theShape, const Standard_Real theTolerance, Standard_Boolean , const TopTools_MapOfShape &aFaces);
+		static		TopoDS_Shape GlueFacesByList(const TopoDS_Shape &theShape, const Standard_Real theTolerance, Standard_Boolean , const TopTools_MapOfShape &aFaces);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -3105,7 +3105,7 @@ class GEOMImpl_PlaneDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -3527,7 +3527,7 @@ class GEOMImpl_IMeasureOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Standard_Real MinSurfaceCurvatureByPoint(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		gp_Ax3 GetPosition(const TopoDS_Shape &theShape);
+		static		gp_Ax3 GetPosition(const TopoDS_Shape &theShape);
 
 };
 %feature("shadow") GEOMImpl_IMeasureOperations::~GEOMImpl_IMeasureOperations %{
@@ -3749,7 +3749,7 @@ class GEOMImpl_IHealingOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		bool GetOperatorParameters(const std::string theOperation, std::list<std::string>, std::list<std::string>);
 		%feature("autodoc", "1");
-		bool GetParameters(const std::string theOperation, std::list<std::string>);
+		static		bool GetParameters(const std::string theOperation, std::list<std::string>);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object SuppressFaces(Handle_GEOM_Object , const Handle_TColStd_HArray1OfInteger &theFaces);
 		%feature("autodoc", "1");
@@ -3798,7 +3798,7 @@ class GEOMImpl_PipeDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -3890,7 +3890,7 @@ class GEOMImpl_LineDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -3935,7 +3935,7 @@ class GEOMImpl_MeasureDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -3980,7 +3980,7 @@ class GEOMImpl_DraftDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -4167,7 +4167,7 @@ class GEOMImpl_FillingDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -4362,7 +4362,7 @@ class GEOMImpl_TranslateDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -4529,7 +4529,7 @@ class GEOMImpl_CopyDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -4574,7 +4574,7 @@ class GEOMImpl_ExportDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -4702,7 +4702,7 @@ class GEOMImpl_BooleanDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -4747,7 +4747,7 @@ class GEOMImpl_3DSketcherDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -4792,7 +4792,7 @@ class GEOMImpl_SphereDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -4837,7 +4837,7 @@ class GEOMImpl_VariableFilletDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -5084,7 +5084,7 @@ class GEOMImpl_RotateDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -5219,7 +5219,7 @@ class GEOMImpl_BoxDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -5418,7 +5418,7 @@ class GEOMImpl_ImportDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -5463,7 +5463,7 @@ class GEOMImpl_PositionDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -5508,7 +5508,7 @@ class GEOMImpl_CylinderDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -5680,7 +5680,7 @@ class GEOMImpl_SketcherDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -5725,7 +5725,7 @@ class GEOMImpl_PolylineDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -5770,7 +5770,7 @@ class GEOMImpl_ConeDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -5897,7 +5897,7 @@ class GEOMImpl_RevolutionDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6167,7 +6167,7 @@ class GEOMImpl_FaceDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6275,7 +6275,7 @@ class GEOMImpl_ILocalOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Standard_Integer GetSubShapeIndex(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		bool GetSubShape(const TopoDS_Shape &theShape, const int theIndex, TopoDS_Shape & theSubShape);
+		static		bool GetSubShape(const TopoDS_Shape &theShape, const int theIndex, TopoDS_Shape & theSubShape);
 
 };
 %feature("shadow") GEOMImpl_ILocalOperations::~GEOMImpl_ILocalOperations %{
@@ -6306,7 +6306,7 @@ class GEOMImpl_BlockDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6351,7 +6351,7 @@ class GEOMImpl_ArchimedeDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6569,7 +6569,7 @@ class GEOMImpl_ShapeDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6645,7 +6645,7 @@ class GEOMImpl_EllipseDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6690,7 +6690,7 @@ class GEOMImpl_VectorDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6790,7 +6790,7 @@ class GEOMImpl_ThickSolidDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6835,7 +6835,7 @@ class GEOMImpl_PlateDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6880,7 +6880,7 @@ class GEOMImpl_ThruSectionsDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6925,7 +6925,7 @@ class GEOMImpl_PrismDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -6970,7 +6970,7 @@ class GEOMImpl_DiskDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -7094,7 +7094,7 @@ class GEOMImpl_Fillet1dDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -7139,7 +7139,7 @@ class GEOMImpl_ArcDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -7226,7 +7226,7 @@ class GEOMImpl_IBlocksOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object CheckAndImprove(Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		void AddBlocksFrom(const TopoDS_Shape &theShape, TopTools_ListOfShape & BLO, TopTools_ListOfShape & NOT, TopTools_ListOfShape & EXT);
+		static		void AddBlocksFrom(const TopoDS_Shape &theShape, TopTools_ListOfShape & BLO, TopTools_ListOfShape & NOT, TopTools_ListOfShape & EXT);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfTransient ExplodeCompoundOfBlocks(Handle_GEOM_Object , const Standard_Integer theMinNbFaces, const Standard_Integer theMaxNbFaces);
 		%feature("autodoc", "1");
@@ -7379,7 +7379,7 @@ class GEOMImpl_PointDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -7455,7 +7455,7 @@ class GEOMImpl_HealingDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -7500,7 +7500,7 @@ class GEOMImpl_CurveDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -7545,7 +7545,7 @@ class GEOMImpl_CircleDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");

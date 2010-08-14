@@ -51,7 +51,7 @@ class Handle_PColPGeom_HArray1OfSurface : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfSurface & operator=(const PColPGeom_HArray1OfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_HArray1OfSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_HArray1OfSurface {
@@ -89,7 +89,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public Handle
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
@@ -127,7 +127,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public Handl
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface {
@@ -165,7 +165,7 @@ class Handle_PColPGeom_HArray1OfBoundedSurface : public Handle_Standard_Persiste
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfBoundedSurface & operator=(const PColPGeom_HArray1OfBoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_HArray1OfBoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_HArray1OfBoundedSurface {
@@ -203,7 +203,7 @@ class Handle_PColPGeom_HArray2OfBoundedSurface : public Handle_Standard_Persiste
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray2OfBoundedSurface & operator=(const PColPGeom_HArray2OfBoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray2OfBoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_HArray2OfBoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_HArray2OfBoundedSurface {
@@ -241,7 +241,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public Handl
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
@@ -279,7 +279,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handle_
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
@@ -317,7 +317,7 @@ class Handle_PColPGeom_HArray2OfBezierSurface : public Handle_Standard_Persisten
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray2OfBezierSurface & operator=(const PColPGeom_HArray2OfBezierSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray2OfBezierSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_HArray2OfBezierSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_HArray2OfBezierSurface {
@@ -355,7 +355,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public Handle_PStan
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface {
@@ -393,7 +393,7 @@ class Handle_PColPGeom_HArray2OfBSplineSurface : public Handle_Standard_Persiste
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray2OfBSplineSurface & operator=(const PColPGeom_HArray2OfBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray2OfBSplineSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_HArray2OfBSplineSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_HArray2OfBSplineSurface {
@@ -431,7 +431,7 @@ class Handle_PColPGeom_HArray1OfBezierCurve : public Handle_Standard_Persistent 
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfBezierCurve & operator=(const PColPGeom_HArray1OfBezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_HArray1OfBezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_HArray1OfBezierCurve {
@@ -469,7 +469,7 @@ class Handle_PColPGeom_HArray1OfBSplineCurve : public Handle_Standard_Persistent
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfBSplineCurve & operator=(const PColPGeom_HArray1OfBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBSplineCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_HArray1OfBSplineCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_HArray1OfBSplineCurve {
@@ -507,7 +507,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public Handle_
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
@@ -545,7 +545,7 @@ class Handle_PColPGeom_HArray1OfBoundedCurve : public Handle_Standard_Persistent
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfBoundedCurve & operator=(const PColPGeom_HArray1OfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBoundedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_HArray1OfBoundedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_HArray1OfBoundedCurve {
@@ -583,7 +583,7 @@ class Handle_PColPGeom_HArray1OfCurve : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray1OfCurve & operator=(const PColPGeom_HArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_HArray1OfCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_HArray1OfCurve {
@@ -621,7 +621,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public Handle_PStan
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface {
@@ -659,7 +659,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public Handle_P
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve {
@@ -697,7 +697,7 @@ class Handle_PColPGeom_HArray2OfSurface : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColPGeom_HArray2OfSurface & operator=(const PColPGeom_HArray2OfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray2OfSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_HArray2OfSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_HArray2OfSurface {
@@ -735,7 +735,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStanda
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
@@ -773,7 +773,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public Handl
 		%feature("autodoc", "1");
 		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface {

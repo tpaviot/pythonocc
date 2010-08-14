@@ -51,7 +51,7 @@ class Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public Ha
 		%feature("autodoc", "1");
 		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation & operator=(const GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
@@ -939,13 +939,13 @@ class GeomInt_LineTool {
 		%feature("autodoc", "1");
 		GeomInt_LineTool();
 		%feature("autodoc", "1");
-		Standard_Integer NbVertex(const Handle_IntPatch_Line &L);
+		static		Standard_Integer NbVertex(const Handle_IntPatch_Line &L);
 		%feature("autodoc", "1");
-		const IntPatch_ThePointOfIntersection & Vertex(const Handle_IntPatch_Line &L, const Standard_Integer I);
+		static		const IntPatch_ThePointOfIntersection & Vertex(const Handle_IntPatch_Line &L, const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_IntPatch_Line &L);
+		static		Standard_Real FirstParameter(const Handle_IntPatch_Line &L);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_IntPatch_Line &L);
+		static		Standard_Real LastParameter(const Handle_IntPatch_Line &L);
 
 };
 %feature("shadow") GeomInt_LineTool::~GeomInt_LineTool %{
@@ -1092,35 +1092,35 @@ class GeomInt_TheMultiLineToolOfWLApprox {
 		%feature("autodoc", "1");
 		GeomInt_TheMultiLineToolOfWLApprox();
 		%feature("autodoc", "1");
-		Standard_Integer FirstPoint(const GeomInt_TheMultiLineOfWLApprox &ML);
+		static		Standard_Integer FirstPoint(const GeomInt_TheMultiLineOfWLApprox &ML);
 		%feature("autodoc", "1");
-		Standard_Integer LastPoint(const GeomInt_TheMultiLineOfWLApprox &ML);
+		static		Standard_Integer LastPoint(const GeomInt_TheMultiLineOfWLApprox &ML);
 		%feature("autodoc", "1");
-		Standard_Integer NbP2d(const GeomInt_TheMultiLineOfWLApprox &ML);
+		static		Standard_Integer NbP2d(const GeomInt_TheMultiLineOfWLApprox &ML);
 		%feature("autodoc", "1");
-		Standard_Integer NbP3d(const GeomInt_TheMultiLineOfWLApprox &ML);
+		static		Standard_Integer NbP3d(const GeomInt_TheMultiLineOfWLApprox &ML);
 		%feature("autodoc", "1");
-		void Value(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt);
+		static		void Value(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt);
 		%feature("autodoc", "1");
-		void Value(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt2d & TabPnt2d);
+		static		void Value(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt2d & TabPnt2d);
 		%feature("autodoc", "1");
-		void Value(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt, TColgp_Array1OfPnt2d & TabPnt2d);
+		static		void Value(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt, TColgp_Array1OfPnt2d & TabPnt2d);
 		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec);
+		static		Standard_Boolean Tangency(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec);
 		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec2d & TabVec2d);
+		static		Standard_Boolean Tangency(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec2d & TabVec2d);
 		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec, TColgp_Array1OfVec2d & TabVec2d);
+		static		Standard_Boolean Tangency(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec, TColgp_Array1OfVec2d & TabVec2d);
 		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const GeomInt_TheMultiLineOfWLApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2);
+		static		Standard_Boolean Curvature(const GeomInt_TheMultiLineOfWLApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2);
 		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const GeomInt_TheMultiLineOfWLApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec2d & arg2);
+		static		Standard_Boolean Curvature(const GeomInt_TheMultiLineOfWLApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec2d & arg2);
 		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const GeomInt_TheMultiLineOfWLApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2, TColgp_Array1OfVec2d & arg3);
+		static		Standard_Boolean Curvature(const GeomInt_TheMultiLineOfWLApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2, TColgp_Array1OfVec2d & arg3);
 		%feature("autodoc", "1");
-		GeomInt_TheMultiLineOfWLApprox MakeMLBetween(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
+		static		GeomInt_TheMultiLineOfWLApprox MakeMLBetween(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
 		%feature("autodoc", "1");
-		Approx_Status WhatStatus(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
+		static		Approx_Status WhatStatus(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
 
 };
 %feature("shadow") GeomInt_TheMultiLineToolOfWLApprox::~GeomInt_TheMultiLineToolOfWLApprox %{

@@ -51,7 +51,7 @@ class Handle_PNaming_Name : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PNaming_Name & operator=(const PNaming_Name *anItem);
 		%feature("autodoc", "1");
-		Handle_PNaming_Name const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PNaming_Name const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PNaming_Name {
@@ -89,7 +89,7 @@ class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PNaming_NamedShape & operator=(const PNaming_NamedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_PNaming_NamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PNaming_NamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PNaming_NamedShape {
@@ -127,7 +127,7 @@ class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PNaming_HArray1OfNamedShape & operator=(const PNaming_HArray1OfNamedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_PNaming_HArray1OfNamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PNaming_HArray1OfNamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PNaming_HArray1OfNamedShape {
@@ -165,7 +165,7 @@ class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PSta
 		%feature("autodoc", "1");
 		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape & operator=(const PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
@@ -203,7 +203,7 @@ class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PNaming_Naming & operator=(const PNaming_Naming *anItem);
 		%feature("autodoc", "1");
-		Handle_PNaming_Naming const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PNaming_Naming const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PNaming_Naming {

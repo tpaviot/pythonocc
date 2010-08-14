@@ -51,7 +51,7 @@ class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : p
 		%feature("autodoc", "1");
 		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep & operator=(const BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {

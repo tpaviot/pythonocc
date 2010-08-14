@@ -51,7 +51,7 @@ class Handle_PCDMShape_Document : public Handle_PCDM_Document {
 		%feature("autodoc", "1");
 		Handle_PCDMShape_Document & operator=(const PCDMShape_Document *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDMShape_Document const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PCDMShape_Document const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PCDMShape_Document {

@@ -143,9 +143,9 @@ class TopTrans_SurfaceTransition {
 		%feature("autodoc", "1");
 		TopAbs_State StateAfter() const;
 		%feature("autodoc", "1");
-		TopAbs_State GetBefore(const TopAbs_Orientation Tran);
+		static		TopAbs_State GetBefore(const TopAbs_Orientation Tran);
 		%feature("autodoc", "1");
-		TopAbs_State GetAfter(const TopAbs_Orientation Tran);
+		static		TopAbs_State GetAfter(const TopAbs_Orientation Tran);
 
 };
 %feature("shadow") TopTrans_SurfaceTransition::~TopTrans_SurfaceTransition %{

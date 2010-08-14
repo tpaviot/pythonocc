@@ -51,7 +51,7 @@ class Handle_XmlMDocStd_XLinkDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDocStd_XLinkDriver & operator=(const XmlMDocStd_XLinkDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMDocStd_XLinkDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMDocStd_XLinkDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlMDocStd_XLinkDriver {
@@ -81,7 +81,7 @@ class XmlMDocStd {
 		%feature("autodoc", "1");
 		XmlMDocStd();
 		%feature("autodoc", "1");
-		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
+		static		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
 %feature("shadow") XmlMDocStd::~XmlMDocStd %{

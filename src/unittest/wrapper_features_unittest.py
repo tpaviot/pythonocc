@@ -91,6 +91,46 @@ class Test(unittest.TestCase):
         returned_shape = get_shape()
         self.assertEqual(returned_shape.IsNull(),False)
     
+    def testStaticMethod(self):
+        '''
+        Test wrapper for static methods.
+
+        ... snippet from the SWIG documentation ...
+
+        Static class members present a special problem for Python. Prior to Python-2.2, Python classes had no support for static methods and no version of Python supports static member variables in a manner that SWIG can utilize. Therefore, SWIG generates wrappers that try to work around some of these issues. To illustrate, suppose you have a class like this:
+        
+        class Spam {
+        public:
+           static void foo();
+           static int bar;
+        
+        };
+        In Python, the static member can be access in three different ways:
+        
+        >>> example.Spam_foo()    # Spam::foo()
+        >>> s = example.Spam()
+        >>> s.foo()               # Spam::foo() via an instance
+        >>> example.Spam.foo()    # Spam::foo(). Python-2.2 only
+        
+        ... end snippet ...
+        
+        In order that SWIG properly wraps static methods, the keyword 'static' must be included in the interface file. For instance, in the Interface.i file, the following line:
+        
+        static Standard_Boolean SetCVal(const char * name, const char * val);
+        
+        makes possible to use the method as:
+        >>> from OCC.Interface import *
+        >>> Interface_Static_SetCVal("write.step.schema","AP203")
+        '''
+        print 'Test : wrapper for C++ static methods'
+        from OCC.STEPControl import STEPControl_Writer
+        from OCC.Interface import Interface_Static_SetCVal, Interface_Static_CVal
+        w = STEPControl_Writer() #needs to be inited otherwise the following does not work
+        r = Interface_Static_SetCVal("write.step.schema","AP203")
+        self.assertEqual(r,1)
+        l = Interface_Static_CVal("write.step.schema")
+        self.assertEqual(l,"AP203")
+        
     def testFT1(self):
         '''
         Checks the Standard_Integer & byreference pass parameter

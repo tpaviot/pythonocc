@@ -51,7 +51,7 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
@@ -89,7 +89,7 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d & operator=(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
@@ -127,7 +127,7 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
@@ -165,7 +165,7 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt & operator=(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt *anItem);
 		%feature("autodoc", "1");
-		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
@@ -471,9 +471,9 @@ class IntPoly_Pnt2dHasher {
 		%feature("autodoc", "1");
 		IntPoly_Pnt2dHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const gp_Pnt2d &Point, const Standard_Integer upper);
+		static		Standard_Integer HashCode(const gp_Pnt2d &Point, const Standard_Integer upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2);
+		static		Standard_Boolean IsEqual(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2);
 
 };
 %feature("shadow") IntPoly_Pnt2dHasher::~IntPoly_Pnt2dHasher %{
@@ -580,9 +580,9 @@ class IntPoly_PntHasher {
 		%feature("autodoc", "1");
 		IntPoly_PntHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const gp_Pnt &Point, const Standard_Integer upper);
+		static		Standard_Integer HashCode(const gp_Pnt &Point, const Standard_Integer upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const gp_Pnt &Point1, const gp_Pnt &Point2);
+		static		Standard_Boolean IsEqual(const gp_Pnt &Point1, const gp_Pnt &Point2);
 
 };
 %feature("shadow") IntPoly_PntHasher::~IntPoly_PntHasher %{

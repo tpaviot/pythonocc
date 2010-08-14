@@ -51,7 +51,7 @@ class Handle_GeomPlate_PointConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_PointConstraint & operator=(const GeomPlate_PointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_PointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_PointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomPlate_PointConstraint {
@@ -89,7 +89,7 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public Handle_T
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint & operator=(const GeomPlate_SequenceNodeOfSequenceOfPointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
@@ -127,7 +127,7 @@ class Handle_GeomPlate_HArray1OfHCurveOnSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HArray1OfHCurveOnSurface & operator=(const GeomPlate_HArray1OfHCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfHCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_HArray1OfHCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomPlate_HArray1OfHCurveOnSurface {
@@ -165,7 +165,7 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfAij : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfAij & operator=(const GeomPlate_SequenceNodeOfSequenceOfAij *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfAij const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_SequenceNodeOfSequenceOfAij const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomPlate_SequenceNodeOfSequenceOfAij {
@@ -203,7 +203,7 @@ class Handle_GeomPlate_HSequenceOfPointConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfPointConstraint & operator=(const GeomPlate_HSequenceOfPointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_HSequenceOfPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomPlate_HSequenceOfPointConstraint {
@@ -241,7 +241,7 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public Handle_T
 		%feature("autodoc", "1");
 		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint & operator=(const GeomPlate_SequenceNodeOfSequenceOfCurveConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
@@ -279,7 +279,7 @@ class Handle_GeomPlate_Surface : public Handle_Geom_Surface {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_Surface & operator=(const GeomPlate_Surface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_Surface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomPlate_Surface {
@@ -317,7 +317,7 @@ class Handle_GeomPlate_HArray1OfSequenceOfReal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HArray1OfSequenceOfReal & operator=(const GeomPlate_HArray1OfSequenceOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_HArray1OfSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomPlate_HArray1OfSequenceOfReal {
@@ -355,7 +355,7 @@ class Handle_GeomPlate_CurveConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_CurveConstraint & operator=(const GeomPlate_CurveConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_CurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_CurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomPlate_CurveConstraint {
@@ -393,7 +393,7 @@ class Handle_GeomPlate_HSequenceOfCurveConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomPlate_HSequenceOfCurveConstraint & operator=(const GeomPlate_HSequenceOfCurveConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_HSequenceOfCurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_HSequenceOfCurveConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomPlate_HSequenceOfCurveConstraint {
@@ -916,7 +916,7 @@ class GeomPlate_BuildAveragePlane {
 
 		void MinMaxBox(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HalfSpace(const TColgp_SequenceOfVec &NewNormals, TColgp_SequenceOfVec & Normals, GeomPlate_SequenceOfAij & Bset, const Standard_Real LinTol, const Standard_Real AngTol);
+		static		Standard_Boolean HalfSpace(const TColgp_SequenceOfVec &NewNormals, TColgp_SequenceOfVec & Normals, GeomPlate_SequenceOfAij & Bset, const Standard_Real LinTol, const Standard_Real AngTol);
 
 };
 %feature("shadow") GeomPlate_BuildAveragePlane::~GeomPlate_BuildAveragePlane %{

@@ -51,7 +51,7 @@ class Handle_GeomAdaptor_GHCurve : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHCurve & operator=(const GeomAdaptor_GHCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_GHCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomAdaptor_GHCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomAdaptor_GHCurve {
@@ -89,7 +89,7 @@ class Handle_GeomAdaptor_HCurve : public Handle_GeomAdaptor_GHCurve {
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HCurve & operator=(const GeomAdaptor_HCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomAdaptor_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomAdaptor_HCurve {
@@ -127,7 +127,7 @@ class Handle_GeomAdaptor_GHSurface : public Handle_Adaptor3d_HSurface {
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHSurface & operator=(const GeomAdaptor_GHSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_GHSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomAdaptor_GHSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomAdaptor_GHSurface {
@@ -165,7 +165,7 @@ class Handle_GeomAdaptor_HSurface : public Handle_GeomAdaptor_GHSurface {
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HSurface & operator=(const GeomAdaptor_HSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomAdaptor_HSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomAdaptor_HSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomAdaptor_HSurface {
@@ -361,9 +361,9 @@ class GeomAdaptor {
 		%feature("autodoc", "1");
 		GeomAdaptor();
 		%feature("autodoc", "1");
-		Handle_Geom_Curve MakeCurve(const Adaptor3d_Curve &C);
+		static		Handle_Geom_Curve MakeCurve(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Handle_Geom_Surface MakeSurface(const Adaptor3d_Surface &S);
+		static		Handle_Geom_Surface MakeSurface(const Adaptor3d_Surface &S);
 
 };
 %feature("shadow") GeomAdaptor::~GeomAdaptor %{

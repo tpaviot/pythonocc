@@ -52,7 +52,7 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handl
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal & operator=(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
@@ -90,7 +90,7 @@ class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public H
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
@@ -128,7 +128,7 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Hand
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape & operator=(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {

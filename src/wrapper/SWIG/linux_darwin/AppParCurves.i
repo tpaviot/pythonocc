@@ -58,7 +58,7 @@ class Handle_AppParCurves_HArray1OfMultiCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiCurve & operator=(const AppParCurves_HArray1OfMultiCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_HArray1OfMultiCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfMultiCurve {
@@ -96,7 +96,7 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve & operator=(const AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
@@ -134,7 +134,7 @@ class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SmoothCriterion & operator=(const AppParCurves_SmoothCriterion *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_SmoothCriterion const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_SmoothCriterion {
@@ -172,7 +172,7 @@ class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiPoint & operator=(const AppParCurves_HArray1OfMultiPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_HArray1OfMultiPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfMultiPoint {
@@ -210,7 +210,7 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve & operator=(const AppParCurves_SequenceNodeOfSequenceOfMultiCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
@@ -248,7 +248,7 @@ class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfConstraintCouple & operator=(const AppParCurves_HArray1OfConstraintCouple *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfConstraintCouple const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_HArray1OfConstraintCouple const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfConstraintCouple {
@@ -286,7 +286,7 @@ class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_HArray1OfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
@@ -1180,13 +1180,13 @@ class AppParCurves {
 		%feature("autodoc", "1");
 		AppParCurves();
 		%feature("autodoc", "1");
-		void BernsteinMatrix(const Standard_Integer NbPoles, const math_Vector &U, math_Matrix & A);
+		static		void BernsteinMatrix(const Standard_Integer NbPoles, const math_Vector &U, math_Matrix & A);
 		%feature("autodoc", "1");
-		void Bernstein(const Standard_Integer NbPoles, const math_Vector &U, math_Matrix & A, math_Matrix & DA);
+		static		void Bernstein(const Standard_Integer NbPoles, const math_Vector &U, math_Matrix & A, math_Matrix & DA);
 		%feature("autodoc", "1");
-		void SecondDerivativeBernstein(const Standard_Real U, math_Vector & DDA);
+		static		void SecondDerivativeBernstein(const Standard_Real U, math_Vector & DDA);
 		%feature("autodoc", "1");
-		void SplineFunction(const Standard_Integer NbPoles, const Standard_Integer Degree, const math_Vector &Parameters, const math_Vector &FlatKnots, math_Matrix & A, math_Matrix & DA, math_IntegerVector & Index);
+		static		void SplineFunction(const Standard_Integer NbPoles, const Standard_Integer Degree, const math_Vector &Parameters, const math_Vector &FlatKnots, math_Matrix & A, math_Matrix & DA, math_IntegerVector & Index);
 
 };
 %feature("shadow") AppParCurves::~AppParCurves %{

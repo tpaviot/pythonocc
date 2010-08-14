@@ -51,7 +51,7 @@ class Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint & operator=(const Plate_SequenceNodeOfSequenceOfPinpointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint {
@@ -89,7 +89,7 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public Handle_T
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint & operator=(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
@@ -127,7 +127,7 @@ class Handle_Plate_HArray1OfPinpointConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Plate_HArray1OfPinpointConstraint & operator=(const Plate_HArray1OfPinpointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_HArray1OfPinpointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Plate_HArray1OfPinpointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Plate_HArray1OfPinpointConstraint {
@@ -165,7 +165,7 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public Handl
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint & operator=(const Plate_SequenceNodeOfSequenceOfLinearScalarConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {

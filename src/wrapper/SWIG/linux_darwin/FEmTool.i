@@ -51,7 +51,7 @@ class Handle_FEmTool_ElementaryCriterion : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_FEmTool_ElementaryCriterion & operator=(const FEmTool_ElementaryCriterion *anItem);
 		%feature("autodoc", "1");
-		Handle_FEmTool_ElementaryCriterion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_ElementaryCriterion const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_ElementaryCriterion {
@@ -89,7 +89,7 @@ class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearTension & operator=(const FEmTool_LinearTension *anItem);
 		%feature("autodoc", "1");
-		Handle_FEmTool_LinearTension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_LinearTension const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_LinearTension {
@@ -127,7 +127,7 @@ class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearJerk & operator=(const FEmTool_LinearJerk *anItem);
 		%feature("autodoc", "1");
-		Handle_FEmTool_LinearJerk const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_LinearJerk const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_LinearJerk {
@@ -165,7 +165,7 @@ class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr & operator=(const FEmTool_SequenceNodeOfSeqOfLinConstr *anItem);
 		%feature("autodoc", "1");
-		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_SequenceNodeOfSeqOfLinConstr {
@@ -203,7 +203,7 @@ class Handle_FEmTool_SparseMatrix : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_FEmTool_SparseMatrix & operator=(const FEmTool_SparseMatrix *anItem);
 		%feature("autodoc", "1");
-		Handle_FEmTool_SparseMatrix const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_SparseMatrix const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_SparseMatrix {
@@ -241,7 +241,7 @@ class Handle_FEmTool_ProfileMatrix : public Handle_FEmTool_SparseMatrix {
 		%feature("autodoc", "1");
 		Handle_FEmTool_ProfileMatrix & operator=(const FEmTool_ProfileMatrix *anItem);
 		%feature("autodoc", "1");
-		Handle_FEmTool_ProfileMatrix const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_ProfileMatrix const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_ProfileMatrix {
@@ -279,7 +279,7 @@ class Handle_FEmTool_Curve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_FEmTool_Curve & operator=(const FEmTool_Curve *anItem);
 		%feature("autodoc", "1");
-		Handle_FEmTool_Curve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_Curve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_Curve {
@@ -317,7 +317,7 @@ class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearFlexion & operator=(const FEmTool_LinearFlexion *anItem);
 		%feature("autodoc", "1");
-		Handle_FEmTool_LinearFlexion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_LinearFlexion const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_LinearFlexion {
@@ -355,7 +355,7 @@ class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_FEmTool_HAssemblyTable & operator=(const FEmTool_HAssemblyTable *anItem);
 		%feature("autodoc", "1");
-		Handle_FEmTool_HAssemblyTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_HAssemblyTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_HAssemblyTable {
@@ -393,7 +393,7 @@ class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const FEmTool_ListNodeOfListOfVectors *anItem);
 		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_ListNodeOfListOfVectors const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_ListNodeOfListOfVectors {

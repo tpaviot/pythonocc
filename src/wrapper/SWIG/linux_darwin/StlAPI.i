@@ -121,9 +121,9 @@ class StlAPI {
 		%feature("autodoc", "1");
 		StlAPI();
 		%feature("autodoc", "1");
-		void Write(const TopoDS_Shape &aShape, const char * aFile, const Standard_Boolean aAsciiMode=1);
+		static		void Write(const TopoDS_Shape &aShape, const char * aFile, const Standard_Boolean aAsciiMode=1);
 		%feature("autodoc", "1");
-		void Read(TopoDS_Shape & aShape, const char * aFile);
+		static		void Read(TopoDS_Shape & aShape, const char * aFile);
 
 };
 %feature("shadow") StlAPI::~StlAPI %{

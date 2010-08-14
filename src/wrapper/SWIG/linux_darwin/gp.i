@@ -63,7 +63,7 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_gp_VectorWithNullMagnitude & operator=(const gp_VectorWithNullMagnitude *anItem);
 		%feature("autodoc", "1");
-		Handle_gp_VectorWithNullMagnitude const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_gp_VectorWithNullMagnitude const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_gp_VectorWithNullMagnitude {
@@ -642,11 +642,11 @@ class gp_VectorWithNullMagnitude : public Standard_DomainError {
 		%feature("autodoc", "1");
 		gp_VectorWithNullMagnitude(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_gp_VectorWithNullMagnitude NewInstance(const char * aMessage);
+		static		Handle_gp_VectorWithNullMagnitude NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1011,37 +1011,37 @@ class gp {
 		%feature("autodoc", "1");
 		gp();
 		%feature("autodoc", "1");
-		Standard_Real Resolution();
+		static		Standard_Real Resolution();
 		%feature("autodoc", "1");
-		const gp_Pnt & Origin();
+		static		const gp_Pnt & Origin();
 		%feature("autodoc", "1");
-		const gp_Dir & DX();
+		static		const gp_Dir & DX();
 		%feature("autodoc", "1");
-		const gp_Dir & DY();
+		static		const gp_Dir & DY();
 		%feature("autodoc", "1");
-		const gp_Dir & DZ();
+		static		const gp_Dir & DZ();
 		%feature("autodoc", "1");
-		const gp_Ax1 & OX();
+		static		const gp_Ax1 & OX();
 		%feature("autodoc", "1");
-		const gp_Ax1 & OY();
+		static		const gp_Ax1 & OY();
 		%feature("autodoc", "1");
-		const gp_Ax1 & OZ();
+		static		const gp_Ax1 & OZ();
 		%feature("autodoc", "1");
-		const gp_Ax2 & XOY();
+		static		const gp_Ax2 & XOY();
 		%feature("autodoc", "1");
-		const gp_Ax2 & ZOX();
+		static		const gp_Ax2 & ZOX();
 		%feature("autodoc", "1");
-		const gp_Ax2 & YOZ();
+		static		const gp_Ax2 & YOZ();
 		%feature("autodoc", "1");
-		const gp_Pnt2d & Origin2d();
+		static		const gp_Pnt2d & Origin2d();
 		%feature("autodoc", "1");
-		const gp_Dir2d & DX2d();
+		static		const gp_Dir2d & DX2d();
 		%feature("autodoc", "1");
-		const gp_Dir2d & DY2d();
+		static		const gp_Dir2d & DY2d();
 		%feature("autodoc", "1");
-		const gp_Ax2d & OX2d();
+		static		const gp_Ax2d & OX2d();
 		%feature("autodoc", "1");
-		const gp_Ax2d & OY2d();
+		static		const gp_Ax2d & OY2d();
 
 };
 %feature("shadow") gp::~gp %{

@@ -52,7 +52,7 @@ class Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds & operator=(const ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
@@ -90,7 +90,7 @@ class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_FreeBoundData & operator=(const ShapeAnalysis_FreeBoundData *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_FreeBoundData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_FreeBoundData {
@@ -128,7 +128,7 @@ class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_HSequenceOfFreeBounds & operator=(const ShapeAnalysis_HSequenceOfFreeBounds *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_HSequenceOfFreeBounds const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_HSequenceOfFreeBounds const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_HSequenceOfFreeBounds {
@@ -166,7 +166,7 @@ class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParameters & operator=(const ShapeAnalysis_TransferParameters *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_TransferParameters const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_TransferParameters const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_TransferParameters {
@@ -204,7 +204,7 @@ class Handle_ShapeAnalysis_TransferParametersProj : public Handle_ShapeAnalysis_
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParametersProj & operator=(const ShapeAnalysis_TransferParametersProj *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_TransferParametersProj const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_TransferParametersProj const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_TransferParametersProj {
@@ -242,7 +242,7 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public Handle
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal & operator=(const ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
@@ -280,7 +280,7 @@ class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_Wire & operator=(const ShapeAnalysis_Wire *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Wire const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_Wire const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_Wire {
@@ -318,7 +318,7 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal & operator=(const ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
@@ -356,7 +356,7 @@ class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_Surface & operator=(const ShapeAnalysis_Surface *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_Surface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_Surface {
@@ -760,15 +760,15 @@ class ShapeAnalysis_FreeBounds {
 		%feature("autodoc", "1");
 		const TopoDS_Compound & GetOpenWires() const;
 		%feature("autodoc", "1");
-		void ConnectEdgesToWires(Handle_TopTools_HSequenceOfShape & edges, const Standard_Real toler, const Standard_Boolean shared, Handle_TopTools_HSequenceOfShape & wires);
+		static		void ConnectEdgesToWires(Handle_TopTools_HSequenceOfShape & edges, const Standard_Real toler, const Standard_Boolean shared, Handle_TopTools_HSequenceOfShape & wires);
 		%feature("autodoc", "1");
-		void ConnectWiresToWires(Handle_TopTools_HSequenceOfShape & iwires, const Standard_Real toler, const Standard_Boolean shared, Handle_TopTools_HSequenceOfShape & owires);
+		static		void ConnectWiresToWires(Handle_TopTools_HSequenceOfShape & iwires, const Standard_Real toler, const Standard_Boolean shared, Handle_TopTools_HSequenceOfShape & owires);
 		%feature("autodoc", "1");
-		void ConnectWiresToWires(Handle_TopTools_HSequenceOfShape & iwires, const Standard_Real toler, const Standard_Boolean shared, Handle_TopTools_HSequenceOfShape & owires, TopTools_DataMapOfShapeShape & vertices);
+		static		void ConnectWiresToWires(Handle_TopTools_HSequenceOfShape & iwires, const Standard_Real toler, const Standard_Boolean shared, Handle_TopTools_HSequenceOfShape & owires, TopTools_DataMapOfShapeShape & vertices);
 		%feature("autodoc", "1");
-		void SplitWires(const Handle_TopTools_HSequenceOfShape &wires, const Standard_Real toler, const Standard_Boolean shared, Handle_TopTools_HSequenceOfShape & closed, Handle_TopTools_HSequenceOfShape & open);
+		static		void SplitWires(const Handle_TopTools_HSequenceOfShape &wires, const Standard_Real toler, const Standard_Boolean shared, Handle_TopTools_HSequenceOfShape & closed, Handle_TopTools_HSequenceOfShape & open);
 		%feature("autodoc", "1");
-		void DispatchWires(const Handle_TopTools_HSequenceOfShape &wires, TopoDS_Compound & closed, TopoDS_Compound & open);
+		static		void DispatchWires(const Handle_TopTools_HSequenceOfShape &wires, TopoDS_Compound & closed, TopoDS_Compound & open);
 
 };
 %feature("shadow") ShapeAnalysis_FreeBounds::~ShapeAnalysis_FreeBounds %{
@@ -793,22 +793,22 @@ class ShapeAnalysis {
 		%feature("autodoc", "1");
 		ShapeAnalysis();
 		%feature("autodoc", "1");
-		TopoDS_Wire OuterWire(const TopoDS_Face &face);
+		static		TopoDS_Wire OuterWire(const TopoDS_Face &face);
 		%feature("autodoc", "1");
-		Standard_Real TotCross2D(const Handle_ShapeExtend_WireData &sewd, const TopoDS_Face &aFace);
+		static		Standard_Real TotCross2D(const Handle_ShapeExtend_WireData &sewd, const TopoDS_Face &aFace);
 		%feature("autodoc", "1");
-		Standard_Real ContourArea(const TopoDS_Wire &theWire);
+		static		Standard_Real ContourArea(const TopoDS_Wire &theWire);
 		%feature("autodoc", "1");
-		Standard_Boolean IsOuterBound(const TopoDS_Face &face);
+		static		Standard_Boolean IsOuterBound(const TopoDS_Face &face);
 		%feature("autodoc", "1");
-		Standard_Real AdjustByPeriod(const Standard_Real Val, const Standard_Real ToVal, const Standard_Real Period);
+		static		Standard_Real AdjustByPeriod(const Standard_Real Val, const Standard_Real ToVal, const Standard_Real Period);
 		%feature("autodoc", "1");
-		Standard_Real AdjustToPeriod(const Standard_Real Val, const Standard_Real ValMin, const Standard_Real ValMax);
+		static		Standard_Real AdjustToPeriod(const Standard_Real Val, const Standard_Real ValMin, const Standard_Real ValMax);
 		%feature("autodoc", "1");
-		void FindBounds(const TopoDS_Shape &shape, TopoDS_Vertex & V1, TopoDS_Vertex & V2);
+		static		void FindBounds(const TopoDS_Shape &shape, TopoDS_Vertex & V1, TopoDS_Vertex & V2);
 		%feature("autodoc","GetFaceUVBounds(const F) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void GetFaceUVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void GetFaceUVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 %feature("shadow") ShapeAnalysis::~ShapeAnalysis %{
@@ -938,19 +938,19 @@ class ShapeAnalysis_Curve {
 		%feature("autodoc", "1");
 		Standard_Integer SelectForwardSeam(const Handle_Geom2d_Curve &C1, const Handle_Geom2d_Curve &C2) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsPlanar(const TColgp_Array1OfPnt &pnts, gp_XYZ & Normal, const Standard_Real preci=0);
+		static		Standard_Boolean IsPlanar(const TColgp_Array1OfPnt &pnts, gp_XYZ & Normal, const Standard_Real preci=0);
 		%feature("autodoc", "1");
-		Standard_Boolean IsPlanar(const Handle_Geom_Curve &curve, gp_XYZ & Normal, const Standard_Real preci=0);
+		static		Standard_Boolean IsPlanar(const Handle_Geom_Curve &curve, gp_XYZ & Normal, const Standard_Real preci=0);
 		%feature("autodoc", "1");
-		Standard_Boolean GetSamplePoints(const Handle_Geom2d_Curve &curve, const Standard_Real first, const Standard_Real last, TColgp_SequenceOfPnt2d & seq);
+		static		Standard_Boolean GetSamplePoints(const Handle_Geom2d_Curve &curve, const Standard_Real first, const Standard_Real last, TColgp_SequenceOfPnt2d & seq);
 		%feature("autodoc", "1");
-		Standard_Boolean GetSamplePoints(const Handle_Geom_Curve &curve, const Standard_Real first, const Standard_Real last, TColgp_SequenceOfPnt & seq);
+		static		Standard_Boolean GetSamplePoints(const Handle_Geom_Curve &curve, const Standard_Real first, const Standard_Real last, TColgp_SequenceOfPnt & seq);
 		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const Handle_Geom_Curve &curve, const Standard_Real preci=-0x000000001);
+		static		Standard_Boolean IsClosed(const Handle_Geom_Curve &curve, const Standard_Real preci=-0x000000001);
 		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic(const Handle_Geom_Curve &curve);
+		static		Standard_Boolean IsPeriodic(const Handle_Geom_Curve &curve);
 		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic(const Handle_Geom2d_Curve &curve);
+		static		Standard_Boolean IsPeriodic(const Handle_Geom2d_Curve &curve);
 
 };
 %feature("shadow") ShapeAnalysis_Curve::~ShapeAnalysis_Curve %{
@@ -1517,9 +1517,9 @@ class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParame
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSameRange() const;
 		%feature("autodoc", "1");
-		TopoDS_Vertex CopyNMVertex(const TopoDS_Vertex &theVert, const TopoDS_Edge &toedge, const TopoDS_Edge &fromedge);
+		static		TopoDS_Vertex CopyNMVertex(const TopoDS_Vertex &theVert, const TopoDS_Edge &toedge, const TopoDS_Edge &fromedge);
 		%feature("autodoc", "1");
-		TopoDS_Vertex CopyNMVertex(const TopoDS_Vertex &theVert, const TopoDS_Face &toFace, const TopoDS_Face &fromFace);
+		static		TopoDS_Vertex CopyNMVertex(const TopoDS_Vertex &theVert, const TopoDS_Face &toFace, const TopoDS_Face &fromFace);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1833,9 +1833,9 @@ class ShapeAnalysis_Geom {
 		ShapeAnalysis_Geom();
 		%feature("autodoc","NearestPlane(const Pnts) -> Standard_Real");
 
-		Standard_Boolean NearestPlane(const TColgp_Array1OfPnt &Pnts, gp_Pln & aPln, Standard_Real &OutValue);
+		static		Standard_Boolean NearestPlane(const TColgp_Array1OfPnt &Pnts, gp_Pln & aPln, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean PositionTrsf(const Handle_TColStd_HArray2OfReal &coefs, gp_Trsf & trsf, const Standard_Real unit, const Standard_Real prec);
+		static		Standard_Boolean PositionTrsf(const Handle_TColStd_HArray2OfReal &coefs, gp_Trsf & trsf, const Standard_Real unit, const Standard_Real prec);
 
 };
 %feature("shadow") ShapeAnalysis_Geom::~ShapeAnalysis_Geom %{

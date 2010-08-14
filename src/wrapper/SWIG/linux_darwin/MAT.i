@@ -56,7 +56,7 @@ class Handle_MAT_ListOfBisector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_ListOfBisector & operator=(const MAT_ListOfBisector *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_ListOfBisector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_ListOfBisector const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_ListOfBisector {
@@ -94,7 +94,7 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt & operator=(const MAT_DataMapNodeOfDataMapOfIntegerBasicElt *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
@@ -132,7 +132,7 @@ class Handle_MAT_SequenceNodeOfSequenceOfArc : public Handle_TCollection_SeqNode
 		%feature("autodoc", "1");
 		Handle_MAT_SequenceNodeOfSequenceOfArc & operator=(const MAT_SequenceNodeOfSequenceOfArc *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_SequenceNodeOfSequenceOfArc const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_SequenceNodeOfSequenceOfArc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_SequenceNodeOfSequenceOfArc {
@@ -170,7 +170,7 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerArc : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc & operator=(const MAT_DataMapNodeOfDataMapOfIntegerArc *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_DataMapNodeOfDataMapOfIntegerArc {
@@ -208,7 +208,7 @@ class Handle_MAT_BasicElt : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_BasicElt & operator=(const MAT_BasicElt *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_BasicElt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_BasicElt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_BasicElt {
@@ -246,7 +246,7 @@ class Handle_MAT_Bisector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_Bisector & operator=(const MAT_Bisector *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_Bisector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_Bisector const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_Bisector {
@@ -284,7 +284,7 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector & operator=(const MAT_DataMapNodeOfDataMapOfIntegerBisector *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector {
@@ -322,7 +322,7 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerNode : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode & operator=(const MAT_DataMapNodeOfDataMapOfIntegerNode *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
@@ -360,7 +360,7 @@ class Handle_MAT_Zone : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_Zone & operator=(const MAT_Zone *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_Zone const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_Zone const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_Zone {
@@ -398,7 +398,7 @@ class Handle_MAT_Graph : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_Graph & operator=(const MAT_Graph *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_Graph const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_Graph const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_Graph {
@@ -436,7 +436,7 @@ class Handle_MAT_TListNodeOfListOfBisector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_TListNodeOfListOfBisector & operator=(const MAT_TListNodeOfListOfBisector *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfBisector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_TListNodeOfListOfBisector const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_TListNodeOfListOfBisector {
@@ -474,7 +474,7 @@ class Handle_MAT_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_MAT_SequenceNodeOfSequenceOfBasicElt & operator=(const MAT_SequenceNodeOfSequenceOfBasicElt *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_SequenceNodeOfSequenceOfBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_SequenceNodeOfSequenceOfBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_SequenceNodeOfSequenceOfBasicElt {
@@ -512,7 +512,7 @@ class Handle_MAT_ListOfEdge : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_ListOfEdge & operator=(const MAT_ListOfEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_ListOfEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_ListOfEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_ListOfEdge {
@@ -550,7 +550,7 @@ class Handle_MAT_Arc : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_Arc & operator=(const MAT_Arc *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_Arc const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_Arc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_Arc {
@@ -588,7 +588,7 @@ class Handle_MAT_TListNodeOfListOfEdge : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_TListNodeOfListOfEdge & operator=(const MAT_TListNodeOfListOfEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_TListNodeOfListOfEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_TListNodeOfListOfEdge {
@@ -626,7 +626,7 @@ class Handle_MAT_Edge : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_Edge & operator=(const MAT_Edge *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_Edge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_Edge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_Edge {
@@ -664,7 +664,7 @@ class Handle_MAT_Node : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT_Node & operator=(const MAT_Node *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_Node const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT_Node const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT_Node {

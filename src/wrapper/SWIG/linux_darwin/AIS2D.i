@@ -170,7 +170,7 @@ class Handle_AIS2D_ListNodeOfListOfIO : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_AIS2D_ListNodeOfListOfIO & operator=(const AIS2D_ListNodeOfListOfIO *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_ListNodeOfListOfIO const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_ListNodeOfListOfIO const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_ListNodeOfListOfIO {
@@ -208,7 +208,7 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit & operator=(const AIS2D_SequenceNodeOfSequenceOfPrimArchit *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit {
@@ -246,7 +246,7 @@ class Handle_AIS2D_GlobalStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_GlobalStatus & operator=(const AIS2D_GlobalStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_GlobalStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_GlobalStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_GlobalStatus {
@@ -284,7 +284,7 @@ class Handle_AIS2D_LocalContext : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalContext & operator=(const AIS2D_LocalContext *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_LocalContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_LocalContext const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_LocalContext {
@@ -322,7 +322,7 @@ class Handle_AIS2D_InteractiveObject : public Handle_Graphic2d_GraphicObject {
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject & operator=(const AIS2D_InteractiveObject *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_InteractiveObject const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_InteractiveObject {
@@ -360,7 +360,7 @@ class Handle_AIS2D_ProjShape : public Handle_AIS2D_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS2D_ProjShape & operator=(const AIS2D_ProjShape *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_ProjShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_ProjShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_ProjShape {
@@ -398,7 +398,7 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLC : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfLC & operator=(const AIS2D_DataMapNodeOfDataMapOfLC *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_DataMapNodeOfDataMapOfLC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfLC {
@@ -436,7 +436,7 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfIO : public Handle_TCollection_SeqNod
 		%feature("autodoc", "1");
 		Handle_AIS2D_SequenceNodeOfSequenceOfIO & operator=(const AIS2D_SequenceNodeOfSequenceOfIO *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_SequenceNodeOfSequenceOfIO const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_SequenceNodeOfSequenceOfIO const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_SequenceNodeOfSequenceOfIO {
@@ -474,7 +474,7 @@ class Handle_AIS2D_LocalStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalStatus & operator=(const AIS2D_LocalStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_LocalStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_LocalStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_LocalStatus {
@@ -512,7 +512,7 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLocStat : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat & operator=(const AIS2D_DataMapNodeOfDataMapOfLocStat *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_DataMapNodeOfDataMapOfLocStat const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfLocStat {
@@ -550,7 +550,7 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects & operator=(const AIS2D_DataMapNodeOfDataMapOfPrimAspects *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects {
@@ -588,7 +588,7 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus & operator=(const AIS2D_DataMapNodeOfDataMapOfIOStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus {
@@ -626,7 +626,7 @@ class Handle_AIS2D_HSequenceOfPrimArchit : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfPrimArchit & operator=(const AIS2D_HSequenceOfPrimArchit *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_HSequenceOfPrimArchit const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_HSequenceOfPrimArchit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_HSequenceOfPrimArchit {
@@ -664,7 +664,7 @@ class Handle_AIS2D_PrimitiveArchit : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_PrimitiveArchit & operator=(const AIS2D_PrimitiveArchit *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_PrimitiveArchit const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_PrimitiveArchit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_PrimitiveArchit {
@@ -702,7 +702,7 @@ class Handle_AIS2D_HSequenceOfIO : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_HSequenceOfIO & operator=(const AIS2D_HSequenceOfIO *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_HSequenceOfIO const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_HSequenceOfIO const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_HSequenceOfIO {
@@ -740,7 +740,7 @@ class Handle_AIS2D_InteractiveContext : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveContext & operator=(const AIS2D_InteractiveContext *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS2D_InteractiveContext const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS2D_InteractiveContext {
@@ -2035,9 +2035,9 @@ class AIS2D {
 		%feature("autodoc", "1");
 		AIS2D();
 		%feature("autodoc", "1");
-		Standard_Boolean Save(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
+		static		Standard_Boolean Save(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveObject Retrieve(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
+		static		Handle_AIS2D_InteractiveObject Retrieve(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
 
 };
 %feature("shadow") AIS2D::~AIS2D %{

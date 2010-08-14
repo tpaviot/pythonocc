@@ -62,7 +62,7 @@ class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProc
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorRead & operator=(const STEPControl_ActorRead *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPControl_ActorRead const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_STEPControl_ActorRead {
@@ -100,7 +100,7 @@ class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
 		%feature("autodoc", "1");
 		Handle_STEPControl_Controller & operator=(const STEPControl_Controller *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_STEPControl_Controller {
@@ -138,7 +138,7 @@ class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorWrite & operator=(const STEPControl_ActorWrite *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPControl_ActorWrite const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPControl_ActorWrite const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_STEPControl_ActorWrite {
@@ -256,7 +256,7 @@ class STEPControl_Controller : public XSControl_Controller {
 		%feature("autodoc", "1");
 		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape &shape, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model, const Standard_Integer modetrans=0) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Init();
+		static		Standard_Boolean Init();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -57,7 +57,7 @@ class Handle_XSAlgo_ToolContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSAlgo_ToolContainer & operator=(const XSAlgo_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_XSAlgo_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSAlgo_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSAlgo_ToolContainer {
@@ -95,7 +95,7 @@ class Handle_XSAlgo_AlgoContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSAlgo_AlgoContainer & operator=(const XSAlgo_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_XSAlgo_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSAlgo_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSAlgo_AlgoContainer {
@@ -125,11 +125,11 @@ class XSAlgo {
 		%feature("autodoc", "1");
 		XSAlgo();
 		%feature("autodoc", "1");
-		void Init();
+		static		void Init();
 		%feature("autodoc", "1");
-		void SetAlgoContainer(const Handle_XSAlgo_AlgoContainer &aContainer);
+		static		void SetAlgoContainer(const Handle_XSAlgo_AlgoContainer &aContainer);
 		%feature("autodoc", "1");
-		Handle_XSAlgo_AlgoContainer AlgoContainer();
+		static		Handle_XSAlgo_AlgoContainer AlgoContainer();
 
 };
 %feature("shadow") XSAlgo::~XSAlgo %{

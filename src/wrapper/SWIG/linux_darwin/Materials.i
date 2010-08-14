@@ -51,7 +51,7 @@ class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_Materials_SequenceNodeOfMtsSequence & operator=(const Materials_SequenceNodeOfMtsSequence *anItem);
 		%feature("autodoc", "1");
-		Handle_Materials_SequenceNodeOfMtsSequence const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_SequenceNodeOfMtsSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_SequenceNodeOfMtsSequence {
@@ -89,7 +89,7 @@ class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 		%feature("autodoc", "1");
 		Handle_Materials_FuzzyInstance & operator=(const Materials_FuzzyInstance *anItem);
 		%feature("autodoc", "1");
-		Handle_Materials_FuzzyInstance const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_FuzzyInstance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_FuzzyInstance {
@@ -127,7 +127,7 @@ class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitio
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialDefinition & operator=(const Materials_MaterialDefinition *anItem);
 		%feature("autodoc", "1");
-		Handle_Materials_MaterialDefinition const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_MaterialDefinition const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_MaterialDefinition {
@@ -165,7 +165,7 @@ class Handle_Materials_Color : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Materials_Color & operator=(const Materials_Color *anItem);
 		%feature("autodoc", "1");
-		Handle_Materials_Color const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_Color const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_Color {
@@ -203,7 +203,7 @@ class Handle_Materials_Material : public Handle_Materials_FuzzyInstance {
 		%feature("autodoc", "1");
 		Handle_Materials_Material & operator=(const Materials_Material *anItem);
 		%feature("autodoc", "1");
-		Handle_Materials_Material const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_Material const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_Material {
@@ -241,7 +241,7 @@ class Handle_Materials_MaterialsDictionary : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsDictionary & operator=(const Materials_MaterialsDictionary *anItem);
 		%feature("autodoc", "1");
-		Handle_Materials_MaterialsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_MaterialsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_MaterialsDictionary {
@@ -279,7 +279,7 @@ class Handle_Materials_MaterialsSequence : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsSequence & operator=(const Materials_MaterialsSequence *anItem);
 		%feature("autodoc", "1");
-		Handle_Materials_MaterialsSequence const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_MaterialsSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_MaterialsSequence {
@@ -362,21 +362,21 @@ class Materials {
 		%feature("autodoc", "1");
 		Materials();
 		%feature("autodoc", "1");
-		void MaterialFile(const char * afile);
+		static		void MaterialFile(const char * afile);
 		%feature("autodoc", "1");
-		void MaterialsFile(const char * afile);
+		static		void MaterialsFile(const char * afile);
 		%feature("autodoc", "1");
-		char * MaterialsFile();
+		static		char * MaterialsFile();
 		%feature("autodoc", "1");
-		Handle_Materials_MaterialsDictionary DictionaryOfMaterials();
+		static		Handle_Materials_MaterialsDictionary DictionaryOfMaterials();
 		%feature("autodoc", "1");
-		Standard_Boolean ExistMaterial(const char * aName);
+		static		Standard_Boolean ExistMaterial(const char * aName);
 		%feature("autodoc", "1");
-		Handle_Materials_Material Material(const char * amaterial);
+		static		Handle_Materials_Material Material(const char * amaterial);
 		%feature("autodoc", "1");
-		Standard_Integer NumberOfMaterials();
+		static		Standard_Integer NumberOfMaterials();
 		%feature("autodoc", "1");
-		Handle_Materials_Material Material(const Standard_Integer anindex);
+		static		Handle_Materials_Material Material(const Standard_Integer anindex);
 
 };
 %feature("shadow") Materials::~Materials %{

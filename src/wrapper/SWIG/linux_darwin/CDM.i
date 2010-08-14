@@ -60,7 +60,7 @@ class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_CDM_StdMapNodeOfMapOfDocument & operator=(const CDM_StdMapNodeOfMapOfDocument *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_StdMapNodeOfMapOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_StdMapNodeOfMapOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_StdMapNodeOfMapOfDocument {
@@ -98,7 +98,7 @@ class Handle_CDM_DataMapNodeOfNamesDirectory : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_CDM_DataMapNodeOfNamesDirectory & operator=(const CDM_DataMapNodeOfNamesDirectory *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfNamesDirectory const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_DataMapNodeOfNamesDirectory const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_DataMapNodeOfNamesDirectory {
@@ -136,7 +136,7 @@ class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_CDM_DataMapNodeOfPresentationDirectory & operator=(const CDM_DataMapNodeOfPresentationDirectory *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfPresentationDirectory const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_DataMapNodeOfPresentationDirectory const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_DataMapNodeOfPresentationDirectory {
@@ -174,7 +174,7 @@ class Handle_CDM_Reference : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDM_Reference & operator=(const CDM_Reference *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_Reference const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_Reference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_Reference {
@@ -212,7 +212,7 @@ class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDM_MessageDriver & operator=(const CDM_MessageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_MessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_MessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_MessageDriver {
@@ -250,7 +250,7 @@ class Handle_CDM_MetaData : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDM_MetaData & operator=(const CDM_MetaData *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_MetaData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_MetaData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_MetaData {
@@ -288,7 +288,7 @@ class Handle_CDM_COutMessageDriver : public Handle_CDM_MessageDriver {
 		%feature("autodoc", "1");
 		Handle_CDM_COutMessageDriver & operator=(const CDM_COutMessageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_COutMessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_COutMessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_COutMessageDriver {
@@ -326,7 +326,7 @@ class Handle_CDM_Document : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDM_Document & operator=(const CDM_Document *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_Document const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_Document const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_Document {
@@ -364,7 +364,7 @@ class Handle_CDM_NullMessageDriver : public Handle_CDM_MessageDriver {
 		%feature("autodoc", "1");
 		Handle_CDM_NullMessageDriver & operator=(const CDM_NullMessageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_NullMessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_NullMessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_NullMessageDriver {
@@ -402,7 +402,7 @@ class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_CDM_StackNodeOfStackOfDocument & operator=(const CDM_StackNodeOfStackOfDocument *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_StackNodeOfStackOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_StackNodeOfStackOfDocument {
@@ -440,7 +440,7 @@ class Handle_CDM_ListNodeOfListOfDocument : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_CDM_ListNodeOfListOfDocument & operator=(const CDM_ListNodeOfListOfDocument *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_ListNodeOfListOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_ListNodeOfListOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_ListNodeOfListOfDocument {
@@ -478,7 +478,7 @@ class Handle_CDM_DataMapNodeOfMetaDataLookUpTable : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_CDM_DataMapNodeOfMetaDataLookUpTable & operator=(const CDM_DataMapNodeOfMetaDataLookUpTable *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfMetaDataLookUpTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_DataMapNodeOfMetaDataLookUpTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_DataMapNodeOfMetaDataLookUpTable {
@@ -516,7 +516,7 @@ class Handle_CDM_Application : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDM_Application & operator=(const CDM_Application *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_Application const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_Application const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_Application {
@@ -554,7 +554,7 @@ class Handle_CDM_ListNodeOfListOfReferences : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_CDM_ListNodeOfListOfReferences & operator=(const CDM_ListNodeOfListOfReferences *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_ListNodeOfListOfReferences const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_ListNodeOfListOfReferences const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_ListNodeOfListOfReferences {
@@ -935,9 +935,9 @@ class CDM_DocumentHasher {
 		%feature("autodoc", "1");
 		CDM_DocumentHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Handle_CDM_Document &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const Handle_CDM_Document &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Handle_CDM_Document &K1, const Handle_CDM_Document &K2);
+		static		Standard_Boolean IsEqual(const Handle_CDM_Document &K1, const Handle_CDM_Document &K2);
 
 };
 %feature("shadow") CDM_DocumentHasher::~CDM_DocumentHasher %{
@@ -1631,9 +1631,9 @@ def __del__(self):
 class CDM_MetaData : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Handle_CDM_MetaData LookUp(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName, const TCollection_ExtendedString &aPath, const TCollection_ExtendedString &aFileName, const Standard_Boolean ReadOnly);
+		static		Handle_CDM_MetaData LookUp(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName, const TCollection_ExtendedString &aPath, const TCollection_ExtendedString &aFileName, const Standard_Boolean ReadOnly);
 		%feature("autodoc", "1");
-		Handle_CDM_MetaData LookUp(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName, const TCollection_ExtendedString &aPath, const TCollection_ExtendedString &aVersion, const TCollection_ExtendedString &aFileName, const Standard_Boolean ReadOnly);
+		static		Handle_CDM_MetaData LookUp(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName, const TCollection_ExtendedString &aPath, const TCollection_ExtendedString &aVersion, const TCollection_ExtendedString &aFileName, const Standard_Boolean ReadOnly);
 		%feature("autodoc", "1");
 		Standard_Boolean IsRetrieved() const;
 		%feature("autodoc", "1");

@@ -517,6 +517,9 @@ class ModularBuilder(object):
         # Detect virtuality
         if (mem_fun.virtuality==declarations.VIRTUALITY_TYPES.PURE_VIRTUAL) or (mem_fun.virtuality==declarations.VIRTUALITY_TYPES.VIRTUAL):
             to_write+="\t\tvirtual"
+        # Detect static method
+        if mem_fun.has_static:
+            to_write+="\t\tstatic"
         # on teste le cas suivant pour return_type:gp_Pnt const &, qu'il faut transformer en const gp_Pnt &
         parts = return_type.split(" ")
         if len(parts)==3:

@@ -62,7 +62,7 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles & operator=(const Convert_SequenceNodeOfSequenceOfArray1OfPoles *anItem);
 		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles {
@@ -100,7 +100,7 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d & operator=(const Convert_SequenceNodeOfSequenceOfArray1OfPoles2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {

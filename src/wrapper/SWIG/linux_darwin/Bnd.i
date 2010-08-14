@@ -51,7 +51,7 @@ class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Bnd_SequenceNodeOfSeqOfBox *anItem);
 		%feature("autodoc", "1");
-		Handle_Bnd_SequenceNodeOfSeqOfBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Bnd_SequenceNodeOfSeqOfBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Bnd_SequenceNodeOfSeqOfBox {
@@ -89,7 +89,7 @@ class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox2d & operator=(const Bnd_HArray1OfBox2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfBox2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Bnd_HArray1OfBox2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Bnd_HArray1OfBox2d {
@@ -127,7 +127,7 @@ class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox & operator=(const Bnd_HArray1OfBox *anItem);
 		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Bnd_HArray1OfBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Bnd_HArray1OfBox {

@@ -51,7 +51,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
@@ -89,7 +89,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
@@ -127,7 +127,7 @@ class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnCurv & operator=(const Extrema_HArray1OfPOnCurv *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_HArray1OfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_HArray1OfPOnCurv {
@@ -165,7 +165,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : pu
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
@@ -203,7 +203,7 @@ class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnSurf & operator=(const Extrema_HArray2OfPOnSurf *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_HArray2OfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_HArray2OfPOnSurf {
@@ -241,7 +241,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
@@ -279,7 +279,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & operator=(const Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
@@ -317,7 +317,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public H
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC & operator=(const Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
@@ -355,7 +355,7 @@ class Handle_Extrema_HArray2OfPOnCurv : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnCurv & operator=(const Extrema_HArray2OfPOnCurv *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_HArray2OfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_HArray2OfPOnCurv {
@@ -393,7 +393,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv & operator=(const Extrema_SequenceNodeOfSequenceOfPOnCurv *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv {
@@ -431,7 +431,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
@@ -469,7 +469,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public 
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
@@ -507,7 +507,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public H
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
@@ -545,7 +545,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
@@ -583,7 +583,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d & operator=(const Extrema_SequenceNodeOfSequenceOfPOnCurv2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
@@ -621,7 +621,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfBoolean & operator=(const Extrema_SequenceNodeOfSequenceOfBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSequenceOfBoolean const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfBoolean {
@@ -659,7 +659,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
@@ -697,7 +697,7 @@ class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnSurf & operator=(const Extrema_HArray1OfPOnSurf *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_HArray1OfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_HArray1OfPOnSurf {
@@ -735,7 +735,7 @@ class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Extrema_HArray1OfPOnCurv2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_HArray1OfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_HArray1OfPOnCurv2d {
@@ -773,7 +773,7 @@ class Handle_Extrema_HArray2OfPOnCurv2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnCurv2d & operator=(const Extrema_HArray2OfPOnCurv2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_HArray2OfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_HArray2OfPOnCurv2d {
@@ -811,7 +811,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Hand
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
@@ -849,7 +849,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf & operator=(const Extrema_SequenceNodeOfSequenceOfPOnSurf *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
@@ -2038,51 +2038,51 @@ class Extrema_CurveTool {
 		%feature("autodoc", "1");
 		Extrema_CurveTool();
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Adaptor3d_Curve &C);
+		static		Standard_Real FirstParameter(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Adaptor3d_Curve &C);
+		static		Standard_Real LastParameter(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const Adaptor3d_Curve &C);
+		static		GeomAbs_Shape Continuity(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(Adaptor3d_Curve & C, const GeomAbs_Shape S);
+		static		Standard_Integer NbIntervals(Adaptor3d_Curve & C, const GeomAbs_Shape S);
 		%feature("autodoc", "1");
-		void Intervals(Adaptor3d_Curve & C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
+		static		void Intervals(Adaptor3d_Curve & C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic(const Adaptor3d_Curve &C);
+		static		Standard_Boolean IsPeriodic(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Real Period(const Adaptor3d_Curve &C);
+		static		Standard_Real Period(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Real Resolution(const Adaptor3d_Curve &C, const Standard_Real R3d);
+		static		Standard_Real Resolution(const Adaptor3d_Curve &C, const Standard_Real R3d);
 		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType(const Adaptor3d_Curve &C);
+		static		GeomAbs_CurveType GetType(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		gp_Pnt Value(const Adaptor3d_Curve &C, const Standard_Real U);
+		static		gp_Pnt Value(const Adaptor3d_Curve &C, const Standard_Real U);
 		%feature("autodoc", "1");
-		void D1(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V);
+		static		void D1(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V);
 		%feature("autodoc", "1");
-		void D2(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
+		static		void D2(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
 		%feature("autodoc", "1");
-		gp_Lin Line(const Adaptor3d_Curve &C);
+		static		gp_Lin Line(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		gp_Circ Circle(const Adaptor3d_Curve &C);
+		static		gp_Circ Circle(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		gp_Elips Ellipse(const Adaptor3d_Curve &C);
+		static		gp_Elips Ellipse(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		gp_Hypr Hyperbola(const Adaptor3d_Curve &C);
+		static		gp_Hypr Hyperbola(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		gp_Parab Parabola(const Adaptor3d_Curve &C);
+		static		gp_Parab Parabola(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Integer Degree(const Adaptor3d_Curve &C);
+		static		Standard_Integer Degree(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Boolean IsRational(const Adaptor3d_Curve &C);
+		static		Standard_Boolean IsRational(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Integer NbPoles(const Adaptor3d_Curve &C);
+		static		Standard_Integer NbPoles(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Integer NbKnots(const Adaptor3d_Curve &C);
+		static		Standard_Integer NbKnots(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve Bezier(const Adaptor3d_Curve &C);
+		static		Handle_Geom_BezierCurve Bezier(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve BSpline(const Adaptor3d_Curve &C);
+		static		Handle_Geom_BSplineCurve BSpline(const Adaptor3d_Curve &C);
 
 };
 %feature("shadow") Extrema_CurveTool::~Extrema_CurveTool %{
@@ -4300,59 +4300,59 @@ class Extrema_Curve2dTool {
 		%feature("autodoc", "1");
 		Extrema_Curve2dTool();
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Adaptor2d_Curve2d &C);
+		static		Standard_Real FirstParameter(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Adaptor2d_Curve2d &C);
+		static		Standard_Real LastParameter(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const Adaptor2d_Curve2d &C);
+		static		GeomAbs_Shape Continuity(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const Adaptor2d_Curve2d &C, const GeomAbs_Shape S);
+		static		Standard_Integer NbIntervals(const Adaptor2d_Curve2d &C, const GeomAbs_Shape S);
 		%feature("autodoc", "1");
-		void Intervals(const Adaptor2d_Curve2d &C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
+		static		void Intervals(const Adaptor2d_Curve2d &C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const Adaptor2d_Curve2d &C);
+		static		Standard_Boolean IsClosed(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic(const Adaptor2d_Curve2d &C);
+		static		Standard_Boolean IsPeriodic(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Standard_Real Period(const Adaptor2d_Curve2d &C);
+		static		Standard_Real Period(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		gp_Pnt2d Value(const Adaptor2d_Curve2d &C, const Standard_Real U);
+		static		gp_Pnt2d Value(const Adaptor2d_Curve2d &C, const Standard_Real U);
 		%feature("autodoc", "1");
-		void D0(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P);
+		static		void D0(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P);
 		%feature("autodoc", "1");
-		void D1(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V);
+		static		void D1(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V);
 		%feature("autodoc", "1");
-		void D2(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
+		static		void D2(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
 		%feature("autodoc", "1");
-		void D3(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
+		static		void D3(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
 		%feature("autodoc", "1");
-		gp_Vec2d DN(const Adaptor2d_Curve2d &C, const Standard_Real U, const Standard_Integer N);
+		static		gp_Vec2d DN(const Adaptor2d_Curve2d &C, const Standard_Real U, const Standard_Integer N);
 		%feature("autodoc", "1");
-		Standard_Real Resolution(const Adaptor2d_Curve2d &C, const Standard_Real R3d);
+		static		Standard_Real Resolution(const Adaptor2d_Curve2d &C, const Standard_Real R3d);
 		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType(const Adaptor2d_Curve2d &C);
+		static		GeomAbs_CurveType GetType(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		gp_Lin2d Line(const Adaptor2d_Curve2d &C);
+		static		gp_Lin2d Line(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		gp_Circ2d Circle(const Adaptor2d_Curve2d &C);
+		static		gp_Circ2d Circle(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		gp_Elips2d Ellipse(const Adaptor2d_Curve2d &C);
+		static		gp_Elips2d Ellipse(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		gp_Hypr2d Hyperbola(const Adaptor2d_Curve2d &C);
+		static		gp_Hypr2d Hyperbola(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		gp_Parab2d Parabola(const Adaptor2d_Curve2d &C);
+		static		gp_Parab2d Parabola(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Standard_Integer Degree(const Adaptor2d_Curve2d &C);
+		static		Standard_Integer Degree(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Standard_Boolean IsRational(const Adaptor2d_Curve2d &C);
+		static		Standard_Boolean IsRational(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Standard_Integer NbPoles(const Adaptor2d_Curve2d &C);
+		static		Standard_Integer NbPoles(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Standard_Integer NbKnots(const Adaptor2d_Curve2d &C);
+		static		Standard_Integer NbKnots(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Handle_Geom2d_BezierCurve Bezier(const Adaptor2d_Curve2d &C);
+		static		Handle_Geom2d_BezierCurve Bezier(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve BSpline(const Adaptor2d_Curve2d &C);
+		static		Handle_Geom2d_BSplineCurve BSpline(const Adaptor2d_Curve2d &C);
 
 };
 %feature("shadow") Extrema_Curve2dTool::~Extrema_Curve2dTool %{

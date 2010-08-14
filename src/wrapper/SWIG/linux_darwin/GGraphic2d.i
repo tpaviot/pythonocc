@@ -51,7 +51,7 @@ class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_Curve & operator=(const GGraphic2d_Curve *anItem);
 		%feature("autodoc", "1");
-		Handle_GGraphic2d_Curve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GGraphic2d_Curve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GGraphic2d_Curve {
@@ -89,7 +89,7 @@ class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_SetOfCurves & operator=(const GGraphic2d_SetOfCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_GGraphic2d_SetOfCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GGraphic2d_SetOfCurves const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GGraphic2d_SetOfCurves {
@@ -127,7 +127,7 @@ class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_CurveDefinitionError & operator=(const GGraphic2d_CurveDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GGraphic2d_CurveDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GGraphic2d_CurveDefinitionError {
@@ -165,7 +165,7 @@ class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve & operator=(const GGraphic2d_SequenceNodeOfSequenceOfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
@@ -340,11 +340,11 @@ class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		GGraphic2d_CurveDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError NewInstance(const char * aMessage);
+		static		Handle_GGraphic2d_CurveDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -383,7 +383,7 @@ class GGraphic2d_Curve : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve GeomCurve() const;
 		%feature("autodoc", "1");
-		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
+		static		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

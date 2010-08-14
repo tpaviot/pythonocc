@@ -57,7 +57,7 @@ class Handle_Hatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfLine & operator=(const Hatch_SequenceNodeOfSequenceOfLine *anItem);
 		%feature("autodoc", "1");
-		Handle_Hatch_SequenceNodeOfSequenceOfLine const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Hatch_SequenceNodeOfSequenceOfLine const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Hatch_SequenceNodeOfSequenceOfLine {
@@ -95,7 +95,7 @@ class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfParameter & operator=(const Hatch_SequenceNodeOfSequenceOfParameter *anItem);
 		%feature("autodoc", "1");
-		Handle_Hatch_SequenceNodeOfSequenceOfParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Hatch_SequenceNodeOfSequenceOfParameter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Hatch_SequenceNodeOfSequenceOfParameter {

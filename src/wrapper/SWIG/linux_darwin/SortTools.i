@@ -43,7 +43,7 @@ class SortTools_QuickSortOfReal {
 		%feature("autodoc", "1");
 		SortTools_QuickSortOfReal();
 		%feature("autodoc", "1");
-		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
+		static		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
 %feature("shadow") SortTools_QuickSortOfReal::~SortTools_QuickSortOfReal %{
@@ -68,7 +68,7 @@ class SortTools_HeapSortOfInteger {
 		%feature("autodoc", "1");
 		SortTools_HeapSortOfInteger();
 		%feature("autodoc", "1");
-		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
+		static		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
 };
 %feature("shadow") SortTools_HeapSortOfInteger::~SortTools_HeapSortOfInteger %{
@@ -93,7 +93,7 @@ class SortTools_StraightInsertionSortOfInteger {
 		%feature("autodoc", "1");
 		SortTools_StraightInsertionSortOfInteger();
 		%feature("autodoc", "1");
-		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
+		static		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
 };
 %feature("shadow") SortTools_StraightInsertionSortOfInteger::~SortTools_StraightInsertionSortOfInteger %{
@@ -118,7 +118,7 @@ class SortTools_HeapSortOfReal {
 		%feature("autodoc", "1");
 		SortTools_HeapSortOfReal();
 		%feature("autodoc", "1");
-		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
+		static		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
 %feature("shadow") SortTools_HeapSortOfReal::~SortTools_HeapSortOfReal %{
@@ -143,7 +143,7 @@ class SortTools_StraightInsertionSortOfReal {
 		%feature("autodoc", "1");
 		SortTools_StraightInsertionSortOfReal();
 		%feature("autodoc", "1");
-		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
+		static		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
 %feature("shadow") SortTools_StraightInsertionSortOfReal::~SortTools_StraightInsertionSortOfReal %{
@@ -168,7 +168,7 @@ class SortTools_QuickSortOfInteger {
 		%feature("autodoc", "1");
 		SortTools_QuickSortOfInteger();
 		%feature("autodoc", "1");
-		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
+		static		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
 };
 %feature("shadow") SortTools_QuickSortOfInteger::~SortTools_QuickSortOfInteger %{
@@ -193,7 +193,7 @@ class SortTools_ShellSortOfReal {
 		%feature("autodoc", "1");
 		SortTools_ShellSortOfReal();
 		%feature("autodoc", "1");
-		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
+		static		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
 %feature("shadow") SortTools_ShellSortOfReal::~SortTools_ShellSortOfReal %{
@@ -218,7 +218,7 @@ class SortTools_ShellSortOfInteger {
 		%feature("autodoc", "1");
 		SortTools_ShellSortOfInteger();
 		%feature("autodoc", "1");
-		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
+		static		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
 };
 %feature("shadow") SortTools_ShellSortOfInteger::~SortTools_ShellSortOfInteger %{

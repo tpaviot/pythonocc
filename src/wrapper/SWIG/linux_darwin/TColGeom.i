@@ -51,7 +51,7 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_TColGeom_SequenceNodeOfSequenceOfCurve & operator=(const TColGeom_SequenceNodeOfSequenceOfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_SequenceNodeOfSequenceOfCurve {
@@ -89,7 +89,7 @@ class Handle_TColGeom_HSequenceOfSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HSequenceOfSurface & operator=(const TColGeom_HSequenceOfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HSequenceOfSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HSequenceOfSurface {
@@ -127,7 +127,7 @@ class Handle_TColGeom_HArray1OfBoundedSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HArray1OfBoundedSurface & operator=(const TColGeom_HArray1OfBoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HArray1OfBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HArray1OfBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HArray1OfBoundedSurface {
@@ -165,7 +165,7 @@ class Handle_TColGeom_HArray2OfBoundedSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HArray2OfBoundedSurface & operator=(const TColGeom_HArray2OfBoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HArray2OfBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HArray2OfBoundedSurface {
@@ -203,7 +203,7 @@ class Handle_TColGeom_HArray1OfCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HArray1OfCurve & operator=(const TColGeom_HArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HArray1OfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HArray1OfCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HArray1OfCurve {
@@ -241,7 +241,7 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfSurface : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_TColGeom_SequenceNodeOfSequenceOfSurface & operator=(const TColGeom_SequenceNodeOfSequenceOfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_SequenceNodeOfSequenceOfSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_SequenceNodeOfSequenceOfSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_SequenceNodeOfSequenceOfSurface {
@@ -279,7 +279,7 @@ class Handle_TColGeom_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HArray1OfBoundedCurve & operator=(const TColGeom_HArray1OfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HArray1OfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HArray1OfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HArray1OfBoundedCurve {
@@ -317,7 +317,7 @@ class Handle_TColGeom_HArray2OfBSplineSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HArray2OfBSplineSurface & operator=(const TColGeom_HArray2OfBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HArray2OfBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HArray2OfBSplineSurface {
@@ -355,7 +355,7 @@ class Handle_TColGeom_HSequenceOfCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HSequenceOfCurve & operator=(const TColGeom_HSequenceOfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HSequenceOfCurve {
@@ -393,7 +393,7 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface & operator=(const TColGeom_SequenceNodeOfSequenceOfBoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface {
@@ -431,7 +431,7 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve & operator=(const TColGeom_SequenceNodeOfSequenceOfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve {
@@ -469,7 +469,7 @@ class Handle_TColGeom_HArray1OfSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HArray1OfSurface & operator=(const TColGeom_HArray1OfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HArray1OfSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HArray1OfSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HArray1OfSurface {
@@ -507,7 +507,7 @@ class Handle_TColGeom_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HArray1OfBezierCurve & operator=(const TColGeom_HArray1OfBezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HArray1OfBezierCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HArray1OfBezierCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HArray1OfBezierCurve {
@@ -545,7 +545,7 @@ class Handle_TColGeom_HArray2OfBezierSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HArray2OfBezierSurface & operator=(const TColGeom_HArray2OfBezierSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfBezierSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HArray2OfBezierSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HArray2OfBezierSurface {
@@ -583,7 +583,7 @@ class Handle_TColGeom_HArray1OfBSplineCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HArray1OfBSplineCurve & operator=(const TColGeom_HArray1OfBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HArray1OfBSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HArray1OfBSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HArray1OfBSplineCurve {
@@ -621,7 +621,7 @@ class Handle_TColGeom_HArray2OfSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HArray2OfSurface & operator=(const TColGeom_HArray2OfSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HArray2OfSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HArray2OfSurface {
@@ -659,7 +659,7 @@ class Handle_TColGeom_HSequenceOfBoundedSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HSequenceOfBoundedSurface & operator=(const TColGeom_HSequenceOfBoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HSequenceOfBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HSequenceOfBoundedSurface {
@@ -697,7 +697,7 @@ class Handle_TColGeom_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColGeom_HSequenceOfBoundedCurve & operator=(const TColGeom_HSequenceOfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColGeom_HSequenceOfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TColGeom_HSequenceOfBoundedCurve {

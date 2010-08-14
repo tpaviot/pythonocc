@@ -86,19 +86,19 @@ class BRepGProp {
 		%feature("autodoc", "1");
 		BRepGProp();
 		%feature("autodoc", "1");
-		void LinearProperties(const TopoDS_Shape &S, GProp_GProps & LProps);
+		static		void LinearProperties(const TopoDS_Shape &S, GProp_GProps & LProps);
 		%feature("autodoc", "1");
-		void SurfaceProperties(const TopoDS_Shape &S, GProp_GProps & SProps);
+		static		void SurfaceProperties(const TopoDS_Shape &S, GProp_GProps & SProps);
 		%feature("autodoc", "1");
-		Standard_Real SurfaceProperties(const TopoDS_Shape &S, GProp_GProps & SProps, const Standard_Real Eps);
+		static		Standard_Real SurfaceProperties(const TopoDS_Shape &S, GProp_GProps & SProps, const Standard_Real Eps);
 		%feature("autodoc", "1");
-		void VolumeProperties(const TopoDS_Shape &S, GProp_GProps & VProps, const Standard_Boolean OnlyClosed=0);
+		static		void VolumeProperties(const TopoDS_Shape &S, GProp_GProps & VProps, const Standard_Boolean OnlyClosed=0);
 		%feature("autodoc", "1");
-		Standard_Real VolumeProperties(const TopoDS_Shape &S, GProp_GProps & VProps, const Standard_Real Eps, const Standard_Boolean OnlyClosed=0);
+		static		Standard_Real VolumeProperties(const TopoDS_Shape &S, GProp_GProps & VProps, const Standard_Real Eps, const Standard_Boolean OnlyClosed=0);
 		%feature("autodoc", "1");
-		Standard_Real VolumePropertiesGK(const TopoDS_Shape &S, GProp_GProps & VProps, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
+		static		Standard_Real VolumePropertiesGK(const TopoDS_Shape &S, GProp_GProps & VProps, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
 		%feature("autodoc", "1");
-		Standard_Real VolumePropertiesGK(const TopoDS_Shape &S, GProp_GProps & VProps, const gp_Pln &thePln, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
+		static		Standard_Real VolumePropertiesGK(const TopoDS_Shape &S, GProp_GProps & VProps, const gp_Pln &thePln, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
 
 };
 %feature("shadow") BRepGProp::~BRepGProp %{
@@ -123,19 +123,19 @@ class BRepGProp_EdgeTool {
 		%feature("autodoc", "1");
 		BRepGProp_EdgeTool();
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
+		static		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
+		static		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Integer IntegrationOrder(const BRepAdaptor_Curve &C);
+		static		Standard_Integer IntegrationOrder(const BRepAdaptor_Curve &C);
 		%feature("autodoc", "1");
-		gp_Pnt Value(const BRepAdaptor_Curve &C, const Standard_Real U);
+		static		gp_Pnt Value(const BRepAdaptor_Curve &C, const Standard_Real U);
 		%feature("autodoc", "1");
-		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
+		static		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
 		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const BRepAdaptor_Curve &C, const GeomAbs_Shape S);
+		static		Standard_Integer NbIntervals(const BRepAdaptor_Curve &C, const GeomAbs_Shape S);
 		%feature("autodoc", "1");
-		void Intervals(const BRepAdaptor_Curve &C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
+		static		void Intervals(const BRepAdaptor_Curve &C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 };
 %feature("shadow") BRepGProp_EdgeTool::~BRepGProp_EdgeTool %{

@@ -59,7 +59,7 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier & operator=(const GccEnt_BadQualifier *anItem);
 		%feature("autodoc", "1");
-		Handle_GccEnt_BadQualifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccEnt_BadQualifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccEnt_BadQualifier {
@@ -183,11 +183,11 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 		%feature("autodoc", "1");
 		GccEnt_BadQualifier(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_GccEnt_BadQualifier NewInstance(const char * aMessage);
+		static		Handle_GccEnt_BadQualifier NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -224,19 +224,19 @@ class GccEnt {
 		%feature("autodoc", "1");
 		GccEnt();
 		%feature("autodoc", "1");
-		GccEnt_QualifiedLin Unqualified(const gp_Lin2d &Obj);
+		static		GccEnt_QualifiedLin Unqualified(const gp_Lin2d &Obj);
 		%feature("autodoc", "1");
-		GccEnt_QualifiedCirc Unqualified(const gp_Circ2d &Obj);
+		static		GccEnt_QualifiedCirc Unqualified(const gp_Circ2d &Obj);
 		%feature("autodoc", "1");
-		GccEnt_QualifiedCirc Enclosing(const gp_Circ2d &Obj);
+		static		GccEnt_QualifiedCirc Enclosing(const gp_Circ2d &Obj);
 		%feature("autodoc", "1");
-		GccEnt_QualifiedLin Enclosed(const gp_Lin2d &Obj);
+		static		GccEnt_QualifiedLin Enclosed(const gp_Lin2d &Obj);
 		%feature("autodoc", "1");
-		GccEnt_QualifiedCirc Enclosed(const gp_Circ2d &Obj);
+		static		GccEnt_QualifiedCirc Enclosed(const gp_Circ2d &Obj);
 		%feature("autodoc", "1");
-		GccEnt_QualifiedLin Outside(const gp_Lin2d &Obj);
+		static		GccEnt_QualifiedLin Outside(const gp_Lin2d &Obj);
 		%feature("autodoc", "1");
-		GccEnt_QualifiedCirc Outside(const gp_Circ2d &Obj);
+		static		GccEnt_QualifiedCirc Outside(const gp_Circ2d &Obj);
 
 };
 %feature("shadow") GccEnt::~GccEnt %{

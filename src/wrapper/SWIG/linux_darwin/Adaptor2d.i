@@ -52,7 +52,7 @@ class Handle_Adaptor2d_HCurve2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Adaptor2d_HCurve2d & operator=(const Adaptor2d_HCurve2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor2d_HCurve2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Adaptor2d_HCurve2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Adaptor2d_HCurve2d {
@@ -90,7 +90,7 @@ class Handle_Adaptor2d_HLine2d : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_Adaptor2d_HLine2d & operator=(const Adaptor2d_HLine2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Adaptor2d_HLine2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Adaptor2d_HLine2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Adaptor2d_HLine2d {

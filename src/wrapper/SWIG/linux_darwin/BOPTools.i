@@ -77,7 +77,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public 
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
@@ -115,7 +115,7 @@ class Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock & operator=(const BOPTools_IndexedMapNodeOfIMapOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
@@ -153,7 +153,7 @@ class Handle_BOPTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCommonBlock & operator=(const BOPTools_ListNodeOfListOfCommonBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCommonBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_ListNodeOfListOfCommonBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfCommonBlock {
@@ -191,7 +191,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
@@ -229,7 +229,7 @@ class Handle_BOPTools_ListNodeOfListOfCheckResults : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCheckResults & operator=(const BOPTools_ListNodeOfListOfCheckResults *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCheckResults const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_ListNodeOfListOfCheckResults const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfCheckResults {
@@ -267,7 +267,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : publi
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
@@ -305,7 +305,7 @@ class Handle_BOPTools_ListNodeOfListOfInterference : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfInterference & operator=(const BOPTools_ListNodeOfListOfInterference *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfInterference const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_ListNodeOfListOfInterference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfInterference {
@@ -343,7 +343,7 @@ class Handle_BOPTools_ListNodeOfListOfShapeEnum : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfShapeEnum & operator=(const BOPTools_ListNodeOfListOfShapeEnum *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfShapeEnum const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_ListNodeOfListOfShapeEnum const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfShapeEnum {
@@ -381,7 +381,7 @@ class Handle_BOPTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BOPTools_SequenceNodeOfSequenceOfCurves & operator=(const BOPTools_SequenceNodeOfSequenceOfCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_SequenceNodeOfSequenceOfCurves const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_SequenceNodeOfSequenceOfCurves {
@@ -419,7 +419,7 @@ class Handle_BOPTools_HArray2OfIntersectionStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BOPTools_HArray2OfIntersectionStatus & operator=(const BOPTools_HArray2OfIntersectionStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_HArray2OfIntersectionStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_HArray2OfIntersectionStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_HArray2OfIntersectionStatus {
@@ -457,7 +457,7 @@ class Handle_BOPTools_ListNodeOfListOfPaveBlock : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfPaveBlock & operator=(const BOPTools_ListNodeOfListOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_ListNodeOfListOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfPaveBlock {
@@ -495,7 +495,7 @@ class Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock & operator=(const BOPTools_SequenceNodeOfSequenceOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock {
@@ -533,7 +533,7 @@ class Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public Handl
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger & operator=(const BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
@@ -571,7 +571,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : publ
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock & operator=(const BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
@@ -609,7 +609,7 @@ class Handle_BOPTools_ListNodeOfListOfCoupleOfInteger : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger & operator=(const BOPTools_ListNodeOfListOfCoupleOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_ListNodeOfListOfCoupleOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfCoupleOfInteger {
@@ -647,7 +647,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : publi
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState & operator=(const BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
@@ -685,7 +685,7 @@ class Handle_BOPTools_ListNodeOfListOfPave : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_BOPTools_ListNodeOfListOfPave & operator=(const BOPTools_ListNodeOfListOfPave *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPave const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_ListNodeOfListOfPave const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_ListNodeOfListOfPave {
@@ -723,7 +723,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public
 		%feature("autodoc", "1");
 		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger & operator=(const BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
@@ -954,37 +954,37 @@ class BOPTools_Tools {
 		%feature("autodoc", "1");
 		BOPTools_Tools();
 		%feature("autodoc", "1");
-		void MakeNewVertex(const gp_Pnt &aP1, const Standard_Real aTol, TopoDS_Vertex & aNewVertex);
+		static		void MakeNewVertex(const gp_Pnt &aP1, const Standard_Real aTol, TopoDS_Vertex & aNewVertex);
 		%feature("autodoc", "1");
-		void MakeNewVertex(const TopoDS_Vertex &aV1, const TopoDS_Vertex &aV2, TopoDS_Vertex & aNewVertex);
+		static		void MakeNewVertex(const TopoDS_Vertex &aV1, const TopoDS_Vertex &aV2, TopoDS_Vertex & aNewVertex);
 		%feature("autodoc", "1");
-		void MakeNewVertex(const TopoDS_Edge &aE1, const Standard_Real aP1, const TopoDS_Edge &aE2, const Standard_Real aP2, TopoDS_Vertex & aNewVertex);
+		static		void MakeNewVertex(const TopoDS_Edge &aE1, const Standard_Real aP1, const TopoDS_Edge &aE2, const Standard_Real aP2, TopoDS_Vertex & aNewVertex);
 		%feature("autodoc", "1");
-		void MakeNewVertex(const TopoDS_Edge &aE1, const Standard_Real aP1, const TopoDS_Face &aF2, TopoDS_Vertex & aNewVertex);
+		static		void MakeNewVertex(const TopoDS_Edge &aE1, const Standard_Real aP1, const TopoDS_Face &aF2, TopoDS_Vertex & aNewVertex);
 		%feature("autodoc", "1");
-		void PointOnEdge(const TopoDS_Edge &aEdge, const Standard_Real aPrm, gp_Pnt & aP);
+		static		void PointOnEdge(const TopoDS_Edge &aEdge, const Standard_Real aPrm, gp_Pnt & aP);
 		%feature("autodoc", "1");
-		void MakeSplitEdge(const TopoDS_Edge &aE1, const TopoDS_Vertex &aV1, const Standard_Real aP1, const TopoDS_Vertex &aV2, const Standard_Real aP2, TopoDS_Edge & aNewEdge);
+		static		void MakeSplitEdge(const TopoDS_Edge &aE1, const TopoDS_Vertex &aV1, const Standard_Real aP1, const TopoDS_Vertex &aV2, const Standard_Real aP2, TopoDS_Edge & aNewEdge);
 		%feature("autodoc", "1");
-		void MakeSectEdge(const IntTools_Curve &aIC, const TopoDS_Vertex &aV1, const Standard_Real aP1, const TopoDS_Vertex &aV2, const Standard_Real aP2, TopoDS_Edge & aNewEdge);
+		static		void MakeSectEdge(const IntTools_Curve &aIC, const TopoDS_Vertex &aV1, const Standard_Real aP1, const TopoDS_Vertex &aV2, const Standard_Real aP2, TopoDS_Edge & aNewEdge);
 		%feature("autodoc", "1");
-		void UpdateVertex(const IntTools_Curve &aIC, const Standard_Real aT, const TopoDS_Vertex &aV);
+		static		void UpdateVertex(const IntTools_Curve &aIC, const Standard_Real aT, const TopoDS_Vertex &aV);
 		%feature("autodoc", "1");
-		void UpdateVertex(const TopoDS_Edge &aE, const Standard_Real aT, const TopoDS_Vertex &aV);
+		static		void UpdateVertex(const TopoDS_Edge &aE, const Standard_Real aT, const TopoDS_Vertex &aV);
 		%feature("autodoc", "1");
-		void UpdateVertex(const TopoDS_Vertex &aVF, const TopoDS_Vertex &aVN);
+		static		void UpdateVertex(const TopoDS_Vertex &aVF, const TopoDS_Vertex &aVN);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBlocksCoinside(const BOPTools_PaveBlock &aPB1, const BOPTools_PaveBlock &aPB2);
+		static		Standard_Boolean IsBlocksCoinside(const BOPTools_PaveBlock &aPB1, const BOPTools_PaveBlock &aPB2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBlockInOnFace(const BOPTools_PaveBlock &aPB, const TopoDS_Face &aF, IntTools_Context & aContext);
+		static		Standard_Boolean IsBlockInOnFace(const BOPTools_PaveBlock &aPB, const TopoDS_Face &aF, IntTools_Context & aContext);
 		%feature("autodoc", "1");
-		void MapShapes(const TopoDS_Shape &aS, TopTools_IndexedMapOfShape & aM);
+		static		void MapShapes(const TopoDS_Shape &aS, TopTools_IndexedMapOfShape & aM);
 		%feature("autodoc", "1");
-		void CorrectRange(const TopoDS_Edge &aE1, const TopoDS_Edge &aE2, const IntTools_Range &aSR, IntTools_Range & aNewSR);
+		static		void CorrectRange(const TopoDS_Edge &aE1, const TopoDS_Edge &aE2, const IntTools_Range &aSR, IntTools_Range & aNewSR);
 		%feature("autodoc", "1");
-		void CorrectRange(const TopoDS_Edge &aE, const TopoDS_Face &aF, const IntTools_Range &aSR, IntTools_Range & aNewSR);
+		static		void CorrectRange(const TopoDS_Edge &aE, const TopoDS_Face &aF, const IntTools_Range &aSR, IntTools_Range & aNewSR);
 		%feature("autodoc", "1");
-		void CopySource(const TopoDS_Shape &aSourceShape, TopoDS_Shape & aDestShape);
+		static		void CopySource(const TopoDS_Shape &aSourceShape, TopoDS_Shape & aDestShape);
 
 };
 %feature("shadow") BOPTools_Tools::~BOPTools_Tools %{
@@ -2107,15 +2107,15 @@ class BOPTools_StateFiller {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		BooleanOperations_StateOfShape ConvertState(const TopAbs_State aSt);
+		static		BooleanOperations_StateOfShape ConvertState(const TopAbs_State aSt);
 		%feature("autodoc", "1");
-		TopAbs_State ConvertState(const BooleanOperations_StateOfShape aSt);
+		static		TopAbs_State ConvertState(const BooleanOperations_StateOfShape aSt);
 		%feature("autodoc", "1");
 		TopAbs_State ClassifyEdgeToSolidByOnePoint(const TopoDS_Edge &anEdge, const TopoDS_Shape &aRef);
 		%feature("autodoc", "1");
 		BooleanOperations_StateOfShape ClassifyShapeByRef(const TopoDS_Shape &aShape, const TopoDS_Shape &aRef);
 		%feature("autodoc", "1");
-		TopAbs_ShapeEnum SubType(const TopoDS_Shape &aShape);
+		static		TopAbs_ShapeEnum SubType(const TopoDS_Shape &aShape);
 
 };
 %feature("shadow") BOPTools_StateFiller::~BOPTools_StateFiller %{
@@ -2140,9 +2140,9 @@ class BOPTools_CoupleOfIntegerMapHasher {
 		%feature("autodoc", "1");
 		BOPTools_CoupleOfIntegerMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const BOPTools_CoupleOfInteger &aPKey, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const BOPTools_CoupleOfInteger &aPKey, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const BOPTools_CoupleOfInteger &aPKey1, const BOPTools_CoupleOfInteger &aPKey2);
+		static		Standard_Boolean IsEqual(const BOPTools_CoupleOfInteger &aPKey1, const BOPTools_CoupleOfInteger &aPKey2);
 
 };
 %feature("shadow") BOPTools_CoupleOfIntegerMapHasher::~BOPTools_CoupleOfIntegerMapHasher %{
@@ -2686,7 +2686,7 @@ class BOPTools_DSFiller {
 		%feature("autodoc", "1");
 		TColStd_DataMapOfIntegerListOfInteger & ChangeSplitFacePool();
 		%feature("autodoc", "1");
-		Standard_Integer TreatCompound(const TopoDS_Shape &theShape, TopoDS_Shape & theShapeResult);
+		static		Standard_Integer TreatCompound(const TopoDS_Shape &theShape, TopoDS_Shape & theShapeResult);
 
 };
 %feature("shadow") BOPTools_DSFiller::~BOPTools_DSFiller %{
@@ -3970,58 +3970,58 @@ class BOPTools_Tools2D {
 		%feature("autodoc", "1");
 		BOPTools_Tools2D();
 		%feature("autodoc", "1");
-		void RemovePCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF);
+		static		void RemovePCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF);
 		%feature("autodoc", "1");
-		void BuildPCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF);
+		static		void BuildPCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF);
 		%feature("autodoc", "1");
-		Standard_Boolean EdgeTangent(const TopoDS_Edge &anE, const Standard_Real aT, gp_Vec & Tau);
+		static		Standard_Boolean EdgeTangent(const TopoDS_Edge &anE, const Standard_Real aT, gp_Vec & Tau);
 		%feature("autodoc", "1");
-		void FaceNormal(const TopoDS_Face &aF, const Standard_Real U, const Standard_Real V, gp_Vec & aN);
+		static		void FaceNormal(const TopoDS_Face &aF, const Standard_Real U, const Standard_Real V, gp_Vec & aN);
 		%feature("autodoc","PointOnSurface(const aE, const aF, Standard_Real aT) -> [Standard_Real, Standard_Real]");
 
-		void PointOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void PointOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","CurveOnSurface(const aE, const aF, Standard_Boolean aTrim3d) -> Standard_Real");
 
-		void CurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
+		static		void CurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
 		%feature("autodoc","CurveOnSurface(const aE, const aF, Standard_Boolean aTrim3d) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		void CurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
+		static		void CurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
 		%feature("autodoc","HasCurveOnSurface(const aE, const aF) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		Standard_Boolean HasCurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		Standard_Boolean HasCurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean HasCurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF);
+		static		Standard_Boolean HasCurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF);
 		%feature("autodoc","MakeCurveOnSurface(const aE, const aF, Standard_Boolean aTrim3d) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		void MakeCurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
+		static		void MakeCurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
 		%feature("autodoc","Make2D(const aE, const aF, Standard_Boolean aTrim3d) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		void Make2D(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
+		static		void Make2D(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
 		%feature("autodoc","MakePCurveOnFace(const aF, const C3D) -> Standard_Real");
 
-		void MakePCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, Handle_Geom2d_Curve & aC, Standard_Real &OutValue);
+		static		void MakePCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, Handle_Geom2d_Curve & aC, Standard_Real &OutValue);
 		%feature("autodoc","MakePCurveOnFace(const aF, const C3D, Standard_Real aT1, Standard_Real aT2) -> Standard_Real");
 
-		void MakePCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, const Standard_Real aT1, const Standard_Real aT2, Handle_Geom2d_Curve & aC, Standard_Real &OutValue);
+		static		void MakePCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, const Standard_Real aT1, const Standard_Real aT2, Handle_Geom2d_Curve & aC, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void AdjustPCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &aC2D, Handle_Geom2d_Curve & aC2DA);
+		static		void AdjustPCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &aC2D, Handle_Geom2d_Curve & aC2DA);
 		%feature("autodoc", "1");
-		void AdjustPCurveOnFace(const TopoDS_Face &aF, const Standard_Real aT1, const Standard_Real aT2, const Handle_Geom2d_Curve &aC2D, Handle_Geom2d_Curve & aC2DA);
+		static		void AdjustPCurveOnFace(const TopoDS_Face &aF, const Standard_Real aT1, const Standard_Real aT2, const Handle_Geom2d_Curve &aC2D, Handle_Geom2d_Curve & aC2DA);
 		%feature("autodoc", "1");
-		void MakePCurveOfType(const ProjLib_ProjectedCurve &PC, Handle_Geom2d_Curve & aC);
+		static		void MakePCurveOfType(const ProjLib_ProjectedCurve &PC, Handle_Geom2d_Curve & aC);
 		%feature("autodoc", "1");
-		Standard_Boolean TangentOnEdge(const Standard_Real aParm, const TopoDS_Edge &anE, gp_Vec & aTang);
+		static		Standard_Boolean TangentOnEdge(const Standard_Real aParm, const TopoDS_Edge &anE, gp_Vec & aTang);
 		%feature("autodoc", "1");
-		Standard_Boolean TangentOnEdge(const TopoDS_Edge &anE, gp_Dir & aDTang);
+		static		Standard_Boolean TangentOnEdge(const TopoDS_Edge &anE, gp_Dir & aDTang);
 		%feature("autodoc", "1");
-		Standard_Boolean TangentOnVertex(const TopoDS_Vertex &aVF, const TopoDS_Vertex &aVL, const TopoDS_Edge &anE, gp_Vec & aTang);
+		static		Standard_Boolean TangentOnVertex(const TopoDS_Vertex &aVF, const TopoDS_Vertex &aVL, const TopoDS_Edge &anE, gp_Vec & aTang);
 		%feature("autodoc","EdgeBounds(const anE) -> [Standard_Real, Standard_Real]");
 
-		void EdgeBounds(const TopoDS_Edge &anE, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void EdgeBounds(const TopoDS_Edge &anE, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Real IntermediatePoint(const Standard_Real aFirst, const Standard_Real aLast);
+		static		Standard_Real IntermediatePoint(const Standard_Real aFirst, const Standard_Real aLast);
 		%feature("autodoc", "1");
-		Standard_Real IntermediatePoint(const TopoDS_Edge &anE);
+		static		Standard_Real IntermediatePoint(const TopoDS_Edge &anE);
 
 };
 %feature("shadow") BOPTools_Tools2D::~BOPTools_Tools2D %{
@@ -4046,93 +4046,93 @@ class BOPTools_Tools3D {
 		%feature("autodoc", "1");
 		BOPTools_Tools3D();
 		%feature("autodoc", "1");
-		Standard_Integer SubShapesAmount(const TopoDS_Shape &aS, const TopAbs_ShapeEnum aT);
+		static		Standard_Integer SubShapesAmount(const TopoDS_Shape &aS, const TopAbs_ShapeEnum aT);
 		%feature("autodoc", "1");
-		Standard_Boolean IsConvexWire(const TopoDS_Wire &aW);
+		static		Standard_Boolean IsConvexWire(const TopoDS_Wire &aW);
 		%feature("autodoc", "1");
-		void RemoveSims(const TopoDS_Face &aF, IntTools_Context & aContext);
+		static		void RemoveSims(const TopoDS_Face &aF, IntTools_Context & aContext);
 		%feature("autodoc", "1");
-		void RemoveSims(const TopoDS_Shape &aS, IntTools_Context & aContext);
+		static		void RemoveSims(const TopoDS_Shape &aS, IntTools_Context & aContext);
 		%feature("autodoc", "1");
-		TopAbs_Orientation EdgeOrientation(const TopoDS_Edge &aEx, const TopoDS_Face &aF1, const TopoDS_Face &aF2);
+		static		TopAbs_Orientation EdgeOrientation(const TopoDS_Edge &aEx, const TopoDS_Face &aF1, const TopoDS_Face &aF2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSplitToReverse1(const TopoDS_Edge &aE1, const TopoDS_Edge &aE2, IntTools_Context & aContext);
+		static		Standard_Boolean IsSplitToReverse1(const TopoDS_Edge &aE1, const TopoDS_Edge &aE2, IntTools_Context & aContext);
 		%feature("autodoc", "1");
-		void DoSplitSEAMOnFace(const TopoDS_Edge &aSp, const TopoDS_Face &aF);
+		static		void DoSplitSEAMOnFace(const TopoDS_Edge &aSp, const TopoDS_Face &aF);
 		%feature("autodoc", "1");
-		Standard_Boolean DoSplitSEAMOnFace(const TopoDS_Edge &theSplit, const TopoDS_Edge &theSeam, const TopoDS_Face &theFace, Standard_Boolean & IsReversed);
+		static		Standard_Boolean DoSplitSEAMOnFace(const TopoDS_Edge &theSplit, const TopoDS_Edge &theSeam, const TopoDS_Face &theFace, Standard_Boolean & IsReversed);
 		%feature("autodoc", "1");
-		Standard_Boolean IsTouchCase(const TopoDS_Edge &aEx, const TopoDS_Face &aF1, const TopoDS_Face &aF2);
+		static		Standard_Boolean IsTouchCase(const TopoDS_Edge &aEx, const TopoDS_Face &aF1, const TopoDS_Face &aF2);
 		%feature("autodoc", "1");
-		Standard_Boolean GetTangentToEdge(const TopoDS_Edge &aE, const Standard_Real aT, gp_Dir & aD);
+		static		Standard_Boolean GetTangentToEdge(const TopoDS_Edge &aE, const Standard_Real aT, gp_Dir & aD);
 		%feature("autodoc", "1");
-		Standard_Boolean GetTangentToEdge(const TopoDS_Edge &aE, gp_Dir & aD);
+		static		Standard_Boolean GetTangentToEdge(const TopoDS_Edge &aE, gp_Dir & aD);
 		%feature("autodoc", "1");
-		void GetNormalToFaceOnEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, gp_Dir & aD);
+		static		void GetNormalToFaceOnEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, gp_Dir & aD);
 		%feature("autodoc", "1");
-		void GetNormalToFaceOnEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, gp_Dir & aD);
+		static		void GetNormalToFaceOnEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, gp_Dir & aD);
 		%feature("autodoc", "1");
-		void GetBiNormal(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, gp_Dir & aD);
+		static		void GetBiNormal(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, gp_Dir & aD);
 		%feature("autodoc", "1");
-		void GetBiNormal(const TopoDS_Edge &aE, const TopoDS_Face &aF, gp_Dir & aD);
+		static		void GetBiNormal(const TopoDS_Edge &aE, const TopoDS_Face &aF, gp_Dir & aD);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSplitToReverse(const TopoDS_Edge &aE, const TopoDS_Edge &aSp);
+		static		Standard_Boolean IsSplitToReverse(const TopoDS_Edge &aE, const TopoDS_Edge &aSp);
 		%feature("autodoc", "1");
-		Standard_Boolean GetAdjacentFace(const TopoDS_Face &aF, const TopoDS_Edge &aE, const TopTools_IndexedDataMapOfShapeListOfShape &aEFMap, TopoDS_Face & anAdjF);
+		static		Standard_Boolean GetAdjacentFace(const TopoDS_Face &aF, const TopoDS_Edge &aE, const TopTools_IndexedDataMapOfShapeListOfShape &aEFMap, TopoDS_Face & anAdjF);
 		%feature("autodoc", "1");
-		Standard_Boolean IsKeepTwice(const TopoDS_Face &aF1, const TopoDS_Face &aF2, const TopoDS_Face &aF2Adj, const TopoDS_Edge &aSpEF2);
+		static		Standard_Boolean IsKeepTwice(const TopoDS_Face &aF1, const TopoDS_Face &aF2, const TopoDS_Face &aF2Adj, const TopoDS_Edge &aSpEF2);
 		%feature("autodoc", "1");
-		Standard_Integer SenseFlag(const gp_Dir &aNF1, const gp_Dir &aNF2);
+		static		Standard_Integer SenseFlag(const gp_Dir &aNF1, const gp_Dir &aNF2);
 		%feature("autodoc", "1");
-		Standard_Boolean GetNormalToSurface(const Handle_Geom_Surface &aS, const Standard_Real U, const Standard_Real V, gp_Dir & aD);
+		static		Standard_Boolean GetNormalToSurface(const Handle_Geom_Surface &aS, const Standard_Real U, const Standard_Real V, gp_Dir & aD);
 		%feature("autodoc", "1");
-		void GetPlanes(const TopoDS_Edge &aSp, const TopoDS_Edge &aE2, const TopTools_IndexedDataMapOfShapeListOfShape &aEFMap2, const TopoDS_Edge &aE1, const TopoDS_Face &aF1, TopAbs_State & aST1, IntTools_Context & aContext);
+		static		void GetPlanes(const TopoDS_Edge &aSp, const TopoDS_Edge &aE2, const TopTools_IndexedDataMapOfShapeListOfShape &aEFMap2, const TopoDS_Edge &aE1, const TopoDS_Face &aF1, TopAbs_State & aST1, IntTools_Context & aContext);
 		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation(const TopoDS_Edge &aE, const TopoDS_Face &aF);
+		static		TopAbs_Orientation Orientation(const TopoDS_Edge &aE, const TopoDS_Face &aF);
 		%feature("autodoc", "1");
-		Standard_Real SignDistance(const gp_Pnt &aP, const gp_Pln &aPL);
+		static		Standard_Real SignDistance(const gp_Pnt &aP, const gp_Pln &aPL);
 		%feature("autodoc", "1");
-		void GetApproxNormalToFaceOnEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, gp_Pnt & aPx, gp_Dir & aD);
+		static		void GetApproxNormalToFaceOnEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, gp_Pnt & aPx, gp_Dir & aD);
 		%feature("autodoc", "1");
-		void PointNearEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, const Standard_Real aDt2D, gp_Pnt2d & aP2D, gp_Pnt & aPx);
+		static		void PointNearEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, const Standard_Real aDt2D, gp_Pnt2d & aP2D, gp_Pnt & aPx);
 		%feature("autodoc", "1");
-		void PointNearEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, gp_Pnt2d & aP2D, gp_Pnt & aPx);
+		static		void PointNearEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, gp_Pnt2d & aP2D, gp_Pnt & aPx);
 		%feature("autodoc", "1");
-		void PointNearEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, gp_Pnt2d & aP2D, gp_Pnt & aPx);
+		static		void PointNearEdge(const TopoDS_Edge &aE, const TopoDS_Face &aF, gp_Pnt2d & aP2D, gp_Pnt & aPx);
 		%feature("autodoc", "1");
-		void PointToCompare(const gp_Pnt &aP1, const gp_Pnt &aP2, const TopoDS_Face &aF, gp_Pnt & aPx, IntTools_Context & aContext);
+		static		void PointToCompare(const gp_Pnt &aP1, const gp_Pnt &aP2, const TopoDS_Face &aF, gp_Pnt & aPx, IntTools_Context & aContext);
 		%feature("autodoc", "1");
-		void GetPlane(const TopoDS_Edge &aSp, const TopoDS_Edge &aE1, const TopoDS_Face &aF1, const TopoDS_Face &aF2, TopAbs_State & aST, IntTools_Context & aContext);
+		static		void GetPlane(const TopoDS_Edge &aSp, const TopoDS_Edge &aE1, const TopoDS_Face &aF1, const TopoDS_Face &aF2, TopAbs_State & aST, IntTools_Context & aContext);
 		%feature("autodoc", "1");
-		void GetPointState(const TopoDS_Edge &aSp, const TopoDS_Edge &aEF2, const TopoDS_Face &aF2Adj, const TopoDS_Face &aF1, TopAbs_State & aST);
+		static		void GetPointState(const TopoDS_Edge &aSp, const TopoDS_Edge &aEF2, const TopoDS_Face &aF2Adj, const TopoDS_Face &aF1, TopAbs_State & aST);
 		%feature("autodoc", "1");
-		void OrientEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF, TopoDS_Edge & aER);
+		static		void OrientEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF, TopoDS_Edge & aER);
 		%feature("autodoc", "1");
-		TopAbs_Orientation OrientTouchEdgeOnF1(const TopoDS_Edge &aSp, const TopoDS_Edge &aEx, const TopoDS_Face &aF1, const TopoDS_Face &aF2);
+		static		TopAbs_Orientation OrientTouchEdgeOnF1(const TopoDS_Edge &aSp, const TopoDS_Edge &aEx, const TopoDS_Face &aF1, const TopoDS_Face &aF2);
 		%feature("autodoc", "1");
-		void GetSeams(const TopoDS_Face &aF, TopoDS_Edge & aSimm1, TopoDS_Edge & aSimm2);
+		static		void GetSeams(const TopoDS_Face &aF, TopoDS_Edge & aSimm1, TopoDS_Edge & aSimm2);
 		%feature("autodoc", "1");
-		void GetSeam(const TopoDS_Face &aF, const TopoDS_Edge &aS1, TopoDS_Edge & aS2);
+		static		void GetSeam(const TopoDS_Face &aF, const TopoDS_Edge &aS1, TopoDS_Edge & aS2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsValidArea(const TopoDS_Face &aF, Standard_Boolean & aNegativeFlag);
+		static		Standard_Boolean IsValidArea(const TopoDS_Face &aF, Standard_Boolean & aNegativeFlag);
 		%feature("autodoc", "1");
-		Standard_Real MinStepIn2d();
+		static		Standard_Real MinStepIn2d();
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmptyShape(const TopoDS_Shape &aS);
+		static		Standard_Boolean IsEmptyShape(const TopoDS_Shape &aS);
 		%feature("autodoc", "1");
-		void InvertShape(const TopoDS_Shape &aS, TopoDS_Shape & aSInv);
+		static		void InvertShape(const TopoDS_Shape &aS, TopoDS_Shape & aSInv);
 		%feature("autodoc", "1");
-		TopAbs_State GetStatePartIN2D(const TopoDS_Edge &aSp, const TopoDS_Edge &aEF1, const TopoDS_Face &aF1, const TopoDS_Face &aF2, IntTools_Context & aContext);
+		static		TopAbs_State GetStatePartIN2D(const TopoDS_Edge &aSp, const TopoDS_Edge &aEF1, const TopoDS_Face &aF1, const TopoDS_Face &aF2, IntTools_Context & aContext);
 		%feature("autodoc", "1");
-		Standard_Boolean CheckSameDomainFaceInside(const TopoDS_Face &theFace1, const TopoDS_Face &theFace2, IntTools_Context & theContext);
+		static		Standard_Boolean CheckSameDomainFaceInside(const TopoDS_Face &theFace1, const TopoDS_Face &theFace2, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		Standard_Boolean ComputeFaceState(const TopoDS_Face &theFace, const TopoDS_Solid &theRef, IntTools_Context & theContext, TopAbs_State & theState);
+		static		Standard_Boolean ComputeFaceState(const TopoDS_Face &theFace, const TopoDS_Solid &theRef, IntTools_Context & theContext, TopAbs_State & theState);
 		%feature("autodoc", "1");
-		Standard_Boolean TreatedAsAnalytic(const Standard_Real aTx, const gp_Pnt &aPx, const TopoDS_Edge &aEx, const TopoDS_Face &aFx, const TopoDS_Edge &aE1, const TopoDS_Face &aF1, const Standard_Real aTolTangent, const Standard_Real aTolRadius, TopAbs_State & aState, IntTools_Context & aContext);
+		static		Standard_Boolean TreatedAsAnalytic(const Standard_Real aTx, const gp_Pnt &aPx, const TopoDS_Edge &aEx, const TopoDS_Face &aFx, const TopoDS_Edge &aE1, const TopoDS_Face &aF1, const Standard_Real aTolTangent, const Standard_Real aTolRadius, TopAbs_State & aState, IntTools_Context & aContext);
 		%feature("autodoc", "1");
-		Standard_Boolean TreatedAsAnalytic(const TopoDS_Face &aFx, const TopoDS_Edge &aSpE1, const TopoDS_Face &aF1, const Standard_Real aTolTangent, const Standard_Real aTolRadius, TopAbs_State & aState, IntTools_Context & aContext);
+		static		Standard_Boolean TreatedAsAnalytic(const TopoDS_Face &aFx, const TopoDS_Edge &aSpE1, const TopoDS_Face &aF1, const Standard_Real aTolTangent, const Standard_Real aTolRadius, TopAbs_State & aState, IntTools_Context & aContext);
 		%feature("autodoc", "1");
-		Standard_Boolean HasAnalyticSurfaceType(const TopoDS_Face &aF);
+		static		Standard_Boolean HasAnalyticSurfaceType(const TopoDS_Face &aF);
 
 };
 %feature("shadow") BOPTools_Tools3D::~BOPTools_Tools3D %{
@@ -4554,9 +4554,9 @@ class BOPTools_PaveBlockMapHasher {
 		%feature("autodoc", "1");
 		BOPTools_PaveBlockMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const BOPTools_PaveBlock &aPB, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const BOPTools_PaveBlock &aPB, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const BOPTools_PaveBlock &aPB1, const BOPTools_PaveBlock &aPB2);
+		static		Standard_Boolean IsEqual(const BOPTools_PaveBlock &aPB1, const BOPTools_PaveBlock &aPB2);
 
 };
 %feature("shadow") BOPTools_PaveBlockMapHasher::~BOPTools_PaveBlockMapHasher %{
@@ -5039,7 +5039,7 @@ class BOPTools_QuickSortPave {
 		%feature("autodoc", "1");
 		BOPTools_QuickSortPave();
 		%feature("autodoc", "1");
-		void Sort(BOPTools_Array1OfPave & TheArray, const BOPTools_ComparePave &Comp);
+		static		void Sort(BOPTools_Array1OfPave & TheArray, const BOPTools_ComparePave &Comp);
 
 };
 %feature("shadow") BOPTools_QuickSortPave::~BOPTools_QuickSortPave %{

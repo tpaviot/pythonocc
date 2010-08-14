@@ -51,7 +51,7 @@ class Handle_TopTools_ListNodeOfListOfShape : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_TopTools_ListNodeOfListOfShape & operator=(const TopTools_ListNodeOfListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_ListNodeOfListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_ListNodeOfListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_ListNodeOfListOfShape {
@@ -89,7 +89,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape & operator=(const TopTools_DataMapNodeOfDataMapOfIntegerShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape {
@@ -127,7 +127,7 @@ class Handle_TopTools_HSequenceOfShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopTools_HSequenceOfShape & operator=(const TopTools_HSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_HSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_HSequenceOfShape {
@@ -165,7 +165,7 @@ class Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape & operator=(const TopTools_IndexedMapNodeOfIndexedMapOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape {
@@ -203,7 +203,7 @@ class Handle_TopTools_HArray1OfListOfShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopTools_HArray1OfListOfShape & operator=(const TopTools_HArray1OfListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray1OfListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_HArray1OfListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_HArray1OfListOfShape {
@@ -241,7 +241,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeShape : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfShapeShape & operator=(const TopTools_DataMapNodeOfDataMapOfShapeShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_DataMapNodeOfDataMapOfShapeShape {
@@ -279,7 +279,7 @@ class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : pub
 		%feature("autodoc", "1");
 		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape & operator=(const TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
@@ -317,7 +317,7 @@ class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public Ha
 		%feature("autodoc", "1");
 		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape & operator=(const TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
@@ -355,7 +355,7 @@ class Handle_TopTools_HArray1OfShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopTools_HArray1OfShape & operator=(const TopTools_HArray1OfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray1OfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_HArray1OfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_HArray1OfShape {
@@ -393,7 +393,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public Handle_T
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape & operator=(const TopTools_DataMapNodeOfDataMapOfIntegerListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape {
@@ -431,7 +431,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_T
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger & operator=(const TopTools_DataMapNodeOfDataMapOfShapeListOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
@@ -469,7 +469,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public Handle
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger & operator=(const TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
@@ -507,7 +507,7 @@ class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_SequenceNodeOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
@@ -545,7 +545,7 @@ class Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public Handle_
 		%feature("autodoc", "1");
 		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape & operator=(const TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
@@ -583,7 +583,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger & operator=(const TopTools_DataMapNodeOfDataMapOfShapeInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger {
@@ -621,7 +621,7 @@ class Handle_TopTools_HArray2OfShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopTools_HArray2OfShape & operator=(const TopTools_HArray2OfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray2OfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_HArray2OfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_HArray2OfShape {
@@ -659,7 +659,7 @@ class Handle_TopTools_StdMapNodeOfMapOfShape : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_TopTools_StdMapNodeOfMapOfShape & operator=(const TopTools_StdMapNodeOfMapOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_StdMapNodeOfMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_StdMapNodeOfMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_StdMapNodeOfMapOfShape {
@@ -697,7 +697,7 @@ class Handle_TopTools_StdMapNodeOfMapOfOrientedShape : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_TopTools_StdMapNodeOfMapOfOrientedShape & operator=(const TopTools_StdMapNodeOfMapOfOrientedShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_StdMapNodeOfMapOfOrientedShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_StdMapNodeOfMapOfOrientedShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_StdMapNodeOfMapOfOrientedShape {
@@ -735,7 +735,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape & operator=(const TopTools_DataMapNodeOfDataMapOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape {
@@ -823,9 +823,9 @@ class TopTools {
 		%feature("autodoc", "1");
 		TopTools();
 		%feature("autodoc", "1");
-		void Dump(const TopoDS_Shape &Sh, Standard_OStream & S);
+		static		void Dump(const TopoDS_Shape &Sh, Standard_OStream & S);
 		%feature("autodoc", "1");
-		void Dummy(const Standard_Integer I);
+		static		void Dummy(const Standard_Integer I);
 
 };
 %feature("shadow") TopTools::~TopTools %{
@@ -1531,9 +1531,9 @@ class TopTools_ShapeMapHasher {
 		%feature("autodoc", "1");
 		TopTools_ShapeMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const TopoDS_Shape &S, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const TopoDS_Shape &S, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		static		Standard_Boolean IsEqual(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 
 };
 %feature("shadow") TopTools_ShapeMapHasher::~TopTools_ShapeMapHasher %{
@@ -2257,9 +2257,9 @@ class TopTools_OrientedShapeMapHasher {
 		%feature("autodoc", "1");
 		TopTools_OrientedShapeMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const TopoDS_Shape &S, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const TopoDS_Shape &S, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		static		Standard_Boolean IsEqual(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 
 };
 %feature("shadow") TopTools_OrientedShapeMapHasher::~TopTools_OrientedShapeMapHasher %{

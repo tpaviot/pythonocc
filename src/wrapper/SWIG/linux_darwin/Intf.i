@@ -58,7 +58,7 @@ class Handle_Intf_SequenceNodeOfSeqOfTangentZone : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfTangentZone & operator=(const Intf_SequenceNodeOfSeqOfTangentZone *anItem);
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfTangentZone const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Intf_SequenceNodeOfSeqOfTangentZone const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Intf_SequenceNodeOfSeqOfTangentZone {
@@ -96,7 +96,7 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionLine : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionLine & operator=(const Intf_SequenceNodeOfSeqOfSectionLine *anItem);
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfSectionLine const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Intf_SequenceNodeOfSeqOfSectionLine const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Intf_SequenceNodeOfSeqOfSectionLine {
@@ -134,7 +134,7 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionPoint : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionPoint & operator=(const Intf_SequenceNodeOfSeqOfSectionPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfSectionPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Intf_SequenceNodeOfSeqOfSectionPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Intf_SequenceNodeOfSeqOfSectionPoint {
@@ -723,9 +723,9 @@ class Intf {
 		Intf();
 		%feature("autodoc","PlaneEquation(const P1, const P2, const P3) -> Standard_Real");
 
-		void PlaneEquation(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
+		static		void PlaneEquation(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean Contain(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &ThePnt);
+		static		Standard_Boolean Contain(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &ThePnt);
 
 };
 %feature("shadow") Intf::~Intf %{

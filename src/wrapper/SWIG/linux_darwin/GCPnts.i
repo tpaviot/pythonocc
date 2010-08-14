@@ -305,21 +305,21 @@ def __del__(self):
 class GCPnts_AbscissaPoint {
 	public:
 		%feature("autodoc", "1");
-		Standard_Real Length(Adaptor3d_Curve & C);
+		static		Standard_Real Length(Adaptor3d_Curve & C);
 		%feature("autodoc", "1");
-		Standard_Real Length(Adaptor2d_Curve2d & C);
+		static		Standard_Real Length(Adaptor2d_Curve2d & C);
 		%feature("autodoc", "1");
-		Standard_Real Length(Adaptor3d_Curve & C, const Standard_Real Tol);
+		static		Standard_Real Length(Adaptor3d_Curve & C, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Real Length(Adaptor2d_Curve2d & C, const Standard_Real Tol);
+		static		Standard_Real Length(Adaptor2d_Curve2d & C, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Real Length(Adaptor3d_Curve & C, const Standard_Real U1, const Standard_Real U2);
+		static		Standard_Real Length(Adaptor3d_Curve & C, const Standard_Real U1, const Standard_Real U2);
 		%feature("autodoc", "1");
-		Standard_Real Length(Adaptor2d_Curve2d & C, const Standard_Real U1, const Standard_Real U2);
+		static		Standard_Real Length(Adaptor2d_Curve2d & C, const Standard_Real U1, const Standard_Real U2);
 		%feature("autodoc", "1");
-		Standard_Real Length(Adaptor3d_Curve & C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol);
+		static		Standard_Real Length(Adaptor3d_Curve & C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Real Length(Adaptor2d_Curve2d & C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol);
+		static		Standard_Real Length(Adaptor2d_Curve2d & C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		GCPnts_AbscissaPoint();
 		%feature("autodoc", "1");

@@ -171,7 +171,7 @@ class Handle_OSD_Exception : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception & operator=(const OSD_Exception *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception {
@@ -209,7 +209,7 @@ class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO & operator=(const OSD_Exception_INT_DIVIDE_BY_ZERO *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_INT_DIVIDE_BY_ZERO {
@@ -247,7 +247,7 @@ class Handle_OSD_Signal : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_OSD_Signal & operator=(const OSD_Signal *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Signal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Signal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Signal {
@@ -285,7 +285,7 @@ class Handle_OSD_SIGBUS : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGBUS & operator=(const OSD_SIGBUS *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGBUS const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGBUS const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGBUS {
@@ -323,7 +323,7 @@ class Handle_OSD_SIGILL : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGILL & operator=(const OSD_SIGILL *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGILL const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGILL const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGILL {
@@ -361,7 +361,7 @@ class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_INVALID_DISPOSITION & operator=(const OSD_Exception_INVALID_DISPOSITION *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_INVALID_DISPOSITION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_INVALID_DISPOSITION const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_INVALID_DISPOSITION {
@@ -399,7 +399,7 @@ class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_INT_OVERFLOW & operator=(const OSD_Exception_INT_OVERFLOW *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_INT_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_INT_OVERFLOW {
@@ -437,7 +437,7 @@ class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_STACK_OVERFLOW & operator=(const OSD_Exception_STACK_OVERFLOW *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_STACK_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_STACK_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_STACK_OVERFLOW {
@@ -475,7 +475,7 @@ class Handle_OSD_Exception_FLT_OVERFLOW : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_OVERFLOW & operator=(const OSD_Exception_FLT_OVERFLOW *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_OVERFLOW {
@@ -513,7 +513,7 @@ class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_IN_PAGE_ERROR & operator=(const OSD_Exception_IN_PAGE_ERROR *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_IN_PAGE_ERROR const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_IN_PAGE_ERROR const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_IN_PAGE_ERROR {
@@ -551,7 +551,7 @@ class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGSEGV & operator=(const OSD_SIGSEGV *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGSEGV const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGSEGV const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGSEGV {
@@ -589,7 +589,7 @@ class Handle_OSD_Exception_STATUS_NO_MEMORY : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_STATUS_NO_MEMORY & operator=(const OSD_Exception_STATUS_NO_MEMORY *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_STATUS_NO_MEMORY const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_STATUS_NO_MEMORY const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_STATUS_NO_MEMORY {
@@ -627,7 +627,7 @@ class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO & operator=(const OSD_Exception_FLT_DIVIDE_BY_ZERO *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO {
@@ -665,7 +665,7 @@ class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_PRIV_INSTRUCTION & operator=(const OSD_Exception_PRIV_INSTRUCTION *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_PRIV_INSTRUCTION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_PRIV_INSTRUCTION const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_PRIV_INSTRUCTION {
@@ -703,7 +703,7 @@ class Handle_OSD_SIGKILL : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGKILL & operator=(const OSD_SIGKILL *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGKILL const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGKILL const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGKILL {
@@ -741,7 +741,7 @@ class Handle_OSD_Exception_FLT_INVALID_OPERATION : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_INVALID_OPERATION & operator=(const OSD_Exception_FLT_INVALID_OPERATION *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_INVALID_OPERATION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_INVALID_OPERATION const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_INVALID_OPERATION {
@@ -779,7 +779,7 @@ class Handle_OSD_OSDError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_OSD_OSDError & operator=(const OSD_OSDError *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_OSDError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_OSDError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_OSDError {
@@ -817,7 +817,7 @@ class Handle_OSD_Exception_ACCESS_VIOLATION : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_ACCESS_VIOLATION & operator=(const OSD_Exception_ACCESS_VIOLATION *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_ACCESS_VIOLATION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_ACCESS_VIOLATION const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_ACCESS_VIOLATION {
@@ -855,7 +855,7 @@ class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGQUIT & operator=(const OSD_SIGQUIT *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGQUIT const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGQUIT {
@@ -893,7 +893,7 @@ class Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION : public Handle_OSD_Exceptio
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION & operator=(const OSD_Exception_NONCONTINUABLE_EXCEPTION *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION {
@@ -931,7 +931,7 @@ class Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED & operator=(const OSD_Exception_ARRAY_BOUNDS_EXCEEDED *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
@@ -969,7 +969,7 @@ class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGHUP & operator=(const OSD_SIGHUP *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGHUP const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGHUP const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGHUP {
@@ -1007,7 +1007,7 @@ class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_STACK_CHECK & operator=(const OSD_Exception_FLT_STACK_CHECK *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_STACK_CHECK const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_STACK_CHECK {
@@ -1045,7 +1045,7 @@ class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGSYS & operator=(const OSD_SIGSYS *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGSYS const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGSYS const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGSYS {
@@ -1083,7 +1083,7 @@ class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_ILLEGAL_INSTRUCTION & operator=(const OSD_Exception_ILLEGAL_INSTRUCTION *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_ILLEGAL_INSTRUCTION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_ILLEGAL_INSTRUCTION const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_ILLEGAL_INSTRUCTION {
@@ -1121,7 +1121,7 @@ class Handle_OSD_SIGINT : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGINT & operator=(const OSD_SIGINT *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGINT const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGINT const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGINT {
@@ -1159,7 +1159,7 @@ class Handle_OSD_Exception_FLT_UNDERFLOW : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_UNDERFLOW & operator=(const OSD_Exception_FLT_UNDERFLOW *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_UNDERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_UNDERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_UNDERFLOW {
@@ -1197,7 +1197,7 @@ class Handle_OSD_Exception_CTRL_BREAK : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_CTRL_BREAK & operator=(const OSD_Exception_CTRL_BREAK *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_CTRL_BREAK const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_CTRL_BREAK const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_CTRL_BREAK {
@@ -1235,7 +1235,7 @@ class Handle_OSD_Exception_FLT_INEXACT_RESULT : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_INEXACT_RESULT & operator=(const OSD_Exception_FLT_INEXACT_RESULT *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_INEXACT_RESULT const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_INEXACT_RESULT const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_INEXACT_RESULT {
@@ -1273,7 +1273,7 @@ class Handle_OSD_Exception_FLT_DENORMAL_OPERAND : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_DENORMAL_OPERAND & operator=(const OSD_Exception_FLT_DENORMAL_OPERAND *anItem);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_DENORMAL_OPERAND const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_DENORMAL_OPERAND const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_DENORMAL_OPERAND {
@@ -1352,11 +1352,11 @@ class OSD_Exception : public Standard_Failure {
 		%feature("autodoc", "1");
 		OSD_Exception(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1395,7 +1395,7 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_PRIV_INSTRUCTION(const char * AString);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_PRIV_INSTRUCTION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_PRIV_INSTRUCTION NewInstance(const char * aMessage);
 
 };
 %extend OSD_Exception_PRIV_INSTRUCTION {
@@ -1432,11 +1432,11 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_FLT_UNDERFLOW(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_UNDERFLOW NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_UNDERFLOW NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1526,11 +1526,11 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_CTRL_BREAK(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_CTRL_BREAK NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_CTRL_BREAK NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1569,11 +1569,11 @@ class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_ILLEGAL_INSTRUCTION(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_ILLEGAL_INSTRUCTION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_ILLEGAL_INSTRUCTION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1612,11 +1612,11 @@ class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_IN_PAGE_ERROR(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_IN_PAGE_ERROR NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_IN_PAGE_ERROR NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1655,11 +1655,11 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_ACCESS_VIOLATION(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_ACCESS_VIOLATION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_ACCESS_VIOLATION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1698,11 +1698,11 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_FLT_DIVIDE_BY_ZERO(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1797,11 +1797,11 @@ class OSD_OSDError : public Standard_Failure {
 		%feature("autodoc", "1");
 		OSD_OSDError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_OSDError NewInstance(const char * aMessage);
+		static		Handle_OSD_OSDError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1959,11 +1959,11 @@ class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_FLT_INVALID_OPERATION(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_INVALID_OPERATION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_INVALID_OPERATION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2097,9 +2097,9 @@ class OSD_Path {
 		%feature("autodoc", "1");
 		void SetExtension(const TCollection_AsciiString &aName);
 		%feature("autodoc", "1");
-		TCollection_AsciiString RelativePath(const TCollection_AsciiString &DirPath, const TCollection_AsciiString &AbsFilePath);
+		static		TCollection_AsciiString RelativePath(const TCollection_AsciiString &DirPath, const TCollection_AsciiString &AbsFilePath);
 		%feature("autodoc", "1");
-		TCollection_AsciiString AbsolutePath(const TCollection_AsciiString &DirPath, const TCollection_AsciiString &RelFilePath);
+		static		TCollection_AsciiString AbsolutePath(const TCollection_AsciiString &DirPath, const TCollection_AsciiString &RelFilePath);
 
 };
 %feature("shadow") OSD_Path::~OSD_Path %{
@@ -2126,11 +2126,11 @@ class OSD_Signal : public Standard_Failure {
 		%feature("autodoc", "1");
 		OSD_Signal(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Signal NewInstance(const char * aMessage);
+		static		Handle_OSD_Signal NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2199,7 +2199,7 @@ class OSD_Directory : public OSD_FileNode {
 		%feature("autodoc", "1");
 		void Build(const OSD_Protection &Protect);
 		%feature("autodoc", "1");
-		OSD_Directory BuildTemporary();
+		static		OSD_Directory BuildTemporary();
 
 };
 %feature("shadow") OSD_Directory::~OSD_Directory %{
@@ -2273,11 +2273,11 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_INT_OVERFLOW(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_INT_OVERFLOW NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2316,11 +2316,11 @@ class OSD_SIGHUP : public OSD_Signal {
 		%feature("autodoc", "1");
 		OSD_SIGHUP(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGHUP NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGHUP NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2403,11 +2403,11 @@ class OSD_SIGSYS : public OSD_Signal {
 		%feature("autodoc", "1");
 		OSD_SIGSYS(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGSYS NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGSYS NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2446,11 +2446,11 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_FLT_INEXACT_RESULT(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_INEXACT_RESULT NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_INEXACT_RESULT NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2487,30 +2487,30 @@ class OSD {
 		%feature("autodoc", "1");
 		OSD();
 		%feature("autodoc", "1");
-		void SetSignal(const Standard_Boolean aFloatingSignal=1);
+		static		void SetSignal(const Standard_Boolean aFloatingSignal=1);
 		%feature("autodoc", "1");
-		Standard_Integer AvailableMemory();
+		static		Standard_Integer AvailableMemory();
 		%feature("autodoc", "1");
-		Standard_Boolean SetLocale(const char * aString1, const char * aString2);
+		static		Standard_Boolean SetLocale(const char * aString1, const char * aString2);
 		%feature("autodoc", "1");
-		void SecSleep(const Standard_Integer aDelay);
+		static		void SecSleep(const Standard_Integer aDelay);
 		%feature("autodoc", "1");
-		void MilliSecSleep(const Standard_Integer aDelay);
+		static		void MilliSecSleep(const Standard_Integer aDelay);
 		%feature("autodoc", "1");
-		Standard_Boolean RealToCString(const Standard_Real aReal, Standard_PCharacter & aString);
+		static		Standard_Boolean RealToCString(const Standard_Real aReal, Standard_PCharacter & aString);
 		%feature("autodoc","CStringToReal(Standard_CString aString) -> Standard_Real");
 
-		Standard_Boolean CStringToReal(const char * aString, Standard_Real &OutValue);
+		static		Standard_Boolean CStringToReal(const char * aString, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDivisible(const Standard_Real aDividend, const Standard_Real aDivisor);
+		static		Standard_Boolean IsDivisible(const Standard_Real aDividend, const Standard_Real aDivisor);
 		%feature("autodoc", "1");
-		Standard_Integer GetExponent(const Standard_Real aReal);
+		static		Standard_Integer GetExponent(const Standard_Real aReal);
 		%feature("autodoc", "1");
-		Standard_Real GetMantissa(const Standard_Real aReal);
+		static		Standard_Real GetMantissa(const Standard_Real aReal);
 		%feature("autodoc", "1");
-		void UseSETranslator(const Standard_Boolean useSE);
+		static		void UseSETranslator(const Standard_Boolean useSE);
 		%feature("autodoc", "1");
-		Standard_Boolean UseSETranslator();
+		static		Standard_Boolean UseSETranslator();
 
 };
 %feature("shadow") OSD::~OSD %{
@@ -2537,11 +2537,11 @@ class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_INVALID_DISPOSITION(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_INVALID_DISPOSITION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_INVALID_DISPOSITION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2580,11 +2580,11 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_FLT_STACK_CHECK(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_STACK_CHECK NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2623,11 +2623,11 @@ class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_STACK_OVERFLOW(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_STACK_OVERFLOW NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_STACK_OVERFLOW NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2701,11 +2701,11 @@ class OSD_SIGQUIT : public OSD_Signal {
 		%feature("autodoc", "1");
 		OSD_SIGQUIT(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGQUIT NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2744,11 +2744,11 @@ class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_STATUS_NO_MEMORY(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_STATUS_NO_MEMORY NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_STATUS_NO_MEMORY NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2830,11 +2830,11 @@ class OSD_SIGILL : public OSD_Signal {
 		%feature("autodoc", "1");
 		OSD_SIGILL(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGILL NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGILL NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2893,7 +2893,7 @@ class OSD_Thread {
 		%feature("autodoc", "1");
 		Standard_ThreadId GetId() const;
 		%feature("autodoc", "1");
-		Standard_ThreadId Current();
+		static		Standard_ThreadId Current();
 
 };
 %feature("shadow") OSD_Thread::~OSD_Thread %{
@@ -2963,11 +2963,11 @@ class OSD_SIGKILL : public OSD_Signal {
 		%feature("autodoc", "1");
 		OSD_SIGKILL(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGKILL NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGKILL NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3006,11 +3006,11 @@ class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_FLT_DENORMAL_OPERAND(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_DENORMAL_OPERAND NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_DENORMAL_OPERAND NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3049,11 +3049,11 @@ class OSD_SIGBUS : public OSD_Signal {
 		%feature("autodoc", "1");
 		OSD_SIGBUS(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGBUS NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGBUS NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3092,11 +3092,11 @@ class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_FLT_OVERFLOW(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_OVERFLOW NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_OVERFLOW NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3135,11 +3135,11 @@ class OSD_Exception_NONCONTINUABLE_EXCEPTION : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_NONCONTINUABLE_EXCEPTION(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3223,11 +3223,11 @@ class OSD_SIGINT : public OSD_Signal {
 		%feature("autodoc", "1");
 		OSD_SIGINT(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGINT NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGINT NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3266,11 +3266,11 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_INT_DIVIDE_BY_ZERO(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3374,7 +3374,7 @@ class OSD_File : public OSD_FileNode {
 		%feature("autodoc", "1");
 		OSD_KindFile KindOfFile() const;
 		%feature("autodoc", "1");
-		OSD_File BuildTemporary();
+		static		OSD_File BuildTemporary();
 		%feature("autodoc", "1");
 		void SetLock(const OSD_LockType Lock);
 		%feature("autodoc", "1");
@@ -3425,11 +3425,11 @@ class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_ARRAY_BOUNDS_EXCEEDED(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3468,11 +3468,11 @@ class OSD_SIGSEGV : public OSD_Signal {
 		%feature("autodoc", "1");
 		OSD_SIGSEGV(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGSEGV NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGSEGV NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

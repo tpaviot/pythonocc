@@ -64,7 +64,7 @@ class Handle_IntSurf_LineOn2S : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IntSurf_LineOn2S & operator=(const IntSurf_LineOn2S *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_LineOn2S const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntSurf_LineOn2S const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntSurf_LineOn2S {
@@ -102,7 +102,7 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint & operator=(const IntSurf_SequenceNodeOfSequenceOfInteriorPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
@@ -140,7 +140,7 @@ class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_IntSurf_ListNodeOfListOfPntOn2S & operator=(const IntSurf_ListNodeOfListOfPntOn2S *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_ListNodeOfListOfPntOn2S const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntSurf_ListNodeOfListOfPntOn2S const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntSurf_ListNodeOfListOfPntOn2S {
@@ -178,7 +178,7 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint & operator=(const IntSurf_SequenceNodeOfSequenceOfPathPoint *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint {
@@ -216,7 +216,7 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfCouple : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfCouple & operator=(const IntSurf_SequenceNodeOfSequenceOfCouple *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfCouple const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntSurf_SequenceNodeOfSequenceOfCouple const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntSurf_SequenceNodeOfSequenceOfCouple {
@@ -254,7 +254,7 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S & operator=(const IntSurf_SequenceNodeOfSequenceOfPntOn2S *anItem);
 		%feature("autodoc", "1");
-		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S {
@@ -321,7 +321,7 @@ class IntSurf {
 		%feature("autodoc", "1");
 		IntSurf();
 		%feature("autodoc", "1");
-		void MakeTransition(const gp_Vec &TgFirst, const gp_Vec &TgSecond, const gp_Dir &Normal, IntSurf_Transition & TFirst, IntSurf_Transition & TSecond);
+		static		void MakeTransition(const gp_Vec &TgFirst, const gp_Vec &TgSecond, const gp_Dir &Normal, IntSurf_Transition & TFirst, IntSurf_Transition & TSecond);
 
 };
 %feature("shadow") IntSurf::~IntSurf %{
@@ -708,23 +708,23 @@ class IntSurf_PathPointTool {
 		%feature("autodoc", "1");
 		IntSurf_PathPointTool();
 		%feature("autodoc", "1");
-		gp_Pnt Value3d(const IntSurf_PathPoint &PStart);
+		static		gp_Pnt Value3d(const IntSurf_PathPoint &PStart);
 		%feature("autodoc","Value2d(const PStart) -> [Standard_Real, Standard_Real]");
 
-		void Value2d(const IntSurf_PathPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Value2d(const IntSurf_PathPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean IsPassingPnt(const IntSurf_PathPoint &PStart);
+		static		Standard_Boolean IsPassingPnt(const IntSurf_PathPoint &PStart);
 		%feature("autodoc", "1");
-		Standard_Boolean IsTangent(const IntSurf_PathPoint &PStart);
+		static		Standard_Boolean IsTangent(const IntSurf_PathPoint &PStart);
 		%feature("autodoc", "1");
-		gp_Vec Direction3d(const IntSurf_PathPoint &PStart);
+		static		gp_Vec Direction3d(const IntSurf_PathPoint &PStart);
 		%feature("autodoc", "1");
-		gp_Dir2d Direction2d(const IntSurf_PathPoint &PStart);
+		static		gp_Dir2d Direction2d(const IntSurf_PathPoint &PStart);
 		%feature("autodoc", "1");
-		Standard_Integer Multiplicity(const IntSurf_PathPoint &PStart);
+		static		Standard_Integer Multiplicity(const IntSurf_PathPoint &PStart);
 		%feature("autodoc","Parameters(const PStart, Standard_Integer Mult) -> [Standard_Real, Standard_Real]");
 
-		void Parameters(const IntSurf_PathPoint &PStart, const Standard_Integer Mult, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Parameters(const IntSurf_PathPoint &PStart, const Standard_Integer Mult, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 %feature("shadow") IntSurf_PathPointTool::~IntSurf_PathPointTool %{
@@ -965,14 +965,14 @@ class IntSurf_InteriorPointTool {
 		%feature("autodoc", "1");
 		IntSurf_InteriorPointTool();
 		%feature("autodoc", "1");
-		gp_Pnt Value3d(const IntSurf_InteriorPoint &PStart);
+		static		gp_Pnt Value3d(const IntSurf_InteriorPoint &PStart);
 		%feature("autodoc","Value2d(const PStart) -> [Standard_Real, Standard_Real]");
 
-		void Value2d(const IntSurf_InteriorPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Value2d(const IntSurf_InteriorPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		gp_Vec Direction3d(const IntSurf_InteriorPoint &PStart);
+		static		gp_Vec Direction3d(const IntSurf_InteriorPoint &PStart);
 		%feature("autodoc", "1");
-		gp_Dir2d Direction2d(const IntSurf_InteriorPoint &PStart);
+		static		gp_Dir2d Direction2d(const IntSurf_InteriorPoint &PStart);
 
 };
 %feature("shadow") IntSurf_InteriorPointTool::~IntSurf_InteriorPointTool %{
@@ -1122,14 +1122,14 @@ class IntSurf_QuadricTool {
 		%feature("autodoc", "1");
 		IntSurf_QuadricTool();
 		%feature("autodoc", "1");
-		Standard_Real Value(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
+		static		Standard_Real Value(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
 		%feature("autodoc", "1");
-		void Gradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, gp_Vec & V);
+		static		void Gradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, gp_Vec & V);
 		%feature("autodoc","ValueAndGradient(const Quad, Standard_Real X, Standard_Real Y, Standard_Real Z) -> Standard_Real");
 
-		void ValueAndGradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, Standard_Real &OutValue, gp_Vec & V);
+		static		void ValueAndGradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, Standard_Real &OutValue, gp_Vec & V);
 		%feature("autodoc", "1");
-		Standard_Real Tolerance(const IntSurf_Quadric &Quad);
+		static		Standard_Real Tolerance(const IntSurf_Quadric &Quad);
 
 };
 %feature("shadow") IntSurf_QuadricTool::~IntSurf_QuadricTool %{

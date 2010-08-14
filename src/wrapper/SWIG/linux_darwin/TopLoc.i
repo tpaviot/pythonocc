@@ -52,7 +52,7 @@ class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_TopLoc_SListNodeOfSListOfItemLocation & operator=(const TopLoc_SListNodeOfSListOfItemLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_SListNodeOfSListOfItemLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopLoc_SListNodeOfSListOfItemLocation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopLoc_SListNodeOfSListOfItemLocation {
@@ -90,7 +90,7 @@ class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopLoc_Datum3D & operator=(const TopLoc_Datum3D *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_Datum3D const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopLoc_Datum3D const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopLoc_Datum3D {
@@ -128,7 +128,7 @@ class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_TopLoc_StdMapNodeOfMapOfLocation & operator=(const TopLoc_StdMapNodeOfMapOfLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_StdMapNodeOfMapOfLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopLoc_StdMapNodeOfMapOfLocation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopLoc_StdMapNodeOfMapOfLocation {
@@ -166,7 +166,7 @@ class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation & operator=(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *anItem);
 		%feature("autodoc", "1");
-		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
@@ -577,9 +577,9 @@ class TopLoc_MapLocationHasher {
 		%feature("autodoc", "1");
 		TopLoc_MapLocationHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const TopLoc_Location &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const TopLoc_Location &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);
+		static		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);
 
 };
 %feature("shadow") TopLoc_MapLocationHasher::~TopLoc_MapLocationHasher %{

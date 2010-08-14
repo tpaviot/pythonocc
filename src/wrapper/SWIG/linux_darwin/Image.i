@@ -73,7 +73,7 @@ class Handle_Image_Image : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Image_Image & operator=(const Image_Image *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_Image const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_Image const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_Image {
@@ -111,7 +111,7 @@ class Handle_Image_DColorImage : public Handle_Image_Image {
 		%feature("autodoc", "1");
 		Handle_Image_DColorImage & operator=(const Image_DColorImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DColorImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_DColorImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_DColorImage {
@@ -149,7 +149,7 @@ class Handle_Image_DIndexedImage : public Handle_Image_Image {
 		%feature("autodoc", "1");
 		Handle_Image_DIndexedImage & operator=(const Image_DIndexedImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DIndexedImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_DIndexedImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_DIndexedImage {
@@ -187,7 +187,7 @@ class Handle_Image_PseudoColorImage : public Handle_Image_DIndexedImage {
 		%feature("autodoc", "1");
 		Handle_Image_PseudoColorImage & operator=(const Image_PseudoColorImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_PseudoColorImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_PseudoColorImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_PseudoColorImage {
@@ -225,7 +225,7 @@ class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfLookupTable & operator=(const Image_DataMapNodeOfLookupTable *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_DataMapNodeOfLookupTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_DataMapNodeOfLookupTable {
@@ -263,7 +263,7 @@ class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Image_DataMapNodeOfColorPixelDataMap *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfColorPixelDataMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_DataMapNodeOfColorPixelDataMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_DataMapNodeOfColorPixelDataMap {
@@ -301,7 +301,7 @@ class Handle_Image_ColorImage : public Handle_Image_DColorImage {
 		%feature("autodoc", "1");
 		Handle_Image_ColorImage & operator=(const Image_ColorImage *anItem);
 		%feature("autodoc", "1");
-		Handle_Image_ColorImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_ColorImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_ColorImage {
@@ -473,9 +473,9 @@ class Image_IndexPixelMapHasher {
 		%feature("autodoc", "1");
 		Image_IndexPixelMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Aspect_IndexPixel &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const Aspect_IndexPixel &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Aspect_IndexPixel &K1, const Aspect_IndexPixel &K2);
+		static		Standard_Boolean IsEqual(const Aspect_IndexPixel &K1, const Aspect_IndexPixel &K2);
 
 };
 %feature("shadow") Image_IndexPixelMapHasher::~Image_IndexPixelMapHasher %{
@@ -759,25 +759,25 @@ class Image {
 		%feature("autodoc", "1");
 		Image();
 		%feature("autodoc", "1");
-		void Zoom(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Standard_Real aCoefX, const Standard_Real aCoefY);
+		static		void Zoom(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Standard_Real aCoefX, const Standard_Real aCoefY);
 		%feature("autodoc", "1");
-		void Zoom(const Handle_Image_Image &aImage, const Standard_Real aCoefX, const Standard_Real aCoefY);
+		static		void Zoom(const Handle_Image_Image &aImage, const Standard_Real aCoefX, const Standard_Real aCoefY);
 		%feature("autodoc", "1");
-		void Rotate(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Quantity_PlaneAngle aAngle);
+		static		void Rotate(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Quantity_PlaneAngle aAngle);
 		%feature("autodoc", "1");
-		void Rotate(const Handle_Image_Image &aImage, const Quantity_PlaneAngle aAngle);
+		static		void Rotate(const Handle_Image_Image &aImage, const Quantity_PlaneAngle aAngle);
 		%feature("autodoc", "1");
-		void Translate(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Standard_Real DX, const Standard_Real DY);
+		static		void Translate(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Standard_Real DX, const Standard_Real DY);
 		%feature("autodoc", "1");
-		void Translate(const Handle_Image_Image &aImage, const Standard_Real DX, const Standard_Real DY);
+		static		void Translate(const Handle_Image_Image &aImage, const Standard_Real DX, const Standard_Real DY);
 		%feature("autodoc", "1");
-		void Affine(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const gp_GTrsf2d &Trsf);
+		static		void Affine(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const gp_GTrsf2d &Trsf);
 		%feature("autodoc", "1");
-		void Affine(const Handle_Image_Image &aImage, const gp_GTrsf2d &Trsf);
+		static		void Affine(const Handle_Image_Image &aImage, const gp_GTrsf2d &Trsf);
 		%feature("autodoc", "1");
-		void Affine(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const gp_Trsf &Trsf);
+		static		void Affine(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const gp_Trsf &Trsf);
 		%feature("autodoc", "1");
-		void Affine(const Handle_Image_Image &aImage, const gp_Trsf &Trsf);
+		static		void Affine(const Handle_Image_Image &aImage, const gp_Trsf &Trsf);
 
 };
 %feature("shadow") Image::~Image %{
@@ -930,9 +930,9 @@ class Image_ColorPixelMapHasher {
 		%feature("autodoc", "1");
 		Image_ColorPixelMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Aspect_ColorPixel &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const Aspect_ColorPixel &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Aspect_ColorPixel &K1, const Aspect_ColorPixel &K2);
+		static		Standard_Boolean IsEqual(const Aspect_ColorPixel &K1, const Aspect_ColorPixel &K2);
 
 };
 %feature("shadow") Image_ColorPixelMapHasher::~Image_ColorPixelMapHasher %{

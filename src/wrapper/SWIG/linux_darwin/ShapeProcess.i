@@ -51,7 +51,7 @@ class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_T
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_StackItemOfDictionaryOfOperator & operator=(const ShapeProcess_StackItemOfDictionaryOfOperator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_StackItemOfDictionaryOfOperator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeProcess_StackItemOfDictionaryOfOperator const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
@@ -89,7 +89,7 @@ class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Operator & operator=(const ShapeProcess_Operator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_Operator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeProcess_Operator const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeProcess_Operator {
@@ -127,7 +127,7 @@ class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_UOperator & operator=(const ShapeProcess_UOperator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_UOperator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeProcess_UOperator const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeProcess_UOperator {
@@ -165,7 +165,7 @@ class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_Context & operator=(const ShapeProcess_Context *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeProcess_Context const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeProcess_Context {
@@ -203,7 +203,7 @@ class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_DictionaryOfOperator & operator=(const ShapeProcess_DictionaryOfOperator *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_DictionaryOfOperator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeProcess_DictionaryOfOperator const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeProcess_DictionaryOfOperator {
@@ -241,7 +241,7 @@ class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_ShapeContext & operator=(const ShapeProcess_ShapeContext *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeProcess_ShapeContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeProcess_ShapeContext const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeProcess_ShapeContext {
@@ -339,9 +339,9 @@ class ShapeProcess_OperLibrary {
 		%feature("autodoc", "1");
 		ShapeProcess_OperLibrary();
 		%feature("autodoc", "1");
-		void Init();
+		static		void Init();
 		%feature("autodoc", "1");
-		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
+		static		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
 
 };
 %feature("shadow") ShapeProcess_OperLibrary::~ShapeProcess_OperLibrary %{
@@ -366,11 +366,11 @@ class ShapeProcess {
 		%feature("autodoc", "1");
 		ShapeProcess();
 		%feature("autodoc", "1");
-		Standard_Boolean RegisterOperator(const char * name, const Handle_ShapeProcess_Operator &op);
+		static		Standard_Boolean RegisterOperator(const char * name, const Handle_ShapeProcess_Operator &op);
 		%feature("autodoc", "1");
-		Standard_Boolean FindOperator(const char * name, Handle_ShapeProcess_Operator & op);
+		static		Standard_Boolean FindOperator(const char * name, Handle_ShapeProcess_Operator & op);
 		%feature("autodoc", "1");
-		Standard_Boolean Perform(const Handle_ShapeProcess_Context &context, const char * seq);
+		static		Standard_Boolean Perform(const Handle_ShapeProcess_Context &context, const char * seq);
 
 };
 %feature("shadow") ShapeProcess::~ShapeProcess %{

@@ -108,7 +108,7 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriver & operator=(const CDF_MetaDataDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDF_MetaDataDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDF_MetaDataDriver {
@@ -146,7 +146,7 @@ class Handle_CDF_StoreList : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_StoreList & operator=(const CDF_StoreList *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_StoreList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDF_StoreList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDF_StoreList {
@@ -184,7 +184,7 @@ class Handle_CDF_Directory : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_Directory & operator=(const CDF_Directory *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_Directory const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDF_Directory const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDF_Directory {
@@ -222,7 +222,7 @@ class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverError & operator=(const CDF_MetaDataDriverError *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDF_MetaDataDriverError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDF_MetaDataDriverError {
@@ -260,7 +260,7 @@ class Handle_CDF_Application : public Handle_CDM_Application {
 		%feature("autodoc", "1");
 		Handle_CDF_Application & operator=(const CDF_Application *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_Application const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDF_Application const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDF_Application {
@@ -298,7 +298,7 @@ class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverFactory & operator=(const CDF_MetaDataDriverFactory *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverFactory const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDF_MetaDataDriverFactory const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDF_MetaDataDriverFactory {
@@ -336,7 +336,7 @@ class Handle_CDF_Session : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_Session & operator=(const CDF_Session *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_Session const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDF_Session const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDF_Session {
@@ -368,11 +368,11 @@ class CDF_MetaDataDriverError : public Standard_Failure {
 		%feature("autodoc", "1");
 		CDF_MetaDataDriverError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError NewInstance(const char * aMessage);
+		static		Handle_CDF_MetaDataDriverError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -409,9 +409,9 @@ class CDF {
 		%feature("autodoc", "1");
 		CDF();
 		%feature("autodoc", "1");
-		void GetLicense(const Standard_Integer anApplicationIdentifier);
+		static		void GetLicense(const Standard_Integer anApplicationIdentifier);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAvailable(const Standard_Integer anApplicationIdentifier);
+		static		Standard_Boolean IsAvailable(const Standard_Integer anApplicationIdentifier);
 
 };
 %feature("shadow") CDF::~CDF %{
@@ -434,7 +434,7 @@ def __del__(self):
 class CDF_Application : public CDM_Application {
 	public:
 		%feature("autodoc", "1");
-		Handle_CDF_Application Load(const Standard_GUID &aGUID);
+		static		Handle_CDF_Application Load(const Standard_GUID &aGUID);
 		%feature("autodoc", "1");
 		void Open(const Handle_CDM_Document &aDocument);
 		%feature("autodoc", "1");
@@ -728,9 +728,9 @@ class CDF_Session : public Standard_Transient {
 		%feature("autodoc", "1");
 		CDF_Session();
 		%feature("autodoc", "1");
-		Standard_Boolean Exists();
+		static		Standard_Boolean Exists();
 		%feature("autodoc", "1");
-		Handle_CDF_Session CurrentSession();
+		static		Handle_CDF_Session CurrentSession();
 		%feature("autodoc", "1");
 		Handle_CDF_Directory Directory() const;
 		%feature("autodoc", "1");

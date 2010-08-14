@@ -60,7 +60,7 @@ class Handle_AlienImage_AlienImage : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienImage & operator=(const AlienImage_AlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_AlienImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_AlienImage {
@@ -98,7 +98,7 @@ class Handle_AlienImage_AlienUserImage : public Handle_AlienImage_AlienImage {
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienUserImage & operator=(const AlienImage_AlienUserImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienUserImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_AlienUserImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_AlienUserImage {
@@ -136,7 +136,7 @@ class Handle_AlienImage_SGIRGBAlienImage : public Handle_AlienImage_AlienUserIma
 		%feature("autodoc", "1");
 		Handle_AlienImage_SGIRGBAlienImage & operator=(const AlienImage_SGIRGBAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_SGIRGBAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_SGIRGBAlienImage {
@@ -174,7 +174,7 @@ class Handle_AlienImage_EuclidAlienImage : public Handle_AlienImage_AlienUserIma
 		%feature("autodoc", "1");
 		Handle_AlienImage_EuclidAlienImage & operator=(const AlienImage_EuclidAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_EuclidAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_EuclidAlienImage {
@@ -212,7 +212,7 @@ class Handle_AlienImage_AlienImageData : public Handle_AlienImage_AlienImage {
 		%feature("autodoc", "1");
 		Handle_AlienImage_AlienImageData & operator=(const AlienImage_AlienImageData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImageData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_AlienImageData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_AlienImageData {
@@ -250,7 +250,7 @@ class Handle_AlienImage_AidaAlienImage : public Handle_AlienImage_AlienUserImage
 		%feature("autodoc", "1");
 		Handle_AlienImage_AidaAlienImage & operator=(const AlienImage_AidaAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_AidaAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_AidaAlienImage {
@@ -288,7 +288,7 @@ class Handle_AlienImage_SunRFAlienData : public Handle_AlienImage_AlienImageData
 		%feature("autodoc", "1");
 		Handle_AlienImage_SunRFAlienData & operator=(const AlienImage_SunRFAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_SunRFAlienData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_SunRFAlienData {
@@ -326,7 +326,7 @@ class Handle_AlienImage_EuclidAlienData : public Handle_AlienImage_AlienImageDat
 		%feature("autodoc", "1");
 		Handle_AlienImage_EuclidAlienData & operator=(const AlienImage_EuclidAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_EuclidAlienData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_EuclidAlienData {
@@ -364,7 +364,7 @@ class Handle_AlienImage_SGIRGBAlienData : public Handle_AlienImage_AlienImageDat
 		%feature("autodoc", "1");
 		Handle_AlienImage_SGIRGBAlienData & operator=(const AlienImage_SGIRGBAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_SGIRGBAlienData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_SGIRGBAlienData {
@@ -402,7 +402,7 @@ class Handle_AlienImage_XAlienImage : public Handle_AlienImage_AlienUserImage {
 		%feature("autodoc", "1");
 		Handle_AlienImage_XAlienImage & operator=(const AlienImage_XAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_XAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_XAlienImage {
@@ -440,7 +440,7 @@ class Handle_AlienImage_GIFAlienImage : public Handle_AlienImage_AlienUserImage 
 		%feature("autodoc", "1");
 		Handle_AlienImage_GIFAlienImage & operator=(const AlienImage_GIFAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_GIFAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_GIFAlienImage {
@@ -478,7 +478,7 @@ class Handle_AlienImage_X11XWDAlienData : public Handle_AlienImage_AlienImageDat
 		%feature("autodoc", "1");
 		Handle_AlienImage_X11XWDAlienData & operator=(const AlienImage_X11XWDAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_X11XWDAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_X11XWDAlienData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_X11XWDAlienData {
@@ -516,7 +516,7 @@ class Handle_AlienImage_BMPAlienImage : public Handle_AlienImage_AlienUserImage 
 		%feature("autodoc", "1");
 		Handle_AlienImage_BMPAlienImage & operator=(const AlienImage_BMPAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_BMPAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_BMPAlienImage {
@@ -554,7 +554,7 @@ class Handle_AlienImage_BMPAlienData : public Handle_AlienImage_AlienImageData {
 		%feature("autodoc", "1");
 		Handle_AlienImage_BMPAlienData & operator=(const AlienImage_BMPAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_BMPAlienData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_BMPAlienData {
@@ -592,7 +592,7 @@ class Handle_AlienImage_GIFAlienData : public Handle_AlienImage_AlienImageData {
 		%feature("autodoc", "1");
 		Handle_AlienImage_GIFAlienData & operator=(const AlienImage_GIFAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_GIFAlienData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_GIFAlienData {
@@ -630,7 +630,7 @@ class Handle_AlienImage_SunRFAlienImage : public Handle_AlienImage_AlienUserImag
 		%feature("autodoc", "1");
 		Handle_AlienImage_SunRFAlienImage & operator=(const AlienImage_SunRFAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_SunRFAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_SunRFAlienImage {
@@ -668,7 +668,7 @@ class Handle_AlienImage_AidaAlienData : public Handle_AlienImage_AlienImageData 
 		%feature("autodoc", "1");
 		Handle_AlienImage_AidaAlienData & operator=(const AlienImage_AidaAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AlienImage_AidaAlienData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AlienImage_AidaAlienData {
@@ -1131,14 +1131,14 @@ class AlienImage {
 		%feature("autodoc", "1");
 		AlienImage();
 		%feature("autodoc", "1");
-		Standard_Boolean CreateImage(const TCollection_AsciiString &theFileName, Handle_Image_Image & theImage);
+		static		Standard_Boolean CreateImage(const TCollection_AsciiString &theFileName, Handle_Image_Image & theImage);
 		%feature("autodoc", "1");
-		Standard_Boolean CreateImage(const char * theFileName, Handle_Image_Image & theImage);
+		static		Standard_Boolean CreateImage(const char * theFileName, Handle_Image_Image & theImage);
 		%feature("autodoc", "1");
-		Standard_Boolean CreateImage(OSD_File & theFile, Handle_Image_Image & theImage);
+		static		Standard_Boolean CreateImage(OSD_File & theFile, Handle_Image_Image & theImage);
 		%feature("autodoc","LoadImageFile(Standard_CString anImageFile) -> [Standard_Integer, Standard_Integer]");
 
-		Standard_Boolean LoadImageFile(const char * anImageFile, Handle_Image_Image & anImage, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		static		Standard_Boolean LoadImageFile(const char * anImageFile, Handle_Image_Image & anImage, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 };
 %feature("shadow") AlienImage::~AlienImage %{
@@ -1505,9 +1505,9 @@ class AlienImage_MemoryOperations {
 		%feature("autodoc", "1");
 		AlienImage_MemoryOperations();
 		%feature("autodoc", "1");
-		void SwapLong(const Standard_Address Data, const Standard_Integer Size);
+		static		void SwapLong(const Standard_Address Data, const Standard_Integer Size);
 		%feature("autodoc", "1");
-		void SwapShort(const Standard_Address Data, const Standard_Integer Size);
+		static		void SwapShort(const Standard_Address Data, const Standard_Integer Size);
 
 };
 %feature("shadow") AlienImage_MemoryOperations::~AlienImage_MemoryOperations %{

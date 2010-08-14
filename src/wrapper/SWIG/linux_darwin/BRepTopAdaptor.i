@@ -51,7 +51,7 @@ class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool & operator=(const BRepTopAdaptor_TopolTool *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTopAdaptor_TopolTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_TopolTool {
@@ -89,7 +89,7 @@ class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_HVertex & operator=(const BRepTopAdaptor_HVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_HVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTopAdaptor_HVertex const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_HVertex {
@@ -127,7 +127,7 @@ class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
@@ -165,7 +165,7 @@ class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr & operator=(const BRepTopAdaptor_SequenceNodeOfSeqOfPtr *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr {

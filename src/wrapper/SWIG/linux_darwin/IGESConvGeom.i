@@ -43,15 +43,15 @@ class IGESConvGeom {
 		%feature("autodoc", "1");
 		IGESConvGeom();
 		%feature("autodoc", "1");
-		Standard_Integer SplineCurveFromIGES(const Handle_IGESGeom_SplineCurve &igesent, const Standard_Real epscoef, const Standard_Real epsgeom, Handle_Geom_BSplineCurve & result);
+		static		Standard_Integer SplineCurveFromIGES(const Handle_IGESGeom_SplineCurve &igesent, const Standard_Real epscoef, const Standard_Real epsgeom, Handle_Geom_BSplineCurve & result);
 		%feature("autodoc", "1");
-		Standard_Integer IncreaseCurveContinuity(const Handle_Geom_BSplineCurve &curve, const Standard_Real epsgeom, const Standard_Integer continuity=2);
+		static		Standard_Integer IncreaseCurveContinuity(const Handle_Geom_BSplineCurve &curve, const Standard_Real epsgeom, const Standard_Integer continuity=2);
 		%feature("autodoc", "1");
-		Standard_Integer IncreaseCurveContinuity(const Handle_Geom2d_BSplineCurve &curve, const Standard_Real epsgeom, const Standard_Integer continuity=2);
+		static		Standard_Integer IncreaseCurveContinuity(const Handle_Geom2d_BSplineCurve &curve, const Standard_Real epsgeom, const Standard_Integer continuity=2);
 		%feature("autodoc", "1");
-		Standard_Integer SplineSurfaceFromIGES(const Handle_IGESGeom_SplineSurface &igesent, const Standard_Real epscoef, const Standard_Real epsgeom, Handle_Geom_BSplineSurface & result);
+		static		Standard_Integer SplineSurfaceFromIGES(const Handle_IGESGeom_SplineSurface &igesent, const Standard_Real epscoef, const Standard_Real epsgeom, Handle_Geom_BSplineSurface & result);
 		%feature("autodoc", "1");
-		Standard_Integer IncreaseSurfaceContinuity(const Handle_Geom_BSplineSurface &surface, const Standard_Real epsgeom, const Standard_Integer continuity=2);
+		static		Standard_Integer IncreaseSurfaceContinuity(const Handle_Geom_BSplineSurface &surface, const Standard_Real epsgeom, const Standard_Integer continuity=2);
 
 };
 %feature("shadow") IGESConvGeom::~IGESConvGeom %{

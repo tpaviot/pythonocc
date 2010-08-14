@@ -57,7 +57,7 @@ class Handle_BinLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 		%feature("autodoc", "1");
 		Handle_BinLDrivers_DocumentRetrievalDriver & operator=(const BinLDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinLDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinLDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinLDrivers_DocumentRetrievalDriver {
@@ -95,7 +95,7 @@ class Handle_BinLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 		%feature("autodoc", "1");
 		Handle_BinLDrivers_DocumentStorageDriver & operator=(const BinLDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinLDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinLDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinLDrivers_DocumentStorageDriver {
@@ -194,7 +194,7 @@ class BinLDrivers_DocumentSection {
 		%feature("autodoc", "1");
 		void Write(Standard_OStream & theOS, const Standard_Size theOffset);
 		%feature("autodoc", "1");
-		void ReadTOC(BinLDrivers_DocumentSection & theSection, std::istream & theIS);
+		static		void ReadTOC(BinLDrivers_DocumentSection & theSection, std::istream & theIS);
 
 };
 %feature("shadow") BinLDrivers_DocumentSection::~BinLDrivers_DocumentSection %{
@@ -219,11 +219,11 @@ class BinLDrivers {
 		%feature("autodoc", "1");
 		BinLDrivers();
 		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
+		static		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
 		%feature("autodoc", "1");
-		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
+		static		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
 		%feature("autodoc", "1");
-		TCollection_AsciiString StorageVersion();
+		static		TCollection_AsciiString StorageVersion();
 
 };
 %feature("shadow") BinLDrivers::~BinLDrivers %{

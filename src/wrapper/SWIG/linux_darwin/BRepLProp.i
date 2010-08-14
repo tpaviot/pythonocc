@@ -43,18 +43,18 @@ class BRepLProp_SurfaceTool {
 		%feature("autodoc", "1");
 		BRepLProp_SurfaceTool();
 		%feature("autodoc", "1");
-		void Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
+		static		void Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
 		%feature("autodoc", "1");
-		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
+		static		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
 		%feature("autodoc", "1");
-		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
+		static		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
 		%feature("autodoc", "1");
-		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
+		static		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
 		%feature("autodoc", "1");
-		Standard_Integer Continuity(const BRepAdaptor_Surface &S);
+		static		Standard_Integer Continuity(const BRepAdaptor_Surface &S);
 		%feature("autodoc","Bounds(const S) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void Bounds(const BRepAdaptor_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Bounds(const BRepAdaptor_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 %feature("shadow") BRepLProp_SurfaceTool::~BRepLProp_SurfaceTool %{
@@ -148,19 +148,19 @@ class BRepLProp_CurveTool {
 		%feature("autodoc", "1");
 		BRepLProp_CurveTool();
 		%feature("autodoc", "1");
-		void Value(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P);
+		static		void Value(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P);
 		%feature("autodoc", "1");
-		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
+		static		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
 		%feature("autodoc", "1");
-		void D2(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
+		static		void D2(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
 		%feature("autodoc", "1");
-		void D3(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		static		void D3(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
 		%feature("autodoc", "1");
-		Standard_Integer Continuity(const BRepAdaptor_Curve &C);
+		static		Standard_Integer Continuity(const BRepAdaptor_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
+		static		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
+		static		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
 
 };
 %feature("shadow") BRepLProp_CurveTool::~BRepLProp_CurveTool %{
@@ -234,9 +234,9 @@ class BRepLProp {
 		%feature("autodoc", "1");
 		BRepLProp();
 		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const BRepAdaptor_Curve &C1, const BRepAdaptor_Curve &C2, const Standard_Real u1, const Standard_Real u2, const Standard_Real tl, const Standard_Real ta);
+		static		GeomAbs_Shape Continuity(const BRepAdaptor_Curve &C1, const BRepAdaptor_Curve &C2, const Standard_Real u1, const Standard_Real u2, const Standard_Real tl, const Standard_Real ta);
 		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const BRepAdaptor_Curve &C1, const BRepAdaptor_Curve &C2, const Standard_Real u1, const Standard_Real u2);
+		static		GeomAbs_Shape Continuity(const BRepAdaptor_Curve &C1, const BRepAdaptor_Curve &C2, const Standard_Real u1, const Standard_Real u2);
 
 };
 %feature("shadow") BRepLProp::~BRepLProp %{

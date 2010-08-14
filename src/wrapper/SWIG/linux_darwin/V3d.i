@@ -170,7 +170,7 @@ class Handle_V3d_Light : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_V3d_Light & operator=(const V3d_Light *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_Light const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_Light const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_Light {
@@ -208,7 +208,7 @@ class Handle_V3d_PositionLight : public Handle_V3d_Light {
 		%feature("autodoc", "1");
 		Handle_V3d_PositionLight & operator=(const V3d_PositionLight *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_PositionLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_PositionLight const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_PositionLight {
@@ -246,7 +246,7 @@ class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
 		%feature("autodoc", "1");
 		Handle_V3d_PositionalLight & operator=(const V3d_PositionalLight *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_PositionalLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_PositionalLight const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_PositionalLight {
@@ -284,7 +284,7 @@ class Handle_V3d_UnMapped : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_V3d_UnMapped & operator=(const V3d_UnMapped *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_UnMapped const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_UnMapped const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_UnMapped {
@@ -322,7 +322,7 @@ class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 		%feature("autodoc", "1");
 		Handle_V3d_RectangularGrid & operator=(const V3d_RectangularGrid *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_RectangularGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_RectangularGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_RectangularGrid {
@@ -360,7 +360,7 @@ class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_V3d_LayerMgr & operator=(const V3d_LayerMgr *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_LayerMgr const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_LayerMgr const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_LayerMgr {
@@ -398,7 +398,7 @@ class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
 		%feature("autodoc", "1");
 		Handle_V3d_SpotLight & operator=(const V3d_SpotLight *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_SpotLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_SpotLight const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_SpotLight {
@@ -436,7 +436,7 @@ class Handle_V3d_View : public Handle_Viewer_View {
 		%feature("autodoc", "1");
 		Handle_V3d_View & operator=(const V3d_View *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_View const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_View const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_View {
@@ -474,7 +474,7 @@ class Handle_V3d_PerspectiveView : public Handle_V3d_View {
 		%feature("autodoc", "1");
 		Handle_V3d_PerspectiveView & operator=(const V3d_PerspectiveView *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_PerspectiveView const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_PerspectiveView const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_PerspectiveView {
@@ -512,7 +512,7 @@ class Handle_V3d_Plane : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_V3d_Plane & operator=(const V3d_Plane *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_Plane const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_Plane const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_Plane {
@@ -550,7 +550,7 @@ class Handle_V3d_Camera : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_V3d_Camera & operator=(const V3d_Camera *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_Camera const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_Camera const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_Camera {
@@ -588,7 +588,7 @@ class Handle_V3d_OrthographicView : public Handle_V3d_View {
 		%feature("autodoc", "1");
 		Handle_V3d_OrthographicView & operator=(const V3d_OrthographicView *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_OrthographicView const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_OrthographicView const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_OrthographicView {
@@ -626,7 +626,7 @@ class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 		%feature("autodoc", "1");
 		Handle_V3d_Viewer & operator=(const V3d_Viewer *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_Viewer {
@@ -664,7 +664,7 @@ class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
 		%feature("autodoc", "1");
 		Handle_V3d_ColorScale & operator=(const V3d_ColorScale *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_ColorScale const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_ColorScale const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_ColorScale {
@@ -702,7 +702,7 @@ class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
 		%feature("autodoc", "1");
 		Handle_V3d_DirectionalLight & operator=(const V3d_DirectionalLight *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_DirectionalLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_DirectionalLight const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_DirectionalLight {
@@ -740,7 +740,7 @@ class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 		%feature("autodoc", "1");
 		Handle_V3d_CircularGrid & operator=(const V3d_CircularGrid *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_CircularGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_CircularGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_CircularGrid {
@@ -778,7 +778,7 @@ class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 		%feature("autodoc", "1");
 		Handle_V3d_AmbientLight & operator=(const V3d_AmbientLight *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_AmbientLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_AmbientLight const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_AmbientLight {
@@ -1712,19 +1712,19 @@ class V3d {
 		%feature("autodoc", "1");
 		V3d();
 		%feature("autodoc", "1");
-		Graphic3d_Vector GetProjAxis(const V3d_TypeOfOrientation Orientation);
+		static		Graphic3d_Vector GetProjAxis(const V3d_TypeOfOrientation Orientation);
 		%feature("autodoc", "1");
-		void ArrowOfRadius(const Handle_Graphic3d_Group &garrow, const V3d_Coordinate X0, const V3d_Coordinate Y0, const V3d_Coordinate Z0, const V3d_Parameter DX, const V3d_Parameter DY, const V3d_Parameter DZ, const Quantity_PlaneAngle Alpha, const V3d_Parameter Lng);
+		static		void ArrowOfRadius(const Handle_Graphic3d_Group &garrow, const V3d_Coordinate X0, const V3d_Coordinate Y0, const V3d_Coordinate Z0, const V3d_Parameter DX, const V3d_Parameter DY, const V3d_Parameter DZ, const Quantity_PlaneAngle Alpha, const V3d_Parameter Lng);
 		%feature("autodoc", "1");
-		void CircleInPlane(const Handle_Graphic3d_Group &gcircle, const V3d_Coordinate X0, const V3d_Coordinate Y0, const V3d_Coordinate Z0, const V3d_Parameter VX, const V3d_Parameter VY, const V3d_Parameter VZ, const V3d_Parameter Radius);
+		static		void CircleInPlane(const Handle_Graphic3d_Group &gcircle, const V3d_Coordinate X0, const V3d_Coordinate Y0, const V3d_Coordinate Z0, const V3d_Parameter VX, const V3d_Parameter VY, const V3d_Parameter VZ, const V3d_Parameter Radius);
 		%feature("autodoc", "1");
-		void SwitchViewsinWindow(const Handle_V3d_View &aPreviousView, const Handle_V3d_View &aNextView);
+		static		void SwitchViewsinWindow(const Handle_V3d_View &aPreviousView, const Handle_V3d_View &aNextView);
 		%feature("autodoc", "1");
-		void DrawSphere(const Handle_V3d_Viewer &aViewer, const Quantity_Length aRadius=1000);
+		static		void DrawSphere(const Handle_V3d_Viewer &aViewer, const Quantity_Length aRadius=1000);
 		%feature("autodoc", "1");
-		void PickGrid(const Handle_V3d_Viewer &aViewer, const Quantity_Length aRadius=1000);
+		static		void PickGrid(const Handle_V3d_Viewer &aViewer, const Quantity_Length aRadius=1000);
 		%feature("autodoc", "1");
-		void SetPlane(const Handle_V3d_Viewer &aViewer, const Quantity_Length x1, const Quantity_Length y1, const Quantity_Length z1, const Quantity_Length x2, const Quantity_Length y2, const Quantity_Length z2);
+		static		void SetPlane(const Handle_V3d_Viewer &aViewer, const Quantity_Length x1, const Quantity_Length y1, const Quantity_Length z1, const Quantity_Length x2, const Quantity_Length y2, const Quantity_Length z2);
 
 };
 %feature("shadow") V3d::~V3d %{
@@ -2021,11 +2021,11 @@ class V3d_UnMapped : public Standard_DomainError {
 		%feature("autodoc", "1");
 		V3d_UnMapped(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_V3d_UnMapped NewInstance(const char * aMessage);
+		static		Handle_V3d_UnMapped NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

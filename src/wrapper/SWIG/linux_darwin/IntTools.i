@@ -52,7 +52,7 @@ class Handle_IntTools_TopolTool : public Handle_Adaptor3d_TopolTool {
 		%feature("autodoc", "1");
 		Handle_IntTools_TopolTool & operator=(const IntTools_TopolTool *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_TopolTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_TopolTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_TopolTool {
@@ -90,7 +90,7 @@ class Handle_IntTools_ListNodeOfListOfSurfaceRangeSample : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_IntTools_ListNodeOfListOfSurfaceRangeSample & operator=(const IntTools_ListNodeOfListOfSurfaceRangeSample *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_ListNodeOfListOfSurfaceRangeSample const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_ListNodeOfListOfSurfaceRangeSample const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_ListNodeOfListOfSurfaceRangeSample {
@@ -128,7 +128,7 @@ class Handle_IntTools_StdMapNodeOfMapOfCurveSample : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_IntTools_StdMapNodeOfMapOfCurveSample & operator=(const IntTools_StdMapNodeOfMapOfCurveSample *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_StdMapNodeOfMapOfCurveSample const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_StdMapNodeOfMapOfCurveSample const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_StdMapNodeOfMapOfCurveSample {
@@ -166,7 +166,7 @@ class Handle_IntTools_ListNodeOfListOfBox : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_IntTools_ListNodeOfListOfBox & operator=(const IntTools_ListNodeOfListOfBox *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_ListNodeOfListOfBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_ListNodeOfListOfBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_ListNodeOfListOfBox {
@@ -204,7 +204,7 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : pub
 		%feature("autodoc", "1");
 		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress & operator=(const IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress {
@@ -242,7 +242,7 @@ class Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox & operator=(const IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
@@ -280,7 +280,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfRanges : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntTools_SequenceNodeOfSequenceOfRanges & operator=(const IntTools_SequenceNodeOfSequenceOfRanges *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_SequenceNodeOfSequenceOfRanges const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_SequenceNodeOfSequenceOfRanges const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfRanges {
@@ -318,7 +318,7 @@ class Handle_IntTools_ListNodeOfListOfCurveRangeSample : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_IntTools_ListNodeOfListOfCurveRangeSample & operator=(const IntTools_ListNodeOfListOfCurveRangeSample *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_ListNodeOfListOfCurveRangeSample const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_ListNodeOfListOfCurveRangeSample const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_ListNodeOfListOfCurveRangeSample {
@@ -356,7 +356,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntTools_SequenceNodeOfSequenceOfCurves & operator=(const IntTools_SequenceNodeOfSequenceOfCurves *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_SequenceNodeOfSequenceOfCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_SequenceNodeOfSequenceOfCurves const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfCurves {
@@ -394,7 +394,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts & operator=(const IntTools_SequenceNodeOfSequenceOfCommonPrts *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts {
@@ -432,7 +432,7 @@ class Handle_IntTools_StdMapNodeOfMapOfSurfaceSample : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntTools_StdMapNodeOfMapOfSurfaceSample & operator=(const IntTools_StdMapNodeOfMapOfSurfaceSample *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_StdMapNodeOfMapOfSurfaceSample const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_StdMapNodeOfMapOfSurfaceSample const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_StdMapNodeOfMapOfSurfaceSample {
@@ -470,7 +470,7 @@ class Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox & operator=(const IntTools_DataMapNodeOfDataMapOfCurveSampleBox *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox {
@@ -508,7 +508,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfRoots : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_IntTools_SequenceNodeOfSequenceOfRoots & operator=(const IntTools_SequenceNodeOfSequenceOfRoots *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_SequenceNodeOfSequenceOfRoots const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_SequenceNodeOfSequenceOfRoots const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfRoots {
@@ -546,7 +546,7 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public 
 		%feature("autodoc", "1");
 		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress & operator=(const IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
@@ -584,7 +584,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces & operator=(const IntTools_SequenceNodeOfSequenceOfPntOn2Faces *anItem);
 		%feature("autodoc", "1");
-		Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces {
@@ -614,9 +614,9 @@ class IntTools_SurfaceRangeSampleMapHasher {
 		%feature("autodoc", "1");
 		IntTools_SurfaceRangeSampleMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const IntTools_SurfaceRangeSample &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const IntTools_SurfaceRangeSample &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const IntTools_SurfaceRangeSample &S1, const IntTools_SurfaceRangeSample &S2);
+		static		Standard_Boolean IsEqual(const IntTools_SurfaceRangeSample &S1, const IntTools_SurfaceRangeSample &S2);
 
 };
 %feature("shadow") IntTools_SurfaceRangeSampleMapHasher::~IntTools_SurfaceRangeSampleMapHasher %{
@@ -1069,9 +1069,9 @@ class IntTools_CurveRangeSampleMapHasher {
 		%feature("autodoc", "1");
 		IntTools_CurveRangeSampleMapHasher();
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const IntTools_CurveRangeSample &K, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const IntTools_CurveRangeSample &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const IntTools_CurveRangeSample &S1, const IntTools_CurveRangeSample &S2);
+		static		Standard_Boolean IsEqual(const IntTools_CurveRangeSample &S1, const IntTools_CurveRangeSample &S2);
 
 };
 %feature("shadow") IntTools_CurveRangeSampleMapHasher::~IntTools_CurveRangeSampleMapHasher %{
@@ -2760,7 +2760,7 @@ class IntTools_QuickSort {
 		%feature("autodoc", "1");
 		IntTools_QuickSort();
 		%feature("autodoc", "1");
-		void Sort(IntTools_Array1OfRoots & TheArray, const IntTools_Compare &Comp);
+		static		void Sort(IntTools_Array1OfRoots & TheArray, const IntTools_Compare &Comp);
 
 };
 %feature("shadow") IntTools_QuickSort::~IntTools_QuickSort %{
@@ -2785,7 +2785,7 @@ class IntTools_QuickSortRange {
 		%feature("autodoc", "1");
 		IntTools_QuickSortRange();
 		%feature("autodoc", "1");
-		void Sort(IntTools_Array1OfRange & TheArray, const IntTools_CompareRange &Comp);
+		static		void Sort(IntTools_Array1OfRange & TheArray, const IntTools_CompareRange &Comp);
 
 };
 %feature("shadow") IntTools_QuickSortRange::~IntTools_QuickSortRange %{
@@ -2948,37 +2948,37 @@ class IntTools_Tools {
 		%feature("autodoc", "1");
 		IntTools_Tools();
 		%feature("autodoc", "1");
-		Standard_Integer ComputeVV(const TopoDS_Vertex &V1, const TopoDS_Vertex &V2);
+		static		Standard_Integer ComputeVV(const TopoDS_Vertex &V1, const TopoDS_Vertex &V2);
 		%feature("autodoc", "1");
-		Standard_Boolean HasInternalEdge(const TopoDS_Wire &aW);
+		static		Standard_Boolean HasInternalEdge(const TopoDS_Wire &aW);
 		%feature("autodoc", "1");
-		void MakeFaceFromWireAndFace(const TopoDS_Wire &aW, const TopoDS_Face &aF, TopoDS_Face & aFNew);
+		static		void MakeFaceFromWireAndFace(const TopoDS_Wire &aW, const TopoDS_Face &aF, TopoDS_Face & aFNew);
 		%feature("autodoc", "1");
-		TopAbs_State ClassifyPointByFace(const TopoDS_Face &aF, const gp_Pnt2d &P);
+		static		TopAbs_State ClassifyPointByFace(const TopoDS_Face &aF, const gp_Pnt2d &P);
 		%feature("autodoc", "1");
-		Standard_Boolean IsVertex(const TopoDS_Edge &E, const Standard_Real t);
+		static		Standard_Boolean IsVertex(const TopoDS_Edge &E, const Standard_Real t);
 		%feature("autodoc", "1");
-		Standard_Boolean IsVertex(const TopoDS_Edge &E, const TopoDS_Vertex &V, const Standard_Real t);
+		static		Standard_Boolean IsVertex(const TopoDS_Edge &E, const TopoDS_Vertex &V, const Standard_Real t);
 		%feature("autodoc", "1");
-		Standard_Boolean IsVertex(const IntTools_CommonPrt &aCmnPrt);
+		static		Standard_Boolean IsVertex(const IntTools_CommonPrt &aCmnPrt);
 		%feature("autodoc", "1");
-		Standard_Boolean IsMiddlePointsEqual(const TopoDS_Edge &E1, const TopoDS_Edge &E2);
+		static		Standard_Boolean IsMiddlePointsEqual(const TopoDS_Edge &E1, const TopoDS_Edge &E2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsVertex(const gp_Pnt &aP, const Standard_Real aTolPV, const TopoDS_Vertex &aV);
+		static		Standard_Boolean IsVertex(const gp_Pnt &aP, const Standard_Real aTolPV, const TopoDS_Vertex &aV);
 		%feature("autodoc", "1");
-		Standard_Real IntermediatePoint(const Standard_Real aFirst, const Standard_Real aLast);
+		static		Standard_Real IntermediatePoint(const Standard_Real aFirst, const Standard_Real aLast);
 		%feature("autodoc", "1");
-		Standard_Integer SplitCurve(const IntTools_Curve &aC, IntTools_SequenceOfCurves & aS);
+		static		Standard_Integer SplitCurve(const IntTools_Curve &aC, IntTools_SequenceOfCurves & aS);
 		%feature("autodoc", "1");
-		void RejectLines(const IntTools_SequenceOfCurves &aSIn, IntTools_SequenceOfCurves & aSOut);
+		static		void RejectLines(const IntTools_SequenceOfCurves &aSIn, IntTools_SequenceOfCurves & aSOut);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDirsCoinside(const gp_Dir &D1, const gp_Dir &D2);
+		static		Standard_Boolean IsDirsCoinside(const gp_Dir &D1, const gp_Dir &D2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDirsCoinside(const gp_Dir &D1, const gp_Dir &D2, const Standard_Real aTol);
+		static		Standard_Boolean IsDirsCoinside(const gp_Dir &D1, const gp_Dir &D2, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const Handle_Geom_Curve &aC);
+		static		Standard_Boolean IsClosed(const Handle_Geom_Curve &aC);
 		%feature("autodoc", "1");
-		Standard_Real CurveTolerance(const Handle_Geom_Curve &aC, const Standard_Real aTolBase);
+		static		Standard_Real CurveTolerance(const Handle_Geom_Curve &aC, const Standard_Real aTolBase);
 
 };
 %feature("shadow") IntTools_Tools::~IntTools_Tools %{
@@ -3036,7 +3036,7 @@ class IntTools_EdgeFace {
 		const IntTools_Range & Range() const;
 		%feature("autodoc","IsEqDistance(const aP, const aS, Standard_Real aT) -> Standard_Real");
 
-		Standard_Boolean IsEqDistance(const gp_Pnt &aP, const BRepAdaptor_Surface &aS, const Standard_Real aT, Standard_Real &OutValue);
+		static		Standard_Boolean IsEqDistance(const gp_Pnt &aP, const BRepAdaptor_Surface &aS, const Standard_Real aT, Standard_Real &OutValue);
 
 };
 %feature("shadow") IntTools_EdgeFace::~IntTools_EdgeFace %{
@@ -3680,21 +3680,21 @@ class IntTools {
 		%feature("autodoc", "1");
 		IntTools();
 		%feature("autodoc", "1");
-		Standard_Real Length(const TopoDS_Edge &E);
+		static		Standard_Real Length(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
-		void RemoveIdenticalRoots(IntTools_SequenceOfRoots & aSeq, const Standard_Real anEpsT);
+		static		void RemoveIdenticalRoots(IntTools_SequenceOfRoots & aSeq, const Standard_Real anEpsT);
 		%feature("autodoc", "1");
-		void SortRoots(IntTools_SequenceOfRoots & aSeq, const Standard_Real anEpsT);
+		static		void SortRoots(IntTools_SequenceOfRoots & aSeq, const Standard_Real anEpsT);
 		%feature("autodoc", "1");
-		void FindRootStates(IntTools_SequenceOfRoots & aSeq, const Standard_Real anEpsNull);
+		static		void FindRootStates(IntTools_SequenceOfRoots & aSeq, const Standard_Real anEpsNull);
 		%feature("autodoc","Parameter(const P, const Curve) -> Standard_Real");
 
-		Standard_Integer Parameter(const gp_Pnt &P, const Handle_Geom_Curve &Curve, Standard_Real &OutValue);
+		static		Standard_Integer Parameter(const gp_Pnt &P, const Handle_Geom_Curve &Curve, Standard_Real &OutValue);
 		%feature("autodoc","GetRadius(const C, Standard_Real t1, Standard_Real t3) -> Standard_Real");
 
-		Standard_Integer GetRadius(const BRepAdaptor_Curve &C, const Standard_Real t1, const Standard_Real t3, Standard_Real &OutValue);
+		static		Standard_Integer GetRadius(const BRepAdaptor_Curve &C, const Standard_Real t1, const Standard_Real t3, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Integer PrepareArgs(BRepAdaptor_Curve & C, const Standard_Real tMax, const Standard_Real tMin, const Standard_Integer Discret, const Standard_Real Deflect, IntTools_CArray1OfReal & anArgs);
+		static		Standard_Integer PrepareArgs(BRepAdaptor_Curve & C, const Standard_Real tMax, const Standard_Real tMin, const Standard_Integer Discret, const Standard_Real Deflect, IntTools_CArray1OfReal & anArgs);
 
 };
 %feature("shadow") IntTools::~IntTools %{

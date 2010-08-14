@@ -51,7 +51,7 @@ class Handle_StlMesh_MeshDomain : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshDomain & operator=(const StlMesh_MeshDomain *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_MeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StlMesh_MeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StlMesh_MeshDomain {
@@ -89,7 +89,7 @@ class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StlMesh_Mesh & operator=(const StlMesh_Mesh *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StlMesh_Mesh const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StlMesh_Mesh {
@@ -127,7 +127,7 @@ class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshTriangle & operator=(const StlMesh_MeshTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_MeshTriangle const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StlMesh_MeshTriangle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StlMesh_MeshTriangle {
@@ -165,7 +165,7 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
@@ -203,7 +203,7 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
@@ -241,7 +241,7 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMesh & operator=(const StlMesh_SequenceNodeOfSequenceOfMesh *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMesh const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StlMesh_SequenceNodeOfSequenceOfMesh const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StlMesh_SequenceNodeOfSequenceOfMesh {
@@ -500,7 +500,7 @@ class StlMesh {
 		%feature("autodoc", "1");
 		StlMesh();
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh Merge(const Handle_StlMesh_Mesh &mesh1, const Handle_StlMesh_Mesh &mesh2);
+		static		Handle_StlMesh_Mesh Merge(const Handle_StlMesh_Mesh &mesh1, const Handle_StlMesh_Mesh &mesh2);
 
 };
 %feature("shadow") StlMesh::~StlMesh %{
