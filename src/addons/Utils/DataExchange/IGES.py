@@ -35,7 +35,7 @@ class IGESExporter(object):
     def AddShape(self, aShape):
         # First check the shape
         if aShape.IsNull():
-            raise "IGESExporter Error: the shape is NULL"
+            raise Assertion("IGESExporter Error: the shape is NULL")
         else: 
             self._shapes.append(aShape)
    

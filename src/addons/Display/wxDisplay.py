@@ -120,7 +120,7 @@ class wxNISViewer3d(wxBaseViewer):
         try:
             os.environ["CSF_GraphicShr"]
         except KeyError:
-            raise "Please set the CSF_GraphicShr environment variable."
+            raise AssertionError("Please set the CSF_GraphicShr environment variable.")
         self._display = OCCViewer.NISViewer3d(self.GetHandle())
         self._display.Create()
         #self._display.DisplayTriedron()

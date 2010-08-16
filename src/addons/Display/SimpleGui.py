@@ -47,7 +47,7 @@ elif HAVE_QT:
 elif HAVE_XLIB:
     DEFAULT_BACKEND = 'x'
 else:
-    raise NameError('No backend.')
+    raise AssertionError('No backend.')
 # By default, used backend is the default_backend
 USED_BACKEND = DEFAULT_BACKEND
 
@@ -58,13 +58,13 @@ def set_backend(str_backend):
     # make str_backend case unsensitive
     str_backend = str_backend.lower()
     if str_backend not in ['wx','qt','x']:
-        raise NameError('Backend must either be "wx", "qt" or "x"')
+        raise AssertionError('Backend must either be "wx", "qt" or "x"')
     elif str_backend == 'qt' and not HAVE_QT:
-        raise NameError('PyQt library not installed or not found.')
+        raise Assertion('PyQt library not installed or not found.')
     elif str_backend == 'wx' and not HAVE_WX:
-        raise NameError('wxPython library not installed or not found.')
+        raise Assertion('wxPython library not installed or not found.')
     elif str_backend == 'x' and not HAVE_XLIB:
-        raise NameError('python-xlib library not installed or not found.')
+        raise Assertion('python-xlib library not installed or not found.')
     else:
         USED_BACKEND = str_backend
 
@@ -111,7 +111,7 @@ def init_display():
                 try:
                     self._menus[menu_name].Append(_id, _callable.__name__.replace('_', ' ').lower())
                 except KeyError:
-                    raise ValueError, 'the menu item %s does not exist' % (menu_name) 
+                    raise ValueError('the menu item %s does not exist' % (menu_name))
                 self.Bind(wx.EVT_MENU, _callable, id=_id)
         app = wx.PySimpleApp()
         wx.InitAllImageHandlers()
@@ -154,7 +154,7 @@ def init_display():
                     self.connect(_action, QtCore.SIGNAL("triggered()"), _callable)
                     self._menus[menu_name].addAction(_action)
                 except KeyError:
-                    raise ValueError, 'the menu item %s does not exist' % (menu_name)
+                    raise ValueError('the menu item %s does not exist' % (menu_name))
         app = QtGui.QApplication(sys.argv)
         win = MainWindow()
         win.show()

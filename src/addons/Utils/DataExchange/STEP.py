@@ -128,7 +128,7 @@ class STEPExporter(object):
     def AddShape(self, aShape):
         # First check the shape
         if aShape.IsNull():
-            raise "STEPExporter Error: the shape is NULL"
+            raise Assertion("STEPExporter Error: the shape is NULL")
         else: 
             self._shapes.append(aShape)
     

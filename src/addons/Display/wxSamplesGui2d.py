@@ -42,7 +42,7 @@ class AppFrame(wx.Frame):
         try:
             self._menus[menu_name].Append(_id, _callable.__name__.replace('_', ' ').lower())
         except KeyError:
-            raise ValueError, 'the menu item %s doesnt exist' % (menu_name) 
+            raise ValueError('the menu item %s doesnt exist' % (menu_name))
         self.Bind(wx.EVT_MENU, _callable, id=_id)
         
 

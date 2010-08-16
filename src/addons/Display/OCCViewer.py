@@ -105,7 +105,7 @@ class BaseDriver(object):
             try:
                 os.environ['DISPLAY']
             except KeyError:
-                raise "Please set the DISPLAY environment variable."
+                raise AssertionError("Please set the DISPLAY environment variable.")
         self.Init(self._window_handle)
         self.Context_handle = self.GetContext()
         self.Viewer_handle = self.GetViewer()
@@ -254,7 +254,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
     def SetBackgroundImage(self, filename, Stretch = True):
         if not os.path.isfile(filename):
-            raise IOError, "image file %s not found."%filename
+            raise IOError("image file %s not found."%filename)
         if (Stretch):
             self.View.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_STRETCH, True)
         else:

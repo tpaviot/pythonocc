@@ -44,7 +44,7 @@ class STLImporter(object):
 
     def GetShape(self):
         if self._shape.IsNull():
-            raise "Error: the shape is NULL"
+            raise Assertion("Error: the shape is NULL")
         else:
             return self._shape
 
@@ -59,7 +59,7 @@ class STLExporter(object):
     def SetShape(self, aShape):
         # First check the shape
         if aShape.IsNull():
-            raise "STLExporter Error: the shape is NULL"
+            raise AssertionError("STLExporter Error: the shape is NULL")
         else: 
             self._shape = aShape
 
