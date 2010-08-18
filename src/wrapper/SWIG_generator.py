@@ -72,6 +72,22 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 nb_exported_classes = 0
 
+def write_windows_pragma(fp):
+    """
+    Remove warnings that raise compiler errors, like for instance C4716
+    """
+    str= """
+
+%{
+#ifdef WNT
+#pragma warning(disable : 4716)
+#endif
+%}
+
+"""
+    fp.write(str)
+    
+
 class ModularBuilder(object):
     """
     This class generates a set of .i files integrated in one OCC.i script. The result is
@@ -917,6 +933,7 @@ class ModularBuilder(object):
         # create OCC.i script
         self.occ_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s.i'%self.MODULE_NAME),"w")
         WriteLicenseHeader(self.occ_fp)
+        write_windows_pragma(self.occ_fp)
         self.occ_fp.write("%module ")
         self.occ_fp.write("%s\n"%self.MODULE_NAME)
         # Add renames
