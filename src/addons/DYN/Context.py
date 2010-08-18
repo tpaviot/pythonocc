@@ -1,3 +1,8 @@
+# $Revision$
+# $Date$
+# $Author$
+# $HeadURL$
+
 import ode
 
 from OCC.GProp import *
