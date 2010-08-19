@@ -126,9 +126,11 @@ class Test(unittest.TestCase):
         from OCC.STEPControl import STEPControl_Writer
         from OCC.Interface import Interface_Static_SetCVal, Interface_Static_CVal
         w = STEPControl_Writer() #needs to be inited otherwise the following does not work
-        r = Interface_Static_SetCVal("write.step.schema","AP203")
+        # Note : static methods are wrapped with lowercase convention
+        # so SetCVal can be accessed with setcval
+        r = Interface_Static_setcval("write.step.schema","AP203")
         self.assertEqual(r,1)
-        l = Interface_Static_CVal("write.step.schema")
+        l = Interface_Static_cval("write.step.schema")
         self.assertEqual(l,"AP203")
         
     def testFT1(self):
@@ -252,8 +254,19 @@ class Test(unittest.TestCase):
         from OCC.TopoDS import TopoDS_Builder
         tds_builder = TopoDS_Builder()
         self.assertTrue(hasattr(tds_builder,"MakeCompound"))
-                         
-
+    
+    def testAutoImportOfDependentModules(self):
+        ''' when a module returns an object defined in another module,
+        this module should be automatically imported in scope
+        '''
+        print 'Test: automatic import of dependent modules'
+        from OCC.GCE2d import GCE2d_MakeSegment
+        from OCC.gp import gp_Pnt2d
+        returned_object = GCE2d_MakeSegment(gp_Pnt2d(1,1),gp_Pnt2d(3,4)).Value()
+        # for this unittest, don't use the issinstance() function, since the OCC.Geom2d module
+        # is *not* manually imported
+        returned_object_type = '%s'%type(returned_object)
+        self.assertEqual(returned_object_type,"<class 'OCC.Geom2d.Handle_Geom2d_TrimmedCurve'>")
 
 if __name__ == "__main__":
     unittest.main()
