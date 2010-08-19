@@ -4,7 +4,7 @@ from __future__ import with_statement
 # -*- coding: iso-8859-1 -*-
 #! /usr/bin/python
 
-##Copyright 2009 Jelle Feringa
+##Copyright 2009-2010 Jelle Feringa
 ##
 ##jelle.feringa@gmail.com
 ##

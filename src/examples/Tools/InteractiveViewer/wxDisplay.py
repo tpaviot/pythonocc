@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2008-2009 Thomas Paviot
+##Copyright 2008-2010 Thomas Paviot
 ##
 ##tpaviot@gmail.com
 ##

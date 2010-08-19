@@ -1,7 +1,7 @@
 # -*- coding: iso-8859-1 -*-
 #! /usr/bin/python
 
-##Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##

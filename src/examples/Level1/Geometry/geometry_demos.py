@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2009 Jelle Ferina (jelleferinga@gmail.com)
+##Copyright 2009-2010 Jelle Ferina (jelleferinga@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##

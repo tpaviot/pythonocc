@@ -1,4 +1,4 @@
-##Copyright 2009 Thomas Paviot (thomas.paviot@free.fr)
+##Copyright 2009-2010 Thomas Paviot (thomas.paviot@free.fr)
 ##
 ##This file is part of pythonOCC.
 ##

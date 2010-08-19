@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2009, Bryan Cole (bryancole.cam@googlemail.com)
+##Copyright 2009-2010, Bryan Cole (bryancole.cam@googlemail.com)
 ##
 ##This file is part of pythonOCC.
 ##
