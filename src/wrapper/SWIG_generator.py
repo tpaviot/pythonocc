@@ -31,6 +31,7 @@ except ImportError:
     HAVE_PYGCCXML = False
 
 import environment
+import Modules
 
 def CaseSensitiveGlob(wildcard):
     """
@@ -49,7 +50,7 @@ def CaseSensitiveGlob(wildcard):
 def WriteLicenseHeader(fp):
     header = """/*
 
-Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
@@ -65,6 +66,11 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
+$Revision
+$Date
+$Author
+$HeaderURL
 
 */
 """
@@ -122,7 +128,9 @@ class ModularBuilder(object):
         self.ADDITIONAL_HXX = []
         self.NEEDED_HXX = []
         self.IMPORTED_MODULES = []
+        self.MODULES_TO_IMPORT = ['GarbageCollector']
         self.MEMBER_FUNCTIONS_TO_EXCLUDE = {}
+        self.STATIC_METHODS = []
         self.ClassDocstring = ""
         self.MemberfunctionDocStrings = {}
         self.ALREADY_EXPOSED = []
@@ -204,6 +212,8 @@ class ModularBuilder(object):
                     self.process_class(class_declaration)
         except RuntimeError:
             print "No class defined."
+        self.write_modules_to_import_files()
+        self.write_renames_file()
         self.fp.close()
 
     def AddDependency(self, module_name):
@@ -299,24 +309,39 @@ class ModularBuilder(object):
         headers_fp.write("%}\n")
         headers_fp.close()
 
-    def CheckDepedency(self,return_type):
+    def write_renames_file(self):
+        ''' some methods needs to be renamed. For instance, the Vertex() method of the TopoDS class,
+        which is a static method, will be accessed under python with the name TopoDS_Vertex(). It conflicts
+        with the TopoDS_Vertex class and then one of the class/method is shadowed by SWIG.
+        As a consequence, all the static methods are renamed with the lowercase convention.
+        '''
+        renamed_file_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_renames.i'%self.MODULE_NAME),"w")
+        WriteLicenseHeader(renamed_file_fp)
         #
-        # Check what headers to add for the return type
+        # Process static methods
         #
-        t = self.CheckParameterIsTypedef(return_type)
-        if t:
-            if (t!=self.MODULE_NAME):# and (t!='Standard'):
-                if t.startswith('Handle'):
-                    t = t.split('_')[1]
-                self.AddDependency(t)#print "Dependency with module %s"%t
-        else:#it's not a type def
-            if (not return_type.startswith('%s_'%self.MODULE_NAME)) and \
-            (not return_type.startswith('Handle_%s_'%self.MODULE_NAME)) and \
-            (not return_type in ['void','int']) and (not '::' in return_type):#external dependency. Add header
-                header_to_add = '%s.hxx'%return_type
-                if not (header_to_add in self.NEEDED_HXX):
-                    self.NEEDED_HXX.append('%s.hxx'%return_type)
-    
+        for static_method in self.STATIC_METHODS:
+            class_name = static_method[0]
+            method_name = static_method[1]
+            new_method_name = method_name.lower()
+            renamed_file_fp.write("%%rename(%s) %s::%s;\n"%(new_method_name,class_name,method_name))
+        renamed_file_fp.close()
+        
+    def write_modules_to_import_files(self):
+        #if len(self.MODULES_TO_IMPORT) == 0:
+        #    return True
+        if self.MODULE_NAME=='GEOM':
+            self.MODULE_NAME='SGEOM'
+        required_modules_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_required_python_modules.i'%self.MODULE_NAME),"w")
+        WriteLicenseHeader(required_modules_fp)
+        if not len(self.MODULES_TO_IMPORT)==0:
+            required_modules_fp.write("\n%pythoncode {\n")
+            required_modules_fp.write("#importing required modules\n")
+            for module in self.MODULES_TO_IMPORT:
+                required_modules_fp.write('import %s\n'%module)
+            required_modules_fp.write("};\n")
+        required_modules_fp.close()
+        
     def write_function_arguments(self,mem_fun):
         """
         Write the function arguments, comma separated
@@ -486,6 +511,19 @@ class ModularBuilder(object):
                     header_to_add = '%s.hxx'%return_type
                     if not (header_to_add in self.NEEDED_HXX):
                         self.NEEDED_HXX.append('%s.hxx'%return_type)
+        # If the returned type is not in the scope, import the module
+        #
+        # First check the module name
+        if (not return_type in ['void','int']) and (not '::' in return_type):#
+            if return_type.startswith('Handle'):
+                module_name = return_type.split('_')[1]
+                print 'The module is :',module_name
+            else:
+                module_name = return_type.split('_')[0]
+            # then add this module to the list of modules to import
+            if module_name != self.MODULE_NAME and module_name in Modules.get_wrapped_modules_names():
+                if not (module_name in self.MODULES_TO_IMPORT) and module_name!='None':
+                    self.MODULES_TO_IMPORT.append(module_name)
 #        #
 #        # Replace return type Standard_CString with char *
 #        #
@@ -536,6 +574,7 @@ class ModularBuilder(object):
         # Detect static method
         if mem_fun.has_static:
             to_write+="\t\tstatic"
+            self.STATIC_METHODS.append([class_parent_name,function_name])
         # on teste le cas suivant pour return_type:gp_Pnt const &, qu'il faut transformer en const gp_Pnt &
         parts = return_type.split(" ")
         if len(parts)==3:
@@ -947,13 +986,10 @@ class ModularBuilder(object):
         # For modules SMDS or StdMeshers, add the Vector.i header
         if self.MODULE_NAME in ['SMDS','SMESH','StdMeshers']:
             self.occ_fp.write("%include ../StandardTemplateLibrary.i\n")
-        # Garbage collector
-        GARBAGE = """
-%pythoncode {
-import GarbageCollector
-};
-"""     
-        self.occ_fp.write(GARBAGE)       
+        # Add the rename file
+        self.occ_fp.write("\n%%include %s_renames.i\n\n"%self.MODULE_NAME)     
+        # Add python dependencies
+        self.occ_fp.write("\n%%include %s_required_python_modules.i\n\n"%self.MODULE_NAME)     
         # Add dependencies
         self.occ_fp.write("\n%%include %s_dependencies.i\n\n"%self.MODULE_NAME)
         # Add headers

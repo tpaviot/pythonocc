@@ -131,7 +131,7 @@ if sys.platform=='win32':
         # Python 2.6 and higher needs msvc8 or higher
         SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','GEOM','win32','msvc8-9-10','lib','release')
         SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','SMESH','win32','msvc8-9-10','lib','release')
-    GCC_XML_PATH = os.path.join(os.getcwd(),'..','..','pygccxml','gccxml_bin','v09','win32','bin')
+    GCC_XML_PATH = os.path.join(os.getcwd(),'..','..','..','pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
                      ('_WINDOWS',None),('CSFDB',None),\

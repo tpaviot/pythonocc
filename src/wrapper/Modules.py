@@ -644,5 +644,13 @@ def PythonOCCStats():
         f.write('] %s\n'%elem)
     f.close()
 
+def get_wrapped_modules_names():
+    wrapped_modules_names = []
+    for module in ALL_MODULES:
+        wrapped_modules_names.append(module[0])
+    return wrapped_modules_names
+
 if __name__=='__main__':
-    PythonOCCStats()
+    #PythonOCCStats()
+    print get_wrapped_modules_names()
+    
