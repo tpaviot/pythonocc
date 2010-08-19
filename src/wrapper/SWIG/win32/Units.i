@@ -1,6 +1,6 @@
 /*
 
-Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
@@ -17,7 +17,20 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+$Revision
+$Date
+$Author
+$HeaderURL
+
 */
+
+
+%{
+#ifdef WNT
+#pragma warning(disable : 4716)
+#endif
+%}
+
 %module Units
 %include ../CommonIncludes.i
 %include ../StandardDefines.i
@@ -25,9 +38,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
-%pythoncode {
-import GarbageCollector
-};
+%include Units_renames.i
+
+
+%include Units_required_python_modules.i
+
 
 %include Units_dependencies.i
 
