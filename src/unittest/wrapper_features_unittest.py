@@ -124,7 +124,7 @@ class Test(unittest.TestCase):
         '''
         print 'Test : wrapper for C++ static methods'
         from OCC.STEPControl import STEPControl_Writer
-        from OCC.Interface import Interface_Static_SetCVal, Interface_Static_CVal
+        from OCC.Interface import Interface_Static_setcval, Interface_Static_cval
         w = STEPControl_Writer() #needs to be inited otherwise the following does not work
         # Note : static methods are wrapped with lowercase convention
         # so SetCVal can be accessed with setcval
