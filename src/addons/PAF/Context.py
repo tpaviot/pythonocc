@@ -140,7 +140,6 @@ class ParametricModelingContext(object):
         self.undo  = undo           # whether or not we use CommitCommand ( if used, operations can be Undo'd / Redo'd ) 
         self.docId = 100
         self.myEngine = GEOMImpl_Gen()
-        self.engine = self.myEngine.GetEngine()
         self.doc    = self.myEngine.GetDocument(self.docId).GetObject()
         self.root   = self.doc.Main().Root()
         # display stuff
@@ -343,7 +342,7 @@ class ParametricModelingContext(object):
         if does_commit:
             self.doc.NewCommand()
         # "" and True, here after are maybe to change
-        self.engine.SetInterpreterConstant(self.docId, TCollection_AsciiString(name), value,TCollection_AsciiString(""),True)
+        self.myEngine.SetInterpreterConstant(self.docId, TCollection_AsciiString(name), value,TCollection_AsciiString(""),True)
 
         #update registered solvers
         if self.AUTOMATIC_UPDATE:
