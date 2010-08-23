@@ -149,7 +149,7 @@ def make_text(string, pnt, height):
     d_ctx.Display(prs_sphere.GetHandle(), 1)
     aPresentation   = prsMgr.CastPresentation(prs_sphere.GetHandle()).GetObject()
     global myGroup
-    myGroup = Prs3d_Root().CurrentGroup(aPresentation.Presentation()).GetObject()
+    myGroup = Prs3d_Root_currentgroup(aPresentation.Presentation()).GetObject()
 #===============================================================================
 #    FINE
 #===============================================================================
@@ -198,7 +198,7 @@ def point_from_curve( event=None ):
     global myGroup
     display.EraseAll()
     radius, abscissa = 5., 3.                              
-    C = Geom2d_Circle( gp.gp().OX2d(), radius, 1 )
+    C = Geom2d_Circle( gp_ox2d(), radius, 1 )
     GAC = Geom2dAdaptor_Curve( C.GetHandle() )
     UA = GCPnts_UniformAbscissa( GAC, abscissa )
     
@@ -239,7 +239,7 @@ def project_point_on_curve(event=None):
     P = gp_Pnt(1,2,3)
     distance, radius = 5, 5
     
-    C = Geom_Circle(gp.gp().XOY(),radius)
+    C = Geom_Circle(gp_xoy(),radius)
     PPC = GeomAPI_ProjectPointOnCurve(P,C.GetHandle())                     
     N = PPC.NearestPoint()
     NbResults = PPC.NbPoints()
@@ -275,7 +275,7 @@ def point_from_projections(event=None):
     display.EraseAll()
     P = gp_Pnt(7,8,9)                                     
     radius = 5;
-    SP = Geom_SphericalSurface(gp_Ax3(gp.gp().XOY()),radius)
+    SP = Geom_SphericalSurface(gp_Ax3(gp_xoy()),radius)
     
     display.DisplayShape( make_face(SP.GetHandle() ) )
     
@@ -323,12 +323,12 @@ def points_from_intersection(event=None):
     @param display:
     '''
     display.EraseAll()
-    PL = gp_Pln( gp_Ax3( gp.gp().XOY() ) )
+    PL = gp_Pln( gp_Ax3( gp_xoy() ) )
     MinorRadius, MajorRadius = 5, 8    
     
-    EL = gp_Elips( gp.gp().YOZ(), MajorRadius, MinorRadius )
-    print Precision().Angular()
-    ICQ = IntAna_IntConicQuad( EL, PL, Precision().Angular(), Precision().Confusion() )
+    EL = gp_Elips( gp_yoz(), MajorRadius, MinorRadius )
+    print Precision_angular()
+    ICQ = IntAna_IntConicQuad( EL, PL, Precision_angular(), Precision_confusion() )
      
     if ICQ.IsDone():
         NbResults = ICQ.NbPoints()
@@ -523,7 +523,7 @@ def curves2d_from_curves(event=None):
     '''
     display.EraseAll()
     major, minor = 12, 4                                              
-    axis = gp.gp().OX2d()                                             
+    axis = gp_ox2d()                                             
     
     ell = GCE2d_MakeEllipse(axis,major,minor)
     E = ell.Value()
@@ -583,11 +583,11 @@ def circles2d_from_curves(event=None):
     QC = GccEnt.GccEnt().Outside(C)
     P4 = gp_Pnt2d(-2,7)
     P5 = gp_Pnt2d(12,-3)                                                         
-    L = GccAna_Lin2d2Tan(P4,P5,Precision().Confusion()).ThisSolution(1)
+    L = GccAna_Lin2d2Tan(P4,P5,Precision_confusion()).ThisSolution(1)
      
     QL = GccEnt.GccEnt().Unqualified(L)
     radius = 2.
-    TR = GccAna_Circ2d2TanRad(QC,QL,radius,Precision().Confusion())
+    TR = GccAna_Circ2d2TanRad(QC,QL,radius,Precision_confusion())
     
     if TR.IsDone():
         NbSol = TR.NbSolutions()
@@ -667,7 +667,7 @@ def curves3d_from_points(event=None):
         
         
     aaa = _Tcol_dim_1(harray, TColgp_HArray1OfPnt)
-    anInterpolation = GeomAPI_Interpolate(aaa.GetHandle(), False, Precision().Approximation())
+    anInterpolation = GeomAPI_Interpolate(aaa.GetHandle(), False, Precision_approximation())
     # TODO, raises a ConstructionError, something is wrong with the aaa  TColgp_HArray1OfPnt
     #anInterpolation.Perform()
     #anInterpolation.IsDone()
@@ -736,14 +736,14 @@ def surface_from_curves(event=None):
                                         SPL2,
                                         GeomFill_StretchStyle)
     
-    SPL3 = Handle_Geom_BSplineCurve().DownCast(SPL1_c.Translated(gp_Vec(10,0,0)))
-    SPL4 = Handle_Geom_BSplineCurve().DownCast(SPL2_c.Translated(gp_Vec(10,0,0)))
+    SPL3 = Handle_Geom_BSplineCurve_downcast(SPL1_c.Translated(gp_Vec(10,0,0)))
+    SPL4 = Handle_Geom_BSplineCurve_downcast(SPL2_c.Translated(gp_Vec(10,0,0)))
     aGeomFill2 = GeomFill_BSplineCurves(SPL3,
                                         SPL4,
                                         GeomFill_CoonsStyle)
     
-    SPL5 = Handle_Geom_BSplineCurve().DownCast(SPL1_c.Translated(gp_Vec(20,0,0)))
-    SPL6 = Handle_Geom_BSplineCurve().DownCast(SPL2_c.Translated(gp_Vec(20,0,0)))
+    SPL5 = Handle_Geom_BSplineCurve_downcast(SPL1_c.Translated(gp_Vec(20,0,0)))
+    SPL6 = Handle_Geom_BSplineCurve_downcast(SPL2_c.Translated(gp_Vec(20,0,0)))
     aGeomFill3 = GeomFill_BSplineCurves(SPL5,
                                         SPL6,
                                         GeomFill_CurvedStyle)
@@ -793,7 +793,7 @@ def pipes(event=None):
     aPipe.Perform(0,0)
     aSurface= aPipe.Surface()
     
-    E = GC_MakeEllipse( gp.gp().XOY(), 2,1).Value()
+    E = GC_MakeEllipse( gp_xoy(), 2,1).Value()
     aPipe2 = GeomFill_Pipe(SPL1,E, GeomFill_IsConstantNormal)                                   
     aPipe2.Perform(0,0)                                  
     aSurface2= aPipe2.Surface()
@@ -816,7 +816,7 @@ def pipes(event=None):
                   GeomFill_IsGuidePlan, GeomFill_IsGuidePlanWithContact,\
                   ]):
     
-        E = GC_MakeEllipse( gp.gp().XOY(), 2,1).Value()
+        E = GC_MakeEllipse( gp_xoy(), 2,1).Value()
         display.DisplayShape(make_edge(E))
     
         try:
@@ -1010,7 +1010,7 @@ def surfaces_from_revolution(event=None):
     array.append(gp_Pnt(5,5,5))                                         
     aCurve = GeomAPI_PointsToBSpline(point_list_to_TColgp_Array1OfPnt(array)).Curve()
     
-    SOR =Geom_SurfaceOfRevolution(aCurve, gp.gp().OX())
+    SOR =Geom_SurfaceOfRevolution(aCurve, gp_ox())
     
     display.DisplayShape(make_edge(aCurve))
     display.DisplayShape(make_face(SOR.GetHandle()))
