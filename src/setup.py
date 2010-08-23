@@ -16,6 +16,11 @@
 ##
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+##
+## $Revision$
+## $Date$
+## $Author$
+## $HeadURL$
 
 import glob
 import os,os.path
@@ -48,7 +53,7 @@ except:
 
 #Check whether the -j nprocs is passed
 if ('-help' in sys.argv) or ('-h' in sys.argv):
-    help_str="""pythonOCC setup - (c) Thomas Paviot, 2008-2009.
+    help_str="""pythonOCC setup - (c) Thomas Paviot, 2008-2010.
 Usage: python setup.py build install[options]
 With [options]:
     --disable-GEOM: disable wrapper for the GEOM library
