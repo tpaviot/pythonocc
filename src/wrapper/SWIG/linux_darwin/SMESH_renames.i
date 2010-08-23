@@ -48,7 +48,6 @@ $HeaderURL$
 %rename(isforwardedge) SMESH_Block::IsForwardEdge;
 %rename(getorderededges) SMESH_Block::GetOrderedEdges;
 %rename(getshapedim) SMESH_Gen::GetShapeDim;
-%rename(getshapedim) SMESH_Gen::GetShapeDim;
 %rename(isglobalhypothesis) SMESH_Gen::IsGlobalHypothesis;
 %rename(isstatusfatal) SMESH_Hypothesis::IsStatusFatal;
 %rename(getshapediagonalsize) SMESH_Mesh::GetShapeDiagonalSize;

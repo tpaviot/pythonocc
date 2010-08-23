@@ -30,5 +30,4 @@ $HeaderURL$
 %rename(downcast) Handle_XmlMDF_DataMapNodeOfTypeADriverMap::DownCast;
 %rename(downcast) Handle_XmlMDF_ADriverTable::DownCast;
 %rename(fromto) XmlMDF::FromTo;
-%rename(fromto) XmlMDF::FromTo;
 %rename(adddrivers) XmlMDF::AddDrivers;

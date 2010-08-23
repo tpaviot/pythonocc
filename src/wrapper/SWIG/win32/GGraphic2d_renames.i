@@ -29,5 +29,4 @@ $HeaderURL$
 %rename(downcast) Handle_GGraphic2d_SetOfCurves::DownCast;
 %rename(retrieve) GGraphic2d_Curve::Retrieve;
 %rename(raise) GGraphic2d_CurveDefinitionError::Raise;
-%rename(raise) GGraphic2d_CurveDefinitionError::Raise;
 %rename(newinstance) GGraphic2d_CurveDefinitionError::NewInstance;

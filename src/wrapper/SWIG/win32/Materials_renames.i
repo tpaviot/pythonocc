@@ -32,9 +32,7 @@ $HeaderURL$
 %rename(downcast) Handle_Materials_MaterialsDictionary::DownCast;
 %rename(materialfile) Materials::MaterialFile;
 %rename(materialsfile) Materials::MaterialsFile;
-%rename(materialsfile) Materials::MaterialsFile;
 %rename(dictionaryofmaterials) Materials::DictionaryOfMaterials;
 %rename(existmaterial) Materials::ExistMaterial;
 %rename(material) Materials::Material;
 %rename(numberofmaterials) Materials::NumberOfMaterials;
-%rename(material) Materials::Material;

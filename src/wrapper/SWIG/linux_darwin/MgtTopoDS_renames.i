@@ -26,6 +26,4 @@ $HeaderURL$
 %rename(downcast) Handle_MgtTopoDS_TranslateTool::DownCast;
 %rename(downcast) Handle_MgtTopoDS_TranslateTool1::DownCast;
 %rename(translate) MgtTopoDS::Translate;
-%rename(translate) MgtTopoDS::Translate;
-%rename(translate1) MgtTopoDS::Translate1;
 %rename(translate1) MgtTopoDS::Translate1;

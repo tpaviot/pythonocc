@@ -33,13 +33,7 @@ $HeaderURL$
 %rename(nbp2d) GeomInt_TheMultiLineToolOfWLApprox::NbP2d;
 %rename(nbp3d) GeomInt_TheMultiLineToolOfWLApprox::NbP3d;
 %rename(value) GeomInt_TheMultiLineToolOfWLApprox::Value;
-%rename(value) GeomInt_TheMultiLineToolOfWLApprox::Value;
-%rename(value) GeomInt_TheMultiLineToolOfWLApprox::Value;
 %rename(tangency) GeomInt_TheMultiLineToolOfWLApprox::Tangency;
-%rename(tangency) GeomInt_TheMultiLineToolOfWLApprox::Tangency;
-%rename(tangency) GeomInt_TheMultiLineToolOfWLApprox::Tangency;
-%rename(curvature) GeomInt_TheMultiLineToolOfWLApprox::Curvature;
-%rename(curvature) GeomInt_TheMultiLineToolOfWLApprox::Curvature;
 %rename(curvature) GeomInt_TheMultiLineToolOfWLApprox::Curvature;
 %rename(makemlbetween) GeomInt_TheMultiLineToolOfWLApprox::MakeMLBetween;
 %rename(whatstatus) GeomInt_TheMultiLineToolOfWLApprox::WhatStatus;

@@ -59,9 +59,7 @@ $HeaderURL$
 %rename(setglobal) Interface_ReaderLib::SetGlobal;
 %rename(fastof) Interface_FileReaderData::Fastof;
 %rename(raise) Interface_InterfaceError::Raise;
-%rename(raise) Interface_InterfaceError::Raise;
 %rename(newinstance) Interface_InterfaceError::NewInstance;
-%rename(raise) Interface_InterfaceMismatch::Raise;
 %rename(raise) Interface_InterfaceMismatch::Raise;
 %rename(newinstance) Interface_InterfaceMismatch::NewInstance;
 %rename(convert) Interface_FloatWriter::Convert;
@@ -69,8 +67,6 @@ $HeaderURL$
 %rename(paramtypetovaluetype) Interface_TypedValue::ParamTypeToValueType;
 %rename(valuetypetoparamtype) Interface_TypedValue::ValueTypeToParamType;
 %rename(init) Interface_Static::Init;
-%rename(init) Interface_Static::Init;
-%rename(static) Interface_Static::Static;
 %rename(ispresent) Interface_Static::IsPresent;
 %rename(cdef) Interface_Static::CDef;
 %rename(idef) Interface_Static::IDef;
@@ -91,7 +87,6 @@ $HeaderURL$
 %rename(hashcode) Interface_MapAsciiStringHasher::HashCode;
 %rename(isequal) Interface_MapAsciiStringHasher::IsEqual;
 %rename(read) Interface_MSG::Read;
-%rename(read) Interface_MSG::Read;
 %rename(write) Interface_MSG::Write;
 %rename(iskey) Interface_MSG::IsKey;
 %rename(translated) Interface_MSG::Translated;
@@ -104,8 +99,6 @@ $HeaderURL$
 %rename(ndate) Interface_MSG::NDate;
 %rename(cdate) Interface_MSG::CDate;
 %rename(blanks) Interface_MSG::Blanks;
-%rename(blanks) Interface_MSG::Blanks;
-%rename(blanks) Interface_MSG::Blanks;
 %rename(print) Interface_MSG::Print;
 %rename(addcategory) Interface_Category::AddCategory;
 %rename(nbcategories) Interface_Category::NbCategories;
@@ -114,10 +107,8 @@ $HeaderURL$
 %rename(init) Interface_Category::Init;
 %rename(classname) Interface_SignType::ClassName;
 %rename(raise) Interface_CheckFailure::Raise;
-%rename(raise) Interface_CheckFailure::Raise;
 %rename(newinstance) Interface_CheckFailure::NewInstance;
 %rename(classname) Interface_InterfaceModel::ClassName;
 %rename(hastemplate) Interface_InterfaceModel::HasTemplate;
-%rename(template) Interface_InterfaceModel::Template;
 %rename(settemplate) Interface_InterfaceModel::SetTemplate;
 %rename(listtemplates) Interface_InterfaceModel::ListTemplates;

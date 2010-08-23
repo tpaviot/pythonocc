@@ -35,7 +35,6 @@ $HeaderURL$
 %rename(downcast) Handle_PlotMgt_PlotterDriver::DownCast;
 %rename(downcast) Handle_PlotMgt_ImageDriver::DownCast;
 %rename(raise) PlotMgt_PlotterDefinitionError::Raise;
-%rename(raise) PlotMgt_PlotterDefinitionError::Raise;
 %rename(newinstance) PlotMgt_PlotterDefinitionError::NewInstance;
 %rename(listplotters) PlotMgt_Plotter::ListPlotters;
 %rename(devicelist) PlotMgt::DeviceList;
@@ -52,6 +51,5 @@ $HeaderURL$
 %rename(paperformatfromstring) PlotMgt::PaperFormatFromString;
 %rename(stringfrompaperformat) PlotMgt::StringFromPaperFormat;
 %rename(papersize) PlotMgt::PaperSize;
-%rename(raise) PlotMgt_PlotterAccessError::Raise;
 %rename(raise) PlotMgt_PlotterAccessError::Raise;
 %rename(newinstance) PlotMgt_PlotterAccessError::NewInstance;

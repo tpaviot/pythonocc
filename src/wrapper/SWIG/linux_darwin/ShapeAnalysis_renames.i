@@ -34,7 +34,6 @@ $HeaderURL$
 %rename(downcast) Handle_ShapeAnalysis_Surface::DownCast;
 %rename(connectedgestowires) ShapeAnalysis_FreeBounds::ConnectEdgesToWires;
 %rename(connectwirestowires) ShapeAnalysis_FreeBounds::ConnectWiresToWires;
-%rename(connectwirestowires) ShapeAnalysis_FreeBounds::ConnectWiresToWires;
 %rename(splitwires) ShapeAnalysis_FreeBounds::SplitWires;
 %rename(dispatchwires) ShapeAnalysis_FreeBounds::DispatchWires;
 %rename(outerwire) ShapeAnalysis::OuterWire;
@@ -46,13 +45,9 @@ $HeaderURL$
 %rename(findbounds) ShapeAnalysis::FindBounds;
 %rename(getfaceuvbounds) ShapeAnalysis::GetFaceUVBounds;
 %rename(isplanar) ShapeAnalysis_Curve::IsPlanar;
-%rename(isplanar) ShapeAnalysis_Curve::IsPlanar;
-%rename(getsamplepoints) ShapeAnalysis_Curve::GetSamplePoints;
 %rename(getsamplepoints) ShapeAnalysis_Curve::GetSamplePoints;
 %rename(isclosed) ShapeAnalysis_Curve::IsClosed;
 %rename(isperiodic) ShapeAnalysis_Curve::IsPeriodic;
-%rename(isperiodic) ShapeAnalysis_Curve::IsPeriodic;
-%rename(copynmvertex) ShapeAnalysis_TransferParametersProj::CopyNMVertex;
 %rename(copynmvertex) ShapeAnalysis_TransferParametersProj::CopyNMVertex;
 %rename(nearestplane) ShapeAnalysis_Geom::NearestPlane;
 %rename(positiontrsf) ShapeAnalysis_Geom::PositionTrsf;

@@ -31,7 +31,6 @@ $HeaderURL$
 %rename(downcast) Handle_CDF_MetaDataDriverFactory::DownCast;
 %rename(downcast) Handle_CDF_Session::DownCast;
 %rename(raise) CDF_MetaDataDriverError::Raise;
-%rename(raise) CDF_MetaDataDriverError::Raise;
 %rename(newinstance) CDF_MetaDataDriverError::NewInstance;
 %rename(getlicense) CDF::GetLicense;
 %rename(isavailable) CDF::IsAvailable;

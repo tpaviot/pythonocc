@@ -61,5 +61,4 @@ $HeaderURL$
 %rename(downcast) Handle_Prs2d_Angle::DownCast;
 %rename(downcast) Handle_Prs2d_AspectLine::DownCast;
 %rename(raise) Prs2d_SymbolDefinitionError::Raise;
-%rename(raise) Prs2d_SymbolDefinitionError::Raise;
 %rename(newinstance) Prs2d_SymbolDefinitionError::NewInstance;

@@ -34,7 +34,6 @@ $HeaderURL$
 %rename(initvertexassociation) StdMeshers_ProjectionUtils::InitVertexAssociation;
 %rename(insertassociation) StdMeshers_ProjectionUtils::InsertAssociation;
 %rename(issubshape) StdMeshers_ProjectionUtils::IsSubShape;
-%rename(issubshape) StdMeshers_ProjectionUtils::IsSubShape;
 %rename(getedgebyvertices) StdMeshers_ProjectionUtils::GetEdgeByVertices;
 %rename(getnextface) StdMeshers_ProjectionUtils::GetNextFace;
 %rename(getnextvertex) StdMeshers_ProjectionUtils::GetNextVertex;

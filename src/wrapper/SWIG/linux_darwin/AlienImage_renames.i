@@ -41,8 +41,6 @@ $HeaderURL$
 %rename(downcast) Handle_AlienImage_SunRFAlienImage::DownCast;
 %rename(downcast) Handle_AlienImage_AidaAlienData::DownCast;
 %rename(createimage) AlienImage::CreateImage;
-%rename(createimage) AlienImage::CreateImage;
-%rename(createimage) AlienImage::CreateImage;
 %rename(loadimagefile) AlienImage::LoadImageFile;
 %rename(swaplong) AlienImage_MemoryOperations::SwapLong;
 %rename(swapshort) AlienImage_MemoryOperations::SwapShort;

@@ -25,10 +25,8 @@ $HeaderURL$
 */
 %rename(downcast) Handle_TopExp_StackNodeOfStackOfIterator::DownCast;
 %rename(mapshapes) TopExp::MapShapes;
-%rename(mapshapes) TopExp::MapShapes;
 %rename(mapshapesandancestors) TopExp::MapShapesAndAncestors;
 %rename(firstvertex) TopExp::FirstVertex;
 %rename(lastvertex) TopExp::LastVertex;
-%rename(vertices) TopExp::Vertices;
 %rename(vertices) TopExp::Vertices;
 %rename(commonvertex) TopExp::CommonVertex;

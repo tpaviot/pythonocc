@@ -31,10 +31,6 @@ $HeaderURL$
 %rename(pconfusion) Precision::PConfusion;
 %rename(pintersection) Precision::PIntersection;
 %rename(papproximation) Precision::PApproximation;
-%rename(parametric) Precision::Parametric;
-%rename(pconfusion) Precision::PConfusion;
-%rename(pintersection) Precision::PIntersection;
-%rename(papproximation) Precision::PApproximation;
 %rename(isinfinite) Precision::IsInfinite;
 %rename(ispositiveinfinite) Precision::IsPositiveInfinite;
 %rename(isnegativeinfinite) Precision::IsNegativeInfinite;

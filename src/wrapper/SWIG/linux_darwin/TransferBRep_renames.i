@@ -32,9 +32,7 @@ $HeaderURL$
 %rename(downcast) Handle_TransferBRep_ShapeListBinder::DownCast;
 %rename(downcast) Handle_TransferBRep_TransferResultInfo::DownCast;
 %rename(shaperesult) TransferBRep::ShapeResult;
-%rename(shaperesult) TransferBRep::ShapeResult;
 %rename(setshaperesult) TransferBRep::SetShapeResult;
-%rename(shapes) TransferBRep::Shapes;
 %rename(shapes) TransferBRep::Shapes;
 %rename(shapestate) TransferBRep::ShapeState;
 %rename(resultfromshape) TransferBRep::ResultFromShape;
@@ -42,11 +40,9 @@ $HeaderURL$
 %rename(settransientfromshape) TransferBRep::SetTransientFromShape;
 %rename(shapemapper) TransferBRep::ShapeMapper;
 %rename(transferresultinfo) TransferBRep::TransferResultInfo;
-%rename(transferresultinfo) TransferBRep::TransferResultInfo;
 %rename(printresultinfo) TransferBRep::PrintResultInfo;
 %rename(resultchecklist) TransferBRep::ResultCheckList;
 %rename(checked) TransferBRep::Checked;
 %rename(checkedshapes) TransferBRep::CheckedShapes;
 %rename(checkobject) TransferBRep::CheckObject;
 %rename(type) TransferBRep_ShapeInfo::Type;
-%rename(typename) TransferBRep_ShapeInfo::TypeName;

@@ -41,4 +41,3 @@ $HeaderURL$
 %rename(hasbrep) NMTDS_Tools::HasBRep;
 %rename(computevv) NMTDS_Tools::ComputeVV;
 %rename(copyshape) NMTDS_Tools::CopyShape;
-%rename(copyshape) NMTDS_Tools::CopyShape;

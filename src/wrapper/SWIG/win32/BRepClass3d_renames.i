@@ -25,7 +25,3 @@ $HeaderURL$
 */
 %rename(downcast) Handle_BRepClass3d_DataMapNodeOfMapOfInter::DownCast;
 %rename(findapointintheface) BRepClass3d_SolidExplorer::FindAPointInTheFace;
-%rename(findapointintheface) BRepClass3d_SolidExplorer::FindAPointInTheFace;
-%rename(findapointintheface) BRepClass3d_SolidExplorer::FindAPointInTheFace;
-%rename(findapointintheface) BRepClass3d_SolidExplorer::FindAPointInTheFace;
-%rename(findapointintheface) BRepClass3d_SolidExplorer::FindAPointInTheFace;

@@ -25,5 +25,4 @@ $HeaderURL$
 */
 %rename(downcast) Handle_GccAna_NoSolution::DownCast;
 %rename(raise) GccAna_NoSolution::Raise;
-%rename(raise) GccAna_NoSolution::Raise;
 %rename(newinstance) GccAna_NoSolution::NewInstance;

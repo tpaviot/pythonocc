@@ -46,10 +46,8 @@ $HeaderURL$
 %rename(downcast) Handle_Geom2d_BSplineCurve::DownCast;
 %rename(downcast) Handle_Geom2d_Parabola::DownCast;
 %rename(raise) Geom2d_UndefinedDerivative::Raise;
-%rename(raise) Geom2d_UndefinedDerivative::Raise;
 %rename(newinstance) Geom2d_UndefinedDerivative::NewInstance;
 %rename(maxdegree) Geom2d_BSplineCurve::MaxDegree;
 %rename(maxdegree) Geom2d_BezierCurve::MaxDegree;
-%rename(raise) Geom2d_UndefinedValue::Raise;
 %rename(raise) Geom2d_UndefinedValue::Raise;
 %rename(newinstance) Geom2d_UndefinedValue::NewInstance;

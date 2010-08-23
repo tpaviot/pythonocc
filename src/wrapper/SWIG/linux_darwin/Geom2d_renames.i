@@ -46,9 +46,7 @@ $HeaderURL$
 %rename(downcast) Handle_Geom2d_CartesianPoint::DownCast;
 %rename(downcast) Handle_Geom2d_TrimmedCurve::DownCast;
 %rename(raise) Geom2d_UndefinedValue::Raise;
-%rename(raise) Geom2d_UndefinedValue::Raise;
 %rename(newinstance) Geom2d_UndefinedValue::NewInstance;
-%rename(raise) Geom2d_UndefinedDerivative::Raise;
 %rename(raise) Geom2d_UndefinedDerivative::Raise;
 %rename(newinstance) Geom2d_UndefinedDerivative::NewInstance;
 %rename(maxdegree) Geom2d_BSplineCurve::MaxDegree;

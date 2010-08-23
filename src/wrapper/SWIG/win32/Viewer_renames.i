@@ -27,5 +27,4 @@ $HeaderURL$
 %rename(downcast) Handle_Viewer_Viewer::DownCast;
 %rename(downcast) Handle_Viewer_View::DownCast;
 %rename(raise) Viewer_BadValue::Raise;
-%rename(raise) Viewer_BadValue::Raise;
 %rename(newinstance) Viewer_BadValue::NewInstance;

@@ -25,7 +25,6 @@ $HeaderURL$
 */
 %rename(parameter) GeomLib_Tool::Parameter;
 %rename(parameters) GeomLib_Tool::Parameters;
-%rename(parameter) GeomLib_Tool::Parameter;
 %rename(to3d) GeomLib::To3d;
 %rename(gtransform) GeomLib::GTransform;
 %rename(samerange) GeomLib::SameRange;

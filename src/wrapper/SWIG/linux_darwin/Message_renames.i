@@ -38,4 +38,3 @@ $HeaderURL$
 %rename(loadfromenv) Message_MsgFile::LoadFromEnv;
 %rename(addmsg) Message_MsgFile::AddMsg;
 %rename(msg) Message_MsgFile::Msg;
-%rename(msg) Message_MsgFile::Msg;

@@ -55,7 +55,6 @@ $HeaderURL$
 %rename(setdefmsg) MoniTool_CaseData::SetDefMsg;
 %rename(defmsg) MoniTool_CaseData::DefMsg;
 %rename(type) MoniTool_DataInfo::Type;
-%rename(typename) MoniTool_DataInfo::TypeName;
 %rename(hashcode) MoniTool_MTHasher::HashCode;
 %rename(isequal) MoniTool_MTHasher::IsEqual;
 %rename(addlib) MoniTool_TypedValue::AddLib;

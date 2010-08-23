@@ -34,5 +34,4 @@ $HeaderURL$
 %rename(downcast) Handle_BinMXCAFDoc_GraphNodeDriver::DownCast;
 %rename(downcast) Handle_BinMXCAFDoc_DocumentToolDriver::DownCast;
 %rename(translate) BinMXCAFDoc_LocationDriver::Translate;
-%rename(translate) BinMXCAFDoc_LocationDriver::Translate;
 %rename(adddrivers) BinMXCAFDoc::AddDrivers;

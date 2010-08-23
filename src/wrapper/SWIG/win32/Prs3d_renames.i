@@ -44,11 +44,9 @@ $HeaderURL$
 %rename(currentgroup) Prs3d_Root::CurrentGroup;
 %rename(newgroup) Prs3d_Root::NewGroup;
 %rename(draw) Prs3d_Text::Draw;
-%rename(draw) Prs3d_Text::Draw;
 %rename(draw) Prs3d_AnglePresentation::Draw;
 %rename(draw) Prs3d_LengthPresentation::Draw;
 %rename(matchsegment) Prs3d::MatchSegment;
-%rename(raise) Prs3d_InvalidAngle::Raise;
 %rename(raise) Prs3d_InvalidAngle::Raise;
 %rename(newinstance) Prs3d_InvalidAngle::NewInstance;
 %rename(draw) Prs3d_Arrow::Draw;

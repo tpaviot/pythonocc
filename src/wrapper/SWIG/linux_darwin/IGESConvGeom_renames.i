@@ -25,6 +25,5 @@ $HeaderURL$
 */
 %rename(splinecurvefromiges) IGESConvGeom::SplineCurveFromIGES;
 %rename(increasecurvecontinuity) IGESConvGeom::IncreaseCurveContinuity;
-%rename(increasecurvecontinuity) IGESConvGeom::IncreaseCurveContinuity;
 %rename(splinesurfacefromiges) IGESConvGeom::SplineSurfaceFromIGES;
 %rename(increasesurfacecontinuity) IGESConvGeom::IncreaseSurfaceContinuity;

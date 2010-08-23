@@ -27,5 +27,3 @@ $HeaderURL$
 %rename(reverse) TopAbs::Reverse;
 %rename(complement) TopAbs::Complement;
 %rename(print) TopAbs::Print;
-%rename(print) TopAbs::Print;
-%rename(print) TopAbs::Print;

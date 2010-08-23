@@ -99,7 +99,6 @@ $HeaderURL$
 %rename(addstoragedrivers) MDataStd::AddStorageDrivers;
 %rename(addretrievaldrivers) MDataStd::AddRetrievalDrivers;
 %rename(translate) MDataStd::Translate;
-%rename(translate) MDataStd::Translate;
 %rename(realdimensiontointeger) MDataStd::RealDimensionToInteger;
 %rename(integertorealdimension) MDataStd::IntegerToRealDimension;
 %rename(constrainttypetointeger) MDataStd::ConstraintTypeToInteger;

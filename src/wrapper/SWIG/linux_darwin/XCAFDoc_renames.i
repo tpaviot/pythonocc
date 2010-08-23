@@ -84,7 +84,6 @@ $HeaderURL$
 %rename(iscompound) XCAFDoc_ShapeTool::IsCompound;
 %rename(issubshape) XCAFDoc_ShapeTool::IsSubShape;
 %rename(getshape) XCAFDoc_ShapeTool::GetShape;
-%rename(getshape) XCAFDoc_ShapeTool::GetShape;
 %rename(getusers) XCAFDoc_ShapeTool::GetUsers;
 %rename(getlocation) XCAFDoc_ShapeTool::GetLocation;
 %rename(getreferredshape) XCAFDoc_ShapeTool::GetReferredShape;
@@ -105,14 +104,11 @@ $HeaderURL$
 %rename(getid) XCAFDoc_LayerTool::GetID;
 %rename(find) XCAFDoc_GraphNode::Find;
 %rename(set) XCAFDoc_GraphNode::Set;
-%rename(set) XCAFDoc_GraphNode::Set;
 %rename(getdefaultgraphid) XCAFDoc_GraphNode::GetDefaultGraphID;
 %rename(getid) XCAFDoc_Area::GetID;
 %rename(set) XCAFDoc_Area::Set;
 %rename(get) XCAFDoc_Area::Get;
 %rename(getid) XCAFDoc_Color::GetID;
-%rename(set) XCAFDoc_Color::Set;
-%rename(set) XCAFDoc_Color::Set;
 %rename(set) XCAFDoc_Color::Set;
 %rename(getid) XCAFDoc_Location::GetID;
 %rename(set) XCAFDoc_Location::Set;

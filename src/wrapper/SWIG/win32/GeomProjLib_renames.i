@@ -24,10 +24,5 @@ $HeaderURL$
 
 */
 %rename(curve2d) GeomProjLib::Curve2d;
-%rename(curve2d) GeomProjLib::Curve2d;
-%rename(curve2d) GeomProjLib::Curve2d;
-%rename(curve2d) GeomProjLib::Curve2d;
-%rename(curve2d) GeomProjLib::Curve2d;
-%rename(curve2d) GeomProjLib::Curve2d;
 %rename(project) GeomProjLib::Project;
 %rename(projectonplane) GeomProjLib::ProjectOnPlane;

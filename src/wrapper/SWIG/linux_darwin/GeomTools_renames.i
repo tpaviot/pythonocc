@@ -31,12 +31,6 @@ $HeaderURL$
 %rename(dump) GeomTools::Dump;
 %rename(write) GeomTools::Write;
 %rename(read) GeomTools::Read;
-%rename(dump) GeomTools::Dump;
-%rename(write) GeomTools::Write;
-%rename(read) GeomTools::Read;
-%rename(dump) GeomTools::Dump;
-%rename(write) GeomTools::Write;
-%rename(read) GeomTools::Read;
 %rename(setundefinedtypehandler) GeomTools::SetUndefinedTypeHandler;
 %rename(getundefinedtypehandler) GeomTools::GetUndefinedTypeHandler;
 %rename(printsurface) GeomTools_SurfaceSet::PrintSurface;

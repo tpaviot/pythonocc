@@ -36,7 +36,6 @@ $HeaderURL$
 %rename(downcast) Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression::DownCast;
 %rename(create) ExprIntrp_GenFct::Create;
 %rename(raise) ExprIntrp_SyntaxError::Raise;
-%rename(raise) ExprIntrp_SyntaxError::Raise;
 %rename(newinstance) ExprIntrp_SyntaxError::NewInstance;
 %rename(create) ExprIntrp_GenRel::Create;
 %rename(create) ExprIntrp_GenExp::Create;

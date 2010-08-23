@@ -34,5 +34,4 @@ $HeaderURL$
 %rename(downcast) Handle_XmlMXCAFDoc_ColorToolDriver::DownCast;
 %rename(downcast) Handle_XmlMXCAFDoc_ShapeToolDriver::DownCast;
 %rename(translate) XmlMXCAFDoc_LocationDriver::Translate;
-%rename(translate) XmlMXCAFDoc_LocationDriver::Translate;
 %rename(adddrivers) XmlMXCAFDoc::AddDrivers;

@@ -33,7 +33,6 @@ $HeaderURL$
 %rename(downcast) Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter::DownCast;
 %rename(downcast) Handle_HLRBRep_Data::DownCast;
 %rename(findparameter) HLRBRep_TheProjPCurOfCInter::FindParameter;
-%rename(findparameter) HLRBRep_TheProjPCurOfCInter::FindParameter;
 %rename(firstparameter) HLRBRep_LineTool::FirstParameter;
 %rename(lastparameter) HLRBRep_LineTool::LastParameter;
 %rename(continuity) HLRBRep_LineTool::Continuity;
@@ -172,8 +171,6 @@ $HeaderURL$
 %rename(basiscurve) HLRBRep_BSurfaceTool::BasisCurve;
 %rename(nbsamplesu) HLRBRep_BSurfaceTool::NbSamplesU;
 %rename(nbsamplesv) HLRBRep_BSurfaceTool::NbSamplesV;
-%rename(nbsamplesu) HLRBRep_BSurfaceTool::NbSamplesU;
-%rename(nbsamplesv) HLRBRep_BSurfaceTool::NbSamplesV;
 %rename(makeedge) HLRBRep::MakeEdge;
 %rename(polyhlrangleanddeflection) HLRBRep::PolyHLRAngleAndDeflection;
 %rename(bounding) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::Bounding;
@@ -218,7 +215,6 @@ $HeaderURL$
 %rename(bspline) HLRBRep_CurveTool::BSpline;
 %rename(epsx) HLRBRep_CurveTool::EpsX;
 %rename(nbsamples) HLRBRep_CurveTool::NbSamples;
-%rename(nbsamples) HLRBRep_CurveTool::NbSamples;
 %rename(firstuparameter) HLRBRep_SurfaceTool::FirstUParameter;
 %rename(firstvparameter) HLRBRep_SurfaceTool::FirstVParameter;
 %rename(lastuparameter) HLRBRep_SurfaceTool::LastUParameter;
@@ -256,7 +252,5 @@ $HeaderURL$
 %rename(basiscurve) HLRBRep_SurfaceTool::BasisCurve;
 %rename(basissurface) HLRBRep_SurfaceTool::BasisSurface;
 %rename(offsetvalue) HLRBRep_SurfaceTool::OffsetValue;
-%rename(nbsamplesu) HLRBRep_SurfaceTool::NbSamplesU;
-%rename(nbsamplesv) HLRBRep_SurfaceTool::NbSamplesV;
 %rename(nbsamplesu) HLRBRep_SurfaceTool::NbSamplesU;
 %rename(nbsamplesv) HLRBRep_SurfaceTool::NbSamplesV;

@@ -24,6 +24,5 @@ $HeaderURL$
 
 */
 %rename(determinetransition) IntImpParGen::DetermineTransition;
-%rename(determinetransition) IntImpParGen::DetermineTransition;
 %rename(determineposition) IntImpParGen::DeterminePosition;
 %rename(normalizeondomain) IntImpParGen::NormalizeOnDomain;

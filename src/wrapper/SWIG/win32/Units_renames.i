@@ -44,9 +44,7 @@ $HeaderURL$
 %rename(downcast) Handle_Units_SequenceNodeOfStrgSequence::DownCast;
 %rename(downcast) Handle_Units_Quantity::DownCast;
 %rename(raise) Units_NoSuchType::Raise;
-%rename(raise) Units_NoSuchType::Raise;
 %rename(newinstance) Units_NoSuchType::NewInstance;
-%rename(raise) Units_NoSuchUnit::Raise;
 %rename(raise) Units_NoSuchUnit::Raise;
 %rename(newinstance) Units_NoSuchUnit::NewInstance;
 %rename(unitsfile) Units::UnitsFile;
@@ -59,7 +57,5 @@ $HeaderURL$
 %rename(nulldimensions) Units::NullDimensions;
 %rename(convert) Units::Convert;
 %rename(tosi) Units::ToSI;
-%rename(tosi) Units::ToSI;
-%rename(fromsi) Units::FromSI;
 %rename(fromsi) Units::FromSI;
 %rename(dimensions) Units::Dimensions;

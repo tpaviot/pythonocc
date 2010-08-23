@@ -25,12 +25,7 @@ $HeaderURL$
 */
 %rename(downcast) Handle_GccEnt_BadQualifier::DownCast;
 %rename(unqualified) GccEnt::Unqualified;
-%rename(unqualified) GccEnt::Unqualified;
-%rename(enclosing) GccEnt::Enclosing;
-%rename(enclosed) GccEnt::Enclosed;
 %rename(enclosed) GccEnt::Enclosed;
 %rename(outside) GccEnt::Outside;
-%rename(outside) GccEnt::Outside;
-%rename(raise) GccEnt_BadQualifier::Raise;
 %rename(raise) GccEnt_BadQualifier::Raise;
 %rename(newinstance) GccEnt_BadQualifier::NewInstance;

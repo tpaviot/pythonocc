@@ -63,7 +63,6 @@ $HeaderURL$
 %rename(polesandweights) HLRBRep_BCurveTool::PolesAndWeights;
 %rename(nbsamples) HLRBRep_BCurveTool::NbSamples;
 %rename(findparameter) HLRBRep_TheProjPCurOfCInter::FindParameter;
-%rename(findparameter) HLRBRep_TheProjPCurOfCInter::FindParameter;
 %rename(firstuparameter) HLRBRep_BSurfaceTool::FirstUParameter;
 %rename(firstvparameter) HLRBRep_BSurfaceTool::FirstVParameter;
 %rename(lastuparameter) HLRBRep_BSurfaceTool::LastUParameter;
@@ -109,8 +108,6 @@ $HeaderURL$
 %rename(axeofrevolution) HLRBRep_BSurfaceTool::AxeOfRevolution;
 %rename(direction) HLRBRep_BSurfaceTool::Direction;
 %rename(basiscurve) HLRBRep_BSurfaceTool::BasisCurve;
-%rename(nbsamplesu) HLRBRep_BSurfaceTool::NbSamplesU;
-%rename(nbsamplesv) HLRBRep_BSurfaceTool::NbSamplesV;
 %rename(nbsamplesu) HLRBRep_BSurfaceTool::NbSamplesU;
 %rename(nbsamplesv) HLRBRep_BSurfaceTool::NbSamplesV;
 %rename(firstparameter) HLRBRep_LineTool::FirstParameter;
@@ -216,7 +213,6 @@ $HeaderURL$
 %rename(bspline) HLRBRep_CurveTool::BSpline;
 %rename(epsx) HLRBRep_CurveTool::EpsX;
 %rename(nbsamples) HLRBRep_CurveTool::NbSamples;
-%rename(nbsamples) HLRBRep_CurveTool::NbSamples;
 %rename(firstuparameter) HLRBRep_SurfaceTool::FirstUParameter;
 %rename(firstvparameter) HLRBRep_SurfaceTool::FirstVParameter;
 %rename(lastuparameter) HLRBRep_SurfaceTool::LastUParameter;
@@ -254,8 +250,6 @@ $HeaderURL$
 %rename(basiscurve) HLRBRep_SurfaceTool::BasisCurve;
 %rename(basissurface) HLRBRep_SurfaceTool::BasisSurface;
 %rename(offsetvalue) HLRBRep_SurfaceTool::OffsetValue;
-%rename(nbsamplesu) HLRBRep_SurfaceTool::NbSamplesU;
-%rename(nbsamplesv) HLRBRep_SurfaceTool::NbSamplesV;
 %rename(nbsamplesu) HLRBRep_SurfaceTool::NbSamplesU;
 %rename(nbsamplesv) HLRBRep_SurfaceTool::NbSamplesV;
 %rename(addinterference) HLRBRep_EdgeIList::AddInterference;

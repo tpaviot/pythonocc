@@ -48,5 +48,4 @@ $HeaderURL$
 %rename(pickgrid) V3d::PickGrid;
 %rename(setplane) V3d::SetPlane;
 %rename(raise) V3d_UnMapped::Raise;
-%rename(raise) V3d_UnMapped::Raise;
 %rename(newinstance) V3d_UnMapped::NewInstance;

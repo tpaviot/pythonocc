@@ -56,7 +56,6 @@ $HeaderURL$
 %rename(setglobal) IGESData_WriterLib::SetGlobal;
 %rename(setglobal) IGESData_SpecificLib::SetGlobal;
 %rename(newdatestring) IGESData_GlobalSection::NewDateString;
-%rename(newdatestring) IGESData_GlobalSection::NewDateString;
 %rename(unitnameflag) IGESData_BasicEditor::UnitNameFlag;
 %rename(unitflagvalue) IGESData_BasicEditor::UnitFlagValue;
 %rename(unitflagname) IGESData_BasicEditor::UnitFlagName;

@@ -25,5 +25,4 @@ $HeaderURL$
 */
 %rename(concaveside) ChFi3d::ConcaveSide;
 %rename(nextside) ChFi3d::NextSide;
-%rename(nextside) ChFi3d::NextSide;
 %rename(sameside) ChFi3d::SameSide;

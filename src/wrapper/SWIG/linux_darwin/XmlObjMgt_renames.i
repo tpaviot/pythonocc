@@ -35,10 +35,4 @@ $HeaderURL$
 %rename(findchildbyref) XmlObjMgt::FindChildByRef;
 %rename(findchildbyname) XmlObjMgt::FindChildByName;
 %rename(getreal) XmlObjMgt::GetReal;
-%rename(getreal) XmlObjMgt::GetReal;
-%rename(translate) XmlObjMgt_GP::Translate;
-%rename(translate) XmlObjMgt_GP::Translate;
-%rename(translate) XmlObjMgt_GP::Translate;
-%rename(translate) XmlObjMgt_GP::Translate;
-%rename(translate) XmlObjMgt_GP::Translate;
 %rename(translate) XmlObjMgt_GP::Translate;

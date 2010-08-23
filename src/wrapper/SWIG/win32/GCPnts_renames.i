@@ -24,10 +24,3 @@ $HeaderURL$
 
 */
 %rename(length) GCPnts_AbscissaPoint::Length;
-%rename(length) GCPnts_AbscissaPoint::Length;
-%rename(length) GCPnts_AbscissaPoint::Length;
-%rename(length) GCPnts_AbscissaPoint::Length;
-%rename(length) GCPnts_AbscissaPoint::Length;
-%rename(length) GCPnts_AbscissaPoint::Length;
-%rename(length) GCPnts_AbscissaPoint::Length;
-%rename(length) GCPnts_AbscissaPoint::Length;

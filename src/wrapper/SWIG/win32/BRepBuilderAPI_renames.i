@@ -25,6 +25,4 @@ $HeaderURL$
 */
 %rename(downcast) Handle_BRepBuilderAPI_Sewing::DownCast;
 %rename(plane) BRepBuilderAPI::Plane;
-%rename(plane) BRepBuilderAPI::Plane;
-%rename(precision) BRepBuilderAPI::Precision;
 %rename(precision) BRepBuilderAPI::Precision;

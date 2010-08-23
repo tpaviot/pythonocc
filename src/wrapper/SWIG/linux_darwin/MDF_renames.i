@@ -44,12 +44,9 @@ $HeaderURL$
 %rename(downcast) Handle_MDF_DataMapNodeOfTypeASDriverMap::DownCast;
 %rename(downcast) Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable::DownCast;
 %rename(fromto) MDF::FromTo;
-%rename(fromto) MDF::FromTo;
 %rename(addstoragedrivers) MDF::AddStorageDrivers;
 %rename(addretrievaldrivers) MDF::AddRetrievalDrivers;
 %rename(writelabels) MDF_Tool::WriteLabels;
-%rename(writelabels) MDF_Tool::WriteLabels;
 %rename(writeattributes) MDF_Tool::WriteAttributes;
-%rename(readlabels) MDF_Tool::ReadLabels;
 %rename(readlabels) MDF_Tool::ReadLabels;
 %rename(readattributes) MDF_Tool::ReadAttributes;

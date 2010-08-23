@@ -30,10 +30,6 @@ $HeaderURL$
 %rename(downcast) Handle_Poly_CoherentTriangulation::DownCast;
 %rename(downcast) Handle_Poly_Triangulation::DownCast;
 %rename(write) Poly::Write;
-%rename(write) Poly::Write;
-%rename(write) Poly::Write;
-%rename(dump) Poly::Dump;
-%rename(dump) Poly::Dump;
 %rename(dump) Poly::Dump;
 %rename(readtriangulation) Poly::ReadTriangulation;
 %rename(readpolygon3d) Poly::ReadPolygon3D;

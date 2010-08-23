@@ -69,5 +69,4 @@ $HeaderURL$
 %rename(pseudoshape) SMESH_Mesh::PseudoShape;
 %rename(isapplicablehypotesis) SMESH_subMesh::IsApplicableHypotesis;
 %rename(getshapedim) SMESH_Gen::GetShapeDim;
-%rename(getshapedim) SMESH_Gen::GetShapeDim;
 %rename(isglobalhypothesis) SMESH_Gen::IsGlobalHypothesis;

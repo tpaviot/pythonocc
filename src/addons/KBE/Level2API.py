@@ -820,7 +820,7 @@ class Face(object):
         # DAMNED this is a Bezier, not a BSPLINE
         from OCC.TopLoc import TopLoc_Location
         self.location = TopLoc_Location()
-        self.h_srf = BRep_Tool().Surface(face, self.location)
+        self.h_srf = BRep_Tool_surface(face, self.location)
 #        self.h_srf.Transform(self.location.Transformation())
         self.srf = self.h_srf.GetObject()
         
@@ -843,7 +843,7 @@ class Face(object):
     def domain(self):
         '''returns the u,v domain of the curve'''
         from OCC.BRepTools import BRepTools
-        return BRepTools().UVBounds(self.face)
+        return BRepTools_uvbounds(self.face)
         
     def distance(self, other, extrema=False):
         '''returns the distance self with a point, curve, edge, face, solid

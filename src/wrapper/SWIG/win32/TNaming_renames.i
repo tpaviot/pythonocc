@@ -38,8 +38,6 @@ $HeaderURL$
 %rename(hashcode) TNaming_NamedShapeHasher::HashCode;
 %rename(isequal) TNaming_NamedShapeHasher::IsEqual;
 %rename(currentshape) TNaming_Tool::CurrentShape;
-%rename(currentshape) TNaming_Tool::CurrentShape;
-%rename(currentnamedshape) TNaming_Tool::CurrentNamedShape;
 %rename(currentnamedshape) TNaming_Tool::CurrentNamedShape;
 %rename(namedshape) TNaming_Tool::NamedShape;
 %rename(getshape) TNaming_Tool::GetShape;
@@ -56,7 +54,6 @@ $HeaderURL$
 %rename(builddescendants) TNaming_NamingTool::BuildDescendants;
 %rename(copytool) TNaming_CopyShape::CopyTool;
 %rename(translate) TNaming_CopyShape::Translate;
-%rename(translate) TNaming_CopyShape::Translate;
 %rename(isidentified) TNaming_Selector::IsIdentified;
 %rename(getid) TNaming_NamedShape::GetID;
 %rename(getid) TNaming_UsedShapes::GetID;
@@ -72,8 +69,5 @@ $HeaderURL$
 %rename(changeshapes) TNaming::ChangeShapes;
 %rename(transform) TNaming::Transform;
 %rename(replicate) TNaming::Replicate;
-%rename(replicate) TNaming::Replicate;
 %rename(idlist) TNaming::IDList;
-%rename(print) TNaming::Print;
-%rename(print) TNaming::Print;
 %rename(print) TNaming::Print;

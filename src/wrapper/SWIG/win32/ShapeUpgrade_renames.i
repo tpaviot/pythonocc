@@ -47,4 +47,3 @@ $HeaderURL$
 %rename(downcast) Handle_ShapeUpgrade_SplitCurve3dContinuity::DownCast;
 %rename(downcast) Handle_ShapeUpgrade_WireDivide::DownCast;
 %rename(c0bsplinetosequenceofc1bsplinecurve) ShapeUpgrade::C0BSplineToSequenceOfC1BSplineCurve;
-%rename(c0bsplinetosequenceofc1bsplinecurve) ShapeUpgrade::C0BSplineToSequenceOfC1BSplineCurve;

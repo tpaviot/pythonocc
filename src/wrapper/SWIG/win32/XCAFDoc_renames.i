@@ -52,7 +52,6 @@ $HeaderURL$
 %rename(set) XCAFDoc_DimTol::Set;
 %rename(find) XCAFDoc_GraphNode::Find;
 %rename(set) XCAFDoc_GraphNode::Set;
-%rename(set) XCAFDoc_GraphNode::Set;
 %rename(getdefaultgraphid) XCAFDoc_GraphNode::GetDefaultGraphID;
 %rename(set) XCAFDoc_ColorTool::Set;
 %rename(getid) XCAFDoc_ColorTool::GetID;
@@ -82,7 +81,6 @@ $HeaderURL$
 %rename(iscomponent) XCAFDoc_ShapeTool::IsComponent;
 %rename(iscompound) XCAFDoc_ShapeTool::IsCompound;
 %rename(issubshape) XCAFDoc_ShapeTool::IsSubShape;
-%rename(getshape) XCAFDoc_ShapeTool::GetShape;
 %rename(getshape) XCAFDoc_ShapeTool::GetShape;
 %rename(getusers) XCAFDoc_ShapeTool::GetUsers;
 %rename(getlocation) XCAFDoc_ShapeTool::GetLocation;
@@ -118,8 +116,6 @@ $HeaderURL$
 %rename(dimtoltool) XCAFDoc_DocumentTool::DimTolTool;
 %rename(materialtool) XCAFDoc_DocumentTool::MaterialTool;
 %rename(getid) XCAFDoc_Color::GetID;
-%rename(set) XCAFDoc_Color::Set;
-%rename(set) XCAFDoc_Color::Set;
 %rename(set) XCAFDoc_Color::Set;
 %rename(getid) XCAFDoc_Datum::GetID;
 %rename(set) XCAFDoc_Datum::Set;

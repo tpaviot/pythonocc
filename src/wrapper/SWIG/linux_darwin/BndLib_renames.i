@@ -24,30 +24,6 @@ $HeaderURL$
 
 */
 %rename(add) BndLib_AddSurface::Add;
-%rename(add) BndLib_AddSurface::Add;
-%rename(add) BndLib_Add3dCurve::Add;
 %rename(add) BndLib_Add3dCurve::Add;
 %rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib::Add;
-%rename(add) BndLib_Add2dCurve::Add;
 %rename(add) BndLib_Add2dCurve::Add;

@@ -37,7 +37,6 @@ $HeaderURL$
 %rename(getprojector) StdSelect::GetProjector;
 %rename(setdrawerforbrepowner) StdSelect::SetDrawerForBRepOwner;
 %rename(load) StdSelect_BRepSelectionTool::Load;
-%rename(load) StdSelect_BRepSelectionTool::Load;
 %rename(getstandardpriority) StdSelect_BRepSelectionTool::GetStandardPriority;
 %rename(computesensitive) StdSelect_BRepSelectionTool::ComputeSensitive;
 %rename(getsensitiveforface) StdSelect_BRepSelectionTool::GetSensitiveForFace;

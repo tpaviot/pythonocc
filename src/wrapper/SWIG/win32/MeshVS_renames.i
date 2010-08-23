@@ -65,7 +65,6 @@ $HeaderURL$
 %rename(hashcode) MeshVS_TwoNodesHasher::HashCode;
 %rename(isequal) MeshVS_TwoNodesHasher::IsEqual;
 %rename(createaspectfillarea3d) MeshVS_Tool::CreateAspectFillArea3d;
-%rename(createaspectfillarea3d) MeshVS_Tool::CreateAspectFillArea3d;
 %rename(createaspectline3d) MeshVS_Tool::CreateAspectLine3d;
 %rename(createaspectmarker3d) MeshVS_Tool::CreateAspectMarker3d;
 %rename(createaspecttext3d) MeshVS_Tool::CreateAspectText3d;

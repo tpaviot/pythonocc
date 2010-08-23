@@ -29,17 +29,9 @@ $HeaderURL$
 %rename(nbp3d) AppCont_FunctionTool2d::NbP3d;
 %rename(value) AppCont_FunctionTool2d::Value;
 %rename(d1) AppCont_FunctionTool2d::D1;
-%rename(value) AppCont_FunctionTool2d::Value;
-%rename(value) AppCont_FunctionTool2d::Value;
-%rename(d1) AppCont_FunctionTool2d::D1;
-%rename(d1) AppCont_FunctionTool2d::D1;
 %rename(firstparameter) AppCont_FunctionTool::FirstParameter;
 %rename(lastparameter) AppCont_FunctionTool::LastParameter;
 %rename(nbp2d) AppCont_FunctionTool::NbP2d;
 %rename(nbp3d) AppCont_FunctionTool::NbP3d;
 %rename(value) AppCont_FunctionTool::Value;
-%rename(d1) AppCont_FunctionTool::D1;
-%rename(value) AppCont_FunctionTool::Value;
-%rename(value) AppCont_FunctionTool::Value;
-%rename(d1) AppCont_FunctionTool::D1;
 %rename(d1) AppCont_FunctionTool::D1;

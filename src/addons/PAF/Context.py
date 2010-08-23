@@ -251,7 +251,7 @@ class ParametricModelingContext(object):
             raise NameError, 'The instance must be of type Viewer3d'
         self.display = Viewer3d_instance
         # init the viewer
-        self.viewer = TPrsStd_AISViewer().New(self.root, self.display.Context_handle).GetObject()
+        self.viewer = TPrsStd_AISViewer_new(self.root, self.display.Context_handle).GetObject()
         self.DISPLAY_INITED = True
         print '[PAF] Display properly initialized'
         # If geom were already created before the display is initialized, create presentations
@@ -380,7 +380,7 @@ class ParametricModelingContext(object):
         ''' Create a presentation and add it to the presentation list
         '''
         result_label = obj.GetLastFunction().GetObject().GetEntry().FindChild(2)
-        prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
+        prs = TPrsStd_AISPresentation_set(result_label, TNaming_NamedShape_getid()).GetObject()
         prs.SetColor(color)
         prs.Display(True)
         self.pres[obj]=prs
@@ -393,7 +393,7 @@ class ParametricModelingContext(object):
         result_label = geom_obj.GetLastFunction().GetObject().GetEntry().FindChild(2)        
         # TPrsStd_AISPresentation().Set can create or retrieve the AIS_Presentation        
         # so, this is not re-creating the TPrsStd_AISPresentation presentation        
-        prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()        
+        prs = TPrsStd_AISPresentation_set(result_label, TNaming_NamedShape_getid()).GetObject()        
         return prs
     
     def update_display(self):
@@ -402,7 +402,7 @@ class ParametricModelingContext(object):
         if self.DISPLAY_INITED:
             for prs in self.pres.itervalues():
                 prs.Update()
-                self.viewer.Update()
+                self.viewer.update()
             self.display.FitAll()
 
 if __name__=='__main__':

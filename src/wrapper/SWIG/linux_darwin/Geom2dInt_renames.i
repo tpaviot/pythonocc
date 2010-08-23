@@ -37,8 +37,6 @@ $HeaderURL$
 %rename(parabola) Geom2dInt_Geom2dCurveTool::Parabola;
 %rename(hyperbola) Geom2dInt_Geom2dCurveTool::Hyperbola;
 %rename(epsx) Geom2dInt_Geom2dCurveTool::EpsX;
-%rename(epsx) Geom2dInt_Geom2dCurveTool::EpsX;
-%rename(nbsamples) Geom2dInt_Geom2dCurveTool::NbSamples;
 %rename(nbsamples) Geom2dInt_Geom2dCurveTool::NbSamples;
 %rename(firstparameter) Geom2dInt_Geom2dCurveTool::FirstParameter;
 %rename(lastparameter) Geom2dInt_Geom2dCurveTool::LastParameter;
@@ -49,5 +47,4 @@ $HeaderURL$
 %rename(nbintervals) Geom2dInt_Geom2dCurveTool::NbIntervals;
 %rename(intervals) Geom2dInt_Geom2dCurveTool::Intervals;
 %rename(getinterval) Geom2dInt_Geom2dCurveTool::GetInterval;
-%rename(findparameter) Geom2dInt_TheProjPCurOfGInter::FindParameter;
 %rename(findparameter) Geom2dInt_TheProjPCurOfGInter::FindParameter;

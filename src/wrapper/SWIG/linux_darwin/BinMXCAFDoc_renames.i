@@ -35,4 +35,3 @@ $HeaderURL$
 %rename(downcast) Handle_BinMXCAFDoc_LayerToolDriver::DownCast;
 %rename(adddrivers) BinMXCAFDoc::AddDrivers;
 %rename(translate) BinMXCAFDoc_LocationDriver::Translate;
-%rename(translate) BinMXCAFDoc_LocationDriver::Translate;

@@ -43,13 +43,9 @@ $HeaderURL$
 %rename(makebspline1fromwalking3d) TopOpeBRep_GeomTool::MakeBSpline1fromWALKING3d;
 %rename(makebspline1fromwalking2d) TopOpeBRep_GeomTool::MakeBSpline1fromWALKING2d;
 %rename(processlinetransition) TopOpeBRep_FFTransitionTool::ProcessLineTransition;
-%rename(processlinetransition) TopOpeBRep_FFTransitionTool::ProcessLineTransition;
 %rename(processedgetransition) TopOpeBRep_FFTransitionTool::ProcessEdgeTransition;
 %rename(processfacetransition) TopOpeBRep_FFTransitionTool::ProcessFaceTransition;
 %rename(processedgeontransition) TopOpeBRep_FFTransitionTool::ProcessEdgeONTransition;
-%rename(makepoint) TopOpeBRep_PointGeomTool::MakePoint;
-%rename(makepoint) TopOpeBRep_PointGeomTool::MakePoint;
-%rename(makepoint) TopOpeBRep_PointGeomTool::MakePoint;
 %rename(makepoint) TopOpeBRep_PointGeomTool::MakePoint;
 %rename(isequal) TopOpeBRep_PointGeomTool::IsEqual;
 %rename(print) TopOpeBRep::Print;

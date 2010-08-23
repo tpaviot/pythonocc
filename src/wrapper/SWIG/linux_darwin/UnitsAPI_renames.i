@@ -28,8 +28,6 @@ $HeaderURL$
 %rename(currentfromls) UnitsAPI::CurrentFromLS;
 %rename(currentfromsi) UnitsAPI::CurrentFromSI;
 %rename(anytols) UnitsAPI::AnyToLS;
-%rename(anytols) UnitsAPI::AnyToLS;
-%rename(anytosi) UnitsAPI::AnyToSI;
 %rename(anytosi) UnitsAPI::AnyToSI;
 %rename(anyfromls) UnitsAPI::AnyFromLS;
 %rename(anyfromsi) UnitsAPI::AnyFromSI;

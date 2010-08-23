@@ -57,10 +57,7 @@ $HeaderURL$
 %rename(hashcode) Transfer_FindHasher::HashCode;
 %rename(isequal) Transfer_FindHasher::IsEqual;
 %rename(raise) Transfer_TransferFailure::Raise;
-%rename(raise) Transfer_TransferFailure::Raise;
 %rename(newinstance) Transfer_TransferFailure::NewInstance;
-%rename(raise) Transfer_TransferDeadLoop::Raise;
 %rename(raise) Transfer_TransferDeadLoop::Raise;
 %rename(newinstance) Transfer_TransferDeadLoop::NewInstance;
 %rename(type) Transfer_DataInfo::Type;
-%rename(typename) Transfer_DataInfo::TypeName;

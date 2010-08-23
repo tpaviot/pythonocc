@@ -26,7 +26,6 @@ $HeaderURL$
 %rename(downcast) Handle_math_NotSquare::DownCast;
 %rename(downcast) Handle_math_SingularMatrix::DownCast;
 %rename(raise) math_SingularMatrix::Raise;
-%rename(raise) math_SingularMatrix::Raise;
 %rename(newinstance) math_SingularMatrix::NewInstance;
 %rename(gausspointsmax) math::GaussPointsMax;
 %rename(gausspoints) math::GaussPoints;
@@ -35,7 +34,6 @@ $HeaderURL$
 %rename(orderedgausspointsandweights) math::OrderedGaussPointsAndWeights;
 %rename(kronrodpointsandweights) math::KronrodPointsAndWeights;
 %rename(sort) math_QuickSortOfValueAndWeight::Sort;
-%rename(raise) math_NotSquare::Raise;
 %rename(raise) math_NotSquare::Raise;
 %rename(newinstance) math_NotSquare::NewInstance;
 %rename(gkrule) math_KronrodSingleIntegration::GKRule;

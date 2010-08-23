@@ -57,8 +57,6 @@ $HeaderURL$
 %rename(downcast) Handle_GeomFill_LocationGuide::DownCast;
 %rename(surface) GeomFill::Surface;
 %rename(getcircle) GeomFill::GetCircle;
-%rename(getcircle) GeomFill::GetCircle;
-%rename(getcircle) GeomFill::GetCircle;
 %rename(getshape) GeomFill::GetShape;
 %rename(knots) GeomFill::Knots;
 %rename(mults) GeomFill::Mults;

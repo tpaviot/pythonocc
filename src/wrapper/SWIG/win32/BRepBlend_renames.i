@@ -115,8 +115,6 @@ $HeaderURL$
 %rename(basiscurve) BRepBlend_HSurfaceTool::BasisCurve;
 %rename(nbsamplesu) BRepBlend_HSurfaceTool::NbSamplesU;
 %rename(nbsamplesv) BRepBlend_HSurfaceTool::NbSamplesV;
-%rename(nbsamplesu) BRepBlend_HSurfaceTool::NbSamplesU;
-%rename(nbsamplesv) BRepBlend_HSurfaceTool::NbSamplesV;
 %rename(project) BRepBlend_BlendTool::Project;
 %rename(inters) BRepBlend_BlendTool::Inters;
 %rename(parameter) BRepBlend_BlendTool::Parameter;

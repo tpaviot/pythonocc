@@ -29,5 +29,4 @@ $HeaderURL$
 %rename(decodeedgeerror) TopoDSToStep::DecodeEdgeError;
 %rename(decodevertexerror) TopoDSToStep::DecodeVertexError;
 %rename(addresult) TopoDSToStep::AddResult;
-%rename(addresult) TopoDSToStep::AddResult;
 %rename(checktopodsshape) TopoDSToStep_FacetedTool::CheckTopoDSShape;

@@ -27,8 +27,6 @@ $HeaderURL$
 %rename(downcast) Handle_LProp_BadContinuity::DownCast;
 %rename(downcast) Handle_LProp_NotDefined::DownCast;
 %rename(raise) LProp_BadContinuity::Raise;
-%rename(raise) LProp_BadContinuity::Raise;
 %rename(newinstance) LProp_BadContinuity::NewInstance;
-%rename(raise) LProp_NotDefined::Raise;
 %rename(raise) LProp_NotDefined::Raise;
 %rename(newinstance) LProp_NotDefined::NewInstance;

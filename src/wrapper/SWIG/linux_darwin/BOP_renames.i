@@ -42,7 +42,6 @@ $HeaderURL$
 %rename(sorttypes) BOP_Builder::SortTypes;
 %rename(drawlistofshape) BOP_Draw::DrawListOfShape;
 %rename(drawlistofedgeswithpc) BOP_Draw::DrawListOfEdgesWithPC;
-%rename(drawlistofedgeswithpc) BOP_Draw::DrawListOfEdgesWithPC;
 %rename(drawedgewithpc) BOP_Draw::DrawEdgeWithPC;
 %rename(wait) BOP_Draw::Wait;
 %rename(checkargtypes) BOP_WireShell::CheckArgTypes;

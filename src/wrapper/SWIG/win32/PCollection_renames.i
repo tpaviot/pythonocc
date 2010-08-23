@@ -29,11 +29,8 @@ $HeaderURL$
 %rename(downcast) Handle_PCollection_IsContained::DownCast;
 %rename(downcast) Handle_PCollection_IsNullTree::DownCast;
 %rename(raise) PCollection_IsNullTree::Raise;
-%rename(raise) PCollection_IsNullTree::Raise;
 %rename(newinstance) PCollection_IsNullTree::NewInstance;
 %rename(raise) PCollection_IsNotRoot::Raise;
-%rename(raise) PCollection_IsNotRoot::Raise;
 %rename(newinstance) PCollection_IsNotRoot::NewInstance;
-%rename(raise) PCollection_IsContained::Raise;
 %rename(raise) PCollection_IsContained::Raise;
 %rename(newinstance) PCollection_IsContained::NewInstance;

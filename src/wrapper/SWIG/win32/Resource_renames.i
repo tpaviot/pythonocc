@@ -29,7 +29,6 @@ $HeaderURL$
 %rename(downcast) Handle_Resource_NoSuchResource::DownCast;
 %rename(sort) Resource_QuickSortOfArray1::Sort;
 %rename(raise) Resource_NoSuchResource::Raise;
-%rename(raise) Resource_NoSuchResource::Raise;
 %rename(newinstance) Resource_NoSuchResource::NewInstance;
 %rename(convertsjistounicode) Resource_Unicode::ConvertSJISToUnicode;
 %rename(converteuctounicode) Resource_Unicode::ConvertEUCToUnicode;

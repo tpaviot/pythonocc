@@ -27,5 +27,4 @@ $HeaderURL$
 %rename(downcast) Handle_BRepExtrema_SequenceNodeOfSeqOfSolution::DownCast;
 %rename(distance) BRepExtrema_Poly::Distance;
 %rename(raise) BRepExtrema_UnCompatibleShape::Raise;
-%rename(raise) BRepExtrema_UnCompatibleShape::Raise;
 %rename(newinstance) BRepExtrema_UnCompatibleShape::NewInstance;

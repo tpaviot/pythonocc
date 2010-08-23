@@ -32,11 +32,7 @@ $HeaderURL$
 %rename(downcast) Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger::DownCast;
 %rename(makenewvertex) NMTTools_Tools::MakeNewVertex;
 %rename(findchains) NMTTools_Tools::FindChains;
-%rename(findchains) NMTTools_Tools::FindChains;
-%rename(findchains) NMTTools_Tools::FindChains;
 %rename(issplitinonface) NMTTools_Tools::IsSplitInOnFace;
 %rename(arefacessamedomain) NMTTools_Tools::AreFacesSameDomain;
-%rename(findchains) NMTTools_Tools::FindChains;
-%rename(findchains) NMTTools_Tools::FindChains;
 %rename(makepcurve) NMTTools_Tools::MakePCurve;
 %rename(updateedge) NMTTools_Tools::UpdateEdge;

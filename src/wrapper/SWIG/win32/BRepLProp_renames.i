@@ -37,4 +37,3 @@ $HeaderURL$
 %rename(firstparameter) BRepLProp_CurveTool::FirstParameter;
 %rename(lastparameter) BRepLProp_CurveTool::LastParameter;
 %rename(continuity) BRepLProp::Continuity;
-%rename(continuity) BRepLProp::Continuity;

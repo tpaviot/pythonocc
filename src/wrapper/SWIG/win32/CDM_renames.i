@@ -40,4 +40,3 @@ $HeaderURL$
 %rename(hashcode) CDM_DocumentHasher::HashCode;
 %rename(isequal) CDM_DocumentHasher::IsEqual;
 %rename(lookup) CDM_MetaData::LookUp;
-%rename(lookup) CDM_MetaData::LookUp;

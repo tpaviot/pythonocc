@@ -25,5 +25,4 @@ $HeaderURL$
 */
 %rename(downcast) Handle_GccIter_IsParallel::DownCast;
 %rename(raise) GccIter_IsParallel::Raise;
-%rename(raise) GccIter_IsParallel::Raise;
 %rename(newinstance) GccIter_IsParallel::NewInstance;

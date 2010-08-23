@@ -31,14 +31,11 @@ $HeaderURL$
 %rename(downcast) Handle_MFT_SequenceNodeOfListOfFontReference::DownCast;
 %rename(downcast) Handle_MFT_FontManagerDefinitionError::DownCast;
 %rename(raise) MFT_FontManagerDefinitionError::Raise;
-%rename(raise) MFT_FontManagerDefinitionError::Raise;
 %rename(newinstance) MFT_FontManagerDefinitionError::NewInstance;
-%rename(raise) MFT_FontManagerError::Raise;
 %rename(raise) MFT_FontManagerError::Raise;
 %rename(newinstance) MFT_FontManagerError::NewInstance;
 %rename(isknown) MFT_FontManager::IsKnown;
 %rename(font) MFT_FontManager::Font;
 %rename(fontnumber) MFT_FontManager::FontNumber;
-%rename(font) MFT_FontManager::Font;
 %rename(maxcommandvalues) MFT_FontManager::MaxCommandValues;
 %rename(restore) MFT_FontManager::Restore;

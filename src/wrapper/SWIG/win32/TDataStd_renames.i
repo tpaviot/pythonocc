@@ -87,7 +87,6 @@ $HeaderURL$
 %rename(getid) TDataStd_BooleanList::GetID;
 %rename(set) TDataStd_BooleanList::Set;
 %rename(set) TDataStd_Position::Set;
-%rename(set) TDataStd_Position::Set;
 %rename(get) TDataStd_Position::Get;
 %rename(getid) TDataStd_Position::GetID;
 %rename(getid) TDataStd_ExtStringArray::GetID;
@@ -98,8 +97,6 @@ $HeaderURL$
 %rename(getid) TDataStd_Pattern::GetID;
 %rename(idlist) TDataStd::IDList;
 %rename(print) TDataStd::Print;
-%rename(print) TDataStd::Print;
-%rename(print) TDataStd::Print;
 %rename(find) TDataStd_Directory::Find;
 %rename(new) TDataStd_Directory::New;
 %rename(adddirectory) TDataStd_Directory::AddDirectory;
@@ -108,7 +105,6 @@ $HeaderURL$
 %rename(getid) TDataStd_RealList::GetID;
 %rename(set) TDataStd_RealList::Set;
 %rename(find) TDataStd_TreeNode::Find;
-%rename(set) TDataStd_TreeNode::Set;
 %rename(set) TDataStd_TreeNode::Set;
 %rename(getdefaulttreeid) TDataStd_TreeNode::GetDefaultTreeID;
 %rename(getid) TDataStd_NamedData::GetID;
@@ -126,27 +122,18 @@ $HeaderURL$
 %rename(set) TDataStd_ReferenceArray::Set;
 %rename(getid) TDataStd_Point::GetID;
 %rename(set) TDataStd_Point::Set;
-%rename(set) TDataStd_Point::Set;
 %rename(getid) TDataStd_Real::GetID;
 %rename(set) TDataStd_Real::Set;
 %rename(getid) TDataStd_Relation::GetID;
 %rename(set) TDataStd_Relation::Set;
 %rename(set) TDataStd_Geometry::Set;
 %rename(type) TDataStd_Geometry::Type;
-%rename(type) TDataStd_Geometry::Type;
-%rename(point) TDataStd_Geometry::Point;
 %rename(point) TDataStd_Geometry::Point;
 %rename(axis) TDataStd_Geometry::Axis;
-%rename(axis) TDataStd_Geometry::Axis;
-%rename(line) TDataStd_Geometry::Line;
 %rename(line) TDataStd_Geometry::Line;
 %rename(circle) TDataStd_Geometry::Circle;
-%rename(circle) TDataStd_Geometry::Circle;
-%rename(ellipse) TDataStd_Geometry::Ellipse;
 %rename(ellipse) TDataStd_Geometry::Ellipse;
 %rename(plane) TDataStd_Geometry::Plane;
-%rename(plane) TDataStd_Geometry::Plane;
-%rename(cylinder) TDataStd_Geometry::Cylinder;
 %rename(cylinder) TDataStd_Geometry::Cylinder;
 %rename(getid) TDataStd_Geometry::GetID;
 %rename(getid) TDataStd_Placement::GetID;
@@ -156,7 +143,6 @@ $HeaderURL$
 %rename(getid) TDataStd_Variable::GetID;
 %rename(set) TDataStd_Variable::Set;
 %rename(getid) TDataStd_Comment::GetID;
-%rename(set) TDataStd_Comment::Set;
 %rename(set) TDataStd_Comment::Set;
 %rename(getid) TDataStd_Current::GetID;
 %rename(set) TDataStd_Current::Set;
@@ -170,7 +156,6 @@ $HeaderURL$
 %rename(getid) TDataStd_RealArray::GetID;
 %rename(set) TDataStd_RealArray::Set;
 %rename(getid) TDataStd_Axis::GetID;
-%rename(set) TDataStd_Axis::Set;
 %rename(set) TDataStd_Axis::Set;
 %rename(getid) TDataStd_AsciiString::GetID;
 %rename(set) TDataStd_AsciiString::Set;
@@ -188,7 +173,6 @@ $HeaderURL$
 %rename(set) TDataStd_Constraint::Set;
 %rename(collectchildconstraints) TDataStd_Constraint::CollectChildConstraints;
 %rename(getid) TDataStd_Plane::GetID;
-%rename(set) TDataStd_Plane::Set;
 %rename(set) TDataStd_Plane::Set;
 %rename(getid) TDataStd_IntegerList::GetID;
 %rename(set) TDataStd_IntegerList::Set;

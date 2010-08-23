@@ -33,7 +33,6 @@ $HeaderURL$
 %rename(downcast) Handle_TFunction_Function::DownCast;
 %rename(downcast) Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel::DownCast;
 %rename(set) TFunction_Function::Set;
-%rename(set) TFunction_Function::Set;
 %rename(getid) TFunction_Function::GetID;
 %rename(newfunction) TFunction_IFunction::NewFunction;
 %rename(deletefunction) TFunction_IFunction::DeleteFunction;

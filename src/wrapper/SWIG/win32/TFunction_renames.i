@@ -38,7 +38,6 @@ $HeaderURL$
 %rename(deletefunction) TFunction_IFunction::DeleteFunction;
 %rename(updatedependencies) TFunction_IFunction::UpdateDependencies;
 %rename(set) TFunction_Function::Set;
-%rename(set) TFunction_Function::Set;
 %rename(getid) TFunction_Function::GetID;
 %rename(get) TFunction_DriverTable::Get;
 %rename(set) TFunction_GraphNode::Set;

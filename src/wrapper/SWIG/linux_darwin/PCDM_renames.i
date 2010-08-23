@@ -35,7 +35,6 @@ $HeaderURL$
 %rename(downcast) Handle_PCDM_StorageDriver::DownCast;
 %rename(downcast) Handle_PCDM_ReferenceIterator::DownCast;
 %rename(raise) PCDM_DriverError::Raise;
-%rename(raise) PCDM_DriverError::Raise;
 %rename(newinstance) PCDM_DriverError::NewInstance;
 %rename(raiseifunknowntypes) PCDM_RetrievalDriver::RaiseIfUnknownTypes;
 %rename(documentversion) PCDM_RetrievalDriver::DocumentVersion;

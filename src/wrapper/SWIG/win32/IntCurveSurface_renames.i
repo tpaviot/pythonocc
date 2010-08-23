@@ -99,8 +99,6 @@ $HeaderURL$
 %rename(offsetvalue) IntCurveSurface_TheHSurfaceTool::OffsetValue;
 %rename(nbsamplesu) IntCurveSurface_TheHSurfaceTool::NbSamplesU;
 %rename(nbsamplesv) IntCurveSurface_TheHSurfaceTool::NbSamplesV;
-%rename(nbsamplesu) IntCurveSurface_TheHSurfaceTool::NbSamplesU;
-%rename(nbsamplesv) IntCurveSurface_TheHSurfaceTool::NbSamplesV;
 %rename(bounding) IntCurveSurface_ThePolygonToolOfHInter::Bounding;
 %rename(deflectionoverestimation) IntCurveSurface_ThePolygonToolOfHInter::DeflectionOverEstimation;
 %rename(closed) IntCurveSurface_ThePolygonToolOfHInter::Closed;

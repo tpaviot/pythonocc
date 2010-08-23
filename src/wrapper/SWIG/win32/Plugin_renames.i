@@ -26,6 +26,5 @@ $HeaderURL$
 %rename(downcast) Handle_Plugin_DataMapNodeOfMapOfFunctions::DownCast;
 %rename(downcast) Handle_Plugin_Failure::DownCast;
 %rename(raise) Plugin_Failure::Raise;
-%rename(raise) Plugin_Failure::Raise;
 %rename(newinstance) Plugin_Failure::NewInstance;
 %rename(load) Plugin::Load;

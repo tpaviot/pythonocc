@@ -329,8 +329,12 @@ class ModularBuilder(object):
         for static_method in self.STATIC_METHODS:
             class_name = static_method[0]
             method_name = static_method[1]
-            new_method_name = method_name.lower()
-            renamed_file_fp.write("%%rename(%s) %s::%s;\n"%(new_method_name,class_name,method_name))
+            if method_name == 'Enclosing' and class_name == 'GccEnt':
+                # GccEnt_enclosing is already defined in an enum
+                pass
+            elif method_name not in ['TypeName','Static','Template']: # lowercase typename will raise issues
+                new_method_name = method_name.lower()
+                renamed_file_fp.write("%%rename(%s) %s::%s;\n"%(new_method_name,class_name,method_name))
         renamed_file_fp.close()
         
     def write_modules_to_import_files(self):
@@ -580,7 +584,8 @@ class ModularBuilder(object):
         # Detect static method
         if mem_fun.has_static:
             to_write+="\t\tstatic"
-            self.STATIC_METHODS.append([class_parent_name,function_name])
+            if not [class_parent_name,function_name] in self.STATIC_METHODS:
+                self.STATIC_METHODS.append([class_parent_name,function_name])
         # on teste le cas suivant pour return_type:gp_Pnt const &, qu'il faut transformer en const gp_Pnt &
         parts = return_type.split(" ")
         if len(parts)==3:

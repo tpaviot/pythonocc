@@ -49,14 +49,10 @@ $HeaderURL$
 %rename(makefacefromwireandface) IntTools_Tools::MakeFaceFromWireAndFace;
 %rename(classifypointbyface) IntTools_Tools::ClassifyPointByFace;
 %rename(isvertex) IntTools_Tools::IsVertex;
-%rename(isvertex) IntTools_Tools::IsVertex;
-%rename(isvertex) IntTools_Tools::IsVertex;
 %rename(ismiddlepointsequal) IntTools_Tools::IsMiddlePointsEqual;
-%rename(isvertex) IntTools_Tools::IsVertex;
 %rename(intermediatepoint) IntTools_Tools::IntermediatePoint;
 %rename(splitcurve) IntTools_Tools::SplitCurve;
 %rename(rejectlines) IntTools_Tools::RejectLines;
-%rename(isdirscoinside) IntTools_Tools::IsDirsCoinside;
 %rename(isdirscoinside) IntTools_Tools::IsDirsCoinside;
 %rename(isclosed) IntTools_Tools::IsClosed;
 %rename(curvetolerance) IntTools_Tools::CurveTolerance;

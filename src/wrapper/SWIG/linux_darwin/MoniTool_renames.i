@@ -54,7 +54,6 @@ $HeaderURL$
 %rename(liblist) MoniTool_TypedValue::LibList;
 %rename(staticvalue) MoniTool_TypedValue::StaticValue;
 %rename(type) MoniTool_DataInfo::Type;
-%rename(typename) MoniTool_DataInfo::TypeName;
 %rename(hashcode) MoniTool_ElemHasher::HashCode;
 %rename(isequal) MoniTool_ElemHasher::IsEqual;
 %rename(hashcode) MoniTool_MTHasher::HashCode;

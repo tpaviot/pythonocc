@@ -87,11 +87,7 @@ $HeaderURL$
 %rename(nearest) AIS::Nearest;
 %rename(farest) AIS::Farest;
 %rename(computegeometry) AIS::ComputeGeometry;
-%rename(computegeometry) AIS::ComputeGeometry;
-%rename(computegeometry) AIS::ComputeGeometry;
-%rename(computegeometry) AIS::ComputeGeometry;
 %rename(computegeomcurve) AIS::ComputeGeomCurve;
-%rename(computegeometry) AIS::ComputeGeometry;
 %rename(getplanefromface) AIS::GetPlaneFromFace;
 %rename(initfacelength) AIS::InitFaceLength;
 %rename(computelengthbetweenplanarfaces) AIS::ComputeLengthBetweenPlanarFaces;
@@ -113,7 +109,6 @@ $HeaderURL$
 %rename(setcurrentselection) AIS_Selection::SetCurrentSelection;
 %rename(currentselection) AIS_Selection::CurrentSelection;
 %rename(select) AIS_Selection::Select;
-%rename(select) AIS_Selection::Select;
 %rename(addselect) AIS_Selection::AddSelect;
 %rename(clearandselect) AIS_Selection::ClearAndSelect;
 %rename(isselected) AIS_Selection::IsSelected;
@@ -121,11 +116,9 @@ $HeaderURL$
 %rename(single) AIS_Selection::Single;
 %rename(index) AIS_Selection::Index;
 %rename(getlinecolor) AIS_GraphicTool::GetLineColor;
-%rename(getlinecolor) AIS_GraphicTool::GetLineColor;
 %rename(getlinewidth) AIS_GraphicTool::GetLineWidth;
 %rename(getlinetype) AIS_GraphicTool::GetLineType;
 %rename(getlineatt) AIS_GraphicTool::GetLineAtt;
-%rename(getinteriorcolor) AIS_GraphicTool::GetInteriorColor;
 %rename(getinteriorcolor) AIS_GraphicTool::GetInteriorColor;
 %rename(getmaterial) AIS_GraphicTool::GetMaterial;
 %rename(computetwoedgeslength) AIS_EqualDistanceRelation::ComputeTwoEdgesLength;

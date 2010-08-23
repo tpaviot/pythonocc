@@ -25,10 +25,7 @@ $HeaderURL$
 */
 %rename(linearproperties) BRepGProp::LinearProperties;
 %rename(surfaceproperties) BRepGProp::SurfaceProperties;
-%rename(surfaceproperties) BRepGProp::SurfaceProperties;
 %rename(volumeproperties) BRepGProp::VolumeProperties;
-%rename(volumeproperties) BRepGProp::VolumeProperties;
-%rename(volumepropertiesgk) BRepGProp::VolumePropertiesGK;
 %rename(volumepropertiesgk) BRepGProp::VolumePropertiesGK;
 %rename(firstparameter) BRepGProp_EdgeTool::FirstParameter;
 %rename(lastparameter) BRepGProp_EdgeTool::LastParameter;

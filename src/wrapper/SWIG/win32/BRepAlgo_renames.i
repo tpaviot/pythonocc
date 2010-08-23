@@ -32,5 +32,4 @@ $HeaderURL$
 %rename(deboucle3d) BRepAlgo_Tool::Deboucle3D;
 %rename(concatenatewire) BRepAlgo::ConcatenateWire;
 %rename(isvalid) BRepAlgo::IsValid;
-%rename(isvalid) BRepAlgo::IsValid;
 %rename(istopologicallyvalid) BRepAlgo::IsTopologicallyValid;

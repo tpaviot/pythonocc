@@ -24,7 +24,6 @@ $HeaderURL$
 
 */
 %rename(continuity) GeomLProp::Continuity;
-%rename(continuity) GeomLProp::Continuity;
 %rename(value) GeomLProp_SurfaceTool::Value;
 %rename(d1) GeomLProp_SurfaceTool::D1;
 %rename(d2) GeomLProp_SurfaceTool::D2;

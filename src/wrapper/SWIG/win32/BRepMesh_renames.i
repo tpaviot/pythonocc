@@ -49,8 +49,6 @@ $HeaderURL$
 %rename(sort) BRepMesh_HeapSortIndexedVertexOfDelaun::Sort;
 %rename(mesh) BRepMesh::Mesh;
 %rename(orientation) BRepMesh_ShapeTool::Orientation;
-%rename(orientation) BRepMesh_ShapeTool::Orientation;
-%rename(bound) BRepMesh_ShapeTool::Bound;
 %rename(bound) BRepMesh_ShapeTool::Bound;
 %rename(firstvertex) BRepMesh_ShapeTool::FirstVertex;
 %rename(lastvertex) BRepMesh_ShapeTool::LastVertex;

@@ -34,7 +34,6 @@ $HeaderURL$
 %rename(downcast) Handle_Law_Composite::DownCast;
 %rename(maxdegree) Law_BSpline::MaxDegree;
 %rename(mixbnd) Law::MixBnd;
-%rename(mixbnd) Law::MixBnd;
 %rename(mixtgt) Law::MixTgt;
 %rename(reparametrize) Law::Reparametrize;
 %rename(scale) Law::Scale;

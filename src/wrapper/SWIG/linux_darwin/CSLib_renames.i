@@ -24,9 +24,5 @@ $HeaderURL$
 
 */
 %rename(normal) CSLib::Normal;
-%rename(normal) CSLib::Normal;
-%rename(normal) CSLib::Normal;
-%rename(normal) CSLib::Normal;
-%rename(dnnuv) CSLib::DNNUV;
 %rename(dnnuv) CSLib::DNNUV;
 %rename(dnnormal) CSLib::DNNormal;

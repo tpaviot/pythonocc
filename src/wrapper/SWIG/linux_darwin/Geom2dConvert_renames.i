@@ -24,11 +24,8 @@ $HeaderURL$
 
 */
 %rename(splitbsplinecurve) Geom2dConvert::SplitBSplineCurve;
-%rename(splitbsplinecurve) Geom2dConvert::SplitBSplineCurve;
 %rename(curvetobsplinecurve) Geom2dConvert::CurveToBSplineCurve;
 %rename(concatg1) Geom2dConvert::ConcatG1;
 %rename(concatc1) Geom2dConvert::ConcatC1;
-%rename(concatc1) Geom2dConvert::ConcatC1;
 %rename(c0bsplinetoc1bsplinecurve) Geom2dConvert::C0BSplineToC1BSplineCurve;
-%rename(c0bsplinetoarrayofc1bsplinecurve) Geom2dConvert::C0BSplineToArrayOfC1BSplineCurve;
 %rename(c0bsplinetoarrayofc1bsplinecurve) Geom2dConvert::C0BSplineToArrayOfC1BSplineCurve;

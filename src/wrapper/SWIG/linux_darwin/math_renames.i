@@ -33,9 +33,7 @@ $HeaderURL$
 %rename(kronrodpointsandweights) math::KronrodPointsAndWeights;
 %rename(sort) math_QuickSortOfValueAndWeight::Sort;
 %rename(raise) math_NotSquare::Raise;
-%rename(raise) math_NotSquare::Raise;
 %rename(newinstance) math_NotSquare::NewInstance;
-%rename(raise) math_SingularMatrix::Raise;
 %rename(raise) math_SingularMatrix::Raise;
 %rename(newinstance) math_SingularMatrix::NewInstance;
 %rename(gkrule) math_KronrodSingleIntegration::GKRule;

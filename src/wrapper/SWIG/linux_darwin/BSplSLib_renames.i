@@ -33,11 +33,8 @@ $HeaderURL$
 %rename(reverse) BSplSLib::Reverse;
 %rename(homogeneousd0) BSplSLib::HomogeneousD0;
 %rename(homogeneousd1) BSplSLib::HomogeneousD1;
-%rename(reverse) BSplSLib::Reverse;
 %rename(isrational) BSplSLib::IsRational;
 %rename(setpoles) BSplSLib::SetPoles;
-%rename(setpoles) BSplSLib::SetPoles;
-%rename(getpoles) BSplSLib::GetPoles;
 %rename(getpoles) BSplSLib::GetPoles;
 %rename(movepoint) BSplSLib::MovePoint;
 %rename(insertknots) BSplSLib::InsertKnots;
@@ -53,7 +50,5 @@ $HeaderURL$
 %rename(cached2) BSplSLib::CacheD2;
 %rename(coefsd2) BSplSLib::CoefsD2;
 %rename(polescoefficients) BSplSLib::PolesCoefficients;
-%rename(polescoefficients) BSplSLib::PolesCoefficients;
 %rename(resolution) BSplSLib::Resolution;
-%rename(interpolate) BSplSLib::Interpolate;
 %rename(interpolate) BSplSLib::Interpolate;

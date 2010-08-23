@@ -30,7 +30,6 @@ $HeaderURL$
 %rename(downcast) Handle_TCollection_MapNode::DownCast;
 %rename(hashcode) TCollection_AsciiString::HashCode;
 %rename(isequal) TCollection_AsciiString::IsEqual;
-%rename(isequal) TCollection_AsciiString::IsEqual;
 %rename(hashcode) TCollection_AsciiString::HASHCODE;
 %rename(issimilar) TCollection_AsciiString::ISSIMILAR;
 %rename(nextprimeformap) TCollection::NextPrimeForMap;

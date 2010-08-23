@@ -24,9 +24,7 @@ $HeaderURL$
 
 */
 %rename(findparameter) IntCurve_ProjectOnPConicTool::FindParameter;
-%rename(findparameter) IntCurve_ProjectOnPConicTool::FindParameter;
 %rename(epsx) IntCurve_PConicTool::EpsX;
-%rename(nbsamples) IntCurve_PConicTool::NbSamples;
 %rename(nbsamples) IntCurve_PConicTool::NbSamples;
 %rename(value) IntCurve_PConicTool::Value;
 %rename(d1) IntCurve_PConicTool::D1;

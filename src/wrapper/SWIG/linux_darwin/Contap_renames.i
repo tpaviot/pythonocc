@@ -67,8 +67,6 @@ $HeaderURL$
 %rename(basiscurve) Contap_HSurfaceTool::BasisCurve;
 %rename(nbsamplesu) Contap_HSurfaceTool::NbSamplesU;
 %rename(nbsamplesv) Contap_HSurfaceTool::NbSamplesV;
-%rename(nbsamplesu) Contap_HSurfaceTool::NbSamplesU;
-%rename(nbsamplesv) Contap_HSurfaceTool::NbSamplesV;
 %rename(normale) Contap_TheSurfPropsOfContour::Normale;
 %rename(derivandnorm) Contap_TheSurfPropsOfContour::DerivAndNorm;
 %rename(normanddn) Contap_TheSurfPropsOfContour::NormAndDn;

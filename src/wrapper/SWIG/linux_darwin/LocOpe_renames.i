@@ -33,6 +33,5 @@ $HeaderURL$
 %rename(downcast) Handle_LocOpe_WiresOnShape::DownCast;
 %rename(downcast) Handle_LocOpe_SequenceNodeOfSequenceOfCirc::DownCast;
 %rename(closed) LocOpe::Closed;
-%rename(closed) LocOpe::Closed;
 %rename(tgtfaces) LocOpe::TgtFaces;
 %rename(sampleedges) LocOpe::SampleEdges;

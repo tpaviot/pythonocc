@@ -27,5 +27,3 @@ $HeaderURL$
 %rename(downcast) Handle_MgtBRep_TranslateTool::DownCast;
 %rename(translate) MgtBRep::Translate;
 %rename(translate1) MgtBRep::Translate1;
-%rename(translate) MgtBRep::Translate;
-%rename(translate1) MgtBRep::Translate1;

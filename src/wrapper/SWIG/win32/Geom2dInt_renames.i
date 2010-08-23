@@ -25,7 +25,6 @@ $HeaderURL$
 */
 %rename(downcast) Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::DownCast;
 %rename(findparameter) Geom2dInt_TheProjPCurOfGInter::FindParameter;
-%rename(findparameter) Geom2dInt_TheProjPCurOfGInter::FindParameter;
 %rename(thetype) Geom2dInt_Geom2dCurveTool::TheType;
 %rename(line) Geom2dInt_Geom2dCurveTool::Line;
 %rename(circle) Geom2dInt_Geom2dCurveTool::Circle;
@@ -33,8 +32,6 @@ $HeaderURL$
 %rename(parabola) Geom2dInt_Geom2dCurveTool::Parabola;
 %rename(hyperbola) Geom2dInt_Geom2dCurveTool::Hyperbola;
 %rename(epsx) Geom2dInt_Geom2dCurveTool::EpsX;
-%rename(epsx) Geom2dInt_Geom2dCurveTool::EpsX;
-%rename(nbsamples) Geom2dInt_Geom2dCurveTool::NbSamples;
 %rename(nbsamples) Geom2dInt_Geom2dCurveTool::NbSamples;
 %rename(firstparameter) Geom2dInt_Geom2dCurveTool::FirstParameter;
 %rename(lastparameter) Geom2dInt_Geom2dCurveTool::LastParameter;

@@ -30,13 +30,7 @@ $HeaderURL$
 %rename(nbp2d) AppDef_MyLineTool::NbP2d;
 %rename(nbp3d) AppDef_MyLineTool::NbP3d;
 %rename(value) AppDef_MyLineTool::Value;
-%rename(value) AppDef_MyLineTool::Value;
-%rename(value) AppDef_MyLineTool::Value;
 %rename(tangency) AppDef_MyLineTool::Tangency;
-%rename(tangency) AppDef_MyLineTool::Tangency;
-%rename(tangency) AppDef_MyLineTool::Tangency;
-%rename(curvature) AppDef_MyLineTool::Curvature;
-%rename(curvature) AppDef_MyLineTool::Curvature;
 %rename(curvature) AppDef_MyLineTool::Curvature;
 %rename(whatstatus) AppDef_MyLineTool::WhatStatus;
 %rename(makemlbetween) AppDef_MyLineTool::MakeMLBetween;

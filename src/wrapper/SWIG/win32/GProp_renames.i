@@ -25,10 +25,6 @@ $HeaderURL$
 */
 %rename(downcast) Handle_GProp_UndefinedAxis::DownCast;
 %rename(barycentre) GProp_PGProps::Barycentre;
-%rename(barycentre) GProp_PGProps::Barycentre;
-%rename(barycentre) GProp_PGProps::Barycentre;
-%rename(barycentre) GProp_PGProps::Barycentre;
-%rename(raise) GProp_UndefinedAxis::Raise;
 %rename(raise) GProp_UndefinedAxis::Raise;
 %rename(newinstance) GProp_UndefinedAxis::NewInstance;
 %rename(hoperator) GProp::HOperator;

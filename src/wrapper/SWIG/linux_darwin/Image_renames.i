@@ -33,14 +33,8 @@ $HeaderURL$
 %rename(hashcode) Image_IndexPixelMapHasher::HashCode;
 %rename(isequal) Image_IndexPixelMapHasher::IsEqual;
 %rename(zoom) Image::Zoom;
-%rename(zoom) Image::Zoom;
-%rename(rotate) Image::Rotate;
 %rename(rotate) Image::Rotate;
 %rename(translate) Image::Translate;
-%rename(translate) Image::Translate;
-%rename(affine) Image::Affine;
-%rename(affine) Image::Affine;
-%rename(affine) Image::Affine;
 %rename(affine) Image::Affine;
 %rename(hashcode) Image_ColorPixelMapHasher::HashCode;
 %rename(isequal) Image_ColorPixelMapHasher::IsEqual;

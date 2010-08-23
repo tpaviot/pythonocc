@@ -31,5 +31,4 @@ $HeaderURL$
 %rename(nbcornernodes) SMDS_VolumeTool::NbCornerNodes;
 %rename(find0delement) SMDS_Mesh::Find0DElement;
 %rename(findedge) SMDS_Mesh::FindEdge;
-%rename(findedge) SMDS_Mesh::FindEdge;
 %rename(checkmemory) SMDS_Mesh::CheckMemory;

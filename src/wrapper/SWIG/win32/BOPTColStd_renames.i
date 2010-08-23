@@ -30,4 +30,3 @@ $HeaderURL$
 %rename(hashcode) BOPTColStd_ShapeWithRankHasher::HashCode;
 %rename(isequal) BOPTColStd_ShapeWithRankHasher::IsEqual;
 %rename(printmessage) BOPTColStd_Dump::PrintMessage;
-%rename(printmessage) BOPTColStd_Dump::PrintMessage;

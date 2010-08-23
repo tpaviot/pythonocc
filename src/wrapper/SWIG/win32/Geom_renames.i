@@ -68,9 +68,7 @@ $HeaderURL$
 %rename(downcast) Handle_Geom_Plane::DownCast;
 %rename(maxdegree) Geom_BezierSurface::MaxDegree;
 %rename(raise) Geom_UndefinedValue::Raise;
-%rename(raise) Geom_UndefinedValue::Raise;
 %rename(newinstance) Geom_UndefinedValue::NewInstance;
-%rename(raise) Geom_UndefinedDerivative::Raise;
 %rename(raise) Geom_UndefinedDerivative::Raise;
 %rename(newinstance) Geom_UndefinedDerivative::NewInstance;
 %rename(maxdegree) Geom_BSplineCurve::MaxDegree;

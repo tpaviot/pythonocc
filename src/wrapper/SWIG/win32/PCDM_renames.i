@@ -40,7 +40,6 @@ $HeaderURL$
 %rename(findstoragedriver) PCDM::FindStorageDriver;
 %rename(schema) PCDM::Schema;
 %rename(raise) PCDM_DriverError::Raise;
-%rename(raise) PCDM_DriverError::Raise;
 %rename(newinstance) PCDM_DriverError::NewInstance;
 %rename(open) PCDM_ReadWriter::Open;
 %rename(reader) PCDM_ReadWriter::Reader;

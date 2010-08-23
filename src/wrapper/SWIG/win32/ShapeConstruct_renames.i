@@ -25,10 +25,7 @@ $HeaderURL$
 */
 %rename(downcast) Handle_ShapeConstruct_ProjectCurveOnSurface::DownCast;
 %rename(convertcurvetobspline) ShapeConstruct::ConvertCurveToBSpline;
-%rename(convertcurvetobspline) ShapeConstruct::ConvertCurveToBSpline;
 %rename(convertsurfacetobspline) ShapeConstruct::ConvertSurfaceToBSpline;
 %rename(joinpcurves) ShapeConstruct::JoinPCurves;
 %rename(joincurves) ShapeConstruct::JoinCurves;
-%rename(joincurves) ShapeConstruct::JoinCurves;
-%rename(fixknots) ShapeConstruct_Curve::FixKnots;
 %rename(fixknots) ShapeConstruct_Curve::FixKnots;

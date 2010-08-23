@@ -60,13 +60,9 @@ $HeaderURL$
 %rename(getid) TPrsStd_AISViewer::GetID;
 %rename(has) TPrsStd_AISViewer::Has;
 %rename(new) TPrsStd_AISViewer::New;
-%rename(new) TPrsStd_AISViewer::New;
-%rename(find) TPrsStd_AISViewer::Find;
-%rename(find) TPrsStd_AISViewer::Find;
 %rename(find) TPrsStd_AISViewer::Find;
 %rename(update) TPrsStd_AISViewer::Update;
 %rename(getid) TPrsStd_AISPresentation::GetID;
 %rename(set) TPrsStd_AISPresentation::Set;
 %rename(unset) TPrsStd_AISPresentation::Unset;
-%rename(set) TPrsStd_AISPresentation::Set;
 %rename(get) TPrsStd_DriverTable::Get;

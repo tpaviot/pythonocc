@@ -25,7 +25,6 @@ $HeaderURL$
 */
 %rename(downcast) Handle_gp_VectorWithNullMagnitude::DownCast;
 %rename(raise) gp_VectorWithNullMagnitude::Raise;
-%rename(raise) gp_VectorWithNullMagnitude::Raise;
 %rename(newinstance) gp_VectorWithNullMagnitude::NewInstance;
 %rename(resolution) gp::Resolution;
 %rename(origin) gp::Origin;

@@ -54,8 +54,4 @@ $HeaderURL$
 %rename(nbp2d) BRepFill_MultiLineTool::NbP2d;
 %rename(nbp3d) BRepFill_MultiLineTool::NbP3d;
 %rename(value) BRepFill_MultiLineTool::Value;
-%rename(value) BRepFill_MultiLineTool::Value;
-%rename(value) BRepFill_MultiLineTool::Value;
-%rename(d1) BRepFill_MultiLineTool::D1;
-%rename(d1) BRepFill_MultiLineTool::D1;
 %rename(d1) BRepFill_MultiLineTool::D1;

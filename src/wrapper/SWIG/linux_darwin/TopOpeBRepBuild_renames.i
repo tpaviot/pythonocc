@@ -39,13 +39,11 @@ $HeaderURL$
 %rename(orient) TopOpeBRepBuild_Builder::Orient;
 %rename(contains) TopOpeBRepBuild_Builder::Contains;
 %rename(kpls) TopOpeBRepBuild_Builder::KPls;
-%rename(kpls) TopOpeBRepBuild_Builder::KPls;
 %rename(kpcontains) TopOpeBRepBuild_Builder::KPContains;
 %rename(kpreturn) TopOpeBRepBuild_Builder::KPreturn;
 %rename(gtakecommonofsame) TopOpeBRepBuild_Builder::GTakeCommonOfSame;
 %rename(gtakecommonofdiff) TopOpeBRepBuild_Builder::GTakeCommonOfDiff;
 %rename(gcontains) TopOpeBRepBuild_Builder::GContains;
-%rename(gcopylist) TopOpeBRepBuild_Builder::GCopyList;
 %rename(gcopylist) TopOpeBRepBuild_Builder::GCopyList;
 %rename(gdumppnt) TopOpeBRepBuild_Builder::GdumpPNT;
 %rename(gdumporiparpnt) TopOpeBRepBuild_Builder::GdumpORIPARPNT;

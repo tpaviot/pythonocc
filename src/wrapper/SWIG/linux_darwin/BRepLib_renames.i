@@ -24,21 +24,16 @@ $HeaderURL$
 
 */
 %rename(precision) BRepLib::Precision;
-%rename(precision) BRepLib::Precision;
-%rename(plane) BRepLib::Plane;
 %rename(plane) BRepLib::Plane;
 %rename(checksamerange) BRepLib::CheckSameRange;
 %rename(samerange) BRepLib::SameRange;
 %rename(buildcurve3d) BRepLib::BuildCurve3d;
 %rename(buildcurves3d) BRepLib::BuildCurves3d;
-%rename(buildcurves3d) BRepLib::BuildCurves3d;
 %rename(updateedgetol) BRepLib::UpdateEdgeTol;
 %rename(updateedgetolerance) BRepLib::UpdateEdgeTolerance;
 %rename(sameparameter) BRepLib::SameParameter;
-%rename(sameparameter) BRepLib::SameParameter;
 %rename(updatetolerances) BRepLib::UpdateTolerances;
 %rename(orientclosedsolid) BRepLib::OrientClosedSolid;
-%rename(encoderegularity) BRepLib::EncodeRegularity;
 %rename(encoderegularity) BRepLib::EncodeRegularity;
 %rename(sortfaces) BRepLib::SortFaces;
 %rename(reversesortfaces) BRepLib::ReverseSortFaces;

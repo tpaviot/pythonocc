@@ -29,17 +29,12 @@ $HeaderURL$
 %rename(downcast) Handle_StdFail_Undefined::DownCast;
 %rename(downcast) Handle_StdFail_UndefinedDerivative::DownCast;
 %rename(raise) StdFail_Undefined::Raise;
-%rename(raise) StdFail_Undefined::Raise;
 %rename(newinstance) StdFail_Undefined::NewInstance;
-%rename(raise) StdFail_UndefinedDerivative::Raise;
 %rename(raise) StdFail_UndefinedDerivative::Raise;
 %rename(newinstance) StdFail_UndefinedDerivative::NewInstance;
 %rename(raise) StdFail_InfiniteSolutions::Raise;
-%rename(raise) StdFail_InfiniteSolutions::Raise;
 %rename(newinstance) StdFail_InfiniteSolutions::NewInstance;
 %rename(raise) StdFail_NotDone::Raise;
-%rename(raise) StdFail_NotDone::Raise;
 %rename(newinstance) StdFail_NotDone::NewInstance;
-%rename(raise) StdFail_UndefinedValue::Raise;
 %rename(raise) StdFail_UndefinedValue::Raise;
 %rename(newinstance) StdFail_UndefinedValue::NewInstance;

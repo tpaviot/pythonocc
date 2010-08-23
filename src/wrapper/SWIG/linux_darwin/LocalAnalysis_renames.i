@@ -24,4 +24,3 @@ $HeaderURL$
 
 */
 %rename(dump) LocalAnalysis::Dump;
-%rename(dump) LocalAnalysis::Dump;

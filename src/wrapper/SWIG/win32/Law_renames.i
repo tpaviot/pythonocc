@@ -33,7 +33,6 @@ $HeaderURL$
 %rename(downcast) Handle_Law_BSpline::DownCast;
 %rename(downcast) Handle_Law_S::DownCast;
 %rename(mixbnd) Law::MixBnd;
-%rename(mixbnd) Law::MixBnd;
 %rename(mixtgt) Law::MixTgt;
 %rename(reparametrize) Law::Reparametrize;
 %rename(scale) Law::Scale;
