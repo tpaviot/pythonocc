@@ -179,17 +179,17 @@ class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		void SetApproxParam(const Standard_Integer MaxDeg=8, const Standard_Integer MaxSegments=9);
 		%feature("autodoc", "1");
-		void LoadInitSurface(const TopoDS_Face &Surf);
+		void LoadInitSurface(const TopoDS_Face Surf);
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Edge &Constr, const GeomAbs_Shape Order, const Standard_Boolean IsBound=1);
+		Standard_Integer Add(const TopoDS_Edge Constr, const GeomAbs_Shape Order, const Standard_Boolean IsBound=1);
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Edge &Constr, const TopoDS_Face &Support, const GeomAbs_Shape Order, const Standard_Boolean IsBound=1);
+		Standard_Integer Add(const TopoDS_Edge Constr, const TopoDS_Face Support, const GeomAbs_Shape Order, const Standard_Boolean IsBound=1);
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Face &Support, const GeomAbs_Shape Order);
+		Standard_Integer Add(const TopoDS_Face Support, const GeomAbs_Shape Order);
 		%feature("autodoc", "1");
-		Standard_Integer Add(const gp_Pnt &Point);
+		Standard_Integer Add(const gp_Pnt Point);
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Standard_Real U, const Standard_Real V, const TopoDS_Face &Support, const GeomAbs_Shape Order);
+		Standard_Integer Add(const Standard_Real U, const Standard_Real V, const TopoDS_Face Support, const GeomAbs_Shape Order);
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
@@ -230,23 +230,23 @@ class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
 		%feature("autodoc", "1");
 		BRepOffsetAPI_DraftAngle();
 		%feature("autodoc", "1");
-		BRepOffsetAPI_DraftAngle(const TopoDS_Shape &S);
+		BRepOffsetAPI_DraftAngle(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Face &F, const gp_Dir &Direction, const Standard_Real Angle, const gp_Pln &NeutralPlane, const Standard_Boolean Flag=1);
+		void Add(const TopoDS_Face F, const gp_Dir Direction, const Standard_Real Angle, const gp_Pln NeutralPlane, const Standard_Boolean Flag=1);
 		%feature("autodoc", "1");
 		Standard_Boolean AddDone() const;
 		%feature("autodoc", "1");
-		void Remove(const TopoDS_Face &F);
+		void Remove(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & ProblematicShape() const;
+		const TopoDS_Shape  ProblematicShape() const;
 		%feature("autodoc", "1");
 		Draft_ErrorStatus Status() const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & ConnectedFaces(const TopoDS_Face &F) const;
+		const TopTools_ListOfShape & ConnectedFaces(const TopoDS_Face F) const;
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & ModifiedFaces() const;
 		%feature("autodoc", "1");
@@ -254,9 +254,9 @@ class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
 		%feature("autodoc", "1");
 		void CorrectWires();
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
 
 };
 %feature("shadow") BRepOffsetAPI_DraftAngle::~BRepOffsetAPI_DraftAngle %{
@@ -344,27 +344,27 @@ def __del__(self):
 class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 	public:
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakePipeShell(const TopoDS_Wire &Spine);
+		BRepOffsetAPI_MakePipeShell(const TopoDS_Wire Spine);
 		%feature("autodoc", "1");
 		void SetMode(const Standard_Boolean IsFrenet=0);
 		%feature("autodoc", "1");
-		void SetMode(const gp_Ax2 &Axe);
+		void SetMode(const gp_Ax2 Axe);
 		%feature("autodoc", "1");
-		void SetMode(const gp_Dir &BiNormal);
+		void SetMode(const gp_Dir BiNormal);
 		%feature("autodoc", "1");
-		Standard_Boolean SetMode(const TopoDS_Shape &SpineSupport);
+		Standard_Boolean SetMode(const TopoDS_Shape SpineSupport);
 		%feature("autodoc", "1");
-		void SetMode(const TopoDS_Wire &AuxiliarySpine, const Standard_Boolean CurvilinearEquivalence, const Standard_Boolean KeepContact=0);
+		void SetMode(const TopoDS_Wire AuxiliarySpine, const Standard_Boolean CurvilinearEquivalence, const Standard_Boolean KeepContact=0);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &Profile, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
+		void Add(const TopoDS_Shape Profile, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &Profile, const TopoDS_Vertex &Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
+		void Add(const TopoDS_Shape Profile, const TopoDS_Vertex Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
-		void SetLaw(const TopoDS_Shape &Profile, const Handle_Law_Function &L, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
+		void SetLaw(const TopoDS_Shape Profile, const Handle_Law_Function &L, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
-		void SetLaw(const TopoDS_Shape &Profile, const Handle_Law_Function &L, const TopoDS_Vertex &Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
+		void SetLaw(const TopoDS_Shape Profile, const Handle_Law_Function &L, const TopoDS_Vertex Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
-		void Delete(const TopoDS_Shape &Profile);
+		void Delete(const TopoDS_Shape Profile);
 		%feature("autodoc", "1");
 		Standard_Boolean IsReady() const;
 		%feature("autodoc", "1");
@@ -384,7 +384,7 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 		%feature("autodoc", "1");
 		virtual		TopoDS_Shape LastShape();
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 
 };
 %feature("shadow") BRepOffsetAPI_MakePipeShell::~BRepOffsetAPI_MakePipeShell %{
@@ -556,19 +556,19 @@ class BRepOffsetAPI_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap 
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const TopTools_SequenceOfShape &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const TopTools_SequenceOfShape &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const TopTools_SequenceOfShape & Find(const TopoDS_Shape &K) const;
+		const TopTools_SequenceOfShape & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopTools_SequenceOfShape & operator()(const TopoDS_Shape &K) const;
+		const TopTools_SequenceOfShape & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		TopTools_SequenceOfShape & ChangeFind(const TopoDS_Shape &K);
+		TopTools_SequenceOfShape & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		TopTools_SequenceOfShape & operator()(const TopoDS_Shape &K);
+		TopTools_SequenceOfShape & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepOffsetAPI_DataMapOfShapeSequenceOfShape::~BRepOffsetAPI_DataMapOfShapeSequenceOfShape %{
@@ -597,7 +597,7 @@ class BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCol
 		%feature("autodoc", "1");
 		void Initialize(const BRepOffsetAPI_DataMapOfShapeSequenceOfShape &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const TopTools_SequenceOfShape & Value() const;
 
@@ -624,15 +624,15 @@ class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepOffsetAPI_MakeOffsetShape();
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeOffsetShape(const TopoDS_Shape &S, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode=BRepOffset_Skin, const Standard_Boolean Intersection=0, const Standard_Boolean SelfInter=0, const GeomAbs_JoinType Join=GeomAbs_Arc);
+		BRepOffsetAPI_MakeOffsetShape(const TopoDS_Shape S, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode=BRepOffset_Skin, const Standard_Boolean Intersection=0, const Standard_Boolean SelfInter=0, const GeomAbs_JoinType Join=GeomAbs_Arc);
 		%feature("autodoc", "1");
 		virtual		const BRepOffset_MakeOffset & MakeOffset() const;
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GeneratedEdge(const TopoDS_Shape &S);
+		const TopTools_ListOfShape & GeneratedEdge(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		GeomAbs_JoinType GetJoinType() const;
 
@@ -659,9 +659,9 @@ class BRepOffsetAPI_MakeThickSolid : public BRepOffsetAPI_MakeOffsetShape {
 		%feature("autodoc", "1");
 		BRepOffsetAPI_MakeThickSolid();
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeThickSolid(const TopoDS_Shape &S, const TopTools_ListOfShape &ClosingFaces, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode=BRepOffset_Skin, const Standard_Boolean Intersection=0, const Standard_Boolean SelfInter=0, const GeomAbs_JoinType Join=GeomAbs_Arc);
+		BRepOffsetAPI_MakeThickSolid(const TopoDS_Shape S, const TopTools_ListOfShape &ClosingFaces, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode=BRepOffset_Skin, const Standard_Boolean Intersection=0, const Standard_Boolean SelfInter=0, const GeomAbs_JoinType Join=GeomAbs_Arc);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
 
 };
 %feature("shadow") BRepOffsetAPI_MakeThickSolid::~BRepOffsetAPI_MakeThickSolid %{
@@ -684,9 +684,9 @@ def __del__(self):
 class BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape(const TopoDS_Shape &K, const TopTools_SequenceOfShape &I, const TCollection_MapNodePtr &n);
+		BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape(const TopoDS_Shape K, const TopTools_SequenceOfShape &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		TopTools_SequenceOfShape & Value() const;
 		%feature("autodoc", "1");
@@ -725,11 +725,11 @@ class BRepOffsetAPI_NormalProjection : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepOffsetAPI_NormalProjection();
 		%feature("autodoc", "1");
-		BRepOffsetAPI_NormalProjection(const TopoDS_Shape &S);
+		BRepOffsetAPI_NormalProjection(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &ToProj);
+		void Add(const TopoDS_Shape ToProj);
 		%feature("autodoc", "1");
 		void SetParams(const Standard_Real Tol3D, const Standard_Real Tol2D, const GeomAbs_Shape InternalContinuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSeg);
 		%feature("autodoc", "1");
@@ -743,13 +743,13 @@ class BRepOffsetAPI_NormalProjection : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Projection() const;
+		const TopoDS_Shape  Projection() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Couple(const TopoDS_Edge &E) const;
+		const TopoDS_Shape  Couple(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Ancestor(const TopoDS_Edge &E) const;
+		const TopoDS_Shape  Ancestor(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
 		Standard_Boolean BuildWire(TopTools_ListOfShape & Liste) const;
 
@@ -776,19 +776,19 @@ class BRepOffsetAPI_MakeEvolved : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepOffsetAPI_MakeEvolved();
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeEvolved(const TopoDS_Wire &Spine, const TopoDS_Wire &Profil, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean AxeProf=1, const Standard_Boolean Solid=0, const Standard_Boolean ProfOnSpine=0, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
+		BRepOffsetAPI_MakeEvolved(const TopoDS_Wire Spine, const TopoDS_Wire Profil, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean AxeProf=1, const Standard_Boolean Solid=0, const Standard_Boolean ProfOnSpine=0, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeEvolved(const TopoDS_Face &Spine, const TopoDS_Wire &Profil, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean AxeProf=1, const Standard_Boolean Solid=0, const Standard_Boolean ProfOnSpine=0, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
+		BRepOffsetAPI_MakeEvolved(const TopoDS_Face Spine, const TopoDS_Wire Profil, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean AxeProf=1, const Standard_Boolean Solid=0, const Standard_Boolean ProfOnSpine=0, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
 		%feature("autodoc", "1");
 		const BRepFill_Evolved & Evolved() const;
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GeneratedShapes(const TopoDS_Shape &SpineShape, const TopoDS_Shape &ProfShape) const;
+		const TopTools_ListOfShape & GeneratedShapes(const TopoDS_Shape SpineShape, const TopoDS_Shape ProfShape) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Top() const;
+		const TopoDS_Shape  Top() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Bottom() const;
+		const TopoDS_Shape  Bottom() const;
 
 };
 %feature("shadow") BRepOffsetAPI_MakeEvolved::~BRepOffsetAPI_MakeEvolved %{
@@ -815,19 +815,19 @@ class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		void Init(const Standard_Boolean isSolid=0, const Standard_Boolean ruled=0, const Standard_Real pres3d=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
-		void AddWire(const TopoDS_Wire &wire);
+		void AddWire(const TopoDS_Wire wire);
 		%feature("autodoc", "1");
-		void AddVertex(const TopoDS_Vertex &aVertex);
+		void AddVertex(const TopoDS_Vertex aVertex);
 		%feature("autodoc", "1");
 		void CheckCompatibility(const Standard_Boolean check=1);
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FirstShape() const;
+		const TopoDS_Shape  FirstShape() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & LastShape() const;
+		const TopoDS_Shape  LastShape() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape GeneratedFace(const TopoDS_Shape &Edge) const;
+		TopoDS_Shape GeneratedFace(const TopoDS_Shape Edge) const;
 
 };
 %feature("shadow") BRepOffsetAPI_ThruSections::~BRepOffsetAPI_ThruSections %{
@@ -852,21 +852,21 @@ class BRepOffsetAPI_MakeOffset : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepOffsetAPI_MakeOffset();
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeOffset(const TopoDS_Face &Spine, const GeomAbs_JoinType Join=GeomAbs_Arc);
+		BRepOffsetAPI_MakeOffset(const TopoDS_Face Spine, const GeomAbs_JoinType Join=GeomAbs_Arc);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &Spine, const GeomAbs_JoinType Join=GeomAbs_Arc);
+		void Init(const TopoDS_Face Spine, const GeomAbs_JoinType Join=GeomAbs_Arc);
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeOffset(const TopoDS_Wire &Spine, const GeomAbs_JoinType Join=GeomAbs_Arc);
+		BRepOffsetAPI_MakeOffset(const TopoDS_Wire Spine, const GeomAbs_JoinType Join=GeomAbs_Arc);
 		%feature("autodoc", "1");
 		void Init(const GeomAbs_JoinType Join=GeomAbs_Arc);
 		%feature("autodoc", "1");
-		void AddWire(const TopoDS_Wire &Spine);
+		void AddWire(const TopoDS_Wire Spine);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real Offset, const Standard_Real Alt=0.0);
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 
 };
 %feature("shadow") BRepOffsetAPI_MakeOffset::~BRepOffsetAPI_MakeOffset %{
@@ -889,7 +889,7 @@ def __del__(self):
 class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
 	public:
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakePipe(const TopoDS_Wire &Spine, const TopoDS_Shape &Profile);
+		BRepOffsetAPI_MakePipe(const TopoDS_Wire Spine, const TopoDS_Shape Profile);
 		%feature("autodoc", "1");
 		const BRepFill_Pipe & Pipe() const;
 		%feature("autodoc", "1");
@@ -899,7 +899,7 @@ class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
 		%feature("autodoc", "1");
 		virtual		TopoDS_Shape LastShape();
 		%feature("autodoc", "1");
-		TopoDS_Shape Generated(const TopoDS_Shape &SSpine, const TopoDS_Shape &SProfile);
+		TopoDS_Shape Generated(const TopoDS_Shape SSpine, const TopoDS_Shape SProfile);
 
 };
 %feature("shadow") BRepOffsetAPI_MakePipe::~BRepOffsetAPI_MakePipe %{
@@ -922,7 +922,7 @@ def __del__(self):
 class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 	public:
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeDraft(const TopoDS_Shape &Shape, const gp_Dir &Dir, const Standard_Real Angle);
+		BRepOffsetAPI_MakeDraft(const TopoDS_Shape Shape, const gp_Dir Dir, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		void SetOptions(const BRepBuilderAPI_TransitionMode Style=BRepBuilderAPI_RightCorner, const Standard_Real AngleMin=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real AngleMax=3.0e+0);
 		%feature("autodoc", "1");
@@ -932,11 +932,11 @@ class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		void Perform(const Handle_Geom_Surface &Surface, const Standard_Boolean KeepInsideSurface=1);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &StopShape, const Standard_Boolean KeepOutSide=1);
+		void Perform(const TopoDS_Shape StopShape, const Standard_Boolean KeepOutSide=1);
 		%feature("autodoc", "1");
 		TopoDS_Shell Shell() const;
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 
 };
 %feature("shadow") BRepOffsetAPI_MakeDraft::~BRepOffsetAPI_MakeDraft %{

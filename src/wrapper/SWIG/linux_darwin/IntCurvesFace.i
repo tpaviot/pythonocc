@@ -56,9 +56,9 @@ $HeaderURL$
 class IntCurvesFace_Intersector {
 	public:
 		%feature("autodoc", "1");
-		IntCurvesFace_Intersector(const TopoDS_Face &F, const Standard_Real aTol);
+		IntCurvesFace_Intersector(const TopoDS_Face F, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &L, const Standard_Real PInf, const Standard_Real PSup);
+		void Perform(const gp_Lin L, const Standard_Real PInf, const Standard_Real PSup);
 		%feature("autodoc", "1");
 		void Perform(const Handle_Adaptor3d_HCurve &HCu, const Standard_Real PInf, const Standard_Real PSup);
 		%feature("autodoc", "1");
@@ -74,15 +74,15 @@ class IntCurvesFace_Intersector {
 		%feature("autodoc", "1");
 		Standard_Real WParameter(const Standard_Integer i) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt(const Standard_Integer i) const;
+		const gp_Pnt  Pnt(const Standard_Integer i) const;
 		%feature("autodoc", "1");
 		IntCurveSurface_TransitionOnCurve Transition(const Standard_Integer i) const;
 		%feature("autodoc", "1");
 		TopAbs_State State(const Standard_Integer i) const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 		%feature("autodoc", "1");
-		TopAbs_State ClassifyUVPoint(const gp_Pnt2d &Puv) const;
+		TopAbs_State ClassifyUVPoint(const gp_Pnt2d Puv) const;
 		%feature("autodoc", "1");
 		Bnd_Box Bounding() const;
 		%feature("autodoc", "1");
@@ -111,11 +111,11 @@ class IntCurvesFace_ShapeIntersector {
 		%feature("autodoc", "1");
 		IntCurvesFace_ShapeIntersector();
 		%feature("autodoc", "1");
-		void Load(const TopoDS_Shape &Sh, const Standard_Real Tol);
+		void Load(const TopoDS_Shape Sh, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &L, const Standard_Real PInf, const Standard_Real PSup);
+		void Perform(const gp_Lin L, const Standard_Real PInf, const Standard_Real PSup);
 		%feature("autodoc", "1");
-		void PerformNearest(const gp_Lin &L, const Standard_Real PInf, const Standard_Real PSup);
+		void PerformNearest(const gp_Lin L, const Standard_Real PInf, const Standard_Real PSup);
 		%feature("autodoc", "1");
 		void Perform(const Handle_Adaptor3d_HCurve &HCu, const Standard_Real PInf, const Standard_Real PSup);
 		%feature("autodoc", "1");
@@ -129,13 +129,13 @@ class IntCurvesFace_ShapeIntersector {
 		%feature("autodoc", "1");
 		Standard_Real WParameter(const Standard_Integer i) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt(const Standard_Integer i) const;
+		const gp_Pnt  Pnt(const Standard_Integer i) const;
 		%feature("autodoc", "1");
 		IntCurveSurface_TransitionOnCurve Transition(const Standard_Integer i) const;
 		%feature("autodoc", "1");
 		TopAbs_State State(const Standard_Integer i) const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face(const Standard_Integer i) const;
+		const TopoDS_Face  Face(const Standard_Integer i) const;
 		%feature("autodoc", "1");
 		void SortResult();
 		%feature("autodoc", "1");

@@ -1883,7 +1883,7 @@ def __del__(self):
 class Prs2d_Radius : public Prs2d_Dimension {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_Radius(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d &anAttachPnt, const gp_Circ2d &aCircle, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=1.0e+1, const Standard_Real anArrAngle=2.0e+1, const Standard_Real anArrLength=2.5e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
+		Prs2d_Radius(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d anAttachPnt, const gp_Circ2d aCircle, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=1.0e+1, const Standard_Real anArrAngle=2.0e+1, const Standard_Real anArrLength=2.5e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
 		%feature("autodoc", "1");
 		void Values(gp_Pnt2d & anAttPnt, gp_Circ2d & aCirc) const;
 		%feature("autodoc", "1");
@@ -2031,11 +2031,11 @@ def __del__(self):
 class Prs2d_Axis : public Graphic2d_Line {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Ax22d &anAx, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
+		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Ax22d anAx, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
 		%feature("autodoc", "1");
-		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Ax2d &anAx, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
+		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Ax2d anAx, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
 		%feature("autodoc", "1");
-		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Lin2d &aLine, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
+		Prs2d_Axis(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Lin2d aLine, const Standard_Real aLength, const Standard_Real anArrAngle=3.0e+1, const Standard_Real anArrLength=3.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Standard_Real aTxtScale=1.0e+1);
 		%feature("autodoc", "1");
 		Prs2d_TypeOfArrow TypeOfArrow() const;
 		%feature("autodoc", "1");
@@ -2082,9 +2082,9 @@ def __del__(self):
 class Prs2d_Point : public Graphic2d_Line {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_Point(const Handle_Graphic2d_GraphicObject &aGO, const gp_Pnt2d &aPnt, const Aspect_TypeOfMarker aTOM, const Quantity_Length aWSize=2.0e+0, const Quantity_Length aHSize=2.0e+0, const Quantity_PlaneAngle anAngle=0.0);
+		Prs2d_Point(const Handle_Graphic2d_GraphicObject &aGO, const gp_Pnt2d aPnt, const Aspect_TypeOfMarker aTOM, const Quantity_Length aWSize=2.0e+0, const Quantity_Length aHSize=2.0e+0, const Quantity_PlaneAngle anAngle=0.0);
 		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt2d &aPnt);
+		void SetPoint(const gp_Pnt2d aPnt);
 		%feature("autodoc", "1");
 		void SetMarker(const Aspect_TypeOfMarker aTOM);
 		%feature("autodoc", "1");
@@ -2334,7 +2334,7 @@ def __del__(self):
 class Prs2d_RadiusIndep : public Graphic2d_Line {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_RadiusIndep(const Handle_Graphic2d_GraphicObject &aGO, const gp_Pnt2d &anAttachPnt, const gp_Pnt2d &aCenter, const Standard_Real aRad, const TCollection_ExtendedString &aText, const Standard_Real aLength=1.0e+1, const Prs2d_TypeOfRadius aTypeRad=Prs2d_TOR_STANDARD, const Standard_Real aTxtScale=1.0e+0);
+		Prs2d_RadiusIndep(const Handle_Graphic2d_GraphicObject &aGO, const gp_Pnt2d anAttachPnt, const gp_Pnt2d aCenter, const Standard_Real aRad, const TCollection_ExtendedString &aText, const Standard_Real aLength=1.0e+1, const Prs2d_TypeOfRadius aTypeRad=Prs2d_TOR_STANDARD, const Standard_Real aTxtScale=1.0e+0);
 		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		void Values(gp_Pnt2d & anAttPnt, gp_Pnt2d & aCenter, Standard_Real &OutValue, TCollection_ExtendedString & aText, Standard_Real &OutValue, Prs2d_TypeOfRadius & aTypeRad, Standard_Real &OutValue) const;
@@ -2720,7 +2720,7 @@ def __del__(self):
 class Prs2d_Angle : public Prs2d_Dimension {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_Angle(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d &anAttachPnt1, const gp_Pnt2d &anAttachPnt2, const gp_Pnt2d &anAttachPnt3, const Quantity_Length aRadius, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=3.0e+0, const Standard_Real anArrAngle=1.5e+1, const Standard_Real anArrLength=1.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
+		Prs2d_Angle(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d anAttachPnt1, const gp_Pnt2d anAttachPnt2, const gp_Pnt2d anAttachPnt3, const Quantity_Length aRadius, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=3.0e+0, const Standard_Real anArrAngle=1.5e+1, const Standard_Real anArrLength=1.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
 		%feature("autodoc","Values() -> Standard_Real");
 
 		void Values(gp_Pnt2d & aPnt1, gp_Pnt2d & aPnt2, gp_Pnt2d & aPnt3, Standard_Real &OutValue) const;
@@ -2760,7 +2760,7 @@ def __del__(self):
 class Prs2d_Repere : public Prs2d_Dimension {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_Repere(const Handle_Graphic2d_GraphicObject &aGO, const gp_Pnt2d &aPnt1, const gp_Pnt2d &aPnt2, const Standard_Real aLenBase, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=1.0e+0, const Standard_Boolean aDrawArrow=0, const Standard_Real anArrAngle=1.0e+1, const Standard_Real anArrLength=1.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsRevArrow=0);
+		Prs2d_Repere(const Handle_Graphic2d_GraphicObject &aGO, const gp_Pnt2d aPnt1, const gp_Pnt2d aPnt2, const Standard_Real aLenBase, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=1.0e+0, const Standard_Boolean aDrawArrow=0, const Standard_Real anArrAngle=1.0e+1, const Standard_Real anArrLength=1.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsRevArrow=0);
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -2854,7 +2854,7 @@ def __del__(self):
 class Prs2d_Arrow : public Graphic2d_Line {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_Arrow(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Ax2d &Location, const Standard_Real OpenAngle=5.0e+0, const Standard_Real Length=5.0e+0, const Prs2d_TypeOfArrow theType=Prs2d_TOA_CLOSED);
+		Prs2d_Arrow(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Ax2d Location, const Standard_Real OpenAngle=5.0e+0, const Standard_Real Length=5.0e+0, const Prs2d_TypeOfArrow theType=Prs2d_TOA_CLOSED);
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfPnt2d const ArrayOfPnt2d(const Standard_Boolean withTrsf=0) const;
 		%feature("autodoc", "1");
@@ -3102,11 +3102,11 @@ def __del__(self):
 class Prs2d_Length : public Prs2d_Dimension {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_Length(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d &anAttachPnt1, const gp_Pnt2d &anAttachPnt2, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=5.0e+0, const Standard_Real aLength=0.0, const Prs2d_TypeOfDist aTypeDist=Prs2d_TOD_AUTOMATIC, const Standard_Real anArrAngle=2.0e+1, const Standard_Real anArrLength=2.5e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
+		Prs2d_Length(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d anAttachPnt1, const gp_Pnt2d anAttachPnt2, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=5.0e+0, const Standard_Real aLength=0.0, const Prs2d_TypeOfDist aTypeDist=Prs2d_TOD_AUTOMATIC, const Standard_Real anArrAngle=2.0e+1, const Standard_Real anArrLength=2.5e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
 		%feature("autodoc", "1");
-		Prs2d_Length(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d &anAttachPnt, const gp_Lin2d &anAttachLin, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=1.0e+1, const Standard_Real aLenAttachLin=0.0, const Standard_Real anArrAngle=2.0e+1, const Standard_Real anArrLength=2.5e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
+		Prs2d_Length(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d anAttachPnt, const gp_Lin2d anAttachLin, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=1.0e+1, const Standard_Real aLenAttachLin=0.0, const Standard_Real anArrAngle=2.0e+1, const Standard_Real anArrLength=2.5e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
 		%feature("autodoc", "1");
-		Prs2d_Length(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Lin2d &anAttachLin1, const gp_Lin2d &anAttachLin2, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=1.0e+1, const Standard_Real aLenAttachLin=0.0, const Standard_Real anArrAngle=2.0e+1, const Standard_Real anArrLength=2.5e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
+		Prs2d_Length(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Lin2d anAttachLin1, const gp_Lin2d anAttachLin2, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=1.0e+1, const Standard_Real aLenAttachLin=0.0, const Standard_Real anArrAngle=2.0e+1, const Standard_Real anArrLength=2.5e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
 		%feature("autodoc", "1");
 		void SetAttachLinLength(const Standard_Real aLength);
 		%feature("autodoc", "1");
@@ -3231,7 +3231,7 @@ def __del__(self):
 class Prs2d_Diameter : public Prs2d_Dimension {
 	public:
 		%feature("autodoc", "1");
-		Prs2d_Diameter(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d &anAttachPnt, const gp_Circ2d &aCircle, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=1.0e+1, const Standard_Real anArrAngle=2.0e+1, const Standard_Real anArrLength=2.5e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
+		Prs2d_Diameter(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d anAttachPnt, const gp_Circ2d aCircle, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=1.0e+1, const Standard_Real anArrAngle=2.0e+1, const Standard_Real anArrLength=2.5e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
 		%feature("autodoc", "1");
 		void Values(gp_Pnt2d & anAttPnt, gp_Circ2d & aCirc) const;
 		%feature("autodoc", "1");

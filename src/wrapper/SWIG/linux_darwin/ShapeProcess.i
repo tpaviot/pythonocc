@@ -356,7 +356,7 @@ class ShapeProcess_OperLibrary {
 		%feature("autodoc", "1");
 		static		void Init();
 		%feature("autodoc", "1");
-		static		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
+		static		TopoDS_Shape ApplyModifier(const TopoDS_Shape S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
 
 };
 %feature("shadow") ShapeProcess_OperLibrary::~ShapeProcess_OperLibrary %{
@@ -565,13 +565,13 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("autodoc", "1");
 		ShapeProcess_ShapeContext(const char * file, const char * seq="");
 		%feature("autodoc", "1");
-		ShapeProcess_ShapeContext(const TopoDS_Shape &S, const char * file, const char * seq="");
+		ShapeProcess_ShapeContext(const TopoDS_Shape S, const char * file, const char * seq="");
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Result() const;
+		const TopoDS_Shape  Result() const;
 		%feature("autodoc", "1");
 		const TopTools_DataMapOfShapeShape & Map() const;
 		%feature("autodoc", "1");
@@ -583,7 +583,7 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("autodoc", "1");
 		TopAbs_ShapeEnum GetDetalisation() const;
 		%feature("autodoc", "1");
-		void SetResult(const TopoDS_Shape &S);
+		void SetResult(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void RecordModification(const TopTools_DataMapOfShapeShape &repl);
 		%feature("autodoc", "1");
@@ -591,9 +591,9 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("autodoc", "1");
 		void RecordModification(const Handle_ShapeBuild_ReShape &repl);
 		%feature("autodoc", "1");
-		void RecordModification(const TopoDS_Shape &sh, const BRepTools_Modifier &repl);
+		void RecordModification(const TopoDS_Shape sh, const BRepTools_Modifier &repl);
 		%feature("autodoc", "1");
-		void AddMessage(const TopoDS_Shape &S, const Message_Msg &msg, const Message_Gravity gravity=Message_Warning);
+		void AddMessage(const TopoDS_Shape S, const Message_Msg &msg, const Message_Gravity gravity=Message_Warning);
 		%feature("autodoc", "1");
 		Standard_Boolean GetContinuity(const char * param, GeomAbs_Shape & val) const;
 		%feature("autodoc", "1");

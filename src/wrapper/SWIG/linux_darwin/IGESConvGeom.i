@@ -93,11 +93,11 @@ class IGESConvGeom_GeomBuilder {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void AddXY(const gp_XY &val);
+		void AddXY(const gp_XY val);
 		%feature("autodoc", "1");
-		void AddXYZ(const gp_XYZ &val);
+		void AddXYZ(const gp_XYZ val);
 		%feature("autodoc", "1");
-		void AddVec(const gp_XYZ &val);
+		void AddVec(const gp_XYZ val);
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
@@ -111,13 +111,13 @@ class IGESConvGeom_GeomBuilder {
 		%feature("autodoc", "1");
 		gp_Trsf Position() const;
 		%feature("autodoc", "1");
-		void SetPosition(const gp_Trsf &pos);
+		void SetPosition(const gp_Trsf pos);
 		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax3 &pos);
+		void SetPosition(const gp_Ax3 pos);
 		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax2 &pos);
+		void SetPosition(const gp_Ax2 pos);
 		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax1 &pos);
+		void SetPosition(const gp_Ax1 pos);
 		%feature("autodoc", "1");
 		Standard_Boolean IsIdentity() const;
 		%feature("autodoc", "1");
@@ -126,7 +126,7 @@ class IGESConvGeom_GeomBuilder {
 		Standard_Boolean IsZOnly() const;
 		%feature("autodoc","EvalXYZ(const val) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		void EvalXYZ(const gp_XYZ &val, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void EvalXYZ(const gp_XYZ val, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_IGESGeom_TransformationMatrix MakeTransformation(const Standard_Real unit=1) const;
 

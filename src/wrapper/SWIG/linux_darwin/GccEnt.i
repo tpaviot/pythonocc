@@ -102,7 +102,7 @@ def __del__(self):
 class GccEnt_QualifiedLin {
 	public:
 		%feature("autodoc", "1");
-		GccEnt_QualifiedLin(const gp_Lin2d &Qualified, const GccEnt_Position Qualifier);
+		GccEnt_QualifiedLin(const gp_Lin2d Qualified, const GccEnt_Position Qualifier);
 		%feature("autodoc", "1");
 		gp_Lin2d Qualified() const;
 		%feature("autodoc", "1");
@@ -120,7 +120,7 @@ class GccEnt_QualifiedLin {
 		%feature("autodoc", "1");
 		void _CSFDB_SetGccEnt_QualifiedLinTheQualifier(const GccEnt_Position p);
 		%feature("autodoc", "1");
-		const gp_Lin2d & _CSFDB_GetGccEnt_QualifiedLinTheQualified() const;
+		const gp_Lin2d  _CSFDB_GetGccEnt_QualifiedLinTheQualified() const;
 
 };
 %feature("shadow") GccEnt_QualifiedLin::~GccEnt_QualifiedLin %{
@@ -239,19 +239,19 @@ class GccEnt {
 		%feature("autodoc", "1");
 		GccEnt();
 		%feature("autodoc", "1");
-		static		GccEnt_QualifiedLin Unqualified(const gp_Lin2d &Obj);
+		static		GccEnt_QualifiedLin Unqualified(const gp_Lin2d Obj);
 		%feature("autodoc", "1");
-		static		GccEnt_QualifiedCirc Unqualified(const gp_Circ2d &Obj);
+		static		GccEnt_QualifiedCirc Unqualified(const gp_Circ2d Obj);
 		%feature("autodoc", "1");
-		static		GccEnt_QualifiedCirc Enclosing(const gp_Circ2d &Obj);
+		static		GccEnt_QualifiedCirc Enclosing(const gp_Circ2d Obj);
 		%feature("autodoc", "1");
-		static		GccEnt_QualifiedLin Enclosed(const gp_Lin2d &Obj);
+		static		GccEnt_QualifiedLin Enclosed(const gp_Lin2d Obj);
 		%feature("autodoc", "1");
-		static		GccEnt_QualifiedCirc Enclosed(const gp_Circ2d &Obj);
+		static		GccEnt_QualifiedCirc Enclosed(const gp_Circ2d Obj);
 		%feature("autodoc", "1");
-		static		GccEnt_QualifiedLin Outside(const gp_Lin2d &Obj);
+		static		GccEnt_QualifiedLin Outside(const gp_Lin2d Obj);
 		%feature("autodoc", "1");
-		static		GccEnt_QualifiedCirc Outside(const gp_Circ2d &Obj);
+		static		GccEnt_QualifiedCirc Outside(const gp_Circ2d Obj);
 
 };
 %feature("shadow") GccEnt::~GccEnt %{
@@ -274,7 +274,7 @@ def __del__(self):
 class GccEnt_QualifiedCirc {
 	public:
 		%feature("autodoc", "1");
-		GccEnt_QualifiedCirc(const gp_Circ2d &Qualified, const GccEnt_Position Qualifier);
+		GccEnt_QualifiedCirc(const gp_Circ2d Qualified, const GccEnt_Position Qualifier);
 		%feature("autodoc", "1");
 		gp_Circ2d Qualified() const;
 		%feature("autodoc", "1");
@@ -290,7 +290,7 @@ class GccEnt_QualifiedCirc {
 		%feature("autodoc", "1");
 		GccEnt_QualifiedCirc();
 		%feature("autodoc", "1");
-		const gp_Circ2d & _CSFDB_GetGccEnt_QualifiedCircTheQualified() const;
+		const gp_Circ2d  _CSFDB_GetGccEnt_QualifiedCircTheQualified() const;
 		%feature("autodoc", "1");
 		GccEnt_Position _CSFDB_GetGccEnt_QualifiedCircTheQualifier() const;
 		%feature("autodoc", "1");

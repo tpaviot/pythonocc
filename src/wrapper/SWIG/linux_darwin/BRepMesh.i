@@ -1089,7 +1089,7 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid : public TCollection_B
 		%feature("autodoc", "1");
 		void Initialize(const BRepMesh_DataMapOfShapeSurfaceGrid &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Handle_BRepMesh_SurfaceGrid & Value() const;
 
@@ -1120,7 +1120,7 @@ class BRepMesh_DataMapIteratorOfDataMapOfVertexInteger : public TCollection_Basi
 		%feature("autodoc", "1");
 		void Initialize(const BRepMesh_DataMapOfVertexInteger &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & Key() const;
+		const TopoDS_Vertex  Key() const;
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
@@ -1297,31 +1297,31 @@ class BRepMesh_ListOfXY {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const gp_XY &I);
+		void Prepend(const gp_XY I);
 		%feature("autodoc", "1");
-		void Prepend(const gp_XY &I, BRepMesh_ListIteratorOfListOfXY & theIt);
+		void Prepend(const gp_XY I, BRepMesh_ListIteratorOfListOfXY & theIt);
 		%feature("autodoc", "1");
 		void Prepend(BRepMesh_ListOfXY & Other);
 		%feature("autodoc", "1");
-		void Append(const gp_XY &I);
+		void Append(const gp_XY I);
 		%feature("autodoc", "1");
-		void Append(const gp_XY &I, BRepMesh_ListIteratorOfListOfXY & theIt);
+		void Append(const gp_XY I, BRepMesh_ListIteratorOfListOfXY & theIt);
 		%feature("autodoc", "1");
 		void Append(BRepMesh_ListOfXY & Other);
 		%feature("autodoc", "1");
-		gp_XY & First() const;
+		gp_XY  First() const;
 		%feature("autodoc", "1");
-		gp_XY & Last() const;
+		gp_XY  Last() const;
 		%feature("autodoc", "1");
 		void RemoveFirst();
 		%feature("autodoc", "1");
 		void Remove(BRepMesh_ListIteratorOfListOfXY & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const gp_XY &I, BRepMesh_ListIteratorOfListOfXY & It);
+		void InsertBefore(const gp_XY I, BRepMesh_ListIteratorOfListOfXY & It);
 		%feature("autodoc", "1");
 		void InsertBefore(BRepMesh_ListOfXY & Other, BRepMesh_ListIteratorOfListOfXY & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const gp_XY &I, BRepMesh_ListIteratorOfListOfXY & It);
+		void InsertAfter(const gp_XY I, BRepMesh_ListIteratorOfListOfXY & It);
 		%feature("autodoc", "1");
 		void InsertAfter(BRepMesh_ListOfXY & Other, BRepMesh_ListIteratorOfListOfXY & It);
 
@@ -1348,7 +1348,7 @@ class BRepMesh {
 		%feature("autodoc", "1");
 		BRepMesh();
 		%feature("autodoc", "1");
-		static		void Mesh(const TopoDS_Shape &S, const Standard_Real d);
+		static		void Mesh(const TopoDS_Shape S, const Standard_Real d);
 
 };
 %feature("shadow") BRepMesh::~BRepMesh %{
@@ -1469,7 +1469,7 @@ class BRepMesh_EdgeDiscret : public MMgt_TShared {
 		%feature("autodoc", "1");
 		BRepMesh_EdgeDiscret();
 		%feature("autodoc", "1");
-		BRepMesh_EdgeDiscret(const TopoDS_Edge &E, const BRepMesh_ListOfSurfaceGrid &L, const Standard_Real D, const Standard_Real An);
+		BRepMesh_EdgeDiscret(const TopoDS_Edge E, const BRepMesh_ListOfSurfaceGrid &L, const Standard_Real D, const Standard_Real An);
 		%feature("autodoc", "1");
 		const TColStd_SequenceOfReal & Parameters() const;
 		%feature("autodoc", "1");
@@ -1592,9 +1592,9 @@ def __del__(self):
 class BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid(const TopoDS_Shape &K, const Handle_BRepMesh_SurfaceGrid &I, const TCollection_MapNodePtr &n);
+		BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid(const TopoDS_Shape K, const Handle_BRepMesh_SurfaceGrid &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Handle_BRepMesh_SurfaceGrid & Value() const;
 		%feature("autodoc", "1");
@@ -1641,19 +1641,19 @@ class BRepMesh_DataMapOfShapeEdgeDiscret : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepMesh_EdgeDiscret &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_BRepMesh_EdgeDiscret &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Handle_BRepMesh_EdgeDiscret & Find(const TopoDS_Shape &K) const;
+		const Handle_BRepMesh_EdgeDiscret & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Handle_BRepMesh_EdgeDiscret & operator()(const TopoDS_Shape &K) const;
+		const Handle_BRepMesh_EdgeDiscret & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Handle_BRepMesh_EdgeDiscret & ChangeFind(const TopoDS_Shape &K);
+		Handle_BRepMesh_EdgeDiscret & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_EdgeDiscret & operator()(const TopoDS_Shape &K);
+		Handle_BRepMesh_EdgeDiscret & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepMesh_DataMapOfShapeEdgeDiscret::~BRepMesh_DataMapOfShapeEdgeDiscret %{
@@ -1686,19 +1686,19 @@ class BRepMesh_DataMapOfIntegerFace : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const TopoDS_Face &I);
+		Standard_Boolean Bind(const Standard_Integer &K, const TopoDS_Face I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		const TopoDS_Face & Find(const Standard_Integer &K) const;
+		const TopoDS_Face  Find(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & operator()(const Standard_Integer &K) const;
+		const TopoDS_Face  operator()(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		TopoDS_Face & ChangeFind(const Standard_Integer &K);
+		TopoDS_Face  ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		TopoDS_Face & operator()(const Standard_Integer &K);
+		TopoDS_Face  operator()(const Standard_Integer &K);
 
 };
 %feature("shadow") BRepMesh_DataMapOfIntegerFace::~BRepMesh_DataMapOfIntegerFace %{
@@ -1758,9 +1758,9 @@ def __del__(self):
 class BRepMesh_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		BRepMesh_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape K, const Standard_Real &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Real GetValue() {
@@ -1813,7 +1813,7 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		void Initialize(const BRepMesh_DataMapOfShapeReal &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Standard_Real & Value() const;
 
@@ -1897,9 +1897,9 @@ class BRepMesh_DiscretRoot {
 		%feature("autodoc", "1");
 		Standard_Real Angle() const;
 		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &theShape);
+		void SetShape(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		virtual		void Perform();
 		%feature("autodoc", "1");
@@ -1928,13 +1928,13 @@ class BRepMesh_Vertex {
 		%feature("autodoc", "1");
 		BRepMesh_Vertex();
 		%feature("autodoc", "1");
-		BRepMesh_Vertex(const gp_XY &UV, const Standard_Integer Dom, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
+		BRepMesh_Vertex(const gp_XY UV, const Standard_Integer Dom, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
 		%feature("autodoc", "1");
 		BRepMesh_Vertex(const Standard_Real U, const Standard_Real V, const Standard_Integer Dom, const MeshDS_DegreeOfFreedom Move);
 		%feature("autodoc", "1");
-		void Initialize(const gp_XY &UV, const Standard_Integer Dom, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
+		void Initialize(const gp_XY UV, const Standard_Integer Dom, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
 		%feature("autodoc", "1");
-		const gp_XY & Coord() const;
+		const gp_XY  Coord() const;
 		%feature("autodoc", "1");
 		Standard_Integer Location3d() const;
 		%feature("autodoc", "1");
@@ -1978,7 +1978,7 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("autodoc", "1");
 		BRepMesh_IncrementalMesh();
 		%feature("autodoc", "1");
-		BRepMesh_IncrementalMesh(const TopoDS_Shape &S, const Standard_Real D, const Standard_Boolean Relatif=0, const Standard_Real Ang=5.0e-1);
+		BRepMesh_IncrementalMesh(const TopoDS_Shape S, const Standard_Real D, const Standard_Boolean Relatif=0, const Standard_Real Ang=5.0e-1);
 		%feature("autodoc", "1");
 		void SetRelative(const Standard_Boolean theFlag);
 		%feature("autodoc", "1");
@@ -1986,7 +1986,7 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("autodoc", "1");
 		virtual		void Perform();
 		%feature("autodoc", "1");
-		void Update(const TopoDS_Shape &S);
+		void Update(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Standard_Boolean IsModified() const;
 
@@ -2021,7 +2021,7 @@ class BRepMesh_ListIteratorOfListOfXY {
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		gp_XY & Value() const;
+		gp_XY  Value() const;
 
 };
 %feature("shadow") BRepMesh_ListIteratorOfListOfXY::~BRepMesh_ListIteratorOfListOfXY %{
@@ -2083,63 +2083,63 @@ class BRepMesh_ShapeTool {
 		%feature("autodoc", "1");
 		BRepMesh_ShapeTool();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Standard_Boolean MoreFace();
 		%feature("autodoc", "1");
 		void NextFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & CurrentFace();
+		const TopoDS_Face  CurrentFace();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
+		void Init(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		Standard_Boolean MoreEdge();
 		%feature("autodoc", "1");
 		void NextEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & CurrentEdge();
+		const TopoDS_Edge  CurrentEdge();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Edge &E);
+		void Init(const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		Standard_Boolean MoreInternalVertex();
 		%feature("autodoc", "1");
 		void NextInternalVertex();
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & CurrentInternalVertex();
+		const TopoDS_Vertex  CurrentInternalVertex();
 		%feature("autodoc", "1");
-		static		TopAbs_Orientation Orientation(const TopoDS_Face &F);
+		static		TopAbs_Orientation Orientation(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		static		TopAbs_Orientation Orientation(const TopoDS_Edge &E);
+		static		TopAbs_Orientation Orientation(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		static		Bnd_Box Bound(const TopoDS_Face &F);
+		static		Bnd_Box Bound(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		static		Bnd_Box Bound(const TopoDS_Edge &E);
+		static		Bnd_Box Bound(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		static		TopoDS_Vertex FirstVertex(const TopoDS_Edge &E);
+		static		TopoDS_Vertex FirstVertex(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		static		TopoDS_Vertex LastVertex(const TopoDS_Edge &E);
+		static		TopoDS_Vertex LastVertex(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		static		void Vertices(const TopoDS_Edge &E, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast);
+		static		void Vertices(const TopoDS_Edge E, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast);
 		%feature("autodoc","Range(const E, const F) -> [Standard_Real, Standard_Real]");
 
-		static		void Range(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Range(const TopoDS_Edge E, const TopoDS_Face F, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		static		void UVPoints(const TopoDS_Edge &E, const TopoDS_Face &F, gp_Pnt2d & uvFirst, gp_Pnt2d & uvLast);
+		static		void UVPoints(const TopoDS_Edge E, const TopoDS_Face F, gp_Pnt2d & uvFirst, gp_Pnt2d & uvLast);
 		%feature("autodoc", "1");
-		static		Standard_Boolean Degenerated(const TopoDS_Edge &E);
+		static		Standard_Boolean Degenerated(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		static		Standard_Real Tolerance(const TopoDS_Vertex &V);
+		static		Standard_Real Tolerance(const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		static		Standard_Real Parameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, const TopoDS_Face &F);
+		static		Standard_Real Parameter(const TopoDS_Vertex V, const TopoDS_Edge E, const TopoDS_Face F);
 		%feature("autodoc", "1");
-		static		void Parameters(const TopoDS_Edge &E, const TopoDS_Face &F, const Standard_Real W, gp_Pnt2d & UV);
+		static		void Parameters(const TopoDS_Edge E, const TopoDS_Face F, const Standard_Real W, gp_Pnt2d & UV);
 		%feature("autodoc","Locate(const C, Standard_Real W, const p3d) -> Standard_Real");
 
-		static		void Locate(const BRepAdaptor_Curve &C, const Standard_Real W, Standard_Real &OutValue, const gp_Pnt &p3d, gp_Pnt2d & UV);
+		static		void Locate(const BRepAdaptor_Curve &C, const Standard_Real W, Standard_Real &OutValue, const gp_Pnt p3d, gp_Pnt2d & UV);
 		%feature("autodoc", "1");
-		static		gp_Pnt Pnt(const TopoDS_Vertex &V);
+		static		gp_Pnt Pnt(const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		static		void AddInFace(const TopoDS_Face &F, Handle_Poly_Triangulation & T);
+		static		void AddInFace(const TopoDS_Face F, Handle_Poly_Triangulation & T);
 
 };
 %feature("shadow") BRepMesh_ShapeTool::~BRepMesh_ShapeTool %{
@@ -2162,9 +2162,9 @@ def __del__(self):
 class BRepMesh_ListNodeOfListOfXY : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_ListNodeOfListOfXY(const gp_XY &I, const TCollection_MapNodePtr &n);
+		BRepMesh_ListNodeOfListOfXY(const gp_XY I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		gp_XY & Value() const;
+		gp_XY  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2250,11 +2250,11 @@ def __del__(self):
 class BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_DataMapNodeOfDataMapOfCouplePnt(const MeshShape_Couple &K, const gp_Pnt &I, const TCollection_MapNodePtr &n);
+		BRepMesh_DataMapNodeOfDataMapOfCouplePnt(const MeshShape_Couple &K, const gp_Pnt I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		MeshShape_Couple & Key() const;
 		%feature("autodoc", "1");
-		gp_Pnt & Value() const;
+		gp_Pnt  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2297,7 +2297,7 @@ class BRepMesh_DataMapIteratorOfDataMapOfCouplePnt : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		const MeshShape_Couple & Key() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
+		const gp_Pnt  Value() const;
 
 };
 %feature("shadow") BRepMesh_DataMapIteratorOfDataMapOfCouplePnt::~BRepMesh_DataMapIteratorOfDataMapOfCouplePnt %{
@@ -2434,11 +2434,11 @@ def __del__(self):
 class BRepMesh_Classifier {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_Classifier(const TopoDS_Face &F, const Standard_Real Tol, const MeshShape_DataMapOfShapeListOfTransient &edges, const TColStd_IndexedMapOfInteger &themap, const BRepMesh_IndexedMapOfVertex &Str, const Standard_Real Umin, const Standard_Real Umax, const Standard_Real Vmin, const Standard_Real Vmax);
+		BRepMesh_Classifier(const TopoDS_Face F, const Standard_Real Tol, const MeshShape_DataMapOfShapeListOfTransient &edges, const TColStd_IndexedMapOfInteger &themap, const BRepMesh_IndexedMapOfVertex &Str, const Standard_Real Umin, const Standard_Real Umax, const Standard_Real Vmin, const Standard_Real Vmax);
 		%feature("autodoc", "1");
-		BRepMesh_Classifier(const TopoDS_Face &F, const Standard_Real Tol, const MeshShape_DataMapOfShapeListOfTransient &edges, const TColStd_IndexedMapOfInteger &themap, const Handle_BRepMesh_DataStructureOfDelaun &Str, const Standard_Real Umin, const Standard_Real Umax, const Standard_Real Vmin, const Standard_Real Vmax);
+		BRepMesh_Classifier(const TopoDS_Face F, const Standard_Real Tol, const MeshShape_DataMapOfShapeListOfTransient &edges, const TColStd_IndexedMapOfInteger &themap, const Handle_BRepMesh_DataStructureOfDelaun &Str, const Standard_Real Umin, const Standard_Real Umax, const Standard_Real Vmin, const Standard_Real Vmax);
 		%feature("autodoc", "1");
-		TopAbs_State Perform(const gp_Pnt2d &Puv) const;
+		TopAbs_State Perform(const gp_Pnt2d Puv) const;
 		%feature("autodoc", "1");
 		BRepMesh_Status State() const;
 		%feature("autodoc", "1");
@@ -2467,7 +2467,7 @@ def __del__(self):
 class BRepMesh_ComparatorOfVertexOfDelaun {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_ComparatorOfVertexOfDelaun(const gp_XY &theDir, const Standard_Real TheTol);
+		BRepMesh_ComparatorOfVertexOfDelaun(const gp_XY theDir, const Standard_Real TheTol);
 		%feature("autodoc", "1");
 		Standard_Boolean IsLower(const BRepMesh_Vertex &Left, const BRepMesh_Vertex &Right) const;
 		%feature("autodoc", "1");
@@ -2498,11 +2498,11 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 		%feature("autodoc", "1");
 		BRepMesh_FastDiscret(const Standard_Real defle, const Standard_Real angle, const Bnd_Box &B, const Standard_Boolean withShare=1, const Standard_Boolean inshape=0, const Standard_Boolean relative=0, const Standard_Boolean shapetrigu=0);
 		%feature("autodoc", "1");
-		BRepMesh_FastDiscret(const Standard_Real defle, const TopoDS_Shape &shape, const Bnd_Box &B, const Standard_Real angle, const Standard_Boolean withShare=1, const Standard_Boolean inshape=0, const Standard_Boolean relative=0, const Standard_Boolean shapetrigu=0);
+		BRepMesh_FastDiscret(const Standard_Real defle, const TopoDS_Shape shape, const Bnd_Box &B, const Standard_Real angle, const Standard_Boolean withShare=1, const Standard_Boolean inshape=0, const Standard_Boolean relative=0, const Standard_Boolean shapetrigu=0);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &shape);
+		void Add(const TopoDS_Shape shape);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Face &face);
+		void Add(const TopoDS_Face face);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Boolean GetInternalVerticesMode() {
@@ -2518,7 +2518,7 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 		%feature("autodoc", "1");
 		BRepMesh_Status CurrentFaceStatus() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Update(const TopoDS_Edge &Edge, const TopoDS_Face &Face, const Handle_Geom2d_Curve &C, const Standard_Real defedge, const Standard_Real first, const Standard_Real last);
+		Standard_Boolean Update(const TopoDS_Edge Edge, const TopoDS_Face Face, const Handle_Geom2d_Curve &C, const Standard_Real defedge, const Standard_Real first, const Standard_Real last);
 		%feature("autodoc", "1");
 		Standard_Real Control(const Handle_BRepAdaptor_HSurface &caro, const Standard_Real defface, BRepMesh_ListOfVertex & inter, TColStd_ListOfInteger & badTri, TColStd_ListOfInteger & nulTri, BRepMesh_Delaun & trigu, const Standard_Boolean isfirst);
 		%feature("autodoc", "1");
@@ -2528,11 +2528,11 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Append(MeshShape_ListOfSurfacePoint & pntsOnSurf, const MeshShape_SurfacePoint &P);
 		%feature("autodoc", "1");
-		gp_XY FindUV(const TopoDS_Vertex &V, const gp_Pnt2d &XY, const Standard_Integer ip, const Handle_BRepAdaptor_HSurface &S, const Standard_Real mindist);
+		gp_XY FindUV(const TopoDS_Vertex V, const gp_Pnt2d XY, const Standard_Integer ip, const Handle_BRepAdaptor_HSurface &S, const Standard_Real mindist);
 		%feature("autodoc", "1");
 		Standard_Integer NbDomains() const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & DomainFace(const Standard_Integer Index) const;
+		const TopoDS_Face  DomainFace(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbTriangles() const;
 		%feature("autodoc", "1");
@@ -2546,7 +2546,7 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const BRepMesh_Vertex & Vertex(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt(const Standard_Integer Index) const;
+		const gp_Pnt  Pnt(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void VerticesOfDomain(const Standard_Integer Index, MeshDS_MapOfInteger & Indices) const;
 		%feature("autodoc", "1");
@@ -2556,7 +2556,7 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer NbPoint3d() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Point3d(const Standard_Integer Index) const;
+		const gp_Pnt  Point3d(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Normal(const Standard_Integer Index, gp_Pnt & Pon, gp_Dir & Nor) const;
 		%feature("autodoc", "1");
@@ -2638,7 +2638,7 @@ def __del__(self):
 class BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_DataMapNodeOfDataMapOfIntegerFace(const Standard_Integer &K, const TopoDS_Face &I, const TCollection_MapNodePtr &n);
+		BRepMesh_DataMapNodeOfDataMapOfIntegerFace(const Standard_Integer &K, const TopoDS_Face I, const TCollection_MapNodePtr &n);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey() {
@@ -2652,7 +2652,7 @@ class BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public TCollection_MapNode {
 				}
 		};
 		%feature("autodoc", "1");
-		TopoDS_Face & Value() const;
+		TopoDS_Face  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2697,29 +2697,29 @@ class BRepMesh_DataMapOfVertexInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Vertex &K, const Standard_Integer &I);
+		Standard_Boolean Bind(const TopoDS_Vertex K, const Standard_Integer &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Vertex &K) const;
+		Standard_Boolean IsBound(const TopoDS_Vertex K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Vertex &K);
+		Standard_Boolean UnBind(const TopoDS_Vertex K);
 		%feature("autodoc", "1");
-		const Standard_Integer & Find(const TopoDS_Vertex &K) const;
+		const Standard_Integer & Find(const TopoDS_Vertex K) const;
 		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const TopoDS_Vertex &K) const;
+		const Standard_Integer & operator()(const TopoDS_Vertex K) const;
 		%feature("autodoc","1");
 		%extend {
-				Standard_Integer GetChangeFind(const TopoDS_Vertex &K) {
+				Standard_Integer GetChangeFind(const TopoDS_Vertex K) {
 				return (Standard_Integer) $self->ChangeFind(K);
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetChangeFind(Standard_Integer value ,const TopoDS_Vertex &K) {
+				void SetChangeFind(Standard_Integer value ,const TopoDS_Vertex K) {
 				$self->ChangeFind(K)=value;
 				}
 		};
 		%feature("autodoc", "1");
-		Standard_Integer & operator()(const TopoDS_Vertex &K);
+		Standard_Integer & operator()(const TopoDS_Vertex K);
 
 };
 %feature("shadow") BRepMesh_DataMapOfVertexInteger::~BRepMesh_DataMapOfVertexInteger %{
@@ -2748,7 +2748,7 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret : public TCollection_B
 		%feature("autodoc", "1");
 		void Initialize(const BRepMesh_DataMapOfShapeEdgeDiscret &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Handle_BRepMesh_EdgeDiscret & Value() const;
 
@@ -2836,29 +2836,29 @@ class BRepMesh_DataMapOfShapeReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Real &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Real &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Standard_Real & Find(const TopoDS_Shape &K) const;
+		const Standard_Real & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Standard_Real & operator()(const TopoDS_Shape &K) const;
+		const Standard_Real & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc","1");
 		%extend {
-				Standard_Real GetChangeFind(const TopoDS_Shape &K) {
+				Standard_Real GetChangeFind(const TopoDS_Shape K) {
 				return (Standard_Real) $self->ChangeFind(K);
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetChangeFind(Standard_Real value ,const TopoDS_Shape &K) {
+				void SetChangeFind(Standard_Real value ,const TopoDS_Shape K) {
 				$self->ChangeFind(K)=value;
 				}
 		};
 		%feature("autodoc", "1");
-		Standard_Real & operator()(const TopoDS_Shape &K);
+		Standard_Real & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepMesh_DataMapOfShapeReal::~BRepMesh_DataMapOfShapeReal %{
@@ -2881,7 +2881,7 @@ def __del__(self):
 class BRepMesh_SurfaceGrid : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_SurfaceGrid(const TopoDS_Face &F, const Standard_Real def, const Standard_Real Ang);
+		BRepMesh_SurfaceGrid(const TopoDS_Face F, const Standard_Real def, const Standard_Real Ang);
 		%feature("autodoc", "1");
 		void Perform(const BRepMesh_Classifier &cl);
 		%feature("autodoc", "1");
@@ -3004,19 +3004,19 @@ class BRepMesh_DataMapOfShapeSurfaceGrid : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepMesh_SurfaceGrid &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_BRepMesh_SurfaceGrid &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Handle_BRepMesh_SurfaceGrid & Find(const TopoDS_Shape &K) const;
+		const Handle_BRepMesh_SurfaceGrid & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Handle_BRepMesh_SurfaceGrid & operator()(const TopoDS_Shape &K) const;
+		const Handle_BRepMesh_SurfaceGrid & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Handle_BRepMesh_SurfaceGrid & ChangeFind(const TopoDS_Shape &K);
+		Handle_BRepMesh_SurfaceGrid & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_SurfaceGrid & operator()(const TopoDS_Shape &K);
+		Handle_BRepMesh_SurfaceGrid & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepMesh_DataMapOfShapeSurfaceGrid::~BRepMesh_DataMapOfShapeSurfaceGrid %{
@@ -3482,19 +3482,19 @@ class BRepMesh_DataMapOfCouplePnt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const MeshShape_Couple &K, const gp_Pnt &I);
+		Standard_Boolean Bind(const MeshShape_Couple &K, const gp_Pnt I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const MeshShape_Couple &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const MeshShape_Couple &K);
 		%feature("autodoc", "1");
-		const gp_Pnt & Find(const MeshShape_Couple &K) const;
+		const gp_Pnt  Find(const MeshShape_Couple &K) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & operator()(const MeshShape_Couple &K) const;
+		const gp_Pnt  operator()(const MeshShape_Couple &K) const;
 		%feature("autodoc", "1");
-		gp_Pnt & ChangeFind(const MeshShape_Couple &K);
+		gp_Pnt  ChangeFind(const MeshShape_Couple &K);
 		%feature("autodoc", "1");
-		gp_Pnt & operator()(const MeshShape_Couple &K);
+		gp_Pnt  operator()(const MeshShape_Couple &K);
 
 };
 %feature("shadow") BRepMesh_DataMapOfCouplePnt::~BRepMesh_DataMapOfCouplePnt %{
@@ -3517,9 +3517,9 @@ def __del__(self):
 class BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret(const TopoDS_Shape &K, const Handle_BRepMesh_EdgeDiscret &I, const TCollection_MapNodePtr &n);
+		BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret(const TopoDS_Shape K, const Handle_BRepMesh_EdgeDiscret &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Handle_BRepMesh_EdgeDiscret & Value() const;
 		%feature("autodoc", "1");
@@ -3708,7 +3708,7 @@ class BRepMesh_DataMapIteratorOfDataMapOfIntegerFace : public TCollection_BasicM
 		%feature("autodoc", "1");
 		const Standard_Integer & Key() const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & Value() const;
+		const TopoDS_Face  Value() const;
 
 };
 %feature("shadow") BRepMesh_DataMapIteratorOfDataMapOfIntegerFace::~BRepMesh_DataMapIteratorOfDataMapOfIntegerFace %{
@@ -3731,7 +3731,7 @@ def __del__(self):
 class BRepMesh_ComparatorOfIndexedVertexOfDelaun {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_ComparatorOfIndexedVertexOfDelaun(const gp_XY &theDir, const Standard_Real TheTol, const Handle_BRepMesh_DataStructureOfDelaun &HDS);
+		BRepMesh_ComparatorOfIndexedVertexOfDelaun(const gp_XY theDir, const Standard_Real TheTol, const Handle_BRepMesh_DataStructureOfDelaun &HDS);
 		%feature("autodoc", "1");
 		Standard_Boolean IsLower(const Standard_Integer Left, const Standard_Integer Right) const;
 		%feature("autodoc", "1");
@@ -3760,9 +3760,9 @@ def __del__(self):
 class BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_DataMapNodeOfDataMapOfVertexInteger(const TopoDS_Vertex &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		BRepMesh_DataMapNodeOfDataMapOfVertexInteger(const TopoDS_Vertex K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Vertex & Key() const;
+		TopoDS_Vertex  Key() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetValue() {

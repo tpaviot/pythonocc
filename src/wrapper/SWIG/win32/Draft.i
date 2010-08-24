@@ -219,21 +219,21 @@ class Draft_FaceInfo {
 		%feature("autodoc", "1");
 		Draft_FaceInfo(const Handle_Geom_Surface &S, const Standard_Boolean HasNewGeometry);
 		%feature("autodoc", "1");
-		void RootFace(const TopoDS_Face &F);
+		void RootFace(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		Standard_Boolean NewGeometry() const;
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Face &F);
+		void Add(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		const TopoDS_Face & FirstFace() const;
+		const TopoDS_Face  FirstFace() const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & SecondFace() const;
+		const TopoDS_Face  SecondFace() const;
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & Geometry() const;
 		%feature("autodoc", "1");
 		Handle_Geom_Surface & ChangeGeometry();
 		%feature("autodoc", "1");
-		const TopoDS_Face & RootFace() const;
+		const TopoDS_Face  RootFace() const;
 		%feature("autodoc", "1");
 		Handle_Geom_Curve & ChangeCurve();
 		%feature("autodoc", "1");
@@ -264,11 +264,11 @@ class Draft_EdgeInfo {
 		%feature("autodoc", "1");
 		Draft_EdgeInfo(const Standard_Boolean HasNewGeometry);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Face &F);
+		void Add(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void RootFace(const TopoDS_Face &F);
+		void RootFace(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void Tangent(const gp_Pnt &P);
+		void Tangent(const gp_Pnt P);
 		%feature("autodoc", "1");
 		Standard_Boolean IsTangent(gp_Pnt & P) const;
 		%feature("autodoc", "1");
@@ -278,9 +278,9 @@ class Draft_EdgeInfo {
 		%feature("autodoc", "1");
 		const Handle_Geom_Curve & Geometry() const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & FirstFace() const;
+		const TopoDS_Face  FirstFace() const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & SecondFace() const;
+		const TopoDS_Face  SecondFace() const;
 		%feature("autodoc", "1");
 		const Handle_Geom2d_Curve & FirstPC() const;
 		%feature("autodoc", "1");
@@ -292,7 +292,7 @@ class Draft_EdgeInfo {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve & ChangeSecondPC();
 		%feature("autodoc", "1");
-		const TopoDS_Face & RootFace() const;
+		const TopoDS_Face  RootFace() const;
 		%feature("autodoc", "1");
 		void Tolerance(const Standard_Real tol);
 		%feature("autodoc", "1");
@@ -329,19 +329,19 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Edge &K, const Draft_EdgeInfo &I);
+		Standard_Boolean Bind(const TopoDS_Edge K, const Draft_EdgeInfo &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Edge &K) const;
+		Standard_Boolean IsBound(const TopoDS_Edge K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Edge &K);
+		Standard_Boolean UnBind(const TopoDS_Edge K);
 		%feature("autodoc", "1");
-		const Draft_EdgeInfo & Find(const TopoDS_Edge &K) const;
+		const Draft_EdgeInfo & Find(const TopoDS_Edge K) const;
 		%feature("autodoc", "1");
-		const Draft_EdgeInfo & operator()(const TopoDS_Edge &K) const;
+		const Draft_EdgeInfo & operator()(const TopoDS_Edge K) const;
 		%feature("autodoc", "1");
-		Draft_EdgeInfo & ChangeFind(const TopoDS_Edge &K);
+		Draft_EdgeInfo & ChangeFind(const TopoDS_Edge K);
 		%feature("autodoc", "1");
-		Draft_EdgeInfo & operator()(const TopoDS_Edge &K);
+		Draft_EdgeInfo & operator()(const TopoDS_Edge K);
 
 };
 %feature("shadow") Draft_DataMapOfEdgeEdgeInfo::~Draft_DataMapOfEdgeEdgeInfo %{
@@ -370,7 +370,7 @@ class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		void Initialize(const Draft_DataMapOfFaceFaceInfo &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Face & Key() const;
+		const TopoDS_Face  Key() const;
 		%feature("autodoc", "1");
 		const Draft_FaceInfo & Value() const;
 
@@ -395,15 +395,15 @@ def __del__(self):
 class Draft_Modification : public BRepTools_Modification {
 	public:
 		%feature("autodoc", "1");
-		Draft_Modification(const TopoDS_Shape &S);
+		Draft_Modification(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		Standard_Boolean Add(const TopoDS_Face &F, const gp_Dir &Direction, const Standard_Real Angle, const gp_Pln &NeutralPlane, const Standard_Boolean Flag=1);
+		Standard_Boolean Add(const TopoDS_Face F, const gp_Dir Direction, const Standard_Real Angle, const gp_Pln NeutralPlane, const Standard_Boolean Flag=1);
 		%feature("autodoc", "1");
-		void Remove(const TopoDS_Face &F);
+		void Remove(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
@@ -411,28 +411,28 @@ class Draft_Modification : public BRepTools_Modification {
 		%feature("autodoc", "1");
 		Draft_ErrorStatus Error() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & ProblematicShape() const;
+		const TopoDS_Shape  ProblematicShape() const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & ConnectedFaces(const TopoDS_Face &F);
+		const TopTools_ListOfShape & ConnectedFaces(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & ModifiedFaces();
 		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 
-		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
+		virtual		Standard_Boolean NewSurface(const TopoDS_Face F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
 		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 
-		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewCurve(const TopoDS_Edge E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
 		%feature("autodoc","NewPoint(const V) -> Standard_Real");
 
-		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex V, gp_Pnt & P, Standard_Real &OutValue);
 		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 
-		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge E, const TopoDS_Face F, const TopoDS_Edge NewE, const TopoDS_Face NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
 		%feature("autodoc","NewParameter(const V, const E) -> [Standard_Real, Standard_Real]");
 
-		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex V, const TopoDS_Edge E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
+		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge E, const TopoDS_Face F1, const TopoDS_Face F2, const TopoDS_Edge NewE, const TopoDS_Face NewF1, const TopoDS_Face NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -467,9 +467,9 @@ def __del__(self):
 class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const TopoDS_Vertex &K, const Draft_VertexInfo &I, const TCollection_MapNodePtr &n);
+		Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const TopoDS_Vertex K, const Draft_VertexInfo &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Vertex & Key() const;
+		TopoDS_Vertex  Key() const;
 		%feature("autodoc", "1");
 		Draft_VertexInfo & Value() const;
 		%feature("autodoc", "1");
@@ -512,7 +512,7 @@ class Draft_DataMapIteratorOfDataMapOfVertexVertexInfo : public TCollection_Basi
 		%feature("autodoc", "1");
 		void Initialize(const Draft_DataMapOfVertexVertexInfo &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & Key() const;
+		const TopoDS_Vertex  Key() const;
 		%feature("autodoc", "1");
 		const Draft_VertexInfo & Value() const;
 
@@ -543,7 +543,7 @@ class Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		void Initialize(const Draft_DataMapOfEdgeEdgeInfo &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Key() const;
+		const TopoDS_Edge  Key() const;
 		%feature("autodoc", "1");
 		const Draft_EdgeInfo & Value() const;
 
@@ -568,9 +568,9 @@ def __del__(self):
 class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo(const TopoDS_Edge &K, const Draft_EdgeInfo &I, const TCollection_MapNodePtr &n);
+		Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo(const TopoDS_Edge K, const Draft_EdgeInfo &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Edge & Key() const;
+		TopoDS_Edge  Key() const;
 		%feature("autodoc", "1");
 		Draft_EdgeInfo & Value() const;
 		%feature("autodoc", "1");
@@ -609,30 +609,30 @@ class Draft_VertexInfo {
 		%feature("autodoc", "1");
 		Draft_VertexInfo();
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E);
+		void Add(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		const gp_Pnt & Geometry() const;
+		const gp_Pnt  Geometry() const;
 		%feature("autodoc", "1");
-		Standard_Real Parameter(const TopoDS_Edge &E);
+		Standard_Real Parameter(const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		void InitEdgeIterator();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge() const;
+		const TopoDS_Edge  Edge() const;
 		%feature("autodoc", "1");
 		void NextEdge();
 		%feature("autodoc", "1");
 		Standard_Boolean MoreEdge() const;
 		%feature("autodoc", "1");
-		gp_Pnt & ChangeGeometry();
+		gp_Pnt  ChangeGeometry();
 		%feature("autodoc","1");
 		%extend {
-				Standard_Real GetChangeParameter(const TopoDS_Edge &E) {
+				Standard_Real GetChangeParameter(const TopoDS_Edge E) {
 				return (Standard_Real) $self->ChangeParameter(E);
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetChangeParameter(Standard_Real value ,const TopoDS_Edge &E) {
+				void SetChangeParameter(Standard_Real value ,const TopoDS_Edge E) {
 				$self->ChangeParameter(E)=value;
 				}
 		};
@@ -668,19 +668,19 @@ class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Face &K, const Draft_FaceInfo &I);
+		Standard_Boolean Bind(const TopoDS_Face K, const Draft_FaceInfo &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Face &K) const;
+		Standard_Boolean IsBound(const TopoDS_Face K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Face &K);
+		Standard_Boolean UnBind(const TopoDS_Face K);
 		%feature("autodoc", "1");
-		const Draft_FaceInfo & Find(const TopoDS_Face &K) const;
+		const Draft_FaceInfo & Find(const TopoDS_Face K) const;
 		%feature("autodoc", "1");
-		const Draft_FaceInfo & operator()(const TopoDS_Face &K) const;
+		const Draft_FaceInfo & operator()(const TopoDS_Face K) const;
 		%feature("autodoc", "1");
-		Draft_FaceInfo & ChangeFind(const TopoDS_Face &K);
+		Draft_FaceInfo & ChangeFind(const TopoDS_Face K);
 		%feature("autodoc", "1");
-		Draft_FaceInfo & operator()(const TopoDS_Face &K);
+		Draft_FaceInfo & operator()(const TopoDS_Face K);
 
 };
 %feature("shadow") Draft_DataMapOfFaceFaceInfo::~Draft_DataMapOfFaceFaceInfo %{
@@ -703,9 +703,9 @@ def __del__(self):
 class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Draft_DataMapNodeOfDataMapOfFaceFaceInfo(const TopoDS_Face &K, const Draft_FaceInfo &I, const TCollection_MapNodePtr &n);
+		Draft_DataMapNodeOfDataMapOfFaceFaceInfo(const TopoDS_Face K, const Draft_FaceInfo &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Face & Key() const;
+		TopoDS_Face  Key() const;
 		%feature("autodoc", "1");
 		Draft_FaceInfo & Value() const;
 		%feature("autodoc", "1");
@@ -752,19 +752,19 @@ class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Vertex &K, const Draft_VertexInfo &I);
+		Standard_Boolean Bind(const TopoDS_Vertex K, const Draft_VertexInfo &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Vertex &K) const;
+		Standard_Boolean IsBound(const TopoDS_Vertex K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Vertex &K);
+		Standard_Boolean UnBind(const TopoDS_Vertex K);
 		%feature("autodoc", "1");
-		const Draft_VertexInfo & Find(const TopoDS_Vertex &K) const;
+		const Draft_VertexInfo & Find(const TopoDS_Vertex K) const;
 		%feature("autodoc", "1");
-		const Draft_VertexInfo & operator()(const TopoDS_Vertex &K) const;
+		const Draft_VertexInfo & operator()(const TopoDS_Vertex K) const;
 		%feature("autodoc", "1");
-		Draft_VertexInfo & ChangeFind(const TopoDS_Vertex &K);
+		Draft_VertexInfo & ChangeFind(const TopoDS_Vertex K);
 		%feature("autodoc", "1");
-		Draft_VertexInfo & operator()(const TopoDS_Vertex &K);
+		Draft_VertexInfo & operator()(const TopoDS_Vertex K);
 
 };
 %feature("shadow") Draft_DataMapOfVertexVertexInfo::~Draft_DataMapOfVertexVertexInfo %{
@@ -789,7 +789,7 @@ class Draft {
 		%feature("autodoc", "1");
 		Draft();
 		%feature("autodoc", "1");
-		static		Standard_Real Angle(const TopoDS_Face &F, const gp_Dir &Direction);
+		static		Standard_Real Angle(const TopoDS_Face F, const gp_Dir Direction);
 
 };
 %feature("shadow") Draft::~Draft %{

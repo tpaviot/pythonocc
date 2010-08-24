@@ -626,15 +626,15 @@ class StdSelect_BRepSelectionTool {
 		%feature("autodoc", "1");
 		StdSelect_BRepSelectionTool();
 		%feature("autodoc", "1");
-		static		void Load(const Handle_SelectMgr_Selection &aSelection, const TopoDS_Shape &aShape, const TopAbs_ShapeEnum aType, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
+		static		void Load(const Handle_SelectMgr_Selection &aSelection, const TopoDS_Shape aShape, const TopAbs_ShapeEnum aType, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
 		%feature("autodoc", "1");
-		static		void Load(const Handle_SelectMgr_Selection &aSelection, const Handle_SelectMgr_SelectableObject &Origin, const TopoDS_Shape &aShape, const TopAbs_ShapeEnum aType, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
+		static		void Load(const Handle_SelectMgr_Selection &aSelection, const Handle_SelectMgr_SelectableObject &Origin, const TopoDS_Shape aShape, const TopAbs_ShapeEnum aType, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
 		%feature("autodoc", "1");
-		static		Standard_Integer GetStandardPriority(const TopoDS_Shape &aShap, const TopAbs_ShapeEnum aType);
+		static		Standard_Integer GetStandardPriority(const TopoDS_Shape aShap, const TopAbs_ShapeEnum aType);
 		%feature("autodoc", "1");
-		static		void ComputeSensitive(const TopoDS_Shape &aShape, const Handle_StdSelect_BRepOwner &anOwner, const Handle_SelectMgr_Selection &aSelection, const Standard_Integer NbPOnEdge, const Standard_Real MaximalParameter, const Standard_Boolean AutoTriangulation=1);
+		static		void ComputeSensitive(const TopoDS_Shape aShape, const Handle_StdSelect_BRepOwner &anOwner, const Handle_SelectMgr_Selection &aSelection, const Standard_Integer NbPOnEdge, const Standard_Real MaximalParameter, const Standard_Boolean AutoTriangulation=1);
 		%feature("autodoc", "1");
-		static		Standard_Boolean GetSensitiveForFace(const TopoDS_Face &aFace, const Handle_StdSelect_BRepOwner &anOwner, Select3D_ListOfSensitive & OutList, const Standard_Boolean AutoTriangulation=1, const Standard_Integer NbPOnEdge=9, const Standard_Real MaxiParam=500, const Standard_Boolean InteriorFlag=1);
+		static		Standard_Boolean GetSensitiveForFace(const TopoDS_Face aFace, const Handle_StdSelect_BRepOwner &anOwner, Select3D_ListOfSensitive & OutList, const Standard_Boolean AutoTriangulation=1, const Standard_Integer NbPOnEdge=9, const Standard_Real MaxiParam=500, const Standard_Boolean InteriorFlag=1);
 
 };
 %feature("shadow") StdSelect_BRepSelectionTool::~StdSelect_BRepSelectionTool %{
@@ -801,7 +801,7 @@ def __del__(self):
 class StdSelect_Shape : public PrsMgr_PresentableObject {
 	public:
 		%feature("autodoc", "1");
-		StdSelect_Shape(const TopoDS_Shape &Sh);
+		StdSelect_Shape(const TopoDS_Shape Sh);
 		%feature("autodoc", "1");
 		virtual		void Compute(const Handle_PrsMgr_PresentationManager3d &aPresentationManager, const Handle_Prs3d_Presentation &aPresentation, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
@@ -881,9 +881,9 @@ class StdSelect_TextProjector2d : public Select2D_Projector {
 		%feature("autodoc", "1");
 		void Set(const Handle_V2d_View &aView);
 		%feature("autodoc", "1");
-		void Set(const gp_Trsf2d &atrsf);
+		void Set(const gp_Trsf2d atrsf);
 		%feature("autodoc", "1");
-		virtual		void Convert(const gp_Pnt2d &aPointIn, gp_Pnt2d & aPointOut) const;
+		virtual		void Convert(const gp_Pnt2d aPointIn, gp_Pnt2d & aPointOut) const;
 		%feature("autodoc", "1");
 		virtual		void Convert(const TCollection_ExtendedString &aText, const Standard_Real XPos, const Standard_Real YPos, gp_Pnt2d & MinPoint, gp_Pnt2d & MaxPoint, const Standard_Integer afont=-0x000000001) const;
 		%feature("autodoc", "1");
@@ -1042,15 +1042,15 @@ class StdSelect_BRepOwner : public SelectMgr_EntityOwner {
 		%feature("autodoc", "1");
 		StdSelect_BRepOwner(const Standard_Integer aPriority);
 		%feature("autodoc", "1");
-		StdSelect_BRepOwner(const TopoDS_Shape &aShape, const Standard_Integer aPriority=0, const Standard_Boolean ComesFromDecomposition=0);
+		StdSelect_BRepOwner(const TopoDS_Shape aShape, const Standard_Integer aPriority=0, const Standard_Boolean ComesFromDecomposition=0);
 		%feature("autodoc", "1");
-		StdSelect_BRepOwner(const TopoDS_Shape &aShape, const Handle_SelectMgr_SelectableObject &theOrigin, const Standard_Integer aPriority=0, const Standard_Boolean FromDecomposition=0);
+		StdSelect_BRepOwner(const TopoDS_Shape aShape, const Handle_SelectMgr_SelectableObject &theOrigin, const Standard_Integer aPriority=0, const Standard_Boolean FromDecomposition=0);
 		%feature("autodoc", "1");
 		Standard_Boolean HasShape() const;
 		%feature("autodoc", "1");
 		Standard_Boolean ComesFromDecomposition() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasHilightMode() const;
 		%feature("autodoc", "1");

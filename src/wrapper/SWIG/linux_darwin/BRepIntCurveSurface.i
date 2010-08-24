@@ -58,9 +58,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("autodoc", "1");
 		BRepIntCurveSurface_Inter();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Sh, const GeomAdaptor_Curve &Cu, const Standard_Real Tol);
+		void Init(const TopoDS_Shape Sh, const GeomAdaptor_Curve &Cu, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Sh, const gp_Lin &L, const Standard_Real Tol);
+		void Init(const TopoDS_Shape Sh, const gp_Lin L, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
@@ -68,7 +68,7 @@ class BRepIntCurveSurface_Inter {
 		%feature("autodoc", "1");
 		IntCurveSurface_IntersectionPoint Point() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt() const;
+		const gp_Pnt  Pnt() const;
 		%feature("autodoc", "1");
 		Standard_Real U() const;
 		%feature("autodoc", "1");
@@ -80,7 +80,7 @@ class BRepIntCurveSurface_Inter {
 		%feature("autodoc", "1");
 		IntCurveSurface_TransitionOnCurve Transition() const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 
 };
 %feature("shadow") BRepIntCurveSurface_Inter::~BRepIntCurveSurface_Inter %{

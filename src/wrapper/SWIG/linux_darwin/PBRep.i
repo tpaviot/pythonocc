@@ -1148,7 +1148,7 @@ class PBRep_CurveOnSurface : public PBRep_GCurve {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCurveOnSurface() const;
 		%feature("autodoc", "1");
-		void SetUVPoints(const gp_Pnt2d &Pnt1, const gp_Pnt2d &Pnt2);
+		void SetUVPoints(const gp_Pnt2d Pnt1, const gp_Pnt2d Pnt2);
 		%feature("autodoc", "1");
 		gp_Pnt2d FirstUV() const;
 		%feature("autodoc", "1");
@@ -1166,9 +1166,9 @@ class PBRep_CurveOnSurface : public PBRep_GCurve {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPBRep_CurveOnSurfacemySurface(const Handle_PGeom_Surface &p);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & _CSFDB_GetPBRep_CurveOnSurfacemyUV1() const;
+		const gp_Pnt2d  _CSFDB_GetPBRep_CurveOnSurfacemyUV1() const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & _CSFDB_GetPBRep_CurveOnSurfacemyUV2() const;
+		const gp_Pnt2d  _CSFDB_GetPBRep_CurveOnSurfacemyUV2() const;
 
 };
 %extend PBRep_CurveOnSurface {
@@ -1437,7 +1437,7 @@ class PBRep_CurveOnClosedSurface : public PBRep_CurveOnSurface {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRegularity() const;
 		%feature("autodoc", "1");
-		void SetUVPoints2(const gp_Pnt2d &Pnt1, const gp_Pnt2d &Pnt2);
+		void SetUVPoints2(const gp_Pnt2d Pnt1, const gp_Pnt2d Pnt2);
 		%feature("autodoc", "1");
 		gp_Pnt2d FirstUV2() const;
 		%feature("autodoc", "1");
@@ -1455,9 +1455,9 @@ class PBRep_CurveOnClosedSurface : public PBRep_CurveOnSurface {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPBRep_CurveOnClosedSurfacemyContinuity(const GeomAbs_Shape p);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & _CSFDB_GetPBRep_CurveOnClosedSurfacemyUV21() const;
+		const gp_Pnt2d  _CSFDB_GetPBRep_CurveOnClosedSurfacemyUV21() const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & _CSFDB_GetPBRep_CurveOnClosedSurfacemyUV22() const;
+		const gp_Pnt2d  _CSFDB_GetPBRep_CurveOnClosedSurfacemyUV22() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1547,7 +1547,7 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 		%feature("autodoc", "1");
 		gp_Pnt Pnt() const;
 		%feature("autodoc", "1");
-		void Pnt(const gp_Pnt &P);
+		void Pnt(const gp_Pnt P);
 		%feature("autodoc", "1");
 		Handle_PBRep_PointRepresentation Points() const;
 		%feature("autodoc", "1");
@@ -1559,7 +1559,7 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPBRep_TVertexmyTolerance(const Standard_Real p);
 		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetPBRep_TVertexmyPnt() const;
+		const gp_Pnt  _CSFDB_GetPBRep_TVertexmyPnt() const;
 		%feature("autodoc", "1");
 		Handle_PBRep_PointRepresentation _CSFDB_GetPBRep_TVertexmyPoints() const;
 		%feature("autodoc", "1");
@@ -2042,7 +2042,7 @@ class PBRep_TVertex1 : public PTopoDS_TVertex1 {
 		%feature("autodoc", "1");
 		gp_Pnt Pnt() const;
 		%feature("autodoc", "1");
-		void Pnt(const gp_Pnt &P);
+		void Pnt(const gp_Pnt P);
 		%feature("autodoc", "1");
 		Handle_PBRep_PointRepresentation Points() const;
 		%feature("autodoc", "1");
@@ -2054,7 +2054,7 @@ class PBRep_TVertex1 : public PTopoDS_TVertex1 {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPBRep_TVertex1myTolerance(const Standard_Real p);
 		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetPBRep_TVertex1myPnt() const;
+		const gp_Pnt  _CSFDB_GetPBRep_TVertex1myPnt() const;
 		%feature("autodoc", "1");
 		Handle_PBRep_PointRepresentation _CSFDB_GetPBRep_TVertex1myPoints() const;
 		%feature("autodoc", "1");

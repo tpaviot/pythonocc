@@ -863,15 +863,15 @@ class GEOMAlgo_BuilderSolid : public GEOMAlgo_BuilderArea {
 class GEOMAlgo_ShapeAlgo : public GEOMAlgo_Algo {
 	public:
 		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &aS);
+		void SetShape(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real aT);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		Standard_Real Tolerance() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Result() const;
+		const TopoDS_Shape  Result() const;
 
 };
 
@@ -900,9 +900,9 @@ class GEOMAlgo_FinderShapeOn : public GEOMAlgo_ShapeAlgo {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Shapes() const;
 		%feature("autodoc", "1");
-		static		void CopySource(const TopoDS_Shape &aS, TopTools_DataMapOfShapeShape & aImages, TopTools_DataMapOfShapeShape & aOriginals, TopoDS_Shape & aSC);
+		static		void CopySource(const TopoDS_Shape aS, TopTools_DataMapOfShapeShape & aImages, TopTools_DataMapOfShapeShape & aOriginals, TopoDS_Shape & aSC);
 		%feature("autodoc", "1");
-		static		bool BuildTriangulation(const TopoDS_Shape &theShape);
+		static		bool BuildTriangulation(const TopoDS_Shape theShape);
 
 };
 
@@ -913,9 +913,9 @@ class GEOMAlgo_FinderShapeOn : public GEOMAlgo_ShapeAlgo {
 class GEOMAlgo_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		GEOMAlgo_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape K, const Standard_Real &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Real GetValue() {
@@ -950,9 +950,9 @@ class GEOMAlgo_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState(const TopoDS_Shape &K1, const Standard_Integer K2, const TopAbs_State &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState(const TopoDS_Shape K1, const Standard_Integer K2, const TopAbs_State &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -1143,9 +1143,9 @@ class GEOMAlgo_HAlgo : public MMgt_TShared {
 class GEOMAlgo_Clsf : public GEOMAlgo_HAlgo {
 	public:
 		%feature("autodoc", "1");
-		void SetPnt(const gp_Pnt &aP);
+		void SetPnt(const gp_Pnt aP);
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt() const;
+		const gp_Pnt  Pnt() const;
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real aT);
 		%feature("autodoc", "1");
@@ -1178,9 +1178,9 @@ class GEOMAlgo_ClsfSolid : public GEOMAlgo_Clsf {
 		%feature("autodoc", "1");
 		GEOMAlgo_ClsfSolid();
 		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &aS);
+		void SetShape(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 
 };
 %extend GEOMAlgo_ClsfSolid {
@@ -1226,7 +1226,7 @@ class GEOMAlgo_DataMapIteratorOfDataMapOfShapeShapeSet : public TCollection_Basi
 		%feature("autodoc", "1");
 		void Initialize(const GEOMAlgo_DataMapOfShapeShapeSet &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const GEOMAlgo_ShapeSet & Value() const;
 
@@ -1292,19 +1292,19 @@ class GEOMAlgo_DataMapOfShapeShapeSet : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const GEOMAlgo_ShapeSet &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const GEOMAlgo_ShapeSet &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const GEOMAlgo_ShapeSet & Find(const TopoDS_Shape &K) const;
+		const GEOMAlgo_ShapeSet & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const GEOMAlgo_ShapeSet & operator()(const TopoDS_Shape &K) const;
+		const GEOMAlgo_ShapeSet & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		GEOMAlgo_ShapeSet & ChangeFind(const TopoDS_Shape &K);
+		GEOMAlgo_ShapeSet & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		GEOMAlgo_ShapeSet & operator()(const TopoDS_Shape &K);
+		GEOMAlgo_ShapeSet & operator()(const TopoDS_Shape K);
 
 };
 
@@ -1352,9 +1352,9 @@ class GEOMAlgo_ClsfBox : public GEOMAlgo_Clsf {
 		%feature("autodoc", "1");
 		GEOMAlgo_ClsfBox();
 		%feature("autodoc", "1");
-		void SetBox(const TopoDS_Shape &aS);
+		void SetBox(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Box() const;
+		const TopoDS_Shape  Box() const;
 		%feature("autodoc", "1");
 		virtual		void Perform();
 		%feature("autodoc", "1");
@@ -1387,17 +1387,17 @@ class GEOMAlgo_CoupleOfShapes {
 		%feature("autodoc", "1");
 		GEOMAlgo_CoupleOfShapes();
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2);
+		void SetShapes(const TopoDS_Shape aS1, const TopoDS_Shape aS2);
 		%feature("autodoc", "1");
-		void SetShape1(const TopoDS_Shape &aS1);
+		void SetShape1(const TopoDS_Shape aS1);
 		%feature("autodoc", "1");
-		void SetShape2(const TopoDS_Shape &aS2);
+		void SetShape2(const TopoDS_Shape aS2);
 		%feature("autodoc", "1");
 		void Shapes(TopoDS_Shape & aS1, TopoDS_Shape & aS2) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape1() const;
+		const TopoDS_Shape  Shape1() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape2() const;
+		const TopoDS_Shape  Shape2() const;
 
 };
 
@@ -1410,9 +1410,9 @@ class GEOMAlgo_BuilderFace : public GEOMAlgo_BuilderArea {
 		%feature("autodoc", "1");
 		GEOMAlgo_BuilderFace();
 		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &theFace);
+		void SetFace(const TopoDS_Face theFace);
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 		%feature("autodoc", "1");
 		virtual		void Perform();
 
@@ -1462,7 +1462,7 @@ class GEOMAlgo_FinderShapeOn1 : public GEOMAlgo_ShapeAlgo {
 class GEOMAlgo_FinderShapeOnQuad : public GEOMAlgo_FinderShapeOn1 {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_FinderShapeOnQuad(const gp_Pnt &theTopLeftPoint, const gp_Pnt &theTopRigthPoint, const gp_Pnt &theBottomLeftPoint, const gp_Pnt &theBottomRigthPoint);
+		GEOMAlgo_FinderShapeOnQuad(const gp_Pnt theTopLeftPoint, const gp_Pnt theTopRigthPoint, const gp_Pnt theBottomLeftPoint, const gp_Pnt theBottomRigthPoint);
 
 };
 
@@ -1473,11 +1473,11 @@ class GEOMAlgo_FinderShapeOnQuad : public GEOMAlgo_FinderShapeOn1 {
 class GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape(const GEOMAlgo_PassKeyShape &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
+		GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape(const GEOMAlgo_PassKeyShape &K, const TopoDS_Shape I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		GEOMAlgo_PassKeyShape & Key() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
+		TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1500,13 +1500,13 @@ class GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape : public TCollection_MapN
 class GEOMAlgo_BuilderShape : public GEOMAlgo_Algo {
 	public:
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &theS);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape theS);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &theS);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape theS);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &theS);
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape theS);
 		%feature("autodoc", "1");
 		Standard_Boolean HasDeleted() const;
 		%feature("autodoc", "1");
@@ -1531,19 +1531,19 @@ class GEOMAlgo_Builder : public GEOMAlgo_BuilderShape {
 		%feature("autodoc", "1");
 		virtual		void PerformWithFiller(const NMTTools_PaveFiller &theDSF);
 		%feature("autodoc", "1");
-		virtual		void AddShape(const TopoDS_Shape &theShape);
+		virtual		void AddShape(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		void Clear();
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Shapes() const;
 		%feature("autodoc", "1");
-		void AddCompound(const TopoDS_Shape &theShape);
+		void AddCompound(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Shapes1(const Standard_Integer theType) const;
 		%feature("autodoc", "1");
 		const BRepAlgo_Image & Images() const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & InParts(const TopoDS_Shape &theShape) const;
+		const TopTools_ListOfShape & InParts(const TopoDS_Shape theShape) const;
 
 };
 
@@ -1556,7 +1556,7 @@ class GEOMAlgo_Splitter : public GEOMAlgo_Builder {
 		%feature("autodoc", "1");
 		GEOMAlgo_Splitter();
 		%feature("autodoc", "1");
-		virtual		void AddTool(const TopoDS_Shape &theShape);
+		virtual		void AddTool(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Tools() const;
 		%feature("autodoc", "1");
@@ -1568,7 +1568,7 @@ class GEOMAlgo_Splitter : public GEOMAlgo_Builder {
 		%feature("autodoc", "1");
 		Standard_Integer LimitMode() const;
 		%feature("autodoc", "1");
-		void AddToolCompound(const TopoDS_Shape &theShape);
+		void AddToolCompound(const TopoDS_Shape theShape);
 
 };
 
@@ -1608,15 +1608,15 @@ class GEOMAlgo_IndexedDataMapOfShapeState : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const TopAbs_State &I);
+		Standard_Integer Add(const TopoDS_Shape K, const TopAbs_State &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const TopAbs_State &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const TopAbs_State &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const TopAbs_State & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -1626,11 +1626,11 @@ class GEOMAlgo_IndexedDataMapOfShapeState : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopAbs_State & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopAbs_State & FindFromKey(const TopoDS_Shape &K) const;
+		const TopAbs_State & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		TopAbs_State & ChangeFromKey(const TopoDS_Shape &K);
+		TopAbs_State & ChangeFromKey(const TopoDS_Shape K);
 
 };
 
@@ -1651,9 +1651,9 @@ class GEOMAlgo_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Standard_Integer &K, const TopoDS_Shape &I);
+		Standard_Integer Add(const Standard_Integer &K, const TopoDS_Shape I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TopoDS_Shape &T);
+		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TopoDS_Shape T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
@@ -1661,19 +1661,19 @@ class GEOMAlgo_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		const Standard_Integer & FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindFromIndex(const Standard_Integer I) const;
+		const TopoDS_Shape  FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const Standard_Integer I) const;
+		const TopoDS_Shape  operator()(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFromIndex(const Standard_Integer I);
+		TopoDS_Shape  ChangeFromIndex(const Standard_Integer I);
 		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const Standard_Integer I);
+		TopoDS_Shape  operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindFromKey(const Standard_Integer &K) const;
+		const TopoDS_Shape  FindFromKey(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFromKey(const Standard_Integer &K);
+		TopoDS_Shape  ChangeFromKey(const Standard_Integer &K);
 
 };
 
@@ -1686,41 +1686,41 @@ class GEOMAlgo_Tools3D {
 		%feature("autodoc", "1");
 		GEOMAlgo_Tools3D();
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsSplitToReverse(const TopoDS_Shape &theSplit, const TopoDS_Shape &theShape, IntTools_Context & theContext);
+		static		Standard_Boolean IsSplitToReverse(const TopoDS_Shape theSplit, const TopoDS_Shape theShape, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsSplitToReverse(const TopoDS_Face &theSplit, const TopoDS_Face &theShape, IntTools_Context & theContext);
+		static		Standard_Boolean IsSplitToReverse(const TopoDS_Face theSplit, const TopoDS_Face theShape, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsSplitToReverse(const TopoDS_Edge &theEdge, const TopoDS_Edge &theSplit, IntTools_Context & theContext);
+		static		Standard_Boolean IsSplitToReverse(const TopoDS_Edge theEdge, const TopoDS_Edge theSplit, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		Standard_Integer Sense(const TopoDS_Face &theF1, const TopoDS_Face &theF2);
+		static		Standard_Integer Sense(const TopoDS_Face theF1, const TopoDS_Face theF2);
 		%feature("autodoc", "1");
-		static		void CopyFace(const TopoDS_Face &theF1, TopoDS_Face & theF2);
+		static		void CopyFace(const TopoDS_Face theF1, TopoDS_Face & theF2);
 		%feature("autodoc", "1");
 		static		void MakeContainer(const TopAbs_ShapeEnum theType, TopoDS_Shape & theShape);
 		%feature("autodoc", "1");
 		static		void MakeConnexityBlock(const TopTools_ListOfShape &theLS, const TopTools_IndexedMapOfShape &theMapAvoid, TopTools_ListOfShape & theLSCB);
 		%feature("autodoc", "1");
-		static		TopAbs_State ComputeStateByOnePoint(const TopoDS_Shape &theShape, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		static		TopAbs_State ComputeStateByOnePoint(const TopoDS_Shape theShape, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		TopAbs_State ComputeState(const gp_Pnt &thePoint, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		static		TopAbs_State ComputeState(const gp_Pnt thePoint, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		TopAbs_State ComputeState(const TopoDS_Vertex &theVertex, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		static		TopAbs_State ComputeState(const TopoDS_Vertex theVertex, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		TopAbs_State ComputeState(const TopoDS_Edge &theEdge, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		static		TopAbs_State ComputeState(const TopoDS_Edge theEdge, const TopoDS_Solid theSolid, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		TopAbs_State ComputeState(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const Standard_Real theTol, const TopTools_IndexedMapOfShape &theBounds, IntTools_Context & theContext);
+		static		TopAbs_State ComputeState(const TopoDS_Face theFace, const TopoDS_Solid theSolid, const Standard_Real theTol, const TopTools_IndexedMapOfShape &theBounds, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopoDS_Face &theFace1, const TopoDS_Face &theFace2, IntTools_Context & theContext);
+		static		Standard_Boolean IsInternalFace(const TopoDS_Face theFace, const TopoDS_Edge theEdge, const TopoDS_Face theFace1, const TopoDS_Face theFace2, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopTools_ListOfShape &theLF, IntTools_Context & theContext);
+		static		Standard_Boolean IsInternalFace(const TopoDS_Face theFace, const TopoDS_Edge theEdge, const TopTools_ListOfShape &theLF, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const TopTools_IndexedDataMapOfShapeListOfShape &theMEF, const Standard_Real theTol, IntTools_Context & theContext);
+		static		Standard_Boolean IsInternalFace(const TopoDS_Face theFace, const TopoDS_Solid theSolid, const TopTools_IndexedDataMapOfShapeListOfShape &theMEF, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		static		void GetFaceOff(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, const NMTTools_ListOfCoupleOfShape &theLCEF, TopoDS_Face & theFaceOff);
+		static		void GetFaceOff(const TopoDS_Edge theEdge, const TopoDS_Face theFace, const NMTTools_ListOfCoupleOfShape &theLCEF, TopoDS_Face & theFaceOff);
 		%feature("autodoc", "1");
-		static		Standard_Boolean GetEdgeOnFace(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, TopoDS_Edge & theEdgeOnF);
+		static		Standard_Boolean GetEdgeOnFace(const TopoDS_Edge theEdge, const TopoDS_Face theFace, TopoDS_Edge & theEdgeOnF);
 		%feature("autodoc", "1");
-		static		Standard_Boolean GetEdgeOff(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, TopoDS_Edge & theEdgeOff);
+		static		Standard_Boolean GetEdgeOff(const TopoDS_Edge theEdge, const TopoDS_Face theFace, TopoDS_Edge & theEdgeOff);
 
 };
 
@@ -1769,11 +1769,11 @@ class GEOMAlgo_Gluer : public GEOMAlgo_ShapeAlgo {
 		%feature("autodoc", "1");
 		Standard_Integer AloneShapes() const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
+		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
+		Standard_Boolean IsDeleted(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		const TopTools_DataMapOfShapeListOfShape & Images() const;
 		%feature("autodoc", "1");
@@ -1817,19 +1817,19 @@ class GEOMAlgo_DataMapOfPassKeyShapeShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const GEOMAlgo_PassKeyShape &K, const TopoDS_Shape &I);
+		Standard_Boolean Bind(const GEOMAlgo_PassKeyShape &K, const TopoDS_Shape I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const GEOMAlgo_PassKeyShape &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const GEOMAlgo_PassKeyShape &K);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Find(const GEOMAlgo_PassKeyShape &K) const;
+		const TopoDS_Shape  Find(const GEOMAlgo_PassKeyShape &K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const GEOMAlgo_PassKeyShape &K) const;
+		const TopoDS_Shape  operator()(const GEOMAlgo_PassKeyShape &K) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFind(const GEOMAlgo_PassKeyShape &K);
+		TopoDS_Shape  ChangeFind(const GEOMAlgo_PassKeyShape &K);
 		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const GEOMAlgo_PassKeyShape &K);
+		TopoDS_Shape  operator()(const GEOMAlgo_PassKeyShape &K);
 
 };
 
@@ -1840,7 +1840,7 @@ class GEOMAlgo_DataMapOfPassKeyShapeShape : public TCollection_BasicMap {
 class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const Standard_Integer &K1, const Standard_Integer K2, const TopoDS_Shape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const Standard_Integer &K1, const Standard_Integer K2, const TopoDS_Shape I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey1() {
@@ -1868,7 +1868,7 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollec
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
+		TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1891,9 +1891,9 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollec
 class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo(const TopoDS_Shape &K1, const Standard_Integer K2, const GEOMAlgo_ShapeInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo(const TopoDS_Shape K1, const Standard_Integer K2, const GEOMAlgo_ShapeInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -1944,31 +1944,31 @@ class GEOMAlgo_ListOfPnt {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const gp_Pnt &I);
+		void Prepend(const gp_Pnt I);
 		%feature("autodoc", "1");
-		void Prepend(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & theIt);
+		void Prepend(const gp_Pnt I, GEOMAlgo_ListIteratorOfListOfPnt & theIt);
 		%feature("autodoc", "1");
 		void Prepend(GEOMAlgo_ListOfPnt & Other);
 		%feature("autodoc", "1");
-		void Append(const gp_Pnt &I);
+		void Append(const gp_Pnt I);
 		%feature("autodoc", "1");
-		void Append(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & theIt);
+		void Append(const gp_Pnt I, GEOMAlgo_ListIteratorOfListOfPnt & theIt);
 		%feature("autodoc", "1");
 		void Append(GEOMAlgo_ListOfPnt & Other);
 		%feature("autodoc", "1");
-		gp_Pnt & First() const;
+		gp_Pnt  First() const;
 		%feature("autodoc", "1");
-		gp_Pnt & Last() const;
+		gp_Pnt  Last() const;
 		%feature("autodoc", "1");
 		void RemoveFirst();
 		%feature("autodoc", "1");
 		void Remove(GEOMAlgo_ListIteratorOfListOfPnt & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & It);
+		void InsertBefore(const gp_Pnt I, GEOMAlgo_ListIteratorOfListOfPnt & It);
 		%feature("autodoc", "1");
 		void InsertBefore(GEOMAlgo_ListOfPnt & Other, GEOMAlgo_ListIteratorOfListOfPnt & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & It);
+		void InsertAfter(const gp_Pnt I, GEOMAlgo_ListIteratorOfListOfPnt & It);
 		%feature("autodoc", "1");
 		void InsertAfter(GEOMAlgo_ListOfPnt & Other, GEOMAlgo_ListIteratorOfListOfPnt & It);
 
@@ -1985,9 +1985,9 @@ class GEOMAlgo_ShapeSet {
 		%feature("autodoc", "1");
 		void Add(const TopTools_ListOfShape &theLS);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &theShape);
+		void Add(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &theShape, const TopAbs_ShapeEnum theType);
+		void Add(const TopoDS_Shape theShape, const TopAbs_ShapeEnum theType);
 		%feature("autodoc", "1");
 		void Subtract(const GEOMAlgo_ShapeSet &theSet);
 		%feature("autodoc", "1");
@@ -2058,9 +2058,9 @@ class GEOMAlgo_ShapeInfoFiller : public GEOMAlgo_Algo {
 		%feature("autodoc", "1");
 		GEOMAlgo_ShapeInfoFiller();
 		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &aS);
+		void SetShape(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real aT);
 		%feature("autodoc", "1");
@@ -2068,7 +2068,7 @@ class GEOMAlgo_ShapeInfoFiller : public GEOMAlgo_Algo {
 		%feature("autodoc", "1");
 		const GEOMAlgo_ShapeInfo & Info() const;
 		%feature("autodoc", "1");
-		const GEOMAlgo_ShapeInfo & Info(const TopoDS_Shape &aS) const;
+		const GEOMAlgo_ShapeInfo & Info(const TopoDS_Shape aS) const;
 		%feature("autodoc", "1");
 		virtual		void Perform();
 
@@ -2089,7 +2089,7 @@ class GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyShapeShape : public TCollection_
 		%feature("autodoc", "1");
 		const GEOMAlgo_PassKeyShape & Key() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
+		const TopoDS_Shape  Value() const;
 
 };
 
@@ -2128,27 +2128,27 @@ class GEOMAlgo_ShapeInfo {
 		%feature("autodoc", "1");
 		GEOMAlgo_KindOfClosed KindOfClosed() const;
 		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt &aP);
+		void SetLocation(const gp_Pnt aP);
 		%feature("autodoc", "1");
-		const gp_Pnt & Location() const;
+		const gp_Pnt  Location() const;
 		%feature("autodoc", "1");
-		void SetDirection(const gp_Dir &aD);
+		void SetDirection(const gp_Dir aD);
 		%feature("autodoc", "1");
-		const gp_Dir & Direction() const;
+		const gp_Dir  Direction() const;
 		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax2 &aAx2);
+		void SetPosition(const gp_Ax2 aAx2);
 		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax3 &aAx3);
+		void SetPosition(const gp_Ax3 aAx3);
 		%feature("autodoc", "1");
-		const gp_Ax3 & Position() const;
+		const gp_Ax3  Position() const;
 		%feature("autodoc", "1");
-		void SetPnt1(const gp_Pnt &aP);
+		void SetPnt1(const gp_Pnt aP);
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt1() const;
+		const gp_Pnt  Pnt1() const;
 		%feature("autodoc", "1");
-		void SetPnt2(const gp_Pnt &aP);
+		void SetPnt2(const gp_Pnt aP);
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt2() const;
+		const gp_Pnt  Pnt2() const;
 		%feature("autodoc", "1");
 		void SetRadius1(const Standard_Real aR);
 		%feature("autodoc", "1");
@@ -2191,15 +2191,15 @@ class GEOMAlgo_IndexedDataMapOfShapeShapeInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const GEOMAlgo_ShapeInfo &I);
+		Standard_Integer Add(const TopoDS_Shape K, const GEOMAlgo_ShapeInfo &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const GEOMAlgo_ShapeInfo &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const GEOMAlgo_ShapeInfo &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const GEOMAlgo_ShapeInfo & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -2209,11 +2209,11 @@ class GEOMAlgo_IndexedDataMapOfShapeShapeInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		GEOMAlgo_ShapeInfo & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const GEOMAlgo_ShapeInfo & FindFromKey(const TopoDS_Shape &K) const;
+		const GEOMAlgo_ShapeInfo & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		GEOMAlgo_ShapeInfo & ChangeFromKey(const TopoDS_Shape &K);
+		GEOMAlgo_ShapeInfo & ChangeFromKey(const TopoDS_Shape K);
 
 };
 
@@ -2313,9 +2313,9 @@ class GEOMAlgo_SolidSolid : public GEOMAlgo_ShellSolid {
 		%feature("autodoc", "1");
 		virtual		void Perform();
 		%feature("autodoc", "1");
-		void SetShape2(const TopoDS_Shape &aS);
+		void SetShape2(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape2() const;
+		const TopoDS_Shape  Shape2() const;
 
 };
 
@@ -2368,13 +2368,13 @@ class GEOMAlgo_PassKeyShape {
 		%feature("autodoc", "1");
 		GEOMAlgo_PassKeyShape & operator=(const GEOMAlgo_PassKeyShape &Other);
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS);
+		void SetShapes(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2);
+		void SetShapes(const TopoDS_Shape aS1, const TopoDS_Shape aS2);
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2, const TopoDS_Shape &aS3);
+		void SetShapes(const TopoDS_Shape aS1, const TopoDS_Shape aS2, const TopoDS_Shape aS3);
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2, const TopoDS_Shape &aS3, const TopoDS_Shape &aS4);
+		void SetShapes(const TopoDS_Shape aS1, const TopoDS_Shape aS2, const TopoDS_Shape aS3, const TopoDS_Shape aS4);
 		%feature("autodoc", "1");
 		void SetShapes(const TopTools_ListOfShape &aLS);
 		%feature("autodoc", "1");
@@ -2412,7 +2412,7 @@ class GEOMAlgo_ListIteratorOfListOfPnt {
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		gp_Pnt & Value() const;
+		gp_Pnt  Value() const;
 
 };
 
@@ -2429,7 +2429,7 @@ class GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		void Initialize(const GEOMAlgo_DataMapOfShapeReal &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Standard_Real & Value() const;
 
@@ -2489,15 +2489,15 @@ class GEOMAlgo_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const Bnd_Box &I);
+		Standard_Integer Add(const TopoDS_Shape K, const Bnd_Box &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const Bnd_Box &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const Bnd_Box &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Bnd_Box & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -2507,11 +2507,11 @@ class GEOMAlgo_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Bnd_Box & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Bnd_Box & FindFromKey(const TopoDS_Shape &K) const;
+		const Bnd_Box & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Bnd_Box & ChangeFromKey(const TopoDS_Shape &K);
+		Bnd_Box & ChangeFromKey(const TopoDS_Shape K);
 
 };
 
@@ -2532,29 +2532,29 @@ class GEOMAlgo_DataMapOfShapeReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Real &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Real &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Standard_Real & Find(const TopoDS_Shape &K) const;
+		const Standard_Real & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Standard_Real & operator()(const TopoDS_Shape &K) const;
+		const Standard_Real & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc","1");
 		%extend {
-				Standard_Real GetChangeFind(const TopoDS_Shape &K) {
+				Standard_Real GetChangeFind(const TopoDS_Shape K) {
 				return (Standard_Real) $self->ChangeFind(K);
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetChangeFind(Standard_Real value ,const TopoDS_Shape &K) {
+				void SetChangeFind(Standard_Real value ,const TopoDS_Shape K) {
 				$self->ChangeFind(K)=value;
 				}
 		};
 		%feature("autodoc", "1");
-		Standard_Real & operator()(const TopoDS_Shape &K);
+		Standard_Real & operator()(const TopoDS_Shape K);
 
 };
 
@@ -2627,15 +2627,15 @@ class GEOMAlgo_WireEdgeSet {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &aF);
+		void SetFace(const TopoDS_Face aF);
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 		%feature("autodoc", "1");
-		void AddStartElement(const TopoDS_Shape &sS);
+		void AddStartElement(const TopoDS_Shape sS);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & StartElements() const;
 		%feature("autodoc", "1");
-		void AddShape(const TopoDS_Shape &sS);
+		void AddShape(const TopoDS_Shape sS);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Shapes() const;
 
@@ -2648,9 +2648,9 @@ class GEOMAlgo_WireEdgeSet {
 class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const TopoDS_Shape &K1, const Standard_Integer K2, const Bnd_Box &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const TopoDS_Shape K1, const Standard_Integer K2, const Bnd_Box &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -2704,9 +2704,9 @@ class GEOMAlgo_StateCollector {
 class GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet(const TopoDS_Shape &K, const GEOMAlgo_ShapeSet &I, const TCollection_MapNodePtr &n);
+		GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet(const TopoDS_Shape K, const GEOMAlgo_ShapeSet &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		GEOMAlgo_ShapeSet & Value() const;
 		%feature("autodoc", "1");
@@ -2731,9 +2731,9 @@ class GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet : public TCollection_MapNode 
 class GEOMAlgo_ListNodeOfListOfPnt : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_ListNodeOfListOfPnt(const gp_Pnt &I, const TCollection_MapNodePtr &n);
+		GEOMAlgo_ListNodeOfListOfPnt(const gp_Pnt I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		gp_Pnt & Value() const;
+		gp_Pnt  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2760,19 +2760,19 @@ class GEOMAlgo_SurfaceTools {
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsAnalytic(const Handle_Geom_Surface &aS);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsCoaxial(const gp_Pnt &aP1, const gp_Pnt &aP2, const gp_Cylinder &aCyl, const Standard_Real aTol);
+		static		Standard_Boolean IsCoaxial(const gp_Pnt aP1, const gp_Pnt aP2, const gp_Cylinder aCyl, const Standard_Real aTol);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsConformState(const TopAbs_State aST1, const GEOMAlgo_State aST2);
 		%feature("autodoc", "1");
-		static		Standard_Integer GetState(const gp_Pnt &aP, const GeomAdaptor_Surface &aS, const Standard_Real aTol, TopAbs_State & aSt);
+		static		Standard_Integer GetState(const gp_Pnt aP, const GeomAdaptor_Surface &aS, const Standard_Real aTol, TopAbs_State & aSt);
 		%feature("autodoc", "1");
-		static		Standard_Integer GetState(const gp_Pnt &aP, const Handle_Geom_Surface &aS, const Standard_Real aTol, TopAbs_State & aSt);
+		static		Standard_Integer GetState(const gp_Pnt aP, const Handle_Geom_Surface &aS, const Standard_Real aTol, TopAbs_State & aSt);
 		%feature("autodoc", "1");
-		static		Standard_Real Distance(const gp_Pnt &aP, const gp_Pln &aPln);
+		static		Standard_Real Distance(const gp_Pnt aP, const gp_Pln aPln);
 		%feature("autodoc", "1");
-		static		Standard_Real Distance(const gp_Pnt &aP, const gp_Cylinder &aCyl);
+		static		Standard_Real Distance(const gp_Pnt aP, const gp_Cylinder aCyl);
 		%feature("autodoc", "1");
-		static		Standard_Real Distance(const gp_Pnt &aP, const gp_Sphere &aSph);
+		static		Standard_Real Distance(const gp_Pnt aP, const gp_Sphere aSph);
 		%feature("autodoc", "1");
 		static		TopAbs_State ReverseState(const TopAbs_State aSt);
 
@@ -2895,7 +2895,7 @@ class GEOMAlgo_WireSplitter : public GEOMAlgo_Algo {
 		%feature("autodoc", "1");
 		GEOMAlgo_WireSplitter();
 		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &aF);
+		void SetFace(const TopoDS_Face aF);
 		%feature("autodoc", "1");
 		void SetEdges(const TopTools_ListOfShape &aLE);
 		%feature("autodoc", "1");
@@ -2905,7 +2905,7 @@ class GEOMAlgo_WireSplitter : public GEOMAlgo_Algo {
 		%feature("autodoc", "1");
 		Standard_Boolean IsNothingToDo() const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 		%feature("autodoc", "1");
 		const BOPTColStd_ListOfListOfShape & Shapes() const;
 
@@ -2920,27 +2920,27 @@ class GEOMAlgo_Tools {
 		%feature("autodoc", "1");
 		GEOMAlgo_Tools();
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsCompositeShape(const TopoDS_Shape &aS);
+		static		Standard_Boolean IsCompositeShape(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
 		static		Standard_Integer RefineSDShapes(GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape & aMSD, const Standard_Real aTol, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
 		static		Standard_Integer FindSDShapes(const TopTools_ListOfShape &aLE, const Standard_Real aTol, TopTools_IndexedDataMapOfShapeListOfShape & aMEE, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
-		static		Standard_Integer FindSDShapes(const TopoDS_Shape &aE1, const TopTools_ListOfShape &aLE, const Standard_Real aTol, TopTools_ListOfShape & aLESD, IntTools_Context & aCtx);
+		static		Standard_Integer FindSDShapes(const TopoDS_Shape aE1, const TopTools_ListOfShape &aLE, const Standard_Real aTol, TopTools_ListOfShape & aLESD, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
-		static		Standard_Boolean ProjectPointOnShape(const gp_Pnt &aP1, const TopoDS_Shape &aS, gp_Pnt & aP2, IntTools_Context & aCtx);
+		static		Standard_Boolean ProjectPointOnShape(const gp_Pnt aP1, const TopoDS_Shape aS, gp_Pnt & aP2, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
-		static		void PointOnShape(const TopoDS_Shape &aS, gp_Pnt & aP3D);
+		static		void PointOnShape(const TopoDS_Shape aS, gp_Pnt & aP3D);
 		%feature("autodoc", "1");
-		static		void PointOnEdge(const TopoDS_Edge &aE, gp_Pnt & aP3D);
+		static		void PointOnEdge(const TopoDS_Edge aE, gp_Pnt & aP3D);
 		%feature("autodoc", "1");
-		static		void PointOnEdge(const TopoDS_Edge &aE, const Standard_Real aT, gp_Pnt & aP3D);
+		static		void PointOnEdge(const TopoDS_Edge aE, const Standard_Real aT, gp_Pnt & aP3D);
 		%feature("autodoc", "1");
-		static		void PointOnFace(const TopoDS_Face &aF, gp_Pnt & aP3D);
+		static		void PointOnFace(const TopoDS_Face aF, gp_Pnt & aP3D);
 		%feature("autodoc", "1");
-		static		void PointOnFace(const TopoDS_Face &aF, const Standard_Real aU, const Standard_Real aV, gp_Pnt & aP3D);
+		static		void PointOnFace(const TopoDS_Face aF, const Standard_Real aU, const Standard_Real aV, gp_Pnt & aP3D);
 		%feature("autodoc", "1");
-		static		void RefinePCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aU1, const Standard_Real aU2);
+		static		void RefinePCurveForEdgeOnFace(const TopoDS_Edge aE, const TopoDS_Face aF, const Standard_Real aU1, const Standard_Real aU2);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsUPeriodic(const Handle_Geom_Surface &aS);
 
@@ -2955,9 +2955,9 @@ class GEOMAlgo_BuilderTools {
 		%feature("autodoc", "1");
 		GEOMAlgo_BuilderTools();
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsHole(const TopoDS_Shape &aW, const TopoDS_Shape &aF);
+		static		Standard_Boolean IsHole(const TopoDS_Shape aW, const TopoDS_Shape aF);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsHole(const TopoDS_Shape &aShell);
+		static		Standard_Boolean IsHole(const TopoDS_Shape aShell);
 
 };
 

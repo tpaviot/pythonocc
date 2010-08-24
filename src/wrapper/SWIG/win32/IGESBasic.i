@@ -2047,7 +2047,7 @@ class IGESBasic_SingularSubfigure : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESBasic_SingularSubfigure();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESBasic_SubfigureDef &aSubfigureDef, const gp_XYZ &aTranslation, const Standard_Boolean hasScale, const Standard_Real aScale);
+		void Init(const Handle_IGESBasic_SubfigureDef &aSubfigureDef, const gp_XYZ aTranslation, const Standard_Boolean hasScale, const Standard_Real aScale);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SubfigureDef Subfigure() const;
 		%feature("autodoc", "1");

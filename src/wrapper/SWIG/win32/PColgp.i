@@ -1892,11 +1892,11 @@ class PColgp_FieldOfHArray2OfPnt : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray2OfPnt &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Pnt &Value);
+		void SetValue(const Standard_Integer Index, const gp_Pnt Value);
 		%feature("autodoc", "1");
-		gp_Pnt & Value(const Standard_Integer Index) const;
+		gp_Pnt  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Pnt & operator()(const Standard_Integer Index) const;
+		gp_Pnt  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -1933,11 +1933,11 @@ class PColgp_FieldOfHArray1OfLin2d : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray1OfLin2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Lin2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Lin2d Value);
 		%feature("autodoc", "1");
-		gp_Lin2d & Value(const Standard_Integer Index) const;
+		gp_Lin2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Lin2d & operator()(const Standard_Integer Index) const;
+		gp_Lin2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -1964,9 +1964,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d(const gp_Lin2d &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d(const gp_Lin2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Lin2d &aValue);
+		void SetValue(const gp_Lin2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -1993,13 +1993,13 @@ class PColgp_HArray1OfVec : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec &V);
+		PColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec &Value);
+		void SetValue(const Standard_Integer Index, const gp_Vec Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -2064,9 +2064,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d(const gp_Vec2d &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d(const gp_Vec2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Vec2d &aValue);
+		void SetValue(const gp_Vec2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -2091,11 +2091,11 @@ def __del__(self):
 class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
 	public:
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfDir(const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheLast, const gp_Dir &TheItem);
+		PColgp_SeqNodeOfHSequenceOfDir(const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheLast, const gp_Dir TheItem);
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfDir(const gp_Dir &TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheFirst);
+		PColgp_SeqNodeOfHSequenceOfDir(const gp_Dir TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheFirst);
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfDir(const Handle_PColgp_SeqNodeOfHSequenceOfDir &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheNext, const gp_Dir &TheItem);
+		PColgp_SeqNodeOfHSequenceOfDir(const Handle_PColgp_SeqNodeOfHSequenceOfDir &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheNext, const gp_Dir TheItem);
 		%feature("autodoc", "1");
 		gp_Dir Value() const;
 		%feature("autodoc", "1");
@@ -2103,7 +2103,7 @@ class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfDir Previous() const;
 		%feature("autodoc", "1");
-		void SetValue(const gp_Dir &AnItem);
+		void SetValue(const gp_Dir AnItem);
 		%feature("autodoc", "1");
 		void SetNext(const Handle_PColgp_SeqNodeOfHSequenceOfDir &ANode);
 		%feature("autodoc", "1");
@@ -2117,7 +2117,7 @@ class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfDirMyPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfDir &p);
 		%feature("autodoc", "1");
-		const gp_Dir & _CSFDB_GetPColgp_SeqNodeOfHSequenceOfDirMyItem() const;
+		const gp_Dir  _CSFDB_GetPColgp_SeqNodeOfHSequenceOfDirMyItem() const;
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfDir _CSFDB_GetPColgp_SeqNodeOfHSequenceOfDirMyNext() const;
 		%feature("autodoc", "1");
@@ -2158,9 +2158,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfPnt();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfPnt(const gp_Pnt &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfPnt(const gp_Pnt aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &aValue);
+		void SetValue(const gp_Pnt aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -2187,9 +2187,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ(const gp_XYZ &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ(const gp_XYZ aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_XYZ &aValue);
+		void SetValue(const gp_XYZ aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -2216,7 +2216,7 @@ class PColgp_HArray2OfVec2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray2OfVec2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray2OfVec2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Vec2d &V);
+		PColgp_HArray2OfVec2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Vec2d V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -2226,7 +2226,7 @@ class PColgp_HArray2OfVec2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Vec2d &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Vec2d Value);
 		%feature("autodoc", "1");
 		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
@@ -2301,13 +2301,13 @@ class PColgp_HArray1OfDir2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray1OfDir2d(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfDir2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Dir2d &V);
+		PColgp_HArray1OfDir2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Dir2d V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Dir2d Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -2372,15 +2372,15 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfLin2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const gp_Lin2d &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const gp_Lin2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Lin2d &aValue);
+		void SetValue(const gp_Lin2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Lin2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfLin2dmyValue() const;
+		const gp_Lin2d  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfLin2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2417,15 +2417,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfVec();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfVec(const gp_Vec &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray1OfVec(const gp_Vec aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Vec &aValue);
+		void SetValue(const gp_Vec aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfVec(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Vec & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfVecmyValue() const;
+		const gp_Vec  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfVecmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2462,13 +2462,13 @@ class PColgp_HArray1OfDir : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray1OfDir(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfDir(const Standard_Integer Low, const Standard_Integer Up, const gp_Dir &V);
+		PColgp_HArray1OfDir(const Standard_Integer Low, const Standard_Integer Up, const gp_Dir V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir &Value);
+		void SetValue(const Standard_Integer Index, const gp_Dir Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -2533,9 +2533,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ(const gp_XYZ &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ(const gp_XYZ aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_XYZ &aValue);
+		void SetValue(const gp_XYZ aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -2572,11 +2572,11 @@ class PColgp_FieldOfHArray1OfPnt2d : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray1OfPnt2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Pnt2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Pnt2d Value);
 		%feature("autodoc", "1");
-		gp_Pnt2d & Value(const Standard_Integer Index) const;
+		gp_Pnt2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Pnt2d & operator()(const Standard_Integer Index) const;
+		gp_Pnt2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -2603,9 +2603,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d(const gp_Pnt2d &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d(const gp_Pnt2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt2d &aValue);
+		void SetValue(const gp_Pnt2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -2642,11 +2642,11 @@ class PColgp_FieldOfHArray1OfVec : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray1OfVec &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec &Value);
+		void SetValue(const Standard_Integer Index, const gp_Vec Value);
 		%feature("autodoc", "1");
-		gp_Vec & Value(const Standard_Integer Index) const;
+		gp_Vec  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Vec & operator()(const Standard_Integer Index) const;
+		gp_Vec  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -2683,11 +2683,11 @@ class PColgp_FieldOfHArray1OfDir : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray1OfDir &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir &Value);
+		void SetValue(const Standard_Integer Index, const gp_Dir Value);
 		%feature("autodoc", "1");
-		gp_Dir & Value(const Standard_Integer Index) const;
+		gp_Dir  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Dir & operator()(const Standard_Integer Index) const;
+		gp_Dir  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -2714,9 +2714,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d(const gp_Lin2d &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d(const gp_Lin2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Lin2d &aValue);
+		void SetValue(const gp_Lin2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -2743,7 +2743,7 @@ class PColgp_HArray2OfDir : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Dir &V);
+		PColgp_HArray2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Dir V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -2753,7 +2753,7 @@ class PColgp_HArray2OfDir : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir Value);
 		%feature("autodoc", "1");
 		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
@@ -2838,11 +2838,11 @@ class PColgp_FieldOfHArray2OfVec : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray2OfVec &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec &Value);
+		void SetValue(const Standard_Integer Index, const gp_Vec Value);
 		%feature("autodoc", "1");
-		gp_Vec & Value(const Standard_Integer Index) const;
+		gp_Vec  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Vec & operator()(const Standard_Integer Index) const;
+		gp_Vec  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -2869,15 +2869,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfDir : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfDir();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfDir(const gp_Dir &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray1OfDir(const gp_Dir aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Dir &aValue);
+		void SetValue(const gp_Dir aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfDir(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Dir & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfDirmyValue() const;
+		const gp_Dir  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfDirmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2914,7 +2914,7 @@ class PColgp_HArray2OfLin2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray2OfLin2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray2OfLin2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Lin2d &V);
+		PColgp_HArray2OfLin2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Lin2d V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -2924,7 +2924,7 @@ class PColgp_HArray2OfLin2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Lin2d &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Lin2d Value);
 		%feature("autodoc", "1");
 		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
@@ -2999,15 +2999,15 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfVec();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfVec(const gp_Vec &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray2OfVec(const gp_Vec aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Vec &aValue);
+		void SetValue(const gp_Vec aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfVec(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Vec & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfVecmyValue() const;
+		const gp_Vec  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfVecmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3044,9 +3044,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfVec {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfVec();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfVec(const gp_Vec &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfVec(const gp_Vec aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Vec &aValue);
+		void SetValue(const gp_Vec aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -3073,15 +3073,15 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfDir2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfDir2d(const gp_Dir2d &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray2OfDir2d(const gp_Dir2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Dir2d &aValue);
+		void SetValue(const gp_Dir2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfDir2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Dir2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfDir2dmyValue() const;
+		const gp_Dir2d  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfDir2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3118,9 +3118,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d(const gp_Circ2d &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d(const gp_Circ2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Circ2d &aValue);
+		void SetValue(const gp_Circ2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -3157,11 +3157,11 @@ class PColgp_FieldOfHArray2OfDir : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray2OfDir &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir &Value);
+		void SetValue(const Standard_Integer Index, const gp_Dir Value);
 		%feature("autodoc", "1");
-		gp_Dir & Value(const Standard_Integer Index) const;
+		gp_Dir  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Dir & operator()(const Standard_Integer Index) const;
+		gp_Dir  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -3188,9 +3188,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d(const gp_Pnt2d &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d(const gp_Pnt2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt2d &aValue);
+		void SetValue(const gp_Pnt2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -3217,15 +3217,15 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfDir();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfDir(const gp_Dir &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray2OfDir(const gp_Dir aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Dir &aValue);
+		void SetValue(const gp_Dir aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfDir(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Dir & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfDirmyValue() const;
+		const gp_Dir  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfDirmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3260,11 +3260,11 @@ def __del__(self):
 class PColgp_SeqNodeOfHSequenceOfPnt : public PMMgt_PManaged {
 	public:
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfPnt(const Handle_PColgp_SeqNodeOfHSequenceOfPnt &TheLast, const gp_Pnt &TheItem);
+		PColgp_SeqNodeOfHSequenceOfPnt(const Handle_PColgp_SeqNodeOfHSequenceOfPnt &TheLast, const gp_Pnt TheItem);
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfPnt(const gp_Pnt &TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfPnt &TheFirst);
+		PColgp_SeqNodeOfHSequenceOfPnt(const gp_Pnt TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfPnt &TheFirst);
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfPnt(const Handle_PColgp_SeqNodeOfHSequenceOfPnt &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfPnt &TheNext, const gp_Pnt &TheItem);
+		PColgp_SeqNodeOfHSequenceOfPnt(const Handle_PColgp_SeqNodeOfHSequenceOfPnt &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfPnt &TheNext, const gp_Pnt TheItem);
 		%feature("autodoc", "1");
 		gp_Pnt Value() const;
 		%feature("autodoc", "1");
@@ -3272,7 +3272,7 @@ class PColgp_SeqNodeOfHSequenceOfPnt : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfPnt Previous() const;
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &AnItem);
+		void SetValue(const gp_Pnt AnItem);
 		%feature("autodoc", "1");
 		void SetNext(const Handle_PColgp_SeqNodeOfHSequenceOfPnt &ANode);
 		%feature("autodoc", "1");
@@ -3286,7 +3286,7 @@ class PColgp_SeqNodeOfHSequenceOfPnt : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfPntMyPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfPnt &p);
 		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetPColgp_SeqNodeOfHSequenceOfPntMyItem() const;
+		const gp_Pnt  _CSFDB_GetPColgp_SeqNodeOfHSequenceOfPntMyItem() const;
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfPnt _CSFDB_GetPColgp_SeqNodeOfHSequenceOfPntMyNext() const;
 		%feature("autodoc", "1");
@@ -3327,7 +3327,7 @@ class PColgp_HArray2OfPnt2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray2OfPnt2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray2OfPnt2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Pnt2d &V);
+		PColgp_HArray2OfPnt2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Pnt2d V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -3337,7 +3337,7 @@ class PColgp_HArray2OfPnt2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Pnt2d &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Pnt2d Value);
 		%feature("autodoc", "1");
 		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
@@ -3422,21 +3422,21 @@ class PColgp_HSequenceOfVec : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const gp_Vec &T);
+		void Append(const gp_Vec T);
 		%feature("autodoc", "1");
 		void Append(const Handle_PColgp_HSequenceOfVec &S);
 		%feature("autodoc", "1");
-		void Prepend(const gp_Vec &T);
+		void Prepend(const gp_Vec T);
 		%feature("autodoc", "1");
 		void Prepend(const Handle_PColgp_HSequenceOfVec &S);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const gp_Vec &T);
+		void InsertBefore(const Standard_Integer Index, const gp_Vec T);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, const Handle_PColgp_HSequenceOfVec &S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const gp_Vec &T);
+		void InsertAfter(const Standard_Integer Index, const gp_Vec T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, const Handle_PColgp_HSequenceOfVec &S);
 		%feature("autodoc", "1");
@@ -3446,15 +3446,15 @@ class PColgp_HSequenceOfVec : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfVec Split(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec &T);
+		void SetValue(const Standard_Integer Index, const gp_Vec T);
 		%feature("autodoc", "1");
 		gp_Vec Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Vec &T) const;
+		Standard_Boolean Contains(const gp_Vec T) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Vec &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		Standard_Integer Location(const Standard_Integer N, const gp_Vec T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Vec &T) const;
+		Standard_Integer Location(const Standard_Integer N, const gp_Vec T) const;
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -3521,13 +3521,13 @@ class PColgp_HArray1OfVec2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec2d &V);
+		PColgp_HArray1OfVec2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec2d V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Vec2d Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -3590,11 +3590,11 @@ def __del__(self):
 class PColgp_SeqNodeOfHSequenceOfVec : public PMMgt_PManaged {
 	public:
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfVec(const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheLast, const gp_Vec &TheItem);
+		PColgp_SeqNodeOfHSequenceOfVec(const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheLast, const gp_Vec TheItem);
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfVec(const gp_Vec &TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheFirst);
+		PColgp_SeqNodeOfHSequenceOfVec(const gp_Vec TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheFirst);
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfVec(const Handle_PColgp_SeqNodeOfHSequenceOfVec &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheNext, const gp_Vec &TheItem);
+		PColgp_SeqNodeOfHSequenceOfVec(const Handle_PColgp_SeqNodeOfHSequenceOfVec &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheNext, const gp_Vec TheItem);
 		%feature("autodoc", "1");
 		gp_Vec Value() const;
 		%feature("autodoc", "1");
@@ -3602,7 +3602,7 @@ class PColgp_SeqNodeOfHSequenceOfVec : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfVec Previous() const;
 		%feature("autodoc", "1");
-		void SetValue(const gp_Vec &AnItem);
+		void SetValue(const gp_Vec AnItem);
 		%feature("autodoc", "1");
 		void SetNext(const Handle_PColgp_SeqNodeOfHSequenceOfVec &ANode);
 		%feature("autodoc", "1");
@@ -3616,7 +3616,7 @@ class PColgp_SeqNodeOfHSequenceOfVec : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfVecMyPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfVec &p);
 		%feature("autodoc", "1");
-		const gp_Vec & _CSFDB_GetPColgp_SeqNodeOfHSequenceOfVecMyItem() const;
+		const gp_Vec  _CSFDB_GetPColgp_SeqNodeOfHSequenceOfVecMyItem() const;
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfVec _CSFDB_GetPColgp_SeqNodeOfHSequenceOfVecMyNext() const;
 		%feature("autodoc", "1");
@@ -3657,13 +3657,13 @@ class PColgp_HArray1OfLin2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray1OfLin2d(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfLin2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Lin2d &V);
+		PColgp_HArray1OfLin2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Lin2d V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Lin2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Lin2d Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -3728,13 +3728,13 @@ class PColgp_HArray1OfPnt : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray1OfPnt(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfPnt(const Standard_Integer Low, const Standard_Integer Up, const gp_Pnt &V);
+		PColgp_HArray1OfPnt(const Standard_Integer Low, const Standard_Integer Up, const gp_Pnt V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Pnt &Value);
+		void SetValue(const Standard_Integer Index, const gp_Pnt Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -3809,21 +3809,21 @@ class PColgp_HSequenceOfDir : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const gp_Dir &T);
+		void Append(const gp_Dir T);
 		%feature("autodoc", "1");
 		void Append(const Handle_PColgp_HSequenceOfDir &S);
 		%feature("autodoc", "1");
-		void Prepend(const gp_Dir &T);
+		void Prepend(const gp_Dir T);
 		%feature("autodoc", "1");
 		void Prepend(const Handle_PColgp_HSequenceOfDir &S);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const gp_Dir &T);
+		void InsertBefore(const Standard_Integer Index, const gp_Dir T);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, const Handle_PColgp_HSequenceOfDir &S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const gp_Dir &T);
+		void InsertAfter(const Standard_Integer Index, const gp_Dir T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, const Handle_PColgp_HSequenceOfDir &S);
 		%feature("autodoc", "1");
@@ -3833,15 +3833,15 @@ class PColgp_HSequenceOfDir : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfDir Split(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir &T);
+		void SetValue(const Standard_Integer Index, const gp_Dir T);
 		%feature("autodoc", "1");
 		gp_Dir Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Dir &T) const;
+		Standard_Boolean Contains(const gp_Dir T) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Dir &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		Standard_Integer Location(const Standard_Integer N, const gp_Dir T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Dir &T) const;
+		Standard_Integer Location(const Standard_Integer N, const gp_Dir T) const;
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -3908,15 +3908,15 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfVec2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfVec2d(const gp_Vec2d &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray2OfVec2d(const gp_Vec2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Vec2d &aValue);
+		void SetValue(const gp_Vec2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfVec2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Vec2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfVec2dmyValue() const;
+		const gp_Vec2d  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfVec2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3955,11 +3955,11 @@ class PColgp_SeqExplorerOfHSequenceOfVec {
 		%feature("autodoc", "1");
 		gp_Vec Value(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Vec &T);
+		Standard_Boolean Contains(const gp_Vec T);
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Vec &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Standard_Integer Location(const Standard_Integer N, const gp_Vec T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Vec &T);
+		Standard_Integer Location(const Standard_Integer N, const gp_Vec T);
 
 };
 %feature("shadow") PColgp_SeqExplorerOfHSequenceOfVec::~PColgp_SeqExplorerOfHSequenceOfVec %{
@@ -3982,11 +3982,11 @@ def __del__(self):
 class PColgp_SeqNodeOfHSequenceOfXYZ : public PMMgt_PManaged {
 	public:
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfXYZ(const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &TheLast, const gp_XYZ &TheItem);
+		PColgp_SeqNodeOfHSequenceOfXYZ(const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &TheLast, const gp_XYZ TheItem);
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfXYZ(const gp_XYZ &TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &TheFirst);
+		PColgp_SeqNodeOfHSequenceOfXYZ(const gp_XYZ TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &TheFirst);
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfXYZ(const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &TheNext, const gp_XYZ &TheItem);
+		PColgp_SeqNodeOfHSequenceOfXYZ(const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &TheNext, const gp_XYZ TheItem);
 		%feature("autodoc", "1");
 		gp_XYZ Value() const;
 		%feature("autodoc", "1");
@@ -3994,7 +3994,7 @@ class PColgp_SeqNodeOfHSequenceOfXYZ : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfXYZ Previous() const;
 		%feature("autodoc", "1");
-		void SetValue(const gp_XYZ &AnItem);
+		void SetValue(const gp_XYZ AnItem);
 		%feature("autodoc", "1");
 		void SetNext(const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &ANode);
 		%feature("autodoc", "1");
@@ -4008,7 +4008,7 @@ class PColgp_SeqNodeOfHSequenceOfXYZ : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfXYZMyPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfXYZ &p);
 		%feature("autodoc", "1");
-		const gp_XYZ & _CSFDB_GetPColgp_SeqNodeOfHSequenceOfXYZMyItem() const;
+		const gp_XYZ  _CSFDB_GetPColgp_SeqNodeOfHSequenceOfXYZMyItem() const;
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfXYZ _CSFDB_GetPColgp_SeqNodeOfHSequenceOfXYZMyNext() const;
 		%feature("autodoc", "1");
@@ -4049,15 +4049,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfDir2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfDir2d(const gp_Dir2d &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray1OfDir2d(const gp_Dir2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Dir2d &aValue);
+		void SetValue(const gp_Dir2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfDir2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Dir2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfDir2dmyValue() const;
+		const gp_Dir2d  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfDir2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4094,9 +4094,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfDir {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfDir();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfDir(const gp_Dir &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfDir(const gp_Dir aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Dir &aValue);
+		void SetValue(const gp_Dir aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -4133,11 +4133,11 @@ class PColgp_FieldOfHArray1OfPnt : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray1OfPnt &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Pnt &Value);
+		void SetValue(const Standard_Integer Index, const gp_Pnt Value);
 		%feature("autodoc", "1");
-		gp_Pnt & Value(const Standard_Integer Index) const;
+		gp_Pnt  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Pnt & operator()(const Standard_Integer Index) const;
+		gp_Pnt  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -4164,15 +4164,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d(const gp_Circ2d &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d(const gp_Circ2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Circ2d &aValue);
+		void SetValue(const gp_Circ2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Circ2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfCirc2dmyValue() const;
+		const gp_Circ2d  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfCirc2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4209,7 +4209,7 @@ class PColgp_HArray2OfPnt : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray2OfPnt(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray2OfPnt(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Pnt &V);
+		PColgp_HArray2OfPnt(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Pnt V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -4219,7 +4219,7 @@ class PColgp_HArray2OfPnt : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Pnt &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Pnt Value);
 		%feature("autodoc", "1");
 		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
@@ -4294,15 +4294,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfXYZ();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfXYZ(const gp_XYZ &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray1OfXYZ(const gp_XYZ aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_XYZ &aValue);
+		void SetValue(const gp_XYZ aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfXYZ(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_XYZ & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfXYZmyValue() const;
+		const gp_XYZ  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfXYZmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4349,11 +4349,11 @@ class PColgp_FieldOfHArray2OfDir2d : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray2OfDir2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Dir2d Value);
 		%feature("autodoc", "1");
-		gp_Dir2d & Value(const Standard_Integer Index) const;
+		gp_Dir2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Dir2d & operator()(const Standard_Integer Index) const;
+		gp_Dir2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -4380,15 +4380,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfPnt();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfPnt(const gp_Pnt &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray1OfPnt(const gp_Pnt aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &aValue);
+		void SetValue(const gp_Pnt aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfPnt(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfPntmyValue() const;
+		const gp_Pnt  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfPntmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4435,11 +4435,11 @@ class PColgp_FieldOfHArray2OfCirc2d : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray2OfCirc2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Circ2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Circ2d Value);
 		%feature("autodoc", "1");
-		gp_Circ2d & Value(const Standard_Integer Index) const;
+		gp_Circ2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Circ2d & operator()(const Standard_Integer Index) const;
+		gp_Circ2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -4466,13 +4466,13 @@ class PColgp_HArray1OfPnt2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray1OfPnt2d(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfPnt2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Pnt2d &V);
+		PColgp_HArray1OfPnt2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Pnt2d V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Pnt2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Pnt2d Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -4537,9 +4537,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfVec {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfVec();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfVec(const gp_Vec &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfVec(const gp_Vec aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Vec &aValue);
+		void SetValue(const gp_Vec aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -4566,13 +4566,13 @@ class PColgp_HArray1OfXYZ : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up, const gp_XYZ &V);
+		PColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up, const gp_XYZ V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XYZ &Value);
+		void SetValue(const Standard_Integer Index, const gp_XYZ Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -4637,7 +4637,7 @@ class PColgp_HArray2OfVec : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray2OfVec(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray2OfVec(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Vec &V);
+		PColgp_HArray2OfVec(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Vec V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -4647,7 +4647,7 @@ class PColgp_HArray2OfVec : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Vec &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Vec Value);
 		%feature("autodoc", "1");
 		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
@@ -4732,11 +4732,11 @@ class PColgp_FieldOfHArray1OfXYZ : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray1OfXYZ &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XYZ &Value);
+		void SetValue(const Standard_Integer Index, const gp_XYZ Value);
 		%feature("autodoc", "1");
-		gp_XYZ & Value(const Standard_Integer Index) const;
+		gp_XYZ  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_XYZ & operator()(const Standard_Integer Index) const;
+		gp_XYZ  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -4763,15 +4763,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfVec2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfVec2d(const gp_Vec2d &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray1OfVec2d(const gp_Vec2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Vec2d &aValue);
+		void SetValue(const gp_Vec2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfVec2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Vec2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfVec2dmyValue() const;
+		const gp_Vec2d  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfVec2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4808,7 +4808,7 @@ class PColgp_HArray2OfXYZ : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray2OfXYZ(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray2OfXYZ(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_XYZ &V);
+		PColgp_HArray2OfXYZ(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_XYZ V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -4818,7 +4818,7 @@ class PColgp_HArray2OfXYZ : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_XYZ &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_XYZ Value);
 		%feature("autodoc", "1");
 		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
@@ -4893,15 +4893,15 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfPnt();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfPnt(const gp_Pnt &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray2OfPnt(const gp_Pnt aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &aValue);
+		void SetValue(const gp_Pnt aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfPnt(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfPntmyValue() const;
+		const gp_Pnt  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfPntmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4938,9 +4938,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfXY();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfXY(const gp_XY &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfXY(const gp_XY aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_XY &aValue);
+		void SetValue(const gp_XY aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -4969,11 +4969,11 @@ class PColgp_SeqExplorerOfHSequenceOfDir {
 		%feature("autodoc", "1");
 		gp_Dir Value(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Dir &T);
+		Standard_Boolean Contains(const gp_Dir T);
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Dir &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Standard_Integer Location(const Standard_Integer N, const gp_Dir T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Dir &T);
+		Standard_Integer Location(const Standard_Integer N, const gp_Dir T);
 
 };
 %feature("shadow") PColgp_SeqExplorerOfHSequenceOfDir::~PColgp_SeqExplorerOfHSequenceOfDir %{
@@ -4998,9 +4998,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfDir {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfDir();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfDir(const gp_Dir &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfDir(const gp_Dir aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Dir &aValue);
+		void SetValue(const gp_Dir aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -5037,11 +5037,11 @@ class PColgp_FieldOfHArray2OfPnt2d : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray2OfPnt2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Pnt2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Pnt2d Value);
 		%feature("autodoc", "1");
-		gp_Pnt2d & Value(const Standard_Integer Index) const;
+		gp_Pnt2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Pnt2d & operator()(const Standard_Integer Index) const;
+		gp_Pnt2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -5068,15 +5068,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXY : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfXY();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfXY(const gp_XY &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray1OfXY(const gp_XY aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_XY &aValue);
+		void SetValue(const gp_XY aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfXY(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_XY & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfXYmyValue() const;
+		const gp_XY  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfXYmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5123,11 +5123,11 @@ class PColgp_FieldOfHArray2OfVec2d : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray2OfVec2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Vec2d Value);
 		%feature("autodoc", "1");
-		gp_Vec2d & Value(const Standard_Integer Index) const;
+		gp_Vec2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Vec2d & operator()(const Standard_Integer Index) const;
+		gp_Vec2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -5154,13 +5154,13 @@ class PColgp_HArray1OfCirc2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray1OfCirc2d(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfCirc2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Circ2d &V);
+		PColgp_HArray1OfCirc2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Circ2d V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Circ2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Circ2d Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -5225,7 +5225,7 @@ class PColgp_HArray2OfXY : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_XY &V);
+		PColgp_HArray2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_XY V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -5235,7 +5235,7 @@ class PColgp_HArray2OfXY : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_XY &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_XY Value);
 		%feature("autodoc", "1");
 		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
@@ -5310,9 +5310,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d(const gp_Circ2d &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d(const gp_Circ2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Circ2d &aValue);
+		void SetValue(const gp_Circ2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -5349,11 +5349,11 @@ class PColgp_FieldOfHArray1OfDir2d : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray1OfDir2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Dir2d Value);
 		%feature("autodoc", "1");
-		gp_Dir2d & Value(const Standard_Integer Index) const;
+		gp_Dir2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Dir2d & operator()(const Standard_Integer Index) const;
+		gp_Dir2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -5380,9 +5380,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d(const gp_Dir2d &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d(const gp_Dir2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Dir2d &aValue);
+		void SetValue(const gp_Dir2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -5419,11 +5419,11 @@ class PColgp_FieldOfHArray2OfXYZ : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray2OfXYZ &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XYZ &Value);
+		void SetValue(const Standard_Integer Index, const gp_XYZ Value);
 		%feature("autodoc", "1");
-		gp_XYZ & Value(const Standard_Integer Index) const;
+		gp_XYZ  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_XYZ & operator()(const Standard_Integer Index) const;
+		gp_XYZ  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -5460,11 +5460,11 @@ class PColgp_FieldOfHArray2OfXY : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray2OfXY &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XY &Value);
+		void SetValue(const Standard_Integer Index, const gp_XY Value);
 		%feature("autodoc", "1");
-		gp_XY & Value(const Standard_Integer Index) const;
+		gp_XY  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_XY & operator()(const Standard_Integer Index) const;
+		gp_XY  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -5491,15 +5491,15 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfXYZ();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfXYZ(const gp_XYZ &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray2OfXYZ(const gp_XYZ aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_XYZ &aValue);
+		void SetValue(const gp_XYZ aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfXYZ(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_XYZ & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfXYZmyValue() const;
+		const gp_XYZ  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfXYZmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5538,11 +5538,11 @@ class PColgp_SeqExplorerOfHSequenceOfPnt {
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Pnt &T);
+		Standard_Boolean Contains(const gp_Pnt T);
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Pnt &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Standard_Integer Location(const Standard_Integer N, const gp_Pnt T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Pnt &T);
+		Standard_Integer Location(const Standard_Integer N, const gp_Pnt T);
 
 };
 %feature("shadow") PColgp_SeqExplorerOfHSequenceOfPnt::~PColgp_SeqExplorerOfHSequenceOfPnt %{
@@ -5577,21 +5577,21 @@ class PColgp_HSequenceOfPnt : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const gp_Pnt &T);
+		void Append(const gp_Pnt T);
 		%feature("autodoc", "1");
 		void Append(const Handle_PColgp_HSequenceOfPnt &S);
 		%feature("autodoc", "1");
-		void Prepend(const gp_Pnt &T);
+		void Prepend(const gp_Pnt T);
 		%feature("autodoc", "1");
 		void Prepend(const Handle_PColgp_HSequenceOfPnt &S);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const gp_Pnt &T);
+		void InsertBefore(const Standard_Integer Index, const gp_Pnt T);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, const Handle_PColgp_HSequenceOfPnt &S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const gp_Pnt &T);
+		void InsertAfter(const Standard_Integer Index, const gp_Pnt T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, const Handle_PColgp_HSequenceOfPnt &S);
 		%feature("autodoc", "1");
@@ -5601,15 +5601,15 @@ class PColgp_HSequenceOfPnt : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfPnt Split(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Pnt &T);
+		void SetValue(const Standard_Integer Index, const gp_Pnt T);
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Pnt &T) const;
+		Standard_Boolean Contains(const gp_Pnt T) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Pnt &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		Standard_Integer Location(const Standard_Integer N, const gp_Pnt T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Pnt &T) const;
+		Standard_Integer Location(const Standard_Integer N, const gp_Pnt T) const;
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -5676,15 +5676,15 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d(const gp_Pnt2d &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d(const gp_Pnt2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt2d &aValue);
+		void SetValue(const gp_Pnt2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfPnt2dmyValue() const;
+		const gp_Pnt2d  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfPnt2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5721,7 +5721,7 @@ class PColgp_HArray2OfCirc2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray2OfCirc2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray2OfCirc2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Circ2d &V);
+		PColgp_HArray2OfCirc2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Circ2d V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -5731,7 +5731,7 @@ class PColgp_HArray2OfCirc2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Circ2d &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Circ2d Value);
 		%feature("autodoc", "1");
 		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
@@ -5816,11 +5816,11 @@ class PColgp_FieldOfHArray1OfCirc2d : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray1OfCirc2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Circ2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Circ2d Value);
 		%feature("autodoc", "1");
-		gp_Circ2d & Value(const Standard_Integer Index) const;
+		gp_Circ2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Circ2d & operator()(const Standard_Integer Index) const;
+		gp_Circ2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -5847,9 +5847,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfXY {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfXY();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfXY(const gp_XY &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfXY(const gp_XY aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_XY &aValue);
+		void SetValue(const gp_XY aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -5876,15 +5876,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfLin2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfLin2d(const gp_Lin2d &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray1OfLin2d(const gp_Lin2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Lin2d &aValue);
+		void SetValue(const gp_Lin2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfLin2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Lin2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfLin2dmyValue() const;
+		const gp_Lin2d  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfLin2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5931,11 +5931,11 @@ class PColgp_FieldOfHArray1OfXY : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray1OfXY &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XY &Value);
+		void SetValue(const Standard_Integer Index, const gp_XY Value);
 		%feature("autodoc", "1");
-		gp_XY & Value(const Standard_Integer Index) const;
+		gp_XY  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_XY & operator()(const Standard_Integer Index) const;
+		gp_XY  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -5962,15 +5962,15 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfXY : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfXY();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfXY(const gp_XY &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray2OfXY(const gp_XY aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_XY &aValue);
+		void SetValue(const gp_XY aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfXY(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_XY & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfXYmyValue() const;
+		const gp_XY  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfXYmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6017,11 +6017,11 @@ class PColgp_FieldOfHArray2OfLin2d : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray2OfLin2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Lin2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Lin2d Value);
 		%feature("autodoc", "1");
-		gp_Lin2d & Value(const Standard_Integer Index) const;
+		gp_Lin2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Lin2d & operator()(const Standard_Integer Index) const;
+		gp_Lin2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -6058,21 +6058,21 @@ class PColgp_HSequenceOfXYZ : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const gp_XYZ &T);
+		void Append(const gp_XYZ T);
 		%feature("autodoc", "1");
 		void Append(const Handle_PColgp_HSequenceOfXYZ &S);
 		%feature("autodoc", "1");
-		void Prepend(const gp_XYZ &T);
+		void Prepend(const gp_XYZ T);
 		%feature("autodoc", "1");
 		void Prepend(const Handle_PColgp_HSequenceOfXYZ &S);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const gp_XYZ &T);
+		void InsertBefore(const Standard_Integer Index, const gp_XYZ T);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, const Handle_PColgp_HSequenceOfXYZ &S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const gp_XYZ &T);
+		void InsertAfter(const Standard_Integer Index, const gp_XYZ T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, const Handle_PColgp_HSequenceOfXYZ &S);
 		%feature("autodoc", "1");
@@ -6082,15 +6082,15 @@ class PColgp_HSequenceOfXYZ : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfXYZ Split(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XYZ &T);
+		void SetValue(const Standard_Integer Index, const gp_XYZ T);
 		%feature("autodoc", "1");
 		gp_XYZ Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_XYZ &T) const;
+		Standard_Boolean Contains(const gp_XYZ T) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_XYZ &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		Standard_Integer Location(const Standard_Integer N, const gp_XYZ T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_XYZ &T) const;
+		Standard_Integer Location(const Standard_Integer N, const gp_XYZ T) const;
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -6157,9 +6157,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d(const gp_Vec2d &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d(const gp_Vec2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Vec2d &aValue);
+		void SetValue(const gp_Vec2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -6196,11 +6196,11 @@ class PColgp_FieldOfHArray1OfVec2d : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void operator=(const PColgp_FieldOfHArray1OfVec2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_Vec2d Value);
 		%feature("autodoc", "1");
-		gp_Vec2d & Value(const Standard_Integer Index) const;
+		gp_Vec2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Vec2d & operator()(const Standard_Integer Index) const;
+		gp_Vec2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -6227,13 +6227,13 @@ class PColgp_HArray1OfXY : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray1OfXY(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfXY(const Standard_Integer Low, const Standard_Integer Up, const gp_XY &V);
+		PColgp_HArray1OfXY(const Standard_Integer Low, const Standard_Integer Up, const gp_XY V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XY &Value);
+		void SetValue(const Standard_Integer Index, const gp_XY Value);
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
@@ -6298,9 +6298,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d(const gp_Dir2d &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d(const gp_Dir2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Dir2d &aValue);
+		void SetValue(const gp_Dir2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 
@@ -6327,7 +6327,7 @@ class PColgp_HArray2OfDir2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PColgp_HArray2OfDir2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray2OfDir2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Dir2d &V);
+		PColgp_HArray2OfDir2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Dir2d V);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -6337,7 +6337,7 @@ class PColgp_HArray2OfDir2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir2d &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir2d Value);
 		%feature("autodoc", "1");
 		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
@@ -6412,15 +6412,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d(const gp_Pnt2d &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d(const gp_Pnt2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt2d &aValue);
+		void SetValue(const gp_Pnt2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfPnt2dmyValue() const;
+		const gp_Pnt2d  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfPnt2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6459,11 +6459,11 @@ class PColgp_SeqExplorerOfHSequenceOfXYZ {
 		%feature("autodoc", "1");
 		gp_XYZ Value(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_XYZ &T);
+		Standard_Boolean Contains(const gp_XYZ T);
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_XYZ &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Standard_Integer Location(const Standard_Integer N, const gp_XYZ T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_XYZ &T);
+		Standard_Integer Location(const Standard_Integer N, const gp_XYZ T);
 
 };
 %feature("shadow") PColgp_SeqExplorerOfHSequenceOfXYZ::~PColgp_SeqExplorerOfHSequenceOfXYZ %{
@@ -6488,15 +6488,15 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d(const gp_Circ2d &aValue);
+		PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d(const gp_Circ2d aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Circ2d &aValue);
+		void SetValue(const gp_Circ2d aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 		%feature("autodoc", "1");
 		PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Circ2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfCirc2dmyValue() const;
+		const gp_Circ2d  _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfCirc2dmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6533,9 +6533,9 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt {
 		%feature("autodoc", "1");
 		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt();
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt(const gp_Pnt &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt(const gp_Pnt aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &aValue);
+		void SetValue(const gp_Pnt aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
 

@@ -324,7 +324,7 @@ class IGESControl_Controller : public XSControl_Controller {
 		%feature("autodoc", "1");
 		virtual		Handle_Transfer_ActorOfTransientProcess ActorRead(const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
-		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape &shape, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model, const Standard_Integer modetrans=0) const;
+		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape shape, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model, const Standard_Integer modetrans=0) const;
 		%feature("autodoc", "1");
 		static		Standard_Boolean Init();
 		%feature("autodoc", "1");
@@ -449,7 +449,7 @@ class IGESControl_Writer {
 		%feature("autodoc", "1");
 		void SetTransferProcess(const Handle_Transfer_FinderProcess &TP);
 		%feature("autodoc", "1");
-		Standard_Boolean AddShape(const TopoDS_Shape &sh);
+		Standard_Boolean AddShape(const TopoDS_Shape sh);
 		%feature("autodoc", "1");
 		Standard_Boolean AddGeom(const Handle_Standard_Transient &geom);
 		%feature("autodoc", "1");

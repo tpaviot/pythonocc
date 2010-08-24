@@ -1077,7 +1077,7 @@ class IGESGraph_UniformRectGrid : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGraph_UniformRectGrid();
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbProps, const Standard_Integer finite, const Standard_Integer line, const Standard_Integer weighted, const gp_XY &aGridPoint, const gp_XY &aGridSpacing, const Standard_Integer pointsX, const Standard_Integer pointsY);
+		void Init(const Standard_Integer nbProps, const Standard_Integer finite, const Standard_Integer line, const Standard_Integer weighted, const gp_XY aGridPoint, const gp_XY aGridSpacing, const Standard_Integer pointsX, const Standard_Integer pointsY);
 		%feature("autodoc", "1");
 		Standard_Integer NbPropertyValues() const;
 		%feature("autodoc", "1");
@@ -1738,7 +1738,7 @@ class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGraph_TextDisplayTemplate();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real aWidth, const Standard_Real aHeight, const Standard_Integer aFontCode, const Handle_IGESGraph_TextFontDef &aFontEntity, const Standard_Real aSlantAngle, const Standard_Real aRotationAngle, const Standard_Integer aMirrorFlag, const Standard_Integer aRotationFlag, const gp_XYZ &aCorner);
+		void Init(const Standard_Real aWidth, const Standard_Real aHeight, const Standard_Integer aFontCode, const Handle_IGESGraph_TextFontDef &aFontEntity, const Standard_Real aSlantAngle, const Standard_Real aRotationAngle, const Standard_Integer aMirrorFlag, const Standard_Integer aRotationFlag, const gp_XYZ aCorner);
 		%feature("autodoc", "1");
 		void SetIncremental(const Standard_Boolean mode);
 		%feature("autodoc", "1");

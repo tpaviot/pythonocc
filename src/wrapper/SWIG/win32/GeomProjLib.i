@@ -75,7 +75,7 @@ class GeomProjLib {
 		%feature("autodoc", "1");
 		static		Handle_Geom_Curve Project(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
-		static		Handle_Geom_Curve ProjectOnPlane(const Handle_Geom_Curve &Curve, const Handle_Geom_Plane &Plane, const gp_Dir &Dir, const Standard_Boolean KeepParametrization);
+		static		Handle_Geom_Curve ProjectOnPlane(const Handle_Geom_Curve &Curve, const Handle_Geom_Plane &Plane, const gp_Dir Dir, const Standard_Boolean KeepParametrization);
 
 };
 %feature("shadow") GeomProjLib::~GeomProjLib %{

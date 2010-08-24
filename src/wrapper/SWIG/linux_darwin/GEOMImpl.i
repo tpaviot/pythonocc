@@ -2606,9 +2606,9 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		static		void SortShapes(TopTools_ListOfShape & SL);
 		%feature("autodoc", "1");
-		static		TopoDS_Shape CompsolidToCompound(const TopoDS_Shape &theCompsolid);
+		static		TopoDS_Shape CompsolidToCompound(const TopoDS_Shape theCompsolid);
 		%feature("autodoc", "1");
-		static		bool CheckTriangulation(const TopoDS_Shape &theShape);
+		static		bool CheckTriangulation(const TopoDS_Shape theShape);
 
 };
 %feature("shadow") GEOMImpl_IShapesOperations::~GEOMImpl_IShapesOperations %{
@@ -3071,11 +3071,11 @@ class GEOMImpl_GlueDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		static		TopoDS_Shape GlueFaces(const TopoDS_Shape &theShape, const Standard_Real theTolerance, const Standard_Boolean doKeepNonSolids=1);
+		static		TopoDS_Shape GlueFaces(const TopoDS_Shape theShape, const Standard_Real theTolerance, const Standard_Boolean doKeepNonSolids=1);
 		%feature("autodoc", "1");
-		TopoDS_Shape GlueFacesWithWarnings(const TopoDS_Shape &theShape, const Standard_Real theTolerance, Standard_Boolean , TCollection_AsciiString & theWarning) const;
+		TopoDS_Shape GlueFacesWithWarnings(const TopoDS_Shape theShape, const Standard_Real theTolerance, Standard_Boolean , TCollection_AsciiString & theWarning) const;
 		%feature("autodoc", "1");
-		static		TopoDS_Shape GlueFacesByList(const TopoDS_Shape &theShape, const Standard_Real theTolerance, Standard_Boolean , const TopTools_MapOfShape &aFaces);
+		static		TopoDS_Shape GlueFacesByList(const TopoDS_Shape theShape, const Standard_Real theTolerance, Standard_Boolean , const TopTools_MapOfShape &aFaces);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -3542,7 +3542,7 @@ class GEOMImpl_IMeasureOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Standard_Real MinSurfaceCurvatureByPoint(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		static		gp_Ax3 GetPosition(const TopoDS_Shape &theShape);
+		static		gp_Ax3 GetPosition(const TopoDS_Shape theShape);
 
 };
 %feature("shadow") GEOMImpl_IMeasureOperations::~GEOMImpl_IMeasureOperations %{
@@ -5660,11 +5660,11 @@ def __del__(self):
 class GEOMImpl_Fillet1d {
 	public:
 		%feature("autodoc", "1");
-		GEOMImpl_Fillet1d(const TopoDS_Edge &theEdge1, const TopoDS_Edge &theEdge2, const gp_Pln &thePlane);
+		GEOMImpl_Fillet1d(const TopoDS_Edge theEdge1, const TopoDS_Edge theEdge2, const gp_Pln thePlane);
 		%feature("autodoc", "1");
 		Standard_Boolean Perform(const Standard_Real theRadius);
 		%feature("autodoc", "1");
-		TopoDS_Edge Result(const gp_Pnt &thePoint, TopoDS_Edge & theEdge1, TopoDS_Edge & theEdge2);
+		TopoDS_Edge Result(const gp_Pnt thePoint, TopoDS_Edge & theEdge1, TopoDS_Edge & theEdge2);
 
 };
 %feature("shadow") GEOMImpl_Fillet1d::~GEOMImpl_Fillet1d %{
@@ -6290,7 +6290,7 @@ class GEOMImpl_ILocalOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Standard_Integer GetSubShapeIndex(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		static		bool GetSubShape(const TopoDS_Shape &theShape, const int theIndex, TopoDS_Shape & theSubShape);
+		static		bool GetSubShape(const TopoDS_Shape theShape, const int theIndex, TopoDS_Shape & theSubShape);
 
 };
 %feature("shadow") GEOMImpl_ILocalOperations::~GEOMImpl_ILocalOperations %{
@@ -7241,7 +7241,7 @@ class GEOMImpl_IBlocksOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object CheckAndImprove(Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		static		void AddBlocksFrom(const TopoDS_Shape &theShape, TopTools_ListOfShape & BLO, TopTools_ListOfShape & NOT, TopTools_ListOfShape & EXT);
+		static		void AddBlocksFrom(const TopoDS_Shape theShape, TopTools_ListOfShape & BLO, TopTools_ListOfShape & NOT, TopTools_ListOfShape & EXT);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfTransient ExplodeCompoundOfBlocks(Handle_GEOM_Object , const Standard_Integer theMinNbFaces, const Standard_Integer theMaxNbFaces);
 		%feature("autodoc", "1");

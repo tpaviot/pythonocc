@@ -398,7 +398,7 @@ class Poly_CoherentNode : public gp_XYZ {
 		%feature("autodoc", "1");
 		Poly_CoherentNode();
 		%feature("autodoc", "1");
-		Poly_CoherentNode(const gp_XYZ &thePnt);
+		Poly_CoherentNode(const gp_XYZ thePnt);
 		%feature("autodoc", "1");
 		void SetUV(const Standard_Real theU, const Standard_Real theV);
 		%feature("autodoc", "1");
@@ -406,7 +406,7 @@ class Poly_CoherentNode : public gp_XYZ {
 		%feature("autodoc", "1");
 		Standard_Real GetV() const;
 		%feature("autodoc", "1");
-		void SetNormal(const gp_XYZ &theVector);
+		void SetNormal(const gp_XYZ theVector);
 		%feature("autodoc", "1");
 		Standard_Boolean HasNormal() const;
 		%feature("autodoc", "1");

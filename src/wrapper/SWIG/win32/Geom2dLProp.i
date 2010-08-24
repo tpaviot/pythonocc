@@ -168,13 +168,13 @@ class Geom2dLProp_CLProps2d {
 		%feature("autodoc", "1");
 		void SetCurve(const Handle_Geom2d_Curve &C);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & Value() const;
+		const gp_Pnt2d  Value() const;
 		%feature("autodoc", "1");
-		const gp_Vec2d & D1();
+		const gp_Vec2d  D1();
 		%feature("autodoc", "1");
-		const gp_Vec2d & D2();
+		const gp_Vec2d  D2();
 		%feature("autodoc", "1");
-		const gp_Vec2d & D3();
+		const gp_Vec2d  D3();
 		%feature("autodoc", "1");
 		Standard_Boolean IsTangentDefined();
 		%feature("autodoc", "1");

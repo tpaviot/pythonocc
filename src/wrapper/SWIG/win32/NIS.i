@@ -428,9 +428,9 @@ class NIS_InteractiveObject : public Standard_Transient {
 		%feature("autodoc", "1");
 		void UnsetTransparency();
 		%feature("autodoc", "1");
-		virtual		Standard_Real Intersect(const gp_Ax1 &theAxis, const Standard_Real theOver) const;
+		virtual		Standard_Real Intersect(const gp_Ax1 theAxis, const Standard_Real theOver) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Intersect(const Bnd_B3f &theBox, const gp_Trsf &theTrf, const Standard_Boolean isFull) const;
+		virtual		Standard_Boolean Intersect(const Bnd_B3f &theBox, const gp_Trsf theTrf, const Standard_Boolean isFull) const;
 		%feature("autodoc", "1");
 		void * GetAttribute() const;
 		%feature("autodoc", "1");
@@ -487,9 +487,9 @@ class NIS_Triangulated : public NIS_InteractiveObject {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void SetNode(const Standard_Integer ind, const gp_XYZ &thePnt);
+		void SetNode(const Standard_Integer ind, const gp_XYZ thePnt);
 		%feature("autodoc", "1");
-		void SetNode(const Standard_Integer ind, const gp_XY &thePnt);
+		void SetNode(const Standard_Integer ind, const gp_XY thePnt);
 		%feature("autodoc", "1");
 		void SetTriangle(const Standard_Integer ind, const Standard_Integer iNode0, const Standard_Integer iNode1, const Standard_Integer iNode2);
 		%feature("autodoc", "1");
@@ -668,9 +668,9 @@ class NIS_SurfaceDrawer : public NIS_Drawer {
 		%feature("autodoc", "1");
 		void SetBackColor(const Quantity_Color &theColor);
 		%feature("autodoc", "1");
-		void SetTransformation(const gp_Trsf &theTrsf);
+		void SetTransformation(const gp_Trsf theTrsf);
 		%feature("autodoc", "1");
-		const gp_Trsf & GetTransformation() const;
+		const gp_Trsf  GetTransformation() const;
 		%feature("autodoc", "1");
 		void SetPolygonOffset(const Standard_Real theOffset);
 		%feature("autodoc", "1");
@@ -810,7 +810,7 @@ class NIS_Surface : public NIS_InteractiveObject {
 		%feature("autodoc", "1");
 		NIS_Surface(const Handle_Poly_Triangulation &theTri, const Handle_NCollection_BaseAllocator &theAlloc=0l);
 		%feature("autodoc", "1");
-		NIS_Surface(const TopoDS_Shape &theShape, const Handle_NCollection_BaseAllocator &theAlloc=0l);
+		NIS_Surface(const TopoDS_Shape theShape, const Handle_NCollection_BaseAllocator &theAlloc=0l);
 		%feature("autodoc", "1");
 		Standard_Integer NNodes() const;
 		%feature("autodoc", "1");
@@ -832,9 +832,9 @@ class NIS_Surface : public NIS_InteractiveObject {
 		%feature("autodoc", "1");
 		void SetTransparency(const Standard_Real theValue);
 		%feature("autodoc", "1");
-		virtual		Standard_Real Intersect(const gp_Ax1 &theAxis, const Standard_Real theOver) const;
+		virtual		Standard_Real Intersect(const gp_Ax1 theAxis, const Standard_Real theOver) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Intersect(const Bnd_B3f &theBox, const gp_Trsf &theTrf, const Standard_Boolean isFull) const;
+		virtual		Standard_Boolean Intersect(const Bnd_B3f &theBox, const gp_Trsf theTrf, const Standard_Boolean isFull) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -953,7 +953,7 @@ class NIS_View : public V3d_OrthographicView {
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveObject Pick(const Standard_Integer theX, const Standard_Integer theY) const;
 		%feature("autodoc", "1");
-		Handle_NIS_InteractiveObject Pick(const gp_Ax1 &theAxis, const Standard_Real theOver, const Standard_Boolean isOnlySelectable) const;
+		Handle_NIS_InteractiveObject Pick(const gp_Ax1 theAxis, const Standard_Real theOver, const Standard_Boolean isOnlySelectable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -245,7 +245,7 @@ class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 		%feature("autodoc", "1");
 		Geom2dHatch_FClass2dOfClassifierOfHatcher();
 		%feature("autodoc", "1");
-		void Reset(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol);
+		void Reset(const gp_Lin2d L, const Standard_Real P, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void Compare(const Geom2dAdaptor_Curve &E, const TopAbs_Orientation Or);
 		%feature("autodoc", "1");
@@ -282,9 +282,9 @@ class Geom2dHatch_ClassifierOfHatcher {
 		%feature("autodoc", "1");
 		Geom2dHatch_ClassifierOfHatcher();
 		%feature("autodoc", "1");
-		Geom2dHatch_ClassifierOfHatcher(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d &P, const Standard_Real Tol);
+		Geom2dHatch_ClassifierOfHatcher(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d P, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d &P, const Standard_Real Tol);
+		void Perform(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d P, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		TopAbs_State State() const;
 		%feature("autodoc", "1");
@@ -333,7 +333,7 @@ class Geom2dHatch_Intersector : public Geom2dInt_GInter {
 		%feature("autodoc", "1");
 		Geom2dHatch_Intersector();
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol, const Geom2dAdaptor_Curve &E);
+		void Perform(const gp_Lin2d L, const Standard_Real P, const Standard_Real Tol, const Geom2dAdaptor_Curve &E);
 		%feature("autodoc","LocalGeometry(const E, Standard_Real U) -> Standard_Real");
 
 		void LocalGeometry(const Geom2dAdaptor_Curve &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
@@ -680,13 +680,13 @@ class Geom2dHatch_ElementsOfHatcher {
 		%feature("autodoc", "1");
 		Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		Standard_Boolean Reject(const gp_Pnt2d &P) const;
+		Standard_Boolean Reject(const gp_Pnt2d P) const;
 		%feature("autodoc","Segment(const P) -> Standard_Real");
 
-		Standard_Boolean Segment(const gp_Pnt2d &P, gp_Lin2d & L, Standard_Real &OutValue);
+		Standard_Boolean Segment(const gp_Pnt2d P, gp_Lin2d & L, Standard_Real &OutValue);
 		%feature("autodoc","OtherSegment(const P) -> Standard_Real");
 
-		Standard_Boolean OtherSegment(const gp_Pnt2d &P, gp_Lin2d & L, Standard_Real &OutValue);
+		Standard_Boolean OtherSegment(const gp_Pnt2d P, gp_Lin2d & L, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void InitWires();
 		%feature("autodoc", "1");
@@ -694,7 +694,7 @@ class Geom2dHatch_ElementsOfHatcher {
 		%feature("autodoc", "1");
 		void NextWire();
 		%feature("autodoc", "1");
-		Standard_Boolean RejectWire(const gp_Lin2d &L, const Standard_Real Par) const;
+		Standard_Boolean RejectWire(const gp_Lin2d L, const Standard_Real Par) const;
 		%feature("autodoc", "1");
 		void InitEdges();
 		%feature("autodoc", "1");
@@ -702,7 +702,7 @@ class Geom2dHatch_ElementsOfHatcher {
 		%feature("autodoc", "1");
 		void NextEdge();
 		%feature("autodoc", "1");
-		Standard_Boolean RejectEdge(const gp_Lin2d &L, const Standard_Real Par) const;
+		Standard_Boolean RejectEdge(const gp_Lin2d L, const Standard_Real Par) const;
 		%feature("autodoc", "1");
 		void CurrentEdge(Geom2dAdaptor_Curve & E, TopAbs_Orientation & Or) const;
 

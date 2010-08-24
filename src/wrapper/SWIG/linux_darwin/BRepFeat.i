@@ -101,11 +101,11 @@ enum BRepFeat_StatusError {
 class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
 	public:
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, const TopoDS_Shape &T);
+		void Init(const TopoDS_Shape S, const TopoDS_Shape T);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape F);
 
 };
 %feature("shadow") BRepFeat_Builder::~BRepFeat_Builder %{
@@ -133,13 +133,13 @@ class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 		%feature("autodoc", "1");
 		BRepFeat_MakeCylindricalHole();
 		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole(const TopoDS_Shape &S);
+		BRepFeat_MakeCylindricalHole(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole(const TopoDS_Shape &S, const gp_Ax1 &Axis);
+		BRepFeat_MakeCylindricalHole(const TopoDS_Shape S, const gp_Ax1 Axis);
 		%feature("autodoc", "1");
-		void Init(const gp_Ax1 &Axis);
+		void Init(const gp_Ax1 Axis);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, const gp_Ax1 &Axis);
+		void Init(const TopoDS_Shape S, const gp_Ax1 Axis);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real Radius);
 		%feature("autodoc", "1");
@@ -178,20 +178,20 @@ class BRepFeat {
 		%feature("autodoc", "1");
 		BRepFeat();
 		%feature("autodoc", "1");
-		static		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
+		static		void SampleEdges(const TopoDS_Shape S, TColgp_SequenceOfPnt & Pt);
 		%feature("autodoc", "1");
-		static		void Barycenter(const TopoDS_Shape &S, gp_Pnt & Pt);
+		static		void Barycenter(const TopoDS_Shape S, gp_Pnt & Pt);
 		%feature("autodoc", "1");
-		static		Standard_Real ParametricBarycenter(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
+		static		Standard_Real ParametricBarycenter(const TopoDS_Shape S, const Handle_Geom_Curve &C);
 		%feature("autodoc","ParametricMinMax(const S, const C, Standard_Boolean Ori=0) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		static		void ParametricMinMax(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & flag, const Standard_Boolean Ori=0);
+		static		void ParametricMinMax(const TopoDS_Shape S, const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & flag, const Standard_Boolean Ori=0);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsInside(const TopoDS_Face &F1, const TopoDS_Face &F2);
+		static		Standard_Boolean IsInside(const TopoDS_Face F1, const TopoDS_Face F2);
 		%feature("autodoc", "1");
-		static		void FaceUntil(const TopoDS_Shape &S, TopoDS_Face & F);
+		static		void FaceUntil(const TopoDS_Shape S, TopoDS_Face & F);
 		%feature("autodoc", "1");
-		static		TopoDS_Solid Tool(const TopoDS_Shape &SRef, const TopoDS_Face &Fac, const TopAbs_Orientation Orf);
+		static		TopoDS_Solid Tool(const TopoDS_Shape SRef, const TopoDS_Face Fac, const TopAbs_Orientation Orf);
 		%feature("autodoc", "1");
 		static		Standard_OStream & Print(const BRepFeat_StatusError SE, Standard_OStream & S);
 
@@ -216,11 +216,11 @@ def __del__(self):
 class BRepFeat_Form : public BRepBuilderAPI_MakeShape {
 	public:
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape F);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & FirstShape() const;
 		%feature("autodoc", "1");
@@ -273,17 +273,17 @@ class BRepFeat_MakePipe : public BRepFeat_Form {
 		%feature("autodoc", "1");
 		BRepFeat_MakePipe();
 		%feature("autodoc", "1");
-		BRepFeat_MakePipe(const TopoDS_Shape &Sbase, const TopoDS_Shape &Pbase, const TopoDS_Face &Skface, const TopoDS_Wire &Spine, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		BRepFeat_MakePipe(const TopoDS_Shape Sbase, const TopoDS_Shape Pbase, const TopoDS_Face Skface, const TopoDS_Wire Spine, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Sbase, const TopoDS_Shape &Pbase, const TopoDS_Face &Skface, const TopoDS_Wire &Spine, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		void Init(const TopoDS_Shape Sbase, const TopoDS_Shape Pbase, const TopoDS_Face Skface, const TopoDS_Wire Spine, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E, const TopoDS_Face &OnFace);
+		void Add(const TopoDS_Edge E, const TopoDS_Face OnFace);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &Until);
+		void Perform(const TopoDS_Shape Until);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &From, const TopoDS_Shape &Until);
+		void Perform(const TopoDS_Shape From, const TopoDS_Shape Until);
 
 };
 %feature("shadow") BRepFeat_MakePipe::~BRepFeat_MakePipe %{
@@ -308,25 +308,25 @@ class BRepFeat_MakePrism : public BRepFeat_Form {
 		%feature("autodoc", "1");
 		BRepFeat_MakePrism();
 		%feature("autodoc", "1");
-		BRepFeat_MakePrism(const TopoDS_Shape &Sbase, const TopoDS_Shape &Pbase, const TopoDS_Face &Skface, const gp_Dir &Direc, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		BRepFeat_MakePrism(const TopoDS_Shape Sbase, const TopoDS_Shape Pbase, const TopoDS_Face Skface, const gp_Dir Direc, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Sbase, const TopoDS_Shape &Pbase, const TopoDS_Face &Skface, const gp_Dir &Direction, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		void Init(const TopoDS_Shape Sbase, const TopoDS_Shape Pbase, const TopoDS_Face Skface, const gp_Dir Direction, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E, const TopoDS_Face &OnFace);
+		void Add(const TopoDS_Edge E, const TopoDS_Face OnFace);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real Length);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &Until);
+		void Perform(const TopoDS_Shape Until);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &From, const TopoDS_Shape &Until);
+		void Perform(const TopoDS_Shape From, const TopoDS_Shape Until);
 		%feature("autodoc", "1");
 		void PerformUntilEnd();
 		%feature("autodoc", "1");
-		void PerformFromEnd(const TopoDS_Shape &FUntil);
+		void PerformFromEnd(const TopoDS_Shape FUntil);
 		%feature("autodoc", "1");
 		void PerformThruAll();
 		%feature("autodoc", "1");
-		void PerformUntilHeight(const TopoDS_Shape &Until, const Standard_Real Length);
+		void PerformUntilHeight(const TopoDS_Shape Until, const Standard_Real Length);
 		%feature("autodoc", "1");
 		virtual		void Curves(TColGeom_SequenceOfCurve & S);
 		%feature("autodoc", "1");
@@ -355,11 +355,11 @@ class BRepFeat_LocalOperation : public BRepFeat_Builder {
 		%feature("autodoc", "1");
 		BRepFeat_LocalOperation();
 		%feature("autodoc", "1");
-		BRepFeat_LocalOperation(const TopoDS_Shape &S);
+		BRepFeat_LocalOperation(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		BRepFeat_LocalOperation(const TopoDS_Shape &S, const TopoDS_Shape &T);
+		BRepFeat_LocalOperation(const TopoDS_Shape S, const TopoDS_Shape T);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &T, const TopTools_ListOfShape &L, const Standard_Boolean Fuse);
+		void Perform(const TopoDS_Shape T, const TopTools_ListOfShape &L, const Standard_Boolean Fuse);
 		%feature("autodoc", "1");
 		void Perform(const TopTools_ListOfShape &LS, const TopTools_ListOfShape &LT, const Standard_Boolean Fuse);
 		%feature("autodoc", "1");
@@ -367,9 +367,9 @@ class BRepFeat_LocalOperation : public BRepFeat_Builder {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & PartsOfTool() const;
 		%feature("autodoc", "1");
-		void RemovePart(const TopoDS_Shape &S);
+		void RemovePart(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void ActivatePart(const TopoDS_Shape &S);
+		void ActivatePart(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		virtual		void Build();
 
@@ -396,15 +396,15 @@ class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepFeat_SplitShape();
 		%feature("autodoc", "1");
-		BRepFeat_SplitShape(const TopoDS_Shape &S);
+		BRepFeat_SplitShape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Wire &W, const TopoDS_Face &F);
+		void Add(const TopoDS_Wire W, const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E, const TopoDS_Face &F);
+		void Add(const TopoDS_Edge E, const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E, const TopoDS_Edge &EOn);
+		void Add(const TopoDS_Edge E, const TopoDS_Edge EOn);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & DirectLeft() const;
 		%feature("autodoc", "1");
@@ -412,9 +412,9 @@ class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape F);
 
 };
 %feature("shadow") BRepFeat_SplitShape::~BRepFeat_SplitShape %{
@@ -437,11 +437,11 @@ def __del__(self):
 class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &F);
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape F);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape F);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & FirstShape() const;
 		%feature("autodoc", "1");
@@ -453,7 +453,7 @@ class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & TgtEdges() const;
 		%feature("autodoc", "1");
-		static		Standard_Real IntPar(const Handle_Geom_Curve &C, const gp_Pnt &P);
+		static		Standard_Real IntPar(const Handle_Geom_Curve &C, const gp_Pnt P);
 		%feature("autodoc", "1");
 		static		TopoDS_Face ChoiceOfFaces(TopTools_ListOfShape & faces, const Handle_Geom_Curve &cc, const Standard_Real par, const Standard_Real bnd, const Handle_Geom_Plane &Pln);
 		%feature("autodoc", "1");
@@ -485,15 +485,15 @@ class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 		%feature("autodoc", "1");
 		BRepFeat_MakeLinearForm();
 		%feature("autodoc", "1");
-		BRepFeat_MakeLinearForm(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Handle_Geom_Plane &P, const gp_Vec &Direc, const gp_Vec &Direc1, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		BRepFeat_MakeLinearForm(const TopoDS_Shape Sbase, const TopoDS_Wire W, const Handle_Geom_Plane &P, const gp_Vec Direc, const gp_Vec Direc1, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Handle_Geom_Plane &P, const gp_Vec &Direction, const gp_Vec &Direction1, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		void Init(const TopoDS_Shape Sbase, const TopoDS_Wire W, const Handle_Geom_Plane &P, const gp_Vec Direction, const gp_Vec Direction1, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E, const TopoDS_Face &OnFace);
+		void Add(const TopoDS_Edge E, const TopoDS_Face OnFace);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
-		Standard_Boolean Propagate(TopTools_ListOfShape & L, const TopoDS_Face &F, const gp_Pnt &FPoint, const gp_Pnt &LPoint, Standard_Boolean & falseside);
+		Standard_Boolean Propagate(TopTools_ListOfShape & L, const TopoDS_Face F, const gp_Pnt FPoint, const gp_Pnt LPoint, Standard_Boolean & falseside);
 
 };
 %feature("shadow") BRepFeat_MakeLinearForm::~BRepFeat_MakeLinearForm %{
@@ -518,15 +518,15 @@ class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 		%feature("autodoc", "1");
 		BRepFeat_MakeRevolutionForm();
 		%feature("autodoc", "1");
-		BRepFeat_MakeRevolutionForm(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Handle_Geom_Plane &P, const gp_Ax1 &Axis, const Standard_Real H1, const Standard_Real H2, const Standard_Integer Fuse, Standard_Boolean & Sliding);
+		BRepFeat_MakeRevolutionForm(const TopoDS_Shape Sbase, const TopoDS_Wire W, const Handle_Geom_Plane &P, const gp_Ax1 Axis, const Standard_Real H1, const Standard_Real H2, const Standard_Integer Fuse, Standard_Boolean & Sliding);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Sbase, const TopoDS_Wire &W, const Handle_Geom_Plane &Plane, const gp_Ax1 &Axis, const Standard_Real Height1, const Standard_Real Height2, const Standard_Integer Fuse, Standard_Boolean & Sliding);
+		void Init(const TopoDS_Shape Sbase, const TopoDS_Wire W, const Handle_Geom_Plane &Plane, const gp_Ax1 Axis, const Standard_Real Height1, const Standard_Real Height2, const Standard_Integer Fuse, Standard_Boolean & Sliding);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E, const TopoDS_Face &OnFace);
+		void Add(const TopoDS_Edge E, const TopoDS_Face OnFace);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
-		Standard_Boolean Propagate(TopTools_ListOfShape & L, const TopoDS_Face &F, const gp_Pnt &FPoint, const gp_Pnt &LPoint, Standard_Boolean & falseside);
+		Standard_Boolean Propagate(TopTools_ListOfShape & L, const TopoDS_Face F, const gp_Pnt FPoint, const gp_Pnt LPoint, Standard_Boolean & falseside);
 
 };
 %feature("shadow") BRepFeat_MakeRevolutionForm::~BRepFeat_MakeRevolutionForm %{
@@ -549,27 +549,27 @@ def __del__(self):
 class BRepFeat_MakeDPrism : public BRepFeat_Form {
 	public:
 		%feature("autodoc", "1");
-		BRepFeat_MakeDPrism(const TopoDS_Shape &Sbase, const TopoDS_Face &Pbase, const TopoDS_Face &Skface, const Standard_Real Angle, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		BRepFeat_MakeDPrism(const TopoDS_Shape Sbase, const TopoDS_Face Pbase, const TopoDS_Face Skface, const Standard_Real Angle, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
 		BRepFeat_MakeDPrism();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Sbase, const TopoDS_Face &Pbase, const TopoDS_Face &Skface, const Standard_Real Angle, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		void Init(const TopoDS_Shape Sbase, const TopoDS_Face Pbase, const TopoDS_Face Skface, const Standard_Real Angle, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E, const TopoDS_Face &OnFace);
+		void Add(const TopoDS_Edge E, const TopoDS_Face OnFace);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real Height);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &Until);
+		void Perform(const TopoDS_Shape Until);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &From, const TopoDS_Shape &Until);
+		void Perform(const TopoDS_Shape From, const TopoDS_Shape Until);
 		%feature("autodoc", "1");
 		void PerformUntilEnd();
 		%feature("autodoc", "1");
-		void PerformFromEnd(const TopoDS_Shape &FUntil);
+		void PerformFromEnd(const TopoDS_Shape FUntil);
 		%feature("autodoc", "1");
 		void PerformThruAll();
 		%feature("autodoc", "1");
-		void PerformUntilHeight(const TopoDS_Shape &Until, const Standard_Real Height);
+		void PerformUntilHeight(const TopoDS_Shape Until, const Standard_Real Height);
 		%feature("autodoc", "1");
 		virtual		void Curves(TColGeom_SequenceOfCurve & S);
 		%feature("autodoc", "1");
@@ -604,25 +604,25 @@ class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepFeat_Gluer();
 		%feature("autodoc", "1");
-		BRepFeat_Gluer(const TopoDS_Shape &Snew, const TopoDS_Shape &Sbase);
+		BRepFeat_Gluer(const TopoDS_Shape Snew, const TopoDS_Shape Sbase);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Snew, const TopoDS_Shape &Sbase);
+		void Init(const TopoDS_Shape Snew, const TopoDS_Shape Sbase);
 		%feature("autodoc", "1");
-		void Bind(const TopoDS_Face &Fnew, const TopoDS_Face &Fbase);
+		void Bind(const TopoDS_Face Fnew, const TopoDS_Face Fbase);
 		%feature("autodoc", "1");
-		void Bind(const TopoDS_Edge &Enew, const TopoDS_Edge &Ebase);
+		void Bind(const TopoDS_Edge Enew, const TopoDS_Edge Ebase);
 		%feature("autodoc", "1");
 		LocOpe_Operation OpeType() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & BasisShape() const;
+		const TopoDS_Shape  BasisShape() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GluedShape() const;
+		const TopoDS_Shape  GluedShape() const;
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &F);
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape F);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape F);
 
 };
 %feature("shadow") BRepFeat_Gluer::~BRepFeat_Gluer %{
@@ -647,21 +647,21 @@ class BRepFeat_MakeRevol : public BRepFeat_Form {
 		%feature("autodoc", "1");
 		BRepFeat_MakeRevol();
 		%feature("autodoc", "1");
-		BRepFeat_MakeRevol(const TopoDS_Shape &Sbase, const TopoDS_Shape &Pbase, const TopoDS_Face &Skface, const gp_Ax1 &Axis, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		BRepFeat_MakeRevol(const TopoDS_Shape Sbase, const TopoDS_Shape Pbase, const TopoDS_Face Skface, const gp_Ax1 Axis, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &Sbase, const TopoDS_Shape &Pbase, const TopoDS_Face &Skface, const gp_Ax1 &Axis, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		void Init(const TopoDS_Shape Sbase, const TopoDS_Shape Pbase, const TopoDS_Face Skface, const gp_Ax1 Axis, const Standard_Integer Fuse, const Standard_Boolean Modify);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E, const TopoDS_Face &OnFace);
+		void Add(const TopoDS_Edge E, const TopoDS_Face OnFace);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real Angle);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &Until);
+		void Perform(const TopoDS_Shape Until);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &From, const TopoDS_Shape &Until);
+		void Perform(const TopoDS_Shape From, const TopoDS_Shape Until);
 		%feature("autodoc", "1");
 		void PerformThruAll();
 		%feature("autodoc", "1");
-		void PerformUntilAngle(const TopoDS_Shape &Until, const Standard_Real Angle);
+		void PerformUntilAngle(const TopoDS_Shape Until, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		virtual		void Curves(TColGeom_SequenceOfCurve & S);
 		%feature("autodoc", "1");

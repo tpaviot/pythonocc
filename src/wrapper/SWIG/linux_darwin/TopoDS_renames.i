@@ -36,8 +36,6 @@ $HeaderURL$
 %rename(downcast) Handle_TopoDS_TShell::DownCast;
 %rename(downcast) Handle_TopoDS_TSolid::DownCast;
 %rename(downcast) Handle_TopoDS_TWire::DownCast;
-%rename(raise) TopoDS_FrozenShape::Raise;
-%rename(newinstance) TopoDS_FrozenShape::NewInstance;
 %rename(vertex) TopoDS::Vertex;
 %rename(edge) TopoDS::Edge;
 %rename(wire) TopoDS::Wire;
@@ -46,5 +44,3 @@ $HeaderURL$
 %rename(solid) TopoDS::Solid;
 %rename(compsolid) TopoDS::CompSolid;
 %rename(compound) TopoDS::Compound;
-%rename(raise) TopoDS_UnCompatibleShapes::Raise;
-%rename(newinstance) TopoDS_UnCompatibleShapes::NewInstance;

@@ -136,7 +136,7 @@ class Geom2dAPI_Interpolate {
 		%feature("autodoc", "1");
 		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		void Load(const gp_Vec2d &InitialTangent, const gp_Vec2d &FinalTangent);
+		void Load(const gp_Vec2d InitialTangent, const gp_Vec2d FinalTangent);
 		%feature("autodoc", "1");
 		void Load(const TColgp_Array1OfVec2d &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
 		%feature("autodoc", "1");
@@ -169,13 +169,13 @@ class Geom2dAPI_ProjectPointOnCurve {
 		%feature("autodoc", "1");
 		Geom2dAPI_ProjectPointOnCurve();
 		%feature("autodoc", "1");
-		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve);
+		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d P, const Handle_Geom2d_Curve &Curve);
 		%feature("autodoc", "1");
-		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d P, const Handle_Geom2d_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
 		%feature("autodoc", "1");
-		void Init(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve);
+		void Init(const gp_Pnt2d P, const Handle_Geom2d_Curve &Curve);
 		%feature("autodoc", "1");
-		void Init(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		void Init(const gp_Pnt2d P, const Handle_Geom2d_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");

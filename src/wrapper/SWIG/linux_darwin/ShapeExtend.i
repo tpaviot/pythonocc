@@ -359,7 +359,7 @@ class ShapeExtend_ComplexCurve : public Geom_Curve {
 		%feature("autodoc", "1");
 		virtual		Standard_Real LocalToGlobal(const Standard_Integer index, const Standard_Real Ulocal) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf &T);
+		virtual		void Transform(const gp_Trsf T);
 		%feature("autodoc", "1");
 		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
 		%feature("autodoc", "1");
@@ -424,11 +424,11 @@ class ShapeExtend_WireData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ShapeExtend_WireData();
 		%feature("autodoc", "1");
-		ShapeExtend_WireData(const TopoDS_Wire &wire, const Standard_Boolean chained=1, const Standard_Boolean theManifoldMode=1);
+		ShapeExtend_WireData(const TopoDS_Wire wire, const Standard_Boolean chained=1, const Standard_Boolean theManifoldMode=1);
 		%feature("autodoc", "1");
 		void Init(const Handle_ShapeExtend_WireData &other);
 		%feature("autodoc", "1");
-		Standard_Boolean Init(const TopoDS_Wire &wire, const Standard_Boolean chained=1, const Standard_Boolean theManifoldMode=1);
+		Standard_Boolean Init(const TopoDS_Wire wire, const Standard_Boolean chained=1, const Standard_Boolean theManifoldMode=1);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
@@ -438,27 +438,27 @@ class ShapeExtend_WireData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetDegeneratedLast();
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &edge, const Standard_Integer atnum=0);
+		void Add(const TopoDS_Edge edge, const Standard_Integer atnum=0);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Wire &wire, const Standard_Integer atnum=0);
+		void Add(const TopoDS_Wire wire, const Standard_Integer atnum=0);
 		%feature("autodoc", "1");
 		void Add(const Handle_ShapeExtend_WireData &wire, const Standard_Integer atnum=0);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &shape, const Standard_Integer atnum=0);
+		void Add(const TopoDS_Shape shape, const Standard_Integer atnum=0);
 		%feature("autodoc", "1");
-		void AddOriented(const TopoDS_Edge &edge, const Standard_Integer mode);
+		void AddOriented(const TopoDS_Edge edge, const Standard_Integer mode);
 		%feature("autodoc", "1");
-		void AddOriented(const TopoDS_Wire &wire, const Standard_Integer mode);
+		void AddOriented(const TopoDS_Wire wire, const Standard_Integer mode);
 		%feature("autodoc", "1");
-		void AddOriented(const TopoDS_Shape &shape, const Standard_Integer mode);
+		void AddOriented(const TopoDS_Shape shape, const Standard_Integer mode);
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer num=0);
 		%feature("autodoc", "1");
-		void Set(const TopoDS_Edge &edge, const Standard_Integer num=0);
+		void Set(const TopoDS_Edge edge, const Standard_Integer num=0);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
-		void Reverse(const TopoDS_Face &face);
+		void Reverse(const TopoDS_Face face);
 		%feature("autodoc", "1");
 		Standard_Integer NbEdges() const;
 		%feature("autodoc", "1");
@@ -482,7 +482,7 @@ class ShapeExtend_WireData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TopoDS_Edge Edge(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Standard_Integer Index(const TopoDS_Edge &edge);
+		Standard_Integer Index(const TopoDS_Edge edge);
 		%feature("autodoc", "1");
 		Standard_Boolean IsSeam(const Standard_Integer num);
 		%feature("autodoc", "1");
@@ -527,7 +527,7 @@ class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
 		%feature("autodoc", "1");
-		virtual		void Send(const TopoDS_Shape &shape, const Message_Msg &message, const Message_Gravity gravity);
+		virtual		void Send(const TopoDS_Shape shape, const Message_Msg &message, const Message_Gravity gravity);
 		%feature("autodoc", "1");
 		virtual		void Send(const Message_Msg &message, const Message_Gravity gravity);
 		%feature("autodoc", "1");
@@ -597,7 +597,7 @@ class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
 		%feature("autodoc", "1");
 		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
 		%feature("autodoc", "1");
-		virtual		void Send(const TopoDS_Shape &shape, const Message_Msg &message, const Message_Gravity gravity);
+		virtual		void Send(const TopoDS_Shape shape, const Message_Msg &message, const Message_Gravity gravity);
 		%feature("autodoc", "1");
 		const ShapeExtend_DataMapOfTransientListOfMsg & MapTransient() const;
 		%feature("autodoc", "1");
@@ -636,9 +636,9 @@ def __del__(self):
 class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const TopoDS_Shape &K, const Message_ListOfMsg &I, const TCollection_MapNodePtr &n);
+		ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const TopoDS_Shape K, const Message_ListOfMsg &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Message_ListOfMsg & Value() const;
 		%feature("autodoc", "1");
@@ -796,7 +796,7 @@ class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_
 		%feature("autodoc", "1");
 		void Initialize(const ShapeExtend_DataMapOfShapeListOfMsg &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Message_ListOfMsg & Value() const;
 
@@ -831,19 +831,19 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Message_ListOfMsg &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Message_ListOfMsg &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Message_ListOfMsg & Find(const TopoDS_Shape &K) const;
+		const Message_ListOfMsg & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Message_ListOfMsg & operator()(const TopoDS_Shape &K) const;
+		const Message_ListOfMsg & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Message_ListOfMsg & ChangeFind(const TopoDS_Shape &K);
+		Message_ListOfMsg & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Message_ListOfMsg & operator()(const TopoDS_Shape &K);
+		Message_ListOfMsg & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") ShapeExtend_DataMapOfShapeListOfMsg::~ShapeExtend_DataMapOfShapeListOfMsg %{
@@ -905,28 +905,28 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 		Standard_Integer LocateVParameter(const Standard_Real V) const;
 		%feature("autodoc","LocateUVPoint(const pnt) -> [Standard_Integer, Standard_Integer]");
 
-		void LocateUVPoint(const gp_Pnt2d &pnt, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		void LocateUVPoint(const gp_Pnt2d pnt, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & Patch(const Standard_Real U, const Standard_Real V) const;
 		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Patch(const gp_Pnt2d &pnt) const;
+		const Handle_Geom_Surface & Patch(const gp_Pnt2d pnt) const;
 		%feature("autodoc", "1");
 		Standard_Real ULocalToGlobal(const Standard_Integer i, const Standard_Integer j, const Standard_Real u) const;
 		%feature("autodoc", "1");
 		Standard_Real VLocalToGlobal(const Standard_Integer i, const Standard_Integer j, const Standard_Real v) const;
 		%feature("autodoc", "1");
-		gp_Pnt2d LocalToGlobal(const Standard_Integer i, const Standard_Integer j, const gp_Pnt2d &uv) const;
+		gp_Pnt2d LocalToGlobal(const Standard_Integer i, const Standard_Integer j, const gp_Pnt2d uv) const;
 		%feature("autodoc", "1");
 		Standard_Real UGlobalToLocal(const Standard_Integer i, const Standard_Integer j, const Standard_Real U) const;
 		%feature("autodoc", "1");
 		Standard_Real VGlobalToLocal(const Standard_Integer i, const Standard_Integer j, const Standard_Real V) const;
 		%feature("autodoc", "1");
-		gp_Pnt2d GlobalToLocal(const Standard_Integer i, const Standard_Integer j, const gp_Pnt2d &UV) const;
+		gp_Pnt2d GlobalToLocal(const Standard_Integer i, const Standard_Integer j, const gp_Pnt2d UV) const;
 		%feature("autodoc","GlobalToLocalTransformation(Standard_Integer i, Standard_Integer j) -> Standard_Real");
 
 		Standard_Boolean GlobalToLocalTransformation(const Standard_Integer i, const Standard_Integer j, Standard_Real &OutValue, gp_Trsf2d & Trsf) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf &T);
+		virtual		void Transform(const gp_Trsf T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
@@ -969,7 +969,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 		%feature("autodoc", "1");
 		virtual		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");
-		gp_Pnt Value(const gp_Pnt2d &pnt) const;
+		gp_Pnt Value(const gp_Pnt2d pnt) const;
 		%feature("autodoc", "1");
 		void ComputeJointValues(const ShapeExtend_Parametrisation param=ShapeExtend_Natural);
 		%feature("autodoc", "1");
@@ -1012,15 +1012,15 @@ class ShapeExtend_Explorer {
 		%feature("autodoc", "1");
 		TopoDS_Shape CompoundFromSeq(const Handle_TopTools_HSequenceOfShape &seqval) const;
 		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape SeqFromCompound(const TopoDS_Shape &comp, const Standard_Boolean expcomp) const;
+		Handle_TopTools_HSequenceOfShape SeqFromCompound(const TopoDS_Shape comp, const Standard_Boolean expcomp) const;
 		%feature("autodoc", "1");
 		void ListFromSeq(const Handle_TopTools_HSequenceOfShape &seqval, TopTools_ListOfShape & lisval, const Standard_Boolean clear=1) const;
 		%feature("autodoc", "1");
 		Handle_TopTools_HSequenceOfShape SeqFromList(const TopTools_ListOfShape &lisval) const;
 		%feature("autodoc", "1");
-		TopAbs_ShapeEnum ShapeType(const TopoDS_Shape &shape, const Standard_Boolean compound) const;
+		TopAbs_ShapeEnum ShapeType(const TopoDS_Shape shape, const Standard_Boolean compound) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape SortedCompound(const TopoDS_Shape &shape, const TopAbs_ShapeEnum type, const Standard_Boolean explore, const Standard_Boolean compound) const;
+		TopoDS_Shape SortedCompound(const TopoDS_Shape shape, const TopAbs_ShapeEnum type, const Standard_Boolean explore, const Standard_Boolean compound) const;
 		%feature("autodoc", "1");
 		void DispatchList(const Handle_TopTools_HSequenceOfShape &list, Handle_TopTools_HSequenceOfShape & vertices, Handle_TopTools_HSequenceOfShape & edges, Handle_TopTools_HSequenceOfShape & wires, Handle_TopTools_HSequenceOfShape & faces, Handle_TopTools_HSequenceOfShape & shells, Handle_TopTools_HSequenceOfShape & solids, Handle_TopTools_HSequenceOfShape & compsols, Handle_TopTools_HSequenceOfShape & compounds) const;
 

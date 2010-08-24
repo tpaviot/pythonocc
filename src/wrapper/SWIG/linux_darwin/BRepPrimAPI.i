@@ -60,11 +60,11 @@ class BRepPrimAPI_MakeOneAxis : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face();
+		const TopoDS_Face  Face();
 		%feature("autodoc", "1");
-		const TopoDS_Shell & Shell();
+		const TopoDS_Shell  Shell();
 		%feature("autodoc", "1");
-		const TopoDS_Solid & Solid();
+		const TopoDS_Solid  Solid();
 
 };
 %feature("shadow") BRepPrimAPI_MakeOneAxis::~BRepPrimAPI_MakeOneAxis %{
@@ -95,13 +95,13 @@ class BRepPrimAPI_MakeTorus : public BRepPrimAPI_MakeOneAxis {
 		%feature("autodoc", "1");
 		BRepPrimAPI_MakeTorus(const Standard_Real R1, const Standard_Real R2, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeTorus(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2);
+		BRepPrimAPI_MakeTorus(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeTorus(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real angle);
+		BRepPrimAPI_MakeTorus(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeTorus(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real angle1, const Standard_Real angle2);
+		BRepPrimAPI_MakeTorus(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real angle1, const Standard_Real angle2);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeTorus(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle);
+		BRepPrimAPI_MakeTorus(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle);
 		%feature("autodoc", "1");
 		BRepPrim_Torus & Torus();
 
@@ -134,13 +134,13 @@ class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
 		%feature("autodoc", "1");
 		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Handle_Geom_Curve &Meridian);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Handle_Geom_Curve &Meridian, const Standard_Real angle);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 &Axes, const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
 		%feature("autodoc", "1");
 		virtual		Standard_Address OneAxis();
 		%feature("autodoc", "1");
@@ -194,19 +194,19 @@ class BRepPrimAPI_MakeWedge : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepPrimAPI_MakeWedge(const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeWedge(const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
+		BRepPrimAPI_MakeWedge(const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
 		%feature("autodoc", "1");
 		BRepPrimAPI_MakeWedge(const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real xmin, const Standard_Real zmin, const Standard_Real xmax, const Standard_Real zmax);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeWedge(const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real xmin, const Standard_Real zmin, const Standard_Real xmax, const Standard_Real zmax);
+		BRepPrimAPI_MakeWedge(const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real xmin, const Standard_Real zmin, const Standard_Real xmax, const Standard_Real zmax);
 		%feature("autodoc", "1");
 		BRepPrim_Wedge & Wedge();
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		const TopoDS_Shell & Shell();
+		const TopoDS_Shell  Shell();
 		%feature("autodoc", "1");
-		const TopoDS_Solid & Solid();
+		const TopoDS_Solid  Solid();
 
 };
 %feature("shadow") BRepPrimAPI_MakeWedge::~BRepPrimAPI_MakeWedge %{
@@ -233,9 +233,9 @@ class BRepPrimAPI_MakeCylinder : public BRepPrimAPI_MakeOneAxis {
 		%feature("autodoc", "1");
 		BRepPrimAPI_MakeCylinder(const Standard_Real R, const Standard_Real H, const Standard_Real Angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCylinder(const gp_Ax2 &Axes, const Standard_Real R, const Standard_Real H);
+		BRepPrimAPI_MakeCylinder(const gp_Ax2 Axes, const Standard_Real R, const Standard_Real H);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCylinder(const gp_Ax2 &Axes, const Standard_Real R, const Standard_Real H, const Standard_Real Angle);
+		BRepPrimAPI_MakeCylinder(const gp_Ax2 Axes, const Standard_Real R, const Standard_Real H, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		virtual		Standard_Address OneAxis();
 		%feature("autodoc", "1");
@@ -262,11 +262,11 @@ def __del__(self):
 class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
 	public:
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeHalfSpace(const TopoDS_Face &Face, const gp_Pnt &RefPnt);
+		BRepPrimAPI_MakeHalfSpace(const TopoDS_Face Face, const gp_Pnt RefPnt);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeHalfSpace(const TopoDS_Shell &Shell, const gp_Pnt &RefPnt);
+		BRepPrimAPI_MakeHalfSpace(const TopoDS_Shell Shell, const gp_Pnt RefPnt);
 		%feature("autodoc", "1");
-		const TopoDS_Solid & Solid() const;
+		const TopoDS_Solid  Solid() const;
 
 };
 %feature("shadow") BRepPrimAPI_MakeHalfSpace::~BRepPrimAPI_MakeHalfSpace %{
@@ -291,31 +291,31 @@ class BRepPrimAPI_MakeBox : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepPrimAPI_MakeBox(const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeBox(const gp_Pnt &P, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
+		BRepPrimAPI_MakeBox(const gp_Pnt P, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeBox(const gp_Pnt &P1, const gp_Pnt &P2);
+		BRepPrimAPI_MakeBox(const gp_Pnt P1, const gp_Pnt P2);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeBox(const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
+		BRepPrimAPI_MakeBox(const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
 		%feature("autodoc", "1");
 		BRepPrim_Wedge & Wedge();
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		const TopoDS_Shell & Shell();
+		const TopoDS_Shell  Shell();
 		%feature("autodoc", "1");
-		const TopoDS_Solid & Solid();
+		const TopoDS_Solid  Solid();
 		%feature("autodoc", "1");
-		const TopoDS_Face & BottomFace();
+		const TopoDS_Face  BottomFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & BackFace();
+		const TopoDS_Face  BackFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & FrontFace();
+		const TopoDS_Face  FrontFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & LeftFace();
+		const TopoDS_Face  LeftFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & RightFace();
+		const TopoDS_Face  RightFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & TopFace();
+		const TopoDS_Face  TopFace();
 
 };
 %feature("shadow") BRepPrimAPI_MakeBox::~BRepPrimAPI_MakeBox %{
@@ -346,21 +346,21 @@ class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
 		%feature("autodoc", "1");
 		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt &Center, const Standard_Real R);
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt &Center, const Standard_Real R, const Standard_Real angle);
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt &Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt &Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 &Axis, const Standard_Real R);
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 &Axis, const Standard_Real R, const Standard_Real angle);
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 &Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 &Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
 		%feature("autodoc", "1");
 		virtual		Standard_Address OneAxis();
 		%feature("autodoc", "1");
@@ -387,9 +387,9 @@ def __del__(self):
 class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 	public:
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevol(const TopoDS_Shape &S, const gp_Ax1 &A, const Standard_Real D, const Standard_Boolean Copy=0);
+		BRepPrimAPI_MakeRevol(const TopoDS_Shape S, const gp_Ax1 A, const Standard_Real D, const Standard_Boolean Copy=0);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevol(const TopoDS_Shape &S, const gp_Ax1 &A, const Standard_Boolean Copy=0);
+		BRepPrimAPI_MakeRevol(const TopoDS_Shape S, const gp_Ax1 A, const Standard_Boolean Copy=0);
 		%feature("autodoc", "1");
 		const BRepSweep_Revol & Revol() const;
 		%feature("autodoc", "1");
@@ -399,11 +399,11 @@ class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 		%feature("autodoc", "1");
 		virtual		TopoDS_Shape LastShape();
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		TopoDS_Shape FirstShape(const TopoDS_Shape &theShape);
+		TopoDS_Shape FirstShape(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		TopoDS_Shape LastShape(const TopoDS_Shape &theShape);
+		TopoDS_Shape LastShape(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		Standard_Boolean HasDegenerated() const;
 		%feature("autodoc", "1");
@@ -434,9 +434,9 @@ class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
 		%feature("autodoc", "1");
 		BRepPrimAPI_MakeCone(const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCone(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
+		BRepPrimAPI_MakeCone(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCone(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
+		BRepPrimAPI_MakeCone(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
 		%feature("autodoc", "1");
 		virtual		Standard_Address OneAxis();
 		%feature("autodoc", "1");
@@ -463,9 +463,9 @@ def __del__(self):
 class BRepPrimAPI_MakePrism : public BRepPrimAPI_MakeSweep {
 	public:
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakePrism(const TopoDS_Shape &S, const gp_Vec &V, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
+		BRepPrimAPI_MakePrism(const TopoDS_Shape S, const gp_Vec V, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakePrism(const TopoDS_Shape &S, const gp_Dir &D, const Standard_Boolean Inf=1, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
+		BRepPrimAPI_MakePrism(const TopoDS_Shape S, const gp_Dir D, const Standard_Boolean Inf=1, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
 		%feature("autodoc", "1");
 		const BRepSweep_Prism & Prism() const;
 		%feature("autodoc", "1");
@@ -475,11 +475,11 @@ class BRepPrimAPI_MakePrism : public BRepPrimAPI_MakeSweep {
 		%feature("autodoc", "1");
 		virtual		TopoDS_Shape LastShape();
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		TopoDS_Shape FirstShape(const TopoDS_Shape &theShape);
+		TopoDS_Shape FirstShape(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		TopoDS_Shape LastShape(const TopoDS_Shape &theShape);
+		TopoDS_Shape LastShape(const TopoDS_Shape theShape);
 
 };
 %feature("shadow") BRepPrimAPI_MakePrism::~BRepPrimAPI_MakePrism %{

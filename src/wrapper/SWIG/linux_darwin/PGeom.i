@@ -1608,15 +1608,15 @@ class PGeom_CartesianPoint : public PGeom_Point {
 		%feature("autodoc", "1");
 		PGeom_CartesianPoint();
 		%feature("autodoc", "1");
-		PGeom_CartesianPoint(const gp_Pnt &aPnt);
+		PGeom_CartesianPoint(const gp_Pnt aPnt);
 		%feature("autodoc", "1");
-		void Pnt(const gp_Pnt &aPnt);
+		void Pnt(const gp_Pnt aPnt);
 		%feature("autodoc", "1");
 		gp_Pnt Pnt() const;
 		%feature("autodoc", "1");
 		PGeom_CartesianPoint(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetPGeom_CartesianPointpnt() const;
+		const gp_Pnt  _CSFDB_GetPGeom_CartesianPointpnt() const;
 
 };
 %extend PGeom_CartesianPoint {
@@ -1949,13 +1949,13 @@ def __del__(self):
 class PGeom_Vector : public PGeom_Geometry {
 	public:
 		%feature("autodoc", "1");
-		void Vec(const gp_Vec &aVec);
+		void Vec(const gp_Vec aVec);
 		%feature("autodoc", "1");
 		gp_Vec Vec() const;
 		%feature("autodoc", "1");
 		PGeom_Vector(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Vec & _CSFDB_GetPGeom_Vectorvec() const;
+		const gp_Vec  _CSFDB_GetPGeom_Vectorvec() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1993,13 +1993,13 @@ def __del__(self):
 class PGeom_Conic : public PGeom_Curve {
 	public:
 		%feature("autodoc", "1");
-		void Position(const gp_Ax2 &aPosition);
+		void Position(const gp_Ax2 aPosition);
 		%feature("autodoc", "1");
 		gp_Ax2 Position() const;
 		%feature("autodoc", "1");
 		PGeom_Conic(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Ax2 & _CSFDB_GetPGeom_Conicposition() const;
+		const gp_Ax2  _CSFDB_GetPGeom_Conicposition() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2039,7 +2039,7 @@ class PGeom_Parabola : public PGeom_Conic {
 		%feature("autodoc", "1");
 		PGeom_Parabola();
 		%feature("autodoc", "1");
-		PGeom_Parabola(const gp_Ax2 &aPosition, const Standard_Real aFocalLength);
+		PGeom_Parabola(const gp_Ax2 aPosition, const Standard_Real aFocalLength);
 		%feature("autodoc", "1");
 		void FocalLength(const Standard_Real aFocalLength);
 		%feature("autodoc", "1");
@@ -2084,7 +2084,7 @@ class PGeom_Circle : public PGeom_Conic {
 		%feature("autodoc", "1");
 		PGeom_Circle();
 		%feature("autodoc", "1");
-		PGeom_Circle(const gp_Ax2 &aPosition, const Standard_Real aRadius);
+		PGeom_Circle(const gp_Ax2 aPosition, const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		void Radius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
@@ -2131,15 +2131,15 @@ class PGeom_Transformation : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PGeom_Transformation();
 		%feature("autodoc", "1");
-		PGeom_Transformation(const gp_Trsf &aTrsf);
+		PGeom_Transformation(const gp_Trsf aTrsf);
 		%feature("autodoc", "1");
-		void Trsf(const gp_Trsf &aTrsf);
+		void Trsf(const gp_Trsf aTrsf);
 		%feature("autodoc", "1");
 		gp_Trsf Trsf() const;
 		%feature("autodoc", "1");
 		PGeom_Transformation(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Trsf & _CSFDB_GetPGeom_Transformationtrsf() const;
+		const gp_Trsf  _CSFDB_GetPGeom_Transformationtrsf() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2318,7 +2318,7 @@ class PGeom_Ellipse : public PGeom_Conic {
 		%feature("autodoc", "1");
 		PGeom_Ellipse();
 		%feature("autodoc", "1");
-		PGeom_Ellipse(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		PGeom_Ellipse(const gp_Ax2 aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
 		%feature("autodoc", "1");
 		void MajorRadius(const Standard_Real aMajorRadius);
 		%feature("autodoc", "1");
@@ -2371,13 +2371,13 @@ def __del__(self):
 class PGeom_ElementarySurface : public PGeom_Surface {
 	public:
 		%feature("autodoc", "1");
-		void Position(const gp_Ax3 &aPosition);
+		void Position(const gp_Ax3 aPosition);
 		%feature("autodoc", "1");
 		gp_Ax3 Position() const;
 		%feature("autodoc", "1");
 		PGeom_ElementarySurface(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Ax3 & _CSFDB_GetPGeom_ElementarySurfaceposition() const;
+		const gp_Ax3  _CSFDB_GetPGeom_ElementarySurfaceposition() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2417,7 +2417,7 @@ class PGeom_ToroidalSurface : public PGeom_ElementarySurface {
 		%feature("autodoc", "1");
 		PGeom_ToroidalSurface();
 		%feature("autodoc", "1");
-		PGeom_ToroidalSurface(const gp_Ax3 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		PGeom_ToroidalSurface(const gp_Ax3 aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
 		%feature("autodoc", "1");
 		void MajorRadius(const Standard_Real aMajorRadius);
 		%feature("autodoc", "1");
@@ -2470,15 +2470,15 @@ class PGeom_Line : public PGeom_Curve {
 		%feature("autodoc", "1");
 		PGeom_Line();
 		%feature("autodoc", "1");
-		PGeom_Line(const gp_Ax1 &aPosition);
+		PGeom_Line(const gp_Ax1 aPosition);
 		%feature("autodoc", "1");
-		void Position(const gp_Ax1 &aPosition);
+		void Position(const gp_Ax1 aPosition);
 		%feature("autodoc", "1");
 		gp_Ax1 Position() const;
 		%feature("autodoc", "1");
 		PGeom_Line(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Ax1 & _CSFDB_GetPGeom_Lineposition() const;
+		const gp_Ax1  _CSFDB_GetPGeom_Lineposition() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2515,7 +2515,7 @@ class PGeom_Direction : public PGeom_Vector {
 		%feature("autodoc", "1");
 		PGeom_Direction();
 		%feature("autodoc", "1");
-		PGeom_Direction(const gp_Vec &aVec);
+		PGeom_Direction(const gp_Vec aVec);
 		%feature("autodoc", "1");
 		PGeom_Direction(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
@@ -2552,13 +2552,13 @@ def __del__(self):
 class PGeom_AxisPlacement : public PGeom_Geometry {
 	public:
 		%feature("autodoc", "1");
-		void Axis(const gp_Ax1 &aAxis);
+		void Axis(const gp_Ax1 aAxis);
 		%feature("autodoc", "1");
 		gp_Ax1 Axis() const;
 		%feature("autodoc", "1");
 		PGeom_AxisPlacement(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Ax1 & _CSFDB_GetPGeom_AxisPlacementaxis() const;
+		const gp_Ax1  _CSFDB_GetPGeom_AxisPlacementaxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2669,13 +2669,13 @@ class PGeom_OffsetCurve : public PGeom_Curve {
 		%feature("autodoc", "1");
 		PGeom_OffsetCurve();
 		%feature("autodoc", "1");
-		PGeom_OffsetCurve(const Handle_PGeom_Curve &aBasisCurve, const Standard_Real aOffsetValue, const gp_Dir &aOffsetDirection);
+		PGeom_OffsetCurve(const Handle_PGeom_Curve &aBasisCurve, const Standard_Real aOffsetValue, const gp_Dir aOffsetDirection);
 		%feature("autodoc", "1");
 		void BasisCurve(const Handle_PGeom_Curve &aBasisCurve);
 		%feature("autodoc", "1");
 		Handle_PGeom_Curve BasisCurve() const;
 		%feature("autodoc", "1");
-		void OffsetDirection(const gp_Dir &aOffsetDirection);
+		void OffsetDirection(const gp_Dir aOffsetDirection);
 		%feature("autodoc", "1");
 		gp_Dir OffsetDirection() const;
 		%feature("autodoc", "1");
@@ -2689,7 +2689,7 @@ class PGeom_OffsetCurve : public PGeom_Curve {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom_OffsetCurvebasisCurve(const Handle_PGeom_Curve &p);
 		%feature("autodoc", "1");
-		const gp_Dir & _CSFDB_GetPGeom_OffsetCurveoffsetDirection() const;
+		const gp_Dir  _CSFDB_GetPGeom_OffsetCurveoffsetDirection() const;
 		%feature("autodoc", "1");
 		Standard_Real _CSFDB_GetPGeom_OffsetCurveoffsetValue() const;
 		%feature("autodoc", "1");
@@ -2730,7 +2730,7 @@ class PGeom_CylindricalSurface : public PGeom_ElementarySurface {
 		%feature("autodoc", "1");
 		PGeom_CylindricalSurface();
 		%feature("autodoc", "1");
-		PGeom_CylindricalSurface(const gp_Ax3 &aPosition, const Standard_Real aRadius);
+		PGeom_CylindricalSurface(const gp_Ax3 aPosition, const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		void Radius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
@@ -2777,15 +2777,15 @@ class PGeom_Axis2Placement : public PGeom_AxisPlacement {
 		%feature("autodoc", "1");
 		PGeom_Axis2Placement();
 		%feature("autodoc", "1");
-		PGeom_Axis2Placement(const gp_Ax1 &aAxis, const gp_Dir &aXDirection);
+		PGeom_Axis2Placement(const gp_Ax1 aAxis, const gp_Dir aXDirection);
 		%feature("autodoc", "1");
-		void XDirection(const gp_Dir &aXDirection);
+		void XDirection(const gp_Dir aXDirection);
 		%feature("autodoc", "1");
 		gp_Dir XDirection() const;
 		%feature("autodoc", "1");
 		PGeom_Axis2Placement(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Dir & _CSFDB_GetPGeom_Axis2PlacementxDirection() const;
+		const gp_Dir  _CSFDB_GetPGeom_Axis2PlacementxDirection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2824,7 +2824,7 @@ class PGeom_SweptSurface : public PGeom_Surface {
 		%feature("autodoc", "1");
 		Handle_PGeom_Curve BasisCurve() const;
 		%feature("autodoc", "1");
-		void Direction(const gp_Dir &aDirection);
+		void Direction(const gp_Dir aDirection);
 		%feature("autodoc", "1");
 		gp_Dir Direction() const;
 		%feature("autodoc", "1");
@@ -2834,7 +2834,7 @@ class PGeom_SweptSurface : public PGeom_Surface {
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom_SweptSurfacebasisCurve(const Handle_PGeom_Curve &p);
 		%feature("autodoc", "1");
-		const gp_Dir & _CSFDB_GetPGeom_SweptSurfacedirection() const;
+		const gp_Dir  _CSFDB_GetPGeom_SweptSurfacedirection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2874,7 +2874,7 @@ class PGeom_SurfaceOfLinearExtrusion : public PGeom_SweptSurface {
 		%feature("autodoc", "1");
 		PGeom_SurfaceOfLinearExtrusion();
 		%feature("autodoc", "1");
-		PGeom_SurfaceOfLinearExtrusion(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir &aDirection);
+		PGeom_SurfaceOfLinearExtrusion(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir aDirection);
 		%feature("autodoc", "1");
 		PGeom_SurfaceOfLinearExtrusion(const Storage_stCONSTclCOM &a);
 
@@ -2911,7 +2911,7 @@ class PGeom_Axis1Placement : public PGeom_AxisPlacement {
 		%feature("autodoc", "1");
 		PGeom_Axis1Placement();
 		%feature("autodoc", "1");
-		PGeom_Axis1Placement(const gp_Ax1 &aAxis);
+		PGeom_Axis1Placement(const gp_Ax1 aAxis);
 		%feature("autodoc", "1");
 		PGeom_Axis1Placement(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
@@ -2950,7 +2950,7 @@ class PGeom_SphericalSurface : public PGeom_ElementarySurface {
 		%feature("autodoc", "1");
 		PGeom_SphericalSurface();
 		%feature("autodoc", "1");
-		PGeom_SphericalSurface(const gp_Ax3 &aPosition, const Standard_Real aRadius);
+		PGeom_SphericalSurface(const gp_Ax3 aPosition, const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		void Radius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
@@ -3115,7 +3115,7 @@ class PGeom_Hyperbola : public PGeom_Conic {
 		%feature("autodoc", "1");
 		PGeom_Hyperbola();
 		%feature("autodoc", "1");
-		PGeom_Hyperbola(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		PGeom_Hyperbola(const gp_Ax2 aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
 		%feature("autodoc", "1");
 		void MajorRadius(const Standard_Real aMajorRadius);
 		%feature("autodoc", "1");
@@ -3170,7 +3170,7 @@ class PGeom_ConicalSurface : public PGeom_ElementarySurface {
 		%feature("autodoc", "1");
 		PGeom_ConicalSurface();
 		%feature("autodoc", "1");
-		PGeom_ConicalSurface(const gp_Ax3 &aPosition, const Standard_Real aRadius, const Standard_Real aSemiAngle);
+		PGeom_ConicalSurface(const gp_Ax3 aPosition, const Standard_Real aRadius, const Standard_Real aSemiAngle);
 		%feature("autodoc", "1");
 		void Radius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
@@ -3225,15 +3225,15 @@ class PGeom_SurfaceOfRevolution : public PGeom_SweptSurface {
 		%feature("autodoc", "1");
 		PGeom_SurfaceOfRevolution();
 		%feature("autodoc", "1");
-		PGeom_SurfaceOfRevolution(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir &aDirection, const gp_Pnt &aLocation);
+		PGeom_SurfaceOfRevolution(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir aDirection, const gp_Pnt aLocation);
 		%feature("autodoc", "1");
-		void Location(const gp_Pnt &aLocation);
+		void Location(const gp_Pnt aLocation);
 		%feature("autodoc", "1");
 		gp_Pnt Location() const;
 		%feature("autodoc", "1");
 		PGeom_SurfaceOfRevolution(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetPGeom_SurfaceOfRevolutionlocation() const;
+		const gp_Pnt  _CSFDB_GetPGeom_SurfaceOfRevolutionlocation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3270,7 +3270,7 @@ class PGeom_Plane : public PGeom_ElementarySurface {
 		%feature("autodoc", "1");
 		PGeom_Plane();
 		%feature("autodoc", "1");
-		PGeom_Plane(const gp_Ax3 &aPosition);
+		PGeom_Plane(const gp_Ax3 aPosition);
 		%feature("autodoc", "1");
 		PGeom_Plane(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
@@ -3309,7 +3309,7 @@ class PGeom_VectorWithMagnitude : public PGeom_Vector {
 		%feature("autodoc", "1");
 		PGeom_VectorWithMagnitude();
 		%feature("autodoc", "1");
-		PGeom_VectorWithMagnitude(const gp_Vec &aVec);
+		PGeom_VectorWithMagnitude(const gp_Vec aVec);
 		%feature("autodoc", "1");
 		PGeom_VectorWithMagnitude(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");

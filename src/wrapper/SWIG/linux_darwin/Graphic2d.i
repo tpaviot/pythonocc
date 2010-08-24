@@ -2781,9 +2781,9 @@ class Graphic2d_GraphicObject : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetView(const Handle_Graphic2d_View &aView);
 		%feature("autodoc", "1");
-		void SetTransform(const gp_GTrsf2d &aTrsf, const Graphic2d_TypeOfComposition aType=Graphic2d_TOC_REPLACE);
+		void SetTransform(const gp_GTrsf2d aTrsf, const Graphic2d_TypeOfComposition aType=Graphic2d_TOC_REPLACE);
 		%feature("autodoc", "1");
-		const gp_GTrsf2d & Transform() const;
+		const gp_GTrsf2d  Transform() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTransformed() const;
 		%feature("autodoc", "1");
@@ -3586,7 +3586,7 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 		%feature("autodoc", "1");
 		void SetFramedTextAttrib(const Standard_Integer ColorIndex, const Standard_Integer FrameColorIndex, const Standard_Integer FrameWidthIndex, const Standard_Integer FontIndex, const Quantity_PlaneAngle aSlant=0.0, const Quantity_Factor aHScale=1.0e+0, const Quantity_Factor aWScale=1.0e+0, const Standard_Boolean isUnderlined=0, const Standard_Boolean isZoomable=1);
 		%feature("autodoc", "1");
-		void SetTransform(const gp_GTrsf2d &aTrsf, const Graphic2d_TypeOfComposition aType=Graphic2d_TOC_REPLACE);
+		void SetTransform(const gp_GTrsf2d aTrsf, const Graphic2d_TypeOfComposition aType=Graphic2d_TOC_REPLACE);
 		%feature("autodoc", "1");
 		void SetMapping(const Standard_Boolean aStatus=1);
 		%feature("autodoc","MinMax() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");

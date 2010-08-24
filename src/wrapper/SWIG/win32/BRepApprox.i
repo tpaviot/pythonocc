@@ -430,11 +430,11 @@ class BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
 		%feature("autodoc", "1");
 		Standard_Boolean IsTangent() const;
 		%feature("autodoc", "1");
-		const gp_Dir & Direction() const;
+		const gp_Dir  Direction() const;
 		%feature("autodoc", "1");
-		const gp_Dir2d & DirectionOnS1() const;
+		const gp_Dir2d  DirectionOnS1() const;
 		%feature("autodoc", "1");
-		const gp_Dir2d & DirectionOnS2() const;
+		const gp_Dir2d  DirectionOnS2() const;
 		%feature("autodoc", "1");
 		BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox & Function();
 
@@ -1285,13 +1285,13 @@ class BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox : public math_Functi
 		%feature("autodoc", "1");
 		Standard_Real Tolerance() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Point() const;
+		const gp_Pnt  Point() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTangent();
 		%feature("autodoc", "1");
-		const gp_Vec & Direction3d();
+		const gp_Vec  Direction3d();
 		%feature("autodoc", "1");
-		const gp_Dir2d & Direction2d();
+		const gp_Dir2d  Direction2d();
 		%feature("autodoc", "1");
 		const BRepAdaptor_Surface & PSurface() const;
 		%feature("autodoc", "1");

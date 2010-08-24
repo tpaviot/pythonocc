@@ -550,6 +550,8 @@ def __del__(self):
 class TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
+		TopoDS_Shape(const TopoDS_Shape arg0);
+		%feature("autodoc", "1");
 		TopoDS_Shape();
 		%feature("autodoc", "1");
 		Standard_Boolean IsNull() const;
@@ -616,17 +618,17 @@ class TopoDS_Shape {
 		%feature("autodoc", "1");
 		TopoDS_Shape Composed(const TopAbs_Orientation Orient) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsPartner(const TopoDS_Shape &other) const;
+		Standard_Boolean IsPartner(const TopoDS_Shape other) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSame(const TopoDS_Shape &other) const;
+		Standard_Boolean IsSame(const TopoDS_Shape other) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const TopoDS_Shape &other) const;
+		Standard_Boolean IsEqual(const TopoDS_Shape other) const;
 		%feature("autodoc", "1");
-		Standard_Boolean operator==(const TopoDS_Shape &other) const;
+		Standard_Boolean operator==(const TopoDS_Shape other) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsNotEqual(const TopoDS_Shape &other) const;
+		Standard_Boolean IsNotEqual(const TopoDS_Shape other) const;
 		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const TopoDS_Shape &other) const;
+		Standard_Boolean operator!=(const TopoDS_Shape other) const;
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
@@ -678,6 +680,8 @@ def __del__(self):
 class TopoDS_Compound : public TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
+		TopoDS_Compound(const TopoDS_Compound arg0);
+		%feature("autodoc", "1");
 		TopoDS_Compound();
 
 };
@@ -701,9 +705,11 @@ def __del__(self):
 class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopoDS_ListNodeOfListOfShape(const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
+		TopoDS_ListNodeOfListOfShape(const TopoDS_ListNodeOfListOfShape arg0);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
+		TopoDS_ListNodeOfListOfShape(const TopoDS_Shape I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -738,6 +744,8 @@ def __del__(self):
 class TopoDS_Vertex : public TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
+		TopoDS_Vertex(const TopoDS_Vertex arg0);
+		%feature("autodoc", "1");
 		TopoDS_Vertex();
 
 };
@@ -751,49 +759,6 @@ def __del__(self):
 %}
 
 %extend TopoDS_Vertex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopoDS_FrozenShape;
-class TopoDS_FrozenShape : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		TopoDS_FrozenShape();
-		%feature("autodoc", "1");
-		TopoDS_FrozenShape(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_TopoDS_FrozenShape NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopoDS_FrozenShape {
-	Handle_TopoDS_FrozenShape GetHandle() {
-	return *(Handle_TopoDS_FrozenShape*) &$self;
-	}
-};
-%extend TopoDS_FrozenShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TopoDS_FrozenShape::~TopoDS_FrozenShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopoDS_FrozenShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -869,17 +834,19 @@ def __del__(self):
 class TopoDS_Iterator {
 	public:
 		%feature("autodoc", "1");
+		TopoDS_Iterator(const TopoDS_Iterator arg0);
+		%feature("autodoc", "1");
 		TopoDS_Iterator();
 		%feature("autodoc", "1");
-		TopoDS_Iterator(const TopoDS_Shape &S, const Standard_Boolean cumOri=1, const Standard_Boolean cumLoc=1);
+		TopoDS_Iterator(const TopoDS_Shape S, const Standard_Boolean cumOri=1, const Standard_Boolean cumLoc=1);
 		%feature("autodoc", "1");
-		void Initialize(const TopoDS_Shape &S, const Standard_Boolean cumOri=1, const Standard_Boolean cumLoc=1);
+		void Initialize(const TopoDS_Shape S, const Standard_Boolean cumOri=1, const Standard_Boolean cumLoc=1);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
+		const TopoDS_Shape  Value() const;
 
 };
 %feature("shadow") TopoDS_Iterator::~TopoDS_Iterator %{
@@ -902,13 +869,15 @@ def __del__(self):
 class TopoDS_Builder {
 	public:
 		%feature("autodoc", "1");
+		TopoDS_Builder(const TopoDS_Builder arg0);
+		%feature("autodoc", "1");
 		void MakeWire(TopoDS_Wire & W) const;
 		%feature("autodoc", "1");
 		void MakeCompound(TopoDS_Compound & C) const;
 		%feature("autodoc", "1");
-		void Add(TopoDS_Shape & S, const TopoDS_Shape &C) const;
+		void Add(TopoDS_Shape & S, const TopoDS_Shape C) const;
 		%feature("autodoc", "1");
-		void Remove(TopoDS_Shape & S, const TopoDS_Shape &C) const;
+		void Remove(TopoDS_Shape & S, const TopoDS_Shape C) const;
 
 };
 %feature("shadow") TopoDS_Builder::~TopoDS_Builder %{
@@ -933,6 +902,8 @@ def __del__(self):
 %nodefaultctor TopoDS_CompSolid;
 class TopoDS_CompSolid : public TopoDS_Shape {
 	public:
+		%feature("autodoc", "1");
+		TopoDS_CompSolid(const TopoDS_CompSolid arg0);
 		%feature("autodoc", "1");
 		TopoDS_CompSolid();
 
@@ -959,9 +930,9 @@ class TopoDS_ListOfShape {
 		%feature("autodoc", "1");
 		TopoDS_ListOfShape();
 		%feature("autodoc", "1");
-		void Assign(const TopoDS_ListOfShape &Other);
+		void Assign(const TopoDS_ListOfShape Other);
 		%feature("autodoc", "1");
-		void operator=(const TopoDS_ListOfShape &Other);
+		void operator=(const TopoDS_ListOfShape Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -969,31 +940,31 @@ class TopoDS_ListOfShape {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const TopoDS_Shape &I);
+		void Prepend(const TopoDS_Shape I);
 		%feature("autodoc", "1");
-		void Prepend(const TopoDS_Shape &I, TopoDS_ListIteratorOfListOfShape & theIt);
+		void Prepend(const TopoDS_Shape I, TopoDS_ListIteratorOfListOfShape & theIt);
 		%feature("autodoc", "1");
 		void Prepend(TopoDS_ListOfShape & Other);
 		%feature("autodoc", "1");
-		void Append(const TopoDS_Shape &I);
+		void Append(const TopoDS_Shape I);
 		%feature("autodoc", "1");
-		void Append(const TopoDS_Shape &I, TopoDS_ListIteratorOfListOfShape & theIt);
+		void Append(const TopoDS_Shape I, TopoDS_ListIteratorOfListOfShape & theIt);
 		%feature("autodoc", "1");
 		void Append(TopoDS_ListOfShape & Other);
 		%feature("autodoc", "1");
-		TopoDS_Shape & First() const;
+		TopoDS_Shape  First() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & Last() const;
+		TopoDS_Shape  Last() const;
 		%feature("autodoc", "1");
 		void RemoveFirst();
 		%feature("autodoc", "1");
 		void Remove(TopoDS_ListIteratorOfListOfShape & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const TopoDS_Shape &I, TopoDS_ListIteratorOfListOfShape & It);
+		void InsertBefore(const TopoDS_Shape I, TopoDS_ListIteratorOfListOfShape & It);
 		%feature("autodoc", "1");
 		void InsertBefore(TopoDS_ListOfShape & Other, TopoDS_ListIteratorOfListOfShape & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const TopoDS_Shape &I, TopoDS_ListIteratorOfListOfShape & It);
+		void InsertAfter(const TopoDS_Shape I, TopoDS_ListIteratorOfListOfShape & It);
 		%feature("autodoc", "1");
 		void InsertAfter(TopoDS_ListOfShape & Other, TopoDS_ListIteratorOfListOfShape & It);
 
@@ -1018,39 +989,41 @@ def __del__(self):
 class TopoDS {
 	public:
 		%feature("autodoc", "1");
+		TopoDS(const TopoDS arg0);
+		%feature("autodoc", "1");
 		TopoDS();
 		%feature("autodoc", "1");
-		static		const TopoDS_Vertex & Vertex(const TopoDS_Shape &S);
+		static		const TopoDS_Vertex  Vertex(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		static		TopoDS_Vertex & Vertex(TopoDS_Shape & S);
+		static		TopoDS_Vertex  Vertex(TopoDS_Shape & S);
 		%feature("autodoc", "1");
-		static		const TopoDS_Edge & Edge(const TopoDS_Shape &S);
+		static		const TopoDS_Edge  Edge(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		static		TopoDS_Edge & Edge(TopoDS_Shape & S);
+		static		TopoDS_Edge  Edge(TopoDS_Shape & S);
 		%feature("autodoc", "1");
-		static		const TopoDS_Wire & Wire(const TopoDS_Shape &S);
+		static		const TopoDS_Wire  Wire(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		static		TopoDS_Wire & Wire(TopoDS_Shape & S);
+		static		TopoDS_Wire  Wire(TopoDS_Shape & S);
 		%feature("autodoc", "1");
-		static		const TopoDS_Face & Face(const TopoDS_Shape &S);
+		static		const TopoDS_Face  Face(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		static		TopoDS_Face & Face(TopoDS_Shape & S);
+		static		TopoDS_Face  Face(TopoDS_Shape & S);
 		%feature("autodoc", "1");
-		static		const TopoDS_Shell & Shell(const TopoDS_Shape &S);
+		static		const TopoDS_Shell  Shell(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		static		TopoDS_Shell & Shell(TopoDS_Shape & S);
+		static		TopoDS_Shell  Shell(TopoDS_Shape & S);
 		%feature("autodoc", "1");
-		static		const TopoDS_Solid & Solid(const TopoDS_Shape &S);
+		static		const TopoDS_Solid  Solid(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		static		TopoDS_Solid & Solid(TopoDS_Shape & S);
+		static		TopoDS_Solid  Solid(TopoDS_Shape & S);
 		%feature("autodoc", "1");
-		static		const TopoDS_CompSolid & CompSolid(const TopoDS_Shape &S);
+		static		const TopoDS_CompSolid  CompSolid(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		static		TopoDS_CompSolid & CompSolid(TopoDS_Shape & S);
+		static		TopoDS_CompSolid  CompSolid(TopoDS_Shape & S);
 		%feature("autodoc", "1");
-		static		const TopoDS_Compound & Compound(const TopoDS_Shape &S);
+		static		const TopoDS_Compound  Compound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		static		TopoDS_Compound & Compound(TopoDS_Shape & S);
+		static		TopoDS_Compound  Compound(TopoDS_Shape & S);
 
 };
 %feature("shadow") TopoDS::~TopoDS %{
@@ -1112,6 +1085,8 @@ def __del__(self):
 class TopoDS_Edge : public TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
+		TopoDS_Edge(const TopoDS_Edge arg0);
+		%feature("autodoc", "1");
 		TopoDS_Edge();
 
 };
@@ -1134,6 +1109,8 @@ def __del__(self):
 %nodefaultctor TopoDS_Shell;
 class TopoDS_Shell : public TopoDS_Shape {
 	public:
+		%feature("autodoc", "1");
+		TopoDS_Shell(const TopoDS_Shell arg0);
 		%feature("autodoc", "1");
 		TopoDS_Shell();
 
@@ -1158,17 +1135,19 @@ def __del__(self):
 class TopoDS_ListIteratorOfListOfShape {
 	public:
 		%feature("autodoc", "1");
+		TopoDS_ListIteratorOfListOfShape(const TopoDS_ListIteratorOfListOfShape arg0);
+		%feature("autodoc", "1");
 		TopoDS_ListIteratorOfListOfShape();
 		%feature("autodoc", "1");
-		TopoDS_ListIteratorOfListOfShape(const TopoDS_ListOfShape &L);
+		TopoDS_ListIteratorOfListOfShape(const TopoDS_ListOfShape L);
 		%feature("autodoc", "1");
-		void Initialize(const TopoDS_ListOfShape &L);
+		void Initialize(const TopoDS_ListOfShape L);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
+		TopoDS_Shape  Value() const;
 
 };
 %feature("shadow") TopoDS_ListIteratorOfListOfShape::~TopoDS_ListIteratorOfListOfShape %{
@@ -1191,15 +1170,17 @@ def __del__(self):
 class TopoDS_HShape : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
+		TopoDS_HShape(const TopoDS_HShape arg0);
+		%feature("autodoc", "1");
 		TopoDS_HShape();
 		%feature("autodoc", "1");
-		TopoDS_HShape(const TopoDS_Shape &aShape);
+		TopoDS_HShape(const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		void Shape(const TopoDS_Shape &aShape);
+		void Shape(const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeShape();
+		TopoDS_Shape  ChangeShape();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1233,6 +1214,8 @@ def __del__(self):
 %nodefaultctor TopoDS_Solid;
 class TopoDS_Solid : public TopoDS_Shape {
 	public:
+		%feature("autodoc", "1");
+		TopoDS_Solid(const TopoDS_Solid arg0);
 		%feature("autodoc", "1");
 		TopoDS_Solid();
 
@@ -1370,6 +1353,8 @@ def __del__(self):
 class TopoDS_Builder3D : public TopoDS_Builder {
 	public:
 		%feature("autodoc", "1");
+		TopoDS_Builder3D(const TopoDS_Builder3D arg0);
+		%feature("autodoc", "1");
 		void MakeShell(TopoDS_Shell & S) const;
 		%feature("autodoc", "1");
 		void MakeSolid(TopoDS_Solid & S) const;
@@ -1393,49 +1378,6 @@ def __del__(self):
 };
 %extend TopoDS_Builder3D {
 	TopoDS_Builder3D () {}
-};
-
-
-%nodefaultctor TopoDS_UnCompatibleShapes;
-class TopoDS_UnCompatibleShapes : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		TopoDS_UnCompatibleShapes();
-		%feature("autodoc", "1");
-		TopoDS_UnCompatibleShapes(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_TopoDS_UnCompatibleShapes NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopoDS_UnCompatibleShapes {
-	Handle_TopoDS_UnCompatibleShapes GetHandle() {
-	return *(Handle_TopoDS_UnCompatibleShapes*) &$self;
-	}
-};
-%extend TopoDS_UnCompatibleShapes {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TopoDS_UnCompatibleShapes::~TopoDS_UnCompatibleShapes %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopoDS_UnCompatibleShapes {
-	void _kill_pointed() {
-		delete $self;
-	}
 };
 
 
@@ -1517,6 +1459,8 @@ def __del__(self):
 class TopoDS_Wire : public TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
+		TopoDS_Wire(const TopoDS_Wire arg0);
+		%feature("autodoc", "1");
 		TopoDS_Wire();
 
 };
@@ -1578,6 +1522,8 @@ def __del__(self):
 %nodefaultctor TopoDS_Face;
 class TopoDS_Face : public TopoDS_Shape {
 	public:
+		%feature("autodoc", "1");
+		TopoDS_Face(const TopoDS_Face arg0);
 		%feature("autodoc", "1");
 		TopoDS_Face();
 

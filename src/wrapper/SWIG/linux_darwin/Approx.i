@@ -596,9 +596,9 @@ class Approx_Array1OfGTrsf2d {
 		%feature("autodoc", "1");
 		Approx_Array1OfGTrsf2d(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Approx_Array1OfGTrsf2d(const gp_GTrsf2d &Item, const Standard_Integer Low, const Standard_Integer Up);
+		Approx_Array1OfGTrsf2d(const gp_GTrsf2d Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const gp_GTrsf2d &V);
+		void Init(const gp_GTrsf2d V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -614,15 +614,15 @@ class Approx_Array1OfGTrsf2d {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_GTrsf2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_GTrsf2d Value);
 		%feature("autodoc", "1");
-		const gp_GTrsf2d & Value(const Standard_Integer Index) const;
+		const gp_GTrsf2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_GTrsf2d & operator()(const Standard_Integer Index) const;
+		const gp_GTrsf2d  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_GTrsf2d & ChangeValue(const Standard_Integer Index);
+		gp_GTrsf2d  ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		gp_GTrsf2d & operator()(const Standard_Integer Index);
+		gp_GTrsf2d  operator()(const Standard_Integer Index);
 
 };
 %feature("shadow") Approx_Array1OfGTrsf2d::~Approx_Array1OfGTrsf2d %{
@@ -782,9 +782,9 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Approx_HArray1OfGTrsf2d(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Approx_HArray1OfGTrsf2d(const Standard_Integer Low, const Standard_Integer Up, const gp_GTrsf2d &V);
+		Approx_HArray1OfGTrsf2d(const Standard_Integer Low, const Standard_Integer Up, const gp_GTrsf2d V);
 		%feature("autodoc", "1");
-		void Init(const gp_GTrsf2d &V);
+		void Init(const gp_GTrsf2d V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -792,11 +792,11 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_GTrsf2d &Value);
+		void SetValue(const Standard_Integer Index, const gp_GTrsf2d Value);
 		%feature("autodoc", "1");
-		const gp_GTrsf2d & Value(const Standard_Integer Index) const;
+		const gp_GTrsf2d  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_GTrsf2d & ChangeValue(const Standard_Integer Index);
+		gp_GTrsf2d  ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		const Approx_Array1OfGTrsf2d & Array1() const;
 		%feature("autodoc", "1");

@@ -646,7 +646,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		const Standard_Integer & Key() const;
 		%feature("autodoc", "1");
-		const gp_Vec2d & Value() const;
+		const gp_Vec2d  Value() const;
 
 };
 %feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d::~MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d %{
@@ -1009,19 +1009,19 @@ class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const gp_Vec2d &I);
+		Standard_Boolean Bind(const Standard_Integer &K, const gp_Vec2d I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		const gp_Vec2d & Find(const Standard_Integer &K) const;
+		const gp_Vec2d  Find(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		const gp_Vec2d & operator()(const Standard_Integer &K) const;
+		const gp_Vec2d  operator()(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		gp_Vec2d & ChangeFind(const Standard_Integer &K);
+		gp_Vec2d  ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		gp_Vec2d & operator()(const Standard_Integer &K);
+		gp_Vec2d  operator()(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT2d_DataMapOfIntegerVec2d::~MAT2d_DataMapOfIntegerVec2d %{
@@ -1080,9 +1080,9 @@ class MAT2d_Tool2d {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Geometry GeomElt(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & GeomPnt(const Standard_Integer Index) const;
+		const gp_Pnt2d  GeomPnt(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Vec2d & GeomVec(const Standard_Integer Index) const;
+		const gp_Vec2d  GeomVec(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Handle_MAT2d_Circuit Circuit() const;
 		%feature("autodoc", "1");
@@ -1337,19 +1337,19 @@ class MAT2d_DataMapOfIntegerPnt2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const gp_Pnt2d &I);
+		Standard_Boolean Bind(const Standard_Integer &K, const gp_Pnt2d I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & Find(const Standard_Integer &K) const;
+		const gp_Pnt2d  Find(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & operator()(const Standard_Integer &K) const;
+		const gp_Pnt2d  operator()(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		gp_Pnt2d & ChangeFind(const Standard_Integer &K);
+		gp_Pnt2d  ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		gp_Pnt2d & operator()(const Standard_Integer &K);
+		gp_Pnt2d  operator()(const Standard_Integer &K);
 
 };
 %feature("shadow") MAT2d_DataMapOfIntegerPnt2d::~MAT2d_DataMapOfIntegerPnt2d %{
@@ -1417,7 +1417,7 @@ def __del__(self):
 class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MAT2d_DataMapNodeOfDataMapOfIntegerVec2d(const Standard_Integer &K, const gp_Vec2d &I, const TCollection_MapNodePtr &n);
+		MAT2d_DataMapNodeOfDataMapOfIntegerVec2d(const Standard_Integer &K, const gp_Vec2d I, const TCollection_MapNodePtr &n);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey() {
@@ -1431,7 +1431,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 				}
 		};
 		%feature("autodoc", "1");
-		gp_Vec2d & Value() const;
+		gp_Vec2d  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1474,7 +1474,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		const Standard_Integer & Key() const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & Value() const;
+		const gp_Pnt2d  Value() const;
 
 };
 %feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d::~MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d %{
@@ -1634,7 +1634,7 @@ class MAT2d_Connexion : public MMgt_TShared {
 		%feature("autodoc", "1");
 		MAT2d_Connexion();
 		%feature("autodoc", "1");
-		MAT2d_Connexion(const Standard_Integer LineA, const Standard_Integer LineB, const Standard_Integer ItemA, const Standard_Integer ItemB, const Standard_Real Distance, const Standard_Real ParameterOnA, const Standard_Real ParameterOnB, const gp_Pnt2d &PointA, const gp_Pnt2d &PointB);
+		MAT2d_Connexion(const Standard_Integer LineA, const Standard_Integer LineB, const Standard_Integer ItemA, const Standard_Integer ItemB, const Standard_Real Distance, const Standard_Real ParameterOnA, const Standard_Real ParameterOnB, const gp_Pnt2d PointA, const gp_Pnt2d PointB);
 		%feature("autodoc", "1");
 		Standard_Integer IndexFirstLine() const;
 		%feature("autodoc", "1");
@@ -1666,9 +1666,9 @@ class MAT2d_Connexion : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ParameterOnSecond(const Standard_Real aParameter);
 		%feature("autodoc", "1");
-		void PointOnFirst(const gp_Pnt2d &aPoint);
+		void PointOnFirst(const gp_Pnt2d aPoint);
 		%feature("autodoc", "1");
-		void PointOnSecond(const gp_Pnt2d &aPoint);
+		void PointOnSecond(const gp_Pnt2d aPoint);
 		%feature("autodoc", "1");
 		void Distance(const Standard_Real aDistance);
 		%feature("autodoc", "1");
@@ -2088,7 +2088,7 @@ def __del__(self):
 class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const Standard_Integer &K, const gp_Pnt2d &I, const TCollection_MapNodePtr &n);
+		MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const Standard_Integer &K, const gp_Pnt2d I, const TCollection_MapNodePtr &n);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey() {
@@ -2102,7 +2102,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
 				}
 		};
 		%feature("autodoc", "1");
-		gp_Pnt2d & Value() const;
+		gp_Pnt2d  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

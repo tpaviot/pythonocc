@@ -678,9 +678,9 @@ def __del__(self):
 class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MoniTool_DataMapNodeOfDataMapOfShapeTransient(const TopoDS_Shape &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		MoniTool_DataMapNodeOfDataMapOfShapeTransient(const TopoDS_Shape K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
@@ -1037,19 +1037,19 @@ class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_Standard_Transient &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const TopoDS_Shape &K) const;
+		const Handle_Standard_Transient & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const TopoDS_Shape &K) const;
+		const Handle_Standard_Transient & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const TopoDS_Shape &K);
+		Handle_Standard_Transient & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const TopoDS_Shape &K);
+		Handle_Standard_Transient & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") MoniTool_DataMapOfShapeTransient::~MoniTool_DataMapOfShapeTransient %{
@@ -1207,7 +1207,7 @@ class MoniTool_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_Bas
 		%feature("autodoc", "1");
 		void Initialize(const MoniTool_DataMapOfShapeTransient &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
@@ -1277,9 +1277,9 @@ def __del__(self):
 class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient(const TopoDS_Shape &K1, const Standard_Integer K2, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient(const TopoDS_Shape K1, const Standard_Integer K2, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -1360,11 +1360,11 @@ class MoniTool_CaseData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void AddRaised(const char * name="");
 		%feature("autodoc", "1");
-		void AddShape(const TopoDS_Shape &sh, const char * name="");
+		void AddShape(const TopoDS_Shape sh, const char * name="");
 		%feature("autodoc", "1");
-		void AddXYZ(const gp_XYZ &aXYZ, const char * name="");
+		void AddXYZ(const gp_XYZ aXYZ, const char * name="");
 		%feature("autodoc", "1");
-		void AddXY(const gp_XY &aXY, const char * name="");
+		void AddXY(const gp_XY aXY, const char * name="");
 		%feature("autodoc", "1");
 		void AddReal(const Standard_Real val, const char * name="");
 		%feature("autodoc", "1");
@@ -1890,15 +1890,15 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const Handle_Standard_Transient &I);
+		Standard_Integer Add(const TopoDS_Shape K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const Handle_Standard_Transient &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const Handle_Standard_Transient &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -1908,11 +1908,11 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & FindFromKey(const TopoDS_Shape &K) const;
+		const Handle_Standard_Transient & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFromKey(const TopoDS_Shape &K);
+		Handle_Standard_Transient & ChangeFromKey(const TopoDS_Shape K);
 
 };
 %feature("shadow") MoniTool_IndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapOfShapeTransient %{

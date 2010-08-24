@@ -1764,7 +1764,7 @@ class AIS2D_ProjShape : public AIS2D_InteractiveObject {
 		%feature("autodoc", "1");
 		AIS2D_ProjShape(const HLRAlgo_Projector &aProjector, const Standard_Integer nbIsos=3, const Standard_Boolean isPolyAlgo=0, const Standard_Boolean visHL=1);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &aShape);
+		void Add(const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
 		void SetProjector(const HLRAlgo_Projector &aProjector);
 		%feature("autodoc", "1");

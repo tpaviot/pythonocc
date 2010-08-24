@@ -269,7 +269,7 @@ class STEPControl_Controller : public XSControl_Controller {
 		%feature("autodoc", "1");
 		virtual		void Customise(Handle_XSControl_WorkSession & WS);
 		%feature("autodoc", "1");
-		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape &shape, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model, const Standard_Integer modetrans=0) const;
+		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape shape, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model, const Standard_Integer modetrans=0) const;
 		%feature("autodoc", "1");
 		static		Standard_Boolean Init();
 		%feature("autodoc", "1");
@@ -377,7 +377,7 @@ class STEPControl_Writer {
 		%feature("autodoc", "1");
 		Handle_StepData_StepModel Model(const Standard_Boolean newone=0);
 		%feature("autodoc", "1");
-		IFSelect_ReturnStatus Transfer(const TopoDS_Shape &sh, const STEPControl_StepModelType mode, const Standard_Boolean compgraph=1);
+		IFSelect_ReturnStatus Transfer(const TopoDS_Shape sh, const STEPControl_StepModelType mode, const Standard_Boolean compgraph=1);
 		%feature("autodoc", "1");
 		IFSelect_ReturnStatus Write(const char * filename);
 		%feature("autodoc", "1");

@@ -1124,9 +1124,9 @@ class ShapeUpgrade_ShapeDivide {
 		%feature("autodoc", "1");
 		ShapeUpgrade_ShapeDivide();
 		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivide(const TopoDS_Shape &S);
+		ShapeUpgrade_ShapeDivide(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
@@ -1175,7 +1175,7 @@ class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 		%feature("autodoc", "1");
 		ShapeUpgrade_ShapeDivideArea();
 		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideArea(const TopoDS_Shape &S);
+		ShapeUpgrade_ShapeDivideArea(const TopoDS_Shape S);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Real GetMaxArea() {
@@ -1308,9 +1308,9 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		ShapeUpgrade_RemoveInternalWires();
 		%feature("autodoc", "1");
-		ShapeUpgrade_RemoveInternalWires(const TopoDS_Shape &theShape);
+		ShapeUpgrade_RemoveInternalWires(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &theShape);
+		void Init(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		Standard_Boolean Perform();
 		%feature("autodoc", "1");
@@ -1381,7 +1381,7 @@ class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		ShapeUpgrade_FixSmallCurves();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace);
+		void Init(const TopoDS_Edge theEdge, const TopoDS_Face theFace);
 		%feature("autodoc","Approx() -> [Standard_Real, Standard_Real]");
 
 		virtual		Standard_Boolean Approx(Handle_Geom_Curve & Curve3d, Handle_Geom2d_Curve & Curve2d, Handle_Geom2d_Curve & Curve2dR, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -1425,7 +1425,7 @@ def __del__(self):
 class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
 	public:
 		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideClosedEdges(const TopoDS_Shape &S);
+		ShapeUpgrade_ShapeDivideClosedEdges(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void SetNbSplitPoints(const Standard_Integer num);
 
@@ -1454,9 +1454,9 @@ class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &F);
+		void SetFace(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Compute(const TopoDS_Edge &E);
+		virtual		Standard_Boolean Compute(const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		Standard_Boolean HasCurve2d() const;
 		%feature("autodoc", "1");
@@ -1509,7 +1509,7 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 		%feature("autodoc", "1");
 		ShapeUpgrade_ClosedEdgeDivide();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Compute(const TopoDS_Edge &anEdge);
+		virtual		Standard_Boolean Compute(const TopoDS_Edge anEdge);
 
 };
 %extend ShapeUpgrade_ClosedEdgeDivide {
@@ -1571,7 +1571,7 @@ class ShapeUpgrade_ShellSewing {
 		%feature("autodoc", "1");
 		ShapeUpgrade_ShellSewing();
 		%feature("autodoc", "1");
-		TopoDS_Shape ApplySewing(const TopoDS_Shape &shape, const Standard_Real tol=0.0);
+		TopoDS_Shape ApplySewing(const TopoDS_Shape shape, const Standard_Real tol=0.0);
 
 };
 %feature("shadow") ShapeUpgrade_ShellSewing::~ShapeUpgrade_ShellSewing %{
@@ -1596,7 +1596,7 @@ class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 		%feature("autodoc", "1");
 		ShapeUpgrade_ShapeDivideContinuity();
 		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideContinuity(const TopoDS_Shape &S);
+		ShapeUpgrade_ShapeDivideContinuity(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real Tol);
 		%feature("autodoc", "1");
@@ -1802,9 +1802,9 @@ class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		ShapeUpgrade_FaceDivide();
 		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivide(const TopoDS_Face &F);
+		ShapeUpgrade_FaceDivide(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
+		void Init(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		void SetSurfaceSegmentMode(const Standard_Boolean Segment);
 		%feature("autodoc", "1");
@@ -1859,7 +1859,7 @@ class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 		%feature("autodoc", "1");
 		ShapeUpgrade_FaceDivideArea();
 		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivideArea(const TopoDS_Face &F);
+		ShapeUpgrade_FaceDivideArea(const TopoDS_Face F);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Real GetMaxArea() {
@@ -1906,7 +1906,7 @@ class ShapeUpgrade_ShapeConvertToBezier : public ShapeUpgrade_ShapeDivide {
 		%feature("autodoc", "1");
 		ShapeUpgrade_ShapeConvertToBezier();
 		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeConvertToBezier(const TopoDS_Shape &S);
+		ShapeUpgrade_ShapeConvertToBezier(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void Set2dConversion(const Standard_Boolean mode);
 		%feature("autodoc", "1");
@@ -1973,7 +1973,7 @@ class ShapeUpgrade_ClosedFaceDivide : public ShapeUpgrade_FaceDivide {
 		%feature("autodoc", "1");
 		ShapeUpgrade_ClosedFaceDivide();
 		%feature("autodoc", "1");
-		ShapeUpgrade_ClosedFaceDivide(const TopoDS_Face &F);
+		ShapeUpgrade_ClosedFaceDivide(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean SplitSurface();
 		%feature("autodoc", "1");
@@ -2059,15 +2059,15 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		ShapeUpgrade_WireDivide();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &W, const TopoDS_Face &F);
+		void Init(const TopoDS_Wire W, const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &W, const Handle_Geom_Surface &S);
+		void Init(const TopoDS_Wire W, const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
-		void Load(const TopoDS_Wire &W);
+		void Load(const TopoDS_Wire W);
 		%feature("autodoc", "1");
-		void Load(const TopoDS_Edge &E);
+		void Load(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &F);
+		void SetFace(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		void SetSurface(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
@@ -2075,7 +2075,7 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		virtual		void Perform();
 		%feature("autodoc", "1");
-		const TopoDS_Wire & Wire() const;
+		const TopoDS_Wire  Wire() const;
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
@@ -2132,7 +2132,7 @@ class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
 		%feature("autodoc", "1");
 		ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle);
 		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle, const TopoDS_Shape &S);
+		ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle, const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void InitTool(const Standard_Real MaxAngle);
 		%feature("autodoc", "1");
@@ -2259,7 +2259,7 @@ def __del__(self):
 class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 	public:
 		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideClosed(const TopoDS_Shape &S);
+		ShapeUpgrade_ShapeDivideClosed(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void SetNbSplitPoints(const Standard_Integer num);
 
@@ -2327,7 +2327,7 @@ class ShapeUpgrade_RemoveLocations : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ShapeUpgrade_RemoveLocations();
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const TopoDS_Shape &theShape);
+		Standard_Boolean Remove(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		TopoDS_Shape GetResult() const;
 		%feature("autodoc", "1");
@@ -2335,7 +2335,7 @@ class ShapeUpgrade_RemoveLocations : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TopAbs_ShapeEnum RemoveLevel() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape ModifiedShape(const TopoDS_Shape &theInitShape) const;
+		TopoDS_Shape ModifiedShape(const TopoDS_Shape theInitShape) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

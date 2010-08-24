@@ -210,21 +210,21 @@ class IntPoly_PlaneSection {
 		%feature("autodoc", "1");
 		IntPoly_PlaneSection();
 		%feature("autodoc", "1");
-		IntPoly_PlaneSection(const TopoDS_Shape &S, const gp_Pln &P);
+		IntPoly_PlaneSection(const TopoDS_Shape S, const gp_Pln P);
 		%feature("autodoc", "1");
 		void Section();
 		%feature("autodoc", "1");
-		Standard_Boolean Intersect(const gp_Pnt &Point1, const gp_Pnt &Point2, const gp_Pnt &Point3, gp_Pnt2d & OutPoint1, gp_Pnt2d & OutPoint2);
+		Standard_Boolean Intersect(const gp_Pnt Point1, const gp_Pnt Point2, const gp_Pnt Point3, gp_Pnt2d & OutPoint1, gp_Pnt2d & OutPoint2);
 		%feature("autodoc", "1");
-		void Insert(const gp_Pnt2d &OldPnt, const gp_Pnt2d &ComPnt, const gp_Pnt2d &NewPnt);
+		void Insert(const gp_Pnt2d OldPnt, const gp_Pnt2d ComPnt, const gp_Pnt2d NewPnt);
 		%feature("autodoc", "1");
-		Standard_Integer Concat(const gp_Pnt2d &BegPnt, const gp_Pnt2d &EndPnt, gp_Pnt2d & OutPnt);
+		Standard_Integer Concat(const gp_Pnt2d BegPnt, const gp_Pnt2d EndPnt, gp_Pnt2d & OutPnt);
 		%feature("autodoc", "1");
 		void ConcatSection(TColgp_SequenceOfPnt2d & Section, const Standard_Integer NbSection, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void ForwConstruction(const gp_Pnt2d &Point);
+		void ForwConstruction(const gp_Pnt2d Point);
 		%feature("autodoc", "1");
-		void PrevConstruction(const gp_Pnt2d &Point);
+		void PrevConstruction(const gp_Pnt2d Point);
 		%feature("autodoc", "1");
 		Standard_Integer NbEdges();
 		%feature("autodoc", "1");
@@ -253,30 +253,30 @@ class IntPoly_ShapeSection {
 		%feature("autodoc", "1");
 		IntPoly_ShapeSection();
 		%feature("autodoc", "1");
-		IntPoly_ShapeSection(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		IntPoly_ShapeSection(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
 		void Section();
 		%feature("autodoc", "1");
 		void Explore();
 		%feature("autodoc","Intersect(const S1, const S2, const S3, const OS1, const VS0, const V1, const V2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		Standard_Boolean Intersect(const gp_Pnt &S1, const gp_Pnt &S2, const gp_Pnt &S3, const gp_Vec &OS1, const gp_Vec &VS0, const gp_Vec &V1, const gp_Vec &V2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		Standard_Boolean Intersect(const gp_Pnt S1, const gp_Pnt S2, const gp_Pnt S3, const gp_Vec OS1, const gp_Vec VS0, const gp_Vec V1, const gp_Vec V2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const gp_Pnt &Pt1, const gp_Pnt &Pt2);
+		Standard_Boolean IsEqual(const gp_Pnt Pt1, const gp_Pnt Pt2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsInside(const gp_Pnt &P, const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Vec &N0);
+		Standard_Boolean IsInside(const gp_Pnt P, const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Vec N0);
 		%feature("autodoc", "1");
 		void InsertInMap();
 		%feature("autodoc", "1");
-		void Insert(const gp_Pnt &OldPnt, const gp_Pnt &ComPnt, const gp_Pnt &NewPnt);
+		void Insert(const gp_Pnt OldPnt, const gp_Pnt ComPnt, const gp_Pnt NewPnt);
 		%feature("autodoc", "1");
-		Standard_Integer Concat(const gp_Pnt &BegPnt, const gp_Pnt &EndPnt, gp_Pnt & OutPnt);
+		Standard_Integer Concat(const gp_Pnt BegPnt, const gp_Pnt EndPnt, gp_Pnt & OutPnt);
 		%feature("autodoc", "1");
 		void ConcatSection(TColgp_SequenceOfPnt & Section, const Standard_Integer NbSection, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void ForwConstruction(const gp_Pnt &Point);
+		void ForwConstruction(const gp_Pnt Point);
 		%feature("autodoc", "1");
-		void PrevConstruction(const gp_Pnt &Point);
+		void PrevConstruction(const gp_Pnt Point);
 		%feature("autodoc", "1");
 		Standard_Integer NbEdges();
 		%feature("autodoc", "1");
@@ -305,9 +305,9 @@ class IntPoly_PntHasher {
 		%feature("autodoc", "1");
 		IntPoly_PntHasher();
 		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const gp_Pnt &Point, const Standard_Integer upper);
+		static		Standard_Integer HashCode(const gp_Pnt Point, const Standard_Integer upper);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const gp_Pnt &Point1, const gp_Pnt &Point2);
+		static		Standard_Boolean IsEqual(const gp_Pnt Point1, const gp_Pnt Point2);
 
 };
 %feature("shadow") IntPoly_PntHasher::~IntPoly_PntHasher %{
@@ -507,19 +507,19 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const gp_Pnt2d &K);
+		Standard_Integer Add(const gp_Pnt2d K);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const gp_Pnt2d &K);
+		void Substitute(const Standard_Integer I, const gp_Pnt2d K);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Pnt2d &K) const;
+		Standard_Boolean Contains(const gp_Pnt2d K) const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & FindKey(const Standard_Integer I) const;
+		const gp_Pnt2d  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & operator()(const Standard_Integer I) const;
+		const gp_Pnt2d  operator()(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const gp_Pnt2d &K) const;
+		Standard_Integer FindIndex(const gp_Pnt2d K) const;
 
 };
 %feature("shadow") IntPoly_IndexedMapOfPnt2d::~IntPoly_IndexedMapOfPnt2d %{
@@ -542,9 +542,9 @@ def __del__(self):
 class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const gp_Pnt2d &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const gp_Pnt2d K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		gp_Pnt2d & Key1() const;
+		gp_Pnt2d  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -640,19 +640,19 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const gp_Pnt &K);
+		Standard_Integer Add(const gp_Pnt K);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const gp_Pnt &K);
+		void Substitute(const Standard_Integer I, const gp_Pnt K);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Pnt &K) const;
+		Standard_Boolean Contains(const gp_Pnt K) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & FindKey(const Standard_Integer I) const;
+		const gp_Pnt  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & operator()(const Standard_Integer I) const;
+		const gp_Pnt  operator()(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const gp_Pnt &K) const;
+		Standard_Integer FindIndex(const gp_Pnt K) const;
 
 };
 %feature("shadow") IntPoly_IndexedMapOfPnt::~IntPoly_IndexedMapOfPnt %{
@@ -675,9 +675,9 @@ def __del__(self):
 class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		IntPoly_IndexedMapNodeOfIndexedMapOfPnt(const gp_Pnt &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		IntPoly_IndexedMapNodeOfIndexedMapOfPnt(const gp_Pnt K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		gp_Pnt & Key1() const;
+		gp_Pnt  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -728,9 +728,9 @@ class IntPoly_Pnt2dHasher {
 		%feature("autodoc", "1");
 		IntPoly_Pnt2dHasher();
 		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const gp_Pnt2d &Point, const Standard_Integer upper);
+		static		Standard_Integer HashCode(const gp_Pnt2d Point, const Standard_Integer upper);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2);
+		static		Standard_Boolean IsEqual(const gp_Pnt2d Point1, const gp_Pnt2d Point2);
 
 };
 %feature("shadow") IntPoly_Pnt2dHasher::~IntPoly_Pnt2dHasher %{

@@ -155,11 +155,11 @@ class BinTools_ShapeSet {
 		%feature("autodoc", "1");
 		virtual		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &S);
+		Standard_Integer Add(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape(const Standard_Integer I) const;
+		const TopoDS_Shape  Shape(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer Index(const TopoDS_Shape &S) const;
+		Standard_Integer Index(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
 		const BinTools_LocationSet & Locations() const;
 		%feature("autodoc", "1");
@@ -182,7 +182,7 @@ class BinTools_ShapeSet {
 			self->Read(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		void Write(const TopoDS_Shape &S, Standard_OStream & OS) const;
+		virtual		void Write(const TopoDS_Shape S, Standard_OStream & OS) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -201,13 +201,13 @@ class BinTools_ShapeSet {
 		%feature("autodoc", "1");
 		virtual		void Read(TopoDS_Shape & S, std::istream & IS, const Standard_Integer NbShapes) const;
 		%feature("autodoc", "1");
-		virtual		void WriteGeometry(const TopoDS_Shape &S, Standard_OStream & OS) const;
+		virtual		void WriteGeometry(const TopoDS_Shape S, Standard_OStream & OS) const;
 		%feature("autodoc", "1");
 		virtual		void ReadGeometry(const TopAbs_ShapeEnum T, std::istream & IS, TopoDS_Shape & S);
 		%feature("autodoc", "1");
-		virtual		void AddGeometry(const TopoDS_Shape &S);
+		virtual		void AddGeometry(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		void AddShapes(TopoDS_Shape & S1, const TopoDS_Shape &S2);
+		virtual		void AddShapes(TopoDS_Shape & S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{

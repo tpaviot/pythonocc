@@ -70,21 +70,21 @@ class BRepToIGES_BREntity {
 		%feature("autodoc", "1");
 		Handle_Transfer_FinderProcess GetTransferProcess() const;
 		%feature("autodoc", "1");
-		virtual		Handle_IGESData_IGESEntity TransferShape(const TopoDS_Shape &start);
+		virtual		Handle_IGESData_IGESEntity TransferShape(const TopoDS_Shape start);
 		%feature("autodoc", "1");
-		void AddFail(const TopoDS_Shape &start, const char * amess);
+		void AddFail(const TopoDS_Shape start, const char * amess);
 		%feature("autodoc", "1");
-		void AddWarning(const TopoDS_Shape &start, const char * amess);
+		void AddWarning(const TopoDS_Shape start, const char * amess);
 		%feature("autodoc", "1");
 		void AddFail(const Handle_Standard_Transient &start, const char * amess);
 		%feature("autodoc", "1");
 		void AddWarning(const Handle_Standard_Transient &start, const char * amess);
 		%feature("autodoc", "1");
-		Standard_Boolean HasShapeResult(const TopoDS_Shape &start) const;
+		Standard_Boolean HasShapeResult(const TopoDS_Shape start) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Transient GetShapeResult(const TopoDS_Shape &start) const;
+		Handle_Standard_Transient GetShapeResult(const TopoDS_Shape start) const;
 		%feature("autodoc", "1");
-		void SetShapeResult(const TopoDS_Shape &start, const Handle_Standard_Transient &result);
+		void SetShapeResult(const TopoDS_Shape start, const Handle_Standard_Transient &result);
 		%feature("autodoc", "1");
 		Standard_Boolean HasShapeResult(const Handle_Standard_Transient &start) const;
 		%feature("autodoc", "1");
@@ -123,11 +123,11 @@ class BRepToIGES_BRShell : public BRepToIGES_BREntity {
 		%feature("autodoc", "1");
 		BRepToIGES_BRShell(const BRepToIGES_BREntity &BR);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferShell(const TopoDS_Shape &start);
+		Handle_IGESData_IGESEntity TransferShell(const TopoDS_Shape start);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferShell(const TopoDS_Shell &start);
+		Handle_IGESData_IGESEntity TransferShell(const TopoDS_Shell start);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferFace(const TopoDS_Face &start);
+		Handle_IGESData_IGESEntity TransferFace(const TopoDS_Face start);
 
 };
 %feature("shadow") BRepToIGES_BRShell::~BRepToIGES_BRShell %{
@@ -154,13 +154,13 @@ class BRepToIGES_BRSolid : public BRepToIGES_BREntity {
 		%feature("autodoc", "1");
 		BRepToIGES_BRSolid(const BRepToIGES_BREntity &BR);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSolid(const TopoDS_Shape &start);
+		Handle_IGESData_IGESEntity TransferSolid(const TopoDS_Shape start);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSolid(const TopoDS_Solid &start);
+		Handle_IGESData_IGESEntity TransferSolid(const TopoDS_Solid start);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCompSolid(const TopoDS_CompSolid &start);
+		Handle_IGESData_IGESEntity TransferCompSolid(const TopoDS_CompSolid start);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCompound(const TopoDS_Compound &start);
+		Handle_IGESData_IGESEntity TransferCompound(const TopoDS_Compound start);
 
 };
 %feature("shadow") BRepToIGES_BRSolid::~BRepToIGES_BRSolid %{
@@ -187,28 +187,28 @@ class BRepToIGES_BRWire : public BRepToIGES_BREntity {
 		%feature("autodoc", "1");
 		BRepToIGES_BRWire(const BRepToIGES_BREntity &BR);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferWire(const TopoDS_Shape &start);
+		Handle_IGESData_IGESEntity TransferWire(const TopoDS_Shape start);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex &myvertex);
+		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex myvertex);
 		%feature("autodoc","TransferVertex(const myvertex, const myedge) -> Standard_Real");
 
-		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex &myvertex, const TopoDS_Edge &myedge, Standard_Real &OutValue);
+		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex myvertex, const TopoDS_Edge myedge, Standard_Real &OutValue);
 		%feature("autodoc","TransferVertex(const myvertex, const myedge, const myface) -> Standard_Real");
 
-		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex &myvertex, const TopoDS_Edge &myedge, const TopoDS_Face &myface, Standard_Real &OutValue);
+		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex myvertex, const TopoDS_Edge myedge, const TopoDS_Face myface, Standard_Real &OutValue);
 		%feature("autodoc","TransferVertex(const myvertex, const myedge, const mysurface, const myloc) -> Standard_Real");
 
-		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex &myvertex, const TopoDS_Edge &myedge, const Handle_Geom_Surface &mysurface, const TopLoc_Location &myloc, Standard_Real &OutValue);
+		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex myvertex, const TopoDS_Edge myedge, const Handle_Geom_Surface &mysurface, const TopLoc_Location &myloc, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex &myvertex, const TopoDS_Face &myface, gp_Pnt2d & mypoint);
+		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex myvertex, const TopoDS_Face myface, gp_Pnt2d & mypoint);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferEdge(const TopoDS_Edge &myedge, const Standard_Boolean isBRepMode);
+		Handle_IGESData_IGESEntity TransferEdge(const TopoDS_Edge myedge, const Standard_Boolean isBRepMode);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferEdge(const TopoDS_Edge &myedge, const TopoDS_Face &myface, const Standard_Real length, const Standard_Boolean isBRepMode);
+		Handle_IGESData_IGESEntity TransferEdge(const TopoDS_Edge myedge, const TopoDS_Face myface, const Standard_Real length, const Standard_Boolean isBRepMode);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferWire(const TopoDS_Wire &mywire);
+		Handle_IGESData_IGESEntity TransferWire(const TopoDS_Wire mywire);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferWire(const TopoDS_Wire &mywire, const TopoDS_Face &myface, Handle_IGESData_IGESEntity & mycurve2d, const Standard_Real length);
+		Handle_IGESData_IGESEntity TransferWire(const TopoDS_Wire mywire, const TopoDS_Face myface, Handle_IGESData_IGESEntity & mycurve2d, const Standard_Real length);
 
 };
 %feature("shadow") BRepToIGES_BRWire::~BRepToIGES_BRWire %{

@@ -667,13 +667,13 @@ class ChFiDS_Spine : public MMgt_TShared {
 		%feature("autodoc", "1");
 		ChFiDS_Spine(const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void SetEdges(const TopoDS_Edge &E);
+		void SetEdges(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		void PutInFirst(const TopoDS_Edge &E);
+		void PutInFirst(const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		Standard_Integer NbEdges() const;
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edges(const Standard_Integer I) const;
+		const TopoDS_Edge  Edges(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		void SetFirstStatus(const ChFiDS_State S);
 		%feature("autodoc", "1");
@@ -683,7 +683,7 @@ class ChFiDS_Spine : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HElSpine ElSpine(const Standard_Integer IE) const;
 		%feature("autodoc", "1");
-		Handle_ChFiDS_HElSpine ElSpine(const TopoDS_Edge &E) const;
+		Handle_ChFiDS_HElSpine ElSpine(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
 		Handle_ChFiDS_HElSpine ElSpine(const Standard_Real W) const;
 		%feature("autodoc", "1");
@@ -761,7 +761,7 @@ class ChFiDS_Spine : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetTangencyExtremity(const Standard_Boolean IsTangency, const Standard_Boolean IsFirst);
 		%feature("autodoc", "1");
-		Standard_Real Absc(const TopoDS_Vertex &V) const;
+		Standard_Real Absc(const TopoDS_Vertex V) const;
 		%feature("autodoc", "1");
 		TopoDS_Vertex FirstVertex() const;
 		%feature("autodoc", "1");
@@ -781,7 +781,7 @@ class ChFiDS_Spine : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const Standard_Real W, const Standard_Boolean Forward=1) const;
 		%feature("autodoc", "1");
-		Standard_Integer Index(const TopoDS_Edge &E) const;
+		Standard_Integer Index(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
 		void UnsetReference();
 		%feature("autodoc", "1");
@@ -1059,13 +1059,13 @@ class ChFiDS_Map {
 		%feature("autodoc", "1");
 		ChFiDS_Map();
 		%feature("autodoc", "1");
-		void Fill(const TopoDS_Shape &S, const TopAbs_ShapeEnum T1, const TopAbs_ShapeEnum T2);
+		void Fill(const TopoDS_Shape S, const TopAbs_ShapeEnum T1, const TopAbs_ShapeEnum T2);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &S) const;
+		Standard_Boolean Contains(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FindFromKey(const TopoDS_Shape &S) const;
+		const TopTools_ListOfShape & FindFromKey(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & operator()(const TopoDS_Shape &S) const;
+		const TopTools_ListOfShape & operator()(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -1133,15 +1133,15 @@ class ChFiDS_CommonPoint {
 		%feature("autodoc", "1");
 		void Reset();
 		%feature("autodoc", "1");
-		void SetVertex(const TopoDS_Vertex &V);
+		void SetVertex(const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		void SetArc(const Standard_Real Tol, const TopoDS_Edge &A, const Standard_Real Param, const TopAbs_Orientation TArc);
+		void SetArc(const Standard_Real Tol, const TopoDS_Edge A, const Standard_Real Param, const TopAbs_Orientation TArc);
 		%feature("autodoc", "1");
 		void SetParameter(const Standard_Real Param);
 		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt &Point);
+		void SetPoint(const gp_Pnt Point);
 		%feature("autodoc", "1");
-		void SetVector(const gp_Vec &Vector);
+		void SetVector(const gp_Vec Vector);
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real Tol);
 		%feature("autodoc", "1");
@@ -1149,11 +1149,11 @@ class ChFiDS_CommonPoint {
 		%feature("autodoc", "1");
 		Standard_Boolean IsVertex() const;
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex() const;
+		const TopoDS_Vertex  Vertex() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnArc() const;
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Arc() const;
+		const TopoDS_Edge  Arc() const;
 		%feature("autodoc", "1");
 		TopAbs_Orientation TransitionOnArc() const;
 		%feature("autodoc", "1");
@@ -1161,11 +1161,11 @@ class ChFiDS_CommonPoint {
 		%feature("autodoc", "1");
 		Standard_Real Parameter() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Point() const;
+		const gp_Pnt  Point() const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasVector() const;
 		%feature("autodoc", "1");
-		const gp_Vec & Vector() const;
+		const gp_Vec  Vector() const;
 
 };
 %feature("shadow") ChFiDS_CommonPoint::~ChFiDS_CommonPoint %{
@@ -1194,15 +1194,15 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 		%feature("autodoc", "1");
 		virtual		void Reset(const Standard_Boolean AllData=0);
 		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real Radius, const TopoDS_Edge &E);
+		void SetRadius(const Standard_Real Radius, const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		void UnSetRadius(const TopoDS_Edge &E);
+		void UnSetRadius(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real Radius, const TopoDS_Vertex &V);
+		void SetRadius(const Standard_Real Radius, const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		void UnSetRadius(const TopoDS_Vertex &V);
+		void UnSetRadius(const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		void SetRadius(const gp_XY &UandR, const Standard_Integer IinC);
+		void SetRadius(const gp_XY UandR, const Standard_Integer IinC);
 		%feature("autodoc", "1");
 		void SetRadius(const Standard_Real Radius);
 		%feature("autodoc", "1");
@@ -1216,13 +1216,13 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 		%feature("autodoc", "1");
 		Standard_Real Radius(const Standard_Integer IE) const;
 		%feature("autodoc", "1");
-		Standard_Real Radius(const TopoDS_Edge &E) const;
+		Standard_Real Radius(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
 		virtual		void AppendElSpine(const Handle_ChFiDS_HElSpine &Els);
 		%feature("autodoc", "1");
 		Handle_Law_Composite Law(const Handle_ChFiDS_HElSpine &Els) const;
 		%feature("autodoc", "1");
-		Handle_Law_Function & ChangeLaw(const TopoDS_Edge &E);
+		Handle_Law_Function & ChangeLaw(const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		Standard_Real MaxRadFromSeqAndLaws() const;
 		%feature("autodoc", "1");
@@ -1474,7 +1474,7 @@ class ChFiDS_SurfData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Get2dPoints(gp_Pnt2d & P2df1, gp_Pnt2d & P2dl1, gp_Pnt2d & P2df2, gp_Pnt2d & P2dl2) const;
 		%feature("autodoc", "1");
-		void Set2dPoints(const gp_Pnt2d &P2df1, const gp_Pnt2d &P2dl1, const gp_Pnt2d &P2df2, const gp_Pnt2d &P2dl2);
+		void Set2dPoints(const gp_Pnt2d P2df1, const gp_Pnt2d P2dl1, const gp_Pnt2d P2df2, const gp_Pnt2d P2dl2);
 		%feature("autodoc", "1");
 		Standard_Boolean TwistOnS1() const;
 		%feature("autodoc", "1");
@@ -1519,19 +1519,19 @@ class ChFiDS_StripeMap {
 		%feature("autodoc", "1");
 		ChFiDS_StripeMap();
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Vertex &V, const Handle_ChFiDS_Stripe &F);
+		void Add(const TopoDS_Vertex V, const Handle_ChFiDS_Stripe &F);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
-		const ChFiDS_ListOfStripe & FindFromKey(const TopoDS_Vertex &V) const;
+		const ChFiDS_ListOfStripe & FindFromKey(const TopoDS_Vertex V) const;
 		%feature("autodoc", "1");
-		const ChFiDS_ListOfStripe & operator()(const TopoDS_Vertex &V) const;
+		const ChFiDS_ListOfStripe & operator()(const TopoDS_Vertex V) const;
 		%feature("autodoc", "1");
 		const ChFiDS_ListOfStripe & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const ChFiDS_ListOfStripe & operator()(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & FindKey(const Standard_Integer I) const;
+		const TopoDS_Vertex  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		void Clear();
 
@@ -1674,9 +1674,9 @@ class ChFiDS_CircSection {
 		%feature("autodoc", "1");
 		ChFiDS_CircSection();
 		%feature("autodoc", "1");
-		void Set(const gp_Circ &C, const Standard_Real F, const Standard_Real L);
+		void Set(const gp_Circ C, const Standard_Real F, const Standard_Real L);
 		%feature("autodoc", "1");
-		void Set(const gp_Lin &C, const Standard_Real F, const Standard_Real L);
+		void Set(const gp_Lin C, const Standard_Real F, const Standard_Real L);
 		%feature("autodoc","Get() -> [Standard_Real, Standard_Real]");
 
 		void Get(gp_Circ & C, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -1929,9 +1929,9 @@ class ChFiDS_ElSpine : public Adaptor3d_Curve {
 		%feature("autodoc", "1");
 		void LastPointAndTgt(gp_Pnt & P, gp_Vec & T) const;
 		%feature("autodoc", "1");
-		void SetFirstPointAndTgt(const gp_Pnt &P, const gp_Vec &T);
+		void SetFirstPointAndTgt(const gp_Pnt P, const gp_Vec T);
 		%feature("autodoc", "1");
-		void SetLastPointAndTgt(const gp_Pnt &P, const gp_Vec &T);
+		void SetLastPointAndTgt(const gp_Pnt P, const gp_Vec T);
 		%feature("autodoc", "1");
 		void SetCurve(const Handle_Geom_Curve &C);
 		%feature("autodoc", "1");
@@ -2078,9 +2078,9 @@ def __del__(self):
 class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe(const TopoDS_Vertex &K1, const Standard_Integer K2, const ChFiDS_ListOfStripe &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe(const TopoDS_Vertex K1, const Standard_Integer K2, const ChFiDS_ListOfStripe &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Vertex & Key1() const;
+		TopoDS_Vertex  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -2351,15 +2351,15 @@ class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Vertex &K, const ChFiDS_ListOfStripe &I);
+		Standard_Integer Add(const TopoDS_Vertex K, const ChFiDS_ListOfStripe &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Vertex &K, const ChFiDS_ListOfStripe &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Vertex K, const ChFiDS_ListOfStripe &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Vertex &K) const;
+		Standard_Boolean Contains(const TopoDS_Vertex K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & FindKey(const Standard_Integer I) const;
+		const TopoDS_Vertex  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const ChFiDS_ListOfStripe & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -2369,11 +2369,11 @@ class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		ChFiDS_ListOfStripe & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Vertex &K) const;
+		Standard_Integer FindIndex(const TopoDS_Vertex K) const;
 		%feature("autodoc", "1");
-		const ChFiDS_ListOfStripe & FindFromKey(const TopoDS_Vertex &K) const;
+		const ChFiDS_ListOfStripe & FindFromKey(const TopoDS_Vertex K) const;
 		%feature("autodoc", "1");
-		ChFiDS_ListOfStripe & ChangeFromKey(const TopoDS_Vertex &K);
+		ChFiDS_ListOfStripe & ChangeFromKey(const TopoDS_Vertex K);
 
 };
 %feature("shadow") ChFiDS_IndexedDataMapOfVertexListOfStripe::~ChFiDS_IndexedDataMapOfVertexListOfStripe %{

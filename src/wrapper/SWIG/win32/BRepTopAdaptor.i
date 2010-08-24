@@ -218,19 +218,19 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepTopAdaptor_Tool &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const BRepTopAdaptor_Tool &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const BRepTopAdaptor_Tool & Find(const TopoDS_Shape &K) const;
+		const BRepTopAdaptor_Tool & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const BRepTopAdaptor_Tool & operator()(const TopoDS_Shape &K) const;
+		const BRepTopAdaptor_Tool & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool & ChangeFind(const TopoDS_Shape &K);
+		BRepTopAdaptor_Tool & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool & operator()(const TopoDS_Shape &K);
+		BRepTopAdaptor_Tool & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepTopAdaptor_MapOfShapeTool::~BRepTopAdaptor_MapOfShapeTool %{
@@ -253,11 +253,11 @@ def __del__(self):
 class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 	public:
 		%feature("autodoc", "1");
-		BRepTopAdaptor_HVertex(const TopoDS_Vertex &Vtx, const Handle_BRepAdaptor_HCurve2d &Curve);
+		BRepTopAdaptor_HVertex(const TopoDS_Vertex Vtx, const Handle_BRepAdaptor_HCurve2d &Curve);
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex() const;
+		const TopoDS_Vertex  Vertex() const;
 		%feature("autodoc", "1");
-		TopoDS_Vertex & ChangeVertex();
+		TopoDS_Vertex  ChangeVertex();
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Value();
 		%feature("autodoc", "1");
@@ -308,7 +308,7 @@ class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicM
 		%feature("autodoc", "1");
 		void Initialize(const BRepTopAdaptor_MapOfShapeTool &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const BRepTopAdaptor_Tool & Value() const;
 
@@ -333,11 +333,11 @@ def __del__(self):
 class BRepTopAdaptor_FClass2d {
 	public:
 		%feature("autodoc", "1");
-		BRepTopAdaptor_FClass2d(const TopoDS_Face &F, const Standard_Real Tol);
+		BRepTopAdaptor_FClass2d(const TopoDS_Face F, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		TopAbs_State PerformInfinitePoint() const;
 		%feature("autodoc", "1");
-		TopAbs_State Perform(const gp_Pnt2d &Puv, const Standard_Boolean RecadreOnPeriodic=1) const;
+		TopAbs_State Perform(const gp_Pnt2d Puv, const Standard_Boolean RecadreOnPeriodic=1) const;
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -345,7 +345,7 @@ class BRepTopAdaptor_FClass2d {
 		%feature("autodoc", "1");
 		const BRepTopAdaptor_FClass2d & operator=(const BRepTopAdaptor_FClass2d &Other) const;
 		%feature("autodoc", "1");
-		TopAbs_State TestOnRestriction(const gp_Pnt2d &Puv, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1) const;
+		TopAbs_State TestOnRestriction(const gp_Pnt2d Puv, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1) const;
 
 };
 %feature("shadow") BRepTopAdaptor_FClass2d::~BRepTopAdaptor_FClass2d %{
@@ -396,9 +396,9 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 		%feature("autodoc", "1");
 		virtual		void NextVertex();
 		%feature("autodoc", "1");
-		virtual		TopAbs_State Classify(const gp_Pnt2d &P2d, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1);
+		virtual		TopAbs_State Classify(const gp_Pnt2d P2d, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsThePointOn(const gp_Pnt2d &P2d, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1);
+		virtual		Standard_Boolean IsThePointOn(const gp_Pnt2d P2d, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1);
 		%feature("autodoc", "1");
 		virtual		TopAbs_Orientation Orientation(const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");
@@ -526,11 +526,11 @@ class BRepTopAdaptor_Tool {
 		%feature("autodoc", "1");
 		BRepTopAdaptor_Tool();
 		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool(const TopoDS_Face &F, const Standard_Real Tol2d);
+		BRepTopAdaptor_Tool(const TopoDS_Face F, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
 		BRepTopAdaptor_Tool(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F, const Standard_Real Tol2d);
+		void Init(const TopoDS_Face F, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
 		void Init(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
@@ -600,9 +600,9 @@ def __del__(self):
 class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const TopoDS_Shape &K, const BRepTopAdaptor_Tool &I, const TCollection_MapNodePtr &n);
+		BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const TopoDS_Shape K, const BRepTopAdaptor_Tool &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		BRepTopAdaptor_Tool & Value() const;
 		%feature("autodoc", "1");

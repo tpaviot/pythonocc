@@ -95,9 +95,9 @@ def __del__(self):
 class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopExp_StackNodeOfStackOfIterator(const TopoDS_Iterator &I, const TCollection_MapNodePtr &n);
+		TopExp_StackNodeOfStackOfIterator(const TopoDS_Iterator I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Iterator & Value() const;
+		TopoDS_Iterator  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -142,7 +142,7 @@ class TopExp_StackIteratorOfStackOfIterator {
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		const TopoDS_Iterator & Value() const;
+		const TopoDS_Iterator  Value() const;
 
 };
 %feature("shadow") TopExp_StackIteratorOfStackOfIterator::~TopExp_StackIteratorOfStackOfIterator %{
@@ -175,15 +175,15 @@ class TopExp_StackOfIterator {
 		%feature("autodoc", "1");
 		Standard_Integer Depth() const;
 		%feature("autodoc", "1");
-		const TopoDS_Iterator & Top() const;
+		const TopoDS_Iterator  Top() const;
 		%feature("autodoc", "1");
-		void Push(const TopoDS_Iterator &I);
+		void Push(const TopoDS_Iterator I);
 		%feature("autodoc", "1");
 		void Pop();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		TopoDS_Iterator & ChangeTop();
+		TopoDS_Iterator  ChangeTop();
 
 };
 %feature("shadow") TopExp_StackOfIterator::~TopExp_StackOfIterator %{
@@ -208,15 +208,15 @@ class TopExp_Explorer {
 		%feature("autodoc", "1");
 		TopExp_Explorer();
 		%feature("autodoc", "1");
-		TopExp_Explorer(const TopoDS_Shape &S, const TopAbs_ShapeEnum ToFind, const TopAbs_ShapeEnum ToAvoid=TopAbs_SHAPE);
+		TopExp_Explorer(const TopoDS_Shape S, const TopAbs_ShapeEnum ToFind, const TopAbs_ShapeEnum ToAvoid=TopAbs_SHAPE);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, const TopAbs_ShapeEnum ToFind, const TopAbs_ShapeEnum ToAvoid=TopAbs_SHAPE);
+		void Init(const TopoDS_Shape S, const TopAbs_ShapeEnum ToFind, const TopAbs_ShapeEnum ToAvoid=TopAbs_SHAPE);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Current() const;
+		const TopoDS_Shape  Current() const;
 		%feature("autodoc", "1");
 		void ReInit();
 		%feature("autodoc", "1");
@@ -249,21 +249,21 @@ class TopExp {
 		%feature("autodoc", "1");
 		TopExp();
 		%feature("autodoc", "1");
-		static		void MapShapes(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_IndexedMapOfShape & M);
+		static		void MapShapes(const TopoDS_Shape S, const TopAbs_ShapeEnum T, TopTools_IndexedMapOfShape & M);
 		%feature("autodoc", "1");
-		static		void MapShapes(const TopoDS_Shape &S, TopTools_IndexedMapOfShape & M);
+		static		void MapShapes(const TopoDS_Shape S, TopTools_IndexedMapOfShape & M);
 		%feature("autodoc", "1");
-		static		void MapShapesAndAncestors(const TopoDS_Shape &S, const TopAbs_ShapeEnum TS, const TopAbs_ShapeEnum TA, TopTools_IndexedDataMapOfShapeListOfShape & M);
+		static		void MapShapesAndAncestors(const TopoDS_Shape S, const TopAbs_ShapeEnum TS, const TopAbs_ShapeEnum TA, TopTools_IndexedDataMapOfShapeListOfShape & M);
 		%feature("autodoc", "1");
-		static		TopoDS_Vertex FirstVertex(const TopoDS_Edge &E, const Standard_Boolean CumOri=0);
+		static		TopoDS_Vertex FirstVertex(const TopoDS_Edge E, const Standard_Boolean CumOri=0);
 		%feature("autodoc", "1");
-		static		TopoDS_Vertex LastVertex(const TopoDS_Edge &E, const Standard_Boolean CumOri=0);
+		static		TopoDS_Vertex LastVertex(const TopoDS_Edge E, const Standard_Boolean CumOri=0);
 		%feature("autodoc", "1");
-		static		void Vertices(const TopoDS_Edge &E, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast, const Standard_Boolean CumOri=0);
+		static		void Vertices(const TopoDS_Edge E, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast, const Standard_Boolean CumOri=0);
 		%feature("autodoc", "1");
-		static		void Vertices(const TopoDS_Wire &W, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast);
+		static		void Vertices(const TopoDS_Wire W, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast);
 		%feature("autodoc", "1");
-		static		Standard_Boolean CommonVertex(const TopoDS_Edge &E1, const TopoDS_Edge &E2, TopoDS_Vertex & V);
+		static		Standard_Boolean CommonVertex(const TopoDS_Edge E1, const TopoDS_Edge E2, TopoDS_Vertex & V);
 
 };
 %feature("shadow") TopExp::~TopExp %{

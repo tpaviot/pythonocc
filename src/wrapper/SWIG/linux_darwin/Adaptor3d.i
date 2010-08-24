@@ -595,9 +595,9 @@ class Adaptor3d_TopolTool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void NextVertex();
 		%feature("autodoc", "1");
-		virtual		TopAbs_State Classify(const gp_Pnt2d &P, const Standard_Real Tol, const Standard_Boolean ReacdreOnPeriodic=1);
+		virtual		TopAbs_State Classify(const gp_Pnt2d P, const Standard_Real Tol, const Standard_Boolean ReacdreOnPeriodic=1);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsThePointOn(const gp_Pnt2d &P, const Standard_Real Tol, const Standard_Boolean ReacdreOnPeriodic=1);
+		virtual		Standard_Boolean IsThePointOn(const gp_Pnt2d P, const Standard_Real Tol, const Standard_Boolean ReacdreOnPeriodic=1);
 		%feature("autodoc", "1");
 		virtual		TopAbs_Orientation Orientation(const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");
@@ -793,11 +793,11 @@ class Adaptor3d_SurfaceOfRevolution : public Adaptor3d_Surface {
 		%feature("autodoc", "1");
 		Adaptor3d_SurfaceOfRevolution(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
-		Adaptor3d_SurfaceOfRevolution(const Handle_Adaptor3d_HCurve &C, const gp_Ax1 &V);
+		Adaptor3d_SurfaceOfRevolution(const Handle_Adaptor3d_HCurve &C, const gp_Ax1 V);
 		%feature("autodoc", "1");
 		void Load(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
-		void Load(const gp_Ax1 &V);
+		void Load(const gp_Ax1 V);
 		%feature("autodoc", "1");
 		gp_Ax3 Axis() const;
 
@@ -988,7 +988,7 @@ class Adaptor3d_HVertex : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Adaptor3d_HVertex();
 		%feature("autodoc", "1");
-		Adaptor3d_HVertex(const gp_Pnt2d &P, const TopAbs_Orientation Ori, const Standard_Real Resolution);
+		Adaptor3d_HVertex(const gp_Pnt2d P, const TopAbs_Orientation Ori, const Standard_Real Resolution);
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Value();
 		%feature("autodoc", "1");
@@ -1202,11 +1202,11 @@ class Adaptor3d_SurfaceOfLinearExtrusion : public Adaptor3d_Surface {
 		%feature("autodoc", "1");
 		Adaptor3d_SurfaceOfLinearExtrusion(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
-		Adaptor3d_SurfaceOfLinearExtrusion(const Handle_Adaptor3d_HCurve &C, const gp_Dir &V);
+		Adaptor3d_SurfaceOfLinearExtrusion(const Handle_Adaptor3d_HCurve &C, const gp_Dir V);
 		%feature("autodoc", "1");
 		void Load(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
-		void Load(const gp_Dir &V);
+		void Load(const gp_Dir V);
 		%feature("autodoc", "1");
 		virtual		Standard_Real FirstUParameter() const;
 		%feature("autodoc", "1");

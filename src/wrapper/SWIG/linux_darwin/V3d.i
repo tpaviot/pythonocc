@@ -1616,7 +1616,7 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void Plot();
 		%feature("autodoc", "1");
-		void SetGrid(const gp_Ax3 &aPlane, const Handle_Aspect_Grid &aGrid);
+		void SetGrid(const gp_Ax3 aPlane, const Handle_Aspect_Grid &aGrid);
 		%feature("autodoc", "1");
 		void SetGridGraphicValues(const Handle_Aspect_Grid &aGrid);
 		%feature("autodoc", "1");
@@ -1816,7 +1816,7 @@ class V3d_Viewer : public Viewer_Viewer {
 		%feature("autodoc", "1");
 		void SetDefaultTypeOfView(const V3d_TypeOfView Type);
 		%feature("autodoc", "1");
-		void SetPrivilegedPlane(const gp_Ax3 &aPlane);
+		void SetPrivilegedPlane(const gp_Ax3 aPlane);
 		%feature("autodoc", "1");
 		gp_Ax3 PrivilegedPlane() const;
 		%feature("autodoc", "1");

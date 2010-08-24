@@ -96,9 +96,9 @@ class BRepClass3d_SClassifier {
 		%feature("autodoc", "1");
 		BRepClass3d_SClassifier();
 		%feature("autodoc", "1");
-		BRepClass3d_SClassifier(BRepClass3d_SolidExplorer & S, const gp_Pnt &P, const Standard_Real Tol);
+		BRepClass3d_SClassifier(BRepClass3d_SolidExplorer & S, const gp_Pnt P, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(BRepClass3d_SolidExplorer & S, const gp_Pnt &P, const Standard_Real Tol);
+		void Perform(BRepClass3d_SolidExplorer & S, const gp_Pnt P, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void PerformInfinitePoint(BRepClass3d_SolidExplorer & S, const Standard_Real Tol);
 		%feature("autodoc", "1");
@@ -135,33 +135,33 @@ class BRepClass3d_SolidExplorer {
 		%feature("autodoc", "1");
 		BRepClass3d_SolidExplorer(const BRepClass3d_SolidExplorer &Oth);
 		%feature("autodoc", "1");
-		BRepClass3d_SolidExplorer(const TopoDS_Shape &S);
+		BRepClass3d_SolidExplorer(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		void InitShape(const TopoDS_Shape &S);
+		void InitShape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Reject(const gp_Pnt &P) const;
+		virtual		Standard_Boolean Reject(const gp_Pnt P) const;
 		%feature("autodoc","FindAPointInTheFace(const F) -> Standard_Real");
 
-		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue);
+		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue);
 		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_Real, Standard_Real]");
 
-		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P);
+		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P);
 		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_Real, Standard_Real]");
 
-		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","PointInTheFace(const F) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
 
-		Standard_Boolean PointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue) const;
+		Standard_Boolean PointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc","PointInTheFace(const F, const surf, Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
 
-		Standard_Boolean PointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, const Handle_BRepAdaptor_HSurface &surf, const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2) const;
+		Standard_Boolean PointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, const Handle_BRepAdaptor_HSurface &surf, const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2) const;
 		%feature("autodoc", "1");
 		void InitShell();
 		%feature("autodoc", "1");
@@ -171,7 +171,7 @@ class BRepClass3d_SolidExplorer {
 		%feature("autodoc", "1");
 		TopoDS_Shell CurrentShell() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean RejectShell(const gp_Lin &L) const;
+		virtual		Standard_Boolean RejectShell(const gp_Lin L) const;
 		%feature("autodoc", "1");
 		void InitFace();
 		%feature("autodoc", "1");
@@ -181,21 +181,21 @@ class BRepClass3d_SolidExplorer {
 		%feature("autodoc", "1");
 		TopoDS_Face CurrentFace() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean RejectFace(const gp_Lin &L) const;
+		virtual		Standard_Boolean RejectFace(const gp_Lin L) const;
 		%feature("autodoc","Segment(const P) -> Standard_Real");
 
-		Standard_Integer Segment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
+		Standard_Integer Segment(const gp_Pnt P, gp_Lin & L, Standard_Real &OutValue);
 		%feature("autodoc","OtherSegment(const P) -> Standard_Real");
 
-		Standard_Integer OtherSegment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
+		Standard_Integer OtherSegment(const gp_Pnt P, gp_Lin & L, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer GetFaceSegmentIndex() const;
 		%feature("autodoc", "1");
-		virtual		void DumpSegment(const gp_Pnt &P, const gp_Lin &L, const Standard_Real Par, const TopAbs_State S) const;
+		virtual		void DumpSegment(const gp_Pnt P, const gp_Lin L, const Standard_Real Par, const TopAbs_State S) const;
 		%feature("autodoc", "1");
 		const Bnd_Box & Box() const;
 		%feature("autodoc", "1");
-		IntCurvesFace_Intersector & Intersector(const TopoDS_Face &F) const;
+		IntCurvesFace_Intersector & Intersector(const TopoDS_Face F) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -226,7 +226,7 @@ class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapItera
 		%feature("autodoc", "1");
 		void Initialize(const BRepClass3d_MapOfInter &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Standard_Address & Value() const;
 
@@ -253,7 +253,7 @@ class BRepClass3d_Intersector3d {
 		%feature("autodoc", "1");
 		BRepClass3d_Intersector3d();
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &L, const Standard_Real Prm, const Standard_Real Tol, const TopoDS_Face &F);
+		void Perform(const gp_Lin L, const Standard_Real Prm, const Standard_Real Tol, const TopoDS_Face F);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -265,13 +265,13 @@ class BRepClass3d_Intersector3d {
 		%feature("autodoc", "1");
 		Standard_Real WParameter() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt() const;
+		const gp_Pnt  Pnt() const;
 		%feature("autodoc", "1");
 		IntCurveSurface_TransitionOnCurve Transition() const;
 		%feature("autodoc", "1");
 		TopAbs_State State() const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 
 };
 %feature("shadow") BRepClass3d_Intersector3d::~BRepClass3d_Intersector3d %{
@@ -296,13 +296,13 @@ class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 		%feature("autodoc", "1");
 		BRepClass3d_SolidClassifier();
 		%feature("autodoc", "1");
-		void Load(const TopoDS_Shape &S);
+		void Load(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		BRepClass3d_SolidClassifier(const TopoDS_Shape &S);
+		BRepClass3d_SolidClassifier(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		BRepClass3d_SolidClassifier(const TopoDS_Shape &S, const gp_Pnt &P, const Standard_Real Tol);
+		BRepClass3d_SolidClassifier(const TopoDS_Shape S, const gp_Pnt P, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P, const Standard_Real Tol);
+		void Perform(const gp_Pnt P, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void PerformInfinitePoint(const Standard_Real Tol);
 		%feature("autodoc", "1");
@@ -329,9 +329,9 @@ def __del__(self):
 class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepClass3d_DataMapNodeOfMapOfInter(const TopoDS_Shape &K, const Standard_Address &I, const TCollection_MapNodePtr &n);
+		BRepClass3d_DataMapNodeOfMapOfInter(const TopoDS_Shape K, const Standard_Address &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Standard_Address & Value() const;
 		%feature("autodoc", "1");
@@ -378,19 +378,19 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Address &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Address &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Standard_Address & Find(const TopoDS_Shape &K) const;
+		const Standard_Address & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Standard_Address & operator()(const TopoDS_Shape &K) const;
+		const Standard_Address & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Address & ChangeFind(const TopoDS_Shape &K);
+		Standard_Address & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Standard_Address & operator()(const TopoDS_Shape &K);
+		Standard_Address & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepClass3d_MapOfInter::~BRepClass3d_MapOfInter %{
@@ -415,9 +415,9 @@ class BRepClass3d_SolidPassiveClassifier {
 		%feature("autodoc", "1");
 		BRepClass3d_SolidPassiveClassifier();
 		%feature("autodoc", "1");
-		void Reset(const gp_Lin &L, const Standard_Real P, const Standard_Real Tol);
+		void Reset(const gp_Lin L, const Standard_Real P, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Compare(const TopoDS_Face &F, const TopAbs_Orientation Or);
+		void Compare(const TopoDS_Face F, const TopAbs_Orientation Or);
 		%feature("autodoc", "1");
 		Standard_Real Parameter() const;
 		%feature("autodoc", "1");

@@ -1323,7 +1323,7 @@ class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_TabulatedCylinder();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &aDirectrix, const gp_XYZ &anEnd);
+		void Init(const Handle_IGESData_IGESEntity &aDirectrix, const gp_XYZ anEnd);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity Directrix() const;
 		%feature("autodoc", "1");
@@ -1421,7 +1421,7 @@ class IGESGeom_Direction : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_Direction();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aDirection);
+		void Init(const gp_XYZ aDirection);
 		%feature("autodoc", "1");
 		gp_Vec Value() const;
 		%feature("autodoc", "1");
@@ -1499,7 +1499,7 @@ class IGESGeom_Line : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_Line();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aStart, const gp_XYZ &anEnd);
+		void Init(const gp_XYZ aStart, const gp_XYZ anEnd);
 		%feature("autodoc", "1");
 		Standard_Integer Infinite() const;
 		%feature("autodoc", "1");
@@ -1548,7 +1548,7 @@ class IGESGeom_Flash : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_Flash();
 		%feature("autodoc", "1");
-		void Init(const gp_XY &aPoint, const Standard_Real aDim, const Standard_Real anotherDim, const Standard_Real aRotation, const Handle_IGESData_IGESEntity &aReference);
+		void Init(const gp_XY aPoint, const Standard_Real aDim, const Standard_Real anotherDim, const Standard_Real aRotation, const Handle_IGESData_IGESEntity &aReference);
 		%feature("autodoc", "1");
 		void SetFormNumber(const Standard_Integer form);
 		%feature("autodoc", "1");
@@ -1925,7 +1925,7 @@ class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_OffsetSurface();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ &anIndicatoR, const Standard_Real aDistance, const Handle_IGESData_IGESEntity &aSurface);
+		void Init(const gp_XYZ anIndicatoR, const Standard_Real aDistance, const Handle_IGESData_IGESEntity &aSurface);
 		%feature("autodoc", "1");
 		gp_Vec OffsetIndicator() const;
 		%feature("autodoc", "1");
@@ -2261,7 +2261,7 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_ConicArc();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Standard_Real E, const Standard_Real F, const Standard_Real ZT, const gp_XY &aStart, const gp_XY &anEnd);
+		void Init(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Standard_Real E, const Standard_Real F, const Standard_Real ZT, const gp_XY aStart, const gp_XY anEnd);
 		%feature("autodoc", "1");
 		Standard_Boolean OwnCorrect();
 		%feature("autodoc", "1");
@@ -2336,7 +2336,7 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_Plane();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Handle_IGESData_IGESEntity &aCurve, const gp_XYZ &attach, const Standard_Real aSize);
+		void Init(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Handle_IGESData_IGESEntity &aCurve, const gp_XYZ attach, const Standard_Real aSize);
 		%feature("autodoc", "1");
 		void SetFormNumber(const Standard_Integer form);
 		%feature("autodoc","Equation() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
@@ -2434,7 +2434,7 @@ class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_BSplineCurve();
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer anIndex, const Standard_Integer aDegree, const Standard_Boolean aPlanar, const Standard_Boolean aClosed, const Standard_Boolean aPolynom, const Standard_Boolean aPeriodic, const Handle_TColStd_HArray1OfReal &allKnots, const Handle_TColStd_HArray1OfReal &allWeights, const Handle_TColgp_HArray1OfXYZ &allPoles, const Standard_Real aUmin, const Standard_Real aUmax, const gp_XYZ &aNorm);
+		void Init(const Standard_Integer anIndex, const Standard_Integer aDegree, const Standard_Boolean aPlanar, const Standard_Boolean aClosed, const Standard_Boolean aPolynom, const Standard_Boolean aPeriodic, const Handle_TColStd_HArray1OfReal &allKnots, const Handle_TColStd_HArray1OfReal &allWeights, const Handle_TColgp_HArray1OfXYZ &allPoles, const Standard_Real aUmin, const Standard_Real aUmax, const gp_XYZ aNorm);
 		%feature("autodoc", "1");
 		void SetFormNumber(const Standard_Integer form);
 		%feature("autodoc", "1");
@@ -3214,7 +3214,7 @@ class IGESGeom_Point : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_Point();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aPoint, const Handle_IGESBasic_SubfigureDef &aSymbol);
+		void Init(const gp_XYZ aPoint, const Handle_IGESBasic_SubfigureDef &aSymbol);
 		%feature("autodoc", "1");
 		gp_Pnt Value() const;
 		%feature("autodoc", "1");
@@ -3453,7 +3453,7 @@ class IGESGeom_CircularArc : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_CircularArc();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real aZT, const gp_XY &aCenter, const gp_XY &aStart, const gp_XY &anEnd);
+		void Init(const Standard_Real aZT, const gp_XY aCenter, const gp_XY aStart, const gp_XY anEnd);
 		%feature("autodoc", "1");
 		gp_Pnt2d Center() const;
 		%feature("autodoc", "1");
@@ -3715,7 +3715,7 @@ class IGESGeom_OffsetCurve : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESGeom_OffsetCurve();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &aBaseCurve, const Standard_Integer anOffsetType, const Handle_IGESData_IGESEntity &aFunction, const Standard_Integer aFunctionCoord, const Standard_Integer aTaperedOffsetType, const Standard_Real offDistance1, const Standard_Real arcLength1, const Standard_Real offDistance2, const Standard_Real arcLength2, const gp_XYZ &aNormalVec, const Standard_Real anOffsetParam, const Standard_Real anotherOffsetParam);
+		void Init(const Handle_IGESData_IGESEntity &aBaseCurve, const Standard_Integer anOffsetType, const Handle_IGESData_IGESEntity &aFunction, const Standard_Integer aFunctionCoord, const Standard_Integer aTaperedOffsetType, const Standard_Real offDistance1, const Standard_Real arcLength1, const Standard_Real offDistance2, const Standard_Real arcLength2, const gp_XYZ aNormalVec, const Standard_Real anOffsetParam, const Standard_Real anotherOffsetParam);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity BaseCurve() const;
 		%feature("autodoc", "1");

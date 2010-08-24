@@ -923,13 +923,13 @@ def __del__(self):
 class PGeom2d_Conic : public PGeom2d_Curve {
 	public:
 		%feature("autodoc", "1");
-		void Position(const gp_Ax22d &aPosition);
+		void Position(const gp_Ax22d aPosition);
 		%feature("autodoc", "1");
 		gp_Ax22d Position() const;
 		%feature("autodoc", "1");
 		PGeom2d_Conic(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Ax22d & _CSFDB_GetPGeom2d_Conicposition() const;
+		const gp_Ax22d  _CSFDB_GetPGeom2d_Conicposition() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1030,13 +1030,13 @@ def __del__(self):
 class PGeom2d_Vector : public PGeom2d_Geometry {
 	public:
 		%feature("autodoc", "1");
-		void Vec(const gp_Vec2d &aVec);
+		void Vec(const gp_Vec2d aVec);
 		%feature("autodoc", "1");
 		gp_Vec2d Vec() const;
 		%feature("autodoc", "1");
 		PGeom2d_Vector(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Vec2d & _CSFDB_GetPGeom2d_Vectorvec() const;
+		const gp_Vec2d  _CSFDB_GetPGeom2d_Vectorvec() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1076,7 +1076,7 @@ class PGeom2d_Direction : public PGeom2d_Vector {
 		%feature("autodoc", "1");
 		PGeom2d_Direction();
 		%feature("autodoc", "1");
-		PGeom2d_Direction(const gp_Vec2d &aVec);
+		PGeom2d_Direction(const gp_Vec2d aVec);
 		%feature("autodoc", "1");
 		PGeom2d_Direction(const Storage_stCONSTclCOM &a);
 
@@ -1113,7 +1113,7 @@ class PGeom2d_Parabola : public PGeom2d_Conic {
 		%feature("autodoc", "1");
 		PGeom2d_Parabola();
 		%feature("autodoc", "1");
-		PGeom2d_Parabola(const gp_Ax22d &aPosition, const Standard_Real aFocalLength);
+		PGeom2d_Parabola(const gp_Ax22d aPosition, const Standard_Real aFocalLength);
 		%feature("autodoc", "1");
 		void FocalLength(const Standard_Real aFocalLength);
 		%feature("autodoc", "1");
@@ -1160,7 +1160,7 @@ class PGeom2d_Ellipse : public PGeom2d_Conic {
 		%feature("autodoc", "1");
 		PGeom2d_Ellipse();
 		%feature("autodoc", "1");
-		PGeom2d_Ellipse(const gp_Ax22d &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		PGeom2d_Ellipse(const gp_Ax22d aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
 		%feature("autodoc", "1");
 		void MajorRadius(const Standard_Real aMajorRadius);
 		%feature("autodoc", "1");
@@ -1215,15 +1215,15 @@ class PGeom2d_AxisPlacement : public PGeom2d_Geometry {
 		%feature("autodoc", "1");
 		PGeom2d_AxisPlacement();
 		%feature("autodoc", "1");
-		PGeom2d_AxisPlacement(const gp_Ax2d &aAxis);
+		PGeom2d_AxisPlacement(const gp_Ax2d aAxis);
 		%feature("autodoc", "1");
-		void Axis(const gp_Ax2d &aAxis);
+		void Axis(const gp_Ax2d aAxis);
 		%feature("autodoc", "1");
 		gp_Ax2d Axis() const;
 		%feature("autodoc", "1");
 		PGeom2d_AxisPlacement(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Ax2d & _CSFDB_GetPGeom2d_AxisPlacementaxis() const;
+		const gp_Ax2d  _CSFDB_GetPGeom2d_AxisPlacementaxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1260,7 +1260,7 @@ class PGeom2d_Circle : public PGeom2d_Conic {
 		%feature("autodoc", "1");
 		PGeom2d_Circle();
 		%feature("autodoc", "1");
-		PGeom2d_Circle(const gp_Ax22d &aPosition, const Standard_Real aRadius);
+		PGeom2d_Circle(const gp_Ax22d aPosition, const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		void Radius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
@@ -1307,7 +1307,7 @@ class PGeom2d_Hyperbola : public PGeom2d_Conic {
 		%feature("autodoc", "1");
 		PGeom2d_Hyperbola();
 		%feature("autodoc", "1");
-		PGeom2d_Hyperbola(const gp_Ax22d &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		PGeom2d_Hyperbola(const gp_Ax22d aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
 		%feature("autodoc", "1");
 		void MajorRadius(const Standard_Real aMajorRadius);
 		%feature("autodoc", "1");
@@ -1417,15 +1417,15 @@ class PGeom2d_Transformation : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PGeom2d_Transformation();
 		%feature("autodoc", "1");
-		PGeom2d_Transformation(const gp_Trsf2d &aTrsf);
+		PGeom2d_Transformation(const gp_Trsf2d aTrsf);
 		%feature("autodoc", "1");
-		void Trsf(const gp_Trsf2d &aTrsf);
+		void Trsf(const gp_Trsf2d aTrsf);
 		%feature("autodoc", "1");
 		gp_Trsf2d Trsf() const;
 		%feature("autodoc", "1");
 		PGeom2d_Transformation(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Trsf2d & _CSFDB_GetPGeom2d_Transformationtrsf() const;
+		const gp_Trsf2d  _CSFDB_GetPGeom2d_Transformationtrsf() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1462,7 +1462,7 @@ class PGeom2d_VectorWithMagnitude : public PGeom2d_Vector {
 		%feature("autodoc", "1");
 		PGeom2d_VectorWithMagnitude();
 		%feature("autodoc", "1");
-		PGeom2d_VectorWithMagnitude(const gp_Vec2d &aVec);
+		PGeom2d_VectorWithMagnitude(const gp_Vec2d aVec);
 		%feature("autodoc", "1");
 		PGeom2d_VectorWithMagnitude(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
@@ -1564,15 +1564,15 @@ class PGeom2d_Line : public PGeom2d_Curve {
 		%feature("autodoc", "1");
 		PGeom2d_Line();
 		%feature("autodoc", "1");
-		PGeom2d_Line(const gp_Ax2d &aPosition);
+		PGeom2d_Line(const gp_Ax2d aPosition);
 		%feature("autodoc", "1");
-		void Position(const gp_Ax2d &aPosition);
+		void Position(const gp_Ax2d aPosition);
 		%feature("autodoc", "1");
 		gp_Ax2d Position() const;
 		%feature("autodoc", "1");
 		PGeom2d_Line(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Ax2d & _CSFDB_GetPGeom2d_Lineposition() const;
+		const gp_Ax2d  _CSFDB_GetPGeom2d_Lineposition() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1646,15 +1646,15 @@ class PGeom2d_CartesianPoint : public PGeom2d_Point {
 		%feature("autodoc", "1");
 		PGeom2d_CartesianPoint();
 		%feature("autodoc", "1");
-		PGeom2d_CartesianPoint(const gp_Pnt2d &aPnt2d);
+		PGeom2d_CartesianPoint(const gp_Pnt2d aPnt2d);
 		%feature("autodoc", "1");
-		void Pnt(const gp_Pnt2d &aPnt2d);
+		void Pnt(const gp_Pnt2d aPnt2d);
 		%feature("autodoc", "1");
 		gp_Pnt2d Pnt() const;
 		%feature("autodoc", "1");
 		PGeom2d_CartesianPoint(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & _CSFDB_GetPGeom2d_CartesianPointpnt() const;
+		const gp_Pnt2d  _CSFDB_GetPGeom2d_CartesianPointpnt() const;
 
 };
 %extend PGeom2d_CartesianPoint {

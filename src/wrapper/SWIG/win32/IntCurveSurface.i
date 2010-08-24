@@ -151,7 +151,7 @@ class IntCurveSurface_ThePolyhedronToolOfHInter {
 
 		static		void Triangle(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		static		const gp_Pnt & Point(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index);
+		static		const gp_Pnt  Point(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index);
 		%feature("autodoc","TriConnex(const thePolyh, Standard_Integer Triang, Standard_Integer Pivot, Standard_Integer Pedge) -> [Standard_Integer, Standard_Integer]");
 
 		static		Standard_Integer TriConnex(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
@@ -286,14 +286,14 @@ class IntCurveSurface_IntersectionPoint {
 		%feature("autodoc", "1");
 		IntCurveSurface_IntersectionPoint();
 		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionPoint(const gp_Pnt &P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
+		IntCurveSurface_IntersectionPoint(const gp_Pnt P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
 		%feature("autodoc", "1");
-		void SetValues(const gp_Pnt &P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
+		void SetValues(const gp_Pnt P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
 		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		void Values(gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, IntCurveSurface_TransitionOnCurve & TrCurv) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt() const;
+		const gp_Pnt  Pnt() const;
 		%feature("autodoc", "1");
 		Standard_Real U() const;
 		%feature("autodoc", "1");
@@ -581,7 +581,7 @@ class IntCurveSurface_TheExactHInter {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Point() const;
+		const gp_Pnt  Point() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnCurve() const;
 		%feature("autodoc","ParameterOnSurface() -> [Standard_Real, Standard_Real]");
@@ -653,9 +653,9 @@ class IntCurveSurface_ThePolygonToolOfHInter {
 		%feature("autodoc", "1");
 		static		Standard_Integer NbSegments(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
 		%feature("autodoc", "1");
-		static		const gp_Pnt & BeginOfSeg(const IntCurveSurface_ThePolygonOfHInter &thePolygon, const Standard_Integer Index);
+		static		const gp_Pnt  BeginOfSeg(const IntCurveSurface_ThePolygonOfHInter &thePolygon, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		static		const gp_Pnt & EndOfSeg(const IntCurveSurface_ThePolygonOfHInter &thePolygon, const Standard_Integer Index);
+		static		const gp_Pnt  EndOfSeg(const IntCurveSurface_ThePolygonOfHInter &thePolygon, const Standard_Integer Index);
 		%feature("autodoc", "1");
 		static		void Dump(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
 
@@ -737,9 +737,9 @@ class IntCurveSurface_ThePolygonOfHInter {
 		%feature("autodoc", "1");
 		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & BeginOfSeg(const Standard_Integer Index) const;
+		const gp_Pnt  BeginOfSeg(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & EndOfSeg(const Standard_Integer TheIndex) const;
+		const gp_Pnt  EndOfSeg(const Standard_Integer TheIndex) const;
 		%feature("autodoc", "1");
 		Standard_Real InfParameter() const;
 		%feature("autodoc", "1");
@@ -884,7 +884,7 @@ class IntCurveSurface_TheCSFunctionOfHInter : public math_FunctionSetWithDerivat
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		const gp_Pnt & Point() const;
+		const gp_Pnt  Point() const;
 		%feature("autodoc", "1");
 		Standard_Real Root() const;
 		%feature("autodoc", "1");
@@ -917,25 +917,25 @@ class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 		%feature("autodoc", "1");
 		IntCurveSurface_TheInterferenceOfHInter(const IntCurveSurface_ThePolygonOfHInter &thePolyg, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
-		IntCurveSurface_TheInterferenceOfHInter(const gp_Lin &theLin, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
+		IntCurveSurface_TheInterferenceOfHInter(const gp_Lin theLin, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
 		IntCurveSurface_TheInterferenceOfHInter(const Intf_Array1OfLin &theLins, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
 		void Perform(const IntCurveSurface_ThePolygonOfHInter &thePolyg, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &theLin, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
+		void Perform(const gp_Lin theLin, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
 		void Perform(const Intf_Array1OfLin &theLins, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
 		IntCurveSurface_TheInterferenceOfHInter(const IntCurveSurface_ThePolygonOfHInter &thePolyg, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
-		IntCurveSurface_TheInterferenceOfHInter(const gp_Lin &theLin, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, Bnd_BoundSortBox & theBoundSB);
+		IntCurveSurface_TheInterferenceOfHInter(const gp_Lin theLin, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
 		IntCurveSurface_TheInterferenceOfHInter(const Intf_Array1OfLin &theLins, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
 		void Perform(const IntCurveSurface_ThePolygonOfHInter &thePolyg, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &theLin, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, Bnd_BoundSortBox & theBoundSB);
+		void Perform(const gp_Lin theLin, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
 		void Perform(const Intf_Array1OfLin &theLins, const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");

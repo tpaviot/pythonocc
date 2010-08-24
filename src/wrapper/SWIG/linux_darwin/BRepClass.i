@@ -58,15 +58,15 @@ class BRepClass_Edge {
 		%feature("autodoc", "1");
 		BRepClass_Edge();
 		%feature("autodoc", "1");
-		BRepClass_Edge(const TopoDS_Edge &E, const TopoDS_Face &F);
+		BRepClass_Edge(const TopoDS_Edge E, const TopoDS_Face F);
 		%feature("autodoc", "1");
-		TopoDS_Edge & Edge();
+		TopoDS_Edge  Edge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge() const;
+		const TopoDS_Edge  Edge() const;
 		%feature("autodoc", "1");
-		TopoDS_Face & Face();
+		TopoDS_Face  Face();
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 
 };
 %feature("shadow") BRepClass_Edge::~BRepClass_Edge %{
@@ -91,7 +91,7 @@ class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 		%feature("autodoc", "1");
 		BRepClass_Intersector();
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol, const BRepClass_Edge &E);
+		void Perform(const gp_Lin2d L, const Standard_Real P, const Standard_Real Tol, const BRepClass_Edge &E);
 		%feature("autodoc","LocalGeometry(const E, Standard_Real U) -> Standard_Real");
 
 		void LocalGeometry(const BRepClass_Edge &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
@@ -119,9 +119,9 @@ class BRepClass_FClassifier {
 		%feature("autodoc", "1");
 		BRepClass_FClassifier();
 		%feature("autodoc", "1");
-		BRepClass_FClassifier(BRepClass_FaceExplorer & F, const gp_Pnt2d &P, const Standard_Real Tol);
+		BRepClass_FClassifier(BRepClass_FaceExplorer & F, const gp_Pnt2d P, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(BRepClass_FaceExplorer & F, const gp_Pnt2d &P, const Standard_Real Tol);
+		void Perform(BRepClass_FaceExplorer & F, const gp_Pnt2d P, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		TopAbs_State State() const;
 		%feature("autodoc", "1");
@@ -156,9 +156,9 @@ def __del__(self):
 class BRepClass_FaceClassifier : public BRepClass_FClassifier {
 	public:
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Face &F, const gp_Pnt2d &P, const Standard_Real Tol);
+		void Perform(const TopoDS_Face F, const gp_Pnt2d P, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Face &F, const gp_Pnt &P, const Standard_Real Tol);
+		void Perform(const TopoDS_Face F, const gp_Pnt P, const Standard_Real Tol);
 
 };
 %feature("shadow") BRepClass_FaceClassifier::~BRepClass_FaceClassifier %{
@@ -183,7 +183,7 @@ class BRepClass_FClass2dOfFClassifier {
 		%feature("autodoc", "1");
 		BRepClass_FClass2dOfFClassifier();
 		%feature("autodoc", "1");
-		void Reset(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol);
+		void Reset(const gp_Lin2d L, const Standard_Real P, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void Compare(const BRepClass_Edge &E, const TopAbs_Orientation Or);
 		%feature("autodoc", "1");
@@ -218,15 +218,15 @@ def __del__(self):
 class BRepClass_FaceExplorer {
 	public:
 		%feature("autodoc", "1");
-		BRepClass_FaceExplorer(const TopoDS_Face &F);
+		BRepClass_FaceExplorer(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		Standard_Boolean Reject(const gp_Pnt2d &P) const;
+		Standard_Boolean Reject(const gp_Pnt2d P) const;
 		%feature("autodoc","Segment(const P) -> Standard_Real");
 
-		Standard_Boolean Segment(const gp_Pnt2d &P, gp_Lin2d & L, Standard_Real &OutValue);
+		Standard_Boolean Segment(const gp_Pnt2d P, gp_Lin2d & L, Standard_Real &OutValue);
 		%feature("autodoc","OtherSegment(const P) -> Standard_Real");
 
-		Standard_Boolean OtherSegment(const gp_Pnt2d &P, gp_Lin2d & L, Standard_Real &OutValue);
+		Standard_Boolean OtherSegment(const gp_Pnt2d P, gp_Lin2d & L, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void InitWires();
 		%feature("autodoc", "1");
@@ -234,7 +234,7 @@ class BRepClass_FaceExplorer {
 		%feature("autodoc", "1");
 		void NextWire();
 		%feature("autodoc", "1");
-		Standard_Boolean RejectWire(const gp_Lin2d &L, const Standard_Real Par) const;
+		Standard_Boolean RejectWire(const gp_Lin2d L, const Standard_Real Par) const;
 		%feature("autodoc", "1");
 		void InitEdges();
 		%feature("autodoc", "1");
@@ -242,7 +242,7 @@ class BRepClass_FaceExplorer {
 		%feature("autodoc", "1");
 		void NextEdge();
 		%feature("autodoc", "1");
-		Standard_Boolean RejectEdge(const gp_Lin2d &L, const Standard_Real Par) const;
+		Standard_Boolean RejectEdge(const gp_Lin2d L, const Standard_Real Par) const;
 		%feature("autodoc", "1");
 		void CurrentEdge(BRepClass_Edge & E, TopAbs_Orientation & Or) const;
 
@@ -269,7 +269,7 @@ class BRepClass_FacePassiveClassifier {
 		%feature("autodoc", "1");
 		BRepClass_FacePassiveClassifier();
 		%feature("autodoc", "1");
-		void Reset(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol);
+		void Reset(const gp_Lin2d L, const Standard_Real P, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void Compare(const BRepClass_Edge &E, const TopAbs_Orientation Or);
 		%feature("autodoc", "1");

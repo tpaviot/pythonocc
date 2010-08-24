@@ -1305,7 +1305,7 @@ class IGESDimen_LeaderArrow : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESDimen_LeaderArrow();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real height, const Standard_Real width, const Standard_Real depth, const gp_XY &position, const Handle_TColgp_HArray1OfXY &segments);
+		void Init(const Standard_Real height, const Standard_Real width, const Standard_Real depth, const gp_XY position, const Handle_TColgp_HArray1OfXY &segments);
 		%feature("autodoc", "1");
 		void SetFormNumber(const Standard_Integer form);
 		%feature("autodoc", "1");
@@ -1785,7 +1785,7 @@ class IGESDimen_NewGeneralNote : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESDimen_NewGeneralNote();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real width, const Standard_Real height, const Standard_Integer justifyCode, const gp_XYZ &areaLoc, const Standard_Real areaRotationAngle, const gp_XYZ &baseLinePos, const Standard_Real normalInterlineSpace, const Handle_TColStd_HArray1OfInteger &charDisplays, const Handle_TColStd_HArray1OfReal &charWidths, const Handle_TColStd_HArray1OfReal &charHeights, const Handle_TColStd_HArray1OfReal &interCharSpc, const Handle_TColStd_HArray1OfReal &interLineSpc, const Handle_TColStd_HArray1OfInteger &fontStyles, const Handle_TColStd_HArray1OfReal &charAngles, const Handle_Interface_HArray1OfHAsciiString &controlCodeStrings, const Handle_TColStd_HArray1OfInteger &nbChars, const Handle_TColStd_HArray1OfReal &boxWidths, const Handle_TColStd_HArray1OfReal &boxHeights, const Handle_TColStd_HArray1OfInteger &charSetCodes, const Handle_IGESData_HArray1OfIGESEntity &charSetEntities, const Handle_TColStd_HArray1OfReal &slAngles, const Handle_TColStd_HArray1OfReal &rotAngles, const Handle_TColStd_HArray1OfInteger &mirrorFlags, const Handle_TColStd_HArray1OfInteger &rotateFlags, const Handle_TColgp_HArray1OfXYZ &startPoints, const Handle_Interface_HArray1OfHAsciiString &texts);
+		void Init(const Standard_Real width, const Standard_Real height, const Standard_Integer justifyCode, const gp_XYZ areaLoc, const Standard_Real areaRotationAngle, const gp_XYZ baseLinePos, const Standard_Real normalInterlineSpace, const Handle_TColStd_HArray1OfInteger &charDisplays, const Handle_TColStd_HArray1OfReal &charWidths, const Handle_TColStd_HArray1OfReal &charHeights, const Handle_TColStd_HArray1OfReal &interCharSpc, const Handle_TColStd_HArray1OfReal &interLineSpc, const Handle_TColStd_HArray1OfInteger &fontStyles, const Handle_TColStd_HArray1OfReal &charAngles, const Handle_Interface_HArray1OfHAsciiString &controlCodeStrings, const Handle_TColStd_HArray1OfInteger &nbChars, const Handle_TColStd_HArray1OfReal &boxWidths, const Handle_TColStd_HArray1OfReal &boxHeights, const Handle_TColStd_HArray1OfInteger &charSetCodes, const Handle_IGESData_HArray1OfIGESEntity &charSetEntities, const Handle_TColStd_HArray1OfReal &slAngles, const Handle_TColStd_HArray1OfReal &rotAngles, const Handle_TColStd_HArray1OfInteger &mirrorFlags, const Handle_TColStd_HArray1OfInteger &rotateFlags, const Handle_TColgp_HArray1OfXYZ &startPoints, const Handle_Interface_HArray1OfHAsciiString &texts);
 		%feature("autodoc", "1");
 		Standard_Real TextWidth() const;
 		%feature("autodoc", "1");
@@ -2046,7 +2046,7 @@ class IGESDimen_SectionedArea : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESDimen_SectionedArea();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &aCurve, const Standard_Integer aPattern, const gp_XYZ &aPoint, const Standard_Real aDistance, const Standard_Real anAngle, const Handle_IGESData_HArray1OfIGESEntity &someIslands);
+		void Init(const Handle_IGESData_IGESEntity &aCurve, const Standard_Integer aPattern, const gp_XYZ aPoint, const Standard_Real aDistance, const Standard_Real anAngle, const Handle_IGESData_HArray1OfIGESEntity &someIslands);
 		%feature("autodoc", "1");
 		void SetInverted(const Standard_Boolean mode);
 		%feature("autodoc", "1");
@@ -2142,7 +2142,7 @@ class IGESDimen_FlagNote : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESDimen_FlagNote();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ &leftCorner, const Standard_Real anAngle, const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_HArray1OfLeaderArrow &someLeaders);
+		void Init(const gp_XYZ leftCorner, const Standard_Real anAngle, const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_HArray1OfLeaderArrow &someLeaders);
 		%feature("autodoc", "1");
 		gp_Pnt LowerLeftCorner() const;
 		%feature("autodoc", "1");
@@ -2201,7 +2201,7 @@ class IGESDimen_DiameterDimension : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESDimen_DiameterDimension();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_LeaderArrow &aLeader, const Handle_IGESDimen_LeaderArrow &anotherLeader, const gp_XY &aCenter);
+		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_LeaderArrow &aLeader, const Handle_IGESDimen_LeaderArrow &anotherLeader, const gp_XY aCenter);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralNote Note() const;
 		%feature("autodoc", "1");
@@ -3042,7 +3042,7 @@ class IGESDimen_AngularDimension : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESDimen_AngularDimension();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_WitnessLine &aLine, const Handle_IGESDimen_WitnessLine &anotherLine, const gp_XY &aVertex, const Standard_Real aRadius, const Handle_IGESDimen_LeaderArrow &aLeader, const Handle_IGESDimen_LeaderArrow &anotherLeader);
+		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_WitnessLine &aLine, const Handle_IGESDimen_WitnessLine &anotherLine, const gp_XY aVertex, const Standard_Real aRadius, const Handle_IGESDimen_LeaderArrow &aLeader, const Handle_IGESDimen_LeaderArrow &anotherLeader);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralNote Note() const;
 		%feature("autodoc", "1");
@@ -3226,7 +3226,7 @@ class IGESDimen_BasicDimension : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESDimen_BasicDimension();
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbPropVal, const gp_XY &lowerLeft, const gp_XY &lowerRight, const gp_XY &upperRight, const gp_XY &upperLeft);
+		void Init(const Standard_Integer nbPropVal, const gp_XY lowerLeft, const gp_XY lowerRight, const gp_XY upperRight, const gp_XY upperLeft);
 		%feature("autodoc", "1");
 		Standard_Integer NbPropertyValues() const;
 		%feature("autodoc", "1");
@@ -3566,7 +3566,7 @@ class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESDimen_RadiusDimension();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_LeaderArrow &anArrow, const gp_XY &arcCenter, const Handle_IGESDimen_LeaderArrow &anotherArrow);
+		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_LeaderArrow &anArrow, const gp_XY arcCenter, const Handle_IGESDimen_LeaderArrow &anotherArrow);
 		%feature("autodoc", "1");
 		void InitForm(const Standard_Integer form);
 		%feature("autodoc", "1");

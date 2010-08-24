@@ -187,7 +187,7 @@ def __del__(self):
 class PTopLoc_Datum3D : public Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		PTopLoc_Datum3D(const gp_Trsf &T);
+		PTopLoc_Datum3D(const gp_Trsf T);
 		%feature("autodoc", "1");
 		gp_Trsf Transformation() const;
 		%feature("autodoc", "1");
@@ -195,7 +195,7 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 		%feature("autodoc", "1");
 		PTopLoc_Datum3D(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Trsf & _CSFDB_GetPTopLoc_Datum3DmyTrsf() const;
+		const gp_Trsf  _CSFDB_GetPTopLoc_Datum3DmyTrsf() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

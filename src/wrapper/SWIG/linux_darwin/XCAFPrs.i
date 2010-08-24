@@ -256,19 +256,19 @@ class XCAFPrs_DataMapOfStyleShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const XCAFPrs_Style &K, const TopoDS_Shape &I);
+		Standard_Boolean Bind(const XCAFPrs_Style &K, const TopoDS_Shape I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const XCAFPrs_Style &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const XCAFPrs_Style &K);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Find(const XCAFPrs_Style &K) const;
+		const TopoDS_Shape  Find(const XCAFPrs_Style &K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const XCAFPrs_Style &K) const;
+		const TopoDS_Shape  operator()(const XCAFPrs_Style &K) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFind(const XCAFPrs_Style &K);
+		TopoDS_Shape  ChangeFind(const XCAFPrs_Style &K);
 		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const XCAFPrs_Style &K);
+		TopoDS_Shape  operator()(const XCAFPrs_Style &K);
 
 };
 %feature("shadow") XCAFPrs_DataMapOfStyleShape::~XCAFPrs_DataMapOfStyleShape %{
@@ -367,19 +367,19 @@ class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const XCAFPrs_Style &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const XCAFPrs_Style &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const XCAFPrs_Style & Find(const TopoDS_Shape &K) const;
+		const XCAFPrs_Style & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const XCAFPrs_Style & operator()(const TopoDS_Shape &K) const;
+		const XCAFPrs_Style & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		XCAFPrs_Style & ChangeFind(const TopoDS_Shape &K);
+		XCAFPrs_Style & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		XCAFPrs_Style & operator()(const TopoDS_Shape &K);
+		XCAFPrs_Style & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") XCAFPrs_DataMapOfShapeStyle::~XCAFPrs_DataMapOfShapeStyle %{
@@ -406,7 +406,7 @@ class XCAFPrs {
 		%feature("autodoc", "1");
 		static		void CollectStyleSettings(const TDF_Label &L, const TopLoc_Location &loc, XCAFPrs_DataMapOfShapeStyle & settings);
 		%feature("autodoc", "1");
-		static		Standard_Boolean DispatchStyles(const TopoDS_Shape &shape, const XCAFPrs_DataMapOfShapeStyle &settings, XCAFPrs_DataMapOfStyleShape & items, const XCAFPrs_Style &DefStyle, const Standard_Boolean force=1, const TopAbs_ShapeEnum context=TopAbs_SHAPE);
+		static		Standard_Boolean DispatchStyles(const TopoDS_Shape shape, const XCAFPrs_DataMapOfShapeStyle &settings, XCAFPrs_DataMapOfStyleShape & items, const XCAFPrs_Style &DefStyle, const Standard_Boolean force=1, const TopAbs_ShapeEnum context=TopAbs_SHAPE);
 		%feature("autodoc", "1");
 		static		void SetViewNameMode(const Standard_Boolean viewNameMode);
 		%feature("autodoc", "1");
@@ -517,11 +517,11 @@ def __del__(self):
 class XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapNodeOfDataMapOfStyleShape(const XCAFPrs_Style &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
+		XCAFPrs_DataMapNodeOfDataMapOfStyleShape(const XCAFPrs_Style &K, const TopoDS_Shape I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		XCAFPrs_Style & Key() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
+		TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -652,7 +652,7 @@ class XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		void Initialize(const XCAFPrs_DataMapOfShapeStyle &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const XCAFPrs_Style & Value() const;
 
@@ -685,7 +685,7 @@ class XCAFPrs_DataMapIteratorOfDataMapOfStyleShape : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		const XCAFPrs_Style & Key() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
+		const TopoDS_Shape  Value() const;
 
 };
 %feature("shadow") XCAFPrs_DataMapIteratorOfDataMapOfStyleShape::~XCAFPrs_DataMapIteratorOfDataMapOfStyleShape %{
@@ -708,9 +708,9 @@ def __del__(self):
 class XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapNodeOfDataMapOfShapeStyle(const TopoDS_Shape &K, const XCAFPrs_Style &I, const TCollection_MapNodePtr &n);
+		XCAFPrs_DataMapNodeOfDataMapOfShapeStyle(const TopoDS_Shape K, const XCAFPrs_Style &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		XCAFPrs_Style & Value() const;
 		%feature("autodoc", "1");

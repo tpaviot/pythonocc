@@ -177,17 +177,17 @@ class MeshAlgo_CircleTool {
 		%feature("autodoc", "1");
 		void SetCellSize(const Standard_Real theXSize, const Standard_Real theYSize);
 		%feature("autodoc", "1");
-		void SetMinMaxSize(const gp_XY &theMin, const gp_XY &theMax);
+		void SetMinMaxSize(const gp_XY theMin, const gp_XY theMax);
 		%feature("autodoc", "1");
-		void Add(const gp_Circ2d &theCirc, const Standard_Integer theIndex);
+		void Add(const gp_Circ2d theCirc, const Standard_Integer theIndex);
 		%feature("autodoc", "1");
-		Standard_Boolean Add(const gp_XY &p1, const gp_XY &p2, const gp_XY &p3, const Standard_Integer theIndex);
+		Standard_Boolean Add(const gp_XY p1, const gp_XY p2, const gp_XY p3, const Standard_Integer theIndex);
 		%feature("autodoc", "1");
 		void MocAdd(const Standard_Integer theIndex);
 		%feature("autodoc", "1");
 		void Delete(const Standard_Integer theIndex);
 		%feature("autodoc", "1");
-		TColStd_ListOfInteger & Select(const gp_XY &thePnt);
+		TColStd_ListOfInteger & Select(const gp_XY thePnt);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetGetNbPoints() {
@@ -255,13 +255,13 @@ class MeshAlgo_Circ {
 		%feature("autodoc", "1");
 		MeshAlgo_Circ();
 		%feature("autodoc", "1");
-		MeshAlgo_Circ(const gp_XY &loc, const Standard_Real rad);
+		MeshAlgo_Circ(const gp_XY loc, const Standard_Real rad);
 		%feature("autodoc", "1");
-		void SetLocation(const gp_XY &loc);
+		void SetLocation(const gp_XY loc);
 		%feature("autodoc", "1");
 		void SetRadius(const Standard_Real rad);
 		%feature("autodoc", "1");
-		const gp_XY & Location() const;
+		const gp_XY  Location() const;
 		%feature("autodoc", "1");
 		const Standard_Real & Radius() const;
 

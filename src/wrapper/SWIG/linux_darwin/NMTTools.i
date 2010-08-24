@@ -352,9 +352,9 @@ class NMTTools_PaveFiller {
 		%feature("autodoc", "1");
 		NMTTools_PaveFiller();
 		%feature("autodoc", "1");
-		void SetCompositeShape(const TopoDS_Shape &aS);
+		void SetCompositeShape(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & CompositeShape() const;
+		const TopoDS_Shape  CompositeShape() const;
 		%feature("autodoc", "1");
 		NMTDS_PShapesDataStructure DS();
 		%feature("autodoc", "1");
@@ -439,9 +439,9 @@ class NMTTools_PaveFiller {
 		%feature("autodoc", "1");
 		void PutBoundPaveOnCurve(BOPTools_Curve & aBC, BOPTools_SSInterference & aFF);
 		%feature("autodoc", "1");
-		void PutBoundPaveOnCurve(const gp_Pnt &aP, const Standard_Real aT, BOPTools_Curve & aBC, BOPTools_SSInterference & aFF);
+		void PutBoundPaveOnCurve(const gp_Pnt aP, const Standard_Real aT, BOPTools_Curve & aBC, BOPTools_SSInterference & aFF);
 		%feature("autodoc", "1");
-		Standard_Boolean FindPave(const gp_Pnt &aP, const Standard_Real aTpV, const BOPTools_PaveSet &aPS, BOPTools_Pave & aPV);
+		Standard_Boolean FindPave(const gp_Pnt aP, const Standard_Real aTpV, const BOPTools_PaveSet &aPS, BOPTools_Pave & aPV);
 		%feature("autodoc", "1");
 		Standard_Integer CheckIntermediatePoint(const BOPTools_PaveBlock &aPB, const BOPTools_PaveBlock &aPBR, const Standard_Real aTol);
 		%feature("autodoc", "1");
@@ -455,11 +455,11 @@ class NMTTools_PaveFiller {
 		%feature("autodoc", "1");
 		Standard_Boolean CheckCoincidence(const BOPTools_PaveBlock &aPB, const BOPTools_ListOfPaveBlock &aLPB);
 		%feature("autodoc", "1");
-		Standard_Integer CheckIntermediatePoint(const BOPTools_PaveBlock &aPB, const TopoDS_Edge &aE, const Standard_Real aTol);
+		Standard_Integer CheckIntermediatePoint(const BOPTools_PaveBlock &aPB, const TopoDS_Edge aE, const Standard_Real aTol);
 		%feature("autodoc", "1");
 		void SharedEdges(const Standard_Integer nF1, const Standard_Integer nF2, TColStd_ListOfInteger & aLNE, TopTools_ListOfShape & aLSE);
 		%feature("autodoc", "1");
-		void FuseVertices(const TopoDS_Shape &aC, TopTools_DataMapOfShapeShape & aDMVV) const;
+		void FuseVertices(const TopoDS_Shape aC, TopTools_DataMapOfShapeShape & aDMVV) const;
 
 };
 %feature("shadow") NMTTools_PaveFiller::~NMTTools_PaveFiller %{
@@ -492,15 +492,15 @@ class NMTTools_IndexedDataMapOfShapeIndexedMapOfShape : public TCollection_Basic
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const TopTools_IndexedMapOfShape &I);
+		Standard_Integer Add(const TopoDS_Shape K, const TopTools_IndexedMapOfShape &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const TopTools_IndexedMapOfShape &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const TopTools_IndexedMapOfShape &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const TopTools_IndexedMapOfShape & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -510,11 +510,11 @@ class NMTTools_IndexedDataMapOfShapeIndexedMapOfShape : public TCollection_Basic
 		%feature("autodoc", "1");
 		TopTools_IndexedMapOfShape & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfShape & FindFromKey(const TopoDS_Shape &K) const;
+		const TopTools_IndexedMapOfShape & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & ChangeFromKey(const TopoDS_Shape &K);
+		TopTools_IndexedMapOfShape & ChangeFromKey(const TopoDS_Shape K);
 
 };
 %feature("shadow") NMTTools_IndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapOfShapeIndexedMapOfShape %{
@@ -680,17 +680,17 @@ class NMTTools_Tools {
 		%feature("autodoc", "1");
 		static		void FindChains(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &aMCV, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsSplitInOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF, IntTools_Context & aCtx);
+		static		Standard_Boolean IsSplitInOnFace(const TopoDS_Edge aE, const TopoDS_Face aF, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
-		static		Standard_Boolean AreFacesSameDomain(const TopoDS_Face &aF1, const TopoDS_Face &aF2, IntTools_Context & aCtx);
+		static		Standard_Boolean AreFacesSameDomain(const TopoDS_Face aF1, const TopoDS_Face aF2, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
 		static		void FindChains(const NMTTools_ListOfCoupleOfShape &aLCS, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM);
 		%feature("autodoc", "1");
 		static		void FindChains(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &aM1, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM2);
 		%feature("autodoc", "1");
-		static		void MakePCurve(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Handle_Geom2d_Curve &aC2D);
+		static		void MakePCurve(const TopoDS_Edge aE, const TopoDS_Face aF, const Handle_Geom2d_Curve &aC2D);
 		%feature("autodoc", "1");
-		static		void UpdateEdge(const TopoDS_Edge &aE, const Standard_Real aTol);
+		static		void UpdateEdge(const TopoDS_Edge aE, const Standard_Real aTol);
 
 };
 %feature("shadow") NMTTools_Tools::~NMTTools_Tools %{
@@ -1210,9 +1210,9 @@ def __del__(self):
 class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock(const TopoDS_Shape &K1, const Standard_Integer K2, const BOPTools_PaveBlock &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock(const TopoDS_Shape K1, const Standard_Integer K2, const BOPTools_PaveBlock &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -1273,15 +1273,15 @@ class NMTTools_IndexedDataMapOfShapePaveBlock : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const BOPTools_PaveBlock &I);
+		Standard_Integer Add(const TopoDS_Shape K, const BOPTools_PaveBlock &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const BOPTools_PaveBlock &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BOPTools_PaveBlock &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const BOPTools_PaveBlock & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -1291,11 +1291,11 @@ class NMTTools_IndexedDataMapOfShapePaveBlock : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BOPTools_PaveBlock & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & FindFromKey(const TopoDS_Shape &K) const;
+		const BOPTools_PaveBlock & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		BOPTools_PaveBlock & ChangeFromKey(const TopoDS_Shape &K);
+		BOPTools_PaveBlock & ChangeFromKey(const TopoDS_Shape K);
 
 };
 %feature("shadow") NMTTools_IndexedDataMapOfShapePaveBlock::~NMTTools_IndexedDataMapOfShapePaveBlock %{
@@ -1349,9 +1349,9 @@ def __del__(self):
 class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const TopoDS_Shape &K1, const Standard_Integer K2, const TopTools_IndexedMapOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const TopoDS_Shape K1, const Standard_Integer K2, const TopTools_IndexedMapOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -1510,13 +1510,13 @@ class NMTTools_CoupleOfShape {
 		%feature("autodoc", "1");
 		NMTTools_CoupleOfShape();
 		%feature("autodoc", "1");
-		void SetShape1(const TopoDS_Shape &aS);
+		void SetShape1(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		void SetShape2(const TopoDS_Shape &aS);
+		void SetShape2(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape1() const;
+		const TopoDS_Shape  Shape1() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape2() const;
+		const TopoDS_Shape  Shape2() const;
 
 };
 %feature("shadow") NMTTools_CoupleOfShape::~NMTTools_CoupleOfShape %{

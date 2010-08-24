@@ -229,11 +229,11 @@ class XmlObjMgt_GP {
 		%feature("autodoc", "1");
 		XmlObjMgt_GP();
 		%feature("autodoc", "1");
-		static		XmlObjMgt_DOMString Translate(const gp_Trsf &aTrsf);
+		static		XmlObjMgt_DOMString Translate(const gp_Trsf aTrsf);
 		%feature("autodoc", "1");
-		static		XmlObjMgt_DOMString Translate(const gp_Mat &aMat);
+		static		XmlObjMgt_DOMString Translate(const gp_Mat aMat);
 		%feature("autodoc", "1");
-		static		XmlObjMgt_DOMString Translate(const gp_XYZ &anXYZ);
+		static		XmlObjMgt_DOMString Translate(const gp_XYZ anXYZ);
 		%feature("autodoc", "1");
 		static		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_Trsf & T);
 		%feature("autodoc", "1");

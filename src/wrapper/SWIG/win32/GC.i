@@ -83,11 +83,11 @@ def __del__(self):
 class GC_MakeEllipse : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeEllipse(const gp_Elips &E);
+		GC_MakeEllipse(const gp_Elips E);
 		%feature("autodoc", "1");
-		GC_MakeEllipse(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		GC_MakeEllipse(const gp_Ax2 A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 		%feature("autodoc", "1");
-		GC_MakeEllipse(const gp_Pnt &S1, const gp_Pnt &S2, const gp_Pnt &Center);
+		GC_MakeEllipse(const gp_Pnt S1, const gp_Pnt S2, const gp_Pnt Center);
 		%feature("autodoc", "1");
 		const Handle_Geom_Ellipse & Value() const;
 		%feature("autodoc", "1");
@@ -114,21 +114,21 @@ def __del__(self):
 class GC_MakeConicalSurface : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Ax2 &A2, const Standard_Real Ang, const Standard_Real Radius);
+		GC_MakeConicalSurface(const gp_Ax2 A2, const Standard_Real Ang, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Cone &C);
+		GC_MakeConicalSurface(const gp_Cone C);
 		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Cone &Cone, const gp_Pnt &Point);
+		GC_MakeConicalSurface(const gp_Cone Cone, const gp_Pnt Point);
 		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Cone &Cone, const Standard_Real Dist);
+		GC_MakeConicalSurface(const gp_Cone Cone, const Standard_Real Dist);
 		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &P4);
+		GC_MakeConicalSurface(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt P4);
 		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Ax1 &Axis, const gp_Pnt &P1, const gp_Pnt &P2);
+		GC_MakeConicalSurface(const gp_Ax1 Axis, const gp_Pnt P1, const gp_Pnt P2);
 		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Lin &Axis, const gp_Pnt &P1, const gp_Pnt &P2);
+		GC_MakeConicalSurface(const gp_Lin Axis, const gp_Pnt P1, const gp_Pnt P2);
 		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Real R1, const Standard_Real R2);
+		GC_MakeConicalSurface(const gp_Pnt P1, const gp_Pnt P2, const Standard_Real R1, const Standard_Real R2);
 		%feature("autodoc", "1");
 		const Handle_Geom_ConicalSurface & Value() const;
 		%feature("autodoc", "1");
@@ -155,15 +155,15 @@ def __del__(self):
 class GC_MakeArcOfCircle : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeArcOfCircle(const gp_Circ &Circ, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
+		GC_MakeArcOfCircle(const gp_Circ Circ, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeArcOfCircle(const gp_Circ &Circ, const gp_Pnt &P, const Standard_Real Alpha, const Standard_Boolean Sense);
+		GC_MakeArcOfCircle(const gp_Circ Circ, const gp_Pnt P, const Standard_Real Alpha, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeArcOfCircle(const gp_Circ &Circ, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Boolean Sense);
+		GC_MakeArcOfCircle(const gp_Circ Circ, const gp_Pnt P1, const gp_Pnt P2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeArcOfCircle(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
+		GC_MakeArcOfCircle(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
 		%feature("autodoc", "1");
-		GC_MakeArcOfCircle(const gp_Pnt &P1, const gp_Vec &V, const gp_Pnt &P2);
+		GC_MakeArcOfCircle(const gp_Pnt P1, const gp_Vec V, const gp_Pnt P2);
 		%feature("autodoc", "1");
 		const Handle_Geom_TrimmedCurve & Value() const;
 		%feature("autodoc", "1");
@@ -190,15 +190,15 @@ def __del__(self):
 class GC_MakeLine : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeLine(const gp_Ax1 &A1);
+		GC_MakeLine(const gp_Ax1 A1);
 		%feature("autodoc", "1");
-		GC_MakeLine(const gp_Lin &L);
+		GC_MakeLine(const gp_Lin L);
 		%feature("autodoc", "1");
-		GC_MakeLine(const gp_Pnt &P, const gp_Dir &V);
+		GC_MakeLine(const gp_Pnt P, const gp_Dir V);
 		%feature("autodoc", "1");
-		GC_MakeLine(const gp_Lin &Lin, const gp_Pnt &Point);
+		GC_MakeLine(const gp_Lin Lin, const gp_Pnt Point);
 		%feature("autodoc", "1");
-		GC_MakeLine(const gp_Pnt &P1, const gp_Pnt &P2);
+		GC_MakeLine(const gp_Pnt P1, const gp_Pnt P2);
 		%feature("autodoc", "1");
 		const Handle_Geom_Line & Value() const;
 		%feature("autodoc", "1");
@@ -225,9 +225,9 @@ def __del__(self):
 class GC_MakeTrimmedCone : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCone(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &P4);
+		GC_MakeTrimmedCone(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt P4);
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCone(const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Real R1, const Standard_Real R2);
+		GC_MakeTrimmedCone(const gp_Pnt P1, const gp_Pnt P2, const Standard_Real R1, const Standard_Real R2);
 		%feature("autodoc", "1");
 		const Handle_Geom_RectangularTrimmedSurface & Value() const;
 		%feature("autodoc", "1");
@@ -254,7 +254,7 @@ def __del__(self):
 class GC_MakeScale {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeScale(const gp_Pnt &Point, const Standard_Real Scale);
+		GC_MakeScale(const gp_Pnt Point, const Standard_Real Scale);
 		%feature("autodoc", "1");
 		const Handle_Geom_Transformation & Value() const;
 		%feature("autodoc", "1");
@@ -281,21 +281,21 @@ def __del__(self):
 class GC_MakeCircle : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeCircle(const gp_Circ &C);
+		GC_MakeCircle(const gp_Circ C);
 		%feature("autodoc", "1");
-		GC_MakeCircle(const gp_Ax2 &A2, const Standard_Real Radius);
+		GC_MakeCircle(const gp_Ax2 A2, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		GC_MakeCircle(const gp_Circ &Circ, const Standard_Real Dist);
+		GC_MakeCircle(const gp_Circ Circ, const Standard_Real Dist);
 		%feature("autodoc", "1");
-		GC_MakeCircle(const gp_Circ &Circ, const gp_Pnt &Point);
+		GC_MakeCircle(const gp_Circ Circ, const gp_Pnt Point);
 		%feature("autodoc", "1");
-		GC_MakeCircle(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
+		GC_MakeCircle(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
 		%feature("autodoc", "1");
-		GC_MakeCircle(const gp_Pnt &Center, const gp_Dir &Norm, const Standard_Real Radius);
+		GC_MakeCircle(const gp_Pnt Center, const gp_Dir Norm, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		GC_MakeCircle(const gp_Pnt &Center, const gp_Pnt &PtAxis, const Standard_Real Radius);
+		GC_MakeCircle(const gp_Pnt Center, const gp_Pnt PtAxis, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		GC_MakeCircle(const gp_Ax1 &Axis, const Standard_Real Radius);
+		GC_MakeCircle(const gp_Ax1 Axis, const Standard_Real Radius);
 		%feature("autodoc", "1");
 		const Handle_Geom_Circle & Value() const;
 		%feature("autodoc", "1");
@@ -322,11 +322,11 @@ def __del__(self):
 class GC_MakeArcOfHyperbola : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeArcOfHyperbola(const gp_Hypr &Hypr, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
+		GC_MakeArcOfHyperbola(const gp_Hypr Hypr, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeArcOfHyperbola(const gp_Hypr &Hypr, const gp_Pnt &P, const Standard_Real Alpha, const Standard_Boolean Sense);
+		GC_MakeArcOfHyperbola(const gp_Hypr Hypr, const gp_Pnt P, const Standard_Real Alpha, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeArcOfHyperbola(const gp_Hypr &Hypr, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Boolean Sense);
+		GC_MakeArcOfHyperbola(const gp_Hypr Hypr, const gp_Pnt P1, const gp_Pnt P2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
 		const Handle_Geom_TrimmedCurve & Value() const;
 		%feature("autodoc", "1");
@@ -353,17 +353,17 @@ def __del__(self):
 class GC_MakeMirror {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Pnt &Point);
+		GC_MakeMirror(const gp_Pnt Point);
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Ax1 &Axis);
+		GC_MakeMirror(const gp_Ax1 Axis);
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Lin &Line);
+		GC_MakeMirror(const gp_Lin Line);
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Pnt &Point, const gp_Dir &Direc);
+		GC_MakeMirror(const gp_Pnt Point, const gp_Dir Direc);
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Pln &Plane);
+		GC_MakeMirror(const gp_Pln Plane);
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Ax2 &Plane);
+		GC_MakeMirror(const gp_Ax2 Plane);
 		%feature("autodoc", "1");
 		const Handle_Geom_Transformation & Value() const;
 		%feature("autodoc", "1");
@@ -390,9 +390,9 @@ def __del__(self):
 class GC_MakeTranslation {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeTranslation(const gp_Vec &Vect);
+		GC_MakeTranslation(const gp_Vec Vect);
 		%feature("autodoc", "1");
-		GC_MakeTranslation(const gp_Pnt &Point1, const gp_Pnt &Point2);
+		GC_MakeTranslation(const gp_Pnt Point1, const gp_Pnt Point2);
 		%feature("autodoc", "1");
 		const Handle_Geom_Transformation & Value() const;
 		%feature("autodoc", "1");
@@ -419,11 +419,11 @@ def __del__(self):
 class GC_MakeRotation {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeRotation(const gp_Lin &Line, const Standard_Real Angle);
+		GC_MakeRotation(const gp_Lin Line, const Standard_Real Angle);
 		%feature("autodoc", "1");
-		GC_MakeRotation(const gp_Ax1 &Axis, const Standard_Real Angle);
+		GC_MakeRotation(const gp_Ax1 Axis, const Standard_Real Angle);
 		%feature("autodoc", "1");
-		GC_MakeRotation(const gp_Pnt &Point, const gp_Dir &Direc, const Standard_Real Angle);
+		GC_MakeRotation(const gp_Pnt Point, const gp_Dir Direc, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		const Handle_Geom_Transformation & Value() const;
 		%feature("autodoc", "1");
@@ -450,15 +450,15 @@ def __del__(self):
 class GC_MakeTrimmedCylinder : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCylinder(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
+		GC_MakeTrimmedCylinder(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCylinder(const gp_Circ &Circ, const Standard_Real Height);
+		GC_MakeTrimmedCylinder(const gp_Circ Circ, const Standard_Real Height);
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCylinder(const gp_Ax1 &A1, const Standard_Real Radius, const Standard_Real Height);
+		GC_MakeTrimmedCylinder(const gp_Ax1 A1, const Standard_Real Radius, const Standard_Real Height);
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCylinder(const gp_Cylinder &Cyl, const gp_Pnt &P, const Standard_Real Height);
+		GC_MakeTrimmedCylinder(const gp_Cylinder Cyl, const gp_Pnt P, const Standard_Real Height);
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCylinder(const gp_Cylinder &Cyl, const gp_Pnt &P1, const gp_Pnt &P2);
+		GC_MakeTrimmedCylinder(const gp_Cylinder Cyl, const gp_Pnt P1, const gp_Pnt P2);
 		%feature("autodoc", "1");
 		const Handle_Geom_RectangularTrimmedSurface & Value() const;
 		%feature("autodoc", "1");
@@ -485,19 +485,19 @@ def __del__(self):
 class GC_MakeCylindricalSurface : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Ax2 &A2, const Standard_Real Radius);
+		GC_MakeCylindricalSurface(const gp_Ax2 A2, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder &C);
+		GC_MakeCylindricalSurface(const gp_Cylinder C);
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder &Cyl, const gp_Pnt &Point);
+		GC_MakeCylindricalSurface(const gp_Cylinder Cyl, const gp_Pnt Point);
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder &Cyl, const Standard_Real Dist);
+		GC_MakeCylindricalSurface(const gp_Cylinder Cyl, const Standard_Real Dist);
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
+		GC_MakeCylindricalSurface(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Ax1 &Axis, const Standard_Real Radius);
+		GC_MakeCylindricalSurface(const gp_Ax1 Axis, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Circ &Circ);
+		GC_MakeCylindricalSurface(const gp_Circ Circ);
 		%feature("autodoc", "1");
 		const Handle_Geom_CylindricalSurface & Value() const;
 		%feature("autodoc", "1");
@@ -524,11 +524,11 @@ def __del__(self):
 class GC_MakeArcOfParabola : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeArcOfParabola(const gp_Parab &Parab, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
+		GC_MakeArcOfParabola(const gp_Parab Parab, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeArcOfParabola(const gp_Parab &Parab, const gp_Pnt &P, const Standard_Real Alpha, const Standard_Boolean Sense);
+		GC_MakeArcOfParabola(const gp_Parab Parab, const gp_Pnt P, const Standard_Real Alpha, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeArcOfParabola(const gp_Parab &Parab, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Boolean Sense);
+		GC_MakeArcOfParabola(const gp_Parab Parab, const gp_Pnt P1, const gp_Pnt P2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
 		const Handle_Geom_TrimmedCurve & Value() const;
 		%feature("autodoc", "1");
@@ -555,11 +555,11 @@ def __del__(self):
 class GC_MakeArcOfEllipse : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeArcOfEllipse(const gp_Elips &Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
+		GC_MakeArcOfEllipse(const gp_Elips Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeArcOfEllipse(const gp_Elips &Elips, const gp_Pnt &P, const Standard_Real Alpha, const Standard_Boolean Sense);
+		GC_MakeArcOfEllipse(const gp_Elips Elips, const gp_Pnt P, const Standard_Real Alpha, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeArcOfEllipse(const gp_Elips &Elips, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Boolean Sense);
+		GC_MakeArcOfEllipse(const gp_Elips Elips, const gp_Pnt P1, const gp_Pnt P2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
 		const Handle_Geom_TrimmedCurve & Value() const;
 		%feature("autodoc", "1");
@@ -586,11 +586,11 @@ def __del__(self):
 class GC_MakeHyperbola : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeHyperbola(const gp_Hypr &H);
+		GC_MakeHyperbola(const gp_Hypr H);
 		%feature("autodoc", "1");
-		GC_MakeHyperbola(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		GC_MakeHyperbola(const gp_Ax2 A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 		%feature("autodoc", "1");
-		GC_MakeHyperbola(const gp_Pnt &S1, const gp_Pnt &S2, const gp_Pnt &Center);
+		GC_MakeHyperbola(const gp_Pnt S1, const gp_Pnt S2, const gp_Pnt Center);
 		%feature("autodoc", "1");
 		const Handle_Geom_Hyperbola & Value() const;
 		%feature("autodoc", "1");
@@ -617,21 +617,21 @@ def __del__(self):
 class GC_MakePlane : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Ax2 &A2);
+		GC_MakePlane(const gp_Ax2 A2);
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Pln &Pl);
+		GC_MakePlane(const gp_Pln Pl);
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Pnt &P, const gp_Dir &V);
+		GC_MakePlane(const gp_Pnt P, const gp_Dir V);
 		%feature("autodoc", "1");
 		GC_MakePlane(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Pln &Pln, const gp_Pnt &Point);
+		GC_MakePlane(const gp_Pln Pln, const gp_Pnt Point);
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Pln &Pln, const Standard_Real Dist);
+		GC_MakePlane(const gp_Pln Pln, const Standard_Real Dist);
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
+		GC_MakePlane(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Ax1 &Axis);
+		GC_MakePlane(const gp_Ax1 Axis);
 		%feature("autodoc", "1");
 		const Handle_Geom_Plane & Value() const;
 		%feature("autodoc", "1");
@@ -658,13 +658,13 @@ def __del__(self):
 class GC_MakeSegment : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Pnt &P1, const gp_Pnt &P2);
+		GC_MakeSegment(const gp_Pnt P1, const gp_Pnt P2);
 		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Lin &Line, const Standard_Real U1, const Standard_Real U2);
+		GC_MakeSegment(const gp_Lin Line, const Standard_Real U1, const Standard_Real U2);
 		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Lin &Line, const gp_Pnt &Point, const Standard_Real Ulast);
+		GC_MakeSegment(const gp_Lin Line, const gp_Pnt Point, const Standard_Real Ulast);
 		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Lin &Line, const gp_Pnt &P1, const gp_Pnt &P2);
+		GC_MakeSegment(const gp_Lin Line, const gp_Pnt P1, const gp_Pnt P2);
 		%feature("autodoc", "1");
 		const Handle_Geom_TrimmedCurve & Value() const;
 		%feature("autodoc", "1");

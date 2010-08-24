@@ -133,19 +133,19 @@ class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 		%feature("autodoc", "1");
 		TopoDSToStep_WireframeBuilder();
 		%feature("autodoc", "1");
-		TopoDSToStep_WireframeBuilder(const TopoDS_Shape &S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_WireframeBuilder(const TopoDS_Shape S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		void Init(const TopoDS_Shape S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		TopoDSToStep_BuilderError Error() const;
 		%feature("autodoc", "1");
 		const Handle_TColStd_HSequenceOfTransient & Value() const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetTrimmedCurveFromEdge(const TopoDS_Edge &E, const TopoDS_Face &F, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
+		Standard_Boolean GetTrimmedCurveFromEdge(const TopoDS_Edge E, const TopoDS_Face F, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetTrimmedCurveFromFace(const TopoDS_Face &F, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
+		Standard_Boolean GetTrimmedCurveFromFace(const TopoDS_Face F, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetTrimmedCurveFromShape(const TopoDS_Shape &S, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
+		Standard_Boolean GetTrimmedCurveFromShape(const TopoDS_Shape S, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
 
 };
 %feature("shadow") TopoDSToStep_WireframeBuilder::~TopoDSToStep_WireframeBuilder %{
@@ -170,9 +170,9 @@ class TopoDSToStep_MakeStepVertex : public TopoDSToStep_Root {
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeStepVertex();
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepVertex(const TopoDS_Vertex &V, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeStepVertex(const TopoDS_Vertex V, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Vertex &V, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		void Init(const TopoDS_Vertex V, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
 		%feature("autodoc", "1");
@@ -199,9 +199,9 @@ def __del__(self):
 class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeFacetedBrep(const TopoDS_Shell &S, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeFacetedBrep(const TopoDS_Shell S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeFacetedBrep(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeFacetedBrep(const TopoDS_Solid S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_FacetedBrep & Value() const;
 
@@ -228,9 +228,9 @@ class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeStepWire();
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepWire(const TopoDS_Wire &W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeStepWire(const TopoDS_Wire W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		void Init(const TopoDS_Wire W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
 		%feature("autodoc", "1");
@@ -257,7 +257,7 @@ def __del__(self):
 class TopoDSToStep_MakeFacetedBrepAndBrepWithVoids : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeFacetedBrepAndBrepWithVoids(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeFacetedBrepAndBrepWithVoids(const TopoDS_Solid S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_FacetedBrepAndBrepWithVoids & Value() const;
 
@@ -282,11 +282,11 @@ def __del__(self):
 class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Face &F, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Face F, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Shell &S, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Shell S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Solid S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_ShellBasedSurfaceModel & Value() const;
 
@@ -317,33 +317,33 @@ class TopoDSToStep_Tool {
 		%feature("autodoc", "1");
 		void Init(const MoniTool_DataMapOfShapeTransient &M, const Standard_Boolean FacetedContext);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &S);
+		Standard_Boolean IsBound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Bind(const TopoDS_Shape &S, const Handle_StepShape_TopologicalRepresentationItem &T);
+		void Bind(const TopoDS_Shape S, const Handle_StepShape_TopologicalRepresentationItem &T);
 		%feature("autodoc", "1");
-		Handle_StepShape_TopologicalRepresentationItem Find(const TopoDS_Shape &S);
+		Handle_StepShape_TopologicalRepresentationItem Find(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Standard_Boolean Faceted() const;
 		%feature("autodoc", "1");
-		void SetCurrentShell(const TopoDS_Shell &S);
+		void SetCurrentShell(const TopoDS_Shell S);
 		%feature("autodoc", "1");
-		const TopoDS_Shell & CurrentShell() const;
+		const TopoDS_Shell  CurrentShell() const;
 		%feature("autodoc", "1");
-		void SetCurrentFace(const TopoDS_Face &F);
+		void SetCurrentFace(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		const TopoDS_Face & CurrentFace() const;
+		const TopoDS_Face  CurrentFace() const;
 		%feature("autodoc", "1");
-		void SetCurrentWire(const TopoDS_Wire &W);
+		void SetCurrentWire(const TopoDS_Wire W);
 		%feature("autodoc", "1");
-		const TopoDS_Wire & CurrentWire() const;
+		const TopoDS_Wire  CurrentWire() const;
 		%feature("autodoc", "1");
-		void SetCurrentEdge(const TopoDS_Edge &E);
+		void SetCurrentEdge(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		const TopoDS_Edge & CurrentEdge() const;
+		const TopoDS_Edge  CurrentEdge() const;
 		%feature("autodoc", "1");
-		void SetCurrentVertex(const TopoDS_Vertex &V);
+		void SetCurrentVertex(const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & CurrentVertex() const;
+		const TopoDS_Vertex  CurrentVertex() const;
 		%feature("autodoc", "1");
 		Standard_Real Lowest3DTolerance() const;
 		%feature("autodoc", "1");
@@ -388,7 +388,7 @@ class TopoDSToStep {
 		%feature("autodoc", "1");
 		static		Handle_TCollection_HAsciiString DecodeVertexError(const TopoDSToStep_MakeVertexError E);
 		%feature("autodoc", "1");
-		static		void AddResult(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &Shape, const Handle_Standard_Transient &entity);
+		static		void AddResult(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape Shape, const Handle_Standard_Transient &entity);
 		%feature("autodoc", "1");
 		static		void AddResult(const Handle_Transfer_FinderProcess &FP, const TopoDSToStep_Tool &Tool);
 
@@ -415,9 +415,9 @@ class TopoDSToStep_Builder : public TopoDSToStep_Root {
 		%feature("autodoc", "1");
 		TopoDSToStep_Builder();
 		%feature("autodoc", "1");
-		TopoDSToStep_Builder(const TopoDS_Shape &S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_Builder(const TopoDS_Shape S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		void Init(const TopoDS_Shape S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		TopoDSToStep_BuilderError Error() const;
 		%feature("autodoc", "1");
@@ -444,7 +444,7 @@ def __del__(self):
 class TopoDSToStep_MakeBrepWithVoids : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeBrepWithVoids(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeBrepWithVoids(const TopoDS_Solid S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_BrepWithVoids & Value() const;
 
@@ -471,9 +471,9 @@ class TopoDSToStep_MakeStepFace : public TopoDSToStep_Root {
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeStepFace();
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepFace(const TopoDS_Face &F, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeStepFace(const TopoDS_Face F, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		void Init(const TopoDS_Face F, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
 		%feature("autodoc", "1");
@@ -500,9 +500,9 @@ def __del__(self):
 class TopoDSToStep_MakeManifoldSolidBrep : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeManifoldSolidBrep(const TopoDS_Shell &S, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeManifoldSolidBrep(const TopoDS_Shell S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeManifoldSolidBrep(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeManifoldSolidBrep(const TopoDS_Solid S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_ManifoldSolidBrep & Value() const;
 
@@ -529,9 +529,9 @@ class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
 		%feature("autodoc", "1");
 		TopoDSToStep_MakeStepEdge();
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepEdge(const TopoDS_Edge &E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeStepEdge(const TopoDS_Edge E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Edge &E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		void Init(const TopoDS_Edge E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
 		%feature("autodoc", "1");
@@ -560,7 +560,7 @@ class TopoDSToStep_FacetedTool {
 		%feature("autodoc", "1");
 		TopoDSToStep_FacetedTool();
 		%feature("autodoc", "1");
-		static		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape &SH);
+		static		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape SH);
 
 };
 %feature("shadow") TopoDSToStep_FacetedTool::~TopoDSToStep_FacetedTool %{
@@ -583,7 +583,7 @@ def __del__(self):
 class TopoDSToStep_MakeGeometricCurveSet : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeGeometricCurveSet(const TopoDS_Shape &SH, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeGeometricCurveSet(const TopoDS_Shape SH, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
 		const Handle_StepShape_GeometricCurveSet & Value() const;
 

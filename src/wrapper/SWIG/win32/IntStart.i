@@ -94,7 +94,7 @@ def __del__(self):
 class IntStart_SITopolTool : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		TopAbs_State Classify(const gp_Pnt2d &P, const Standard_Real Tol);
+		virtual		TopAbs_State Classify(const gp_Pnt2d P, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -2686,7 +2686,7 @@ class IGESAppli_Node : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESAppli_Node();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aCoord, const Handle_IGESGeom_TransformationMatrix &aCoordSystem);
+		void Init(const gp_XYZ aCoord, const Handle_IGESGeom_TransformationMatrix &aCoordSystem);
 		%feature("autodoc", "1");
 		gp_Pnt Coord() const;
 		%feature("autodoc", "1");

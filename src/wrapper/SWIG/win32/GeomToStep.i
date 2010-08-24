@@ -81,9 +81,9 @@ def __del__(self):
 class GeomToStep_MakeLine : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeLine(const gp_Lin &L);
+		GeomToStep_MakeLine(const gp_Lin L);
 		%feature("autodoc", "1");
-		GeomToStep_MakeLine(const gp_Lin2d &L);
+		GeomToStep_MakeLine(const gp_Lin2d L);
 		%feature("autodoc", "1");
 		GeomToStep_MakeLine(const Handle_Geom_Line &C);
 		%feature("autodoc", "1");
@@ -137,9 +137,9 @@ def __del__(self):
 class GeomToStep_MakeAxis1Placement : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis1Placement(const gp_Ax1 &A);
+		GeomToStep_MakeAxis1Placement(const gp_Ax1 A);
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis1Placement(const gp_Ax2d &A);
+		GeomToStep_MakeAxis1Placement(const gp_Ax2d A);
 		%feature("autodoc", "1");
 		GeomToStep_MakeAxis1Placement(const Handle_Geom_Axis1Placement &A);
 		%feature("autodoc", "1");
@@ -243,9 +243,9 @@ def __del__(self):
 class GeomToStep_MakeDirection : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const gp_Dir &D);
+		GeomToStep_MakeDirection(const gp_Dir D);
 		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const gp_Dir2d &D);
+		GeomToStep_MakeDirection(const gp_Dir2d D);
 		%feature("autodoc", "1");
 		GeomToStep_MakeDirection(const Handle_Geom_Direction &D);
 		%feature("autodoc", "1");
@@ -324,7 +324,7 @@ def __del__(self):
 class GeomToStep_MakePlane : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakePlane(const gp_Pln &P);
+		GeomToStep_MakePlane(const gp_Pln P);
 		%feature("autodoc", "1");
 		GeomToStep_MakePlane(const Handle_Geom_Plane &P);
 		%feature("autodoc", "1");
@@ -403,9 +403,9 @@ def __del__(self):
 class GeomToStep_MakeAxis2Placement2d : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement2d(const gp_Ax2 &A);
+		GeomToStep_MakeAxis2Placement2d(const gp_Ax2 A);
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement2d(const gp_Ax22d &A);
+		GeomToStep_MakeAxis2Placement2d(const gp_Ax22d A);
 		%feature("autodoc", "1");
 		const Handle_StepGeom_Axis2Placement2d & Value() const;
 
@@ -459,11 +459,11 @@ class GeomToStep_MakeAxis2Placement3d : public GeomToStep_Root {
 		%feature("autodoc", "1");
 		GeomToStep_MakeAxis2Placement3d();
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement3d(const gp_Ax2 &A);
+		GeomToStep_MakeAxis2Placement3d(const gp_Ax2 A);
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement3d(const gp_Ax3 &A);
+		GeomToStep_MakeAxis2Placement3d(const gp_Ax3 A);
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement3d(const gp_Trsf &T);
+		GeomToStep_MakeAxis2Placement3d(const gp_Trsf T);
 		%feature("autodoc", "1");
 		GeomToStep_MakeAxis2Placement3d(const Handle_Geom_Axis2Placement &A);
 		%feature("autodoc", "1");
@@ -567,9 +567,9 @@ def __del__(self):
 class GeomToStep_MakeCartesianPoint : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeCartesianPoint(const gp_Pnt &P);
+		GeomToStep_MakeCartesianPoint(const gp_Pnt P);
 		%feature("autodoc", "1");
-		GeomToStep_MakeCartesianPoint(const gp_Pnt2d &P);
+		GeomToStep_MakeCartesianPoint(const gp_Pnt2d P);
 		%feature("autodoc", "1");
 		GeomToStep_MakeCartesianPoint(const Handle_Geom_CartesianPoint &P);
 		%feature("autodoc", "1");
@@ -675,7 +675,7 @@ def __del__(self):
 class GeomToStep_MakeCircle : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeCircle(const gp_Circ &C);
+		GeomToStep_MakeCircle(const gp_Circ C);
 		%feature("autodoc", "1");
 		GeomToStep_MakeCircle(const Handle_Geom_Circle &C);
 		%feature("autodoc", "1");
@@ -756,7 +756,7 @@ def __del__(self):
 class GeomToStep_MakeEllipse : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeEllipse(const gp_Elips &C);
+		GeomToStep_MakeEllipse(const gp_Elips C);
 		%feature("autodoc", "1");
 		GeomToStep_MakeEllipse(const Handle_Geom_Ellipse &C);
 		%feature("autodoc", "1");
@@ -891,9 +891,9 @@ def __del__(self):
 class GeomToStep_MakeVector : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeVector(const gp_Vec &V);
+		GeomToStep_MakeVector(const gp_Vec V);
 		%feature("autodoc", "1");
-		GeomToStep_MakeVector(const gp_Vec2d &V);
+		GeomToStep_MakeVector(const gp_Vec2d V);
 		%feature("autodoc", "1");
 		GeomToStep_MakeVector(const Handle_Geom_Vector &V);
 		%feature("autodoc", "1");

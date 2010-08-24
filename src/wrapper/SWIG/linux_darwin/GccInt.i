@@ -378,7 +378,7 @@ def __del__(self):
 class GccInt_BParab : public GccInt_Bisec {
 	public:
 		%feature("autodoc", "1");
-		GccInt_BParab(const gp_Parab2d &Parab);
+		GccInt_BParab(const gp_Parab2d Parab);
 
 };
 %extend GccInt_BParab {
@@ -411,7 +411,7 @@ def __del__(self):
 class GccInt_BCirc : public GccInt_Bisec {
 	public:
 		%feature("autodoc", "1");
-		GccInt_BCirc(const gp_Circ2d &Circ);
+		GccInt_BCirc(const gp_Circ2d Circ);
 		%feature("autodoc", "1");
 		virtual		gp_Circ2d Circle() const;
 		%feature("autodoc", "1");
@@ -450,7 +450,7 @@ def __del__(self):
 class GccInt_BElips : public GccInt_Bisec {
 	public:
 		%feature("autodoc", "1");
-		GccInt_BElips(const gp_Elips2d &Ellipse);
+		GccInt_BElips(const gp_Elips2d Ellipse);
 		%feature("autodoc", "1");
 		virtual		gp_Elips2d Ellipse() const;
 		%feature("autodoc", "1");
@@ -489,7 +489,7 @@ def __del__(self):
 class GccInt_BPoint : public GccInt_Bisec {
 	public:
 		%feature("autodoc", "1");
-		GccInt_BPoint(const gp_Pnt2d &Point);
+		GccInt_BPoint(const gp_Pnt2d Point);
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Point() const;
 		%feature("autodoc", "1");
@@ -528,7 +528,7 @@ def __del__(self):
 class GccInt_BLine : public GccInt_Bisec {
 	public:
 		%feature("autodoc", "1");
-		GccInt_BLine(const gp_Lin2d &Line);
+		GccInt_BLine(const gp_Lin2d Line);
 		%feature("autodoc", "1");
 		virtual		gp_Lin2d Line() const;
 		%feature("autodoc", "1");
@@ -567,7 +567,7 @@ def __del__(self):
 class GccInt_BHyper : public GccInt_Bisec {
 	public:
 		%feature("autodoc", "1");
-		GccInt_BHyper(const gp_Hypr2d &Hyper);
+		GccInt_BHyper(const gp_Hypr2d Hyper);
 		%feature("autodoc", "1");
 		virtual		gp_Hypr2d Hyperbola() const;
 		%feature("autodoc", "1");

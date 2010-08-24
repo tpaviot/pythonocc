@@ -56,11 +56,11 @@ $HeaderURL$
 class BRepPrim_GWedge {
 	public:
 		%feature("autodoc", "1");
-		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
+		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
 		%feature("autodoc", "1");
-		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
+		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
 		%feature("autodoc", "1");
-		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 &Axes, const Standard_Real xmin, const Standard_Real ymin, const Standard_Real zmin, const Standard_Real z2min, const Standard_Real x2min, const Standard_Real xmax, const Standard_Real ymax, const Standard_Real zmax, const Standard_Real z2max, const Standard_Real x2max);
+		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 Axes, const Standard_Real xmin, const Standard_Real ymin, const Standard_Real zmin, const Standard_Real z2min, const Standard_Real x2min, const Standard_Real xmax, const Standard_Real ymax, const Standard_Real zmax, const Standard_Real z2max, const Standard_Real x2max);
 		%feature("autodoc", "1");
 		gp_Ax2 Axes() const;
 		%feature("autodoc", "1");
@@ -90,27 +90,27 @@ class BRepPrim_GWedge {
 		%feature("autodoc", "1");
 		Standard_Boolean IsInfinite(const Primitives_Direction d1) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shell & Shell();
+		const TopoDS_Shell  Shell();
 		%feature("autodoc", "1");
 		Standard_Boolean HasFace(const Primitives_Direction d1) const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face(const Primitives_Direction d1);
+		const TopoDS_Face  Face(const Primitives_Direction d1);
 		%feature("autodoc", "1");
 		gp_Pln Plane(const Primitives_Direction d1);
 		%feature("autodoc", "1");
 		Standard_Boolean HasWire(const Primitives_Direction d1) const;
 		%feature("autodoc", "1");
-		const TopoDS_Wire & Wire(const Primitives_Direction d1);
+		const TopoDS_Wire  Wire(const Primitives_Direction d1);
 		%feature("autodoc", "1");
 		Standard_Boolean HasEdge(const Primitives_Direction d1, const Primitives_Direction d2) const;
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge(const Primitives_Direction d1, const Primitives_Direction d2);
+		const TopoDS_Edge  Edge(const Primitives_Direction d1, const Primitives_Direction d2);
 		%feature("autodoc", "1");
 		gp_Lin Line(const Primitives_Direction d1, const Primitives_Direction d2);
 		%feature("autodoc", "1");
 		Standard_Boolean HasVertex(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3) const;
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3);
+		const TopoDS_Vertex  Vertex(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3);
 		%feature("autodoc", "1");
 		gp_Pnt Point(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3);
 
@@ -135,11 +135,11 @@ def __del__(self):
 class BRepPrim_Wedge : public BRepPrim_GWedge {
 	public:
 		%feature("autodoc", "1");
-		BRepPrim_Wedge(const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
+		BRepPrim_Wedge(const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
 		%feature("autodoc", "1");
-		BRepPrim_Wedge(const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
+		BRepPrim_Wedge(const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
 		%feature("autodoc", "1");
-		BRepPrim_Wedge(const gp_Ax2 &Axes, const Standard_Real xmin, const Standard_Real ymin, const Standard_Real zmin, const Standard_Real z2min, const Standard_Real x2min, const Standard_Real xmax, const Standard_Real ymax, const Standard_Real zmax, const Standard_Real z2max, const Standard_Real x2max);
+		BRepPrim_Wedge(const gp_Ax2 Axes, const Standard_Real xmin, const Standard_Real ymin, const Standard_Real zmin, const Standard_Real z2min, const Standard_Real x2min, const Standard_Real xmax, const Standard_Real ymax, const Standard_Real zmax, const Standard_Real z2max, const Standard_Real x2max);
 
 };
 %feature("shadow") BRepPrim_Wedge::~BRepPrim_Wedge %{
@@ -172,11 +172,11 @@ class BRepPrim_FaceBuilder {
 		%feature("autodoc", "1");
 		void Init(const BRep_Builder &B, const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge(const Standard_Integer I) const;
+		const TopoDS_Edge  Edge(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex(const Standard_Integer I) const;
+		const TopoDS_Vertex  Vertex(const Standard_Integer I) const;
 
 };
 %feature("shadow") BRepPrim_FaceBuilder::~BRepPrim_FaceBuilder %{
@@ -207,37 +207,37 @@ class BRepPrim_Builder {
 		%feature("autodoc", "1");
 		void MakeShell(TopoDS_Shell & S) const;
 		%feature("autodoc", "1");
-		void MakeFace(TopoDS_Face & F, const gp_Pln &P) const;
+		void MakeFace(TopoDS_Face & F, const gp_Pln P) const;
 		%feature("autodoc", "1");
 		void MakeWire(TopoDS_Wire & W) const;
 		%feature("autodoc", "1");
 		void MakeDegeneratedEdge(TopoDS_Edge & E) const;
 		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & E, const gp_Lin &L) const;
+		void MakeEdge(TopoDS_Edge & E, const gp_Lin L) const;
 		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & E, const gp_Circ &C) const;
+		void MakeEdge(TopoDS_Edge & E, const gp_Circ C) const;
 		%feature("autodoc", "1");
-		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face &F, const gp_Lin2d &L) const;
+		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face F, const gp_Lin2d L) const;
 		%feature("autodoc", "1");
-		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face &F, const gp_Lin2d &L1, const gp_Lin2d &L2) const;
+		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face F, const gp_Lin2d L1, const gp_Lin2d L2) const;
 		%feature("autodoc", "1");
-		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face &F, const gp_Circ2d &C) const;
+		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face F, const gp_Circ2d C) const;
 		%feature("autodoc", "1");
-		void MakeVertex(TopoDS_Vertex & V, const gp_Pnt &P) const;
+		void MakeVertex(TopoDS_Vertex & V, const gp_Pnt P) const;
 		%feature("autodoc", "1");
 		void ReverseFace(TopoDS_Face & F) const;
 		%feature("autodoc", "1");
-		void AddEdgeVertex(TopoDS_Edge & E, const TopoDS_Vertex &V, const Standard_Real P, const Standard_Boolean direct) const;
+		void AddEdgeVertex(TopoDS_Edge & E, const TopoDS_Vertex V, const Standard_Real P, const Standard_Boolean direct) const;
 		%feature("autodoc", "1");
-		void AddEdgeVertex(TopoDS_Edge & E, const TopoDS_Vertex &V, const Standard_Real P1, const Standard_Real P2) const;
+		void AddEdgeVertex(TopoDS_Edge & E, const TopoDS_Vertex V, const Standard_Real P1, const Standard_Real P2) const;
 		%feature("autodoc", "1");
-		void SetParameters(TopoDS_Edge & E, const TopoDS_Vertex &V, const Standard_Real P1, const Standard_Real P2) const;
+		void SetParameters(TopoDS_Edge & E, const TopoDS_Vertex V, const Standard_Real P1, const Standard_Real P2) const;
 		%feature("autodoc", "1");
-		void AddWireEdge(TopoDS_Wire & W, const TopoDS_Edge &E, const Standard_Boolean direct) const;
+		void AddWireEdge(TopoDS_Wire & W, const TopoDS_Edge E, const Standard_Boolean direct) const;
 		%feature("autodoc", "1");
-		void AddFaceWire(TopoDS_Face & F, const TopoDS_Wire &W) const;
+		void AddFaceWire(TopoDS_Face & F, const TopoDS_Wire W) const;
 		%feature("autodoc", "1");
-		void AddShellFace(TopoDS_Shell & Sh, const TopoDS_Face &F) const;
+		void AddShellFace(TopoDS_Shell & Sh, const TopoDS_Face F) const;
 		%feature("autodoc", "1");
 		void CompleteEdge(TopoDS_Edge & E) const;
 		%feature("autodoc", "1");
@@ -272,9 +272,9 @@ class BRepPrim_OneAxis {
 		%feature("autodoc", "1");
 		void SetMeridianOffset(const Standard_Real MeridianOffset=0);
 		%feature("autodoc", "1");
-		const gp_Ax2 & Axes() const;
+		const gp_Ax2  Axes() const;
 		%feature("autodoc", "1");
-		void Axes(const gp_Ax2 &A);
+		void Axes(const gp_Ax2 A);
 		%feature("autodoc", "1");
 		Standard_Real Angle() const;
 		%feature("autodoc", "1");
@@ -292,7 +292,7 @@ class BRepPrim_OneAxis {
 		%feature("autodoc", "1");
 		virtual		TopoDS_Edge MakeEmptyMeridianEdge(const Standard_Real Ang) const;
 		%feature("autodoc", "1");
-		virtual		void SetMeridianPCurve(TopoDS_Edge & E, const TopoDS_Face &F) const;
+		virtual		void SetMeridianPCurve(TopoDS_Edge & E, const TopoDS_Face F) const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d MeridianValue(const Standard_Real V) const;
 		%feature("autodoc", "1");
@@ -310,65 +310,65 @@ class BRepPrim_OneAxis {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasSides() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shell & Shell();
+		const TopoDS_Shell  Shell();
 		%feature("autodoc", "1");
-		const TopoDS_Face & LateralFace();
+		const TopoDS_Face  LateralFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & TopFace();
+		const TopoDS_Face  TopFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & BottomFace();
+		const TopoDS_Face  BottomFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & StartFace();
+		const TopoDS_Face  StartFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & EndFace();
+		const TopoDS_Face  EndFace();
 		%feature("autodoc", "1");
-		const TopoDS_Wire & LateralWire();
+		const TopoDS_Wire  LateralWire();
 		%feature("autodoc", "1");
-		const TopoDS_Wire & LateralStartWire();
+		const TopoDS_Wire  LateralStartWire();
 		%feature("autodoc", "1");
-		const TopoDS_Wire & LateralEndWire();
+		const TopoDS_Wire  LateralEndWire();
 		%feature("autodoc", "1");
-		const TopoDS_Wire & TopWire();
+		const TopoDS_Wire  TopWire();
 		%feature("autodoc", "1");
-		const TopoDS_Wire & BottomWire();
+		const TopoDS_Wire  BottomWire();
 		%feature("autodoc", "1");
-		const TopoDS_Wire & StartWire();
+		const TopoDS_Wire  StartWire();
 		%feature("autodoc", "1");
-		const TopoDS_Wire & AxisStartWire();
+		const TopoDS_Wire  AxisStartWire();
 		%feature("autodoc", "1");
-		const TopoDS_Wire & EndWire();
+		const TopoDS_Wire  EndWire();
 		%feature("autodoc", "1");
-		const TopoDS_Wire & AxisEndWire();
+		const TopoDS_Wire  AxisEndWire();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & AxisEdge();
+		const TopoDS_Edge  AxisEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & StartEdge();
+		const TopoDS_Edge  StartEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & EndEdge();
+		const TopoDS_Edge  EndEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & StartTopEdge();
+		const TopoDS_Edge  StartTopEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & StartBottomEdge();
+		const TopoDS_Edge  StartBottomEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & EndTopEdge();
+		const TopoDS_Edge  EndTopEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & EndBottomEdge();
+		const TopoDS_Edge  EndBottomEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & TopEdge();
+		const TopoDS_Edge  TopEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & BottomEdge();
+		const TopoDS_Edge  BottomEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & AxisTopVertex();
+		const TopoDS_Vertex  AxisTopVertex();
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & AxisBottomVertex();
+		const TopoDS_Vertex  AxisBottomVertex();
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & TopStartVertex();
+		const TopoDS_Vertex  TopStartVertex();
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & TopEndVertex();
+		const TopoDS_Vertex  TopEndVertex();
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & BottomStartVertex();
+		const TopoDS_Vertex  BottomStartVertex();
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & BottomEndVertex();
+		const TopoDS_Vertex  BottomEndVertex();
 
 };
 %feature("shadow") BRepPrim_OneAxis::~BRepPrim_OneAxis %{
@@ -391,7 +391,7 @@ def __del__(self):
 class BRepPrim_Revolution : public BRepPrim_OneAxis {
 	public:
 		%feature("autodoc", "1");
-		BRepPrim_Revolution(const gp_Ax2 &A, const Standard_Real VMin, const Standard_Real VMax, const Handle_Geom_Curve &M, const Handle_Geom2d_Curve &PM);
+		BRepPrim_Revolution(const gp_Ax2 A, const Standard_Real VMin, const Standard_Real VMax, const Handle_Geom_Curve &M, const Handle_Geom2d_Curve &PM);
 		%feature("autodoc", "1");
 		virtual		TopoDS_Face MakeEmptyLateralFace() const;
 		%feature("autodoc", "1");
@@ -399,7 +399,7 @@ class BRepPrim_Revolution : public BRepPrim_OneAxis {
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d MeridianValue(const Standard_Real V) const;
 		%feature("autodoc", "1");
-		virtual		void SetMeridianPCurve(TopoDS_Edge & E, const TopoDS_Face &F) const;
+		virtual		void SetMeridianPCurve(TopoDS_Edge & E, const TopoDS_Face F) const;
 
 };
 %feature("shadow") BRepPrim_Revolution::~BRepPrim_Revolution %{
@@ -427,9 +427,9 @@ class BRepPrim_Sphere : public BRepPrim_Revolution {
 		%feature("autodoc", "1");
 		BRepPrim_Sphere(const Standard_Real Radius);
 		%feature("autodoc", "1");
-		BRepPrim_Sphere(const gp_Pnt &Center, const Standard_Real Radius);
+		BRepPrim_Sphere(const gp_Pnt Center, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		BRepPrim_Sphere(const gp_Ax2 &Axes, const Standard_Real Radius);
+		BRepPrim_Sphere(const gp_Ax2 Axes, const Standard_Real Radius);
 
 };
 %feature("shadow") BRepPrim_Sphere::~BRepPrim_Sphere %{
@@ -452,19 +452,19 @@ def __del__(self):
 class BRepPrim_Cone : public BRepPrim_Revolution {
 	public:
 		%feature("autodoc", "1");
-		BRepPrim_Cone(const Standard_Real Angle, const gp_Ax2 &Position, const Standard_Real Height, const Standard_Real Radius=0);
+		BRepPrim_Cone(const Standard_Real Angle, const gp_Ax2 Position, const Standard_Real Height, const Standard_Real Radius=0);
 		%feature("autodoc", "1");
 		BRepPrim_Cone(const Standard_Real Angle);
 		%feature("autodoc", "1");
-		BRepPrim_Cone(const Standard_Real Angle, const gp_Pnt &Apex);
+		BRepPrim_Cone(const Standard_Real Angle, const gp_Pnt Apex);
 		%feature("autodoc", "1");
-		BRepPrim_Cone(const Standard_Real Angle, const gp_Ax2 &Axes);
+		BRepPrim_Cone(const Standard_Real Angle, const gp_Ax2 Axes);
 		%feature("autodoc", "1");
 		BRepPrim_Cone(const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
 		%feature("autodoc", "1");
-		BRepPrim_Cone(const gp_Pnt &Center, const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
+		BRepPrim_Cone(const gp_Pnt Center, const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
 		%feature("autodoc", "1");
-		BRepPrim_Cone(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
+		BRepPrim_Cone(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
 		%feature("autodoc", "1");
 		virtual		TopoDS_Face MakeEmptyLateralFace() const;
 
@@ -489,17 +489,17 @@ def __del__(self):
 class BRepPrim_Cylinder : public BRepPrim_Revolution {
 	public:
 		%feature("autodoc", "1");
-		BRepPrim_Cylinder(const gp_Ax2 &Position, const Standard_Real Radius, const Standard_Real Height);
+		BRepPrim_Cylinder(const gp_Ax2 Position, const Standard_Real Radius, const Standard_Real Height);
 		%feature("autodoc", "1");
 		BRepPrim_Cylinder(const Standard_Real Radius);
 		%feature("autodoc", "1");
-		BRepPrim_Cylinder(const gp_Pnt &Center, const Standard_Real Radius);
+		BRepPrim_Cylinder(const gp_Pnt Center, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		BRepPrim_Cylinder(const gp_Ax2 &Axes, const Standard_Real Radius);
+		BRepPrim_Cylinder(const gp_Ax2 Axes, const Standard_Real Radius);
 		%feature("autodoc", "1");
 		BRepPrim_Cylinder(const Standard_Real R, const Standard_Real H);
 		%feature("autodoc", "1");
-		BRepPrim_Cylinder(const gp_Pnt &Center, const Standard_Real R, const Standard_Real H);
+		BRepPrim_Cylinder(const gp_Pnt Center, const Standard_Real R, const Standard_Real H);
 		%feature("autodoc", "1");
 		virtual		TopoDS_Face MakeEmptyLateralFace() const;
 
@@ -524,11 +524,11 @@ def __del__(self):
 class BRepPrim_Torus : public BRepPrim_Revolution {
 	public:
 		%feature("autodoc", "1");
-		BRepPrim_Torus(const gp_Ax2 &Position, const Standard_Real Major, const Standard_Real Minor);
+		BRepPrim_Torus(const gp_Ax2 Position, const Standard_Real Major, const Standard_Real Minor);
 		%feature("autodoc", "1");
 		BRepPrim_Torus(const Standard_Real Major, const Standard_Real Minor);
 		%feature("autodoc", "1");
-		BRepPrim_Torus(const gp_Pnt &Center, const Standard_Real Major, const Standard_Real Minor);
+		BRepPrim_Torus(const gp_Pnt Center, const Standard_Real Major, const Standard_Real Minor);
 		%feature("autodoc", "1");
 		virtual		TopoDS_Face MakeEmptyLateralFace() const;
 

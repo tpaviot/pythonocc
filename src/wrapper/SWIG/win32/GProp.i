@@ -118,7 +118,7 @@ class GProp_GProps {
 		%feature("autodoc", "1");
 		GProp_GProps();
 		%feature("autodoc", "1");
-		GProp_GProps(const gp_Pnt &SystemLocation);
+		GProp_GProps(const gp_Pnt SystemLocation);
 		%feature("autodoc", "1");
 		void Add(const GProp_GProps &Item, const Standard_Real Density=1.0e+0);
 		%feature("autodoc", "1");
@@ -131,11 +131,11 @@ class GProp_GProps {
 
 		void StaticMoments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Real MomentOfInertia(const gp_Ax1 &A) const;
+		Standard_Real MomentOfInertia(const gp_Ax1 A) const;
 		%feature("autodoc", "1");
 		GProp_PrincipalProps PrincipalProperties() const;
 		%feature("autodoc", "1");
-		Standard_Real RadiusOfGyration(const gp_Ax1 &A) const;
+		Standard_Real RadiusOfGyration(const gp_Ax1 A) const;
 
 };
 %feature("shadow") GProp_GProps::~GProp_GProps %{
@@ -160,9 +160,9 @@ class GProp_PGProps : public GProp_GProps {
 		%feature("autodoc", "1");
 		GProp_PGProps();
 		%feature("autodoc", "1");
-		void AddPoint(const gp_Pnt &P);
+		void AddPoint(const gp_Pnt P);
 		%feature("autodoc", "1");
-		void AddPoint(const gp_Pnt &P, const Standard_Real Density);
+		void AddPoint(const gp_Pnt P, const Standard_Real Density);
 		%feature("autodoc", "1");
 		GProp_PGProps(const TColgp_Array1OfPnt &Pnts);
 		%feature("autodoc", "1");
@@ -216,11 +216,11 @@ class GProp_PrincipalProps {
 
 		void Moments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		const gp_Vec & FirstAxisOfInertia() const;
+		const gp_Vec  FirstAxisOfInertia() const;
 		%feature("autodoc", "1");
-		const gp_Vec & SecondAxisOfInertia() const;
+		const gp_Vec  SecondAxisOfInertia() const;
 		%feature("autodoc", "1");
-		const gp_Vec & ThirdAxisOfInertia() const;
+		const gp_Vec  ThirdAxisOfInertia() const;
 		%feature("autodoc","RadiusOfGyration() -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		void RadiusOfGyration(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -291,23 +291,23 @@ class GProp_SelGProps : public GProp_GProps {
 		%feature("autodoc", "1");
 		GProp_SelGProps();
 		%feature("autodoc", "1");
-		GProp_SelGProps(const gp_Cylinder &S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2, const gp_Pnt &SLocation);
+		GProp_SelGProps(const gp_Cylinder S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2, const gp_Pnt SLocation);
 		%feature("autodoc", "1");
-		GProp_SelGProps(const gp_Cone &S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2, const gp_Pnt &SLocation);
+		GProp_SelGProps(const gp_Cone S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2, const gp_Pnt SLocation);
 		%feature("autodoc", "1");
-		GProp_SelGProps(const gp_Sphere &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2, const gp_Pnt &SLocation);
+		GProp_SelGProps(const gp_Sphere S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2, const gp_Pnt SLocation);
 		%feature("autodoc", "1");
-		GProp_SelGProps(const gp_Torus &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2, const gp_Pnt &SLocation);
+		GProp_SelGProps(const gp_Torus S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2, const gp_Pnt SLocation);
 		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt &SLocation);
+		void SetLocation(const gp_Pnt SLocation);
 		%feature("autodoc", "1");
-		void Perform(const gp_Cylinder &S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2);
+		void Perform(const gp_Cylinder S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2);
 		%feature("autodoc", "1");
-		void Perform(const gp_Cone &S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2);
+		void Perform(const gp_Cone S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2);
 		%feature("autodoc", "1");
-		void Perform(const gp_Sphere &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
+		void Perform(const gp_Sphere S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
 		%feature("autodoc", "1");
-		void Perform(const gp_Torus &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
+		void Perform(const gp_Torus S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
 
 };
 %feature("shadow") GProp_SelGProps::~GProp_SelGProps %{
@@ -332,17 +332,17 @@ class GProp_CelGProps : public GProp_GProps {
 		%feature("autodoc", "1");
 		GProp_CelGProps();
 		%feature("autodoc", "1");
-		GProp_CelGProps(const gp_Circ &C, const gp_Pnt &CLocation);
+		GProp_CelGProps(const gp_Circ C, const gp_Pnt CLocation);
 		%feature("autodoc", "1");
-		GProp_CelGProps(const gp_Circ &C, const Standard_Real U1, const Standard_Real U2, const gp_Pnt &CLocation);
+		GProp_CelGProps(const gp_Circ C, const Standard_Real U1, const Standard_Real U2, const gp_Pnt CLocation);
 		%feature("autodoc", "1");
-		GProp_CelGProps(const gp_Lin &C, const Standard_Real U1, const Standard_Real U2, const gp_Pnt &CLocation);
+		GProp_CelGProps(const gp_Lin C, const Standard_Real U1, const Standard_Real U2, const gp_Pnt CLocation);
 		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt &CLocation);
+		void SetLocation(const gp_Pnt CLocation);
 		%feature("autodoc", "1");
-		void Perform(const gp_Circ &C, const Standard_Real U1, const Standard_Real U2);
+		void Perform(const gp_Circ C, const Standard_Real U1, const Standard_Real U2);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &C, const Standard_Real U1, const Standard_Real U2);
+		void Perform(const gp_Lin C, const Standard_Real U1, const Standard_Real U2);
 
 };
 %feature("shadow") GProp_CelGProps::~GProp_CelGProps %{
@@ -367,23 +367,23 @@ class GProp_VelGProps : public GProp_GProps {
 		%feature("autodoc", "1");
 		GProp_VelGProps();
 		%feature("autodoc", "1");
-		GProp_VelGProps(const gp_Cylinder &S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2, const gp_Pnt &VLocation);
+		GProp_VelGProps(const gp_Cylinder S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2, const gp_Pnt VLocation);
 		%feature("autodoc", "1");
-		GProp_VelGProps(const gp_Cone &S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2, const gp_Pnt &VLocation);
+		GProp_VelGProps(const gp_Cone S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2, const gp_Pnt VLocation);
 		%feature("autodoc", "1");
-		GProp_VelGProps(const gp_Sphere &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2, const gp_Pnt &VLocation);
+		GProp_VelGProps(const gp_Sphere S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2, const gp_Pnt VLocation);
 		%feature("autodoc", "1");
-		GProp_VelGProps(const gp_Torus &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2, const gp_Pnt &VLocation);
+		GProp_VelGProps(const gp_Torus S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2, const gp_Pnt VLocation);
 		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt &VLocation);
+		void SetLocation(const gp_Pnt VLocation);
 		%feature("autodoc", "1");
-		void Perform(const gp_Cylinder &S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2);
+		void Perform(const gp_Cylinder S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2);
 		%feature("autodoc", "1");
-		void Perform(const gp_Cone &S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2);
+		void Perform(const gp_Cone S, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Real Z1, const Standard_Real Z2);
 		%feature("autodoc", "1");
-		void Perform(const gp_Sphere &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
+		void Perform(const gp_Sphere S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
 		%feature("autodoc", "1");
-		void Perform(const gp_Torus &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
+		void Perform(const gp_Torus S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
 
 };
 %feature("shadow") GProp_VelGProps::~GProp_VelGProps %{
@@ -408,7 +408,7 @@ class GProp {
 		%feature("autodoc", "1");
 		GProp();
 		%feature("autodoc", "1");
-		static		void HOperator(const gp_Pnt &G, const gp_Pnt &Q, const Standard_Real Mass, gp_Mat & Operator);
+		static		void HOperator(const gp_Pnt G, const gp_Pnt Q, const Standard_Real Mass, gp_Mat & Operator);
 
 };
 %feature("shadow") GProp::~GProp %{

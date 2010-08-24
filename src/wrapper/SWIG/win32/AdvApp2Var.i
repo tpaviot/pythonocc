@@ -918,7 +918,7 @@ class AdvApp2Var_Node {
 		%feature("autodoc", "1");
 		AdvApp2Var_Node(const Standard_Integer iu, const Standard_Integer iv);
 		%feature("autodoc", "1");
-		AdvApp2Var_Node(const gp_XY &UV, const Standard_Integer iu, const Standard_Integer iv);
+		AdvApp2Var_Node(const gp_XY UV, const Standard_Integer iu, const Standard_Integer iv);
 		%feature("autodoc", "1");
 		gp_XY Coord() const;
 		%feature("autodoc", "1");
@@ -928,7 +928,7 @@ class AdvApp2Var_Node {
 		%feature("autodoc", "1");
 		Standard_Integer VOrder() const;
 		%feature("autodoc", "1");
-		void SetPoint(const Standard_Integer iu, const Standard_Integer iv, const gp_Pnt &Cte);
+		void SetPoint(const Standard_Integer iu, const Standard_Integer iv, const gp_Pnt Cte);
 		%feature("autodoc", "1");
 		gp_Pnt Point(const Standard_Integer iu, const Standard_Integer iv) const;
 		%feature("autodoc", "1");

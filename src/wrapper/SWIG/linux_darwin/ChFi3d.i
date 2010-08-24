@@ -64,7 +64,7 @@ class ChFi3d {
 		%feature("autodoc", "1");
 		ChFi3d();
 		%feature("autodoc", "1");
-		static		Standard_Integer ConcaveSide(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const TopoDS_Edge &E, TopAbs_Orientation & Or1, TopAbs_Orientation & Or2);
+		static		Standard_Integer ConcaveSide(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const TopoDS_Edge E, TopAbs_Orientation & Or1, TopAbs_Orientation & Or2);
 		%feature("autodoc", "1");
 		static		Standard_Integer NextSide(TopAbs_Orientation & Or1, TopAbs_Orientation & Or2, const TopAbs_Orientation OrSave1, const TopAbs_Orientation OrSave2, const Standard_Integer ChoixSauv);
 		%feature("autodoc", "1");
@@ -131,12 +131,12 @@ class ChFi3d_Builder {
 		%feature("autodoc", "1");
 		void SetContinuity(const GeomAbs_Shape InternalContinuity, const Standard_Real AngularTolerance);
 		%feature("autodoc", "1");
-		void Remove(const TopoDS_Edge &E);
+		void Remove(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		Standard_Integer Contains(const TopoDS_Edge &E) const;
+		Standard_Integer Contains(const TopoDS_Edge E) const;
 		%feature("autodoc","Contains(const E) -> Standard_Integer");
 
-		Standard_Integer Contains(const TopoDS_Edge &E, Standard_Integer &OutValue) const;
+		Standard_Integer Contains(const TopoDS_Edge E, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbElements() const;
 		%feature("autodoc", "1");
@@ -148,9 +148,9 @@ class ChFi3d_Builder {
 		%feature("autodoc", "1");
 		TopoDS_Vertex LastVertex(const Standard_Integer IC) const;
 		%feature("autodoc", "1");
-		Standard_Real Abscissa(const Standard_Integer IC, const TopoDS_Vertex &V) const;
+		Standard_Real Abscissa(const Standard_Integer IC, const TopoDS_Vertex V) const;
 		%feature("autodoc", "1");
-		Standard_Real RelativeAbscissa(const Standard_Integer IC, const TopoDS_Vertex &V) const;
+		Standard_Real RelativeAbscissa(const Standard_Integer IC, const TopoDS_Vertex V) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ClosedAndTangent(const Standard_Integer IC) const;
 		%feature("autodoc", "1");
@@ -162,7 +162,7 @@ class ChFi3d_Builder {
 		%feature("autodoc", "1");
 		TopoDS_Shape Shape() const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Generated(const TopoDS_Shape &EouV);
+		const TopTools_ListOfShape & Generated(const TopoDS_Shape EouV);
 		%feature("autodoc", "1");
 		Standard_Integer NbFaultyContours() const;
 		%feature("autodoc", "1");
@@ -211,27 +211,27 @@ def __del__(self):
 class ChFi3d_ChBuilder : public ChFi3d_Builder {
 	public:
 		%feature("autodoc", "1");
-		ChFi3d_ChBuilder(const TopoDS_Shape &S, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2);
+		ChFi3d_ChBuilder(const TopoDS_Shape S, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E);
+		void Add(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		void Add(const Standard_Real Dis, const TopoDS_Edge &E, const TopoDS_Face &F);
+		void Add(const Standard_Real Dis, const TopoDS_Edge E, const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void SetDist(const Standard_Real Dis, const Standard_Integer IC, const TopoDS_Face &F);
+		void SetDist(const Standard_Real Dis, const Standard_Integer IC, const TopoDS_Face F);
 		%feature("autodoc","GetDist(Standard_Integer IC) -> Standard_Real");
 
 		void GetDist(const Standard_Integer IC, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Add(const Standard_Real Dis1, const Standard_Real Dis2, const TopoDS_Edge &E, const TopoDS_Face &F);
+		void Add(const Standard_Real Dis1, const Standard_Real Dis2, const TopoDS_Edge E, const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void SetDists(const Standard_Real Dis1, const Standard_Real Dis2, const Standard_Integer IC, const TopoDS_Face &F);
+		void SetDists(const Standard_Real Dis1, const Standard_Real Dis2, const Standard_Integer IC, const TopoDS_Face F);
 		%feature("autodoc","Dists(Standard_Integer IC) -> [Standard_Real, Standard_Real]");
 
 		void Dists(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge &E, const TopoDS_Face &F);
+		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge E, const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void SetDistAngle(const Standard_Real Dis, const Standard_Real Angle, const Standard_Integer IC, const TopoDS_Face &F);
+		void SetDistAngle(const Standard_Real Dis, const Standard_Real Angle, const Standard_Integer IC, const TopoDS_Face F);
 		%feature("autodoc","GetDistAngle(Standard_Integer IC) -> [Standard_Real, Standard_Real]");
 
 		void GetDistAngle(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & DisOnFace1) const;
@@ -290,15 +290,15 @@ def __del__(self):
 class ChFi3d_FilBuilder : public ChFi3d_Builder {
 	public:
 		%feature("autodoc", "1");
-		ChFi3d_FilBuilder(const TopoDS_Shape &S, const ChFi3d_FilletShape FShape=ChFi3d_Rational, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2);
+		ChFi3d_FilBuilder(const TopoDS_Shape S, const ChFi3d_FilletShape FShape=ChFi3d_Rational, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2);
 		%feature("autodoc", "1");
 		void SetFilletShape(const ChFi3d_FilletShape FShape);
 		%feature("autodoc", "1");
 		ChFi3d_FilletShape GetFilletShape() const;
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &E);
+		void Add(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		void Add(const Standard_Real Radius, const TopoDS_Edge &E);
+		void Add(const Standard_Real Radius, const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		void SetRadius(const Handle_Law_Function &C, const Standard_Integer IC, const Standard_Integer IinC);
 		%feature("autodoc", "1");
@@ -308,26 +308,26 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("autodoc", "1");
 		void ResetContour(const Standard_Integer IC);
 		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Edge &E);
+		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		void UnSet(const Standard_Integer IC, const TopoDS_Edge &E);
+		void UnSet(const Standard_Integer IC, const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Vertex &V);
+		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		void UnSet(const Standard_Integer IC, const TopoDS_Vertex &V);
+		void UnSet(const Standard_Integer IC, const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		void SetRadius(const gp_XY &UandR, const Standard_Integer IC, const Standard_Integer IinC);
+		void SetRadius(const gp_XY UandR, const Standard_Integer IC, const Standard_Integer IinC);
 		%feature("autodoc", "1");
-		Standard_Boolean IsConstant(const Standard_Integer IC, const TopoDS_Edge &E);
+		Standard_Boolean IsConstant(const Standard_Integer IC, const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		Standard_Real Radius(const Standard_Integer IC, const TopoDS_Edge &E);
+		Standard_Real Radius(const Standard_Integer IC, const TopoDS_Edge E);
 		%feature("autodoc","GetBounds(Standard_Integer IC, const E) -> [Standard_Real, Standard_Real]");
 
-		Standard_Boolean GetBounds(const Standard_Integer IC, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
+		Standard_Boolean GetBounds(const Standard_Integer IC, const TopoDS_Edge E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Handle_Law_Function GetLaw(const Standard_Integer IC, const TopoDS_Edge &E);
+		Handle_Law_Function GetLaw(const Standard_Integer IC, const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		void SetLaw(const Standard_Integer IC, const TopoDS_Edge &E, const Handle_Law_Function &L);
+		void SetLaw(const Standard_Integer IC, const TopoDS_Edge E, const Handle_Law_Function &L);
 		%feature("autodoc", "1");
 		void Simulate(const Standard_Integer IC);
 		%feature("autodoc", "1");

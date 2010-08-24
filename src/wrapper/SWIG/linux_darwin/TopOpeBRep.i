@@ -427,7 +427,7 @@ class TopOpeBRep_FacesFiller {
 		%feature("autodoc", "1");
 		TopOpeBRep_FacesFiller();
 		%feature("autodoc", "1");
-		void Insert(const TopoDS_Shape &F1, const TopoDS_Shape &F2, TopOpeBRep_FacesIntersector & FACINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		void Insert(const TopoDS_Shape F1, const TopoDS_Shape F2, TopOpeBRep_FacesIntersector & FACINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
 		%feature("autodoc", "1");
 		void ProcessSectionEdges();
 		%feature("autodoc", "1");
@@ -467,11 +467,11 @@ class TopOpeBRep_FacesFiller {
 		%feature("autodoc", "1");
 		void ProcessVPR(TopOpeBRep_FacesFiller & FF, const TopOpeBRep_VPointInter &VP);
 		%feature("autodoc", "1");
-		void ProcessVPIonR(TopOpeBRep_VPointInterIterator & VPI, const TopOpeBRepDS_Transition &trans1, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex);
+		void ProcessVPIonR(TopOpeBRep_VPointInterIterator & VPI, const TopOpeBRepDS_Transition &trans1, const TopoDS_Shape F1, const Standard_Integer ShapeIndex);
 		%feature("autodoc", "1");
-		void ProcessVPonR(const TopOpeBRep_VPointInter &VP, const TopOpeBRepDS_Transition &trans1, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex);
+		void ProcessVPonR(const TopOpeBRep_VPointInter &VP, const TopOpeBRepDS_Transition &trans1, const TopoDS_Shape F1, const Standard_Integer ShapeIndex);
 		%feature("autodoc", "1");
-		void ProcessVPonclosingR(const TopOpeBRep_VPointInter &VP, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex, const TopOpeBRepDS_Transition &transEdge, const TopOpeBRepDS_Kind PVKind, const Standard_Integer PVIndex, const Standard_Boolean EPIfound, const Handle_TopOpeBRepDS_Interference &IEPI);
+		void ProcessVPonclosingR(const TopOpeBRep_VPointInter &VP, const TopoDS_Shape F1, const Standard_Integer ShapeIndex, const TopOpeBRepDS_Transition &transEdge, const TopOpeBRepDS_Kind PVKind, const Standard_Integer PVIndex, const Standard_Boolean EPIfound, const Handle_TopOpeBRepDS_Interference &IEPI);
 		%feature("autodoc","ProcessVPondgE(const VP, Standard_Integer ShapeIndex) -> Standard_Integer");
 
 		Standard_Boolean ProcessVPondgE(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & PVKind, Standard_Integer &OutValue, Standard_Boolean & EPIfound, Handle_TopOpeBRepDS_Interference & IEPI, Standard_Boolean & CPIfound, Handle_TopOpeBRepDS_Interference & ICPI);
@@ -499,7 +499,7 @@ class TopOpeBRep_FacesFiller {
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataStructure & ChangeDataStructure();
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face(const Standard_Integer I) const;
+		const TopoDS_Face  Face(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const TopOpeBRepDS_Transition & FaceFaceTransition(const TopOpeBRep_LineInter &L, const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -552,11 +552,11 @@ class TopOpeBRep_FaceEdgeIntersector {
 		%feature("autodoc", "1");
 		TopOpeBRep_FaceEdgeIntersector();
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &F, const TopoDS_Shape &E);
+		void Perform(const TopoDS_Shape F, const TopoDS_Shape E);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape(const Standard_Integer Index) const;
+		const TopoDS_Shape  Shape(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void ForceTolerance(const Standard_Real tol);
 		%feature("autodoc", "1");
@@ -580,7 +580,7 @@ class TopOpeBRep_FaceEdgeIntersector {
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Transition Transition(const Standard_Integer Index, const TopAbs_Orientation FaceOrientation) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsVertex(const TopoDS_Shape &S, const gp_Pnt &P, const Standard_Real Tol, TopoDS_Vertex & V);
+		Standard_Boolean IsVertex(const TopoDS_Shape S, const gp_Pnt P, const Standard_Real Tol, TopoDS_Vertex & V);
 		%feature("autodoc", "1");
 		Standard_Boolean IsVertex(const Standard_Integer I, TopoDS_Vertex & V);
 		%feature("autodoc", "1");
@@ -609,9 +609,9 @@ class TopOpeBRep_VPointInterClassifier {
 		%feature("autodoc", "1");
 		TopOpeBRep_VPointInterClassifier();
 		%feature("autodoc", "1");
-		TopAbs_State VPointPosition(const TopoDS_Shape &F, TopOpeBRep_VPointInter & VP, const Standard_Integer ShapeIndex, TopOpeBRep_PointClassifier & PC, const Standard_Boolean AssumeINON, const Standard_Real Tol);
+		TopAbs_State VPointPosition(const TopoDS_Shape F, TopOpeBRep_VPointInter & VP, const Standard_Integer ShapeIndex, TopOpeBRep_PointClassifier & PC, const Standard_Boolean AssumeINON, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Edge() const;
+		const TopoDS_Shape  Edge() const;
 		%feature("autodoc", "1");
 		Standard_Real EdgeParameter() const;
 
@@ -638,7 +638,7 @@ class TopOpeBRep_GeomTool {
 		%feature("autodoc", "1");
 		TopOpeBRep_GeomTool();
 		%feature("autodoc", "1");
-		static		void MakeCurves(const Standard_Real min, const Standard_Real max, const TopOpeBRep_LineInter &L, const TopoDS_Shape &S1, const TopoDS_Shape &S2, TopOpeBRepDS_Curve & C, Handle_Geom2d_Curve & PC1, Handle_Geom2d_Curve & PC2);
+		static		void MakeCurves(const Standard_Real min, const Standard_Real max, const TopOpeBRep_LineInter &L, const TopoDS_Shape S1, const TopoDS_Shape S2, TopOpeBRepDS_Curve & C, Handle_Geom2d_Curve & PC1, Handle_Geom2d_Curve & PC2);
 		%feature("autodoc", "1");
 		static		void MakeCurve(const Standard_Real min, const Standard_Real max, const TopOpeBRep_LineInter &L, Handle_Geom_Curve & C);
 		%feature("autodoc", "1");
@@ -677,29 +677,29 @@ class TopOpeBRep_DataMapOfShapeInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Integer &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Integer &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Standard_Integer & Find(const TopoDS_Shape &K) const;
+		const Standard_Integer & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const TopoDS_Shape &K) const;
+		const Standard_Integer & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc","1");
 		%extend {
-				Standard_Integer GetChangeFind(const TopoDS_Shape &K) {
+				Standard_Integer GetChangeFind(const TopoDS_Shape K) {
 				return (Standard_Integer) $self->ChangeFind(K);
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetChangeFind(Standard_Integer value ,const TopoDS_Shape &K) {
+				void SetChangeFind(Standard_Integer value ,const TopoDS_Shape K) {
 				$self->ChangeFind(K)=value;
 				}
 		};
 		%feature("autodoc", "1");
-		Standard_Integer & operator()(const TopoDS_Shape &K);
+		Standard_Integer & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRep_DataMapOfShapeInteger::~TopOpeBRep_DataMapOfShapeInteger %{
@@ -739,7 +739,7 @@ class TopOpeBRep_WPointInter {
 		%feature("autodoc", "1");
 		gp_Pnt2d ValueOnS2() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
+		const gp_Pnt  Value() const;
 		%feature("autodoc", "1");
 		TopOpeBRep_PPntOn2S PPntOn2SDummy() const;
 
@@ -766,9 +766,9 @@ class TopOpeBRep_FacesIntersector {
 		%feature("autodoc", "1");
 		TopOpeBRep_FacesIntersector();
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		void Perform(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Bnd_Box &B1, const Bnd_Box &B2);
+		void Perform(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty();
 		%feature("autodoc", "1");
@@ -776,11 +776,11 @@ class TopOpeBRep_FacesIntersector {
 		%feature("autodoc", "1");
 		Standard_Boolean SameDomain() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Face(const Standard_Integer Index) const;
+		const TopoDS_Shape  Face(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Boolean SurfacesSameOriented() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsRestriction(const TopoDS_Shape &E) const;
+		Standard_Boolean IsRestriction(const TopoDS_Shape E) const;
 		%feature("autodoc", "1");
 		const TopTools_IndexedMapOfShape & Restrictions() const;
 		%feature("autodoc", "1");
@@ -842,9 +842,9 @@ class TopOpeBRep_Point2d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsVertex(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetVertex(const Standard_Integer Index, const TopoDS_Vertex &V);
+		void SetVertex(const Standard_Integer Index, const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex(const Standard_Integer I) const;
+		const TopoDS_Vertex  Vertex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		void SetTransition(const Standard_Integer Index, const TopOpeBRepDS_Transition &T);
 		%feature("autodoc", "1");
@@ -873,13 +873,13 @@ class TopOpeBRep_Point2d {
 		%feature("autodoc", "1");
 		Standard_Integer Index() const;
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &P);
+		void SetValue(const gp_Pnt P);
 		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
+		const gp_Pnt  Value() const;
 		%feature("autodoc", "1");
-		void SetValue2d(const gp_Pnt2d &P);
+		void SetValue2d(const gp_Pnt2d P);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & Value2d() const;
+		const gp_Pnt2d  Value2d() const;
 		%feature("autodoc", "1");
 		void SetKeep(const Standard_Boolean B);
 		%feature("autodoc", "1");
@@ -928,7 +928,7 @@ class TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool : public TCollection_BasicM
 		%feature("autodoc", "1");
 		void Initialize(const TopOpeBRep_DataMapOfTopolTool &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Handle_BRepTopAdaptor_TopolTool & Value() const;
 
@@ -980,13 +980,13 @@ class TopOpeBRep_VPointInter {
 
 		void ParametersOnS2(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
+		const gp_Pnt  Value() const;
 		%feature("autodoc", "1");
 		Standard_Real Tolerance() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & ArcOnS1() const;
+		const TopoDS_Shape  ArcOnS1() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & ArcOnS2() const;
+		const TopoDS_Shape  ArcOnS2() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnLine() const;
 		%feature("autodoc", "1");
@@ -994,13 +994,13 @@ class TopOpeBRep_VPointInter {
 		%feature("autodoc", "1");
 		Standard_Boolean IsVertexOnS1() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & VertexOnS1() const;
+		const TopoDS_Shape  VertexOnS1() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnArc2() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsVertexOnS2() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & VertexOnS2() const;
+		const TopoDS_Shape  VertexOnS2() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsInternal() const;
 		%feature("autodoc", "1");
@@ -1010,9 +1010,9 @@ class TopOpeBRep_VPointInter {
 		%feature("autodoc", "1");
 		void State(const TopAbs_State S, const Standard_Integer I);
 		%feature("autodoc", "1");
-		void EdgeON(const TopoDS_Shape &Eon, const Standard_Real Par, const Standard_Integer I);
+		void EdgeON(const TopoDS_Shape Eon, const Standard_Real Par, const Standard_Integer I);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & EdgeON(const Standard_Integer I) const;
+		const TopoDS_Shape  EdgeON(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		Standard_Real EdgeONParameter(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -1020,7 +1020,7 @@ class TopOpeBRep_VPointInter {
 		%feature("autodoc", "1");
 		void ShapeIndex(const Standard_Integer I);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Edge(const Standard_Integer I) const;
+		const TopoDS_Shape  Edge(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		Standard_Real EdgeParameter(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -1028,7 +1028,7 @@ class TopOpeBRep_VPointInter {
 		%feature("autodoc", "1");
 		Standard_Boolean IsVertex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Vertex(const Standard_Integer I) const;
+		const TopoDS_Shape  Vertex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		void UpdateKeep();
 		%feature("autodoc", "1");
@@ -1039,15 +1039,15 @@ class TopOpeBRep_VPointInter {
 		Standard_Boolean EqualpP(const TopOpeBRep_VPointInter &VP) const;
 		%feature("autodoc","ParonE(const E) -> Standard_Real");
 
-		Standard_Boolean ParonE(const TopoDS_Edge &E, Standard_Real &OutValue) const;
+		Standard_Boolean ParonE(const TopoDS_Edge E, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Index(const Standard_Integer I);
 		%feature("autodoc", "1");
 		Standard_Integer Index() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(const Standard_Integer I, const TopoDS_Face &F, Standard_OStream & OS) const;
+		Standard_OStream & Dump(const Standard_Integer I, const TopoDS_Face F, Standard_OStream & OS) const;
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(const TopoDS_Face &F1, const TopoDS_Face &F2, Standard_OStream & OS) const;
+		Standard_OStream & Dump(const TopoDS_Face F1, const TopoDS_Face F2, Standard_OStream & OS) const;
 		%feature("autodoc", "1");
 		TopOpeBRep_PThePointOfIntersection PThePointOfIntersectionDummy() const;
 
@@ -1076,9 +1076,9 @@ class TopOpeBRep_EdgesIntersector {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		void SetFaces(const TopoDS_Shape &F1, const TopoDS_Shape &F2);
+		void SetFaces(const TopoDS_Shape F1, const TopoDS_Shape F2);
 		%feature("autodoc", "1");
-		void SetFaces(const TopoDS_Shape &F1, const TopoDS_Shape &F2, const Bnd_Box &B1, const Bnd_Box &B2);
+		void SetFaces(const TopoDS_Shape F1, const TopoDS_Shape F2, const Bnd_Box &B1, const Bnd_Box &B2);
 		%feature("autodoc", "1");
 		void ForceTolerances(const Standard_Real Tol1, const Standard_Real Tol2);
 		%feature("autodoc", "1");
@@ -1086,7 +1086,7 @@ class TopOpeBRep_EdgesIntersector {
 		%feature("autodoc", "1");
 		Standard_Integer Dimension() const;
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &E1, const TopoDS_Shape &E2, const Standard_Boolean ReduceSegments=1);
+		void Perform(const TopoDS_Shape E1, const TopoDS_Shape E2, const Standard_Boolean ReduceSegments=1);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty();
 		%feature("autodoc", "1");
@@ -1094,11 +1094,11 @@ class TopOpeBRep_EdgesIntersector {
 		%feature("autodoc", "1");
 		Standard_Boolean SameDomain() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Edge(const Standard_Integer Index) const;
+		const TopoDS_Shape  Edge(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		const Geom2dAdaptor_Curve & Curve(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Face(const Standard_Integer Index) const;
+		const TopoDS_Shape  Face(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		const BRepAdaptor_Surface & Surface(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1164,19 +1164,19 @@ class TopOpeBRep_DataMapOfTopolTool : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepTopAdaptor_TopolTool &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_BRepTopAdaptor_TopolTool &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Handle_BRepTopAdaptor_TopolTool & Find(const TopoDS_Shape &K) const;
+		const Handle_BRepTopAdaptor_TopolTool & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Handle_BRepTopAdaptor_TopolTool & operator()(const TopoDS_Shape &K) const;
+		const Handle_BRepTopAdaptor_TopolTool & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool & ChangeFind(const TopoDS_Shape &K);
+		Handle_BRepTopAdaptor_TopolTool & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool & operator()(const TopoDS_Shape &K);
+		Handle_BRepTopAdaptor_TopolTool & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRep_DataMapOfTopolTool::~TopOpeBRep_DataMapOfTopolTool %{
@@ -1244,7 +1244,7 @@ class TopOpeBRep_FFDumper : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void DumpVP(const TopOpeBRep_VPointInter &VP, const Standard_Integer ISI);
 		%feature("autodoc", "1");
-		Standard_Integer ExploreIndex(const TopoDS_Shape &S, const Standard_Integer ISI) const;
+		Standard_Integer ExploreIndex(const TopoDS_Shape S, const Standard_Integer ISI) const;
 		%feature("autodoc", "1");
 		void DumpDSP(const TopOpeBRep_VPointInter &VP, const TopOpeBRepDS_Kind GK, const Standard_Integer G, const Standard_Boolean newinDS) const;
 		%feature("autodoc", "1");
@@ -1401,9 +1401,9 @@ class TopOpeBRep_Hctxee2d : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TopOpeBRep_Hctxee2d();
 		%feature("autodoc", "1");
-		void SetEdges(const TopoDS_Edge &E1, const TopoDS_Edge &E2, const BRepAdaptor_Surface &BAS1, const BRepAdaptor_Surface &BAS2);
+		void SetEdges(const TopoDS_Edge E1, const TopoDS_Edge E2, const BRepAdaptor_Surface &BAS1, const BRepAdaptor_Surface &BAS2);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Edge(const Standard_Integer I) const;
+		const TopoDS_Shape  Edge(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Geom2dAdaptor_Curve & Curve(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -1442,9 +1442,9 @@ def __del__(self):
 class TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger(const TopoDS_Shape &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger(const TopoDS_Shape K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetValue() {
@@ -1538,7 +1538,7 @@ class TopOpeBRep_FFTransitionTool {
 		%feature("autodoc", "1");
 		static		TopOpeBRepDS_Transition ProcessFaceTransition(const TopOpeBRep_LineInter &L, const Standard_Integer Index, const TopAbs_Orientation FaceOrientation);
 		%feature("autodoc", "1");
-		static		TopOpeBRepDS_Transition ProcessEdgeONTransition(const TopOpeBRep_VPointInter &VP, const Standard_Integer Index, const TopoDS_Shape &R, const TopoDS_Shape &E, const TopoDS_Shape &F);
+		static		TopOpeBRepDS_Transition ProcessEdgeONTransition(const TopOpeBRep_VPointInter &VP, const Standard_Integer Index, const TopoDS_Shape R, const TopoDS_Shape E, const TopoDS_Shape F);
 
 };
 %feature("shadow") TopOpeBRep_FFTransitionTool::~TopOpeBRep_FFTransitionTool %{
@@ -1567,21 +1567,21 @@ class TopOpeBRep_DSFiller {
 		%feature("autodoc", "1");
 		TopOpeBRepTool_PShapeClassifier PShapeClassifier() const;
 		%feature("autodoc", "1");
-		void Insert(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Handle_TopOpeBRepDS_HDataStructure &HDS, const Standard_Boolean orientFORWARD=1);
+		void Insert(const TopoDS_Shape S1, const TopoDS_Shape S2, const Handle_TopOpeBRepDS_HDataStructure &HDS, const Standard_Boolean orientFORWARD=1);
 		%feature("autodoc", "1");
-		void InsertIntersection(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Handle_TopOpeBRepDS_HDataStructure &HDS, const Standard_Boolean orientFORWARD=1);
+		void InsertIntersection(const TopoDS_Shape S1, const TopoDS_Shape S2, const Handle_TopOpeBRepDS_HDataStructure &HDS, const Standard_Boolean orientFORWARD=1);
 		%feature("autodoc", "1");
 		void Complete(const Handle_TopOpeBRepDS_HDataStructure &HDS);
 		%feature("autodoc", "1");
-		void Insert2d(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		void Insert2d(const TopoDS_Shape S1, const TopoDS_Shape S2, const Handle_TopOpeBRepDS_HDataStructure &HDS);
 		%feature("autodoc", "1");
-		void InsertIntersection2d(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		void InsertIntersection2d(const TopoDS_Shape S1, const TopoDS_Shape S2, const Handle_TopOpeBRepDS_HDataStructure &HDS);
 		%feature("autodoc", "1");
-		Standard_Boolean IsMadeOf1d(const TopoDS_Shape &S) const;
+		Standard_Boolean IsMadeOf1d(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsContext1d(const TopoDS_Shape &S) const;
+		Standard_Boolean IsContext1d(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		void Insert1d(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const TopoDS_Face &F1, const TopoDS_Face &F2, const Handle_TopOpeBRepDS_HDataStructure &HDS, const Standard_Boolean orientFORWARD=0);
+		void Insert1d(const TopoDS_Shape S1, const TopoDS_Shape S2, const TopoDS_Face F1, const TopoDS_Face F2, const Handle_TopOpeBRepDS_HDataStructure &HDS, const Standard_Boolean orientFORWARD=0);
 		%feature("autodoc", "1");
 		TopOpeBRep_ShapeIntersector & ChangeShapeIntersector();
 		%feature("autodoc", "1");
@@ -1634,7 +1634,7 @@ class TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_Bas
 		%feature("autodoc", "1");
 		void Initialize(const TopOpeBRep_DataMapOfShapeInteger &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Standard_Integer & Value() const;
 
@@ -1708,7 +1708,7 @@ class TopOpeBRep_PointGeomTool {
 		%feature("autodoc", "1");
 		static		TopOpeBRepDS_Point MakePoint(const TopOpeBRep_FaceEdgeIntersector &FEI);
 		%feature("autodoc", "1");
-		static		TopOpeBRepDS_Point MakePoint(const TopoDS_Shape &S);
+		static		TopOpeBRepDS_Point MakePoint(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsEqual(const TopOpeBRepDS_Point &DSP1, const TopOpeBRepDS_Point &DSP2);
 
@@ -1735,11 +1735,11 @@ class TopOpeBRep_EdgesFiller {
 		%feature("autodoc", "1");
 		TopOpeBRep_EdgesFiller();
 		%feature("autodoc", "1");
-		void Insert(const TopoDS_Shape &E1, const TopoDS_Shape &E2, TopOpeBRep_EdgesIntersector & EI, const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		void Insert(const TopoDS_Shape E1, const TopoDS_Shape E2, TopOpeBRep_EdgesIntersector & EI, const Handle_TopOpeBRepDS_HDataStructure &HDS);
 		%feature("autodoc", "1");
-		void Face(const Standard_Integer I, const TopoDS_Shape &F);
+		void Face(const Standard_Integer I, const TopoDS_Shape F);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Face(const Standard_Integer I) const;
+		const TopoDS_Shape  Face(const Standard_Integer I) const;
 
 };
 %feature("shadow") TopOpeBRep_EdgesFiller::~TopOpeBRep_EdgesFiller %{
@@ -1762,9 +1762,9 @@ def __del__(self):
 class TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRep_DataMapNodeOfDataMapOfTopolTool(const TopoDS_Shape &K, const Handle_BRepTopAdaptor_TopolTool &I, const TCollection_MapNodePtr &n);
+		TopOpeBRep_DataMapNodeOfDataMapOfTopolTool(const TopoDS_Shape K, const Handle_BRepTopAdaptor_TopolTool &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool & Value() const;
 		%feature("autodoc", "1");
@@ -1858,11 +1858,11 @@ class TopOpeBRep_ShapeIntersector {
 		%feature("autodoc", "1");
 		TopOpeBRep_ShapeIntersector();
 		%feature("autodoc", "1");
-		void InitIntersection(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		void InitIntersection(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		void InitIntersection(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const TopoDS_Face &F1, const TopoDS_Face &F2);
+		void InitIntersection(const TopoDS_Shape S1, const TopoDS_Shape S2, const TopoDS_Face F1, const TopoDS_Face F2);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape(const Standard_Integer Index) const;
+		const TopoDS_Shape  Shape(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Boolean MoreIntersection() const;
 		%feature("autodoc", "1");
@@ -1874,7 +1874,7 @@ class TopOpeBRep_ShapeIntersector {
 		%feature("autodoc", "1");
 		TopOpeBRep_FaceEdgeIntersector & ChangeFaceEdgeIntersector();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & CurrentGeomShape(const Standard_Integer Index) const;
+		const TopoDS_Shape  CurrentGeomShape(const Standard_Integer Index) const;
 		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
 
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -1883,7 +1883,7 @@ class TopOpeBRep_ShapeIntersector {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const Standard_Integer K) const;
 		%feature("autodoc", "1");
-		void RejectedFaces(const TopoDS_Shape &anObj, const TopoDS_Shape &aReference, TopTools_ListOfShape & aListOfShape);
+		void RejectedFaces(const TopoDS_Shape anObj, const TopoDS_Shape aReference, TopTools_ListOfShape & aListOfShape);
 
 };
 %feature("shadow") TopOpeBRep_ShapeIntersector::~TopOpeBRep_ShapeIntersector %{
@@ -1908,7 +1908,7 @@ class TopOpeBRep_FaceEdgeFiller {
 		%feature("autodoc", "1");
 		TopOpeBRep_FaceEdgeFiller();
 		%feature("autodoc", "1");
-		void Insert(const TopoDS_Shape &F, const TopoDS_Shape &E, TopOpeBRep_FaceEdgeIntersector & FEINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		void Insert(const TopoDS_Shape F, const TopoDS_Shape E, TopOpeBRep_FaceEdgeIntersector & FEINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
 
 };
 %feature("shadow") TopOpeBRep_FaceEdgeFiller::~TopOpeBRep_FaceEdgeFiller %{
@@ -1935,9 +1935,9 @@ class TopOpeBRep_ShapeScanner {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void AddBoxesMakeCOB(const TopoDS_Shape &S, const TopAbs_ShapeEnum TS, const TopAbs_ShapeEnum TA=TopAbs_SHAPE);
+		void AddBoxesMakeCOB(const TopoDS_Shape S, const TopAbs_ShapeEnum TS, const TopAbs_ShapeEnum TA=TopAbs_SHAPE);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &E);
+		void Init(const TopoDS_Shape E);
 		%feature("autodoc", "1");
 		void Init(TopOpeBRepTool_ShapeExplorer & X);
 		%feature("autodoc", "1");
@@ -1945,7 +1945,7 @@ class TopOpeBRep_ShapeScanner {
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Current() const;
+		const TopoDS_Shape  Current() const;
 		%feature("autodoc", "1");
 		const TopOpeBRepTool_BoxSort & BoxSort() const;
 		%feature("autodoc", "1");
@@ -2134,7 +2134,7 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TopOpeBRep_Hctxff2d();
 		%feature("autodoc", "1");
-		void SetFaces(const TopoDS_Face &F1, const TopoDS_Face &F2);
+		void SetFaces(const TopoDS_Face F1, const TopoDS_Face F2);
 		%feature("autodoc", "1");
 		void SetHSurfaces(const Handle_BRepAdaptor_HSurface &S1, const Handle_BRepAdaptor_HSurface &S2);
 		%feature("autodoc", "1");
@@ -2145,7 +2145,7 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Real GetMaxTolerance() const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face(const Standard_Integer I) const;
+		const TopoDS_Face  Face(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HSurface HSurface(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -2280,9 +2280,9 @@ class TopOpeBRep_ShapeIntersector2d {
 		%feature("autodoc", "1");
 		TopOpeBRep_ShapeIntersector2d();
 		%feature("autodoc", "1");
-		void InitIntersection(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		void InitIntersection(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape(const Standard_Integer Index) const;
+		const TopoDS_Shape  Shape(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Boolean MoreIntersection() const;
 		%feature("autodoc", "1");
@@ -2290,7 +2290,7 @@ class TopOpeBRep_ShapeIntersector2d {
 		%feature("autodoc", "1");
 		TopOpeBRep_EdgesIntersector & ChangeEdgesIntersector();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & CurrentGeomShape(const Standard_Integer Index) const;
+		const TopoDS_Shape  CurrentGeomShape(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void DumpCurrent(const Standard_Integer K) const;
 		%feature("autodoc", "1");
@@ -2321,9 +2321,9 @@ class TopOpeBRep_PointClassifier {
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		void Load(const TopoDS_Face &F);
+		void Load(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		TopAbs_State Classify(const TopoDS_Face &F, const gp_Pnt2d &P, const Standard_Real Tol);
+		TopAbs_State Classify(const TopoDS_Face F, const gp_Pnt2d P, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		TopAbs_State State() const;
 

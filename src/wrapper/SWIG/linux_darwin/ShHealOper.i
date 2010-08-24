@@ -140,13 +140,13 @@ class ShHealOper_Tool {
 		%feature("autodoc", "1");
 		ShHealOper_Tool();
 		%feature("autodoc", "1");
-		ShHealOper_Tool(const TopoDS_Shape &theShape);
+		ShHealOper_Tool(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		virtual		void Init(const TopoDS_Shape &theShape);
+		virtual		void Init(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GetResultShape() const;
+		const TopoDS_Shape  GetResultShape() const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetModifiedShape(const TopoDS_Shape &theOldShape, TopoDS_Shape & theNewShape) const;
+		Standard_Boolean GetModifiedShape(const TopoDS_Shape theOldShape, TopoDS_Shape & theNewShape) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -179,7 +179,7 @@ class ShHealOper_Sewing : public ShHealOper_Tool {
 		%feature("autodoc", "1");
 		ShHealOper_Sewing();
 		%feature("autodoc", "1");
-		ShHealOper_Sewing(const TopoDS_Shape &theShape, const Standard_Real theTolerance);
+		ShHealOper_Sewing(const TopoDS_Shape theShape, const Standard_Real theTolerance);
 		%feature("autodoc", "1");
 		Standard_Boolean Perform();
 		%feature("autodoc", "1");
@@ -228,9 +228,9 @@ class ShHealOper_RemoveInternalWires : public ShHealOper_Tool {
 		%feature("autodoc", "1");
 		ShHealOper_RemoveInternalWires();
 		%feature("autodoc", "1");
-		ShHealOper_RemoveInternalWires(const TopoDS_Shape &theShape);
+		ShHealOper_RemoveInternalWires(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		virtual		void Init(const TopoDS_Shape &theShape);
+		virtual		void Init(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		Standard_Boolean Remove();
 		%feature("autodoc", "1");
@@ -300,7 +300,7 @@ class ShHealOper_ShapeProcess {
 		%feature("autodoc", "1");
 		ShHealOper_ShapeProcess(const TCollection_AsciiString &theNameResource, const TCollection_AsciiString &thePrefix="ShapeProcess");
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape &theOldShape, TopoDS_Shape & theNewShape);
+		void Perform(const TopoDS_Shape theOldShape, TopoDS_Shape & theNewShape);
 		%feature("autodoc", "1");
 		void SetOperators(const TColStd_SequenceOfAsciiString &theSeqOperators);
 		%feature("autodoc", "1");
@@ -314,7 +314,7 @@ class ShHealOper_ShapeProcess {
 		%feature("autodoc", "1");
 		Standard_Boolean GetSaveHistoryMode();
 		%feature("autodoc", "1");
-		Standard_Boolean GetModifiedShape(const TopoDS_Shape &theOldShape, TopoDS_Shape & theNewShape);
+		Standard_Boolean GetModifiedShape(const TopoDS_Shape theOldShape, TopoDS_Shape & theNewShape);
 		%feature("autodoc", "1");
 		Standard_Boolean isDone();
 
@@ -341,13 +341,13 @@ class ShHealOper_CloseContour : public ShHealOper_Tool {
 		%feature("autodoc", "1");
 		ShHealOper_CloseContour();
 		%feature("autodoc", "1");
-		ShHealOper_CloseContour(const TopoDS_Shape &theShape);
+		ShHealOper_CloseContour(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		virtual		void Init(const TopoDS_Shape &theShape);
+		virtual		void Init(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		Standard_Boolean Perform(const TopTools_SequenceOfShape &theSeqEdges, const Standard_Boolean theModeVertex=0, const Standard_Boolean theModeFixGapsCurves=1);
 		%feature("autodoc", "1");
-		Standard_Boolean Perform(const TopoDS_Wire &theWire, const Standard_Boolean theModeVertex=0, const Standard_Boolean theModeFixGapsCurves=1);
+		Standard_Boolean Perform(const TopoDS_Wire theWire, const Standard_Boolean theModeVertex=0, const Standard_Boolean theModeFixGapsCurves=1);
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real theTolerance);
 		%feature("autodoc", "1");
@@ -384,9 +384,9 @@ class ShHealOper_FillHoles : public ShHealOper_Tool {
 		%feature("autodoc", "1");
 		ShHealOper_FillHoles();
 		%feature("autodoc", "1");
-		ShHealOper_FillHoles(const TopoDS_Shape &theShape);
+		ShHealOper_FillHoles(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		virtual		void Init(const TopoDS_Shape &theShape);
+		virtual		void Init(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		void InitParameters(Standard_Integer =3, Standard_Integer =5, Standard_Integer =12, Standard_Real =1.00000000000000004792173602385929598312941379845e-4, Standard_Real =1.00000000000000008180305391403130954586231382564e-5, Standard_Real =1.0000000000000000208166817117216851329430937767e-2, Standard_Real =1.0000000000000000208166817117216851329430937767e-2, Standard_Integer =8, Standard_Integer =9);
 		%feature("autodoc", "1");
@@ -417,9 +417,9 @@ class ShHealOper_ChangeOrientation : public ShHealOper_Tool {
 		%feature("autodoc", "1");
 		ShHealOper_ChangeOrientation();
 		%feature("autodoc", "1");
-		ShHealOper_ChangeOrientation(const TopoDS_Shape &theShape);
+		ShHealOper_ChangeOrientation(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		virtual		void Init(const TopoDS_Shape &theShape);
+		virtual		void Init(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		Standard_Boolean Perform();
 
@@ -446,9 +446,9 @@ class ShHealOper_RemoveFace : public ShHealOper_Tool {
 		%feature("autodoc", "1");
 		ShHealOper_RemoveFace();
 		%feature("autodoc", "1");
-		ShHealOper_RemoveFace(const TopoDS_Shape &theShape);
+		ShHealOper_RemoveFace(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		virtual		void Init(const TopoDS_Shape &theShape);
+		virtual		void Init(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		Standard_Boolean Perform();
 		%feature("autodoc", "1");
@@ -477,13 +477,13 @@ class ShHealOper_EdgeDivide : public ShHealOper_Tool {
 		%feature("autodoc", "1");
 		ShHealOper_EdgeDivide();
 		%feature("autodoc", "1");
-		ShHealOper_EdgeDivide(const TopoDS_Shape &theShape);
+		ShHealOper_EdgeDivide(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		virtual		void Init(const TopoDS_Shape &theShape);
+		virtual		void Init(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		Standard_Boolean Perform(const TopoDS_Shape &theEdge, const Standard_Real theValue, const Standard_Boolean theDivideParamMode=1);
+		Standard_Boolean Perform(const TopoDS_Shape theEdge, const Standard_Real theValue, const Standard_Boolean theDivideParamMode=1);
 		%feature("autodoc", "1");
-		Standard_Boolean Perform(const TopoDS_Shape &theEdge, const TColStd_SequenceOfReal &theValues, const Standard_Boolean theDivideParamMode=1);
+		Standard_Boolean Perform(const TopoDS_Shape theEdge, const TColStd_SequenceOfReal &theValues, const Standard_Boolean theDivideParamMode=1);
 
 };
 %feature("shadow") ShHealOper_EdgeDivide::~ShHealOper_EdgeDivide %{

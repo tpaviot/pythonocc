@@ -242,9 +242,9 @@ class Plate_Plate {
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		gp_XYZ Evaluate(const gp_XY &point2d) const;
+		gp_XYZ Evaluate(const gp_XY point2d) const;
 		%feature("autodoc", "1");
-		gp_XYZ EvaluateDerivative(const gp_XY &point2d, const Standard_Integer iu, const Standard_Integer iv) const;
+		gp_XYZ EvaluateDerivative(const gp_XY point2d, const Standard_Integer iu, const Standard_Integer iv) const;
 		%feature("autodoc", "1");
 		void CoefPol(Handle_TColgp_HArray2OfXYZ & Coefs) const;
 		%feature("autodoc", "1");
@@ -303,7 +303,7 @@ def __del__(self):
 class Plate_PlaneConstraint {
 	public:
 		%feature("autodoc", "1");
-		Plate_PlaneConstraint(const gp_XY &point2d, const gp_Pln &pln, const Standard_Integer iu=0, const Standard_Integer iv=0);
+		Plate_PlaneConstraint(const gp_XY point2d, const gp_Pln pln, const Standard_Integer iu=0, const Standard_Integer iv=0);
 		%feature("autodoc", "1");
 		const Plate_LinearScalarConstraint & LSC() const;
 
@@ -392,17 +392,17 @@ class Plate_GtoCConstraint {
 		%feature("autodoc", "1");
 		Plate_GtoCConstraint(const Plate_GtoCConstraint &ref);
 		%feature("autodoc", "1");
-		Plate_GtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T);
+		Plate_GtoCConstraint(const gp_XY point2d, const Plate_D1 &D1S, const Plate_D1 &D1T);
 		%feature("autodoc", "1");
-		Plate_GtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const gp_XYZ &nP);
+		Plate_GtoCConstraint(const gp_XY point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const gp_XYZ nP);
 		%feature("autodoc", "1");
-		Plate_GtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T);
+		Plate_GtoCConstraint(const gp_XY point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T);
 		%feature("autodoc", "1");
-		Plate_GtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const gp_XYZ &nP);
+		Plate_GtoCConstraint(const gp_XY point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const gp_XYZ nP);
 		%feature("autodoc", "1");
-		Plate_GtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const Plate_D3 &D3S, const Plate_D3 &D3T);
+		Plate_GtoCConstraint(const gp_XY point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const Plate_D3 &D3S, const Plate_D3 &D3T);
 		%feature("autodoc", "1");
-		Plate_GtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const Plate_D3 &D3S, const Plate_D3 &D3T, const gp_XYZ &nP);
+		Plate_GtoCConstraint(const gp_XY point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const Plate_D3 &D3S, const Plate_D3 &D3T, const gp_XYZ nP);
 		%feature("autodoc", "1");
 		const Standard_Integer & nb_PPC() const;
 		%feature("autodoc", "1");
@@ -519,7 +519,7 @@ def __del__(self):
 class Plate_D2 {
 	public:
 		%feature("autodoc", "1");
-		Plate_D2(const gp_XYZ &duu, const gp_XYZ &duv, const gp_XYZ &dvv);
+		Plate_D2(const gp_XYZ duu, const gp_XYZ duv, const gp_XYZ dvv);
 		%feature("autodoc", "1");
 		Plate_D2(const Plate_D2 &ref);
 
@@ -544,7 +544,7 @@ def __del__(self):
 class Plate_D3 {
 	public:
 		%feature("autodoc", "1");
-		Plate_D3(const gp_XYZ &duuu, const gp_XYZ &duuv, const gp_XYZ &duvv, const gp_XYZ &dvvv);
+		Plate_D3(const gp_XYZ duuu, const gp_XYZ duuv, const gp_XYZ duvv, const gp_XYZ dvvv);
 		%feature("autodoc", "1");
 		Plate_D3(const Plate_D3 &ref);
 
@@ -634,13 +634,13 @@ def __del__(self):
 class Plate_D1 {
 	public:
 		%feature("autodoc", "1");
-		Plate_D1(const gp_XYZ &du, const gp_XYZ &dv);
+		Plate_D1(const gp_XYZ du, const gp_XYZ dv);
 		%feature("autodoc", "1");
 		Plate_D1(const Plate_D1 &ref);
 		%feature("autodoc", "1");
-		const gp_XYZ & DU() const;
+		const gp_XYZ  DU() const;
 		%feature("autodoc", "1");
-		const gp_XYZ & DV() const;
+		const gp_XYZ  DV() const;
 
 };
 %feature("shadow") Plate_D1::~Plate_D1 %{
@@ -767,7 +767,7 @@ class Plate_LinearScalarConstraint {
 		%feature("autodoc", "1");
 		Plate_LinearScalarConstraint();
 		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint(const Plate_PinpointConstraint &PPC1, const gp_XYZ &coeff);
+		Plate_LinearScalarConstraint(const Plate_PinpointConstraint &PPC1, const gp_XYZ coeff);
 		%feature("autodoc", "1");
 		Plate_LinearScalarConstraint(const Plate_Array1OfPinpointConstraint &PPC, const TColgp_Array1OfXYZ &coeff);
 		%feature("autodoc", "1");
@@ -781,7 +781,7 @@ class Plate_LinearScalarConstraint {
 		%feature("autodoc", "1");
 		void SetPPC(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
 		%feature("autodoc", "1");
-		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const gp_XYZ &Value);
+		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const gp_XYZ Value);
 
 };
 %feature("shadow") Plate_LinearScalarConstraint::~Plate_LinearScalarConstraint %{
@@ -861,15 +861,15 @@ class Plate_PinpointConstraint {
 		%feature("autodoc", "1");
 		Plate_PinpointConstraint();
 		%feature("autodoc", "1");
-		Plate_PinpointConstraint(const gp_XY &point2d, const gp_XYZ &ImposedValue, const Standard_Integer iu=0, const Standard_Integer iv=0);
+		Plate_PinpointConstraint(const gp_XY point2d, const gp_XYZ ImposedValue, const Standard_Integer iu=0, const Standard_Integer iv=0);
 		%feature("autodoc", "1");
-		const gp_XY & Pnt2d() const;
+		const gp_XY  Pnt2d() const;
 		%feature("autodoc", "1");
 		const Standard_Integer & Idu() const;
 		%feature("autodoc", "1");
 		const Standard_Integer & Idv() const;
 		%feature("autodoc", "1");
-		const gp_XYZ & Value() const;
+		const gp_XYZ  Value() const;
 
 };
 %feature("shadow") Plate_PinpointConstraint::~Plate_PinpointConstraint %{
@@ -929,11 +929,11 @@ def __del__(self):
 class Plate_FreeGtoCConstraint {
 	public:
 		%feature("autodoc", "1");
-		Plate_FreeGtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Standard_Real IncrementalLoad=1.0e+0, const Standard_Integer orientation=0);
+		Plate_FreeGtoCConstraint(const gp_XY point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Standard_Real IncrementalLoad=1.0e+0, const Standard_Integer orientation=0);
 		%feature("autodoc", "1");
-		Plate_FreeGtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const Standard_Real IncrementalLoad=1.0e+0, const Standard_Integer orientation=0);
+		Plate_FreeGtoCConstraint(const gp_XY point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const Standard_Real IncrementalLoad=1.0e+0, const Standard_Integer orientation=0);
 		%feature("autodoc", "1");
-		Plate_FreeGtoCConstraint(const gp_XY &point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const Plate_D3 &D3S, const Plate_D3 &D3T, const Standard_Real IncrementalLoad=1.0e+0, const Standard_Integer orientation=0);
+		Plate_FreeGtoCConstraint(const gp_XY point2d, const Plate_D1 &D1S, const Plate_D1 &D1T, const Plate_D2 &D2S, const Plate_D2 &D2T, const Plate_D3 &D3S, const Plate_D3 &D3T, const Standard_Real IncrementalLoad=1.0e+0, const Standard_Integer orientation=0);
 		%feature("autodoc", "1");
 		const Standard_Integer & nb_PPC() const;
 		%feature("autodoc", "1");
@@ -964,7 +964,7 @@ def __del__(self):
 class Plate_LineConstraint {
 	public:
 		%feature("autodoc", "1");
-		Plate_LineConstraint(const gp_XY &point2d, const gp_Lin &lin, const Standard_Integer iu=0, const Standard_Integer iv=0);
+		Plate_LineConstraint(const gp_XY point2d, const gp_Lin lin, const Standard_Integer iu=0, const Standard_Integer iv=0);
 		%feature("autodoc", "1");
 		const Plate_LinearScalarConstraint & LSC() const;
 

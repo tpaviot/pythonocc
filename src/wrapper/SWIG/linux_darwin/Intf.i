@@ -251,7 +251,7 @@ def __del__(self):
 class Intf_SectionPoint {
 	public:
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt() const;
+		const gp_Pnt  Pnt() const;
 		%feature("autodoc", "1");
 		Standard_Real ParamOnFirst() const;
 		%feature("autodoc", "1");
@@ -283,9 +283,9 @@ class Intf_SectionPoint {
 		%feature("autodoc", "1");
 		Intf_SectionPoint();
 		%feature("autodoc", "1");
-		Intf_SectionPoint(const gp_Pnt &Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Integer AddrO2, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Integer AddrT2, const Standard_Real ParamT, const Standard_Real Incid);
+		Intf_SectionPoint(const gp_Pnt Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Integer AddrO2, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Integer AddrT2, const Standard_Real ParamT, const Standard_Real Incid);
 		%feature("autodoc", "1");
-		Intf_SectionPoint(const gp_Pnt2d &Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Real ParamT, const Standard_Real Incid);
+		Intf_SectionPoint(const gp_Pnt2d Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Real ParamT, const Standard_Real Incid);
 		%feature("autodoc", "1");
 		void Merge(Intf_SectionPoint & Other);
 		%feature("autodoc", "1");
@@ -546,9 +546,9 @@ class Intf_Array1OfLin {
 		%feature("autodoc", "1");
 		Intf_Array1OfLin(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Intf_Array1OfLin(const gp_Lin &Item, const Standard_Integer Low, const Standard_Integer Up);
+		Intf_Array1OfLin(const gp_Lin Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const gp_Lin &V);
+		void Init(const gp_Lin V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -564,15 +564,15 @@ class Intf_Array1OfLin {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Lin &Value);
+		void SetValue(const Standard_Integer Index, const gp_Lin Value);
 		%feature("autodoc", "1");
-		const gp_Lin & Value(const Standard_Integer Index) const;
+		const gp_Lin  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Lin & operator()(const Standard_Integer Index) const;
+		const gp_Lin  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Lin & ChangeValue(const Standard_Integer Index);
+		gp_Lin  ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		gp_Lin & operator()(const Standard_Integer Index);
+		gp_Lin  operator()(const Standard_Integer Index);
 
 };
 %feature("shadow") Intf_Array1OfLin::~Intf_Array1OfLin %{
@@ -696,17 +696,17 @@ class Intf_Tool {
 		%feature("autodoc", "1");
 		Intf_Tool();
 		%feature("autodoc", "1");
-		void Lin2dBox(const gp_Lin2d &theLin2d, const Bnd_Box2d &bounding, Bnd_Box2d & boxLin);
+		void Lin2dBox(const gp_Lin2d theLin2d, const Bnd_Box2d &bounding, Bnd_Box2d & boxLin);
 		%feature("autodoc", "1");
-		void Hypr2dBox(const gp_Hypr2d &theHypr2d, const Bnd_Box2d &bounding, Bnd_Box2d & boxHypr);
+		void Hypr2dBox(const gp_Hypr2d theHypr2d, const Bnd_Box2d &bounding, Bnd_Box2d & boxHypr);
 		%feature("autodoc", "1");
-		void Parab2dBox(const gp_Parab2d &theParab2d, const Bnd_Box2d &bounding, Bnd_Box2d & boxHypr);
+		void Parab2dBox(const gp_Parab2d theParab2d, const Bnd_Box2d &bounding, Bnd_Box2d & boxHypr);
 		%feature("autodoc", "1");
-		void LinBox(const gp_Lin &theLin, const Bnd_Box &bounding, Bnd_Box & boxLin);
+		void LinBox(const gp_Lin theLin, const Bnd_Box &bounding, Bnd_Box & boxLin);
 		%feature("autodoc", "1");
-		void HyprBox(const gp_Hypr &theHypr, const Bnd_Box &bounding, Bnd_Box & boxHypr);
+		void HyprBox(const gp_Hypr theHypr, const Bnd_Box &bounding, Bnd_Box & boxHypr);
 		%feature("autodoc", "1");
-		void ParabBox(const gp_Parab &theParab, const Bnd_Box &bounding, Bnd_Box & boxHypr);
+		void ParabBox(const gp_Parab theParab, const Bnd_Box &bounding, Bnd_Box & boxHypr);
 		%feature("autodoc", "1");
 		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
@@ -738,9 +738,9 @@ class Intf {
 		Intf();
 		%feature("autodoc","PlaneEquation(const P1, const P2, const P3) -> Standard_Real");
 
-		static		void PlaneEquation(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
+		static		void PlaneEquation(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		static		Standard_Boolean Contain(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &ThePnt);
+		static		Standard_Boolean Contain(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt ThePnt);
 
 };
 %feature("shadow") Intf::~Intf %{

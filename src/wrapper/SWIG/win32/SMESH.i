@@ -149,7 +149,7 @@ def __del__(self):
 class SMESH_HypoPredicate {
 	public:
 		%feature("autodoc", "1");
-		virtual		bool IsOk(const SMESH_Hypothesis *aHyp, const TopoDS_Shape &aShape) const;
+		virtual		bool IsOk(const SMESH_Hypothesis *aHyp, const TopoDS_Shape aShape) const;
 
 };
 %feature("shadow") SMESH_HypoPredicate::~SMESH_HypoPredicate %{
@@ -190,15 +190,15 @@ class SMESH_HypoFilter : public SMESH_HypoPredicate {
 		%feature("autodoc", "1");
 		static		SMESH_HypoPredicate * IsAuxiliary();
 		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * IsApplicableTo(const TopoDS_Shape &theShape);
+		static		SMESH_HypoPredicate * IsApplicableTo(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * IsAssignedTo(const TopoDS_Shape &theShape);
+		static		SMESH_HypoPredicate * IsAssignedTo(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		static		SMESH_HypoPredicate * Is(const SMESH_Hypothesis *theHypo);
 		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * IsGlobal(const TopoDS_Shape &theMainShape);
+		static		SMESH_HypoPredicate * IsGlobal(const TopoDS_Shape theMainShape);
 		%feature("autodoc", "1");
-		static		SMESH_HypoPredicate * IsMoreLocalThan(const TopoDS_Shape &theShape);
+		static		SMESH_HypoPredicate * IsMoreLocalThan(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		static		SMESH_HypoPredicate * HasName(const std::string &theName);
 		%feature("autodoc", "1");
@@ -239,13 +239,13 @@ class SMESH_MesherHelper {
 		%feature("autodoc", "1");
 		static		bool IsMedium(const SMDS_MeshNode *node, const SMDSAbs_ElementType typeToCheck=SMDSAbs_All);
 		%feature("autodoc", "1");
-		static		bool LoadNodeColumns(TParam2ColumnMap & theParam2ColumnMap, const TopoDS_Face &theFace, const TopoDS_Edge &theBaseEdge, SMESHDS_Mesh* theMesh);
+		static		bool LoadNodeColumns(TParam2ColumnMap & theParam2ColumnMap, const TopoDS_Face theFace, const TopoDS_Edge theBaseEdge, SMESHDS_Mesh* theMesh);
 		%feature("autodoc", "1");
 		static		TopoDS_Shape GetSubShapeByNode(const SMDS_MeshNode *node, SMESHDS_Mesh* meshDS);
 		%feature("autodoc", "1");
 		static		int WrapIndex(const int ind, const int nbNodes);
 		%feature("autodoc", "1");
-		static		int NbAncestors(const TopoDS_Shape &shape, const SMESH_Mesh &mesh, TopAbs_ShapeEnum =TopAbs_SHAPE);
+		static		int NbAncestors(const TopoDS_Shape shape, const SMESH_Mesh &mesh, TopAbs_ShapeEnum =TopAbs_SHAPE);
 		%feature("autodoc", "1");
 		SMESH_MesherHelper(SMESH_Mesh & theMesh);
 		%feature("autodoc", "1");
@@ -253,7 +253,7 @@ class SMESH_MesherHelper {
 		%feature("autodoc", "1");
 		SMESHDS_Mesh * GetMeshDS() const;
 		%feature("autodoc", "1");
-		bool IsQuadraticSubMesh(const TopoDS_Shape &theShape);
+		bool IsQuadraticSubMesh(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		void SetIsQuadratic(const bool theBuildQuadratic);
 		%feature("autodoc", "1");
@@ -265,7 +265,7 @@ class SMESH_MesherHelper {
 		%feature("autodoc", "1");
 		void SetSubShape(const int subShapeID);
 		%feature("autodoc", "1");
-		void SetSubShape(const TopoDS_Shape &subShape);
+		void SetSubShape(const TopoDS_Shape subShape);
 		%feature("autodoc", "1");
 		int GetSubShapeID() const;
 		%feature("autodoc", "1");
@@ -287,25 +287,25 @@ class SMESH_MesherHelper {
 		%feature("autodoc", "1");
 		SMDS_MeshVolume * AddVolume(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n5, const SMDS_MeshNode *n6, const SMDS_MeshNode *n7, const SMDS_MeshNode *n8, const int id=0, bool =true);
 		%feature("autodoc", "1");
-		double GetNodeU(const TopoDS_Edge &theEdge, const SMDS_MeshNode *theNode, bool* check=0);
+		double GetNodeU(const TopoDS_Edge theEdge, const SMDS_MeshNode *theNode, bool* check=0);
 		%feature("autodoc", "1");
-		gp_XY GetNodeUV(const TopoDS_Face &F, const SMDS_MeshNode *n, const SMDS_MeshNode *inFaceNode=0, bool* check=0) const;
+		gp_XY GetNodeUV(const TopoDS_Face F, const SMDS_MeshNode *n, const SMDS_MeshNode *inFaceNode=0, bool* check=0) const;
 		%feature("autodoc", "1");
-		bool CheckNodeUV(const TopoDS_Face &F, const SMDS_MeshNode *n, gp_XY & uv, const double tol) const;
+		bool CheckNodeUV(const TopoDS_Face F, const SMDS_MeshNode *n, gp_XY & uv, const double tol) const;
 		%feature("autodoc", "1");
-		static		gp_XY GetMiddleUV(const Handle_Geom_Surface &surface, const gp_XY &uv1, const gp_XY &uv2);
+		static		gp_XY GetMiddleUV(const Handle_Geom_Surface &surface, const gp_XY uv1, const gp_XY uv2);
 		%feature("autodoc", "1");
-		bool GetNodeUVneedInFaceNode(const TopoDS_Face &F=TopoDS_Face( )) const;
+		bool GetNodeUVneedInFaceNode(const TopoDS_Face F=TopoDS_Face( )) const;
 		%feature("autodoc", "1");
 		bool IsDegenShape(const int subShape) const;
 		%feature("autodoc", "1");
 		bool IsSeamShape(const int subShape) const;
 		%feature("autodoc", "1");
-		bool IsSeamShape(const TopoDS_Shape &subShape) const;
+		bool IsSeamShape(const TopoDS_Shape subShape) const;
 		%feature("autodoc", "1");
 		bool IsRealSeam(const int subShape) const;
 		%feature("autodoc", "1");
-		bool IsRealSeam(const TopoDS_Shape &subShape) const;
+		bool IsRealSeam(const TopoDS_Shape subShape) const;
 		%feature("autodoc", "1");
 		bool HasSeam() const;
 		%feature("autodoc", "1");
@@ -344,7 +344,7 @@ def __del__(self):
 class SMESH_Group {
 	public:
 		%feature("autodoc", "1");
-		SMESH_Group(int , const SMESH_Mesh *theMesh, const SMDSAbs_ElementType theType, const char *theName, const TopoDS_Shape &theShape=TopoDS_Shape( ));
+		SMESH_Group(int , const SMESH_Mesh *theMesh, const SMDSAbs_ElementType theType, const char *theName, const TopoDS_Shape theShape=TopoDS_Shape( ));
 		%feature("autodoc", "1");
 		void SetName(const char *theName);
 		%feature("autodoc", "1");
@@ -507,47 +507,47 @@ class SMESH_Block : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		static		double * GetShapeCoef(const int theShapeID);
 		%feature("autodoc", "1");
-		static		int GetShapeIDByParams(const gp_XYZ &theParams);
+		static		int GetShapeIDByParams(const gp_XYZ theParams);
 		%feature("autodoc", "1");
 		static		std::ostream & DumpShapeID(const int theBlockShapeID, std::ostream & stream);
 		%feature("autodoc", "1");
 		SMESH_Block();
 		%feature("autodoc", "1");
-		bool LoadBlockShapes(const TopoDS_Shell &theShell, const TopoDS_Vertex &theVertex000, const TopoDS_Vertex &theVertex001, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
+		bool LoadBlockShapes(const TopoDS_Shell theShell, const TopoDS_Vertex theVertex000, const TopoDS_Vertex theVertex001, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
 		%feature("autodoc", "1");
 		bool LoadBlockShapes(const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
 		%feature("autodoc", "1");
 		bool LoadMeshBlock(const SMDS_MeshVolume *theVolume, const int theNode000Index, const int theNode001Index, std::vector<SMDS_MeshNode const*, std::allocator<SMDS_MeshNode const*> > & theOrderedNodes);
 		%feature("autodoc", "1");
-		bool LoadFace(const TopoDS_Face &theFace, const int theFaceID, const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
+		bool LoadFace(const TopoDS_Face theFace, const int theFaceID, const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
 		%feature("autodoc", "1");
-		static		bool Insert(const TopoDS_Shape &theShape, const int theShapeID, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
+		static		bool Insert(const TopoDS_Shape theShape, const int theShapeID, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
 		%feature("autodoc", "1");
-		static		bool FindBlockShapes(const TopoDS_Shell &theShell, const TopoDS_Vertex &theVertex000, const TopoDS_Vertex &theVertex001, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
+		static		bool FindBlockShapes(const TopoDS_Shell theShell, const TopoDS_Vertex theVertex000, const TopoDS_Vertex theVertex001, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
 		%feature("autodoc", "1");
 		bool VertexPoint(const int theVertexID, gp_XYZ & thePoint) const;
 		%feature("autodoc", "1");
-		bool EdgePoint(const int theEdgeID, const gp_XYZ &theParams, gp_XYZ & thePoint) const;
+		bool EdgePoint(const int theEdgeID, const gp_XYZ theParams, gp_XYZ & thePoint) const;
 		%feature("autodoc", "1");
-		bool EdgeU(const int theEdgeID, const gp_XYZ &theParams, double & theU) const;
+		bool EdgeU(const int theEdgeID, const gp_XYZ theParams, double & theU) const;
 		%feature("autodoc", "1");
-		bool FacePoint(const int theFaceID, const gp_XYZ &theParams, gp_XYZ & thePoint) const;
+		bool FacePoint(const int theFaceID, const gp_XYZ theParams, gp_XYZ & thePoint) const;
 		%feature("autodoc", "1");
-		bool FaceUV(const int theFaceID, const gp_XYZ &theParams, gp_XY & theUV) const;
+		bool FaceUV(const int theFaceID, const gp_XYZ theParams, gp_XY & theUV) const;
 		%feature("autodoc", "1");
-		bool ShellPoint(const gp_XYZ &theParams, gp_XYZ & thePoint) const;
+		bool ShellPoint(const gp_XYZ theParams, gp_XYZ & thePoint) const;
 		%feature("autodoc", "1");
-		static		bool ShellPoint(const gp_XYZ &theParams, std::vector<gp_XYZ, std::allocator<gp_XYZ> > const & thePointOnShape, gp_XYZ & thePoint);
+		static		bool ShellPoint(const gp_XYZ theParams, std::vector<gp_XYZ, std::allocator<gp_XYZ> > const & thePointOnShape, gp_XYZ & thePoint);
 		%feature("autodoc", "1");
-		bool ComputeParameters(const gp_Pnt &thePoint, gp_XYZ & theParams, const int theShapeID=(int const)(::SMESH_Block::ID_Shell), const gp_XYZ &theParamsHint=gp_XYZ( -1.0e+0, -1.0e+0, -1.0e+0 ));
+		bool ComputeParameters(const gp_Pnt thePoint, gp_XYZ & theParams, const int theShapeID=(int const)(::SMESH_Block::ID_Shell), const gp_XYZ theParamsHint=gp_XYZ( -1.0e+0, -1.0e+0, -1.0e+0 ));
 		%feature("autodoc", "1");
 		bool VertexParameters(const int theVertexID, gp_XYZ & theParams);
 		%feature("autodoc", "1");
 		bool EdgeParameters(const int theEdgeID, const double theU, gp_XYZ & theParams);
 		%feature("autodoc", "1");
-		static		bool IsForwardEdge(const TopoDS_Edge &theEdge, const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
+		static		bool IsForwardEdge(const TopoDS_Edge theEdge, const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
 		%feature("autodoc", "1");
-		static		int GetOrderedEdges(const TopoDS_Face &theFace, TopoDS_Vertex , std::list<TopoDS_Edge>, std::list<int>, const bool theShapeAnalysisAlgo=false);
+		static		int GetOrderedEdges(const TopoDS_Face theFace, TopoDS_Vertex , std::list<TopoDS_Edge>, std::list<int>, const bool theShapeAnalysisAlgo=false);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -582,7 +582,7 @@ def __del__(self):
 class SMESH_ElementSearcher {
 	public:
 		%feature("autodoc", "1");
-		virtual		void FindElementsByPoint(const gp_Pnt &point, SMDSAbs_ElementType , std::vector<SMDS_MeshElement const*, std::allocator<SMDS_MeshElement const*> > & foundElems);
+		virtual		void FindElementsByPoint(const gp_Pnt point, SMDSAbs_ElementType , std::vector<SMDS_MeshElement const*, std::allocator<SMDS_MeshElement const*> > & foundElems);
 
 };
 %feature("shadow") SMESH_ElementSearcher::~SMESH_ElementSearcher %{
@@ -690,17 +690,17 @@ class SMESH_MeshEditor_PathPoint {
 		%feature("autodoc", "1");
 		SMESH_MeshEditor_PathPoint();
 		%feature("autodoc", "1");
-		void SetPnt(const gp_Pnt &aP3D);
+		void SetPnt(const gp_Pnt aP3D);
 		%feature("autodoc", "1");
-		void SetTangent(const gp_Dir &aTgt);
+		void SetTangent(const gp_Dir aTgt);
 		%feature("autodoc", "1");
 		void SetAngle(const double &aBeta);
 		%feature("autodoc", "1");
 		void SetParameter(const double &aPrm);
 		%feature("autodoc", "1");
-		const gp_Pnt & Pnt() const;
+		const gp_Pnt  Pnt() const;
 		%feature("autodoc", "1");
-		const gp_Dir & Tangent() const;
+		const gp_Dir  Tangent() const;
 		%feature("autodoc", "1");
 		double Angle() const;
 		%feature("autodoc", "1");
@@ -767,7 +767,7 @@ class SMESH_Hypothesis : public SMESHDS_Hypothesis {
 		%feature("autodoc", "1");
 		void ClearParameters();
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 		%feature("autodoc", "1");
@@ -805,17 +805,17 @@ class SMESH_Algo : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		std::vector<std::string, std::allocator<std::string> > const & GetCompatibleHypothesis();
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
 		virtual		bool Compute(SMESH_Mesh & aMesh, SMESH_MesherHelper* aHelper);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 		%feature("autodoc", "1");
-		virtual		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetUsedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, const bool ignoreAuxiliary=true);
+		virtual		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetUsedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool ignoreAuxiliary=true);
 		%feature("autodoc", "1");
-		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetAppliedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, const bool ignoreAuxiliary=true);
+		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetAppliedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool ignoreAuxiliary=true);
 		%feature("autodoc", "1");
 		bool InitCompatibleHypoFilter(SMESH_HypoFilter & theFilter, const bool ignoreAuxiliary) const;
 		%feature("autodoc", "1");
@@ -835,15 +835,15 @@ class SMESH_Algo : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		virtual		void SubmeshRestored(SMESH_subMesh* subMesh);
 		%feature("autodoc", "1");
-		static		bool IsReversedSubMesh(const TopoDS_Face &theFace, SMESHDS_Mesh* theMeshDS);
+		static		bool IsReversedSubMesh(const TopoDS_Face theFace, SMESHDS_Mesh* theMeshDS);
 		%feature("autodoc", "1");
-		static		double EdgeLength(const TopoDS_Edge &E);
+		static		double EdgeLength(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		static		GeomAbs_Shape Continuity(const TopoDS_Edge &E1, const TopoDS_Edge &E2);
+		static		GeomAbs_Shape Continuity(const TopoDS_Edge E1, const TopoDS_Edge E2);
 		%feature("autodoc", "1");
-		static		bool IsContinuous(const TopoDS_Edge &E1, const TopoDS_Edge &E2);
+		static		bool IsContinuous(const TopoDS_Edge E1, const TopoDS_Edge E2);
 		%feature("autodoc", "1");
-		static		const SMDS_MeshNode * VertexNode(const TopoDS_Vertex &V, const SMESHDS_Mesh *meshDS);
+		static		const SMDS_MeshNode * VertexNode(const TopoDS_Vertex V, const SMESHDS_Mesh *meshDS);
 
 };
 %feature("shadow") SMESH_Algo::~SMESH_Algo %{
@@ -868,7 +868,7 @@ class SMESH_Mesh {
 		%feature("autodoc", "1");
 		SMESH_Mesh(int , int , SMESH_Gen* theGen, bool , SMESHDS_Document* theDocument);
 		%feature("autodoc", "1");
-		void ShapeToMesh(const TopoDS_Shape &aShape);
+		void ShapeToMesh(const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
 		TopoDS_Shape GetShapeToMesh() const;
 		%feature("autodoc", "1");
@@ -876,9 +876,9 @@ class SMESH_Mesh {
 		%feature("autodoc", "1");
 		double GetShapeDiagonalSize() const;
 		%feature("autodoc", "1");
-		static		double GetShapeDiagonalSize(const TopoDS_Shape &aShape);
+		static		double GetShapeDiagonalSize(const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		static		const TopoDS_Solid & PseudoShape();
+		static		const TopoDS_Solid  PseudoShape();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
@@ -892,13 +892,13 @@ class SMESH_Mesh {
 		%feature("autodoc", "1");
 		int DATToMesh(const char *theFileName);
 		%feature("autodoc", "1");
-		SMESH_Hypothesis::Hypothesis_Status AddHypothesis(const TopoDS_Shape &aSubShape, int );
+		SMESH_Hypothesis::Hypothesis_Status AddHypothesis(const TopoDS_Shape aSubShape, int );
 		%feature("autodoc", "1");
-		SMESH_Hypothesis::Hypothesis_Status RemoveHypothesis(const TopoDS_Shape &aSubShape, int );
+		SMESH_Hypothesis::Hypothesis_Status RemoveHypothesis(const TopoDS_Shape aSubShape, int );
 		%feature("autodoc", "1");
-		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetHypothesisList(const TopoDS_Shape &aSubShape) const;
+		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetHypothesisList(const TopoDS_Shape aSubShape) const;
 		%feature("autodoc", "1");
-		const SMESH_Hypothesis * GetHypothesis(const TopoDS_Shape &aSubShape, const SMESH_HypoFilter &aFilter, const bool andAncestors, TopoDS_Shape* assignedTo=0) const;
+		const SMESH_Hypothesis * GetHypothesis(const TopoDS_Shape aSubShape, const SMESH_HypoFilter &aFilter, const bool andAncestors, TopoDS_Shape* assignedTo=0) const;
 		%feature("autodoc", "1");
 		std::list<SMESHDS_Command*, std::allocator<SMESHDS_Command*> > const & GetLog();
 		%feature("autodoc", "1");
@@ -910,9 +910,9 @@ class SMESH_Mesh {
 		%feature("autodoc", "1");
 		SMESH_Gen * GetGen();
 		%feature("autodoc", "1");
-		SMESH_subMesh * GetSubMesh(const TopoDS_Shape &aSubShape);
+		SMESH_subMesh * GetSubMesh(const TopoDS_Shape aSubShape);
 		%feature("autodoc", "1");
-		SMESH_subMesh * GetSubMeshContaining(const TopoDS_Shape &aSubShape) const;
+		SMESH_subMesh * GetSubMeshContaining(const TopoDS_Shape aSubShape) const;
 		%feature("autodoc", "1");
 		SMESH_subMesh * GetSubMeshContaining(const int aShapeID) const;
 		%feature("autodoc", "1");
@@ -924,9 +924,9 @@ class SMESH_Mesh {
 		%feature("autodoc", "1");
 		bool IsNotConformAllowed() const;
 		%feature("autodoc", "1");
-		bool IsMainShape(const TopoDS_Shape &theShape) const;
+		bool IsMainShape(const TopoDS_Shape theShape) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GetAncestors(const TopoDS_Shape &theSubShape) const;
+		const TopTools_ListOfShape & GetAncestors(const TopoDS_Shape theSubShape) const;
 		%feature("autodoc", "1");
 		void SetAutoColor(bool );
 		%feature("autodoc", "1");
@@ -974,7 +974,7 @@ class SMESH_Mesh {
 		%feature("autodoc", "1");
 		int NbGroup() const;
 		%feature("autodoc", "1");
-		SMESH_Group * AddGroup(const SMDSAbs_ElementType theType, const char *theName, int & theId, const TopoDS_Shape &theShape=TopoDS_Shape( ));
+		SMESH_Group * AddGroup(const SMDSAbs_ElementType theType, const char *theName, int & theId, const TopoDS_Shape theShape=TopoDS_Shape( ));
 		%feature("autodoc", "1");
 		boost::shared_ptr<SMDS_Iterator<SMESH_Group*> > GetGroups() const;
 		%feature("autodoc", "1");
@@ -1047,7 +1047,7 @@ class SMESH_subMesh {
 			CHECK_COMPUTE_STATE,
 		};
 		%feature("autodoc", "1");
-		SMESH_subMesh(int , SMESH_Mesh* father, SMESHDS_Mesh* meshDS, const TopoDS_Shape &aSubShape);
+		SMESH_subMesh(int , SMESH_Mesh* father, SMESHDS_Mesh* meshDS, const TopoDS_Shape aSubShape);
 		%feature("autodoc", "1");
 		int GetId() const;
 		%feature("autodoc", "1");
@@ -1063,7 +1063,7 @@ class SMESH_subMesh {
 		%feature("autodoc", "1");
 		SMESH_subMeshIteratorPtr getDependsOnIterator(const bool includeSelf, const bool complexShapeFirst);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GetSubShape() const;
+		const TopoDS_Shape  GetSubShape() const;
 		%feature("autodoc", "1");
 		void SetEventListener(EventListener* listener, EventListenerData* data, SMESH_subMesh* where);
 		%feature("autodoc", "1");
@@ -1130,11 +1130,11 @@ class SMESH_Gen {
 		%feature("autodoc", "1");
 		SMESH_Mesh * CreateMesh(int , bool );
 		%feature("autodoc", "1");
-		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, const bool anUpward=false, const MeshDimension aDim=MeshDim_3D, TSetOfInt* aShapesId=0);
+		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool anUpward=false, const MeshDimension aDim=MeshDim_3D, TSetOfInt* aShapesId=0);
 		%feature("autodoc", "1");
-		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap, const bool anUpward=false, TSetOfInt* aShapesId=0);
+		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap, const bool anUpward=false, TSetOfInt* aShapesId=0);
 		%feature("autodoc", "1");
-		bool CheckAlgoState(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		bool CheckAlgoState(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
 		void SetBoundaryBoxSegmentation(int );
 		%feature("autodoc", "1");
@@ -1144,15 +1144,15 @@ class SMESH_Gen {
 		%feature("autodoc", "1");
 		int GetDefaultNbSegments() const;
 		%feature("autodoc", "1");
-		bool GetAlgoState(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, std::list<SMESH_Gen::TAlgoStateError>);
+		bool GetAlgoState(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, std::list<SMESH_Gen::TAlgoStateError>);
 		%feature("autodoc", "1");
 		StudyContextStruct * GetStudyContext(int );
 		%feature("autodoc", "1");
 		static		int GetShapeDim(const TopAbs_ShapeEnum &aShapeType);
 		%feature("autodoc", "1");
-		static		int GetShapeDim(const TopoDS_Shape &aShape);
+		static		int GetShapeDim(const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		SMESH_Algo * GetAlgo(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, TopoDS_Shape* assignedTo=0);
+		SMESH_Algo * GetAlgo(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, TopoDS_Shape* assignedTo=0);
 		%feature("autodoc", "1");
 		static		bool IsGlobalHypothesis(const SMESH_Hypothesis *theHyp, SMESH_Mesh & aMesh);
 		%feature("autodoc", "1");
@@ -1179,9 +1179,9 @@ def __del__(self):
 class SMESH_NodeSearcher {
 	public:
 		%feature("autodoc", "1");
-		virtual		const SMDS_MeshNode * FindClosestTo(const gp_Pnt &pnt);
+		virtual		const SMDS_MeshNode * FindClosestTo(const gp_Pnt pnt);
 		%feature("autodoc", "1");
-		virtual		void MoveNode(const SMDS_MeshNode *node, const gp_Pnt &toPnt);
+		virtual		void MoveNode(const SMDS_MeshNode *node, const gp_Pnt toPnt);
 
 };
 %feature("shadow") SMESH_NodeSearcher::~SMESH_NodeSearcher %{
@@ -1239,9 +1239,9 @@ class SMESH_Pattern {
 		%feature("autodoc", "1");
 		bool Load(const char *theFileContents);
 		%feature("autodoc", "1");
-		bool Load(SMESH_Mesh* theMesh, const TopoDS_Face &theFace, bool =false);
+		bool Load(SMESH_Mesh* theMesh, const TopoDS_Face theFace, bool =false);
 		%feature("autodoc", "1");
-		bool Load(SMESH_Mesh* theMesh, const TopoDS_Shell &theBlock);
+		bool Load(SMESH_Mesh* theMesh, const TopoDS_Shell theBlock);
 		%feature("autodoc", "1");
 		bool Save(std::ostream & theFile);
 		%feature("autodoc", "1");

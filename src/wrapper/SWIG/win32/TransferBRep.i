@@ -418,7 +418,7 @@ class TransferBRep_Reader {
 		%feature("autodoc", "1");
 		Handle_TopTools_HSequenceOfShape Shapes() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape(const Standard_Integer num=1) const;
+		const TopoDS_Shape  Shape(const Standard_Integer num=1) const;
 		%feature("autodoc", "1");
 		TopoDS_Shape ShapeResult(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
@@ -592,9 +592,9 @@ def __del__(self):
 class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 	public:
 		%feature("autodoc", "1");
-		TransferBRep_OrientedShapeMapper(const TopoDS_Shape &akey);
+		TransferBRep_OrientedShapeMapper(const TopoDS_Shape akey);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
+		const TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Equates(const Handle_Transfer_Finder &other) const;
 		%feature("autodoc", "1");
@@ -637,17 +637,17 @@ class TransferBRep_BinderOfShape : public Transfer_Binder {
 		%feature("autodoc", "1");
 		TransferBRep_BinderOfShape();
 		%feature("autodoc", "1");
-		TransferBRep_BinderOfShape(const TopoDS_Shape &res);
+		TransferBRep_BinderOfShape(const TopoDS_Shape res);
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ResultType() const;
 		%feature("autodoc", "1");
 		virtual		char * ResultTypeName() const;
 		%feature("autodoc", "1");
-		void SetResult(const TopoDS_Shape &res);
+		void SetResult(const TopoDS_Shape res);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Result() const;
+		const TopoDS_Shape  Result() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & CResult();
+		TopoDS_Shape  CResult();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -684,7 +684,7 @@ class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
 		%feature("autodoc", "1");
 		TransferBRep_ShapeBinder();
 		%feature("autodoc", "1");
-		TransferBRep_ShapeBinder(const TopoDS_Shape &res);
+		TransferBRep_ShapeBinder(const TopoDS_Shape res);
 		%feature("autodoc", "1");
 		TopAbs_ShapeEnum ShapeType() const;
 		%feature("autodoc", "1");
@@ -818,9 +818,9 @@ class TransferBRep_ShapeInfo {
 		%feature("autodoc", "1");
 		TransferBRep_ShapeInfo();
 		%feature("autodoc", "1");
-		static		Handle_Standard_Type Type(const TopoDS_Shape &ent);
+		static		Handle_Standard_Type Type(const TopoDS_Shape ent);
 		%feature("autodoc", "1");
-		static		char * TypeName(const TopoDS_Shape &ent);
+		static		char * TypeName(const TopoDS_Shape ent);
 
 };
 %feature("shadow") TransferBRep_ShapeInfo::~TransferBRep_ShapeInfo %{
@@ -955,15 +955,15 @@ class TransferBRep_ShapeListBinder : public Transfer_Binder {
 		%feature("autodoc", "1");
 		virtual		char * ResultTypeName() const;
 		%feature("autodoc", "1");
-		void AddResult(const TopoDS_Shape &res);
+		void AddResult(const TopoDS_Shape res);
 		%feature("autodoc", "1");
 		Handle_TopTools_HSequenceOfShape Result() const;
 		%feature("autodoc", "1");
-		void SetResult(const Standard_Integer num, const TopoDS_Shape &res);
+		void SetResult(const Standard_Integer num, const TopoDS_Shape res);
 		%feature("autodoc", "1");
 		Standard_Integer NbShapes() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape(const Standard_Integer num) const;
+		const TopoDS_Shape  Shape(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		TopAbs_ShapeEnum ShapeType(const Standard_Integer num) const;
 		%feature("autodoc", "1");
@@ -1022,21 +1022,21 @@ class TransferBRep {
 		%feature("autodoc", "1");
 		static		TopoDS_Shape ShapeResult(const Handle_Transfer_TransientProcess &TP, const Handle_Standard_Transient &ent);
 		%feature("autodoc", "1");
-		static		void SetShapeResult(const Handle_Transfer_TransientProcess &TP, const Handle_Standard_Transient &ent, const TopoDS_Shape &result);
+		static		void SetShapeResult(const Handle_Transfer_TransientProcess &TP, const Handle_Standard_Transient &ent, const TopoDS_Shape result);
 		%feature("autodoc", "1");
 		static		Handle_TopTools_HSequenceOfShape Shapes(const Handle_Transfer_TransientProcess &TP, const Standard_Boolean rootsonly=1);
 		%feature("autodoc", "1");
 		static		Handle_TopTools_HSequenceOfShape Shapes(const Handle_Transfer_TransientProcess &TP, const Handle_TColStd_HSequenceOfTransient &list);
 		%feature("autodoc", "1");
-		static		TopAbs_Orientation ShapeState(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
+		static		TopAbs_Orientation ShapeState(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape shape);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_Binder ResultFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
+		static		Handle_Transfer_Binder ResultFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape shape);
 		%feature("autodoc", "1");
-		static		Handle_Standard_Transient TransientFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
+		static		Handle_Standard_Transient TransientFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape shape);
 		%feature("autodoc", "1");
-		static		void SetTransientFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape, const Handle_Standard_Transient &result);
+		static		void SetTransientFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape shape, const Handle_Standard_Transient &result);
 		%feature("autodoc", "1");
-		static		Handle_TransferBRep_ShapeMapper ShapeMapper(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
+		static		Handle_TransferBRep_ShapeMapper ShapeMapper(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape shape);
 		%feature("autodoc", "1");
 		static		void TransferResultInfo(const Handle_Transfer_TransientProcess &TP, const Handle_TColStd_HSequenceOfTransient &EntityTypes, Handle_TransferBRep_HSequenceOfTransferResultInfo & InfoSeq);
 		%feature("autodoc", "1");

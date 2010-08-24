@@ -234,7 +234,7 @@ class XmlMNaming_Shape1 {
 		%feature("autodoc", "1");
 		void SetShape(const Standard_Integer ID, const Standard_Integer LocID, const TopAbs_Orientation Orient);
 		%feature("autodoc", "1");
-		void SetVertex(const TopoDS_Shape &theVertex);
+		void SetVertex(const TopoDS_Shape theVertex);
 		%feature("autodoc", "1");
 		XmlMNaming_Shape1();
 		%feature("autodoc", "1");

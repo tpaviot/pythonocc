@@ -1274,7 +1274,7 @@ class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESSolid_SolidOfRevolution();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &aCurve, const Standard_Real aFract, const gp_XYZ &aAxisPnt, const gp_XYZ &aDirection);
+		void Init(const Handle_IGESData_IGESEntity &aCurve, const Standard_Real aFract, const gp_XYZ aAxisPnt, const gp_XYZ aDirection);
 		%feature("autodoc", "1");
 		void SetClosedToAxis(const Standard_Boolean mode);
 		%feature("autodoc", "1");
@@ -1419,7 +1419,7 @@ class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESSolid_Ellipsoid();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aSize, const gp_XYZ &aCenter, const gp_XYZ &anXAxis, const gp_XYZ &anZAxis);
+		void Init(const gp_XYZ aSize, const gp_XYZ aCenter, const gp_XYZ anXAxis, const gp_XYZ anZAxis);
 		%feature("autodoc", "1");
 		gp_XYZ Size() const;
 		%feature("autodoc", "1");
@@ -1517,7 +1517,7 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESSolid_ConeFrustum();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real Ht, const Standard_Real R1, const Standard_Real R2, const gp_XYZ &Center, const gp_XYZ &anAxis);
+		void Init(const Standard_Real Ht, const Standard_Real R1, const Standard_Real R2, const gp_XYZ Center, const gp_XYZ anAxis);
 		%feature("autodoc", "1");
 		Standard_Real Height() const;
 		%feature("autodoc", "1");
@@ -1568,7 +1568,7 @@ class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESSolid_SolidOfLinearExtrusion();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &aCurve, const Standard_Real aLength, const gp_XYZ &aDirection);
+		void Init(const Handle_IGESData_IGESEntity &aCurve, const Standard_Real aLength, const gp_XYZ aDirection);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity Curve() const;
 		%feature("autodoc", "1");
@@ -1846,7 +1846,7 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESSolid_SelectedComponent();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESSolid_BooleanTree &anEntity, const gp_XYZ &selectPnt);
+		void Init(const Handle_IGESSolid_BooleanTree &anEntity, const gp_XYZ selectPnt);
 		%feature("autodoc", "1");
 		Handle_IGESSolid_BooleanTree Component() const;
 		%feature("autodoc", "1");
@@ -2489,7 +2489,7 @@ class IGESSolid_Sphere : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESSolid_Sphere();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real aRadius, const gp_XYZ &aCenter);
+		void Init(const Standard_Real aRadius, const gp_XYZ aCenter);
 		%feature("autodoc", "1");
 		Standard_Real Radius() const;
 		%feature("autodoc", "1");
@@ -2569,7 +2569,7 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESSolid_Cylinder();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real aHeight, const Standard_Real aRadius, const gp_XYZ &aCenter, const gp_XYZ &anAxis);
+		void Init(const Standard_Real aHeight, const Standard_Real aRadius, const gp_XYZ aCenter, const gp_XYZ anAxis);
 		%feature("autodoc", "1");
 		Standard_Real Height() const;
 		%feature("autodoc", "1");
@@ -2729,7 +2729,7 @@ class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESSolid_RightAngularWedge();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aSize, const Standard_Real lowX, const gp_XYZ &aCorner, const gp_XYZ &anXAxis, const gp_XYZ &anZAxis);
+		void Init(const gp_XYZ aSize, const Standard_Real lowX, const gp_XYZ aCorner, const gp_XYZ anXAxis, const gp_XYZ anZAxis);
 		%feature("autodoc", "1");
 		gp_XYZ Size() const;
 		%feature("autodoc", "1");
@@ -3163,7 +3163,7 @@ class IGESSolid_Torus : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESSolid_Torus();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real R1, const Standard_Real R2, const gp_XYZ &aPoint, const gp_XYZ &anAxisdir);
+		void Init(const Standard_Real R1, const Standard_Real R2, const gp_XYZ aPoint, const gp_XYZ anAxisdir);
 		%feature("autodoc", "1");
 		Standard_Real MajorRadius() const;
 		%feature("autodoc", "1");
@@ -3857,7 +3857,7 @@ class IGESSolid_Block : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		IGESSolid_Block();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aSize, const gp_XYZ &aCorner, const gp_XYZ &aXAxis, const gp_XYZ &aZAxis);
+		void Init(const gp_XYZ aSize, const gp_XYZ aCorner, const gp_XYZ aXAxis, const gp_XYZ aZAxis);
 		%feature("autodoc", "1");
 		gp_XYZ Size() const;
 		%feature("autodoc", "1");
@@ -3920,11 +3920,11 @@ class IGESSolid_TopoBuilder {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void AddVertex(const gp_XYZ &val);
+		void AddVertex(const gp_XYZ val);
 		%feature("autodoc", "1");
 		Standard_Integer NbVertices() const;
 		%feature("autodoc", "1");
-		const gp_XYZ & Vertex(const Standard_Integer num) const;
+		const gp_XYZ  Vertex(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		Handle_IGESSolid_VertexList VertexList() const;
 		%feature("autodoc", "1");

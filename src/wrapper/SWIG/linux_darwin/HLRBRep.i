@@ -466,25 +466,25 @@ class HLRBRep_TheIntConicCurveOfCInter : public IntRes2d_Intersection {
 		%feature("autodoc", "1");
 		HLRBRep_TheIntConicCurveOfCInter();
 		%feature("autodoc", "1");
-		HLRBRep_TheIntConicCurveOfCInter(const gp_Lin2d &L, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_TheIntConicCurveOfCInter(const gp_Lin2d L, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		HLRBRep_TheIntConicCurveOfCInter(const gp_Circ2d &C, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_TheIntConicCurveOfCInter(const gp_Circ2d C, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		HLRBRep_TheIntConicCurveOfCInter(const gp_Elips2d &E, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_TheIntConicCurveOfCInter(const gp_Elips2d E, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		HLRBRep_TheIntConicCurveOfCInter(const gp_Parab2d &Prb, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_TheIntConicCurveOfCInter(const gp_Parab2d Prb, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		HLRBRep_TheIntConicCurveOfCInter(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_TheIntConicCurveOfCInter(const gp_Hypr2d H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d &L, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Lin2d L, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Circ2d &C, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Circ2d C, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Elips2d &E, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Elips2d E, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Parab2d &Prb, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Parab2d Prb, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Hypr2d H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
 %feature("shadow") HLRBRep_TheIntConicCurveOfCInter::~HLRBRep_TheIntConicCurveOfCInter %{
@@ -574,9 +574,9 @@ class HLRBRep_TheProjPCurOfCInter {
 		%feature("autodoc", "1");
 		HLRBRep_TheProjPCurOfCInter();
 		%feature("autodoc", "1");
-		static		Standard_Real FindParameter(const Standard_Address &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
+		static		Standard_Real FindParameter(const Standard_Address &C, const gp_Pnt2d Pnt, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		static		Standard_Real FindParameter(const Standard_Address &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
+		static		Standard_Real FindParameter(const Standard_Address &C, const gp_Pnt2d Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 
 };
 %feature("shadow") HLRBRep_TheProjPCurOfCInter::~HLRBRep_TheProjPCurOfCInter %{
@@ -757,15 +757,15 @@ class HLRBRep_InterCSurf : public IntCurveSurface_Intersection {
 		%feature("autodoc", "1");
 		HLRBRep_InterCSurf();
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &Curve, const Standard_Address &Surface);
+		void Perform(const gp_Lin Curve, const Standard_Address &Surface);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &Curve, const HLRBRep_ThePolygonOfInterCSurf &Polygon, const Standard_Address &Surface);
+		void Perform(const gp_Lin Curve, const HLRBRep_ThePolygonOfInterCSurf &Polygon, const Standard_Address &Surface);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
+		void Perform(const gp_Lin Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron, Bnd_BoundSortBox & BndBSB);
+		void Perform(const gp_Lin Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron, Bnd_BoundSortBox & BndBSB);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &Curve, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
+		void Perform(const gp_Lin Curve, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
 
 };
 %feature("shadow") HLRBRep_InterCSurf::~HLRBRep_InterCSurf %{
@@ -790,35 +790,75 @@ class HLRBRep_LineTool {
 		%feature("autodoc", "1");
 		HLRBRep_LineTool();
 		%feature("autodoc", "1");
-		static		Standard_Integer NbIntervals(const gp_Lin &arg0, const GeomAbs_Shape arg1);
+		static		Standard_Real FirstParameter(const gp_Lin arg0);
 		%feature("autodoc", "1");
-		static		void Intervals(const gp_Lin &arg0, TColStd_Array1OfReal & arg1, const GeomAbs_Shape arg2);
+		static		Standard_Real LastParameter(const gp_Lin arg0);
 		%feature("autodoc", "1");
-		static		gp_Pnt Value(const gp_Lin &C, const Standard_Real U);
+		static		GeomAbs_Shape Continuity(const gp_Lin arg0);
 		%feature("autodoc", "1");
-		static		void D0(const gp_Lin &C, const Standard_Real U, gp_Pnt & P);
+		static		Standard_Integer NbIntervals(const gp_Lin arg0, const GeomAbs_Shape arg1);
 		%feature("autodoc", "1");
-		static		void D1(const gp_Lin &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V);
+		static		void Intervals(const gp_Lin arg0, TColStd_Array1OfReal & arg1, const GeomAbs_Shape arg2);
 		%feature("autodoc", "1");
-		static		void D2(const gp_Lin &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
+		static		Standard_Real IntervalFirst(const gp_Lin arg0);
 		%feature("autodoc", "1");
-		static		void D3(const gp_Lin &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		static		Standard_Real IntervalLast(const gp_Lin arg0);
 		%feature("autodoc", "1");
-		static		gp_Vec DN(const gp_Lin &C, const Standard_Real U, const Standard_Integer N);
+		static		GeomAbs_Shape IntervalContinuity(const gp_Lin arg0);
 		%feature("autodoc", "1");
-		static		Standard_Real Resolution(const gp_Lin &arg0, const Standard_Real R3D);
+		static		Standard_Boolean IsClosed(const gp_Lin arg0);
 		%feature("autodoc", "1");
-		static		gp_Lin Line(const gp_Lin &C);
+		static		Standard_Boolean IsPeriodic(const gp_Lin arg0);
 		%feature("autodoc", "1");
-		static		void Poles(const gp_Lin &arg0, TColgp_Array1OfPnt & arg1);
+		static		Standard_Real Period(const gp_Lin arg0);
 		%feature("autodoc", "1");
-		static		void PolesAndWeights(const gp_Lin &arg0, TColgp_Array1OfPnt & arg1, TColStd_Array1OfReal & arg2);
+		static		gp_Pnt Value(const gp_Lin C, const Standard_Real U);
 		%feature("autodoc", "1");
-		static		void KnotsAndMultiplicities(const gp_Lin &arg0, TColStd_Array1OfReal & arg1, TColStd_Array1OfInteger & arg2);
+		static		void D0(const gp_Lin C, const Standard_Real U, gp_Pnt & P);
 		%feature("autodoc", "1");
-		static		Standard_Integer NbSamples(const gp_Lin &arg0, const Standard_Real arg1, const Standard_Real arg2);
+		static		void D1(const gp_Lin C, const Standard_Real U, gp_Pnt & P, gp_Vec & V);
 		%feature("autodoc", "1");
-		static		void SamplePars(const gp_Lin &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
+		static		void D2(const gp_Lin C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
+		%feature("autodoc", "1");
+		static		void D3(const gp_Lin C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		%feature("autodoc", "1");
+		static		gp_Vec DN(const gp_Lin C, const Standard_Real U, const Standard_Integer N);
+		%feature("autodoc", "1");
+		static		Standard_Real Resolution(const gp_Lin arg0, const Standard_Real R3D);
+		%feature("autodoc", "1");
+		static		GeomAbs_CurveType GetType(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		gp_Lin Line(const gp_Lin C);
+		%feature("autodoc", "1");
+		static		gp_Circ Circle(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		gp_Elips Ellipse(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		gp_Hypr Hyperbola(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		gp_Parab Parabola(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		Handle_Geom_BezierCurve Bezier(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		Handle_Geom_BSplineCurve BSpline(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		Standard_Integer Degree(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbPoles(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		void Poles(const gp_Lin arg0, TColgp_Array1OfPnt & arg1);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsRational(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		void PolesAndWeights(const gp_Lin arg0, TColgp_Array1OfPnt & arg1, TColStd_Array1OfReal & arg2);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbKnots(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		static		void KnotsAndMultiplicities(const gp_Lin arg0, TColStd_Array1OfReal & arg1, TColStd_Array1OfInteger & arg2);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbSamples(const gp_Lin arg0, const Standard_Real arg1, const Standard_Real arg2);
+		%feature("autodoc", "1");
+		static		void SamplePars(const gp_Lin C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
 
 };
 %feature("shadow") HLRBRep_LineTool::~HLRBRep_LineTool %{
@@ -876,9 +916,9 @@ class HLRBRep_ThePolygonToolOfInterCSurf {
 		%feature("autodoc", "1");
 		static		Standard_Integer NbSegments(const HLRBRep_ThePolygonOfInterCSurf &thePolygon);
 		%feature("autodoc", "1");
-		static		const gp_Pnt & BeginOfSeg(const HLRBRep_ThePolygonOfInterCSurf &thePolygon, const Standard_Integer Index);
+		static		const gp_Pnt  BeginOfSeg(const HLRBRep_ThePolygonOfInterCSurf &thePolygon, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		static		const gp_Pnt & EndOfSeg(const HLRBRep_ThePolygonOfInterCSurf &thePolygon, const Standard_Integer Index);
+		static		const gp_Pnt  EndOfSeg(const HLRBRep_ThePolygonOfInterCSurf &thePolygon, const Standard_Integer Index);
 		%feature("autodoc", "1");
 		static		void Dump(const HLRBRep_ThePolygonOfInterCSurf &thePolygon);
 
@@ -909,7 +949,7 @@ class HLRBRep_Curve {
 		%feature("autodoc", "1");
 		BRepAdaptor_Curve & Curve();
 		%feature("autodoc", "1");
-		void Curve(const TopoDS_Edge &E);
+		void Curve(const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		Standard_Real Parameter2d(const Standard_Real P3d) const;
 		%feature("autodoc", "1");
@@ -1008,7 +1048,7 @@ def __del__(self):
 class HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf(const IntSurf_Quadric &Q, const gp_Lin &C);
+		HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf(const IntSurf_Quadric &Q, const gp_Lin C);
 		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
@@ -1120,25 +1160,25 @@ class HLRBRep_IntConicCurveOfCInter : public IntRes2d_Intersection {
 		%feature("autodoc", "1");
 		HLRBRep_IntConicCurveOfCInter();
 		%feature("autodoc", "1");
-		HLRBRep_IntConicCurveOfCInter(const gp_Lin2d &L, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_IntConicCurveOfCInter(const gp_Lin2d L, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		HLRBRep_IntConicCurveOfCInter(const gp_Circ2d &C, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_IntConicCurveOfCInter(const gp_Circ2d C, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		HLRBRep_IntConicCurveOfCInter(const gp_Elips2d &E, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_IntConicCurveOfCInter(const gp_Elips2d E, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		HLRBRep_IntConicCurveOfCInter(const gp_Parab2d &Prb, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_IntConicCurveOfCInter(const gp_Parab2d Prb, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		HLRBRep_IntConicCurveOfCInter(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		HLRBRep_IntConicCurveOfCInter(const gp_Hypr2d H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d &L, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Lin2d L, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Circ2d &C, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Circ2d C, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Elips2d &E, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Elips2d E, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Parab2d &Prb, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Parab2d Prb, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Hypr2d H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
 %feature("shadow") HLRBRep_IntConicCurveOfCInter::~HLRBRep_IntConicCurveOfCInter %{
@@ -1179,9 +1219,9 @@ class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
 		%feature("autodoc", "1");
 		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & BeginOfSeg(const Standard_Integer Index) const;
+		const gp_Pnt2d  BeginOfSeg(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & EndOfSeg(const Standard_Integer Index) const;
+		const gp_Pnt2d  EndOfSeg(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Real InfParameter() const;
 		%feature("autodoc", "1");
@@ -1271,43 +1311,43 @@ class HLRBRep_HLRToShape {
 		%feature("autodoc", "1");
 		TopoDS_Shape VCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape VCompound(const TopoDS_Shape &S);
+		TopoDS_Shape VCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape Rg1LineVCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape Rg1LineVCompound(const TopoDS_Shape &S);
+		TopoDS_Shape Rg1LineVCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape RgNLineVCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape RgNLineVCompound(const TopoDS_Shape &S);
+		TopoDS_Shape RgNLineVCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape OutLineVCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape OutLineVCompound(const TopoDS_Shape &S);
+		TopoDS_Shape OutLineVCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape IsoLineVCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape IsoLineVCompound(const TopoDS_Shape &S);
+		TopoDS_Shape IsoLineVCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape HCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape HCompound(const TopoDS_Shape &S);
+		TopoDS_Shape HCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape Rg1LineHCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape Rg1LineHCompound(const TopoDS_Shape &S);
+		TopoDS_Shape Rg1LineHCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape RgNLineHCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape RgNLineHCompound(const TopoDS_Shape &S);
+		TopoDS_Shape RgNLineHCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape OutLineHCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape OutLineHCompound(const TopoDS_Shape &S);
+		TopoDS_Shape OutLineHCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape IsoLineHCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape IsoLineHCompound(const TopoDS_Shape &S);
+		TopoDS_Shape IsoLineHCompound(const TopoDS_Shape S);
 
 };
 %feature("shadow") HLRBRep_HLRToShape::~HLRBRep_HLRToShape %{
@@ -1406,11 +1446,11 @@ def __del__(self):
 class HLRBRep_ThePolygonOfInterCSurf {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_ThePolygonOfInterCSurf(const gp_Lin &Curve, const Standard_Integer NbPnt);
+		HLRBRep_ThePolygonOfInterCSurf(const gp_Lin Curve, const Standard_Integer NbPnt);
 		%feature("autodoc", "1");
-		HLRBRep_ThePolygonOfInterCSurf(const gp_Lin &Curve, const Standard_Real U1, const Standard_Real U2, const Standard_Integer NbPnt);
+		HLRBRep_ThePolygonOfInterCSurf(const gp_Lin Curve, const Standard_Real U1, const Standard_Real U2, const Standard_Integer NbPnt);
 		%feature("autodoc", "1");
-		HLRBRep_ThePolygonOfInterCSurf(const gp_Lin &Curve, const TColStd_Array1OfReal &Upars);
+		HLRBRep_ThePolygonOfInterCSurf(const gp_Lin Curve, const TColStd_Array1OfReal &Upars);
 		%feature("autodoc", "1");
 		const Bnd_Box & Bounding() const;
 		%feature("autodoc", "1");
@@ -1424,9 +1464,9 @@ class HLRBRep_ThePolygonOfInterCSurf {
 		%feature("autodoc", "1");
 		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & BeginOfSeg(const Standard_Integer Index) const;
+		const gp_Pnt  BeginOfSeg(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & EndOfSeg(const Standard_Integer TheIndex) const;
+		const gp_Pnt  EndOfSeg(const Standard_Integer TheIndex) const;
 		%feature("autodoc", "1");
 		Standard_Real InfParameter() const;
 		%feature("autodoc", "1");
@@ -1461,11 +1501,11 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 		%feature("autodoc", "1");
 		HLRBRep_Algo(const Handle_HLRBRep_Algo &A);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &S, const Handle_MMgt_TShared &SData, const Standard_Integer nbIso=0);
+		void Add(const TopoDS_Shape S, const Handle_MMgt_TShared &SData, const Standard_Integer nbIso=0);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &S, const Standard_Integer nbIso=0);
+		void Add(const TopoDS_Shape S, const Standard_Integer nbIso=0);
 		%feature("autodoc", "1");
-		Standard_Integer Index(const TopoDS_Shape &S);
+		Standard_Integer Index(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void OutLinedShapeNullify();
 		%feature("autodoc", "1");
@@ -1515,7 +1555,7 @@ class HLRBRep_ThePolyhedronToolOfInterCSurf {
 
 		static		void Triangle(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		static		const gp_Pnt & Point(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index);
+		static		const gp_Pnt  Point(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index);
 		%feature("autodoc","TriConnex(const thePolyh, Standard_Integer Triang, Standard_Integer Pivot, Standard_Integer Pedge) -> [Standard_Integer, Standard_Integer]");
 
 		static		Standard_Integer TriConnex(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
@@ -1711,15 +1751,15 @@ class HLRBRep_BiPoint {
 		%feature("autodoc", "1");
 		HLRBRep_BiPoint();
 		%feature("autodoc", "1");
-		HLRBRep_BiPoint(const Standard_Real x1, const Standard_Real y1, const Standard_Real z1, const Standard_Real x2, const Standard_Real y2, const Standard_Real z2, const TopoDS_Shape &S, const Standard_Boolean reg1, const Standard_Boolean regn, const Standard_Boolean outl, const Standard_Boolean intl);
+		HLRBRep_BiPoint(const Standard_Real x1, const Standard_Real y1, const Standard_Real z1, const Standard_Real x2, const Standard_Real y2, const Standard_Real z2, const TopoDS_Shape S, const Standard_Boolean reg1, const Standard_Boolean regn, const Standard_Boolean outl, const Standard_Boolean intl);
 		%feature("autodoc", "1");
-		const gp_Pnt & P1() const;
+		const gp_Pnt  P1() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & P2() const;
+		const gp_Pnt  P2() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
-		void Shape(const TopoDS_Shape &S);
+		void Shape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Standard_Boolean Rg1Line() const;
 		%feature("autodoc", "1");
@@ -1758,7 +1798,7 @@ def __del__(self):
 class HLRBRep_TheCSFunctionOfInterCSurf : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_TheCSFunctionOfInterCSurf(const Standard_Address &S, const gp_Lin &C);
+		HLRBRep_TheCSFunctionOfInterCSurf(const Standard_Address &S, const gp_Lin C);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -1770,13 +1810,13 @@ class HLRBRep_TheCSFunctionOfInterCSurf : public math_FunctionSetWithDerivatives
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		const gp_Pnt & Point() const;
+		const gp_Pnt  Point() const;
 		%feature("autodoc", "1");
 		Standard_Real Root() const;
 		%feature("autodoc", "1");
 		const Standard_Address & AuxillarSurface() const;
 		%feature("autodoc", "1");
-		const gp_Lin & AuxillarCurve() const;
+		const gp_Lin  AuxillarCurve() const;
 
 };
 %feature("shadow") HLRBRep_TheCSFunctionOfInterCSurf::~HLRBRep_TheCSFunctionOfInterCSurf %{
@@ -1805,7 +1845,7 @@ class HLRBRep_Surface {
 		%feature("autodoc", "1");
 		BRepAdaptor_Surface & Surface();
 		%feature("autodoc", "1");
-		void Surface(const TopoDS_Face &F);
+		void Surface(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		Standard_Boolean IsSide(const Standard_Real tolf, const Standard_Real toler) const;
 		%feature("autodoc", "1");
@@ -1927,7 +1967,7 @@ class HLRBRep_EdgeData {
 		%feature("autodoc", "1");
 		HLRBRep_EdgeData();
 		%feature("autodoc", "1");
-		void Set(const Standard_Boolean Reg1, const Standard_Boolean RegN, const TopoDS_Edge &EG, const Standard_Integer V1, const Standard_Integer V2, const Standard_Boolean Out1, const Standard_Boolean Out2, const Standard_Boolean Cut1, const Standard_Boolean Cut2, const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
+		void Set(const Standard_Boolean Reg1, const Standard_Boolean RegN, const TopoDS_Edge EG, const Standard_Integer V1, const Standard_Integer V2, const Standard_Boolean Out1, const Standard_Boolean Out2, const Standard_Boolean Cut1, const Standard_Boolean Cut2, const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
 		%feature("autodoc", "1");
 		Standard_Boolean Selected() const;
 		%feature("autodoc", "1");
@@ -2444,17 +2484,17 @@ class HLRBRep_SLProps {
 		%feature("autodoc", "1");
 		void SetParameters(const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
+		const gp_Pnt  Value() const;
 		%feature("autodoc", "1");
-		const gp_Vec & D1U();
+		const gp_Vec  D1U();
 		%feature("autodoc", "1");
-		const gp_Vec & D1V();
+		const gp_Vec  D1V();
 		%feature("autodoc", "1");
-		const gp_Vec & D2U();
+		const gp_Vec  D2U();
 		%feature("autodoc", "1");
-		const gp_Vec & D2V();
+		const gp_Vec  D2V();
 		%feature("autodoc", "1");
-		const gp_Vec & DUV();
+		const gp_Vec  DUV();
 		%feature("autodoc", "1");
 		Standard_Boolean IsTangentUDefined();
 		%feature("autodoc", "1");
@@ -2466,7 +2506,7 @@ class HLRBRep_SLProps {
 		%feature("autodoc", "1");
 		Standard_Boolean IsNormalDefined();
 		%feature("autodoc", "1");
-		const gp_Dir & Normal();
+		const gp_Dir  Normal();
 		%feature("autodoc", "1");
 		Standard_Boolean IsCurvatureDefined();
 		%feature("autodoc", "1");
@@ -2601,17 +2641,17 @@ class HLRBRep_PolyAlgo : public MMgt_TShared {
 		%feature("autodoc", "1");
 		HLRBRep_PolyAlgo(const Handle_HLRBRep_PolyAlgo &A);
 		%feature("autodoc", "1");
-		HLRBRep_PolyAlgo(const TopoDS_Shape &S);
+		HLRBRep_PolyAlgo(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Standard_Integer NbShapes() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & Shape(const Standard_Integer I);
+		TopoDS_Shape  Shape(const Standard_Integer I);
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer Index(const TopoDS_Shape &S) const;
+		Standard_Integer Index(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		void Load(const TopoDS_Shape &S);
+		void Load(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyAlgo Algo() const;
 		%feature("autodoc", "1");
@@ -2649,7 +2689,7 @@ class HLRBRep_PolyAlgo : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Show(Standard_Address & Coordinates, TopoDS_Shape & S, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
 		%feature("autodoc", "1");
-		TopoDS_Shape OutLinedShape(const TopoDS_Shape &S) const;
+		TopoDS_Shape OutLinedShape(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Debug() const;
 		%feature("autodoc", "1");
@@ -2811,13 +2851,13 @@ class HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
 		%feature("autodoc", "1");
 		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter();
 		%feature("autodoc", "1");
-		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d &P, const Standard_Address &C, const Standard_Real U0, const Standard_Real TolU);
+		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C, const Standard_Real U0, const Standard_Real TolU);
 		%feature("autodoc", "1");
-		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d &P, const Standard_Address &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
+		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Address &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
 		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d &P, const Standard_Real U0);
+		void Perform(const gp_Pnt2d P, const Standard_Real U0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -2858,13 +2898,13 @@ class HLRBRep_CLProps {
 		%feature("autodoc", "1");
 		void SetCurve(const Standard_Address &C);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & Value() const;
+		const gp_Pnt2d  Value() const;
 		%feature("autodoc", "1");
-		const gp_Vec2d & D1();
+		const gp_Vec2d  D1();
 		%feature("autodoc", "1");
-		const gp_Vec2d & D2();
+		const gp_Vec2d  D2();
 		%feature("autodoc", "1");
-		const gp_Vec2d & D3();
+		const gp_Vec2d  D3();
 		%feature("autodoc", "1");
 		Standard_Boolean IsTangentDefined();
 		%feature("autodoc", "1");
@@ -2899,15 +2939,15 @@ class HLRBRep_BiPnt2D {
 		%feature("autodoc", "1");
 		HLRBRep_BiPnt2D();
 		%feature("autodoc", "1");
-		HLRBRep_BiPnt2D(const Standard_Real x1, const Standard_Real y1, const Standard_Real x2, const Standard_Real y2, const TopoDS_Shape &S, const Standard_Boolean reg1, const Standard_Boolean regn, const Standard_Boolean outl, const Standard_Boolean intl);
+		HLRBRep_BiPnt2D(const Standard_Real x1, const Standard_Real y1, const Standard_Real x2, const Standard_Real y2, const TopoDS_Shape S, const Standard_Boolean reg1, const Standard_Boolean regn, const Standard_Boolean outl, const Standard_Boolean intl);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & P1() const;
+		const gp_Pnt2d  P1() const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & P2() const;
+		const gp_Pnt2d  P2() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
-		void Shape(const TopoDS_Shape &S);
+		void Shape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Standard_Boolean Rg1Line() const;
 		%feature("autodoc", "1");
@@ -3070,9 +3110,9 @@ class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
 		%feature("autodoc", "1");
 		static		Standard_Integer NbSegments(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
 		%feature("autodoc", "1");
-		static		const gp_Pnt2d & BeginOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
+		static		const gp_Pnt2d  BeginOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		static		const gp_Pnt2d & EndOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
+		static		const gp_Pnt2d  EndOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
 
 };
 %feature("shadow") HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::~HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter %{
@@ -3097,7 +3137,7 @@ class HLRBRep_FaceData {
 		%feature("autodoc", "1");
 		HLRBRep_FaceData();
 		%feature("autodoc", "1");
-		void Set(const TopoDS_Face &FG, const TopAbs_Orientation Or, const Standard_Boolean Cl, const Standard_Integer NW);
+		void Set(const TopoDS_Face FG, const TopAbs_Orientation Or, const Standard_Boolean Cl, const Standard_Integer NW);
 		%feature("autodoc", "1");
 		void SetWire(const Standard_Integer WI, const Standard_Integer NE);
 		%feature("autodoc", "1");
@@ -3234,35 +3274,35 @@ class HLRBRep_PolyHLRToShape {
 		%feature("autodoc", "1");
 		TopoDS_Shape VCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape VCompound(const TopoDS_Shape &S);
+		TopoDS_Shape VCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape Rg1LineVCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape Rg1LineVCompound(const TopoDS_Shape &S);
+		TopoDS_Shape Rg1LineVCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape RgNLineVCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape RgNLineVCompound(const TopoDS_Shape &S);
+		TopoDS_Shape RgNLineVCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape OutLineVCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape OutLineVCompound(const TopoDS_Shape &S);
+		TopoDS_Shape OutLineVCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape HCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape HCompound(const TopoDS_Shape &S);
+		TopoDS_Shape HCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape Rg1LineHCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape Rg1LineHCompound(const TopoDS_Shape &S);
+		TopoDS_Shape Rg1LineHCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape RgNLineHCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape RgNLineHCompound(const TopoDS_Shape &S);
+		TopoDS_Shape RgNLineHCompound(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape OutLineHCompound();
 		%feature("autodoc", "1");
-		TopoDS_Shape OutLineHCompound(const TopoDS_Shape &S);
+		TopoDS_Shape OutLineHCompound(const TopoDS_Shape S);
 
 };
 %feature("shadow") HLRBRep_PolyHLRToShape::~HLRBRep_PolyHLRToShape %{
@@ -3385,7 +3425,7 @@ class HLRBRep_EdgeFaceTool {
 		%feature("autodoc", "1");
 		HLRBRep_EdgeFaceTool();
 		%feature("autodoc", "1");
-		static		Standard_Real CurvatureValue(const Standard_Address F, const Standard_Real U, const Standard_Real V, const gp_Dir &Tg);
+		static		Standard_Real CurvatureValue(const Standard_Address F, const Standard_Real U, const Standard_Real V, const gp_Dir Tg);
 		%feature("autodoc","UVPoint(Standard_Real Par, Standard_Address E, Standard_Address F) -> [Standard_Real, Standard_Real]");
 
 		static		Standard_Boolean UVPoint(const Standard_Real Par, const Standard_Address E, const Standard_Address F, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -3421,7 +3461,7 @@ class HLRBRep_TheExactInterCSurf {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Point() const;
+		const gp_Pnt  Point() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnCurve() const;
 		%feature("autodoc","ParameterOnSurface() -> [Standard_Real, Standard_Real]");
@@ -3576,7 +3616,7 @@ def __del__(self):
 class HLRBRep_TheQuadCurvExactInterCSurf {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_TheQuadCurvExactInterCSurf(const Standard_Address &S, const gp_Lin &C);
+		HLRBRep_TheQuadCurvExactInterCSurf(const Standard_Address &S, const gp_Lin C);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -3694,25 +3734,25 @@ class HLRBRep_TheInterferenceOfInterCSurf : public Intf_Interference {
 		%feature("autodoc", "1");
 		HLRBRep_TheInterferenceOfInterCSurf(const HLRBRep_ThePolygonOfInterCSurf &thePolyg, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 		%feature("autodoc", "1");
-		HLRBRep_TheInterferenceOfInterCSurf(const gp_Lin &theLin, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
+		HLRBRep_TheInterferenceOfInterCSurf(const gp_Lin theLin, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 		%feature("autodoc", "1");
 		HLRBRep_TheInterferenceOfInterCSurf(const Intf_Array1OfLin &theLins, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 		%feature("autodoc", "1");
 		void Perform(const HLRBRep_ThePolygonOfInterCSurf &thePolyg, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &theLin, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
+		void Perform(const gp_Lin theLin, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 		%feature("autodoc", "1");
 		void Perform(const Intf_Array1OfLin &theLins, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 		%feature("autodoc", "1");
 		HLRBRep_TheInterferenceOfInterCSurf(const HLRBRep_ThePolygonOfInterCSurf &thePolyg, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
-		HLRBRep_TheInterferenceOfInterCSurf(const gp_Lin &theLin, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, Bnd_BoundSortBox & theBoundSB);
+		HLRBRep_TheInterferenceOfInterCSurf(const gp_Lin theLin, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
 		HLRBRep_TheInterferenceOfInterCSurf(const Intf_Array1OfLin &theLins, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
 		void Perform(const HLRBRep_ThePolygonOfInterCSurf &thePolyg, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &theLin, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, Bnd_BoundSortBox & theBoundSB);
+		void Perform(const gp_Lin theLin, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
 		void Perform(const Intf_Array1OfLin &theLins, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, Bnd_BoundSortBox & theBoundSB);
 		%feature("autodoc", "1");
@@ -3888,7 +3928,7 @@ class HLRBRep_Intersector {
 		%feature("autodoc", "1");
 		void Load(Standard_Address & A);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &L, const Standard_Real P);
+		void Perform(const gp_Lin L, const Standard_Real P);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -3929,11 +3969,11 @@ class HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public math_Function
 		%feature("autodoc", "1");
 		HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter();
 		%feature("autodoc", "1");
-		HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d &P, const Standard_Address &C);
+		HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C);
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Address &C);
 		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt2d &P);
+		void SetPoint(const gp_Pnt2d P);
 		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);

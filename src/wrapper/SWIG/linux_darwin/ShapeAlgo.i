@@ -188,18 +188,18 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HSequenceOfBoundedCurve & seqBS) const;
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape C0ShapeToC1Shape(const TopoDS_Shape &shape, const Standard_Real tol) const;
+		virtual		TopoDS_Shape C0ShapeToC1Shape(const TopoDS_Shape shape, const Standard_Real tol) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineSurface ConvertSurfaceToBSpline(const Handle_Geom_Surface &surf, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean HomoWires(const TopoDS_Wire &wireIn1, const TopoDS_Wire &wireIn2, TopoDS_Wire & wireOut1, TopoDS_Wire & wireOut2, const Standard_Boolean byParam) const;
+		virtual		Standard_Boolean HomoWires(const TopoDS_Wire wireIn1, const TopoDS_Wire wireIn2, TopoDS_Wire & wireOut1, TopoDS_Wire & wireOut2, const Standard_Boolean byParam) const;
 		%feature("autodoc", "1");
-		virtual		TopoDS_Wire OuterWire(const TopoDS_Face &face) const;
+		virtual		TopoDS_Wire OuterWire(const TopoDS_Face face) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Surface ConvertToPeriodic(const Handle_Geom_Surface &surf) const;
 		%feature("autodoc","GetFaceUVBounds(const F) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		virtual		void GetFaceUVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		virtual		void GetFaceUVBounds(const TopoDS_Face F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Handle_Geom_Curve &C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree) const;
 		%feature("autodoc", "1");

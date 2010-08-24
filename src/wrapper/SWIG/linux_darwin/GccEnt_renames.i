@@ -23,9 +23,3 @@ $Author$
 $HeaderURL$
 
 */
-%rename(downcast) Handle_GccEnt_BadQualifier::DownCast;
-%rename(raise) GccEnt_BadQualifier::Raise;
-%rename(newinstance) GccEnt_BadQualifier::NewInstance;
-%rename(unqualified) GccEnt::Unqualified;
-%rename(enclosed) GccEnt::Enclosed;
-%rename(outside) GccEnt::Outside;

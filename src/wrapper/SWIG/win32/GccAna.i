@@ -94,9 +94,9 @@ def __del__(self):
 class GccAna_Lin2dTanObl {
 	public:
 		%feature("autodoc", "1");
-		GccAna_Lin2dTanObl(const gp_Pnt2d &ThePoint, const gp_Lin2d &TheLine, const Standard_Real TheAngle);
+		GccAna_Lin2dTanObl(const gp_Pnt2d ThePoint, const gp_Lin2d TheLine, const Standard_Real TheAngle);
 		%feature("autodoc", "1");
-		GccAna_Lin2dTanObl(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d &TheLine, const Standard_Real TheAngle);
+		GccAna_Lin2dTanObl(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d TheLine, const Standard_Real TheAngle);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -133,7 +133,7 @@ def __del__(self):
 class GccAna_Lin2dBisec {
 	public:
 		%feature("autodoc", "1");
-		GccAna_Lin2dBisec(const gp_Lin2d &Lin1, const gp_Lin2d &Lin2);
+		GccAna_Lin2dBisec(const gp_Lin2d Lin1, const gp_Lin2d Lin2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -168,7 +168,7 @@ def __del__(self):
 class GccAna_Pnt2dBisec {
 	public:
 		%feature("autodoc", "1");
-		GccAna_Pnt2dBisec(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2);
+		GccAna_Pnt2dBisec(const gp_Pnt2d Point1, const gp_Pnt2d Point2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -197,17 +197,17 @@ def __del__(self):
 class GccAna_Circ2dTanOnRad {
 	public:
 		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
+		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedLin &Qualified1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
+		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedLin &Qualified1, const gp_Lin2d OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const gp_Pnt2d &Point1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
+		GccAna_Circ2dTanOnRad(const gp_Pnt2d Point1, const gp_Lin2d OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Circ2d &OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
+		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Circ2d OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedLin &Qualified1, const gp_Circ2d &OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
+		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedLin &Qualified1, const gp_Circ2d OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const gp_Pnt2d &Point1, const gp_Circ2d &OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
+		GccAna_Circ2dTanOnRad(const gp_Pnt2d Point1, const gp_Circ2d OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -246,11 +246,11 @@ def __del__(self):
 class GccAna_Circ2dTanCen {
 	public:
 		%feature("autodoc", "1");
-		GccAna_Circ2dTanCen(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d &Pcenter, const Standard_Real Tolerance);
+		GccAna_Circ2dTanCen(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d Pcenter, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2dTanCen(const gp_Lin2d &Linetan, const gp_Pnt2d &Pcenter);
+		GccAna_Circ2dTanCen(const gp_Lin2d Linetan, const gp_Pnt2d Pcenter);
 		%feature("autodoc", "1");
-		GccAna_Circ2dTanCen(const gp_Pnt2d &Point1, const gp_Pnt2d &Pcenter);
+		GccAna_Circ2dTanCen(const gp_Pnt2d Point1, const gp_Pnt2d Pcenter);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -286,13 +286,13 @@ def __del__(self):
 class GccAna_Lin2dTanPer {
 	public:
 		%feature("autodoc", "1");
-		GccAna_Lin2dTanPer(const gp_Pnt2d &ThePnt, const gp_Lin2d &TheLin);
+		GccAna_Lin2dTanPer(const gp_Pnt2d ThePnt, const gp_Lin2d TheLin);
 		%feature("autodoc", "1");
-		GccAna_Lin2dTanPer(const gp_Pnt2d &ThePnt, const gp_Circ2d &TheCircle);
+		GccAna_Lin2dTanPer(const gp_Pnt2d ThePnt, const gp_Circ2d TheCircle);
 		%feature("autodoc", "1");
-		GccAna_Lin2dTanPer(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d &TheLin);
+		GccAna_Lin2dTanPer(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d TheLin);
 		%feature("autodoc", "1");
-		GccAna_Lin2dTanPer(const GccEnt_QualifiedCirc &Qualified1, const gp_Circ2d &TheCircle);
+		GccAna_Lin2dTanPer(const GccEnt_QualifiedCirc &Qualified1, const gp_Circ2d TheCircle);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -329,7 +329,7 @@ def __del__(self):
 class GccAna_LinPnt2dBisec {
 	public:
 		%feature("autodoc", "1");
-		GccAna_LinPnt2dBisec(const gp_Lin2d &Line1, const gp_Pnt2d &Point2);
+		GccAna_LinPnt2dBisec(const gp_Lin2d Line1, const gp_Pnt2d Point2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -403,13 +403,13 @@ class GccAna_Circ2d2TanRad {
 		%feature("autodoc", "1");
 		GccAna_Circ2d2TanRad(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d &Point2, const Standard_Real Radius, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d Point2, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanRad(const GccEnt_QualifiedLin &Qualified1, const gp_Pnt2d &Point2, const Standard_Real Radius, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanRad(const GccEnt_QualifiedLin &Qualified1, const gp_Pnt2d Point2, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		GccAna_Circ2d2TanRad(const GccEnt_QualifiedLin &Qualified1, const GccEnt_QualifiedLin &Qualified2, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanRad(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2, const Standard_Real Radius, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanRad(const gp_Pnt2d Point1, const gp_Pnt2d Point2, const Standard_Real Radius, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -458,17 +458,17 @@ class GccAna_Circ2d3Tan {
 		%feature("autodoc", "1");
 		GccAna_Circ2d3Tan(const GccEnt_QualifiedLin &Qualified1, const GccEnt_QualifiedLin &Qualified2, const GccEnt_QualifiedLin &Qualified3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const gp_Pnt2d &Point3, const Standard_Real Tolerance);
+		GccAna_Circ2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const gp_Pnt2d Point3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Pnt2d &Point3, const Standard_Real Tolerance);
+		GccAna_Circ2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Pnt2d Point3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d3Tan(const GccEnt_QualifiedLin &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Pnt2d &Point3, const Standard_Real Tolerance);
+		GccAna_Circ2d3Tan(const GccEnt_QualifiedLin &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Pnt2d Point3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d &Point2, const gp_Pnt2d &Point3, const Standard_Real Tolerance);
+		GccAna_Circ2d3Tan(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d Point2, const gp_Pnt2d Point3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d3Tan(const GccEnt_QualifiedLin &Qualified1, const gp_Pnt2d &Point2, const gp_Pnt2d &Point3, const Standard_Real Tolerance);
+		GccAna_Circ2d3Tan(const GccEnt_QualifiedLin &Qualified1, const gp_Pnt2d Point2, const gp_Pnt2d Point3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d3Tan(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2, const gp_Pnt2d &Point3, const Standard_Real Tolerance);
+		GccAna_Circ2d3Tan(const gp_Pnt2d Point1, const gp_Pnt2d Point2, const gp_Pnt2d Point3, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -514,7 +514,7 @@ def __del__(self):
 class GccAna_CircLin2dBisec {
 	public:
 		%feature("autodoc", "1");
-		GccAna_CircLin2dBisec(const gp_Circ2d &Circle, const gp_Lin2d &Line);
+		GccAna_CircLin2dBisec(const gp_Circ2d Circle, const gp_Lin2d Line);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -543,9 +543,9 @@ def __del__(self):
 class GccAna_Lin2dTanPar {
 	public:
 		%feature("autodoc", "1");
-		GccAna_Lin2dTanPar(const gp_Pnt2d &ThePoint, const gp_Lin2d &Lin1);
+		GccAna_Lin2dTanPar(const gp_Pnt2d ThePoint, const gp_Lin2d Lin1);
 		%feature("autodoc", "1");
-		GccAna_Lin2dTanPar(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d &Lin1);
+		GccAna_Lin2dTanPar(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d Lin1);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -579,7 +579,7 @@ def __del__(self):
 class GccAna_CircPnt2dBisec {
 	public:
 		%feature("autodoc", "1");
-		GccAna_CircPnt2dBisec(const gp_Circ2d &Circle1, const gp_Pnt2d &Point2);
+		GccAna_CircPnt2dBisec(const gp_Circ2d Circle1, const gp_Pnt2d Point2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -608,7 +608,7 @@ def __del__(self):
 class GccAna_Circ2dBisec {
 	public:
 		%feature("autodoc", "1");
-		GccAna_Circ2dBisec(const gp_Circ2d &Circ1, const gp_Circ2d &Circ2);
+		GccAna_Circ2dBisec(const gp_Circ2d Circ1, const gp_Circ2d Circ2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -637,29 +637,29 @@ def __del__(self):
 class GccAna_Circ2d2TanOn {
 	public:
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const gp_Lin2d &OnLine, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const gp_Lin2d OnLine, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Lin2d &OnLine, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Lin2d OnLine, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const GccEnt_QualifiedLin &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Lin2d &OnLine, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const GccEnt_QualifiedLin &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Lin2d OnLine, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d &Point2, const gp_Lin2d &OnLine, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d Point2, const gp_Lin2d OnLine, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const GccEnt_QualifiedLin &Qualified1, const gp_Pnt2d &Point2, const gp_Lin2d &OnLine, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const GccEnt_QualifiedLin &Qualified1, const gp_Pnt2d Point2, const gp_Lin2d OnLine, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2, const gp_Lin2d &OnLine, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const gp_Pnt2d Point1, const gp_Pnt2d Point2, const gp_Lin2d OnLine, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const gp_Circ2d &OnCirc, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const gp_Circ2d OnCirc, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Circ2d &OnCirc, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Circ2d OnCirc, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d &Point2, const gp_Circ2d &OnCirc, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d Point2, const gp_Circ2d OnCirc, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const GccEnt_QualifiedLin &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Circ2d &OnCirc, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const GccEnt_QualifiedLin &Qualified1, const GccEnt_QualifiedLin &Qualified2, const gp_Circ2d OnCirc, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const GccEnt_QualifiedLin &Qualified1, const gp_Pnt2d &Point2, const gp_Circ2d &OnCirc, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const GccEnt_QualifiedLin &Qualified1, const gp_Pnt2d Point2, const gp_Circ2d OnCirc, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Circ2d2TanOn(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2, const gp_Circ2d &OnCirc, const Standard_Real Tolerance);
+		GccAna_Circ2d2TanOn(const gp_Pnt2d Point1, const gp_Pnt2d Point2, const gp_Circ2d OnCirc, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -703,9 +703,9 @@ def __del__(self):
 class GccAna_Lin2d2Tan {
 	public:
 		%feature("autodoc", "1");
-		GccAna_Lin2d2Tan(const gp_Pnt2d &ThePoint1, const gp_Pnt2d &ThePoint2, const Standard_Real Tolerance);
+		GccAna_Lin2d2Tan(const gp_Pnt2d ThePoint1, const gp_Pnt2d ThePoint2, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GccAna_Lin2d2Tan(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d &ThePoint, const Standard_Real Tolerance);
+		GccAna_Lin2d2Tan(const GccEnt_QualifiedCirc &Qualified1, const gp_Pnt2d ThePoint, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
 		GccAna_Lin2d2Tan(const GccEnt_QualifiedCirc &Qualified1, const GccEnt_QualifiedCirc &Qualified2, const Standard_Real Tolerance);
 		%feature("autodoc", "1");

@@ -60,7 +60,7 @@ class ShapeProcessAPI_ApplySequence {
 		%feature("autodoc", "1");
 		Handle_ShapeProcess_ShapeContext & Context();
 		%feature("autodoc", "1");
-		TopoDS_Shape PrepareShape(const TopoDS_Shape &shape, const Standard_Boolean fillmap=0, const TopAbs_ShapeEnum until=TopAbs_SHAPE);
+		TopoDS_Shape PrepareShape(const TopoDS_Shape shape, const Standard_Boolean fillmap=0, const TopAbs_ShapeEnum until=TopAbs_SHAPE);
 		%feature("autodoc", "1");
 		void ClearMap();
 		%feature("autodoc", "1");

@@ -1612,7 +1612,7 @@ class MeshVS_DeformedDataSource : public MeshVS_DataSource {
 		%feature("autodoc", "1");
 		Standard_Boolean GetVector(const Standard_Integer ID, gp_Vec & Vect) const;
 		%feature("autodoc", "1");
-		void SetVector(const Standard_Integer ID, const gp_Vec &Vect);
+		void SetVector(const Standard_Integer ID, const gp_Vec Vect);
 		%feature("autodoc", "1");
 		void SetNonDeformedDataSource(const Handle_MeshVS_DataSource &theDS);
 		%feature("autodoc", "1");
@@ -1694,7 +1694,7 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerVector : public TCollection_BasicM
 		%feature("autodoc", "1");
 		const Standard_Integer & Key() const;
 		%feature("autodoc", "1");
-		const gp_Vec & Value() const;
+		const gp_Vec  Value() const;
 
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerVector::~MeshVS_DataMapIteratorOfDataMapOfIntegerVector %{
@@ -2029,7 +2029,7 @@ class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		virtual		void Build(const Handle_Prs3d_Presentation &Prs, const TColStd_PackedMapOfInteger &IDs, TColStd_PackedMapOfInteger & IDsToExclude, const Standard_Boolean IsElement, const Standard_Integer theDisplayMode) const;
 		%feature("autodoc", "1");
-		void DrawVector(const gp_Trsf &theTrsf, const Standard_Real Length, const Standard_Real MaxLength, const TColgp_Array1OfPnt &ArrowPoints, const Handle_Graphic3d_ArrayOfPrimitives &Lines, const Handle_Graphic3d_ArrayOfPrimitives &ArrowLines, const Handle_Graphic3d_ArrayOfPrimitives &Triangles) const;
+		void DrawVector(const gp_Trsf theTrsf, const Standard_Real Length, const Standard_Real MaxLength, const TColgp_Array1OfPnt &ArrowPoints, const Handle_Graphic3d_ArrayOfPrimitives &Lines, const Handle_Graphic3d_ArrayOfPrimitives &ArrowLines, const Handle_Graphic3d_ArrayOfPrimitives &Triangles) const;
 		%feature("autodoc", "1");
 		static		Standard_Real calculateArrow(TColgp_Array1OfPnt & Points, const Standard_Real Length, const Standard_Real ArrowPart);
 		%feature("autodoc", "1");
@@ -2041,7 +2041,7 @@ class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Standard_Boolean GetVector(const Standard_Boolean IsElement, const Standard_Integer ID, gp_Vec & Vect) const;
 		%feature("autodoc", "1");
-		void SetVector(const Standard_Boolean IsElement, const Standard_Integer ID, const gp_Vec &Vect);
+		void SetVector(const Standard_Boolean IsElement, const Standard_Integer ID, const gp_Vec Vect);
 		%feature("autodoc","GetMinMaxVectorValue(Standard_Boolean IsElement) -> [Standard_Real, Standard_Real]");
 
 		void GetMinMaxVectorValue(const Standard_Boolean IsElement, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -2302,7 +2302,7 @@ class MeshVS_SensitivePolyhedron : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aResult);
 		%feature("autodoc", "1");
@@ -2339,7 +2339,7 @@ def __del__(self):
 class MeshVS_SensitiveSegment : public Select3D_SensitiveSegment {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_SensitiveSegment(const Handle_SelectBasics_EntityOwner &theOwner, const gp_Pnt &theFirstP, const gp_Pnt &theLastP, const Standard_Integer theMaxRect=1);
+		MeshVS_SensitiveSegment(const Handle_SelectBasics_EntityOwner &theOwner, const gp_Pnt theFirstP, const gp_Pnt theLastP, const Standard_Integer theMaxRect=1);
 		%feature("autodoc", "1");
 		virtual		void Project(const Select3D_Projector &aProjector);
 		%feature("autodoc", "1");
@@ -2527,7 +2527,7 @@ class MeshVS_SensitiveMesh : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
 
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
@@ -2857,7 +2857,7 @@ def __del__(self):
 class MeshVS_DataMapNodeOfDataMapOfIntegerVector : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_DataMapNodeOfDataMapOfIntegerVector(const Standard_Integer &K, const gp_Vec &I, const TCollection_MapNodePtr &n);
+		MeshVS_DataMapNodeOfDataMapOfIntegerVector(const Standard_Integer &K, const gp_Vec I, const TCollection_MapNodePtr &n);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey() {
@@ -2871,7 +2871,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerVector : public TCollection_MapNode {
 				}
 		};
 		%feature("autodoc", "1");
-		gp_Vec & Value() const;
+		gp_Vec  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3172,19 +3172,19 @@ class MeshVS_DataMapOfIntegerVector : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const gp_Vec &I);
+		Standard_Boolean Bind(const Standard_Integer &K, const gp_Vec I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		const gp_Vec & Find(const Standard_Integer &K) const;
+		const gp_Vec  Find(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		const gp_Vec & operator()(const Standard_Integer &K) const;
+		const gp_Vec  operator()(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		gp_Vec & ChangeFind(const Standard_Integer &K);
+		gp_Vec  ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		gp_Vec & operator()(const Standard_Integer &K);
+		gp_Vec  operator()(const Standard_Integer &K);
 
 };
 %feature("shadow") MeshVS_DataMapOfIntegerVector::~MeshVS_DataMapOfIntegerVector %{

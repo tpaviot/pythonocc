@@ -1658,7 +1658,7 @@ def __del__(self):
 class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_DegeneratedBound(const gp_Pnt &Point, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const Standard_Real Tolang);
+		GeomFill_DegeneratedBound(const gp_Pnt Point, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const Standard_Real Tolang);
 
 };
 %extend GeomFill_DegeneratedBound {
@@ -1874,7 +1874,7 @@ class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 		%feature("autodoc", "1");
 		gp_Vec DUV(const Standard_Real U, const Standard_Real V) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & Corner(const Standard_Integer I) const;
+		const gp_Pnt  Corner(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Handle_GeomFill_Boundary & Bound(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -1925,11 +1925,11 @@ class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		Standard_Boolean DerivT(const Handle_Adaptor3d_HCurve &C, const Standard_Real Param, const Standard_Real W, const gp_Vec &dN, const Standard_Real teta, math_Vector & F);
+		Standard_Boolean DerivT(const Handle_Adaptor3d_HCurve &C, const Standard_Real Param, const Standard_Real W, const gp_Vec dN, const Standard_Real teta, math_Vector & F);
 		%feature("autodoc", "1");
-		Standard_Boolean Deriv2T(const Handle_Adaptor3d_HCurve &C, const Standard_Real Param, const Standard_Real W, const gp_Vec &d2N, const Standard_Real teta, math_Vector & F);
+		Standard_Boolean Deriv2T(const Handle_Adaptor3d_HCurve &C, const Standard_Real Param, const Standard_Real W, const gp_Vec d2N, const Standard_Real teta, math_Vector & F);
 		%feature("autodoc", "1");
-		Standard_Boolean DerivTX(const gp_Vec &dN, const Standard_Real teta, math_Matrix & D);
+		Standard_Boolean DerivTX(const gp_Vec dN, const Standard_Real teta, math_Matrix & D);
 		%feature("autodoc", "1");
 		Standard_Boolean Deriv2X(const math_Vector &X, GeomFill_Tensor & T);
 
@@ -1958,7 +1958,7 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		const Handle_Adaptor3d_HCurve & GetCurve() const;
 		%feature("autodoc", "1");
-		virtual		void SetTrsf(const gp_Mat &Transfo);
+		virtual		void SetTrsf(const gp_Mat Transfo);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_LocationLaw Copy() const;
 		%feature("autodoc", "1");
@@ -2042,7 +2042,7 @@ def __del__(self):
 class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_LocationDraft(const gp_Dir &Direction, const Standard_Real Angle);
+		GeomFill_LocationDraft(const gp_Dir Direction, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		void SetStopSurf(const Handle_Adaptor3d_HSurface &Surf);
 		%feature("autodoc", "1");
@@ -2265,11 +2265,11 @@ class GeomFill_PolynomialConvertor {
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Pnt &Center, const gp_Vec &Dir, const Standard_Real Angle, TColgp_Array1OfPnt & Poles) const;
+		void Section(const gp_Pnt FirstPnt, const gp_Pnt Center, const gp_Vec Dir, const Standard_Real Angle, TColgp_Array1OfPnt & Poles) const;
 		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &Dir, const gp_Vec &DDir, const Standard_Real Angle, const Standard_Real DAngle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles) const;
+		void Section(const gp_Pnt FirstPnt, const gp_Vec DFirstPnt, const gp_Pnt Center, const gp_Vec DCenter, const gp_Vec Dir, const gp_Vec DDir, const Standard_Real Angle, const Standard_Real DAngle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles) const;
 		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles) const;
+		void Section(const gp_Pnt FirstPnt, const gp_Vec DFirstPnt, const gp_Vec D2FirstPnt, const gp_Pnt Center, const gp_Vec DCenter, const gp_Vec D2Center, const gp_Vec Dir, const gp_Vec DDir, const gp_Vec D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles) const;
 
 };
 %feature("shadow") GeomFill_PolynomialConvertor::~GeomFill_PolynomialConvertor %{
@@ -2505,11 +2505,11 @@ class GeomFill {
 		%feature("autodoc", "1");
 		static		Handle_Geom_Surface Surface(const Handle_Geom_Curve &Curve1, const Handle_Geom_Curve &Curve2);
 		%feature("autodoc", "1");
-		static		void GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &nplan, const gp_Pnt &pt1, const gp_Pnt &pt2, const Standard_Real Rayon, const gp_Pnt &Center, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weigths);
+		static		void GetCircle(const Convert_ParameterisationType TConv, const gp_Vec ns1, const gp_Vec ns2, const gp_Vec nplan, const gp_Pnt pt1, const gp_Pnt pt2, const Standard_Real Rayon, const gp_Pnt Center, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
-		static		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const Standard_Real Rayon, const Standard_Real DRayon, const gp_Pnt &Center, const gp_Vec &DCenter, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		static		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec ns1, const gp_Vec ns2, const gp_Vec dn1w, const gp_Vec dn2w, const gp_Vec nplan, const gp_Vec dnplan, const gp_Pnt pts1, const gp_Pnt pts2, const gp_Vec tang1, const gp_Vec tang2, const Standard_Real Rayon, const Standard_Real DRayon, const gp_Pnt Center, const gp_Vec DCenter, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 		%feature("autodoc", "1");
-		static		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &d2n1w, const gp_Vec &d2n2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Vec &d2nplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const gp_Vec &Dtang1, const gp_Vec &Dtang2, const Standard_Real Rayon, const Standard_Real DRayon, const Standard_Real D2Rayon, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		static		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec ns1, const gp_Vec ns2, const gp_Vec dn1w, const gp_Vec dn2w, const gp_Vec d2n1w, const gp_Vec d2n2w, const gp_Vec nplan, const gp_Vec dnplan, const gp_Vec d2nplan, const gp_Pnt pts1, const gp_Pnt pts2, const gp_Vec tang1, const gp_Vec tang2, const gp_Vec Dtang1, const gp_Vec Dtang2, const Standard_Real Rayon, const Standard_Real DRayon, const Standard_Real D2Rayon, const gp_Pnt Center, const gp_Vec DCenter, const gp_Vec D2Center, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc","GetShape(Standard_Real MaxAng) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 
 		static		void GetShape(const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
@@ -2549,7 +2549,7 @@ class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 		%feature("autodoc", "1");
 		virtual		const Handle_Adaptor3d_HCurve & GetCurve() const;
 		%feature("autodoc", "1");
-		virtual		void SetTrsf(const gp_Mat &Transfo);
+		virtual		void SetTrsf(const gp_Mat Transfo);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_LocationLaw Copy() const;
 		%feature("autodoc", "1");
@@ -2618,9 +2618,9 @@ def __del__(self):
 class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_SequenceNodeOfSequenceOfTrsf(const gp_Trsf &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		GeomFill_SequenceNodeOfSequenceOfTrsf(const gp_Trsf I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		gp_Trsf & Value() const;
+		gp_Trsf  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2818,37 +2818,37 @@ class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const GeomFill_SequenceOfTrsf & operator=(const GeomFill_SequenceOfTrsf &Other);
 		%feature("autodoc", "1");
-		void Append(const gp_Trsf &T);
+		void Append(const gp_Trsf T);
 		%feature("autodoc", "1");
 		void Append(GeomFill_SequenceOfTrsf & S);
 		%feature("autodoc", "1");
-		void Prepend(const gp_Trsf &T);
+		void Prepend(const gp_Trsf T);
 		%feature("autodoc", "1");
 		void Prepend(GeomFill_SequenceOfTrsf & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const gp_Trsf &I);
+		void InsertBefore(const Standard_Integer Index, const gp_Trsf I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, GeomFill_SequenceOfTrsf & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const gp_Trsf &T);
+		void InsertAfter(const Standard_Integer Index, const gp_Trsf T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, GeomFill_SequenceOfTrsf & S);
 		%feature("autodoc", "1");
-		const gp_Trsf & First() const;
+		const gp_Trsf  First() const;
 		%feature("autodoc", "1");
-		const gp_Trsf & Last() const;
+		const gp_Trsf  Last() const;
 		%feature("autodoc", "1");
 		void Split(const Standard_Integer Index, GeomFill_SequenceOfTrsf & S);
 		%feature("autodoc", "1");
-		const gp_Trsf & Value(const Standard_Integer Index) const;
+		const gp_Trsf  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Trsf & operator()(const Standard_Integer Index) const;
+		const gp_Trsf  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Trsf &I);
+		void SetValue(const Standard_Integer Index, const gp_Trsf I);
 		%feature("autodoc", "1");
-		gp_Trsf & ChangeValue(const Standard_Integer Index);
+		gp_Trsf  ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		gp_Trsf & operator()(const Standard_Integer Index);
+		gp_Trsf  operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -3290,7 +3290,7 @@ def __del__(self):
 class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_PlanFunc(const gp_Pnt &P, const gp_Vec &V, const Handle_Adaptor3d_HCurve &C);
+		GeomFill_PlanFunc(const gp_Pnt P, const gp_Vec V, const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
@@ -3305,10 +3305,10 @@ class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","DEDT(Standard_Real X, const DP, const DV) -> Standard_Real");
 
-		void DEDT(const Standard_Real X, const gp_Vec &DP, const gp_Vec &DV, Standard_Real &OutValue);
+		void DEDT(const Standard_Real X, const gp_Vec DP, const gp_Vec DV, Standard_Real &OutValue);
 		%feature("autodoc","D2E(Standard_Real X, const DP, const D2P, const DV, const D2V) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		void D2E(const Standard_Real X, const gp_Vec &DP, const gp_Vec &D2P, const gp_Vec &DV, const gp_Vec &D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		void D2E(const Standard_Real X, const gp_Vec DP, const gp_Vec D2P, const gp_Vec DV, const gp_Vec D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 %feature("shadow") GeomFill_PlanFunc::~GeomFill_PlanFunc %{
@@ -3464,11 +3464,11 @@ class GeomFill_QuasiAngularConvertor {
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Pnt &Center, const gp_Vec &Dir, const Standard_Real Angle, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weights);
+		void Section(const gp_Pnt FirstPnt, const gp_Pnt Center, const gp_Vec Dir, const Standard_Real Angle, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weights);
 		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &Dir, const gp_Vec &DDir, const Standard_Real Angle, const Standard_Real DAngle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights);
+		void Section(const gp_Pnt FirstPnt, const gp_Vec DFirstPnt, const gp_Pnt Center, const gp_Vec DCenter, const gp_Vec Dir, const gp_Vec DDir, const Standard_Real Angle, const Standard_Real DAngle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights);
 		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights, TColStd_Array1OfReal & D2Weights);
+		void Section(const gp_Pnt FirstPnt, const gp_Vec DFirstPnt, const gp_Vec D2FirstPnt, const gp_Pnt Center, const gp_Vec DCenter, const gp_Vec D2Center, const gp_Vec Dir, const gp_Vec DDir, const gp_Vec D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights, TColStd_Array1OfReal & D2Weights);
 
 };
 %feature("shadow") GeomFill_QuasiAngularConvertor::~GeomFill_QuasiAngularConvertor %{
@@ -3544,7 +3544,7 @@ def __del__(self):
 class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_ConstantBiNormal(const gp_Dir &BiNormal);
+		GeomFill_ConstantBiNormal(const gp_Dir BiNormal);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
 		%feature("autodoc", "1");
@@ -3809,7 +3809,7 @@ def __del__(self):
 class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_DraftTrihedron(const gp_Vec &BiNormal, const Standard_Real Angle);
+		GeomFill_DraftTrihedron(const gp_Vec BiNormal, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		void SetAngle(const Standard_Real Angle);
 		%feature("autodoc", "1");
@@ -3973,7 +3973,7 @@ def __del__(self):
 class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_Fixed(const gp_Vec &Tangent, const gp_Vec &Normal);
+		GeomFill_Fixed(const gp_Vec Tangent, const gp_Vec Normal);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
 		%feature("autodoc", "1");
@@ -4032,7 +4032,7 @@ class GeomFill_Pipe {
 		%feature("autodoc", "1");
 		GeomFill_Pipe(const Handle_Geom2d_Curve &Path, const Handle_Geom_Surface &Support, const Handle_Geom_Curve &FirstSect);
 		%feature("autodoc", "1");
-		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const gp_Dir &Dir);
+		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const gp_Dir Dir);
 		%feature("autodoc", "1");
 		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const Handle_Geom_Curve &LastSect);
 		%feature("autodoc", "1");
@@ -4050,7 +4050,7 @@ class GeomFill_Pipe {
 		%feature("autodoc", "1");
 		void Init(const Handle_Geom2d_Curve &Path, const Handle_Geom_Surface &Support, const Handle_Geom_Curve &FirstSect);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const gp_Dir &Dir);
+		void Init(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const gp_Dir Dir);
 		%feature("autodoc", "1");
 		void Init(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const Handle_Geom_Curve &LastSect);
 		%feature("autodoc", "1");
@@ -4261,7 +4261,7 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 		%feature("autodoc", "1");
 		virtual		const Handle_Adaptor3d_HCurve & GetCurve() const;
 		%feature("autodoc", "1");
-		virtual		void SetTrsf(const gp_Mat &Transfo);
+		virtual		void SetTrsf(const gp_Mat Transfo);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_LocationLaw Copy() const;
 		%feature("autodoc", "1");

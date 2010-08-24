@@ -569,7 +569,7 @@ class SelectBasics_BasicTool {
 		%feature("autodoc", "1");
 		SelectBasics_BasicTool();
 		%feature("autodoc", "1");
-		static		Standard_Boolean MatchSegments(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3, const gp_Pnt2d &P4);
+		static		Standard_Boolean MatchSegments(const gp_Pnt2d P1, const gp_Pnt2d P2, const gp_Pnt2d P3, const gp_Pnt2d P4);
 		%feature("autodoc", "1");
 		static		Standard_Boolean AutoInter(const TColgp_Array1OfPnt2d &aPolyg2d);
 		%feature("autodoc","MatchPolyg2d(const tabpoint, Standard_Real X, Standard_Real Y, Standard_Real aTol) -> [Standard_Real, Standard_Integer]");

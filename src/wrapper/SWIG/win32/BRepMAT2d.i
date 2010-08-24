@@ -170,9 +170,9 @@ def __del__(self):
 class BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt(const TopoDS_Shape &K, const BRepMAT2d_SequenceOfBasicElt &I, const TCollection_MapNodePtr &n);
+		BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt(const TopoDS_Shape K, const BRepMAT2d_SequenceOfBasicElt &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		BRepMAT2d_SequenceOfBasicElt & Value() const;
 		%feature("autodoc", "1");
@@ -295,7 +295,7 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt : public TColl
 		%feature("autodoc", "1");
 		void Initialize(const BRepMAT2d_DataMapOfShapeSequenceOfBasicElt &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const BRepMAT2d_SequenceOfBasicElt & Value() const;
 
@@ -395,19 +395,19 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepMAT2d_SequenceOfBasicElt &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const BRepMAT2d_SequenceOfBasicElt &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const BRepMAT2d_SequenceOfBasicElt & Find(const TopoDS_Shape &K) const;
+		const BRepMAT2d_SequenceOfBasicElt & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape &K) const;
+		const BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		BRepMAT2d_SequenceOfBasicElt & ChangeFind(const TopoDS_Shape &K);
+		BRepMAT2d_SequenceOfBasicElt & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape &K);
+		BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepMAT2d_DataMapOfShapeSequenceOfBasicElt::~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt %{
@@ -438,7 +438,7 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_Bas
 		%feature("autodoc", "1");
 		const Handle_MAT_BasicElt & Key() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
+		const TopoDS_Shape  Value() const;
 
 };
 %feature("shadow") BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape::~BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape %{
@@ -461,11 +461,11 @@ def __del__(self):
 class BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape(const Handle_MAT_BasicElt &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
+		BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape(const Handle_MAT_BasicElt &K, const TopoDS_Shape I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_MAT_BasicElt & Key() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
+		TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -510,19 +510,19 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_MAT_BasicElt &K, const TopoDS_Shape &I);
+		Standard_Boolean Bind(const Handle_MAT_BasicElt &K, const TopoDS_Shape I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const Handle_MAT_BasicElt &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const Handle_MAT_BasicElt &K);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Find(const Handle_MAT_BasicElt &K) const;
+		const TopoDS_Shape  Find(const Handle_MAT_BasicElt &K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const Handle_MAT_BasicElt &K) const;
+		const TopoDS_Shape  operator()(const Handle_MAT_BasicElt &K) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFind(const Handle_MAT_BasicElt &K);
+		TopoDS_Shape  ChangeFind(const Handle_MAT_BasicElt &K);
 		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const Handle_MAT_BasicElt &K);
+		TopoDS_Shape  operator()(const Handle_MAT_BasicElt &K);
 
 };
 %feature("shadow") BRepMAT2d_DataMapOfBasicEltShape::~BRepMAT2d_DataMapOfBasicEltShape %{
@@ -551,7 +551,7 @@ class BRepMAT2d_LinkTopoBilo {
 		%feature("autodoc", "1");
 		void Perform(const BRepMAT2d_Explorer &Explo, const BRepMAT2d_BisectingLocus &BiLo);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Standard_Boolean More();
 		%feature("autodoc", "1");
@@ -584,11 +584,11 @@ class BRepMAT2d_Explorer {
 		%feature("autodoc", "1");
 		BRepMAT2d_Explorer();
 		%feature("autodoc", "1");
-		BRepMAT2d_Explorer(const TopoDS_Face &aFace);
+		BRepMAT2d_Explorer(const TopoDS_Face aFace);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Face &aFace);
+		void Perform(const TopoDS_Face aFace);
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfContours() const;
 		%feature("autodoc", "1");
@@ -606,9 +606,9 @@ class BRepMAT2d_Explorer {
 		%feature("autodoc", "1");
 		const TColGeom2d_SequenceOfCurve & Contour(const Standard_Integer IndexContour) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsModified(const TopoDS_Shape &aShape) const;
+		Standard_Boolean IsModified(const TopoDS_Shape aShape) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape ModifiedShape(const TopoDS_Shape &aShape) const;
+		TopoDS_Shape ModifiedShape(const TopoDS_Shape aShape) const;
 		%feature("autodoc", "1");
 		const MAT2d_SequenceOfBoolean & GetIsClosed() const;
 

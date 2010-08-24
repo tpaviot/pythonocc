@@ -208,9 +208,9 @@ def __del__(self):
 class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData(const TopoDS_Shape &K, const HLRTopoBRep_FaceData &I, const TCollection_MapNodePtr &n);
+		HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData(const TopoDS_Shape K, const HLRTopoBRep_FaceData &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		HLRTopoBRep_FaceData & Value() const;
 		%feature("autodoc", "1");
@@ -257,19 +257,19 @@ class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const HLRTopoBRep_ListOfVData &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const HLRTopoBRep_ListOfVData &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const HLRTopoBRep_ListOfVData & Find(const TopoDS_Shape &K) const;
+		const HLRTopoBRep_ListOfVData & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const HLRTopoBRep_ListOfVData & operator()(const TopoDS_Shape &K) const;
+		const HLRTopoBRep_ListOfVData & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		HLRTopoBRep_ListOfVData & ChangeFind(const TopoDS_Shape &K);
+		HLRTopoBRep_ListOfVData & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		HLRTopoBRep_ListOfVData & operator()(const TopoDS_Shape &K);
+		HLRTopoBRep_ListOfVData & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") HLRTopoBRep_MapOfShapeListOfVData::~HLRTopoBRep_MapOfShapeListOfVData %{
@@ -298,49 +298,49 @@ class HLRTopoBRep_Data {
 		%feature("autodoc", "1");
 		void Clean();
 		%feature("autodoc", "1");
-		Standard_Boolean EdgeHasSplE(const TopoDS_Edge &E) const;
+		Standard_Boolean EdgeHasSplE(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
-		Standard_Boolean FaceHasIntL(const TopoDS_Face &F) const;
+		Standard_Boolean FaceHasIntL(const TopoDS_Face F) const;
 		%feature("autodoc", "1");
-		Standard_Boolean FaceHasOutL(const TopoDS_Face &F) const;
+		Standard_Boolean FaceHasOutL(const TopoDS_Face F) const;
 		%feature("autodoc", "1");
-		Standard_Boolean FaceHasIsoL(const TopoDS_Face &F) const;
+		Standard_Boolean FaceHasIsoL(const TopoDS_Face F) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSplEEdgeEdge(const TopoDS_Edge &E1, const TopoDS_Edge &E2) const;
+		Standard_Boolean IsSplEEdgeEdge(const TopoDS_Edge E1, const TopoDS_Edge E2) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsIntLFaceEdge(const TopoDS_Face &F, const TopoDS_Edge &E) const;
+		Standard_Boolean IsIntLFaceEdge(const TopoDS_Face F, const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsOutLFaceEdge(const TopoDS_Face &F, const TopoDS_Edge &E) const;
+		Standard_Boolean IsOutLFaceEdge(const TopoDS_Face F, const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsIsoLFaceEdge(const TopoDS_Face &F, const TopoDS_Edge &E) const;
+		Standard_Boolean IsIsoLFaceEdge(const TopoDS_Face F, const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape NewSOldS(const TopoDS_Shape &New) const;
+		TopoDS_Shape NewSOldS(const TopoDS_Shape New) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & EdgeSplE(const TopoDS_Edge &E) const;
+		const TopTools_ListOfShape & EdgeSplE(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FaceIntL(const TopoDS_Face &F) const;
+		const TopTools_ListOfShape & FaceIntL(const TopoDS_Face F) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FaceOutL(const TopoDS_Face &F) const;
+		const TopTools_ListOfShape & FaceOutL(const TopoDS_Face F) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FaceIsoL(const TopoDS_Face &F) const;
+		const TopTools_ListOfShape & FaceIsoL(const TopoDS_Face F) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsOutV(const TopoDS_Vertex &V) const;
+		Standard_Boolean IsOutV(const TopoDS_Vertex V) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsIntV(const TopoDS_Vertex &V) const;
+		Standard_Boolean IsIntV(const TopoDS_Vertex V) const;
 		%feature("autodoc", "1");
-		void AddOldS(const TopoDS_Shape &NewS, const TopoDS_Shape &OldS);
+		void AddOldS(const TopoDS_Shape NewS, const TopoDS_Shape OldS);
 		%feature("autodoc", "1");
-		TopTools_ListOfShape & AddSplE(const TopoDS_Edge &E);
+		TopTools_ListOfShape & AddSplE(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		TopTools_ListOfShape & AddIntL(const TopoDS_Face &F);
+		TopTools_ListOfShape & AddIntL(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		TopTools_ListOfShape & AddOutL(const TopoDS_Face &F);
+		TopTools_ListOfShape & AddOutL(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		TopTools_ListOfShape & AddIsoL(const TopoDS_Face &F);
+		TopTools_ListOfShape & AddIsoL(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void AddOutV(const TopoDS_Vertex &V);
+		void AddOutV(const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		void AddIntV(const TopoDS_Vertex &V);
+		void AddIntV(const TopoDS_Vertex V);
 		%feature("autodoc", "1");
 		void InitEdge();
 		%feature("autodoc", "1");
@@ -348,21 +348,21 @@ class HLRTopoBRep_Data {
 		%feature("autodoc", "1");
 		void NextEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge() const;
+		const TopoDS_Edge  Edge() const;
 		%feature("autodoc", "1");
-		void InitVertex(const TopoDS_Edge &E);
+		void InitVertex(const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		Standard_Boolean MoreVertex() const;
 		%feature("autodoc", "1");
 		void NextVertex();
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex() const;
+		const TopoDS_Vertex  Vertex() const;
 		%feature("autodoc", "1");
 		Standard_Real Parameter() const;
 		%feature("autodoc", "1");
-		void InsertBefore(const TopoDS_Vertex &V, const Standard_Real P);
+		void InsertBefore(const TopoDS_Vertex V, const Standard_Real P);
 		%feature("autodoc", "1");
-		void Append(const TopoDS_Vertex &V, const Standard_Real P);
+		void Append(const TopoDS_Vertex V, const Standard_Real P);
 
 };
 %feature("shadow") HLRTopoBRep_Data::~HLRTopoBRep_Data %{
@@ -391,7 +391,7 @@ class HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData : public TCollection_B
 		%feature("autodoc", "1");
 		void Initialize(const HLRTopoBRep_DataMapOfShapeFaceData &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const HLRTopoBRep_FaceData & Value() const;
 
@@ -483,7 +483,7 @@ class HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData : public TCollection_Ba
 		%feature("autodoc", "1");
 		void Initialize(const HLRTopoBRep_MapOfShapeListOfVData &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const HLRTopoBRep_ListOfVData & Value() const;
 
@@ -510,11 +510,11 @@ class HLRTopoBRep_VData {
 		%feature("autodoc", "1");
 		HLRTopoBRep_VData();
 		%feature("autodoc", "1");
-		HLRTopoBRep_VData(const Standard_Real P, const TopoDS_Shape &V);
+		HLRTopoBRep_VData(const Standard_Real P, const TopoDS_Shape V);
 		%feature("autodoc", "1");
 		Standard_Real Parameter() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Vertex() const;
+		const TopoDS_Shape  Vertex() const;
 
 };
 %feature("shadow") HLRTopoBRep_VData::~HLRTopoBRep_VData %{
@@ -611,11 +611,11 @@ class HLRTopoBRep_FaceIsoLiner {
 		%feature("autodoc", "1");
 		HLRTopoBRep_FaceIsoLiner();
 		%feature("autodoc", "1");
-		static		void Perform(const Standard_Integer FI, const TopoDS_Face &F, HLRTopoBRep_Data & DS, const Standard_Integer nbIsos);
+		static		void Perform(const Standard_Integer FI, const TopoDS_Face F, HLRTopoBRep_Data & DS, const Standard_Integer nbIsos);
 		%feature("autodoc", "1");
-		static		TopoDS_Vertex MakeVertex(const TopoDS_Edge &E, const gp_Pnt &P, const Standard_Real Par, const Standard_Real Tol, HLRTopoBRep_Data & DS);
+		static		TopoDS_Vertex MakeVertex(const TopoDS_Edge E, const gp_Pnt P, const Standard_Real Par, const Standard_Real Tol, HLRTopoBRep_Data & DS);
 		%feature("autodoc", "1");
-		static		void MakeIsoLine(const TopoDS_Face &F, const Handle_Geom2d_Line &Iso, TopoDS_Vertex & V1, TopoDS_Vertex & V2, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, HLRTopoBRep_Data & DS);
+		static		void MakeIsoLine(const TopoDS_Face F, const Handle_Geom2d_Line &Iso, TopoDS_Vertex & V1, TopoDS_Vertex & V2, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, HLRTopoBRep_Data & DS);
 
 };
 %feature("shadow") HLRTopoBRep_FaceIsoLiner::~HLRTopoBRep_FaceIsoLiner %{
@@ -673,17 +673,17 @@ class HLRTopoBRep_OutLiner : public MMgt_TShared {
 		%feature("autodoc", "1");
 		HLRTopoBRep_OutLiner();
 		%feature("autodoc", "1");
-		HLRTopoBRep_OutLiner(const TopoDS_Shape &OriSh);
+		HLRTopoBRep_OutLiner(const TopoDS_Shape OriSh);
 		%feature("autodoc", "1");
-		HLRTopoBRep_OutLiner(const TopoDS_Shape &OriS, const TopoDS_Shape &OutS);
+		HLRTopoBRep_OutLiner(const TopoDS_Shape OriS, const TopoDS_Shape OutS);
 		%feature("autodoc", "1");
-		void OriginalShape(const TopoDS_Shape &OriS);
+		void OriginalShape(const TopoDS_Shape OriS);
 		%feature("autodoc", "1");
-		TopoDS_Shape & OriginalShape();
+		TopoDS_Shape  OriginalShape();
 		%feature("autodoc", "1");
-		void OutLinedShape(const TopoDS_Shape &OutS);
+		void OutLinedShape(const TopoDS_Shape OutS);
 		%feature("autodoc", "1");
-		TopoDS_Shape & OutLinedShape();
+		TopoDS_Shape  OutLinedShape();
 		%feature("autodoc", "1");
 		HLRTopoBRep_Data & DataStructure();
 		%feature("autodoc", "1");
@@ -732,19 +732,19 @@ class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const HLRTopoBRep_FaceData &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const HLRTopoBRep_FaceData &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const HLRTopoBRep_FaceData & Find(const TopoDS_Shape &K) const;
+		const HLRTopoBRep_FaceData & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const HLRTopoBRep_FaceData & operator()(const TopoDS_Shape &K) const;
+		const HLRTopoBRep_FaceData & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		HLRTopoBRep_FaceData & ChangeFind(const TopoDS_Shape &K);
+		HLRTopoBRep_FaceData & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		HLRTopoBRep_FaceData & operator()(const TopoDS_Shape &K);
+		HLRTopoBRep_FaceData & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") HLRTopoBRep_DataMapOfShapeFaceData::~HLRTopoBRep_DataMapOfShapeFaceData %{
@@ -767,9 +767,9 @@ def __del__(self):
 class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const TopoDS_Shape &K, const HLRTopoBRep_ListOfVData &I, const TCollection_MapNodePtr &n);
+		HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const TopoDS_Shape K, const HLRTopoBRep_ListOfVData &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		HLRTopoBRep_ListOfVData & Value() const;
 		%feature("autodoc", "1");
@@ -808,7 +808,7 @@ class HLRTopoBRep_DSFiller {
 		%feature("autodoc", "1");
 		HLRTopoBRep_DSFiller();
 		%feature("autodoc", "1");
-		static		void Insert(const TopoDS_Shape &S, Contap_Contour & FO, HLRTopoBRep_Data & DS, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
+		static		void Insert(const TopoDS_Shape S, Contap_Contour & FO, HLRTopoBRep_Data & DS, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
 
 };
 %feature("shadow") HLRTopoBRep_DSFiller::~HLRTopoBRep_DSFiller %{

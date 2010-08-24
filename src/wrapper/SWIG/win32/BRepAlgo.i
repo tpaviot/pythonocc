@@ -291,7 +291,7 @@ class BRepAlgo_Tool {
 		%feature("autodoc", "1");
 		BRepAlgo_Tool();
 		%feature("autodoc", "1");
-		static		TopoDS_Shape Deboucle3D(const TopoDS_Shape &S, const TopTools_MapOfShape &Boundary);
+		static		TopoDS_Shape Deboucle3D(const TopoDS_Shape S, const TopTools_MapOfShape &Boundary);
 
 };
 %feature("shadow") BRepAlgo_Tool::~BRepAlgo_Tool %{
@@ -314,9 +314,9 @@ def __del__(self):
 class BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger(const TopoDS_Shape &K, const TColStd_ListOfInteger &I, const TCollection_MapNodePtr &n);
+		BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger(const TopoDS_Shape K, const TColStd_ListOfInteger &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		TColStd_ListOfInteger & Value() const;
 		%feature("autodoc", "1");
@@ -355,17 +355,17 @@ class BRepAlgo_Loop {
 		%feature("autodoc", "1");
 		BRepAlgo_Loop();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
+		void Init(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		void AddEdge(TopoDS_Edge & E, const TopTools_ListOfShape &LV);
 		%feature("autodoc", "1");
-		void AddConstEdge(const TopoDS_Edge &E);
+		void AddConstEdge(const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		void AddConstEdges(const TopTools_ListOfShape &LE);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
-		void CutEdge(const TopoDS_Edge &E, const TopTools_ListOfShape &VonE, TopTools_ListOfShape & NE) const;
+		void CutEdge(const TopoDS_Edge E, const TopTools_ListOfShape &VonE, TopTools_ListOfShape & NE) const;
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & NewWires() const;
 		%feature("autodoc", "1");
@@ -373,7 +373,7 @@ class BRepAlgo_Loop {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & NewFaces() const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewEdges(const TopoDS_Edge &E) const;
+		const TopTools_ListOfShape & NewEdges(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
 		void GetVerticesForSubstitute(TopTools_DataMapOfShapeShape & VerVerMap) const;
 		%feature("autodoc", "1");
@@ -404,41 +404,41 @@ class BRepAlgo_DSAccess {
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		void Load(const TopoDS_Shape &S);
+		void Load(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void Load(TopoDS_Shape & S1, TopoDS_Shape & S2);
 		%feature("autodoc", "1");
 		void Intersect();
 		%feature("autodoc", "1");
-		void Intersect(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		void Intersect(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		void SameDomain(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		void SameDomain(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GetSectionEdgeSet(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		const TopTools_ListOfShape & GetSectionEdgeSet(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & GetSectionEdgeSet();
 		%feature("autodoc", "1");
-		Standard_Boolean IsWire(const TopoDS_Shape &Compound);
+		Standard_Boolean IsWire(const TopoDS_Shape Compound);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Wire(const TopoDS_Shape &Compound);
+		const TopoDS_Shape  Wire(const TopoDS_Shape Compound);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & SectionVertex(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		const TopTools_ListOfShape & SectionVertex(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		void SuppressEdgeSet(const TopoDS_Shape &Compound);
+		void SuppressEdgeSet(const TopoDS_Shape Compound);
 		%feature("autodoc", "1");
-		void ChangeEdgeSet(const TopoDS_Shape &Old, const TopoDS_Shape &New);
+		void ChangeEdgeSet(const TopoDS_Shape Old, const TopoDS_Shape New);
 		%feature("autodoc", "1");
-		void SuppressSectionVertex(const TopoDS_Vertex &V);
+		void SuppressSectionVertex(const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Merge(const TopAbs_State state1, const TopAbs_State state2);
+		const TopoDS_Shape  Merge(const TopAbs_State state1, const TopAbs_State state2);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Merge(const TopAbs_State state1);
+		const TopoDS_Shape  Merge(const TopAbs_State state1);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Propagate(const TopAbs_State what, const TopoDS_Shape &FromShape, const TopoDS_Shape &LoadShape);
+		const TopoDS_Shape  Propagate(const TopAbs_State what, const TopoDS_Shape FromShape, const TopoDS_Shape LoadShape);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & PropagateFromSection(const TopoDS_Shape &SectionShape);
+		const TopoDS_Shape  PropagateFromSection(const TopoDS_Shape SectionShape);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
+		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		BRepAlgo_CheckStatus Check();
 		%feature("autodoc", "1");
@@ -477,7 +477,7 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference : public TCollection_
 		%feature("autodoc", "1");
 		void Initialize(const BRepAlgo_DataMapOfShapeInterference &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Handle_TopOpeBRepDS_Interference & Value() const;
 
@@ -502,9 +502,9 @@ def __del__(self):
 class BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_DataMapNodeOfDataMapOfShapeInterference(const TopoDS_Shape &K, const Handle_TopOpeBRepDS_Interference &I, const TCollection_MapNodePtr &n);
+		BRepAlgo_DataMapNodeOfDataMapOfShapeInterference(const TopoDS_Shape K, const Handle_TopOpeBRepDS_Interference &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepDS_Interference & Value() const;
 		%feature("autodoc", "1");
@@ -549,13 +549,13 @@ class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_HBuilder Builder() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape1() const;
+		const TopoDS_Shape  Shape1() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape2() const;
+		const TopoDS_Shape  Shape2() const;
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape S);
 
 };
 %feature("shadow") BRepAlgo_BooleanOperation::~BRepAlgo_BooleanOperation %{
@@ -581,7 +581,7 @@ def __del__(self):
 class BRepAlgo_Fuse : public BRepAlgo_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_Fuse(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		BRepAlgo_Fuse(const TopoDS_Shape S1, const TopoDS_Shape S2);
 
 };
 %feature("shadow") BRepAlgo_Fuse::~BRepAlgo_Fuse %{
@@ -614,29 +614,29 @@ class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Boolean &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Boolean &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Standard_Boolean & Find(const TopoDS_Shape &K) const;
+		const Standard_Boolean & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Standard_Boolean & operator()(const TopoDS_Shape &K) const;
+		const Standard_Boolean & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc","1");
 		%extend {
-				Standard_Boolean GetChangeFind(const TopoDS_Shape &K) {
+				Standard_Boolean GetChangeFind(const TopoDS_Shape K) {
 				return (Standard_Boolean) $self->ChangeFind(K);
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetChangeFind(Standard_Boolean value ,const TopoDS_Shape &K) {
+				void SetChangeFind(Standard_Boolean value ,const TopoDS_Shape K) {
 				$self->ChangeFind(K)=value;
 				}
 		};
 		%feature("autodoc", "1");
-		Standard_Boolean & operator()(const TopoDS_Shape &K);
+		Standard_Boolean & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepAlgo_DataMapOfShapeBoolean::~BRepAlgo_DataMapOfShapeBoolean %{
@@ -661,11 +661,11 @@ class BRepAlgo_NormalProjection {
 		%feature("autodoc", "1");
 		BRepAlgo_NormalProjection();
 		%feature("autodoc", "1");
-		BRepAlgo_NormalProjection(const TopoDS_Shape &S);
+		BRepAlgo_NormalProjection(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &ToProj);
+		void Add(const TopoDS_Shape ToProj);
 		%feature("autodoc", "1");
 		void SetParams(const Standard_Real Tol3D, const Standard_Real Tol2D, const GeomAbs_Shape InternalContinuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSeg);
 		%feature("autodoc", "1");
@@ -681,13 +681,13 @@ class BRepAlgo_NormalProjection {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Projection() const;
+		const TopoDS_Shape  Projection() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Ancestor(const TopoDS_Edge &E) const;
+		const TopoDS_Shape  Ancestor(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Couple(const TopoDS_Edge &E) const;
+		const TopoDS_Shape  Couple(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Standard_Boolean IsElementary(const Adaptor3d_Curve &C) const;
 		%feature("autodoc", "1");
@@ -718,25 +718,25 @@ class BRepAlgo_AsDes : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &S, const TopoDS_Shape &SS);
+		void Add(const TopoDS_Shape S, const TopoDS_Shape SS);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &S, const TopTools_ListOfShape &SS);
+		void Add(const TopoDS_Shape S, const TopTools_ListOfShape &SS);
 		%feature("autodoc", "1");
-		Standard_Boolean HasAscendant(const TopoDS_Shape &S) const;
+		Standard_Boolean HasAscendant(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasDescendant(const TopoDS_Shape &S) const;
+		Standard_Boolean HasDescendant(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Ascendant(const TopoDS_Shape &S) const;
+		const TopTools_ListOfShape & Ascendant(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Descendant(const TopoDS_Shape &S) const;
+		const TopTools_ListOfShape & Descendant(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		TopTools_ListOfShape & ChangeDescendant(const TopoDS_Shape &S);
+		TopTools_ListOfShape & ChangeDescendant(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Replace(const TopoDS_Shape &OldS, const TopoDS_Shape &NewS);
+		void Replace(const TopoDS_Shape OldS, const TopoDS_Shape NewS);
 		%feature("autodoc", "1");
-		void Remove(const TopoDS_Shape &S);
+		void Remove(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		Standard_Boolean HasCommonDescendant(const TopoDS_Shape &S1, const TopoDS_Shape &S2, TopTools_ListOfShape & LC) const;
+		Standard_Boolean HasCommonDescendant(const TopoDS_Shape S1, const TopoDS_Shape S2, TopTools_ListOfShape & LC) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -773,11 +773,11 @@ class BRepAlgo_EdgeConnector : public MMgt_TShared {
 		%feature("autodoc", "1");
 		BRepAlgo_EdgeConnector();
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge &e);
+		void Add(const TopoDS_Edge e);
 		%feature("autodoc", "1");
 		void Add(TopTools_ListOfShape & LOEdge);
 		%feature("autodoc", "1");
-		void AddStart(const TopoDS_Shape &e);
+		void AddStart(const TopoDS_Shape e);
 		%feature("autodoc", "1");
 		void AddStart(TopTools_ListOfShape & LOEdge);
 		%feature("autodoc", "1");
@@ -789,7 +789,7 @@ class BRepAlgo_EdgeConnector : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsWire(const TopoDS_Shape &W);
+		Standard_Boolean IsWire(const TopoDS_Shape W);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -824,9 +824,9 @@ def __del__(self):
 class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean(const TopoDS_Shape &K, const Standard_Boolean &I, const TCollection_MapNodePtr &n);
+		BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean(const TopoDS_Shape K, const Standard_Boolean &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Boolean GetValue() {
@@ -877,13 +877,13 @@ class BRepAlgo_TopOpe {
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		void Load(const TopoDS_Shape &S);
+		void Load(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void Load(TopoDS_Shape & S1, TopoDS_Shape & S2);
 		%feature("autodoc", "1");
 		void Intersect();
 		%feature("autodoc", "1");
-		void Intersect(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		void Intersect(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
 		void ToCompleteIntersection();
 		%feature("autodoc", "1");
@@ -891,9 +891,9 @@ class BRepAlgo_TopOpe {
 		%feature("autodoc", "1");
 		void SuppressEdgeSet();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Merge(const TopAbs_State state1, const TopAbs_State state2);
+		const TopoDS_Shape  Merge(const TopAbs_State state1, const TopAbs_State state2);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Merge(const TopAbs_State state1);
+		const TopoDS_Shape  Merge(const TopAbs_State state1);
 		%feature("autodoc", "1");
 		Standard_Boolean PaveBlocksNotEmpty();
 		%feature("autodoc", "1");
@@ -928,37 +928,37 @@ class BRepAlgo_Image {
 		%feature("autodoc", "1");
 		BRepAlgo_Image();
 		%feature("autodoc", "1");
-		void SetRoot(const TopoDS_Shape &S);
+		void SetRoot(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Bind(const TopoDS_Shape &OldS, const TopoDS_Shape &NewS);
+		void Bind(const TopoDS_Shape OldS, const TopoDS_Shape NewS);
 		%feature("autodoc", "1");
-		void Bind(const TopoDS_Shape &OldS, const TopTools_ListOfShape &NewS);
+		void Bind(const TopoDS_Shape OldS, const TopTools_ListOfShape &NewS);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &OldS, const TopoDS_Shape &NewS);
+		void Add(const TopoDS_Shape OldS, const TopoDS_Shape NewS);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &OldS, const TopTools_ListOfShape &NewS);
+		void Add(const TopoDS_Shape OldS, const TopTools_ListOfShape &NewS);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Remove(const TopoDS_Shape &S);
+		void Remove(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & Roots() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsImage(const TopoDS_Shape &S) const;
+		Standard_Boolean IsImage(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & ImageFrom(const TopoDS_Shape &S) const;
+		const TopoDS_Shape  ImageFrom(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Root(const TopoDS_Shape &S) const;
+		const TopoDS_Shape  Root(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasImage(const TopoDS_Shape &S) const;
+		Standard_Boolean HasImage(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Image(const TopoDS_Shape &S) const;
+		const TopTools_ListOfShape & Image(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		void LastImage(const TopoDS_Shape &S, TopTools_ListOfShape & L) const;
+		void LastImage(const TopoDS_Shape S, TopTools_ListOfShape & L) const;
 		%feature("autodoc", "1");
 		void Compact();
 		%feature("autodoc", "1");
-		void Filter(const TopoDS_Shape &S, const TopAbs_ShapeEnum ShapeType);
+		void Filter(const TopoDS_Shape S, const TopAbs_ShapeEnum ShapeType);
 
 };
 %feature("shadow") BRepAlgo_Image::~BRepAlgo_Image %{
@@ -983,7 +983,7 @@ class BRepAlgo_FaceRestrictor {
 		%feature("autodoc", "1");
 		BRepAlgo_FaceRestrictor();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F, const Standard_Boolean Proj=0, const Standard_Boolean ControlOrientation=0);
+		void Init(const TopoDS_Face F, const Standard_Boolean Proj=0, const Standard_Boolean ControlOrientation=0);
 		%feature("autodoc", "1");
 		void Add(TopoDS_Wire & W);
 		%feature("autodoc", "1");
@@ -1022,29 +1022,29 @@ class BRepAlgo_BooleanOperations {
 		%feature("autodoc", "1");
 		BRepAlgo_BooleanOperations();
 		%feature("autodoc", "1");
-		void Shapes2d(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		void Shapes2d(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		void Shapes(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		void Shapes(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
 		void SetApproxParameters(const Standard_Integer NbPntMax, const Standard_Real Tol3D, const Standard_Real Tol2D, const Standard_Boolean RelativeTol);
 		%feature("autodoc", "1");
-		void Define(const TopoDS_Shape &S1, const TopoDS_Shape &S2, Handle_TopOpeBRepDS_HDataStructure & HDS);
+		void Define(const TopoDS_Shape S1, const TopoDS_Shape S2, Handle_TopOpeBRepDS_HDataStructure & HDS);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Common();
+		const TopoDS_Shape  Common();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Fus();
+		const TopoDS_Shape  Fus();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Cut();
+		const TopoDS_Shape  Cut();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Section();
+		const TopoDS_Shape  Section();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape();
+		const TopoDS_Shape  Shape();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & ShapeFrom(const TopoDS_Shape &S);
+		const TopoDS_Shape  ShapeFrom(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
+		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
+		Standard_Boolean IsDeleted(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		const Handle_TopOpeBRepDS_HDataStructure & DataStructure() const;
 		%feature("autodoc", "1");
@@ -1077,25 +1077,25 @@ def __del__(self):
 class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_Section(const TopoDS_Shape &Sh1, const TopoDS_Shape &Sh2, const Standard_Boolean PerformNow=1);
+		BRepAlgo_Section(const TopoDS_Shape Sh1, const TopoDS_Shape Sh2, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
-		BRepAlgo_Section(const TopoDS_Shape &Sh, const gp_Pln &Pl, const Standard_Boolean PerformNow=1);
+		BRepAlgo_Section(const TopoDS_Shape Sh, const gp_Pln Pl, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
-		BRepAlgo_Section(const TopoDS_Shape &Sh, const Handle_Geom_Surface &Sf, const Standard_Boolean PerformNow=1);
+		BRepAlgo_Section(const TopoDS_Shape Sh, const Handle_Geom_Surface &Sf, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
-		BRepAlgo_Section(const Handle_Geom_Surface &Sf, const TopoDS_Shape &Sh, const Standard_Boolean PerformNow=1);
+		BRepAlgo_Section(const Handle_Geom_Surface &Sf, const TopoDS_Shape Sh, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
 		BRepAlgo_Section(const Handle_Geom_Surface &Sf1, const Handle_Geom_Surface &Sf2, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
-		void Init1(const TopoDS_Shape &S1);
+		void Init1(const TopoDS_Shape S1);
 		%feature("autodoc", "1");
-		void Init1(const gp_Pln &Pl);
+		void Init1(const gp_Pln Pl);
 		%feature("autodoc", "1");
 		void Init1(const Handle_Geom_Surface &Sf);
 		%feature("autodoc", "1");
-		void Init2(const TopoDS_Shape &S2);
+		void Init2(const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		void Init2(const gp_Pln &Pl);
+		void Init2(const gp_Pln Pl);
 		%feature("autodoc", "1");
 		void Init2(const Handle_Geom_Surface &Sf);
 		%feature("autodoc", "1");
@@ -1107,13 +1107,13 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		Standard_Boolean HasAncestorFaceOn1(const TopoDS_Shape &E, TopoDS_Shape & F) const;
+		Standard_Boolean HasAncestorFaceOn1(const TopoDS_Shape E, TopoDS_Shape & F) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasAncestorFaceOn2(const TopoDS_Shape &E, TopoDS_Shape & F) const;
+		Standard_Boolean HasAncestorFaceOn2(const TopoDS_Shape E, TopoDS_Shape & F) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Curve PCurveOn1(const TopoDS_Shape &E) const;
+		Handle_Geom2d_Curve PCurveOn1(const TopoDS_Shape E) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Curve PCurveOn2(const TopoDS_Shape &E) const;
+		Handle_Geom2d_Curve PCurveOn2(const TopoDS_Shape E) const;
 
 };
 %feature("shadow") BRepAlgo_Section::~BRepAlgo_Section %{
@@ -1136,7 +1136,7 @@ def __del__(self):
 class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		BRepAlgo_Common(const TopoDS_Shape S1, const TopoDS_Shape S2);
 
 };
 %feature("shadow") BRepAlgo_Common::~BRepAlgo_Common %{
@@ -1169,19 +1169,19 @@ class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_TopOpeBRepDS_Interference &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_TopOpeBRepDS_Interference &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Handle_TopOpeBRepDS_Interference & Find(const TopoDS_Shape &K) const;
+		const Handle_TopOpeBRepDS_Interference & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape &K) const;
+		const Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Interference & ChangeFind(const TopoDS_Shape &K);
+		Handle_TopOpeBRepDS_Interference & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape &K);
+		Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepAlgo_DataMapOfShapeInterference::~BRepAlgo_DataMapOfShapeInterference %{
@@ -1279,19 +1279,19 @@ class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const TColStd_ListOfInteger &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const TColStd_ListOfInteger &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Find(const TopoDS_Shape &K) const;
+		const TColStd_ListOfInteger & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & operator()(const TopoDS_Shape &K) const;
+		const TColStd_ListOfInteger & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		TColStd_ListOfInteger & ChangeFind(const TopoDS_Shape &K);
+		TColStd_ListOfInteger & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		TColStd_ListOfInteger & operator()(const TopoDS_Shape &K);
+		TColStd_ListOfInteger & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepAlgo_DataMapOfShapeListOfInteger::~BRepAlgo_DataMapOfShapeListOfInteger %{
@@ -1316,13 +1316,13 @@ class BRepAlgo {
 		%feature("autodoc", "1");
 		BRepAlgo();
 		%feature("autodoc", "1");
-		static		TopoDS_Wire ConcatenateWire(const TopoDS_Wire &Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		static		TopoDS_Wire ConcatenateWire(const TopoDS_Wire Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsValid(const TopoDS_Shape &S);
+		static		Standard_Boolean IsValid(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsValid(const TopTools_ListOfShape &theArgs, const TopoDS_Shape &theResult, const Standard_Boolean closedSolid=0, const Standard_Boolean GeomCtrl=1);
+		static		Standard_Boolean IsValid(const TopTools_ListOfShape &theArgs, const TopoDS_Shape theResult, const Standard_Boolean closedSolid=0, const Standard_Boolean GeomCtrl=1);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsTopologicallyValid(const TopoDS_Shape &S);
+		static		Standard_Boolean IsTopologicallyValid(const TopoDS_Shape S);
 
 };
 %feature("shadow") BRepAlgo::~BRepAlgo %{
@@ -1345,7 +1345,7 @@ def __del__(self):
 class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_Cut(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		BRepAlgo_Cut(const TopoDS_Shape S1, const TopoDS_Shape S2);
 
 };
 %feature("shadow") BRepAlgo_Cut::~BRepAlgo_Cut %{
@@ -1374,7 +1374,7 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_Basic
 		%feature("autodoc", "1");
 		void Initialize(const BRepAlgo_DataMapOfShapeBoolean &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Standard_Boolean & Value() const;
 
@@ -1405,7 +1405,7 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection
 		%feature("autodoc", "1");
 		void Initialize(const BRepAlgo_DataMapOfShapeListOfInteger &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const TColStd_ListOfInteger & Value() const;
 

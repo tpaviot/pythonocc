@@ -90,7 +90,7 @@ def __del__(self):
 class FairCurve_Batten {
 	public:
 		%feature("autodoc", "1");
-		FairCurve_Batten(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Real Height, const Standard_Real Slope=0);
+		FairCurve_Batten(const gp_Pnt2d P1, const gp_Pnt2d P2, const Standard_Real Height, const Standard_Real Slope=0);
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
@@ -100,9 +100,9 @@ class FairCurve_Batten {
 		%feature("autodoc", "1");
 		void SetConstraintOrder2(const Standard_Integer ConstraintOrder);
 		%feature("autodoc", "1");
-		void SetP1(const gp_Pnt2d &P1);
+		void SetP1(const gp_Pnt2d P1);
 		%feature("autodoc", "1");
-		void SetP2(const gp_Pnt2d &P2);
+		void SetP2(const gp_Pnt2d P2);
 		%feature("autodoc", "1");
 		void SetAngle1(const Standard_Real Angle1);
 		%feature("autodoc", "1");
@@ -125,9 +125,9 @@ class FairCurve_Batten {
 		%feature("autodoc", "1");
 		Standard_Integer GetConstraintOrder2() const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & GetP1() const;
+		const gp_Pnt2d  GetP1() const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & GetP2() const;
+		const gp_Pnt2d  GetP2() const;
 		%feature("autodoc", "1");
 		Standard_Real GetAngle1() const;
 		%feature("autodoc", "1");
@@ -344,7 +344,7 @@ def __del__(self):
 class FairCurve_MinimalVariation : public FairCurve_Batten {
 	public:
 		%feature("autodoc", "1");
-		FairCurve_MinimalVariation(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Real Heigth, const Standard_Real Slope=0, const Standard_Real PhysicalRatio=0);
+		FairCurve_MinimalVariation(const gp_Pnt2d P1, const gp_Pnt2d P2, const Standard_Real Heigth, const Standard_Real Slope=0, const Standard_Real PhysicalRatio=0);
 		%feature("autodoc", "1");
 		void SetCurvature1(const Standard_Real Curvature);
 		%feature("autodoc", "1");

@@ -860,15 +860,15 @@ class NMTDS_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const Bnd_Box &I);
+		Standard_Integer Add(const TopoDS_Shape K, const Bnd_Box &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const Bnd_Box &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const Bnd_Box &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Bnd_Box & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -878,11 +878,11 @@ class NMTDS_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Bnd_Box & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Bnd_Box & FindFromKey(const TopoDS_Shape &K) const;
+		const Bnd_Box & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Bnd_Box & ChangeFromKey(const TopoDS_Shape &K);
+		Bnd_Box & ChangeFromKey(const TopoDS_Shape K);
 
 };
 %feature("shadow") NMTDS_IndexedDataMapOfShapeBox::~NMTDS_IndexedDataMapOfShapeBox %{
@@ -905,9 +905,9 @@ def __del__(self):
 class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const TopoDS_Shape &K1, const Standard_Integer K2, const Bnd_Box &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const TopoDS_Shape K1, const Standard_Integer K2, const Bnd_Box &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -1193,9 +1193,9 @@ class NMTDS_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const Standard_Integer &K, const TopoDS_Shape &I);
+		Standard_Integer Add(const Standard_Integer &K, const TopoDS_Shape I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TopoDS_Shape &T);
+		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TopoDS_Shape T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
@@ -1203,19 +1203,19 @@ class NMTDS_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		const Standard_Integer & FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindFromIndex(const Standard_Integer I) const;
+		const TopoDS_Shape  FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const Standard_Integer I) const;
+		const TopoDS_Shape  operator()(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFromIndex(const Standard_Integer I);
+		TopoDS_Shape  ChangeFromIndex(const Standard_Integer I);
 		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const Standard_Integer I);
+		TopoDS_Shape  operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindFromKey(const Standard_Integer &K) const;
+		const TopoDS_Shape  FindFromKey(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFromKey(const Standard_Integer &K);
+		TopoDS_Shape  ChangeFromKey(const Standard_Integer &K);
 
 };
 %feature("shadow") NMTDS_IndexedDataMapOfIntegerShape::~NMTDS_IndexedDataMapOfIntegerShape %{
@@ -1514,23 +1514,23 @@ class NMTDS_ShapesDataStructure : public BooleanOperations_ShapesDataStructure {
 		%feature("autodoc", "1");
 		NMTDS_ShapesDataStructure();
 		%feature("autodoc", "1");
-		void SetCompositeShape(const TopoDS_Shape &aS);
+		void SetCompositeShape(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		const NMTDS_CArray1OfIndexRange & Ranges() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & CompositeShape() const;
+		const TopoDS_Shape  CompositeShape() const;
 		%feature("autodoc", "1");
 		Standard_Integer ShapeRangeIndex(const Standard_Integer aId) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Rank(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer ShapeIndex(const TopoDS_Shape &aS, const Standard_Integer iRank) const;
+		virtual		Standard_Integer ShapeIndex(const TopoDS_Shape aS, const Standard_Integer iRank) const;
 		%feature("autodoc", "1");
-		void FillMap(const TopoDS_Shape &aS, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & aMSA, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & aMS) const;
+		void FillMap(const TopoDS_Shape aS, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & aMSA, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & aMS) const;
 		%feature("autodoc", "1");
-		void FillSubshapes(const TopoDS_Shape &aS, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & aMSA, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & aMS) const;
+		void FillSubshapes(const TopoDS_Shape aS, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & aMSA, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & aMS) const;
 		%feature("autodoc", "1");
 		void GetAllSuccessors(const Standard_Integer anIndex, TColStd_IndexedMapOfInteger & aScrs) const;
 		%feature("autodoc", "1");
@@ -1659,13 +1659,13 @@ class NMTDS_PassKeyShape {
 		%feature("autodoc", "1");
 		NMTDS_PassKeyShape & operator=(const NMTDS_PassKeyShape &Other);
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS);
+		void SetShapes(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2);
+		void SetShapes(const TopoDS_Shape aS1, const TopoDS_Shape aS2);
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2, const TopoDS_Shape &aS3);
+		void SetShapes(const TopoDS_Shape aS1, const TopoDS_Shape aS2, const TopoDS_Shape aS3);
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2, const TopoDS_Shape &aS3, const TopoDS_Shape &aS4);
+		void SetShapes(const TopoDS_Shape aS1, const TopoDS_Shape aS2, const TopoDS_Shape aS3, const TopoDS_Shape aS4);
 		%feature("autodoc", "1");
 		void SetShapes(const TopTools_ListOfShape &aLS);
 		%feature("autodoc", "1");
@@ -1711,11 +1711,11 @@ class NMTDS_Tools {
 		%feature("autodoc", "1");
 		static		Standard_Boolean HasBRep(const TopAbs_ShapeEnum aT);
 		%feature("autodoc", "1");
-		static		Standard_Integer ComputeVV(const TopoDS_Vertex &aV1, const TopoDS_Vertex &aV2);
+		static		Standard_Integer ComputeVV(const TopoDS_Vertex aV1, const TopoDS_Vertex aV2);
 		%feature("autodoc", "1");
-		static		void CopyShape(const TopoDS_Shape &aS, TopoDS_Shape & aSC);
+		static		void CopyShape(const TopoDS_Shape aS, TopoDS_Shape & aSC);
 		%feature("autodoc", "1");
-		static		void CopyShape(const TopoDS_Shape &aS, TopoDS_Shape & aSC, TopTools_IndexedDataMapOfShapeShape & aMSS);
+		static		void CopyShape(const TopoDS_Shape aS, TopoDS_Shape & aSC, TopTools_IndexedDataMapOfShapeShape & aMSS);
 
 };
 %feature("shadow") NMTDS_Tools::~NMTDS_Tools %{
@@ -1922,7 +1922,7 @@ def __del__(self):
 class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const Standard_Integer &K1, const Standard_Integer K2, const TopoDS_Shape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const Standard_Integer &K1, const Standard_Integer K2, const TopoDS_Shape I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey1() {
@@ -1950,7 +1950,7 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollectio
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
+		TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

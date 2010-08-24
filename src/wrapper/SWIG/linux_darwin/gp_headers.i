@@ -72,7 +72,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Standard_SStream.hxx>
 #include<gp.hxx>
 #include<TColStd_Array1OfReal.hxx>
 %}

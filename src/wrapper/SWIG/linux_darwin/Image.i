@@ -644,9 +644,9 @@ class Image_DColorImage : public Image_Image {
 		%feature("autodoc", "1");
 		void Translate(const Image_PixelInterpolation &anInterpolation, const Standard_Real DX, const Standard_Real DY);
 		%feature("autodoc", "1");
-		void Affine(const Image_PixelInterpolation &anInterpolation, const gp_GTrsf2d &Trsf);
+		void Affine(const Image_PixelInterpolation &anInterpolation, const gp_GTrsf2d Trsf);
 		%feature("autodoc", "1");
-		void Affine(const Image_PixelInterpolation &anInterpolation, const gp_Trsf &Trsf);
+		void Affine(const Image_PixelInterpolation &anInterpolation, const gp_Trsf Trsf);
 		%feature("autodoc", "1");
 		virtual		void InternalDup(const Handle_Image_Image &anImage);
 		%feature("autodoc", "1");
@@ -786,13 +786,13 @@ class Image {
 		%feature("autodoc", "1");
 		static		void Translate(const Handle_Image_Image &aImage, const Standard_Real DX, const Standard_Real DY);
 		%feature("autodoc", "1");
-		static		void Affine(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const gp_GTrsf2d &Trsf);
+		static		void Affine(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const gp_GTrsf2d Trsf);
 		%feature("autodoc", "1");
-		static		void Affine(const Handle_Image_Image &aImage, const gp_GTrsf2d &Trsf);
+		static		void Affine(const Handle_Image_Image &aImage, const gp_GTrsf2d Trsf);
 		%feature("autodoc", "1");
-		static		void Affine(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const gp_Trsf &Trsf);
+		static		void Affine(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const gp_Trsf Trsf);
 		%feature("autodoc", "1");
-		static		void Affine(const Handle_Image_Image &aImage, const gp_Trsf &Trsf);
+		static		void Affine(const Handle_Image_Image &aImage, const gp_Trsf Trsf);
 
 };
 %feature("shadow") Image::~Image %{
@@ -1166,9 +1166,9 @@ class Image_DIndexedImage : public Image_Image {
 		%feature("autodoc", "1");
 		void Translate(const Image_PixelInterpolation &anInterpolation, const Standard_Real DX, const Standard_Real DY);
 		%feature("autodoc", "1");
-		void Affine(const Image_PixelInterpolation &anInterpolation, const gp_GTrsf2d &Trsf);
+		void Affine(const Image_PixelInterpolation &anInterpolation, const gp_GTrsf2d Trsf);
 		%feature("autodoc", "1");
-		void Affine(const Image_PixelInterpolation &anInterpolation, const gp_Trsf &Trsf);
+		void Affine(const Image_PixelInterpolation &anInterpolation, const gp_Trsf Trsf);
 		%feature("autodoc", "1");
 		virtual		void InternalDup(const Handle_Image_Image &anImage);
 		%feature("autodoc", "1");

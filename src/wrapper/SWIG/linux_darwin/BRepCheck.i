@@ -472,15 +472,15 @@ def __del__(self):
 class BRepCheck_Result : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		void InContext(const TopoDS_Shape &ContextShape);
+		virtual		void InContext(const TopoDS_Shape ContextShape);
 		%feature("autodoc", "1");
 		virtual		void Minimum();
 		%feature("autodoc", "1");
 		virtual		void Blind();
 		%feature("autodoc", "1");
-		void SetFailStatus(const TopoDS_Shape &S);
+		void SetFailStatus(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		const BRepCheck_ListOfStatus & Status() const;
 		%feature("autodoc", "1");
@@ -488,13 +488,13 @@ class BRepCheck_Result : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsBlind() const;
 		%feature("autodoc", "1");
-		const BRepCheck_ListOfStatus & StatusOnShape(const TopoDS_Shape &S);
+		const BRepCheck_ListOfStatus & StatusOnShape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void InitContextIterator();
 		%feature("autodoc", "1");
 		Standard_Boolean MoreShapeInContext() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & ContextualShape() const;
+		const TopoDS_Shape  ContextualShape() const;
 		%feature("autodoc", "1");
 		const BRepCheck_ListOfStatus & StatusOnShape() const;
 		%feature("autodoc", "1");
@@ -533,9 +533,9 @@ def __del__(self):
 class BRepCheck_Shell : public BRepCheck_Result {
 	public:
 		%feature("autodoc", "1");
-		BRepCheck_Shell(const TopoDS_Shell &S);
+		BRepCheck_Shell(const TopoDS_Shell S);
 		%feature("autodoc", "1");
-		virtual		void InContext(const TopoDS_Shape &ContextShape);
+		virtual		void InContext(const TopoDS_Shape ContextShape);
 		%feature("autodoc", "1");
 		virtual		void Minimum();
 		%feature("autodoc", "1");
@@ -590,7 +590,7 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeResult : public TCollection_Basic
 		%feature("autodoc", "1");
 		void Initialize(const BRepCheck_DataMapOfShapeResult &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Handle_BRepCheck_Result & Value() const;
 
@@ -625,19 +625,19 @@ class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepCheck_Result &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_BRepCheck_Result &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Handle_BRepCheck_Result & Find(const TopoDS_Shape &K) const;
+		const Handle_BRepCheck_Result & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Handle_BRepCheck_Result & operator()(const TopoDS_Shape &K) const;
+		const Handle_BRepCheck_Result & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Result & ChangeFind(const TopoDS_Shape &K);
+		Handle_BRepCheck_Result & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Result & operator()(const TopoDS_Shape &K);
+		Handle_BRepCheck_Result & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepCheck_DataMapOfShapeResult::~BRepCheck_DataMapOfShapeResult %{
@@ -660,9 +660,9 @@ def __del__(self):
 class BRepCheck_Face : public BRepCheck_Result {
 	public:
 		%feature("autodoc", "1");
-		BRepCheck_Face(const TopoDS_Face &F);
+		BRepCheck_Face(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		virtual		void InContext(const TopoDS_Shape &ContextShape);
+		virtual		void InContext(const TopoDS_Shape ContextShape);
 		%feature("autodoc", "1");
 		virtual		void Minimum();
 		%feature("autodoc", "1");
@@ -715,9 +715,9 @@ def __del__(self):
 class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepCheck_DataMapNodeOfDataMapOfShapeResult(const TopoDS_Shape &K, const Handle_BRepCheck_Result &I, const TCollection_MapNodePtr &n);
+		BRepCheck_DataMapNodeOfDataMapOfShapeResult(const TopoDS_Shape K, const Handle_BRepCheck_Result &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Result & Value() const;
 		%feature("autodoc", "1");
@@ -754,9 +754,9 @@ def __del__(self):
 class BRepCheck_Vertex : public BRepCheck_Result {
 	public:
 		%feature("autodoc", "1");
-		BRepCheck_Vertex(const TopoDS_Vertex &V);
+		BRepCheck_Vertex(const TopoDS_Vertex V);
 		%feature("autodoc", "1");
-		virtual		void InContext(const TopoDS_Shape &ContextShape);
+		virtual		void InContext(const TopoDS_Shape ContextShape);
 		%feature("autodoc", "1");
 		virtual		void Minimum();
 		%feature("autodoc", "1");
@@ -803,7 +803,7 @@ class BRepCheck {
 		%feature("autodoc", "1");
 		static		void Print(const BRepCheck_Status Stat, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		static		Standard_Boolean SelfIntersection(const TopoDS_Wire &W, const TopoDS_Face &F, TopoDS_Edge & E1, TopoDS_Edge & E2);
+		static		Standard_Boolean SelfIntersection(const TopoDS_Wire W, const TopoDS_Face F, TopoDS_Edge & E1, TopoDS_Edge & E2);
 
 };
 %feature("shadow") BRepCheck::~BRepCheck %{
@@ -826,9 +826,9 @@ def __del__(self):
 class BRepCheck_Wire : public BRepCheck_Result {
 	public:
 		%feature("autodoc", "1");
-		BRepCheck_Wire(const TopoDS_Wire &W);
+		BRepCheck_Wire(const TopoDS_Wire W);
 		%feature("autodoc", "1");
-		virtual		void InContext(const TopoDS_Shape &ContextShape);
+		virtual		void InContext(const TopoDS_Shape ContextShape);
 		%feature("autodoc", "1");
 		virtual		void Minimum();
 		%feature("autodoc", "1");
@@ -836,11 +836,11 @@ class BRepCheck_Wire : public BRepCheck_Result {
 		%feature("autodoc", "1");
 		BRepCheck_Status Closed(const Standard_Boolean Update=0);
 		%feature("autodoc", "1");
-		BRepCheck_Status Closed2d(const TopoDS_Face &F, const Standard_Boolean Update=0);
+		BRepCheck_Status Closed2d(const TopoDS_Face F, const Standard_Boolean Update=0);
 		%feature("autodoc", "1");
-		BRepCheck_Status Orientation(const TopoDS_Face &F, const Standard_Boolean Update=0);
+		BRepCheck_Status Orientation(const TopoDS_Face F, const Standard_Boolean Update=0);
 		%feature("autodoc", "1");
-		BRepCheck_Status SelfIntersect(const TopoDS_Face &F, TopoDS_Edge & E1, TopoDS_Edge & E2, const Standard_Boolean Update=0);
+		BRepCheck_Status SelfIntersect(const TopoDS_Face F, TopoDS_Edge & E1, TopoDS_Edge & E2, const Standard_Boolean Update=0);
 		%feature("autodoc", "1");
 		Standard_Boolean GeometricControls() const;
 		%feature("autodoc", "1");
@@ -889,19 +889,19 @@ class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepCheck_ListOfStatus &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const BRepCheck_ListOfStatus &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const BRepCheck_ListOfStatus & Find(const TopoDS_Shape &K) const;
+		const BRepCheck_ListOfStatus & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const BRepCheck_ListOfStatus & operator()(const TopoDS_Shape &K) const;
+		const BRepCheck_ListOfStatus & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		BRepCheck_ListOfStatus & ChangeFind(const TopoDS_Shape &K);
+		BRepCheck_ListOfStatus & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		BRepCheck_ListOfStatus & operator()(const TopoDS_Shape &K);
+		BRepCheck_ListOfStatus & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepCheck_DataMapOfShapeListOfStatus::~BRepCheck_DataMapOfShapeListOfStatus %{
@@ -924,9 +924,9 @@ def __del__(self):
 class BRepCheck_Edge : public BRepCheck_Result {
 	public:
 		%feature("autodoc", "1");
-		BRepCheck_Edge(const TopoDS_Edge &E);
+		BRepCheck_Edge(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		virtual		void InContext(const TopoDS_Shape &ContextShape);
+		virtual		void InContext(const TopoDS_Shape ContextShape);
 		%feature("autodoc", "1");
 		virtual		void Minimum();
 		%feature("autodoc", "1");
@@ -971,9 +971,9 @@ def __del__(self):
 class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const TopoDS_Shape &K, const BRepCheck_ListOfStatus &I, const TCollection_MapNodePtr &n);
+		BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const TopoDS_Shape K, const BRepCheck_ListOfStatus &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		BRepCheck_ListOfStatus & Value() const;
 		%feature("autodoc", "1");
@@ -1016,7 +1016,7 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection
 		%feature("autodoc", "1");
 		void Initialize(const BRepCheck_DataMapOfShapeListOfStatus &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const BRepCheck_ListOfStatus & Value() const;
 
@@ -1135,15 +1135,15 @@ def __del__(self):
 class BRepCheck_Analyzer {
 	public:
 		%feature("autodoc", "1");
-		BRepCheck_Analyzer(const TopoDS_Shape &S, const Standard_Boolean B=1);
+		BRepCheck_Analyzer(const TopoDS_Shape S, const Standard_Boolean B=1);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, const Standard_Boolean GeomControls=1);
+		void Init(const TopoDS_Shape S, const Standard_Boolean GeomControls=1);
 		%feature("autodoc", "1");
-		Standard_Boolean IsValid(const TopoDS_Shape &S) const;
+		Standard_Boolean IsValid(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsValid() const;
 		%feature("autodoc", "1");
-		const Handle_BRepCheck_Result & Result(const TopoDS_Shape &S) const;
+		const Handle_BRepCheck_Result & Result(const TopoDS_Shape S) const;
 
 };
 %feature("shadow") BRepCheck_Analyzer::~BRepCheck_Analyzer %{

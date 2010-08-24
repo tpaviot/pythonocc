@@ -810,15 +810,15 @@ class HLRAlgo_Projector {
 		%feature("autodoc", "1");
 		HLRAlgo_Projector();
 		%feature("autodoc", "1");
-		HLRAlgo_Projector(const gp_Ax2 &CS);
+		HLRAlgo_Projector(const gp_Ax2 CS);
 		%feature("autodoc", "1");
-		HLRAlgo_Projector(const gp_Ax2 &CS, const Standard_Real Focus);
+		HLRAlgo_Projector(const gp_Ax2 CS, const Standard_Real Focus);
 		%feature("autodoc", "1");
-		HLRAlgo_Projector(const gp_Trsf &T, const Standard_Boolean Persp, const Standard_Real Focus);
+		HLRAlgo_Projector(const gp_Trsf T, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
-		HLRAlgo_Projector(const gp_Trsf &T, const Standard_Boolean Persp, const Standard_Real Focus, const gp_Vec2d &v1, const gp_Vec2d &v2, const gp_Vec2d &v3);
+		HLRAlgo_Projector(const gp_Trsf T, const Standard_Boolean Persp, const Standard_Real Focus, const gp_Vec2d v1, const gp_Vec2d v2, const gp_Vec2d v3);
 		%feature("autodoc", "1");
-		void Set(const gp_Trsf &T, const Standard_Boolean Persp, const Standard_Real Focus);
+		void Set(const gp_Trsf T, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
 		void Directions(gp_Vec2d & D1, gp_Vec2d & D2, gp_Vec2d & D3) const;
 		%feature("autodoc", "1");
@@ -826,11 +826,11 @@ class HLRAlgo_Projector {
 		%feature("autodoc", "1");
 		Standard_Boolean Perspective() const;
 		%feature("autodoc", "1");
-		const gp_Trsf & Transformation() const;
+		const gp_Trsf  Transformation() const;
 		%feature("autodoc", "1");
-		const gp_Trsf & InvertedTransformation() const;
+		const gp_Trsf  InvertedTransformation() const;
 		%feature("autodoc", "1");
-		const gp_Trsf & FullTransformation() const;
+		const gp_Trsf  FullTransformation() const;
 		%feature("autodoc", "1");
 		Standard_Real Focus() const;
 		%feature("autodoc", "1");
@@ -838,12 +838,12 @@ class HLRAlgo_Projector {
 		%feature("autodoc", "1");
 		void Transform(gp_Pnt & Pnt) const;
 		%feature("autodoc", "1");
-		void Project(const gp_Pnt &P, gp_Pnt2d & Pout) const;
+		void Project(const gp_Pnt P, gp_Pnt2d & Pout) const;
 		%feature("autodoc","Project(const P) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		void Project(const gp_Pnt &P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void Project(const gp_Pnt P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Project(const gp_Pnt &P, const gp_Vec &D1, gp_Pnt2d & Pout, gp_Vec2d & D1out) const;
+		void Project(const gp_Pnt P, const gp_Vec D1, gp_Pnt2d & Pout, gp_Vec2d & D1out) const;
 		%feature("autodoc", "1");
 		gp_Lin Shoot(const Standard_Real X, const Standard_Real Y) const;
 

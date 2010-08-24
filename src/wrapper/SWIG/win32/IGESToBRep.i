@@ -282,13 +282,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("autodoc", "1");
 		TopoDS_Shape GetShapeResult(const Handle_IGESData_IGESEntity &start) const;
 		%feature("autodoc", "1");
-		void SetShapeResult(const Handle_IGESData_IGESEntity &start, const TopoDS_Shape &result);
+		void SetShapeResult(const Handle_IGESData_IGESEntity &start, const TopoDS_Shape result);
 		%feature("autodoc", "1");
 		Standard_Integer NbShapeResult(const Handle_IGESData_IGESEntity &start) const;
 		%feature("autodoc", "1");
 		TopoDS_Shape GetShapeResult(const Handle_IGESData_IGESEntity &start, const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void AddShapeResult(const Handle_IGESData_IGESEntity &start, const TopoDS_Shape &result);
+		void AddShapeResult(const Handle_IGESData_IGESEntity &start, const TopoDS_Shape result);
 		%feature("autodoc", "1");
 		void SetSurface(const Handle_Geom_Surface &theSurface);
 		%feature("autodoc", "1");
@@ -327,11 +327,11 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferTopoCurve(const Handle_IGESData_IGESEntity &start);
 		%feature("autodoc", "1");
-		TopoDS_Shape Transfer2dTopoCurve(const Handle_IGESData_IGESEntity &start, const TopoDS_Face &face, const gp_Trsf2d &trans, const Standard_Real uFact);
+		TopoDS_Shape Transfer2dTopoCurve(const Handle_IGESData_IGESEntity &start, const TopoDS_Face face, const gp_Trsf2d trans, const Standard_Real uFact);
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferTopoBasicCurve(const Handle_IGESData_IGESEntity &start);
 		%feature("autodoc", "1");
-		TopoDS_Shape Transfer2dTopoBasicCurve(const Handle_IGESData_IGESEntity &start, const TopoDS_Face &face, const gp_Trsf2d &trans, const Standard_Real uFact);
+		TopoDS_Shape Transfer2dTopoBasicCurve(const Handle_IGESData_IGESEntity &start, const TopoDS_Face face, const gp_Trsf2d trans, const Standard_Real uFact);
 		%feature("autodoc", "1");
 		TopoDS_Vertex TransferPoint(const Handle_IGESGeom_Point &start);
 		%feature("autodoc", "1");
@@ -339,19 +339,19 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferCompositeCurve(const Handle_IGESGeom_CompositeCurve &start);
 		%feature("autodoc", "1");
-		TopoDS_Shape Transfer2dCompositeCurve(const Handle_IGESGeom_CompositeCurve &start, const TopoDS_Face &face, const gp_Trsf2d &trans, const Standard_Real uFact);
+		TopoDS_Shape Transfer2dCompositeCurve(const Handle_IGESGeom_CompositeCurve &start, const TopoDS_Face face, const gp_Trsf2d trans, const Standard_Real uFact);
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferOffsetCurve(const Handle_IGESGeom_OffsetCurve &start);
 		%feature("autodoc", "1");
-		TopoDS_Shape Transfer2dOffsetCurve(const Handle_IGESGeom_OffsetCurve &start, const TopoDS_Face &face, const gp_Trsf2d &trans, const Standard_Real uFact);
+		TopoDS_Shape Transfer2dOffsetCurve(const Handle_IGESGeom_OffsetCurve &start, const TopoDS_Face face, const gp_Trsf2d trans, const Standard_Real uFact);
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferCurveOnSurface(const Handle_IGESGeom_CurveOnSurface &start);
 		%feature("autodoc", "1");
-		TopoDS_Shape TransferCurveOnFace(TopoDS_Face & face, const Handle_IGESGeom_CurveOnSurface &start, const gp_Trsf2d &trans, const Standard_Real uFact, const Standard_Boolean IsCurv);
+		TopoDS_Shape TransferCurveOnFace(TopoDS_Face & face, const Handle_IGESGeom_CurveOnSurface &start, const gp_Trsf2d trans, const Standard_Real uFact, const Standard_Boolean IsCurv);
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferBoundary(const Handle_IGESGeom_Boundary &start);
 		%feature("autodoc", "1");
-		TopoDS_Shape TransferBoundaryOnFace(TopoDS_Face & face, const Handle_IGESGeom_Boundary &start, const gp_Trsf2d &trans, const Standard_Real uFact);
+		TopoDS_Shape TransferBoundaryOnFace(TopoDS_Face & face, const Handle_IGESGeom_Boundary &start, const gp_Trsf2d trans, const Standard_Real uFact);
 		%feature("autodoc", "1");
 		void ApproxBSplineCurve(const Handle_Geom_BSplineCurve &start);
 		%feature("autodoc", "1");
@@ -494,11 +494,11 @@ class IGESToBRep {
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsBRepEntity(const Handle_IGESData_IGESEntity &start);
 		%feature("autodoc", "1");
-		static		void WriteShape(const TopoDS_Shape &shape, const Standard_Integer number);
+		static		void WriteShape(const TopoDS_Shape shape, const Standard_Integer number);
 		%feature("autodoc", "1");
 		static		Standard_Integer IGESCurveToSequenceOfIGESCurve(const Handle_IGESData_IGESEntity &curve, Handle_TColStd_HSequenceOfTransient & sequence);
 		%feature("autodoc", "1");
-		static		Standard_Boolean TransferPCurve(const TopoDS_Edge &fromedge, const TopoDS_Edge &toedge, const TopoDS_Face &face);
+		static		Standard_Boolean TransferPCurve(const TopoDS_Edge fromedge, const TopoDS_Edge toedge, const TopoDS_Face face);
 
 };
 %feature("shadow") IGESToBRep::~IGESToBRep %{
@@ -578,7 +578,7 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 		%feature("autodoc", "1");
 		IGESToBRep_IGESBoundary(const IGESToBRep_CurveAndSurface &CS);
 		%feature("autodoc", "1");
-		void Init(const IGESToBRep_CurveAndSurface &CS, const Handle_IGESData_IGESEntity &entity, const TopoDS_Face &face, const gp_Trsf2d &trans, const Standard_Real uFact, const Standard_Integer filepreference);
+		void Init(const IGESToBRep_CurveAndSurface &CS, const Handle_IGESData_IGESEntity &entity, const TopoDS_Face face, const gp_Trsf2d trans, const Standard_Real uFact, const Standard_Integer filepreference);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_WireData WireData() const;
 		%feature("autodoc", "1");
@@ -637,7 +637,7 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferEdge(const Handle_IGESSolid_EdgeList &start, const Standard_Integer index);
 		%feature("autodoc", "1");
-		TopoDS_Shape TransferLoop(const Handle_IGESSolid_Loop &start, const TopoDS_Face &Face, const gp_Trsf2d &trans, const Standard_Real uFact);
+		TopoDS_Shape TransferLoop(const Handle_IGESSolid_Loop &start, const TopoDS_Face Face, const gp_Trsf2d trans, const Standard_Real uFact);
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferFace(const Handle_IGESSolid_Face &start);
 		%feature("autodoc", "1");

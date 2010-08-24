@@ -2673,7 +2673,7 @@ def __del__(self):
 class TDataStd_Position : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		static		void Set(const TDF_Label &aLabel, const gp_Pnt &aPos);
+		static		void Set(const TDF_Label &aLabel, const gp_Pnt aPos);
 		%feature("autodoc", "1");
 		static		Handle_TDataStd_Position Set(const TDF_Label &aLabel);
 		%feature("autodoc", "1");
@@ -2691,9 +2691,9 @@ class TDataStd_Position : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &intoAttribute, const Handle_TDF_RelocationTable &aRelocTationable) const;
 		%feature("autodoc", "1");
-		const gp_Pnt & GetPosition() const;
+		const gp_Pnt  GetPosition() const;
 		%feature("autodoc", "1");
-		void SetPosition(const gp_Pnt &aPos);
+		void SetPosition(const gp_Pnt aPos);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2730,9 +2730,9 @@ class TDataStd_Array1OfTrsf {
 		%feature("autodoc", "1");
 		TDataStd_Array1OfTrsf(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		TDataStd_Array1OfTrsf(const gp_Trsf &Item, const Standard_Integer Low, const Standard_Integer Up);
+		TDataStd_Array1OfTrsf(const gp_Trsf Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const gp_Trsf &V);
+		void Init(const gp_Trsf V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -2748,15 +2748,15 @@ class TDataStd_Array1OfTrsf {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Trsf &Value);
+		void SetValue(const Standard_Integer Index, const gp_Trsf Value);
 		%feature("autodoc", "1");
-		const gp_Trsf & Value(const Standard_Integer Index) const;
+		const gp_Trsf  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Trsf & operator()(const Standard_Integer Index) const;
+		const gp_Trsf  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Trsf & ChangeValue(const Standard_Integer Index);
+		gp_Trsf  ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		gp_Trsf & operator()(const Standard_Integer Index);
+		gp_Trsf  operator()(const Standard_Integer Index);
 
 };
 %feature("shadow") TDataStd_Array1OfTrsf::~TDataStd_Array1OfTrsf %{
@@ -4466,7 +4466,7 @@ class TDataStd_Point : public TDF_Attribute {
 		%feature("autodoc", "1");
 		static		Handle_TDataStd_Point Set(const TDF_Label &label);
 		%feature("autodoc", "1");
-		static		Handle_TDataStd_Point Set(const TDF_Label &label, const gp_Pnt &P);
+		static		Handle_TDataStd_Point Set(const TDF_Label &label, const gp_Pnt P);
 		%feature("autodoc", "1");
 		TDataStd_Point();
 		%feature("autodoc", "1");
@@ -5187,9 +5187,9 @@ class TDataStd_HArray1OfTrsf : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TDataStd_HArray1OfTrsf(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		TDataStd_HArray1OfTrsf(const Standard_Integer Low, const Standard_Integer Up, const gp_Trsf &V);
+		TDataStd_HArray1OfTrsf(const Standard_Integer Low, const Standard_Integer Up, const gp_Trsf V);
 		%feature("autodoc", "1");
-		void Init(const gp_Trsf &V);
+		void Init(const gp_Trsf V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -5197,11 +5197,11 @@ class TDataStd_HArray1OfTrsf : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Trsf &Value);
+		void SetValue(const Standard_Integer Index, const gp_Trsf Value);
 		%feature("autodoc", "1");
-		const gp_Trsf & Value(const Standard_Integer Index) const;
+		const gp_Trsf  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Trsf & ChangeValue(const Standard_Integer Index);
+		gp_Trsf  ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		const TDataStd_Array1OfTrsf & Array1() const;
 		%feature("autodoc", "1");
@@ -5457,7 +5457,7 @@ class TDataStd_Shape : public TDF_Attribute {
 		%feature("autodoc", "1");
 		static		Handle_TDataStd_Shape New(const TDF_Label &label);
 		%feature("autodoc", "1");
-		static		Handle_TDataStd_Shape Set(const TDF_Label &label, const TopoDS_Shape &shape);
+		static		Handle_TDataStd_Shape Set(const TDF_Label &label, const TopoDS_Shape shape);
 		%feature("autodoc", "1");
 		static		TopoDS_Shape Get(const TDF_Label &label);
 		%feature("autodoc", "1");
@@ -5599,7 +5599,7 @@ class TDataStd_Axis : public TDF_Attribute {
 		%feature("autodoc", "1");
 		static		Handle_TDataStd_Axis Set(const TDF_Label &label);
 		%feature("autodoc", "1");
-		static		Handle_TDataStd_Axis Set(const TDF_Label &label, const gp_Lin &L);
+		static		Handle_TDataStd_Axis Set(const TDF_Label &label, const gp_Lin L);
 		%feature("autodoc", "1");
 		TDataStd_Axis();
 		%feature("autodoc", "1");
@@ -6578,7 +6578,7 @@ class TDataStd_Plane : public TDF_Attribute {
 		%feature("autodoc", "1");
 		static		Handle_TDataStd_Plane Set(const TDF_Label &label);
 		%feature("autodoc", "1");
-		static		Handle_TDataStd_Plane Set(const TDF_Label &label, const gp_Pln &P);
+		static		Handle_TDataStd_Plane Set(const TDF_Label &label, const gp_Pln P);
 		%feature("autodoc", "1");
 		TDataStd_Plane();
 		%feature("autodoc", "1");

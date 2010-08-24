@@ -123,13 +123,13 @@ class GeomLib_Tool {
 		GeomLib_Tool();
 		%feature("autodoc","Parameter(const Curve, const Point, Standard_Real Tolerance) -> Standard_Real");
 
-		static		Standard_Boolean Parameter(const Handle_Geom_Curve &Curve, const gp_Pnt &Point, const Standard_Real Tolerance, Standard_Real &OutValue);
+		static		Standard_Boolean Parameter(const Handle_Geom_Curve &Curve, const gp_Pnt Point, const Standard_Real Tolerance, Standard_Real &OutValue);
 		%feature("autodoc","Parameters(const Surface, const Point, Standard_Real Tolerance) -> [Standard_Real, Standard_Real]");
 
-		static		Standard_Boolean Parameters(const Handle_Geom_Surface &Surface, const gp_Pnt &Point, const Standard_Real Tolerance, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		Standard_Boolean Parameters(const Handle_Geom_Surface &Surface, const gp_Pnt Point, const Standard_Real Tolerance, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","Parameter(const Curve, const Point, Standard_Real Tolerance) -> Standard_Real");
 
-		static		Standard_Boolean Parameter(const Handle_Geom2d_Curve &Curve, const gp_Pnt2d &Point, const Standard_Real Tolerance, Standard_Real &OutValue);
+		static		Standard_Boolean Parameter(const Handle_Geom2d_Curve &Curve, const gp_Pnt2d Point, const Standard_Real Tolerance, Standard_Real &OutValue);
 
 };
 %feature("shadow") GeomLib_Tool::~GeomLib_Tool %{
@@ -254,7 +254,7 @@ class GeomLib_IsPlanarSurface {
 		%feature("autodoc", "1");
 		Standard_Boolean IsPlanar() const;
 		%feature("autodoc", "1");
-		const gp_Pln & Plan() const;
+		const gp_Pln  Plan() const;
 
 };
 %feature("shadow") GeomLib_IsPlanarSurface::~GeomLib_IsPlanarSurface %{
@@ -339,9 +339,9 @@ class GeomLib_Array1OfMat {
 		%feature("autodoc", "1");
 		GeomLib_Array1OfMat(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		GeomLib_Array1OfMat(const gp_Mat &Item, const Standard_Integer Low, const Standard_Integer Up);
+		GeomLib_Array1OfMat(const gp_Mat Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const gp_Mat &V);
+		void Init(const gp_Mat V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -357,15 +357,15 @@ class GeomLib_Array1OfMat {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Mat &Value);
+		void SetValue(const Standard_Integer Index, const gp_Mat Value);
 		%feature("autodoc", "1");
-		const gp_Mat & Value(const Standard_Integer Index) const;
+		const gp_Mat  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Mat & operator()(const Standard_Integer Index) const;
+		const gp_Mat  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Mat & ChangeValue(const Standard_Integer Index);
+		gp_Mat  ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		gp_Mat & operator()(const Standard_Integer Index);
+		gp_Mat  operator()(const Standard_Integer Index);
 
 };
 %feature("shadow") GeomLib_Array1OfMat::~GeomLib_Array1OfMat %{
@@ -390,18 +390,18 @@ class GeomLib {
 		%feature("autodoc", "1");
 		GeomLib();
 		%feature("autodoc", "1");
-		static		Handle_Geom_Curve To3d(const gp_Ax2 &Position, const Handle_Geom2d_Curve &Curve2d);
+		static		Handle_Geom_Curve To3d(const gp_Ax2 Position, const Handle_Geom2d_Curve &Curve2d);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Curve GTransform(const Handle_Geom2d_Curve &Curve, const gp_GTrsf2d &GTrsf);
+		static		Handle_Geom2d_Curve GTransform(const Handle_Geom2d_Curve &Curve, const gp_GTrsf2d GTrsf);
 		%feature("autodoc", "1");
 		static		void SameRange(const Standard_Real Tolerance, const Handle_Geom2d_Curve &Curve2dPtr, const Standard_Real First, const Standard_Real Last, const Standard_Real RequestedFirst, const Standard_Real RequestedLast, Handle_Geom2d_Curve & NewCurve2dPtr);
 		%feature("autodoc","BuildCurve3d(Standard_Real Tolerance, Standard_Real FirstParameter, Standard_Real LastParameter, GeomAbs_Shape Continuity=GeomAbs_, Standard_Integer MaxDegree=14, Standard_Integer MaxSegment=30) -> [Standard_Real, Standard_Real]");
 
 		static		void BuildCurve3d(const Standard_Real Tolerance, Adaptor3d_CurveOnSurface & CurvePtr, const Standard_Real FirstParameter, const Standard_Real LastParameter, Handle_Geom_Curve & NewCurvePtr, Standard_Real &OutValue, Standard_Real &OutValue, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Integer MaxDegree=14, const Standard_Integer MaxSegment=30);
 		%feature("autodoc", "1");
-		static		void AdjustExtremity(Handle_Geom_BoundedCurve & Curve, const gp_Pnt &P1, const gp_Pnt &P2, const gp_Vec &T1, const gp_Vec &T2);
+		static		void AdjustExtremity(Handle_Geom_BoundedCurve & Curve, const gp_Pnt P1, const gp_Pnt P2, const gp_Vec T1, const gp_Vec T2);
 		%feature("autodoc", "1");
-		static		void ExtendCurveToPoint(Handle_Geom_BoundedCurve & Curve, const gp_Pnt &Point, const Standard_Integer Cont, const Standard_Boolean After);
+		static		void ExtendCurveToPoint(Handle_Geom_BoundedCurve & Curve, const gp_Pnt Point, const Standard_Integer Cont, const Standard_Boolean After);
 		%feature("autodoc", "1");
 		static		void ExtendSurfByLength(Handle_Geom_BoundedSurface & Surf, const Standard_Real Length, const Standard_Integer Cont, const Standard_Boolean InU, const Standard_Boolean After);
 		%feature("autodoc", "1");
@@ -424,7 +424,7 @@ class GeomLib {
 		%feature("autodoc", "1");
 		static		void CancelDenominatorDerivative(Handle_Geom_BSplineSurface & BSurf, const Standard_Boolean UDirection, const Standard_Boolean VDirection);
 		%feature("autodoc", "1");
-		static		Standard_Integer NormEstim(const Handle_Geom_Surface &S, const gp_Pnt2d &UV, const Standard_Real Tol, gp_Dir & N);
+		static		Standard_Integer NormEstim(const Handle_Geom_Surface &S, const gp_Pnt2d UV, const Standard_Real Tol, gp_Dir & N);
 
 };
 %feature("shadow") GeomLib::~GeomLib %{

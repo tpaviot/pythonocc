@@ -336,7 +336,7 @@ class TopLoc_Location {
 		%feature("autodoc", "1");
 		TopLoc_Location();
 		%feature("autodoc", "1");
-		TopLoc_Location(const gp_Trsf &T);
+		TopLoc_Location(const gp_Trsf T);
 		%feature("autodoc", "1");
 		TopLoc_Location(const Handle_TopLoc_Datum3D &D);
 		%feature("autodoc", "1");
@@ -350,7 +350,7 @@ class TopLoc_Location {
 		%feature("autodoc", "1");
 		const TopLoc_Location & NextLocation() const;
 		%feature("autodoc", "1");
-		const gp_Trsf & Transformation() const;
+		const gp_Trsf  Transformation() const;
 		%feature("autodoc", "1");
 		TopLoc_Location Inverted() const;
 		%feature("autodoc", "1");
@@ -545,9 +545,9 @@ class TopLoc_Datum3D : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TopLoc_Datum3D();
 		%feature("autodoc", "1");
-		TopLoc_Datum3D(const gp_Trsf &T);
+		TopLoc_Datum3D(const gp_Trsf T);
 		%feature("autodoc", "1");
-		const gp_Trsf & Transformation() const;
+		const gp_Trsf  Transformation() const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{

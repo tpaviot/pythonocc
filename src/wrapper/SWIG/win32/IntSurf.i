@@ -336,7 +336,7 @@ class IntSurf {
 		%feature("autodoc", "1");
 		IntSurf();
 		%feature("autodoc", "1");
-		static		void MakeTransition(const gp_Vec &TgFirst, const gp_Vec &TgSecond, const gp_Dir &Normal, IntSurf_Transition & TFirst, IntSurf_Transition & TSecond);
+		static		void MakeTransition(const gp_Vec TgFirst, const gp_Vec TgSecond, const gp_Dir Normal, IntSurf_Transition & TFirst, IntSurf_Transition & TSecond);
 
 };
 %feature("shadow") IntSurf::~IntSurf %{
@@ -439,28 +439,28 @@ class IntSurf_Quadric {
 		%feature("autodoc", "1");
 		IntSurf_Quadric();
 		%feature("autodoc", "1");
-		IntSurf_Quadric(const gp_Pln &P);
+		IntSurf_Quadric(const gp_Pln P);
 		%feature("autodoc", "1");
-		IntSurf_Quadric(const gp_Cylinder &C);
+		IntSurf_Quadric(const gp_Cylinder C);
 		%feature("autodoc", "1");
-		IntSurf_Quadric(const gp_Sphere &S);
+		IntSurf_Quadric(const gp_Sphere S);
 		%feature("autodoc", "1");
-		IntSurf_Quadric(const gp_Cone &C);
+		IntSurf_Quadric(const gp_Cone C);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pln &P);
+		void SetValue(const gp_Pln P);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Cylinder &C);
+		void SetValue(const gp_Cylinder C);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Sphere &S);
+		void SetValue(const gp_Sphere S);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Cone &C);
+		void SetValue(const gp_Cone C);
 		%feature("autodoc", "1");
-		Standard_Real Distance(const gp_Pnt &P) const;
+		Standard_Real Distance(const gp_Pnt P) const;
 		%feature("autodoc", "1");
-		gp_Vec Gradient(const gp_Pnt &P) const;
+		gp_Vec Gradient(const gp_Pnt P) const;
 		%feature("autodoc","ValAndGrad(const P) -> Standard_Real");
 
-		void ValAndGrad(const gp_Pnt &P, Standard_Real &OutValue, gp_Vec & Grad) const;
+		void ValAndGrad(const gp_Pnt P, Standard_Real &OutValue, gp_Vec & Grad) const;
 		%feature("autodoc", "1");
 		GeomAbs_SurfaceType TypeQuadric() const;
 		%feature("autodoc", "1");
@@ -481,9 +481,9 @@ class IntSurf_Quadric {
 		gp_Vec Normale(const Standard_Real U, const Standard_Real V) const;
 		%feature("autodoc","Parameters(const P) -> [Standard_Real, Standard_Real]");
 
-		void Parameters(const gp_Pnt &P, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void Parameters(const gp_Pnt P, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		gp_Vec Normale(const gp_Pnt &P) const;
+		gp_Vec Normale(const gp_Pnt P) const;
 
 };
 %feature("shadow") IntSurf_Quadric::~IntSurf_Quadric %{
@@ -569,17 +569,17 @@ class IntSurf_PntOn2S {
 		%feature("autodoc", "1");
 		IntSurf_PntOn2S();
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &Pt);
+		void SetValue(const gp_Pnt Pt);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &Pt, const Standard_Boolean OnFirst, const Standard_Real U, const Standard_Real V);
+		void SetValue(const gp_Pnt Pt, const Standard_Boolean OnFirst, const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &Pt, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2);
+		void SetValue(const gp_Pnt Pt, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Boolean OnFirst, const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2);
 		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
+		const gp_Pnt  Value() const;
 		%feature("autodoc","ParametersOnS1() -> [Standard_Real, Standard_Real]");
 
 		void ParametersOnS1(Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -678,19 +678,19 @@ class IntSurf_PathPoint {
 		%feature("autodoc", "1");
 		IntSurf_PathPoint();
 		%feature("autodoc", "1");
-		IntSurf_PathPoint(const gp_Pnt &P, const Standard_Real U, const Standard_Real V);
+		IntSurf_PathPoint(const gp_Pnt P, const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &P, const Standard_Real U, const Standard_Real V);
+		void SetValue(const gp_Pnt P, const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
 		void AddUV(const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
-		void SetDirections(const gp_Vec &V, const gp_Dir2d &D);
+		void SetDirections(const gp_Vec V, const gp_Dir2d D);
 		%feature("autodoc", "1");
 		void SetTangency(const Standard_Boolean Tang);
 		%feature("autodoc", "1");
 		void SetPassing(const Standard_Boolean Pass);
 		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
+		const gp_Pnt  Value() const;
 		%feature("autodoc","Value2d() -> [Standard_Real, Standard_Real]");
 
 		void Value2d(Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -699,9 +699,9 @@ class IntSurf_PathPoint {
 		%feature("autodoc", "1");
 		Standard_Boolean IsTangent() const;
 		%feature("autodoc", "1");
-		const gp_Vec & Direction3d() const;
+		const gp_Vec  Direction3d() const;
 		%feature("autodoc", "1");
-		const gp_Dir2d & Direction2d() const;
+		const gp_Dir2d  Direction2d() const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity() const;
 		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
@@ -875,11 +875,11 @@ class IntSurf_InteriorPoint {
 		%feature("autodoc", "1");
 		IntSurf_InteriorPoint();
 		%feature("autodoc", "1");
-		IntSurf_InteriorPoint(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const gp_Vec &Direc, const gp_Vec2d &Direc2d);
+		IntSurf_InteriorPoint(const gp_Pnt P, const Standard_Real U, const Standard_Real V, const gp_Vec Direc, const gp_Vec2d Direc2d);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const gp_Vec &Direc, const gp_Vec2d &Direc2d);
+		void SetValue(const gp_Pnt P, const Standard_Real U, const Standard_Real V, const gp_Vec Direc, const gp_Vec2d Direc2d);
 		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
+		const gp_Pnt  Value() const;
 		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
 
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -888,9 +888,9 @@ class IntSurf_InteriorPoint {
 		%feature("autodoc", "1");
 		Standard_Real VParameter() const;
 		%feature("autodoc", "1");
-		const gp_Vec & Direction() const;
+		const gp_Vec  Direction() const;
 		%feature("autodoc", "1");
-		const gp_Vec2d & Direction2d() const;
+		const gp_Vec2d  Direction2d() const;
 
 };
 %feature("shadow") IntSurf_InteriorPoint::~IntSurf_InteriorPoint %{

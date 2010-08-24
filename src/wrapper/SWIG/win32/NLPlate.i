@@ -540,7 +540,7 @@ class NLPlate_HGPPConstraint : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void SetActiveOrder(const Standard_Integer ActiveOrder);
 		%feature("autodoc", "1");
-		virtual		void SetUV(const gp_XY &UV);
+		virtual		void SetUV(const gp_XY UV);
 		%feature("autodoc", "1");
 		virtual		void SetOrientation(const Standard_Integer Orient=0);
 		%feature("autodoc", "1");
@@ -558,13 +558,13 @@ class NLPlate_HGPPConstraint : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer ActiveOrder() const;
 		%feature("autodoc", "1");
-		virtual		const gp_XY & UV() const;
+		virtual		const gp_XY  UV() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Orientation();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsG0() const;
 		%feature("autodoc", "1");
-		virtual		const gp_XYZ & G0Target() const;
+		virtual		const gp_XYZ  G0Target() const;
 		%feature("autodoc", "1");
 		virtual		const Plate_D1 & G1Target() const;
 		%feature("autodoc", "1");
@@ -613,7 +613,7 @@ def __del__(self):
 class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 	public:
 		%feature("autodoc", "1");
-		NLPlate_HPG0Constraint(const gp_XY &UV, const gp_XYZ &Value);
+		NLPlate_HPG0Constraint(const gp_XY UV, const gp_XYZ Value);
 
 };
 %extend NLPlate_HPG0Constraint {
@@ -646,7 +646,7 @@ def __del__(self):
 class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 	public:
 		%feature("autodoc", "1");
-		NLPlate_HPG0G1Constraint(const gp_XY &UV, const gp_XYZ &Value, const Plate_D1 &D1T);
+		NLPlate_HPG0G1Constraint(const gp_XY UV, const gp_XYZ Value, const Plate_D1 &D1T);
 
 };
 %extend NLPlate_HPG0G1Constraint {
@@ -679,7 +679,7 @@ def __del__(self):
 class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	public:
 		%feature("autodoc", "1");
-		NLPlate_HPG0G2Constraint(const gp_XY &UV, const gp_XYZ &Value, const Plate_D1 &D1T, const Plate_D2 &D2T);
+		NLPlate_HPG0G2Constraint(const gp_XY UV, const gp_XYZ Value, const Plate_D1 &D1T, const Plate_D2 &D2T);
 
 };
 %extend NLPlate_HPG0G2Constraint {
@@ -712,7 +712,7 @@ def __del__(self):
 class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
 	public:
 		%feature("autodoc", "1");
-		NLPlate_HPG1Constraint(const gp_XY &UV, const Plate_D1 &D1T);
+		NLPlate_HPG1Constraint(const gp_XY UV, const Plate_D1 &D1T);
 		%feature("autodoc", "1");
 		virtual		void SetIncrementalLoadAllowed(const Standard_Boolean ILA);
 		%feature("autodoc", "1");
@@ -761,7 +761,7 @@ def __del__(self):
 class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
 	public:
 		%feature("autodoc", "1");
-		NLPlate_HPG2Constraint(const gp_XY &UV, const Plate_D1 &D1T, const Plate_D2 &D2T);
+		NLPlate_HPG2Constraint(const gp_XY UV, const Plate_D1 &D1T, const Plate_D2 &D2T);
 		%feature("autodoc", "1");
 		virtual		const Plate_D2 & G2Target() const;
 
@@ -796,7 +796,7 @@ def __del__(self):
 class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
 	public:
 		%feature("autodoc", "1");
-		NLPlate_HPG3Constraint(const gp_XY &UV, const Plate_D1 &D1T, const Plate_D2 &D2T, const Plate_D3 &D3T);
+		NLPlate_HPG3Constraint(const gp_XY UV, const Plate_D1 &D1T, const Plate_D2 &D2T, const Plate_D3 &D3T);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer ActiveOrder() const;
 		%feature("autodoc", "1");
@@ -925,9 +925,9 @@ class NLPlate_NLPlate {
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		gp_XYZ Evaluate(const gp_XY &point2d) const;
+		gp_XYZ Evaluate(const gp_XY point2d) const;
 		%feature("autodoc", "1");
-		gp_XYZ EvaluateDerivative(const gp_XY &point2d, const Standard_Integer iu, const Standard_Integer iv) const;
+		gp_XYZ EvaluateDerivative(const gp_XY point2d, const Standard_Integer iu, const Standard_Integer iv) const;
 		%feature("autodoc", "1");
 		Standard_Integer Continuity() const;
 		%feature("autodoc", "1");
@@ -956,7 +956,7 @@ def __del__(self):
 class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
 	public:
 		%feature("autodoc", "1");
-		NLPlate_HPG0G3Constraint(const gp_XY &UV, const gp_XYZ &Value, const Plate_D1 &D1T, const Plate_D2 &D2T, const Plate_D3 &D3T);
+		NLPlate_HPG0G3Constraint(const gp_XY UV, const gp_XYZ Value, const Plate_D1 &D1T, const Plate_D2 &D2T, const Plate_D3 &D3T);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer ActiveOrder() const;
 		%feature("autodoc", "1");

@@ -172,9 +172,9 @@ class BlockFix {
 		%feature("autodoc", "1");
 		BlockFix();
 		%feature("autodoc", "1");
-		static		TopoDS_Shape RotateSphereSpace(const TopoDS_Shape &S, const Standard_Real Tol);
+		static		TopoDS_Shape RotateSphereSpace(const TopoDS_Shape S, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		static		TopoDS_Shape FixRanges(const TopoDS_Shape &S, const Standard_Real Tol);
+		static		TopoDS_Shape FixRanges(const TopoDS_Shape S, const Standard_Real Tol);
 
 };
 %feature("shadow") BlockFix::~BlockFix %{
@@ -199,7 +199,7 @@ class BlockFix_UnionEdges {
 		%feature("autodoc", "1");
 		BlockFix_UnionEdges();
 		%feature("autodoc", "1");
-		TopoDS_Shape Perform(const TopoDS_Shape &Shape, const Standard_Real Tol);
+		TopoDS_Shape Perform(const TopoDS_Shape Shape, const Standard_Real Tol);
 
 };
 %feature("shadow") BlockFix_UnionEdges::~BlockFix_UnionEdges %{
@@ -227,21 +227,21 @@ class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
 		void SetTolerance(const Standard_Real Toler);
 		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 
-		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
+		virtual		Standard_Boolean NewSurface(const TopoDS_Face F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
 		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 
-		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewCurve(const TopoDS_Edge E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
 		%feature("autodoc","NewPoint(const V) -> Standard_Real");
 
-		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex V, gp_Pnt & P, Standard_Real &OutValue);
 		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 
-		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge E, const TopoDS_Face F, const TopoDS_Edge NewE, const TopoDS_Face NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
 		%feature("autodoc","NewParameter(const V, const E) -> [Standard_Real, Standard_Real]");
 
-		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex V, const TopoDS_Edge E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
+		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge E, const TopoDS_Face F1, const TopoDS_Face F2, const TopoDS_Edge NewE, const TopoDS_Face NewF1, const TopoDS_Face NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -280,7 +280,7 @@ class BlockFix_CheckTool {
 		%feature("autodoc", "1");
 		BlockFix_CheckTool();
 		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &aShape);
+		void SetShape(const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
@@ -322,21 +322,21 @@ class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
 		void SetTolerance(const Standard_Real Toler);
 		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 
-		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
+		virtual		Standard_Boolean NewSurface(const TopoDS_Face F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
 		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 
-		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewCurve(const TopoDS_Edge E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
 		%feature("autodoc","NewPoint(const V) -> Standard_Real");
 
-		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex V, gp_Pnt & P, Standard_Real &OutValue);
 		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 
-		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge E, const TopoDS_Face F, const TopoDS_Edge NewE, const TopoDS_Face NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
 		%feature("autodoc","NewParameter(const V, const E) -> [Standard_Real, Standard_Real]");
 
-		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex V, const TopoDS_Edge E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
+		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge E, const TopoDS_Face F1, const TopoDS_Face F2, const TopoDS_Edge NewE, const TopoDS_Face NewF1, const TopoDS_Face NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -399,11 +399,11 @@ class BlockFix_UnionFaces {
 				}
 		};
 		%feature("autodoc", "1");
-		TopoDS_Shape Perform(const TopoDS_Shape &Shape);
+		TopoDS_Shape Perform(const TopoDS_Shape Shape);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSameDomain(const TopoDS_Face &aFace, const TopoDS_Face &aChekedFace) const;
+		virtual		Standard_Boolean IsSameDomain(const TopoDS_Face aFace, const TopoDS_Face aChekedFace) const;
 		%feature("autodoc", "1");
-		virtual		void MovePCurves(TopoDS_Face & aTarget, const TopoDS_Face &aSource) const;
+		virtual		void MovePCurves(TopoDS_Face & aTarget, const TopoDS_Face aSource) const;
 
 };
 %feature("shadow") BlockFix_UnionFaces::~BlockFix_UnionFaces %{
@@ -428,7 +428,7 @@ class BlockFix_BlockFixAPI : public MMgt_TShared {
 		%feature("autodoc", "1");
 		BlockFix_BlockFixAPI();
 		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &Shape);
+		void SetShape(const TopoDS_Shape Shape);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");

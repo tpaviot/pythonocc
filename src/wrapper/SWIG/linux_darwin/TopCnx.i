@@ -58,11 +58,11 @@ class TopCnx_EdgeFaceTransition {
 		%feature("autodoc", "1");
 		TopCnx_EdgeFaceTransition();
 		%feature("autodoc", "1");
-		void Reset(const gp_Dir &Tgt, const gp_Dir &Norm, const Standard_Real Curv);
+		void Reset(const gp_Dir Tgt, const gp_Dir Norm, const Standard_Real Curv);
 		%feature("autodoc", "1");
-		void Reset(const gp_Dir &Tgt);
+		void Reset(const gp_Dir Tgt);
 		%feature("autodoc", "1");
-		void AddInterference(const Standard_Real Tole, const gp_Dir &Tang, const gp_Dir &Norm, const Standard_Real Curv, const TopAbs_Orientation Or, const TopAbs_Orientation Tr, const TopAbs_Orientation BTr);
+		void AddInterference(const Standard_Real Tole, const gp_Dir Tang, const gp_Dir Norm, const Standard_Real Curv, const TopAbs_Orientation Or, const TopAbs_Orientation Tr, const TopAbs_Orientation BTr);
 		%feature("autodoc", "1");
 		TopAbs_Orientation Transition() const;
 		%feature("autodoc", "1");

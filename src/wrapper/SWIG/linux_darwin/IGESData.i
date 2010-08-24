@@ -1651,9 +1651,9 @@ class IGESData_ToolLocation : public MMgt_TShared {
 		%feature("autodoc", "1");
 		gp_GTrsf EffectiveLocation(const Handle_IGESData_IGESEntity &ent) const;
 		%feature("autodoc", "1");
-		Standard_Boolean AnalyseLocation(const gp_GTrsf &loc, gp_Trsf & result) const;
+		Standard_Boolean AnalyseLocation(const gp_GTrsf loc, gp_Trsf & result) const;
 		%feature("autodoc", "1");
-		static		Standard_Boolean ConvertLocation(const Standard_Real prec, const gp_GTrsf &loc, gp_Trsf & result, const Standard_Real uni=1);
+		static		Standard_Boolean ConvertLocation(const Standard_Real prec, const gp_GTrsf loc, gp_Trsf & result, const Standard_Real uni=1);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3105,7 +3105,7 @@ class IGESData_GlobalSection {
 		%feature("autodoc", "1");
 		void MaxMaxCoord(const Standard_Real val=0.0);
 		%feature("autodoc", "1");
-		void MaxMaxCoords(const gp_XYZ &xyz);
+		void MaxMaxCoords(const gp_XYZ xyz);
 		%feature("autodoc", "1");
 		void SetAuthorName(const Handle_TCollection_HAsciiString &val);
 		%feature("autodoc", "1");
@@ -3344,9 +3344,9 @@ class IGESData_IGESWriter {
 		%feature("autodoc", "1");
 		void SendString(const Handle_TCollection_HAsciiString &val);
 		%feature("autodoc", "1");
-		void Send(const gp_XY &val);
+		void Send(const gp_XY val);
 		%feature("autodoc", "1");
-		void Send(const gp_XYZ &val);
+		void Send(const gp_XYZ val);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfHAsciiString SectionStrings(const Standard_Integer numsec) const;
 		%feature("autodoc", "1");

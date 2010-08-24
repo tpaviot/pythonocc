@@ -72,7 +72,7 @@ class StdMeshers_MaxElementVolume : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -99,7 +99,7 @@ class StdMeshers_ProjectionSource3D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		StdMeshers_ProjectionSource3D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		void SetSource3DShape(const TopoDS_Shape &shape);
+		void SetSource3DShape(const TopoDS_Shape shape);
 		%feature("autodoc", "1");
 		TopoDS_Shape GetSource3DShape() const;
 		%feature("autodoc", "1");
@@ -107,7 +107,7 @@ class StdMeshers_ProjectionSource3D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		SMESH_Mesh * GetSourceMesh() const;
 		%feature("autodoc", "1");
-		void SetVertexAssociation(const TopoDS_Shape &sourceVertex1, const TopoDS_Shape &sourceVertex2, const TopoDS_Shape &targetVertex1, const TopoDS_Shape &targetVertex2);
+		void SetVertexAssociation(const TopoDS_Shape sourceVertex1, const TopoDS_Shape sourceVertex2, const TopoDS_Shape targetVertex1, const TopoDS_Shape targetVertex2);
 		%feature("autodoc", "1");
 		TopoDS_Vertex GetSourceVertex(int ) const;
 		%feature("autodoc", "1");
@@ -117,7 +117,7 @@ class StdMeshers_ProjectionSource3D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		void GetStoreParams(TopoDS_Shape & s1, TopoDS_Shape & s2, TopoDS_Shape & s3, TopoDS_Shape & s4, TopoDS_Shape & s5) const;
 		%feature("autodoc", "1");
-		void RestoreParams(const TopoDS_Shape &s1, const TopoDS_Shape &s2, const TopoDS_Shape &s3, const TopoDS_Shape &s4, const TopoDS_Shape &s5, SMESH_Mesh* mesh);
+		void RestoreParams(const TopoDS_Shape s1, const TopoDS_Shape s2, const TopoDS_Shape s3, const TopoDS_Shape s4, const TopoDS_Shape s5, SMESH_Mesh* mesh);
 		%feature("autodoc", "1");
 		virtual		std::ostream & SaveTo(std::ostream & save);
 		%feature("autodoc", "1");
@@ -128,7 +128,7 @@ class StdMeshers_ProjectionSource3D : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -197,7 +197,7 @@ class StdMeshers_NumberOfSegments : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		std::vector<int, std::allocator<int> > const & GetReversedEdges() const;
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 		%feature("autodoc", "1");
@@ -233,13 +233,13 @@ class StdMeshers_Regular_1D : public SMESH_1D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_Regular_1D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 		%feature("autodoc", "1");
-		virtual		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetUsedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, const bool arg2=true);
+		virtual		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetUsedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool arg2=true);
 		%feature("autodoc", "1");
 		virtual		void SetEventListener(SMESH_subMesh* subMesh);
 		%feature("autodoc", "1");
@@ -281,7 +281,7 @@ class StdMeshers_MaxElementArea : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -308,11 +308,11 @@ class StdMeshers_RadialPrism_3D : public SMESH_3D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_RadialPrism_3D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 
 };
 %feature("shadow") StdMeshers_RadialPrism_3D::~StdMeshers_RadialPrism_3D %{
@@ -337,7 +337,7 @@ class StdMeshers_PrismAsBlock : public SMESH_Block {
 		%feature("autodoc", "1");
 		StdMeshers_PrismAsBlock();
 		%feature("autodoc", "1");
-		bool Init(SMESH_MesherHelper* helper, const TopoDS_Shape &shape3D);
+		bool Init(SMESH_MesherHelper* helper, const TopoDS_Shape shape3D);
 		%feature("autodoc", "1");
 		SMESH_ComputeErrorPtr GetError() const;
 		%feature("autodoc", "1");
@@ -357,13 +357,13 @@ class StdMeshers_PrismAsBlock : public SMESH_Block {
 		%feature("autodoc", "1");
 		SMESHDS_SubMesh * SubMeshDS(const int shapeID) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape(const int shapeID) const;
+		const TopoDS_Shape  Shape(const int shapeID) const;
 		%feature("autodoc", "1");
-		int ShapeID(const TopoDS_Shape &shape) const;
+		int ShapeID(const TopoDS_Shape shape) const;
 		%feature("autodoc", "1");
-		static		bool IsForwardEdge(SMESHDS_Mesh* meshDS, const TParam2ColumnMap &columnsMap, const TopoDS_Edge &bottomEdge, const int sideFaceID);
+		static		bool IsForwardEdge(SMESHDS_Mesh* meshDS, const TParam2ColumnMap &columnsMap, const TopoDS_Edge bottomEdge, const int sideFaceID);
 		%feature("autodoc", "1");
-		static		bool GetWallFaces(SMESH_Mesh* mesh, const TopoDS_Shape &mainShape, const TopoDS_Shape &bottomFace, std::list<TopoDS_Edge>, std::list<TopoDS_Face>);
+		static		bool GetWallFaces(SMESH_Mesh* mesh, const TopoDS_Shape mainShape, const TopoDS_Shape bottomFace, std::list<TopoDS_Edge>, std::list<TopoDS_Face>);
 
 };
 %feature("shadow") StdMeshers_PrismAsBlock::~StdMeshers_PrismAsBlock %{
@@ -388,11 +388,11 @@ class StdMeshers_Hexa_3D : public SMESH_3D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_Hexa_3D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 
 };
 %feature("shadow") StdMeshers_Hexa_3D::~StdMeshers_Hexa_3D %{
@@ -430,7 +430,7 @@ class StdMeshers_LayerDistribution : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -497,7 +497,7 @@ class StdMeshers_QuadrangleParams : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -533,7 +533,7 @@ class StdMeshers_TrianglePreference : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -560,11 +560,11 @@ class StdMeshers_Prism_3D : public SMESH_3D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_Prism_3D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 		%feature("autodoc", "1");
 		void ProjectTriangles();
 		%feature("autodoc", "1");
@@ -593,11 +593,11 @@ class StdMeshers_UseExisting_2D : public SMESH_2D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_UseExisting_2D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 
 };
 %feature("shadow") StdMeshers_UseExisting_2D::~StdMeshers_UseExisting_2D %{
@@ -622,7 +622,7 @@ class StdMeshers_QuadToTriaAdaptor {
 		%feature("autodoc", "1");
 		StdMeshers_QuadToTriaAdaptor();
 		%feature("autodoc", "1");
-		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
 		bool Compute(SMESH_Mesh & aMesh);
 		%feature("autodoc", "1");
@@ -664,7 +664,7 @@ class StdMeshers_NumberOfLayers : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -714,11 +714,11 @@ class StdMeshers_Projection_1D : public SMESH_1D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_Projection_1D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 		%feature("autodoc", "1");
 		virtual		void SetEventListener(SMESH_subMesh* whenSetToSubMesh);
 
@@ -745,11 +745,11 @@ class StdMeshers_Projection_3D : public SMESH_3D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_Projection_3D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 		%feature("autodoc", "1");
 		virtual		void SetEventListener(SMESH_subMesh* whenSetToSubMesh);
 
@@ -776,13 +776,13 @@ class StdMeshers_MEFISTO_2D : public SMESH_2D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_MEFISTO_2D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 		%feature("autodoc", "1");
-		void ComputeScaleOnFace(SMESH_Mesh & aMesh, const TopoDS_Face &aFace, double & scalex, double & scaley);
+		void ComputeScaleOnFace(SMESH_Mesh & aMesh, const TopoDS_Face aFace, double & scalex, double & scaley);
 		%feature("autodoc", "1");
 		void StoreResult(Z , R2* uvst, Z , Z* nust, std::vector<SMDS_MeshNode const*, std::allocator<SMDS_MeshNode const*> > & mefistoToDS, double , double );
 
@@ -809,7 +809,7 @@ class StdMeshers_ProjectionSource2D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		StdMeshers_ProjectionSource2D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		void SetSourceFace(const TopoDS_Shape &face);
+		void SetSourceFace(const TopoDS_Shape face);
 		%feature("autodoc", "1");
 		TopoDS_Shape GetSourceFace() const;
 		%feature("autodoc", "1");
@@ -819,7 +819,7 @@ class StdMeshers_ProjectionSource2D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		SMESH_Mesh * GetSourceMesh() const;
 		%feature("autodoc", "1");
-		void SetVertexAssociation(const TopoDS_Shape &sourceVertex1, const TopoDS_Shape &sourceVertex2, const TopoDS_Shape &targetVertex1, const TopoDS_Shape &targetVertex2);
+		void SetVertexAssociation(const TopoDS_Shape sourceVertex1, const TopoDS_Shape sourceVertex2, const TopoDS_Shape targetVertex1, const TopoDS_Shape targetVertex2);
 		%feature("autodoc", "1");
 		TopoDS_Vertex GetSourceVertex(int ) const;
 		%feature("autodoc", "1");
@@ -829,7 +829,7 @@ class StdMeshers_ProjectionSource2D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		void GetStoreParams(TopoDS_Shape & s1, TopoDS_Shape & s2, TopoDS_Shape & s3, TopoDS_Shape & s4, TopoDS_Shape & s5) const;
 		%feature("autodoc", "1");
-		void RestoreParams(const TopoDS_Shape &s1, const TopoDS_Shape &s2, const TopoDS_Shape &s3, const TopoDS_Shape &s4, const TopoDS_Shape &s5, SMESH_Mesh* mesh);
+		void RestoreParams(const TopoDS_Shape s1, const TopoDS_Shape s2, const TopoDS_Shape s3, const TopoDS_Shape s4, const TopoDS_Shape s5, SMESH_Mesh* mesh);
 		%feature("autodoc", "1");
 		virtual		std::ostream & SaveTo(std::ostream & save);
 		%feature("autodoc", "1");
@@ -840,7 +840,7 @@ class StdMeshers_ProjectionSource2D : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -880,9 +880,9 @@ class StdMeshers_Propagation : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		static		void SetPropagationMgr(SMESH_subMesh* subMesh);
 		%feature("autodoc", "1");
-		static		TopoDS_Edge GetPropagationSource(SMESH_Mesh & theMesh, const TopoDS_Shape &theEdge);
+		static		TopoDS_Edge GetPropagationSource(SMESH_Mesh & theMesh, const TopoDS_Shape theEdge);
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -922,7 +922,7 @@ class StdMeshers_Deflection1D : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -972,7 +972,7 @@ class StdMeshers_MaxLength : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -999,11 +999,11 @@ class StdMeshers_UseExisting_1D : public SMESH_1D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_UseExisting_1D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 
 };
 %feature("shadow") StdMeshers_UseExisting_1D::~StdMeshers_UseExisting_1D %{
@@ -1049,7 +1049,7 @@ class StdMeshers_Arithmetic1D : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1076,11 +1076,11 @@ class StdMeshers_Projection_2D : public SMESH_2D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_Projection_2D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 		%feature("autodoc", "1");
 		virtual		void SetEventListener(SMESH_subMesh* whenSetToSubMesh);
 
@@ -1120,7 +1120,7 @@ class StdMeshers_LengthFromEdges : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1155,9 +1155,9 @@ class StdMeshers_TNode {
 		%feature("autodoc", "1");
 		int ShapeSupportID() const;
 		%feature("autodoc", "1");
-		void SetNormCoord(const gp_XYZ &theXYZ);
+		void SetNormCoord(const gp_XYZ theXYZ);
 		%feature("autodoc", "1");
-		const gp_XYZ & NormCoord() const;
+		const gp_XYZ  NormCoord() const;
 		%feature("autodoc", "1");
 		void SetBaseNodeID(const int theID);
 		%feature("autodoc", "1");
@@ -1199,7 +1199,7 @@ class StdMeshers_SegmentLengthAroundVertex : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1226,11 +1226,11 @@ class StdMeshers_CompositeHexa_3D : public SMESH_3D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_CompositeHexa_3D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 
 };
 %feature("shadow") StdMeshers_CompositeHexa_3D::~StdMeshers_CompositeHexa_3D %{
@@ -1255,7 +1255,7 @@ class StdMeshers_ProjectionSource1D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		StdMeshers_ProjectionSource1D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		void SetSourceEdge(const TopoDS_Shape &edge);
+		void SetSourceEdge(const TopoDS_Shape edge);
 		%feature("autodoc", "1");
 		TopoDS_Shape GetSourceEdge() const;
 		%feature("autodoc", "1");
@@ -1265,7 +1265,7 @@ class StdMeshers_ProjectionSource1D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		SMESH_Mesh * GetSourceMesh() const;
 		%feature("autodoc", "1");
-		void SetVertexAssociation(const TopoDS_Shape &sourceVertex, const TopoDS_Shape &targetVertex);
+		void SetVertexAssociation(const TopoDS_Shape sourceVertex, const TopoDS_Shape targetVertex);
 		%feature("autodoc", "1");
 		TopoDS_Vertex GetSourceVertex() const;
 		%feature("autodoc", "1");
@@ -1275,7 +1275,7 @@ class StdMeshers_ProjectionSource1D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		void GetStoreParams(TopoDS_Shape & s1, TopoDS_Shape & s2, TopoDS_Shape & s3) const;
 		%feature("autodoc", "1");
-		void RestoreParams(const TopoDS_Shape &s1, const TopoDS_Shape &s2, const TopoDS_Shape &s3, SMESH_Mesh* mesh);
+		void RestoreParams(const TopoDS_Shape s1, const TopoDS_Shape s2, const TopoDS_Shape s3, SMESH_Mesh* mesh);
 		%feature("autodoc", "1");
 		virtual		std::ostream & SaveTo(std::ostream & save);
 		%feature("autodoc", "1");
@@ -1286,7 +1286,7 @@ class StdMeshers_ProjectionSource1D : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1313,13 +1313,13 @@ class StdMeshers_Quadrangle_2D : public SMESH_2D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_Quadrangle_2D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 		%feature("autodoc", "1");
-		FaceQuadStruct * CheckAnd2Dcompute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, const bool CreateQuadratic);
+		FaceQuadStruct * CheckAnd2Dcompute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool CreateQuadratic);
 
 };
 %feature("shadow") StdMeshers_Quadrangle_2D::~StdMeshers_Quadrangle_2D %{
@@ -1344,7 +1344,7 @@ class StdMeshers_Penta_3D {
 		%feature("autodoc", "1");
 		StdMeshers_Penta_3D();
 		%feature("autodoc", "1");
-		bool Compute(SMESH_Mesh & arg0, const TopoDS_Shape &arg1);
+		bool Compute(SMESH_Mesh & arg0, const TopoDS_Shape arg1);
 		%feature("autodoc", "1");
 		int ErrorStatus() const;
 		%feature("autodoc", "1");
@@ -1354,9 +1354,9 @@ class StdMeshers_Penta_3D {
 		%feature("autodoc", "1");
 		double Tolerance() const;
 		%feature("autodoc", "1");
-		bool LoadIJNodes(StdMeshers_IJNodeMap & theIJNodes, const TopoDS_Face &theFace, const TopoDS_Edge &theBaseEdge, SMESHDS_Mesh* theMesh);
+		bool LoadIJNodes(StdMeshers_IJNodeMap & theIJNodes, const TopoDS_Face theFace, const TopoDS_Edge theBaseEdge, SMESHDS_Mesh* theMesh);
 		%feature("autodoc", "1");
-		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 
 };
 %feature("shadow") StdMeshers_Penta_3D::~StdMeshers_Penta_3D %{
@@ -1406,7 +1406,7 @@ class StdMeshers_FixedPoints1D : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1442,7 +1442,7 @@ class StdMeshers_QuadranglePreference : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1490,7 +1490,7 @@ class StdMeshers_StartEndLength : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1534,7 +1534,7 @@ class StdMeshers_LocalLength : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1561,7 +1561,7 @@ class StdMeshers_AutomaticLength : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		StdMeshers_AutomaticLength(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		double GetLength(const SMESH_Mesh *aMesh, const TopoDS_Shape &anEdge);
+		double GetLength(const SMESH_Mesh *aMesh, const TopoDS_Shape anEdge);
 		%feature("autodoc", "1");
 		double GetLength(const SMESH_Mesh *aMesh, const double edgeLength);
 		%feature("autodoc", "1");
@@ -1578,7 +1578,7 @@ class StdMeshers_AutomaticLength : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1605,23 +1605,23 @@ class StdMeshers_SMESHBlock {
 		%feature("autodoc", "1");
 		StdMeshers_SMESHBlock();
 		%feature("autodoc", "1");
-		void Load(const TopoDS_Shell &theShell);
+		void Load(const TopoDS_Shell theShell);
 		%feature("autodoc", "1");
-		void Load(const TopoDS_Shell &theShell, const TopoDS_Vertex &theV000, const TopoDS_Vertex &theV001);
+		void Load(const TopoDS_Shell theShell, const TopoDS_Vertex theV000, const TopoDS_Vertex theV001);
 		%feature("autodoc", "1");
-		void ComputeParameters(const gp_Pnt &thePnt, gp_XYZ & theXYZ);
+		void ComputeParameters(const gp_Pnt thePnt, gp_XYZ & theXYZ);
 		%feature("autodoc", "1");
-		void ComputeParameters(const gp_Pnt &thePnt, const TopoDS_Shape &theShape, gp_XYZ & theXYZ);
+		void ComputeParameters(const gp_Pnt thePnt, const TopoDS_Shape theShape, gp_XYZ & theXYZ);
 		%feature("autodoc", "1");
-		void ComputeParameters(const double &theU, const TopoDS_Shape &theShape, gp_XYZ & theXYZ);
+		void ComputeParameters(const double &theU, const TopoDS_Shape theShape, gp_XYZ & theXYZ);
 		%feature("autodoc", "1");
-		void Point(const gp_XYZ &theParams, gp_Pnt & thePnt);
+		void Point(const gp_XYZ theParams, gp_Pnt & thePnt);
 		%feature("autodoc", "1");
-		void Point(const gp_XYZ &theParams, const TopoDS_Shape &theShape, gp_Pnt & thePnt);
+		void Point(const gp_XYZ theParams, const TopoDS_Shape theShape, gp_Pnt & thePnt);
 		%feature("autodoc", "1");
-		int ShapeID(const TopoDS_Shape &theShape);
+		int ShapeID(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape(const int theID);
+		const TopoDS_Shape  Shape(const int theID);
 		%feature("autodoc", "1");
 		SMESH_Block & Block();
 		%feature("autodoc", "1");
@@ -1663,7 +1663,7 @@ class StdMeshers_QuadraticMesh : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1699,7 +1699,7 @@ class StdMeshers_NotConformAllowed : public SMESH_Hypothesis {
 			self->LoadFrom(s);}
 		};
 		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape &theShape);
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
@@ -1726,11 +1726,11 @@ class StdMeshers_RadialQuadrangle_1D2D : public SMESH_2D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_RadialQuadrangle_1D2D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 		%feature("autodoc", "1");
 		virtual		void SubmeshRestored(SMESH_subMesh* subMesh);
 
@@ -1757,11 +1757,11 @@ class StdMeshers_SegmentAroundVertex_0D : public SMESH_0D_Algo {
 		%feature("autodoc", "1");
 		StdMeshers_SegmentAroundVertex_0D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
-		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, MapShapeNbElems & aResMap);
 
 };
 %feature("shadow") StdMeshers_SegmentAroundVertex_0D::~StdMeshers_SegmentAroundVertex_0D %{
@@ -1784,13 +1784,13 @@ def __del__(self):
 class StdMeshers_FaceSide {
 	public:
 		%feature("autodoc", "1");
-		StdMeshers_FaceSide(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, SMESH_Mesh* theMesh, const bool theIsForward, const bool theIgnoreMediumNodes);
+		StdMeshers_FaceSide(const TopoDS_Face theFace, const TopoDS_Edge theEdge, SMESH_Mesh* theMesh, const bool theIsForward, const bool theIgnoreMediumNodes);
 		%feature("autodoc", "1");
-		StdMeshers_FaceSide(const TopoDS_Face &theFace, std::list<TopoDS_Edge>, SMESH_Mesh* theMesh, const bool theIsForward, const bool theIgnoreMediumNodes);
+		StdMeshers_FaceSide(const TopoDS_Face theFace, std::list<TopoDS_Edge>, SMESH_Mesh* theMesh, const bool theIsForward, const bool theIgnoreMediumNodes);
 		%feature("autodoc", "1");
 		StdMeshers_FaceSide(const SMDS_MeshNode *theNode, const gp_Pnt2d thePnt2d, const StdMeshers_FaceSide *theSide);
 		%feature("autodoc", "1");
-		static		TSideVector GetFaceWires(const TopoDS_Face &theFace, SMESH_Mesh & theMesh, const bool theIgnoreMediumNodes, TError & theError);
+		static		TSideVector GetFaceWires(const TopoDS_Face theFace, SMESH_Mesh & theMesh, const bool theIgnoreMediumNodes, TError & theError);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
@@ -1816,7 +1816,7 @@ class StdMeshers_FaceSide {
 		%feature("autodoc", "1");
 		int NbEdges() const;
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge(int ) const;
+		const TopoDS_Edge  Edge(int ) const;
 		%feature("autodoc", "1");
 		TopoDS_Vertex FirstVertex(int =0) const;
 		%feature("autodoc", "1");

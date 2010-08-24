@@ -591,19 +591,19 @@ class STEPCAFControl_DataMapOfShapeTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_Standard_Transient &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_Standard_Transient &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const TopoDS_Shape &K) const;
+		const Handle_Standard_Transient & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const TopoDS_Shape &K) const;
+		const Handle_Standard_Transient & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const TopoDS_Shape &K);
+		Handle_Standard_Transient & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const TopoDS_Shape &K);
+		Handle_Standard_Transient & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfShapeTransient::~STEPCAFControl_DataMapOfShapeTransient %{
@@ -695,19 +695,19 @@ class STEPCAFControl_DataMapOfShapePD : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_StepBasic_ProductDefinition &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_StepBasic_ProductDefinition &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Handle_StepBasic_ProductDefinition & Find(const TopoDS_Shape &K) const;
+		const Handle_StepBasic_ProductDefinition & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Handle_StepBasic_ProductDefinition & operator()(const TopoDS_Shape &K) const;
+		const Handle_StepBasic_ProductDefinition & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinition & ChangeFind(const TopoDS_Shape &K);
+		Handle_StepBasic_ProductDefinition & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinition & operator()(const TopoDS_Shape &K);
+		Handle_StepBasic_ProductDefinition & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfShapePD::~STEPCAFControl_DataMapOfShapePD %{
@@ -740,19 +740,19 @@ class STEPCAFControl_DataMapOfShapeSDR : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_StepShape_ShapeDefinitionRepresentation &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_StepShape_ShapeDefinitionRepresentation &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Handle_StepShape_ShapeDefinitionRepresentation & Find(const TopoDS_Shape &K) const;
+		const Handle_StepShape_ShapeDefinitionRepresentation & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Handle_StepShape_ShapeDefinitionRepresentation & operator()(const TopoDS_Shape &K) const;
+		const Handle_StepShape_ShapeDefinitionRepresentation & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDefinitionRepresentation & ChangeFind(const TopoDS_Shape &K);
+		Handle_StepShape_ShapeDefinitionRepresentation & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDefinitionRepresentation & operator()(const TopoDS_Shape &K);
+		Handle_StepShape_ShapeDefinitionRepresentation & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfShapeSDR::~STEPCAFControl_DataMapOfShapeSDR %{
@@ -775,9 +775,9 @@ def __del__(self):
 class STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR(const TopoDS_Shape &K, const Handle_StepShape_ShapeDefinitionRepresentation &I, const TCollection_MapNodePtr &n);
+		STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR(const TopoDS_Shape K, const Handle_StepShape_ShapeDefinitionRepresentation &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Handle_StepShape_ShapeDefinitionRepresentation & Value() const;
 		%feature("autodoc", "1");
@@ -822,7 +822,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape : public TCollection_B
 		%feature("autodoc", "1");
 		const TDF_Label & Key() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
+		const TopoDS_Shape  Value() const;
 
 };
 %feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape::~STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape %{
@@ -853,7 +853,7 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 		%feature("autodoc", "1");
 		void ClearMap();
 		%feature("autodoc", "1");
-		void RegisterAssembly(const TopoDS_Shape &S);
+		void RegisterAssembly(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -888,9 +888,9 @@ def __del__(self):
 class STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel(const TopoDS_Shape &K, const TDF_Label &I, const TCollection_MapNodePtr &n);
+		STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel(const TopoDS_Shape K, const TDF_Label &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		TDF_Label & Value() const;
 		%feature("autodoc", "1");
@@ -974,19 +974,19 @@ class STEPCAFControl_DataMapOfShapeLabel : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const TDF_Label &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const TDF_Label &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const TDF_Label & Find(const TopoDS_Shape &K) const;
+		const TDF_Label & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TDF_Label & operator()(const TopoDS_Shape &K) const;
+		const TDF_Label & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		TDF_Label & ChangeFind(const TopoDS_Shape &K);
+		TDF_Label & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		TDF_Label & operator()(const TopoDS_Shape &K);
+		TDF_Label & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfShapeLabel::~STEPCAFControl_DataMapOfShapeLabel %{
@@ -1091,9 +1091,9 @@ def __del__(self):
 class STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		STEPCAFControl_DataMapNodeOfDataMapOfShapePD(const TopoDS_Shape &K, const Handle_StepBasic_ProductDefinition &I, const TCollection_MapNodePtr &n);
+		STEPCAFControl_DataMapNodeOfDataMapOfShapePD(const TopoDS_Shape K, const Handle_StepBasic_ProductDefinition &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinition & Value() const;
 		%feature("autodoc", "1");
@@ -1130,9 +1130,9 @@ def __del__(self):
 class STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient(const TopoDS_Shape &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient(const TopoDS_Shape K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
@@ -1341,7 +1341,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_B
 		%feature("autodoc", "1");
 		void Initialize(const STEPCAFControl_DataMapOfShapeLabel &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const TDF_Label & Value() const;
 
@@ -1415,19 +1415,19 @@ class STEPCAFControl_DataMapOfLabelShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TDF_Label &K, const TopoDS_Shape &I);
+		Standard_Boolean Bind(const TDF_Label &K, const TopoDS_Shape I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TDF_Label &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const TDF_Label &K);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Find(const TDF_Label &K) const;
+		const TopoDS_Shape  Find(const TDF_Label &K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const TDF_Label &K) const;
+		const TopoDS_Shape  operator()(const TDF_Label &K) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFind(const TDF_Label &K);
+		TopoDS_Shape  ChangeFind(const TDF_Label &K);
 		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const TDF_Label &K);
+		TopoDS_Shape  operator()(const TDF_Label &K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfLabelShape::~STEPCAFControl_DataMapOfLabelShape %{
@@ -1639,7 +1639,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient : public TCollecti
 		%feature("autodoc", "1");
 		void Initialize(const STEPCAFControl_DataMapOfShapeTransient &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Value() const;
 
@@ -1664,11 +1664,11 @@ def __del__(self):
 class STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		STEPCAFControl_DataMapNodeOfDataMapOfLabelShape(const TDF_Label &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
+		STEPCAFControl_DataMapNodeOfDataMapOfLabelShape(const TDF_Label &K, const TopoDS_Shape I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TDF_Label & Key() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
+		TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1823,7 +1823,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapePD : public TCollection_Basi
 		%feature("autodoc", "1");
 		void Initialize(const STEPCAFControl_DataMapOfShapePD &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Handle_StepBasic_ProductDefinition & Value() const;
 
@@ -1885,7 +1885,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR : public TCollection_Bas
 		%feature("autodoc", "1");
 		void Initialize(const STEPCAFControl_DataMapOfShapeSDR &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const Handle_StepShape_ShapeDefinitionRepresentation & Value() const;
 

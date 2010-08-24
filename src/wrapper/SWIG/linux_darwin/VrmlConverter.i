@@ -299,7 +299,7 @@ class VrmlConverter_WFDeflectionShape {
 		%feature("autodoc", "1");
 		VrmlConverter_WFDeflectionShape();
 		%feature("autodoc", "1");
-		static		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
+		static		void Add(Standard_OStream & anOStream, const TopoDS_Shape aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
 %feature("shadow") VrmlConverter_WFDeflectionShape::~VrmlConverter_WFDeflectionShape %{
@@ -386,9 +386,9 @@ class VrmlConverter_ShadedShape {
 		%feature("autodoc", "1");
 		VrmlConverter_ShadedShape();
 		%feature("autodoc", "1");
-		static		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
+		static		void Add(Standard_OStream & anOStream, const TopoDS_Shape aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 		%feature("autodoc", "1");
-		static		void ComputeNormal(const TopoDS_Face &aFace, Poly_Connect & pc, TColgp_Array1OfDir & Nor);
+		static		void ComputeNormal(const TopoDS_Face aFace, Poly_Connect & pc, TColgp_Array1OfDir & Nor);
 
 };
 %feature("shadow") VrmlConverter_ShadedShape::~VrmlConverter_ShadedShape %{
@@ -747,7 +747,7 @@ class VrmlConverter_HLRShape {
 		%feature("autodoc", "1");
 		VrmlConverter_HLRShape();
 		%feature("autodoc", "1");
-		static		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
+		static		void Add(Standard_OStream & anOStream, const TopoDS_Shape aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
 
 };
 %feature("shadow") VrmlConverter_HLRShape::~VrmlConverter_HLRShape %{
@@ -817,7 +817,7 @@ class VrmlConverter_WFShape {
 		%feature("autodoc", "1");
 		VrmlConverter_WFShape();
 		%feature("autodoc", "1");
-		static		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
+		static		void Add(Standard_OStream & anOStream, const TopoDS_Shape aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
 %feature("shadow") VrmlConverter_WFShape::~VrmlConverter_WFShape %{

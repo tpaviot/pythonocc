@@ -64,7 +64,7 @@ class VrmlAPI {
 		%feature("autodoc", "1");
 		VrmlAPI();
 		%feature("autodoc", "1");
-		static		void Write(const TopoDS_Shape &aShape, const char * aFileName);
+		static		void Write(const TopoDS_Shape aShape, const char * aFileName);
 
 };
 %feature("shadow") VrmlAPI::~VrmlAPI %{
@@ -127,7 +127,7 @@ class VrmlAPI_Writer {
 		%feature("autodoc", "1");
 		Handle_Vrml_Material GetUnfreeBoundsMaterial() const;
 		%feature("autodoc", "1");
-		void Write(const TopoDS_Shape &aShape, const char * aFile) const;
+		void Write(const TopoDS_Shape aShape, const char * aFile) const;
 
 };
 %feature("shadow") VrmlAPI_Writer::~VrmlAPI_Writer %{

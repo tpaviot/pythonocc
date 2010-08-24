@@ -892,33 +892,33 @@ def __del__(self):
 class Geom2d_Geometry : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		void Mirror(const gp_Pnt2d &P);
+		void Mirror(const gp_Pnt2d P);
 		%feature("autodoc", "1");
-		void Mirror(const gp_Ax2d &A);
+		void Mirror(const gp_Ax2d A);
 		%feature("autodoc", "1");
-		void Rotate(const gp_Pnt2d &P, const Standard_Real Ang);
+		void Rotate(const gp_Pnt2d P, const Standard_Real Ang);
 		%feature("autodoc", "1");
-		void Scale(const gp_Pnt2d &P, const Standard_Real S);
+		void Scale(const gp_Pnt2d P, const Standard_Real S);
 		%feature("autodoc", "1");
-		void Translate(const gp_Vec2d &V);
+		void Translate(const gp_Vec2d V);
 		%feature("autodoc", "1");
-		void Translate(const gp_Pnt2d &P1, const gp_Pnt2d &P2);
+		void Translate(const gp_Pnt2d P1, const gp_Pnt2d P2);
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
-		Handle_Geom2d_Geometry Mirrored(const gp_Pnt2d &P) const;
+		Handle_Geom2d_Geometry Mirrored(const gp_Pnt2d P) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Geometry Mirrored(const gp_Ax2d &A) const;
+		Handle_Geom2d_Geometry Mirrored(const gp_Ax2d A) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Geometry Rotated(const gp_Pnt2d &P, const Standard_Real Ang) const;
+		Handle_Geom2d_Geometry Rotated(const gp_Pnt2d P, const Standard_Real Ang) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Geometry Scaled(const gp_Pnt2d &P, const Standard_Real S) const;
+		Handle_Geom2d_Geometry Scaled(const gp_Pnt2d P, const Standard_Real S) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Geometry Transformed(const gp_Trsf2d &T) const;
+		Handle_Geom2d_Geometry Transformed(const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Geometry Translated(const gp_Vec2d &V) const;
+		Handle_Geom2d_Geometry Translated(const gp_Vec2d V) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Geometry Translated(const gp_Pnt2d &P1, const gp_Pnt2d &P2) const;
+		Handle_Geom2d_Geometry Translated(const gp_Pnt2d P1, const gp_Pnt2d P2) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
@@ -1011,11 +1011,11 @@ class Geom2d_Direction : public Geom2d_Vector {
 		%feature("autodoc", "1");
 		Geom2d_Direction(const Standard_Real X, const Standard_Real Y);
 		%feature("autodoc", "1");
-		Geom2d_Direction(const gp_Dir2d &V);
+		Geom2d_Direction(const gp_Dir2d V);
 		%feature("autodoc", "1");
 		void SetCoord(const Standard_Real X, const Standard_Real Y);
 		%feature("autodoc", "1");
-		void SetDir2d(const gp_Dir2d &V);
+		void SetDir2d(const gp_Dir2d V);
 		%feature("autodoc", "1");
 		void SetX(const Standard_Real X);
 		%feature("autodoc", "1");
@@ -1060,9 +1060,9 @@ class Geom2d_Curve : public Geom2d_Geometry {
 		%feature("autodoc", "1");
 		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d &T) const;
+		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d &T) const;
+		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve Reversed() const;
 		%feature("autodoc", "1");
@@ -1125,13 +1125,13 @@ def __del__(self):
 class Geom2d_Conic : public Geom2d_Curve {
 	public:
 		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax22d &A);
+		void SetAxis(const gp_Ax22d A);
 		%feature("autodoc", "1");
-		void SetXAxis(const gp_Ax2d &A);
+		void SetXAxis(const gp_Ax2d A);
 		%feature("autodoc", "1");
-		void SetYAxis(const gp_Ax2d &A);
+		void SetYAxis(const gp_Ax2d A);
 		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt2d &P);
+		void SetLocation(const gp_Pnt2d P);
 		%feature("autodoc", "1");
 		gp_Ax2d XAxis() const;
 		%feature("autodoc", "1");
@@ -1141,7 +1141,7 @@ class Geom2d_Conic : public Geom2d_Curve {
 		%feature("autodoc", "1");
 		gp_Pnt2d Location() const;
 		%feature("autodoc", "1");
-		const gp_Ax22d & Position() const;
+		const gp_Ax22d  Position() const;
 
 };
 %extend Geom2d_Conic {
@@ -1174,13 +1174,13 @@ def __del__(self):
 class Geom2d_Circle : public Geom2d_Conic {
 	public:
 		%feature("autodoc", "1");
-		Geom2d_Circle(const gp_Circ2d &C);
+		Geom2d_Circle(const gp_Circ2d C);
 		%feature("autodoc", "1");
-		Geom2d_Circle(const gp_Ax2d &A, const Standard_Real Radius, const Standard_Boolean Sense=1);
+		Geom2d_Circle(const gp_Ax2d A, const Standard_Real Radius, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
-		Geom2d_Circle(const gp_Ax22d &A, const Standard_Real Radius);
+		Geom2d_Circle(const gp_Ax22d A, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		void SetCirc2d(const gp_Circ2d &C);
+		void SetCirc2d(const gp_Circ2d C);
 		%feature("autodoc", "1");
 		void SetRadius(const Standard_Real R);
 		%feature("autodoc", "1");
@@ -1188,7 +1188,7 @@ class Geom2d_Circle : public Geom2d_Conic {
 		%feature("autodoc", "1");
 		Standard_Real Radius() const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 
@@ -1223,17 +1223,17 @@ def __del__(self):
 class Geom2d_Parabola : public Geom2d_Conic {
 	public:
 		%feature("autodoc", "1");
-		Geom2d_Parabola(const gp_Parab2d &Prb);
+		Geom2d_Parabola(const gp_Parab2d Prb);
 		%feature("autodoc", "1");
-		Geom2d_Parabola(const gp_Ax2d &MirrorAxis, const Standard_Real Focal, const Standard_Boolean Sense=1);
+		Geom2d_Parabola(const gp_Ax2d MirrorAxis, const Standard_Real Focal, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
-		Geom2d_Parabola(const gp_Ax22d &Axis, const Standard_Real Focal);
+		Geom2d_Parabola(const gp_Ax22d Axis, const Standard_Real Focal);
 		%feature("autodoc", "1");
-		Geom2d_Parabola(const gp_Ax2d &D, const gp_Pnt2d &F);
+		Geom2d_Parabola(const gp_Ax2d D, const gp_Pnt2d F);
 		%feature("autodoc", "1");
 		void SetFocal(const Standard_Real Focal);
 		%feature("autodoc", "1");
-		void SetParab2d(const gp_Parab2d &Prb);
+		void SetParab2d(const gp_Parab2d Prb);
 		%feature("autodoc", "1");
 		gp_Parab2d Parab2d() const;
 		%feature("autodoc", "1");
@@ -1267,11 +1267,11 @@ class Geom2d_Parabola : public Geom2d_Conic {
 		%feature("autodoc", "1");
 		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
-		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d &T) const;
+		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d &T) const;
+		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
@@ -1397,13 +1397,13 @@ def __del__(self):
 class Geom2d_Hyperbola : public Geom2d_Conic {
 	public:
 		%feature("autodoc", "1");
-		Geom2d_Hyperbola(const gp_Hypr2d &H);
+		Geom2d_Hyperbola(const gp_Hypr2d H);
 		%feature("autodoc", "1");
-		Geom2d_Hyperbola(const gp_Ax2d &MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense=1);
+		Geom2d_Hyperbola(const gp_Ax2d MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
-		Geom2d_Hyperbola(const gp_Ax22d &Axis, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		Geom2d_Hyperbola(const gp_Ax22d Axis, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 		%feature("autodoc", "1");
-		void SetHypr2d(const gp_Hypr2d &H);
+		void SetHypr2d(const gp_Hypr2d H);
 		%feature("autodoc", "1");
 		void SetMajorRadius(const Standard_Real MajorRadius);
 		%feature("autodoc", "1");
@@ -1459,7 +1459,7 @@ class Geom2d_Hyperbola : public Geom2d_Conic {
 		%feature("autodoc", "1");
 		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
@@ -1498,25 +1498,25 @@ class Geom2d_Transformation : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Geom2d_Transformation();
 		%feature("autodoc", "1");
-		Geom2d_Transformation(const gp_Trsf2d &T);
+		Geom2d_Transformation(const gp_Trsf2d T);
 		%feature("autodoc", "1");
-		void SetMirror(const gp_Pnt2d &P);
+		void SetMirror(const gp_Pnt2d P);
 		%feature("autodoc", "1");
-		void SetMirror(const gp_Ax2d &A);
+		void SetMirror(const gp_Ax2d A);
 		%feature("autodoc", "1");
-		void SetRotation(const gp_Pnt2d &P, const Standard_Real Ang);
+		void SetRotation(const gp_Pnt2d P, const Standard_Real Ang);
 		%feature("autodoc", "1");
-		void SetScale(const gp_Pnt2d &P, const Standard_Real S);
+		void SetScale(const gp_Pnt2d P, const Standard_Real S);
 		%feature("autodoc", "1");
-		void SetTransformation(const gp_Ax2d &FromSystem1, const gp_Ax2d &ToSystem2);
+		void SetTransformation(const gp_Ax2d FromSystem1, const gp_Ax2d ToSystem2);
 		%feature("autodoc", "1");
-		void SetTransformation(const gp_Ax2d &ToSystem);
+		void SetTransformation(const gp_Ax2d ToSystem);
 		%feature("autodoc", "1");
-		void SetTranslation(const gp_Vec2d &V);
+		void SetTranslation(const gp_Vec2d V);
 		%feature("autodoc", "1");
-		void SetTranslation(const gp_Pnt2d &P1, const gp_Pnt2d &P2);
+		void SetTranslation(const gp_Pnt2d P1, const gp_Pnt2d P2);
 		%feature("autodoc", "1");
-		void SetTrsf2d(const gp_Trsf2d &T);
+		void SetTrsf2d(const gp_Trsf2d T);
 		%feature("autodoc", "1");
 		Standard_Boolean IsNegative() const;
 		%feature("autodoc", "1");
@@ -1584,13 +1584,13 @@ def __del__(self):
 class Geom2d_CartesianPoint : public Geom2d_Point {
 	public:
 		%feature("autodoc", "1");
-		Geom2d_CartesianPoint(const gp_Pnt2d &P);
+		Geom2d_CartesianPoint(const gp_Pnt2d P);
 		%feature("autodoc", "1");
 		Geom2d_CartesianPoint(const Standard_Real X, const Standard_Real Y);
 		%feature("autodoc", "1");
 		void SetCoord(const Standard_Real X, const Standard_Real Y);
 		%feature("autodoc", "1");
-		void SetPnt2d(const gp_Pnt2d &P);
+		void SetPnt2d(const gp_Pnt2d P);
 		%feature("autodoc", "1");
 		void SetX(const Standard_Real X);
 		%feature("autodoc", "1");
@@ -1605,7 +1605,7 @@ class Geom2d_CartesianPoint : public Geom2d_Point {
 		%feature("autodoc", "1");
 		virtual		Standard_Real Y() const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
@@ -1697,9 +1697,9 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Standard_Boolean RemoveKnot(const Standard_Integer Index, const Standard_Integer M, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		void InsertPoleAfter(const Standard_Integer Index, const gp_Pnt2d &P, const Standard_Real Weight=1.0e+0);
+		void InsertPoleAfter(const Standard_Integer Index, const gp_Pnt2d P, const Standard_Real Weight=1.0e+0);
 		%feature("autodoc", "1");
-		void InsertPoleBefore(const Standard_Integer Index, const gp_Pnt2d &P, const Standard_Real Weight=1.0e+0);
+		void InsertPoleBefore(const Standard_Integer Index, const gp_Pnt2d P, const Standard_Real Weight=1.0e+0);
 		%feature("autodoc", "1");
 		void RemovePole(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -1724,17 +1724,17 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		void SetNotPeriodic();
 		%feature("autodoc", "1");
-		void SetPole(const Standard_Integer Index, const gp_Pnt2d &P);
+		void SetPole(const Standard_Integer Index, const gp_Pnt2d P);
 		%feature("autodoc", "1");
-		void SetPole(const Standard_Integer Index, const gp_Pnt2d &P, const Standard_Real Weight);
+		void SetPole(const Standard_Integer Index, const gp_Pnt2d P, const Standard_Real Weight);
 		%feature("autodoc", "1");
 		void SetWeight(const Standard_Integer Index, const Standard_Real Weight);
 		%feature("autodoc","MovePoint(Standard_Real U, const P, Standard_Integer Index1, Standard_Integer Index2) -> [Standard_Integer, Standard_Integer]");
 
-		void MovePoint(const Standard_Real U, const gp_Pnt2d &P, const Standard_Integer Index1, const Standard_Integer Index2, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		void MovePoint(const Standard_Real U, const gp_Pnt2d P, const Standard_Integer Index1, const Standard_Integer Index2, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc","MovePointAndTangent(Standard_Real U, const P, const Tangent, Standard_Real Tolerance, Standard_Integer StartingCondition, Standard_Integer EndingCondition) -> Standard_Integer");
 
-		void MovePointAndTangent(const Standard_Real U, const gp_Pnt2d &P, const gp_Vec2d &Tangent, const Standard_Real Tolerance, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Integer &OutValue);
+		void MovePointAndTangent(const Standard_Real U, const gp_Pnt2d P, const gp_Vec2d Tangent, const Standard_Real Tolerance, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -1805,7 +1805,7 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		void Weights(TColStd_Array1OfReal & W) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
 		static		Standard_Integer MaxDegree();
 		%feature("autodoc","Resolution(Standard_Real ToleranceUV) -> Standard_Real");
@@ -1845,15 +1845,15 @@ def __del__(self):
 class Geom2d_VectorWithMagnitude : public Geom2d_Vector {
 	public:
 		%feature("autodoc", "1");
-		Geom2d_VectorWithMagnitude(const gp_Vec2d &V);
+		Geom2d_VectorWithMagnitude(const gp_Vec2d V);
 		%feature("autodoc", "1");
 		Geom2d_VectorWithMagnitude(const Standard_Real X, const Standard_Real Y);
 		%feature("autodoc", "1");
-		Geom2d_VectorWithMagnitude(const gp_Pnt2d &P1, const gp_Pnt2d &P2);
+		Geom2d_VectorWithMagnitude(const gp_Pnt2d P1, const gp_Pnt2d P2);
 		%feature("autodoc", "1");
 		void SetCoord(const Standard_Real X, const Standard_Real Y);
 		%feature("autodoc", "1");
-		void SetVec2d(const gp_Vec2d &V);
+		void SetVec2d(const gp_Vec2d V);
 		%feature("autodoc", "1");
 		void SetX(const Standard_Real X);
 		%feature("autodoc", "1");
@@ -1901,7 +1901,7 @@ class Geom2d_VectorWithMagnitude : public Geom2d_Vector {
 		%feature("autodoc", "1");
 		Handle_Geom2d_VectorWithMagnitude operator-(const Handle_Geom2d_Vector &Other) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
@@ -1938,25 +1938,25 @@ def __del__(self):
 class Geom2d_Line : public Geom2d_Curve {
 	public:
 		%feature("autodoc", "1");
-		Geom2d_Line(const gp_Ax2d &A);
+		Geom2d_Line(const gp_Ax2d A);
 		%feature("autodoc", "1");
-		Geom2d_Line(const gp_Lin2d &L);
+		Geom2d_Line(const gp_Lin2d L);
 		%feature("autodoc", "1");
-		Geom2d_Line(const gp_Pnt2d &P, const gp_Dir2d &V);
+		Geom2d_Line(const gp_Pnt2d P, const gp_Dir2d V);
 		%feature("autodoc", "1");
-		void SetLin2d(const gp_Lin2d &L);
+		void SetLin2d(const gp_Lin2d L);
 		%feature("autodoc", "1");
-		void SetDirection(const gp_Dir2d &V);
+		void SetDirection(const gp_Dir2d V);
 		%feature("autodoc", "1");
-		const gp_Dir2d & Direction() const;
+		const gp_Dir2d  Direction() const;
 		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt2d &P);
+		void SetLocation(const gp_Pnt2d P);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & Location() const;
+		const gp_Pnt2d  Location() const;
 		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax2d &A);
+		void SetPosition(const gp_Ax2d A);
 		%feature("autodoc", "1");
-		const gp_Ax2d & Position() const;
+		const gp_Ax2d  Position() const;
 		%feature("autodoc", "1");
 		gp_Lin2d Lin2d() const;
 		%feature("autodoc", "1");
@@ -1974,7 +1974,7 @@ class Geom2d_Line : public Geom2d_Curve {
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity() const;
 		%feature("autodoc", "1");
-		Standard_Real Distance(const gp_Pnt2d &P) const;
+		Standard_Real Distance(const gp_Pnt2d P) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -1988,11 +1988,11 @@ class Geom2d_Line : public Geom2d_Curve {
 		%feature("autodoc", "1");
 		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
-		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d &T) const;
+		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d &T) const;
+		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
@@ -2035,9 +2035,9 @@ class Geom2d_BezierCurve : public Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		void Increase(const Standard_Integer Degree);
 		%feature("autodoc", "1");
-		void InsertPoleAfter(const Standard_Integer Index, const gp_Pnt2d &P, const Standard_Real Weight=1.0e+0);
+		void InsertPoleAfter(const Standard_Integer Index, const gp_Pnt2d P, const Standard_Real Weight=1.0e+0);
 		%feature("autodoc", "1");
-		void InsertPoleBefore(const Standard_Integer Index, const gp_Pnt2d &P, const Standard_Real Weight=1.0e+0);
+		void InsertPoleBefore(const Standard_Integer Index, const gp_Pnt2d P, const Standard_Real Weight=1.0e+0);
 		%feature("autodoc", "1");
 		void RemovePole(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -2047,9 +2047,9 @@ class Geom2d_BezierCurve : public Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		void Segment(const Standard_Real U1, const Standard_Real U2);
 		%feature("autodoc", "1");
-		void SetPole(const Standard_Integer Index, const gp_Pnt2d &P);
+		void SetPole(const Standard_Integer Index, const gp_Pnt2d P);
 		%feature("autodoc", "1");
-		void SetPole(const Standard_Integer Index, const gp_Pnt2d &P, const Standard_Real Weight);
+		void SetPole(const Standard_Integer Index, const gp_Pnt2d P, const Standard_Real Weight);
 		%feature("autodoc", "1");
 		void SetWeight(const Standard_Integer Index, const Standard_Real Weight);
 		%feature("autodoc", "1");
@@ -2093,7 +2093,7 @@ class Geom2d_BezierCurve : public Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		void Weights(TColStd_Array1OfReal & W) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
 		static		Standard_Integer MaxDegree();
 		%feature("autodoc","Resolution(Standard_Real ToleranceUV) -> Standard_Real");
@@ -2135,13 +2135,13 @@ def __del__(self):
 class Geom2d_Ellipse : public Geom2d_Conic {
 	public:
 		%feature("autodoc", "1");
-		Geom2d_Ellipse(const gp_Elips2d &E);
+		Geom2d_Ellipse(const gp_Elips2d E);
 		%feature("autodoc", "1");
-		Geom2d_Ellipse(const gp_Ax2d &MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense=1);
+		Geom2d_Ellipse(const gp_Ax2d MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
-		Geom2d_Ellipse(const gp_Ax22d &Axis, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		Geom2d_Ellipse(const gp_Ax22d Axis, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 		%feature("autodoc", "1");
-		void SetElips2d(const gp_Elips2d &E);
+		void SetElips2d(const gp_Elips2d E);
 		%feature("autodoc", "1");
 		void SetMajorRadius(const Standard_Real MajorRadius);
 		%feature("autodoc", "1");
@@ -2187,7 +2187,7 @@ class Geom2d_Ellipse : public Geom2d_Conic {
 		%feature("autodoc", "1");
 		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
@@ -2262,11 +2262,11 @@ class Geom2d_TrimmedCurve : public Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
-		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d &T) const;
+		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d &T) const;
+		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
@@ -2303,19 +2303,19 @@ def __del__(self):
 class Geom2d_AxisPlacement : public Geom2d_Geometry {
 	public:
 		%feature("autodoc", "1");
-		Geom2d_AxisPlacement(const gp_Ax2d &A);
+		Geom2d_AxisPlacement(const gp_Ax2d A);
 		%feature("autodoc", "1");
-		Geom2d_AxisPlacement(const gp_Pnt2d &P, const gp_Dir2d &V);
+		Geom2d_AxisPlacement(const gp_Pnt2d P, const gp_Dir2d V);
 		%feature("autodoc", "1");
 		void Reverse();
 		%feature("autodoc", "1");
 		Handle_Geom2d_AxisPlacement Reversed() const;
 		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax2d &A);
+		void SetAxis(const gp_Ax2d A);
 		%feature("autodoc", "1");
-		void SetDirection(const gp_Dir2d &V);
+		void SetDirection(const gp_Dir2d V);
 		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt2d &P);
+		void SetLocation(const gp_Pnt2d P);
 		%feature("autodoc", "1");
 		Standard_Real Angle(const Handle_Geom2d_AxisPlacement &Other) const;
 		%feature("autodoc", "1");
@@ -2325,7 +2325,7 @@ class Geom2d_AxisPlacement : public Geom2d_Geometry {
 		%feature("autodoc", "1");
 		gp_Pnt2d Location() const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");
@@ -2449,11 +2449,11 @@ class Geom2d_OffsetCurve : public Geom2d_Curve {
 		%feature("autodoc", "1");
 		virtual		Standard_Real Period() const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
+		virtual		void Transform(const gp_Trsf2d T);
 		%feature("autodoc", "1");
-		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d &T) const;
+		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d &T) const;
+		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d T) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
 		%feature("autodoc", "1");

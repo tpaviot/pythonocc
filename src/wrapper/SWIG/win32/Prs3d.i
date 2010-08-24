@@ -777,9 +777,9 @@ class Prs3d_Text : public Prs3d_Root {
 		%feature("autodoc", "1");
 		Prs3d_Text();
 		%feature("autodoc", "1");
-		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
+		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint);
 		%feature("autodoc", "1");
-		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
+		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint);
 
 };
 %feature("shadow") Prs3d_Text::~Prs3d_Text %{
@@ -881,7 +881,7 @@ class Prs3d_AnglePresentation : public Prs3d_Root {
 		%feature("autodoc", "1");
 		Prs3d_AnglePresentation();
 		%feature("autodoc", "1");
-		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &AttachmentPoint3, const gp_Pnt &OffsetPoint);
+		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Pnt AttachmentPoint3, const gp_Pnt OffsetPoint);
 
 };
 %feature("shadow") Prs3d_AnglePresentation::~Prs3d_AnglePresentation %{
@@ -1062,7 +1062,7 @@ class Prs3d_LengthPresentation : public Prs3d_Root {
 		%feature("autodoc", "1");
 		Prs3d_LengthPresentation();
 		%feature("autodoc", "1");
-		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &OffsetPoint);
+		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Pnt OffsetPoint);
 
 };
 %feature("shadow") Prs3d_LengthPresentation::~Prs3d_LengthPresentation %{
@@ -1208,7 +1208,7 @@ class Prs3d {
 		Prs3d();
 		%feature("autodoc","MatchSegment(Quantity_Length X, Quantity_Length Y, Quantity_Length Z, Quantity_Length aDistance, const p1, const p2) -> Standard_Real");
 
-		static		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt &p1, const gp_Pnt &p2, Standard_Real &OutValue);
+		static		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt p1, const gp_Pnt p2, Standard_Real &OutValue);
 
 };
 %feature("shadow") Prs3d::~Prs3d %{
@@ -1627,7 +1627,7 @@ def __del__(self):
 class Prs3d_ShapeTool {
 	public:
 		%feature("autodoc", "1");
-		Prs3d_ShapeTool(const TopoDS_Shape &TheShape);
+		Prs3d_ShapeTool(const TopoDS_Shape TheShape);
 		%feature("autodoc", "1");
 		void InitFace();
 		%feature("autodoc", "1");
@@ -1635,7 +1635,7 @@ class Prs3d_ShapeTool {
 		%feature("autodoc", "1");
 		void NextFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & GetFace() const;
+		const TopoDS_Face  GetFace() const;
 		%feature("autodoc", "1");
 		Bnd_Box FaceBound() const;
 		%feature("autodoc", "1");
@@ -1647,7 +1647,7 @@ class Prs3d_ShapeTool {
 		%feature("autodoc", "1");
 		void NextCurve();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & GetCurve() const;
+		const TopoDS_Edge  GetCurve() const;
 		%feature("autodoc", "1");
 		Bnd_Box CurveBound() const;
 		%feature("autodoc", "1");
@@ -1661,7 +1661,7 @@ class Prs3d_ShapeTool {
 		%feature("autodoc", "1");
 		void NextVertex();
 		%feature("autodoc", "1");
-		const TopoDS_Vertex & GetVertex() const;
+		const TopoDS_Vertex  GetVertex() const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasSurface() const;
 		%feature("autodoc", "1");
@@ -1914,9 +1914,9 @@ class Prs3d_Arrow : public Prs3d_Root {
 		%feature("autodoc", "1");
 		Prs3d_Arrow();
 		%feature("autodoc", "1");
-		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const gp_Pnt &aLocation, const gp_Dir &aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
+		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const gp_Pnt aLocation, const gp_Dir aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
 		%feature("autodoc", "1");
-		static		void Fill(const Handle_Prs3d_Presentation &aPresentation, const gp_Pnt &aLocation, const gp_Dir &aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
+		static		void Fill(const Handle_Prs3d_Presentation &aPresentation, const gp_Pnt aLocation, const gp_Dir aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
 
 };
 %feature("shadow") Prs3d_Arrow::~Prs3d_Arrow %{

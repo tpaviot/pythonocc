@@ -96,43 +96,43 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape MakeEmptyVertex(const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirV);
+		virtual		TopoDS_Shape MakeEmptyVertex(const TopoDS_Shape aGenV, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape MakeEmptyDirectingEdge(const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirE);
+		virtual		TopoDS_Shape MakeEmptyDirectingEdge(const TopoDS_Shape aGenV, const Sweep_NumShape &aDirE);
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape MakeEmptyGeneratingEdge(const TopoDS_Shape &aGenE, const Sweep_NumShape &aDirV);
+		virtual		TopoDS_Shape MakeEmptyGeneratingEdge(const TopoDS_Shape aGenE, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		void SetParameters(const TopoDS_Shape &aNewFace, TopoDS_Shape & aNewVertex, const TopoDS_Shape &aGenF, const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirV);
+		virtual		void SetParameters(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewVertex, const TopoDS_Shape aGenF, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		void SetDirectingParameter(const TopoDS_Shape &aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirE, const Sweep_NumShape &aDirV);
+		virtual		void SetDirectingParameter(const TopoDS_Shape aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirE, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		void SetGeneratingParameter(const TopoDS_Shape &aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape &aGenE, const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirV);
+		virtual		void SetGeneratingParameter(const TopoDS_Shape aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape aGenE, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape MakeEmptyFace(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS);
+		virtual		TopoDS_Shape MakeEmptyFace(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
 		%feature("autodoc", "1");
-		virtual		void SetPCurve(const TopoDS_Shape &aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape &aGenF, const TopoDS_Shape &aGenE, const Sweep_NumShape &aDirV, const TopAbs_Orientation orien);
+		virtual		void SetPCurve(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape aGenF, const TopoDS_Shape aGenE, const Sweep_NumShape &aDirV, const TopAbs_Orientation orien);
 		%feature("autodoc", "1");
-		virtual		void SetGeneratingPCurve(const TopoDS_Shape &aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape &aGenE, const Sweep_NumShape &aDirE, const Sweep_NumShape &aDirV, const TopAbs_Orientation orien);
+		virtual		void SetGeneratingPCurve(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape aGenE, const Sweep_NumShape &aDirE, const Sweep_NumShape &aDirV, const TopAbs_Orientation orien);
 		%feature("autodoc", "1");
-		virtual		void SetDirectingPCurve(const TopoDS_Shape &aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape &aGenE, const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirE, const TopAbs_Orientation orien);
+		virtual		void SetDirectingPCurve(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape aGenE, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirE, const TopAbs_Orientation orien);
 		%feature("autodoc", "1");
-		virtual		TopAbs_Orientation DirectSolid(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS);
+		virtual		TopAbs_Orientation DirectSolid(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean GGDShapeIsToAdd(const TopoDS_Shape &aNewShape, const TopoDS_Shape &aNewSubShape, const TopoDS_Shape &aGenS, const TopoDS_Shape &aSubGenS, const Sweep_NumShape &aDirS) const;
+		virtual		Standard_Boolean GGDShapeIsToAdd(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const TopoDS_Shape aSubGenS, const Sweep_NumShape &aDirS) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean GDDShapeIsToAdd(const TopoDS_Shape &aNewShape, const TopoDS_Shape &aNewSubShape, const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS, const Sweep_NumShape &aSubDirS) const;
+		virtual		Standard_Boolean GDDShapeIsToAdd(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS, const Sweep_NumShape &aSubDirS) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean SeparatedWires(const TopoDS_Shape &aNewShape, const TopoDS_Shape &aNewSubShape, const TopoDS_Shape &aGenS, const TopoDS_Shape &aSubGenS, const Sweep_NumShape &aDirS) const;
+		virtual		Standard_Boolean SeparatedWires(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const TopoDS_Shape aSubGenS, const Sweep_NumShape &aDirS) const;
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape SplitShell(const TopoDS_Shape &aNewShape) const;
+		virtual		TopoDS_Shape SplitShell(const TopoDS_Shape aNewShape) const;
 		%feature("autodoc", "1");
-		virtual		void SetContinuity(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS);
+		virtual		void SetContinuity(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasShape(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS) const;
+		virtual		Standard_Boolean HasShape(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape Shape(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS);
+		TopoDS_Shape Shape(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
 		%feature("autodoc", "1");
-		TopoDS_Shape Shape(const TopoDS_Shape &aGenS);
+		TopoDS_Shape Shape(const TopoDS_Shape aGenS);
 		%feature("autodoc", "1");
 		TopoDS_Shape Shape();
 		%feature("autodoc", "1");
@@ -140,9 +140,9 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("autodoc", "1");
 		TopoDS_Shape LastShape();
 		%feature("autodoc", "1");
-		TopoDS_Shape FirstShape(const TopoDS_Shape &aGenS);
+		TopoDS_Shape FirstShape(const TopoDS_Shape aGenS);
 		%feature("autodoc", "1");
-		TopoDS_Shape LastShape(const TopoDS_Shape &aGenS);
+		TopoDS_Shape LastShape(const TopoDS_Shape aGenS);
 		%feature("autodoc", "1");
 		Standard_Boolean Closed() const;
 
@@ -169,9 +169,9 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
-		Standard_Boolean Process(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirV);
+		Standard_Boolean Process(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsInvariant(const TopoDS_Shape &aGenS) const;
+		virtual		Standard_Boolean IsInvariant(const TopoDS_Shape aGenS) const;
 
 };
 %feature("shadow") BRepSweep_Trsf::~BRepSweep_Trsf %{
@@ -194,7 +194,7 @@ def __del__(self):
 class BRepSweep_Translation : public BRepSweep_Trsf {
 	public:
 		%feature("autodoc", "1");
-		BRepSweep_Translation(const TopoDS_Shape &S, const Sweep_NumShape &N, const TopLoc_Location &L, const gp_Vec &V, const Standard_Boolean C, const Standard_Boolean Canonize=1);
+		BRepSweep_Translation(const TopoDS_Shape S, const Sweep_NumShape &N, const TopLoc_Location &L, const gp_Vec V, const Standard_Boolean C, const Standard_Boolean Canonize=1);
 		%feature("autodoc", "1");
 		gp_Vec Vec() const;
 
@@ -221,13 +221,13 @@ class BRepSweep_Iterator {
 		%feature("autodoc", "1");
 		BRepSweep_Iterator();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &aShape);
+		void Init(const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
+		const TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		TopAbs_Orientation Orientation() const;
 
@@ -260,37 +260,37 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 		%feature("autodoc", "1");
 		const BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & operator=(const BRepSweep_SequenceOfShapesOfNumLinearRegularSweep &Other);
 		%feature("autodoc", "1");
-		void Append(const TopoDS_Shape &T);
+		void Append(const TopoDS_Shape T);
 		%feature("autodoc", "1");
 		void Append(BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & S);
 		%feature("autodoc", "1");
-		void Prepend(const TopoDS_Shape &T);
+		void Prepend(const TopoDS_Shape T);
 		%feature("autodoc", "1");
 		void Prepend(BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const TopoDS_Shape &I);
+		void InsertBefore(const Standard_Integer Index, const TopoDS_Shape I);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const TopoDS_Shape &T);
+		void InsertAfter(const Standard_Integer Index, const TopoDS_Shape T);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & S);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & First() const;
+		const TopoDS_Shape  First() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Last() const;
+		const TopoDS_Shape  Last() const;
 		%feature("autodoc", "1");
 		void Split(const Standard_Integer Index, BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & S);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value(const Standard_Integer Index) const;
+		const TopoDS_Shape  Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const Standard_Integer Index) const;
+		const TopoDS_Shape  operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TopoDS_Shape &I);
+		void SetValue(const Standard_Integer Index, const TopoDS_Shape I);
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeValue(const Standard_Integer Index);
+		TopoDS_Shape  ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const Standard_Integer Index);
+		TopoDS_Shape  operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -319,9 +319,9 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 		%feature("autodoc", "1");
 		BRepSweep_Array2OfShapesOfNumLinearRegularSweep(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		BRepSweep_Array2OfShapesOfNumLinearRegularSweep(const TopoDS_Shape &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		BRepSweep_Array2OfShapesOfNumLinearRegularSweep(const TopoDS_Shape Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &V);
+		void Init(const TopoDS_Shape V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -341,15 +341,15 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 		%feature("autodoc", "1");
 		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const TopoDS_Shape &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const TopoDS_Shape Value);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		const TopoDS_Shape  Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		const TopoDS_Shape  operator()(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		TopoDS_Shape  ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
 		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		TopoDS_Shape  operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
 %feature("shadow") BRepSweep_Array2OfShapesOfNumLinearRegularSweep::~BRepSweep_Array2OfShapesOfNumLinearRegularSweep %{
@@ -372,21 +372,21 @@ def __del__(self):
 class BRepSweep_Revol {
 	public:
 		%feature("autodoc", "1");
-		BRepSweep_Revol(const TopoDS_Shape &S, const gp_Ax1 &A, const Quantity_PlaneAngle D, const Standard_Boolean C=0);
+		BRepSweep_Revol(const TopoDS_Shape S, const gp_Ax1 A, const Quantity_PlaneAngle D, const Standard_Boolean C=0);
 		%feature("autodoc", "1");
-		BRepSweep_Revol(const TopoDS_Shape &S, const gp_Ax1 &A, const Standard_Boolean C=0);
+		BRepSweep_Revol(const TopoDS_Shape S, const gp_Ax1 A, const Standard_Boolean C=0);
 		%feature("autodoc", "1");
 		TopoDS_Shape Shape();
 		%feature("autodoc", "1");
-		TopoDS_Shape Shape(const TopoDS_Shape &aGenS);
+		TopoDS_Shape Shape(const TopoDS_Shape aGenS);
 		%feature("autodoc", "1");
 		TopoDS_Shape FirstShape();
 		%feature("autodoc", "1");
-		TopoDS_Shape FirstShape(const TopoDS_Shape &aGenS);
+		TopoDS_Shape FirstShape(const TopoDS_Shape aGenS);
 		%feature("autodoc", "1");
 		TopoDS_Shape LastShape();
 		%feature("autodoc", "1");
-		TopoDS_Shape LastShape(const TopoDS_Shape &aGenS);
+		TopoDS_Shape LastShape(const TopoDS_Shape aGenS);
 		%feature("autodoc", "1");
 		gp_Ax1 Axe() const;
 		%feature("autodoc", "1");
@@ -427,9 +427,9 @@ class BRepSweep_Builder {
 		%feature("autodoc", "1");
 		void MakeWire(TopoDS_Shape & aWire) const;
 		%feature("autodoc", "1");
-		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape &aShape2, const TopAbs_Orientation Orient) const;
+		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape aShape2, const TopAbs_Orientation Orient) const;
 		%feature("autodoc", "1");
-		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape &aShape2) const;
+		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape aShape2) const;
 
 };
 %feature("shadow") BRepSweep_Builder::~BRepSweep_Builder %{
@@ -452,9 +452,9 @@ def __del__(self):
 class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep(const TopoDS_Shape &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep(const TopoDS_Shape I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
+		TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -489,41 +489,41 @@ def __del__(self):
 class BRepSweep_Rotation : public BRepSweep_Trsf {
 	public:
 		%feature("autodoc", "1");
-		BRepSweep_Rotation(const TopoDS_Shape &S, const Sweep_NumShape &N, const TopLoc_Location &L, const gp_Ax1 &A, const Quantity_PlaneAngle D, const Standard_Boolean C);
+		BRepSweep_Rotation(const TopoDS_Shape S, const Sweep_NumShape &N, const TopLoc_Location &L, const gp_Ax1 A, const Quantity_PlaneAngle D, const Standard_Boolean C);
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape MakeEmptyVertex(const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirV);
+		virtual		TopoDS_Shape MakeEmptyVertex(const TopoDS_Shape aGenV, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape MakeEmptyDirectingEdge(const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirE);
+		virtual		TopoDS_Shape MakeEmptyDirectingEdge(const TopoDS_Shape aGenV, const Sweep_NumShape &aDirE);
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape MakeEmptyGeneratingEdge(const TopoDS_Shape &aGenE, const Sweep_NumShape &aDirV);
+		virtual		TopoDS_Shape MakeEmptyGeneratingEdge(const TopoDS_Shape aGenE, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		void SetParameters(const TopoDS_Shape &aNewFace, TopoDS_Shape & aNewVertex, const TopoDS_Shape &aGenF, const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirV);
+		virtual		void SetParameters(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewVertex, const TopoDS_Shape aGenF, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		void SetDirectingParameter(const TopoDS_Shape &aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirE, const Sweep_NumShape &aDirV);
+		virtual		void SetDirectingParameter(const TopoDS_Shape aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirE, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		void SetGeneratingParameter(const TopoDS_Shape &aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape &aGenE, const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirV);
+		virtual		void SetGeneratingParameter(const TopoDS_Shape aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape aGenE, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape MakeEmptyFace(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS);
+		virtual		TopoDS_Shape MakeEmptyFace(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
 		%feature("autodoc", "1");
-		virtual		void SetPCurve(const TopoDS_Shape &aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape &aGenF, const TopoDS_Shape &aGenE, const Sweep_NumShape &aDirV, const TopAbs_Orientation orien);
+		virtual		void SetPCurve(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape aGenF, const TopoDS_Shape aGenE, const Sweep_NumShape &aDirV, const TopAbs_Orientation orien);
 		%feature("autodoc", "1");
-		virtual		void SetGeneratingPCurve(const TopoDS_Shape &aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape &aGenE, const Sweep_NumShape &aDirE, const Sweep_NumShape &aDirV, const TopAbs_Orientation orien);
+		virtual		void SetGeneratingPCurve(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape aGenE, const Sweep_NumShape &aDirE, const Sweep_NumShape &aDirV, const TopAbs_Orientation orien);
 		%feature("autodoc", "1");
-		virtual		void SetDirectingPCurve(const TopoDS_Shape &aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape &aGenE, const TopoDS_Shape &aGenV, const Sweep_NumShape &aDirE, const TopAbs_Orientation orien);
+		virtual		void SetDirectingPCurve(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape aGenE, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirE, const TopAbs_Orientation orien);
 		%feature("autodoc", "1");
-		virtual		TopAbs_Orientation DirectSolid(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS);
+		virtual		TopAbs_Orientation DirectSolid(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean GGDShapeIsToAdd(const TopoDS_Shape &aNewShape, const TopoDS_Shape &aNewSubShape, const TopoDS_Shape &aGenS, const TopoDS_Shape &aSubGenS, const Sweep_NumShape &aDirS) const;
+		virtual		Standard_Boolean GGDShapeIsToAdd(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const TopoDS_Shape aSubGenS, const Sweep_NumShape &aDirS) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean GDDShapeIsToAdd(const TopoDS_Shape &aNewShape, const TopoDS_Shape &aNewSubShape, const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS, const Sweep_NumShape &aSubDirS) const;
+		virtual		Standard_Boolean GDDShapeIsToAdd(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS, const Sweep_NumShape &aSubDirS) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean SeparatedWires(const TopoDS_Shape &aNewShape, const TopoDS_Shape &aNewSubShape, const TopoDS_Shape &aGenS, const TopoDS_Shape &aSubGenS, const Sweep_NumShape &aDirS) const;
+		virtual		Standard_Boolean SeparatedWires(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const TopoDS_Shape aSubGenS, const Sweep_NumShape &aDirS) const;
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape SplitShell(const TopoDS_Shape &aNewShape) const;
+		virtual		TopoDS_Shape SplitShell(const TopoDS_Shape aNewShape) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasShape(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS) const;
+		virtual		Standard_Boolean HasShape(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsInvariant(const TopoDS_Shape &aGenS) const;
+		virtual		Standard_Boolean IsInvariant(const TopoDS_Shape aGenS) const;
 		%feature("autodoc", "1");
 		gp_Ax1 Axe() const;
 		%feature("autodoc", "1");
@@ -550,17 +550,17 @@ def __del__(self):
 class BRepSweep_Tool {
 	public:
 		%feature("autodoc", "1");
-		BRepSweep_Tool(const TopoDS_Shape &aShape);
+		BRepSweep_Tool(const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
 		Standard_Integer NbShapes() const;
 		%feature("autodoc", "1");
-		Standard_Integer Index(const TopoDS_Shape &aShape) const;
+		Standard_Integer Index(const TopoDS_Shape aShape) const;
 		%feature("autodoc", "1");
 		TopoDS_Shape Shape(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
-		TopAbs_ShapeEnum Type(const TopoDS_Shape &aShape) const;
+		TopAbs_ShapeEnum Type(const TopoDS_Shape aShape) const;
 		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation(const TopoDS_Shape &aShape) const;
+		TopAbs_Orientation Orientation(const TopoDS_Shape aShape) const;
 		%feature("autodoc", "1");
 		void SetOrientation(TopoDS_Shape & aShape, const TopAbs_Orientation Or) const;
 
@@ -585,21 +585,21 @@ def __del__(self):
 class BRepSweep_Prism {
 	public:
 		%feature("autodoc", "1");
-		BRepSweep_Prism(const TopoDS_Shape &S, const gp_Vec &V, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
+		BRepSweep_Prism(const TopoDS_Shape S, const gp_Vec V, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
 		%feature("autodoc", "1");
-		BRepSweep_Prism(const TopoDS_Shape &S, const gp_Dir &D, const Standard_Boolean Inf=1, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
+		BRepSweep_Prism(const TopoDS_Shape S, const gp_Dir D, const Standard_Boolean Inf=1, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
 		%feature("autodoc", "1");
 		TopoDS_Shape Shape();
 		%feature("autodoc", "1");
-		TopoDS_Shape Shape(const TopoDS_Shape &aGenS);
+		TopoDS_Shape Shape(const TopoDS_Shape aGenS);
 		%feature("autodoc", "1");
 		TopoDS_Shape FirstShape();
 		%feature("autodoc", "1");
-		TopoDS_Shape FirstShape(const TopoDS_Shape &aGenS);
+		TopoDS_Shape FirstShape(const TopoDS_Shape aGenS);
 		%feature("autodoc", "1");
 		TopoDS_Shape LastShape();
 		%feature("autodoc", "1");
-		TopoDS_Shape LastShape(const TopoDS_Shape &aGenS);
+		TopoDS_Shape LastShape(const TopoDS_Shape aGenS);
 		%feature("autodoc", "1");
 		gp_Vec Vec() const;
 

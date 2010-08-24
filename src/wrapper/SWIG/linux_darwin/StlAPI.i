@@ -86,7 +86,7 @@ class StlAPI_Writer {
 				}
 		};
 		%feature("autodoc", "1");
-		void Write(const TopoDS_Shape &aShape, const char * aFileName);
+		void Write(const TopoDS_Shape aShape, const char * aFileName);
 
 };
 %feature("shadow") StlAPI_Writer::~StlAPI_Writer %{
@@ -136,7 +136,7 @@ class StlAPI {
 		%feature("autodoc", "1");
 		StlAPI();
 		%feature("autodoc", "1");
-		static		void Write(const TopoDS_Shape &aShape, const char * aFile, const Standard_Boolean aAsciiMode=1);
+		static		void Write(const TopoDS_Shape aShape, const char * aFile, const Standard_Boolean aAsciiMode=1);
 		%feature("autodoc", "1");
 		static		void Read(TopoDS_Shape & aShape, const char * aFile);
 

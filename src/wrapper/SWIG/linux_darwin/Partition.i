@@ -58,15 +58,15 @@ class Partition_Spliter {
 		%feature("autodoc", "1");
 		Partition_Spliter();
 		%feature("autodoc", "1");
-		void AddShape(const TopoDS_Shape &S);
+		void AddShape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void AddTool(const TopoDS_Shape &S);
+		void AddTool(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void Compute(const TopAbs_ShapeEnum Limit=TopAbs_SHAPE);
 		%feature("autodoc", "1");
-		void KeepShapesInside(const TopoDS_Shape &S);
+		void KeepShapesInside(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void RemoveShapesInside(const TopoDS_Shape &S);
+		void RemoveShapesInside(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		TopoDS_Shape Shape() const;
 		%feature("autodoc", "1");
@@ -95,11 +95,11 @@ class Partition_Loop2d {
 		%feature("autodoc", "1");
 		Partition_Loop2d();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
+		void Init(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void AddConstEdge(const TopoDS_Edge &E);
+		void AddConstEdge(const TopoDS_Edge E);
 		%feature("autodoc", "1");
-		void AddSectionEdge(const TopoDS_Edge &E);
+		void AddSectionEdge(const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
@@ -132,16 +132,16 @@ class Partition_Loop3d {
 		%feature("autodoc", "1");
 		Partition_Loop3d();
 		%feature("autodoc", "1");
-		void AddConstFaces(const TopoDS_Shape &S);
+		void AddConstFaces(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void AddSectionFaces(const TopoDS_Shape &S);
+		void AddSectionFaces(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & MakeShells(const TopTools_MapOfOrientedShape &AvoidFacesMap);
 		%feature("autodoc","IsInside(const E, const F1, const F2, Standard_Boolean CountDot) -> Standard_Real");
 
-		static		Standard_Boolean IsInside(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const Standard_Boolean CountDot, Standard_Real &OutValue, Standard_Boolean & GoodOri);
+		static		Standard_Boolean IsInside(const TopoDS_Edge E, const TopoDS_Face F1, const TopoDS_Face F2, const Standard_Boolean CountDot, Standard_Real &OutValue, Standard_Boolean & GoodOri);
 		%feature("autodoc", "1");
-		static		gp_Vec Normal(const TopoDS_Edge &E, const TopoDS_Face &F);
+		static		gp_Vec Normal(const TopoDS_Edge E, const TopoDS_Face F);
 
 };
 %feature("shadow") Partition_Loop3d::~Partition_Loop3d %{
@@ -166,9 +166,9 @@ class Partition_Loop {
 		%feature("autodoc", "1");
 		Partition_Loop();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
+		void Init(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void AddConstEdge(const TopoDS_Edge &E);
+		void AddConstEdge(const TopoDS_Edge E);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
@@ -205,9 +205,9 @@ class Partition_Inter3d {
 		%feature("autodoc", "1");
 		void CompletPart3d(const TopTools_ListOfShape &SetOfFaces1, const TopTools_DataMapOfShapeShape &FaceShapeMap);
 		%feature("autodoc", "1");
-		void FacesPartition(const TopoDS_Face &F1, const TopoDS_Face &F2);
+		void FacesPartition(const TopoDS_Face F1, const TopoDS_Face F2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone(const TopoDS_Face &F1, const TopoDS_Face &F2) const;
+		Standard_Boolean IsDone(const TopoDS_Face F1, const TopoDS_Face F2) const;
 		%feature("autodoc", "1");
 		TopTools_MapOfShape & TouchedFaces();
 		%feature("autodoc", "1");
@@ -215,23 +215,23 @@ class Partition_Inter3d {
 		%feature("autodoc", "1");
 		TopTools_MapOfShape & NewEdges();
 		%feature("autodoc", "1");
-		Standard_Boolean HasSameDomainF(const TopoDS_Shape &F) const;
+		Standard_Boolean HasSameDomainF(const TopoDS_Shape F) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSameDomainF(const TopoDS_Shape &F1, const TopoDS_Shape &F2) const;
+		Standard_Boolean IsSameDomainF(const TopoDS_Shape F1, const TopoDS_Shape F2) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & SameDomain(const TopoDS_Face &F) const;
+		const TopTools_ListOfShape & SameDomain(const TopoDS_Face F) const;
 		%feature("autodoc", "1");
-		TopoDS_Vertex ReplaceSameDomainV(const TopoDS_Vertex &V, const TopoDS_Edge &E) const;
+		TopoDS_Vertex ReplaceSameDomainV(const TopoDS_Vertex V, const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_AsDes SectionEdgesAD() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSectionEdge(const TopoDS_Edge &E) const;
+		Standard_Boolean IsSectionEdge(const TopoDS_Edge E) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasSectionEdge(const TopoDS_Face &F) const;
+		Standard_Boolean HasSectionEdge(const TopoDS_Face F) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSplitOn(const TopoDS_Edge &NewE, const TopoDS_Edge &OldE, const TopoDS_Face &F) const;
+		Standard_Boolean IsSplitOn(const TopoDS_Edge NewE, const TopoDS_Edge OldE, const TopoDS_Face F) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & SectionEdgeFaces(const TopoDS_Edge &SecE) const;
+		const TopTools_ListOfShape & SectionEdgeFaces(const TopoDS_Edge SecE) const;
 
 };
 %feature("shadow") Partition_Inter3d::~Partition_Inter3d %{
@@ -256,14 +256,14 @@ class Partition_Inter2d {
 		%feature("autodoc", "1");
 		Partition_Inter2d();
 		%feature("autodoc", "1");
-		static		void CompletPart2d(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges);
+		static		void CompletPart2d(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face F, const TopTools_MapOfShape &NewEdges);
 		%feature("autodoc","FindEndVertex(const VertList, Standard_Real f, Standard_Real l, const E) -> Standard_Real");
 
-		static		TopoDS_Vertex FindEndVertex(const TopTools_ListOfShape &VertList, const Standard_Real f, const Standard_Real l, const TopoDS_Edge &E, Standard_Boolean & First, Standard_Real &OutValue);
+		static		TopoDS_Vertex FindEndVertex(const TopTools_ListOfShape &VertList, const Standard_Real f, const Standard_Real l, const TopoDS_Edge E, Standard_Boolean & First, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		static		TopoDS_Vertex AddVonE(const TopoDS_Vertex &V, const TopoDS_Edge &E1, const TopoDS_Edge &E2, const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F);
+		static		TopoDS_Vertex AddVonE(const TopoDS_Vertex V, const TopoDS_Edge E1, const TopoDS_Edge E2, const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face F);
 		%feature("autodoc", "1");
-		static		Standard_Real GetTolerance(const TopoDS_Vertex &theV, const Standard_Real theU, const TopoDS_Edge &theE, const Handle_BRepAlgo_AsDes &theAsDes);
+		static		Standard_Real GetTolerance(const TopoDS_Vertex theV, const Standard_Real theU, const TopoDS_Edge theE, const Handle_BRepAlgo_AsDes &theAsDes);
 
 };
 %feature("shadow") Partition_Inter2d::~Partition_Inter2d %{

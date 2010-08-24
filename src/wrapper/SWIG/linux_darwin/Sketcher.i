@@ -64,7 +64,7 @@ class Sketcher_Profile {
 		%feature("autodoc", "1");
 		gp_Dir GetLastDir();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape();
+		const TopoDS_Shape  GetShape();
 		%feature("autodoc", "1");
 		bool IsDone();
 

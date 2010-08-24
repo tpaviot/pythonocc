@@ -102,7 +102,7 @@ class ShapeConstruct {
 		%feature("autodoc", "1");
 		static		Handle_Geom_BSplineSurface ConvertSurfaceToBSpline(const Handle_Geom_Surface &surf, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");
-		static		Standard_Boolean JoinPCurves(const Handle_TopTools_HSequenceOfShape &theEdges, const TopoDS_Face &theFace, TopoDS_Edge & theEdge);
+		static		Standard_Boolean JoinPCurves(const Handle_TopTools_HSequenceOfShape &theEdges, const TopoDS_Face theFace, TopoDS_Edge & theEdge);
 		%feature("autodoc","JoinCurves(const c3d1, const ac3d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		static		Standard_Boolean JoinCurves(const Handle_Geom_Curve &c3d1, const Handle_Geom_Curve &ac3d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom_Curve & c3dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2);
@@ -247,11 +247,11 @@ class ShapeConstruct_Curve {
 		%feature("autodoc", "1");
 		ShapeConstruct_Curve();
 		%feature("autodoc", "1");
-		Standard_Boolean AdjustCurve(const Handle_Geom_Curve &C3D, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Boolean take1=1, const Standard_Boolean take2=1) const;
+		Standard_Boolean AdjustCurve(const Handle_Geom_Curve &C3D, const gp_Pnt P1, const gp_Pnt P2, const Standard_Boolean take1=1, const Standard_Boolean take2=1) const;
 		%feature("autodoc", "1");
-		Standard_Boolean AdjustCurveSegment(const Handle_Geom_Curve &C3D, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Real U1, const Standard_Real U2) const;
+		Standard_Boolean AdjustCurveSegment(const Handle_Geom_Curve &C3D, const gp_Pnt P1, const gp_Pnt P2, const Standard_Real U1, const Standard_Real U2) const;
 		%feature("autodoc", "1");
-		Standard_Boolean AdjustCurve2d(const Handle_Geom2d_Curve &C2D, const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Boolean take1=1, const Standard_Boolean take2=1) const;
+		Standard_Boolean AdjustCurve2d(const Handle_Geom2d_Curve &C2D, const gp_Pnt2d P1, const gp_Pnt2d P2, const Standard_Boolean take1=1, const Standard_Boolean take2=1) const;
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve ConvertToBSpline(const Handle_Geom_Curve &C, const Standard_Real first, const Standard_Real last, const Standard_Real prec) const;
 		%feature("autodoc", "1");
@@ -284,7 +284,7 @@ class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		ShapeConstruct_MakeTriangulation(const TColgp_Array1OfPnt &pnts, const Standard_Real prec=0.0);
 		%feature("autodoc", "1");
-		ShapeConstruct_MakeTriangulation(const TopoDS_Wire &wire, const Standard_Real prec=0.0);
+		ShapeConstruct_MakeTriangulation(const TopoDS_Wire wire, const Standard_Real prec=0.0);
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");

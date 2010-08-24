@@ -189,9 +189,9 @@ def __del__(self):
 class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		Convert_CircleToBSplineCurve(const gp_Circ2d &C, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+		Convert_CircleToBSplineCurve(const gp_Circ2d C, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 		%feature("autodoc", "1");
-		Convert_CircleToBSplineCurve(const gp_Circ2d &C, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+		Convert_CircleToBSplineCurve(const gp_Circ2d C, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 
 };
 %feature("shadow") Convert_CircleToBSplineCurve::~Convert_CircleToBSplineCurve %{
@@ -266,9 +266,9 @@ def __del__(self):
 class Convert_ConeToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		Convert_ConeToBSplineSurface(const gp_Cone &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
+		Convert_ConeToBSplineSurface(const gp_Cone C, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
 		%feature("autodoc", "1");
-		Convert_ConeToBSplineSurface(const gp_Cone &C, const Standard_Real V1, const Standard_Real V2);
+		Convert_ConeToBSplineSurface(const gp_Cone C, const Standard_Real V1, const Standard_Real V2);
 
 };
 %feature("shadow") Convert_ConeToBSplineSurface::~Convert_ConeToBSplineSurface %{
@@ -291,11 +291,11 @@ def __del__(self):
 class Convert_TorusToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		Convert_TorusToBSplineSurface(const gp_Torus &T, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
+		Convert_TorusToBSplineSurface(const gp_Torus T, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
 		%feature("autodoc", "1");
-		Convert_TorusToBSplineSurface(const gp_Torus &T, const Standard_Real Param1, const Standard_Real Param2, const Standard_Boolean UTrim=1);
+		Convert_TorusToBSplineSurface(const gp_Torus T, const Standard_Real Param1, const Standard_Real Param2, const Standard_Boolean UTrim=1);
 		%feature("autodoc", "1");
-		Convert_TorusToBSplineSurface(const gp_Torus &T);
+		Convert_TorusToBSplineSurface(const gp_Torus T);
 
 };
 %feature("shadow") Convert_TorusToBSplineSurface::~Convert_TorusToBSplineSurface %{
@@ -355,7 +355,7 @@ def __del__(self):
 class Convert_HyperbolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		Convert_HyperbolaToBSplineCurve(const gp_Hypr2d &H, const Standard_Real U1, const Standard_Real U2);
+		Convert_HyperbolaToBSplineCurve(const gp_Hypr2d H, const Standard_Real U1, const Standard_Real U2);
 
 };
 %feature("shadow") Convert_HyperbolaToBSplineCurve::~Convert_HyperbolaToBSplineCurve %{
@@ -429,7 +429,7 @@ def __del__(self):
 class Convert_ParabolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		Convert_ParabolaToBSplineCurve(const gp_Parab2d &Prb, const Standard_Real U1, const Standard_Real U2);
+		Convert_ParabolaToBSplineCurve(const gp_Parab2d Prb, const Standard_Real U1, const Standard_Real U2);
 
 };
 %feature("shadow") Convert_ParabolaToBSplineCurve::~Convert_ParabolaToBSplineCurve %{
@@ -489,9 +489,9 @@ def __del__(self):
 class Convert_EllipseToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		Convert_EllipseToBSplineCurve(const gp_Elips2d &E, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+		Convert_EllipseToBSplineCurve(const gp_Elips2d E, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 		%feature("autodoc", "1");
-		Convert_EllipseToBSplineCurve(const gp_Elips2d &E, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+		Convert_EllipseToBSplineCurve(const gp_Elips2d E, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 
 };
 %feature("shadow") Convert_EllipseToBSplineCurve::~Convert_EllipseToBSplineCurve %{
@@ -514,9 +514,9 @@ def __del__(self):
 class Convert_CylinderToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		Convert_CylinderToBSplineSurface(const gp_Cylinder &Cyl, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
+		Convert_CylinderToBSplineSurface(const gp_Cylinder Cyl, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
 		%feature("autodoc", "1");
-		Convert_CylinderToBSplineSurface(const gp_Cylinder &Cyl, const Standard_Real V1, const Standard_Real V2);
+		Convert_CylinderToBSplineSurface(const gp_Cylinder Cyl, const Standard_Real V1, const Standard_Real V2);
 
 };
 %feature("shadow") Convert_CylinderToBSplineSurface::~Convert_CylinderToBSplineSurface %{
@@ -784,11 +784,11 @@ def __del__(self):
 class Convert_SphereToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		Convert_SphereToBSplineSurface(const gp_Sphere &Sph, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
+		Convert_SphereToBSplineSurface(const gp_Sphere Sph, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
 		%feature("autodoc", "1");
-		Convert_SphereToBSplineSurface(const gp_Sphere &Sph, const Standard_Real Param1, const Standard_Real Param2, const Standard_Boolean UTrim=1);
+		Convert_SphereToBSplineSurface(const gp_Sphere Sph, const Standard_Real Param1, const Standard_Real Param2, const Standard_Boolean UTrim=1);
 		%feature("autodoc", "1");
-		Convert_SphereToBSplineSurface(const gp_Sphere &Sph);
+		Convert_SphereToBSplineSurface(const gp_Sphere Sph);
 
 };
 %feature("shadow") Convert_SphereToBSplineSurface::~Convert_SphereToBSplineSurface %{

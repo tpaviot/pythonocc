@@ -233,9 +233,9 @@ class Voxel_CollisionDetection {
 		%feature("autodoc", "1");
 		Voxel_CollisionDetection(const Standard_Real deflection, const Standard_Integer nbx, const Standard_Integer nby, const Standard_Integer nbz);
 		%feature("autodoc", "1");
-		Standard_Integer AddShape(const TopoDS_Shape &shape);
+		Standard_Integer AddShape(const TopoDS_Shape shape);
 		%feature("autodoc", "1");
-		Standard_Boolean ReplaceShape(const Standard_Integer ishape, const TopoDS_Shape &shape);
+		Standard_Boolean ReplaceShape(const Standard_Integer ishape, const TopoDS_Shape shape);
 		%feature("autodoc", "1");
 		void SetDeflection(const Standard_Real deflection);
 		%feature("autodoc", "1");
@@ -345,9 +345,9 @@ def __del__(self):
 class Voxel_FastConverter {
 	public:
 		%feature("autodoc", "1");
-		Voxel_FastConverter(const TopoDS_Shape &shape, Voxel_BoolDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
+		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_BoolDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
 		%feature("autodoc", "1");
-		Voxel_FastConverter(const TopoDS_Shape &shape, Voxel_ColorDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
+		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_ColorDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
 		%feature("autodoc","Convert(Standard_Integer ithread=1) -> Standard_Integer");
 
 		Standard_Boolean Convert(Standard_Integer &OutValue, const Standard_Integer ithread=1);

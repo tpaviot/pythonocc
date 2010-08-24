@@ -899,15 +899,15 @@ class PXCAFDoc_Centroid : public PDF_Attribute {
 		%feature("autodoc", "1");
 		PXCAFDoc_Centroid();
 		%feature("autodoc", "1");
-		PXCAFDoc_Centroid(const gp_Pnt &pnt);
+		PXCAFDoc_Centroid(const gp_Pnt pnt);
 		%feature("autodoc", "1");
-		void Set(const gp_Pnt &pnt);
+		void Set(const gp_Pnt pnt);
 		%feature("autodoc", "1");
 		gp_Pnt Get() const;
 		%feature("autodoc", "1");
 		PXCAFDoc_Centroid(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetPXCAFDoc_CentroidmyPCentroid() const;
+		const gp_Pnt  _CSFDB_GetPXCAFDoc_CentroidmyPCentroid() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

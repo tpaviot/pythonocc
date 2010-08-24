@@ -666,7 +666,7 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 		%feature("autodoc", "1");
 		PrsMgr_TypeOfPresentation3d TypeOfPresentation3d() const;
 		%feature("autodoc", "1");
-		virtual		void SetTransformPersistence(const Graphic3d_TransModeFlags &aFlag, const gp_Pnt &APoint);
+		virtual		void SetTransformPersistence(const Graphic3d_TransModeFlags &aFlag, const gp_Pnt APoint);
 		%feature("autodoc", "1");
 		void SetTransformPersistence(const Graphic3d_TransModeFlags &aFlag);
 		%feature("autodoc", "1");

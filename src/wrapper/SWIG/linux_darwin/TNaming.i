@@ -574,24 +574,24 @@ class TNaming_Tool {
 		%feature("autodoc", "1");
 		static		Handle_TNaming_NamedShape CurrentNamedShape(const Handle_TNaming_NamedShape &NS);
 		%feature("autodoc", "1");
-		static		Handle_TNaming_NamedShape NamedShape(const TopoDS_Shape &aShape, const TDF_Label &anAcces);
+		static		Handle_TNaming_NamedShape NamedShape(const TopoDS_Shape aShape, const TDF_Label &anAcces);
 		%feature("autodoc", "1");
 		static		TopoDS_Shape GetShape(const Handle_TNaming_NamedShape &NS);
 		%feature("autodoc", "1");
 		static		TopoDS_Shape OriginalShape(const Handle_TNaming_NamedShape &NS);
 		%feature("autodoc", "1");
-		static		TopoDS_Shape GeneratedShape(const TopoDS_Shape &S, const Handle_TNaming_NamedShape &Generation);
+		static		TopoDS_Shape GeneratedShape(const TopoDS_Shape S, const Handle_TNaming_NamedShape &Generation);
 		%feature("autodoc", "1");
 		static		void Collect(const Handle_TNaming_NamedShape &NS, TNaming_MapOfNamedShape & Labels, const Standard_Boolean OnlyModif=1);
 		%feature("autodoc", "1");
-		static		Standard_Boolean HasLabel(const TDF_Label &access, const TopoDS_Shape &aShape);
+		static		Standard_Boolean HasLabel(const TDF_Label &access, const TopoDS_Shape aShape);
 		%feature("autodoc","Label(const access, const aShape) -> Standard_Integer");
 
-		static		TDF_Label Label(const TDF_Label &access, const TopoDS_Shape &aShape, Standard_Integer &OutValue);
+		static		TDF_Label Label(const TDF_Label &access, const TopoDS_Shape aShape, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		static		TopoDS_Shape InitialShape(const TopoDS_Shape &aShape, const TDF_Label &anAcces, TDF_LabelList & Labels);
+		static		TopoDS_Shape InitialShape(const TopoDS_Shape aShape, const TDF_Label &anAcces, TDF_LabelList & Labels);
 		%feature("autodoc", "1");
-		static		Standard_Integer ValidUntil(const TDF_Label &access, const TopoDS_Shape &S);
+		static		Standard_Integer ValidUntil(const TDF_Label &access, const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		static		void FindShape(const TDF_LabelMap &Valid, const TDF_LabelMap &Forbiden, const Handle_TNaming_NamedShape &Arg, TopoDS_Shape & S);
 
@@ -622,7 +622,7 @@ class TNaming_Name {
 		%feature("autodoc", "1");
 		void ShapeType(const TopAbs_ShapeEnum aType);
 		%feature("autodoc", "1");
-		void Shape(const TopoDS_Shape &theShape);
+		void Shape(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
 		void Append(const Handle_TNaming_NamedShape &arg);
 		%feature("autodoc", "1");
@@ -734,7 +734,7 @@ class TNaming_NamingTool {
 		%feature("autodoc", "1");
 		static		void CurrentShape(const TDF_LabelMap &Valid, const TDF_LabelMap &Forbiden, const Handle_TNaming_NamedShape &NS, TopTools_MapOfShape & MS);
 		%feature("autodoc", "1");
-		static		void CurrentShapeFromShape(const TDF_LabelMap &Valid, const TDF_LabelMap &Forbiden, const TDF_Label &Acces, const TopoDS_Shape &S, TopTools_MapOfShape & MS);
+		static		void CurrentShapeFromShape(const TDF_LabelMap &Valid, const TDF_LabelMap &Forbiden, const TDF_Label &Acces, const TopoDS_Shape S, TopTools_MapOfShape & MS);
 		%feature("autodoc", "1");
 		static		void BuildDescendants(const Handle_TNaming_NamedShape &NS, TDF_LabelMap & Labels);
 
@@ -761,7 +761,7 @@ class TNaming_TranslateTool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TNaming_TranslateTool();
 		%feature("autodoc", "1");
-		void Add(TopoDS_Shape & S1, const TopoDS_Shape &S2) const;
+		void Add(TopoDS_Shape & S1, const TopoDS_Shape S2) const;
 		%feature("autodoc", "1");
 		void MakeVertex(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
@@ -779,13 +779,13 @@ class TNaming_TranslateTool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void MakeCompound(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
-		void UpdateVertex(const TopoDS_Shape &S1, TopoDS_Shape & S2, TColStd_IndexedDataMapOfTransientTransient & M) const;
+		void UpdateVertex(const TopoDS_Shape S1, TopoDS_Shape & S2, TColStd_IndexedDataMapOfTransientTransient & M) const;
 		%feature("autodoc", "1");
-		void UpdateEdge(const TopoDS_Shape &S1, TopoDS_Shape & S2, TColStd_IndexedDataMapOfTransientTransient & M) const;
+		void UpdateEdge(const TopoDS_Shape S1, TopoDS_Shape & S2, TColStd_IndexedDataMapOfTransientTransient & M) const;
 		%feature("autodoc", "1");
-		void UpdateFace(const TopoDS_Shape &S1, TopoDS_Shape & S2, TColStd_IndexedDataMapOfTransientTransient & M) const;
+		void UpdateFace(const TopoDS_Shape S1, TopoDS_Shape & S2, TColStd_IndexedDataMapOfTransientTransient & M) const;
 		%feature("autodoc", "1");
-		void UpdateShape(const TopoDS_Shape &S1, TopoDS_Shape & S2) const;
+		void UpdateShape(const TopoDS_Shape S1, TopoDS_Shape & S2) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -867,7 +867,7 @@ class TNaming_IteratorOnShapesSet {
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
+		const TopoDS_Shape  Value() const;
 
 };
 %feature("shadow") TNaming_IteratorOnShapesSet::~TNaming_IteratorOnShapesSet %{
@@ -892,17 +892,17 @@ class TNaming_Builder {
 		%feature("autodoc", "1");
 		TNaming_Builder(const TDF_Label &aLabel);
 		%feature("autodoc", "1");
-		void Generated(const TopoDS_Shape &newShape);
+		void Generated(const TopoDS_Shape newShape);
 		%feature("autodoc", "1");
-		void Generated(const TopoDS_Shape &oldShape, const TopoDS_Shape &newShape);
+		void Generated(const TopoDS_Shape oldShape, const TopoDS_Shape newShape);
 		%feature("autodoc", "1");
-		void Delete(const TopoDS_Shape &oldShape);
+		void Delete(const TopoDS_Shape oldShape);
 		%feature("autodoc", "1");
-		void Modify(const TopoDS_Shape &oldShape, const TopoDS_Shape &newShape);
+		void Modify(const TopoDS_Shape oldShape, const TopoDS_Shape newShape);
 		%feature("autodoc", "1");
-		void Replace(const TopoDS_Shape &oldShape, const TopoDS_Shape &newShape);
+		void Replace(const TopoDS_Shape oldShape, const TopoDS_Shape newShape);
 		%feature("autodoc", "1");
-		void Select(const TopoDS_Shape &aShape, const TopoDS_Shape &inShape);
+		void Select(const TopoDS_Shape aShape, const TopoDS_Shape inShape);
 		%feature("autodoc", "1");
 		Handle_TNaming_NamedShape NamedShape() const;
 
@@ -1073,15 +1073,15 @@ class TNaming_ShapesSet {
 		%feature("autodoc", "1");
 		TNaming_ShapesSet();
 		%feature("autodoc", "1");
-		TNaming_ShapesSet(const TopoDS_Shape &S, const TopAbs_ShapeEnum Type=TopAbs_SHAPE);
+		TNaming_ShapesSet(const TopoDS_Shape S, const TopAbs_ShapeEnum Type=TopAbs_SHAPE);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Add(const TopoDS_Shape &S);
+		Standard_Boolean Add(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &S) const;
+		Standard_Boolean Contains(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const TopoDS_Shape &S);
+		Standard_Boolean Remove(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void Add(const TNaming_ShapesSet &Shapes);
 		%feature("autodoc", "1");
@@ -1242,13 +1242,13 @@ class TNaming_Translator {
 		%feature("autodoc", "1");
 		TNaming_Translator();
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &aShape);
+		void Add(const TopoDS_Shape aShape);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape const Copied(const TopoDS_Shape &aShape) const;
+		TopoDS_Shape const Copied(const TopoDS_Shape aShape) const;
 		%feature("autodoc", "1");
 		const TopTools_DataMapOfShapeShape & Copied() const;
 		%feature("autodoc", "1");
@@ -1326,15 +1326,15 @@ class TNaming_RefShape {
 		%feature("autodoc", "1");
 		TNaming_RefShape();
 		%feature("autodoc", "1");
-		TNaming_RefShape(const TopoDS_Shape &S);
+		TNaming_RefShape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Shape(const TopoDS_Shape &S);
+		void Shape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void FirstUse(const TNaming_PtrNode &pdn);
 		%feature("autodoc", "1");
 		TNaming_PtrNode FirstUse() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		TDF_Label Label() const;
 		%feature("autodoc", "1");
@@ -1367,7 +1367,7 @@ class TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape : public TCollection_Ba
 		%feature("autodoc", "1");
 		void Initialize(const TNaming_DataMapOfShapePtrRefShape &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const TNaming_PtrRefShape & Value() const;
 
@@ -1402,9 +1402,9 @@ class TNaming_Iterator {
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & OldShape() const;
+		const TopoDS_Shape  OldShape() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & NewShape() const;
+		const TopoDS_Shape  NewShape() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsModification() const;
 		%feature("autodoc", "1");
@@ -1431,7 +1431,7 @@ def __del__(self):
 class TNaming_SameShapeIterator {
 	public:
 		%feature("autodoc", "1");
-		TNaming_SameShapeIterator(const TopoDS_Shape &aShape, const TDF_Label &access);
+		TNaming_SameShapeIterator(const TopoDS_Shape aShape, const TDF_Label &access);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
@@ -1499,9 +1499,9 @@ class TNaming_CopyShape {
 		%feature("autodoc", "1");
 		TNaming_CopyShape();
 		%feature("autodoc", "1");
-		static		void CopyTool(const TopoDS_Shape &aShape, TColStd_IndexedDataMapOfTransientTransient & aMap, TopoDS_Shape & aResult);
+		static		void CopyTool(const TopoDS_Shape aShape, TColStd_IndexedDataMapOfTransientTransient & aMap, TopoDS_Shape & aResult);
 		%feature("autodoc", "1");
-		static		void Translate(const TopoDS_Shape &aShape, TColStd_IndexedDataMapOfTransientTransient & aMap, TopoDS_Shape & aResult, const Handle_TNaming_TranslateTool &TrTool);
+		static		void Translate(const TopoDS_Shape aShape, TColStd_IndexedDataMapOfTransientTransient & aMap, TopoDS_Shape & aResult, const Handle_TNaming_TranslateTool &TrTool);
 		%feature("autodoc", "1");
 		static		TopLoc_Location Translate(const TopLoc_Location &L, TColStd_IndexedDataMapOfTransientTransient & aMap);
 
@@ -1526,9 +1526,9 @@ def __del__(self):
 class TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TNaming_DataMapNodeOfDataMapOfShapeShapesSet(const TopoDS_Shape &K, const TNaming_ShapesSet &I, const TCollection_MapNodePtr &n);
+		TNaming_DataMapNodeOfDataMapOfShapeShapesSet(const TopoDS_Shape K, const TNaming_ShapesSet &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		TNaming_ShapesSet & Value() const;
 		%feature("autodoc", "1");
@@ -1602,13 +1602,13 @@ def __del__(self):
 class TNaming_Selector {
 	public:
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsIdentified(const TDF_Label &access, const TopoDS_Shape &selection, Handle_TNaming_NamedShape & NS, const Standard_Boolean Geometry=0);
+		static		Standard_Boolean IsIdentified(const TDF_Label &access, const TopoDS_Shape selection, Handle_TNaming_NamedShape & NS, const Standard_Boolean Geometry=0);
 		%feature("autodoc", "1");
 		TNaming_Selector(const TDF_Label &aLabel);
 		%feature("autodoc", "1");
-		Standard_Boolean Select(const TopoDS_Shape &Selection, const TopoDS_Shape &Context, const Standard_Boolean Geometry=0) const;
+		Standard_Boolean Select(const TopoDS_Shape Selection, const TopoDS_Shape Context, const Standard_Boolean Geometry=0) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Select(const TopoDS_Shape &Selection, const Standard_Boolean Geometry=0) const;
+		Standard_Boolean Select(const TopoDS_Shape Selection, const Standard_Boolean Geometry=0) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Solve(TDF_LabelMap & Valid) const;
 		%feature("autodoc", "1");
@@ -1884,9 +1884,9 @@ def __del__(self):
 class TNaming_OldShapeIterator {
 	public:
 		%feature("autodoc", "1");
-		TNaming_OldShapeIterator(const TopoDS_Shape &aShape, const Standard_Integer Transaction, const TDF_Label &access);
+		TNaming_OldShapeIterator(const TopoDS_Shape aShape, const Standard_Integer Transaction, const TDF_Label &access);
 		%feature("autodoc", "1");
-		TNaming_OldShapeIterator(const TopoDS_Shape &aShape, const TDF_Label &access);
+		TNaming_OldShapeIterator(const TopoDS_Shape aShape, const TDF_Label &access);
 		%feature("autodoc", "1");
 		TNaming_OldShapeIterator(const TNaming_OldShapeIterator &anIterator);
 		%feature("autodoc", "1");
@@ -1900,7 +1900,7 @@ class TNaming_OldShapeIterator {
 		%feature("autodoc", "1");
 		Handle_TNaming_NamedShape NamedShape() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsModification() const;
 
@@ -1954,9 +1954,9 @@ def __del__(self):
 class TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TNaming_DataMapNodeOfDataMapOfShapePtrRefShape(const TopoDS_Shape &K, const TNaming_PtrRefShape &I, const TCollection_MapNodePtr &n);
+		TNaming_DataMapNodeOfDataMapOfShapePtrRefShape(const TopoDS_Shape K, const TNaming_PtrRefShape &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		TNaming_PtrRefShape & Value() const;
 		%feature("autodoc", "1");
@@ -1999,7 +1999,7 @@ class TNaming_DataMapIteratorOfDataMapOfShapeShapesSet : public TCollection_Basi
 		%feature("autodoc", "1");
 		void Initialize(const TNaming_DataMapOfShapeShapesSet &aMap);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
 		const TNaming_ShapesSet & Value() const;
 
@@ -2028,23 +2028,23 @@ class TNaming_Localizer {
 		%feature("autodoc", "1");
 		void Init(const Handle_TNaming_UsedShapes &US, const Standard_Integer CurTrans);
 		%feature("autodoc", "1");
-		const TopTools_MapOfShape & SubShapes(const TopoDS_Shape &S, const TopAbs_ShapeEnum Type);
+		const TopTools_MapOfShape & SubShapes(const TopoDS_Shape S, const TopAbs_ShapeEnum Type);
 		%feature("autodoc", "1");
-		const TopTools_IndexedDataMapOfShapeListOfShape & Ancestors(const TopoDS_Shape &S, const TopAbs_ShapeEnum Type);
+		const TopTools_IndexedDataMapOfShapeListOfShape & Ancestors(const TopoDS_Shape S, const TopAbs_ShapeEnum Type);
 		%feature("autodoc", "1");
-		void FindFeaturesInAncestors(const TopoDS_Shape &S, const TopoDS_Shape &In, TopTools_MapOfShape & AncInFeatures);
+		void FindFeaturesInAncestors(const TopoDS_Shape S, const TopoDS_Shape In, TopTools_MapOfShape & AncInFeatures);
 		%feature("autodoc", "1");
-		void GoBack(const TopoDS_Shape &S, const TDF_Label &Lab, const TNaming_Evolution Evol, TopTools_ListOfShape & OldS, TNaming_ListOfNamedShape & OldLab);
+		void GoBack(const TopoDS_Shape S, const TDF_Label &Lab, const TNaming_Evolution Evol, TopTools_ListOfShape & OldS, TNaming_ListOfNamedShape & OldLab);
 		%feature("autodoc", "1");
-		void Backward(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape &S, TNaming_MapOfNamedShape & Primitives, TopTools_MapOfShape & ValidShapes);
+		void Backward(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape S, TNaming_MapOfNamedShape & Primitives, TopTools_MapOfShape & ValidShapes);
 		%feature("autodoc", "1");
-		void FindNeighbourg(const TopoDS_Shape &Cont, const TopoDS_Shape &S, TopTools_MapOfShape & Neighbourg);
+		void FindNeighbourg(const TopoDS_Shape Cont, const TopoDS_Shape S, TopTools_MapOfShape & Neighbourg);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsNew(const TopoDS_Shape &S, const Handle_TNaming_NamedShape &NS);
+		static		Standard_Boolean IsNew(const TopoDS_Shape S, const Handle_TNaming_NamedShape &NS);
 		%feature("autodoc", "1");
-		static		void FindGenerator(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape &S, TopTools_ListOfShape & theListOfGenerators);
+		static		void FindGenerator(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape S, TopTools_ListOfShape & theListOfGenerators);
 		%feature("autodoc", "1");
-		static		void FindShapeContext(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape &theS, TopoDS_Shape & theSC);
+		static		void FindShapeContext(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape theS, TopoDS_Shape & theSC);
 
 };
 %feature("shadow") TNaming_Localizer::~TNaming_Localizer %{
@@ -2077,19 +2077,19 @@ class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const TNaming_PtrRefShape &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const TNaming_PtrRefShape &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const TNaming_PtrRefShape & Find(const TopoDS_Shape &K) const;
+		const TNaming_PtrRefShape & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TNaming_PtrRefShape & operator()(const TopoDS_Shape &K) const;
+		const TNaming_PtrRefShape & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		TNaming_PtrRefShape & ChangeFind(const TopoDS_Shape &K);
+		TNaming_PtrRefShape & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		TNaming_PtrRefShape & operator()(const TopoDS_Shape &K);
+		TNaming_PtrRefShape & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") TNaming_DataMapOfShapePtrRefShape::~TNaming_DataMapOfShapePtrRefShape %{
@@ -2112,9 +2112,9 @@ def __del__(self):
 class TNaming_NewShapeIterator {
 	public:
 		%feature("autodoc", "1");
-		TNaming_NewShapeIterator(const TopoDS_Shape &aShape, const Standard_Integer Transaction, const TDF_Label &access);
+		TNaming_NewShapeIterator(const TopoDS_Shape aShape, const Standard_Integer Transaction, const TDF_Label &access);
 		%feature("autodoc", "1");
-		TNaming_NewShapeIterator(const TopoDS_Shape &aShape, const TDF_Label &access);
+		TNaming_NewShapeIterator(const TopoDS_Shape aShape, const TDF_Label &access);
 		%feature("autodoc", "1");
 		TNaming_NewShapeIterator(const TNaming_NewShapeIterator &anIterator);
 		%feature("autodoc", "1");
@@ -2128,7 +2128,7 @@ class TNaming_NewShapeIterator {
 		%feature("autodoc", "1");
 		Handle_TNaming_NamedShape NamedShape() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsModification() const;
 
@@ -2157,7 +2157,7 @@ class TNaming_Naming : public TDF_Attribute {
 		%feature("autodoc", "1");
 		static		Handle_TNaming_Naming Insert(const TDF_Label &under);
 		%feature("autodoc", "1");
-		static		Handle_TNaming_NamedShape Name(const TDF_Label &where, const TopoDS_Shape &Selection, const TopoDS_Shape &Context, const Standard_Boolean Geometry=0);
+		static		Handle_TNaming_NamedShape Name(const TDF_Label &where, const TopoDS_Shape Selection, const TopoDS_Shape Context, const Standard_Boolean Geometry=0);
 		%feature("autodoc", "1");
 		TNaming_Naming();
 		%feature("autodoc", "1");
@@ -2234,11 +2234,11 @@ class TNaming {
 		%feature("autodoc", "1");
 		static		void ChangeShapes(const TDF_Label &label, TopTools_DataMapOfShapeShape & M);
 		%feature("autodoc", "1");
-		static		void Transform(const TDF_Label &label, const gp_Trsf &aTransformation);
+		static		void Transform(const TDF_Label &label, const gp_Trsf aTransformation);
 		%feature("autodoc", "1");
-		static		void Replicate(const Handle_TNaming_NamedShape &NS, const gp_Trsf &T, const TDF_Label &L);
+		static		void Replicate(const Handle_TNaming_NamedShape &NS, const gp_Trsf T, const TDF_Label &L);
 		%feature("autodoc", "1");
-		static		void Replicate(const TopoDS_Shape &SH, const gp_Trsf &T, const TDF_Label &L);
+		static		void Replicate(const TopoDS_Shape SH, const gp_Trsf T, const TDF_Label &L);
 		%feature("autodoc", "1");
 		static		void IDList(TDF_IDList & anIDList);
 		%feature("autodoc", "1");
@@ -2279,19 +2279,19 @@ class TNaming_DataMapOfShapeShapesSet : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const TNaming_ShapesSet &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const TNaming_ShapesSet &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const TNaming_ShapesSet & Find(const TopoDS_Shape &K) const;
+		const TNaming_ShapesSet & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TNaming_ShapesSet & operator()(const TopoDS_Shape &K) const;
+		const TNaming_ShapesSet & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		TNaming_ShapesSet & ChangeFind(const TopoDS_Shape &K);
+		TNaming_ShapesSet & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		TNaming_ShapesSet & operator()(const TopoDS_Shape &K);
+		TNaming_ShapesSet & operator()(const TopoDS_Shape K);
 
 };
 %feature("shadow") TNaming_DataMapOfShapeShapesSet::~TNaming_DataMapOfShapeShapesSet %{

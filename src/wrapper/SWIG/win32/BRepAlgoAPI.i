@@ -60,9 +60,9 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape1() const;
+		const TopoDS_Shape  Shape1() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape2() const;
+		const TopoDS_Shape  Shape2() const;
 		%feature("autodoc", "1");
 		BOP_Operation Operation() const;
 		%feature("autodoc", "1");
@@ -74,13 +74,13 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		Standard_Integer ErrorStatus() const;
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &aS);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &aS);
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified2(const TopoDS_Shape &aS);
+		virtual		const TopTools_ListOfShape & Modified2(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasModified() const;
 		%feature("autodoc", "1");
@@ -116,9 +116,9 @@ def __del__(self):
 class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Fuse(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		BRepAlgoAPI_Fuse(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Fuse(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF);
+		BRepAlgoAPI_Fuse(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPTools_DSFiller &aDSF);
 
 };
 %feature("shadow") BRepAlgoAPI_Fuse::~BRepAlgoAPI_Fuse %{
@@ -141,27 +141,27 @@ def __del__(self):
 class BRepAlgoAPI_Section : public BRepAlgoAPI_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Section(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF, const Standard_Boolean PerformNow=1);
+		BRepAlgoAPI_Section(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPTools_DSFiller &aDSF, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Section(const TopoDS_Shape &Sh1, const TopoDS_Shape &Sh2, const Standard_Boolean PerformNow=1);
+		BRepAlgoAPI_Section(const TopoDS_Shape Sh1, const TopoDS_Shape Sh2, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Section(const TopoDS_Shape &Sh, const gp_Pln &Pl, const Standard_Boolean PerformNow=1);
+		BRepAlgoAPI_Section(const TopoDS_Shape Sh, const gp_Pln Pl, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Section(const TopoDS_Shape &Sh, const Handle_Geom_Surface &Sf, const Standard_Boolean PerformNow=1);
+		BRepAlgoAPI_Section(const TopoDS_Shape Sh, const Handle_Geom_Surface &Sf, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Section(const Handle_Geom_Surface &Sf, const TopoDS_Shape &Sh, const Standard_Boolean PerformNow=1);
+		BRepAlgoAPI_Section(const Handle_Geom_Surface &Sf, const TopoDS_Shape Sh, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Section(const Handle_Geom_Surface &Sf1, const Handle_Geom_Surface &Sf2, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
-		void Init1(const TopoDS_Shape &S1);
+		void Init1(const TopoDS_Shape S1);
 		%feature("autodoc", "1");
-		void Init1(const gp_Pln &Pl);
+		void Init1(const gp_Pln Pl);
 		%feature("autodoc", "1");
 		void Init1(const Handle_Geom_Surface &Sf);
 		%feature("autodoc", "1");
-		void Init2(const TopoDS_Shape &S2);
+		void Init2(const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		void Init2(const gp_Pln &Pl);
+		void Init2(const gp_Pln Pl);
 		%feature("autodoc", "1");
 		void Init2(const Handle_Geom_Surface &Sf);
 		%feature("autodoc", "1");
@@ -173,13 +173,13 @@ class BRepAlgoAPI_Section : public BRepAlgoAPI_BooleanOperation {
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
-		Standard_Boolean HasAncestorFaceOn1(const TopoDS_Shape &E, TopoDS_Shape & F) const;
+		Standard_Boolean HasAncestorFaceOn1(const TopoDS_Shape E, TopoDS_Shape & F) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasAncestorFaceOn2(const TopoDS_Shape &E, TopoDS_Shape & F) const;
+		Standard_Boolean HasAncestorFaceOn2(const TopoDS_Shape E, TopoDS_Shape & F) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Curve PCurveOn1(const TopoDS_Shape &E) const;
+		Handle_Geom2d_Curve PCurveOn1(const TopoDS_Shape E) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_Curve PCurveOn2(const TopoDS_Shape &E) const;
+		Handle_Geom2d_Curve PCurveOn2(const TopoDS_Shape E) const;
 
 };
 %feature("shadow") BRepAlgoAPI_Section::~BRepAlgoAPI_Section %{
@@ -202,9 +202,9 @@ def __del__(self):
 class BRepAlgoAPI_Cut : public BRepAlgoAPI_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Cut(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		BRepAlgoAPI_Cut(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Cut(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF, const Standard_Boolean bFWD=1);
+		BRepAlgoAPI_Cut(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPTools_DSFiller &aDSF, const Standard_Boolean bFWD=1);
 
 };
 %feature("shadow") BRepAlgoAPI_Cut::~BRepAlgoAPI_Cut %{
@@ -227,9 +227,9 @@ def __del__(self):
 class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+		BRepAlgoAPI_Common(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF);
+		BRepAlgoAPI_Common(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPTools_DSFiller &aDSF);
 
 };
 %feature("shadow") BRepAlgoAPI_Common::~BRepAlgoAPI_Common %{

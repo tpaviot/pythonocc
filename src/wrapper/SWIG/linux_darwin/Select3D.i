@@ -651,7 +651,7 @@ class Select3D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 		%feature("autodoc", "1");
 		gp_Lin GetEyeLine(const Standard_Real X, const Standard_Real Y) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Depth() const;
 		%feature("autodoc", "1");
@@ -780,7 +780,7 @@ def __del__(self):
 class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		Select3D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt &Point);
+		Select3D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt Point);
 		%feature("autodoc", "1");
 		virtual		void Project(const Select3D_Projector &aProjector);
 		%feature("autodoc", "1");
@@ -795,7 +795,7 @@ class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc", "1");
 		gp_Pnt Point() const;
 		%feature("autodoc", "1");
@@ -836,7 +836,7 @@ class Select3D_Pnt {
 		%feature("autodoc", "1");
 		Select3D_Pnt();
 		%feature("autodoc", "1");
-		gp_Pnt operator=(const gp_Pnt &thePnt);
+		gp_Pnt operator=(const gp_Pnt thePnt);
 
 };
 %feature("shadow") Select3D_Pnt::~Select3D_Pnt %{
@@ -863,19 +863,19 @@ class Select3D_Projector {
 		%feature("autodoc", "1");
 		Select3D_Projector();
 		%feature("autodoc", "1");
-		Select3D_Projector(const gp_Ax2 &CS);
+		Select3D_Projector(const gp_Ax2 CS);
 		%feature("autodoc", "1");
-		Select3D_Projector(const gp_Ax2 &CS, const Standard_Real Focus);
+		Select3D_Projector(const gp_Ax2 CS, const Standard_Real Focus);
 		%feature("autodoc", "1");
-		Select3D_Projector(const gp_Trsf &T, const Standard_Boolean Persp, const Standard_Real Focus);
+		Select3D_Projector(const gp_Trsf T, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
-		Select3D_Projector(const gp_Trsf &T, const Standard_Boolean Persp, const Standard_Real Focus, const gp_Vec2d &v1, const gp_Vec2d &v2, const gp_Vec2d &v3);
+		Select3D_Projector(const gp_Trsf T, const Standard_Boolean Persp, const Standard_Real Focus, const gp_Vec2d v1, const gp_Vec2d v2, const gp_Vec2d v3);
 		%feature("autodoc", "1");
-		Select3D_Projector(const gp_GTrsf &GT, const Standard_Boolean Persp, const Standard_Real Focus);
+		Select3D_Projector(const gp_GTrsf GT, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		void Set(const gp_Trsf &T, const Standard_Boolean Persp, const Standard_Real Focus);
+		void Set(const gp_Trsf T, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
 		void SetView(const Handle_V3d_View &V);
 		%feature("autodoc", "1");
@@ -887,11 +887,11 @@ class Select3D_Projector {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Perspective() const;
 		%feature("autodoc", "1");
-		virtual		const gp_GTrsf & Transformation() const;
+		virtual		const gp_GTrsf  Transformation() const;
 		%feature("autodoc", "1");
-		virtual		const gp_GTrsf & InvertedTransformation() const;
+		virtual		const gp_GTrsf  InvertedTransformation() const;
 		%feature("autodoc", "1");
-		virtual		const gp_Trsf & FullTransformation() const;
+		virtual		const gp_Trsf  FullTransformation() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Focus() const;
 		%feature("autodoc", "1");
@@ -899,20 +899,20 @@ class Select3D_Projector {
 		%feature("autodoc", "1");
 		virtual		void Transform(gp_Pnt & Pnt) const;
 		%feature("autodoc", "1");
-		virtual		void Project(const gp_Pnt &P, gp_Pnt2d & Pout) const;
+		virtual		void Project(const gp_Pnt P, gp_Pnt2d & Pout) const;
 		%feature("autodoc","Project(const P) -> [Standard_Real, Standard_Real, Standard_Real]");
 
-		void Project(const gp_Pnt &P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void Project(const gp_Pnt P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		void Project(const gp_Pnt &P, const gp_Vec &D1, gp_Pnt2d & Pout, gp_Vec2d & D1out) const;
+		virtual		void Project(const gp_Pnt P, const gp_Vec D1, gp_Pnt2d & Pout, gp_Vec2d & D1out) const;
 		%feature("autodoc", "1");
-		virtual		void BoxAdd(const gp_Pnt2d &P, Bnd_Box & B) const;
+		virtual		void BoxAdd(const gp_Pnt2d P, Bnd_Box & B) const;
 		%feature("autodoc", "1");
 		virtual		gp_Lin Shoot(const Standard_Real X, const Standard_Real Y) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(gp_Pnt & Pnt, const gp_GTrsf &T) const;
+		virtual		void Transform(gp_Pnt & Pnt, const gp_GTrsf T) const;
 		%feature("autodoc", "1");
-		virtual		void Transform(gp_Lin & Lin, const gp_GTrsf &T) const;
+		virtual		void Transform(gp_Lin & Lin, const gp_GTrsf T) const;
 
 };
 %feature("shadow") Select3D_Projector::~Select3D_Projector %{
@@ -935,13 +935,13 @@ def __del__(self):
 class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		Select3D_SensitiveSegment(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt &FirstP, const gp_Pnt &LastP, const Standard_Integer MaxRect=1);
+		Select3D_SensitiveSegment(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt FirstP, const gp_Pnt LastP, const Standard_Integer MaxRect=1);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer MaxRect);
 		%feature("autodoc", "1");
-		void StartPoint(const gp_Pnt &start);
+		void StartPoint(const gp_Pnt start);
 		%feature("autodoc", "1");
-		void EndPoint(const gp_Pnt &end);
+		void EndPoint(const gp_Pnt end);
 		%feature("autodoc", "1");
 		gp_Pnt StartPoint() const;
 		%feature("autodoc", "1");
@@ -960,7 +960,7 @@ class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer MaxBoxes() const;
 		%feature("autodoc", "1");
@@ -1042,7 +1042,7 @@ def __del__(self):
 class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 	public:
 		%feature("autodoc", "1");
-		Select3D_SensitiveTriangle(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const Select3D_TypeOfSensitivity Sensitivity=Select3D_TOS_INTERIOR);
+		Select3D_SensitiveTriangle(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const Select3D_TypeOfSensitivity Sensitivity=Select3D_TOS_INTERIOR);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
 
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
@@ -1051,7 +1051,7 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc", "1");
 		void Points3D(gp_Pnt & P1, gp_Pnt & P2, gp_Pnt & P3) const;
 		%feature("autodoc", "1");
@@ -1063,7 +1063,7 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 		Standard_Integer Status(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue) const;
 		%feature("autodoc","Status(const p0, const p1, const p2, const aPoint, Standard_Real aTol) -> Standard_Real");
 
-		static		Standard_Integer Status(const gp_XY &p0, const gp_XY &p1, const gp_XY &p2, const gp_XY &aPoint, const Standard_Real aTol, Standard_Real &OutValue);
+		static		Standard_Integer Status(const gp_XY p0, const gp_XY p1, const gp_XY p2, const gp_XY aPoint, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 
@@ -1135,7 +1135,7 @@ class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc", "1");
 		virtual		void SetLastPrj(const Select3D_Projector &aPrj);
 		%feature("autodoc", "1");
@@ -1183,7 +1183,7 @@ class Select3D_SensitiveFace : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
@@ -1359,7 +1359,7 @@ class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
@@ -1398,7 +1398,7 @@ class Select3D_Pnt2d {
 		%feature("autodoc", "1");
 		Select3D_Pnt2d();
 		%feature("autodoc", "1");
-		gp_Pnt2d operator=(const gp_Pnt2d &thePnt);
+		gp_Pnt2d operator=(const gp_Pnt2d thePnt);
 
 };
 %feature("shadow") Select3D_Pnt2d::~Select3D_Pnt2d %{
@@ -1493,7 +1493,7 @@ class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		Select3D_SensitiveTriangulation(const Handle_SelectBasics_EntityOwner &OwnerId, const Handle_Poly_Triangulation &aTriangulation, const TopLoc_Location &aLoc, const Standard_Boolean InteriorFlag=1);
 		%feature("autodoc", "1");
-		Select3D_SensitiveTriangulation(const Handle_SelectBasics_EntityOwner &OwnerId, const Handle_Poly_Triangulation &aTriangulation, const TopLoc_Location &aLoc, const Handle_TColStd_HArray1OfInteger &thefreeedges, const gp_Pnt &theCDG, const Standard_Boolean InteriorFlag);
+		Select3D_SensitiveTriangulation(const Handle_SelectBasics_EntityOwner &OwnerId, const Handle_Poly_Triangulation &aTriangulation, const TopLoc_Location &aLoc, const Handle_TColStd_HArray1OfInteger &thefreeedges, const gp_Pnt theCDG, const Standard_Boolean InteriorFlag);
 		%feature("autodoc", "1");
 		virtual		void Project(const Select3D_Projector &aProjector);
 		%feature("autodoc", "1");
@@ -1508,16 +1508,16 @@ class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc", "1");
 		const Handle_Poly_Triangulation & Triangulation() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & CDG3D() const;
+		const gp_Pnt  CDG3D() const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & CDG2D() const;
+		const gp_Pnt2d  CDG2D() const;
 		%feature("autodoc","Status(const p0, const p1, const p2, const aPoint, Standard_Real aTol) -> Standard_Real");
 
-		Standard_Integer Status(const gp_XY &p0, const gp_XY &p1, const gp_XY &p2, const gp_XY &aPoint, const Standard_Real aTol, Standard_Real &OutValue) const;
+		Standard_Integer Status(const gp_XY p0, const gp_XY p1, const gp_XY p2, const gp_XY aPoint, const Standard_Real aTol, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasInitLocation() const;
 		%feature("autodoc", "1");
@@ -1644,7 +1644,7 @@ class Select3D_SensitiveWire : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer MaxBoxes() const;
 		%feature("autodoc", "1");
@@ -1700,7 +1700,7 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
 		%feature("autodoc","ArrayBounds() -> [Standard_Integer, Standard_Integer]");
 
 		void ArrayBounds(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
@@ -1818,7 +1818,7 @@ class Select3D_Box2d {
 		%feature("autodoc", "1");
 		Select3D_Box2d operator=(const Bnd_Box2d &theBox);
 		%feature("autodoc", "1");
-		void Update(const gp_Pnt2d &thePnt);
+		void Update(const gp_Pnt2d thePnt);
 		%feature("autodoc", "1");
 		void SetVoid();
 		%feature("autodoc", "1");

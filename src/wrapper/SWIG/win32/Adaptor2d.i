@@ -216,11 +216,11 @@ class Adaptor2d_Line2d : public Adaptor2d_Curve2d {
 		%feature("autodoc", "1");
 		Adaptor2d_Line2d();
 		%feature("autodoc", "1");
-		Adaptor2d_Line2d(const gp_Pnt2d &P, const gp_Dir2d &D, const Standard_Real UFirst, const Standard_Real ULast);
+		Adaptor2d_Line2d(const gp_Pnt2d P, const gp_Dir2d D, const Standard_Real UFirst, const Standard_Real ULast);
 		%feature("autodoc", "1");
-		void Load(const gp_Lin2d &L);
+		void Load(const gp_Lin2d L);
 		%feature("autodoc", "1");
-		void Load(const gp_Lin2d &L, const Standard_Real UFirst, const Standard_Real ULast);
+		void Load(const gp_Lin2d L, const Standard_Real UFirst, const Standard_Real ULast);
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Value(const Standard_Real X) const;
 		%feature("autodoc", "1");

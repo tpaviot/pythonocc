@@ -56,15 +56,15 @@ $HeaderURL$
 class IntAna2d_Conic {
 	public:
 		%feature("autodoc", "1");
-		IntAna2d_Conic(const gp_Circ2d &C);
+		IntAna2d_Conic(const gp_Circ2d C);
 		%feature("autodoc", "1");
-		IntAna2d_Conic(const gp_Lin2d &C);
+		IntAna2d_Conic(const gp_Lin2d C);
 		%feature("autodoc", "1");
-		IntAna2d_Conic(const gp_Parab2d &C);
+		IntAna2d_Conic(const gp_Parab2d C);
 		%feature("autodoc", "1");
-		IntAna2d_Conic(const gp_Hypr2d &C);
+		IntAna2d_Conic(const gp_Hypr2d C);
 		%feature("autodoc", "1");
-		IntAna2d_Conic(const gp_Elips2d &C);
+		IntAna2d_Conic(const gp_Elips2d C);
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Real X, const Standard_Real Y) const;
 		%feature("autodoc", "1");
@@ -77,7 +77,7 @@ class IntAna2d_Conic {
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","NewCoefficients(const Axis) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax2d &Axis) const;
+		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax2d Axis) const;
 
 };
 %feature("shadow") IntAna2d_Conic::~IntAna2d_Conic %{
@@ -102,37 +102,37 @@ class IntAna2d_AnaIntersection {
 		%feature("autodoc", "1");
 		IntAna2d_AnaIntersection();
 		%feature("autodoc", "1");
-		IntAna2d_AnaIntersection(const gp_Lin2d &L1, const gp_Lin2d &L2);
+		IntAna2d_AnaIntersection(const gp_Lin2d L1, const gp_Lin2d L2);
 		%feature("autodoc", "1");
-		IntAna2d_AnaIntersection(const gp_Circ2d &C1, const gp_Circ2d &C2);
+		IntAna2d_AnaIntersection(const gp_Circ2d C1, const gp_Circ2d C2);
 		%feature("autodoc", "1");
-		IntAna2d_AnaIntersection(const gp_Lin2d &L, const gp_Circ2d &C);
+		IntAna2d_AnaIntersection(const gp_Lin2d L, const gp_Circ2d C);
 		%feature("autodoc", "1");
-		IntAna2d_AnaIntersection(const gp_Lin2d &L, const IntAna2d_Conic &C);
+		IntAna2d_AnaIntersection(const gp_Lin2d L, const IntAna2d_Conic &C);
 		%feature("autodoc", "1");
-		IntAna2d_AnaIntersection(const gp_Circ2d &C, const IntAna2d_Conic &Co);
+		IntAna2d_AnaIntersection(const gp_Circ2d C, const IntAna2d_Conic &Co);
 		%feature("autodoc", "1");
-		IntAna2d_AnaIntersection(const gp_Elips2d &E, const IntAna2d_Conic &C);
+		IntAna2d_AnaIntersection(const gp_Elips2d E, const IntAna2d_Conic &C);
 		%feature("autodoc", "1");
-		IntAna2d_AnaIntersection(const gp_Parab2d &P, const IntAna2d_Conic &C);
+		IntAna2d_AnaIntersection(const gp_Parab2d P, const IntAna2d_Conic &C);
 		%feature("autodoc", "1");
-		IntAna2d_AnaIntersection(const gp_Hypr2d &H, const IntAna2d_Conic &C);
+		IntAna2d_AnaIntersection(const gp_Hypr2d H, const IntAna2d_Conic &C);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d &L1, const gp_Lin2d &L2);
+		void Perform(const gp_Lin2d L1, const gp_Lin2d L2);
 		%feature("autodoc", "1");
-		void Perform(const gp_Circ2d &C1, const gp_Circ2d &C2);
+		void Perform(const gp_Circ2d C1, const gp_Circ2d C2);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d &L, const gp_Circ2d &C);
+		void Perform(const gp_Lin2d L, const gp_Circ2d C);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d &L, const IntAna2d_Conic &C);
+		void Perform(const gp_Lin2d L, const IntAna2d_Conic &C);
 		%feature("autodoc", "1");
-		void Perform(const gp_Circ2d &C, const IntAna2d_Conic &Co);
+		void Perform(const gp_Circ2d C, const IntAna2d_Conic &Co);
 		%feature("autodoc", "1");
-		void Perform(const gp_Elips2d &E, const IntAna2d_Conic &C);
+		void Perform(const gp_Elips2d E, const IntAna2d_Conic &C);
 		%feature("autodoc", "1");
-		void Perform(const gp_Parab2d &P, const IntAna2d_Conic &C);
+		void Perform(const gp_Parab2d P, const IntAna2d_Conic &C);
 		%feature("autodoc", "1");
-		void Perform(const gp_Hypr2d &H, const IntAna2d_Conic &C);
+		void Perform(const gp_Hypr2d H, const IntAna2d_Conic &C);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -177,7 +177,7 @@ class IntAna2d_IntPoint {
 		%feature("autodoc", "1");
 		virtual		void SetValue(const Standard_Real X, const Standard_Real Y, const Standard_Real U1);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & Value() const;
+		const gp_Pnt2d  Value() const;
 		%feature("autodoc", "1");
 		Standard_Boolean SecondIsImplicit() const;
 		%feature("autodoc", "1");
@@ -193,7 +193,7 @@ class IntAna2d_IntPoint {
 		%feature("autodoc", "1");
 		void _CSFDB_SetIntAna2d_IntPointmyu2(const Standard_Real p);
 		%feature("autodoc", "1");
-		const gp_Pnt2d & _CSFDB_GetIntAna2d_IntPointmyp() const;
+		const gp_Pnt2d  _CSFDB_GetIntAna2d_IntPointmyp() const;
 		%feature("autodoc", "1");
 		Standard_Boolean _CSFDB_GetIntAna2d_IntPointmyimplicit() const;
 		%feature("autodoc", "1");

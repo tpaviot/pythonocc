@@ -245,11 +245,11 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("autodoc", "1");
 		Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter();
 		%feature("autodoc", "1");
-		Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C);
+		Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d P, const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		void Initialize(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt2d &P);
+		void SetPoint(const gp_Pnt2d P);
 		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
@@ -324,9 +324,9 @@ class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 		%feature("autodoc", "1");
 		static		Standard_Integer NbSegments(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
 		%feature("autodoc", "1");
-		static		const gp_Pnt2d & BeginOfSeg(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon, const Standard_Integer Index);
+		static		const gp_Pnt2d  BeginOfSeg(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		static		const gp_Pnt2d & EndOfSeg(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon, const Standard_Integer Index);
+		static		const gp_Pnt2d  EndOfSeg(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon, const Standard_Integer Index);
 
 };
 %feature("shadow") Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::~Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter %{
@@ -384,25 +384,25 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("autodoc", "1");
 		Geom2dInt_IntConicCurveOfGInter();
 		%feature("autodoc", "1");
-		Geom2dInt_IntConicCurveOfGInter(const gp_Lin2d &L, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		Geom2dInt_IntConicCurveOfGInter(const gp_Lin2d L, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Geom2dInt_IntConicCurveOfGInter(const gp_Circ2d &C, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		Geom2dInt_IntConicCurveOfGInter(const gp_Circ2d C, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Geom2dInt_IntConicCurveOfGInter(const gp_Elips2d &E, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		Geom2dInt_IntConicCurveOfGInter(const gp_Elips2d E, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Geom2dInt_IntConicCurveOfGInter(const gp_Parab2d &Prb, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		Geom2dInt_IntConicCurveOfGInter(const gp_Parab2d Prb, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Geom2dInt_IntConicCurveOfGInter(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		Geom2dInt_IntConicCurveOfGInter(const gp_Hypr2d H, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d &L, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Lin2d L, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Circ2d &C, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Circ2d C, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Elips2d &E, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Elips2d E, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Parab2d &Prb, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Parab2d Prb, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Hypr2d H, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
 %feature("shadow") Geom2dInt_IntConicCurveOfGInter::~Geom2dInt_IntConicCurveOfGInter %{
@@ -427,13 +427,13 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		%feature("autodoc", "1");
 		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter();
 		%feature("autodoc", "1");
-		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real TolU);
+		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real TolU);
 		%feature("autodoc", "1");
-		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
+		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
 		%feature("autodoc", "1");
 		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
 		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d &P, const Standard_Real U0);
+		void Perform(const gp_Pnt2d P, const Standard_Real U0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -644,9 +644,9 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
 		%feature("autodoc", "1");
 		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & BeginOfSeg(const Standard_Integer Index) const;
+		const gp_Pnt2d  BeginOfSeg(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & EndOfSeg(const Standard_Integer Index) const;
+		const gp_Pnt2d  EndOfSeg(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Real InfParameter() const;
 		%feature("autodoc", "1");
@@ -683,9 +683,9 @@ class Geom2dInt_TheProjPCurOfGInter {
 		%feature("autodoc", "1");
 		Geom2dInt_TheProjPCurOfGInter();
 		%feature("autodoc", "1");
-		static		Standard_Real FindParameter(const Adaptor2d_Curve2d &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
+		static		Standard_Real FindParameter(const Adaptor2d_Curve2d &C, const gp_Pnt2d Pnt, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		static		Standard_Real FindParameter(const Adaptor2d_Curve2d &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
+		static		Standard_Real FindParameter(const Adaptor2d_Curve2d &C, const gp_Pnt2d Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 
 };
 %feature("shadow") Geom2dInt_TheProjPCurOfGInter::~Geom2dInt_TheProjPCurOfGInter %{
@@ -710,25 +710,25 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("autodoc", "1");
 		Geom2dInt_TheIntConicCurveOfGInter();
 		%feature("autodoc", "1");
-		Geom2dInt_TheIntConicCurveOfGInter(const gp_Lin2d &L, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		Geom2dInt_TheIntConicCurveOfGInter(const gp_Lin2d L, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Geom2dInt_TheIntConicCurveOfGInter(const gp_Circ2d &C, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		Geom2dInt_TheIntConicCurveOfGInter(const gp_Circ2d C, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Geom2dInt_TheIntConicCurveOfGInter(const gp_Elips2d &E, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		Geom2dInt_TheIntConicCurveOfGInter(const gp_Elips2d E, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Geom2dInt_TheIntConicCurveOfGInter(const gp_Parab2d &Prb, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		Geom2dInt_TheIntConicCurveOfGInter(const gp_Parab2d Prb, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Geom2dInt_TheIntConicCurveOfGInter(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		Geom2dInt_TheIntConicCurveOfGInter(const gp_Hypr2d H, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d &L, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Lin2d L, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Circ2d &C, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Circ2d C, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Elips2d &E, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Elips2d E, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Parab2d &Prb, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Parab2d Prb, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		void Perform(const gp_Hypr2d H, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
 %feature("shadow") Geom2dInt_TheIntConicCurveOfGInter::~Geom2dInt_TheIntConicCurveOfGInter %{

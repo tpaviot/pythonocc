@@ -169,15 +169,15 @@ class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TColle
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &I);
+		Standard_Integer Add(const TopoDS_Shape K, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const BooleanOperations_AncestorsSeqAndSuccessorsSeq & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -187,11 +187,11 @@ class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TColle
 		%feature("autodoc", "1");
 		BooleanOperations_AncestorsSeqAndSuccessorsSeq & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const BooleanOperations_AncestorsSeqAndSuccessorsSeq & FindFromKey(const TopoDS_Shape &K) const;
+		const BooleanOperations_AncestorsSeqAndSuccessorsSeq & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		BooleanOperations_AncestorsSeqAndSuccessorsSeq & ChangeFromKey(const TopoDS_Shape &K);
+		BooleanOperations_AncestorsSeqAndSuccessorsSeq & ChangeFromKey(const TopoDS_Shape K);
 
 };
 %feature("shadow") BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors %{
@@ -216,7 +216,7 @@ class BooleanOperations_ShapeAndInterferences {
 		%feature("autodoc", "1");
 		BooleanOperations_ShapeAndInterferences();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape() const;
+		const TopoDS_Shape  GetShape() const;
 		%feature("autodoc", "1");
 		TopAbs_ShapeEnum GetShapeType() const;
 		%feature("autodoc", "1");
@@ -307,9 +307,9 @@ def __del__(self):
 class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger(const TopoDS_Shape &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger(const TopoDS_Shape K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -411,14 +411,14 @@ class BooleanOperations_ShapesDataStructure {
 		%feature("autodoc", "1");
 		BooleanOperations_ShapesDataStructure();
 		%feature("autodoc", "1");
-		BooleanOperations_ShapesDataStructure(const TopoDS_Shape &Object, const TopoDS_Shape &Tool);
+		BooleanOperations_ShapesDataStructure(const TopoDS_Shape Object, const TopoDS_Shape Tool);
 		%feature("autodoc", "1");
-		void InsertShapeAndAncestorsSuccessors(const TopoDS_Shape &S, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &AncSuc, const Standard_Integer shift=0);
+		void InsertShapeAndAncestorsSuccessors(const TopoDS_Shape S, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &AncSuc, const Standard_Integer shift=0);
 		%feature("autodoc", "1");
-		void FillIndexedMapOfShapesAncestorsAndSuccessors(const TopoDS_Shape &Sha, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
+		void FillIndexedMapOfShapesAncestorsAndSuccessors(const TopoDS_Shape Sha, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
 		%feature("autodoc","FindSubshapes(const Sha) -> Standard_Integer");
 
-		void FindSubshapes(const TopoDS_Shape &Sha, Standard_Integer &OutValue, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
+		void FindSubshapes(const TopoDS_Shape Sha, Standard_Integer &OutValue, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -436,9 +436,9 @@ class BooleanOperations_ShapesDataStructure {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape(const Standard_Integer index) const;
+		const TopoDS_Shape  GetShape(const Standard_Integer index) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape(const Standard_Integer anIndex) const;
+		const TopoDS_Shape  Shape(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
 		TopAbs_ShapeEnum GetShapeType(const Standard_Integer index) const;
 		%feature("autodoc", "1");
@@ -478,11 +478,11 @@ class BooleanOperations_ShapesDataStructure {
 		%feature("autodoc", "1");
 		const BooleanOperations_IndexedDataMapOfShapeInteger & ShapeIndexMap(const Standard_Integer iRank) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer ShapeIndex(const TopoDS_Shape &aS, const Standard_Integer iRank) const;
+		virtual		Standard_Integer ShapeIndex(const TopoDS_Shape aS, const Standard_Integer iRank) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Object() const;
+		const TopoDS_Shape  Object() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Tool() const;
+		const TopoDS_Shape  Tool() const;
 		%feature("autodoc","ObjectRange() -> [Standard_Integer, Standard_Integer]");
 
 		void ObjectRange(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
@@ -573,15 +573,15 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const Standard_Integer &I);
+		Standard_Integer Add(const TopoDS_Shape K, const Standard_Integer &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const Standard_Integer &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const Standard_Integer &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -601,18 +601,18 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Standard_Integer & FindFromKey(const TopoDS_Shape &K) const;
+		const Standard_Integer & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc","1");
 		%extend {
-				Standard_Integer GetChangeFromKey(const TopoDS_Shape &K) {
+				Standard_Integer GetChangeFromKey(const TopoDS_Shape K) {
 				return (Standard_Integer) $self->ChangeFromKey(K);
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetChangeFromKey(Standard_Integer value ,const TopoDS_Shape &K) {
+				void SetChangeFromKey(Standard_Integer value ,const TopoDS_Shape K) {
 				$self->ChangeFromKey(K)=value;
 				}
 		};
@@ -692,9 +692,9 @@ def __del__(self):
 class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors(const TopoDS_Shape &K1, const Standard_Integer K2, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors(const TopoDS_Shape K1, const Standard_Integer K2, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {

@@ -609,7 +609,7 @@ class GeomPlate_Aij {
 		%feature("autodoc", "1");
 		GeomPlate_Aij();
 		%feature("autodoc", "1");
-		GeomPlate_Aij(const Standard_Integer anInd1, const Standard_Integer anInd2, const gp_Vec &aVec);
+		GeomPlate_Aij(const Standard_Integer anInd1, const Standard_Integer anInd2, const gp_Vec aVec);
 
 };
 %feature("shadow") GeomPlate_Aij::~GeomPlate_Aij %{
@@ -632,7 +632,7 @@ def __del__(self):
 class GeomPlate_PointConstraint : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_PointConstraint(const gp_Pnt &Pt, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
+		GeomPlate_PointConstraint(const gp_Pnt Pt, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
 		GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const Handle_Geom_Surface &Surf, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
 		%feature("autodoc", "1");
@@ -660,7 +660,7 @@ class GeomPlate_PointConstraint : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean HasPnt2dOnSurf() const;
 		%feature("autodoc", "1");
-		void SetPnt2dOnSurf(const gp_Pnt2d &Pnt);
+		void SetPnt2dOnSurf(const gp_Pnt2d Pnt);
 		%feature("autodoc", "1");
 		gp_Pnt2d Pnt2dOnSurf() const;
 		%feature("autodoc", "1");
@@ -1002,9 +1002,9 @@ class GeomPlate_Surface : public Geom_Surface {
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
 		%feature("autodoc","TransformParameters(const T) -> [Standard_Real, Standard_Real]");
 
-		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
+		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf T) const;
 		%feature("autodoc", "1");
-		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
+		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf T) const;
 		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -1043,7 +1043,7 @@ class GeomPlate_Surface : public Geom_Surface {
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf &T);
+		virtual		void Transform(const gp_Trsf T);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface CallSurfinit() const;
 		%feature("autodoc", "1");

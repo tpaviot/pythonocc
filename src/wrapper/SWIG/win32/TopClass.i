@@ -56,7 +56,7 @@ $HeaderURL$
 class TopClass_Intersection3d {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Perform(const gp_Lin &L, const Standard_Real Prm, const Standard_Real Tol, const TopoDS_Face &Face);
+		virtual		void Perform(const gp_Lin L, const Standard_Real Prm, const Standard_Real Tol, const TopoDS_Face Face);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -87,13 +87,13 @@ def __del__(self):
 class TopClass_SolidExplorer {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Reject(const gp_Pnt &P) const;
+		virtual		Standard_Boolean Reject(const gp_Pnt P) const;
 		%feature("autodoc","Segment(const P) -> Standard_Real");
 
-		virtual		void Segment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
+		virtual		void Segment(const gp_Pnt P, gp_Lin & L, Standard_Real &OutValue);
 		%feature("autodoc","OtherSegment(const P) -> Standard_Real");
 
-		virtual		void OtherSegment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
+		virtual		void OtherSegment(const gp_Pnt P, gp_Lin & L, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void InitShell();
 		%feature("autodoc", "1");
@@ -101,7 +101,7 @@ class TopClass_SolidExplorer {
 		%feature("autodoc", "1");
 		virtual		void NextShell();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean RejectShell(const gp_Lin &L, const Standard_Real Par) const;
+		virtual		Standard_Boolean RejectShell(const gp_Lin L, const Standard_Real Par) const;
 		%feature("autodoc", "1");
 		virtual		void InitFace();
 		%feature("autodoc", "1");
@@ -111,7 +111,7 @@ class TopClass_SolidExplorer {
 		%feature("autodoc", "1");
 		virtual		TopoDS_Face CurrentFace() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean RejectFace(const gp_Lin &L, const Standard_Real Par) const;
+		virtual		Standard_Boolean RejectFace(const gp_Lin L, const Standard_Real Par) const;
 
 };
 %feature("shadow") TopClass_SolidExplorer::~TopClass_SolidExplorer %{

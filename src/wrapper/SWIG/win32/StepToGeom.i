@@ -983,7 +983,7 @@ class StepToGeom_MakeTransformation2d : public StepToGeom_Root {
 		%feature("autodoc", "1");
 		StepToGeom_MakeTransformation2d(const Handle_StepGeom_CartesianTransformationOperator2d &CTO);
 		%feature("autodoc", "1");
-		const gp_Trsf2d & Value() const;
+		const gp_Trsf2d  Value() const;
 
 };
 %feature("shadow") StepToGeom_MakeTransformation2d::~StepToGeom_MakeTransformation2d %{
@@ -1008,7 +1008,7 @@ class StepToGeom_MakeTransformation3d : public StepToGeom_Root {
 		%feature("autodoc", "1");
 		StepToGeom_MakeTransformation3d(const Handle_StepGeom_CartesianTransformationOperator3d &CTO);
 		%feature("autodoc", "1");
-		const gp_Trsf & Value() const;
+		const gp_Trsf  Value() const;
 
 };
 %feature("shadow") StepToGeom_MakeTransformation3d::~StepToGeom_MakeTransformation3d %{

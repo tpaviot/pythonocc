@@ -764,13 +764,13 @@ def __del__(self):
 class BOP_HistoryCollector : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
+		virtual		void SetResult(const TopoDS_Shape theResult, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasGenerated() const;
 		%feature("autodoc", "1");
@@ -814,7 +814,7 @@ def __del__(self):
 class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
 	public:
 		%feature("autodoc", "1");
-		BOP_SectionHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2);
+		BOP_SectionHistoryCollector(const TopoDS_Shape theShape1, const TopoDS_Shape theShape2);
 
 };
 %extend BOP_SectionHistoryCollector {
@@ -847,15 +847,15 @@ def __del__(self):
 class BOP_Builder {
 	public:
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2);
+		void SetShapes(const TopoDS_Shape aS1, const TopoDS_Shape aS2);
 		%feature("autodoc", "1");
 		void SetOperation(const BOP_Operation anOp);
 		%feature("autodoc", "1");
 		void SetManifoldFlag(const Standard_Boolean aFlag);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape1() const;
+		const TopoDS_Shape  Shape1() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape2() const;
+		const TopoDS_Shape  Shape2() const;
 		%feature("autodoc", "1");
 		BOP_Operation Operation() const;
 		%feature("autodoc", "1");
@@ -865,7 +865,7 @@ class BOP_Builder {
 		%feature("autodoc", "1");
 		Standard_Integer ErrorStatus() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Result() const;
+		const TopoDS_Shape  Result() const;
 		%feature("autodoc", "1");
 		virtual		void Do();
 		%feature("autodoc", "1");
@@ -877,9 +877,9 @@ class BOP_Builder {
 		%feature("autodoc", "1");
 		static		void SortTypes(TopAbs_ShapeEnum & aType1, TopAbs_ShapeEnum & aType2);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Modified(const TopoDS_Shape &aS) const;
+		const TopTools_ListOfShape & Modified(const TopoDS_Shape aS) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDeleted(const TopoDS_Shape &aS) const;
+		Standard_Boolean IsDeleted(const TopoDS_Shape aS) const;
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & SectionEdges() const;
 		%feature("autodoc", "1");
@@ -911,9 +911,9 @@ def __del__(self):
 class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 	public:
 		%feature("autodoc", "1");
-		BOP_WireSolidHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2, const BOP_Operation theOperation);
+		BOP_WireSolidHistoryCollector(const TopoDS_Shape theShape1, const TopoDS_Shape theShape2, const BOP_Operation theOperation);
 		%feature("autodoc", "1");
-		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
+		virtual		void SetResult(const TopoDS_Shape theResult, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -950,7 +950,7 @@ class BOP_EdgeInfo {
 		%feature("autodoc", "1");
 		BOP_EdgeInfo();
 		%feature("autodoc", "1");
-		void SetEdge(const TopoDS_Edge &aE);
+		void SetEdge(const TopoDS_Edge aE);
 		%feature("autodoc", "1");
 		void SetPassed(const Standard_Boolean aFlag);
 		%feature("autodoc", "1");
@@ -958,7 +958,7 @@ class BOP_EdgeInfo {
 		%feature("autodoc", "1");
 		void SetInFlag(const Standard_Boolean aFlag);
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge() const;
+		const TopoDS_Edge  Edge() const;
 		%feature("autodoc", "1");
 		Standard_Boolean Passed() const;
 		%feature("autodoc", "1");
@@ -987,11 +987,11 @@ def __del__(self):
 class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 	public:
 		%feature("autodoc", "1");
-		BOP_SolidSolidHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2, const BOP_Operation theOperation);
+		BOP_SolidSolidHistoryCollector(const TopoDS_Shape theShape1, const TopoDS_Shape theShape2, const BOP_Operation theOperation);
 		%feature("autodoc", "1");
-		void AddNewShape(const TopoDS_Shape &theOldShape, const TopoDS_Shape &theNewShape, const BOPTools_PDSFiller &theDSFiller);
+		void AddNewShape(const TopoDS_Shape theOldShape, const TopoDS_Shape theNewShape, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
-		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
+		virtual		void SetResult(const TopoDS_Shape theResult, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1232,9 +1232,9 @@ def __del__(self):
 class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo(const TopoDS_Shape &K1, const Standard_Integer K2, const BOP_ListOfFaceInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo(const TopoDS_Shape K1, const Standard_Integer K2, const BOP_ListOfFaceInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -1289,11 +1289,11 @@ class BOP_Draw {
 		%feature("autodoc", "1");
 		static		void DrawListOfShape(const TopTools_ListOfShape &aList, const char * aName);
 		%feature("autodoc", "1");
-		static		void DrawListOfEdgesWithPC(const TopoDS_Face &aFace, const TopTools_ListOfShape &aList, const char * aName);
+		static		void DrawListOfEdgesWithPC(const TopoDS_Face aFace, const TopTools_ListOfShape &aList, const char * aName);
 		%feature("autodoc", "1");
-		static		void DrawListOfEdgesWithPC(const TopoDS_Face &aFace, const TopTools_ListOfShape &aList, const Standard_Integer anInd, const char * aName);
+		static		void DrawListOfEdgesWithPC(const TopoDS_Face aFace, const TopTools_ListOfShape &aList, const Standard_Integer anInd, const char * aName);
 		%feature("autodoc", "1");
-		static		void DrawEdgeWithPC(const TopoDS_Face &aFace, const TopoDS_Edge &aEdge, const char * aName);
+		static		void DrawEdgeWithPC(const TopoDS_Face aFace, const TopoDS_Edge aEdge, const char * aName);
 		%feature("autodoc", "1");
 		static		void Wait();
 
@@ -1571,13 +1571,13 @@ def __del__(self):
 class BOP_Loop : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		BOP_Loop(const TopoDS_Shape &S);
+		BOP_Loop(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		BOP_Loop(const BOP_BlockIterator &BI);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsShape() const;
 		%feature("autodoc", "1");
-		virtual		const TopoDS_Shape & Shape() const;
+		virtual		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		const BOP_BlockIterator & BlockIterator() const;
 		%feature("autodoc", "1");
@@ -1639,15 +1639,15 @@ def __del__(self):
 class BOP_CompositeClassifier : public BOP_LoopClassifier {
 	public:
 		%feature("autodoc", "1");
-		virtual		TopAbs_State CompareShapes(const TopoDS_Shape &B1, const TopoDS_Shape &B2);
+		virtual		TopAbs_State CompareShapes(const TopoDS_Shape B1, const TopoDS_Shape B2);
 		%feature("autodoc", "1");
-		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape &E, const TopoDS_Shape &B);
+		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape E, const TopoDS_Shape B);
 		%feature("autodoc", "1");
-		virtual		void ResetShape(const TopoDS_Shape &B);
+		virtual		void ResetShape(const TopoDS_Shape B);
 		%feature("autodoc", "1");
-		virtual		void ResetElement(const TopoDS_Shape &E);
+		virtual		void ResetElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
-		virtual		void CompareElement(const TopoDS_Shape &E);
+		virtual		void CompareElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
 
@@ -1672,11 +1672,11 @@ def __del__(self):
 class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
 	public:
 		%feature("autodoc", "1");
-		BOP_WireEdgeClassifier(const TopoDS_Face &F, const BOP_BlockBuilder &BB);
+		BOP_WireEdgeClassifier(const TopoDS_Face F, const BOP_BlockBuilder &BB);
 		%feature("autodoc", "1");
 		TopoDS_Shape LoopToShape(const Handle_BOP_Loop &L);
 		%feature("autodoc", "1");
-		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape &E, const TopoDS_Shape &W);
+		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape E, const TopoDS_Shape W);
 
 };
 %feature("shadow") BOP_WireEdgeClassifier::~BOP_WireEdgeClassifier %{
@@ -1777,7 +1777,7 @@ class BOP_BuilderTools {
 		%feature("autodoc", "1");
 		static		Standard_Boolean ToReverseFace(const Standard_Integer iRank, const BOP_Operation anOp);
 		%feature("autodoc", "1");
-		static		void OrientSectionEdgeOnF1(const TopoDS_Face &aF1, const TopoDS_Face &aF2, const Standard_Integer iRank, const BOP_Operation anOp, TopoDS_Edge & aE);
+		static		void OrientSectionEdgeOnF1(const TopoDS_Face aF1, const TopoDS_Face aF2, const Standard_Integer iRank, const BOP_Operation anOp, TopoDS_Edge & aE);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsSameDomainFaceWithF1(const Standard_Integer nF1, const Standard_Integer nF2, const TColStd_IndexedMapOfInteger &aFFM, BOPTools_CArray1OfSSInterference & aFFs);
 		%feature("autodoc", "1");
@@ -1814,11 +1814,11 @@ class BOP_ShapeSet {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
-		virtual		void AddShape(const TopoDS_Shape &S);
+		virtual		void AddShape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		void AddStartElement(const TopoDS_Shape &S);
+		virtual		void AddStartElement(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		void AddElement(const TopoDS_Shape &S);
+		virtual		void AddElement(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & StartElements() const;
 		%feature("autodoc", "1");
@@ -1828,7 +1828,7 @@ class BOP_ShapeSet {
 		%feature("autodoc", "1");
 		void NextShape();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		void InitStartElements();
 		%feature("autodoc", "1");
@@ -1836,23 +1836,23 @@ class BOP_ShapeSet {
 		%feature("autodoc", "1");
 		void NextStartElement();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & StartElement() const;
+		const TopoDS_Shape  StartElement() const;
 		%feature("autodoc", "1");
-		virtual		void InitNeighbours(const TopoDS_Shape &S);
+		virtual		void InitNeighbours(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Standard_Boolean MoreNeighbours();
 		%feature("autodoc", "1");
 		void NextNeighbour();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Neighbour() const;
+		const TopoDS_Shape  Neighbour() const;
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & ChangeStartShapes();
 		%feature("autodoc", "1");
 		virtual		void FindNeighbours();
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & MakeNeighboursList(const TopoDS_Shape &E, const TopoDS_Shape &V);
+		virtual		const TopTools_ListOfShape & MakeNeighboursList(const TopoDS_Shape E, const TopoDS_Shape V);
 		%feature("autodoc", "1");
-		Standard_Integer MaxNumberSubShape(const TopoDS_Shape &Shape);
+		Standard_Integer MaxNumberSubShape(const TopoDS_Shape Shape);
 		%feature("autodoc", "1");
 		void ClearContents();
 
@@ -1879,9 +1879,9 @@ class BOP_ShellFaceSet : public BOP_ShapeSet {
 		%feature("autodoc", "1");
 		BOP_ShellFaceSet();
 		%feature("autodoc", "1");
-		BOP_ShellFaceSet(const TopoDS_Solid &theSolid);
+		BOP_ShellFaceSet(const TopoDS_Solid theSolid);
 		%feature("autodoc", "1");
-		const TopoDS_Solid & Solid() const;
+		const TopoDS_Solid  Solid() const;
 
 };
 %feature("shadow") BOP_ShellFaceSet::~BOP_ShellFaceSet %{
@@ -1932,7 +1932,7 @@ class BOP_SolidBuilder {
 		%feature("autodoc", "1");
 		void NextFace();
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 
 };
 %feature("shadow") BOP_SolidBuilder::~BOP_SolidBuilder %{
@@ -1959,13 +1959,13 @@ class BOP_SolidClassifier {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void LoadSolid(const TopoDS_Solid &aS);
+		void LoadSolid(const TopoDS_Solid aS);
 		%feature("autodoc", "1");
-		TopAbs_State Classify(const TopoDS_Solid &aS, const gp_Pnt &aP, const Standard_Real aTol);
+		TopAbs_State Classify(const TopoDS_Solid aS, const gp_Pnt aP, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		void LoadShell(const TopoDS_Shell &S);
+		void LoadShell(const TopoDS_Shell S);
 		%feature("autodoc", "1");
-		TopAbs_State Classify(const TopoDS_Shell &aS, const gp_Pnt &aP, const Standard_Real aTol);
+		TopAbs_State Classify(const TopoDS_Shell aS, const gp_Pnt aP, const Standard_Real aTol);
 		%feature("autodoc", "1");
 		TopAbs_State State() const;
 		%feature("autodoc", "1");
@@ -2002,15 +2002,15 @@ class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const BOP_ListOfFaceInfo &I);
+		Standard_Integer Add(const TopoDS_Shape K, const BOP_ListOfFaceInfo &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const BOP_ListOfFaceInfo &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BOP_ListOfFaceInfo &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const BOP_ListOfFaceInfo & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -2020,11 +2020,11 @@ class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BOP_ListOfFaceInfo & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const BOP_ListOfFaceInfo & FindFromKey(const TopoDS_Shape &K) const;
+		const BOP_ListOfFaceInfo & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		BOP_ListOfFaceInfo & ChangeFromKey(const TopoDS_Shape &K);
+		BOP_ListOfFaceInfo & ChangeFromKey(const TopoDS_Shape K);
 
 };
 %feature("shadow") BOP_IndexedDataMapOfEdgeListFaceInfo::~BOP_IndexedDataMapOfEdgeListFaceInfo %{
@@ -2047,9 +2047,9 @@ def __del__(self):
 class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const TopoDS_Shape &K1, const Standard_Integer K2, const BOP_PSoClassif &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const TopoDS_Shape K1, const Standard_Integer K2, const BOP_PSoClassif &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -2100,9 +2100,9 @@ def __del__(self):
 class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo(const TopoDS_Shape &K1, const Standard_Integer K2, const BOP_ListOfEdgeInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo(const TopoDS_Shape K1, const Standard_Integer K2, const BOP_ListOfEdgeInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetKey2() {
@@ -2255,9 +2255,9 @@ class BOP_ShellSplitter {
 		%feature("autodoc", "1");
 		void DoWithListOfEdges(const TopTools_ListOfShape &aLE);
 		%feature("autodoc", "1");
-		void SetShell(const TopoDS_Shell &aShell);
+		void SetShell(const TopoDS_Shell aShell);
 		%feature("autodoc", "1");
-		const TopoDS_Shell & Shell() const;
+		const TopoDS_Shell  Shell() const;
 		%feature("autodoc", "1");
 		void DoWithShell();
 		%feature("autodoc", "1");
@@ -2290,17 +2290,17 @@ class BOP_CheckResult {
 		%feature("autodoc", "1");
 		BOP_CheckResult();
 		%feature("autodoc", "1");
-		void SetShape1(const TopoDS_Shape &TheShape);
+		void SetShape1(const TopoDS_Shape TheShape);
 		%feature("autodoc", "1");
-		void AddFaultyShape1(const TopoDS_Shape &TheShape);
+		void AddFaultyShape1(const TopoDS_Shape TheShape);
 		%feature("autodoc", "1");
-		void SetShape2(const TopoDS_Shape &TheShape);
+		void SetShape2(const TopoDS_Shape TheShape);
 		%feature("autodoc", "1");
-		void AddFaultyShape2(const TopoDS_Shape &TheShape);
+		void AddFaultyShape2(const TopoDS_Shape TheShape);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape1() const;
+		const TopoDS_Shape  GetShape1() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape2() const;
+		const TopoDS_Shape  GetShape2() const;
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & GetFaultyShapes1() const;
 		%feature("autodoc", "1");
@@ -2335,15 +2335,15 @@ class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		virtual		TopAbs_State CompareShapes(const TopoDS_Shape &B1, const TopoDS_Shape &B2);
+		virtual		TopAbs_State CompareShapes(const TopoDS_Shape B1, const TopoDS_Shape B2);
 		%feature("autodoc", "1");
-		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape &E, const TopoDS_Shape &B);
+		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape E, const TopoDS_Shape B);
 		%feature("autodoc", "1");
-		virtual		void ResetShape(const TopoDS_Shape &B);
+		virtual		void ResetShape(const TopoDS_Shape B);
 		%feature("autodoc", "1");
-		virtual		void ResetElement(const TopoDS_Shape &E);
+		virtual		void ResetElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
-		virtual		void CompareElement(const TopoDS_Shape &E);
+		virtual		void CompareElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
 
@@ -2415,15 +2415,15 @@ class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const BOP_ListOfEdgeInfo &I);
+		Standard_Integer Add(const TopoDS_Shape K, const BOP_ListOfEdgeInfo &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const BOP_ListOfEdgeInfo &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BOP_ListOfEdgeInfo &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const BOP_ListOfEdgeInfo & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -2433,11 +2433,11 @@ class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BOP_ListOfEdgeInfo & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const BOP_ListOfEdgeInfo & FindFromKey(const TopoDS_Shape &K) const;
+		const BOP_ListOfEdgeInfo & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		BOP_ListOfEdgeInfo & ChangeFromKey(const TopoDS_Shape &K);
+		BOP_ListOfEdgeInfo & ChangeFromKey(const TopoDS_Shape K);
 
 };
 %feature("shadow") BOP_IndexedDataMapOfVertexListEdgeInfo::~BOP_IndexedDataMapOfVertexListEdgeInfo %{
@@ -2748,9 +2748,9 @@ class BOP_FaceBuilder {
 		%feature("autodoc", "1");
 		Standard_Boolean IsOldWire() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & OldWire() const;
+		const TopoDS_Shape  OldWire() const;
 		%feature("autodoc", "1");
-		const TopoDS_Wire & Wire() const;
+		const TopoDS_Wire  Wire() const;
 		%feature("autodoc", "1");
 		void FindNextValidElement();
 		%feature("autodoc", "1");
@@ -2760,7 +2760,7 @@ class BOP_FaceBuilder {
 		%feature("autodoc", "1");
 		void NextEdge();
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge() const;
+		const TopoDS_Edge  Edge() const;
 
 };
 %feature("shadow") BOP_FaceBuilder::~BOP_FaceBuilder %{
@@ -2895,17 +2895,17 @@ class BOP_BlockBuilder {
 		%feature("autodoc", "1");
 		BOP_BlockIterator BlockIterator() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Element(const BOP_BlockIterator &BI) const;
+		const TopoDS_Shape  Element(const BOP_BlockIterator &BI) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Element(const Standard_Integer I) const;
+		const TopoDS_Shape  Element(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer Element(const TopoDS_Shape &S) const;
+		Standard_Integer Element(const TopoDS_Shape S) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ElementIsValid(const BOP_BlockIterator &BI) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ElementIsValid(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		Standard_Integer AddElement(const TopoDS_Shape &S);
+		Standard_Integer AddElement(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		void SetValid(const BOP_BlockIterator &BI, const Standard_Boolean IsValid);
 		%feature("autodoc", "1");
@@ -2936,11 +2936,11 @@ class BOP_CorrectTolerances {
 		%feature("autodoc", "1");
 		BOP_CorrectTolerances();
 		%feature("autodoc", "1");
-		static		void CorrectTolerances(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectTolerances(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		static		void CorrectCurveOnSurface(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectCurveOnSurface(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		static		void CorrectPointOnCurve(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectPointOnCurve(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
 
 };
 %feature("shadow") BOP_CorrectTolerances::~BOP_CorrectTolerances %{
@@ -3166,29 +3166,29 @@ class BOP_WireEdgeSet : public BOP_ShapeSet {
 		%feature("autodoc", "1");
 		BOP_WireEdgeSet();
 		%feature("autodoc", "1");
-		BOP_WireEdgeSet(const TopoDS_Face &F);
+		BOP_WireEdgeSet(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void Initialize(const TopoDS_Face &F);
+		void Initialize(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 		%feature("autodoc", "1");
-		virtual		void AddShape(const TopoDS_Shape &S);
+		virtual		void AddShape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		void AddStartElement(const TopoDS_Shape &S);
+		virtual		void AddStartElement(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		void AddElement(const TopoDS_Shape &S);
+		virtual		void AddElement(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		virtual		void InitNeighbours(const TopoDS_Shape &E);
+		virtual		void InitNeighbours(const TopoDS_Shape E);
 		%feature("autodoc", "1");
 		virtual		void FindNeighbours();
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & MakeNeighboursList(const TopoDS_Shape &E, const TopoDS_Shape &V);
+		virtual		const TopTools_ListOfShape & MakeNeighboursList(const TopoDS_Shape E, const TopoDS_Shape V);
 		%feature("autodoc", "1");
-		static		void IsUVISO(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Boolean & uiso, Standard_Boolean & viso);
+		static		void IsUVISO(const TopoDS_Edge E, const TopoDS_Face F, Standard_Boolean & uiso, Standard_Boolean & viso);
 		%feature("autodoc", "1");
-		void RemoveEdgeFromWES(const TopoDS_Edge &aE);
+		void RemoveEdgeFromWES(const TopoDS_Edge aE);
 		%feature("autodoc", "1");
-		Standard_Boolean KeptTwice(const TopoDS_Edge &aE) const;
+		Standard_Boolean KeptTwice(const TopoDS_Edge aE) const;
 
 };
 %feature("shadow") BOP_WireEdgeSet::~BOP_WireEdgeSet %{
@@ -3242,11 +3242,11 @@ def __del__(self):
 class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
 	public:
 		%feature("autodoc", "1");
-		BOP_ShellSolidHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2, const BOP_Operation theOperation);
+		BOP_ShellSolidHistoryCollector(const TopoDS_Shape theShape1, const TopoDS_Shape theShape2, const BOP_Operation theOperation);
 		%feature("autodoc", "1");
-		void AddNewFace(const TopoDS_Shape &theOldShape, const TopoDS_Shape &theNewShape, const BOPTools_PDSFiller &theDSFiller);
+		void AddNewFace(const TopoDS_Shape theOldShape, const TopoDS_Shape theNewShape, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
-		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
+		virtual		void SetResult(const TopoDS_Shape theResult, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3324,15 +3324,15 @@ class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const BOP_PSoClassif &I);
+		Standard_Integer Add(const TopoDS_Shape K, const BOP_PSoClassif &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const BOP_PSoClassif &T);
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BOP_PSoClassif &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const BOP_PSoClassif & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -3342,11 +3342,11 @@ class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BOP_PSoClassif & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const BOP_PSoClassif & FindFromKey(const TopoDS_Shape &K) const;
+		const BOP_PSoClassif & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		BOP_PSoClassif & ChangeFromKey(const TopoDS_Shape &K);
+		BOP_PSoClassif & ChangeFromKey(const TopoDS_Shape K);
 
 };
 %feature("shadow") BOP_IndexedDataMapOfSolidClassifier::~BOP_IndexedDataMapOfSolidClassifier %{
@@ -3431,7 +3431,7 @@ class BOP_WireSplitter {
 		%feature("autodoc", "1");
 		BOP_WireSplitter();
 		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &aF);
+		void SetFace(const TopoDS_Face aF);
 		%feature("autodoc", "1");
 		void DoWithListOfEdges(const TopTools_ListOfShape &aLE);
 		%feature("autodoc", "1");
@@ -3441,7 +3441,7 @@ class BOP_WireSplitter {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 		%feature("autodoc", "1");
 		const BOPTColStd_ListOfListOfShape & Shapes() const;
 
@@ -3468,29 +3468,29 @@ class BOP_FaceInfo {
 		%feature("autodoc", "1");
 		BOP_FaceInfo();
 		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &aF);
+		void SetFace(const TopoDS_Face aF);
 		%feature("autodoc", "1");
 		void SetPassed(const Standard_Boolean aFlag);
 		%feature("autodoc", "1");
-		void SetPOnEdge(const gp_Pnt &aP);
+		void SetPOnEdge(const gp_Pnt aP);
 		%feature("autodoc", "1");
-		void SetPInFace(const gp_Pnt &aP);
+		void SetPInFace(const gp_Pnt aP);
 		%feature("autodoc", "1");
-		void SetPInFace2D(const gp_Pnt2d &aP);
+		void SetPInFace2D(const gp_Pnt2d aP);
 		%feature("autodoc", "1");
-		void SetNormal(const gp_Dir &aD);
+		void SetNormal(const gp_Dir aD);
 		%feature("autodoc", "1");
 		void SetAngle(const Standard_Real A);
 		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopoDS_Face  Face() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & POnEdge() const;
+		const gp_Pnt  POnEdge() const;
 		%feature("autodoc", "1");
-		const gp_Pnt & PInFace() const;
+		const gp_Pnt  PInFace() const;
 		%feature("autodoc", "1");
-		const gp_Pnt2d & PInFace2D() const;
+		const gp_Pnt2d  PInFace2D() const;
 		%feature("autodoc", "1");
-		const gp_Dir & Normal() const;
+		const gp_Dir  Normal() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsPassed() const;
 		%feature("autodoc", "1");
@@ -3608,13 +3608,13 @@ class BOP_ArgumentAnalyzer {
 		%feature("autodoc", "1");
 		BOP_ArgumentAnalyzer();
 		%feature("autodoc", "1");
-		void SetShape1(const TopoDS_Shape &TheShape);
+		void SetShape1(const TopoDS_Shape TheShape);
 		%feature("autodoc", "1");
-		void SetShape2(const TopoDS_Shape &TheShape);
+		void SetShape2(const TopoDS_Shape TheShape);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape1() const;
+		const TopoDS_Shape  GetShape1() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape2() const;
+		const TopoDS_Shape  GetShape2() const;
 		%feature("autodoc", "1");
 		BOP_Operation & OperationType();
 		%feature("autodoc","1");
@@ -3804,9 +3804,9 @@ class BOP_Refiner {
 		%feature("autodoc", "1");
 		BOP_Refiner();
 		%feature("autodoc", "1");
-		BOP_Refiner(const TopoDS_Shape &aS);
+		BOP_Refiner(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &aS);
+		void SetShape(const TopoDS_Shape aS);
 		%feature("autodoc", "1");
 		void SetInternals(const TopTools_ListOfShape &aLS);
 		%feature("autodoc", "1");
@@ -3816,7 +3816,7 @@ class BOP_Refiner {
 		%feature("autodoc", "1");
 		Standard_Integer ErrorStatus() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbRemovedVertices() const;
 		%feature("autodoc", "1");
