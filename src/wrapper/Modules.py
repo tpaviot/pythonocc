@@ -49,9 +49,9 @@ MODULES = [
            ('Poly',[],['Poly_CoherentTriPtr','Poly_CoherentTriangulation']),
            ('GC',[],[]),
            ('GProp',[],[]),
-           ('gp',[],[]),
+           ('gp',[],['gp_VectorWithNullMagnitude']),
            ('GCPnts',[],[]),
-           ('TopoDS',[],[]),
+           ('TopoDS',[],['TopoDS_FrozenShape','TopoDS_UnCompatibleShapes']),
            ('TopoDSToStep',[],[]),
            ('TopLoc',[],['TopLoc_SListNodeOfSListOfItemLocation']),
            ('TopExp',[],[]),
@@ -114,7 +114,7 @@ MODULES = [
            ('Blend',[],[]),
            ('BlendFunc',[],[],{"BlendFunc":["Knots","Mults"]}),
            ('BooleanOperations',[],[]),
-           ('BOP',['BooleanOperations'],[]), 
+           ('BOP',['TopoDS','BooleanOperations'],[]), 
            ('BOPTools',[],[]),
            ('BOPTColStd',[],[]),
            #('Draw',[],[]), DON'T WORK
@@ -496,7 +496,7 @@ if sys.platform=='win32':
              ('Graphic3d',['gp'],['Graphic3d_GraphicDevice','Handle_Graphic3d_GraphicDevice'],\
              {'Graphic3d_Group':['SetGroupPrimitivesAspect'],'Handle_Graphic3d_GraphicDevice':['DownCast']}),
              ('Prs2d',['Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),             
-             ('Prs3d',['Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),
+             ('Prs3d',['TopoDS','Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),
              ('PrsMgr',['Graphic3d','gp','Aspect','Handle_TCollection'],[]),
              ('SelectMgr',['TCollection','Prs3d','Graphic3d','Aspect','Quantity'],[]),
              ('StdSelect',['TCollection','Prs3d','Graphic3d','Aspect','Quantity','SelectBasics'],[],\
@@ -518,7 +518,7 @@ else:
                     ('Xw',['OSD','TCollection'],[]),
                     ('Graphic2d',[],[],{'Graphic2d_TransientManager':['Transform']}),
                     ('Graphic3d',['OSD','MFT','gp'],[],{'Graphic3d_Group':['SetGroupPrimitivesAspect']}),
-                    ('Prs3d',['OSD','MFT','Xw','Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),
+                    ('Prs3d',['TopoDS','OSD','MFT','Xw','Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),
                     ('PrsMgr',['OSD','MFT','Xw','Graphic3d','gp','Aspect','Handle_TCollection'],[]),
                     ('SelectMgr',['OSD','MFT','Xw','TCollection','Prs3d','Graphic3d','Aspect','Quantity'],[]),
                     ('DsgPrs',[],[],{'DsgPrs_RadiusPresentation':['Add']}),
@@ -543,8 +543,8 @@ SALOME_GEOM_MODULES = [
                        ('Archimede',[],[]),
                        ('SGEOM',['TDataStd','TColStd','TDF','CDM','CDF','Quantity'],[],\
                         {'GEOM_SubShapeDriver':['GetID'],'GEOM_Engine':['GetTextureGUID']}),
-                       ('GEOMAlgo',['Handle_TCollection'],[]),
-                       ('GEOMImpl',['TDataStd','TDocStd','CDM','TDF','Handle_TCollection','CDF',
+                       ('GEOMAlgo',['gp','TopoDS','Handle_TCollection'],[]),
+                       ('GEOMImpl',['gp','TopoDS','TDataStd','TDocStd','CDM','TDF','Handle_TCollection','CDF',
                                     'Aspect','Quantity'],\
                         ['GEOMImpl_Block6Explorer','GEOMImpl_Template','Handle_GEOMImpl_Template'],\
                         {'GEOMImpl_IShapesOperations':['GetShapesOnCylinderOld','GetShapesOnSphereOld','GetShapeProperties'],\
@@ -553,10 +553,10 @@ SALOME_GEOM_MODULES = [
                          'GEOMImpl_Fillet1dPoint':['RemoveSolution']}),
                        ('BlockFix',['TopTools','Handle_TCollection'],[],\
                         {'BlockFix_SphereSpaceModifier':['ForRotation']}),
-                        ('NMTDS',[],[]),
-                        ('NMTTools',[],[],\
+                        ('NMTDS',['gp','TopoDS'],[]),
+                        ('NMTTools',['gp','TopoDS'],[],\
                          {'NMTTools_IteratorOfCoupleOfShape':['DS']}),
-                        ('Partition',['TopoDS_Vertex','gp_Vec'],[]),
+                        ('Partition',['TopoDS','gp'],[]),
                         ('ShHealOper',['Geom','Handle_TCollection','Handle_Message','Handle_ShapeExtend'],[]),
                         ('Sketcher',[],[]),
                        ]

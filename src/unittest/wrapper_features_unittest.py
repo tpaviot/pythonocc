@@ -25,7 +25,7 @@ from OCC.BRepPrimAPI import *
 from OCC.BRepBuilderAPI import *
 from OCC.gp import *
 
-class Test(unittest.TestCase):
+class WrapperFeaturesTest(unittest.TestCase):
     
     def testHash(self):
         '''
@@ -267,7 +267,44 @@ class Test(unittest.TestCase):
         # is *not* manually imported
         returned_object_type = '%s'%type(returned_object)
         self.assertEqual(returned_object_type,"<class 'OCC.Geom2d.Handle_Geom2d_TrimmedCurve'>")
-
+    
+    def testRemovedByRefFeature(self):
+        ''' test that arguments returned by ref transormation is ok
+        '''
+        from OCC.BRepPrimAPI import BRepPrimAPI_MakeSphere
+        from OCC.BRep import BRep_Tool_surface
+        from OCC.GeomLProp import GeomLProp_SLProps
+        from OCC.gp import gp_Pnt
+        sphere_shape = BRepPrimAPI_MakeSphere(40.).Shape()
+        # build a surface from this sphere
+        from OCC.Utils.Topology import Topo
+        t = Topo(sphere_shape)
+        for f in t.faces():
+                face = f
+        
+        surf = BRep_Tool_surface(face)
+        lprop = GeomLProp_SLProps(0,1e-12)
+        lprop.SetSurface(surf)
+        
+        # evaluate_uv_coordinates
+        coords = []
+        p = 0.0
+        # first point
+        u,v=[0,0]
+        lprop.SetParameters(u,v)
+        pnt = lprop.Value()
+        print 'First point coords : ',pnt.Coord()
+        print surf.GetObject().Value(u,v).Coord()
+        # This one is [40.0,0.,0.]
+        self.assertEqual(format(pnt.Coord()),'(40.0, 0.0, 0.0)')
+        coords.append(pnt)        
+        #second point
+        u,v=[0.5,0.5]
+        lprop.SetParameters(u,v)
+        pnt2 = lprop.Value()
+        # check then that the value has not changed (it does if returned by ref)
+        self.assertEqual(format(pnt.Coord()),'(40.0, 0.0, 0.0)')
+        
 if __name__ == "__main__":
     unittest.main()
     

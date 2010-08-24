@@ -326,13 +326,14 @@ class ModularBuilder(object):
         #
         # Process static methods
         #
+        if self.MODULE_NAME == 'GccEnt':
+            #do nothing
+            renamed_file_fp.close()
+            return True
         for static_method in self.STATIC_METHODS:
             class_name = static_method[0]
             method_name = static_method[1]
-            if method_name == 'Enclosing' and class_name == 'GccEnt':
-                # GccEnt_enclosing is already defined in an enum
-                pass
-            elif method_name not in ['TypeName','Static','Template']: # lowercase typename will raise issues
+            if method_name not in ['TypeName','Static','Template']: # lowercase typename will raise issues
                 new_method_name = method_name.lower()
                 renamed_file_fp.write("%%rename(%s) %s::%s;\n"%(new_method_name,class_name,method_name))
         renamed_file_fp.close()
@@ -351,7 +352,20 @@ class ModularBuilder(object):
                 required_modules_fp.write('import %s\n'%module)
             required_modules_fp.write("};\n")
         required_modules_fp.close()
-        
+    
+    def process_by_ref_argument(self,argument_list):
+        ''' process arguments passed by ref. Try to remove the by ref and pass by value
+        '''
+        print argument_list
+        if not '&' in argument_list:
+            return argument_list
+        module = argument_list[0].split('_')[0]
+        print module
+        if not module.startswith('Handle'):
+            if module in ['gp','TopoDS']:
+                argument_list.remove('&')
+        return argument_list
+
     def write_function_arguments(self,mem_fun):
         """
         Write the function arguments, comma separated
@@ -434,7 +448,11 @@ class ModularBuilder(object):
                 to_write += "%s%s %s"%(argument_types[0],argument_types[1],argument_name)
                 param_list.append([argument_types[0],argument_name])
             elif len(argument_types)==3: #ex: Handle_WNT_GraphicDevice const &
-                to_write += "%s %s %s%s"%(argument_types[1],argument_types[0],argument_types[2],argument_name)
+                argument_types = self.process_by_ref_argument(argument_types)
+                if len(argument_types)==2:#removed a '&'
+                    to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
+                else:
+                    to_write += "%s %s %s%s"%(argument_types[1],argument_types[0],argument_types[2],argument_name)
                 param_list.append([argument_types[1],argument_name])
             elif (len(argument_types)==2 and argument_types[1]!="&"):#ex: Aspect_Handle const
                 to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
@@ -481,6 +499,32 @@ class ModularBuilder(object):
             END_WITH_CONST = False
         print 'avant:%s'%param_list
         return to_write, return_list, param_list, arguments, default_value, END_WITH_CONST, param_names,FUNCTION_MODIFIED
+    
+    def process_by_ref_return_type(self, return_type_string):
+        ''' This method checks if the returned value is by ref:
+        for instance const gp_Pnt &.
+        In that case, try to remove the '&':
+        const gp_Pnt
+        so that the argument is returned by value. As a consequence, the object does not have to
+        be garbage collected since it remains in scope
+        '''
+        # if the argument is returned by value, do nothin
+        if not '&' in return_type_string:
+            return return_type_string
+        # First check in which module is defined the returned argument
+        elem = return_type_string.split(' ')[0].split('_')[0]
+        #don't process the handles since it's a bit special
+        if elem=='Handle':
+            #don't modify the string
+            return return_type_string
+        # if the module is in the list NOT_GARBAGED_MODULES, then remove the '&
+        #print 'Elem :',elem
+        # WARNING : the classes defined in such modules must have public copy ctors
+        if elem in ['gp','TopoDS']:
+            modified_string = return_type_string.replace('&','')
+            return modified_string
+        else:
+            return return_type_string
     
     def write_function( self , mem_fun , parent_is_abstract):
         """
@@ -587,6 +631,12 @@ class ModularBuilder(object):
             if not [class_parent_name,function_name] in self.STATIC_METHODS:
                 self.STATIC_METHODS.append([class_parent_name,function_name])
         # on teste le cas suivant pour return_type:gp_Pnt const &, qu'il faut transformer en const gp_Pnt &
+        # test if the value is returned by reference. For that, just check if the '&' character
+        # is in the return type
+        if '&' in return_type:
+            # send the return_type string to the process_by_ref_return_type method
+            # and get the modified string
+            return_type = self.process_by_ref_return_type(return_type)
         parts = return_type.split(" ")
         if len(parts)==3:
             return_type="%s %s %s"%(parts[1],parts[0],parts[2])
