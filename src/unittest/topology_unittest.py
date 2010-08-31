@@ -20,14 +20,16 @@
 ## $Author$
 ## $HeadURL$
 
-from OCC.BRepPrimAPI import *
-from OCC.TopoDS import *
- 
-from OCC.Utils.Topology import Topo, WireExplorer
-
 import unittest
 
+from OCC.BRepPrimAPI import *
+from OCC.TopoDS import *
+from OCC.Utils.Topology import Topo, WireExplorer
+
 class TestTopology(unittest.TestCase):
+    def setUp(self):
+        self.topo = Topo(BRepPrimAPI_MakeBox(10,10,10).Shape())
+        
     def test_nested_iteration(self):
         '''check nested looping'''
         for f in self.topo.faces():
@@ -146,6 +148,10 @@ class TestTopology(unittest.TestCase):
         for edg in _edges:
             self.assert_(edg.IsNull() == False)
     
+def suite():
+   suite = unittest.TestSuite()
+   suite.addTest(unittest.makeSuite(TestTopology))
+   return suite
 
 if __name__ == "__main__":
     unittest.main()

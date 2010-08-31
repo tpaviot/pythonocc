@@ -48,7 +48,12 @@ class TestPAF(unittest.TestCase):
         p.X = 5
         # the new Y value should be Y = 5*5+1 = 26
         self.assert_(p.Y.value==26)
-        
+
+def suite():
+   suite = unittest.TestSuite()
+   suite.addTest(unittest.makeSuite(TestPAF))
+   return suite
+  
 
 if __name__ == '__main__':
     unittest.main()

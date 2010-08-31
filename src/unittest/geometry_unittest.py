@@ -37,18 +37,16 @@ TODO:
     *1109 converting list to TCol* flips...
 
 '''
+
+import time, sys
+
 from OCC.gp import *
 from OCC.Geom2d import *
 from OCC.Geom2dAdaptor import *
 from OCC.Geom2dAPI import *
 from OCC.GCPnts import *
-
-
-# gui
-#from examples_gui import display, loop
 from OCC.Geom import *
 from OCC.GeomAPI import *
-
 from OCC.Precision import *
 # stands for intersections analytical
 from OCC.IntAna import *
@@ -71,9 +69,6 @@ from OCC.AIS import *
 from OCC.Prs3d import *
 from OCC.TColgp import * 
 from OCC.GeomFill import *
-
-import time, sys
-
 
 #===============================================================================
 # Utility functions
@@ -366,7 +361,6 @@ class TestGeometry(unittest.TestCase):
          
          
         aLine = GCE2d_MakeSegment(L,-2,20).Value()
-        display.DisplayShape(make_edge2d(aLine))
         
          
         if TR.IsDone():
@@ -374,7 +368,6 @@ class TestGeometry(unittest.TestCase):
             for k in range(1,NbSol+1):
                 circ = TR.ThisSolution(k)
                 aCircle = Geom2d_Circle(circ)
-                display.DisplayShape(make_edge2d(aCircle.GetHandle()))
                 # find the solution circle ( index, outvalue, outvalue, gp_Pnt2d )
                 pnt3 = gp_Pnt2d()                         
                 parsol,pararg = TR.Tangency1(k, pnt3)
@@ -685,6 +678,11 @@ class TestGeometry(unittest.TestCase):
             ESS.Points(k, P3, P4)                              
             aCurve= GC_MakeSegment(P3,P4).Value()
             self.assertFalse(aCurve.IsNull())
+
+def suite():
+   suite = unittest.TestSuite()
+   suite.addTest(unittest.makeSuite(TestGeometry))
+   return suite
 
 if __name__ == "__main__":
     unittest.main()

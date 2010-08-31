@@ -24,7 +24,7 @@ from OCC.gp import *
 
 GarbageCollector.set_debug()
 
-class Test(unittest.TestCase):
+class TestMemory(unittest.TestCase):
     ''' Testing OC memory management
     '''
     def testReferenceCounting(self):
@@ -100,6 +100,11 @@ class Test(unittest.TestCase):
         GarbageCollector.garbage.smart_purge()
         self.assertEqual(len(GarbageCollector.garbage._handles),0)
         self.assertEqual(len(GarbageCollector.garbage._transients),0)
+
+def suite():
+   suite = unittest.TestSuite()
+   suite.addTest(unittest.makeSuite(TestMemory))
+   return suite
 
 if __name__ == "__main__":
     unittest.main()

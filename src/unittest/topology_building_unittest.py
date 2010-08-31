@@ -287,5 +287,10 @@ class TestTopologyBuilding(unittest.TestCase):
         S4  = BRepPrimAPI_MakePrism(F.Shape(),gp_Vec(0.,0.,100.))
         self.assertTrue(S4.IsDone())
 
+def suite():
+   suite = unittest.TestSuite()
+   suite.addTest(unittest.makeSuite(TestTopologyBuilding))
+   return suite
+
 if __name__== '__main__':
     unittest.main()

@@ -19,14 +19,15 @@
 
 import unittest
 import sys
+
 from OCC.Standard import *
 from OCC.Utils.Topology import *
 from OCC.BRepPrimAPI import *
 from OCC.BRepBuilderAPI import *
 from OCC.gp import *
 
-class WrapperFeaturesTest(unittest.TestCase):
-    
+class TestWrapperFeatures(unittest.TestCase):
+        
     def testHash(self):
         '''
         Check whether the __hash__ function is equal to HashCode()
@@ -304,7 +305,11 @@ class WrapperFeaturesTest(unittest.TestCase):
         pnt2 = lprop.Value()
         # check then that the value has not changed (it does if returned by ref)
         self.assertEqual(format(pnt.Coord()),'(40.0, 0.0, 0.0)')
-        
+
+def suite():
+   suite = unittest.TestSuite()
+   suite.addTest(unittest.makeSuite(TestWrapperFeatures))
+   return suite
 if __name__ == "__main__":
     unittest.main()
     

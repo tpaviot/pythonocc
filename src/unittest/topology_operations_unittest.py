@@ -15,6 +15,11 @@
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+import time
+import math
+import sys
+import unittest
+
 from OCC.gp import *
 from OCC.BRepPrimAPI import *
 from OCC.BRepAlgoAPI import *
@@ -26,11 +31,7 @@ from OCC.TopoDS import *
 from OCC.TopExp import *
 from OCC.TopAbs import *
 from OCC.TColgp import *
-
-import time, math, sys
 from OCC.Utils.Construct import *
-
-import unittest
 
 class TestTopologyOperations(unittest.TestCase):    
     def test_fuse(self):
@@ -194,6 +195,11 @@ class TestTopologyOperations(unittest.TestCase):
         afillet.Build()
         self.assertTrue(afillet.IsDone())
         LawEvolvedBox = afillet.Shape()
+
+def suite():
+   suite = unittest.TestSuite()
+   suite.addTest(unittest.makeSuite(TestTopologyOperations))
+   return suite
         
 if __name__ == '__main__':
     unittest.main()

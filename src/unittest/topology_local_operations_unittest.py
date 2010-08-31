@@ -15,6 +15,9 @@
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+import sys
+import unittest
+
 from OCC.gp import *
 from OCC.BRepPrimAPI import *
 from OCC.TopExp import *
@@ -26,10 +29,8 @@ from OCC.GCE2d import *
 from OCC.Geom2d import *
 from OCC.BRepLib import *
 from OCC.BRepFeat import *
-
 from OCC.Utils.Topology import Topo
 from OCC.TopTools import *
-
 from math import pi
 from OCC.BRepOffsetAPI import *
 from OCC.BRepOffset import *
@@ -41,10 +42,7 @@ from OCC.BRepAlgoAPI import *
 from OCC.LocOpe import *
 from OCC.TColgp import *
 
-import sys, time
-
-import unittest
-class TestTopologyLocalOperation(unittest.TestCase):    
+class TestTopologyLocalOperations(unittest.TestCase):    
     def test_extrusion(self):
         print 'Test: extrusion'
         #
@@ -446,6 +444,11 @@ class TestTopologyLocalOperation(unittest.TestCase):
         fused.Build()
         self.assertTrue(fused.IsDone())
         self.assertFalse(fused.Shape().IsNull())
+
+def suite():
+   suite = unittest.TestSuite()
+   suite.addTest(unittest.makeSuite(TestTopologyLocalOperations))
+   return suite
         
 if __name__ == '__main__':
     unittest.main()
