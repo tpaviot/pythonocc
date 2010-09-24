@@ -297,14 +297,14 @@ class TestWrapperFeatures(unittest.TestCase):
         print 'First point coords : ',pnt.Coord()
         print surf.GetObject().Value(u,v).Coord()
         # This one is [40.0,0.,0.]
-        self.assertEqual(format(pnt.Coord()),'(40.0, 0.0, 0.0)')
+        self.assertEqual(str(pnt.Coord()),'(40.0, 0.0, 0.0)')
         coords.append(pnt)        
         #second point
         u,v=[0.5,0.5]
         lprop.SetParameters(u,v)
         pnt2 = lprop.Value()
         # check then that the value has not changed (it does if returned by ref)
-        self.assertEqual(format(pnt.Coord()),'(40.0, 0.0, 0.0)')
+        self.assertEqual(str(pnt.Coord()),'(40.0, 0.0, 0.0)')
 
 def suite():
    suite = unittest.TestSuite()
