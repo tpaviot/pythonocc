@@ -116,10 +116,20 @@ class STEPImporter(object):
         return self._shapes
 
 class STEPExporter(object):
-    def __init__(self, filename, verbose=False):
+    def __init__(self, filename, verbose=False, schema='AP214CD'):
+        '''
+        writing STEP files
+        @param filename:    the file to save to eg. myshape.step
+        @param verbose:     verbosity of the STEP exporter 
+        @param schema:      which STEP schema to use, either AP214CD or AP203
+        '''
         self._shapes = []
         self.verbose = verbose
         self._filename = filename
+        if schema == 'AP203':
+            from OCC.Interface import *
+            Interface_Static_SetCVal("write.step.schema","AP203")
+
         self.stepWriter = STEPControl_Writer()
         
     def SetTolerance(self, tolerance=0.0001):
