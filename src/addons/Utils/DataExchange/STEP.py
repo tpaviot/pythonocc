@@ -21,9 +21,10 @@ import os, os.path
 from OCC.TopoDS import *
 from OCC.BRep import *
 from OCC.STEPControl import *
+from OCC.Interface import *
 
 from OCC.IFSelect import *
-
+from OCC.TColStd import *
 
 from OCC.XCAFApp import *
 from OCC.STEPCAFControl import *
@@ -47,21 +48,21 @@ class STEPImporter(object):
     def __init__(self,filename=None):        
         self._shapes = []
         self._nbs = 0
-        self.SetFilename(filename)
+        self.set_filename(filename)
 
-    def GetNbrShapes(self):
+    def get_nbr_shapes(self):
         """ Return the number of shapes from the importer
         """
         return self._nbs
        
-    def SetFilename(self, filename):
+    def set_filename(self, filename):
         if not os.path.isfile(filename):
             print "STEPImporter initialization Error: file %s not found."%filename
             self._filename = None
         else:
             self._filename = filename
         
-    def ReadFile(self):
+    def read_file(self):
         """
         Read the STEP file and stores the result in a _shapes list
         """
@@ -100,7 +101,7 @@ class STEPImporter(object):
             return False
         return False
 
-    def GetCompound(self):
+    def get_compound(self):
         """ Create and returns a compound from the _shapes list
         """
         # Create a compound
@@ -112,7 +113,7 @@ class STEPImporter(object):
             B.Add(compound,shape)
         return compound
     
-    def GetShapes(self):
+    def get_shapes(self):
         return self._shapes
 
 class STEPExporter(object):
@@ -126,23 +127,24 @@ class STEPExporter(object):
         self._shapes = []
         self.verbose = verbose
         self._filename = filename
-        if schema == 'AP203':
-            from OCC.Interface import *
-            Interface_Static_SetCVal("write.step.schema","AP203")
-
         self.stepWriter = STEPControl_Writer()
+        if not schema in ['AP203','AP214CD']:
+            raise AssertionError('The schema string argument must be either "AP203" or "AP214CD"')
+        else:
+            Interface_Static_setcval("write.step.schema", schema)
         
-    def SetTolerance(self, tolerance=0.0001):
+        
+    def set_tolerance(self, tolerance=0.0001):
         self.stepWriter.SetTolerance(tolerance)
     
-    def AddShape(self, aShape):
+    def add_shape(self, aShape):
         # First check the shape
         if aShape.IsNull():
             raise Assertion("STEPExporter Error: the shape is NULL")
         else: 
             self._shapes.append(aShape)
     
-    def WriteFile(self):
+    def write_file(self):
         for shp in self._shapes:
             status = self.stepWriter.Transfer(shp, STEPControl_AsIs )
         if status == IFSelect_RetDone:
@@ -170,9 +172,9 @@ class STEPOCAF_Import(object):
     def get_shapes(self):
         return self._shapes
     
-    def read(self):
+    def read_file(self):
         h_doc = TDocStd.Handle_TDocStd_Document()
-        print "Empty Doc?", h_doc.IsNull()
+        #print "Empty Doc?", h_doc.IsNull()
         
         # Create the application
         app = XCAFApp.GetApplication().GetObject()
@@ -180,9 +182,10 @@ class STEPOCAF_Import(object):
         
         # Get root assembly
         doc = h_doc.GetObject()
-        h_shape_tool = XCAFDoc.XCAFDoc_DocumentTool().ShapeTool(doc.Main())
-        l_Colors = XCAFDoc.XCAFDoc_DocumentTool().ColorTool(doc.Main())
-        l_Layers = XCAFDoc.XCAFDoc_DocumentTool().LayerTool(doc.Main())
+        h_shape_tool = XCAFDoc.XCAFDoc_DocumentTool_shapetool(doc.Main())
+        l_Colors = XCAFDoc.XCAFDoc_DocumentTool_colortool(doc.Main())
+        l_Layers = XCAFDoc.XCAFDoc_DocumentTool_layertool(doc.Main())
+        l_materials = XCAFDoc.XCAFDoc_DocumentTool_materialtool(doc.Main())
         
         STEPReader = STEPCAFControl_Reader()
         STEPReader.SetColorMode(True)
@@ -196,15 +199,32 @@ class STEPOCAF_Import(object):
         Labels = TDF_LabelSequence()
         ColorLabels = TDF_LabelSequence()
           #TopoDS_Shape aShape;
+        shape_tool = h_shape_tool.GetObject()
         h_shape_tool.GetObject().GetFreeShapes(Labels)
-        print Labels.Length()
+        print 'Number of shapes at root :%i'%Labels.Length()
+        for i in range(Labels.Length()):
+            sub_shapes_labels = TDF_LabelSequence()
+            print "Is Assembly?",shape_tool.isassembly(Labels.Value(i+1))
+            sub_shapes = shape_tool.getsubshapes(Labels.Value(i+1),sub_shapes_labels)
+            print 'Number of subshapes in the assemly :%i'%sub_shapes_labels.Length()
         l_Colors.GetObject().GetColors(ColorLabels)
         print 'Number of colors=%i'%ColorLabels.Length()
-#          if(CL_Len>0)
-#               ColorTool->GetColor(ColorLabels.Value(1),DefaultColor);
+        #if(CL_Len>0):
+        #       ColorTool->GetColor(ColorLabels.Value(1),DefaultColor);
         for i in range(Labels.Length()):
             #print i
-            aShape = h_shape_tool.GetObject().GetShape(Labels.Value(i+1))
+            print Labels.Value(i+1)
+            aShape = h_shape_tool.GetObject().getshape(Labels.Value(i+1))
+            m = l_Layers.GetObject().GetLayers(aShape)#,layer_labels,popo)
+            print "Lenght of popo :%i"%m.GetObject().Length()
+            #v = m.GetObject().Value(0)#Value()
+            #print v,v.Length()
+                    #for i in v.Length():
+                    #    print chr(v.Value(i+1))
+            #layer_labels = TDF_LabelSequence()
+            #popo = Handle_TColStd_HSequenceOfExtendedString()
+            
+            #print 'Number of layers :%i'%layer_labels.Length()
             #print aShape,aShape.ShapeType()
             if aShape.ShapeType() == TopAbs_COMPOUND:
                 t = Topo(aShape)
@@ -295,7 +315,7 @@ class StepOCAF_Export(object):
             self.set_layer(layer)
             self.layers.SetLayer(shp_label, self.current_layer)
         
-    def write(self):
+    def write_file(self):
         WS = XSControl_WorkSession()
         writer = STEPCAFControl_Writer( WS.GetHandle(), False )
         writer.Transfer(self.h_doc, STEPControl_AsIs)
@@ -307,21 +327,24 @@ def TestImport():
     """
     Imports a STEP file.
     """
-    myImporter = STEPImporter("test.stp")
-    myImporter.ReadFile()
-    print myImporter.GetShape()
+    myImporter = STEPImporter("box_203.stp")
+    myImporter.read_file()
+    print myImporter.get_shapes()
 
 def TestExport():
     """
     Exports a TopoDS_Shape to a STEP file.
     """
     from OCC.BRepPrimAPI import BRepPrimAPI_MakeBox
-    test_shape1 = BRepPrimAPI_MakeBox(100.,100.,100.).Shape()
-    test_shape2 = BRepPrimAPI_MakeBox(100.,100.,100.).Shape()
-    myExporter = STEPExporter('test.stp')
-    myExporter.AddShape(test_shape1)
-    myExporter.AddShape(test_shape2)
-    myExporter.WriteFile()
+    test_shape = BRepPrimAPI_MakeBox(100.,100.,100.).Shape()
+    # export to AP203 schema
+    AP203_Exporter = STEPExporter('box_203.stp',schema='AP203')
+    AP203_Exporter.add_shape(test_shape)
+    AP203_Exporter.write_file()
+    # export AP214 schema
+    AP214CD_Exporter = STEPExporter('box_214CD.stp',schema='AP214CD')
+    AP214CD_Exporter.add_shape(test_shape)
+    AP214CD_Exporter.write_file()
 
 if __name__=='__main__':
     TestExport()
