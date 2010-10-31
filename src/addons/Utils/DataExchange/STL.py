@@ -26,14 +26,14 @@ class STLImporter(object):
         self.SetFilename(filename)
         self._shape = None
 
-    def SetFilename(self, filename):
+    def set_filename(self, filename):
         if not os.path.isfile(filename):
             print "STEPImporter initialization Error: file %s not found."%filename
             self._filename = None
         else:
             self._filename = filename
         
-    def ReadFile(self):
+    def read_file(self):
         """
         Read the STEP file and stores the result in a TopoDS_Shape
         """
@@ -42,7 +42,7 @@ class STLImporter(object):
         stl_reader.Read(shp,self._filename)
         self._shape = shp
 
-    def GetShape(self):
+    def get_shape(self):
         if self._shape.IsNull():
             raise Assertion("Error: the shape is NULL")
         else:
@@ -56,21 +56,21 @@ class STLExporter(object):
         self._ASCIIMode = ASCIIMode
         self.SetFilename(filename)
     
-    def SetShape(self, aShape):
+    def set_shape(self, aShape):
         # First check the shape
         if aShape.IsNull():
             raise AssertionError("STLExporter Error: the shape is NULL")
         else: 
             self._shape = aShape
 
-    def SetFilename(self, filename):
+    def set_filename(self, filename):
         if not os.path.isfile(filename):
             print "STLImporter initialization Error: file %s not found."%filename
             self._filename = None
         else:
             self._filename = filename
             
-    def WriteFile(self):
+    def write_file(self):
         stl_writer = StlAPI()
         stl_writer.Write(self._shape,self._filename,self._ASCIIMode)
 
