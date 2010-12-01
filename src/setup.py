@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# -*- coding: utf-8 -*-
 ##Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
