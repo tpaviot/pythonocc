@@ -58,7 +58,7 @@ TOLERANCE = 1e-6
 
 def get_boundingbox(shape, tol=1e-12):
     bbox = Bnd_Box()
-    BRepBndLib().AddClose(shape, bbox)
+    BRepBndLib().addclose(shape, bbox)
     bbox.SetGap(tol)
     return bbox
 
@@ -186,7 +186,6 @@ def interpolate_points_to_spline(list_of_points, start_tangent, end_tangent, fil
             return rrr.Curve()
     except RuntimeError:
         print 'FAILED TO INTERPOLATE THE SHOWN POINTS'
-        import ipdb; ipdb.set_trace()
 
 def interpolate_points_vectors_to_spline(list_of_points, list_of_vectors, vector_mask=[], tolerance=TOLERANCE):
     '''
@@ -220,7 +219,6 @@ def interpolate_points_vectors_to_spline(list_of_points, list_of_vectors, vector
             return rrr.Curve()
     except RuntimeError:
         print 'FAILED TO INTERPOLATE THE SHOWN POINTS'
-        import ipdb; ipdb.set_trace()
 
 def interpolate_points_to_spline_no_tangency(list_of_points, filter=True, closed=False, tolerance=TOLERANCE):
     '''
@@ -244,10 +242,7 @@ def interpolate_points_to_spline_no_tangency(list_of_points, filter=True, closed
             return rrr.Curve()
     except RuntimeError:
         print 'FAILED TO INTERPOLATE THE SHOWN POINTS'
-#        import ipdb; ipdb.set_trace()
-#        for i in list_of_points:
-#            display.DisplayShape(make_vertex(i))
-        # probably should do tangents too...
+
 
 #===============================================================================
 # --- RANDOMNESS ---
