@@ -138,7 +138,6 @@ def init_display():
                 self.canva = qtViewer3d(self)
                 self.setWindowTitle("pythonOCC-%s 3d viewer ('qt' backend)"%VERSION)
                 self.resize(1024,768)
-                self.canva = qtViewer3d(self)
                 self.setCentralWidget(self.canva)
                 self.menuBar = self.menuBar()
                 self._menus = {}
@@ -147,6 +146,7 @@ def init_display():
             def add_menu(self, menu_name):
                 _menu = self.menuBar.addMenu("&"+menu_name)
                 self._menus[menu_name]=_menu
+                
             def add_function_to_menu(self, menu_name, _callable):
                 assert callable(_callable), 'the function supplied is not callable'
                 try:
@@ -169,7 +169,7 @@ def init_display():
             app.exec_()
         #app.exec_()
     # python-xlib based simple GUI
-    elif USED_BACKEND == 'X':
+    elif USED_BACKEND == 'x':
         from XDisplay import XOCCWindow
         win = XOCCWindow(display_xlib.Display(),"pythonOCC-%s 3d viewer ('python-xlib' backend)"%VERSION)
         display = win.occviewer
