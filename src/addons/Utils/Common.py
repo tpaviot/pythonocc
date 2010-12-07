@@ -41,6 +41,7 @@ from OCC.Bnd import *
 from OCC.BRepBndLib import *
 from OCC.TColgp import *
 from OCC.TColGeom import *
+from OCC.TColStd import *
 from OCC.TCollection import *
 from OCC.BRepAlgoAPI import *
 from OCC.GeomAPI import *
@@ -51,12 +52,13 @@ from OCC.BRepOffsetAPI import *
 from OCC.Utils.Context import assert_isdone
 from OCC.KBE.TypesLookup import ShapeToTopology
 from OCC.Quantity import *
+from OCC.GProp import GProp_GProps
 
 TOLERANCE = 1e-6
 
-def get_boundingbox(shape, tol=1e-4):
+def get_boundingbox(shape, tol=1e-12):
     bbox = Bnd_Box()
-    BRepBndLib().Add(shape, bbox)
+    BRepBndLib().AddClose(shape, bbox)
     bbox.SetGap(tol)
     return bbox
 
@@ -178,17 +180,47 @@ def interpolate_points_to_spline(list_of_points, start_tangent, end_tangent, fil
     yyy = fix(list_of_points, TColgp_HArray1OfPnt)
     try:
         rrr = GeomAPI_Interpolate(yyy.GetHandle(), False, tolerance )
-#        rrr.Load(gp_Vec(-start_tangent).Normalized(), gp_Vec(-end_tangent), False)
-        rrr.Load(gp_Vec(-start_tangent), gp_Vec(-end_tangent), False)
+        rrr.Load(start_tangent, end_tangent, False)
         rrr.Perform()
         if rrr.IsDone():
             return rrr.Curve()
     except RuntimeError:
         print 'FAILED TO INTERPOLATE THE SHOWN POINTS'
         import ipdb; ipdb.set_trace()
-#        for i in list_of_points:
-#            display.DisplayShape(make_vertex(i))
-        # probably should do tangents too...
+
+def interpolate_points_vectors_to_spline(list_of_points, list_of_vectors, vector_mask=[], tolerance=TOLERANCE):
+    '''
+    build a curve from a set of points and vectors
+    the vectors describe the tangent vector at the corresponding point
+    '''
+    # GeomAPI_Interpolate is buggy: need to use `fix` in order to get the right points in...
+    assert len(list_of_points) == len(list_of_vectors), 'vector and point list not of same length'
+    def fix(li, _type):
+        '''function factory for 1-dimensional TCol* types'''
+        pts = _type(1, len(li))
+        for n,i in enumerate(li):
+            pts.SetValue(n+1,i)
+        pts.thisown = False
+        return pts
+    
+    if not vector_mask == []:
+        assert len(vector_mask)==len(list_of_points), 'length vector mask is not of length points list nor []'
+    else:
+        vector_mask = [True for i in range(len(list_of_points))]
+    
+    xxx = fix(vector_mask, TColStd_HArray1OfBoolean) 
+    yyy = fix(list_of_points, TColgp_HArray1OfPnt)
+    zzz = fix(list_of_vectors, TColgp_Array1OfVec)
+    
+    try:
+        rrr = GeomAPI_Interpolate(yyy.GetHandle(), False, tolerance )
+        rrr.Load(zzz, xxx.GetHandle(), False)
+        rrr.Perform()
+        if rrr.IsDone():
+            return rrr.Curve()
+    except RuntimeError:
+        print 'FAILED TO INTERPOLATE THE SHOWN POINTS'
+        import ipdb; ipdb.set_trace()
 
 def interpolate_points_to_spline_no_tangency(list_of_points, filter=True, closed=False, tolerance=TOLERANCE):
     '''
@@ -252,10 +284,25 @@ def common_vertex(edg1, edg2):
         raise ValueError('no common vertex found')
 
 def midpoint(pntA, pntB):
+    '''
+    computes the point that lies in the middle between pntA and pntB
+    @param pntA:    gp_Pnt
+    @param pntB:    gp_Pnt
+    '''
     vec1 = gp_Vec(pntA.XYZ())
     vec2 = gp_Vec(pntB.XYZ())
     veccie = (vec1+vec2)/2.
     return gp_Pnt( veccie.XYZ() )
+
+def center_boundingbox(shape):
+    '''
+    compute the center point of a TopoDS_Shape, based on its bounding box
+    @param shape: TopoDS_* instance
+    returns a gp_Pnt instance 
+    '''
+    bbox = get_boundingbox(shape, 1e-6)
+    xmin,ymin,zmin, xmax, ymax, zmax = bbox.Get()
+    return midpoint(gp_Pnt(xmin,ymin,zmin), gp_Pnt(xmax,ymax,zmax))
 
 def intersection_from_three_planes( planeA, planeB, planeC, show=False):
     '''
@@ -280,6 +327,13 @@ def intersection_from_three_planes( planeA, planeB, planeC, show=False):
         display.DisplayShape(make_vertex(pnt))
     return pnt
 
+#def split_edge(edge, pnt):
+#    '''
+#    
+#    @param edge:
+#    @param pnt:
+#    '''
+
 #===============================================================================
 # --- TRANSFORM ---
 #===============================================================================
@@ -296,3 +350,70 @@ def translate_topods_from_vector(brep, vec, copy=False):
     brep_trns = BRepBuilderAPI_Transform(brep, trns, copy)
     brep_trns.Build()
     return brep_trns.Shape()
+
+def normal_vector_from_plane(plane, vec_length=1):
+    '''
+    returns a vector normal to the plane of length vec_length
+    @param plane:
+    '''
+    trns =  gp_Vec(plane.Axis().Direction())
+    trns.Normalized() * vec_length
+    return trns
+
+#===============================================================================
+# FIX
+#===============================================================================
+def fix_tolerance( shape, tolerance=TOLERANCE):
+    ShapeFix_ShapeTolerance().SetTolerance(shape, tolerance)
+    
+    
+#===============================================================================
+# global properties 
+#===============================================================================
+class GpropsFromShape(object):
+    def __init__(self, shape, tolerance=1e-5):
+        from OCC.BRepGProp import BRepGProp
+        self.shape = shape
+        self.bgprop = BRepGProp()
+        self.tolerance = tolerance
+        
+    def volume(self):
+        prop = GProp_GProps()
+        error = self.bgprop.VolumeProperties(self.shape, prop, self.tolerance)
+        return prop
+    
+    def surface(self):
+        prop = GProp_GProps()
+        error = self.bgprop.SurfaceProperties(self.shape, prop, self.tolerance)
+        return prop
+    
+    def linear(self):
+        prop = GProp_GProps()
+        error = self.bgprop.LinearProperties(self.shape, prop )
+        return prop
+
+#=======================================================================
+# Distance 
+#=======================================================================
+
+def minimum_distance(shp1, shp2):
+    '''
+    compute 
+    @param shp1:    any TopoDS_*
+    @param shp2:    any TopoDS_*
+    
+    @return: minimum distance, 
+             minimum distance points on shp1
+             minimum distance points on shp1
+    '''
+    from OCC.BRepExtrema import BRepExtrema_DistShapeShape
+    bdss = BRepExtrema_DistShapeShape(shp1, shp2)
+    bdss.Perform()
+    with assert_isdone(bdss, 'failed computing minimum distances'):
+        min_dist = bdss.Value()
+        min_dist_shp1, min_dist_shp2 = [],[]
+        for i in range(1,bdss.NbSolution()):
+            min_dist_shp1.append(bdss.PointOnShape1(i))
+            min_dist_shp1.append(bdss.PointOnShape2(i))
+    return min_dist, min_dist_shp1, min_dist_shp2
+            
