@@ -25,6 +25,7 @@ import unittest
 from OCC.BRepPrimAPI import *
 from OCC.TopoDS import *
 from OCC.Utils.Topology import Topo, WireExplorer
+#from OCC.Topology.Explorer import HLExplorer, WireExplorer
 
 class TestTopology(unittest.TestCase):
     def setUp(self):
