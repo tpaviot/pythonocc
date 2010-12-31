@@ -88,7 +88,8 @@ class BaseDriver(object):
         self.Context = None
         self.Viewer = None
         self.View = None
-        #self._objects_displayed = []#list to save in memory displayed objects        
+        self.selected_shape = None
+        self.selected_shapes = []       
     
     def MoveTo(self,X,Y):
         self.Context.MoveTo(X,Y,self.View_handle)
@@ -434,31 +435,30 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         self.Context.CloseAllContexts()
         self.Context.OpenLocalContext()
         self.Context.ActivateStandardMode(mode)
-    
-    def OpenLocalContext(self):
-        if not self._local_context_opened:
-            self.Context.OpenLocalContext()
-            self._local_context_opened = True
         
     def SetSelectionModeVertex(self):
-        self.OpenLocalContext()
+        self.Context.CloseAllContexts()
+        self.Context.OpenLocalContext()
         self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_VERTEX)
         
     def SetSelectionModeEdge(self):
-        self.OpenLocalContext()
+        self.Context.CloseAllContexts()
+        self.Context.OpenLocalContext()
         self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_EDGE)
         
     def SetSelectionModeFace(self):
-        self.OpenLocalContext()
+        self.Context.CloseAllContexts()
+        self.Context.OpenLocalContext()
         self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_FACE)        
         
     def SetSelectionModeShape(self):
         self.Context.CloseAllContexts()
-        self.Context.OpenLocalContext()
-        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_SHAPE)        
-    
+     
     def SetSelectionModeNeutral(self):
         self.Context.CloseAllContexts()
+    
+    def GetSelectedShapes(self):
+        return self.selected_shapes
     
     def GetSelectedShape(self):
         """
@@ -466,13 +466,24 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         """
         return self.selected_shape
     
+    def SelectArea(self,Xmin,Ymin,Xmax,Ymax):
+        self.Context.Select(Xmin,Ymin,Xmax,Ymax,self.View_handle)
+        self.Context.InitSelected()
+        # reinit the selected_shapes list
+        self.selected_shapes = []
+        while self.Context.MoreSelected():
+            if self.Context.HasSelectedShape(): 
+                self.selected_shapes.append(self.Context.SelectedShape())
+            self.Context.NextSelected()
+        print "Current selection (%i instances):"%len(self.selected_shapes),self.selected_shapes
+
     def Select(self,X,Y):
         self.Context.Select()
         self.Context.InitSelected()
         if self.Context.MoreSelected():
             if self.Context.HasSelectedShape():
                 self.selected_shape = self.Context.SelectedShape()
-                print "Current selection:",self.selected_shape
+                print "Current selection (single):",self.selected_shape
         else:
             self.selected_shape = None
     
