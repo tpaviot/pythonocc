@@ -99,6 +99,7 @@ class qtViewer3d(qtBaseViewer):
         self._middleisdown = False
         self._rightisdown = False
         self._selection = None
+        self._drawtext = True
 
     def InitDriver(self):
         self._display = OCCViewer.Viewer3d(self.GetHandle())
@@ -127,13 +128,11 @@ class qtViewer3d(qtBaseViewer):
                          }
 
     def keyPressEvent(self,event):
-        print 'keypress event'
         code = event.key()
-        try:
-            print 'key', chr(code), 'in keymap'
+        if self._key_map.has_key(code):
             self._key_map[code]()
-        except:
-            print 'unrecognized key', code
+        else:
+            print 'key',code,' not mapped to any function'
 
     def Test(self):
         if self._inited:
@@ -153,6 +152,12 @@ class qtViewer3d(qtBaseViewer):
     def paintEvent(self, event):
         if self._inited:
             self._display.Repaint()
+        if self._drawbox:
+            painter = QtGui.QPainter(self)
+            painter.setPen(QtGui.QPen(QtGui.QColor(0,0,0), 1))
+            rect = QtCore.QRect(*self._drawbox)
+            painter.drawRect(rect)
+            painter.end()
 
     def ZoomAll(self, evt):
         self._display.Zoom_FitAll()
@@ -175,40 +180,32 @@ class qtViewer3d(qtBaseViewer):
         self._display.StartRotation(self.dragStartPos.x,self.dragStartPos.y)
 
     def mouseReleaseEvent(self, event):
-        #print 'mouse release event'
+        pt = point(event.pos())
         if event.button() == QtCore.Qt.LeftButton:
             pt = point(event.pos())
+            self.repaint()
             if self._select_area:
                 [Xmin, Ymin, dx, dy] = self._drawbox
-                selected_shapes = self._display.Select(Xmin,Ymin,Xmin+dx,Ymin+dy)
+                selected_shapes = self._display.SelectArea(Xmin,Ymin,Xmin+dx,Ymin+dy)
                 self._select_area = False
             elif self._display.Select(pt.x,pt.y):
                     selected_shape = self._display.GetSelectedShape()
                     print selected_shape,selected_shape.ShapeType()
-            elif event.button() == QtCore.Qt.RightButton:
-                if self._zoom_area:
-                    [Xmin, Ymin, dx, dy] = self._drawbox
-                    self._display.ZoomArea(Xmin, Ymin, Xmin+dx, Ymin+dy)
-                    self._zoom_area = False
+        elif event.button() == QtCore.Qt.RightButton:
+            if self._zoom_area:
+                [Xmin, Ymin, dx, dy] = self._drawbox
+                self._display.ZoomArea(Xmin, Ymin, Xmin+dx, Ymin+dy)
+                self._zoom_area = False
 
     def DrawBox(self, event):
-        print self._drawbox
         tolerance = 2
-        pt = point(event.pos())
+        pt = point( event.pos() )
         dx = pt.x - self.dragStartPos.x
         dy = pt.y - self.dragStartPos.y
-        if abs(dx) <= tolerance and abs(dy) <= tolerance:
+        if abs( dx ) <= tolerance and abs( dy ) <= tolerance:
             return
-        #painter = QtGui.QPainter(self)
-        #painter.setPen(QtGui.QPen(QtGui.QColor(255,255,255), 1,
-        #                          QtCore.Qt.DotLine, QtCore.Qt.RoundCap, QtCore.Qt.RoundJoin))
-        if self._drawbox:
-            rect = QtCore.QRect(*self._drawbox)
-            painter.drawRect(rect)
-            rect = QtCore.QRect(self.dragStartPos.x, self.dragStartPos.y,dx,dy)
-            painter.drawRect(rect)
-            self._drawbox = [self.dragStartPos.x, self.dragStartPos.y , dx, dy]
-
+        self._drawbox = [self.dragStartPos.x, self.dragStartPos.y , dx, dy]
+        
     def mouseMoveEvent(self, evt):
         pt = point(evt.pos())
         buttons = int(evt.buttons())
