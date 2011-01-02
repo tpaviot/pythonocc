@@ -29,7 +29,8 @@ Display3d::~Display3d()
 
 void Display3d::Init(int window_handle)
 {
-    printf("Display3d class initialization starting ...\n");
+    printf(" ###### 3D rendering pipe initialisation #####\n");
+	printf("Display3d class initialization starting ...\n");
 	short hi = static_cast<short>(window_handle >> 16);
 	short lo = static_cast<short>(window_handle);
 	// Create Graphic Device and Window
@@ -56,6 +57,7 @@ void Display3d::Init(int window_handle)
 	myAISContext = new AIS_InteractiveContext(myV3dViewer);
 	printf("Interactive context created.\n");
     printf("Display3d class successfully initialized.\n");
+	printf(" ########################################\n");
 }
 
 void Display3d::Test()
