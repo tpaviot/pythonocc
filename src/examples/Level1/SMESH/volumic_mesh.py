@@ -31,14 +31,19 @@ from OCC.SMESHDS import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 # First create a 'complex' shape (actually a boolean op between a box and a cylinder)
+print 'Creating geometry ...',
 box = BRepPrimAPI_MakeBox(200,30,30).Shape()
 sphere = BRepPrimAPI_MakeSphere(gp_Pnt(150,20,20),80).Shape()
 aShape = BRepAlgoAPI_Cut(box,sphere).Shape()
+print 'Done.'
 
 # Create the Mesh
+print 'Creating mesh ...',
 aMeshGen = SMESH_Gen()
 aMesh = aMeshGen.CreateMesh(0,True)
+print 'Done.'
 
+print 'Adding hypothesis and algorithms ...',
 # 1D
 an1DHypothesis = StdMeshers_Arithmetic1D(0,0,aMeshGen)#discretization of the wire
 an1DHypothesis.SetLength(5.,False) #the smallest distance between 2 points
@@ -64,9 +69,12 @@ aMesh.AddHypothesis(aShape,1)
 aMesh.AddHypothesis(aShape,2)
 aMesh.AddHypothesis(aShape,3)
 aMesh.AddHypothesis(aShape,4)
+print 'Done.'
 
 #Compute the data
+print "Computing mesh ...",
 aMeshGen.Compute(aMesh,aMesh.GetShapeToMesh())
+print 'Done.'
 
 #===============================================================================
 # BOUNDARY CONDITIONS
@@ -101,42 +109,37 @@ class GroupOnGeom(object):
         
         self.indx += 1
         
-        try:
+        
             
-            group_load = SMESHDS_GroupOnGeom( self.indx,
+        group_load = SMESHDS_GroupOnGeom( self.indx,
                                                aMesh.GetMeshDS(),
                                                 meshType,
                                                  aShape
                                                   )
             
-            aMesh.AddGroup( group_load.GetType(),
+        aMesh.AddGroup( group_load.GetType(),
                              groupName,
                               self.indx,
                                group_load.GetShape()
                                )
             
-            return True
-        except:
-            print 'FAILED GROUPING'
-            return False
-
+        return True
 
 from OCC.KBE.Level2API import *
 from OCC.Utils.Topology import Topo
 
 # compute and sort faces by area
-# use the 2 smallest areas as faces on which boundary conditions will be set 
+# use the 2 first faces on which boundary conditions will be set 
 topo = Topo(aShape)
 faces = [Face(i) for i in topo.faces()]
-small_faces = sorted([(i.global_properties.area(), i) for i in faces])[:2]
 
 # create the groups 
 # note that groups can only be created when the mesh is computed
 # calling group will check if any nodes are present in the mesh
 # and assumes that its computed when it finds any nodes
 group =  GroupOnGeom()
-group(aMesh, small_faces[0][1].face, SMDSAbs_Face, 'load')
-group(aMesh, small_faces[1][1].face, SMDSAbs_Face, 'lock')
+group(aMesh, faces[0].face, SMDSAbs_Face, 'load')
+group(aMesh, faces[4].face, SMDSAbs_Face, 'lock')
 
 #===============================================================================
 # EXPORT
