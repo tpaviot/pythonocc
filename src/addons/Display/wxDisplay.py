@@ -226,12 +226,10 @@ class wxViewer3d(wxBaseViewer):
         pt = evt.GetPosition()
         if self._select_area:
             [Xmin, Ymin, dx, dy] = self._drawbox
-            selected_shapes = self._display.Select(Xmin,Ymin,Xmin+dx,Ymin+dy)
+            selected_shapes = self._display.SelectArea(Xmin,Ymin,Xmin+dx,Ymin+dy)
             self._select_area = False 
         else:
-            if self._display.Select(pt.x,pt.y):
-                selected_shape = self._display.GetSelectedShape()
-                print selected_shape,selected_shape.ShapeType()
+            self._display.Select(pt.x,pt.y)
         
     def OnRightUp(self,evt):
         if self._zoom_area:
