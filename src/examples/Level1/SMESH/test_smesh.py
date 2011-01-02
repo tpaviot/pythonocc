@@ -46,8 +46,18 @@ aMesh.AddHypothesis(aShape,3)
 aMeshGen.Compute(aMesh,aMesh.GetShapeToMesh())
 
 # Export the data
+print "Export to DAT"
 aMesh.ExportDAT("_TEST.DAT")
-aMesh.ExportMED("_TEST.MED")
+
+print "Export to STL"
+aMesh.ExportSTL("_TEST.STL",True) #True if ascii
+
+print "Export to UNV"
+aMesh.ExportUNV("_TEST.UNV") #True if ascii
+
+# Export to MED fails
+#print "Export to MED"
+#aMesh.ExportMED("_TEST.MED")
 
 # Display the data
 aDS = SMESH_MeshVSLink(aMesh)
