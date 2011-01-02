@@ -183,14 +183,12 @@ class qtViewer3d(qtBaseViewer):
         pt = point(event.pos())
         if event.button() == QtCore.Qt.LeftButton:
             pt = point(event.pos())
-            self.repaint()
             if self._select_area:
                 [Xmin, Ymin, dx, dy] = self._drawbox
                 selected_shapes = self._display.SelectArea(Xmin,Ymin,Xmin+dx,Ymin+dy)
                 self._select_area = False
-            elif self._display.Select(pt.x,pt.y):
-                    selected_shape = self._display.GetSelectedShape()
-                    print selected_shape,selected_shape.ShapeType()
+            else:
+                self._display.Select(pt.x,pt.y)
         elif event.button() == QtCore.Qt.RightButton:
             if self._zoom_area:
                 [Xmin, Ymin, dx, dy] = self._drawbox
@@ -204,6 +202,7 @@ class qtViewer3d(qtBaseViewer):
         dy = pt.y - self.dragStartPos.y
         if abs( dx ) <= tolerance and abs( dy ) <= tolerance:
             return
+        self.repaint()
         self._drawbox = [self.dragStartPos.x, self.dragStartPos.y , dx, dy]
         
     def mouseMoveEvent(self, evt):
