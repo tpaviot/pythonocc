@@ -834,7 +834,7 @@ class SMESH_Mesh {
 		%feature("autodoc", "1");
 		int NbGroup() const;
 		%feature("autodoc", "1");
-		SMESH_Group * AddGroup(const SMDSAbs_ElementType theType, const char *theName, int & theId, const TopoDS_Shape theShape=TopoDS_Shape( ));
+		SMESH_Group * AddGroup(const SMDSAbs_ElementType theType, const char *theName, int theId, const TopoDS_Shape theShape=TopoDS_Shape( ));
 		%feature("autodoc", "1");
 		boost::shared_ptr<SMDS_Iterator<SMESH_Group*> > GetGroups() const;
 		%feature("autodoc", "1");
