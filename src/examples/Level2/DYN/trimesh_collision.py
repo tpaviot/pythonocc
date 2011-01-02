@@ -45,7 +45,7 @@ def falling_torus(event=None):
     dyn_context.register_post_step_callback(f)
     # The torus
     s1 = BRepPrimAPI_MakeTorus(15,5).Shape()
-    d = dyn_context.add_shape(s1,enable_collision_detection=True,use_trimesh=True)
+    d = dyn_context.register_shape(s1,enable_collision_detection=True,use_trimesh=True)
     d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
     # The plane (note: this plane is not a dynamic shape, it's just displayed)
     P1 = gp_Pnt(0,0,-100)
@@ -69,11 +69,11 @@ def falling_torus_torus(event=None):
     dyn_context.enable_gravity()
     # The torus
     s1 = BRepPrimAPI_MakeTorus(15,5).Shape()
-    d = dyn_context.add_shape(s1, enable_collision_detection=True,use_trimesh=True)
+    d = dyn_context.register_shape(s1, enable_collision_detection=True,use_trimesh=True)
     # The box
     s2 = BRepPrimAPI_MakeTorus(10,6).Shape()
     transformed_shape_2 = translate_topods_from_vector(s2, gp_Vec(0,0,100))
-    d2 = dyn_context.add_shape(transformed_shape_2,enable_collision_detection=True,use_trimesh=True)
+    d2 = dyn_context.register_shape(transformed_shape_2,enable_collision_detection=True,use_trimesh=True)
 
     d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
     # The plane (note: this plane is not a dynamic shape, it's just displayed)
@@ -96,7 +96,7 @@ def falling_pump(event=None):
     #file_to_load = '../../data/BREP/13_bottom.brep'
         aShape = TopoDS_Shape()
         builder = BRep_Builder()
-        BRepTools().Read(aShape,str(filename),builder)
+        BRepTools_read(aShape,str(filename),builder)
         return aShape
  
     # Just a copy/paste of the torus code
@@ -107,7 +107,7 @@ def falling_pump(event=None):
     dyn_context.enable_gravity()
     
     s1 = load_brep('../../data/BREP/40_pump_body.brep')
-    d = dyn_context.add_shape(s1,enable_collision_detection=True,use_trimesh=True)
+    d = dyn_context.register_shape(s1,enable_collision_detection=True,use_trimesh=True)
  
     # The plane (note: this plane is not a dynamic shape, it's just displayed)
     P1 = gp_Pnt(0,0,-1000)
