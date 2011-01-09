@@ -375,36 +375,20 @@ class TestGeometry(unittest.TestCase):
                 pnt4 = gp_Pnt2d()                         
                 parsol,pararg = TR.Tangency2(k, pnt4)
    
-    def test_curves3d_from_points(self):
+    def test_curves3d_from_interpolation(self):
         print 'Test: curves 3d from points'
         P1 = gp_Pnt(0,0,1)
         P2 = gp_Pnt(1,2,2)
         P3 = gp_Pnt(2,3,3)
-        P4 = gp_Pnt(4,3,4)       
-        P5 = gp_Pnt(5,5,5)
          
-        array = []
-        array.append(P1)                                                                       
-        array.append(P2)                                                                      
-        array.append(P3)                                                                      
-        array.append(P4)                                                                       
-        array.append(P5)
-         
-        SPL1 = GeomAPI_PointsToBSpline(point_list_to_TColgp_Array1OfPnt(array)).Curve()
-        
-        harray = []
-        harray.append(P1.Translated(gp_Vec(4,0,0)))
-        harray.append(P2.Translated(gp_Vec(4,0,0)))
-        harray.append(P3.Translated(gp_Vec(4,0,0)))
-        harray.append(P4.Translated(gp_Vec(4,0,0)))
-        harray.append(P5.Translated(gp_Vec(4,0,0)))
-            
-            
-        aaa = _Tcol_dim_1(harray, TColgp_HArray1OfPnt)
+        array = [P1,P2,P3]
+        aaa = _Tcol_dim_1(array, TColgp_HArray1OfPnt)
+
         anInterpolation = GeomAPI_Interpolate(aaa.GetHandle(), False, Precision_approximation())
-        
+        anInterpolation.Perform()
         self.assertTrue(anInterpolation.IsDone())
-        SPL2 = anInterpolation.Curve()
+        curve = anInterpolation.Curve()
+
             
     def test_surface_from_curves(self):
         print 'Test: surfaces from curves'
