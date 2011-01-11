@@ -1,0 +1,6 @@
+{% block content %}
+  {% filter restructuredtext %}
+.. class:: {{decl.name}}({{bases}})
+   {{docs}}
+  {% endfilter %}
+{% endblock %}

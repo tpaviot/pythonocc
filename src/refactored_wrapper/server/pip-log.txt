@@ -1,0 +1,73 @@
+Downloading/unpacking piston
+  Getting page http://pypi.python.org/simple/piston
+  Could not fetch URL http://pypi.python.org/simple/piston: HTTP Error 404: Not Found
+  Will skip URL http://pypi.python.org/simple/piston when looking for download links for piston
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for piston:
+  * http://pypi.python.org/simple/piston/
+  Getting page http://pypi.python.org/simple/piston/
+  Could not fetch URL http://pypi.python.org/simple/piston/: HTTP Error 404: Not Found
+  Will skip URL http://pypi.python.org/simple/piston/ when looking for download links for piston
+  Could not find any downloads that satisfy the requirement piston
+No distributions at all found for piston
+Exception information:
+Traceback (most recent call last):
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/basecommand.py", line 115, in main
+    self.run(options, args)
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/commands/install.py", line 155, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/req.py", line 823, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/index.py", line 117, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for piston
+------------------------------------------------------------
+/usr/local/bin/pip run on Wed Apr 28 10:44:25 2010
+Downloading/unpacking MySQLdb
+  Getting page http://pypi.python.org/simple/MySQLdb
+  Could not fetch URL http://pypi.python.org/simple/MySQLdb: HTTP Error 404: Not Found
+  Will skip URL http://pypi.python.org/simple/MySQLdb when looking for download links for MySQLdb
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for MySQLdb:
+  * http://pypi.python.org/simple/MySQLdb/
+  Getting page http://pypi.python.org/simple/MySQLdb/
+  Could not fetch URL http://pypi.python.org/simple/MySQLdb/: HTTP Error 404: Not Found
+  Will skip URL http://pypi.python.org/simple/MySQLdb/ when looking for download links for MySQLdb
+  Could not find any downloads that satisfy the requirement MySQLdb
+No distributions at all found for MySQLdb
+Exception information:
+Traceback (most recent call last):
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/basecommand.py", line 115, in main
+    self.run(options, args)
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/commands/install.py", line 155, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/req.py", line 823, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/index.py", line 117, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for MySQLdb
+------------------------------------------------------------
+/usr/local/bin/pip run on Wed Apr 28 10:46:10 2010
+Downloading/unpacking pymysqldb
+  Getting page http://pypi.python.org/simple/pymysqldb
+  Could not fetch URL http://pypi.python.org/simple/pymysqldb: HTTP Error 404: Not Found
+  Will skip URL http://pypi.python.org/simple/pymysqldb when looking for download links for pymysqldb
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for pymysqldb:
+  * http://pypi.python.org/simple/pymysqldb/
+  Getting page http://pypi.python.org/simple/pymysqldb/
+  Could not fetch URL http://pypi.python.org/simple/pymysqldb/: HTTP Error 404: Not Found
+  Will skip URL http://pypi.python.org/simple/pymysqldb/ when looking for download links for pymysqldb
+  Could not find any downloads that satisfy the requirement pymysqldb
+No distributions at all found for pymysqldb
+Exception information:
+Traceback (most recent call last):
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/basecommand.py", line 115, in main
+    self.run(options, args)
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/commands/install.py", line 155, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/req.py", line 823, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/Library/Python/2.6/site-packages/pip-0.6.3-py2.6.egg/pip/index.py", line 117, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for pymysqldb

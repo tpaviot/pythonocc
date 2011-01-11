@@ -1,0 +1,7 @@
+
+{% block content %}
+  {% filter restructuredtext %}
+.. module:: {{decl.name}}
+   {{docs}}
+  {% endfilter %}
+{% endblock %}
