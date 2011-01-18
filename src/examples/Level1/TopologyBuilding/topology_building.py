@@ -213,7 +213,7 @@ def face(event=None):
     Wire1 = BRepBuilderAPI_MakeWire(Edge1,Edge2,Edge3).Wire()
     Wire1.Reverse()
     PinkFace = BRepBuilderAPI_MakeFace(aFace,Wire1).Face()
-    BRepLib().BuildCurves3d(PinkFace)
+    BRepLib_buildcurves3d(PinkFace)
     
     display.EraseAll()
     display.DisplayColoredShape(RedFace.Face(),'RED')
@@ -239,12 +239,12 @@ def draft_angle(event=None):
     
     topo = Topo(S)
     for f in topo.faces():
-        surf = Handle_Geom_Plane().DownCast(BRep_Tool().Surface(f)).GetObject()
+        surf = Handle_Geom_Plane_downcast(BRep_Tool_surface(f)).GetObject()
         dirf = surf.Pln().Axis().Direction()
         print 'direction',dirf.Coord()
         ddd = gp_Dir(0,0,1)
-        if dirf.IsNormal(ddd, Precision().Angular()):
-            adraft.Add(f, ddd, math.radians(15), gp_Pln(gp_Ax3(gp().XOY())))
+        if dirf.IsNormal(ddd, Precision_angular()):
+            adraft.Add(f, ddd, math.radians(15), gp_Pln(gp_Ax3(gp_xoy())))
             
     adraft.Build()
     display.EraseAll()
@@ -313,7 +313,7 @@ def prism(event=None):
     c   = gp_Circ(gp_Ax2(gp_Pnt(200.,200.,0.),gp_Dir(0.,0.,1.)), 80.) 
     Ec  = BRepBuilderAPI_MakeEdge(c) 
     Wc  = BRepBuilderAPI_MakeWire(Ec.Edge())
-    F   = BRepBuilderAPI_MakeFace(gp_Pln(gp_Ax3(gp().XOY())),Wc.Wire()) 
+    F   = BRepBuilderAPI_MakeFace(gp_Pln(gp_Ax3(gp_xoy())),Wc.Wire()) 
     S4  = BRepPrimAPI_MakePrism(F.Shape(),gp_Vec(0.,0.,100.)) 
     
     add_shapes(display, [V1, S1,
