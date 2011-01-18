@@ -1,0 +1,160 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	GEOMAlgo_Gluer.cdl
+-- Created:	Sat Dec 04 12:41:32 2004
+-- Author:	Peter KURNEV
+--		<peter@PREFEX>
+--
+class Gluer from GEOMAlgo  
+    inherits ShapeAlgo from GEOMAlgo
+
+	---Purpose: 
+
+uses 
+    ShapeEnum from TopAbs,
+    Shape from TopoDS,  
+    Edge from TopoDS, 
+    Face from TopoDS, 
+    Vertex from TopoDS, 
+    ListOfShape from TopTools,
+    DataMapOfShapeShape from TopTools,
+    DataMapOfShapeListOfShape from TopTools, 
+    Context from IntTools, 
+    PassKeyShape from GEOMAlgo
+
+--raises
+
+is 
+    Create   
+    	returns Gluer from GEOMAlgo; 
+    ---C++: alias "Standard_EXPORT virtual ~GEOMAlgo_Gluer();" 
+     
+    SetCheckGeometry (me:out; 
+    	    aFlag:Boolean from Standard); 
+	     
+    CheckGeometry (me) 
+    	returns Boolean from Standard; 
+  
+    Perform(me:out) 
+	is redefined;   
+	
+    AloneShapes(me) 
+	 returns Integer from Standard;     
+
+    --modified by NIZNHY-PKV Fri Jan 21 14:16:58 2005f-
+    Modified(me:out;  
+    	    S : Shape from TopoDS) 
+    	returns ListOfShape from TopTools;
+    ---C++: return const & 
+   
+    Generated(me:out;  
+    	    S : Shape from TopoDS) 
+    	returns ListOfShape from TopTools;
+    ---C++: return const & 
+
+    IsDeleted (me:out;  
+    	    S : Shape from TopoDS)
+       returns Boolean from Standard; 
+    --modified by NIZNHY-PKV Fri Jan 21 14:17:04 2005t  
+
+    CheckData(me:out) 
+	is redefined protected; 
+	 
+    CheckResult	(me:out) 
+    	is redefined protected; 
+	 
+    MakeVertices(me:out) 
+	is protected;   
+  
+    MakeEdges(me:out) 
+	is protected; 
+     
+    MakeFaces(me:out) 
+	is protected;
+     
+    MakeShapes(me:out; 
+    	    aType:ShapeEnum from TopAbs) 
+    	is protected;  
+     
+    MakeShells(me:out) 
+	is protected;
+      
+    MakeSolids(me:out) 
+	is protected; 
+	 
+    InnerTolerance(me:out) 
+	is protected;
+ 
+    EdgePassKey(me:out; 
+    	    aE:Edge from TopoDS;  
+	    aPK:out PassKeyShape from GEOMAlgo)  
+    	is protected;     
+   
+    FacePassKey(me:out; 
+    	    aF:Face from TopoDS;  
+	    aPK:out PassKeyShape from GEOMAlgo)  
+    	is protected; 
+	 
+    MakeVertex(me:out; 
+    	    aLV   : ListOfShape from TopTools;  
+    	    aNewV: out Vertex from TopoDS) 
+    	is protected;   
+    MakeEdge(me:out; 
+    	    aEdge   : Edge from TopoDS;  
+    	    aNewEdge: out Edge from TopoDS) 
+    	is protected;    	 
+ 
+    MakeFace(me:out; 
+    	    aFace   : Face from TopoDS;  
+    	    aNewEdge: out Face from TopoDS) 
+    	is protected; 
+	 
+    IsToReverse(me:out; 
+    	    aFR : Face from TopoDS;  
+    	    aF  : Face from TopoDS) 
+	returns Boolean	from Standard 	     
+    	is protected;  
+     
+    HasNewSubShape(me; 
+    	    aS  : Shape from TopoDS) 
+	returns Boolean	from Standard 	     
+    	is protected; 
+-- 
+    Images(me) 
+	returns DataMapOfShapeListOfShape from TopTools;         	 
+    ---C++:return const &  
+     
+    Origins(me) 
+	returns DataMapOfShapeShape from TopTools;         	 
+    ---C++:return const &  
+    
+fields 
+    myCheckGeometry : Boolean from Standard is protected; 
+    myTol         : Real from Standard is protected;   
+    myImages      : DataMapOfShapeListOfShape from TopTools is protected;   
+    myOrigins     : DataMapOfShapeShape from TopTools is protected; 
+    myNbAlone     : Integer from Standard is protected;      
+----    
+    myGenerated   : ListOfShape from TopTools is protected;
+----    
+
+end Gluer;

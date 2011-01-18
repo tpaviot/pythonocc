@@ -1,0 +1,153 @@
+DEBUT();
+
+
+pmesh=LIRE_MAILLAGE(FORMAT='MED',);
+
+pmode=AFFE_MODELE(MAILLAGE=pmesh,
+                 AFFE=_F(TOUT='OUI',
+                         PHENOMENE='MECANIQUE',
+                         MODELISATION='3D',),);
+                         
+# combine Pleft and Pright to one group Pfix:                        
+pmesh=DEFI_GROUP(reuse =pmesh,
+                    MAILLAGE=pmesh,
+                    CREA_GROUP_MA=(_F(NOM='Pfix',UNION=('Pleft','Pright',),),),);
+
+#Material properties
+Traction=DEFI_FONCTION(NOM_PARA='EPSI',
+                       VALE=(1.6e-3,300.0,
+                             2.0e-2,400.0,
+                             1.0e-1,450.0,
+                             1.5e-1,473.0,
+                             2.0e-1,500.0,
+                             3.0e-1,550.0,
+                             ),INTERPOL='LIN',PROL_DROITE='LINEAIRE',PROL_GAUCHE='EXCLU',);
+
+#define plastic behaviour of steel by Traction
+steel=DEFI_MATERIAU(ELAS=_F(E=2.1e5,NU=0.27,),
+                    TRACTION=_F(SIGM=Traction,),);
+
+pmesh=MODI_MAILLAGE(reuse =pmesh,
+                   MAILLAGE=pmesh,
+                   ORIE_PEAU_3D=_F(GROUP_MA=('Pforce',),),);
+
+matprops=AFFE_MATERIAU(MAILLAGE=pmesh,AFFE=_F(TOUT='OUI',MATER=steel,),);
+
+
+LoadFix=AFFE_CHAR_MECA(MODELE=pmode,
+                    FACE_IMPO=(_F(GROUP_MA='Pfix',
+                                 DX=0.0,
+                                 DY=0.0,
+                                 DZ=0.0,),),);
+
+# LoadPres will vary in the nonlinear calculation determined by the 'time' and 'ramp' function
+# number of 'time' steps tsteps
+# ramp increases from during
+# 1.0 s: from 0.0 to 1.0, 
+# 0.1 s: constant at 1.0
+# 1.0 s: from 1.0 down to 0.0
+tsteps = 21
+ydisp = 0.1000
+LoadPres=AFFE_CHAR_MECA(MODELE=pmode,
+                    FACE_IMPO=(_F(GROUP_MA='Pforce',DY=ydisp,),),);
+                    #PRES_REP=_F(GROUP_MA='Pforce', PRES=7000.0/Parea,),); #Parea = 10.0*4.0
+
+time=DEFI_LIST_REEL(DEBUT=0.0,
+                    INTERVALLE=_F(JUSQU_A=2.1,NOMBRE=tsteps,),
+                    INFO=2,TITRE='time',);
+
+ramp=DEFI_FONCTION(NOM_PARA='INST',
+                   VALE=(0.00,0.00,
+                         1.00,1.00,
+                         1.10,1.00,
+                         2.10,0.00,),
+                   INFO=2,TITRE='ramp',);
+
+Presul=STAT_NON_LINE(MODELE=pmode,
+                      CHAM_MATER=matprops,
+                      EXCIT=(_F(CHARGE=LoadFix,),
+                             _F(CHARGE=LoadPres,FONC_MULT=ramp,),),
+                      COMP_INCR=_F(RELATION='VMIS_ISOT_TRAC',
+                                   DEFORMATION='SIMO_MIEHE',
+                                   TOUT='OUI',),
+                      INCREMENT=_F(LIST_INST=time,
+                                   SUBD_PAS=10,
+                                   SUBD_PAS_MINI=0.0005,),
+                      NEWTON=_F(REAC_INCR=1,
+                                MATRICE='TANGENTE',
+                                REAC_ITER=1,),
+                      CONVERGENCE=_F(ITER_GLOB_MAXI=20,),
+                      ARCHIVAGE=_F(PAS_ARCH=1,),);
+
+#Compute (VonMises) Stress / Strain
+Presul=CALC_ELEM(reuse =Presul,
+                  RESULTAT=Presul,
+                  OPTION=('SIEF_ELNO_ELGA','EPSI_ELNO_DEPL','EPSP_ELNO','EQUI_ELNO_SIGM','EQUI_ELNO_EPSI',),);
+
+# calculate nodal equivalents and reaction forces
+Presul=CALC_NO(reuse =Presul,
+             RESULTAT=Presul,
+             OPTION= ('SIGM_NOEU_DEPL','EQUI_NOEU_SIGM','FORC_NODA','REAC_NODA',),);
+
+
+#Write Results to MED file
+# displacements DEPL (x, y and z component)
+# vonMisses stresses EQUI_ELNO_SIGM (vonmisses component only)
+# plastic strains EPSP_ELNO (six components epsxx, epsyy, ...)
+IMPR_RESU(FORMAT='MED',
+          UNITE=21,
+          RESU=(_F(MAILLAGE=pmesh,
+                   RESULTAT=Presul,
+                   NOM_CHAM='DEPL',
+                   NOM_CMP=('DX','DY','DZ',),),
+                _F(MAILLAGE=pmesh,
+                   RESULTAT=Presul,
+                   NOM_CHAM='EQUI_ELNO_SIGM',
+                   NOM_CMP='VMIS',),
+                 _F(MAILLAGE=pmesh,
+                   RESULTAT=Presul,
+                   NOM_CHAM='EPSP_ELNO',
+                   NOM_CMP=('EPXX','EPYY','EPZZ','EPXY','EPXZ','EPYZ',),),),);
+
+# determine a table of displacements, nodal reaction forces TB_nodf
+# the values are stored in REAC_NODA and FORC_NODA fields (champ)
+# since no reaction forces are present, both are equal (just check)
+# print them to file by IMPR_TABLE()
+pmesh=DEFI_GROUP(reuse =pmesh,
+                 MAILLAGE=pmesh,
+                 CREA_GROUP_NO=_F(NOM='Nreac',GROUP_MA='Pforce',),);
+              #CREA_GROUP_MA=_F(NOM='Nreac',GROUP_MA=('Pforce',),),);
+              #[CREA_GROUP_NO=_F(GROUP_MA='npf1',),]
+
+TB_nodf=POST_RELEVE_T(ACTION=(_F(OPERATION='EXTRACTION',
+                                INTITULE='displacements',
+                                RESULTAT=Presul,
+                                NOM_CHAM='DEPL',
+                                TOUT_ORDRE='OUI',
+                                GROUP_NO='Nforce',
+                                RESULTANTE=('DX','DY','DZ',),
+                                MOYE_NOEUD='NON',),
+                             _F(OPERATION='EXTRACTION',
+                                INTITULE='ReactionForces',
+                                RESULTAT=Presul,
+                                NOM_CHAM='REAC_NODA',
+                                TOUT_ORDRE='OUI',
+                                GROUP_NO='Nreac',
+                                RESULTANTE=('DX','DY','DZ',),
+                                MOYE_NOEUD='NON',),
+                             _F(OPERATION='EXTRACTION',
+                                INTITULE='NodalForces',
+                                RESULTAT=Presul,
+                                NOM_CHAM='FORC_NODA',
+                                PRECISION=0.000001,
+                                GROUP_NO='Nreac',
+                                RESULTANTE=('DX','DY','DZ',),),),
+                             TITRE='[Reaction] Nodal Forces',);
+
+IMPR_TABLE(TABLE=TB_nodf,
+         FORMAT='TABLEAU',
+         UNITE=26,
+         SEPARATEUR=' * ',
+         TITRE='displacements at nodes on group Nforce',);
+
+FIN();

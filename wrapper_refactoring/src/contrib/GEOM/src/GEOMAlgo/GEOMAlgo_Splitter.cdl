@@ -1,0 +1,104 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	GEOMAlgo_Splitter.cdl
+-- Created:	 
+-- Author:	Peter KURNEV 
+--		<pkv@irinox> 
+-- Copyright:	
+--
+class Splitter from GEOMAlgo 
+    	inherits Builder from GEOMAlgo 
+	
+	---Purpose: Implementation of Gluing Operation Algorithm (GA)  
+
+uses  
+    
+    ShapeEnum from TopAbs, 
+    Shape from TopoDS,
+    ListOfShape from TopTools, 
+    MapOfShape  from TopTools
+    
+--raises
+
+is
+ 
+    Create 
+	---Purpose:  Empty constructor     
+    	returns Splitter from GEOMAlgo;  
+    ---C++: alias "Standard_EXPORT virtual ~GEOMAlgo_Splitter();" 
+
+    Clear(me:out) 
+	---Purpose:  Clears internal fields and arguments             
+    	is redefined;   
+	 
+    AddTool (me:out;  
+    	    theShape: Shape from TopoDS) 
+	---Purpose:  Adds Tool argument theShape of the operation    		     
+    	is virtual;
+
+    Tools(me) 
+	---Purpose:  Returns the arguments of the operation       
+    	returns ListOfShape from TopTools;  
+    ---C++: return const &   
+
+    SetLimit(me:out; 
+    	    aLimit:ShapeEnum from TopAbs); 
+	 
+    Limit(me)  
+    	returns ShapeEnum from TopAbs;   
+
+    SetLimitMode(me:out; 
+    	    aLimitMode:Integer from Standard); 
+	     
+    LimitMode(me) 
+    	returns Integer from Standard;    
+
+    -- 
+    --    Protected methods  
+    --  
+    BuildResult(me:out; 
+	    theType: ShapeEnum from TopAbs) 
+    ---Purpose: Build the resulting shapes of type theType      
+    	is redefined protected;   
+	 
+    PostTreat(me:out)  
+    ---Purpose:  Provides post-tratment actions  
+    	is redefined protected; 
+	
+    -- ===================================================== 
+    -- 
+    --  Debug  methods  
+    --
+    AddToolCompound (me:out;  
+    	    theShape: Shape from TopoDS); 
+    ---Purpose:  Adds Tool arguments of the operation as  
+    --           shapes of upper level of container shape theShape    	  
+    -- =====================================================
+ 
+fields 
+    myTools           : ListOfShape from TopTools is protected; 
+    myMapTools        : MapOfShape  from TopTools is protected;        
+    myLimit           : ShapeEnum   from TopAbs   is protected;   
+    myLimitMode       : Integer from Standard     is protected;  
+
+end Splitter;
+

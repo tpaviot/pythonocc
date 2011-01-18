@@ -1,0 +1,2027 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Geom_BSplineSurface—Describes a BSpline surface. &mdash; occ-doc-test v0.4 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '0.4',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="occ-doc-test v0.4 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index.html">occ-doc-test v0.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="geom-bsplinesurface-describes-a-bspline-surface">
+<h1><tt class="xref docutils literal"><span class="pre">Geom_BSplineSurface</span></tt>&#8212;Describes a BSpline surface.<a class="headerlink" href="#geom-bsplinesurface-describes-a-bspline-surface" title="Permalink to this headline">¶</a></h1>
+<p>Describes a BSpline surface.</p>
+<p>In each parametric direction, a BSpline surface can be:</p>
+<ul class="simple">
+<li>uniform or non-uniform,</li>
+<li>rational or non-rational,</li>
+<li>periodic or non-periodic.</li>
+</ul>
+<p>A BSpline surface is defined by:</p>
+<ul class="simple">
+<li>its degrees, in the u and v parametric directions,</li>
+<li>its periodic characteristic, in the u and v parametric directions,</li>
+<li>a table of poles, also called control points (together
+with the associated weights if the surface is rational), and</li>
+<li>a table of knots, together with the associated multiplicities.</li>
+</ul>
+<p>The degree of a <tt class="xref docutils literal"><span class="pre">Geom_BSplineSurface</span></tt> is limited to
+a value (25) which is defined and controlled by the
+system. This value is returned by the function <a title="MaxDegree" class="reference internal" href="#MaxDegree"><tt class="xref docutils literal"><span class="pre">MaxDegree()</span></tt></a>.
+<a title="Poles" class="reference internal" href="#Poles"><tt class="xref docutils literal"><span class="pre">Poles()</span></tt></a> and <a title="Weights" class="reference internal" href="#Weights"><tt class="xref docutils literal"><span class="pre">Weights()</span></tt></a>
+<a title="Poles" class="reference internal" href="#Poles"><tt class="xref docutils literal"><span class="pre">Poles()</span></tt></a> and <a title="Weights" class="reference internal" href="#Weights"><tt class="xref docutils literal"><span class="pre">Weights()</span></tt></a> are manipulated using two associative double arrays:</p>
+<ul class="simple">
+<li>the poles table, which is a double array of <tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt> points, and</li>
+<li>the weights table, which is a double array of reals.</li>
+</ul>
+<p>The bounds of the poles and weights arrays are:</p>
+<ul class="simple">
+<li>1 and <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a> for the row bounds (provided
+that the BSpline surface is not periodic in the u
+parametric direction), where <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a> is the
+number of poles of the surface in the u parametric direction, and</li>
+<li>1 and <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a> for the column bounds (provided
+that the BSpline surface is not periodic in the v
+parametric direction), where <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a> is the
+number of poles of the surface in the v parametric direction.</li>
+</ul>
+<p>The poles of the surface are the points used to shape
+and reshape the surface. They comprise a rectangular network.</p>
+<p>If the surface is not periodic:</p>
+<ul class="simple">
+<li>The points (1, 1), (NbUPoles, 1), (1,
+NbVPoles), and (NbUPoles, NbVPoles)
+are the four parametric <em>corners</em> of the surface.</li>
+<li>The first column of poles and the last column of
+poles define two BSpline curves which delimit the
+surface in the v parametric direction. These are the
+v isoparametric curves corresponding to the two
+bounds of the v parameter.</li>
+<li>The first row of poles and the last row of poles
+define two BSpline curves which delimit the surface
+in the u parametric direction. These are the u
+isoparametric curves corresponding to the two bounds of the u parameter.</li>
+</ul>
+<p>If the surface is periodic, these geometric properties are not verified.</p>
+<p>It is more difficult to define a geometrical significance
+for the weights. However they are useful for
+representing a quadric surface precisely. Moreover, if
+the weights of all the poles are equal, the surface has
+a polynomial equation, and hence is a <em>non-rational surface</em>.</p>
+<p>The non-rational surface is a special, but frequently
+used, case, where all poles have identical weights.</p>
+<p>The weights are defined and used only in the case of
+a rational surface. The rational characteristic is
+defined in each parametric direction. A surface can be
+rational in the u parametric direction, and
+non-rational in the v parametric direction.</p>
+<p>Knots and Multiplicities
+For a <tt class="xref docutils literal"><span class="pre">Geom_BSplineSurface</span></tt> the table of knots is
+made up of two increasing sequences of reals, without
+repetition, one for each parametric direction. The
+multiplicities define the repetition of the knots.</p>
+<p>A BSpline surface comprises multiple contiguous
+patches, which are themselves polynomial or rational
+surfaces. The knots are the parameters of the
+isoparametric curves which limit these contiguous
+patches. The multiplicity of a knot on a BSpline
+surface (in a given parametric direction) is related to
+the degree of continuity of the surface at that knot in
+that parametric direction:
+Degree of continuity at knot(i) = Degree - Multi(i) where:</p>
+<ul class="simple">
+<li>Degree is the degree of the BSpline surface in
+the given parametric direction, and</li>
+<li>Multi(i) is the multiplicity of knot number i in
+the given parametric direction.</li>
+</ul>
+<p>There are some special cases, where the knots are
+regularly spaced in one parametric direction (i.e. the
+difference between two consecutive knots is a constant).</p>
+<ul class="simple">
+<li><em>Uniform</em>: all the multiplicities are equal to 1.</li>
+<li><em>Quasi-uniform</em>: all the multiplicities are equal to 1,
+except for the first and last knots in this parametric
+direction, and these are equal to Degree + 1.</li>
+<li><em>Piecewise Bezier</em>: all the multiplicities are equal to
+Degree except for the first and last knots, which
+are equal to Degree + 1. This surface is a
+concatenation of Bezier patches in the given
+parametric direction.</li>
+</ul>
+<p>If the BSpline surface is not periodic in a given
+parametric direction, the bounds of the knots and
+multiplicities tables are 1 and NbKnots, where
+NbKnots is the number of knots of the BSpline
+surface in that parametric direction.</p>
+<p>If the BSpline surface is periodic in a given parametric
+direction, and there are k periodic knots and p
+periodic poles in that parametric direction:</p>
+<ul class="simple">
+<li>the period is such that:
+period = Knot(k+1) - Knot(1), and</li>
+<li>the poles and knots tables in that parametric
+direction can be considered as infinite tables, such that:
+Knot(i+k) = Knot(i) + period, and
+Pole(i+p) = Pole(i.</li>
+</ul>
+<p>Note: The data structure tables for a periodic BSpline
+surface are more complex than those of a non-periodic one.</p>
+<p>References :</p>
+<ol class="arabic simple">
+<li>A survey of curve and surface methods in CADG Wolfgang BOHM
+CAGD 1 (1984)</li>
+<li>On de Boor-like algorithms and blossoming Wolfgang BOEHM
+cagd 5 (1988)</li>
+<li>Blossoming and knot insertion algorithms for B-spline curves
+Ronald N. GOLDMAN</li>
+<li>Modelisation des surfaces en CAO, Henri GIAUME Peugeot SA</li>
+<li>Curves and Surfaces for Computer Aided Geometric Design,
+a practical guide Gerald Farin</li>
+</ol>
+<dl class="method">
+<dt id="Bounds">
+<tt class="descname">Bounds</tt><big>(</big><em>U1</em>, <em>U2</em>, <em>V1</em>, <em>V2</em><big>)</big><a class="headerlink" href="#Bounds" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">param U1:</th><td class="field-body"></td>
+</tr>
+<tr class="field"><th class="field-name">type U1:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">param U2:</th><td class="field-body"></td>
+</tr>
+<tr class="field"><th class="field-name">type U2:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">param V1:</th><td class="field-body"></td>
+</tr>
+<tr class="field"><th class="field-name">type V1:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">param V2:</th><td class="field-body"></td>
+</tr>
+<tr class="field"><th class="field-name">type V2:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the parametric bounds of the surface.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">These parametric values are the bounds of the array of
+knots <a title="UKnots" class="reference internal" href="#UKnots"><tt class="xref docutils literal"><span class="pre">UKnots()</span></tt></a> and <a title="VKnots" class="reference internal" href="#VKnots"><tt class="xref docutils literal"><span class="pre">VKnots()</span></tt></a> only if the first knots and the
+last knots have a multiplicity equal to <a title="UDegree" class="reference internal" href="#UDegree"><tt class="xref docutils literal"><span class="pre">UDegree()</span></tt></a> + 1 or
+<a title="VDegree" class="reference internal" href="#VDegree"><tt class="xref docutils literal"><span class="pre">VDegree()</span></tt></a> + 1</p>
+</div>
+</blockquote>
+<dl class="method">
+<dt id="CheckAndSegment">
+<tt class="descname">CheckAndSegment</tt><big>(</big><em>U1</em>, <em>U2</em>, <em>V1</em>, <em>V2</em><big>)</big><a class="headerlink" href="#CheckAndSegment" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>U1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>U2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Substitutes the <a title="UKnots" class="reference internal" href="#UKnots"><tt class="xref docutils literal"><span class="pre">UKnots()</span></tt></a> of range UIndex with K.</p>
+<p>Raised if UIndex &lt; 1 or UIndex &gt; <a title="NbUKnots" class="reference internal" href="#NbUKnots"><tt class="xref docutils literal"><span class="pre">NbUKnots()</span></tt></a>
+Raised if K &gt;= UKnots(UIndex+1) or K &lt;= UKnots(UIndex-1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Continuity">
+<tt class="descname">Continuity</tt><big>(</big><big>)</big><a class="headerlink" href="#Continuity" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">GeomAbs_Shape</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the continuity of the surface :
+C0 : only geometric continuity,
+C1 : continuity of the first derivative all along the Surface,
+C2 : continuity of the second derivative all along the Surface,
+C3 : continuity of the third derivative all along the Surface,
+CN : the order of continuity is infinite.</p>
+<p>A B-spline surface is infinitely continuously differentiable
+for the couple of parameters U, V such thats U != UKnots(i)
+and V != VKnots(i). The continuity of the surface at a knot
+value depends on the multiplicity of this knot.</p>
+<p>Example :
+If the surface is C1 in the V direction and C2 in the U
+direction this function returns Shape = C1.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Copy">
+<tt class="descname">Copy</tt><big>(</big><big>)</big><a class="headerlink" href="#Copy" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Handle_Geom_Geometry</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Creates a new object which is a copy of this BSpline surface.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="D0">
+<tt class="descname">D0</tt><big>(</big><em>U</em>, <em>V</em>, <em>P</em><big>)</big><a class="headerlink" href="#D0" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="D1">
+<tt class="descname">D1</tt><big>(</big><em>U</em>, <em>V</em>, <em>P</em>, <em>D1U</em>, <em>D1V</em><big>)</big><a class="headerlink" href="#D1" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>D1U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D1V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Raised if the continuity of the surface is not C1.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="D2">
+<tt class="descname">D2</tt><big>(</big><em>D1U</em>, <em>D1V</em>, <em>D2U</em>, <em>D2UV</em>, <em>D2V</em>, <em>P</em>, <em>U</em>, <em>V</em><big>)</big><a class="headerlink" href="#D2" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>D1U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D1V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2UV</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Raised if the continuity of the surface is not C2.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="D3">
+<tt class="descname">D3</tt><big>(</big><em>D1U</em>, <em>D1V</em>, <em>D2U</em>, <em>D2UV</em>, <em>D2V</em>, <em>D3U</em>, <em>D3UUV</em>, <em>D3UVV</em>, <em>D3V</em>, <em>P</em>, <em>U</em>, <em>V</em><big>)</big><a class="headerlink" href="#D3" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>D1U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D1V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2UV</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D3U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D3UUV</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D3UVV</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D3V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Raised if the continuity of the surface is not C3.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DN">
+<tt class="descname">DN</tt><big>(</big><em>Nu</em>, <em>Nv</em>, <em>U</em>, <em>V</em><big>)</big><a class="headerlink" href="#DN" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>Nu</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Nv</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Nu is the order of derivation in the U parametric direction and
+Nv is the order of derivation in the V parametric direction.</p>
+<p>Raised if the continuity of the surface is not CNu in the U
+direction and CNv in the V direction.</p>
+<p>Raised if Nu + Nv &lt; 1 or Nu &lt; 0 or Nv &lt; 0.</p>
+<p>The following functions computes the point for the
+parametric values (U, V) and the derivatives at
+this point on the B-spline surface patch delimited
+with the knots FromUK1, FromVK1 and the knots ToUK2,
+ToVK2.  (U, V) can be out of these parametric bounds
+but for the computation we only use the definition
+of the surface between these knots. This method is
+useful to compute local derivative, if the order of
+continuity of the whole surface is not greater enough.</p>
+<p>Inside the parametric knot&#8217;s domain previously defined
+the evaluations are the same as if we consider the whole
+definition of the surface. Of course the evaluations are
+different outside this parametric domain.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DynamicType">
+<tt class="descname">DynamicType</tt><big>(</big><big>)</big><a class="headerlink" href="#DynamicType" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Handle_Standard_Type</span></tt></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ExchangeUV">
+<tt class="descname">ExchangeUV</tt><big>(</big><big>)</big><a class="headerlink" href="#ExchangeUV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exchanges the u and v parametric directions on
+this BSpline surface.</p>
+<p>As a consequence:</p>
+<ul class="simple">
+<li>the poles and weights tables are transposed,</li>
+<li>the knots and multiplicities tables are exchanged,</li>
+<li>degrees of continuity, and rational, periodic and
+uniform characteristics are exchanged, and</li>
+<li>the orientation of the surface is inverted.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="FirstUKnotIndex">
+<tt class="descname">FirstUKnotIndex</tt><big>(</big><big>)</big><a class="headerlink" href="#FirstUKnotIndex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Computes the Index of the <a title="UKnots" class="reference internal" href="#UKnots"><tt class="xref docutils literal"><span class="pre">UKnots()</span></tt></a> which gives the first
+parametric value of the surface in the U direction.</p>
+<p>The <tt class="xref docutils literal"><span class="pre">UIso()</span></tt> curve corresponding to this value is a
+boundary curve of the surface.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="FirstVKnotIndex">
+<tt class="descname">FirstVKnotIndex</tt><big>(</big><big>)</big><a class="headerlink" href="#FirstVKnotIndex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Computes the Index of the <a title="VKnots" class="reference internal" href="#VKnots"><tt class="xref docutils literal"><span class="pre">VKnots()</span></tt></a> which gives the
+first parametric value of the surface in the V direction.</p>
+<p>The <tt class="xref docutils literal"><span class="pre">VIso()</span></tt> curve corresponding to this knot is a boundary
+curve of the surface.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IncreaseDegree">
+<tt class="descname">IncreaseDegree</tt><big>(</big><em>UDegree</em>, <em>VDegree</em><big>)</big><a class="headerlink" href="#IncreaseDegree" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>UDegree</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>VDegree</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Increases the degrees of this BSpline surface to
+<a title="UDegree" class="reference internal" href="#UDegree"><tt class="xref docutils literal"><span class="pre">UDegree()</span></tt></a> and <a title="VDegree" class="reference internal" href="#VDegree"><tt class="xref docutils literal"><span class="pre">VDegree()</span></tt></a> in the u and v parametric
+directions respectively. As a result, the tables of poles,
+weights and multiplicities are modified. The tables of
+knots is not changed.</p>
+<p>Note: Nothing is done if the given degree is less than
+or equal to the current degree in the corresponding
+parametric direction.</p>
+<p>Exceptions
+<tt class="xref docutils literal"><span class="pre">Standard_ConstructionError</span></tt> if <a title="UDegree" class="reference internal" href="#UDegree"><tt class="xref docutils literal"><span class="pre">UDegree()</span></tt></a> or
+<a title="VDegree" class="reference internal" href="#VDegree"><tt class="xref docutils literal"><span class="pre">VDegree()</span></tt></a> is greater than
+<tt class="xref docutils literal"><span class="pre">Geom_BSplineSurface.MaxDegree()</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IncrementUMultiplicity">
+<tt class="descname">IncrementUMultiplicity</tt><big>(</big><em>FromI1</em>, <em>Step</em>, <em>ToI2</em><big>)</big><a class="headerlink" href="#IncrementUMultiplicity" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>FromI1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Step</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToI2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Increases until order M the multiplicity of the set of knots
+FromI1,...., ToI2 in the V direction. This method can be used to
+make a BSplineSurface into a PiecewiseBezier B_spline
+surface. If <tt class="docutils literal"><span class="pre">me</span></tt> was uniform, it can become non-uniform.</p>
+<p>Raised if FromI1 or ToI2 is out of the range [<a title="FirstVKnotIndex" class="reference internal" href="#FirstVKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstVKnotIndex()</span></tt></a>,
+<a title="LastVKnotIndex" class="reference internal" href="#LastVKnotIndex"><tt class="xref docutils literal"><span class="pre">LastVKnotIndex()</span></tt></a>] given by the methods with the same name.</p>
+<p>M should be greater than the previous multiplicity of the
+all the knots FromI1,..., ToI2 and lower or equal to the
+Degree of the surface in the V parametric direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IncrementVMultiplicity">
+<tt class="descname">IncrementVMultiplicity</tt><big>(</big><em>FromI1</em>, <em>Step</em>, <em>ToI2</em><big>)</big><a class="headerlink" href="#IncrementVMultiplicity" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>FromI1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Step</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToI2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Increments the multiplicity of the consecutives vknots FromI1..ToI2
+by step.  The multiplicity of each knot FromI1,.....,ToI2 must be
+lower or equal to the <a title="VDegree" class="reference internal" href="#VDegree"><tt class="xref docutils literal"><span class="pre">VDegree()</span></tt></a> of the B_spline.</p>
+<p>Raised if FromI1 or ToI2 is not in the range
+[<a title="FirstVKnotIndex" class="reference internal" href="#FirstVKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstVKnotIndex()</span></tt></a>, <a title="LastVKnotIndex" class="reference internal" href="#LastVKnotIndex"><tt class="xref docutils literal"><span class="pre">LastVKnotIndex()</span></tt></a>]
+Raised if one knot has a multiplicity greater than <a title="VDegree" class="reference internal" href="#VDegree"><tt class="xref docutils literal"><span class="pre">VDegree()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InsertUKnot">
+<tt class="descname">InsertUKnot</tt><big>(</big><em>Add</em>, <em>M</em>, <em>ParametricTolerance</em>, <em>U</em><big>)</big><a class="headerlink" href="#InsertUKnot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>Add</em> (<tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt>) &#8211; </li>
+<li><em>M</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ParametricTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Inserts a knot value in the sequence of <a title="UKnots" class="reference internal" href="#UKnots"><tt class="xref docutils literal"><span class="pre">UKnots()</span></tt></a>. If U is a knot
+value this method increases the multiplicity of the knot if the
+previous multiplicity was lower than M else it does nothing. The
+tolerance criterion is ParametricTolerance. ParametricTolerance
+should be greater or equal than <a title="Resolution" class="reference internal" href="#Resolution"><tt class="xref docutils literal"><span class="pre">Resolution()</span></tt></a> from package gp.</p>
+<p>Raised if U is out of the bounds [U1, U2] given by the methods
+<a title="Bounds" class="reference internal" href="#Bounds"><tt class="xref docutils literal"><span class="pre">Bounds()</span></tt></a>, the criterion ParametricTolerance is used.</p>
+<p>Raised if M is not in the range [1, <a title="UDegree" class="reference internal" href="#UDegree"><tt class="xref docutils literal"><span class="pre">UDegree()</span></tt></a>].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InsertUKnots">
+<tt class="descname">InsertUKnots</tt><big>(</big><em>Add</em>, <em>Knots</em>, <em>Mults</em>, <em>ParametricTolerance</em><big>)</big><a class="headerlink" href="#InsertUKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>Add</em> (<tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt>) &#8211; </li>
+<li><em>Knots</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </li>
+<li><em>Mults</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfInteger</span></tt>) &#8211; </li>
+<li><em>ParametricTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="InsertVKnot">
+<tt class="descname">InsertVKnot</tt><big>(</big><em>Add</em>, <em>M</em>, <em>ParametricTolerance</em>, <em>V</em><big>)</big><a class="headerlink" href="#InsertVKnot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>Add</em> (<tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt>) &#8211; </li>
+<li><em>M</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ParametricTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Inserts a knot value in the sequence of <a title="VKnots" class="reference internal" href="#VKnots"><tt class="xref docutils literal"><span class="pre">VKnots()</span></tt></a>. If V is a knot
+value this method increases the multiplicity of the knot if the
+previous multiplicity was lower than M otherwise it does nothing.</p>
+<p>The tolerance criterion is ParametricTolerance.</p>
+<p>ParametricTolerance should be greater or equal than <a title="Resolution" class="reference internal" href="#Resolution"><tt class="xref docutils literal"><span class="pre">Resolution()</span></tt></a>
+from package gp.
+raises if V is out of the <a title="Bounds" class="reference internal" href="#Bounds"><tt class="xref docutils literal"><span class="pre">Bounds()</span></tt></a> [V1, V2] given by the methods
+<a title="Bounds" class="reference internal" href="#Bounds"><tt class="xref docutils literal"><span class="pre">Bounds()</span></tt></a>, the criterion ParametricTolerance is used.
+raises if M is not in the range [1, <a title="VDegree" class="reference internal" href="#VDegree"><tt class="xref docutils literal"><span class="pre">VDegree()</span></tt></a>].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InsertVKnots">
+<tt class="descname">InsertVKnots</tt><big>(</big><em>Add</em>, <em>Knots</em>, <em>Mults</em>, <em>ParametricTolerance</em><big>)</big><a class="headerlink" href="#InsertVKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>Add</em> (<tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt>) &#8211; </li>
+<li><em>Knots</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </li>
+<li><em>Mults</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfInteger</span></tt>) &#8211; </li>
+<li><em>ParametricTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Inserts into the knots table for the corresponding
+parametric direction of this BSpline surface:</p>
+<ul class="simple">
+<li>the value U, or V, with the multiplicity M (defaulted to 1), or</li>
+<li>the values of the array Knots, with their respective
+multiplicities, Mults.</li>
+</ul>
+<p>If the knot value to insert already exists in the table, its multiplicity is:</p>
+<ul class="simple">
+<li>increased by M, if Add is true (the default), or</li>
+<li>increased to M, if Add is false.</li>
+</ul>
+<p>The tolerance criterion used to check the equality of
+the knots is the larger of the values ParametricTolerance and
+Standard_Real::Epsilon(val), where val is the knot value to be inserted.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<ul class="last simple">
+<li>If a given multiplicity coefficient is null, or negative, nothing is done.</li>
+<li>The new multiplicity of a knot is limited to the degree of this BSpline surface in the
+corresponding parametric direction.</li>
+</ul>
+</div>
+<p>Exceptions
+<tt class="xref docutils literal"><span class="pre">Standard_ConstructionError</span></tt> if a knot value to
+insert is outside the bounds of this BSpline surface in
+the specified parametric direction. The comparison
+uses the precision criterion ParametricTolerance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InvalidateCache">
+<tt class="descname">InvalidateCache</tt><big>(</big><big>)</big><a class="headerlink" href="#InvalidateCache" title="Permalink to this definition">¶</a></dt>
+<dd>Invalidates the cache. This has to be private this has to be private</dd></dl>
+
+<dl class="method">
+<dt id="IsCNu">
+<tt class="descname">IsCNu</tt><big>(</big><em>N</em><big>)</big><a class="headerlink" href="#IsCNu" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>N</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns True if the order of continuity of the surface in the
+U direction  is N.  Raised if N &lt; 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IsCNv">
+<tt class="descname">IsCNv</tt><big>(</big><em>N</em><big>)</big><a class="headerlink" href="#IsCNv" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>N</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns True if the order of continuity of the surface
+in the V direction  is N.  Raised if N &lt; 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IsCacheValid">
+<tt class="descname">IsCacheValid</tt><big>(</big><em>UParameter</em>, <em>VParameter</em><big>)</big><a class="headerlink" href="#IsCacheValid" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>UParameter</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>VParameter</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Tells whether the Cache is valid for the
+given parameter
+Warnings : the parameter must be normalized within
+the period if the curve is periodic. Otherwise
+the answer will be false</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IsUClosed">
+<tt class="descname">IsUClosed</tt><big>(</big><big>)</big><a class="headerlink" href="#IsUClosed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns true if the first control points row and the last
+control points row are identical. The tolerance criterion
+is <a title="Resolution" class="reference internal" href="#Resolution"><tt class="xref docutils literal"><span class="pre">Resolution()</span></tt></a> from package gp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IsUPeriodic">
+<tt class="descname">IsUPeriodic</tt><big>(</big><big>)</big><a class="headerlink" href="#IsUPeriodic" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns True if the surface is closed in the U direction
+and if the B-spline has been turned into a periodic surface
+using the function <a title="SetUPeriodic" class="reference internal" href="#SetUPeriodic"><tt class="xref docutils literal"><span class="pre">SetUPeriodic()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IsURational">
+<tt class="descname">IsURational</tt><big>(</big><big>)</big><a class="headerlink" href="#IsURational" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns False if for each row of weights all the weights
+are identical.</p>
+<p>The tolerance criterion is resolution from package gp.</p>
+<p>Example :
+<a href="#id1"><span class="problematic" id="id2">|1.0, 1.0, 1.0|</span></a>
+if <a title="Weights" class="reference internal" href="#Weights"><tt class="xref docutils literal"><span class="pre">Weights()</span></tt></a> =  <a href="#id3"><span class="problematic" id="id4">|0.5, 0.5, 0.5|</span></a>   returns False
+<a href="#id5"><span class="problematic" id="id6">|2.0, 2.0, 2.0|</span></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IsVClosed">
+<tt class="descname">IsVClosed</tt><big>(</big><big>)</big><a class="headerlink" href="#IsVClosed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns true if the first control points column and the
+last last control points column are identical.</p>
+<p>The tolerance criterion is <a title="Resolution" class="reference internal" href="#Resolution"><tt class="xref docutils literal"><span class="pre">Resolution()</span></tt></a> from package gp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IsVPeriodic">
+<tt class="descname">IsVPeriodic</tt><big>(</big><big>)</big><a class="headerlink" href="#IsVPeriodic" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns True if the surface is closed in the V direction
+and if the B-spline has been turned into a periodic
+surface using the function <a title="SetVPeriodic" class="reference internal" href="#SetVPeriodic"><tt class="xref docutils literal"><span class="pre">SetVPeriodic()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="IsVRational">
+<tt class="descname">IsVRational</tt><big>(</big><big>)</big><a class="headerlink" href="#IsVRational" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns False if for each column of weights all the weights
+are identical.</p>
+<p>The tolerance criterion is resolution from package gp.</p>
+<p>Examples :
+<a href="#id7"><span class="problematic" id="id8">|1.0, 2.0, 0.5|</span></a>
+if <a title="Weights" class="reference internal" href="#Weights"><tt class="xref docutils literal"><span class="pre">Weights()</span></tt></a> =  <a href="#id9"><span class="problematic" id="id10">|1.0, 2.0, 0.5|</span></a>   returns False
+<a href="#id11"><span class="problematic" id="id12">|1.0, 2.0, 0.5|</span></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="LastUKnotIndex">
+<tt class="descname">LastUKnotIndex</tt><big>(</big><big>)</big><a class="headerlink" href="#LastUKnotIndex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Computes the Index of the <a title="UKnots" class="reference internal" href="#UKnots"><tt class="xref docutils literal"><span class="pre">UKnots()</span></tt></a> which gives the
+last parametric value of the surface in the U direction.</p>
+<p>The <tt class="xref docutils literal"><span class="pre">UIso()</span></tt> curve corresponding to this knot is a boundary
+curve of the surface.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="LastVKnotIndex">
+<tt class="descname">LastVKnotIndex</tt><big>(</big><big>)</big><a class="headerlink" href="#LastVKnotIndex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Computes the Index of the <a title="VKnots" class="reference internal" href="#VKnots"><tt class="xref docutils literal"><span class="pre">VKnots()</span></tt></a> which gives the
+last parametric value of the surface in the V direction.</p>
+<p>The <tt class="xref docutils literal"><span class="pre">VIso()</span></tt> curve corresponding to this knot is a
+boundary curve of the surface.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="LocalD0">
+<tt class="descname">LocalD0</tt><big>(</big><em>FromUK1</em>, <em>FromVK1</em>, <em>P</em>, <em>ToUK2</em>, <em>ToVK2</em>, <em>U</em>, <em>V</em><big>)</big><a class="headerlink" href="#LocalD0" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>FromUK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>FromVK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>ToUK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToVK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Raised if FromUK1 = ToUK2 or FromVK1 = ToVK2.</p>
+<p>Raised if FromUK1, ToUK2 are not in the range [<a title="FirstUKnotIndex" class="reference internal" href="#FirstUKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstUKnotIndex()</span></tt></a>,
+<a title="LastUKnotIndex" class="reference internal" href="#LastUKnotIndex"><tt class="xref docutils literal"><span class="pre">LastUKnotIndex()</span></tt></a>] or if FromVK1, ToVK2 are not in the range
+[<a title="FirstVKnotIndex" class="reference internal" href="#FirstVKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstVKnotIndex()</span></tt></a>, <a title="LastVKnotIndex" class="reference internal" href="#LastVKnotIndex"><tt class="xref docutils literal"><span class="pre">LastVKnotIndex()</span></tt></a>]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="LocalD1">
+<tt class="descname">LocalD1</tt><big>(</big><em>D1U</em>, <em>D1V</em>, <em>FromUK1</em>, <em>FromVK1</em>, <em>P</em>, <em>ToUK2</em>, <em>ToVK2</em>, <em>U</em>, <em>V</em><big>)</big><a class="headerlink" href="#LocalD1" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>D1U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D1V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>FromUK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>FromVK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>ToUK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToVK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Raised if the local continuity of the surface is not C1
+between the knots FromUK1, ToUK2 and FromVK1, ToVK2.  Raised if FromUK1 = ToUK2 or FromVK1 = ToVK2.</p>
+<p>Raised if FromUK1, ToUK2 are not in the range [<a title="FirstUKnotIndex" class="reference internal" href="#FirstUKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstUKnotIndex()</span></tt></a>,
+<a title="LastUKnotIndex" class="reference internal" href="#LastUKnotIndex"><tt class="xref docutils literal"><span class="pre">LastUKnotIndex()</span></tt></a>] or if FromVK1, ToVK2 are not in the range
+[<a title="FirstVKnotIndex" class="reference internal" href="#FirstVKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstVKnotIndex()</span></tt></a>, <a title="LastVKnotIndex" class="reference internal" href="#LastVKnotIndex"><tt class="xref docutils literal"><span class="pre">LastVKnotIndex()</span></tt></a>]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="LocalD2">
+<tt class="descname">LocalD2</tt><big>(</big><em>D1U</em>, <em>D1V</em>, <em>D2U</em>, <em>D2UV</em>, <em>D2V</em>, <em>FromUK1</em>, <em>FromVK1</em>, <em>P</em>, <em>ToUK2</em>, <em>ToVK2</em>, <em>U</em>, <em>V</em><big>)</big><a class="headerlink" href="#LocalD2" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>D1U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D1V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2UV</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>FromUK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>FromVK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>ToUK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToVK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Raised if the local continuity of the surface is not C2
+between the knots FromUK1, ToUK2 and FromVK1, ToVK2.  Raised if FromUK1 = ToUK2 or FromVK1 = ToVK2.</p>
+<p>Raised if FromUK1, ToUK2 are not in the range [<a title="FirstUKnotIndex" class="reference internal" href="#FirstUKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstUKnotIndex()</span></tt></a>,
+<a title="LastUKnotIndex" class="reference internal" href="#LastUKnotIndex"><tt class="xref docutils literal"><span class="pre">LastUKnotIndex()</span></tt></a>] or if FromVK1, ToVK2 are not in the range
+[<a title="FirstVKnotIndex" class="reference internal" href="#FirstVKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstVKnotIndex()</span></tt></a>, <a title="LastVKnotIndex" class="reference internal" href="#LastVKnotIndex"><tt class="xref docutils literal"><span class="pre">LastVKnotIndex()</span></tt></a>]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="LocalD3">
+<tt class="descname">LocalD3</tt><big>(</big><em>D1U</em>, <em>D1V</em>, <em>D2U</em>, <em>D2UV</em>, <em>D2V</em>, <em>D3U</em>, <em>D3UUV</em>, <em>D3UVV</em>, <em>D3V</em>, <em>FromUK1</em>, <em>FromVK1</em>, <em>P</em>, <em>ToUK2</em>, <em>ToVK2</em>, <em>U</em>, <em>V</em><big>)</big><a class="headerlink" href="#LocalD3" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>D1U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D1V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2UV</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D2V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D3U</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D3UUV</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D3UVV</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>D3V</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>FromUK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>FromVK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>ToUK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToVK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Raised if the local continuity of the surface is not C3
+between the knots FromUK1, ToUK2 and FromVK1, ToVK2.  Raised if FromUK1 = ToUK2 or FromVK1 = ToVK2.</p>
+<p>Raised if FromUK1, ToUK2 are not in the range [<a title="FirstUKnotIndex" class="reference internal" href="#FirstUKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstUKnotIndex()</span></tt></a>,
+<a title="LastUKnotIndex" class="reference internal" href="#LastUKnotIndex"><tt class="xref docutils literal"><span class="pre">LastUKnotIndex()</span></tt></a>] or if FromVK1, ToVK2 are not in the range
+[<a title="FirstVKnotIndex" class="reference internal" href="#FirstVKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstVKnotIndex()</span></tt></a>, <a title="LastVKnotIndex" class="reference internal" href="#LastVKnotIndex"><tt class="xref docutils literal"><span class="pre">LastVKnotIndex()</span></tt></a>]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="LocalDN">
+<tt class="descname">LocalDN</tt><big>(</big><em>FromUK1</em>, <em>FromVK1</em>, <em>Nu</em>, <em>Nv</em>, <em>ToUK2</em>, <em>ToVK2</em>, <em>U</em>, <em>V</em><big>)</big><a class="headerlink" href="#LocalDN" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>FromUK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>FromVK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Nu</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Nv</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToUK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToVK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Raised if the local continuity of the surface is not CNu
+between the knots FromUK1, ToUK2 and CNv between the knots
+FromVK1, ToVK2.  Raised if FromUK1 = ToUK2 or FromVK1 = ToVK2.</p>
+<p>Raised if FromUK1, ToUK2 are not in the range [<a title="FirstUKnotIndex" class="reference internal" href="#FirstUKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstUKnotIndex()</span></tt></a>,
+<a title="LastUKnotIndex" class="reference internal" href="#LastUKnotIndex"><tt class="xref docutils literal"><span class="pre">LastUKnotIndex()</span></tt></a>] or if FromVK1, ToVK2 are not in the range
+[<a title="FirstVKnotIndex" class="reference internal" href="#FirstVKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstVKnotIndex()</span></tt></a>, <a title="LastVKnotIndex" class="reference internal" href="#LastVKnotIndex"><tt class="xref docutils literal"><span class="pre">LastVKnotIndex()</span></tt></a>]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="LocalValue">
+<tt class="descname">LocalValue</tt><big>(</big><em>FromUK1</em>, <em>FromVK1</em>, <em>ToUK2</em>, <em>ToVK2</em>, <em>U</em>, <em>V</em><big>)</big><a class="headerlink" href="#LocalValue" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>FromUK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>FromVK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToUK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToVK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Computes the V isoparametric curve.</p>
+<p>If CheckRational=False, no try to make it non-rational.</p>
+<p>A B-spline curve is returned.  transformations</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="LocateU">
+<tt class="descname">LocateU</tt><big>(</big><em>I1</em>, <em>I2</em>, <em>ParametricTolerance</em>, <em>U</em>, <em>WithKnotRepetition</em><big>)</big><a class="headerlink" href="#LocateU" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>I1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>I2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ParametricTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>WithKnotRepetition</em> (<tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Locates the parametric value U in the sequence of <a title="UKnots" class="reference internal" href="#UKnots"><tt class="xref docutils literal"><span class="pre">UKnots()</span></tt></a>.</p>
+<p>If <em>WithKnotRepetition</em> is True we consider the knot&#8217;s
+representation with repetition of multiple knot value,
+otherwise  we consider the knot&#8217;s representation with
+no repetition of multiple knot values.
+<a title="UKnots" class="reference internal" href="#UKnots"><tt class="xref docutils literal"><span class="pre">UKnots()</span></tt></a> (I1) &lt;= U &lt;= <a title="UKnots" class="reference internal" href="#UKnots"><tt class="xref docutils literal"><span class="pre">UKnots()</span></tt></a> (I2)</p>
+<ol class="arabic simple">
+<li>if I1 = I2  U is a knot value (the tolerance criterion
+ParametricTolerance is used).</li>
+<li>if I1 &lt; 1  =&gt; U &lt; UKnots(1) - Abs(ParametricTolerance)</li>
+<li>if I2 &gt; <a title="NbUKnots" class="reference internal" href="#NbUKnots"><tt class="xref docutils literal"><span class="pre">NbUKnots()</span></tt></a> =&gt; U &gt; UKnots(NbUKnots)+Abs(ParametricTolerance)</li>
+</ol>
+</dd></dl>
+
+<dl class="method">
+<dt id="LocateV">
+<tt class="descname">LocateV</tt><big>(</big><em>I1</em>, <em>I2</em>, <em>ParametricTolerance</em>, <em>V</em>, <em>WithKnotRepetition</em><big>)</big><a class="headerlink" href="#LocateV" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>I1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>I2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ParametricTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>WithKnotRepetition</em> (<tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Changes a row of poles or a part of this row.  Raised if Uindex &lt; 1 or UIndex &gt; <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a>.</p>
+<p>Raised if CPoles.Lower() &lt; 1 or CPoles.Upper() &gt; <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="MaxDegree">
+<tt class="descname">MaxDegree</tt><big>(</big><big>)</big><a class="headerlink" href="#MaxDegree" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the value of the maximum degree of the normalized
+B-spline basis functions in the u and v directions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="MovePoint">
+<tt class="descname">MovePoint</tt><big>(</big><em>U</em>, <em>V</em>, <em>P</em>, <em>UIndex1</em>, <em>UIndex2</em>, <em>VIndex1</em>, <em>VIndex2</em>, <em>UFirstIndex</em>, <em>ULastIndex</em>, <em>VFirstIndex</em>, <em>VLastIndex</em><big>)</big><a class="headerlink" href="#MovePoint" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>UIndex1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>UIndex2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>VIndex1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>VIndex2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>UFirstIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ULastIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>VFirstIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>VLastIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Move a point with parameter U and V to P.
+given u,v  as parameters)  to  reach a  new position
+UIndex1, UIndex2, VIndex1, VIndex2:
+indicates the poles which can be moved
+if Problem in BSplineBasis calculation, no change
+for the curve and
+UFirstIndex, VLastIndex = 0
+VFirstIndex, VLastIndex = 0
+Raised if UIndex1 &lt; UIndex2 or VIndex1 &lt; VIndex2 or
+UIndex1 &lt; 1 || UIndex1 &gt; <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a> or
+UIndex2 &lt; 1 || UIndex2 &gt; <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a>
+VIndex1 &lt; 1 || VIndex1 &gt; <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a> or
+VIndex2 &lt; 1 || VIndex2 &gt; <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a>  characteristics of the surface</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="NbUKnots">
+<tt class="descname">NbUKnots</tt><big>(</big><big>)</big><a class="headerlink" href="#NbUKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the number of knots in the U direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="NbUPoles">
+<tt class="descname">NbUPoles</tt><big>(</big><big>)</big><a class="headerlink" href="#NbUPoles" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns number of poles in the U direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="NbVKnots">
+<tt class="descname">NbVKnots</tt><big>(</big><big>)</big><a class="headerlink" href="#NbVKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the number of knots in the V direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="NbVPoles">
+<tt class="descname">NbVPoles</tt><big>(</big><big>)</big><a class="headerlink" href="#NbVPoles" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the number of poles in the V direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PeriodicNormalization">
+<tt class="descname">PeriodicNormalization</tt><big>(</big><em>U</em>, <em>V</em><big>)</big><a class="headerlink" href="#PeriodicNormalization" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>returns the parameter normalized within
+the period if the surface is periodic : otherwise
+does not do anything</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Pole">
+<tt class="descname">Pole</tt><big>(</big><em>UIndex</em>, <em>VIndex</em><big>)</big><a class="headerlink" href="#Pole" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>UIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>VIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Returns the pole of range (UIndex, VIndex).</p>
+<p>Raised if UIndex &lt; 1 or UIndex &gt; <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a> or VIndex &lt; 1 or
+VIndex &gt; <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Poles">
+<tt class="descname">Poles</tt><big>(</big><em>P</em><big>)</big><a class="headerlink" href="#Poles" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>P</em> (<tt class="xref docutils literal"><span class="pre">TColgp_Array2OfPnt</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Returns the poles of the B-spline surface.</p>
+<p>Raised if the length of P in the U and V direction
+is not equal to NbUpoles and <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="RemoveUKnot">
+<tt class="descname">RemoveUKnot</tt><big>(</big><em>Index</em>, <em>M</em>, <em>Tolerance</em><big>)</big><a class="headerlink" href="#RemoveUKnot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>Index</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>M</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Tolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="RemoveVKnot">
+<tt class="descname">RemoveVKnot</tt><big>(</big><em>Index</em>, <em>M</em>, <em>Tolerance</em><big>)</big><a class="headerlink" href="#RemoveVKnot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>Index</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>M</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Tolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Increases until order M the multiplicity of the set of knots
+FromI1,...., ToI2 in the U direction. This method can be used
+to make a B_spline surface into a PiecewiseBezier B_spline
+surface.</p>
+<p>If <tt class="docutils literal"><span class="pre">me</span></tt> was uniform, it can become non uniform.</p>
+<p>Raised if FromI1 or ToI2 is out of the range [<a title="FirstUKnotIndex" class="reference internal" href="#FirstUKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstUKnotIndex()</span></tt></a>,
+<a title="LastUKnotIndex" class="reference internal" href="#LastUKnotIndex"><tt class="xref docutils literal"><span class="pre">LastUKnotIndex()</span></tt></a>].</p>
+<p>M should be greater than the previous multiplicity of the
+all the knots FromI1,..., ToI2 and lower or equal to the
+Degree of the surface in the U parametric direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Resolution">
+<tt class="descname">Resolution</tt><big>(</big><em>Tolerance3D</em>, <em>UTolerance</em>, <em>VTolerance</em><big>)</big><a class="headerlink" href="#Resolution" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>Tolerance3D</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>UTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>VTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Computes two tolerance values for this BSpline
+surface, based on the given tolerance in 3D space
+Tolerance3D. The tolerances computed are:</p>
+<ul class="simple">
+<li>UTolerance in the u parametric direction, and</li>
+<li>VTolerance in the v parametric direction.</li>
+</ul>
+<p>If f(u,v) is the equation of this BSpline surface,
+UTolerance and VTolerance guarantee that :
+| u1 - u0 | &lt; UTolerance and
+| v1 - v0 | &lt; VTolerance
+====&gt; <a href="#id13"><span class="problematic" id="id14">|f (u1,v1) - f (u0,v0)|</span></a> &lt; Tolerance3D</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Segment">
+<tt class="descname">Segment</tt><big>(</big><em>U1</em>, <em>U2</em>, <em>V1</em>, <em>V2</em><big>)</big><a class="headerlink" href="#Segment" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>U1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>U2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Segments the surface between U1 and U2 in the U-Direction.
+between V1 and V2 in the V-Direction.</p>
+<p>The control points are modified, the first and the last point
+are not the same.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Even if <tt class="docutils literal"><span class="pre">me</span></tt> is not closed it can become closed after the
+segmentation for example if U1 or U2 are out of the bounds
+of the surface <tt class="docutils literal"><span class="pre">me</span></tt> or if the surface makes loop.  raises if U2 &lt; U1 or V2 &lt; V1</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="SetUKnots">
+<tt class="descname">SetUKnots</tt><big>(</big><em>UK</em><big>)</big><a class="headerlink" href="#SetUKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>UK</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Substitutes the <a title="VKnots" class="reference internal" href="#VKnots"><tt class="xref docutils literal"><span class="pre">VKnots()</span></tt></a> of range VIndex with K.</p>
+<p>Raised if VIndex &lt; 1 or VIndex &gt; <a title="NbVKnots" class="reference internal" href="#NbVKnots"><tt class="xref docutils literal"><span class="pre">NbVKnots()</span></tt></a>
+Raised if K &gt;= VKnots(VIndex+1) or K &lt;= VKnots(VIndex-1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="SetUNotPeriodic">
+<tt class="descname">SetUNotPeriodic</tt><big>(</big><big>)</big><a class="headerlink" href="#SetUNotPeriodic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="SetUOrigin">
+<tt class="descname">SetUOrigin</tt><big>(</big><em>Index</em><big>)</big><a class="headerlink" href="#SetUOrigin" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Index</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Assigns the knot of index Index in the knots table in
+the corresponding parametric direction to be the
+origin of this periodic BSpline surface. As a
+consequence, the knots and poles tables are modified.</p>
+<p>Exceptions
+<tt class="xref docutils literal"><span class="pre">Standard_NoSuchObject</span></tt> if this BSpline surface is
+not periodic in the given parametric direction.
+<tt class="xref docutils literal"><span class="pre">Standard_DomainError</span></tt> if Index is outside the
+bounds of the knots table in the given parametric direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="SetUPeriodic">
+<tt class="descname">SetUPeriodic</tt><big>(</big><big>)</big><a class="headerlink" href="#SetUPeriodic" title="Permalink to this definition">¶</a></dt>
+<dd>Sets the surface U periodic.</dd></dl>
+
+<dl class="method">
+<dt id="SetVKnots">
+<tt class="descname">SetVKnots</tt><big>(</big><em>VK</em><big>)</big><a class="headerlink" href="#SetVKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>VK</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Changes the value of the <a title="VKnots" class="reference internal" href="#VKnots"><tt class="xref docutils literal"><span class="pre">VKnots()</span></tt></a> of range VIndex and increases
+its multiplicity.</p>
+<p>Raised if VIndex is not in the range [<a title="FirstVKnotIndex" class="reference internal" href="#FirstVKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstVKnotIndex()</span></tt></a>,
+<a title="LastVKnotIndex" class="reference internal" href="#LastVKnotIndex"><tt class="xref docutils literal"><span class="pre">LastVKnotIndex()</span></tt></a>] given by the methods with the same name.</p>
+<p>Raised if K &gt;= VKnots(VIndex+1) or K &lt;= VKnots(VIndex-1.</p>
+<p>M must be lower than <a title="VDegree" class="reference internal" href="#VDegree"><tt class="xref docutils literal"><span class="pre">VDegree()</span></tt></a> and greater than the previous
+multiplicity of the knot of range VIndex.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="SetVNotPeriodic">
+<tt class="descname">SetVNotPeriodic</tt><big>(</big><big>)</big><a class="headerlink" href="#SetVNotPeriodic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies this surface to be periodic in the u (or v) parametric direction.</p>
+<p>To become periodic in a given parametric direction a
+surface must be closed in that parametric direction,
+and the knot sequence relative to that direction must be periodic.</p>
+<p>To generate this periodic sequence of knots, the
+functions <a title="FirstUKnotIndex" class="reference internal" href="#FirstUKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstUKnotIndex()</span></tt></a> and <a title="LastUKnotIndex" class="reference internal" href="#LastUKnotIndex"><tt class="xref docutils literal"><span class="pre">LastUKnotIndex()</span></tt></a> (or
+<a title="FirstVKnotIndex" class="reference internal" href="#FirstVKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstVKnotIndex()</span></tt></a> and LastVKnotIndex) are used to
+compute I1 and I2. These are the indexes, in the
+knot array associated with the given parametric
+direction, of the knots that correspond to the first and
+last parameters of this BSpline surface in the given
+parametric direction. Hence the period is:
+Knots(I1) - Knots(I2.</p>
+<p>As a result, the knots and poles tables are modified.</p>
+<p>Exceptions
+<tt class="xref docutils literal"><span class="pre">Standard_ConstructionError</span></tt> if the surface is not
+closed in the given parametric direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="SetVOrigin">
+<tt class="descname">SetVOrigin</tt><big>(</big><em>Index</em><big>)</big><a class="headerlink" href="#SetVOrigin" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Index</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Assigns the knot of index Index in the knots table in
+the corresponding parametric direction to be the
+origin of this periodic BSpline surface. As a
+consequence, the knots and poles tables are modified.</p>
+<p>Exceptions
+<tt class="xref docutils literal"><span class="pre">Standard_NoSuchObject</span></tt> if this BSpline surface is
+not periodic in the given parametric direction.
+<tt class="xref docutils literal"><span class="pre">Standard_DomainError</span></tt> if Index is outside the
+bounds of the knots table in the given parametric direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="SetVPeriodic">
+<tt class="descname">SetVPeriodic</tt><big>(</big><big>)</big><a class="headerlink" href="#SetVPeriodic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies this surface to be periodic in the u (or v)
+parametric direction.</p>
+<p>To become periodic in a given parametric direction a
+surface must be closed in that parametric direction,
+and the knot sequence relative to that direction must be periodic.</p>
+<p>To generate this periodic sequence of knots, the
+functions <a title="FirstUKnotIndex" class="reference internal" href="#FirstUKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstUKnotIndex()</span></tt></a> and <a title="LastUKnotIndex" class="reference internal" href="#LastUKnotIndex"><tt class="xref docutils literal"><span class="pre">LastUKnotIndex()</span></tt></a> (or
+<a title="FirstVKnotIndex" class="reference internal" href="#FirstVKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstVKnotIndex()</span></tt></a> and LastVKnotIndex) are used to
+compute I1 and I2. These are the indexes, in the
+knot array associated with the given parametric
+direction, of the knots that correspond to the first and
+last parameters of this BSpline surface in the given
+parametric direction. Hence the period is:
+Knots(I1) - Knots(I2.</p>
+<p>As a result, the knots and poles tables are modified.</p>
+<p>Exceptions
+<tt class="xref docutils literal"><span class="pre">Standard_ConstructionError</span></tt> if the surface is not
+closed in the given parametric direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="SetWeight">
+<tt class="descname">SetWeight</tt><big>(</big><em>UIndex</em>, <em>VIndex</em>, <em>Weight</em><big>)</big><a class="headerlink" href="#SetWeight" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>UIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>VIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Weight</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Changes the weight of the pole of range UIndex, VIndex.</p>
+<p>If the surface was non rational it can become rational.</p>
+<p>If the surface was rational it can become non rational.</p>
+<p>Raised if UIndex &lt; 1 or UIndex &gt; <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a> or VIndex &lt; 1 or
+VIndex &gt; <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a>
+Raised if weight is lower or equal to <a title="Resolution" class="reference internal" href="#Resolution"><tt class="xref docutils literal"><span class="pre">Resolution()</span></tt></a> from
+package gp</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="SetWeightCol">
+<tt class="descname">SetWeightCol</tt><big>(</big><em>CPoleWeights</em>, <em>VIndex</em><big>)</big><a class="headerlink" href="#SetWeightCol" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>CPoleWeights</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </li>
+<li><em>VIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Changes a column of weights of a part of this column.</p>
+<p>Raised if VIndex &lt; 1 or VIndex &gt; <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a>
+Raised if CPoleWeights.Lower() &lt; 1 or
+CPoleWeights.Upper() &gt; <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a>.</p>
+<p>Raised if a weight value is lower or equal to <a title="Resolution" class="reference internal" href="#Resolution"><tt class="xref docutils literal"><span class="pre">Resolution()</span></tt></a>
+from package gp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="SetWeightRow">
+<tt class="descname">SetWeightRow</tt><big>(</big><em>CPoleWeights</em>, <em>UIndex</em><big>)</big><a class="headerlink" href="#SetWeightRow" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>CPoleWeights</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </li>
+<li><em>UIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Changes a row of weights or a part of this row.</p>
+<p>Raised if UIndex &lt; 1 or UIndex &gt; <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a>
+Raised if CPoleWeights.Lower() &lt; 1 or
+CPoleWeights.Upper() &gt; <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a>.</p>
+<p>Raised  if a weight value is lower or equal to <a title="Resolution" class="reference internal" href="#Resolution"><tt class="xref docutils literal"><span class="pre">Resolution()</span></tt></a>
+from package gp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Transform">
+<tt class="descname">Transform</tt><big>(</big><em>T</em><big>)</big><a class="headerlink" href="#Transform" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>T</em> (<tt class="xref docutils literal"><span class="pre">gp_Trsf</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Applies the transformation T to this BSpline surface.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="UDegree">
+<tt class="descname">UDegree</tt><big>(</big><big>)</big><a class="headerlink" href="#UDegree" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the degree of the normalized B-splines Ni,n in the U
+direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="UKnot">
+<tt class="descname">UKnot</tt><big>(</big><em>UIndex</em><big>)</big><a class="headerlink" href="#UKnot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>UIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the Knot value of range UIndex.  Raised if UIndex &lt; 1 or UIndex &gt; <a title="NbUKnots" class="reference internal" href="#NbUKnots"><tt class="xref docutils literal"><span class="pre">NbUKnots()</span></tt></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="UKnotDistribution">
+<tt class="descname">UKnotDistribution</tt><big>(</big><big>)</big><a class="headerlink" href="#UKnotDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">GeomAbs_BSplKnotDistribution</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns NonUniform or Uniform or QuasiUniform or
+PiecewiseBezier.  If all the knots differ by a
+positive constant from the preceding knot in the U
+direction the B-spline surface can be :</p>
+<ul class="simple">
+<li>Uniform if all the knots are of multiplicity 1,</li>
+<li>QuasiUniform if all the knots are of multiplicity 1
+except for the first and last knot which are of
+multiplicity Degree + 1,</li>
+<li>PiecewiseBezier if the first and last knots have
+multiplicity Degree + 1 and if interior knots have
+multiplicity Degree
+otherwise the surface is non uniform in the U direction
+The tolerance criterion is <a title="Resolution" class="reference internal" href="#Resolution"><tt class="xref docutils literal"><span class="pre">Resolution()</span></tt></a> from package gp.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="UKnotSequence">
+<tt class="descname">UKnotSequence</tt><big>(</big><em>Ku</em><big>)</big><a class="headerlink" href="#UKnotSequence" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Ku</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Returns the uknots sequence.</p>
+<p>In this sequence the knots with a multiplicity greater than 1
+are repeated.</p>
+<p>Example :
+Ku = {k1, k1, k1, k2, k3, k3, k4, k4, k4}
+Raised if the length of Ku is not equal to <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a> + <a title="UDegree" class="reference internal" href="#UDegree"><tt class="xref docutils literal"><span class="pre">UDegree()</span></tt></a> + 1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="UKnots">
+<tt class="descname">UKnots</tt><big>(</big><em>Ku</em><big>)</big><a class="headerlink" href="#UKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Ku</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Returns the knots in the U direction.</p>
+<p>Raised if the length of Ku is not equal to the number of knots
+in the U direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="UMultiplicities">
+<tt class="descname">UMultiplicities</tt><big>(</big><em>Mu</em><big>)</big><a class="headerlink" href="#UMultiplicities" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Mu</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfInteger</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Returns the multiplicities of the knots in the U direction.</p>
+<p>Raised if the length of Mu is not equal to the number of
+knots in the U direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="UMultiplicity">
+<tt class="descname">UMultiplicity</tt><big>(</big><em>UIndex</em><big>)</big><a class="headerlink" href="#UMultiplicity" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>UIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the multiplicity value of knot of range UIndex in
+the u direction.  Raised if UIndex &lt; 1 or UIndex &gt; <a title="NbUKnots" class="reference internal" href="#NbUKnots"><tt class="xref docutils literal"><span class="pre">NbUKnots()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="UReverse">
+<tt class="descname">UReverse</tt><big>(</big><big>)</big><a class="headerlink" href="#UReverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="UReversedParameter">
+<tt class="descname">UReversedParameter</tt><big>(</big><em>U</em><big>)</big><a class="headerlink" href="#UReversedParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="UpdateUKnots">
+<tt class="descname">UpdateUKnots</tt><big>(</big><big>)</big><a class="headerlink" href="#UpdateUKnots" title="Permalink to this definition">¶</a></dt>
+<dd>Recompute  the  flatknots,  the knotsdistribution, the
+continuity for U.</dd></dl>
+
+<dl class="method">
+<dt id="UpdateVKnots">
+<tt class="descname">UpdateVKnots</tt><big>(</big><big>)</big><a class="headerlink" href="#UpdateVKnots" title="Permalink to this definition">¶</a></dt>
+<dd>Recompute  the  flatknots,  the knotsdistribution, the
+continuity for V.</dd></dl>
+
+<dl class="method">
+<dt id="VDegree">
+<tt class="descname">VDegree</tt><big>(</big><big>)</big><a class="headerlink" href="#VDegree" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the degree of the normalized B-splines Ni,d in the
+V direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="VKnot">
+<tt class="descname">VKnot</tt><big>(</big><em>VIndex</em><big>)</big><a class="headerlink" href="#VKnot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>VIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the Knot value of range VIndex.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="VKnotDistribution">
+<tt class="descname">VKnotDistribution</tt><big>(</big><big>)</big><a class="headerlink" href="#VKnotDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">GeomAbs_BSplKnotDistribution</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns NonUniform or Uniform or QuasiUniform or
+PiecewiseBezier. If all the knots differ by a positive
+constant from the preceding knot in the V direction the
+B-spline surface can be :</p>
+<ul class="simple">
+<li>Uniform if all the knots are of multiplicity 1,</li>
+<li>QuasiUniform if all the knots are of multiplicity 1
+except for the first and last knot which are of
+multiplicity Degree + 1,</li>
+<li>PiecewiseBezier if the first and last knots have
+multiplicity  Degree + 1 and if interior knots have
+multiplicity Degree
+otherwise the surface is non uniform in the V direction.</li>
+</ul>
+<p>The tolerance criterion is <a title="Resolution" class="reference internal" href="#Resolution"><tt class="xref docutils literal"><span class="pre">Resolution()</span></tt></a> from package gp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="VKnotSequence">
+<tt class="descname">VKnotSequence</tt><big>(</big><em>Kv</em><big>)</big><a class="headerlink" href="#VKnotSequence" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Kv</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Returns the vknots sequence.</p>
+<p>In this sequence the knots with a multiplicity greater than 1
+are repeated.</p>
+<p>Example :
+Kv = {k1, k1, k1, k2, k3, k3, k4, k4, k4}
+Raised if the length of Kv is not equal to <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a> + <a title="VDegree" class="reference internal" href="#VDegree"><tt class="xref docutils literal"><span class="pre">VDegree()</span></tt></a> + 1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="VKnots">
+<tt class="descname">VKnots</tt><big>(</big><em>Kv</em><big>)</big><a class="headerlink" href="#VKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Kv</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Returns the knots in the V direction.</p>
+<p>Raised if the length of Kv is not equal to the number of
+knots in the V direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="VMultiplicities">
+<tt class="descname">VMultiplicities</tt><big>(</big><em>Mv</em><big>)</big><a class="headerlink" href="#VMultiplicities" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Mv</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfInteger</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Returns the multiplicities of the knots in the V direction.</p>
+<p>Raised if the length of Mv is not equal to the number of
+knots in the V direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="VMultiplicity">
+<tt class="descname">VMultiplicity</tt><big>(</big><em>VIndex</em><big>)</big><a class="headerlink" href="#VMultiplicity" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>VIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the multiplicity value of knot of range VIndex in
+the v direction.  Raised if VIndex &lt; 1 or VIndex &gt; <a title="NbVKnots" class="reference internal" href="#NbVKnots"><tt class="xref docutils literal"><span class="pre">NbVKnots()</span></tt></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="VReverse">
+<tt class="descname">VReverse</tt><big>(</big><big>)</big><a class="headerlink" href="#VReverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the orientation of this BSpline surface in the
+u (or v) parametric direction. The bounds of the
+surface are not changed but the given parametric
+direction is reversed. Hence the orientation of the
+surface is reversed.</p>
+<p>The knots and poles tables are modified.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="VReversedParameter">
+<tt class="descname">VReversedParameter</tt><big>(</big><em>V</em><big>)</big><a class="headerlink" href="#VReversedParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>V</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Computes the u (or v) parameter on the modified
+surface, produced by reversing its u (or v) parametric
+direction, for the point of u parameter U, (or of v
+parameter V) on this BSpline surface.</p>
+<p>For a BSpline surface, these functions return respectively:</p>
+<ul class="simple">
+<li>UFirst + ULast - U, or</li>
+<li>VFirst + VLast - V,
+where UFirst, ULast, VFirst and VLast are
+the values of the first and last parameters of this
+BSpline surface, in the u and v parametric directions.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ValidateCache">
+<tt class="descname">ValidateCache</tt><big>(</big><em>UParameter</em>, <em>VParameter</em><big>)</big><a class="headerlink" href="#ValidateCache" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>UParameter</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>VParameter</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>updates the cache and validates it</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Weight">
+<tt class="descname">Weight</tt><big>(</big><em>UIndex</em>, <em>VIndex</em><big>)</big><a class="headerlink" href="#Weight" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>UIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>VIndex</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Returns the weight value of range UIndex, VIndex.</p>
+<p>Raised if UIndex &lt; 1 or UIndex &gt; <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a> or VIndex &lt; 1
+or VIndex &gt; <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Weights">
+<tt class="descname">Weights</tt><big>(</big><em>W</em><big>)</big><a class="headerlink" href="#Weights" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>W</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array2OfReal</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Returns the weights of the B-spline surface.</p>
+<p>Raised if the length of W in the U and V direction is
+not equal to <a title="NbUPoles" class="reference internal" href="#NbUPoles"><tt class="xref docutils literal"><span class="pre">NbUPoles()</span></tt></a> and <a title="NbVPoles" class="reference internal" href="#NbVPoles"><tt class="xref docutils literal"><span class="pre">NbVPoles()</span></tt></a>.  value and derivatives computation</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/Geom_BSplineSurface.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index.html">occ-doc-test v0.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2010, henrik.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+#P profastk jelleferinga@ubuntu:/home/jelleferinga/workspace/nlr/FEM/foam.astk
+P serveur localhost
+P noeud ubuntu
+P username jelleferinga
+P mclient ubuntu
+P uclient jelleferinga
+P version STA10.1
+P lang en
+P debug nodebug
+P mode interactif
+P ncpus 1
+P mpi_nbcpu 1
+P mpi_nbnoeud 1
+P classe 
+P depart 
+P distrib 
+P flashdir 
+P exectool 
+P nomjob foam
+P origine ASTK 1.8.0
+P display ubuntu:0.0
+A ORBInitRef NameService=corbaname::ubuntu:2818
+A args 
+A memjeveux 250.0
+P mem_aster 100.0
+A tpmax 300
+P memjob 2048000
+P tpsjob 5
+P nbmaxnook 5
+P cpresok RESNOOK
+P facmtps 1
+P corefilesize unlimited
+#F mail /home/jelleferinga/workspace/nlr/FROM_PYOCC/_TEST_GROUPS.med D 20
+#F mail /home/jelleferinga/workspace/nlr/FROM_PYOCC/_TEST.med D 20
+F mail /home/jelleferinga/workspace/nlr/FROM_PYOCC/_TEST.UNV D 20
+F rmed /home/jelleferinga/workspace/nlr/FROM_PYOCC/RING_RESULT.rmed R 80
+F mess /home/jelleferinga/workspace/nlr/FROM_PYOCC/shell.mess R 6
+F erre /home/jelleferinga/workspace/nlr/FROM_PYOCC/shell.erre R 9
+#F mast /home/jelleferinga/workspace/nlr/FROM_PYOCC/shell.txt R 26
+F comm /home/jelleferinga/workspace/nlr/FROM_PYOCC/statlin_template.comm D 1
+#F comm /home/jelleferinga/workspace/nlr/FROM_PYOCC/elasticite.comm D 1
+#F mmed /home/jelleferinga/workspace/nlr/FROM_PYOCC/glass.med D 20
+P consbtc oui
+P soumbtc oui
+P actions make_etude

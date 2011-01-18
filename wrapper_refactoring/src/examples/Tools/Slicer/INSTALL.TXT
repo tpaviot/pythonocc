@@ -1,0 +1,52 @@
+	OccSliceLIb
+	
+	A library for using OCC to slice solids for 3d printing.
+	Author: Dave Cowden, dave.cowden@gmail.com
+	
+	Features:
+			Slice STEP and STL files by creating layers of faces
+			Tolerate and fix bad STL files
+			Provide viewer for slices and the target object
+			Export an SVG slice file
+	Installation:
+	
+			1)Install Python, version 2.5 or 2.6,			 
+					GET:   	http://www.python.org/download/
+					TEST:  	at a command prompt/console, type "python"-- you should get something like this:
+										
+								Python 2.5.2 (r252:60911, Feb 21 2008, 13:11:45) [MSC v.1310 32 bit (Intel)] on win32
+								Type "help", "copyright", "credits" or "license" for more information
+								>>>
+			
+			2)Install OpenCascade+pythonOCC. Follow instructions here:
+			This script requires release wo-0.2 or more recent
+
+					GET:		http://www.pythonocc.org/wiki/index.php/InstallWindows
+					TEST:		at a python command prompt, type from OCC import *,
+							   you should get no error, like this:
+							   
+								Python 2.5.2 (r252:60911, Feb 21 2008, 13:11:45) [MSC v.1310 32 bit (Intel)] o
+								win32
+								Type "help", "copyright", "credits" or "license" for more information.
+								>>> from OCC import *
+								>>>					
+									
+			3)Install the Cheetah Template library for python, version 2.2 from here: 
+					GET:		http://sourceforge.net/project/showfiles.php?group_id=28961
+					TEST:		at a python prompt try to import Cheetah, like this:
+					
+								Python 2.5.2 (r252:60911, Feb 21 2008, 13:11:45) [MSC v.1310 32 bit (Intel)] o
+								win32
+								Type "help", "copyright", "credits" or "license" for more information.
+								>>> from Cheetah import *
+								>>>		
+
+			4)Copy OccSliceLib(this script) into a directory of your choice.
+					TEST:		Run the script without any arguments to confirm installation is ok, and to print help:
+			
+								>python OccSliceLib.py
+								>
+								>OccSliceLib usage:
+								   .....
+			5) Test it OUt.  Try running this command, which should demonstrate:
+								>python OccSliceLib.py parts\Test.STEP

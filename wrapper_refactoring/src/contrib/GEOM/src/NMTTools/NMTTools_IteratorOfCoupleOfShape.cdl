@@ -1,0 +1,74 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	NMTTools_IteratorOfCoupleOfShape.cdl
+-- Created:	Thu Dec  4 16:57:48 2003
+-- Author:	Peter KURNEV
+--		<pkv@irinox>
+--
+class IteratorOfCoupleOfShape from NMTTools  
+    inherits IteratorOfCoupleOfShape from BOPTools
+
+	---Purpose: 
+
+uses 
+    ShapeEnum from TopAbs, 
+    IndexedMapOfCoupleOfInteger from BOPTools, 
+    PShapesDataStructure from NMTDS, 
+    ShapesDataStructure from NMTDS 
+    
+raises
+    NoSuchObject from Standard
+
+is  
+    Create  
+	returns IteratorOfCoupleOfShape from NMTTools; 
+	 
+    SetDS(me:out; 
+    	    pDS:PShapesDataStructure from NMTDS); 
+	    
+    Initialize(me: in out;  
+    	    Type1: ShapeEnum from TopAbs;
+    	    Type2: ShapeEnum from TopAbs) 
+	raises NoSuchObject from Standard 
+    	is redefined; 
+     
+    Current(me; Index1: in out Integer from Standard;
+    	    	Index2: in out Integer from Standard;
+    	    	WithSubShape: out Boolean from Standard) 
+    	is redefined; 
+	 
+    More(me)  
+    	returns Boolean from Standard 
+    	is redefined;
+     
+    DS(me) 
+      returns ShapesDataStructure from NMTDS; 
+    ---C++:return const & 
+          
+fields
+    myPNMTPS          :  PShapesDataStructure from NMTDS is protected; 
+    myMap             :  IndexedMapOfCoupleOfInteger from BOPTools is protected; 
+    myIndex1          :  Integer from Standard is protected;
+    myIndex2          :  Integer from Standard is protected;
+    myWithSubShapeFlag:  Boolean from Standard is protected; 
+    
+end IteratorOfCoupleOfShape;
