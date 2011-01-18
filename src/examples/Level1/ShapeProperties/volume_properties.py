@@ -32,7 +32,7 @@ def cube_inertia_properties(event=None):
     ais_boxshp = display.DisplayShape(cube_shape)
     # Compute inertia properties
     props = GProp_GProps()
-    BRepGProp().VolumeProperties(cube_shape,props)
+    BRepGProp_volumeproperties(cube_shape,props)
     # Get inertia properties
     mass = props.Mass()
     cog = props.CentreOfMass()
