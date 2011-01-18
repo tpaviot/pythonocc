@@ -37,7 +37,7 @@ from OCC.Utils.DataExchange.IGES import IGESImporter
 from OCC.BRepFill import *
 from OCC.GeomAbs import *
 from OCC.GeomPlate import *
-
+from OCC.GEOMAlgo import *
 
 display, start_display, add_menu, add_function_to_menu = init_display()
 
@@ -278,7 +278,6 @@ def build_curve_network(event=None):
     outer_wire.Add(edges_list[5])
     
     if outer_wire.IsDone():
-        from OCC.GEOMAlgo import *
         splitter = GEOMAlgo_Splitter()
         splitter.AddTool(outer_wire.Wire())
         splitter.AddShape(face)
