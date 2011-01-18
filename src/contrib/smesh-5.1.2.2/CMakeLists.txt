@@ -14,10 +14,10 @@ SET(LIBRARY_OUTPUT_PATH cmake-build)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(inc)
 
-#############
-# FindBoost #
-#############
-FIND_PACKAGE(Boost REQUIRED)
+##############################
+# Boost headers are required #
+##############################
+INCLUDE_DIRECTORIES(../)
 
 ################
 # Check Fortran#
@@ -147,8 +147,8 @@ TARGET_LINK_LIBRARIES(StdMeshers SMESH TKernel TKMath TKAdvTools f2c)
 # INSTALL #
 ###########
 
-# Path name install: for instance, SMESH-5.1.2.7
-SET(INSTALL_PATH_NAME SMESH-${SMESH_VERSION_MAJOR}.${SMESH_VERSION_MINOR}.${SMESH_VERSION_PATCH}.${SMESH_VERSION_TWEAK})
+# Path name install: for instance, SMESH-5.1.2.2
+SET(INSTALL_PATH_NAME smesh-${SMESH_VERSION_MAJOR}.${SMESH_VERSION_MINOR}.${SMESH_VERSION_PATCH}.${SMESH_VERSION_TWEAK})
 
 IF(UNIX)
     # Libraries are installed by default in /usr/local/lib
@@ -158,5 +158,5 @@ IF(UNIX)
     # Headers are installed by default in /usr/local/include/smesh-5.1.2.2
     INSTALL(DIRECTORY inc/
             DESTINATION /usr/local/include/${INSTALL_PATH_NAME}
-            FILES_MATCHING PATTERN "*.h*")
+            FILES_MATCHING PATTERN "*.*")
 ENDIF(UNIX)
