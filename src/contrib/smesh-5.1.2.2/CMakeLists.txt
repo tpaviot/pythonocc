@@ -141,7 +141,11 @@ FILE(GLOB StdMeshers_source_files src/StdMeshers/*.cpp src/MEFISTO2/*.cpp src/ME
 INCLUDE_DIRECTORIES(src/StdMeshers)
 
 ADD_LIBRARY(StdMeshers SHARED ${StdMeshers_source_files})
+IF(APPLE)
 TARGET_LINK_LIBRARIES(StdMeshers SMESH TKernel TKMath TKAdvTools f2c)
+ELSE(APPLE)
+TARGET_LINK_LIBRARIES(StdMeshers SMESH TKernel TKMath TKAdvTools)
+ENDIF(APPLE)
 
 ###########
 # INSTALL #
