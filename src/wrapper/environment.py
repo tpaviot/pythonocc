@@ -31,8 +31,9 @@ import subprocess
 # VARIABLES
 #===============================================================================
 
-VERSION = '0.5dev'         # Define pythonOCC version
-
+VERSION = '0.5'         # Define pythonOCC version
+GEOM_RELEASE = 'geom-5.1.2.7' # located in /src/contrib/
+SMESH_RELEASE = 'smesh-5.1.2.2' # located in /src/contrib
 #===============================================================================
 # UTILITIES
 #===============================================================================
@@ -125,12 +126,12 @@ if sys.platform=='win32':
 
     if sys.version_info[0]==2 and sys.version_info[1]==5:
         # Python2.5 on Windows needs msvc71 GEOM and SMESH librariesprint "Python2.5"
-        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','GEOM','win32','msvc71','lib','release')
-        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','SMESH','win32','msvc71','lib','release')
+        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'win32','msvc71','lib','release')
+        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'win32','msvc71','lib','release')
     elif sys.version_info[0]==2 and sys.version_info[1]==6:
         # Python 2.6 and higher needs msvc8 or higher
-        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','GEOM','win32','msvc8-9-10','lib','release')
-        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','SMESH','win32','msvc8-9-10','lib','release')
+        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'win32','msvc8-9-10','lib','release')
+        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'win32','msvc8-9-10','lib','release')
     GCC_XML_PATH = os.path.join(os.getcwd(),'..','..','..','pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
@@ -140,7 +141,7 @@ if sys.platform=='win32':
         DEFINE_MACROS += [('HAVE_ACOSH',None),('HAVE_ASINH',None),('HAVE_ATANH',None)]
     ECA = ['/EHsc','/GL','/link','/w4251']
     SWIG_OPTS = ['-O','-c++','-DWNT',\
-                 '-w302,401,314,509,512','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
+                 '-w302,401,314,509,512','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%SWIG_OUT_DIR]
     ELA = ['/LTCG']
     EXTRA_LIBS = []
     
@@ -155,11 +156,6 @@ elif sys.platform=='linux2':
     else:
         OCC_INC = '/usr/include/opencascade'
         OCC_LIB = '/usr/lib'
-#    try:
-#        GEOM_ROOT = os.environ['GEOMROOT']
-#        SALOME_GEOM_LIB = os.path.join(GEOM_ROOT,'lib')
-#    except:
-#        SALOME_GEOM_LIB = '/opt/SalomeGeometry/lib'
     SALOME_GEOM_LIB = '/usr/local/lib'
     SALOME_SMESH_LIB = '/usr/local/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
@@ -198,8 +194,8 @@ elif sys.platform=='darwin':
     else:
       OCC_LIB = '/Library/OpenCASCADE/6.3.0/lib'
       OCC_INC = '/Library/OpenCASCADE/6.3.0/inc'
-    SALOME_GEOM_LIB = '/usr/local/lib'
-    SALOME_SMESH_LIB = '/usr/local/lib'        
+    SALOME_GEOM_LIB = '/usr/local/lib/'
+    SALOME_SMESH_LIB = '/usr/local/lib/'        
     GCC_XML_PATH = which('gccxml')
 
     if GCC_XML_PATH == '':
@@ -227,6 +223,6 @@ VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
 BOOST_INC = os.path.join(os.getcwd(),'contrib')
-SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','GEOM','inc_pythonocc')
-SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','SMESH','inc')
+SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'inc_pythonocc')
+SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'inc')
 
