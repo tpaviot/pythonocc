@@ -20,7 +20,7 @@ cd ./inc_pythonocc
 for i in $(find . -type f); do sed 's/"GEOM_/"SGEOM_/g' $i > $i-tmp;mv $i-tmp $i; done
     
 # do the same for Handle_GEOM_* to Handle_SGEOM_*
-for i in $(find . -type f); do sed 's/"Handle_GEOM_/"Handle_SGEOM_/g' $i > $i-tmp;mv $i-tmp $i; done
+for i in $(find . -type f); do sed 's/Handle_GEOM_/Handle_SGEOM_/g' $i > $i-tmp;mv $i-tmp $i; done
 
 # rename all GEOM_ headers to SGEOM_
 for i in GEOM_*; do mv "$i" "S${i}"; done
