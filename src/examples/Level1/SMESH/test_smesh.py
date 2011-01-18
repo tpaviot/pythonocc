@@ -12,7 +12,8 @@ from OCC.MeshVS import *
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 #Create the shape to mesh
-aShape = BRepPrimAPI_MakeSphere(40).Shape()
+#aShape = BRepPrimAPI_MakeSphere(40).Shape()
+aShape = BRepPrimAPI_MakeBox(10,20,30).Shape()
 #aShape = BRepPrimAPI_MakeTorus(400,40).Shape()
 
 aMeshGen = SMESH_Gen()
@@ -28,13 +29,6 @@ a2dAlgo = StdMeshers_Quadrangle_2D(3,0,aMeshGen)
 
 #Calculate mesh
 aMesh.ShapeToMesh(aShape)
-
-exp3 = TopExp_Explorer(aMesh.GetShapeToMesh(), TopAbs_EDGE)
-while exp3.More():
-    print "bouzou"
-#    aMesh.AddHypothesis(exp3.Current(),0)
-    #aMesh.RebuildPropagationChains()
-    break
 
 #Assign hyptothesis to mesh
 aMesh.AddHypothesis(aShape,0)

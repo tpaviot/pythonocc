@@ -159,16 +159,16 @@ def occ_triangle_mesh(event = None):
     #
     # Mesh the shape
     #
-    BRepMesh().Mesh(shape,0.1)
+    BRepMesh_mesh(shape,0.1)
     builder = BRep_Builder()
     Comp = TopoDS_Compound()
     builder.MakeCompound(Comp)
     
     ex = TopExp_Explorer(shape,TopAbs_FACE)
     while ex.More():
-        F = TopoDS().Face(ex.Current())
+        F = TopoDS_face(ex.Current())
         L = TopLoc_Location()       
-        facing = (BRep_Tool().Triangulation(F,L)).GetObject()
+        facing = (BRep_Tool_triangulation(F,L)).GetObject()
         tab = facing.Nodes()
         tri = facing.Triangles()
         for i in range(1,facing.NbTriangles()+1):

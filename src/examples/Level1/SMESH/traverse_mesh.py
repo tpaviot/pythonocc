@@ -81,3 +81,5 @@ for i in range(mesh_ds.NbEdges()-1):
 for i in range(mesh_ds.NbFaces()-1):
     face = mesh_ds.faceValue(i)
     print 'Face %i ok'%i
+
+
