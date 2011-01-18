@@ -91,11 +91,13 @@ libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'PTKernel
 #
 # GEOM libraries
 #
-GEOM_LIBS = ['GEOM']
+GEOM_LIBS = ['Sketcher','ShHealOper','Partition','NMTTools','NMTDS',\
+             'GEOM','GEOMImpl','GEOMAlgo','Archimede']
 #
 # SMESH libraries
 #                     ]
-SMESH_LIBS = ['SMESH']
+SMESH_LIBS = ['Driver','DriverDAT','DriverSTL','DriverUNV','SMDS','SMESH',\
+              'SMESHDS','StdMeshers']
 
 LIBS = libraries
 
