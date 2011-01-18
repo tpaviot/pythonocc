@@ -529,7 +529,7 @@ def curves2d_from_curves(event=None):
     E = ell.Value()
      
     TC = Geom2d_TrimmedCurve(E,-1,2,1)
-    SPL = Geom2dConvert().CurveToBSplineCurve(TC.GetHandle(), Convert.Convert_TgtThetaOver2 )
+    SPL = Geom2dConvert_curvetobsplinecurve(TC.GetHandle(), Convert.Convert_TgtThetaOver2 )
     
     display.DisplayShape(make_edge2d(SPL))
 
@@ -658,26 +658,6 @@ def curves3d_from_points(event=None):
     SPL1 = GeomAPI_PointsToBSpline(point_list_to_TColgp_Array1OfPnt(array)).Curve()
     display.DisplayShape(make_edge(SPL1))
     
-    harray = []
-    harray.append(P1.Translated(gp_Vec(4,0,0)))
-    harray.append(P2.Translated(gp_Vec(4,0,0)))
-    harray.append(P3.Translated(gp_Vec(4,0,0)))
-    harray.append(P4.Translated(gp_Vec(4,0,0)))
-    harray.append(P5.Translated(gp_Vec(4,0,0)))
-        
-        
-    aaa = _Tcol_dim_1(harray, TColgp_HArray1OfPnt)
-    anInterpolation = GeomAPI_Interpolate(aaa.GetHandle(), False, Precision_approximation())
-    # TODO, raises a ConstructionError, something is wrong with the aaa  TColgp_HArray1OfPnt
-    #anInterpolation.Perform()
-    #anInterpolation.IsDone()
-    
-    if anInterpolation.IsDone():
-        SPL2 = anInterpolation.Curve()
-        display.DisplayShape(make_edge(SPL2))
-    else:
-        print "The Interpolation is Not done"
-     
     for i in range(0,len(array)):
         P = array[i]
         pstring = "P"+`i+1`
@@ -686,26 +666,6 @@ def curves3d_from_points(event=None):
         display.DisplayShape(make_vertex(P))
         make_text(pstring, P, 6)
            
-    for i in range(0,len(harray)):
-        P = harray[i]
-        pstring = "P"+`i+1`
-        if i == 0:
-            pstring = pstring + " (harray)  "
-        display.DisplayShape(make_vertex(P))
-        make_text(pstring, P, 6)
-     
-    #aCurve = ISession_Curve(SPL1)
-    #display.interactive_context.SetDisplayMode(aCurve,1,1)
-    #display.interactive_context.Display(aCurve,1)
-     
-    if anInterpolation.IsDone():
-        SPL2 = anInterpolation.Curve()
-        display.DisplayShape(make_edge(SPL2))
-        #    aCurve2 = ISession_Curve(SPL2)
-        #    display.interactive_context.SetDisplayMode(aCurve2,1,1)
-        #    display.interactive_context.Display(aCurve2,1)
-
-
 def surface_from_curves(event=None):
     '''
     @param display:
