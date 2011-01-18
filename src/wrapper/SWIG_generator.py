@@ -333,7 +333,9 @@ class ModularBuilder(object):
         for static_method in self.STATIC_METHODS:
             class_name = static_method[0]
             method_name = static_method[1]
-            if method_name not in ['TypeName','Static','Template']: # lowercase typename will raise issues
+            #protect_methods = ['TypeName','Static','Template','DownCast']
+            if class_name == 'TopoDS':
+            #if method_name not in ['TypeName','Static','Template','DownCast']: # lowercase typename will raise issues
                 new_method_name = method_name.lower()
                 renamed_file_fp.write("%%rename(%s) %s::%s;\n"%(new_method_name,class_name,method_name))
         renamed_file_fp.close()
