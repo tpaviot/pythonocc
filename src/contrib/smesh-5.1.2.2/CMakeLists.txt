@@ -36,7 +36,7 @@ IF(WIN32)
     SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
     # Find the Standard_Real.hxx header in this path
 ELSE(WIN32) #Unix
-    FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx $ENV{CASROOT}/inc)
+    FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx $ENV{CASROOT}/inc /usr/include/opencascade)
     SET(OCC_LIB_PATH "$ENV{CASROOT}/lib")
     #FIND_LIBRARY(OCC_LIB_PATH TKernel PATHS $ENV{CASROOT}/lib)
     MESSAGE(${OCC_LIB_PATH})
