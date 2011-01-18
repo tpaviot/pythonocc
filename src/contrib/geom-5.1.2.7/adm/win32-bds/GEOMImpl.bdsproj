@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">CPlusPlusBuilder.Personality</Option>
+			<Option Name="ProjectType">CppDynamicLibrary</Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{CAD0EC3D-A795-4689-9563-64D88479FA3F}</Option>
+		</Option>
+	</PersonalityInfo>
+	<CPlusPlusBuilder.Personality>
+		<Source>
+			<Source Name="MainSource">GEOMImpl.bpf</Source>
+		</Source>
+		<BCBPROJECT>
+      <project version="10.0">
+        <property category="build.config" name="active" value="0"/>
+        <property category="build.config" name="count" value="1"/>
+        <property category="build.config" name="excludedefaultforzero" value="0"/>
+        <property category="build.config.0" name="builddir" value="Debug"/>
+        <property category="build.config.0" name="key" value="Debug_Build"/>
+        <property category="build.config.0" name="name" value="Debug Build"/>
+        <property category="build.config.0" name="settings.win32b" value="default"/>
+        <property category="build.config.0" name="type" value="Toolset"/>
+        <property category="build.config.0" name="win32.win32b.builddir" value="Debug_Build"/>
+        <property category="build.config.1" name="key" value="Release_Build"/>
+        <property category="build.config.1" name="name" value="Release Build"/>
+        <property category="build.config.1" name="settings.win32b" value="default"/>
+        <property category="build.config.1" name="type" value="Toolset"/>
+        <property category="build.config.1" name="win32.win32b.builddir" value="Release_Build"/>
+        <property category="build.node" name="lastconfig" value="Debug_Build"/>
+        <property category="build.node" name="name" value="GEOMImpl.dll"/>
+        <property category="build.node" name="packages" value="vclx;vcl;rtl;dbrtl;vcldb;adortl;dbxcds;dbexpress;xmlrtl;vclie;inet;inetdbbde;inetdbxpress;soaprtl;dsnap;bdertl;vcldbx"/>
+        <property category="build.node" name="use_packages" value="1"/>
+        <property category="build.platform" name="active" value="win32"/>
+        <property category="build.platform" name="win32.Debug_Build.toolset" value="win32b"/>
+        <property category="build.platform" name="win32.Release_Build.toolset" value="win32b"/>
+        <property category="build.platform" name="win32.default" value="win32b"/>
+        <property category="build.platform" name="win32.enabled" value="1"/>
+        <property category="build.platform" name="win32.win32b.enabled" value="1"/>
+        <property category="win32.*.win32b.dcc32" name="param.filenames.merge" value="1"/>
+        <property category="win32.*.win32b.tasm32" name="param.listfile.merge" value="1"/>
+        <property category="win32.*.win32b.tasm32" name="param.objfile.merge" value="1"/>
+        <property category="win32.*.win32b.tasm32" name="param.xreffile.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="container.SelectedOptimizations.containerenabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="container.SelectedWarnings.containerenabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.D.arg.1" value="_DEBUG"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.Od.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.k.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.n.arg.1" value="..\..\win32\objd-bds"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.n.arg.merge" value="0"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.n.enabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.r.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.v.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.vi.enabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.y.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.$D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.$O.enabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.D.arg.1" value="DEBUG"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.V.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="container.SelectedWarnings.containerenabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.I.arg.merge" value="0"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.I.enabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.arg.1" value="$(BDS)\lib\debug"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.arg.2" value="$(CASROOT)\win32\libd"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.arg.3" value="..\..\win32\libd-bds"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.j.arg.1" value="..\..\win32\objd-bds"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.j.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.j.enabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.l.arg.1" value="..\..\win32\libd-bds"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.l.arg.merge" value="0"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.l.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.outputdir.arg.1" value="..\..\win32\bind-bds"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.outputdir.arg.merge" value="0"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.outputdir.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.tasm32" name="option.z.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.tasm32" name="option.zd.enabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.tasm32" name="option.zi.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="container.SelectedOptimizations.containerenabled" value="0"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="container.SelectedWarnings.containerenabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.D.arg.1" value="NDEBUG"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.D.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.O2.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.k.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.n.arg.1" value="..\..\win32\obj-bds"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.n.arg.merge" value="0"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.n.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.r.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.vi.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.dcc32" name="option.$D.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.dcc32" name="option.$O.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.dcc32" name="option.V.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="container.SelectedWarnings.containerenabled" value="1"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.I.arg.merge" value="0"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.I.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.arg.1" value="$(BDS)\lib\release"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.arg.2" value="$(CASROOT)\win32\lib"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.arg.3" value="..\..\win32\lib-bds"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.arg.merge" value="1"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.j.arg.1" value="..\..\win32\obj-bds"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.j.arg.merge" value="1"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.j.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.l.arg.1" value="..\..\win32\lib-bds"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.l.arg.merge" value="0"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.l.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.outputdir.arg.1" value="..\..\win32\bin-bds"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.outputdir.arg.merge" value="0"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.outputdir.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.z.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.zd.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.zi.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.zn.enabled" value="1"/>
+        <optionset name="all_configurations">
+          <property category="node" name="displayname" value="All Configurations"/>
+          <property category="win32.*.win32b.bcc32" name="container.SelectedOptimizations.containerenabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="container.SelectedWarnings.containerenabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.3.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.4.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.5.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.6.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.A.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.AK.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.AU.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.C.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.D.arg.1" value="WNT"/>
+          <property category="win32.*.win32b.bcc32" name="option.D.arg.2" value="CSFDB"/>
+          <property category="win32.*.win32b.bcc32" name="option.D.arg.3" value="WIN32"/>
+          <property category="win32.*.win32b.bcc32" name="option.D.arg.merge" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.D.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.H=.arg.1" value="$(BDS)\lib\vcl100.csm"/>
+          <property category="win32.*.win32b.bcc32" name="option.H=.arg.merge" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.H=.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.Hc.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.He.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.Hs.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.1" value="$(BDS)\include"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.2" value="$(BDS)\include\dinkumware"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.3" value="$(CASROOT)\inc"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.4" value="..\..\src\GEOMImpl"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.5" value="..\..\inc"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.merge" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.Jgi.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.Jgx.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.O1.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.O2.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.Od.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.Q.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.V0.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.V1.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.VA.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.Ve.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.Vmd.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.Vmm.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.Vms.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.Vx.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.align-1.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.align-2.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.align-3.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.align-5.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.b.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.disablewarns.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.fff.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.infomsgs.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.noregistervars.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.p.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.pm.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.pr.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.ps.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.rd.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.1" value="_RTLDLL"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.2" value="NO_STRICT"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.3" value="_NO_VCL"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.4" value="USEPACKAGES"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.merge" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.tW.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.tWC.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.tWD.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.tWM.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.vu.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.w.enabled" value="0"/>
+          <property category="win32.*.win32b.brcc32" name="option.16.enabled" value="0"/>
+          <property category="win32.*.win32b.brcc32" name="option.31.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.1" value="..\..\src\GEOMImpl"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.2" value="..\..\src\FSD"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.1" value="..\..\src\GEOMImpl"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.2" value="..\..\src\FSD"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.1" value="..\..\src\GEOMImpl"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.2" value="..\..\src\FSD"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.1" value="..\..\src\GEOMImpl"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.2" value="..\..\src\FSD"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.3" value="F:\My Documents\Borland Studio Projects"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.4" value="$(BDS)\lib"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.5" value="$(BDS)\lib\obj"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="param.filenames.merge" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.1" value="..\..\src\GEOMImpl"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.2" value="..\..\src\FSD"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.merge" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="container.SelectedWarnings.containerenabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.-w-.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.C.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.Gi.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.Gpd.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.Gpr.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.1" value="$(BDS)\lib"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.2" value="$(BDS)\lib\obj"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.3" value="$(BDS)\lib\psdk"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.4" value="..\..\src\GEOMImpl"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.Tpd.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.Tpe.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.Tpp.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.aa.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.ap.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.dynamicrtl.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.1" value="..\..\src\GEOMImpl"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.m.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.map_segments.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.outputdir.arg.merge" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.outputdir.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.s.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.w.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.1" value="import32.lib"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.2" value="cw32mti.lib"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.1" value="c0d32.obj"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.2" value="$(PACKAGES)"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.merge" value="1"/>
+        </optionset>
+      </project>
+      <FILELIST>
+        <FILE FILENAME="GEOMImpl.bpf" CONTAINERID="BPF" LOCALCOMMAND="" UNITNAME="GEOMImpl" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_VectorDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_VectorDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_VariableFilletDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_VariableFilletDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_TranslateDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_TranslateDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_TorusDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_TorusDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ThruSectionsDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ThruSectionsDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ThickSolidDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ThickSolidDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_SplineDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_SplineDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_SphereDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_SphereDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_SketcherDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_SketcherDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ShapeDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ShapeDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ScaleDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ScaleDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_RotateDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_RotateDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_RevolutionDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_RevolutionDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_PrismDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_PrismDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_PositionDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_PositionDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_PolylineDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_PolylineDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_PointDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_PointDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_PlateDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_PlateDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_PlaneDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_PlaneDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_PipeDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_PipeDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_PartitionDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_PartitionDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_OffsetDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_OffsetDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_MirrorDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_MirrorDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_MeasureDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_MeasureDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_MarkerDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_MarkerDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_LineDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_LineDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ITransformOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ITransformOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_IShapesOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_IShapesOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ImportDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ImportDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_IMeasureOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_IMeasureOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ILocalOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ILocalOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_IInsertOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_IInsertOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_IHealingOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_IHealingOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_IGroupOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_IGroupOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ICurvesOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ICurvesOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_IBooleanOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_IBooleanOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_IBlocksOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_IBlocksOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_IBasicOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_IBasicOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_I3DPrimOperations.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_I3DPrimOperations" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_HealingDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_HealingDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_GlueDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_GlueDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_Gen.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_Gen" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_FillingDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_FillingDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_FilletDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_FilletDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_FaceDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_FaceDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ExportDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ExportDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_EllipseDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_EllipseDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_DraftDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_DraftDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_DiskDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_DiskDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_CylinderDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_CylinderDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_CurveDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_CurveDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_CopyDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_CopyDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ConeDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ConeDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_CircleDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_CircleDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ChamferDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ChamferDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_BoxDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_BoxDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_BooleanDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_BooleanDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_BlockDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_BlockDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_Block6Explorer.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_Block6Explorer" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ArchimedeDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ArchimedeDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_ArcDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_ArcDriver" FORMNAME="" DESIGNCLASS=""/>
+		<FILE FILENAME="..\..\src\GEOMImpl\GEOMImpl_3DSketcherDriver.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="GEOMImpl_3DSketcherDriver" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\BinLPlugin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="BinLPlugin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\BinPlugin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="BinPlugin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\BinXCAFPlugin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="BinXCAFPlugin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\FWOSPlugin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="FWOSPlugin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\PTKernel.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="PTKernel" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\StdLPlugin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="StdLPlugin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\StdPlugin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="StdPlugin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKAdvTools.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKAdvTools" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKBin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKBin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKBinL.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKBinL" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKBinXCAF.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKBinXCAF" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKBO.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKBO" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKBool.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKBool" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKBRep.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKBRep" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKCAF.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKCAF" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKCDF.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKCDF" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKernel.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKernel" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKFeat.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKFeat" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKFillet.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKFillet" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKG2d.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKG2d" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKG3d.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKG3d" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKGeomAlgo.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKGeomAlgo" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKGeomBase.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKGeomBase" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKHLR.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKHLR" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKIGES.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKIGES" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKLCAF.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKLCAF" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKMath.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKMath" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKMesh.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKMesh" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKMeshVS.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKMeshVS" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKOffset.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKOffset" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKOpenGl.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKOpenGl" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKPCAF.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKPCAF" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKPLCAF.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKPLCAF" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKPrim.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKPrim" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKPShape.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKPShape" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKService.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKService" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKShapeSchema.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKShapeSchema" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKShHealing.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKShHealing" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKStdLSchema.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKStdLSchema" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKStdSchema.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKStdSchema" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKSTEP209.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKSTEP209" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKSTEP.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKSTEP" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKSTEPAttr.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKSTEPAttr" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKSTEPBase.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKSTEPBase" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKSTL.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKSTL" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKTopAlgo.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKTopAlgo" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKV2d.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKV2d" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKV3d.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKV3d" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKVRML.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKVRML" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKXCAF.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKXCAF" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKXCAFSchema.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKXCAFSchema" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKXDEIGES.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKXDEIGES" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKXDESTEP.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKXDESTEP" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKXml.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKXml" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKXmlL.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKXmlL" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKXmlXCAF.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKXmlXCAF" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\TKXSBase.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="TKXSBase" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\XCAFPlugin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="XCAFPlugin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\XmlLPlugin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="XmlLPlugin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\XmlPlugin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="XmlPlugin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_cascade\XmlXCAFPlugin.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="XmlXCAFPlugin" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_ocaf\Archimede.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="Archimede" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_ocaf\GEOM.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="GEOM" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_ocaf\GEOMAlgo.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="GEOMAlgo" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_ocaf\NMTDS.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="NMTDS" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_ocaf\NMTTools.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="NMTTools" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_ocaf\Partition.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="Partition" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_ocaf\ShHealOper.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="ShHealOper" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="lib_ocaf\Sketcher.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="Sketcher" FORMNAME="" DESIGNCLASS=""/>
+      </FILELIST>
+      <IDEOPTIONS>
+        <VersionInfo>
+          <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+          <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+          <VersionInfo Name="MajorVer">1</VersionInfo>
+          <VersionInfo Name="MinorVer">0</VersionInfo>
+          <VersionInfo Name="Release">0</VersionInfo>
+          <VersionInfo Name="Build">0</VersionInfo>
+          <VersionInfo Name="Debug">False</VersionInfo>
+          <VersionInfo Name="PreRelease">False</VersionInfo>
+          <VersionInfo Name="Special">False</VersionInfo>
+          <VersionInfo Name="Private">False</VersionInfo>
+          <VersionInfo Name="DLL">False</VersionInfo>
+          <VersionInfo Name="Locale">1032</VersionInfo>
+          <VersionInfo Name="CodePage">1253</VersionInfo>
+        </VersionInfo>
+        <VersionInfoKeys>
+          <VersionInfoKeys Name="CompanyName"></VersionInfoKeys>
+          <VersionInfoKeys Name="FileDescription"></VersionInfoKeys>
+          <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+          <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+          <VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys>
+          <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+          <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+          <VersionInfoKeys Name="ProductName"></VersionInfoKeys>
+          <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+          <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+        </VersionInfoKeys>
+        <Debugging>
+          <Debugging Name="DebugSourceDirs"></Debugging>
+        </Debugging>
+        <Parameters>
+          <Parameters Name="RunParams"></Parameters>
+          <Parameters Name="Launcher"></Parameters>
+          <Parameters Name="UseLauncher">False</Parameters>
+          <Parameters Name="DebugCWD"></Parameters>
+          <Parameters Name="HostApplication"></Parameters>
+          <Parameters Name="RemoteHost"></Parameters>
+          <Parameters Name="RemotePath"></Parameters>
+          <Parameters Name="RemoteParams"></Parameters>
+          <Parameters Name="RemoteLauncher"></Parameters>
+          <Parameters Name="UseRemoteLauncher">False</Parameters>
+          <Parameters Name="RemoteCWD"></Parameters>
+          <Parameters Name="RemoteDebug">False</Parameters>
+          <Parameters Name="Debug Symbols Search Path"></Parameters>
+          <Parameters Name="LoadAllSymbols">True</Parameters>
+          <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+        </Parameters>
+        <Excluded_Packages>
+          <Excluded_Packages Name="d:\development\borland\cturbo\Bin\dclib100.bpl">Borland InterBase Express Components</Excluded_Packages>
+          <Excluded_Packages Name="d:\development\borland\cturbo\Bin\dclIntraweb_80_100.bpl">Intraweb 8.0 Design Package for Borland Development Studio 2006</Excluded_Packages>
+          <Excluded_Packages Name="d:\development\borland\cturbo\Bin\dclindy100.bpl">Internet Direct Version 9 (Indy) Property and Component Editors</Excluded_Packages>
+          <Excluded_Packages Name="d:\development\borland\cturbo\Bin\bcbofficexp100.bpl">Borland C++Builder Office XP Servers Package</Excluded_Packages>
+          <Excluded_Packages Name="d:\development\borland\cturbo\Bin\dclbcbsmp100.bpl">Borland Sample Controls Design Time Package</Excluded_Packages>
+          <Excluded_Packages Name="d:\development\borland\cturbo\Bin\bcbie100.bpl">Borland C++Builder Internet Explorer 5 Components Package</Excluded_Packages>
+          <Excluded_Packages Name="d:\development\borland\cturbo\Bin\dcltee100.bpl">TeeChart Components</Excluded_Packages>
+        </Excluded_Packages>
+        <Linker>
+          <Linker Name="LibPrefix"></Linker>
+          <Linker Name="LibSuffix"></Linker>
+          <Linker Name="LibVersion"></Linker>
+        </Linker>
+      </IDEOPTIONS>
+    </BCBPROJECT>
+		<buildevents/>
+	</CPlusPlusBuilder.Personality>
+</BorlandProject>

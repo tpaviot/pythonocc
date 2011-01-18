@@ -1,0 +1,96 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	NMTDS_PassKeyShape.cdl
+-- Created:	
+-- Author:	Peter KURNEV
+--		<pkv@irinox>
+--
+class PassKeyShape from NMTDS 
+   
+	---Purpose: 
+
+uses
+    Shape from TopoDS, 
+    ListOfShape from TopTools,   
+    IndexedMapOfShape from TopTools 
+     
+--raises
+
+is 
+    Create  
+    	returns PassKeyShape from NMTDS; 
+     ---C++: alias "Standard_EXPORT virtual ~NMTDS_PassKeyShape();" 
+     
+    Create(Other:PassKeyShape from NMTDS) 
+    	returns PassKeyShape from NMTDS;
+     
+    Assign(me:out;  
+    	    Other : PassKeyShape from NMTDS) 
+    	returns PassKeyShape from NMTDS; 
+    ---C++: alias operator =
+    ---C++: return &  
+     
+    SetShapes(me:out; 
+    	    aS  :Shape from TopoDS); 
+    	    
+    SetShapes(me:out; 
+    	    aS1  :Shape from TopoDS; 
+    	    aS2  :Shape from TopoDS); 
+     
+    SetShapes(me:out; 
+    	    aS1  :Shape from TopoDS; 
+    	    aS2  :Shape from TopoDS; 
+    	    aS3  :Shape from TopoDS); 
+ 
+    SetShapes(me:out;  
+    	    aS1  :Shape from TopoDS; 
+    	    aS2  :Shape from TopoDS; 
+    	    aS3  :Shape from TopoDS;
+    	    aS4  :Shape from TopoDS);
+ 
+    SetShapes(me:out;  
+    	    aLS  :ListOfShape from TopTools); 
+	 
+    Clear(me:out); 
+     
+
+    NbIds(me) 
+	returns Integer  from Standard; 
+     
+    IsEqual(me; 
+    	    aOther:PassKeyShape from NMTDS) 
+	returns Boolean from Standard;   		     
+	 
+    HashCode(me; 
+	    Upper : Integer  from Standard)  
+    	returns Integer from Standard;   	 
+     
+    Dump(me; 
+    	aHex:Integer from Standard=0);  
+	
+fields 
+    myNbIds:Integer from Standard is protected;    
+    mySum  :Integer from Standard is protected;    
+    myUpper:Integer from Standard is protected;    
+    myMap  :IndexedMapOfShape from TopTools is protected;        
+
+end PassKeyShape;

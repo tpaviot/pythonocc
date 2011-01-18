@@ -1,0 +1,261 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	GEOMAlgo.cdl
+-- Created:	Sat Dec 04 12:36:22 2004
+-- Author:	Peter KURNEV
+--		<peter@PREFEX>
+--
+package GEOMAlgo 
+
+	---Purpose: 
+
+uses  
+    TCollection, 
+    
+    TColgp, 
+    Geom,     
+    Bnd, 
+    gp,	  
+    GeomAdaptor,
+    TopAbs,
+    TopoDS, 
+    TopTools, 
+    IntTools, 
+    BOPTools, 
+    BOP, 
+    
+    TColStd, 
+    BOPTColStd,  
+    BRepAlgo, 
+    NMTDS, 
+    NMTTools 
+    
+is   
+    --
+    -- enumerations 
+    --
+    enumeration State is 
+    	ST_UNKNOWN, 
+	ST_IN,
+	ST_OUT,
+	ST_ON, 
+	ST_ONIN, 
+	ST_ONOUT, 
+	ST_INOUT    
+    end State; 
+    --
+    enumeration KindOfShape is 
+    	KS_UNKNOWN, 
+    	KS_SPHERE,
+    	KS_CYLINDER,
+    	KS_BOX,
+    	KS_TORUS,
+    	KS_CONE,
+    	KS_ELLIPSE,
+    	KS_PLANE,
+    	KS_CIRCLE, 
+    	KS_LINE, 
+    	KS_DEGENERATED 
+    end KindOfShape;   
+    --  
+    enumeration KindOfName is 
+    	KN_UNKNOWN, 
+    	KN_SPHERE,
+    	KN_CYLINDER,
+    	KN_TORUS,
+    	KN_CONE,
+    	KN_ELLIPSE, 
+    	KN_CIRCLE,
+    	KN_PLANE,
+    	KN_LINE, 
+    	KN_BOX, 
+	KN_SEGMENT, 
+	KN_ARCCIRCLE, 
+        KN_POLYGON, 
+	KN_POLYHEDRON,
+    	KN_DISKCIRCLE, 
+    	KN_DISKELLIPSE, 
+	KN_RECTANGLE, 
+	KN_TRIANGLE, 
+	KN_QUADRANGLE, 
+	KN_ARCELLIPSE       	 
+    end KindOfName;   
+    --
+    enumeration KindOfBounds is  
+    	KB_UNKNOWN, 
+	KB_TRIMMED, 
+    	KB_INFINITE
+    end KindOfBounds;  
+    --
+    enumeration KindOfClosed is  
+    	KC_UNKNOWN, 
+	KC_CLOSED, 
+    	KC_NOTCLOSED
+    end KindOfClosed;  
+    --
+    deferred class HAlgo;
+    deferred class Clsf;
+    class ClsfSurf; 
+    class ClsfBox; 
+    class FinderShapeOn2; 
+    class PassKeyShapeMapHasher; 
+    -- 
+    --  classes 
+    --  
+    deferred class Algo;  
+    deferred class ShapeAlgo;  
+    -- 
+    class ShapeInfo;
+    class ShapeInfoFiller;
+    -- 
+    --  gluer    	     
+    class Gluer; 
+    class Gluer1;  
+    class GlueAnalyser; 
+    class CoupleOfShapes; 
+    class PassKey;  
+    class PassKeyMapHasher; 
+    class PassKeyShape;  
+    
+    class SurfaceTools; 
+    class Tools;  
+    --	     
+    --  finder on 
+    deferred class ShapeSolid;
+    class WireSolid; 
+    class ShellSolid; 
+    class VertexSolid; 
+    class SolidSolid; 
+    class FinderShapeOn; 
+    -- 
+    class FinderShapeOn1;
+    class StateCollector; 
+    --  adds
+    deferred class HAlgo;
+    deferred class Clsf;
+    class ClsfSurf; 
+    class ClsfBox;  
+    --modified by NIZNHY-PKV Mon Jan 29 10:27:44 2007f
+    class ClsfSolid;  
+    --modified by NIZNHY-PKV Mon Jan 29 10:27:46 2007t
+    class FinderShapeOn2; 
+    class PassKeyShapeMapHasher;
+    --
+    -- Builder/Splitter 
+    deferred class BuilderShape; 
+     
+    class Builder; 
+    class Splitter; 
+    class Tools3D; 
+    class BuilderTools; 
+    class ShapeSet;  
+     
+    deferred class BuilderArea;
+    class BuilderFace; 
+    class BuilderSolid;  
+    
+    class WireSplitter; 
+    class WireEdgeSet; 
+    class WESCorrector; 
+    -- 
+    --  Pointers
+    --     
+    pointer PWireEdgeSet to WireEdgeSet from GEOMAlgo;  
+    --	   
+    -- 
+    --  Instantiations	
+    class DataMapOfShapeShapeSet instantiates 
+    	DataMap from TCollection(Shape from TopoDS, 
+	                         ShapeSet from GEOMAlgo, 
+	                         ShapeMapHasher from TopTools); 
+	 
+    class DataMapOfShapeReal instantiates 
+    	DataMap from TCollection(Shape from TopoDS, 
+	                         Real from Standard, 
+	                         ShapeMapHasher from TopTools);		 
+				  
+    
+    class DataMapOfRealListOfShape instantiates  
+    	DataMap from TCollection(Real from Standard, 
+    	    	    	    	 ListOfShape from TopTools,  
+	                         MapRealHasher from TColStd);	   
+    --
+    --  instantiations
+    
+     
+    class IndexedDataMapOfShapeBox  
+    	instantiates IndexedDataMap from TCollection   	(Shape from TopoDS,
+	    		    		         	 Box from Bnd,
+	    		    		         	 ShapeMapHasher from TopTools);
+    class IndexedDataMapOfIntegerShape  
+    	instantiates IndexedDataMap from TCollection   	(Integer from Standard,
+	    		    		         	 Shape from TopoDS,
+	    		    		         	 MapIntegerHasher from TColStd); 
+							  
+    class ListOfCoupleOfShapes  
+    	instantiates List from TCollection  (CoupleOfShapes from GEOMAlgo);
+
+
+    class IndexedDataMapOfShapeState
+    	instantiates IndexedDataMap from TCollection   	(Shape from TopoDS,
+	    		    		         	 State from TopAbs,  
+	    	    	    	    	    	    	 ShapeMapHasher from TopTools);
+    class ListOfPnt
+    	instantiates List from TCollection  (Pnt from gp);
+
+    class DataMapOfPassKeyInteger
+	instantiates DataMap from TCollection (PassKey from GEOMAlgo, 
+					       Integer from Standard, 
+                                               PassKeyMapHasher from GEOMAlgo); 
+     
+    class IndexedDataMapOfPassKeyShapeListOfShape
+	instantiates IndexedDataMap from TCollection (PassKeyShape from GEOMAlgo, 
+						      ListOfShape from TopTools, 
+                                                      PassKeyShapeMapHasher from GEOMAlgo); 
+
+    class IndexedDataMapOfShapeShapeInfo
+    	instantiates IndexedDataMap from TCollection   	(Shape from TopoDS,
+	    		    		         	 ShapeInfo from GEOMAlgo,
+	    		    		         	 ShapeMapHasher from TopTools);
+
+    class DataMapOfPassKeyShapeShape   
+	instantiates DataMap from TCollection (PassKeyShape from GEOMAlgo, 
+					       Shape from TopoDS, 
+     	    	    	    	    	       PassKeyShapeMapHasher from GEOMAlgo); 
+
+    class DataMapOfShapeShapeSet instantiates 
+    	DataMap from TCollection(Shape from TopoDS, 
+	                         ShapeSet from GEOMAlgo, 
+	                         ShapeMapHasher from TopTools); 
+	 
+    class DataMapOfShapeReal instantiates 
+    	DataMap from TCollection(Shape from TopoDS, 
+	                         Real from Standard, 
+	                         ShapeMapHasher from TopTools);		 
+				  
+    
+    class DataMapOfRealListOfShape instantiates  
+    	DataMap from TCollection(Real from Standard, 
+    	    	    	    	 ListOfShape from TopTools,  
+	                         MapRealHasher from TColStd);	   
+    
+end GEOMAlgo;

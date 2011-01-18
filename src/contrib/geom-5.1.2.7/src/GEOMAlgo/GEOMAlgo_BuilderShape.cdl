@@ -1,0 +1,114 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	GEOMAlgo_BuilderShape.cdl
+-- Created:	
+-- Author:	Peter KURNEV 
+--
+deferred class BuilderShape from GEOMAlgo 
+    	inherits Algo from GEOMAlgo  
+
+	---Purpose: Root class for algorithms that has shape as result     
+
+uses
+    Shape from TopoDS, 
+    ListOfShape from TopTools, 
+    MapOfShape  from TopTools, 
+    IndexedDataMapOfShapeListOfShape from TopTools 
+    
+--raises
+
+is 
+    Initialize 
+    	---Purpose: Empty constructor    
+    	returns BuilderShape from GEOMAlgo; 
+    ---C++: alias "Standard_EXPORT virtual ~GEOMAlgo_BuilderShape();" 
+     
+    Shape(me)  
+    	---Purpose:  Returns the result of algorithm
+    	returns Shape from TopoDS; 
+    ---C++: return const &    	 
+    
+
+    ------------------------------------------------------------------
+    --- The following methods are not implemented at this level.
+    --  An empty list is returned.
+    --- They are optional and can be redefined. 
+    ------------------------------------------------------------------
+    Generated (me:out;  
+    	    theS : Shape from TopoDS)
+    	---Purpose: Returns the list of shapes generated from the
+    	--          shape theS. 
+    	returns ListOfShape from TopTools
+    	is virtual;
+    	---C++: return const & 
+
+    Modified (me:out;  
+    	    theS : Shape from TopoDS)
+    	---Purpose: Returns the list of shapes modified from the  
+    	--          shape theS. 
+    	returns ListOfShape from TopTools
+    	is virtual;
+    	---C++: return const & 
+
+    IsDeleted (me:out;  
+    	    theS : Shape from TopoDS) 
+    	---Purpose: Returns true if the shape theS has been deleted.
+    	returns Boolean from Standard  
+    	is virtual; 
+	 
+    HasDeleted (me)  
+    	---Purpose: Returns true if the at least one shape(or subshape) 
+    	--          of arguments has been deleted.
+    	returns Boolean from Standard;  
+	 
+    HasGenerated (me)  
+    	---Purpose: Returns true if the at least one shape(or subshape) 
+    	--          of arguments has generated shapes.
+    	returns Boolean from Standard;    
+
+    HasModified (me)  
+    	---Purpose: Returns true if the at least one shape(or subshape) 
+    	--          of arguments has modified shapes.
+    	returns Boolean from Standard;  
+
+    PrepareHistory (me:out) 
+    	---Purpose:  Prepare information for history support  
+    	is virtual protected;     
+	
+--modified by NIZNHY-PKV Thu Dec  7 11:13:17 2006f 
+    ImagesResult(me) 
+	 returns IndexedDataMapOfShapeListOfShape from TopTools; 
+    ---C++: return const &  
+--modified by NIZNHY-PKV Thu Dec  7 11:13:20 2006t
+fields
+    myShape      : Shape from TopoDS is protected; 
+    -- 
+    myHistShapes   : ListOfShape from TopTools is protected; 
+    myMapShape     : MapOfShape  from TopTools is protected; 
+    myHasDeleted   : Boolean     from Standard is protected; 
+    myHasGenerated : Boolean     from Standard is protected; 
+    myHasModified  : Boolean     from Standard is protected; 
+--modified by NIZNHY-PKV Thu Dec  7 11:13:10 2006f
+    myImagesResult : IndexedDataMapOfShapeListOfShape from TopTools is protected; 
+--modified by NIZNHY-PKV Thu Dec  7 11:13:13 2006t
+end BuilderShape; 
+

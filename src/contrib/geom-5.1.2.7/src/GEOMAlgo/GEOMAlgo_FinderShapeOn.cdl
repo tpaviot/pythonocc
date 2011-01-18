@@ -1,0 +1,115 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	GEOMAlgo_FinderShapeOn.cdl
+-- Created:	Tue Jan 11 14:35:52 2005
+-- Author:	Peter KURNEV
+--		<pkv@irinox>
+--
+class FinderShapeOn from GEOMAlgo 
+    inherits ShapeAlgo from GEOMAlgo 
+    
+	---Purpose: 
+
+uses
+    Surface from Geom, 
+    ShapeEnum from TopAbs, 
+    ListOfShape from TopTools, 
+    DataMapOfShapeShape from TopTools, 
+    Shape from TopoDS, 
+    State from GEOMAlgo, 
+    IndexedDataMapOfShapeState from GEOMAlgo 
+    
+--raises
+
+is 
+    Create   
+    	returns FinderShapeOn from GEOMAlgo; 
+    ---C++: alias "Standard_EXPORT virtual ~GEOMAlgo_FinderShapeOn();" 
+     
+    Perform(me:out) 
+	is redefined;  
+	 
+    SetSurface(me:out; 
+    	    aS:Surface from Geom); 
+	 
+    SetShapeType(me:out; 
+    	    aST:ShapeEnum from TopAbs); 
+	 
+    SetState(me:out; 
+    	    aSF:State from GEOMAlgo);      
+     
+    Surface(me) 
+    	returns Surface from Geom; 
+    ---C++: return const & 
+     
+    ShapeType(me) 
+    	returns ShapeEnum from TopAbs; 
+	 
+    State(me)
+    	returns State from GEOMAlgo;  
+     
+    Shapes(me)
+	returns ListOfShape from TopTools; 
+    ---C++: return const &  
+     
+    -- 
+    --  protected  methods
+    -- 
+    CheckData(me:out) 
+	is redefined protected; 
+
+    MakeArgument1(me:out) 
+	is protected;  
+
+    MakeArgument2(me:out) 
+	is protected;
+     
+    Find(me:out) 
+	is protected; 
+
+    Find(me:out; 
+    	    aS:Shape from TopoDS) 
+	is protected; 
+
+    FindVertices(me:out) 
+	is protected; 
+	 
+    CopySource(myclass; 
+    	aS  :Shape from TopoDS; 
+	aImages   : out DataMapOfShapeShape from TopTools;   	 
+	aOriginals: out DataMapOfShapeShape from TopTools;   	 
+    	aSC : out Shape from TopoDS); 
+	
+					
+
+fields 
+    mySurface    : Surface from Geom is protected;  
+    myShapeType  : ShapeEnum from TopAbs is protected;  
+    myState      : State from GEOMAlgo is protected; 
+    myArg1       : Shape from TopoDS is protected;  
+    myArg2       : Shape from TopoDS is protected;  
+    myLS         : ListOfShape from TopTools is protected;
+    myImages     : DataMapOfShapeShape from TopTools is protected; 
+    myMSS        : IndexedDataMapOfShapeState from GEOMAlgo is protected; 
+    myIsAnalytic : Boolean from Standard is protected; 
+     
+end FinderShapeOn;
