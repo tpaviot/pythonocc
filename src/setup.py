@@ -551,9 +551,6 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
           package_dir = {'OCC.Display':os.path.join(os.getcwd(),'addons','Display'),
                          'OCC.Utils':os.path.join(os.getcwd(),'addons','Utils'),
                          'OCC.Utils.DataExchange':os.path.join(os.getcwd(),'addons','Utils','DataExchange'),
-                         'OCC.Toolkits':os.path.join(os.getcwd(),'wrapper','Toolkits'),
-                         'OCC.Toolkits.FoundationClasses':os.path.join(os.getcwd(),'wrapper','Toolkits','FoundationClasses'),
-                         'OCC.Toolkits.ModelingData':os.path.join(os.getcwd(),'wrapper','Toolkits','ModelingData'),
                          'OCC.MSH':os.path.join(os.getcwd(),'addons','MSH'),
                          'OCC.PAF':os.path.join(os.getcwd(),'addons','PAF'),
                          'OCC.KBE':os.path.join(os.getcwd(),'addons','KBE'),
@@ -563,11 +560,9 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
                       'OCC.Utils.DataExchange',
                       'OCC.MSH',\
                       'OCC.PAF',
-                      'OCC.Toolkits',\
                       'OCC.KBE',
                       'OCC.DYN',\
-                      'OCC.Toolkits.FoundationClasses',\
-                      'OCC.Toolkits.ModelingData'],
+                      ],
           **KARGS
           )
     #
