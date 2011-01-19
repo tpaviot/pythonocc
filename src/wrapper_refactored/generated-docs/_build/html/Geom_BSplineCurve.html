@@ -1,0 +1,1503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Geom_BSplineCurve — Definition of the B_spline curve. &mdash; occ-doc-test v0.4 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '0.4',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="occ-doc-test v0.4 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index.html">occ-doc-test v0.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="geom-bsplinecurve-definition-of-the-b-spline-curve">
+<h1><a title="Geom_BSplineCurve" class="reference internal" href="#Geom_BSplineCurve"><tt class="xref docutils literal"><span class="pre">Geom_BSplineCurve</span></tt></a> &#8212; Definition of the B_spline curve.<a class="headerlink" href="#geom-bsplinecurve-definition-of-the-b-spline-curve" title="Permalink to this headline">¶</a></h1>
+<p>Definition of the B_spline curve.</p>
+<p>A B-spline curve can be
+Uniform  or non-uniform
+Rational or non-rational
+Periodic or non-periodic</p>
+<p>a b-spline curve is defined by :
+its degree; the degree for a
+<a title="Geom_BSplineCurve" class="reference internal" href="#Geom_BSplineCurve"><tt class="xref docutils literal"><span class="pre">Geom_BSplineCurve</span></tt></a> is limited to a value (25)</p>
+<p>which is defined and controlled by the system.</p>
+<p>This value is returned by the function <a title="MaxDegree" class="reference external" href="Geom_BSplineSurface.html#MaxDegree"><tt class="xref docutils literal"><span class="pre">MaxDegree()</span></tt></a>;</p>
+<ul class="simple">
+<li>its periodic or non-periodic nature;</li>
+<li>a table of poles (also called control points), with
+their associated weights if the BSpline curve is
+rational. The poles of the curve are <em>control
+points</em> used to deform the curve. If the curve is
+non-periodic, the first pole is the start point of
+the curve, and the last pole is the end point of
+the curve. The segment which joins the first pole
+to the second pole is the tangent to the curve at
+its start point, and the segment which joins the
+last pole to the second-from-last pole is the
+tangent to the curve at its end point. If the curve
+is periodic, these geometric properties are not
+verified. It is more difficult to give a geometric
+signification to the weights but are useful for
+providing exact representations of the arcs of a
+circle or ellipse. Moreover, if the weights of all the
+poles are equal, the curve has a polynomial
+equation; it is therefore a non-rational curve.</li>
+<li>a table of knots with their multiplicities. For a
+<a title="Geom_BSplineCurve" class="reference internal" href="#Geom_BSplineCurve"><tt class="xref docutils literal"><span class="pre">Geom_BSplineCurve</span></tt></a>, the table of knots is an
+increasing sequence of reals without repetition;</li>
+</ul>
+<p>the multiplicities define the repetition of the knots.</p>
+<p>A BSpline curve is a piecewise polynomial or
+rational curve. The knots are the parameters of
+junction points between two pieces. The
+multiplicity Mult(i) of the knot Knot(i) of
+the BSpline curve is related to the degree of
+continuity of the curve at the knot Knot(i),
+which is equal to <tt class="xref docutils literal"><span class="pre">Degree()</span></tt> - Mult(i)</p>
+<p>where <tt class="xref docutils literal"><span class="pre">Degree()</span></tt> is the degree of the BSpline curve.</p>
+<p>If the knots are regularly spaced (i.e. the difference
+between two consecutive knots is a constant), three
+specific and frequently used cases of knot
+distribution can be identified:</p>
+<ul class="simple">
+<li><em>uniform</em> if all multiplicities are equal to 1,</li>
+<li><em>quasi-uniform</em> if all multiplicities are equal to 1,
+except the first and the last knot which have a
+multiplicity of <tt class="xref docutils literal"><span class="pre">Degree()</span></tt> + 1, where <tt class="xref docutils literal"><span class="pre">Degree()</span></tt> is
+the degree of the BSpline curve,</li>
+<li><em>Piecewise Bezier</em> if all multiplicities are equal to
+<tt class="xref docutils literal"><span class="pre">Degree()</span></tt> except the first and last knot which
+have a multiplicity of <tt class="xref docutils literal"><span class="pre">Degree()</span></tt> + 1, where
+<tt class="xref docutils literal"><span class="pre">Degree()</span></tt> is the degree of the BSpline curve. A
+curve of this type is a concatenation of arcs of Bezier curves.</li>
+</ul>
+<p>If the BSpline curve is not periodic:</p>
+<ul class="simple">
+<li>the bounds of the <a title="Poles" class="reference external" href="Geom_BSplineSurface.html#Poles"><tt class="xref docutils literal"><span class="pre">Poles()</span></tt></a> and <a title="Weights" class="reference external" href="Geom_BSplineSurface.html#Weights"><tt class="xref docutils literal"><span class="pre">Weights()</span></tt></a> tables are 1
+and <tt class="xref docutils literal"><span class="pre">NbPoles()</span></tt>, where <tt class="xref docutils literal"><span class="pre">NbPoles()</span></tt> is the number
+of poles of the BSpline curve,</li>
+<li>the bounds of the <tt class="xref docutils literal"><span class="pre">Knots()</span></tt> and <tt class="xref docutils literal"><span class="pre">Multiplicities()</span></tt> tables
+are 1 and <tt class="xref docutils literal"><span class="pre">NbKnots()</span></tt>, where <tt class="xref docutils literal"><span class="pre">NbKnots()</span></tt> is the
+number of knots of the BSpline curve.</li>
+</ul>
+<p>If the BSpline curve is periodic, and if there are k
+periodic knots and p periodic poles, the period is:
+period = Knot(k + 1) - Knot(1)</p>
+<p>and the poles and knots tables can be considered
+as infinite tables, verifying:</p>
+<ul class="simple">
+<li>Knot(i+k) = Knot(i) + period</li>
+<li>Pole(i+p) = Pole(i)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Data structures of a periodic bspline curve
+are more complex than those of a non-periodic one.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">In this class, weight value is considered to be zero if
+the weight is less than or equal to gp::Resolution().</p>
+</div>
+<p>References :</p>
+<ol class="arabic simple">
+<li>A survey of curve and surface methods in CADG Wolfgang BOHM
+CAGD 1 (1984)</li>
+<li>On de Boor-like algorithms and blossoming Wolfgang BOEHM
+cagd 5 (1988)</li>
+<li>Blossoming and knot insertion algorithms for B-spline curves
+Ronald N. GOLDMAN</li>
+<li>Modelisation des surfaces en CAO, Henri GIAUME Peugeot SA</li>
+<li>Curves and Surfaces for Computer Aided Geometric Design,
+a practical guide Gerald Farin</li>
+</ol>
+<dl class="class">
+<dt id="Geom_BSplineCurve">
+<em class="property">class </em><tt class="descname">Geom_BSplineCurve</tt><a class="headerlink" href="#Geom_BSplineCurve" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="Geom_BSplineCurve.Continuity">
+<tt class="descname">Continuity</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Continuity" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">GeomAbs_Shape</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The global continuity of the curve : <a href="#id1"><span class="problematic" id="id2">``</span></a>`` c0 : only geometric continuity, <a href="#id3"><span class="problematic" id="id4">``</span></a>`` c1 : continuity of the first derivative all along the curve, <a href="#id5"><span class="problematic" id="id6">``</span></a>`` c2 : continuity of the second derivative all along the curve, <a href="#id7"><span class="problematic" id="id8">``</span></a>`` c3 : continuity of the third derivative all along the curve, <a href="#id9"><span class="problematic" id="id10">``</span></a>`` cn : the order of continuity is infinite. <a href="#id11"><span class="problematic" id="id12">``</span></a>`` for a b-spline curve of degree d if a knot ui has a <a href="#id13"><span class="problematic" id="id14">``</span></a>`` multiplicity p the b-spline curve is only cd-p continuous <a href="#id15"><span class="problematic" id="id16">``</span></a>`` at ui. so the global continuity of the curve can&#8217;t be greater <a href="#id17"><span class="problematic" id="id18">``</span></a>`` than cd-p where p is the maximum multiplicity of the interior <a href="#id19"><span class="problematic" id="id20">``</span></a>`` <tt class="xref docutils literal"><span class="pre">knots()</span></tt>. in the interior of a knot span the curve is infinitely <a href="#id21"><span class="problematic" id="id22">``</span></a>`` continuously differentiable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Copy">
+<tt class="descname">Copy</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Copy" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Handle_Geom_Geometry</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Creates a new object which is a copy of this BSpline curve.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.D0">
+<tt class="descname">D0</tt><big>(</big><em>P</em>, <em>U</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.D0" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">In <tt class="docutils literal"><span class="pre">p</span></tt> the point of parameter u.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.D1">
+<tt class="descname">D1</tt><big>(</big><em>P</em>, <em>U</em>, <em>V1</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.D1" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V1</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first last">If the continuity of the curve is not c1.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.D2">
+<tt class="descname">D2</tt><big>(</big><em>P</em>, <em>U</em>, <em>V1</em>, <em>V2</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.D2" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V1</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>V2</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first last">If the continuity of the curve is not c2.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.D3">
+<tt class="descname">D3</tt><big>(</big><em>P</em>, <em>U</em>, <em>V1</em>, <em>V2</em>, <em>V3</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.D3" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V1</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>V2</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>V3</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first last">If the continuity of the curve is not c3.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.DN">
+<tt class="descname">DN</tt><big>(</big><em>N</em>, <em>U</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.DN" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>N</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>For the point of parameter <tt class="docutils literal"><span class="pre">U</span></tt> of this BSpline curve,
+computes the vector corresponding to the Nth derivative.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">On a point where the continuity of the curve is not the
+one requested, this function impacts the part defined
+by the parameter with a value greater than U, i.e. the
+part of the curve to the <em>right</em> of the singularity.</p>
+</div>
+<p>Exceptions
+<tt class="xref docutils literal"><span class="pre">Standard_RangeError</span></tt> if <tt class="docutils literal"><span class="pre">N</span></tt> is less than 1.</p>
+<p>The following functions compute the point of parameter <tt class="docutils literal"><span class="pre">U</span></tt>
+and the derivatives at this point on the B-spline curve
+arc defined between the knot FromK1 and the knot ToK2.
+<tt class="docutils literal"><span class="pre">U</span></tt> can be out of bounds [<a title="Geom_BSplineCurve.Knot" class="reference internal" href="#Geom_BSplineCurve.Knot"><tt class="xref docutils literal"><span class="pre">Knot()</span></tt></a> (FromK1),  <a title="Geom_BSplineCurve.Knot" class="reference internal" href="#Geom_BSplineCurve.Knot"><tt class="xref docutils literal"><span class="pre">Knot()</span></tt></a> (ToK2)] but
+for the computation we only use the definition of the curve
+between these two knots. This method is useful to compute
+local derivative, if the order of continuity of the whole
+curve is not greater enough.    Inside the parametric
+domain <a title="Geom_BSplineCurve.Knot" class="reference internal" href="#Geom_BSplineCurve.Knot"><tt class="xref docutils literal"><span class="pre">Knot()</span></tt></a> (FromK1), <a title="Geom_BSplineCurve.Knot" class="reference internal" href="#Geom_BSplineCurve.Knot"><tt class="xref docutils literal"><span class="pre">Knot()</span></tt></a> (ToK2) the evaluations are
+the same as if we consider the whole definition of the
+curve. Of course the evaluations are different outside
+this parametric domain.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Degree">
+<tt class="descname">Degree</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Degree" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The degree of this bspline curve. <a href="#id23"><span class="problematic" id="id24">``</span></a>`` the degree of a <tt class="xref docutils literal"><span class="pre">geom_bsplinecurve</span></tt> curve cannot <a href="#id25"><span class="problematic" id="id26">``</span></a>`` be greater than <tt class="xref docutils literal"><span class="pre">geom_bsplinecurve.maxdegree()</span></tt>. <a href="#id27"><span class="problematic" id="id28">``</span></a>`` computation of value and derivatives</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.DynamicType">
+<tt class="descname">DynamicType</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.DynamicType" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Handle_Standard_Type</span></tt></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.EndPoint">
+<tt class="descname">EndPoint</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.EndPoint" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The last point of the curve. <a href="#id29"><span class="problematic" id="id30">``</span></a>`` warnings : <a href="#id31"><span class="problematic" id="id32">``</span></a>`` the last point of the curve is different from the last <a href="#id33"><span class="problematic" id="id34">``</span></a>`` pole of the curve if the multiplicity of the last knot <a href="#id35"><span class="problematic" id="id36">``</span></a>`` is lower than <tt class="xref docutils literal"><span class="pre">degree()</span></tt>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.FirstParameter">
+<tt class="descname">FirstParameter</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.FirstParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The value of the first parameter of this <a href="#id37"><span class="problematic" id="id38">``</span></a>`` bspline curve. this is a knot value. <a href="#id39"><span class="problematic" id="id40">``</span></a>`` the first parameter is the one of the start point of the bspline curve.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.FirstUKnotIndex">
+<tt class="descname">FirstUKnotIndex</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.FirstUKnotIndex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The index in the knot array of the knot <a href="#id41"><span class="problematic" id="id42">``</span></a>`` corresponding to the first or last parameter of this bspline curve. <a href="#id43"><span class="problematic" id="id44">``</span></a>`` for a bspline curve, the first (or last) parameter <a href="#id45"><span class="problematic" id="id46">``</span></a>`` (which gives the start (or end) point of the curve) is a <a href="#id47"><span class="problematic" id="id48">``</span></a>`` knot value. however, if the multiplicity of the first (or <a href="#id49"><span class="problematic" id="id50">``</span></a>`` last) knot is less than <tt class="xref docutils literal"><span class="pre">degree()</span></tt> + 1, where <a href="#id51"><span class="problematic" id="id52">``</span></a>`` <tt class="xref docutils literal"><span class="pre">degree()</span></tt> is the degree of the curve, it is not the first <a href="#id53"><span class="problematic" id="id54">``</span></a>`` (or last) knot of the curve.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.IncreaseDegree">
+<tt class="descname">IncreaseDegree</tt><big>(</big><em>Degree</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.IncreaseDegree" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Degree</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Increases  the  multiplicities   of  the knots  in
+[I1,I2] to <tt class="docutils literal"><span class="pre">M</span></tt>.</p>
+<p>For each knot if  <tt class="docutils literal"><span class="pre">M</span></tt>  is  lower  or equal  to  the
+current multiplicity  nothing  is  done. If <tt class="docutils literal"><span class="pre">M</span></tt>  is
+higher than the degree the degree is used.  If <tt class="docutils literal"><span class="pre">I1,I2</span></tt> are not in [<a title="FirstUKnotIndex" class="reference external" href="Geom_BSplineSurface.html#FirstUKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstUKnotIndex()</span></tt></a>, <a title="LastUKnotIndex" class="reference external" href="Geom_BSplineSurface.html#LastUKnotIndex"><tt class="xref docutils literal"><span class="pre">LastUKnotIndex()</span></tt></a>]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.IncrementMultiplicity">
+<tt class="descname">IncrementMultiplicity</tt><big>(</big><em>I1</em>, <em>I2</em>, <em>M</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.IncrementMultiplicity" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>I1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>I2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>M</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Increment  the  multiplicities   of  the knots  in
+[I1,I2] by <tt class="docutils literal"><span class="pre">M</span></tt>.</p>
+<p>If <tt class="docutils literal"><span class="pre">M</span></tt> is not positive nithing is done.</p>
+<p>For   each  knot   the resulting   multiplicity  is
+limited to the <a title="Geom_BSplineCurve.Degree" class="reference internal" href="#Geom_BSplineCurve.Degree"><tt class="xref docutils literal"><span class="pre">Degree()</span></tt></a>.  If <tt class="docutils literal"><span class="pre">I1,I2</span></tt> are not in [<a title="FirstUKnotIndex" class="reference external" href="Geom_BSplineSurface.html#FirstUKnotIndex"><tt class="xref docutils literal"><span class="pre">FirstUKnotIndex()</span></tt></a>, <a title="LastUKnotIndex" class="reference external" href="Geom_BSplineSurface.html#LastUKnotIndex"><tt class="xref docutils literal"><span class="pre">LastUKnotIndex()</span></tt></a>]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.InsertKnot">
+<tt class="descname">InsertKnot</tt><big>(</big><em>Add</em>, <em>M</em>, <em>ParametricTolerance</em>, <em>U</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.InsertKnot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>Add</em> (<tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt>) &#8211; </li>
+<li><em>M</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ParametricTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Inserts a knot value in the sequence of knots.  If
+<tt class="docutils literal"><span class="pre">U</span></tt>  is an  existing knot     the multiplicity  is
+increased by <tt class="docutils literal"><span class="pre">M</span></tt>.</p>
+<p>If <tt class="docutils literal"><span class="pre">U</span></tt>  is  not  on the parameter  range  nothing is
+done.</p>
+<p>If the multiplicity is negative or null nothing is
+done. The  new   multiplicity  is limited  to  the
+degree.</p>
+<p>The  tolerance criterion  for  knots  equality  is
+the max of Epsilon(U) and ParametricTolerance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.InsertKnots">
+<tt class="descname">InsertKnots</tt><big>(</big><em>Add</em>, <em>Knots</em>, <em>Mults</em>, <em>ParametricTolerance</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.InsertKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>Add</em> (<tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt>) &#8211; </li>
+<li><em>Knots</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </li>
+<li><em>Mults</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfInteger</span></tt>) &#8211; </li>
+<li><em>ParametricTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Inserts a set of knots  values in  the sequence of
+knots.</p>
+<p>For each U = Knots(i), M = Mults(i)</p>
+<p>If <tt class="docutils literal"><span class="pre">U</span></tt>  is an existing  knot  the  multiplicity is
+increased by  <tt class="docutils literal"><span class="pre">M</span></tt> if  <tt class="docutils literal"><span class="pre">Add</span></tt>  is True, increased to
+<tt class="docutils literal"><span class="pre">M</span></tt> if <tt class="docutils literal"><span class="pre">Add</span></tt> is False.</p>
+<p>If U  is  not  on the parameter  range  nothing is
+done.</p>
+<p>If the multiplicity is negative or null nothing is
+done. The  new   multiplicity  is limited  to  the
+degree.</p>
+<p>The  tolerance criterion  for  knots  equality  is
+the max of Epsilon(U) and ParametricTolerance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.InvalidateCache">
+<tt class="descname">InvalidateCache</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.InvalidateCache" title="Permalink to this definition">¶</a></dt>
+<dd>Invalidates the cache. This has to be private <a href="#id55"><span class="problematic" id="id56">``</span></a>``
+this has to be private</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.IsCN">
+<tt class="descname">IsCN</tt><big>(</big><em>N</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.IsCN" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>N</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The continuity of the curve, the curve is at least c0.</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If <tt class="docutils literal"><span class="pre">n</span></tt> &lt; 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.IsCacheValid">
+<tt class="descname">IsCacheValid</tt><big>(</big><em>Parameter</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.IsCacheValid" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Parameter</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Tells whether the Cache is valid for the
+given parameter
+Warnings : the parameter must be normalized within
+the period if the curve is periodic. Otherwise
+the answer will be false</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.IsClosed">
+<tt class="descname">IsClosed</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.IsClosed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">True if the distance between the first point and the <a href="#id57"><span class="problematic" id="id58">``</span></a>`` last point of the curve is lower or equal to <tt class="xref docutils literal"><span class="pre">resolution()</span></tt> <a href="#id59"><span class="problematic" id="id60">``</span></a>`` from package gp. <a href="#id61"><span class="problematic" id="id62">``</span></a>`` warnings : <a href="#id63"><span class="problematic" id="id64">``</span></a>`` the first and the last point can be different from the first <a href="#id65"><span class="problematic" id="id66">``</span></a>`` pole and the last pole of the curve.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.IsPeriodic">
+<tt class="descname">IsPeriodic</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.IsPeriodic" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">True if the curve is periodic.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.IsRational">
+<tt class="descname">IsRational</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.IsRational" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">True if the weights are not identical. <a href="#id67"><span class="problematic" id="id68">``</span></a>`` the tolerance criterion is epsilon of the class real.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Knot">
+<tt class="descname">Knot</tt><big>(</big><em>Index</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Knot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Index</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The knot of range index. when there is a knot  with a multiplicity greater than 1 the knot is not repeated.</td>
+</tr>
+</tbody>
+</table>
+<p>The method <a title="Geom_BSplineCurve.Multiplicity" class="reference internal" href="#Geom_BSplineCurve.Multiplicity"><tt class="xref docutils literal"><span class="pre">Multiplicity()</span></tt></a> can be used to get the multiplicity
+of the <a title="Geom_BSplineCurve.Knot" class="reference internal" href="#Geom_BSplineCurve.Knot"><tt class="xref docutils literal"><span class="pre">Knot()</span></tt></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If <tt class="docutils literal"><span class="pre">index</span></tt> &lt; 1 or <tt class="docutils literal"><span class="pre">index</span></tt> &gt; <tt class="xref docutils literal"><span class="pre">nbknots()</span></tt></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.KnotDistribution">
+<tt class="descname">KnotDistribution</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.KnotDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">GeomAbs_BSplKnotDistribution</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">Nonuniform or uniform or quasiuniform or piecewisebezier. <a href="#id69"><span class="problematic" id="id70">``</span></a>`` if all the knots differ by a positive constant from the <a href="#id71"><span class="problematic" id="id72">``</span></a>`` preceding knot the bspline curve can be : <a href="#id73"><span class="problematic" id="id74">``</span></a>``  - uniform if all the knots are of multiplicity 1, <a href="#id75"><span class="problematic" id="id76">``</span></a>`` - quasiuniform if all the knots are of multiplicity 1 except for <a href="#id77"><span class="problematic" id="id78">``</span></a>``   the first and last knot which are of multiplicity <tt class="xref docutils literal"><span class="pre">degree()</span></tt> + 1, <a href="#id79"><span class="problematic" id="id80">``</span></a>`` - piecewisebezier if the first and last knots have multiplicity <a href="#id81"><span class="problematic" id="id82">``</span></a>``   <tt class="xref docutils literal"><span class="pre">degree()</span></tt> + 1 and if interior knots have multiplicity <tt class="xref docutils literal"><span class="pre">degree()</span></tt> <a href="#id83"><span class="problematic" id="id84">``</span></a>``   a piecewise bezier with only two knots is a beziercurve. <a href="#id85"><span class="problematic" id="id86">``</span></a>``   else the curve is non uniform. <a href="#id87"><span class="problematic" id="id88">``</span></a>``   the tolerance criterion is epsilon from class real.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.KnotSequence">
+<tt class="descname">KnotSequence</tt><big>(</big><em>K</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.KnotSequence" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>K</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">K, the knots sequence of this bspline curve.</td>
+</tr>
+</tbody>
+</table>
+<p>In this sequence, knots with a multiplicity greater than 1 are repeated.</p>
+<p>In the case of a non-periodic curve the length of the
+sequence must be equal to the sum of the <a title="Geom_BSplineCurve.NbKnots" class="reference internal" href="#Geom_BSplineCurve.NbKnots"><tt class="xref docutils literal"><span class="pre">NbKnots()</span></tt></a>
+multiplicities of the knots of the curve (where
+<a title="Geom_BSplineCurve.NbKnots" class="reference internal" href="#Geom_BSplineCurve.NbKnots"><tt class="xref docutils literal"><span class="pre">NbKnots()</span></tt></a> is the number of knots of this BSpline
+curve). This sum is also equal to : <a title="Geom_BSplineCurve.NbPoles" class="reference internal" href="#Geom_BSplineCurve.NbPoles"><tt class="xref docutils literal"><span class="pre">NbPoles()</span></tt></a> + <a title="Geom_BSplineCurve.Degree" class="reference internal" href="#Geom_BSplineCurve.Degree"><tt class="xref docutils literal"><span class="pre">Degree()</span></tt></a> + 1
+where <a title="Geom_BSplineCurve.NbPoles" class="reference internal" href="#Geom_BSplineCurve.NbPoles"><tt class="xref docutils literal"><span class="pre">NbPoles()</span></tt></a> is the number of poles and
+<a title="Geom_BSplineCurve.Degree" class="reference internal" href="#Geom_BSplineCurve.Degree"><tt class="xref docutils literal"><span class="pre">Degree()</span></tt></a> the degree of this BSpline curve.</p>
+<p>In the case of a periodic curve, if there are k periodic
+knots, the period is Knot(k+1) - Knot(1).</p>
+<p>The initial sequence is built by writing knots 1 to k+1,
+which are repeated according to their corresponding multiplicities.</p>
+<p>If <a title="Geom_BSplineCurve.Degree" class="reference internal" href="#Geom_BSplineCurve.Degree"><tt class="xref docutils literal"><span class="pre">Degree()</span></tt></a> is the degree of the curve, the degree of
+continuity of the curve at the knot of index 1 (or k+1)</p>
+<p>is equal to c = <a title="Geom_BSplineCurve.Degree" class="reference internal" href="#Geom_BSplineCurve.Degree"><tt class="xref docutils literal"><span class="pre">Degree()</span></tt></a> + 1 - Mult(1). c
+knots are then inserted at the beginning and end of
+the initial sequence:</p>
+<ul class="simple">
+<li>the c values of knots preceding the first item
+Knot(k+1) in the initial sequence are inserted
+at the beginning; the period is subtracted from these c values;</li>
+<li>the c values of knots following the last item
+Knot(1) in the initial sequence are inserted at
+the end; the period is added to these c values.</li>
+</ul>
+<p>The length of the sequence must therefore be equal to:
+<a title="Geom_BSplineCurve.NbPoles" class="reference internal" href="#Geom_BSplineCurve.NbPoles"><tt class="xref docutils literal"><span class="pre">NbPoles()</span></tt></a> + 2*:meth:<cite>Degree</cite> - Mult(1) + 2.</p>
+<p>Example
+For a non-periodic BSpline curve of degree 2 where:</p>
+<ul class="simple">
+<li>the array of knots is: { k1 k2 k3 k4 },</li>
+<li>with associated multiplicities: { 3 1 2 3 },
+the knot sequence is:
+<tt class="docutils literal"><span class="pre">K</span></tt> = { k1 k1 k1 k2 k3 k3 k4 k4 k4 }</li>
+</ul>
+<p>For a periodic BSpline curve of degree 4 , which is
+<em>C1</em> continuous at the first knot, and where :</p>
+<ul class="simple">
+<li>the periodic knots are: { k1 k2 k3 (k4) }
+(3 periodic knots: the points of parameter k1 and k4
+are identical, the period is p = k4 - k1),</li>
+<li>with associated multiplicities: { 3 1 2 (3) },
+the degree of continuity at knots k1 and k4 is:
+<a title="Geom_BSplineCurve.Degree" class="reference internal" href="#Geom_BSplineCurve.Degree"><tt class="xref docutils literal"><span class="pre">Degree()</span></tt></a> + 1 - Mult(i) = 2.</li>
+</ul>
+<p>2 supplementary knots are added at the beginning
+and end of the sequence:</p>
+<ul class="simple">
+<li>at the beginning: the 2 knots preceding k4 minus
+the period; in this example, this is k3 - p both times;</li>
+<li>at the end: the 2 knots following k1 plus the period;</li>
+</ul>
+<p>in this example, this is k2 + p and k3 + p.</p>
+<p>The knot sequence is therefore:
+<tt class="docutils literal"><span class="pre">K</span></tt> = { k3-p k3-p k1 k1 k1 k2 k3 k3
+k4 k4 k4 k2+p k3+p }</p>
+<p>Exceptions
+<tt class="xref docutils literal"><span class="pre">Standard_DimensionError</span></tt> if the array <tt class="docutils literal"><span class="pre">K</span></tt> is not of
+the appropriate length.Returns the knots sequence.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Knots">
+<tt class="descname">Knots</tt><big>(</big><em>K</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Knots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>K</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The knot values of the b-spline curve;</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">A knot with a multiplicity greater than 1 is not
+repeated in the knot table. The <a title="Geom_BSplineCurve.Multiplicity" class="reference internal" href="#Geom_BSplineCurve.Multiplicity"><tt class="xref docutils literal"><span class="pre">Multiplicity()</span></tt></a> function
+can be used to obtain the multiplicity of each knot.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If the length of <tt class="docutils literal"><span class="pre">k</span></tt> is not equal to the number of knots.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.LastParameter">
+<tt class="descname">LastParameter</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.LastParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>Computes the parametric value of the end point of the curve. <a href="#id89"><span class="problematic" id="id90">``</span></a>``
+It is a knot value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.LastUKnotIndex">
+<tt class="descname">LastUKnotIndex</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.LastUKnotIndex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>For a BSpline curve the last parameter (which gives the <a href="#id91"><span class="problematic" id="id92">``</span></a>``
+end point of the curve) is a knot value but if the <a href="#id93"><span class="problematic" id="id94">``</span></a>``
+multiplicity of the last knot index is lower than <a href="#id95"><span class="problematic" id="id96">``</span></a>``
+<a title="Geom_BSplineCurve.Degree" class="reference internal" href="#Geom_BSplineCurve.Degree"><tt class="xref docutils literal"><span class="pre">Degree()</span></tt></a> + 1 it is not the last knot of the curve. This <a href="#id97"><span class="problematic" id="id98">``</span></a>``
+method computes the index of the knot corresponding to <a href="#id99"><span class="problematic" id="id100">``</span></a>``
+the last parameter.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.LocalD0">
+<tt class="descname">LocalD0</tt><big>(</big><em>FromK1</em>, <em>P</em>, <em>ToK2</em>, <em>U</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.LocalD0" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>FromK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>ToK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> = tok2.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first last">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> and <tt class="docutils literal"><span class="pre">tok2</span></tt> are not in the range  [<tt class="xref docutils literal"><span class="pre">firstuknotindex()</span></tt>, <tt class="xref docutils literal"><span class="pre">lastuknotindex()</span></tt>].</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.LocalD1">
+<tt class="descname">LocalD1</tt><big>(</big><em>FromK1</em>, <em>P</em>, <em>ToK2</em>, <em>U</em>, <em>V1</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.LocalD1" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>FromK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>ToK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V1</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If the local continuity of the curve is not c1  between the knot k1 and the knot k2.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> = tok2.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first last">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> and <tt class="docutils literal"><span class="pre">tok2</span></tt> are not in the range  [<tt class="xref docutils literal"><span class="pre">firstuknotindex()</span></tt>, <tt class="xref docutils literal"><span class="pre">lastuknotindex()</span></tt>].</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.LocalD2">
+<tt class="descname">LocalD2</tt><big>(</big><em>FromK1</em>, <em>P</em>, <em>ToK2</em>, <em>U</em>, <em>V1</em>, <em>V2</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.LocalD2" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>FromK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>ToK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V1</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>V2</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If the local continuity of the curve is not c2  between the knot k1 and the knot k2.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> = tok2.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first last">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> and <tt class="docutils literal"><span class="pre">tok2</span></tt> are not in the range  [<tt class="xref docutils literal"><span class="pre">firstuknotindex()</span></tt>, <tt class="xref docutils literal"><span class="pre">lastuknotindex()</span></tt>].</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.LocalD3">
+<tt class="descname">LocalD3</tt><big>(</big><em>FromK1</em>, <em>P</em>, <em>ToK2</em>, <em>U</em>, <em>V1</em>, <em>V2</em>, <em>V3</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.LocalD3" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>FromK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>ToK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>V1</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>V2</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>V3</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If the local continuity of the curve is not c3  between the knot k1 and the knot k2.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> = tok2.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first last">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> and <tt class="docutils literal"><span class="pre">tok2</span></tt> are not in the range  [<tt class="xref docutils literal"><span class="pre">firstuknotindex()</span></tt>, <tt class="xref docutils literal"><span class="pre">lastuknotindex()</span></tt>].</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.LocalDN">
+<tt class="descname">LocalDN</tt><big>(</big><em>FromK1</em>, <em>N</em>, <em>ToK2</em>, <em>U</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.LocalDN" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>FromK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>N</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt></p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If the local continuity of the curve is not cn  between the knot k1 and the knot k2.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> = tok2.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If <tt class="docutils literal"><span class="pre">n</span></tt> &lt; 1.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first last">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> and <tt class="docutils literal"><span class="pre">tok2</span></tt> are not in the range  [<tt class="xref docutils literal"><span class="pre">firstuknotindex()</span></tt>, <tt class="xref docutils literal"><span class="pre">lastuknotindex()</span></tt>].</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.LocalValue">
+<tt class="descname">LocalValue</tt><big>(</big><em>FromK1</em>, <em>ToK2</em>, <em>U</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.LocalValue" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>FromK1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ToK2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt></p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> = tok2.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body"><p class="first last">If <tt class="docutils literal"><span class="pre">fromk1</span></tt> and <tt class="docutils literal"><span class="pre">tok2</span></tt> are not in the range  [<tt class="xref docutils literal"><span class="pre">firstuknotindex()</span></tt>, <tt class="xref docutils literal"><span class="pre">lastuknotindex()</span></tt>].</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.LocateU">
+<tt class="descname">LocateU</tt><big>(</big><em>I1</em>, <em>I2</em>, <em>ParametricTolerance</em>, <em>U</em>, <em>WithKnotRepetition</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.LocateU" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>I1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>I2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ParametricTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>WithKnotRepetition</em> (<tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Locates the parametric value <tt class="docutils literal"><span class="pre">U</span></tt> in the sequence of knots.</p>
+<p>If <em>WithKnotRepetition</em> is True we consider the knot&#8217;s
+representation with repetition of multiple knot value,
+otherwise  we consider the knot&#8217;s representation with
+no repetition of multiple knot values.
+<a title="Geom_BSplineCurve.Knots" class="reference internal" href="#Geom_BSplineCurve.Knots"><tt class="xref docutils literal"><span class="pre">Knots()</span></tt></a> (I1) &lt;= <tt class="docutils literal"><span class="pre">U</span></tt> &lt;= <a title="Geom_BSplineCurve.Knots" class="reference internal" href="#Geom_BSplineCurve.Knots"><tt class="xref docutils literal"><span class="pre">Knots()</span></tt></a> (I2)</p>
+<ol class="arabic simple">
+<li>if <tt class="docutils literal"><span class="pre">I1</span></tt> = <tt class="docutils literal"><span class="pre">I2</span></tt>  U is a knot value (the tolerance criterion
+<tt class="docutils literal"><span class="pre">ParametricTolerance</span></tt> is used).</li>
+<li>if <tt class="docutils literal"><span class="pre">I1</span></tt> &lt; 1  =&gt; <tt class="docutils literal"><span class="pre">U</span></tt> &lt; <a title="Geom_BSplineCurve.Knots" class="reference internal" href="#Geom_BSplineCurve.Knots"><tt class="xref docutils literal"><span class="pre">Knots()</span></tt></a> (1) - Abs(ParametricTolerance)</li>
+<li>if <tt class="docutils literal"><span class="pre">I2</span></tt> &gt; <a title="Geom_BSplineCurve.NbKnots" class="reference internal" href="#Geom_BSplineCurve.NbKnots"><tt class="xref docutils literal"><span class="pre">NbKnots()</span></tt></a> =&gt; <tt class="docutils literal"><span class="pre">U</span></tt> &gt; <a title="Geom_BSplineCurve.Knots" class="reference internal" href="#Geom_BSplineCurve.Knots"><tt class="xref docutils literal"><span class="pre">Knots()</span></tt></a> (NbKnots) + Abs(ParametricTolerance)</li>
+</ol>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.MaxDegree">
+<tt class="descname">MaxDegree</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.MaxDegree" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The value of the maximum degree of the normalized <a href="#id101"><span class="problematic" id="id102">``</span></a>`` b-spline basis functions in this package.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.MovePoint">
+<tt class="descname">MovePoint</tt><big>(</big><em>FirstModifiedPole</em>, <em>Index1</em>, <em>Index2</em>, <em>LastModifiedPole</em>, <em>P</em>, <em>U</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.MovePoint" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>FirstModifiedPole</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Index1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Index2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>LastModifiedPole</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Moves the point of parameter <tt class="docutils literal"><span class="pre">U</span></tt> of this BSpline curve
+to P. <tt class="docutils literal"><span class="pre">Index1</span></tt> and <tt class="docutils literal"><span class="pre">Index2</span></tt> are the indexes in the table
+of poles of this BSpline curve of the first and last
+poles designated to be moved.
+<tt class="docutils literal"><span class="pre">FirstModifiedPole</span></tt> and <tt class="docutils literal"><span class="pre">LastModifiedPole</span></tt> are the
+indexes of the first and last poles which are effectively modified.</p>
+<p>In the event of incompatibility between Index1, <tt class="docutils literal"><span class="pre">Index2</span></tt> and the value U:</p>
+<ul class="simple">
+<li>no change is made to this BSpline curve, and</li>
+<li>the <tt class="docutils literal"><span class="pre">FirstModifiedPole</span></tt> and <tt class="docutils literal"><span class="pre">LastModifiedPole</span></tt> are returned null.</li>
+</ul>
+<p>Exceptions
+<tt class="xref docutils literal"><span class="pre">Standard_OutOfRange</span></tt> if:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Index1</span></tt> is greater than or equal to Index2, or</li>
+<li><tt class="docutils literal"><span class="pre">Index1</span></tt> or <tt class="docutils literal"><span class="pre">Index2</span></tt> is less than 1 or greater than the
+number of poles of this BSpline curve.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.MovePointAndTangent">
+<tt class="descname">MovePointAndTangent</tt><big>(</big><em>EndingCondition</em>, <em>ErrorStatus</em>, <em>P</em>, <em>StartingCondition</em>, <em>Tangent</em>, <em>Tolerance</em>, <em>U</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.MovePointAndTangent" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>EndingCondition</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>ErrorStatus</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>P</em> (<tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt>) &#8211; </li>
+<li><em>StartingCondition</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Tangent</em> (<tt class="xref docutils literal"><span class="pre">gp_Vec</span></tt>) &#8211; </li>
+<li><em>Tolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Move a point with parameter <tt class="docutils literal"><span class="pre">U</span></tt> to P.</p>
+<p>and makes it tangent at <tt class="docutils literal"><span class="pre">U</span></tt> be Tangent.
+<tt class="docutils literal"><span class="pre">StartingCondition</span></tt> = -1 means first can move
+<tt class="docutils literal"><span class="pre">EndingCondition</span></tt>   = -1 means last point can move
+<tt class="docutils literal"><span class="pre">StartingCondition</span></tt> = 0 means the first point cannot move
+<tt class="docutils literal"><span class="pre">EndingCondition</span></tt>   = 0 means the last point cannot move
+<tt class="docutils literal"><span class="pre">StartingCondition</span></tt> = 1 means the first point and tangent cannot move
+<tt class="docutils literal"><span class="pre">EndingCondition</span></tt>   = 1 means the last point and tangent cannot move
+and so forth
+<tt class="docutils literal"><span class="pre">ErrorStatus</span></tt> != 0 means that there are not enought degree of freedom
+with the constrain to deform the curve accordingly</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Multiplicities">
+<tt class="descname">Multiplicities</tt><big>(</big><em>M</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Multiplicities" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>M</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfInteger</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The multiplicity of the knots of the curve.</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If the length of <tt class="docutils literal"><span class="pre">m</span></tt> is not equal to <tt class="xref docutils literal"><span class="pre">nbknots()</span></tt>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Multiplicity">
+<tt class="descname">Multiplicity</tt><big>(</big><em>Index</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Multiplicity" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Index</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The multiplicity of the knots of range index.</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If <tt class="docutils literal"><span class="pre">index</span></tt> &lt; 1 or <tt class="docutils literal"><span class="pre">index</span></tt> &gt; <tt class="xref docutils literal"><span class="pre">nbknots()</span></tt></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.NbKnots">
+<tt class="descname">NbKnots</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.NbKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The number of knots. this method returns the number of <a href="#id103"><span class="problematic" id="id104">``</span></a>`` knot without repetition of multiple knots.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.NbPoles">
+<tt class="descname">NbPoles</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.NbPoles" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The number of poles</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.PeriodicNormalization">
+<tt class="descname">PeriodicNormalization</tt><big>(</big><em>U</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.PeriodicNormalization" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The parameter normalized within  the period if the curve is periodic : otherwise  does not do anything</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Pole">
+<tt class="descname">Pole</tt><big>(</big><em>Index</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Pole" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Index</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The pole of range index.</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If <tt class="docutils literal"><span class="pre">index</span></tt> &lt; 1 or <tt class="docutils literal"><span class="pre">index</span></tt> &gt; <tt class="xref docutils literal"><span class="pre">nbpoles()</span></tt>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Poles">
+<tt class="descname">Poles</tt><big>(</big><em>P</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Poles" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>P</em> (<tt class="xref docutils literal"><span class="pre">TColgp_Array1OfPnt</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The poles of the b-spline curve;</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If the length of <tt class="docutils literal"><span class="pre">p</span></tt> is not equal to the number of poles.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.RemoveKnot">
+<tt class="descname">RemoveKnot</tt><big>(</big><em>Index</em>, <em>M</em>, <em>Tolerance</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.RemoveKnot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><em>Index</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>M</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Tolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref docutils literal"><span class="pre">Standard_Boolean</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Reduces the multiplicity of the knot of index <tt class="docutils literal"><span class="pre">Index</span></tt>
+to M. If <tt class="docutils literal"><span class="pre">M</span></tt> is equal to 0, the knot is removed.</p>
+<p>With a modification of this type, the array of poles is also modified.</p>
+<p>Two different algorithms are systematically used to
+compute the new poles of the curve. If, for each
+pole, the distance between the pole calculated
+using the first algorithm and the same pole
+calculated using the second algorithm, is less than
+Tolerance, this ensures that the curve is not
+modified by more than Tolerance. Under these
+conditions, true is returned; otherwise, false is returned.</p>
+<p>A low tolerance is used to prevent modification of
+the curve. A high tolerance is used to <em>smooth</em> the curve.</p>
+<p>Exceptions
+<tt class="xref docutils literal"><span class="pre">Standard_OutOfRange</span></tt> if <tt class="docutils literal"><span class="pre">Index</span></tt> is outside the
+bounds of the knots table.  pole insertion and pole removing
+this operation is limited to the Uniform or QuasiUniform
+BSplineCurve. The knot values are modified . If the BSpline is
+NonUniform or Piecewise Bezier an</p>
+<p>exception Construction error
+is raised.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Resolution">
+<tt class="descname">Resolution</tt><big>(</big><em>Tolerance3D</em>, <em>UTolerance</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Resolution" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>Tolerance3D</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>UTolerance</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Computes for this BSpline curve the parametric
+tolerance <tt class="docutils literal"><span class="pre">UTolerance</span></tt> for a given 3D tolerance Tolerance3D.</p>
+<p>If f(t) is the equation of this BSpline curve,
+<tt class="docutils literal"><span class="pre">UTolerance</span></tt> ensures that:
+| t1 - t0| &lt; Utolerance ===&gt;
+<a href="#id169"><span class="problematic" id="id170">|f(t1) - f(t0)|</span></a> &lt; <tt class="docutils literal"><span class="pre">Tolerance3D</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Reverse">
+<tt class="descname">Reverse</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Reverse" title="Permalink to this definition">¶</a></dt>
+<dd>Changes the direction of parametrization of <tt class="docutils literal"><span class="pre">me</span></tt>. The <a title="Geom_BSplineCurve.Knot" class="reference internal" href="#Geom_BSplineCurve.Knot"><tt class="xref docutils literal"><span class="pre">Knot()</span></tt></a> <a href="#id105"><span class="problematic" id="id106">``</span></a>``
+sequence is modified, the <a title="Geom_BSplineCurve.FirstParameter" class="reference internal" href="#Geom_BSplineCurve.FirstParameter"><tt class="xref docutils literal"><span class="pre">FirstParameter()</span></tt></a> and the <a href="#id107"><span class="problematic" id="id108">``</span></a>``
+<a title="Geom_BSplineCurve.LastParameter" class="reference internal" href="#Geom_BSplineCurve.LastParameter"><tt class="xref docutils literal"><span class="pre">LastParameter()</span></tt></a> are not modified. The <a title="Geom_BSplineCurve.StartPoint" class="reference internal" href="#Geom_BSplineCurve.StartPoint"><tt class="xref docutils literal"><span class="pre">StartPoint()</span></tt></a> of the <a href="#id109"><span class="problematic" id="id110">``</span></a>``
+initial curve becomes the <a title="Geom_BSplineCurve.EndPoint" class="reference internal" href="#Geom_BSplineCurve.EndPoint"><tt class="xref docutils literal"><span class="pre">EndPoint()</span></tt></a> of the reversed curve <a href="#id111"><span class="problematic" id="id112">``</span></a>``
+and the <a title="Geom_BSplineCurve.EndPoint" class="reference internal" href="#Geom_BSplineCurve.EndPoint"><tt class="xref docutils literal"><span class="pre">EndPoint()</span></tt></a> of the initial curve becomes the <a title="Geom_BSplineCurve.StartPoint" class="reference internal" href="#Geom_BSplineCurve.StartPoint"><tt class="xref docutils literal"><span class="pre">StartPoint()</span></tt></a> <a href="#id113"><span class="problematic" id="id114">``</span></a>``
+of the reversed curve.</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.ReversedParameter">
+<tt class="descname">ReversedParameter</tt><big>(</big><em>U</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.ReversedParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>U</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The  parameter on the  reversed  curve for  the point of parameter <tt class="docutils literal"><span class="pre">u</span></tt> on <tt class="docutils literal"><span class="pre">me</span></tt>.</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">Ufirst + ulast - <tt class="docutils literal"><span class="pre">u</span></tt></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Segment">
+<tt class="descname">Segment</tt><big>(</big><em>U1</em>, <em>U2</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Segment" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>U1</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+<li><em>U2</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Modifies this BSpline curve by assigning the value K
+to the knot of index Index in the knots table. This is a
+relatively local modification because K must be such that:
+Knots(Index - 1) &lt; K &lt; Knots(Index + 1)</p>
+<p>The second syntax allows you also to increase the
+multiplicity of the knot to M (but it is not possible to
+decrease the multiplicity of the knot with this function).
+<tt class="xref docutils literal"><span class="pre">Standard_ConstructionError</span></tt> if:</p>
+<ul class="simple">
+<li>K is not such that:
+Knots(Index - 1) &lt; K &lt; Knots(Index + 1)</li>
+<li>M is greater than the degree of this BSpline curve
+or lower than the previous multiplicity of knot of
+index Index in the knots table.
+<tt class="xref docutils literal"><span class="pre">Standard_OutOfRange</span></tt> if Index is outside the bounds of the knots table.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.SetKnots">
+<tt class="descname">SetKnots</tt><big>(</big><em>K</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.SetKnots" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>K</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Changes the knot of range Index with its multiplicity.</p>
+<p>You can increase the multiplicity of a knot but it is
+not allowed to decrease the multiplicity of an existing knot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If <tt class="docutils literal"><span class="pre">k</span></tt> &gt;= knots(index+1) or <tt class="docutils literal"><span class="pre">k</span></tt> &lt;= knots(index-1).</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If m is greater than <tt class="xref docutils literal"><span class="pre">degree()</span></tt> or lower than the previous  multiplicity of knot of range index.</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If index &lt; 1 || index &gt; <tt class="xref docutils literal"><span class="pre">nbknots()</span></tt></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.SetNotPeriodic">
+<tt class="descname">SetNotPeriodic</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.SetNotPeriodic" title="Permalink to this definition">¶</a></dt>
+<dd>Modifies this BSpline curve by assigning P to the pole <a href="#id115"><span class="problematic" id="id116">``</span></a>``
+of index Index in the poles table. <a href="#id117"><span class="problematic" id="id118">``</span></a>``
+This syntax also allows you to modify the <a href="#id119"><span class="problematic" id="id120">``</span></a>``
+weight of the modified pole, which becomes <a title="Weight" class="reference external" href="Geom_BSplineSurface.html#Weight"><tt class="xref docutils literal"><span class="pre">Weight()</span></tt></a>. <a href="#id121"><span class="problematic" id="id122">``</span></a>``
+In this case, if this BSpline curve is non-rational, it <a href="#id123"><span class="problematic" id="id124">``</span></a>``
+can become rational and vice versa. <a href="#id125"><span class="problematic" id="id126">``</span></a>``
+Exceptions <a href="#id127"><span class="problematic" id="id128">``</span></a>``
+<tt class="xref docutils literal"><span class="pre">Standard_OutOfRange</span></tt> if Index is outside the <a href="#id129"><span class="problematic" id="id130">``</span></a>``
+bounds of the poles table. <a href="#id131"><span class="problematic" id="id132">``</span></a>``
+<tt class="xref docutils literal"><span class="pre">Standard_ConstructionError</span></tt> if <a title="Weight" class="reference external" href="Geom_BSplineSurface.html#Weight"><tt class="xref docutils literal"><span class="pre">Weight()</span></tt></a> is negative or null.</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.SetPeriodic">
+<tt class="descname">SetPeriodic</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.SetPeriodic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the origin of a periodic curve at <a title="Geom_BSplineCurve.Knot" class="reference internal" href="#Geom_BSplineCurve.Knot"><tt class="xref docutils literal"><span class="pre">Knot()</span></tt></a> U. If U <a href="#id133"><span class="problematic" id="id134">``</span></a>``
+is <a href="#id135"><span class="problematic" id="id136">``</span></a>`` not a <a href="#id137"><span class="problematic" id="id138">``</span></a>`` knot <a href="#id139"><span class="problematic" id="id140">``</span></a>`` of <a href="#id141"><span class="problematic" id="id142">``</span></a>`` the <a href="#id143"><span class="problematic" id="id144">``</span></a>`` BSpline <a href="#id145"><span class="problematic" id="id146">``</span></a>`` a <a href="#id147"><span class="problematic" id="id148">``</span></a>`` new knot <a href="#id149"><span class="problematic" id="id150">``</span></a>`` is <a href="#id151"><span class="problematic" id="id152">``</span></a>``
+inseted. KnotVector and poles are modified. <a href="#id153"><span class="problematic" id="id154">``</span></a><a href="#id155"><span class="problematic" id="id156">``</span></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If the curve is not periodic</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.SetWeight">
+<tt class="descname">SetWeight</tt><big>(</big><em>Index</em>, <em>Weight</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.SetWeight" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><em>Index</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </li>
+<li><em>Weight</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Changes the weight for the pole of range Index.</p>
+<p>If the curve was non rational it can become rational.</p>
+<p>If the curve was rational it can become non rational.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If <tt class="docutils literal"><span class="pre">index</span></tt> &lt; 1 || <tt class="docutils literal"><span class="pre">index</span></tt> &gt; <tt class="xref docutils literal"><span class="pre">nbpoles()</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If <tt class="xref docutils literal"><span class="pre">weight()</span></tt> &lt;= 0.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.StartPoint">
+<tt class="descname">StartPoint</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.StartPoint" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">gp_Pnt</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The start point of the curve. <a href="#id157"><span class="problematic" id="id158">``</span></a>`` warnings : <a href="#id159"><span class="problematic" id="id160">``</span></a>`` this point is different from the first pole of the curve if the <a href="#id161"><span class="problematic" id="id162">``</span></a>`` multiplicity of the first knot is lower than <tt class="xref docutils literal"><span class="pre">degree()</span></tt>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Transform">
+<tt class="descname">Transform</tt><big>(</big><em>T</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Transform" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>T</em> (<tt class="xref docutils literal"><span class="pre">gp_Trsf</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Applies the transformation <tt class="docutils literal"><span class="pre">T</span></tt> to this BSpline curve.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.UpdateKnots">
+<tt class="descname">UpdateKnots</tt><big>(</big><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.UpdateKnots" title="Permalink to this definition">¶</a></dt>
+<dd>Recompute <a href="#id163"><span class="problematic" id="id164">``</span></a>`` the <a href="#id165"><span class="problematic" id="id166">``</span></a>`` flatknots, <a href="#id167"><span class="problematic" id="id168">``</span></a>`` the knotsdistribution, the continuity.</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.ValidateCache">
+<tt class="descname">ValidateCache</tt><big>(</big><em>Parameter</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.ValidateCache" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Parameter</em> (<tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>updates the cache and validates it</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Weight">
+<tt class="descname">Weight</tt><big>(</big><em>Index</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Weight" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>Index</em> (<tt class="xref docutils literal"><span class="pre">Standard_Integer</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref docutils literal"><span class="pre">Standard_Real</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The weight of the pole of range <tt class="docutils literal"><span class="pre">index</span></tt> .</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If <tt class="docutils literal"><span class="pre">index</span></tt> &lt; 1 or <tt class="docutils literal"><span class="pre">index</span></tt> &gt; <tt class="xref docutils literal"><span class="pre">nbpoles()</span></tt>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Geom_BSplineCurve.Weights">
+<tt class="descname">Weights</tt><big>(</big><em>W</em><big>)</big><a class="headerlink" href="#Geom_BSplineCurve.Weights" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameter:</th><td class="field-body"><em>W</em> (<tt class="xref docutils literal"><span class="pre">TColStd_Array1OfReal</span></tt>) &#8211; </td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body">The weights of the b-spline curve;</td>
+</tr>
+<tr class="field"><th class="field-name">Exception:</th><td class="field-body">If the length of <tt class="docutils literal"><span class="pre">w</span></tt> is not equal to <tt class="xref docutils literal"><span class="pre">nbpoles()</span></tt>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/Geom_BSplineCurve.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index.html">occ-doc-test v0.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2010, henrik.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.5.
+    </div>
+  </body>
+</html>

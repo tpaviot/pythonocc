@@ -1,0 +1,104 @@
+BEGIN;
+CREATE TABLE `source_declaration` (
+    `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `real_type_id` integer,
+    `name` varchar(256) NOT NULL,
+    `documentation` longtext,
+    `is_complete` bool NOT NULL,
+    `parent_id` integer NOT NULL,
+    `discriminator` integer NOT NULL,
+    `commited` bool NOT NULL,
+    UNIQUE (`parent_id`, `name`, `discriminator`)
+)
+;
+ALTER TABLE `source_declaration` ADD CONSTRAINT `real_type_id_refs_id_963915cc` FOREIGN KEY (`real_type_id`) REFERENCES `django_content_type` (`id`);
+ALTER TABLE `source_declaration` ADD CONSTRAINT `parent_id_refs_id_c90ed7d` FOREIGN KEY (`parent_id`) REFERENCES `source_declaration` (`id`);
+CREATE TABLE `source_module` (
+    `declaration_ptr_id` integer NOT NULL PRIMARY KEY
+)
+;
+ALTER TABLE `source_module` ADD CONSTRAINT `declaration_ptr_id_refs_id_55b2d6d8` FOREIGN KEY (`declaration_ptr_id`) REFERENCES `source_declaration` (`id`);
+CREATE TABLE `source_primitive` (
+    `declaration_ptr_id` integer NOT NULL PRIMARY KEY
+)
+;
+ALTER TABLE `source_primitive` ADD CONSTRAINT `declaration_ptr_id_refs_id_2e501506` FOREIGN KEY (`declaration_ptr_id`) REFERENCES `source_declaration` (`id`);
+CREATE TABLE `source_klass` (
+    `declaration_ptr_id` integer NOT NULL PRIMARY KEY,
+    `is_abstract` bool NOT NULL,
+    `is_declaration` bool NOT NULL
+)
+;
+ALTER TABLE `source_klass` ADD CONSTRAINT `declaration_ptr_id_refs_id_5950fea5` FOREIGN KEY (`declaration_ptr_id`) REFERENCES `source_declaration` (`id`);
+CREATE TABLE `source_enumeration` (
+    `declaration_ptr_id` integer NOT NULL PRIMARY KEY,
+    `values` longtext NOT NULL
+)
+;
+ALTER TABLE `source_enumeration` ADD CONSTRAINT `declaration_ptr_id_refs_id_7b1d2162` FOREIGN KEY (`declaration_ptr_id`) REFERENCES `source_declaration` (`id`);
+CREATE TABLE `source_method` (
+    `declaration_ptr_id` integer NOT NULL PRIMARY KEY,
+    `return_type_id` integer,
+    `qualifiers` varchar(64) NOT NULL,
+    `access_type` varchar(32) NOT NULL,
+    `virtuality` bool NOT NULL,
+    `has_const` bool NOT NULL,
+    `has_static` bool NOT NULL,
+    `is_constructor` bool NOT NULL,
+    `is_destructor` bool NOT NULL
+)
+;
+ALTER TABLE `source_method` ADD CONSTRAINT `declaration_ptr_id_refs_id_a592c337` FOREIGN KEY (`declaration_ptr_id`) REFERENCES `source_declaration` (`id`);
+ALTER TABLE `source_method` ADD CONSTRAINT `return_type_id_refs_id_a592c337` FOREIGN KEY (`return_type_id`) REFERENCES `source_declaration` (`id`);
+CREATE TABLE `source_argument` (
+    `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `name` varchar(64) NOT NULL,
+    `documentation` varchar(512) NOT NULL,
+    `type_id` integer NOT NULL,
+    `qualifiers` varchar(64) NOT NULL,
+    `parent_id` integer NOT NULL,
+    `is_complete` bool NOT NULL,
+    `default_value` varchar(64) NOT NULL,
+    `position` integer NOT NULL,
+    `commited` bool NOT NULL,
+    UNIQUE (`parent_id`, `name`)
+)
+;
+ALTER TABLE `source_argument` ADD CONSTRAINT `type_id_refs_id_8540e9e7` FOREIGN KEY (`type_id`) REFERENCES `source_declaration` (`id`);
+ALTER TABLE `source_argument` ADD CONSTRAINT `parent_id_refs_id_8540e9e7` FOREIGN KEY (`parent_id`) REFERENCES `source_declaration` (`id`);
+CREATE TABLE `source_variable` (
+    `declaration_ptr_id` integer NOT NULL PRIMARY KEY,
+    `type_id` integer NOT NULL,
+    `value` varchar(200) NOT NULL,
+    `qualifiers` varchar(50) NOT NULL
+)
+;
+ALTER TABLE `source_variable` ADD CONSTRAINT `declaration_ptr_id_refs_id_8467717a` FOREIGN KEY (`declaration_ptr_id`) REFERENCES `source_declaration` (`id`);
+ALTER TABLE `source_variable` ADD CONSTRAINT `type_id_refs_id_8467717a` FOREIGN KEY (`type_id`) REFERENCES `source_declaration` (`id`);
+CREATE TABLE `source_klass_bases` (
+    `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `from_klass_id` integer NOT NULL,
+    `to_klass_id` integer NOT NULL,
+    UNIQUE (`from_klass_id`, `to_klass_id`)
+)
+;
+ALTER TABLE `source_klass_bases` ADD CONSTRAINT `from_klass_id_refs_declaration_ptr_id_ec5858ae` FOREIGN KEY (`from_klass_id`) REFERENCES `source_klass` (`declaration_ptr_id`);
+ALTER TABLE `source_klass_bases` ADD CONSTRAINT `to_klass_id_refs_declaration_ptr_id_ec5858ae` FOREIGN KEY (`to_klass_id`) REFERENCES `source_klass` (`declaration_ptr_id`);
+COMMIT;
+BEGIN;
+CREATE TABLE `tagging_tag` (
+    `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `name` varchar(50) NOT NULL UNIQUE
+)
+;
+CREATE TABLE `tagging_taggeditem` (
+    `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `tag_id` integer NOT NULL,
+    `content_type_id` integer NOT NULL,
+    `object_id` integer UNSIGNED NOT NULL,
+    UNIQUE (`tag_id`, `content_type_id`, `object_id`)
+)
+;
+ALTER TABLE `tagging_taggeditem` ADD CONSTRAINT `tag_id_refs_id_9f51000d` FOREIGN KEY (`tag_id`) REFERENCES `tagging_tag` (`id`);
+ALTER TABLE `tagging_taggeditem` ADD CONSTRAINT `content_type_id_refs_id_f1f84eed` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`);
+COMMIT;

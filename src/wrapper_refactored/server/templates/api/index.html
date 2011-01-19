@@ -1,0 +1,8 @@
+<div>ID: {{id}}, Type: {{typ}}, Name: {{name}}</div>
+<div>Doc: {{documentation}}</div>
+
+<ul>
+{%for decl in declarations%}
+<li>ID: {{decl.id}} name: {{decl.name}}</li>
+{%endfor%}
+</ul>
