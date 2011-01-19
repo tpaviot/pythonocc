@@ -476,6 +476,10 @@ class ModularBuilder(object):
                     to_write += 'Standard_Integer &OutValue'
                     return_list.append(['Standard_Integer',argument_name])
                     FUNCTION_MODIFIED = True
+                elif 'int &' in argument_type: #appears in SMESH_Mesh grouping feature
+                    to_write += 'Standard_Integer &OutValue'
+                elif 'double &' in argument_type: #appears in SMESH_Mesh grouping feature
+                    to_write += 'Standard_Real &OutValue'
                 elif 'FairCurve_AnalysisCode &' in argument_type:
                     to_write += 'FairCurve_AnalysisCode &OutValue'
                     return_list.append(['FairCurve_AnalysisCode',argument_name])
