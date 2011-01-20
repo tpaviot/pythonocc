@@ -1,7 +1,9 @@
 from OCC import GeomAbs
+from OCC.TopoDS import TopoDS
+from OCC.TopAbs import *
+from OCC import TopAbs
 
 class GeometryLookup(object):
-    from OCC import GeomAbs
     def __init__(self):
         self.lookup, self.reverse_lookup = {}, {}
         # construct a geometry types / enum dict
@@ -23,8 +25,6 @@ class ShapeToTopology(object):
     looks up the topology type and returns the corresponding topological entity
     '''
     def __init__(self):
-        from OCC.TopoDS import TopoDS
-        from OCC.TopAbs import *
         self.tds =  TopoDS()
         self.topoTypes = {   TopAbs_VERTEX:      self.tds.vertex,
                         TopAbs_EDGE:        self.tds.edge,
@@ -48,7 +48,6 @@ class TopologyLookup(object):
     '''
     looks up the topology type of a Adaptor or Topo_DS type and returns a string
     '''
-    from OCC import TopAbs
     def __init__(self):
         # nessecary to filter out stuff like TopAbs_IN which are related to orientation, not Topology
         _topoTypesA = ['TopAbs_VERTEX', 'TopAbs_EDGE', 'TopAbs_EDGE', 'TopAbs_WIRE', 'TopAbs_FACE', 
@@ -74,8 +73,6 @@ class OrientationLookup(object):
     '''
     looks up the orientation type and returns a string
     '''
-    
-    from OCC import TopAbs
     def __init__(self):
         # nessecary to filter out stuff like TopAbs_IN which are related to orientation, not Topology
         _topoTypesA = ['TopAbs_FORWARD', 'TopAbs_REVERSED', 'TopAbs_INTERNAL', 'TopAbs_EXTERNAL' ]
