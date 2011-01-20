@@ -275,36 +275,6 @@ def check_file(file,message):
         print 'not found'
         return False
 
-def build_smesh_library():
-    ''' Launch compilation of SMESH from a python pipe
-    '''
-    print 'This will build the SMESH project and install shared library to /usr/local/lib'
-    confirm_build = raw_input('Do you want to continue (y/n)?')
-    if confirm_build not in ['Y','yes','Yes']:
-        return False
-    else:
-        os.system('sh ./wrapper/build_smesh.sh')
-        # Check that the library was installed
-        if check_salomesmesh_lib('SMESH'):
-            return True
-        else:
-            return False
-
-def build_geom_library():
-    ''' Launch compilation of GEOM from a python pipe
-    '''
-    print 'This will build the GEOM project and install shared library to /usr/local/lib'
-    confirm_build = raw_input('Do you want to continue (y/n)?')
-    if confirm_build not in ['Y','yes','Yes']:
-        return False
-    else:
-        os.system('sh ./wrapper/build_geom.sh')
-        # Check that the library was installed
-        if check_salomesmesh_lib('GEOM'):
-            return True
-        else:
-            return False
-
 def check_config():
     ''' Checks all required dependencies
     '''
@@ -335,11 +305,10 @@ def check_config():
             sys.exit(0)
         l = check_salomegeom_lib('GEOM')
         if not l:
-            print 'GEOM library not found on your system'
-            success = build_geom_library()
-            if not success:
-                print 'Failed to build the GEOM library. pythonOCC will be built without the GEOM support'
-                WRAP_SALOME_GEOM = False
+            print 'GEOM library not found on your system. First build/install this library (see INSTALL file)'
+            print 'or pass the option --disable-geom to the installer'
+            sys.exit(0)
+            
     # SMESH
     if WRAP_SALOME_SMESH:
         smesh_mesh_header = os.path.join(environment.SALOME_SMESH_INC,'SMESH_Mesh.hxx')
@@ -355,12 +324,9 @@ def check_config():
             sys.exit(0)
         smesh_lib_found = check_salomesmesh_lib('SMESH')
         if not smesh_lib_found:
-            print 'SMESH library not found on your system.'
-            # suggest building SMESH
-            success = build_smesh_library()
-            if not success:
-                print 'Failed to build the SMESH library. pythonOCC will be built without the SMESH support'
-                WRAP_SALOME_SMESH = False
+            print 'SMESH library not found on your system. First build/install this library (see INSTALL file)'
+            print 'or pass the option --disable-smesh to the installer'
+            sys.exit(0)
 
 parse_opt()
 check_config()
