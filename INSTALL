@@ -44,32 +44,42 @@ At the end of the compilation process, be sure the CASROOT env var is set.
 
 Step1 and Step2 are OS specific.
 
-##############################################################
-# Step 1 and 2: GEOM and SMESH installation on Linux/Windows #
-##############################################################
+#############################################################
+# Step 1 and 2: GEOM and SMESH installation on Linux/MacOSX #
+#############################################################
 
 Step 1 : build and install the SMESH library
 ============================================
-cd src
-sh ./wrapper/build_smesh.sh
+cd src/contrib/smesh-5.1.2.2
+cmake .
+make
+sudo make install
 
 You will be prompted to enter your admin password just before installation.
-At the end of the process, the shared library libSMESH.dylib (libSMESH.so on
-Linux) is installed to /usr/local/lib
+At the end of the process, the shared libraries are installed to /usr/local/lib.
+C++ headers will be installed to /usr/local/include/smesh-5.1.2.2
 
+NOTE : you can choose to skip this step, and go directly to Step 2. However,
+you won't benefit from the wrapper over the smesh library, which provides high
+level meshing features.
+
+NOTE : linux users may have to run ldconfig after the dynamic libraries are
+installed to /usr/local/lib
+ 
 Step 2 : build and install the GEOM library
 ============================================
-from the same directory:
-sh ./wrapper/build_geom.sh
+cd src/contrib/geom-5.1.2.7
+cmake .
+make
+sudo make install
 
 You will be prompted to enter your admin password just before installation.
-At the end of the process, the shared library libGEOM.dylib (libGEOM.so on
-Linux) is installed to /usr/local/lib
+At the end of the process, the shared libraries are installed to /usr/local/lib.
+C++ headers will be installed to /usr/local/include/geom-5.1.2.7
 
-** Note 2.1 ** if either the Step 1 or Step 2 fails, you will not be able to
-compile pythonOCC with SMESH and GEOM support. As a consequence, you will only
-benefit from poor meshing features and you'll miss the parametric modeling
-framework. You will however be able to run most of OCC based examples.
+NOTE : you can choose to skip this step, and go directly to Step 3. However,
+you won't benefit from the wrapper over the geom library, which provides parametric
+modeling features.
 
 ########################################################################
 # Step 1 and 2: GEOM and SMESH installation on Windows 2000/XP/Vista/7 #
@@ -95,19 +105,19 @@ At the end of the process, the shared library GEOM.dll is in ...
 
 Step 3 : build and install pythonOCC
 ====================================
-from the same directory:
-python setup.py build
-sudo python setup.py install
 
-You can disable the GEOM or SMESH support by passing arguments to the command
-line. For instance:
+cd src
+python setup.py build
+python setup.py install
+
+NOTE: By default, the wrapper for geom and smesh are enabled. That means you
+must have preivously successully compiled these libraries. If not, you can
+choose to disable the python wrapper for these libraries. For instance:
 python setup.py build --disable-GEOM --disable-SMESH
 python setup.py install --disable-GEOM --disable-SMESH
-
-** Note 3.1 ** if either the Step 1 or Step 2 fails, you will not be able to
-compile pythonOCC with SMESH and GEOM support. As a consequence, you will only
-benefit from poor meshing features and you'll miss the parametric modeling
-framework. You will however be able to run most of OCC based examples.
+As a consequence, you will only benefit from poor meshing features and you'll
+miss the parametric modeling framework. You will however be able to run most of
+pythonOCC.
 
 ** Note 3.2 ** due to limitations in distutils, these two commands must be run
 sequentially, it is not possible to run 'python setup.py build install' or
@@ -124,6 +134,4 @@ You can use the following arguments to overload default parameters:
 
 To have details about the available customizations:
 python setup.py --help 
-
-
 
