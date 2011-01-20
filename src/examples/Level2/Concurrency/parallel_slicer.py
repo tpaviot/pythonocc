@@ -6,7 +6,8 @@ from OCC.BRepBuilderAPI import *
 from OCC.Geom import *
 from OCC.TopoDS import *
 
-from OCC.Display.SimpleGui import display, start_display
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 import time, numpy, os, pickle, sys
 if sys.version_info[:3] >= (2,6,0):

@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 
-##Copyright 2009-2010, Bryan Cole (bryancole.cam@googlemail.com)
+##Copyright 2009-2011, Bryan Cole (bryancole.cam@googlemail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from enthought.traits.ui.api import View, Item, TreeEditor, TreeNode,\
@@ -140,7 +140,7 @@ class Label(HasTraits):
     def _TDF_Label_changed(self, new_label):
         tool = TDF.TDF_Tool()
         output = TCollection.TCollection_AsciiString()
-        tool.Entry(new_label, output)
+        tool.entry(new_label, output)
         entry = output.ToCString()
         self.entry = entry
         
@@ -195,7 +195,7 @@ class Doc(HasTraits):
         self.root_label = label
         print "root label entry", label.entry
         h_u = TNaming.Handle_TNaming_UsedShapes()
-        gid = h_u.GetObject().GetID()
+        gid = h_u.GetObject().getid()
         if root_label.FindAttribute(gid, h_u):
             print "got used shapes"
         
@@ -241,8 +241,8 @@ if __name__=="__main__":
     from OCC import BRepPrimAPI, XCAFDoc, gp, Quantity
     
     def FillTestDoc(doc):
-        h_shape_tool = XCAFDoc.XCAFDoc_DocumentTool().ShapeTool(doc.Main())
-        h_Colors = XCAFDoc.XCAFDoc_DocumentTool().ColorTool(doc.Main())
+        h_shape_tool = XCAFDoc.XCAFDoc_DocumentTool().shapetool(doc.Main())
+        h_Colors = XCAFDoc.XCAFDoc_DocumentTool().colortool(doc.Main())
         
         shape_tool = h_shape_tool.GetObject()
         colors = h_Colors.GetObject()
@@ -279,7 +279,7 @@ if __name__=="__main__":
         
     
     app = App()
-    fname = "../../../data/_3dmodels/aube_pleine.stp"
+    fname = "/Users/thomas/Devel/pyGLGE/paralever.stp"
     app.LoadSTEPFile(fname)
     
     doc = app.MakeNewDoc()

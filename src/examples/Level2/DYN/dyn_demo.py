@@ -5,16 +5,16 @@
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.BRepPrimAPI import *
@@ -45,18 +45,18 @@ def rotating_box(event=None):
     dyn_context.start_open_loop()
     dyn_context.clear()
 
-def display_cog_trajectory(event=None):
-    ''' Falling rotating box with display of COG
-    '''
-    display.EraseAll()
-    dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display, safe_yield)
-    dyn_context.enable_gravity()
-    s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
-    d = dyn_context.register_shape(s1)
-    d.enable_view_cog()
-    d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
-    dyn_context.start_open_loop()
+#def display_cog_trajectory(event=None):
+#    ''' Falling rotating box with display of COG
+#    '''
+#    display.EraseAll()
+#    dyn_context = DynamicSimulationContext()
+#    dyn_context.set_display(display, safe_yield)
+#    dyn_context.enable_gravity()
+#    s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
+#    d = dyn_context.register_shape(s1)
+#    d.enable_view_cog()
+#    d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
+#    dyn_context.start_open_loop()
         
 def box_plane_collision(event=None):
     display.EraseAll()
@@ -212,7 +212,6 @@ if __name__=='__main__':
     add_menu('rigid body simulation sample')
     add_function_to_menu('rigid body simulation sample', rotating_box)
     add_function_to_menu('rigid body simulation sample', box_plane_collision)
-    add_function_to_menu('rigid body simulation sample', display_cog_trajectory)
     add_function_to_menu('rigid body simulation sample', two_boxes_sphere_plane_collision)
     add_function_to_menu('rigid body simulation sample', dominos)
     add_function_to_menu('rigid body simulation sample', collisions)
