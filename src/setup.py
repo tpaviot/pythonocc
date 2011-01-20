@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-##Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 ##
 ## $Revision$
@@ -53,7 +53,7 @@ except:
 
 #Check whether the -j nprocs is passed
 if ('-help' in sys.argv) or ('-h' in sys.argv):
-    help_str="""pythonOCC setup - (c) Thomas Paviot, 2008-2010.
+    help_str="""pythonOCC setup - (c) Thomas Paviot, 2008-2011.
 Usage: python setup.py build install[options]
 With [options]:
     --disable-GEOM: disable wrapper for the GEOM library
@@ -538,7 +538,7 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
 
     setup(cmdclass={'build_ext': build_ext},
           name = package_name,
-          license = "GNU General Public License v3",
+          license = "GNU Lesser General Public License v3",
           url = "http://www.pythonocc.org",
           author = "Thomas Paviot, Jelle Feringa",
           author_email = "tpaviot@gmail.com, jelleferinga@gmail.com",
@@ -587,20 +587,15 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
         if not os.path.isfile(bg_image_dest):
             shutil.copy(image_file, bg_image_dest)
         
-        # Under Windows, copy GEOM.dll and SMESH.dll to site-packages/OCC
+        # Under Windows, copy GEOM and SMESH dlls to site-packages/OCC
         if sys.platform=='win32':
             if WRAP_SALOME_GEOM:
-                geom_dll = os.path.join(environment.SALOME_GEOM_LIB,'GEOM.dll')
-                geom_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC','GEOM.dll')
-                shutil.copy(geom_dll, geom_dll_dest)
+                geom_dlls = glob.glob(os.path.join(environment.SALOME_GEOM_DLL,'*.dll'))
+                for geom_dll in geom_dlls:
+                    geom_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC',os.path.basename(geom_dll))
+                    shutil.copy(geom_dll, geom_dll_dest)
             if WRAP_SALOME_SMESH:
-                smesh_dll = os.path.join(environment.SALOME_SMESH_LIB,'SMESH.dll')
-                smesh_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC','SMESH.dll')
-                shutil.copy(smesh_dll, smesh_dll_dest)
-                # Windows also need the MEFISTO2F.dll file that comes from the WATCOM Fortran compiler
-                mefisto2f_dll = os.path.join(environment.SALOME_SMESH_LIB,'MEFISTO2F.dll')
-                mefisto2f_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC','MEFISTO2F.dll')
-                shutil.copy(mefisto2f_dll, mefisto2f_dll_dest)
-                
-                
-
+                smesh_dlls = glob.glob(os.path.join(environment.SALOME_SMESH_DLL,'*.dll'))
+                for smesh_dll in smesh_dlls:
+                    smesh_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC',os.path.basename(smesh_dll))
+                    shutil.copy(smesh_dll, smesh_dll_dest)
