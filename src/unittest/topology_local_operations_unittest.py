@@ -3,16 +3,16 @@
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
@@ -57,11 +57,11 @@ class TestTopologyLocalOperations(unittest.TestCase):
         Ex.Init(S,TopAbs_FACE)
         Ex.Next()
         F = TopoDS_face(Ex.Current())
-        surf = BRep_Tool_surface(F)
+        surf = BRep_Tool_Surface(F)
         #
         # Make a plane from this face
         #
-        Pl = Handle_Geom_Plane_downcast(surf)
+        Pl = Handle_Geom_Plane_DownCast(surf)
         Pln = Pl.GetObject()
         # 
         # Get the normal of this plane. This will be the direction of extrusion.
@@ -102,7 +102,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         MKF.Init(surf,False)
         MKF.Add(MW.Wire())
         FP = MKF.Face()
-        BRepLib_buildcurves3d(FP)
+        BRepLib_BuildCurves3d(FP)
         MKP = BRepFeat_MakePrism(S,FP,F,D,0,True)
         MKP.Perform(200.)
         self.assertTrue(MKP.IsDone())
@@ -116,7 +116,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         for i in range(5):
             face = faces.next()
         
-        srf = BRep_Tool_surface(face)
+        srf = BRep_Tool_Surface(face)
         
         c = gp_Circ2d(gp_Ax2d(gp_Pnt2d(200,130),
                               gp_Dir2d(1,0)),
@@ -138,7 +138,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         # bit obscure why this is nessecary...
         # segfaults without...
         new_face = mkf.Face()
-        BRepLib_buildcurves3d(new_face)
+        BRepLib_BuildCurves3d(new_face)
         
         prism = BRepFeat_MakeDPrism(box,
                                     mkf.Face(),
@@ -276,7 +276,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         faces = Topo(S).faces()
         faces.next()
         F1 = faces.next()
-        surf = BRep_Tool_surface(F1)
+        surf = BRep_Tool_Surface(F1)
         
         MW1 = BRepBuilderAPI_MakeWire() 
         p1 = gp_Pnt2d(100.,100.)
@@ -299,7 +299,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         MKF1.Add(MW1.Wire())
         
         FP = MKF1.Face()
-        BRepLib_buildcurves3d(FP)
+        BRepLib_BuildCurves3d(FP)
         
         CurvePoles = TColgp_Array1OfPnt(1,3)
         CurvePoles.SetValue(1, gp_Pnt(150.,0.,150.))
@@ -320,10 +320,10 @@ class TestTopologyLocalOperations(unittest.TestCase):
         S = BRepPrimAPI_MakeBox(400.,250.,300.).Shape()
         faces = list(Topo(S).faces())
         F1 = faces[2]
-        surf = BRep_Tool_surface(F1)
-        Pl = Handle_Geom_Plane_downcast(surf)
+        surf = BRep_Tool_Surface(F1)
+        Pl = Handle_Geom_Plane_DownCast(surf)
         
-        D = gp_ox()
+        D = gp_OX()
         
         MW1 = BRepBuilderAPI_MakeWire() 
         p1 = gp_Pnt2d(100.,100.)
@@ -345,7 +345,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         MKF1.Init(surf,False)
         MKF1.Add(MW1.Wire())
         FP = MKF1.Face()
-        BRepLib_buildcurves3d(FP)
+        BRepLib_BuildCurves3d(FP)
         MKrev = BRepFeat_MakeRevol(S,FP,F1,D,1,True)
         F2 = faces[4]
         MKrev.Perform(F2)
@@ -357,9 +357,9 @@ class TestTopologyLocalOperations(unittest.TestCase):
         S = BRepPrimAPI_MakeBox(400.,250.,300.).Shape()
         faces = Topo(S).faces()
         F = faces.next()
-        surf1 = BRep_Tool_surface(F)
+        surf1 = BRep_Tool_Surface(F)
         
-        Pl1 = Handle_Geom_Plane_downcast(surf1).GetObject()
+        Pl1 = Handle_Geom_Plane_DownCast(surf1).GetObject()
         
         D1 = Pl1.Pln().Axis().Direction().Reversed()
         MW = BRepBuilderAPI_MakeWire()
@@ -383,7 +383,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         MKF.Init(surf1,False)
         MKF.Add(MW.Wire())
         FP = MKF.Face()
-        BRepLib_buildcurves3d(FP)
+        BRepLib_BuildCurves3d(FP)
     #    MKP = BRepFeat_MakePrism(S,FP,F,D1,0,True)
     #    MKP.Perform(-200)
     #    print 'depth 200'
@@ -401,8 +401,8 @@ class TestTopologyLocalOperations(unittest.TestCase):
         # Protrusion
         faces.next()  
         F2 = faces.next()
-        surf2 = BRep_Tool_surface(F2)
-        Pl2 = Handle_Geom_Plane_downcast(surf2).GetObject()
+        surf2 = BRep_Tool_Surface(F2)
+        Pl2 = Handle_Geom_Plane_DownCast(surf2).GetObject()
         D2 = Pl2.Pln().Axis().Direction().Reversed()
         MW2 = BRepBuilderAPI_MakeWire() 
         p1, p2 = gp_Pnt2d(100.,100.), gp_Pnt2d(200.,100.)
@@ -423,10 +423,8 @@ class TestTopologyLocalOperations(unittest.TestCase):
         MKF2.Add(MW2.Wire())
         MKF2.Build()
         
-    #    display.DisplayShape(MW2.Wire())
-        
         FP = MKF2.Face()
-        BRepLib_buildcurves3d(FP)
+        BRepLib_BuildCurves3d(FP)
         MKP2 = BRepFeat_MakePrism(res1,FP,F2,D2,0,True)
         MKP2.PerformThruAll()
         self.assertTrue(MKF2.IsDone())

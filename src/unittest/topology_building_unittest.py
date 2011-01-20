@@ -3,16 +3,16 @@
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.gp import *
@@ -193,7 +193,7 @@ class TestTopologyBuilding(unittest.TestCase):
         Wire1 = BRepBuilderAPI_MakeWire(Edge1,Edge2,Edge3).Wire()
         Wire1.Reverse()
         PinkFace = BRepBuilderAPI_MakeFace(aFace,Wire1).Face()
-        BRepLib_buildcurves3d(PinkFace)
+        BRepLib_BuildCurves3d(PinkFace)
         
     def test_evolved_shape(self):
         print 'Test: evolved shape'    
@@ -215,12 +215,12 @@ class TestTopologyBuilding(unittest.TestCase):
         
         topo = Topo(S)
         for f in topo.faces():
-            surf = Handle_Geom_Plane_downcast(BRep_Tool_surface(f)).GetObject()
+            surf = Handle_Geom_Plane_DownCast(BRep_Tool_Surface(f)).GetObject()
             dirf = surf.Pln().Axis().Direction()
             print 'direction',dirf.Coord()
             ddd = gp_Dir(0,0,1)
-            if dirf.IsNormal(ddd, Precision_angular()):
-                adraft.Add(f, ddd, math.radians(15), gp_Pln(gp_Ax3(gp_xoy())))         
+            if dirf.IsNormal(ddd, Precision_Angular()):
+                adraft.Add(f, ddd, math.radians(15), gp_Pln(gp_Ax3(gp_XOY())))         
         adraft.Build()
         self.assertTrue(adraft.IsDone())
     
@@ -283,7 +283,7 @@ class TestTopologyBuilding(unittest.TestCase):
         c   = gp_Circ(gp_Ax2(gp_Pnt(200.,200.,0.),gp_Dir(0.,0.,1.)), 80.) 
         Ec  = BRepBuilderAPI_MakeEdge(c) 
         Wc  = BRepBuilderAPI_MakeWire(Ec.Edge())
-        F   = BRepBuilderAPI_MakeFace(gp_Pln(gp_Ax3(gp_xoy())),Wc.Wire()) 
+        F   = BRepBuilderAPI_MakeFace(gp_Pln(gp_Ax3(gp_XOY())),Wc.Wire()) 
         S4  = BRepPrimAPI_MakePrism(F.Shape(),gp_Vec(0.,0.,100.))
         self.assertTrue(S4.IsDone())
 

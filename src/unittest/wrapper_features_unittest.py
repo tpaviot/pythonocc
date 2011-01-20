@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 
-##Copyright 2009-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import unittest
@@ -125,13 +125,13 @@ class TestWrapperFeatures(unittest.TestCase):
         '''
         print 'Test : wrapper for C++ static methods'
         from OCC.STEPControl import STEPControl_Writer
-        from OCC.Interface import Interface_Static_setcval, Interface_Static_cval
+        from OCC.Interface import Interface_Static_SetCVal, Interface_Static_CVal
         w = STEPControl_Writer() #needs to be inited otherwise the following does not work
         # Note : static methods are wrapped with lowercase convention
         # so SetCVal can be accessed with setcval
-        r = Interface_Static_setcval("write.step.schema","AP203")
+        r = Interface_Static_SetCVal("write.step.schema","AP203")
         self.assertEqual(r,1)
-        l = Interface_Static_cval("write.step.schema")
+        l = Interface_Static_CVal("write.step.schema")
         self.assertEqual(l,"AP203")
         
     def testFT1(self):
@@ -170,7 +170,7 @@ class TestWrapperFeatures(unittest.TestCase):
         Checks the IntVector and DoubleVector classes that are used in the StdMeshers
         module
         '''
-        from OCC.StdMeshers import IntVector, StdMeshers_FixedPoints1D
+        from OCC.StdMeshers import IntVector
         # The IntVector must be initialized from a list/tuple of integers
         i_v = IntVector([1,2,3,4])
         self.assertEqual(i_v[0],1)
@@ -179,32 +179,27 @@ class TestWrapperFeatures(unittest.TestCase):
         self.assertEqual(i_v[3],4)
         # If at least one item of the list is not an integer, raise an exception
         self.assertRaises(TypeError,IntVector,[1,2,3,4.0])
-        # Test one method of StdMeshers that takes/returns such a parameter type
-        from OCC.SMESH import SMESH_Gen
-        fixed_points = StdMeshers_FixedPoints1D(1,2,SMESH_Gen())
-        fixed_points.SetReversedEdges([1,2,3])
-        self.assertEquals(fixed_points.GetReversedEdges(),(1,2,3))
         
     def testSTLVectorDouble(self):
         '''
         Checks the IntVector and DoubleVector classes that are used in the StdMeshers
         module
         '''
-        from OCC.StdMeshers import DoubleVector, StdMeshers_FixedPoints1D
+        from OCC.StdMeshers import DoubleVector, StdMeshers_NumberOfSegments
         # The IntVector must be initialized from a list/tuple of floats/integers. Integers will
         # be converted to floats
-        d_v = DoubleVector([1.0,2,3.0,4])
-        self.assertEqual(d_v[0],1.0)
-        self.assertEqual(d_v[1],2.0)
-        self.assertEqual(d_v[2],3.0)
-        self.assertEqual(d_v[3],4.0)
+        d_v = DoubleVector([0.1,0.2,0.6,0.7])
+        self.assertEqual(d_v[0],0.1)
+        self.assertEqual(d_v[1],0.2)
+        self.assertEqual(d_v[2],0.6)
+        self.assertEqual(d_v[3],0.7)
         # If at least one item of the list is not an float or an integer, raise an exception
         self.assertRaises(TypeError,DoubleVector,[1.0,2.0,3.0,"string"])
         # Test one method of StdMeshers that takes/returns such a parameter type
         from OCC.SMESH import SMESH_Gen
-        fixed_points = StdMeshers_FixedPoints1D(1,2,SMESH_Gen())
-        fixed_points.SetPoints([1.0,3.0,4.0])
-        self.assertEquals(fixed_points.GetPoints(),(1.0,3.0,4.0))
+        number_of_segments = StdMeshers_NumberOfSegments(1,10,SMESH_Gen())
+        number_of_segments.SetTableFunction(d_v)
+        self.assertEquals(number_of_segments.GetTableFunction(),(0.1,0.2,0.6,0.7))
           
     def testDumpToString(self):
         '''
@@ -273,7 +268,7 @@ class TestWrapperFeatures(unittest.TestCase):
         ''' test that arguments returned by ref transormation is ok
         '''
         from OCC.BRepPrimAPI import BRepPrimAPI_MakeSphere
-        from OCC.BRep import BRep_Tool_surface
+        from OCC.BRep import BRep_Tool_Surface
         from OCC.GeomLProp import GeomLProp_SLProps
         from OCC.gp import gp_Pnt
         sphere_shape = BRepPrimAPI_MakeSphere(40.).Shape()
@@ -283,7 +278,7 @@ class TestWrapperFeatures(unittest.TestCase):
         for f in t.faces():
                 face = f
         
-        surf = BRep_Tool_surface(face)
+        surf = BRep_Tool_Surface(face)
         lprop = GeomLProp_SLProps(0,1e-12)
         lprop.SetSurface(surf)
         
@@ -309,7 +304,8 @@ class TestWrapperFeatures(unittest.TestCase):
 def suite():
    suite = unittest.TestSuite()
    suite.addTest(unittest.makeSuite(TestWrapperFeatures))
-   return suite
+   return suite
+
 if __name__ == "__main__":
     unittest.main()
     
