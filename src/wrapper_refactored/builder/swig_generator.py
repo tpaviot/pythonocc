@@ -20,7 +20,6 @@
 
 from itertools import chain, islice
 from pygccxml.declarations.matchers import access_type_matcher_t, matcher_base_t
-from pygccxml.parser.declarations_cache import cache_base_t, file_cache_t
 from pyplusplus import module_builder
 from templates import ClassTemplate, FunctionTemplate, GUIDTemplate, \
     HashTemplate, TopoShapePickleTemplate, SMDSMeshIterator, XCAFAppTemplate, \
@@ -28,7 +27,7 @@ from templates import ClassTemplate, FunctionTemplate, GUIDTemplate, \
     IStreamTemplate, DependencyTemplate, WrapperTemplate, EnumTemplate, \
     ModuleTemplate, PropertyTemplate
 import configuration
-import difflib
+
 import environment
 import glob
 import os
@@ -51,24 +50,11 @@ from templates import TypeDefTemplate
 
 import pypp_mods
 from pyplusplus.decl_wrappers.class_wrapper import class_t
-from builder.pypp_mods import module_list
+from pypp_mods import module_list
+from builder.pypp_mods import handle_matcher, include_matcher
 
-pygccxml.declarations.scopedef.scopedef_t.ALLOW_EMPTY_MDECL_WRAPPER = True
 
-include_matcher = lambda c: not c.ignore and c.exportable
-object_matcher = lambda c: not c.is_handle
-handle_matcher = lambda c: c.is_handle
-#def module_matcher(module_name):
-#    return lambda decl: decl.prefix == module_name
-#
-#class module_matcher(matcher_base_t):
-#    def __init__(self, name):
-#        self.module_name = name
-#    def __call__(self, decl):
-#        #print decl.name
-#        if re.match("^(Handle_)*%s_"%self.module_name, decl.name):
-#            return True
-#        return decl.name == self.module_name
+
         
 
 def CaseSensitiveGlob(wildcard):
@@ -324,8 +310,8 @@ class ModularBuilder(object):
             print rem.name
             rem.parent.remove_declaration(rem)
         
-        for calldef in mb.calldefs():
-            calldef.args().parent = calldef
+#        for calldef in mb.calldefs():
+#            calldef.args().parent = calldef
         print "Sentry", mb.class_("Sentry")
         #print "Sentry", mb.namespace("Standard").class_("Sentry")
         
@@ -379,7 +365,7 @@ class ModularBuilder(object):
 #        mb.operators('operator->').exclude()
 #        mb.operators('operator<<').exclude()
 #        mb.operators('operator*').exclude()
-        
+        #mb.calldefs("DynamicType").exclude()
         
     
     
@@ -400,7 +386,8 @@ class ModularBuilder(object):
             for cls, excludes in module_conf.get('exclude_members', {}).items():
                 mb.classes(cls).mem_funs(lambda f: f in excludes).exclude()
 
-        
+
+
         
         
         #####################
@@ -480,6 +467,8 @@ class ModularBuilder(object):
         mb.calldefs(return_type="::Standard_CString const").return_type = 'char const *'
         mb.calldefs(return_type="Standard_CString").return_type = 'char *'
     
+        #pyplusplus automatically creates an assign alias, reset that for comparison
+        #mb.calldefs("operator=").rename("operator=")
                                    
     def set_dependencies(self):
         for module in self._mb.namespaces():

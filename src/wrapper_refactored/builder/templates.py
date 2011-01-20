@@ -8,52 +8,18 @@ import string
 
 
 from pygccxml import declarations
-from occ_declarations import class_t
+#from occ_declarations import class_t
 from pygccxml.declarations.cpptypes import free_function_type_t
-from pygccxml.declarations.matchers import matcher_base_t
+
+from pypp_mods import class_t
+from builder.pypp_mods import include_matcher, module_matcher
 
 
-class module_matcher(matcher_base_t):
-    def __init__(self, name):
-        self.module_name = name
-    def __call__(self, decl):
-        
-        
-        if re.match("^(Handle_)*%s_"%self.module_name, decl.name):
-            return True
-        return decl.name == self.module_name
-
-
-
-
-include_matcher = lambda d: not d.ignore and d.exportable
 
 class Template(string.Template):
     idpattern = "[_a-z][_a-z0-9]*[a-z0-9]"
-
-    def sdfsafe_substitute(self, mapping=None):
-        mapping = mapping or {}
-        # Helper function for .sub()
-        def convert(mo):
-            named = mo.group('named')
-            if named is not None:
-                return self.delimiter
-            braced = mo.group('braced')
-            if braced is not None:
-                try:
-                    return '%s' % (eval(braced, mapping),)
-                except KeyError:
-                    return self.delimiter + '{' + braced + '}'
-            if mo.group('escaped') is not None:
-                return self.delimiter
-            if mo.group('invalid') is not None:
-                return self.delimiter
-            raise ValueError('Unrecognized named group in pattern',
-                             self.pattern)
-        return self.pattern.sub(convert, self.template)
     
-    
-    
+      
 class BaseTemplate:
     """
         Testing 

@@ -9,6 +9,18 @@ from pygccxml.declarations.mdecl_wrapper import mdecl_wrapper_t
 from pyplusplus.decl_wrappers.decl_wrapper import decl_wrapper_t
 from pyplusplus.decl_wrappers.class_wrapper import class_t
 from pyplusplus.decl_wrappers.namespace_wrapper import namespace_t
+from pygccxml.declarations.calldef import argument_t
+
+import pygccxml
+import re
+pygccxml.declarations.scopedef.scopedef_t.ALLOW_EMPTY_MDECL_WRAPPER = True
+
+
+
+# Matchers
+include_matcher = lambda c: not c.ignore and c.exportable
+object_matcher = lambda c: not c.is_handle
+handle_matcher = lambda c: c.is_handle
 
 class dummy_m(matcher_base_t):
     def __call__(self, decl):
@@ -31,7 +43,6 @@ class arg_type_m(matcher_base_t):
     def match_function_args(self, arg):
         pass
 
-
 def args(self, *conditions):
     matcher = dummy_m()
     for cond in conditions:
@@ -42,7 +53,13 @@ def args(self, *conditions):
     
     return mdecl_wrapper_t(filter(matcher, self.arguments))
 
-
+class module_matcher(matcher_base_t):
+    def __init__(self, name):
+        self.module_name = name
+    def __call__(self, decl):
+        if re.match("^(Handle_)*%s_"%self.module_name, decl.name):
+            return True
+        return decl.name == self.module_name
 
 #def render(self, indent=0):
 #    if self.main_template is None:
@@ -57,7 +74,7 @@ decl_wrapper_t.main_template = None
 #decl_wrapper_t.templates = []
 #decl_wrapper_t.add_template = lambda self, v: 1
 decl_wrapper_t.render = lambda self, indent=0: self.main_template.render(self, indent)
-
+argument_t.render = lambda self: str(self)
 
 decl_wrapper_t.create_decl_string = lambda self: self.name
 

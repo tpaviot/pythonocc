@@ -1,5 +1,8 @@
 import re
-from server.source.models import *
+
+from wrapper_refactored.builder.swig_generator import include_matcher
+from pyplusplus.decl_wrappers.class_wrapper import class_t
+from pyplusplus.decl_wrappers.calldef_wrapper import calldef_t
 
 def mark_refs(docs, decl):
     start_exp = '([^\w\`\:()]|^)'
@@ -11,12 +14,12 @@ def mark_refs(docs, decl):
     docs = re.sub("%s(%s)::(%s)%s" % (start_exp, class_exp, func_exp, end_exp), 
                   lambda m: "%s:meth:`%s.%s`%s" % (m.group(1), m.group(2),m.group(3), m.group(4)), docs)
 
-    if isinstance(decl, Method):
+    if isinstance(decl.parent, class_t):
         decl = decl.parent
         
     #all_method_names = decl.declarations.filter(real_type=ContentType.objects.get(name='method')).values_list('name')
     
-    all_method_names = decl.declarations.filter(real_type=ContentType.objects.get(name='method')).values_list('name')
+    all_method_names = list(decl.calldefs().alias)
     all_method_names = set(map(lambda e: "(?:%s)"%e[0], all_method_names))
     exp = "%s(%s)%s" % (start_exp, "|".join(all_method_names), end_exp)
 
@@ -119,7 +122,7 @@ def process_docs(decl):
     
     docs = mark_refs(docs, decl)
     
-    if isinstance(decl, Method):
+    if isinstance(decl, calldef_t):
         docs = format_argument_refs(docs, decl)
     paras = split_paragraphs(docs)
     
@@ -140,36 +143,37 @@ def process_docs(decl):
     #docs = format_notes_and_warnings(docs)
     return docs
 
-def document_class(klass):
+def document_class(cls):
     docs = []
     
-    cls = Klass.objects.get(name=klass)
+    #cls = Klass.objects.get(name=klass)
     cdocs = process_docs(cls)
-    head = ":class:`%s` --- %s" % (klass, cdocs.split("\n")[0])
+    head = ":class:`%s` --- %s" % (cls.alias, cdocs.split("\n")[0])
     head = head + "\n" + "="*len(head)
     docs.append(head)
     docs.append(cdocs)
-    docs.append(".. class:: %s\n"%klass)
+    docs.append(".. class:: %s\n"%cls.alias)
     mdocs = []
-    for c in cls.declarations.filter(real_type=ContentType.objects.get(name='method')):
+    for c in filter(include_matcher, cls.public_members):
+    #for c in cls.declarations.filter(real_type=ContentType.objects.get(name='method')):
         if c.documentation == cls.documentation:
             continue
         mdocs.append(document_method(c.cast()))
     mdocs = "   "+"\n\n   ".join(mdocs)
     docs.append(mdocs)
     docs = "\n".join(docs)
-    f = file("./generated-docs/%s.rst" %klass, 'w')
+    f = file("./generated-docs/%s.rst" %cls.alias, 'w')
     f.write(docs)
     f.close()
         
 def document_method(method):
     mdocs = []
-    args = ",".join([arg.name for arg in method.arguments.all()])
-    mdocs.append(".. method:: %s(%s)\n"%(method.name, args))
-    for arg in method.arguments.all():
+    args = ",".join([arg.name for arg in method.arguments()])
+    mdocs.append(".. method:: %s(%s)\n"%(method.alias, args))
+    for arg in method.arguments():
         mdocs.append("   :param %s:" % arg.name)
         mdocs.append("   :type %s: :class:`%s`" % (arg.name, arg.type.name))
-    rtype = method.return_type.name
+    rtype = str(method.return_type)
     if rtype != 'void':
         mdocs.append("   :rtype: :class:`%s`" % rtype)
     

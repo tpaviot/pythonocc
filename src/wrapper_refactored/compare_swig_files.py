@@ -51,7 +51,7 @@ def split_class(cls):
     <swig-features>
     '''
     
-    print cls
+    #print cls
     
     exp = "((?:.|\n)+class .+)({\s*public:)((?:.|\n)+?)(\n};)((?:.|\n)*)"
     dec, junk, pub, morejunk, swig = re.findall(exp, cls)[0]
@@ -84,22 +84,24 @@ def class_name(class_dec):
     return re.findall("%nodefaultctor (\w+);", class_dec)[0]
 
 def filter_difficult_features(feat):
-    def ignore(f):
-        if 'operator=' in f or 'staticvoidRaise' in f:
-            return False
-        return True 
-    return filter(ignore, feat)
+    return  feat
+#    def ignore(f):
+#        if 'operator=' in f or 'staticvoidRaise' in f:
+#            return False
+#        return True 
+#    return filter(ignore, feat)
 
 
 def compare_classes(new, orig):
     classes1 = get_classes(file(new, 'r').read())
     classes2 = get_classes(file(orig, 'r').read())
-    
+    tot_diff1 = 0
+    tot_diff2 = 0
     for (dec1, pub1, swig1), (dec2, pub2, swig2) in zip(classes1, classes2):
         name1, name2 = class_name(dec1),  class_name(dec2)
         print name1, '==', name2
         assert name1 == name2
-        
+        pub2 = pub2.replace("operator=(", "assign(") #my version renames it for some reason
         feats1 = split_features(pub1) + split_features(swig1)
         feats2= split_features(pub2) + split_features(swig2)
         
@@ -115,8 +117,12 @@ def compare_classes(new, orig):
         print "Diffs:", len(diff1), len(diff2)
         if len(diff1) > 0:
             print ">>>>>>>Not found in Original version\n", "\n".join(diff1), "\n<<<<<<<<<"
+            tot_diff1 += len(diff1)
         if len(diff2) > 0:
             print ">>>>>>>Not found in Refactored version\n", "\n".join(diff2), "\n<<<<<<<<<"
+            tot_diff2 += len(diff2)
+            
+    print "Total differences: \n%s not found in refactored version\n%s not found in original" % (tot_diff1, tot_diff2)
         
         
    
