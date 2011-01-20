@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 
-##Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #
@@ -126,12 +126,16 @@ if sys.platform=='win32':
 
     if sys.version_info[0]==2 and sys.version_info[1]==5:
         # Python2.5 on Windows needs msvc71 GEOM and SMESH librariesprint "Python2.5"
-        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'win32','msvc71','lib','release')
-        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'win32','msvc71','lib','release')
+        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'win32','msvc71','lib')
+        SALOME_GEOM_DLL = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'win32','msvc71','bin')
+        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'win32','msvc71','lib')
+        SALOME_SMESH_DLL = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'win32','msvc71','bin')
     elif sys.version_info[0]==2 and sys.version_info[1]==6:
         # Python 2.6 and higher needs msvc8 or higher
-        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'win32','msvc8-9-10','lib','release')
-        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'win32','msvc8-9-10','lib','release')
+        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'win32','msvc8-9-10','lib')
+        SALOME_GEOM_DLL = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'win32','msvc8-9-10','bin')
+        SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'win32','msvc8-9-10','lib')
+        SALOME_SMESH_DLL = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'win32','msvc8-9-10','bin')
     GCC_XML_PATH = os.path.join(os.getcwd(),'..','..','..','pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
