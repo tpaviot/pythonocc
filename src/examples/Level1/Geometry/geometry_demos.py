@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 
-##Copyright 2009-2010 Jelle Ferina (jelleferinga@gmail.com)
+##Copyright 2009-2011 Jelle Ferina (jelleferinga@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 '''
@@ -149,7 +149,7 @@ def make_text(string, pnt, height):
     d_ctx.Display(prs_sphere.GetHandle(), 1)
     aPresentation   = prsMgr.CastPresentation(prs_sphere.GetHandle()).GetObject()
     global myGroup
-    myGroup = Prs3d_Root_currentgroup(aPresentation.Presentation()).GetObject()
+    myGroup = Prs3d_Root_CurrentGroup(aPresentation.Presentation()).GetObject()
 #===============================================================================
 #    FINE
 #===============================================================================
@@ -198,7 +198,7 @@ def point_from_curve( event=None ):
     global myGroup
     display.EraseAll()
     radius, abscissa = 5., 3.                              
-    C = Geom2d_Circle( gp_ox2d(), radius, 1 )
+    C = Geom2d_Circle( gp_OX2d(), radius, 1 )
     GAC = Geom2dAdaptor_Curve( C.GetHandle() )
     UA = GCPnts_UniformAbscissa( GAC, abscissa )
     
@@ -239,7 +239,7 @@ def project_point_on_curve(event=None):
     P = gp_Pnt(1,2,3)
     distance, radius = 5, 5
     
-    C = Geom_Circle(gp_xoy(),radius)
+    C = Geom_Circle(gp_XOY(),radius)
     PPC = GeomAPI_ProjectPointOnCurve(P,C.GetHandle())                     
     N = PPC.NearestPoint()
     NbResults = PPC.NbPoints()
@@ -275,7 +275,7 @@ def point_from_projections(event=None):
     display.EraseAll()
     P = gp_Pnt(7,8,9)                                     
     radius = 5;
-    SP = Geom_SphericalSurface(gp_Ax3(gp_xoy()),radius)
+    SP = Geom_SphericalSurface(gp_Ax3(gp_XOY()),radius)
     
     display.DisplayShape( make_face(SP.GetHandle() ) )
     
@@ -323,12 +323,12 @@ def points_from_intersection(event=None):
     @param display:
     '''
     display.EraseAll()
-    PL = gp_Pln( gp_Ax3( gp_xoy() ) )
+    PL = gp_Pln( gp_Ax3( gp_XOY() ) )
     MinorRadius, MajorRadius = 5, 8    
     
-    EL = gp_Elips( gp_yoz(), MajorRadius, MinorRadius )
-    print Precision_angular()
-    ICQ = IntAna_IntConicQuad( EL, PL, Precision_angular(), Precision_confusion() )
+    EL = gp_Elips( gp_YOZ(), MajorRadius, MinorRadius )
+    print Precision_Angular()
+    ICQ = IntAna_IntConicQuad( EL, PL, Precision_Angular(), Precision_Confusion() )
      
     if ICQ.IsDone():
         NbResults = ICQ.NbPoints()
@@ -523,13 +523,13 @@ def curves2d_from_curves(event=None):
     '''
     display.EraseAll()
     major, minor = 12, 4                                              
-    axis = gp_ox2d()                                             
+    axis = gp_OX2d()                                             
     
     ell = GCE2d_MakeEllipse(axis,major,minor)
     E = ell.Value()
      
     TC = Geom2d_TrimmedCurve(E,-1,2,1)
-    SPL = Geom2dConvert_curvetobsplinecurve(TC.GetHandle(), Convert.Convert_TgtThetaOver2 )
+    SPL = Geom2dConvert_CurveToBSplineCurve(TC.GetHandle(), Convert.Convert_TgtThetaOver2 )
     
     display.DisplayShape(make_edge2d(SPL))
 
@@ -583,11 +583,11 @@ def circles2d_from_curves(event=None):
     QC = GccEnt.GccEnt().Outside(C)
     P4 = gp_Pnt2d(-2,7)
     P5 = gp_Pnt2d(12,-3)                                                         
-    L = GccAna_Lin2d2Tan(P4,P5,Precision_confusion()).ThisSolution(1)
+    L = GccAna_Lin2d2Tan(P4,P5,Precision_Confusion()).ThisSolution(1)
      
     QL = GccEnt.GccEnt().Unqualified(L)
     radius = 2.
-    TR = GccAna_Circ2d2TanRad(QC,QL,radius,Precision_confusion())
+    TR = GccAna_Circ2d2TanRad(QC,QL,radius,Precision_Confusion())
     
     if TR.IsDone():
         NbSol = TR.NbSolutions()
@@ -696,14 +696,14 @@ def surface_from_curves(event=None):
                                         SPL2,
                                         GeomFill_StretchStyle)
     
-    SPL3 = Handle_Geom_BSplineCurve_downcast(SPL1_c.Translated(gp_Vec(10,0,0)))
-    SPL4 = Handle_Geom_BSplineCurve_downcast(SPL2_c.Translated(gp_Vec(10,0,0)))
+    SPL3 = Handle_Geom_BSplineCurve_DownCast(SPL1_c.Translated(gp_Vec(10,0,0)))
+    SPL4 = Handle_Geom_BSplineCurve_DownCast(SPL2_c.Translated(gp_Vec(10,0,0)))
     aGeomFill2 = GeomFill_BSplineCurves(SPL3,
                                         SPL4,
                                         GeomFill_CoonsStyle)
     
-    SPL5 = Handle_Geom_BSplineCurve_downcast(SPL1_c.Translated(gp_Vec(20,0,0)))
-    SPL6 = Handle_Geom_BSplineCurve_downcast(SPL2_c.Translated(gp_Vec(20,0,0)))
+    SPL5 = Handle_Geom_BSplineCurve_DownCast(SPL1_c.Translated(gp_Vec(20,0,0)))
+    SPL6 = Handle_Geom_BSplineCurve_DownCast(SPL2_c.Translated(gp_Vec(20,0,0)))
     aGeomFill3 = GeomFill_BSplineCurves(SPL5,
                                         SPL6,
                                         GeomFill_CurvedStyle)
@@ -753,7 +753,7 @@ def pipes(event=None):
     aPipe.Perform(0,0)
     aSurface= aPipe.Surface()
     
-    E = GC_MakeEllipse( gp_xoy(), 2,1).Value()
+    E = GC_MakeEllipse( gp_XOY(), 2,1).Value()
     aPipe2 = GeomFill_Pipe(SPL1,E, GeomFill_IsConstantNormal)                                   
     aPipe2.Perform(0,0)                                  
     aSurface2= aPipe2.Surface()
@@ -776,7 +776,7 @@ def pipes(event=None):
                   GeomFill_IsGuidePlan, GeomFill_IsGuidePlanWithContact,\
                   ]):
     
-        E = GC_MakeEllipse( gp_xoy(), 2,1).Value()
+        E = GC_MakeEllipse( gp_XOY(), 2,1).Value()
         display.DisplayShape(make_edge(E))
     
         try:
@@ -970,7 +970,7 @@ def surfaces_from_revolution(event=None):
     array.append(gp_Pnt(5,5,5))                                         
     aCurve = GeomAPI_PointsToBSpline(point_list_to_TColgp_Array1OfPnt(array)).Curve()
     
-    SOR =Geom_SurfaceOfRevolution(aCurve, gp_ox())
+    SOR =Geom_SurfaceOfRevolution(aCurve, gp_OX())
     
     display.DisplayShape(make_edge(aCurve))
     display.DisplayShape(make_face(SOR.GetHandle()))

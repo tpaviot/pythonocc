@@ -40,12 +40,12 @@ def extrusion(event=None):
     Ex = TopExp_Explorer()
     Ex.Init(S,TopAbs_FACE)
     Ex.Next()
-    F = TopoDS.TopoDS().Face(Ex.Current())
-    surf = BRep_Tool().Surface(F)
+    F = TopoDS.TopoDS_face(Ex.Current())
+    surf = BRep_Tool_Surface(F)
     #
     # Make a plane from this face
     #
-    Pl = Handle_Geom_Plane().DownCast(surf)
+    Pl = Handle_Geom_Plane_DownCast(surf)
     Pln = Pl.GetObject()
     # 
     # Get the normal of this plane. This will be the direction of extrusion.
@@ -86,7 +86,7 @@ def extrusion(event=None):
     MKF.Init(surf,False)
     MKF.Add(MW.Wire())
     FP = MKF.Face()
-    BRepLib().BuildCurves3d(FP)
+    BRepLib_BuildCurves3d(FP)
     MKP = BRepFeat_MakePrism(S,FP,F,D,0,True)
     MKP.Perform(200.)
     res1 = MKP.Shape()
@@ -101,7 +101,7 @@ def brepfeat_prism(event=None):
     for i in range(5):
         face = faces.next()
     
-    srf = BRep_Tool().Surface(face)
+    srf = BRep_Tool_Surface(face)
     
     c = gp_Circ2d(gp_Ax2d(gp_Pnt2d(200,130),
                           gp_Dir2d(1,0)),
@@ -125,7 +125,7 @@ def brepfeat_prism(event=None):
     # bit obscure why this is nessecary...
     # segfaults without...
     new_face = mkf.Face()
-    BRepLib().BuildCurves3d(new_face)
+    BRepLib_BuildCurves3d(new_face)
     
     display.DisplayShape(new_face)
     
@@ -201,7 +201,7 @@ def split_shape(event=None):
     asplit = BRepFeat_SplitShape(S)    
     
     for edg in Topo(R).edges():
-        face = TopoDS.TopoDS().Face(TopoDS.TopoDS_Shape())
+        face = TopoDS.TopoDS_face(TopoDS.TopoDS_Shape())
         if asect.HasAncestorFaceOn1(edg, face):
             asplit.Add(edg, face)
         
@@ -237,7 +237,7 @@ def glue_solids_edges(event=None):
     for b in range(4):
          ex4.Next()
 
-    F3, F4 = TopoDS.TopoDS().Face(ex3.Current()), TopoDS.TopoDS().Face(ex4.Current())
+    F3, F4 = TopoDS.TopoDS_face(ex3.Current()), TopoDS.TopoDS_face(ex4.Current())
 
     glue2 = BRepFeat_Gluer(S4,S3)
     glue2.Bind(F4,F3)
@@ -291,7 +291,7 @@ def brep_feat_local_pipe(event=None):
     faces = Topo(S).faces()
     faces.next()
     F1 = faces.next()
-    surf = BRep_Tool().Surface(F1)
+    surf = BRep_Tool_Surface(F1)
     
     MW1 = BRepBuilderAPI_MakeWire() 
     p1 = gp_Pnt2d(100.,100.)
@@ -314,7 +314,7 @@ def brep_feat_local_pipe(event=None):
     MKF1.Add(MW1.Wire())
     
     FP = MKF1.Face()
-    BRepLib().BuildCurves3d(FP)
+    BRepLib_BuildCurves3d(FP)
     
     CurvePoles = TColgp_Array1OfPnt(1,3)
     CurvePoles.SetValue(1, gp_Pnt(150.,0.,150.))
@@ -335,10 +335,10 @@ def brep_feat_local_revolution(event=None):
     S = BRepPrimAPI_MakeBox(400.,250.,300.).Shape()
     faces = list(Topo(S).faces())
     F1 = faces[2]
-    surf = BRep_Tool().Surface(F1)
-    Pl = Handle_Geom_Plane().DownCast(surf)
+    surf = BRep_Tool_Surface(F1)
+    Pl = Handle_Geom_Plane_DownCast(surf)
     
-    D = gp.gp().OX()
+    D = gp.gp_OX()
     
     MW1 = BRepBuilderAPI_MakeWire() 
     p1 = gp_Pnt2d(100.,100.)
@@ -360,7 +360,7 @@ def brep_feat_local_revolution(event=None):
     MKF1.Init(surf,False)
     MKF1.Add(MW1.Wire())
     FP = MKF1.Face()
-    BRepLib().BuildCurves3d(FP)
+    BRepLib_BuildCurves3d(FP)
     MKrev = BRepFeat_MakeRevol(S,FP,F1,D,1,True)
     F2 = faces[4]
     MKrev.Perform(F2)
@@ -372,9 +372,9 @@ def brep_feat_extrusion_protrusion(event=None):
     S = BRepPrimAPI_MakeBox(400.,250.,300.).Shape()
     faces = Topo(S).faces()
     F = faces.next()
-    surf1 = BRep_Tool().Surface(F)
+    surf1 = BRep_Tool_Surface(F)
     
-    Pl1 = Handle_Geom_Plane().DownCast(surf1).GetObject()
+    Pl1 = Handle_Geom_Plane_DownCast(surf1).GetObject()
     
     D1 = Pl1.Pln().Axis().Direction().Reversed()
     MW = BRepBuilderAPI_MakeWire()
@@ -398,7 +398,7 @@ def brep_feat_extrusion_protrusion(event=None):
     MKF.Init(surf1,False)
     MKF.Add(MW.Wire())
     FP = MKF.Face()
-    BRepLib().BuildCurves3d(FP)
+    BRepLib_BuildCurves3d(FP)
 #    MKP = BRepFeat_MakePrism(S,FP,F,D1,0,True)
 #    MKP.Perform(-200)
 #    print 'depth 200'
@@ -416,8 +416,8 @@ def brep_feat_extrusion_protrusion(event=None):
     # Protrusion
     faces.next()  
     F2 = faces.next()
-    surf2 = BRep_Tool().Surface(F2)
-    Pl2 = Handle_Geom_Plane().DownCast(surf2).GetObject()
+    surf2 = BRep_Tool_Surface(F2)
+    Pl2 = Handle_Geom_Plane_DownCast(surf2).GetObject()
     D2 = Pl2.Pln().Axis().Direction().Reversed()
     MW2 = BRepBuilderAPI_MakeWire() 
     p1, p2 = gp_Pnt2d(100.,100.), gp_Pnt2d(200.,100.)
@@ -441,7 +441,7 @@ def brep_feat_extrusion_protrusion(event=None):
 #    display.DisplayShape(MW2.Wire())
     
     FP = MKF2.Face()
-    BRepLib().BuildCurves3d(FP)
+    BRepLib_BuildCurves3d(FP)
     MKP2 = BRepFeat_MakePrism(res1,FP,F2,D2,0,True)
     MKP2.PerformThruAll()
     display.EraseAll()

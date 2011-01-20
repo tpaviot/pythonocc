@@ -1,18 +1,18 @@
-##Copyright 2009-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.BRep import *
@@ -42,7 +42,7 @@ def simple_mesh(event=None):
     #
     # Mesh the shape
     #
-    BRepMesh_mesh(shape,0.8)
+    BRepMesh_Mesh(shape,0.8)
     builder = BRep_Builder()
     Comp = TopoDS_Compound()
     builder.MakeCompound(Comp)
@@ -51,7 +51,7 @@ def simple_mesh(event=None):
     while ex.More():
         F = TopoDS_face(ex.Current())
         L = TopLoc_Location()       
-        facing = (BRep_Tool_triangulation(F,L)).GetObject()
+        facing = (BRep_Tool_Triangulation(F,L)).GetObject()
         tab = facing.Nodes()
         tri = facing.Triangles()
         for i in range(1,facing.NbTriangles()+1):

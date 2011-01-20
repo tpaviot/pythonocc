@@ -1,18 +1,18 @@
-##Copyright 2009-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.gp import *
@@ -115,8 +115,8 @@ def fillet(event=None):
     # Add fillet on each edge
     Ex = TopExp_Explorer(Box,TopAbs_EDGE)
     while Ex.More():
-        Edge =TopoDS().Edge(Ex.Current())
-        fillet.Add(20,Edge)
+        edge =TopoDS_edge(Ex.Current())
+        fillet.Add(20,edge)
         Ex.Next()
     
     blendedBox = fillet.Shape()
@@ -130,8 +130,8 @@ def fillet(event=None):
     fill = BRepFilletAPI_MakeFillet(FusedShape)
     ex1 = TopExp_Explorer(FusedShape,TopAbs_EDGE)
     while ex1.More():
-        E =TopoDS().Edge(ex1.Current())
-        fill.Add(E)
+        e =TopoDS_edge(ex1.Current())
+        fill.Add(e)
         ex1.Next()
 
     for i in range(1,fill.NbContours()+1):
@@ -169,7 +169,7 @@ def variable_filleting(event=None):
     ex.Next()
     ex.Next()
     ex.Next()
-    Rake.Add(8,50,TopoDS().Edge(ex.Current()))
+    Rake.Add(8,50,TopoDS_edge(ex.Current()))
     Rake.Build()
     if Rake.IsDone():
         evolvedBox = Rake.Shape()
@@ -183,7 +183,7 @@ def variable_filleting(event=None):
         TabPoint2.SetValue(i,Point2d)
     #    append(Point2d)
     exp2 = TopExp_Explorer(Cylinder,TopAbs_EDGE)
-    fillet.Add(TabPoint2,TopoDS().Edge(exp2.Current()))
+    fillet.Add(TabPoint2,TopoDS_edge(exp2.Current()))
     fillet.Build()
     if fillet.IsDone():
         LawEvolvedCylinder = fillet.Shape()
@@ -211,7 +211,7 @@ def variable_filleting(event=None):
     exp.Next()
     exp.Next()
     exp.Next()
-    afillet.Add(TabPoint, TopoDS().Edge(exp.Current()))
+    afillet.Add(TabPoint, TopoDS_edge(exp.Current()))
     afillet.Build()
     if afillet.IsDone():
         LawEvolvedBox = afillet.Shape()
