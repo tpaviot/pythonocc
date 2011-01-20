@@ -1,16 +1,16 @@
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 # $Revision: 1081 $
 # $Date: 2010-08-19 18:22:39 +0200 (Thu, 19 Aug 2010) $
@@ -157,7 +157,7 @@ class DynamicShape(ode.Body):
         '''
         self._shape = topods_shape
         props = GProp_GProps()
-        BRepGProp_volumeproperties(self._shape,props)
+        BRepGProp_VolumeProperties(self._shape,props)
         # Get inertia properties of the shape
         cog = props.CentreOfMass().XYZ()
         x_cog,y_cog,z_cog = cog.X(),cog.Y(),cog.Z()

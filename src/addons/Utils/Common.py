@@ -4,7 +4,7 @@ from __future__ import with_statement
 # -*- coding: iso-8859-1 -*-
 #! /usr/bin/python
 
-##Copyright 2009-2010 Jelle Feringa
+##Copyright 2009-2011 Jelle Feringa
 ##
 ##jelle.feringa@gmail.com
 ##
@@ -58,7 +58,7 @@ TOLERANCE = 1e-6
 
 def get_boundingbox(shape, tol=1e-12):
     bbox = Bnd_Box()
-    BRepBndLib().addclose(shape, bbox)
+    BRepBndLib_AddClose(shape, bbox)
     bbox.SetGap(tol)
     return bbox
 

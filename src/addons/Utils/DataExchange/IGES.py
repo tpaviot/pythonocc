@@ -1,18 +1,18 @@
-##Copyright 2009-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.IGESControl import *
@@ -32,14 +32,14 @@ class IGESExporter(object):
         else:
             self._brepmode = False
    
-    def AddShape(self, aShape):
+    def add_shape(self, aShape):
         # First check the shape
         if aShape.IsNull():
             raise Assertion("IGESExporter Error: the shape is NULL")
         else: 
             self._shapes.append(aShape)
    
-    def WriteFile(self):
+    def write_file(self):
         IGESControl_Controller().Init()
         iges_writer = IGESControl_Writer("write.iges.unit",self._brepmode)
         for shape in self._shapes:
@@ -56,15 +56,15 @@ class IGESImporter(object):
         self.nbs = 0
         if not os.path.isfile(filename):
             raise AssertionError, "IGESImporter initialization Error: file %s not found." % (filename)
-        self.SetFilename(filename)
+        self.set_filename(filename)
 
-    def SetFilename(self, filename):
+    def set_filename(self, filename):
         if not os.path.isfile(filename):
             raise AssertionError, "IGESImporter initialization Error: file %s not found." % (filename)
         else:
             self._filename = filename
         
-    def ReadFile(self):
+    def read_file(self):
         """
         Read the IGES file and stores the result in a list of TopoDS_Shape
         """
@@ -99,7 +99,7 @@ class IGESImporter(object):
             return False
         return False
 
-    def GetCompound(self):
+    def get_compound(self):
         """ Create and returns a compound from the _shapes list
         """
         # Create a compound
@@ -111,6 +111,6 @@ class IGESImporter(object):
             B.Add(compound,shape)
         return compound
     
-    def GetShapes(self):
+    def get_shapes(self):
         return self._shapes
     

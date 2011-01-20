@@ -325,7 +325,7 @@ class Curve(object):
         we could accept gp_* primitives and convert 'em here...
         @param crv: the object to be converted
         '''
-        from OCC.Convert import *
+        pass
         
         
     
@@ -820,7 +820,7 @@ class Face(object):
         # DAMNED this is a Bezier, not a BSPLINE
         from OCC.TopLoc import TopLoc_Location
         self.location = TopLoc_Location()
-        self.h_srf = BRep_Tool_surface(face, self.location)
+        self.h_srf = BRep_Tool_Surface(face, self.location)
 #        self.h_srf.Transform(self.location.Transformation())
         self.srf = self.h_srf.GetObject()
         
