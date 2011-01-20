@@ -1,20 +1,20 @@
 /*
 
-Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
 pythonOCC is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
+it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 pythonOCC is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU General Public License
+You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 $Revision$
@@ -34,10 +34,8 @@ $HeaderURL$
 #include<StdMeshers_Deflection1D.hxx>
 #include<StdMeshers_Distribution.hxx>
 #include<StdMeshers_FaceSide.hxx>
-#include<StdMeshers_FixedPoints1D.hxx>
 #include<StdMeshers_Hexa_3D.hxx>
 #include<StdMeshers_LayerDistribution.hxx>
-#include<StdMeshers_LayerDistribution2D.hxx>
 #include<StdMeshers_LengthFromEdges.hxx>
 #include<StdMeshers_LocalLength.hxx>
 #include<StdMeshers_MEFISTO_2D.hxx>
@@ -46,7 +44,6 @@ $HeaderURL$
 #include<StdMeshers_MaxLength.hxx>
 #include<StdMeshers_NotConformAllowed.hxx>
 #include<StdMeshers_NumberOfLayers.hxx>
-#include<StdMeshers_NumberOfLayers2D.hxx>
 #include<StdMeshers_NumberOfSegments.hxx>
 #include<StdMeshers_Penta_3D.hxx>
 #include<StdMeshers_Prism_3D.hxx>
@@ -59,12 +56,10 @@ $HeaderURL$
 #include<StdMeshers_Projection_3D.hxx>
 #include<StdMeshers_Propagation.hxx>
 #include<StdMeshers_QuadToTriaAdaptor.hxx>
-#include<StdMeshers_QuadrangleParams.hxx>
 #include<StdMeshers_QuadranglePreference.hxx>
 #include<StdMeshers_Quadrangle_2D.hxx>
 #include<StdMeshers_QuadraticMesh.hxx>
 #include<StdMeshers_RadialPrism_3D.hxx>
-#include<StdMeshers_RadialQuadrangle_1D2D.hxx>
 #include<StdMeshers_Regular_1D.hxx>
 #include<StdMeshers_SegmentAroundVertex_0D.hxx>
 #include<StdMeshers_SegmentLengthAroundVertex.hxx>
@@ -83,7 +78,6 @@ $HeaderURL$
 #include<SMDS_Iterator.hxx>
 #include<SMDS_IteratorOfElements.hxx>
 #include<SMDS_Mesh.hxx>
-#include<SMDS_Mesh0DElement.hxx>
 #include<SMDS_MeshEdge.hxx>
 #include<SMDS_MeshElement.hxx>
 #include<SMDS_MeshElementIDFactory.hxx>
@@ -112,10 +106,10 @@ $HeaderURL$
 
 #include<SMESH_Gen.hxx>
 #include<SMESH_Mesh.hxx>
-#include<SMESH_Hypothesis.hxx>
 #include<SMDS_MeshElement.hxx>
 #include<SMESH_subMesh.hxx>
 #include<SMESH_MesherHelper.hxx>
 #include<SMDS_MeshNode.hxx>
 #include<SMESHDS_Mesh.hxx>
+#include<SMESH_Hypothesis.hxx>
 %}

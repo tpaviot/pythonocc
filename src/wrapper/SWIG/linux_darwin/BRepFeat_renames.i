@@ -1,20 +1,20 @@
 /*
 
-Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
 pythonOCC is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
+it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 pythonOCC is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU General Public License
+You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 $Revision$
@@ -23,13 +23,3 @@ $Author$
 $HeaderURL$
 
 */
-%rename(sampleedges) BRepFeat::SampleEdges;
-%rename(barycenter) BRepFeat::Barycenter;
-%rename(parametricbarycenter) BRepFeat::ParametricBarycenter;
-%rename(parametricminmax) BRepFeat::ParametricMinMax;
-%rename(isinside) BRepFeat::IsInside;
-%rename(faceuntil) BRepFeat::FaceUntil;
-%rename(tool) BRepFeat::Tool;
-%rename(print) BRepFeat::Print;
-%rename(intpar) BRepFeat_RibSlot::IntPar;
-%rename(choiceoffaces) BRepFeat_RibSlot::ChoiceOfFaces;
