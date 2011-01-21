@@ -374,22 +374,7 @@ class TestGeometry(unittest.TestCase):
                 # find the first tangent point                                    
                 pnt4 = gp_Pnt2d()                         
                 parsol,pararg = TR.Tangency2(k, pnt4)
-   
-    def test_curves3d_from_interpolation(self):
-        print 'Test: curves 3d from points'
-        P1 = gp_Pnt(0,0,1)
-        P2 = gp_Pnt(1,2,2)
-        P3 = gp_Pnt(2,3,3)
          
-        array = [P1,P2,P3]
-        aaa = _Tcol_dim_1(array, TColgp_HArray1OfPnt)
-
-        anInterpolation = GeomAPI_Interpolate(aaa.GetHandle(), False, Precision_Approximation())
-        anInterpolation.Perform()
-        self.assertTrue(anInterpolation.IsDone())
-        curve = anInterpolation.Curve()
-
-            
     def test_surface_from_curves(self):
         print 'Test: surfaces from curves'
         array = []
