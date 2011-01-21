@@ -1,0 +1,11 @@
+MKDIR ..\..\win32\bin\
+MKDIR ..\..\win32\bind\
+COPY MEFISTO2F.DLL ..\..\win32\bin\MEFISTO2F.DLL
+MOVE MEFISTO2F.DLL ..\..\win32\bind\MEFISTO2F.DLL
+DEL areteideale.obj
+DEL MEFISTO2F.lib
+DEL MEFISTO2F.lk1
+DEL MEFISTO2F.map
+DEL MEFISTO2F.mk
+DEL MEFISTO2F.mk1
+DEL trte.obj

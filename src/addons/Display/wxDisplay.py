@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 
-##Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
@@ -27,8 +27,6 @@ if sys.platform=='darwin':
 else:
     import wx.glcanvas
     BaseClass = wx.glcanvas.GLCanvas
-   
-BaseClass = wx.Panel
 
 class wxBaseViewer(BaseClass):
     def __init__(self, parent = None):
@@ -226,12 +224,10 @@ class wxViewer3d(wxBaseViewer):
         pt = evt.GetPosition()
         if self._select_area:
             [Xmin, Ymin, dx, dy] = self._drawbox
-            selected_shapes = self._display.Select(Xmin,Ymin,Xmin+dx,Ymin+dy)
+            selected_shapes = self._display.SelectArea(Xmin,Ymin,Xmin+dx,Ymin+dy)
             self._select_area = False 
         else:
-            if self._display.Select(pt.x,pt.y):
-                selected_shape = self._display.GetSelectedShape()
-                print selected_shape,selected_shape.ShapeType()
+            self._display.Select(pt.x,pt.y)
         
     def OnRightUp(self,evt):
         if self._zoom_area:

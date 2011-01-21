@@ -1,21 +1,21 @@
 # -*- coding: iso-8859-1 -*-
 #! /usr/bin/python
 
-##Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 ##
 ## $Revision$
@@ -56,21 +56,21 @@ def CaseSensitiveGlob(wildcard):
 def WriteLicenseHeader(fp):
     header = """/*
 
-Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
 pythonOCC is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
+it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 pythonOCC is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU General Public License
+You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 $Revision$
@@ -333,7 +333,9 @@ class ModularBuilder(object):
         for static_method in self.STATIC_METHODS:
             class_name = static_method[0]
             method_name = static_method[1]
-            if method_name not in ['TypeName','Static','Template']: # lowercase typename will raise issues
+            #protect_methods = ['TypeName','Static','Template','DownCast']
+            if class_name == 'TopoDS':
+            #if method_name not in ['TypeName','Static','Template','DownCast']: # lowercase typename will raise issues
                 new_method_name = method_name.lower()
                 renamed_file_fp.write("%%rename(%s) %s::%s;\n"%(new_method_name,class_name,method_name))
         renamed_file_fp.close()
@@ -474,6 +476,10 @@ class ModularBuilder(object):
                     to_write += 'Standard_Integer &OutValue'
                     return_list.append(['Standard_Integer',argument_name])
                     FUNCTION_MODIFIED = True
+                elif argument_type == 'int &': #appears in SMESH_Mesh grouping feature
+                    to_write += 'Standard_Integer &OutValue'
+                elif argument_type == 'double &': #appears in SMESH_Mesh grouping feature
+                    to_write += 'Standard_Real &OutValue'
                 elif 'FairCurve_AnalysisCode &' in argument_type:
                     to_write += 'FairCurve_AnalysisCode &OutValue'
                     return_list.append(['FairCurve_AnalysisCode',argument_name])

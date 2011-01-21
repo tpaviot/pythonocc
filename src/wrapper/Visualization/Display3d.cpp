@@ -1,10 +1,10 @@
 /*
-##Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
@@ -13,7 +13,7 @@
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ##GNU General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 
@@ -29,7 +29,8 @@ Display3d::~Display3d()
 
 void Display3d::Init(int window_handle)
 {
-    printf("Display3d class initialization starting ...\n");
+    printf(" ###### 3D rendering pipe initialisation #####\n");
+	printf("Display3d class initialization starting ...\n");
 	short hi = static_cast<short>(window_handle >> 16);
 	short lo = static_cast<short>(window_handle);
 	// Create Graphic Device and Window
@@ -56,6 +57,7 @@ void Display3d::Init(int window_handle)
 	myAISContext = new AIS_InteractiveContext(myV3dViewer);
 	printf("Interactive context created.\n");
     printf("Display3d class successfully initialized.\n");
+	printf(" ########################################\n");
 }
 
 void Display3d::Test()

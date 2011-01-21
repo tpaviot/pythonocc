@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 
-##Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys, os
@@ -34,8 +34,8 @@ class ViewerFrame(wx.MDIChildFrame):
         if extension =="step" or extension == "stp":
             from OCC.Utils.DataExchange.STEP import STEPImporter
             stepReader = STEPImporter(str(filename))
-            stepReader.ReadFile()
-            shape = stepReader.GetShapes()
+            stepReader.read_file()
+            shape = stepReader.get_shapes()
         elif extension == "stl":
             from OCC import TopoDS, StlAPI
             shape = TopoDS.TopoDS_Shape()
@@ -101,7 +101,7 @@ class AppFrame(wx.MDIParentFrame):
         info = wx.AboutDialogInfo()    
         info.Name = "CAD Viewer"
         info.Version = VERSION
-        info.Copyright = "(C) 2008-2009 Thomas Paviot"
+        info.Copyright = "(C) 2008-2011 Thomas Paviot"
         info.Description = """CAD Viewer is part of pythonOCC, an free set of Python bindings to OpenCascade library.
         This sample can open and display STEP, STL and IGES CAD files."""
         info.WebSite = ("http://www.pythonocc.org", "pythonOCC home page")
@@ -109,16 +109,16 @@ class AppFrame(wx.MDIParentFrame):
         info.License = """This file is part of pythonOCC.
 
 pythonOCC is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
+it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 pythonOCC is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU General Public License
+You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>."""
         wx.AboutBox(info)
         

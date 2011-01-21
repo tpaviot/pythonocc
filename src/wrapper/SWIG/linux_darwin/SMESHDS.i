@@ -1,20 +1,20 @@
 /*
 
-Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
 pythonOCC is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
+it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 pythonOCC is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU General Public License
+You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 $Revision$
@@ -76,7 +76,6 @@ enum SMESHDS_CommandType {
 	SMESHDS_AddQuadPyramid,
 	SMESHDS_AddQuadPentahedron,
 	SMESHDS_AddQuadHexahedron,
-	SMESHDS_Add0DElement,
 	};
 
 
@@ -248,8 +247,6 @@ class SMESHDS_Command {
 		%feature("autodoc", "1");
 		void AddNode(int , double , double , double );
 		%feature("autodoc", "1");
-		void Add0DElement(int , int );
-		%feature("autodoc", "1");
 		void AddEdge(int , int , int );
 		%feature("autodoc", "1");
 		void AddFace(int , int , int , int );
@@ -368,8 +365,6 @@ class SMESHDS_Script {
 		%feature("autodoc", "1");
 		void AddNode(int , double , double , double );
 		%feature("autodoc", "1");
-		void Add0DElement(int , int );
-		%feature("autodoc", "1");
 		void AddEdge(int , int , int );
 		%feature("autodoc", "1");
 		void AddFace(int , int , int , int );
@@ -450,12 +445,6 @@ class SMESHDS_Mesh : public SMDS_Mesh {
 		virtual		SMDS_MeshNode * AddNodeWithID(double , double , double , int );
 		%feature("autodoc", "1");
 		virtual		SMDS_MeshNode * AddNode(double , double , double );
-		%feature("autodoc", "1");
-		virtual		SMDS_Mesh0DElement * Add0DElementWithID(int , int );
-		%feature("autodoc", "1");
-		virtual		SMDS_Mesh0DElement * Add0DElementWithID(const SMDS_MeshNode *node, int );
-		%feature("autodoc", "1");
-		virtual		SMDS_Mesh0DElement * Add0DElement(const SMDS_MeshNode *node);
 		%feature("autodoc", "1");
 		virtual		SMDS_MeshEdge * AddEdgeWithID(int , int , int );
 		%feature("autodoc", "1");

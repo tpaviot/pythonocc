@@ -5,16 +5,16 @@
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.BRepPrimAPI import *
@@ -38,25 +38,25 @@ def rotating_box(event=None):
     dyn_context.set_display(display, safe_yield)
     # Create s shape and add it to the dynamic context
     s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
-    d = dyn_context.add_shape(s1)
+    d = dyn_context.register_shape(s1)
     #d.enable_view_cog()
     d.setAngularVel([-1,0,0])
     dyn_context.register_post_step_callback(safe_yield)
     dyn_context.start_open_loop()
+    dyn_context.clear()
 
-
-def display_cog_trajectory(event=None):
-    ''' Falling rotating box with display of COG
-    '''
-    display.EraseAll()
-    dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display, safe_yield)
-    dyn_context.enable_gravity()
-    s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
-    d = dyn_context.add_shape(s1)
-    d.enable_view_cog()
-    d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
-    dyn_context.start_open_loop()
+#def display_cog_trajectory(event=None):
+#    ''' Falling rotating box with display of COG
+#    '''
+#    display.EraseAll()
+#    dyn_context = DynamicSimulationContext()
+#    dyn_context.set_display(display, safe_yield)
+#    dyn_context.enable_gravity()
+#    s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
+#    d = dyn_context.register_shape(s1)
+#    d.enable_view_cog()
+#    d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
+#    dyn_context.start_open_loop()
         
 def box_plane_collision(event=None):
     display.EraseAll()
@@ -66,7 +66,7 @@ def box_plane_collision(event=None):
     dyn_context.enable_gravity()
     # The box
     s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
-    d = dyn_context.add_shape(s1,enable_collision_detection=True,use_boundingbox=True)
+    d = dyn_context.register_shape(s1,enable_collision_detection=True,use_boundingbox=True)
     d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
     # The plane (note: this plane is not a dynamic shape, it's just displayed)
     P1 = gp_Pnt(0,0,-100)
@@ -88,16 +88,16 @@ def two_boxes_sphere_plane_collision(event=None):
     dyn_context.enable_gravity()
     # The first box
     s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
-    d = dyn_context.add_shape(s1,enable_collision_detection=True,use_boundingbox=True)
+    d = dyn_context.register_shape(s1,enable_collision_detection=True,use_boundingbox=True)
     d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
     # The second box
     box2 = BRepPrimAPI_MakeBox(10,20,30).Shape()
     box2 = translate_topods_from_vector(box2, gp_Vec(5, 5, 100))
-    d2 = dyn_context.add_shape(box2,enable_collision_detection=True,use_boundingbox=True)
+    d2 = dyn_context.register_shape(box2,enable_collision_detection=True,use_boundingbox=True)
     # The sphere
     sphere = BRepPrimAPI_MakeSphere(10).Shape()
     sphere = translate_topods_from_vector(sphere, gp_Vec(0,0,250))
-    d3 = dyn_context.add_shape(sphere,enable_collision_detection=True,use_sphere=True)
+    d3 = dyn_context.register_shape(sphere,enable_collision_detection=True,use_sphere=True)
     # Draw a plane (note: this plane is not a dynamic shape, it's just displayed)
     face = make_plane( gp_Pnt(0,0,-100), gp_Vec(0,0,1), -100., 100., -100., 100.)
     display.DisplayColoredShape(face,'RED')
@@ -130,7 +130,7 @@ def dominos(event=None):
     # move the table down
     #table_shape = translate_topods_from_vector(table_shape, gp_Vec(-l_table/2, -l_table/2, -h_table))
     table_shape = translate_topods_from_vector(table_shape, gp_Vec(-l_table/2, -l_table/2, -h_table))
-    dynamic_table = dyn_context.add_shape(table_shape,enable_collision_detection=True,use_boundingbox=True)
+    dynamic_table = dyn_context.register_shape(table_shape,enable_collision_detection=True,use_boundingbox=True)
     dynamic_table.set_fixed()
     # Create a 'ground'
     P1 = gp_Pnt(0,0,-h_table)
@@ -148,11 +148,11 @@ def dominos(event=None):
     domino_shape = BRepPrimAPI_MakeBox(5,20,40).Shape()
     v = gp_Vec(19, 0, 0)
     domino_shape = translate_topods_from_vector(domino_shape, v)
-    dynamic_domino = dyn_context.add_shape(domino_shape,enable_collision_detection=True,use_boundingbox=True)
+    dynamic_domino = dyn_context.register_shape(domino_shape,enable_collision_detection=True,use_boundingbox=True)
     # create a list of domino_boxes
     for _ in range(3):
         transformed_shape = translate_topods_from_vector(domino_shape, v, copy=True)
-        dynamic_transformed = dyn_context.add_shape(transformed_shape,enable_collision_detection=True,use_boundingbox=True)
+        dynamic_transformed = dyn_context.register_shape(transformed_shape,enable_collision_detection=True,use_boundingbox=True)
     # The last domino is rotating around the y-axis (he's falling)
     dynamic_transformed.setAngularVel([0,0,0])
     # Finlly, start simulation loop
@@ -162,7 +162,7 @@ def dominos(event=None):
 def collisions(event=None):
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display, safe_yield)
+    #dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     # The plane (note: this plane is not a dynamic shape, it's just displayed)
@@ -194,7 +194,7 @@ def collisions(event=None):
         _x,_y,_z = 5+rndX, 10+rndY, 20
         new_box = BRepPrimAPI_MakeBox(_x,_y,_z).Shape()
         new_box_translated = translate_topods_from_vector(new_box, gp_Vec(0,0,i*40), False)
-        d = dyn_context.add_shape(new_box_translated,enable_collision_detection=True,use_boundingbox=True)
+        d = dyn_context.register_shape(new_box_translated,enable_collision_detection=True,use_boundingbox=True)
         geom_box = ode.GeomBox(dyn_context._space, lengths=(_x,_y,_z))
         geom_box.setBody(d)
         references.append(geom_box)
@@ -212,7 +212,6 @@ if __name__=='__main__':
     add_menu('rigid body simulation sample')
     add_function_to_menu('rigid body simulation sample', rotating_box)
     add_function_to_menu('rigid body simulation sample', box_plane_collision)
-    add_function_to_menu('rigid body simulation sample', display_cog_trajectory)
     add_function_to_menu('rigid body simulation sample', two_boxes_sphere_plane_collision)
     add_function_to_menu('rigid body simulation sample', dominos)
     add_function_to_menu('rigid body simulation sample', collisions)

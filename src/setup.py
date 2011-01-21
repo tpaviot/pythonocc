@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-##Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 ##
 ## $Revision$
@@ -53,7 +53,7 @@ except:
 
 #Check whether the -j nprocs is passed
 if ('-help' in sys.argv) or ('-h' in sys.argv):
-    help_str="""pythonOCC setup - (c) Thomas Paviot, 2008-2010.
+    help_str="""pythonOCC setup - (c) Thomas Paviot, 2008-2011.
 Usage: python setup.py build install[options]
 With [options]:
     --disable-GEOM: disable wrapper for the GEOM library
@@ -91,11 +91,13 @@ libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'PTKernel
 #
 # GEOM libraries
 #
-GEOM_LIBS = ['GEOM']
+GEOM_LIBS = ['Sketcher','ShHealOper','Partition','NMTTools','NMTDS',\
+             'GEOM','GEOMImpl','GEOMAlgo','Archimede']
 #
 # SMESH libraries
 #                     ]
-SMESH_LIBS = ['SMESH']
+SMESH_LIBS = ['Driver','DriverDAT','DriverSTL','DriverUNV','SMDS','SMESH',\
+              'SMESHDS','StdMeshers']
 
 LIBS = libraries
 
@@ -273,36 +275,6 @@ def check_file(file,message):
         print 'not found'
         return False
 
-def build_smesh_library():
-    ''' Launch compilation of SMESH from a python pipe
-    '''
-    print 'This will build the SMESH project and install shared library to /usr/local/lib'
-    confirm_build = raw_input('Do you want to continue (y/n)?')
-    if confirm_build not in ['Y','yes','Yes']:
-        return False
-    else:
-        os.system('sh ./wrapper/build_smesh.sh')
-        # Check that the library was installed
-        if check_salomesmesh_lib('SMESH'):
-            return True
-        else:
-            return False
-
-def build_geom_library():
-    ''' Launch compilation of GEOM from a python pipe
-    '''
-    print 'This will build the GEOM project and install shared library to /usr/local/lib'
-    confirm_build = raw_input('Do you want to continue (y/n)?')
-    if confirm_build not in ['Y','yes','Yes']:
-        return False
-    else:
-        os.system('sh ./wrapper/build_geom.sh')
-        # Check that the library was installed
-        if check_salomesmesh_lib('GEOM'):
-            return True
-        else:
-            return False
-
 def check_config():
     ''' Checks all required dependencies
     '''
@@ -333,11 +305,10 @@ def check_config():
             sys.exit(0)
         l = check_salomegeom_lib('GEOM')
         if not l:
-            print 'GEOM library not found on your system'
-            success = build_geom_library()
-            if not success:
-                print 'Failed to build the GEOM library. pythonOCC will be built without the GEOM support'
-                WRAP_SALOME_GEOM = False
+            print 'GEOM library not found on your system. First build/install this library (see INSTALL file)'
+            print 'or pass the option --disable-geom to the installer'
+            sys.exit(0)
+            
     # SMESH
     if WRAP_SALOME_SMESH:
         smesh_mesh_header = os.path.join(environment.SALOME_SMESH_INC,'SMESH_Mesh.hxx')
@@ -353,12 +324,9 @@ def check_config():
             sys.exit(0)
         smesh_lib_found = check_salomesmesh_lib('SMESH')
         if not smesh_lib_found:
-            print 'SMESH library not found on your system.'
-            # suggest building SMESH
-            success = build_smesh_library()
-            if not success:
-                print 'Failed to build the SMESH library. pythonOCC will be built without the SMESH support'
-                WRAP_SALOME_SMESH = False
+            print 'SMESH library not found on your system. First build/install this library (see INSTALL file)'
+            print 'or pass the option --disable-smesh to the installer'
+            sys.exit(0)
 
 parse_opt()
 check_config()
@@ -536,7 +504,7 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
 
     setup(cmdclass={'build_ext': build_ext},
           name = package_name,
-          license = "GNU General Public License v3",
+          license = "GNU Lesser General Public License v3",
           url = "http://www.pythonocc.org",
           author = "Thomas Paviot, Jelle Feringa",
           author_email = "tpaviot@gmail.com, jelleferinga@gmail.com",
@@ -549,9 +517,6 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
           package_dir = {'OCC.Display':os.path.join(os.getcwd(),'addons','Display'),
                          'OCC.Utils':os.path.join(os.getcwd(),'addons','Utils'),
                          'OCC.Utils.DataExchange':os.path.join(os.getcwd(),'addons','Utils','DataExchange'),
-                         'OCC.Toolkits':os.path.join(os.getcwd(),'wrapper','Toolkits'),
-                         'OCC.Toolkits.FoundationClasses':os.path.join(os.getcwd(),'wrapper','Toolkits','FoundationClasses'),
-                         'OCC.Toolkits.ModelingData':os.path.join(os.getcwd(),'wrapper','Toolkits','ModelingData'),
                          'OCC.MSH':os.path.join(os.getcwd(),'addons','MSH'),
                          'OCC.PAF':os.path.join(os.getcwd(),'addons','PAF'),
                          'OCC.KBE':os.path.join(os.getcwd(),'addons','KBE'),
@@ -561,11 +526,9 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
                       'OCC.Utils.DataExchange',
                       'OCC.MSH',\
                       'OCC.PAF',
-                      'OCC.Toolkits',\
                       'OCC.KBE',
                       'OCC.DYN',\
-                      'OCC.Toolkits.FoundationClasses',\
-                      'OCC.Toolkits.ModelingData'],
+                      ],
           **KARGS
           )
     #
@@ -590,20 +553,15 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
         if not os.path.isfile(bg_image_dest):
             shutil.copy(image_file, bg_image_dest)
         
-        # Under Windows, copy GEOM.dll and SMESH.dll to site-packages/OCC
+        # Under Windows, copy GEOM and SMESH dlls to site-packages/OCC
         if sys.platform=='win32':
             if WRAP_SALOME_GEOM:
-                geom_dll = os.path.join(environment.SALOME_GEOM_LIB,'GEOM.dll')
-                geom_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC','GEOM.dll')
-                shutil.copy(geom_dll, geom_dll_dest)
+                geom_dlls = glob.glob(os.path.join(environment.SALOME_GEOM_DLL,'*.dll'))
+                for geom_dll in geom_dlls:
+                    geom_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC',os.path.basename(geom_dll))
+                    shutil.copy(geom_dll, geom_dll_dest)
             if WRAP_SALOME_SMESH:
-                smesh_dll = os.path.join(environment.SALOME_SMESH_LIB,'SMESH.dll')
-                smesh_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC','SMESH.dll')
-                shutil.copy(smesh_dll, smesh_dll_dest)
-                # Windows also need the MEFISTO2F.dll file that comes from the WATCOM Fortran compiler
-                mefisto2f_dll = os.path.join(environment.SALOME_SMESH_LIB,'MEFISTO2F.dll')
-                mefisto2f_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC','MEFISTO2F.dll')
-                shutil.copy(mefisto2f_dll, mefisto2f_dll_dest)
-                
-                
-
+                smesh_dlls = glob.glob(os.path.join(environment.SALOME_SMESH_DLL,'*.dll'))
+                for smesh_dll in smesh_dlls:
+                    smesh_dll_dest = os.path.join(os.getcwd(),build_lib,'OCC',os.path.basename(smesh_dll))
+                    shutil.copy(smesh_dll, smesh_dll_dest)

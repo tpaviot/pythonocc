@@ -1,17 +1,17 @@
-##Copyright 2009-2010 Thomas Paviot & Jelle Feringa (tpaviot@gmail.com / jelleferinga@gmail.com)
+##Copyright 2009-2011 Thomas Paviot & Jelle Feringa (tpaviot@gmail.com / jelleferinga@gmail.com)
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from __future__ import with_statement
@@ -251,7 +251,7 @@ class ParametricModelingContext(object):
             raise NameError, 'The instance must be of type Viewer3d'
         self.display = Viewer3d_instance
         # init the viewer
-        self.viewer = TPrsStd_AISViewer_new(self.root, self.display.Context_handle).GetObject()
+        self.viewer = TPrsStd_AISViewer_New(self.root, self.display.Context_handle).GetObject()
         self.DISPLAY_INITED = True
         print '[PAF] Display properly initialized'
         # If geom were already created before the display is initialized, create presentations
@@ -380,7 +380,7 @@ class ParametricModelingContext(object):
         ''' Create a presentation and add it to the presentation list
         '''
         result_label = obj.GetLastFunction().GetObject().GetEntry().FindChild(2)
-        prs = TPrsStd_AISPresentation_set(result_label, TNaming_NamedShape_getid()).GetObject()
+        prs = TPrsStd_AISPresentation_Set(result_label, TNaming_NamedShape_GetID()).GetObject()
         prs.SetColor(color)
         prs.Display(True)
         self.pres[obj]=prs
@@ -393,7 +393,7 @@ class ParametricModelingContext(object):
         result_label = geom_obj.GetLastFunction().GetObject().GetEntry().FindChild(2)        
         # TPrsStd_AISPresentation().Set can create or retrieve the AIS_Presentation        
         # so, this is not re-creating the TPrsStd_AISPresentation presentation        
-        prs = TPrsStd_AISPresentation_set(result_label, TNaming_NamedShape_getid()).GetObject()        
+        prs = TPrsStd_AISPresentation_Set(result_label, TNaming_NamedShape_GetID()).GetObject()        
         return prs
     
     def update_display(self):
@@ -402,7 +402,7 @@ class ParametricModelingContext(object):
         if self.DISPLAY_INITED:
             for prs in self.pres.itervalues():
                 prs.Update()
-                self.viewer.update()
+                self.viewer.Update()
             self.display.FitAll()
 
 if __name__=='__main__':

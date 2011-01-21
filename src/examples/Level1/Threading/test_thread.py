@@ -1,18 +1,18 @@
-##Copyright 2009-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 from OCC.BRepPrimAPI import *
 
@@ -22,10 +22,7 @@ from OCC.gp import *
 from OCC.BRepBuilderAPI import *
 import time, random, sys
 
-from OCC.Display.wxSamplesGui import display
-
-def threading_test(event=None):
-    display.EraseAll()
+def threading_test():
     QUEUE_POINTS = Queue.Queue(1000)
     QUEUE_VERTICES = Queue.Queue(1000)
     
@@ -42,7 +39,6 @@ def threading_test(event=None):
             P = QUEUE_POINTS.get_nowait()
             # Build vertex from point
             V = BRepBuilderAPI_MakeVertex(P)
-            display.DisplayShape(V.Shape())
             QUEUE_VERTICES.put(V)
             print "Create vertex from point"
             
@@ -64,13 +60,12 @@ def threading_test(event=None):
             vertices.append(vertex)
     print vertices, len(vertices)
 
-def threaded_boxes(event=None):
-    display.EraseAll()
+def threaded_boxes():
     def CreateBox():
         time.sleep(random.random()*10)
         b = BRepPrimAPI_MakeBox(random.random()*50.,random.random()*50.,random.random()*50.).Shape()
-        display.DisplayShape(b)
-    for i in range(500):
+        print 'Created ',b
+    for i in range(100):
         thread = threading.Thread(None, CreateBox, None,())
         thread.start()
 
@@ -78,10 +73,6 @@ def exit(event=None):
     sys.exit()
 
 if __name__ == '__main__':
-    from OCC.Display.wxSamplesGui import add_function_to_menu, add_menu, start_display
-    add_menu('threading')
-    add_function_to_menu('threading', threading_test)
-    add_function_to_menu('threading', threaded_boxes)
-    add_function_to_menu('threading', exit)
-    start_display()
+    threading_test()
+    threaded_boxes()
     

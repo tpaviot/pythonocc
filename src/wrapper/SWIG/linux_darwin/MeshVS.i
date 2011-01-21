@@ -1,20 +1,20 @@
 /*
 
-Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
 pythonOCC is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
+it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 pythonOCC is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU General Public License
+You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 $Revision$
@@ -3141,61 +3141,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor MeshVS_MeshEntityOwner;
-class MeshVS_MeshEntityOwner : public SelectMgr_EntityOwner {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_MeshEntityOwner(const SelectMgr_SOPtr &SelObj, const Standard_Integer ID, const Standard_Address MeshEntity, const MeshVS_EntityType &Type, const Standard_Integer Priority=0, const Standard_Boolean IsGroup=0);
-		%feature("autodoc", "1");
-		Standard_Address Owner() const;
-		%feature("autodoc", "1");
-		MeshVS_EntityType Type() const;
-		%feature("autodoc", "1");
-		Standard_Integer ID() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsGroup() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsHilighted(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0) const;
-		%feature("autodoc", "1");
-		virtual		void Hilight();
-		%feature("autodoc", "1");
-		virtual		void Hilight(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
-		%feature("autodoc", "1");
-		virtual		void HilightWithColor(const Handle_PrsMgr_PresentationManager3d &PM, const Quantity_NameOfColor theColor, const Standard_Integer Mode=0);
-		%feature("autodoc", "1");
-		virtual		void Unhilight(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
-		%feature("autodoc", "1");
-		virtual		void Clear(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MeshVS_MeshEntityOwner {
-	Handle_MeshVS_MeshEntityOwner GetHandle() {
-	return *(Handle_MeshVS_MeshEntityOwner*) &$self;
-	}
-};
-%extend MeshVS_MeshEntityOwner {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MeshVS_MeshEntityOwner::~MeshVS_MeshEntityOwner %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_MeshEntityOwner {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor MeshVS_DataMapOfIntegerBoolean;
 class MeshVS_DataMapOfIntegerBoolean : public TCollection_BasicMap {
 	public:
@@ -3666,6 +3611,61 @@ def __del__(self):
 %}
 
 %extend MeshVS_MapOfTwoNodes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_MeshEntityOwner;
+class MeshVS_MeshEntityOwner : public SelectMgr_EntityOwner {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_MeshEntityOwner(const SelectMgr_SOPtr &SelObj, const Standard_Integer ID, const Standard_Address MeshEntity, const MeshVS_EntityType &Type, const Standard_Integer Priority=0, const Standard_Boolean IsGroup=0);
+		%feature("autodoc", "1");
+		Standard_Address Owner() const;
+		%feature("autodoc", "1");
+		MeshVS_EntityType Type() const;
+		%feature("autodoc", "1");
+		Standard_Integer ID() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsGroup() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsHilighted(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0) const;
+		%feature("autodoc", "1");
+		virtual		void Hilight();
+		%feature("autodoc", "1");
+		virtual		void Hilight(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
+		%feature("autodoc", "1");
+		virtual		void HilightWithColor(const Handle_PrsMgr_PresentationManager3d &PM, const Quantity_NameOfColor theColor, const Standard_Integer Mode=0);
+		%feature("autodoc", "1");
+		virtual		void Unhilight(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
+		%feature("autodoc", "1");
+		virtual		void Clear(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MeshVS_MeshEntityOwner {
+	Handle_MeshVS_MeshEntityOwner GetHandle() {
+	return *(Handle_MeshVS_MeshEntityOwner*) &$self;
+	}
+};
+%extend MeshVS_MeshEntityOwner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") MeshVS_MeshEntityOwner::~MeshVS_MeshEntityOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_MeshEntityOwner {
 	void _kill_pointed() {
 		delete $self;
 	}

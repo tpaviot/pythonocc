@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 
-##Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
@@ -183,14 +183,12 @@ class qtViewer3d(qtBaseViewer):
         pt = point(event.pos())
         if event.button() == QtCore.Qt.LeftButton:
             pt = point(event.pos())
-            self.repaint()
             if self._select_area:
                 [Xmin, Ymin, dx, dy] = self._drawbox
                 selected_shapes = self._display.SelectArea(Xmin,Ymin,Xmin+dx,Ymin+dy)
                 self._select_area = False
-            elif self._display.Select(pt.x,pt.y):
-                    selected_shape = self._display.GetSelectedShape()
-                    print selected_shape,selected_shape.ShapeType()
+            else:
+                self._display.Select(pt.x,pt.y)
         elif event.button() == QtCore.Qt.RightButton:
             if self._zoom_area:
                 [Xmin, Ymin, dx, dy] = self._drawbox
@@ -204,6 +202,7 @@ class qtViewer3d(qtBaseViewer):
         dy = pt.y - self.dragStartPos.y
         if abs( dx ) <= tolerance and abs( dy ) <= tolerance:
             return
+        self.repaint()
         self._drawbox = [self.dragStartPos.x, self.dragStartPos.y , dx, dy]
         
     def mouseMoveEvent(self, evt):

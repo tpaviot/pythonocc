@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 
-##Copyright 2009-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import os, os.path
@@ -131,7 +131,7 @@ class STEPExporter(object):
         if not schema in ['AP203','AP214CD']:
             raise AssertionError('The schema string argument must be either "AP203" or "AP214CD"')
         else:
-            Interface_Static_setcval("write.step.schema", schema)
+            Interface_Static_SetCVal("write.step.schema", schema)
         
         
     def set_tolerance(self, tolerance=0.0001):
@@ -215,7 +215,9 @@ class STEPOCAF_Import(object):
             #print i
             print Labels.Value(i+1)
             aShape = h_shape_tool.GetObject().getshape(Labels.Value(i+1))
-            m = l_Layers.GetObject().GetLayers(aShape)#,layer_labels,popo)
+            m = l_Layers.GetObject().GetLayers(aShape)
+            print dir(h_shape_tool.GetObject())
+            #print c
             print "Lenght of popo :%i"%m.GetObject().Length()
             #v = m.GetObject().Value(0)#Value()
             #print v,v.Length()
@@ -259,7 +261,7 @@ class StepOCAF_Export(object):
         self.colors = l_Colors.GetObject()
         self.layers = l_Layers.GetObject()
     
-        self.current_color = Quantity.Quantity_Color(Quantity.Quantity_NOC_RED)  
+        self.current_color = Quantity.Quantity_Color(Quantity.Quantity_NOC_RED)
         self.current_layer = self.layers.AddLayer(TCollection_ExtendedString(layer_name))
         self.layer_names = {}
     

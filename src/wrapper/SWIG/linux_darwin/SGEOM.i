@@ -1,20 +1,20 @@
 /*
 
-Copyright 2008-2010 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
 pythonOCC is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
+it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 pythonOCC is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU General Public License
+You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 $Revision$
@@ -441,13 +441,13 @@ class GEOM_Engine {
 		%feature("autodoc", "1");
 		bool IsDocumentExistant(int );
 		%feature("autodoc", "1");
-		Handle_TDocStd_Document GetDocument(int , bool =true);
+		Handle_TDocStd_Document GetDocument(int );
 		%feature("autodoc", "1");
 		int GetDocID(Handle_TDocStd_Document );
 		%feature("autodoc", "1");
 		Handle_TDocStd_Application GetApplication();
 		%feature("autodoc", "1");
-		Handle_GEOM_Object GetObject(int , const char *theEntry, bool =true);
+		Handle_GEOM_Object GetObject(int , const char *theEntry);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object AddObject(int , int );
 		%feature("autodoc", "1");
@@ -473,7 +473,7 @@ class GEOM_Engine {
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfAsciiString GetAllDumpNames() const;
 		%feature("autodoc", "1");
-		double GetInterpreterEquationValue(int , const TCollection_AsciiString &theEquation);
+		bool GetInterpreterEquationValue(int , const TCollection_AsciiString &theEquation, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void SetInterpreterConstant(int , const TCollection_AsciiString &theConstant, double , const TCollection_AsciiString &theDescription, bool =true);
 		%feature("autodoc", "1");
@@ -482,12 +482,6 @@ class GEOM_Engine {
 		void SetInterpreterConstantArray(int , Handle_TColStd_HArray1OfTransient , Handle_TColStd_HArray1OfAsciiString , bool );
 		%feature("autodoc", "1");
 		TDF_Label GetUserDataLabel(int );
-		%feature("autodoc", "1");
-		int AddTexture(int , int , int , const Handle_TDataStd_HArray1OfByte &theTexture, const TCollection_AsciiString &theFileName="");
-		%feature("autodoc", "1");
-		Handle_TDataStd_HArray1OfByte GetTexture(int , int , int & theWidth, int & theHeight, TCollection_AsciiString & theFileName);
-		%feature("autodoc", "1");
-		std::list<int,std::allocator<int> > GetAllTextures(int );
 
 };
 %feature("shadow") GEOM_Engine::~GEOM_Engine %{
@@ -515,12 +509,6 @@ class GEOM_Application : public TDocStd_Application {
 		virtual		void Formats(TColStd_SequenceOfExtendedString & Formats);
 		%feature("autodoc", "1");
 		virtual		char * ResourcesName();
-		%feature("autodoc", "1");
-		virtual		void OnOpenTransaction(const Handle_TDocStd_Document &theDoc);
-		%feature("autodoc", "1");
-		virtual		void OnCommitTransaction(const Handle_TDocStd_Document &theDoc);
-		%feature("autodoc", "1");
-		virtual		void OnAbortTransaction(const Handle_TDocStd_Document &theDoc);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -760,18 +748,6 @@ class GEOM_Object : public MMgt_TShared {
 		void SetAutoColor(bool );
 		%feature("autodoc", "1");
 		bool GetAutoColor();
-		%feature("autodoc", "1");
-		void SetMarkerStd(const Aspect_TypeOfMarker theType, double );
-		%feature("autodoc", "1");
-		void SetMarkerTexture(int );
-		%feature("autodoc", "1");
-		Aspect_TypeOfMarker GetMarkerType();
-		%feature("autodoc", "1");
-		double GetMarkerSize();
-		%feature("autodoc", "1");
-		int GetMarkerTexture();
-		%feature("autodoc", "1");
-		void UnsetMarker();
 		%feature("autodoc", "1");
 		void SetAuxData(const char *theData);
 		%feature("autodoc", "1");

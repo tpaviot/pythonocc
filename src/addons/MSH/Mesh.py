@@ -3,16 +3,16 @@
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 ''' This module provides an high level API built on top of BRepMesh and SMESH low level
@@ -22,7 +22,6 @@ import random
 from math import sqrt as math_sqrt
 from OCC.Utils.Topology import *
 from OCC.TopoDS import *
-topods = TopoDS()
 from OCC.TopAbs import *
 # to determine default precision
 from OCC.Bnd import *
@@ -32,9 +31,13 @@ from OCC.gp import *
 # For OCC Triangle Mesh
 from OCC.BRepMesh import *
 from OCC.BRep import *
+from OCC.BRepTools import *
 from OCC.TopLoc import *
 from OCC.Poly import *
 from OCC.BRepBuilderAPI import *
+from OCC.StdPrs import *
+from OCC.TColgp import *
+from OCC.Poly import *
 # For MEFISTO2
 from OCC.SMESH import *
 from OCC.StdMeshers import *
@@ -45,12 +48,14 @@ import time
 class MeshBase(object):
     ''' This class is an abstract class and gathers common properties/methods for the different types
     of available meshes.'''
-    def __init__(self):
+    def __init__(self,DISPLAY_LIST=False):
         self._shape = None
         self._precision = 0.0 #by default
         self._vertices = []
         self._faces = []
-        self._face_normals = []
+        self._normals = []
+        self._uvs = []
+        self._DISPLAY_LIST = DISPLAY_LIST
     
     def set_shape(self,shape):
         ''' @param shape: the TopoDS_Shape to mesh
@@ -62,7 +67,10 @@ class MeshBase(object):
         ''' Returns the list of vertices coordinates
         '''
         return self._vertices
-
+    
+    def get_normals(self):
+        return self._normals
+    
     def get_nb_nodes(self):
         return len(self._vertices)
 
@@ -83,15 +91,15 @@ class MeshBase(object):
     def compute_default_precision(self):
         ''' The default precision is a float number. It's computed from the bounding box of the shape.
         default_precision = bounding_box_diagonal / 10.
-        This default precision enables to quick mesh a shape.
+        This default precision enables to quickly mesh a shape.
         '''
         # from this shape, determine a default precision from the bounding box
         bbox = Bnd_Box()
-        BRepBndLib().Add(self._shape, bbox)
+        BRepBndLib_Add(self._shape, bbox)
         x_min,y_min,z_min,x_max,y_max,z_max = bbox.Get()
         # compute diagonal length
         diagonal_length = gp_Vec(gp_Pnt(x_min,y_min,z_min),gp_Pnt(x_max,y_max,z_max)).Magnitude()
-        print diagonal_length
+        #print diagonal_length
         self._precision = diagonal_length / 20.
         return True
     
@@ -103,9 +111,27 @@ class MeshBase(object):
 class QuickTriangleMesh(MeshBase):
     ''' A mesh based on the BRepMesh OCC classes.
     '''
-    def __init__(self):
-        MeshBase.__init__(self)
+    def __init__(self,DISPLAY_LIST = False, compute_uv = False):
+        MeshBase.__init__(self,DISPLAY_LIST)
+        self._compute_uv = compute_uv
     
+    def triangle_is_valid(self, P1,P2,P3):
+        ''' check wether a triangle is or not valid
+        '''
+        V1 = gp_Vec(P1,P2)
+        V2 = gp_Vec(P2,P3)
+        V3 = gp_Vec(P3,P1)
+        if V1.SquareMagnitude()>1e-10 and V2.SquareMagnitude()>1e-10 and V3.SquareMagnitude()>1e-10:
+            V1.Cross(V2)
+            if V1.SquareMagnitude()>1e-10:
+                return True
+            else:
+                print 'Not valid!'
+                return False
+        else:
+            print 'Not valid!'
+            return False
+
     def compute(self):
         ''' Compute the mesh
         '''
@@ -114,22 +140,33 @@ class QuickTriangleMesh(MeshBase):
         if self._shape is None:
             raise "Error: first set a shape"
             return False
-        BRepMesh().Mesh(self._shape,self.get_precision())
-        
+        BRepMesh_Mesh(self._shape,self.get_precision())
         points = []
         faces = []
-        #####
+        normals = []
+        uv = []
         faces_iterator = Topo(self._shape).faces()
-        brp_tool = BRep_Tool()
-
+        
         for F in faces_iterator:
             face_location = F.Location()
-            facing = brp_tool.Triangulation(F,face_location).GetObject()
+            facing = BRep_Tool_Triangulation(F,face_location).GetObject()
             tab = facing.Nodes()
+            if self._compute_uv:
+                uvnodes = facing.UVNodes()
             tri = facing.Triangles()
+            # Compute normal
+            the_normal = TColgp_Array1OfDir(tab.Lower(), tab.Upper())
+            StdPrs_ToolShadedShape_Normal(F, Poly_Connect(facing.GetHandle()), the_normal)
+            if self._compute_uv:
+                umin, umax, vmin, vmax = BRepTools_uvbounds(F)
+                dUmax = umax - umin
+                dVmax = vmax - vmin
             for i in range(1,facing.NbTriangles()+1):
                 trian = tri.Value(i)
-                index1, index2, index3 = trian.Get()
+                if F.Orientation() == TopAbs_REVERSED:
+                    index1, index3, index2 = trian.Get()                 
+                else:
+                    index1, index2, index3 = trian.Get()     
                 # Transform points
                 P1 = tab.Value(index1).Transformed(face_location.Transformation())
                 P2 = tab.Value(index2).Transformed(face_location.Transformation())
@@ -138,26 +175,31 @@ class QuickTriangleMesh(MeshBase):
                 p1_coord = P1.XYZ().Coord()
                 p2_coord = P2.XYZ().Coord()
                 p3_coord = P3.XYZ().Coord()
-
-                if not p1_coord in points:
-                    points.append(p1_coord)   
-                if not p2_coord in points:
-                    points.append(p2_coord)   
-                if not p3_coord in points:
-                    points.append(p3_coord)
-
-                i1 = points.index(p1_coord)
-                i2 = points.index(p2_coord)
-                i3 = points.index(p3_coord)
-                         
-                if F.Orientation() == TopAbs_REVERSED:
-                    faces.append([i1,i3,i2])                 
-                else:         
-                    faces.append([i1,i2,i3])
-
+                if self.triangle_is_valid(P1, P2, P3):
+                    if not self._DISPLAY_LIST:
+                        points.append(p1_coord)
+                        points.append(p2_coord)   
+                        points.append(p3_coord)
+                    else:
+                        if not (p1_coord in points):
+                            points.append(p1_coord)
+                        if not (p2_coord in points):
+                            points.append(p2_coord)
+                        if not (p3_coord in points):
+                            points.append(p3_coord)
+                        faces.append(points.index(p1_coord))
+                        faces.append(points.index(p2_coord))
+                        faces.append(points.index(p3_coord))
+                    normals.append([the_normal(index1).X(),the_normal(index1).Y(), the_normal(index1).Z()])
+                    normals.append([the_normal(index2).X(),the_normal(index2).Y(), the_normal(index2).Z()])
+                    normals.append([the_normal(index3).X(),the_normal(index3).Y(), the_normal(index3).Z()])
         self._vertices = points
-        self._faces = faces
-        print 'end computation in %fs'%(time.time()-init_time)
+        if not self._DISPLAY_LIST:
+            self._faces = range(len(self._vertices))
+        else:
+            self._faces = faces
+        self._normals = normals
+        print 'Finisehd mesh computation in %fs'%(time.time()-init_time)
         return True
 
 class MEFISTOTriangleMesh(MeshBase):
@@ -356,6 +398,28 @@ class MEFISTOTriangleMesh(MeshBase):
         self.build_lists()
         return True
 
+def test_quicktrianglemesh():
+    import time
+    from OCC.BRepPrimAPI import BRepPrimAPI_MakeBox
+    box_shape = BRepPrimAPI_MakeBox(1,1,1).Shape()
+    init_time = time.time()
+    a_mesh = QuickTriangleMesh()
+    a_mesh.set_shape(box_shape)
+    a_mesh.set_precision(0.3)
+    a_mesh.compute()
+    print 'Number of triangles: %i'%a_mesh.get_nb_faces()
+    print 'Number of vertices: %i'%a_mesh.get_nb_nodes()
+    #a_mesh.build_lists_shared_vertices()
+    print 'All done in %f seconds.'%(time.time()-init_time)
+    #
+    print "#################"
+    print a_mesh.get_vertices()
+    print "##############"
+    print a_mesh.get_normals()
+    print "################"
+    print a_mesh.get_faces()
+    
+    
 def test():
     import time
     from OCC.Display.SimpleGui import *
@@ -363,13 +427,13 @@ def test():
     from OCC.BRepPrimAPI import *
     box_shape = BRepPrimAPI_MakeBox(1,1,1).Shape()
     init_time = time.time()
-    a_mesh = MEFISTOTriangleMesh()
+    a_mesh = QuickTriangleMesh()
     a_mesh.set_shape(box_shape)
     a_mesh.set_precision(0.3)
     a_mesh.compute()
     print 'Number of triangles: %i'%a_mesh.get_nb_faces()
     print 'Number of vertices: %i'%a_mesh.get_nb_nodes()
-    a_mesh.build_lists_shared_vertices()
+    #a_mesh.build_lists_shared_vertices()
     print 'All done in %f seconds.'%(time.time()-init_time)
     # Display
     from Visualization import MeshVisualization
@@ -380,4 +444,4 @@ def test():
     start_display()
 
 if __name__=='__main__':
-    test()        
+    test_quicktrianglemesh()        

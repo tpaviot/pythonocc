@@ -1,18 +1,18 @@
-##Copyright 2009-2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2009-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
-##it under the terms of the GNU General Public License as published by
+##it under the terms of the GNU Lesser General Public License as published by
 ##the Free Software Foundation, either version 3 of the License, or
 ##(at your option) any later version.
 ##
 ##pythonOCC is distributed in the hope that it will be useful,
 ##but WITHOUT ANY WARRANTY; without even the implied warranty of
 ##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##GNU General Public License for more details.
+##GNU Lesser General Public License for more details.
 ##
-##You should have received a copy of the GNU General Public License
+##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.BRep import *
@@ -29,7 +29,7 @@ from OCC.TColgp import *
 from OCC.gp import *
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
-
+display.SetSelectionModeVertex()
 
 def simple_mesh(event=None):    
     #
@@ -42,21 +42,20 @@ def simple_mesh(event=None):
     #
     # Mesh the shape
     #
-    BRepMesh().Mesh(shape,0.8)
+    BRepMesh_Mesh(shape,0.8)
     builder = BRep_Builder()
     Comp = TopoDS_Compound()
     builder.MakeCompound(Comp)
     
     ex = TopExp_Explorer(shape,TopAbs_FACE)
     while ex.More():
-        F = TopoDS().Face(ex.Current())
+        F = TopoDS_face(ex.Current())
         L = TopLoc_Location()       
-        facing = (BRep_Tool().Triangulation(F,L)).GetObject()
+        facing = (BRep_Tool_Triangulation(F,L)).GetObject()
         tab = facing.Nodes()
         tri = facing.Triangles()
         for i in range(1,facing.NbTriangles()+1):
             trian = tri.Value(i)
-            print trian
             index1, index2, index3 = trian.Get()
             for j in range(1,4):
                 if j==1:    
