@@ -1,272 +1,1292 @@
-2009/08/28:
-	- SWIG_Generator is now able to handle Standard_Integer & and Standard_Real & returned values
-	- updated unittest
-2009/08/26:
-	- SWIG_Generator.py is now able to handle internal class enums
-	- Added missing SMDSAbs module
-2009/08/25:
-	- added MeshVS module to Windows
-	- added experimental SMESH 5.1.2 support (Linux/Windows)
-2009/08/24:
-	- updated to SalomeGEOM 5.1.2 (salomegeometry svn rev.178)
-2009/08/23:
-	- added PyQt4 support
-	- OCCViewer updated to enable wheel zoom
-	
-== pythonOCC-0.3 released
-	
-2009/08/2:
-	- update to SalomeGeometry 5.1.2
-2009/07/3:
-	- code cleanup in Display
-2009/06/30:
-	- operators overloading in GEOM_Parameter class
-	- better compilation of SalomeGEOM (with the /Od) flag
-2009/12/17:
-	- replaced 'Quantity_Parameter' with Standard_Real wherever possible
-2009/5/10:
-	- Work on SCons script
-	- Work on NIS display
-2009/5/6:
-	- operator = wrapped
-2009/4/30:
-	- New feature: class renaming #ROLLED BACK NEW BRANCH CREATED
-== pythonOCC-PDE2009 released
-2009/4/27:
-	- Added XML/RPC sample
-2009/4/26:
-	- added __getstate__ and __setstate__ methods for TopoDS_Shape serialization
-2009/4/23:
-	- added Standard_OStream and Standard_IStream handle
-2009/4/21:
-	- added ToString method to Standard_GUID class
-2009/4/20:
-	- added STEP.py script and DataExchange folder
-	- new byref parameter
-	
-== pythonOCC-wo0.2 released ==
+==================================================================
+CHANGES FROM 0.4 to 0.5:
+- Wrappers for C++ static methods have been implemented in a SWIG
+compliant way. Static methods like:
+BRep_Tool::Surface() is now callable with either BRep_Tool().Surface()
+or BRep_Tool_Surface()
+- Improved project quality : 64 unittests currently pass
+- Many improvements related to the graphic side (better qtDisplay.py,
+abstraction of the CSF_GraphicShr env var)
+- Multi selection of entities (vertices, edges, faces, shapes)
+- Many fixes and improvements to the 'addons' or Level2 API (meshing, PAF,
+new experimental DYN package, topology etc.)
+- New samples (Traits based parametric modeling, display customization etc.)
+- License move from GNU General Public License v3 (GPLv3) to GNU Lesser
+General Public License v3 (LGPLv3)
 
-2009/4/10:
-	- code clean up
-	- new wxSampleGui.py sample framework
-	- bugfix: in setup.py, ig OCC folder is not dir
-2009/4/06:
-	- Added CAF*
-	- Added CAF sample
-2009/4/02:
-	- Beginning of SalomeGEOM integration
-	- Bugfix: Quantity_Parameter & byref parameter fix
-	- New geomplate sample
-2009/4/01:
-	- Added Expr module
-	- Added CaseSensitiveGlob for Windows
-	- TopOpeBRep_tools.hxx is now in SWIG_FILES_PATH_MODULAR directory
-	- Interactive.py bugfixes (HLR/antialiasing)
-2009/3/31:
-	- overloaded __hash__() with HashCode() for *almost* all pythonOCC objects
-2009/3/27:
-	- bugfixes in CADViewer and CADViewerMDI
-	- new Mesh sample
-2009/3/26:
-	- the '==' operator is wrapped
-	- byref parameter for Standard_Integer &
-2009/3/25:
-	- New Topology module
-	- Level1 andLevel2 hierarchy of samples
-2009/3/23:
-	- LocOpe fix for Linux
-	- in SWIG_generator, added sorting of self.dependencies_headers
-	- if PYTHONOCC_VERBOSE defined, call to custom destructor is displayed
-2009/3/22:
-	- Added 'YELLOW' and GetSelectedShape to OCCViewer.py
-	- Added Visual3d, TopOpeBREpBuild, BRepFeat, TPrsStd for Linux/Darwin
-2009/3/21:
-	- custom destructor extended to all objects
-2009/3/15:
-	 - new samples set
-	 - new DisplayColoredShape in OCCViewer.py
-	 - Bugfixes in OCCViewer
-	 - SConstruct fixes
-2009/3/11:
-	- Segfaults/memory bugfix (added cursomtized default destructor for Standard_Transcient objects)
-2009/3/4:
-	- Better portability for lib finding
-2009/3/2:
-	- Added OCC.Toolkits...
-	- Before building .i files, OCC folder is cleared
-2009/3/1:
-	- bugfix in SWIG_generator: enums and typedef were added in wrong modules (GeomAbs enum in Geom etc.)
-2009/2/27:
-	- Plugin, PXCAFDoc, Xml*
-2009/02/26:
-	- Added NIS, NLPlate, Resource, Select2D, Select3D, SortTools, StdDrivers, StdFail, 
-	StdLDrivers, StdSelect, StepDimTol, STEPEdit, StepFEA, StepFile, StepSelect,
-	StepSelections, StepToGeom, StepToTopoDS, UnitsAPI, Visual3d, TransferBRep, 
-	APIHeaderSection, PCDMShape, PTopoDS, PBrep, Prs2d, PPoly, PTopLoc, PTColStd,
-	PPrStd, RWStep*, TPrsStd, 
-2009/02/25:
-	- Added Bin*, Bisector, BiTgte, BSplSLib, BSplSLib, CSLib, Dico, EDL, PMMgt, ObjMgt,
-	PColStd, PColgp, PCollection, PColGeom, PColGeom2d, PGeom, PGeom2d, Plate, PShort,
-	Sweep, TopBas, TopClass, TopCnx, TopTrans, ProjLib, ShapeProcessAPI,
-2009/02/24:
-	- Added MDF, MFunction, Mat2d, DBC, PDF, PStandard, PNaming, CGM, IGESConvGeom,
-	IntImpParGen,FEmTool, IFGraph, MgtTopoDS, MgtBRep, MNaming, PFunction, DNaming,
-	FairCurve, ExprIntr, GGraphic2d, HeaderSection, LocalAnalysis, LDOMParser, MDocStd,
-	PCDM, Storage, TDataStd, MDataStd
-	- Added AppCont, Appdef, AdvApprox, CDF, CDM, AppStd,
-	TDocStd, AppStdL, BRepFeat, BRepIntCurveSurface, BRepToIGESBRep,
-	GraphDS, GraphTools, HLRTopoBRep, IGESFile, Int*
-2009/02/23:
-	- PythonOCCStats function added
-	- setup.py splitted in Modules.py
-	- Added Display2d class and modified OCCViewer.py
-	- Added BRepAdaptor, BRepLProp, AIS2D
-	- modified setup.py so that it's possible to easier add new modules
+==================================================================
+Detailed svn log for /trunk from the latest release (376 commits):
 
-== pythonOCC-md0.1 released ==
+------------------------------------------------------------------------
+r818 | tpaviot | 2010-01-05 15:35:37 +0100 (Mar, 05 jan 2010) | 1 line
 
-2009/02/08:
-	- Layout modifs for Interactive Console
-	- Added Utils to pythonOCC distro
-2009/02/07:
-	- Linux patch from Doug Du Boulay
-2009/02/05:
-	- packaging improvements (platform independant)
-	- added CADViewer to /Tools directory
-	- improved portability (removed OCC_BUILD_PATH)
-2009/02/02:
-	- added VERSION
-	- bugfixes in setup.py
-2009/01/30:
-	- code refactoring
-	- deprecated Monolithic build
-	- bugfixes in OCCViewer
-	- moved back from glcanvas to Panel (in wxDisplay.py) for portability reason.
-2009/01/28:
-	- implemented cache system for gccxml
-	- better handle of enums dependencies
-	- added DISPLAY en vcheck in OCCViewer.py
-2009/01/27:
-	- bugfixes in OCCViewer.py and wxDisplay.py
-	- moved Viewer to Display (conflict)
-2009/01/26:
-	- moved relative to absolute paths
-	- bugfix in lib* search for MacOsX
-	- code cleanup and refactoring
-2009/01/24:
-	- SWIG generated files are in different folders
-2009/01/21:
-	- added '-generate_swig' and '-with-doc' options
-	- bug fix in -with_doc
-	- added '-h' option
-	- 'modular' and 'monolithic' moved to '-modular' and '-monolithic'
-	- bugfix in StepData module
-	- bugfix in OSD typedefs
-2009/01/20:
-	- switched 'generate_swig_modular' to 'modular'
-	- better modularization (each class is now in its package).
-	- MacOSX env settings
-2009/01/12:
-	- bugfix in monolithic build under Linux and MacOsX (excluding WNT* headers)
-	- bugfix in StepAP203 typesetting
-	- bugfix in WriteModuleEnums (BRepBndLib pygccxml exception)
-2008/12/14:
-	- More member functions in OCCViewer class
-	- Module dependencies
-2008/12/09:
-	- added TShort package
-	- big efforts on modular build
-2008/12/07:
-	- added environment variable to tell distutils to use g++ rather than gcc
-2008/12/05:
-	- Modular build of pythonOCC
-	- added space optimization for MSVC (/O1)
-2008/12/04:
-	- Added Graphic3d_Group to Graphic3d set of classes
-	- Display3d.cpp moved from C++ to Python
-2008/12/03:
-	- Added GetHandle() and GetObject() methods for Handle_* mechanism management
-2008/12/01:
-	- new package hierarchy
-	- included Utils contribution from Jelle Feringa
-	- added '-modern' SWIG directive
-	- proper handle of Standard_Real & function prototype (SWIG typemaps)
-	- new modules: TNaming_*, TDF_*, TFunction_*
-	- new Display3d method to draw a TopoDS_Shape with a Prs3d_Drawer
-2008/26/11:
-	- Linux compilation successfull
-2008/11/25:
-	- pythonOCC handles OCC exceptions
-2008/11/22:
-	- added SetQuality method in Display3d class
-	- Bugfix: window creation under Linux
-2008/11/21:
-	- New modules: LProp and LProp3d
-2008/11/20:
-	- Fixes for Linux compilation (thanks Bj�rn Hein) (type setting)
-2008/11/19:
-	- New modules: Prs, PrsMgr
-	- Added Draw3DText in Display3d.cpp
-2008/11/18:
-	- InteractiveViewer: open python scripts
-	- InteractiveViewer: save/load layout
-	- bugfix: wrapping of Graphic3d* classes
-2008/11/16:
-	- bugfix in SWIG_GENERATOR (WriteLicenseHeader replacement)
-2008/11/14: ##################### RELEASE 1.0pre2 #######################
-2008/11/13:
-	- Added HLRBRep
-	- Bugfixes in InteractiveViewer
-2008/11/12:
-	- Triedron in right bottom corner
-2008/11/9:
-	- Merges Andy Haywoord's contrib
-	- Added triedron in Display3d class
-2008/11/7:
-	- Added Andy Haywood contrib in the class Display3d
-2008/11/5:
-	- Added XDEDRAW
-2008/11/2:
-	- __VERSION__ moved to VERSION
-2008/10/31:
-	- added OSD, Law, Alien_Image, IGESAppli, IGESDefs, IGESDimen, IGESGeom, IGESGraph,
-	IGESSolid, TColGeom, TColGeom2d, TColQuantity, TopoDSToStep, Voxel, Units
-	- Added SetBackground to Display3d class
-2008/10/29:
-	- generate docstrings feature
-	- removed /Ob1 optimization flag (keep default /Ox from distutils)
-	- added GeomProjLib, Geom2dAdaptor, Geom2dConvert, Geom2dHatch, Geom2dGcc, Geom2dInt, Vrml,
-	VrmlConverter, 
-	- added Shape*
-2008/10/27:
-    - 'generate_swig' flag has to be passed to command line
-2008/10/24:
-	- added BREP file format in CADViewer
-    - code cleanup
-    - auto config of environment.py from environment analysis
-2008/10/16: R0.99
-	- added IGESCAFControl, STEPCAFControl, Materials, TopTools, ChFi2d, ChFi3d, ChFiDS,
-	HLRAlgo, 
-	- added version number as __VERSION__ constant
-	- new Display3d class 
-2008/10/15:
-	- added timestamp in generated .i files
-	- added wxDisplay and CADViewer scripts
-	- MEMBER_FUNCTION_TO_EXLUDE added
-2008/10/12: R0.98
-	- bugfix in parsing function prototypes with parameters passed by reference
-	- Added math, StlMesh, Standard_Type
-2008/10/7: R0.97
-	- added  
-2008/10/6: Release 0.96
-	- new Module: IFSelect*
-	- pythonOCC is nouw built as "monolithic"
-2008/10/5:
-	- bugfix when parsing handle_* and classes
-2008/10/2:
-	- Added Handle* in each module
-	- New API documentation generated with epydoc
-	- math module renamed to mathOCC (to avoid conflic with python math module)
-	- New modules: CPnts, BRepAlgoAPI
+Modified AUTHORS file
+------------------------------------------------------------------------
+r819 | tpaviot | 2010-01-05 17:21:38 +0100 (Mar, 05 jan 2010) | 1 line
 
-2008/10/1: Release 0.95
+Small fix in SGEOM_dependencies.i
+------------------------------------------------------------------------
+r820 | tpaviot | 2010-01-05 17:24:53 +0100 (Mar, 05 jan 2010) | 1 line
+
+Small fix in GEOMAlgo_dependencies.i
+------------------------------------------------------------------------
+r821 | tpaviot | 2010-01-05 18:13:15 +0100 (Mar, 05 jan 2010) | 1 line
+
+Small updates
+------------------------------------------------------------------------
+r822 | tpaviot | 2010-01-05 22:43:51 +0100 (Mar, 05 jan 2010) | 1 line
+
+Better installer for win32 python26
+------------------------------------------------------------------------
+r823 | tpaviot | 2010-01-05 22:44:34 +0100 (Mar, 05 jan 2010) | 1 line
+
+BugFix in path name
+------------------------------------------------------------------------
+r824 | tpaviot | 2010-01-06 07:10:38 +0100 (Mer, 06 jan 2010) | 1 line
+
+Few updates
+------------------------------------------------------------------------
+r825 | tpaviot | 2010-01-06 07:14:31 +0100 (Mer, 06 jan 2010) | 1 line
+
+fix in test_box.py
+------------------------------------------------------------------------
+r826 | tpaviot | 2010-01-06 07:17:31 +0100 (Mer, 06 jan 2010) | 1 line
+
+Restored geometry modification in paf_smesh.py
+------------------------------------------------------------------------
+r827 | tpaviot | 2010-01-06 21:09:39 +0100 (Mer, 06 jan 2010) | 1 line
+
+Small fixes
+------------------------------------------------------------------------
+r828 | tpaviot | 2010-01-08 09:14:59 +0100 (Ven, 08 jan 2010) | 1 line
+
+Bugfix in environment.py
+------------------------------------------------------------------------
+r830 | tpaviot | 2010-01-13 05:29:54 +0100 (Mer, 13 jan 2010) | 1 line
+
+Added Windows build scripts
+------------------------------------------------------------------------
+r831 | tpaviot | 2010-01-15 13:07:41 +0100 (Ven, 15 jan 2010) | 1 line
+
+Added CMake build system support
+------------------------------------------------------------------------
+r832 | tpaviot | 2010-01-16 15:01:41 +0100 (Sam, 16 jan 2010) | 1 line
+
+Updated CMakeLists.txt
+------------------------------------------------------------------------
+r833 | tpaviot | 2010-01-16 17:46:10 +0100 (Sam, 16 jan 2010) | 1 line
+
+Added OCC libraries to CMakeLists.txt
+------------------------------------------------------------------------
+r834 | tpaviot | 2010-01-25 16:27:13 +0100 (Lun, 25 jan 2010) | 1 line
+
+Update to the latest version of GEOM
+------------------------------------------------------------------------
+r835 | tpaviot | 2010-01-25 16:29:42 +0100 (Lun, 25 jan 2010) | 1 line
+
+Updated to the latest revision trunk of salomesmesh
+------------------------------------------------------------------------
+r836 | tpaviot | 2010-01-25 16:33:06 +0100 (Lun, 25 jan 2010) | 1 line
+
+Commited geom includes converter
+------------------------------------------------------------------------
+r837 | tpaviot | 2010-01-25 17:18:29 +0100 (Lun, 25 jan 2010) | 1 line
+
+Updated SWIG files to latest revision of GEOM and SMESH
+------------------------------------------------------------------------
+r838 | tpaviot | 2010-01-25 17:22:08 +0100 (Lun, 25 jan 2010) | 1 line
+
+bugfixes in the new headers
+------------------------------------------------------------------------
+r839 | tpaviot | 2010-01-25 18:27:52 +0100 (Lun, 25 jan 2010) | 1 line
+
+Fixes for latest rev. of GEOM and SMESH
+------------------------------------------------------------------------
+r840 | tpaviot | 2010-01-25 18:46:12 +0100 (Lun, 25 jan 2010) | 1 line
+
+Proper handle of std::vector to pythonlist
+------------------------------------------------------------------------
+r841 | tpaviot | 2010-01-29 08:31:07 +0100 (Ven, 29 jan 2010) | 1 line
+
+Added the Lyx PAF tutorial
+------------------------------------------------------------------------
+r842 | tpaviot | 2010-01-29 08:34:02 +0100 (Ven, 29 jan 2010) | 1 line
+
+Typesettings fixes
+------------------------------------------------------------------------
+r843 | tpaviot | 2010-02-17 05:54:14 +0100 (Mer, 17 fév 2010) | 1 line
+
+Added Traits folder
+------------------------------------------------------------------------
+r844 | tpaviot | 2010-02-17 06:16:15 +0100 (Mer, 17 fév 2010) | 1 line
+
+Added Henrik Rudstrom's trait based sample
+------------------------------------------------------------------------
+r845 | tpaviot | 2010-02-17 06:25:08 +0100 (Mer, 17 fév 2010) | 1 line
+
+Modified button text
+------------------------------------------------------------------------
+r846 | tpaviot | 2010-02-17 06:33:49 +0100 (Mer, 17 fév 2010) | 1 line
+
+Also modified function names
+------------------------------------------------------------------------
+r847 | tpaviot | 2010-02-20 14:52:11 +0100 (Sam, 20 fév 2010) | 1 line
+
+Removed old packages from __init__.py
+------------------------------------------------------------------------
+r848 | tpaviot | 2010-02-21 15:52:22 +0100 (Dim, 21 fév 2010) | 1 line
+
+Added DYN(Dynamic Simulation) package
+------------------------------------------------------------------------
+r849 | tpaviot | 2010-02-21 17:42:55 +0100 (Dim, 21 fév 2010) | 1 line
+
+Added the domino demo
+------------------------------------------------------------------------
+r850 | tpaviot | 2010-02-21 22:31:18 +0100 (Dim, 21 fév 2010) | 1 line
+
+wx fix, cleans up
+------------------------------------------------------------------------
+r851 | tpaviot | 2010-02-23 11:14:33 +0100 (Mar, 23 fév 2010) | 1 line
+
+Improvements in PAF: get_shape method, automatic registration of operations at the context creation, display is now optional
+------------------------------------------------------------------------
+r887 | tpaviot | 2010-02-24 18:17:45 +0100 (Mer, 24 fév 2010) | 1 line
+
+Added missing line in README
+------------------------------------------------------------------------
+r888 | tpaviot | 2010-02-24 18:19:02 +0100 (Mer, 24 fév 2010) | 1 line
+
+Fixed wrong flag in README
+------------------------------------------------------------------------
+r890 | jelleferinga | 2010-02-26 11:03:05 +0100 (Ven, 26 fév 2010) | 1 line
+
+work-in-progress on meshing/grouping a FEM mesh from pythonOCC
+------------------------------------------------------------------------
+r891 | jelleferinga | 2010-02-26 11:30:11 +0100 (Ven, 26 fév 2010) | 1 line
+
+adding files from Kees Wouters tutorial
+------------------------------------------------------------------------
+r892 | tpaviot | 2010-02-27 16:52:27 +0100 (Sam, 27 fév 2010) | 1 line
+
+Added trait_paf sample
+------------------------------------------------------------------------
+r893 | tpaviot | 2010-02-27 16:54:06 +0100 (Sam, 27 fév 2010) | 1 line
+
+Geom objects are displayed whenever the display is initialized
+------------------------------------------------------------------------
+r894 | tpaviot | 2010-02-27 17:27:57 +0100 (Sam, 27 fév 2010) | 1 line
+
+Fixed display bug
+------------------------------------------------------------------------
+r895 | tpaviot | 2010-02-27 18:28:39 +0100 (Sam, 27 fév 2010) | 1 line
+
+Added data folder to /samples
+------------------------------------------------------------------------
+r896 | tpaviot | 2010-02-27 18:46:44 +0100 (Sam, 27 fév 2010) | 1 line
+
+Added IGES sample files
+------------------------------------------------------------------------
+r897 | tpaviot | 2010-02-27 22:16:41 +0100 (Sam, 27 fév 2010) | 1 line
+
+Few updates to the PAF tutorial
+------------------------------------------------------------------------
+r898 | jelleferinga | 2010-02-28 15:29:56 +0100 (Dim, 28 fév 2010) | 1 line
+
+the PAFTest _step_changed method does not need to call my_context.solve nor my_context.update_display. The magic of PAF is that if a Parameters attribute is changed, that all is automagically updated...
+------------------------------------------------------------------------
+r899 | tpaviot | 2010-03-01 06:13:28 +0100 (Lun, 01 mar 2010) | 1 line
+
+Renamed trait_paf sample, parameters map to Trait
+------------------------------------------------------------------------
+r900 | tpaviot | 2010-03-01 10:01:27 +0100 (Lun, 01 mar 2010) | 1 line
+
+Fixed the Standard_Boolean & issue
+------------------------------------------------------------------------
+r901 | tpaviot | 2010-03-01 12:32:11 +0100 (Lun, 01 mar 2010) | 1 line
+
+Added std::vector<int> and std::vector<double> STL support
+------------------------------------------------------------------------
+r902 | tpaviot | 2010-03-01 12:36:47 +0100 (Lun, 01 mar 2010) | 1 line
+
+Added the SWIG file necessary to handle std::vector
+------------------------------------------------------------------------
+r903 | tpaviot | 2010-03-01 19:50:45 +0100 (Lun, 01 mar 2010) | 1 line
+
+Updated SWIG Win32 files
+------------------------------------------------------------------------
+r904 | tpaviot | 2010-03-02 15:27:06 +0100 (Mar, 02 mar 2010) | 1 line
+
+New GarbageCollector implementation
+------------------------------------------------------------------------
+r905 | tpaviot | 2010-03-02 18:33:46 +0100 (Mar, 02 mar 2010) | 1 line
+
+New Level2 DYN sample
+------------------------------------------------------------------------
+r906 | tpaviot | 2010-03-02 18:34:57 +0100 (Mar, 02 mar 2010) | 1 line
+
+It's possible to set a material or a texture separately
+------------------------------------------------------------------------
+r907 | tpaviot | 2010-03-02 18:35:32 +0100 (Mar, 02 mar 2010) | 1 line
+
+Improvements in the DYN subpackage
+------------------------------------------------------------------------
+r908 | tpaviot | 2010-03-02 18:36:12 +0100 (Mar, 02 mar 2010) | 1 line
+
+Added the DYN package to the installer script
+------------------------------------------------------------------------
+r909 | jelleferinga | 2010-03-03 12:15:57 +0100 (Mer, 03 mar 2010) | 1 line
+
+extending geomplate example, still trimming outer edges to do... gave OCCViewer.DisplayShape an additional angle argument, such that shape can be displayed with higher resolution. Added a check in IGESReader such that it is checked whether a file exists before trying to read it ( which can cause segfaults )
+------------------------------------------------------------------------
+r910 | jelleferinga | 2010-03-03 15:13:04 +0100 (Mer, 03 mar 2010) | 1 line
+
+updated the examples. still some glitches: we do not see the geometry being updated and the get_presentation method is missing
+------------------------------------------------------------------------
+r911 | tpaviot | 2010-03-04 09:13:37 +0100 (Jeu, 04 mar 2010) | 1 line
+
+Updated Credits
+------------------------------------------------------------------------
+r912 | tpaviot | 2010-03-04 09:14:28 +0100 (Jeu, 04 mar 2010) | 1 line
+
+Moved the curve_geom_plate.igs file to its right location
+------------------------------------------------------------------------
+r913 | tpaviot | 2010-03-04 09:23:17 +0100 (Jeu, 04 mar 2010) | 1 line
+
+Code clean-up + small bugfix in comma separated arguments
+------------------------------------------------------------------------
+r914 | tpaviot | 2010-03-04 16:43:16 +0100 (Jeu, 04 mar 2010) | 1 line
+
+Committed back the get_presentation method (accidentaly removed in rev.893)
+------------------------------------------------------------------------
+r915 | tpaviot | 2010-03-08 08:51:51 +0100 (Lun, 08 mar 2010) | 1 line
+
+Added new multi_context.py PAF sample
+------------------------------------------------------------------------
+r916 | tpaviot | 2010-03-08 12:12:18 +0100 (Lun, 08 mar 2010) | 1 line
+
+Added TopologyParameterizer module
+------------------------------------------------------------------------
+r917 | tpaviot | 2010-03-09 14:29:53 +0100 (Mar, 09 mar 2010) | 1 line
+
+Removed Int and Double vectors from CommonIncludes.i
+------------------------------------------------------------------------
+r918 | tpaviot | 2010-03-09 17:31:25 +0100 (Mar, 09 mar 2010) | 1 line
+
+Enabling mesh traversing: the SMDS_Mesh class now have nodeValue(index), edgeValue(index) and faceValue(index) overcoming the boost::shared_ptr wrapper issue
+------------------------------------------------------------------------
+r919 | tpaviot | 2010-03-09 18:04:39 +0100 (Mar, 09 mar 2010) | 1 line
+
+Updated SWIG files with documentation string fix
+------------------------------------------------------------------------
+r920 | tpaviot | 2010-03-09 18:29:32 +0100 (Mar, 09 mar 2010) | 1 line
+
+Fixed a linkage issue under Windows
+------------------------------------------------------------------------
+r921 | tpaviot | 2010-03-09 23:15:39 +0100 (Mar, 09 mar 2010) | 1 line
+
+Small bugfix in unittest
+------------------------------------------------------------------------
+r922 | tpaviot | 2010-03-10 21:51:46 +0100 (Mer, 10 mar 2010) | 1 line
+
+Added subclassing unittest
+------------------------------------------------------------------------
+r923 | tpaviot | 2010-03-10 21:52:53 +0100 (Mer, 10 mar 2010) | 1 line
+
+Removed annoying info message in qtDisplay.py
+------------------------------------------------------------------------
+r924 | tpaviot | 2010-03-10 21:56:45 +0100 (Mer, 10 mar 2010) | 1 line
+
+Added shape_splitter.py sample, based upon the GEOMAlgo_Splitter class
+------------------------------------------------------------------------
+r925 | tpaviot | 2010-03-16 11:30:18 +0100 (Mar, 16 mar 2010) | 1 line
+
+Bugfix in brep_feat_local_revolution function from topology_local_operations.py sample script
+------------------------------------------------------------------------
+r926 | jelleferinga | 2010-03-16 11:33:56 +0100 (Mar, 16 mar 2010) | 1 line
+
+rounding did not use an argument. so when building a box of say, 1.5, 0.5, 0.5 the box would be truncated to 1,1,1 which will segfault the ode module, since it cannot allow to create a body without mass
+------------------------------------------------------------------------
+r927 | jelleferinga | 2010-03-16 11:39:26 +0100 (Mar, 16 mar 2010) | 1 line
+
+
+------------------------------------------------------------------------
+r928 | jelleferinga | 2010-03-16 11:43:30 +0100 (Mar, 16 mar 2010) | 1 line
+
+left some ipdb statements... sorry...
+------------------------------------------------------------------------
+r929 | jelleferinga | 2010-03-22 14:47:16 +0100 (Lun, 22 mar 2010) | 1 line
+
+
+------------------------------------------------------------------------
+r930 | jelleferinga | 2010-03-22 14:48:26 +0100 (Lun, 22 mar 2010) | 1 line
+
+
+------------------------------------------------------------------------
+r931 | jelleferinga | 2010-03-22 15:39:23 +0100 (Lun, 22 mar 2010) | 1 line
+
+Hi Thomas, Im sorry to be committing your work, but I feel this is the *right* place for such an *import* example! -jelle
+------------------------------------------------------------------------
+r932 | tpaviot | 2010-03-22 17:18:22 +0100 (Lun, 22 mar 2010) | 1 line
+
+Added push_context, pop_context, prevent_object methods for GC
+------------------------------------------------------------------------
+r933 | tpaviot | 2010-03-24 07:07:10 +0100 (Mer, 24 mar 2010) | 1 line
+
+Added a first draft of the MSH subpackage
+------------------------------------------------------------------------
+r934 | jelleferinga | 2010-03-24 14:42:49 +0100 (Mer, 24 mar 2010) | 1 line
+
+cleaner interface
+------------------------------------------------------------------------
+r935 | jelleferinga | 2010-03-24 14:43:03 +0100 (Mer, 24 mar 2010) | 1 line
+
+cleaner interface
+------------------------------------------------------------------------
+r936 | tpaviot | 2010-03-24 14:58:19 +0100 (Mer, 24 mar 2010) | 1 line
+
+case insensitive when setting backend to 'wx', 'qt' or 'x'
+------------------------------------------------------------------------
+r937 | tpaviot | 2010-03-24 15:01:37 +0100 (Mer, 24 mar 2010) | 1 line
+
+Added the MSH subpackage to the installer script
+------------------------------------------------------------------------
+r938 | tpaviot | 2010-03-24 15:03:18 +0100 (Mer, 24 mar 2010) | 1 line
+
+Bugfix in import_stl and import_iges samples
+------------------------------------------------------------------------
+r939 | tpaviot | 2010-03-24 15:05:21 +0100 (Mer, 24 mar 2010) | 1 line
+
+Bugfix / Improvements in the Mesh module
+------------------------------------------------------------------------
+r940 | jelleferinga | 2010-03-24 16:13:32 +0100 (Mer, 24 mar 2010) | 3 lines
+
+tried to update the dyn_demo as good as I can, but for instance domino fails ( or it looks different for sure ) rotating box is not visible, display_cog_traj does not show its trajectory.
+
+still it is a lot cleaner than before ;')
+------------------------------------------------------------------------
+r941 | tpaviot | 2010-03-24 17:07:57 +0100 (Mer, 24 mar 2010) | 1 line
+
+DYN improvements and bugfixes : mass always equals to 2. fix, use_boundingbox and use_trimesh options
+------------------------------------------------------------------------
+r942 | tpaviot | 2010-03-24 17:19:37 +0100 (Mer, 24 mar 2010) | 1 line
+
+Fixed idiot bug in Context.py
+------------------------------------------------------------------------
+r943 | jelleferinga | 2010-03-24 17:48:56 +0100 (Mer, 24 mar 2010) | 1 line
+
+segfaults on two_boxes_sphere_plane_collision
+------------------------------------------------------------------------
+r944 | tpaviot | 2010-03-24 18:25:50 +0100 (Mer, 24 mar 2010) | 1 line
+
+Rolling back changes
+------------------------------------------------------------------------
+r945 | tpaviot | 2010-03-24 18:27:54 +0100 (Mer, 24 mar 2010) | 1 line
+
+Small change
+------------------------------------------------------------------------
+r946 | tpaviot | 2010-03-24 21:43:21 +0100 (Mer, 24 mar 2010) | 1 line
+
+Updated dyn_demo to the latest DYN revision
+------------------------------------------------------------------------
+r947 | tpaviot | 2010-03-24 21:44:22 +0100 (Mer, 24 mar 2010) | 1 line
+
+Added trimesh_collision DYN sample
+------------------------------------------------------------------------
+r948 | tpaviot | 2010-03-24 21:55:52 +0100 (Mer, 24 mar 2010) | 1 line
+
+Added use_sphere option
+------------------------------------------------------------------------
+r949 | tpaviot | 2010-03-24 22:24:09 +0100 (Mer, 24 mar 2010) | 1 line
+
+Added the safe_yield function (for both wx and qt), that allows to keep control over window even when they loose idling
+------------------------------------------------------------------------
+r950 | tpaviot | 2010-03-24 22:25:03 +0100 (Mer, 24 mar 2010) | 1 line
+
+Possible to handle the visualization window with the mouse/keyboard during the simulation
+------------------------------------------------------------------------
+r951 | jelleferinga | 2010-03-25 00:23:42 +0100 (Jeu, 25 mar 2010) | 2 lines
+
+using calls from utils/construct.py
+its important that the examples are written in a pythonic manner, so let's minimize ugly OCC idioms.
+------------------------------------------------------------------------
+r952 | jelleferinga | 2010-03-25 00:42:21 +0100 (Jeu, 25 mar 2010) | 1 line
+
+bit of clean up, adding the make_plane function ( for DYN examples )
+------------------------------------------------------------------------
+r953 | jelleferinga | 2010-03-25 00:45:55 +0100 (Jeu, 25 mar 2010) | 1 line
+
+oops...
+------------------------------------------------------------------------
+r954 | jelleferinga | 2010-03-25 09:25:24 +0100 (Jeu, 25 mar 2010) | 1 line
+
+typo.
+------------------------------------------------------------------------
+r955 | tpaviot | 2010-03-25 10:00:06 +0100 (Jeu, 25 mar 2010) | 1 line
+
+Fixed a 7 years old child mistake : the radius equals the diameter divided by 2
+------------------------------------------------------------------------
+r956 | tpaviot | 2010-03-30 12:49:09 +0200 (Mar, 30 mar 2010) | 1 line
+
+Added clear method to the DynamicContext class
+------------------------------------------------------------------------
+r957 | tpaviot | 2010-03-30 13:43:49 +0200 (Mar, 30 mar 2010) | 1 line
+
+Added contrib/users directory
+------------------------------------------------------------------------
+r958 | jelleferinga | 2010-03-30 14:26:52 +0200 (Mar, 30 mar 2010) | 1 line
+
+clear method now works... sorry this took too many commits...
+------------------------------------------------------------------------
+r959 | tpaviot | 2010-03-30 15:37:27 +0200 (Mar, 30 mar 2010) | 1 line
+
+Small bugfix in trimesh_collision
+------------------------------------------------------------------------
+r960 | tpaviot | 2010-03-30 16:18:54 +0200 (Mar, 30 mar 2010) | 1 line
+
+Udpated MSH module
+------------------------------------------------------------------------
+r961 | tpaviot | 2010-03-30 16:19:28 +0200 (Mar, 30 mar 2010) | 1 line
+
+Default mesh used by DYN is the basic OCC mesher
+------------------------------------------------------------------------
+r962 | dave.cowden | 2010-03-31 00:54:22 +0200 (Mer, 31 mar 2010) | 1 line
+
+
+------------------------------------------------------------------------
+r963 | tpaviot | 2010-04-02 09:06:54 +0200 (Ven, 02 avr 2010) | 1 line
+
+DYN/Context:py: *added set_animation_frame_rate method to the DynamicContext class *fixed memory leak during animation
+------------------------------------------------------------------------
+r964 | tpaviot | 2010-04-02 17:41:06 +0200 (Ven, 02 avr 2010) | 1 line
+
+Major bufixg in Mesh.py
+------------------------------------------------------------------------
+r965 | tpaviot | 2010-04-09 12:45:48 +0200 (Ven, 09 avr 2010) | 1 line
+
+Added boost-1.42.0 headers to simplify compilation process
+------------------------------------------------------------------------
+r966 | tpaviot | 2010-04-09 15:00:27 +0200 (Ven, 09 avr 2010) | 1 line
+
+Sync environment.py and setup.py with new boost include folder
+------------------------------------------------------------------------
+r967 | tpaviot | 2010-04-09 15:02:28 +0200 (Ven, 09 avr 2010) | 1 line
+
+Resize to a standard screen size
+------------------------------------------------------------------------
+r968 | tpaviot | 2010-04-09 15:23:32 +0200 (Ven, 09 avr 2010) | 1 line
+
+Removed boost stuff from README
+------------------------------------------------------------------------
+r969 | tpaviot | 2010-04-12 16:14:01 +0200 (Lun, 12 avr 2010) | 1 line
+
+Moved samples to examples
+------------------------------------------------------------------------
+r970 | tpaviot | 2010-04-12 16:14:17 +0200 (Lun, 12 avr 2010) | 1 line
+
+Moved samples to examples
+------------------------------------------------------------------------
+r971 | tpaviot | 2010-04-12 16:16:29 +0200 (Lun, 12 avr 2010) | 1 line
+
+Removed file
+------------------------------------------------------------------------
+r972 | tpaviot | 2010-04-15 09:13:40 +0200 (Jeu, 15 avr 2010) | 1 line
+
+Moved salomesmesh directory to SMESH
+------------------------------------------------------------------------
+r973 | tpaviot | 2010-04-15 09:14:03 +0200 (Jeu, 15 avr 2010) | 1 line
+
+Removed salomesmesh
+------------------------------------------------------------------------
+r974 | tpaviot | 2010-04-15 09:24:12 +0200 (Jeu, 15 avr 2010) | 1 line
+
+Added SMESH source code
+------------------------------------------------------------------------
+r975 | jelleferinga | 2010-04-18 23:13:49 +0200 (Dim, 18 avr 2010) | 5 lines
+
+Hi Thomas,
+
+The rounding caused some hefty numeric instabilities, I've been able to resolve many many crashes due to the rounding.
+
+-jelle
+------------------------------------------------------------------------
+r977 | jelleferinga | 2010-04-19 15:38:33 +0200 (Lun, 19 avr 2010) | 2 lines
+
+mistakenly I killed the MUST_REDISPLAY concept.
+restoring.
+------------------------------------------------------------------------
+r978 | tpaviot | 2010-05-03 09:20:33 +0200 (Lun, 03 mai 2010) | 1 line
+
+Added geometry and modeling tutorial
+------------------------------------------------------------------------
+r979 | tpaviot | 2010-05-03 09:33:09 +0200 (Lun, 03 mai 2010) | 1 line
+
+Fixed bibliography broken links
+------------------------------------------------------------------------
+r980 | tpaviot | 2010-05-03 09:41:48 +0200 (Lun, 03 mai 2010) | 1 line
+
+Remove unused imports
+------------------------------------------------------------------------
+r981 | tpaviot | 2010-05-03 09:44:42 +0200 (Lun, 03 mai 2010) | 1 line
+
+from ... import *
+------------------------------------------------------------------------
+r982 | tpaviot | 2010-05-03 09:53:02 +0200 (Lun, 03 mai 2010) | 1 line
+
+from ... import *;add->import
+------------------------------------------------------------------------
+r983 | tpaviot | 2010-05-03 10:04:06 +0200 (Lun, 03 mai 2010) | 1 line
+
+Added History, Table of Content
+------------------------------------------------------------------------
+r984 | tpaviot | 2010-05-03 10:05:38 +0200 (Lun, 03 mai 2010) | 1 line
+
+Removed r0.10 from document title (moved to History)
+------------------------------------------------------------------------
+r985 | jelleferinga | 2010-05-03 21:20:31 +0200 (Lun, 03 mai 2010) | 1 line
+
+letting know that this is work in progress...
+------------------------------------------------------------------------
+r986 | tpaviot | 2010-05-04 17:09:14 +0200 (Mar, 04 mai 2010) | 1 line
+
+Added a kind of helloworld example in order to test pythonOCC installation is ok
+------------------------------------------------------------------------
+r987 | tpaviot | 2010-05-05 06:41:28 +0200 (Mer, 05 mai 2010) | 1 line
+
+SMESH is build as one static and dynamic libraries
+------------------------------------------------------------------------
+r988 | tpaviot | 2010-05-05 07:59:37 +0200 (Mer, 05 mai 2010) | 1 line
+
+Bugfix, removed static build
+------------------------------------------------------------------------
+r989 | tpaviot | 2010-05-05 08:08:54 +0200 (Mer, 05 mai 2010) | 1 line
+
+libSMESH is installed to /usr/local/lib by default on Linux and OSX
+------------------------------------------------------------------------
+r990 | tpaviot | 2010-05-05 08:13:32 +0200 (Mer, 05 mai 2010) | 1 line
+
+Updated setup.py to simplified SMESH wrapper building
+------------------------------------------------------------------------
+r991 | tpaviot | 2010-05-05 08:38:24 +0200 (Mer, 05 mai 2010) | 1 line
+
+Compilation of SMESH is performed from a python pipe in setup.py. Much better
+------------------------------------------------------------------------
+r992 | tpaviot | 2010-05-05 15:35:36 +0200 (Mer, 05 mai 2010) | 1 line
+
+Removed SWIG warning 401 for Linux/MacOS
+------------------------------------------------------------------------
+r993 | tpaviot | 2010-05-05 15:37:30 +0200 (Mer, 05 mai 2010) | 1 line
+
+Default OCC path for linux2 match Ubuntu10.04 OpenCASCADE6.3.0 installation
+------------------------------------------------------------------------
+r994 | tpaviot | 2010-05-06 05:20:39 +0200 (Jeu, 06 mai 2010) | 1 line
+
+Moved the SalomeGeometry directory to GEOM
+------------------------------------------------------------------------
+r995 | tpaviot | 2010-05-06 05:21:15 +0200 (Jeu, 06 mai 2010) | 1 line
+
+Removed SalomeGeometry directory
+------------------------------------------------------------------------
+r996 | tpaviot | 2010-05-06 05:53:34 +0200 (Jeu, 06 mai 2010) | 1 line
+
+Added GEOM source files
+------------------------------------------------------------------------
+r997 | tpaviot | 2010-05-06 06:26:48 +0200 (Jeu, 06 mai 2010) | 1 line
+
+Fixes in Exchange*
+------------------------------------------------------------------------
+r998 | tpaviot | 2010-05-06 11:32:55 +0200 (Jeu, 06 mai 2010) | 1 line
+
+Updated to latest GEOM svn rev.
+------------------------------------------------------------------------
+r999 | tpaviot | 2010-05-06 12:48:30 +0200 (Jeu, 06 mai 2010) | 1 line
+
+Finished new compilation process
+------------------------------------------------------------------------
+r1014 | tpaviot | 2010-05-10 06:03:25 +0200 (Lun, 10 mai 2010) | 1 line
+
+Remove unuseful Windows module - make Unix/Windows API more consistent
+------------------------------------------------------------------------
+r1015 | tpaviot | 2010-05-10 06:04:30 +0200 (Lun, 10 mai 2010) | 1 line
+
+Added build_geom.sh shell script
+------------------------------------------------------------------------
+r1016 | tpaviot | 2010-05-10 06:06:21 +0200 (Lun, 10 mai 2010) | 1 line
+
+Windows bugfix wth M_PI
+------------------------------------------------------------------------
+r1017 | tpaviot | 2010-05-10 06:07:01 +0200 (Lun, 10 mai 2010) | 1 line
+
+Added Windows compilation settings
+------------------------------------------------------------------------
+r1018 | tpaviot | 2010-05-10 08:46:23 +0200 (Lun, 10 mai 2010) | 1 line
+
+Windows fixes
+------------------------------------------------------------------------
+r1019 | tpaviot | 2010-05-10 08:47:54 +0200 (Lun, 10 mai 2010) | 1 line
+
+Windows fixes; MacOSX uses f77 as a fortran compiler
+------------------------------------------------------------------------
+r1020 | tpaviot | 2010-05-10 08:48:45 +0200 (Lun, 10 mai 2010) | 1 line
+
+Windows installer improvements
+------------------------------------------------------------------------
+r1021 | tpaviot | 2010-05-10 08:49:38 +0200 (Lun, 10 mai 2010) | 1 line
+
+Windows builder/installer fixes
+------------------------------------------------------------------------
+r1022 | tpaviot | 2010-05-10 08:59:55 +0200 (Lun, 10 mai 2010) | 1 line
+
+Updated README
+------------------------------------------------------------------------
+r1023 | tpaviot | 2010-05-10 11:54:38 +0200 (Lun, 10 mai 2010) | 1 line
+
+Removed dependencies to WOK
+------------------------------------------------------------------------
+r1024 | jelleferinga | 2010-05-14 20:05:47 +0200 (Ven, 14 mai 2010) | 1 line
+
+fixed an issue with the abscissa function
+------------------------------------------------------------------------
+r1025 | tpaviot | 2010-05-21 08:48:35 +0200 (Ven, 21 mai 2010) | 1 line
+
+Fix line ending
+------------------------------------------------------------------------
+r1026 | tpaviot | 2010-05-21 08:49:58 +0200 (Ven, 21 mai 2010) | 1 line
+
+Updated help docstring
+------------------------------------------------------------------------
+r1027 | tpaviot | 2010-05-21 08:51:24 +0200 (Ven, 21 mai 2010) | 1 line
+
+Use makedirs instead of mkdir in setup.py
+------------------------------------------------------------------------
+r1028 | tpaviot | 2010-05-21 08:57:18 +0200 (Ven, 21 mai 2010) | 1 line
+
+Added GEOM_INSTALL_LIB_DIR option
+------------------------------------------------------------------------
+r1029 | tpaviot | 2010-05-21 08:57:46 +0200 (Ven, 21 mai 2010) | 1 line
+
+Added GEOM_SMESH_LIB_DIR option
+------------------------------------------------------------------------
+r1030 | tpaviot | 2010-05-21 09:02:58 +0200 (Ven, 21 mai 2010) | 1 line
+
+OCC_LIB_PATH patch
+------------------------------------------------------------------------
+r1031 | tpaviot | 2010-05-21 13:45:00 +0200 (Ven, 21 mai 2010) | 1 line
+
+Moved README to INSTALL
+------------------------------------------------------------------------
+r1032 | tpaviot | 2010-05-25 06:34:38 +0200 (Mar, 25 mai 2010) | 1 line
+
+Removed CSF_GraphicShr test from qtDisplay and wxDisplay (check performed in OCCViewer)
+------------------------------------------------------------------------
+r1033 | tpaviot | 2010-05-25 06:44:22 +0200 (Mar, 25 mai 2010) | 1 line
+
+Added note 3.1; lines lenght compliant with unix terminals (79 char max)
+------------------------------------------------------------------------
+r1039 | tpaviot | 2010-05-25 15:46:24 +0200 (Mar, 25 mai 2010) | 1 line
+
+Moved graphic code from C++ to python; clean up in the C++ code
+------------------------------------------------------------------------
+r1040 | tpaviot | 2010-05-25 17:57:01 +0200 (Mar, 25 mai 2010) | 1 line
+
+Removed boost-1.42.0
+------------------------------------------------------------------------
+r1041 | tpaviot | 2010-05-25 17:58:26 +0200 (Mar, 25 mai 2010) | 1 line
+
+Added boost-1.43.0
+------------------------------------------------------------------------
+r1042 | tpaviot | 2010-06-02 21:56:03 +0200 (Mer, 02 jui 2010) | 1 line
+
+Fixed issue #11: wrapper for classes with protected constructor
+------------------------------------------------------------------------
+r1043 | tpaviot | 2010-06-04 06:15:40 +0200 (Ven, 04 jui 2010) | 1 line
+
+Bugfix : protected constructor is not wrapped for abstract classes
+------------------------------------------------------------------------
+r1044 | jelleferinga | 2010-06-28 13:15:47 +0200 (Lun, 28 jui 2010) | 1 line
+
+fixes a simple error in case the file to be copied is already in place
+------------------------------------------------------------------------
+r1045 | jelleferinga | 2010-06-28 15:38:37 +0200 (Lun, 28 jui 2010) | 30 lines
+
+I noticed a serious regression: exporting as a .MED file no longer works...
+I'm confident that we were able to write .MED files so this is pretty strange.
+
+
+MSG:/Users/thomas/Devel/pythonocc/src/contrib/SMESH/src/SMESH/SMESH_Gen.cpp [288] : VSR - SMESH_Gen::Compute() finished, OK = 1
+
+SCRUTE:/Users/thomas/Devel/pythonocc/src/contrib/SMESH/src/DriverDAT/DriverDAT_W_SMDS_Mesh.cpp [45] : myMesh = 0x10bb38ad0
+
+
+(****************************)
+(* INFORMATIONS GENERALES : *)
+(****************************)
+SCRUTE:/Users/thomas/Devel/pythonocc/src/contrib/SMESH/src/DriverDAT/DriverDAT_W_SMDS_Mesh.cpp [62] : nb_of_edges = 50
+
+SCRUTE:/Users/thomas/Devel/pythonocc/src/contrib/SMESH/src/DriverDAT/DriverDAT_W_SMDS_Mesh.cpp [63] : nb_of_faces = 168
+
+SCRUTE:/Users/thomas/Devel/pythonocc/src/contrib/SMESH/src/DriverDAT/DriverDAT_W_SMDS_Mesh.cpp [64] : nb_of_volumes = 0
+
+172 218
+
+(************************)
+(* NOEUDS DU MAILLAGE : *)
+(************************)
+
+(**************************)
+(* ELEMENTS DU MAILLAGE : *)
+terminate called after throwing an instance of 'SMESH_Exception'
+  what():  SMESH Exception : "Not implemented ..."
+(**************************)Abort trap
+
+------------------------------------------------------------------------
+r1046 | jelleferinga | 2010-06-29 12:53:36 +0200 (Mar, 29 jui 2010) | 2 lines
+
+updated such that boundary conditions ( groups ) are set on the mesh
+this allow code_aster to use and solve the mesh
+------------------------------------------------------------------------
+r1047 | jelleferinga | 2010-06-29 13:01:43 +0200 (Mar, 29 jui 2010) | 3 lines
+
+cosmetic change, nothing to see here...
+false use of try / except, changed for if statement.
+
+------------------------------------------------------------------------
+r1048 | jelleferinga | 2010-06-29 14:18:13 +0200 (Mar, 29 jui 2010) | 2 lines
+
+a simple linear elasticity problem.
+pre-processed by pythonocc
+------------------------------------------------------------------------
+r1049 | jelleferinga | 2010-07-02 16:30:06 +0200 (Ven, 02 jul 2010) | 3 lines
+
+added transparancy to the bool ops examples.
+also boolean fuse was missing
+
+------------------------------------------------------------------------
+r1050 | jelleferinga | 2010-07-02 18:09:45 +0200 (Ven, 02 jul 2010) | 1 line
+
+added some bisector examples could be useful...
+------------------------------------------------------------------------
+r1051 | jelleferinga | 2010-07-05 21:46:42 +0200 (Lun, 05 jul 2010) | 1 line
+
+fails...
+------------------------------------------------------------------------
+r1052 | jelleferinga | 2010-07-05 21:52:57 +0200 (Lun, 05 jul 2010) | 36 lines
+
+Oops, I meant to test for this ERROR:
+
+Tell me, does self.assertEqual test for Identity or Equality?
+I think we are mixing up these concepts!!!
+
+
+Finding files...
+['/Users/localadmin/Documents/workspace/pyocc/src/unittest/hashing_unittest.py'] ... done
+Importing test modules ... done.
+
+testGP (hashing_unittest.Test) ... FAIL
+testTopoDS (hashing_unittest.Test) ... ERROR
+
+======================================================================
+ERROR: testTopoDS (hashing_unittest.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/localadmin/Documents/workspace/pyocc/src/unittest/hashing_unittest.py", line 40, in testTopoDS
+    self.assertEqual(faces1[0], faces1.index(faces1[0]))
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/unittest.py", line 348, in failUnlessEqual
+    if not first == second:
+TypeError: in method 'TopoDS_Shape___eq__', argument 2 of type 'TopoDS_Shape const &'
+
+======================================================================
+FAIL: testGP (hashing_unittest.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/localadmin/Documents/workspace/pyocc/src/unittest/hashing_unittest.py", line 28, in testGP
+    self.assertEqual(p1,p3)
+AssertionError: <OCC.gp.gp_Pnt; proxy of <Swig Object of type 'gp_Pnt *' at 0x105d4c950> > != <OCC.gp.gp_Pnt; proxy of <Swig Object of type 'gp_Pnt *' at 0x105d4c990> >
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+FAILED (failures=1, errors=1)
+
+------------------------------------------------------------------------
+r1053 | jelleferinga | 2010-07-07 15:12:25 +0200 (Mer, 07 jul 2010) | 39 lines
+
+Hi Thomas,
+
+Thanks for the feedback, although a number of issues remain.
+Same thing; I have the feeling in the failed test there is being checked for identity ( id(aObject) rather than equality ( aObject == anotherObject ).
+Hashing test for identity, not equality.
+
+This is something we need to look into, since it is important to be able to compare TopoDS_* types.
+
+
+
+
+jelle_laptop:unittest localadmin$ py hashing_unittest.py
+FF
+======================================================================
+FAIL: testGP (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "hashing_unittest.py", line 28, in testGP
+    self.assertEqual(p1,p3)
+AssertionError: <OCC.gp.gp_Pnt; proxy of <Swig Object of type 'gp_Pnt *' at 0x105cb8950> > != <OCC.gp.gp_Pnt; proxy of <Swig Object of type 'gp_Pnt *' at 0x105cb8990> >
+
+======================================================================
+FAIL: testTopoDS (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "hashing_unittest.py", line 41, in testTopoDS
+    self.assertEqual(box1,box2)
+AssertionError: <OCC.TopoDS.TopoDS_Shape; proxy of <Swig Object of type 'TopoDS_Shape *' at 0x100c6be18> > != <OCC.TopoDS.TopoDS_Shape; proxy of <Swig Object of type 'TopoDS_Shape *' at 0x100c68018> >
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+FAILED (failures=2)
+jelle_laptop:unittest localadmin$ 
+
+
+
+
+
+------------------------------------------------------------------------
+r1054 | jelleferinga | 2010-07-07 15:14:55 +0200 (Mer, 07 jul 2010) | 1 line
+
+confusing name...
+------------------------------------------------------------------------
+r1059 | tpaviot | 2010-07-10 21:45:52 +0200 (Sam, 10 jul 2010) | 1 line
+
+Fixed Issue #17 : CSF_GraphicShr does not require setting
+------------------------------------------------------------------------
+r1060 | tpaviot | 2010-07-11 07:32:59 +0200 (Dim, 11 jul 2010) | 1 line
+
+Automatic setting of CSF_GraphicShr on MacOSX and Linux platforms
+------------------------------------------------------------------------
+r1061 | tpaviot | 2010-07-11 07:47:11 +0200 (Dim, 11 jul 2010) | 1 line
+
+Need a better unittest of identity and equality
+------------------------------------------------------------------------
+r1062 | tpaviot | 2010-07-11 07:48:07 +0200 (Dim, 11 jul 2010) | 1 line
+
+Renamed occ_unittest.py
+------------------------------------------------------------------------
+r1063 | jelleferinga | 2010-07-11 12:04:14 +0200 (Dim, 11 jul 2010) | 1 line
+
+recent changes to Construct; for instance the make_edge2d function
+------------------------------------------------------------------------
+r1064 | jelleferinga | 2010-07-16 15:37:28 +0200 (Ven, 16 jul 2010) | 3 lines
+
+Hi Thomas,
+
+I've tried to update this example, but I cannot figure out why it is segfaulting... too bad, since its an interesting pattern!
+------------------------------------------------------------------------
+r1065 | tpaviot | 2010-08-14 14:11:02 +0200 (Sam, 14 aoû 2010) | 1 line
+
+Fixed Issue #20: wrapper for C++ static methods
+------------------------------------------------------------------------
+r1066 | tpaviot | 2010-08-14 16:04:44 +0200 (Sam, 14 aoû 2010) | 1 line
+
+Updated Win32 SWIG files to the new wrapper
+------------------------------------------------------------------------
+r1067 | tpaviot | 2010-08-16 17:25:46 +0200 (Lun, 16 aoû 2010) | 1 line
+
+Fixed isse #13: string exceptions are not supported since python 26
+------------------------------------------------------------------------
+r1068 | tpaviot | 2010-08-18 08:48:28 +0200 (Mer, 18 aoû 2010) | 1 line
+
+Fixed Windows compilation issue
+------------------------------------------------------------------------
+r1069 | tpaviot | 2010-08-18 14:13:57 +0200 (Mer, 18 aoû 2010) | 1 line
+
+Added svn properties set to Context.py (experimental)
+------------------------------------------------------------------------
+r1070 | tpaviot | 2010-08-18 14:18:00 +0200 (Mer, 18 aoû 2010) | 1 line
+
+Modified Context.py so that keywords are replaced in the file
+------------------------------------------------------------------------
+r1071 | tpaviot | 2010-08-18 15:37:04 +0200 (Mer, 18 aoû 2010) | 1 line
+
+Small change on Context.py to test the tagging feature
+------------------------------------------------------------------------
+r1072 | tpaviot | 2010-08-19 08:46:01 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Fixed Issue #19: dependent python modules are imported; Fixed regression of Issue #20: static method do not conflicts anymore with class names
+------------------------------------------------------------------------
+r1073 | tpaviot | 2010-08-19 08:48:24 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Added unittest for fixes to Issue #19 and Issue #20
+------------------------------------------------------------------------
+r1074 | tpaviot | 2010-08-19 09:52:39 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Updated linux/darwin SWIG files to latest status
+------------------------------------------------------------------------
+r1075 | tpaviot | 2010-08-19 09:54:26 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Updated linux/darwin SWIG files to latest status
+------------------------------------------------------------------------
+r1076 | tpaviot | 2010-08-19 09:56:40 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Update gp
+------------------------------------------------------------------------
+r1077 | tpaviot | 2010-08-19 09:57:20 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Updated linux/darwin SWIG files to latest status
+------------------------------------------------------------------------
+r1078 | tpaviot | 2010-08-19 11:35:36 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Updated win32 SWIG files to latest status
+------------------------------------------------------------------------
+r1079 | tpaviot | 2010-08-19 13:59:34 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Bugfix: svn keyword anchor not properly set up (see Issue #22)
+------------------------------------------------------------------------
+r1080 | tpaviot | 2010-08-19 14:43:20 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Updated license headers
+------------------------------------------------------------------------
+r1081 | tpaviot | 2010-08-19 18:22:39 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Added Author/Date/Revision/HeadURL keyword properties
+------------------------------------------------------------------------
+r1082 | tpaviot | 2010-08-19 22:39:56 +0200 (Jeu, 19 aoû 2010) | 1 line
+
+Fixed bad svn keywords (see Issue #22)
+------------------------------------------------------------------------
+r1083 | tpaviot | 2010-08-20 05:56:43 +0200 (Ven, 20 aoû 2010) | 1 line
+
+Updated headers
+------------------------------------------------------------------------
+r1084 | tpaviot | 2010-08-22 18:23:16 +0200 (Dim, 22 aoû 2010) | 1 line
+
+Bugfix in unittest
+------------------------------------------------------------------------
+r1085 | tpaviot | 2010-08-22 23:36:46 +0200 (Dim, 22 aoû 2010) | 1 line
+
+Bugfix: updated code to current GEOM revision
+------------------------------------------------------------------------
+r1086 | tpaviot | 2010-08-23 05:50:58 +0200 (Lun, 23 aoû 2010) | 1 line
+
+Updated header (see Issue #22)
+------------------------------------------------------------------------
+r1087 | tpaviot | 2010-08-23 05:58:00 +0200 (Lun, 23 aoû 2010) | 1 line
+
+Fixed a regression introduced in the fix of Issue #20: renamed methods must not match C++ keywords (static, typename etc.)
+------------------------------------------------------------------------
+r1088 | tpaviot | 2010-08-23 08:00:44 +0200 (Lun, 23 aoû 2010) | 1 line
+
+Update geometry_demos.py
+------------------------------------------------------------------------
+r1089 | tpaviot | 2010-08-24 07:18:12 +0200 (Mar, 24 aoû 2010) | 1 line
+
+Fixed Issue #12: moved all const gp_* & and const TopoDS_* & passed and returned by reference to value
+------------------------------------------------------------------------
+r1090 | tpaviot | 2010-08-24 08:16:19 +0200 (Mar, 24 aoû 2010) | 1 line
+
+Updated SWIG files for both linux/darwin/win32
+------------------------------------------------------------------------
+r1091 | tpaviot | 2010-08-24 08:28:42 +0200 (Mar, 24 aoû 2010) | 1 line
+
+Added 2 unittests from examples
+------------------------------------------------------------------------
+r1092 | tpaviot | 2010-08-25 08:08:05 +0200 (Mer, 25 aoû 2010) | 1 line
+
+Added new unittest
+------------------------------------------------------------------------
+r1093 | tpaviot | 2010-08-28 05:31:35 +0200 (Sam, 28 aoû 2010) | 1 line
+
+Added topology_operations unittest
+------------------------------------------------------------------------
+r1105 | tpaviot | 2010-08-31 07:04:49 +0200 (Mar, 31 aoû 2010) | 1 line
+
+Aggregate all unit tests in one test suite named test_all.py
+------------------------------------------------------------------------
+r1106 | tpaviot | 2010-09-24 05:52:54 +0200 (Ven, 24 sep 2010) | 1 line
+
+Moved from format() to str() for python versions older than 2.6
+------------------------------------------------------------------------
+r1107 | jelleferinga | 2010-10-11 16:25:23 +0200 (Lun, 11 oct 2010) | 1 line
+
+added a flag that allows you to set the schema version of the STEP file ( 214 / 203 )
+------------------------------------------------------------------------
+r1108 | tpaviot | 2010-10-12 06:58:52 +0200 (Mar, 12 oct 2010) | 1 line
+
+Bugfix in STEP exporter schema; better consistency of the API and compliancy with PEP08
+------------------------------------------------------------------------
+r1109 | tpaviot | 2010-10-31 07:20:40 +0100 (Dim, 31 oct 2010) | 1 line
+
+Move method names to lower_case (PEP8 compliancy)
+------------------------------------------------------------------------
+r1110 | tpaviot | 2010-12-01 06:14:30 +0100 (Mer, 01 déc 2010) | 1 line
+
+Fixed Issue #23 : utf8 encoding
+------------------------------------------------------------------------
+r1111 | tpaviot | 2010-12-07 14:02:32 +0100 (Mar, 07 déc 2010) | 1 line
+
+Fixed Issue #25 and Issue #26
+------------------------------------------------------------------------
+r1112 | jelleferinga | 2010-12-07 16:08:32 +0100 (Mar, 07 déc 2010) | 2 lines
+
+
+added a really useful distance function...
+------------------------------------------------------------------------
+r1113 | tpaviot | 2010-12-07 22:23:10 +0100 (Mar, 07 déc 2010) | 1 line
+
+Removed ipdb stuff
+------------------------------------------------------------------------
+r1114 | jelleferinga@gmail.com | 2010-12-27 21:25:32 +0100 (Lun, 27 déc 2010) | 1 line
+
+# Thomas moved this code to OCC.Topology.Explorer ( a little reckless ;) many modules still follow this path, so let me keep it while not duplicating the code
+------------------------------------------------------------------------
+r1115 | jelleferinga | 2010-12-29 18:29:28 +0100 (Mer, 29 déc 2010) | 1 line
+
+
+------------------------------------------------------------------------
+r1116 | tpaviot | 2010-12-31 17:16:18 +0100 (Ven, 31 déc 2010) | 1 line
+
+Implemented support for multi selection
+------------------------------------------------------------------------
+r1117 | tpaviot | 2010-12-31 17:53:34 +0100 (Ven, 31 déc 2010) | 1 line
+
+Added zoom/selection from area
+------------------------------------------------------------------------
+r1118 | tpaviot | 2011-01-02 16:42:00 +0100 (Dim, 02 jan 2011) | 1 line
+
+Bugfix in rect draw
+------------------------------------------------------------------------
+r1119 | tpaviot | 2011-01-02 16:42:36 +0100 (Dim, 02 jan 2011) | 1 line
+
+Fixed multi selection support for wx
+------------------------------------------------------------------------
+r1120 | tpaviot | 2011-01-02 23:03:13 +0100 (Dim, 02 jan 2011) | 1 line
+
+Bugfix in SMESH SWIG file (enabling Grouping feature)
+------------------------------------------------------------------------
+r1121 | tpaviot | 2011-01-02 23:09:15 +0100 (Dim, 02 jan 2011) | 1 line
+
+Updated example to static method naming - Set selection mode to Vertex in order to test multiselection support
+------------------------------------------------------------------------
+r1122 | tpaviot | 2011-01-02 23:12:46 +0100 (Dim, 02 jan 2011) | 1 line
+
+Added export to STL and UNV (MED still fails)
+------------------------------------------------------------------------
+r1123 | tpaviot | 2011-01-02 23:15:53 +0100 (Dim, 02 jan 2011) | 1 line
+
+Bugfix in grouping
+------------------------------------------------------------------------
+r1124 | tpaviot | 2011-01-02 23:25:01 +0100 (Dim, 02 jan 2011) | 1 line
+
+Cosmetic change to Display3d.cpp
+------------------------------------------------------------------------
+r1125 | tpaviot | 2011-01-02 23:29:18 +0100 (Dim, 02 jan 2011) | 1 line
+
+Bugfixes in Mesh.py
+------------------------------------------------------------------------
+r1126 | tpaviot | 2011-01-03 00:25:38 +0100 (Lun, 03 jan 2011) | 1 line
+
+Updated DYN
+------------------------------------------------------------------------
+r1127 | tpaviot | 2011-01-03 00:26:35 +0100 (Lun, 03 jan 2011) | 1 line
+
+Updated dyn_demo.py
+------------------------------------------------------------------------
+r1128 | tpaviot | 2011-01-03 00:29:29 +0100 (Lun, 03 jan 2011) | 1 line
+
+Updated TypesLookup to static method naming
+------------------------------------------------------------------------
+r1131 | tpaviot | 2011-01-09 14:21:37 +0100 (Dim, 09 jan 2011) | 1 line
+
+Fixed interpolation unittest
+------------------------------------------------------------------------
+r1136 | tpaviot | 2011-01-18 06:48:29 +0100 (Mar, 18 jan 2011) | 1 line
+
+Update to the latest geom release (5.1.2.7)
+------------------------------------------------------------------------
+r1137 | tpaviot | 2011-01-18 06:57:39 +0100 (Mar, 18 jan 2011) | 1 line
+
+Added script to convert .hxx headers
+------------------------------------------------------------------------
+r1138 | tpaviot | 2011-01-18 09:31:46 +0100 (Mar, 18 jan 2011) | 1 line
+
+Updated to official 5.1.2.2 SMESH latest release
+------------------------------------------------------------------------
+r1139 | tpaviot | 2011-01-18 10:08:09 +0100 (Mar, 18 jan 2011) | 1 line
+
+Small fixes to CMakeList/smesh-5.2.2.2
+------------------------------------------------------------------------
+r1140 | tpaviot | 2011-01-18 10:09:01 +0100 (Mar, 18 jan 2011) | 1 line
+
+Small fix to shell script/geom-5.1.2.7
+------------------------------------------------------------------------
+r1141 | tpaviot | 2011-01-18 10:11:19 +0100 (Mar, 18 jan 2011) | 1 line
+
+Removed not sync'ed GEOM and SMESH libs
+------------------------------------------------------------------------
+r1142 | tpaviot | 2011-01-18 10:19:06 +0100 (Mar, 18 jan 2011) | 1 line
+
+Moved Wrappers.py contribution from Dave Cowden to /branches/high_level_api
+------------------------------------------------------------------------
+r1146 | tpaviot | 2011-01-18 16:27:56 +0100 (Mar, 18 jan 2011) | 1 line
+
+Added missing CMakeList.txt file
+------------------------------------------------------------------------
+r1147 | tpaviot | 2011-01-18 17:06:54 +0100 (Mar, 18 jan 2011) | 1 line
+
+Fix bad import sample geomplate.py
+------------------------------------------------------------------------
+r1148 | tpaviot | 2011-01-18 17:38:00 +0100 (Mar, 18 jan 2011) | 1 line
+
+Removed buggy interpolation
+------------------------------------------------------------------------
+r1149 | tpaviot | 2011-01-18 17:46:13 +0100 (Mar, 18 jan 2011) | 1 line
+
+Fixed SMESH examples
+------------------------------------------------------------------------
+r1150 | tpaviot | 2011-01-18 17:47:36 +0100 (Mar, 18 jan 2011) | 1 line
+
+Fixed volume_properties sample
+------------------------------------------------------------------------
+r1151 | tpaviot | 2011-01-18 17:55:28 +0100 (Mar, 18 jan 2011) | 1 line
+
+Fixed test_thread example
+------------------------------------------------------------------------
+r1152 | tpaviot | 2011-01-18 17:57:58 +0100 (Mar, 18 jan 2011) | 1 line
+
+Fixed topology_building example
+------------------------------------------------------------------------
+r1153 | tpaviot | 2011-01-18 22:10:40 +0100 (Mar, 18 jan 2011) | 1 line
+
+Found a way to limit the API changes to the TopoDS() class when wrapping static methods
+------------------------------------------------------------------------
+r1156 | tpaviot | 2011-01-18 22:33:07 +0100 (Mar, 18 jan 2011) | 1 line
+
+Updated geom and smesh libs
+------------------------------------------------------------------------
+r1157 | tpaviot | 2011-01-18 22:39:07 +0100 (Mar, 18 jan 2011) | 1 line
+
+Small fix to env.py
+------------------------------------------------------------------------
+r1158 | tpaviot | 2011-01-18 22:43:07 +0100 (Mar, 18 jan 2011) | 1 line
+
+Removed the unuseful and never used Toolikts folder
+------------------------------------------------------------------------
+r1159 | tpaviot | 2011-01-18 23:05:19 +0100 (Mar, 18 jan 2011) | 1 line
+
+Added include path for Ubuntu
+------------------------------------------------------------------------
+r1160 | tpaviot | 2011-01-18 23:08:17 +0100 (Mar, 18 jan 2011) | 1 line
+
+Added include path for Ubuntu
+------------------------------------------------------------------------
+r1161 | tpaviot | 2011-01-18 23:17:35 +0100 (Mar, 18 jan 2011) | 1 line
+
+f2c used only under MacOSX
+------------------------------------------------------------------------
+r1162 | tpaviot | 2011-01-19 06:15:09 +0100 (Mer, 19 jan 2011) | 1 line
+
+Removed installation of the Toolkit pacakges
+------------------------------------------------------------------------
+r1163 | tpaviot | 2011-01-19 07:03:19 +0100 (Mer, 19 jan 2011) | 1 line
+
+int & and doule & output values for SMESH grouping feature
+------------------------------------------------------------------------
+r1165 | tpaviot | 2011-01-20 05:50:06 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Moved import to top
+------------------------------------------------------------------------
+r1166 | tpaviot | 2011-01-20 05:56:02 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Fix for int& and double& wrapper
+------------------------------------------------------------------------
+r1167 | tpaviot | 2011-01-20 06:00:09 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Added win32 useful path
+------------------------------------------------------------------------
+r1168 | tpaviot | 2011-01-20 06:00:37 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Enabled missing module
+------------------------------------------------------------------------
+r1169 | tpaviot | 2011-01-20 06:19:13 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Updated win32 SWIG files to the latest SWIG_generator state
+------------------------------------------------------------------------
+r1170 | tpaviot | 2011-01-20 06:46:04 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Updated testing suite to latest wrapper revision - *all* 64 tests should pass
+------------------------------------------------------------------------
+r1171 | tpaviot | 2011-01-20 06:38:59 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Updated lin/darwin SWIG files to the latest SWIG_generator state
+------------------------------------------------------------------------
+r1172 | tpaviot | 2011-01-20 06:59:10 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Added missing StdPrs module
+------------------------------------------------------------------------
+r1173 | tpaviot | 2011-01-20 07:00:09 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Added missing StdPrs module for win32
+------------------------------------------------------------------------
+r1177 | tpaviot | 2011-01-20 15:19:49 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Level1 examples sync'ed
+------------------------------------------------------------------------
+r1178 | tpaviot | 2011-01-20 15:40:54 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Updated license header to LGPL
+------------------------------------------------------------------------
+r1179 | tpaviot | 2011-01-20 15:41:29 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Updated license header to LGPL
+------------------------------------------------------------------------
+r1180 | tpaviot | 2011-01-20 15:45:09 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Updated license header to LGPL
+------------------------------------------------------------------------
+r1181 | tpaviot | 2011-01-20 15:46:44 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Small clean up - Remove unnecessary files
+------------------------------------------------------------------------
+r1182 | tpaviot | 2011-01-20 15:51:40 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Removed unnecessary stuff from setup.py (automated build of smesh and geom from this script is a bad thing)
+------------------------------------------------------------------------
+r1183 | tpaviot | 2011-01-20 19:07:09 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Added missing headrs directory
+------------------------------------------------------------------------
+r1184 | tpaviot | 2011-01-20 22:26:31 +0100 (Jeu, 20 jan 2011) | 1 line
+
+A few more headers were missins. Weird.
+------------------------------------------------------------------------
+r1185 | tpaviot | 2011-01-20 23:47:41 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Fixed Level2 examples
+------------------------------------------------------------------------
+r1186 | tpaviot | 2011-01-20 23:48:59 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Fixed addons
+------------------------------------------------------------------------
+r1187 | tpaviot | 2011-01-20 23:50:57 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Updated INSTALL
+------------------------------------------------------------------------
+r1188 | tpaviot | 2011-01-20 23:53:00 +0100 (Jeu, 20 jan 2011) | 1 line
+
+Moved license from GPLv3 to LGPLv3
+------------------------------------------------------------------------
+r1190 | tpaviot | 2011-01-21 09:12:40 +0100 (Ven, 21 jan 2011) | 1 line
+
+Removed bisector.py example from trunk (missing make_edge2d function)
+------------------------------------------------------------------------
+r1193 | tpaviot | 2011-01-21 09:21:02 +0100 (Ven, 21 jan 2011) | 1 line
+
+Added test_all_associative_methods from the example in the /examples/Level2/PAF location
+------------------------------------------------------------------------
+r1194 | tpaviot | 2011-01-21 09:34:50 +0100 (Ven, 21 jan 2011) | 1 line
+
+Small clean up
+------------------------------------------------------------------------
+r1195 | tpaviot | 2011-01-21 10:03:18 +0100 (Ven, 21 jan 2011) | 1 line
+
+Fixes in CADViewerMDI - Remove CADViewer.py (no need to have both programs)
+------------------------------------------------------------------------
+
