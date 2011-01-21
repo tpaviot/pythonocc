@@ -452,7 +452,7 @@ class ModularBuilder(object):
             elif len(argument_types)==3: #ex: Handle_WNT_GraphicDevice const &
                 argument_types = self.process_by_ref_argument(argument_types)
                 if len(argument_types)==2:#removed a '&'
-                    to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
+                    to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name) #Henrik: Why do you flip the order?
                 else:
                     to_write += "%s %s %s%s"%(argument_types[1],argument_types[0],argument_types[2],argument_name)
                 param_list.append([argument_types[1],argument_name])
@@ -506,6 +506,9 @@ class ModularBuilder(object):
         print 'avant:%s'%param_list
         return to_write, return_list, param_list, arguments, default_value, END_WITH_CONST, param_names,FUNCTION_MODIFIED
     
+    
+    
+    #HANDLED, line 414 
     def process_by_ref_return_type(self, return_type_string):
         ''' This method checks if the returned value is by ref:
         for instance const gp_Pnt &.
@@ -639,6 +642,7 @@ class ModularBuilder(object):
         # on teste le cas suivant pour return_type:gp_Pnt const &, qu'il faut transformer en const gp_Pnt &
         # test if the value is returned by reference. For that, just check if the '&' character
         # is in the return type
+        #HANDLED: line 414
         if '&' in return_type:
             # send the return_type string to the process_by_ref_return_type method
             # and get the modified string

@@ -1,387 +1,217 @@
-common:
+core:
   AIS2D:
-    exclude: []
-    excluded_members:
+    exclude_members:
       AIS2D_ProjShape: [Projector]
-    include: []
   APIHeaderSection:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface]
-  Adaptor2d:
-    exclude: []
-    include: []
+  Adaptor2d: {}
   Adaptor3d:
-    exclude: []
     include: [Handle_TCollection]
   AdvApp2Var:
     exclude: [AdvApp2Var_Iso, AdvApp2Var_SysBase, AdvApp2Var_ApproxF2var, AdvApp2Var_MathBase]
     include: [gp]
-  AdvApprox:
-    exclude: []
-    include: []
-  AppBlend:
-    exclude: []
-    include: []
-  AppCont:
-    exclude: []
-    include: []
+  AdvApprox: {}
+  AppBlend: {}
+  AppCont: {}
   AppDef:
-    exclude: []
-    excluded_members:
+    exclude_members:
       AppDef_MultiLine: [SetParameter]
       AppDef_ResConstraintOfMyGradientOfCompute: [Error]
       AppDef_ResConstraintOfMyGradientbisOfBSplineCompute: [Error]
       AppDef_ResConstraintOfTheGradient: [Error]
       AppDef_TheResol: [Error]
     include: [TCollection]
-  AppParCurves:
-    exclude: []
-    include: []
+  AppParCurves: {}
   AppStd:
-    exclude: []
     include: [TCollection, CDM, CDF, TDF]
   AppStdL:
-    exclude: []
     include: [TCollection, CDM, CDF, TDF]
-  Approx:
-    exclude: []
-    include: []
-  ApproxInt:
-    exclude: []
-    include: []
-  Aspect:
-    exclude: []
-    include: []
+  Approx: {}
+  ApproxInt: {}
+  Aspect: {}
   BOP:
-    exclude: []
-    include: [TopoDS, BooleanOperations]
-  BOPTColStd:
-    exclude: []
-    include: []
-  BOPTools:
-    exclude: []
-    include: []
-  BRep:
-    exclude: []
-    include: []
+    include: [BooleanOperations]
+  BOPTColStd: {}
+  BOPTools: {}
+  BRep: {}
   BRepAdaptor:
-    exclude: []
     include: [math]
   BRepAlgo:
-    exclude: []
-    excluded_members:
+    exclude_members:
       BRepAlgo_DSAccess: [IsDeleted]
-    include: []
-  BRepAlgoAPI:
-    exclude: []
-    include: []
+  BRepAlgoAPI: {}
   BRepApprox:
-    exclude: []
-    excluded_members:
+    exclude_members:
       BRepApprox_Approx: [Perform]
       BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox: [Error]
       BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox: [Error]
     include: [Handle_TCollection]
   BRepBlend:
-    exclude: []
     include: [math, Contap, Convert, AppParCurves]
-  BRepBndLib:
-    exclude: []
-    include: []
+  BRepBndLib: {}
   BRepBuilderAPI:
-    exclude: []
     include: [TopoDS]
-  BRepCheck:
-    exclude: []
-    include: []
+  BRepCheck: {}
   BRepClass:
-    exclude: []
-    excluded_members: {BRepClass_FaceClassifier: BRepClass_FaceClassifier}
-    include: []
+    exclude_members: {BRepClass_FaceClassifier: BRepClass_FaceClassifier}
   BRepClass3d:
-    exclude: []
     include: [TopoDS_Shell, math]
-  BRepExtrema:
-    exclude: []
-    include: []
+  BRepExtrema: {}
   BRepFeat:
-    exclude: []
-    excluded_members:
+    exclude_members:
       BRepFeat: [IsInOut]
       BRepFeat_MakeLinearForm: [TransformShapeFU]
-    include: []
   BRepFill:
-    exclude: []
     include: [Geom, AdvApp2Var, Convert, Approx, Adaptor3d, Handle_math]
-  BRepFilletAPI:
-    exclude: []
-    include: []
+  BRepFilletAPI: {}
   BRepGProp:
     exclude: [BRepGProp_VinertGK]
     include: [GProp_PrincipalProps]
-  BRepIntCurveSurface:
-    exclude: []
-    include: []
-  BRepLProp:
-    exclude: []
-    include: []
-  BRepLib:
-    exclude: []
-    include: []
+  BRepIntCurveSurface: {}
+  BRepLProp: {}
+  BRepLib: {}
   BRepMAT2d:
-    exclude: []
     include: [gp, Bisector]
   BRepMesh:
     exclude: [BRepMesh_DiscretFactory]
-    excluded_members:
+    exclude_members:
       BRepMesh_SurfaceGrid: [SetTrianglesOnPlane]
-    include: []
   BRepOffset:
-    exclude: []
-    excluded_members:
+    exclude_members:
       BRepOffset_MakeOffset: [GetAnalyse]
-    include: []
   BRepOffsetAPI:
     exclude: [BRepOffsetAPI_FindContigousEdges]
     include: [TopTools, BRepTools]
   BRepPrim:
-    exclude: []
     include: [gp]
-  BRepPrimAPI:
-    exclude: []
-    include: []
-  BRepProj:
-    exclude: []
-    include: []
-  BRepSweep:
-    exclude: []
-    include: []
+  BRepPrimAPI: {}
+  BRepProj: {}
+  BRepSweep: {}
   BRepToIGES:
-    exclude: []
     include: [gp]
-  BRepToIGESBRep:
-    exclude: []
-    include: []
+  BRepToIGESBRep: {}
   BRepTools:
-    exclude: []
     include: [TopoDS]
   BRepTopAdaptor:
-    exclude: []
     include: [math, ChFiDS]
   BSplCLib:
-    exclude: []
-    excluded_members:
+    exclude_members:
       BSplCLib: [DN]
-    include: []
   BSplSLib:
-    exclude: []
-    excluded_members:
+    exclude_members:
       BSplCLib: [DN]
-    include: []
   BiTgte:
-    exclude: []
     include: [math]
   BinDrivers:
-    exclude: []
     include: [Standard, TCollection, Storage, PCDM]
   BinLDrivers:
-    exclude: []
     include: [TCollection, Storage]
-  BinMDF:
-    exclude: []
-    include: []
+  BinMDF: {}
   BinMDataStd:
-    exclude: []
     include: [TCollection]
   BinMDocStd:
-    exclude: []
     include: [TCollection]
   BinMFunction:
-    exclude: []
     include: [TCollection]
   BinMNaming:
-    exclude: []
     include: [TCollection]
   BinMPrsStd:
-    exclude: []
     include: [TCollection]
   BinMXCAFDoc:
-    exclude: []
     include: [TCollection]
-  BinObjMgt:
-    exclude: []
-    include: []
+  BinObjMgt: {}
   BinTObjDrivers:
-    exclude: []
     include: [Standard, TCollection, Storage, PCDM]
   BinTools:
-    exclude: []
-    excluded_members:
+    exclude_members:
       BinTools_Curve2dSet: [Dump]
-    include: []
   BinXCAFDrivers:
-    exclude: []
     include: [Standard, TCollection, Storage, PCDM]
   Bisector:
-    exclude: []
     include: [TCollection]
-  Blend:
-    exclude: []
-    include: []
+  Blend: {}
   BlendFunc:
-    exclude: []
-    excluded_members:
+    exclude_members:
       BlendFunc: [Knots, Mults]
-    include: []
   Bnd:
-    exclude: []
     include: [math]
-  BndLib:
-    exclude: []
-    include: []
-  BooleanOperations:
-    exclude: []
-    include: []
+  BndLib: {}
+  BooleanOperations: {}
   CDF:
-    exclude: []
     include: [TCollection]
   CDM:
     exclude: [CDM_Document]
-    include: []
   CGM:
     exclude: [CGM_Driver]
     include: [Standard, Quantity, TCollection, OSD, MFT, Aspect]
-  CPnts:
-    exclude: []
-    include: []
-  CSLib:
-    exclude: []
-    include: []
-  ChFi2d:
-    exclude: []
-    include: []
+  CPnts: {}
+  CSLib: {}
+  ChFi2d: {}
   ChFi3d:
-    exclude: []
     include: [Adaptor3d]
   ChFiDS:
-    exclude: []
     include: [math]
   Contap:
     exclude: [Contap_TheIWalkingOfContour]
-    include: []
-  Convert:
-    exclude: []
-    include: []
-  DBC:
-    exclude: []
-    include: []
-  Dico:
-    exclude: []
-    include: []
+  Convert: {}
+  DBC: {}
+  Dico: {}
   Draft:
-    exclude: []
     include: [TopTools]
   Dynamic:
-    exclude: []
     include: [TCollection]
   Expr:
     exclude: [Expr_Sign]
-    include: []
-  ExprIntrp:
-    exclude: []
-    include: []
+  ExprIntrp: {}
   Extrema:
-    exclude: []
     include: [Adaptor2d]
-  FEmTool:
-    exclude: []
-    include: []
-  FairCurve:
-    exclude: []
-    include: []
+  FEmTool: {}
+  FairCurve: {}
   FilletSurf:
-    exclude: []
     include: [TopoDS]
-  GC:
-    exclude: []
-    include: []
-  GCE2d:
-    exclude: []
-    include: []
-  GCPnts:
-    exclude: []
-    include: []
+  GC: {}
+  GCE2d: {}
+  GCPnts: {}
   GGraphic2d:
-    exclude: []
     include: [Quantity]
-  GProp:
-    exclude: []
-    include: []
-  GccAna:
-    exclude: []
-    include: []
-  GccEnt:
-    exclude: []
-    include: []
+  GProp: {}
+  GccAna: {}
+  GccEnt: {}
   GccInt:
-    exclude: []
     include: [Handle_Standard, Quantity]
-  GccIter:
-    exclude: []
-    include: []
+  GccIter: {}
   Geom:
-    exclude: []
     include: [BRepFill, gp]
   Geom2d:
-    exclude: []
     include: [gp]
   Geom2dAPI:
-    exclude: []
-    excluded_members:
+    exclude_members:
       Geom2dAPI_Interpolate: [ClearTangents]
-    include: []
-  Geom2dAdaptor:
-    exclude: []
-    include: []
-  Geom2dConvert:
-    exclude: []
-    include: []
+  Geom2dAdaptor: {}
+  Geom2dConvert: {}
   Geom2dGcc:
     exclude: [Geom2dGcc_FuncTCuCuCuOfMyC2d3Tan]
-    excluded_members:
+    exclude_members:
       Geom2dGcc_Lin2dTanObl: [IsParallel2]
     include: [gp]
   Geom2dHatch:
-    exclude: []
-    excluded_members:
+    exclude_members:
       Geom2dHatch_Hatcher: [IsDone]
     include: [Contap, math]
   Geom2dInt:
-    exclude: []
-    excluded_members:
+    exclude_members:
       Geom2dInt_Geom2dCurveTool: [IsComposite]
       Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter: [Locate]
     include: [Adaptor2d]
-  Geom2dLProp:
-    exclude: []
-    include: []
-  Geom2dToIGES:
-    exclude: []
-    include: []
+  Geom2dLProp: {}
+  Geom2dToIGES: {}
   GeomAPI:
-    exclude: []
-    excluded_members:
+    exclude_members:
       GeomAPI_Interpolate: [ClearTangents]
-    include: []
-  GeomAbs:
-    exclude: []
-    include: []
+  GeomAbs: {}
   GeomAdaptor:
-    exclude: []
     include: [math, Handle_TCollection]
-  GeomConvert:
-    exclude: []
-    include: []
+  GeomConvert: {}
   GeomFill:
     exclude: [GeomFill_NSections, GeomFill_SweepSectionGenerator, GeomFill_FunctionGuide]
     include: [gp, Geom2dHatch, AppParCurves]
@@ -389,58 +219,31 @@ common:
     exclude: [GeomInt_WLApprox, GeomInt_IntSS, GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox,
       GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox]
     include: [gp, Adaptor3d]
-  GeomLProp:
-    exclude: []
-    include: []
-  GeomLib:
-    exclude: []
-    include: []
-  GeomPlate:
-    exclude: []
-    include: []
-  GeomProjLib:
-    exclude: []
-    include: []
-  GeomToIGES:
-    exclude: []
-    include: []
-  GeomToStep:
-    exclude: []
-    include: []
+  GeomLProp: {}
+  GeomLib: {}
+  GeomPlate: {}
+  GeomProjLib: {}
+  GeomToIGES: {}
+  GeomToStep: {}
   GeomTools:
-    exclude: []
     include: [Handle_TCollection]
-  GraphDS:
-    exclude: []
-    include: []
-  GraphTools:
-    exclude: []
-    include: []
+  GraphDS: {}
+  GraphTools: {}
   HLRAlgo:
-    exclude: []
     include: [gp_Lin]
   HLRBRep:
     exclude: [HLRBRep_ThePolyhedronOfInterCSurf]
-    excluded_members:
+    exclude_members:
       HLRBRep_BSurfaceTool: [Axis]
       HLRBRep_Surface: [UIntervalContinuity, VIntervalContinuity]
       HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter: [Locate]
-    include: []
-  HLRTopoBRep:
-    exclude: []
-    include: []
-  Hatch:
-    exclude: []
-    include: []
-  HatchGen:
-    exclude: []
-    include: []
+  HLRTopoBRep: {}
+  Hatch: {}
+  HatchGen: {}
   IFGraph:
-    exclude: []
     include: [TCollection, MoniTool]
   IFSelect:
-    exclude: []
-    excluded_members:
+    exclude_members:
       IFSelect_ContextModif: [Search]
       IFSelect_EditForm: [NbTouched]
       IFSelect_IntParam: [StaticName]
@@ -452,17 +255,13 @@ common:
     exclude: [IGESBasic_Protocol]
     include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent]
   IGESCAFControl:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent]
   IGESControl:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface]
-  IGESConvGeom:
-    exclude: []
-    include: []
+  IGESConvGeom: {}
   IGESData:
     exclude: [IGESData_Protocol]
-    excluded_members:
+    exclude_members:
       IGESData_IGESReaderData: [DirValues]
     include: [MoniTool, TCollection]
   IGESDefs:
@@ -471,9 +270,7 @@ common:
   IGESDimen:
     exclude: [IGESDimen_Protocol]
     include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent]
-  IGESFile:
-    exclude: []
-    include: []
+  IGESFile: {}
   IGESGeom:
     exclude: [IGESGeom_Protocol]
     include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent]
@@ -482,7 +279,7 @@ common:
     include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent]
   IGESSelect:
     exclude: [IGESSelect_Protocol]
-    excluded_members:
+    exclude_members:
       IGESSelect_SelectBasicGeom: [CurvesOnly]
     include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent]
   IGESSolid:
@@ -490,321 +287,179 @@ common:
     include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent]
   IGESToBRep:
     exclude: [IGESToBRep_AlgoContainer]
-    excluded_members:
+    exclude_members:
       IGESToBRep_TopoSurface: [TransferPlaneSurface]
     include: [MoniTool, TCollection, Handle_Interface]
-  IntAna:
-    exclude: []
-    include: []
-  IntAna2d:
-    exclude: []
-    include: []
-  IntCurve:
-    exclude: []
-    include: []
+  IntAna: {}
+  IntAna2d: {}
+  IntCurve: {}
   IntCurveSurface:
     exclude: [IntCurveSurface_ThePolyhedronOfHInter]
-    include: []
-  IntCurvesFace:
-    exclude: []
-    include: []
-  IntImp:
-    exclude: []
-    include: []
+  IntCurvesFace: {}
+  IntImp: {}
   IntImpParGen:
     exclude: [IntImpParGen_ImpTool]
-    include: []
-  IntPoly:
-    exclude: []
-    include: []
+  IntPoly: {}
   IntPolyh:
     exclude: [IntPolyh_MaillageAffinage, IntPolyh_Triangle]
-    include: []
-  IntRes2d:
-    exclude: []
-    include: []
-  IntStart:
-    exclude: []
-    include: []
-  IntSurf:
-    exclude: []
-    include: []
+  IntRes2d: {}
+  IntStart: {}
+  IntSurf: {}
   IntTools:
-    exclude: []
-    excluded_members:
+    exclude_members:
       IntTools_PntOnFace: [IsValid]
     include: [math]
-  IntWalk:
-    exclude: []
-    include: []
+  IntWalk: {}
   Interface:
     exclude: [Interface_STAT]
-    excluded_members:
+    exclude_members:
       Interface_Check: [Status]
       Interface_CheckIterator: [Status]
       Interface_Graph: [Status]
-    include: []
-  Intf:
-    exclude: []
-    include: []
-  Intrv:
-    exclude: []
-    include: []
+  Intf: {}
+  Intrv: {}
   LDOMParser:
-    exclude: []
-    excluded_members:
+    exclude_members:
       LDOMParser: [parse]
-    include: []
   LProp:
-    exclude: []
     include: [Adaptor2d, Adaptor3d]
-  LProp3d:
-    exclude: []
-    include: []
+  LProp3d: {}
   Law:
-    exclude: []
-    excluded_members:
+    exclude_members:
       Law_Interpolate: [ClearTangents]
-    include: []
   LocOpe:
     exclude: [LocOpe_Revol, LocOpe_RevolutionForm]
     include: [TopOpeBRepDS, TopOpeBRepTool]
-  LocalAnalysis:
-    exclude: []
-    include: []
-  MAT:
-    exclude: []
-    include: []
+  LocalAnalysis: {}
+  MAT: {}
   MAT2d:
     exclude: [MAT2d_SketchExplorer, MAT2d_CutCurve]
-    include: []
-  MDF:
-    exclude: []
-    include: []
+  MDF: {}
   MDataStd:
-    exclude: []
     include: [TCollection, TDF]
   MDocStd:
-    exclude: []
     include: [Storage]
   MFT:
-    exclude: []
     include: [Aspect]
   MFunction:
-    exclude: []
     include: [TCollection]
-  MMgt:
-    exclude: []
-    include: []
+  MMgt: {}
   MNaming:
-    exclude: []
     include: [TCollection]
   Materials:
-    exclude: []
     include: [TCollection_AsciiString]
   MeshAlgo:
     exclude: [MeshAlgo_Edge, MeshAlgo_Vertex, MeshAlgo_Triangle, MeshAlgo_CircleInspector]
-    include: []
-  MeshDS:
-    exclude: []
-    include: []
+  MeshDS: {}
   MeshShape:
     exclude: [MeshShape_Edge, MeshShape_Vertex, MeshShape_Triangle]
-    include: []
-  Message:
-    exclude: []
-    include: []
+  Message: {}
   MgtBRep:
-    exclude: []
     include: [Standard]
   MgtTopoDS:
-    exclude: []
     include: [Standard]
   MoniTool:
-    exclude: []
-    excluded_members:
+    exclude_members:
       MoniTool_AttrList: [GetStringAttribute]
       MoniTool_CaseData: [Msg, Text]
       MoniTool_DataMapIteratorOfDataMapOfTimer: [Key]
       MoniTool_DataMapNodeOfDataMapOfTimer: [Key]
-    include: []
-  NLPlate:
-    exclude: []
-    include: []
+  NLPlate: {}
   OSD:
     exclude: [OSD_Semaphore, OSD_MailBox, OSD_Process]
-    excluded_members:
+    exclude_members:
       OSD: [ControlBreak]
       OSD_Path: [LocateExecFile]
     include: [Quantity_Date]
-  ObjMgt:
-    exclude: []
-    include: []
+  ObjMgt: {}
   PBRep:
-    exclude: []
     include: [DBC, PMMgt, ObjMgt]
   PCDM:
     exclude: [PCDM_StorageDriver, PCDM_DOMHeaderParser]
-    excluded_members:
+    exclude_members:
       PCDM: [StorageDriver]
-    include: []
-  PCDMShape:
-    exclude: []
-    include: []
-  PColPGeom:
-    exclude: []
-    include: []
-  PColPGeom2d:
-    exclude: []
-    include: []
-  PColStd:
-    exclude: []
-    include: []
-  PColgp:
-    exclude: []
-    include: []
-  PCollection:
-    exclude: []
-    include: []
-  PDF:
-    exclude: []
-    include: []
+  PCDMShape: {}
+  PColPGeom: {}
+  PColPGeom2d: {}
+  PColStd: {}
+  PColgp: {}
+  PCollection: {}
+  PDF: {}
   PFunction:
-    exclude: []
     include: [DBC]
-  PGeom:
-    exclude: []
-    include: []
-  PGeom2d:
-    exclude: []
-    include: []
-  PMMgt:
-    exclude: []
-    include: []
-  PNaming:
-    exclude: []
-    include: []
-  PPoly:
-    exclude: []
-    include: []
+  PGeom: {}
+  PGeom2d: {}
+  PMMgt: {}
+  PNaming: {}
+  PPoly: {}
   PPrsStd:
-    exclude: []
     include: [DBC]
   PS:
-    exclude: []
     include: [Aspect, TCollection, MFT, OSD]
-  PShort:
-    exclude: []
-    include: []
-  PStandard:
-    exclude: []
-    include: []
-  PTColStd:
-    exclude: []
-    include: []
-  PTopLoc:
-    exclude: []
-    include: []
+  PShort: {}
+  PStandard: {}
+  PTColStd: {}
+  PTopLoc: {}
   PTopoDS:
     exclude: [PTopoDS_TShape, PTopoDS_TShape1]
-    include: []
   PXCAFDoc:
-    exclude: []
     include: [DBC]
-  Plate:
-    exclude: []
-    include: []
+  Plate: {}
   PlotMgt:
-    exclude: []
-    excluded_members:
+    exclude_members:
       PlotMgt_Plotter: [SetPaperFormat]
     include: [OSD]
-  Plugin:
-    exclude: []
-    include: []
+  Plugin: {}
   Poly:
     exclude: [Poly_CoherentTriPtr, Poly_CoherentTriangulation]
-    include: []
-  Precision:
-    exclude: []
-    include: []
-  Primitives:
-    exclude: []
-    include: []
+  Precision: {}
+  Primitives: {}
   ProjLib:
-    exclude: []
-    excluded_members:
+    exclude_members:
       ProjLib_ProjectOnSurface: [Load]
       ProjLib_ProjectedCurve: [Load]
-    include: []
-  Quantity:
-    exclude: []
-    include: []
+  Quantity: {}
   RWHeaderSection:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
+    include: [MoniTool, TCollection,  StepBasic]
   RWStepAP203:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
+    include: [MoniTool, TCollection,  StepBasic]
   RWStepAP214:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
+    include: [MoniTool, TCollection,  StepBasic]
   RWStepBasic:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
+    include: [MoniTool, TCollection,  StepBasic]
   RWStepDimTol:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
+    include: [MoniTool, TCollection,  StepBasic]
   RWStepElement:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
+    include: [MoniTool, TCollection,  StepBasic]
   RWStepFEA:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
+    include: [MoniTool, TCollection,  StepBasic]
   RWStepGeom:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
+    include: [MoniTool, TCollection,  StepBasic]
   RWStepRepr:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
+    include: [MoniTool, TCollection,  StepBasic]
   RWStepShape:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
+    include: [MoniTool, TCollection,  StepBasic]
   RWStepVisual:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Interface_GraphContent, StepBasic]
-  RWStl:
-    exclude: []
-    include: []
-  Resource:
-    exclude: []
-    include: []
+    include: [MoniTool, TCollection,  StepBasic]
+  RWStl: {}
+  Resource: {}
   STEPCAFControl:
-    exclude: []
-    include: [MoniTool, TCollection, Handle_Interface, Transfer, XSControl, Interface_Data,
+    include: [MoniTool, TCollection,  Transfer, XSControl, Interface_Data,
       Interface_Map, Interface_Indexed]
   STEPControl:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface]
   STEPEdit:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface]
   STEPSelections:
-    exclude: []
-    excluded_members:
+    exclude_members:
       STEPSelections_Counter: [POP, POP2]
     include: [MoniTool, TCollection, Handle_Interface, Interface_SequenceOfCheck]
   Select2D:
-    exclude: []
     include: [TCollection]
   Select3D:
-    exclude: []
-    excluded_members:
+    exclude_members:
       Select3D_SensitiveTriangulation: [DetectedTriangle]
-    include: []
-  SelectBasics:
-    exclude: []
-    include: []
+  SelectBasics: {}
   ShapeAlgo:
     exclude: [ShapeAlgo]
     include: [TopoDS]
@@ -812,239 +467,147 @@ common:
     exclude: [Selector, ShapeAnalysis_BoxBndTreeSelector]
     include: [Geom, TCollection, Message, Handle_Message_Algorithm]
   ShapeBuild:
-    exclude: []
     include: [TopoDS, TopTools, TCollection, Geom, Message, Handle_Message_Algorithm]
   ShapeConstruct:
-    exclude: []
     include: [Geom, TCollection, Message, Handle_Message_Algorithm]
   ShapeCustom:
-    exclude: []
-    excluded_members:
+    exclude_members:
       ShapeCustom: [BSplineRestriction, ConvertToRevolution, SweptToElementary, ConvertToBSpline]
     include: [Handle_TCollection, TopoDS, TopTools]
   ShapeExtend:
-    exclude: []
     include: [BRepFill, gp, TopoDS]
   ShapeFix:
     exclude: [ShapeFix_WireSegment]
     include: [TopoDS_Solid, Geom, TCollection, Message, Handle_Message_Algorithm]
   ShapeProcess:
-    exclude: []
     include: [Geom, TCollection, Message, Handle_Message_Algorithm]
   ShapeProcessAPI:
-    exclude: []
     include: [Geom, TCollection, Message, Handle_Message_Algorithm]
   ShapeUpgrade:
-    exclude: []
     include: [Geom, TCollection, Message, Handle_Message_Algorithm]
-  SortTools:
-    exclude: []
-    include: []
+  SortTools: {}
   Standard:
     exclude: [Standard_SStream]
-    excluded_members:
+    exclude_members:
       Handle_Standard_Persistent: [ShallowDump]
       Standard_Failure: [operator=]
-    include: []
   StdDrivers:
-    exclude: []
     include: [Standard, TCollection, PCDM, MDF, Storage]
-  StdFail:
-    exclude: []
-    include: []
+  StdFail: {}
   StdLDrivers:
-    exclude: []
     include: [Standard, TCollection, PCDM, MDF, Storage]
   StepAP203:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface, StepBasic]
   StepAP214:
     exclude: [StepAP214_Protocol]
-    include: [MoniTool, TCollection, Handle_Interface, StepBasic, StepGeom, StepRepr]
+    include: [MoniTool, TCollection,  StepBasic, StepGeom, StepRepr]
   StepBasic:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface]
   StepData:
     exclude: [StepData_Protocol]
-    excluded_members:
+    exclude_members:
       StepData_FreeFormEntity: [StepData_FreeFormEntity]
       StepData_StepReaderData: [ReadEnumParam]
       StepData_UndefinedEntity: [Super]
     include: [MoniTool, TCollection]
   StepDimTol:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface, StepBasic]
   StepElement:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface, Interface_SequenceOfCheck]
   StepFEA:
     exclude: [StepFEA_SymmetricTensor43d]
     include: [MoniTool, TCollection, Handle_Interface, Interface_SequenceOfCheck]
   StepFile:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface]
   StepGeom:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface, StepBasic]
   StepRepr:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface, Interface_SequenceOfCheck]
   StepSelect:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface]
   StepShape:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface, StepBasic]
   StepToGeom:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface]
   StepToTopoDS:
     exclude: [StepToTopoDS_Builder]
     include: [MoniTool, TCollection, Handle_Interface]
   StepVisual:
-    exclude: []
     include: [MoniTool, TCollection, Handle_Interface, StepBasic]
-  StlAPI:
-    exclude: []
-    include: []
-  StlMesh:
-    exclude: []
-    include: []
+  StlAPI: {}
+  StlMesh: {}
   Storage:
     exclude: [Storage_BucketIterator, Storage_BucketOfPersistent, Storage_Bucket]
-    include: []
-  Sweep:
-    exclude: []
-    include: []
-  TColGeom:
-    exclude: []
-    include: []
-  TColGeom2d:
-    exclude: []
-    include: []
-  TColQuantity:
-    exclude: []
-    include: []
-  TColStd:
-    exclude: []
-    include: []
-  TColgp:
-    exclude: []
-    include: []
-  TCollection:
-    exclude: []
-    include: []
+  Sweep: {}
+  TColGeom: {}
+  TColGeom2d: {}
+  TColQuantity: {}
+  TColStd: {}
+  TColgp: {}
+  TCollection: {}
   TDF:
     exclude: [TDF_LabelNode]
-    include: []
-  TDataStd:
-    exclude: []
-    include: []
-  TDocStd:
-    exclude: []
-    include: []
-  TFunction:
-    exclude: []
-    include: []
+  TDataStd: {}
+  TDocStd: {}
+  TFunction: {}
   TNaming:
     exclude: [TNaming_Identifier]
     include: [Standard_GUID]
-  TShort:
-    exclude: []
-    include: []
-  TopAbs:
-    exclude: []
-    include: []
-  TopBas:
-    exclude: []
-    include: []
-  TopClass:
-    exclude: []
-    include: []
-  TopCnx:
-    exclude: []
-    include: []
-  TopExp:
-    exclude: []
-    include: []
+  TShort: {}
+  TopAbs: {}
+  TopBas: {}
+  TopClass: {}
+  TopCnx: {}
+  TopExp: {}
   TopLoc:
     exclude: [TopLoc_SListNodeOfSListOfItemLocation]
-    include: []
   TopOpeBRep:
     exclude: [TopOpeBRep_GeomTools, TopOpeBRep_LineInter]
-    excluded_members:
+    exclude_members:
       TopOpeBRep_EdgesIntersector: [Tolerance2]
       TopOpeBRep_FacesFiller: [EqualpP]
       TopOpeBRep_GeomTool: [MakePrivateCurves]
       TopOpeBRep_LineIntersector: [LineA]
     include: [TopoDS, Geom2d]
   TopOpeBRepBuild:
-    exclude: []
-    excluded_members:
+    exclude_members:
       TopOpeBRepBuild_Builder1: [GFillSplitsPVS]
     include: [TopOpeBRepDS]
   TopOpeBRepDS:
     exclude: [TopOpeBRepDS_DSS, TopOpeBRepDS_Dumper, TopOpeBRepDS_HDataStructure]
-    include: []
   TopOpeBRepTool:
     exclude: [TopOpeBRepTool_STATE, TopOpeBRepTool_mkTondgE]
-    include: []
-  TopTools:
-    exclude: []
-    include: []
-  TopTrans:
-    exclude: []
-    include: []
-  TopoDS:
-    exclude: [TopoDS_FrozenShape, TopoDS_UnCompatibleShapes]
-    include: []
-  TopoDSToStep:
-    exclude: []
-    include: []
+  TopTools: {}
+  TopTrans: {}
+  TopoDS: {}
+  TopoDSToStep: {}
   Transfer:
-    exclude: []
-    excluded_members:
+    exclude_members:
       Transfer_Finder: [GetStringAttribute]
     include: [MoniTool, IFSelect]
   TransferBRep:
     exclude: [TransferBRep_ShapeMapper]
-    excluded_members:
+    exclude_members:
       TransferBRep: [BRepCheck]
     include: [MoniTool, TCollection, Handle_Interface, Interface_SequenceOfCheck]
   Units:
     exclude: [Units_Quantity, Units_Dimensions]
-    include: []
-  UnitsAPI:
-    exclude: []
-    include: []
+  UnitsAPI: {}
   V2d:
-    exclude: []
     include: [Handle_TCollection]
   V3d:
-    exclude: []
     include: [Handle_TCollection, Aspect, Quantity]
-  Viewer:
-    exclude: []
-    include: []
-  Vrml:
-    exclude: []
-    include: []
-  VrmlAPI:
-    exclude: []
-    include: []
+  Viewer: {}
+  Vrml: {}
+  VrmlAPI: {}
   VrmlConverter:
-    exclude: []
     include: [TCollection]
   XCAFApp:
-    exclude: []
     include: [CDM, CDF, TDF, TCollection]
   XCAFDoc:
-    exclude: []
-    excluded_members:
+    exclude_members:
       XCAFDoc_DimTolTool: [GetDatum]
-    include: []
   XCAFDrivers:
-    exclude: []
     include: [Standard, PCDM, Storage, MDF, TCollection]
   XSAlgo:
     exclude: [XSAlgo_AlgoContainer]
@@ -1053,170 +616,194 @@ common:
     exclude: [XSControl_Vars]
     include: [MoniTool, TCollection]
   XmlDrivers:
-    exclude: []
     include: [Standard, PCDM, TCollection, Storage]
   XmlLDrivers:
-    exclude: []
     include: [Standard, PCDM, TCollection, Storage]
-  XmlMDF:
-    exclude: []
-    include: []
+  XmlMDF: {}
   XmlMDataStd:
-    exclude: []
     include: [TCollection]
   XmlMDocStd:
-    exclude: []
     include: [TCollection]
   XmlMFunction:
-    exclude: []
     include: [TCollection]
   XmlMNaming:
-    exclude: []
     include: [TCollection]
   XmlMPrsStd:
-    exclude: []
     include: [TCollection]
   XmlMXCAFDoc:
-    exclude: []
     include: [TCollection]
   XmlObjMgt:
-    exclude: []
-    excluded_members:
+    exclude_members:
       XmlObjMgt: [GetInteger]
     include: [TCollection]
   XmlTObjDrivers:
-    exclude: []
     include: [TCollection, PCDM, Storage]
   XmlXCAFDrivers:
-    exclude: []
     include: [Standard, TCollection, PCDM, Storage]
-  gce:
-    exclude: []
-    include: []
-  gp:
-    exclude: [gp_VectorWithNullMagnitude]
-    include: []
+  gce: {}
+  gp: {}
   math:
     exclude: [math_NewtonFunctionSetRoot, math_NewtonMinimum]
     include: [Handle_TCollection]
 nix:
   AIS:
-    exclude: []
-    excluded_members:
+    exclude_members:
       AIS_LocalContext: [Reactivate]
     include: [OSD, MFT, Xw, Graphic3d, TopoDS_Vertex, Aspect, SelectBasics, PrsMgr]
   AlienImage:
-    exclude: []
     include: [Quantity, TCollection]
   DsgPrs:
-    exclude: []
-    excluded_members:
+    exclude_members:
       DsgPrs_RadiusPresentation: [Add]
-    include: []
   Graphic2d:
-    exclude: []
-    excluded_members:
+    exclude_members:
       Graphic2d_TransientManager: [Transform]
-    include: []
   Graphic3d:
-    exclude: []
-    excluded_members:
+    exclude_members:
       Graphic3d_Group: [SetGroupPrimitivesAspect]
     include: [OSD, MFT, gp]
-  Image:
-    exclude: []
-    include: []
+  Image: {}
   MeshVS:
-    exclude: []
     include: [OSD, MFT, Xw, Graphic3d, Aspect, Prs3d, Quantity, PrsMgr]
   NIS:
     exclude: [NIS_Triangulated]
     include: [Aspect, TColStd, TCollection, Quantity, Viewer]
   Prs3d:
-    exclude: []
-    include: [TopoDS, OSD, MFT, Xw, Graphic3d, Bnd_Box, Aspect, Handle_TCollection]
+    include: [OSD, MFT, Xw, Graphic3d, Bnd_Box, Aspect, Handle_TCollection]
   PrsMgr:
-    exclude: []
     include: [OSD, MFT, Xw, Graphic3d, gp, Aspect, Handle_TCollection]
   SelectMgr:
-    exclude: []
     include: [OSD, MFT, Xw, TCollection, Prs3d, Graphic3d, Aspect, Quantity]
   TPrsStd:
-    exclude: []
     include: [OSD, MFT, Xw, Aspect]
   Visual3d:
-    exclude: []
     include: [OSD, MFT, Xw]
   Voxel:
-    exclude: []
     include: [OSD, MFT, Xw, Quantity, gp, Graphic3d, Aspect, Handle_TCollection, Prs3d,
       PrsMgr, SelectMgr, SelectBasics]
   XCAFPrs:
-    exclude: []
     include: [Aspect, MFT, TDF, OSD, Graphic3d, SelectBasics, SelectMgr, Xw, Quantity,
       Prs3d, PrsMgr]
   Xw:
-    exclude: []
     include: [OSD, TCollection]
-win32:
+salome_geom:
+  Archimede: {}
+  BlockFix:
+    exclude_members:
+      BlockFix_SphereSpaceModifier: [ForRotation]
+    include: [TopTools, Handle_TCollection]
+  GEOMAlgo:
+    include: [Handle_TCollection]
+  GEOMImpl:
+    exclude: [GEOMImpl_Block6Explorer, GEOMImpl_Template, Handle_GEOMImpl_Template]
+    exclude_members:
+      GEOMImpl_Fillet1dPoint: [RemoveSolution]
+      GEOMImpl_IInsertOperations: [GetAllTextures]
+      GEOMImpl_IShapesOperations: [GetShapesOnCylinderOld, GetShapesOnSphereOld, GetShapeProperties]
+      GEOMImpl_ITransformOperations: [ScaleShapeAlongAxes]
+    include: [TDataStd, TDocStd, CDM, TDF, Handle_TCollection, CDF, Aspect, Quantity]
+  NMTDS: {}
+  NMTTools:
+    exclude_members:
+      NMTTools_IteratorOfCoupleOfShape: [DS]
+  Partition:
+    include: [TopoDS_Vertex, gp_Vec]
+  SGEOM:
+    exclude_members:
+      GEOM_Engine: [GetTextureGUID]
+      GEOM_SubShapeDriver: [GetID]
+    include: [TDataStd, TColStd, TDF, CDM, CDF, Quantity]
+  ShHealOper:
+    include: [Geom, Handle_TCollection, Handle_Message, Handle_ShapeExtend]
+  Sketcher: {}
+salome_smesh:
+  SMDS:
+    exclude: [SMDS_PolyhedralVolumeOfNodes, SMDS_IteratorOfElements]
+    exclude_members:
+      SMDS_FaceOfNodes: [ChangeNodes]
+      SMDS_Mesh: [AddVolumeWithID, AddVolume, AddFaceWithID, AddFace, AddPolygonalFace,
+        AddPolygonalFaceWithID, AddPolyhedralVolume, AddPolyhedralVolumeWithID, RemoveElement,
+        FindFace, ChangeElementNodes, boundaryFaces, boundaryEdges]
+      SMDS_PolygonalFaceOfNodes: [ChangeNodes]
+      SMDS_QuadraticFaceOfNodes: [ChangeNodes]
+      SMDS_QuadraticVolumeOfNodes: [ChangeNodes]
+      SMDS_SpacePosition: [SetCoords]
+      SMDS_VolumeOfNodes: [ChangeNodes]
+  SMDSAbs: {}
+  SMESH:
+    exclude: [SMESH_Comment, SMESH_OctreeNode, SMESH_MeshEditor, SMESH_0D_Algo, SMESH_1D_Algo,
+      SMESH_2D_Algo, SMESH_3D_Algo, SMESH_Octree]
+    exclude_members:
+      SMESH_Algo: [SMESH_Algo, GetNodeParamOnEdge, GetSortedNodesOnEdge]
+      SMESH_Block: [GetFaceEdgesIDs, GetEdgeVertexIDs]
+      SMESH_Hypothesis: [SMESH_Hypothesis]
+      SMESH_Mesh: [GetGroupSubMeshesContaining, GetGroupIds, GetHypotheses]
+      SMESH_Pattern: [Apply, GetMappedPoints, GetPoints]
+    include: [SMDS, SelectBasics, Select3D, TColStd, AIS, SelectMgr, MeshVS, PrsMgr,
+      Graphic3d, Xw, MFT, Aspect, Quantity, Prs3d, Handle_TCollection, OSD, Standard,
+      math]
+  SMESHDS:
+    exclude_members:
+      SMESHDS_Command: [AddPolygonalFace, ChangePolyhedronNodes, AddPolyhedralVolume]
+      SMESHDS_GroupBase: [SMESHDS_GroupBase]
+      SMESHDS_Hypothesis: [SMESHDS_Hypothesis]
+      SMESHDS_Mesh: [AddPolygonalFaceWithID, AddPolygonalFace, AddPolyhedralVolumeWithID,
+        AddPolyhedralVolume, ChangePolygonNodes, ChangePolyhedronNodes, SubMeshIndices,
+        ChangeElementNodes]
+      SMESHDS_Script: [AddPolygonalFace, AddPolyhedralVolume, ChangePolyhedronNodes]
+  StdMeshers:
+    exclude_members:
+      StdMeshers_Hexa_3D: [OppositeVertex]
+      StdMeshers_MEFISTO_2D: [LoadPoints]
+    include: [SMDS]
+win:
   AIS:
-    exclude: []
-    excluded_members:
+    exclude_members:
       AIS_LocalContext: [Reactivate]
     include: [Graphic3d, TopoDS_Vertex, Aspect, SelectBasics, PrsMgr]
+  DNaming: {}
   DsgPrs:
-    exclude: []
-    excluded_members:
+    exclude_members:
       DsgPrs_RadiusPresentation: [Add]
-    include: []
+  EDL: {}
   Graphic2d:
-    exclude: []
-    excluded_members:
+    exclude_members:
       Graphic2d_TransientManager: [Transform]
-    include: []
   Graphic3d:
     exclude: [Graphic3d_GraphicDevice, Handle_Graphic3d_GraphicDevice]
-    excluded_members:
+    exclude_members:
       Graphic3d_Group: [SetGroupPrimitivesAspect]
       Handle_Graphic3d_GraphicDevice: [DownCast]
     include: [gp]
+  HeaderSection:
+    exclude: [HeaderSection_Protocol]
+    include: [Interface, MoniTool, TCollection]
   MeshVS:
-    exclude: []
     include: [Aspect, Graphic3d, PrsMgr, Prs3d]
   NIS:
-    exclude: []
-    excluded_members:
+    exclude_members:
       NIS_InteractiveObject: [SetAttribute]
       NIS_Triangulated: [Polygon, tri_line_intersect, seg_line_intersect]
     include: [TCollection, Quantity, Viewer, TColStd, Aspect]
   Prs2d:
-    exclude: []
     include: [Graphic3d, Bnd_Box, Aspect, Handle_TCollection]
   Prs3d:
-    exclude: []
-    include: [TopoDS, Graphic3d, Bnd_Box, Aspect, Handle_TCollection]
+    include: [Graphic3d, Bnd_Box, Aspect, Handle_TCollection]
   PrsMgr:
-    exclude: []
     include: [Graphic3d, gp, Aspect, Handle_TCollection]
   SelectMgr:
-    exclude: []
     include: [TCollection, Prs3d, Graphic3d, Aspect, Quantity]
   StdSelect:
-    exclude: []
-    excluded_members:
+    exclude_members:
       StdSelect_BRepOwner: [Set]
       StdSelect_Shape: [Shape]
     include: [TCollection, Prs3d, Graphic3d, Aspect, Quantity, SelectBasics]
   TPrsStd:
-    exclude: []
     include: [Aspect]
-  Visual3d:
-    exclude: []
-    include: []
+  Visual3d: {}
   Voxel:
-    exclude: []
     include: [Quantity, gp, Graphic3d, Aspect, Handle_TCollection, Prs3d, PrsMgr,
       SelectMgr, SelectBasics]
   XCAFPrs:
-    exclude: []
     include: [SelectMgr, TDF, Graphic3d, Aspect, Prs3d, PrsMgr, SelectBasics, Quantity]
+  XDEDRAW: {}

@@ -52,6 +52,9 @@ import pypp_mods
 from pyplusplus.decl_wrappers.class_wrapper import class_t
 from pypp_mods import module_list
 from builder.pypp_mods import handle_matcher, include_matcher
+from builder.pypp_mods import arg_str_matcher
+from pygccxml.declarations.cpptypes import reference_t, const_t, type_t
+from builder.templates import StandardTypeReturnByRef
 
 
 
@@ -140,7 +143,6 @@ class ModularBuilder(object):
                 pass
         
         new_deps = deps.difference(modules_to_read)
-        #print "end", new_deps, headers, modules_to_read
         if len(new_deps) == 0:
             return modules_to_read
         return self.get_dependant_modules(new_deps, modules_to_read)
@@ -148,17 +150,6 @@ class ModularBuilder(object):
     
     
     def write_wrapper(self):
-        
-        #headers = []
-        #for module_name in self.module_names:
-        #    headers += CaseSensitiveGlob(os.path.join(self.include_path,'%s_*.hxx'%module_name))
-        #    headers += CaseSensitiveGlob(os.path.join(self.include_path,'%s.hxx'%module_name))
-        #    headers += CaseSensitiveGlob(os.path.join(self.include_path,'Handle_%s_*.hxx'%module_name))
-        
-        #headers = self.get_dependent_headers(headers)
-        
-        #self.module_names =  self.get_dependant_modules(self.module_names)
-        
         modules = []
         dep_graph = configuration.module_dependencies
         for module in self.module_names:
@@ -198,11 +189,7 @@ class ModularBuilder(object):
                 if h not in headers:
                     headers.append(h)
         
-
-        
-        #print "h", headers              
         self.headers = filter(configuration.gccxml_header_filter, headers)
-        #print "h", self.headers
         wrapper_template = WrapperTemplate()
         t = int(time.time())
         print self.build_path
@@ -236,9 +223,7 @@ class ModularBuilder(object):
                  environment.OCC_INC,
                  #environment.BOOST_INC
                  ]
-        
-        #print environment.BOOST_INC
-        #print paths
+
         print "module builder"
         #self._mb = occ_module_builder.builder_t(
         self._mb = module_builder.module_builder_t(
@@ -253,6 +238,7 @@ class ModularBuilder(object):
         
         
         self.modules = module_list(self.module_names, mb.global_ns)
+        print "MODULE_LIST", self.modules
         
         ######################
         # Trim declarations  #
@@ -266,37 +252,7 @@ class ModularBuilder(object):
         
         
         print self.module_names
-        
-        
-        
-        # Create modules
-        
-        
-        
-        
-        # create namespace for each module in pygccxml
-#        for module_name in self.module_names + self.cached_modules:
-#            try:
-#                ns = namespace_t(module_name)
-#            except declarations.matcher.declaration_not_found_t: 
-#                continue
-#            for c in mb.classes(module_matcher(module_name), recursive=False):
-#                ns.adopt_declaration(c)
-#                mb.global_ns.remove_declaration(c)
-#                
-#                # pypp removes the prefix when adopting the declaration
-#            
-#                for decl in ns.decls(lambda d: d.name == '' or d.name[0] == '_'):
-#                    decl.rename(module_name+decl.name)
-#                    #decl._name = module_name+decl.name
-#            
-#            mb.global_ns.adopt_declaration(ns)
-#        print "Sentry", mb.class_("Sentry"), mb.class_("Sentry").name
-#        
-        #print "Sentry", mb.namespace("Standard").class_("Sentry")
-        
-        
-        
+
         #remove all that have not been moved to a namespace
         for rem in mb.classes(lambda d: d.prefix() not in self.module_names, recursive=False):
             mb.global_ns.remove_declaration(rem)
@@ -310,21 +266,9 @@ class ModularBuilder(object):
             print rem.name
             rem.parent.remove_declaration(rem)
         
-#        for calldef in mb.calldefs():
-#            calldef.args().parent = calldef
-        print "Sentry", mb.class_("Sentry")
-        #print "Sentry", mb.namespace("Standard").class_("Sentry")
-        
-        #ignore 
-        
-        
         
         mb.run_query_optimizer()
-        #print "Sentry", mb.namespace("Standard").class_("Sentry")
-        
-        #create occ module containers
-        #self.modules = [occ_module_t(name, mb.global_ns) for name in self.module_names]
-        
+
         
         #################
         # Documentation #
@@ -432,40 +376,104 @@ class ModularBuilder(object):
         mb.classes('XCAFApp_Application').add_template(XCAFAppTemplate())
         
         
+        
+        
+        #if (return_type in ['Standard_Integer &','Standard_Real &','Standard_Boolean &']) and not ('operator' in function_name):
+        def byref_getter_setter(decl):
+            if 'operator' in decl.name:
+                return False
+            if not isinstance(decl.return_type, reference_t):
+                return False
+            return decl.return_type.base_declaration().name in ['Standard_Integer','Standard_Real','Standard_Boolean']  
+        
+        mb.mem_funs(byref_getter_setter).main_template = StandardTypeReturnByRef()
+        
+        
+        
         ######################
         # ARGUMENT REWRITING #
         ######################
         
-        calldefs = mb.calldefs(include_matcher)
-        calldefs.args('std::vector<int').type = 'std::vector<int>'
-        calldefs.args('std::vector<double').type = 'std::vector<double>'
-        calldefs.args('std::vector<int').type = 'std::vector<int>'
-        calldefs.args('std::vector<int').type = 'std::list<std::string>'
-        calldefs.args('Standard_CString const').type = 'char const *'
         
-        calldefs.args(['Standard_Real &' ,
+        
+        calldefs = mb.calldefs(include_matcher)
+        calldefs.args(arg_str_matcher('std::vector<int')).type = 'std::vector<int>'
+        
+        
+        
+        calldefs.args(arg_str_matcher('std::vector<double')).type = 'std::vector<double>'
+        calldefs.args(arg_str_matcher('std::vector<int')).type = 'std::vector<int>'
+        calldefs.args(arg_str_matcher('std::vector<int')).type = 'std::list<std::string>'
+        calldefs.args(arg_str_matcher('Standard_CString const')).type = 'char const *'
+        
+        calldefs.args(arg_str_matcher(['Standard_Real &' ,
                        'Quantity_Parameter &', 
                        'Quantity_Length &', 
-                       'V3d_Coordinate &']).type = "Standard_Real &"
+                       'V3d_Coordinate &'])).type = "Standard_Real &"
         
-        calldefs.args(['Standard_Real &',
+        calldefs.args(arg_str_matcher(['Standard_Real &',
                        'Standard_Integer &', 
-                      'FairCurve_AnalysisCode &']).name = "OutValue"
+                      'FairCurve_AnalysisCode &'])).name = "OutValue"
                        
                        
                        
-        funs = mb.mem_funs(lambda f: f.name in ['D0','D1', 'D2','D3'], return_type='void')
-        funs.args(['gp_Pnt &', 'gp_Vec &']).name = "OutValue"
+        #funs = mb.mem_funs(lambda f: f.name in ['D0','D1', 'D2','D3'], return_type='void')
+        #funs.args(arg_str_matcher(['gp_Pnt &', 'gp_Vec &'])).name = "OutValue"
         
-        calldefs.args('=1u').default_value = '1'
-        calldefs.args('=0u').default_value = '0'
+        
+        
+        calldefs.args(lambda a: a.default_value == '1u').default_value = '1'
+        calldefs.args(lambda a: a.default_value == '0u').default_value = '0'
+        
+        
+        #gp_ Geom byref stuff:
+        in_module = lambda type: isinstance(type, type_t) and type.base_declaration() and type.base_declaration().prefix() in ['gp']
+            
+        def arg_is_byrefed(arg):
+            if not in_module(arg.type):
+                return False
+            bases = arg.type.bases()
+            return len(bases) > 1 and bases[:2] ==  [reference_t, const_t]
+        
+        #m = lambda a: in_module(a.type) and arg_is_byrefed(a.type,)
+        
+        #exclude handles for matcing files
+        for arg in mb.classes(lambda cls: not cls.is_handle).calldefs().args(arg_is_byrefed):
+            arg.type = arg.type.base #set type to the type nested within the reference_t
+        #m = lambda a: in_module(a.return_type) and arg_is_byrefed(a.return_type, [reference_t])
+        
+        for func in mb.classes(lambda cls: not cls.is_handle).calldefs():
+            #'''very ugly'''
+            if not in_module(func.return_type):
+                continue
 
+            bases = func.return_type.bases()
+            if reference_t not in bases:
+                continue
+            
+            
+            if isinstance(func.return_type, reference_t):
+                func.return_type = func.return_type.base
+                continue
+            
+            base = func.return_type
+            while isinstance(base, type_t):
+                if isinstance(base.base, reference_t):
+                    base.base = base.base.base
+                    continue
+                                                    
+#                                                    
+#                                                    
+#        for calldef in mb.calldefs():
+#            calldef.return_type = calldef.return_type.base
+        
         #########################
         # RETURN TYPE REWRITING #
         #########################
         #TODO fix query stuff
         mb.calldefs(return_type="::Standard_CString const").return_type = 'char const *'
         mb.calldefs(return_type="Standard_CString").return_type = 'char *'
+        
     
         #pyplusplus automatically creates an assign alias, reset that for comparison
         #mb.calldefs("operator=").rename("operator=")

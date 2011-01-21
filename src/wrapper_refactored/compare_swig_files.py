@@ -73,8 +73,9 @@ def trim_feature(feat):
     to make things a bit easier to start'''
     
     #TODO: ignore const expressions for now
-    feat = re.sub("const", "", feat)
+    feat = re.sub("const", "", feat) 
     feat = re.sub("\s", "", feat)
+    feat = re.sub('%feature\("autodoc",".*"\)', '%feature("autodoc","1")', feat)
     
     
     return feat
@@ -97,11 +98,32 @@ def compare_classes(new, orig):
     classes2 = get_classes(file(orig, 'r').read())
     tot_diff1 = 0
     tot_diff2 = 0
+    
+    class_names1 = set([class_name(cls[0]) for cls in classes1])
+    class_names2 = set([class_name(cls[0]) for cls in classes2])
+
+    diff1 = class_names1.difference(class_names2)
+    diff2 = class_names2.difference(class_names1)
+    #diff2 = subtract_set(split2, split1)
+    print "Class Diffs:", len(diff1), len(diff2)
+    if len(diff1) > 0:
+        print ">>>>>>>Classes not found in Original version\n", "\n".join(diff1), "\n<<<<<<<<<"
+        tot_diff1 += len(diff1)
+    if len(diff2) > 0:
+        print ">>>>>>>Classes not found in Refactored version\n", "\n".join(diff2), "\n<<<<<<<<<"
+        tot_diff2 += len(diff2)
+        
+    assert len(diff1) + len(diff2) == 0
+#%feature("autodoc","1");Standard_Real&__call__(constStandard_IntegerRow,constStandard_IntegerCol);
+#%feature("autodoc","1");constStandard_Real&__call__(constStandard_IntegerRow,constStandard_IntegerCol);
+#%feature("autodoc","1");constStandard_Real&__call__(constStandard_IntegerRow,constStandard_IntegerCol)const; 
+    
     for (dec1, pub1, swig1), (dec2, pub2, swig2) in zip(classes1, classes2):
         name1, name2 = class_name(dec1),  class_name(dec2)
         print name1, '==', name2
         assert name1 == name2
         pub2 = pub2.replace("operator=(", "assign(") #my version renames it for some reason
+        pub2 = pub2.replace("operator()", "__call__")
         feats1 = split_features(pub1) + split_features(swig1)
         feats2= split_features(pub2) + split_features(swig2)
         
@@ -114,27 +136,48 @@ def compare_classes(new, orig):
         diff1 = feats1.difference(feats2)
         diff2 = feats2.difference(feats1)
         #diff2 = subtract_set(split2, split1)
-        print "Diffs:", len(diff1), len(diff2)
-        if len(diff1) > 0:
-            print ">>>>>>>Not found in Original version\n", "\n".join(diff1), "\n<<<<<<<<<"
-            tot_diff1 += len(diff1)
-        if len(diff2) > 0:
-            print ">>>>>>>Not found in Refactored version\n", "\n".join(diff2), "\n<<<<<<<<<"
-            tot_diff2 += len(diff2)
+        if len(diff1) + len(diff2) > 0:
+            print "Diffs:", len(diff1), len(diff2)
+            if len(diff1) > 0:
+                print ">>>>>>>Not found in Original version\n", "\n".join(diff1), "\n<<<<<<<<<"
+                tot_diff1 += len(diff1)
+            if len(diff2) > 0:
+                print ">>>>>>>Not found in Refactored version\n", "\n".join(diff2), "\n<<<<<<<<<"
+                tot_diff2 += len(diff2)
             
-    print "Total differences: \n%s not found in refactored version\n%s not found in original" % (tot_diff1, tot_diff2)
-        
+
+
+
+    print "Total differences: \n%s not found in Original version\n%s not found in Refactored" % (tot_diff1, tot_diff2)
+    return tot_diff1, tot_diff2
         
    
 
 from builder.swig_generator import ModularBuilder
 
-b = ModularBuilder(['Standard'], rebuild_db=True)
+
+module = 'Geom'
+b = ModularBuilder([module], rebuild_db=True)
 #                    'GeomLProp', 'CPnts', 'IntImp', 'Standard', 'GeomAdaptor', 'TopTrans', 'MMgt', 'ApproxInt', 'Bnd', 'PGeom2d', 'Approx', 'Extrema', 'MAT', 'DBC'],rebuild_db=True)
 mb = b._mb
 
-compare_classes('./SWIG/linux_darwin/Standard.i', './SWIG/ref_linux_darwin/Standard.i')
- 
+compare = ['Standard', 'MMgt', 'TCollection', 'gp', 'TColStd', 'GeomAbs', 'TColgp', 'Geom']
+not_in_orig = 0
+not_in_refactored = 0
+failed = []
+for mod in compare:
+    
+
+    try:
+        d1, d2 = compare_classes('./SWIG/linux_darwin/%s.i'%mod, '../wrapper/SWIG/linux_darwin/%s.i'%mod)
+    except:
+        print "FAILED", mod
+        failed.append(mod)
+        continue
+    not_in_orig += d1
+    not_in_refactored += d2
+print "Done.\ncompared %s" % compare
+print "Total differences: \n%s not found in Original version\n%s not found in Refactored" % (not_in_orig, not_in_refactored) 
     
     
     

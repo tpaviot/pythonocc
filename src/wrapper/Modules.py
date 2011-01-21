@@ -30,7 +30,7 @@ TOOLKITS = {'TKernel':['Dico','FSD','MMgt','Message','NCollection','OSD','Plugin
 #
 # (string module_name, list additional headers, list classes_to_exclude, dict member_functions to exclude)
 
-MODULES = [
+COMMON_MODULES = [
            ('Standard',[],['Standard_SStream'],{'Handle_Standard_Persistent':['ShallowDump'],\
 'Standard_Failure':['operator=']}),
            ('MMgt',[],[]),
@@ -490,8 +490,8 @@ MODULES = [
 #####################################
 # Visualization part is OS specific #
 #####################################
-if sys.platform=='win32':
-    MODULES.extend([
+
+WIN32_MODULES = [
              ('Graphic2d',[],[],{'Graphic2d_TransientManager':['Transform']}),
              ('Graphic3d',['gp'],['Graphic3d_GraphicDevice','Handle_Graphic3d_GraphicDevice'],\
              {'Graphic3d_Group':['SetGroupPrimitivesAspect'],'Handle_Graphic3d_GraphicDevice':['DownCast']}),
@@ -512,9 +512,8 @@ if sys.platform=='win32':
              ('XCAFPrs',['SelectMgr','TDF','Graphic3d','Aspect','Prs3d','PrsMgr','SelectBasics','Quantity'],[]),
              #('WNT',[],[]), gccxml error
              ('MeshVS',['Aspect','Graphic3d','PrsMgr','Prs3d'],[]),
-             ])
-else:
-    MODULES.extend([
+             ]
+NIX_MODULES = [
                     ('Xw',['OSD','TCollection'],[]),
                     ('Graphic2d',[],[],{'Graphic2d_TransientManager':['Transform']}),
                     ('Graphic3d',['OSD','MFT','gp'],[],{'Graphic3d_Group':['SetGroupPrimitivesAspect']}),
@@ -531,11 +530,12 @@ else:
                                 'SelectBasics','SelectMgr','Xw','Quantity','Prs3d','PrsMgr'],[]),
                     ('NIS',['Aspect','TColStd','TCollection','Quantity','Viewer'],['NIS_Triangulated']),
                     ('MeshVS',['OSD','MFT','Xw','Graphic3d','Aspect','Prs3d','Quantity','PrsMgr'],[]),          
-                    ])
-    MODULES.extend([
+
                     ('Image',[],[]), #bug on Windows
                     ('AlienImage',['Quantity','TCollection'],[]),
-                   ])
+                   ]
+
+
 #
 # SalomeGEOM modules
 #
@@ -560,7 +560,10 @@ SALOME_GEOM_MODULES = [
                         ('ShHealOper',['Geom','Handle_TCollection','Handle_Message','Handle_ShapeExtend'],[]),
                         ('Sketcher',[],[]),
                        ]
-
+if sys.platform == 'win32':
+    MODULES = COMMON_MODULES + WIN32_MODULES
+else:
+    MODULES = COMMON_MODULES + NIX_MODULES
 #
 # SalomeSMESH modules
 #

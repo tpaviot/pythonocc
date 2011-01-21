@@ -5,34 +5,36 @@ Created on Apr 19, 2010
 '''
 import yaml
 import re
-def _process_dictionary(dictionary, merge=None, dont_merge=None, platform_specific=True):
-    to_merge = []
-    if merge is None:
-        to_merge = dictionary.keys()
-    else:
-        to_merge = merge
-    if dont_merge:
-        to_merge = filter(lambda k: k in dont_merge, to_merge)
-    
-    if platform_specific:
-        if sys.platform == 'win':
-            if 'nix_only' in to_merge:
-                del dict['nix_only']
-        else:
-            if 'win_only' in to_merge:
-                del dict['win_only']
-    
-    #TODO behaves wierd
-    for t in to_merge:
-        if t not in dictionary:
-            continue
-        val = dictionary[t]
-        del dictionary[t]
-        dictionary.update(val)
-    
-    return dictionary
+#def _process_dictionary(dictionary, merge=None, dont_merge=None, platform_specific=True):
+#    to_merge = []
+#    if merge is None:
+#        to_merge = dictionary.keys()
+#    else:
+#        to_merge = merge
+#    if dont_merge:
+#        to_merge = filter(lambda k: k in dont_merge, to_merge)
+#    
+#    if platform_specific:
+#        if sys.platform == 'win':
+#            if 'nix_only' in to_merge:
+#                del dict['nix_only']
+#        else:
+#            if 'win_only' in to_merge:
+#                del dict['win_only']
+#    
+#    #TODO behaves wierd
+#    for t in to_merge:
+#        if t not in dictionary:
+#            continue
+#        val = dictionary[t]
+#        del dictionary[t]
+#        dictionary.update(val)
+#    
+#    return dictionary
 
 import sys
+
+
 
 def matches_list(item, l):
     m = bool(sum([bool(re.match(ex, item)) for ex in l]))
@@ -46,7 +48,15 @@ def filter_list(excludes):
     return lambda item: not matches_list(item, excludes)
 
 #modules, class & member excludes
-modules = _process_dictionary(yaml.load(file('configuration.yml', 'r')))
+config = yaml.load(file('configuration.yml', 'r'))
+modules = config['common']
+                   
+if sys.platform == 'win32':
+    modules.update(config['win32'])
+else:
+    modules.update(config['nix']) 
+    
+#modules = _process_dictionary(yaml.load(file('configuration.yml', 'r')))
 
 
 excluded_module_deps = [
@@ -97,4 +107,5 @@ excluded_gccxml_headers = ["(.*\/)*%s" % egh for egh in excluded_gccxml_headers]
 
 gccxml_header_filter = filter_list(excluded_gccxml_headers)
 import networkx as nx
+#TODO: 
 module_dependencies = nx.read_dot('module_dependencies.dot')

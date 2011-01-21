@@ -9,7 +9,7 @@ import string
 
 from pygccxml import declarations
 #from occ_declarations import class_t
-from pygccxml.declarations.cpptypes import free_function_type_t
+from pygccxml.declarations.cpptypes import free_function_type_t, type_t
 
 from pypp_mods import class_t
 from builder.pypp_mods import include_matcher, module_matcher
@@ -153,7 +153,7 @@ class ModuleTemplate(BaseTemplate):
         #handles = decl.classes(handle_matcher).to_list()
         #cmp = lambda c1, c2:  
         #handles.sort()
-        matcher = lambda d: module_matcher(name) and include_matcher(d)
+        matcher = module_matcher(name) & include_matcher
         #typedefs = decl.typedefs(include_matcher)
         self.typedefs = "\n".join(global_ns.typedefs(matcher).render())
         #classes = decl.classes(include_matcher).sort(key=class_sort_key(decl.alias))
@@ -274,11 +274,13 @@ class FunctionTemplate(BaseTemplate):
         self.return_type = ""
         if mem_fun.return_type:
             ret = str(mem_fun.return_type)+" "
+            if len(ret.split(" ")) == 3:
+                ret = 'const '+ret.replace('const', '') #TODO: is this really needed?
             self.return_type = ret
-        
         self.const = ""
         if mem_fun.has_const:
             self.const = ' const'
+            
 
         self.arguments = ", ".join(mem_fun.args().render())
         #self.additional = "\n".join([t.render(mem_fun, indent=0) for t in mem_fun.templates()])
@@ -471,3 +473,61 @@ class SMDSMeshIterator(ClassExtensionBaseTemplate):
         }
     };
     '''
+    
+class StandardTypeReturnByRef(FunctionTemplate):
+    
+    '''
+    %feature("autodoc","1");
+    %extend {
+        ${return_type} Get${function_name}(${arguments}){ 
+           return ($return_type) $self->${function_name}($arg_names); 
+        }
+    };
+    %feature("autodoc","1");
+    %extend {
+        void Set${function_name}(${return_type} value${comma}${arguments}){ 
+           $self->${function_name}($arg_names) = value; 
+        }
+    };
+    '''
+#if (return_type in ['Standard_Integer &','Standard_Real &','Standard_Boolean &']) and not ('operator' in function_name):    
+    def process(self, decl):
+        FunctionTemplate.process(self, decl)
+        self.arg_names = ", ".join(decl.args().name)
+        self.comma = ' '
+        if len(decl.args()) > 0:
+            self.comma = ', '
+            
+        self.return_type = self.return_type.replace("&", "")
+#%extend{Standard_RealGetChangeValue(Standard_IntegerRow,Standard_IntegerCol){return(Standard_Real)$self->ChangeValue(Row,Col);}};
+#%extend{Standard_Real&GetChangeValue(Standard_IntegerRow,Standard_IntegerCol){return(Standard_Real&)$self->ChangeValue(Row,Col);}};
+#        
+#
+#            str_args,return_list,param_list,arguments, default_value,END_WITH_CONST,param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun)
+#            # build param enum from params:
+#            # ['a','b','c']->'a,b,c'
+#            po = ''
+#            k = len(param_names)
+#            for i in range(k):
+#                po+=param_names[i]
+#                if i<k-1:
+#                    po+=','           
+#            typ = return_type.split(" ")[0] # -> Standard_Integer or Standard_Real            
+#            # Create Get function_name
+#            to_write += '\t\t%feature("autodoc","1");\n'
+#            to_write += '\t\t%extend {\n'
+#            to_write += '\t\t\t\t%s Get%s(%s) {\n'%(typ,function_name,str_args)
+#            to_write += '\t\t\t\treturn (%s) $self->%s(%s);\n'%(typ,function_name,po)
+#            to_write += '\t\t\t\t}\n\t\t};\n'
+#            # Create Set function_name
+#            to_write += '\t\t%feature("autodoc","1");\n'
+#            to_write += '\t\t%extend {\n'
+#            if len(param_list)>0:
+#                str_args2=","+str_args
+#            else:
+#                str_args2=str_args            
+#            to_write += '\t\t\t\tvoid Set%s(%s value %s) {\n'%(function_name,typ,str_args2)
+#            to_write += '\t\t\t\t$self->%s(%s)=value;\n'%(function_name,po)
+#            to_write += '\t\t\t\t}\n\t\t};\n'  
+#            self.fp.write(to_write)
+#            return True    
