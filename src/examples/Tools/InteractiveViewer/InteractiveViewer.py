@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2008-2010 Andy Haywood
+##Copyright 2008-2011 Andy Haywood
 ##
 ##tpaviot@gmail.com
 ##
