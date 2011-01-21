@@ -24,11 +24,12 @@ import unittest
 
 import wrapper_features_unittest
 import geometry_unittest
-import paf_unittest
 import topology_building_unittest
 import topology_local_operations_unittest
 import topology_operations_unittest
 import topology_unittest
+import paf_unittest
+import paf_test_all_associative_method_unittest
 
 # Create test suite
 suite = unittest.TestSuite()
@@ -40,9 +41,10 @@ suite3 = paf_unittest.suite()
 suite4 = topology_building_unittest.suite()
 suite5 = topology_unittest.suite()
 suite6 = topology_local_operations_unittest.suite()
+suite7 = paf_test_all_associative_method_unittest.suite()
 
 # Add test cases
-suite.addTests([suite1, suite2, suite3, suite4, suite5, suite6])
+suite.addTests([suite1, suite2, suite3, suite4, suite5, suite6, suite7])
 
 # Run test suite
 unittest.TextTestRunner(verbosity=2).run(suite)
