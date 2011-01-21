@@ -27,8 +27,6 @@ if sys.platform=='darwin':
 else:
     import wx.glcanvas
     BaseClass = wx.glcanvas.GLCanvas
-   
-BaseClass = wx.Panel
 
 class wxBaseViewer(BaseClass):
     def __init__(self, parent = None):
