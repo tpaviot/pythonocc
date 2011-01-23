@@ -27,10 +27,16 @@ if sys.platform=='darwin':
 else:
     import wx.glcanvas
     BaseClass = wx.glcanvas.GLCanvas
+    attribList = (wx.glcanvas.WX_GL_RGBA, # RGBA
+                  wx.glcanvas.WX_GL_DOUBLEBUFFER, # Double Buffered
+                  )
 
 class wxBaseViewer(BaseClass):
     def __init__(self, parent = None):
-        BaseClass.__init__(self,parent)
+        if BaseClass == wx.Panel:
+            BaseClass.__init__(self,parent)
+        else:
+            BaseClass.__init__(self,parent,attribList=attribList)
         self.Bind( wx.EVT_SIZE , self.OnSize)
         self.Bind( wx.EVT_IDLE , self.OnIdle)
         self.Bind( wx.EVT_MOVE , self.OnMove)
