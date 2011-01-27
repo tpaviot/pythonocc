@@ -22,7 +22,7 @@ import sys
 import wx
 import OCCViewer
 
-if sys.platform=='darwin':
+if sys.platform == 'darwin' or sys.platform == 'linux2':
     BaseClass = wx.Panel
 else:
     import wx.glcanvas
