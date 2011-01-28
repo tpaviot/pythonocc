@@ -2,6 +2,9 @@
 Created on Jan 20, 2011
 
 @author: henrik
+
+Reads the original Modules.py and creates configuration.yml
+
 '''
 
 

@@ -1,14 +1,20 @@
 import re
 
-from wrapper_refactored.builder.swig_generator import include_matcher
+from builder.swig_generator import include_matcher
 from pyplusplus.decl_wrappers.class_wrapper import class_t
 from pyplusplus.decl_wrappers.calldef_wrapper import calldef_t
+from builder.swig_generator import ModularBuilder
+import string
+from pygccxml.declarations import matcher
 
 def mark_refs(docs, decl):
     start_exp = '([^\w\`\:()]|^)'
     end_exp = '([^\w\`\:()]|\Z)'
     class_exp = '\w+_(?:[A-Z]\w*)(?:_[A-Z]\w*)*'
     func_exp = '\w+(?:\(\))'
+    
+    
+    
     docs = re.sub("%s(%s)%s" % (start_exp, class_exp, end_exp), 
                   lambda m: "%s:class:`%s`%s" % (m.group(1), m.group(2), m.group(3)), docs)
     docs = re.sub("%s(%s)::(%s)%s" % (start_exp, class_exp, func_exp, end_exp), 
@@ -20,7 +26,7 @@ def mark_refs(docs, decl):
     #all_method_names = decl.declarations.filter(real_type=ContentType.objects.get(name='method')).values_list('name')
     
     all_method_names = list(decl.calldefs().alias)
-    all_method_names = set(map(lambda e: "(?:%s)"%e[0], all_method_names))
+    all_method_names = set(map(lambda e: "(?:%s)"%e, all_method_names))
     exp = "%s(%s)%s" % (start_exp, "|".join(all_method_names), end_exp)
 
     docs = re.sub(exp, lambda m: "%s:meth:`%s`%s" % (m.group(1), m.group(2), m.group(3)), docs)
@@ -41,11 +47,14 @@ def split_paragraphs(docs):
         docs = re.sub("([. \t])(%s\s)" % word, lambda m: "%s\n\n%s" % (m.group(1), m.group(2)), docs)
     
     return [para.strip() for para in re.split("\n\n", docs)]
+    
 
 
 def split_paragraphs_old(docs):
+    
+    #split every line ending with a . dot
     docs = re.sub("\. *\n([\w])",lambda m: ".\n\n%s"%m.group(1), docs)
-    #hmmm not sure about this one:
+    #split every line ending with a . dot ( not sure about this one:
     docs = re.sub("\) *\n([A-Z])",lambda m: ")\n\n%s"%m.group(1), docs)
     docs = re.sub("; *\n([A-Z])",lambda m: ";\n\n%s"%m.group(1), docs)
     docs = re.sub("} *\n([A-Z])",lambda m: "}\n\n%s"%m.group(1), docs)
@@ -81,10 +90,13 @@ def format_headings(paras):
     return newparas
 
 def format_argument_refs(docs, decl):
-    exp = "|".join([an[0] for an in decl.arguments.values_list('name')])
+    
     
     docs = re.sub("<([\w,]+)>", lambda m: "``%s``" % m.group(1), docs)
-    print exp
+    
+    exp = "|".join([an for an in decl.args().name])
+    if not exp:
+        return docs
     docs = re.sub("(\s+)(%s)(\s+)"  % exp, lambda m: "%s``%s``%s" % (m.group(1), m.group(2), m.group(3)), docs)
     #TODO handle argument refs not enclosed in <>
     #docs = re.sub("")
@@ -117,8 +129,14 @@ def format_raise(para):
     return ":exception: " + match.group(2).capitalize().replace("\n", " ")
 
 def process_docs(decl):
-    docs = decl.documentation.replace("<br>", "")
+    ''' process docstrings '''
+    docs = decl.documentation.replace("//!", "")
+    docs = re.sub("<br>\n", "\n<br>", docs)
+    docs = re.sub("<br>", "[br]", docs)
     docs = docs.replace("\"", "*")
+    
+    #ensure empasis doesnt span multiple lines ('*' remove enclosed newlines 
+    docs = re.sub('(\*\w[^*]+?)\n([^*]+\w\*)','\1\2', docs) 
     
     docs = mark_refs(docs, decl)
     
@@ -138,8 +156,14 @@ def process_docs(decl):
         newparas.append(newpara)
     paras = newparas#"\n".join(newparas)
     
+    for para in paras:
+       pass 
     
-    docs = "\n\n".join(paras)#[p.replace("\n", "\n   ") for p in  paras])
+    #indent
+    docs = "".join(paras)#[p.replace("\n", "\n   ") for p in  paras])
+    
+    docs = re.sub("\n{0,1}\[br\]", "", docs)
+    
     #docs = format_notes_and_warnings(docs)
     return docs
 
@@ -158,21 +182,19 @@ def document_class(cls):
     #for c in cls.declarations.filter(real_type=ContentType.objects.get(name='method')):
         if c.documentation == cls.documentation:
             continue
-        mdocs.append(document_method(c.cast()))
+        mdocs.append(document_method(c))
     mdocs = "   "+"\n\n   ".join(mdocs)
     docs.append(mdocs)
     docs = "\n".join(docs)
-    f = file("./generated-docs/%s.rst" %cls.alias, 'w')
-    f.write(docs)
-    f.close()
+    return docs
         
 def document_method(method):
     mdocs = []
-    args = ",".join([arg.name for arg in method.arguments()])
+    args = ",".join([arg.name for arg in method.args()])
     mdocs.append(".. method:: %s(%s)\n"%(method.alias, args))
-    for arg in method.arguments():
+    for arg in method.args():
         mdocs.append("   :param %s:" % arg.name)
-        mdocs.append("   :type %s: :class:`%s`" % (arg.name, arg.type.name))
+        mdocs.append("   :type %s: :class:`%s`" % (arg.name, str(arg.type)))
     rtype = str(method.return_type)
     if rtype != 'void':
         mdocs.append("   :rtype: :class:`%s`" % rtype)
@@ -184,13 +206,154 @@ def document_method(method):
     mdocs = "\n".join(mdocs)
     mdocs = mdocs.replace("\n", "\n   ")
     return mdocs
+
+
+
+def make_underline(line, char):
+    return line+"\n"+ char * len(line)
+    
+
+def create_module_index(module, names):
+    template = string.Template('''
+${module_heading}
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+    
+${referenced_docs}
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+''')
+    
+    return template.substitute(module_heading=make_underline(module.name, '='),
+                               referenced_docs = "\n".join(["   %s/%s" % (module.name, name) for name in names]))
+    
+    
+def create_root_index(modules):
+    template = string.Template('''
+PythonOCC
+=========
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+    
+${referenced_docs}
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+''')
+    
+    return template.substitute(
+        referenced_docs = "\n".join(["   %s" % mod.name for mod in modules]))
+     
+
+
+
+def find_docs(cls):
+    file = open(cls.location.file_name, 'r')
+    txt = file.read()
+    txt = re.sub("const|&|\*", "", txt)
+    parsed = re.findall("((?:\/\/![^\n]+\n)+).*?(\w+)\((.*)\)", txt)
+    documented = {}
+    for doc, method, args in parsed:
+        signature = tuple([method] + [a.strip().split(" ")[0] for a in args.split(",")])
+        #doc = doc.replace("//! ", "")
+        print "sign", signature
+        try:
+            cls.calldef(signature_matcher(signature)).documentation = doc
+        except matcher.declaration_not_found_t:
+            print "not found"
+            continue 
+            
+    return documented
+
+
+def decl_signature(func):
+    args = [re.sub("const|&|\*", "", str(arg.type)).strip() for arg in func.args()]        
+    return tuple([func.name] + args)    
+
+
+def signature_matcher(signature):
+    return lambda b: decl_signature(b) == signature
+
+
+
+
+
+module = 'Geom'
+b = ModularBuilder([module], rebuild_db=True)
+mb = b._mb
+
+
+
+import os
+from os import path
+docroot = "./docs/rest"
+
+
+class flat_cls:
+    def __init__(self, name, members, doc):
+        self.name = name
+        self.members = members
+        self.doc = doc
+
+class flat_method:
+    def __init__(self, name, ret, args, doc):
+        self.name = name
+        self.ret = ret
+        self.args = args
+        self.doc = doc
+    
+
+def flatten_cls(cls):
+    methods = [] 
+    for c in filter(include_matcher, cls.public_members):
+        methods.append(flat_method(c.name, str(c.return_type), [str(arg) for arg in c.args], c.documentation))
+    cls = flat_cls(cls.name, methods, cls.documentation)
+    
     
 
 
+for module in b.modules:
+    mod_path = path.join(docroot, module.name)
+    if not path.exists(mod_path):
+        os.mkdir(mod_path)
+    
+        
+    class_names = []
+    for cls in module.classes(include_matcher):
+        print "doc:", cls.name
+        find_docs(cls)
+        class_file = open(path.join(docroot, module.name, cls.name)+'.rst', 'w')
+        class_file.write(document_class(cls))
+        class_names.append(cls.name)
+        class_file.close()
+        
+        
+    
+    module_index_file = open(path.join(docroot, module.name)+"_index.rst", 'w')
+    module_index_file.write(create_module_index(module, class_names))
+    module_index_file.close()
+
+    print create_module_index(module, class_names)
 
 
-
-
+index = open(path.join(docroot, "index.rst"), 'w')
+index.write(create_root_index(b.modules))
+index.close()
 
 
 

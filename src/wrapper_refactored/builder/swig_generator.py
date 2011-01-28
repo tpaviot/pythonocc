@@ -18,14 +18,15 @@
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+
 from itertools import chain, islice
 from pygccxml.declarations.matchers import access_type_matcher_t, matcher_base_t
 from pyplusplus import module_builder
-from templates import ClassTemplate, FunctionTemplate, GUIDTemplate, \
+from swig_templates import ClassTemplate, FunctionTemplate, GUIDTemplate, \
     HashTemplate, TopoShapePickleTemplate, SMDSMeshIterator, XCAFAppTemplate, \
     GeomDestructorTemplate, GetHandleTemplate, GetObjectTemplate, OStreamTemplate, \
-    IStreamTemplate, DependencyTemplate, WrapperTemplate, EnumTemplate, \
-    ModuleTemplate, PropertyTemplate
+    IStreamTemplate, DependencyTemplate, EnumTemplate, TypeDefTemplate,\
+    ModuleTemplate, PropertyTemplate, StandardTypeReturnByRef
 import configuration
 
 import environment
@@ -45,7 +46,7 @@ from pyplusplus.module_builder.boost_python_builder import builder_t
 import networkx
 #from configuration import gccxml_header_filter
 from pygccxml import declarations
-from templates import TypeDefTemplate
+
 #from pyplusplus.decl_wrappers.namespace_wrapper import namespace_t
 
 import pypp_mods
@@ -54,7 +55,7 @@ from pypp_mods import module_list
 from builder.pypp_mods import handle_matcher, include_matcher
 from builder.pypp_mods import arg_str_matcher
 from pygccxml.declarations.cpptypes import reference_t, const_t, type_t
-from builder.templates import StandardTypeReturnByRef
+from builder.templates import WrapperTemplate
 
 
 
@@ -200,6 +201,7 @@ class ModularBuilder(object):
         
 
 
+
     def get_documentation(self, m, lines):
         doc = []
 
@@ -274,14 +276,14 @@ class ModularBuilder(object):
         # Documentation #
         #################
         
-        for cls in mb.classes():
-            if cls.location.file_name == '<built-in>':
-                continue
-            
-            lines = file(cls.location.file_name, 'r').readlines()
-            decls = [cls] + list(cls.decls())
-            for decl in decls:
-                decl.documentation = self.get_documentation(decl, lines)
+#        for cls in mb.classes():
+#            if cls.location.file_name == '<built-in>':
+#                continue
+#            
+#            lines = file(cls.location.file_name, 'r').readlines()
+#            decls = [cls] + list(cls.decls())
+#            for decl in decls:
+#                decl.documentation = self.get_documentation(decl, lines)
         
         #####################
         # DEFAULT TEMPLATES #
