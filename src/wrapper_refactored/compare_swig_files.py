@@ -9,9 +9,11 @@ def get_classes(module):
     '''
     Returns a list of swig class declarations. 
     '''
-    
-    module_header, classes = re.findall("(\A(?:.|\n)+?)(%nodefaultctor(?:.|\n)+)", module)[0]
-
+    #print "MODULE\n%s\nMODULE" %module
+    found = re.findall("(\A(?:.|\n)+?)(%nodefaultctor(?:.|\n)+)", module)
+    if not found: 
+        return []
+    module_header, classes = found[0]
     # split into parts surrounded by %nodefaultctor statements or end of file (?= == doesnt consume the token
     #note, using non consuming capture group (?= ... )
     classes = re.findall("(%nodefaultctor(?:.|\n)+?)(?=(?:%nodefaultctor)|\Z)", classes)
@@ -65,6 +67,14 @@ def split_features(pub_or_swig):
     #note, using non consuming capture group (?= ... )
     feats = re.findall("(%\w+(?:.|\n)+?)(?=(?:%\w+)|\Z)", pub_or_swig)
     assert trim_feature("".join(feats)) == trim_feature(pub_or_swig)
+    
+    def filter_features(feat):
+        if "DynamicType()" in feat:
+            #print "DYNAMIC:", feat
+            return False
+        return True
+    #feats.remove('%feature("autodoc","1");virtualHandle_Standard_Type&DynamicType();')
+    feats = filter(filter_features, feats)
     feats.sort()
     return feats
 
@@ -73,8 +83,11 @@ def trim_feature(feat):
     to make things a bit easier to start'''
     
     #TODO: ignore const expressions for now
-    feat = re.sub("const", "", feat) 
+    #feat = re.sub("const", "", feat) 
+    #feat = re.sub("static const", "static", feat)
+    #ignore whitespace
     feat = re.sub("\s", "", feat)
+    #ignore docs
     feat = re.sub('%feature\("autodoc",".*"\)', '%feature("autodoc","1")', feat)
     
     
@@ -94,6 +107,8 @@ def filter_difficult_features(feat):
 
 
 def compare_classes(new, orig):
+    print new 
+    print orig
     classes1 = get_classes(file(new, 'r').read())
     classes2 = get_classes(file(orig, 'r').read())
     tot_diff1 = 0
@@ -107,10 +122,10 @@ def compare_classes(new, orig):
     #diff2 = subtract_set(split2, split1)
     print "Class Diffs:", len(diff1), len(diff2)
     if len(diff1) > 0:
-        print ">>>>>>>Classes not found in Original version\n", "\n".join(diff1), "\n<<<<<<<<<"
+        print ">>>>>>>Classes not found in Original version\n", "\n".join(sorted(diff1)), "\n<<<<<<<<<"
         tot_diff1 += len(diff1)
     if len(diff2) > 0:
-        print ">>>>>>>Classes not found in Refactored version\n", "\n".join(diff2), "\n<<<<<<<<<"
+        print ">>>>>>>Classes not found in Refactored version\n", "\n".join(sorted(diff2)), "\n<<<<<<<<<"
         tot_diff2 += len(diff2)
         
     assert len(diff1) + len(diff2) == 0
@@ -120,7 +135,7 @@ def compare_classes(new, orig):
     
     for (dec1, pub1, swig1), (dec2, pub2, swig2) in zip(classes1, classes2):
         name1, name2 = class_name(dec1),  class_name(dec2)
-        print name1, '==', name2
+        
         assert name1 == name2
         pub2 = pub2.replace("operator=(", "assign(") #my version renames it for some reason
         pub2 = pub2.replace("operator()", "__call__")
@@ -136,16 +151,17 @@ def compare_classes(new, orig):
         diff1 = feats1.difference(feats2)
         diff2 = feats2.difference(feats1)
         #diff2 = subtract_set(split2, split1)
-        if len(diff1) + len(diff2) > 0:
+        if len(diff2) > 0:
+            print name1, '!=', name2
             print "Diffs:", len(diff1), len(diff2)
             if len(diff1) > 0:
                 print ">>>>>>>Not found in Original version\n", "\n".join(diff1), "\n<<<<<<<<<"
-                tot_diff1 += len(diff1)
+                
             if len(diff2) > 0:
                 print ">>>>>>>Not found in Refactored version\n", "\n".join(diff2), "\n<<<<<<<<<"
-                tot_diff2 += len(diff2)
-            
-
+                
+        tot_diff1 += len(diff1)   
+        tot_diff2 += len(diff2)
 
 
     print "Total differences: \n%s not found in Original version\n%s not found in Refactored" % (tot_diff1, tot_diff2)
@@ -161,19 +177,22 @@ b = ModularBuilder([module], rebuild_db=True)
 #                    'GeomLProp', 'CPnts', 'IntImp', 'Standard', 'GeomAdaptor', 'TopTrans', 'MMgt', 'ApproxInt', 'Bnd', 'PGeom2d', 'Approx', 'Extrema', 'MAT', 'DBC'],rebuild_db=True)
 mb = b._mb
 
-compare = ['Standard', 'MMgt', 'TCollection', 'gp', 'TColStd', 'GeomAbs', 'TColgp', 'Geom']
+#compare = ['Standard', 'MMgt', 'TCollection', 'gp', 'TColStd', 'GeomAbs', 'TColgp', 'Geom']
+compare = [m.name for m in b.modules]
+
 not_in_orig = 0
 not_in_refactored = 0
 failed = []
 for mod in compare:
     
 
-    try:
-        d1, d2 = compare_classes('./SWIG/linux_darwin/%s.i'%mod, '../wrapper/SWIG/linux_darwin/%s.i'%mod)
-    except:
-        print "FAILED", mod
-        failed.append(mod)
-        continue
+#    try:
+    d1, d2 = compare_classes('./SWIG/linux_darwin/%s.i'%mod, '../wrapper/SWIG/linux_darwin/%s.i'%mod)
+    #d1, d2 = compare_classes('./SWIG/linux_darwin/%s.i'%mod, './SWIG/before_linux_darwin/%s.i'%mod)
+#    except:
+#        print "FAILED", mod
+#        failed.append(mod)
+#        continue
     not_in_orig += d1
     not_in_refactored += d2
 print "Done.\ncompared %s" % compare

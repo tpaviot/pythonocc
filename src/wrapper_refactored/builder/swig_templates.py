@@ -202,14 +202,19 @@ class FunctionTemplate(BaseTemplate):
            mem_fun.virtuality==declarations.VIRTUALITY_TYPES.VIRTUAL:
             self.pre = "virtual "
             
-        if isinstance(mem_fun.function_type(), free_function_type_t):
+        if mem_fun.has_static: #isinstance(mem_fun.function_type(), free_function_type_t):
             self.pre += 'static '
         
         self.return_type = ""
         if mem_fun.return_type:
             ret = str(mem_fun.return_type)+" "
-            if len(ret.split(" ")) == 3:
-                ret = 'const '+ret.replace('const', '') #TODO: is this really needed?
+            #hack to order the consts 
+            if "const" in ret and not mem_fun.has_static:
+                ret =  "const " + ret.replace("const ", "")
+            
+            
+            #if len(ret.split(" ")) == 3:
+            #    ret = 'const '+ret.replace('const', '') #TODO: is this really needed?
             self.return_type = ret
         self.const = ""
         if mem_fun.has_const:
@@ -238,6 +243,9 @@ class TypeDefTemplate(BaseTemplate):
     def process(self, decl):
         self.name = decl.alias
         self.type = str(decl.type)
+        
+        
+
 
 
 class ClassExtensionBaseTemplate(BaseTemplate):
@@ -433,35 +441,12 @@ class StandardTypeReturnByRef(FunctionTemplate):
             self.comma = ', '
             
         self.return_type = self.return_type.replace("&", "")
-#%extend{Standard_RealGetChangeValue(Standard_IntegerRow,Standard_IntegerCol){return(Standard_Real)$self->ChangeValue(Row,Col);}};
-#%extend{Standard_Real&GetChangeValue(Standard_IntegerRow,Standard_IntegerCol){return(Standard_Real&)$self->ChangeValue(Row,Col);}};
-#        
-#
-#            str_args,return_list,param_list,arguments, default_value,END_WITH_CONST,param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun)
-#            # build param enum from params:
-#            # ['a','b','c']->'a,b,c'
-#            po = ''
-#            k = len(param_names)
-#            for i in range(k):
-#                po+=param_names[i]
-#                if i<k-1:
-#                    po+=','           
-#            typ = return_type.split(" ")[0] # -> Standard_Integer or Standard_Real            
-#            # Create Get function_name
-#            to_write += '\t\t%feature("autodoc","1");\n'
-#            to_write += '\t\t%extend {\n'
-#            to_write += '\t\t\t\t%s Get%s(%s) {\n'%(typ,function_name,str_args)
-#            to_write += '\t\t\t\treturn (%s) $self->%s(%s);\n'%(typ,function_name,po)
-#            to_write += '\t\t\t\t}\n\t\t};\n'
-#            # Create Set function_name
-#            to_write += '\t\t%feature("autodoc","1");\n'
-#            to_write += '\t\t%extend {\n'
-#            if len(param_list)>0:
-#                str_args2=","+str_args
-#            else:
-#                str_args2=str_args            
-#            to_write += '\t\t\t\tvoid Set%s(%s value %s) {\n'%(function_name,typ,str_args2)
-#            to_write += '\t\t\t\t$self->%s(%s)=value;\n'%(function_name,po)
-#            to_write += '\t\t\t\t}\n\t\t};\n'  
-#            self.fp.write(to_write)
-#            return True    
+
+
+class ProtectedConstructorTemplate(ClassExtensionBaseTemplate): 
+    '''
+    %extend ${class_name} {
+        ${class_name} () {}  
+    };
+    '''
+

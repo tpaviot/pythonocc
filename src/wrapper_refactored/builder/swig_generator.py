@@ -56,6 +56,7 @@ from builder.pypp_mods import handle_matcher, include_matcher
 from builder.pypp_mods import arg_str_matcher
 from pygccxml.declarations.cpptypes import reference_t, const_t, type_t
 from builder.templates import WrapperTemplate
+from builder.swig_templates import ProtectedConstructorTemplate
 
 
 
@@ -358,8 +359,25 @@ class ModularBuilder(object):
         object_with_handle = lambda a: not a.is_handle and len(mb.classes("Handle_%s"%a.name))
         mb.classes(object_with_handle).add_template(GetHandleTemplate())
         
-        mb.mem_funs(arg_types=['Standard_OStream &']).main_template = OStreamTemplate()
-        mb.mem_funs(arg_types=['std::istream &']).main_template = IStreamTemplate()
+#        mb.mem_funs(arg_types=['Standard_OStream &']).main_template = OStreamTemplate()
+#        mb.mem_funs(arg_types=['std::istream &']).main_template = IStreamTemplate()
+        
+        
+        #if len(arguments)==1: #Methods with only one Standard_Ostream/Standard_IStream & parameter
+#        #if len(arguments)>0:
+#            if 'Standard_OStream &' in '%s'%arguments[0].type:#argument_type:
+#                to_write ='\t\t%feature("autodoc", "1");\n'
+#                to_write+='\t\t%extend{\n\t\t\tstd::string '
+#                to_write+='%sToString() {\n\t\t\tstd::stringstream s;\n'%function_name
+#                to_write+='\t\t\tself->%s(s);\n'%function_name
+#                to_write+='\t\t\treturn s.str();}\n\t\t};\n'
+#            if 'std::istream &' in '%s'%arguments[0].type:#argument_type:
+#                to_write = '\t\t%feature("autodoc", "1");\n'
+#                to_write+='\t\t%extend{\n\t\t\tvoid '
+#                to_write+='%sFromString(std::string src) {\n\t\t\tstd::stringstream s(src);\n'%function_name
+#                to_write+='\t\t\tself->%s(s);}\n'%function_name
+#                to_write+='\t\t};\n'
+        
         
         mb.classes('Standard_GUID').add_template(GUIDTemplate())
         
@@ -384,13 +402,43 @@ class ModularBuilder(object):
         def byref_getter_setter(decl):
             if 'operator' in decl.name:
                 return False
-            if not isinstance(decl.return_type, reference_t):
+            
+            #if not isinstance(decl.return_type, reference_t):
+            #    return False
+            
+            bases = decl.return_type.bases()
+            if not reference_t in bases:
                 return False
+            if const_t in bases:
+                return False
+            
             return decl.return_type.base_declaration().name in ['Standard_Integer','Standard_Real','Standard_Boolean']  
         
         mb.mem_funs(byref_getter_setter).main_template = StandardTypeReturnByRef()
         
         
+        
+        mb.member_functions("DynamicType").exclude()
+        
+        
+        #mb.constructors(lambda d: d.access_type=='protected')
+
+        
+        
+        
+#        if PROTECTED_CONSTRUCTOR and not CURRENT_CLASS_IS_ABSTRACT:
+#            self.fp.write('%extend ')
+#            self.fp.write('%s {\n'%class_name)
+#            self.fp.write('\t%s () {}\n'%class_name)
+#            self.fp.write('};\n')
+        
+        protected = mb.constructors(lambda d: d.access_type=='protected' and not d.parent.is_abstract)
+        protected.exclude()
+        has_protected = set(protected.parent)
+        for hp in has_protected:
+            hp.add_template(ProtectedConstructorTemplate())
+        
+        #protected.main_template = ProtectedConstructorTemplate()
         
         ######################
         # ARGUMENT REWRITING #
@@ -429,7 +477,8 @@ class ModularBuilder(object):
         
         
         #gp_ Geom byref stuff:
-        in_module = lambda type: isinstance(type, type_t) and type.base_declaration() and type.base_declaration().prefix() in ['gp']
+        byrefed_modules = ['gp', 'TopoDS']
+        in_module = lambda type: isinstance(type, type_t) and type.base_declaration() and type.base_declaration().prefix() in byrefed_modules
             
         def arg_is_byrefed(arg):
             if not in_module(arg.type):
