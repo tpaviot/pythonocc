@@ -670,6 +670,7 @@ class ModularBuilder(object):
             return True
         if "&arg0);" in to_write: #constructor
             return False
+        
         # dont't write constructors for abstract classes
         if parent_is_abstract and ("%s();"%class_parent_name in to_write):
             return False
@@ -740,6 +741,8 @@ class ModularBuilder(object):
         """
         # list with exposed member functions decl_strings
         CURRENT_CLASS_IS_ABSTRACT = False
+        
+        # @attention: this causes trouble with with recursive function
         self._CURRENT_CLASS_EXPOSED_METHODS = []
         class_name = class_declaration.name
         if class_name in self.ALREADY_EXPOSED:
@@ -765,6 +768,7 @@ class ModularBuilder(object):
             print "\t\tInherits from %s"%inherits_from
             class_to_perform = self._mb.classes(inherits_from).declarations[0]
             if not class_to_perform.name in self.CLASSES_TO_EXCLUDE:
+                # @attention: self._CURRENT_CLASS_EXPOSED_METHODS is set to [] and filled values from inherited class
                 self.process_class(class_to_perform)
         #
         # Affichage du nom de la classe
