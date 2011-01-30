@@ -297,7 +297,7 @@ class ModularBuilder(object):
         mb.mem_funs().main_template = FunctionTemplate()
         mb.operators().main_template = FunctionTemplate()
         mb.constructors().main_template = FunctionTemplate()
-        mb.variables().main_template = PropertyTemplate()
+        #mb.variables().main_template = PropertyTemplate()
         mb.enumerations().main_template = EnumTemplate()
         mb.global_ns.typedefs().main_template = TypeDefTemplate()
         
@@ -359,8 +359,8 @@ class ModularBuilder(object):
         object_with_handle = lambda a: not a.is_handle and len(mb.classes("Handle_%s"%a.name))
         mb.classes(object_with_handle).add_template(GetHandleTemplate())
         
-#        mb.mem_funs(arg_types=['Standard_OStream &']).main_template = OStreamTemplate()
-#        mb.mem_funs(arg_types=['std::istream &']).main_template = IStreamTemplate()
+        mb.mem_funs(arg_types=['Standard_OStream &']).main_template = OStreamTemplate()
+        mb.mem_funs(arg_types=['std::istream &']).main_template = IStreamTemplate()
         
         
         #if len(arguments)==1: #Methods with only one Standard_Ostream/Standard_IStream & parameter
@@ -447,34 +447,39 @@ class ModularBuilder(object):
         
         
         calldefs = mb.calldefs(include_matcher)
-        calldefs.args(arg_str_matcher('std::vector<int')).type = 'std::vector<int>'
+        calldefs.args(arg_str_matcher('std::vector<int')).type_alias = 'std::vector<int>'
         
         
         
-        calldefs.args(arg_str_matcher('std::vector<double')).type = 'std::vector<double>'
-        calldefs.args(arg_str_matcher('std::vector<int')).type = 'std::vector<int>'
-        calldefs.args(arg_str_matcher('std::vector<int')).type = 'std::list<std::string>'
-        calldefs.args(arg_str_matcher('Standard_CString const')).type = 'char const *'
+        calldefs.args(arg_str_matcher('std::vector<double')).type_alias = 'std::vector<double>'
+        calldefs.args(arg_str_matcher('std::vector<int')).type_alias = 'std::vector<int>'
+        calldefs.args(arg_str_matcher('std::vector<int')).type_alias = 'std::list<std::string>'
+        calldefs.args(arg_str_matcher('Standard_CString const')).type_alias = 'char const *'
         
-        calldefs.args(arg_str_matcher(['Standard_Real &' ,
+        real_like = calldefs.args(arg_str_matcher(['Standard_Real &' ,
                        'Quantity_Parameter &', 
                        'Quantity_Length &', 
-                       'V3d_Coordinate &'])).type = "Standard_Real &"
-        
-        calldefs.args(arg_str_matcher(['Standard_Real &',
+                       'V3d_Coordinate &']))
+        real_like.type_alias = "Standard_Real &"
+        real_like.name = "OutValue"
+        calldefs.args(arg_str_matcher([
                        'Standard_Integer &', 
                       'FairCurve_AnalysisCode &'])).name = "OutValue"
                        
                        
-                       
+                  
         #funs = mb.mem_funs(lambda f: f.name in ['D0','D1', 'D2','D3'], return_type='void')
         #funs.args(arg_str_matcher(['gp_Pnt &', 'gp_Vec &'])).name = "OutValue"
         
         
         
-        calldefs.args(lambda a: a.default_value == '1u').default_value = '1'
-        calldefs.args(lambda a: a.default_value == '0u').default_value = '0'
+        #calldefs.args(lambda a: a.default_value == '1u').default_value = '1'
+        #calldefs.args(lambda a: a.default_value == '0u').default_value = '0'
         
+        for arg in calldefs.args(lambda a: a.default_value):
+            arg.default_value = re.sub("(\d)u", r"\1", arg.default_value)
+            arg.default_value = re.sub("\A(::)", "", arg.default_value)
+            
         
         #gp_ Geom byref stuff:
         byrefed_modules = ['gp', 'TopoDS']
@@ -483,6 +488,8 @@ class ModularBuilder(object):
         def arg_is_byrefed(arg):
             if not in_module(arg.type):
                 return False
+            if str(arg.type.base_declaration()).startswith('Handle'):
+                return False
             bases = arg.type.bases()
             return len(bases) > 1 and bases[:2] ==  [reference_t, const_t]
         
@@ -490,28 +497,30 @@ class ModularBuilder(object):
         
         #exclude handles for matcing files
         for arg in mb.classes(lambda cls: not cls.is_handle).calldefs().args(arg_is_byrefed):
-            arg.type = arg.type.base #set type to the type nested within the reference_t
+
+            arg.type_alias = ""+str(arg.type.base) #set type to the type nested within the reference_t
         #m = lambda a: in_module(a.return_type) and arg_is_byrefed(a.return_type, [reference_t])
         
         for func in mb.classes(lambda cls: not cls.is_handle).calldefs():
             #'''very ugly'''
             if not in_module(func.return_type):
                 continue
-
+            if str(func.return_type.base_declaration()).startswith('Handle'):
+                continue
             bases = func.return_type.bases()
             if reference_t not in bases:
                 continue
+            func.return_type_alias = str(func.return_type).replace("&", "")
             
-            
-            if isinstance(func.return_type, reference_t):
-                func.return_type = func.return_type.base
-                continue
-            
-            base = func.return_type
-            while isinstance(base, type_t):
-                if isinstance(base.base, reference_t):
-                    base.base = base.base.base
-                    continue
+#            if isinstance(func.return_type, reference_t):
+#                func.return_type.alias = func.return_type.base
+#                continue
+#            
+#            base = func.return_type
+#            while isinstance(base, type_t):
+#                if isinstance(base.base, reference_t):
+#                    base.base = base.base.base
+#                    continue
                                                     
 #                                                    
 #                                                    
@@ -522,8 +531,8 @@ class ModularBuilder(object):
         # RETURN TYPE REWRITING #
         #########################
         #TODO fix query stuff
-        mb.calldefs(return_type="::Standard_CString const").return_type = 'char const *'
-        mb.calldefs(return_type="Standard_CString").return_type = 'char *'
+        mb.calldefs(return_type="::Standard_CString const").return_type_alias = 'char const *'
+        mb.calldefs(return_type="Standard_CString").return_type_alias = 'char *'
         
     
         #pyplusplus automatically creates an assign alias, reset that for comparison

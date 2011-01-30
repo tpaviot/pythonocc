@@ -207,14 +207,10 @@ class FunctionTemplate(BaseTemplate):
         
         self.return_type = ""
         if mem_fun.return_type:
-            ret = str(mem_fun.return_type)+" "
-            #hack to order the consts 
-            if "const" in ret and not mem_fun.has_static:
+            ret = str(mem_fun.return_type_alias)
+            if "const" in ret and len(ret.split(" ")) == 3:# and not mem_fun.has_static:
                 ret =  "const " + ret.replace("const ", "")
-            
-            
-            #if len(ret.split(" ")) == 3:
-            #    ret = 'const '+ret.replace('const', '') #TODO: is this really needed?
+
             self.return_type = ret
         self.const = ""
         if mem_fun.has_const:

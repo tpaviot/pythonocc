@@ -14,6 +14,9 @@ from pygccxml.declarations.calldef import argument_t
 import pygccxml
 import re
 from pygccxml.declarations.cpptypes import type_t, reference_t, pointer_t
+from pyplusplus.decl_wrappers.typedef_wrapper import typedef_t
+from pygccxml.declarations.declaration import declaration_t
+from pyplusplus.decl_wrappers.enumeration_wrapper import enumeration_t
 
 pygccxml.declarations.scopedef.scopedef_t.ALLOW_EMPTY_MDECL_WRAPPER = True
 
@@ -44,22 +47,6 @@ class dummy_m(matcher_base_t):
     def __call__(self, decl):
         return True
 
-#class arg_type_m(matcher_base_t):
-#    def __init__(self, type_or_types, strict=False):
-#        super(matcher_base_t, self).__init__()
-#        if isinstance(type_or_types, str): 
-#            self.types = [type_or_types]
-#        else:
-#            self.types = type_or_types
-#            
-#        self.strict = strict
-#    def __call__(self, decl):
-#        for t in self.types:
-#            if t in str(decl):
-#                return True
-#    
-#    def match_function_args(self, arg):
-#        pass
 
 class module_matcher(matcher_base_t):
     def __init__(self, name):
@@ -81,31 +68,38 @@ class arg_str_matcher(matcher_base_t):
                     return True
         return False
 
+
+
 def args(self, matcher=lambda v: True):
-#    matcher = dummy_m()
-#    
-#    
-#    for cond in conditions:
-#        if isinstance(cond, matcher_base_t):
-#            matcher = matcher & cond
-#        else:
-#            matcher = matcher & arg_type_m(cond)
-    
     return mdecl_wrapper_t(filter(matcher, self.arguments))
 calldef_t.args = args
 
+calldef_t._return_type_alias = None
+ 
+def get_return_type_alias(self):
+    return self._return_type_alias or self.return_type
+def set_return_type_alias(self, val):
+    self._return_type_alias = val;
+
+calldef_t._return_type_alias = None
+calldef_t.return_type_alias = property(get_return_type_alias, set_return_type_alias)
+
+
 decl_wrapper_t.main_template = None
-#decl_wrapper_t.templates = []
-#decl_wrapper_t.add_template = lambda self, v: 1
+
 decl_wrapper_t.render = lambda self, indent=0: self.main_template.render(self, indent)
-#argument_t.render = lambda self: str(self)
+
 def _render_arg(self):
     ''' to make const defs same as old wrapper'''
-    txt = str(self)
+    defval = ""
+    if self.default_value:
+        defval = "=%s" % self.default_value
+    typ = str(self.type_alias)
+    txt = "%s %s%s" % (typ, self.name, defval)
     if "const" in txt:
         return "const " + txt.replace("const ", "")
     return txt
-argument_t.render = _render_arg
+
 
 def is_param(self):
     if reference_t in self.bases:
@@ -116,13 +110,29 @@ def is_param(self):
         return True
     return False
     
-
+argument_t.render = _render_arg
 argument_t.is_param = is_param
 
 
-decl_wrapper_t.create_decl_string = lambda self: self.name #???
+def create_decl_string(self, with_defaults=True):
+    #if re.match("[A-Z]self.name
+    
+    if self.parent.name == '::':
+        return self.name
+    return "%s::%s" % (self.parent.name, self.name) 
 
+class_t.create_decl_string = create_decl_string#lambda self: self.name #???
+typedef_t.create_decl_string = create_decl_string#lambda self: self.name #???
+enumeration_t.create_decl_string = create_decl_string#lambda self: self.name #???
 
+def get_type_alias(self):
+    return self._type_alias or self.type
+
+def set_type_alias(self, val):
+    self._type_alias = val;
+
+argument_t._type_alias = None
+argument_t.type_alias = property(get_type_alias, set_type_alias)
 
 
 def add_template(self, template):
@@ -134,7 +144,6 @@ def templates(self):
     if not hasattr(self, '_templates'):
         self._templates = []
     return self._templates
-
 
 class_t.add_template = add_template
 class_t.templates = templates
@@ -175,6 +184,8 @@ def type_decl(self):
 type_t.bases = type_bases
 type_t.base_names = lambda b: [str(bb) for bb in b]
 type_t.base_declaration = type_decl
+
+
 
 
 #Module object, 

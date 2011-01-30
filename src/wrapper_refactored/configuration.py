@@ -94,7 +94,7 @@ excluded_gccxml_headers = ['TCollection_AVLNode' ,'BndLib_Compute',
                    'Xw_Cextern' #not originally
                    'Interface_Check',
                    'Interface_CheckIterator',
-                   
+                   'TopOpeBRepDS_tools.hxx'
                    ]
 if sys.platform=='win32':
     excluded_gccxml_headers.extend(['InterfaceGraphic_Visual3d','Xw_Cextern',
