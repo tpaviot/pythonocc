@@ -14,7 +14,7 @@ import yaml
 from doc_persistance import flatten_cls, prepare_module
 from itertools import chain
 from pyquery.pyquery import PyQuery
-import cgi
+
 import string
 
 

@@ -33,6 +33,8 @@ import re
 #    return dictionary
 
 import sys
+import environment
+import os
 
 
 
@@ -108,4 +110,39 @@ excluded_gccxml_headers = ["(.*\/)*%s" % egh for egh in excluded_gccxml_headers]
 gccxml_header_filter = filter_list(excluded_gccxml_headers)
 import networkx as nx
 #TODO: 
-module_dependencies = nx.read_dot('module_dependencies.dot')
+#module_dependencies = nx.read_dot('module_dependencies.dot')
+
+
+def get_headers_for_module(module):
+    exp = re.compile("^((?:Handle_)*%s(?:_\w+)*\.hxx)" % module)
+    heads = map(lambda h: exp.findall(h), os.listdir(environment.OCC_INC))
+    heads = filter(lambda h: bool(h), heads)
+    heads =  map(lambda h: os.path.join(environment.OCC_INC, h[0]), heads)
+    heads.sort()
+    return heads
+
+def parse_module_refs(headers):
+    deps = set([])
+    
+    for head in headers:
+        try:
+            f = file(head, 'r')
+            d = re.findall("#include \<(?:Handle_)*([A-Za-z0-9]+?)(?:_\w+)*\.hxx\>", f.read())
+            f.close()
+            for mod in d:
+                deps.add(mod)
+        except IOError:
+            pass
+    return deps
+    
+module_dependencies = nx.DiGraph()
+
+for module in modules.keys():
+    headers = get_headers_for_module(module)
+    refs = parse_module_refs(headers)
+    #print "Set", module, refs
+    for r in refs:
+        if r == module:
+            continue
+        module_dependencies.add_edge(module, r)
+
