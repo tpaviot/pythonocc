@@ -113,6 +113,7 @@ import networkx as nx
 #module_dependencies = nx.read_dot('module_dependencies.dot')
 
 
+
 def get_headers_for_module(module):
     exp = re.compile("^((?:Handle_)*%s(?:_\w+)*\.hxx)" % module)
     heads = map(lambda h: exp.findall(h), os.listdir(environment.OCC_INC))
@@ -134,15 +135,20 @@ def parse_module_refs(headers):
         except IOError:
             pass
     return deps
-    
-module_dependencies = nx.DiGraph()
 
-for module in modules.keys():
-    headers = get_headers_for_module(module)
-    refs = parse_module_refs(headers)
-    #print "Set", module, refs
-    for r in refs:
-        if r == module:
-            continue
-        module_dependencies.add_edge(module, r)
 
+def get_module_dependencies(module_names, module_dependencies=None, checked=None):    
+    module_dependencies = module_dependencies or nx.DiGraph()
+    checked = checked or set([])
+    for module in module_names:
+        checked.add(module)
+        headers = get_headers_for_module(module)
+        refs = parse_module_refs(headers)
+        print "Set", module, refs
+        for r in refs:
+            if r == module:
+                continue
+            module_dependencies.add_edge(module, r)
+            if r not in checked:
+                get_module_dependencies([r], module_dependencies, checked)
+    return module_dependencies

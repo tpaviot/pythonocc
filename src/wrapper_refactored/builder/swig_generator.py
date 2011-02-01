@@ -86,7 +86,7 @@ class ModularBuilder(object):
     #def __init__( self , module, generate_doc = False, include_path = environment.OCC_INC):
     def __init__( self , module_names, config=None, rebuild_db=False):
         self.module_names = module_names
-        self.rebuild_db = rebuild_db
+        #self.rebuild_db = rebuild_db
 
         self.include_path = environment.OCC_INC #the path where are the headers to parse can be OCC_INC or SALOME_GEOM_INC
         self.wrappers = {}
@@ -153,7 +153,7 @@ class ModularBuilder(object):
     
     def write_wrapper(self):
         modules = []
-        dep_graph = configuration.module_dependencies
+        dep_graph = configuration.get_module_dependencies(self.module_names)
         for module in self.module_names:
             if not dep_graph.has_node(module):
                 continue
@@ -167,23 +167,23 @@ class ModularBuilder(object):
         #only include modules in original list
         self.module_names = filter(lambda m: m in configuration.modules, self.module_names)
         self.module_names = filter(lambda m: m not in configuration.excluded_module_deps, self.module_names)
-        print "before db", self.module_names
-        
-        def module_in_db(name):
-            from server.source import models
-            try:
-                module = models.Module.objects.get(name=name)
-                return module.is_complete
-            except models.Module.DoesNotExist:
-                return False
-        
-        #us db as cache
-        if not self.rebuild_db:
-            self.cached_modules = filter(module_in_db, self.module_names)
-            self.module_names = filter(lambda m: m not in self.cached_modules, self.module_names)
-        else: 
-            self.cached_modules = []
-        print "not in db",self.module_names
+#        print "before db", self.module_names
+#        
+#        def module_in_db(name):
+#            from server.source import models
+#            try:
+#                module = models.Module.objects.get(name=name)
+#                return module.is_complete
+#            except models.Module.DoesNotExist:
+#                return False
+#        
+#        #us db as cache
+#        if not self.rebuild_db:
+#            self.cached_modules = filter(module_in_db, self.module_names)
+#            self.module_names = filter(lambda m: m not in self.cached_modules, self.module_names)
+#        else: 
+#            self.cached_modules = []
+#        print "not in db",self.module_names
         
         headers = []
         for m in self.module_names:
@@ -347,6 +347,11 @@ class ModularBuilder(object):
         
         
         #mb.namespaces('GEOMAlgo').classes().no_destructor = True
+        print "debug"
+        print self.modules
+        print self.modules.get('GEOMAlgo')
+        print self.modules.get('GEOMAlgo').classes()
+        
         self.modules.get('GEOMAlgo').classes().no_destructor = True
         #mb.namespaces(lambda n: not n.name.startswith('GEOMAlgo')).classes().add_template(GeomDestructorTemplate())
         self.modules.get(lambda n: not n.name.startswith('GEOMAlgo')).classes().add_template(GeomDestructorTemplate())

@@ -228,7 +228,7 @@ from builder.swig_generator import ModularBuilder
 
 
 #modules = ['BRepBuilderAPI', 'GeomAPI', 'Geom2dAdaptor']    
-b = ModularBuilder(['Geom'], rebuild_db=True)
+b = ModularBuilder(['BRepBuilderAPI'], rebuild_db=True)
 #                    'GeomLProp', 'CPnts', 'IntImp', 'Standard', 'GeomAdaptor', 'TopTrans', 'MMgt', 'ApproxInt', 'Bnd', 'PGeom2d', 'Approx', 'Extrema', 'MAT', 'DBC'],rebuild_db=True)
 mb = b._mb
 

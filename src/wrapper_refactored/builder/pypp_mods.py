@@ -5,7 +5,8 @@ Created on Jan 19, 2011
 '''
 from pyplusplus.decl_wrappers.calldef_wrapper import calldef_t, constructor_t
 from pygccxml.declarations.matchers import matcher_base_t
-from pygccxml.declarations.mdecl_wrapper import mdecl_wrapper_t
+from pygccxml.declarations.mdecl_wrapper import mdecl_wrapper_t,\
+    call_redirector_t
 from pyplusplus.decl_wrappers.decl_wrapper import decl_wrapper_t
 from pyplusplus.decl_wrappers.class_wrapper import class_t
 from pyplusplus.decl_wrappers.namespace_wrapper import namespace_t
@@ -229,4 +230,36 @@ class module_list(list):
                 
 
 
-   
+# mdecl wrapper modification, allow nested queries and dont complain about empty ones:
+
+def call_redirector_t__call__( self, *arguments, **keywords ):
+    """calls method :attr:`call_redirector_t.name` on every object within the :attr:`call_redirector_t.decls` list"""
+    result = []
+    for d in self.decls:
+        callable_ = getattr(d, self.name)
+        ret = callable_( *arguments, **keywords )
+        if ret is not None:    
+            if isinstance(ret, mdecl_wrapper_t):
+                result.extend(ret.to_list())
+            elif isinstance(ret, (list, tuple)):
+                result.extend(ret)
+            else:
+                result.append(ret)
+    #if len(result)>0:
+        #if isinstance(result[0], declaration.declaration_t):
+    return mdecl_wrapper_t(result)
+        #return result
+call_redirector_t.__call__ = call_redirector_t__call__
+
+def mdecl_wrapper_t__getattr__( self, name ):
+    """:param name: name of method
+    """
+    decs = self.declarations
+    redirector = call_redirector_t( name, decs )
+    if not decs:
+        return mdecl_wrapper_t([])
+    if hasattr(getattr(decs[0],name), "__call__"):
+        return redirector
+    return redirector.value()
+
+mdecl_wrapper_t.__getattr__ = mdecl_wrapper_t__getattr__
