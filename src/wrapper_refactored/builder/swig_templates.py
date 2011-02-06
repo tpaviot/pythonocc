@@ -80,17 +80,9 @@ class ModuleTemplate(BaseTemplate):
         name, global_ns = args
         self.module_name = name
         self.license = license
-        #for inc in decl.addtional_includes:
-        #if decl.requires_templates:
-        #    self.include_template_lib = "%include ../StandardTemplateLibrary.i"
         self.additional_includes = ""
-        #handles = decl.classes(handle_matcher).to_list()
-        #cmp = lambda c1, c2:  
-        #handles.sort()
         matcher = module_matcher(name) & include_matcher
-        #typedefs = decl.typedefs(include_matcher)
         self.typedefs = "\n".join(global_ns.typedefs(matcher).render())
-        #classes = decl.classes(include_matcher).sort(key=class_sort_key(decl.alias))
         classes = global_ns.classes(matcher, recursive=False)
         self.classes = "\n".join(classes.render())
         #self.enumerations = "\n".join(decl.enums(include_matcher).sort().render())
@@ -131,13 +123,7 @@ class ClassTemplate(BaseTemplate):
         if len(decl.bases) > 0:
             super_class = decl.bases[0].related_class.alias
             self.inheritance = ": public %s" % super_class 
-        
-#        self.constructors = ""
-#        if not decl.is_abstract:
-#            self.constructors = "\n".join(decl.constructors(include_matcher, recursive=False).render(indent=2))
 
-        #self.wrapped_methods = "\n".join(decl.member_functions(include_matcher).render(indent=2))
-        #self.wrapped_methods = "\n".join(decl.member_functions(include_matcher).render(indent=2)) 
         members = filter(include_matcher, decl.public_members)
         members = filter(lambda m: m.main_template is not None, members)
         members = filter(lambda m: not isinstance(m, class_t), members)
@@ -150,13 +136,7 @@ class ClassTemplate(BaseTemplate):
             additional.append(t.render(decl, indent=0))
             
         self.additional = "\n".join(additional)
-#        self.properties = "\n".join(decl.variables().render(indent=0))
-#        
-#        #enums = decl.enums(include_matcher).sort(key=class_sort_key(decl.alias))
-#        enums = decl.enums(include_matcher)
-#        self.enumerations = "\n".join(enums.render())
-#        
-#        self.operators = "\n".join(decl.operators(include_matcher, recursive=False).render())
+
 
 class PropertyTemplate(BaseTemplate):
     """

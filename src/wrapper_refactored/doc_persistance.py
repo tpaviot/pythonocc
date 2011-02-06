@@ -22,10 +22,15 @@ class flat_method:
     def __init__(self, decl, doc):
         self.name = decl.alias
         self.return_type = str(decl.return_type)
-        self.argument_names = [arg.name for arg in decl.arguments]
-        self.argument_types = [str(arg.type) for arg in decl.arguments]
+        #self.argument_names = [arg.name for arg in decl.arguments]
+        #self.argument_types = [str(arg.type) for arg in decl.arguments]
+        self.arguments = [flat_arg(arg) for arg in decl.arguments]
         self.documentation = doc
-        
+class flat_arg:
+    def __init__(self, decl):
+        self.name = decl.name
+        self.argout = decl.argout
+        self.type = str(decl.type)        
     
 
 def flatten_cls(cls):

@@ -157,7 +157,7 @@ class ModularBuilder(object):
         for module in self.module_names:
             if not dep_graph.has_node(module):
                 continue
-            for dep in networkx.dfs_postorder(dep_graph, module):
+            for dep in networkx.dfs_postorder_nodes(dep_graph, module):
                 if dep not in modules:
                     print "adddep", dep
                     modules.append(dep)
@@ -327,7 +327,6 @@ class ModularBuilder(object):
         #exclude classes and methods from confguration.yml
         
         mb.classes(lambda c: c.prefix() and c.name in configuration.modules[c.prefix()].get('exclude', [])).exclude()
-        
         for module_name in self.module_names:
             module_conf = configuration.modules[module_name]
             for cls, excludes in module_conf.get('exclude_members', {}).items():
@@ -342,15 +341,11 @@ class ModularBuilder(object):
         #####################
 
         
-        mb.namespaces(lambda n: n.name in ['SMDS','SMESH','StdMeshers']).require_template_lib = True
+        #mb.namespaces(lambda n: n.name in ['SMDS','SMESH','StdMeshers']).require_template_lib = True
         self.modules.get(['SMDS','SMESH','StdMeshers']).require_template_lib = True
         
         
         #mb.namespaces('GEOMAlgo').classes().no_destructor = True
-        print "debug"
-        print self.modules
-        print self.modules.get('GEOMAlgo')
-        print self.modules.get('GEOMAlgo').classes()
         
         self.modules.get('GEOMAlgo').classes().no_destructor = True
         #mb.namespaces(lambda n: not n.name.startswith('GEOMAlgo')).classes().add_template(GeomDestructorTemplate())
@@ -421,8 +416,6 @@ class ModularBuilder(object):
         
         mb.mem_funs(byref_getter_setter).main_template = StandardTypeReturnByRef()
         
-        
-        
         mb.member_functions("DynamicType").exclude()
         
         
@@ -461,17 +454,36 @@ class ModularBuilder(object):
         calldefs.args(arg_str_matcher('std::vector<int')).type_alias = 'std::list<std::string>'
         calldefs.args(arg_str_matcher('Standard_CString const')).type_alias = 'char const *'
         
-        real_like = calldefs.args(arg_str_matcher(['Standard_Real &' ,
+        
+        #apply argout typemaps 
+        
+        real_types = ['Standard_Real &' ,
                        'Quantity_Parameter &', 
                        'Quantity_Length &', 
-                       'V3d_Coordinate &']))
-        real_like.type_alias = "Standard_Real &"
-        real_like.name = "OutValue"
-        calldefs.args(arg_str_matcher([
+                       'V3d_Coordinate &']
+        real_out = calldefs.args(arg_str_matcher(real_types))
+        real_out.type_alias = "Standard_Real &"
+        real_out.alias = "OutValue"
+        # for documentation
+        real_out.argout = 'float' 
+        
+        int_out = calldefs.args(arg_str_matcher([
                        'Standard_Integer &', 
-                      'FairCurve_AnalysisCode &'])).name = "OutValue"
-                       
-                       
+                      'FairCurve_AnalysisCode &']))
+        int_out.alias = "OutValue"
+        int_out.argout = 'int'
+        
+        
+        
+        
+        
+                     
+#        argouts = real_types + ['Standard_Integer &', 'FairCurve_AnalysisCode &']
+#        for decl in calldefs:
+#            out_args = decl.args(arg_str_matcher(argouts))
+#            if len(out_args) > 0:
+#                print str(decl), out_args
+#            assert len(out_args) < 2               
                   
         #funs = mb.mem_funs(lambda f: f.name in ['D0','D1', 'D2','D3'], return_type='void')
         #funs.args(arg_str_matcher(['gp_Pnt &', 'gp_Vec &'])).name = "OutValue"

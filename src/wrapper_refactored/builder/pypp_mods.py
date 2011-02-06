@@ -96,7 +96,7 @@ def _render_arg(self):
     if self.default_value:
         defval = "=%s" % self.default_value
     typ = str(self.type_alias)
-    txt = "%s %s%s" % (typ, self.name, defval)
+    txt = "%s %s%s" % (typ, self.alias, defval)
     if "const" in txt:
         return "const " + txt.replace("const ", "")
     return txt
@@ -114,17 +114,14 @@ def is_param(self):
 argument_t.render = _render_arg
 argument_t.is_param = is_param
 
+def get_alias(self):
+    return self._alias or self.name
 
-def create_decl_string(self, with_defaults=True):
-    #if re.match("[A-Z]self.name
-    
-    if self.parent.name == '::':
-        return self.name
-    return "%s::%s" % (self.parent.name, self.name) 
+def set_alias(self, val):
+    self._alias = val;
 
-class_t.create_decl_string = create_decl_string#lambda self: self.name #???
-typedef_t.create_decl_string = create_decl_string#lambda self: self.name #???
-enumeration_t.create_decl_string = create_decl_string#lambda self: self.name #???
+argument_t._alias = None
+argument_t.alias = property(get_alias, set_alias)
 
 def get_type_alias(self):
     return self._type_alias or self.type
@@ -134,6 +131,18 @@ def set_type_alias(self, val):
 
 argument_t._type_alias = None
 argument_t.type_alias = property(get_type_alias, set_type_alias)
+
+def set_argout(self, type):
+    self._argout = type
+    
+def get_argout(self):
+    return self._argout or None
+
+argument_t._argout = None    
+argument_t.argout = property(get_argout, set_argout)
+    
+
+
 
 
 def add_template(self, template):
@@ -148,9 +157,10 @@ def templates(self):
 
 class_t.add_template = add_template
 class_t.templates = templates
+
+
 class_t.no_destructor = False
 class_t.is_handle = False
-
 
 
 def prefix(self):
@@ -165,6 +175,20 @@ def prefix(self):
 decl_wrapper_t.prefix = prefix
 
 namespace_t.license_template = None
+
+
+
+
+def create_decl_string(self, with_defaults=True):
+    #if re.match("[A-Z]self.name
+    
+    if self.parent.name == '::':
+        return self.name
+    return "%s::%s" % (self.parent.name, self.name) 
+
+class_t.create_decl_string = create_decl_string#lambda self: self.name #???
+typedef_t.create_decl_string = create_decl_string#lambda self: self.name #???
+enumeration_t.create_decl_string = create_decl_string#lambda self: self.name #???
 
 
 #make querying args a bit easier
@@ -230,6 +254,7 @@ class module_list(list):
                 
 
 
+
 # mdecl wrapper modification, allow nested queries and dont complain about empty ones:
 
 def call_redirector_t__call__( self, *arguments, **keywords ):
@@ -251,15 +276,28 @@ def call_redirector_t__call__( self, *arguments, **keywords ):
         #return result
 call_redirector_t.__call__ = call_redirector_t__call__
 
+
+def call_redirector_t_value(self):
+    result = []
+    for d in self.decls:
+        result.append(getattr(d, self.name))
+    return mdecl_wrapper_t(result)
+
+call_redirector_t.value = call_redirector_t_value
+
 def mdecl_wrapper_t__getattr__( self, name ):
     """:param name: name of method
     """
     decs = self.declarations
     redirector = call_redirector_t( name, decs )
     if not decs:
-        return mdecl_wrapper_t([])
+        return mdecl_wrapper_t(decs)
     if hasattr(getattr(decs[0],name), "__call__"):
         return redirector
     return redirector.value()
-
 mdecl_wrapper_t.__getattr__ = mdecl_wrapper_t__getattr__
+
+#ugly hack to catch the case when a function is called on an empty mdecls wrapper
+def mdecl_wrapper_t__call__(self, *args, **kwargs):
+    return mdecl_wrapper_t(self.declarations) #
+mdecl_wrapper_t.__call__ = mdecl_wrapper_t__call__
