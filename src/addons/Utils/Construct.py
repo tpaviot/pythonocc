@@ -46,6 +46,7 @@ from OCC.gp import *
 from OCC.KBE.TypesLookup import GeometryLookup, ShapeToTopology
 
 EPSILON = TOLERANCE = 1e-6
+ST = ShapeToTopology()
 
 #===============================================================================
 # ---MONKEY PATCH GP---
@@ -207,8 +208,9 @@ def make_prism_shell(profile, vec):
     '''
     return BRepOffsetAPI_MakePipeShell()
 
-def make_offset(shapeToOffset, offsetDistance, tolerance=TOLERANCE, offsetMode=BRepOffset_Skin, intersection=False, selfintersection=False, joinType=GeomAbs_Arc):
+def make_offset_shape(shapeToOffset, offsetDistance, tolerance=TOLERANCE, offsetMode=BRepOffset_Skin, intersection=False, selfintersection=False, joinType=GeomAbs_Arc):
     '''
+    builds an offsetted shell from a shape
     construct an offsetted version of the shape
     '''
     try:
@@ -223,6 +225,34 @@ def make_offset(shapeToOffset, offsetDistance, tolerance=TOLERANCE, offsetMode=B
         return offset.Shape()
     except RuntimeError('failed to offset shape'):
         return None
+
+def make_offset(wire_or_face, offsetDistance, altitude=0, joinType=GeomAbs_Arc):
+    '''
+    builds a offsetted wire or face from a wire or face
+    construct an offsetted version of the shape
+    
+    @param wire_or_face:        the wire or face to offset
+    @param offsetDistance:      the distance to offset  
+    @param altitude:            move the offsetted shape to altitude
+    from the normal of the wire or face
+    @param joinType:            the type of offset you want 
+    can be one of GeomAbs_Arc, GeomAbs_Tangent, GeomAbs_Intersection 
+    
+    note: a shape that has a negative offsetDistance will return
+    a sharp corner
+    '''
+    _joints = [ GeomAbs_Arc, GeomAbs_Tangent, GeomAbs_Intersection ]
+    assert joinType in _joints, '%s is not one of %s' ( joinType, _joints)
+    
+    try:
+        offset = BRepOffsetAPI_MakeOffset(wire_or_face,
+                                                    joinType
+                                                    )
+        offset.Perform(offsetDistance, altitude)
+        return ST(offset.Shape())
+    except RuntimeError('failed to offset shape'):
+        return None
+
 
 def make_draft(profile, vec):
     '''
@@ -280,6 +310,12 @@ def make_plane(center=gp_Pnt(0,0,0),
     return face
 
 
+def make_cube(*args):
+    box = BRepPrimAPI_MakeBox(*args)
+    box.Build()
+    with assert_isdone(box, 'failed to built a cube...'):
+        return box.Shape()
+
 def make_spline(pnts=[''],
                  tangents=[''],
                   epsilon=EPSILON
@@ -293,6 +329,81 @@ def make_spline(pnts=[''],
     @param epsilon:     tolerence
     '''
     pass
+
+
+#===============================================================================
+# NEW
+#===============================================================================
+def make_n_sided(edges, continuity=GeomAbs_C0):
+    from OCC.BRepFill import *
+    n_sided = BRepFill_Filling()
+    for edg in edges:
+        n_sided.Add(edg, continuity)
+    
+    n_sided.SetApproxParam(6, 40)
+    n_sided.SetResolParam(3, 20, 20, False)
+    #n_sided.SetConstrParam(0.0001, 0.0001, 0.00001, 0.00001)
+    
+    n_sided.Build()
+    face  = n_sided.Face()
+    return face
+
+def make_n_sections(edges):
+    from OCC.BRepFill import *
+    from OCC.TopTools import *
+    seq = TopTools_SequenceOfShape()
+    for i in edges:
+        seq.Append(i)
+    
+    n_sec = BRepFill_NSections(seq)
+
+
+def make_coons(edges):
+    bt = BRep_Tool()
+    if len(edges) == 4:
+        spl1, spl2, spl3, spl4 = edges #[curve_to_bspline(bt.Curve(i)[0]) for i in edges]
+        srf = GeomFill_BSplineCurves(spl1,spl2,spl3,spl4, GeomFill_StretchStyle)
+    
+    elif len(edges) == 3:
+        spl1, spl2, spl3 = edges #[curve_to_bspline(bt.Curve(i)[0]) for i in edges]
+        srf = GeomFill_BSplineCurves(spl1,spl2,spl3, GeomFill_StretchStyle)
+
+    elif len(edges) == 2:
+        spl1, spl2 = edges #[curve_to_bspline(bt.Curve(i)[0]) for i in edges]
+        srf = GeomFill_BSplineCurves(spl1,spl2, GeomFill_StretchStyle)
+    else:
+        raise ValueError('give 2,3 or 4 curves')
+    return srf.Surface()
+
+def make_constrained_surface_from_edges(edges):
+    '''
+    
+    DOESNT RESPECT BOUNDARIES
+    
+    '''
+    from OCC.BRepFill import *
+    from OCC.GeomPlate import *
+    bpSrf = GeomPlate_BuildPlateSurface(3,15,2)
+    for edg in edges:
+        c = BRepAdaptor_HCurve()
+        c.ChangeCurve().Initialize(edg)
+        constraint = BRepFill_CurveConstraint(c.GetHandle(), 0)
+        bpSrf.Add(constraint.GetHandle())
+    
+    bpSrf.Perform()
+    maxSeg, maxDeg, critOrder = 9,8,0
+    tol  = 1e-4
+    srf = bpSrf.Surface()
+    plate = GeomPlate_MakeApprox(srf, tol, maxSeg, maxDeg, tol, critOrder)
+    
+    uMin, uMax, vMin, vMax = srf.GetObject().Bounds()
+    
+    face = make_face(plate.Surface(), uMin, uMax, vMin, vMax)
+    return face
+
+#===============================================================================
+# NEW
+#===============================================================================
 
 
 def add_wire_to_face(face, wire, reverse=False):
@@ -410,7 +521,7 @@ def fix_face(shp, tolerance=1e-3):
 # --- TRANSFORM ---
 #===============================================================================
 
-def translate_topods_from_vector(brep, vec, copy=False):
+def translate_topods_from_vector(brep_or_iterable, vec, copy=False):
     '''
     translate a brep over a vector
     @param brep:    the Topo_DS to translate
@@ -419,6 +530,26 @@ def translate_topods_from_vector(brep, vec, copy=False):
     '''
     trns = gp_Trsf()
     trns.SetTranslation(vec)
+    if issubclass(brep_or_iterable.__class__, TopoDS_Shape):
+        brep_trns = BRepBuilderAPI_Transform(brep_or_iterable, trns, copy)
+        brep_trns.Build()
+        return brep_trns.Shape()
+    else:
+        return  [translate_topods_from_vector(brep_or_iterable, vec, copy) for i in brep_or_iterable]
+
+def scale_non_uniformal():
+    pass
+
+def scale_uniformal(brep, pnt, factor, copy=False):
+    '''
+    translate a brep over a vector
+    @param brep:    the Topo_DS to translate
+    @param pnt:     a gp_Pnt
+    @param triple:  scaling factor
+    @param copy:    copies to brep if True
+    '''
+    trns = gp_Trsf()
+    trns.SetScale(pnt, factor)
     brep_trns = BRepBuilderAPI_Transform(brep, trns, copy)
     brep_trns.Build()
     return brep_trns.Shape()
@@ -462,7 +593,7 @@ def rotate(brep, axe, degree, copy=False):
     brep_trns = BRepBuilderAPI_Transform(brep, trns, copy)
     with assert_isdone(brep_trns, 'could not produce rotation'):
         brep_trns.Build()
-        return brep_trns.Shape()
+        return ST(brep_trns.Shape())
     
 def scale(brep, pnt, scale, copy=False):
     '''

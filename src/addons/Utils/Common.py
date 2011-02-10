@@ -218,7 +218,8 @@ def interpolate_points_vectors_to_spline(list_of_points, list_of_vectors, vector
         if rrr.IsDone():
             return rrr.Curve()
     except RuntimeError:
-        print 'FAILED TO INTERPOLATE THE SHOWN POINTS'
+        # the exception was unclear
+        raise RuntimeError('FAILED TO INTERPOLATE THE POINTS')
 
 def interpolate_points_to_spline_no_tangency(list_of_points, filter=True, closed=False, tolerance=TOLERANCE):
     '''
@@ -241,8 +242,8 @@ def interpolate_points_to_spline_no_tangency(list_of_points, filter=True, closed
         if rrr.IsDone():
             return rrr.Curve()
     except RuntimeError:
-        print 'FAILED TO INTERPOLATE THE SHOWN POINTS'
-
+        # the exception was unclear
+        raise RuntimeError('FAILED TO INTERPOLATE THE POINTS')
 
 #===============================================================================
 # --- RANDOMNESS ---
@@ -298,6 +299,35 @@ def center_boundingbox(shape):
     bbox = get_boundingbox(shape, 1e-6)
     xmin,ymin,zmin, xmax, ymax, zmax = bbox.Get()
     return midpoint(gp_Pnt(xmin,ymin,zmin), gp_Pnt(xmax,ymax,zmax))
+
+def point_in_boundingbox(solid, pnt, tolerance=1e-5):
+    """returns True if *pnt* lies in *boundingbox*, False if not
+    this is a much speedier test than checking the TopoDS_Solid
+    Args:
+        solid   TopoDS_Solid
+        pnt:    gp_Pnt
+
+    Returns: bool
+    """
+    return get_boundingbox(solid).IsOut(pnt)
+
+def point_in_solid(solid, pnt, tolerance=1e-5):
+    """returns True if *pnt* lies in *solid*, False if not
+    Args:
+        solid   TopoDS_Solid
+        pnt:    gp_Pnt
+
+    Returns: bool
+    """
+    from OCC.BRepClass3d import BRepClass3d_SolidClassifier
+    from OCC.TopAbs import *
+    _in_solid = BRepClass3d_SolidClassifier (solid, pnt, tolerance)
+    if _in_solid.State()==TopAbs_ON:
+        return None,'on'
+    if _in_solid.State()==TopAbs_OUT:
+        return False,'out'
+    if _in_solid.State()==TopAbs_IN:
+        return True,'in'
 
 def intersection_from_three_planes( planeA, planeB, planeC, show=False):
     '''
@@ -387,13 +417,15 @@ class GpropsFromShape(object):
         error = self.bgprop.LinearProperties(self.shape, prop )
         return prop
 
+    
+
 #=======================================================================
 # Distance 
 #=======================================================================
 
 def minimum_distance(shp1, shp2):
     '''
-    compute 
+    compute minimum distance between 2 BREP's
     @param shp1:    any TopoDS_*
     @param shp2:    any TopoDS_*
     
