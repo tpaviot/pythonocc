@@ -443,4 +443,12 @@ def minimum_distance(shp1, shp2):
             min_dist_shp1.append(bdss.PointOnShape1(i))
             min_dist_shp1.append(bdss.PointOnShape2(i))
     return min_dist, min_dist_shp1, min_dist_shp2
-            
+
+def vertex2pnt(vertex):
+    '''returns a gp_Pnt from a TopoDS_Vertex
+    '''
+    from OCC.BRep import BRep_Tool
+    return BRep_Tool.Pnt(vertex)
+
+
+

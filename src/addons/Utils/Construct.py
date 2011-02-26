@@ -497,6 +497,18 @@ def boolean_fuse_old(shapeToCutFrom, joiningShape):
     join.Delete()
     return shape
 
+def splitter(shape, profile):
+    '''split a *shape* using a *profile*
+    :returns the splitted shape
+    '''
+    from OCC.GEOMAlgo import GEOMAlgo_Splitter
+    splitter = GEOMAlgo_Splitter()
+    splitter.AddShape(hubSurface)
+    splitter.AddTool(cuttingProfile)
+    splitter.Perform()
+    splitter_shape = splitter.Shape()
+    return splitter_shape
+
 #===============================================================================
 # ---FIXES---
 #===============================================================================
