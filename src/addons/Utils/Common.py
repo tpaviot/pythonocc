@@ -43,23 +43,26 @@ from OCC.TColgp import *
 from OCC.TColGeom import *
 from OCC.TColStd import *
 from OCC.TCollection import *
+from OCC.BRepAdaptor import *
 from OCC.BRepAlgoAPI import *
 from OCC.GeomAPI import *
 from OCC.gp import *
 from OCC.BRepBuilderAPI import *
 from OCC.BRepOffsetAPI import *
-
+from OCC.TopoDS import *
 from OCC.Utils.Context import assert_isdone
 from OCC.KBE.TypesLookup import ShapeToTopology
 from OCC.Quantity import *
 from OCC.GProp import GProp_GProps
+from OCC.GeomAbs import *
 
 TOLERANCE = 1e-6
 
 def get_boundingbox(shape, tol=1e-12):
     bbox = Bnd_Box()
-    BRepBndLib_AddClose(shape, bbox)
     bbox.SetGap(tol)
+    #BRepBndLib_AddClose(shape, bbox)
+    BRepBndLib_Add(shape, bbox)
     return bbox
 
 #===============================================================================
@@ -391,7 +394,29 @@ def normal_vector_from_plane(plane, vec_length=1):
 def fix_tolerance( shape, tolerance=TOLERANCE):
     ShapeFix_ShapeTolerance().SetTolerance(shape, tolerance)
     
-    
+def fix_continuity(edge, continuity=1):
+    from OCC.ShapeUpgrade import ShapeUpgrade_ShapeDivideContinuity
+    su = ShapeUpgrade_ShapeDivideContinuity(edge)
+    su.SetBoundaryCriterion(eval('GeomAbs_C'+str(continuity)))
+    su.Perform()
+    st = ShapeToTopology()
+    te = st(su.Result())
+    return te
+
+def resample_curve_with_uniform_deflection(curve, deflection=0.5, degreeMin=3, degreeMax=8, continuity=GeomAbs_C2, tolerance=1e-4):
+    '''
+    fits a bspline through the samples on `curve`
+    @param curve: TopoDS_Wire, TopoDS_Edge, curve
+    @param n_samples:
+    '''
+    crv = to_adaptor_3d(curve)
+    defl = GCPnts_UniformDeflection(crv, deflection)
+    with assert_isdone(defl, 'failed to compute UniformDeflection'):
+        print 'number of points:', defl.NbPoints()
+    sampled_pnts = [defl.Value(i) for i in xrange(1, defl.NbPoints())]
+    resampled_curve = GeomAPI_PointsToBSpline(point_list_to_TColgp_Array1OfPnt(sampled_pnts), degreeMin, degreeMax, continuity, tolerance)
+    return resampled_curve.Curve().GetObject()
+
 #===============================================================================
 # global properties 
 #===============================================================================
@@ -403,21 +428,34 @@ class GpropsFromShape(object):
         self.tolerance = tolerance
         
     def volume(self):
+        '''returns the volume of a solid
+        '''
         prop = GProp_GProps()
         error = self.bgprop.VolumeProperties(self.shape, prop, self.tolerance)
         return prop
     
     def surface(self):
+        '''returns the area of a surface
+        '''
         prop = GProp_GProps()
         error = self.bgprop.SurfaceProperties(self.shape, prop, self.tolerance)
         return prop
     
     def linear(self):
+        '''returns the length of a wire or edge
+        '''
         prop = GProp_GProps()
         error = self.bgprop.LinearProperties(self.shape, prop )
         return prop
 
-    
+def curve_length(crv):
+    '''
+    get the length from a TopoDS_Edge or TopoDS_Wire
+    '''
+    assert isinstance(crv,(TopoDS_Wire, TopoDS_Edge)), 'either a wire or edge...'
+    gprop = GpropsFromShape(crv)
+    return gprop.linear().Mass()
+
 
 #=======================================================================
 # Distance 
@@ -431,7 +469,7 @@ def minimum_distance(shp1, shp2):
     
     @return: minimum distance, 
              minimum distance points on shp1
-             minimum distance points on shp1
+             minimum distance points on shp2
     '''
     from OCC.BRepExtrema import BRepExtrema_DistShapeShape
     bdss = BRepExtrema_DistShapeShape(shp1, shp2)
@@ -450,5 +488,41 @@ def vertex2pnt(vertex):
     from OCC.BRep import BRep_Tool
     return BRep_Tool.Pnt(vertex)
 
+def to_adaptor_3d(curveType):
+    '''
+    abstract curve like type into an adaptor3d
+    @param curveType:
+    '''
+    from OCC.BRepAdaptor import BRepAdaptor_CompCurve
+    from OCC.GeomAdaptor import GeomAdaptor_Curve
+    from OCC.Geom import  Geom_Curve
+    if isinstance(curveType, TopoDS_Wire):
+        return BRepAdaptor_CompCurve(curveType)
+    elif isinstance(curveType, TopoDS_Edge):
+        return BRepAdaptor_Curve(curveType)
+    elif issubclass(curveType.__class__, Geom_Curve):
+        return GeomAdaptor_Curve(curveType.GetHandle())
+    elif hasattr(curveType, 'GetObject'):
+        _crv = curveType.GetObject()
+        if issubclass(_crv.__class__, Geom_Curve):
+            return GeomAdaptor_Curve(curveType)
+    else:
+        raise TypeError('allowed types are Wire, Edge or a subclass of Geom_Curve\nGot a %s' % (curveType.__class__))
 
+def project_point_on_curve(crv, pnt):
+    from OCC.GeomAPI import *
+    rrr = GeomAPI_ProjectPointOnCurve(pnt, crv)
+    return rrr.LowerDistanceParameter(), rrr.NearestPoint()
 
+def wire_to_curve(wire, tolerance=TOLERANCE, order=GeomAbs_C2, max_segment=200, max_order=12):
+    '''
+    a wire can consist of many edges.
+    these edges are merged given a tolerance and a curve
+    @param wire:
+    '''
+    adap = BRepAdaptor_CompCurve(wire)
+    hadap = BRepAdaptor_HCompCurve(adap)
+    from OCC.Approx import Approx_Curve3d
+    approx = Approx_Curve3d(hadap.GetHandle(), tolerance, order, max_segment, max_order)
+    with assert_isdone(approx, 'not able to compute approximation from wire'):
+        return approx.Curve().GetObject()

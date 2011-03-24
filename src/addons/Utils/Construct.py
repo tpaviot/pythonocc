@@ -1,16 +1,32 @@
 from __future__ import with_statement
-from OCC.Utils.Topology import *
 from OCC.BRep import BRep_Tool
 from OCC.BRepOffset import BRepOffset_Skin
-from OCC.GeomAbs import GeomAbs_Arc
-from OCC.BRepTools import *
 from OCC.GeomLProp import *
-from OCC.TopoDS import TopoDS_Wire, TopoDS_Vertex
+# wrapped modules
+from OCC.ShapeFix import *
+from OCC.BRepOffsetAPI import *
+from OCC.BRepBuilderAPI import *
+from OCC.BRepPrimAPI import *
+from OCC.GeomAbs import *
+from OCC.TopAbs import *
+from OCC.TopoDS import *
+from OCC.gp import *
+from OCC.BRepFill import *
+from OCC.GeomPlate import *
+from OCC.BRepAdaptor import *
+from OCC.GeomFill import *
+from OCC.TopTools import *
+from OCC.Geom import *
+
+# high level
+from OCC.Utils.Common import *
+from OCC.Utils.Context import assert_isdone
+from OCC.KBE.TypesLookup import GeometryLookup, ShapeToTopology
 
 # -*- coding: iso-8859-1 -*-
 #!/usr/bin/env python
 
-##Copyright 2008 Jelle Feringa (jelleferinga@gmail.com)
+##Copyright 2011 Jelle Feringa (jelleferinga@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -32,18 +48,7 @@ from OCC.TopoDS import TopoDS_Wire, TopoDS_Vertex
 This modules makes the construction of geometry a little easier
 
 '''
-# wrapped modules
-from OCC.ShapeFix import *
-from OCC.BRepOffsetAPI import *
-from OCC.BRepBuilderAPI import *
-from OCC.BRepPrimAPI import *
-from OCC.GeomAbs import *
-from OCC.TopAbs import *
-from OCC.TopoDS import *
-# high level
-from OCC.Utils.Context import assert_isdone
-from OCC.gp import *
-from OCC.KBE.TypesLookup import GeometryLookup, ShapeToTopology
+
 
 EPSILON = TOLERANCE = 1e-6
 ST = ShapeToTopology()
@@ -77,6 +82,9 @@ gp_Vec.as_dir  = vec_to_dir
 # ---TOPOLOGY---
 #===============================================================================
 
+from functools import wraps
+
+@wraps(BRepBuilderAPI_MakeSolid)
 def make_solid(*args):
     sld = BRepBuilderAPI_MakeSolid( *args )
     with assert_isdone(sld, 'failed to produce solid'):
@@ -84,6 +92,7 @@ def make_solid(*args):
         sld.Delete()
         return result
 
+@wraps(BRepBuilderAPI_MakeShell)
 def make_shell(*args):
     shell = BRepBuilderAPI_MakeShell( *args )
     from OCC.KBE.TypesLookup import ShapeToTopology
@@ -92,7 +101,8 @@ def make_shell(*args):
         result = shell.Shell()
         shell.Delete()
         return st(result)
-    
+
+@wraps(BRepBuilderAPI_MakeFace)
 def make_face(*args):
     face = BRepBuilderAPI_MakeFace( *args )
     with assert_isdone(face, 'failed to produce face'):
@@ -100,6 +110,7 @@ def make_face(*args):
         face.Delete()
         return result
 
+@wraps(BRepBuilderAPI_MakeEdge)
 def make_edge(*args):
     edge = BRepBuilderAPI_MakeEdge(*args)
     with assert_isdone(edge, 'failed to produce edge'):
@@ -107,13 +118,15 @@ def make_edge(*args):
         edge.Delete()
         return result
 
+@wraps(BRepBuilderAPI_MakeVertex)
 def make_vertex(*args):
     vert = BRepBuilderAPI_MakeVertex(*args)
     with assert_isdone(vert, 'failed to produce vertex'):
         result = vert.Vertex()
         vert.Delete()
         return result
-        
+
+@wraps(BRepBuilderAPI_MakeWire)
 def make_wire(*args):
     # if we get an iterable, than add all edges to wire builder
     if isinstance(args[0], list) or isinstance(args[0], tuple):
@@ -130,6 +143,7 @@ def make_wire(*args):
 #        wire.Delete()
         return result
 
+@wraps(BRepBuilderAPI_MakePolygon)
 def make_polygon(args, closed=False):
     poly = BRepBuilderAPI_MakePolygon()
     for pt in args:
@@ -148,6 +162,7 @@ def make_polygon(args, closed=False):
 #        wire.Delete()
         return result
 
+@wraps(BRepBuilderAPI_MakePolygon)
 def make_closed_polygon(*args):
     poly = BRepBuilderAPI_MakePolygon()
     for pt in args:
@@ -309,7 +324,9 @@ def make_plane(center=gp_Pnt(0,0,0),
                      )
     return face
 
+from OCC.BRepPrimAPI import *
 
+@wraps(BRepPrimAPI_MakeBox)
 def make_cube(*args):
     box = BRepPrimAPI_MakeBox(*args)
     box.Build()
@@ -335,7 +352,7 @@ def make_spline(pnts=[''],
 # NEW
 #===============================================================================
 def make_n_sided(edges, continuity=GeomAbs_C0):
-    from OCC.BRepFill import *
+
     n_sided = BRepFill_Filling()
     for edg in edges:
         n_sided.Add(edg, continuity)
@@ -349,17 +366,16 @@ def make_n_sided(edges, continuity=GeomAbs_C0):
     return face
 
 def make_n_sections(edges):
-    from OCC.BRepFill import *
-    from OCC.TopTools import *
     seq = TopTools_SequenceOfShape()
     for i in edges:
         seq.Append(i)
-    
+
     n_sec = BRepFill_NSections(seq)
 
 
 def make_coons(edges):
     bt = BRep_Tool()
+    import ipdb; ipdb.set_trace()
     if len(edges) == 4:
         spl1, spl2, spl3, spl4 = edges #[curve_to_bspline(bt.Curve(i)[0]) for i in edges]
         srf = GeomFill_BSplineCurves(spl1,spl2,spl3,spl4, GeomFill_StretchStyle)
@@ -381,8 +397,6 @@ def make_constrained_surface_from_edges(edges):
     DOESNT RESPECT BOUNDARIES
     
     '''
-    from OCC.BRepFill import *
-    from OCC.GeomPlate import *
     bpSrf = GeomPlate_BuildPlateSurface(3,15,2)
     for edg in edges:
         c = BRepAdaptor_HCurve()
@@ -440,7 +454,7 @@ def sew_shapes( shapes, tolerance=0.001 ):
     print 'n multiple edges:',sew.NbMultipleEdges()
     
     result = sew.SewedShape()
-    # This fucks up big time!
+#     ???
 #    sew.Delete()
     return result
 
@@ -503,11 +517,30 @@ def splitter(shape, profile):
     '''
     from OCC.GEOMAlgo import GEOMAlgo_Splitter
     splitter = GEOMAlgo_Splitter()
-    splitter.AddShape(hubSurface)
-    splitter.AddTool(cuttingProfile)
+    splitter.AddShape(shape)
+    splitter.AddTool(profile)
     splitter.Perform()
     splitter_shape = splitter.Shape()
     return splitter_shape
+
+def trim_wire(wire, shapeLimit1, shapeLimit2, periodic=False):
+    '''return the trimmed wire that lies between `shapeLimit1` and `shapeLimit2`
+    returns TopoDS_Edge
+    '''
+    adap = to_adaptor_3d(wire)
+    bspl = adap.BSpline()
+    if periodic:
+        spl = bspl.GetObject()
+        if spl.IsClosed():
+            spl.SetPeriodic()
+        else:
+            warnings.warn('the wire to be trimmed is not closed, hence cannot be made periodic')
+    p1 = project_point_on_curve(bspl, shapeLimit1)[0]
+    p2 = project_point_on_curve(bspl, shapeLimit2)[0]
+    a,b = sorted([p1,p2])
+    tr = Geom_TrimmedCurve(bspl, a,b).GetHandle()
+    #tr = Geom_TrimmedCurve(bspl, p1,p2).GetHandle()
+    return make_edge(tr)
 
 #===============================================================================
 # ---FIXES---
