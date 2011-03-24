@@ -41,7 +41,7 @@ from OCC.GCPnts import *
 #===============================================================================
 # HELPER CLASSES
 #===============================================================================
-from kbe_types_lut import GeometryLookup, ShapeToTopology
+from types_lut import GeometryLookup, ShapeToTopology
 from OCC.Utils.Context import assert_isdone
 from OCC.Utils.Construct import *
 from OCC.Geom import *

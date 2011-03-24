@@ -1,4 +1,4 @@
-from kbe_base import KbeObject
+from base import KbeObject
 
 class Part(KbeObject):
     """An assembly is composed of a number of Part's"""

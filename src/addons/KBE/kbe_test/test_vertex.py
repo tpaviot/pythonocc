@@ -16,4 +16,3 @@ def test_kbe_vertex():
     v1.x
     v1.x = 12
     v2 = make_vertex(gp_Pnt(1,1,1))
-    import ipdb; ipdb.set_trace()

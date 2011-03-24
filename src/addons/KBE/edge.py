@@ -4,10 +4,13 @@ from OCC.BRepAdaptor import BRepAdaptor_Curve
 from OCC.GCPnts import GCPnts_AbscissaPoint, GCPnts_UniformAbscissa
 from OCC.Geom import Geom_OffsetCurve, Geom_Curve, Geom_TrimmedCurve
 from OCC.TopoDS import TopoDS_Wire, TopoDS_Edge, TopoDS_Face, TopoDS_Vertex
+from OCC.gp import *
+# high-level
 from OCC.Utils.Common import vertex2pnt, minimum_distance, to_adaptor_3d
 from OCC.Utils.Construct import make_edge, trim_wire
 from OCC.Utils.Context import assert_isdone
-from OCC.gp import *
+from OCC.KBE.kbe_vertex import Vertex
+
 
 class IntersectCurve(object):
     def __init__(self, Instance):
@@ -491,7 +494,7 @@ class Edge(object):
     def parameter_to_point(self, u):
         '''returns the coordinate at parameter u
         '''
-        return self.brep_adaptor.Value(u)
+        return Vertex(*self.brep_adaptor.Value(u).Coord())
 
     def point_to_parameter(self, coord):
         '''returns the parameters / pnt on edge at world coordinate `coord`
