@@ -2,7 +2,12 @@ from OCC.Utils.Construct import *
 from nose.tools import with_setup, raises
 from ..kbe_crv import Edge
 
-class TestEdge:
+class TestEdge_Line:
+    '''
+    this test case would be much better if the methods would run on a number of test cases
+    [ line, arc, closed polygon, bspline with lots of points... stuff like that... ]
+    so for the moment its mostly about asserting the KBE API makes sense...
+    '''
     def setup(self):
         self.line = make_line(gp_Pnt(), gp_Pnt(1,0,0))
         self.edg = Edge(self.line)
@@ -31,6 +36,12 @@ class TestEdge:
         pnts = self.edg.divide_by_number_of_points(4)
         xx = [round(i[0],2) for i in pnts]
         assert xx == [0.0, 0.33000000000000002, 0.67000000000000004, 1.0]
+
+    def test_trim(self):
+        pnts = self.edg.divide_by_number_of_points(4)
+        param1, param2 = pnts[1][0], pnts[2][0]
+        trimmed = self.edg.trim(param1, param2)
+        assert  trimmed == (0.33333333333333331, 0.66666666666666663)
 
 
 

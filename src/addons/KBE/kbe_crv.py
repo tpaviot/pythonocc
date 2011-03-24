@@ -2,10 +2,10 @@ import warnings
 from OCC.BRep import BRep_Tool
 from OCC.BRepAdaptor import BRepAdaptor_Curve
 from OCC.GCPnts import GCPnts_AbscissaPoint, GCPnts_UniformAbscissa
-from OCC.Geom import Geom_OffsetCurve, Geom_Curve
+from OCC.Geom import Geom_OffsetCurve, Geom_Curve, Geom_TrimmedCurve
 from OCC.TopoDS import TopoDS_Wire, TopoDS_Edge, TopoDS_Face, TopoDS_Vertex
-from OCC.Utils.Common import vertex2pnt
-from OCC.Utils.Construct import make_edge
+from OCC.Utils.Common import vertex2pnt, minimum_distance, to_adaptor_3d
+from OCC.Utils.Construct import make_edge, trim_wire
 from OCC.Utils.Context import assert_isdone
 from OCC.gp import *
 
@@ -273,20 +273,19 @@ class Edge(object):
 #    Curve.modify
 #===============================================================================
 
-    def trim(self, lbound=None, ubound=None):
+    def trim(self, lbound, ubound, periodic=False):
         '''
         trim the curve
         @param lbound:
         @param ubound:
         '''
-        from OCC.Approx import Approx_CurvlinFunc
-        acf = Approx_CurvlinFunc(self.crv, self.tolerance)
-        _ubound, _lbound = self.domain()
-        if lbound:
-            _lbound=lbound
-        elif ubound:
-            _ubound=ubound
-        return acf.Trim(_lbound, _ubound, self.tolerance)
+#        if self.is_periodic:
+#            pass
+#        else:
+#            warnings.warn('the wire to be trimmed is not closed, hence cannot be made periodic')
+        a,b = sorted([lbound,ubound])
+        tr = Geom_TrimmedCurve(self.brep_adaptor.Curve().Curve(), a,b).GetHandle()
+        return Edge(make_edge(tr))
 
     def extend_by_point(self, pnt, degree=3, beginning=True):
         '''extends the curve to point
@@ -305,66 +304,8 @@ class Edge(object):
 #    Curve.
 #===============================================================================
 
-    def closest(self, other, minimum=True, verbose=False):
-        '''returns the [parameter, TopoDS_*, closes_point ] of self.crv with a point, curve, edge, face, solid
-
-        ----
-        Can be called with gp_Pnt and TopoDS_Vertex for now
-
-        distanceType can be:
-            maximum
-            minimum
-        '''
-        from OCC.BRepExtrema import BRepExtrema_DistanceSS, BRepExtrema_ExtPC, BRepExtrema_DistShapeShape
-        from OCC.Utils.Construct import make_vertex
-        from OCC.KBE.kbe_types_lut import ShapeToTopology
-
-
-        # abstract input
-        if isinstance(other, gp_Pnt):
-            other = make_vertex(other)
-
-        # we need TopoDS_* types
-#        assert issubclass(other.__class__, TopoDS_Shape), '%s is not a subclass of TopoDS_Shape, nor a point' %  ( other.__class__ )
-#        assert self.is_brep, 'closest not implemented for other than Edge'
-
-        '''
-
-        Its possible that all this can be easily abstracted with BRepExtrema_DistanceSS
-
-        '''
-
-        if self.is_brep:
-            extrem = BRepExtrema_DistShapeShape(self.brep, other)
-            te = ShapeToTopology()
-
-            if verbose:
-                print extrem.DumpToString()
-
-            def get_parameter_and_topology(indx):
-                _topo  = te(extrem.SupportOnShape1(indx))
-                if isinstance(_topo, TopoDS_Edge):
-                    _param = extrem.ParOnEdgeS1(indx)
-                elif isinstance(_topo, TopoDS_Face):
-                    _param = extrem.ParOnFaceS1(indx)
-                else:
-                    _param = None
-                return _param, _topo
-
-            with assert_isdone(extrem, 'no extremeties found'):
-                if extrem.NbSolution() == 1:
-                    print 'one solution found'
-                    _param, _topo = get_parameter_and_topology(1)
-                    _pnt  = extrem.PointOnShape1(1)
-                    return [[[_param, _topo, _pnt], extrem]]
-                else:
-                    print  extrem.NbSolution(), 'solutions found'
-                    li = []
-                    for i in range(1, extrem.NbSolution()+1):
-                        _param, _topo = get_parameter_and_topology(i)
-                        _pnt = extrem.PointOnShape1(i)
-                        li.append([_param, _topo, _pnt])
-                    return [li, extrem]
+    def closest(self, other):
+        return minimum_distance(self.brep, other)
 
     def project_pnt_on_edge(self, pnt_or_vertex):
         ''' returns the closest orthogonal project on `pnt` on edge
@@ -467,6 +408,18 @@ class Edge(object):
         '''kbe_test if curve is closed
         '''
         return self.brep_adaptor.IsClosed()
+
+#    @property
+#    def periodic(self):
+#        return self.brep_adaptor.IsPeriodic()
+#
+#    @periodic.setter
+#    def periodic(self, _bool):
+#        _bool = bool(_bool)
+#        if self.is_closed:
+#            self.brep_adaptor.BSpline()
+#        else:
+#            raise warnings.warn('cannot set periodicity on a non-closed edge')
 
     def control_point(self, indx, pt=None):
         '''gets or sets the coordinate of the control point
