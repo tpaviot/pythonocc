@@ -1,3 +1,6 @@
+'''
+this class abstract types
+'''
 from OCC import GeomAbs
 from OCC.TopoDS import TopoDS
 from OCC.TopAbs import *
