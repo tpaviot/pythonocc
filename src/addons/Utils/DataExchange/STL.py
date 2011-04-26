@@ -19,7 +19,7 @@
 
 from OCC.StlAPI import *
 from OCC.TopoDS import TopoDS_Shape
-import os
+import os, warnings
 
 class STLImporter(object):
     def __init__(self,filename):        
@@ -51,24 +51,25 @@ class STLImporter(object):
 class STLExporter(object):
     """ A TopoDS_Shape to STL exporter. Default mode is ASCII
     """
-    def __init__(self, filename=None,ASCIIMode=True):
+    def __init__(self, filename=None,ASCIIMode=False):
         self._shape = None #only one shape can be exported
         self._ASCIIMode = ASCIIMode
         self.set_filename(filename)
     
     def set_shape(self, aShape):
-        # First check the shape
+        '''
+        only a single shape can be exported...
+        '''
+        #First check the shape
         if aShape.IsNull():
             raise AssertionError("STLExporter Error: the shape is NULL")
         else: 
             self._shape = aShape
 
     def set_filename(self, filename):
-        if not os.path.isfile(filename):
-            print "STLImporter initialization Error: file %s not found."%filename
-            self._filename = None
-        else:
-            self._filename = filename
+        if os.path.isfile(filename):
+            warnings.warn('will be overwriting file: %s' % filename)
+        self._filename = filename
             
     def write_file(self):
         stl_writer = StlAPI()
