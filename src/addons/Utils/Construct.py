@@ -72,11 +72,30 @@ def vec_to_dir(self):
 def add_vector_to_point(self, vec):
     return (self.as_vec() + vec).as_pnt() 
 
+def gp_Pnt_get_state(self):
+    '''pack as a tuple
+
+    used for copying / serializing the instance
+    '''
+    return self.XYZ().Coord()
+
+def gp_Pnt_set_state(self, state):
+    '''unpack tuple and return instance...
+
+    used for copying / serializing the instance
+    '''
+    self.__init__(*state)
+
+
 gp_Vec.as_pnt  = vector_to_point
 gp_Pnt.as_vec  = point_to_vector
 gp_Pnt.add_vec = add_vector_to_point
 gp_Dir.as_vec  = dir_to_vec 
-gp_Vec.as_dir  = vec_to_dir 
+gp_Vec.as_dir  = vec_to_dir
+gp_Pnt.__getstate__ = gp_Pnt_get_state
+gp_Pnt.__setstate__ = gp_Pnt_set_state
+gp_Vec.__getstate__ = gp_Pnt_get_state
+gp_Vec.__setstate__ = gp_Pnt_set_state
 
 #===============================================================================
 # ---TOPOLOGY---
