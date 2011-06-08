@@ -72,7 +72,7 @@ class Handle_BinLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 		%feature("autodoc", "1");
 		Handle_BinLDrivers_DocumentRetrievalDriver & operator=(const BinLDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinLDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinLDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinLDrivers_DocumentRetrievalDriver {
@@ -110,7 +110,7 @@ class Handle_BinLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 		%feature("autodoc", "1");
 		Handle_BinLDrivers_DocumentStorageDriver & operator=(const BinLDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinLDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinLDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinLDrivers_DocumentStorageDriver {

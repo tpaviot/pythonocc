@@ -41,13 +41,13 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_TColStd_HArray1OfReal.hxx>
+#include<TColStd_Array1OfInteger.hxx>
+#include<TColStd_Array1OfReal.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
 #include<Handle_TColgp_HArray2OfPnt2d.hxx>
 #include<Handle_TColgp_HArray2OfPnt.hxx>
-#include<TColStd_Array1OfReal.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_PLib_JacobiPolynomial.hxx>
-#include<TColStd_Array1OfInteger.hxx>
 %}

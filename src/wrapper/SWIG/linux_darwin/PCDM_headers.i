@@ -68,7 +68,6 @@ $HeaderURL$
 #include<Handle_Standard_Persistent.hxx>
 #include<Handle_CDM_Document.hxx>
 #include<TCollection_ExtendedString.hxx>
-#include<Standard_SStream.hxx>
 #include<Handle_CDM_Application.hxx>
 #include<Handle_Storage_Schema.hxx>
 #include<TColStd_SequenceOfExtendedString.hxx>

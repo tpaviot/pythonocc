@@ -41,5 +41,4 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Aspect_GraphicDevice.hxx>
-#include<Standard_SStream.hxx>
 %}

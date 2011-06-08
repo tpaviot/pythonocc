@@ -71,7 +71,7 @@ class Handle_MgtBRep_TranslateTool1 : public Handle_MgtTopoDS_TranslateTool1 {
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool1 & operator=(const MgtBRep_TranslateTool1 *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MgtBRep_TranslateTool1 const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MgtBRep_TranslateTool1 DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MgtBRep_TranslateTool1 {
@@ -109,7 +109,7 @@ class Handle_MgtBRep_TranslateTool : public Handle_MgtTopoDS_TranslateTool {
 		%feature("autodoc", "1");
 		Handle_MgtBRep_TranslateTool & operator=(const MgtBRep_TranslateTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MgtBRep_TranslateTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MgtBRep_TranslateTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MgtBRep_TranslateTool {

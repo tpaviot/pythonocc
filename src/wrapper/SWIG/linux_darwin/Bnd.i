@@ -66,7 +66,7 @@ class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Bnd_SequenceNodeOfSeqOfBox *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Bnd_SequenceNodeOfSeqOfBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Bnd_SequenceNodeOfSeqOfBox DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Bnd_SequenceNodeOfSeqOfBox {
@@ -104,7 +104,7 @@ class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox2d & operator=(const Bnd_HArray1OfBox2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Bnd_HArray1OfBox2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Bnd_HArray1OfBox2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Bnd_HArray1OfBox2d {
@@ -142,7 +142,7 @@ class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox & operator=(const Bnd_HArray1OfBox *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Bnd_HArray1OfBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Bnd_HArray1OfBox DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Bnd_HArray1OfBox {
@@ -160,6 +160,61 @@ def __del__(self):
 %}
 
 %extend Handle_Bnd_HArray1OfBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_HArray1OfBox;
+class Bnd_HArray1OfBox : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Box &V);
+		%feature("autodoc", "1");
+		void Init(const Bnd_Box &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Bnd_Box &Value);
+		%feature("autodoc", "1");
+		const Bnd_Box & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Bnd_Box & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Bnd_Array1OfBox & Array1() const;
+		%feature("autodoc", "1");
+		Bnd_Array1OfBox & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Bnd_HArray1OfBox {
+	Handle_Bnd_HArray1OfBox GetHandle() {
+	return *(Handle_Bnd_HArray1OfBox*) &$self;
+	}
+};
+%extend Bnd_HArray1OfBox {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") Bnd_HArray1OfBox::~Bnd_HArray1OfBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_HArray1OfBox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -300,6 +355,41 @@ def __del__(self):
 };
 
 
+%nodefaultctor Bnd_BoundSortBox2d;
+class Bnd_BoundSortBox2d {
+	public:
+		%feature("autodoc", "1");
+		Bnd_BoundSortBox2d();
+		%feature("autodoc", "1");
+		void Initialize(const Bnd_Box2d &CompleteBox, const Handle_Bnd_HArray1OfBox2d &SetOfBox);
+		%feature("autodoc", "1");
+		void Initialize(const Handle_Bnd_HArray1OfBox2d &SetOfBox);
+		%feature("autodoc", "1");
+		void Initialize(const Bnd_Box2d &CompleteBox, const Standard_Integer nbComponents);
+		%feature("autodoc", "1");
+		void Add(const Bnd_Box2d &theBox, const Standard_Integer boxIndex);
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Compare(const Bnd_Box2d &theBox);
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%feature("shadow") Bnd_BoundSortBox2d::~Bnd_BoundSortBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_BoundSortBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Bnd_SequenceNodeOfSeqOfBox;
 class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 	public:
@@ -396,61 +486,6 @@ def __del__(self):
 %}
 
 %extend Bnd_SeqOfBox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_HArray1OfBox;
-class Bnd_HArray1OfBox : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Box &V);
-		%feature("autodoc", "1");
-		void Init(const Bnd_Box &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Bnd_Box &Value);
-		%feature("autodoc", "1");
-		const Bnd_Box & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Bnd_Box & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Bnd_Array1OfBox & Array1() const;
-		%feature("autodoc", "1");
-		Bnd_Array1OfBox & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Bnd_HArray1OfBox {
-	Handle_Bnd_HArray1OfBox GetHandle() {
-	return *(Handle_Bnd_HArray1OfBox*) &$self;
-	}
-};
-%extend Bnd_HArray1OfBox {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Bnd_HArray1OfBox::~Bnd_HArray1OfBox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_HArray1OfBox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -561,41 +596,6 @@ def __del__(self):
 %}
 
 %extend Bnd_Box {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_BoundSortBox2d;
-class Bnd_BoundSortBox2d {
-	public:
-		%feature("autodoc", "1");
-		Bnd_BoundSortBox2d();
-		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box2d &CompleteBox, const Handle_Bnd_HArray1OfBox2d &SetOfBox);
-		%feature("autodoc", "1");
-		void Initialize(const Handle_Bnd_HArray1OfBox2d &SetOfBox);
-		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box2d &CompleteBox, const Standard_Integer nbComponents);
-		%feature("autodoc", "1");
-		void Add(const Bnd_Box2d &theBox, const Standard_Integer boxIndex);
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Compare(const Bnd_Box2d &theBox);
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%feature("shadow") Bnd_BoundSortBox2d::~Bnd_BoundSortBox2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_BoundSortBox2d {
 	void _kill_pointed() {
 		delete $self;
 	}

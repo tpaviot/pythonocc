@@ -39,21 +39,18 @@ $HeaderURL$
 #include<BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape.hxx>
 #include<BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt.hxx>
 #include<BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal.hxx>
-#include<BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfNodeShape.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal.hxx>
-#include<BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include<BRepFill_DataMapOfNodeDataMapOfShapeShape.hxx>
 #include<BRepFill_DataMapOfNodeShape.hxx>
 #include<BRepFill_DataMapOfOrientedShapeListOfShape.hxx>
 #include<BRepFill_DataMapOfShapeDataMapOfShapeListOfShape.hxx>
 #include<BRepFill_DataMapOfShapeSequenceOfPnt.hxx>
 #include<BRepFill_DataMapOfShapeSequenceOfReal.hxx>
-#include<BRepFill_DataMapOfShapeSequenceOfShape.hxx>
 #include<BRepFill_Draft.hxx>
 #include<BRepFill_DraftLaw.hxx>
 #include<BRepFill_Edge3DLaw.hxx>
@@ -98,7 +95,6 @@ $HeaderURL$
 #include<Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape.hxx>
 #include<Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt.hxx>
 #include<Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal.hxx>
-#include<Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include<Handle_BRepFill_DraftLaw.hxx>
 #include<Handle_BRepFill_Edge3DLaw.hxx>
 #include<Handle_BRepFill_EdgeOnSurfLaw.hxx>
@@ -125,6 +121,7 @@ $HeaderURL$
 #include<Adaptor3d_HSurface.hxx>
 #include<Adaptor3d_HSurfaceOfLinearExtrusion.hxx>
 #include<Adaptor3d_HSurfaceOfRevolution.hxx>
+#include<Adaptor3d_HSurfaceTool.hxx>
 #include<Adaptor3d_HVertex.hxx>
 #include<Adaptor3d_InterFunc.hxx>
 #include<Adaptor3d_IsoCurve.hxx>
@@ -175,9 +172,7 @@ $HeaderURL$
 #include<Approx_MyLeastSquareOfFitAndDivide2d.hxx>
 #include<Approx_ParametrizationType.hxx>
 #include<Approx_SameParameter.hxx>
-#include<Approx_SequenceNodeOfSequenceOfArray1OfPnt2d.hxx>
 #include<Approx_SequenceNodeOfSequenceOfHArray1OfReal.hxx>
-#include<Approx_SequenceOfArray1OfPnt2d.hxx>
 #include<Approx_SequenceOfHArray1OfReal.hxx>
 #include<Approx_Status.hxx>
 #include<Approx_SweepApproximation.hxx>
@@ -198,7 +193,6 @@ $HeaderURL$
 #include<Convert_ParameterisationType.hxx>
 #include<Convert_PolynomialCosAndSin.hxx>
 #include<Convert_SequenceNodeOfSequenceOfArray1OfPoles.hxx>
-#include<Convert_SequenceNodeOfSequenceOfArray1OfPoles2d.hxx>
 #include<Convert_SequenceOfArray1OfPoles.hxx>
 #include<Convert_SequenceOfArray1OfPoles2d.hxx>
 #include<Convert_SphereToBSplineSurface.hxx>
@@ -391,9 +385,7 @@ $HeaderURL$
 #include<GeomFill_SectionGenerator.hxx>
 #include<GeomFill_SectionLaw.hxx>
 #include<GeomFill_SectionPlacement.hxx>
-#include<GeomFill_SequenceNodeOfSequenceOfCurve.hxx>
 #include<GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
-#include<GeomFill_SequenceOfCurve.hxx>
 #include<GeomFill_SequenceOfTrsf.hxx>
 #include<GeomFill_SimpleBound.hxx>
 #include<GeomFill_SnglrFunc.hxx>
@@ -572,12 +564,8 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Adaptor3d_HCurveOnSurface.hxx>
-#include<Handle_Adaptor3d_HCurve.hxx>
 #include<Handle_MAT_Node.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
-#include<TopoDS_Shape.hxx>
-#include<TopTools_SequenceOfShape.hxx>
 #include<Bisector_Bisec.hxx>
 #include<Handle_Geom2d_Geometry.hxx>
 #include<TopoDS_Edge.hxx>
@@ -586,9 +574,11 @@ $HeaderURL$
 #include<TopoDS_Face.hxx>
 #include<BRepMAT2d_BisectingLocus.hxx>
 #include<BRepMAT2d_LinkTopoBilo.hxx>
+#include<TopoDS_Shape.hxx>
 #include<Handle_GeomFill_SectionLaw.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Wire.hxx>
+#include<TopTools_SequenceOfShape.hxx>
 #include<TColStd_SequenceOfReal.hxx>
 #include<gp_Pnt.hxx>
 #include<TColgp_Array1OfPnt.hxx>
@@ -605,12 +595,14 @@ $HeaderURL$
 #include<Handle_GeomFill_LocationLaw.hxx>
 #include<Handle_GeomFill_LocationDraft.hxx>
 #include<Handle_GeomFill_LocationGuide.hxx>
-#include<BRepFill.hxx>
-#include<TopoDS_Shell.hxx>
-#include<gp_Ax3.hxx>
-#include<TColStd_Array1OfReal.hxx>
+#include<Handle_Adaptor3d_HCurveOnSurface.hxx>
+#include<Handle_Adaptor3d_HCurve.hxx>
 #include<gp_Dir.hxx>
 #include<Handle_Law_Function.hxx>
 #include<Handle_Geom_Surface.hxx>
+#include<TopoDS_Shell.hxx>
+#include<gp_Ax3.hxx>
+#include<BRepFill.hxx>
+#include<TColStd_Array1OfReal.hxx>
 #include<AppParCurves_MultiCurve.hxx>
 %}

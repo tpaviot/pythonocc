@@ -81,7 +81,7 @@ class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode 
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfDomains & operator=(const HatchGen_SequenceNodeOfDomains *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HatchGen_SequenceNodeOfDomains const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HatchGen_SequenceNodeOfDomains DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HatchGen_SequenceNodeOfDomains {
@@ -119,7 +119,7 @@ class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfPointsOnElement & operator=(const HatchGen_SequenceNodeOfPointsOnElement *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HatchGen_SequenceNodeOfPointsOnElement const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HatchGen_SequenceNodeOfPointsOnElement DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HatchGen_SequenceNodeOfPointsOnElement {
@@ -157,7 +157,7 @@ class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfPointsOnHatching & operator=(const HatchGen_SequenceNodeOfPointsOnHatching *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HatchGen_SequenceNodeOfPointsOnHatching const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HatchGen_SequenceNodeOfPointsOnHatching DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HatchGen_SequenceNodeOfPointsOnHatching {
@@ -240,71 +240,6 @@ def __del__(self):
 %}
 
 %extend HatchGen_PointsOnHatching {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HatchGen_PointsOnElement;
-class HatchGen_PointsOnElement : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		HatchGen_PointsOnElement();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const HatchGen_PointsOnElement & Assign(const HatchGen_PointsOnElement &Other);
-		%feature("autodoc", "1");
-		const HatchGen_PointsOnElement & operator=(const HatchGen_PointsOnElement &Other);
-		%feature("autodoc", "1");
-		void Append(const HatchGen_PointOnElement &T);
-		%feature("autodoc", "1");
-		void Append(HatchGen_PointsOnElement & S);
-		%feature("autodoc", "1");
-		void Prepend(const HatchGen_PointOnElement &T);
-		%feature("autodoc", "1");
-		void Prepend(HatchGen_PointsOnElement & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const HatchGen_PointOnElement &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, HatchGen_PointsOnElement & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const HatchGen_PointOnElement &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, HatchGen_PointsOnElement & S);
-		%feature("autodoc", "1");
-		const HatchGen_PointOnElement & First() const;
-		%feature("autodoc", "1");
-		const HatchGen_PointOnElement & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, HatchGen_PointsOnElement & S);
-		%feature("autodoc", "1");
-		const HatchGen_PointOnElement & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const HatchGen_PointOnElement & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const HatchGen_PointOnElement &I);
-		%feature("autodoc", "1");
-		HatchGen_PointOnElement & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		HatchGen_PointOnElement & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") HatchGen_PointsOnElement::~HatchGen_PointsOnElement %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HatchGen_PointsOnElement {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -663,6 +598,71 @@ def __del__(self):
 %}
 
 %extend HatchGen_Domains {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HatchGen_PointsOnElement;
+class HatchGen_PointsOnElement : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		HatchGen_PointsOnElement();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const HatchGen_PointsOnElement & Assign(const HatchGen_PointsOnElement &Other);
+		%feature("autodoc", "1");
+		const HatchGen_PointsOnElement & operator=(const HatchGen_PointsOnElement &Other);
+		%feature("autodoc", "1");
+		void Append(const HatchGen_PointOnElement &T);
+		%feature("autodoc", "1");
+		void Append(HatchGen_PointsOnElement & S);
+		%feature("autodoc", "1");
+		void Prepend(const HatchGen_PointOnElement &T);
+		%feature("autodoc", "1");
+		void Prepend(HatchGen_PointsOnElement & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const HatchGen_PointOnElement &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, HatchGen_PointsOnElement & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const HatchGen_PointOnElement &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, HatchGen_PointsOnElement & S);
+		%feature("autodoc", "1");
+		const HatchGen_PointOnElement & First() const;
+		%feature("autodoc", "1");
+		const HatchGen_PointOnElement & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, HatchGen_PointsOnElement & S);
+		%feature("autodoc", "1");
+		const HatchGen_PointOnElement & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const HatchGen_PointOnElement & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const HatchGen_PointOnElement &I);
+		%feature("autodoc", "1");
+		HatchGen_PointOnElement & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		HatchGen_PointOnElement & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") HatchGen_PointsOnElement::~HatchGen_PointsOnElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HatchGen_PointsOnElement {
 	void _kill_pointed() {
 		delete $self;
 	}

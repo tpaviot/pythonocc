@@ -75,7 +75,7 @@ class Handle_BiTgte_HCurveOnEdge : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnEdge & operator=(const BiTgte_HCurveOnEdge *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BiTgte_HCurveOnEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BiTgte_HCurveOnEdge DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BiTgte_HCurveOnEdge {
@@ -113,7 +113,7 @@ class Handle_BiTgte_HCurveOnVertex : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnVertex & operator=(const BiTgte_HCurveOnVertex *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BiTgte_HCurveOnVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BiTgte_HCurveOnVertex DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BiTgte_HCurveOnVertex {
@@ -151,7 +151,7 @@ class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {

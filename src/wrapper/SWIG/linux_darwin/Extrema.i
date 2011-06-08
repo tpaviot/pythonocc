@@ -66,7 +66,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
@@ -104,7 +104,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
@@ -142,7 +142,7 @@ class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnCurv & operator=(const Extrema_HArray1OfPOnCurv *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_HArray1OfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_HArray1OfPOnCurv DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_HArray1OfPOnCurv {
@@ -180,7 +180,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : pu
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
@@ -204,29 +204,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Extrema_HArray2OfPOnSurf;
-class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Extrema_CCacheOfExtCC;
+class Handle_Extrema_CCacheOfExtCC : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf();
+		Handle_Extrema_CCacheOfExtCC();
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf(const Handle_Extrema_HArray2OfPOnSurf &aHandle);
+		Handle_Extrema_CCacheOfExtCC(const Handle_Extrema_CCacheOfExtCC &aHandle);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf(const Extrema_HArray2OfPOnSurf *anItem);
+		Handle_Extrema_CCacheOfExtCC(const Extrema_CCacheOfExtCC *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf & operator=(const Handle_Extrema_HArray2OfPOnSurf &aHandle);
+		Handle_Extrema_CCacheOfExtCC & operator=(const Handle_Extrema_CCacheOfExtCC &aHandle);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf & operator=(const Extrema_HArray2OfPOnSurf *anItem);
+		Handle_Extrema_CCacheOfExtCC & operator=(const Extrema_CCacheOfExtCC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_HArray2OfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_CCacheOfExtCC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Extrema_HArray2OfPOnSurf {
-	Extrema_HArray2OfPOnSurf* GetObject() {
-	return (Extrema_HArray2OfPOnSurf*)$self->Access();
+%extend Handle_Extrema_CCacheOfExtCC {
+	Extrema_CCacheOfExtCC* GetObject() {
+	return (Extrema_CCacheOfExtCC*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Extrema_HArray2OfPOnSurf::~Handle_Extrema_HArray2OfPOnSurf %{
+%feature("shadow") Handle_Extrema_CCacheOfExtCC::~Handle_Extrema_CCacheOfExtCC %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -235,7 +235,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Extrema_HArray2OfPOnSurf {
+%extend Handle_Extrema_CCacheOfExtCC {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -256,7 +256,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
@@ -294,7 +294,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & operator=(const Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
@@ -332,7 +332,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public H
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC & operator=(const Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
@@ -370,7 +370,7 @@ class Handle_Extrema_HArray2OfPOnCurv : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnCurv & operator=(const Extrema_HArray2OfPOnCurv *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_HArray2OfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_HArray2OfPOnCurv DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_HArray2OfPOnCurv {
@@ -408,7 +408,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv & operator=(const Extrema_SequenceNodeOfSequenceOfPOnCurv *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv {
@@ -446,7 +446,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
@@ -470,6 +470,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Extrema_HArray1OfPOnCurv2d;
+class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv2d();
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv2d(const Handle_Extrema_HArray1OfPOnCurv2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv2d(const Extrema_HArray1OfPOnCurv2d *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Handle_Extrema_HArray1OfPOnCurv2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Extrema_HArray1OfPOnCurv2d *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Extrema_HArray1OfPOnCurv2d DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Extrema_HArray1OfPOnCurv2d {
+	Extrema_HArray1OfPOnCurv2d* GetObject() {
+	return (Extrema_HArray1OfPOnCurv2d*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Extrema_HArray1OfPOnCurv2d::~Handle_Extrema_HArray1OfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Extrema_HArray1OfPOnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public Handle_TCollection_SeqNode {
 	public:
@@ -484,7 +522,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public 
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
@@ -508,6 +546,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Extrema_CCache2dOfExtCC2d;
+class Handle_Extrema_CCache2dOfExtCC2d : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Extrema_CCache2dOfExtCC2d();
+		%feature("autodoc", "1");
+		Handle_Extrema_CCache2dOfExtCC2d(const Handle_Extrema_CCache2dOfExtCC2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_CCache2dOfExtCC2d(const Extrema_CCache2dOfExtCC2d *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_CCache2dOfExtCC2d & operator=(const Handle_Extrema_CCache2dOfExtCC2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_CCache2dOfExtCC2d & operator=(const Extrema_CCache2dOfExtCC2d *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Extrema_CCache2dOfExtCC2d DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Extrema_CCache2dOfExtCC2d {
+	Extrema_CCache2dOfExtCC2d* GetObject() {
+	return (Extrema_CCache2dOfExtCC2d*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Extrema_CCache2dOfExtCC2d::~Handle_Extrema_CCache2dOfExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Extrema_CCache2dOfExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public Handle_TCollection_SeqNode {
 	public:
@@ -522,7 +598,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public H
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
@@ -546,6 +622,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Extrema_LCCacheOfLocateExtCC;
+class Handle_Extrema_LCCacheOfLocateExtCC : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Extrema_LCCacheOfLocateExtCC();
+		%feature("autodoc", "1");
+		Handle_Extrema_LCCacheOfLocateExtCC(const Handle_Extrema_LCCacheOfLocateExtCC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_LCCacheOfLocateExtCC(const Extrema_LCCacheOfLocateExtCC *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_LCCacheOfLocateExtCC & operator=(const Handle_Extrema_LCCacheOfLocateExtCC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_LCCacheOfLocateExtCC & operator=(const Extrema_LCCacheOfLocateExtCC *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Extrema_LCCacheOfLocateExtCC DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Extrema_LCCacheOfLocateExtCC {
+	Extrema_LCCacheOfLocateExtCC* GetObject() {
+	return (Extrema_LCCacheOfLocateExtCC*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Extrema_LCCacheOfLocateExtCC::~Handle_Extrema_LCCacheOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Extrema_LCCacheOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_TCollection_SeqNode {
 	public:
@@ -560,7 +674,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
@@ -598,7 +712,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d & operator=(const Extrema_SequenceNodeOfSequenceOfPOnCurv2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
@@ -622,44 +736,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfBoolean;
-class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfBoolean();
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfBoolean(const Handle_Extrema_SequenceNodeOfSequenceOfBoolean &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfBoolean(const Extrema_SequenceNodeOfSequenceOfBoolean *anItem);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfBoolean & operator=(const Handle_Extrema_SequenceNodeOfSequenceOfBoolean &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfBoolean & operator=(const Extrema_SequenceNodeOfSequenceOfBoolean *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSequenceOfBoolean const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Extrema_SequenceNodeOfSequenceOfBoolean {
-	Extrema_SequenceNodeOfSequenceOfBoolean* GetObject() {
-	return (Extrema_SequenceNodeOfSequenceOfBoolean*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Extrema_SequenceNodeOfSequenceOfBoolean::~Handle_Extrema_SequenceNodeOfSequenceOfBoolean %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Extrema_SequenceNodeOfSequenceOfBoolean {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCollection_SeqNode {
 	public:
@@ -674,7 +750,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
@@ -712,7 +788,7 @@ class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnSurf & operator=(const Extrema_HArray1OfPOnSurf *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_HArray1OfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_HArray1OfPOnSurf DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_HArray1OfPOnSurf {
@@ -736,29 +812,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Extrema_HArray1OfPOnCurv2d;
-class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Extrema_LCCache2dOfLocateExtCC2d;
+class Handle_Extrema_LCCache2dOfLocateExtCC2d : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d();
+		Handle_Extrema_LCCache2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d(const Handle_Extrema_HArray1OfPOnCurv2d &aHandle);
+		Handle_Extrema_LCCache2dOfLocateExtCC2d(const Handle_Extrema_LCCache2dOfLocateExtCC2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d(const Extrema_HArray1OfPOnCurv2d *anItem);
+		Handle_Extrema_LCCache2dOfLocateExtCC2d(const Extrema_LCCache2dOfLocateExtCC2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Handle_Extrema_HArray1OfPOnCurv2d &aHandle);
+		Handle_Extrema_LCCache2dOfLocateExtCC2d & operator=(const Handle_Extrema_LCCache2dOfLocateExtCC2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Extrema_HArray1OfPOnCurv2d *anItem);
+		Handle_Extrema_LCCache2dOfLocateExtCC2d & operator=(const Extrema_LCCache2dOfLocateExtCC2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_HArray1OfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_LCCache2dOfLocateExtCC2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Extrema_HArray1OfPOnCurv2d {
-	Extrema_HArray1OfPOnCurv2d* GetObject() {
-	return (Extrema_HArray1OfPOnCurv2d*)$self->Access();
+%extend Handle_Extrema_LCCache2dOfLocateExtCC2d {
+	Extrema_LCCache2dOfLocateExtCC2d* GetObject() {
+	return (Extrema_LCCache2dOfLocateExtCC2d*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Extrema_HArray1OfPOnCurv2d::~Handle_Extrema_HArray1OfPOnCurv2d %{
+%feature("shadow") Handle_Extrema_LCCache2dOfLocateExtCC2d::~Handle_Extrema_LCCache2dOfLocateExtCC2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -767,7 +843,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Extrema_HArray1OfPOnCurv2d {
+%extend Handle_Extrema_LCCache2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Extrema_HArray2OfPOnSurf;
+class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf();
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf(const Handle_Extrema_HArray2OfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf(const Extrema_HArray2OfPOnSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf & operator=(const Handle_Extrema_HArray2OfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf & operator=(const Extrema_HArray2OfPOnSurf *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Extrema_HArray2OfPOnSurf DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Extrema_HArray2OfPOnSurf {
+	Extrema_HArray2OfPOnSurf* GetObject() {
+	return (Extrema_HArray2OfPOnSurf*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Extrema_HArray2OfPOnSurf::~Handle_Extrema_HArray2OfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Extrema_HArray2OfPOnSurf {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -788,7 +902,7 @@ class Handle_Extrema_HArray2OfPOnCurv2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnCurv2d & operator=(const Extrema_HArray2OfPOnCurv2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_HArray2OfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_HArray2OfPOnCurv2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_HArray2OfPOnCurv2d {
@@ -826,7 +940,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Hand
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
@@ -864,7 +978,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf & operator=(const Extrema_SequenceNodeOfSequenceOfPOnSurf *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
@@ -919,93 +1033,6 @@ def __del__(self):
 %}
 
 %extend Extrema_POnCurv2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Extrema_POnSurf;
-class Extrema_POnSurf {
-	public:
-		%feature("autodoc", "1");
-		Extrema_POnSurf();
-		%feature("autodoc", "1");
-		Extrema_POnSurf(const Standard_Real U, const Standard_Real V, const gp_Pnt P);
-		%feature("autodoc", "1");
-		const gp_Pnt  Value() const;
-		%feature("autodoc","Parameter() -> [Standard_Real, Standard_Real]");
-
-		void Parameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetExtrema_POnSurfmyU() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetExtrema_POnSurfmyU(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetExtrema_POnSurfmyV() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetExtrema_POnSurfmyV(const Standard_Real p);
-		%feature("autodoc", "1");
-		const gp_Pnt  _CSFDB_GetExtrema_POnSurfmyP() const;
-
-};
-%feature("shadow") Extrema_POnSurf::~Extrema_POnSurf %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_POnSurf {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Extrema_SequenceNodeOfSequenceOfBoolean;
-class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Extrema_SequenceNodeOfSequenceOfBoolean(const Standard_Boolean &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Boolean GetValue() {
-				return (Standard_Boolean) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Boolean value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Extrema_SequenceNodeOfSequenceOfBoolean {
-	Handle_Extrema_SequenceNodeOfSequenceOfBoolean GetHandle() {
-	return *(Handle_Extrema_SequenceNodeOfSequenceOfBoolean*) &$self;
-	}
-};
-%extend Extrema_SequenceNodeOfSequenceOfBoolean {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Extrema_SequenceNodeOfSequenceOfBoolean::~Extrema_SequenceNodeOfSequenceOfBoolean %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_SequenceNodeOfSequenceOfBoolean {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1077,6 +1104,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
+class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & Assign(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
+		%feature("autodoc", "1");
+		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & operator=(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
+		%feature("autodoc", "1");
+		void Append(const Extrema_POnCurv2d &T);
+		%feature("autodoc", "1");
+		void Append(Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
+		%feature("autodoc", "1");
+		void Prepend(const Extrema_POnCurv2d &T);
+		%feature("autodoc", "1");
+		void Prepend(Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv2d &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv2d &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & First() const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Extrema_POnCurv2d &I);
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d::~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
 class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequence {
 	public:
@@ -1142,53 +1234,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Extrema_EPCOfExtPC2d;
-class Extrema_EPCOfExtPC2d {
-	public:
-		%feature("autodoc", "1");
-		Extrema_EPCOfExtPC2d();
-		%feature("autodoc", "1");
-		Extrema_EPCOfExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real TolU, const Standard_Real TolF);
-		%feature("autodoc", "1");
-		Extrema_EPCOfExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real TolU, const Standard_Real TolF);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void Initialize(const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-
-};
-%feature("shadow") Extrema_EPCOfExtPC2d::~Extrema_EPCOfExtPC2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_EPCOfExtPC2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Extrema_ExtSS;
 class Extrema_ExtSS {
 	public:
@@ -1209,7 +1254,7 @@ class Extrema_ExtSS {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnSurf & P1, Extrema_POnSurf & P2) const;
 
@@ -1234,7 +1279,13 @@ def __del__(self):
 class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
+		Extrema_CCFOfELCCOfLocateExtCC(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
 		Extrema_CCFOfELCCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		void SetCurve(const Standard_Integer theRank, const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real theTol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -1250,9 +1301,13 @@ class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
+		%feature("autodoc", "1");
+		Standard_Address CurvePtr(const Standard_Integer theRank) const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
 
 };
 %feature("shadow") Extrema_CCFOfELCCOfLocateExtCC::~Extrema_CCFOfELCCOfLocateExtCC %{
@@ -1330,17 +1385,23 @@ def __del__(self):
 class Extrema_ECC2dOfExtCC2d {
 	public:
 		%feature("autodoc", "1");
+		Extrema_ECC2dOfExtCC2d();
+		%feature("autodoc", "1");
 		Extrema_ECC2dOfExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		Extrema_ECC2dOfExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
+		void SetCurveCache(const Standard_Integer theRank, const Handle_Extrema_CCache2dOfExtCC2d &theCache);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
@@ -1468,7 +1529,7 @@ class Extrema_ExtElCS {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnSurf & P2) const;
 
@@ -1501,7 +1562,7 @@ class Extrema_GenLocateExtSS {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		const Extrema_POnSurf & PointOnS1() const;
 		%feature("autodoc", "1");
@@ -1589,17 +1650,23 @@ def __del__(self):
 class Extrema_ELCC2dOfLocateExtCC2d {
 	public:
 		%feature("autodoc", "1");
+		Extrema_ELCC2dOfLocateExtCC2d();
+		%feature("autodoc", "1");
 		Extrema_ELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		Extrema_ELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
+		void SetCurveCache(const Standard_Integer theRank, const Handle_Extrema_LCCache2dOfLocateExtCC2d &theCache);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
@@ -1628,7 +1695,7 @@ class Extrema_LocECCOfLocateExtCC {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		void Point(Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
@@ -1657,7 +1724,7 @@ class Extrema_LocateExtCC {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		void Point(Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
@@ -1672,6 +1739,53 @@ def __del__(self):
 %}
 
 %extend Extrema_LocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_EPCOfExtPC2d;
+class Extrema_EPCOfExtPC2d {
+	public:
+		%feature("autodoc", "1");
+		Extrema_EPCOfExtPC2d();
+		%feature("autodoc", "1");
+		Extrema_EPCOfExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real TolU, const Standard_Real TolF);
+		%feature("autodoc", "1");
+		Extrema_EPCOfExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real TolU, const Standard_Real TolF);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		void Initialize(const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d Point(const Standard_Integer N) const;
+
+};
+%feature("shadow") Extrema_EPCOfExtPC2d::~Extrema_EPCOfExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_EPCOfExtPC2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1698,12 +1812,12 @@ class Extrema_ExtCC2d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsParallel() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
-		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P11, gp_Pnt2d & P12, gp_Pnt2d & P21, gp_Pnt2d & P22) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P11, gp_Pnt2d & P12, gp_Pnt2d & P21, gp_Pnt2d & P22) const;
 
 };
 %feature("shadow") Extrema_ExtCC2d::~Extrema_ExtCC2d %{
@@ -1758,7 +1872,7 @@ class Extrema_ExtElSS {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnSurf & P1, Extrema_POnSurf & P2) const;
 
@@ -1821,7 +1935,7 @@ class Extrema_ExtElC2d {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
@@ -1836,6 +1950,57 @@ def __del__(self):
 %}
 
 %extend Extrema_ExtElC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_CCLocFOfLocECC2dOfLocateExtCC2d;
+class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		Extrema_CCLocFOfLocECC2dOfLocateExtCC2d(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		Extrema_CCLocFOfLocECC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		void SetCurve(const Standard_Integer theRank, const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real theTol);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &UV, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &UV, math_Matrix & DF);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &UV, math_Vector & F, math_Matrix & DF);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
+		%feature("autodoc", "1");
+		Standard_Address CurvePtr(const Standard_Integer theRank) const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+
+};
+%feature("shadow") Extrema_CCLocFOfLocECC2dOfLocateExtCC2d::~Extrema_CCLocFOfLocECC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_CCLocFOfLocECC2dOfLocateExtCC2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1858,7 +2023,7 @@ class Extrema_LocEPCOfLocateExtPC {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin() const;
 		%feature("autodoc", "1");
@@ -1930,43 +2095,6 @@ def __del__(self):
 %}
 
 %extend Extrema_HArray1OfPOnCurv {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d;
-class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
-	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d GetHandle() {
-	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d*) &$self;
-	}
-};
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2141,7 +2269,7 @@ class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -2158,47 +2286,6 @@ def __del__(self):
 %}
 
 %extend Extrema_PCFOfEPCOfExtPC2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Extrema_CCLocFOfLocECC2dOfLocateExtCC2d;
-class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		Extrema_CCLocFOfLocECC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &UV, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &UV, math_Matrix & DF);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &UV, math_Vector & F, math_Matrix & DF);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
-
-};
-%feature("shadow") Extrema_CCLocFOfLocECC2dOfLocateExtCC2d::~Extrema_CCLocFOfLocECC2dOfLocateExtCC2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_CCLocFOfLocECC2dOfLocateExtCC2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2254,6 +2341,54 @@ def __del__(self):
 %}
 
 %extend Extrema_Array2OfPOnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC;
+class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		Extrema_PCLocFOfLocEPCOfLocateExtPC();
+		%feature("autodoc", "1");
+		Extrema_PCLocFOfLocEPCOfLocateExtPC(const gp_Pnt P, const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		void SetPoint(const gp_Pnt P);
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv Point(const Standard_Integer N) const;
+
+};
+%feature("shadow") Extrema_PCLocFOfLocEPCOfLocateExtPC::~Extrema_PCLocFOfLocEPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_PCLocFOfLocEPCOfLocateExtPC {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2325,66 +2460,39 @@ def __del__(self):
 };
 
 
-%nodefaultctor Extrema_SequenceOfBoolean;
-class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
+%nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC2d;
+class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		Extrema_SequenceOfBoolean();
+		Extrema_PCLocFOfLocEPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
-		void Clear();
+		Extrema_PCLocFOfLocEPCOfLocateExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		const Extrema_SequenceOfBoolean & Assign(const Extrema_SequenceOfBoolean &Other);
+		void Initialize(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		const Extrema_SequenceOfBoolean & operator=(const Extrema_SequenceOfBoolean &Other);
+		void SetPoint(const gp_Pnt2d P);
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void Append(const Standard_Boolean &T);
+		virtual		Standard_Integer GetStateNumber();
 		%feature("autodoc", "1");
-		void Append(Extrema_SequenceOfBoolean & S);
+		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		void Prepend(const Standard_Boolean &T);
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		void Prepend(Extrema_SequenceOfBoolean & S);
+		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Standard_Boolean &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Extrema_SequenceOfBoolean & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Standard_Boolean &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Extrema_SequenceOfBoolean & S);
-		%feature("autodoc", "1");
-		const Standard_Boolean & First() const;
-		%feature("autodoc", "1");
-		const Standard_Boolean & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Extrema_SequenceOfBoolean & S);
-		%feature("autodoc", "1");
-		const Standard_Boolean & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Standard_Boolean & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Boolean &I);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Boolean GetChangeValue(const Standard_Integer Index) {
-				return (Standard_Boolean) $self->ChangeValue(Index);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeValue(Standard_Boolean value ,const Standard_Integer Index) {
-				$self->ChangeValue(Index)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Boolean & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
-%feature("shadow") Extrema_SequenceOfBoolean::~Extrema_SequenceOfBoolean %{
+%feature("shadow") Extrema_PCLocFOfLocEPCOfLocateExtPC2d::~Extrema_PCLocFOfLocEPCOfLocateExtPC2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2393,37 +2501,59 @@ def __del__(self):
 		pass
 %}
 
-%extend Extrema_SequenceOfBoolean {
+%extend Extrema_PCLocFOfLocEPCOfLocateExtPC2d {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Extrema_ExtPExtS;
-class Extrema_ExtPExtS {
+%nodefaultctor Extrema_LCCache2dOfLocateExtCC2d;
+class Extrema_LCCache2dOfLocateExtCC2d : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Extrema_ExtPExtS();
+		Extrema_LCCache2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
-		Extrema_ExtPExtS(const gp_Pnt P, const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		Extrema_LCCache2dOfLocateExtCC2d(const Adaptor2d_Curve2d &theC, const Standard_Real theUFirst, const Standard_Real theULast, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
 		%feature("autodoc", "1");
-		Extrema_ExtPExtS(const gp_Pnt P, const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real TolU, const Standard_Real TolV);
+		void SetCurve(const Adaptor2d_Curve2d &theC, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
 		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		void SetCurve(const Adaptor2d_Curve2d &theC, const Standard_Real theUFirst, const Standard_Real theULast, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
 		%feature("autodoc", "1");
-		void Perform(const gp_Pnt P);
+		void SetRange(const Standard_Real Uinf, const Standard_Real Usup, const Standard_Boolean theToCalculate);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		void CalculatePoints();
 		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
+		Standard_Boolean IsValid() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		const Handle_TColgp_HArray1OfPnt2d & Points() const;
 		%feature("autodoc", "1");
-		Extrema_POnSurf Point(const Standard_Integer N) const;
+		Standard_Address CurvePtr() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples() const;
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real TrimFirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real TrimLastParameter() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Extrema_ExtPExtS::~Extrema_ExtPExtS %{
+%extend Extrema_LCCache2dOfLocateExtCC2d {
+	Handle_Extrema_LCCache2dOfLocateExtCC2d GetHandle() {
+	return *(Handle_Extrema_LCCache2dOfLocateExtCC2d*) &$self;
+	}
+};
+%extend Extrema_LCCache2dOfLocateExtCC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") Extrema_LCCache2dOfLocateExtCC2d::~Extrema_LCCache2dOfLocateExtCC2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2432,7 +2562,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Extrema_ExtPExtS {
+%extend Extrema_LCCache2dOfLocateExtCC2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2500,19 +2630,147 @@ def __del__(self):
 };
 
 
+%nodefaultctor Extrema_LCCacheOfLocateExtCC;
+class Extrema_LCCacheOfLocateExtCC : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Extrema_LCCacheOfLocateExtCC();
+		%feature("autodoc", "1");
+		Extrema_LCCacheOfLocateExtCC(const Adaptor3d_Curve &theC, const Standard_Real theUFirst, const Standard_Real theULast, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void SetCurve(const Adaptor3d_Curve &theC, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void SetCurve(const Adaptor3d_Curve &theC, const Standard_Real theUFirst, const Standard_Real theULast, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void SetRange(const Standard_Real Uinf, const Standard_Real Usup, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void CalculatePoints();
+		%feature("autodoc", "1");
+		Standard_Boolean IsValid() const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HArray1OfPnt & Points() const;
+		%feature("autodoc", "1");
+		Standard_Address CurvePtr() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples() const;
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real TrimFirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real TrimLastParameter() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_LCCacheOfLocateExtCC {
+	Handle_Extrema_LCCacheOfLocateExtCC GetHandle() {
+	return *(Handle_Extrema_LCCacheOfLocateExtCC*) &$self;
+	}
+};
+%extend Extrema_LCCacheOfLocateExtCC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") Extrema_LCCacheOfLocateExtCC::~Extrema_LCCacheOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_LCCacheOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_CCache2dOfExtCC2d;
+class Extrema_CCache2dOfExtCC2d : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Extrema_CCache2dOfExtCC2d();
+		%feature("autodoc", "1");
+		Extrema_CCache2dOfExtCC2d(const Adaptor2d_Curve2d &theC, const Standard_Real theUFirst, const Standard_Real theULast, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void SetCurve(const Adaptor2d_Curve2d &theC, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void SetCurve(const Adaptor2d_Curve2d &theC, const Standard_Real theUFirst, const Standard_Real theULast, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void SetRange(const Standard_Real Uinf, const Standard_Real Usup, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void CalculatePoints();
+		%feature("autodoc", "1");
+		Standard_Boolean IsValid() const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HArray1OfPnt2d & Points() const;
+		%feature("autodoc", "1");
+		Standard_Address CurvePtr() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples() const;
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real TrimFirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real TrimLastParameter() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_CCache2dOfExtCC2d {
+	Handle_Extrema_CCache2dOfExtCC2d GetHandle() {
+	return *(Handle_Extrema_CCache2dOfExtCC2d*) &$self;
+	}
+};
+%extend Extrema_CCache2dOfExtCC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") Extrema_CCache2dOfExtCC2d::~Extrema_CCache2dOfExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_CCache2dOfExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Extrema_ExtCC;
 class Extrema_ExtCC {
 	public:
 		%feature("autodoc", "1");
-		Extrema_ExtCC();
+		Extrema_ExtCC(const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
 		Extrema_ExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
 		Extrema_ExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Curve &C2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		void SetCurve(const Standard_Integer theRank, const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
-		void Perform(const Adaptor3d_Curve &C1, const Standard_Real U1, const Standard_Real U2);
+		void SetCurve(const Standard_Integer theRank, const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		void SetRange(const Standard_Integer theRank, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Integer theRank, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -2520,12 +2778,12 @@ class Extrema_ExtCC {
 		%feature("autodoc", "1");
 		Standard_Boolean IsParallel() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
-		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
 
 };
 %feature("shadow") Extrema_ExtCC::~Extrema_ExtCC %{
@@ -2685,7 +2943,7 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -2789,16 +3047,16 @@ class Extrema_ExtPC {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real]");
 
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
 
 };
 %feature("shadow") Extrema_ExtPC::~Extrema_ExtPC %{
@@ -2833,7 +3091,7 @@ class Extrema_LocateExtPC2d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin() const;
 		%feature("autodoc", "1");
@@ -2909,7 +3167,7 @@ class Extrema_LocateExtPC {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin() const;
 		%feature("autodoc", "1");
@@ -2944,7 +3202,7 @@ class Extrema_GenLocateExtCS {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		const Extrema_POnCurv & PointOnCurve() const;
 		%feature("autodoc", "1");
@@ -2961,43 +3219,6 @@ def __del__(self):
 %}
 
 %extend Extrema_GenLocateExtCS {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
-class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
-	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d GetHandle() {
-	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d*) &$self;
-	}
-};
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3069,6 +3290,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d;
+class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
+	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d GetHandle() {
+	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Extrema_LocEPCOfLocateExtPC2d;
 class Extrema_LocEPCOfLocateExtPC2d {
 	public:
@@ -3085,7 +3343,7 @@ class Extrema_LocEPCOfLocateExtPC2d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin() const;
 		%feature("autodoc", "1");
@@ -3157,54 +3415,6 @@ def __del__(self):
 %}
 
 %extend Extrema_Array2OfPOnCurv2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC2d;
-class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Extrema_PCLocFOfLocEPCOfLocateExtPC2d();
-		%feature("autodoc", "1");
-		Extrema_PCLocFOfLocEPCOfLocateExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt2d P);
-		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-
-};
-%feature("shadow") Extrema_PCLocFOfLocEPCOfLocateExtPC2d::~Extrema_PCLocFOfLocEPCOfLocateExtPC2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_PCLocFOfLocEPCOfLocateExtPC2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3296,7 +3506,7 @@ class Extrema_ExtPElS {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
@@ -3311,6 +3521,43 @@ def __del__(self):
 %}
 
 %extend Extrema_ExtPElS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
+class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d GetHandle() {
+	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3359,7 +3606,7 @@ class Extrema_ExtElC {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
@@ -3441,7 +3688,7 @@ class Extrema_EPCOfELPCOfLocateExtPC {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -3468,7 +3715,13 @@ def __del__(self):
 class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
+		Extrema_CCFOfECC2dOfExtCC2d(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
 		Extrema_CCFOfECC2dOfExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		void SetCurve(const Standard_Integer theRank, const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real theTol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -3484,9 +3737,13 @@ class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
+		%feature("autodoc", "1");
+		Standard_Address CurvePtr(const Standard_Integer theRank) const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
 
 };
 %feature("shadow") Extrema_CCFOfECC2dOfExtCC2d::~Extrema_CCFOfECC2dOfExtCC2d %{
@@ -3499,6 +3756,67 @@ def __del__(self):
 %}
 
 %extend Extrema_CCFOfECC2dOfExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_CCacheOfExtCC;
+class Extrema_CCacheOfExtCC : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Extrema_CCacheOfExtCC();
+		%feature("autodoc", "1");
+		Extrema_CCacheOfExtCC(const Adaptor3d_Curve &theC, const Standard_Real theUFirst, const Standard_Real theULast, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void SetCurve(const Adaptor3d_Curve &theC, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void SetCurve(const Adaptor3d_Curve &theC, const Standard_Real theUFirst, const Standard_Real theULast, const Standard_Integer theNbSamples, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void SetRange(const Standard_Real Uinf, const Standard_Real Usup, const Standard_Boolean theToCalculate);
+		%feature("autodoc", "1");
+		void CalculatePoints();
+		%feature("autodoc", "1");
+		Standard_Boolean IsValid() const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HArray1OfPnt & Points() const;
+		%feature("autodoc", "1");
+		Standard_Address CurvePtr() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples() const;
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real TrimFirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real TrimLastParameter() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_CCacheOfExtCC {
+	Handle_Extrema_CCacheOfExtCC GetHandle() {
+	return *(Handle_Extrema_CCacheOfExtCC*) &$self;
+	}
+};
+%extend Extrema_CCacheOfExtCC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") Extrema_CCacheOfExtCC::~Extrema_CCacheOfExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_CCacheOfExtCC {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3564,71 +3882,6 @@ def __del__(self):
 %}
 
 %extend Extrema_SequenceOfPOnCurv2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
-class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & Assign(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
-		%feature("autodoc", "1");
-		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & operator=(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
-		%feature("autodoc", "1");
-		void Append(const Extrema_POnCurv2d &T);
-		%feature("autodoc", "1");
-		void Append(Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
-		%feature("autodoc", "1");
-		void Prepend(const Extrema_POnCurv2d &T);
-		%feature("autodoc", "1");
-		void Prepend(Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv2d &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv2d &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & First() const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Extrema_POnCurv2d &I);
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d::~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3721,7 +3974,7 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -3754,7 +4007,7 @@ class Extrema_GenLocateExtPS {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point() const;
 
@@ -3853,7 +4106,13 @@ def __del__(self):
 class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
+		Extrema_CCFOfELCC2dOfLocateExtCC2d(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
 		Extrema_CCFOfELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		void SetCurve(const Standard_Integer theRank, const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real theTol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -3869,9 +4128,13 @@ class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivative
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
+		%feature("autodoc", "1");
+		Standard_Address CurvePtr(const Standard_Integer theRank) const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
 
 };
 %feature("shadow") Extrema_CCFOfELCC2dOfLocateExtCC2d::~Extrema_CCFOfELCC2dOfLocateExtCC2d %{
@@ -3894,7 +4157,13 @@ def __del__(self):
 class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
+		Extrema_CCLocFOfLocECCOfLocateExtCC(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
 		Extrema_CCLocFOfLocECCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		void SetCurve(const Standard_Integer theRank, const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real theTol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -3910,9 +4179,13 @@ class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivativ
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
+		%feature("autodoc", "1");
+		Standard_Address CurvePtr(const Standard_Integer theRank) const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
 
 };
 %feature("shadow") Extrema_CCLocFOfLocECCOfLocateExtCC::~Extrema_CCLocFOfLocECCOfLocateExtCC %{
@@ -4006,7 +4279,7 @@ class Extrema_EPCOfExtPC {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -4051,7 +4324,7 @@ class Extrema_GenExtCS {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		const Extrema_POnCurv & PointOnCurve(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -4068,6 +4341,46 @@ def __del__(self):
 %}
 
 %extend Extrema_GenExtCS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_POnSurf;
+class Extrema_POnSurf {
+	public:
+		%feature("autodoc", "1");
+		Extrema_POnSurf();
+		%feature("autodoc", "1");
+		Extrema_POnSurf(const Standard_Real U, const Standard_Real V, const gp_Pnt P);
+		%feature("autodoc", "1");
+		const gp_Pnt  Value() const;
+		%feature("autodoc","Parameter() -> [Standard_Real, Standard_Real]");
+
+		void Parameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetExtrema_POnSurfmyU() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetExtrema_POnSurfmyU(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetExtrema_POnSurfmyV() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetExtrema_POnSurfmyV(const Standard_Real p);
+		%feature("autodoc", "1");
+		const gp_Pnt  _CSFDB_GetExtrema_POnSurfmyP() const;
+
+};
+%feature("shadow") Extrema_POnSurf::~Extrema_POnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_POnSurf {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4129,7 +4442,7 @@ class Extrema_ExtPRevS {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
@@ -4170,7 +4483,7 @@ class Extrema_GenExtPS {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
@@ -4207,16 +4520,16 @@ class Extrema_ExtPC2d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real]");
 
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
 
 };
 %feature("shadow") Extrema_ExtPC2d::~Extrema_ExtPC2d %{
@@ -4243,7 +4556,7 @@ class Extrema_LocateExtCC2d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		void Point(Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
@@ -4286,7 +4599,7 @@ class Extrema_GenExtSS {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf PointOnS1(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -4411,7 +4724,7 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -4438,17 +4751,23 @@ def __del__(self):
 class Extrema_ECCOfExtCC {
 	public:
 		%feature("autodoc", "1");
+		Extrema_ECCOfExtCC();
+		%feature("autodoc", "1");
 		Extrema_ECCOfExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		Extrema_ECCOfExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
-		void Perform(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
+		void SetCurveCache(const Standard_Integer theRank, const Handle_Extrema_CCacheOfExtCC &theCache);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
@@ -4463,6 +4782,45 @@ def __del__(self):
 %}
 
 %extend Extrema_ECCOfExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_ExtPExtS;
+class Extrema_ExtPExtS {
+	public:
+		%feature("autodoc", "1");
+		Extrema_ExtPExtS();
+		%feature("autodoc", "1");
+		Extrema_ExtPExtS(const gp_Pnt P, const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		Extrema_ExtPExtS(const gp_Pnt P, const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt P);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf Point(const Standard_Integer N) const;
+
+};
+%feature("shadow") Extrema_ExtPExtS::~Extrema_ExtPExtS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_ExtPExtS {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4487,12 +4845,12 @@ class Extrema_ExtPS {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & PUfVf, gp_Pnt & PUfVl, gp_Pnt & PUlVf, gp_Pnt & PUlVl) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & PUfVf, gp_Pnt & PUfVl, gp_Pnt & PUlVf, gp_Pnt & PUlVl) const;
 
 };
 %feature("shadow") Extrema_ExtPS::~Extrema_ExtPS %{
@@ -4574,7 +4932,7 @@ class Extrema_FuncExtPS : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -4591,54 +4949,6 @@ def __del__(self):
 %}
 
 %extend Extrema_FuncExtPS {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC;
-class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Extrema_PCLocFOfLocEPCOfLocateExtPC();
-		%feature("autodoc", "1");
-		Extrema_PCLocFOfLocEPCOfLocateExtPC(const gp_Pnt P, const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt P);
-		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv Point(const Standard_Integer N) const;
-
-};
-%feature("shadow") Extrema_PCLocFOfLocEPCOfLocateExtPC::~Extrema_PCLocFOfLocEPCOfLocateExtPC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_PCLocFOfLocEPCOfLocateExtPC {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4856,16 +5166,16 @@ class Extrema_ELPCOfLocateExtPC {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real]");
 
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
 
 };
 %feature("shadow") Extrema_ELPCOfLocateExtPC::~Extrema_ELPCOfLocateExtPC %{
@@ -4914,7 +5224,7 @@ class Extrema_ExtPElC {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -4978,17 +5288,23 @@ def __del__(self):
 class Extrema_ELCCOfLocateExtCC {
 	public:
 		%feature("autodoc", "1");
+		Extrema_ELCCOfLocateExtCC();
+		%feature("autodoc", "1");
 		Extrema_ELCCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		Extrema_ELCCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
-		void Perform(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
+		void SetCurveCache(const Standard_Integer theRank, const Handle_Extrema_LCCacheOfLocateExtCC &theCache);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
@@ -5072,7 +5388,7 @@ class Extrema_LocECC2dOfLocateExtCC2d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		void Point(Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
@@ -5109,16 +5425,16 @@ class Extrema_ELPCOfLocateExtPC2d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real]");
 
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
 
 };
 %feature("shadow") Extrema_ELPCOfLocateExtPC2d::~Extrema_ELPCOfLocateExtPC2d %{
@@ -5343,7 +5659,7 @@ class Extrema_ExtPElC2d {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -5390,7 +5706,7 @@ class Extrema_EPCOfELPCOfLocateExtPC2d {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -5474,7 +5790,7 @@ class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		const Extrema_POnCurv & PointOnCurve(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -5623,7 +5939,7 @@ class Extrema_FuncExtSS : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf PointOnS1(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -5731,7 +6047,7 @@ class Extrema_ExtCS {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnSurf & P2) const;
 
@@ -5821,7 +6137,13 @@ def __del__(self):
 class Extrema_CCFOfECCOfExtCC : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
+		Extrema_CCFOfECCOfExtCC(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
 		Extrema_CCFOfECCOfExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		void SetCurve(const Standard_Integer theRank, const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real theTol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -5837,9 +6159,13 @@ class Extrema_CCFOfECCOfExtCC : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
+		%feature("autodoc", "1");
+		Standard_Address CurvePtr(const Standard_Integer theRank) const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
 
 };
 %feature("shadow") Extrema_CCFOfECCOfExtCC::~Extrema_CCFOfECCOfExtCC %{

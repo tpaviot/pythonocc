@@ -66,7 +66,7 @@ class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_Materials_SequenceNodeOfMtsSequence & operator=(const Materials_SequenceNodeOfMtsSequence *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Materials_SequenceNodeOfMtsSequence const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_SequenceNodeOfMtsSequence DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_SequenceNodeOfMtsSequence {
@@ -104,7 +104,7 @@ class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 		%feature("autodoc", "1");
 		Handle_Materials_FuzzyInstance & operator=(const Materials_FuzzyInstance *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Materials_FuzzyInstance const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_FuzzyInstance DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_FuzzyInstance {
@@ -142,7 +142,7 @@ class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitio
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialDefinition & operator=(const Materials_MaterialDefinition *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Materials_MaterialDefinition const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_MaterialDefinition DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_MaterialDefinition {
@@ -180,7 +180,7 @@ class Handle_Materials_Color : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Materials_Color & operator=(const Materials_Color *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Materials_Color const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_Color DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_Color {
@@ -218,7 +218,7 @@ class Handle_Materials_Material : public Handle_Materials_FuzzyInstance {
 		%feature("autodoc", "1");
 		Handle_Materials_Material & operator=(const Materials_Material *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Materials_Material const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_Material DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_Material {
@@ -256,7 +256,7 @@ class Handle_Materials_MaterialsDictionary : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsDictionary & operator=(const Materials_MaterialsDictionary *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Materials_MaterialsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_MaterialsDictionary DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_MaterialsDictionary {
@@ -294,7 +294,7 @@ class Handle_Materials_MaterialsSequence : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsSequence & operator=(const Materials_MaterialsSequence *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Materials_MaterialsSequence const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Materials_MaterialsSequence DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Materials_MaterialsSequence {

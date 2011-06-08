@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_SelectBasics_SequenceNodeOfSequenceOfAddress;
-class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress();
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress(const Handle_SelectBasics_SequenceNodeOfSequenceOfAddress &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress(const SelectBasics_SequenceNodeOfSequenceOfAddress *anItem);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress & operator=(const Handle_SelectBasics_SequenceNodeOfSequenceOfAddress &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress & operator=(const SelectBasics_SequenceNodeOfSequenceOfAddress *anItem);
-		%feature("autodoc", "1");
-		static		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_SelectBasics_SequenceNodeOfSequenceOfAddress {
-	SelectBasics_SequenceNodeOfSequenceOfAddress* GetObject() {
-	return (SelectBasics_SequenceNodeOfSequenceOfAddress*)$self->Access();
-	}
-};
-%feature("shadow") Handle_SelectBasics_SequenceNodeOfSequenceOfAddress::~Handle_SelectBasics_SequenceNodeOfSequenceOfAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_SelectBasics_SequenceNodeOfSequenceOfAddress {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_SelectBasics_ListNodeOfListOfBox2d;
 class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapNode {
 	public:
@@ -104,7 +66,7 @@ class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfBox2d & operator=(const SelectBasics_ListNodeOfListOfBox2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectBasics_ListNodeOfListOfBox2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_ListNodeOfListOfBox2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_ListNodeOfListOfBox2d {
@@ -142,7 +104,7 @@ class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfSensitive & operator=(const SelectBasics_ListNodeOfListOfSensitive *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectBasics_ListNodeOfListOfSensitive const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_ListNodeOfListOfSensitive DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_ListNodeOfListOfSensitive {
@@ -180,7 +142,7 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
@@ -218,7 +180,7 @@ class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity & operator=(const SelectBasics_SensitiveEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectBasics_SensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_SensitiveEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_SensitiveEntity {
@@ -256,7 +218,7 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner & operator=(const SelectBasics_EntityOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectBasics_EntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_EntityOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectBasics_EntityOwner {
@@ -354,108 +316,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor SelectBasics_SequenceNodeOfSequenceOfAddress;
-class SelectBasics_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		SelectBasics_SequenceNodeOfSequenceOfAddress(const Standard_Address &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Standard_Address & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectBasics_SequenceNodeOfSequenceOfAddress {
-	Handle_SelectBasics_SequenceNodeOfSequenceOfAddress GetHandle() {
-	return *(Handle_SelectBasics_SequenceNodeOfSequenceOfAddress*) &$self;
-	}
-};
-%extend SelectBasics_SequenceNodeOfSequenceOfAddress {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") SelectBasics_SequenceNodeOfSequenceOfAddress::~SelectBasics_SequenceNodeOfSequenceOfAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectBasics_SequenceNodeOfSequenceOfAddress {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectBasics_SequenceOfAddress;
-class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		SelectBasics_SequenceOfAddress();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const SelectBasics_SequenceOfAddress & Assign(const SelectBasics_SequenceOfAddress &Other);
-		%feature("autodoc", "1");
-		const SelectBasics_SequenceOfAddress & operator=(const SelectBasics_SequenceOfAddress &Other);
-		%feature("autodoc", "1");
-		void Append(const Standard_Address &T);
-		%feature("autodoc", "1");
-		void Append(SelectBasics_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void Prepend(const Standard_Address &T);
-		%feature("autodoc", "1");
-		void Prepend(SelectBasics_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Standard_Address &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, SelectBasics_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Standard_Address &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, SelectBasics_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		const Standard_Address & First() const;
-		%feature("autodoc", "1");
-		const Standard_Address & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, SelectBasics_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		const Standard_Address & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Standard_Address & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Address &I);
-		%feature("autodoc", "1");
-		Standard_Address & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Address & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") SelectBasics_SequenceOfAddress::~SelectBasics_SequenceOfAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectBasics_SequenceOfAddress {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor SelectBasics_ListOfBox2d;
 class SelectBasics_ListOfBox2d {
 	public:
@@ -524,6 +384,9 @@ class SelectBasics_BasicTool {
 		SelectBasics_BasicTool();
 		%feature("autodoc", "1");
 		static		Standard_Boolean MatchSegments(const gp_Pnt2d P1, const gp_Pnt2d P2, const gp_Pnt2d P3, const gp_Pnt2d P4);
+		%feature("autodoc","MatchSegment(const pBegin, const pEnd, Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
+		static		Standard_Boolean MatchSegment(const gp_Pnt2d pBegin, const gp_Pnt2d pEnd, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		static		Standard_Boolean AutoInter(const TColgp_Array1OfPnt2d &aPolyg2d);
 		%feature("autodoc","MatchPolyg2d(const tabpoint, Standard_Real X, Standard_Real Y, Standard_Real aTol) -> [Standard_Real, Standard_Integer]");

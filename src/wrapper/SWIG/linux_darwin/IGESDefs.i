@@ -66,7 +66,7 @@ class Handle_IGESDefs_Protocol : public Handle_IGESData_Protocol {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_Protocol & operator=(const IGESDefs_Protocol *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_Protocol DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_Protocol {
@@ -104,7 +104,7 @@ class Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public Handle_MMgt
 		%feature("autodoc", "1");
 		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate & operator=(const IGESDefs_HArray1OfHArray1OfTextDisplayTemplate *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
@@ -142,7 +142,7 @@ class Handle_IGESDefs_GeneralModule : public Handle_IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_GeneralModule & operator=(const IGESDefs_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_GeneralModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_GeneralModule {
@@ -180,7 +180,7 @@ class Handle_IGESDefs_SpecificModule : public Handle_IGESData_SpecificModule {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_SpecificModule & operator=(const IGESDefs_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_SpecificModule {
@@ -218,7 +218,7 @@ class Handle_IGESDefs_HArray1OfTabularData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_HArray1OfTabularData & operator=(const IGESDefs_HArray1OfTabularData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_HArray1OfTabularData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_HArray1OfTabularData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_HArray1OfTabularData {
@@ -256,7 +256,7 @@ class Handle_IGESDefs_AttributeTable : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_AttributeTable & operator=(const IGESDefs_AttributeTable *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_AttributeTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_AttributeTable DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_AttributeTable {
@@ -294,7 +294,7 @@ class Handle_IGESDefs_GenericData : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_GenericData & operator=(const IGESDefs_GenericData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_GenericData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_GenericData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_GenericData {
@@ -332,7 +332,7 @@ class Handle_IGESDefs_TabularData : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_TabularData & operator=(const IGESDefs_TabularData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_TabularData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_TabularData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_TabularData {
@@ -370,7 +370,7 @@ class Handle_IGESDefs_AssociativityDef : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_AssociativityDef & operator=(const IGESDefs_AssociativityDef *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_AssociativityDef const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_AssociativityDef DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_AssociativityDef {
@@ -408,7 +408,7 @@ class Handle_IGESDefs_AttributeDef : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_AttributeDef & operator=(const IGESDefs_AttributeDef *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_AttributeDef const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_AttributeDef DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_AttributeDef {
@@ -446,7 +446,7 @@ class Handle_IGESDefs_UnitsData : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_UnitsData & operator=(const IGESDefs_UnitsData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_UnitsData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_UnitsData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_UnitsData {
@@ -484,7 +484,7 @@ class Handle_IGESDefs_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_ReadWriteModule & operator=(const IGESDefs_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_ReadWriteModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_ReadWriteModule {
@@ -522,7 +522,7 @@ class Handle_IGESDefs_MacroDef : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_MacroDef & operator=(const IGESDefs_MacroDef *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDefs_MacroDef const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDefs_MacroDef DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESDefs_MacroDef {

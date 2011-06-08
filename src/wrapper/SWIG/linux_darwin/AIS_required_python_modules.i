@@ -39,9 +39,10 @@ import gp
 import TCollection
 import DsgPrs
 import SelectMgr
-import Bnd
-import TopAbs
+import Poly
 import TopLoc
 import V3d
 import PrsMgr
+import Bnd
+import TopAbs
 };

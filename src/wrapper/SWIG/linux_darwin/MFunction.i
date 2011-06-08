@@ -66,7 +66,7 @@ class Handle_MFunction_FunctionRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionRetrievalDriver & operator=(const MFunction_FunctionRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MFunction_FunctionRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MFunction_FunctionRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MFunction_FunctionRetrievalDriver {
@@ -104,7 +104,7 @@ class Handle_MFunction_FunctionStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionStorageDriver & operator=(const MFunction_FunctionStorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MFunction_FunctionStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MFunction_FunctionStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MFunction_FunctionStorageDriver {

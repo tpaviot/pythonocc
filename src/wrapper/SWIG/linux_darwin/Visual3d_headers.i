@@ -37,6 +37,7 @@ $HeaderURL$
 #include<Handle_Visual3d_HSetOfView.hxx>
 #include<Handle_Visual3d_Layer.hxx>
 #include<Handle_Visual3d_LayerDefinitionError.hxx>
+#include<Handle_Visual3d_LayerItem.hxx>
 #include<Handle_Visual3d_Light.hxx>
 #include<Handle_Visual3d_LightDefinitionError.hxx>
 #include<Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane.hxx>
@@ -66,6 +67,7 @@ $HeaderURL$
 #include<Visual3d_HSetOfView.hxx>
 #include<Visual3d_Layer.hxx>
 #include<Visual3d_LayerDefinitionError.hxx>
+#include<Visual3d_LayerItem.hxx>
 #include<Visual3d_Light.hxx>
 #include<Visual3d_LightDefinitionError.hxx>
 #include<Visual3d_ListIteratorOfSetListOfSetOfClipPlane.hxx>
@@ -74,6 +76,7 @@ $HeaderURL$
 #include<Visual3d_ListNodeOfSetListOfSetOfClipPlane.hxx>
 #include<Visual3d_ListNodeOfSetListOfSetOfLight.hxx>
 #include<Visual3d_ListNodeOfSetListOfSetOfView.hxx>
+#include<Visual3d_NListOfLayerItem.hxx>
 #include<Visual3d_PickDescriptor.hxx>
 #include<Visual3d_PickError.hxx>
 #include<Visual3d_PickPath.hxx>
@@ -125,8 +128,6 @@ $HeaderURL$
 #include<MFT_ListOfFontName.hxx>
 #include<MFT_ListOfFontReference.hxx>
 #include<MFT_SequenceNodeOfListOfFontHandle.hxx>
-#include<MFT_SequenceNodeOfListOfFontName.hxx>
-#include<MFT_SequenceNodeOfListOfFontReference.hxx>
 #include<MFT_TextManager.hxx>
 #include<MFT_TypeOfCommand.hxx>
 #include<MFT_TypeOfValue.hxx>
@@ -162,18 +163,23 @@ $HeaderURL$
 #include<OSD_File.hxx>
 #include<OSD_FileIterator.hxx>
 #include<OSD_FileNode.hxx>
+#include<OSD_FontAspect.hxx>
+#include<OSD_FontMgr.hxx>
 #include<OSD_FromWhere.hxx>
 #include<OSD_Function.hxx>
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
+#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
 #include<OSD_OpenMode.hxx>
 #include<OSD_PThread.hxx>
 #include<OSD_Path.hxx>
+#include<OSD_PerfMeter.hxx>
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
@@ -193,6 +199,7 @@ $HeaderURL$
 #include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
+#include<OSD_SystemFont.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
@@ -202,13 +209,9 @@ $HeaderURL$
 #include<Xw_Driver.hxx>
 #include<Xw_FontMap.hxx>
 #include<Xw_GraphicDevice.hxx>
-#include<Xw_HListOfIndexs.hxx>
 #include<Xw_HListOfMFTFonts.hxx>
-#include<Xw_HListOfMFTSizes.hxx>
 #include<Xw_IconBox.hxx>
-#include<Xw_ListOfIndexs.hxx>
 #include<Xw_ListOfMFTFonts.hxx>
-#include<Xw_ListOfMFTSizes.hxx>
 #include<Xw_MarkMap.hxx>
 #include<Xw_PixMap.hxx>
 #include<Xw_TextManager.hxx>
@@ -222,14 +225,14 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Standard_SStream.hxx>
 #include<Handle_Graphic3d_Structure.hxx>
-#include<Handle_Graphic3d_TextureEnv.hxx>
 #include<Graphic3d_Vertex.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
+#include<Handle_Graphic3d_TextureEnv.hxx>
 #include<Graphic3d_Vector.hxx>
 #include<Quantity_Color.hxx>
 #include<Aspect_Background.hxx>
+#include<Aspect_GradientBackground.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<Handle_Aspect_Window.hxx>
 #include<Graphic3d_MapOfStructure.hxx>

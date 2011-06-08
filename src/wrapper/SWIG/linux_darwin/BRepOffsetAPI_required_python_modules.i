@@ -36,4 +36,5 @@ import BRepBuilderAPI
 import BRepOffset
 import GeomAbs
 import BRepFill
+import Approx
 };

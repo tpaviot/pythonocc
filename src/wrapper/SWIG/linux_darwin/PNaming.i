@@ -66,7 +66,7 @@ class Handle_PNaming_Name : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PNaming_Name & operator=(const PNaming_Name *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PNaming_Name const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PNaming_Name DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PNaming_Name {
@@ -90,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PNaming_Naming_1;
+class Handle_PNaming_Naming_1 : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PNaming_Naming_1();
+		%feature("autodoc", "1");
+		Handle_PNaming_Naming_1(const Handle_PNaming_Naming_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_Naming_1(const PNaming_Naming_1 *anItem);
+		%feature("autodoc", "1");
+		Handle_PNaming_Naming_1 & operator=(const Handle_PNaming_Naming_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_Naming_1 & operator=(const PNaming_Naming_1 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PNaming_Naming_1 DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PNaming_Naming_1 {
+	PNaming_Naming_1* GetObject() {
+	return (PNaming_Naming_1*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PNaming_Naming_1::~Handle_PNaming_Naming_1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PNaming_Naming_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PNaming_NamedShape;
 class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 	public:
@@ -104,7 +142,7 @@ class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PNaming_NamedShape & operator=(const PNaming_NamedShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PNaming_NamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PNaming_NamedShape DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PNaming_NamedShape {
@@ -142,7 +180,7 @@ class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PNaming_HArray1OfNamedShape & operator=(const PNaming_HArray1OfNamedShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PNaming_HArray1OfNamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PNaming_HArray1OfNamedShape DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PNaming_HArray1OfNamedShape {
@@ -180,7 +218,7 @@ class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PSta
 		%feature("autodoc", "1");
 		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape & operator=(const PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
@@ -204,6 +242,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PNaming_Name_1;
+class Handle_PNaming_Name_1 : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PNaming_Name_1();
+		%feature("autodoc", "1");
+		Handle_PNaming_Name_1(const Handle_PNaming_Name_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name_1(const PNaming_Name_1 *anItem);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name_1 & operator=(const Handle_PNaming_Name_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name_1 & operator=(const PNaming_Name_1 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PNaming_Name_1 DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PNaming_Name_1 {
+	PNaming_Name_1* GetObject() {
+	return (PNaming_Name_1*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PNaming_Name_1::~Handle_PNaming_Name_1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PNaming_Name_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PNaming_Naming;
 class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 	public:
@@ -218,7 +294,7 @@ class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PNaming_Naming & operator=(const PNaming_Naming *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PNaming_Naming const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PNaming_Naming DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PNaming_Naming {
@@ -281,6 +357,51 @@ def __del__(self):
 %}
 
 %extend PNaming_Naming {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PNaming_Naming_1;
+class PNaming_Naming_1 : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PNaming_Naming_1();
+		%feature("autodoc", "1");
+		void SetName(const Handle_PNaming_Name_1 &aName);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name_1 GetName() const;
+		%feature("autodoc", "1");
+		PNaming_Naming_1(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name_1 _CSFDB_GetPNaming_Naming_1myName() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_Naming_1myName(const Handle_PNaming_Name_1 &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PNaming_Naming_1 {
+	Handle_PNaming_Naming_1 GetHandle() {
+	return *(Handle_PNaming_Naming_1*) &$self;
+	}
+};
+%extend PNaming_Naming_1 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") PNaming_Naming_1::~PNaming_Naming_1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PNaming_Naming_1 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -381,6 +502,91 @@ def __del__(self):
 %}
 
 %extend PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PNaming_Name_1;
+class PNaming_Name_1 : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PNaming_Name_1();
+		%feature("autodoc", "1");
+		void Type(const Standard_Integer T);
+		%feature("autodoc", "1");
+		void ShapeType(const Standard_Integer T);
+		%feature("autodoc", "1");
+		void Arguments(const Handle_PNaming_HArray1OfNamedShape &Args);
+		%feature("autodoc", "1");
+		void StopNamedShape(const Handle_PNaming_NamedShape &NS);
+		%feature("autodoc", "1");
+		Standard_Integer Type() const;
+		%feature("autodoc", "1");
+		Standard_Integer ShapeType() const;
+		%feature("autodoc", "1");
+		Handle_PNaming_HArray1OfNamedShape Arguments() const;
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape StopNamedShape() const;
+		%feature("autodoc", "1");
+		void Index(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		const Handle_PCollection_HAsciiString & ContextLabel() const;
+		%feature("autodoc", "1");
+		void ContextLabel(const Handle_PCollection_HAsciiString &theLabel);
+		%feature("autodoc", "1");
+		PNaming_Name_1(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_Name_1myType() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_Name_1myType(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_Name_1myShapeType() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_Name_1myShapeType(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Handle_PNaming_HArray1OfNamedShape _CSFDB_GetPNaming_Name_1myArgs() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_Name_1myArgs(const Handle_PNaming_HArray1OfNamedShape &p);
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape _CSFDB_GetPNaming_Name_1myStop() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_Name_1myStop(const Handle_PNaming_NamedShape &p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_Name_1myIndex() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_Name_1myIndex(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPNaming_Name_1myContextLabel() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_Name_1myContextLabel(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PNaming_Name_1 {
+	Handle_PNaming_Name_1 GetHandle() {
+	return *(Handle_PNaming_Name_1*) &$self;
+	}
+};
+%extend PNaming_Name_1 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") PNaming_Name_1::~PNaming_Name_1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PNaming_Name_1 {
 	void _kill_pointed() {
 		delete $self;
 	}

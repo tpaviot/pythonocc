@@ -166,8 +166,6 @@ $HeaderURL$
 #include<TColStd_IndexedMapOfInteger.hxx>
 #include<TColStd_SetOfInteger.hxx>
 #include<IntTools_ShrunkRange.hxx>
-#include<IntTools_SequenceOfCurves.hxx>
-#include<IntTools_SequenceOfPntOn2Faces.hxx>
 #include<BooleanOperations_ShapesDataStructure.hxx>
 #include<gp_Vec.hxx>
 #include<Handle_Geom2d_Curve.hxx>
@@ -181,4 +179,6 @@ $HeaderURL$
 #include<gp_Pnt2d.hxx>
 #include<TopoDS_Solid.hxx>
 #include<Handle_Geom_Geometry.hxx>
+#include<IntTools_SequenceOfCurves.hxx>
+#include<IntTools_SequenceOfPntOn2Faces.hxx>
 %}

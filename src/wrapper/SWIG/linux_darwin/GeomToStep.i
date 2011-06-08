@@ -108,6 +108,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomToStep_MakeBSplineSurfaceWithKnots;
+class GeomToStep_MakeBSplineSurfaceWithKnots : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeBSplineSurfaceWithKnots(const Handle_Geom_BSplineSurface &Bsplin);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_BSplineSurfaceWithKnots & Value() const;
+
+};
+%feature("shadow") GeomToStep_MakeBSplineSurfaceWithKnots::~GeomToStep_MakeBSplineSurfaceWithKnots %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomToStep_MakeBSplineSurfaceWithKnots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomToStep_MakeSurface;
 class GeomToStep_MakeSurface : public GeomToStep_Root {
 	public:
@@ -557,31 +582,6 @@ def __del__(self):
 %}
 
 %extend GeomToStep_MakeRectangularTrimmedSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeBSplineSurfaceWithKnots;
-class GeomToStep_MakeBSplineSurfaceWithKnots : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineSurfaceWithKnots(const Handle_Geom_BSplineSurface &Bsplin);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_BSplineSurfaceWithKnots & Value() const;
-
-};
-%feature("shadow") GeomToStep_MakeBSplineSurfaceWithKnots::~GeomToStep_MakeBSplineSurfaceWithKnots %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomToStep_MakeBSplineSurfaceWithKnots {
 	void _kill_pointed() {
 		delete $self;
 	}

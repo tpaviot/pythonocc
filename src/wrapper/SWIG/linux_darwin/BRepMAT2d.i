@@ -66,7 +66,7 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public Ha
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt & operator=(const BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
@@ -104,7 +104,7 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape & operator=(const BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
@@ -142,7 +142,7 @@ class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt & operator=(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
@@ -393,7 +393,7 @@ class BRepMAT2d_Explorer {
 		%feature("autodoc", "1");
 		TopoDS_Shape ModifiedShape(const TopoDS_Shape aShape) const;
 		%feature("autodoc", "1");
-		const MAT2d_SequenceOfBoolean & GetIsClosed() const;
+		const TColStd_SequenceOfBoolean & GetIsClosed() const;
 
 };
 %feature("shadow") BRepMAT2d_Explorer::~BRepMAT2d_Explorer %{

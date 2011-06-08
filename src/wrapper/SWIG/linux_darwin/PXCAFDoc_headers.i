@@ -31,11 +31,16 @@ $HeaderURL$
 #include<Handle_PXCAFDoc_Centroid.hxx>
 #include<Handle_PXCAFDoc_Color.hxx>
 #include<Handle_PXCAFDoc_ColorTool.hxx>
+#include<Handle_PXCAFDoc_Datum.hxx>
+#include<Handle_PXCAFDoc_DimTol.hxx>
+#include<Handle_PXCAFDoc_DimTolTool.hxx>
 #include<Handle_PXCAFDoc_DocumentTool.hxx>
 #include<Handle_PXCAFDoc_GraphNode.hxx>
 #include<Handle_PXCAFDoc_GraphNodeSequence.hxx>
 #include<Handle_PXCAFDoc_LayerTool.hxx>
 #include<Handle_PXCAFDoc_Location.hxx>
+#include<Handle_PXCAFDoc_Material.hxx>
+#include<Handle_PXCAFDoc_MaterialTool.hxx>
 #include<Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence.hxx>
 #include<Handle_PXCAFDoc_ShapeTool.hxx>
 #include<Handle_PXCAFDoc_Volume.hxx>
@@ -43,11 +48,16 @@ $HeaderURL$
 #include<PXCAFDoc_Centroid.hxx>
 #include<PXCAFDoc_Color.hxx>
 #include<PXCAFDoc_ColorTool.hxx>
+#include<PXCAFDoc_Datum.hxx>
+#include<PXCAFDoc_DimTol.hxx>
+#include<PXCAFDoc_DimTolTool.hxx>
 #include<PXCAFDoc_DocumentTool.hxx>
 #include<PXCAFDoc_GraphNode.hxx>
 #include<PXCAFDoc_GraphNodeSequence.hxx>
 #include<PXCAFDoc_LayerTool.hxx>
 #include<PXCAFDoc_Location.hxx>
+#include<PXCAFDoc_Material.hxx>
+#include<PXCAFDoc_MaterialTool.hxx>
 #include<PXCAFDoc_SeqExplorerOfGraphNodeSequence.hxx>
 #include<PXCAFDoc_SeqNodeOfGraphNodeSequence.hxx>
 #include<PXCAFDoc_ShapeTool.hxx>
@@ -75,6 +85,8 @@ $HeaderURL$
 
 #include<Handle_Standard_Persistent.hxx>
 #include<Storage_stCONSTclCOM.hxx>
+#include<Handle_PCollection_HAsciiString.hxx>
+#include<Handle_PColStd_HArray1OfReal.hxx>
 #include<PTopLoc_Location.hxx>
 #include<Standard_GUID.hxx>
 #include<gp_Pnt.hxx>

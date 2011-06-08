@@ -33,11 +33,13 @@ $HeaderURL$
 #include<Handle_Image_DataMapNodeOfColorPixelDataMap.hxx>
 #include<Handle_Image_DataMapNodeOfLookupTable.hxx>
 #include<Handle_Image_Image.hxx>
+#include<Handle_Image_PixMap.hxx>
 #include<Handle_Image_PseudoColorImage.hxx>
 #include<Image.hxx>
 #include<Image_AveragePixelInterpolation.hxx>
 #include<Image_BalancedPixelInterpolation.hxx>
 #include<Image_BilinearPixelInterpolation.hxx>
+#include<Image_CRawBufferData.hxx>
 #include<Image_ColorImage.hxx>
 #include<Image_ColorPixelDataMap.hxx>
 #include<Image_ColorPixelMapHasher.hxx>
@@ -50,9 +52,11 @@ $HeaderURL$
 #include<Image_DataMapNodeOfLookupTable.hxx>
 #include<Image_DitheringMethod.hxx>
 #include<Image_FlipType.hxx>
+#include<Image_HPrivateImage.hxx>
 #include<Image_Image.hxx>
 #include<Image_IndexPixelMapHasher.hxx>
 #include<Image_LookupTable.hxx>
+#include<Image_PixMap.hxx>
 #include<Image_PixelAddress.hxx>
 #include<Image_PixelFieldOfDColorImage.hxx>
 #include<Image_PixelInterpolation.hxx>
@@ -82,6 +86,7 @@ $HeaderURL$
 #include<Quantity_Array1OfColor.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Aspect_Pixel.hxx>
+#include<Quantity_Color.hxx>
 #include<Aspect_ColorPixel.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Trsf.hxx>

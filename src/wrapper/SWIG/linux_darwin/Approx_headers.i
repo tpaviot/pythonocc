@@ -43,9 +43,7 @@ $HeaderURL$
 #include<Approx_MyLeastSquareOfFitAndDivide2d.hxx>
 #include<Approx_ParametrizationType.hxx>
 #include<Approx_SameParameter.hxx>
-#include<Approx_SequenceNodeOfSequenceOfArray1OfPnt2d.hxx>
 #include<Approx_SequenceNodeOfSequenceOfHArray1OfReal.hxx>
-#include<Approx_SequenceOfArray1OfPnt2d.hxx>
 #include<Approx_SequenceOfHArray1OfReal.hxx>
 #include<Approx_Status.hxx>
 #include<Approx_SweepApproximation.hxx>
@@ -53,7 +51,6 @@ $HeaderURL$
 #include<Handle_Approx_CurvlinFunc.hxx>
 #include<Handle_Approx_HArray1OfAdHSurface.hxx>
 #include<Handle_Approx_HArray1OfGTrsf2d.hxx>
-#include<Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d.hxx>
 #include<Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal.hxx>
 #include<Handle_Approx_SweepFunction.hxx>
 
@@ -64,7 +61,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_TColgp_HArray1OfPnt2d.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<AppCont_Function2d.hxx>

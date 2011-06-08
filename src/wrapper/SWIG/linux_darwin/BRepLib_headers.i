@@ -78,7 +78,6 @@ $HeaderURL$
 #include<Handle_Geom_Plane.hxx>
 #include<TopoDS_Solid.hxx>
 #include<TopTools_ListOfShape.hxx>
-#include<TopLoc_Location.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Cone.hxx>
@@ -87,4 +86,5 @@ $HeaderURL$
 #include<TopoDS_Wire.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Shell.hxx>
+#include<TopLoc_Location.hxx>
 %}

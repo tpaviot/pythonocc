@@ -115,7 +115,7 @@ class Handle_StepGeom_GeometricRepresentationItem : public Handle_StepRepr_Repre
 		%feature("autodoc", "1");
 		Handle_StepGeom_GeometricRepresentationItem & operator=(const StepGeom_GeometricRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_GeometricRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_GeometricRepresentationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_GeometricRepresentationItem {
@@ -153,7 +153,7 @@ class Handle_StepGeom_Curve : public Handle_StepGeom_GeometricRepresentationItem
 		%feature("autodoc", "1");
 		Handle_StepGeom_Curve & operator=(const StepGeom_Curve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Curve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Curve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Curve {
@@ -191,7 +191,7 @@ class Handle_StepGeom_SurfaceCurve : public Handle_StepGeom_Curve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfaceCurve & operator=(const StepGeom_SurfaceCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_SurfaceCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_SurfaceCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_SurfaceCurve {
@@ -229,7 +229,7 @@ class Handle_StepGeom_BoundedCurve : public Handle_StepGeom_Curve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_BoundedCurve & operator=(const StepGeom_BoundedCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BoundedCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BoundedCurve {
@@ -267,7 +267,7 @@ class Handle_StepGeom_CompositeCurve : public Handle_StepGeom_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_CompositeCurve & operator=(const StepGeom_CompositeCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_CompositeCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_CompositeCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_CompositeCurve {
@@ -305,7 +305,7 @@ class Handle_StepGeom_CompositeCurveOnSurface : public Handle_StepGeom_Composite
 		%feature("autodoc", "1");
 		Handle_StepGeom_CompositeCurveOnSurface & operator=(const StepGeom_CompositeCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_CompositeCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_CompositeCurveOnSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_CompositeCurveOnSurface {
@@ -343,7 +343,7 @@ class Handle_StepGeom_BoundaryCurve : public Handle_StepGeom_CompositeCurveOnSur
 		%feature("autodoc", "1");
 		Handle_StepGeom_BoundaryCurve & operator=(const StepGeom_BoundaryCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BoundaryCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BoundaryCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BoundaryCurve {
@@ -381,7 +381,7 @@ class Handle_StepGeom_OuterBoundaryCurve : public Handle_StepGeom_BoundaryCurve 
 		%feature("autodoc", "1");
 		Handle_StepGeom_OuterBoundaryCurve & operator=(const StepGeom_OuterBoundaryCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_OuterBoundaryCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_OuterBoundaryCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_OuterBoundaryCurve {
@@ -419,7 +419,7 @@ class Handle_StepGeom_Surface : public Handle_StepGeom_GeometricRepresentationIt
 		%feature("autodoc", "1");
 		Handle_StepGeom_Surface & operator=(const StepGeom_Surface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Surface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Surface {
@@ -457,7 +457,7 @@ class Handle_StepGeom_BoundedSurface : public Handle_StepGeom_Surface {
 		%feature("autodoc", "1");
 		Handle_StepGeom_BoundedSurface & operator=(const StepGeom_BoundedSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BoundedSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BoundedSurface {
@@ -495,7 +495,7 @@ class Handle_StepGeom_BSplineSurface : public Handle_StepGeom_BoundedSurface {
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineSurface & operator=(const StepGeom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BSplineSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BSplineSurface {
@@ -533,7 +533,7 @@ class Handle_StepGeom_BezierSurface : public Handle_StepGeom_BSplineSurface {
 		%feature("autodoc", "1");
 		Handle_StepGeom_BezierSurface & operator=(const StepGeom_BezierSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BezierSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BezierSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BezierSurface {
@@ -571,7 +571,7 @@ class Handle_StepGeom_Point : public Handle_StepGeom_GeometricRepresentationItem
 		%feature("autodoc", "1");
 		Handle_StepGeom_Point & operator=(const StepGeom_Point *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Point const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Point DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Point {
@@ -609,7 +609,7 @@ class Handle_StepGeom_PointOnSurface : public Handle_StepGeom_Point {
 		%feature("autodoc", "1");
 		Handle_StepGeom_PointOnSurface & operator=(const StepGeom_PointOnSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_PointOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_PointOnSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_PointOnSurface {
@@ -647,7 +647,7 @@ class Handle_StepGeom_BSplineCurve : public Handle_StepGeom_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineCurve & operator=(const StepGeom_BSplineCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BSplineCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BSplineCurve {
@@ -685,7 +685,7 @@ class Handle_StepGeom_BezierCurveAndRationalBSplineCurve : public Handle_StepGeo
 		%feature("autodoc", "1");
 		Handle_StepGeom_BezierCurveAndRationalBSplineCurve & operator=(const StepGeom_BezierCurveAndRationalBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BezierCurveAndRationalBSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BezierCurveAndRationalBSplineCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BezierCurveAndRationalBSplineCurve {
@@ -723,7 +723,7 @@ class Handle_StepGeom_IntersectionCurve : public Handle_StepGeom_SurfaceCurve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_IntersectionCurve & operator=(const StepGeom_IntersectionCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_IntersectionCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_IntersectionCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_IntersectionCurve {
@@ -761,7 +761,7 @@ class Handle_StepGeom_HArray1OfCompositeCurveSegment : public Handle_MMgt_TShare
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfCompositeCurveSegment & operator=(const StepGeom_HArray1OfCompositeCurveSegment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_HArray1OfCompositeCurveSegment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_HArray1OfCompositeCurveSegment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_HArray1OfCompositeCurveSegment {
@@ -799,7 +799,7 @@ class Handle_StepGeom_OffsetSurface : public Handle_StepGeom_Surface {
 		%feature("autodoc", "1");
 		Handle_StepGeom_OffsetSurface & operator=(const StepGeom_OffsetSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_OffsetSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_OffsetSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_OffsetSurface {
@@ -837,7 +837,7 @@ class Handle_StepGeom_Conic : public Handle_StepGeom_Curve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Conic & operator=(const StepGeom_Conic *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Conic const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Conic DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Conic {
@@ -875,7 +875,7 @@ class Handle_StepGeom_Circle : public Handle_StepGeom_Conic {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Circle & operator=(const StepGeom_Circle *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Circle const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Circle DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Circle {
@@ -913,7 +913,7 @@ class Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext
 		%feature("autodoc", "1");
 		Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext & operator=(const StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext {
@@ -951,7 +951,7 @@ class Handle_StepGeom_Hyperbola : public Handle_StepGeom_Conic {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Hyperbola & operator=(const StepGeom_Hyperbola *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Hyperbola const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Hyperbola DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Hyperbola {
@@ -989,7 +989,7 @@ class Handle_StepGeom_SurfaceCurveAndBoundedCurve : public Handle_StepGeom_Surfa
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfaceCurveAndBoundedCurve & operator=(const StepGeom_SurfaceCurveAndBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_SurfaceCurveAndBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_SurfaceCurveAndBoundedCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_SurfaceCurveAndBoundedCurve {
@@ -1027,7 +1027,7 @@ class Handle_StepGeom_Direction : public Handle_StepGeom_GeometricRepresentation
 		%feature("autodoc", "1");
 		Handle_StepGeom_Direction & operator=(const StepGeom_Direction *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Direction const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Direction DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Direction {
@@ -1065,7 +1065,7 @@ class Handle_StepGeom_CartesianTransformationOperator : public Handle_StepGeom_G
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianTransformationOperator & operator=(const StepGeom_CartesianTransformationOperator *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_CartesianTransformationOperator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_CartesianTransformationOperator DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_CartesianTransformationOperator {
@@ -1103,7 +1103,7 @@ class Handle_StepGeom_Placement : public Handle_StepGeom_GeometricRepresentation
 		%feature("autodoc", "1");
 		Handle_StepGeom_Placement & operator=(const StepGeom_Placement *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Placement const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Placement DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Placement {
@@ -1141,7 +1141,7 @@ class Handle_StepGeom_Axis2Placement3d : public Handle_StepGeom_Placement {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Axis2Placement3d & operator=(const StepGeom_Axis2Placement3d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Axis2Placement3d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Axis2Placement3d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Axis2Placement3d {
@@ -1179,7 +1179,7 @@ class Handle_StepGeom_Polyline : public Handle_StepGeom_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Polyline & operator=(const StepGeom_Polyline *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Polyline const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Polyline DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Polyline {
@@ -1217,7 +1217,7 @@ class Handle_StepGeom_SurfaceReplica : public Handle_StepGeom_Surface {
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfaceReplica & operator=(const StepGeom_SurfaceReplica *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_SurfaceReplica const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_SurfaceReplica DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_SurfaceReplica {
@@ -1255,7 +1255,7 @@ class Handle_StepGeom_HArray1OfTrimmingSelect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfTrimmingSelect & operator=(const StepGeom_HArray1OfTrimmingSelect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_HArray1OfTrimmingSelect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_HArray1OfTrimmingSelect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_HArray1OfTrimmingSelect {
@@ -1293,7 +1293,7 @@ class Handle_StepGeom_BSplineCurveWithKnots : public Handle_StepGeom_BSplineCurv
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineCurveWithKnots & operator=(const StepGeom_BSplineCurveWithKnots *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BSplineCurveWithKnots const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BSplineCurveWithKnots DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BSplineCurveWithKnots {
@@ -1331,7 +1331,7 @@ class Handle_StepGeom_BSplineSurfaceWithKnots : public Handle_StepGeom_BSplineSu
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineSurfaceWithKnots & operator=(const StepGeom_BSplineSurfaceWithKnots *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BSplineSurfaceWithKnots const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BSplineSurfaceWithKnots DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BSplineSurfaceWithKnots {
@@ -1369,7 +1369,7 @@ class Handle_StepGeom_SeamCurve : public Handle_StepGeom_SurfaceCurve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_SeamCurve & operator=(const StepGeom_SeamCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_SeamCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_SeamCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_SeamCurve {
@@ -1407,7 +1407,7 @@ class Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : 
 		%feature("autodoc", "1");
 		Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx & operator=(const StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
@@ -1445,7 +1445,7 @@ class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray2OfSurfacePatch & operator=(const StepGeom_HArray2OfSurfacePatch *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_HArray2OfSurfacePatch const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_HArray2OfSurfacePatch DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_HArray2OfSurfacePatch {
@@ -1483,7 +1483,7 @@ class Handle_StepGeom_CartesianTransformationOperator3d : public Handle_StepGeom
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianTransformationOperator3d & operator=(const StepGeom_CartesianTransformationOperator3d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_CartesianTransformationOperator3d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_CartesianTransformationOperator3d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_CartesianTransformationOperator3d {
@@ -1521,7 +1521,7 @@ class Handle_StepGeom_HArray1OfCartesianPoint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfCartesianPoint & operator=(const StepGeom_HArray1OfCartesianPoint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_HArray1OfCartesianPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_HArray1OfCartesianPoint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_HArray1OfCartesianPoint {
@@ -1559,7 +1559,7 @@ class Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationC
 		%feature("autodoc", "1");
 		Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext & operator=(const StepGeom_GeometricRepresentationContextAndParametricRepresentationContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext {
@@ -1597,7 +1597,7 @@ class Handle_StepGeom_TrimmedCurve : public Handle_StepGeom_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_TrimmedCurve & operator=(const StepGeom_TrimmedCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_TrimmedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_TrimmedCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_TrimmedCurve {
@@ -1635,7 +1635,7 @@ class Handle_StepGeom_HArray1OfCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfCurve & operator=(const StepGeom_HArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_HArray1OfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_HArray1OfCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_HArray1OfCurve {
@@ -1673,7 +1673,7 @@ class Handle_StepGeom_CartesianTransformationOperator2d : public Handle_StepGeom
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianTransformationOperator2d & operator=(const StepGeom_CartesianTransformationOperator2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_CartesianTransformationOperator2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_CartesianTransformationOperator2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_CartesianTransformationOperator2d {
@@ -1711,7 +1711,7 @@ class Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface : public Handle_St
 		%feature("autodoc", "1");
 		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface & operator=(const StepGeom_UniformSurfaceAndRationalBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface {
@@ -1749,7 +1749,7 @@ class Handle_StepGeom_Axis1Placement : public Handle_StepGeom_Placement {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Axis1Placement & operator=(const StepGeom_Axis1Placement *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Axis1Placement const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Axis1Placement DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Axis1Placement {
@@ -1787,7 +1787,7 @@ class Handle_StepGeom_ElementarySurface : public Handle_StepGeom_Surface {
 		%feature("autodoc", "1");
 		Handle_StepGeom_ElementarySurface & operator=(const StepGeom_ElementarySurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_ElementarySurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_ElementarySurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_ElementarySurface {
@@ -1825,7 +1825,7 @@ class Handle_StepGeom_SphericalSurface : public Handle_StepGeom_ElementarySurfac
 		%feature("autodoc", "1");
 		Handle_StepGeom_SphericalSurface & operator=(const StepGeom_SphericalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_SphericalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_SphericalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_SphericalSurface {
@@ -1863,7 +1863,7 @@ class Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public 
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface & operator=(const StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface {
@@ -1901,7 +1901,7 @@ class Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public Handle_S
 		%feature("autodoc", "1");
 		Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve & operator=(const StepGeom_QuasiUniformCurveAndRationalBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
@@ -1925,44 +1925,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepGeom_CurveReplica;
-class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica();
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica(const Handle_StepGeom_CurveReplica &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica(const StepGeom_CurveReplica *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica & operator=(const Handle_StepGeom_CurveReplica &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica & operator=(const StepGeom_CurveReplica *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepGeom_CurveReplica const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_CurveReplica {
-	StepGeom_CurveReplica* GetObject() {
-	return (StepGeom_CurveReplica*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepGeom_CurveReplica::~Handle_StepGeom_CurveReplica %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepGeom_CurveReplica {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepGeom_CylindricalSurface;
 class Handle_StepGeom_CylindricalSurface : public Handle_StepGeom_ElementarySurface {
 	public:
@@ -1977,7 +1939,7 @@ class Handle_StepGeom_CylindricalSurface : public Handle_StepGeom_ElementarySurf
 		%feature("autodoc", "1");
 		Handle_StepGeom_CylindricalSurface & operator=(const StepGeom_CylindricalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_CylindricalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_CylindricalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_CylindricalSurface {
@@ -2015,7 +1977,7 @@ class Handle_StepGeom_SurfacePatch : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfacePatch & operator=(const StepGeom_SurfacePatch *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_SurfacePatch const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_SurfacePatch DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_SurfacePatch {
@@ -2053,7 +2015,7 @@ class Handle_StepGeom_SweptSurface : public Handle_StepGeom_Surface {
 		%feature("autodoc", "1");
 		Handle_StepGeom_SweptSurface & operator=(const StepGeom_SweptSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_SweptSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_SweptSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_SweptSurface {
@@ -2091,7 +2053,7 @@ class Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public Hand
 		%feature("autodoc", "1");
 		Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve & operator=(const StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
@@ -2129,7 +2091,7 @@ class Handle_StepGeom_HArray1OfPcurveOrSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfPcurveOrSurface & operator=(const StepGeom_HArray1OfPcurveOrSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_HArray1OfPcurveOrSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_HArray1OfPcurveOrSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_HArray1OfPcurveOrSurface {
@@ -2167,7 +2129,7 @@ class Handle_StepGeom_UniformCurve : public Handle_StepGeom_BSplineCurve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_UniformCurve & operator=(const StepGeom_UniformCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_UniformCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_UniformCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_UniformCurve {
@@ -2205,7 +2167,7 @@ class Handle_StepGeom_ToroidalSurface : public Handle_StepGeom_ElementarySurface
 		%feature("autodoc", "1");
 		Handle_StepGeom_ToroidalSurface & operator=(const StepGeom_ToroidalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_ToroidalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_ToroidalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_ToroidalSurface {
@@ -2243,7 +2205,7 @@ class Handle_StepGeom_CompositeCurveSegment : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepGeom_CompositeCurveSegment & operator=(const StepGeom_CompositeCurveSegment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_CompositeCurveSegment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_CompositeCurveSegment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_CompositeCurveSegment {
@@ -2281,7 +2243,7 @@ class Handle_StepGeom_Axis2Placement2d : public Handle_StepGeom_Placement {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Axis2Placement2d & operator=(const StepGeom_Axis2Placement2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Axis2Placement2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Axis2Placement2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Axis2Placement2d {
@@ -2319,7 +2281,7 @@ class Handle_StepGeom_PointOnCurve : public Handle_StepGeom_Point {
 		%feature("autodoc", "1");
 		Handle_StepGeom_PointOnCurve & operator=(const StepGeom_PointOnCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_PointOnCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_PointOnCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_PointOnCurve {
@@ -2357,7 +2319,7 @@ class Handle_StepGeom_Pcurve : public Handle_StepGeom_Curve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Pcurve & operator=(const StepGeom_Pcurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Pcurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Pcurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Pcurve {
@@ -2395,7 +2357,7 @@ class Handle_StepGeom_QuasiUniformCurve : public Handle_StepGeom_BSplineCurve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_QuasiUniformCurve & operator=(const StepGeom_QuasiUniformCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_QuasiUniformCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_QuasiUniformCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_QuasiUniformCurve {
@@ -2433,7 +2395,7 @@ class Handle_StepGeom_UniformSurface : public Handle_StepGeom_BSplineSurface {
 		%feature("autodoc", "1");
 		Handle_StepGeom_UniformSurface & operator=(const StepGeom_UniformSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_UniformSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_UniformSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_UniformSurface {
@@ -2471,7 +2433,7 @@ class Handle_StepGeom_RectangularCompositeSurface : public Handle_StepGeom_Bound
 		%feature("autodoc", "1");
 		Handle_StepGeom_RectangularCompositeSurface & operator=(const StepGeom_RectangularCompositeSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_RectangularCompositeSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_RectangularCompositeSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_RectangularCompositeSurface {
@@ -2509,7 +2471,7 @@ class Handle_StepGeom_Vector : public Handle_StepGeom_GeometricRepresentationIte
 		%feature("autodoc", "1");
 		Handle_StepGeom_Vector & operator=(const StepGeom_Vector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Vector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Vector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Vector {
@@ -2547,7 +2509,7 @@ class Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface : public Handle_Ste
 		%feature("autodoc", "1");
 		Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface & operator=(const StepGeom_BezierSurfaceAndRationalBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface {
@@ -2585,7 +2547,7 @@ class Handle_StepGeom_ConicalSurface : public Handle_StepGeom_ElementarySurface 
 		%feature("autodoc", "1");
 		Handle_StepGeom_ConicalSurface & operator=(const StepGeom_ConicalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_ConicalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_ConicalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_ConicalSurface {
@@ -2623,7 +2585,7 @@ class Handle_StepGeom_ReparametrisedCompositeCurveSegment : public Handle_StepGe
 		%feature("autodoc", "1");
 		Handle_StepGeom_ReparametrisedCompositeCurveSegment & operator=(const StepGeom_ReparametrisedCompositeCurveSegment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_ReparametrisedCompositeCurveSegment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_ReparametrisedCompositeCurveSegment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_ReparametrisedCompositeCurveSegment {
@@ -2661,7 +2623,7 @@ class Handle_StepGeom_TrimmingMember : public Handle_StepData_SelectReal {
 		%feature("autodoc", "1");
 		Handle_StepGeom_TrimmingMember & operator=(const StepGeom_TrimmingMember *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_TrimmingMember const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_TrimmingMember DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_TrimmingMember {
@@ -2685,6 +2647,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepGeom_CurveReplica;
+class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica();
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica(const Handle_StepGeom_CurveReplica &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica(const StepGeom_CurveReplica *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica & operator=(const Handle_StepGeom_CurveReplica &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica & operator=(const StepGeom_CurveReplica *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepGeom_CurveReplica DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_CurveReplica {
+	StepGeom_CurveReplica* GetObject() {
+	return (StepGeom_CurveReplica*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepGeom_CurveReplica::~Handle_StepGeom_CurveReplica %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepGeom_CurveReplica {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepGeom_SurfaceOfRevolution;
 class Handle_StepGeom_SurfaceOfRevolution : public Handle_StepGeom_SweptSurface {
 	public:
@@ -2699,7 +2699,7 @@ class Handle_StepGeom_SurfaceOfRevolution : public Handle_StepGeom_SweptSurface 
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfaceOfRevolution & operator=(const StepGeom_SurfaceOfRevolution *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_SurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_SurfaceOfRevolution DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_SurfaceOfRevolution {
@@ -2737,7 +2737,7 @@ class Handle_StepGeom_HArray1OfSurfaceBoundary : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfSurfaceBoundary & operator=(const StepGeom_HArray1OfSurfaceBoundary *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_HArray1OfSurfaceBoundary const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_HArray1OfSurfaceBoundary DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_HArray1OfSurfaceBoundary {
@@ -2775,7 +2775,7 @@ class Handle_StepGeom_RationalBSplineCurve : public Handle_StepGeom_BSplineCurve
 		%feature("autodoc", "1");
 		Handle_StepGeom_RationalBSplineCurve & operator=(const StepGeom_RationalBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_RationalBSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_RationalBSplineCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_RationalBSplineCurve {
@@ -2813,7 +2813,7 @@ class Handle_StepGeom_Parabola : public Handle_StepGeom_Conic {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Parabola & operator=(const StepGeom_Parabola *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Parabola const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Parabola DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Parabola {
@@ -2851,7 +2851,7 @@ class Handle_StepGeom_BezierCurve : public Handle_StepGeom_BSplineCurve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_BezierCurve & operator=(const StepGeom_BezierCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_BezierCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_BezierCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_BezierCurve {
@@ -2889,7 +2889,7 @@ class Handle_StepGeom_OrientedSurface : public Handle_StepGeom_Surface {
 		%feature("autodoc", "1");
 		Handle_StepGeom_OrientedSurface & operator=(const StepGeom_OrientedSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_OrientedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_OrientedSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_OrientedSurface {
@@ -2927,7 +2927,7 @@ class Handle_StepGeom_QuasiUniformSurface : public Handle_StepGeom_BSplineSurfac
 		%feature("autodoc", "1");
 		Handle_StepGeom_QuasiUniformSurface & operator=(const StepGeom_QuasiUniformSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_QuasiUniformSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_QuasiUniformSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_QuasiUniformSurface {
@@ -2965,7 +2965,7 @@ class Handle_StepGeom_CartesianPoint : public Handle_StepGeom_Point {
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianPoint & operator=(const StepGeom_CartesianPoint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_CartesianPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_CartesianPoint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_CartesianPoint {
@@ -3003,7 +3003,7 @@ class Handle_StepGeom_HArray2OfCartesianPoint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray2OfCartesianPoint & operator=(const StepGeom_HArray2OfCartesianPoint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_HArray2OfCartesianPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_HArray2OfCartesianPoint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_HArray2OfCartesianPoint {
@@ -3041,7 +3041,7 @@ class Handle_StepGeom_RectangularTrimmedSurface : public Handle_StepGeom_Bounded
 		%feature("autodoc", "1");
 		Handle_StepGeom_RectangularTrimmedSurface & operator=(const StepGeom_RectangularTrimmedSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_RectangularTrimmedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_RectangularTrimmedSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_RectangularTrimmedSurface {
@@ -3079,7 +3079,7 @@ class Handle_StepGeom_DegenerateToroidalSurface : public Handle_StepGeom_Toroida
 		%feature("autodoc", "1");
 		Handle_StepGeom_DegenerateToroidalSurface & operator=(const StepGeom_DegenerateToroidalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_DegenerateToroidalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_DegenerateToroidalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_DegenerateToroidalSurface {
@@ -3117,7 +3117,7 @@ class Handle_StepGeom_PointReplica : public Handle_StepGeom_Point {
 		%feature("autodoc", "1");
 		Handle_StepGeom_PointReplica & operator=(const StepGeom_PointReplica *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_PointReplica const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_PointReplica DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_PointReplica {
@@ -3155,7 +3155,7 @@ class Handle_StepGeom_SurfaceOfLinearExtrusion : public Handle_StepGeom_SweptSur
 		%feature("autodoc", "1");
 		Handle_StepGeom_SurfaceOfLinearExtrusion & operator=(const StepGeom_SurfaceOfLinearExtrusion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_SurfaceOfLinearExtrusion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_SurfaceOfLinearExtrusion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_SurfaceOfLinearExtrusion {
@@ -3193,7 +3193,7 @@ class Handle_StepGeom_DegeneratePcurve : public Handle_StepGeom_Point {
 		%feature("autodoc", "1");
 		Handle_StepGeom_DegeneratePcurve & operator=(const StepGeom_DegeneratePcurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_DegeneratePcurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_DegeneratePcurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_DegeneratePcurve {
@@ -3231,7 +3231,7 @@ class Handle_StepGeom_Plane : public Handle_StepGeom_ElementarySurface {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Plane & operator=(const StepGeom_Plane *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Plane const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Plane DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Plane {
@@ -3269,7 +3269,7 @@ class Handle_StepGeom_RationalBSplineSurface : public Handle_StepGeom_BSplineSur
 		%feature("autodoc", "1");
 		Handle_StepGeom_RationalBSplineSurface & operator=(const StepGeom_RationalBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_RationalBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_RationalBSplineSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_RationalBSplineSurface {
@@ -3307,7 +3307,7 @@ class Handle_StepGeom_OffsetCurve3d : public Handle_StepGeom_Curve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_OffsetCurve3d & operator=(const StepGeom_OffsetCurve3d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_OffsetCurve3d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_OffsetCurve3d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_OffsetCurve3d {
@@ -3345,7 +3345,7 @@ class Handle_StepGeom_HArray1OfBoundaryCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepGeom_HArray1OfBoundaryCurve & operator=(const StepGeom_HArray1OfBoundaryCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_HArray1OfBoundaryCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_HArray1OfBoundaryCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_HArray1OfBoundaryCurve {
@@ -3383,7 +3383,7 @@ class Handle_StepGeom_CurveBoundedSurface : public Handle_StepGeom_BoundedSurfac
 		%feature("autodoc", "1");
 		Handle_StepGeom_CurveBoundedSurface & operator=(const StepGeom_CurveBoundedSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_CurveBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_CurveBoundedSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_CurveBoundedSurface {
@@ -3421,7 +3421,7 @@ class Handle_StepGeom_UniformCurveAndRationalBSplineCurve : public Handle_StepGe
 		%feature("autodoc", "1");
 		Handle_StepGeom_UniformCurveAndRationalBSplineCurve & operator=(const StepGeom_UniformCurveAndRationalBSplineCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_UniformCurveAndRationalBSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_UniformCurveAndRationalBSplineCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_UniformCurveAndRationalBSplineCurve {
@@ -3459,7 +3459,7 @@ class Handle_StepGeom_Ellipse : public Handle_StepGeom_Conic {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Ellipse & operator=(const StepGeom_Ellipse *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Ellipse const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Ellipse DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Ellipse {
@@ -3497,7 +3497,7 @@ class Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public Hand
 		%feature("autodoc", "1");
 		Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface & operator=(const StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface {
@@ -3535,7 +3535,7 @@ class Handle_StepGeom_EvaluatedDegeneratePcurve : public Handle_StepGeom_Degener
 		%feature("autodoc", "1");
 		Handle_StepGeom_EvaluatedDegeneratePcurve & operator=(const StepGeom_EvaluatedDegeneratePcurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_EvaluatedDegeneratePcurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_EvaluatedDegeneratePcurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_EvaluatedDegeneratePcurve {
@@ -3573,7 +3573,7 @@ class Handle_StepGeom_GeometricRepresentationContext : public Handle_StepRepr_Re
 		%feature("autodoc", "1");
 		Handle_StepGeom_GeometricRepresentationContext & operator=(const StepGeom_GeometricRepresentationContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_GeometricRepresentationContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_GeometricRepresentationContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_GeometricRepresentationContext {
@@ -3611,7 +3611,7 @@ class Handle_StepGeom_Line : public Handle_StepGeom_Curve {
 		%feature("autodoc", "1");
 		Handle_StepGeom_Line & operator=(const StepGeom_Line *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepGeom_Line const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepGeom_Line DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepGeom_Line {
@@ -3658,6 +3658,115 @@ def __del__(self):
 %}
 
 %extend StepGeom_PcurveOrSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepGeom_GeometricRepresentationItem;
+class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_GeometricRepresentationItem();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_GeometricRepresentationItem {
+	Handle_StepGeom_GeometricRepresentationItem GetHandle() {
+	return *(Handle_StepGeom_GeometricRepresentationItem*) &$self;
+	}
+};
+%extend StepGeom_GeometricRepresentationItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") StepGeom_GeometricRepresentationItem::~StepGeom_GeometricRepresentationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepGeom_GeometricRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepGeom_Curve;
+class StepGeom_Curve : public StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_Curve();
+
+};
+%extend StepGeom_Curve {
+	Handle_StepGeom_Curve GetHandle() {
+	return *(Handle_StepGeom_Curve*) &$self;
+	}
+};
+%extend StepGeom_Curve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") StepGeom_Curve::~StepGeom_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepGeom_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepGeom_Conic;
+class StepGeom_Conic : public StepGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_Conic();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepGeom_Axis2Placement &aPosition);
+		%feature("autodoc", "1");
+		void SetPosition(const StepGeom_Axis2Placement &aPosition);
+		%feature("autodoc", "1");
+		StepGeom_Axis2Placement Position() const;
+
+};
+%extend StepGeom_Conic {
+	Handle_StepGeom_Conic GetHandle() {
+	return *(Handle_StepGeom_Conic*) &$self;
+	}
+};
+%extend StepGeom_Conic {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") StepGeom_Conic::~StepGeom_Conic %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepGeom_Conic {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3770,41 +3879,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepGeom_GeometricRepresentationItem;
-class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_GeometricRepresentationItem();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_GeometricRepresentationItem {
-	Handle_StepGeom_GeometricRepresentationItem GetHandle() {
-	return *(Handle_StepGeom_GeometricRepresentationItem*) &$self;
-	}
-};
-%extend StepGeom_GeometricRepresentationItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepGeom_GeometricRepresentationItem::~StepGeom_GeometricRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepGeom_GeometricRepresentationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepGeom_Placement;
 class StepGeom_Placement : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -3818,6 +3892,8 @@ class StepGeom_Placement : public StepGeom_GeometricRepresentationItem {
 		void SetLocation(const Handle_StepGeom_CartesianPoint &aLocation);
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianPoint Location() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepGeom_Placement {
@@ -4343,6 +4419,135 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepGeom_BoundedCurve;
+class StepGeom_BoundedCurve : public StepGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_BoundedCurve();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_BoundedCurve {
+	Handle_StepGeom_BoundedCurve GetHandle() {
+	return *(Handle_StepGeom_BoundedCurve*) &$self;
+	}
+};
+%extend StepGeom_BoundedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") StepGeom_BoundedCurve::~StepGeom_BoundedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepGeom_BoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepGeom_BSplineCurve;
+class StepGeom_BSplineCurve : public StepGeom_BoundedCurve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_BSplineCurve();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect);
+		%feature("autodoc", "1");
+		void SetDegree(const Standard_Integer aDegree);
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		void SetControlPointsList(const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray1OfCartesianPoint ControlPointsList() const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_CartesianPoint ControlPointsListValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbControlPointsList() const;
+		%feature("autodoc", "1");
+		void SetCurveForm(const StepGeom_BSplineCurveForm aCurveForm);
+		%feature("autodoc", "1");
+		StepGeom_BSplineCurveForm CurveForm() const;
+		%feature("autodoc", "1");
+		void SetClosedCurve(const StepData_Logical aClosedCurve);
+		%feature("autodoc", "1");
+		StepData_Logical ClosedCurve() const;
+		%feature("autodoc", "1");
+		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
+		%feature("autodoc", "1");
+		StepData_Logical SelfIntersect() const;
+
+};
+%extend StepGeom_BSplineCurve {
+	Handle_StepGeom_BSplineCurve GetHandle() {
+	return *(Handle_StepGeom_BSplineCurve*) &$self;
+	}
+};
+%extend StepGeom_BSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") StepGeom_BSplineCurve::~StepGeom_BSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepGeom_BSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepGeom_UniformCurve;
+class StepGeom_UniformCurve : public StepGeom_BSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_UniformCurve();
+
+};
+%extend StepGeom_UniformCurve {
+	Handle_StepGeom_UniformCurve GetHandle() {
+	return *(Handle_StepGeom_UniformCurve*) &$self;
+	}
+};
+%extend StepGeom_UniformCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") StepGeom_UniformCurve::~StepGeom_UniformCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepGeom_UniformCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepGeom_ElementarySurface;
 class StepGeom_ElementarySurface : public StepGeom_Surface {
 	public:
@@ -4472,74 +4677,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepGeom_Curve;
-class StepGeom_Curve : public StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_Curve();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_Curve {
-	Handle_StepGeom_Curve GetHandle() {
-	return *(Handle_StepGeom_Curve*) &$self;
-	}
-};
-%extend StepGeom_Curve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepGeom_Curve::~StepGeom_Curve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepGeom_Curve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepGeom_BoundedCurve;
-class StepGeom_BoundedCurve : public StepGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_BoundedCurve();
-
-};
-%extend StepGeom_BoundedCurve {
-	Handle_StepGeom_BoundedCurve GetHandle() {
-	return *(Handle_StepGeom_BoundedCurve*) &$self;
-	}
-};
-%extend StepGeom_BoundedCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepGeom_BoundedCurve::~StepGeom_BoundedCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepGeom_BoundedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepGeom_CompositeCurve;
 class StepGeom_CompositeCurve : public StepGeom_BoundedCurve {
 	public:
@@ -4561,6 +4698,8 @@ class StepGeom_CompositeCurve : public StepGeom_BoundedCurve {
 		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
 		%feature("autodoc", "1");
 		StepData_Logical SelfIntersect() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepGeom_CompositeCurve {
@@ -4887,142 +5026,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepGeom_BSplineCurve;
-class StepGeom_BSplineCurve : public StepGeom_BoundedCurve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_BSplineCurve();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect);
-		%feature("autodoc", "1");
-		void SetDegree(const Standard_Integer aDegree);
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		void SetControlPointsList(const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray1OfCartesianPoint ControlPointsList() const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_CartesianPoint ControlPointsListValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbControlPointsList() const;
-		%feature("autodoc", "1");
-		void SetCurveForm(const StepGeom_BSplineCurveForm aCurveForm);
-		%feature("autodoc", "1");
-		StepGeom_BSplineCurveForm CurveForm() const;
-		%feature("autodoc", "1");
-		void SetClosedCurve(const StepData_Logical aClosedCurve);
-		%feature("autodoc", "1");
-		StepData_Logical ClosedCurve() const;
-		%feature("autodoc", "1");
-		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
-		%feature("autodoc", "1");
-		StepData_Logical SelfIntersect() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_BSplineCurve {
-	Handle_StepGeom_BSplineCurve GetHandle() {
-	return *(Handle_StepGeom_BSplineCurve*) &$self;
-	}
-};
-%extend StepGeom_BSplineCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepGeom_BSplineCurve::~StepGeom_BSplineCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepGeom_BSplineCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve;
-class StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public StepGeom_BSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect, const Handle_StepGeom_BSplineCurveWithKnots &aBSplineCurveWithKnots, const Handle_StepGeom_RationalBSplineCurve &aRationalBSplineCurve);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect, const Handle_TColStd_HArray1OfInteger &aKnotMultiplicities, const Handle_TColStd_HArray1OfReal &aKnots, const StepGeom_KnotType aKnotSpec, const Handle_TColStd_HArray1OfReal &aWeightsData);
-		%feature("autodoc", "1");
-		void SetBSplineCurveWithKnots(const Handle_StepGeom_BSplineCurveWithKnots &aBSplineCurveWithKnots);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineCurveWithKnots BSplineCurveWithKnots() const;
-		%feature("autodoc", "1");
-		void SetRationalBSplineCurve(const Handle_StepGeom_RationalBSplineCurve &aRationalBSplineCurve);
-		%feature("autodoc", "1");
-		Handle_StepGeom_RationalBSplineCurve RationalBSplineCurve() const;
-		%feature("autodoc", "1");
-		void SetKnotMultiplicities(const Handle_TColStd_HArray1OfInteger &aKnotMultiplicities);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger KnotMultiplicities() const;
-		%feature("autodoc", "1");
-		Standard_Integer KnotMultiplicitiesValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnotMultiplicities() const;
-		%feature("autodoc", "1");
-		void SetKnots(const Handle_TColStd_HArray1OfReal &aKnots);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal Knots() const;
-		%feature("autodoc", "1");
-		Standard_Real KnotsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void SetKnotSpec(const StepGeom_KnotType aKnotSpec);
-		%feature("autodoc", "1");
-		StepGeom_KnotType KnotSpec() const;
-		%feature("autodoc", "1");
-		void SetWeightsData(const Handle_TColStd_HArray1OfReal &aWeightsData);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal WeightsData() const;
-		%feature("autodoc", "1");
-		Standard_Real WeightsDataValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbWeightsData() const;
-
-};
-%extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
-	Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve GetHandle() {
-	return *(Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve*) &$self;
-	}
-};
-%extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve::~StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepGeom_Array1OfTrimmingSelect;
 class StepGeom_Array1OfTrimmingSelect {
 	public:
@@ -5068,6 +5071,83 @@ def __del__(self):
 %}
 
 %extend StepGeom_Array1OfTrimmingSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve;
+class StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public StepGeom_BSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect, const Handle_StepGeom_BSplineCurveWithKnots &aBSplineCurveWithKnots, const Handle_StepGeom_RationalBSplineCurve &aRationalBSplineCurve);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect, const Handle_TColStd_HArray1OfInteger &aKnotMultiplicities, const Handle_TColStd_HArray1OfReal &aKnots, const StepGeom_KnotType aKnotSpec, const Handle_TColStd_HArray1OfReal &aWeightsData);
+		%feature("autodoc", "1");
+		void SetBSplineCurveWithKnots(const Handle_StepGeom_BSplineCurveWithKnots &aBSplineCurveWithKnots);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineCurveWithKnots BSplineCurveWithKnots() const;
+		%feature("autodoc", "1");
+		void SetRationalBSplineCurve(const Handle_StepGeom_RationalBSplineCurve &aRationalBSplineCurve);
+		%feature("autodoc", "1");
+		Handle_StepGeom_RationalBSplineCurve RationalBSplineCurve() const;
+		%feature("autodoc", "1");
+		void SetKnotMultiplicities(const Handle_TColStd_HArray1OfInteger &aKnotMultiplicities);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger KnotMultiplicities() const;
+		%feature("autodoc", "1");
+		Standard_Integer KnotMultiplicitiesValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnotMultiplicities() const;
+		%feature("autodoc", "1");
+		void SetKnots(const Handle_TColStd_HArray1OfReal &aKnots);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal Knots() const;
+		%feature("autodoc", "1");
+		Standard_Real KnotsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void SetKnotSpec(const StepGeom_KnotType aKnotSpec);
+		%feature("autodoc", "1");
+		StepGeom_KnotType KnotSpec() const;
+		%feature("autodoc", "1");
+		void SetWeightsData(const Handle_TColStd_HArray1OfReal &aWeightsData);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal WeightsData() const;
+		%feature("autodoc", "1");
+		Standard_Real WeightsDataValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbWeightsData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
+	Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve GetHandle() {
+	return *(Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve*) &$self;
+	}
+};
+%extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve::~StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5948,60 +6028,21 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepGeom_Conic;
-class StepGeom_Conic : public StepGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_Conic();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepGeom_Axis2Placement &aPosition);
-		%feature("autodoc", "1");
-		void SetPosition(const StepGeom_Axis2Placement &aPosition);
-		%feature("autodoc", "1");
-		StepGeom_Axis2Placement Position() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_Conic {
-	Handle_StepGeom_Conic GetHandle() {
-	return *(Handle_StepGeom_Conic*) &$self;
-	}
-};
-%extend StepGeom_Conic {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepGeom_Conic::~StepGeom_Conic %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepGeom_Conic {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepGeom_Circle;
 class StepGeom_Circle : public StepGeom_Conic {
 	public:
 		%feature("autodoc", "1");
 		StepGeom_Circle();
 		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepGeom_Axis2Placement &aPosition);
+		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepGeom_Axis2Placement &aPosition, const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		void SetRadius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepGeom_Circle {
@@ -6500,41 +6541,6 @@ def __del__(self):
 %}
 
 %extend StepGeom_CurveOnSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepGeom_UniformCurve;
-class StepGeom_UniformCurve : public StepGeom_BSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_UniformCurve();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_UniformCurve {
-	Handle_StepGeom_UniformCurve GetHandle() {
-	return *(Handle_StepGeom_UniformCurve*) &$self;
-	}
-};
-%extend StepGeom_UniformCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepGeom_UniformCurve::~StepGeom_UniformCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepGeom_UniformCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

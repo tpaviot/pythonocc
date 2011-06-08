@@ -66,7 +66,7 @@ class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_Actor & operator=(const IGESToBRep_Actor *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESToBRep_Actor const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESToBRep_Actor DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESToBRep_Actor {
@@ -104,7 +104,7 @@ class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_IGESBoundary & operator=(const IGESToBRep_IGESBoundary *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESToBRep_IGESBoundary const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESToBRep_IGESBoundary DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESToBRep_IGESBoundary {
@@ -142,7 +142,7 @@ class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_AlgoContainer & operator=(const IGESToBRep_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESToBRep_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESToBRep_AlgoContainer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESToBRep_AlgoContainer {
@@ -180,7 +180,7 @@ class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_ToolContainer & operator=(const IGESToBRep_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESToBRep_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESToBRep_ToolContainer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESToBRep_ToolContainer {

@@ -67,7 +67,7 @@ class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints & operator=(const IntPolyh_SequenceNodeOfSeqOfStartPoints *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints {

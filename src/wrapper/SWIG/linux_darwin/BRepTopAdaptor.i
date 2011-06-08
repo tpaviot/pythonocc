@@ -49,6 +49,7 @@ $HeaderURL$
 
 %include BRepTopAdaptor_headers.i
 
+typedef TColStd_SequenceOfAddress BRepTopAdaptor_SeqOfPtr;
 
 
 
@@ -66,7 +67,7 @@ class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool & operator=(const BRepTopAdaptor_TopolTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepTopAdaptor_TopolTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTopAdaptor_TopolTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_TopolTool {
@@ -104,7 +105,7 @@ class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_HVertex & operator=(const BRepTopAdaptor_HVertex *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepTopAdaptor_HVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTopAdaptor_HVertex DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_HVertex {
@@ -142,7 +143,7 @@ class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
@@ -160,81 +161,6 @@ def __del__(self):
 %}
 
 %extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
-class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr();
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const BRepTopAdaptor_SequenceNodeOfSeqOfPtr *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr & operator=(const Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr & operator=(const BRepTopAdaptor_SequenceNodeOfSeqOfPtr *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	BRepTopAdaptor_SequenceNodeOfSeqOfPtr* GetObject() {
-	return (BRepTopAdaptor_SequenceNodeOfSeqOfPtr*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr::~Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
-class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const Standard_Address &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Standard_Address & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr GetHandle() {
-	return *(Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr*) &$self;
-	}
-};
-%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepTopAdaptor_SequenceNodeOfSeqOfPtr::~BRepTopAdaptor_SequenceNodeOfSeqOfPtr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -525,71 +451,6 @@ def __del__(self):
 %}
 
 %extend BRepTopAdaptor_MapOfShapeTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepTopAdaptor_SeqOfPtr;
-class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		BRepTopAdaptor_SeqOfPtr();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const BRepTopAdaptor_SeqOfPtr & Assign(const BRepTopAdaptor_SeqOfPtr &Other);
-		%feature("autodoc", "1");
-		const BRepTopAdaptor_SeqOfPtr & operator=(const BRepTopAdaptor_SeqOfPtr &Other);
-		%feature("autodoc", "1");
-		void Append(const Standard_Address &T);
-		%feature("autodoc", "1");
-		void Append(BRepTopAdaptor_SeqOfPtr & S);
-		%feature("autodoc", "1");
-		void Prepend(const Standard_Address &T);
-		%feature("autodoc", "1");
-		void Prepend(BRepTopAdaptor_SeqOfPtr & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Standard_Address &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, BRepTopAdaptor_SeqOfPtr & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Standard_Address &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, BRepTopAdaptor_SeqOfPtr & S);
-		%feature("autodoc", "1");
-		const Standard_Address & First() const;
-		%feature("autodoc", "1");
-		const Standard_Address & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, BRepTopAdaptor_SeqOfPtr & S);
-		%feature("autodoc", "1");
-		const Standard_Address & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Standard_Address & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Address &I);
-		%feature("autodoc", "1");
-		Standard_Address & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Address & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") BRepTopAdaptor_SeqOfPtr::~BRepTopAdaptor_SeqOfPtr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepTopAdaptor_SeqOfPtr {
 	void _kill_pointed() {
 		delete $self;
 	}

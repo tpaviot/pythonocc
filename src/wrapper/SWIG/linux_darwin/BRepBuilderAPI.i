@@ -56,7 +56,6 @@ enum BRepBuilderAPI_FaceError {
 	BRepBuilderAPI_NotPlanar,
 	BRepBuilderAPI_CurveProjectionFailed,
 	BRepBuilderAPI_ParametersOutOfRange,
-	BRepBuilderAPI_SurfaceNotC2,
 	};
 
 enum BRepBuilderAPI_PipeError {
@@ -120,7 +119,7 @@ class Handle_BRepBuilderAPI_Sewing : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepBuilderAPI_Sewing & operator=(const BRepBuilderAPI_Sewing *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepBuilderAPI_Sewing const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepBuilderAPI_Sewing DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepBuilderAPI_Sewing {
@@ -240,9 +239,9 @@ class BRepBuilderAPI_Copy : public BRepBuilderAPI_ModifyShape {
 		%feature("autodoc", "1");
 		BRepBuilderAPI_Copy();
 		%feature("autodoc", "1");
-		BRepBuilderAPI_Copy(const TopoDS_Shape S);
+		BRepBuilderAPI_Copy(const TopoDS_Shape S, const Standard_Boolean copyGeom=1);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape S);
+		void Perform(const TopoDS_Shape S, const Standard_Boolean copyGeom=1);
 
 };
 %feature("shadow") BRepBuilderAPI_Copy::~BRepBuilderAPI_Copy %{

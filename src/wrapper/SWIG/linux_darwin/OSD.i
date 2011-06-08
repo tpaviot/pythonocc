@@ -135,6 +135,14 @@ enum OSD_OpenMode {
 	OSD_ReadWrite,
 	};
 
+enum OSD_FontAspect {
+	OSD_FA_Undefined,
+	OSD_FA_Regular,
+	OSD_FA_Bold,
+	OSD_FA_Italic,
+	OSD_FA_BoldItalic,
+	};
+
 enum OSD_KindFile {
 	OSD_FILE,
 	OSD_DIRECTORY,
@@ -146,13 +154,6 @@ enum OSD_KindFile {
 enum OSD_LoadMode {
 	OSD_RTLD_LAZY,
 	OSD_RTLD_NOW,
-	};
-
-enum OSD_LockType {
-	OSD_NoLock,
-	OSD_ReadLock,
-	OSD_WriteLock,
-	OSD_ExclusiveLock,
 	};
 
 enum OSD_OEMType {
@@ -168,6 +169,13 @@ enum OSD_OEMType {
 	OSD_VAX,
 	OSD_LIN,
 	OSD_AIX,
+	};
+
+enum OSD_LockType {
+	OSD_NoLock,
+	OSD_ReadLock,
+	OSD_WriteLock,
+	OSD_ExclusiveLock,
 	};
 
 
@@ -186,7 +194,7 @@ class Handle_OSD_Exception : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception & operator=(const OSD_Exception *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception {
@@ -224,7 +232,7 @@ class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO & operator=(const OSD_Exception_INT_DIVIDE_BY_ZERO *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_INT_DIVIDE_BY_ZERO {
@@ -262,7 +270,7 @@ class Handle_OSD_Signal : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_OSD_Signal & operator=(const OSD_Signal *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Signal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Signal DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Signal {
@@ -300,7 +308,7 @@ class Handle_OSD_SIGBUS : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGBUS & operator=(const OSD_SIGBUS *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGBUS const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGBUS DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGBUS {
@@ -324,6 +332,120 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_OSD_Exception_INT_OVERFLOW;
+class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_OVERFLOW();
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_OVERFLOW(const Handle_OSD_Exception_INT_OVERFLOW &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_OVERFLOW(const OSD_Exception_INT_OVERFLOW *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_OVERFLOW & operator=(const Handle_OSD_Exception_INT_OVERFLOW &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_OVERFLOW & operator=(const OSD_Exception_INT_OVERFLOW *anItem);
+		%feature("autodoc", "1");
+		static		Handle_OSD_Exception_INT_OVERFLOW DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_Exception_INT_OVERFLOW {
+	OSD_Exception_INT_OVERFLOW* GetObject() {
+	return (OSD_Exception_INT_OVERFLOW*)$self->Access();
+	}
+};
+%feature("shadow") Handle_OSD_Exception_INT_OVERFLOW::~Handle_OSD_Exception_INT_OVERFLOW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_OSD_Exception_INT_OVERFLOW {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_OSD_SystemFont;
+class Handle_OSD_SystemFont : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_SystemFont();
+		%feature("autodoc", "1");
+		Handle_OSD_SystemFont(const Handle_OSD_SystemFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_SystemFont(const OSD_SystemFont *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_SystemFont & operator=(const Handle_OSD_SystemFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_SystemFont & operator=(const OSD_SystemFont *anItem);
+		%feature("autodoc", "1");
+		static		Handle_OSD_SystemFont DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_SystemFont {
+	OSD_SystemFont* GetObject() {
+	return (OSD_SystemFont*)$self->Access();
+	}
+};
+%feature("shadow") Handle_OSD_SystemFont::~Handle_OSD_SystemFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_OSD_SystemFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_OSD_Exception_FLT_STACK_CHECK;
+class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK();
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK(const Handle_OSD_Exception_FLT_STACK_CHECK &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK(const OSD_Exception_FLT_STACK_CHECK *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK & operator=(const Handle_OSD_Exception_FLT_STACK_CHECK &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK & operator=(const OSD_Exception_FLT_STACK_CHECK *anItem);
+		%feature("autodoc", "1");
+		static		Handle_OSD_Exception_FLT_STACK_CHECK DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_Exception_FLT_STACK_CHECK {
+	OSD_Exception_FLT_STACK_CHECK* GetObject() {
+	return (OSD_Exception_FLT_STACK_CHECK*)$self->Access();
+	}
+};
+%feature("shadow") Handle_OSD_Exception_FLT_STACK_CHECK::~Handle_OSD_Exception_FLT_STACK_CHECK %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_OSD_Exception_FLT_STACK_CHECK {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_OSD_SIGILL;
 class Handle_OSD_SIGILL : public Handle_OSD_Signal {
 	public:
@@ -338,7 +460,7 @@ class Handle_OSD_SIGILL : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGILL & operator=(const OSD_SIGILL *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGILL const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGILL DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGILL {
@@ -376,7 +498,7 @@ class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_INVALID_DISPOSITION & operator=(const OSD_Exception_INVALID_DISPOSITION *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_INVALID_DISPOSITION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_INVALID_DISPOSITION DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_INVALID_DISPOSITION {
@@ -400,44 +522,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_OSD_Exception_INT_OVERFLOW;
-class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW();
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW(const Handle_OSD_Exception_INT_OVERFLOW &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW(const OSD_Exception_INT_OVERFLOW *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW & operator=(const Handle_OSD_Exception_INT_OVERFLOW &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW & operator=(const OSD_Exception_INT_OVERFLOW *anItem);
-		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_INT_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_Exception_INT_OVERFLOW {
-	OSD_Exception_INT_OVERFLOW* GetObject() {
-	return (OSD_Exception_INT_OVERFLOW*)$self->Access();
-	}
-};
-%feature("shadow") Handle_OSD_Exception_INT_OVERFLOW::~Handle_OSD_Exception_INT_OVERFLOW %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_OSD_Exception_INT_OVERFLOW {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_OSD_Exception_STACK_OVERFLOW;
 class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 	public:
@@ -452,7 +536,7 @@ class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_STACK_OVERFLOW & operator=(const OSD_Exception_STACK_OVERFLOW *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_STACK_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_STACK_OVERFLOW DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_STACK_OVERFLOW {
@@ -490,7 +574,7 @@ class Handle_OSD_Exception_FLT_OVERFLOW : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_OVERFLOW & operator=(const OSD_Exception_FLT_OVERFLOW *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_OVERFLOW DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_OVERFLOW {
@@ -528,7 +612,7 @@ class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_IN_PAGE_ERROR & operator=(const OSD_Exception_IN_PAGE_ERROR *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_IN_PAGE_ERROR const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_IN_PAGE_ERROR DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_IN_PAGE_ERROR {
@@ -566,7 +650,7 @@ class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGSEGV & operator=(const OSD_SIGSEGV *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGSEGV const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGSEGV DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGSEGV {
@@ -604,7 +688,7 @@ class Handle_OSD_Exception_STATUS_NO_MEMORY : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_STATUS_NO_MEMORY & operator=(const OSD_Exception_STATUS_NO_MEMORY *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_STATUS_NO_MEMORY const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_STATUS_NO_MEMORY DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_STATUS_NO_MEMORY {
@@ -642,7 +726,7 @@ class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO & operator=(const OSD_Exception_FLT_DIVIDE_BY_ZERO *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO {
@@ -680,7 +764,7 @@ class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_PRIV_INSTRUCTION & operator=(const OSD_Exception_PRIV_INSTRUCTION *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_PRIV_INSTRUCTION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_PRIV_INSTRUCTION DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_PRIV_INSTRUCTION {
@@ -704,6 +788,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_OSD_FontMgr;
+class Handle_OSD_FontMgr : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_FontMgr();
+		%feature("autodoc", "1");
+		Handle_OSD_FontMgr(const Handle_OSD_FontMgr &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_FontMgr(const OSD_FontMgr *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_FontMgr & operator=(const Handle_OSD_FontMgr &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_FontMgr & operator=(const OSD_FontMgr *anItem);
+		%feature("autodoc", "1");
+		static		Handle_OSD_FontMgr DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_FontMgr {
+	OSD_FontMgr* GetObject() {
+	return (OSD_FontMgr*)$self->Access();
+	}
+};
+%feature("shadow") Handle_OSD_FontMgr::~Handle_OSD_FontMgr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_OSD_FontMgr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_OSD_SIGKILL;
 class Handle_OSD_SIGKILL : public Handle_OSD_Signal {
 	public:
@@ -718,7 +840,7 @@ class Handle_OSD_SIGKILL : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGKILL & operator=(const OSD_SIGKILL *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGKILL const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGKILL DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGKILL {
@@ -756,7 +878,7 @@ class Handle_OSD_Exception_FLT_INVALID_OPERATION : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_INVALID_OPERATION & operator=(const OSD_Exception_FLT_INVALID_OPERATION *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_INVALID_OPERATION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_INVALID_OPERATION DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_INVALID_OPERATION {
@@ -794,7 +916,7 @@ class Handle_OSD_OSDError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_OSD_OSDError & operator=(const OSD_OSDError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_OSDError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_OSDError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_OSDError {
@@ -832,7 +954,7 @@ class Handle_OSD_Exception_ACCESS_VIOLATION : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_ACCESS_VIOLATION & operator=(const OSD_Exception_ACCESS_VIOLATION *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_ACCESS_VIOLATION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_ACCESS_VIOLATION DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_ACCESS_VIOLATION {
@@ -870,7 +992,7 @@ class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGQUIT & operator=(const OSD_SIGQUIT *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGQUIT const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGQUIT DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGQUIT {
@@ -908,7 +1030,7 @@ class Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION : public Handle_OSD_Exceptio
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION & operator=(const OSD_Exception_NONCONTINUABLE_EXCEPTION *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION {
@@ -946,7 +1068,7 @@ class Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED & operator=(const OSD_Exception_ARRAY_BOUNDS_EXCEEDED *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
@@ -984,7 +1106,7 @@ class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGHUP & operator=(const OSD_SIGHUP *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGHUP const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGHUP DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGHUP {
@@ -1008,44 +1130,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_OSD_Exception_FLT_STACK_CHECK;
-class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK();
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK(const Handle_OSD_Exception_FLT_STACK_CHECK &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK(const OSD_Exception_FLT_STACK_CHECK *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK & operator=(const Handle_OSD_Exception_FLT_STACK_CHECK &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK & operator=(const OSD_Exception_FLT_STACK_CHECK *anItem);
-		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_STACK_CHECK const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_Exception_FLT_STACK_CHECK {
-	OSD_Exception_FLT_STACK_CHECK* GetObject() {
-	return (OSD_Exception_FLT_STACK_CHECK*)$self->Access();
-	}
-};
-%feature("shadow") Handle_OSD_Exception_FLT_STACK_CHECK::~Handle_OSD_Exception_FLT_STACK_CHECK %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_OSD_Exception_FLT_STACK_CHECK {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_OSD_SIGSYS;
 class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
 	public:
@@ -1060,7 +1144,7 @@ class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGSYS & operator=(const OSD_SIGSYS *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGSYS const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGSYS DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGSYS {
@@ -1098,7 +1182,7 @@ class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_ILLEGAL_INSTRUCTION & operator=(const OSD_Exception_ILLEGAL_INSTRUCTION *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_ILLEGAL_INSTRUCTION const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_ILLEGAL_INSTRUCTION DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_ILLEGAL_INSTRUCTION {
@@ -1136,7 +1220,7 @@ class Handle_OSD_SIGINT : public Handle_OSD_Signal {
 		%feature("autodoc", "1");
 		Handle_OSD_SIGINT & operator=(const OSD_SIGINT *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGINT const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_SIGINT DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_SIGINT {
@@ -1174,7 +1258,7 @@ class Handle_OSD_Exception_FLT_UNDERFLOW : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_UNDERFLOW & operator=(const OSD_Exception_FLT_UNDERFLOW *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_UNDERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_UNDERFLOW DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_UNDERFLOW {
@@ -1212,7 +1296,7 @@ class Handle_OSD_Exception_CTRL_BREAK : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_CTRL_BREAK & operator=(const OSD_Exception_CTRL_BREAK *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_CTRL_BREAK const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_CTRL_BREAK DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_CTRL_BREAK {
@@ -1250,7 +1334,7 @@ class Handle_OSD_Exception_FLT_INEXACT_RESULT : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_INEXACT_RESULT & operator=(const OSD_Exception_FLT_INEXACT_RESULT *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_INEXACT_RESULT const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_INEXACT_RESULT DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_INEXACT_RESULT {
@@ -1288,7 +1372,7 @@ class Handle_OSD_Exception_FLT_DENORMAL_OPERAND : public Handle_OSD_Exception {
 		%feature("autodoc", "1");
 		Handle_OSD_Exception_FLT_DENORMAL_OPERAND & operator=(const OSD_Exception_FLT_DENORMAL_OPERAND *anItem);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_DENORMAL_OPERAND const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_OSD_Exception_FLT_DENORMAL_OPERAND DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_OSD_Exception_FLT_DENORMAL_OPERAND {
@@ -1316,7 +1400,7 @@ def __del__(self):
 class OSD_Chronometer {
 	public:
 		%feature("autodoc", "1");
-		OSD_Chronometer();
+		OSD_Chronometer(const Standard_Boolean ThisThreadOnly=0);
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
@@ -1341,6 +1425,12 @@ class OSD_Chronometer {
 		%feature("autodoc","Show() -> [Standard_Real, Standard_Real]");
 
 		void Show(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","GetProcessCPU() -> [Standard_Real, Standard_Real]");
+
+		static		void GetProcessCPU(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","GetThreadCPU() -> [Standard_Real, Standard_Real]");
+
+		static		void GetThreadCPU(Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
 %feature("shadow") OSD_Chronometer::~OSD_Chronometer %{
@@ -1371,7 +1461,7 @@ class OSD_Exception : public Standard_Failure {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1410,7 +1500,7 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 		%feature("autodoc", "1");
 		OSD_Exception_PRIV_INSTRUCTION(const char * AString);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_PRIV_INSTRUCTION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_PRIV_INSTRUCTION NewInstance(const char * aMessage="");
 
 };
 %extend OSD_Exception_PRIV_INSTRUCTION {
@@ -1451,7 +1541,7 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_UNDERFLOW NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_UNDERFLOW NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1545,7 +1635,7 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_CTRL_BREAK NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_CTRL_BREAK NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1588,7 +1678,7 @@ class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_ILLEGAL_INSTRUCTION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_ILLEGAL_INSTRUCTION NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1631,7 +1721,7 @@ class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_IN_PAGE_ERROR NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_IN_PAGE_ERROR NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1674,7 +1764,7 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_ACCESS_VIOLATION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_ACCESS_VIOLATION NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1717,7 +1807,7 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1748,44 +1838,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor OSD_FileNode;
-class OSD_FileNode {
+%nodefaultctor OSD_SystemFont;
+class OSD_SystemFont : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		void Path(OSD_Path & Name) const;
+		OSD_SystemFont();
 		%feature("autodoc", "1");
-		void SetPath(const OSD_Path &Name);
+		OSD_SystemFont(const Handle_TCollection_HAsciiString &FontName, const OSD_FontAspect Aspect, const Handle_TCollection_HAsciiString &FilePath);
 		%feature("autodoc", "1");
-		Standard_Boolean Exists();
+		OSD_SystemFont(const Handle_TCollection_HAsciiString &XLFD, const Handle_TCollection_HAsciiString &FilePath);
 		%feature("autodoc", "1");
-		void Remove();
+		Handle_TCollection_HAsciiString FontName() const;
 		%feature("autodoc", "1");
-		void Move(const OSD_Path &NewPath);
+		Handle_TCollection_HAsciiString FontPath() const;
 		%feature("autodoc", "1");
-		void Copy(const OSD_Path &ToPath);
+		OSD_FontAspect FontAspect() const;
 		%feature("autodoc", "1");
-		OSD_Protection Protection();
+		Standard_Integer FontHeight() const;
 		%feature("autodoc", "1");
-		void SetProtection(const OSD_Protection &Prot);
+		Standard_Boolean IsValid() const;
 		%feature("autodoc", "1");
-		Quantity_Date AccessMoment();
-		%feature("autodoc", "1");
-		Quantity_Date CreationMoment();
-		%feature("autodoc", "1");
-		Standard_Integer UserId();
-		%feature("autodoc", "1");
-		Standard_Integer GroupId();
-		%feature("autodoc", "1");
-		Standard_Boolean Failed() const;
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void Perror();
-		%feature("autodoc", "1");
-		Standard_Integer Error() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") OSD_FileNode::~OSD_FileNode %{
+%extend OSD_SystemFont {
+	Handle_OSD_SystemFont GetHandle() {
+	return *(Handle_OSD_SystemFont*) &$self;
+	}
+};
+%extend OSD_SystemFont {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") OSD_SystemFont::~OSD_SystemFont %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1794,13 +1880,10 @@ def __del__(self):
 		pass
 %}
 
-%extend OSD_FileNode {
+%extend OSD_SystemFont {
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-%extend OSD_FileNode {
-	OSD_FileNode () {}
 };
 
 
@@ -1816,7 +1899,7 @@ class OSD_OSDError : public Standard_Failure {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_OSDError NewInstance(const char * aMessage);
+		static		Handle_OSD_OSDError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1978,7 +2061,7 @@ class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_INVALID_OPERATION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_INVALID_OPERATION NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2145,7 +2228,7 @@ class OSD_Signal : public Standard_Failure {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Signal NewInstance(const char * aMessage);
+		static		Handle_OSD_Signal NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2201,6 +2284,62 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+
+
+%nodefaultctor OSD_FileNode;
+class OSD_FileNode {
+	public:
+		%feature("autodoc", "1");
+		void Path(OSD_Path & Name) const;
+		%feature("autodoc", "1");
+		void SetPath(const OSD_Path &Name);
+		%feature("autodoc", "1");
+		Standard_Boolean Exists();
+		%feature("autodoc", "1");
+		void Remove();
+		%feature("autodoc", "1");
+		void Move(const OSD_Path &NewPath);
+		%feature("autodoc", "1");
+		void Copy(const OSD_Path &ToPath);
+		%feature("autodoc", "1");
+		OSD_Protection Protection();
+		%feature("autodoc", "1");
+		void SetProtection(const OSD_Protection &Prot);
+		%feature("autodoc", "1");
+		Quantity_Date AccessMoment();
+		%feature("autodoc", "1");
+		Quantity_Date CreationMoment();
+		%feature("autodoc", "1");
+		Standard_Integer UserId();
+		%feature("autodoc", "1");
+		Standard_Integer GroupId();
+		%feature("autodoc", "1");
+		Standard_Boolean Failed() const;
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void Perror();
+		%feature("autodoc", "1");
+		Standard_Integer Error() const;
+
+};
+%feature("shadow") OSD_FileNode::~OSD_FileNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_FileNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend OSD_FileNode {
+	OSD_FileNode () {}
 };
 
 
@@ -2292,7 +2431,7 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_INT_OVERFLOW NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_INT_OVERFLOW NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2335,7 +2474,7 @@ class OSD_SIGHUP : public OSD_Signal {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGHUP NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGHUP NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2371,8 +2510,6 @@ class OSD_Timer : public OSD_Chronometer {
 	public:
 		%feature("autodoc", "1");
 		OSD_Timer();
-		%feature("autodoc", "1");
-		virtual		void Destroy();
 		%feature("autodoc", "1");
 		virtual		void Reset();
 		%feature("autodoc", "1");
@@ -2422,7 +2559,7 @@ class OSD_SIGSYS : public OSD_Signal {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGSYS NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGSYS NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2465,7 +2602,7 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_INEXACT_RESULT NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_INEXACT_RESULT NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2506,8 +2643,6 @@ class OSD {
 		%feature("autodoc", "1");
 		static		Standard_Integer AvailableMemory();
 		%feature("autodoc", "1");
-		static		Standard_Boolean SetLocale(const char * aString1, const char * aString2);
-		%feature("autodoc", "1");
 		static		void SecSleep(const Standard_Integer aDelay);
 		%feature("autodoc", "1");
 		static		void MilliSecSleep(const Standard_Integer aDelay);
@@ -2544,6 +2679,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor OSD_FontMgr;
+class OSD_FontMgr : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		static		Handle_OSD_FontMgr GetInstance();
+		%feature("autodoc", "1");
+		OSD_NListOfSystemFont GetAvalableFonts() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_FontMgr {
+	Handle_OSD_FontMgr GetHandle() {
+	return *(Handle_OSD_FontMgr*) &$self;
+	}
+};
+%extend OSD_FontMgr {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") OSD_FontMgr::~OSD_FontMgr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_FontMgr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor OSD_Exception_INVALID_DISPOSITION;
 class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 	public:
@@ -2556,7 +2728,7 @@ class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_INVALID_DISPOSITION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_INVALID_DISPOSITION NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2599,7 +2771,7 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_STACK_CHECK NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_STACK_CHECK NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2642,7 +2814,7 @@ class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_STACK_OVERFLOW NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_STACK_OVERFLOW NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2720,7 +2892,7 @@ class OSD_SIGQUIT : public OSD_Signal {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGQUIT NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGQUIT NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2763,7 +2935,7 @@ class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_STATUS_NO_MEMORY NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_STATUS_NO_MEMORY NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2849,7 +3021,7 @@ class OSD_SIGILL : public OSD_Signal {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGILL NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGILL NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2905,6 +3077,8 @@ class OSD_Thread {
 		Standard_Boolean Wait() const;
 		%feature("autodoc", "1");
 		Standard_Boolean Wait(Standard_Address & result) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Wait(const Standard_Integer time, Standard_Address & result) const;
 		%feature("autodoc", "1");
 		Standard_ThreadId GetId() const;
 		%feature("autodoc", "1");
@@ -2982,7 +3156,7 @@ class OSD_SIGKILL : public OSD_Signal {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGKILL NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGKILL NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3013,6 +3187,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor OSD_Localizer;
+class OSD_Localizer {
+	public:
+		%feature("autodoc", "1");
+		OSD_Localizer(const Standard_Integer Category, const char * Locale);
+		%feature("autodoc", "1");
+		void Restore();
+		%feature("autodoc", "1");
+		void SetLocale(const Standard_Integer Category, const char * Locale);
+		%feature("autodoc", "1");
+		char * Locale() const;
+		%feature("autodoc", "1");
+		Standard_Integer Category() const;
+
+};
+%feature("shadow") OSD_Localizer::~OSD_Localizer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_Localizer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor OSD_Exception_FLT_DENORMAL_OPERAND;
 class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 	public:
@@ -3025,7 +3230,7 @@ class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_DENORMAL_OPERAND NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_DENORMAL_OPERAND NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3068,7 +3273,7 @@ class OSD_SIGBUS : public OSD_Signal {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGBUS NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGBUS NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3111,7 +3316,7 @@ class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_OVERFLOW NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_FLT_OVERFLOW NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3154,7 +3359,7 @@ class OSD_Exception_NONCONTINUABLE_EXCEPTION : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3242,7 +3447,7 @@ class OSD_SIGINT : public OSD_Signal {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGINT NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGINT NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3285,7 +3490,7 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3432,6 +3637,41 @@ def __del__(self):
 };
 
 
+%nodefaultctor OSD_PerfMeter;
+class OSD_PerfMeter {
+	public:
+		%feature("autodoc", "1");
+		OSD_PerfMeter();
+		%feature("autodoc", "1");
+		OSD_PerfMeter(const char *meter, int unsigned constautoStart=1);
+		%feature("autodoc", "1");
+		void Init(const char *meter);
+		%feature("autodoc", "1");
+		void Start() const;
+		%feature("autodoc", "1");
+		void Stop() const;
+		%feature("autodoc", "1");
+		void Tick() const;
+		%feature("autodoc", "1");
+		void Flush() const;
+
+};
+%feature("shadow") OSD_PerfMeter::~OSD_PerfMeter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_PerfMeter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
 class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 	public:
@@ -3444,7 +3684,7 @@ class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED NewInstance(const char * aMessage);
+		static		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3487,7 +3727,7 @@ class OSD_SIGSEGV : public OSD_Signal {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_SIGSEGV NewInstance(const char * aMessage);
+		static		Handle_OSD_SIGSEGV NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -27,7 +27,6 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Graphic3d_Array1OfBytes.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>
 #include<Graphic3d_Array1OfVertexC.hxx>
@@ -59,6 +58,7 @@ $HeaderURL$
 #include<Graphic3d_CBitFields4.hxx>
 #include<Graphic3d_CBitFields8.hxx>
 #include<Graphic3d_CBounds.hxx>
+#include<Graphic3d_CGraduatedTrihedron.hxx>
 #include<Graphic3d_CGroup.hxx>
 #include<Graphic3d_CInitTexture.hxx>
 #include<Graphic3d_CLight.hxx>
@@ -75,8 +75,8 @@ $HeaderURL$
 #include<Graphic3d_GraphicDevice.hxx>
 #include<Graphic3d_GraphicDriver.hxx>
 #include<Graphic3d_Group.hxx>
+#include<Graphic3d_GroupAspect.hxx>
 #include<Graphic3d_GroupDefinitionError.hxx>
-#include<Graphic3d_HArray1OfBytes.hxx>
 #include<Graphic3d_HSequenceOfGroup.hxx>
 #include<Graphic3d_HSequenceOfStructure.hxx>
 #include<Graphic3d_HSetOfGroup.hxx>
@@ -94,6 +94,7 @@ $HeaderURL$
 #include<Graphic3d_MapOfStructure.hxx>
 #include<Graphic3d_MaterialAspect.hxx>
 #include<Graphic3d_MaterialDefinitionError.hxx>
+#include<Graphic3d_NListOfHAsciiString.hxx>
 #include<Graphic3d_NameOfFont.hxx>
 #include<Graphic3d_NameOfMaterial.hxx>
 #include<Graphic3d_NameOfTexture1D.hxx>
@@ -105,6 +106,7 @@ $HeaderURL$
 #include<Graphic3d_PlotterDefinitionError.hxx>
 #include<Graphic3d_PrimitiveArray.hxx>
 #include<Graphic3d_PriorityDefinitionError.hxx>
+#include<Graphic3d_PtrFrameBuffer.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfAddress.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfGroup.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfStructure.hxx>
@@ -172,7 +174,6 @@ $HeaderURL$
 #include<Handle_Graphic3d_GraphicDriver.hxx>
 #include<Handle_Graphic3d_Group.hxx>
 #include<Handle_Graphic3d_GroupDefinitionError.hxx>
-#include<Handle_Graphic3d_HArray1OfBytes.hxx>
 #include<Handle_Graphic3d_HSequenceOfGroup.hxx>
 #include<Handle_Graphic3d_HSequenceOfStructure.hxx>
 #include<Handle_Graphic3d_HSetOfGroup.hxx>
@@ -218,8 +219,6 @@ $HeaderURL$
 #include<MFT_ListOfFontName.hxx>
 #include<MFT_ListOfFontReference.hxx>
 #include<MFT_SequenceNodeOfListOfFontHandle.hxx>
-#include<MFT_SequenceNodeOfListOfFontName.hxx>
-#include<MFT_SequenceNodeOfListOfFontReference.hxx>
 #include<MFT_TextManager.hxx>
 #include<MFT_TypeOfCommand.hxx>
 #include<MFT_TypeOfValue.hxx>
@@ -255,18 +254,23 @@ $HeaderURL$
 #include<OSD_File.hxx>
 #include<OSD_FileIterator.hxx>
 #include<OSD_FileNode.hxx>
+#include<OSD_FontAspect.hxx>
+#include<OSD_FontMgr.hxx>
 #include<OSD_FromWhere.hxx>
 #include<OSD_Function.hxx>
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
+#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
 #include<OSD_OpenMode.hxx>
 #include<OSD_PThread.hxx>
 #include<OSD_Path.hxx>
+#include<OSD_PerfMeter.hxx>
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
@@ -286,6 +290,7 @@ $HeaderURL$
 #include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
+#include<OSD_SystemFont.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
@@ -304,6 +309,7 @@ $HeaderURL$
 #include<gp_Dir2d.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Elips2d.hxx>
+#include<gp_EulerSequence.hxx>
 #include<gp_GTrsf.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Hypr.hxx>
@@ -317,6 +323,9 @@ $HeaderURL$
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Quaternion.hxx>
+#include<gp_QuaternionNLerp.hxx>
+#include<gp_QuaternionSLerp.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
 #include<gp_Trsf.hxx>
@@ -335,15 +344,15 @@ $HeaderURL$
 #include<Quantity_Color.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Pnt2d.hxx>
-#include<Standard_SStream.hxx>
-#include<TColStd_Array2OfReal.hxx>
 #include<Handle_AlienImage_AlienImage.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
+#include<TColStd_Array2OfReal.hxx>
+#include<Handle_TColStd_HArray1OfByte.hxx>
 #include<TColStd_Array1OfInteger.hxx>
+#include<TColStd_SequenceOfInteger.hxx>
+#include<Handle_Aspect_GraphicDevice.hxx>
 #include<Aspect_Array1OfEdge.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TColStd_Array1OfReal.hxx>
-#include<Handle_Aspect_GraphicDevice.hxx>
 #include<Handle_Aspect_GraphicDriver.hxx>
-#include<TColStd_SequenceOfInteger.hxx>
 %}

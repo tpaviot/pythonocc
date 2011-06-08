@@ -66,7 +66,7 @@ class Handle_BRep_ListNodeOfListOfCurveRepresentation : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfCurveRepresentation & operator=(const BRep_ListNodeOfListOfCurveRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_ListNodeOfListOfCurveRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_ListNodeOfListOfCurveRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_ListNodeOfListOfCurveRepresentation {
@@ -104,7 +104,7 @@ class Handle_BRep_CurveRepresentation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRep_CurveRepresentation & operator=(const BRep_CurveRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_CurveRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_CurveRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_CurveRepresentation {
@@ -142,7 +142,7 @@ class Handle_BRep_GCurve : public Handle_BRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_GCurve & operator=(const BRep_GCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_GCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_GCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_GCurve {
@@ -180,7 +180,7 @@ class Handle_BRep_CurveOnSurface : public Handle_BRep_GCurve {
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOnSurface & operator=(const BRep_CurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_CurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_CurveOnSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_CurveOnSurface {
@@ -218,7 +218,7 @@ class Handle_BRep_Curve3D : public Handle_BRep_GCurve {
 		%feature("autodoc", "1");
 		Handle_BRep_Curve3D & operator=(const BRep_Curve3D *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_Curve3D const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_Curve3D DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_Curve3D {
@@ -256,7 +256,7 @@ class Handle_BRep_PointRepresentation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRep_PointRepresentation & operator=(const BRep_PointRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_PointRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PointRepresentation {
@@ -294,7 +294,7 @@ class Handle_BRep_Polygon3D : public Handle_BRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_Polygon3D & operator=(const BRep_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_Polygon3D const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_Polygon3D DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_Polygon3D {
@@ -332,7 +332,7 @@ class Handle_BRep_TVertex : public Handle_TopoDS_TVertex {
 		%feature("autodoc", "1");
 		Handle_BRep_TVertex & operator=(const BRep_TVertex *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_TVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_TVertex DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_TVertex {
@@ -370,7 +370,7 @@ class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnSurface & operator=(const BRep_PolygonOnSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_PolygonOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PolygonOnSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PolygonOnSurface {
@@ -408,7 +408,7 @@ class Handle_BRep_PolygonOnClosedSurface : public Handle_BRep_PolygonOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnClosedSurface & operator=(const BRep_PolygonOnClosedSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_PolygonOnClosedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PolygonOnClosedSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PolygonOnClosedSurface {
@@ -446,7 +446,7 @@ class Handle_BRep_PointsOnSurface : public Handle_BRep_PointRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_PointsOnSurface & operator=(const BRep_PointsOnSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_PointsOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointsOnSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PointsOnSurface {
@@ -484,7 +484,7 @@ class Handle_BRep_PointOnSurface : public Handle_BRep_PointsOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnSurface & operator=(const BRep_PointOnSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_PointOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointOnSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PointOnSurface {
@@ -522,7 +522,7 @@ class Handle_BRep_PointOnCurve : public Handle_BRep_PointRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnCurve & operator=(const BRep_PointOnCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_PointOnCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointOnCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PointOnCurve {
@@ -560,7 +560,7 @@ class Handle_BRep_TEdge : public Handle_TopoDS_TEdge {
 		%feature("autodoc", "1");
 		Handle_BRep_TEdge & operator=(const BRep_TEdge *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_TEdge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_TEdge DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_TEdge {
@@ -598,7 +598,7 @@ class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfPointRepresentation & operator=(const BRep_ListNodeOfListOfPointRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_ListNodeOfListOfPointRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_ListNodeOfListOfPointRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_ListNodeOfListOfPointRepresentation {
@@ -636,7 +636,7 @@ class Handle_BRep_CurveOn2Surfaces : public Handle_BRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOn2Surfaces & operator=(const BRep_CurveOn2Surfaces *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_CurveOn2Surfaces const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_CurveOn2Surfaces DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_CurveOn2Surfaces {
@@ -674,7 +674,7 @@ class Handle_BRep_PolygonOnTriangulation : public Handle_BRep_CurveRepresentatio
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnTriangulation & operator=(const BRep_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_PolygonOnTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PolygonOnTriangulation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PolygonOnTriangulation {
@@ -712,7 +712,7 @@ class Handle_BRep_PolygonOnClosedTriangulation : public Handle_BRep_PolygonOnTri
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnClosedTriangulation & operator=(const BRep_PolygonOnClosedTriangulation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_PolygonOnClosedTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PolygonOnClosedTriangulation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PolygonOnClosedTriangulation {
@@ -750,7 +750,7 @@ class Handle_BRep_CurveOnClosedSurface : public Handle_BRep_CurveOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOnClosedSurface & operator=(const BRep_CurveOnClosedSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_CurveOnClosedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_CurveOnClosedSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_CurveOnClosedSurface {
@@ -788,7 +788,7 @@ class Handle_BRep_TFace : public Handle_TopoDS_TFace {
 		%feature("autodoc", "1");
 		Handle_BRep_TFace & operator=(const BRep_TFace *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_TFace const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_TFace DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_TFace {
@@ -826,7 +826,7 @@ class Handle_BRep_PointOnCurveOnSurface : public Handle_BRep_PointsOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnCurveOnSurface & operator=(const BRep_PointOnCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_PointOnCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointOnCurveOnSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRep_PointOnCurveOnSurface {
@@ -1125,10 +1125,6 @@ class BRep_CurveOnSurface : public BRep_GCurve {
 		void SetUVPoints(const gp_Pnt2d P1, const gp_Pnt2d P2);
 		%feature("autodoc", "1");
 		void UVPoints(gp_Pnt2d & P1, gp_Pnt2d & P2) const;
-		%feature("autodoc", "1");
-		const Bnd_Box2d & Box() const;
-		%feature("autodoc", "1");
-		Bnd_Box2d & ChangeBox();
 
 };
 %extend BRep_CurveOnSurface {
@@ -1271,67 +1267,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRep_ListOfPointRepresentation;
-class BRep_ListOfPointRepresentation {
-	public:
-		%feature("autodoc", "1");
-		BRep_ListOfPointRepresentation();
-		%feature("autodoc", "1");
-		void Assign(const BRep_ListOfPointRepresentation &Other);
-		%feature("autodoc", "1");
-		void operator=(const BRep_ListOfPointRepresentation &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_BRep_PointRepresentation &I);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & theIt);
-		%feature("autodoc", "1");
-		void Prepend(BRep_ListOfPointRepresentation & Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_BRep_PointRepresentation &I);
-		%feature("autodoc", "1");
-		void Append(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & theIt);
-		%feature("autodoc", "1");
-		void Append(BRep_ListOfPointRepresentation & Other);
-		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation & First() const;
-		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(BRep_ListIteratorOfListOfPointRepresentation & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & It);
-		%feature("autodoc", "1");
-		void InsertBefore(BRep_ListOfPointRepresentation & Other, BRep_ListIteratorOfListOfPointRepresentation & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & It);
-		%feature("autodoc", "1");
-		void InsertAfter(BRep_ListOfPointRepresentation & Other, BRep_ListIteratorOfListOfPointRepresentation & It);
-
-};
-%feature("shadow") BRep_ListOfPointRepresentation::~BRep_ListOfPointRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRep_ListOfPointRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRep_PointOnCurve;
 class BRep_PointOnCurve : public BRep_PointRepresentation {
 	public:
@@ -1459,14 +1394,6 @@ class BRep_Tool {
 		static		void SetUVPoints(const TopoDS_Edge E, const Handle_Geom_Surface &S, const TopLoc_Location &L, const gp_Pnt2d PFirst, const gp_Pnt2d PLast);
 		%feature("autodoc", "1");
 		static		void SetUVPoints(const TopoDS_Edge E, const TopoDS_Face F, const gp_Pnt2d PFirst, const gp_Pnt2d PLast);
-		%feature("autodoc", "1");
-		static		const Bnd_Box2d & UVBox(const TopoDS_Edge E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		static		const Bnd_Box2d & UVBox(const TopoDS_Edge E, const TopoDS_Face F);
-		%feature("autodoc", "1");
-		static		Bnd_Box2d & ChangeUVBox(const TopoDS_Edge E, const Handle_Geom_Surface &S, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		static		Bnd_Box2d & ChangeUVBox(const TopoDS_Edge E, const TopoDS_Face F);
 		%feature("autodoc", "1");
 		static		Standard_Boolean HasContinuity(const TopoDS_Edge E, const TopoDS_Face F1, const TopoDS_Face F2);
 		%feature("autodoc", "1");
@@ -1656,6 +1583,67 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRep_ListOfPointRepresentation;
+class BRep_ListOfPointRepresentation {
+	public:
+		%feature("autodoc", "1");
+		BRep_ListOfPointRepresentation();
+		%feature("autodoc", "1");
+		void Assign(const BRep_ListOfPointRepresentation &Other);
+		%feature("autodoc", "1");
+		void operator=(const BRep_ListOfPointRepresentation &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_BRep_PointRepresentation &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & theIt);
+		%feature("autodoc", "1");
+		void Prepend(BRep_ListOfPointRepresentation & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_BRep_PointRepresentation &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & theIt);
+		%feature("autodoc", "1");
+		void Append(BRep_ListOfPointRepresentation & Other);
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation & First() const;
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(BRep_ListIteratorOfListOfPointRepresentation & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & It);
+		%feature("autodoc", "1");
+		void InsertBefore(BRep_ListOfPointRepresentation & Other, BRep_ListIteratorOfListOfPointRepresentation & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & It);
+		%feature("autodoc", "1");
+		void InsertAfter(BRep_ListOfPointRepresentation & Other, BRep_ListIteratorOfListOfPointRepresentation & It);
+
+};
+%feature("shadow") BRep_ListOfPointRepresentation::~BRep_ListOfPointRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRep_ListOfPointRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRep_CurveOn2Surfaces;
 class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
 	public:
@@ -1710,7 +1698,7 @@ def __del__(self):
 
 
 %nodefaultctor BRep_Builder;
-class BRep_Builder : public TopoDS_Builder3D {
+class BRep_Builder : public TopoDS_Builder {
 	public:
 		%feature("autodoc", "1");
 		BRep_Builder();
@@ -1739,9 +1727,9 @@ class BRep_Builder : public TopoDS_Builder3D {
 		%feature("autodoc", "1");
 		void MakeEdge(TopoDS_Edge & E, const Handle_Poly_Polygon3D &P) const;
 		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & E, const Handle_Poly_PolygonOnTriangulation &N, const Handle_Poly_Triangulation &T) const;
+		void MakeEdge(TopoDS_Edge & E, const Handle_Poly_PolygonOnTriangulation &P, const Handle_Poly_Triangulation &T) const;
 		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & E, const Handle_Poly_PolygonOnTriangulation &N, const Handle_Poly_Triangulation &T, const TopLoc_Location &L) const;
+		void MakeEdge(TopoDS_Edge & E, const Handle_Poly_PolygonOnTriangulation &P, const Handle_Poly_Triangulation &T, const TopLoc_Location &L) const;
 		%feature("autodoc", "1");
 		void UpdateEdge(const TopoDS_Edge E, const Handle_Geom_Curve &C, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
@@ -1763,13 +1751,13 @@ class BRep_Builder : public TopoDS_Builder3D {
 		%feature("autodoc", "1");
 		void UpdateEdge(const TopoDS_Edge E, const Handle_Poly_Polygon3D &P, const TopLoc_Location &L) const;
 		%feature("autodoc", "1");
-		void UpdateEdge(const TopoDS_Edge E, const Handle_Poly_PolygonOnTriangulation &N, const Handle_Poly_Triangulation &T) const;
+		void UpdateEdge(const TopoDS_Edge E, const Handle_Poly_PolygonOnTriangulation &P, const Handle_Poly_Triangulation &T) const;
 		%feature("autodoc", "1");
 		void UpdateEdge(const TopoDS_Edge E, const Handle_Poly_PolygonOnTriangulation &N, const Handle_Poly_Triangulation &T, const TopLoc_Location &L) const;
 		%feature("autodoc", "1");
-		void UpdateEdge(const TopoDS_Edge E, const Handle_Poly_PolygonOnTriangulation &N1, const Handle_Poly_PolygonOnTriangulation &N2, const Handle_Poly_Triangulation &T, const TopLoc_Location &L) const;
+		void UpdateEdge(const TopoDS_Edge E, const Handle_Poly_PolygonOnTriangulation &P1, const Handle_Poly_PolygonOnTriangulation &P2, const Handle_Poly_Triangulation &T) const;
 		%feature("autodoc", "1");
-		void UpdateEdge(const TopoDS_Edge E, const Handle_Poly_PolygonOnTriangulation &N1, const Handle_Poly_PolygonOnTriangulation &N2, const Handle_Poly_Triangulation &T) const;
+		void UpdateEdge(const TopoDS_Edge E, const Handle_Poly_PolygonOnTriangulation &N1, const Handle_Poly_PolygonOnTriangulation &N2, const Handle_Poly_Triangulation &T, const TopLoc_Location &L) const;
 		%feature("autodoc", "1");
 		void UpdateEdge(const TopoDS_Edge E, const Handle_Poly_Polygon2D &P, const TopoDS_Face S) const;
 		%feature("autodoc", "1");
@@ -1807,7 +1795,7 @@ class BRep_Builder : public TopoDS_Builder3D {
 		%feature("autodoc", "1");
 		void UpdateVertex(const TopoDS_Vertex V, const Standard_Real P, const TopoDS_Edge E, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
-		void UpdateVertex(const TopoDS_Vertex V, const Standard_Real P, const TopoDS_Edge E, const TopoDS_Face F, const Standard_Real Tol) const;
+		void UpdateVertex(const TopoDS_Vertex V, const Standard_Real Par, const TopoDS_Edge E, const TopoDS_Face F, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
 		void UpdateVertex(const TopoDS_Vertex V, const Standard_Real P, const TopoDS_Edge E, const Handle_Geom_Surface &S, const TopLoc_Location &L, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
@@ -2011,10 +1999,6 @@ class BRep_CurveOnClosedSurface : public BRep_CurveOnSurface {
 		void SetUVPoints2(const gp_Pnt2d P1, const gp_Pnt2d P2);
 		%feature("autodoc", "1");
 		void UVPoints2(gp_Pnt2d & P1, gp_Pnt2d & P2) const;
-		%feature("autodoc", "1");
-		const Bnd_Box2d & Box2() const;
-		%feature("autodoc", "1");
-		Bnd_Box2d & ChangeBox2();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCurveOnClosedSurface() const;
 		%feature("autodoc", "1");

@@ -30,9 +30,7 @@ $HeaderURL$
 #include<BinMDF.hxx>
 #include<BinMDF_ADriver.hxx>
 #include<BinMDF_ADriverTable.hxx>
-#include<BinMDF_DataMapIteratorOfStringIdMap.hxx>
 #include<BinMDF_DataMapIteratorOfTypeADriverMap.hxx>
-#include<BinMDF_DataMapNodeOfStringIdMap.hxx>
 #include<BinMDF_DataMapNodeOfTypeADriverMap.hxx>
 #include<BinMDF_DoubleMapIteratorOfTypeIdMap.hxx>
 #include<BinMDF_DoubleMapNodeOfTypeIdMap.hxx>
@@ -43,7 +41,6 @@ $HeaderURL$
 #include<BinMDF_TypeIdMap.hxx>
 #include<Handle_BinMDF_ADriver.hxx>
 #include<Handle_BinMDF_ADriverTable.hxx>
-#include<Handle_BinMDF_DataMapNodeOfStringIdMap.hxx>
 #include<Handle_BinMDF_DataMapNodeOfTypeADriverMap.hxx>
 #include<Handle_BinMDF_DoubleMapNodeOfTypeIdMap.hxx>
 #include<Handle_BinMDF_ReferenceDriver.hxx>
@@ -57,12 +54,10 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<BinObjMgt_Persistent.hxx>
-#include<BinObjMgt_RRelocationTable.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<BinMDF.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
-#include<TCollection_AsciiString.hxx>
 #include<TColStd_IndexedMapOfTransient.hxx>
 #include<TColStd_SequenceOfAsciiString.hxx>
 %}

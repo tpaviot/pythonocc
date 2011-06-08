@@ -66,7 +66,7 @@ class Handle_Geom2d_Geometry : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Geometry & operator=(const Geom2d_Geometry *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Geometry const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Geometry DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Geometry {
@@ -104,7 +104,7 @@ class Handle_Geom2d_Curve : public Handle_Geom2d_Geometry {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve & operator=(const Geom2d_Curve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Curve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Curve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Curve {
@@ -128,44 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Geom2d_Conic;
-class Handle_Geom2d_Conic : public Handle_Geom2d_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom2d_Conic();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Conic(const Handle_Geom2d_Conic &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Conic(const Geom2d_Conic *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Conic & operator=(const Handle_Geom2d_Conic &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Conic & operator=(const Geom2d_Conic *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Geom2d_Conic const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom2d_Conic {
-	Geom2d_Conic* GetObject() {
-	return (Geom2d_Conic*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Geom2d_Conic::~Handle_Geom2d_Conic %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Geom2d_Conic {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Geom2d_OffsetCurve;
 class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
 	public:
@@ -180,7 +142,7 @@ class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
 		%feature("autodoc", "1");
 		Handle_Geom2d_OffsetCurve & operator=(const Geom2d_OffsetCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_OffsetCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_OffsetCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_OffsetCurve {
@@ -204,6 +166,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Geom2d_Conic;
+class Handle_Geom2d_Conic : public Handle_Geom2d_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom2d_Conic();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Conic(const Handle_Geom2d_Conic &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Conic(const Geom2d_Conic *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Conic & operator=(const Handle_Geom2d_Conic &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Conic & operator=(const Geom2d_Conic *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Geom2d_Conic DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom2d_Conic {
+	Geom2d_Conic* GetObject() {
+	return (Geom2d_Conic*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Geom2d_Conic::~Handle_Geom2d_Conic %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Geom2d_Conic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Geom2d_Circle;
 class Handle_Geom2d_Circle : public Handle_Geom2d_Conic {
 	public:
@@ -218,7 +218,7 @@ class Handle_Geom2d_Circle : public Handle_Geom2d_Conic {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Circle & operator=(const Geom2d_Circle *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Circle const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Circle DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Circle {
@@ -256,7 +256,7 @@ class Handle_Geom2d_Vector : public Handle_Geom2d_Geometry {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Vector & operator=(const Geom2d_Vector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Vector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Vector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Vector {
@@ -294,7 +294,7 @@ class Handle_Geom2d_BoundedCurve : public Handle_Geom2d_Curve {
 		%feature("autodoc", "1");
 		Handle_Geom2d_BoundedCurve & operator=(const Geom2d_BoundedCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_BoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_BoundedCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_BoundedCurve {
@@ -332,7 +332,7 @@ class Handle_Geom2d_Parabola : public Handle_Geom2d_Conic {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Parabola & operator=(const Geom2d_Parabola *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Parabola const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Parabola DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Parabola {
@@ -370,7 +370,7 @@ class Handle_Geom2d_Transformation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Transformation & operator=(const Geom2d_Transformation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Transformation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Transformation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Transformation {
@@ -408,7 +408,7 @@ class Handle_Geom2d_UndefinedDerivative : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Geom2d_UndefinedDerivative & operator=(const Geom2d_UndefinedDerivative *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_UndefinedDerivative const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_UndefinedDerivative DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_UndefinedDerivative {
@@ -446,7 +446,7 @@ class Handle_Geom2d_Point : public Handle_Geom2d_Geometry {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Point & operator=(const Geom2d_Point *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Point const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Point DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Point {
@@ -484,7 +484,7 @@ class Handle_Geom2d_Hyperbola : public Handle_Geom2d_Conic {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Hyperbola & operator=(const Geom2d_Hyperbola *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Hyperbola const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Hyperbola DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Hyperbola {
@@ -522,7 +522,7 @@ class Handle_Geom2d_Ellipse : public Handle_Geom2d_Conic {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Ellipse & operator=(const Geom2d_Ellipse *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Ellipse const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Ellipse DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Ellipse {
@@ -560,7 +560,7 @@ class Handle_Geom2d_BezierCurve : public Handle_Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_Geom2d_BezierCurve & operator=(const Geom2d_BezierCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_BezierCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_BezierCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_BezierCurve {
@@ -598,7 +598,7 @@ class Handle_Geom2d_Line : public Handle_Geom2d_Curve {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Line & operator=(const Geom2d_Line *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Line const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Line DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Line {
@@ -636,7 +636,7 @@ class Handle_Geom2d_AxisPlacement : public Handle_Geom2d_Geometry {
 		%feature("autodoc", "1");
 		Handle_Geom2d_AxisPlacement & operator=(const Geom2d_AxisPlacement *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_AxisPlacement const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_AxisPlacement DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_AxisPlacement {
@@ -674,7 +674,7 @@ class Handle_Geom2d_VectorWithMagnitude : public Handle_Geom2d_Vector {
 		%feature("autodoc", "1");
 		Handle_Geom2d_VectorWithMagnitude & operator=(const Geom2d_VectorWithMagnitude *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_VectorWithMagnitude const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_VectorWithMagnitude DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_VectorWithMagnitude {
@@ -712,7 +712,7 @@ class Handle_Geom2d_UndefinedValue : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Geom2d_UndefinedValue & operator=(const Geom2d_UndefinedValue *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_UndefinedValue const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_UndefinedValue DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_UndefinedValue {
@@ -750,7 +750,7 @@ class Handle_Geom2d_BSplineCurve : public Handle_Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve & operator=(const Geom2d_BSplineCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_BSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_BSplineCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_BSplineCurve {
@@ -788,7 +788,7 @@ class Handle_Geom2d_Direction : public Handle_Geom2d_Vector {
 		%feature("autodoc", "1");
 		Handle_Geom2d_Direction & operator=(const Geom2d_Direction *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Direction const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_Direction DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_Direction {
@@ -826,7 +826,7 @@ class Handle_Geom2d_CartesianPoint : public Handle_Geom2d_Point {
 		%feature("autodoc", "1");
 		Handle_Geom2d_CartesianPoint & operator=(const Geom2d_CartesianPoint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_CartesianPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_CartesianPoint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_CartesianPoint {
@@ -864,7 +864,7 @@ class Handle_Geom2d_TrimmedCurve : public Handle_Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_Geom2d_TrimmedCurve & operator=(const Geom2d_TrimmedCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_TrimmedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2d_TrimmedCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2d_TrimmedCurve {
@@ -1016,7 +1016,7 @@ class Geom2d_UndefinedValue : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_UndefinedValue NewInstance(const char * aMessage);
+		static		Handle_Geom2d_UndefinedValue NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1371,7 +1371,7 @@ class Geom2d_UndefinedDerivative : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_UndefinedDerivative NewInstance(const char * aMessage);
+		static		Handle_Geom2d_UndefinedDerivative NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

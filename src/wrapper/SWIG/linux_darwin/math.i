@@ -74,7 +74,7 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 		%feature("autodoc", "1");
 		Handle_math_NotSquare & operator=(const math_NotSquare *anItem);
 		%feature("autodoc", "1");
-		static		Handle_math_NotSquare const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_math_NotSquare DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_math_NotSquare {
@@ -112,7 +112,7 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_math_SingularMatrix & operator=(const math_SingularMatrix *anItem);
 		%feature("autodoc", "1");
-		static		Handle_math_SingularMatrix const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_math_SingularMatrix DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_math_SingularMatrix {
@@ -448,32 +448,6 @@ def __del__(self):
 %}
 
 %extend math_IntegerRandom {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_Function;
-class math_Function {
-	public:
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-
-};
-%feature("shadow") math_Function::~math_Function %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_Function {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1246,6 +1220,32 @@ def __del__(self):
 };
 
 
+%nodefaultctor math_Function;
+class math_Function {
+	public:
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+
+};
+%feature("shadow") math_Function::~math_Function %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor math_GaussSetIntegration;
 class math_GaussSetIntegration {
 	public:
@@ -1436,7 +1436,7 @@ class math_NotSquare : public Standard_DimensionError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_math_NotSquare NewInstance(const char * aMessage);
+		static		Handle_math_NotSquare NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1535,7 +1535,7 @@ class math_SingularMatrix : public Standard_Failure {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_math_SingularMatrix NewInstance(const char * aMessage);
+		static		Handle_math_SingularMatrix NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

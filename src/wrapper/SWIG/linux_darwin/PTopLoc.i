@@ -66,7 +66,7 @@ class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D & operator=(const PTopLoc_Datum3D *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PTopLoc_Datum3D const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopLoc_Datum3D DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopLoc_Datum3D {
@@ -104,7 +104,7 @@ class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PTopLoc_ItemLocation & operator=(const PTopLoc_ItemLocation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PTopLoc_ItemLocation const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PTopLoc_ItemLocation DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PTopLoc_ItemLocation {

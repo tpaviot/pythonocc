@@ -53,7 +53,6 @@ $HeaderURL$
 #include<TColgp_Array2OfPnt.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array2OfReal.hxx>
-#include<Standard_SStream.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Cone.hxx>
 #include<gp_Sphere.hxx>

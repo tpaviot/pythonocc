@@ -124,7 +124,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -388,13 +387,13 @@ $HeaderURL$
 #include<Handle_StepShape_SolidReplica.hxx>
 #include<Handle_StepShape_FaceSurface.hxx>
 #include<Handle_StepShape_OrientedFace.hxx>
-#include<Handle_StepShape_DimensionalCharacteristicRepresentation.hxx>
 #include<Handle_StepShape_OrientedEdge.hxx>
 #include<Handle_StepShape_MeasureQualification.hxx>
 #include<Handle_StepShape_Subedge.hxx>
 #include<Handle_StepShape_PolyLoop.hxx>
 #include<Handle_StepShape_ManifoldSolidBrep.hxx>
 #include<Handle_StepShape_RevolvedFaceSolid.hxx>
+#include<Handle_StepShape_DimensionalCharacteristicRepresentation.hxx>
 #include<Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation.hxx>
 #include<Handle_StepShape_EdgeBasedWireframeShapeRepresentation.hxx>
 #include<Handle_StepShape_OrientedClosedShell.hxx>
@@ -421,7 +420,6 @@ $HeaderURL$
 #include<Handle_StepShape_ClosedShell.hxx>
 #include<Handle_StepShape_ShapeRepresentation.hxx>
 #include<Handle_StepShape_ManifoldSurfaceShapeRepresentation.hxx>
-#include<Handle_StepShape_PlusMinusTolerance.hxx>
 #include<Handle_StepShape_OrientedOpenShell.hxx>
 #include<Handle_StepShape_ConnectedEdgeSet.hxx>
 #include<Handle_StepShape_HalfSpaceSolid.hxx>
@@ -456,6 +454,7 @@ $HeaderURL$
 #include<Handle_StepShape_DimensionalLocationWithPath.hxx>
 #include<Handle_StepShape_EdgeCurve.hxx>
 #include<Handle_StepShape_RightCircularCylinder.hxx>
+#include<Handle_StepShape_SeamEdge.hxx>
 #include<Handle_StepShape_RightCircularCone.hxx>
 #include<Handle_StepShape_RevolvedAreaSolid.hxx>
 #include<Handle_StepShape_BoxDomain.hxx>
@@ -464,7 +463,7 @@ $HeaderURL$
 #include<Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation.hxx>
 #include<Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem.hxx>
 #include<Handle_StepShape_AdvancedFace.hxx>
-#include<Handle_StepShape_SeamEdge.hxx>
+#include<Handle_StepShape_PlusMinusTolerance.hxx>
 #include<Handle_StepShape_BrepWithVoids.hxx>
 #include<Handle_StepShape_Loop.hxx>
 #include<Handle_StepShape_ShapeRepresentationWithParameters.hxx>

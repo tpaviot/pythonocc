@@ -66,7 +66,7 @@ class Handle_BRepAdaptor_HCurve : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve & operator=(const BRepAdaptor_HCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepAdaptor_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAdaptor_HCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAdaptor_HCurve {
@@ -104,7 +104,7 @@ class Handle_BRepAdaptor_HCompCurve : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCompCurve & operator=(const BRepAdaptor_HCompCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepAdaptor_HCompCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAdaptor_HCompCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAdaptor_HCompCurve {
@@ -142,7 +142,7 @@ class Handle_BRepAdaptor_HSurface : public Handle_Adaptor3d_HSurface {
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HSurface & operator=(const BRepAdaptor_HSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepAdaptor_HSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAdaptor_HSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAdaptor_HSurface {
@@ -180,7 +180,7 @@ class Handle_BRepAdaptor_HCurve2d : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HCurve2d & operator=(const BRepAdaptor_HCurve2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepAdaptor_HCurve2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAdaptor_HCurve2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAdaptor_HCurve2d {
@@ -218,7 +218,7 @@ class Handle_BRepAdaptor_HArray1OfCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepAdaptor_HArray1OfCurve & operator=(const BRepAdaptor_HArray1OfCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepAdaptor_HArray1OfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAdaptor_HArray1OfCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAdaptor_HArray1OfCurve {

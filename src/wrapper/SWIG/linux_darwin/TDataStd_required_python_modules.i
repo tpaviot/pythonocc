@@ -31,7 +31,4 @@ import Standard
 import TCollection
 import TDF
 import TColStd
-import TNaming
-import gp
-import TopoDS
 };

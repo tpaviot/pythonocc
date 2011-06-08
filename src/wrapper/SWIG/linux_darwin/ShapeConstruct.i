@@ -66,7 +66,7 @@ class Handle_ShapeConstruct_ProjectCurveOnSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeConstruct_ProjectCurveOnSurface & operator=(const ShapeConstruct_ProjectCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeConstruct_ProjectCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeConstruct_ProjectCurveOnSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeConstruct_ProjectCurveOnSurface {

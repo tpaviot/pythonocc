@@ -67,7 +67,7 @@ class Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds & operator=(const ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
@@ -105,7 +105,7 @@ class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_FreeBoundData & operator=(const ShapeAnalysis_FreeBoundData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_FreeBoundData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_FreeBoundData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_FreeBoundData {
@@ -143,7 +143,7 @@ class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_HSequenceOfFreeBounds & operator=(const ShapeAnalysis_HSequenceOfFreeBounds *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_HSequenceOfFreeBounds const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_HSequenceOfFreeBounds DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_HSequenceOfFreeBounds {
@@ -181,7 +181,7 @@ class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParameters & operator=(const ShapeAnalysis_TransferParameters *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_TransferParameters const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_TransferParameters DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_TransferParameters {
@@ -219,7 +219,7 @@ class Handle_ShapeAnalysis_TransferParametersProj : public Handle_ShapeAnalysis_
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParametersProj & operator=(const ShapeAnalysis_TransferParametersProj *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_TransferParametersProj const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_TransferParametersProj DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_TransferParametersProj {
@@ -257,7 +257,7 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public Handle
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal & operator=(const ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
@@ -295,7 +295,7 @@ class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_Wire & operator=(const ShapeAnalysis_Wire *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_Wire const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_Wire DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_Wire {
@@ -319,44 +319,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal;
-class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal(const Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal(const ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal & operator=(const Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal & operator=(const ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
-	ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal* GetObject() {
-	return (ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal::~Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ShapeAnalysis_Surface;
 class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
 	public:
@@ -371,7 +333,7 @@ class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_Surface & operator=(const ShapeAnalysis_Surface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_Surface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeAnalysis_Surface {
@@ -389,55 +351,6 @@ def __del__(self):
 %}
 
 %extend Handle_ShapeAnalysis_Surface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal;
-class ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape K, const Standard_Real &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetValue() {
-				return (Standard_Real) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Real value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
-	Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal GetHandle() {
-	return *(Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal*) &$self;
-	}
-};
-%extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal::~ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -769,7 +682,7 @@ class ShapeAnalysis_FreeBounds {
 		%feature("autodoc", "1");
 		ShapeAnalysis_FreeBounds(const TopoDS_Shape shape, const Standard_Real toler, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=1);
 		%feature("autodoc", "1");
-		ShapeAnalysis_FreeBounds(const TopoDS_Shape shape, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=1);
+		ShapeAnalysis_FreeBounds(const TopoDS_Shape shape, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=1, const Standard_Boolean checkinternaledges=0);
 		%feature("autodoc", "1");
 		const TopoDS_Compound  GetClosedWires() const;
 		%feature("autodoc", "1");
@@ -984,46 +897,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeAnalysis_DataMapOfShapeReal;
-class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
+%nodefaultctor ShapeAnalysis_SequenceOfFreeBounds;
+class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		ShapeAnalysis_DataMapOfShapeReal(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		ShapeAnalysis_DataMapOfShapeReal & Assign(const ShapeAnalysis_DataMapOfShapeReal &Other);
-		%feature("autodoc", "1");
-		ShapeAnalysis_DataMapOfShapeReal & operator=(const ShapeAnalysis_DataMapOfShapeReal &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		ShapeAnalysis_SequenceOfFreeBounds();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Real &I);
+		const ShapeAnalysis_SequenceOfFreeBounds & Assign(const ShapeAnalysis_SequenceOfFreeBounds &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		const ShapeAnalysis_SequenceOfFreeBounds & operator=(const ShapeAnalysis_SequenceOfFreeBounds &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
+		void Append(const Handle_ShapeAnalysis_FreeBoundData &T);
 		%feature("autodoc", "1");
-		const Standard_Real & Find(const TopoDS_Shape K) const;
+		void Append(ShapeAnalysis_SequenceOfFreeBounds & S);
 		%feature("autodoc", "1");
-		const Standard_Real & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetChangeFind(const TopoDS_Shape K) {
-				return (Standard_Real) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Real value ,const TopoDS_Shape K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
+		void Prepend(const Handle_ShapeAnalysis_FreeBoundData &T);
 		%feature("autodoc", "1");
-		Standard_Real & operator()(const TopoDS_Shape K);
+		void Prepend(ShapeAnalysis_SequenceOfFreeBounds & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
+		%feature("autodoc", "1");
+		const Handle_ShapeAnalysis_FreeBoundData & First() const;
+		%feature("autodoc", "1");
+		const Handle_ShapeAnalysis_FreeBoundData & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
+		%feature("autodoc", "1");
+		const Handle_ShapeAnalysis_FreeBoundData & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_ShapeAnalysis_FreeBoundData & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &I);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%feature("shadow") ShapeAnalysis_DataMapOfShapeReal::~ShapeAnalysis_DataMapOfShapeReal %{
+%feature("shadow") ShapeAnalysis_SequenceOfFreeBounds::~ShapeAnalysis_SequenceOfFreeBounds %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1032,7 +955,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ShapeAnalysis_DataMapOfShapeReal {
+%extend ShapeAnalysis_SequenceOfFreeBounds {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1121,37 +1044,6 @@ def __del__(self):
 %}
 
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal;
-class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
-		ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal(const ShapeAnalysis_DataMapOfShapeReal &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const ShapeAnalysis_DataMapOfShapeReal &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const Standard_Real & Value() const;
-
-};
-%feature("shadow") ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal::~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1745,71 +1637,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeAnalysis_SequenceOfFreeBounds;
-class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		ShapeAnalysis_SequenceOfFreeBounds();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const ShapeAnalysis_SequenceOfFreeBounds & Assign(const ShapeAnalysis_SequenceOfFreeBounds &Other);
-		%feature("autodoc", "1");
-		const ShapeAnalysis_SequenceOfFreeBounds & operator=(const ShapeAnalysis_SequenceOfFreeBounds &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_ShapeAnalysis_FreeBoundData &T);
-		%feature("autodoc", "1");
-		void Append(ShapeAnalysis_SequenceOfFreeBounds & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ShapeAnalysis_FreeBoundData &T);
-		%feature("autodoc", "1");
-		void Prepend(ShapeAnalysis_SequenceOfFreeBounds & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
-		%feature("autodoc", "1");
-		const Handle_ShapeAnalysis_FreeBoundData & First() const;
-		%feature("autodoc", "1");
-		const Handle_ShapeAnalysis_FreeBoundData & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
-		%feature("autodoc", "1");
-		const Handle_ShapeAnalysis_FreeBoundData & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_ShapeAnalysis_FreeBoundData & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &I);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") ShapeAnalysis_SequenceOfFreeBounds::~ShapeAnalysis_SequenceOfFreeBounds %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeAnalysis_SequenceOfFreeBounds {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal;
 class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal : public TCollection_BasicMapIterator {
 	public:
@@ -1879,7 +1706,7 @@ class ShapeAnalysis_Shell {
 		%feature("autodoc", "1");
 		void LoadShells(const TopoDS_Shape shape);
 		%feature("autodoc", "1");
-		Standard_Boolean CheckOrientedShells(const TopoDS_Shape shape, const Standard_Boolean alsofree=0);
+		Standard_Boolean CheckOrientedShells(const TopoDS_Shape shape, const Standard_Boolean alsofree=0, const Standard_Boolean checkinternaledges=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsLoaded(const TopoDS_Shape shape) const;
 		%feature("autodoc", "1");

@@ -34,7 +34,6 @@ $HeaderURL$
 #include<Handle_Transfer_ActorOfTransientProcess.hxx>
 #include<Handle_Transfer_Binder.hxx>
 #include<Handle_Transfer_BinderOfTransientInteger.hxx>
-#include<Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient.hxx>
 #include<Handle_Transfer_DispatchControl.hxx>
 #include<Handle_Transfer_Finder.hxx>
 #include<Handle_Transfer_FinderProcess.hxx>
@@ -65,9 +64,6 @@ $HeaderURL$
 #include<Transfer_Binder.hxx>
 #include<Transfer_BinderOfTransientInteger.hxx>
 #include<Transfer_DataInfo.hxx>
-#include<Transfer_DataMapIteratorOfDataMapOfTransientTransient.hxx>
-#include<Transfer_DataMapNodeOfDataMapOfTransientTransient.hxx>
-#include<Transfer_DataMapOfTransientTransient.hxx>
 #include<Transfer_DispatchControl.hxx>
 #include<Transfer_FindHasher.hxx>
 #include<Transfer_Finder.hxx>
@@ -253,7 +249,7 @@ $HeaderURL$
 #include<Handle_Dico_DictionaryOfTransient.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<Interface_GeneralLib.hxx>
-#include<Standard_SStream.hxx>
 #include<Handle_Interface_HGraph.hxx>
+#include<TColStd_DataMapOfTransientTransient.hxx>
 #include<Interface_Graph.hxx>
 %}

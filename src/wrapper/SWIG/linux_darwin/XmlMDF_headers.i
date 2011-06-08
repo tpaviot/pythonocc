@@ -55,7 +55,6 @@ $HeaderURL$
 #include<TCollection_AsciiString.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<XmlObjMgt_Persistent.hxx>
-#include<XmlObjMgt_RRelocationTable.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<XmlMDF.hxx>

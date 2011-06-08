@@ -29,7 +29,6 @@ $HeaderURL$
 
 #include<Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox.hxx>
 #include<Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox.hxx>
-#include<Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress.hxx>
 #include<Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress.hxx>
 #include<Handle_IntTools_ListNodeOfListOfBox.hxx>
 #include<Handle_IntTools_ListNodeOfListOfCurveRangeSample.hxx>
@@ -68,9 +67,7 @@ $HeaderURL$
 #include<IntTools_EdgeFace.hxx>
 #include<IntTools_FClass2d.hxx>
 #include<IntTools_FaceFace.hxx>
-#include<IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress.hxx>
 #include<IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress.hxx>
-#include<IntTools_IndexedDataMapOfShapeAddress.hxx>
 #include<IntTools_IndexedDataMapOfTransientAddress.hxx>
 #include<IntTools_LineConstructor.hxx>
 #include<IntTools_ListIteratorOfListOfBox.hxx>
@@ -179,15 +176,14 @@ $HeaderURL$
 #include<TopoDS_Edge.hxx>
 #include<gp_Pnt.hxx>
 #include<Bnd_Box.hxx>
-#include<TopoDS_Shape.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pnt2d.hxx>
 #include<Handle_Adaptor3d_TopolTool.hxx>
 #include<Handle_GeomAdaptor_HSurface.hxx>
 #include<Handle_IntPatch_Line.hxx>
 #include<TopoDS_Face.hxx>
-#include<BRepAdaptor_Curve.hxx>
 #include<BRepAdaptor_Surface.hxx>
+#include<BRepAdaptor_Curve.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Wire.hxx>
 #include<gp_Dir.hxx>

@@ -46,6 +46,19 @@ $HeaderURL$
 // Additional headers necessary for compilation.
 
 #include<BlendFunc.hxx>
+#include<BlendFunc_CSCircular.hxx>
+#include<BlendFunc_CSConstRad.hxx>
+#include<BlendFunc_ChAsym.hxx>
+#include<BlendFunc_ChAsymInv.hxx>
+#include<BlendFunc_ChamfInv.hxx>
+#include<BlendFunc_Chamfer.hxx>
+#include<BlendFunc_ConstRad.hxx>
+#include<BlendFunc_ConstRadInv.hxx>
+#include<BlendFunc_Corde.hxx>
+#include<BlendFunc_EvolRad.hxx>
+#include<BlendFunc_EvolRadInv.hxx>
+#include<BlendFunc_Ruled.hxx>
+#include<BlendFunc_RuledInv.hxx>
 #include<BlendFunc_SectionShape.hxx>
 #include<BlendFunc_Tensor.hxx>
 

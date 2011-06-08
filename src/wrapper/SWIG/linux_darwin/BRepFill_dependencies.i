@@ -99,9 +99,7 @@ $HeaderURL$
 #include <GeomFill_SectionGenerator.hxx>
 #include <GeomFill_SectionLaw.hxx>
 #include <GeomFill_SectionPlacement.hxx>
-#include <GeomFill_SequenceNodeOfSequenceOfCurve.hxx>
 #include <GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
-#include <GeomFill_SequenceOfCurve.hxx>
 #include <GeomFill_SequenceOfTrsf.hxx>
 #include <GeomFill_SimpleBound.hxx>
 #include <GeomFill_SnglrFunc.hxx>
@@ -167,7 +165,6 @@ $HeaderURL$
 #include <Handle_GeomFill_LocationLaw.hxx>
 #include <Handle_GeomFill_NSections.hxx>
 #include <Handle_GeomFill_SectionLaw.hxx>
-#include <Handle_GeomFill_SequenceNodeOfSequenceOfCurve.hxx>
 #include <Handle_GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
 #include <Handle_GeomFill_SimpleBound.hxx>
 #include <Handle_GeomFill_SweepFunction.hxx>
@@ -231,6 +228,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -254,6 +252,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -269,6 +268,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>

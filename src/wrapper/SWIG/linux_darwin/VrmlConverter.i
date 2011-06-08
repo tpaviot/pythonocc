@@ -79,7 +79,7 @@ class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_ShadingAspect & operator=(const VrmlConverter_ShadingAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_ShadingAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_ShadingAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_ShadingAspect {
@@ -117,7 +117,7 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Drawer & operator=(const VrmlConverter_Drawer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_Drawer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_Drawer {
@@ -155,7 +155,7 @@ class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_PointAspect & operator=(const VrmlConverter_PointAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_PointAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_PointAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_PointAspect {
@@ -193,7 +193,7 @@ class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect & operator=(const VrmlConverter_LineAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_LineAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_LineAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_LineAspect {
@@ -231,7 +231,7 @@ class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_IsoAspect & operator=(const VrmlConverter_IsoAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_IsoAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_IsoAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_IsoAspect {
@@ -269,7 +269,7 @@ class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Projector & operator=(const VrmlConverter_Projector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_Projector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_Projector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_Projector {
@@ -524,57 +524,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor VrmlConverter_ShadingAspect;
-class VrmlConverter_ShadingAspect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_ShadingAspect();
-		%feature("autodoc", "1");
-		void SetFrontMaterial(const Handle_Vrml_Material &aMaterial);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material FrontMaterial() const;
-		%feature("autodoc", "1");
-		void SetShapeHints(const Vrml_ShapeHints &aShapeHints);
-		%feature("autodoc", "1");
-		Vrml_ShapeHints ShapeHints() const;
-		%feature("autodoc", "1");
-		void SetHasNormals(const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean HasNormals() const;
-		%feature("autodoc", "1");
-		void SetHasMaterial(const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean HasMaterial() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend VrmlConverter_ShadingAspect {
-	Handle_VrmlConverter_ShadingAspect GetHandle() {
-	return *(Handle_VrmlConverter_ShadingAspect*) &$self;
-	}
-};
-%extend VrmlConverter_ShadingAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") VrmlConverter_ShadingAspect::~VrmlConverter_ShadingAspect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend VrmlConverter_ShadingAspect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor VrmlConverter_LineAspect;
 class VrmlConverter_LineAspect : public MMgt_TShared {
 	public:
@@ -735,6 +684,57 @@ def __del__(self):
 %}
 
 %extend VrmlConverter_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor VrmlConverter_ShadingAspect;
+class VrmlConverter_ShadingAspect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_ShadingAspect();
+		%feature("autodoc", "1");
+		void SetFrontMaterial(const Handle_Vrml_Material &aMaterial);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material FrontMaterial() const;
+		%feature("autodoc", "1");
+		void SetShapeHints(const Vrml_ShapeHints &aShapeHints);
+		%feature("autodoc", "1");
+		Vrml_ShapeHints ShapeHints() const;
+		%feature("autodoc", "1");
+		void SetHasNormals(const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean HasNormals() const;
+		%feature("autodoc", "1");
+		void SetHasMaterial(const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean HasMaterial() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend VrmlConverter_ShadingAspect {
+	Handle_VrmlConverter_ShadingAspect GetHandle() {
+	return *(Handle_VrmlConverter_ShadingAspect*) &$self;
+	}
+};
+%extend VrmlConverter_ShadingAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") VrmlConverter_ShadingAspect::~VrmlConverter_ShadingAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend VrmlConverter_ShadingAspect {
 	void _kill_pointed() {
 		delete $self;
 	}

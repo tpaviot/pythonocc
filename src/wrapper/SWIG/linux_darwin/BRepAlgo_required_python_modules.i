@@ -28,7 +28,6 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import TopoDS
-import TColStd
 import Standard
 import TopOpeBRepBuild
 import TopTools
@@ -36,4 +35,5 @@ import TopOpeBRepDS
 import BOP
 import BOPTools
 import Geom2d
+import TColStd
 };

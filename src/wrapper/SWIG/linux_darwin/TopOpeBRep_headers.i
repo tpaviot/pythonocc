@@ -27,7 +27,6 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger.hxx>
 #include<Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool.hxx>
 #include<Handle_TopOpeBRep_FFDumper.hxx>
 #include<Handle_TopOpeBRep_HArray1OfLineInter.hxx>
@@ -42,11 +41,8 @@ $HeaderURL$
 #include<TopOpeBRep_Bipoint.hxx>
 #include<TopOpeBRep_DRAW.hxx>
 #include<TopOpeBRep_DSFiller.hxx>
-#include<TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger.hxx>
 #include<TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool.hxx>
-#include<TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger.hxx>
 #include<TopOpeBRep_DataMapNodeOfDataMapOfTopolTool.hxx>
-#include<TopOpeBRep_DataMapOfShapeInteger.hxx>
 #include<TopOpeBRep_DataMapOfTopolTool.hxx>
 #include<TopOpeBRep_EdgesFiller.hxx>
 #include<TopOpeBRep_EdgesIntersector.hxx>
@@ -88,7 +84,6 @@ $HeaderURL$
 #include<TopOpeBRep_WPointInter.hxx>
 #include<TopOpeBRep_WPointInterIterator.hxx>
 #include<TopOpeBRep_define.hxx>
-#include<TopOpeBRep_tools.hxx>
 #include<TopOpeBRep_traceSIFF.hxx>
 
 // Additional headers necessary for compilation.
@@ -220,7 +215,6 @@ $HeaderURL$
 #include<TopoDSToStep_Tool.hxx>
 #include<TopoDSToStep_WireframeBuilder.hxx>
 #include<TopoDS_Builder.hxx>
-#include<TopoDS_Builder3D.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Compound.hxx>
 #include<TopoDS_Edge.hxx>
@@ -263,13 +257,13 @@ $HeaderURL$
 #include<TopOpeBRepDS_Curve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_Curve.hxx>
+#include<TopoDS_Face.hxx>
 #include<IntSurf_PntOn2S.hxx>
 #include<Bnd_Box.hxx>
 #include<IntRes2d_IntersectionPoint.hxx>
-#include<IntPatch_ThePointOfIntersection.hxx>
+#include<IntPatch_Point.hxx>
 #include<IntSurf_Transition.hxx>
 #include<TopoDS_Edge.hxx>
-#include<TopoDS_Face.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_BRepTopAdaptor_TopolTool.hxx>
 #include<BRepAdaptor_Surface.hxx>

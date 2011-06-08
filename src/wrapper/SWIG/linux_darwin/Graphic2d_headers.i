@@ -75,7 +75,6 @@ $HeaderURL$
 #include<Graphic2d_SequenceNodeOfSequenceOfPrimitives.hxx>
 #include<Graphic2d_SequenceNodeOfSequenceOfVertex.hxx>
 #include<Graphic2d_SequenceOfBuffer.hxx>
-#include<Graphic2d_SequenceOfCurve.hxx>
 #include<Graphic2d_SequenceOfGraphicObject.hxx>
 #include<Graphic2d_SequenceOfPolyline.hxx>
 #include<Graphic2d_SequenceOfPrimitives.hxx>
@@ -155,7 +154,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Standard_SStream.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_Aspect_Driver.hxx>

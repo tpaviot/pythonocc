@@ -125,55 +125,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor LProp3d_CLProps;
-class LProp3d_CLProps {
-	public:
-		%feature("autodoc", "1");
-		LProp3d_CLProps(const Handle_Adaptor3d_HCurve &C, const Standard_Integer N, const Standard_Real Resolution);
-		%feature("autodoc", "1");
-		LProp3d_CLProps(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
-		%feature("autodoc", "1");
-		LProp3d_CLProps(const Standard_Integer N, const Standard_Real Resolution);
-		%feature("autodoc", "1");
-		void SetParameter(const Standard_Real U);
-		%feature("autodoc", "1");
-		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		const gp_Pnt  Value() const;
-		%feature("autodoc", "1");
-		const gp_Vec  D1();
-		%feature("autodoc", "1");
-		const gp_Vec  D2();
-		%feature("autodoc", "1");
-		const gp_Vec  D3();
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangentDefined();
-		%feature("autodoc", "1");
-		void Tangent(gp_Dir & D);
-		%feature("autodoc", "1");
-		Standard_Real Curvature();
-		%feature("autodoc", "1");
-		void Normal(gp_Dir & N);
-		%feature("autodoc", "1");
-		void CentreOfCurvature(gp_Pnt & P);
-
-};
-%feature("shadow") LProp3d_CLProps::~LProp3d_CLProps %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend LProp3d_CLProps {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor LProp3d_SLProps;
 class LProp3d_SLProps {
 	public:
@@ -237,6 +188,55 @@ def __del__(self):
 %}
 
 %extend LProp3d_SLProps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor LProp3d_CLProps;
+class LProp3d_CLProps {
+	public:
+		%feature("autodoc", "1");
+		LProp3d_CLProps(const Handle_Adaptor3d_HCurve &C, const Standard_Integer N, const Standard_Real Resolution);
+		%feature("autodoc", "1");
+		LProp3d_CLProps(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
+		%feature("autodoc", "1");
+		LProp3d_CLProps(const Standard_Integer N, const Standard_Real Resolution);
+		%feature("autodoc", "1");
+		void SetParameter(const Standard_Real U);
+		%feature("autodoc", "1");
+		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		const gp_Pnt  Value() const;
+		%feature("autodoc", "1");
+		const gp_Vec  D1();
+		%feature("autodoc", "1");
+		const gp_Vec  D2();
+		%feature("autodoc", "1");
+		const gp_Vec  D3();
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangentDefined();
+		%feature("autodoc", "1");
+		void Tangent(gp_Dir & D);
+		%feature("autodoc", "1");
+		Standard_Real Curvature();
+		%feature("autodoc", "1");
+		void Normal(gp_Dir & N);
+		%feature("autodoc", "1");
+		void CentreOfCurvature(gp_Pnt & P);
+
+};
+%feature("shadow") LProp3d_CLProps::~LProp3d_CLProps %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend LProp3d_CLProps {
 	void _kill_pointed() {
 		delete $self;
 	}

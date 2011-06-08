@@ -116,7 +116,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -428,7 +427,6 @@ $HeaderURL$
 #include<Handle_StepGeom_BSplineCurve.hxx>
 #include<Handle_StepGeom_BSplineSurface.hxx>
 #include<Handle_StepGeom_UniformCurveAndRationalBSplineCurve.hxx>
-#include<Handle_StepGeom_Placement.hxx>
 #include<Handle_StepGeom_Point.hxx>
 #include<Handle_StepGeom_CartesianTransformationOperator.hxx>
 #include<Handle_StepGeom_Pcurve.hxx>
@@ -444,6 +442,7 @@ $HeaderURL$
 #include<Handle_StepGeom_SweptSurface.hxx>
 #include<Handle_StepGeom_SurfaceReplica.hxx>
 #include<Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext.hxx>
+#include<Handle_StepGeom_Placement.hxx>
 #include<Handle_StepGeom_OffsetCurve3d.hxx>
 #include<Handle_StepGeom_QuasiUniformSurface.hxx>
 #include<Handle_StepGeom_BSplineSurfaceWithKnots.hxx>

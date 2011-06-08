@@ -24,6 +24,27 @@ $HeaderURL$
 
 */
 %{
+#include <Approx_Array1OfAdHSurface.hxx>
+#include <Approx_Array1OfGTrsf2d.hxx>
+#include <Approx_Curve2d.hxx>
+#include <Approx_Curve3d.hxx>
+#include <Approx_CurveOnSurface.hxx>
+#include <Approx_CurvilinearParameter.hxx>
+#include <Approx_CurvlinFunc.hxx>
+#include <Approx_FitAndDivide.hxx>
+#include <Approx_FitAndDivide2d.hxx>
+#include <Approx_HArray1OfAdHSurface.hxx>
+#include <Approx_HArray1OfGTrsf2d.hxx>
+#include <Approx_MCurvesToBSpCurve.hxx>
+#include <Approx_MyLeastSquareOfFitAndDivide.hxx>
+#include <Approx_MyLeastSquareOfFitAndDivide2d.hxx>
+#include <Approx_ParametrizationType.hxx>
+#include <Approx_SameParameter.hxx>
+#include <Approx_SequenceNodeOfSequenceOfHArray1OfReal.hxx>
+#include <Approx_SequenceOfHArray1OfReal.hxx>
+#include <Approx_Status.hxx>
+#include <Approx_SweepApproximation.hxx>
+#include <Approx_SweepFunction.hxx>
 #include <BRepBuilderAPI_Collect.hxx>
 #include <BRepBuilderAPI_Command.hxx>
 #include <BRepBuilderAPI_Copy.hxx>
@@ -53,15 +74,12 @@ $HeaderURL$
 #include <BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval.hxx>
 #include <BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape.hxx>
 #include <BRepOffset_DataMapIteratorOfDataMapOfShapeOffset.hxx>
-#include <BRepOffset_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include <BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval.hxx>
 #include <BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
 #include <BRepOffset_DataMapNodeOfDataMapOfShapeOffset.hxx>
-#include <BRepOffset_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include <BRepOffset_DataMapOfShapeListOfInterval.hxx>
 #include <BRepOffset_DataMapOfShapeMapOfShape.hxx>
 #include <BRepOffset_DataMapOfShapeOffset.hxx>
-#include <BRepOffset_DataMapOfShapeReal.hxx>
 #include <BRepOffset_Error.hxx>
 #include <BRepOffset_Inter2d.hxx>
 #include <BRepOffset_Inter3d.hxx>
@@ -111,11 +129,15 @@ $HeaderURL$
 #include <GeomAbs_SurfaceForm.hxx>
 #include <GeomAbs_SurfaceType.hxx>
 #include <GeomAbs_UVSense.hxx>
+#include <Handle_Approx_CurvlinFunc.hxx>
+#include <Handle_Approx_HArray1OfAdHSurface.hxx>
+#include <Handle_Approx_HArray1OfGTrsf2d.hxx>
+#include <Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal.hxx>
+#include <Handle_Approx_SweepFunction.hxx>
 #include <Handle_BRepBuilderAPI_Sewing.hxx>
 #include <Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval.hxx>
 #include <Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
 #include <Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset.hxx>
-#include <Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include <Handle_BRepOffset_ListNodeOfListOfInterval.hxx>
 #include <Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo.hxx>
 #include <Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo.hxx>
@@ -163,6 +185,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -186,6 +209,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -201,6 +225,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>
@@ -238,3 +263,4 @@ $HeaderURL$
 %import Draft.i
 %import BRepPrimAPI.i
 %import BRepOffset.i
+%import Approx.i

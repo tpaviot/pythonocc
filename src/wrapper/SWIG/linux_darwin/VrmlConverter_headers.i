@@ -83,8 +83,8 @@ $HeaderURL$
 #include<Poly_Connect.hxx>
 #include<TColgp_Array1OfDir.hxx>
 #include<Handle_Vrml_Material.hxx>
-#include<Vrml_ShapeHints.hxx>
 #include<TopTools_Array1OfShape.hxx>
 #include<HLRAlgo_Projector.hxx>
 #include<Adaptor3d_Curve.hxx>
+#include<Vrml_ShapeHints.hxx>
 %}

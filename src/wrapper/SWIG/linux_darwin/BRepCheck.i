@@ -103,7 +103,7 @@ class Handle_BRepCheck_Result : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Result & operator=(const BRepCheck_Result *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_Result const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_Result DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepCheck_Result {
@@ -141,7 +141,7 @@ class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Vertex & operator=(const BRepCheck_Vertex *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_Vertex const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_Vertex DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepCheck_Vertex {
@@ -179,7 +179,7 @@ class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Shell & operator=(const BRepCheck_Shell *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_Shell const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_Shell DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepCheck_Shell {
@@ -217,7 +217,7 @@ class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Face & operator=(const BRepCheck_Face *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_Face const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_Face DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepCheck_Face {
@@ -255,7 +255,7 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_T
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus & operator=(const BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
@@ -293,7 +293,7 @@ class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Wire & operator=(const BRepCheck_Wire *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_Wire const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_Wire DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepCheck_Wire {
@@ -331,7 +331,7 @@ class Handle_BRepCheck_ListNodeOfListOfStatus : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_BRepCheck_ListNodeOfListOfStatus & operator=(const BRepCheck_ListNodeOfListOfStatus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_ListNodeOfListOfStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_ListNodeOfListOfStatus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepCheck_ListNodeOfListOfStatus {
@@ -369,7 +369,7 @@ class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Edge & operator=(const BRepCheck_Edge *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_Edge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_Edge DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepCheck_Edge {
@@ -407,7 +407,7 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult & operator=(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
@@ -1006,37 +1006,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus;
-class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus();
-		%feature("autodoc", "1");
-		BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus(const BRepCheck_DataMapOfShapeListOfStatus &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepCheck_DataMapOfShapeListOfStatus &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const BRepCheck_ListOfStatus & Value() const;
-
-};
-%feature("shadow") BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus::~BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepCheck_ListOfStatus;
 class BRepCheck_ListOfStatus {
 	public:
@@ -1156,6 +1125,37 @@ def __del__(self):
 %}
 
 %extend BRepCheck_Analyzer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus;
+class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus();
+		%feature("autodoc", "1");
+		BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus(const BRepCheck_DataMapOfShapeListOfStatus &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepCheck_DataMapOfShapeListOfStatus &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const BRepCheck_ListOfStatus & Value() const;
+
+};
+%feature("shadow") BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus::~BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus {
 	void _kill_pointed() {
 		delete $self;
 	}

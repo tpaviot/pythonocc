@@ -56,9 +56,9 @@ $HeaderURL$
 class BRepProj_Projection {
 	public:
 		%feature("autodoc", "1");
-		BRepProj_Projection(const TopoDS_Shape Lsh, const TopoDS_Shape Ssh, const gp_Dir D, const Standard_Boolean FaceBounds=1);
+		BRepProj_Projection(const TopoDS_Shape Wire, const TopoDS_Shape Shape, const gp_Dir D);
 		%feature("autodoc", "1");
-		BRepProj_Projection(const TopoDS_Shape Lsh, const TopoDS_Shape Ssh, const gp_Pnt P, const Standard_Boolean FaceBounds=1);
+		BRepProj_Projection(const TopoDS_Shape Wire, const TopoDS_Shape Shape, const gp_Pnt P);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -68,9 +68,9 @@ class BRepProj_Projection {
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		TopoDS_Shape Current() const;
+		TopoDS_Wire Current() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape Shape() const;
+		TopoDS_Compound Shape() const;
 
 };
 %feature("shadow") BRepProj_Projection::~BRepProj_Projection %{

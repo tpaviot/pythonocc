@@ -30,7 +30,7 @@ import GarbageCollector
 import Standard
 import TopoDS
 import TColStd
-import gp
 import TCollection
+import gp
 import TopTools
 };

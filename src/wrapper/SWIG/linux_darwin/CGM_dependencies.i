@@ -25,7 +25,6 @@ $HeaderURL$
 */
 %{
 #include <Handle_PlotMgt_HListOfMFTFonts.hxx>
-#include <Handle_PlotMgt_HListOfMFTSizes.hxx>
 #include <Handle_PlotMgt_HListOfPlotterParameter.hxx>
 #include <Handle_PlotMgt_ImageDriver.hxx>
 #include <Handle_PlotMgt_Plotter.hxx>
@@ -36,12 +35,10 @@ $HeaderURL$
 #include <Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter.hxx>
 #include <Handle_PlotMgt_TextManager.hxx>
 #include <PlotMgt_HListOfMFTFonts.hxx>
-#include <PlotMgt_HListOfMFTSizes.hxx>
 #include <PlotMgt_HListOfPlotterParameter.hxx>
 #include <PlotMgt_ImageDriver.hxx>
 #include <PlotMgt_ImageFormat.hxx>
 #include <PlotMgt_ListOfMFTFonts.hxx>
-#include <PlotMgt_ListOfMFTSizes.hxx>
 #include <PlotMgt_ListOfPlotterParameter.hxx>
 #include <PlotMgt_PaperFormat.hxx>
 #include <PlotMgt_Plotter.hxx>

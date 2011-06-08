@@ -33,6 +33,5 @@ import Adaptor2d
 import IntSurf
 import Adaptor3d
 import GeomAbs
-import Geom
 import Geom2d
 };

@@ -27,11 +27,8 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_XmlObjMgt_DataMapNodeOfRRelocationTable.hxx>
 #include<XmlObjMgt.hxx>
 #include<XmlObjMgt_DOMString.hxx>
-#include<XmlObjMgt_DataMapIteratorOfRRelocationTable.hxx>
-#include<XmlObjMgt_DataMapNodeOfRRelocationTable.hxx>
 #include<XmlObjMgt_Document.hxx>
 #include<XmlObjMgt_Element.hxx>
 #include<XmlObjMgt_GP.hxx>
@@ -65,7 +62,6 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
 #include<XmlObjMgt.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TCollection_AsciiString.hxx>

@@ -74,7 +74,7 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier & operator=(const GccEnt_BadQualifier *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GccEnt_BadQualifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccEnt_BadQualifier DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccEnt_BadQualifier {
@@ -202,7 +202,7 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_GccEnt_BadQualifier NewInstance(const char * aMessage);
+		static		Handle_GccEnt_BadQualifier NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

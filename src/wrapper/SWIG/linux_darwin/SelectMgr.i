@@ -83,7 +83,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelection : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SequenceNodeOfSequenceOfSelection & operator=(const SelectMgr_SequenceNodeOfSequenceOfSelection *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_SequenceNodeOfSequenceOfSelection const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_SequenceNodeOfSequenceOfSelection DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_SequenceNodeOfSequenceOfSelection {
@@ -121,7 +121,7 @@ class Handle_SelectMgr_ViewerSelector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectMgr_ViewerSelector & operator=(const SelectMgr_ViewerSelector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_ViewerSelector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_ViewerSelector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_ViewerSelector {
@@ -159,7 +159,7 @@ class Handle_SelectMgr_EntityOwner : public Handle_SelectBasics_EntityOwner {
 		%feature("autodoc", "1");
 		Handle_SelectMgr_EntityOwner & operator=(const SelectMgr_EntityOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_EntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_EntityOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_EntityOwner {
@@ -197,7 +197,7 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors & operator=(const SelectMgr_DataMapNodeOfDataMapOfObjectSelectors *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
@@ -235,7 +235,7 @@ class Handle_SelectMgr_SelectableObject : public Handle_PrsMgr_PresentableObject
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SelectableObject & operator=(const SelectMgr_SelectableObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_SelectableObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_SelectableObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_SelectableObject {
@@ -273,7 +273,7 @@ class Handle_SelectMgr_Selection : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectMgr_Selection & operator=(const SelectMgr_Selection *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_Selection const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_Selection DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_Selection {
@@ -311,7 +311,7 @@ class Handle_SelectMgr_Filter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectMgr_Filter & operator=(const SelectMgr_Filter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_Filter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_Filter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_Filter {
@@ -349,7 +349,7 @@ class Handle_SelectMgr_CompositionFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_SelectMgr_CompositionFilter & operator=(const SelectMgr_CompositionFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_CompositionFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_CompositionFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_CompositionFilter {
@@ -387,7 +387,7 @@ class Handle_SelectMgr_OrFilter : public Handle_SelectMgr_CompositionFilter {
 		%feature("autodoc", "1");
 		Handle_SelectMgr_OrFilter & operator=(const SelectMgr_OrFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_OrFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_OrFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_OrFilter {
@@ -425,7 +425,7 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive & operator=(const SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
@@ -463,7 +463,7 @@ class Handle_SelectMgr_AndFilter : public Handle_SelectMgr_CompositionFilter {
 		%feature("autodoc", "1");
 		Handle_SelectMgr_AndFilter & operator=(const SelectMgr_AndFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_AndFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_AndFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_AndFilter {
@@ -501,7 +501,7 @@ class Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner & operator=(const SelectMgr_IndexedMapNodeOfIndexedMapOfOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
@@ -539,7 +539,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfOwner : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SequenceNodeOfSequenceOfOwner & operator=(const SelectMgr_SequenceNodeOfSequenceOfOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_SequenceNodeOfSequenceOfOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_SequenceNodeOfSequenceOfOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_SequenceNodeOfSequenceOfOwner {
@@ -577,7 +577,7 @@ class Handle_SelectMgr_SelectionManager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SelectionManager & operator=(const SelectMgr_SelectionManager *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_SelectionManager const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_SelectionManager DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_SelectionManager {
@@ -615,7 +615,7 @@ class Handle_SelectMgr_ListNodeOfListOfFilter : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_SelectMgr_ListNodeOfListOfFilter & operator=(const SelectMgr_ListNodeOfListOfFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_ListNodeOfListOfFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_ListNodeOfListOfFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_ListNodeOfListOfFilter {
@@ -653,7 +653,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfFilter : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter & operator=(const SelectMgr_SequenceNodeOfSequenceOfFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_SequenceNodeOfSequenceOfFilter {
@@ -691,7 +691,7 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public Handle
 		%feature("autodoc", "1");
 		Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation & operator=(const SelectMgr_DataMapNodeOfDataMapOfSelectionActivation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
@@ -729,7 +729,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelector : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_SelectMgr_SequenceNodeOfSequenceOfSelector & operator=(const SelectMgr_SequenceNodeOfSequenceOfSelector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_SequenceNodeOfSequenceOfSelector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_SequenceNodeOfSequenceOfSelector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_SequenceNodeOfSequenceOfSelector {
@@ -767,7 +767,7 @@ class Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : publ
 		%feature("autodoc", "1");
 		Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion & operator=(const SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
@@ -1010,101 +1010,6 @@ def __del__(self):
 %}
 
 %extend SelectMgr_ListNodeOfListOfFilter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectMgr_SelectionManager;
-class SelectMgr_SelectionManager : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_SelectionManager();
-		%feature("autodoc", "1");
-		void Add(const Handle_SelectMgr_ViewerSelector &aSelector);
-		%feature("autodoc", "1");
-		void Remove(const Handle_SelectMgr_ViewerSelector &aSelector);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_SelectMgr_ViewerSelector &aSelector) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_SelectMgr_SelectableObject &aSelectableObject) const;
-		%feature("autodoc", "1");
-		void Load(const Handle_SelectMgr_SelectableObject &anObject, const Standard_Integer aMode=-0x000000001);
-		%feature("autodoc", "1");
-		void Load(const Handle_SelectMgr_SelectableObject &anObject, const Handle_SelectMgr_ViewerSelector &aSelector, const Standard_Integer aMode=-0x000000001);
-		%feature("autodoc", "1");
-		void Remove(const Handle_SelectMgr_SelectableObject &anObject);
-		%feature("autodoc", "1");
-		void Remove(const Handle_SelectMgr_SelectableObject &anObject, const Handle_SelectMgr_ViewerSelector &aSelector);
-		%feature("autodoc", "1");
-		void Activate(const Handle_SelectMgr_SelectableObject &anObject, const Standard_Integer aMode=0, const Standard_Boolean AutomaticProj=1);
-		%feature("autodoc", "1");
-		void Activate(const Handle_SelectMgr_SelectableObject &anObject, const Standard_Integer aMode, const Handle_SelectMgr_ViewerSelector &aSelector, const Standard_Boolean AutomaticProj=1);
-		%feature("autodoc", "1");
-		void Deactivate(const Handle_SelectMgr_SelectableObject &anObject);
-		%feature("autodoc", "1");
-		void Deactivate(const Handle_SelectMgr_SelectableObject &anObject, const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void Deactivate(const Handle_SelectMgr_SelectableObject &anObject, const Standard_Integer aMode, const Handle_SelectMgr_ViewerSelector &aSelector);
-		%feature("autodoc", "1");
-		void Deactivate(const Handle_SelectMgr_SelectableObject &anObject, const Handle_SelectMgr_ViewerSelector &aSelector);
-		%feature("autodoc", "1");
-		void Sleep(const Handle_SelectMgr_ViewerSelector &aSelector);
-		%feature("autodoc", "1");
-		void Sleep(const Handle_SelectMgr_SelectableObject &anObject);
-		%feature("autodoc", "1");
-		void Sleep(const Handle_SelectMgr_SelectableObject &anObject, const Handle_SelectMgr_ViewerSelector &aSelector);
-		%feature("autodoc", "1");
-		void Awake(const Handle_SelectMgr_ViewerSelector &aSelector, const Standard_Boolean AutomaticProj=1);
-		%feature("autodoc", "1");
-		void Awake(const Handle_SelectMgr_SelectableObject &anObject, const Standard_Boolean AutomaticProj=1);
-		%feature("autodoc", "1");
-		void Awake(const Handle_SelectMgr_SelectableObject &anObject, const Handle_SelectMgr_ViewerSelector &aSelector, const Standard_Boolean AutomaticProj=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsActivated(const Handle_SelectMgr_SelectableObject &anObject) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsActivated(const Handle_SelectMgr_SelectableObject &anObject, const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsActivated(const Handle_SelectMgr_SelectableObject &anObject, const Handle_SelectMgr_ViewerSelector &aSelector, const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		void RecomputeSelection(const Handle_SelectMgr_SelectableObject &anIObj, const Standard_Boolean ForceUpdate=0, const Standard_Integer aMode=-0x000000001);
-		%feature("autodoc", "1");
-		void Update(const Handle_SelectMgr_SelectableObject &anObject, const Standard_Boolean ForceUpdate=1);
-		%feature("autodoc", "1");
-		void Update(const Handle_SelectMgr_SelectableObject &anObject, const Handle_SelectMgr_ViewerSelector &aSelector, const Standard_Boolean ForceUpdate=1);
-		%feature("autodoc", "1");
-		void SetUpdateMode(const Handle_SelectMgr_SelectableObject &anObject, const SelectMgr_TypeOfUpdate aType);
-		%feature("autodoc", "1");
-		void SetUpdateMode(const Handle_SelectMgr_SelectableObject &anObject, const Standard_Integer aSelMode, const SelectMgr_TypeOfUpdate aType);
-		%feature("autodoc", "1");
-		TCollection_AsciiString Status() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString Status(const Handle_SelectMgr_SelectableObject &anObject) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectMgr_SelectionManager {
-	Handle_SelectMgr_SelectionManager GetHandle() {
-	return *(Handle_SelectMgr_SelectionManager*) &$self;
-	}
-};
-%extend SelectMgr_SelectionManager {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") SelectMgr_SelectionManager::~SelectMgr_SelectionManager %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_SelectionManager {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2075,24 +1980,23 @@ class SelectMgr_SortCriterion {
 		%feature("autodoc", "1");
 		SelectMgr_SortCriterion();
 		%feature("autodoc", "1");
-		SelectMgr_SortCriterion(const Standard_Integer aPriority, const Standard_Real aDepth, const Standard_Real aMinDist);
-		%feature("autodoc", "1");
-		void SetValues(const Standard_Integer Prior, const Standard_Real Depth, const Standard_Real Dist);
+		SelectMgr_SortCriterion(const Standard_Integer thePriority, const Standard_Real theDepth, const Standard_Real theMinDist, const Standard_Real theTol, const Standard_Boolean PreferClosest);
 		%feature("autodoc", "1");
 		void SetPriority(const Standard_Integer Prior);
 		%feature("autodoc", "1");
 		void SetDepth(const Standard_Real Depth);
 		%feature("autodoc", "1");
 		void SetMinDist(const Standard_Real Dist);
-		%feature("autodoc","Values() -> [Standard_Integer, Standard_Real, Standard_Real]");
-
-		void Values(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetTol(const Standard_Real Tol);
 		%feature("autodoc", "1");
 		Standard_Integer Priority() const;
 		%feature("autodoc", "1");
 		Standard_Real Depth() const;
 		%feature("autodoc", "1");
 		Standard_Real MinDist() const;
+		%feature("autodoc", "1");
+		Standard_Real Tol() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsGreater(const SelectMgr_SortCriterion &anOtherCriterion) const;
 		%feature("autodoc", "1");
@@ -2321,115 +2225,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-
-
-%nodefaultctor SelectMgr_ViewerSelector;
-class SelectMgr_ViewerSelector : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Convert(const Handle_SelectMgr_Selection &aSelection);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void UpdateConversion();
-		%feature("autodoc", "1");
-		void SetSensitivity(const Standard_Real aTol);
-		%feature("autodoc", "1");
-		void SetClipping(const Standard_Real Xc, const Standard_Real Yc, const Standard_Real Height, const Standard_Real Width);
-		%feature("autodoc", "1");
-		void SetClipping(const Bnd_Box2d &aRectangle);
-		%feature("autodoc", "1");
-		void InitSelect(const Standard_Real Xr, const Standard_Real Yr);
-		%feature("autodoc", "1");
-		void InitSelect(const Bnd_Box2d &aRect);
-		%feature("autodoc", "1");
-		void InitSelect(const Standard_Real Xmin, const Standard_Real Ymin, const Standard_Real Xmax, const Standard_Real Ymax);
-		%feature("autodoc", "1");
-		void InitSelect(const TColgp_Array1OfPnt2d &Polyline);
-		%feature("autodoc", "1");
-		virtual		void SortResult();
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		Standard_Boolean More();
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner Picked() const;
-		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner OnePicked();
-		%feature("autodoc", "1");
-		Standard_Integer NbPicked() const;
-		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner Picked(const Standard_Integer aRank) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasStored();
-		%feature("autodoc","LastPosition() -> [Standard_Real, Standard_Real]");
-
-		void LastPosition(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_SelectMgr_SelectableObject &aSelectableObject) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Modes(const Handle_SelectMgr_SelectableObject &aSelectableObject, TColStd_ListOfInteger & ModeList, const SelectMgr_StateOfSelection WantedState=SelectMgr_SOS_Any) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsActive(const Handle_SelectMgr_SelectableObject &aSelectableObject, const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsInside(const Handle_SelectMgr_SelectableObject &aSelectableObject, const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		SelectMgr_StateOfSelection Status(const Handle_SelectMgr_Selection &aSelection) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		TCollection_AsciiString Status(const Handle_SelectMgr_SelectableObject &aSelectableObject) const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString Status() const;
-		%feature("autodoc", "1");
-		void UpdateSort();
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity Primitive(const Standard_Integer Rank) const;
-		%feature("autodoc", "1");
-		const SelectMgr_DataMapOfIntegerSensitive & Primitives() const;
-		%feature("autodoc", "1");
-		void SetUpdateSortPossible(const Standard_Boolean possible);
-		%feature("autodoc", "1");
-		Standard_Boolean IsUpdateSortPossible() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectMgr_ViewerSelector {
-	Handle_SelectMgr_ViewerSelector GetHandle() {
-	return *(Handle_SelectMgr_ViewerSelector*) &$self;
-	}
-};
-%extend SelectMgr_ViewerSelector {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") SelectMgr_ViewerSelector::~SelectMgr_ViewerSelector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_ViewerSelector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend SelectMgr_ViewerSelector {
-	SelectMgr_ViewerSelector () {}
 };
 
 

@@ -66,7 +66,6 @@ enum BRepLib_FaceError {
 	BRepLib_NotPlanar,
 	BRepLib_CurveProjectionFailed,
 	BRepLib_ParametersOutOfRange,
-	BRepLib_SurfaceNotC2,
 	};
 
 enum BRepLib_ShellError {
@@ -541,45 +540,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepLib_FindSurface;
-class BRepLib_FindSurface {
-	public:
-		%feature("autodoc", "1");
-		BRepLib_FindSurface();
-		%feature("autodoc", "1");
-		BRepLib_FindSurface(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
-		%feature("autodoc", "1");
-		Standard_Boolean Found() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		Standard_Real ToleranceReached() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Existed() const;
-		%feature("autodoc", "1");
-		TopLoc_Location Location() const;
-
-};
-%feature("shadow") BRepLib_FindSurface::~BRepLib_FindSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepLib_FindSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepLib_MakePolygon;
 class BRepLib_MakePolygon : public BRepLib_MakeShape {
 	public:
@@ -743,6 +703,45 @@ def __del__(self):
 %}
 
 %extend BRepLib_MakeSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepLib_FindSurface;
+class BRepLib_FindSurface {
+	public:
+		%feature("autodoc", "1");
+		BRepLib_FindSurface();
+		%feature("autodoc", "1");
+		BRepLib_FindSurface(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
+		%feature("autodoc", "1");
+		Standard_Boolean Found() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Surface Surface() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		Standard_Real ToleranceReached() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Existed() const;
+		%feature("autodoc", "1");
+		TopLoc_Location Location() const;
+
+};
+%feature("shadow") BRepLib_FindSurface::~BRepLib_FindSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepLib_FindSurface {
 	void _kill_pointed() {
 		delete $self;
 	}

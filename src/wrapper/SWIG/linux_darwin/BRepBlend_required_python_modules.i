@@ -28,13 +28,14 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import gp
 import Blend
 import IntSurf
+import Approx
+import GeomAbs
 import TColgp
 import TColStd
+import gp
 import Adaptor3d
-import GeomAbs
 import Geom2d
 import Geom
 import Adaptor2d

@@ -66,7 +66,7 @@ class Handle_PMMgt_PManaged : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PMMgt_PManaged & operator=(const PMMgt_PManaged *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PMMgt_PManaged const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PMMgt_PManaged DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PMMgt_PManaged {

@@ -90,10 +90,8 @@ $HeaderURL$
 #include <Handle_TopOpeBRepDS_SurfaceCurveInterference.hxx>
 #include <Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF.hxx>
 #include <Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF.hxx>
-#include <Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include <Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface.hxx>
 #include <Handle_TopOpeBRepTool_HBoxTool.hxx>
-#include <Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress.hxx>
 #include <Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox.hxx>
 #include <Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d.hxx>
 #include <Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity.hxx>
@@ -109,6 +107,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -132,6 +131,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -147,6 +147,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>
@@ -295,27 +296,22 @@ $HeaderURL$
 #include <TopOpeBRepTool_DRAW.hxx>
 #include <TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF.hxx>
 #include <TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF.hxx>
-#include <TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include <TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface.hxx>
 #include <TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF.hxx>
 #include <TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF.hxx>
-#include <TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include <TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface.hxx>
 #include <TopOpeBRepTool_DataMapOfOrientedShapeC2DF.hxx>
 #include <TopOpeBRepTool_DataMapOfShapeListOfC2DF.hxx>
-#include <TopOpeBRepTool_DataMapOfShapeReal.hxx>
 #include <TopOpeBRepTool_DataMapOfShapeface.hxx>
 #include <TopOpeBRepTool_EXPORT.hxx>
 #include <TopOpeBRepTool_FuseEdges.hxx>
 #include <TopOpeBRepTool_GEOMETRY.hxx>
 #include <TopOpeBRepTool_GeomTool.hxx>
 #include <TopOpeBRepTool_HBoxTool.hxx>
-#include <TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress.hxx>
 #include <TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox.hxx>
 #include <TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d.hxx>
 #include <TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity.hxx>
 #include <TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier.hxx>
-#include <TopOpeBRepTool_IndexedDataMapOfShapeAddress.hxx>
 #include <TopOpeBRepTool_IndexedDataMapOfShapeBox.hxx>
 #include <TopOpeBRepTool_IndexedDataMapOfShapeBox2d.hxx>
 #include <TopOpeBRepTool_IndexedDataMapOfShapeconnexity.hxx>
@@ -351,8 +347,8 @@ $HeaderURL$
 #include <TopOpeBRepTool_tol.hxx>
 %};
 
-%import TCollection.i
 %import MMgt.i
+%import TCollection.i
 %import Standard.i
 %import TopAbs.i
 %import TopOpeBRepDS.i

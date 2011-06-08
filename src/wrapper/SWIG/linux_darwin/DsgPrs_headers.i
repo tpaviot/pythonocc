@@ -69,9 +69,6 @@ $HeaderURL$
 #include<gp_Ax2.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Elips.hxx>
-#include<Handle_Prs3d_LineAspect.hxx>
-#include<Handle_Prs3d_ArrowAspect.hxx>
-#include<Handle_Prs3d_TextAspect.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<gp_Pln.hxx>
@@ -83,4 +80,7 @@ $HeaderURL$
 #include<Handle_Prs3d_LengthAspect.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<gp_Lin.hxx>
+#include<Handle_Prs3d_LineAspect.hxx>
+#include<Handle_Prs3d_ArrowAspect.hxx>
+#include<Handle_Prs3d_TextAspect.hxx>
 %}

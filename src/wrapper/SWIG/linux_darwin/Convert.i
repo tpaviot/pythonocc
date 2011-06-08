@@ -49,6 +49,7 @@ $HeaderURL$
 
 %include Convert_headers.i
 
+typedef TColgp_SequenceOfArray1OfPnt2d Convert_SequenceOfArray1OfPoles2d;
 
 enum Convert_ParameterisationType {
 	Convert_TgtThetaOver2,
@@ -77,7 +78,7 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles & operator=(const Convert_SequenceNodeOfSequenceOfArray1OfPoles *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles {
@@ -95,44 +96,6 @@ def __del__(self):
 %}
 
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d;
-class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d();
-		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d(const Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d(const Convert_SequenceNodeOfSequenceOfArray1OfPoles2d *anItem);
-		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d & operator=(const Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d & operator=(const Convert_SequenceNodeOfSequenceOfArray1OfPoles2d *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
-	Convert_SequenceNodeOfSequenceOfArray1OfPoles2d* GetObject() {
-	return (Convert_SequenceNodeOfSequenceOfArray1OfPoles2d*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d::~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -672,108 +635,6 @@ def __del__(self):
 %}
 
 %extend Convert_SequenceOfArray1OfPoles {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Convert_SequenceOfArray1OfPoles2d;
-class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Convert_SequenceOfArray1OfPoles2d();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Convert_SequenceOfArray1OfPoles2d & Assign(const Convert_SequenceOfArray1OfPoles2d &Other);
-		%feature("autodoc", "1");
-		const Convert_SequenceOfArray1OfPoles2d & operator=(const Convert_SequenceOfArray1OfPoles2d &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HArray1OfPnt2d &T);
-		%feature("autodoc", "1");
-		void Append(Convert_SequenceOfArray1OfPoles2d & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HArray1OfPnt2d &T);
-		%feature("autodoc", "1");
-		void Prepend(Convert_SequenceOfArray1OfPoles2d & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & First() const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Convert_SequenceOfArray1OfPoles2d::~Convert_SequenceOfArray1OfPoles2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Convert_SequenceOfArray1OfPoles2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Convert_SequenceNodeOfSequenceOfArray1OfPoles2d;
-class Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Convert_SequenceNodeOfSequenceOfArray1OfPoles2d(const Handle_TColgp_HArray1OfPnt2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
-	Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d GetHandle() {
-	return *(Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d*) &$self;
-	}
-};
-%extend Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Convert_SequenceNodeOfSequenceOfArray1OfPoles2d::~Convert_SequenceNodeOfSequenceOfArray1OfPoles2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
 	void _kill_pointed() {
 		delete $self;
 	}

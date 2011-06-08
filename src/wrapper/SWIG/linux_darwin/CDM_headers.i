@@ -31,10 +31,8 @@ $HeaderURL$
 #include<CDM_COutMessageDriver.hxx>
 #include<CDM_CanCloseStatus.hxx>
 #include<CDM_DataMapIteratorOfMetaDataLookUpTable.hxx>
-#include<CDM_DataMapIteratorOfNamesDirectory.hxx>
 #include<CDM_DataMapIteratorOfPresentationDirectory.hxx>
 #include<CDM_DataMapNodeOfMetaDataLookUpTable.hxx>
-#include<CDM_DataMapNodeOfNamesDirectory.hxx>
 #include<CDM_DataMapNodeOfPresentationDirectory.hxx>
 #include<CDM_Document.hxx>
 #include<CDM_DocumentHasher.hxx>
@@ -62,7 +60,6 @@ $HeaderURL$
 #include<Handle_CDM_Application.hxx>
 #include<Handle_CDM_COutMessageDriver.hxx>
 #include<Handle_CDM_DataMapNodeOfMetaDataLookUpTable.hxx>
-#include<Handle_CDM_DataMapNodeOfNamesDirectory.hxx>
 #include<Handle_CDM_DataMapNodeOfPresentationDirectory.hxx>
 #include<Handle_CDM_Document.hxx>
 #include<Handle_CDM_ListNodeOfListOfDocument.hxx>

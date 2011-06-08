@@ -47,6 +47,7 @@ $HeaderURL$
 #include<Aspect_ColorPixel.hxx>
 #include<Aspect_ColorRampColorMap.hxx>
 #include<Aspect_ColorScale.hxx>
+#include<Aspect_Convert.hxx>
 #include<Aspect_Display.hxx>
 #include<Aspect_Drawable.hxx>
 #include<Aspect_Driver.hxx>
@@ -65,6 +66,8 @@ $HeaderURL$
 #include<Aspect_FormatOfSheetPaper.hxx>
 #include<Aspect_GenId.hxx>
 #include<Aspect_GenericColorMap.hxx>
+#include<Aspect_GradientBackground.hxx>
+#include<Aspect_GradientFillMethod.hxx>
 #include<Aspect_GraphicCallbackProc.hxx>
 #include<Aspect_GraphicDevice.hxx>
 #include<Aspect_GraphicDeviceDefinitionError.hxx>
@@ -208,7 +211,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Standard_SStream.hxx>
 #include<Quantity_Color.hxx>
 #include<TShort_Array1OfShortReal.hxx>
 #include<TCollection_ExtendedString.hxx>

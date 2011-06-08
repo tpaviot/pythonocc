@@ -52,6 +52,82 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_BinMXCAFDoc_MaterialDriver;
+class Handle_BinMXCAFDoc_MaterialDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_MaterialDriver();
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_MaterialDriver(const Handle_BinMXCAFDoc_MaterialDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_MaterialDriver(const BinMXCAFDoc_MaterialDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_MaterialDriver & operator=(const Handle_BinMXCAFDoc_MaterialDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_MaterialDriver & operator=(const BinMXCAFDoc_MaterialDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinMXCAFDoc_MaterialDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMXCAFDoc_MaterialDriver {
+	BinMXCAFDoc_MaterialDriver* GetObject() {
+	return (BinMXCAFDoc_MaterialDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinMXCAFDoc_MaterialDriver::~Handle_BinMXCAFDoc_MaterialDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BinMXCAFDoc_MaterialDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BinMXCAFDoc_DimTolDriver;
+class Handle_BinMXCAFDoc_DimTolDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DimTolDriver();
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DimTolDriver(const Handle_BinMXCAFDoc_DimTolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DimTolDriver(const BinMXCAFDoc_DimTolDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DimTolDriver & operator=(const Handle_BinMXCAFDoc_DimTolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DimTolDriver & operator=(const BinMXCAFDoc_DimTolDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinMXCAFDoc_DimTolDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMXCAFDoc_DimTolDriver {
+	BinMXCAFDoc_DimTolDriver* GetObject() {
+	return (BinMXCAFDoc_DimTolDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinMXCAFDoc_DimTolDriver::~Handle_BinMXCAFDoc_DimTolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BinMXCAFDoc_DimTolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BinMXCAFDoc_ColorToolDriver;
 class Handle_BinMXCAFDoc_ColorToolDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -66,7 +142,7 @@ class Handle_BinMXCAFDoc_ColorToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorToolDriver & operator=(const BinMXCAFDoc_ColorToolDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_ColorToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_ColorToolDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_ColorToolDriver {
@@ -104,7 +180,7 @@ class Handle_BinMXCAFDoc_DocumentToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_DocumentToolDriver & operator=(const BinMXCAFDoc_DocumentToolDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_DocumentToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_DocumentToolDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_DocumentToolDriver {
@@ -142,7 +218,7 @@ class Handle_BinMXCAFDoc_GraphNodeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_GraphNodeDriver & operator=(const BinMXCAFDoc_GraphNodeDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_GraphNodeDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_GraphNodeDriver {
@@ -180,7 +256,7 @@ class Handle_BinMXCAFDoc_VolumeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_VolumeDriver & operator=(const BinMXCAFDoc_VolumeDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_VolumeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_VolumeDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_VolumeDriver {
@@ -204,6 +280,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BinMXCAFDoc_LocationDriver;
+class Handle_BinMXCAFDoc_LocationDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_LocationDriver();
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_LocationDriver(const Handle_BinMXCAFDoc_LocationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_LocationDriver(const BinMXCAFDoc_LocationDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_LocationDriver & operator=(const Handle_BinMXCAFDoc_LocationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_LocationDriver & operator=(const BinMXCAFDoc_LocationDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinMXCAFDoc_LocationDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMXCAFDoc_LocationDriver {
+	BinMXCAFDoc_LocationDriver* GetObject() {
+	return (BinMXCAFDoc_LocationDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinMXCAFDoc_LocationDriver::~Handle_BinMXCAFDoc_LocationDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BinMXCAFDoc_LocationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BinMXCAFDoc_ShapeToolDriver;
 class Handle_BinMXCAFDoc_ShapeToolDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -218,7 +332,7 @@ class Handle_BinMXCAFDoc_ShapeToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ShapeToolDriver & operator=(const BinMXCAFDoc_ShapeToolDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_ShapeToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_ShapeToolDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_ShapeToolDriver {
@@ -256,7 +370,7 @@ class Handle_BinMXCAFDoc_CentroidDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_CentroidDriver & operator=(const BinMXCAFDoc_CentroidDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_CentroidDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_CentroidDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_CentroidDriver {
@@ -280,44 +394,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BinMXCAFDoc_LocationDriver;
-class Handle_BinMXCAFDoc_LocationDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver();
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver(const Handle_BinMXCAFDoc_LocationDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver(const BinMXCAFDoc_LocationDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver & operator=(const Handle_BinMXCAFDoc_LocationDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver & operator=(const BinMXCAFDoc_LocationDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_LocationDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMXCAFDoc_LocationDriver {
-	BinMXCAFDoc_LocationDriver* GetObject() {
-	return (BinMXCAFDoc_LocationDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMXCAFDoc_LocationDriver::~Handle_BinMXCAFDoc_LocationDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMXCAFDoc_LocationDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinMXCAFDoc_ColorDriver;
 class Handle_BinMXCAFDoc_ColorDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -332,7 +408,7 @@ class Handle_BinMXCAFDoc_ColorDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorDriver & operator=(const BinMXCAFDoc_ColorDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_ColorDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_ColorDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_ColorDriver {
@@ -356,6 +432,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BinMXCAFDoc_DatumDriver;
+class Handle_BinMXCAFDoc_DatumDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DatumDriver();
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DatumDriver(const Handle_BinMXCAFDoc_DatumDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DatumDriver(const BinMXCAFDoc_DatumDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DatumDriver & operator=(const Handle_BinMXCAFDoc_DatumDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DatumDriver & operator=(const BinMXCAFDoc_DatumDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinMXCAFDoc_DatumDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMXCAFDoc_DatumDriver {
+	BinMXCAFDoc_DatumDriver* GetObject() {
+	return (BinMXCAFDoc_DatumDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinMXCAFDoc_DatumDriver::~Handle_BinMXCAFDoc_DatumDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BinMXCAFDoc_DatumDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BinMXCAFDoc_AreaDriver;
 class Handle_BinMXCAFDoc_AreaDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -370,7 +484,7 @@ class Handle_BinMXCAFDoc_AreaDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_AreaDriver & operator=(const BinMXCAFDoc_AreaDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_AreaDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_AreaDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_AreaDriver {
@@ -408,7 +522,7 @@ class Handle_BinMXCAFDoc_LayerToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LayerToolDriver & operator=(const BinMXCAFDoc_LayerToolDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_LayerToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMXCAFDoc_LayerToolDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMXCAFDoc_LayerToolDriver {
@@ -426,6 +540,82 @@ def __del__(self):
 %}
 
 %extend Handle_BinMXCAFDoc_LayerToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BinMXCAFDoc_DimTolToolDriver;
+class Handle_BinMXCAFDoc_DimTolToolDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DimTolToolDriver();
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DimTolToolDriver(const Handle_BinMXCAFDoc_DimTolToolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DimTolToolDriver(const BinMXCAFDoc_DimTolToolDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DimTolToolDriver & operator=(const Handle_BinMXCAFDoc_DimTolToolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DimTolToolDriver & operator=(const BinMXCAFDoc_DimTolToolDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinMXCAFDoc_DimTolToolDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMXCAFDoc_DimTolToolDriver {
+	BinMXCAFDoc_DimTolToolDriver* GetObject() {
+	return (BinMXCAFDoc_DimTolToolDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinMXCAFDoc_DimTolToolDriver::~Handle_BinMXCAFDoc_DimTolToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BinMXCAFDoc_DimTolToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BinMXCAFDoc_MaterialToolDriver;
+class Handle_BinMXCAFDoc_MaterialToolDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_MaterialToolDriver();
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_MaterialToolDriver(const Handle_BinMXCAFDoc_MaterialToolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_MaterialToolDriver(const BinMXCAFDoc_MaterialToolDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_MaterialToolDriver & operator=(const Handle_BinMXCAFDoc_MaterialToolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_MaterialToolDriver & operator=(const BinMXCAFDoc_MaterialToolDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinMXCAFDoc_MaterialToolDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMXCAFDoc_MaterialToolDriver {
+	BinMXCAFDoc_MaterialToolDriver* GetObject() {
+	return (BinMXCAFDoc_MaterialToolDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinMXCAFDoc_MaterialToolDriver::~Handle_BinMXCAFDoc_MaterialToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BinMXCAFDoc_MaterialToolDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -555,6 +745,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor BinMXCAFDoc_DimTolDriver;
+class BinMXCAFDoc_DimTolDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinMXCAFDoc_DimTolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMXCAFDoc_DimTolDriver {
+	Handle_BinMXCAFDoc_DimTolDriver GetHandle() {
+	return *(Handle_BinMXCAFDoc_DimTolDriver*) &$self;
+	}
+};
+%extend BinMXCAFDoc_DimTolDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") BinMXCAFDoc_DimTolDriver::~BinMXCAFDoc_DimTolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMXCAFDoc_DimTolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BinMXCAFDoc_LayerToolDriver;
 class BinMXCAFDoc_LayerToolDriver : public BinMDF_ADriver {
 	public:
@@ -631,6 +862,47 @@ def __del__(self):
 %}
 
 %extend BinMXCAFDoc_AreaDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMXCAFDoc_DatumDriver;
+class BinMXCAFDoc_DatumDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinMXCAFDoc_DatumDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMXCAFDoc_DatumDriver {
+	Handle_BinMXCAFDoc_DatumDriver GetHandle() {
+	return *(Handle_BinMXCAFDoc_DatumDriver*) &$self;
+	}
+};
+%extend BinMXCAFDoc_DatumDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") BinMXCAFDoc_DatumDriver::~BinMXCAFDoc_DatumDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMXCAFDoc_DatumDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -760,6 +1032,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor BinMXCAFDoc_DimTolToolDriver;
+class BinMXCAFDoc_DimTolToolDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinMXCAFDoc_DimTolToolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMXCAFDoc_DimTolToolDriver {
+	Handle_BinMXCAFDoc_DimTolToolDriver GetHandle() {
+	return *(Handle_BinMXCAFDoc_DimTolToolDriver*) &$self;
+	}
+};
+%extend BinMXCAFDoc_DimTolToolDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") BinMXCAFDoc_DimTolToolDriver::~BinMXCAFDoc_DimTolToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMXCAFDoc_DimTolToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BinMXCAFDoc;
 class BinMXCAFDoc {
 	public:
@@ -797,9 +1110,11 @@ class BinMXCAFDoc_LocationDriver : public BinMDF_ADriver {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		static		Standard_Boolean Translate(const BinObjMgt_Persistent &theSource, TopLoc_Location & theLoc, BinObjMgt_RRelocationTable & theMap);
+		Standard_Boolean Translate(const BinObjMgt_Persistent &theSource, TopLoc_Location & theLoc, BinObjMgt_RRelocationTable & theMap) const;
 		%feature("autodoc", "1");
-		static		void Translate(const TopLoc_Location &theLoc, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theMap);
+		void Translate(const TopLoc_Location &theLoc, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theMap) const;
+		%feature("autodoc", "1");
+		void SetSharedLocations(const BinTools_LocationSetPtr &theLocations);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -824,6 +1139,88 @@ def __del__(self):
 %}
 
 %extend BinMXCAFDoc_LocationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMXCAFDoc_MaterialDriver;
+class BinMXCAFDoc_MaterialDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinMXCAFDoc_MaterialDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMXCAFDoc_MaterialDriver {
+	Handle_BinMXCAFDoc_MaterialDriver GetHandle() {
+	return *(Handle_BinMXCAFDoc_MaterialDriver*) &$self;
+	}
+};
+%extend BinMXCAFDoc_MaterialDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") BinMXCAFDoc_MaterialDriver::~BinMXCAFDoc_MaterialDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMXCAFDoc_MaterialDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMXCAFDoc_MaterialToolDriver;
+class BinMXCAFDoc_MaterialToolDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinMXCAFDoc_MaterialToolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMXCAFDoc_MaterialToolDriver {
+	Handle_BinMXCAFDoc_MaterialToolDriver GetHandle() {
+	return *(Handle_BinMXCAFDoc_MaterialToolDriver*) &$self;
+	}
+};
+%extend BinMXCAFDoc_MaterialToolDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") BinMXCAFDoc_MaterialToolDriver::~BinMXCAFDoc_MaterialToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMXCAFDoc_MaterialToolDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

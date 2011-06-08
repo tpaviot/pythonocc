@@ -72,7 +72,7 @@ class Handle_XCAFDoc_DocumentTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_DocumentTool & operator=(const XCAFDoc_DocumentTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_DocumentTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_DocumentTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_DocumentTool {
@@ -110,7 +110,7 @@ class Handle_XCAFDoc_DimTolTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_DimTolTool & operator=(const XCAFDoc_DimTolTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_DimTolTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_DimTolTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_DimTolTool {
@@ -148,7 +148,7 @@ class Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel & operator=(const XCAFDoc_DataMapNodeOfDataMapOfShapeLabel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
@@ -186,7 +186,7 @@ class Handle_XCAFDoc_Volume : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Volume & operator=(const XCAFDoc_Volume *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Volume const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Volume DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Volume {
@@ -224,7 +224,7 @@ class Handle_XCAFDoc_DimTol : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_DimTol & operator=(const XCAFDoc_DimTol *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_DimTol const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_DimTol DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_DimTol {
@@ -262,7 +262,7 @@ class Handle_XCAFDoc_Centroid : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Centroid & operator=(const XCAFDoc_Centroid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Centroid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Centroid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Centroid {
@@ -300,7 +300,7 @@ class Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence & operator=(const XCAFDoc_SequenceNodeOfGraphNodeSequence *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence {
@@ -338,7 +338,7 @@ class Handle_XCAFDoc_Area : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Area & operator=(const XCAFDoc_Area *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Area const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Area DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Area {
@@ -376,7 +376,7 @@ class Handle_XCAFDoc_Color : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Color & operator=(const XCAFDoc_Color *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Color const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Color DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Color {
@@ -414,7 +414,7 @@ class Handle_XCAFDoc_ColorTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_ColorTool & operator=(const XCAFDoc_ColorTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_ColorTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_ColorTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_ColorTool {
@@ -452,7 +452,7 @@ class Handle_XCAFDoc_Material : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Material & operator=(const XCAFDoc_Material *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Material const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Material DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Material {
@@ -490,7 +490,7 @@ class Handle_XCAFDoc_LayerTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_LayerTool & operator=(const XCAFDoc_LayerTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_LayerTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_LayerTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_LayerTool {
@@ -528,7 +528,7 @@ class Handle_XCAFDoc_MaterialTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_MaterialTool & operator=(const XCAFDoc_MaterialTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_MaterialTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_MaterialTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_MaterialTool {
@@ -566,7 +566,7 @@ class Handle_XCAFDoc_GraphNode : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_GraphNode & operator=(const XCAFDoc_GraphNode *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_GraphNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_GraphNode DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_GraphNode {
@@ -604,7 +604,7 @@ class Handle_XCAFDoc_Location : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Location & operator=(const XCAFDoc_Location *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Location const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Location DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Location {
@@ -642,7 +642,7 @@ class Handle_XCAFDoc_Datum : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_Datum & operator=(const XCAFDoc_Datum *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Datum const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_Datum DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_Datum {
@@ -680,7 +680,7 @@ class Handle_XCAFDoc_ShapeTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_ShapeTool & operator=(const XCAFDoc_ShapeTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_ShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_ShapeTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_ShapeTool {
@@ -718,7 +718,7 @@ class Handle_XCAFDoc_ShapeMapTool : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_XCAFDoc_ShapeMapTool & operator=(const XCAFDoc_ShapeMapTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_ShapeMapTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDoc_ShapeMapTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDoc_ShapeMapTool {
@@ -1850,45 +1850,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor XCAFDoc_DataMapNodeOfDataMapOfShapeLabel;
-class XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		XCAFDoc_DataMapNodeOfDataMapOfShapeLabel(const TopoDS_Shape K, const TDF_Label &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		TDF_Label & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
-	Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel GetHandle() {
-	return *(Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel*) &$self;
-	}
-};
-%extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::~XCAFDoc_DataMapNodeOfDataMapOfShapeLabel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor XCAFDoc_ShapeMapTool;
 class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 	public:
@@ -1997,6 +1958,45 @@ def __del__(self):
 %}
 
 %extend XCAFDoc_Centroid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XCAFDoc_DataMapNodeOfDataMapOfShapeLabel;
+class XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		XCAFDoc_DataMapNodeOfDataMapOfShapeLabel(const TopoDS_Shape K, const TDF_Label &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		TDF_Label & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
+	Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel GetHandle() {
+	return *(Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel*) &$self;
+	}
+};
+%extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::~XCAFDoc_DataMapNodeOfDataMapOfShapeLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -66,7 +66,7 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppDef_HArray1OfMultiPointConstraint & operator=(const AppDef_HArray1OfMultiPointConstraint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AppDef_HArray1OfMultiPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppDef_HArray1OfMultiPointConstraint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppDef_HArray1OfMultiPointConstraint {
@@ -104,7 +104,7 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 		%feature("autodoc", "1");
 		Handle_AppDef_MyCriterionOfTheVariational & operator=(const AppDef_MyCriterionOfTheVariational *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AppDef_MyCriterionOfTheVariational const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppDef_MyCriterionOfTheVariational DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppDef_MyCriterionOfTheVariational {
@@ -754,39 +754,6 @@ def __del__(self):
 %}
 
 %extend AppDef_MultiLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AppDef_ResConstraintOfMyGradientbisOfBSplineCompute;
-class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
-	public:
-		%feature("autodoc", "1");
-		AppDef_ResConstraintOfMyGradientbisOfBSplineCompute(const AppDef_MultiLine &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const math_Matrix & ConstraintMatrix() const;
-		%feature("autodoc", "1");
-		const math_Vector & Duale() const;
-		%feature("autodoc", "1");
-		const math_Matrix & ConstraintDerivative(const AppDef_MultiLine &SSP, const math_Vector &Parameters, const Standard_Integer Deg, const math_Matrix &DA);
-		%feature("autodoc", "1");
-		const math_Matrix & InverseMatrix() const;
-
-};
-%feature("shadow") AppDef_ResConstraintOfMyGradientbisOfBSplineCompute::~AppDef_ResConstraintOfMyGradientbisOfBSplineCompute %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1596,6 +1563,39 @@ def __del__(self):
 %}
 
 %extend AppDef_ParLeastSquareOfTheGradient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AppDef_ResConstraintOfMyGradientbisOfBSplineCompute;
+class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
+	public:
+		%feature("autodoc", "1");
+		AppDef_ResConstraintOfMyGradientbisOfBSplineCompute(const AppDef_MultiLine &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const math_Matrix & ConstraintMatrix() const;
+		%feature("autodoc", "1");
+		const math_Vector & Duale() const;
+		%feature("autodoc", "1");
+		const math_Matrix & ConstraintDerivative(const AppDef_MultiLine &SSP, const math_Vector &Parameters, const Standard_Integer Deg, const math_Matrix &DA);
+		%feature("autodoc", "1");
+		const math_Matrix & InverseMatrix() const;
+
+};
+%feature("shadow") AppDef_ResConstraintOfMyGradientbisOfBSplineCompute::~AppDef_ResConstraintOfMyGradientbisOfBSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 	void _kill_pointed() {
 		delete $self;
 	}

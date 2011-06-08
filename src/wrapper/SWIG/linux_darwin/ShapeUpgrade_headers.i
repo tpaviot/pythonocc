@@ -273,9 +273,7 @@ $HeaderURL$
 #include<GeomFill_SectionGenerator.hxx>
 #include<GeomFill_SectionLaw.hxx>
 #include<GeomFill_SectionPlacement.hxx>
-#include<GeomFill_SequenceNodeOfSequenceOfCurve.hxx>
 #include<GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
-#include<GeomFill_SequenceOfCurve.hxx>
 #include<GeomFill_SequenceOfTrsf.hxx>
 #include<GeomFill_SimpleBound.hxx>
 #include<GeomFill_SnglrFunc.hxx>
@@ -495,9 +493,9 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_TColStd_HSequenceOfReal.hxx>
 #include<Handle_Geom_Curve.hxx>
-#include<Handle_Geom_Surface.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_ShapeBuild_ReShape.hxx>
+#include<Handle_Geom_Surface.hxx>
 #include<TopTools_SequenceOfShape.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>

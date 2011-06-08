@@ -78,7 +78,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -357,11 +356,11 @@ $HeaderURL$
 #include<Handle_StepRepr_ProductDefinitionShape.hxx>
 #include<Handle_StepRepr_DataEnvironment.hxx>
 #include<Handle_StepRepr_PropertyDefinition.hxx>
-#include<Handle_StepRepr_ConfigurationDesign.hxx>
 #include<Handle_StepRepr_RepresentationMap.hxx>
 #include<Handle_StepRepr_MaterialProperty.hxx>
 #include<Handle_StepRepr_DescriptiveRepresentationItem.hxx>
 #include<Handle_StepRepr_ShapeAspectTransition.hxx>
+#include<Handle_StepRepr_ConfigurationDesign.hxx>
 #include<Handle_StepRepr_SpecifiedHigherUsageOccurrence.hxx>
 #include<Handle_StepRepr_GlobalUncertaintyAssignedContext.hxx>
 #include<Handle_StepRepr_ShapeAspect.hxx>

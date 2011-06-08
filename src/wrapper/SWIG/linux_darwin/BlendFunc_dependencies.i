@@ -24,6 +24,20 @@ $HeaderURL$
 
 */
 %{
+#include <Blend_AppFunction.hxx>
+#include <Blend_CSFunction.hxx>
+#include <Blend_CurvPointFuncInv.hxx>
+#include <Blend_DecrochStatus.hxx>
+#include <Blend_FuncInv.hxx>
+#include <Blend_Function.hxx>
+#include <Blend_Point.hxx>
+#include <Blend_RstRstFunction.hxx>
+#include <Blend_SequenceNodeOfSequenceOfPoint.hxx>
+#include <Blend_SequenceOfPoint.hxx>
+#include <Blend_Status.hxx>
+#include <Blend_SurfCurvFuncInv.hxx>
+#include <Blend_SurfPointFuncInv.hxx>
+#include <Blend_SurfRstFunction.hxx>
 #include <Convert_CircleToBSplineCurve.hxx>
 #include <Convert_CompBezierCurves2dToBSplineCurve2d.hxx>
 #include <Convert_CompBezierCurvesToBSplineCurve.hxx>
@@ -40,7 +54,6 @@ $HeaderURL$
 #include <Convert_ParameterisationType.hxx>
 #include <Convert_PolynomialCosAndSin.hxx>
 #include <Convert_SequenceNodeOfSequenceOfArray1OfPoles.hxx>
-#include <Convert_SequenceNodeOfSequenceOfArray1OfPoles2d.hxx>
 #include <Convert_SequenceOfArray1OfPoles.hxx>
 #include <Convert_SequenceOfArray1OfPoles2d.hxx>
 #include <Convert_SphereToBSplineSurface.hxx>
@@ -54,8 +67,8 @@ $HeaderURL$
 #include <GeomAbs_SurfaceForm.hxx>
 #include <GeomAbs_SurfaceType.hxx>
 #include <GeomAbs_UVSense.hxx>
+#include <Handle_Blend_SequenceNodeOfSequenceOfPoint.hxx>
 #include <Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles.hxx>
-#include <Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
 #include <Handle_Standard_DimensionError.hxx>
@@ -93,6 +106,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -116,6 +130,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -131,6 +146,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>
@@ -161,6 +177,7 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
+%import Blend.i
 %import Standard.i
-%import Convert.i
 %import GeomAbs.i
+%import Convert.i

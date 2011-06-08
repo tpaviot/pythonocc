@@ -71,7 +71,7 @@ class Handle_BinDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_Docu
 		%feature("autodoc", "1");
 		Handle_BinDrivers_DocumentRetrievalDriver & operator=(const BinDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinDrivers_DocumentRetrievalDriver {
@@ -109,7 +109,7 @@ class Handle_BinDrivers_DocumentStorageDriver : public Handle_BinLDrivers_Docume
 		%feature("autodoc", "1");
 		Handle_BinDrivers_DocumentStorageDriver & operator=(const BinDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinDrivers_DocumentStorageDriver {
@@ -140,6 +140,8 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 		BinDrivers_DocumentStorageDriver();
 		%feature("autodoc", "1");
 		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		void WriteShapeSection(BinLDrivers_DocumentSection & theDocSection, Standard_OStream & theOS);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -206,6 +208,12 @@ class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalD
 		BinDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		void ReadShapeSection(BinLDrivers_DocumentSection & theSection, std::istream & theIS, const Standard_Boolean isMess=0);
+		%feature("autodoc", "1");
+		virtual		void CheckShapeSection(const Storage_Position &thePos, std::istream & theIS);
+		%feature("autodoc", "1");
+		virtual		void PropagateDocumentVersion(const Standard_Integer theVersion);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

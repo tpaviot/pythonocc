@@ -36,7 +36,6 @@ $HeaderURL$
 #include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d.hxx>
 #include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion.hxx>
 #include<Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d.hxx>
-#include<Handle_MAT2d_SequenceNodeOfSequenceOfBoolean.hxx>
 #include<Handle_MAT2d_SequenceNodeOfSequenceOfConnexion.hxx>
 #include<Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve.hxx>
 #include<Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry.hxx>
@@ -69,11 +68,9 @@ $HeaderURL$
 #include<MAT2d_MapBiIntHasher.hxx>
 #include<MAT2d_Mat2d.hxx>
 #include<MAT2d_MiniPath.hxx>
-#include<MAT2d_SequenceNodeOfSequenceOfBoolean.hxx>
 #include<MAT2d_SequenceNodeOfSequenceOfConnexion.hxx>
 #include<MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve.hxx>
 #include<MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry.hxx>
-#include<MAT2d_SequenceOfBoolean.hxx>
 #include<MAT2d_SequenceOfConnexion.hxx>
 #include<MAT2d_SequenceOfSequenceOfCurve.hxx>
 #include<MAT2d_SequenceOfSequenceOfGeometry.hxx>
@@ -88,6 +85,7 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
 #include<Bisector_Bisec.hxx>
+#include<TColStd_SequenceOfBoolean.hxx>
 #include<Handle_Geom2d_Geometry.hxx>
 #include<TColGeom2d_SequenceOfGeometry.hxx>
 #include<gp_Vec2d.hxx>

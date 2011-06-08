@@ -29,7 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import StepShape
 import Standard
-import Interface
 import TCollection
+import Interface
 import StepRepr
 };

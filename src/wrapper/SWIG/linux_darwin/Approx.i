@@ -64,44 +64,6 @@ enum Approx_ParametrizationType {
 
 
 
-%nodefaultctor Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d;
-class Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d();
-		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d(const Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d(const Approx_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
-		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const Approx_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
-	Approx_SequenceNodeOfSequenceOfArray1OfPnt2d* GetObject() {
-	return (Approx_SequenceNodeOfSequenceOfArray1OfPnt2d*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d::~Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Approx_CurvlinFunc;
 class Handle_Approx_CurvlinFunc : public Handle_MMgt_TShared {
 	public:
@@ -116,7 +78,7 @@ class Handle_Approx_CurvlinFunc : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_CurvlinFunc & operator=(const Approx_CurvlinFunc *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Approx_CurvlinFunc const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_CurvlinFunc DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_CurvlinFunc {
@@ -154,7 +116,7 @@ class Handle_Approx_SweepFunction : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_SweepFunction & operator=(const Approx_SweepFunction *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Approx_SweepFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_SweepFunction DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_SweepFunction {
@@ -192,7 +154,7 @@ class Handle_Approx_HArray1OfAdHSurface : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfAdHSurface & operator=(const Approx_HArray1OfAdHSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Approx_HArray1OfAdHSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_HArray1OfAdHSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_HArray1OfAdHSurface {
@@ -230,7 +192,7 @@ class Handle_Approx_HArray1OfGTrsf2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfGTrsf2d & operator=(const Approx_HArray1OfGTrsf2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Approx_HArray1OfGTrsf2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_HArray1OfGTrsf2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_HArray1OfGTrsf2d {
@@ -268,7 +230,7 @@ class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal & operator=(const Approx_SequenceNodeOfSequenceOfHArray1OfReal *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal {
@@ -286,43 +248,6 @@ def __del__(self):
 %}
 
 %extend Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Approx_SequenceNodeOfSequenceOfArray1OfPnt2d;
-class Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Approx_SequenceNodeOfSequenceOfArray1OfPnt2d(const Handle_TColgp_HArray1OfPnt2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
-	Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d GetHandle() {
-	return *(Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d*) &$self;
-	}
-};
-%extend Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Approx_SequenceNodeOfSequenceOfArray1OfPnt2d::~Approx_SequenceNodeOfSequenceOfArray1OfPnt2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1057,71 +982,6 @@ def __del__(self):
 %}
 
 %extend Approx_Array1OfAdHSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Approx_SequenceOfArray1OfPnt2d;
-class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Approx_SequenceOfArray1OfPnt2d();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Approx_SequenceOfArray1OfPnt2d & Assign(const Approx_SequenceOfArray1OfPnt2d &Other);
-		%feature("autodoc", "1");
-		const Approx_SequenceOfArray1OfPnt2d & operator=(const Approx_SequenceOfArray1OfPnt2d &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HArray1OfPnt2d &T);
-		%feature("autodoc", "1");
-		void Append(Approx_SequenceOfArray1OfPnt2d & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HArray1OfPnt2d &T);
-		%feature("autodoc", "1");
-		void Prepend(Approx_SequenceOfArray1OfPnt2d & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Approx_SequenceOfArray1OfPnt2d & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Approx_SequenceOfArray1OfPnt2d & S);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & First() const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Approx_SequenceOfArray1OfPnt2d & S);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Approx_SequenceOfArray1OfPnt2d::~Approx_SequenceOfArray1OfPnt2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Approx_SequenceOfArray1OfPnt2d {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -66,7 +66,7 @@ class Handle_STEPEdit_EditSDR : public Handle_IFSelect_Editor {
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditSDR & operator=(const STEPEdit_EditSDR *anItem);
 		%feature("autodoc", "1");
-		static		Handle_STEPEdit_EditSDR const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPEdit_EditSDR DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_STEPEdit_EditSDR {
@@ -104,7 +104,7 @@ class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditContext & operator=(const STEPEdit_EditContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_STEPEdit_EditContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPEdit_EditContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_STEPEdit_EditContext {

@@ -17,8 +17,8 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-$Revision: 1163 $
-$Date: 2011-01-19 07:03:19 +0100 (Mer, 19 jan 2011) $
+$Revision: 1166 $
+$Date: 2011-01-20 05:56:02 +0100 (Jeu, 20 jan 2011) $
 $Author: tpaviot $
 $HeaderURL$
 
@@ -33,41 +33,37 @@ $HeaderURL$
 #include <BRepMesh_Array1OfVertexOfDelaun.hxx>
 #include <BRepMesh_BiPoint.hxx>
 #include <BRepMesh_Classifier.hxx>
+#include <BRepMesh_ClassifierPtr.hxx>
 #include <BRepMesh_ComparatorOfIndexedVertexOfDelaun.hxx>
 #include <BRepMesh_ComparatorOfVertexOfDelaun.hxx>
-#include <BRepMesh_DataMapIteratorOfDataMapOfCouplePnt.hxx>
-#include <BRepMesh_DataMapIteratorOfDataMapOfIntegerFace.hxx>
+#include <BRepMesh_DataMapIteratorOfDataMapOfFaceAttribute.hxx>
 #include <BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY.hxx>
-#include <BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger.hxx>
-#include <BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret.hxx>
+#include <BRepMesh_DataMapIteratorOfDataMapOfIntegerPnt.hxx>
+#include <BRepMesh_DataMapIteratorOfDataMapOfShapePairOfPolygon.hxx>
 #include <BRepMesh_DataMapIteratorOfDataMapOfShapeReal.hxx>
-#include <BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid.hxx>
 #include <BRepMesh_DataMapIteratorOfDataMapOfVertexInteger.hxx>
-#include <BRepMesh_DataMapNodeOfDataMapOfCouplePnt.hxx>
-#include <BRepMesh_DataMapNodeOfDataMapOfIntegerFace.hxx>
+#include <BRepMesh_DataMapNodeOfDataMapOfFaceAttribute.hxx>
 #include <BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY.hxx>
-#include <BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger.hxx>
-#include <BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret.hxx>
+#include <BRepMesh_DataMapNodeOfDataMapOfIntegerPnt.hxx>
+#include <BRepMesh_DataMapNodeOfDataMapOfShapePairOfPolygon.hxx>
 #include <BRepMesh_DataMapNodeOfDataMapOfShapeReal.hxx>
-#include <BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid.hxx>
 #include <BRepMesh_DataMapNodeOfDataMapOfVertexInteger.hxx>
-#include <BRepMesh_DataMapOfCouplePnt.hxx>
-#include <BRepMesh_DataMapOfIntegerFace.hxx>
+#include <BRepMesh_DataMapOfFaceAttribute.hxx>
 #include <BRepMesh_DataMapOfIntegerListOfXY.hxx>
-#include <BRepMesh_DataMapOfMeshVertexInteger.hxx>
-#include <BRepMesh_DataMapOfShapeEdgeDiscret.hxx>
+#include <BRepMesh_DataMapOfIntegerPnt.hxx>
+#include <BRepMesh_DataMapOfShapePairOfPolygon.hxx>
 #include <BRepMesh_DataMapOfShapeReal.hxx>
-#include <BRepMesh_DataMapOfShapeSurfaceGrid.hxx>
 #include <BRepMesh_DataMapOfVertexInteger.hxx>
 #include <BRepMesh_DataStructureOfDelaun.hxx>
 #include <BRepMesh_Delaun.hxx>
 #include <BRepMesh_DiscretFactory.hxx>
 #include <BRepMesh_DiscretRoot.hxx>
 #include <BRepMesh_Edge.hxx>
-#include <BRepMesh_EdgeDiscret.hxx>
 #include <BRepMesh_ElemHasherOfDataStructureOfDelaun.hxx>
+#include <BRepMesh_FaceAttribute.hxx>
 #include <BRepMesh_FactoryError.hxx>
 #include <BRepMesh_FastDiscret.hxx>
+#include <BRepMesh_FastDiscretFace.hxx>
 #include <BRepMesh_GeomTool.hxx>
 #include <BRepMesh_HArray1OfVertexOfDelaun.hxx>
 #include <BRepMesh_HeapSortIndexedVertexOfDelaun.hxx>
@@ -82,51 +78,41 @@ $HeaderURL$
 #include <BRepMesh_IndexedMapNodeOfIndexedMapOfVertex.hxx>
 #include <BRepMesh_IndexedMapOfVertex.hxx>
 #include <BRepMesh_LinkHasherOfDataStructureOfDelaun.hxx>
-#include <BRepMesh_ListIteratorOfListOfSurfaceGrid.hxx>
 #include <BRepMesh_ListIteratorOfListOfVertex.hxx>
 #include <BRepMesh_ListIteratorOfListOfXY.hxx>
-#include <BRepMesh_ListNodeOfListOfSurfaceGrid.hxx>
 #include <BRepMesh_ListNodeOfListOfVertex.hxx>
 #include <BRepMesh_ListNodeOfListOfXY.hxx>
-#include <BRepMesh_ListOfSurfaceGrid.hxx>
 #include <BRepMesh_ListOfVertex.hxx>
 #include <BRepMesh_ListOfXY.hxx>
-#include <BRepMesh_MapIteratorOfMapOfAsciiString.hxx>
-#include <BRepMesh_MapOfAsciiString.hxx>
 #include <BRepMesh_NodeHasherOfDataStructureOfDelaun.hxx>
 #include <BRepMesh_PDiscretRoot.hxx>
+#include <BRepMesh_PairOfPolygon.hxx>
 #include <BRepMesh_PluginMacro.hxx>
 #include <BRepMesh_SelectorOfDataStructureOfDelaun.hxx>
 #include <BRepMesh_ShapeTool.hxx>
 #include <BRepMesh_Status.hxx>
-#include <BRepMesh_StdMapNodeOfMapOfAsciiString.hxx>
-#include <BRepMesh_SurfaceGrid.hxx>
 #include <BRepMesh_Triangle.hxx>
 #include <BRepMesh_Vertex.hxx>
 #include <BRepMesh_VertexHasher.hxx>
 #include <Handle_Adaptor2d_HCurve2d.hxx>
 #include <Handle_Adaptor2d_HLine2d.hxx>
-#include <Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt.hxx>
-#include <Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace.hxx>
+#include <Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute.hxx>
 #include <Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY.hxx>
-#include <Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger.hxx>
-#include <Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret.hxx>
+#include <Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerPnt.hxx>
+#include <Handle_BRepMesh_DataMapNodeOfDataMapOfShapePairOfPolygon.hxx>
 #include <Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal.hxx>
-#include <Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid.hxx>
 #include <Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger.hxx>
 #include <Handle_BRepMesh_DataStructureOfDelaun.hxx>
-#include <Handle_BRepMesh_EdgeDiscret.hxx>
+#include <Handle_BRepMesh_FaceAttribute.hxx>
 #include <Handle_BRepMesh_FastDiscret.hxx>
+#include <Handle_BRepMesh_FastDiscretFace.hxx>
 #include <Handle_BRepMesh_HArray1OfVertexOfDelaun.hxx>
 #include <Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun.hxx>
 #include <Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun.hxx>
 #include <Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun.hxx>
 #include <Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex.hxx>
-#include <Handle_BRepMesh_ListNodeOfListOfSurfaceGrid.hxx>
 #include <Handle_BRepMesh_ListNodeOfListOfVertex.hxx>
 #include <Handle_BRepMesh_ListNodeOfListOfXY.hxx>
-#include <Handle_BRepMesh_StdMapNodeOfMapOfAsciiString.hxx>
-#include <Handle_BRepMesh_SurfaceGrid.hxx>
 #include <Handle_Prs3d_AngleAspect.hxx>
 #include <Handle_Prs3d_ArrowAspect.hxx>
 #include <Handle_Prs3d_BasicAspect.hxx>
@@ -307,6 +293,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -330,6 +317,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -345,6 +333,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>

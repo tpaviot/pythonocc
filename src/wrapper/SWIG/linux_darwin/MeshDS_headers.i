@@ -27,21 +27,16 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
 #include<MeshDS_BaseAllocator.hxx>
-#include<MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger.hxx>
-#include<MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
-#include<MeshDS_DataMapOfInteger.hxx>
-#include<MeshDS_DataMapOfIntegerMapOfInteger.hxx>
 #include<MeshDS_DegreeOfFreedom.hxx>
 #include<MeshDS_ListOfInteger.hxx>
 #include<MeshDS_MapOfInteger.hxx>
+#include<MeshDS_MapOfIntegerInteger.hxx>
+#include<MeshDS_PairOfIndex.hxx>
 
 // Additional headers necessary for compilation.
 
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
-#include<TColStd_MapOfInteger.hxx>
 %}

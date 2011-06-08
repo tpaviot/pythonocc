@@ -66,7 +66,7 @@ class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingSize & operator=(const IGESGraph_DrawingSize *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_DrawingSize const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_DrawingSize DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_DrawingSize {
@@ -104,7 +104,7 @@ class Handle_IGESGraph_LineFontDefPattern : public Handle_IGESData_LineFontEntit
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefPattern & operator=(const IGESGraph_LineFontDefPattern *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_LineFontDefPattern const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_LineFontDefPattern DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_LineFontDefPattern {
@@ -142,7 +142,7 @@ class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Pick & operator=(const IGESGraph_Pick *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_Pick const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_Pick DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_Pick {
@@ -180,7 +180,7 @@ class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_GeneralModule & operator=(const IGESGraph_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_GeneralModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_GeneralModule {
@@ -218,7 +218,7 @@ class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfColor & operator=(const IGESGraph_HArray1OfColor *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_HArray1OfColor const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_HArray1OfColor DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_HArray1OfColor {
@@ -256,7 +256,7 @@ class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Protocol & operator=(const IGESGraph_Protocol *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_Protocol DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_Protocol {
@@ -294,7 +294,7 @@ class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingUnits & operator=(const IGESGraph_DrawingUnits *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_DrawingUnits const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_DrawingUnits DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_DrawingUnits {
@@ -332,7 +332,7 @@ class Handle_IGESGraph_HArray1OfTextFontDef : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextFontDef & operator=(const IGESGraph_HArray1OfTextFontDef *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_HArray1OfTextFontDef const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_HArray1OfTextFontDef DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_HArray1OfTextFontDef {
@@ -370,7 +370,7 @@ class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 		%feature("autodoc", "1");
 		Handle_IGESGraph_ReadWriteModule & operator=(const IGESGraph_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_ReadWriteModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_ReadWriteModule {
@@ -408,7 +408,7 @@ class Handle_IGESGraph_DefinitionLevel : public Handle_IGESData_LevelListEntity 
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DefinitionLevel & operator=(const IGESGraph_DefinitionLevel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_DefinitionLevel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_DefinitionLevel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_DefinitionLevel {
@@ -446,7 +446,7 @@ class Handle_IGESGraph_HArray1OfTextDisplayTemplate : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextDisplayTemplate & operator=(const IGESGraph_HArray1OfTextDisplayTemplate *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_HArray1OfTextDisplayTemplate const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_HArray1OfTextDisplayTemplate DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_HArray1OfTextDisplayTemplate {
@@ -484,7 +484,7 @@ class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontPredefined & operator=(const IGESGraph_LineFontPredefined *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_LineFontPredefined const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_LineFontPredefined DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_LineFontPredefined {
@@ -522,7 +522,7 @@ class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_SpecificModule & operator=(const IGESGraph_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_SpecificModule {
@@ -560,7 +560,7 @@ class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Color & operator=(const IGESGraph_Color *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_Color const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_Color DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_Color {
@@ -598,7 +598,7 @@ class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_UniformRectGrid & operator=(const IGESGraph_UniformRectGrid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_UniformRectGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_UniformRectGrid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_UniformRectGrid {
@@ -636,7 +636,7 @@ class Handle_IGESGraph_TextDisplayTemplate : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextDisplayTemplate & operator=(const IGESGraph_TextDisplayTemplate *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_TextDisplayTemplate const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_TextDisplayTemplate DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_TextDisplayTemplate {
@@ -674,7 +674,7 @@ class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HighLight & operator=(const IGESGraph_HighLight *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_HighLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_HighLight DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_HighLight {
@@ -712,7 +712,7 @@ class Handle_IGESGraph_LineFontDefTemplate : public Handle_IGESData_LineFontEnti
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefTemplate & operator=(const IGESGraph_LineFontDefTemplate *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_LineFontDefTemplate const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_LineFontDefTemplate DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_LineFontDefTemplate {
@@ -750,7 +750,7 @@ class Handle_IGESGraph_NominalSize : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_NominalSize & operator=(const IGESGraph_NominalSize *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_NominalSize const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_NominalSize DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_NominalSize {
@@ -788,7 +788,7 @@ class Handle_IGESGraph_TextFontDef : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextFontDef & operator=(const IGESGraph_TextFontDef *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_TextFontDef const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_TextFontDef DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_TextFontDef {
@@ -826,7 +826,7 @@ class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity
 		%feature("autodoc", "1");
 		Handle_IGESGraph_IntercharacterSpacing & operator=(const IGESGraph_IntercharacterSpacing *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGraph_IntercharacterSpacing const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGraph_IntercharacterSpacing DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESGraph_IntercharacterSpacing {
@@ -2031,47 +2031,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGraph_LineFontPredefined;
-class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_LineFontPredefined();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbProps, const Standard_Integer aLineFontPatternCode);
-		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
-		%feature("autodoc", "1");
-		Standard_Integer LineFontPatternCode() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGraph_LineFontPredefined {
-	Handle_IGESGraph_LineFontPredefined GetHandle() {
-	return *(Handle_IGESGraph_LineFontPredefined*) &$self;
-	}
-};
-%extend IGESGraph_LineFontPredefined {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESGraph_LineFontPredefined::~IGESGraph_LineFontPredefined %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGraph_LineFontPredefined {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESGraph_SpecificModule;
 class IGESGraph_SpecificModule : public IGESData_SpecificModule {
 	public:
@@ -2515,6 +2474,47 @@ def __del__(self):
 %}
 
 %extend IGESGraph_LineFontDefPattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGraph_LineFontPredefined;
+class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_LineFontPredefined();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nbProps, const Standard_Integer aLineFontPatternCode);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		Standard_Integer LineFontPatternCode() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGraph_LineFontPredefined {
+	Handle_IGESGraph_LineFontPredefined GetHandle() {
+	return *(Handle_IGESGraph_LineFontPredefined*) &$self;
+	}
+};
+%extend IGESGraph_LineFontPredefined {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") IGESGraph_LineFontPredefined::~IGESGraph_LineFontPredefined %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGraph_LineFontPredefined {
 	void _kill_pointed() {
 		delete $self;
 	}

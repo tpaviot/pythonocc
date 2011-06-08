@@ -227,7 +227,7 @@ class Handle_AIS_InteractiveObject : public Handle_SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject & operator=(const AIS_InteractiveObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_InteractiveObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_InteractiveObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_InteractiveObject {
@@ -265,7 +265,7 @@ class Handle_AIS_Relation : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Relation & operator=(const AIS_Relation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Relation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Relation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Relation {
@@ -289,44 +289,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_MidPointRelation;
-class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_MidPointRelation();
-		%feature("autodoc", "1");
-		Handle_AIS_MidPointRelation(const Handle_AIS_MidPointRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_MidPointRelation(const AIS_MidPointRelation *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_MidPointRelation & operator=(const Handle_AIS_MidPointRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_MidPointRelation & operator=(const AIS_MidPointRelation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_MidPointRelation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_MidPointRelation {
-	AIS_MidPointRelation* GetObject() {
-	return (AIS_MidPointRelation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_MidPointRelation::~Handle_AIS_MidPointRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_MidPointRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AIS_DiameterDimension;
 class Handle_AIS_DiameterDimension : public Handle_AIS_Relation {
 	public:
@@ -341,7 +303,7 @@ class Handle_AIS_DiameterDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_DiameterDimension & operator=(const AIS_DiameterDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_DiameterDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_DiameterDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_DiameterDimension {
@@ -379,7 +341,7 @@ class Handle_AIS_MultipleConnectedInteractive : public Handle_AIS_InteractiveObj
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedInteractive & operator=(const AIS_MultipleConnectedInteractive *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_MultipleConnectedInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_MultipleConnectedInteractive DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_MultipleConnectedInteractive {
@@ -417,7 +379,7 @@ class Handle_AIS_FixRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_FixRelation & operator=(const AIS_FixRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_FixRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_FixRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_FixRelation {
@@ -455,7 +417,7 @@ class Handle_AIS_EqualDistanceRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_EqualDistanceRelation & operator=(const AIS_EqualDistanceRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_EqualDistanceRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_EqualDistanceRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_EqualDistanceRelation {
@@ -493,7 +455,7 @@ class Handle_AIS_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfIOStatus & operator=(const AIS_DataMapNodeOfDataMapOfIOStatus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_DataMapNodeOfDataMapOfIOStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_DataMapNodeOfDataMapOfIOStatus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfIOStatus {
@@ -531,7 +493,7 @@ class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_TangentRelation & operator=(const AIS_TangentRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_TangentRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_TangentRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_TangentRelation {
@@ -569,7 +531,7 @@ class Handle_AIS_ConnectedInteractive : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedInteractive & operator=(const AIS_ConnectedInteractive *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_ConnectedInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_ConnectedInteractive DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_ConnectedInteractive {
@@ -607,7 +569,7 @@ class Handle_AIS_ConnectedShape : public Handle_AIS_ConnectedInteractive {
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedShape & operator=(const AIS_ConnectedShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_ConnectedShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_ConnectedShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_ConnectedShape {
@@ -645,7 +607,7 @@ class Handle_AIS_Trihedron : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Trihedron & operator=(const AIS_Trihedron *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Trihedron const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Trihedron DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Trihedron {
@@ -683,7 +645,7 @@ class Handle_AIS_RadiusDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_RadiusDimension & operator=(const AIS_RadiusDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_RadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_RadiusDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_RadiusDimension {
@@ -721,7 +683,7 @@ class Handle_AIS_Point : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Point & operator=(const AIS_Point *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Point const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Point DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Point {
@@ -759,7 +721,7 @@ class Handle_AIS_LengthDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_LengthDimension & operator=(const AIS_LengthDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_LengthDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_LengthDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_LengthDimension {
@@ -783,6 +745,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AIS_Drawer;
+class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer();
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer(const Handle_AIS_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer(const AIS_Drawer *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer & operator=(const Handle_AIS_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer & operator=(const AIS_Drawer *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_Drawer DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_Drawer {
+	AIS_Drawer* GetObject() {
+	return (AIS_Drawer*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_Drawer::~Handle_AIS_Drawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AIS_MultipleConnectedShape;
 class Handle_AIS_MultipleConnectedShape : public Handle_AIS_MultipleConnectedInteractive {
 	public:
@@ -797,7 +797,7 @@ class Handle_AIS_MultipleConnectedShape : public Handle_AIS_MultipleConnectedInt
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedShape & operator=(const AIS_MultipleConnectedShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_MultipleConnectedShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_MultipleConnectedShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_MultipleConnectedShape {
@@ -835,7 +835,7 @@ class Handle_AIS_ConcentricRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_ConcentricRelation & operator=(const AIS_ConcentricRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_ConcentricRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_ConcentricRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_ConcentricRelation {
@@ -873,7 +873,7 @@ class Handle_AIS_Chamf2dDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf2dDimension & operator=(const AIS_Chamf2dDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Chamf2dDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Chamf2dDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Chamf2dDimension {
@@ -911,7 +911,7 @@ class Handle_AIS_ExclusionFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_ExclusionFilter & operator=(const AIS_ExclusionFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_ExclusionFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_ExclusionFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_ExclusionFilter {
@@ -935,6 +935,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AIS_IdenticRelation;
+class Handle_AIS_IdenticRelation : public Handle_AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_IdenticRelation();
+		%feature("autodoc", "1");
+		Handle_AIS_IdenticRelation(const Handle_AIS_IdenticRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_IdenticRelation(const AIS_IdenticRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_IdenticRelation & operator=(const Handle_AIS_IdenticRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_IdenticRelation & operator=(const AIS_IdenticRelation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_IdenticRelation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_IdenticRelation {
+	AIS_IdenticRelation* GetObject() {
+	return (AIS_IdenticRelation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_IdenticRelation::~Handle_AIS_IdenticRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_IdenticRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AIS_Triangulation;
+class Handle_AIS_Triangulation : public Handle_AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_Triangulation();
+		%feature("autodoc", "1");
+		Handle_AIS_Triangulation(const Handle_AIS_Triangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Triangulation(const AIS_Triangulation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Triangulation & operator=(const Handle_AIS_Triangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Triangulation & operator=(const AIS_Triangulation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_Triangulation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_Triangulation {
+	AIS_Triangulation* GetObject() {
+	return (AIS_Triangulation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_Triangulation::~Handle_AIS_Triangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_Triangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfILC;
 class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
 	public:
@@ -949,7 +1025,7 @@ class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const AIS_DataMapNodeOfDataMapOfILC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_DataMapNodeOfDataMapOfILC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_DataMapNodeOfDataMapOfILC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfILC {
@@ -987,7 +1063,7 @@ class Handle_AIS_AttributeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_AttributeFilter & operator=(const AIS_AttributeFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_AttributeFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_AttributeFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_AttributeFilter {
@@ -1025,7 +1101,7 @@ class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_SequenceNodeOfSequenceOfDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_SequenceNodeOfSequenceOfDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
@@ -1063,7 +1139,7 @@ class Handle_AIS_EqualRadiusRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_EqualRadiusRelation & operator=(const AIS_EqualRadiusRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_EqualRadiusRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_EqualRadiusRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_EqualRadiusRelation {
@@ -1101,7 +1177,7 @@ class Handle_AIS_GlobalStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_GlobalStatus & operator=(const AIS_GlobalStatus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_GlobalStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_GlobalStatus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_GlobalStatus {
@@ -1139,7 +1215,7 @@ class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Line & operator=(const AIS_Line *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Line const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Line DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Line {
@@ -1177,7 +1253,7 @@ class Handle_AIS_DimensionOwner : public Handle_SelectMgr_EntityOwner {
 		%feature("autodoc", "1");
 		Handle_AIS_DimensionOwner & operator=(const AIS_DimensionOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_DimensionOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_DimensionOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_DimensionOwner {
@@ -1215,7 +1291,7 @@ class Handle_AIS_PerpendicularRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_PerpendicularRelation & operator=(const AIS_PerpendicularRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_PerpendicularRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_PerpendicularRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_PerpendicularRelation {
@@ -1253,7 +1329,7 @@ class Handle_AIS_TypeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_TypeFilter & operator=(const AIS_TypeFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_TypeFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_TypeFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_TypeFilter {
@@ -1291,7 +1367,7 @@ class Handle_AIS_SignatureFilter : public Handle_AIS_TypeFilter {
 		%feature("autodoc", "1");
 		Handle_AIS_SignatureFilter & operator=(const AIS_SignatureFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_SignatureFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_SignatureFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_SignatureFilter {
@@ -1329,7 +1405,7 @@ class Handle_AIS_InteractiveContext : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveContext & operator=(const AIS_InteractiveContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_InteractiveContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_InteractiveContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_InteractiveContext {
@@ -1367,7 +1443,7 @@ class Handle_AIS_OffsetDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_OffsetDimension & operator=(const AIS_OffsetDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_OffsetDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_OffsetDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_OffsetDimension {
@@ -1405,7 +1481,7 @@ class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_EllipseRadiusDimension & operator=(const AIS_EllipseRadiusDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_EllipseRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_EllipseRadiusDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_EllipseRadiusDimension {
@@ -1443,7 +1519,7 @@ class Handle_AIS_Axis : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Axis & operator=(const AIS_Axis *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Axis const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Axis DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Axis {
@@ -1481,7 +1557,7 @@ class Handle_AIS_MinRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 		%feature("autodoc", "1");
 		Handle_AIS_MinRadiusDimension & operator=(const AIS_MinRadiusDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_MinRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_MinRadiusDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_MinRadiusDimension {
@@ -1519,7 +1595,7 @@ class Handle_AIS_C0RegularityFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_C0RegularityFilter & operator=(const AIS_C0RegularityFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_C0RegularityFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_C0RegularityFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_C0RegularityFilter {
@@ -1557,7 +1633,7 @@ class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
@@ -1595,7 +1671,7 @@ class Handle_AIS_Plane : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Plane & operator=(const AIS_Plane *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Plane const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Plane DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Plane {
@@ -1633,7 +1709,7 @@ class Handle_AIS_MaxRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 		%feature("autodoc", "1");
 		Handle_AIS_MaxRadiusDimension & operator=(const AIS_MaxRadiusDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_MaxRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_MaxRadiusDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_MaxRadiusDimension {
@@ -1671,7 +1747,7 @@ class Handle_AIS_LocalStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_LocalStatus & operator=(const AIS_LocalStatus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_LocalStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_LocalStatus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_LocalStatus {
@@ -1709,7 +1785,7 @@ class Handle_AIS_LocalContext : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_LocalContext & operator=(const AIS_LocalContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_LocalContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_LocalContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_LocalContext {
@@ -1733,6 +1809,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AIS_StdMapNodeOfMapOfInteractive;
+class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive();
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive(const AIS_StdMapNodeOfMapOfInteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const AIS_StdMapNodeOfMapOfInteractive *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_StdMapNodeOfMapOfInteractive DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
+	AIS_StdMapNodeOfMapOfInteractive* GetObject() {
+	return (AIS_StdMapNodeOfMapOfInteractive*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_StdMapNodeOfMapOfInteractive::~Handle_AIS_StdMapNodeOfMapOfInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AIS_BadEdgeFilter;
 class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
 	public:
@@ -1747,7 +1861,7 @@ class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_BadEdgeFilter & operator=(const AIS_BadEdgeFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_BadEdgeFilter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_BadEdgeFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_BadEdgeFilter {
@@ -1785,7 +1899,7 @@ class Handle_AIS_Circle : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Circle & operator=(const AIS_Circle *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Circle const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Circle DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Circle {
@@ -1809,44 +1923,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_StdMapNodeOfMapOfInteractive;
-class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive();
-		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive(const AIS_StdMapNodeOfMapOfInteractive *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const AIS_StdMapNodeOfMapOfInteractive *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_StdMapNodeOfMapOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
-	AIS_StdMapNodeOfMapOfInteractive* GetObject() {
-	return (AIS_StdMapNodeOfMapOfInteractive*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_StdMapNodeOfMapOfInteractive::~Handle_AIS_StdMapNodeOfMapOfInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfInteractive;
 class Handle_AIS_SequenceNodeOfSequenceOfInteractive : public Handle_TCollection_SeqNode {
 	public:
@@ -1861,7 +1937,7 @@ class Handle_AIS_SequenceNodeOfSequenceOfInteractive : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfInteractive & operator=(const AIS_SequenceNodeOfSequenceOfInteractive *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_SequenceNodeOfSequenceOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_SequenceNodeOfSequenceOfInteractive DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_SequenceNodeOfSequenceOfInteractive {
@@ -1899,7 +1975,7 @@ class Handle_AIS_Shape : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Shape & operator=(const AIS_Shape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Shape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Shape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Shape {
@@ -1923,6 +1999,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AIS_MidPointRelation;
+class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_MidPointRelation();
+		%feature("autodoc", "1");
+		Handle_AIS_MidPointRelation(const Handle_AIS_MidPointRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_MidPointRelation(const AIS_MidPointRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_MidPointRelation & operator=(const Handle_AIS_MidPointRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_MidPointRelation & operator=(const AIS_MidPointRelation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_MidPointRelation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_MidPointRelation {
+	AIS_MidPointRelation* GetObject() {
+	return (AIS_MidPointRelation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_MidPointRelation::~Handle_AIS_MidPointRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_MidPointRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AIS_SymmetricRelation;
 class Handle_AIS_SymmetricRelation : public Handle_AIS_Relation {
 	public:
@@ -1937,7 +2051,7 @@ class Handle_AIS_SymmetricRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_SymmetricRelation & operator=(const AIS_SymmetricRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_SymmetricRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_SymmetricRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_SymmetricRelation {
@@ -1961,44 +2075,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfTransientTransient;
-class Handle_AIS_DataMapNodeOfDataMapOfTransientTransient : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient();
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient(const Handle_AIS_DataMapNodeOfDataMapOfTransientTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient(const AIS_DataMapNodeOfDataMapOfTransientTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient & operator=(const Handle_AIS_DataMapNodeOfDataMapOfTransientTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient & operator=(const AIS_DataMapNodeOfDataMapOfTransientTransient *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_DataMapNodeOfDataMapOfTransientTransient {
-	AIS_DataMapNodeOfDataMapOfTransientTransient* GetObject() {
-	return (AIS_DataMapNodeOfDataMapOfTransientTransient*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_DataMapNodeOfDataMapOfTransientTransient::~Handle_AIS_DataMapNodeOfDataMapOfTransientTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_DataMapNodeOfDataMapOfTransientTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AIS_Selection;
 class Handle_AIS_Selection : public Handle_MMgt_TShared {
 	public:
@@ -2013,7 +2089,7 @@ class Handle_AIS_Selection : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_Selection & operator=(const AIS_Selection *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Selection const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Selection DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Selection {
@@ -2051,7 +2127,7 @@ class Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs & operator=(const AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
@@ -2089,7 +2165,7 @@ class Handle_AIS_ParallelRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_ParallelRelation & operator=(const AIS_ParallelRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_ParallelRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_ParallelRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_ParallelRelation {
@@ -2127,7 +2203,7 @@ class Handle_AIS_DataMapNodeOfDataMapOfSelStat : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfSelStat & operator=(const AIS_DataMapNodeOfDataMapOfSelStat *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_DataMapNodeOfDataMapOfSelStat const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_DataMapNodeOfDataMapOfSelStat DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfSelStat {
@@ -2165,7 +2241,7 @@ class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
 		%feature("autodoc", "1");
 		Handle_AIS_TexturedShape & operator=(const AIS_TexturedShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_TexturedShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_TexturedShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_TexturedShape {
@@ -2189,82 +2265,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_IdenticRelation;
-class Handle_AIS_IdenticRelation : public Handle_AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_IdenticRelation();
-		%feature("autodoc", "1");
-		Handle_AIS_IdenticRelation(const Handle_AIS_IdenticRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_IdenticRelation(const AIS_IdenticRelation *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_IdenticRelation & operator=(const Handle_AIS_IdenticRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_IdenticRelation & operator=(const AIS_IdenticRelation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_IdenticRelation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_IdenticRelation {
-	AIS_IdenticRelation* GetObject() {
-	return (AIS_IdenticRelation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_IdenticRelation::~Handle_AIS_IdenticRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_IdenticRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AIS_Drawer;
-class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer();
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer(const Handle_AIS_Drawer &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer(const AIS_Drawer *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer & operator=(const Handle_AIS_Drawer &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer & operator=(const AIS_Drawer *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_Drawer {
-	AIS_Drawer* GetObject() {
-	return (AIS_Drawer*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_Drawer::~Handle_AIS_Drawer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_Drawer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AIS_ListNodeOfListOfInteractive;
 class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode {
 	public:
@@ -2279,7 +2279,7 @@ class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_AIS_ListNodeOfListOfInteractive & operator=(const AIS_ListNodeOfListOfInteractive *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_ListNodeOfListOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_ListNodeOfListOfInteractive DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_ListNodeOfListOfInteractive {
@@ -2317,7 +2317,7 @@ class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_AngleDimension & operator=(const AIS_AngleDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_AngleDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_AngleDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_AngleDimension {
@@ -2355,7 +2355,7 @@ class Handle_AIS_PlaneTrihedron : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_PlaneTrihedron & operator=(const AIS_PlaneTrihedron *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_PlaneTrihedron const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_PlaneTrihedron DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_PlaneTrihedron {
@@ -2393,7 +2393,7 @@ class Handle_AIS_Chamf3dDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf3dDimension & operator=(const AIS_Chamf3dDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Chamf3dDimension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Chamf3dDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AIS_Chamf3dDimension {
@@ -2576,37 +2576,6 @@ def __del__(self):
 %}
 
 %extend AIS_Drawer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_DataMapIteratorOfDataMapOfTransientTransient;
-class AIS_DataMapIteratorOfDataMapOfTransientTransient : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapIteratorOfDataMapOfTransientTransient();
-		%feature("autodoc", "1");
-		AIS_DataMapIteratorOfDataMapOfTransientTransient(const AIS_DataMapOfTransientTransient &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const AIS_DataMapOfTransientTransient &aMap);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
-
-};
-%feature("shadow") AIS_DataMapIteratorOfDataMapOfTransientTransient::~AIS_DataMapIteratorOfDataMapOfTransientTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_DataMapIteratorOfDataMapOfTransientTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3162,6 +3131,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor AIS_Triangulation;
+class AIS_Triangulation : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_Triangulation(const Handle_Poly_Triangulation &aTriangulation);
+		%feature("autodoc", "1");
+		void SetColors(const Handle_TColStd_HArray1OfInteger &aColor);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger GetColors() const;
+		%feature("autodoc", "1");
+		void SetTriangulation(const Handle_Poly_Triangulation &aTriangulation);
+		%feature("autodoc", "1");
+		Handle_Poly_Triangulation GetTriangulation() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Triangulation {
+	Handle_AIS_Triangulation GetHandle() {
+	return *(Handle_AIS_Triangulation*) &$self;
+	}
+};
+%extend AIS_Triangulation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") AIS_Triangulation::~AIS_Triangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_Triangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs;
 class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapNode {
 	public:
@@ -3311,202 +3323,6 @@ def __del__(self):
 %}
 
 %extend AIS_ConnectedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_Shape;
-class AIS_Shape : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_Shape(const TopoDS_Shape shap);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptShapeDecomposition() const;
-		%feature("autodoc", "1");
-		void Set(const TopoDS_Shape ashap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnDeviationCoefficient();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnHLRDeviationCoefficient();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnDeviationAngle();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnHLRDeviationAngle();
-		%feature("autodoc", "1");
-		void SetOwnDeviationCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		void SetOwnHLRDeviationCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		void SetAngleAndDeviation(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		Standard_Real UserAngle() const;
-		%feature("autodoc", "1");
-		void SetOwnDeviationAngle(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		void SetHLRAngleAndDeviation(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		void SetOwnHLRDeviationAngle(const Standard_Real anAngle);
-		%feature("autodoc","OwnDeviationCoefficient() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnHLRDeviationCoefficient() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnHLRDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnDeviationAngle() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnHLRDeviationAngle() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnHLRDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		void UnsetColor();
-		%feature("autodoc", "1");
-		virtual		void SetWidth(const Standard_Real aValue);
-		%feature("autodoc", "1");
-		virtual		void UnsetWidth();
-		%feature("autodoc", "1");
-		virtual		void SetMaterial(const Graphic3d_NameOfMaterial aName);
-		%feature("autodoc", "1");
-		virtual		void SetMaterial(const Graphic3d_MaterialAspect &aName);
-		%feature("autodoc", "1");
-		virtual		void UnsetMaterial();
-		%feature("autodoc", "1");
-		virtual		void SetTransparency(const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1);
-		%feature("autodoc", "1");
-		virtual		void UnsetTransparency();
-		%feature("autodoc", "1");
-		virtual		const Bnd_Box & BoundingBox();
-		%feature("autodoc", "1");
-		virtual		Quantity_NameOfColor Color() const;
-		%feature("autodoc", "1");
-		virtual		void Color(Quantity_Color & aColor) const;
-		%feature("autodoc", "1");
-		virtual		Graphic3d_NameOfMaterial Material() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Transparency() const;
-		%feature("autodoc", "1");
-		static		TopAbs_ShapeEnum SelectionType(const Standard_Integer aDecompositionMode);
-		%feature("autodoc", "1");
-		static		Standard_Integer SelectionMode(const TopAbs_ShapeEnum aShapeType);
-		%feature("autodoc", "1");
-		static		Standard_Real GetDeflection(const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_Shape {
-	Handle_AIS_Shape GetHandle() {
-	return *(Handle_AIS_Shape*) &$self;
-	}
-};
-%extend AIS_Shape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") AIS_Shape::~AIS_Shape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_Shape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_TexturedShape;
-class AIS_TexturedShape : public AIS_Shape {
-	public:
-		%feature("autodoc", "1");
-		AIS_TexturedShape(const TopoDS_Shape shap);
-		%feature("autodoc", "1");
-		virtual		void SetTextureFileName(const TCollection_AsciiString &TextureFileName);
-		%feature("autodoc", "1");
-		virtual		void SetTextureRepeat(const Standard_Boolean RepeatYN, const Standard_Real URepeat=1.0e+0, const Standard_Real VRepeat=1.0e+0);
-		%feature("autodoc", "1");
-		virtual		void SetTextureOrigin(const Standard_Boolean SetTextureOriginYN, const Standard_Real UOrigin=0.0, const Standard_Real VOrigin=0.0);
-		%feature("autodoc", "1");
-		virtual		void SetTextureScale(const Standard_Boolean SetTextureScaleYN, const Standard_Real ScaleU=1.0e+0, const Standard_Real ScaleV=1.0e+0);
-		%feature("autodoc", "1");
-		virtual		void ShowTriangles(const Standard_Boolean ShowTrianglesYN=0);
-		%feature("autodoc", "1");
-		void SetTextureMapOn();
-		%feature("autodoc", "1");
-		void SetTextureMapOff();
-		%feature("autodoc", "1");
-		void EnableTextureModulate();
-		%feature("autodoc", "1");
-		void DisableTextureModulate();
-		%feature("autodoc", "1");
-		void UpdateAttributes();
-		%feature("autodoc", "1");
-		Standard_Boolean TextureMapState() const;
-		%feature("autodoc", "1");
-		Standard_Real URepeat() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureRepeat() const;
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-		%feature("autodoc", "1");
-		char * TextureFile() const;
-		%feature("autodoc", "1");
-		Standard_Real VRepeat() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ShowTriangles() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureUOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureVOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureScaleU() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureScaleV() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureScale() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureModulate() const;
-
-};
-%extend AIS_TexturedShape {
-	Handle_AIS_TexturedShape GetHandle() {
-	return *(Handle_AIS_TexturedShape*) &$self;
-	}
-};
-%extend AIS_TexturedShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") AIS_TexturedShape::~AIS_TexturedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_TexturedShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3717,45 +3533,6 @@ def __del__(self):
 %}
 
 %extend AIS_DataMapIteratorOfDataMapOfILC {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_DataMapNodeOfDataMapOfTransientTransient;
-class AIS_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapNodeOfDataMapOfTransientTransient(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_DataMapNodeOfDataMapOfTransientTransient {
-	Handle_AIS_DataMapNodeOfDataMapOfTransientTransient GetHandle() {
-	return *(Handle_AIS_DataMapNodeOfDataMapOfTransientTransient*) &$self;
-	}
-};
-%extend AIS_DataMapNodeOfDataMapOfTransientTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") AIS_DataMapNodeOfDataMapOfTransientTransient::~AIS_DataMapNodeOfDataMapOfTransientTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_DataMapNodeOfDataMapOfTransientTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4117,6 +3894,47 @@ def __del__(self):
 %}
 
 %extend AIS_FixRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_ParallelRelation;
+class AIS_ParallelRelation : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_ParallelRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		AIS_ParallelRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMovable() const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_ParallelRelation {
+	Handle_AIS_ParallelRelation GetHandle() {
+	return *(Handle_AIS_ParallelRelation*) &$self;
+	}
+};
+%extend AIS_ParallelRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") AIS_ParallelRelation::~AIS_ParallelRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_ParallelRelation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4746,86 +4564,6 @@ def __del__(self):
 %}
 
 %extend AIS {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_ParallelRelation;
-class AIS_ParallelRelation : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_ParallelRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		AIS_ParallelRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_ParallelRelation {
-	Handle_AIS_ParallelRelation GetHandle() {
-	return *(Handle_AIS_ParallelRelation*) &$self;
-	}
-};
-%extend AIS_ParallelRelation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") AIS_ParallelRelation::~AIS_ParallelRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_ParallelRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_MaxRadiusDimension;
-class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
-	public:
-		%feature("autodoc", "1");
-		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_MaxRadiusDimension {
-	Handle_AIS_MaxRadiusDimension GetHandle() {
-	return *(Handle_AIS_MaxRadiusDimension*) &$self;
-	}
-};
-%extend AIS_MaxRadiusDimension {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") AIS_MaxRadiusDimension::~AIS_MaxRadiusDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_MaxRadiusDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5577,43 +5315,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_StdMapNodeOfMapOfInteractive;
-class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_InteractiveObject &K, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject & Key() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_StdMapNodeOfMapOfInteractive {
-	Handle_AIS_StdMapNodeOfMapOfInteractive GetHandle() {
-	return *(Handle_AIS_StdMapNodeOfMapOfInteractive*) &$self;
-	}
-};
-%extend AIS_StdMapNodeOfMapOfInteractive {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") AIS_StdMapNodeOfMapOfInteractive::~AIS_StdMapNodeOfMapOfInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_StdMapNodeOfMapOfInteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AIS_SequenceNodeOfSequenceOfInteractive;
 class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
 	public:
@@ -5645,6 +5346,43 @@ def __del__(self):
 %}
 
 %extend AIS_SequenceNodeOfSequenceOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_StdMapNodeOfMapOfInteractive;
+class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_InteractiveObject &K, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject & Key() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_StdMapNodeOfMapOfInteractive {
+	Handle_AIS_StdMapNodeOfMapOfInteractive GetHandle() {
+	return *(Handle_AIS_StdMapNodeOfMapOfInteractive*) &$self;
+	}
+};
+%extend AIS_StdMapNodeOfMapOfInteractive {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") AIS_StdMapNodeOfMapOfInteractive::~AIS_StdMapNodeOfMapOfInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_StdMapNodeOfMapOfInteractive {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5933,17 +5671,17 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Load(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer SelectionMode=-0x000000001, const Standard_Boolean AllowDecomp=0);
 		%feature("autodoc", "1");
-		void Erase(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean PutInCollector=1);
+		void Erase(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean PutInCollector=0);
 		%feature("autodoc", "1");
 		void EraseMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void EraseAll(const Standard_Boolean PutInCollector=1, const Standard_Boolean updateviewer=1);
+		void EraseAll(const Standard_Boolean PutInCollector=0, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void DisplayAll(const Standard_Boolean OnlyFromCollector=1, const Standard_Boolean updateviewer=1);
+		void DisplayAll(const Standard_Boolean OnlyFromCollector=0, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void DisplayFromCollector(const Handle_AIS_InteractiveObject &anIObj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void EraseSelected(const Standard_Boolean PutInCollector=1, const Standard_Boolean updateviewer=1);
+		void EraseSelected(const Standard_Boolean PutInCollector=0, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void DisplaySelected(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
@@ -6064,8 +5802,6 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		void Color(const Handle_AIS_InteractiveObject &aniobj, Quantity_Color & acolor) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Width(const Handle_AIS_InteractiveObject &aniobj) const;
-		%feature("autodoc", "1");
-		void Status(const Handle_AIS_InteractiveObject &anObj, TCollection_ExtendedString & astatus) const;
 		%feature("autodoc", "1");
 		void UpdateCurrentViewer();
 		%feature("autodoc", "1");
@@ -6427,6 +6163,202 @@ def __del__(self):
 };
 
 
+%nodefaultctor AIS_Shape;
+class AIS_Shape : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_Shape(const TopoDS_Shape shap);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptShapeDecomposition() const;
+		%feature("autodoc", "1");
+		void Set(const TopoDS_Shape ashap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnDeviationCoefficient();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnHLRDeviationCoefficient();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnDeviationAngle();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnHLRDeviationAngle();
+		%feature("autodoc", "1");
+		void SetOwnDeviationCoefficient(const Standard_Real aCoefficient);
+		%feature("autodoc", "1");
+		void SetOwnHLRDeviationCoefficient(const Standard_Real aCoefficient);
+		%feature("autodoc", "1");
+		void SetAngleAndDeviation(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		Standard_Real UserAngle() const;
+		%feature("autodoc", "1");
+		void SetOwnDeviationAngle(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		void SetHLRAngleAndDeviation(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		void SetOwnHLRDeviationAngle(const Standard_Real anAngle);
+		%feature("autodoc","OwnDeviationCoefficient() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnHLRDeviationCoefficient() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnHLRDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnDeviationAngle() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnHLRDeviationAngle() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnHLRDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		void UnsetColor();
+		%feature("autodoc", "1");
+		virtual		void SetWidth(const Standard_Real aValue);
+		%feature("autodoc", "1");
+		virtual		void UnsetWidth();
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_NameOfMaterial aName);
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_MaterialAspect &aName);
+		%feature("autodoc", "1");
+		virtual		void UnsetMaterial();
+		%feature("autodoc", "1");
+		virtual		void SetTransparency(const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1);
+		%feature("autodoc", "1");
+		virtual		void UnsetTransparency();
+		%feature("autodoc", "1");
+		virtual		const Bnd_Box & BoundingBox();
+		%feature("autodoc", "1");
+		virtual		Quantity_NameOfColor Color() const;
+		%feature("autodoc", "1");
+		virtual		void Color(Quantity_Color & aColor) const;
+		%feature("autodoc", "1");
+		virtual		Graphic3d_NameOfMaterial Material() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Transparency() const;
+		%feature("autodoc", "1");
+		static		TopAbs_ShapeEnum SelectionType(const Standard_Integer aDecompositionMode);
+		%feature("autodoc", "1");
+		static		Standard_Integer SelectionMode(const TopAbs_ShapeEnum aShapeType);
+		%feature("autodoc", "1");
+		static		Standard_Real GetDeflection(const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Shape {
+	Handle_AIS_Shape GetHandle() {
+	return *(Handle_AIS_Shape*) &$self;
+	}
+};
+%extend AIS_Shape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") AIS_Shape::~AIS_Shape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_TexturedShape;
+class AIS_TexturedShape : public AIS_Shape {
+	public:
+		%feature("autodoc", "1");
+		AIS_TexturedShape(const TopoDS_Shape shap);
+		%feature("autodoc", "1");
+		virtual		void SetTextureFileName(const TCollection_AsciiString &TextureFileName);
+		%feature("autodoc", "1");
+		virtual		void SetTextureRepeat(const Standard_Boolean RepeatYN, const Standard_Real URepeat=1.0e+0, const Standard_Real VRepeat=1.0e+0);
+		%feature("autodoc", "1");
+		virtual		void SetTextureOrigin(const Standard_Boolean SetTextureOriginYN, const Standard_Real UOrigin=0.0, const Standard_Real VOrigin=0.0);
+		%feature("autodoc", "1");
+		virtual		void SetTextureScale(const Standard_Boolean SetTextureScaleYN, const Standard_Real ScaleU=1.0e+0, const Standard_Real ScaleV=1.0e+0);
+		%feature("autodoc", "1");
+		virtual		void ShowTriangles(const Standard_Boolean ShowTrianglesYN=0);
+		%feature("autodoc", "1");
+		void SetTextureMapOn();
+		%feature("autodoc", "1");
+		void SetTextureMapOff();
+		%feature("autodoc", "1");
+		void EnableTextureModulate();
+		%feature("autodoc", "1");
+		void DisableTextureModulate();
+		%feature("autodoc", "1");
+		void UpdateAttributes();
+		%feature("autodoc", "1");
+		Standard_Boolean TextureMapState() const;
+		%feature("autodoc", "1");
+		Standard_Real URepeat() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureRepeat() const;
+		%feature("autodoc", "1");
+		Standard_Real Deflection() const;
+		%feature("autodoc", "1");
+		char * TextureFile() const;
+		%feature("autodoc", "1");
+		Standard_Real VRepeat() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ShowTriangles() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureUOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureVOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureScaleU() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureScaleV() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureScale() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureModulate() const;
+
+};
+%extend AIS_TexturedShape {
+	Handle_AIS_TexturedShape GetHandle() {
+	return *(Handle_AIS_TexturedShape*) &$self;
+	}
+};
+%extend AIS_TexturedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") AIS_TexturedShape::~AIS_TexturedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_TexturedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AIS_PlaneTrihedron;
 class AIS_PlaneTrihedron : public AIS_InteractiveObject {
 	public:
@@ -6738,51 +6670,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_DataMapOfTransientTransient;
-class AIS_DataMapOfTransientTransient : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapOfTransientTransient(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		AIS_DataMapOfTransientTransient & Assign(const AIS_DataMapOfTransientTransient &Other);
-		%feature("autodoc", "1");
-		AIS_DataMapOfTransientTransient & operator=(const AIS_DataMapOfTransientTransient &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const Handle_Standard_Transient &K);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K);
-
-};
-%feature("shadow") AIS_DataMapOfTransientTransient::~AIS_DataMapOfTransientTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_DataMapOfTransientTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AIS_DataMapOfILC;
 class AIS_DataMapOfILC : public TCollection_BasicMap {
 	public:
@@ -7029,6 +6916,45 @@ def __del__(self):
 %}
 
 %extend AIS_EqualDistanceRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_MaxRadiusDimension;
+class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
+	public:
+		%feature("autodoc", "1");
+		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_MaxRadiusDimension {
+	Handle_AIS_MaxRadiusDimension GetHandle() {
+	return *(Handle_AIS_MaxRadiusDimension*) &$self;
+	}
+};
+%extend AIS_MaxRadiusDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") AIS_MaxRadiusDimension::~AIS_MaxRadiusDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_MaxRadiusDimension {
 	void _kill_pointed() {
 		delete $self;
 	}

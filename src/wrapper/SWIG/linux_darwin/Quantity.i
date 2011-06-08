@@ -105,7 +105,6 @@ typedef double Quantity_Resistivity;
 typedef double Quantity_Acceleration;
 typedef double Quantity_Admittance;
 typedef double Quantity_Illuminance;
-typedef double Quantity_Torque;
 typedef double Quantity_Viscosity;
 typedef double Quantity_AcousticIntensity;
 typedef double Quantity_Activity;
@@ -118,6 +117,7 @@ typedef double Quantity_Luminance;
 typedef double Quantity_Molarity;
 typedef double Quantity_Coefficient;
 typedef double Quantity_Impedance;
+typedef double Quantity_Torque;
 typedef double Quantity_SolidAngle;
 typedef double Quantity_Speed;
 typedef double Quantity_Weight;
@@ -741,7 +741,7 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError & operator=(const Quantity_ColorDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Quantity_ColorDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Quantity_ColorDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Quantity_ColorDefinitionError {
@@ -779,7 +779,7 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError & operator=(const Quantity_PeriodDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Quantity_PeriodDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Quantity_PeriodDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Quantity_PeriodDefinitionError {
@@ -817,7 +817,7 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor & operator=(const Quantity_HArray1OfColor *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Quantity_HArray1OfColor const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Quantity_HArray1OfColor DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Quantity_HArray1OfColor {
@@ -855,7 +855,7 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError & operator=(const Quantity_DateDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Quantity_DateDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Quantity_DateDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Quantity_DateDefinitionError {
@@ -1066,7 +1066,7 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1109,7 +1109,7 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Quantity_PeriodDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Quantity_PeriodDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1258,6 +1258,11 @@ class Quantity_Color {
 		%feature("autodoc","RgbHls(Quantity_Parameter R, Quantity_Parameter G, Quantity_Parameter B) -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		static		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","Color2argb(const theColor) -> Standard_Integer");
+
+		static		void Color2argb(const Quantity_Color &theColor, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		static		void Argb2color(const Standard_Integer theARGB, Quantity_Color & theColor);
 		%feature("autodoc", "1");
 		static		void Test();
 		%feature("autodoc", "1");
@@ -1437,7 +1442,7 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

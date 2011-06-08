@@ -69,6 +69,7 @@ $HeaderURL$
 #include<gp_Lin2d.hxx>
 #include<Handle_Geom_Line.hxx>
 #include<Handle_Geom2d_Line.hxx>
+#include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom_SurfaceOfLinearExtrusion.hxx>
 #include<gp_Ax1.hxx>
@@ -78,7 +79,6 @@ $HeaderURL$
 #include<gp_Ax2.hxx>
 #include<gp_Ax22d.hxx>
 #include<Handle_Geom_ElementarySurface.hxx>
-#include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_Geom2d_Parabola.hxx>
 #include<Handle_Geom_Parabola.hxx>
 #include<gp_Dir.hxx>

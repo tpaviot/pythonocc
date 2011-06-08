@@ -31,11 +31,9 @@ import Standard
 import MeshDS
 import TopoDS
 import gp
-import TColStd
-import TCollection
+import Poly
 import TopAbs
 import Bnd
-import MeshShape
-import TColgp
-import BRepAdaptor
+import TCollection
+import TopTools
 };

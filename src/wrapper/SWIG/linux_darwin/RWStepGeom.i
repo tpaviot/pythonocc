@@ -1701,35 +1701,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepGeom_RWPlacement;
-class RWStepGeom_RWPlacement {
-	public:
-		%feature("autodoc", "1");
-		RWStepGeom_RWPlacement();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Placement &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Placement &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Placement &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepGeom_RWPlacement::~RWStepGeom_RWPlacement %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepGeom_RWPlacement {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepGeom_RWPoint;
 class RWStepGeom_RWPoint {
 	public:
@@ -2163,6 +2134,35 @@ def __del__(self):
 %}
 
 %extend RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepGeom_RWPlacement;
+class RWStepGeom_RWPlacement {
+	public:
+		%feature("autodoc", "1");
+		RWStepGeom_RWPlacement();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Placement &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Placement &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepGeom_Placement &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepGeom_RWPlacement::~RWStepGeom_RWPlacement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepGeom_RWPlacement {
 	void _kill_pointed() {
 		delete $self;
 	}

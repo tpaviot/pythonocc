@@ -92,7 +92,7 @@ class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_SequenceNodeOfSequenceOfReference const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCDM_SequenceNodeOfSequenceOfReference DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
@@ -130,7 +130,7 @@ class Handle_PCDM_Document : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PCDM_Document & operator=(const PCDM_Document *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_Document const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PCDM_Document DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PCDM_Document {
@@ -168,7 +168,7 @@ class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfDocument & operator=(const PCDM_SequenceNodeOfSequenceOfDocument *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_SequenceNodeOfSequenceOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCDM_SequenceNodeOfSequenceOfDocument DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCDM_SequenceNodeOfSequenceOfDocument {
@@ -192,44 +192,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PCDM_DriverError;
-class Handle_PCDM_DriverError : public Handle_Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError();
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError(const Handle_PCDM_DriverError &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError(const PCDM_DriverError *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError & operator=(const Handle_PCDM_DriverError &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError & operator=(const PCDM_DriverError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PCDM_DriverError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PCDM_DriverError {
-	PCDM_DriverError* GetObject() {
-	return (PCDM_DriverError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PCDM_DriverError::~Handle_PCDM_DriverError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PCDM_DriverError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PCDM_ReadWriter;
 class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 	public:
@@ -244,7 +206,7 @@ class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter & operator=(const PCDM_ReadWriter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_ReadWriter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCDM_ReadWriter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCDM_ReadWriter {
@@ -282,7 +244,7 @@ class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter_1 & operator=(const PCDM_ReadWriter_1 *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_ReadWriter_1 const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCDM_ReadWriter_1 DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCDM_ReadWriter_1 {
@@ -320,7 +282,7 @@ class Handle_PCDM_Reader : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_PCDM_Reader & operator=(const PCDM_Reader *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_Reader const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCDM_Reader DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCDM_Reader {
@@ -358,7 +320,7 @@ class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
 		%feature("autodoc", "1");
 		Handle_PCDM_RetrievalDriver & operator=(const PCDM_RetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_RetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCDM_RetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCDM_RetrievalDriver {
@@ -396,7 +358,7 @@ class Handle_PCDM_Writer : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_PCDM_Writer & operator=(const PCDM_Writer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_Writer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCDM_Writer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCDM_Writer {
@@ -434,7 +396,7 @@ class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
 		%feature("autodoc", "1");
 		Handle_PCDM_StorageDriver & operator=(const PCDM_StorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_StorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCDM_StorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCDM_StorageDriver {
@@ -458,6 +420,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PCDM_DriverError;
+class Handle_PCDM_DriverError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError();
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError(const Handle_PCDM_DriverError &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError(const PCDM_DriverError *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError & operator=(const Handle_PCDM_DriverError &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError & operator=(const PCDM_DriverError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PCDM_DriverError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PCDM_DriverError {
+	PCDM_DriverError* GetObject() {
+	return (PCDM_DriverError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PCDM_DriverError::~Handle_PCDM_DriverError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PCDM_DriverError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PCDM_ReferenceIterator;
 class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 	public:
@@ -472,7 +472,7 @@ class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_PCDM_ReferenceIterator & operator=(const PCDM_ReferenceIterator *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_ReferenceIterator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCDM_ReferenceIterator DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PCDM_ReferenceIterator {
@@ -543,7 +543,7 @@ class PCDM_DriverError : public Standard_Failure {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_DriverError NewInstance(const char * aMessage);
+		static		Handle_PCDM_DriverError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

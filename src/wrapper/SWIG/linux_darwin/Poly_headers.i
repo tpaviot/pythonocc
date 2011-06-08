@@ -42,6 +42,8 @@ $HeaderURL$
 #include<Poly_CoherentTriangulation.hxx>
 #include<Poly_Connect.hxx>
 #include<Poly_HArray1OfTriangle.hxx>
+#include<Poly_ListOfTriangulation.hxx>
+#include<Poly_MakeLoops.hxx>
 #include<Poly_Polygon2D.hxx>
 #include<Poly_Polygon3D.hxx>
 #include<Poly_PolygonOnTriangulation.hxx>

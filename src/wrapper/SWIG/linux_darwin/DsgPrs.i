@@ -145,33 +145,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor DsgPrs_XYZAxisPresentation;
-class DsgPrs_XYZAxisPresentation {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_XYZAxisPresentation();
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_LineAspect &anLineAspect, const gp_Dir aDir, const Standard_Real aVal, const char * aText, const gp_Pnt aPfirst, const gp_Pnt aPlast);
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_LineAspect &aLineAspect, const Handle_Prs3d_ArrowAspect &anArrowAspect, const Handle_Prs3d_TextAspect &aTextAspect, const gp_Dir aDir, const Standard_Real aVal, const char * aText, const gp_Pnt aPfirst, const gp_Pnt aPlast);
-
-};
-%feature("shadow") DsgPrs_XYZAxisPresentation::~DsgPrs_XYZAxisPresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend DsgPrs_XYZAxisPresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor DsgPrs_ShapeDirPresentation;
 class DsgPrs_ShapeDirPresentation {
 	public:
@@ -216,31 +189,6 @@ def __del__(self):
 %}
 
 %extend DsgPrs_EqualRadiusPresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor DsgPrs_XYZPlanePresentation;
-class DsgPrs_XYZPlanePresentation {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_XYZPlanePresentation();
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt aPt1, const gp_Pnt aPt2, const gp_Pnt aPt3);
-
-};
-%feature("shadow") DsgPrs_XYZPlanePresentation::~DsgPrs_XYZPlanePresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend DsgPrs_XYZPlanePresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -637,6 +585,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor DsgPrs_XYZPlanePresentation;
+class DsgPrs_XYZPlanePresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_XYZPlanePresentation();
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt aPt1, const gp_Pnt aPt2, const gp_Pnt aPt3);
+
+};
+%feature("shadow") DsgPrs_XYZPlanePresentation::~DsgPrs_XYZPlanePresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend DsgPrs_XYZPlanePresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor DsgPrs_OffsetPresentation;
 class DsgPrs_OffsetPresentation {
 	public:
@@ -779,6 +752,33 @@ def __del__(self):
 %}
 
 %extend DsgPrs_SymmetricPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor DsgPrs_XYZAxisPresentation;
+class DsgPrs_XYZAxisPresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_XYZAxisPresentation();
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_LineAspect &anLineAspect, const gp_Dir aDir, const Standard_Real aVal, const char * aText, const gp_Pnt aPfirst, const gp_Pnt aPlast);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_LineAspect &aLineAspect, const Handle_Prs3d_ArrowAspect &anArrowAspect, const Handle_Prs3d_TextAspect &aTextAspect, const gp_Dir aDir, const Standard_Real aVal, const char * aText, const gp_Pnt aPfirst, const gp_Pnt aPlast);
+
+};
+%feature("shadow") DsgPrs_XYZAxisPresentation::~DsgPrs_XYZAxisPresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend DsgPrs_XYZAxisPresentation {
 	void _kill_pointed() {
 		delete $self;
 	}

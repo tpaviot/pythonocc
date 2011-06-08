@@ -171,8 +171,8 @@ $HeaderURL$
 #include<Handle_Interface_FileReaderData.hxx>
 #include<Handle_Interface_Check.hxx>
 #include<Handle_TColStd_HSequenceOfHAsciiString.hxx>
-#include<IGESData.hxx>
 #include<gp_Trsf.hxx>
+#include<IGESData.hxx>
 #include<Handle_Interface_ParamList.hxx>
 #include<Message_Msg.hxx>
 #include<gp_XY.hxx>

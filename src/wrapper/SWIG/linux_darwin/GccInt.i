@@ -75,7 +75,7 @@ class Handle_GccInt_Bisec : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GccInt_Bisec & operator=(const GccInt_Bisec *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GccInt_Bisec const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccInt_Bisec DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccInt_Bisec {
@@ -113,7 +113,7 @@ class Handle_GccInt_BLine : public Handle_GccInt_Bisec {
 		%feature("autodoc", "1");
 		Handle_GccInt_BLine & operator=(const GccInt_BLine *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GccInt_BLine const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccInt_BLine DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccInt_BLine {
@@ -151,7 +151,7 @@ class Handle_GccInt_BParab : public Handle_GccInt_Bisec {
 		%feature("autodoc", "1");
 		Handle_GccInt_BParab & operator=(const GccInt_BParab *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GccInt_BParab const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccInt_BParab DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccInt_BParab {
@@ -189,7 +189,7 @@ class Handle_GccInt_BElips : public Handle_GccInt_Bisec {
 		%feature("autodoc", "1");
 		Handle_GccInt_BElips & operator=(const GccInt_BElips *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GccInt_BElips const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccInt_BElips DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccInt_BElips {
@@ -227,7 +227,7 @@ class Handle_GccInt_BPoint : public Handle_GccInt_Bisec {
 		%feature("autodoc", "1");
 		Handle_GccInt_BPoint & operator=(const GccInt_BPoint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GccInt_BPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccInt_BPoint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccInt_BPoint {
@@ -265,7 +265,7 @@ class Handle_GccInt_BCirc : public Handle_GccInt_Bisec {
 		%feature("autodoc", "1");
 		Handle_GccInt_BCirc & operator=(const GccInt_BCirc *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GccInt_BCirc const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccInt_BCirc DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccInt_BCirc {
@@ -303,7 +303,7 @@ class Handle_GccInt_BHyper : public Handle_GccInt_Bisec {
 		%feature("autodoc", "1");
 		Handle_GccInt_BHyper & operator=(const GccInt_BHyper *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GccInt_BHyper const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GccInt_BHyper DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GccInt_BHyper {

@@ -52,6 +52,7 @@ $HeaderURL$
 #include<Aspect_ColorPixel.hxx>
 #include<Aspect_ColorRampColorMap.hxx>
 #include<Aspect_ColorScale.hxx>
+#include<Aspect_Convert.hxx>
 #include<Aspect_Display.hxx>
 #include<Aspect_Drawable.hxx>
 #include<Aspect_Driver.hxx>
@@ -70,6 +71,8 @@ $HeaderURL$
 #include<Aspect_FormatOfSheetPaper.hxx>
 #include<Aspect_GenId.hxx>
 #include<Aspect_GenericColorMap.hxx>
+#include<Aspect_GradientBackground.hxx>
+#include<Aspect_GradientFillMethod.hxx>
 #include<Aspect_GraphicCallbackProc.hxx>
 #include<Aspect_GraphicDevice.hxx>
 #include<Aspect_GraphicDeviceDefinitionError.hxx>
@@ -167,8 +170,6 @@ $HeaderURL$
 #include<MFT_ListOfFontName.hxx>
 #include<MFT_ListOfFontReference.hxx>
 #include<MFT_SequenceNodeOfListOfFontHandle.hxx>
-#include<MFT_SequenceNodeOfListOfFontName.hxx>
-#include<MFT_SequenceNodeOfListOfFontReference.hxx>
 #include<MFT_TextManager.hxx>
 #include<MFT_TypeOfCommand.hxx>
 #include<MFT_TypeOfValue.hxx>
@@ -204,18 +205,23 @@ $HeaderURL$
 #include<OSD_File.hxx>
 #include<OSD_FileIterator.hxx>
 #include<OSD_FileNode.hxx>
+#include<OSD_FontAspect.hxx>
+#include<OSD_FontMgr.hxx>
 #include<OSD_FromWhere.hxx>
 #include<OSD_Function.hxx>
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
+#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
 #include<OSD_OpenMode.hxx>
 #include<OSD_PThread.hxx>
 #include<OSD_Path.hxx>
+#include<OSD_PerfMeter.hxx>
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
@@ -235,6 +241,7 @@ $HeaderURL$
 #include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
+#include<OSD_SystemFont.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>

@@ -29,8 +29,6 @@ $HeaderURL$
 
 #include<Handle_MDataStd_AsciiStringRetrievalDriver.hxx>
 #include<Handle_MDataStd_AsciiStringStorageDriver.hxx>
-#include<Handle_MDataStd_AxisRetrievalDriver.hxx>
-#include<Handle_MDataStd_AxisStorageDriver.hxx>
 #include<Handle_MDataStd_BooleanArrayRetrievalDriver.hxx>
 #include<Handle_MDataStd_BooleanArrayStorageDriver.hxx>
 #include<Handle_MDataStd_BooleanListRetrievalDriver.hxx>
@@ -40,8 +38,6 @@ $HeaderURL$
 #include<Handle_MDataStd_ByteArrayStorageDriver.hxx>
 #include<Handle_MDataStd_CommentRetrievalDriver.hxx>
 #include<Handle_MDataStd_CommentStorageDriver.hxx>
-#include<Handle_MDataStd_ConstraintRetrievalDriver.hxx>
-#include<Handle_MDataStd_ConstraintStorageDriver.hxx>
 #include<Handle_MDataStd_DirectoryRetrievalDriver.hxx>
 #include<Handle_MDataStd_DirectoryStorageDriver.hxx>
 #include<Handle_MDataStd_ExpressionRetrievalDriver.hxx>
@@ -51,8 +47,6 @@ $HeaderURL$
 #include<Handle_MDataStd_ExtStringArrayStorageDriver.hxx>
 #include<Handle_MDataStd_ExtStringListRetrievalDriver.hxx>
 #include<Handle_MDataStd_ExtStringListStorageDriver.hxx>
-#include<Handle_MDataStd_GeometryRetrievalDriver.hxx>
-#include<Handle_MDataStd_GeometryStorageDriver.hxx>
 #include<Handle_MDataStd_IntPackedMapRetrievalDriver.hxx>
 #include<Handle_MDataStd_IntPackedMapRetrievalDriver_1.hxx>
 #include<Handle_MDataStd_IntPackedMapStorageDriver.hxx>
@@ -69,14 +63,6 @@ $HeaderURL$
 #include<Handle_MDataStd_NamedDataStorageDriver.hxx>
 #include<Handle_MDataStd_NoteBookRetrievalDriver.hxx>
 #include<Handle_MDataStd_NoteBookStorageDriver.hxx>
-#include<Handle_MDataStd_PatternStdRetrievalDriver.hxx>
-#include<Handle_MDataStd_PatternStdStorageDriver.hxx>
-#include<Handle_MDataStd_PlacementRetrievalDriver.hxx>
-#include<Handle_MDataStd_PlacementStorageDriver.hxx>
-#include<Handle_MDataStd_PlaneRetrievalDriver.hxx>
-#include<Handle_MDataStd_PlaneStorageDriver.hxx>
-#include<Handle_MDataStd_PointRetrievalDriver.hxx>
-#include<Handle_MDataStd_PointStorageDriver.hxx>
 #include<Handle_MDataStd_RealArrayRetrievalDriver.hxx>
 #include<Handle_MDataStd_RealArrayRetrievalDriver_1.hxx>
 #include<Handle_MDataStd_RealArrayStorageDriver.hxx>
@@ -90,8 +76,6 @@ $HeaderURL$
 #include<Handle_MDataStd_ReferenceListStorageDriver.hxx>
 #include<Handle_MDataStd_RelationRetrievalDriver.hxx>
 #include<Handle_MDataStd_RelationStorageDriver.hxx>
-#include<Handle_MDataStd_ShapeRetrievalDriver.hxx>
-#include<Handle_MDataStd_ShapeStorageDriver.hxx>
 #include<Handle_MDataStd_TickRetrievalDriver.hxx>
 #include<Handle_MDataStd_TickStorageDriver.hxx>
 #include<Handle_MDataStd_TreeNodeRetrievalDriver.hxx>
@@ -103,8 +87,6 @@ $HeaderURL$
 #include<MDataStd.hxx>
 #include<MDataStd_AsciiStringRetrievalDriver.hxx>
 #include<MDataStd_AsciiStringStorageDriver.hxx>
-#include<MDataStd_AxisRetrievalDriver.hxx>
-#include<MDataStd_AxisStorageDriver.hxx>
 #include<MDataStd_BooleanArrayRetrievalDriver.hxx>
 #include<MDataStd_BooleanArrayStorageDriver.hxx>
 #include<MDataStd_BooleanListRetrievalDriver.hxx>
@@ -114,8 +96,6 @@ $HeaderURL$
 #include<MDataStd_ByteArrayStorageDriver.hxx>
 #include<MDataStd_CommentRetrievalDriver.hxx>
 #include<MDataStd_CommentStorageDriver.hxx>
-#include<MDataStd_ConstraintRetrievalDriver.hxx>
-#include<MDataStd_ConstraintStorageDriver.hxx>
 #include<MDataStd_DirectoryRetrievalDriver.hxx>
 #include<MDataStd_DirectoryStorageDriver.hxx>
 #include<MDataStd_ExpressionRetrievalDriver.hxx>
@@ -125,8 +105,6 @@ $HeaderURL$
 #include<MDataStd_ExtStringArrayStorageDriver.hxx>
 #include<MDataStd_ExtStringListRetrievalDriver.hxx>
 #include<MDataStd_ExtStringListStorageDriver.hxx>
-#include<MDataStd_GeometryRetrievalDriver.hxx>
-#include<MDataStd_GeometryStorageDriver.hxx>
 #include<MDataStd_IntPackedMapRetrievalDriver.hxx>
 #include<MDataStd_IntPackedMapRetrievalDriver_1.hxx>
 #include<MDataStd_IntPackedMapStorageDriver.hxx>
@@ -143,14 +121,6 @@ $HeaderURL$
 #include<MDataStd_NamedDataStorageDriver.hxx>
 #include<MDataStd_NoteBookRetrievalDriver.hxx>
 #include<MDataStd_NoteBookStorageDriver.hxx>
-#include<MDataStd_PatternStdRetrievalDriver.hxx>
-#include<MDataStd_PatternStdStorageDriver.hxx>
-#include<MDataStd_PlacementRetrievalDriver.hxx>
-#include<MDataStd_PlacementStorageDriver.hxx>
-#include<MDataStd_PlaneRetrievalDriver.hxx>
-#include<MDataStd_PlaneStorageDriver.hxx>
-#include<MDataStd_PointRetrievalDriver.hxx>
-#include<MDataStd_PointStorageDriver.hxx>
 #include<MDataStd_RealArrayRetrievalDriver.hxx>
 #include<MDataStd_RealArrayRetrievalDriver_1.hxx>
 #include<MDataStd_RealArrayStorageDriver.hxx>
@@ -164,8 +134,6 @@ $HeaderURL$
 #include<MDataStd_ReferenceListStorageDriver.hxx>
 #include<MDataStd_RelationRetrievalDriver.hxx>
 #include<MDataStd_RelationStorageDriver.hxx>
-#include<MDataStd_ShapeRetrievalDriver.hxx>
-#include<MDataStd_ShapeStorageDriver.hxx>
 #include<MDataStd_TickRetrievalDriver.hxx>
 #include<MDataStd_TickStorageDriver.hxx>
 #include<MDataStd_TreeNodeRetrievalDriver.hxx>
@@ -298,6 +266,4 @@ $HeaderURL$
 #include<MDataStd.hxx>
 #include<Handle_MDF_ASDriverHSequence.hxx>
 #include<Handle_MDF_ARDriverHSequence.hxx>
-#include<Handle_PGeom_Geometry.hxx>
-#include<Handle_Geom_Geometry.hxx>
 %}

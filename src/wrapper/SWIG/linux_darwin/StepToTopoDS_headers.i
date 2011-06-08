@@ -27,6 +27,8 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_StepToTopoDS_DataMapNodeOfDataMapOfRI.hxx>
+#include<Handle_StepToTopoDS_DataMapNodeOfDataMapOfRINames.hxx>
 #include<Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI.hxx>
 #include<Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap.hxx>
 #include<Handle_StepToTopoDS_DataMapNodeOfPointVertexMap.hxx>
@@ -34,16 +36,23 @@ $HeaderURL$
 #include<StepToTopoDS_Builder.hxx>
 #include<StepToTopoDS_BuilderError.hxx>
 #include<StepToTopoDS_CartesianPointHasher.hxx>
+#include<StepToTopoDS_DataMapIteratorOfDataMapOfRI.hxx>
+#include<StepToTopoDS_DataMapIteratorOfDataMapOfRINames.hxx>
 #include<StepToTopoDS_DataMapIteratorOfDataMapOfTRI.hxx>
 #include<StepToTopoDS_DataMapIteratorOfPointEdgeMap.hxx>
 #include<StepToTopoDS_DataMapIteratorOfPointVertexMap.hxx>
+#include<StepToTopoDS_DataMapNodeOfDataMapOfRI.hxx>
+#include<StepToTopoDS_DataMapNodeOfDataMapOfRINames.hxx>
 #include<StepToTopoDS_DataMapNodeOfDataMapOfTRI.hxx>
 #include<StepToTopoDS_DataMapNodeOfPointEdgeMap.hxx>
 #include<StepToTopoDS_DataMapNodeOfPointVertexMap.hxx>
+#include<StepToTopoDS_DataMapOfRI.hxx>
+#include<StepToTopoDS_DataMapOfRINames.hxx>
 #include<StepToTopoDS_DataMapOfTRI.hxx>
 #include<StepToTopoDS_GeometricTool.hxx>
 #include<StepToTopoDS_GeometricToolError.hxx>
 #include<StepToTopoDS_MakeTransformed.hxx>
+#include<StepToTopoDS_NMTool.hxx>
 #include<StepToTopoDS_PointEdgeMap.hxx>
 #include<StepToTopoDS_PointPair.hxx>
 #include<StepToTopoDS_PointPairHasher.hxx>
@@ -73,7 +82,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -181,6 +189,8 @@ $HeaderURL$
 #include<Handle_StepGeom_Curve.hxx>
 #include<Handle_StepShape_EdgeCurve.hxx>
 #include<Handle_StepShape_Vertex.hxx>
+#include<Handle_StepRepr_RepresentationItem.hxx>
+#include<TCollection_AsciiString.hxx>
 #include<Handle_StepShape_FaceSurface.hxx>
 #include<Handle_StepShape_PolyLoop.hxx>
 #include<TopoDS_Face.hxx>

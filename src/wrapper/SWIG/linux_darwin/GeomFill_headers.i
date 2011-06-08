@@ -76,9 +76,7 @@ $HeaderURL$
 #include<GeomFill_SectionGenerator.hxx>
 #include<GeomFill_SectionLaw.hxx>
 #include<GeomFill_SectionPlacement.hxx>
-#include<GeomFill_SequenceNodeOfSequenceOfCurve.hxx>
 #include<GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
-#include<GeomFill_SequenceOfCurve.hxx>
 #include<GeomFill_SequenceOfTrsf.hxx>
 #include<GeomFill_SimpleBound.hxx>
 #include<GeomFill_SnglrFunc.hxx>
@@ -116,7 +114,6 @@ $HeaderURL$
 #include<Handle_GeomFill_LocationLaw.hxx>
 #include<Handle_GeomFill_NSections.hxx>
 #include<Handle_GeomFill_SectionLaw.hxx>
-#include<Handle_GeomFill_SequenceNodeOfSequenceOfCurve.hxx>
 #include<Handle_GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
 #include<Handle_GeomFill_SimpleBound.hxx>
 #include<Handle_GeomFill_SweepFunction.hxx>
@@ -174,6 +171,7 @@ $HeaderURL$
 #include<gp_Dir2d.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Elips2d.hxx>
+#include<gp_EulerSequence.hxx>
 #include<gp_GTrsf.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Hypr.hxx>
@@ -187,6 +185,9 @@ $HeaderURL$
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Quaternion.hxx>
+#include<gp_QuaternionNLerp.hxx>
+#include<gp_QuaternionSLerp.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
 #include<gp_Trsf.hxx>
@@ -212,6 +213,7 @@ $HeaderURL$
 #include<TColStd_Array1OfInteger.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
+#include<gp_Dir.hxx>
 #include<GeomFill.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<TColgp_Array1OfVec.hxx>
@@ -224,8 +226,8 @@ $HeaderURL$
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec2d.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
-#include<gp_Dir.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<TColGeom_SequenceOfCurve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Adaptor3d_CurveOnSurface.hxx>
 #include<Handle_Law_Function.hxx>

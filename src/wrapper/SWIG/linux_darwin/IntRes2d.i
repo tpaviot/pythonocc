@@ -85,7 +85,7 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
@@ -123,7 +123,7 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handl
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
@@ -381,6 +381,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntRes2d_Intersection;
+class IntRes2d_Intersection {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void SetReversedParameters(const Standard_Boolean flag);
+
+};
+%feature("shadow") IntRes2d_Intersection::~IntRes2d_Intersection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntRes2d_Intersection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend IntRes2d_Intersection {
+	IntRes2d_Intersection () {}
+};
+
+
 %nodefaultctor IntRes2d_IntersectionSegment;
 class IntRes2d_IntersectionSegment {
 	public:
@@ -484,44 +522,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-
-
-%nodefaultctor IntRes2d_Intersection;
-class IntRes2d_Intersection {
-	public:
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void SetReversedParameters(const Standard_Boolean flag);
-
-};
-%feature("shadow") IntRes2d_Intersection::~IntRes2d_Intersection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntRes2d_Intersection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend IntRes2d_Intersection {
-	IntRes2d_Intersection () {}
 };
 
 

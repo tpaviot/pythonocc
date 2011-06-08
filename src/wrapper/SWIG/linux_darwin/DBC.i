@@ -67,7 +67,7 @@ class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfInteger & operator=(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_DBC_VArrayNodeOfVArrayOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_DBC_VArrayNodeOfVArrayOfInteger DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
@@ -105,7 +105,7 @@ class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_Arra
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter & operator=(const DBC_VArrayNodeOfVArrayOfExtCharacter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_DBC_VArrayNodeOfVArrayOfExtCharacter {
@@ -143,7 +143,7 @@ class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNo
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfCharacter & operator=(const DBC_VArrayNodeOfVArrayOfCharacter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_DBC_VArrayNodeOfVArrayOfCharacter const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_DBC_VArrayNodeOfVArrayOfCharacter DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_DBC_VArrayNodeOfVArrayOfCharacter {
@@ -181,7 +181,7 @@ class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const DBC_VArrayNodeOfVArrayOfReal *anItem);
 		%feature("autodoc", "1");
-		static		Handle_DBC_VArrayNodeOfVArrayOfReal const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_DBC_VArrayNodeOfVArrayOfReal DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_DBC_VArrayNodeOfVArrayOfReal {

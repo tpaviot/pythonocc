@@ -66,7 +66,7 @@ class Handle_FEmTool_ElementaryCriterion : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_FEmTool_ElementaryCriterion & operator=(const FEmTool_ElementaryCriterion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_FEmTool_ElementaryCriterion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_ElementaryCriterion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_ElementaryCriterion {
@@ -104,7 +104,7 @@ class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearTension & operator=(const FEmTool_LinearTension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_FEmTool_LinearTension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_LinearTension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_LinearTension {
@@ -142,7 +142,7 @@ class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearJerk & operator=(const FEmTool_LinearJerk *anItem);
 		%feature("autodoc", "1");
-		static		Handle_FEmTool_LinearJerk const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_LinearJerk DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_LinearJerk {
@@ -180,7 +180,7 @@ class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr & operator=(const FEmTool_SequenceNodeOfSeqOfLinConstr *anItem);
 		%feature("autodoc", "1");
-		static		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_SequenceNodeOfSeqOfLinConstr {
@@ -218,7 +218,7 @@ class Handle_FEmTool_SparseMatrix : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_FEmTool_SparseMatrix & operator=(const FEmTool_SparseMatrix *anItem);
 		%feature("autodoc", "1");
-		static		Handle_FEmTool_SparseMatrix const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_SparseMatrix DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_SparseMatrix {
@@ -256,7 +256,7 @@ class Handle_FEmTool_ProfileMatrix : public Handle_FEmTool_SparseMatrix {
 		%feature("autodoc", "1");
 		Handle_FEmTool_ProfileMatrix & operator=(const FEmTool_ProfileMatrix *anItem);
 		%feature("autodoc", "1");
-		static		Handle_FEmTool_ProfileMatrix const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_ProfileMatrix DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_ProfileMatrix {
@@ -294,7 +294,7 @@ class Handle_FEmTool_Curve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_FEmTool_Curve & operator=(const FEmTool_Curve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_FEmTool_Curve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_Curve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_Curve {
@@ -332,7 +332,7 @@ class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearFlexion & operator=(const FEmTool_LinearFlexion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_FEmTool_LinearFlexion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_LinearFlexion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_LinearFlexion {
@@ -370,7 +370,7 @@ class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_FEmTool_HAssemblyTable & operator=(const FEmTool_HAssemblyTable *anItem);
 		%feature("autodoc", "1");
-		static		Handle_FEmTool_HAssemblyTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_HAssemblyTable DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_HAssemblyTable {
@@ -408,7 +408,7 @@ class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const FEmTool_ListNodeOfListOfVectors *anItem);
 		%feature("autodoc", "1");
-		static		Handle_FEmTool_ListNodeOfListOfVectors const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_FEmTool_ListNodeOfListOfVectors DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_FEmTool_ListNodeOfListOfVectors {
@@ -426,6 +426,71 @@ def __del__(self):
 %}
 
 %extend Handle_FEmTool_ListNodeOfListOfVectors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor FEmTool_Curve;
+class FEmTool_Curve : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		FEmTool_Curve(const Standard_Integer Dimension, const Standard_Integer NbElements, const Handle_PLib_Base &TheBase, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		TColStd_Array1OfReal & Knots() const;
+		%feature("autodoc", "1");
+		void SetElement(const Standard_Integer IndexOfElement, const TColStd_Array2OfReal &Coeffs);
+		%feature("autodoc", "1");
+		void D0(const Standard_Real U, TColStd_Array1OfReal & Pnt);
+		%feature("autodoc", "1");
+		void D1(const Standard_Real U, TColStd_Array1OfReal & Vec);
+		%feature("autodoc", "1");
+		void D2(const Standard_Real U, TColStd_Array1OfReal & Vec);
+		%feature("autodoc","Length(Standard_Real FirstU, Standard_Real LastU) -> Standard_Real");
+
+		void Length(const Standard_Real FirstU, const Standard_Real LastU, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void GetElement(const Standard_Integer IndexOfElement, TColStd_Array2OfReal & Coeffs);
+		%feature("autodoc", "1");
+		void GetPolynom(TColStd_Array1OfReal & Coeffs);
+		%feature("autodoc", "1");
+		Standard_Integer NbElements() const;
+		%feature("autodoc", "1");
+		Standard_Integer Dimension() const;
+		%feature("autodoc", "1");
+		Handle_PLib_Base Base() const;
+		%feature("autodoc", "1");
+		Standard_Integer Degree(const Standard_Integer IndexOfElement) const;
+		%feature("autodoc", "1");
+		void SetDegree(const Standard_Integer IndexOfElement, const Standard_Integer Degree);
+		%feature("autodoc","ReduceDegree(Standard_Integer IndexOfElement, Standard_Real Tol) -> [Standard_Integer, Standard_Real]");
+
+		void ReduceDegree(const Standard_Integer IndexOfElement, const Standard_Real Tol, Standard_Integer &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend FEmTool_Curve {
+	Handle_FEmTool_Curve GetHandle() {
+	return *(Handle_FEmTool_Curve*) &$self;
+	}
+};
+%extend FEmTool_Curve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") FEmTool_Curve::~FEmTool_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend FEmTool_Curve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -463,6 +528,35 @@ def __del__(self):
 %}
 
 %extend FEmTool_ListNodeOfListOfVectors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor FEmTool_ElementsOfRefMatrix;
+class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
+	public:
+		%feature("autodoc", "1");
+		FEmTool_ElementsOfRefMatrix(const Handle_PLib_Base &TheBase, const Standard_Integer DerOrder);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+
+};
+%feature("shadow") FEmTool_ElementsOfRefMatrix::~FEmTool_ElementsOfRefMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend FEmTool_ElementsOfRefMatrix {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -545,71 +639,6 @@ def __del__(self):
 %}
 
 %extend FEmTool_LinearFlexion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor FEmTool_Curve;
-class FEmTool_Curve : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		FEmTool_Curve(const Standard_Integer Dimension, const Standard_Integer NbElements, const Handle_PLib_Base &TheBase, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		TColStd_Array1OfReal & Knots() const;
-		%feature("autodoc", "1");
-		void SetElement(const Standard_Integer IndexOfElement, const TColStd_Array2OfReal &Coeffs);
-		%feature("autodoc", "1");
-		void D0(const Standard_Real U, TColStd_Array1OfReal & Pnt);
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, TColStd_Array1OfReal & Vec);
-		%feature("autodoc", "1");
-		void D2(const Standard_Real U, TColStd_Array1OfReal & Vec);
-		%feature("autodoc","Length(Standard_Real FirstU, Standard_Real LastU) -> Standard_Real");
-
-		void Length(const Standard_Real FirstU, const Standard_Real LastU, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void GetElement(const Standard_Integer IndexOfElement, TColStd_Array2OfReal & Coeffs);
-		%feature("autodoc", "1");
-		void GetPolynom(TColStd_Array1OfReal & Coeffs);
-		%feature("autodoc", "1");
-		Standard_Integer NbElements() const;
-		%feature("autodoc", "1");
-		Standard_Integer Dimension() const;
-		%feature("autodoc", "1");
-		Handle_PLib_Base Base() const;
-		%feature("autodoc", "1");
-		Standard_Integer Degree(const Standard_Integer IndexOfElement) const;
-		%feature("autodoc", "1");
-		void SetDegree(const Standard_Integer IndexOfElement, const Standard_Integer Degree);
-		%feature("autodoc","ReduceDegree(Standard_Integer IndexOfElement, Standard_Real Tol) -> [Standard_Integer, Standard_Real]");
-
-		void ReduceDegree(const Standard_Integer IndexOfElement, const Standard_Real Tol, Standard_Integer &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend FEmTool_Curve {
-	Handle_FEmTool_Curve GetHandle() {
-	return *(Handle_FEmTool_Curve*) &$self;
-	}
-};
-%extend FEmTool_Curve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") FEmTool_Curve::~FEmTool_Curve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend FEmTool_Curve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1100,35 +1129,6 @@ def __del__(self):
 %}
 
 %extend FEmTool_SequenceNodeOfSeqOfLinConstr {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor FEmTool_ElementsOfRefMatrix;
-class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
-	public:
-		%feature("autodoc", "1");
-		FEmTool_ElementsOfRefMatrix(const Handle_PLib_Base &TheBase, const Standard_Integer DerOrder);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-
-};
-%feature("shadow") FEmTool_ElementsOfRefMatrix::~FEmTool_ElementsOfRefMatrix %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend FEmTool_ElementsOfRefMatrix {
 	void _kill_pointed() {
 		delete $self;
 	}

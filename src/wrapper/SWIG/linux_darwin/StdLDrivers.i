@@ -66,7 +66,7 @@ class Handle_StdLDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentS
 		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentStorageDriver & operator=(const StdLDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StdLDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdLDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdLDrivers_DocumentStorageDriver {
@@ -104,7 +104,7 @@ class Handle_StdLDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 		%feature("autodoc", "1");
 		Handle_StdLDrivers_DocumentRetrievalDriver & operator=(const StdLDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StdLDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StdLDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StdLDrivers_DocumentRetrievalDriver {

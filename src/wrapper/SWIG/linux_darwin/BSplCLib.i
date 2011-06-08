@@ -346,6 +346,8 @@ class BSplCLib {
 		%feature("autodoc", "1");
 		static		void PolesCoefficients(const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, TColgp_Array1OfPnt & CachePoles, TColStd_Array1OfReal & CacheWeights);
 		%feature("autodoc", "1");
+		static		const Standard_Real & FlatBezierKnots(const Standard_Integer Degree);
+		%feature("autodoc", "1");
 		static		void BuildSchoenbergPoints(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, TColStd_Array1OfReal & Parameters);
 		%feature("autodoc","Interpolate(Standard_Integer Degree, const FlatKnots, const Parameters, const ContactOrderArray) -> Standard_Integer");
 

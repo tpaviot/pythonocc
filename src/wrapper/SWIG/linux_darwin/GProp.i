@@ -88,7 +88,7 @@ class Handle_GProp_UndefinedAxis : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_GProp_UndefinedAxis & operator=(const GProp_UndefinedAxis *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GProp_UndefinedAxis const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GProp_UndefinedAxis DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GProp_UndefinedAxis {
@@ -254,7 +254,7 @@ class GProp_UndefinedAxis : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_GProp_UndefinedAxis NewInstance(const char * aMessage);
+		static		Handle_GProp_UndefinedAxis NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

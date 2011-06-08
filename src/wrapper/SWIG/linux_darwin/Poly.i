@@ -49,6 +49,7 @@ $HeaderURL$
 
 %include Poly_headers.i
 
+typedef NCollection_List<Handle_Poly_Triangulation> Poly_ListOfTriangulation;
 
 
 
@@ -66,7 +67,7 @@ class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_PolygonOnTriangulation & operator=(const Poly_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Poly_PolygonOnTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Poly_PolygonOnTriangulation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Poly_PolygonOnTriangulation {
@@ -104,7 +105,7 @@ class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_HArray1OfTriangle & operator=(const Poly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Poly_HArray1OfTriangle const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Poly_HArray1OfTriangle DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Poly_HArray1OfTriangle {
@@ -142,7 +143,7 @@ class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon3D & operator=(const Poly_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Poly_Polygon3D const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Poly_Polygon3D DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Poly_Polygon3D {
@@ -180,7 +181,7 @@ class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon2D & operator=(const Poly_Polygon2D *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Poly_Polygon2D const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Poly_Polygon2D DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Poly_Polygon2D {
@@ -218,7 +219,7 @@ class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Poly_CoherentTriangulation & operator=(const Poly_CoherentTriangulation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Poly_CoherentTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Poly_CoherentTriangulation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Poly_CoherentTriangulation {
@@ -256,7 +257,7 @@ class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_Triangulation & operator=(const Poly_Triangulation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Poly_Triangulation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Poly_Triangulation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Poly_Triangulation {
@@ -646,6 +647,29 @@ def __del__(self):
 };
 
 
+%nodefaultctor Poly_MakeLoops2D;
+class Poly_MakeLoops2D : public Poly_MakeLoops {
+	public:
+		%feature("autodoc", "1");
+		Poly_MakeLoops2D(const Standard_Boolean theLeftWay, const Poly_MakeLoops2D::Helper *theHelper, const Handle_NCollection_BaseAllocator &theAlloc);
+
+};
+%feature("shadow") Poly_MakeLoops2D::~Poly_MakeLoops2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Poly_MakeLoops2D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Poly_Polygon2D;
 class Poly_Polygon2D : public MMgt_TShared {
 	public:
@@ -694,6 +718,8 @@ class Poly {
 	public:
 		%feature("autodoc", "1");
 		Poly();
+		%feature("autodoc", "1");
+		static		Handle_Poly_Triangulation Catenate(const Poly_ListOfTriangulation &lstTri);
 		%feature("autodoc", "1");
 		static		void Write(const Handle_Poly_Triangulation &T, Standard_OStream & OS, const Standard_Boolean Compact=1);
 		%feature("autodoc", "1");
@@ -886,6 +912,29 @@ def __del__(self):
 %}
 
 %extend Poly_Polygon3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Poly_MakeLoops3D;
+class Poly_MakeLoops3D : public Poly_MakeLoops {
+	public:
+		%feature("autodoc", "1");
+		Poly_MakeLoops3D(const Poly_MakeLoops3D::Helper *theHelper, const Handle_NCollection_BaseAllocator &theAlloc);
+
+};
+%feature("shadow") Poly_MakeLoops3D::~Poly_MakeLoops3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Poly_MakeLoops3D {
 	void _kill_pointed() {
 		delete $self;
 	}

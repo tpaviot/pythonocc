@@ -66,7 +66,7 @@ class Handle_XmlTObjDrivers_XYZDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_XYZDriver & operator=(const XmlTObjDrivers_XYZDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlTObjDrivers_XYZDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlTObjDrivers_XYZDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlTObjDrivers_XYZDriver {
@@ -104,7 +104,7 @@ class Handle_XmlTObjDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Do
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_DocumentStorageDriver & operator=(const XmlTObjDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlTObjDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlTObjDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlTObjDrivers_DocumentStorageDriver {
@@ -142,7 +142,7 @@ class Handle_XmlTObjDrivers_ObjectDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_ObjectDriver & operator=(const XmlTObjDrivers_ObjectDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlTObjDrivers_ObjectDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlTObjDrivers_ObjectDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlTObjDrivers_ObjectDriver {
@@ -180,7 +180,7 @@ class Handle_XmlTObjDrivers_IntSparseArrayDriver : public Handle_XmlMDF_ADriver 
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_IntSparseArrayDriver & operator=(const XmlTObjDrivers_IntSparseArrayDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlTObjDrivers_IntSparseArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlTObjDrivers_IntSparseArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlTObjDrivers_IntSparseArrayDriver {
@@ -218,7 +218,7 @@ class Handle_XmlTObjDrivers_ReferenceDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_ReferenceDriver & operator=(const XmlTObjDrivers_ReferenceDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlTObjDrivers_ReferenceDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlTObjDrivers_ReferenceDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlTObjDrivers_ReferenceDriver {
@@ -256,7 +256,7 @@ class Handle_XmlTObjDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_DocumentRetrievalDriver & operator=(const XmlTObjDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlTObjDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlTObjDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlTObjDrivers_DocumentRetrievalDriver {
@@ -294,7 +294,7 @@ class Handle_XmlTObjDrivers_ModelDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlTObjDrivers_ModelDriver & operator=(const XmlTObjDrivers_ModelDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlTObjDrivers_ModelDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlTObjDrivers_ModelDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlTObjDrivers_ModelDriver {

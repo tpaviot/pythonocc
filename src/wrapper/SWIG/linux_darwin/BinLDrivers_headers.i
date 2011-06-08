@@ -62,8 +62,6 @@ $HeaderURL$
 #include<Storage_IndexedDataMapNodeOfPType.hxx>
 #include<Storage_InternalData.hxx>
 #include<Storage_Macros.hxx>
-#include<Storage_MapIteratorOfMapOfAsciiString.hxx>
-#include<Storage_MapOfAsciiString.hxx>
 #include<Storage_MapOfCallBack.hxx>
 #include<Storage_MapOfPers.hxx>
 #include<Storage_MapPSDHasher.hxx>
@@ -81,7 +79,6 @@ $HeaderURL$
 #include<Storage_SequenceNodeOfSeqOfPersistent.hxx>
 #include<Storage_SequenceNodeOfSeqOfRoot.hxx>
 #include<Storage_SolveMode.hxx>
-#include<Storage_StdMapNodeOfMapOfAsciiString.hxx>
 #include<Storage_StreamExtCharParityError.hxx>
 #include<Storage_StreamFormatError.hxx>
 #include<Storage_StreamModeError.hxx>

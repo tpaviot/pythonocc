@@ -73,7 +73,6 @@ $HeaderURL$
 #include<Handle_Expr_NamedFunction.hxx>
 #include<Handle_Expr_NamedExpression.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Standard_SStream.hxx>
 #include<ExprIntrp.hxx>
 #include<Handle_Expr_GeneralRelation.hxx>
 #include<Handle_Expr_GeneralFunction.hxx>

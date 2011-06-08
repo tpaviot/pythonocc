@@ -100,5 +100,4 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<math.hxx>
 #include<TColStd_Array1OfReal.hxx>
-#include<Standard_SStream.hxx>
 %}

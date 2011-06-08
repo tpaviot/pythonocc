@@ -66,7 +66,7 @@ class Handle_XSControl_TransferWriter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_TransferWriter & operator=(const XSControl_TransferWriter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XSControl_TransferWriter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_TransferWriter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_TransferWriter {
@@ -104,7 +104,7 @@ class Handle_XSControl_SignTransferStatus : public Handle_IFSelect_Signature {
 		%feature("autodoc", "1");
 		Handle_XSControl_SignTransferStatus & operator=(const XSControl_SignTransferStatus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XSControl_SignTransferStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_SignTransferStatus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_SignTransferStatus {
@@ -142,7 +142,7 @@ class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_TransferReader & operator=(const XSControl_TransferReader *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XSControl_TransferReader const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_TransferReader DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_TransferReader {
@@ -180,7 +180,7 @@ class Handle_XSControl_Vars : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_Vars & operator=(const XSControl_Vars *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XSControl_Vars const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_Vars DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_Vars {
@@ -218,7 +218,7 @@ class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract 
 		%feature("autodoc", "1");
 		Handle_XSControl_SelectForTransfer & operator=(const XSControl_SelectForTransfer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XSControl_SelectForTransfer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_SelectForTransfer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_SelectForTransfer {
@@ -256,7 +256,7 @@ class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
 		%feature("autodoc", "1");
 		Handle_XSControl_WorkSession & operator=(const XSControl_WorkSession *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XSControl_WorkSession const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_WorkSession DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_WorkSession {
@@ -294,7 +294,7 @@ class Handle_XSControl_Controller : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_Controller & operator=(const XSControl_Controller *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XSControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_Controller DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_Controller {
@@ -332,7 +332,7 @@ class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		Handle_XSControl_ConnectedShapes & operator=(const XSControl_ConnectedShapes *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XSControl_ConnectedShapes const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSControl_ConnectedShapes DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSControl_ConnectedShapes {
@@ -835,6 +835,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor XSControl_SelectForTransfer;
+class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		XSControl_SelectForTransfer();
+		%feature("autodoc", "1");
+		XSControl_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
+		%feature("autodoc", "1");
+		void SetReader(const Handle_XSControl_TransferReader &TR);
+		%feature("autodoc", "1");
+		void SetActor(const Handle_Transfer_ActorOfTransientProcess &act);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfTransientProcess Actor() const;
+		%feature("autodoc", "1");
+		Handle_XSControl_TransferReader Reader() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExtractLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XSControl_SelectForTransfer {
+	Handle_XSControl_SelectForTransfer GetHandle() {
+	return *(Handle_XSControl_SelectForTransfer*) &$self;
+	}
+};
+%extend XSControl_SelectForTransfer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") XSControl_SelectForTransfer::~XSControl_SelectForTransfer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XSControl_SelectForTransfer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor XSControl_TransferWriter;
 class XSControl_TransferWriter : public MMgt_TShared {
 	public:
@@ -963,6 +1012,10 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 		Handle_XSControl_Vars Vars() const;
 		%feature("autodoc", "1");
 		void SetVars(const Handle_XSControl_Vars &newvars);
+		%feature("autodoc", "1");
+		void ClearBinders();
+		%feature("autodoc", "1");
+		void Destroy();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1141,55 +1194,6 @@ def __del__(self):
 %}
 
 %extend XSControl {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XSControl_SelectForTransfer;
-class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		XSControl_SelectForTransfer();
-		%feature("autodoc", "1");
-		XSControl_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
-		%feature("autodoc", "1");
-		void SetReader(const Handle_XSControl_TransferReader &TR);
-		%feature("autodoc", "1");
-		void SetActor(const Handle_Transfer_ActorOfTransientProcess &act);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfTransientProcess Actor() const;
-		%feature("autodoc", "1");
-		Handle_XSControl_TransferReader Reader() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XSControl_SelectForTransfer {
-	Handle_XSControl_SelectForTransfer GetHandle() {
-	return *(Handle_XSControl_SelectForTransfer*) &$self;
-	}
-};
-%extend XSControl_SelectForTransfer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XSControl_SelectForTransfer::~XSControl_SelectForTransfer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XSControl_SelectForTransfer {
 	void _kill_pointed() {
 		delete $self;
 	}

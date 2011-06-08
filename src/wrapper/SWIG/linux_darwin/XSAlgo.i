@@ -72,7 +72,7 @@ class Handle_XSAlgo_ToolContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSAlgo_ToolContainer & operator=(const XSAlgo_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XSAlgo_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSAlgo_ToolContainer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSAlgo_ToolContainer {
@@ -110,7 +110,7 @@ class Handle_XSAlgo_AlgoContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSAlgo_AlgoContainer & operator=(const XSAlgo_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XSAlgo_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XSAlgo_AlgoContainer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XSAlgo_AlgoContainer {

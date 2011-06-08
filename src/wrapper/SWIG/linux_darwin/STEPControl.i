@@ -77,7 +77,7 @@ class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProc
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorRead & operator=(const STEPControl_ActorRead *anItem);
 		%feature("autodoc", "1");
-		static		Handle_STEPControl_ActorRead const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPControl_ActorRead DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_STEPControl_ActorRead {
@@ -115,7 +115,7 @@ class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
 		%feature("autodoc", "1");
 		Handle_STEPControl_Controller & operator=(const STEPControl_Controller *anItem);
 		%feature("autodoc", "1");
-		static		Handle_STEPControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPControl_Controller DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_STEPControl_Controller {
@@ -153,7 +153,7 @@ class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorWrite & operator=(const STEPControl_ActorWrite *anItem);
 		%feature("autodoc", "1");
-		static		Handle_STEPControl_ActorWrite const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPControl_ActorWrite DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_STEPControl_ActorWrite {
@@ -218,7 +218,7 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 		%feature("autodoc", "1");
 		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
 		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferShape(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		Handle_Transfer_Binder TransferShape(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP, const Standard_Boolean isManifold=1);
 		%feature("autodoc", "1");
 		void PrepareUnits(const Handle_StepRepr_Representation &rep, const Handle_Transfer_TransientProcess &TP);
 		%feature("autodoc", "1");
@@ -312,9 +312,9 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 		%feature("autodoc", "1");
 		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferSubShape(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, Handle_StepGeom_Axis2Placement3d & AX1, const Handle_Transfer_FinderProcess &FP);
+		Handle_Transfer_Binder TransferSubShape(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, Handle_StepGeom_Axis2Placement3d & AX1, const Handle_Transfer_FinderProcess &FP, const Handle_TopTools_HSequenceOfShape &shapeGroup=0, const Standard_Boolean isManifold=1);
 		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferShape(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, const Handle_Transfer_FinderProcess &FP);
+		Handle_Transfer_Binder TransferShape(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, const Handle_Transfer_FinderProcess &FP, const Handle_TopTools_HSequenceOfShape &shapeGroup=0, const Standard_Boolean isManifold=1);
 		%feature("autodoc", "1");
 		Handle_Transfer_Binder TransferCompound(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");

@@ -27,9 +27,7 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger.hxx>
 #include<Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape.hxx>
-#include<Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include<Handle_TopOpeBRepBuild_HBuilder.hxx>
 #include<Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo.hxx>
 #include<Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop.hxx>
@@ -48,15 +46,9 @@ $HeaderURL$
 #include<TopOpeBRepBuild_BuilderON.hxx>
 #include<TopOpeBRepBuild_CompositeClassifier.hxx>
 #include<TopOpeBRepBuild_CorrectFace2d.hxx>
-#include<TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger.hxx>
 #include<TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape.hxx>
-#include<TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal.hxx>
-#include<TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger.hxx>
 #include<TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape.hxx>
-#include<TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal.hxx>
-#include<TopOpeBRepBuild_DataMapOfShapeInteger.hxx>
 #include<TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape.hxx>
-#include<TopOpeBRepBuild_DataMapOfShapeReal.hxx>
 #include<TopOpeBRepBuild_EdgeBuilder.hxx>
 #include<TopOpeBRepBuild_FaceAreaBuilder.hxx>
 #include<TopOpeBRepBuild_FaceBuilder.hxx>
@@ -220,9 +212,9 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TopoDS_Shape.hxx>
 #include<TopOpeBRepDS_BuildTool.hxx>
 #include<Handle_TopOpeBRepDS_HDataStructure.hxx>
-#include<TopoDS_Shape.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopTools_MapOfShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>

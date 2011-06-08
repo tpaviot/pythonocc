@@ -34,12 +34,10 @@ $HeaderURL$
 #include<Handle_Units_QuantitiesSequence.hxx>
 #include<Handle_Units_Quantity.hxx>
 #include<Handle_Units_SequenceNodeOfQtsSequence.hxx>
-#include<Handle_Units_SequenceNodeOfStrgSequence.hxx>
 #include<Handle_Units_SequenceNodeOfTksSequence.hxx>
 #include<Handle_Units_SequenceNodeOfUtsSequence.hxx>
 #include<Handle_Units_ShiftedToken.hxx>
 #include<Handle_Units_ShiftedUnit.hxx>
-#include<Handle_Units_StringsSequence.hxx>
 #include<Handle_Units_Token.hxx>
 #include<Handle_Units_TokensSequence.hxx>
 #include<Handle_Units_Unit.hxx>
@@ -61,13 +59,10 @@ $HeaderURL$
 #include<Units_Quantity.hxx>
 #include<Units_Sentence.hxx>
 #include<Units_SequenceNodeOfQtsSequence.hxx>
-#include<Units_SequenceNodeOfStrgSequence.hxx>
 #include<Units_SequenceNodeOfTksSequence.hxx>
 #include<Units_SequenceNodeOfUtsSequence.hxx>
 #include<Units_ShiftedToken.hxx>
 #include<Units_ShiftedUnit.hxx>
-#include<Units_StrgSequence.hxx>
-#include<Units_StringsSequence.hxx>
 #include<Units_TksSequence.hxx>
 #include<Units_Token.hxx>
 #include<Units_TokensSequence.hxx>
@@ -89,8 +84,7 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Standard_SStream.hxx>
-#include<Handle_TCollection_HAsciiString.hxx>
+#include<Handle_TColStd_HSequenceOfHAsciiString.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<Units.hxx>
 %}

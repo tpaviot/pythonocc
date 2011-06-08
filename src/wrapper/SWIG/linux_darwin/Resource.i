@@ -73,7 +73,7 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public H
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString & operator=(const Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
@@ -111,7 +111,7 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Hand
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString & operator=(const Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
@@ -149,7 +149,7 @@ class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 		%feature("autodoc", "1");
 		Handle_Resource_NoSuchResource & operator=(const Resource_NoSuchResource *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Resource_NoSuchResource const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Resource_NoSuchResource DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Resource_NoSuchResource {
@@ -187,7 +187,7 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Resource_Manager & operator=(const Resource_Manager *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Resource_Manager const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Resource_Manager DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Resource_Manager {
@@ -205,57 +205,6 @@ def __del__(self):
 %}
 
 %extend Handle_Resource_Manager {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Resource_Array1OfAsciiString;
-class Resource_Array1OfAsciiString {
-	public:
-		%feature("autodoc", "1");
-		Resource_Array1OfAsciiString(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Resource_Array1OfAsciiString(const TCollection_AsciiString &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const TCollection_AsciiString &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Resource_Array1OfAsciiString & Assign(const Resource_Array1OfAsciiString &Other);
-		%feature("autodoc", "1");
-		const Resource_Array1OfAsciiString & operator=(const Resource_Array1OfAsciiString &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TCollection_AsciiString &Value);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Resource_Array1OfAsciiString::~Resource_Array1OfAsciiString %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Resource_Array1OfAsciiString {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -479,7 +428,7 @@ class Resource_QuickSortOfArray1 {
 		%feature("autodoc", "1");
 		Resource_QuickSortOfArray1();
 		%feature("autodoc", "1");
-		static		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
+		static		void Sort(TColStd_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
 
 };
 %feature("shadow") Resource_QuickSortOfArray1::~Resource_QuickSortOfArray1 %{
@@ -535,7 +484,7 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Resource_NoSuchResource NewInstance(const char * aMessage);
+		static		Handle_Resource_NoSuchResource NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

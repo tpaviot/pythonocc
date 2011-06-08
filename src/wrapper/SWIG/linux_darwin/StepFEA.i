@@ -94,7 +94,7 @@ class Handle_StepFEA_NodeRepresentation : public Handle_StepRepr_Representation 
 		%feature("autodoc", "1");
 		Handle_StepFEA_NodeRepresentation & operator=(const StepFEA_NodeRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_NodeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_NodeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_NodeRepresentation {
@@ -132,7 +132,7 @@ class Handle_StepFEA_DummyNode : public Handle_StepFEA_NodeRepresentation {
 		%feature("autodoc", "1");
 		Handle_StepFEA_DummyNode & operator=(const StepFEA_DummyNode *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_DummyNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_DummyNode DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_DummyNode {
@@ -156,6 +156,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepFEA_HSequenceOfElementRepresentation;
+class Handle_StepFEA_HSequenceOfElementRepresentation : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_HSequenceOfElementRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepFEA_HSequenceOfElementRepresentation(const Handle_StepFEA_HSequenceOfElementRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HSequenceOfElementRepresentation(const StepFEA_HSequenceOfElementRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HSequenceOfElementRepresentation & operator=(const Handle_StepFEA_HSequenceOfElementRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HSequenceOfElementRepresentation & operator=(const StepFEA_HSequenceOfElementRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_HSequenceOfElementRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_HSequenceOfElementRepresentation {
+	StepFEA_HSequenceOfElementRepresentation* GetObject() {
+	return (StepFEA_HSequenceOfElementRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_HSequenceOfElementRepresentation::~Handle_StepFEA_HSequenceOfElementRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_HSequenceOfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepFEA_FeaMaterialPropertyRepresentationItem;
 class Handle_StepFEA_FeaMaterialPropertyRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
@@ -170,7 +208,7 @@ class Handle_StepFEA_FeaMaterialPropertyRepresentationItem : public Handle_StepR
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaMaterialPropertyRepresentationItem & operator=(const StepFEA_FeaMaterialPropertyRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaMaterialPropertyRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaMaterialPropertyRepresentationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
@@ -208,7 +246,7 @@ class Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness : public Handle_St
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness & operator=(const StepFEA_FeaShellMembraneBendingCouplingStiffness *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness {
@@ -246,7 +284,7 @@ class Handle_StepFEA_FeaLinearElasticity : public Handle_StepFEA_FeaMaterialProp
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaLinearElasticity & operator=(const StepFEA_FeaLinearElasticity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaLinearElasticity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaLinearElasticity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaLinearElasticity {
@@ -270,44 +308,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_FeaShellMembraneStiffness;
-class Handle_StepFEA_FeaShellMembraneStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellMembraneStiffness();
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellMembraneStiffness(const Handle_StepFEA_FeaShellMembraneStiffness &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellMembraneStiffness(const StepFEA_FeaShellMembraneStiffness *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellMembraneStiffness & operator=(const Handle_StepFEA_FeaShellMembraneStiffness &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellMembraneStiffness & operator=(const StepFEA_FeaShellMembraneStiffness *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaShellMembraneStiffness const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_FeaShellMembraneStiffness {
-	StepFEA_FeaShellMembraneStiffness* GetObject() {
-	return (StepFEA_FeaShellMembraneStiffness*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_FeaShellMembraneStiffness::~Handle_StepFEA_FeaShellMembraneStiffness %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_FeaShellMembraneStiffness {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepFEA_HSequenceOfCurve3dElementProperty;
 class Handle_StepFEA_HSequenceOfCurve3dElementProperty : public Handle_MMgt_TShared {
 	public:
@@ -322,7 +322,7 @@ class Handle_StepFEA_HSequenceOfCurve3dElementProperty : public Handle_MMgt_TSha
 		%feature("autodoc", "1");
 		Handle_StepFEA_HSequenceOfCurve3dElementProperty & operator=(const StepFEA_HSequenceOfCurve3dElementProperty *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_HSequenceOfCurve3dElementProperty const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_HSequenceOfCurve3dElementProperty DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_HSequenceOfCurve3dElementProperty {
@@ -360,7 +360,7 @@ class Handle_StepFEA_FeaModel : public Handle_StepRepr_Representation {
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaModel & operator=(const StepFEA_FeaModel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaModel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaModel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaModel {
@@ -398,7 +398,7 @@ class Handle_StepFEA_FeaModel3d : public Handle_StepFEA_FeaModel {
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaModel3d & operator=(const StepFEA_FeaModel3d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaModel3d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaModel3d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaModel3d {
@@ -436,7 +436,7 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public Hand
 		%feature("autodoc", "1");
 		Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation & operator=(const StepFEA_SequenceNodeOfSequenceOfElementRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
@@ -474,7 +474,7 @@ class Handle_StepFEA_FeaModelDefinition : public Handle_StepRepr_ShapeAspect {
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaModelDefinition & operator=(const StepFEA_FeaModelDefinition *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaModelDefinition const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaModelDefinition DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaModelDefinition {
@@ -512,7 +512,7 @@ class Handle_StepFEA_HArray1OfDegreeOfFreedom : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepFEA_HArray1OfDegreeOfFreedom & operator=(const StepFEA_HArray1OfDegreeOfFreedom *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_HArray1OfDegreeOfFreedom const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_HArray1OfDegreeOfFreedom DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_HArray1OfDegreeOfFreedom {
@@ -550,7 +550,7 @@ class Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public H
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion & operator=(const StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
@@ -588,7 +588,7 @@ class Handle_StepFEA_ElementRepresentation : public Handle_StepRepr_Representati
 		%feature("autodoc", "1");
 		Handle_StepFEA_ElementRepresentation & operator=(const StepFEA_ElementRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_ElementRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_ElementRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_ElementRepresentation {
@@ -626,7 +626,7 @@ class Handle_StepFEA_HArray1OfNodeRepresentation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepFEA_HArray1OfNodeRepresentation & operator=(const StepFEA_HArray1OfNodeRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_HArray1OfNodeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_HArray1OfNodeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_HArray1OfNodeRepresentation {
@@ -664,7 +664,7 @@ class Handle_StepFEA_FeaRepresentationItem : public Handle_StepRepr_Representati
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaRepresentationItem & operator=(const StepFEA_FeaRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaRepresentationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaRepresentationItem {
@@ -702,7 +702,7 @@ class Handle_StepFEA_AlignedSurface3dElementCoordinateSystem : public Handle_Ste
 		%feature("autodoc", "1");
 		Handle_StepFEA_AlignedSurface3dElementCoordinateSystem & operator=(const StepFEA_AlignedSurface3dElementCoordinateSystem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_AlignedSurface3dElementCoordinateSystem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_AlignedSurface3dElementCoordinateSystem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_AlignedSurface3dElementCoordinateSystem {
@@ -740,7 +740,7 @@ class Handle_StepFEA_FeaMoistureAbsorption : public Handle_StepFEA_FeaMaterialPr
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaMoistureAbsorption & operator=(const StepFEA_FeaMoistureAbsorption *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaMoistureAbsorption const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaMoistureAbsorption DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaMoistureAbsorption {
@@ -778,7 +778,7 @@ class Handle_StepFEA_Surface3dElementRepresentation : public Handle_StepFEA_Elem
 		%feature("autodoc", "1");
 		Handle_StepFEA_Surface3dElementRepresentation & operator=(const StepFEA_Surface3dElementRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_Surface3dElementRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_Surface3dElementRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_Surface3dElementRepresentation {
@@ -816,7 +816,7 @@ class Handle_StepFEA_FeaAreaDensity : public Handle_StepFEA_FeaMaterialPropertyR
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaAreaDensity & operator=(const StepFEA_FeaAreaDensity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaAreaDensity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaAreaDensity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaAreaDensity {
@@ -854,7 +854,7 @@ class Handle_StepFEA_FeaMaterialPropertyRepresentation : public Handle_StepRepr_
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaMaterialPropertyRepresentation & operator=(const StepFEA_FeaMaterialPropertyRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaMaterialPropertyRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaMaterialPropertyRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaMaterialPropertyRepresentation {
@@ -892,7 +892,7 @@ class Handle_StepFEA_ConstantSurface3dElementCoordinateSystem : public Handle_St
 		%feature("autodoc", "1");
 		Handle_StepFEA_ConstantSurface3dElementCoordinateSystem & operator=(const StepFEA_ConstantSurface3dElementCoordinateSystem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_ConstantSurface3dElementCoordinateSystem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_ConstantSurface3dElementCoordinateSystem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_ConstantSurface3dElementCoordinateSystem {
@@ -930,7 +930,7 @@ class Handle_StepFEA_FeaCurveSectionGeometricRelationship : public Handle_MMgt_T
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaCurveSectionGeometricRelationship & operator=(const StepFEA_FeaCurveSectionGeometricRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaCurveSectionGeometricRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaCurveSectionGeometricRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaCurveSectionGeometricRelationship {
@@ -968,7 +968,7 @@ class Handle_StepFEA_CurveElementLocation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepFEA_CurveElementLocation & operator=(const StepFEA_CurveElementLocation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_CurveElementLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_CurveElementLocation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_CurveElementLocation {
@@ -1006,7 +1006,7 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public Han
 		%feature("autodoc", "1");
 		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty & operator=(const StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
@@ -1044,7 +1044,7 @@ class Handle_StepFEA_Curve3dElementRepresentation : public Handle_StepFEA_Elemen
 		%feature("autodoc", "1");
 		Handle_StepFEA_Curve3dElementRepresentation & operator=(const StepFEA_Curve3dElementRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_Curve3dElementRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_Curve3dElementRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_Curve3dElementRepresentation {
@@ -1082,7 +1082,7 @@ class Handle_StepFEA_HArray1OfElementRepresentation : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_StepFEA_HArray1OfElementRepresentation & operator=(const StepFEA_HArray1OfElementRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_HArray1OfElementRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_HArray1OfElementRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_HArray1OfElementRepresentation {
@@ -1120,7 +1120,7 @@ class Handle_StepFEA_AlignedCurve3dElementCoordinateSystem : public Handle_StepF
 		%feature("autodoc", "1");
 		Handle_StepFEA_AlignedCurve3dElementCoordinateSystem & operator=(const StepFEA_AlignedCurve3dElementCoordinateSystem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_AlignedCurve3dElementCoordinateSystem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_AlignedCurve3dElementCoordinateSystem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_AlignedCurve3dElementCoordinateSystem {
@@ -1158,7 +1158,7 @@ class Handle_StepFEA_NodeSet : public Handle_StepGeom_GeometricRepresentationIte
 		%feature("autodoc", "1");
 		Handle_StepFEA_NodeSet & operator=(const StepFEA_NodeSet *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_NodeSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_NodeSet DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_NodeSet {
@@ -1196,7 +1196,7 @@ class Handle_StepFEA_ParametricCurve3dElementCoordinateSystem : public Handle_St
 		%feature("autodoc", "1");
 		Handle_StepFEA_ParametricCurve3dElementCoordinateSystem & operator=(const StepFEA_ParametricCurve3dElementCoordinateSystem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_ParametricCurve3dElementCoordinateSystem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_ParametricCurve3dElementCoordinateSystem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_ParametricCurve3dElementCoordinateSystem {
@@ -1234,7 +1234,7 @@ class Handle_StepFEA_CurveElementInterval : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepFEA_CurveElementInterval & operator=(const StepFEA_CurveElementInterval *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_CurveElementInterval const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_CurveElementInterval DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_CurveElementInterval {
@@ -1272,7 +1272,7 @@ class Handle_StepFEA_CurveElementIntervalLinearlyVarying : public Handle_StepFEA
 		%feature("autodoc", "1");
 		Handle_StepFEA_CurveElementIntervalLinearlyVarying & operator=(const StepFEA_CurveElementIntervalLinearlyVarying *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_CurveElementIntervalLinearlyVarying const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_CurveElementIntervalLinearlyVarying DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_CurveElementIntervalLinearlyVarying {
@@ -1310,7 +1310,7 @@ class Handle_StepFEA_Node : public Handle_StepFEA_NodeRepresentation {
 		%feature("autodoc", "1");
 		Handle_StepFEA_Node & operator=(const StepFEA_Node *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_Node const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_Node DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_Node {
@@ -1348,7 +1348,7 @@ class Handle_StepFEA_NodeWithSolutionCoordinateSystem : public Handle_StepFEA_No
 		%feature("autodoc", "1");
 		Handle_StepFEA_NodeWithSolutionCoordinateSystem & operator=(const StepFEA_NodeWithSolutionCoordinateSystem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_NodeWithSolutionCoordinateSystem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_NodeWithSolutionCoordinateSystem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_NodeWithSolutionCoordinateSystem {
@@ -1386,7 +1386,7 @@ class Handle_StepFEA_CurveElementEndRelease : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepFEA_CurveElementEndRelease & operator=(const StepFEA_CurveElementEndRelease *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_CurveElementEndRelease const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_CurveElementEndRelease DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_CurveElementEndRelease {
@@ -1424,7 +1424,7 @@ class Handle_StepFEA_NodeWithVector : public Handle_StepFEA_Node {
 		%feature("autodoc", "1");
 		Handle_StepFEA_NodeWithVector & operator=(const StepFEA_NodeWithVector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_NodeWithVector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_NodeWithVector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_NodeWithVector {
@@ -1462,7 +1462,7 @@ class Handle_StepFEA_FreedomAndCoefficient : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepFEA_FreedomAndCoefficient & operator=(const StepFEA_FreedomAndCoefficient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FreedomAndCoefficient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FreedomAndCoefficient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FreedomAndCoefficient {
@@ -1500,7 +1500,7 @@ class Handle_StepFEA_NodeDefinition : public Handle_StepRepr_ShapeAspect {
 		%feature("autodoc", "1");
 		Handle_StepFEA_NodeDefinition & operator=(const StepFEA_NodeDefinition *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_NodeDefinition const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_NodeDefinition DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_NodeDefinition {
@@ -1538,7 +1538,7 @@ class Handle_StepFEA_HArray1OfCurveElementInterval : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_StepFEA_HArray1OfCurveElementInterval & operator=(const StepFEA_HArray1OfCurveElementInterval *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_HArray1OfCurveElementInterval const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_HArray1OfCurveElementInterval DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_HArray1OfCurveElementInterval {
@@ -1576,7 +1576,7 @@ class Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public Handl
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion & operator=(const StepFEA_FeaSecantCoefficientOfLinearThermalExpansion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
@@ -1614,7 +1614,7 @@ class Handle_StepFEA_CurveElementIntervalConstant : public Handle_StepFEA_CurveE
 		%feature("autodoc", "1");
 		Handle_StepFEA_CurveElementIntervalConstant & operator=(const StepFEA_CurveElementIntervalConstant *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_CurveElementIntervalConstant const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_CurveElementIntervalConstant DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_CurveElementIntervalConstant {
@@ -1652,7 +1652,7 @@ class Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem : public Handle_St
 		%feature("autodoc", "1");
 		Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem & operator=(const StepFEA_ArbitraryVolume3dElementCoordinateSystem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem {
@@ -1690,7 +1690,7 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : publ
 		%feature("autodoc", "1");
 		Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship & operator=(const StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
@@ -1728,7 +1728,7 @@ class Handle_StepFEA_GeometricNode : public Handle_StepFEA_NodeRepresentation {
 		%feature("autodoc", "1");
 		Handle_StepFEA_GeometricNode & operator=(const StepFEA_GeometricNode *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_GeometricNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_GeometricNode DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_GeometricNode {
@@ -1766,7 +1766,7 @@ class Handle_StepFEA_SymmetricTensor23dMember : public Handle_StepData_SelectArr
 		%feature("autodoc", "1");
 		Handle_StepFEA_SymmetricTensor23dMember & operator=(const StepFEA_SymmetricTensor23dMember *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_SymmetricTensor23dMember const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_SymmetricTensor23dMember DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_SymmetricTensor23dMember {
@@ -1804,7 +1804,7 @@ class Handle_StepFEA_CurveElementEndOffset : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepFEA_CurveElementEndOffset & operator=(const StepFEA_CurveElementEndOffset *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_CurveElementEndOffset const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_CurveElementEndOffset DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_CurveElementEndOffset {
@@ -1842,7 +1842,7 @@ class Handle_StepFEA_HSequenceOfElementGeometricRelationship : public Handle_MMg
 		%feature("autodoc", "1");
 		Handle_StepFEA_HSequenceOfElementGeometricRelationship & operator=(const StepFEA_HSequenceOfElementGeometricRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_HSequenceOfElementGeometricRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_HSequenceOfElementGeometricRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_HSequenceOfElementGeometricRelationship {
@@ -1880,7 +1880,7 @@ class Handle_StepFEA_FeaGroup : public Handle_StepBasic_Group {
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaGroup & operator=(const StepFEA_FeaGroup *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaGroup const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaGroup DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaGroup {
@@ -1918,7 +1918,7 @@ class Handle_StepFEA_ElementGroup : public Handle_StepFEA_FeaGroup {
 		%feature("autodoc", "1");
 		Handle_StepFEA_ElementGroup & operator=(const StepFEA_ElementGroup *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_ElementGroup const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_ElementGroup DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_ElementGroup {
@@ -1956,7 +1956,7 @@ class Handle_StepFEA_FeaShellBendingStiffness : public Handle_StepFEA_FeaMateria
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaShellBendingStiffness & operator=(const StepFEA_FeaShellBendingStiffness *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaShellBendingStiffness const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaShellBendingStiffness DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaShellBendingStiffness {
@@ -1994,7 +1994,7 @@ class Handle_StepFEA_FeaMassDensity : public Handle_StepFEA_FeaMaterialPropertyR
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaMassDensity & operator=(const StepFEA_FeaMassDensity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaMassDensity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaMassDensity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaMassDensity {
@@ -2032,7 +2032,7 @@ class Handle_StepFEA_FeaSurfaceSectionGeometricRelationship : public Handle_MMgt
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaSurfaceSectionGeometricRelationship & operator=(const StepFEA_FeaSurfaceSectionGeometricRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaSurfaceSectionGeometricRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaSurfaceSectionGeometricRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaSurfaceSectionGeometricRelationship {
@@ -2070,7 +2070,7 @@ class Handle_StepFEA_ParametricSurface3dElementCoordinateSystem : public Handle_
 		%feature("autodoc", "1");
 		Handle_StepFEA_ParametricSurface3dElementCoordinateSystem & operator=(const StepFEA_ParametricSurface3dElementCoordinateSystem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_ParametricSurface3dElementCoordinateSystem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_ParametricSurface3dElementCoordinateSystem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_ParametricSurface3dElementCoordinateSystem {
@@ -2108,7 +2108,7 @@ class Handle_StepFEA_Curve3dElementProperty : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepFEA_Curve3dElementProperty & operator=(const StepFEA_Curve3dElementProperty *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_Curve3dElementProperty const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_Curve3dElementProperty DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_Curve3dElementProperty {
@@ -2132,6 +2132,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepFEA_FeaShellMembraneStiffness;
+class Handle_StepFEA_FeaShellMembraneStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellMembraneStiffness();
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellMembraneStiffness(const Handle_StepFEA_FeaShellMembraneStiffness &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellMembraneStiffness(const StepFEA_FeaShellMembraneStiffness *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellMembraneStiffness & operator=(const Handle_StepFEA_FeaShellMembraneStiffness &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellMembraneStiffness & operator=(const StepFEA_FeaShellMembraneStiffness *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_FeaShellMembraneStiffness DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_FeaShellMembraneStiffness {
+	StepFEA_FeaShellMembraneStiffness* GetObject() {
+	return (StepFEA_FeaShellMembraneStiffness*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_FeaShellMembraneStiffness::~Handle_StepFEA_FeaShellMembraneStiffness %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_FeaShellMembraneStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepFEA_FeaShellShearStiffness;
 class Handle_StepFEA_FeaShellShearStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -2146,7 +2184,7 @@ class Handle_StepFEA_FeaShellShearStiffness : public Handle_StepFEA_FeaMaterialP
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaShellShearStiffness & operator=(const StepFEA_FeaShellShearStiffness *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaShellShearStiffness const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaShellShearStiffness DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaShellShearStiffness {
@@ -2170,44 +2208,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_HSequenceOfElementRepresentation;
-class Handle_StepFEA_HSequenceOfElementRepresentation : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfElementRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfElementRepresentation(const Handle_StepFEA_HSequenceOfElementRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfElementRepresentation(const StepFEA_HSequenceOfElementRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfElementRepresentation & operator=(const Handle_StepFEA_HSequenceOfElementRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfElementRepresentation & operator=(const StepFEA_HSequenceOfElementRepresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_HSequenceOfElementRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_HSequenceOfElementRepresentation {
-	StepFEA_HSequenceOfElementRepresentation* GetObject() {
-	return (StepFEA_HSequenceOfElementRepresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_HSequenceOfElementRepresentation::~Handle_StepFEA_HSequenceOfElementRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_HSequenceOfElementRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepFEA_HSequenceOfNodeRepresentation;
 class Handle_StepFEA_HSequenceOfNodeRepresentation : public Handle_MMgt_TShared {
 	public:
@@ -2222,7 +2222,7 @@ class Handle_StepFEA_HSequenceOfNodeRepresentation : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_StepFEA_HSequenceOfNodeRepresentation & operator=(const StepFEA_HSequenceOfNodeRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_HSequenceOfNodeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_HSequenceOfNodeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_HSequenceOfNodeRepresentation {
@@ -2260,7 +2260,7 @@ class Handle_StepFEA_FeaAxis2Placement3d : public Handle_StepGeom_Axis2Placement
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaAxis2Placement3d & operator=(const StepFEA_FeaAxis2Placement3d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaAxis2Placement3d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaAxis2Placement3d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaAxis2Placement3d {
@@ -2298,7 +2298,7 @@ class Handle_StepFEA_FreedomsList : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepFEA_FreedomsList & operator=(const StepFEA_FreedomsList *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FreedomsList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FreedomsList DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FreedomsList {
@@ -2336,7 +2336,7 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public Handle_
 		%feature("autodoc", "1");
 		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation & operator=(const StepFEA_SequenceNodeOfSequenceOfNodeRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
@@ -2374,7 +2374,7 @@ class Handle_StepFEA_Volume3dElementRepresentation : public Handle_StepFEA_Eleme
 		%feature("autodoc", "1");
 		Handle_StepFEA_Volume3dElementRepresentation & operator=(const StepFEA_Volume3dElementRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_Volume3dElementRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_Volume3dElementRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_Volume3dElementRepresentation {
@@ -2412,7 +2412,7 @@ class Handle_StepFEA_ParametricCurve3dElementCoordinateDirection : public Handle
 		%feature("autodoc", "1");
 		Handle_StepFEA_ParametricCurve3dElementCoordinateDirection & operator=(const StepFEA_ParametricCurve3dElementCoordinateDirection *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_ParametricCurve3dElementCoordinateDirection const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_ParametricCurve3dElementCoordinateDirection DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_ParametricCurve3dElementCoordinateDirection {
@@ -2450,7 +2450,7 @@ class Handle_StepFEA_SymmetricTensor43dMember : public Handle_StepData_SelectArr
 		%feature("autodoc", "1");
 		Handle_StepFEA_SymmetricTensor43dMember & operator=(const StepFEA_SymmetricTensor43dMember *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_SymmetricTensor43dMember const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_SymmetricTensor43dMember DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_SymmetricTensor43dMember {
@@ -2488,7 +2488,7 @@ class Handle_StepFEA_HArray1OfCurveElementEndOffset : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_StepFEA_HArray1OfCurveElementEndOffset & operator=(const StepFEA_HArray1OfCurveElementEndOffset *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_HArray1OfCurveElementEndOffset const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_HArray1OfCurveElementEndOffset DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_HArray1OfCurveElementEndOffset {
@@ -2526,7 +2526,7 @@ class Handle_StepFEA_NodeGroup : public Handle_StepFEA_FeaGroup {
 		%feature("autodoc", "1");
 		Handle_StepFEA_NodeGroup & operator=(const StepFEA_NodeGroup *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_NodeGroup const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_NodeGroup DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_NodeGroup {
@@ -2564,7 +2564,7 @@ class Handle_StepFEA_HArray1OfCurveElementEndRelease : public Handle_MMgt_TShare
 		%feature("autodoc", "1");
 		Handle_StepFEA_HArray1OfCurveElementEndRelease & operator=(const StepFEA_HArray1OfCurveElementEndRelease *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_HArray1OfCurveElementEndRelease const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_HArray1OfCurveElementEndRelease DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_HArray1OfCurveElementEndRelease {
@@ -2602,7 +2602,7 @@ class Handle_StepFEA_ElementGeometricRelationship : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepFEA_ElementGeometricRelationship & operator=(const StepFEA_ElementGeometricRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_ElementGeometricRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_ElementGeometricRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_ElementGeometricRelationship {
@@ -2640,7 +2640,7 @@ class Handle_StepFEA_DegreeOfFreedomMember : public Handle_StepData_SelectNamed 
 		%feature("autodoc", "1");
 		Handle_StepFEA_DegreeOfFreedomMember & operator=(const StepFEA_DegreeOfFreedomMember *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_DegreeOfFreedomMember const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_DegreeOfFreedomMember DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_DegreeOfFreedomMember {
@@ -2678,7 +2678,7 @@ class Handle_StepFEA_FeaParametricPoint : public Handle_StepGeom_Point {
 		%feature("autodoc", "1");
 		Handle_StepFEA_FeaParametricPoint & operator=(const StepFEA_FeaParametricPoint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaParametricPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaParametricPoint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepFEA_FeaParametricPoint {
@@ -3215,6 +3215,80 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepFEA_FeaRepresentationItem;
+class StepFEA_FeaRepresentationItem : public StepRepr_RepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaRepresentationItem();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaRepresentationItem {
+	Handle_StepFEA_FeaRepresentationItem GetHandle() {
+	return *(Handle_StepFEA_FeaRepresentationItem*) &$self;
+	}
+};
+%extend StepFEA_FeaRepresentationItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") StepFEA_FeaRepresentationItem::~StepFEA_FeaRepresentationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_ParametricCurve3dElementCoordinateDirection;
+class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_ParametricCurve3dElementCoordinateDirection();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepGeom_Direction &aOrientation);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Direction Orientation() const;
+		%feature("autodoc", "1");
+		void SetOrientation(const Handle_StepGeom_Direction &Orientation);
+
+};
+%extend StepFEA_ParametricCurve3dElementCoordinateDirection {
+	Handle_StepFEA_ParametricCurve3dElementCoordinateDirection GetHandle() {
+	return *(Handle_StepFEA_ParametricCurve3dElementCoordinateDirection*) &$self;
+	}
+};
+%extend StepFEA_ParametricCurve3dElementCoordinateDirection {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") StepFEA_ParametricCurve3dElementCoordinateDirection::~StepFEA_ParametricCurve3dElementCoordinateDirection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_ParametricCurve3dElementCoordinateDirection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepFEA_FeaMaterialPropertyRepresentationItem;
 class StepFEA_FeaMaterialPropertyRepresentationItem : public StepRepr_RepresentationItem {
 	public:
@@ -3371,41 +3445,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepFEA_FeaRepresentationItem;
-class StepFEA_FeaRepresentationItem : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaRepresentationItem();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaRepresentationItem {
-	Handle_StepFEA_FeaRepresentationItem GetHandle() {
-	return *(Handle_StepFEA_FeaRepresentationItem*) &$self;
-	}
-};
-%extend StepFEA_FeaRepresentationItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaRepresentationItem::~StepFEA_FeaRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaRepresentationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepFEA_ParametricCurve3dElementCoordinateSystem;
 class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
 	public:
@@ -3417,6 +3456,8 @@ class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepre
 		Handle_StepFEA_ParametricCurve3dElementCoordinateDirection Direction() const;
 		%feature("autodoc", "1");
 		void SetDirection(const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &Direction);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepFEA_ParametricCurve3dElementCoordinateSystem {
@@ -5304,47 +5345,6 @@ def __del__(self):
 %}
 
 %extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_ParametricCurve3dElementCoordinateDirection;
-class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_ParametricCurve3dElementCoordinateDirection();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepGeom_Direction &aOrientation);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Direction Orientation() const;
-		%feature("autodoc", "1");
-		void SetOrientation(const Handle_StepGeom_Direction &Orientation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_ParametricCurve3dElementCoordinateDirection {
-	Handle_StepFEA_ParametricCurve3dElementCoordinateDirection GetHandle() {
-	return *(Handle_StepFEA_ParametricCurve3dElementCoordinateDirection*) &$self;
-	}
-};
-%extend StepFEA_ParametricCurve3dElementCoordinateDirection {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_ParametricCurve3dElementCoordinateDirection::~StepFEA_ParametricCurve3dElementCoordinateDirection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_ParametricCurve3dElementCoordinateDirection {
 	void _kill_pointed() {
 		delete $self;
 	}

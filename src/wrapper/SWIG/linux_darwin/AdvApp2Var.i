@@ -76,7 +76,7 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfPatch *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch {
@@ -114,7 +114,7 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip {
@@ -152,7 +152,7 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfNode *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode {
@@ -190,7 +190,7 @@ class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode 
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfStrip & operator=(const AdvApp2Var_SequenceNodeOfStrip *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AdvApp2Var_SequenceNodeOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AdvApp2Var_SequenceNodeOfStrip DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AdvApp2Var_SequenceNodeOfStrip {

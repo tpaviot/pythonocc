@@ -66,7 +66,7 @@ class Handle_BRepApprox_ApproxLine : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepApprox_ApproxLine & operator=(const BRepApprox_ApproxLine *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepApprox_ApproxLine const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepApprox_ApproxLine DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepApprox_ApproxLine {

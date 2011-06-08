@@ -66,12 +66,6 @@ enum GeomAbs_CurveForm {
 	GeomAbs_OtherCurveForm,
 	};
 
-enum GeomAbs_JoinType {
-	GeomAbs_Arc,
-	GeomAbs_Tangent,
-	GeomAbs_Intersection,
-	};
-
 enum GeomAbs_Shape {
 	GeomAbs_C0,
 	GeomAbs_G1,
@@ -105,6 +99,12 @@ enum GeomAbs_SurfaceForm {
 	GeomAbs_RuledForm,
 	GeomAbs_QuadricForm,
 	GeomAbs_OtherSurfaceForm,
+	};
+
+enum GeomAbs_JoinType {
+	GeomAbs_Arc,
+	GeomAbs_Tangent,
+	GeomAbs_Intersection,
 	};
 
 enum GeomAbs_SurfaceType {

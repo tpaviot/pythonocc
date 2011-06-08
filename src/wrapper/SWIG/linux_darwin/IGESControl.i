@@ -66,7 +66,7 @@ class Handle_IGESControl_AlgoContainer : public Handle_IGESToBRep_AlgoContainer 
 		%feature("autodoc", "1");
 		Handle_IGESControl_AlgoContainer & operator=(const IGESControl_AlgoContainer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESControl_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESControl_AlgoContainer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESControl_AlgoContainer {
@@ -104,7 +104,7 @@ class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 		%feature("autodoc", "1");
 		Handle_IGESControl_ActorWrite & operator=(const IGESControl_ActorWrite *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESControl_ActorWrite const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESControl_ActorWrite DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESControl_ActorWrite {
@@ -142,7 +142,7 @@ class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 		%feature("autodoc", "1");
 		Handle_IGESControl_Controller & operator=(const IGESControl_Controller *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESControl_Controller DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESControl_Controller {
@@ -180,7 +180,7 @@ class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 		%feature("autodoc", "1");
 		Handle_IGESControl_IGESBoundary & operator=(const IGESControl_IGESBoundary *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESControl_IGESBoundary const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESControl_IGESBoundary DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESControl_IGESBoundary {
@@ -218,7 +218,7 @@ class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer 
 		%feature("autodoc", "1");
 		Handle_IGESControl_ToolContainer & operator=(const IGESControl_ToolContainer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESControl_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESControl_ToolContainer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESControl_ToolContainer {

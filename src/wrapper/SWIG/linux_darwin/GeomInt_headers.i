@@ -72,6 +72,7 @@ $HeaderURL$
 #include<Adaptor3d_HSurface.hxx>
 #include<Adaptor3d_HSurfaceOfLinearExtrusion.hxx>
 #include<Adaptor3d_HSurfaceOfRevolution.hxx>
+#include<Adaptor3d_HSurfaceTool.hxx>
 #include<Adaptor3d_HVertex.hxx>
 #include<Adaptor3d_InterFunc.hxx>
 #include<Adaptor3d_IsoCurve.hxx>
@@ -95,6 +96,7 @@ $HeaderURL$
 #include<gp_Dir2d.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Elips2d.hxx>
+#include<gp_EulerSequence.hxx>
 #include<gp_GTrsf.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Hypr.hxx>
@@ -108,6 +110,9 @@ $HeaderURL$
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Quaternion.hxx>
+#include<gp_QuaternionNLerp.hxx>
+#include<gp_QuaternionSLerp.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
 #include<gp_Trsf.hxx>
@@ -131,7 +136,7 @@ $HeaderURL$
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<IntSurf_Quadric.hxx>
 #include<math_Matrix.hxx>
-#include<Handle_IntPatch_TheWLineOfIntersection.hxx>
+#include<Handle_IntPatch_WLine.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec.hxx>

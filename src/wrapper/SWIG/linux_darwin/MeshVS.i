@@ -88,6 +88,7 @@ enum MeshVS_DrawerAttribute {
 	MeshVS_DA_TextStyle,
 	MeshVS_DA_TextDisplayType,
 	MeshVS_DA_TextTexFont,
+	MeshVS_DA_TextFontAspect,
 	MeshVS_DA_VectorColor,
 	MeshVS_DA_VectorMaxLength,
 	MeshVS_DA_VectorArrowPart,
@@ -140,7 +141,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner : public Handle
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
@@ -178,7 +179,7 @@ class Handle_MeshVS_PrsBuilder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MeshVS_PrsBuilder & operator=(const MeshVS_PrsBuilder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_PrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_PrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_PrsBuilder {
@@ -216,7 +217,7 @@ class Handle_MeshVS_MeshPrsBuilder : public Handle_MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Handle_MeshVS_MeshPrsBuilder & operator=(const MeshVS_MeshPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_MeshPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_MeshPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_MeshPrsBuilder {
@@ -254,7 +255,7 @@ class Handle_MeshVS_Mesh : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_MeshVS_Mesh & operator=(const MeshVS_Mesh *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_Mesh const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_Mesh DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_Mesh {
@@ -292,7 +293,7 @@ class Handle_MeshVS_TextPrsBuilder : public Handle_MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Handle_MeshVS_TextPrsBuilder & operator=(const MeshVS_TextPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_TextPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_TextPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_TextPrsBuilder {
@@ -330,7 +331,7 @@ class Handle_MeshVS_SensitivePolyhedron : public Handle_Select3D_SensitiveEntity
 		%feature("autodoc", "1");
 		Handle_MeshVS_SensitivePolyhedron & operator=(const MeshVS_SensitivePolyhedron *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_SensitivePolyhedron const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SensitivePolyhedron DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_SensitivePolyhedron {
@@ -368,7 +369,7 @@ class Handle_MeshVS_NodalColorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Handle_MeshVS_NodalColorPrsBuilder & operator=(const MeshVS_NodalColorPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_NodalColorPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_NodalColorPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_NodalColorPrsBuilder {
@@ -406,7 +407,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger : public Ha
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger & operator=(const MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger {
@@ -444,7 +445,7 @@ class Handle_MeshVS_MeshOwner : public Handle_SelectMgr_EntityOwner {
 		%feature("autodoc", "1");
 		Handle_MeshVS_MeshOwner & operator=(const MeshVS_MeshOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_MeshOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_MeshOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_MeshOwner {
@@ -482,7 +483,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString {
@@ -520,7 +521,7 @@ class Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder & operator=(const MeshVS_SequenceNodeOfSequenceOfPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
@@ -558,7 +559,7 @@ class Handle_MeshVS_MeshEntityOwner : public Handle_SelectMgr_EntityOwner {
 		%feature("autodoc", "1");
 		Handle_MeshVS_MeshEntityOwner & operator=(const MeshVS_MeshEntityOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_MeshEntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_MeshEntityOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_MeshEntityOwner {
@@ -596,7 +597,7 @@ class Handle_MeshVS_DummySensitiveEntity : public Handle_SelectBasics_SensitiveE
 		%feature("autodoc", "1");
 		Handle_MeshVS_DummySensitiveEntity & operator=(const MeshVS_DummySensitiveEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DummySensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DummySensitiveEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DummySensitiveEntity {
@@ -634,7 +635,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger & operator=(const MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger {
@@ -672,7 +673,7 @@ class Handle_MeshVS_ElementalColorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Handle_MeshVS_ElementalColorPrsBuilder & operator=(const MeshVS_ElementalColorPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_ElementalColorPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_ElementalColorPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_ElementalColorPrsBuilder {
@@ -710,7 +711,7 @@ class Handle_MeshVS_StdMapNodeOfMapOfTwoNodes : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes & operator=(const MeshVS_StdMapNodeOfMapOfTwoNodes *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_StdMapNodeOfMapOfTwoNodes {
@@ -748,7 +749,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerColor *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor {
@@ -786,7 +787,7 @@ class Handle_MeshVS_DataSource : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataSource & operator=(const MeshVS_DataSource *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataSource const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataSource DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataSource {
@@ -824,7 +825,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerMaterial *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
@@ -862,7 +863,7 @@ class Handle_MeshVS_DeformedDataSource : public Handle_MeshVS_DataSource {
 		%feature("autodoc", "1");
 		Handle_MeshVS_DeformedDataSource & operator=(const MeshVS_DeformedDataSource *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DeformedDataSource const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DeformedDataSource DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DeformedDataSource {
@@ -900,7 +901,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors {
@@ -938,7 +939,7 @@ class Handle_MeshVS_SensitiveMesh : public Handle_Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		Handle_MeshVS_SensitiveMesh & operator=(const MeshVS_SensitiveMesh *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_SensitiveMesh const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SensitiveMesh DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_SensitiveMesh {
@@ -976,7 +977,7 @@ class Handle_MeshVS_Drawer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MeshVS_Drawer & operator=(const MeshVS_Drawer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_Drawer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_Drawer {
@@ -1014,7 +1015,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public Handle_
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger & operator=(const MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
@@ -1052,7 +1053,7 @@ class Handle_MeshVS_SensitiveSegment : public Handle_Select3D_SensitiveSegment {
 		%feature("autodoc", "1");
 		Handle_MeshVS_SensitiveSegment & operator=(const MeshVS_SensitiveSegment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_SensitiveSegment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SensitiveSegment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_SensitiveSegment {
@@ -1076,44 +1077,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MeshVS_DataSource3D;
-class Handle_MeshVS_DataSource3D : public Handle_MeshVS_DataSource {
-	public:
-		%feature("autodoc", "1");
-		Handle_MeshVS_DataSource3D();
-		%feature("autodoc", "1");
-		Handle_MeshVS_DataSource3D(const Handle_MeshVS_DataSource3D &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_DataSource3D(const MeshVS_DataSource3D *anItem);
-		%feature("autodoc", "1");
-		Handle_MeshVS_DataSource3D & operator=(const Handle_MeshVS_DataSource3D &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_DataSource3D & operator=(const MeshVS_DataSource3D *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataSource3D const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MeshVS_DataSource3D {
-	MeshVS_DataSource3D* GetObject() {
-	return (MeshVS_DataSource3D*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MeshVS_DataSource3D::~Handle_MeshVS_DataSource3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MeshVS_DataSource3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner;
 class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public Handle_TCollection_MapNode {
 	public:
@@ -1128,7 +1091,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
@@ -1166,7 +1129,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerVector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector {
@@ -1204,7 +1167,7 @@ class Handle_MeshVS_SensitiveFace : public Handle_Select3D_SensitiveFace {
 		%feature("autodoc", "1");
 		Handle_MeshVS_SensitiveFace & operator=(const MeshVS_SensitiveFace *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_SensitiveFace const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SensitiveFace DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_SensitiveFace {
@@ -1242,7 +1205,7 @@ class Handle_MeshVS_VectorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 		%feature("autodoc", "1");
 		Handle_MeshVS_VectorPrsBuilder & operator=(const MeshVS_VectorPrsBuilder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_VectorPrsBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_VectorPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_VectorPrsBuilder {
@@ -1280,7 +1243,7 @@ class Handle_MeshVS_HArray1OfSequenceOfInteger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MeshVS_HArray1OfSequenceOfInteger & operator=(const MeshVS_HArray1OfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_HArray1OfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_HArray1OfSequenceOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_HArray1OfSequenceOfInteger {
@@ -1304,6 +1267,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_MeshVS_DataSource3D;
+class Handle_MeshVS_DataSource3D : public Handle_MeshVS_DataSource {
+	public:
+		%feature("autodoc", "1");
+		Handle_MeshVS_DataSource3D();
+		%feature("autodoc", "1");
+		Handle_MeshVS_DataSource3D(const Handle_MeshVS_DataSource3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_DataSource3D(const MeshVS_DataSource3D *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshVS_DataSource3D & operator=(const Handle_MeshVS_DataSource3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_DataSource3D & operator=(const MeshVS_DataSource3D *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MeshVS_DataSource3D DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MeshVS_DataSource3D {
+	MeshVS_DataSource3D* GetObject() {
+	return (MeshVS_DataSource3D*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MeshVS_DataSource3D::~Handle_MeshVS_DataSource3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MeshVS_DataSource3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean;
 class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public Handle_TCollection_MapNode {
 	public:
@@ -1318,7 +1319,7 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean & operator=(const MeshVS_DataMapNodeOfDataMapOfIntegerBoolean *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean {
@@ -1373,29 +1374,6 @@ def __del__(self):
 %}
 
 %extend MeshVS_Tool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_TwoNodes;
-class MeshVS_TwoNodes {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_TwoNodes(Standard_Integer =0, Standard_Integer =0);
-
-};
-%feature("shadow") MeshVS_TwoNodes::~MeshVS_TwoNodes %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_TwoNodes {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1471,8 +1449,9 @@ class MeshVS_DataSource : public MMgt_TShared {
 		virtual		Standard_Boolean IsAdvancedSelectionEnabled() const;
 		%feature("autodoc", "1");
 		virtual		Bnd_Box GetBoundingBox() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean GetDetectedEntities(const Handle_MeshVS_Mesh &Prs, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Handle_TColStd_HPackedMapOfInteger & Nodes, Handle_TColStd_HPackedMapOfInteger & Elements);
+		%feature("autodoc","GetDetectedEntities(const Prs, Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
+		virtual		Standard_Boolean GetDetectedEntities(const Handle_MeshVS_Mesh &Prs, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Handle_TColStd_HPackedMapOfInteger & Nodes, Handle_TColStd_HPackedMapOfInteger & Elements, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean GetDetectedEntities(const Handle_MeshVS_Mesh &Prs, const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol, Handle_TColStd_HPackedMapOfInteger & Nodes, Handle_TColStd_HPackedMapOfInteger & Elements);
 		%feature("autodoc", "1");
@@ -1620,29 +1599,6 @@ def __del__(self):
 %}
 
 %extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_TwoColors;
-class MeshVS_TwoColors {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_TwoColors();
-
-};
-%feature("shadow") MeshVS_TwoColors::~MeshVS_TwoColors %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_TwoColors {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1915,6 +1871,29 @@ def __del__(self):
 %}
 
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_TwoColors;
+class MeshVS_TwoColors {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_TwoColors();
+
+};
+%feature("shadow") MeshVS_TwoColors::~MeshVS_TwoColors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_TwoColors {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2210,6 +2189,8 @@ class MeshVS_Drawer : public MMgt_TShared {
 		void SetColor(const Standard_Integer Key, const Quantity_Color &Value);
 		%feature("autodoc", "1");
 		void SetMaterial(const Standard_Integer Key, const Graphic3d_MaterialAspect &Value);
+		%feature("autodoc", "1");
+		void SetAsciiString(const Standard_Integer Key, const TCollection_AsciiString &Value);
 		%feature("autodoc","GetInteger(Standard_Integer Key) -> Standard_Integer");
 
 		Standard_Boolean GetInteger(const Standard_Integer Key, Standard_Integer &OutValue) const;
@@ -2223,6 +2204,8 @@ class MeshVS_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean GetMaterial(const Standard_Integer Key, Graphic3d_MaterialAspect & Value) const;
 		%feature("autodoc", "1");
+		Standard_Boolean GetAsciiString(const Standard_Integer Key, TCollection_AsciiString & Value) const;
+		%feature("autodoc", "1");
 		Standard_Boolean RemoveInteger(const Standard_Integer Key);
 		%feature("autodoc", "1");
 		Standard_Boolean RemoveDouble(const Standard_Integer Key);
@@ -2232,6 +2215,8 @@ class MeshVS_Drawer : public MMgt_TShared {
 		Standard_Boolean RemoveColor(const Standard_Integer Key);
 		%feature("autodoc", "1");
 		Standard_Boolean RemoveMaterial(const Standard_Integer Key);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveAsciiString(const Standard_Integer Key);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2256,6 +2241,45 @@ def __del__(self):
 %}
 
 %extend MeshVS_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger;
+class MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger(const MeshVS_TwoColors &K, const TColStd_MapOfInteger &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		MeshVS_TwoColors & Key() const;
+		%feature("autodoc", "1");
+		TColStd_MapOfInteger & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
+	Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger GetHandle() {
+	return *(Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger*) &$self;
+	}
+};
+%extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2432,6 +2456,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor MeshVS_DataMapOfIntegerVector;
+class MeshVS_DataMapOfIntegerVector : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_DataMapOfIntegerVector(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MeshVS_DataMapOfIntegerVector & Assign(const MeshVS_DataMapOfIntegerVector &Other);
+		%feature("autodoc", "1");
+		MeshVS_DataMapOfIntegerVector & operator=(const MeshVS_DataMapOfIntegerVector &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const gp_Vec I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const gp_Vec  Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const gp_Vec  operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		gp_Vec  ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		gp_Vec  operator()(const Standard_Integer &K);
+
+};
+%feature("shadow") MeshVS_DataMapOfIntegerVector::~MeshVS_DataMapOfIntegerVector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_DataMapOfIntegerVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger;
 class MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger : public TCollection_BasicMapIterator {
 	public:
@@ -2484,6 +2553,55 @@ def __del__(self):
 %}
 
 %extend MeshVS_TwoColorsHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerOwner;
+class MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_DataMapNodeOfDataMapOfIntegerOwner(const Standard_Integer &K, const Handle_SelectMgr_EntityOwner &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Handle_SelectMgr_EntityOwner & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
+	Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner GetHandle() {
+	return *(Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner*) &$self;
+	}
+};
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2593,94 +2711,6 @@ def __del__(self):
 %}
 
 %extend MeshVS_Mesh {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger;
-class MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger(const MeshVS_TwoColors &K, const TColStd_MapOfInteger &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		MeshVS_TwoColors & Key() const;
-		%feature("autodoc", "1");
-		TColStd_MapOfInteger & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
-	Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger GetHandle() {
-	return *(Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger*) &$self;
-	}
-};
-%extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerOwner;
-class MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_DataMapNodeOfDataMapOfIntegerOwner(const Standard_Integer &K, const Handle_SelectMgr_EntityOwner &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
-	Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner GetHandle() {
-	return *(Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner*) &$self;
-	}
-};
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerOwner %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3468,51 +3498,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor MeshVS_DataMapOfIntegerVector;
-class MeshVS_DataMapOfIntegerVector : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_DataMapOfIntegerVector(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		MeshVS_DataMapOfIntegerVector & Assign(const MeshVS_DataMapOfIntegerVector &Other);
-		%feature("autodoc", "1");
-		MeshVS_DataMapOfIntegerVector & operator=(const MeshVS_DataMapOfIntegerVector &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const gp_Vec I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const gp_Vec  Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const gp_Vec  operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		gp_Vec  ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		gp_Vec  operator()(const Standard_Integer &K);
-
-};
-%feature("shadow") MeshVS_DataMapOfIntegerVector::~MeshVS_DataMapOfIntegerVector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_DataMapOfIntegerVector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor MeshVS_NodalColorPrsBuilder;
 class MeshVS_NodalColorPrsBuilder : public MeshVS_PrsBuilder {
 	public:
@@ -3574,6 +3559,29 @@ def __del__(self):
 %}
 
 %extend MeshVS_NodalColorPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_TwoNodes;
+class MeshVS_TwoNodes {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_TwoNodes(Standard_Integer =0, Standard_Integer =0);
+
+};
+%feature("shadow") MeshVS_TwoNodes::~MeshVS_TwoNodes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_TwoNodes {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4073,9 +4081,9 @@ class MeshVS_MeshOwner : public SelectMgr_EntityOwner {
 		%feature("autodoc", "1");
 		const Handle_TColStd_HPackedMapOfInteger & GetSelectedElements() const;
 		%feature("autodoc", "1");
-		void AddSelectedEntities(const Handle_TColStd_HPackedMapOfInteger &Nodes, const Handle_TColStd_HPackedMapOfInteger &Elems);
+		virtual		void AddSelectedEntities(const Handle_TColStd_HPackedMapOfInteger &Nodes, const Handle_TColStd_HPackedMapOfInteger &Elems);
 		%feature("autodoc", "1");
-		void ClearSelectedEntities();
+		virtual		void ClearSelectedEntities();
 		%feature("autodoc", "1");
 		const Handle_TColStd_HPackedMapOfInteger & GetDetectedNodes() const;
 		%feature("autodoc", "1");

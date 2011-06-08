@@ -72,7 +72,7 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg & operator=(const IntCurveSurface_SequenceNodeOfSequenceOfSeg *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg {
@@ -110,7 +110,7 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
@@ -422,111 +422,6 @@ def __del__(self):
 %}
 
 %extend IntCurveSurface_TheQuadCurvExactHInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_TheHSurfaceTool;
-class IntCurveSurface_TheHSurfaceTool {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_TheHSurfaceTool();
-		%feature("autodoc", "1");
-		static		Standard_Real FirstUParameter(const Handle_Adaptor3d_HSurface &Surf);
-		%feature("autodoc", "1");
-		static		Standard_Real FirstVParameter(const Handle_Adaptor3d_HSurface &Surf);
-		%feature("autodoc", "1");
-		static		Standard_Real LastUParameter(const Handle_Adaptor3d_HSurface &Surf);
-		%feature("autodoc", "1");
-		static		Standard_Real LastVParameter(const Handle_Adaptor3d_HSurface &Surf);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbUIntervals(const Handle_Adaptor3d_HSurface &Surf, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbVIntervals(const Handle_Adaptor3d_HSurface &Surf, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		static		void UIntervals(const Handle_Adaptor3d_HSurface &Surf, TColStd_Array1OfReal & Tab, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		static		void VIntervals(const Handle_Adaptor3d_HSurface &Surf, TColStd_Array1OfReal & Tab, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		static		Handle_Adaptor3d_HSurface UTrim(const Handle_Adaptor3d_HSurface &Surf, const Standard_Real F, const Standard_Real L, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		static		Handle_Adaptor3d_HSurface VTrim(const Handle_Adaptor3d_HSurface &Surf, const Standard_Real F, const Standard_Real L, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsUClosed(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsVClosed(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsUPeriodic(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Standard_Real UPeriod(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsVPeriodic(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Standard_Real VPeriod(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		gp_Pnt Value(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V);
-		%feature("autodoc", "1");
-		static		void D0(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		void D1(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
-		%feature("autodoc", "1");
-		static		void D2(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV);
-		%feature("autodoc", "1");
-		static		void D3(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV);
-		%feature("autodoc", "1");
-		static		gp_Vec DN(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-		%feature("autodoc", "1");
-		static		Standard_Real UResolution(const Handle_Adaptor3d_HSurface &S, const Standard_Real R3d);
-		%feature("autodoc", "1");
-		static		Standard_Real VResolution(const Handle_Adaptor3d_HSurface &S, const Standard_Real R3d);
-		%feature("autodoc", "1");
-		static		GeomAbs_SurfaceType GetType(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		gp_Pln Plane(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		gp_Cylinder Cylinder(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		gp_Cone Cone(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		gp_Torus Torus(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		gp_Sphere Sphere(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Handle_Geom_BezierSurface Bezier(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Handle_Geom_BSplineSurface BSpline(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		gp_Ax1 AxeOfRevolution(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		gp_Dir Direction(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Handle_Adaptor3d_HCurve BasisCurve(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Handle_Adaptor3d_HSurface BasisSurface(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Standard_Real OffsetValue(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSamplesU(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSamplesU(const Handle_Adaptor3d_HSurface &S, const Standard_Real u1, const Standard_Real u2);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S, const Standard_Real v1, const Standard_Real v2);
-
-};
-%feature("shadow") IntCurveSurface_TheHSurfaceTool::~IntCurveSurface_TheHSurfaceTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurveSurface_TheHSurfaceTool {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -29,19 +29,11 @@ $HeaderURL$
 
 #include<Handle_MDocStd_DocumentRetrievalDriver.hxx>
 #include<Handle_MDocStd_DocumentStorageDriver.hxx>
-#include<Handle_MDocStd_ListNodeOfDocEntryList.hxx>
-#include<Handle_MDocStd_StdMapNodeOfPersistentMap.hxx>
 #include<Handle_MDocStd_XLinkRetrievalDriver.hxx>
 #include<Handle_MDocStd_XLinkStorageDriver.hxx>
 #include<MDocStd.hxx>
-#include<MDocStd_DocEntryList.hxx>
 #include<MDocStd_DocumentRetrievalDriver.hxx>
 #include<MDocStd_DocumentStorageDriver.hxx>
-#include<MDocStd_ListIteratorOfDocEntryList.hxx>
-#include<MDocStd_ListNodeOfDocEntryList.hxx>
-#include<MDocStd_MapIteratorOfPersistentMap.hxx>
-#include<MDocStd_PersistentMap.hxx>
-#include<MDocStd_StdMapNodeOfPersistentMap.hxx>
 #include<MDocStd_XLinkRetrievalDriver.hxx>
 #include<MDocStd_XLinkStorageDriver.hxx>
 
@@ -71,8 +63,6 @@ $HeaderURL$
 #include<Storage_IndexedDataMapNodeOfPType.hxx>
 #include<Storage_InternalData.hxx>
 #include<Storage_Macros.hxx>
-#include<Storage_MapIteratorOfMapOfAsciiString.hxx>
-#include<Storage_MapOfAsciiString.hxx>
 #include<Storage_MapOfCallBack.hxx>
 #include<Storage_MapOfPers.hxx>
 #include<Storage_MapPSDHasher.hxx>
@@ -90,7 +80,6 @@ $HeaderURL$
 #include<Storage_SequenceNodeOfSeqOfPersistent.hxx>
 #include<Storage_SequenceNodeOfSeqOfRoot.hxx>
 #include<Storage_SolveMode.hxx>
-#include<Storage_StdMapNodeOfMapOfAsciiString.hxx>
 #include<Storage_StreamExtCharParityError.hxx>
 #include<Storage_StreamFormatError.hxx>
 #include<Storage_StreamModeError.hxx>
@@ -101,6 +90,27 @@ $HeaderURL$
 #include<Storage_TypeData.hxx>
 #include<Storage_TypedCallBack.hxx>
 #include<Storage_stCONSTclCOM.hxx>
+#include<TCollection.hxx>
+#include<TCollection_AVLBaseNode.hxx>
+#include<TCollection_AVLBaseNodePtr.hxx>
+#include<TCollection_Array1Descriptor.hxx>
+#include<TCollection_Array2Descriptor.hxx>
+#include<TCollection_AsciiString.hxx>
+#include<TCollection_BaseSequence.hxx>
+#include<TCollection_BasicMap.hxx>
+#include<TCollection_BasicMapIterator.hxx>
+#include<TCollection_CompareOfInteger.hxx>
+#include<TCollection_CompareOfReal.hxx>
+#include<TCollection_ExtendedString.hxx>
+#include<TCollection_HAsciiString.hxx>
+#include<TCollection_HExtendedString.hxx>
+#include<TCollection_MapNode.hxx>
+#include<TCollection_MapNodePtr.hxx>
+#include<TCollection_PrivCompareOfInteger.hxx>
+#include<TCollection_PrivCompareOfReal.hxx>
+#include<TCollection_SeqNode.hxx>
+#include<TCollection_SeqNodePtr.hxx>
+#include<TCollection_Side.hxx>
 
 // Needed headers necessary for compilation.
 
@@ -109,20 +119,17 @@ $HeaderURL$
 #include<Handle_MDF_ASDriverHSequence.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_MDF_ARDriverHSequence.hxx>
-#include<Handle_TDF_Data.hxx>
-#include<Handle_MDF_SRelocationTable.hxx>
 #include<Standard_GUID.hxx>
-#include<TCollection_AsciiString.hxx>
-#include<Handle_PCDM_Document.hxx>
-#include<Handle_TDocStd_Document.hxx>
 #include<Handle_PDocStd_Document.hxx>
+#include<Handle_TDocStd_Document.hxx>
+#include<Handle_MDF_RRelocationTable.hxx>
+#include<Handle_PCDM_Document.hxx>
 #include<Handle_CDM_Document.hxx>
 #include<TCollection_ExtendedString.hxx>
-#include<Handle_MDF_ASDriverTable.hxx>
-#include<Handle_Standard_Persistent.hxx>
-#include<Handle_MDF_RRelocationTable.hxx>
 #include<Handle_MDF_ARDriverTable.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_PDF_Attribute.hxx>
+#include<Handle_MDF_SRelocationTable.hxx>
+#include<Handle_MDF_ASDriverTable.hxx>
 %}

@@ -30,9 +30,9 @@ import GarbageCollector
 import TColStd
 import Standard
 import TColGeom
-import ShapeExtend
 import TopoDS
 import ShapeBuild
+import ShapeExtend
 import TopTools
 import TColGeom2d
 import Geom

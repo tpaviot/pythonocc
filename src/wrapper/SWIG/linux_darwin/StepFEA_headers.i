@@ -194,7 +194,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -289,6 +288,7 @@ $HeaderURL$
 #include<StepElement_ElementAspect.hxx>
 #include<Handle_StepElement_SurfaceSection.hxx>
 #include<Handle_StepElement_HArray1OfCurveElementEndReleasePacket.hxx>
+#include<Handle_StepGeom_Direction.hxx>
 #include<Handle_StepData_SelectMember.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Handle_StepBasic_EulerAngles.hxx>
@@ -297,7 +297,6 @@ $HeaderURL$
 #include<Handle_StepElement_CurveElementSectionDefinition.hxx>
 #include<Handle_StepElement_Volume3dElementDescriptor.hxx>
 #include<StepElement_MeasureOrUnspecifiedValue.hxx>
-#include<Handle_StepGeom_Direction.hxx>
 #include<Handle_StepGeom_CartesianPoint.hxx>
 #include<Handle_StepElement_HArray1OfCurveElementSectionDefinition.hxx>
 #include<Handle_StepElement_Surface3dElementDescriptor.hxx>

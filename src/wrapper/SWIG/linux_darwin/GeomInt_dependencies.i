@@ -59,9 +59,7 @@ $HeaderURL$
 #include <Approx_MyLeastSquareOfFitAndDivide2d.hxx>
 #include <Approx_ParametrizationType.hxx>
 #include <Approx_SameParameter.hxx>
-#include <Approx_SequenceNodeOfSequenceOfArray1OfPnt2d.hxx>
 #include <Approx_SequenceNodeOfSequenceOfHArray1OfReal.hxx>
-#include <Approx_SequenceOfArray1OfPnt2d.hxx>
 #include <Approx_SequenceOfHArray1OfReal.hxx>
 #include <Approx_Status.hxx>
 #include <Approx_SweepApproximation.hxx>
@@ -76,7 +74,6 @@ $HeaderURL$
 #include <Handle_Approx_CurvlinFunc.hxx>
 #include <Handle_Approx_HArray1OfAdHSurface.hxx>
 #include <Handle_Approx_HArray1OfGTrsf2d.hxx>
-#include <Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d.hxx>
 #include <Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal.hxx>
 #include <Handle_Approx_SweepFunction.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
@@ -125,6 +122,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -148,6 +146,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -163,6 +162,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>

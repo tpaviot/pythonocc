@@ -28,9 +28,9 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import TopoDS
 import TopLoc
 import Message
-import TopoDS
 import TCollection
 import TColStd
 };

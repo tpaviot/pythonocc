@@ -66,6 +66,7 @@ $HeaderURL$
 #include<TNaming_Localizer.hxx>
 #include<TNaming_MapIteratorOfMapOfNamedShape.hxx>
 #include<TNaming_MapOfNamedShape.hxx>
+#include<TNaming_NCollections.hxx>
 #include<TNaming_Name.hxx>
 #include<TNaming_NameType.hxx>
 #include<TNaming_NamedShape.hxx>
@@ -103,6 +104,8 @@ $HeaderURL$
 #include<Handle_TDF_RelocationTable.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_TDF_AttributeDelta.hxx>
+#include<Handle_TDF_DeltaOnAddition.hxx>
+#include<Handle_TDF_DeltaOnRemoval.hxx>
 #include<Handle_TDF_DataSet.hxx>
 #include<TopTools_MapOfShape.hxx>
 #include<TColStd_IndexedDataMapOfTransientTransient.hxx>
@@ -110,12 +113,12 @@ $HeaderURL$
 #include<TopLoc_Location.hxx>
 #include<TDF_AttributeMap.hxx>
 #include<Handle_TDF_DeltaOnModification.hxx>
-#include<Handle_TDF_DeltaOnRemoval.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TDF_IDFilter.hxx>
 #include<TDF_AttributeIndexedMap.hxx>
 #include<TNaming.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<gp_Trsf.hxx>
+#include<Handle_TopTools_HArray1OfShape.hxx>
 #include<TDF_IDList.hxx>
 %}

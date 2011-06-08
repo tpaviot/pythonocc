@@ -42,7 +42,6 @@ $HeaderURL$
 #include <Handle_SelectBasics_ListNodeOfListOfBox2d.hxx>
 #include <Handle_SelectBasics_ListNodeOfListOfSensitive.hxx>
 #include <Handle_SelectBasics_SensitiveEntity.hxx>
-#include <Handle_SelectBasics_SequenceNodeOfSequenceOfAddress.hxx>
 #include <Handle_SelectBasics_SequenceNodeOfSequenceOfOwner.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
@@ -198,9 +197,7 @@ $HeaderURL$
 #include <SelectBasics_ListOfBox2d.hxx>
 #include <SelectBasics_ListOfSensitive.hxx>
 #include <SelectBasics_SensitiveEntity.hxx>
-#include <SelectBasics_SequenceNodeOfSequenceOfAddress.hxx>
 #include <SelectBasics_SequenceNodeOfSequenceOfOwner.hxx>
-#include <SelectBasics_SequenceOfAddress.hxx>
 #include <SelectBasics_SequenceOfOwner.hxx>
 #include <SelectBasics_SortAlgo.hxx>
 #include <Standard_AbortiveTransaction.hxx>
@@ -211,6 +208,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -234,6 +232,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -249,6 +248,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>

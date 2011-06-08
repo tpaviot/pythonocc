@@ -31,7 +31,6 @@ $HeaderURL$
 #include<Handle_SelectBasics_ListNodeOfListOfBox2d.hxx>
 #include<Handle_SelectBasics_ListNodeOfListOfSensitive.hxx>
 #include<Handle_SelectBasics_SensitiveEntity.hxx>
-#include<Handle_SelectBasics_SequenceNodeOfSequenceOfAddress.hxx>
 #include<Handle_SelectBasics_SequenceNodeOfSequenceOfOwner.hxx>
 #include<SelectBasics.hxx>
 #include<SelectBasics_BasicTool.hxx>
@@ -43,9 +42,7 @@ $HeaderURL$
 #include<SelectBasics_ListOfBox2d.hxx>
 #include<SelectBasics_ListOfSensitive.hxx>
 #include<SelectBasics_SensitiveEntity.hxx>
-#include<SelectBasics_SequenceNodeOfSequenceOfAddress.hxx>
 #include<SelectBasics_SequenceNodeOfSequenceOfOwner.hxx>
-#include<SelectBasics_SequenceOfAddress.hxx>
 #include<SelectBasics_SequenceOfOwner.hxx>
 #include<SelectBasics_SortAlgo.hxx>
 

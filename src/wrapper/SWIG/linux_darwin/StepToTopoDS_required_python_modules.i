@@ -32,7 +32,8 @@ import gp
 import TopoDS
 import Transfer
 import Geom2d
-import StepGeom
-import StepShape
 import TCollection
+import StepGeom
+import StepRepr
+import StepShape
 };

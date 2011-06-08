@@ -96,7 +96,7 @@ class Handle_BOP_HistoryCollector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BOP_HistoryCollector & operator=(const BOP_HistoryCollector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_HistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_HistoryCollector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_HistoryCollector {
@@ -134,7 +134,7 @@ class Handle_BOP_ShellSolidHistoryCollector : public Handle_BOP_HistoryCollector
 		%feature("autodoc", "1");
 		Handle_BOP_ShellSolidHistoryCollector & operator=(const BOP_ShellSolidHistoryCollector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_ShellSolidHistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_ShellSolidHistoryCollector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_ShellSolidHistoryCollector {
@@ -172,7 +172,7 @@ class Handle_BOP_SolidSolidHistoryCollector : public Handle_BOP_HistoryCollector
 		%feature("autodoc", "1");
 		Handle_BOP_SolidSolidHistoryCollector & operator=(const BOP_SolidSolidHistoryCollector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_SolidSolidHistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_SolidSolidHistoryCollector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_SolidSolidHistoryCollector {
@@ -210,7 +210,7 @@ class Handle_BOP_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfListOfLoop & operator=(const BOP_ListNodeOfListOfListOfLoop *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_ListNodeOfListOfListOfLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_ListNodeOfListOfListOfLoop DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_ListNodeOfListOfListOfLoop {
@@ -248,7 +248,7 @@ class Handle_BOP_WireSolidHistoryCollector : public Handle_BOP_HistoryCollector 
 		%feature("autodoc", "1");
 		Handle_BOP_WireSolidHistoryCollector & operator=(const BOP_WireSolidHistoryCollector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_WireSolidHistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_WireSolidHistoryCollector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_WireSolidHistoryCollector {
@@ -286,7 +286,7 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Ha
 		%feature("autodoc", "1");
 		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier & operator=(const BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
@@ -324,7 +324,7 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public H
 		%feature("autodoc", "1");
 		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo & operator=(const BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
@@ -362,7 +362,7 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public
 		%feature("autodoc", "1");
 		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo & operator=(const BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
@@ -400,7 +400,7 @@ class Handle_BOP_ListNodeOfListOfCheckResult : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfCheckResult & operator=(const BOP_ListNodeOfListOfCheckResult *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_ListNodeOfListOfCheckResult const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_ListNodeOfListOfCheckResult DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_ListNodeOfListOfCheckResult {
@@ -438,7 +438,7 @@ class Handle_BOP_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfLoop & operator=(const BOP_ListNodeOfListOfLoop *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_ListNodeOfListOfLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_ListNodeOfListOfLoop DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_ListNodeOfListOfLoop {
@@ -476,7 +476,7 @@ class Handle_BOP_SequenceNodeOfSeqOfSeqOfShape : public Handle_TCollection_SeqNo
 		%feature("autodoc", "1");
 		Handle_BOP_SequenceNodeOfSeqOfSeqOfShape & operator=(const BOP_SequenceNodeOfSeqOfSeqOfShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_SequenceNodeOfSeqOfSeqOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_SequenceNodeOfSeqOfSeqOfShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_SequenceNodeOfSeqOfSeqOfShape {
@@ -514,7 +514,7 @@ class Handle_BOP_Loop : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BOP_Loop & operator=(const BOP_Loop *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_Loop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_Loop DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_Loop {
@@ -552,7 +552,7 @@ class Handle_BOP_SectionHistoryCollector : public Handle_BOP_HistoryCollector {
 		%feature("autodoc", "1");
 		Handle_BOP_SectionHistoryCollector & operator=(const BOP_SectionHistoryCollector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_SectionHistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_SectionHistoryCollector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_SectionHistoryCollector {
@@ -590,7 +590,7 @@ class Handle_BOP_ListNodeOfListOfFaceInfo : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfFaceInfo & operator=(const BOP_ListNodeOfListOfFaceInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_ListNodeOfListOfFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_ListNodeOfListOfFaceInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_ListNodeOfListOfFaceInfo {
@@ -628,7 +628,7 @@ class Handle_BOP_ListNodeOfListOfConnexityBlock : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfConnexityBlock & operator=(const BOP_ListNodeOfListOfConnexityBlock *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_ListNodeOfListOfConnexityBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_ListNodeOfListOfConnexityBlock DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_ListNodeOfListOfConnexityBlock {
@@ -666,7 +666,7 @@ class Handle_BOP_ListNodeOfListOfEdgeInfo : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_BOP_ListNodeOfListOfEdgeInfo & operator=(const BOP_ListNodeOfListOfEdgeInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOP_ListNodeOfListOfEdgeInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOP_ListNodeOfListOfEdgeInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOP_ListNodeOfListOfEdgeInfo {
@@ -877,89 +877,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOP_HistoryCollector;
-class BOP_HistoryCollector : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		virtual		void SetResult(const TopoDS_Shape theResult, const BOPTools_PDSFiller &theDSFiller);
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasGenerated() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasModified() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasDeleted() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOP_HistoryCollector {
-	Handle_BOP_HistoryCollector GetHandle() {
-	return *(Handle_BOP_HistoryCollector*) &$self;
-	}
-};
-%extend BOP_HistoryCollector {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BOP_HistoryCollector::~BOP_HistoryCollector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOP_HistoryCollector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend BOP_HistoryCollector {
-	BOP_HistoryCollector () {}
-};
-
-
-%nodefaultctor BOP_WireSolidHistoryCollector;
-class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
-	public:
-		%feature("autodoc", "1");
-		BOP_WireSolidHistoryCollector(const TopoDS_Shape theShape1, const TopoDS_Shape theShape2, const BOP_Operation theOperation);
-
-};
-%extend BOP_WireSolidHistoryCollector {
-	Handle_BOP_WireSolidHistoryCollector GetHandle() {
-	return *(Handle_BOP_WireSolidHistoryCollector*) &$self;
-	}
-};
-%extend BOP_WireSolidHistoryCollector {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BOP_WireSolidHistoryCollector::~BOP_WireSolidHistoryCollector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOP_WireSolidHistoryCollector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BOP_AreaBuilder;
 class BOP_AreaBuilder {
 	public:
@@ -1104,6 +1021,56 @@ def __del__(self):
 };
 
 
+%nodefaultctor BOP_HistoryCollector;
+class BOP_HistoryCollector : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		virtual		void SetResult(const TopoDS_Shape theResult, const BOPTools_PDSFiller &theDSFiller);
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasGenerated() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasModified() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasDeleted() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOP_HistoryCollector {
+	Handle_BOP_HistoryCollector GetHandle() {
+	return *(Handle_BOP_HistoryCollector*) &$self;
+	}
+};
+%extend BOP_HistoryCollector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") BOP_HistoryCollector::~BOP_HistoryCollector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOP_HistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend BOP_HistoryCollector {
+	BOP_HistoryCollector () {}
+};
+
+
 %nodefaultctor BOP_SolidSolidHistoryCollector;
 class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 	public:
@@ -1111,10 +1078,6 @@ class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 		BOP_SolidSolidHistoryCollector(const TopoDS_Shape theShape1, const TopoDS_Shape theShape2, const BOP_Operation theOperation);
 		%feature("autodoc", "1");
 		void AddNewShape(const TopoDS_Shape theOldShape, const TopoDS_Shape theNewShape, const BOPTools_PDSFiller &theDSFiller);
-		%feature("autodoc", "1");
-		virtual		void SetResult(const TopoDS_Shape theResult, const BOPTools_PDSFiller &theDSFiller);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend BOP_SolidSolidHistoryCollector {
@@ -1170,61 +1133,6 @@ def __del__(self):
 %}
 
 %extend BOP_ListIteratorOfListOfEdgeInfo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOP_IndexedDataMapOfSolidClassifier;
-class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BOP_IndexedDataMapOfSolidClassifier(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BOP_IndexedDataMapOfSolidClassifier & Assign(const BOP_IndexedDataMapOfSolidClassifier &Other);
-		%feature("autodoc", "1");
-		BOP_IndexedDataMapOfSolidClassifier & operator=(const BOP_IndexedDataMapOfSolidClassifier &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape K, const BOP_PSoClassif &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BOP_PSoClassif &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOP_PSoClassif & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOP_PSoClassif & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		BOP_PSoClassif & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		BOP_PSoClassif & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const BOP_PSoClassif & FindFromKey(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		BOP_PSoClassif & ChangeFromKey(const TopoDS_Shape K);
-
-};
-%feature("shadow") BOP_IndexedDataMapOfSolidClassifier::~BOP_IndexedDataMapOfSolidClassifier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOP_IndexedDataMapOfSolidClassifier {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1453,6 +1361,61 @@ def __del__(self):
 %}
 
 %extend BOP_WESCorrector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOP_IndexedDataMapOfSolidClassifier;
+class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BOP_IndexedDataMapOfSolidClassifier(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BOP_IndexedDataMapOfSolidClassifier & Assign(const BOP_IndexedDataMapOfSolidClassifier &Other);
+		%feature("autodoc", "1");
+		BOP_IndexedDataMapOfSolidClassifier & operator=(const BOP_IndexedDataMapOfSolidClassifier &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape K, const BOP_PSoClassif &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BOP_PSoClassif &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOP_PSoClassif & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOP_PSoClassif & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		BOP_PSoClassif & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		BOP_PSoClassif & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const BOP_PSoClassif & FindFromKey(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		BOP_PSoClassif & ChangeFromKey(const TopoDS_Shape K);
+
+};
+%feature("shadow") BOP_IndexedDataMapOfSolidClassifier::~BOP_IndexedDataMapOfSolidClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOP_IndexedDataMapOfSolidClassifier {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3411,6 +3374,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor BOP_WireSolidHistoryCollector;
+class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
+	public:
+		%feature("autodoc", "1");
+		BOP_WireSolidHistoryCollector(const TopoDS_Shape theShape1, const TopoDS_Shape theShape2, const BOP_Operation theOperation);
+		%feature("autodoc", "1");
+		virtual		void SetResult(const TopoDS_Shape theResult, const BOPTools_PDSFiller &theDSFiller);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOP_WireSolidHistoryCollector {
+	Handle_BOP_WireSolidHistoryCollector GetHandle() {
+	return *(Handle_BOP_WireSolidHistoryCollector*) &$self;
+	}
+};
+%extend BOP_WireSolidHistoryCollector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") BOP_WireSolidHistoryCollector::~BOP_WireSolidHistoryCollector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOP_WireSolidHistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BOP_SolidAreaBuilder;
 class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
 	public:
@@ -3477,7 +3477,7 @@ class BOP_WireSplitter {
 		%feature("autodoc", "1");
 		BOP_WireSplitter();
 		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face aF);
+		void SetFace(const TopoDS_Face aFace);
 		%feature("autodoc", "1");
 		void DoWithListOfEdges(const TopTools_ListOfShape &aLE);
 		%feature("autodoc", "1");
@@ -3593,6 +3593,8 @@ class BOP_SDFWESFiller {
 		BOP_Operation Operation() const;
 		%feature("autodoc", "1");
 		void UpdateDEStates3D();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & RejectedOnParts() const;
 
 };
 %feature("shadow") BOP_SDFWESFiller::~BOP_SDFWESFiller %{

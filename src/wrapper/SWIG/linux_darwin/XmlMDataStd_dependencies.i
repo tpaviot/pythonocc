@@ -59,7 +59,6 @@ $HeaderURL$
 #include <Handle_XmlMDF_DataMapNodeOfTypeADriverMap.hxx>
 #include <Handle_XmlMDF_ReferenceDriver.hxx>
 #include <Handle_XmlMDF_TagSourceDriver.hxx>
-#include <Handle_XmlObjMgt_DataMapNodeOfRRelocationTable.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
@@ -68,6 +67,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -91,6 +91,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -106,6 +107,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>
@@ -145,8 +147,6 @@ $HeaderURL$
 #include <XmlMDF_TagSourceDriver.hxx>
 #include <XmlMDF_TypeADriverMap.hxx>
 #include <XmlObjMgt_DOMString.hxx>
-#include <XmlObjMgt_DataMapIteratorOfRRelocationTable.hxx>
-#include <XmlObjMgt_DataMapNodeOfRRelocationTable.hxx>
 #include <XmlObjMgt_Document.hxx>
 #include <XmlObjMgt_Element.hxx>
 #include <XmlObjMgt_GP.hxx>

@@ -72,7 +72,7 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_UnCompatibleShape & operator=(const BRepExtrema_UnCompatibleShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepExtrema_UnCompatibleShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepExtrema_UnCompatibleShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepExtrema_UnCompatibleShape {
@@ -110,7 +110,7 @@ class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
@@ -278,7 +278,7 @@ class BRepExtrema_ExtPF {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc","Parameter(Standard_Integer N) -> [Standard_Real, Standard_Real]");
 
 		void Parameter(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -320,7 +320,7 @@ class BRepExtrema_ExtCC {
 		%feature("autodoc", "1");
 		Standard_Boolean IsParallel() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnE1(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -329,9 +329,9 @@ class BRepExtrema_ExtCC {
 		Standard_Real ParameterOnE2(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		gp_Pnt PointOnE2(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
 
 };
 %feature("shadow") BRepExtrema_ExtCC::~BRepExtrema_ExtCC %{
@@ -401,14 +401,14 @@ class BRepExtrema_ExtPC {
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Real Parameter(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		gp_Pnt Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real]");
 
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & pnt1, gp_Pnt & pnt2) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & pnt1, gp_Pnt & pnt2) const;
 
 };
 %feature("shadow") BRepExtrema_ExtPC::~BRepExtrema_ExtPC %{
@@ -443,7 +443,7 @@ class BRepExtrema_ExtCF {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsParallel() const;
 		%feature("autodoc", "1");
@@ -491,7 +491,7 @@ class BRepExtrema_ExtFF {
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc","ParameterOnFace1(Standard_Integer N) -> [Standard_Real, Standard_Real]");
 
 		void ParameterOnFace1(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -607,7 +607,7 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_BRepExtrema_UnCompatibleShape NewInstance(const char * aMessage);
+		static		Handle_BRepExtrema_UnCompatibleShape NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

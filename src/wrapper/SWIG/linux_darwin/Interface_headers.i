@@ -31,7 +31,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -72,11 +71,8 @@ $HeaderURL$
 #include<Interface_CopyControl.hxx>
 #include<Interface_CopyMap.hxx>
 #include<Interface_CopyTool.hxx>
-#include<Interface_DataMapIteratorOfDataMapOfIntegerTransient.hxx>
 #include<Interface_DataMapIteratorOfDataMapOfTransientInteger.hxx>
-#include<Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
-#include<Interface_DataMapOfIntegerTransient.hxx>
 #include<Interface_DataMapOfTransientInteger.hxx>
 #include<Interface_DataState.hxx>
 #include<Interface_EntityCluster.hxx>
@@ -136,14 +132,19 @@ $HeaderURL$
 
 // Additional headers necessary for compilation.
 
+#include<InterfaceGraphic.hxx>
 #include<InterfaceGraphic_Aspect.hxx>
 #include<InterfaceGraphic_Cextern.hxx>
 #include<InterfaceGraphic_Graphic3d.hxx>
 #include<InterfaceGraphic_Labels.hxx>
 #include<InterfaceGraphic_Portability.hxx>
 #include<InterfaceGraphic_PrimitiveArray.hxx>
+#include<InterfaceGraphic_RawBufferData.hxx>
 #include<InterfaceGraphic_X11.hxx>
 #include<InterfaceGraphic_XWD.hxx>
+#include<InterfaceGraphic_degeneration.hxx>
+#include<InterfaceGraphic_telem.hxx>
+#include<InterfaceGraphic_tgl_all.hxx>
 
 // Needed headers necessary for compilation.
 
@@ -155,7 +156,6 @@ $HeaderURL$
 #include<Handle_Standard_Type.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_TColStd_HSequenceOfHAsciiString.hxx>
-#include<Standard_SStream.hxx>
 #include<Message_Msg.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
 %}

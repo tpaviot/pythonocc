@@ -31,12 +31,12 @@ import TopoDS
 import TopTools
 import Standard
 import TColStd
+import Geom
+import Geom2d
 import GeomAbs
 import GeomFill
 import MAT
 import TColgp
 import gp
 import AppParCurves
-import Geom
-import Geom2d
 };

@@ -98,7 +98,7 @@ class Handle_IGESData_ReadWriteModule : public Handle_Interface_ReaderModule {
 		%feature("autodoc", "1");
 		Handle_IGESData_ReadWriteModule & operator=(const IGESData_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_ReadWriteModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_ReadWriteModule {
@@ -136,7 +136,7 @@ class Handle_IGESData_GeneralModule : public Handle_Interface_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESData_GeneralModule & operator=(const IGESData_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_GeneralModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_GeneralModule {
@@ -174,7 +174,7 @@ class Handle_IGESData_ToolLocation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESData_ToolLocation & operator=(const IGESData_ToolLocation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_ToolLocation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_ToolLocation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_ToolLocation {
@@ -212,7 +212,7 @@ class Handle_IGESData_IGESEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity & operator=(const IGESData_IGESEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_IGESEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_IGESEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_IGESEntity {
@@ -250,7 +250,7 @@ class Handle_IGESData_UndefinedEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_UndefinedEntity & operator=(const IGESData_UndefinedEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_UndefinedEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_UndefinedEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_UndefinedEntity {
@@ -288,7 +288,7 @@ class Handle_IGESData_FreeFormatEntity : public Handle_IGESData_UndefinedEntity 
 		%feature("autodoc", "1");
 		Handle_IGESData_FreeFormatEntity & operator=(const IGESData_FreeFormatEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_FreeFormatEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_FreeFormatEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_FreeFormatEntity {
@@ -326,7 +326,7 @@ class Handle_IGESData_Protocol : public Handle_Interface_Protocol {
 		%feature("autodoc", "1");
 		Handle_IGESData_Protocol & operator=(const IGESData_Protocol *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_Protocol DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_Protocol {
@@ -364,7 +364,7 @@ class Handle_IGESData_NodeOfSpecificLib : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESData_NodeOfSpecificLib & operator=(const IGESData_NodeOfSpecificLib *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_NodeOfSpecificLib const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_NodeOfSpecificLib DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_NodeOfSpecificLib {
@@ -402,7 +402,7 @@ class Handle_IGESData_SpecificModule : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_IGESData_SpecificModule & operator=(const IGESData_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_SpecificModule {
@@ -440,7 +440,7 @@ class Handle_IGESData_DefaultSpecific : public Handle_IGESData_SpecificModule {
 		%feature("autodoc", "1");
 		Handle_IGESData_DefaultSpecific & operator=(const IGESData_DefaultSpecific *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_DefaultSpecific const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_DefaultSpecific DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_DefaultSpecific {
@@ -478,7 +478,7 @@ class Handle_IGESData_LevelListEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_LevelListEntity & operator=(const IGESData_LevelListEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_LevelListEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_LevelListEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_LevelListEntity {
@@ -516,7 +516,7 @@ class Handle_IGESData_NameEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_NameEntity & operator=(const IGESData_NameEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_NameEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_NameEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_NameEntity {
@@ -554,7 +554,7 @@ class Handle_IGESData_ColorEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_ColorEntity & operator=(const IGESData_ColorEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_ColorEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_ColorEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_ColorEntity {
@@ -592,7 +592,7 @@ class Handle_IGESData_LineFontEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_LineFontEntity & operator=(const IGESData_LineFontEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_LineFontEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_LineFontEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_LineFontEntity {
@@ -630,7 +630,7 @@ class Handle_IGESData_TransfEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_TransfEntity & operator=(const IGESData_TransfEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_TransfEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_TransfEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_TransfEntity {
@@ -668,7 +668,7 @@ class Handle_IGESData_FileProtocol : public Handle_IGESData_Protocol {
 		%feature("autodoc", "1");
 		Handle_IGESData_FileProtocol & operator=(const IGESData_FileProtocol *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_FileProtocol const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_FileProtocol DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_FileProtocol {
@@ -706,7 +706,7 @@ class Handle_IGESData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_IGESData_GlobalNodeOfWriterLib & operator=(const IGESData_GlobalNodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_GlobalNodeOfWriterLib const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_GlobalNodeOfWriterLib DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_GlobalNodeOfWriterLib {
@@ -744,7 +744,7 @@ class Handle_IGESData_HArray1OfIGESEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESData_HArray1OfIGESEntity & operator=(const IGESData_HArray1OfIGESEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_HArray1OfIGESEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_HArray1OfIGESEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_HArray1OfIGESEntity {
@@ -782,7 +782,7 @@ class Handle_IGESData_ViewKindEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_ViewKindEntity & operator=(const IGESData_ViewKindEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_ViewKindEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_ViewKindEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_ViewKindEntity {
@@ -820,7 +820,7 @@ class Handle_IGESData_GlobalNodeOfSpecificLib : public Handle_Standard_Transient
 		%feature("autodoc", "1");
 		Handle_IGESData_GlobalNodeOfSpecificLib & operator=(const IGESData_GlobalNodeOfSpecificLib *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_GlobalNodeOfSpecificLib const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_GlobalNodeOfSpecificLib DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_GlobalNodeOfSpecificLib {
@@ -858,7 +858,7 @@ class Handle_IGESData_FileRecognizer : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_IGESData_FileRecognizer & operator=(const IGESData_FileRecognizer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_FileRecognizer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_FileRecognizer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_FileRecognizer {
@@ -896,7 +896,7 @@ class Handle_IGESData_DefaultGeneral : public Handle_IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESData_DefaultGeneral & operator=(const IGESData_DefaultGeneral *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_DefaultGeneral const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_DefaultGeneral DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_DefaultGeneral {
@@ -934,7 +934,7 @@ class Handle_IGESData_SingleParentEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_SingleParentEntity & operator=(const IGESData_SingleParentEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_SingleParentEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_SingleParentEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_SingleParentEntity {
@@ -972,7 +972,7 @@ class Handle_IGESData_NodeOfWriterLib : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESData_NodeOfWriterLib & operator=(const IGESData_NodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_NodeOfWriterLib const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_NodeOfWriterLib DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_NodeOfWriterLib {
@@ -1010,7 +1010,7 @@ class Handle_IGESData_IGESModel : public Handle_Interface_InterfaceModel {
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESModel & operator=(const IGESData_IGESModel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_IGESModel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_IGESModel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_IGESModel {
@@ -1048,7 +1048,7 @@ class Handle_IGESData_LabelDisplayEntity : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_LabelDisplayEntity & operator=(const IGESData_LabelDisplayEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_LabelDisplayEntity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_LabelDisplayEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_LabelDisplayEntity {
@@ -1086,7 +1086,7 @@ class Handle_IGESData_IGESReaderData : public Handle_Interface_FileReaderData {
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESReaderData & operator=(const IGESData_IGESReaderData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESData_IGESReaderData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESData_IGESReaderData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESData_IGESReaderData {
@@ -1485,6 +1485,77 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESData_ToolLocation;
+class IGESData_ToolLocation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IGESData_ToolLocation(const Handle_IGESData_IGESModel &amodel, const Handle_IGESData_Protocol &protocol);
+		%feature("autodoc", "1");
+		void Load();
+		%feature("autodoc", "1");
+		void SetPrecision(const Standard_Real prec);
+		%feature("autodoc", "1");
+		void SetReference(const Handle_IGESData_IGESEntity &parent, const Handle_IGESData_IGESEntity &child);
+		%feature("autodoc", "1");
+		void SetParentAssoc(const Handle_IGESData_IGESEntity &parent, const Handle_IGESData_IGESEntity &child);
+		%feature("autodoc", "1");
+		void ResetDependences(const Handle_IGESData_IGESEntity &child);
+		%feature("autodoc", "1");
+		void SetOwnAsDependent(const Handle_IGESData_IGESEntity &ent);
+		%feature("autodoc", "1");
+		Standard_Boolean IsTransf(const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAssociativity(const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasTransf(const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		gp_GTrsf ExplicitLocation(const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAmbiguous(const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasParent(const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity Parent(const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasParentByAssociativity(const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		gp_GTrsf ParentLocation(const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		gp_GTrsf EffectiveLocation(const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		Standard_Boolean AnalyseLocation(const gp_GTrsf loc, gp_Trsf & result) const;
+		%feature("autodoc", "1");
+		static		Standard_Boolean ConvertLocation(const Standard_Real prec, const gp_GTrsf loc, gp_Trsf & result, const Standard_Real uni=1);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESData_ToolLocation {
+	Handle_IGESData_ToolLocation GetHandle() {
+	return *(Handle_IGESData_ToolLocation*) &$self;
+	}
+};
+%extend IGESData_ToolLocation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") IGESData_ToolLocation::~IGESData_ToolLocation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESData_ToolLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESData_ColorEntity;
 class IGESData_ColorEntity : public IGESData_IGESEntity {
 	public:
@@ -1607,77 +1678,6 @@ def __del__(self):
 %}
 
 %extend IGESData_IGESType {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESData_ToolLocation;
-class IGESData_ToolLocation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IGESData_ToolLocation(const Handle_IGESData_IGESModel &amodel, const Handle_IGESData_Protocol &protocol);
-		%feature("autodoc", "1");
-		void Load();
-		%feature("autodoc", "1");
-		void SetPrecision(const Standard_Real prec);
-		%feature("autodoc", "1");
-		void SetReference(const Handle_IGESData_IGESEntity &parent, const Handle_IGESData_IGESEntity &child);
-		%feature("autodoc", "1");
-		void SetParentAssoc(const Handle_IGESData_IGESEntity &parent, const Handle_IGESData_IGESEntity &child);
-		%feature("autodoc", "1");
-		void ResetDependences(const Handle_IGESData_IGESEntity &child);
-		%feature("autodoc", "1");
-		void SetOwnAsDependent(const Handle_IGESData_IGESEntity &ent);
-		%feature("autodoc", "1");
-		Standard_Boolean IsTransf(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAssociativity(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasTransf(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		gp_GTrsf ExplicitLocation(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAmbiguous(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasParent(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Parent(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasParentByAssociativity(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		gp_GTrsf ParentLocation(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		gp_GTrsf EffectiveLocation(const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		Standard_Boolean AnalyseLocation(const gp_GTrsf loc, gp_Trsf & result) const;
-		%feature("autodoc", "1");
-		static		Standard_Boolean ConvertLocation(const Standard_Real prec, const gp_GTrsf loc, gp_Trsf & result, const Standard_Real uni=1);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESData_ToolLocation {
-	Handle_IGESData_ToolLocation GetHandle() {
-	return *(Handle_IGESData_ToolLocation*) &$self;
-	}
-};
-%extend IGESData_ToolLocation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESData_ToolLocation::~IGESData_ToolLocation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESData_ToolLocation {
 	void _kill_pointed() {
 		delete $self;
 	}

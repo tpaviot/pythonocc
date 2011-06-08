@@ -66,7 +66,7 @@ class Handle_GeomTools_UndefinedTypeHandler : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomTools_UndefinedTypeHandler & operator=(const GeomTools_UndefinedTypeHandler *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GeomTools_UndefinedTypeHandler const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomTools_UndefinedTypeHandler DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GeomTools_UndefinedTypeHandler {

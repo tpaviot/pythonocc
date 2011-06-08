@@ -66,7 +66,7 @@ class Handle_BinMDocStd_XLinkDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDocStd_XLinkDriver & operator=(const BinMDocStd_XLinkDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDocStd_XLinkDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDocStd_XLinkDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDocStd_XLinkDriver {

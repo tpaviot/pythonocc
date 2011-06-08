@@ -33,6 +33,7 @@ import Geom
 import GeomAbs
 import Adaptor3d
 import Geom2d
+import Approx
 import TColgp
 import TColStd
 import Law

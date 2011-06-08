@@ -66,7 +66,7 @@ class Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurO
 		%feature("autodoc", "1");
 		Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter & operator=(const Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
@@ -264,7 +264,7 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -437,7 +437,7 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Real SquareDistance() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsMin() const;
 		%feature("autodoc", "1");

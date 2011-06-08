@@ -49,11 +49,18 @@ $HeaderURL$
 
 %include Image_headers.i
 
+typedef TRawBufferData Image_CRawBufferData;
+typedef NCollection_Handle<fipImage> Image_HPrivateImage;
 typedef Aspect_Pixel * Image_PixelAddress;
 
 enum Image_TypeOfImage {
 	Image_TOI_ColorImage,
 	Image_TOI_PseudoColorImage,
+	Image_TOI_RGB,
+	Image_TOI_RGBA,
+	Image_TOI_RGBF,
+	Image_TOI_RGBAF,
+	Image_TOI_FLOAT,
 	};
 
 enum Image_FlipType {
@@ -88,7 +95,7 @@ class Handle_Image_Image : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Image_Image & operator=(const Image_Image *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Image_Image const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_Image DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_Image {
@@ -126,7 +133,7 @@ class Handle_Image_DColorImage : public Handle_Image_Image {
 		%feature("autodoc", "1");
 		Handle_Image_DColorImage & operator=(const Image_DColorImage *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Image_DColorImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_DColorImage DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_DColorImage {
@@ -164,7 +171,7 @@ class Handle_Image_DIndexedImage : public Handle_Image_Image {
 		%feature("autodoc", "1");
 		Handle_Image_DIndexedImage & operator=(const Image_DIndexedImage *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Image_DIndexedImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_DIndexedImage DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_DIndexedImage {
@@ -202,7 +209,7 @@ class Handle_Image_PseudoColorImage : public Handle_Image_DIndexedImage {
 		%feature("autodoc", "1");
 		Handle_Image_PseudoColorImage & operator=(const Image_PseudoColorImage *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Image_PseudoColorImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_PseudoColorImage DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_PseudoColorImage {
@@ -240,7 +247,7 @@ class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfLookupTable & operator=(const Image_DataMapNodeOfLookupTable *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Image_DataMapNodeOfLookupTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_DataMapNodeOfLookupTable DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_DataMapNodeOfLookupTable {
@@ -264,6 +271,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Image_PixMap;
+class Handle_Image_PixMap : public Handle_Aspect_PixMap {
+	public:
+		%feature("autodoc", "1");
+		Handle_Image_PixMap();
+		%feature("autodoc", "1");
+		Handle_Image_PixMap(const Handle_Image_PixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap(const Image_PixMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap & operator=(const Handle_Image_PixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap & operator=(const Image_PixMap *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Image_PixMap DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Image_PixMap {
+	Image_PixMap* GetObject() {
+	return (Image_PixMap*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Image_PixMap::~Handle_Image_PixMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Image_PixMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Image_DataMapNodeOfColorPixelDataMap;
 class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_MapNode {
 	public:
@@ -278,7 +323,7 @@ class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Image_DataMapNodeOfColorPixelDataMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Image_DataMapNodeOfColorPixelDataMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_DataMapNodeOfColorPixelDataMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_DataMapNodeOfColorPixelDataMap {
@@ -316,7 +361,7 @@ class Handle_Image_ColorImage : public Handle_Image_DColorImage {
 		%feature("autodoc", "1");
 		Handle_Image_ColorImage & operator=(const Image_ColorImage *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Image_ColorImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Image_ColorImage DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Image_ColorImage {
@@ -503,6 +548,53 @@ def __del__(self):
 %}
 
 %extend Image_IndexPixelMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_PixMap;
+class Image_PixMap : public Aspect_PixMap {
+	public:
+		%feature("autodoc", "1");
+		Image_PixMap(const Standard_Integer theWidth, const Standard_Integer theHeight, const Image_TypeOfImage theType);
+		%feature("autodoc", "1");
+		Image_PixMap(const Standard_PByte theDataPtr, const Standard_Integer theWidth, const Standard_Integer theHeight, const Standard_Integer thePitch, const Standard_Integer theBitsPerPixel, const Standard_Boolean theIsTopDown);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Dump(const char * theFilename, const Standard_Real theGammaCorr=1.0e+0) const;
+		%feature("autodoc", "1");
+		virtual		Aspect_Handle PixmapID() const;
+		%feature("autodoc", "1");
+		void AccessBuffer(Image_CRawBufferData & theBufferInfo) const;
+		%feature("autodoc", "1");
+		virtual		Quantity_Color PixelColor(const Standard_Integer theX, const Standard_Integer theY) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Image_PixMap {
+	Handle_Image_PixMap GetHandle() {
+	return *(Handle_Image_PixMap*) &$self;
+	}
+};
+%extend Image_PixMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") Image_PixMap::~Image_PixMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_PixMap {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -44,6 +44,7 @@ $HeaderURL$
 #include <Handle_OSD_Exception_PRIV_INSTRUCTION.hxx>
 #include <Handle_OSD_Exception_STACK_OVERFLOW.hxx>
 #include <Handle_OSD_Exception_STATUS_NO_MEMORY.hxx>
+#include <Handle_OSD_FontMgr.hxx>
 #include <Handle_OSD_OSDError.hxx>
 #include <Handle_OSD_SIGBUS.hxx>
 #include <Handle_OSD_SIGHUP.hxx>
@@ -54,6 +55,7 @@ $HeaderURL$
 #include <Handle_OSD_SIGSEGV.hxx>
 #include <Handle_OSD_SIGSYS.hxx>
 #include <Handle_OSD_Signal.hxx>
+#include <Handle_OSD_SystemFont.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
 #include <Handle_Standard_DimensionError.hxx>
@@ -119,18 +121,23 @@ $HeaderURL$
 #include <OSD_File.hxx>
 #include <OSD_FileIterator.hxx>
 #include <OSD_FileNode.hxx>
+#include <OSD_FontAspect.hxx>
+#include <OSD_FontMgr.hxx>
 #include <OSD_FromWhere.hxx>
 #include <OSD_Function.hxx>
 #include <OSD_Host.hxx>
 #include <OSD_KindFile.hxx>
 #include <OSD_LoadMode.hxx>
+#include <OSD_Localizer.hxx>
 #include <OSD_LockType.hxx>
 #include <OSD_MailBox.hxx>
+#include <OSD_NListOfSystemFont.hxx>
 #include <OSD_OEMType.hxx>
 #include <OSD_OSDError.hxx>
 #include <OSD_OpenMode.hxx>
 #include <OSD_PThread.hxx>
 #include <OSD_Path.hxx>
+#include <OSD_PerfMeter.hxx>
 #include <OSD_Printer.hxx>
 #include <OSD_Process.hxx>
 #include <OSD_Protection.hxx>
@@ -150,6 +157,7 @@ $HeaderURL$
 #include <OSD_Signals.hxx>
 #include <OSD_SingleProtection.hxx>
 #include <OSD_SysType.hxx>
+#include <OSD_SystemFont.hxx>
 #include <OSD_Thread.hxx>
 #include <OSD_ThreadFunction.hxx>
 #include <OSD_Timer.hxx>
@@ -162,6 +170,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -185,6 +194,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -200,6 +210,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>

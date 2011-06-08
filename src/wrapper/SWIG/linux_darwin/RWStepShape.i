@@ -342,35 +342,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWDimensionalCharacteristicRepresentation;
-class RWStepShape_RWDimensionalCharacteristicRepresentation {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWDimensionalCharacteristicRepresentation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_DimensionalCharacteristicRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_DimensionalCharacteristicRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_DimensionalCharacteristicRepresentation &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWDimensionalCharacteristicRepresentation::~RWStepShape_RWDimensionalCharacteristicRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWDimensionalCharacteristicRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepShape_RWOrientedEdge;
 class RWStepShape_RWOrientedEdge {
 	public:
@@ -539,6 +510,35 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWRevolvedFaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepShape_RWDimensionalCharacteristicRepresentation;
+class RWStepShape_RWDimensionalCharacteristicRepresentation {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWDimensionalCharacteristicRepresentation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_DimensionalCharacteristicRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_DimensionalCharacteristicRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_DimensionalCharacteristicRepresentation &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWDimensionalCharacteristicRepresentation::~RWStepShape_RWDimensionalCharacteristicRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWDimensionalCharacteristicRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1291,35 +1291,6 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWManifoldSurfaceShapeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWPlusMinusTolerance;
-class RWStepShape_RWPlusMinusTolerance {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWPlusMinusTolerance();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_PlusMinusTolerance &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_PlusMinusTolerance &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_PlusMinusTolerance &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWPlusMinusTolerance::~RWStepShape_RWPlusMinusTolerance %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWPlusMinusTolerance {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2277,6 +2248,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepShape_RWSeamEdge;
+class RWStepShape_RWSeamEdge {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWSeamEdge();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_SeamEdge &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_SeamEdge &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_SeamEdge &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWSeamEdge::~RWStepShape_RWSeamEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWSeamEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepShape_RWRightCircularCone;
 class RWStepShape_RWRightCircularCone {
 	public:
@@ -2511,20 +2511,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWSeamEdge;
-class RWStepShape_RWSeamEdge {
+%nodefaultctor RWStepShape_RWPlusMinusTolerance;
+class RWStepShape_RWPlusMinusTolerance {
 	public:
 		%feature("autodoc", "1");
-		RWStepShape_RWSeamEdge();
+		RWStepShape_RWPlusMinusTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_SeamEdge &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_PlusMinusTolerance &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_SeamEdge &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_PlusMinusTolerance &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_SeamEdge &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepShape_PlusMinusTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepShape_RWSeamEdge::~RWStepShape_RWSeamEdge %{
+%feature("shadow") RWStepShape_RWPlusMinusTolerance::~RWStepShape_RWPlusMinusTolerance %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2533,7 +2533,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepShape_RWSeamEdge {
+%extend RWStepShape_RWPlusMinusTolerance {
 	void _kill_pointed() {
 		delete $self;
 	}

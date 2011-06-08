@@ -31,7 +31,6 @@ $HeaderURL$
 #include<Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString.hxx>
 #include<Handle_Resource_Manager.hxx>
 #include<Handle_Resource_NoSuchResource.hxx>
-#include<Resource_Array1OfAsciiString.hxx>
 #include<Resource_ConvertUnicode.hxx>
 #include<Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString.hxx>
 #include<Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString.hxx>
@@ -54,5 +53,5 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<TCollection_ExtendedString.hxx>
-#include<Standard_SStream.hxx>
+#include<TColStd_Array1OfAsciiString.hxx>
 %}

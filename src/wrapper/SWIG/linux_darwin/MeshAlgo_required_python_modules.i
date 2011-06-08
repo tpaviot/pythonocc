@@ -29,5 +29,5 @@ $HeaderURL$
 import GarbageCollector
 import gp
 import Standard
-import TColStd
+import MeshDS
 };

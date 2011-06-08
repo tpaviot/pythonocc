@@ -63,5 +63,4 @@ $HeaderURL$
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<XmlObjMgt_Persistent.hxx>
-#include<XmlObjMgt_RRelocationTable.hxx>
 %}

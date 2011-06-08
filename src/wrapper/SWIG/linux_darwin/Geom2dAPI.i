@@ -105,11 +105,25 @@ class Geom2dAPI_PointsToBSpline {
 		%feature("autodoc", "1");
 		Geom2dAPI_PointsToBSpline(const TColStd_Array1OfReal &YValues, const Standard_Real X0, const Standard_Real DX, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
+		Geom2dAPI_PointsToBSpline(const TColgp_Array1OfPnt2d &Points, const Approx_ParametrizationType ParType, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		Geom2dAPI_PointsToBSpline(const TColgp_Array1OfPnt2d &Points, const TColStd_Array1OfReal &Parameters, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		Geom2dAPI_PointsToBSpline(const TColgp_Array1OfPnt2d &Points, const Standard_Real Weight1, const Standard_Real Weight2, const Standard_Real Weight3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
 		void Init(const TColgp_Array1OfPnt2d &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
 		void Init(const TColStd_Array1OfReal &YValues, const Standard_Real X0, const Standard_Real DX, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt2d &Points, const Approx_ParametrizationType ParType, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt2d &Points, const TColStd_Array1OfReal &Parameters, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt2d &Points, const Standard_Real Weight1, const Standard_Real Weight2, const Standard_Real Weight3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
 		const Handle_Geom2d_BSplineCurve & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
 
 };
 %feature("shadow") Geom2dAPI_PointsToBSpline::~Geom2dAPI_PointsToBSpline %{
@@ -122,6 +136,41 @@ def __del__(self):
 %}
 
 %extend Geom2dAPI_PointsToBSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dAPI_Interpolate;
+class Geom2dAPI_Interpolate {
+	public:
+		%feature("autodoc", "1");
+		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		void Load(const gp_Vec2d InitialTangent, const gp_Vec2d FinalTangent);
+		%feature("autodoc", "1");
+		void Load(const TColgp_Array1OfVec2d &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BSplineCurve & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%feature("shadow") Geom2dAPI_Interpolate::~Geom2dAPI_Interpolate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dAPI_Interpolate {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -172,41 +221,6 @@ def __del__(self):
 %}
 
 %extend Geom2dAPI_ProjectPointOnCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dAPI_Interpolate;
-class Geom2dAPI_Interpolate {
-	public:
-		%feature("autodoc", "1");
-		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Load(const gp_Vec2d InitialTangent, const gp_Vec2d FinalTangent);
-		%feature("autodoc", "1");
-		void Load(const TColgp_Array1OfVec2d &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const Handle_Geom2d_BSplineCurve & Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%feature("shadow") Geom2dAPI_Interpolate::~Geom2dAPI_Interpolate %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dAPI_Interpolate {
 	void _kill_pointed() {
 		delete $self;
 	}

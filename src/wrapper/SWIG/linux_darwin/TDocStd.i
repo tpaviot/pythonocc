@@ -67,7 +67,7 @@ class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDocStd_Modified & operator=(const TDocStd_Modified *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_Modified const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_Modified DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_Modified {
@@ -105,7 +105,7 @@ class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDocStd_XLinkRoot & operator=(const TDocStd_XLinkRoot *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_XLinkRoot const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_XLinkRoot DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_XLinkRoot {
@@ -143,7 +143,7 @@ class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDocStd_XLink & operator=(const TDocStd_XLink *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_XLink const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_XLink DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_XLink {
@@ -181,7 +181,7 @@ class Handle_TDocStd_Document : public Handle_CDM_Document {
 		%feature("autodoc", "1");
 		Handle_TDocStd_Document & operator=(const TDocStd_Document *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_Document const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_Document DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_Document {
@@ -219,7 +219,7 @@ class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDocStd_MultiTransactionManager & operator=(const TDocStd_MultiTransactionManager *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_MultiTransactionManager const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_MultiTransactionManager DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_MultiTransactionManager {
@@ -257,7 +257,7 @@ class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDocStd_Owner & operator=(const TDocStd_Owner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_Owner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_Owner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_Owner {
@@ -281,6 +281,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TDocStd_Application;
+class Handle_TDocStd_Application : public Handle_CDF_Application {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application();
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application(const Handle_TDocStd_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application(const TDocStd_Application *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application & operator=(const Handle_TDocStd_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application & operator=(const TDocStd_Application *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDocStd_Application DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDocStd_Application {
+	TDocStd_Application* GetObject() {
+	return (TDocStd_Application*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDocStd_Application::~Handle_TDocStd_Application %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDocStd_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
 class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TCollection_SeqNode {
 	public:
@@ -295,7 +333,7 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta & operator=(const TDocStd_SequenceNodeOfSequenceOfApplicationDelta *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
@@ -333,7 +371,7 @@ class Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap & operator=(const TDocStd_DataMapNodeOfLabelIDMapDataMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap {
@@ -371,7 +409,7 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_TDocStd_SequenceNodeOfSequenceOfDocument & operator=(const TDocStd_SequenceNodeOfSequenceOfDocument *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_SequenceNodeOfSequenceOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_SequenceNodeOfSequenceOfDocument DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_SequenceNodeOfSequenceOfDocument {
@@ -409,7 +447,7 @@ class Handle_TDocStd_ApplicationDelta : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDocStd_ApplicationDelta & operator=(const TDocStd_ApplicationDelta *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_ApplicationDelta const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_ApplicationDelta DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_ApplicationDelta {
@@ -447,7 +485,7 @@ class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
 		%feature("autodoc", "1");
 		Handle_TDocStd_CompoundDelta & operator=(const TDocStd_CompoundDelta *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_CompoundDelta const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_CompoundDelta DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TDocStd_CompoundDelta {
@@ -465,44 +503,6 @@ def __del__(self):
 %}
 
 %extend Handle_TDocStd_CompoundDelta {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TDocStd_Application;
-class Handle_TDocStd_Application : public Handle_CDF_Application {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDocStd_Application();
-		%feature("autodoc", "1");
-		Handle_TDocStd_Application(const Handle_TDocStd_Application &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Application(const TDocStd_Application *anItem);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Application & operator=(const Handle_TDocStd_Application &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Application & operator=(const TDocStd_Application *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDocStd_Application const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDocStd_Application {
-	TDocStd_Application* GetObject() {
-	return (TDocStd_Application*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDocStd_Application::~Handle_TDocStd_Application %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDocStd_Application {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -617,7 +617,7 @@ class TDocStd_XLinkTool {
 		%feature("autodoc", "1");
 		void UpdateLink(const TDF_Label &L);
 		%feature("autodoc", "1");
-		void Copy(const TDF_Label &intarget, const TDF_Label &fromsource);
+		virtual		void Copy(const TDF_Label &intarget, const TDF_Label &fromsource);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");

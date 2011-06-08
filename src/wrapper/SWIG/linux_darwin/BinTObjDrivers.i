@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_BinTObjDrivers_DocumentStorageDriver;
-class Handle_BinTObjDrivers_DocumentStorageDriver : public Handle_BinLDrivers_DocumentStorageDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_DocumentStorageDriver(const Handle_BinTObjDrivers_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_DocumentStorageDriver(const BinTObjDrivers_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_DocumentStorageDriver & operator=(const Handle_BinTObjDrivers_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_DocumentStorageDriver & operator=(const BinTObjDrivers_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinTObjDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinTObjDrivers_DocumentStorageDriver {
-	BinTObjDrivers_DocumentStorageDriver* GetObject() {
-	return (BinTObjDrivers_DocumentStorageDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinTObjDrivers_DocumentStorageDriver::~Handle_BinTObjDrivers_DocumentStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinTObjDrivers_DocumentStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinTObjDrivers_ObjectDriver;
 class Handle_BinTObjDrivers_ObjectDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -104,7 +66,7 @@ class Handle_BinTObjDrivers_ObjectDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ObjectDriver & operator=(const BinTObjDrivers_ObjectDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinTObjDrivers_ObjectDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinTObjDrivers_ObjectDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinTObjDrivers_ObjectDriver {
@@ -142,7 +104,7 @@ class Handle_BinTObjDrivers_ReferenceDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ReferenceDriver & operator=(const BinTObjDrivers_ReferenceDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinTObjDrivers_ReferenceDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinTObjDrivers_ReferenceDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinTObjDrivers_ReferenceDriver {
@@ -180,7 +142,7 @@ class Handle_BinTObjDrivers_ModelDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ModelDriver & operator=(const BinTObjDrivers_ModelDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinTObjDrivers_ModelDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinTObjDrivers_ModelDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinTObjDrivers_ModelDriver {
@@ -218,7 +180,7 @@ class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_DocumentRetrievalDriver & operator=(const BinTObjDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinTObjDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinTObjDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinTObjDrivers_DocumentRetrievalDriver {
@@ -242,6 +204,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BinTObjDrivers_DocumentStorageDriver;
+class Handle_BinTObjDrivers_DocumentStorageDriver : public Handle_BinLDrivers_DocumentStorageDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentStorageDriver(const Handle_BinTObjDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentStorageDriver(const BinTObjDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentStorageDriver & operator=(const Handle_BinTObjDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentStorageDriver & operator=(const BinTObjDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinTObjDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinTObjDrivers_DocumentStorageDriver {
+	BinTObjDrivers_DocumentStorageDriver* GetObject() {
+	return (BinTObjDrivers_DocumentStorageDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinTObjDrivers_DocumentStorageDriver::~Handle_BinTObjDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BinTObjDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BinTObjDrivers_XYZDriver;
 class Handle_BinTObjDrivers_XYZDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -256,7 +256,7 @@ class Handle_BinTObjDrivers_XYZDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_XYZDriver & operator=(const BinTObjDrivers_XYZDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinTObjDrivers_XYZDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinTObjDrivers_XYZDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinTObjDrivers_XYZDriver {
@@ -294,7 +294,7 @@ class Handle_BinTObjDrivers_IntSparseArrayDriver : public Handle_BinMDF_ADriver 
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_IntSparseArrayDriver & operator=(const BinTObjDrivers_IntSparseArrayDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinTObjDrivers_IntSparseArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinTObjDrivers_IntSparseArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinTObjDrivers_IntSparseArrayDriver {

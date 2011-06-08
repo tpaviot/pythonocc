@@ -49,6 +49,7 @@ $HeaderURL$
 
 %include BinTools_headers.i
 
+typedef BinTools_LocationSet * BinTools_LocationSetPtr;
 
 
 
