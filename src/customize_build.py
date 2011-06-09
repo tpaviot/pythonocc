@@ -51,11 +51,11 @@ def customize_compiler(compiler):
         linker_so = [compiler.linker_so[0],'-F.', '--no_undefined','-bundle','-dynamic_lookup']
         #g++-4.2 -Wl,-F. -bundle -undefined dynamic_lookup -arch i386 -arch ppc -arch x86_64 build/temp.macosx-10.6-universal-2.6/Users/thomas/Devel/pythonocc/src/wra
         if environment.get_32_or_64_bits_platform()==64:
-            compiler_so.extend(['-arch','x86_64','-m64'])
-            linker_so.extend(['-arch','x86_64','-m64'])
+            compiler_so.extend(['-arch','x86_64'])
+            linker_so.extend(['-arch','x86_64'])
         else:
-            compiler_so.extend(['-arch','i386','-m32'])
-            linker_so.extend(['-arch','i386','-m32'])
+            compiler_so.extend(['-arch','i386'])
+            linker_so.extend(['-arch','i386'])
         linker_so.append('-L.')
         linker_so.append('-lm')
         linker_so.append('-lstdc++')
