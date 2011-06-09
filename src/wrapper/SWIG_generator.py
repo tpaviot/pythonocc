@@ -356,13 +356,12 @@ class ModularBuilder(object):
         required_modules_fp.close()
     
     def process_by_ref_argument(self,argument_list):
-        ''' process arguments passed by ref. Try to remove the by ref and pass by value
+        ''' process arguments passed by ref. Try to remove the by ref and pass by value.
+        This will be achieved only if the argument passed by ref has defined a copy constructor
         '''
-        print argument_list
         if not '&' in argument_list:
             return argument_list
         module = argument_list[0].split('_')[0]
-        print module
         if not module.startswith('Handle'):
             if module in ['gp','TopoDS']:
                 argument_list.remove('&')
@@ -409,8 +408,8 @@ class ModularBuilder(object):
             #
             t = self.CheckParameterIsTypedef(argument_type_name)
             if t:
-                if (t!=self.MODULE_NAME):# and (t!='Standard'):
-                    self.AddDependency(t)#print "Dependency with module %s"%t
+                if (t!=self.MODULE_NAME):
+                    self.AddDependency(t)
             else:#it's not a type def
                 if (not argument_type_name.startswith('%s_'%self.MODULE_NAME)) and \
                 (not argument_type_name.startswith('Handle_%s_'%self.MODULE_NAME)) and\
@@ -427,9 +426,6 @@ class ModularBuilder(object):
             if len(argument_types)==1:
                 to_write += "%s "%argument_types[0]
             elif argument_types[0].startswith('std::list'):
-                #We have something like:
-                #
-                #print argument_types
                 tmp = argument_types[0]
                 tmp = tmp.split('<')[1]
                 tmp = tmp.split(',')[0]
@@ -449,7 +445,11 @@ class ModularBuilder(object):
                 #Case: GEOM_Engine* theEngine
                 to_write += "%s%s %s"%(argument_types[0],argument_types[1],argument_name)
                 param_list.append([argument_types[0],argument_name])
-            elif len(argument_types)==3: #ex: Handle_WNT_GraphicDevice const &
+            elif len(argument_types)==3:
+                #ex: Handle_WNT_GraphicDevice const &
+                #or const TopoDS_Shape &
+                #In that case, the & reference can be safely removed if the class has defined
+                # a copy constructor
                 argument_types = self.process_by_ref_argument(argument_types)
                 if len(argument_types)==2:#removed a '&'
                     to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
@@ -459,8 +459,6 @@ class ModularBuilder(object):
             elif (len(argument_types)==2 and argument_types[1]!="&"):#ex: Aspect_Handle const
                 to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
                 param_list.append([argument_types[0],argument_name])
-                #print 'On y est'
-                #print argument_types
             elif len(argument_types)==4:
                 to_write += "%s %s%s"%(argument_types[0],argument_types[1],argument_name)
                 param_list.append([argument_types[1],argument_name])
@@ -503,7 +501,6 @@ class ModularBuilder(object):
             END_WITH_CONST = True
         else:
             END_WITH_CONST = False
-        print 'avant:%s'%param_list
         return to_write, return_list, param_list, arguments, default_value, END_WITH_CONST, param_names,FUNCTION_MODIFIED
     
     def process_by_ref_return_type(self, return_type_string):
@@ -524,7 +521,6 @@ class ModularBuilder(object):
             #don't modify the string
             return return_type_string
         # if the module is in the list NOT_GARBAGED_MODULES, then remove the '&
-        #print 'Elem :',elem
         # WARNING : the classes defined in such modules must have public copy ctors
         if elem in ['gp','TopoDS']:
             modified_string = return_type_string.replace('&','')
@@ -563,7 +559,7 @@ class ModularBuilder(object):
                 if (t!=self.MODULE_NAME):# and (t!='Standard'):
                     if t.startswith('Handle'):
                         t = t.split('_')[1]
-                    self.AddDependency(t)#print "Dependency with module %s"%t
+                    self.AddDependency(t)
             else:#it's not a type def
                 if (not return_type.startswith('%s_'%self.MODULE_NAME)) and \
                 (not return_type.startswith('Handle_%s_'%self.MODULE_NAME)) and \
@@ -584,9 +580,9 @@ class ModularBuilder(object):
             if module_name != self.MODULE_NAME and module_name in Modules.get_wrapped_modules_names():
                 if not (module_name in self.MODULES_TO_IMPORT) and module_name!='None':
                     self.MODULES_TO_IMPORT.append(module_name)
-#        #
-#        # Replace return type Standard_CString with char *
-#        #
+        #
+        # Replace return type Standard_CString with char *
+        #
         print "\t\t %s added."%function_name
         to_write = ''#
         # Handle 'Standard_Integer &' and 'Standard_Real &' return types
@@ -654,7 +650,6 @@ class ModularBuilder(object):
         # Write arguments of the method
         #
         str,return_list,param_list,arguments, default_value,END_WITH_CONST, param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun)
-        print param_list
         to_write += str
         if END_WITH_CONST:
             to_write += ") const;\n"
@@ -694,7 +689,6 @@ class ModularBuilder(object):
             meth_doc = "%s("%function_name
             index=1
             for param in param_list:
-                #print param
                 meth_doc+=param[0]
                 meth_doc+=" "
                 meth_doc+=param[1]
@@ -1095,6 +1089,10 @@ class ModularBuilder(object):
                           'Message_Algorithm.hxx',
                           'Message_ExecStatus.hxx',
                           'GEOMImpl_Template.hxx',
+                          'InterfaceGraphic_wntio.hxx',
+                          'SelectMgr_ViewerSelector.hxx',
+                          'SelectMgr_SelectionManager.hxx',
+                          'Aspect_XWD.hxx'
                           ]
         if sys.platform!='win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
