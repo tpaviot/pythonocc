@@ -31,7 +31,7 @@ import subprocess
 # VARIABLES
 #===============================================================================
 
-VERSION = '0.5'         # Define pythonOCC version
+VERSION = '0.6dev'         # Define pythonOCC version
 GEOM_RELEASE = 'geom-5.1.2.7' # located in /src/contrib/
 SMESH_RELEASE = 'smesh-5.1.2.2' # located in /src/contrib
 #===============================================================================
@@ -193,11 +193,9 @@ elif sys.platform=='darwin':
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
     if OCC_ROOT!=None:
-        OCC_INC = os.path.join(OCC_ROOT,'inc')
-        OCC_LIB = os.path.join(OCC_ROOT,'lib')
-    else:
-      OCC_LIB = '/Library/OpenCASCADE/6.3.0/lib'
-      OCC_INC = '/Library/OpenCASCADE/6.3.0/inc'
+        OCC_LIB = '/Library/OCE/0.3/lib'
+        OCC_INC = '/Library/OCE/0.3/inc'
+      
     SALOME_GEOM_LIB = '/usr/local/lib/'
     SALOME_SMESH_LIB = '/usr/local/lib/'        
     GCC_XML_PATH = which('gccxml')
@@ -211,7 +209,6 @@ elif sys.platform=='darwin':
     ECA = []
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
-        ECA.append('-I/usr/include/c++/4.2.1/x86_64-apple-darwin10') # Snow Leopard
     ELA = []
     EXTRA_LIBS = ['-framework Python']
 
