@@ -75,8 +75,9 @@ Examples:
 #
 # OpenCascade libs
 #
-libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'PTKernel',\
-             'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
+libraries = ['FWOSPlugin', \
+             'PTKernel',
+             'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
              'TKBO', 'TKBool', 'TKBRep', 'TKCAF', 'TKCDF', \
              'TKernel',\
              'TKFeat', 'TKFillet', 'TKG2d', 'TKG3d', 'TKGeomAlgo', 'TKGeomBase', 'TKHLR',\
@@ -86,8 +87,9 @@ libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'PTKernel
              'TKSTEPBase', 'TKSTL', 'TKTObj', 'TKTopAlgo', \
              'TKV2d', 'TKV3d', 'TKVRML', 'TKXCAF', 'TKXCAFSchema',\
              'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
-             'TKXmlXCAF', 'TKXSBase', 'XCAFPlugin',\
-             'XmlLPlugin', 'XmlPlugin', 'XmlXCAFPlugin']
+             'TKXmlXCAF', 'TKXSBase',
+             'TKVoxel'
+             ]
 #
 # GEOM libraries
 #
@@ -230,6 +232,7 @@ def clean():
 def check_occ_lib(library):
     ''' Find OCC shared library
     '''
+    print library
     print '%s '%library,
     found = glob.glob(os.path.join(environment.OCC_LIB,'*%s*'%library))
     if len(found)>0:
