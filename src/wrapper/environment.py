@@ -206,7 +206,7 @@ elif sys.platform=='darwin':
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
                      ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]
-    ECA = []
+    ECA = ['-I/usr/X11R6/include']
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
     ELA = []
