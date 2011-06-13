@@ -135,7 +135,7 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
     def OnResize(self):
         self.View.MustBeResized(OCC.V2d.V2d_TOWRE_ENLARGE_SPACE)
     
-    def DisplayShape(self, shapes, material=None, texture=None, angle=None ):
+    def DisplayShape(self, shapes, material=None, texture=None, angle=None, update=True, fitall=True ):
         '''
         display a TopoDS_* in the viewer
         @param shapes:      shape or iterable of shapes 
@@ -143,6 +143,8 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
         @param material:    sets a custom material to the shape
         @param texture:     add a texture to the shape
         @param angle:       sets a custom deviation angle to the shape
+        @param update:      updates the viewer
+        @fitall:            whether the camera's viewpoint is updated or not...
         '''
         
         ais_shapes = []
@@ -173,8 +175,12 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
                 if angle:
                     shape_to_display.SetAngleAndDeviation(angle)
                 ais_shapes.append(shape_to_display.GetHandle())
+
             self.Context.Display(shape_to_display.GetHandle())
-            self.FitAll()
+            
+            if fitall:
+                self.FitAll()
+        
         if SOLO:
             return ais_shapes[0]
         else:

@@ -23,7 +23,11 @@ import ode
 # OCC required modules
 from OCC.Utils.Common import get_boundingbox
 # For trimesh collision
-from OCC.MSH.Mesh import QuickTriangleMesh
+try:
+    from OCC.MSH.Mesh import QuickTriangleMesh
+except ImportError:
+    print 'have you got SMESH installed?'
+    pass
 # For Inertia properties
 from OCC.GProp import *
 from OCC.BRepGProp import *
@@ -57,7 +61,11 @@ class DynamicShape(ode.Body):
         self._ais_shape = None
         self._parent_context = None
         print 'shape deleted'
-        
+
+    #def __deepcopy__(self, memo):
+    #    '''deepcooooopy'''
+        #import ipdb; ipdb.set_trace()
+
     def get_parent_context(self):
         ''' returns the parent dynamic context
         '''

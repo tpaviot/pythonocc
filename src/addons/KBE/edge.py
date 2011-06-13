@@ -207,25 +207,25 @@ class Edge(object):
 
 
 
-    def _subclass(self):
-        '''
-        return from which class self.crv inherts
-        '''
-        if issubclass(self.crv, ):
-            return Geom_Curve
-        elif issubclass(self.crv, Geom_Conic):
-            return Geom
-
-        def subClassed(crv, _class):
-            if issubclass(crv, _class):
-                return _class
-
-
-        _classes_to_check = [Geom_Curve, Geom_Conic]
-        for i in _classes_to_check:
-            subClassed(self.crv,i)
-        else:
-            raise AssertionError, 'self.crv is none of ', _classes_to_check
+#    def _subclass(self):
+#        '''
+#        return from which class self.crv inherts
+#        '''
+#        if issubclass(self.crv, ):
+#            return Geom_Curve
+#        elif issubclass(self.crv, Geom_Conic):
+#            return Geom
+#
+#        def subClassed(crv, _class):
+#            if issubclass(crv, _class):
+#                return _class
+#
+#
+#        _classes_to_check = [Geom_Curve, Geom_Conic]
+#        for i in _classes_to_check:
+#            subClassed(self.crv,i)
+#        else:
+#            raise AssertionError, 'self.crv is none of ', _classes_to_check
 
     def domain(self):
         '''returns the u,v domain of the curve'''

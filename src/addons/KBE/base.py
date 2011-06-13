@@ -48,6 +48,21 @@ from OCC.Geom import *
 import warnings
 
 #===============================================================================
+# DISPLAY
+#===============================================================================
+global display
+
+from jelle_utils.patterns import singleton
+
+@singleton
+class Display(object):
+    def __init__(self):
+        from OCC.Display.SimpleGui import init_display
+        self.display, self.start_display, self.add_menu, self.add_function_to_menu = init_display()
+    def __call__(self):
+        return self.display
+
+#===============================================================================
 # base class ( bit inspired by pycado )
 #===============================================================================
 

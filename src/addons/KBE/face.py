@@ -1,9 +1,12 @@
+from OCC.BRep import BRep_Tool_Surface
+
 __author__ = 'localadmin'
 #===============================================================================
 #    Surface.local_properties
 #    curvature, tangency etc.
 #===============================================================================
-
+from OCC.KBE.base import Display
+from OCC.Utils.Construct import gp_Vec, gp_Pnt, gp_Dir
 
 class DiffGeomSurface(object):
     def __init__(self, instance):
@@ -43,23 +46,33 @@ class DiffGeomSurface(object):
         return self.curvature(u,v).MaxCurvature()
 
     def normal(self,u,v):
-        return self.curvature(u,v).Normal()
+        # TODO: should make this return a gp_Vec
+        curv = self.curvature(u,v)
+        if curv.IsNormalDefined():
+            return curv.Normal()
+        else:
+            raise ValueError('normal is not defined at u,v: {0}, {1}'.format(u,v))
 
     def tangent(self,u,v):
-        d1, d2 = gp_Dir(), gp_Dir()
-        return self.curvature(u,v).TangentU(), self.curvature(u,v).TangentV()
+        dU, dV = gp_Dir(), gp_Dir()
+        curv = self.curvature(u,v)
+        if curv.IsCurvatureDefined():
+            curv.TangentU(dU), curv.TangentV(dV)
+            return dU, dV
+        else:
+            raise ValueError('curvature is not defined at u,v: {0}, {1}'.format(u,v))
 
     def radius(self, u, v ):
         '''returns the radius at u
         '''
         # TODO: SHOULD WE RETURN A SIGNED RADIUS? ( get rid of abs() )?
         try:
-            _crv_min = 1./self.min_curvature()
+            _crv_min = 1./self.min_curvature(u,v)
         except ZeroDivisionError:
             _crv_min = 0.
 
         try:
-            _crv_max = 1./self.max_curvature()
+            _crv_max = 1./self.max_curvature(u,v)
         except ZeroDivisionError:
             _crv_max = 0.
         return abs((_crv_min+_crv_max)/2.)
@@ -154,32 +167,8 @@ class Face(object):
     otherwise the same methods do apply, apart from the topology obviously
     """
 
-    def __init__(self, face):
-        '''
-        '''
-        # for BREP methods
-        self.face = face
-
-        # for surface methods
-        # DAMNED this is a Bezier, not a BSPLINE
-        from OCC.TopLoc import TopLoc_Location
-        self.location = TopLoc_Location()
-        self.h_srf = BRep_Tool_Surface(face, self.location)
-#        self.h_srf.Transform(self.location.Transformation())
-        #self.srf = self.h_srf.GetObject()
-
-        # hier is hoe je nurbs maakt van breps:
-#        self.nurbs = BRepBuilderAPI_NurbsConvert(face)
-#        self.nurbs.Perform()
-
-        self.diff_geom = DiffGeomSurface(self)
-
-        # registering cooperative classes
-        self.global_properties = GlobalProperties(self)
-
-        # STATE; whether cooperative classes are yet initialized
-        self._curvature_initiated = False
-        self._geometry_lookup_init = False
+    def show(self, update=False):
+        Display().display.DisplayShape(self.face)
 
     def check(self):
         '''
@@ -187,12 +176,53 @@ class Face(object):
         '''
         from OCC.BRepCheck import BRepCheck_Face
         bcf = BRepCheck_Face(self.face)
-
+        return bcf
 
     def domain(self):
         '''returns the u,v domain of the curve'''
         from OCC.BRepTools import BRepTools
-        return BRepTools_uvbounds(self.face)
+        return BRepTools.UVBounds(self.face)
+
+    def __init__(self, face):
+        '''
+        '''
+        self.face = face
+        # utility classes
+        # cooperative classes
+        from OCC.KBE.base import GlobalProperties
+        self.global_properties = GlobalProperties(self)
+
+        from OCC.TopLoc import TopLoc_Location
+        self.location = TopLoc_Location()
+
+        from OCC.BRep import  BRep_Tool
+        # TODO: refactor; these should be non-public attr's
+        self.h_srf = BRep_Tool_Surface(face, self.location)
+        #self.h_srf.Transform(self.location.Transformation())
+        self.srf = self.h_srf.GetObject()
+        self.diff_geom = DiffGeomSurface(self)
+
+        # STATE; whether cooperative classes are yet initialized
+        self._curvature_initiated = False
+        self._geometry_lookup_init = False
+
+    def adaptor(self, handle=False):
+        if not handle:
+            if hasattr(self, '_adapter'):
+                return self._adaptor
+            else:
+                if hasattr(self, '_h_adapter'):
+                    return self._h_adaptor
+        else:
+            from OCC.BRepAdaptor import BRepAdaptor_Surface, BRepAdaptor_HSurface
+            self._adaptor = BRepAdaptor_Surface(self.face)
+            self._h_adaptor = BRepAdaptor_HSurface()
+            self._h_adaptor.Set(self._adaptor)
+
+            if not handle:
+                return self._adaptor
+            else:
+                return self._h_adaptor.GetHandle()
 
     def distance(self, other, extrema=False):
         '''returns the distance self with a point, curve, edge, face, solid

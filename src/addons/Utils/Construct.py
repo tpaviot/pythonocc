@@ -86,16 +86,30 @@ def gp_Pnt_set_state(self, state):
     '''
     self.__init__(*state)
 
+def gp_pnt_print(self):
+    return '< gp_Pnt: {0}, {1}, {2} >'.format(*self.Coord())
 
+def gp_vec_print(self):
+    x,y,z = self.Coord()
+    magn = self.Magnitude()
+    return '< gp_Vec: {0}, {1}, {2}, magnitude: {3} >'.format(x,y,z, magn)
+
+# easier conversion between data types
 gp_Vec.as_pnt  = vector_to_point
 gp_Pnt.as_vec  = point_to_vector
 gp_Pnt.add_vec = add_vector_to_point
 gp_Dir.as_vec  = dir_to_vec 
 gp_Vec.as_dir  = vec_to_dir
+# for copying / serializing
 gp_Pnt.__getstate__ = gp_Pnt_get_state
 gp_Pnt.__setstate__ = gp_Pnt_set_state
 gp_Vec.__getstate__ = gp_Pnt_get_state
 gp_Vec.__setstate__ = gp_Pnt_set_state
+# print gp_Pnt() should return something informative...
+gp_Vec.__repr__ = gp_vec_print
+gp_Vec.__str__ = gp_vec_print
+gp_Pnt.__repr__ = gp_pnt_print
+gp_Pnt.__str__ = gp_pnt_print
 
 #===============================================================================
 # ---TOPOLOGY---
