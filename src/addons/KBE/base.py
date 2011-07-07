@@ -59,8 +59,8 @@ class Display(object):
     def __init__(self):
         from OCC.Display.SimpleGui import init_display
         self.display, self.start_display, self.add_menu, self.add_function_to_menu = init_display()
-    def __call__(self):
-        return self.display
+    def __call__(self, *args, **kwargs):
+        return self.display.DisplayShape(*args, **kwargs)
 
 #===============================================================================
 # base class ( bit inspired by pycado )

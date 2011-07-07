@@ -189,8 +189,8 @@ class Face(object):
         self.face = face
         # utility classes
         # cooperative classes
-        from OCC.KBE.base import GlobalProperties
-        self.global_properties = GlobalProperties(self)
+        #from OCC.KBE.base import GlobalProperties
+        #self.global_properties = GlobalProperties(self)
 
         from OCC.TopLoc import TopLoc_Location
         self.location = TopLoc_Location()
@@ -223,6 +223,24 @@ class Face(object):
                 return self._adaptor
             else:
                 return self._h_adaptor.GetHandle()
+
+    def global_properties(self):
+        '''
+        computes the global properties of the face
+        these include:
+
+        * CentreOfMass
+        * PrincipleProperties
+        * MomentOfInertia
+        * MatrixOfInertia
+        * StaticMoments
+        * RadiusOfGyration
+        '''
+        from OCC.GProp import GProp_GProps
+        from OCC.BRepGProp import BRepGProp
+        system = GProp_GProps()
+        BRepGProp().SurfaceProperties(self.face, system)
+        return system
 
     def distance(self, other, extrema=False):
         '''returns the distance self with a point, curve, edge, face, solid
