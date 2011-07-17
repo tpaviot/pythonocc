@@ -272,51 +272,6 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         point: a gp_Pnt instance
         text_to_write: a string
         """
-        #print dir(self.View)
-#        self.view_manager = self.View.View().GetObject().ViewManager()
-        #print view_manager
-        #self.myLayer= OCC.Visual3d.Visual3d_Layer(self.view_manager,OCC.Aspect.Aspect_TOL_OVERLAY, False)
-        #myLayer.SetViewport(640,480)
-        #myLayer.SetOrtho(0,640,480,0,OCC.Aspect.Aspect_TypeOfConstraint-1)
-        #self.myLayer.Begin()
-        #self.myLayer.DrawText("Thomas",320,240,1)
-        #self.myLayer.End()
-
-
-        #self.View.Redraw()
-#     myLayer->SetViewport(w,h);
-#     myLayer->SetOrtho(0,w,h,0,(Aspect_TypeOfConstraint) -1);
-#     
-#     // then you could draw on the given layer
-#     myLayer->Begin();
-#     
-#     // draw some text
-#     Standard_CString aString = "TEST";
-#     int xPos = w/2;
-#     int yPos = h/2;
-#     int textSize = 1;
-#     myLayer->DrawText(aString, xPos, yPos, textSize);// !!!!! CRASH ERROR !!!!!!!!
-#     
-#     // draw a polyline
-#     Standard_Real wn = 2.0, hn = (2.0/Standard_Real(w))*Standard_Real(h);
-#     Standard_Real x1 = -0.9, x2= x1+wn-.2, y1 = -0.9, y2=y1+hn-.2;
-#     myLayer->BeginPolyline();
-#     myLayer->AddVertex(x1, y1, Standard_False);
-#     myLayer->AddVertex(x2, y2);
-#     myLayer->ClosePrimitive();
-#     
-#     // draw a filled box
-#     myLayer->SetColor(Quantity_NOC_RED);
-#     myLayer->DrawRectangle(xPos,yPos,12,12);
-#     
-#          
-#          // and close the layer and redraw
-#     myLayer->End();
-#     myView->Redraw();
-#        V1 = OCC.BRepBuilderAPI.BRepBuilderAPI_MakeVertex(point)
-#        aisShape = OCC.AIS.AIS_Shape(V1.Vertex())
-#        aDrawer = aisShape.Attributes()
-        
         # TODO - should be imported!
         def to_string_extended(_str):
             from OCC.TCollection import TCollection_ExtendedString as String
@@ -337,7 +292,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
         
 #    def DisplayShape(self, , *shapes):
-    def DisplayShape(self, shapes, material=None, texture=None, update=True):
+    def DisplayShape(self, shapes, material=None, texture=None, update=False):
         '''
         '''
         
@@ -368,7 +323,9 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
                 ais_shapes.append(shape_to_display.GetHandle())
             if update:
+                # only update when explicitely told to do so
                 self.Context.Display(shape_to_display.GetHandle(), True)
+                # especially this call takes up a lot of time...
                 self.FitAll()
             else:
                 self.Context.Display(shape_to_display.GetHandle(), False)
@@ -380,18 +337,23 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
     def DisplayColoredShape(self, shapes, color='YELLOW', update=True, ):
         ais_shapes = []
-        dict_color = {'WHITE':OCC.Quantity.Quantity_NOC_WHITE,
-                      'BLUE':OCC.Quantity.Quantity_NOC_BLUE1,
-                      'RED':OCC.Quantity.Quantity_NOC_RED,
-                      'GREEN':OCC.Quantity.Quantity_NOC_GREEN,
-                      'YELLOW':OCC.Quantity.Quantity_NOC_YELLOW,
-                      # new
-                      'CYAN':OCC.Quantity.Quantity_NOC_CYAN1,
-                      'WHITE':OCC.Quantity.Quantity_NOC_WHITE,
-                      'BLACK':OCC.Quantity.Quantity_NOC_BLACK,
-                      'ORANGE':OCC.Quantity.Quantity_NOC_ORANGE,
-                      
-                      }
+
+        if isinstance(color, str):
+            dict_color = {'WHITE':OCC.Quantity.Quantity_NOC_WHITE,
+                          'BLUE':OCC.Quantity.Quantity_NOC_BLUE1,
+                          'RED':OCC.Quantity.Quantity_NOC_RED,
+                          'GREEN':OCC.Quantity.Quantity_NOC_GREEN,
+                          'YELLOW':OCC.Quantity.Quantity_NOC_YELLOW,
+                          # new
+                          'CYAN':OCC.Quantity.Quantity_NOC_CYAN1,
+                          'WHITE':OCC.Quantity.Quantity_NOC_WHITE,
+                          'BLACK':OCC.Quantity.Quantity_NOC_BLACK,
+                          'ORANGE':OCC.Quantity.Quantity_NOC_ORANGE, }
+            color = dict_color[color]
+        elif isinstance(color, Quantity_Color):
+            pass
+        else:
+            raise ValueError('color should either be a string ( "BLUE" ) or a Quantity_Color(0.1, 0.8, 0.1) got %s' % color)
 
         if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
@@ -401,16 +363,16 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             
         for shape in shapes:
             shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
-            self.Context.SetColor(shape_to_display,dict_color[color],0)
+            self.Context.SetColor(shape_to_display,color,0)
 
             if update:
                 self.Context.Display(shape_to_display, True)
+                self.FitAll()
 
             else:
                 # don't update the view when shape_to_display is added
                 # comes in handy when adding lots and lots of objects 
                 self.Context.Display(shape_to_display, False)
-                self.FitAll()
             
         ais_shapes.append(shape_to_display)
         if SOLO:
