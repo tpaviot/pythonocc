@@ -21,7 +21,8 @@ import xmlrpclib
 import sys
 import pickle
 from OCC.TopoDS import *
-from OCC.Display.wxSamplesGui import add_menu, display, start_display, add_function_to_menu
+from OCC.Display.SimpleGui import init_display
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 def get_box(event=None):
     shape_factory = xmlrpclib.ServerProxy("http://localhost:8888")
