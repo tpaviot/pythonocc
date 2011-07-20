@@ -22,8 +22,9 @@ class Vertex(KbeObject, gp_Pnt):
         Vertex.from_pnt(vertex2pnt(pnt))
 
     @staticmethod
-    def from_pnt(cls):
-        pass
+    def from_pnt(cls, pnt):
+        x,y,z = pnt.Coord()
+        return cls(x,y,z)
 
     @classmethod
     def from_vec(cls):

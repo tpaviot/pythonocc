@@ -1,12 +1,25 @@
 from OCC.BRep import BRep_Tool_Surface
+from OCC.BRepIntCurveSurface import BRepIntCurveSurface_Inter
+from OCC.BRepTools import BRepTools
+from OCC.BRepTopAdaptor import BRepTopAdaptor_FClass2d
+from OCC.Geom import Geom_Curve
+from OCC.GeomAPI import GeomAPI_ProjectPointOnSurf
+from OCC.GeomLib import GeomLib_IsPlanarSurface
+from OCC.TopAbs import TopAbs_IN
+from OCC.TopExp import TopExp
 
 __author__ = 'localadmin'
 #===============================================================================
 #    Surface.local_properties
 #    curvature, tangency etc.
 #===============================================================================
-from OCC.KBE.base import Display
-from OCC.Utils.Construct import gp_Vec, gp_Pnt, gp_Dir
+from OCC.KBE.base import Display, KbeObject, GlobalProperties
+from OCC.KBE.edge import Edge
+from OCC.Utils.Construct import gp_Vec, gp_Pnt, gp_Dir, gp_Pnt2d
+from OCC.Utils.Topology import Topo
+from OCC.BRep import  BRep_Tool
+from OCC.TopoDS import  *
+
 
 class DiffGeomSurface(object):
     def __init__(self, instance):
@@ -53,14 +66,38 @@ class DiffGeomSurface(object):
         else:
             raise ValueError('normal is not defined at u,v: {0}, {1}'.format(u,v))
 
-    def tangent(self,u,v):
+    def tangent(self,u,v, recurse=False):
         dU, dV = gp_Dir(), gp_Dir()
         curv = self.curvature(u,v)
         if curv.IsCurvatureDefined():
             curv.TangentU(dU), curv.TangentV(dV)
             return dU, dV
         else:
-            raise ValueError('curvature is not defined at u,v: {0}, {1}'.format(u,v))
+            # most likely the curvature is just out of bounds...
+            # move it a little close to the center of the surface...
+            tol = 1e-2
+
+            print 'trying to fix shit...'
+
+            domain = self.instance.domain()
+            if u in domain:
+                uorv = 'u'
+            elif v in domain:
+                uorv = 'v'
+            else:
+                raise ValueError('no curvature defined while sample does not lie on border...')
+
+            if uorv is not None:
+                indx = domain.index(u) if uorv == 'u' else domain.index(v)
+                if indx in (1,3): # v
+                    v = v + tol if indx == 1 else v - tol
+                else:
+                    u = u + tol if indx == 0 else u - tol
+                print 'hopefully fixed it?'
+                if not recurse:
+                    self.tangent(u,v, True)
+                else:
+                    return None
 
     def radius(self, u, v ):
         '''returns the radius at u
@@ -102,7 +139,7 @@ class DiffGeomSurface(object):
         '''returns continuity between self and another surface
         '''
         # add dictionary mapping which G / C continuity it is...
-        return self.srf.Continuity()
+        return self.surface.Continuity()
 
 #===============================================================================
 #    Surface.dress_up
@@ -161,115 +198,104 @@ class IntersectSurface(object):
             return uvw, bics.Point(), bics.Face(), bics.Transition()
 
 
-class Face(object):
+class Face(KbeObject):
     """high level surface API
     object is a Face iff part of a Solid
     otherwise the same methods do apply, apart from the topology obviously
     """
-
-    def show(self, update=False):
-        Display().display.DisplayShape(self.face)
-
-    def check(self):
-        '''
-        interesting for valdating the state of self
-        '''
-        from OCC.BRepCheck import BRepCheck_Face
-        bcf = BRepCheck_Face(self.face)
-        return bcf
-
-    def domain(self):
-        '''returns the u,v domain of the curve'''
-        from OCC.BRepTools import BRepTools
-        return BRepTools.UVBounds(self.face)
-
     def __init__(self, face):
         '''
         '''
-        self.face = face
-        # utility classes
+        from OCC.TopoDS import  TopoDS_Face
+        KbeObject.__init__(self, name='face')
+        self._topo_type = TopoDS_Face
+        self.topo = face
+
+
         # cooperative classes
-        #from OCC.KBE.base import GlobalProperties
-        #self.global_properties = GlobalProperties(self)
-
-        from OCC.TopLoc import TopLoc_Location
-        self.location = TopLoc_Location()
-
-        from OCC.BRep import  BRep_Tool
-        # TODO: refactor; these should be non-public attr's
-        self.h_srf = BRep_Tool_Surface(face, self.location)
-        #self.h_srf.Transform(self.location.Transformation())
-        self.srf = self.h_srf.GetObject()
+        self.global_properties = GlobalProperties(self)
         self.diff_geom = DiffGeomSurface(self)
 
         # STATE; whether cooperative classes are yet initialized
         self._curvature_initiated = False
         self._geometry_lookup_init = False
 
-    def adaptor(self, handle=False):
-        if not handle:
-            if hasattr(self, '_adapter'):
-                return self._adaptor
-            else:
-                if hasattr(self, '_h_adapter'):
-                    return self._h_adaptor
+        self._h_srf           = None
+        self._srf             = None
+        self._adaptor         = None
+        self._adaptor_handle  = None
+        self._classify_uv     = None # cache the u,v classifier, no need to rebuild for every sample
+
+        # aliasing of useful methods
+        self.is_u_periodic = self.adaptor.IsUPeriodic
+        self.is_v_periodic = self.adaptor.IsVPeriodic
+        self.is_u_closed   = self.adaptor.IsUClosed
+        self.is_v_closed   = self.adaptor.IsVClosed
+        self.is_u_rational = self.adaptor.IsURational
+        self.is_u_rational = self.adaptor.IsVRational
+        self.u_degree       = self.adaptor.UDegree
+        self.v_degree       = self.adaptor.VDegree
+        self.u_continuity   = self.adaptor.UContinuity
+        self.v_continuity   = self.adaptor.VContinuity
+
+        # meh, RuntimeError...
+        self.nb_u_knots     = self.adaptor.NbUKnots
+        self.nb_v_knots     = self.adaptor.NbVKnots
+        self.nb_u_poles     = self.adaptor.NbUPoles
+        self.nb_v_poles     = self.adaptor.NbVPoles
+
+    def show(self, *args, **kwargs):
+        # TODO: factor out once inheriting from KbeObject
+        Display()(self.topo, *args, **kwargs)
+
+    def check(self):
+        '''
+        interesting for valdating the state of self
+        '''
+        from OCC.BRepCheck import BRepCheck_Face
+        bcf = BRepCheck_Face(self.topo)
+        return bcf
+
+    def domain(self):
+        '''returns the u,v domain of the curve'''
+        from OCC.BRepTools import BRepTools
+        return BRepTools.UVBounds(self.topo)
+
+    @property
+    def surface(self):
+        if self._srf is not None and not self.is_dirty:
+            pass
+        else:
+            self._h_srf = BRep_Tool_Surface(self.topo)
+            self._srf = self._h_srf.GetObject()
+        return self._srf
+
+    @property
+    def surface_handle(self):
+        if self._h_srf is not None and not self.is_dirty:
+            pass
+        else:
+            self.surface
+        return self._h_srf
+
+    @property
+    def adaptor(self):
+        if self._adaptor is not None and not self.is_dirty:
+            pass
         else:
             from OCC.BRepAdaptor import BRepAdaptor_Surface, BRepAdaptor_HSurface
-            self._adaptor = BRepAdaptor_Surface(self.face)
-            self._h_adaptor = BRepAdaptor_HSurface()
-            self._h_adaptor.Set(self._adaptor)
+            self._adaptor = BRepAdaptor_Surface(self.topo)
+            self._adaptor_handle = BRepAdaptor_HSurface()
+            self._adaptor_handle.Set(self._adaptor)
+        return self._adaptor
 
-            if not handle:
-                return self._adaptor
-            else:
-                return self._h_adaptor.GetHandle()
-
-    def global_properties(self):
-        '''
-        computes the global properties of the face
-        these include:
-
-        * CentreOfMass
-        * PrincipleProperties
-        * MomentOfInertia
-        * MatrixOfInertia
-        * StaticMoments
-        * RadiusOfGyration
-        '''
-        from OCC.GProp import GProp_GProps
-        from OCC.BRepGProp import BRepGProp
-        system = GProp_GProps()
-        BRepGProp().SurfaceProperties(self.face, system)
-        return system
-
-    def distance(self, other, extrema=False):
-        '''returns the distance self with a point, curve, edge, face, solid
-
-        other can be:
-            point
-            edge
-            face
-            surface
-
-        returns an iterator looping over the solutions
-        returns [shapeOnSelf, shapeOnOther, distance]
-
-        if extrema: return the BRepExtrema_DistShapeShape object rather than an iterator
-        '''
-        from OCC.BRepExtrema import BRepExtrema_DistShapeShape
-        if isinstance(other, TopoDS_Shape):
-            dss = BRepExtrema_DistShapeShape(self.face, other)
-            dss.Perform()
-            if extrema:
-                yield dss
-
-            else:
-                if dss.IsDone():
-                    for i in range(dss.NbSolution()):
-                        yield (dss.SupportOnShape1(i),
-                               dss.SupportOnShape2(i),
-                               dss.Value(i)
-                               )
+    @property
+    def adaptor_handle(self):
+        if self._adaptor_handle is not None and not self.is_dirty:
+            pass
+        else:
+            self.adaptor
+        return self._adaptor_handle
 
     def weight(self, indx):
         '''sets or gets the weight of a control point at the index
@@ -280,58 +306,51 @@ class Face(object):
 
         raise NotImplementedError
 
-    def tangency(self, u, vector=None):
-        '''sets or gets ( iff vector ) the tangency at the u parameter
-        '''
-        raise NotImplementedError
-
-    def is_closed(self):
-        '''kbe_test if curve is closed
-        '''
-        raise NotImplementedError
-
     def close(self):
         '''if possible, close self'''
         raise NotImplementedError
 
-    def control_point(self, indx, pt=None):
-        '''gets or sets the coordinate of the control point
-        '''
-        raise NotImplementedError
-
-    def number_of_control_points(self):
-        '''n control points
-        '''
-        raise NotImplementedError
-
+    @property
     def type(self):
-        '''returns edge, wire, curve
-        determines whether the curve is part of a topology
-        '''
-        raise NotImplementedError
+        return 'face'
 
     def kind(self):
         if not self._geometry_lookup_init:
             self._geometry_lookup = GeometryTypeLookup()
             self._geometry_lookup_init = True
-        return self._geometry_lookup[self.face]
+        return self._geometry_lookup[self.topo]
 
-    def copy(self):
-        from OCC.BRepBuilderAPI import BRepBuilderAPI_Copy
-        cp = BRepBuilderAPI_Copy(self.face)
-        cp.Perform()
-        # should return a new instance of self
-        return cp.Shape()
-
-    def is_closed(self, uOrV):
+    def is_closed(self):
         from OCC.ShapeAnalysis import ShapeAnalysis_Surface
-        sa = ShapeAnalysis_Surface(self.srf)
+        sa = ShapeAnalysis_Surface(self.surface_handle)
+        sa.GetBoxUF()
         return sa.IsUClosed(), sa.IsVClosed()
+
+    def is_planar(self):
+        '''checks if the surface is planar within a tolerance
+        :return: bool, gp_Pln
+        '''
+        aaa = GeomLib_IsPlanarSurface(self.surface_handle, self.tolerance)
+        if aaa.IsPlanar():
+            return aaa.IsPlanar(), aaa.Plan()
+        else:
+            return aaa.IsPlanar(), None
+
+    def on_trimmed(self, u, v):
+        '''tests whether the surface at the u,v parameter has been trimmed
+        '''
+        if self._classify_uv is None:
+            self._classify_uv  = BRepTopAdaptor_FClass2d(self.topo, 1e-9)
+        uv  = gp_Pnt2d(u,v)
+        if self._classify_uv.Perform(uv) == TopAbs_IN:
+            return True
+        else:
+            return False
 
     def parameter_to_point(self, u, v):
         '''returns the coordinate at u,v
         '''
-        return self.srf.Value(u,v)
+        return self.surface.Value(u,v)
 
     def point_to_parameter(self, pt):
         '''
@@ -339,8 +358,8 @@ class Face(object):
         @param pt:
         '''
         from OCC.ShapeAnalysis import ShapeAnalysis_Surface
-        sas = ShapeAnalysis_Surface(self.h_srf)
-        uv  = sas.ValueOfUV(pt, 1e-7)
+        sas = ShapeAnalysis_Surface(self.surface_handle)
+        uv  = sas.ValueOfUV(pt, self.tolerance)
         return uv.Coord()
 
     def transform(self, transform):
@@ -366,7 +385,7 @@ class Face(object):
 
         elif isinstance(other, TopoDS_Vertex):
             pt = BRep_Tool.Pnt(other)
-            proj = GeomAPI_ProjectPointOnSurf(pt, self.h_srf)
+            proj = GeomAPI_ProjectPointOnSurf(pt, self.surface_handle)
             # SHOULD USE THIS!!!
             #proj.LowerDistanceParameters()
             ext = proj.Extrema()
@@ -377,7 +396,7 @@ class Face(object):
             pt = result.Value()
             return uv, pt
 
-    def project_curve(self):
+    def project_curve(self, other):
         # this way Geom_Circle and alike are valid too
         if isinstance(other, TopoDS_Edge) or\
              isinstance(other, Geom_Curve)  or\
@@ -389,7 +408,20 @@ class Face(object):
                     other = BRep_Tool.Curve(other, lbound, ubound).GetObject()
 
                 from OCC.GeomProjLib import GeomProjLib
-                return GeomProjLib().Project(other, self.h_srf)
+                return GeomProjLib().Project(other, self.surface_handle)
 
     def project_edge(self, edg):
         return self.project_cur
+
+    def Edges(self):
+        return [Edge(i) for i in Topo(self.topo).edges()]
+
+if __name__ == "__main__":
+
+    from OCC.BRepPrimAPI import BRepPrimAPI_MakeSphere
+    sph = BRepPrimAPI_MakeSphere(1,1).Face()
+    fc = Face(sph)
+    import ipdb; ipdb.set_trace()
+
+
+

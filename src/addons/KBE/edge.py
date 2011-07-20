@@ -3,11 +3,13 @@ from OCC.BRep import BRep_Tool
 from OCC.BRepAdaptor import BRepAdaptor_Curve
 from OCC.GCPnts import GCPnts_AbscissaPoint, GCPnts_UniformAbscissa
 from OCC.Geom import Geom_OffsetCurve, Geom_Curve, Geom_TrimmedCurve
+from OCC.KBE.base import KbeObject
+from OCC.TopExp import TopExp
 from OCC.TopoDS import TopoDS_Wire, TopoDS_Edge, TopoDS_Face, TopoDS_Vertex
 from OCC.gp import *
 # high-level
 from OCC.Utils.Common import vertex2pnt, minimum_distance, to_adaptor_3d
-from OCC.Utils.Construct import make_edge, trim_wire
+from OCC.Utils.Construct import make_edge, trim_wire, fix_continuity
 from OCC.Utils.Context import assert_isdone
 from OCC.KBE.kbe_vertex import Vertex
 
@@ -26,28 +28,12 @@ class IntersectCurve(object):
 class DiffGeomCurve(object):
     def __init__(self, instance):
         self.instance = instance
-        from OCC.GeomLProp import GeomLProp_CLProps
         from OCC.BRepLProp import BRepLProp_CLProps
         # initialize with random parameter: 0
-        if self.instance.is_edge:
-            self._curvature = BRepLProp_CLProps(self.instance.brep_adaptor, 0, 2, 1e-5)
-#            self.instance.brep_adaptor, 0, 1e-12
-#            self._curvature.SetParameter(0)
-
-        elif self.instance.is_wire:
-            warnings.warn('DiffGeom not yet implemented for Wire')
-            self._curvature = None
-
-        else:
-            self._curvature = GeomLProp_CLProps(self.instance.crv_handle, 0, 2, 1e-5)
+        self._curvature = BRepLProp_CLProps(self.instance.adaptor, 0, 2, self.instance.tolerance)
 
     def curvature(self, u, n, resolution=1e-7):
-        from OCC.GeomLProp import GeomLProp_CLProps
-        if not self._curvature_init:
-            self._curvature = GeomLProp_CLProps(self.crv, u, n, resolution)
-            self._curvature_init=True
-        else:
-            self._curvature.SetParameter(u)
+        self._curvature.SetParameter(u)
 
     def radius(self, u):
         '''returns the radius at u
@@ -135,48 +121,25 @@ class ConstructFromCurve():
             from OCC.Approx import Approx_CurveOnSurface
             pass
 
-class Edge(object):
+class Edge(KbeObject):
+    '''
     '''
 
-    DEALS WITH E*D*G*E*S ___only___
-
-    otherwise this is becoming a total nightmare!!!
-    get rid of crv nonsense...
-
-    '''
-
-
-
-    """Design for a high level API for Curves in PythonOCC
-    To be implemented as a GSoC project!
-    """
-
-    def __init__(self, crv, tolerance=1e-7):
+    def __init__(self, edge):
         '''
-        There are *tons* of object that could be used to instantiate from...
-        Such as:
-        Geom_Circle, Geom_BezierCurve, Geom_BSplineCurve, Geom_Conic
-        Which are high level geometric objects that can be cast in Bsplines
-
-        In the end most of them would inherit CHECK...
-
-        Comes down to Adaptor3d_Curve or Geom_Curve
-
-
         '''
-        self.tolerance = tolerance
-        self.is_edge = True
+        assert isinstance(edge, TopoDS_Edge), 'need a TopoDS_Edge, got a %s'% edge.__class__
+        KbeObject.__init__(self, 'edge')
+        self._topo_type = TopoDS_Edge
+        self.topo = edge
 
-        if isinstance(crv, TopoDS_Edge):
-            # TODO: should be property
-            self.brep_adaptor = BRepAdaptor_Curve(crv)
-            self.is_edge = True
-            self.brep = crv
-            self.crv_handle = BRep_Tool().Curve(crv)[0]
-            self.crv = self.crv_handle.GetObject()
-        
-        else:
-            raise TypeError, 'only accepts TopoDS_Edge as input... \nGot a %s' % ( self.crv.__class__ )
+        # STATE; whether cooperative classes are initialized
+        self._local_properties_init    = False
+        self._curvature_init           = False
+        self._geometry_lookup_init     = False
+        self._curve_handle = None
+        self._curve = None
+        self._adaptor = None
 
         # instantiating cooperative classes
         self.diff_geom = DiffGeomCurve(self)
@@ -188,48 +151,49 @@ class Edge(object):
         self._curvature = None
         self._local_properties()
 
-        # STATE; whether cooperative classes are initialized
-        self._local_properties_init    = False
-        self._curvature_init           = False
-        self._geometry_lookup_init     = False
+        # some aliasing of useful methods
+        self.is_closed      = self.adaptor.IsClosed
+        self.is_periodic    = self.adaptor.IsPeriodic
+        self.is_rational    = self.adaptor.IsRational
+        self.continuity     = self.adaptor.Continuity
+        self.degree         = self.adaptor.Degree
+        self.nb_knots       = self.adaptor.NbKnots
+        self.nb_poles       = self.adaptor.NbPoles
+
+
+    @property
+    def curve(self):
+        if self._curve is not None and not self.is_dirty:
+            pass
+        else:
+            self._curve_handle  = BRep_Tool().Curve(self.topo)[0]
+            self._curve = self._curve_handle.GetObject()
+        return self._curve
+
+    @property
+    def curve_handle(self):
+        if self._curve_handle is not None and not self.is_dirty:
+            pass
+        else:
+            self.curve
+        return self._curve_handle
+
+    @property
+    def adaptor(self):
+        if self._adaptor is not None and not self.is_dirty:
+            pass
+        else:
+            self._adaptor = BRepAdaptor_Curve(self.topo)
+        return self._adaptor
 
     def _local_properties(self):
         from OCC.GeomLProp import GeomLProp_CurveTool
         self._lprops_curve_tool = GeomLProp_CurveTool()
         self._local_properties_init = True
 
-    def _convert(self, crv):
-        '''
-        we could accept gp_* primitives and convert 'em here...
-        @param crv: the object to be converted
-        '''
-        pass
-
-
-
-#    def _subclass(self):
-#        '''
-#        return from which class self.crv inherts
-#        '''
-#        if issubclass(self.crv, ):
-#            return Geom_Curve
-#        elif issubclass(self.crv, Geom_Conic):
-#            return Geom
-#
-#        def subClassed(crv, _class):
-#            if issubclass(crv, _class):
-#                return _class
-#
-#
-#        _classes_to_check = [Geom_Curve, Geom_Conic]
-#        for i in _classes_to_check:
-#            subClassed(self.crv,i)
-#        else:
-#            raise AssertionError, 'self.crv is none of ', _classes_to_check
-
     def domain(self):
         '''returns the u,v domain of the curve'''
-        return self.brep_adaptor.FirstParameter(), self.brep_adaptor.LastParameter()
+        return self.adaptor.FirstParameter(), self.adaptor.LastParameter()
 
     def project( self, other ):
         '''projects self with a point, curve, edge, face, solid
@@ -241,36 +205,20 @@ class Edge(object):
 #    Curve.global_properties
 #===============================================================================
 
-    def _global_properties(self):
-        from OCC.GProp import GProp_GProps
-        from OCC.BRepGProp import BRepGProp
-        # also for inertia, centre_of_mass
-        system = GProp_GProps()
-        if self.is_brep:
-            props  = BRepGProp().LinearProperties(self.brep, system)
-            return system
-        else:
-            raise NotImplementedError('no global properties for non brep geometry yet')
-
     def length(self, lbound=None, ubound=None, tolerance=1e-5):
         '''returns the curve length
         if either lbound | ubound | both are given, than the lenght of the curve will be measured
         over that interval
         '''
         _min, _max = self.domain()
-        if _min < self.brep_adaptor.FirstParameter():
-            raise ValueError('the lbound argument is lower than the first parameter of the curve: %s ' % (self.brep_adaptor.FirstParameter()))
-        if _max > self.brep_adaptor.LastParameter():
-            raise ValueError('the ubound argument is greater than the last parameter of the curve: %s ' % (self.brep_adaptor.LastParameter()))
+        if _min < self.adaptor.FirstParameter():
+            raise ValueError('the lbound argument is lower than the first parameter of the curve: %s ' % (self.adaptor.FirstParameter()))
+        if _max > self.adaptor.LastParameter():
+            raise ValueError('the ubound argument is greater than the last parameter of the curve: %s ' % (self.adaptor.LastParameter()))
 
         lbound = _min if lbound is None else lbound
         ubound = _max if ubound is None else ubound
-        return GCPnts_AbscissaPoint().Length(self.brep_adaptor, lbound, ubound, tolerance)
-
-    def inertia(self):
-        system = self._global_properties()
-        return system.MatrixOfInertia(), system.MomentOfInertia()
-
+        return GCPnts_AbscissaPoint().Length(self.adaptor, lbound, ubound, tolerance)
 
 #===============================================================================
 #    Curve.modify
@@ -287,21 +235,21 @@ class Edge(object):
 #        else:
 #            warnings.warn('the wire to be trimmed is not closed, hence cannot be made periodic')
         a,b = sorted([lbound,ubound])
-        tr = Geom_TrimmedCurve(self.brep_adaptor.Curve().Curve(), a,b).GetHandle()
+        tr = Geom_TrimmedCurve(self.adaptor.Curve().Curve(), a,b).GetHandle()
         return Edge(make_edge(tr))
 
     def extend_by_point(self, pnt, degree=3, beginning=True):
         '''extends the curve to point
 
-        does not extend if the degree of self.crv > 3
+        does not extend if the degree of self.curve > 3
         @param pnt:
         @param degree:
         @param beginning:
         '''
         if self.degree > 3:
-            raise ValueError, 'to extend you self.crv should be <= 3, is %s ' % (self.degree)
+            raise ValueError, 'to extend you self.curve should be <= 3, is %s ' % (self.degree)
         from OCC.GeomLib import GeomLib
-        return GeomLib().ExtendCurveToPoint(self.crv, pnt, degree, beginning)
+        return GeomLib().ExtendCurveToPoint(self.curve, pnt, degree, beginning)
 
 #===============================================================================
 #    Curve.
@@ -317,7 +265,7 @@ class Edge(object):
             pnt = vertex2pnt(pnt_or_vertex)
 
         from OCC.GeomAPI import GeomAPI_ProjectPointOnCurve
-        poc = GeomAPI_ProjectPointOnCurve(pnt_or_vertex, self.crv_handle)
+        poc = GeomAPI_ProjectPointOnCurve(pnt_or_vertex, self.curve_handle)
         return poc.LowerDistanceParameter(), poc.NearestPoint()
 
     def distance_on_curve(self, distance, close_parameter, estimate_parameter, check_seam=True):
@@ -326,40 +274,14 @@ class Edge(object):
         raises OutOfBoundary if no such parameter exists
         '''
         from OCC.GCPnts import GCPnts_AbscissaPoint
-
-        #===============================================================================
-        # check if we're close to the seam
-        # close means that `distance` is
-        # if so, set the seam of the brep_adaptor to the middle of the curve
-        #===============================================================================
-
-#        HAS_SEAM_CHANGED = False
-#        _min, _max = self.domain()
-#        print 'close_parameter, estimate_parameter',close_parameter, estimate_parameter
-#        import ipdb; ipdb.set_trace()
-#        trim_crv_start = Geom_TrimmedCurve( self.crv_handle, _min, close_parameter)
-#        trim_crv_end   = Geom_TrimmedCurve( self.crv_handle, close_parameter, _max)
-#        length_min = Curve(make_edge(trim_crv_start.GetHandle())).length()
-#        length_max = Curve(make_edge(trim_crv_end.GetHandle())).length()
-#        if length_max < abs(distance) or length_min < abs(distance):
-            # gotta set the seam somewhere else...
-#            raise ValueError, 'distance greater than the parametric range!!!'
-#            print 'distance greater than the parametric range!!!'
-#            bsp = self.brep_adaptor.BSpline().GetObject()
-#            _mid = (_min+_max) / 2.
-#            bsp.SetOrigin(_mid, 1e-5)
-#            '''
-#            not sure if this helps, or if it simply places the problem somewhere else
-#            '''
-
-        ccc = GCPnts_AbscissaPoint(self.brep_adaptor, distance, close_parameter, estimate_parameter, 1e-5)
+        ccc = GCPnts_AbscissaPoint(self.adaptor, distance, close_parameter, estimate_parameter, 1e-5)
         with assert_isdone(ccc, 'couldnt compute distance on curve'):
             return ccc.Parameter()
 
     def mid_point(self):
         _min, _max = self.domain()
         _mid = (_min+_max) / 2.
-        return self.brep_adaptor.Value(_mid)
+        return self.adaptor.Value(_mid)
 
     def divide_by_number_of_points(self, n_pts, lbound=None, ubound=None):
         '''returns a nested list of parameters and points on the edge
@@ -371,12 +293,12 @@ class Edge(object):
         elif ubound:
             _ubound = ubound
 
-        npts = GCPnts_UniformAbscissa(self.brep_adaptor, n_pts, _lbound, _ubound)
+        npts = GCPnts_UniformAbscissa(self.adaptor, n_pts, _lbound, _ubound)
         if npts.IsDone():
             tmp = []
             for i in xrange(1,npts.NbPoints()+1):
                 param = npts.Parameter(i)
-                pnt = self.brep_adaptor.Value(param)
+                pnt = self.adaptor.Value(param)
                 tmp.append((param, pnt))
             return tmp
         else:
@@ -393,7 +315,7 @@ class Edge(object):
     def weight(self, indx):
         '''descriptor sets or gets the weight of a control point at the index
         '''
-        #TODO self.crv has to be generalized to a bspline for this...
+        #TODO self.curve has to be generalized to a bspline for this...
         raise NotImplementedError
 
     def control_pt_coord(self, indx):
@@ -406,21 +328,16 @@ class Edge(object):
         '''descriptor setting or getting the coordinate of a control point at indx'''
         raise NotImplementedError
 
-    @property
-    def is_closed(self):
-        '''kbe_test if curve is closed
-        '''
-        return self.brep_adaptor.IsClosed()
 
 #    @property
 #    def periodic(self):
-#        return self.brep_adaptor.IsPeriodic()
+#        return self.adaptor.IsPeriodic()
 #
 #    @periodic.setter
 #    def periodic(self, _bool):
 #        _bool = bool(_bool)
 #        if self.is_closed:
-#            self.brep_adaptor.BSpline()
+#            self.adaptor.BSpline()
 #        else:
 #            raise warnings.warn('cannot set periodicity on a non-closed edge')
 
@@ -429,63 +346,30 @@ class Edge(object):
         '''
         raise NotImplementedError
 
-    def size_of_control_points(self):
-        '''n control points
-        '''
-        raise NotImplementedError
+    def __eq__(self, other):
+        # KbeObject
+        return self.brep.IsEqual(other)
 
+    @property
     def type(self):
         '''returns edge, wire, curve
         determines whether the curve is part of a topology
         '''
-        raise NotImplementedError
+        return 'edge'
 
     def kind(self):
         if not self._geometry_lookup_init:
             self._geometry_lookup = GeometryTypeLookup()
             self._geometry_lookup_init = True
-        return self._geometry_lookup[self.crv]
-
-#===============================================================================
-#    Curve.topology
-#    Follows the CGAL Polyhedron API
-#    Mimicking a halfedge topology
-#     See: http://www.cgal.org/Manual/3.4/doc_html/cgal_manual/HalfedgeDS/Chapter_main.html
-#===============================================================================
+        return self._geometry_lookup[self.curve]
 
 
-    def next_edge(self):
-        '''returns the next ( ordered! ) edge iff self is edge
-        '''
-        raise NotImplementedError
+    def first_vertex(self):
+        # TODO: should return Vertex, not TopoDS_Vertex
+        return TopExp.FirstVertex(self.topo)
 
-    def prev_edge(self):
-        '''returns the previous ( ordered! ) edge iff self is edge
-        '''
-        raise NotImplementedError
-
-    def opposite_edge(self):
-        '''returns the opposite edge
-        which is the edge shared by the two faces, similar to self
-        but in the opposite direction
-        '''
-        raise NotImplementedError
-
-    def vertex(self):
-        '''returns the vertex in the direction of the edge
-        use opposite_edge().vertex() to get the opposite vertex of this edge
-        '''
-        raise NotImplementedError
-
-    def face(self):
-        '''returns the face of which the edge is part of
-        '''
-        raise NotImplementedError
-
-    def edge_degree(self):
-        '''returns the number of edges coming incident to self'''
-        raise NotImplementedError
-
+    def last_vertex(self):
+        return TopExp.LastVertex(self.topo)
 
 #===============================================================================
 #    Curve.
@@ -494,7 +378,7 @@ class Edge(object):
     def parameter_to_point(self, u):
         '''returns the coordinate at parameter u
         '''
-        return Vertex(*self.brep_adaptor.Value(u).Coord())
+        return Vertex(*self.adaptor.Value(u).Coord())
 
     def point_to_parameter(self, coord):
         '''returns the parameters / pnt on edge at world coordinate `coord`
@@ -506,15 +390,17 @@ class Edge(object):
         '''
         raise NotImplementedError
 
-    def continuity(self):
-        return self.brep_adaptor.Continuity()
+    def fix_continuity(self, continuity):
+        """
+        splits an edge to achieve a level of continuity
+        :param continuity: GeomAbs_C*
+        """
+        return fix_continuity(self.topo, continuity)
 
     def continuity_to_another_curve(self, other):
         '''returns continuity between self and another curve
         '''
-        return self._lprops_curve_tool(self.crv)
-
-
+        return self._lprops_curve_tool(self.curve)
 
 #===============================================================================
 #    Curve.loop

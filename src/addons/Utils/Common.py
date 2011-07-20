@@ -260,14 +260,16 @@ def random_vec():
 def random_colored_material_aspect():
     from OCC import Graphic3d
     import random
-    asp = Graphic3d.Graphic3d_MaterialAspect()
-    cc = asp.Color()
+    #asp = Graphic3d.Graphic3d_MaterialAspect()
+    #cc = asp.Color()
     
-    #clrs = [ i for i in dir(Graphic3d) if i.startswith('Graphic3d_NOM_') ]
-    red, green, blue, opacity = random.uniform(0,1),random.uniform(0,1),random.uniform(0,1), random.uniform(0,1)
-    cc.SetValues(red,green,blue, Quantity_TOC_RGB)
-    #return Graphic3d.Graphic3d_MaterialAspect(getattr(Graphic3d, random.sample(clrs, 1)[0]))
-    return asp 
+    clrs = [ i for i in dir(Graphic3d) if i.startswith('Graphic3d_NOM_') ]
+    #red, green, blue, opacity = random.uniform(0,1),random.uniform(0,1),random.uniform(0,1), random.uniform(0,1)
+    #cc.SetValues(red,green,blue, Quantity_TOC_RGB)
+    color = random.sample(clrs, 1)[0]
+    print 'color', color
+    return Graphic3d.Graphic3d_MaterialAspect(getattr(Graphic3d, color))
+    #return asp
 
 
 #===============================================================================

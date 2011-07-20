@@ -18,7 +18,7 @@ class TestEdge_Line:
         eq_((0.0, 1.0),domain)
 
     def test_param2pnt(self):
-        print self.edg.crv
+        print self.edg.curve
         pnt = self.edg.parameter_to_point(0.0)
         eq_(pnt.Coord(),(0,0,0))
 
@@ -43,6 +43,16 @@ class TestEdge_Line:
         trimmed = self.edg.trim(param1, param2)
         eq_(trimmed.domain(), (0.33333333333333331, 0.66666666666666663))
 
+    def test_first_last_vertex(self):
+        # TODO: should return KBE.Vertex, now just a TopoDS_Vertex
+        v1 = self.edg.first_vertex()
+        v2 = self.edg.last_vertex()
+        #import ipdb; ipdb.set_trace()
+
+    def test_periodic_rational_closed(self):
+        eq_(self.edg.is_periodic(), 0)
+        eq_(self.edg.is_rational(), 0)
+        eq_(self.edg.is_closed(), 0)
 
 
 

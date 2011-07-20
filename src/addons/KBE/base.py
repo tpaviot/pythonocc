@@ -42,10 +42,7 @@ from OCC.GCPnts import *
 # HELPER CLASSES
 #===============================================================================
 from types_lut import GeometryLookup, ShapeToTopology
-from OCC.Utils.Context import assert_isdone
 from OCC.Utils.Construct import *
-from OCC.Geom import *
-import warnings
 
 #===============================================================================
 # DISPLAY
@@ -72,8 +69,10 @@ class KbeObject(object):
     def __init__(self, name=None):
         """Constructor for KbeObject"""
         self.name = name
-        self._dirty = True
+        self._dirty = False
         self._topods = None
+        self._topo_type = None # defined in concrete class __init__ method
+        self.tolerance = 1e-7
 
     @property
     def is_dirty(self):
@@ -88,99 +87,84 @@ class KbeObject(object):
     def topo(self):
         '''return the TopoDS_* object
 
-        updates when dirty'''
-        
+        updates when dirty
+
+        the setter is implemented in the concrete classes
+
+        '''
         if self.is_dirty:
             self.build()
         return self._topods
-    
+
+    @topo.setter
+    def topo(self, topods):
+        assert not type(topods) == None, 'you forgot to set a TopoDS_* type in the __init__ of your concrete class'
+        assert type(topods) == self._topo_type, 'expected a shell, got {0}'.format(topods)
+        self._topods = topods
+
+    def copy(self):
+        """
+
+        :return:
+        """
+        from OCC.BRepBuilderAPI import BRepBuilderAPI_Copy
+        cp = BRepBuilderAPI_Copy(self.topo)
+        cp.Perform(self.topo)
+        return ShapeToTopology()(cp.Shape())
+
+    def distance(self, other):
+        '''
+        return the minimum distance
+
+         :return: minimum distance,
+             minimum distance points on shp1
+             minimum distance points on shp2
+        '''
+        if hasattr(other, 'topo'):
+            return minimum_distance(self.topo, other.topo)
+        else:
+            return minimum_distance(self.topo, other)
+
+    def show( self, *args, **kwargs):
+        """
+        renders the topological entity in the viewer
+
+        :param update: redraw the scene or not
+        """
+        Display()(self.topo, *args, **kwargs)
+
     def build(self):
         if self.name.startswith('Vertex'):
-            self._topods = make_vertex(self)
+            self.topo = make_vertex(self)
 
-#===============================================================================
-#    Surface.topology
-#     DONE! Just call Topology.py
-#===============================================================================
-
-class TopologySurface(object):
-    def __init__(self, instance):
-        '''
-
-        @param instance:
-        '''
-        self.Instance = instance
-
-#===============================================================================
-#    Iterators...
-#===============================================================================
-
-    def iter_control_points(self):
-        '''iterator over the control points
-        '''
-        raise NotImplementedError
-
-    def iter_weights(self):
-        '''iterator over the weights
-        '''
-        raise NotImplementedError
-
-    def is_planar(self, tolerance=None):
-        '''checks if the surface is planar within a tolerance
-        '''
-        aaa = GeomLib_IsPlanarSurface(self.srf)
-        return aaa.IsPlanar(), aaa.Plan()
-
-    def on_surface(self, coord):
-        '''checks whether a coordinate lies on the  surface
-        '''
-        raise NotImplementedError
-
-
-    def on_edge(self, u, v):
-        '''checks if the parameter lies on the edge of a face
-        '''
-        raise NotImplementedError
-
-    def is_trimmed(self):
-        '''checks if curve is trimmed
-        '''
-        from OCC.BRepTopAdaptor import BRepTopAdaptor_FClass2d
-        from OCC.BRepTools import BRepTools
-        tol = 1e-4
-        uv  = gp_Pnt2d(u,v)
-        u1,u2, v1,v2 = BRepTools().UVBounds(face)
-        dailen = (u2-u1)*(u2-u1) + (v2-v1)*(v2-v1)
-        dailen = math.sqrt(dailen) / 400.
-        tol = max([dailen, tol])
-        cl = BRepTopAdaptor_FClass2d(face, tol)
-        if cl.Perform(uv) == TopAbs_IN:
-            return True
-        else:
-            return False
-
-
-    def coordinate_from_parameter(self, u, v, transformed=True):
-        '''world coordinate at a given parameter on the surface
-        if transformed, apply the OCC Location transformation
-        '''
-
-    def tesselation(self, angle):
-        '''descriptor of the parameter controlling the precision of the tesselation
-        '''
-        raise NotImplementedError
-
-#===============================================================================
-#    Surface.global_properties
-#===============================================================================
+    def __eq__(self, other):
+        return self.topo.IsEqual(other)
 
 class GlobalProperties(object):
+    '''
+    global properties for all topologies
+    '''
     def __init__(self, instance):
         from OCC.GProp import GProp_GProps
         from OCC.BRepGProp import BRepGProp
         self.instance = instance
         self.system = GProp_GProps()
-        BRepGProp().SurfaceProperties(self.instance.face, self.system)
+        _topo_type = self.instance.type
+
+        if _topo_type == 'face' or _topo_type == 'shell':
+            BRepGProp().SurfaceProperties(self.instance.topo, self.system)
+
+        elif _topo_type == 'edge':
+            BRepGProp().LinearProperties(self.instance.topo, self.system)
+
+        elif _topo_type == 'solid':
+            BRepGProp().VolumeProperties(self.instance.topo, self.system)
+
+    def centre(self):
+        """
+        :return: centre of the entity
+        """
+        return self.system.CentreOfMass()
 
     def inertia(self):
         '''returns the inertia matrix'''
@@ -194,11 +178,4 @@ class GlobalProperties(object):
         '''
         returns the bounding box of the face
         '''
-        pass
-
-    def global_properties(self):
-        from OCC.BRepGProp import BRepGProp
-#        from OCC.GProp import *
-        prop = BRepGProp()
-        pass
-
+        return get_boundingbox(self.instance.topo)
