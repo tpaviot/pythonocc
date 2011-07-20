@@ -7,6 +7,34 @@ vertex  = make_vertex( gp_Pnt() )
 lineA   = make_line( gp_Pnt(-1,0,0), gp_Pnt(1,0,0) )
 lineB   = make_line( gp_Pnt(0,-1,0), gp_Pnt(0,1,0) )
 
+from itertools import count
+
+cntr = count()
+
+
+
+#GEOM_Object::GEOM_Object(TDF_Label& theEntry, int theType)
+#: _label(theEntry), _ior(""), _docID(-1)
+#{
+#  Handle(TDocStd_Document) aDoc = TDocStd_Owner::GetDocument(_label.Data());
+#  if(!aDoc.IsNull()) {
+#    Handle(TDataStd_Integer) anID;
+#    if(aDoc->Main().FindAttribute(TDataStd_Integer::GetID(), anID)) _docID = anID->Get();
+#  }
+#
+#  theEntry.ForgetAllAttributes(Standard_True);
+#
+#  if(!theEntry.FindAttribute(TDataStd_TreeNode::GetDefaultTreeID(), _root))
+#    _root = TDataStd_TreeNode::Set(theEntry);
+#
+#  TDataStd_Integer::Set(theEntry.FindChild(TYPE_LABEL), theType);
+#
+#  TDataStd_UAttribute::Set(theEntry, GetObjectID());
+#}
+
+
+
+
 def geomobject_from_topods(topods, pmc):
     """
     returns a GEOM_Object that contains a TopoDS_Shape
@@ -15,20 +43,54 @@ def geomobject_from_topods(topods, pmc):
     :return:        a GEOM_Object that contains :topods:
     """
     # creates a GEOM_Object in the appropriate context
-    geomobject = pmc.myEngine.AddObject(1,1).GetObject()
-    label = ss.GetEntry() # TDF_Label
-    doc_tool = XCAFDoc_DocumentTool().ShapeTool(label).GetObject()
-    doc_tool.SetShape(label, topods)
-    return geomobject.GetHandle()
-    
-v, lA, lB = map(lambda x: geomobject_from_topods(x, pmc), (vertex, lineA, lineB))
+
+#    def GetObject(self, *args):
+#        """GetObject(self, int arg0, char theEntry) -> Handle_GEOM_Object"""
+#        return _SGEOM.GEOM_Engine_GetObject(self, *args)
+#
+#    def AddObject(self, *args):
+#        """AddObject(self, int arg0, int arg1) -> Handle_GEOM_Object"""
+#        return _SGEOM.GEOM_Engine_AddObject(self, *args)
+
+
+    from OCC.SGEOM import *
+
+    #geomobject = pmc.myEngine.AddObject(pmc.docId,cntr.next()).GetObject()
+    doc_tool = XCAFDoc_DocumentTool().ShapeTool(pmc.root).GetObject()
+    shape = TopoDS_Shape(topods)
+    label = doc_tool.AddShape(shape, False)
+    tt = GEOM_Object(label, topods.ShapeType())
+    assert tt.GetEntry().IsEqual(label) == True
+    print 'did we fail?', tt.GetValue().IsNull(), ' should be 0'
+
+    # the problem is that GEOM_Object.GetValue() returns the value of the
+    # this is the value returned by tt.GetValue(), its just an alias for:
+    # tt.GetLastFunction().GetObject().GetValue() # -> segfaults...
+
+    gf = tt.GetLastFunction().GetObject() # GEOM_Function
+    import ipdb; ipdb.set_trace()
+    gf.SetValue(shape) # segfault; this is the shape that tt.GetValue() will return!
+
+    tt.GetValue().IsNull()
+
+    if geomobject.GetValue().IsNull():
+        raise ValueError('TopoDS_Shape was not set...')
+
+    return tt.GetHandle()
 
 p = Parameters()
 pmc = ParametricModelingContext(p)
-qq = pmc.boolean_operations.MakeBoolean(lA,lB,3)
-qqq = qq.GetObject().GetValue()
+pmc.register_operations(pmc.boolean_operations)
 
+v, lA, lB = map(lambda x: geomobject_from_topods(x, pmc), (vertex, lineA, lineB))
 
+try:
+    import ipdb; ipdb.set_trace()
+    qq = pmc.boolean_operations.MakeBoolean(lA,lB,3)
+    qqq = qq.GetObject().GetValue()
+except Exception, e:
+    print e
+    import ipdb; ipdb.set_trace()
 
 Display()(qqq)
 
@@ -44,10 +106,7 @@ Display()(qqq)
 #Standard_Boolean thePerformSelfIntersections) -> Handle_GEOM_Object
 
 
-
 pmc.boolean_operations.MakeBoolean(v,lA, 3)
-
-
 
 
 
