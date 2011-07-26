@@ -704,12 +704,16 @@ def __del__(self):
 		ss = BRepTools_ShapeSet()
 		ss.Add(self)
 		str_shape = ss.WriteToString()
-		return str_shape
+		indx = ss.Locations().Index(self.Location())
+		return str_shape, indx
 	def __setstate__(self, state):
 		from BRepTools import BRepTools_ShapeSet
+		topods_str, indx = state
 		ss = BRepTools_ShapeSet()
-		ss.ReadFromString(state)
+		ss.ReadFromString(topods_str)
 		the_shape = ss.Shape(ss.NbShapes())
+		location = ss.Locations().Location(indx)
+		the_shape.Location(location)
 		self.this = the_shape.this
 	}
 };
