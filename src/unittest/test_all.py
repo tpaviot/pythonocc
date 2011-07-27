@@ -28,23 +28,43 @@ import topology_building_unittest
 import topology_local_operations_unittest
 import topology_operations_unittest
 import topology_unittest
-import paf_unittest
-import paf_test_all_associative_method_unittest
 
+#
+# First check if GEOM and SMESH wrappers are available in order to run
+# specific unittests
+#
+try:
+    import paf_unittest
+    import paf_test_all_associative_method_unittest
+    PAF_UNITTEST = True
+except:
+    print "Ignoring PAF unittests"
+    PAF_UNITTEST = False
+try:
+    import SMESH_wrapper_features_unittest
+    SMESH_UNITTEST = True
+except:
+    SMESH_UNITTEST = False
 # Create test suite
 suite = unittest.TestSuite()
 
 # Get all test suites from modules
 suite1 = wrapper_features_unittest.suite()
 suite2 = geometry_unittest.suite()
-suite3 = paf_unittest.suite()
-suite4 = topology_building_unittest.suite()
-suite5 = topology_unittest.suite()
-suite6 = topology_local_operations_unittest.suite()
-suite7 = paf_test_all_associative_method_unittest.suite()
-
+suite3 = topology_building_unittest.suite()
+suite4 = topology_unittest.suite()
+suite5 = topology_local_operations_unittest.suite()
+tests = [suite1, suite2, suite3, suite4, suite5]
+if PAF_UNITTEST:
+    suite6 = paf_unittest.suite()
+    suite7 = paf_test_all_associative_method_unittest.suite()
+    tests.append(suite6)
+    tests.append(stuie7)
+if SMESH_UNITTEST:
+    suite8 = SMESH_wrapper_features_unittest.suite()
+    tests.append(suite8)
 # Add test cases
-suite.addTests([suite1, suite2, suite3, suite4, suite5, suite6, suite7])
+suite.addTests(tests)
 
 # Run test suite
 unittest.TextTestRunner(verbosity=2).run(suite)

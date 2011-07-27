@@ -164,43 +164,7 @@ class TestWrapperFeatures(unittest.TestCase):
         self.assertEqual(sfw.GetModifyGeometryMode(),True)
         sfw.SetModifyGeometryMode(False)
         self.assertEqual(sfw.GetModifyGeometryMode(),False)
-    
-    def testSTLVectorInt(self):
-        '''
-        Checks the IntVector and DoubleVector classes that are used in the StdMeshers
-        module
-        '''
-        from OCC.StdMeshers import IntVector
-        # The IntVector must be initialized from a list/tuple of integers
-        i_v = IntVector([1,2,3,4])
-        self.assertEqual(i_v[0],1)
-        self.assertEqual(i_v[1],2)
-        self.assertEqual(i_v[2],3)
-        self.assertEqual(i_v[3],4)
-        # If at least one item of the list is not an integer, raise an exception
-        self.assertRaises(TypeError,IntVector,[1,2,3,4.0])
-        
-    def testSTLVectorDouble(self):
-        '''
-        Checks the IntVector and DoubleVector classes that are used in the StdMeshers
-        module
-        '''
-        from OCC.StdMeshers import DoubleVector, StdMeshers_NumberOfSegments
-        # The IntVector must be initialized from a list/tuple of floats/integers. Integers will
-        # be converted to floats
-        d_v = DoubleVector([0.1,0.2,0.6,0.7])
-        self.assertEqual(d_v[0],0.1)
-        self.assertEqual(d_v[1],0.2)
-        self.assertEqual(d_v[2],0.6)
-        self.assertEqual(d_v[3],0.7)
-        # If at least one item of the list is not an float or an integer, raise an exception
-        self.assertRaises(TypeError,DoubleVector,[1.0,2.0,3.0,"string"])
-        # Test one method of StdMeshers that takes/returns such a parameter type
-        from OCC.SMESH import SMESH_Gen
-        number_of_segments = StdMeshers_NumberOfSegments(1,10,SMESH_Gen())
-        number_of_segments.SetTableFunction(d_v)
-        self.assertEquals(number_of_segments.GetTableFunction(),(0.1,0.2,0.6,0.7))
-          
+              
     def testDumpToString(self):
         '''
         Checks if the pickle python module works for TopoDS_Shapes
