@@ -231,7 +231,8 @@ class ModularBuilder(object):
                            'basic','exception','MeshDimension','TSetOfInt',\
                            'NLinkNodeMap','pair<SMDS','NLink','TIDSortedElemSet',\
                            'TElemOfElemListMap','TNodeNodeMap','EventListener',\
-                           'EventListenerData','TLinkNodeMap','MapShapeNbElems']:
+                           'EventListenerData','TLinkNodeMap','MapShapeNbElems',\
+                           'size']:
             return True
         if module_name=='GEOM':
             module_name='SGEOM'
@@ -756,12 +757,24 @@ class ModularBuilder(object):
             class_to_perform = self._mb.classes(inherits_from).declarations[0]
             if not class_to_perform.name in self.CLASSES_TO_EXCLUDE:
                 self.process_class(class_to_perform)
+        # Check protected constructors
+        PROTECTED_CONSTRUCTOR = False
+        for protected_method in class_declaration.protected_members:
+            if class_name == protected_method.name:
+                PROTECTED_CONSTRUCTOR = True
+                print 'class %s has protected constructor'%class_name
+        # Check protected destructors
+        PROTECTED_DESTRUCTOR = False
+        for protected_method in class_declaration.protected_members:
+            if "~%s"%class_name == protected_method.name:
+                PROTECTED_DESTRUCTOR = True
+                print 'class %s has protected destructor'%class_name
         #
         # Affichage du nom de la classe
         #
-        self.fp.write("\n\n%nodefaultctor ")
+        self.fp.write("\n\n%nodefaultctor ")    
         self.fp.write("%s;\n"%class_name)
-        if class_name.startswith('GEOMAlgo'):
+        if PROTECTED_DESTRUCTOR:
             self.fp.write("\n\n%nodefaultdtor ")
             self.fp.write("%s;\n"%class_name)
         # Adding %docstring SWIG directive
@@ -820,12 +833,6 @@ class ModularBuilder(object):
         # The implementation is a loop over the methods found by pygccxml      
         print "\t### Member functions for class %s ###"%class_declaration.name
         HAVE_HASHCODE = False
-        # Check protected constructors
-        PROTECTED_CONSTRUCTOR = False
-        for protected_method in class_declaration.protected_members:
-            if class_name == protected_method.name:
-                PROTECTED_CONSTRUCTOR = True
-                print 'class %s has protected constructor'%class_name
         # process all public methods
         for mem_fun in class_declaration.public_members:#member_functions():
             # Member functions to exclude
@@ -871,7 +878,8 @@ class ModularBuilder(object):
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
         #
-        if not (class_name.startswith('GEOMAlgo')):#issues with GEOMAlgo_Clsf destructor, protected
+        #if not (class_name.startswith('GEOMAlgo') and class_name.startswith('NCollection')):#issues with GEOMAlgo_Clsf destructor, protected
+        if not PROTECTED_DESTRUCTOR:
             self.fp.write('\n%')
             self.fp.write('feature("shadow") %s::~%s '%(class_name,class_name))
             self.fp.write('%{\n')
@@ -1096,7 +1104,8 @@ class ModularBuilder(object):
                           'InterfaceGraphic_wntio.hxx',
                           'SelectMgr_ViewerSelector.hxx',
                           'SelectMgr_SelectionManager.hxx',
-                          'Aspect_XWD.hxx'
+                          'Aspect_XWD.hxx',
+                          'NCollection_EBTree.hxx','NCollection_CellFilter.hxx'
                           ]
         if sys.platform!='win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
