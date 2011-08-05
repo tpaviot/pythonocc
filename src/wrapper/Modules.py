@@ -222,7 +222,7 @@ MODULES = [
            ('BRepCheck',[],[]),
            ('BRepClass',[],[],{'BRepClass_FaceClassifier':'BRepClass_FaceClassifier'}),
            ('BRepClass3d',['TopoDS_Shell','math'],[]),
-           ('BRepExtrema',[],[]),
+           ('BRepExtrema',['TCollection','math'],[]),
            ('BRepFill',['Geom','AdvApp2Var','Convert','Approx','Adaptor3d','Handle_math'],[]),
            ('BRepGProp',['GProp_PrincipalProps'],['BRepGProp_VinertGK']),
            ('BRepAlgo',[],[],{"BRepAlgo_DSAccess":["IsDeleted"]}),
@@ -374,7 +374,7 @@ MODULES = [
             ('Dico',[],[]),
             ('PMMgt',[],[]),
             ('ObjMgt',[],[]),
-            #('NCollection',[],[]),
+            ('NCollection',[],[]),
             ('PColStd',[],[]),
             ('PColgp',[],[]),
             ('PCollection',[],[]),
@@ -525,7 +525,7 @@ else:
                     ('XCAFPrs',['Aspect','MFT','TDF','OSD','Graphic3d',\
                                 'SelectBasics','SelectMgr','Xw','Quantity','Prs3d','PrsMgr','Image'],[]),
                     ('NIS',['Aspect','TColStd','TCollection','Quantity','Viewer','Graphic3d','OSD','Xw',
-                            'Visual3d','Image','MFT'],['NIS_Triangulated']),
+                            'Visual3d','Image','MFT'],['NIS_Triangulated'],{'NIS_InteractiveContext':['GetDrawers']}),
                     ('MeshVS',['OSD','MFT','Xw','Graphic3d','Aspect','Prs3d','Quantity','PrsMgr','Image'],[]),          
                     ])
     MODULES.extend([
@@ -601,7 +601,7 @@ else:
                                  {'StdMeshers_Hexa_3D':['OppositeVertex'],
                                   'StdMeshers_MEFISTO_2D':['LoadPoints']}))
 
-ALL_MODULES = MODULES + SALOME_GEOM_MODULES + SALOME_SMESH_MODULES
+ALL_MODULES = MODULES #+ SALOME_GEOM_MODULES + SALOME_SMESH_MODULES
 
 def PythonOCCStats():
     """
