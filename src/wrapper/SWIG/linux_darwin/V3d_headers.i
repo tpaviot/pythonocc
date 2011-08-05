@@ -213,7 +213,6 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<Aspect_XWD.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>
 #include<Graphic3d_Array1OfVertexC.hxx>

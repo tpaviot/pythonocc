@@ -29,6 +29,7 @@ $HeaderURL$
 
 #include<Handle_Select3D_ListNodeOfListOfSensitive.hxx>
 #include<Handle_Select3D_ListNodeOfListOfSensitiveTriangle.hxx>
+#include<Handle_Select3D_Projector.hxx>
 #include<Handle_Select3D_SensitiveBox.hxx>
 #include<Handle_Select3D_SensitiveCircle.hxx>
 #include<Handle_Select3D_SensitiveCurve.hxx>

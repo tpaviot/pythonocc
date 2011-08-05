@@ -53,6 +53,7 @@ $HeaderURL$
 #include<Extrema_EPCOfELPCOfLocateExtPC2d.hxx>
 #include<Extrema_EPCOfExtPC.hxx>
 #include<Extrema_EPCOfExtPC2d.hxx>
+#include<Extrema_ExtAlgo.hxx>
 #include<Extrema_ExtCC.hxx>
 #include<Extrema_ExtCC2d.hxx>
 #include<Extrema_ExtCS.hxx>
@@ -60,6 +61,7 @@ $HeaderURL$
 #include<Extrema_ExtElC2d.hxx>
 #include<Extrema_ExtElCS.hxx>
 #include<Extrema_ExtElSS.hxx>
+#include<Extrema_ExtFlag.hxx>
 #include<Extrema_ExtPC.hxx>
 #include<Extrema_ExtPC2d.hxx>
 #include<Extrema_ExtPElC.hxx>
@@ -84,6 +86,7 @@ $HeaderURL$
 #include<Extrema_HArray2OfPOnCurv.hxx>
 #include<Extrema_HArray2OfPOnCurv2d.hxx>
 #include<Extrema_HArray2OfPOnSurf.hxx>
+#include<Extrema_HUBTreeOfSphere.hxx>
 #include<Extrema_LCCache2dOfLocateExtCC2d.hxx>
 #include<Extrema_LCCacheOfLocateExtCC.hxx>
 #include<Extrema_LocECC2dOfLocateExtCC2d.hxx>
@@ -184,21 +187,21 @@ $HeaderURL$
 #include<gp_Torus.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Hypr.hxx>
+#include<gp_Pnt.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>
 #include<gp_Elips2d.hxx>
 #include<gp_Hypr2d.hxx>
 #include<gp_Parab2d.hxx>
-#include<gp_Pnt.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Parab.hxx>
 #include<Handle_Geom_BezierCurve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
-#include<Adaptor3d_SurfaceOfRevolution.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
 #include<Adaptor3d_SurfaceOfLinearExtrusion.hxx>
+#include<Adaptor3d_SurfaceOfRevolution.hxx>
 %}

@@ -49,6 +49,7 @@ $HeaderURL$
 
 %include BRepExtrema_headers.i
 
+typedef NCollection_Sequence<BRepExtrema_SolutionElem> BRepExtrema_SeqOfSolution;
 
 enum BRepExtrema_SupportType {
 	BRepExtrema_IsVertex,
@@ -96,146 +97,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepExtrema_SequenceNodeOfSeqOfSolution;
-class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution();
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
-	BRepExtrema_SequenceNodeOfSeqOfSolution* GetObject() {
-	return (BRepExtrema_SequenceNodeOfSeqOfSolution*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepExtrema_SequenceNodeOfSeqOfSolution::~Handle_BRepExtrema_SequenceNodeOfSeqOfSolution %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepExtrema_SeqOfSolution;
-class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		BRepExtrema_SeqOfSolution();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const BRepExtrema_SeqOfSolution & Assign(const BRepExtrema_SeqOfSolution &Other);
-		%feature("autodoc", "1");
-		const BRepExtrema_SeqOfSolution & operator=(const BRepExtrema_SeqOfSolution &Other);
-		%feature("autodoc", "1");
-		void Append(const BRepExtrema_SolutionElem &T);
-		%feature("autodoc", "1");
-		void Append(BRepExtrema_SeqOfSolution & S);
-		%feature("autodoc", "1");
-		void Prepend(const BRepExtrema_SolutionElem &T);
-		%feature("autodoc", "1");
-		void Prepend(BRepExtrema_SeqOfSolution & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const BRepExtrema_SolutionElem &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, BRepExtrema_SeqOfSolution & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const BRepExtrema_SolutionElem &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, BRepExtrema_SeqOfSolution & S);
-		%feature("autodoc", "1");
-		const BRepExtrema_SolutionElem & First() const;
-		%feature("autodoc", "1");
-		const BRepExtrema_SolutionElem & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, BRepExtrema_SeqOfSolution & S);
-		%feature("autodoc", "1");
-		const BRepExtrema_SolutionElem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BRepExtrema_SolutionElem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const BRepExtrema_SolutionElem &I);
-		%feature("autodoc", "1");
-		BRepExtrema_SolutionElem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BRepExtrema_SolutionElem & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") BRepExtrema_SeqOfSolution::~BRepExtrema_SeqOfSolution %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepExtrema_SeqOfSolution {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepExtrema_SequenceNodeOfSeqOfSolution;
-class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		BRepExtrema_SequenceNodeOfSeqOfSolution(const BRepExtrema_SolutionElem &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		BRepExtrema_SolutionElem & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepExtrema_SequenceNodeOfSeqOfSolution {
-	Handle_BRepExtrema_SequenceNodeOfSeqOfSolution GetHandle() {
-	return *(Handle_BRepExtrema_SequenceNodeOfSeqOfSolution*) &$self;
-	}
-};
-%extend BRepExtrema_SequenceNodeOfSeqOfSolution {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepExtrema_SequenceNodeOfSeqOfSolution::~BRepExtrema_SequenceNodeOfSeqOfSolution %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepExtrema_SequenceNodeOfSeqOfSolution {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepExtrema_Poly;
 class BRepExtrema_Poly {
 	public:
@@ -268,11 +129,11 @@ class BRepExtrema_ExtPF {
 		%feature("autodoc", "1");
 		BRepExtrema_ExtPF();
 		%feature("autodoc", "1");
-		BRepExtrema_ExtPF(const TopoDS_Vertex V, const TopoDS_Face E);
+		BRepExtrema_ExtPF(const TopoDS_Vertex TheVertex, const TopoDS_Face TheFace, const Extrema_ExtFlag TheFlag=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo TheAlgo=Extrema_ExtAlgo_Grad);
 		%feature("autodoc", "1");
-		void Initialize(const TopoDS_Face E);
+		void Initialize(const TopoDS_Face TheFace, const Extrema_ExtFlag TheFlag=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo TheAlgo=Extrema_ExtAlgo_Grad);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Vertex V, const TopoDS_Face E);
+		void Perform(const TopoDS_Vertex TheVertex, const TopoDS_Face TheFace);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -284,6 +145,10 @@ class BRepExtrema_ExtPF {
 		void Parameter(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt Point(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void SetFlag(const Extrema_ExtFlag F);
+		%feature("autodoc", "1");
+		void SetAlgo(const Extrema_ExtAlgo A);
 
 };
 %feature("shadow") BRepExtrema_ExtPF::~BRepExtrema_ExtPF %{
@@ -296,6 +161,49 @@ def __del__(self):
 %}
 
 %extend BRepExtrema_ExtPF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepExtrema_UnCompatibleShape;
+class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		BRepExtrema_UnCompatibleShape();
+		%feature("autodoc", "1");
+		BRepExtrema_UnCompatibleShape(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_BRepExtrema_UnCompatibleShape NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepExtrema_UnCompatibleShape {
+	Handle_BRepExtrema_UnCompatibleShape GetHandle() {
+	return *(Handle_BRepExtrema_UnCompatibleShape*) &$self;
+	}
+};
+%extend BRepExtrema_UnCompatibleShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") BRepExtrema_UnCompatibleShape::~BRepExtrema_UnCompatibleShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepExtrema_UnCompatibleShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -354,9 +262,9 @@ def __del__(self):
 class BRepExtrema_DistanceSS {
 	public:
 		%feature("autodoc", "1");
-		BRepExtrema_DistanceSS(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef);
+		BRepExtrema_DistanceSS(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
 		%feature("autodoc", "1");
-		BRepExtrema_DistanceSS(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Standard_Real aDeflection);
+		BRepExtrema_DistanceSS(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Standard_Real aDeflection, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -365,6 +273,10 @@ class BRepExtrema_DistanceSS {
 		const BRepExtrema_SeqOfSolution & Seq1Value() const;
 		%feature("autodoc", "1");
 		const BRepExtrema_SeqOfSolution & Seq2Value() const;
+		%feature("autodoc", "1");
+		void SetFlag(const Extrema_ExtFlag F);
+		%feature("autodoc", "1");
+		void SetAlgo(const Extrema_ExtAlgo A);
 
 };
 %feature("shadow") BRepExtrema_DistanceSS::~BRepExtrema_DistanceSS %{
@@ -437,7 +349,7 @@ class BRepExtrema_ExtCF {
 		%feature("autodoc", "1");
 		void Initialize(const TopoDS_Face E);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Edge V, const TopoDS_Face E);
+		void Perform(const TopoDS_Edge V, const TopoDS_Face F);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -526,9 +438,9 @@ class BRepExtrema_DistShapeShape {
 		%feature("autodoc", "1");
 		BRepExtrema_DistShapeShape();
 		%feature("autodoc", "1");
-		BRepExtrema_DistShapeShape(const TopoDS_Shape Shape1, const TopoDS_Shape Shape2);
+		BRepExtrema_DistShapeShape(const TopoDS_Shape Shape1, const TopoDS_Shape Shape2, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
 		%feature("autodoc", "1");
-		BRepExtrema_DistShapeShape(const TopoDS_Shape Shape1, const TopoDS_Shape Shape2, const Standard_Real theDeflection);
+		BRepExtrema_DistShapeShape(const TopoDS_Shape Shape1, const TopoDS_Shape Shape2, const Standard_Real theDeflection, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
 		%feature("autodoc", "1");
 		void SetDeflection(const Standard_Real theDeflection);
 		%feature("autodoc", "1");
@@ -546,9 +458,9 @@ class BRepExtrema_DistShapeShape {
 		%feature("autodoc", "1");
 		Standard_Boolean InnerSolution() const;
 		%feature("autodoc", "1");
-		gp_Pnt PointOnShape1(const Standard_Integer N) const;
+		const gp_Pnt  PointOnShape1(const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		gp_Pnt PointOnShape2(const Standard_Integer N) const;
+		const gp_Pnt  PointOnShape2(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		BRepExtrema_SupportType SupportTypeShape1(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -577,6 +489,10 @@ class BRepExtrema_DistShapeShape {
 			self->Dump(s);
 			return s.str();}
 		};
+		%feature("autodoc", "1");
+		void SetFlag(const Extrema_ExtFlag F);
+		%feature("autodoc", "1");
+		void SetAlgo(const Extrema_ExtAlgo A);
 
 };
 %feature("shadow") BRepExtrema_DistShapeShape::~BRepExtrema_DistShapeShape %{
@@ -589,49 +505,6 @@ def __del__(self):
 %}
 
 %extend BRepExtrema_DistShapeShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepExtrema_UnCompatibleShape;
-class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		BRepExtrema_UnCompatibleShape();
-		%feature("autodoc", "1");
-		BRepExtrema_UnCompatibleShape(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_BRepExtrema_UnCompatibleShape NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepExtrema_UnCompatibleShape {
-	Handle_BRepExtrema_UnCompatibleShape GetHandle() {
-	return *(Handle_BRepExtrema_UnCompatibleShape*) &$self;
-	}
-};
-%extend BRepExtrema_UnCompatibleShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepExtrema_UnCompatibleShape::~BRepExtrema_UnCompatibleShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepExtrema_UnCompatibleShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -652,15 +525,15 @@ class BRepExtrema_SolutionElem {
 		%feature("autodoc", "1");
 		Standard_Real Dist() const;
 		%feature("autodoc", "1");
-		gp_Pnt Point() const;
+		const gp_Pnt  Point() const;
 		%feature("autodoc", "1");
 		BRepExtrema_SupportType SupportKind() const;
 		%feature("autodoc", "1");
-		TopoDS_Vertex Vertex() const;
+		const TopoDS_Vertex  Vertex() const;
 		%feature("autodoc", "1");
-		TopoDS_Edge Edge() const;
+		const TopoDS_Edge  Edge() const;
 		%feature("autodoc", "1");
-		TopoDS_Face Face() const;
+		const TopoDS_Face  Face() const;
 		%feature("autodoc","EdgeParameter() -> Standard_Real");
 
 		void EdgeParameter(Standard_Real &OutValue) const;

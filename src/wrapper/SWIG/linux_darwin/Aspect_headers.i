@@ -152,7 +152,6 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<Aspect_XWD.hxx>
 #include<Handle_Aspect_AspectFillArea.hxx>
 #include<Handle_Aspect_AspectFillAreaDefinitionError.hxx>
 #include<Handle_Aspect_AspectLine.hxx>

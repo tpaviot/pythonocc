@@ -3218,7 +3218,7 @@ class Graphic3d_Structure : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectFillArea3d FillArea3dAspect() const;
 		%feature("autodoc", "1");
-		Handle_Graphic3d_HSetOfGroup Groups() const;
+		const Graphic3d_SequenceOfGroup & Groups() const;
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfGroups() const;
 		%feature("autodoc", "1");

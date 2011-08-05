@@ -755,6 +755,8 @@ class Poly {
 		};
 		%feature("autodoc", "1");
 		static		void ComputeNormals(const Handle_Poly_Triangulation &Tri);
+		%feature("autodoc", "1");
+		static		Standard_Real PointOnTriangle(const gp_XY P1, const gp_XY P2, const gp_XY P3, const gp_XY P, gp_XY & UV);
 
 };
 %feature("shadow") Poly::~Poly %{

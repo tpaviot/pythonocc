@@ -27,12 +27,6 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<MeshDS_BaseAllocator.hxx>
-#include<MeshDS_DegreeOfFreedom.hxx>
-#include<MeshDS_ListOfInteger.hxx>
-#include<MeshDS_MapOfInteger.hxx>
-#include<MeshDS_MapOfIntegerInteger.hxx>
-#include<MeshDS_PairOfIndex.hxx>
 
 // Additional headers necessary for compilation.
 

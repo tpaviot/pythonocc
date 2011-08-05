@@ -4742,7 +4742,7 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Terminate(const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		Standard_Boolean HasSameProjector(const Select3D_Projector &aPrj) const;
+		Standard_Boolean HasSameProjector(const Handle_Select3D_Projector &aPrj) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Display(const Handle_AIS_InteractiveObject &anInteractive, const Standard_Integer DisplayMode=0, const Standard_Boolean AllowShapeDecomposition=1, const Standard_Integer ActivationMode=0);
 		%feature("autodoc", "1");
@@ -4921,6 +4921,10 @@ class AIS_LocalContext : public MMgt_TShared {
 		void ClearSensitive(const Handle_V3d_View &aView);
 		%feature("autodoc", "1");
 		const Handle_StdSelect_ViewerSelector3d & MainSelector() const;
+		%feature("autodoc", "1");
+		Handle_SelectMgr_EntityOwner FindSelectedOwnerFromIO(const Handle_AIS_InteractiveObject &anIObj) const;
+		%feature("autodoc", "1");
+		Handle_SelectMgr_EntityOwner FindSelectedOwnerFromShape(const TopoDS_Shape aShape) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6102,6 +6106,8 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		char * DomainOfMainViewer() const;
 		%feature("autodoc", "1");
 		char * DomainOfCollector() const;
+		%feature("autodoc", "1");
+		Handle_AIS_LocalContext LocalContext() const;
 		%feature("autodoc", "1");
 		const Handle_SelectMgr_SelectionManager & SelectionManager() const;
 		%feature("autodoc", "1");

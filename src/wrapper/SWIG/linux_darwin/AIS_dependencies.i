@@ -148,7 +148,6 @@ $HeaderURL$
 #include <Aspect_WindowDriver.hxx>
 #include <Aspect_WindowDriverPtr.hxx>
 #include <Aspect_WindowError.hxx>
-#include <Aspect_XWD.hxx>
 #include <DsgPrs_AnglePresentation.hxx>
 #include <DsgPrs_ArrowSide.hxx>
 #include <DsgPrs_Chamf2dPresentation.hxx>

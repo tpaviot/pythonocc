@@ -175,7 +175,6 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<Aspect_XWD.hxx>
 
 // Needed headers necessary for compilation.
 

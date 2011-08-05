@@ -157,7 +157,6 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<Aspect_XWD.hxx>
 #include<MFT.hxx>
 #include<MFT_CommandDescriptor.hxx>
 #include<MFT_FileHandle.hxx>
@@ -214,6 +213,7 @@ $HeaderURL$
 #include<OSD_LoadMode.hxx>
 #include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
+#include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>

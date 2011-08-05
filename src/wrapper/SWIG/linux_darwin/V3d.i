@@ -947,7 +947,7 @@ def __del__(self):
 class V3d_Plane : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		V3d_Plane(const Handle_V3d_Viewer &VM, const Quantity_Parameter A=0.0, const Quantity_Parameter B=0.0, const Quantity_Parameter C=1.0e+0, const Quantity_Parameter D=0.0);
+		V3d_Plane(const Quantity_Parameter A=0.0, const Quantity_Parameter B=0.0, const Quantity_Parameter C=1.0e+0, const Quantity_Parameter D=0.0);
 		%feature("autodoc", "1");
 		void SetPlane(const Quantity_Parameter A, const Quantity_Parameter B, const Quantity_Parameter C, const Quantity_Parameter D);
 		%feature("autodoc", "1");
@@ -1913,6 +1913,10 @@ class V3d_Viewer : public Viewer_Viewer {
 		void NextDefinedLights();
 		%feature("autodoc", "1");
 		Handle_V3d_Light DefinedLight() const;
+		%feature("autodoc", "1");
+		void AddPlane(const Handle_V3d_Plane &MyPlane);
+		%feature("autodoc", "1");
+		void DelPlane(const Handle_V3d_Plane &MyPlane);
 		%feature("autodoc", "1");
 		void InitDefinedPlanes();
 		%feature("autodoc", "1");

@@ -17,8 +17,8 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-$Revision: 1166 $
-$Date: 2011-01-20 05:56:02 +0100 (Jeu, 20 jan 2011) $
+$Revision: 1241 $
+$Date: 2011-08-05 14:23:54 +0200 (Ven, 05 aoû 2011) $
 $Author: tpaviot $
 $HeaderURL$
 

@@ -85,6 +85,8 @@ $HeaderURL$
 #include<BRepFill_FaceAndOrder.hxx>
 #include<BRepFill_Filling.hxx>
 #include<BRepFill_Generator.hxx>
+#include<BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape.hxx>
+#include<BRepFill_IndexedDataMapOfOrientedShapeListOfShape.hxx>
 #include<BRepFill_ListIteratorOfListOfOffsetWire.hxx>
 #include<BRepFill_ListNodeOfListOfOffsetWire.hxx>
 #include<BRepFill_ListOfOffsetWire.hxx>

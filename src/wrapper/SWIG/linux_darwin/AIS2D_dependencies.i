@@ -148,7 +148,6 @@ $HeaderURL$
 #include <Aspect_WindowDriver.hxx>
 #include <Aspect_WindowDriverPtr.hxx>
 #include <Aspect_WindowError.hxx>
-#include <Aspect_XWD.hxx>
 #include <Graphic2d_Array1OfVertex.hxx>
 #include <Graphic2d_Buffer.hxx>
 #include <Graphic2d_BufferList.hxx>

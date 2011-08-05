@@ -172,6 +172,7 @@ $HeaderURL$
 #include<OSD_LoadMode.hxx>
 #include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
+#include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>

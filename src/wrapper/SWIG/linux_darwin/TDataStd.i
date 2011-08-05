@@ -4451,7 +4451,7 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("autodoc", "1");
 		const Handle_TDataStd_HLabelArray1 & InternalArray() const;
 		%feature("autodoc", "1");
-		void SetInternalArray(const Handle_TDataStd_HLabelArray1 &values);
+		void SetInternalArray(const Handle_TDataStd_HLabelArray1 &values, const Standard_Boolean isCheckItems=1);
 		%feature("autodoc", "1");
 		TDataStd_ReferenceArray();
 		%feature("autodoc", "1");

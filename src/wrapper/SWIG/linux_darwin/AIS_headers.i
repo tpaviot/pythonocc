@@ -309,7 +309,6 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<Aspect_XWD.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>
 #include<Graphic3d_Array1OfVertexC.hxx>
@@ -531,6 +530,7 @@ $HeaderURL$
 #include<OSD_LoadMode.hxx>
 #include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
+#include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
@@ -664,7 +664,7 @@ $HeaderURL$
 #include<gp_Lin.hxx>
 #include<Bnd_Box.hxx>
 #include<gp_Elips.hxx>
-#include<Select3D_Projector.hxx>
+#include<Handle_Select3D_Projector.hxx>
 #include<Handle_SelectMgr_Filter.hxx>
 #include<Handle_V3d_View.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>

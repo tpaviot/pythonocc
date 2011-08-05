@@ -50,6 +50,11 @@ $HeaderURL$
 %include BRepMesh_headers.i
 
 typedef NCollection_Handle<BRepMesh_Classifier> BRepMesh_ClassifierPtr;
+typedef NCollection_CellFilter<BRepMesh_CircleInspector> BRepMesh_CellFilter;
+typedef Handle_NCollection_IncAllocator BRepMesh_BaseAllocator;
+typedef NCollection_DataMap<int,int> BRepMesh_MapOfIntegerInteger;
+typedef NCollection_Map<int> BRepMesh_MapOfInteger;
+typedef NCollection_List<int> BRepMesh_ListOfInteger;
 typedef BRepMesh_DiscretRoot * BRepMesh_PDiscretRoot;
 
 enum BRepMesh_FactoryError {
@@ -65,6 +70,16 @@ enum BRepMesh_Status {
 	BRepMesh_SelfIntersectingWire,
 	BRepMesh_Failure,
 	BRepMesh_ReMesh,
+	};
+
+enum BRepMesh_DegreeOfFreedom {
+	BRepMesh_Free,
+	BRepMesh_InVolume,
+	BRepMesh_OnSurface,
+	BRepMesh_OnCurve,
+	BRepMesh_Fixed,
+	BRepMesh_Frontier,
+	BRepMesh_Deleted,
 	};
 
 
@@ -259,44 +274,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger;
-class Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger();
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger(const Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger(const BRepMesh_DataMapNodeOfDataMapOfVertexInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger & operator=(const BRepMesh_DataMapNodeOfDataMapOfVertexInteger *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
-	BRepMesh_DataMapNodeOfDataMapOfVertexInteger* GetObject() {
-	return (BRepMesh_DataMapNodeOfDataMapOfVertexInteger*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger::~Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BRepMesh_DataStructureOfDelaun;
 class Handle_BRepMesh_DataStructureOfDelaun : public Handle_MMgt_TShared {
 	public:
@@ -405,6 +382,44 @@ def __del__(self):
 %}
 
 %extend Handle_BRepMesh_FastDiscretFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger;
+class Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger();
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger(const Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger(const BRepMesh_DataMapNodeOfDataMapOfVertexInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger & operator=(const BRepMesh_DataMapNodeOfDataMapOfVertexInteger *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
+	BRepMesh_DataMapNodeOfDataMapOfVertexInteger* GetObject() {
+	return (BRepMesh_DataMapNodeOfDataMapOfVertexInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger::~Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -719,7 +734,7 @@ def __del__(self):
 class BRepMesh_DataStructureOfDelaun : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_DataStructureOfDelaun(const MeshDS_BaseAllocator &theAllocator, const Standard_Integer NodeNumber=100);
+		BRepMesh_DataStructureOfDelaun(const BRepMesh_BaseAllocator &theAllocator, const Standard_Integer NodeNumber=100);
 		%feature("autodoc", "1");
 		Standard_Integer AddNode(const BRepMesh_Vertex &theNode);
 		%feature("autodoc", "1");
@@ -727,7 +742,7 @@ class BRepMesh_DataStructureOfDelaun : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const BRepMesh_Vertex & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const MeshDS_ListOfInteger & GetNodeList(const Standard_Integer Index);
+		const BRepMesh_ListOfInteger & GetNodeList(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		void ForceRemoveNode(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -769,13 +784,13 @@ class BRepMesh_DataStructureOfDelaun : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer IndexOf(const BRepMesh_Triangle &anElement) const;
 		%feature("autodoc", "1");
-		const MeshDS_ListOfInteger & LinkNeighboursOf(const Standard_Integer theNode) const;
+		const BRepMesh_ListOfInteger & LinkNeighboursOf(const Standard_Integer theNode) const;
 		%feature("autodoc", "1");
-		const MeshDS_PairOfIndex & ElemConnectedTo(const Standard_Integer theLink) const;
+		const BRepMesh_PairOfIndex & ElemConnectedTo(const Standard_Integer theLink) const;
 		%feature("autodoc", "1");
-		const MeshDS_MapOfInteger & ElemOfDomain() const;
+		const BRepMesh_MapOfInteger & ElemOfDomain() const;
 		%feature("autodoc", "1");
-		const MeshDS_MapOfInteger & LinkOfDomain() const;
+		const BRepMesh_MapOfInteger & LinkOfDomain() const;
 		%feature("autodoc", "1");
 		void ClearDeleted();
 		%feature("autodoc", "1");
@@ -787,7 +802,7 @@ class BRepMesh_DataStructureOfDelaun : public MMgt_TShared {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		const MeshDS_BaseAllocator & Allocator() const;
+		const BRepMesh_BaseAllocator & Allocator() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1196,6 +1211,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepMesh_CircleTool;
+class BRepMesh_CircleTool {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_CircleTool(const BRepMesh_BaseAllocator &theAlloc);
+		%feature("autodoc", "1");
+		BRepMesh_CircleTool(const Standard_Integer numberOfComponents, const BRepMesh_BaseAllocator &theAlloc);
+		%feature("autodoc", "1");
+		void Initialize(const Standard_Integer numberOfComponents);
+		%feature("autodoc", "1");
+		void SetCellSize(const Standard_Real theSize);
+		%feature("autodoc", "1");
+		void SetCellSize(const Standard_Real theXSize, const Standard_Real theYSize);
+		%feature("autodoc", "1");
+		void SetMinMaxSize(const gp_XY theMin, const gp_XY theMax);
+		%feature("autodoc", "1");
+		void Add(const gp_Circ2d theCirc, const Standard_Integer theIndex);
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const gp_XY p1, const gp_XY p2, const gp_XY p3, const Standard_Integer theIndex);
+		%feature("autodoc", "1");
+		void MocAdd(const Standard_Integer theIndex);
+		%feature("autodoc", "1");
+		void Delete(const Standard_Integer theIndex);
+		%feature("autodoc", "1");
+		BRepMesh_ListOfInteger & Select(const gp_XY thePnt);
+
+};
+%feature("shadow") BRepMesh_CircleTool::~BRepMesh_CircleTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepMesh_CircleTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepMesh_Array1OfBiPoint;
 class BRepMesh_Array1OfBiPoint {
 	public:
@@ -1241,6 +1299,45 @@ def __del__(self):
 %}
 
 %extend BRepMesh_Array1OfBiPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepMesh_CircleInspector;
+class BRepMesh_CircleInspector : public NCollection_CellFilter_InspectorXY {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_CircleInspector(Standard_Real , Standard_Integer , const BRepMesh_BaseAllocator &theAlloc);
+		%feature("autodoc", "1");
+		void Add(Standard_Integer , const BRepMesh_Circ &theCircle);
+		%feature("autodoc", "1");
+		void ClerResList();
+		%feature("autodoc", "1");
+		CircVector & MapOfCirc();
+		%feature("autodoc", "1");
+		BRepMesh_Circ & GetCirc(Standard_Integer );
+		%feature("autodoc", "1");
+		void SetCurrent(const gp_XY theCurCircle);
+		%feature("autodoc", "1");
+		BRepMesh_ListOfInteger & GetCoincidentInd();
+		%feature("autodoc", "1");
+		NCollection_CellFilter_Action Inspect(const Standard_Integer theTarget);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEqual(Standard_Integer , const Standard_Integer theTarget);
+
+};
+%feature("shadow") BRepMesh_CircleInspector::~BRepMesh_CircleInspector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepMesh_CircleInspector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1540,19 +1637,19 @@ class BRepMesh_Vertex {
 		%feature("autodoc", "1");
 		BRepMesh_Vertex();
 		%feature("autodoc", "1");
-		BRepMesh_Vertex(const gp_XY UV, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
+		BRepMesh_Vertex(const gp_XY UV, const Standard_Integer Locat3d, const BRepMesh_DegreeOfFreedom Move);
 		%feature("autodoc", "1");
-		BRepMesh_Vertex(const Standard_Real U, const Standard_Real V, const MeshDS_DegreeOfFreedom Move);
+		BRepMesh_Vertex(const Standard_Real U, const Standard_Real V, const BRepMesh_DegreeOfFreedom Move);
 		%feature("autodoc", "1");
-		void Initialize(const gp_XY UV, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
+		void Initialize(const gp_XY UV, const Standard_Integer Locat3d, const BRepMesh_DegreeOfFreedom Move);
 		%feature("autodoc", "1");
 		const gp_XY  Coord() const;
 		%feature("autodoc", "1");
 		Standard_Integer Location3d() const;
 		%feature("autodoc", "1");
-		MeshDS_DegreeOfFreedom Movability() const;
+		BRepMesh_DegreeOfFreedom Movability() const;
 		%feature("autodoc", "1");
-		void SetMovability(const MeshDS_DegreeOfFreedom Move);
+		void SetMovability(const BRepMesh_DegreeOfFreedom Move);
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
@@ -1599,6 +1696,8 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		void Update(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		Standard_Boolean IsModified() const;
+		%feature("autodoc", "1");
+		Standard_Integer GetStatusFlags() const;
 
 };
 %feature("shadow") BRepMesh_IncrementalMesh::~BRepMesh_IncrementalMesh %{
@@ -1913,7 +2012,7 @@ def __del__(self):
 class BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun(const BRepMesh_Edge &K1, const Standard_Integer K2, const MeshDS_PairOfIndex &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun(const BRepMesh_Edge &K1, const Standard_Integer K2, const BRepMesh_PairOfIndex &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		BRepMesh_Edge & Key1() const;
 		%feature("autodoc","1");
@@ -1931,7 +2030,7 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : public T
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
-		MeshDS_PairOfIndex & Value() const;
+		BRepMesh_PairOfIndex & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2245,18 +2344,6 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 		void Process(const TopoDS_Face face) const;
 		%feature("autodoc", "1");
 		void operator()(const TopoDS_Face face) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Boolean GetInternalVerticesMode() {
-				return (Standard_Boolean) $self->InternalVerticesMode();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetInternalVerticesMode(Standard_Boolean value ) {
-				$self->InternalVerticesMode()=value;
-				}
-		};
 		%feature("autodoc", "1");
 		BRepMesh_Status CurrentFaceStatus() const;
 		%feature("autodoc", "1");
@@ -2274,11 +2361,11 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const gp_Pnt  Pnt(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void VerticesOfDomain(MeshDS_MapOfInteger & Indices) const;
+		void VerticesOfDomain(BRepMesh_MapOfInteger & Indices) const;
 		%feature("autodoc", "1");
-		void EdgesOfDomain(MeshDS_MapOfInteger & Indices) const;
+		void EdgesOfDomain(BRepMesh_MapOfInteger & Indices) const;
 		%feature("autodoc", "1");
-		void TrianglesOfDomain(MeshDS_MapOfInteger & Indices) const;
+		void TrianglesOfDomain(BRepMesh_MapOfInteger & Indices) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoint3d() const;
 		%feature("autodoc", "1");
@@ -2423,6 +2510,39 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepMesh_Circ;
+class BRepMesh_Circ {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_Circ();
+		%feature("autodoc", "1");
+		BRepMesh_Circ(const gp_XY loc, const Standard_Real rad);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_XY loc);
+		%feature("autodoc", "1");
+		void SetRadius(const Standard_Real rad);
+		%feature("autodoc", "1");
+		const gp_XY  Location() const;
+		%feature("autodoc", "1");
+		const Standard_Real & Radius() const;
+
+};
+%feature("shadow") BRepMesh_Circ::~BRepMesh_Circ %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepMesh_Circ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepMesh_SelectorOfDataStructureOfDelaun;
 class BRepMesh_SelectorOfDataStructureOfDelaun {
 	public:
@@ -2451,13 +2571,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun {
 		%feature("autodoc", "1");
 		void AddNeighbours();
 		%feature("autodoc", "1");
-		const MeshDS_MapOfInteger & Nodes() const;
+		const BRepMesh_MapOfInteger & Nodes() const;
 		%feature("autodoc", "1");
-		const MeshDS_MapOfInteger & Links() const;
+		const BRepMesh_MapOfInteger & Links() const;
 		%feature("autodoc", "1");
-		const MeshDS_MapOfInteger & Elements() const;
+		const BRepMesh_MapOfInteger & Elements() const;
 		%feature("autodoc", "1");
-		const MeshDS_MapOfInteger & FrontierLinks() const;
+		const BRepMesh_MapOfInteger & FrontierLinks() const;
 
 };
 %feature("shadow") BRepMesh_SelectorOfDataStructureOfDelaun::~BRepMesh_SelectorOfDataStructureOfDelaun %{
@@ -2814,7 +2934,7 @@ def __del__(self):
 class BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun(const BRepMesh_Vertex &K1, const Standard_Integer K2, const MeshDS_ListOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun(const BRepMesh_Vertex &K1, const Standard_Integer K2, const BRepMesh_ListOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		BRepMesh_Vertex & Key1() const;
 		%feature("autodoc","1");
@@ -2832,7 +2952,7 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : public T
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
-		MeshDS_ListOfInteger & Value() const;
+		BRepMesh_ListOfInteger & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2908,9 +3028,9 @@ class BRepMesh_IDMapOfLinkOfDataStructureOfDelaun : public TCollection_BasicMap 
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const BRepMesh_Edge &K, const MeshDS_PairOfIndex &I);
+		Standard_Integer Add(const BRepMesh_Edge &K, const BRepMesh_PairOfIndex &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const BRepMesh_Edge &K, const MeshDS_PairOfIndex &T);
+		void Substitute(const Standard_Integer I, const BRepMesh_Edge &K, const BRepMesh_PairOfIndex &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
@@ -2918,19 +3038,19 @@ class BRepMesh_IDMapOfLinkOfDataStructureOfDelaun : public TCollection_BasicMap 
 		%feature("autodoc", "1");
 		const BRepMesh_Edge & FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const MeshDS_PairOfIndex & FindFromIndex(const Standard_Integer I) const;
+		const BRepMesh_PairOfIndex & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const MeshDS_PairOfIndex & operator()(const Standard_Integer I) const;
+		const BRepMesh_PairOfIndex & operator()(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		MeshDS_PairOfIndex & ChangeFromIndex(const Standard_Integer I);
+		BRepMesh_PairOfIndex & ChangeFromIndex(const Standard_Integer I);
 		%feature("autodoc", "1");
-		MeshDS_PairOfIndex & operator()(const Standard_Integer I);
+		BRepMesh_PairOfIndex & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const BRepMesh_Edge &K) const;
 		%feature("autodoc", "1");
-		const MeshDS_PairOfIndex & FindFromKey(const BRepMesh_Edge &K) const;
+		const BRepMesh_PairOfIndex & FindFromKey(const BRepMesh_Edge &K) const;
 		%feature("autodoc", "1");
-		MeshDS_PairOfIndex & ChangeFromKey(const BRepMesh_Edge &K);
+		BRepMesh_PairOfIndex & ChangeFromKey(const BRepMesh_Edge &K);
 
 };
 %feature("shadow") BRepMesh_IDMapOfLinkOfDataStructureOfDelaun::~BRepMesh_IDMapOfLinkOfDataStructureOfDelaun %{
@@ -3008,9 +3128,9 @@ class BRepMesh_IDMapOfNodeOfDataStructureOfDelaun : public TCollection_BasicMap 
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const BRepMesh_Vertex &K, const MeshDS_ListOfInteger &I);
+		Standard_Integer Add(const BRepMesh_Vertex &K, const BRepMesh_ListOfInteger &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const BRepMesh_Vertex &K, const MeshDS_ListOfInteger &T);
+		void Substitute(const Standard_Integer I, const BRepMesh_Vertex &K, const BRepMesh_ListOfInteger &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
@@ -3018,19 +3138,19 @@ class BRepMesh_IDMapOfNodeOfDataStructureOfDelaun : public TCollection_BasicMap 
 		%feature("autodoc", "1");
 		const BRepMesh_Vertex & FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const MeshDS_ListOfInteger & FindFromIndex(const Standard_Integer I) const;
+		const BRepMesh_ListOfInteger & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const MeshDS_ListOfInteger & operator()(const Standard_Integer I) const;
+		const BRepMesh_ListOfInteger & operator()(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		MeshDS_ListOfInteger & ChangeFromIndex(const Standard_Integer I);
+		BRepMesh_ListOfInteger & ChangeFromIndex(const Standard_Integer I);
 		%feature("autodoc", "1");
-		MeshDS_ListOfInteger & operator()(const Standard_Integer I);
+		BRepMesh_ListOfInteger & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const BRepMesh_Vertex &K) const;
 		%feature("autodoc", "1");
-		const MeshDS_ListOfInteger & FindFromKey(const BRepMesh_Vertex &K) const;
+		const BRepMesh_ListOfInteger & FindFromKey(const BRepMesh_Vertex &K) const;
 		%feature("autodoc", "1");
-		MeshDS_ListOfInteger & ChangeFromKey(const BRepMesh_Vertex &K);
+		BRepMesh_ListOfInteger & ChangeFromKey(const BRepMesh_Vertex &K);
 
 };
 %feature("shadow") BRepMesh_IDMapOfNodeOfDataStructureOfDelaun::~BRepMesh_IDMapOfNodeOfDataStructureOfDelaun %{
@@ -3134,23 +3254,21 @@ def __del__(self):
 class BRepMesh_FastDiscretFace : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_FastDiscretFace(const Standard_Real angle, const Standard_Boolean withShare=1, const Standard_Boolean inshape=0, const Standard_Boolean shapetrigu=0);
+		BRepMesh_FastDiscretFace(const Standard_Real theAngle, const Standard_Boolean theWithShare=1);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Face face, const Handle_BRepMesh_FaceAttribute &attrib, const TopTools_DataMapOfShapeReal &mapdefle);
+		void Add(const TopoDS_Face theFace, const Handle_BRepMesh_FaceAttribute &theAttrib, const TopTools_DataMapOfShapeReal &theMapDefle);
 		%feature("autodoc", "1");
-		Standard_Boolean Update(const TopoDS_Edge Edge, const TopoDS_Face Face, const Handle_Geom2d_Curve &C, const Standard_Real defedge, const Standard_Real first, const Standard_Real last);
+		Standard_Real Control(const Handle_BRepAdaptor_HSurface &theCaro, const Standard_Real theDefFace, BRepMesh_ListOfVertex & theInternalV, TColStd_ListOfInteger & theBadTriangles, TColStd_ListOfInteger & theNulTriangles, BRepMesh_Delaun & theTrigu, const Standard_Boolean theIsFirst);
 		%feature("autodoc", "1");
-		Standard_Real Control(const Handle_BRepAdaptor_HSurface &caro, const Standard_Real defface, BRepMesh_ListOfVertex & inter, TColStd_ListOfInteger & badTri, TColStd_ListOfInteger & nulTri, BRepMesh_Delaun & trigu, const Standard_Boolean isfirst);
+		static		gp_XY FindUV(const TopoDS_Vertex theV, const gp_Pnt2d theXY, const Standard_Integer theIp, const Handle_BRepAdaptor_HSurface &theSFace, const Standard_Real theMinDist, BRepMesh_DataMapOfIntegerListOfXY & theLocation2dMap);
 		%feature("autodoc", "1");
-		gp_XY FindUV(const TopoDS_Vertex V, const gp_Pnt2d XY, const Standard_Integer ip, const Handle_BRepAdaptor_HSurface &S, const Standard_Real mindist);
+		const BRepMesh_Triangle & Triangle(const Standard_Integer theIndex) const;
 		%feature("autodoc", "1");
-		const BRepMesh_Triangle & Triangle(const Standard_Integer Index) const;
+		const BRepMesh_Edge & Edge(const Standard_Integer theIndex) const;
 		%feature("autodoc", "1");
-		const BRepMesh_Edge & Edge(const Standard_Integer Index) const;
+		const BRepMesh_Vertex & Vertex(const Standard_Integer theIndex) const;
 		%feature("autodoc", "1");
-		const BRepMesh_Vertex & Vertex(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Pnt(const Standard_Integer Index) const;
+		const gp_Pnt  Pnt(const Standard_Integer theIndex) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3205,11 +3323,11 @@ class BRepMesh_Delaun {
 		%feature("autodoc", "1");
 		const Handle_BRepMesh_DataStructureOfDelaun & Result() const;
 		%feature("autodoc", "1");
-		const MeshDS_MapOfInteger & Frontier();
+		const BRepMesh_MapOfInteger & Frontier();
 		%feature("autodoc", "1");
-		const MeshDS_MapOfInteger & InternalEdges();
+		const BRepMesh_MapOfInteger & InternalEdges();
 		%feature("autodoc", "1");
-		const MeshDS_MapOfInteger & FreeEdges();
+		const BRepMesh_MapOfInteger & FreeEdges();
 		%feature("autodoc", "1");
 		const BRepMesh_Vertex & GetVertex(const Standard_Integer vIndex) const;
 		%feature("autodoc", "1");
@@ -3329,15 +3447,15 @@ def __del__(self):
 class BRepMesh_Edge {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_Edge(const Standard_Integer vDebut, const Standard_Integer vFin, const MeshDS_DegreeOfFreedom canMove);
+		BRepMesh_Edge(const Standard_Integer vDebut, const Standard_Integer vFin, const BRepMesh_DegreeOfFreedom canMove);
 		%feature("autodoc", "1");
 		Standard_Integer FirstNode() const;
 		%feature("autodoc", "1");
 		Standard_Integer LastNode() const;
 		%feature("autodoc", "1");
-		MeshDS_DegreeOfFreedom Movability() const;
+		BRepMesh_DegreeOfFreedom Movability() const;
 		%feature("autodoc", "1");
-		void SetMovability(const MeshDS_DegreeOfFreedom Move);
+		void SetMovability(const BRepMesh_DegreeOfFreedom Move);
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
@@ -3369,22 +3487,67 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepMesh_PairOfIndex;
+class BRepMesh_PairOfIndex {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_PairOfIndex();
+		%feature("autodoc", "1");
+		BRepMesh_PairOfIndex(const BRepMesh_PairOfIndex &theOther);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Standard_Integer theIndx);
+		%feature("autodoc", "1");
+		void Prepend(const Standard_Integer theIndx);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Integer FirstIndex() const;
+		%feature("autodoc", "1");
+		Standard_Integer LastIndex() const;
+		%feature("autodoc", "1");
+		Standard_Integer Index(const Standard_Integer theNum) const;
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer theNum, const Standard_Integer theIndex);
+		%feature("autodoc", "1");
+		void RemoveIndex(const Standard_Integer theNum);
+
+};
+%feature("shadow") BRepMesh_PairOfIndex::~BRepMesh_PairOfIndex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepMesh_PairOfIndex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepMesh_Triangle;
 class BRepMesh_Triangle {
 	public:
 		%feature("autodoc", "1");
 		BRepMesh_Triangle();
 		%feature("autodoc", "1");
-		BRepMesh_Triangle(const Standard_Integer e1, const Standard_Integer e2, const Standard_Integer e3, const Standard_Boolean o1, const Standard_Boolean o2, const Standard_Boolean o3, const MeshDS_DegreeOfFreedom canMove);
+		BRepMesh_Triangle(const Standard_Integer e1, const Standard_Integer e2, const Standard_Integer e3, const Standard_Boolean o1, const Standard_Boolean o2, const Standard_Boolean o3, const BRepMesh_DegreeOfFreedom canMove);
 		%feature("autodoc", "1");
-		void Initialize(const Standard_Integer e1, const Standard_Integer e2, const Standard_Integer e3, const Standard_Boolean o1, const Standard_Boolean o2, const Standard_Boolean o3, const MeshDS_DegreeOfFreedom canMove);
+		void Initialize(const Standard_Integer e1, const Standard_Integer e2, const Standard_Integer e3, const Standard_Boolean o1, const Standard_Boolean o2, const Standard_Boolean o3, const BRepMesh_DegreeOfFreedom canMove);
 		%feature("autodoc","Edges() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 
 		void Edges(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & o1, Standard_Boolean & o2, Standard_Boolean & o3) const;
 		%feature("autodoc", "1");
-		MeshDS_DegreeOfFreedom Movability() const;
+		BRepMesh_DegreeOfFreedom Movability() const;
 		%feature("autodoc", "1");
-		void SetMovability(const MeshDS_DegreeOfFreedom Move);
+		void SetMovability(const BRepMesh_DegreeOfFreedom Move);
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");

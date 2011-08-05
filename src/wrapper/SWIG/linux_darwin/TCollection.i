@@ -901,7 +901,7 @@ class TCollection_ExtendedString {
 		%feature("autodoc", "1");
 		TCollection_ExtendedString Token(const Standard_ExtString separators, const Standard_Integer whichone=1) const;
 		%feature("autodoc", "1");
-		Standard_ExtString const ToExtString() const;
+		Standard_ExtString ToExtString() const;
 		%feature("autodoc", "1");
 		void Trunc(const Standard_Integer ahowmany);
 		%feature("autodoc", "1");

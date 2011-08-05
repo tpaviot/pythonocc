@@ -17,8 +17,8 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-$Revision: 1166 $
-$Date: 2011-01-20 05:56:02 +0100 (Jeu, 20 jan 2011) $
+$Revision: 1241 $
+$Date: 2011-08-05 14:23:54 +0200 (Ven, 05 aoû 2011) $
 $Author: tpaviot $
 $HeaderURL$
 
@@ -31,7 +31,12 @@ $HeaderURL$
 #include <Adaptor2d_Line2d.hxx>
 #include <BRepMesh_Array1OfBiPoint.hxx>
 #include <BRepMesh_Array1OfVertexOfDelaun.hxx>
+#include <BRepMesh_BaseAllocator.hxx>
 #include <BRepMesh_BiPoint.hxx>
+#include <BRepMesh_CellFilter.hxx>
+#include <BRepMesh_Circ.hxx>
+#include <BRepMesh_CircleInspector.hxx>
+#include <BRepMesh_CircleTool.hxx>
 #include <BRepMesh_Classifier.hxx>
 #include <BRepMesh_ClassifierPtr.hxx>
 #include <BRepMesh_ComparatorOfIndexedVertexOfDelaun.hxx>
@@ -55,6 +60,7 @@ $HeaderURL$
 #include <BRepMesh_DataMapOfShapeReal.hxx>
 #include <BRepMesh_DataMapOfVertexInteger.hxx>
 #include <BRepMesh_DataStructureOfDelaun.hxx>
+#include <BRepMesh_DegreeOfFreedom.hxx>
 #include <BRepMesh_Delaun.hxx>
 #include <BRepMesh_DiscretFactory.hxx>
 #include <BRepMesh_DiscretRoot.hxx>
@@ -82,10 +88,14 @@ $HeaderURL$
 #include <BRepMesh_ListIteratorOfListOfXY.hxx>
 #include <BRepMesh_ListNodeOfListOfVertex.hxx>
 #include <BRepMesh_ListNodeOfListOfXY.hxx>
+#include <BRepMesh_ListOfInteger.hxx>
 #include <BRepMesh_ListOfVertex.hxx>
 #include <BRepMesh_ListOfXY.hxx>
+#include <BRepMesh_MapOfInteger.hxx>
+#include <BRepMesh_MapOfIntegerInteger.hxx>
 #include <BRepMesh_NodeHasherOfDataStructureOfDelaun.hxx>
 #include <BRepMesh_PDiscretRoot.hxx>
+#include <BRepMesh_PairOfIndex.hxx>
 #include <BRepMesh_PairOfPolygon.hxx>
 #include <BRepMesh_PluginMacro.hxx>
 #include <BRepMesh_SelectorOfDataStructureOfDelaun.hxx>

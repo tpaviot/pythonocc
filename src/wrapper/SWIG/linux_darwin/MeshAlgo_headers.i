@@ -27,20 +27,10 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<MeshAlgo_CellFilter.hxx>
-#include<MeshAlgo_Circ.hxx>
-#include<MeshAlgo_CircleInspector.hxx>
-#include<MeshAlgo_CircleTool.hxx>
-#include<MeshAlgo_Edge.hxx>
-#include<MeshAlgo_Triangle.hxx>
-#include<MeshAlgo_Vertex.hxx>
 
 // Additional headers necessary for compilation.
 
-#include<MeshDS_BaseAllocator.hxx>
 
 // Needed headers necessary for compilation.
 
-#include<gp_XY.hxx>
-#include<gp_Circ2d.hxx>
 %}

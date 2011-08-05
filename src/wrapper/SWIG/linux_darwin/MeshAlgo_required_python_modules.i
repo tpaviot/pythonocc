@@ -27,7 +27,4 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import gp
-import Standard
-import MeshDS
 };

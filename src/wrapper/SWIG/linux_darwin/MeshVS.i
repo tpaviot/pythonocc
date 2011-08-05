@@ -2002,7 +2002,7 @@ class MeshVS_SensitiveSegment : public Select3D_SensitiveSegment {
 		%feature("autodoc", "1");
 		MeshVS_SensitiveSegment(const Handle_SelectBasics_EntityOwner &theOwner, const gp_Pnt theFirstP, const gp_Pnt theLastP, const Standard_Integer theMaxRect=1);
 		%feature("autodoc", "1");
-		virtual		void Project(const Select3D_Projector &aProjector);
+		virtual		void Project(const Handle_Select3D_Projector &aProjector);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
 		%feature("autodoc", "1");
@@ -3232,7 +3232,7 @@ class MeshVS_SensitivePolyhedron : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		MeshVS_SensitivePolyhedron(const Handle_SelectBasics_EntityOwner &Owner, const TColgp_Array1OfPnt &Nodes, const Handle_MeshVS_HArray1OfSequenceOfInteger &Topo);
 		%feature("autodoc", "1");
-		virtual		void Project(const Select3D_Projector &aProjector);
+		virtual		void Project(const Handle_Select3D_Projector &aProjector);
 		%feature("autodoc", "1");
 		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
@@ -3295,7 +3295,7 @@ class MeshVS_SensitiveMesh : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
-		virtual		void Project(const Select3D_Projector &aProjector);
+		virtual		void Project(const Handle_Select3D_Projector &aProjector);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & boxes);
 		%feature("autodoc", "1");
@@ -3817,7 +3817,7 @@ class MeshVS_SensitiveFace : public Select3D_SensitiveFace {
 		%feature("autodoc", "1");
 		MeshVS_SensitiveFace(const Handle_SelectBasics_EntityOwner &theOwner, const TColgp_Array1OfPnt &thePoints, const Select3D_TypeOfSensitivity theSensType=Select3D_TOS_INTERIOR);
 		%feature("autodoc", "1");
-		virtual		void Project(const Select3D_Projector &aProjector);
+		virtual		void Project(const Handle_Select3D_Projector &aProjector);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
 		%feature("autodoc", "1");

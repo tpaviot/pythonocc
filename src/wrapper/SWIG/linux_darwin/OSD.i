@@ -3435,6 +3435,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor OSD_MAllocHook;
+class OSD_MAllocHook {
+	public:
+		%feature("autodoc", "1");
+		OSD_MAllocHook();
+		%feature("autodoc", "1");
+		static		void SetCallback(OSD_MAllocHook::Callback* theCB);
+		%feature("autodoc", "1");
+		static		OSD_MAllocHook::Callback * GetCallback();
+		%feature("autodoc", "1");
+		static		OSD_MAllocHook::LogFileHandler * GetLogFileHandler();
+		%feature("autodoc", "1");
+		static		OSD_MAllocHook::CollectBySize * GetCollectBySize();
+
+};
+%feature("shadow") OSD_MAllocHook::~OSD_MAllocHook %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_MAllocHook {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor OSD_SIGINT;
 class OSD_SIGINT : public OSD_Signal {
 	public:

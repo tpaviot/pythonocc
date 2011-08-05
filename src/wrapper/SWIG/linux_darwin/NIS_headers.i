@@ -29,6 +29,7 @@ $HeaderURL$
 
 #include<Handle_NIS_InteractiveObject.hxx>
 #include<Handle_NIS_View.hxx>
+#include<NIS_Allocator.hxx>
 #include<NIS_DrawList.hxx>
 #include<NIS_Drawer.hxx>
 #include<NIS_InteractiveContext.hxx>
@@ -168,7 +169,6 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<Aspect_XWD.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>
 #include<Graphic3d_Array1OfVertexC.hxx>
@@ -390,6 +390,7 @@ $HeaderURL$
 #include<OSD_LoadMode.hxx>
 #include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
+#include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
@@ -764,15 +765,15 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_V3d_Viewer.hxx>
-#include<Handle_Aspect_Window.hxx>
-#include<gp_Ax1.hxx>
 #include<TColStd_MapIteratorOfPackedMapOfInteger.hxx>
 #include<Quantity_Color.hxx>
-#include<gp_Trsf.hxx>
-#include<Bnd_B3f.hxx>
-#include<TColStd_PackedMapOfInteger.hxx>
 #include<Handle_Standard_Type.hxx>
+#include<Handle_V3d_Viewer.hxx>
+#include<Handle_Aspect_Window.hxx>
+#include<Bnd_B3f.hxx>
+#include<gp_Ax1.hxx>
+#include<gp_Trsf.hxx>
+#include<TColStd_PackedMapOfInteger.hxx>
 #include<Handle_Poly_Triangulation.hxx>
 #include<TopoDS_Shape.hxx>
 %}

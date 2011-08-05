@@ -49,6 +49,20 @@ $HeaderURL$
 
 %include Extrema_headers.i
 
+typedef NCollection_UBTree<int,Bnd_Sphere> Extrema_UBTreeOfSphere;
+typedef NCollection_UBTreeFiller<int,Bnd_Sphere> Extrema_UBTreeFillerOfSphere;
+typedef NCollection_Handle<NCollection_UBTree<int, Bnd_Sphere> > Extrema_HUBTreeOfSphere;
+
+enum Extrema_ExtFlag {
+	Extrema_ExtFlag_MIN,
+	Extrema_ExtFlag_MAX,
+	Extrema_ExtFlag_MINMAX,
+	};
+
+enum Extrema_ExtAlgo {
+	Extrema_ExtAlgo_Grad,
+	Extrema_ExtAlgo_Tree,
+	};
 
 
 
@@ -1579,6 +1593,51 @@ def __del__(self):
 %}
 
 %extend Extrema_GenLocateExtSS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_GenExtPS;
+class Extrema_GenExtPS {
+	public:
+		%feature("autodoc", "1");
+		Extrema_GenExtPS();
+		%feature("autodoc", "1");
+		Extrema_GenExtPS(const gp_Pnt P, const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
+		%feature("autodoc", "1");
+		Extrema_GenExtPS(const gp_Pnt P, const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt P);
+		%feature("autodoc", "1");
+		void SetFlag(const Extrema_ExtFlag F);
+		%feature("autodoc", "1");
+		void SetAlgo(const Extrema_ExtAlgo A);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf Point(const Standard_Integer N) const;
+
+};
+%feature("shadow") Extrema_GenExtPS::~Extrema_GenExtPS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_GenExtPS {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4424,86 +4483,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Extrema_ExtPRevS;
-class Extrema_ExtPRevS {
-	public:
-		%feature("autodoc", "1");
-		Extrema_ExtPRevS();
-		%feature("autodoc", "1");
-		Extrema_ExtPRevS(const gp_Pnt P, const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Extrema_ExtPRevS(const gp_Pnt P, const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt P);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf Point(const Standard_Integer N) const;
-
-};
-%feature("shadow") Extrema_ExtPRevS::~Extrema_ExtPRevS %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_ExtPRevS {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Extrema_GenExtPS;
-class Extrema_GenExtPS {
-	public:
-		%feature("autodoc", "1");
-		Extrema_GenExtPS();
-		%feature("autodoc", "1");
-		Extrema_GenExtPS(const gp_Pnt P, const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Extrema_GenExtPS(const gp_Pnt P, const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt P);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf Point(const Standard_Integer N) const;
-
-};
-%feature("shadow") Extrema_GenExtPS::~Extrema_GenExtPS %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_GenExtPS {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Extrema_ExtPC2d;
 class Extrema_ExtPC2d {
 	public:
@@ -4833,9 +4812,9 @@ class Extrema_ExtPS {
 		%feature("autodoc", "1");
 		Extrema_ExtPS();
 		%feature("autodoc", "1");
-		Extrema_ExtPS(const gp_Pnt P, const Adaptor3d_Surface &S, const Standard_Real TolU, const Standard_Real TolV);
+		Extrema_ExtPS(const gp_Pnt P, const Adaptor3d_Surface &S, const Standard_Real TolU, const Standard_Real TolV, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
 		%feature("autodoc", "1");
-		Extrema_ExtPS(const gp_Pnt P, const Adaptor3d_Surface &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		Extrema_ExtPS(const gp_Pnt P, const Adaptor3d_Surface &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
 		%feature("autodoc", "1");
 		void Initialize(const Adaptor3d_Surface &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
@@ -4851,6 +4830,10 @@ class Extrema_ExtPS {
 		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & PUfVf, gp_Pnt & PUfVl, gp_Pnt & PUlVf, gp_Pnt & PUlVl) const;
+		%feature("autodoc", "1");
+		void SetFlag(const Extrema_ExtFlag F);
+		%feature("autodoc", "1");
+		void SetAlgo(const Extrema_ExtAlgo A);
 
 };
 %feature("shadow") Extrema_ExtPS::~Extrema_ExtPS %{
@@ -5374,6 +5357,45 @@ def __del__(self):
 %}
 
 %extend Extrema_HArray1OfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_ExtPRevS;
+class Extrema_ExtPRevS {
+	public:
+		%feature("autodoc", "1");
+		Extrema_ExtPRevS();
+		%feature("autodoc", "1");
+		Extrema_ExtPRevS(const gp_Pnt P, const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		Extrema_ExtPRevS(const gp_Pnt P, const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt P);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf Point(const Standard_Integer N) const;
+
+};
+%feature("shadow") Extrema_ExtPRevS::~Extrema_ExtPRevS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_ExtPRevS {
 	void _kill_pointed() {
 		delete $self;
 	}

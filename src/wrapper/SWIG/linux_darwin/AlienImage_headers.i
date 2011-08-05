@@ -197,7 +197,6 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<Aspect_XWD.hxx>
 #include<Quantity_AbsorbedDose.hxx>
 #include<Quantity_Acceleration.hxx>
 #include<Quantity_AcousticIntensity.hxx>

@@ -28,9 +28,9 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import MeshDS
 import TopoDS
 import gp
+import NCollection
 import Poly
 import TopAbs
 import Bnd
