@@ -1,6 +1,9 @@
 '''
 This module helps looping through topology
 '''
+from OCC.BRep import BRep_Tool
+from OCC.Utils.Topology import WireExplorer, Topo
+from OCC.KBE.edge import Edge
 
 class EdgePairsFromWire(object):
     '''
@@ -76,8 +79,8 @@ class LoopWirePairs(object):
         closest = self.closest_point(vert)
         edges_a = self.tp_A.edges_from_vertex(vert)
         edges_b = self.tp_B.edges_from_vertex(closest)
-        a1, a2 = Curve(edges_a.next()),Curve(edges_a.next())
-        b1, b2 = Curve(edges_b.next()),Curve(edges_b.next())
+        a1, a2 = Edge(edges_a.next()),Edge(edges_a.next())
+        b1, b2 = Edge(edges_b.next()),Edge(edges_b.next())
         mpA = a1.mid_point()
         self.index +=1
         

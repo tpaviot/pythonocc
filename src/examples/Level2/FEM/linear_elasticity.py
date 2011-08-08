@@ -13,6 +13,7 @@ from OCC.StdMeshers import *
 from OCC.PAF.Parametric import Parameters
 from OCC.PAF import Parametric
 from OCC.SGEOM import *
+from OCC.Quantity import *
 
 #===============================================================================
 # HELPER CLASSES, FROM SMESH EXAMPLES
@@ -141,31 +142,85 @@ aMesh.AddHypothesis(my_box_shape,3)
 #===============================================================================
 
 face_load, face_lock = aaa[0], aaa[3]
-#group_load = my_context.group_operations.CreateGroup(face_load, ShapeType['FACE'])
-#group_lock = my_context.group_operations.CreateGroup(face_lock, ShapeType['FACE'])
-#group_load = SMESHDS_GroupOnGeom( 0, msh, SMDSAbs_Face, face_load.GetObject().GetValue() )
-#group_lock = SMESHDS_GroupOnGeom( 0, msh, SMDSAbs_Face, face_lock.GetObject().GetValue() )
 
-submesh_load = aMesh.GetSubMesh(face_load.GetObject().GetValue())
-submesh_lock = aMesh.GetSubMesh(face_lock.GetObject().GetValue())
+
+group_load = my_context.group_operations.CreateGroup(face_load, ShapeType['FACE'])
+group_lock = my_context.group_operations.CreateGroup(face_lock, ShapeType['FACE'])
+
+
+
+ 
+
+
+msh = SMESHDS_Mesh(0,1)
+msh.AddHypothesis(my_box_shape, an1DHypothesis)
+msh.AddHypothesis(my_box_shape, a2dHypothseis)
+
+theMesh = SMESHDS_Mesh(0,0)
+theID = 0
+theType = SMDSAbs_Face
+theShape = face_load.GetObject().GetValue()
+
+
+#===============================================================================
+# THIS IS INTERESTING, SETTING SOME GROUPS
+#===============================================================================
+
+group_load = SMESHDS_GroupOnGeom( 0, aMesh.GetMeshDS(), SMDSAbs_Face, face_load.GetObject().GetValue() )
+group_lock = SMESHDS_GroupOnGeom( 1, aMesh.GetMeshDS(), SMDSAbs_Face, face_lock.GetObject().GetValue() )
+group_load.SetColor( Quantity_Color(0,1,0,1) )
+
+# missing method
+group_load.GetElements()
+
+GR = SMESH_Group(0, aMesh, theType, 'jelle', theShape)
+
+#===============================================================================
+# MAKING A SUBMESH
+#===============================================================================
+
+submesh = aMesh.GetSubMesh(face_load.GetObject().GetValue())
+
 #import ipdb; ipdb.set_trace()
-submesh_load.SetIsAlwaysComputed(True)
-submesh_lock.SetIsAlwaysComputed(True)
 
 
 aMeshGen.Compute(aMesh,aMesh.GetShapeToMesh())
+GR = SMESH_Group(0, aMesh, theType, 'jelle', theShape)
+
+# compute the mesh, set the group
+aMesh.AddGroup( group_load.GetType(), 'load', 0, group_load.GetShape())
+aMesh.AddGroup( group_lock.GetType(), 'lock', 1, group_lock.GetShape())
+
+#msh_grp = SMDS_MeshGroup()
+
+
+#===============================================================================
+# SO WE GOT 2 CALID GROUPS, BUT NONE CAN BE ADDED TO "aMesh" !!!
+#===============================================================================
+
+
+
+#group_lock = SMESHDS_GroupOnGeom( 0, aMesh, SMDSAbs_Face, face_lock.GetObject().GetValue() )
+
+#submesh_load = aMesh.GetSubMesh(face_load.GetObject().GetValue())
+#submesh_lock = aMesh.GetSubMesh(face_lock.GetObject().GetValue())
+##import ipdb; ipdb.set_trace()
+#submesh_load.SetIsAlwaysComputed(True)
+#submesh_lock.SetIsAlwaysComputed(True)
+
+
+#aMesh.ExportMED("_TEST.med")  # write it to a file that can be solve with Code_Aster
+aMesh.ExportUNV("_TEST_GROUPS.UNV")  # write it to a file that can be solve with Code_Aster
+
+
+#f, auto_groups=0, version=MED_V2_2
+# aMesh.ExportMED("/Users/localadmin/Documents/workspace/pyocc/src/examples/Level2/FEM/_TEST.med")  # write it to a file that can be solve with Code_Aster
+
 
 #
-#msh = SMESHDS_Mesh(0,1)
-#import ipdb; ipdb.set_trace()
-#msh.AddHypothesis(my_box_shape, an1DHypothesis)
-#msh.AddHypothesis(my_box_shape, a2dHypothseis)
 # see documentation: 
 # file:///Users/localadmin/Documents/Documentation/doc5.1.3/SMESH/doc/salome/tui/SMESH/classSMESHDS__Hypothesis.html
 # msh.AddHypothesis(my_box_shape, a3dHypothesis) 
-
-
-
 
 
 
@@ -176,11 +231,8 @@ display, start_display, add_menu, add_function_to_menu = init_display()
 display_fem_mesh(aMesh)                     # show the mesh
 
 
-
-
 #SMESHDS_GroupOnGeom(id,theMesh,theType,theShape)
 
-aMesh.ExportMED("_TEST.med")                # write it to a file that can be solve with Code_Aster
 
 #===============================================================================
 # START GUI

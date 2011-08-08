@@ -17,25 +17,23 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.BRepPrimAPI import *
 from OCC.gp import *
 from OCC.TopLoc import *
 from OCC.AIS import *
 
 from OCC.Display.SimpleGui import *
+from OCC.Utils.Construct import make_cube
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 ais_boxshp=None
 
 def build_shape():
-    global ais_boxshp
-    if not isinstance(ais_boxshp,Handle_AIS_Shape):
-        boxshp = BRepPrimAPI_MakeBox(50.,50.,50.).Shape()
-        ais_boxshp = display.DisplayShape(boxshp)
+    boxshp = make_cube(50.,50.,50.)
+    ais_boxshp = display.DisplayShape(boxshp)
     return ais_boxshp
         
 def rotating_cube_1_axis(event=None):
-    build_shape()
+    ais_boxshp = build_shape()
     Ax1 = gp_Ax1(gp_Pnt(0,0,0),gp_Dir(0,0,1))
     aCubeTrsf = gp_Trsf()
     angle = 0.0
@@ -47,7 +45,7 @@ def rotating_cube_1_axis(event=None):
         angle += 0.001
 
 def rotating_cube_2_axis(event=None):
-    build_shape()
+    ais_boxshp = build_shape()
     Ax1 = gp_Ax1(gp_Pnt(0,0,0),gp_Dir(0,0,1))
     Ax2 = gp_Ax1(gp_Pnt(0,0,0),gp_Dir(0,1,0))
     aCubeTrsf = gp_Trsf()

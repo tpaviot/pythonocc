@@ -59,6 +59,11 @@ from OCC.GeomAbs import *
 TOLERANCE = 1e-6
 
 def get_boundingbox(shape, tol=1e-12):
+    '''
+    :param shape: TopoDS_Shape such as TopoDS_Face
+    :param tol: tolerance
+    :return: xmin, ymin, zmin, xmax, ymax, zmax
+    '''
     bbox = Bnd_Box()
     bbox.SetGap(tol)
     #BRepBndLib_AddClose(shape, bbox)
@@ -68,6 +73,10 @@ def get_boundingbox(shape, tol=1e-12):
 #===============================================================================
 # Data type utilities
 #===============================================================================
+
+def to_string(_string):
+    from OCC.TCollection import  TCollection_ExtendedString
+    return TCollection_ExtendedString(_string)
 
 def _Tcol_dim_1(li, _type):
     '''function factory for 1-dimensional TCol* types'''
@@ -125,7 +134,7 @@ def boolean_cut(shapeToCutFrom, cuttingShape):
         return shapeToCutFrom
 
 def boolean_cut_old(shapeToCutFrom, cuttingShape):
-    from OCC.BRepAlgo import *
+    from OCC.BRepAlgo import BRepAlgo_Cut
     cut = BRepAlgo_Cut(shapeToCutFrom, cuttingShape)
     #cut.RefineEdges()
     #cut.FuseEdges()
@@ -314,7 +323,7 @@ def point_in_boundingbox(solid, pnt, tolerance=1e-5):
 
     Returns: bool
     """
-    return get_boundingbox(solid).IsOut(pnt)
+    return not(get_boundingbox(solid).IsOut(pnt))
 
 def point_in_solid(solid, pnt, tolerance=1e-5):
     """returns True if *pnt* lies in *solid*, False if not
@@ -325,8 +334,9 @@ def point_in_solid(solid, pnt, tolerance=1e-5):
     Returns: bool
     """
     from OCC.BRepClass3d import BRepClass3d_SolidClassifier
-    from OCC.TopAbs import *
-    _in_solid = BRepClass3d_SolidClassifier (solid, pnt, tolerance)
+    from OCC.TopAbs import TopAbs_ON, TopAbs_OUT, TopAbs_IN
+    _in_solid = BRepClass3d_SolidClassifier(solid, pnt, tolerance)
+    print 'STATE',_in_solid.State()
     if _in_solid.State()==TopAbs_ON:
         return None,'on'
     if _in_solid.State()==TopAbs_OUT:
@@ -512,7 +522,7 @@ def to_adaptor_3d(curveType):
         raise TypeError('allowed types are Wire, Edge or a subclass of Geom_Curve\nGot a %s' % (curveType.__class__))
 
 def project_point_on_curve(crv, pnt):
-    from OCC.GeomAPI import *
+    from OCC.GeomAPI import GeomAPI_ProjectPointOnCurve
     rrr = GeomAPI_ProjectPointOnCurve(pnt, crv)
     return rrr.LowerDistanceParameter(), rrr.NearestPoint()
 

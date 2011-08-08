@@ -69,6 +69,7 @@ def geomobject_from_topods(topods, pmc):
 
     gf = tt.GetLastFunction().GetObject() # GEOM_Function
     import ipdb; ipdb.set_trace()
+    gf.IsNull() # yep...
     gf.SetValue(shape) # segfault; this is the shape that tt.GetValue() will return!
 
     tt.GetValue().IsNull()

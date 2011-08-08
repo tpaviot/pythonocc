@@ -38,16 +38,17 @@ class DynamicShape(ode.Body):
     """ Defines a body attached to a TopoDS_Shape to be used
     in a simulation context
     """
-    def __init__(self,*kargs):
+    def __init__(self, dyn_context, infinite_rotation=False):
         ''' function prototype:
         DynamicShape(self, parent_context, topods_shape, enable_collision_detection,use_boundingbox,use_trimesh )
         '''
-        ode.Body.__init__(self,*kargs)
+        ode.Body.__init__(self,dyn_context)
 
-        self._parent_context = kargs[0]
+        self._parent_context = dyn_context
         self._shape = None
         self._ais_shape = None #when the shape is displayed
         self._VIEW_COG = False
+        self._inf_rotation = infinite_rotation
         self._cog_pos = []
        
         self._fixed = False #by default, a 'moving' shape
@@ -198,4 +199,24 @@ class DynamicShape(ode.Body):
         M.setParameters(mass,0,0,0,i11,i22,i33,i12,i13,i23)
         self.setMass(M)
 
+        if not self._inf_rotation:
+            #===============================================================================
+            #    this is a common source of error, so defaulting to the finite rotation
+            #    that avoids many cases of the common "bNormalizationResult" error
+            #    a more in-depth explanation from the ODE docs:
+            #
+            #    - 0: An "infinitesimal" orientation update is used. This is
+            #        fast to compute, but it can occasionally cause inaccuracies
+            #        for bodies that are rotating at high speed, especially when
+            #        those bodies are joined to other bodies. This is the default
+            #        for every new body that is created.
+            #
+            #      - 1: A "finite" orientation update is used. This is more
+            #        costly to compute, but will be more accurate for high speed
+            #        rotations. Note however that high speed rotations can result
+            #        in many types of error in a simulation, and this mode will
+            #        only fix one of those sources of error.
+            #
+            #===============================================================================
+            self.setFiniteRotationMode(1)
 

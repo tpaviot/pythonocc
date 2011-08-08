@@ -202,7 +202,7 @@ class Edge(KbeObject):
         raise NotImplementedError
 
 #===============================================================================
-#    Curve.global_properties
+#    Curve.GlobalProperties
 #===============================================================================
 
     def length(self, lbound=None, ubound=None, tolerance=1e-5):
@@ -445,11 +445,16 @@ class Edge(KbeObject):
 #    Curve.graphic
 #===============================================================================
 
-    def draw(self, context):
+    def show(self, poles=False, vertices=False, knots=False):
         '''
-        renders the curve in context
+        poles, knots, should render all slightly different.
+        here's how...
+
+        http://www.opencascade.org/org/forum/thread_1125/
         '''
-        raise NotImplementedError
+        show = super(self, Edge).show()
+        if not poles and not vertices and not knots:
+            show()
 
     def update(self, context):
         '''updates the graphic presentation when called

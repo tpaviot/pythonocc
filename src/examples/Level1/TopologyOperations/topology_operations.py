@@ -16,16 +16,16 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.gp import *
-from OCC.BRepPrimAPI import *
-from OCC.BRepAlgoAPI import *
+#from OCC.BRepPrimAPI import *
+#from OCC.BRepAlgoAPI import *
 from OCC.TopOpeBRepTool import *
-from OCC.BRepBuilderAPI import *
+#from OCC.BRepBuilderAPI import *
 from OCC.BRepFilletAPI import *
-from OCC.Geom import *
-from OCC.TopoDS import *
+#from OCC.Geom import *
+#from OCC.TopoDS import *
 from OCC.TopExp import *
-from OCC.TopAbs import *
-from OCC.TColgp import *
+#from OCC.TopAbs import *
+#from OCC.TColgp import *
 
 import time, math, sys
 from OCC.Utils.Construct import *

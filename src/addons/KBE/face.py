@@ -20,6 +20,21 @@ from OCC.Utils.Topology import Topo
 from OCC.BRep import  BRep_Tool
 from OCC.TopoDS import  *
 
+'''
+
+TODO:
+
+use IntTools_FaceFace to compute intersection between 2 faces
+also useful to test if 2 faces are tangent
+
+inflection point -> scipy.fsolve
+radius / centre of circle
+divide curve by circles
+frenet frame
+
+
+'''
+
 
 class DiffGeomSurface(object):
     def __init__(self, instance):
@@ -141,6 +156,16 @@ class DiffGeomSurface(object):
         # add dictionary mapping which G / C continuity it is...
         return self.surface.Continuity()
 
+    def inflection_parameters(self):
+        """
+        :return: a list of tuples (u,v) of parameters
+        where there are inflection points on the edge
+
+        returns None if no inflection parameters are found
+        """
+        pass
+
+
 #===============================================================================
 #    Surface.dress_up
 #===============================================================================
@@ -188,8 +213,8 @@ class IntersectSurface(object):
         intersect the face with a curve
         @param crv:
         '''
-        if not isinstance(crv, Curve):
-            crv = Curve(crv)
+        if not isinstance(crv, Edge):
+            crv = Edge(crv)
         bics = BRepIntCurveSurface_Inter()
         bics.Init(self.face, crv.crv)
         # state, u,v,w
@@ -213,8 +238,8 @@ class Face(KbeObject):
 
 
         # cooperative classes
-        self.global_properties = GlobalProperties(self)
-        self.diff_geom = DiffGeomSurface(self)
+        self.GlobalProperties = GlobalProperties(self)
+        self.DiffGeom = DiffGeomSurface(self)
 
         # STATE; whether cooperative classes are yet initialized
         self._curvature_initiated = False
@@ -367,6 +392,24 @@ class Face(KbeObject):
         '''
         raise NotImplementedError
 
+    def continuity_edge_face(self, edge, face):
+        """
+        compute the continuity between two faces at :edge:
+
+        :param edge: an Edge or TopoDS_Edge from :face:
+        :param face: a Face or TopoDS_Face
+        :return: bool, GeomAbs_Shape if it has continuity, otherwise
+         False, None
+        """
+        edge = edge if not hasattr(edge, 'topo') else edge.topo
+        face = face if not hasattr(face, 'topo') else face.topo
+        bt = BRep_Tool()
+        if bt.HasContinuity(edge, self.topo, face):
+            continuity = bt.Continuity(edge, self.topo, face)
+            return True, continuity
+        else:
+            return False, None
+
 #===============================================================================
 #    Surface.project
 #    project curve, point on face
@@ -412,6 +455,14 @@ class Face(KbeObject):
 
     def project_edge(self, edg):
         return self.project_cur
+
+    def iso_curve(self, u_or_v, param):
+        """
+        :return: an iso curve at parameter `param`
+        :param u_or_v: "u" or "v"
+        :param param:  the parameter where the iso curve lies
+        """
+        pass
 
     def Edges(self):
         return [Edge(i) for i in Topo(self.topo).edges()]

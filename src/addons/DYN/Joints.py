@@ -22,22 +22,26 @@ import ode
 
 from OCC.gp import *
 
-class BaseJoint(ode.Joint):
-    ''' Base class for all joints
-    '''
-    def __init__(self,*kargs):
-        ode.Join.__ini__(self,*kargs)
-        print 'BaseJoint initialized'
-    #ode.Joint.__init__(self,*kargs)
-    #    self._parent_context = kargs[0]
-    
-    def attach_shapes(selfself,shape1,shape2):
-        self.attach(shape1,shape2)
+#class BaseJoint(ode.Joint):
+#    ''' Base class for all joints
+#    '''
+#    def __init__(self,*kargs):
+#        ode.Join.__ini__(self,*kargs)
+#        print 'BaseJoint initialized'
+#    #ode.Joint.__init__(self,*kargs)
+#    #    self._parent_context = kargs[0]
+#
+#    def attach_shapes(self,shape1,shape2):
+#        dynamic_context1 = shape1.get_dynamic_context()
+#        dynamic_context2 = shape2.get_dynamic_context()
+#        assert(dynamic_context1 == dynamic_context2)
+#        self.attach(shape1,shape2)
         
 class DynamicHingeJoint(ode.HingeJoint):
     """ Create a hinge joint between 2 dynamic shapes
     """
-    def _init__(self,*kargs):
+    def _init__(self,dyn_context):
+        self.dyn_context = dyn_context
         ode.HingeJoint.__init__(self,*kargs)
         
     def set_anchor(self,gp_point_center):
@@ -56,15 +60,9 @@ class DynamicHingeJoint(ode.HingeJoint):
 class DynamicBallJoint(ode.BallJoint):
     """ Create a joint between 2 DynamicShapes
     """
-    def __init__(self,*kargs):
-        print kargs
-        shape1 = kargs[0]
-        shape2 = kargs[1]
-        dynamic_context1 = shape1.get_dynamic_context()
-        dynamic_context2 = shape2.get_dynamic_context()
-        assert(dynamic_context1 == dynamic_context2)
-        print "bozozo"
-        ode.BallJoint.__init__(self,dynamic_context1)
+    def __init__(self,dyn_context):
+        self.dyn_context = dyn_context
+        ode.BallJoint.__init__(self,dyn_context)
     
     def set_anchor(self,gp_point_center):
         ''' Set the anchor of the ball joint

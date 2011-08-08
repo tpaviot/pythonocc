@@ -1,9 +1,11 @@
+# TODO: merge with geomplate
+
 from OCC.Display.SimpleGui import init_display
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 from OCC.Utils.Common import points_to_bspline
-from OCC.Utils.Construct import make_edge, make_n_sided, gp_Pnt
-
+from OCC.Utils.Construct import gp_Pnt, make_edge, make_n_sided, make_vertex
+from itertools import chain
 
 def n_sided_patch(event=None):
 
@@ -45,8 +47,9 @@ def n_sided_patch(event=None):
 
     display.EraseAll()
     edges = map(make_edge, [spl1, spl2, spl3, spl4])
+    verts = map(make_vertex, chain(pts1, pts2, pts3, pts4))
     display.DisplayShape(edges)
-
+    display.DisplayShape(verts)
     f1 = make_n_sided(edges)
     display.DisplayShape(f1, update=True)
 

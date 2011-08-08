@@ -117,7 +117,6 @@ gp_Vec.__str__ = gp_vec_print
 gp_Pnt.__repr__ = gp_pnt_print
 gp_Pnt.__str__ = gp_pnt_print
 gp_Pnt.__eq__ = gp_equal
-gp_Vec.__eq__ = gp_equal
 
 #===============================================================================
 # ---TOPOLOGY---
@@ -392,16 +391,41 @@ def make_spline(pnts=[''],
 #===============================================================================
 # NEW
 #===============================================================================
-def make_n_sided(edges, continuity=GeomAbs_C0):
+def make_n_sided(edges, points, continuity=GeomAbs_C0):
+    """
+    builds an n-sided patch, respecting the constraints defined by *edges* and *points*
 
+    a simplified call to the BRepFill_Filling class
+    its simplified in the sense that to all constraining edges and points
+    the same level of *continuity* will be applied
+
+    *continuity* represents:
+
+    GeomAbs_C0 : the surface has to pass by 3D representation of the edge
+    GeomAbs_G1 : the surface has to pass by 3D representation of the edge
+    and to respect tangency with the given face
+    GeomAbs_G2 : the surface has to pass by 3D representation of the edge
+    and to respect tangency and curvature with the given face.
+
+    NOTE: it is not required to set constraining points.
+    just leave the tuple or list empty
+
+    :param edges: the constraining edges
+    :param points: the constraining points
+    :param continuity: GeomAbs_0, 1, 2
+    :return: TopoDS_Face
+    """
     n_sided = BRepFill_Filling()
-    for edg in edges:
-        n_sided.Add(edg, continuity)
-    
     n_sided.SetApproxParam(6, 40)
     n_sided.SetResolParam(3, 20, 20, False)
     #n_sided.SetConstrParam(0.0001, 0.0001, 0.00001, 0.00001)
-    
+
+    for edg in edges:
+        n_sided.Add(edg, continuity)
+
+    for pt in points:
+        n_sided.Add(pt)
+
     n_sided.Build()
     face  = n_sided.Face()
     return face

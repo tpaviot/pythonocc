@@ -26,6 +26,7 @@ from OCC.Utils.Image import Texture
 from OCC.Graphic3d import *
 from OCC.Utils.Construct import *
 from OCC.DYN.Context import DynamicSimulationContext, DynamicShape
+from OCC.DYN.Joints import DynamicBallJoint, DynamicHingeJoint
 import ode
 
 from OCC.Display.SimpleGui import *
@@ -78,6 +79,7 @@ def box_plane_collision(event=None):
     display.DisplayColoredShape(face,'RED')
     display.FitAll()
     #Starts the simulation
+    dyn_context.set_animation_frame_rate(60)
     dyn_context.start_open_loop()
 
 def two_boxes_sphere_plane_collision(event=None):
@@ -107,7 +109,8 @@ def two_boxes_sphere_plane_collision(event=None):
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
     #Starts the simulation
     #raw_input('Hit a key when ready to start simulation')
-    dyn_context.set_simulation_duration(20.)
+    dyn_context.set_simulation_duration(10.)
+    dyn_context.set_animation_frame_rate(60)
     dyn_context.start_open_loop()
 
 def dominos(event=None):
@@ -128,6 +131,7 @@ def dominos(event=None):
     # create the table
     table_shape = BRepPrimAPI_MakeBox(l_table,w_table,h_table).Shape()
     # move the table down
+    # the table rests on the `floor`
     #table_shape = translate_topods_from_vector(table_shape, gp_Vec(-l_table/2, -l_table/2, -h_table))
     table_shape = translate_topods_from_vector(table_shape, gp_Vec(-l_table/2, -l_table/2, -h_table))
     dynamic_table = dyn_context.register_shape(table_shape,enable_collision_detection=True,use_boundingbox=True)
@@ -155,14 +159,17 @@ def dominos(event=None):
         dynamic_transformed = dyn_context.register_shape(transformed_shape,enable_collision_detection=True,use_boundingbox=True)
     # The last domino is rotating around the y-axis (he's falling)
     dynamic_transformed.setAngularVel([0,0,0])
-    # Finlly, start simulation loop
-    dyn_context.set_time_step(0.02)
+    # Finally, start simulation loop
+    dyn_context.set_simulation_duration(5)
+    dyn_context.set_time_step(0.001)
+    dyn_context.set_animation_frame_rate(60)
+    #dyn_context.set
     dyn_context.start_open_loop()
 
 def collisions(event=None):
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
-    #dyn_context.set_display(display, safe_yield)
+    dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     # The plane (note: this plane is not a dynamic shape, it's just displayed)
@@ -199,11 +206,176 @@ def collisions(event=None):
         geom_box.setBody(d)
         references.append(geom_box)
     
-    for i in range(20):
+    for i in range(60):
         add_box(i)
    # add_additional(90)
-    dyn_context.set_simulation_duration(20.)
+    dyn_context.setERP(0.5) # 0.2 default
+    dyn_context.setCFM(1e-10) # 1e-10 default
+    dyn_context.set_simulation_duration(25.)
+    dyn_context.set_time_step(0.001)
+    dyn_context.set_animation_frame_rate(60)
     dyn_context.start_open_loop()
+
+
+def pillars(event=None):
+    display.EraseAll()
+    dyn_context = DynamicSimulationContext()
+    dyn_context.set_display(display, safe_yield)
+    dyn_context.enable_collision_detection()
+    dyn_context.enable_gravity()
+    # The plane (note: this plane is not a dynamic shape, it's just displayed)
+    # Then create a geom for this plane
+    # Create a plane geom which prevent the objects from falling forever
+    references=[] #a list that stores ode instances before they are removed from memory
+
+    def floor():
+        Z = -100
+        P1 = gp_Pnt(0,0,Z)
+        V1 = gp_Vec(0,0,1)
+        PL = gp_Pln(P1,gp_Dir(V1))
+        aPlane = GC_MakePlane(PL).Value()
+        aSurface = Geom_RectangularTrimmedSurface( aPlane, -10., 10., -6., 6., 1, 1 )
+        face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
+        face.Build()
+        floor = ode.GeomPlane(dyn_context._space, (0,0,1), Z)
+        references.append(floor)
+        display.DisplayColoredShape(face.Shape(),'RED')
+        display.FitAll()
+
+    floor()
+
+    class Pilars(object):
+        def __init__(self, nx,ny,nz,\
+                            dx,dy,dz,\
+                             spacex,spacey,spacez
+                                                ):
+            self.n=0
+            # number of grid
+            self.nx=nx
+            self.ny=ny
+            self.nz=nz
+            # distance between grid members
+            self.dx=dx
+            self.dy=dy
+            self.dz=dz
+            # space between grid members
+            self.spacex=spacex
+            self.spacey=spacey
+            self.spacez=spacez
+            # current z level in grid
+            self.level = 0
+            self.iX, self.iY, self.iZ = 0,0,0
+
+        def add_boxes(self):
+            for i in range(self.nx):
+                self.iX +=1
+                for j in range(self.ny):
+                    self.iY +=1
+                    for k in range(self.nz):
+                        self.n +=1
+                        if (self.iX*self.iY) % (self.nx-1*self.ny-1) == 0:
+                            self.level += 1
+                            self.iX, self.iY = 0,0
+
+                        new_box = BRepPrimAPI_MakeBox(self.dx,self.dy,self.dz).Shape()
+                        _x = self.dx*i + self.spacex*i
+                        _y = self.dy*j + self.spacey*j
+                        _z = ( self.dz*k + self.spacez*k ) 
+                        print '_x,_y,_z',_x,_y,_z
+                        v = gp_Vec(_x,_y,_z)
+                        new_box_translated = translate_topods_from_vector(new_box, v, False)
+                        d = dyn_context.register_shape(new_box_translated,enable_collision_detection=True,use_boundingbox=True)
+
+    p = Pilars(6,6,6,\
+                 1,1,3,\
+                    0.1,0.1,0.1)
+                    #1,1,1)
+    p.add_boxes()
+
+    dyn_context.setERP(0.5) # 0.2 default
+    dyn_context.setCFM(1e-10) # 1e-10 default
+    dyn_context.set_simulation_duration(20.)
+    dyn_context.set_time_step(0.001)
+    dyn_context.set_animation_frame_rate(24)
+    dyn_context.start_open_loop(False)
+
+def hinge(event=None):
+    '''
+    hinge joint example adapted from pyode
+    http://pyode.sourceforge.net/tutorials/tutorial2.html
+    
+    '''
+    from OCC.Utils.Common import center_boundingbox
+    
+    display.EraseAll()
+    # Create the dynamic context
+    dyn_context = DynamicSimulationContext()
+    dyn_context.set_display(display, safe_yield)
+    dyn_context.enable_collision_detection()
+    dyn_context.enable_gravity()
+    # create the table
+    block1 = BRepPrimAPI_MakeBox(4,1,1).Shape()
+
+    N = 36*3
+
+    dyn_shapes = []
+    for i in range(1,N):
+        table_shape = translate_topods_from_vector(block1, gp_Vec(0,0,2*(i*0.5)), copy=True)
+        dyn_shape = dyn_context.register_shape(table_shape, enable_collision_detection=True, use_boundingbox=True)
+        dyn_shapes.append((dyn_shape,table_shape))
+
+    dyn_shapes = iter(dyn_shapes)
+    prev, table_shape = dyn_shapes.next()
+    # safe for future reference
+    first, cube = prev, table_shape
+    prev_center = center_boundingbox(table_shape)
+    for i,xxx in enumerate(dyn_shapes):
+        dyn_shape, table_shape = xxx
+        bj = DynamicBallJoint(dyn_context)
+        center = center_boundingbox(table_shape)
+        bj.attach_shapes(prev, dyn_shape)
+        if i%2 == 0:
+            bj.set_anchor( (prev_center.as_vec() - gp_Vec(2,0,0.5)).as_pnt() )
+        else:
+            bj.set_anchor( (prev_center.as_vec() - gp_Vec(-2,0,0.5)).as_pnt() )
+        dyn_context.register_joint(bj)
+        prev=dyn_shape
+        prev_center = center
+
+    # get the 1st block, the one one the ground...
+    xmin, ymin, zmin, xmax, ymax, zmax = get_boundingbox(cube).Get()
+    # set the lower block in motion
+    vec1 = (12, 88, 0)
+    first.setLinearVel(vec1)
+    # change the color of the bottom element a little...
+    ais = first.get_ais_shape().GetObject()
+    from OCC.Graphic3d import Graphic3d_NOM_SILVER
+    ais.SetMaterial(Graphic3d_NOM_SILVER)
+
+    # lock the upper block
+    #bj.attach_shapes(dyn_shape, ode.environment)
+    vec2 = (-12, -88, 0)
+    dyn_shape.setLinearVel(vec2)
+    ais = dyn_shape.get_ais_shape().GetObject()
+    ais.SetMaterial(Graphic3d_NOM_SILVER)
+    # create a floor...
+    floor = ode.GeomPlane(dyn_context._space, (0,0,1), zmin)
+    def f():
+        print 'first:',first.getPosition()
+        print 'velo:', first.getLinearVel()
+        XXX = 0.15 * N
+        first.setLinearVel((0, XXX,0))
+        dyn_shape.setLinearVel((0,-XXX,0))
+
+    dyn_context.mu = 500
+    dyn_context.setERP(0.8) # 0.2 default
+    dyn_context.setCFM(1e-12) # 1e-10 default
+    dyn_context.set_simulation_duration(1200.)
+    dyn_context.set_animation_frame_rate(60)
+    dyn_context.set_time_step(0.01)
+    dyn_context.register_post_step_callback(f)
+    dyn_context.start_open_loop(True)
+
 
 def exit(event=None):
     sys.exit()  
@@ -215,4 +387,5 @@ if __name__=='__main__':
     add_function_to_menu('rigid body simulation sample', two_boxes_sphere_plane_collision)
     add_function_to_menu('rigid body simulation sample', dominos)
     add_function_to_menu('rigid body simulation sample', collisions)
+    add_function_to_menu('rigid body simulation sample', hinge)
     start_display()

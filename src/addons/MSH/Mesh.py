@@ -38,10 +38,6 @@ from OCC.BRepBuilderAPI import *
 from OCC.StdPrs import *
 from OCC.TColgp import *
 from OCC.Poly import *
-# For MEFISTO2
-from OCC.SMESH import *
-from OCC.StdMeshers import *
-
 # for debugging and optimization
 import time
 
@@ -206,6 +202,9 @@ class MEFISTOTriangleMesh(MeshBase):
     ''' A mesh based on the MEFISTO2 triangle mesher.
     '''
     def __init__(self):
+        from OCC.SMESH import SMESH_Gen
+        from OCC.StdMeshers import StdMeshers_Regular_1D, StdMeshers_MEFISTO_2D, StdMeshers_Arithmetic1D
+
         MeshBase.__init__(self)
         self._mesh = None
         self._mesh_data_source = None

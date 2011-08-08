@@ -394,6 +394,8 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     
     def EraseAll(self):
         self._objects_displayed = []
+        # nessecary to remove text added by DisplayMessage
+        self.Context.PurgeDisplay()
         self.Context.EraseAll()
         
     def Tumble(self,NumImages,Animation = True):

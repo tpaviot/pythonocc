@@ -32,7 +32,7 @@ class StringReceiver(object):
     def SendShapeString(self,s):
         print "Shape received. Gonna display it."
         QUEUE.put(s) #Adds this string to the queue
-        shp = pickle.loads(s)
+        #shp = pickle.loads(s)
         #self.display.DisplayShape(shp)
         #start_display()
         return True
@@ -62,6 +62,7 @@ def RemoteDisplay(port = 8888):
                 shp = pickle.loads(str_received)
                 print 'shape',shp
                 #self.display.DisplayShape(shp)
+                import ipdb; ipdb.set_trace()
                 self.display.DisplayShape(shp)
                 #import ipdb; ipdb.set_trace()
                 #self.display.DisplayShape(shp)

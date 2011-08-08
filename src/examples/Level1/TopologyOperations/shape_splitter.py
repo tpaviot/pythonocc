@@ -15,37 +15,26 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.GEOMAlgo import GEOMAlgo_Splitter
-from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeFace
-from OCC.BRepPrimAPI import *
-from OCC.gp import *
-from OCC.TopoDS import *
-from OCC.TopTools import *
+
+from OCC.Utils.Construct import *
 
 # Create the shape to be splitted. S1 is a TopoDS_Shape object
-S1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
+S1 = make_cube(10,20,30)
 
 # Create the face to be used as the tool
 P = gp_Pnt(5,10,15)
 D = gp_Dir(gp_Vec(0,0,1))
 pln = gp_Pln(P,D)
-tool_face = BRepBuilderAPI_MakeFace(pln,-20,20,-20,20).Face()
+tool_face = make_face(pln,-20,20,-20,20)
+shp_result = splitter(tool_face, S1)
 
-# Definition of the splitter
-splitter = GEOMAlgo_Splitter()
-splitter.AddTool(tool_face)
-splitter.AddShape(S1)
-# Perform split
-splitter.Perform()
-# Get resulting shapes
-shp_result = splitter.Shape()
-
-# Display
-from OCC.Display.SimpleGui import *
-display, start_display, add_menu, add_function_to_menu = init_display()
-# Before split
-display.DisplayColoredShape(S1,'RED')
-display.DisplayColoredShape(tool_face,'BLUE')
-# Result
-display.DisplayShape(shp_result)
-start_display()
+if __name__ == "__main__":
+    # Display
+    from OCC.Display.SimpleGui import *
+    display, start_display, add_menu, add_function_to_menu = init_display()
+    # Before split
+    display.DisplayColoredShape(S1,'RED')
+    display.DisplayColoredShape(tool_face,'BLUE')
+    # Result
+    display.DisplayShape(shp_result)
+    start_display()

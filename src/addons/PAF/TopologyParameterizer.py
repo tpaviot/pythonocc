@@ -17,11 +17,9 @@
 """ This module enable the parameterization of basic topologies: vertices, edges, faces. This module
 uses the Topology module and aims at being able to transfer dumb OCC topology to smart PAF topology.
 """
-
-from OCC.TopoDS import *
+from OCC.GEOMImpl import GEOMImpl_ImportDriver
 from OCC.BRep import *
 from OCC.Utils.Topology import *
-from OCC.gp import *
 
 def vertex_to_paf(parameters,vertex):
     ''' Transfer a vertex to a point in a ParametricModelingContext
@@ -79,6 +77,22 @@ def edge_to_paf(parameters, edge):
                                                                 name = '',
                                                                 show = True)
     return paf_line
+
+def geomobject_from_topods(my_context, topods_shape):
+    """
+    adds a TopoDS_Shape *topods_shape* the the ParametricModelingContext *paf_context*
+
+    :param paf_context:     ParametricModelingContext
+    :param topods_shape:    TopoDS_Shape
+    :return:                GEOM_Object
+    """
+    GEOM_IMPORT, IMPORT_SHAPE = 1, 1
+    anImport = my_context.myEngine.AddObject(my_context.docId, GEOM_IMPORT).GetObject()
+    _import_driver = GEOMImpl_ImportDriver()
+    aFunc = anImport.AddFunction(_import_driver.GetID(), IMPORT_SHAPE).GetObject()
+    aFunc.SetValue(topods_shape)
+    return anImport
+
  
 if __name__=='__main__':
     from OCC.PAF.Context import ParametricModelingContext

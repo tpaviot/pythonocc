@@ -34,7 +34,7 @@ class TestFace_Sphere:
         eq_(is_planar, False)
 
     def test_global_properties(self):
-        centre = self.face.global_properties.centre()
+        centre = self.face.GlobalProperties.centre()
         eq_(centre, gp_Pnt(0.660189250701, 0.360663031426, 0.0))
 
 #    def test_(self):

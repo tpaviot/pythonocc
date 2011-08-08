@@ -37,10 +37,8 @@ from OCC.DYN.Shape import DynamicShape
 class DynamicSimulationContext(ode.World):
     """ Define a dynamic simulation context.
     """
-    def __init__(self, **kargs):
-        ode.World.__init__(self,**kargs)
-        #self.setGravity([0,0,-9.81])
-        #self._shapes = []
+    def __init__(self, friction=4000, bounce=0.25):
+        ode.World.__init__(self)
         self._dynamic_shapes = []
         self._joints = []
         self._DISPLAY_INITIALIZED = False
@@ -54,8 +52,11 @@ class DynamicSimulationContext(ode.World):
         self._space = None
         # callback after each integration step
         self._post_step_callable = []
-        print 'Dynamic simulation context initialized.'
-    
+        self.friction = friction
+        self.bounce = bounce
+
+        #print 'Dynamic simulation context initialized.'
+
     def enable_gravity(self):
         self.setGravity([0,0,-9.81])
     
@@ -147,7 +148,7 @@ class DynamicSimulationContext(ode.World):
                 print('Warning : collision detection enabled for this shape but no geometry provided.')
     
         if self._DISPLAY_INITIALIZED:
-            ais_shape = self._display.DisplayShape(dynamic_shape.get_shape())
+            ais_shape = self._display.DisplayShape(dynamic_shape.get_shape(), update=True)
             dynamic_shape.set_ais_shape(ais_shape)
         # store the dynamic shape
         self._dynamic_shapes.append(dynamic_shape)
@@ -175,17 +176,17 @@ class DynamicSimulationContext(ode.World):
         # Create contact joints
         world,contactgroup = args
         for c in contacts:
-            c.setBounce(0.25)   # Restitution parameter
-            c.setMu(4000)       # Coulomb friction
+            c.setBounce(self.bounce)   # Restitution parameter
+            c.setMu(self.friction)       # Coulomb friction
             j = ode.ContactJoint(world, contactgroup, c)
             j.attach(geom1.getBody(), geom2.getBody())
 
-    def start_open_loop(self):
-        print 'Simulation started ...'
+    def start_open_loop(self, quick=False):
+        #print 'Simulation started ...'
         #delta_t = 0.01
         t = 0
         current_time_step_index = 0 #it will be incremented at each time step
-        frame_delta = int(1/self._delta_t)/self._frame_rate
+        frame_delta = int ( (1/self._delta_t) / float(self._frame_rate) )
         # Create the shape transformer outside the loop to have an faster algorithm
         shape_trsf = gp_Trsf()
         while t<self._duration:
@@ -193,7 +194,10 @@ class DynamicSimulationContext(ode.World):
             if self._COLLISION_DETECTION: 
                 self._space.collide((self,self._contactgroup), self._collision_callback)
             # step world
-            self.step(self._delta_t)
+            if not quick:
+                self.step(self._delta_t)
+            else:
+                self.quickStep(self._delta_t)
             # call post-step callable, if its there...
             #if self.post_step_callable is not None:
             #    self.post_step_callable()
@@ -215,6 +219,7 @@ class DynamicSimulationContext(ode.World):
                         xg=shape.x_g#
                         yg=shape.y_g# COG coordinated in the local referential
                         zg=shape.z_g#
+                        print 'xg,yg,zg',xg,yg,zg
                         u=x-(xg*a11+yg*a12+zg*a13)
                         v=y-(xg*a21+yg*a22+zg*a23)#COG coordinate in the global referential
                         w=z-(xg*a31+yg*a32+zg*a33)
@@ -240,6 +245,8 @@ class DynamicSimulationContext(ode.World):
             self._perform_callbacks()
             # Then increment time and loop simulation
             t += self._delta_t
+            print 't',t
+            print 'redisply, disp init',MUST_REDISPLAY, self._DISPLAY_INITIALIZED
             # increment the step index
             current_time_step_index += 1
         # When the simulation is finished, draw cog positions for each shape
@@ -257,7 +264,7 @@ class DynamicSimulationContext(ode.World):
 #                spline.Build()
 #                self._display.DisplayShape(spline.Shape())
 #                self._display.FitAll()
-        print 'Simulation finished'
+        #print 'Simulation finished'
 
     def stop_loop(self):
         pass
