@@ -17,6 +17,12 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+#===============================================================================
+# TODO: resizing of the window is only performed on QT...
+#===============================================================================
+
+
+
 import sys
 import os, os.path
 from OCC import VERSION
@@ -69,7 +75,9 @@ def set_backend(str_backend):
         USED_BACKEND = str_backend
 
 def get_bg_abs_filename():
-    ''' Returns the absolute file name for the file default_background.bmp
+    '''
+    returns the absolute file name for the file default_background.bmp
+    :raises: NameError when the file is not found
     '''
     occ_package = sys.modules['OCC']
     bg_abs_filename = os.path.join(occ_package.__path__[0],'Display','default_background.bmp')
@@ -85,7 +93,14 @@ def safe_yield():
         #QtCore.processEvents()
         QtGui.QApplication.processEvents()
             
-def init_display():
+def init_display(screenX=1024, screenY=768):
+    """
+    initializes the display
+    
+    :param screenX: screen resolution y axis
+    :param screenY: screen resolution y axis
+    :return: OCCViewer.Viewer3d instance
+    """
     global display, add_menu, add_function_to_menu, start_display, app, win
     # wxPython based simple GUI
     if USED_BACKEND == 'wx':
@@ -137,7 +152,7 @@ def init_display():
                 apply(QtGui.QMainWindow.__init__,(self,)+args)
                 self.canva = qtViewer3d(self)
                 self.setWindowTitle("pythonOCC-%s 3d viewer ('qt' backend)"%VERSION)
-                self.resize(1024,768)
+                self.resize(screenX,screenY)
                 self.setCentralWidget(self.canva)
                 self.menuBar = self.menuBar()
                 self._menus = {}

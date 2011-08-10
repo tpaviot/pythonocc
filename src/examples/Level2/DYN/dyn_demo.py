@@ -26,12 +26,12 @@ from OCC.Utils.Image import Texture
 from OCC.Graphic3d import *
 from OCC.Utils.Construct import *
 from OCC.DYN.Context import DynamicSimulationContext, DynamicShape
-from OCC.DYN.Joints import DynamicBallJoint, DynamicHingeJoint
+from OCC.DYN.Joints import *
 import ode
 
 from OCC.Display.SimpleGui import *
 from OCC.Utils.Construct import translate_topods_from_vector, make_plane
-display, start_display, add_menu, add_function_to_menu = init_display()
+display, start_display, add_menu, add_function_to_menu = init_display(1600,1020)
 
 def rotating_box(event=None):
     display.EraseAll()
@@ -292,12 +292,12 @@ def pillars(event=None):
                     #1,1,1)
     p.add_boxes()
 
-    dyn_context.setERP(0.5) # 0.2 default
+    dyn_context.setERP(0.6) # 0.2 default
     dyn_context.setCFM(1e-10) # 1e-10 default
     dyn_context.set_simulation_duration(20.)
     dyn_context.set_time_step(0.001)
     dyn_context.set_animation_frame_rate(24)
-    dyn_context.start_open_loop(False)
+    dyn_context.start_open_loop(True)
 
 def hinge(event=None):
     '''
@@ -377,15 +377,94 @@ def hinge(event=None):
     dyn_context.start_open_loop(True)
 
 
+def adhesion(event=None):
+    '''
+    hinge joint example adapted from pyode
+    http://pyode.sourceforge.net/tutorials/tutorial2.html
+
+    '''
+    from OCC.Utils.Common import center_boundingbox
+
+    display.EraseAll()
+    # Create the dynamic context
+    dyn_context = DynamicSimulationContext()
+    dyn_context.set_display(display, safe_yield)
+    dyn_context.enable_collision_detection()
+    dyn_context.enable_gravity()
+    # create the table
+    block1 = BRepPrimAPI_MakeBox(4,1,1).Shape()
+
+    N = 12
+
+    dyn_shapes = []
+    for i in range(1,N):
+        table_shape = translate_topods_from_vector(block1, gp_Vec(0,0,2*(i*0.5)), copy=True)
+        dyn_shape = dyn_context.register_shape(table_shape, enable_collision_detection=True, use_boundingbox=True)
+        dyn_shapes.append((dyn_shape,table_shape))
+
+    _dyn_shapes = iter(dyn_shapes)
+    prev, table_shape = _dyn_shapes.next()
+    # safe for future reference
+    first, cube = prev, table_shape
+    prev_center = center_boundingbox(table_shape)
+
+    slider_vec = gp_Dir(1,1,0)
+
+    for i,xxx in enumerate(_dyn_shapes):
+        dyn_shape, table_shape = xxx
+        bj = DynamicSliderJoint(dyn_context)
+        bj.set_axis(slider_vec)
+        center = center_boundingbox(table_shape)
+        if i == 0:
+            bj.attach_shapes(prev, ode.environment)
+            first_joint = bj
+        else:
+            bj.attach_shapes(prev, dyn_shape)
+        dyn_context.register_joint(bj)
+        prev=dyn_shape
+        prev_center = center
+
+    # get the 1st block, the one one the ground...
+    xmin, ymin, zmin, xmax, ymax, zmax = get_boundingbox(cube).Get()
+    # set the middle block in motion
+    vec1 = (160, 66, 0)
+    #vec1 = (1.20, 0.66, 0)
+    middle, topods = dyn_shapes[N/2]
+
+    middle.setLinearVel(vec1)
+    #middle.setForce(vec1)
+
+    # change the color of the bottom element a little...
+    ais = middle.get_ais_shape().GetObject()
+    from OCC.Graphic3d import Graphic3d_NOM_SILVER
+    ais.SetMaterial(Graphic3d_NOM_SILVER)
+
+    bj.attach_shapes( dyn_shape, ode.environment )
+    first_joint.attach_shapes( first, ode.environment )
+
+    floor = ode.GeomPlane(dyn_context._space, (0,0,1), zmin)
+
+    dyn_context.mu = 0 # icey!!!
+    dyn_context.setERP(0.1) # 0.2 default
+    dyn_context.setCFM(1e-12) # 1e-10 default
+    dyn_context.set_simulation_duration(1.2)
+    dyn_context.set_animation_frame_rate(60)
+    dyn_context.set_time_step(0.01)
+    dyn_context.start_open_loop(True)
+
+
 def exit(event=None):
     sys.exit()  
     
 if __name__=='__main__':
+    adhesion()
     add_menu('rigid body simulation sample')
     add_function_to_menu('rigid body simulation sample', rotating_box)
     add_function_to_menu('rigid body simulation sample', box_plane_collision)
     add_function_to_menu('rigid body simulation sample', two_boxes_sphere_plane_collision)
     add_function_to_menu('rigid body simulation sample', dominos)
+    add_function_to_menu('rigid body simulation sample', pillars)
     add_function_to_menu('rigid body simulation sample', collisions)
     add_function_to_menu('rigid body simulation sample', hinge)
+    add_function_to_menu('rigid body simulation sample', adhesion)
     start_display()
