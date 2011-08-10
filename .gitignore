@@ -1,0 +1,14 @@
+#ignore compiled python files
+*.pyc
+*.pyo
+*.pyw
+
+#ignore hxx and cpp files created by SWIG
+src/wrapper/SWIG/linux_darwin/*.hxx
+src/wrapper/SWIG/linux_darwin/*.cpp
+src/wrapper/SWIG/win32/*.hxx
+src/wrapper/SWIG/win32/*.cpp
+
+# ignore objects and archives, anywhere in the tree.
+*.[oa]
+src/build/*
