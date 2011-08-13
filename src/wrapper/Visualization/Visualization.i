@@ -74,7 +74,5 @@ class NISDisplay3d {
 	Handle_V3d_Viewer& GetViewer();
 	%feature("autodoc", "1");
 	Handle_NIS_InteractiveContext GetContext();
-	%feature("autodoc", "1");
-	void Test();
 };
 

@@ -71,21 +71,4 @@ void NISDisplay3d::Init(int window_handle)
         
 }
 
-void NISDisplay3d::Test()
-{
-      //myNISView->TriedronDisplay(Aspect_TOTP_LEFT_LOWER,Quantity_NOC_WHITE,0.1, V3d_ZBUFFER);
-      printf("Ouioui");
-      BRepPrimAPI_MakeBox S(100,50,40);
-      Handle_NIS_Surface surface = new NIS_Surface(S.Shape());
-      //printf("Ouioui");
-      myNISContext->Display(surface,NULL,Standard_False);
-      myNISContext->UpdateViews();
-      myNISView->Redraw();
-      myNISView->MustBeResized();
-      //BRepPrimAPI_MakeBox S(100,50,40);
-      //Handle(AIS_Shape) anAISShape = new AIS_Shape(S.Shape());
-      //myAISContext->Display(anAISShape);
-      //myNISView->ZFitAll();
-      //myNISView->FitAll();
-}
 
