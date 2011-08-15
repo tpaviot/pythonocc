@@ -39,16 +39,19 @@ $HeaderURL$
 #include<GEOMAlgo_ClsfSolid.hxx>
 #include<GEOMAlgo_ClsfSurf.hxx>
 #include<GEOMAlgo_CoupleOfShapes.hxx>
+#include<GEOMAlgo_DataMapIteratorOfDataMapOfOrientedShapeShape.hxx>
 #include<GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger.hxx>
 #include<GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyShapeShape.hxx>
 #include<GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape.hxx>
 #include<GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include<GEOMAlgo_DataMapIteratorOfDataMapOfShapeShapeSet.hxx>
+#include<GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape.hxx>
 #include<GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger.hxx>
 #include<GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape.hxx>
 #include<GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape.hxx>
 #include<GEOMAlgo_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include<GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet.hxx>
+#include<GEOMAlgo_DataMapOfOrientedShapeShape.hxx>
 #include<GEOMAlgo_DataMapOfPassKeyInteger.hxx>
 #include<GEOMAlgo_DataMapOfPassKeyShapeShape.hxx>
 #include<GEOMAlgo_DataMapOfRealListOfShape.hxx>
@@ -104,6 +107,7 @@ $HeaderURL$
 #include<GEOMAlgo_Tools3D.hxx>
 #include<GEOMAlgo_VertexSolid.hxx>
 #include<GEOMAlgo_WESCorrector.hxx>
+#include<GEOMAlgo_WESScaler.hxx>
 #include<GEOMAlgo_WireEdgeSet.hxx>
 #include<GEOMAlgo_WireSolid.hxx>
 #include<GEOMAlgo_WireSplitter.hxx>
@@ -111,6 +115,7 @@ $HeaderURL$
 #include<Handle_GEOMAlgo_ClsfBox.hxx>
 #include<Handle_GEOMAlgo_ClsfSolid.hxx>
 #include<Handle_GEOMAlgo_ClsfSurf.hxx>
+#include<Handle_GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape.hxx>
 #include<Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger.hxx>
 #include<Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape.hxx>
 #include<Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape.hxx>
@@ -157,7 +162,6 @@ $HeaderURL$
 #include<TopoDSToStep_Tool.hxx>
 #include<TopoDSToStep_WireframeBuilder.hxx>
 #include<TopoDS_Builder.hxx>
-#include<TopoDS_Builder3D.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Compound.hxx>
 #include<TopoDS_Edge.hxx>
@@ -197,6 +201,7 @@ $HeaderURL$
 #include<gp_Dir2d.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Elips2d.hxx>
+#include<gp_EulerSequence.hxx>
 #include<gp_GTrsf.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Hypr.hxx>
@@ -210,6 +215,9 @@ $HeaderURL$
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Quaternion.hxx>
+#include<gp_QuaternionNLerp.hxx>
+#include<gp_QuaternionSLerp.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
 #include<gp_Trsf.hxx>

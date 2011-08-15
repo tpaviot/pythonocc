@@ -30,12 +30,15 @@ $HeaderURL$
 #include<Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
 #include<Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger.hxx>
 #include<Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape.hxx>
+#include<Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere.hxx>
 #include<Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox.hxx>
 #include<Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors.hxx>
 #include<Handle_NMTDS_ListNodeOfListOfPassKey.hxx>
 #include<Handle_NMTDS_ListNodeOfListOfPassKeyBoolean.hxx>
 #include<Handle_NMTDS_StdMapNodeOfMapOfPassKey.hxx>
 #include<Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean.hxx>
+#include<NMTDS_BndSphere.hxx>
+#include<NMTDS_BndSphereTree.hxx>
 #include<NMTDS_BoxBndTree.hxx>
 #include<NMTDS_CArray1OfIndexRange.hxx>
 #include<NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger.hxx>
@@ -44,9 +47,11 @@ $HeaderURL$
 #include<NMTDS_IndexRange.hxx>
 #include<NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger.hxx>
 #include<NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape.hxx>
+#include<NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere.hxx>
 #include<NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox.hxx>
 #include<NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger.hxx>
 #include<NMTDS_IndexedDataMapOfIntegerShape.hxx>
+#include<NMTDS_IndexedDataMapOfShapeBndSphere.hxx>
 #include<NMTDS_IndexedDataMapOfShapeBox.hxx>
 #include<NMTDS_InterfPool.hxx>
 #include<NMTDS_InterfType.hxx>
@@ -104,7 +109,6 @@ $HeaderURL$
 #include<TopoDSToStep_Tool.hxx>
 #include<TopoDSToStep_WireframeBuilder.hxx>
 #include<TopoDS_Builder.hxx>
-#include<TopoDS_Builder3D.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Compound.hxx>
 #include<TopoDS_Edge.hxx>
@@ -144,6 +148,7 @@ $HeaderURL$
 #include<gp_Dir2d.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Elips2d.hxx>
+#include<gp_EulerSequence.hxx>
 #include<gp_GTrsf.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Hypr.hxx>
@@ -157,6 +162,9 @@ $HeaderURL$
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Quaternion.hxx>
+#include<gp_QuaternionNLerp.hxx>
+#include<gp_QuaternionSLerp.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
 #include<gp_Trsf.hxx>

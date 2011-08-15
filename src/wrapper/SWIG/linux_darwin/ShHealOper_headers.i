@@ -229,9 +229,7 @@ $HeaderURL$
 #include<GeomFill_SectionGenerator.hxx>
 #include<GeomFill_SectionLaw.hxx>
 #include<GeomFill_SectionPlacement.hxx>
-#include<GeomFill_SequenceNodeOfSequenceOfCurve.hxx>
 #include<GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
-#include<GeomFill_SequenceOfCurve.hxx>
 #include<GeomFill_SequenceOfTrsf.hxx>
 #include<GeomFill_SimpleBound.hxx>
 #include<GeomFill_SnglrFunc.hxx>
