@@ -601,7 +601,7 @@ else:
                                  {'StdMeshers_Hexa_3D':['OppositeVertex'],
                                   'StdMeshers_MEFISTO_2D':['LoadPoints']}))
 
-ALL_MODULES = MODULES #+ SALOME_GEOM_MODULES + SALOME_SMESH_MODULES
+ALL_MODULES = MODULES + SALOME_GEOM_MODULES #+ SALOME_SMESH_MODULES
 
 def PythonOCCStats():
     """
