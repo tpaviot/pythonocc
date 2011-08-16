@@ -53,6 +53,7 @@ typedef NMTDS_ShapesDataStructure * NMTDS_PShapesDataStructure;
 typedef NMTDS_Iterator * NMTDS_PIterator;
 typedef NCollection_UBTree<int, Bnd_Box> NMTDS_BoxBndTree;
 typedef NMTDS_InterfPool * NMTDS_PInterfPool;
+typedef NCollection_UBTree<int, NMTDS_BndSphere> NMTDS_BndSphereTree;
 
 enum NMTDS_InterfType {
 	NMTDS_TI_VV,
@@ -174,6 +175,44 @@ def __del__(self):
 %}
 
 %extend Handle_NMTDS_ListNodeOfListOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTDS_ListNodeOfListOfPassKeyBoolean;
+class Handle_NMTDS_ListNodeOfListOfPassKeyBoolean : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean();
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean(const Handle_NMTDS_ListNodeOfListOfPassKeyBoolean &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean(const NMTDS_ListNodeOfListOfPassKeyBoolean *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean & operator=(const Handle_NMTDS_ListNodeOfListOfPassKeyBoolean &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean & operator=(const NMTDS_ListNodeOfListOfPassKeyBoolean *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_ListNodeOfListOfPassKeyBoolean {
+	NMTDS_ListNodeOfListOfPassKeyBoolean* GetObject() {
+	return (NMTDS_ListNodeOfListOfPassKeyBoolean*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_ListNodeOfListOfPassKeyBoolean::~Handle_NMTDS_ListNodeOfListOfPassKeyBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_ListNodeOfListOfPassKeyBoolean {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -370,29 +409,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_NMTDS_ListNodeOfListOfPassKeyBoolean;
-class Handle_NMTDS_ListNodeOfListOfPassKeyBoolean : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere;
+class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean();
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere();
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean(const Handle_NMTDS_ListNodeOfListOfPassKeyBoolean &aHandle);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere &aHandle);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean(const NMTDS_ListNodeOfListOfPassKeyBoolean *anItem);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean & operator=(const Handle_NMTDS_ListNodeOfListOfPassKeyBoolean &aHandle);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere & operator=(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere &aHandle);
 		%feature("autodoc", "1");
-		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean & operator=(const NMTDS_ListNodeOfListOfPassKeyBoolean *anItem);
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere *anItem);
 		%feature("autodoc", "1");
-		static		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_NMTDS_ListNodeOfListOfPassKeyBoolean {
-	NMTDS_ListNodeOfListOfPassKeyBoolean* GetObject() {
-	return (NMTDS_ListNodeOfListOfPassKeyBoolean*)$self->Access();
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
+	NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere* GetObject() {
+	return (NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere*)$self->Access();
 	}
 };
-%feature("shadow") Handle_NMTDS_ListNodeOfListOfPassKeyBoolean::~Handle_NMTDS_ListNodeOfListOfPassKeyBoolean %{
+%feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -401,7 +440,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_NMTDS_ListNodeOfListOfPassKeyBoolean {
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1015,6 +1054,114 @@ def __del__(self):
 };
 
 
+%nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere;
+class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere(const TopoDS_Shape K1, const Standard_Integer K2, const NMTDS_BndSphere &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		NMTDS_BndSphere & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
+	Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere GetHandle() {
+	return *(Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere*) &$self;
+	}
+};
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_IndexedDataMapOfShapeBndSphere;
+class NMTDS_IndexedDataMapOfShapeBndSphere : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfShapeBndSphere(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfShapeBndSphere & Assign(const NMTDS_IndexedDataMapOfShapeBndSphere &Other);
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfShapeBndSphere & operator=(const NMTDS_IndexedDataMapOfShapeBndSphere &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape K, const NMTDS_BndSphere &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const NMTDS_BndSphere &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const NMTDS_BndSphere & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const NMTDS_BndSphere & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		NMTDS_BndSphere & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		NMTDS_BndSphere & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const NMTDS_BndSphere & FindFromKey(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		NMTDS_BndSphere & ChangeFromKey(const TopoDS_Shape K);
+
+};
+%feature("shadow") NMTDS_IndexedDataMapOfShapeBndSphere::~NMTDS_IndexedDataMapOfShapeBndSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_IndexedDataMapOfShapeBndSphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor NMTDS_CArray1OfIndexRange;
 class NMTDS_CArray1OfIndexRange {
 	public:
@@ -1285,6 +1432,47 @@ def __del__(self):
 %}
 
 %extend NMTDS_PassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_BndSphere;
+class NMTDS_BndSphere {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_BndSphere();
+		%feature("autodoc", "1");
+		void SetCenter(const gp_Pnt theP);
+		%feature("autodoc", "1");
+		const gp_Pnt  Center() const;
+		%feature("autodoc", "1");
+		void SetRadius(const Standard_Real theR);
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		void SetGap(const Standard_Real theGap);
+		%feature("autodoc", "1");
+		Standard_Real Gap() const;
+		%feature("autodoc", "1");
+		void Add(const NMTDS_BndSphere &theOther);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const NMTDS_BndSphere &theOther) const;
+		%feature("autodoc", "1");
+		Standard_Real SquareExtent() const;
+
+};
+%feature("shadow") NMTDS_BndSphere::~NMTDS_BndSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_BndSphere {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1580,6 +1768,35 @@ def __del__(self):
 %}
 
 %extend NMTDS_IndexRange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_BndSphereTreeSelector;
+class NMTDS_BndSphereTreeSelector : public Selector {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_BndSphereTreeSelector();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Reject(const NMTDS_BndSphere &arg0) const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Indices() const;
+
+};
+%feature("shadow") NMTDS_BndSphereTreeSelector::~NMTDS_BndSphereTreeSelector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_BndSphereTreeSelector {
 	void _kill_pointed() {
 		delete $self;
 	}

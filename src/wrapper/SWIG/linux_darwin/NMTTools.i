@@ -205,44 +205,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape;
-class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape();
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape* GetObject() {
-	return (NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape::~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger;
 class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : public Handle_TCollection_MapNode {
 	public:
@@ -275,6 +237,44 @@ def __del__(self):
 %}
 
 %extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape;
+class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape();
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape* GetObject() {
+	return (NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape::~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -374,8 +374,6 @@ class NMTTools_PaveFiller {
 		%feature("autodoc", "1");
 		BOPTools_PavePool & ChangePavePool();
 		%feature("autodoc", "1");
-		BOPTools_PavePool & ChangePavePoolNew();
-		%feature("autodoc", "1");
 		const NMTTools_CommonBlockPool & CommonBlockPool() const;
 		%feature("autodoc", "1");
 		NMTTools_CommonBlockPool & ChangeCommonBlockPool();
@@ -460,6 +458,12 @@ class NMTTools_PaveFiller {
 		void SharedEdges(const Standard_Integer nF1, const Standard_Integer nF2, TColStd_ListOfInteger & aLNE, TopTools_ListOfShape & aLSE);
 		%feature("autodoc", "1");
 		void FuseVertices(const TopoDS_Shape aC, TopTools_DataMapOfShapeShape & aDMVV) const;
+		%feature("autodoc", "1");
+		void TreatPaveBlocks(NMTTools_ListOfCommonBlock & theLCB);
+		%feature("autodoc", "1");
+		BOPTools_PavePool & ChangePavePoolNew();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckCoincidence(const BOPTools_PaveBlock &aPB1, const BOPTools_PaveBlock &aPB2);
 
 };
 %feature("shadow") NMTTools_PaveFiller::~NMTTools_PaveFiller %{
