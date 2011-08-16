@@ -47,7 +47,6 @@ class TestEdge_Line:
         # TODO: should return KBE.Vertex, now just a TopoDS_Vertex
         v1 = self.edg.first_vertex()
         v2 = self.edg.last_vertex()
-        #import ipdb; ipdb.set_trace()
 
     def test_periodic_rational_closed(self):
         eq_(self.edg.is_periodic(), 0)

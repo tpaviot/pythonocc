@@ -440,7 +440,6 @@ def make_n_sections(edges):
 
 def make_coons(edges):
     bt = BRep_Tool()
-    import ipdb; ipdb.set_trace()
     if len(edges) == 4:
         spl1, spl2, spl3, spl4 = edges #[curve_to_bspline(bt.Curve(i)[0]) for i in edges]
         srf = GeomFill_BSplineCurves(spl1,spl2,spl3,spl4, GeomFill_StretchStyle)
