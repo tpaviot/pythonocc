@@ -1,28 +1,3 @@
-from __future__ import with_statement
-from OCC.BRep import BRep_Tool
-from OCC.BRepOffset import BRepOffset_Skin
-from OCC.GeomLProp import *
-# wrapped modules
-from OCC.ShapeFix import *
-from OCC.BRepOffsetAPI import *
-from OCC.BRepBuilderAPI import *
-from OCC.BRepPrimAPI import *
-from OCC.GeomAbs import *
-from OCC.TopAbs import *
-from OCC.TopoDS import *
-from OCC.gp import *
-from OCC.BRepFill import *
-from OCC.GeomPlate import *
-from OCC.BRepAdaptor import *
-from OCC.GeomFill import *
-from OCC.TopTools import *
-from OCC.Geom import *
-
-# high level
-from OCC.Utils.Common import *
-from OCC.Utils.Context import assert_isdone
-from OCC.KBE.TypesLookup import GeometryLookup, ShapeToTopology
-
 # -*- coding: iso-8859-1 -*-
 #!/usr/bin/env python
 
@@ -49,6 +24,37 @@ This modules makes the construction of geometry a little easier
 
 '''
 
+from __future__ import with_statement
+# wrapped modules
+from OCC.BRep import BRep_Tool
+from OCC.BRepOffset import BRepOffset_Skin
+from OCC.GeomLProp import *
+from OCC.ShapeFix import *
+from OCC.BRepOffsetAPI import *
+from OCC.BRepBuilderAPI import *
+from OCC.BRepAlgoAPI import BRepAlgoAPI_Cut
+from OCC.BRepAlgoAPI import BRepAlgoAPI_Fuse
+from OCC.BRepPrimAPI import *
+from OCC.GeomAbs import *
+from OCC.TopAbs import *
+from OCC.TopoDS import *
+from OCC.gp import *
+from OCC.BRepFill import *
+from OCC.GeomPlate import *
+from OCC.BRepAdaptor import *
+from OCC.GeomFill import *
+from OCC.TopTools import *
+from OCC.Geom import *
+
+# GEOM
+from OCC.GEOMAlgo import GEOMAlgo_Splitter
+
+# high level
+from OCC.Utils.Common import *
+from OCC.Utils.Context import assert_isdone
+from OCC.KBE.types_lut import GeometryLookup, ShapeToTopology
+
+from functools import wraps
 
 EPSILON = TOLERANCE = 1e-6
 ST = ShapeToTopology()
@@ -122,8 +128,6 @@ gp_Pnt.__eq__ = gp_equal
 # ---TOPOLOGY---
 #===============================================================================
 
-from functools import wraps
-
 @wraps(BRepBuilderAPI_MakeSolid)
 def make_solid(*args):
     sld = BRepBuilderAPI_MakeSolid( *args )
@@ -135,7 +139,6 @@ def make_solid(*args):
 @wraps(BRepBuilderAPI_MakeShell)
 def make_shell(*args):
     shell = BRepBuilderAPI_MakeShell( *args )
-    from OCC.KBE.TypesLookup import ShapeToTopology
     st = ShapeToTopology()
     with assert_isdone(shell, 'failed to produce shell'):
         result = shell.Shell()
@@ -180,7 +183,6 @@ def make_wire(*args):
     wire.Build()
     with assert_isdone(wire, 'failed to produce wire'):
         result = wire.Wire()
-#        wire.Delete()
         return result
 
 @wraps(BRepBuilderAPI_MakePolygon)
@@ -199,7 +201,6 @@ def make_polygon(args, closed=False):
     
     with assert_isdone(poly, 'failed to produce wire'):
         result = poly.Wire()
-#        wire.Delete()
         return result
 
 @wraps(BRepBuilderAPI_MakePolygon)
@@ -215,7 +216,6 @@ def make_closed_polygon(*args):
     poly.Close()
     with assert_isdone(poly, 'failed to produce wire'):
         result = poly.Wire()
-#        wire.Delete()
         return result
     
 #===============================================================================
@@ -298,16 +298,12 @@ def make_offset(wire_or_face, offsetDistance, altitude=0, joinType=GeomAbs_Arc):
     '''
     _joints = [ GeomAbs_Arc, GeomAbs_Tangent, GeomAbs_Intersection ]
     assert joinType in _joints, '%s is not one of %s' ( joinType, _joints)
-    
     try:
-        offset = BRepOffsetAPI_MakeOffset(wire_or_face,
-                                                    joinType
-                                                    )
+        offset = BRepOffsetAPI_MakeOffset(wire_or_face,joinType)
         offset.Perform(offsetDistance, altitude)
         return ST(offset.Shape())
     except RuntimeError('failed to offset shape'):
         return None
-
 
 def make_draft(profile, vec):
     '''
@@ -330,13 +326,11 @@ def make_loft(elements, ruled=False, tolerance=TOLERANCE):
             sections.AddVertex(i)
         else:
             raise TypeError('elements is a list of TopoDS_Wire or TopoDS_Vertex, found a %s fool' % ( i.__class__ ))
-    
     sections.CheckCompatibility(True)
     sections.Build()
     with assert_isdone(sections, 'failed lofting'):
         te = ShapeToTopology()
         loft = te(sections.Shape())
-#        sections.Delete()
         return loft
 
 #===============================================================================
@@ -364,7 +358,6 @@ def make_plane(center=gp_Pnt(0,0,0),
                      )
     return face
 
-from OCC.BRepPrimAPI import *
 
 @wraps(BRepPrimAPI_MakeBox)
 def make_cube(*args):
@@ -418,14 +411,10 @@ def make_n_sided(edges, points, continuity=GeomAbs_C0):
     n_sided = BRepFill_Filling()
     n_sided.SetApproxParam(6, 40)
     n_sided.SetResolParam(3, 20, 20, False)
-    #n_sided.SetConstrParam(0.0001, 0.0001, 0.00001, 0.00001)
-
     for edg in edges:
         n_sided.Add(edg, continuity)
-
     for pt in points:
         n_sided.Add(pt)
-
     n_sided.Build()
     face  = n_sided.Face()
     return face
@@ -434,7 +423,6 @@ def make_n_sections(edges):
     seq = TopTools_SequenceOfShape()
     for i in edges:
         seq.Append(i)
-
     n_sec = BRepFill_NSections(seq)
 
 
@@ -443,11 +431,9 @@ def make_coons(edges):
     if len(edges) == 4:
         spl1, spl2, spl3, spl4 = edges #[curve_to_bspline(bt.Curve(i)[0]) for i in edges]
         srf = GeomFill_BSplineCurves(spl1,spl2,spl3,spl4, GeomFill_StretchStyle)
-    
     elif len(edges) == 3:
         spl1, spl2, spl3 = edges #[curve_to_bspline(bt.Curve(i)[0]) for i in edges]
         srf = GeomFill_BSplineCurves(spl1,spl2,spl3, GeomFill_StretchStyle)
-
     elif len(edges) == 2:
         spl1, spl2 = edges #[curve_to_bspline(bt.Curve(i)[0]) for i in edges]
         srf = GeomFill_BSplineCurves(spl1,spl2, GeomFill_StretchStyle)
@@ -467,15 +453,12 @@ def make_constrained_surface_from_edges(edges):
         c.ChangeCurve().Initialize(edg)
         constraint = BRepFill_CurveConstraint(c.GetHandle(), 0)
         bpSrf.Add(constraint.GetHandle())
-    
     bpSrf.Perform()
     maxSeg, maxDeg, critOrder = 9,8,0
     tol  = 1e-4
     srf = bpSrf.Surface()
     plate = GeomPlate_MakeApprox(srf, tol, maxSeg, maxDeg, tol, critOrder)
-    
     uMin, uMax, vMin, vMax = srf.GetObject().Bounds()
-    
     face = make_face(plate.Surface(), uMin, uMax, vMin, vMax)
     return face
 
@@ -528,7 +511,6 @@ def sew_shapes( shapes, tolerance=0.001 ):
 
 def boolean_cut(shapeToCutFrom, cuttingShape):
     try:
-        from OCC.BRepAlgoAPI import BRepAlgoAPI_Cut
         cut = BRepAlgoAPI_Cut(shapeToCutFrom, cuttingShape)
         print 'can work?', cut.BuilderCanWork()
         _error = {
@@ -552,7 +534,6 @@ def boolean_cut(shapeToCutFrom, cuttingShape):
         return shapeToCutFrom
 
 def boolean_cut_old(shapeToCutFrom, cuttingShape):
-    from OCC.BRepAlgo import BRepAlgo_Cut
     cut = BRepAlgo_Cut(shapeToCutFrom, cuttingShape)
     #cut.RefineEdges()
     #cut.FuseEdges()
@@ -560,7 +541,6 @@ def boolean_cut_old(shapeToCutFrom, cuttingShape):
     return shp
 
 def boolean_fuse(shapeToCutFrom, joiningShape):
-    from OCC.BRepAlgoAPI import BRepAlgoAPI_Fuse
     join = BRepAlgoAPI_Fuse(shapeToCutFrom, joiningShape)
     join.RefineEdges()
     join.FuseEdges()
@@ -569,7 +549,6 @@ def boolean_fuse(shapeToCutFrom, joiningShape):
     return shape
 
 def boolean_fuse_old(shapeToCutFrom, joiningShape):
-    from OCC.BRepAlgo import BRepAlgo_Fuse
     join = BRepAlgo_Fuse(shapeToCutFrom, joiningShape)
     shape = join.Shape()
     join.Delete()
@@ -579,7 +558,6 @@ def splitter(shape, profile):
     '''split a *shape* using a *profile*
     :returns the splitted shape
     '''
-    from OCC.GEOMAlgo import GEOMAlgo_Splitter
     splitter = GEOMAlgo_Splitter()
     splitter.AddShape(shape)
     splitter.AddTool(profile)
@@ -613,7 +591,6 @@ def trim_wire(wire, shapeLimit1, shapeLimit2, periodic=False):
 def fix_shape(shp, tolerance=1e-3):
     te = ShapeToTopology()
     fix = ShapeFix_Shape(shp)
-#    fix.SetMaxTolerance(tolerance)
     fix.SetFixFreeShellMode(True)
     sf = fix.FixShellTool().GetObject()
     sf.SetFixOrientationMode(True)
@@ -744,9 +721,9 @@ def find_plane_from_shape(shape, tolerance=TOLERANCE):
         raise AssertionError('couldnt find plane in %s' % (shape))
 
 def curve_to_bspline(crv_handle, tolerance=TOLERANCE, continuity=GeomAbs_C1, sections=300, degree=12):
-    aaa = GeomConvert_ApproxCurve(crv_handle, tolerance, continuity, sections, degree)
-    with assert_isdone(aaa, 'could not compute bspline from curve'):
-        return aaa.Curve()
+    approx_curve = GeomConvert_ApproxCurve(crv_handle, tolerance, continuity, sections, degree)
+    with assert_isdone(approx_curve, 'could not compute bspline from curve'):
+        return approx_curve.Curve()
 
 def compound(topo):
     '''
