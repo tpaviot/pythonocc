@@ -41,7 +41,7 @@ from OCC.GCPnts import *
 #===============================================================================
 # HELPER CLASSES
 #===============================================================================
-from types_lut import GeometryLookup, ShapeToTopology
+from OCC.KBE.types_lut import GeometryLookup, ShapeToTopology
 from OCC.Utils.Construct import *
 
 #===============================================================================
@@ -49,9 +49,6 @@ from OCC.Utils.Construct import *
 #===============================================================================
 global display
 
-from jelle_utils.patterns import singleton
-
-@singleton
 class Display(object):
     def __init__(self):
         from OCC.Display.SimpleGui import init_display
@@ -59,9 +56,9 @@ class Display(object):
     def __call__(self, *args, **kwargs):
         return self.display.DisplayShape(*args, **kwargs)
 
-#===============================================================================
-# base class ( bit inspired by pycado )
-#===============================================================================
+#============
+# base class 
+#============
 
 class KbeObject(object):
     """base class for all KBE objects"""
@@ -150,13 +147,10 @@ class GlobalProperties(object):
         self.instance = instance
         self.system = GProp_GProps()
         _topo_type = self.instance.type
-
         if _topo_type == 'face' or _topo_type == 'shell':
             BRepGProp().SurfaceProperties(self.instance.topo, self.system)
-
         elif _topo_type == 'edge':
             BRepGProp().LinearProperties(self.instance.topo, self.system)
-
         elif _topo_type == 'solid':
             BRepGProp().VolumeProperties(self.instance.topo, self.system)
 

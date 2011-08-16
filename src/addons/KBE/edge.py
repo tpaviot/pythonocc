@@ -6,12 +6,13 @@ from OCC.Geom import Geom_OffsetCurve, Geom_Curve, Geom_TrimmedCurve
 from OCC.KBE.base import KbeObject
 from OCC.TopExp import TopExp
 from OCC.TopoDS import TopoDS_Wire, TopoDS_Edge, TopoDS_Face, TopoDS_Vertex
+from OCC.GeomLib import GeomLib
 from OCC.gp import *
 # high-level
 from OCC.Utils.Common import vertex2pnt, minimum_distance, to_adaptor_3d
 from OCC.Utils.Construct import make_edge, trim_wire, fix_continuity
 from OCC.Utils.Context import assert_isdone
-from OCC.KBE.kbe_vertex import Vertex
+from OCC.KBE.vertex import Vertex
 
 
 class IntersectCurve(object):
@@ -45,7 +46,7 @@ class DiffGeomCurve(object):
         return pnt
 
     def curvature(self, u):
-        # UGLYYYYYYYYYYYY
+        # TODO: find a better way to achieve this method
         self._curvature.SetParameter(u)
         return self._curvature.Curvature()
 
@@ -55,8 +56,8 @@ class DiffGeomCurve(object):
         '''
         self._curvature.SetParameter(u)
         if self._curvature.IsTangentDefined():
-            ddd = gp_Dir()
-            self._curvature.Tangent(ddd)
+            direction = gp_Dir()
+            self._curvature.Tangent(direction)
             return ddd
         else:
             raise ValueError('no tangent defined')
@@ -111,15 +112,14 @@ class ConstructFromCurve():
         @param offset: the distance between self.crv and the curve to offset
         @param vec:    offset direction
         '''
-
         return Geom_OffsetCurve(self.instance.h_crv, offset, vec)
 
     def approximate_on_surface(self):
-            '''
-            approximation of a curve on surface
-            '''
-            from OCC.Approx import Approx_CurveOnSurface
-            pass
+        '''
+        approximation of a curve on surface
+        '''
+        from OCC.Approx import Approx_CurveOnSurface
+        raise NotImplementedError
 
 class Edge(KbeObject):
     '''
@@ -230,10 +230,6 @@ class Edge(KbeObject):
         @param lbound:
         @param ubound:
         '''
-#        if self.is_periodic:
-#            pass
-#        else:
-#            warnings.warn('the wire to be trimmed is not closed, hence cannot be made periodic')
         a,b = sorted([lbound,ubound])
         tr = Geom_TrimmedCurve(self.adaptor.Curve().Curve(), a,b).GetHandle()
         return Edge(make_edge(tr))
@@ -248,7 +244,6 @@ class Edge(KbeObject):
         '''
         if self.degree > 3:
             raise ValueError, 'to extend you self.curve should be <= 3, is %s ' % (self.degree)
-        from OCC.GeomLib import GeomLib
         return GeomLib().ExtendCurveToPoint(self.curve, pnt, degree, beginning)
 
 #===============================================================================
@@ -292,7 +287,6 @@ class Edge(KbeObject):
             _lbound = lbound
         elif ubound:
             _ubound = ubound
-
         npts = GCPnts_UniformAbscissa(self.adaptor, n_pts, _lbound, _ubound)
         if npts.IsDone():
             tmp = []
@@ -303,7 +297,6 @@ class Edge(KbeObject):
             return tmp
         else:
             return None
-
 
     @property
     def color(self, indx=None):
@@ -328,26 +321,12 @@ class Edge(KbeObject):
         '''descriptor setting or getting the coordinate of a control point at indx'''
         raise NotImplementedError
 
-
-#    @property
-#    def periodic(self):
-#        return self.adaptor.IsPeriodic()
-#
-#    @periodic.setter
-#    def periodic(self, _bool):
-#        _bool = bool(_bool)
-#        if self.is_closed:
-#            self.adaptor.BSpline()
-#        else:
-#            raise warnings.warn('cannot set periodicity on a non-closed edge')
-
     def control_point(self, indx, pt=None):
         '''gets or sets the coordinate of the control point
         '''
         raise NotImplementedError
 
     def __eq__(self, other):
-        # KbeObject
         return self.brep.IsEqual(other)
 
     @property
