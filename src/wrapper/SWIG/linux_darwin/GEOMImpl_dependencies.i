@@ -71,6 +71,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -94,6 +95,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -109,6 +111,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>
@@ -173,16 +176,19 @@ $HeaderURL$
 #include <GEOMAlgo_ClsfSolid.hxx>
 #include <GEOMAlgo_ClsfSurf.hxx>
 #include <GEOMAlgo_CoupleOfShapes.hxx>
+#include <GEOMAlgo_DataMapIteratorOfDataMapOfOrientedShapeShape.hxx>
 #include <GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger.hxx>
 #include <GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyShapeShape.hxx>
 #include <GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape.hxx>
 #include <GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include <GEOMAlgo_DataMapIteratorOfDataMapOfShapeShapeSet.hxx>
+#include <GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape.hxx>
 #include <GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger.hxx>
 #include <GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape.hxx>
 #include <GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape.hxx>
 #include <GEOMAlgo_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include <GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet.hxx>
+#include <GEOMAlgo_DataMapOfOrientedShapeShape.hxx>
 #include <GEOMAlgo_DataMapOfPassKeyInteger.hxx>
 #include <GEOMAlgo_DataMapOfPassKeyShapeShape.hxx>
 #include <GEOMAlgo_DataMapOfRealListOfShape.hxx>
@@ -238,6 +244,7 @@ $HeaderURL$
 #include <GEOMAlgo_Tools3D.hxx>
 #include <GEOMAlgo_VertexSolid.hxx>
 #include <GEOMAlgo_WESCorrector.hxx>
+#include <GEOMAlgo_WESScaler.hxx>
 #include <GEOMAlgo_WireEdgeSet.hxx>
 #include <GEOMAlgo_WireSolid.hxx>
 #include <GEOMAlgo_WireSplitter.hxx>
@@ -245,6 +252,7 @@ $HeaderURL$
 #include <Handle_GEOMAlgo_ClsfBox.hxx>
 #include <Handle_GEOMAlgo_ClsfSolid.hxx>
 #include <Handle_GEOMAlgo_ClsfSurf.hxx>
+#include <Handle_GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape.hxx>
 #include <Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger.hxx>
 #include <Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape.hxx>
 #include <Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape.hxx>

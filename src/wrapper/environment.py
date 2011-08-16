@@ -32,7 +32,7 @@ import subprocess
 #===============================================================================
 
 VERSION = '0.6dev'         # Define pythonOCC version
-GEOM_RELEASE = 'geom-5.1.2.7' # located in /src/contrib/
+GEOM_RELEASE = 'geom-5.1.5.9' # located in /src/contrib/
 SMESH_RELEASE = 'smesh-5.1.2.2' # located in /src/contrib
 #===============================================================================
 # UTILITIES
@@ -193,8 +193,11 @@ elif sys.platform=='darwin':
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
     if OCC_ROOT!=None:
-        OCC_LIB = '/Library/OCE/0.3/lib'
-        OCC_INC = '/Library/OCE/0.3/inc'
+        OCC_INC = os.path.join(OCC_ROOT,'inc')
+        OCC_LIB = os.path.join(OCC_ROOT,'lib')
+    else:
+        OCC_INC = '/usr/include/opencascade'
+        OCC_LIB = '/usr/lib'
       
     SALOME_GEOM_LIB = '/usr/local/lib/'
     SALOME_SMESH_LIB = '/usr/local/lib/'        

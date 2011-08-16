@@ -34,4 +34,5 @@ import TColStd
 import TopoDS
 import Bnd
 import BOPTools
+import gp
 };

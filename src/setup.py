@@ -68,6 +68,7 @@ Examples:
     - under Windows: python setup.py build -j2 -cmsvc install
     - under Windows, without the GEOM and SMESH wrappers: python setup.py build --disable-GEOM --disable-SMESH -cmsvc install
     - under Linux: python setup.py build -j2
+    -f or --force : force rebuild of all pythonocc files
     """
     print help_str
     sys.exit(0)

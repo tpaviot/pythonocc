@@ -1,0 +1,17 @@
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/Archimede.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/Exchange3DS.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/ExchangeBREP.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/ExchangeCSFDB.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/ExchangeIGES.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/ExchangeOBJ.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/ExchangeSTEP.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/ExchangeSTL.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/ExchangeVRML.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/GEOM.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/GEOMAlgo.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/GEOMImpl.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/NMTDS.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/NMTTools.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/Partition.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/ShHealOper.dir
+/Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/CMakeFiles/Sketcher.dir
