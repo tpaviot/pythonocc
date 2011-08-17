@@ -28,6 +28,7 @@ import topology_building_unittest
 import topology_local_operations_unittest
 import topology_operations_unittest
 import topology_unittest
+import kbe_unittest
 
 #
 # First check if GEOM and SMESH wrappers are available in order to run
@@ -54,15 +55,16 @@ suite2 = geometry_unittest.suite()
 suite3 = topology_building_unittest.suite()
 suite4 = topology_unittest.suite()
 suite5 = topology_local_operations_unittest.suite()
-tests = [suite1, suite2, suite3, suite4, suite5]
+suite6 = kbe_unittest.suite()
+tests = [suite1, suite2, suite3, suite4, suite5, suite6]
 if PAF_UNITTEST:
-    suite6 = paf_unittest.suite()
-    suite7 = paf_test_all_associative_method_unittest.suite()
-    tests.append(suite6)
-    tests.append(stuie7)
-if SMESH_UNITTEST:
-    suite8 = SMESH_wrapper_features_unittest.suite()
+    suite7 = paf_unittest.suite()
+    suite8 = paf_test_all_associative_method_unittest.suite()
+    tests.append(suite7)
     tests.append(suite8)
+if SMESH_UNITTEST:
+    suite9 = SMESH_wrapper_features_unittest.suite()
+    tests.append(suite9)
 # Add test cases
 suite.addTests(tests)
 

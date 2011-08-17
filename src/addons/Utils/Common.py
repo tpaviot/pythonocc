@@ -51,7 +51,7 @@ from OCC.BRepBuilderAPI import *
 from OCC.BRepOffsetAPI import *
 from OCC.TopoDS import *
 from OCC.Utils.Context import assert_isdone
-from OCC.KBE.TypesLookup import ShapeToTopology
+from OCC.KBE.types_lut import ShapeToTopology
 from OCC.Quantity import *
 from OCC.GProp import GProp_GProps
 from OCC.GeomAbs import *
