@@ -49,6 +49,18 @@ from OCC.Utils.Construct import *
 #===============================================================================
 global display
 
+class singleton(object):
+    def __init__(self, cls):
+        self.cls = cls
+        self.instance_container = []
+
+    def __call__(self, *args, **kwargs):
+        if not len(self.instance_container):
+            cls = functools.partial(self.cls, *args, **kwargs)
+            self.instance_container.append(cls())
+        return self.instance_container[0]
+        
+@singleton
 class Display(object):
     def __init__(self):
         from OCC.Display.SimpleGui import init_display
