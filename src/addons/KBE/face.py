@@ -472,7 +472,6 @@ if __name__ == "__main__":
     from OCC.BRepPrimAPI import BRepPrimAPI_MakeSphere
     sph = BRepPrimAPI_MakeSphere(1,1).Face()
     fc = Face(sph)
-    import ipdb; ipdb.set_trace()
 
 
 
