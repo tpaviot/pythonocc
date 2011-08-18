@@ -28,7 +28,6 @@ $HeaderURL$
 // Headers necessary to define wrapped classes.
 
 #include<Handle_PlotMgt_HListOfMFTFonts.hxx>
-#include<Handle_PlotMgt_HListOfMFTSizes.hxx>
 #include<Handle_PlotMgt_HListOfPlotterParameter.hxx>
 #include<Handle_PlotMgt_ImageDriver.hxx>
 #include<Handle_PlotMgt_Plotter.hxx>
@@ -40,12 +39,10 @@ $HeaderURL$
 #include<Handle_PlotMgt_TextManager.hxx>
 #include<PlotMgt.hxx>
 #include<PlotMgt_HListOfMFTFonts.hxx>
-#include<PlotMgt_HListOfMFTSizes.hxx>
 #include<PlotMgt_HListOfPlotterParameter.hxx>
 #include<PlotMgt_ImageDriver.hxx>
 #include<PlotMgt_ImageFormat.hxx>
 #include<PlotMgt_ListOfMFTFonts.hxx>
-#include<PlotMgt_ListOfMFTSizes.hxx>
 #include<PlotMgt_ListOfPlotterParameter.hxx>
 #include<PlotMgt_PaperFormat.hxx>
 #include<PlotMgt_Plotter.hxx>
@@ -97,18 +94,24 @@ $HeaderURL$
 #include<OSD_File.hxx>
 #include<OSD_FileIterator.hxx>
 #include<OSD_FileNode.hxx>
+#include<OSD_FontAspect.hxx>
+#include<OSD_FontMgr.hxx>
 #include<OSD_FromWhere.hxx>
 #include<OSD_Function.hxx>
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
+#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
+#include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
 #include<OSD_OpenMode.hxx>
 #include<OSD_PThread.hxx>
 #include<OSD_Path.hxx>
+#include<OSD_PerfMeter.hxx>
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
@@ -128,6 +131,7 @@ $HeaderURL$
 #include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
+#include<OSD_SystemFont.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
@@ -139,7 +143,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Standard_SStream.hxx>
 #include<TShort_Array1OfShortReal.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TCollection_AsciiString.hxx>

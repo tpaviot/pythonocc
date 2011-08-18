@@ -213,7 +213,7 @@ class Handle_Message_Printer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Message_Printer & operator=(const Message_Printer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Message_Printer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Message_Printer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Message_Printer {
@@ -251,7 +251,7 @@ class Handle_Message_PrinterOStream : public Handle_Message_Printer {
 		%feature("autodoc", "1");
 		Handle_Message_PrinterOStream & operator=(const Message_PrinterOStream *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Message_PrinterOStream const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Message_PrinterOStream DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Message_PrinterOStream {
@@ -289,7 +289,7 @@ class Handle_Message_Messenger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Message_Messenger & operator=(const Message_Messenger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Message_Messenger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Message_Messenger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Message_Messenger {
@@ -327,7 +327,7 @@ class Handle_Message_SequenceNodeOfSequenceOfPrinters : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_Message_SequenceNodeOfSequenceOfPrinters & operator=(const Message_SequenceNodeOfSequenceOfPrinters *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Message_SequenceNodeOfSequenceOfPrinters const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Message_SequenceNodeOfSequenceOfPrinters DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Message_SequenceNodeOfSequenceOfPrinters {
@@ -365,7 +365,7 @@ class Handle_Message_ListNodeOfListOfMsg : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_Message_ListNodeOfListOfMsg & operator=(const Message_ListNodeOfListOfMsg *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Message_ListNodeOfListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Message_ListNodeOfListOfMsg DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Message_ListNodeOfListOfMsg {
@@ -403,7 +403,7 @@ class Handle_Message_ProgressIndicator : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Message_ProgressIndicator & operator=(const Message_ProgressIndicator *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Message_ProgressIndicator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Message_ProgressIndicator DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Message_ProgressIndicator {
@@ -441,7 +441,7 @@ class Handle_Message_SequenceNodeOfSequenceOfProgressScale : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_Message_SequenceNodeOfSequenceOfProgressScale & operator=(const Message_SequenceNodeOfSequenceOfProgressScale *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Message_SequenceNodeOfSequenceOfProgressScale const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Message_SequenceNodeOfSequenceOfProgressScale DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Message_SequenceNodeOfSequenceOfProgressScale {
@@ -479,7 +479,7 @@ class Handle_Message_Algorithm : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Message_Algorithm & operator=(const Message_Algorithm *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Message_Algorithm const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Message_Algorithm DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Message_Algorithm {
@@ -1106,9 +1106,9 @@ def __del__(self):
 class Message_PrinterOStream : public Message_Printer {
 	public:
 		%feature("autodoc", "1");
-		Message_PrinterOStream(const Message_Gravity theTraceLevel=Message_Warning);
+		Message_PrinterOStream(const Message_Gravity theTraceLevel=Message_Info);
 		%feature("autodoc", "1");
-		Message_PrinterOStream(const char * theFileName, const Standard_Boolean theDoAppend, const Message_Gravity theTraceLevel=Message_Warning);
+		Message_PrinterOStream(const char * theFileName, const Standard_Boolean theDoAppend, const Message_Gravity theTraceLevel=Message_Info);
 		%feature("autodoc", "1");
 		void Close();
 		%feature("autodoc", "1");
@@ -1198,17 +1198,17 @@ class Message_ProgressSentry {
 		%feature("autodoc", "1");
 		Message_ProgressSentry(const Handle_Message_ProgressIndicator &PI, const Handle_TCollection_HAsciiString &name, const Standard_Real min, const Standard_Real max, const Standard_Real step, const Standard_Boolean isInf=0, const Standard_Real newScopeSpan=0.0);
 		%feature("autodoc", "1");
-		void EndScope();
+		void Relieve();
 		%feature("autodoc", "1");
-		void NextScope() const;
+		void Next(const char * name=0) const;
 		%feature("autodoc", "1");
-		void Next() const;
+		void Next(const Standard_Real span, const char * name=0) const;
 		%feature("autodoc", "1");
-		void NextScope(const Standard_Real span) const;
-		%feature("autodoc", "1");
-		void Next(const double span) const;
+		void Next(const Standard_Real span, const Handle_TCollection_HAsciiString &name) const;
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Show() const;
 
 };
 %feature("shadow") Message_ProgressSentry::~Message_ProgressSentry %{
@@ -1237,11 +1237,11 @@ class Message_Msg {
 		%feature("autodoc", "1");
 		Message_Msg(const char * theKey);
 		%feature("autodoc", "1");
-		Message_Msg(const TCollection_AsciiString &theKey);
+		Message_Msg(const TCollection_ExtendedString &theKey);
 		%feature("autodoc", "1");
 		void Set(const char * theMsg);
 		%feature("autodoc", "1");
-		void Set(const TCollection_AsciiString &theMsg);
+		void Set(const TCollection_ExtendedString &theMsg);
 		%feature("autodoc", "1");
 		Message_Msg & Arg(const char * theString);
 		%feature("autodoc", "1");

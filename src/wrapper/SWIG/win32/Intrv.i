@@ -82,7 +82,7 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_Intrv_SequenceNodeOfSequenceOfInterval & operator=(const Intrv_SequenceNodeOfSequenceOfInterval *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Intrv_SequenceNodeOfSequenceOfInterval const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Intrv_SequenceNodeOfSequenceOfInterval DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Intrv_SequenceNodeOfSequenceOfInterval {

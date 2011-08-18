@@ -43,6 +43,7 @@ $HeaderURL$
 #include <Aspect_ColorPixel.hxx>
 #include <Aspect_ColorRampColorMap.hxx>
 #include <Aspect_ColorScale.hxx>
+#include <Aspect_Convert.hxx>
 #include <Aspect_Display.hxx>
 #include <Aspect_Drawable.hxx>
 #include <Aspect_Driver.hxx>
@@ -61,6 +62,8 @@ $HeaderURL$
 #include <Aspect_FormatOfSheetPaper.hxx>
 #include <Aspect_GenId.hxx>
 #include <Aspect_GenericColorMap.hxx>
+#include <Aspect_GradientBackground.hxx>
+#include <Aspect_GradientFillMethod.hxx>
 #include <Aspect_GraphicCallbackProc.hxx>
 #include <Aspect_GraphicDevice.hxx>
 #include <Aspect_GraphicDeviceDefinitionError.hxx>
@@ -145,7 +148,6 @@ $HeaderURL$
 #include <Aspect_WindowDriver.hxx>
 #include <Aspect_WindowDriverPtr.hxx>
 #include <Aspect_WindowError.hxx>
-#include <Graphic3d_Array1OfBytes.hxx>
 #include <Graphic3d_Array1OfVector.hxx>
 #include <Graphic3d_Array1OfVertex.hxx>
 #include <Graphic3d_Array1OfVertexC.hxx>
@@ -177,6 +179,7 @@ $HeaderURL$
 #include <Graphic3d_CBitFields4.hxx>
 #include <Graphic3d_CBitFields8.hxx>
 #include <Graphic3d_CBounds.hxx>
+#include <Graphic3d_CGraduatedTrihedron.hxx>
 #include <Graphic3d_CGroup.hxx>
 #include <Graphic3d_CInitTexture.hxx>
 #include <Graphic3d_CLight.hxx>
@@ -193,8 +196,8 @@ $HeaderURL$
 #include <Graphic3d_GraphicDevice.hxx>
 #include <Graphic3d_GraphicDriver.hxx>
 #include <Graphic3d_Group.hxx>
+#include <Graphic3d_GroupAspect.hxx>
 #include <Graphic3d_GroupDefinitionError.hxx>
-#include <Graphic3d_HArray1OfBytes.hxx>
 #include <Graphic3d_HSequenceOfGroup.hxx>
 #include <Graphic3d_HSequenceOfStructure.hxx>
 #include <Graphic3d_HSetOfGroup.hxx>
@@ -212,6 +215,7 @@ $HeaderURL$
 #include <Graphic3d_MapOfStructure.hxx>
 #include <Graphic3d_MaterialAspect.hxx>
 #include <Graphic3d_MaterialDefinitionError.hxx>
+#include <Graphic3d_NListOfHAsciiString.hxx>
 #include <Graphic3d_NameOfFont.hxx>
 #include <Graphic3d_NameOfMaterial.hxx>
 #include <Graphic3d_NameOfTexture1D.hxx>
@@ -223,6 +227,7 @@ $HeaderURL$
 #include <Graphic3d_PlotterDefinitionError.hxx>
 #include <Graphic3d_PrimitiveArray.hxx>
 #include <Graphic3d_PriorityDefinitionError.hxx>
+#include <Graphic3d_PtrFrameBuffer.hxx>
 #include <Graphic3d_SequenceNodeOfSequenceOfAddress.hxx>
 #include <Graphic3d_SequenceNodeOfSequenceOfGroup.hxx>
 #include <Graphic3d_SequenceNodeOfSequenceOfStructure.hxx>
@@ -342,7 +347,6 @@ $HeaderURL$
 #include <Handle_Graphic3d_GraphicDriver.hxx>
 #include <Handle_Graphic3d_Group.hxx>
 #include <Handle_Graphic3d_GroupDefinitionError.hxx>
-#include <Handle_Graphic3d_HArray1OfBytes.hxx>
 #include <Handle_Graphic3d_HSequenceOfGroup.hxx>
 #include <Handle_Graphic3d_HSequenceOfStructure.hxx>
 #include <Handle_Graphic3d_HSetOfGroup.hxx>
@@ -512,6 +516,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -535,6 +540,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -550,6 +556,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>

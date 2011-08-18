@@ -27,10 +27,10 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Standard
 import TCollection
 import CDM
 import MDF
+import Standard
 import TDF
 import PCDM
 import PDF

@@ -285,7 +285,6 @@ $HeaderURL$
 #include <SelectMgr_SOPtr.hxx>
 #include <SelectMgr_SelectableObject.hxx>
 #include <SelectMgr_Selection.hxx>
-#include <SelectMgr_SelectionManager.hxx>
 #include <SelectMgr_SequenceNodeOfSequenceOfFilter.hxx>
 #include <SelectMgr_SequenceNodeOfSequenceOfOwner.hxx>
 #include <SelectMgr_SequenceNodeOfSequenceOfSelection.hxx>
@@ -297,7 +296,6 @@ $HeaderURL$
 #include <SelectMgr_SortCriterion.hxx>
 #include <SelectMgr_StateOfSelection.hxx>
 #include <SelectMgr_TypeOfUpdate.hxx>
-#include <SelectMgr_ViewerSelector.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
@@ -306,6 +304,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -329,6 +328,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -344,6 +344,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>

@@ -29,14 +29,18 @@ $HeaderURL$
 
 #include<Handle_PNaming_HArray1OfNamedShape.hxx>
 #include<Handle_PNaming_Name.hxx>
+#include<Handle_PNaming_Name_1.hxx>
 #include<Handle_PNaming_NamedShape.hxx>
 #include<Handle_PNaming_Naming.hxx>
+#include<Handle_PNaming_Naming_1.hxx>
 #include<Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape.hxx>
 #include<PNaming_FieldOfHArray1OfNamedShape.hxx>
 #include<PNaming_HArray1OfNamedShape.hxx>
 #include<PNaming_Name.hxx>
+#include<PNaming_Name_1.hxx>
 #include<PNaming_NamedShape.hxx>
 #include<PNaming_Naming.hxx>
+#include<PNaming_Naming_1.hxx>
 #include<PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape.hxx>
 #include<PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape.hxx>
 
@@ -48,4 +52,5 @@ $HeaderURL$
 #include<Handle_Standard_Persistent.hxx>
 #include<Storage_stCONSTclCOM.hxx>
 #include<Handle_PTopoDS_HArray1OfShape1.hxx>
+#include<Handle_PCollection_HAsciiString.hxx>
 %}

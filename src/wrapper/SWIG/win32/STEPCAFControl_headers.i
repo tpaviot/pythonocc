@@ -33,10 +33,8 @@ $HeaderURL$
 #include<Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape.hxx>
 #include<Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile.hxx>
 #include<Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile.hxx>
-#include<Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel.hxx>
 #include<Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD.hxx>
 #include<Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR.hxx>
-#include<Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient.hxx>
 #include<Handle_STEPCAFControl_DictionaryOfExternFile.hxx>
 #include<Handle_STEPCAFControl_ExternFile.hxx>
 #include<Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile.hxx>
@@ -46,26 +44,20 @@ $HeaderURL$
 #include<STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape.hxx>
 #include<STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile.hxx>
 #include<STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile.hxx>
-#include<STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel.hxx>
 #include<STEPCAFControl_DataMapIteratorOfDataMapOfShapePD.hxx>
 #include<STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR.hxx>
-#include<STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient.hxx>
 #include<STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile.hxx>
 #include<STEPCAFControl_DataMapNodeOfDataMapOfLabelShape.hxx>
 #include<STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile.hxx>
 #include<STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile.hxx>
-#include<STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel.hxx>
 #include<STEPCAFControl_DataMapNodeOfDataMapOfShapePD.hxx>
 #include<STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR.hxx>
-#include<STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient.hxx>
 #include<STEPCAFControl_DataMapOfLabelExternFile.hxx>
 #include<STEPCAFControl_DataMapOfLabelShape.hxx>
 #include<STEPCAFControl_DataMapOfPDExternFile.hxx>
 #include<STEPCAFControl_DataMapOfSDRExternFile.hxx>
-#include<STEPCAFControl_DataMapOfShapeLabel.hxx>
 #include<STEPCAFControl_DataMapOfShapePD.hxx>
 #include<STEPCAFControl_DataMapOfShapeSDR.hxx>
-#include<STEPCAFControl_DataMapOfShapeTransient.hxx>
 #include<STEPCAFControl_DictionaryOfExternFile.hxx>
 #include<STEPCAFControl_ExternFile.hxx>
 #include<STEPCAFControl_IteratorOfDictionaryOfExternFile.hxx>
@@ -79,7 +71,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -108,11 +99,8 @@ $HeaderURL$
 #include<Handle_Interface_Static.hxx>
 #include<Handle_Interface_TypedValue.hxx>
 #include<Handle_Interface_UndefinedContent.hxx>
-#include<Interface_DataMapIteratorOfDataMapOfIntegerTransient.hxx>
 #include<Interface_DataMapIteratorOfDataMapOfTransientInteger.hxx>
-#include<Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
-#include<Interface_DataMapOfIntegerTransient.hxx>
 #include<Interface_DataMapOfTransientInteger.hxx>
 #include<Interface_DataState.hxx>
 #include<Interface_IndexedMapNodeOfIndexedMapOfAsciiString.hxx>
@@ -192,9 +180,6 @@ $HeaderURL$
 #include<Transfer_Binder.hxx>
 #include<Transfer_BinderOfTransientInteger.hxx>
 #include<Transfer_DataInfo.hxx>
-#include<Transfer_DataMapIteratorOfDataMapOfTransientTransient.hxx>
-#include<Transfer_DataMapNodeOfDataMapOfTransientTransient.hxx>
-#include<Transfer_DataMapOfTransientTransient.hxx>
 #include<Transfer_DispatchControl.hxx>
 #include<Transfer_FindHasher.hxx>
 #include<Transfer_Finder.hxx>
@@ -249,10 +234,10 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopoDS_Shape.hxx>
 #include<Handle_XSControl_WorkSession.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<TDF_Label.hxx>
+#include<TopoDS_Shape.hxx>
 #include<Handle_StepBasic_ProductDefinition.hxx>
 #include<Handle_StepShape_ShapeDefinitionRepresentation.hxx>
 #include<TCollection_AsciiString.hxx>
@@ -260,4 +245,5 @@ $HeaderURL$
 #include<Handle_StepRepr_NextAssemblyUsageOccurrence.hxx>
 #include<Handle_XCAFDoc_ShapeTool.hxx>
 #include<STEPConstruct_Tool.hxx>
+#include<XCAFDoc_DataMapOfShapeLabel.hxx>
 %}

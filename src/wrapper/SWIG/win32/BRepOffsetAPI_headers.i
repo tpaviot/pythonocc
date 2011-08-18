@@ -27,9 +27,6 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape.hxx>
-#include<BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
-#include<BRepOffsetAPI_DataMapOfShapeSequenceOfShape.hxx>
 #include<BRepOffsetAPI_DraftAngle.hxx>
 #include<BRepOffsetAPI_FindContigousEdges.hxx>
 #include<BRepOffsetAPI_MakeDraft.hxx>
@@ -47,12 +44,30 @@ $HeaderURL$
 #include<BRepOffsetAPI_SequenceOfSequenceOfShape.hxx>
 #include<BRepOffsetAPI_Sewing.hxx>
 #include<BRepOffsetAPI_ThruSections.hxx>
-#include<Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include<Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal.hxx>
 #include<Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape.hxx>
 
 // Additional headers necessary for compilation.
 
+#include<AppParCurves.hxx>
+#include<AppParCurves_Array1OfConstraintCouple.hxx>
+#include<AppParCurves_Array1OfMultiBSpCurve.hxx>
+#include<AppParCurves_Array1OfMultiCurve.hxx>
+#include<AppParCurves_Array1OfMultiPoint.hxx>
+#include<AppParCurves_Constraint.hxx>
+#include<AppParCurves_ConstraintCouple.hxx>
+#include<AppParCurves_HArray1OfConstraintCouple.hxx>
+#include<AppParCurves_HArray1OfMultiBSpCurve.hxx>
+#include<AppParCurves_HArray1OfMultiCurve.hxx>
+#include<AppParCurves_HArray1OfMultiPoint.hxx>
+#include<AppParCurves_MultiBSpCurve.hxx>
+#include<AppParCurves_MultiCurve.hxx>
+#include<AppParCurves_MultiPoint.hxx>
+#include<AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve.hxx>
+#include<AppParCurves_SequenceNodeOfSequenceOfMultiCurve.hxx>
+#include<AppParCurves_SequenceOfMultiBSpCurve.hxx>
+#include<AppParCurves_SequenceOfMultiCurve.hxx>
+#include<AppParCurves_SmoothCriterion.hxx>
 #include<BRepTools.hxx>
 #include<BRepTools_DataMapIteratorOfMapOfVertexPnt2d.hxx>
 #include<BRepTools_DataMapNodeOfMapOfVertexPnt2d.hxx>
@@ -74,30 +89,41 @@ $HeaderURL$
 #include<TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfIntegerShape.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger.hxx>
+#include<TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeListOfShape.hxx>
+#include<TopTools_DataMapIteratorOfDataMapOfShapeReal.hxx>
+#include<TopTools_DataMapIteratorOfDataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfIntegerListOfShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfIntegerShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger.hxx>
+#include<TopTools_DataMapNodeOfDataMapOfOrientedShapeShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeListOfShape.hxx>
+#include<TopTools_DataMapNodeOfDataMapOfShapeReal.hxx>
+#include<TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeShape.hxx>
 #include<TopTools_DataMapOfIntegerListOfShape.hxx>
 #include<TopTools_DataMapOfIntegerShape.hxx>
 #include<TopTools_DataMapOfOrientedShapeInteger.hxx>
+#include<TopTools_DataMapOfOrientedShapeShape.hxx>
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
+#include<TopTools_DataMapOfShapeReal.hxx>
+#include<TopTools_DataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<TopTools_HArray1OfListOfShape.hxx>
 #include<TopTools_HArray1OfShape.hxx>
 #include<TopTools_HArray2OfShape.hxx>
 #include<TopTools_HSequenceOfShape.hxx>
+#include<TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress.hxx>
 #include<TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape.hxx>
 #include<TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape.hxx>
+#include<TopTools_IndexedDataMapOfShapeAddress.hxx>
 #include<TopTools_IndexedDataMapOfShapeListOfShape.hxx>
 #include<TopTools_IndexedDataMapOfShapeShape.hxx>
 #include<TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape.hxx>
@@ -108,6 +134,7 @@ $HeaderURL$
 #include<TopTools_ListNodeOfListOfShape.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopTools_LocationSet.hxx>
+#include<TopTools_LocationSetPtr.hxx>
 #include<TopTools_MapIteratorOfMapOfOrientedShape.hxx>
 #include<TopTools_MapIteratorOfMapOfShape.hxx>
 #include<TopTools_MapOfOrientedShape.hxx>
@@ -127,13 +154,13 @@ $HeaderURL$
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Edge.hxx>
 #include<gp_Pnt.hxx>
-#include<gp_Dir.hxx>
-#include<gp_Pln.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TopTools_SequenceOfShape.hxx>
 #include<TColStd_SequenceOfReal.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopTools_ListOfShape.hxx>
+#include<gp_Dir.hxx>
+#include<gp_Pln.hxx>
 #include<gp_Ax2.hxx>
 #include<Handle_Law_Function.hxx>
 #include<Handle_Geom_Surface.hxx>

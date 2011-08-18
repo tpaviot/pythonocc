@@ -31,5 +31,6 @@ import gp
 import Standard
 import GeomAbs
 import Geom
+import TColgp
 import Geom2d
 };

@@ -37,6 +37,7 @@ import MAT
 import TColgp
 import gp
 import AppParCurves
+import TCollection
 import Geom
 import Geom2d
 };

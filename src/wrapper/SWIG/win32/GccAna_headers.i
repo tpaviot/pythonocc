@@ -57,5 +57,4 @@ $HeaderURL$
 #include<GccEnt_QualifiedLin.hxx>
 #include<gp_Circ2d.hxx>
 #include<Handle_GccInt_Bisec.hxx>
-#include<Standard_SStream.hxx>
 %}

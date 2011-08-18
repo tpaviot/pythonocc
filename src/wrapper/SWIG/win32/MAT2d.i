@@ -66,7 +66,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerConnexion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
@@ -104,7 +104,7 @@ class Handle_MAT2d_Connexion : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT2d_Connexion & operator=(const MAT2d_Connexion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_Connexion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_Connexion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_Connexion {
@@ -142,7 +142,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
@@ -180,7 +180,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger & operator=(const MAT2d_DataMapNodeOfDataMapOfBiIntInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
@@ -218,7 +218,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerBisec *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
@@ -256,7 +256,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerVec2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
@@ -294,7 +294,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfConnexion : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion & operator=(const MAT2d_SequenceNodeOfSequenceOfConnexion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
@@ -332,7 +332,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public Han
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
@@ -370,7 +370,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry & operator=(const MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
@@ -408,7 +408,7 @@ class Handle_MAT2d_Circuit : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MAT2d_Circuit & operator=(const MAT2d_Circuit *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_Circuit const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_Circuit DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_Circuit {
@@ -446,7 +446,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public Handle_
 		%feature("autodoc", "1");
 		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger & operator=(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
@@ -484,7 +484,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve & operator=(const MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
@@ -502,44 +502,6 @@ def __del__(self):
 %}
 
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfBoolean;
-class Handle_MAT2d_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean();
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean(const Handle_MAT2d_SequenceNodeOfSequenceOfBoolean &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean(const MAT2d_SequenceNodeOfSequenceOfBoolean *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean & operator=(const Handle_MAT2d_SequenceNodeOfSequenceOfBoolean &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean & operator=(const MAT2d_SequenceNodeOfSequenceOfBoolean *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MAT2d_SequenceNodeOfSequenceOfBoolean const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT2d_SequenceNodeOfSequenceOfBoolean {
-	MAT2d_SequenceNodeOfSequenceOfBoolean* GetObject() {
-	return (MAT2d_SequenceNodeOfSequenceOfBoolean*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MAT2d_SequenceNodeOfSequenceOfBoolean::~Handle_MAT2d_SequenceNodeOfSequenceOfBoolean %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MAT2d_SequenceNodeOfSequenceOfBoolean {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -952,7 +914,7 @@ class MAT2d_Circuit : public MMgt_TShared {
 		%feature("autodoc", "1");
 		MAT2d_Circuit();
 		%feature("autodoc", "1");
-		void Perform(MAT2d_SequenceOfSequenceOfGeometry & aFigure, const MAT2d_SequenceOfBoolean &IsClosed, const Standard_Integer IndRefLine, const Standard_Boolean Trigo);
+		void Perform(MAT2d_SequenceOfSequenceOfGeometry & aFigure, const TColStd_SequenceOfBoolean &IsClosed, const Standard_Integer IndRefLine, const Standard_Boolean Trigo);
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfItems() const;
 		%feature("autodoc", "1");
@@ -1101,53 +1063,6 @@ def __del__(self):
 %}
 
 %extend MAT2d_Tool2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT2d_SequenceNodeOfSequenceOfBoolean;
-class MAT2d_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_SequenceNodeOfSequenceOfBoolean(const Standard_Boolean &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Boolean GetValue() {
-				return (Standard_Boolean) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Boolean value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT2d_SequenceNodeOfSequenceOfBoolean {
-	Handle_MAT2d_SequenceNodeOfSequenceOfBoolean GetHandle() {
-	return *(Handle_MAT2d_SequenceNodeOfSequenceOfBoolean*) &$self;
-	}
-};
-%extend MAT2d_SequenceNodeOfSequenceOfBoolean {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT2d_SequenceNodeOfSequenceOfBoolean::~MAT2d_SequenceNodeOfSequenceOfBoolean %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_SequenceNodeOfSequenceOfBoolean {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1935,81 +1850,6 @@ def __del__(self):
 %}
 
 %extend MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT2d_SequenceOfBoolean;
-class MAT2d_SequenceOfBoolean : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_SequenceOfBoolean();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const MAT2d_SequenceOfBoolean & Assign(const MAT2d_SequenceOfBoolean &Other);
-		%feature("autodoc", "1");
-		const MAT2d_SequenceOfBoolean & operator=(const MAT2d_SequenceOfBoolean &Other);
-		%feature("autodoc", "1");
-		void Append(const Standard_Boolean &T);
-		%feature("autodoc", "1");
-		void Append(MAT2d_SequenceOfBoolean & S);
-		%feature("autodoc", "1");
-		void Prepend(const Standard_Boolean &T);
-		%feature("autodoc", "1");
-		void Prepend(MAT2d_SequenceOfBoolean & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Standard_Boolean &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, MAT2d_SequenceOfBoolean & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Standard_Boolean &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, MAT2d_SequenceOfBoolean & S);
-		%feature("autodoc", "1");
-		const Standard_Boolean & First() const;
-		%feature("autodoc", "1");
-		const Standard_Boolean & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, MAT2d_SequenceOfBoolean & S);
-		%feature("autodoc", "1");
-		const Standard_Boolean & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Standard_Boolean & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Boolean &I);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Boolean GetChangeValue(const Standard_Integer Index) {
-				return (Standard_Boolean) $self->ChangeValue(Index);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeValue(Standard_Boolean value ,const Standard_Integer Index) {
-				$self->ChangeValue(Index)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Boolean & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") MAT2d_SequenceOfBoolean::~MAT2d_SequenceOfBoolean %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_SequenceOfBoolean {
 	void _kill_pointed() {
 		delete $self;
 	}

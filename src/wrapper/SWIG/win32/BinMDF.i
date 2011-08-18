@@ -49,6 +49,7 @@ $HeaderURL$
 
 %include BinMDF_headers.i
 
+typedef TColStd_DataMapOfAsciiStringInteger BinMDF_StringIdMap;
 
 
 
@@ -66,7 +67,7 @@ class Handle_BinMDF_ADriver : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriver & operator=(const BinMDF_ADriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDF_ADriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_ADriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_ADriver {
@@ -104,7 +105,7 @@ class Handle_BinMDF_TagSourceDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDF_TagSourceDriver & operator=(const BinMDF_TagSourceDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDF_TagSourceDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_TagSourceDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_TagSourceDriver {
@@ -142,7 +143,7 @@ class Handle_BinMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_BinMDF_DataMapNodeOfTypeADriverMap & operator=(const BinMDF_DataMapNodeOfTypeADriverMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDF_DataMapNodeOfTypeADriverMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_DataMapNodeOfTypeADriverMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_DataMapNodeOfTypeADriverMap {
@@ -180,7 +181,7 @@ class Handle_BinMDF_ReferenceDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDF_ReferenceDriver & operator=(const BinMDF_ReferenceDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDF_ReferenceDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_ReferenceDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_ReferenceDriver {
@@ -218,7 +219,7 @@ class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_BinMDF_DoubleMapNodeOfTypeIdMap & operator=(const BinMDF_DoubleMapNodeOfTypeIdMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDF_DoubleMapNodeOfTypeIdMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_DoubleMapNodeOfTypeIdMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
@@ -242,44 +243,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BinMDF_DataMapNodeOfStringIdMap;
-class Handle_BinMDF_DataMapNodeOfStringIdMap : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfStringIdMap();
-		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfStringIdMap(const Handle_BinMDF_DataMapNodeOfStringIdMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfStringIdMap(const BinMDF_DataMapNodeOfStringIdMap *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfStringIdMap & operator=(const Handle_BinMDF_DataMapNodeOfStringIdMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDF_DataMapNodeOfStringIdMap & operator=(const BinMDF_DataMapNodeOfStringIdMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMDF_DataMapNodeOfStringIdMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDF_DataMapNodeOfStringIdMap {
-	BinMDF_DataMapNodeOfStringIdMap* GetObject() {
-	return (BinMDF_DataMapNodeOfStringIdMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMDF_DataMapNodeOfStringIdMap::~Handle_BinMDF_DataMapNodeOfStringIdMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMDF_DataMapNodeOfStringIdMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinMDF_ADriverTable;
 class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 	public:
@@ -294,7 +257,7 @@ class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriverTable & operator=(const BinMDF_ADriverTable *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDF_ADriverTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDF_ADriverTable DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDF_ADriverTable {
@@ -408,37 +371,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMDF_DataMapIteratorOfStringIdMap;
-class BinMDF_DataMapIteratorOfStringIdMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BinMDF_DataMapIteratorOfStringIdMap();
-		%feature("autodoc", "1");
-		BinMDF_DataMapIteratorOfStringIdMap(const BinMDF_StringIdMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BinMDF_StringIdMap &aMap);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%feature("shadow") BinMDF_DataMapIteratorOfStringIdMap::~BinMDF_DataMapIteratorOfStringIdMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDF_DataMapIteratorOfStringIdMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BinMDF_DataMapNodeOfTypeADriverMap;
 class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 	public:
@@ -529,55 +461,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMDF_DataMapNodeOfStringIdMap;
-class BinMDF_DataMapNodeOfStringIdMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BinMDF_DataMapNodeOfStringIdMap(const TCollection_AsciiString &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue() {
-				return (Standard_Integer) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDF_DataMapNodeOfStringIdMap {
-	Handle_BinMDF_DataMapNodeOfStringIdMap GetHandle() {
-	return *(Handle_BinMDF_DataMapNodeOfStringIdMap*) &$self;
-	}
-};
-%extend BinMDF_DataMapNodeOfStringIdMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDF_DataMapNodeOfStringIdMap::~BinMDF_DataMapNodeOfStringIdMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDF_DataMapNodeOfStringIdMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BinMDF_TagSourceDriver;
 class BinMDF_TagSourceDriver : public BinMDF_ADriver {
 	public:
@@ -613,61 +496,6 @@ def __del__(self):
 %}
 
 %extend BinMDF_TagSourceDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinMDF_StringIdMap;
-class BinMDF_StringIdMap : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BinMDF_StringIdMap(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BinMDF_StringIdMap & Assign(const BinMDF_StringIdMap &Other);
-		%feature("autodoc", "1");
-		BinMDF_StringIdMap & operator=(const BinMDF_StringIdMap &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_AsciiString &K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		const Standard_Integer & Find(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const TCollection_AsciiString &K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetChangeFind(const TCollection_AsciiString &K) {
-				return (Standard_Integer) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Integer value ,const TCollection_AsciiString &K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const TCollection_AsciiString &K);
-
-};
-%feature("shadow") BinMDF_StringIdMap::~BinMDF_StringIdMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDF_StringIdMap {
 	void _kill_pointed() {
 		delete $self;
 	}

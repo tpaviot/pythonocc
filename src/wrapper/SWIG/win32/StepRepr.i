@@ -66,7 +66,7 @@ class Handle_StepRepr_RepresentationContext : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationContext & operator=(const StepRepr_RepresentationContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_RepresentationContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_RepresentationContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_RepresentationContext {
@@ -104,7 +104,7 @@ class Handle_StepRepr_GlobalUncertaintyAssignedContext : public Handle_StepRepr_
 		%feature("autodoc", "1");
 		Handle_StepRepr_GlobalUncertaintyAssignedContext & operator=(const StepRepr_GlobalUncertaintyAssignedContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_GlobalUncertaintyAssignedContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_GlobalUncertaintyAssignedContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_GlobalUncertaintyAssignedContext {
@@ -142,7 +142,7 @@ class Handle_StepRepr_ParametricRepresentationContext : public Handle_StepRepr_R
 		%feature("autodoc", "1");
 		Handle_StepRepr_ParametricRepresentationContext & operator=(const StepRepr_ParametricRepresentationContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ParametricRepresentationContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ParametricRepresentationContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ParametricRepresentationContext {
@@ -180,7 +180,7 @@ class Handle_StepRepr_ShapeAspectRelationship : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspectRelationship & operator=(const StepRepr_ShapeAspectRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ShapeAspectRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ShapeAspectRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ShapeAspectRelationship {
@@ -218,7 +218,7 @@ class Handle_StepRepr_HArray1OfMaterialPropertyRepresentation : public Handle_MM
 		%feature("autodoc", "1");
 		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation & operator=(const StepRepr_HArray1OfMaterialPropertyRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_HArray1OfMaterialPropertyRepresentation {
@@ -256,7 +256,7 @@ class Handle_StepRepr_ProductDefinitionUsage : public Handle_StepBasic_ProductDe
 		%feature("autodoc", "1");
 		Handle_StepRepr_ProductDefinitionUsage & operator=(const StepRepr_ProductDefinitionUsage *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ProductDefinitionUsage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ProductDefinitionUsage DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ProductDefinitionUsage {
@@ -294,7 +294,7 @@ class Handle_StepRepr_MakeFromUsageOption : public Handle_StepRepr_ProductDefini
 		%feature("autodoc", "1");
 		Handle_StepRepr_MakeFromUsageOption & operator=(const StepRepr_MakeFromUsageOption *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_MakeFromUsageOption const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_MakeFromUsageOption DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_MakeFromUsageOption {
@@ -332,7 +332,7 @@ class Handle_StepRepr_RepresentationRelationship : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationRelationship & operator=(const StepRepr_RepresentationRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_RepresentationRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_RepresentationRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_RepresentationRelationship {
@@ -370,7 +370,7 @@ class Handle_StepRepr_ShapeRepresentationRelationship : public Handle_StepRepr_R
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeRepresentationRelationship & operator=(const StepRepr_ShapeRepresentationRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ShapeRepresentationRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ShapeRepresentationRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ShapeRepresentationRelationship {
@@ -408,7 +408,7 @@ class Handle_StepRepr_RepresentationRelationshipWithTransformation : public Hand
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationRelationshipWithTransformation & operator=(const StepRepr_RepresentationRelationshipWithTransformation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_RepresentationRelationshipWithTransformation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_RepresentationRelationshipWithTransformation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_RepresentationRelationshipWithTransformation {
@@ -446,7 +446,7 @@ class Handle_StepRepr_Representation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_Representation & operator=(const StepRepr_Representation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_Representation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_Representation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_Representation {
@@ -484,7 +484,7 @@ class Handle_StepRepr_ProductConcept : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_ProductConcept & operator=(const StepRepr_ProductConcept *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ProductConcept const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ProductConcept DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ProductConcept {
@@ -522,7 +522,7 @@ class Handle_StepRepr_PropertyDefinitionRelationship : public Handle_MMgt_TShare
 		%feature("autodoc", "1");
 		Handle_StepRepr_PropertyDefinitionRelationship & operator=(const StepRepr_PropertyDefinitionRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_PropertyDefinitionRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_PropertyDefinitionRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_PropertyDefinitionRelationship {
@@ -560,7 +560,7 @@ class Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation : public Handle_
 		%feature("autodoc", "1");
 		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation & operator=(const StepRepr_HSequenceOfMaterialPropertyRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
@@ -598,7 +598,7 @@ class Handle_StepRepr_AssemblyComponentUsage : public Handle_StepRepr_ProductDef
 		%feature("autodoc", "1");
 		Handle_StepRepr_AssemblyComponentUsage & operator=(const StepRepr_AssemblyComponentUsage *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_AssemblyComponentUsage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_AssemblyComponentUsage DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_AssemblyComponentUsage {
@@ -636,7 +636,7 @@ class Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : p
 		%feature("autodoc", "1");
 		Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation & operator=(const StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
@@ -674,7 +674,7 @@ class Handle_StepRepr_PropertyDefinition : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_PropertyDefinition & operator=(const StepRepr_PropertyDefinition *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_PropertyDefinition const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_PropertyDefinition DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_PropertyDefinition {
@@ -712,7 +712,7 @@ class Handle_StepRepr_ShapeAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspect & operator=(const StepRepr_ShapeAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ShapeAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ShapeAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ShapeAspect {
@@ -750,7 +750,7 @@ class Handle_StepRepr_CompositeShapeAspect : public Handle_StepRepr_ShapeAspect 
 		%feature("autodoc", "1");
 		Handle_StepRepr_CompositeShapeAspect & operator=(const StepRepr_CompositeShapeAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_CompositeShapeAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_CompositeShapeAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_CompositeShapeAspect {
@@ -788,7 +788,7 @@ class Handle_StepRepr_RepresentationItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationItem & operator=(const StepRepr_RepresentationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_RepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_RepresentationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_RepresentationItem {
@@ -826,7 +826,7 @@ class Handle_StepRepr_CompoundRepresentationItem : public Handle_StepRepr_Repres
 		%feature("autodoc", "1");
 		Handle_StepRepr_CompoundRepresentationItem & operator=(const StepRepr_CompoundRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_CompoundRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_CompoundRepresentationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_CompoundRepresentationItem {
@@ -864,7 +864,7 @@ class Handle_StepRepr_HSequenceOfRepresentationItem : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_StepRepr_HSequenceOfRepresentationItem & operator=(const StepRepr_HSequenceOfRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_HSequenceOfRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_HSequenceOfRepresentationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_HSequenceOfRepresentationItem {
@@ -902,7 +902,7 @@ class Handle_StepRepr_FunctionallyDefinedTransformation : public Handle_MMgt_TSh
 		%feature("autodoc", "1");
 		Handle_StepRepr_FunctionallyDefinedTransformation & operator=(const StepRepr_FunctionallyDefinedTransformation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_FunctionallyDefinedTransformation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_FunctionallyDefinedTransformation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_FunctionallyDefinedTransformation {
@@ -940,7 +940,7 @@ class Handle_StepRepr_MaterialProperty : public Handle_StepRepr_PropertyDefiniti
 		%feature("autodoc", "1");
 		Handle_StepRepr_MaterialProperty & operator=(const StepRepr_MaterialProperty *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_MaterialProperty const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_MaterialProperty DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_MaterialProperty {
@@ -978,7 +978,7 @@ class Handle_StepRepr_AssemblyComponentUsageSubstitute : public Handle_MMgt_TSha
 		%feature("autodoc", "1");
 		Handle_StepRepr_AssemblyComponentUsageSubstitute & operator=(const StepRepr_AssemblyComponentUsageSubstitute *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_AssemblyComponentUsageSubstitute const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_AssemblyComponentUsageSubstitute DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_AssemblyComponentUsageSubstitute {
@@ -1016,7 +1016,7 @@ class Handle_StepRepr_MappedItem : public Handle_StepRepr_RepresentationItem {
 		%feature("autodoc", "1");
 		Handle_StepRepr_MappedItem & operator=(const StepRepr_MappedItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_MappedItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_MappedItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_MappedItem {
@@ -1054,7 +1054,7 @@ class Handle_StepRepr_QuantifiedAssemblyComponentUsage : public Handle_StepRepr_
 		%feature("autodoc", "1");
 		Handle_StepRepr_QuantifiedAssemblyComponentUsage & operator=(const StepRepr_QuantifiedAssemblyComponentUsage *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_QuantifiedAssemblyComponentUsage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_QuantifiedAssemblyComponentUsage DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_QuantifiedAssemblyComponentUsage {
@@ -1092,7 +1092,7 @@ class Handle_StepRepr_RepresentationMap : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_RepresentationMap & operator=(const StepRepr_RepresentationMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_RepresentationMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_RepresentationMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_RepresentationMap {
@@ -1130,7 +1130,7 @@ class Handle_StepRepr_MaterialDesignation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_MaterialDesignation & operator=(const StepRepr_MaterialDesignation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_MaterialDesignation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_MaterialDesignation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_MaterialDesignation {
@@ -1168,7 +1168,7 @@ class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspect
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspectTransition & operator=(const StepRepr_ShapeAspectTransition *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ShapeAspectTransition const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ShapeAspectTransition DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ShapeAspectTransition {
@@ -1206,7 +1206,7 @@ class Handle_StepRepr_ItemDefinedTransformation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_ItemDefinedTransformation & operator=(const StepRepr_ItemDefinedTransformation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ItemDefinedTransformation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ItemDefinedTransformation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ItemDefinedTransformation {
@@ -1244,7 +1244,7 @@ class Handle_StepRepr_NextAssemblyUsageOccurrence : public Handle_StepRepr_Assem
 		%feature("autodoc", "1");
 		Handle_StepRepr_NextAssemblyUsageOccurrence & operator=(const StepRepr_NextAssemblyUsageOccurrence *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_NextAssemblyUsageOccurrence const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_NextAssemblyUsageOccurrence DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_NextAssemblyUsageOccurrence {
@@ -1282,7 +1282,7 @@ class Handle_StepRepr_DataEnvironment : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_DataEnvironment & operator=(const StepRepr_DataEnvironment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_DataEnvironment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_DataEnvironment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_DataEnvironment {
@@ -1320,7 +1320,7 @@ class Handle_StepRepr_DerivedShapeAspect : public Handle_StepRepr_ShapeAspect {
 		%feature("autodoc", "1");
 		Handle_StepRepr_DerivedShapeAspect & operator=(const StepRepr_DerivedShapeAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_DerivedShapeAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_DerivedShapeAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_DerivedShapeAspect {
@@ -1358,7 +1358,7 @@ class Handle_StepRepr_Extension : public Handle_StepRepr_DerivedShapeAspect {
 		%feature("autodoc", "1");
 		Handle_StepRepr_Extension & operator=(const StepRepr_Extension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_Extension const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_Extension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_Extension {
@@ -1396,7 +1396,7 @@ class Handle_StepRepr_ReprItemAndLengthMeasureWithUnit : public Handle_StepRepr_
 		%feature("autodoc", "1");
 		Handle_StepRepr_ReprItemAndLengthMeasureWithUnit & operator=(const StepRepr_ReprItemAndLengthMeasureWithUnit *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ReprItemAndLengthMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ReprItemAndLengthMeasureWithUnit DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ReprItemAndLengthMeasureWithUnit {
@@ -1434,7 +1434,7 @@ class Handle_StepRepr_PropertyDefinitionRepresentation : public Handle_MMgt_TSha
 		%feature("autodoc", "1");
 		Handle_StepRepr_PropertyDefinitionRepresentation & operator=(const StepRepr_PropertyDefinitionRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_PropertyDefinitionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_PropertyDefinitionRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_PropertyDefinitionRepresentation {
@@ -1472,7 +1472,7 @@ class Handle_StepRepr_MaterialPropertyRepresentation : public Handle_StepRepr_Pr
 		%feature("autodoc", "1");
 		Handle_StepRepr_MaterialPropertyRepresentation & operator=(const StepRepr_MaterialPropertyRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_MaterialPropertyRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_MaterialPropertyRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_MaterialPropertyRepresentation {
@@ -1510,7 +1510,7 @@ class Handle_StepRepr_ProductDefinitionShape : public Handle_StepRepr_PropertyDe
 		%feature("autodoc", "1");
 		Handle_StepRepr_ProductDefinitionShape & operator=(const StepRepr_ProductDefinitionShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ProductDefinitionShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ProductDefinitionShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ProductDefinitionShape {
@@ -1548,7 +1548,7 @@ class Handle_StepRepr_HArray1OfRepresentationItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_HArray1OfRepresentationItem & operator=(const StepRepr_HArray1OfRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_HArray1OfRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_HArray1OfRepresentationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_HArray1OfRepresentationItem {
@@ -1586,7 +1586,7 @@ class Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation : publi
 		%feature("autodoc", "1");
 		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation & operator=(const StepRepr_StructuralResponsePropertyDefinitionRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
@@ -1624,7 +1624,7 @@ class Handle_StepRepr_DescriptiveRepresentationItem : public Handle_StepRepr_Rep
 		%feature("autodoc", "1");
 		Handle_StepRepr_DescriptiveRepresentationItem & operator=(const StepRepr_DescriptiveRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_DescriptiveRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_DescriptiveRepresentationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_DescriptiveRepresentationItem {
@@ -1662,7 +1662,7 @@ class Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public Handle
 		%feature("autodoc", "1");
 		Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem & operator=(const StepRepr_SequenceNodeOfSequenceOfRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
@@ -1700,7 +1700,7 @@ class Handle_StepRepr_StructuralResponseProperty : public Handle_StepRepr_Proper
 		%feature("autodoc", "1");
 		Handle_StepRepr_StructuralResponseProperty & operator=(const StepRepr_StructuralResponseProperty *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_StructuralResponseProperty const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_StructuralResponseProperty DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_StructuralResponseProperty {
@@ -1738,7 +1738,7 @@ class Handle_StepRepr_SpecifiedHigherUsageOccurrence : public Handle_StepRepr_As
 		%feature("autodoc", "1");
 		Handle_StepRepr_SpecifiedHigherUsageOccurrence & operator=(const StepRepr_SpecifiedHigherUsageOccurrence *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_SpecifiedHigherUsageOccurrence const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_SpecifiedHigherUsageOccurrence DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_SpecifiedHigherUsageOccurrence {
@@ -1776,7 +1776,7 @@ class Handle_StepRepr_GlobalUnitAssignedContext : public Handle_StepRepr_Represe
 		%feature("autodoc", "1");
 		Handle_StepRepr_GlobalUnitAssignedContext & operator=(const StepRepr_GlobalUnitAssignedContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_GlobalUnitAssignedContext const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_GlobalUnitAssignedContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_GlobalUnitAssignedContext {
@@ -1814,7 +1814,7 @@ class Handle_StepRepr_ValueRange : public Handle_StepRepr_CompoundRepresentation
 		%feature("autodoc", "1");
 		Handle_StepRepr_ValueRange & operator=(const StepRepr_ValueRange *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ValueRange const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ValueRange DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ValueRange {
@@ -1852,7 +1852,7 @@ class Handle_StepRepr_ShapeAspectDerivingRelationship : public Handle_StepRepr_S
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeAspectDerivingRelationship & operator=(const StepRepr_ShapeAspectDerivingRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ShapeAspectDerivingRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ShapeAspectDerivingRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ShapeAspectDerivingRelationship {
@@ -1890,7 +1890,7 @@ class Handle_StepRepr_DefinitionalRepresentation : public Handle_StepRepr_Repres
 		%feature("autodoc", "1");
 		Handle_StepRepr_DefinitionalRepresentation & operator=(const StepRepr_DefinitionalRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_DefinitionalRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_DefinitionalRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_DefinitionalRepresentation {
@@ -1928,7 +1928,7 @@ class Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation : public Handle_
 		%feature("autodoc", "1");
 		Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation & operator=(const StepRepr_HArray1OfPropertyDefinitionRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation {
@@ -1966,7 +1966,7 @@ class Handle_StepRepr_ConfigurationItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_ConfigurationItem & operator=(const StepRepr_ConfigurationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ConfigurationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ConfigurationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ConfigurationItem {
@@ -2004,7 +2004,7 @@ class Handle_StepRepr_ExternallyDefinedRepresentation : public Handle_StepRepr_R
 		%feature("autodoc", "1");
 		Handle_StepRepr_ExternallyDefinedRepresentation & operator=(const StepRepr_ExternallyDefinedRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ExternallyDefinedRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ExternallyDefinedRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ExternallyDefinedRepresentation {
@@ -2042,7 +2042,7 @@ class Handle_StepRepr_ConfigurationEffectivity : public Handle_StepBasic_Product
 		%feature("autodoc", "1");
 		Handle_StepRepr_ConfigurationEffectivity & operator=(const StepRepr_ConfigurationEffectivity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ConfigurationEffectivity const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ConfigurationEffectivity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ConfigurationEffectivity {
@@ -2080,7 +2080,7 @@ class Handle_StepRepr_MeasureRepresentationItem : public Handle_StepRepr_Represe
 		%feature("autodoc", "1");
 		Handle_StepRepr_MeasureRepresentationItem & operator=(const StepRepr_MeasureRepresentationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_MeasureRepresentationItem const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_MeasureRepresentationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_MeasureRepresentationItem {
@@ -2118,7 +2118,7 @@ class Handle_StepRepr_ConfigurationDesign : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepRepr_ConfigurationDesign & operator=(const StepRepr_ConfigurationDesign *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ConfigurationDesign const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ConfigurationDesign DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ConfigurationDesign {
@@ -2156,7 +2156,7 @@ class Handle_StepRepr_PromissoryUsageOccurrence : public Handle_StepRepr_Assembl
 		%feature("autodoc", "1");
 		Handle_StepRepr_PromissoryUsageOccurrence & operator=(const StepRepr_PromissoryUsageOccurrence *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_PromissoryUsageOccurrence const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_PromissoryUsageOccurrence DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_PromissoryUsageOccurrence {
@@ -2194,7 +2194,7 @@ class Handle_StepRepr_SuppliedPartRelationship : public Handle_StepBasic_Product
 		%feature("autodoc", "1");
 		Handle_StepRepr_SuppliedPartRelationship & operator=(const StepRepr_SuppliedPartRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_SuppliedPartRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_SuppliedPartRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_SuppliedPartRelationship {
@@ -2232,7 +2232,7 @@ class Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation : public
 		%feature("autodoc", "1");
 		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation & operator=(const StepRepr_ShapeRepresentationRelationshipWithTransformation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation {

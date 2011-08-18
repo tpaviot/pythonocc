@@ -66,7 +66,7 @@ class Handle_TransferBRep_BinderOfShape : public Handle_Transfer_Binder {
 		%feature("autodoc", "1");
 		Handle_TransferBRep_BinderOfShape & operator=(const TransferBRep_BinderOfShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TransferBRep_BinderOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TransferBRep_BinderOfShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TransferBRep_BinderOfShape {
@@ -104,7 +104,7 @@ class Handle_TransferBRep_ShapeBinder : public Handle_TransferBRep_BinderOfShape
 		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeBinder & operator=(const TransferBRep_ShapeBinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TransferBRep_ShapeBinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TransferBRep_ShapeBinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TransferBRep_ShapeBinder {
@@ -142,7 +142,7 @@ class Handle_TransferBRep_HSequenceOfTransferResultInfo : public Handle_MMgt_TSh
 		%feature("autodoc", "1");
 		Handle_TransferBRep_HSequenceOfTransferResultInfo & operator=(const TransferBRep_HSequenceOfTransferResultInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TransferBRep_HSequenceOfTransferResultInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TransferBRep_HSequenceOfTransferResultInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TransferBRep_HSequenceOfTransferResultInfo {
@@ -180,7 +180,7 @@ class Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public Ha
 		%feature("autodoc", "1");
 		Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo & operator=(const TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
@@ -218,7 +218,7 @@ class Handle_TransferBRep_ShapeListBinder : public Handle_Transfer_Binder {
 		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeListBinder & operator=(const TransferBRep_ShapeListBinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TransferBRep_ShapeListBinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TransferBRep_ShapeListBinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TransferBRep_ShapeListBinder {
@@ -256,7 +256,7 @@ class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
 		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeMapper & operator=(const TransferBRep_ShapeMapper *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TransferBRep_ShapeMapper const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TransferBRep_ShapeMapper DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TransferBRep_ShapeMapper {
@@ -294,7 +294,7 @@ class Handle_TransferBRep_TransferResultInfo : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TransferBRep_TransferResultInfo & operator=(const TransferBRep_TransferResultInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TransferBRep_TransferResultInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TransferBRep_TransferResultInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TransferBRep_TransferResultInfo {
@@ -332,7 +332,7 @@ class Handle_TransferBRep_OrientedShapeMapper : public Handle_Transfer_Finder {
 		%feature("autodoc", "1");
 		Handle_TransferBRep_OrientedShapeMapper & operator=(const TransferBRep_OrientedShapeMapper *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TransferBRep_OrientedShapeMapper const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TransferBRep_OrientedShapeMapper DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TransferBRep_OrientedShapeMapper {

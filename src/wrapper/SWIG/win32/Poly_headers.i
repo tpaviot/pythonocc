@@ -42,6 +42,8 @@ $HeaderURL$
 #include<Poly_CoherentTriangulation.hxx>
 #include<Poly_Connect.hxx>
 #include<Poly_HArray1OfTriangle.hxx>
+#include<Poly_ListOfTriangulation.hxx>
+#include<Poly_MakeLoops.hxx>
 #include<Poly_Polygon2D.hxx>
 #include<Poly_Polygon3D.hxx>
 #include<Poly_PolygonOnTriangulation.hxx>
@@ -62,4 +64,5 @@ $HeaderURL$
 #include<Handle_TShort_HArray1OfShortReal.hxx>
 #include<gp_XYZ.hxx>
 #include<Poly.hxx>
+#include<gp_XY.hxx>
 %}

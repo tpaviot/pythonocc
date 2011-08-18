@@ -62,6 +62,35 @@ enum gp_TrsfForm {
 	gp_Other,
 	};
 
+enum gp_EulerSequence {
+	gp_EulerAngles,
+	gp_YawPitchRoll,
+	gp_Extrinsic_XYZ,
+	gp_Extrinsic_XZY,
+	gp_Extrinsic_YZX,
+	gp_Extrinsic_YXZ,
+	gp_Extrinsic_ZXY,
+	gp_Extrinsic_ZYX,
+	gp_Intrinsic_XYZ,
+	gp_Intrinsic_XZY,
+	gp_Intrinsic_YZX,
+	gp_Intrinsic_YXZ,
+	gp_Intrinsic_ZXY,
+	gp_Intrinsic_ZYX,
+	gp_Extrinsic_XYX,
+	gp_Extrinsic_XZX,
+	gp_Extrinsic_YZY,
+	gp_Extrinsic_YXY,
+	gp_Extrinsic_ZYZ,
+	gp_Extrinsic_ZXZ,
+	gp_Intrinsic_XYX,
+	gp_Intrinsic_XZX,
+	gp_Intrinsic_YZY,
+	gp_Intrinsic_YXY,
+	gp_Intrinsic_ZXZ,
+	gp_Intrinsic_ZYZ,
+	};
+
 
 
 %nodefaultctor Handle_gp_VectorWithNullMagnitude;
@@ -78,7 +107,7 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_gp_VectorWithNullMagnitude & operator=(const gp_VectorWithNullMagnitude *anItem);
 		%feature("autodoc", "1");
-		static		Handle_gp_VectorWithNullMagnitude const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_gp_VectorWithNullMagnitude DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_gp_VectorWithNullMagnitude {
@@ -1138,6 +1167,8 @@ class gp_Trsf {
 		%feature("autodoc", "1");
 		void SetRotation(const gp_Ax1 A1, const Standard_Real Ang);
 		%feature("autodoc", "1");
+		void SetRotation(const gp_Quaternion R);
+		%feature("autodoc", "1");
 		void SetScale(const gp_Pnt P, const Standard_Real S);
 		%feature("autodoc", "1");
 		void SetDisplacement(const gp_Ax3 FromSystem1, const gp_Ax3 ToSystem2);
@@ -1145,6 +1176,8 @@ class gp_Trsf {
 		void SetTransformation(const gp_Ax3 FromSystem1, const gp_Ax3 ToSystem2);
 		%feature("autodoc", "1");
 		void SetTransformation(const gp_Ax3 ToSystem);
+		%feature("autodoc", "1");
+		void SetTransformation(const gp_Quaternion R, const gp_Vec T);
 		%feature("autodoc", "1");
 		void SetTranslation(const gp_Vec V);
 		%feature("autodoc", "1");
@@ -1166,6 +1199,8 @@ class gp_Trsf {
 		%feature("autodoc","GetRotation() -> Standard_Real");
 
 		Standard_Boolean GetRotation(gp_XYZ & theAxis, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		gp_Quaternion GetRotation() const;
 		%feature("autodoc", "1");
 		gp_Mat VectorialPart() const;
 		%feature("autodoc", "1");
@@ -1864,6 +1899,39 @@ def __del__(self):
 %}
 
 %extend gp_Lin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gp_QuaternionSLerp;
+class gp_QuaternionSLerp {
+	public:
+		%feature("autodoc", "1");
+		gp_QuaternionSLerp(const gp_QuaternionSLerp arg0);
+		%feature("autodoc", "1");
+		gp_QuaternionSLerp();
+		%feature("autodoc", "1");
+		gp_QuaternionSLerp(const gp_Quaternion theQStart, const gp_Quaternion theQEnd);
+		%feature("autodoc", "1");
+		void Init(const gp_Quaternion theQStart, const gp_Quaternion theQEnd);
+		%feature("autodoc", "1");
+		void InitFromUnit(const gp_Quaternion theQStart, const gp_Quaternion theQEnd);
+		%feature("autodoc", "1");
+		void Interpolate(Standard_Real , gp_Quaternion & theResultQ) const;
+
+};
+%feature("shadow") gp_QuaternionSLerp::~gp_QuaternionSLerp %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_QuaternionSLerp {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3498,6 +3566,41 @@ def __del__(self):
 };
 
 
+%nodefaultctor gp_QuaternionNLerp;
+class gp_QuaternionNLerp {
+	public:
+		%feature("autodoc", "1");
+		gp_QuaternionNLerp(const gp_QuaternionNLerp arg0);
+		%feature("autodoc", "1");
+		gp_QuaternionNLerp();
+		%feature("autodoc", "1");
+		gp_QuaternionNLerp(const gp_Quaternion theQStart, const gp_Quaternion theQEnd);
+		%feature("autodoc", "1");
+		void Init(const gp_Quaternion theQStart, const gp_Quaternion theQEnd);
+		%feature("autodoc", "1");
+		void InitFromUnit(const gp_Quaternion theQStart, const gp_Quaternion theQEnd);
+		%feature("autodoc", "1");
+		void Interpolate(Standard_Real , gp_Quaternion & theResultQ) const;
+		%feature("autodoc", "1");
+		static		gp_Quaternion Interpolate(const gp_Quaternion theQStart, const gp_Quaternion theQEnd, Standard_Real );
+
+};
+%feature("shadow") gp_QuaternionNLerp::~gp_QuaternionNLerp %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_QuaternionNLerp {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor gp_Elips;
 class gp_Elips {
 	public:
@@ -3831,6 +3934,137 @@ def __del__(self):
 %}
 
 %extend gp {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gp_Quaternion;
+class gp_Quaternion {
+	public:
+		%feature("autodoc", "1");
+		gp_Quaternion();
+		%feature("autodoc", "1");
+		gp_Quaternion(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real w);
+		%feature("autodoc", "1");
+		gp_Quaternion(const gp_Quaternion theToCopy);
+		%feature("autodoc", "1");
+		gp_Quaternion(const gp_Vec theVecFrom, const gp_Vec theVecTo);
+		%feature("autodoc", "1");
+		gp_Quaternion(const gp_Vec theVecFrom, const gp_Vec theVecTo, const gp_Vec theHelpCrossVec);
+		%feature("autodoc", "1");
+		gp_Quaternion(const gp_Vec theAxis, const Standard_Real theAngle);
+		%feature("autodoc", "1");
+		gp_Quaternion(const gp_Mat theMat);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const gp_Quaternion theOther) const;
+		%feature("autodoc", "1");
+		void SetRotation(const gp_Vec theVecFrom, const gp_Vec theVecTo);
+		%feature("autodoc", "1");
+		void SetRotation(const gp_Vec theVecFrom, const gp_Vec theVecTo, const gp_Vec theHelpCrossVec);
+		%feature("autodoc", "1");
+		void SetVectorAndAngle(const gp_Vec theAxis, const Standard_Real theAngle);
+		%feature("autodoc","GetVectorAndAngle() -> Standard_Real");
+
+		void GetVectorAndAngle(gp_Vec & theAxis, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetMatrix(const gp_Mat theMat);
+		%feature("autodoc", "1");
+		gp_Mat GetMatrix() const;
+		%feature("autodoc", "1");
+		void SetEulerAngles(const gp_EulerSequence theOrder, const Standard_Real theAlpha, const Standard_Real theBeta, const Standard_Real theGamma);
+		%feature("autodoc","GetEulerAngles(gp_EulerSequence theOrder) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void GetEulerAngles(const gp_EulerSequence theOrder, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Set(Standard_Real , Standard_Real , Standard_Real , Standard_Real );
+		%feature("autodoc", "1");
+		void Set(const gp_Quaternion theQuaternion);
+		%feature("autodoc", "1");
+		Standard_Real X() const;
+		%feature("autodoc", "1");
+		Standard_Real Y() const;
+		%feature("autodoc", "1");
+		Standard_Real Z() const;
+		%feature("autodoc", "1");
+		Standard_Real W() const;
+		%feature("autodoc", "1");
+		void SetIdent();
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		gp_Quaternion Reversed() const;
+		%feature("autodoc", "1");
+		void Invert();
+		%feature("autodoc", "1");
+		gp_Quaternion Inverted() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareNorm() const;
+		%feature("autodoc", "1");
+		Standard_Real Norm() const;
+		%feature("autodoc", "1");
+		void Scale(const Standard_Real theScale);
+		%feature("autodoc", "1");
+		void operator*=(const Standard_Real theScale);
+		%feature("autodoc", "1");
+		gp_Quaternion Scaled(const Standard_Real theScale) const;
+		%feature("autodoc", "1");
+		gp_Quaternion operator*(const Standard_Real theScale) const;
+		%feature("autodoc", "1");
+		void StabilizeLength();
+		%feature("autodoc", "1");
+		void Normalize();
+		%feature("autodoc", "1");
+		gp_Quaternion Normalized() const;
+		%feature("autodoc", "1");
+		gp_Quaternion Negated() const;
+		%feature("autodoc", "1");
+		gp_Quaternion operator-() const;
+		%feature("autodoc", "1");
+		gp_Quaternion Added(const gp_Quaternion theQ) const;
+		%feature("autodoc", "1");
+		gp_Quaternion operator+(const gp_Quaternion theOther) const;
+		%feature("autodoc", "1");
+		gp_Quaternion Subtracted(const gp_Quaternion theQ) const;
+		%feature("autodoc", "1");
+		gp_Quaternion operator-(const gp_Quaternion theOther) const;
+		%feature("autodoc", "1");
+		gp_Quaternion Multiplied(const gp_Quaternion theQ) const;
+		%feature("autodoc", "1");
+		gp_Quaternion operator*(const gp_Quaternion theOther) const;
+		%feature("autodoc", "1");
+		void Add(const gp_Quaternion theQ);
+		%feature("autodoc", "1");
+		void operator+=(const gp_Quaternion theOther);
+		%feature("autodoc", "1");
+		void Subtract(const gp_Quaternion theQ);
+		%feature("autodoc", "1");
+		void operator-=(const gp_Quaternion theOther);
+		%feature("autodoc", "1");
+		void Multiply(const gp_Quaternion theQ);
+		%feature("autodoc", "1");
+		void operator*=(const gp_Quaternion theOther);
+		%feature("autodoc", "1");
+		Standard_Real Dot(const gp_Quaternion theQ) const;
+		%feature("autodoc", "1");
+		Standard_Real GetRotationAngle() const;
+		%feature("autodoc", "1");
+		gp_Vec Multiply(const gp_Vec theVec) const;
+		%feature("autodoc", "1");
+		gp_Vec operator*(const gp_Vec theVec) const;
+
+};
+%feature("shadow") gp_Quaternion::~gp_Quaternion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_Quaternion {
 	void _kill_pointed() {
 		delete $self;
 	}

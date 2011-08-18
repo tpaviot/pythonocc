@@ -27,8 +27,6 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<BinObjMgt_DataMapIteratorOfRRelocationTable.hxx>
-#include<BinObjMgt_DataMapNodeOfRRelocationTable.hxx>
 #include<BinObjMgt_PByte.hxx>
 #include<BinObjMgt_PChar.hxx>
 #include<BinObjMgt_PExtChar.hxx>
@@ -38,17 +36,12 @@ $HeaderURL$
 #include<BinObjMgt_Persistent.hxx>
 #include<BinObjMgt_RRelocationTable.hxx>
 #include<BinObjMgt_SRelocationTable.hxx>
-#include<BinObjMgt_SequenceNodeOfSequenceOfAddress.hxx>
-#include<BinObjMgt_SequenceOfAddress.hxx>
-#include<Handle_BinObjMgt_DataMapNodeOfRRelocationTable.hxx>
-#include<Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress.hxx>
 
 // Additional headers necessary for compilation.
 
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TDF_Label.hxx>

@@ -54,6 +54,7 @@ $HeaderURL$
 #include<gp_Dir2d.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Elips2d.hxx>
+#include<gp_EulerSequence.hxx>
 #include<gp_GTrsf.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Hypr.hxx>
@@ -67,6 +68,9 @@ $HeaderURL$
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Quaternion.hxx>
+#include<gp_QuaternionNLerp.hxx>
+#include<gp_QuaternionSLerp.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
 #include<gp_Trsf.hxx>
@@ -88,13 +92,13 @@ $HeaderURL$
 #include<Handle_Geom2d_Curve.hxx>
 #include<gp_Pnt.hxx>
 #include<BRep_Builder.hxx>
-#include<Handle_Geom_Surface.hxx>
-#include<gp_Pln.hxx>
-#include<gp_Lin.hxx>
 #include<TopoDS_Shell.hxx>
+#include<gp_Pln.hxx>
 #include<TopoDS_Wire.hxx>
+#include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>
 #include<TopoDS_Vertex.hxx>
+#include<Handle_Geom_Surface.hxx>
 %}

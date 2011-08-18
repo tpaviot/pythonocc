@@ -66,7 +66,7 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_BRepClass3d_DataMapNodeOfMapOfInter & operator=(const BRepClass3d_DataMapNodeOfMapOfInter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepClass3d_DataMapNodeOfMapOfInter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepClass3d_DataMapNodeOfMapOfInter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepClass3d_DataMapNodeOfMapOfInter {

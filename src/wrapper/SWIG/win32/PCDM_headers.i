@@ -74,7 +74,6 @@ $HeaderURL$
 #include<Handle_CDM_MessageDriver.hxx>
 #include<PCDM.hxx>
 #include<Handle_CDM_MetaData.hxx>
-#include<Standard_SStream.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Storage_Data.hxx>
 #include<Storage_BaseDriver.hxx>

@@ -87,6 +87,8 @@ class GCPnts_TangentialDeflection {
 		%feature("autodoc", "1");
 		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real FirstParameter, const Standard_Real LastParameter, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints=2, const Standard_Real UTol=1.00000000000000006228159145777985641889706869279e-9);
 		%feature("autodoc", "1");
+		Standard_Integer AddPoint(const gp_Pnt thePnt, const Standard_Real theParam, const Standard_Boolean theIsReplace=1);
+		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
 		Standard_Real Parameter(const Standard_Integer I) const;

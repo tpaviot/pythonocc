@@ -72,7 +72,7 @@ class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject
 		%feature("autodoc", "1");
 		Handle_V2d_BackgroundGraphicObject & operator=(const V2d_BackgroundGraphicObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V2d_BackgroundGraphicObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V2d_BackgroundGraphicObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V2d_BackgroundGraphicObject {
@@ -110,7 +110,7 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Handle_V2d_RectangularGraphicGrid & operator=(const V2d_RectangularGraphicGrid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V2d_RectangularGraphicGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V2d_RectangularGraphicGrid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V2d_RectangularGraphicGrid {
@@ -148,7 +148,7 @@ class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 		%feature("autodoc", "1");
 		Handle_V2d_RectangularGrid & operator=(const V2d_RectangularGrid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V2d_RectangularGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V2d_RectangularGrid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V2d_RectangularGrid {
@@ -186,7 +186,7 @@ class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Handle_V2d_CircularGraphicGrid & operator=(const V2d_CircularGraphicGrid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V2d_CircularGraphicGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V2d_CircularGraphicGrid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V2d_CircularGraphicGrid {
@@ -224,7 +224,7 @@ class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 		%feature("autodoc", "1");
 		Handle_V2d_CircularGrid & operator=(const V2d_CircularGrid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V2d_CircularGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V2d_CircularGrid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V2d_CircularGrid {
@@ -262,7 +262,7 @@ class Handle_V2d_View : public Handle_Viewer_View {
 		%feature("autodoc", "1");
 		Handle_V2d_View & operator=(const V2d_View *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V2d_View const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V2d_View DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V2d_View {
@@ -300,7 +300,7 @@ class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 		%feature("autodoc", "1");
 		Handle_V2d_Viewer & operator=(const V2d_Viewer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V2d_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V2d_Viewer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V2d_Viewer {

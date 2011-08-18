@@ -66,7 +66,7 @@ class Handle_PStandard_ArrayNode : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PStandard_ArrayNode & operator=(const PStandard_ArrayNode *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PStandard_ArrayNode const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PStandard_ArrayNode DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PStandard_ArrayNode {

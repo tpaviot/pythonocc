@@ -37,4 +37,6 @@ $HeaderURL$
 #include<TopoDS_Shape.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Pnt.hxx>
+#include<TopoDS_Wire.hxx>
+#include<TopoDS_Compound.hxx>
 %}

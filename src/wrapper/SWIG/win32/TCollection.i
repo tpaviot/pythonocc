@@ -74,7 +74,7 @@ class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_SeqNode & operator=(const TCollection_SeqNode *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TCollection_SeqNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TCollection_SeqNode DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TCollection_SeqNode {
@@ -112,7 +112,7 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString & operator=(const TCollection_HExtendedString *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TCollection_HExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TCollection_HExtendedString DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TCollection_HExtendedString {
@@ -150,7 +150,7 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_AVLBaseNode & operator=(const TCollection_AVLBaseNode *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TCollection_AVLBaseNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TCollection_AVLBaseNode DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TCollection_AVLBaseNode {
@@ -188,7 +188,7 @@ class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString & operator=(const TCollection_HAsciiString *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TCollection_HAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TCollection_HAsciiString DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TCollection_HAsciiString {
@@ -226,7 +226,7 @@ class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_MapNode & operator=(const TCollection_MapNode *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TCollection_MapNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TCollection_MapNode DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TCollection_MapNode {
@@ -828,7 +828,7 @@ class TCollection_ExtendedString {
 		%feature("autodoc", "1");
 		TCollection_ExtendedString Token(const Standard_ExtString separators, const Standard_Integer whichone=1) const;
 		%feature("autodoc", "1");
-		Standard_ExtString const ToExtString() const;
+		Standard_ExtString ToExtString() const;
 		%feature("autodoc", "1");
 		void Trunc(const Standard_Integer ahowmany);
 		%feature("autodoc", "1");

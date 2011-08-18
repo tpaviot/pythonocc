@@ -66,7 +66,7 @@ class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_Curve & operator=(const GGraphic2d_Curve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GGraphic2d_Curve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GGraphic2d_Curve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GGraphic2d_Curve {
@@ -90,44 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve;
-class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve();
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve(const Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve(const GGraphic2d_SequenceNodeOfSequenceOfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve & operator=(const Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve & operator=(const GGraphic2d_SequenceNodeOfSequenceOfCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
-	GGraphic2d_SequenceNodeOfSequenceOfCurve* GetObject() {
-	return (GGraphic2d_SequenceNodeOfSequenceOfCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve::~Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_GGraphic2d_CurveDefinitionError;
 class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -142,7 +104,7 @@ class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_CurveDefinitionError & operator=(const GGraphic2d_CurveDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GGraphic2d_CurveDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GGraphic2d_CurveDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GGraphic2d_CurveDefinitionError {
@@ -180,7 +142,7 @@ class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_SetOfCurves & operator=(const GGraphic2d_SetOfCurves *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GGraphic2d_SetOfCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GGraphic2d_SetOfCurves DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GGraphic2d_SetOfCurves {
@@ -198,43 +160,6 @@ def __del__(self):
 %}
 
 %extend Handle_GGraphic2d_SetOfCurves {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GGraphic2d_SequenceNodeOfSequenceOfCurve;
-class GGraphic2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		GGraphic2d_SequenceNodeOfSequenceOfCurve(const Handle_Geom2d_Curve &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
-	Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve GetHandle() {
-	return *(Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve*) &$self;
-	}
-};
-%extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GGraphic2d_SequenceNodeOfSequenceOfCurve::~GGraphic2d_SequenceNodeOfSequenceOfCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -276,71 +201,6 @@ def __del__(self):
 %}
 
 %extend GGraphic2d_SetOfCurves {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GGraphic2d_SequenceOfCurve;
-class GGraphic2d_SequenceOfCurve : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		GGraphic2d_SequenceOfCurve();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const GGraphic2d_SequenceOfCurve & Assign(const GGraphic2d_SequenceOfCurve &Other);
-		%feature("autodoc", "1");
-		const GGraphic2d_SequenceOfCurve & operator=(const GGraphic2d_SequenceOfCurve &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Geom2d_Curve &T);
-		%feature("autodoc", "1");
-		void Append(GGraphic2d_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom2d_Curve &T);
-		%feature("autodoc", "1");
-		void Prepend(GGraphic2d_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Geom2d_Curve &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, GGraphic2d_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Geom2d_Curve &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, GGraphic2d_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & First() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, GGraphic2d_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom2d_Curve &I);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") GGraphic2d_SequenceOfCurve::~GGraphic2d_SequenceOfCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GGraphic2d_SequenceOfCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -398,7 +258,7 @@ class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_GGraphic2d_CurveDefinitionError NewInstance(const char * aMessage);
+		static		Handle_GGraphic2d_CurveDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -66,7 +66,7 @@ class Handle_MgtTopoDS_TranslateTool : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool & operator=(const MgtTopoDS_TranslateTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MgtTopoDS_TranslateTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MgtTopoDS_TranslateTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MgtTopoDS_TranslateTool {
@@ -104,7 +104,7 @@ class Handle_MgtTopoDS_TranslateTool1 : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool1 & operator=(const MgtTopoDS_TranslateTool1 *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MgtTopoDS_TranslateTool1 const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MgtTopoDS_TranslateTool1 DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_MgtTopoDS_TranslateTool1 {

@@ -66,7 +66,7 @@ class Handle_XCAFPrs_AISObject : public Handle_AIS_Shape {
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_AISObject & operator=(const XCAFPrs_AISObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFPrs_AISObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFPrs_AISObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFPrs_AISObject {
@@ -104,7 +104,7 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle & operator=(const XCAFPrs_DataMapNodeOfDataMapOfShapeStyle *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
@@ -142,7 +142,7 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient & operator=(const XCAFPrs_DataMapNodeOfDataMapOfStyleTransient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient {
@@ -180,7 +180,7 @@ class Handle_XCAFPrs_Driver : public Handle_TPrsStd_Driver {
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_Driver & operator=(const XCAFPrs_Driver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFPrs_Driver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFPrs_Driver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFPrs_Driver {
@@ -218,7 +218,7 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape & operator=(const XCAFPrs_DataMapNodeOfDataMapOfStyleShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape {
@@ -281,6 +281,45 @@ def __del__(self):
 %}
 
 %extend XCAFPrs_DataMapOfStyleShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XCAFPrs_Driver;
+class XCAFPrs_Driver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		XCAFPrs_Driver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XCAFPrs_Driver {
+	Handle_XCAFPrs_Driver GetHandle() {
+	return *(Handle_XCAFPrs_Driver*) &$self;
+	}
+};
+%extend XCAFPrs_Driver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") XCAFPrs_Driver::~XCAFPrs_Driver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XCAFPrs_Driver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -546,45 +585,6 @@ def __del__(self):
 %}
 
 %extend XCAFPrs_DataMapNodeOfDataMapOfStyleShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XCAFPrs_Driver;
-class XCAFPrs_Driver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		XCAFPrs_Driver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFPrs_Driver {
-	Handle_XCAFPrs_Driver GetHandle() {
-	return *(Handle_XCAFPrs_Driver*) &$self;
-	}
-};
-%extend XCAFPrs_Driver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XCAFPrs_Driver::~XCAFPrs_Driver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XCAFPrs_Driver {
 	void _kill_pointed() {
 		delete $self;
 	}

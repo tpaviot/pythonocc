@@ -66,7 +66,7 @@ class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape & operator=(const ShapeBuild_ReShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeBuild_ReShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeBuild_ReShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeBuild_ReShape {

@@ -29,6 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import TDF
 import Standard
+import TopTools
 import XmlObjMgt
 import TopAbs
 };

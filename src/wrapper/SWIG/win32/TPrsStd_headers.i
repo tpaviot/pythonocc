@@ -75,6 +75,7 @@ $HeaderURL$
 #include<Aspect_ColorPixel.hxx>
 #include<Aspect_ColorRampColorMap.hxx>
 #include<Aspect_ColorScale.hxx>
+#include<Aspect_Convert.hxx>
 #include<Aspect_Display.hxx>
 #include<Aspect_Drawable.hxx>
 #include<Aspect_Driver.hxx>
@@ -93,6 +94,8 @@ $HeaderURL$
 #include<Aspect_FormatOfSheetPaper.hxx>
 #include<Aspect_GenId.hxx>
 #include<Aspect_GenericColorMap.hxx>
+#include<Aspect_GradientBackground.hxx>
+#include<Aspect_GradientFillMethod.hxx>
 #include<Aspect_GraphicCallbackProc.hxx>
 #include<Aspect_GraphicDevice.hxx>
 #include<Aspect_GraphicDeviceDefinitionError.hxx>
@@ -188,7 +191,7 @@ $HeaderURL$
 #include<Handle_TDF_RelocationTable.hxx>
 #include<Handle_AIS_InteractiveObject.hxx>
 #include<Standard_GUID.hxx>
-#include<Handle_TDataStd_Constraint.hxx>
+#include<Handle_TDataXtd_Constraint.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_TDF_AttributeDelta.hxx>
 %}

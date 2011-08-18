@@ -35,9 +35,16 @@ $HeaderURL$
 #include<Voxel_DS.hxx>
 #include<Voxel_FastConverter.hxx>
 #include<Voxel_FloatDS.hxx>
+#include<Voxel_OctBoolDS.hxx>
 #include<Voxel_Prs.hxx>
+#include<Voxel_ROctBoolDS.hxx>
+#include<Voxel_Reader.hxx>
 #include<Voxel_Selector.hxx>
+#include<Voxel_SplitData.hxx>
+#include<Voxel_TypeDef.hxx>
 #include<Voxel_VoxelDisplayMode.hxx>
+#include<Voxel_VoxelFileFormat.hxx>
+#include<Voxel_Writer.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -61,6 +68,7 @@ $HeaderURL$
 #include<Aspect_ColorPixel.hxx>
 #include<Aspect_ColorRampColorMap.hxx>
 #include<Aspect_ColorScale.hxx>
+#include<Aspect_Convert.hxx>
 #include<Aspect_Display.hxx>
 #include<Aspect_Drawable.hxx>
 #include<Aspect_Driver.hxx>
@@ -79,6 +87,8 @@ $HeaderURL$
 #include<Aspect_FormatOfSheetPaper.hxx>
 #include<Aspect_GenId.hxx>
 #include<Aspect_GenericColorMap.hxx>
+#include<Aspect_GradientBackground.hxx>
+#include<Aspect_GradientFillMethod.hxx>
 #include<Aspect_GraphicCallbackProc.hxx>
 #include<Aspect_GraphicDevice.hxx>
 #include<Aspect_GraphicDeviceDefinitionError.hxx>
@@ -163,7 +173,6 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<Graphic3d_Array1OfBytes.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>
 #include<Graphic3d_Array1OfVertexC.hxx>
@@ -195,6 +204,7 @@ $HeaderURL$
 #include<Graphic3d_CBitFields4.hxx>
 #include<Graphic3d_CBitFields8.hxx>
 #include<Graphic3d_CBounds.hxx>
+#include<Graphic3d_CGraduatedTrihedron.hxx>
 #include<Graphic3d_CGroup.hxx>
 #include<Graphic3d_CInitTexture.hxx>
 #include<Graphic3d_CLight.hxx>
@@ -211,8 +221,8 @@ $HeaderURL$
 #include<Graphic3d_GraphicDevice.hxx>
 #include<Graphic3d_GraphicDriver.hxx>
 #include<Graphic3d_Group.hxx>
+#include<Graphic3d_GroupAspect.hxx>
 #include<Graphic3d_GroupDefinitionError.hxx>
-#include<Graphic3d_HArray1OfBytes.hxx>
 #include<Graphic3d_HSequenceOfGroup.hxx>
 #include<Graphic3d_HSequenceOfStructure.hxx>
 #include<Graphic3d_HSetOfGroup.hxx>
@@ -230,6 +240,7 @@ $HeaderURL$
 #include<Graphic3d_MapOfStructure.hxx>
 #include<Graphic3d_MaterialAspect.hxx>
 #include<Graphic3d_MaterialDefinitionError.hxx>
+#include<Graphic3d_NListOfHAsciiString.hxx>
 #include<Graphic3d_NameOfFont.hxx>
 #include<Graphic3d_NameOfMaterial.hxx>
 #include<Graphic3d_NameOfTexture1D.hxx>
@@ -241,6 +252,7 @@ $HeaderURL$
 #include<Graphic3d_PlotterDefinitionError.hxx>
 #include<Graphic3d_PrimitiveArray.hxx>
 #include<Graphic3d_PriorityDefinitionError.hxx>
+#include<Graphic3d_PtrFrameBuffer.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfAddress.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfGroup.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfStructure.hxx>
@@ -440,9 +452,7 @@ $HeaderURL$
 #include<SelectBasics_ListOfBox2d.hxx>
 #include<SelectBasics_ListOfSensitive.hxx>
 #include<SelectBasics_SensitiveEntity.hxx>
-#include<SelectBasics_SequenceNodeOfSequenceOfAddress.hxx>
 #include<SelectBasics_SequenceNodeOfSequenceOfOwner.hxx>
-#include<SelectBasics_SequenceOfAddress.hxx>
 #include<SelectBasics_SequenceOfOwner.hxx>
 #include<SelectBasics_SortAlgo.hxx>
 #include<SelectMgr_AndFilter.hxx>
@@ -471,7 +481,6 @@ $HeaderURL$
 #include<SelectMgr_SOPtr.hxx>
 #include<SelectMgr_SelectableObject.hxx>
 #include<SelectMgr_Selection.hxx>
-#include<SelectMgr_SelectionManager.hxx>
 #include<SelectMgr_SequenceNodeOfSequenceOfFilter.hxx>
 #include<SelectMgr_SequenceNodeOfSequenceOfOwner.hxx>
 #include<SelectMgr_SequenceNodeOfSequenceOfSelection.hxx>
@@ -483,7 +492,6 @@ $HeaderURL$
 #include<SelectMgr_SortCriterion.hxx>
 #include<SelectMgr_StateOfSelection.hxx>
 #include<SelectMgr_TypeOfUpdate.hxx>
-#include<SelectMgr_ViewerSelector.hxx>
 #include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>
@@ -498,6 +506,7 @@ $HeaderURL$
 #include<gp_Dir2d.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Elips2d.hxx>
+#include<gp_EulerSequence.hxx>
 #include<gp_GTrsf.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Hypr.hxx>
@@ -511,6 +520,9 @@ $HeaderURL$
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Quaternion.hxx>
+#include<gp_QuaternionNLerp.hxx>
+#include<gp_QuaternionSLerp.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
 #include<gp_Trsf.hxx>
@@ -525,6 +537,7 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TCollection_ExtendedString.hxx>
 #include<Handle_V3d_View.hxx>
 #include<Handle_Poly_Triangulation.hxx>
 #include<Quantity_Color.hxx>

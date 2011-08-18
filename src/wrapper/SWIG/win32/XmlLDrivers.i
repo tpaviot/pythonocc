@@ -66,7 +66,7 @@ class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentStorageDriver & operator=(const XmlLDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlLDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlLDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlLDrivers_DocumentStorageDriver {
@@ -104,7 +104,7 @@ class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef & operator=(const XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
@@ -142,7 +142,7 @@ class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentRetrievalDriver & operator=(const XmlLDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlLDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlLDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlLDrivers_DocumentRetrievalDriver {

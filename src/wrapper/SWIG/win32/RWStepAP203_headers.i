@@ -45,7 +45,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -303,11 +302,11 @@ $HeaderURL$
 #include<Handle_StepAP203_CcDesignSecurityClassification.hxx>
 #include<Handle_StepAP203_StartRequest.hxx>
 #include<Handle_StepAP203_StartWork.hxx>
+#include<Handle_StepAP203_CcDesignContract.hxx>
 #include<Handle_StepAP203_CcDesignDateAndTimeAssignment.hxx>
 #include<Handle_StepAP203_Change.hxx>
 #include<Handle_StepAP203_CcDesignCertification.hxx>
 #include<Handle_StepAP203_CcDesignPersonAndOrganizationAssignment.hxx>
 #include<Handle_StepAP203_CcDesignApproval.hxx>
 #include<Handle_StepAP203_CcDesignSpecificationReference.hxx>
-#include<Handle_StepAP203_CcDesignContract.hxx>
 %}

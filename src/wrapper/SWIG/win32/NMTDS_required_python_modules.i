@@ -33,5 +33,6 @@ import BooleanOperations
 import TColStd
 import TopoDS
 import Bnd
+import gp
 import BOPTools
 };

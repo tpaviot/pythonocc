@@ -32,15 +32,12 @@ $HeaderURL$
 #include<BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval.hxx>
 #include<BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape.hxx>
 #include<BRepOffset_DataMapIteratorOfDataMapOfShapeOffset.hxx>
-#include<BRepOffset_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include<BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval.hxx>
 #include<BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
 #include<BRepOffset_DataMapNodeOfDataMapOfShapeOffset.hxx>
-#include<BRepOffset_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include<BRepOffset_DataMapOfShapeListOfInterval.hxx>
 #include<BRepOffset_DataMapOfShapeMapOfShape.hxx>
 #include<BRepOffset_DataMapOfShapeOffset.hxx>
-#include<BRepOffset_DataMapOfShapeReal.hxx>
 #include<BRepOffset_Error.hxx>
 #include<BRepOffset_Inter2d.hxx>
 #include<BRepOffset_Inter3d.hxx>
@@ -58,14 +55,10 @@ $HeaderURL$
 #include<Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval.hxx>
 #include<Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
 #include<Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset.hxx>
-#include<Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include<Handle_BRepOffset_ListNodeOfListOfInterval.hxx>
 
 // Additional headers necessary for compilation.
 
-#include<BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape.hxx>
-#include<BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
-#include<BRepOffsetAPI_DataMapOfShapeSequenceOfShape.hxx>
 #include<BRepOffsetAPI_DraftAngle.hxx>
 #include<BRepOffsetAPI_FindContigousEdges.hxx>
 #include<BRepOffsetAPI_MakeDraft.hxx>

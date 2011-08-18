@@ -53,7 +53,6 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<XmlMDF.hxx>
 #include<Handle_TDF_Data.hxx>
-#include<XmlObjMgt_RRelocationTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Handle_TDF_Attribute.hxx>

@@ -30,4 +30,5 @@ import GarbageCollector
 import Standard
 import TCollection
 import TColStd
+import NCollection
 };

@@ -28,14 +28,12 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import MeshDS
 import TopoDS
 import TCollection
 import gp
-import TColStd
+import NCollection
+import Poly
 import TopAbs
 import Bnd
-import MeshShape
-import TColgp
-import BRepAdaptor
+import TopTools
 };

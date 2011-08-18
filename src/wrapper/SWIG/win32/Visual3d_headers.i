@@ -37,6 +37,7 @@ $HeaderURL$
 #include<Handle_Visual3d_HSetOfView.hxx>
 #include<Handle_Visual3d_Layer.hxx>
 #include<Handle_Visual3d_LayerDefinitionError.hxx>
+#include<Handle_Visual3d_LayerItem.hxx>
 #include<Handle_Visual3d_Light.hxx>
 #include<Handle_Visual3d_LightDefinitionError.hxx>
 #include<Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane.hxx>
@@ -66,6 +67,7 @@ $HeaderURL$
 #include<Visual3d_HSetOfView.hxx>
 #include<Visual3d_Layer.hxx>
 #include<Visual3d_LayerDefinitionError.hxx>
+#include<Visual3d_LayerItem.hxx>
 #include<Visual3d_Light.hxx>
 #include<Visual3d_LightDefinitionError.hxx>
 #include<Visual3d_ListIteratorOfSetListOfSetOfClipPlane.hxx>
@@ -74,6 +76,7 @@ $HeaderURL$
 #include<Visual3d_ListNodeOfSetListOfSetOfClipPlane.hxx>
 #include<Visual3d_ListNodeOfSetListOfSetOfLight.hxx>
 #include<Visual3d_ListNodeOfSetListOfSetOfView.hxx>
+#include<Visual3d_NListOfLayerItem.hxx>
 #include<Visual3d_PickDescriptor.hxx>
 #include<Visual3d_PickError.hxx>
 #include<Visual3d_PickPath.hxx>
@@ -117,7 +120,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Standard_SStream.hxx>
 #include<Handle_Graphic3d_Structure.hxx>
 #include<Graphic3d_Vertex.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
@@ -129,6 +131,7 @@ $HeaderURL$
 #include<Handle_Graphic3d_DataStructureManager.hxx>
 #include<Quantity_Color.hxx>
 #include<Aspect_Background.hxx>
+#include<Aspect_GradientBackground.hxx>
 #include<Graphic3d_MapOfStructure.hxx>
 #include<Handle_Aspect_GraphicDriver.hxx>
 #include<Handle_Graphic3d_Plotter.hxx>

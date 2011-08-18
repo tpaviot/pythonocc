@@ -66,7 +66,7 @@ class Handle_XCAFDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentRetrievalDriver & operator=(const XCAFDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDrivers_DocumentRetrievalDriver {
@@ -104,7 +104,7 @@ class Handle_XCAFDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentS
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentStorageDriver & operator=(const XCAFDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFDrivers_DocumentStorageDriver {

@@ -66,7 +66,7 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 		%feature("autodoc", "1");
 		Handle_AppDef_MyCriterionOfTheVariational & operator=(const AppDef_MyCriterionOfTheVariational *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AppDef_MyCriterionOfTheVariational const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppDef_MyCriterionOfTheVariational DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppDef_MyCriterionOfTheVariational {
@@ -104,7 +104,7 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppDef_HArray1OfMultiPointConstraint & operator=(const AppDef_HArray1OfMultiPointConstraint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AppDef_HArray1OfMultiPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppDef_HArray1OfMultiPointConstraint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppDef_HArray1OfMultiPointConstraint {

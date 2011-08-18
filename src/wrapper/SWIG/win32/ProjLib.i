@@ -66,7 +66,7 @@ class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HProjectedCurve & operator=(const ProjLib_HProjectedCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ProjLib_HProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ProjLib_HProjectedCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ProjLib_HProjectedCurve {
@@ -104,7 +104,7 @@ class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
@@ -142,7 +142,7 @@ class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HCompProjectedCurve & operator=(const ProjLib_HCompProjectedCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ProjLib_HCompProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ProjLib_HCompProjectedCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ProjLib_HCompProjectedCurve {
@@ -180,7 +180,7 @@ class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HSequenceOfHSequenceOfPnt & operator=(const ProjLib_HSequenceOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ProjLib_HSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ProjLib_HSequenceOfHSequenceOfPnt DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ProjLib_HSequenceOfHSequenceOfPnt {

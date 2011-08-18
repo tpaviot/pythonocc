@@ -66,7 +66,6 @@ enum BRepLib_FaceError {
 	BRepLib_NotPlanar,
 	BRepLib_CurveProjectionFailed,
 	BRepLib_ParametersOutOfRange,
-	BRepLib_SurfaceNotC2,
 	};
 
 enum BRepLib_ShellError {

@@ -128,7 +128,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -216,12 +215,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_IGESGeom_Point.hxx>
-#include<Handle_IGESGeom_Direction.hxx>
-#include<gp_Pnt.hxx>
-#include<Handle_IGESData_IGESEntity.hxx>
-#include<gp_XYZ.hxx>
-#include<gp_Dir.hxx>
 #include<Handle_IGESData_IGESReaderData.hxx>
 #include<IGESData_ParamReader.hxx>
 #include<IGESData_IGESWriter.hxx>
@@ -232,6 +225,12 @@ $HeaderURL$
 #include<Interface_CopyTool.hxx>
 #include<IGESData_IGESDumper.hxx>
 #include<Handle_Message_Messenger.hxx>
+#include<Handle_IGESGeom_Point.hxx>
+#include<Handle_IGESGeom_Direction.hxx>
+#include<gp_Pnt.hxx>
+#include<Handle_IGESData_IGESEntity.hxx>
+#include<gp_XYZ.hxx>
+#include<gp_Dir.hxx>
 #include<Handle_IGESData_HArray1OfIGESEntity.hxx>
 #include<Handle_IGESGeom_HArray1OfTransformationMatrix.hxx>
 #include<Handle_IGESGeom_TransformationMatrix.hxx>
