@@ -67,7 +67,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntTools_SequenceNodeOfSequenceOfCurves & operator=(const IntTools_SequenceNodeOfSequenceOfCurves *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_SequenceNodeOfSequenceOfCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_SequenceNodeOfSequenceOfCurves DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfCurves {
@@ -105,7 +105,7 @@ class Handle_IntTools_ListNodeOfListOfCurveRangeSample : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_IntTools_ListNodeOfListOfCurveRangeSample & operator=(const IntTools_ListNodeOfListOfCurveRangeSample *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_ListNodeOfListOfCurveRangeSample const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_ListNodeOfListOfCurveRangeSample DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_ListNodeOfListOfCurveRangeSample {
@@ -143,7 +143,7 @@ class Handle_IntTools_ListNodeOfListOfSurfaceRangeSample : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_IntTools_ListNodeOfListOfSurfaceRangeSample & operator=(const IntTools_ListNodeOfListOfSurfaceRangeSample *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_ListNodeOfListOfSurfaceRangeSample const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_ListNodeOfListOfSurfaceRangeSample DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_ListNodeOfListOfSurfaceRangeSample {
@@ -181,7 +181,7 @@ class Handle_IntTools_ListNodeOfListOfBox : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_IntTools_ListNodeOfListOfBox & operator=(const IntTools_ListNodeOfListOfBox *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_ListNodeOfListOfBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_ListNodeOfListOfBox DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_ListNodeOfListOfBox {
@@ -219,7 +219,7 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : pub
 		%feature("autodoc", "1");
 		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress & operator=(const IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress {
@@ -257,7 +257,7 @@ class Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox & operator=(const IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
@@ -295,7 +295,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfRanges : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntTools_SequenceNodeOfSequenceOfRanges & operator=(const IntTools_SequenceNodeOfSequenceOfRanges *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_SequenceNodeOfSequenceOfRanges const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_SequenceNodeOfSequenceOfRanges DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfRanges {
@@ -333,7 +333,7 @@ class Handle_IntTools_TopolTool : public Handle_Adaptor3d_TopolTool {
 		%feature("autodoc", "1");
 		Handle_IntTools_TopolTool & operator=(const IntTools_TopolTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_TopolTool const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_TopolTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_TopolTool {
@@ -371,7 +371,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts & operator=(const IntTools_SequenceNodeOfSequenceOfCommonPrts *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts {
@@ -409,7 +409,7 @@ class Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox & operator=(const IntTools_DataMapNodeOfDataMapOfCurveSampleBox *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox {
@@ -447,7 +447,7 @@ class Handle_IntTools_StdMapNodeOfMapOfCurveSample : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_IntTools_StdMapNodeOfMapOfCurveSample & operator=(const IntTools_StdMapNodeOfMapOfCurveSample *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_StdMapNodeOfMapOfCurveSample const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_StdMapNodeOfMapOfCurveSample DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_StdMapNodeOfMapOfCurveSample {
@@ -485,7 +485,7 @@ class Handle_IntTools_StdMapNodeOfMapOfSurfaceSample : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntTools_StdMapNodeOfMapOfSurfaceSample & operator=(const IntTools_StdMapNodeOfMapOfSurfaceSample *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_StdMapNodeOfMapOfSurfaceSample const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_StdMapNodeOfMapOfSurfaceSample DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_StdMapNodeOfMapOfSurfaceSample {
@@ -523,7 +523,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfRoots : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_IntTools_SequenceNodeOfSequenceOfRoots & operator=(const IntTools_SequenceNodeOfSequenceOfRoots *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_SequenceNodeOfSequenceOfRoots const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_SequenceNodeOfSequenceOfRoots DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfRoots {
@@ -547,44 +547,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
-class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress();
-		%feature("autodoc", "1");
-		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *anItem);
-		%feature("autodoc", "1");
-		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress & operator=(const Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress & operator=(const IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress* GetObject() {
-	return (IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress::~Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces;
 class Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public Handle_TCollection_SeqNode {
 	public:
@@ -599,7 +561,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces & operator=(const IntTools_SequenceNodeOfSequenceOfPntOn2Faces *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces {
@@ -644,65 +606,6 @@ def __del__(self):
 %}
 
 %extend IntTools_SurfaceRangeSampleMapHasher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntTools_CArray1OfReal;
-class IntTools_CArray1OfReal {
-	public:
-		%feature("autodoc", "1");
-		IntTools_CArray1OfReal(const Standard_Integer Length=0);
-		%feature("autodoc", "1");
-		IntTools_CArray1OfReal(const Standard_Real &Item, const Standard_Integer Length);
-		%feature("autodoc", "1");
-		void Init(const Standard_Real &V);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Append(const Standard_Real &Value);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Real &Value);
-		%feature("autodoc", "1");
-		const Standard_Real & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Standard_Real & operator()(const Standard_Integer Index) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetChangeValue(const Standard_Integer Index) {
-				return (Standard_Real) $self->ChangeValue(Index);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeValue(Standard_Real value ,const Standard_Integer Index) {
-				$self->ChangeValue(Index)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Real & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const IntTools_CArray1OfReal &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const IntTools_CArray1OfReal &Other) const;
-
-};
-%feature("shadow") IntTools_CArray1OfReal::~IntTools_CArray1OfReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntTools_CArray1OfReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1124,61 +1027,6 @@ def __del__(self):
 %}
 
 %extend IntTools_BeanFaceIntersector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntTools_IndexedDataMapOfShapeAddress;
-class IntTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		IntTools_IndexedDataMapOfShapeAddress(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		IntTools_IndexedDataMapOfShapeAddress & Assign(const IntTools_IndexedDataMapOfShapeAddress &Other);
-		%feature("autodoc", "1");
-		IntTools_IndexedDataMapOfShapeAddress & operator=(const IntTools_IndexedDataMapOfShapeAddress &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape K, const Standard_Address &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const Standard_Address &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Standard_Address & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Standard_Address & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Address & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Address & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const Standard_Address & FindFromKey(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address & ChangeFromKey(const TopoDS_Shape K);
-
-};
-%feature("shadow") IntTools_IndexedDataMapOfShapeAddress::~IntTools_IndexedDataMapOfShapeAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntTools_IndexedDataMapOfShapeAddress {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2451,33 +2299,49 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntTools_PntOnFace;
-class IntTools_PntOnFace {
+%nodefaultctor IntTools_EdgeFace;
+class IntTools_EdgeFace {
 	public:
 		%feature("autodoc", "1");
-		IntTools_PntOnFace();
+		IntTools_EdgeFace();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face aF, const gp_Pnt aP, const Standard_Real U, const Standard_Real V);
+		void SetEdge(const TopoDS_Edge anEdge);
 		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face aF);
+		void SetTolE(const Standard_Real aTolEdge1);
 		%feature("autodoc", "1");
-		void SetPnt(const gp_Pnt aP);
+		void SetFace(const TopoDS_Face aFace);
 		%feature("autodoc", "1");
-		void SetParameters(const Standard_Real U, const Standard_Real V);
+		void SetTolF(const Standard_Real aTolFace);
 		%feature("autodoc", "1");
-		void SetValid(const Standard_Boolean bF);
+		void SetDiscretize(const Standard_Integer aDiscret);
 		%feature("autodoc", "1");
-		Standard_Boolean Valid() const;
+		void SetDeflection(const Standard_Real aDeflection);
 		%feature("autodoc", "1");
-		const TopoDS_Face  Face() const;
+		void SetEpsilonT(const Standard_Real anEpsT);
 		%feature("autodoc", "1");
-		const gp_Pnt  Pnt() const;
-		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
+		void SetEpsilonNull(const Standard_Real anEpsNull);
+		%feature("autodoc", "1");
+		void SetRange(const IntTools_Range &aRange);
+		%feature("autodoc", "1");
+		void SetRange(const Standard_Real aFirst, const Standard_Real aLast);
+		%feature("autodoc", "1");
+		void SetContext(const IntTools_PContext &theContext);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer ErrorStatus() const;
+		%feature("autodoc", "1");
+		const IntTools_SequenceOfCommonPrts & CommonParts() const;
+		%feature("autodoc", "1");
+		const IntTools_Range & Range() const;
+		%feature("autodoc","IsEqDistance(const aP, const aS, Standard_Real aT) -> Standard_Real");
 
-		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		static		Standard_Boolean IsEqDistance(const gp_Pnt aP, const BRepAdaptor_Surface &aS, const Standard_Real aT, Standard_Real &OutValue);
 
 };
-%feature("shadow") IntTools_PntOnFace::~IntTools_PntOnFace %{
+%feature("shadow") IntTools_EdgeFace::~IntTools_EdgeFace %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2486,7 +2350,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntTools_PntOnFace {
+%extend IntTools_EdgeFace {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2637,59 +2501,6 @@ def __del__(self):
 %}
 
 %extend IntTools_CurveRangeLocalizeData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
-class IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const TopoDS_Shape K1, const Standard_Integer K2, const Standard_Address &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Standard_Address & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress GetHandle() {
-	return *(Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress*) &$self;
-	}
-};
-%extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress::~IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2930,8 +2741,6 @@ class IntTools_Context {
 		%feature("autodoc", "1");
 		IntTools_Context();
 		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
 		IntTools_FClass2d & FClass2d(const TopoDS_Face aF);
 		%feature("autodoc", "1");
 		GeomAPI_ProjectPointOnSurf & ProjPS(const TopoDS_Face aF);
@@ -2946,6 +2755,9 @@ class IntTools_Context {
 		%feature("autodoc","ComputeVE(const aV, const aE) -> Standard_Real");
 
 		Standard_Integer ComputeVE(const TopoDS_Vertex aV, const TopoDS_Edge aE, Standard_Real &OutValue);
+		%feature("autodoc","ComputeVE(const aV, const aE) -> [Standard_Real, Standard_Real]");
+
+		Standard_Integer ComputeVE(const TopoDS_Vertex aV, const TopoDS_Edge aE, Standard_Real &OutValue, Standard_Boolean & bToUpdateVertex, Standard_Real &OutValue);
 		%feature("autodoc","ComputeVS(const aV, const aF) -> [Standard_Real, Standard_Real]");
 
 		Standard_Integer ComputeVS(const TopoDS_Vertex aV, const TopoDS_Face aF, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -3099,64 +2911,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntTools_EdgeFace;
-class IntTools_EdgeFace {
-	public:
-		%feature("autodoc", "1");
-		IntTools_EdgeFace();
-		%feature("autodoc", "1");
-		void SetEdge(const TopoDS_Edge anEdge);
-		%feature("autodoc", "1");
-		void SetTolE(const Standard_Real aTolEdge1);
-		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face aFace);
-		%feature("autodoc", "1");
-		void SetTolF(const Standard_Real aTolFace);
-		%feature("autodoc", "1");
-		void SetDiscretize(const Standard_Integer aDiscret);
-		%feature("autodoc", "1");
-		void SetDeflection(const Standard_Real aDeflection);
-		%feature("autodoc", "1");
-		void SetEpsilonT(const Standard_Real anEpsT);
-		%feature("autodoc", "1");
-		void SetEpsilonNull(const Standard_Real anEpsNull);
-		%feature("autodoc", "1");
-		void SetRange(const IntTools_Range &aRange);
-		%feature("autodoc", "1");
-		void SetRange(const Standard_Real aFirst, const Standard_Real aLast);
-		%feature("autodoc", "1");
-		void SetContext(const IntTools_PContext &theContext);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer ErrorStatus() const;
-		%feature("autodoc", "1");
-		const IntTools_SequenceOfCommonPrts & CommonParts() const;
-		%feature("autodoc", "1");
-		const IntTools_Range & Range() const;
-		%feature("autodoc","IsEqDistance(const aP, const aS, Standard_Real aT) -> Standard_Real");
-
-		static		Standard_Boolean IsEqDistance(const gp_Pnt aP, const BRepAdaptor_Surface &aS, const Standard_Real aT, Standard_Real &OutValue);
-
-};
-%feature("shadow") IntTools_EdgeFace::~IntTools_EdgeFace %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntTools_EdgeFace {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntTools_ListIteratorOfListOfSurfaceRangeSample;
 class IntTools_ListIteratorOfListOfSurfaceRangeSample {
 	public:
@@ -3215,6 +2969,48 @@ def __del__(self):
 %}
 
 %extend IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntTools_PntOnFace;
+class IntTools_PntOnFace {
+	public:
+		%feature("autodoc", "1");
+		IntTools_PntOnFace();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face aF, const gp_Pnt aP, const Standard_Real U, const Standard_Real V);
+		%feature("autodoc", "1");
+		void SetFace(const TopoDS_Face aF);
+		%feature("autodoc", "1");
+		void SetPnt(const gp_Pnt aP);
+		%feature("autodoc", "1");
+		void SetParameters(const Standard_Real U, const Standard_Real V);
+		%feature("autodoc", "1");
+		void SetValid(const Standard_Boolean bF);
+		%feature("autodoc", "1");
+		Standard_Boolean Valid() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face  Face() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Pnt() const;
+		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
+
+		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") IntTools_PntOnFace::~IntTools_PntOnFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntTools_PntOnFace {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3409,6 +3205,65 @@ def __del__(self):
 %}
 
 %extend IntTools_SequenceOfRanges {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntTools_CArray1OfReal;
+class IntTools_CArray1OfReal {
+	public:
+		%feature("autodoc", "1");
+		IntTools_CArray1OfReal(const Standard_Integer Length=0);
+		%feature("autodoc", "1");
+		IntTools_CArray1OfReal(const Standard_Real &Item, const Standard_Integer Length);
+		%feature("autodoc", "1");
+		void Init(const Standard_Real &V);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer theNewLength);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Append(const Standard_Real &Value);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_Real &Value);
+		%feature("autodoc", "1");
+		const Standard_Real & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Standard_Real & operator()(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Real) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Real & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const IntTools_CArray1OfReal &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const IntTools_CArray1OfReal &Other) const;
+
+};
+%feature("shadow") IntTools_CArray1OfReal::~IntTools_CArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntTools_CArray1OfReal {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -50,7 +50,6 @@ $HeaderURL$
 #include<IntCurveSurface_TheCSFunctionOfHInter.hxx>
 #include<IntCurveSurface_TheExactHInter.hxx>
 #include<IntCurveSurface_TheHCurveTool.hxx>
-#include<IntCurveSurface_TheHSurfaceTool.hxx>
 #include<IntCurveSurface_TheInterferenceOfHInter.hxx>
 #include<IntCurveSurface_ThePolygonOfHInter.hxx>
 #include<IntCurveSurface_ThePolygonToolOfHInter.hxx>

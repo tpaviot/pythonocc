@@ -30,7 +30,5 @@ import GarbageCollector
 import Standard
 import PDF
 import TDF
-import PGeom
-import Geom
 import TDataStd
 };

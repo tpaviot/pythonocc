@@ -51,7 +51,6 @@ $HeaderURL$
 
 typedef Graphic2d_View * Graphic2d_ViewPtr;
 typedef GGraphic2d_SetOfCurves Graphic2d_SetOfCurves;
-typedef GGraphic2d_SequenceOfCurve Graphic2d_SequenceOfCurve;
 typedef GGraphic2d_CurveDefinitionError Graphic2d_CurveDefinitionError;
 typedef GGraphic2d_Curve Graphic2d_Curve;
 typedef Graphic2d_GraphicObject * Graphic2d_GOPtr;
@@ -125,7 +124,7 @@ class Handle_Graphic2d_Primitive : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Primitive & operator=(const Graphic2d_Primitive *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Primitive const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Primitive DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Primitive {
@@ -163,7 +162,7 @@ class Handle_Graphic2d_Line : public Handle_Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Line & operator=(const Graphic2d_Line *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Line const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Line DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Line {
@@ -201,7 +200,7 @@ class Handle_Graphic2d_Marker : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Marker & operator=(const Graphic2d_Marker *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Marker const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Marker DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Marker {
@@ -239,7 +238,7 @@ class Handle_Graphic2d_SetOfMarkers : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SetOfMarkers & operator=(const Graphic2d_SetOfMarkers *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_SetOfMarkers const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_SetOfMarkers DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_SetOfMarkers {
@@ -277,7 +276,7 @@ class Handle_Graphic2d_EllipsDefinitionError : public Handle_Standard_OutOfRange
 		%feature("autodoc", "1");
 		Handle_Graphic2d_EllipsDefinitionError & operator=(const Graphic2d_EllipsDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_EllipsDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_EllipsDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_EllipsDefinitionError {
@@ -315,7 +314,7 @@ class Handle_Graphic2d_Text : public Handle_Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Text & operator=(const Graphic2d_Text *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Text const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Text DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Text {
@@ -353,7 +352,7 @@ class Handle_Graphic2d_HidingText : public Handle_Graphic2d_Text {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_HidingText & operator=(const Graphic2d_HidingText *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_HidingText const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_HidingText DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_HidingText {
@@ -391,7 +390,7 @@ class Handle_Graphic2d_Drawer : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Drawer & operator=(const Graphic2d_Drawer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Drawer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Drawer {
@@ -429,7 +428,7 @@ class Handle_Graphic2d_TransientManager : public Handle_Graphic2d_Drawer {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_TransientManager & operator=(const Graphic2d_TransientManager *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_TransientManager const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_TransientManager DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_TransientManager {
@@ -467,7 +466,7 @@ class Handle_Graphic2d_SetOfSegments : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SetOfSegments & operator=(const Graphic2d_SetOfSegments *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_SetOfSegments const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_SetOfSegments DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_SetOfSegments {
@@ -505,7 +504,7 @@ class Handle_Graphic2d_HSequenceOfVertex : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_HSequenceOfVertex & operator=(const Graphic2d_HSequenceOfVertex *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_HSequenceOfVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_HSequenceOfVertex DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_HSequenceOfVertex {
@@ -543,7 +542,7 @@ class Handle_Graphic2d_ViewMapping : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_ViewMapping & operator=(const Graphic2d_ViewMapping *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_ViewMapping const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_ViewMapping DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_ViewMapping {
@@ -581,7 +580,7 @@ class Handle_Graphic2d_VectorialMarker : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_VectorialMarker & operator=(const Graphic2d_VectorialMarker *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_VectorialMarker const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_VectorialMarker DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_VectorialMarker {
@@ -619,7 +618,7 @@ class Handle_Graphic2d_EllipsMarker : public Handle_Graphic2d_VectorialMarker {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_EllipsMarker & operator=(const Graphic2d_EllipsMarker *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_EllipsMarker const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_EllipsMarker DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_EllipsMarker {
@@ -657,7 +656,7 @@ class Handle_Graphic2d_PolylineDefinitionError : public Handle_Standard_OutOfRan
 		%feature("autodoc", "1");
 		Handle_Graphic2d_PolylineDefinitionError & operator=(const Graphic2d_PolylineDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_PolylineDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_PolylineDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_PolylineDefinitionError {
@@ -695,7 +694,7 @@ class Handle_Graphic2d_Segment : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Segment & operator=(const Graphic2d_Segment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Segment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Segment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Segment {
@@ -733,7 +732,7 @@ class Handle_Graphic2d_Circle : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Circle & operator=(const Graphic2d_Circle *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Circle const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Circle DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Circle {
@@ -771,7 +770,7 @@ class Handle_Graphic2d_HArray1OfVertex : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_HArray1OfVertex & operator=(const Graphic2d_HArray1OfVertex *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_HArray1OfVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_HArray1OfVertex DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_HArray1OfVertex {
@@ -809,7 +808,7 @@ class Handle_Graphic2d_Polyline : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Polyline & operator=(const Graphic2d_Polyline *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Polyline const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Polyline DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Polyline {
@@ -847,7 +846,7 @@ class Handle_Graphic2d_Paragraph : public Handle_Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Paragraph & operator=(const Graphic2d_Paragraph *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Paragraph const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Paragraph DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Paragraph {
@@ -885,7 +884,7 @@ class Handle_Graphic2d_InfiniteLineDefinitionError : public Handle_Standard_OutO
 		%feature("autodoc", "1");
 		Handle_Graphic2d_InfiniteLineDefinitionError & operator=(const Graphic2d_InfiniteLineDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_InfiniteLineDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_InfiniteLineDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_InfiniteLineDefinitionError {
@@ -923,7 +922,7 @@ class Handle_Graphic2d_PolylineMarker : public Handle_Graphic2d_VectorialMarker 
 		%feature("autodoc", "1");
 		Handle_Graphic2d_PolylineMarker & operator=(const Graphic2d_PolylineMarker *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_PolylineMarker const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_PolylineMarker DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_PolylineMarker {
@@ -961,7 +960,7 @@ class Handle_Graphic2d_CircleDefinitionError : public Handle_Standard_OutOfRange
 		%feature("autodoc", "1");
 		Handle_Graphic2d_CircleDefinitionError & operator=(const Graphic2d_CircleDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_CircleDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_CircleDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_CircleDefinitionError {
@@ -999,7 +998,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline & operator=(const Graphic2d_SequenceNodeOfSequenceOfPolyline *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline {
@@ -1037,7 +1036,7 @@ class Handle_Graphic2d_SetOfPolylines : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SetOfPolylines & operator=(const Graphic2d_SetOfPolylines *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_SetOfPolylines const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_SetOfPolylines DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_SetOfPolylines {
@@ -1075,7 +1074,7 @@ class Handle_Graphic2d_ImageDefinitionError : public Handle_Standard_OutOfRange 
 		%feature("autodoc", "1");
 		Handle_Graphic2d_ImageDefinitionError & operator=(const Graphic2d_ImageDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_ImageDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_ImageDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_ImageDefinitionError {
@@ -1113,7 +1112,7 @@ class Handle_Graphic2d_OverrideColorError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_OverrideColorError & operator=(const Graphic2d_OverrideColorError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_OverrideColorError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_OverrideColorError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_OverrideColorError {
@@ -1151,7 +1150,7 @@ class Handle_Graphic2d_GraphicObject : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_GraphicObject & operator=(const Graphic2d_GraphicObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_GraphicObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_GraphicObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_GraphicObject {
@@ -1189,7 +1188,7 @@ class Handle_Graphic2d_HidingGraphicObject : public Handle_Graphic2d_GraphicObje
 		%feature("autodoc", "1");
 		Handle_Graphic2d_HidingGraphicObject & operator=(const Graphic2d_HidingGraphicObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_HidingGraphicObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_HidingGraphicObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_HidingGraphicObject {
@@ -1227,7 +1226,7 @@ class Handle_Graphic2d_DisplayList : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_DisplayList & operator=(const Graphic2d_DisplayList *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_DisplayList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_DisplayList DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_DisplayList {
@@ -1265,7 +1264,7 @@ class Handle_Graphic2d_DetectionColorError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_DetectionColorError & operator=(const Graphic2d_DetectionColorError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_DetectionColorError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_DetectionColorError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_DetectionColorError {
@@ -1303,7 +1302,7 @@ class Handle_Graphic2d_BufferList : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_BufferList & operator=(const Graphic2d_BufferList *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_BufferList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_BufferList DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_BufferList {
@@ -1341,7 +1340,7 @@ class Handle_Graphic2d_MarkerDefinitionError : public Handle_Standard_OutOfRange
 		%feature("autodoc", "1");
 		Handle_Graphic2d_MarkerDefinitionError & operator=(const Graphic2d_MarkerDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_MarkerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_MarkerDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_MarkerDefinitionError {
@@ -1379,7 +1378,7 @@ class Handle_Graphic2d_Ellips : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Ellips & operator=(const Graphic2d_Ellips *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Ellips const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Ellips DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Ellips {
@@ -1417,7 +1416,7 @@ class Handle_Graphic2d_View : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_View & operator=(const Graphic2d_View *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_View const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_View DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_View {
@@ -1455,7 +1454,7 @@ class Handle_Graphic2d_TransientDefinitionError : public Handle_Standard_OutOfRa
 		%feature("autodoc", "1");
 		Handle_Graphic2d_TransientDefinitionError & operator=(const Graphic2d_TransientDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_TransientDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_TransientDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_TransientDefinitionError {
@@ -1493,7 +1492,7 @@ class Handle_Graphic2d_DrawerDefinitionError : public Handle_Standard_OutOfRange
 		%feature("autodoc", "1");
 		Handle_Graphic2d_DrawerDefinitionError & operator=(const Graphic2d_DrawerDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_DrawerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_DrawerDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_DrawerDefinitionError {
@@ -1531,7 +1530,7 @@ class Handle_Graphic2d_Buffer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Buffer & operator=(const Graphic2d_Buffer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Buffer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Buffer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Buffer {
@@ -1569,7 +1568,7 @@ class Handle_Graphic2d_Image : public Handle_Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Image & operator=(const Graphic2d_Image *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_Image const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_Image DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_Image {
@@ -1607,7 +1606,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives & operator=(const Graphic2d_SequenceNodeOfSequenceOfPrimitives *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives {
@@ -1645,7 +1644,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfVertex : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SequenceNodeOfSequenceOfVertex & operator=(const Graphic2d_SequenceNodeOfSequenceOfVertex *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_SequenceNodeOfSequenceOfVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_SequenceNodeOfSequenceOfVertex DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_SequenceNodeOfSequenceOfVertex {
@@ -1683,7 +1682,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer & operator=(const Graphic2d_SequenceNodeOfSequenceOfBuffer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer {
@@ -1721,7 +1720,7 @@ class Handle_Graphic2d_SegmentDefinitionError : public Handle_Standard_OutOfRang
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SegmentDefinitionError & operator=(const Graphic2d_SegmentDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_SegmentDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_SegmentDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_SegmentDefinitionError {
@@ -1759,7 +1758,7 @@ class Handle_Graphic2d_FramedText : public Handle_Graphic2d_Text {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_FramedText & operator=(const Graphic2d_FramedText *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_FramedText const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_FramedText DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_FramedText {
@@ -1797,7 +1796,7 @@ class Handle_Graphic2d_InfiniteLine : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_InfiniteLine & operator=(const Graphic2d_InfiniteLine *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_InfiniteLine const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_InfiniteLine DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_InfiniteLine {
@@ -1835,7 +1834,7 @@ class Handle_Graphic2d_HSequenceOfPrimitives : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_HSequenceOfPrimitives & operator=(const Graphic2d_HSequenceOfPrimitives *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_HSequenceOfPrimitives const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_HSequenceOfPrimitives DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_HSequenceOfPrimitives {
@@ -1873,7 +1872,7 @@ class Handle_Graphic2d_CircleMarker : public Handle_Graphic2d_VectorialMarker {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_CircleMarker & operator=(const Graphic2d_CircleMarker *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_CircleMarker const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_CircleMarker DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_CircleMarker {
@@ -1911,7 +1910,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject & operator=(const Graphic2d_SequenceNodeOfSequenceOfGraphicObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject {
@@ -1949,7 +1948,7 @@ class Handle_Graphic2d_ImageFile : public Handle_Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_ImageFile & operator=(const Graphic2d_ImageFile *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_ImageFile const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_ImageFile DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_ImageFile {
@@ -1987,7 +1986,7 @@ class Handle_Graphic2d_TextDefinitionError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_TextDefinitionError & operator=(const Graphic2d_TextDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_TextDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic2d_TextDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Graphic2d_TextDefinitionError {
@@ -2428,7 +2427,7 @@ class Graphic2d_TextDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_TextDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_TextDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2722,7 +2721,7 @@ class Graphic2d_SegmentDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_SegmentDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_SegmentDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3074,7 +3073,7 @@ class Graphic2d_CircleDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_CircleDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_CircleDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3442,7 +3441,7 @@ class Graphic2d_OverrideColorError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_OverrideColorError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_OverrideColorError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3616,7 +3615,7 @@ class Graphic2d_DetectionColorError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_DetectionColorError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_DetectionColorError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4101,7 +4100,7 @@ class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_TransientDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_TransientDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4239,7 +4238,7 @@ class Graphic2d_DrawerDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_DrawerDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_DrawerDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4636,7 +4635,7 @@ class Graphic2d_PolylineDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_PolylineDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_PolylineDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4727,7 +4726,7 @@ class Graphic2d_InfiniteLineDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_InfiniteLineDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_InfiniteLineDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4825,7 +4824,7 @@ class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_ImageDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_ImageDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4868,7 +4867,7 @@ class Graphic2d_EllipsDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_EllipsDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_EllipsDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5356,7 +5355,7 @@ class Graphic2d_MarkerDefinitionError : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Graphic2d_MarkerDefinitionError NewInstance(const char * aMessage);
+		static		Handle_Graphic2d_MarkerDefinitionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

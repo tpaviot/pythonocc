@@ -78,7 +78,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -330,10 +329,9 @@ $HeaderURL$
 
 #include<Handle_StepData_StepReaderData.hxx>
 #include<Handle_Interface_Check.hxx>
-#include<Handle_StepRepr_ConfigurationDesign.hxx>
+#include<Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation.hxx>
 #include<StepData_StepWriter.hxx>
 #include<Interface_EntityIterator.hxx>
-#include<Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation.hxx>
 #include<Handle_StepRepr_MaterialPropertyRepresentation.hxx>
 #include<Handle_StepRepr_ShapeAspectRelationship.hxx>
 #include<Handle_StepRepr_AssemblyComponentUsage.hxx>
@@ -342,6 +340,7 @@ $HeaderURL$
 #include<Handle_StepRepr_DerivedShapeAspect.hxx>
 #include<Handle_StepRepr_CompositeShapeAspect.hxx>
 #include<Handle_StepRepr_Extension.hxx>
+#include<Handle_StepRepr_ConfigurationDesign.hxx>
 #include<Handle_StepRepr_RepresentationRelationship.hxx>
 #include<Handle_StepRepr_ConfigurationItem.hxx>
 #include<Handle_StepRepr_FunctionallyDefinedTransformation.hxx>

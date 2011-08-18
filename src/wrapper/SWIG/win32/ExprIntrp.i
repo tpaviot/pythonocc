@@ -66,7 +66,7 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation & operator=(const ExprIntrp_StackNodeOfStackOfGeneralRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation {
@@ -104,7 +104,7 @@ class Handle_ExprIntrp_Generator : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_Generator & operator=(const ExprIntrp_Generator *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_Generator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_Generator DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ExprIntrp_Generator {
@@ -142,7 +142,7 @@ class Handle_ExprIntrp_GenExp : public Handle_ExprIntrp_Generator {
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_GenExp & operator=(const ExprIntrp_GenExp *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_GenExp const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_GenExp DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ExprIntrp_GenExp {
@@ -180,7 +180,7 @@ class Handle_ExprIntrp_SyntaxError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_SyntaxError & operator=(const ExprIntrp_SyntaxError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_SyntaxError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_SyntaxError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ExprIntrp_SyntaxError {
@@ -218,7 +218,7 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction & operator=(const ExprIntrp_StackNodeOfStackOfGeneralFunction *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction {
@@ -242,44 +242,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ExprIntrp_GenFct;
-class Handle_ExprIntrp_GenFct : public Handle_ExprIntrp_Generator {
-	public:
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenFct();
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenFct(const Handle_ExprIntrp_GenFct &aHandle);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenFct(const ExprIntrp_GenFct *anItem);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenFct & operator=(const Handle_ExprIntrp_GenFct &aHandle);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenFct & operator=(const ExprIntrp_GenFct *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_GenFct const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ExprIntrp_GenFct {
-	ExprIntrp_GenFct* GetObject() {
-	return (ExprIntrp_GenFct*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ExprIntrp_GenFct::~Handle_ExprIntrp_GenFct %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ExprIntrp_GenFct {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression;
 class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TCollection_MapNode {
 	public:
@@ -294,7 +256,7 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression & operator=(const ExprIntrp_StackNodeOfStackOfGeneralExpression *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
@@ -332,7 +294,7 @@ class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction & operator=(const ExprIntrp_SequenceNodeOfSequenceOfNamedFunction *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
@@ -370,7 +332,7 @@ class Handle_ExprIntrp_StackNodeOfStackOfNames : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_StackNodeOfStackOfNames & operator=(const ExprIntrp_StackNodeOfStackOfNames *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_StackNodeOfStackOfNames const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_StackNodeOfStackOfNames DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ExprIntrp_StackNodeOfStackOfNames {
@@ -408,7 +370,7 @@ class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_GenRel & operator=(const ExprIntrp_GenRel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_GenRel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_GenRel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ExprIntrp_GenRel {
@@ -446,7 +408,7 @@ class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public Handle_T
 		%feature("autodoc", "1");
 		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression & operator=(const ExprIntrp_SequenceNodeOfSequenceOfNamedExpression *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
@@ -464,6 +426,44 @@ def __del__(self):
 %}
 
 %extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ExprIntrp_GenFct;
+class Handle_ExprIntrp_GenFct : public Handle_ExprIntrp_Generator {
+	public:
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_GenFct();
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_GenFct(const Handle_ExprIntrp_GenFct &aHandle);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_GenFct(const ExprIntrp_GenFct *anItem);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_GenFct & operator=(const Handle_ExprIntrp_GenFct &aHandle);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_GenFct & operator=(const ExprIntrp_GenFct *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ExprIntrp_GenFct DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ExprIntrp_GenFct {
+	ExprIntrp_GenFct* GetObject() {
+	return (ExprIntrp_GenFct*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ExprIntrp_GenFct::~Handle_ExprIntrp_GenFct %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ExprIntrp_GenFct {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -710,7 +710,7 @@ class ExprIntrp_SyntaxError : public Standard_Failure {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_SyntaxError NewInstance(const char * aMessage);
+		static		Handle_ExprIntrp_SyntaxError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

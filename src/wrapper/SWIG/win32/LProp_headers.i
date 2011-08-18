@@ -57,6 +57,7 @@ $HeaderURL$
 #include<Adaptor3d_HSurface.hxx>
 #include<Adaptor3d_HSurfaceOfLinearExtrusion.hxx>
 #include<Adaptor3d_HSurfaceOfRevolution.hxx>
+#include<Adaptor3d_HSurfaceTool.hxx>
 #include<Adaptor3d_HVertex.hxx>
 #include<Adaptor3d_InterFunc.hxx>
 #include<Adaptor3d_IsoCurve.hxx>
@@ -70,5 +71,4 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Standard_SStream.hxx>
 %}

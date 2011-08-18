@@ -81,7 +81,7 @@ class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode 
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfDomains & operator=(const HatchGen_SequenceNodeOfDomains *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HatchGen_SequenceNodeOfDomains const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HatchGen_SequenceNodeOfDomains DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HatchGen_SequenceNodeOfDomains {
@@ -119,7 +119,7 @@ class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfPointsOnElement & operator=(const HatchGen_SequenceNodeOfPointsOnElement *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HatchGen_SequenceNodeOfPointsOnElement const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HatchGen_SequenceNodeOfPointsOnElement DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HatchGen_SequenceNodeOfPointsOnElement {
@@ -157,7 +157,7 @@ class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfPointsOnHatching & operator=(const HatchGen_SequenceNodeOfPointsOnHatching *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HatchGen_SequenceNodeOfPointsOnHatching const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HatchGen_SequenceNodeOfPointsOnHatching DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HatchGen_SequenceNodeOfPointsOnHatching {

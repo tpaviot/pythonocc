@@ -49,7 +49,6 @@ $HeaderURL$
 #include<Contap_Contour.hxx>
 #include<Contap_HContTool.hxx>
 #include<Contap_HCurve2dTool.hxx>
-#include<Contap_HSurfaceTool.hxx>
 #include<Contap_IType.hxx>
 #include<Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour.hxx>
 #include<Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour.hxx>

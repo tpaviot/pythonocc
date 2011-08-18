@@ -66,7 +66,7 @@ class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modificati
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_BSplineRestriction & operator=(const ShapeCustom_BSplineRestriction *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeCustom_BSplineRestriction const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeCustom_BSplineRestriction DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeCustom_BSplineRestriction {
@@ -104,7 +104,7 @@ class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModifica
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_TrsfModification & operator=(const ShapeCustom_TrsfModification *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeCustom_TrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeCustom_TrsfModification DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeCustom_TrsfModification {
@@ -142,7 +142,7 @@ class Handle_ShapeCustom_SweptToElementary : public Handle_BRepTools_Modificatio
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_SweptToElementary & operator=(const ShapeCustom_SweptToElementary *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeCustom_SweptToElementary const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeCustom_SweptToElementary DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeCustom_SweptToElementary {
@@ -180,7 +180,7 @@ class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToBSpline & operator=(const ShapeCustom_ConvertToBSpline *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeCustom_ConvertToBSpline const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeCustom_ConvertToBSpline DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeCustom_ConvertToBSpline {
@@ -218,7 +218,7 @@ class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modificat
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToRevolution & operator=(const ShapeCustom_ConvertToRevolution *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeCustom_ConvertToRevolution const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeCustom_ConvertToRevolution DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeCustom_ConvertToRevolution {
@@ -256,7 +256,7 @@ class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_RestrictionParameters & operator=(const ShapeCustom_RestrictionParameters *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeCustom_RestrictionParameters const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeCustom_RestrictionParameters DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeCustom_RestrictionParameters {
@@ -294,7 +294,7 @@ class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modificati
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_DirectModification & operator=(const ShapeCustom_DirectModification *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeCustom_DirectModification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeCustom_DirectModification DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_ShapeCustom_DirectModification {
@@ -586,6 +586,54 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 		%extend {
 				void SetConvertOffsetSurf(Standard_Boolean value ) {
 				$self->ConvertOffsetSurf()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertCylindricalSurf() {
+				return (Standard_Boolean) $self->ConvertCylindricalSurf();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertCylindricalSurf(Standard_Boolean value ) {
+				$self->ConvertCylindricalSurf()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertConicalSurf() {
+				return (Standard_Boolean) $self->ConvertConicalSurf();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertConicalSurf(Standard_Boolean value ) {
+				$self->ConvertConicalSurf()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertToroidalSurf() {
+				return (Standard_Boolean) $self->ConvertToroidalSurf();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertToroidalSurf(Standard_Boolean value ) {
+				$self->ConvertToroidalSurf()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertSphericalSurf() {
+				return (Standard_Boolean) $self->ConvertSphericalSurf();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertSphericalSurf(Standard_Boolean value ) {
+				$self->ConvertSphericalSurf()=value;
 				}
 		};
 		%feature("autodoc","1");
@@ -967,6 +1015,8 @@ class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 		void SetRevolutionMode(const Standard_Boolean revolMode);
 		%feature("autodoc", "1");
 		void SetOffsetMode(const Standard_Boolean offsetMode);
+		%feature("autodoc", "1");
+		void SetPlaneMode(const Standard_Boolean planeMode);
 		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);

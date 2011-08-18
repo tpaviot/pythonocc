@@ -73,7 +73,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo & operator=(const Draft_DataMapNodeOfDataMapOfFaceFaceInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
@@ -111,7 +111,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo & operator=(const Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
@@ -149,7 +149,7 @@ class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 		%feature("autodoc", "1");
 		Handle_Draft_Modification & operator=(const Draft_Modification *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Draft_Modification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Draft_Modification DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Draft_Modification {
@@ -187,7 +187,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {

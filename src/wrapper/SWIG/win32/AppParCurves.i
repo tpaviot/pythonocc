@@ -73,7 +73,7 @@ class Handle_AppParCurves_HArray1OfMultiCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiCurve & operator=(const AppParCurves_HArray1OfMultiCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AppParCurves_HArray1OfMultiCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_HArray1OfMultiCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfMultiCurve {
@@ -111,7 +111,7 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve & operator=(const AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
@@ -135,6 +135,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AppParCurves_SmoothCriterion;
+class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion();
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion(const Handle_AppParCurves_SmoothCriterion &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion(const AppParCurves_SmoothCriterion *anItem);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion & operator=(const Handle_AppParCurves_SmoothCriterion &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion & operator=(const AppParCurves_SmoothCriterion *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AppParCurves_SmoothCriterion DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AppParCurves_SmoothCriterion {
+	AppParCurves_SmoothCriterion* GetObject() {
+	return (AppParCurves_SmoothCriterion*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AppParCurves_SmoothCriterion::~Handle_AppParCurves_SmoothCriterion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AppParCurves_SmoothCriterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AppParCurves_HArray1OfMultiBSpCurve;
 class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 	public:
@@ -149,7 +187,7 @@ class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AppParCurves_HArray1OfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_HArray1OfMultiBSpCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
@@ -187,7 +225,7 @@ class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiPoint & operator=(const AppParCurves_HArray1OfMultiPoint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AppParCurves_HArray1OfMultiPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_HArray1OfMultiPoint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfMultiPoint {
@@ -225,7 +263,7 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve & operator=(const AppParCurves_SequenceNodeOfSequenceOfMultiCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
@@ -263,7 +301,7 @@ class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfConstraintCouple & operator=(const AppParCurves_HArray1OfConstraintCouple *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AppParCurves_HArray1OfConstraintCouple const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AppParCurves_HArray1OfConstraintCouple DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_AppParCurves_HArray1OfConstraintCouple {
@@ -281,44 +319,6 @@ def __del__(self):
 %}
 
 %extend Handle_AppParCurves_HArray1OfConstraintCouple {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AppParCurves_SmoothCriterion;
-class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion();
-		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion(const Handle_AppParCurves_SmoothCriterion &aHandle);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion(const AppParCurves_SmoothCriterion *anItem);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion & operator=(const Handle_AppParCurves_SmoothCriterion &aHandle);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion & operator=(const AppParCurves_SmoothCriterion *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AppParCurves_SmoothCriterion const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AppParCurves_SmoothCriterion {
-	AppParCurves_SmoothCriterion* GetObject() {
-	return (AppParCurves_SmoothCriterion*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AppParCurves_SmoothCriterion::~Handle_AppParCurves_SmoothCriterion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AppParCurves_SmoothCriterion {
 	void _kill_pointed() {
 		delete $self;
 	}

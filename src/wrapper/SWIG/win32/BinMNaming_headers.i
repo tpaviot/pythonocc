@@ -65,5 +65,4 @@ $HeaderURL$
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<BinObjMgt_Persistent.hxx>
-#include<BinObjMgt_RRelocationTable.hxx>
 %}

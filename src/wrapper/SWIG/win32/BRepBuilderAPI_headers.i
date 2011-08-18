@@ -81,7 +81,6 @@ $HeaderURL$
 #include<TopoDSToStep_Tool.hxx>
 #include<TopoDSToStep_WireframeBuilder.hxx>
 #include<TopoDS_Builder.hxx>
-#include<TopoDS_Builder3D.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Compound.hxx>
 #include<TopoDS_Edge.hxx>

@@ -66,7 +66,7 @@ class Handle_Bisector_Curve : public Handle_Geom2d_Curve {
 		%feature("autodoc", "1");
 		Handle_Bisector_Curve & operator=(const Bisector_Curve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Bisector_Curve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Bisector_Curve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Bisector_Curve {
@@ -104,7 +104,7 @@ class Handle_Bisector_BisecAna : public Handle_Bisector_Curve {
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecAna & operator=(const Bisector_BisecAna *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Bisector_BisecAna const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Bisector_BisecAna DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Bisector_BisecAna {
@@ -142,7 +142,7 @@ class Handle_Bisector_BisecCC : public Handle_Bisector_Curve {
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecCC & operator=(const Bisector_BisecCC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Bisector_BisecCC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Bisector_BisecCC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Bisector_BisecCC {
@@ -180,7 +180,7 @@ class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecPC & operator=(const Bisector_BisecPC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Bisector_BisecPC const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Bisector_BisecPC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Bisector_BisecPC {

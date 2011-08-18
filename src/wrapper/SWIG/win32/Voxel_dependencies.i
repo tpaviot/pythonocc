@@ -40,17 +40,14 @@ $HeaderURL$
 #include <AIS_DataMapIteratorOfDataMapOfILC.hxx>
 #include <AIS_DataMapIteratorOfDataMapOfIOStatus.hxx>
 #include <AIS_DataMapIteratorOfDataMapOfSelStat.hxx>
-#include <AIS_DataMapIteratorOfDataMapOfTransientTransient.hxx>
 #include <AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive.hxx>
 #include <AIS_DataMapNodeOfDataMapOfILC.hxx>
 #include <AIS_DataMapNodeOfDataMapOfIOStatus.hxx>
 #include <AIS_DataMapNodeOfDataMapOfSelStat.hxx>
-#include <AIS_DataMapNodeOfDataMapOfTransientTransient.hxx>
 #include <AIS_DataMapNodeOfDataMapofIntegerListOfinteractive.hxx>
 #include <AIS_DataMapOfILC.hxx>
 #include <AIS_DataMapOfIOStatus.hxx>
 #include <AIS_DataMapOfSelStat.hxx>
-#include <AIS_DataMapOfTransientTransient.hxx>
 #include <AIS_DataMapofIntegerListOfinteractive.hxx>
 #include <AIS_DiameterDimension.hxx>
 #include <AIS_DimensionOwner.hxx>
@@ -114,6 +111,7 @@ $HeaderURL$
 #include <AIS_SymmetricRelation.hxx>
 #include <AIS_TangentRelation.hxx>
 #include <AIS_TexturedShape.hxx>
+#include <AIS_Triangulation.hxx>
 #include <AIS_Trihedron.hxx>
 #include <AIS_TypeFilter.hxx>
 #include <AIS_TypeOfAttribute.hxx>
@@ -135,7 +133,6 @@ $HeaderURL$
 #include <Handle_AIS_DataMapNodeOfDataMapOfILC.hxx>
 #include <Handle_AIS_DataMapNodeOfDataMapOfIOStatus.hxx>
 #include <Handle_AIS_DataMapNodeOfDataMapOfSelStat.hxx>
-#include <Handle_AIS_DataMapNodeOfDataMapOfTransientTransient.hxx>
 #include <Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive.hxx>
 #include <Handle_AIS_DiameterDimension.hxx>
 #include <Handle_AIS_DimensionOwner.hxx>
@@ -177,6 +174,7 @@ $HeaderURL$
 #include <Handle_AIS_SymmetricRelation.hxx>
 #include <Handle_AIS_TangentRelation.hxx>
 #include <Handle_AIS_TexturedShape.hxx>
+#include <Handle_AIS_Triangulation.hxx>
 #include <Handle_AIS_Trihedron.hxx>
 #include <Handle_AIS_TypeFilter.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
@@ -216,6 +214,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -239,6 +238,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -254,6 +254,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>

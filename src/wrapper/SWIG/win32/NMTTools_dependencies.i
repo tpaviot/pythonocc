@@ -185,6 +185,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -208,6 +209,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -223,6 +225,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>
@@ -232,6 +235,7 @@ $HeaderURL$
 #include <Standard_ProgramError.hxx>
 #include <Standard_RangeError.hxx>
 #include <Standard_Real.hxx>
+#include <Standard_Real_Original.hxx>
 #include <Standard_SStream.hxx>
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>
@@ -258,12 +262,15 @@ $HeaderURL$
 #include <Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
 #include <Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger.hxx>
 #include <Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape.hxx>
+#include <Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere.hxx>
 #include <Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox.hxx>
 #include <Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors.hxx>
 #include <Handle_NMTDS_ListNodeOfListOfPassKey.hxx>
 #include <Handle_NMTDS_ListNodeOfListOfPassKeyBoolean.hxx>
 #include <Handle_NMTDS_StdMapNodeOfMapOfPassKey.hxx>
 #include <Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean.hxx>
+#include <NMTDS_BndSphere.hxx>
+#include <NMTDS_BndSphereTree.hxx>
 #include <NMTDS_BoxBndTree.hxx>
 #include <NMTDS_CArray1OfIndexRange.hxx>
 #include <NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger.hxx>
@@ -272,9 +279,11 @@ $HeaderURL$
 #include <NMTDS_IndexRange.hxx>
 #include <NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger.hxx>
 #include <NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape.hxx>
+#include <NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere.hxx>
 #include <NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox.hxx>
 #include <NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger.hxx>
 #include <NMTDS_IndexedDataMapOfIntegerShape.hxx>
+#include <NMTDS_IndexedDataMapOfShapeBndSphere.hxx>
 #include <NMTDS_IndexedDataMapOfShapeBox.hxx>
 #include <NMTDS_InterfPool.hxx>
 #include <NMTDS_InterfType.hxx>

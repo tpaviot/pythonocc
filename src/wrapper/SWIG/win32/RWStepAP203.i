@@ -168,6 +168,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepAP203_RWCcDesignContract;
+class RWStepAP203_RWCcDesignContract {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP203_RWCcDesignContract();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignContract &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignContract &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP203_CcDesignContract &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP203_RWCcDesignContract::~RWStepAP203_RWCcDesignContract %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP203_RWCcDesignContract {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepAP203_RWCcDesignDateAndTimeAssignment;
 class RWStepAP203_RWCcDesignDateAndTimeAssignment {
 	public:
@@ -336,35 +365,6 @@ def __del__(self):
 %}
 
 %extend RWStepAP203_RWCcDesignSpecificationReference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepAP203_RWCcDesignContract;
-class RWStepAP203_RWCcDesignContract {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP203_RWCcDesignContract();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignContract &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignContract &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignContract &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP203_RWCcDesignContract::~RWStepAP203_RWCcDesignContract %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP203_RWCcDesignContract {
 	void _kill_pointed() {
 		delete $self;
 	}

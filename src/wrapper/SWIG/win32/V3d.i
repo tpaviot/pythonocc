@@ -185,7 +185,7 @@ class Handle_V3d_UnMapped : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_V3d_UnMapped & operator=(const V3d_UnMapped *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_UnMapped const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_UnMapped DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_UnMapped {
@@ -223,7 +223,7 @@ class Handle_V3d_Plane : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_V3d_Plane & operator=(const V3d_Plane *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_Plane const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_Plane DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_Plane {
@@ -261,7 +261,7 @@ class Handle_V3d_View : public Handle_Viewer_View {
 		%feature("autodoc", "1");
 		Handle_V3d_View & operator=(const V3d_View *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_View const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_View DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_View {
@@ -299,7 +299,7 @@ class Handle_V3d_PerspectiveView : public Handle_V3d_View {
 		%feature("autodoc", "1");
 		Handle_V3d_PerspectiveView & operator=(const V3d_PerspectiveView *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_PerspectiveView const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_PerspectiveView DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_PerspectiveView {
@@ -337,7 +337,7 @@ class Handle_V3d_Light : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_V3d_Light & operator=(const V3d_Light *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_Light const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_Light DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_Light {
@@ -375,7 +375,7 @@ class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 		%feature("autodoc", "1");
 		Handle_V3d_AmbientLight & operator=(const V3d_AmbientLight *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_AmbientLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_AmbientLight DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_AmbientLight {
@@ -413,7 +413,7 @@ class Handle_V3d_Camera : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_V3d_Camera & operator=(const V3d_Camera *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_Camera const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_Camera DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_Camera {
@@ -451,7 +451,7 @@ class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_V3d_LayerMgr & operator=(const V3d_LayerMgr *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_LayerMgr const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_LayerMgr DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_LayerMgr {
@@ -489,7 +489,7 @@ class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 		%feature("autodoc", "1");
 		Handle_V3d_CircularGrid & operator=(const V3d_CircularGrid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_CircularGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_CircularGrid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_CircularGrid {
@@ -527,7 +527,7 @@ class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
 		%feature("autodoc", "1");
 		Handle_V3d_ColorScale & operator=(const V3d_ColorScale *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_ColorScale const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_ColorScale DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_ColorScale {
@@ -565,7 +565,7 @@ class Handle_V3d_OrthographicView : public Handle_V3d_View {
 		%feature("autodoc", "1");
 		Handle_V3d_OrthographicView & operator=(const V3d_OrthographicView *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_OrthographicView const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_OrthographicView DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_OrthographicView {
@@ -589,6 +589,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_V3d_ColorScaleLayerItem;
+class Handle_V3d_ColorScaleLayerItem : public Handle_Visual3d_LayerItem {
+	public:
+		%feature("autodoc", "1");
+		Handle_V3d_ColorScaleLayerItem();
+		%feature("autodoc", "1");
+		Handle_V3d_ColorScaleLayerItem(const Handle_V3d_ColorScaleLayerItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_ColorScaleLayerItem(const V3d_ColorScaleLayerItem *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_ColorScaleLayerItem & operator=(const Handle_V3d_ColorScaleLayerItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_ColorScaleLayerItem & operator=(const V3d_ColorScaleLayerItem *anItem);
+		%feature("autodoc", "1");
+		static		Handle_V3d_ColorScaleLayerItem DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V3d_ColorScaleLayerItem {
+	V3d_ColorScaleLayerItem* GetObject() {
+	return (V3d_ColorScaleLayerItem*)$self->Access();
+	}
+};
+%feature("shadow") Handle_V3d_ColorScaleLayerItem::~Handle_V3d_ColorScaleLayerItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_V3d_ColorScaleLayerItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_V3d_PositionLight;
 class Handle_V3d_PositionLight : public Handle_V3d_Light {
 	public:
@@ -603,7 +641,7 @@ class Handle_V3d_PositionLight : public Handle_V3d_Light {
 		%feature("autodoc", "1");
 		Handle_V3d_PositionLight & operator=(const V3d_PositionLight *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_PositionLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_PositionLight DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_PositionLight {
@@ -641,7 +679,7 @@ class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
 		%feature("autodoc", "1");
 		Handle_V3d_SpotLight & operator=(const V3d_SpotLight *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_SpotLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_SpotLight DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_SpotLight {
@@ -679,7 +717,7 @@ class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 		%feature("autodoc", "1");
 		Handle_V3d_Viewer & operator=(const V3d_Viewer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_Viewer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_Viewer {
@@ -717,7 +755,7 @@ class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
 		%feature("autodoc", "1");
 		Handle_V3d_DirectionalLight & operator=(const V3d_DirectionalLight *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_DirectionalLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_DirectionalLight DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_DirectionalLight {
@@ -755,7 +793,7 @@ class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 		%feature("autodoc", "1");
 		Handle_V3d_RectangularGrid & operator=(const V3d_RectangularGrid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_RectangularGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_RectangularGrid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_RectangularGrid {
@@ -793,7 +831,7 @@ class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
 		%feature("autodoc", "1");
 		Handle_V3d_PositionalLight & operator=(const V3d_PositionalLight *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_PositionalLight const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_PositionalLight DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_V3d_PositionalLight {
@@ -1260,6 +1298,10 @@ class V3d_Viewer : public Viewer_Viewer {
 		%feature("autodoc", "1");
 		void SetDefaultBackgroundColor(const Quantity_Color &Color);
 		%feature("autodoc", "1");
+		void SetDefaultBgGradientColors(const Quantity_NameOfColor Name1, const Quantity_NameOfColor Name2, const Aspect_GradientFillMethod FillStyle=Aspect_GFM_HOR);
+		%feature("autodoc", "1");
+		void SetDefaultBgGradientColors(const Quantity_Color &Color1, const Quantity_Color &Color2, const Aspect_GradientFillMethod FillStyle=Aspect_GFM_HOR);
+		%feature("autodoc", "1");
 		void SetDefaultViewSize(const Quantity_Length Size);
 		%feature("autodoc", "1");
 		void SetDefaultViewProj(const V3d_TypeOfOrientation Orientation);
@@ -1304,6 +1346,8 @@ class V3d_Viewer : public Viewer_Viewer {
 		void DefaultBackgroundColor(const Quantity_TypeOfColor Type, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Color DefaultBackgroundColor() const;
+		%feature("autodoc", "1");
+		void DefaultBgGradientColors(Quantity_Color & Color1, Quantity_Color & Color2) const;
 		%feature("autodoc", "1");
 		Quantity_Length DefaultViewSize() const;
 		%feature("autodoc", "1");
@@ -1354,6 +1398,10 @@ class V3d_Viewer : public Viewer_Viewer {
 		void NextDefinedLights();
 		%feature("autodoc", "1");
 		Handle_V3d_Light DefinedLight() const;
+		%feature("autodoc", "1");
+		void AddPlane(const Handle_V3d_Plane &MyPlane);
+		%feature("autodoc", "1");
+		void DelPlane(const Handle_V3d_Plane &MyPlane);
 		%feature("autodoc", "1");
 		void InitDefinedPlanes();
 		%feature("autodoc", "1");
@@ -1410,6 +1458,8 @@ class V3d_Viewer : public Viewer_Viewer {
 		void RectangularGridGraphicValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetRectangularGridGraphicValues(const Quantity_Length XSize, const Quantity_Length YSize, const Quantity_Length OffSet);
+		%feature("autodoc", "1");
+		Aspect_GradientBackground GetGradientBackground() const;
 		%feature("autodoc", "1");
 		void SetDefaultLights();
 		%feature("autodoc", "1");
@@ -1492,6 +1542,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor V3d_ColorScaleLayerItem;
+class V3d_ColorScaleLayerItem : public Visual3d_LayerItem {
+	public:
+		%feature("autodoc", "1");
+		V3d_ColorScaleLayerItem(const Handle_V3d_ColorScale &aColorScale);
+		%feature("autodoc", "1");
+		virtual		void ComputeLayerPrs();
+		%feature("autodoc", "1");
+		virtual		void RedrawLayerPrs();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_ColorScaleLayerItem {
+	Handle_V3d_ColorScaleLayerItem GetHandle() {
+	return *(Handle_V3d_ColorScaleLayerItem*) &$self;
+	}
+};
+%extend V3d_ColorScaleLayerItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") V3d_ColorScaleLayerItem::~V3d_ColorScaleLayerItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend V3d_ColorScaleLayerItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor V3d_View;
 class V3d_View : public Viewer_View {
 	public:
@@ -1521,6 +1610,12 @@ class V3d_View : public Viewer_View {
 		void SetBackgroundColor(const Quantity_Color &Color);
 		%feature("autodoc", "1");
 		void SetBackgroundColor(const Quantity_NameOfColor Name);
+		%feature("autodoc", "1");
+		void SetBgGradientColors(const Quantity_Color &Color1, const Quantity_Color &Color2, const Aspect_GradientFillMethod FillStyle=Aspect_GFM_HOR, const Standard_Boolean update=0);
+		%feature("autodoc", "1");
+		void SetBgGradientColors(const Quantity_NameOfColor Color1, const Quantity_NameOfColor Color2, const Aspect_GradientFillMethod FillStyle=Aspect_GFM_HOR, const Standard_Boolean update=0);
+		%feature("autodoc", "1");
+		void SetBgGradientStyle(const Aspect_GradientFillMethod AMethod=Aspect_GFM_HOR, const Standard_Boolean update=0) const;
 		%feature("autodoc", "1");
 		void SetBackgroundImage(const char * FileName, const Aspect_FillMethod FillStyle=Aspect_FM_CENTERED, const Standard_Boolean update=0);
 		%feature("autodoc", "1");
@@ -1583,6 +1678,10 @@ class V3d_View : public Viewer_View {
 		void TriedronErase();
 		%feature("autodoc", "1");
 		void TriedronEcho(const Aspect_TypeOfTriedronEcho AType=Aspect_TOTE_NONE);
+		%feature("autodoc", "1");
+		void GraduatedTrihedronDisplay(const char * xname="X\000", const char * yname="Y\000", const char * zname="Z\000", const Standard_Boolean xdrawname=1, const Standard_Boolean ydrawname=1, const Standard_Boolean zdrawname=1, const Standard_Boolean xdrawvalues=1, const Standard_Boolean ydrawvalues=1, const Standard_Boolean zdrawvalues=1, const Standard_Boolean drawgrid=1, const Standard_Boolean drawaxes=1, const Standard_Integer nbx=3, const Standard_Integer nby=3, const Standard_Integer nbz=3, const Standard_Integer xoffset=10, const Standard_Integer yoffset=10, const Standard_Integer zoffset=10, const Standard_Integer xaxisoffset=30, const Standard_Integer yaxisoffset=30, const Standard_Integer zaxisoffset=30, const Standard_Boolean xdrawtickmarks=1, const Standard_Boolean ydrawtickmarks=1, const Standard_Boolean zdrawtickmarks=1, const Standard_Integer xtickmarklength=10, const Standard_Integer ytickmarklength=10, const Standard_Integer ztickmarklength=10, const Quantity_Color &gridcolor=Quantity_NOC_WHITE, const Quantity_Color &xnamecolor=Quantity_NOC_RED, const Quantity_Color &ynamecolor=Quantity_NOC_GREEN, const Quantity_Color &znamecolor=Quantity_NOC_BLUE1, const Quantity_Color &xcolor=Quantity_NOC_RED, const Quantity_Color &ycolor=Quantity_NOC_GREEN, const Quantity_Color &zcolor=Quantity_NOC_BLUE1, const char * fontOfNames="Arial", const OSD_FontAspect styleOfNames=OSD_FA_Bold, const Standard_Integer sizeOfNames=12, const char * fontOfValues="Arial", const OSD_FontAspect styleOfValues=OSD_FA_Regular, const Standard_Integer sizeOfValues=12);
+		%feature("autodoc", "1");
+		void GraduatedTrihedronErase();
 		%feature("autodoc", "1");
 		void SetLayerMgr(const Handle_V3d_LayerMgr &aMgr);
 		%feature("autodoc", "1");
@@ -1717,6 +1816,10 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Quantity_Color BackgroundColor() const;
 		%feature("autodoc", "1");
+		void GradientBackgroundColors(Quantity_Color & Color1, Quantity_Color & Color2) const;
+		%feature("autodoc", "1");
+		Aspect_GradientBackground GradientBackground() const;
+		%feature("autodoc", "1");
 		Quantity_Factor Scale() const;
 		%feature("autodoc","AxialScale() -> [Standard_Real, Standard_Real, Standard_Real]");
 
@@ -1804,6 +1907,10 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void Zoom(const Standard_Integer X, const Standard_Integer Y);
 		%feature("autodoc", "1");
+		void StartZoomAtPoint(const Standard_Integer xpix, const Standard_Integer ypix);
+		%feature("autodoc", "1");
+		void ZoomAtPoint(const Standard_Integer mouseStartX, const Standard_Integer mouseStartY, const Standard_Integer mouseEndX, const Standard_Integer mouseEndY);
+		%feature("autodoc", "1");
 		void AxialScale(const Standard_Integer Dx, const Standard_Integer Dy, const V3d_TypeOfAxe Axis);
 		%feature("autodoc", "1");
 		void StartRotation(const Standard_Integer X, const Standard_Integer Y, const Quantity_Ratio zRotationThreshold=0.0);
@@ -1862,13 +1969,13 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void ScreenCopy(const Handle_PlotMgt_PlotterDriver &aPlotterDriver, const Standard_Boolean fWhiteBackground=1, const Quantity_Factor aScale=1.0e+0);
 		%feature("autodoc", "1");
-		Standard_Boolean Dump(const char * aFile);
+		Standard_Boolean Dump(const char * theFile, const Image_TypeOfImage theBufferType=Image_TOI_RGB);
 		%feature("autodoc", "1");
-		Standard_Boolean Dump(const char * aFile, const Aspect_FormatOfSheetPaper aFormat);
+		Standard_Boolean Dump(const char * theFile, const Aspect_FormatOfSheetPaper theFormat, const Image_TypeOfImage theBufferType=Image_TOI_RGB);
 		%feature("autodoc", "1");
 		void Print(const Aspect_Handle hPrnDC=0, const Standard_Boolean showDialog=1, const Standard_Boolean showBackground=1, const char * filename=0) const;
 		%feature("autodoc", "1");
-		Handle_Aspect_PixMap ToPixMap(const Standard_Integer aWidth, const Standard_Integer aHeight, const Standard_Integer aCDepth=24);
+		Handle_Image_PixMap ToPixMap(const Standard_Integer theWidth, const Standard_Integer theHeight, const Image_TypeOfImage theBufferType=Image_TOI_RGB, const Standard_Boolean theForceCentered=1);
 		%feature("autodoc", "1");
 		void SetProjModel(const V3d_TypeOfProjectionModel amOdel=V3d_TPM_SCREEN);
 		%feature("autodoc", "1");
@@ -1969,7 +2076,7 @@ class V3d_UnMapped : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_V3d_UnMapped NewInstance(const char * aMessage);
+		static		Handle_V3d_UnMapped NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2004,7 +2111,7 @@ def __del__(self):
 class V3d_Plane : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		V3d_Plane(const Handle_V3d_Viewer &VM, const Quantity_Parameter A=0.0, const Quantity_Parameter B=0.0, const Quantity_Parameter C=1.0e+0, const Quantity_Parameter D=0.0);
+		V3d_Plane(const Quantity_Parameter A=0.0, const Quantity_Parameter B=0.0, const Quantity_Parameter C=1.0e+0, const Quantity_Parameter D=0.0);
 		%feature("autodoc", "1");
 		void SetPlane(const Quantity_Parameter A, const Quantity_Parameter B, const Quantity_Parameter C, const Quantity_Parameter D);
 		%feature("autodoc", "1");

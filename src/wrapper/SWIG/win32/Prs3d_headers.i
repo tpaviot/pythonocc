@@ -96,6 +96,7 @@ $HeaderURL$
 #include<Aspect_ColorPixel.hxx>
 #include<Aspect_ColorRampColorMap.hxx>
 #include<Aspect_ColorScale.hxx>
+#include<Aspect_Convert.hxx>
 #include<Aspect_Display.hxx>
 #include<Aspect_Drawable.hxx>
 #include<Aspect_Driver.hxx>
@@ -114,6 +115,8 @@ $HeaderURL$
 #include<Aspect_FormatOfSheetPaper.hxx>
 #include<Aspect_GenId.hxx>
 #include<Aspect_GenericColorMap.hxx>
+#include<Aspect_GradientBackground.hxx>
+#include<Aspect_GradientFillMethod.hxx>
 #include<Aspect_GraphicCallbackProc.hxx>
 #include<Aspect_GraphicDevice.hxx>
 #include<Aspect_GraphicDeviceDefinitionError.hxx>
@@ -200,7 +203,6 @@ $HeaderURL$
 #include<Aspect_WindowError.hxx>
 #include<Bnd_Box.hxx>
 #include<Bnd_Box2d.hxx>
-#include<Graphic3d_Array1OfBytes.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>
 #include<Graphic3d_Array1OfVertexC.hxx>
@@ -232,6 +234,7 @@ $HeaderURL$
 #include<Graphic3d_CBitFields4.hxx>
 #include<Graphic3d_CBitFields8.hxx>
 #include<Graphic3d_CBounds.hxx>
+#include<Graphic3d_CGraduatedTrihedron.hxx>
 #include<Graphic3d_CGroup.hxx>
 #include<Graphic3d_CInitTexture.hxx>
 #include<Graphic3d_CLight.hxx>
@@ -248,8 +251,8 @@ $HeaderURL$
 #include<Graphic3d_GraphicDevice.hxx>
 #include<Graphic3d_GraphicDriver.hxx>
 #include<Graphic3d_Group.hxx>
+#include<Graphic3d_GroupAspect.hxx>
 #include<Graphic3d_GroupDefinitionError.hxx>
-#include<Graphic3d_HArray1OfBytes.hxx>
 #include<Graphic3d_HSequenceOfGroup.hxx>
 #include<Graphic3d_HSequenceOfStructure.hxx>
 #include<Graphic3d_HSetOfGroup.hxx>
@@ -267,6 +270,7 @@ $HeaderURL$
 #include<Graphic3d_MapOfStructure.hxx>
 #include<Graphic3d_MaterialAspect.hxx>
 #include<Graphic3d_MaterialDefinitionError.hxx>
+#include<Graphic3d_NListOfHAsciiString.hxx>
 #include<Graphic3d_NameOfFont.hxx>
 #include<Graphic3d_NameOfMaterial.hxx>
 #include<Graphic3d_NameOfTexture1D.hxx>
@@ -278,6 +282,7 @@ $HeaderURL$
 #include<Graphic3d_PlotterDefinitionError.hxx>
 #include<Graphic3d_PrimitiveArray.hxx>
 #include<Graphic3d_PriorityDefinitionError.hxx>
+#include<Graphic3d_PtrFrameBuffer.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfAddress.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfGroup.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfStructure.hxx>
@@ -354,7 +359,6 @@ $HeaderURL$
 #include<TopoDSToStep_Tool.hxx>
 #include<TopoDSToStep_WireframeBuilder.hxx>
 #include<TopoDS_Builder.hxx>
-#include<TopoDS_Builder3D.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Compound.hxx>
 #include<TopoDS_Edge.hxx>
@@ -397,7 +401,7 @@ $HeaderURL$
 #include<Prs3d.hxx>
 #include<Graphic3d_MaterialAspect.hxx>
 #include<Handle_Graphic3d_AspectFillArea3d.hxx>
-#include<Handle_Graphic3d_HArray1OfBytes.hxx>
+#include<Handle_TColStd_HArray1OfByte.hxx>
 #include<Handle_Graphic3d_AspectMarker3d.hxx>
 #include<HLRAlgo_Projector.hxx>
 #include<TopoDS_Shape.hxx>
@@ -408,7 +412,6 @@ $HeaderURL$
 #include<Handle_Poly_PolygonOnTriangulation.hxx>
 #include<Handle_Poly_Polygon3D.hxx>
 #include<Handle_Graphic3d_AspectText3d.hxx>
-#include<Standard_SStream.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Dir.hxx>
 %}

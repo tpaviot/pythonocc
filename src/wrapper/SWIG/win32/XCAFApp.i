@@ -66,7 +66,7 @@ class Handle_XCAFApp_Application : public Handle_TDocStd_Application {
 		%feature("autodoc", "1");
 		Handle_XCAFApp_Application & operator=(const XCAFApp_Application *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XCAFApp_Application const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XCAFApp_Application DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XCAFApp_Application {

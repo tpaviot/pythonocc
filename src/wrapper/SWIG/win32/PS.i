@@ -66,7 +66,7 @@ class Handle_PS_Driver : public Handle_PlotMgt_PlotterDriver {
 		%feature("autodoc", "1");
 		Handle_PS_Driver & operator=(const PS_Driver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PS_Driver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PS_Driver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PS_Driver {

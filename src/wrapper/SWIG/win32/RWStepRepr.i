@@ -52,35 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor RWStepRepr_RWConfigurationDesign;
-class RWStepRepr_RWConfigurationDesign {
-	public:
-		%feature("autodoc", "1");
-		RWStepRepr_RWConfigurationDesign();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ConfigurationDesign &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ConfigurationDesign &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ConfigurationDesign &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepRepr_RWConfigurationDesign::~RWStepRepr_RWConfigurationDesign %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepRepr_RWConfigurationDesign {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation;
 class RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
 	public:
@@ -336,6 +307,35 @@ def __del__(self):
 %}
 
 %extend RWStepRepr_RWExtension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepRepr_RWConfigurationDesign;
+class RWStepRepr_RWConfigurationDesign {
+	public:
+		%feature("autodoc", "1");
+		RWStepRepr_RWConfigurationDesign();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ConfigurationDesign &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ConfigurationDesign &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepRepr_ConfigurationDesign &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepRepr_RWConfigurationDesign::~RWStepRepr_RWConfigurationDesign %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepRepr_RWConfigurationDesign {
 	void _kill_pointed() {
 		delete $self;
 	}

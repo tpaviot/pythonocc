@@ -148,7 +148,7 @@ class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_AsciiText & operator=(const Vrml_AsciiText *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_AsciiText const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_AsciiText DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Vrml_AsciiText {
@@ -186,7 +186,7 @@ class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_LOD & operator=(const Vrml_LOD *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_LOD const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_LOD DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Vrml_LOD {
@@ -224,7 +224,7 @@ class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_Coordinate3 & operator=(const Vrml_Coordinate3 *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_Coordinate3 const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_Coordinate3 DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Vrml_Coordinate3 {
@@ -262,7 +262,7 @@ class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_SFImage & operator=(const Vrml_SFImage *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_SFImage const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_SFImage DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Vrml_SFImage {
@@ -300,7 +300,7 @@ class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_Normal & operator=(const Vrml_Normal *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_Normal const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_Normal DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Vrml_Normal {
@@ -338,7 +338,7 @@ class Handle_Vrml_Material : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_Material & operator=(const Vrml_Material *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_Material const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_Material DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Vrml_Material {
@@ -376,7 +376,7 @@ class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedLineSet & operator=(const Vrml_IndexedLineSet *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_IndexedLineSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_IndexedLineSet DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Vrml_IndexedLineSet {
@@ -414,7 +414,7 @@ class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_IndexedFaceSet & operator=(const Vrml_IndexedFaceSet *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_IndexedFaceSet const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_IndexedFaceSet DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Vrml_IndexedFaceSet {
@@ -452,7 +452,7 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Vrml_TextureCoordinate2 & operator=(const Vrml_TextureCoordinate2 *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_TextureCoordinate2 const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_TextureCoordinate2 DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Vrml_TextureCoordinate2 {

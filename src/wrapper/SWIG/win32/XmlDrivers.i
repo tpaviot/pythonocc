@@ -66,7 +66,7 @@ class Handle_XmlDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Docume
 		%feature("autodoc", "1");
 		Handle_XmlDrivers_DocumentStorageDriver & operator=(const XmlDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlDrivers_DocumentStorageDriver {
@@ -104,7 +104,7 @@ class Handle_XmlDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_Docu
 		%feature("autodoc", "1");
 		Handle_XmlDrivers_DocumentRetrievalDriver & operator=(const XmlDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlDrivers_DocumentRetrievalDriver {
@@ -135,6 +135,8 @@ class XmlDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageDrive
 		XmlDrivers_DocumentStorageDriver(const TCollection_ExtendedString &theCopyright);
 		%feature("autodoc", "1");
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean WriteShapeSection(XmlObjMgt_Element & thePDoc);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -199,6 +201,12 @@ class XmlDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalD
 		XmlDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
 		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_XmlMDF_ADriver ReadShapeSection(const XmlObjMgt_Element &thePDoc, const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		void ShapeSetCleaning(const Handle_XmlMDF_ADriver &theDriver);
+		%feature("autodoc", "1");
+		virtual		void PropagateDocumentVersion(const Standard_Integer theDocVersion);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

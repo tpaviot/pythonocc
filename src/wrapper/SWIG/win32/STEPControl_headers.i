@@ -43,7 +43,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -141,6 +140,7 @@ $HeaderURL$
 #include<Handle_Transfer_Finder.hxx>
 #include<Handle_Transfer_FinderProcess.hxx>
 #include<Handle_StepShape_ShapeDefinitionRepresentation.hxx>
+#include<Handle_TopTools_HSequenceOfShape.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
 #include<Handle_Transfer_ActorOfTransientProcess.hxx>

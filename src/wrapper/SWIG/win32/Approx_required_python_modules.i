@@ -32,7 +32,7 @@ import Geom
 import Geom2d
 import AppParCurves
 import TColStd
-import TColgp
 import gp
 import Adaptor3d
+import TColgp
 };

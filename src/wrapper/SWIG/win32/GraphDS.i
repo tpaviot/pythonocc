@@ -78,7 +78,7 @@ class Handle_GraphDS_DataMapNodeOfEntityRoleMap : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_GraphDS_DataMapNodeOfEntityRoleMap & operator=(const GraphDS_DataMapNodeOfEntityRoleMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GraphDS_DataMapNodeOfEntityRoleMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GraphDS_DataMapNodeOfEntityRoleMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_GraphDS_DataMapNodeOfEntityRoleMap {

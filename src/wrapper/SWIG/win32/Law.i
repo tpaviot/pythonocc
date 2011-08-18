@@ -66,7 +66,7 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Law_Function & operator=(const Law_Function *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Law_Function const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_Function DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_Function {
@@ -104,7 +104,7 @@ class Handle_Law_Linear : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_Linear & operator=(const Law_Linear *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Law_Linear const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_Linear DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_Linear {
@@ -142,7 +142,7 @@ class Handle_Law_Constant : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_Constant & operator=(const Law_Constant *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Law_Constant const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_Constant DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_Constant {
@@ -180,7 +180,7 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_Law_ListNodeOfLaws & operator=(const Law_ListNodeOfLaws *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Law_ListNodeOfLaws const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_ListNodeOfLaws DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_ListNodeOfLaws {
@@ -218,7 +218,7 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_BSpFunc & operator=(const Law_BSpFunc *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Law_BSpFunc const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_BSpFunc DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_BSpFunc {
@@ -256,7 +256,7 @@ class Handle_Law_Composite : public Handle_Law_Function {
 		%feature("autodoc", "1");
 		Handle_Law_Composite & operator=(const Law_Composite *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Law_Composite const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_Composite DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_Composite {
@@ -294,7 +294,7 @@ class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 		%feature("autodoc", "1");
 		Handle_Law_Interpol & operator=(const Law_Interpol *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Law_Interpol const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_Interpol DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_Interpol {
@@ -332,7 +332,7 @@ class Handle_Law_BSpline : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Law_BSpline & operator=(const Law_BSpline *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Law_BSpline const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_BSpline DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_BSpline {
@@ -370,7 +370,7 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 		%feature("autodoc", "1");
 		Handle_Law_S & operator=(const Law_S *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Law_S const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Law_S DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Law_S {

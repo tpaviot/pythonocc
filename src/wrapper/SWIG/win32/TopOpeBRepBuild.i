@@ -75,7 +75,7 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape :
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape {
@@ -113,7 +113,7 @@ class Handle_TopOpeBRepBuild_Loop : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_Loop & operator=(const TopOpeBRepBuild_Loop *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_Loop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_Loop DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_Loop {
@@ -151,7 +151,7 @@ class Handle_TopOpeBRepBuild_Pave : public Handle_TopOpeBRepBuild_Loop {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_Pave & operator=(const TopOpeBRepBuild_Pave *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_Pave const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_Pave DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_Pave {
@@ -189,7 +189,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape & operator=(const TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape {
@@ -227,7 +227,7 @@ class Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo & operator=(const TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
@@ -265,7 +265,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfLoop : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop & operator=(const TopOpeBRepBuild_ListNodeOfListOfLoop *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_ListNodeOfListOfLoop {
@@ -303,7 +303,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfPave : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfPave & operator=(const TopOpeBRepBuild_ListNodeOfListOfPave *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_ListNodeOfListOfPave const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_ListNodeOfListOfPave DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_ListNodeOfListOfPave {
@@ -327,44 +327,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger;
-class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger & operator=(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {
-	TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger* GetObject() {
-	return (TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger::~Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TopOpeBRepBuild_HBuilder;
 class Handle_TopOpeBRepBuild_HBuilder : public Handle_MMgt_TShared {
 	public:
@@ -379,7 +341,7 @@ class Handle_TopOpeBRepBuild_HBuilder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_HBuilder & operator=(const TopOpeBRepBuild_HBuilder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_HBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_HBuilder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_HBuilder {
@@ -403,44 +365,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal;
-class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal & operator=(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
-	TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal* GetObject() {
-	return (TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal::~Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop;
 class Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode {
 	public:
@@ -455,7 +379,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop & operator=(const TopOpeBRepBuild_ListNodeOfListOfListOfLoop *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop {
@@ -512,46 +436,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopOpeBRepBuild_DataMapOfShapeReal;
-class TopOpeBRepBuild_DataMapOfShapeReal : public TCollection_BasicMap {
+%nodefaultctor TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape;
+class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeReal(const Standard_Integer NbBuckets=1);
+		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeReal & Assign(const TopOpeBRepBuild_DataMapOfShapeReal &Other);
+		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & Assign(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
 		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeReal & operator=(const TopOpeBRepBuild_DataMapOfShapeReal &Other);
+		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & operator=(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Real &I);
+		Standard_Boolean Bind(const TopoDS_Shape K, const TopOpeBRepBuild_ListOfShapeListOfShape &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		const Standard_Real & Find(const TopoDS_Shape K) const;
+		const TopOpeBRepBuild_ListOfShapeListOfShape & Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		const Standard_Real & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetChangeFind(const TopoDS_Shape K) {
-				return (Standard_Real) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Real value ,const TopoDS_Shape K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
+		const TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		Standard_Real & operator()(const TopoDS_Shape K);
+		TopOpeBRepBuild_ListOfShapeListOfShape & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape K);
 
 };
-%feature("shadow") TopOpeBRepBuild_DataMapOfShapeReal::~TopOpeBRepBuild_DataMapOfShapeReal %{
+%feature("shadow") TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape::~TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -560,7 +474,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopOpeBRepBuild_DataMapOfShapeReal {
+%extend TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1129,51 +1043,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape;
-class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & Assign(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & operator=(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const TopOpeBRepBuild_ListOfShapeListOfShape &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const TopOpeBRepBuild_ListOfShapeListOfShape & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfShapeListOfShape & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape K);
-
-};
-%feature("shadow") TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape::~TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopOpeBRepBuild_GTool;
 class TopOpeBRepBuild_GTool {
 	public:
@@ -1397,6 +1266,65 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopOpeBRepBuild_VertexInfo;
+class TopOpeBRepBuild_VertexInfo {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_VertexInfo();
+		%feature("autodoc", "1");
+		void SetVertex(const TopoDS_Vertex aV);
+		%feature("autodoc", "1");
+		const TopoDS_Vertex  Vertex() const;
+		%feature("autodoc", "1");
+		void SetSmart(const Standard_Boolean aFlag);
+		%feature("autodoc", "1");
+		Standard_Boolean Smart() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbCases() const;
+		%feature("autodoc", "1");
+		Standard_Integer FoundOut() const;
+		%feature("autodoc", "1");
+		void AddIn(const TopoDS_Edge anE);
+		%feature("autodoc", "1");
+		void AddOut(const TopoDS_Edge anE);
+		%feature("autodoc", "1");
+		void SetCurrentIn(const TopoDS_Edge anE);
+		%feature("autodoc", "1");
+		const TopTools_IndexedMapOfOrientedShape & EdgesIn() const;
+		%feature("autodoc", "1");
+		const TopTools_IndexedMapOfOrientedShape & EdgesOut() const;
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfOrientedShape & ChangeEdgesOut();
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge  CurrentOut();
+		%feature("autodoc", "1");
+		void AppendPassed(const TopoDS_Edge anE);
+		%feature("autodoc", "1");
+		void RemovePassed();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & ListPassed() const;
+		%feature("autodoc", "1");
+		void Prepare(const TopTools_ListOfShape &aL);
+
+};
+%feature("shadow") TopOpeBRepBuild_VertexInfo::~TopOpeBRepBuild_VertexInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepBuild_VertexInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopOpeBRepBuild_Area1dBuilder;
 class TopOpeBRepBuild_Area1dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	public:
@@ -1492,65 +1420,6 @@ def __del__(self):
 %}
 
 %extend TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepBuild_VertexInfo;
-class TopOpeBRepBuild_VertexInfo {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_VertexInfo();
-		%feature("autodoc", "1");
-		void SetVertex(const TopoDS_Vertex aV);
-		%feature("autodoc", "1");
-		const TopoDS_Vertex  Vertex() const;
-		%feature("autodoc", "1");
-		void SetSmart(const Standard_Boolean aFlag);
-		%feature("autodoc", "1");
-		Standard_Boolean Smart() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbCases() const;
-		%feature("autodoc", "1");
-		Standard_Integer FoundOut() const;
-		%feature("autodoc", "1");
-		void AddIn(const TopoDS_Edge anE);
-		%feature("autodoc", "1");
-		void AddOut(const TopoDS_Edge anE);
-		%feature("autodoc", "1");
-		void SetCurrentIn(const TopoDS_Edge anE);
-		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfOrientedShape & EdgesIn() const;
-		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfOrientedShape & EdgesOut() const;
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfOrientedShape & ChangeEdgesOut();
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge  CurrentOut();
-		%feature("autodoc", "1");
-		void AppendPassed(const TopoDS_Edge anE);
-		%feature("autodoc", "1");
-		void RemovePassed();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & ListPassed() const;
-		%feature("autodoc", "1");
-		void Prepare(const TopTools_ListOfShape &aL);
-
-};
-%feature("shadow") TopOpeBRepBuild_VertexInfo::~TopOpeBRepBuild_VertexInfo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_VertexInfo {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2101,61 +1970,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopOpeBRepBuild_DataMapOfShapeInteger;
-class TopOpeBRepBuild_DataMapOfShapeInteger : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeInteger(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeInteger & Assign(const TopOpeBRepBuild_DataMapOfShapeInteger &Other);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeInteger & operator=(const TopOpeBRepBuild_DataMapOfShapeInteger &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const Standard_Integer & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetChangeFind(const TopoDS_Shape K) {
-				return (Standard_Integer) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Integer value ,const TopoDS_Shape K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const TopoDS_Shape K);
-
-};
-%feature("shadow") TopOpeBRepBuild_DataMapOfShapeInteger::~TopOpeBRepBuild_DataMapOfShapeInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_DataMapOfShapeInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopOpeBRepBuild_GTopo;
 class TopOpeBRepBuild_GTopo {
 	public:
@@ -2498,37 +2312,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger;
-class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger();
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger(const TopOpeBRepBuild_DataMapOfShapeInteger &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TopOpeBRepBuild_DataMapOfShapeInteger &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%feature("shadow") TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger::~TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo;
 class TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : public TCollection_MapNode {
 	public:
@@ -2835,55 +2618,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal;
-class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape K, const Standard_Real &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetValue() {
-				return (Standard_Real) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Real value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
-	Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal GetHandle() {
-	return *(Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal*) &$self;
-	}
-};
-%extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal::~TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopOpeBRepBuild_BuilderON;
 class TopOpeBRepBuild_BuilderON {
 	public:
@@ -3035,37 +2769,6 @@ def __del__(self):
 %}
 
 %extend TopOpeBRepBuild_Tools {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal;
-class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal();
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal(const TopOpeBRepBuild_DataMapOfShapeReal &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TopOpeBRepBuild_DataMapOfShapeReal &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const Standard_Real & Value() const;
-
-};
-%feature("shadow") TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal::~TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3480,55 +3183,6 @@ def __del__(self):
 %}
 
 %extend TopOpeBRepBuild_FuseFace {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger;
-class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger(const TopoDS_Shape K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue() {
-				return (Standard_Integer) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {
-	Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger GetHandle() {
-	return *(Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger*) &$self;
-	}
-};
-%extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger::~TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {
 	void _kill_pointed() {
 		delete $self;
 	}

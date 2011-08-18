@@ -108,6 +108,9 @@ class AdvApprox_ApproxAFunction {
 		AdvApprox_ApproxAFunction(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const Handle_TColStd_HArray1OfReal &OneDTol, const Handle_TColStd_HArray1OfReal &TwoDTol, const Handle_TColStd_HArray1OfReal &ThreeDTol, const Standard_Real First, const Standard_Real Last, const GeomAbs_Shape Continuity, const Standard_Integer MaxDeg, const Standard_Integer MaxSeg, const AdvApprox_EvaluatorFunction &Func);
 		%feature("autodoc", "1");
 		AdvApprox_ApproxAFunction(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const Handle_TColStd_HArray1OfReal &OneDTol, const Handle_TColStd_HArray1OfReal &TwoDTol, const Handle_TColStd_HArray1OfReal &ThreeDTol, const Standard_Real First, const Standard_Real Last, const GeomAbs_Shape Continuity, const Standard_Integer MaxDeg, const Standard_Integer MaxSeg, const AdvApprox_EvaluatorFunction &Func, const AdvApprox_Cutting &CutTool);
+		%feature("autodoc","Approximation(Standard_Integer TotalDimension, Standard_Integer TotalNumSS, const LocalDimension, Standard_Real First, Standard_Real Last, const CutTool, Standard_Integer ContinuityOrder, Standard_Integer NumMaxCoeffs, Standard_Integer MaxSegments, const TolerancesArray, Standard_Integer code_precis) -> [Standard_Integer, Standard_Integer]");
+
+		static		void Approximation(const Standard_Integer TotalDimension, const Standard_Integer TotalNumSS, const TColStd_Array1OfInteger &LocalDimension, const Standard_Real First, const Standard_Real Last, AdvApprox_EvaluatorFunction & Evaluator, const AdvApprox_Cutting &CutTool, const Standard_Integer ContinuityOrder, const Standard_Integer NumMaxCoeffs, const Standard_Integer MaxSegments, const TColStd_Array1OfReal &TolerancesArray, const Standard_Integer code_precis, Standard_Integer &OutValue, TColStd_Array1OfInteger & NumCoeffPerCurveArray, TColStd_Array1OfReal & LocalCoefficientArray, TColStd_Array1OfReal & IntervalsArray, TColStd_Array1OfReal & ErrorMaxArray, TColStd_Array1OfReal & AverageErrorArray, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -216,6 +219,31 @@ def __del__(self):
 %}
 
 %extend AdvApprox_PrefCutting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AdvApprox_EvaluatorFunction;
+class AdvApprox_EvaluatorFunction {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Evaluate(Standard_Integer* Dimension, Standard_Real* StartEnd, Standard_Real* Parameter, Standard_Integer* DerivativeRequest, Standard_Real* Result, Standard_Integer* ErrorCode);
+		%feature("autodoc", "1");
+		void operator()(Standard_Integer* Dimension, Standard_Real* StartEnd, Standard_Real* Parameter, Standard_Integer* DerivativeRequest, Standard_Real* Result, Standard_Integer* ErrorCode);
+
+};
+%feature("shadow") AdvApprox_EvaluatorFunction::~AdvApprox_EvaluatorFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApprox_EvaluatorFunction {
 	void _kill_pointed() {
 		delete $self;
 	}

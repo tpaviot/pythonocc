@@ -28,9 +28,9 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import TDF
-import Standard
 import XSControl
 import IFSelect
+import Standard
 import TCollection
 import StepBasic
 import StepShape

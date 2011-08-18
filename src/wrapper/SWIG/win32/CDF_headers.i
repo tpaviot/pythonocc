@@ -79,7 +79,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Standard_SStream.hxx>
 #include<CDF.hxx>
 #include<Standard_GUID.hxx>
 #include<Handle_CDM_Document.hxx>

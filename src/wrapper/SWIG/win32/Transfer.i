@@ -87,7 +87,7 @@ class Handle_Transfer_HSequenceOfFinder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_HSequenceOfFinder & operator=(const Transfer_HSequenceOfFinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_HSequenceOfFinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_HSequenceOfFinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_HSequenceOfFinder {
@@ -125,7 +125,7 @@ class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Transfer_SequenceNodeOfSequenceOfBinder & operator=(const Transfer_SequenceNodeOfSequenceOfBinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_SequenceNodeOfSequenceOfBinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_SequenceNodeOfSequenceOfBinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
@@ -163,7 +163,7 @@ class Handle_Transfer_Binder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_Binder & operator=(const Transfer_Binder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_Binder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_Binder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_Binder {
@@ -201,7 +201,7 @@ class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
 		%feature("autodoc", "1");
 		Handle_Transfer_VoidBinder & operator=(const Transfer_VoidBinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_VoidBinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_VoidBinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_VoidBinder {
@@ -239,7 +239,7 @@ class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_Finder & operator=(const Transfer_Finder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_Finder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_Finder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_Finder {
@@ -277,7 +277,7 @@ class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_ResultFromTransient & operator=(const Transfer_ResultFromTransient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_ResultFromTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_ResultFromTransient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_ResultFromTransient {
@@ -315,7 +315,7 @@ class Handle_Transfer_ProcessForFinder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_ProcessForFinder & operator=(const Transfer_ProcessForFinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_ProcessForFinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_ProcessForFinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_ProcessForFinder {
@@ -353,7 +353,7 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public
 		%feature("autodoc", "1");
 		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder & operator=(const Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
@@ -391,7 +391,7 @@ class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_ActorOfProcessForFinder & operator=(const Transfer_ActorOfProcessForFinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_ActorOfProcessForFinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_ActorOfProcessForFinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_ActorOfProcessForFinder {
@@ -429,7 +429,7 @@ class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
 		%feature("autodoc", "1");
 		Handle_Transfer_TransientMapper & operator=(const Transfer_TransientMapper *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_TransientMapper const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_TransientMapper DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_TransientMapper {
@@ -467,7 +467,7 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : pub
 		%feature("autodoc", "1");
 		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient & operator=(const Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
@@ -505,7 +505,7 @@ class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
 		%feature("autodoc", "1");
 		Handle_Transfer_SimpleBinderOfTransient & operator=(const Transfer_SimpleBinderOfTransient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_SimpleBinderOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_SimpleBinderOfTransient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_SimpleBinderOfTransient {
@@ -543,7 +543,7 @@ class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
 		%feature("autodoc", "1");
 		Handle_Transfer_TransferFailure & operator=(const Transfer_TransferFailure *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_TransferFailure const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_TransferFailure DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_TransferFailure {
@@ -581,7 +581,7 @@ class Handle_Transfer_ProcessForTransient : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_ProcessForTransient & operator=(const Transfer_ProcessForTransient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_ProcessForTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_ProcessForTransient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_ProcessForTransient {
@@ -619,7 +619,7 @@ class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransi
 		%feature("autodoc", "1");
 		Handle_Transfer_TransientProcess & operator=(const Transfer_TransientProcess *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_TransientProcess const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_TransientProcess DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_TransientProcess {
@@ -657,7 +657,7 @@ class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Transfer_SequenceNodeOfSequenceOfFinder & operator=(const Transfer_SequenceNodeOfSequenceOfFinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_SequenceNodeOfSequenceOfFinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_SequenceNodeOfSequenceOfFinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
@@ -695,7 +695,7 @@ class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_ActorOfProcessForTransient & operator=(const Transfer_ActorOfProcessForTransient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_ActorOfProcessForTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_ActorOfProcessForTransient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_ActorOfProcessForTransient {
@@ -733,7 +733,7 @@ class Handle_Transfer_ActorOfTransientProcess : public Handle_Transfer_ActorOfPr
 		%feature("autodoc", "1");
 		Handle_Transfer_ActorOfTransientProcess & operator=(const Transfer_ActorOfTransientProcess *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_ActorOfTransientProcess const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_ActorOfTransientProcess DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_ActorOfTransientProcess {
@@ -771,7 +771,7 @@ class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBi
 		%feature("autodoc", "1");
 		Handle_Transfer_BinderOfTransientInteger & operator=(const Transfer_BinderOfTransientInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_BinderOfTransientInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_BinderOfTransientInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_BinderOfTransientInteger {
@@ -795,44 +795,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient;
-class Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient();
-		%feature("autodoc", "1");
-		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient(const Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient(const Transfer_DataMapNodeOfDataMapOfTransientTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient & operator=(const Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient & operator=(const Transfer_DataMapNodeOfDataMapOfTransientTransient *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient {
-	Transfer_DataMapNodeOfDataMapOfTransientTransient* GetObject() {
-	return (Transfer_DataMapNodeOfDataMapOfTransientTransient*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient::~Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Transfer_ActorOfFinderProcess;
 class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProcessForFinder {
 	public:
@@ -847,7 +809,7 @@ class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProce
 		%feature("autodoc", "1");
 		Handle_Transfer_ActorOfFinderProcess & operator=(const Transfer_ActorOfFinderProcess *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_ActorOfFinderProcess const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_ActorOfFinderProcess DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_ActorOfFinderProcess {
@@ -885,7 +847,7 @@ class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientPro
 		%feature("autodoc", "1");
 		Handle_Transfer_ActorDispatch & operator=(const Transfer_ActorDispatch *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_ActorDispatch const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_ActorDispatch DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_ActorDispatch {
@@ -923,7 +885,7 @@ class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
 		%feature("autodoc", "1");
 		Handle_Transfer_DispatchControl & operator=(const Transfer_DispatchControl *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_DispatchControl const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_DispatchControl DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_DispatchControl {
@@ -961,7 +923,7 @@ class Handle_Transfer_FinderProcess : public Handle_Transfer_ProcessForFinder {
 		%feature("autodoc", "1");
 		Handle_Transfer_FinderProcess & operator=(const Transfer_FinderProcess *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_FinderProcess const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_FinderProcess DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_FinderProcess {
@@ -999,7 +961,7 @@ class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_HSequenceOfBinder & operator=(const Transfer_HSequenceOfBinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_HSequenceOfBinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_HSequenceOfBinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_HSequenceOfBinder {
@@ -1037,7 +999,7 @@ class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
 		%feature("autodoc", "1");
 		Handle_Transfer_MultipleBinder & operator=(const Transfer_MultipleBinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_MultipleBinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_MultipleBinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_MultipleBinder {
@@ -1075,7 +1037,7 @@ class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_ResultFromModel & operator=(const Transfer_ResultFromModel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_ResultFromModel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_ResultFromModel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_ResultFromModel {
@@ -1113,7 +1075,7 @@ class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Transfer_MapContainer & operator=(const Transfer_MapContainer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_MapContainer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_MapContainer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_MapContainer {
@@ -1151,7 +1113,7 @@ class Handle_Transfer_TransientListBinder : public Handle_Transfer_Binder {
 		%feature("autodoc", "1");
 		Handle_Transfer_TransientListBinder & operator=(const Transfer_TransientListBinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_TransientListBinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_TransientListBinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_TransientListBinder {
@@ -1189,7 +1151,7 @@ class Handle_Transfer_TransferDeadLoop : public Handle_Transfer_TransferFailure 
 		%feature("autodoc", "1");
 		Handle_Transfer_TransferDeadLoop & operator=(const Transfer_TransferDeadLoop *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_TransferDeadLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_TransferDeadLoop DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Transfer_TransferDeadLoop {
@@ -1407,51 +1369,6 @@ def __del__(self):
 %}
 
 %extend Transfer_ResultFromTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_DataMapOfTransientTransient;
-class Transfer_DataMapOfTransientTransient : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Transfer_DataMapOfTransientTransient(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Transfer_DataMapOfTransientTransient & Assign(const Transfer_DataMapOfTransientTransient &Other);
-		%feature("autodoc", "1");
-		Transfer_DataMapOfTransientTransient & operator=(const Transfer_DataMapOfTransientTransient &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const Handle_Standard_Transient &K);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K);
-
-};
-%feature("shadow") Transfer_DataMapOfTransientTransient::~Transfer_DataMapOfTransientTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_DataMapOfTransientTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2229,7 +2146,7 @@ class Transfer_TransferFailure : public Interface_InterfaceError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_TransferFailure NewInstance(const char * aMessage);
+		static		Handle_Transfer_TransferFailure NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2268,7 +2185,7 @@ class Transfer_TransferDeadLoop : public Transfer_TransferFailure {
 		%feature("autodoc", "1");
 		Transfer_TransferDeadLoop(const char * AString);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_TransferDeadLoop NewInstance(const char * aMessage);
+		static		Handle_Transfer_TransferDeadLoop NewInstance(const char * aMessage="");
 
 };
 %extend Transfer_TransferDeadLoop {
@@ -2676,45 +2593,6 @@ def __del__(self):
 %}
 
 %extend Transfer_ResultFromModel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_DataMapNodeOfDataMapOfTransientTransient;
-class Transfer_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Transfer_DataMapNodeOfDataMapOfTransientTransient(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_DataMapNodeOfDataMapOfTransientTransient {
-	Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient GetHandle() {
-	return *(Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient*) &$self;
-	}
-};
-%extend Transfer_DataMapNodeOfDataMapOfTransientTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Transfer_DataMapNodeOfDataMapOfTransientTransient::~Transfer_DataMapNodeOfDataMapOfTransientTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_DataMapNodeOfDataMapOfTransientTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3352,37 +3230,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Transfer_DataMapIteratorOfDataMapOfTransientTransient;
-class Transfer_DataMapIteratorOfDataMapOfTransientTransient : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		Transfer_DataMapIteratorOfDataMapOfTransientTransient();
-		%feature("autodoc", "1");
-		Transfer_DataMapIteratorOfDataMapOfTransientTransient(const Transfer_DataMapOfTransientTransient &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const Transfer_DataMapOfTransientTransient &aMap);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
-
-};
-%feature("shadow") Transfer_DataMapIteratorOfDataMapOfTransientTransient::~Transfer_DataMapIteratorOfDataMapOfTransientTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_DataMapIteratorOfDataMapOfTransientTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Transfer_TransientProcess;
 class Transfer_TransientProcess : public Transfer_ProcessForTransient {
 	public:
@@ -3456,9 +3303,9 @@ class Transfer_MapContainer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Transfer_MapContainer();
 		%feature("autodoc", "1");
-		void SetMapObjects(Transfer_DataMapOfTransientTransient & theMapObjects);
+		void SetMapObjects(TColStd_DataMapOfTransientTransient & theMapObjects);
 		%feature("autodoc", "1");
-		Transfer_DataMapOfTransientTransient & GetMapObjects();
+		TColStd_DataMapOfTransientTransient & GetMapObjects();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

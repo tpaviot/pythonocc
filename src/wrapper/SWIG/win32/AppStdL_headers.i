@@ -53,10 +53,8 @@ $HeaderURL$
 #include<CDM_COutMessageDriver.hxx>
 #include<CDM_CanCloseStatus.hxx>
 #include<CDM_DataMapIteratorOfMetaDataLookUpTable.hxx>
-#include<CDM_DataMapIteratorOfNamesDirectory.hxx>
 #include<CDM_DataMapIteratorOfPresentationDirectory.hxx>
 #include<CDM_DataMapNodeOfMetaDataLookUpTable.hxx>
-#include<CDM_DataMapNodeOfNamesDirectory.hxx>
 #include<CDM_DataMapNodeOfPresentationDirectory.hxx>
 #include<CDM_Document.hxx>
 #include<CDM_DocumentHasher.hxx>

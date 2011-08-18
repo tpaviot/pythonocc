@@ -31,6 +31,7 @@ import Graphic3d
 import Standard
 import Geom
 import Quantity
+import TColStd
 import HLRAlgo
 import Aspect
 import TopoDS

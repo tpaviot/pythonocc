@@ -33,12 +33,10 @@ $HeaderURL$
 #include<BRepTopAdaptor_HVertex.hxx>
 #include<BRepTopAdaptor_MapOfShapeTool.hxx>
 #include<BRepTopAdaptor_SeqOfPtr.hxx>
-#include<BRepTopAdaptor_SequenceNodeOfSeqOfPtr.hxx>
 #include<BRepTopAdaptor_Tool.hxx>
 #include<BRepTopAdaptor_TopolTool.hxx>
 #include<Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool.hxx>
 #include<Handle_BRepTopAdaptor_HVertex.hxx>
-#include<Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr.hxx>
 #include<Handle_BRepTopAdaptor_TopolTool.hxx>
 
 // Additional headers necessary for compilation.

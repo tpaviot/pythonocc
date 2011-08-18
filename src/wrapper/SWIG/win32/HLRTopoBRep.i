@@ -66,7 +66,7 @@ class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData & operator=(const HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
@@ -104,7 +104,7 @@ class Handle_HLRTopoBRep_OutLiner : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_OutLiner & operator=(const HLRTopoBRep_OutLiner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRTopoBRep_OutLiner const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRTopoBRep_OutLiner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRTopoBRep_OutLiner {
@@ -142,7 +142,7 @@ class Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData & operator=(const HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
@@ -180,7 +180,7 @@ class Handle_HLRTopoBRep_ListNodeOfListOfVData : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_ListNodeOfListOfVData & operator=(const HLRTopoBRep_ListNodeOfListOfVData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRTopoBRep_ListNodeOfListOfVData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRTopoBRep_ListNodeOfListOfVData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRTopoBRep_ListNodeOfListOfVData {

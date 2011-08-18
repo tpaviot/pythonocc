@@ -34,5 +34,5 @@ import Geom2d
 import gp
 import Bisector
 import TColGeom2d
-import MAT2d
+import TColStd
 };

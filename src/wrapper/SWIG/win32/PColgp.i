@@ -66,7 +66,7 @@ class Handle_PColgp_HArray1OfCirc2d : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfCirc2d & operator=(const PColgp_HArray1OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray1OfCirc2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray1OfCirc2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray1OfCirc2d {
@@ -104,7 +104,7 @@ class Handle_PColgp_HArray2OfXY : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfXY & operator=(const PColgp_HArray2OfXY *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfXY const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray2OfXY DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray2OfXY {
@@ -142,7 +142,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY : public Handle_PStandard_Arr
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfXY *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY {
@@ -180,7 +180,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public Handle_PStandard_
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfLin2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
@@ -218,7 +218,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir : public Handle_PStandard_Ar
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfDir *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir {
@@ -256,7 +256,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec : public Handle_PStandard_Ar
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfVec *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec {
@@ -294,7 +294,7 @@ class Handle_PColgp_HArray1OfXYZ : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfXYZ & operator=(const PColgp_HArray1OfXYZ *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray1OfXYZ const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray1OfXYZ DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray1OfXYZ {
@@ -332,7 +332,7 @@ class Handle_PColgp_HArray1OfXY : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfXY & operator=(const PColgp_HArray1OfXY *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray1OfXY const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray1OfXY DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray1OfXY {
@@ -370,7 +370,7 @@ class Handle_PColgp_HArray2OfVec2d : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfVec2d & operator=(const PColgp_HArray2OfVec2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfVec2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray2OfVec2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray2OfVec2d {
@@ -408,7 +408,7 @@ class Handle_PColgp_HArray1OfDir2d : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfDir2d & operator=(const PColgp_HArray1OfDir2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray1OfDir2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray1OfDir2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray1OfDir2d {
@@ -446,7 +446,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir : public Handle_PStandard_Ar
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfDir *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir {
@@ -484,7 +484,7 @@ class Handle_PColgp_HArray2OfXYZ : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfXYZ & operator=(const PColgp_HArray2OfXYZ *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfXYZ const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray2OfXYZ DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray2OfXYZ {
@@ -522,7 +522,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public Handle_PStandard_
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
@@ -560,7 +560,7 @@ class Handle_PColgp_SeqNodeOfHSequenceOfVec : public Handle_PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfVec & operator=(const PColgp_SeqNodeOfHSequenceOfVec *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_SeqNodeOfHSequenceOfVec const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_SeqNodeOfHSequenceOfVec DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_SeqNodeOfHSequenceOfVec {
@@ -598,7 +598,7 @@ class Handle_PColgp_HArray2OfLin2d : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfLin2d & operator=(const PColgp_HArray2OfLin2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfLin2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray2OfLin2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray2OfLin2d {
@@ -636,7 +636,7 @@ class Handle_PColgp_HArray2OfVec : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfVec & operator=(const PColgp_HArray2OfVec *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfVec const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray2OfVec DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray2OfVec {
@@ -674,7 +674,7 @@ class Handle_PColgp_HArray1OfVec2d : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfVec2d & operator=(const PColgp_HArray1OfVec2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray1OfVec2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray1OfVec2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray1OfVec2d {
@@ -712,7 +712,7 @@ class Handle_PColgp_SeqNodeOfHSequenceOfDir : public Handle_PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfDir & operator=(const PColgp_SeqNodeOfHSequenceOfDir *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_SeqNodeOfHSequenceOfDir const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_SeqNodeOfHSequenceOfDir DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_SeqNodeOfHSequenceOfDir {
@@ -750,7 +750,7 @@ class Handle_PColgp_HArray1OfDir : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfDir & operator=(const PColgp_HArray1OfDir *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray1OfDir const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray1OfDir DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray1OfDir {
@@ -788,7 +788,7 @@ class Handle_PColgp_HArray2OfDir2d : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfDir2d & operator=(const PColgp_HArray2OfDir2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfDir2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray2OfDir2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray2OfDir2d {
@@ -826,7 +826,7 @@ class Handle_PColgp_HSequenceOfVec : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfVec & operator=(const PColgp_HSequenceOfVec *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HSequenceOfVec const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HSequenceOfVec DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HSequenceOfVec {
@@ -864,7 +864,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public Handle_PStandard_Ar
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt {
@@ -902,7 +902,7 @@ class Handle_PColgp_HArray1OfLin2d : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfLin2d & operator=(const PColgp_HArray1OfLin2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray1OfLin2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray1OfLin2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray1OfLin2d {
@@ -940,7 +940,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public Handle_PStandard_Ar
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfXYZ *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
@@ -978,7 +978,7 @@ class Handle_PColgp_HSequenceOfDir : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfDir & operator=(const PColgp_HSequenceOfDir *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HSequenceOfDir const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HSequenceOfDir DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HSequenceOfDir {
@@ -1016,7 +1016,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public Handle_PStandard_
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfDir2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d {
@@ -1054,7 +1054,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public Handle_PStandard_Ar
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfXYZ *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
@@ -1092,7 +1092,7 @@ class Handle_PColgp_HArray2OfPnt2d : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfPnt2d & operator=(const PColgp_HArray2OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfPnt2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray2OfPnt2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray2OfPnt2d {
@@ -1130,7 +1130,7 @@ class Handle_PColgp_HArray1OfVec : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfVec & operator=(const PColgp_HArray1OfVec *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray1OfVec const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray1OfVec DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray1OfVec {
@@ -1168,7 +1168,7 @@ class Handle_PColgp_HArray1OfPnt2d : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt2d & operator=(const PColgp_HArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray1OfPnt2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray1OfPnt2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray1OfPnt2d {
@@ -1206,7 +1206,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public Handle_PStandard_
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d {
@@ -1244,7 +1244,7 @@ class Handle_PColgp_SeqNodeOfHSequenceOfPnt : public Handle_PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfPnt & operator=(const PColgp_SeqNodeOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_SeqNodeOfHSequenceOfPnt const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_SeqNodeOfHSequenceOfPnt DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_SeqNodeOfHSequenceOfPnt {
@@ -1282,7 +1282,7 @@ class Handle_PColgp_HArray2OfPnt : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfPnt & operator=(const PColgp_HArray2OfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfPnt const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray2OfPnt DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray2OfPnt {
@@ -1320,7 +1320,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public Handle_PStandard_Ar
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
@@ -1358,7 +1358,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public Handle_PStandard_
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfVec2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
@@ -1396,7 +1396,7 @@ class Handle_PColgp_SeqNodeOfHSequenceOfXYZ : public Handle_PMMgt_PManaged {
 		%feature("autodoc", "1");
 		Handle_PColgp_SeqNodeOfHSequenceOfXYZ & operator=(const PColgp_SeqNodeOfHSequenceOfXYZ *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_SeqNodeOfHSequenceOfXYZ const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_SeqNodeOfHSequenceOfXYZ DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_SeqNodeOfHSequenceOfXYZ {
@@ -1434,7 +1434,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public Handle_PStandard_
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfDir2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
@@ -1472,7 +1472,7 @@ class Handle_PColgp_HArray2OfCirc2d : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfCirc2d & operator=(const PColgp_HArray2OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfCirc2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray2OfCirc2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray2OfCirc2d {
@@ -1510,7 +1510,7 @@ class Handle_PColgp_HArray2OfDir : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray2OfDir & operator=(const PColgp_HArray2OfDir *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfDir const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray2OfDir DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray2OfDir {
@@ -1548,7 +1548,7 @@ class Handle_PColgp_HSequenceOfPnt : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfPnt & operator=(const PColgp_HSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HSequenceOfPnt const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HSequenceOfPnt DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HSequenceOfPnt {
@@ -1586,7 +1586,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public Handle_PStandard
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
@@ -1624,7 +1624,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public Handle_PStandard_
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfLin2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
@@ -1662,7 +1662,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public Handle_PStandard
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
@@ -1700,7 +1700,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public Handle_PStandard_
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfVec2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d {
@@ -1738,7 +1738,7 @@ class Handle_PColgp_HSequenceOfXYZ : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HSequenceOfXYZ & operator=(const PColgp_HSequenceOfXYZ *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HSequenceOfXYZ const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HSequenceOfXYZ DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HSequenceOfXYZ {
@@ -1776,7 +1776,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec : public Handle_PStandard_Ar
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfVec *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec {
@@ -1814,7 +1814,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY : public Handle_PStandard_Arr
 		%feature("autodoc", "1");
 		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfXY *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY {
@@ -1852,7 +1852,7 @@ class Handle_PColgp_HArray1OfPnt : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PColgp_HArray1OfPnt & operator=(const PColgp_HArray1OfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray1OfPnt const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PColgp_HArray1OfPnt DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PColgp_HArray1OfPnt {

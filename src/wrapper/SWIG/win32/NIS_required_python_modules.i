@@ -30,6 +30,7 @@ import GarbageCollector
 import Standard
 import Bnd
 import Quantity
+import NCollection
 import TColStd
 import gp
 };

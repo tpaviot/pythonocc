@@ -27,9 +27,9 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import TopoDS
 import Standard
 import TopTools
+import TopoDS
 import TColStd
 import ShapeExtend
 import gp

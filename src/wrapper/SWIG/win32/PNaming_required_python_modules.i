@@ -29,4 +29,5 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import PTopoDS
+import PCollection
 };

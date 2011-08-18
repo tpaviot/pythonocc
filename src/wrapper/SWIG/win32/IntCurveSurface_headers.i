@@ -40,7 +40,6 @@ $HeaderURL$
 #include<IntCurveSurface_TheCSFunctionOfHInter.hxx>
 #include<IntCurveSurface_TheExactHInter.hxx>
 #include<IntCurveSurface_TheHCurveTool.hxx>
-#include<IntCurveSurface_TheHSurfaceTool.hxx>
 #include<IntCurveSurface_TheInterferenceOfHInter.hxx>
 #include<IntCurveSurface_ThePolygonOfHInter.hxx>
 #include<IntCurveSurface_ThePolygonToolOfHInter.hxx>
@@ -70,15 +69,6 @@ $HeaderURL$
 #include<Handle_Geom_BezierCurve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
-#include<gp_Pln.hxx>
-#include<gp_Cylinder.hxx>
-#include<gp_Cone.hxx>
-#include<gp_Torus.hxx>
-#include<gp_Sphere.hxx>
-#include<Handle_Geom_BezierSurface.hxx>
-#include<Handle_Geom_BSplineSurface.hxx>
-#include<gp_Ax1.hxx>
-#include<gp_Dir.hxx>
 #include<math_FunctionSetRoot.hxx>
 #include<IntSurf_Quadric.hxx>
 #include<math_Vector.hxx>
