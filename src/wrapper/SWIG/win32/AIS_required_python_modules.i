@@ -39,6 +39,7 @@ import gp
 import TCollection
 import DsgPrs
 import SelectMgr
+import Poly
 import Bnd
 import TopAbs
 import TopLoc

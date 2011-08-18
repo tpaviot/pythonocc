@@ -31,8 +31,9 @@ import TopoDS
 import Standard
 import Transfer
 import Geom2d
+import TCollection
 import StepGeom
+import StepRepr
 import StepShape
 import gp
-import TCollection
 };

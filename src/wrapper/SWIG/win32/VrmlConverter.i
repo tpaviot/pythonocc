@@ -79,7 +79,7 @@ class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_PointAspect & operator=(const VrmlConverter_PointAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_PointAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_PointAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_PointAspect {
@@ -117,7 +117,7 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Drawer & operator=(const VrmlConverter_Drawer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_Drawer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_Drawer {
@@ -155,7 +155,7 @@ class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_ShadingAspect & operator=(const VrmlConverter_ShadingAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_ShadingAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_ShadingAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_ShadingAspect {
@@ -193,7 +193,7 @@ class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect & operator=(const VrmlConverter_LineAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_LineAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_LineAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_LineAspect {
@@ -231,7 +231,7 @@ class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Projector & operator=(const VrmlConverter_Projector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_Projector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_Projector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_Projector {
@@ -269,7 +269,7 @@ class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_IsoAspect & operator=(const VrmlConverter_IsoAspect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_IsoAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_VrmlConverter_IsoAspect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_VrmlConverter_IsoAspect {

@@ -66,7 +66,7 @@ class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamingDriver & operator=(const XmlMNaming_NamingDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlMNaming_NamingDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMNaming_NamingDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlMNaming_NamingDriver {
@@ -104,7 +104,7 @@ class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamedShapeDriver & operator=(const XmlMNaming_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlMNaming_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMNaming_NamedShapeDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_XmlMNaming_NamedShapeDriver {
@@ -145,6 +145,8 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 		void WriteShapeSection(XmlObjMgt_Element & anElement);
 		%feature("autodoc", "1");
 		void Clear();
+		%feature("autodoc", "1");
+		TopTools_LocationSet & GetShapesLocations();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -319,6 +321,10 @@ class XmlMNaming {
 		XmlMNaming();
 		%feature("autodoc", "1");
 		static		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMessageDriver);
+		%feature("autodoc", "1");
+		static		void SetDocumentVersion(const Standard_Integer DocVersion);
+		%feature("autodoc", "1");
+		static		Standard_Integer DocumentVersion();
 
 };
 %feature("shadow") XmlMNaming::~XmlMNaming %{

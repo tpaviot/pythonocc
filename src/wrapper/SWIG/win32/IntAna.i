@@ -79,7 +79,7 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_IntAna_ListNodeOfListOfCurve & operator=(const IntAna_ListNodeOfListOfCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntAna_ListNodeOfListOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntAna_ListNodeOfListOfCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntAna_ListNodeOfListOfCurve {

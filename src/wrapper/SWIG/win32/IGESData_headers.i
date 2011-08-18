@@ -173,8 +173,8 @@ $HeaderURL$
 #include<Handle_Standard_Type.hxx>
 #include<IGESData.hxx>
 #include<Handle_Interface_UndefinedContent.hxx>
-#include<Handle_Interface_InterfaceModel.hxx>
 #include<Handle_Interface_Protocol.hxx>
+#include<Handle_Interface_InterfaceModel.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<Interface_ShareTool.hxx>
 #include<Interface_CopyTool.hxx>

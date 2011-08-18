@@ -26,9 +26,7 @@ $HeaderURL$
 %{
 #include <BinMDF_ADriver.hxx>
 #include <BinMDF_ADriverTable.hxx>
-#include <BinMDF_DataMapIteratorOfStringIdMap.hxx>
 #include <BinMDF_DataMapIteratorOfTypeADriverMap.hxx>
-#include <BinMDF_DataMapNodeOfStringIdMap.hxx>
 #include <BinMDF_DataMapNodeOfTypeADriverMap.hxx>
 #include <BinMDF_DoubleMapIteratorOfTypeIdMap.hxx>
 #include <BinMDF_DoubleMapNodeOfTypeIdMap.hxx>
@@ -37,8 +35,6 @@ $HeaderURL$
 #include <BinMDF_TagSourceDriver.hxx>
 #include <BinMDF_TypeADriverMap.hxx>
 #include <BinMDF_TypeIdMap.hxx>
-#include <BinObjMgt_DataMapIteratorOfRRelocationTable.hxx>
-#include <BinObjMgt_DataMapNodeOfRRelocationTable.hxx>
 #include <BinObjMgt_PByte.hxx>
 #include <BinObjMgt_PChar.hxx>
 #include <BinObjMgt_PExtChar.hxx>
@@ -48,17 +44,12 @@ $HeaderURL$
 #include <BinObjMgt_Persistent.hxx>
 #include <BinObjMgt_RRelocationTable.hxx>
 #include <BinObjMgt_SRelocationTable.hxx>
-#include <BinObjMgt_SequenceNodeOfSequenceOfAddress.hxx>
-#include <BinObjMgt_SequenceOfAddress.hxx>
 #include <Handle_BinMDF_ADriver.hxx>
 #include <Handle_BinMDF_ADriverTable.hxx>
-#include <Handle_BinMDF_DataMapNodeOfStringIdMap.hxx>
 #include <Handle_BinMDF_DataMapNodeOfTypeADriverMap.hxx>
 #include <Handle_BinMDF_DoubleMapNodeOfTypeIdMap.hxx>
 #include <Handle_BinMDF_ReferenceDriver.hxx>
 #include <Handle_BinMDF_TagSourceDriver.hxx>
-#include <Handle_BinObjMgt_DataMapNodeOfRRelocationTable.hxx>
-#include <Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
 #include <Handle_Standard_DimensionError.hxx>
@@ -96,6 +87,7 @@ $HeaderURL$
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
 #include <Standard_DimensionMismatch.hxx>
@@ -119,6 +111,7 @@ $HeaderURL$
 #include <Standard_MMgrOpt.hxx>
 #include <Standard_MMgrRaw.hxx>
 #include <Standard_MMgrRoot.hxx>
+#include <Standard_MMgrTBBalloc.hxx>
 #include <Standard_Macro.hxx>
 #include <Standard_MultiplyDefined.hxx>
 #include <Standard_Mutex.hxx>
@@ -134,6 +127,7 @@ $HeaderURL$
 #include <Standard_OutOfMemory.hxx>
 #include <Standard_OutOfRange.hxx>
 #include <Standard_Overflow.hxx>
+#include <Standard_PByte.hxx>
 #include <Standard_PCharacter.hxx>
 #include <Standard_PErrorHandler.hxx>
 #include <Standard_PExtCharacter.hxx>

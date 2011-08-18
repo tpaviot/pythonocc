@@ -28,9 +28,9 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import gp
+import Quantity
 import Aspect
 import OSD
 import TColStd
-import gp
-import Quantity
 };

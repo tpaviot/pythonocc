@@ -66,7 +66,7 @@ class Handle_IGESSelect_SignLevelNumber : public Handle_IFSelect_Signature {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SignLevelNumber & operator=(const IGESSelect_SignLevelNumber *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SignLevelNumber const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SignLevelNumber DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SignLevelNumber {
@@ -104,7 +104,7 @@ class Handle_IGESSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_FileModifier & operator=(const IGESSelect_FileModifier *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_FileModifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_FileModifier DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_FileModifier {
@@ -142,7 +142,7 @@ class Handle_IGESSelect_FloatFormat : public Handle_IGESSelect_FileModifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_FloatFormat & operator=(const IGESSelect_FloatFormat *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_FloatFormat const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_FloatFormat DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_FloatFormat {
@@ -180,7 +180,7 @@ class Handle_IGESSelect_SelectPCurves : public Handle_IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectPCurves & operator=(const IGESSelect_SelectPCurves *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectPCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectPCurves DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectPCurves {
@@ -218,7 +218,7 @@ class Handle_IGESSelect_ModelModifier : public Handle_IFSelect_Modifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_ModelModifier & operator=(const IGESSelect_ModelModifier *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_ModelModifier const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_ModelModifier DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_ModelModifier {
@@ -256,7 +256,7 @@ class Handle_IGESSelect_UpdateCreationDate : public Handle_IGESSelect_ModelModif
 		%feature("autodoc", "1");
 		Handle_IGESSelect_UpdateCreationDate & operator=(const IGESSelect_UpdateCreationDate *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_UpdateCreationDate const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_UpdateCreationDate DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_UpdateCreationDate {
@@ -294,7 +294,7 @@ class Handle_IGESSelect_SelectFromSingleView : public Handle_IFSelect_SelectDedu
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectFromSingleView & operator=(const IGESSelect_SelectFromSingleView *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectFromSingleView const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectFromSingleView DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectFromSingleView {
@@ -332,7 +332,7 @@ class Handle_IGESSelect_RemoveCurves : public Handle_IGESSelect_ModelModifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_RemoveCurves & operator=(const IGESSelect_RemoveCurves *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_RemoveCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_RemoveCurves DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_RemoveCurves {
@@ -370,7 +370,7 @@ class Handle_IGESSelect_IGESTypeForm : public Handle_IFSelect_Signature {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_IGESTypeForm & operator=(const IGESSelect_IGESTypeForm *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_IGESTypeForm const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_IGESTypeForm DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_IGESTypeForm {
@@ -408,7 +408,7 @@ class Handle_IGESSelect_SetGlobalParameter : public Handle_IGESSelect_ModelModif
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SetGlobalParameter & operator=(const IGESSelect_SetGlobalParameter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SetGlobalParameter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SetGlobalParameter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SetGlobalParameter {
@@ -446,7 +446,7 @@ class Handle_IGESSelect_SelectName : public Handle_IFSelect_SelectExtract {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectName & operator=(const IGESSelect_SelectName *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectName const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectName DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectName {
@@ -484,7 +484,7 @@ class Handle_IGESSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_WorkLibrary & operator=(const IGESSelect_WorkLibrary *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_WorkLibrary DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_WorkLibrary {
@@ -522,7 +522,7 @@ class Handle_IGESSelect_RebuildGroups : public Handle_IGESSelect_ModelModifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_RebuildGroups & operator=(const IGESSelect_RebuildGroups *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_RebuildGroups const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_RebuildGroups DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_RebuildGroups {
@@ -560,7 +560,7 @@ class Handle_IGESSelect_DispPerDrawing : public Handle_IFSelect_Dispatch {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_DispPerDrawing & operator=(const IGESSelect_DispPerDrawing *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_DispPerDrawing const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_DispPerDrawing DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_DispPerDrawing {
@@ -598,7 +598,7 @@ class Handle_IGESSelect_SelectBypassGroup : public Handle_IFSelect_SelectExplore
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectBypassGroup & operator=(const IGESSelect_SelectBypassGroup *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectBypassGroup const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectBypassGroup DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectBypassGroup {
@@ -636,7 +636,7 @@ class Handle_IGESSelect_ChangeLevelNumber : public Handle_IGESSelect_ModelModifi
 		%feature("autodoc", "1");
 		Handle_IGESSelect_ChangeLevelNumber & operator=(const IGESSelect_ChangeLevelNumber *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_ChangeLevelNumber const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_ChangeLevelNumber DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_ChangeLevelNumber {
@@ -674,7 +674,7 @@ class Handle_IGESSelect_SelectLevelNumber : public Handle_IFSelect_SelectExtract
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectLevelNumber & operator=(const IGESSelect_SelectLevelNumber *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectLevelNumber const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectLevelNumber DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectLevelNumber {
@@ -712,7 +712,7 @@ class Handle_IGESSelect_SelectSingleViewFrom : public Handle_IFSelect_SelectDedu
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectSingleViewFrom & operator=(const IGESSelect_SelectSingleViewFrom *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectSingleViewFrom const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectSingleViewFrom DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectSingleViewFrom {
@@ -750,7 +750,7 @@ class Handle_IGESSelect_EditHeader : public Handle_IFSelect_Editor {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_EditHeader & operator=(const IGESSelect_EditHeader *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_EditHeader const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_EditHeader DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_EditHeader {
@@ -788,7 +788,7 @@ class Handle_IGESSelect_AddFileComment : public Handle_IGESSelect_FileModifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_AddFileComment & operator=(const IGESSelect_AddFileComment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_AddFileComment const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_AddFileComment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_AddFileComment {
@@ -826,7 +826,7 @@ class Handle_IGESSelect_SetVersion5 : public Handle_IGESSelect_ModelModifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SetVersion5 & operator=(const IGESSelect_SetVersion5 *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SetVersion5 const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SetVersion5 DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SetVersion5 {
@@ -864,7 +864,7 @@ class Handle_IGESSelect_ComputeStatus : public Handle_IGESSelect_ModelModifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_ComputeStatus & operator=(const IGESSelect_ComputeStatus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_ComputeStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_ComputeStatus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_ComputeStatus {
@@ -902,7 +902,7 @@ class Handle_IGESSelect_SelectFromDrawing : public Handle_IFSelect_SelectDeduct 
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectFromDrawing & operator=(const IGESSelect_SelectFromDrawing *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectFromDrawing const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectFromDrawing DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectFromDrawing {
@@ -940,7 +940,7 @@ class Handle_IGESSelect_RebuildDrawings : public Handle_IGESSelect_ModelModifier
 		%feature("autodoc", "1");
 		Handle_IGESSelect_RebuildDrawings & operator=(const IGESSelect_RebuildDrawings *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_RebuildDrawings const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_RebuildDrawings DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_RebuildDrawings {
@@ -978,7 +978,7 @@ class Handle_IGESSelect_ChangeLevelList : public Handle_IGESSelect_ModelModifier
 		%feature("autodoc", "1");
 		Handle_IGESSelect_ChangeLevelList & operator=(const IGESSelect_ChangeLevelList *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_ChangeLevelList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_ChangeLevelList DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_ChangeLevelList {
@@ -1016,7 +1016,7 @@ class Handle_IGESSelect_CounterOfLevelNumber : public Handle_IFSelect_SignCounte
 		%feature("autodoc", "1");
 		Handle_IGESSelect_CounterOfLevelNumber & operator=(const IGESSelect_CounterOfLevelNumber *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_CounterOfLevelNumber const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_CounterOfLevelNumber DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_CounterOfLevelNumber {
@@ -1054,7 +1054,7 @@ class Handle_IGESSelect_SetLabel : public Handle_IGESSelect_ModelModifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SetLabel & operator=(const IGESSelect_SetLabel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SetLabel const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SetLabel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SetLabel {
@@ -1092,7 +1092,7 @@ class Handle_IGESSelect_SplineToBSpline : public Handle_IFSelect_Transformer {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SplineToBSpline & operator=(const IGESSelect_SplineToBSpline *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SplineToBSpline const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SplineToBSpline DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SplineToBSpline {
@@ -1130,7 +1130,7 @@ class Handle_IGESSelect_IGESName : public Handle_IFSelect_Signature {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_IGESName & operator=(const IGESSelect_IGESName *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_IGESName const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_IGESName DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_IGESName {
@@ -1168,7 +1168,7 @@ class Handle_IGESSelect_SelectBasicGeom : public Handle_IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectBasicGeom & operator=(const IGESSelect_SelectBasicGeom *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectBasicGeom const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectBasicGeom DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectBasicGeom {
@@ -1206,7 +1206,7 @@ class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_Dumper & operator=(const IGESSelect_Dumper *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_Dumper const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_Dumper DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_Dumper {
@@ -1244,7 +1244,7 @@ class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_ViewSorter & operator=(const IGESSelect_ViewSorter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_ViewSorter const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_ViewSorter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_ViewSorter {
@@ -1282,7 +1282,7 @@ class Handle_IGESSelect_SelectFaces : public Handle_IFSelect_SelectExplore {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectFaces & operator=(const IGESSelect_SelectFaces *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectFaces const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectFaces DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectFaces {
@@ -1320,7 +1320,7 @@ class Handle_IGESSelect_SelectSubordinate : public Handle_IFSelect_SelectExtract
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectSubordinate & operator=(const IGESSelect_SelectSubordinate *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectSubordinate const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectSubordinate DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectSubordinate {
@@ -1358,7 +1358,7 @@ class Handle_IGESSelect_EditDirPart : public Handle_IFSelect_Editor {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_EditDirPart & operator=(const IGESSelect_EditDirPart *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_EditDirPart const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_EditDirPart DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_EditDirPart {
@@ -1396,7 +1396,7 @@ class Handle_IGESSelect_AddGroup : public Handle_IGESSelect_ModelModifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_AddGroup & operator=(const IGESSelect_AddGroup *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_AddGroup const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_AddGroup DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_AddGroup {
@@ -1434,7 +1434,7 @@ class Handle_IGESSelect_DispPerSingleView : public Handle_IFSelect_Dispatch {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_DispPerSingleView & operator=(const IGESSelect_DispPerSingleView *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_DispPerSingleView const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_DispPerSingleView DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_DispPerSingleView {
@@ -1472,7 +1472,7 @@ class Handle_IGESSelect_UpdateLastChange : public Handle_IGESSelect_ModelModifie
 		%feature("autodoc", "1");
 		Handle_IGESSelect_UpdateLastChange & operator=(const IGESSelect_UpdateLastChange *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_UpdateLastChange const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_UpdateLastChange DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_UpdateLastChange {
@@ -1510,7 +1510,7 @@ class Handle_IGESSelect_SelectBypassSubfigure : public Handle_IFSelect_SelectExp
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectBypassSubfigure & operator=(const IGESSelect_SelectBypassSubfigure *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectBypassSubfigure const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectBypassSubfigure DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectBypassSubfigure {
@@ -1548,7 +1548,7 @@ class Handle_IGESSelect_AutoCorrect : public Handle_IGESSelect_ModelModifier {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_AutoCorrect & operator=(const IGESSelect_AutoCorrect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_AutoCorrect const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_AutoCorrect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_AutoCorrect {
@@ -1586,7 +1586,7 @@ class Handle_IGESSelect_SelectVisibleStatus : public Handle_IFSelect_SelectExtra
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectVisibleStatus & operator=(const IGESSelect_SelectVisibleStatus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectVisibleStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectVisibleStatus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectVisibleStatus {
@@ -1624,7 +1624,7 @@ class Handle_IGESSelect_UpdateFileName : public Handle_IGESSelect_ModelModifier 
 		%feature("autodoc", "1");
 		Handle_IGESSelect_UpdateFileName & operator=(const IGESSelect_UpdateFileName *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_UpdateFileName const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_UpdateFileName DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_UpdateFileName {
@@ -1662,7 +1662,7 @@ class Handle_IGESSelect_SignColor : public Handle_IFSelect_Signature {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SignColor & operator=(const IGESSelect_SignColor *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SignColor const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SignColor DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SignColor {
@@ -1700,7 +1700,7 @@ class Handle_IGESSelect_SignStatus : public Handle_IFSelect_Signature {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SignStatus & operator=(const IGESSelect_SignStatus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SignStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SignStatus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SignStatus {
@@ -1738,7 +1738,7 @@ class Handle_IGESSelect_Activator : public Handle_IFSelect_Activator {
 		%feature("autodoc", "1");
 		Handle_IGESSelect_Activator & operator=(const IGESSelect_Activator *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_Activator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_Activator DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_Activator {
@@ -1776,7 +1776,7 @@ class Handle_IGESSelect_SelectDrawingFrom : public Handle_IFSelect_SelectDeduct 
 		%feature("autodoc", "1");
 		Handle_IGESSelect_SelectDrawingFrom & operator=(const IGESSelect_SelectDrawingFrom *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectDrawingFrom const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectDrawingFrom DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSelect_SelectDrawingFrom {

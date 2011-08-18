@@ -35,4 +35,5 @@ import TDF
 import TopoDS
 import TDataStd
 import Quantity
+import Aspect
 };

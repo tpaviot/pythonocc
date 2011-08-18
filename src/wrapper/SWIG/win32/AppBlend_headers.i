@@ -28,20 +28,15 @@ $HeaderURL$
 // Headers necessary to define wrapped classes.
 
 #include<AppBlend_Approx.hxx>
-#include<AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d.hxx>
-#include<AppBlend_SequenceOfArray1OfPnt2d.hxx>
-#include<Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d.hxx>
 
 // Additional headers necessary for compilation.
 
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
 #include<TColgp_Array2OfPnt.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
-#include<Handle_TColgp_HArray1OfPnt2d.hxx>
 %}

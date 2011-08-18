@@ -228,6 +228,75 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepPrim_Builder;
+class BRepPrim_Builder {
+	public:
+		%feature("autodoc", "1");
+		BRepPrim_Builder();
+		%feature("autodoc", "1");
+		BRepPrim_Builder(const BRep_Builder &B);
+		%feature("autodoc", "1");
+		const BRep_Builder & Builder() const;
+		%feature("autodoc", "1");
+		void MakeShell(TopoDS_Shell & S) const;
+		%feature("autodoc", "1");
+		void MakeFace(TopoDS_Face & F, const gp_Pln P) const;
+		%feature("autodoc", "1");
+		void MakeWire(TopoDS_Wire & W) const;
+		%feature("autodoc", "1");
+		void MakeDegeneratedEdge(TopoDS_Edge & E) const;
+		%feature("autodoc", "1");
+		void MakeEdge(TopoDS_Edge & E, const gp_Lin L) const;
+		%feature("autodoc", "1");
+		void MakeEdge(TopoDS_Edge & E, const gp_Circ C) const;
+		%feature("autodoc", "1");
+		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face F, const gp_Lin2d L) const;
+		%feature("autodoc", "1");
+		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face F, const gp_Lin2d L1, const gp_Lin2d L2) const;
+		%feature("autodoc", "1");
+		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face F, const gp_Circ2d C) const;
+		%feature("autodoc", "1");
+		void MakeVertex(TopoDS_Vertex & V, const gp_Pnt P) const;
+		%feature("autodoc", "1");
+		void ReverseFace(TopoDS_Face & F) const;
+		%feature("autodoc", "1");
+		void AddEdgeVertex(TopoDS_Edge & E, const TopoDS_Vertex V, const Standard_Real P, const Standard_Boolean direct) const;
+		%feature("autodoc", "1");
+		void AddEdgeVertex(TopoDS_Edge & E, const TopoDS_Vertex V, const Standard_Real P1, const Standard_Real P2) const;
+		%feature("autodoc", "1");
+		void SetParameters(TopoDS_Edge & E, const TopoDS_Vertex V, const Standard_Real P1, const Standard_Real P2) const;
+		%feature("autodoc", "1");
+		void AddWireEdge(TopoDS_Wire & W, const TopoDS_Edge E, const Standard_Boolean direct) const;
+		%feature("autodoc", "1");
+		void AddFaceWire(TopoDS_Face & F, const TopoDS_Wire W) const;
+		%feature("autodoc", "1");
+		void AddShellFace(TopoDS_Shell & Sh, const TopoDS_Face F) const;
+		%feature("autodoc", "1");
+		void CompleteEdge(TopoDS_Edge & E) const;
+		%feature("autodoc", "1");
+		void CompleteWire(TopoDS_Wire & W) const;
+		%feature("autodoc", "1");
+		void CompleteFace(TopoDS_Face & F) const;
+		%feature("autodoc", "1");
+		void CompleteShell(TopoDS_Shell & S) const;
+
+};
+%feature("shadow") BRepPrim_Builder::~BRepPrim_Builder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepPrim_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepPrim_FaceBuilder;
 class BRepPrim_FaceBuilder {
 	public:
@@ -365,75 +434,6 @@ def __del__(self):
 %}
 
 %extend BRepPrim_Wedge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepPrim_Builder;
-class BRepPrim_Builder {
-	public:
-		%feature("autodoc", "1");
-		BRepPrim_Builder();
-		%feature("autodoc", "1");
-		BRepPrim_Builder(const BRep_Builder &B);
-		%feature("autodoc", "1");
-		const BRep_Builder & Builder() const;
-		%feature("autodoc", "1");
-		void MakeShell(TopoDS_Shell & S) const;
-		%feature("autodoc", "1");
-		void MakeFace(TopoDS_Face & F, const gp_Pln P) const;
-		%feature("autodoc", "1");
-		void MakeWire(TopoDS_Wire & W) const;
-		%feature("autodoc", "1");
-		void MakeDegeneratedEdge(TopoDS_Edge & E) const;
-		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & E, const gp_Lin L) const;
-		%feature("autodoc", "1");
-		void MakeEdge(TopoDS_Edge & E, const gp_Circ C) const;
-		%feature("autodoc", "1");
-		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face F, const gp_Lin2d L) const;
-		%feature("autodoc", "1");
-		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face F, const gp_Lin2d L1, const gp_Lin2d L2) const;
-		%feature("autodoc", "1");
-		void SetPCurve(TopoDS_Edge & E, const TopoDS_Face F, const gp_Circ2d C) const;
-		%feature("autodoc", "1");
-		void MakeVertex(TopoDS_Vertex & V, const gp_Pnt P) const;
-		%feature("autodoc", "1");
-		void ReverseFace(TopoDS_Face & F) const;
-		%feature("autodoc", "1");
-		void AddEdgeVertex(TopoDS_Edge & E, const TopoDS_Vertex V, const Standard_Real P, const Standard_Boolean direct) const;
-		%feature("autodoc", "1");
-		void AddEdgeVertex(TopoDS_Edge & E, const TopoDS_Vertex V, const Standard_Real P1, const Standard_Real P2) const;
-		%feature("autodoc", "1");
-		void SetParameters(TopoDS_Edge & E, const TopoDS_Vertex V, const Standard_Real P1, const Standard_Real P2) const;
-		%feature("autodoc", "1");
-		void AddWireEdge(TopoDS_Wire & W, const TopoDS_Edge E, const Standard_Boolean direct) const;
-		%feature("autodoc", "1");
-		void AddFaceWire(TopoDS_Face & F, const TopoDS_Wire W) const;
-		%feature("autodoc", "1");
-		void AddShellFace(TopoDS_Shell & Sh, const TopoDS_Face F) const;
-		%feature("autodoc", "1");
-		void CompleteEdge(TopoDS_Edge & E) const;
-		%feature("autodoc", "1");
-		void CompleteWire(TopoDS_Wire & W) const;
-		%feature("autodoc", "1");
-		void CompleteFace(TopoDS_Face & F) const;
-		%feature("autodoc", "1");
-		void CompleteShell(TopoDS_Shell & S) const;
-
-};
-%feature("shadow") BRepPrim_Builder::~BRepPrim_Builder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepPrim_Builder {
 	void _kill_pointed() {
 		delete $self;
 	}

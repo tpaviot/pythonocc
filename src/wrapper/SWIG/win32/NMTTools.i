@@ -1310,8 +1310,6 @@ class NMTTools_PaveFiller {
 		%feature("autodoc", "1");
 		BOPTools_PavePool & ChangePavePool();
 		%feature("autodoc", "1");
-		BOPTools_PavePool & ChangePavePoolNew();
-		%feature("autodoc", "1");
 		const NMTTools_CommonBlockPool & CommonBlockPool() const;
 		%feature("autodoc", "1");
 		NMTTools_CommonBlockPool & ChangeCommonBlockPool();
@@ -1396,6 +1394,12 @@ class NMTTools_PaveFiller {
 		void SharedEdges(const Standard_Integer nF1, const Standard_Integer nF2, TColStd_ListOfInteger & aLNE, TopTools_ListOfShape & aLSE);
 		%feature("autodoc", "1");
 		void FuseVertices(const TopoDS_Shape aC, TopTools_DataMapOfShapeShape & aDMVV) const;
+		%feature("autodoc", "1");
+		void TreatPaveBlocks(NMTTools_ListOfCommonBlock & theLCB);
+		%feature("autodoc", "1");
+		BOPTools_PavePool & ChangePavePoolNew();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckCoincidence(const BOPTools_PaveBlock &aPB1, const BOPTools_PaveBlock &aPB2);
 
 };
 %feature("shadow") NMTTools_PaveFiller::~NMTTools_PaveFiller %{

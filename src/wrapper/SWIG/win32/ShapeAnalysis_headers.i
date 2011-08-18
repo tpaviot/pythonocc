@@ -28,7 +28,6 @@ $HeaderURL$
 // Headers necessary to define wrapped classes.
 
 #include<Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal.hxx>
-#include<Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include<Handle_ShapeAnalysis_FreeBoundData.hxx>
 #include<Handle_ShapeAnalysis_HSequenceOfFreeBounds.hxx>
 #include<Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds.hxx>
@@ -41,11 +40,8 @@ $HeaderURL$
 #include<ShapeAnalysis_CheckSmallFace.hxx>
 #include<ShapeAnalysis_Curve.hxx>
 #include<ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal.hxx>
-#include<ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include<ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal.hxx>
-#include<ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include<ShapeAnalysis_DataMapOfShapeListOfReal.hxx>
-#include<ShapeAnalysis_DataMapOfShapeReal.hxx>
 #include<ShapeAnalysis_Edge.hxx>
 #include<ShapeAnalysis_FreeBoundData.hxx>
 #include<ShapeAnalysis_FreeBounds.hxx>
@@ -254,9 +250,7 @@ $HeaderURL$
 #include<GeomFill_SectionGenerator.hxx>
 #include<GeomFill_SectionLaw.hxx>
 #include<GeomFill_SectionPlacement.hxx>
-#include<GeomFill_SequenceNodeOfSequenceOfCurve.hxx>
 #include<GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
-#include<GeomFill_SequenceOfCurve.hxx>
 #include<GeomFill_SequenceOfTrsf.hxx>
 #include<GeomFill_SimpleBound.hxx>
 #include<GeomFill_SnglrFunc.hxx>

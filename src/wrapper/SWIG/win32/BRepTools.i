@@ -66,7 +66,7 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepTools_Modification & operator=(const BRepTools_Modification *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepTools_Modification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_Modification DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_Modification {
@@ -104,7 +104,7 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 		%feature("autodoc", "1");
 		Handle_BRepTools_GTrsfModification & operator=(const BRepTools_GTrsfModification *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepTools_GTrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_GTrsfModification DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_GTrsfModification {
@@ -142,7 +142,7 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 		%feature("autodoc", "1");
 		Handle_BRepTools_TrsfModification & operator=(const BRepTools_TrsfModification *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepTools_TrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_TrsfModification DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_TrsfModification {
@@ -180,7 +180,7 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepTools_ReShape & operator=(const BRepTools_ReShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepTools_ReShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_ReShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_ReShape {
@@ -218,7 +218,7 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 		%feature("autodoc", "1");
 		Handle_BRepTools_NurbsConvertModification & operator=(const BRepTools_NurbsConvertModification *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepTools_NurbsConvertModification const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_NurbsConvertModification DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_NurbsConvertModification {
@@ -256,7 +256,7 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d & operator=(const BRepTools_DataMapNodeOfMapOfVertexPnt2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d {

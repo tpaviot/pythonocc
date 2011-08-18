@@ -346,13 +346,23 @@ class GeomAPI_PointsToBSpline {
 		%feature("autodoc", "1");
 		GeomAPI_PointsToBSpline(const TColgp_Array1OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
+		GeomAPI_PointsToBSpline(const TColgp_Array1OfPnt &Points, const Approx_ParametrizationType ParType, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
 		GeomAPI_PointsToBSpline(const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		GeomAPI_PointsToBSpline(const TColgp_Array1OfPnt &Points, const Standard_Real Weight1, const Standard_Real Weight2, const Standard_Real Weight3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
 		void Init(const TColgp_Array1OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &Points, const Approx_ParametrizationType ParType, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
 		void Init(const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &Points, const Standard_Real Weight1, const Standard_Real Weight2, const Standard_Real Weight3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
 		const Handle_Geom_BSplineCurve & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
 
 };
 %feature("shadow") GeomAPI_PointsToBSpline::~GeomAPI_PointsToBSpline %{
@@ -444,17 +454,29 @@ class GeomAPI_PointsToBSplineSurface {
 		%feature("autodoc", "1");
 		GeomAPI_PointsToBSplineSurface(const TColgp_Array2OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
+		GeomAPI_PointsToBSplineSurface(const TColgp_Array2OfPnt &Points, const Approx_ParametrizationType ParType, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		GeomAPI_PointsToBSplineSurface(const TColgp_Array2OfPnt &Points, const Standard_Real Weight1, const Standard_Real Weight2, const Standard_Real Weight3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
 		GeomAPI_PointsToBSplineSurface(const TColStd_Array2OfReal &ZPoints, const Standard_Real X0, const Standard_Real dX, const Standard_Real Y0, const Standard_Real dY, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
 		void Init(const TColgp_Array2OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
 		void Interpolate(const TColgp_Array2OfPnt &Points);
 		%feature("autodoc", "1");
+		void Interpolate(const TColgp_Array2OfPnt &Points, const Approx_ParametrizationType ParType);
+		%feature("autodoc", "1");
 		void Init(const TColStd_Array2OfReal &ZPoints, const Standard_Real X0, const Standard_Real dX, const Standard_Real Y0, const Standard_Real dY, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
 		void Interpolate(const TColStd_Array2OfReal &ZPoints, const Standard_Real X0, const Standard_Real dX, const Standard_Real Y0, const Standard_Real dY);
 		%feature("autodoc", "1");
+		void Init(const TColgp_Array2OfPnt &Points, const Approx_ParametrizationType ParType, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array2OfPnt &Points, const Standard_Real Weight1, const Standard_Real Weight2, const Standard_Real Weight3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
 		const Handle_Geom_BSplineSurface & Surface() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
 
 };
 %feature("shadow") GeomAPI_PointsToBSplineSurface::~GeomAPI_PointsToBSplineSurface %{

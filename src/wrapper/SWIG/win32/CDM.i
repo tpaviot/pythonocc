@@ -50,6 +50,7 @@ $HeaderURL$
 %include CDM_headers.i
 
 typedef CDM_Document * CDM_DocumentPointer;
+typedef TColStd_DataMapOfStringInteger CDM_NamesDirectory;
 
 enum CDM_CanCloseStatus {
 	CDM_CCS_OK,
@@ -75,7 +76,7 @@ class Handle_CDM_Reference : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDM_Reference & operator=(const CDM_Reference *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_Reference const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_Reference DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_Reference {
@@ -99,44 +100,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_CDM_StackNodeOfStackOfDocument;
-class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument();
-		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument(const Handle_CDM_StackNodeOfStackOfDocument &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument(const CDM_StackNodeOfStackOfDocument *anItem);
-		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument & operator=(const Handle_CDM_StackNodeOfStackOfDocument &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument & operator=(const CDM_StackNodeOfStackOfDocument *anItem);
-		%feature("autodoc", "1");
-		static		Handle_CDM_StackNodeOfStackOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_CDM_StackNodeOfStackOfDocument {
-	CDM_StackNodeOfStackOfDocument* GetObject() {
-	return (CDM_StackNodeOfStackOfDocument*)$self->Access();
-	}
-};
-%feature("shadow") Handle_CDM_StackNodeOfStackOfDocument::~Handle_CDM_StackNodeOfStackOfDocument %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_CDM_StackNodeOfStackOfDocument {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_CDM_Application;
 class Handle_CDM_Application : public Handle_Standard_Transient {
 	public:
@@ -151,7 +114,7 @@ class Handle_CDM_Application : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDM_Application & operator=(const CDM_Application *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_Application const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_Application DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_Application {
@@ -175,6 +138,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_CDM_StackNodeOfStackOfDocument;
+class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_CDM_StackNodeOfStackOfDocument();
+		%feature("autodoc", "1");
+		Handle_CDM_StackNodeOfStackOfDocument(const Handle_CDM_StackNodeOfStackOfDocument &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDM_StackNodeOfStackOfDocument(const CDM_StackNodeOfStackOfDocument *anItem);
+		%feature("autodoc", "1");
+		Handle_CDM_StackNodeOfStackOfDocument & operator=(const Handle_CDM_StackNodeOfStackOfDocument &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDM_StackNodeOfStackOfDocument & operator=(const CDM_StackNodeOfStackOfDocument *anItem);
+		%feature("autodoc", "1");
+		static		Handle_CDM_StackNodeOfStackOfDocument DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_CDM_StackNodeOfStackOfDocument {
+	CDM_StackNodeOfStackOfDocument* GetObject() {
+	return (CDM_StackNodeOfStackOfDocument*)$self->Access();
+	}
+};
+%feature("shadow") Handle_CDM_StackNodeOfStackOfDocument::~Handle_CDM_StackNodeOfStackOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_CDM_StackNodeOfStackOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_CDM_MessageDriver;
 class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
 	public:
@@ -189,7 +190,7 @@ class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDM_MessageDriver & operator=(const CDM_MessageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_MessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_MessageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_MessageDriver {
@@ -227,7 +228,7 @@ class Handle_CDM_COutMessageDriver : public Handle_CDM_MessageDriver {
 		%feature("autodoc", "1");
 		Handle_CDM_COutMessageDriver & operator=(const CDM_COutMessageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_COutMessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_COutMessageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_COutMessageDriver {
@@ -251,44 +252,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_CDM_DataMapNodeOfNamesDirectory;
-class Handle_CDM_DataMapNodeOfNamesDirectory : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfNamesDirectory();
-		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfNamesDirectory(const Handle_CDM_DataMapNodeOfNamesDirectory &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfNamesDirectory(const CDM_DataMapNodeOfNamesDirectory *anItem);
-		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfNamesDirectory & operator=(const Handle_CDM_DataMapNodeOfNamesDirectory &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfNamesDirectory & operator=(const CDM_DataMapNodeOfNamesDirectory *anItem);
-		%feature("autodoc", "1");
-		static		Handle_CDM_DataMapNodeOfNamesDirectory const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_CDM_DataMapNodeOfNamesDirectory {
-	CDM_DataMapNodeOfNamesDirectory* GetObject() {
-	return (CDM_DataMapNodeOfNamesDirectory*)$self->Access();
-	}
-};
-%feature("shadow") Handle_CDM_DataMapNodeOfNamesDirectory::~Handle_CDM_DataMapNodeOfNamesDirectory %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_CDM_DataMapNodeOfNamesDirectory {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_CDM_StdMapNodeOfMapOfDocument;
 class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 	public:
@@ -303,7 +266,7 @@ class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_CDM_StdMapNodeOfMapOfDocument & operator=(const CDM_StdMapNodeOfMapOfDocument *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_StdMapNodeOfMapOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_StdMapNodeOfMapOfDocument DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_StdMapNodeOfMapOfDocument {
@@ -341,7 +304,7 @@ class Handle_CDM_DataMapNodeOfMetaDataLookUpTable : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_CDM_DataMapNodeOfMetaDataLookUpTable & operator=(const CDM_DataMapNodeOfMetaDataLookUpTable *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_DataMapNodeOfMetaDataLookUpTable const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_DataMapNodeOfMetaDataLookUpTable DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_DataMapNodeOfMetaDataLookUpTable {
@@ -379,7 +342,7 @@ class Handle_CDM_Document : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDM_Document & operator=(const CDM_Document *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_Document const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_Document DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_Document {
@@ -417,7 +380,7 @@ class Handle_CDM_MetaData : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDM_MetaData & operator=(const CDM_MetaData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_MetaData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_MetaData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_MetaData {
@@ -455,7 +418,7 @@ class Handle_CDM_NullMessageDriver : public Handle_CDM_MessageDriver {
 		%feature("autodoc", "1");
 		Handle_CDM_NullMessageDriver & operator=(const CDM_NullMessageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_NullMessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_NullMessageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_NullMessageDriver {
@@ -493,7 +456,7 @@ class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_CDM_DataMapNodeOfPresentationDirectory & operator=(const CDM_DataMapNodeOfPresentationDirectory *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_DataMapNodeOfPresentationDirectory const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_DataMapNodeOfPresentationDirectory DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_DataMapNodeOfPresentationDirectory {
@@ -531,7 +494,7 @@ class Handle_CDM_ListNodeOfListOfDocument : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_CDM_ListNodeOfListOfDocument & operator=(const CDM_ListNodeOfListOfDocument *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_ListNodeOfListOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_ListNodeOfListOfDocument DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_ListNodeOfListOfDocument {
@@ -569,7 +532,7 @@ class Handle_CDM_ListNodeOfListOfReferences : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_CDM_ListNodeOfListOfReferences & operator=(const CDM_ListNodeOfListOfReferences *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_ListNodeOfListOfReferences const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_ListNodeOfListOfReferences DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_CDM_ListNodeOfListOfReferences {
@@ -882,98 +845,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor CDM_NamesDirectory;
-class CDM_NamesDirectory : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		CDM_NamesDirectory(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		CDM_NamesDirectory & Assign(const CDM_NamesDirectory &Other);
-		%feature("autodoc", "1");
-		CDM_NamesDirectory & operator=(const CDM_NamesDirectory &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
-		%feature("autodoc", "1");
-		const Standard_Integer & Find(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const TCollection_ExtendedString &K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetChangeFind(const TCollection_ExtendedString &K) {
-				return (Standard_Integer) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Integer value ,const TCollection_ExtendedString &K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const TCollection_ExtendedString &K);
-
-};
-%feature("shadow") CDM_NamesDirectory::~CDM_NamesDirectory %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDM_NamesDirectory {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor CDM_StackNodeOfStackOfDocument;
-class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		CDM_StackNodeOfStackOfDocument(const Handle_CDM_Document &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_CDM_Document & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend CDM_StackNodeOfStackOfDocument {
-	Handle_CDM_StackNodeOfStackOfDocument GetHandle() {
-	return *(Handle_CDM_StackNodeOfStackOfDocument*) &$self;
-	}
-};
-%extend CDM_StackNodeOfStackOfDocument {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") CDM_StackNodeOfStackOfDocument::~CDM_StackNodeOfStackOfDocument %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDM_StackNodeOfStackOfDocument {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor CDM_MessageDriver;
 class CDM_MessageDriver : public Standard_Transient {
 	public:
@@ -1036,37 +907,6 @@ def __del__(self):
 %}
 
 %extend CDM_NullMessageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor CDM_DataMapIteratorOfNamesDirectory;
-class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		CDM_DataMapIteratorOfNamesDirectory();
-		%feature("autodoc", "1");
-		CDM_DataMapIteratorOfNamesDirectory(const CDM_NamesDirectory &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const CDM_NamesDirectory &aMap);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%feature("shadow") CDM_DataMapIteratorOfNamesDirectory::~CDM_DataMapIteratorOfNamesDirectory %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDM_DataMapIteratorOfNamesDirectory {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1188,6 +1028,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor CDM_StackNodeOfStackOfDocument;
+class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		CDM_StackNodeOfStackOfDocument(const Handle_CDM_Document &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_CDM_Document & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend CDM_StackNodeOfStackOfDocument {
+	Handle_CDM_StackNodeOfStackOfDocument GetHandle() {
+	return *(Handle_CDM_StackNodeOfStackOfDocument*) &$self;
+	}
+};
+%extend CDM_StackNodeOfStackOfDocument {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") CDM_StackNodeOfStackOfDocument::~CDM_StackNodeOfStackOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CDM_StackNodeOfStackOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor CDM_MetaDataLookUpTable;
 class CDM_MetaDataLookUpTable : public TCollection_BasicMap {
 	public:
@@ -1260,6 +1137,47 @@ def __del__(self):
 %}
 
 %extend CDM_StackIteratorOfStackOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor CDM_StackOfDocument;
+class CDM_StackOfDocument {
+	public:
+		%feature("autodoc", "1");
+		CDM_StackOfDocument();
+		%feature("autodoc", "1");
+		const CDM_StackOfDocument & Assign(const CDM_StackOfDocument &Other);
+		%feature("autodoc", "1");
+		const CDM_StackOfDocument & operator=(const CDM_StackOfDocument &Other);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Depth() const;
+		%feature("autodoc", "1");
+		const Handle_CDM_Document & Top() const;
+		%feature("autodoc", "1");
+		void Push(const Handle_CDM_Document &I);
+		%feature("autodoc", "1");
+		void Pop();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Handle_CDM_Document & ChangeTop();
+
+};
+%feature("shadow") CDM_StackOfDocument::~CDM_StackOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CDM_StackOfDocument {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1358,55 +1276,6 @@ def __del__(self):
 %}
 
 %extend CDM_ListOfReferences {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor CDM_DataMapNodeOfNamesDirectory;
-class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		CDM_DataMapNodeOfNamesDirectory(const TCollection_ExtendedString &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue() {
-				return (Standard_Integer) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend CDM_DataMapNodeOfNamesDirectory {
-	Handle_CDM_DataMapNodeOfNamesDirectory GetHandle() {
-	return *(Handle_CDM_DataMapNodeOfNamesDirectory*) &$self;
-	}
-};
-%extend CDM_DataMapNodeOfNamesDirectory {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") CDM_DataMapNodeOfNamesDirectory::~CDM_DataMapNodeOfNamesDirectory %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDM_DataMapNodeOfNamesDirectory {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1562,47 +1431,6 @@ def __del__(self):
 %}
 
 %extend CDM_MapIteratorOfMapOfDocument {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor CDM_StackOfDocument;
-class CDM_StackOfDocument {
-	public:
-		%feature("autodoc", "1");
-		CDM_StackOfDocument();
-		%feature("autodoc", "1");
-		const CDM_StackOfDocument & Assign(const CDM_StackOfDocument &Other);
-		%feature("autodoc", "1");
-		const CDM_StackOfDocument & operator=(const CDM_StackOfDocument &Other);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
-		%feature("autodoc", "1");
-		const Handle_CDM_Document & Top() const;
-		%feature("autodoc", "1");
-		void Push(const Handle_CDM_Document &I);
-		%feature("autodoc", "1");
-		void Pop();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Handle_CDM_Document & ChangeTop();
-
-};
-%feature("shadow") CDM_StackOfDocument::~CDM_StackOfDocument %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDM_StackOfDocument {
 	void _kill_pointed() {
 		delete $self;
 	}

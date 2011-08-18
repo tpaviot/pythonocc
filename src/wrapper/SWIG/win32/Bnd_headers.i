@@ -29,6 +29,7 @@ $HeaderURL$
 
 #include<Bnd_Array1OfBox.hxx>
 #include<Bnd_Array1OfBox2d.hxx>
+#include<Bnd_Array1OfSphere.hxx>
 #include<Bnd_B2d.hxx>
 #include<Bnd_B2f.hxx>
 #include<Bnd_B3d.hxx>
@@ -39,10 +40,13 @@ $HeaderURL$
 #include<Bnd_Box2d.hxx>
 #include<Bnd_HArray1OfBox.hxx>
 #include<Bnd_HArray1OfBox2d.hxx>
+#include<Bnd_HArray1OfSphere.hxx>
 #include<Bnd_SeqOfBox.hxx>
 #include<Bnd_SequenceNodeOfSeqOfBox.hxx>
+#include<Bnd_Sphere.hxx>
 #include<Handle_Bnd_HArray1OfBox.hxx>
 #include<Handle_Bnd_HArray1OfBox2d.hxx>
+#include<Handle_Bnd_HArray1OfSphere.hxx>
 #include<Handle_Bnd_SequenceNodeOfSeqOfBox.hxx>
 
 // Additional headers necessary for compilation.

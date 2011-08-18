@@ -39,6 +39,8 @@ $HeaderURL$
 #include<Extrema_CCFOfELCCOfLocateExtCC.hxx>
 #include<Extrema_CCLocFOfLocECC2dOfLocateExtCC2d.hxx>
 #include<Extrema_CCLocFOfLocECCOfLocateExtCC.hxx>
+#include<Extrema_CCache2dOfExtCC2d.hxx>
+#include<Extrema_CCacheOfExtCC.hxx>
 #include<Extrema_Curve2dTool.hxx>
 #include<Extrema_CurveTool.hxx>
 #include<Extrema_ECC2dOfExtCC2d.hxx>
@@ -51,6 +53,7 @@ $HeaderURL$
 #include<Extrema_EPCOfELPCOfLocateExtPC2d.hxx>
 #include<Extrema_EPCOfExtPC.hxx>
 #include<Extrema_EPCOfExtPC2d.hxx>
+#include<Extrema_ExtAlgo.hxx>
 #include<Extrema_ExtCC.hxx>
 #include<Extrema_ExtCC2d.hxx>
 #include<Extrema_ExtCS.hxx>
@@ -58,6 +61,7 @@ $HeaderURL$
 #include<Extrema_ExtElC2d.hxx>
 #include<Extrema_ExtElCS.hxx>
 #include<Extrema_ExtElSS.hxx>
+#include<Extrema_ExtFlag.hxx>
 #include<Extrema_ExtPC.hxx>
 #include<Extrema_ExtPC2d.hxx>
 #include<Extrema_ExtPElC.hxx>
@@ -82,6 +86,9 @@ $HeaderURL$
 #include<Extrema_HArray2OfPOnCurv.hxx>
 #include<Extrema_HArray2OfPOnCurv2d.hxx>
 #include<Extrema_HArray2OfPOnSurf.hxx>
+#include<Extrema_HUBTreeOfSphere.hxx>
+#include<Extrema_LCCache2dOfLocateExtCC2d.hxx>
+#include<Extrema_LCCacheOfLocateExtCC.hxx>
 #include<Extrema_LocECC2dOfLocateExtCC2d.hxx>
 #include<Extrema_LocECCOfLocateExtCC.hxx>
 #include<Extrema_LocEPCOfLocateExtPC.hxx>
@@ -123,20 +130,22 @@ $HeaderURL$
 #include<Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC.hxx>
 #include<Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d.hxx>
 #include<Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC.hxx>
-#include<Extrema_SequenceNodeOfSequenceOfBoolean.hxx>
 #include<Extrema_SequenceNodeOfSequenceOfPOnCurv.hxx>
 #include<Extrema_SequenceNodeOfSequenceOfPOnCurv2d.hxx>
 #include<Extrema_SequenceNodeOfSequenceOfPOnSurf.hxx>
-#include<Extrema_SequenceOfBoolean.hxx>
 #include<Extrema_SequenceOfPOnCurv.hxx>
 #include<Extrema_SequenceOfPOnCurv2d.hxx>
 #include<Extrema_SequenceOfPOnSurf.hxx>
+#include<Handle_Extrema_CCache2dOfExtCC2d.hxx>
+#include<Handle_Extrema_CCacheOfExtCC.hxx>
 #include<Handle_Extrema_HArray1OfPOnCurv.hxx>
 #include<Handle_Extrema_HArray1OfPOnCurv2d.hxx>
 #include<Handle_Extrema_HArray1OfPOnSurf.hxx>
 #include<Handle_Extrema_HArray2OfPOnCurv.hxx>
 #include<Handle_Extrema_HArray2OfPOnCurv2d.hxx>
 #include<Handle_Extrema_HArray2OfPOnSurf.hxx>
+#include<Handle_Extrema_LCCache2dOfLocateExtCC2d.hxx>
+#include<Handle_Extrema_LCCacheOfLocateExtCC.hxx>
 #include<Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC.hxx>
 #include<Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d.hxx>
 #include<Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC.hxx>
@@ -149,7 +158,6 @@ $HeaderURL$
 #include<Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC.hxx>
 #include<Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d.hxx>
 #include<Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC.hxx>
-#include<Handle_Extrema_SequenceNodeOfSequenceOfBoolean.hxx>
 #include<Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv.hxx>
 #include<Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d.hxx>
 #include<Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf.hxx>
@@ -192,8 +200,8 @@ $HeaderURL$
 #include<gp_Hypr2d.hxx>
 #include<gp_Parab2d.hxx>
 #include<Adaptor3d_SurfaceOfLinearExtrusion.hxx>
-#include<Adaptor3d_SurfaceOfRevolution.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
+#include<Adaptor3d_SurfaceOfRevolution.hxx>
 %}

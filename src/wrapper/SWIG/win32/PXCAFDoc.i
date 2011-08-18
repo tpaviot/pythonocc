@@ -52,6 +52,44 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_PXCAFDoc_Datum;
+class Handle_PXCAFDoc_Datum : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Datum();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Datum(const Handle_PXCAFDoc_Datum &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Datum(const PXCAFDoc_Datum *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Datum & operator=(const Handle_PXCAFDoc_Datum &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Datum & operator=(const PXCAFDoc_Datum *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PXCAFDoc_Datum DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_Datum {
+	PXCAFDoc_Datum* GetObject() {
+	return (PXCAFDoc_Datum*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PXCAFDoc_Datum::~Handle_PXCAFDoc_Datum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PXCAFDoc_Datum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence;
 class Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence : public Handle_PMMgt_PManaged {
 	public:
@@ -66,7 +104,7 @@ class Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence : public Handle_PMMgt_PManaged 
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence & operator=(const PXCAFDoc_SeqNodeOfGraphNodeSequence *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence {
@@ -104,7 +142,7 @@ class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_LayerTool & operator=(const PXCAFDoc_LayerTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_LayerTool const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_LayerTool DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_LayerTool {
@@ -142,7 +180,7 @@ class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_ShapeTool & operator=(const PXCAFDoc_ShapeTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_ShapeTool const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_ShapeTool DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_ShapeTool {
@@ -180,7 +218,7 @@ class Handle_PXCAFDoc_Area : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Area & operator=(const PXCAFDoc_Area *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_Area const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_Area DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_Area {
@@ -218,7 +256,7 @@ class Handle_PXCAFDoc_Color : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Color & operator=(const PXCAFDoc_Color *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_Color const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_Color DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_Color {
@@ -256,7 +294,7 @@ class Handle_PXCAFDoc_Location : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Location & operator=(const PXCAFDoc_Location *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_Location const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_Location DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_Location {
@@ -294,7 +332,7 @@ class Handle_PXCAFDoc_GraphNode : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_GraphNode & operator=(const PXCAFDoc_GraphNode *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_GraphNode const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_GraphNode DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_GraphNode {
@@ -332,7 +370,7 @@ class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Centroid & operator=(const PXCAFDoc_Centroid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_Centroid const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_Centroid DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_Centroid {
@@ -370,7 +408,7 @@ class Handle_PXCAFDoc_GraphNodeSequence : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_GraphNodeSequence & operator=(const PXCAFDoc_GraphNodeSequence *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_GraphNodeSequence const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_GraphNodeSequence DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_GraphNodeSequence {
@@ -408,7 +446,7 @@ class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_Volume & operator=(const PXCAFDoc_Volume *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_Volume const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_Volume DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_Volume {
@@ -432,6 +470,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PXCAFDoc_Material;
+class Handle_PXCAFDoc_Material : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Material();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Material(const Handle_PXCAFDoc_Material &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Material(const PXCAFDoc_Material *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Material & operator=(const Handle_PXCAFDoc_Material &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Material & operator=(const PXCAFDoc_Material *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PXCAFDoc_Material DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_Material {
+	PXCAFDoc_Material* GetObject() {
+	return (PXCAFDoc_Material*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PXCAFDoc_Material::~Handle_PXCAFDoc_Material %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PXCAFDoc_Material {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PXCAFDoc_DocumentTool;
 class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
 	public:
@@ -446,7 +522,7 @@ class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_DocumentTool & operator=(const PXCAFDoc_DocumentTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_DocumentTool const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_DocumentTool DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_DocumentTool {
@@ -470,6 +546,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PXCAFDoc_DimTol;
+class Handle_PXCAFDoc_DimTol : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DimTol();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DimTol(const Handle_PXCAFDoc_DimTol &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DimTol(const PXCAFDoc_DimTol *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DimTol & operator=(const Handle_PXCAFDoc_DimTol &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DimTol & operator=(const PXCAFDoc_DimTol *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PXCAFDoc_DimTol DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_DimTol {
+	PXCAFDoc_DimTol* GetObject() {
+	return (PXCAFDoc_DimTol*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PXCAFDoc_DimTol::~Handle_PXCAFDoc_DimTol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PXCAFDoc_DimTol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PXCAFDoc_MaterialTool;
+class Handle_PXCAFDoc_MaterialTool : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_MaterialTool();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_MaterialTool(const Handle_PXCAFDoc_MaterialTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_MaterialTool(const PXCAFDoc_MaterialTool *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_MaterialTool & operator=(const Handle_PXCAFDoc_MaterialTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_MaterialTool & operator=(const PXCAFDoc_MaterialTool *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PXCAFDoc_MaterialTool DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_MaterialTool {
+	PXCAFDoc_MaterialTool* GetObject() {
+	return (PXCAFDoc_MaterialTool*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PXCAFDoc_MaterialTool::~Handle_PXCAFDoc_MaterialTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PXCAFDoc_MaterialTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PXCAFDoc_ColorTool;
 class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 	public:
@@ -484,7 +636,7 @@ class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PXCAFDoc_ColorTool & operator=(const PXCAFDoc_ColorTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_ColorTool const DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PXCAFDoc_ColorTool DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
 %extend Handle_PXCAFDoc_ColorTool {
@@ -502,6 +654,44 @@ def __del__(self):
 %}
 
 %extend Handle_PXCAFDoc_ColorTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PXCAFDoc_DimTolTool;
+class Handle_PXCAFDoc_DimTolTool : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DimTolTool();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DimTolTool(const Handle_PXCAFDoc_DimTolTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DimTolTool(const PXCAFDoc_DimTolTool *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DimTolTool & operator=(const Handle_PXCAFDoc_DimTolTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DimTolTool & operator=(const PXCAFDoc_DimTolTool *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PXCAFDoc_DimTolTool DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_DimTolTool {
+	PXCAFDoc_DimTolTool* GetObject() {
+	return (PXCAFDoc_DimTolTool*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PXCAFDoc_DimTolTool::~Handle_PXCAFDoc_DimTolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PXCAFDoc_DimTolTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -669,6 +859,80 @@ def __del__(self):
 };
 
 
+%nodefaultctor PXCAFDoc_MaterialTool;
+class PXCAFDoc_MaterialTool : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_MaterialTool();
+		%feature("autodoc", "1");
+		PXCAFDoc_MaterialTool(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_MaterialTool {
+	Handle_PXCAFDoc_MaterialTool GetHandle() {
+	return *(Handle_PXCAFDoc_MaterialTool*) &$self;
+	}
+};
+%extend PXCAFDoc_MaterialTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") PXCAFDoc_MaterialTool::~PXCAFDoc_MaterialTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_MaterialTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_DimTolTool;
+class PXCAFDoc_DimTolTool : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_DimTolTool();
+		%feature("autodoc", "1");
+		PXCAFDoc_DimTolTool(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_DimTolTool {
+	Handle_PXCAFDoc_DimTolTool GetHandle() {
+	return *(Handle_PXCAFDoc_DimTolTool*) &$self;
+	}
+};
+%extend PXCAFDoc_DimTolTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") PXCAFDoc_DimTolTool::~PXCAFDoc_DimTolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_DimTolTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PXCAFDoc_DocumentTool;
 class PXCAFDoc_DocumentTool : public PDF_Attribute {
 	public:
@@ -768,6 +1032,130 @@ def __del__(self):
 %}
 
 %extend PXCAFDoc_ColorTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_Datum;
+class PXCAFDoc_Datum : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_Datum();
+		%feature("autodoc", "1");
+		PXCAFDoc_Datum(const Handle_PCollection_HAsciiString &theName, const Handle_PCollection_HAsciiString &theDescr, const Handle_PCollection_HAsciiString &theId);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetName() const;
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetDescription() const;
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetIdentification() const;
+		%feature("autodoc", "1");
+		void Set(const Handle_PCollection_HAsciiString &theName, const Handle_PCollection_HAsciiString &theDescr, const Handle_PCollection_HAsciiString &theId);
+		%feature("autodoc", "1");
+		PXCAFDoc_Datum(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DatummyName() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_DatummyName(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DatummyDescr() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_DatummyDescr(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DatummyId() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_DatummyId(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_Datum {
+	Handle_PXCAFDoc_Datum GetHandle() {
+	return *(Handle_PXCAFDoc_Datum*) &$self;
+	}
+};
+%extend PXCAFDoc_Datum {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") PXCAFDoc_Datum::~PXCAFDoc_Datum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_Datum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_DimTol;
+class PXCAFDoc_DimTol : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_DimTol();
+		%feature("autodoc", "1");
+		PXCAFDoc_DimTol(const Standard_Integer theKind, const Handle_PColStd_HArray1OfReal &theVal, const Handle_PCollection_HAsciiString &theName, const Handle_PCollection_HAsciiString &theDescr);
+		%feature("autodoc", "1");
+		Standard_Integer GetKind() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_HArray1OfReal GetVal() const;
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetName() const;
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetDescription() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer theKind, const Handle_PColStd_HArray1OfReal &theVal, const Handle_PCollection_HAsciiString &theName, const Handle_PCollection_HAsciiString &theDescr);
+		%feature("autodoc", "1");
+		PXCAFDoc_DimTol(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPXCAFDoc_DimTolmyKind() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_DimTolmyKind(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Handle_PColStd_HArray1OfReal _CSFDB_GetPXCAFDoc_DimTolmyVal() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_DimTolmyVal(const Handle_PColStd_HArray1OfReal &p);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DimTolmyName() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_DimTolmyName(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DimTolmyDescr() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_DimTolmyDescr(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_DimTol {
+	Handle_PXCAFDoc_DimTol GetHandle() {
+	return *(Handle_PXCAFDoc_DimTol*) &$self;
+	}
+};
+%extend PXCAFDoc_DimTol {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") PXCAFDoc_DimTol::~PXCAFDoc_DimTol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_DimTol {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -932,6 +1320,77 @@ def __del__(self):
 %}
 
 %extend PXCAFDoc_Centroid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_Material;
+class PXCAFDoc_Material : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_Material();
+		%feature("autodoc", "1");
+		PXCAFDoc_Material(const Handle_PCollection_HAsciiString &theName, const Handle_PCollection_HAsciiString &theDescr, const Standard_Real theDensity, const Handle_PCollection_HAsciiString &theDensName, const Handle_PCollection_HAsciiString &theDensValType);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetName() const;
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetDescription() const;
+		%feature("autodoc", "1");
+		Standard_Real GetDensity() const;
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetDensName() const;
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetDensValType() const;
+		%feature("autodoc", "1");
+		void Set(const Handle_PCollection_HAsciiString &theName, const Handle_PCollection_HAsciiString &theDescr, const Standard_Real theDensity, const Handle_PCollection_HAsciiString &theDensName, const Handle_PCollection_HAsciiString &theDensValType);
+		%feature("autodoc", "1");
+		PXCAFDoc_Material(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_MaterialmyName() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_MaterialmyName(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_MaterialmyDescr() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_MaterialmyDescr(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPXCAFDoc_MaterialmyDensity() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_MaterialmyDensity(const Standard_Real p);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_MaterialmyDensName() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_MaterialmyDensName(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_MaterialmyDensValType() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_MaterialmyDensValType(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_Material {
+	Handle_PXCAFDoc_Material GetHandle() {
+	return *(Handle_PXCAFDoc_Material*) &$self;
+	}
+};
+%extend PXCAFDoc_Material {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") PXCAFDoc_Material::~PXCAFDoc_Material %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_Material {
 	void _kill_pointed() {
 		delete $self;
 	}

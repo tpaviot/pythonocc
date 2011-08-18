@@ -37,13 +37,10 @@ $HeaderURL$
 #include<BRepAlgo_DSAccess.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean.hxx>
 #include<BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference.hxx>
-#include<BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger.hxx>
 #include<BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean.hxx>
 #include<BRepAlgo_DataMapNodeOfDataMapOfShapeInterference.hxx>
-#include<BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
 #include<BRepAlgo_DataMapOfShapeBoolean.hxx>
 #include<BRepAlgo_DataMapOfShapeInterference.hxx>
-#include<BRepAlgo_DataMapOfShapeListOfInteger.hxx>
 #include<BRepAlgo_EdgeConnector.hxx>
 #include<BRepAlgo_FaceRestrictor.hxx>
 #include<BRepAlgo_Fuse.hxx>
@@ -58,7 +55,6 @@ $HeaderURL$
 #include<Handle_BRepAlgo_AsDes.hxx>
 #include<Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean.hxx>
 #include<Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference.hxx>
-#include<Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
 #include<Handle_BRepAlgo_EdgeConnector.hxx>
 #include<Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger.hxx>
 
@@ -75,7 +71,6 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TopTools_MapOfShape.hxx>
-#include<TColStd_ListOfInteger.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopTools_ListOfShape.hxx>

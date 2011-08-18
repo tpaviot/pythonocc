@@ -60,7 +60,6 @@ $HeaderURL$
 #include<Handle_Interface_CheckFailure.hxx>
 #include<Handle_Interface_CopyControl.hxx>
 #include<Handle_Interface_CopyMap.hxx>
-#include<Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient.hxx>
 #include<Handle_Interface_DataMapNodeOfDataMapOfTransientInteger.hxx>
 #include<Handle_Interface_EntityCluster.hxx>
 #include<Handle_Interface_FileReaderData.hxx>
@@ -152,8 +151,8 @@ $HeaderURL$
 #include<Handle_StepShape_ShapeDefinitionRepresentation.hxx>
 #include<Handle_StepBasic_ProductDefinition.hxx>
 #include<Handle_StepRepr_NextAssemblyUsageOccurrence.hxx>
-#include<Handle_XSControl_TransferReader.hxx>
-#include<Interface_EntityIterator.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<Interface_EntityIterator.hxx>
+#include<Handle_XSControl_TransferReader.hxx>
 %}

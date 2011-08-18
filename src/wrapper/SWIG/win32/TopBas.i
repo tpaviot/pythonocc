@@ -66,7 +66,7 @@ class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_TopBas_ListNodeOfListOfTestInterference & operator=(const TopBas_ListNodeOfListOfTestInterference *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopBas_ListNodeOfListOfTestInterference const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopBas_ListNodeOfListOfTestInterference DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopBas_ListNodeOfListOfTestInterference {
@@ -151,6 +151,39 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopBas_ListIteratorOfListOfTestInterference;
+class TopBas_ListIteratorOfListOfTestInterference {
+	public:
+		%feature("autodoc", "1");
+		TopBas_ListIteratorOfListOfTestInterference();
+		%feature("autodoc", "1");
+		TopBas_ListIteratorOfListOfTestInterference(const TopBas_ListOfTestInterference &L);
+		%feature("autodoc", "1");
+		void Initialize(const TopBas_ListOfTestInterference &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TopBas_TestInterference & Value() const;
+
+};
+%feature("shadow") TopBas_ListIteratorOfListOfTestInterference::~TopBas_ListIteratorOfListOfTestInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopBas_ListIteratorOfListOfTestInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopBas_ListNodeOfListOfTestInterference;
 class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 	public:
@@ -182,39 +215,6 @@ def __del__(self):
 %}
 
 %extend TopBas_ListNodeOfListOfTestInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopBas_ListIteratorOfListOfTestInterference;
-class TopBas_ListIteratorOfListOfTestInterference {
-	public:
-		%feature("autodoc", "1");
-		TopBas_ListIteratorOfListOfTestInterference();
-		%feature("autodoc", "1");
-		TopBas_ListIteratorOfListOfTestInterference(const TopBas_ListOfTestInterference &L);
-		%feature("autodoc", "1");
-		void Initialize(const TopBas_ListOfTestInterference &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TopBas_TestInterference & Value() const;
-
-};
-%feature("shadow") TopBas_ListIteratorOfListOfTestInterference::~TopBas_ListIteratorOfListOfTestInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopBas_ListIteratorOfListOfTestInterference {
 	void _kill_pointed() {
 		delete $self;
 	}

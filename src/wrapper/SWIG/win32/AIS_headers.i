@@ -44,17 +44,14 @@ $HeaderURL$
 #include<AIS_DataMapIteratorOfDataMapOfILC.hxx>
 #include<AIS_DataMapIteratorOfDataMapOfIOStatus.hxx>
 #include<AIS_DataMapIteratorOfDataMapOfSelStat.hxx>
-#include<AIS_DataMapIteratorOfDataMapOfTransientTransient.hxx>
 #include<AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive.hxx>
 #include<AIS_DataMapNodeOfDataMapOfILC.hxx>
 #include<AIS_DataMapNodeOfDataMapOfIOStatus.hxx>
 #include<AIS_DataMapNodeOfDataMapOfSelStat.hxx>
-#include<AIS_DataMapNodeOfDataMapOfTransientTransient.hxx>
 #include<AIS_DataMapNodeOfDataMapofIntegerListOfinteractive.hxx>
 #include<AIS_DataMapOfILC.hxx>
 #include<AIS_DataMapOfIOStatus.hxx>
 #include<AIS_DataMapOfSelStat.hxx>
-#include<AIS_DataMapOfTransientTransient.hxx>
 #include<AIS_DataMapofIntegerListOfinteractive.hxx>
 #include<AIS_DiameterDimension.hxx>
 #include<AIS_DimensionOwner.hxx>
@@ -118,6 +115,7 @@ $HeaderURL$
 #include<AIS_SymmetricRelation.hxx>
 #include<AIS_TangentRelation.hxx>
 #include<AIS_TexturedShape.hxx>
+#include<AIS_Triangulation.hxx>
 #include<AIS_Trihedron.hxx>
 #include<AIS_TypeFilter.hxx>
 #include<AIS_TypeOfAttribute.hxx>
@@ -139,7 +137,6 @@ $HeaderURL$
 #include<Handle_AIS_DataMapNodeOfDataMapOfILC.hxx>
 #include<Handle_AIS_DataMapNodeOfDataMapOfIOStatus.hxx>
 #include<Handle_AIS_DataMapNodeOfDataMapOfSelStat.hxx>
-#include<Handle_AIS_DataMapNodeOfDataMapOfTransientTransient.hxx>
 #include<Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive.hxx>
 #include<Handle_AIS_DiameterDimension.hxx>
 #include<Handle_AIS_DimensionOwner.hxx>
@@ -181,6 +178,7 @@ $HeaderURL$
 #include<Handle_AIS_SymmetricRelation.hxx>
 #include<Handle_AIS_TangentRelation.hxx>
 #include<Handle_AIS_TexturedShape.hxx>
+#include<Handle_AIS_Triangulation.hxx>
 #include<Handle_AIS_Trihedron.hxx>
 #include<Handle_AIS_TypeFilter.hxx>
 
@@ -206,6 +204,7 @@ $HeaderURL$
 #include<Aspect_ColorPixel.hxx>
 #include<Aspect_ColorRampColorMap.hxx>
 #include<Aspect_ColorScale.hxx>
+#include<Aspect_Convert.hxx>
 #include<Aspect_Display.hxx>
 #include<Aspect_Drawable.hxx>
 #include<Aspect_Driver.hxx>
@@ -224,6 +223,8 @@ $HeaderURL$
 #include<Aspect_FormatOfSheetPaper.hxx>
 #include<Aspect_GenId.hxx>
 #include<Aspect_GenericColorMap.hxx>
+#include<Aspect_GradientBackground.hxx>
+#include<Aspect_GradientFillMethod.hxx>
 #include<Aspect_GraphicCallbackProc.hxx>
 #include<Aspect_GraphicDevice.hxx>
 #include<Aspect_GraphicDeviceDefinitionError.hxx>
@@ -308,7 +309,6 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<Graphic3d_Array1OfBytes.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>
 #include<Graphic3d_Array1OfVertexC.hxx>
@@ -340,6 +340,7 @@ $HeaderURL$
 #include<Graphic3d_CBitFields4.hxx>
 #include<Graphic3d_CBitFields8.hxx>
 #include<Graphic3d_CBounds.hxx>
+#include<Graphic3d_CGraduatedTrihedron.hxx>
 #include<Graphic3d_CGroup.hxx>
 #include<Graphic3d_CInitTexture.hxx>
 #include<Graphic3d_CLight.hxx>
@@ -356,8 +357,8 @@ $HeaderURL$
 #include<Graphic3d_GraphicDevice.hxx>
 #include<Graphic3d_GraphicDriver.hxx>
 #include<Graphic3d_Group.hxx>
+#include<Graphic3d_GroupAspect.hxx>
 #include<Graphic3d_GroupDefinitionError.hxx>
-#include<Graphic3d_HArray1OfBytes.hxx>
 #include<Graphic3d_HSequenceOfGroup.hxx>
 #include<Graphic3d_HSequenceOfStructure.hxx>
 #include<Graphic3d_HSetOfGroup.hxx>
@@ -375,6 +376,7 @@ $HeaderURL$
 #include<Graphic3d_MapOfStructure.hxx>
 #include<Graphic3d_MaterialAspect.hxx>
 #include<Graphic3d_MaterialDefinitionError.hxx>
+#include<Graphic3d_NListOfHAsciiString.hxx>
 #include<Graphic3d_NameOfFont.hxx>
 #include<Graphic3d_NameOfMaterial.hxx>
 #include<Graphic3d_NameOfTexture1D.hxx>
@@ -386,6 +388,7 @@ $HeaderURL$
 #include<Graphic3d_PlotterDefinitionError.hxx>
 #include<Graphic3d_PrimitiveArray.hxx>
 #include<Graphic3d_PriorityDefinitionError.hxx>
+#include<Graphic3d_PtrFrameBuffer.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfAddress.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfGroup.hxx>
 #include<Graphic3d_SequenceNodeOfSequenceOfStructure.hxx>
@@ -458,9 +461,7 @@ $HeaderURL$
 #include<SelectBasics_ListOfBox2d.hxx>
 #include<SelectBasics_ListOfSensitive.hxx>
 #include<SelectBasics_SensitiveEntity.hxx>
-#include<SelectBasics_SequenceNodeOfSequenceOfAddress.hxx>
 #include<SelectBasics_SequenceNodeOfSequenceOfOwner.hxx>
-#include<SelectBasics_SequenceOfAddress.hxx>
 #include<SelectBasics_SequenceOfOwner.hxx>
 #include<SelectBasics_SortAlgo.hxx>
 #include<TopoDS_Vertex.hxx>
@@ -493,6 +494,8 @@ $HeaderURL$
 #include<Handle_SelectMgr_SelectableObject.hxx>
 #include<Handle_SelectMgr_EntityOwner.hxx>
 #include<TColStd_ListOfInteger.hxx>
+#include<Handle_Poly_Triangulation.hxx>
+#include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_Geom_Axis2Placement.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<Handle_Geom_Line.hxx>
@@ -525,6 +528,6 @@ $HeaderURL$
 #include<Bnd_Box.hxx>
 #include<gp_Elips.hxx>
 #include<Handle_PrsMgr_PresentationManager3d.hxx>
-#include<Select3D_Projector.hxx>
+#include<Handle_Select3D_Projector.hxx>
 #include<TColStd_MapOfTransient.hxx>
 %}

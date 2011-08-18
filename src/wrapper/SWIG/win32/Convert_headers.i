@@ -43,13 +43,11 @@ $HeaderURL$
 #include<Convert_ParameterisationType.hxx>
 #include<Convert_PolynomialCosAndSin.hxx>
 #include<Convert_SequenceNodeOfSequenceOfArray1OfPoles.hxx>
-#include<Convert_SequenceNodeOfSequenceOfArray1OfPoles2d.hxx>
 #include<Convert_SequenceOfArray1OfPoles.hxx>
 #include<Convert_SequenceOfArray1OfPoles2d.hxx>
 #include<Convert_SphereToBSplineSurface.hxx>
 #include<Convert_TorusToBSplineSurface.hxx>
 #include<Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles.hxx>
-#include<Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -71,7 +69,6 @@ $HeaderURL$
 #include<gp_Circ2d.hxx>
 #include<gp_Hypr2d.hxx>
 #include<Handle_TColStd_HArray2OfInteger.hxx>
-#include<Handle_TColgp_HArray1OfPnt2d.hxx>
 #include<gp_Sphere.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<Handle_TColgp_HArray1OfPnt.hxx>

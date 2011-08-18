@@ -28,7 +28,6 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TCollection
 import Quantity
 import Aspect
 };

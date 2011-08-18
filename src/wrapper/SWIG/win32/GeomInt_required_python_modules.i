@@ -35,6 +35,7 @@ import IntSurf
 import math
 import Approx
 import TColStd
+import IntPatch
 import TopAbs
 import IntImp
 };

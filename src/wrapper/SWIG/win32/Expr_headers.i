@@ -186,6 +186,5 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Standard_SStream.hxx>
 #include<Expr.hxx>
 %}

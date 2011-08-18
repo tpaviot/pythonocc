@@ -66,7 +66,7 @@ class Handle_Viewer_BadValue : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Viewer_BadValue & operator=(const Viewer_BadValue *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Viewer_BadValue const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Viewer_BadValue DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Viewer_BadValue {
@@ -104,7 +104,7 @@ class Handle_Viewer_Viewer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Viewer_Viewer & operator=(const Viewer_Viewer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Viewer_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Viewer_Viewer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Viewer_Viewer {
@@ -142,7 +142,7 @@ class Handle_Viewer_View : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Viewer_View & operator=(const Viewer_View *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Viewer_View const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Viewer_View DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Viewer_View {
@@ -260,7 +260,7 @@ class Viewer_BadValue : public Standard_OutOfRange {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Viewer_BadValue NewInstance(const char * aMessage);
+		static		Handle_Viewer_BadValue NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

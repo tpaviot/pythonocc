@@ -66,7 +66,7 @@ class Handle_BinMDataStd_RealArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_RealArrayDriver & operator=(const BinMDataStd_RealArrayDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_RealArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_RealArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_RealArrayDriver {
@@ -104,7 +104,7 @@ class Handle_BinMDataStd_NoteBookDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_NoteBookDriver & operator=(const BinMDataStd_NoteBookDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_NoteBookDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_NoteBookDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_NoteBookDriver {
@@ -128,82 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BinMDataStd_PatternStdDriver;
-class Handle_BinMDataStd_PatternStdDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PatternStdDriver();
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PatternStdDriver(const Handle_BinMDataStd_PatternStdDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PatternStdDriver(const BinMDataStd_PatternStdDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PatternStdDriver & operator=(const Handle_BinMDataStd_PatternStdDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PatternStdDriver & operator=(const BinMDataStd_PatternStdDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_PatternStdDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDataStd_PatternStdDriver {
-	BinMDataStd_PatternStdDriver* GetObject() {
-	return (BinMDataStd_PatternStdDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMDataStd_PatternStdDriver::~Handle_BinMDataStd_PatternStdDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMDataStd_PatternStdDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BinMDataStd_PlacementDriver;
-class Handle_BinMDataStd_PlacementDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlacementDriver();
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlacementDriver(const Handle_BinMDataStd_PlacementDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlacementDriver(const BinMDataStd_PlacementDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlacementDriver & operator=(const Handle_BinMDataStd_PlacementDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlacementDriver & operator=(const BinMDataStd_PlacementDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_PlacementDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDataStd_PlacementDriver {
-	BinMDataStd_PlacementDriver* GetObject() {
-	return (BinMDataStd_PlacementDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMDataStd_PlacementDriver::~Handle_BinMDataStd_PlacementDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMDataStd_PlacementDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinMDataStd_ReferenceArrayDriver;
 class Handle_BinMDataStd_ReferenceArrayDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -218,7 +142,7 @@ class Handle_BinMDataStd_ReferenceArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ReferenceArrayDriver & operator=(const BinMDataStd_ReferenceArrayDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_ReferenceArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ReferenceArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ReferenceArrayDriver {
@@ -256,7 +180,7 @@ class Handle_BinMDataStd_IntegerDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_IntegerDriver & operator=(const BinMDataStd_IntegerDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_IntegerDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_IntegerDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_IntegerDriver {
@@ -294,7 +218,7 @@ class Handle_BinMDataStd_ByteArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ByteArrayDriver & operator=(const BinMDataStd_ByteArrayDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_ByteArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ByteArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ByteArrayDriver {
@@ -318,44 +242,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BinMDataStd_PointDriver;
-class Handle_BinMDataStd_PointDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PointDriver();
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PointDriver(const Handle_BinMDataStd_PointDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PointDriver(const BinMDataStd_PointDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PointDriver & operator=(const Handle_BinMDataStd_PointDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PointDriver & operator=(const BinMDataStd_PointDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDataStd_PointDriver {
-	BinMDataStd_PointDriver* GetObject() {
-	return (BinMDataStd_PointDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMDataStd_PointDriver::~Handle_BinMDataStd_PointDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMDataStd_PointDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinMDataStd_ExpressionDriver;
 class Handle_BinMDataStd_ExpressionDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -370,7 +256,7 @@ class Handle_BinMDataStd_ExpressionDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ExpressionDriver & operator=(const BinMDataStd_ExpressionDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_ExpressionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ExpressionDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ExpressionDriver {
@@ -408,7 +294,7 @@ class Handle_BinMDataStd_UAttributeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_UAttributeDriver & operator=(const BinMDataStd_UAttributeDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_UAttributeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_UAttributeDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_UAttributeDriver {
@@ -446,7 +332,7 @@ class Handle_BinMDataStd_NamedDataDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_NamedDataDriver & operator=(const BinMDataStd_NamedDataDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_NamedDataDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_NamedDataDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_NamedDataDriver {
@@ -470,44 +356,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BinMDataStd_PlaneDriver;
-class Handle_BinMDataStd_PlaneDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlaneDriver();
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlaneDriver(const Handle_BinMDataStd_PlaneDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlaneDriver(const BinMDataStd_PlaneDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlaneDriver & operator=(const Handle_BinMDataStd_PlaneDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_PlaneDriver & operator=(const BinMDataStd_PlaneDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDataStd_PlaneDriver {
-	BinMDataStd_PlaneDriver* GetObject() {
-	return (BinMDataStd_PlaneDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMDataStd_PlaneDriver::~Handle_BinMDataStd_PlaneDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMDataStd_PlaneDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinMDataStd_IntegerArrayDriver;
 class Handle_BinMDataStd_IntegerArrayDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -522,7 +370,7 @@ class Handle_BinMDataStd_IntegerArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_IntegerArrayDriver & operator=(const BinMDataStd_IntegerArrayDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_IntegerArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_IntegerArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_IntegerArrayDriver {
@@ -560,7 +408,7 @@ class Handle_BinMDataStd_DirectoryDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_DirectoryDriver & operator=(const BinMDataStd_DirectoryDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_DirectoryDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_DirectoryDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_DirectoryDriver {
@@ -584,44 +432,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BinMDataStd_AxisDriver;
-class Handle_BinMDataStd_AxisDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_AxisDriver();
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_AxisDriver(const Handle_BinMDataStd_AxisDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_AxisDriver(const BinMDataStd_AxisDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_AxisDriver & operator=(const Handle_BinMDataStd_AxisDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_AxisDriver & operator=(const BinMDataStd_AxisDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_AxisDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDataStd_AxisDriver {
-	BinMDataStd_AxisDriver* GetObject() {
-	return (BinMDataStd_AxisDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMDataStd_AxisDriver::~Handle_BinMDataStd_AxisDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMDataStd_AxisDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinMDataStd_ExtStringListDriver;
 class Handle_BinMDataStd_ExtStringListDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -636,7 +446,7 @@ class Handle_BinMDataStd_ExtStringListDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ExtStringListDriver & operator=(const BinMDataStd_ExtStringListDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_ExtStringListDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ExtStringListDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ExtStringListDriver {
@@ -674,7 +484,7 @@ class Handle_BinMDataStd_BooleanListDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_BooleanListDriver & operator=(const BinMDataStd_BooleanListDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_BooleanListDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_BooleanListDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_BooleanListDriver {
@@ -712,7 +522,7 @@ class Handle_BinMDataStd_ExtStringArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ExtStringArrayDriver & operator=(const BinMDataStd_ExtStringArrayDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_ExtStringArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ExtStringArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ExtStringArrayDriver {
@@ -750,7 +560,7 @@ class Handle_BinMDataStd_VariableDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_VariableDriver & operator=(const BinMDataStd_VariableDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_VariableDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_VariableDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_VariableDriver {
@@ -788,7 +598,7 @@ class Handle_BinMDataStd_TickDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_TickDriver & operator=(const BinMDataStd_TickDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_TickDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_TickDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_TickDriver {
@@ -826,7 +636,7 @@ class Handle_BinMDataStd_TreeNodeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_TreeNodeDriver & operator=(const BinMDataStd_TreeNodeDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_TreeNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_TreeNodeDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_TreeNodeDriver {
@@ -864,7 +674,7 @@ class Handle_BinMDataStd_NameDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_NameDriver & operator=(const BinMDataStd_NameDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_NameDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_NameDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_NameDriver {
@@ -902,7 +712,7 @@ class Handle_BinMDataStd_RealDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_RealDriver & operator=(const BinMDataStd_RealDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_RealDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_RealDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_RealDriver {
@@ -926,44 +736,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BinMDataStd_ShapeDriver;
-class Handle_BinMDataStd_ShapeDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_ShapeDriver();
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_ShapeDriver(const Handle_BinMDataStd_ShapeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_ShapeDriver(const BinMDataStd_ShapeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_ShapeDriver & operator=(const Handle_BinMDataStd_ShapeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_ShapeDriver & operator=(const BinMDataStd_ShapeDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_ShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDataStd_ShapeDriver {
-	BinMDataStd_ShapeDriver* GetObject() {
-	return (BinMDataStd_ShapeDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMDataStd_ShapeDriver::~Handle_BinMDataStd_ShapeDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMDataStd_ShapeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinMDataStd_ReferenceListDriver;
 class Handle_BinMDataStd_ReferenceListDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -978,7 +750,7 @@ class Handle_BinMDataStd_ReferenceListDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_ReferenceListDriver & operator=(const BinMDataStd_ReferenceListDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_ReferenceListDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_ReferenceListDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_ReferenceListDriver {
@@ -1016,7 +788,7 @@ class Handle_BinMDataStd_CommentDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_CommentDriver & operator=(const BinMDataStd_CommentDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_CommentDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_CommentDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_CommentDriver {
@@ -1054,7 +826,7 @@ class Handle_BinMDataStd_BooleanArrayDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_BooleanArrayDriver & operator=(const BinMDataStd_BooleanArrayDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_BooleanArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_BooleanArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_BooleanArrayDriver {
@@ -1078,44 +850,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BinMDataStd_ConstraintDriver;
-class Handle_BinMDataStd_ConstraintDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_ConstraintDriver();
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_ConstraintDriver(const Handle_BinMDataStd_ConstraintDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_ConstraintDriver(const BinMDataStd_ConstraintDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_ConstraintDriver & operator=(const Handle_BinMDataStd_ConstraintDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_ConstraintDriver & operator=(const BinMDataStd_ConstraintDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_ConstraintDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDataStd_ConstraintDriver {
-	BinMDataStd_ConstraintDriver* GetObject() {
-	return (BinMDataStd_ConstraintDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMDataStd_ConstraintDriver::~Handle_BinMDataStd_ConstraintDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMDataStd_ConstraintDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinMDataStd_RelationDriver;
 class Handle_BinMDataStd_RelationDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -1130,7 +864,7 @@ class Handle_BinMDataStd_RelationDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_RelationDriver & operator=(const BinMDataStd_RelationDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_RelationDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_RelationDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_RelationDriver {
@@ -1168,7 +902,7 @@ class Handle_BinMDataStd_IntegerListDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_IntegerListDriver & operator=(const BinMDataStd_IntegerListDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_IntegerListDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_IntegerListDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_IntegerListDriver {
@@ -1206,7 +940,7 @@ class Handle_BinMDataStd_IntPackedMapDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_IntPackedMapDriver & operator=(const BinMDataStd_IntPackedMapDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_IntPackedMapDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_IntPackedMapDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_IntPackedMapDriver {
@@ -1244,7 +978,7 @@ class Handle_BinMDataStd_RealListDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_RealListDriver & operator=(const BinMDataStd_RealListDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_RealListDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_RealListDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_RealListDriver {
@@ -1282,7 +1016,7 @@ class Handle_BinMDataStd_AsciiStringDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDataStd_AsciiStringDriver & operator=(const BinMDataStd_AsciiStringDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_AsciiStringDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMDataStd_AsciiStringDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMDataStd_AsciiStringDriver {
@@ -1300,44 +1034,6 @@ def __del__(self):
 %}
 
 %extend Handle_BinMDataStd_AsciiStringDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BinMDataStd_GeometryDriver;
-class Handle_BinMDataStd_GeometryDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_GeometryDriver();
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_GeometryDriver(const Handle_BinMDataStd_GeometryDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_GeometryDriver(const BinMDataStd_GeometryDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_GeometryDriver & operator=(const Handle_BinMDataStd_GeometryDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDataStd_GeometryDriver & operator=(const BinMDataStd_GeometryDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMDataStd_GeometryDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDataStd_GeometryDriver {
-	BinMDataStd_GeometryDriver* GetObject() {
-	return (BinMDataStd_GeometryDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMDataStd_GeometryDriver::~Handle_BinMDataStd_GeometryDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMDataStd_GeometryDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1461,88 +1157,6 @@ def __del__(self):
 %}
 
 %extend BinMDataStd_TickDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinMDataStd_PointDriver;
-class BinMDataStd_PointDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMDataStd_PointDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDataStd_PointDriver {
-	Handle_BinMDataStd_PointDriver GetHandle() {
-	return *(Handle_BinMDataStd_PointDriver*) &$self;
-	}
-};
-%extend BinMDataStd_PointDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDataStd_PointDriver::~BinMDataStd_PointDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDataStd_PointDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinMDataStd_GeometryDriver;
-class BinMDataStd_GeometryDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMDataStd_GeometryDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDataStd_GeometryDriver {
-	Handle_BinMDataStd_GeometryDriver GetHandle() {
-	return *(Handle_BinMDataStd_GeometryDriver*) &$self;
-	}
-};
-%extend BinMDataStd_GeometryDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDataStd_GeometryDriver::~BinMDataStd_GeometryDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDataStd_GeometryDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1836,47 +1450,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMDataStd_ReferenceListDriver;
-class BinMDataStd_ReferenceListDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMDataStd_ReferenceListDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDataStd_ReferenceListDriver {
-	Handle_BinMDataStd_ReferenceListDriver GetHandle() {
-	return *(Handle_BinMDataStd_ReferenceListDriver*) &$self;
-	}
-};
-%extend BinMDataStd_ReferenceListDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDataStd_ReferenceListDriver::~BinMDataStd_ReferenceListDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDataStd_ReferenceListDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BinMDataStd_RealArrayDriver;
 class BinMDataStd_RealArrayDriver : public BinMDF_ADriver {
 	public:
@@ -1912,129 +1485,6 @@ def __del__(self):
 %}
 
 %extend BinMDataStd_RealArrayDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinMDataStd_PlaneDriver;
-class BinMDataStd_PlaneDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMDataStd_PlaneDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDataStd_PlaneDriver {
-	Handle_BinMDataStd_PlaneDriver GetHandle() {
-	return *(Handle_BinMDataStd_PlaneDriver*) &$self;
-	}
-};
-%extend BinMDataStd_PlaneDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDataStd_PlaneDriver::~BinMDataStd_PlaneDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDataStd_PlaneDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinMDataStd_PatternStdDriver;
-class BinMDataStd_PatternStdDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMDataStd_PatternStdDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDataStd_PatternStdDriver {
-	Handle_BinMDataStd_PatternStdDriver GetHandle() {
-	return *(Handle_BinMDataStd_PatternStdDriver*) &$self;
-	}
-};
-%extend BinMDataStd_PatternStdDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDataStd_PatternStdDriver::~BinMDataStd_PatternStdDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDataStd_PatternStdDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinMDataStd_AxisDriver;
-class BinMDataStd_AxisDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMDataStd_AxisDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDataStd_AxisDriver {
-	Handle_BinMDataStd_AxisDriver GetHandle() {
-	return *(Handle_BinMDataStd_AxisDriver*) &$self;
-	}
-};
-%extend BinMDataStd_AxisDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDataStd_AxisDriver::~BinMDataStd_AxisDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDataStd_AxisDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2328,47 +1778,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMDataStd_ShapeDriver;
-class BinMDataStd_ShapeDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMDataStd_ShapeDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDataStd_ShapeDriver {
-	Handle_BinMDataStd_ShapeDriver GetHandle() {
-	return *(Handle_BinMDataStd_ShapeDriver*) &$self;
-	}
-};
-%extend BinMDataStd_ShapeDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDataStd_ShapeDriver::~BinMDataStd_ShapeDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDataStd_ShapeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BinMDataStd_ExtStringArrayDriver;
 class BinMDataStd_ExtStringArrayDriver : public BinMDF_ADriver {
 	public:
@@ -2603,11 +2012,11 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMDataStd_PlacementDriver;
-class BinMDataStd_PlacementDriver : public BinMDF_ADriver {
+%nodefaultctor BinMDataStd_ReferenceListDriver;
+class BinMDataStd_ReferenceListDriver : public BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMDataStd_PlacementDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		BinMDataStd_ReferenceListDriver(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
@@ -2618,17 +2027,17 @@ class BinMDataStd_PlacementDriver : public BinMDF_ADriver {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BinMDataStd_PlacementDriver {
-	Handle_BinMDataStd_PlacementDriver GetHandle() {
-	return *(Handle_BinMDataStd_PlacementDriver*) &$self;
+%extend BinMDataStd_ReferenceListDriver {
+	Handle_BinMDataStd_ReferenceListDriver GetHandle() {
+	return *(Handle_BinMDataStd_ReferenceListDriver*) &$self;
 	}
 };
-%extend BinMDataStd_PlacementDriver {
+%extend BinMDataStd_ReferenceListDriver {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%feature("shadow") BinMDataStd_PlacementDriver::~BinMDataStd_PlacementDriver %{
+%feature("shadow") BinMDataStd_ReferenceListDriver::~BinMDataStd_ReferenceListDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2637,48 +2046,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BinMDataStd_PlacementDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinMDataStd_ConstraintDriver;
-class BinMDataStd_ConstraintDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMDataStd_ConstraintDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDataStd_ConstraintDriver {
-	Handle_BinMDataStd_ConstraintDriver GetHandle() {
-	return *(Handle_BinMDataStd_ConstraintDriver*) &$self;
-	}
-};
-%extend BinMDataStd_ConstraintDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDataStd_ConstraintDriver::~BinMDataStd_ConstraintDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDataStd_ConstraintDriver {
+%extend BinMDataStd_ReferenceListDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

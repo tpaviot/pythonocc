@@ -33,9 +33,9 @@ import TopoDS
 import Bnd
 import TColStd
 import gp
-import TCollection
 import GeomAPI
 import BRepClass3d
+import TCollection
 import Geom
 import Geom2d
 import GeomAbs

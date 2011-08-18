@@ -66,7 +66,7 @@ class Handle_BinMNaming_NamingDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamingDriver & operator=(const BinMNaming_NamingDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMNaming_NamingDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMNaming_NamingDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMNaming_NamingDriver {
@@ -104,7 +104,7 @@ class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamedShapeDriver & operator=(const BinMNaming_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BinMNaming_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BinMNaming_NamedShapeDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BinMNaming_NamedShapeDriver {
@@ -135,6 +135,10 @@ class BinMNaming {
 		BinMNaming();
 		%feature("autodoc", "1");
 		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+		%feature("autodoc", "1");
+		static		void SetDocumentVersion(const Standard_Integer DocVersion);
+		%feature("autodoc", "1");
+		static		Standard_Integer DocumentVersion();
 
 };
 %feature("shadow") BinMNaming::~BinMNaming %{
@@ -226,6 +230,8 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 		void SetFormatNb(const Standard_Integer theFormatNb);
 		%feature("autodoc", "1");
 		Standard_Integer GetFormatNb() const;
+		%feature("autodoc", "1");
+		BinTools_LocationSet & GetShapesLocations();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

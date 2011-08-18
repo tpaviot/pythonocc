@@ -30,9 +30,8 @@ import GarbageCollector
 import Standard
 import gp
 import Adaptor3d
-import GeomAbs
-import Geom
 import Adaptor2d
 import IntSurf
+import GeomAbs
 import Geom2d
 };

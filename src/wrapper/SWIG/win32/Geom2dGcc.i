@@ -104,43 +104,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Geom2dGcc_MyL2dTanObl;
-class Geom2dGcc_MyL2dTanObl {
-	public:
-		%feature("autodoc", "1");
-		Geom2dGcc_MyL2dTanObl(const Geom2dGcc_MyQCurve &Qualified1, const gp_Lin2d TheLin, const Standard_Real Param1, const Standard_Real TolAng, const Standard_Real Angle=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		gp_Lin2d ThisSolution() const;
-		%feature("autodoc", "1");
-		void WhichQualifier(GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1() -> [Standard_Real, Standard_Real]");
-
-		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Intersection2() -> [Standard_Real, Standard_Real]");
-
-		void Intersection2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParallel2() const;
-
-};
-%feature("shadow") Geom2dGcc_MyL2dTanObl::~Geom2dGcc_MyL2dTanObl %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dGcc_MyL2dTanObl {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Geom2dGcc_FuncTOblOfMyL2dTanObl;
 class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
 	public:
@@ -504,6 +467,43 @@ def __del__(self):
 %}
 
 %extend Geom2dGcc_MyCurveTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dGcc_MyL2dTanObl;
+class Geom2dGcc_MyL2dTanObl {
+	public:
+		%feature("autodoc", "1");
+		Geom2dGcc_MyL2dTanObl(const Geom2dGcc_MyQCurve &Qualified1, const gp_Lin2d TheLin, const Standard_Real Param1, const Standard_Real TolAng, const Standard_Real Angle=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		gp_Lin2d ThisSolution() const;
+		%feature("autodoc", "1");
+		void WhichQualifier(GccEnt_Position & Qualif1) const;
+		%feature("autodoc","Tangency1() -> [Standard_Real, Standard_Real]");
+
+		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc","Intersection2() -> [Standard_Real, Standard_Real]");
+
+		void Intersection2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParallel2() const;
+
+};
+%feature("shadow") Geom2dGcc_MyL2dTanObl::~Geom2dGcc_MyL2dTanObl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dGcc_MyL2dTanObl {
 	void _kill_pointed() {
 		delete $self;
 	}

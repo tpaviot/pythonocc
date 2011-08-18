@@ -67,7 +67,7 @@ class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_TopExp_StackNodeOfStackOfIterator & operator=(const TopExp_StackNodeOfStackOfIterator *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopExp_StackNodeOfStackOfIterator const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopExp_StackNodeOfStackOfIterator DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_TopExp_StackNodeOfStackOfIterator {

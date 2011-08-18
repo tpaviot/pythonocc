@@ -66,7 +66,7 @@ class Handle_PTColStd_DataMapNodeOfTransientPersistentMap : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfTransientPersistentMap & operator=(const PTColStd_DataMapNodeOfTransientPersistentMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PTColStd_DataMapNodeOfTransientPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PTColStd_DataMapNodeOfTransientPersistentMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PTColStd_DataMapNodeOfTransientPersistentMap {
@@ -104,7 +104,7 @@ class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfPersistentTransientMap & operator=(const PTColStd_DataMapNodeOfPersistentTransientMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PTColStd_DataMapNodeOfPersistentTransientMap const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PTColStd_DataMapNodeOfPersistentTransientMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PTColStd_DataMapNodeOfPersistentTransientMap {
@@ -142,7 +142,7 @@ class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Han
 		%feature("autodoc", "1");
 		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent & operator=(const PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {

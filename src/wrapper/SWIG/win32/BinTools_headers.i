@@ -31,6 +31,7 @@ $HeaderURL$
 #include<BinTools_Curve2dSet.hxx>
 #include<BinTools_CurveSet.hxx>
 #include<BinTools_LocationSet.hxx>
+#include<BinTools_LocationSetPtr.hxx>
 #include<BinTools_ShapeSet.hxx>
 #include<BinTools_SurfaceSet.hxx>
 

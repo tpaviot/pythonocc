@@ -64,21 +64,18 @@ $HeaderURL$
 #include<BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape.hxx>
 #include<BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt.hxx>
 #include<BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal.hxx>
-#include<BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfNodeShape.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt.hxx>
 #include<BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal.hxx>
-#include<BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include<BRepFill_DataMapOfNodeDataMapOfShapeShape.hxx>
 #include<BRepFill_DataMapOfNodeShape.hxx>
 #include<BRepFill_DataMapOfOrientedShapeListOfShape.hxx>
 #include<BRepFill_DataMapOfShapeDataMapOfShapeListOfShape.hxx>
 #include<BRepFill_DataMapOfShapeSequenceOfPnt.hxx>
 #include<BRepFill_DataMapOfShapeSequenceOfReal.hxx>
-#include<BRepFill_DataMapOfShapeSequenceOfShape.hxx>
 #include<BRepFill_Draft.hxx>
 #include<BRepFill_DraftLaw.hxx>
 #include<BRepFill_Edge3DLaw.hxx>
@@ -88,6 +85,8 @@ $HeaderURL$
 #include<BRepFill_FaceAndOrder.hxx>
 #include<BRepFill_Filling.hxx>
 #include<BRepFill_Generator.hxx>
+#include<BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape.hxx>
+#include<BRepFill_IndexedDataMapOfOrientedShapeListOfShape.hxx>
 #include<BRepFill_ListIteratorOfListOfOffsetWire.hxx>
 #include<BRepFill_ListNodeOfListOfOffsetWire.hxx>
 #include<BRepFill_ListOfOffsetWire.hxx>
@@ -143,7 +142,6 @@ $HeaderURL$
 #include<TopoDSToStep_Tool.hxx>
 #include<TopoDSToStep_WireframeBuilder.hxx>
 #include<TopoDS_Builder.hxx>
-#include<TopoDS_Builder3D.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Compound.hxx>
 #include<TopoDS_Edge.hxx>
@@ -183,6 +181,7 @@ $HeaderURL$
 #include<gp_Dir2d.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Elips2d.hxx>
+#include<gp_EulerSequence.hxx>
 #include<gp_GTrsf.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Hypr.hxx>
@@ -196,6 +195,9 @@ $HeaderURL$
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Quaternion.hxx>
+#include<gp_QuaternionNLerp.hxx>
+#include<gp_QuaternionSLerp.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
 #include<gp_Trsf.hxx>

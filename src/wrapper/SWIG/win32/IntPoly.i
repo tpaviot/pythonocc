@@ -66,7 +66,7 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
@@ -104,7 +104,7 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d & operator=(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
@@ -142,7 +142,7 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
@@ -180,7 +180,7 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt & operator=(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt {

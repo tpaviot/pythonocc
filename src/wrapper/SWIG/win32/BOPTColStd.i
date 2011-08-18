@@ -66,7 +66,7 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfI
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
@@ -104,7 +104,7 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : pub
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
@@ -142,7 +142,7 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public 
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
@@ -180,7 +180,7 @@ class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_ListNodeOfListOfListOfShape & operator=(const BOPTColStd_ListNodeOfListOfListOfShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BOPTColStd_ListNodeOfListOfListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BOPTColStd_ListNodeOfListOfListOfShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BOPTColStd_ListNodeOfListOfListOfShape {

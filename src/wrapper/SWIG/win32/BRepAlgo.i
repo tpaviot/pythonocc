@@ -71,7 +71,7 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
@@ -109,7 +109,7 @@ class Handle_BRepAlgo_AsDes : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_AsDes & operator=(const BRepAlgo_AsDes *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepAlgo_AsDes const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_AsDes DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_AsDes {
@@ -147,7 +147,7 @@ class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger & operator=(const BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
@@ -185,7 +185,7 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeInterference *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
@@ -223,7 +223,7 @@ class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_EdgeConnector & operator=(const BRepAlgo_EdgeConnector *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepAlgo_EdgeConnector const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepAlgo_EdgeConnector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_BRepAlgo_EdgeConnector {
@@ -241,44 +241,6 @@ def __del__(self):
 %}
 
 %extend Handle_BRepAlgo_EdgeConnector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger;
-class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger();
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger(const BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger & operator=(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
-	BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger* GetObject() {
-	return (BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger::~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -304,45 +266,6 @@ def __del__(self):
 %}
 
 %extend BRepAlgo_Tool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger;
-class BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger(const TopoDS_Shape K, const TColStd_ListOfInteger &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		TColStd_ListOfInteger & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
-	Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger GetHandle() {
-	return *(Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger*) &$self;
-	}
-};
-%extend BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger::~BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1265,51 +1188,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepAlgo_DataMapOfShapeListOfInteger;
-class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeListOfInteger(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeListOfInteger & Assign(const BRepAlgo_DataMapOfShapeListOfInteger &Other);
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeListOfInteger & operator=(const BRepAlgo_DataMapOfShapeListOfInteger &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const TColStd_ListOfInteger &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		TColStd_ListOfInteger & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		TColStd_ListOfInteger & operator()(const TopoDS_Shape K);
-
-};
-%feature("shadow") BRepAlgo_DataMapOfShapeListOfInteger::~BRepAlgo_DataMapOfShapeListOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_DataMapOfShapeListOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepAlgo;
 class BRepAlgo {
 	public:
@@ -1389,37 +1267,6 @@ def __del__(self):
 %}
 
 %extend BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger;
-class BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger();
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger(const BRepAlgo_DataMapOfShapeListOfInteger &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepAlgo_DataMapOfShapeListOfInteger &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Value() const;
-
-};
-%feature("shadow") BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger::~BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}

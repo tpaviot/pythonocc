@@ -31,9 +31,10 @@ import BRepOffset
 import TopTools
 import GeomAbs
 import Standard
-import TopoDS
-import Draft
 import BRepFill
+import TopoDS
 import TColStd
+import Approx
+import Draft
 import BRepBuilderAPI
 };

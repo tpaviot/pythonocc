@@ -66,7 +66,7 @@ class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfTransient & operator=(const Dico_DictionaryOfTransient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Dico_DictionaryOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Dico_DictionaryOfTransient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Dico_DictionaryOfTransient {
@@ -104,7 +104,7 @@ class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfTransient & operator=(const Dico_StackItemOfDictionaryOfTransient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Dico_StackItemOfDictionaryOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Dico_StackItemOfDictionaryOfTransient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Dico_StackItemOfDictionaryOfTransient {
@@ -142,7 +142,7 @@ class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfInteger & operator=(const Dico_DictionaryOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Dico_DictionaryOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Dico_DictionaryOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Dico_DictionaryOfInteger {
@@ -180,7 +180,7 @@ class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfInteger & operator=(const Dico_StackItemOfDictionaryOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Dico_StackItemOfDictionaryOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Dico_StackItemOfDictionaryOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Dico_StackItemOfDictionaryOfInteger {

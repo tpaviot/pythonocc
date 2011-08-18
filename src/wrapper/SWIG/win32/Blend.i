@@ -84,7 +84,7 @@ class Handle_Blend_SequenceNodeOfSequenceOfPoint : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_Blend_SequenceNodeOfSequenceOfPoint & operator=(const Blend_SequenceNodeOfSequenceOfPoint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Blend_SequenceNodeOfSequenceOfPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Blend_SequenceNodeOfSequenceOfPoint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Blend_SequenceNodeOfSequenceOfPoint {

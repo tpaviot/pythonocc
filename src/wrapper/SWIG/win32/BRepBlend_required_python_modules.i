@@ -37,5 +37,6 @@ import IntSurf
 import GeomAbs
 import Geom2d
 import Geom
+import Approx
 import Adaptor2d
 };

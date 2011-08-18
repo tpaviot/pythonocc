@@ -65,6 +65,7 @@ typedef float Standard_ShortReal;
 typedef jmp_buf Standard_JmpBuf;
 typedef DWORD Standard_ThreadId;
 typedef int Standard_Integer;
+typedef Standard_Byte * Standard_PByte;
 typedef GUID Standard_UUID;
 typedef void * Standard_Address;
 
@@ -140,7 +141,7 @@ class Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		int operator!=(const Standard_Transient *right) const;
 		%feature("autodoc", "1");
-		static		Handle_Standard_Transient const DownCast(const Handle_Standard_Transient &AnObject);
+		static		const Handle_Standard_Transient & DownCast(const Handle_Standard_Transient &AnObject);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -186,7 +187,7 @@ class Handle_Standard_Failure : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Standard_Failure & operator=(const Standard_Failure *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_Failure const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_Failure DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_Failure {
@@ -224,7 +225,7 @@ class Handle_Standard_DomainError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Standard_DomainError & operator=(const Standard_DomainError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_DomainError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_DomainError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_DomainError {
@@ -262,7 +263,7 @@ class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_RangeError & operator=(const Standard_RangeError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_RangeError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_RangeError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_RangeError {
@@ -300,7 +301,7 @@ class Handle_Standard_OutOfRange : public Handle_Standard_RangeError {
 		%feature("autodoc", "1");
 		Handle_Standard_OutOfRange & operator=(const Standard_OutOfRange *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_OutOfRange const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_OutOfRange DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_OutOfRange {
@@ -338,7 +339,7 @@ class Handle_Standard_NoMoreObject : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_NoMoreObject & operator=(const Standard_NoMoreObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NoMoreObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_NoMoreObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_NoMoreObject {
@@ -376,7 +377,7 @@ class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionError & operator=(const Standard_DimensionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_DimensionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_DimensionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_DimensionError {
@@ -414,7 +415,7 @@ class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_TypeMismatch & operator=(const Standard_TypeMismatch *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_TypeMismatch const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_TypeMismatch DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_TypeMismatch {
@@ -452,7 +453,7 @@ class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 		%feature("autodoc", "1");
 		Handle_Standard_NullValue & operator=(const Standard_NullValue *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NullValue const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_NullValue DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_NullValue {
@@ -490,7 +491,7 @@ class Handle_Standard_ProgramError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Standard_ProgramError & operator=(const Standard_ProgramError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_ProgramError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_ProgramError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_ProgramError {
@@ -528,7 +529,7 @@ class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
 		%feature("autodoc", "1");
 		Handle_Standard_OutOfMemory & operator=(const Standard_OutOfMemory *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_OutOfMemory const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_OutOfMemory DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_OutOfMemory {
@@ -566,7 +567,7 @@ class Handle_Standard_NumericError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Standard_NumericError & operator=(const Standard_NumericError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NumericError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_NumericError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_NumericError {
@@ -604,7 +605,7 @@ class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
 		%feature("autodoc", "1");
 		Handle_Standard_DivideByZero & operator=(const Standard_DivideByZero *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_DivideByZero const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_DivideByZero DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_DivideByZero {
@@ -642,7 +643,7 @@ class Handle_Standard_LicenseError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseError & operator=(const Standard_LicenseError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_LicenseError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_LicenseError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_LicenseError {
@@ -680,7 +681,7 @@ class Handle_Standard_TooManyUsers : public Handle_Standard_LicenseError {
 		%feature("autodoc", "1");
 		Handle_Standard_TooManyUsers & operator=(const Standard_TooManyUsers *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_TooManyUsers const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_TooManyUsers DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_TooManyUsers {
@@ -718,7 +719,7 @@ class Handle_Standard_NegativeValue : public Handle_Standard_RangeError {
 		%feature("autodoc", "1");
 		Handle_Standard_NegativeValue & operator=(const Standard_NegativeValue *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NegativeValue const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_NegativeValue DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_NegativeValue {
@@ -756,7 +757,7 @@ class Handle_Standard_Underflow : public Handle_Standard_NumericError {
 		%feature("autodoc", "1");
 		Handle_Standard_Underflow & operator=(const Standard_Underflow *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_Underflow const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_Underflow DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_Underflow {
@@ -794,7 +795,7 @@ class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_MultiplyDefined & operator=(const Standard_MultiplyDefined *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_MultiplyDefined const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_MultiplyDefined DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_MultiplyDefined {
@@ -832,7 +833,7 @@ class Handle_Standard_NotImplemented : public Handle_Standard_ProgramError {
 		%feature("autodoc", "1");
 		Handle_Standard_NotImplemented & operator=(const Standard_NotImplemented *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NotImplemented const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_NotImplemented DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_NotImplemented {
@@ -870,7 +871,7 @@ class Handle_Standard_NullObject : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_NullObject & operator=(const Standard_NullObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NullObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_NullObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_NullObject {
@@ -968,7 +969,7 @@ class Handle_Standard_AbortiveTransaction : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Standard_AbortiveTransaction & operator=(const Standard_AbortiveTransaction *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_AbortiveTransaction const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_AbortiveTransaction DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_AbortiveTransaction {
@@ -1006,7 +1007,7 @@ class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_ConstructionError & operator=(const Standard_ConstructionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_ConstructionError const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_ConstructionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_ConstructionError {
@@ -1044,7 +1045,7 @@ class Handle_Standard_Overflow : public Handle_Standard_NumericError {
 		%feature("autodoc", "1");
 		Handle_Standard_Overflow & operator=(const Standard_Overflow *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_Overflow const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_Overflow DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_Overflow {
@@ -1082,7 +1083,7 @@ class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError 
 		%feature("autodoc", "1");
 		Handle_Standard_DimensionMismatch & operator=(const Standard_DimensionMismatch *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_DimensionMismatch const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_DimensionMismatch DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_DimensionMismatch {
@@ -1120,7 +1121,7 @@ class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
 		%feature("autodoc", "1");
 		Handle_Standard_LicenseNotFound & operator=(const Standard_LicenseNotFound *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_LicenseNotFound const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_LicenseNotFound DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_LicenseNotFound {
@@ -1158,7 +1159,7 @@ class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_NoSuchObject & operator=(const Standard_NoSuchObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NoSuchObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_NoSuchObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_NoSuchObject {
@@ -1196,7 +1197,7 @@ class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_Standard_ImmutableObject & operator=(const Standard_ImmutableObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_ImmutableObject const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_ImmutableObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_ImmutableObject {
@@ -1234,7 +1235,7 @@ class Handle_Standard_Type : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Standard_Type & operator=(const Standard_Type *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_Type const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_Type DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Standard_Type {
@@ -1405,9 +1406,11 @@ class Standard_Failure : public Standard_Transient {
 		%feature("autodoc", "1");
 		void Reraise(const char * aMessage);
 		%feature("autodoc", "1");
+		void Reraise(const Standard_SStream &aReason);
+		%feature("autodoc", "1");
 		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
+		static		void Raise(const Standard_SStream &aReason);
 		%feature("autodoc", "1");
 		static		Handle_Standard_Failure NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
@@ -1450,7 +1453,9 @@ class Standard_NumericError : public Standard_Failure {
 		%feature("autodoc", "1");
 		Standard_NumericError(const char * AString);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NumericError NewInstance(const char * aMessage);
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_NumericError NewInstance(const char * aMessage="");
 
 };
 %extend Standard_NumericError {
@@ -1487,7 +1492,7 @@ class Standard_DivideByZero : public Standard_NumericError {
 		%feature("autodoc", "1");
 		Standard_DivideByZero(const char * AString);
 		%feature("autodoc", "1");
-		static		Handle_Standard_DivideByZero NewInstance(const char * aMessage);
+		static		Handle_Standard_DivideByZero NewInstance(const char * aMessage="");
 
 };
 %extend Standard_DivideByZero {
@@ -1528,7 +1533,7 @@ class Standard_ProgramError : public Standard_Failure {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_ProgramError NewInstance(const char * aMessage);
+		static		Handle_Standard_ProgramError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1606,7 +1611,7 @@ class Standard_DomainError : public Standard_Failure {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_DomainError NewInstance(const char * aMessage);
+		static		Handle_Standard_DomainError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1645,7 +1650,7 @@ class Standard_NoSuchObject : public Standard_DomainError {
 		%feature("autodoc", "1");
 		Standard_NoSuchObject(const char * AString);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NoSuchObject NewInstance(const char * aMessage);
+		static		Handle_Standard_NoSuchObject NewInstance(const char * aMessage="");
 
 };
 %extend Standard_NoSuchObject {
@@ -1686,7 +1691,7 @@ class Standard_RangeError : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_RangeError NewInstance(const char * aMessage);
+		static		Handle_Standard_RangeError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1729,7 +1734,7 @@ class Standard_NotImplemented : public Standard_ProgramError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NotImplemented NewInstance(const char * aMessage);
+		static		Handle_Standard_NotImplemented NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1772,7 +1777,7 @@ class Standard_AbortiveTransaction : public Standard_Failure {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_AbortiveTransaction NewInstance(const char * aMessage);
+		static		Handle_Standard_AbortiveTransaction NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1879,7 +1884,7 @@ class Standard_MultiplyDefined : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_MultiplyDefined NewInstance(const char * aMessage);
+		static		Handle_Standard_MultiplyDefined NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1922,7 +1927,7 @@ class Standard_Overflow : public Standard_NumericError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_Overflow NewInstance(const char * aMessage);
+		static		Handle_Standard_Overflow NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2020,7 +2025,7 @@ class Standard_NullValue : public Standard_RangeError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NullValue NewInstance(const char * aMessage);
+		static		Handle_Standard_NullValue NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2063,7 +2068,7 @@ class Standard_NoMoreObject : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NoMoreObject NewInstance(const char * aMessage);
+		static		Handle_Standard_NoMoreObject NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2106,7 +2111,7 @@ class Standard_DimensionError : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_DimensionError NewInstance(const char * aMessage);
+		static		Handle_Standard_DimensionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2145,7 +2150,7 @@ class Standard_DimensionMismatch : public Standard_DimensionError {
 		%feature("autodoc", "1");
 		Standard_DimensionMismatch(const char * AString);
 		%feature("autodoc", "1");
-		static		Handle_Standard_DimensionMismatch NewInstance(const char * aMessage);
+		static		Handle_Standard_DimensionMismatch NewInstance(const char * aMessage="");
 
 };
 %extend Standard_DimensionMismatch {
@@ -2186,7 +2191,7 @@ class Standard_TypeMismatch : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_TypeMismatch NewInstance(const char * aMessage);
+		static		Handle_Standard_TypeMismatch NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2229,7 +2234,7 @@ class Standard_LicenseError : public Standard_Failure {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_LicenseError NewInstance(const char * aMessage);
+		static		Handle_Standard_LicenseError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2268,7 +2273,7 @@ class Standard_LicenseNotFound : public Standard_LicenseError {
 		%feature("autodoc", "1");
 		Standard_LicenseNotFound(const char * AString);
 		%feature("autodoc", "1");
-		static		Handle_Standard_LicenseNotFound NewInstance(const char * aMessage);
+		static		Handle_Standard_LicenseNotFound NewInstance(const char * aMessage="");
 
 };
 %extend Standard_LicenseNotFound {
@@ -2355,7 +2360,7 @@ class Standard_ImmutableObject : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_ImmutableObject NewInstance(const char * aMessage);
+		static		Handle_Standard_ImmutableObject NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2582,7 +2587,7 @@ class Standard_TooManyUsers : public Standard_LicenseError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_TooManyUsers NewInstance(const char * aMessage);
+		static		Handle_Standard_TooManyUsers NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2625,7 +2630,7 @@ class Standard_NegativeValue : public Standard_RangeError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NegativeValue NewInstance(const char * aMessage);
+		static		Handle_Standard_NegativeValue NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2668,7 +2673,7 @@ class Standard_NullObject : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_NullObject NewInstance(const char * aMessage);
+		static		Handle_Standard_NullObject NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2790,7 +2795,7 @@ class Standard_ConstructionError : public Standard_DomainError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_ConstructionError NewInstance(const char * aMessage);
+		static		Handle_Standard_ConstructionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2833,7 +2838,7 @@ class Standard_OutOfRange : public Standard_RangeError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_OutOfRange NewInstance(const char * aMessage);
+		static		Handle_Standard_OutOfRange NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2905,7 +2910,7 @@ class Standard_OutOfMemory : public Standard_ProgramError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_OutOfMemory NewInstance(const char * aMessage);
+		static		Handle_Standard_OutOfMemory NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2948,7 +2953,7 @@ class Standard_Underflow : public Standard_NumericError {
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_Underflow NewInstance(const char * aMessage);
+		static		Handle_Standard_Underflow NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2973,6 +2978,35 @@ def __del__(self):
 %}
 
 %extend Standard_Underflow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_MMgrTBBalloc;
+class Standard_MMgrTBBalloc : public Standard_MMgrRoot {
+	public:
+		%feature("autodoc", "1");
+		Standard_MMgrTBBalloc(const Standard_Boolean aClear=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Allocate(const Standard_Size aSize);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
+		%feature("autodoc", "1");
+		virtual		void Free(Standard_Address & arg0);
+
+};
+%feature("shadow") Standard_MMgrTBBalloc::~Standard_MMgrTBBalloc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_MMgrTBBalloc {
 	void _kill_pointed() {
 		delete $self;
 	}

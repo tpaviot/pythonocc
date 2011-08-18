@@ -66,7 +66,7 @@ class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyShellData & operator=(const HLRAlgo_PolyShellData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_PolyShellData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_PolyShellData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_PolyShellData {
@@ -104,7 +104,7 @@ class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_HArray1OfPINod & operator=(const HLRAlgo_HArray1OfPINod *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_HArray1OfPINod const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_HArray1OfPINod DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_HArray1OfPINod {
@@ -142,7 +142,7 @@ class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_WiresBlock & operator=(const HLRAlgo_WiresBlock *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_WiresBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_WiresBlock DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_WiresBlock {
@@ -180,7 +180,7 @@ class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_HArray1OfTData & operator=(const HLRAlgo_HArray1OfTData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_HArray1OfTData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_HArray1OfTData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_HArray1OfTData {
@@ -218,7 +218,7 @@ class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_HArray1OfPISeg & operator=(const HLRAlgo_HArray1OfPISeg *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_HArray1OfPISeg const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_HArray1OfPISeg DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_HArray1OfPISeg {
@@ -256,7 +256,7 @@ class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_ListNodeOfInterferenceList & operator=(const HLRAlgo_ListNodeOfInterferenceList *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_ListNodeOfInterferenceList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_ListNodeOfInterferenceList DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_ListNodeOfInterferenceList {
@@ -294,7 +294,7 @@ class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_EdgesBlock & operator=(const HLRAlgo_EdgesBlock *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_EdgesBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_EdgesBlock DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_EdgesBlock {
@@ -332,7 +332,7 @@ class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyInternalData & operator=(const HLRAlgo_PolyInternalData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_PolyInternalData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_PolyInternalData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_PolyInternalData {
@@ -370,7 +370,7 @@ class Handle_HLRAlgo_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_ListNodeOfListOfBPoint & operator=(const HLRAlgo_ListNodeOfListOfBPoint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_ListNodeOfListOfBPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_ListNodeOfListOfBPoint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_ListNodeOfListOfBPoint {
@@ -408,7 +408,7 @@ class Handle_HLRAlgo_PolyData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyData & operator=(const HLRAlgo_PolyData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_PolyData const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_PolyData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_PolyData {
@@ -446,7 +446,7 @@ class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyAlgo & operator=(const HLRAlgo_PolyAlgo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_PolyAlgo const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_PolyAlgo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_PolyAlgo {
@@ -484,7 +484,7 @@ class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_PolyInternalNode & operator=(const HLRAlgo_PolyInternalNode *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_PolyInternalNode const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_PolyInternalNode DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_PolyInternalNode {
@@ -522,7 +522,7 @@ class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRAlgo_HArray1OfPHDat & operator=(const HLRAlgo_HArray1OfPHDat *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_HArray1OfPHDat const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_HArray1OfPHDat DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_HLRAlgo_HArray1OfPHDat {

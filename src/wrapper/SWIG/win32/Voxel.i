@@ -57,6 +57,11 @@ enum Voxel_VoxelDisplayMode {
 	Voxel_VDM_NEARESTBOXES,
 	};
 
+enum Voxel_VoxelFileFormat {
+	Voxel_VFF_ASCII,
+	Voxel_VFF_BINARY,
+	};
+
 
 
 %nodefaultctor Handle_Voxel_Prs;
@@ -73,7 +78,7 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_Voxel_Prs & operator=(const Voxel_Prs *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Voxel_Prs const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Voxel_Prs DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_Voxel_Prs {
@@ -190,6 +195,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor Voxel_SplitData;
+class Voxel_SplitData {
+	public:
+		%feature("autodoc", "1");
+		Voxel_SplitData();
+		%feature("autodoc", "1");
+		Standard_Address & GetValues();
+		%feature("autodoc", "1");
+		Standard_Address & GetSplitData();
+
+};
+%feature("shadow") Voxel_SplitData::~Voxel_SplitData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Voxel_SplitData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Voxel_FloatDS;
 class Voxel_FloatDS : public Voxel_DS {
 	public:
@@ -225,6 +257,94 @@ def __del__(self):
 };
 
 
+%nodefaultctor Voxel_ROctBoolDS;
+class Voxel_ROctBoolDS : public Voxel_DS {
+	public:
+		%feature("autodoc", "1");
+		Voxel_ROctBoolDS();
+		%feature("autodoc", "1");
+		Voxel_ROctBoolDS(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
+		%feature("autodoc", "1");
+		virtual		void Init(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		void SetZero();
+		%feature("autodoc", "1");
+		void OptimizeMemory();
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Boolean data);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Integer ioct1, const Standard_Boolean data);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Integer ioct1, const Standard_Integer ioct2, const Standard_Boolean data);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSplit(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
+		%feature("autodoc", "1");
+		Standard_Integer Deepness(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Integer ioct1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Integer ioct1, const Standard_Integer ioct2) const;
+		%feature("autodoc","GetCenter(Standard_Integer ix, Standard_Integer iy, Standard_Integer iz, Standard_Integer i) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void GetCenter(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Integer i, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","GetCenter(Standard_Integer ix, Standard_Integer iy, Standard_Integer iz, Standard_Integer i, Standard_Integer j) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void GetCenter(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Integer i, const Standard_Integer j, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") Voxel_ROctBoolDS::~Voxel_ROctBoolDS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Voxel_ROctBoolDS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Voxel_Writer;
+class Voxel_Writer {
+	public:
+		%feature("autodoc", "1");
+		Voxel_Writer();
+		%feature("autodoc", "1");
+		void SetFormat(const Voxel_VoxelFileFormat format);
+		%feature("autodoc", "1");
+		void SetVoxels(const Voxel_BoolDS &voxels);
+		%feature("autodoc", "1");
+		void SetVoxels(const Voxel_ColorDS &voxels);
+		%feature("autodoc", "1");
+		void SetVoxels(const Voxel_FloatDS &voxels);
+		%feature("autodoc", "1");
+		Standard_Boolean Write(const TCollection_ExtendedString &file) const;
+
+};
+%feature("shadow") Voxel_Writer::~Voxel_Writer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Voxel_Writer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Voxel_Selector;
 class Voxel_Selector {
 	public:
@@ -238,6 +358,8 @@ class Voxel_Selector {
 		void SetVoxels(const Voxel_BoolDS &voxels);
 		%feature("autodoc", "1");
 		void SetVoxels(const Voxel_ColorDS &voxels);
+		%feature("autodoc", "1");
+		void SetVoxels(const Voxel_ROctBoolDS &voxels);
 		%feature("autodoc","Detect(Standard_Integer winx, Standard_Integer winy) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 
 		Standard_Boolean Detect(const Standard_Integer winx, const Standard_Integer winy, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
@@ -268,6 +390,8 @@ class Voxel_Prs : public AIS_InteractiveObject {
 		void SetBoolVoxels(const Standard_Address theVoxels);
 		%feature("autodoc", "1");
 		void SetColorVoxels(const Standard_Address theVoxels);
+		%feature("autodoc", "1");
+		void SetROctBoolVoxels(const Standard_Address theVoxels);
 		%feature("autodoc", "1");
 		void SetTriangulation(const Handle_Poly_Triangulation &theTriangulation);
 		%feature("autodoc", "1");
@@ -326,6 +450,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor Voxel_Reader;
+class Voxel_Reader {
+	public:
+		%feature("autodoc", "1");
+		Voxel_Reader();
+		%feature("autodoc", "1");
+		Standard_Boolean Read(const TCollection_ExtendedString &file);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBoolVoxels() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsColorVoxels() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsFloatVoxels() const;
+		%feature("autodoc", "1");
+		Standard_Address GetBoolVoxels() const;
+		%feature("autodoc", "1");
+		Standard_Address GetColorVoxels() const;
+		%feature("autodoc", "1");
+		Standard_Address GetFloatVoxels() const;
+
+};
+%feature("shadow") Voxel_Reader::~Voxel_Reader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Voxel_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Voxel_BooleanOperation;
 class Voxel_BooleanOperation {
 	public:
@@ -368,6 +529,8 @@ class Voxel_FastConverter {
 		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_BoolDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
 		%feature("autodoc", "1");
 		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_ColorDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
+		%feature("autodoc", "1");
+		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_ROctBoolDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
 		%feature("autodoc","Convert(Standard_Integer ithread=1) -> Standard_Integer");
 
 		Standard_Boolean Convert(Standard_Integer &OutValue, const Standard_Integer ithread=1);
@@ -471,6 +634,49 @@ def __del__(self):
 %}
 
 %extend Voxel_CollisionDetection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Voxel_OctBoolDS;
+class Voxel_OctBoolDS : public Voxel_DS {
+	public:
+		%feature("autodoc", "1");
+		Voxel_OctBoolDS();
+		%feature("autodoc", "1");
+		Voxel_OctBoolDS(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
+		%feature("autodoc", "1");
+		virtual		void Init(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		void SetZero();
+		%feature("autodoc", "1");
+		void OptimizeMemory();
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Boolean data);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Integer ioct, const Standard_Boolean data);
+		%feature("autodoc", "1");
+		Standard_Boolean Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Integer ioct) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSplit(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
+
+};
+%feature("shadow") Voxel_OctBoolDS::~Voxel_OctBoolDS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Voxel_OctBoolDS {
 	void _kill_pointed() {
 		delete $self;
 	}

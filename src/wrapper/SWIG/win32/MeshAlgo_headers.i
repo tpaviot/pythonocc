@@ -27,26 +27,10 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc.hxx>
-#include<MeshAlgo.hxx>
-#include<MeshAlgo_CellFilter.hxx>
-#include<MeshAlgo_Circ.hxx>
-#include<MeshAlgo_CircleInspector.hxx>
-#include<MeshAlgo_CircleTool.hxx>
-#include<MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc.hxx>
-#include<MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc.hxx>
-#include<MeshAlgo_DataMapOfIntegerCirc.hxx>
-#include<MeshAlgo_Edge.hxx>
-#include<MeshAlgo_Triangle.hxx>
-#include<MeshAlgo_Vertex.hxx>
 
 // Additional headers necessary for compilation.
 
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
-#include<MeshAlgo.hxx>
-#include<gp_XY.hxx>
-#include<gp_Circ2d.hxx>
 %}

@@ -66,7 +66,7 @@ class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_ManifoldSolid & operator=(const IGESSolid_ManifoldSolid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_ManifoldSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_ManifoldSolid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_ManifoldSolid {
@@ -104,7 +104,7 @@ class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SpecificModule & operator=(const IGESSolid_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_SpecificModule {
@@ -142,7 +142,7 @@ class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_EdgeList & operator=(const IGESSolid_EdgeList *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_EdgeList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_EdgeList DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_EdgeList {
@@ -180,7 +180,7 @@ class Handle_IGESSolid_ConeFrustum : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_ConeFrustum & operator=(const IGESSolid_ConeFrustum *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_ConeFrustum const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_ConeFrustum DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_ConeFrustum {
@@ -218,7 +218,7 @@ class Handle_IGESSolid_HArray1OfFace : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_HArray1OfFace & operator=(const IGESSolid_HArray1OfFace *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_HArray1OfFace const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_HArray1OfFace DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_HArray1OfFace {
@@ -256,7 +256,7 @@ class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_RightAngularWedge & operator=(const IGESSolid_RightAngularWedge *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_RightAngularWedge const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_RightAngularWedge DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_RightAngularWedge {
@@ -294,7 +294,7 @@ class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_CylindricalSurface & operator=(const IGESSolid_CylindricalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_CylindricalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_CylindricalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_CylindricalSurface {
@@ -332,7 +332,7 @@ class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_BooleanTree & operator=(const IGESSolid_BooleanTree *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_BooleanTree const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_BooleanTree DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_BooleanTree {
@@ -370,7 +370,7 @@ class Handle_IGESSolid_Shell : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Shell & operator=(const IGESSolid_Shell *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Shell const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_Shell DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_Shell {
@@ -408,7 +408,7 @@ class Handle_IGESSolid_SolidInstance : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SolidInstance & operator=(const IGESSolid_SolidInstance *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_SolidInstance const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_SolidInstance DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_SolidInstance {
@@ -446,7 +446,7 @@ class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SolidOfRevolution & operator=(const IGESSolid_SolidOfRevolution *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_SolidOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_SolidOfRevolution DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_SolidOfRevolution {
@@ -484,7 +484,7 @@ class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_ConicalSurface & operator=(const IGESSolid_ConicalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_ConicalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_ConicalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_ConicalSurface {
@@ -522,7 +522,7 @@ class Handle_IGESSolid_Protocol : public Handle_IGESData_Protocol {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Protocol & operator=(const IGESSolid_Protocol *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_Protocol DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_Protocol {
@@ -560,7 +560,7 @@ class Handle_IGESSolid_VertexList : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_VertexList & operator=(const IGESSolid_VertexList *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_VertexList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_VertexList DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_VertexList {
@@ -598,7 +598,7 @@ class Handle_IGESSolid_GeneralModule : public Handle_IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_GeneralModule & operator=(const IGESSolid_GeneralModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_GeneralModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_GeneralModule {
@@ -636,7 +636,7 @@ class Handle_IGESSolid_HArray1OfLoop : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_HArray1OfLoop & operator=(const IGESSolid_HArray1OfLoop *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_HArray1OfLoop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_HArray1OfLoop DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_HArray1OfLoop {
@@ -674,7 +674,7 @@ class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_HArray1OfVertexList & operator=(const IGESSolid_HArray1OfVertexList *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_HArray1OfVertexList const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_HArray1OfVertexList DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_HArray1OfVertexList {
@@ -712,7 +712,7 @@ class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SphericalSurface & operator=(const IGESSolid_SphericalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_SphericalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_SphericalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_SphericalSurface {
@@ -750,7 +750,7 @@ class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Cylinder & operator=(const IGESSolid_Cylinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Cylinder const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_Cylinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_Cylinder {
@@ -788,7 +788,7 @@ class Handle_IGESSolid_SolidAssembly : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SolidAssembly & operator=(const IGESSolid_SolidAssembly *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_SolidAssembly const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_SolidAssembly DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_SolidAssembly {
@@ -826,7 +826,7 @@ class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Block & operator=(const IGESSolid_Block *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Block const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_Block DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_Block {
@@ -864,7 +864,7 @@ class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Loop & operator=(const IGESSolid_Loop *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Loop const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_Loop DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_Loop {
@@ -902,7 +902,7 @@ class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Sphere & operator=(const IGESSolid_Sphere *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Sphere const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_Sphere DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_Sphere {
@@ -940,7 +940,7 @@ class Handle_IGESSolid_HArray1OfShell : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_HArray1OfShell & operator=(const IGESSolid_HArray1OfShell *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_HArray1OfShell const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_HArray1OfShell DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_HArray1OfShell {
@@ -978,7 +978,7 @@ class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_ToroidalSurface & operator=(const IGESSolid_ToroidalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_ToroidalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_ToroidalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_ToroidalSurface {
@@ -1016,7 +1016,7 @@ class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Torus & operator=(const IGESSolid_Torus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Torus const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_Torus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_Torus {
@@ -1054,7 +1054,7 @@ class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 		%feature("autodoc", "1");
 		Handle_IGESSolid_ReadWriteModule & operator=(const IGESSolid_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_ReadWriteModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_ReadWriteModule {
@@ -1092,7 +1092,7 @@ class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Face & operator=(const IGESSolid_Face *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Face const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_Face DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_Face {
@@ -1130,7 +1130,7 @@ class Handle_IGESSolid_PlaneSurface : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_PlaneSurface & operator=(const IGESSolid_PlaneSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_PlaneSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_PlaneSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_PlaneSurface {
@@ -1168,7 +1168,7 @@ class Handle_IGESSolid_Ellipsoid : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Ellipsoid & operator=(const IGESSolid_Ellipsoid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Ellipsoid const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_Ellipsoid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_Ellipsoid {
@@ -1206,7 +1206,7 @@ class Handle_IGESSolid_SelectedComponent : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SelectedComponent & operator=(const IGESSolid_SelectedComponent *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_SelectedComponent const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_SelectedComponent DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_SelectedComponent {
@@ -1244,7 +1244,7 @@ class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntit
 		%feature("autodoc", "1");
 		Handle_IGESSolid_SolidOfLinearExtrusion & operator=(const IGESSolid_SolidOfLinearExtrusion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_SolidOfLinearExtrusion const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_SolidOfLinearExtrusion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
 %extend Handle_IGESSolid_SolidOfLinearExtrusion {
@@ -1262,6 +1262,43 @@ def __del__(self):
 %}
 
 %extend Handle_IGESSolid_SolidOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_ToolTorus;
+class IGESSolid_ToolTorus {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolTorus();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_Torus &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_Torus &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_Torus &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Torus &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_Torus &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_Torus &entfrom, const Handle_IGESSolid_Torus &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_Torus &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESSolid_ToolTorus::~IGESSolid_ToolTorus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ToolTorus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1777,43 +1814,6 @@ def __del__(self):
 %}
 
 %extend IGESSolid_BooleanTree {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_ToolTorus;
-class IGESSolid_ToolTorus {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolTorus();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Torus &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Torus &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Torus &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Torus &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Torus &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Torus &entfrom, const Handle_IGESSolid_Torus &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Torus &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESSolid_ToolTorus::~IGESSolid_ToolTorus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_ToolTorus {
 	void _kill_pointed() {
 		delete $self;
 	}
