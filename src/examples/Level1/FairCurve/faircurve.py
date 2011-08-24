@@ -1,3 +1,22 @@
+#!/usr/bin/env python
+
+##Copyright 2009-2011 Jelle Feringa (jelleferinga@gmail.com)
+##
+##This file is part of pythonOCC.
+##
+##pythonOCC is free software: you can redistribute it and/or modify
+##it under the terms of the GNU Lesser General Public License as published by
+##the Free Software Foundation, either version 3 of the License, or
+##(at your option) any later version.
+##
+##pythonOCC is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU Lesser General Public License for more details.
+##
+##You should have received a copy of the GNU Lesser General Public License
+##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 from OCC.gp import *
 from OCC.Geom2d import *
 from OCC.Geom import *
@@ -26,13 +45,10 @@ def batten_curve( pt1, pt2, height, slope, angle1, angle2):
     fc.SetAngle2(angle2)
     fc.SetHeight(height)
     fc.SetSlope(slope)
-    #fc.SetCurvature1(3)
-    #fc.SetCurvature1(22)
     fc.SetFreeSliding(True)
     print fc.DumpToString()
-    ff = fc.Compute()
-    ff = (error_code(ff[0]), error_code(ff[1]))
-    print ff
+    status = fc.Compute()
+    print (error_code(status[0]), error_code(status[1]))
     return fc.Curve()
 
 def faircurve(event=None):
@@ -40,9 +56,7 @@ def faircurve(event=None):
     pt2 = gp_Pnt2d(0,120)
     height = 100.
     slope = 0.3
-
     pl = Geom_Plane(gp_Pln())
-
     for i in range(0, 40, 1):
         # TODO: the parameter slope needs to be visualized
         bc = batten_curve(pt1, pt2, height, i/100., math.radians(i), math.radians(-i))
