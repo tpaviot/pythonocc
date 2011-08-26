@@ -20,16 +20,12 @@
 from OCC.BRepPrimAPI import *
 from OCC.GProp import *
 from OCC.BRepGProp import *
-
-from OCC.Display.SimpleGui import *
-display, start_display, add_menu, add_function_to_menu = init_display()
-
 from OCC.gp import *
 
 def cube_inertia_properties(event=None):
     # Create and display cube
+    print "Creating a cubic box shape (50*50*50)"
     cube_shape = BRepPrimAPI_MakeBox(50.,50.,50.).Shape()
-    ais_boxshp = display.DisplayShape(cube_shape)
     # Compute inertia properties
     props = GProp_GProps()
     BRepGProp_VolumeProperties(cube_shape,props)
@@ -44,6 +40,4 @@ def cube_inertia_properties(event=None):
     
     
 if __name__ == '__main__':
-    add_menu('properties')
-    add_function_to_menu('properties', cube_inertia_properties)
-    start_display()
+    cube_inertia_properties()
