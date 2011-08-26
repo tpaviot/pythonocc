@@ -71,7 +71,7 @@ def simple_mesh(event=None):
         ex.Next()
     display.EraseAll()
     display.DisplayShape(shape)
-    display.DisplayShape(Comp)
+    display.DisplayShape(Comp, update=True )
     
 if __name__ == '__main__':
     add_menu('mesh')
