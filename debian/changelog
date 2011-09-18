@@ -1,0 +1,180 @@
+python-occ (0.5-12ubuntu19) natty; urgency=low
+
+  * completely remove disable-GEOM 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Mon, 15 Aug 2011 06:23:35 +0200
+
+python-occ (0.5-12ubuntu18) natty; urgency=low
+
+  * remove disable-GEOM 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 14 Aug 2011 21:55:57 +0200
+
+python-occ (0.5-12ubuntu17) natty; urgency=low
+
+  * did't work 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 14 Aug 2011 16:25:47 +0200
+
+python-occ (0.5-12ubuntu16) natty; urgency=low
+
+  * enable GEOM part I 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Fri, 12 Aug 2011 16:20:24 +0200
+
+python-occ (0.5-12ubuntu15) natty; urgency=low
+
+  * trying to fix upload problems 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Fri, 12 Aug 2011 12:49:29 +0200
+
+python-occ (0.5-12ubuntu14) natty; urgency=low
+
+  * broken again? 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Fri, 12 Aug 2011 12:34:27 +0200
+
+python-occ (0.5-12ubuntu13) natty; urgency=low
+
+  * readd geom support 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Fri, 12 Aug 2011 03:30:39 +0200
+
+python-occ (0.5-12ubuntu12) natty; urgency=low
+
+  * again fix packaging error
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Wed, 10 Aug 2011 16:56:05 +0200
+
+python-occ (0.5-12ubuntu11) lucid; urgency=low
+
+  * lucid upload 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 07 Aug 2011 22:31:15 +0200
+
+python-occ (0.5-12ubuntu10) maverick; urgency=low
+
+  * maverick upload 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 07 Aug 2011 22:30:27 +0200
+
+python-occ (0.5-12ubuntu9) natty; urgency=low
+
+  * need 2.7
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 07 Aug 2011 22:26:22 +0200
+
+python-occ (0.5-12ubuntu8) natty; urgency=low
+
+  * GEOM-support added 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Thu, 04 Aug 2011 20:45:57 +0200
+
+python-occ (0.5-12ubuntu7) maverick; urgency=low
+
+  * python2.6 for maverick due to package error with 2.7 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Fri, 29 Jul 2011 08:24:41 +0200
+
+python-occ (0.5-12ubuntu6) lucid; urgency=low
+
+  * lucid only supports python2.6 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Thu, 28 Jul 2011 15:34:31 +0200
+
+python-occ (0.5-12ubuntu5) lucid; urgency=low
+
+  * lucid upload 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Thu, 28 Jul 2011 15:18:43 +0200
+
+python-occ (0.5-12ubuntu4) maverick; urgency=low
+
+  * disabled parallel build for older distutils release in <natty 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Thu, 28 Jul 2011 15:16:12 +0200
+
+python-occ (0.5-12ubuntu3) oneiric; urgency=low
+
+  * oneiric upload 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Wed, 27 Jul 2011 11:04:41 +0200
+
+python-occ (0.5-12ubuntu2) lucid; urgency=low
+
+  * lucid upload 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Wed, 27 Jul 2011 11:03:32 +0200
+
+python-occ (0.5-12ubuntu1) maverick; urgency=low
+
+  * maverick upload 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Wed, 27 Jul 2011 11:00:12 +0200
+
+python-occ (0.5-12) natty; urgency=low
+
+  * recommends included
+  * python2.7 only release
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Tue, 26 Jul 2011 18:59:18 +0200
+
+python-occ (0.5-11) lucid maverick natty oneiric; urgency=low
+
+  * release for lucid - oneiric
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 24 Jul 2011 23:23:01 +0200
+
+python-occ (0.5-10) natty; urgency=low
+
+  * fix build error 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 24 Jul 2011 23:16:53 +0200
+
+python-occ (0.5-9) natty; urgency=low
+
+  * better build - python 2.6 and 2.7 aimed
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 24 Jul 2011 19:11:37 +0200
+
+python-occ (0.5-7) natty; urgency=low
+
+  * fix build error 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 24 Jul 2011 13:17:03 +0200
+
+python-occ (0.5-6) natty; urgency=low
+
+  * python2.6 & python2.7 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 24 Jul 2011 10:31:28 +0200
+
+python-occ (0.5-5) natty; urgency=low
+
+  * fix leftover 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sat, 23 Jul 2011 23:10:09 +0200
+
+python-occ (0.5-4) natty; urgency=low
+
+  * fix empty install error
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sat, 23 Jul 2011 21:26:10 +0200
+
+python-occ (0.5-3) natty; urgency=low
+
+  * fixed a bug in python-occ build scripts 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Fri, 22 Jul 2011 08:21:06 +0200
+
+python-occ (0.5-2) maverick; urgency=low
+
+  * maverick upload 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Fri, 22 Jul 2011 03:04:56 +0200
+
+python-occ (0.5-1) natty; urgency=low
+
+  * Initial release
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Wed, 29 Jun 2011 10:04:15 +0200
