@@ -176,8 +176,8 @@ elif sys.platform=='linux2':
         DEFINE_MACROS.append(('_OCC64',None))
         SWIG_OPTS.append('-D_OCC64')
         ECA.append('-m64')
-    else:
-        ECA.append('-march=%s'%platform.machine())
+    #else:
+        #ECA.append('-march=%s'%platform.machine())
     
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
