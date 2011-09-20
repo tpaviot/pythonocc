@@ -74,23 +74,29 @@ INCLUDE(${SWIG_USE_FILE})
 # OpenCASCADE include and lib location #
 ########################################
 # Find OpenCASCADE library, set include and lib path
-IF(WIN32)
-    # Under Windows, check the CASROOT env variable
-    SET(OCC_INCLUDE_PATH "$ENV{CASROOT}\\inc")
-    SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
-    # Find the Standard_Real.hxx header in this path
-ELSE(WIN32) #Unix
-    SET(OCC_INCLUDE_PATH "/Library/OpenCASCADE/6.3.0/inc")
-    SET(OCC_LIB_PATH "/Library/OpenCASCADE/6.3.0/lib")
-ENDIF(WIN32)
+FIND_PACKAGE(OCE)
+IF(OCE_FOUND)
+    SET(OCC_INCLUDE_PATH ${OCE_INCLUDE_DIRS})
+ELSE(OCE_FOUND)
+    IF(WIN32)
+        # Under Windows, check the CASROOT env variable
+        SET(OCC_INCLUDE_PATH "$ENV{CASROOT}\\inc")
+        SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
+        # Find the Standard_Real.hxx header in this path
+    ELSE(WIN32) #Unix
+        SET(OCC_INCLUDE_PATH "/Library/OpenCASCADE/6.3.0/inc")
+        SET(OCC_LIB_PATH "/Library/OpenCASCADE/6.3.0/lib")
+    ENDIF(WIN32)
 
-# Check that these paths are ok
-FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx ${OCC_INCLUDE_PATH})
-FIND_LIBRARY(RESULT_LIB TKernel ${OCC_LIB_PATH})
-MESSAGE(STATUS " ${RESULT_PATH}")
-MESSAGE(STATUS " ${RESULT_LIB}")
-MESSAGE(STATUS " -- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
-MESSAGE(STATUS " -- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
+    # Check that these paths are ok
+    FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx ${OCC_INCLUDE_PATH})
+    FIND_LIBRARY(RESULT_LIB TKernel ${OCC_LIB_PATH})
+    MESSAGE(STATUS " ${RESULT_PATH}")
+    MESSAGE(STATUS " ${RESULT_LIB}")
+    MESSAGE(STATUS " -- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
+    MESSAGE(STATUS " -- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
+    LINK_DIRECTORIES(${OCC_LIB_PATH})
+ENDIF(OCE_FOUND)
 
 # List of OpenCASCADE shared libraries to link with
 SET(OCC_LIBRARIES BinLPlugin BinPlugin BinXCAFPlugin FWOSPlugin PTKernel
@@ -110,7 +116,6 @@ SET(OCC_LIBRARIES BinLPlugin BinPlugin BinXCAFPlugin FWOSPlugin PTKernel
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 INCLUDE_DIRECTORIES(${OCC_INCLUDE_PATH})
-LINK_DIRECTORIES(${OCC_LIB_PATH})
 
 #######################################
 # salomegeom include and lib location #
@@ -183,7 +188,6 @@ ENDFOREACH(OCC_MODULE)
 
 # salomegeometry
 IF(WRAP_GEOM)
-    LINK_DIRECTORIES(${OCC_LIB_PATH})
 	FOREACH(GEOM_MODULE ${GEOM_MODULES})
 	    SET(FILE ${SWIG_FILES_PATH}/${GEOM_MODULE}.i)
 		SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
