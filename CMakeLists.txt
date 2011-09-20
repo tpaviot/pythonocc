@@ -24,11 +24,11 @@ SET(pythonOCC_VERSION_MINOR 5)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
 SET(CMAKE_BUILD_TYPE "Release") #Default, build in release mode
-MESSAGE("${CMAKE_CXX_FLAGS}") 
+MESSAGE(STATUS " ${CMAKE_CXX_FLAGS}") 
 SET(BUILD_SHARED_LIBS ON)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 
-MESSAGE("Building pythonOCC 0.5")
+MESSAGE(STATUS " Building pythonOCC 0.5")
 
 ###################
 # General options #
@@ -54,13 +54,13 @@ INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 # and
 # 2147483647 on 32bit systems
 ###############################################################
-MESSAGE("Check whether the system is 32 or 64 bit." )
+MESSAGE(STATUS " Check whether the system is 32 or 64 bit." )
 EXECUTE_PROCESS(COMMAND python -c "import sys;print sys.maxint" OUTPUT_VARIABLE maxint_str)
 IF (maxint_str MATCHES "2147483647")
-    MESSAGE("-- 32bit system detected")
+    MESSAGE(STATUS " -- 32bit system detected")
     SET(MODE "32bit")
 ELSE(maxint_str MATCHES "2147483647")
-    MESSAGE("-- 64bit system detected")
+    MESSAGE(STATUS " -- 64bit system detected")
     SET(MODE "64bit")
 ENDIF(maxint_str MATCHES "2147483647")
 
@@ -87,10 +87,10 @@ ENDIF(WIN32)
 # Check that these paths are ok
 FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx ${OCC_INCLUDE_PATH})
 FIND_LIBRARY(RESULT_LIB TKernel ${OCC_LIB_PATH})
-MESSAGE("${RESULT_PATH}")
-MESSAGE("${RESULT_LIB}")
-MESSAGE("-- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
-MESSAGE("-- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
+MESSAGE(STATUS " ${RESULT_PATH}")
+MESSAGE(STATUS " ${RESULT_LIB}")
+MESSAGE(STATUS " -- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
+MESSAGE(STATUS " -- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
 
 # List of OpenCASCADE shared libraries to link with
 SET(OCC_LIBRARIES BinLPlugin BinPlugin BinXCAFPlugin FWOSPlugin PTKernel
@@ -126,13 +126,13 @@ ENDIF(WRAP_GEOM)
 IF(UNIX)
   IF(APPLE)
     ######### MacOSX ###########
-    MESSAGE("-- MacOSX system detected")
+    MESSAGE(STATUS " -- MacOSX system detected")
     ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS -D__PYTHONOCC_MAXINT__=2147483647)
     SET(CMAKE_SWIG_FLAGS -O -DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS)
     SET(SWIG_FILES_PATH ./src/wrapper/SWIG/linux_darwin)
   ELSE(APPLE)
     ######### Unix/Linux ###########
-    MESSAGE("-- Unix/Linux system detected")
+    MESSAGE(STATUS " -- Unix/Linux system detected")
     ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS -D__PYTHONOCC_MAXINT__=2147483647)
     SET(CMAKE_SWIG_FLAGS -O -DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS -DLIN -DLIN_INTEL -D_GNU_SOURCE=1)
     SET(SWIG_FILES_PATH ./src/wrapper/SWIG/linux_darwin)
@@ -140,12 +140,12 @@ IF(UNIX)
 ELSE(UNIX)
   IF(WIN32)
     ######### Windows ###########
-    MESSAGE("-- Windows system detected")
+    MESSAGE(STATUS " -- Windows system detected")
     ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB -D__PYTHONOCC_MAXINT__=2147483647)
     SET(CMAKE_SWIG_FLAGS -O -DCSFDB -DWIN32 -D_WINDOWS)
     SET(SWIG_FILES_PATH ./src/wrapper/SWIG/win32)
   ELSE(WIN32)
-    MESSAGE("Unknown platform")
+    MESSAGE(STATUS " Unknown platform")
   ENDIF(WIN32)
 ENDIF(UNIX)
 # If in 64bit mode, we have to define the _OCC64 variable
