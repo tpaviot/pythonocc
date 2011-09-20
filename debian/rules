@@ -13,16 +13,17 @@ DEB_PYTHON_INSTALL_ARGS_ALL = --disable-SMESH
 
 
 build: $(PYVERS:%=build-python%)
-        touch $@
+	touch $@
 build-python%:
-        python$* setup.py build --disable-SMESH -j6
-        touch $@
+	python$* setup.py build --disable-SMESH -j6
+	touch $@
 
-install: build $(PYVERS:%=install-python%)
+install:
+	build $(PYVERS:%=install-python%)
 install-python%:
-        python$* setup.py install --root $(CURDIR)/debian/python-foo --disable-SMESH
+	python$* setup.py install --root $(CURDIR)/debian/python-foo --disable-SMESH
 
 binary-arch:
-        dh_pysupport
-        dh_installdeb
+	dh_pysupport
+	dh_installdeb
 
