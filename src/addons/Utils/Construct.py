@@ -46,9 +46,6 @@ from OCC.GeomFill import *
 from OCC.TopTools import *
 from OCC.Geom import *
 
-# GEOM
-from OCC.GEOMAlgo import GEOMAlgo_Splitter
-
 # high level
 from OCC.Utils.Common import *
 from OCC.Utils.Context import assert_isdone
@@ -553,17 +550,6 @@ def boolean_fuse_old(shapeToCutFrom, joiningShape):
     shape = join.Shape()
     join.Delete()
     return shape
-
-def splitter(shape, profile):
-    '''split a *shape* using a *profile*
-    :returns the splitted shape
-    '''
-    splitter = GEOMAlgo_Splitter()
-    splitter.AddShape(shape)
-    splitter.AddTool(profile)
-    splitter.Perform()
-    splitter_shape = splitter.Shape()
-    return splitter_shape
 
 def trim_wire(wire, shapeLimit1, shapeLimit2, periodic=False):
     '''return the trimmed wire that lies between `shapeLimit1` and `shapeLimit2`
