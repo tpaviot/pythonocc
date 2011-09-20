@@ -99,19 +99,18 @@ ELSE(OCE_FOUND)
 ENDIF(OCE_FOUND)
 
 # List of OpenCASCADE shared libraries to link with
-SET(OCC_LIBRARIES BinLPlugin BinPlugin BinXCAFPlugin FWOSPlugin PTKernel
-                  StdLPlugin StdPlugin TKAdvTools TKBin TKBinL TKBinTObj TKBinXCAF
-                  TKBO TKBool TKBRep TKCAF TKCDF TKCDLFront TKCPPClient TKCPPExt
-                  TKCPPIntExt TKCPPJini TKCSFDBSchema TKernel
-                  TKFeat TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKIDLFront
+SET(OCC_LIBRARIES PTKernel
+                  TKAdvTools TKBin TKBinL TKBinTObj TKBinXCAF
+                  TKBO TKBool TKBRep TKCAF TKCDF
+                  TKernel
+                  TKFeat TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR
                   TKIGES TKLCAF TKMath TKMesh TKMeshVS TKNIS TKOffset
                   TKOpenGl TKPCAF TKPLCAF TKPrim TKPShape TKService TKShapeSchema
                   TKShHealing TKStdLSchema TKStdSchema TKSTEP TKSTEP209 TKSTEPAttr
-                  TKSTEPBase TKSTL TKTCPPExt TKTObj TKTopAlgo
-                  TKV2d TKV3d TKVRML TKWOK TKWOKTcl TKXCAF TKXCAFSchema
+                  TKSTEPBase TKSTL TKTObj TKTopAlgo
+                  TKV2d TKV3d TKVRML TKXCAF TKXCAFSchema
                   TKXDEIGES TKXDESTEP TKXMesh TKXml TKXmlL TKXmlTObj
-                  TKXmlXCAF TKXSBase XCAFPlugin
-                  XmlLPlugin XmlPlugin XmlXCAFPlugin)
+                  TKXmlXCAF TKXSBase)
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
