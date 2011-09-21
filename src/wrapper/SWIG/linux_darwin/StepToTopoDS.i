@@ -631,7 +631,7 @@ class StepToTopoDS_DataMapNodeOfDataMapOfRINames : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfDataMapOfRINames {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfRINames::~StepToTopoDS_DataMapNodeOfDataMapOfRINames %{
@@ -817,7 +817,7 @@ class StepToTopoDS_DataMapNodeOfPointVertexMap : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfPointVertexMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfPointVertexMap::~StepToTopoDS_DataMapNodeOfPointVertexMap %{
@@ -1008,7 +1008,7 @@ class StepToTopoDS_DataMapNodeOfDataMapOfRI : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfDataMapOfRI {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfRI::~StepToTopoDS_DataMapNodeOfDataMapOfRI %{
@@ -1339,7 +1339,7 @@ class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfTRI::~StepToTopoDS_DataMapNodeOfDataMapOfTRI %{
@@ -1448,7 +1448,7 @@ class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfPointEdgeMap::~StepToTopoDS_DataMapNodeOfPointEdgeMap %{

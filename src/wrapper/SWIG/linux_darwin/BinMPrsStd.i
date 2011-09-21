@@ -175,7 +175,7 @@ class BinMPrsStd_AISPresentationDriver : public BinMDF_ADriver {
 };
 %extend BinMPrsStd_AISPresentationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinMPrsStd_AISPresentationDriver::~BinMPrsStd_AISPresentationDriver %{
@@ -216,7 +216,7 @@ class BinMPrsStd_PositionDriver : public BinMDF_ADriver {
 };
 %extend BinMPrsStd_PositionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinMPrsStd_PositionDriver::~BinMPrsStd_PositionDriver %{

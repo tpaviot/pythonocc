@@ -1118,7 +1118,7 @@ class StepDimTol_GeometricTolerance : public MMgt_TShared {
 };
 %extend StepDimTol_GeometricTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_GeometricTolerance::~StepDimTol_GeometricTolerance %{
@@ -1151,7 +1151,7 @@ class StepDimTol_StraightnessTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_StraightnessTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_StraightnessTolerance::~StepDimTol_StraightnessTolerance %{
@@ -1186,7 +1186,7 @@ class StepDimTol_LineProfileTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_LineProfileTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_LineProfileTolerance::~StepDimTol_LineProfileTolerance %{
@@ -1221,7 +1221,7 @@ class StepDimTol_SurfaceProfileTolerance : public StepDimTol_GeometricTolerance 
 };
 %extend StepDimTol_SurfaceProfileTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_SurfaceProfileTolerance::~StepDimTol_SurfaceProfileTolerance %{
@@ -1256,7 +1256,7 @@ class StepDimTol_CylindricityTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_CylindricityTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_CylindricityTolerance::~StepDimTol_CylindricityTolerance %{
@@ -1291,7 +1291,7 @@ class StepDimTol_RoundnessTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_RoundnessTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_RoundnessTolerance::~StepDimTol_RoundnessTolerance %{
@@ -1332,7 +1332,7 @@ class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_Geomet
 };
 %extend StepDimTol_GeometricToleranceWithDatumReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_GeometricToleranceWithDatumReference::~StepDimTol_GeometricToleranceWithDatumReference %{
@@ -1365,7 +1365,7 @@ class StepDimTol_TotalRunoutTolerance : public StepDimTol_GeometricToleranceWith
 };
 %extend StepDimTol_TotalRunoutTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_TotalRunoutTolerance::~StepDimTol_TotalRunoutTolerance %{
@@ -1457,7 +1457,7 @@ class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
 };
 %extend StepDimTol_DatumTarget {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_DatumTarget::~StepDimTol_DatumTarget %{
@@ -1492,7 +1492,7 @@ class StepDimTol_AngularityTolerance : public StepDimTol_GeometricToleranceWithD
 };
 %extend StepDimTol_AngularityTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_AngularityTolerance::~StepDimTol_AngularityTolerance %{
@@ -1527,7 +1527,7 @@ class StepDimTol_ConcentricityTolerance : public StepDimTol_GeometricToleranceWi
 };
 %extend StepDimTol_ConcentricityTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_ConcentricityTolerance::~StepDimTol_ConcentricityTolerance %{
@@ -1582,7 +1582,7 @@ class StepDimTol_HArray1OfDatumReference : public MMgt_TShared {
 };
 %extend StepDimTol_HArray1OfDatumReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_HArray1OfDatumReference::~StepDimTol_HArray1OfDatumReference %{
@@ -1627,7 +1627,7 @@ class StepDimTol_DatumReference : public MMgt_TShared {
 };
 %extend StepDimTol_DatumReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_DatumReference::~StepDimTol_DatumReference %{
@@ -1691,7 +1691,7 @@ class StepDimTol_SymmetryTolerance : public StepDimTol_GeometricToleranceWithDat
 };
 %extend StepDimTol_SymmetryTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_SymmetryTolerance::~StepDimTol_SymmetryTolerance %{
@@ -1726,7 +1726,7 @@ class StepDimTol_FlatnessTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_FlatnessTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_FlatnessTolerance::~StepDimTol_FlatnessTolerance %{
@@ -1761,7 +1761,7 @@ class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWith
 };
 %extend StepDimTol_ParallelismTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_ParallelismTolerance::~StepDimTol_ParallelismTolerance %{
@@ -1802,7 +1802,7 @@ class StepDimTol_CommonDatum : public StepRepr_CompositeShapeAspect {
 };
 %extend StepDimTol_CommonDatum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_CommonDatum::~StepDimTol_CommonDatum %{
@@ -1851,7 +1851,7 @@ class StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public StepDimT
 };
 %extend StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol::~StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol %{
@@ -1892,7 +1892,7 @@ class StepDimTol_ModifiedGeometricTolerance : public StepDimTol_GeometricToleran
 };
 %extend StepDimTol_ModifiedGeometricTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_ModifiedGeometricTolerance::~StepDimTol_ModifiedGeometricTolerance %{
@@ -1927,7 +1927,7 @@ class StepDimTol_PerpendicularityTolerance : public StepDimTol_GeometricToleranc
 };
 %extend StepDimTol_PerpendicularityTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_PerpendicularityTolerance::~StepDimTol_PerpendicularityTolerance %{
@@ -1962,7 +1962,7 @@ class StepDimTol_CoaxialityTolerance : public StepDimTol_GeometricToleranceWithD
 };
 %extend StepDimTol_CoaxialityTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_CoaxialityTolerance::~StepDimTol_CoaxialityTolerance %{
@@ -1997,7 +1997,7 @@ class StepDimTol_DatumFeature : public StepRepr_ShapeAspect {
 };
 %extend StepDimTol_DatumFeature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_DatumFeature::~StepDimTol_DatumFeature %{
@@ -2038,7 +2038,7 @@ class StepDimTol_Datum : public StepRepr_ShapeAspect {
 };
 %extend StepDimTol_Datum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_Datum::~StepDimTol_Datum %{
@@ -2073,7 +2073,7 @@ class StepDimTol_CircularRunoutTolerance : public StepDimTol_GeometricToleranceW
 };
 %extend StepDimTol_CircularRunoutTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_CircularRunoutTolerance::~StepDimTol_CircularRunoutTolerance %{
@@ -2108,7 +2108,7 @@ class StepDimTol_PositionTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_PositionTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_PositionTolerance::~StepDimTol_PositionTolerance %{
@@ -2143,7 +2143,7 @@ class StepDimTol_PlacedDatumTargetFeature : public StepDimTol_DatumTarget {
 };
 %extend StepDimTol_PlacedDatumTargetFeature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_PlacedDatumTargetFeature::~StepDimTol_PlacedDatumTargetFeature %{
@@ -2196,7 +2196,7 @@ class StepDimTol_GeometricToleranceRelationship : public MMgt_TShared {
 };
 %extend StepDimTol_GeometricToleranceRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepDimTol_GeometricToleranceRelationship::~StepDimTol_GeometricToleranceRelationship %{

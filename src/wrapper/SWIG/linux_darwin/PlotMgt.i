@@ -524,7 +524,7 @@ class PlotMgt_TextManager : public MFT_TextManager {
 };
 %extend PlotMgt_TextManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_TextManager::~PlotMgt_TextManager %{
@@ -561,7 +561,7 @@ class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode 
 };
 %extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_SequenceNodeOfListOfPlotterParameter::~PlotMgt_SequenceNodeOfListOfPlotterParameter %{
@@ -604,7 +604,7 @@ class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
 };
 %extend PlotMgt_PlotterAccessError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_PlotterAccessError::~PlotMgt_PlotterAccessError %{
@@ -742,7 +742,7 @@ class PlotMgt_PlotterParameter : public MMgt_TShared {
 };
 %extend PlotMgt_PlotterParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_PlotterParameter::~PlotMgt_PlotterParameter %{
@@ -877,7 +877,7 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 };
 %extend PlotMgt_PlotterDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_PlotterDriver::~PlotMgt_PlotterDriver %{
@@ -1242,7 +1242,7 @@ class PlotMgt_Plotter : public MMgt_TShared {
 };
 %extend PlotMgt_Plotter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_Plotter::~PlotMgt_Plotter %{
@@ -1297,7 +1297,7 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 };
 %extend PlotMgt_HListOfMFTFonts {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_HListOfMFTFonts::~PlotMgt_HListOfMFTFonts %{
@@ -1392,7 +1392,7 @@ class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 };
 %extend PlotMgt_PlotterDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_PlotterDefinitionError::~PlotMgt_PlotterDefinitionError %{
@@ -1433,7 +1433,7 @@ class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
 };
 %extend PlotMgt_ImageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_ImageDriver::~PlotMgt_ImageDriver %{
@@ -1512,7 +1512,7 @@ class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
 };
 %extend PlotMgt_HListOfPlotterParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_HListOfPlotterParameter::~PlotMgt_HListOfPlotterParameter %{

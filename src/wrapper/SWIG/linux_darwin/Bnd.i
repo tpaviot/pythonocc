@@ -240,7 +240,7 @@ class Bnd_HArray1OfBox : public MMgt_TShared {
 };
 %extend Bnd_HArray1OfBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bnd_HArray1OfBox::~Bnd_HArray1OfBox %{
@@ -446,7 +446,7 @@ class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 };
 %extend Bnd_SequenceNodeOfSeqOfBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bnd_SequenceNodeOfSeqOfBox::~Bnd_SequenceNodeOfSeqOfBox %{
@@ -869,7 +869,7 @@ class Bnd_HArray1OfBox2d : public MMgt_TShared {
 };
 %extend Bnd_HArray1OfBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bnd_HArray1OfBox2d::~Bnd_HArray1OfBox2d %{
@@ -1116,7 +1116,7 @@ class Bnd_HArray1OfSphere : public MMgt_TShared {
 };
 %extend Bnd_HArray1OfSphere {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bnd_HArray1OfSphere::~Bnd_HArray1OfSphere %{

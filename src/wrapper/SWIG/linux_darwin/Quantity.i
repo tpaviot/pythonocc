@@ -1078,7 +1078,7 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 };
 %extend Quantity_ColorDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Quantity_ColorDefinitionError::~Quantity_ColorDefinitionError %{
@@ -1121,7 +1121,7 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 };
 %extend Quantity_PeriodDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Quantity_PeriodDefinitionError::~Quantity_PeriodDefinitionError %{
@@ -1331,7 +1331,7 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 };
 %extend Quantity_HArray1OfColor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Quantity_HArray1OfColor::~Quantity_HArray1OfColor %{
@@ -1454,7 +1454,7 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 };
 %extend Quantity_DateDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Quantity_DateDefinitionError::~Quantity_DateDefinitionError %{

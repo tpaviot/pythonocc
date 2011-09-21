@@ -754,7 +754,7 @@ class Units_SequenceNodeOfUtsSequence : public TCollection_SeqNode {
 };
 %extend Units_SequenceNodeOfUtsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_SequenceNodeOfUtsSequence::~Units_SequenceNodeOfUtsSequence %{
@@ -801,7 +801,7 @@ class Units_Lexicon : public MMgt_TShared {
 };
 %extend Units_Lexicon {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_Lexicon::~Units_Lexicon %{
@@ -838,7 +838,7 @@ class Units_UnitsLexicon : public Units_Lexicon {
 };
 %extend Units_UnitsLexicon {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_UnitsLexicon::~Units_UnitsLexicon %{
@@ -881,7 +881,7 @@ class Units_NoSuchType : public Standard_NoSuchObject {
 };
 %extend Units_NoSuchType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_NoSuchType::~Units_NoSuchType %{
@@ -1063,7 +1063,7 @@ class Units_Unit : public MMgt_TShared {
 };
 %extend Units_Unit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_Unit::~Units_Unit %{
@@ -1100,7 +1100,7 @@ class Units_SequenceNodeOfTksSequence : public TCollection_SeqNode {
 };
 %extend Units_SequenceNodeOfTksSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_SequenceNodeOfTksSequence::~Units_SequenceNodeOfTksSequence %{
@@ -1147,7 +1147,7 @@ class Units_ShiftedUnit : public Units_Unit {
 };
 %extend Units_ShiftedUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_ShiftedUnit::~Units_ShiftedUnit %{
@@ -1261,7 +1261,7 @@ class Units_UnitsDictionary : public MMgt_TShared {
 };
 %extend Units_UnitsDictionary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_UnitsDictionary::~Units_UnitsDictionary %{
@@ -1340,7 +1340,7 @@ class Units_UnitsSequence : public MMgt_TShared {
 };
 %extend Units_UnitsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_UnitsSequence::~Units_UnitsSequence %{
@@ -1419,7 +1419,7 @@ class Units_QuantitiesSequence : public MMgt_TShared {
 };
 %extend Units_QuantitiesSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_QuantitiesSequence::~Units_QuantitiesSequence %{
@@ -1524,7 +1524,7 @@ class Units_Token : public MMgt_TShared {
 };
 %extend Units_Token {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_Token::~Units_Token %{
@@ -1559,7 +1559,7 @@ class Units_ShiftedToken : public Units_Token {
 };
 %extend Units_ShiftedToken {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_ShiftedToken::~Units_ShiftedToken %{
@@ -1602,7 +1602,7 @@ class Units_NoSuchUnit : public Standard_NoSuchObject {
 };
 %extend Units_NoSuchUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_NoSuchUnit::~Units_NoSuchUnit %{
@@ -1663,7 +1663,7 @@ class Units_UnitsSystem : public MMgt_TShared {
 };
 %extend Units_UnitsSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_UnitsSystem::~Units_UnitsSystem %{
@@ -1911,7 +1911,7 @@ class Units_TokensSequence : public MMgt_TShared {
 };
 %extend Units_TokensSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_TokensSequence::~Units_TokensSequence %{
@@ -2042,7 +2042,7 @@ class Units_SequenceNodeOfQtsSequence : public TCollection_SeqNode {
 };
 %extend Units_SequenceNodeOfQtsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Units_SequenceNodeOfQtsSequence::~Units_SequenceNodeOfQtsSequence %{

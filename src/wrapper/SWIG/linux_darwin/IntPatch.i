@@ -17,9 +17,9 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-$Revision: 1241 $
-$Date: 2011-08-05 14:23:54 +0200 (Ven, 05 aoû 2011) $
-$Author: tpaviot $
+$Revision$
+$Date$
+$Author$
 $HeaderURL$
 
 */
@@ -724,7 +724,7 @@ class IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking : public TCollection_
 };
 %extend IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking::~IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking %{
@@ -816,7 +816,7 @@ class IntPatch_Line : public MMgt_TShared {
 };
 %extend IntPatch_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPatch_Line::~IntPatch_Line %{
@@ -891,7 +891,7 @@ class IntPatch_ALine : public IntPatch_Line {
 };
 %extend IntPatch_ALine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPatch_ALine::~IntPatch_ALine %{
@@ -928,7 +928,7 @@ class IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds : public TCollect
 };
 %extend IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds::~IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds %{
@@ -965,7 +965,7 @@ class IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds : public TCollectio
 };
 %extend IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds::~IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds %{
@@ -1273,7 +1273,7 @@ class IntPatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 };
 %extend IntPatch_SequenceNodeOfSequenceOfLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfLine::~IntPatch_SequenceNodeOfSequenceOfLine %{
@@ -1918,7 +1918,7 @@ class IntPatch_TheIWLineOfTheIWalking : public MMgt_TShared {
 };
 %extend IntPatch_TheIWLineOfTheIWalking {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPatch_TheIWLineOfTheIWalking::~IntPatch_TheIWLineOfTheIWalking %{
@@ -2153,7 +2153,7 @@ class IntPatch_WLine : public IntPatch_Line {
 };
 %extend IntPatch_WLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPatch_WLine::~IntPatch_WLine %{
@@ -2479,7 +2479,7 @@ class IntPatch_GLine : public IntPatch_Line {
 };
 %extend IntPatch_GLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPatch_GLine::~IntPatch_GLine %{
@@ -2609,7 +2609,7 @@ class IntPatch_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 };
 %extend IntPatch_SequenceNodeOfSequenceOfPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfPoint::~IntPatch_SequenceNodeOfSequenceOfPoint %{

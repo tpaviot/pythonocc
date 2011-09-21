@@ -298,7 +298,7 @@ class PDF_Attribute : public Standard_Persistent {
 };
 %extend PDF_Attribute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PDF_Attribute::~PDF_Attribute %{
@@ -343,7 +343,7 @@ class PDF_TagSource : public PDF_Attribute {
 };
 %extend PDF_TagSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PDF_TagSource::~PDF_TagSource %{
@@ -390,7 +390,7 @@ class PDF_Reference : public PDF_Attribute {
 };
 %extend PDF_Reference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PDF_Reference::~PDF_Reference %{
@@ -437,7 +437,7 @@ class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 };
 %extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PDF_VArrayNodeOfFieldOfHAttributeArray1::~PDF_VArrayNodeOfFieldOfHAttributeArray1 %{
@@ -498,7 +498,7 @@ class PDF_Data : public Standard_Persistent {
 };
 %extend PDF_Data {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PDF_Data::~PDF_Data %{
@@ -569,7 +569,7 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 };
 %extend PDF_HAttributeArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PDF_HAttributeArray1::~PDF_HAttributeArray1 %{

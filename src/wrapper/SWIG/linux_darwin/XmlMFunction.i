@@ -188,7 +188,7 @@ class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_ScopeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMFunction_ScopeDriver::~XmlMFunction_ScopeDriver %{
@@ -254,7 +254,7 @@ class XmlMFunction_GraphNodeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_GraphNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMFunction_GraphNodeDriver::~XmlMFunction_GraphNodeDriver %{
@@ -295,7 +295,7 @@ class XmlMFunction_FunctionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_FunctionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMFunction_FunctionDriver::~XmlMFunction_FunctionDriver %{

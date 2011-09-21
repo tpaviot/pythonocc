@@ -352,7 +352,7 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 };
 %extend Materials_MaterialsDictionary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Materials_MaterialsDictionary::~Materials_MaterialsDictionary %{
@@ -462,7 +462,7 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 };
 %extend Materials_FuzzyInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Materials_FuzzyInstance::~Materials_FuzzyInstance %{
@@ -499,7 +499,7 @@ class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 };
 %extend Materials_SequenceNodeOfMtsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Materials_SequenceNodeOfMtsSequence::~Materials_SequenceNodeOfMtsSequence %{
@@ -536,7 +536,7 @@ class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 };
 %extend Materials_MaterialDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Materials_MaterialDefinition::~Materials_MaterialDefinition %{
@@ -581,7 +581,7 @@ class Materials_Material : public Materials_FuzzyInstance {
 };
 %extend Materials_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Materials_Material::~Materials_Material %{
@@ -632,7 +632,7 @@ class Materials_Color : public Standard_Transient {
 };
 %extend Materials_Color {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Materials_Color::~Materials_Color %{
@@ -776,7 +776,7 @@ class Materials_MaterialsSequence : public MMgt_TShared {
 };
 %extend Materials_MaterialsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Materials_MaterialsSequence::~Materials_MaterialsSequence %{

@@ -224,7 +224,7 @@ class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNo
 };
 %extend HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData::~HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData %{
@@ -263,7 +263,7 @@ class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNod
 };
 %extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData::~HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData %{
@@ -701,7 +701,7 @@ class HLRTopoBRep_OutLiner : public MMgt_TShared {
 };
 %extend HLRTopoBRep_OutLiner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRTopoBRep_OutLiner::~HLRTopoBRep_OutLiner %{
@@ -738,7 +738,7 @@ class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
 };
 %extend HLRTopoBRep_ListNodeOfListOfVData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRTopoBRep_ListNodeOfListOfVData::~HLRTopoBRep_ListNodeOfListOfVData %{

@@ -53,17 +53,6 @@ typedef Standard_Integer MeshVS_DisplayModeFlags;
 typedef MeshVS_Mesh * MeshVS_MeshPtr;
 typedef Standard_Integer MeshVS_BuilderPriority;
 
-enum MeshVS_EntityType {
-	MeshVS_ET_NONE,
-	MeshVS_ET_Node,
-	MeshVS_ET_0D,
-	MeshVS_ET_Link,
-	MeshVS_ET_Face,
-	MeshVS_ET_Volume,
-	MeshVS_ET_Element,
-	MeshVS_ET_All,
-	};
-
 enum MeshVS_DrawerAttribute {
 	MeshVS_DA_InteriorStyle,
 	MeshVS_DA_InteriorColor,
@@ -105,6 +94,17 @@ enum MeshVS_DrawerAttribute {
 	MeshVS_DA_SmoothShading,
 	MeshVS_DA_SupressBackFaces,
 	MeshVS_DA_User,
+	};
+
+enum MeshVS_EntityType {
+	MeshVS_ET_NONE,
+	MeshVS_ET_Node,
+	MeshVS_ET_0D,
+	MeshVS_ET_Link,
+	MeshVS_ET_Face,
+	MeshVS_ET_Volume,
+	MeshVS_ET_Element,
+	MeshVS_ET_All,
 	};
 
 enum MeshVS_SelectionModeFlags {
@@ -463,6 +463,44 @@ def __del__(self):
 %}
 
 %extend Handle_MeshVS_MeshOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MeshVS_VectorPrsBuilder;
+class Handle_MeshVS_VectorPrsBuilder : public Handle_MeshVS_PrsBuilder {
+	public:
+		%feature("autodoc", "1");
+		Handle_MeshVS_VectorPrsBuilder();
+		%feature("autodoc", "1");
+		Handle_MeshVS_VectorPrsBuilder(const Handle_MeshVS_VectorPrsBuilder &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_VectorPrsBuilder(const MeshVS_VectorPrsBuilder *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshVS_VectorPrsBuilder & operator=(const Handle_MeshVS_VectorPrsBuilder &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_VectorPrsBuilder & operator=(const MeshVS_VectorPrsBuilder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MeshVS_VectorPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MeshVS_VectorPrsBuilder {
+	MeshVS_VectorPrsBuilder* GetObject() {
+	return (MeshVS_VectorPrsBuilder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MeshVS_VectorPrsBuilder::~Handle_MeshVS_VectorPrsBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MeshVS_VectorPrsBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1191,44 +1229,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MeshVS_VectorPrsBuilder;
-class Handle_MeshVS_VectorPrsBuilder : public Handle_MeshVS_PrsBuilder {
-	public:
-		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder();
-		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder(const Handle_MeshVS_VectorPrsBuilder &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder(const MeshVS_VectorPrsBuilder *anItem);
-		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder & operator=(const Handle_MeshVS_VectorPrsBuilder &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder & operator=(const MeshVS_VectorPrsBuilder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MeshVS_VectorPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MeshVS_VectorPrsBuilder {
-	MeshVS_VectorPrsBuilder* GetObject() {
-	return (MeshVS_VectorPrsBuilder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MeshVS_VectorPrsBuilder::~Handle_MeshVS_VectorPrsBuilder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MeshVS_VectorPrsBuilder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MeshVS_HArray1OfSequenceOfInteger;
 class Handle_MeshVS_HArray1OfSequenceOfInteger : public Handle_MMgt_TShared {
 	public:
@@ -1469,7 +1469,7 @@ class MeshVS_DataSource : public MMgt_TShared {
 };
 %extend MeshVS_DataSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataSource::~MeshVS_DataSource %{
@@ -1518,7 +1518,7 @@ class MeshVS_DeformedDataSource : public MeshVS_DataSource {
 };
 %extend MeshVS_DeformedDataSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DeformedDataSource::~MeshVS_DeformedDataSource %{
@@ -1586,7 +1586,7 @@ class MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public TCollection_SeqNode {
 };
 %extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
@@ -1649,7 +1649,7 @@ class MeshVS_PrsBuilder : public MMgt_TShared {
 };
 %extend MeshVS_PrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_PrsBuilder::~MeshVS_PrsBuilder %{
@@ -1705,7 +1705,7 @@ class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_VectorPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_VectorPrsBuilder::~MeshVS_VectorPrsBuilder %{
@@ -1799,7 +1799,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerColor : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerColor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerColor::~MeshVS_DataMapNodeOfDataMapOfIntegerColor %{
@@ -1858,7 +1858,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerBoolean::~MeshVS_DataMapNodeOfDataMapOfIntegerBoolean %{
@@ -2018,7 +2018,7 @@ class MeshVS_SensitiveSegment : public Select3D_SensitiveSegment {
 };
 %extend MeshVS_SensitiveSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitiveSegment::~MeshVS_SensitiveSegment %{
@@ -2228,7 +2228,7 @@ class MeshVS_Drawer : public MMgt_TShared {
 };
 %extend MeshVS_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_Drawer::~MeshVS_Drawer %{
@@ -2267,7 +2267,7 @@ class MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public TCollection_Ma
 };
 %extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger %{
@@ -2316,7 +2316,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerVector : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerVector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerVector::~MeshVS_DataMapNodeOfDataMapOfIntegerVector %{
@@ -2365,7 +2365,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public TCollection_MapNo
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString::~MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString %{
@@ -2589,7 +2589,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerOwner %{
@@ -2698,7 +2698,7 @@ class MeshVS_Mesh : public AIS_InteractiveObject {
 };
 %extend MeshVS_Mesh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_Mesh::~MeshVS_Mesh %{
@@ -2745,7 +2745,7 @@ class MeshVS_TextPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_TextPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_TextPrsBuilder::~MeshVS_TextPrsBuilder %{
@@ -2782,7 +2782,7 @@ class MeshVS_StdMapNodeOfMapOfTwoNodes : public TCollection_MapNode {
 };
 %extend MeshVS_StdMapNodeOfMapOfTwoNodes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_StdMapNodeOfMapOfTwoNodes::~MeshVS_StdMapNodeOfMapOfTwoNodes %{
@@ -2981,7 +2981,7 @@ class MeshVS_DataSource3D : public MeshVS_DataSource {
 };
 %extend MeshVS_DataSource3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataSource3D::~MeshVS_DataSource3D %{
@@ -3121,7 +3121,7 @@ class MeshVS_HArray1OfSequenceOfInteger : public MMgt_TShared {
 };
 %extend MeshVS_HArray1OfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_HArray1OfSequenceOfInteger::~MeshVS_HArray1OfSequenceOfInteger %{
@@ -3257,7 +3257,7 @@ class MeshVS_SensitivePolyhedron : public Select3D_SensitiveEntity {
 };
 %extend MeshVS_SensitivePolyhedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitivePolyhedron::~MeshVS_SensitivePolyhedron %{
@@ -3309,7 +3309,7 @@ class MeshVS_SensitiveMesh : public Select3D_SensitiveEntity {
 };
 %extend MeshVS_SensitiveMesh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitiveMesh::~MeshVS_SensitiveMesh %{
@@ -3358,7 +3358,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors : public TCollection_MapNode
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors::~MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors %{
@@ -3407,7 +3407,7 @@ class MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger : public TCollecti
 };
 %extend MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger::~MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger %{
@@ -3546,7 +3546,7 @@ class MeshVS_NodalColorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_NodalColorPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_NodalColorPrsBuilder::~MeshVS_NodalColorPrsBuilder %{
@@ -3661,7 +3661,7 @@ class MeshVS_MeshEntityOwner : public SelectMgr_EntityOwner {
 };
 %extend MeshVS_MeshEntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_MeshEntityOwner::~MeshVS_MeshEntityOwner %{
@@ -3722,7 +3722,7 @@ class MeshVS_ElementalColorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_ElementalColorPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_ElementalColorPrsBuilder::~MeshVS_ElementalColorPrsBuilder %{
@@ -3761,7 +3761,7 @@ class MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger : public TCollection_MapNod
 };
 %extend MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger %{
@@ -3833,7 +3833,7 @@ class MeshVS_SensitiveFace : public Select3D_SensitiveFace {
 };
 %extend MeshVS_SensitiveFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitiveFace::~MeshVS_SensitiveFace %{
@@ -3882,7 +3882,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerMaterial : public TCollection_MapNode 
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMaterial::~MeshVS_DataMapNodeOfDataMapOfIntegerMaterial %{
@@ -4005,7 +4005,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner : public TCollection_M
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner %{
@@ -4107,7 +4107,7 @@ class MeshVS_MeshOwner : public SelectMgr_EntityOwner {
 };
 %extend MeshVS_MeshOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_MeshOwner::~MeshVS_MeshOwner %{
@@ -4188,7 +4188,7 @@ class MeshVS_DummySensitiveEntity : public SelectBasics_SensitiveEntity {
 };
 %extend MeshVS_DummySensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DummySensitiveEntity::~MeshVS_DummySensitiveEntity %{
@@ -4236,7 +4236,7 @@ class MeshVS_MeshPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_MeshPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_MeshPrsBuilder::~MeshVS_MeshPrsBuilder %{

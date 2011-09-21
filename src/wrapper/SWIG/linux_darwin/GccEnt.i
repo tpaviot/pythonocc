@@ -214,7 +214,7 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 };
 %extend GccEnt_BadQualifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GccEnt_BadQualifier::~GccEnt_BadQualifier %{

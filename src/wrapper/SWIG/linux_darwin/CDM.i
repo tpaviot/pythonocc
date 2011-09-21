@@ -609,7 +609,7 @@ class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 };
 %extend CDM_DataMapNodeOfPresentationDirectory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_DataMapNodeOfPresentationDirectory::~CDM_DataMapNodeOfPresentationDirectory %{
@@ -685,7 +685,7 @@ class CDM_Application : public Standard_Transient {
 };
 %extend CDM_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_Application::~CDM_Application %{
@@ -817,7 +817,7 @@ class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
 };
 %extend CDM_StackNodeOfStackOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_StackNodeOfStackOfDocument::~CDM_StackNodeOfStackOfDocument %{
@@ -879,7 +879,7 @@ class CDM_MessageDriver : public Standard_Transient {
 };
 %extend CDM_MessageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_MessageDriver::~CDM_MessageDriver %{
@@ -912,7 +912,7 @@ class CDM_COutMessageDriver : public CDM_MessageDriver {
 };
 %extend CDM_COutMessageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_COutMessageDriver::~CDM_COutMessageDriver %{
@@ -949,7 +949,7 @@ class CDM_NullMessageDriver : public CDM_MessageDriver {
 };
 %extend CDM_NullMessageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_NullMessageDriver::~CDM_NullMessageDriver %{
@@ -1066,7 +1066,7 @@ class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
 };
 %extend CDM_DataMapNodeOfMetaDataLookUpTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_DataMapNodeOfMetaDataLookUpTable::~CDM_DataMapNodeOfMetaDataLookUpTable %{
@@ -1238,7 +1238,7 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 };
 %extend CDM_ListNodeOfListOfReferences {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_ListNodeOfListOfReferences::~CDM_ListNodeOfListOfReferences %{
@@ -1373,7 +1373,7 @@ class CDM_ListNodeOfListOfDocument : public TCollection_MapNode {
 };
 %extend CDM_ListNodeOfListOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_ListNodeOfListOfDocument::~CDM_ListNodeOfListOfDocument %{
@@ -1451,7 +1451,7 @@ class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 };
 %extend CDM_StdMapNodeOfMapOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_StdMapNodeOfMapOfDocument::~CDM_StdMapNodeOfMapOfDocument %{
@@ -1520,7 +1520,7 @@ class CDM_MetaData : public Standard_Transient {
 };
 %extend CDM_MetaData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_MetaData::~CDM_MetaData %{
@@ -1563,7 +1563,7 @@ class CDM_Reference : public Standard_Transient {
 };
 %extend CDM_Reference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_Reference::~CDM_Reference %{

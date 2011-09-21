@@ -152,7 +152,7 @@ class MFunction_FunctionStorageDriver : public MDF_ASDriver {
 };
 %extend MFunction_FunctionStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MFunction_FunctionStorageDriver::~MFunction_FunctionStorageDriver %{
@@ -195,7 +195,7 @@ class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 };
 %extend MFunction_FunctionRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MFunction_FunctionRetrievalDriver::~MFunction_FunctionRetrievalDriver %{

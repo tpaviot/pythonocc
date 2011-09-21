@@ -591,7 +591,7 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 };
 %extend Xw_GraphicDevice {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_GraphicDevice::~Xw_GraphicDevice %{
@@ -649,7 +649,7 @@ class Xw_HListOfMFTFonts : public MMgt_TShared {
 };
 %extend Xw_HListOfMFTFonts {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_HListOfMFTFonts::~Xw_HListOfMFTFonts %{
@@ -831,7 +831,7 @@ class Xw_Driver : public Aspect_WindowDriver {
 };
 %extend Xw_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_Driver::~Xw_Driver %{
@@ -874,7 +874,7 @@ class Xw_WidthMap : public Standard_Transient {
 };
 %extend Xw_WidthMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_WidthMap::~Xw_WidthMap %{
@@ -963,7 +963,7 @@ class Xw_ColorMap : public MMgt_TShared {
 };
 %extend Xw_ColorMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_ColorMap::~Xw_ColorMap %{
@@ -1021,7 +1021,7 @@ class Xw_TextManager : public MFT_TextManager {
 };
 %extend Xw_TextManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_TextManager::~Xw_TextManager %{
@@ -1191,7 +1191,7 @@ class Xw_Window : public Aspect_Window {
 };
 %extend Xw_Window {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_Window::~Xw_Window %{
@@ -1245,7 +1245,7 @@ class Xw_IconBox : public Xw_Window {
 };
 %extend Xw_IconBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_IconBox::~Xw_IconBox %{
@@ -1288,7 +1288,7 @@ class Xw_PixMap : public Aspect_PixMap {
 };
 %extend Xw_PixMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_PixMap::~Xw_PixMap %{
@@ -1331,7 +1331,7 @@ class Xw_FontMap : public Standard_Transient {
 };
 %extend Xw_FontMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_FontMap::~Xw_FontMap %{
@@ -1428,7 +1428,7 @@ class Xw_TypeMap : public Standard_Transient {
 };
 %extend Xw_TypeMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_TypeMap::~Xw_TypeMap %{
@@ -1474,7 +1474,7 @@ class Xw_MarkMap : public Standard_Transient {
 };
 %extend Xw_MarkMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Xw_MarkMap::~Xw_MarkMap %{

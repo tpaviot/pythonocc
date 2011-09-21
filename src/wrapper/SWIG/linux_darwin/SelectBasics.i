@@ -297,7 +297,7 @@ class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
 };
 %extend SelectBasics_ListNodeOfListOfBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectBasics_ListNodeOfListOfBox2d::~SelectBasics_ListNodeOfListOfBox2d %{
@@ -449,7 +449,7 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 };
 %extend SelectBasics_SensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectBasics_SensitiveEntity::~SelectBasics_SensitiveEntity %{
@@ -652,7 +652,7 @@ class SelectBasics_EntityOwner : public MMgt_TShared {
 };
 %extend SelectBasics_EntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectBasics_EntityOwner::~SelectBasics_EntityOwner %{
@@ -689,7 +689,7 @@ class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectBasics_SequenceNodeOfSequenceOfOwner::~SelectBasics_SequenceNodeOfSequenceOfOwner %{
@@ -726,7 +726,7 @@ class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
 };
 %extend SelectBasics_ListNodeOfListOfSensitive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectBasics_ListNodeOfListOfSensitive::~SelectBasics_ListNodeOfListOfSensitive %{

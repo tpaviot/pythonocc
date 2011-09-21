@@ -255,7 +255,7 @@ class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
 };
 %extend BlockFix_SphereSpaceModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BlockFix_SphereSpaceModifier::~BlockFix_SphereSpaceModifier %{
@@ -350,7 +350,7 @@ class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
 };
 %extend BlockFix_PeriodicSurfaceModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BlockFix_PeriodicSurfaceModifier::~BlockFix_PeriodicSurfaceModifier %{
@@ -472,7 +472,7 @@ class BlockFix_BlockFixAPI : public MMgt_TShared {
 };
 %extend BlockFix_BlockFixAPI {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BlockFix_BlockFixAPI::~BlockFix_BlockFixAPI %{

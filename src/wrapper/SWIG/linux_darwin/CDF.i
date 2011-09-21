@@ -399,7 +399,7 @@ class CDF_MetaDataDriverError : public Standard_Failure {
 };
 %extend CDF_MetaDataDriverError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_MetaDataDriverError::~CDF_MetaDataDriverError %{
@@ -495,7 +495,7 @@ class CDF_Application : public CDM_Application {
 };
 %extend CDF_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_Application::~CDF_Application %{
@@ -560,7 +560,7 @@ class CDF_MetaDataDriver : public Standard_Transient {
 };
 %extend CDF_MetaDataDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_MetaDataDriver::~CDF_MetaDataDriver %{
@@ -636,7 +636,7 @@ class CDF_StoreList : public Standard_Transient {
 };
 %extend CDF_StoreList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_StoreList::~CDF_StoreList %{
@@ -671,7 +671,7 @@ class CDF_MetaDataDriverFactory : public Standard_Transient {
 };
 %extend CDF_MetaDataDriverFactory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_MetaDataDriverFactory::~CDF_MetaDataDriverFactory %{
@@ -718,7 +718,7 @@ class CDF_Directory : public Standard_Transient {
 };
 %extend CDF_Directory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_Directory::~CDF_Directory %{
@@ -771,7 +771,7 @@ class CDF_Session : public Standard_Transient {
 };
 %extend CDF_Session {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_Session::~CDF_Session %{

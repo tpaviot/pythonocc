@@ -349,7 +349,7 @@ $HeaderURL$
 
 %import TCollection.i
 %import MMgt.i
-%import TopOpeBRepTool.i
 %import Standard.i
-%import TopOpeBRepDS.i
 %import TopAbs.i
+%import TopOpeBRepTool.i
+%import TopOpeBRepDS.i

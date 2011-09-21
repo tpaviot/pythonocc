@@ -109,7 +109,7 @@ class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 };
 %extend TopExp_StackNodeOfStackOfIterator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TopExp_StackNodeOfStackOfIterator::~TopExp_StackNodeOfStackOfIterator %{

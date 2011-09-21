@@ -399,7 +399,7 @@ class ShapeExtend_ComplexCurve : public Geom_Curve {
 };
 %extend ShapeExtend_ComplexCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_ComplexCurve::~ShapeExtend_ComplexCurve %{
@@ -500,7 +500,7 @@ class ShapeExtend_WireData : public MMgt_TShared {
 };
 %extend ShapeExtend_WireData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_WireData::~ShapeExtend_WireData %{
@@ -541,7 +541,7 @@ class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
 };
 %extend ShapeExtend_BasicMsgRegistrator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_BasicMsgRegistrator::~ShapeExtend_BasicMsgRegistrator %{
@@ -613,7 +613,7 @@ class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
 };
 %extend ShapeExtend_MsgRegistrator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_MsgRegistrator::~ShapeExtend_MsgRegistrator %{
@@ -652,7 +652,7 @@ class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapN
 };
 %extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg %{
@@ -691,7 +691,7 @@ class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_
 };
 %extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg %{
@@ -985,7 +985,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 };
 %extend ShapeExtend_CompositeSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_CompositeSurface::~ShapeExtend_CompositeSurface %{

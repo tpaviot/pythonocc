@@ -64,7 +64,6 @@ $HeaderURL$
 #include<ChFi3d.hxx>
 #include<BRepAdaptor_Surface.hxx>
 #include<TopoDS_Edge.hxx>
-#include<Handle_Geom_Curve.hxx>
 #include<Handle_ChFiDS_Spine.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Shape.hxx>
@@ -74,6 +73,7 @@ $HeaderURL$
 #include<ChFiDS_SequenceOfSurfData.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<Handle_Adaptor3d_TopolTool.hxx>
+#include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Face.hxx>
 #include<Handle_ChFiDS_SecHArray1.hxx>
 #include<Handle_ChFiDS_HElSpine.hxx>

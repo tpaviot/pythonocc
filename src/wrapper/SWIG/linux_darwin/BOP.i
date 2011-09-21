@@ -757,7 +757,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TColle
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo::~BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo %{
@@ -794,7 +794,7 @@ class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfFaceInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfFaceInfo::~BOP_ListNodeOfListOfFaceInfo %{
@@ -1049,7 +1049,7 @@ class BOP_HistoryCollector : public MMgt_TShared {
 };
 %extend BOP_HistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_HistoryCollector::~BOP_HistoryCollector %{
@@ -1087,7 +1087,7 @@ class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_SolidSolidHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_SolidSolidHistoryCollector::~BOP_SolidSolidHistoryCollector %{
@@ -1494,7 +1494,7 @@ class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_SectionHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_SectionHistoryCollector::~BOP_SectionHistoryCollector %{
@@ -1537,7 +1537,7 @@ class BOP_Loop : public MMgt_TShared {
 };
 %extend BOP_Loop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_Loop::~BOP_Loop %{
@@ -1631,7 +1631,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollect
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo::~BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo %{
@@ -1762,7 +1762,7 @@ class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfEdgeInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfEdgeInfo::~BOP_ListNodeOfListOfEdgeInfo %{
@@ -1799,7 +1799,7 @@ class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfListOfLoop::~BOP_ListNodeOfListOfListOfLoop %{
@@ -2265,7 +2265,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollecti
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::~BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier %{
@@ -2363,7 +2363,7 @@ class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfCheckResult {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfCheckResult::~BOP_ListNodeOfListOfCheckResult %{
@@ -2534,7 +2534,7 @@ class BOP_SequenceNodeOfSeqOfSeqOfShape : public TCollection_SeqNode {
 };
 %extend BOP_SequenceNodeOfSeqOfSeqOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_SequenceNodeOfSeqOfSeqOfShape::~BOP_SequenceNodeOfSeqOfSeqOfShape %{
@@ -3308,7 +3308,7 @@ class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_ShellSolidHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_ShellSolidHistoryCollector::~BOP_ShellSolidHistoryCollector %{
@@ -3392,7 +3392,7 @@ class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_WireSolidHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_WireSolidHistoryCollector::~BOP_WireSolidHistoryCollector %{
@@ -3631,7 +3631,7 @@ class BOP_ListNodeOfListOfConnexityBlock : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfConnexityBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfConnexityBlock::~BOP_ListNodeOfListOfConnexityBlock %{
@@ -3842,7 +3842,7 @@ class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOP_ListNodeOfListOfLoop::~BOP_ListNodeOfListOfLoop %{

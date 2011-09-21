@@ -888,7 +888,7 @@ class V3d_Light : public MMgt_TShared {
 };
 %extend V3d_Light {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_Light::~V3d_Light %{
@@ -924,7 +924,7 @@ class V3d_AmbientLight : public V3d_Light {
 };
 %extend V3d_AmbientLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_AmbientLight::~V3d_AmbientLight %{
@@ -970,7 +970,7 @@ class V3d_Plane : public MMgt_TShared {
 };
 %extend V3d_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_Plane::~V3d_Plane %{
@@ -1049,7 +1049,7 @@ class V3d_Camera : public MMgt_TShared {
 };
 %extend V3d_Camera {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_Camera::~V3d_Camera %{
@@ -1103,7 +1103,7 @@ class V3d_ColorScale : public Aspect_ColorScale {
 };
 %extend V3d_ColorScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_ColorScale::~V3d_ColorScale %{
@@ -1544,7 +1544,7 @@ class V3d_View : public Viewer_View {
 };
 %extend V3d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_View::~V3d_View %{
@@ -1608,7 +1608,7 @@ class V3d_PositionLight : public V3d_Light {
 };
 %extend V3d_PositionLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_PositionLight::~V3d_PositionLight %{
@@ -1656,7 +1656,7 @@ class V3d_RectangularGrid : public Aspect_RectangularGrid {
 };
 %extend V3d_RectangularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_RectangularGrid::~V3d_RectangularGrid %{
@@ -1719,7 +1719,7 @@ class V3d_SpotLight : public V3d_PositionLight {
 };
 %extend V3d_SpotLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_SpotLight::~V3d_SpotLight %{
@@ -1990,7 +1990,7 @@ class V3d_Viewer : public Viewer_Viewer {
 };
 %extend V3d_Viewer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_Viewer::~V3d_Viewer %{
@@ -2038,7 +2038,7 @@ class V3d_CircularGrid : public Aspect_CircularGrid {
 };
 %extend V3d_CircularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_CircularGrid::~V3d_CircularGrid %{
@@ -2077,7 +2077,7 @@ class V3d_ColorScaleLayerItem : public Visual3d_LayerItem {
 };
 %extend V3d_ColorScaleLayerItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_ColorScaleLayerItem::~V3d_ColorScaleLayerItem %{
@@ -2120,7 +2120,7 @@ class V3d_UnMapped : public Standard_DomainError {
 };
 %extend V3d_UnMapped {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_UnMapped::~V3d_UnMapped %{
@@ -2171,7 +2171,7 @@ class V3d_LayerMgr : public MMgt_TShared {
 };
 %extend V3d_LayerMgr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_LayerMgr::~V3d_LayerMgr %{
@@ -2219,7 +2219,7 @@ class V3d_PositionalLight : public V3d_PositionLight {
 };
 %extend V3d_PositionalLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_PositionalLight::~V3d_PositionalLight %{
@@ -2260,7 +2260,7 @@ class V3d_OrthographicView : public V3d_View {
 };
 %extend V3d_OrthographicView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_OrthographicView::~V3d_OrthographicView %{
@@ -2334,7 +2334,7 @@ class V3d_PerspectiveView : public V3d_View {
 };
 %extend V3d_PerspectiveView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_PerspectiveView::~V3d_PerspectiveView %{
@@ -2390,7 +2390,7 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 };
 %extend V3d_DirectionalLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V3d_DirectionalLight::~V3d_DirectionalLight %{

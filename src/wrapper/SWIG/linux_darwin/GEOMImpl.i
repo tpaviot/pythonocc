@@ -2086,7 +2086,7 @@ class GEOMImpl_PartitionDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PartitionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PartitionDriver::~GEOMImpl_PartitionDriver %{
@@ -2131,7 +2131,7 @@ class GEOMImpl_MarkerDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_MarkerDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_MarkerDriver::~GEOMImpl_MarkerDriver %{
@@ -2176,7 +2176,7 @@ class GEOMImpl_ChamferDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ChamferDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ChamferDriver::~GEOMImpl_ChamferDriver %{
@@ -2264,7 +2264,7 @@ class GEOMImpl_FilletDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_FilletDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_FilletDriver::~GEOMImpl_FilletDriver %{
@@ -2309,7 +2309,7 @@ class GEOMImpl_SplineDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_SplineDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_SplineDriver::~GEOMImpl_SplineDriver %{
@@ -2354,7 +2354,7 @@ class GEOMImpl_TorusDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_TorusDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_TorusDriver::~GEOMImpl_TorusDriver %{
@@ -2399,7 +2399,7 @@ class GEOMImpl_ScaleDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ScaleDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ScaleDriver::~GEOMImpl_ScaleDriver %{
@@ -2539,7 +2539,7 @@ class GEOMImpl_MirrorDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_MirrorDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_MirrorDriver::~GEOMImpl_MirrorDriver %{
@@ -3098,7 +3098,7 @@ class GEOMImpl_OffsetDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_OffsetDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_OffsetDriver::~GEOMImpl_OffsetDriver %{
@@ -3149,7 +3149,7 @@ class GEOMImpl_GlueDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_GlueDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_GlueDriver::~GEOMImpl_GlueDriver %{
@@ -3194,7 +3194,7 @@ class GEOMImpl_PlaneDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PlaneDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PlaneDriver::~GEOMImpl_PlaneDriver %{
@@ -3945,7 +3945,7 @@ class GEOMImpl_LineDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_LineDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_LineDriver::~GEOMImpl_LineDriver %{
@@ -3990,7 +3990,7 @@ class GEOMImpl_MeasureDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_MeasureDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_MeasureDriver::~GEOMImpl_MeasureDriver %{
@@ -4035,7 +4035,7 @@ class GEOMImpl_DraftDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_DraftDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_DraftDriver::~GEOMImpl_DraftDriver %{
@@ -4222,7 +4222,7 @@ class GEOMImpl_FillingDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_FillingDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_FillingDriver::~GEOMImpl_FillingDriver %{
@@ -4326,7 +4326,7 @@ class GEOMImpl_PipeTShapeDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PipeTShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PipeTShapeDriver::~GEOMImpl_PipeTShapeDriver %{
@@ -4462,7 +4462,7 @@ class GEOMImpl_TranslateDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_TranslateDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_TranslateDriver::~GEOMImpl_TranslateDriver %{
@@ -4629,7 +4629,7 @@ class GEOMImpl_CopyDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_CopyDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_CopyDriver::~GEOMImpl_CopyDriver %{
@@ -4674,7 +4674,7 @@ class GEOMImpl_ExportDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ExportDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ExportDriver::~GEOMImpl_ExportDriver %{
@@ -4804,7 +4804,7 @@ class GEOMImpl_BooleanDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_BooleanDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_BooleanDriver::~GEOMImpl_BooleanDriver %{
@@ -4849,7 +4849,7 @@ class GEOMImpl_3DSketcherDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_3DSketcherDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_3DSketcherDriver::~GEOMImpl_3DSketcherDriver %{
@@ -4894,7 +4894,7 @@ class GEOMImpl_SphereDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_SphereDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_SphereDriver::~GEOMImpl_SphereDriver %{
@@ -4939,7 +4939,7 @@ class GEOMImpl_VariableFilletDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_VariableFilletDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_VariableFilletDriver::~GEOMImpl_VariableFilletDriver %{
@@ -5190,7 +5190,7 @@ class GEOMImpl_RotateDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_RotateDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_RotateDriver::~GEOMImpl_RotateDriver %{
@@ -5329,7 +5329,7 @@ class GEOMImpl_BoxDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_BoxDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_BoxDriver::~GEOMImpl_BoxDriver %{
@@ -5528,7 +5528,7 @@ class GEOMImpl_ImportDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ImportDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ImportDriver::~GEOMImpl_ImportDriver %{
@@ -5608,7 +5608,7 @@ class GEOMImpl_PositionDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PositionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PositionDriver::~GEOMImpl_PositionDriver %{
@@ -5653,7 +5653,7 @@ class GEOMImpl_CylinderDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_CylinderDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_CylinderDriver::~GEOMImpl_CylinderDriver %{
@@ -5825,7 +5825,7 @@ class GEOMImpl_SketcherDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_SketcherDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_SketcherDriver::~GEOMImpl_SketcherDriver %{
@@ -5870,7 +5870,7 @@ class GEOMImpl_PolylineDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PolylineDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PolylineDriver::~GEOMImpl_PolylineDriver %{
@@ -5915,7 +5915,7 @@ class GEOMImpl_ConeDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ConeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ConeDriver::~GEOMImpl_ConeDriver %{
@@ -6042,7 +6042,7 @@ class GEOMImpl_RevolutionDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_RevolutionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_RevolutionDriver::~GEOMImpl_RevolutionDriver %{
@@ -6312,7 +6312,7 @@ class GEOMImpl_FaceDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_FaceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_FaceDriver::~GEOMImpl_FaceDriver %{
@@ -6526,7 +6526,7 @@ class GEOMImpl_BlockDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_BlockDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_BlockDriver::~GEOMImpl_BlockDriver %{
@@ -6571,7 +6571,7 @@ class GEOMImpl_ArchimedeDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ArchimedeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ArchimedeDriver::~GEOMImpl_ArchimedeDriver %{
@@ -6805,7 +6805,7 @@ class GEOMImpl_ShapeDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ShapeDriver::~GEOMImpl_ShapeDriver %{
@@ -6885,7 +6885,7 @@ class GEOMImpl_EllipseDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_EllipseDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_EllipseDriver::~GEOMImpl_EllipseDriver %{
@@ -6930,7 +6930,7 @@ class GEOMImpl_VectorDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_VectorDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_VectorDriver::~GEOMImpl_VectorDriver %{
@@ -7030,7 +7030,7 @@ class GEOMImpl_PipeDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PipeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PipeDriver::~GEOMImpl_PipeDriver %{
@@ -7075,7 +7075,7 @@ class GEOMImpl_ThickSolidDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ThickSolidDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ThickSolidDriver::~GEOMImpl_ThickSolidDriver %{
@@ -7120,7 +7120,7 @@ class GEOMImpl_PlateDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PlateDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PlateDriver::~GEOMImpl_PlateDriver %{
@@ -7165,7 +7165,7 @@ class GEOMImpl_ThruSectionsDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ThruSectionsDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ThruSectionsDriver::~GEOMImpl_ThruSectionsDriver %{
@@ -7210,7 +7210,7 @@ class GEOMImpl_PrismDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PrismDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PrismDriver::~GEOMImpl_PrismDriver %{
@@ -7255,7 +7255,7 @@ class GEOMImpl_DiskDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_DiskDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_DiskDriver::~GEOMImpl_DiskDriver %{
@@ -7379,7 +7379,7 @@ class GEOMImpl_Fillet1dDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_Fillet1dDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_Fillet1dDriver::~GEOMImpl_Fillet1dDriver %{
@@ -7424,7 +7424,7 @@ class GEOMImpl_ArcDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ArcDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ArcDriver::~GEOMImpl_ArcDriver %{
@@ -7668,7 +7668,7 @@ class GEOMImpl_PointDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PointDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PointDriver::~GEOMImpl_PointDriver %{
@@ -7744,7 +7744,7 @@ class GEOMImpl_HealingDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_HealingDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_HealingDriver::~GEOMImpl_HealingDriver %{
@@ -7789,7 +7789,7 @@ class GEOMImpl_CurveDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_CurveDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_CurveDriver::~GEOMImpl_CurveDriver %{
@@ -7834,7 +7834,7 @@ class GEOMImpl_CircleDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_CircleDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_CircleDriver::~GEOMImpl_CircleDriver %{

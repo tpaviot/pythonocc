@@ -237,7 +237,7 @@ class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
 };
 %extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TopLoc_IndexedMapNodeOfIndexedMapOfLocation::~TopLoc_IndexedMapNodeOfIndexedMapOfLocation %{
@@ -311,7 +311,7 @@ class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 };
 %extend TopLoc_StdMapNodeOfMapOfLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TopLoc_StdMapNodeOfMapOfLocation::~TopLoc_StdMapNodeOfMapOfLocation %{
@@ -387,7 +387,7 @@ class TopLoc_Location {
 };
 %extend TopLoc_Location {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TopLoc_Location::~TopLoc_Location %{
@@ -567,7 +567,7 @@ class TopLoc_Datum3D : public MMgt_TShared {
 };
 %extend TopLoc_Datum3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TopLoc_Datum3D::~TopLoc_Datum3D %{

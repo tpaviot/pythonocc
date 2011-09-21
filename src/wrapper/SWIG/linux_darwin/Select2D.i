@@ -355,7 +355,7 @@ class Select2D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 };
 %extend Select2D_SensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitiveEntity::~Select2D_SensitiveEntity %{
@@ -401,7 +401,7 @@ class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveCircle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitiveCircle::~Select2D_SensitiveCircle %{
@@ -455,7 +455,7 @@ class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitiveSegment::~Select2D_SensitiveSegment %{
@@ -497,7 +497,7 @@ class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveArc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitiveArc::~Select2D_SensitiveArc %{
@@ -541,7 +541,7 @@ class Select2D_SensitiveBox : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitiveBox::~Select2D_SensitiveBox %{
@@ -576,7 +576,7 @@ class Select2D_Projector : public MMgt_TShared {
 };
 %extend Select2D_Projector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Select2D_Projector::~Select2D_Projector %{
@@ -622,7 +622,7 @@ class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitivePoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitivePoint::~Select2D_SensitivePoint %{

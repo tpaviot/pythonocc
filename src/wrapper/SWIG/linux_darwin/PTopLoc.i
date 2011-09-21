@@ -152,7 +152,7 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 };
 %extend PTopLoc_Datum3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopLoc_Datum3D::~PTopLoc_Datum3D %{
@@ -244,7 +244,7 @@ class PTopLoc_ItemLocation : public Standard_Persistent {
 };
 %extend PTopLoc_ItemLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopLoc_ItemLocation::~PTopLoc_ItemLocation %{

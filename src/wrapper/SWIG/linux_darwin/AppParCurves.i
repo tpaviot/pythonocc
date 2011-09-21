@@ -579,7 +579,7 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public TCollection_SeqNo
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_SequenceNodeOfSequenceOfMultiCurve::~AppParCurves_SequenceNodeOfSequenceOfMultiCurve %{
@@ -667,7 +667,7 @@ class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_HArray1OfMultiCurve::~AppParCurves_HArray1OfMultiCurve %{
@@ -746,7 +746,7 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 };
 %extend AppParCurves_SmoothCriterion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_SmoothCriterion::~AppParCurves_SmoothCriterion %{
@@ -958,7 +958,7 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_Se
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve::~AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve %{
@@ -1115,7 +1115,7 @@ class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfConstraintCouple {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_HArray1OfConstraintCouple::~AppParCurves_HArray1OfConstraintCouple %{
@@ -1170,7 +1170,7 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_HArray1OfMultiPoint::~AppParCurves_HArray1OfMultiPoint %{
@@ -1256,7 +1256,7 @@ class AppParCurves_HArray1OfMultiBSpCurve : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiBSpCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_HArray1OfMultiBSpCurve::~AppParCurves_HArray1OfMultiBSpCurve %{

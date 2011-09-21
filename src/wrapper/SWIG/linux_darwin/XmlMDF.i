@@ -300,7 +300,7 @@ class XmlMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 };
 %extend XmlMDF_DataMapNodeOfTypeADriverMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDF_DataMapNodeOfTypeADriverMap::~XmlMDF_DataMapNodeOfTypeADriverMap %{
@@ -339,7 +339,7 @@ class XmlMDF_DataMapNodeOfMapOfDriver : public TCollection_MapNode {
 };
 %extend XmlMDF_DataMapNodeOfMapOfDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDF_DataMapNodeOfMapOfDriver::~XmlMDF_DataMapNodeOfMapOfDriver %{
@@ -431,7 +431,7 @@ class XmlMDF_ADriver : public MMgt_TShared {
 };
 %extend XmlMDF_ADriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDF_ADriver::~XmlMDF_ADriver %{
@@ -472,7 +472,7 @@ class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDF_TagSourceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDF_TagSourceDriver::~XmlMDF_TagSourceDriver %{
@@ -618,7 +618,7 @@ class XmlMDF_ADriverTable : public MMgt_TShared {
 };
 %extend XmlMDF_ADriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDF_ADriverTable::~XmlMDF_ADriverTable %{
@@ -659,7 +659,7 @@ class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDF_ReferenceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDF_ReferenceDriver::~XmlMDF_ReferenceDriver %{
