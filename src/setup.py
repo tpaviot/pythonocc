@@ -89,7 +89,7 @@ libraries = ['FWOSPlugin', \
              'TKV2d', 'TKV3d', 'TKVRML', 'TKXCAF', 'TKXCAFSchema',\
              'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
              'TKXmlXCAF', 'TKXSBase',
-             'TKVoxel'
+             #'TKVoxel'
              ]
 #
 # GEOM libraries

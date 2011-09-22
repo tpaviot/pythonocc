@@ -160,8 +160,8 @@ elif sys.platform=='linux2':
     else:
         OCC_INC = '/usr/include/opencascade'
         OCC_LIB = '/usr/lib'
-    SALOME_GEOM_LIB = '/usr/local/lib'
-    SALOME_SMESH_LIB = '/usr/local/lib'
+    SALOME_GEOM_LIB = '/usr/lib'
+    SALOME_SMESH_LIB = '/usr/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
