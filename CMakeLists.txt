@@ -55,14 +55,11 @@ INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 # 2147483647 on 32bit systems
 ###############################################################
 MESSAGE(STATUS " Check whether the system is 32 or 64 bit." )
-EXECUTE_PROCESS(COMMAND python -c "import sys;print sys.maxint" OUTPUT_VARIABLE maxint_str)
-IF (maxint_str MATCHES "2147483647")
-    MESSAGE(STATUS " -- 32bit system detected")
-    SET(MODE "32bit")
-ELSE(maxint_str MATCHES "2147483647")
-    MESSAGE(STATUS " -- 64bit system detected")
-    SET(MODE "64bit")
-ENDIF(maxint_str MATCHES "2147483647")
+IF (${CMAKE_SIZEOF_VOID_P} MATCHES "8") # It is 64bit, otherwise 32 bit systems match 4
+	SET(MODE "64bit")
+ELSE (${CMAKE_SIZEOF_VOID_P} MATCHES "8")
+	SET(MODE "32bit")
+ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 
 ########
 # SWIG #
