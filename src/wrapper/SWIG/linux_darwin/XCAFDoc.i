@@ -796,7 +796,7 @@ class XCAFDoc_DocumentTool : public TDF_Attribute {
 };
 %extend XCAFDoc_DocumentTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DocumentTool::~XCAFDoc_DocumentTool %{
@@ -948,7 +948,7 @@ class XCAFDoc_Volume : public TDF_Attribute {
 };
 %extend XCAFDoc_Volume {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Volume::~XCAFDoc_Volume %{
@@ -1005,7 +1005,7 @@ class XCAFDoc_DimTol : public TDF_Attribute {
 };
 %extend XCAFDoc_DimTol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DimTol::~XCAFDoc_DimTol %{
@@ -1091,7 +1091,7 @@ class XCAFDoc_DimTolTool : public TDF_Attribute {
 };
 %extend XCAFDoc_DimTolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DimTolTool::~XCAFDoc_DimTolTool %{
@@ -1252,7 +1252,7 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 };
 %extend XCAFDoc_ShapeTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_ShapeTool::~XCAFDoc_ShapeTool %{
@@ -1338,7 +1338,7 @@ class XCAFDoc_Datum : public TDF_Attribute {
 };
 %extend XCAFDoc_Datum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Datum::~XCAFDoc_Datum %{
@@ -1437,7 +1437,7 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 };
 %extend XCAFDoc_LayerTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_LayerTool::~XCAFDoc_LayerTool %{
@@ -1530,7 +1530,7 @@ class XCAFDoc_GraphNode : public TDF_Attribute {
 };
 %extend XCAFDoc_GraphNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_GraphNode::~XCAFDoc_GraphNode %{
@@ -1592,7 +1592,7 @@ class XCAFDoc_Area : public TDF_Attribute {
 };
 %extend XCAFDoc_Area {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Area::~XCAFDoc_Area %{
@@ -1656,7 +1656,7 @@ class XCAFDoc_Color : public TDF_Attribute {
 };
 %extend XCAFDoc_Color {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Color::~XCAFDoc_Color %{
@@ -1707,7 +1707,7 @@ class XCAFDoc_Location : public TDF_Attribute {
 };
 %extend XCAFDoc_Location {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Location::~XCAFDoc_Location %{
@@ -1766,7 +1766,7 @@ class XCAFDoc_Material : public TDF_Attribute {
 };
 %extend XCAFDoc_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Material::~XCAFDoc_Material %{
@@ -1884,7 +1884,7 @@ class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 };
 %extend XCAFDoc_ShapeMapTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_ShapeMapTool::~XCAFDoc_ShapeMapTool %{
@@ -1945,7 +1945,7 @@ class XCAFDoc_Centroid : public TDF_Attribute {
 };
 %extend XCAFDoc_Centroid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Centroid::~XCAFDoc_Centroid %{
@@ -1984,7 +1984,7 @@ class XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNode {
 };
 %extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::~XCAFDoc_DataMapNodeOfDataMapOfShapeLabel %{
@@ -2085,7 +2085,7 @@ class XCAFDoc_ColorTool : public TDF_Attribute {
 };
 %extend XCAFDoc_ColorTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_ColorTool::~XCAFDoc_ColorTool %{
@@ -2122,7 +2122,7 @@ class XCAFDoc_SequenceNodeOfGraphNodeSequence : public TCollection_SeqNode {
 };
 %extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_SequenceNodeOfGraphNodeSequence::~XCAFDoc_SequenceNodeOfGraphNodeSequence %{
@@ -2188,7 +2188,7 @@ class XCAFDoc_MaterialTool : public TDF_Attribute {
 };
 %extend XCAFDoc_MaterialTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_MaterialTool::~XCAFDoc_MaterialTool %{

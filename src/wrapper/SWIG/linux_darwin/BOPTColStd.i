@@ -379,7 +379,7 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollec
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger %{
@@ -494,7 +494,7 @@ class BOPTColStd_ShapeWithRank {
 };
 %extend BOPTColStd_ShapeWithRank {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTColStd_ShapeWithRank::~BOPTColStd_ShapeWithRank %{
@@ -616,7 +616,7 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCo
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger %{
@@ -881,7 +881,7 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 };
 %extend BOPTColStd_ListNodeOfListOfListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTColStd_ListNodeOfListOfListOfShape::~BOPTColStd_ListNodeOfListOfListOfShape %{
@@ -969,7 +969,7 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger %{

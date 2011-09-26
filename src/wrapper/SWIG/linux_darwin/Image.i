@@ -508,7 +508,7 @@ class Image_Image : public MMgt_TShared {
 };
 %extend Image_Image {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Image_Image::~Image_Image %{
@@ -582,7 +582,7 @@ class Image_PixMap : public Aspect_PixMap {
 };
 %extend Image_PixMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Image_PixMap::~Image_PixMap %{
@@ -800,7 +800,7 @@ class Image_DColorImage : public Image_Image {
 };
 %extend Image_DColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Image_DColorImage::~Image_DColorImage %{
@@ -841,7 +841,7 @@ class Image_ColorImage : public Image_DColorImage {
 };
 %extend Image_ColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Image_ColorImage::~Image_ColorImage %{
@@ -952,7 +952,7 @@ class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
 };
 %extend Image_DataMapNodeOfLookupTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Image_DataMapNodeOfLookupTable::~Image_DataMapNodeOfLookupTable %{
@@ -1322,7 +1322,7 @@ class Image_DIndexedImage : public Image_Image {
 };
 %extend Image_DIndexedImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Image_DIndexedImage::~Image_DIndexedImage %{
@@ -1414,7 +1414,7 @@ class Image_PseudoColorImage : public Image_DIndexedImage {
 };
 %extend Image_PseudoColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Image_PseudoColorImage::~Image_PseudoColorImage %{
@@ -1508,7 +1508,7 @@ class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 };
 %extend Image_DataMapNodeOfColorPixelDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Image_DataMapNodeOfColorPixelDataMap::~Image_DataMapNodeOfColorPixelDataMap %{

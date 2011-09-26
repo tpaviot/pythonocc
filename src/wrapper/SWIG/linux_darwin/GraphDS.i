@@ -167,7 +167,7 @@ class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
 };
 %extend GraphDS_DataMapNodeOfEntityRoleMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GraphDS_DataMapNodeOfEntityRoleMap::~GraphDS_DataMapNodeOfEntityRoleMap %{

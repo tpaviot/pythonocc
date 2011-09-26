@@ -409,7 +409,7 @@ class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
 };
 %extend HatchGen_SequenceNodeOfPointsOnElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HatchGen_SequenceNodeOfPointsOnElement::~HatchGen_SequenceNodeOfPointsOnElement %{
@@ -446,7 +446,7 @@ class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
 };
 %extend HatchGen_SequenceNodeOfDomains {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HatchGen_SequenceNodeOfDomains::~HatchGen_SequenceNodeOfDomains %{
@@ -483,7 +483,7 @@ class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
 };
 %extend HatchGen_SequenceNodeOfPointsOnHatching {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HatchGen_SequenceNodeOfPointsOnHatching::~HatchGen_SequenceNodeOfPointsOnHatching %{

@@ -373,7 +373,7 @@ class Approx_SweepFunction : public MMgt_TShared {
 };
 %extend Approx_SweepFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Approx_SweepFunction::~Approx_SweepFunction %{
@@ -496,7 +496,7 @@ class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode 
 };
 %extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Approx_SequenceNodeOfSequenceOfHArray1OfReal::~Approx_SequenceNodeOfSequenceOfHArray1OfReal %{
@@ -602,7 +602,7 @@ class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 };
 %extend Approx_HArray1OfAdHSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Approx_HArray1OfAdHSurface::~Approx_HArray1OfAdHSurface %{
@@ -737,7 +737,7 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 };
 %extend Approx_HArray1OfGTrsf2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Approx_HArray1OfGTrsf2d::~Approx_HArray1OfGTrsf2d %{
@@ -888,7 +888,7 @@ class Approx_CurvlinFunc : public MMgt_TShared {
 };
 %extend Approx_CurvlinFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Approx_CurvlinFunc::~Approx_CurvlinFunc %{

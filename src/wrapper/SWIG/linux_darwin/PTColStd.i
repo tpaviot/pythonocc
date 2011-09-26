@@ -213,7 +213,7 @@ class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode 
 };
 %extend PTColStd_DataMapNodeOfPersistentTransientMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTColStd_DataMapNodeOfPersistentTransientMap::~PTColStd_DataMapNodeOfPersistentTransientMap %{
@@ -453,7 +453,7 @@ class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollectio
 };
 %extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent %{
@@ -523,7 +523,7 @@ class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode 
 };
 %extend PTColStd_DataMapNodeOfTransientPersistentMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTColStd_DataMapNodeOfTransientPersistentMap::~PTColStd_DataMapNodeOfTransientPersistentMap %{

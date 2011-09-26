@@ -1437,7 +1437,7 @@ class Interface_GeneralModule : public MMgt_TShared {
 };
 %extend Interface_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_GeneralModule::~Interface_GeneralModule %{
@@ -1520,7 +1520,7 @@ class Interface_FileReaderData : public MMgt_TShared {
 };
 %extend Interface_FileReaderData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_FileReaderData::~Interface_FileReaderData %{
@@ -1563,7 +1563,7 @@ class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
 };
 %extend Interface_GlobalNodeOfGeneralLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_GlobalNodeOfGeneralLib::~Interface_GlobalNodeOfGeneralLib %{
@@ -1655,7 +1655,7 @@ class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_Map
 };
 %extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_IndexedMapNodeOfIndexedMapOfAsciiString::~Interface_IndexedMapNodeOfIndexedMapOfAsciiString %{
@@ -1694,7 +1694,7 @@ class Interface_CopyControl : public MMgt_TShared {
 };
 %extend Interface_CopyControl {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_CopyControl::~Interface_CopyControl %{
@@ -1733,7 +1733,7 @@ class Interface_ReaderModule : public MMgt_TShared {
 };
 %extend Interface_ReaderModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_ReaderModule::~Interface_ReaderModule %{
@@ -1782,7 +1782,7 @@ class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapN
 };
 %extend Interface_DataMapNodeOfDataMapOfTransientInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_DataMapNodeOfDataMapOfTransientInteger::~Interface_DataMapNodeOfDataMapOfTransientInteger %{
@@ -1884,7 +1884,7 @@ class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 };
 %extend Interface_GlobalNodeOfReaderLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_GlobalNodeOfReaderLib::~Interface_GlobalNodeOfReaderLib %{
@@ -1927,7 +1927,7 @@ class Interface_CopyMap : public Interface_CopyControl {
 };
 %extend Interface_CopyMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_CopyMap::~Interface_CopyMap %{
@@ -2166,7 +2166,7 @@ class Interface_ParamList : public MMgt_TShared {
 };
 %extend Interface_ParamList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_ParamList::~Interface_ParamList %{
@@ -2258,7 +2258,7 @@ class Interface_TypedValue : public MoniTool_TypedValue {
 };
 %extend Interface_TypedValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_TypedValue::~Interface_TypedValue %{
@@ -2439,7 +2439,7 @@ class Interface_HSequenceOfCheck : public MMgt_TShared {
 };
 %extend Interface_HSequenceOfCheck {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_HSequenceOfCheck::~Interface_HSequenceOfCheck %{
@@ -2522,7 +2522,7 @@ class Interface_Static : public Interface_TypedValue {
 };
 %extend Interface_Static {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_Static::~Interface_Static %{
@@ -2607,7 +2607,7 @@ class Interface_NodeOfGeneralLib : public MMgt_TShared {
 };
 %extend Interface_NodeOfGeneralLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_NodeOfGeneralLib::~Interface_NodeOfGeneralLib %{
@@ -2644,7 +2644,7 @@ class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
 };
 %extend Interface_SequenceNodeOfSequenceOfCheck {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_SequenceNodeOfSequenceOfCheck::~Interface_SequenceNodeOfSequenceOfCheck %{
@@ -2687,7 +2687,7 @@ class Interface_InterfaceError : public Standard_Failure {
 };
 %extend Interface_InterfaceError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_InterfaceError::~Interface_InterfaceError %{
@@ -2754,7 +2754,7 @@ class Interface_UndefinedContent : public MMgt_TShared {
 };
 %extend Interface_UndefinedContent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_UndefinedContent::~Interface_UndefinedContent %{
@@ -3016,7 +3016,7 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 };
 %extend Interface_HArray1OfHAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_HArray1OfHAsciiString::~Interface_HArray1OfHAsciiString %{
@@ -3277,7 +3277,7 @@ class Interface_ReportEntity : public MMgt_TShared {
 };
 %extend Interface_ReportEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_ReportEntity::~Interface_ReportEntity %{
@@ -3316,7 +3316,7 @@ class Interface_SignLabel : public MoniTool_SignText {
 };
 %extend Interface_SignLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_SignLabel::~Interface_SignLabel %{
@@ -3365,7 +3365,7 @@ class Interface_IntVal : public MMgt_TShared {
 };
 %extend Interface_IntVal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_IntVal::~Interface_IntVal %{
@@ -3412,7 +3412,7 @@ class Interface_HGraph : public MMgt_TShared {
 };
 %extend Interface_HGraph {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_HGraph::~Interface_HGraph %{
@@ -3475,7 +3475,7 @@ class Interface_Protocol : public MMgt_TShared {
 };
 %extend Interface_Protocol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_Protocol::~Interface_Protocol %{
@@ -3659,7 +3659,7 @@ class Interface_Check : public MMgt_TShared {
 };
 %extend Interface_Check {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_Check::~Interface_Check %{
@@ -3717,7 +3717,7 @@ class Interface_GTool : public MMgt_TShared {
 };
 %extend Interface_GTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_GTool::~Interface_GTool %{
@@ -3893,7 +3893,7 @@ class Interface_SignType : public MoniTool_SignText {
 };
 %extend Interface_SignType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_SignType::~Interface_SignType %{
@@ -3991,7 +3991,7 @@ class Interface_CheckFailure : public Interface_InterfaceError {
 };
 %extend Interface_CheckFailure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_CheckFailure::~Interface_CheckFailure %{
@@ -4109,7 +4109,7 @@ class Interface_NodeOfReaderLib : public MMgt_TShared {
 };
 %extend Interface_NodeOfReaderLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_NodeOfReaderLib::~Interface_NodeOfReaderLib %{
@@ -4152,7 +4152,7 @@ class Interface_InterfaceMismatch : public Interface_InterfaceError {
 };
 %extend Interface_InterfaceMismatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_InterfaceMismatch::~Interface_InterfaceMismatch %{
@@ -4256,7 +4256,7 @@ class Interface_ParamSet : public MMgt_TShared {
 };
 %extend Interface_ParamSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_ParamSet::~Interface_ParamSet %{
@@ -4419,7 +4419,7 @@ class Interface_InterfaceModel : public MMgt_TShared {
 };
 %extend Interface_InterfaceModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_InterfaceModel::~Interface_InterfaceModel %{
@@ -4474,7 +4474,7 @@ class Interface_EntityCluster : public MMgt_TShared {
 };
 %extend Interface_EntityCluster {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_EntityCluster::~Interface_EntityCluster %{

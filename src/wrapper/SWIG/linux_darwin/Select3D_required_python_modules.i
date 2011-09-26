@@ -27,10 +27,10 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import V3d
 import Standard
 import gp
 import TopLoc
-import Poly
 import Bnd
+import V3d
+import Poly
 };

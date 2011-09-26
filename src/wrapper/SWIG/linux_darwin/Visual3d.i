@@ -1223,7 +1223,7 @@ class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewMappingDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewMappingDefinitionError::~Visual3d_ViewMappingDefinitionError %{
@@ -1409,7 +1409,7 @@ class Visual3d_TransformError : public Standard_OutOfRange {
 };
 %extend Visual3d_TransformError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_TransformError::~Visual3d_TransformError %{
@@ -1489,7 +1489,7 @@ class Visual3d_ContextPickDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ContextPickDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ContextPickDefinitionError::~Visual3d_ContextPickDefinitionError %{
@@ -1586,7 +1586,7 @@ class Visual3d_DepthCueingDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_DepthCueingDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_DepthCueingDefinitionError::~Visual3d_DepthCueingDefinitionError %{
@@ -1629,7 +1629,7 @@ class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_TransientDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_TransientDefinitionError::~Visual3d_TransientDefinitionError %{
@@ -1802,7 +1802,7 @@ class Visual3d_ListNodeOfSetListOfSetOfLight : public TCollection_MapNode {
 };
 %extend Visual3d_ListNodeOfSetListOfSetOfLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ListNodeOfSetListOfSetOfLight::~Visual3d_ListNodeOfSetListOfSetOfLight %{
@@ -1845,7 +1845,7 @@ class Visual3d_ViewOrientationDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewOrientationDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewOrientationDefinitionError::~Visual3d_ViewOrientationDefinitionError %{
@@ -1888,7 +1888,7 @@ class Visual3d_ViewManagerDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewManagerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewManagerDefinitionError::~Visual3d_ViewManagerDefinitionError %{
@@ -1925,7 +1925,7 @@ class Visual3d_ListNodeOfSetListOfSetOfView : public TCollection_MapNode {
 };
 %extend Visual3d_ListNodeOfSetListOfSetOfView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ListNodeOfSetListOfSetOfView::~Visual3d_ListNodeOfSetListOfSetOfView %{
@@ -1968,7 +1968,7 @@ class Visual3d_ViewDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewDefinitionError::~Visual3d_ViewDefinitionError %{
@@ -2124,7 +2124,7 @@ class Visual3d_LayerItem : public MMgt_TShared {
 };
 %extend Visual3d_LayerItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_LayerItem::~Visual3d_LayerItem %{
@@ -2248,7 +2248,7 @@ class Visual3d_HSetOfView : public MMgt_TShared {
 };
 %extend Visual3d_HSetOfView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_HSetOfView::~Visual3d_HSetOfView %{
@@ -2285,7 +2285,7 @@ class Visual3d_SequenceNodeOfSequenceOfPickPath : public TCollection_SeqNode {
 };
 %extend Visual3d_SequenceNodeOfSequenceOfPickPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_SequenceNodeOfSequenceOfPickPath::~Visual3d_SequenceNodeOfSequenceOfPickPath %{
@@ -2398,7 +2398,7 @@ class Visual3d_ClipDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ClipDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ClipDefinitionError::~Visual3d_ClipDefinitionError %{
@@ -2529,7 +2529,7 @@ class Visual3d_Layer : public MMgt_TShared {
 };
 %extend Visual3d_Layer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_Layer::~Visual3d_Layer %{
@@ -2572,7 +2572,7 @@ class Visual3d_LayerDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_LayerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_LayerDefinitionError::~Visual3d_LayerDefinitionError %{
@@ -2615,7 +2615,7 @@ class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ZClippingDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ZClippingDefinitionError::~Visual3d_ZClippingDefinitionError %{
@@ -2690,7 +2690,7 @@ class Visual3d_Light : public MMgt_TShared {
 };
 %extend Visual3d_Light {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_Light::~Visual3d_Light %{
@@ -2819,7 +2819,7 @@ class Visual3d_HSetOfLight : public MMgt_TShared {
 };
 %extend Visual3d_HSetOfLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_HSetOfLight::~Visual3d_HSetOfLight %{
@@ -2940,7 +2940,7 @@ class Visual3d_LightDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_LightDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_LightDefinitionError::~Visual3d_LightDefinitionError %{
@@ -3161,7 +3161,7 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 };
 %extend Visual3d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_View::~Visual3d_View %{
@@ -3246,7 +3246,7 @@ class Visual3d_TransientManager : public MMgt_TShared {
 };
 %extend Visual3d_TransientManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_TransientManager::~Visual3d_TransientManager %{
@@ -3289,7 +3289,7 @@ class Visual3d_PickError : public Standard_OutOfRange {
 };
 %extend Visual3d_PickError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_PickError::~Visual3d_PickError %{
@@ -3391,7 +3391,7 @@ class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
 };
 %extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ListNodeOfSetListOfSetOfClipPlane::~Visual3d_ListNodeOfSetListOfSetOfClipPlane %{
@@ -3501,7 +3501,7 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 };
 %extend Visual3d_ViewManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewManager::~Visual3d_ViewManager %{
@@ -3543,7 +3543,7 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 };
 %extend Visual3d_ClipPlane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ClipPlane::~Visual3d_ClipPlane %{
@@ -3606,7 +3606,7 @@ class Visual3d_HSetOfClipPlane : public MMgt_TShared {
 };
 %extend Visual3d_HSetOfClipPlane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_HSetOfClipPlane::~Visual3d_HSetOfClipPlane %{
@@ -3685,7 +3685,7 @@ class Visual3d_HSequenceOfPickPath : public MMgt_TShared {
 };
 %extend Visual3d_HSequenceOfPickPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_HSequenceOfPickPath::~Visual3d_HSequenceOfPickPath %{

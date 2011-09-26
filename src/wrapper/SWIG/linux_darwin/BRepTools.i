@@ -416,7 +416,7 @@ class BRepTools_ReShape : public MMgt_TShared {
 };
 %extend BRepTools_ReShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_ReShape::~BRepTools_ReShape %{
@@ -579,7 +579,7 @@ class BRepTools_Modification : public MMgt_TShared {
 };
 %extend BRepTools_Modification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_Modification::~BRepTools_Modification %{
@@ -614,7 +614,7 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 };
 %extend BRepTools_TrsfModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_TrsfModification::~BRepTools_TrsfModification %{
@@ -752,7 +752,7 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 };
 %extend BRepTools_GTrsfModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_GTrsfModification::~BRepTools_GTrsfModification %{
@@ -933,7 +933,7 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 };
 %extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_DataMapNodeOfMapOfVertexPnt2d::~BRepTools_DataMapNodeOfMapOfVertexPnt2d %{
@@ -985,7 +985,7 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 };
 %extend BRepTools_NurbsConvertModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_NurbsConvertModification::~BRepTools_NurbsConvertModification %{

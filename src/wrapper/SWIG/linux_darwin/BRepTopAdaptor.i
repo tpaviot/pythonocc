@@ -267,7 +267,7 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 };
 %extend BRepTopAdaptor_HVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_HVertex::~BRepTopAdaptor_HVertex %{
@@ -393,7 +393,7 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 };
 %extend BRepTopAdaptor_TopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_TopolTool::~BRepTopAdaptor_TopolTool %{
@@ -477,7 +477,7 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 };
 %extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_DataMapNodeOfMapOfShapeTool::~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool %{

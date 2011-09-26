@@ -719,7 +719,7 @@ class TNaming_UsedShapes : public TDF_Attribute {
 };
 %extend TNaming_UsedShapes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_UsedShapes::~TNaming_UsedShapes %{
@@ -809,7 +809,7 @@ class TNaming_TranslateTool : public MMgt_TShared {
 };
 %extend TNaming_TranslateTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_TranslateTool::~TNaming_TranslateTool %{
@@ -986,7 +986,7 @@ class TNaming_ListNodeOfListOfNamedShape : public TCollection_MapNode {
 };
 %extend TNaming_ListNodeOfListOfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_ListNodeOfListOfNamedShape::~TNaming_ListNodeOfListOfNamedShape %{
@@ -1023,7 +1023,7 @@ class TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public TCollect
 };
 %extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape::~TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape %{
@@ -1060,7 +1060,7 @@ class TNaming_StdMapNodeOfMapOfNamedShape : public TCollection_MapNode {
 };
 %extend TNaming_StdMapNodeOfMapOfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_StdMapNodeOfMapOfNamedShape::~TNaming_StdMapNodeOfMapOfNamedShape %{
@@ -1486,7 +1486,7 @@ class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
 };
 %extend TNaming_DeltaOnRemoval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_DeltaOnRemoval::~TNaming_DeltaOnRemoval %{
@@ -1554,7 +1554,7 @@ class TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public TCollection_MapNode 
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapeShapesSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_DataMapNodeOfDataMapOfShapeShapesSet::~TNaming_DataMapNodeOfDataMapOfShapeShapesSet %{
@@ -1591,7 +1591,7 @@ class TNaming_DeltaOnModification : public TDF_DeltaOnModification {
 };
 %extend TNaming_DeltaOnModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_DeltaOnModification::~TNaming_DeltaOnModification %{
@@ -1663,7 +1663,7 @@ class TNaming_ListNodeOfListOfMapOfShape : public TCollection_MapNode {
 };
 %extend TNaming_ListNodeOfListOfMapOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_ListNodeOfListOfMapOfShape::~TNaming_ListNodeOfListOfMapOfShape %{
@@ -1746,7 +1746,7 @@ class TNaming_NamedShape : public TDF_Attribute {
 };
 %extend TNaming_NamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_NamedShape::~TNaming_NamedShape %{
@@ -1982,7 +1982,7 @@ class TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public TCollection_MapNod
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapePtrRefShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_DataMapNodeOfDataMapOfShapePtrRefShape::~TNaming_DataMapNodeOfDataMapOfShapePtrRefShape %{
@@ -2213,7 +2213,7 @@ class TNaming_Naming : public TDF_Attribute {
 };
 %extend TNaming_Naming {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TNaming_Naming::~TNaming_Naming %{

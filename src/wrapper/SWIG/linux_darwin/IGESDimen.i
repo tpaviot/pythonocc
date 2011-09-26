@@ -1182,7 +1182,7 @@ class IGESDimen_BasicDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_BasicDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_BasicDimension::~IGESDimen_BasicDimension %{
@@ -1237,7 +1237,7 @@ class IGESDimen_HArray1OfLeaderArrow : public MMgt_TShared {
 };
 %extend IGESDimen_HArray1OfLeaderArrow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_HArray1OfLeaderArrow::~IGESDimen_HArray1OfLeaderArrow %{
@@ -1327,7 +1327,7 @@ class IGESDimen_CenterLine : public IGESData_IGESEntity {
 };
 %extend IGESDimen_CenterLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_CenterLine::~IGESDimen_CenterLine %{
@@ -1378,7 +1378,7 @@ class IGESDimen_GeneralSymbol : public IGESData_IGESEntity {
 };
 %extend IGESDimen_GeneralSymbol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_GeneralSymbol::~IGESDimen_GeneralSymbol %{
@@ -1423,7 +1423,7 @@ class IGESDimen_DimensionedGeometry : public IGESData_IGESEntity {
 };
 %extend IGESDimen_DimensionedGeometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_DimensionedGeometry::~IGESDimen_DimensionedGeometry %{
@@ -1517,7 +1517,7 @@ class IGESDimen_LeaderArrow : public IGESData_IGESEntity {
 };
 %extend IGESDimen_LeaderArrow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_LeaderArrow::~IGESDimen_LeaderArrow %{
@@ -1576,7 +1576,7 @@ class IGESDimen_SectionedArea : public IGESData_IGESEntity {
 };
 %extend IGESDimen_SectionedArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_SectionedArea::~IGESDimen_SectionedArea %{
@@ -1645,7 +1645,7 @@ class IGESDimen_GeneralNote : public IGESData_IGESEntity {
 };
 %extend IGESDimen_GeneralNote {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_GeneralNote::~IGESDimen_GeneralNote %{
@@ -1686,7 +1686,7 @@ class IGESDimen_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESDimen_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_ReadWriteModule::~IGESDimen_ReadWriteModule %{
@@ -1733,7 +1733,7 @@ class IGESDimen_WitnessLine : public IGESData_IGESEntity {
 };
 %extend IGESDimen_WitnessLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_WitnessLine::~IGESDimen_WitnessLine %{
@@ -1782,7 +1782,7 @@ class IGESDimen_PointDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_PointDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_PointDimension::~IGESDimen_PointDimension %{
@@ -2022,7 +2022,7 @@ class IGESDimen_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESDimen_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_SpecificModule::~IGESDimen_SpecificModule %{
@@ -2071,7 +2071,7 @@ class IGESDimen_Section : public IGESData_IGESEntity {
 };
 %extend IGESDimen_Section {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_Section::~IGESDimen_Section %{
@@ -2163,7 +2163,7 @@ class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
 };
 %extend IGESDimen_DimensionTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_DimensionTolerance::~IGESDimen_DimensionTolerance %{
@@ -2261,7 +2261,7 @@ class IGESDimen_FlagNote : public IGESData_IGESEntity {
 };
 %extend IGESDimen_FlagNote {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_FlagNote::~IGESDimen_FlagNote %{
@@ -2310,7 +2310,7 @@ class IGESDimen_DiameterDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_DiameterDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_DiameterDimension::~IGESDimen_DiameterDimension %{
@@ -2568,7 +2568,7 @@ class IGESDimen_HArray1OfGeneralNote : public MMgt_TShared {
 };
 %extend IGESDimen_HArray1OfGeneralNote {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_HArray1OfGeneralNote::~IGESDimen_HArray1OfGeneralNote %{
@@ -2662,7 +2662,7 @@ class IGESDimen_CurveDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_CurveDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_CurveDimension::~IGESDimen_CurveDimension %{
@@ -2768,7 +2768,7 @@ class IGESDimen_DimensionDisplayData : public IGESData_IGESEntity {
 };
 %extend IGESDimen_DimensionDisplayData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_DimensionDisplayData::~IGESDimen_DimensionDisplayData %{
@@ -2955,7 +2955,7 @@ class IGESDimen_NewGeneralNote : public IGESData_IGESEntity {
 };
 %extend IGESDimen_NewGeneralNote {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_NewGeneralNote::~IGESDimen_NewGeneralNote %{
@@ -3045,7 +3045,7 @@ class IGESDimen_LinearDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_LinearDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_LinearDimension::~IGESDimen_LinearDimension %{
@@ -3092,7 +3092,7 @@ class IGESDimen_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESDimen_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_GeneralModule::~IGESDimen_GeneralModule %{
@@ -3166,7 +3166,7 @@ class IGESDimen_OrdinateDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_OrdinateDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_OrdinateDimension::~IGESDimen_OrdinateDimension %{
@@ -3209,7 +3209,7 @@ class IGESDimen_GeneralLabel : public IGESData_IGESEntity {
 };
 %extend IGESDimen_GeneralLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_GeneralLabel::~IGESDimen_GeneralLabel %{
@@ -3303,7 +3303,7 @@ class IGESDimen_AngularDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_AngularDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_AngularDimension::~IGESDimen_AngularDimension %{
@@ -3465,7 +3465,7 @@ class IGESDimen_DimensionUnits : public IGESData_IGESEntity {
 };
 %extend IGESDimen_DimensionUnits {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_DimensionUnits::~IGESDimen_DimensionUnits %{
@@ -3555,7 +3555,7 @@ class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_RadiusDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_RadiusDimension::~IGESDimen_RadiusDimension %{
@@ -3647,7 +3647,7 @@ class IGESDimen_NewDimensionedGeometry : public IGESData_IGESEntity {
 };
 %extend IGESDimen_NewDimensionedGeometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESDimen_NewDimensionedGeometry::~IGESDimen_NewDimensionedGeometry %{

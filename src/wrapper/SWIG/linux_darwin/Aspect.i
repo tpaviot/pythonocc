@@ -2384,7 +2384,7 @@ class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfFontMapEntry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfFontMapEntry::~Aspect_SequenceNodeOfSequenceOfFontMapEntry %{
@@ -2419,7 +2419,7 @@ class Aspect_GraphicDevice : public MMgt_TShared {
 };
 %extend Aspect_GraphicDevice {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_GraphicDevice::~Aspect_GraphicDevice %{
@@ -2485,7 +2485,7 @@ class Aspect_ColorMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_ColorMapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorMapDefinitionError::~Aspect_ColorMapDefinitionError %{
@@ -2531,7 +2531,7 @@ class Aspect_PixMap : public MMgt_TShared {
 };
 %extend Aspect_PixMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_PixMap::~Aspect_PixMap %{
@@ -2574,7 +2574,7 @@ class Aspect_UndefinedMap : public Standard_OutOfRange {
 };
 %extend Aspect_UndefinedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_UndefinedMap::~Aspect_UndefinedMap %{
@@ -2616,7 +2616,7 @@ class Aspect_AspectMarker : public MMgt_TShared {
 };
 %extend Aspect_AspectMarker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectMarker::~Aspect_AspectMarker %{
@@ -2672,7 +2672,7 @@ class Aspect_ColorMap : public MMgt_TShared {
 };
 %extend Aspect_ColorMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorMap::~Aspect_ColorMap %{
@@ -2708,7 +2708,7 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 };
 %extend Aspect_ColorCubeColorMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorCubeColorMap::~Aspect_ColorCubeColorMap %{
@@ -2793,7 +2793,7 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 };
 %extend Aspect_IndexPixel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_IndexPixel::~Aspect_IndexPixel %{
@@ -2859,7 +2859,7 @@ class Aspect_PixmapError : public Standard_OutOfRange {
 };
 %extend Aspect_PixmapError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_PixmapError::~Aspect_PixmapError %{
@@ -2967,7 +2967,7 @@ class Aspect_WindowError : public Standard_OutOfRange {
 };
 %extend Aspect_WindowError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_WindowError::~Aspect_WindowError %{
@@ -3098,7 +3098,7 @@ class Aspect_Driver : public MMgt_TShared {
 };
 %extend Aspect_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_Driver::~Aspect_Driver %{
@@ -3141,7 +3141,7 @@ class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_AspectFillAreaDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectFillAreaDefinitionError::~Aspect_AspectFillAreaDefinitionError %{
@@ -3184,7 +3184,7 @@ class Aspect_DriverDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_DriverDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_DriverDefinitionError::~Aspect_DriverDefinitionError %{
@@ -3227,7 +3227,7 @@ class Aspect_LineStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_LineStyleDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_LineStyleDefinitionError::~Aspect_LineStyleDefinitionError %{
@@ -3277,7 +3277,7 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 };
 %extend Aspect_ColorRampColorMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorRampColorMap::~Aspect_ColorRampColorMap %{
@@ -3363,7 +3363,7 @@ class Aspect_GenericColorMap : public Aspect_ColorMap {
 };
 %extend Aspect_GenericColorMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_GenericColorMap::~Aspect_GenericColorMap %{
@@ -3406,7 +3406,7 @@ class Aspect_PixmapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_PixmapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_PixmapDefinitionError::~Aspect_PixmapDefinitionError %{
@@ -3453,7 +3453,7 @@ class Aspect_TypeMap : public MMgt_TShared {
 };
 %extend Aspect_TypeMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_TypeMap::~Aspect_TypeMap %{
@@ -3490,7 +3490,7 @@ class Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfMarkMapEntry::~Aspect_SequenceNodeOfSequenceOfMarkMapEntry %{
@@ -3537,7 +3537,7 @@ class Aspect_MarkMap : public MMgt_TShared {
 };
 %extend Aspect_MarkMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_MarkMap::~Aspect_MarkMap %{
@@ -3614,7 +3614,7 @@ class Aspect_Grid : public MMgt_TShared {
 };
 %extend Aspect_Grid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_Grid::~Aspect_Grid %{
@@ -3657,7 +3657,7 @@ class Aspect_CircularGrid : public Aspect_Grid {
 };
 %extend Aspect_CircularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_CircularGrid::~Aspect_CircularGrid %{
@@ -3694,7 +3694,7 @@ class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfTypeMapEntry::~Aspect_SequenceNodeOfSequenceOfTypeMapEntry %{
@@ -3802,7 +3802,7 @@ class Aspect_GraphicDeviceDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_GraphicDeviceDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_GraphicDeviceDefinitionError::~Aspect_GraphicDeviceDefinitionError %{
@@ -3851,7 +3851,7 @@ class Aspect_WidthMap : public MMgt_TShared {
 };
 %extend Aspect_WidthMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_WidthMap::~Aspect_WidthMap %{
@@ -3894,7 +3894,7 @@ class Aspect_EdgeDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_EdgeDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_EdgeDefinitionError::~Aspect_EdgeDefinitionError %{
@@ -3937,7 +3937,7 @@ class Aspect_MarkMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_MarkMapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_MarkMapDefinitionError::~Aspect_MarkMapDefinitionError %{
@@ -3980,7 +3980,7 @@ class Aspect_FontStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_FontStyleDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_FontStyleDefinitionError::~Aspect_FontStyleDefinitionError %{
@@ -4070,7 +4070,7 @@ class Aspect_AspectMarkerDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_AspectMarkerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectMarkerDefinitionError::~Aspect_AspectMarkerDefinitionError %{
@@ -4113,7 +4113,7 @@ class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_TypeMapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_TypeMapDefinitionError::~Aspect_TypeMapDefinitionError %{
@@ -4269,7 +4269,7 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 };
 %extend Aspect_ColorPixel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorPixel::~Aspect_ColorPixel %{
@@ -4312,7 +4312,7 @@ class Aspect_MarkerStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_MarkerStyleDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_MarkerStyleDefinitionError::~Aspect_MarkerStyleDefinitionError %{
@@ -4438,7 +4438,7 @@ class Aspect_Window : public MMgt_TShared {
 };
 %extend Aspect_Window {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_Window::~Aspect_Window %{
@@ -4481,7 +4481,7 @@ class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_PolyStyleDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_PolyStyleDefinitionError::~Aspect_PolyStyleDefinitionError %{
@@ -4524,7 +4524,7 @@ class Aspect_DriverError : public Standard_OutOfRange {
 };
 %extend Aspect_DriverError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_DriverError::~Aspect_DriverError %{
@@ -4645,7 +4645,7 @@ class Aspect_RectangularGrid : public Aspect_Grid {
 };
 %extend Aspect_RectangularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_RectangularGrid::~Aspect_RectangularGrid %{
@@ -4840,7 +4840,7 @@ class Aspect_LineWidthDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_LineWidthDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_LineWidthDefinitionError::~Aspect_LineWidthDefinitionError %{
@@ -4877,7 +4877,7 @@ class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode 
 };
 %extend Aspect_SequenceNodeOfSequenceOfColorMapEntry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfColorMapEntry::~Aspect_SequenceNodeOfSequenceOfColorMapEntry %{
@@ -5015,7 +5015,7 @@ class Aspect_BadAccess : public Standard_DomainError {
 };
 %extend Aspect_BadAccess {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_BadAccess::~Aspect_BadAccess %{
@@ -5118,7 +5118,7 @@ class Aspect_AspectLineDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_AspectLineDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectLineDefinitionError::~Aspect_AspectLineDefinitionError %{
@@ -5230,7 +5230,7 @@ class Aspect_FontMap : public MMgt_TShared {
 };
 %extend Aspect_FontMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_FontMap::~Aspect_FontMap %{
@@ -5376,7 +5376,7 @@ class Aspect_IdentDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_IdentDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_IdentDefinitionError::~Aspect_IdentDefinitionError %{
@@ -5484,7 +5484,7 @@ class Aspect_WindowDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_WindowDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_WindowDefinitionError::~Aspect_WindowDefinitionError %{
@@ -5584,7 +5584,7 @@ class Aspect_WindowDriver : public Aspect_Driver {
 };
 %extend Aspect_WindowDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_WindowDriver::~Aspect_WindowDriver %{
@@ -5621,7 +5621,7 @@ class Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public TCollection_SeqNode 
 };
 %extend Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfWidthMapEntry::~Aspect_SequenceNodeOfSequenceOfWidthMapEntry %{
@@ -5766,7 +5766,7 @@ class Aspect_GraphicDriver : public MMgt_TShared {
 };
 %extend Aspect_GraphicDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_GraphicDriver::~Aspect_GraphicDriver %{
@@ -5812,7 +5812,7 @@ class Aspect_WidthMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_WidthMapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_WidthMapDefinitionError::~Aspect_WidthMapDefinitionError %{
@@ -5867,7 +5867,7 @@ class Aspect_AspectFillArea : public MMgt_TShared {
 };
 %extend Aspect_AspectFillArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectFillArea::~Aspect_AspectFillArea %{
@@ -5913,7 +5913,7 @@ class Aspect_FontMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_FontMapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_FontMapDefinitionError::~Aspect_FontMapDefinitionError %{
@@ -5955,7 +5955,7 @@ class Aspect_AspectLine : public MMgt_TShared {
 };
 %extend Aspect_AspectLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectLine::~Aspect_AspectLine %{
@@ -5995,7 +5995,7 @@ class Aspect_SequenceNodeOfSequenceOfColor : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfColor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfColor::~Aspect_SequenceNodeOfSequenceOfColor %{
@@ -6137,7 +6137,7 @@ class Aspect_ColorScale : public MMgt_TShared {
 };
 %extend Aspect_ColorScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorScale::~Aspect_ColorScale %{

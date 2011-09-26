@@ -175,7 +175,7 @@ class XmlMPrsStd_AISPresentationDriver : public XmlMDF_ADriver {
 };
 %extend XmlMPrsStd_AISPresentationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMPrsStd_AISPresentationDriver::~XmlMPrsStd_AISPresentationDriver %{
@@ -216,7 +216,7 @@ class XmlMPrsStd_PositionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMPrsStd_PositionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMPrsStd_PositionDriver::~XmlMPrsStd_PositionDriver %{

@@ -330,7 +330,7 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 };
 %extend PPoly_PolygonOnTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PPoly_PolygonOnTriangulation::~PPoly_PolygonOnTriangulation %{
@@ -403,7 +403,7 @@ class PPoly_Triangulation : public Standard_Persistent {
 };
 %extend PPoly_Triangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PPoly_Triangulation::~PPoly_Triangulation %{
@@ -474,7 +474,7 @@ class PPoly_HArray1OfTriangle : public Standard_Persistent {
 };
 %extend PPoly_HArray1OfTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PPoly_HArray1OfTriangle::~PPoly_HArray1OfTriangle %{
@@ -572,7 +572,7 @@ class PPoly_Polygon3D : public Standard_Persistent {
 };
 %extend PPoly_Polygon3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PPoly_Polygon3D::~PPoly_Polygon3D %{
@@ -629,7 +629,7 @@ class PPoly_Polygon2D : public Standard_Persistent {
 };
 %extend PPoly_Polygon2D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PPoly_Polygon2D::~PPoly_Polygon2D %{
@@ -715,7 +715,7 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 };
 %extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PPoly_VArrayNodeOfFieldOfHArray1OfTriangle::~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle %{

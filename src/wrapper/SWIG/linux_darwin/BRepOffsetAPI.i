@@ -383,7 +383,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public TCollection
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape::~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape %{
@@ -420,7 +420,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public TCollection_
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal::~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal %{

@@ -510,7 +510,7 @@ class TCollection_SeqNode : public MMgt_TShared {
 };
 %extend TCollection_SeqNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TCollection_SeqNode::~TCollection_SeqNode %{
@@ -602,7 +602,7 @@ class TCollection_MapNode : public MMgt_TShared {
 };
 %extend TCollection_MapNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TCollection_MapNode::~TCollection_MapNode %{
@@ -724,7 +724,7 @@ class TCollection_AVLBaseNode : public MMgt_TShared {
 };
 %extend TCollection_AVLBaseNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TCollection_AVLBaseNode::~TCollection_AVLBaseNode %{
@@ -1028,7 +1028,7 @@ class TCollection_HExtendedString : public MMgt_TShared {
 };
 %extend TCollection_HExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TCollection_HExtendedString::~TCollection_HExtendedString %{
@@ -1334,7 +1334,7 @@ class TCollection_HAsciiString : public MMgt_TShared {
 };
 %extend TCollection_HAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TCollection_HAsciiString::~TCollection_HAsciiString %{

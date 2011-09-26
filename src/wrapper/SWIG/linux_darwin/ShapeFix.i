@@ -636,7 +636,7 @@ class ShapeFix_Root : public MMgt_TShared {
 };
 %extend ShapeFix_Root {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Root::~ShapeFix_Root %{
@@ -699,7 +699,7 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 };
 %extend ShapeFix_ComposeShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_ComposeShell::~ShapeFix_ComposeShell %{
@@ -750,7 +750,7 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 };
 %extend ShapeFix_EdgeProjAux {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_EdgeProjAux::~ShapeFix_EdgeProjAux %{
@@ -1262,7 +1262,7 @@ class ShapeFix_Wire : public ShapeFix_Root {
 };
 %extend ShapeFix_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Wire::~ShapeFix_Wire %{
@@ -1345,7 +1345,7 @@ class ShapeFix_Solid : public ShapeFix_Root {
 };
 %extend ShapeFix_Solid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Solid::~ShapeFix_Solid %{
@@ -1413,7 +1413,7 @@ class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode 
 };
 %extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_SequenceNodeOfSequenceOfWireSegment::~ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
@@ -1560,7 +1560,7 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 };
 %extend ShapeFix_Wireframe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Wireframe::~ShapeFix_Wireframe %{
@@ -1735,7 +1735,7 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 };
 %extend ShapeFix_FixSmallFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_FixSmallFace::~ShapeFix_FixSmallFace %{
@@ -1914,7 +1914,7 @@ class ShapeFix_Shell : public ShapeFix_Root {
 };
 %extend ShapeFix_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Shell::~ShapeFix_Shell %{
@@ -1953,7 +1953,7 @@ class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 };
 %extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
@@ -2144,7 +2144,7 @@ class ShapeFix_Face : public ShapeFix_Root {
 };
 %extend ShapeFix_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Face::~ShapeFix_Face %{
@@ -2279,7 +2279,7 @@ class ShapeFix_Shape : public ShapeFix_Root {
 };
 %extend ShapeFix_Shape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Shape::~ShapeFix_Shape %{
@@ -2381,7 +2381,7 @@ class ShapeFix_SplitCommonVertex : public ShapeFix_Root {
 };
 %extend ShapeFix_SplitCommonVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_SplitCommonVertex::~ShapeFix_SplitCommonVertex %{
@@ -2446,7 +2446,7 @@ class ShapeFix_Edge : public MMgt_TShared {
 };
 %extend ShapeFix_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Edge::~ShapeFix_Edge %{

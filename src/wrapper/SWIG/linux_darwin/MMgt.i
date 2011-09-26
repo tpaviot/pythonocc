@@ -108,7 +108,7 @@ class MMgt_TShared : public Standard_Transient {
 };
 %extend MMgt_TShared {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MMgt_TShared::~MMgt_TShared %{
