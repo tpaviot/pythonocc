@@ -3146,7 +3146,7 @@ class StepVisual_CurveStyleFontPattern : public MMgt_TShared {
 };
 %extend StepVisual_CurveStyleFontPattern {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CurveStyleFontPattern::~StepVisual_CurveStyleFontPattern %{
@@ -3212,7 +3212,7 @@ class StepVisual_CameraUsage : public StepRepr_RepresentationMap {
 };
 %extend StepVisual_CameraUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraUsage::~StepVisual_CameraUsage %{
@@ -3247,7 +3247,7 @@ class StepVisual_AnnotationText : public StepRepr_MappedItem {
 };
 %extend StepVisual_AnnotationText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_AnnotationText::~StepVisual_AnnotationText %{
@@ -3302,7 +3302,7 @@ class StepVisual_HArray1OfDirectionCountSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfDirectionCountSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfDirectionCountSelect::~StepVisual_HArray1OfDirectionCountSelect %{
@@ -3357,7 +3357,7 @@ class StepVisual_HArray1OfCurveStyleFontPattern : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfCurveStyleFontPattern {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfCurveStyleFontPattern::~StepVisual_HArray1OfCurveStyleFontPattern %{
@@ -3402,7 +3402,7 @@ class StepVisual_PresentedItemRepresentation : public MMgt_TShared {
 };
 %extend StepVisual_PresentedItemRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentedItemRepresentation::~StepVisual_PresentedItemRepresentation %{
@@ -3437,7 +3437,7 @@ class StepVisual_PresentationRepresentation : public StepRepr_Representation {
 };
 %extend StepVisual_PresentationRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationRepresentation::~StepVisual_PresentationRepresentation %{
@@ -3470,7 +3470,7 @@ class StepVisual_PresentationArea : public StepVisual_PresentationRepresentation
 };
 %extend StepVisual_PresentationArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationArea::~StepVisual_PresentationArea %{
@@ -3503,7 +3503,7 @@ class StepVisual_MechanicalDesignGeometricPresentationArea : public StepVisual_P
 };
 %extend StepVisual_MechanicalDesignGeometricPresentationArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_MechanicalDesignGeometricPresentationArea::~StepVisual_MechanicalDesignGeometricPresentationArea %{
@@ -3558,7 +3558,7 @@ class StepVisual_HArray1OfStyleContextSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfStyleContextSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfStyleContextSelect::~StepVisual_HArray1OfStyleContextSelect %{
@@ -3624,7 +3624,7 @@ class StepVisual_CameraModel : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepVisual_CameraModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraModel::~StepVisual_CameraModel %{
@@ -3679,7 +3679,7 @@ class StepVisual_HArray1OfTextOrCharacter : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfTextOrCharacter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfTextOrCharacter::~StepVisual_HArray1OfTextOrCharacter %{
@@ -3726,7 +3726,7 @@ class StepVisual_PlanarExtent : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepVisual_PlanarExtent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PlanarExtent::~StepVisual_PlanarExtent %{
@@ -3771,7 +3771,7 @@ class StepVisual_PresentationStyleAssignment : public MMgt_TShared {
 };
 %extend StepVisual_PresentationStyleAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationStyleAssignment::~StepVisual_PresentationStyleAssignment %{
@@ -3810,7 +3810,7 @@ class StepVisual_PresentationStyleByContext : public StepVisual_PresentationStyl
 };
 %extend StepVisual_PresentationStyleByContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationStyleByContext::~StepVisual_PresentationStyleByContext %{
@@ -3863,7 +3863,7 @@ class StepVisual_CurveStyle : public MMgt_TShared {
 };
 %extend StepVisual_CurveStyle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CurveStyle::~StepVisual_CurveStyle %{
@@ -3965,7 +3965,7 @@ class StepVisual_StyledItem : public StepRepr_RepresentationItem {
 };
 %extend StepVisual_StyledItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_StyledItem::~StepVisual_StyledItem %{
@@ -3998,7 +3998,7 @@ class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
 };
 %extend StepVisual_AnnotationOccurrence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_AnnotationOccurrence::~StepVisual_AnnotationOccurrence %{
@@ -4031,7 +4031,7 @@ class StepVisual_DraughtingAnnotationOccurrence : public StepVisual_AnnotationOc
 };
 %extend StepVisual_DraughtingAnnotationOccurrence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_DraughtingAnnotationOccurrence::~StepVisual_DraughtingAnnotationOccurrence %{
@@ -4072,7 +4072,7 @@ class StepVisual_SurfaceStyleSilhouette : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleSilhouette {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleSilhouette::~StepVisual_SurfaceStyleSilhouette %{
@@ -4107,7 +4107,7 @@ class StepVisual_Colour : public MMgt_TShared {
 };
 %extend StepVisual_Colour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_Colour::~StepVisual_Colour %{
@@ -4146,7 +4146,7 @@ class StepVisual_BackgroundColour : public StepVisual_Colour {
 };
 %extend StepVisual_BackgroundColour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_BackgroundColour::~StepVisual_BackgroundColour %{
@@ -4297,7 +4297,7 @@ class StepVisual_ViewVolume : public MMgt_TShared {
 };
 %extend StepVisual_ViewVolume {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ViewVolume::~StepVisual_ViewVolume %{
@@ -4352,7 +4352,7 @@ class StepVisual_HArray1OfPresentationStyleSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfPresentationStyleSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfPresentationStyleSelect::~StepVisual_HArray1OfPresentationStyleSelect %{
@@ -4391,7 +4391,7 @@ class StepVisual_PreDefinedColour : public StepVisual_Colour {
 };
 %extend StepVisual_PreDefinedColour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PreDefinedColour::~StepVisual_PreDefinedColour %{
@@ -4434,7 +4434,7 @@ class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
 };
 %extend StepVisual_PlanarBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PlanarBox::~StepVisual_PlanarBox %{
@@ -4477,7 +4477,7 @@ class StepVisual_OverRidingStyledItem : public StepVisual_StyledItem {
 };
 %extend StepVisual_OverRidingStyledItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_OverRidingStyledItem::~StepVisual_OverRidingStyledItem %{
@@ -4520,7 +4520,7 @@ class StepVisual_ContextDependentOverRidingStyledItem : public StepVisual_OverRi
 };
 %extend StepVisual_ContextDependentOverRidingStyledItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ContextDependentOverRidingStyledItem::~StepVisual_ContextDependentOverRidingStyledItem %{
@@ -4604,7 +4604,7 @@ class StepVisual_PointStyle : public MMgt_TShared {
 };
 %extend StepVisual_PointStyle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PointStyle::~StepVisual_PointStyle %{
@@ -4651,7 +4651,7 @@ class StepVisual_CompositeText : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepVisual_CompositeText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CompositeText::~StepVisual_CompositeText %{
@@ -4700,7 +4700,7 @@ class StepVisual_MarkerMember : public StepData_SelectInt {
 };
 %extend StepVisual_MarkerMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_MarkerMember::~StepVisual_MarkerMember %{
@@ -4745,7 +4745,7 @@ class StepVisual_TextStyle : public MMgt_TShared {
 };
 %extend StepVisual_TextStyle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_TextStyle::~StepVisual_TextStyle %{
@@ -4788,7 +4788,7 @@ class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
 };
 %extend StepVisual_TextStyleWithBoxCharacteristics {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_TextStyleWithBoxCharacteristics::~StepVisual_TextStyleWithBoxCharacteristics %{
@@ -4833,7 +4833,7 @@ class StepVisual_SurfaceStyleUsage : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleUsage::~StepVisual_SurfaceStyleUsage %{
@@ -4899,7 +4899,7 @@ class StepVisual_CameraImage : public StepRepr_MappedItem {
 };
 %extend StepVisual_CameraImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraImage::~StepVisual_CameraImage %{
@@ -4932,7 +4932,7 @@ class StepVisual_CameraImage3dWithScale : public StepVisual_CameraImage {
 };
 %extend StepVisual_CameraImage3dWithScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraImage3dWithScale::~StepVisual_CameraImage3dWithScale %{
@@ -4967,7 +4967,7 @@ class StepVisual_AnnotationTextOccurrence : public StepVisual_AnnotationOccurren
 };
 %extend StepVisual_AnnotationTextOccurrence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_AnnotationTextOccurrence::~StepVisual_AnnotationTextOccurrence %{
@@ -5002,7 +5002,7 @@ class StepVisual_ExternallyDefinedCurveFont : public StepBasic_ExternallyDefined
 };
 %extend StepVisual_ExternallyDefinedCurveFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ExternallyDefinedCurveFont::~StepVisual_ExternallyDefinedCurveFont %{
@@ -5057,7 +5057,7 @@ class StepVisual_HArray1OfLayeredItem : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfLayeredItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfLayeredItem::~StepVisual_HArray1OfLayeredItem %{
@@ -5127,7 +5127,7 @@ class StepVisual_ColourSpecification : public StepVisual_Colour {
 };
 %extend StepVisual_ColourSpecification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ColourSpecification::~StepVisual_ColourSpecification %{
@@ -5174,7 +5174,7 @@ class StepVisual_ColourRgb : public StepVisual_ColourSpecification {
 };
 %extend StepVisual_ColourRgb {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ColourRgb::~StepVisual_ColourRgb %{
@@ -5229,7 +5229,7 @@ class StepVisual_HArray1OfSurfaceStyleElementSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfSurfaceStyleElementSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfSurfaceStyleElementSelect::~StepVisual_HArray1OfSurfaceStyleElementSelect %{
@@ -5333,7 +5333,7 @@ class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
 };
 %extend StepVisual_PresentationLayerAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationLayerAssignment::~StepVisual_PresentationLayerAssignment %{
@@ -5378,7 +5378,7 @@ class StepVisual_FillAreaStyleColour : public MMgt_TShared {
 };
 %extend StepVisual_FillAreaStyleColour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_FillAreaStyleColour::~StepVisual_FillAreaStyleColour %{
@@ -5419,7 +5419,7 @@ class StepVisual_PreDefinedItem : public MMgt_TShared {
 };
 %extend StepVisual_PreDefinedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PreDefinedItem::~StepVisual_PreDefinedItem %{
@@ -5516,7 +5516,7 @@ class StepVisual_PresentationView : public StepVisual_PresentationRepresentation
 };
 %extend StepVisual_PresentationView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationView::~StepVisual_PresentationView %{
@@ -5561,7 +5561,7 @@ class StepVisual_PresentationLayerUsage : public MMgt_TShared {
 };
 %extend StepVisual_PresentationLayerUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationLayerUsage::~StepVisual_PresentationLayerUsage %{
@@ -5620,7 +5620,7 @@ class StepVisual_TextLiteral : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepVisual_TextLiteral {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_TextLiteral::~StepVisual_TextLiteral %{
@@ -5665,7 +5665,7 @@ class StepVisual_PresentationSize : public MMgt_TShared {
 };
 %extend StepVisual_PresentationSize {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationSize::~StepVisual_PresentationSize %{
@@ -5761,7 +5761,7 @@ class StepVisual_Invisibility : public MMgt_TShared {
 };
 %extend StepVisual_Invisibility {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_Invisibility::~StepVisual_Invisibility %{
@@ -5800,7 +5800,7 @@ class StepVisual_ContextDependentInvisibility : public StepVisual_Invisibility {
 };
 %extend StepVisual_ContextDependentInvisibility {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ContextDependentInvisibility::~StepVisual_ContextDependentInvisibility %{
@@ -5835,7 +5835,7 @@ class StepVisual_PreDefinedCurveFont : public StepVisual_PreDefinedItem {
 };
 %extend StepVisual_PreDefinedCurveFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PreDefinedCurveFont::~StepVisual_PreDefinedCurveFont %{
@@ -5868,7 +5868,7 @@ class StepVisual_DraughtingPreDefinedCurveFont : public StepVisual_PreDefinedCur
 };
 %extend StepVisual_DraughtingPreDefinedCurveFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_DraughtingPreDefinedCurveFont::~StepVisual_DraughtingPreDefinedCurveFont %{
@@ -5903,7 +5903,7 @@ class StepVisual_Template : public StepRepr_Representation {
 };
 %extend StepVisual_Template {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_Template::~StepVisual_Template %{
@@ -5944,7 +5944,7 @@ class StepVisual_TextStyleForDefinedFont : public MMgt_TShared {
 };
 %extend StepVisual_TextStyleForDefinedFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_TextStyleForDefinedFont::~StepVisual_TextStyleForDefinedFont %{
@@ -5993,7 +5993,7 @@ class StepVisual_SurfaceStyleParameterLine : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleParameterLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleParameterLine::~StepVisual_SurfaceStyleParameterLine %{
@@ -6040,7 +6040,7 @@ class StepVisual_CameraModelD2 : public StepVisual_CameraModel {
 };
 %extend StepVisual_CameraModelD2 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraModelD2::~StepVisual_CameraModelD2 %{
@@ -6089,7 +6089,7 @@ class StepVisual_CurveStyleFont : public MMgt_TShared {
 };
 %extend StepVisual_CurveStyleFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CurveStyleFont::~StepVisual_CurveStyleFont %{
@@ -6124,7 +6124,7 @@ class StepVisual_PresentationSet : public MMgt_TShared {
 };
 %extend StepVisual_PresentationSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationSet::~StepVisual_PresentationSet %{
@@ -6190,7 +6190,7 @@ class StepVisual_ExternallyDefinedTextFont : public StepBasic_ExternallyDefinedI
 };
 %extend StepVisual_ExternallyDefinedTextFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ExternallyDefinedTextFont::~StepVisual_ExternallyDefinedTextFont %{
@@ -6239,7 +6239,7 @@ class StepVisual_SurfaceSideStyle : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceSideStyle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceSideStyle::~StepVisual_SurfaceSideStyle %{
@@ -6450,7 +6450,7 @@ class StepVisual_FillAreaStyle : public MMgt_TShared {
 };
 %extend StepVisual_FillAreaStyle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_FillAreaStyle::~StepVisual_FillAreaStyle %{
@@ -6493,7 +6493,7 @@ class StepVisual_CompositeTextWithExtent : public StepVisual_CompositeText {
 };
 %extend StepVisual_CompositeTextWithExtent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CompositeTextWithExtent::~StepVisual_CompositeTextWithExtent %{
@@ -6534,7 +6534,7 @@ class StepVisual_SurfaceStyleBoundary : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleBoundary::~StepVisual_SurfaceStyleBoundary %{
@@ -6604,7 +6604,7 @@ class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public St
 };
 %extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_MechanicalDesignGeometricPresentationRepresentation::~StepVisual_MechanicalDesignGeometricPresentationRepresentation %{
@@ -6690,7 +6690,7 @@ class StepVisual_DraughtingPreDefinedColour : public StepVisual_PreDefinedColour
 };
 %extend StepVisual_DraughtingPreDefinedColour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_DraughtingPreDefinedColour::~StepVisual_DraughtingPreDefinedColour %{
@@ -6725,7 +6725,7 @@ class StepVisual_TemplateInstance : public StepRepr_MappedItem {
 };
 %extend StepVisual_TemplateInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_TemplateInstance::~StepVisual_TemplateInstance %{
@@ -6760,7 +6760,7 @@ class StepVisual_CameraImage2dWithScale : public StepVisual_CameraImage {
 };
 %extend StepVisual_CameraImage2dWithScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraImage2dWithScale::~StepVisual_CameraImage2dWithScale %{
@@ -6801,7 +6801,7 @@ class StepVisual_SurfaceStyleSegmentationCurve : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleSegmentationCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleSegmentationCurve::~StepVisual_SurfaceStyleSegmentationCurve %{
@@ -6936,7 +6936,7 @@ class StepVisual_HArray1OfInvisibleItem : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfInvisibleItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfInvisibleItem::~StepVisual_HArray1OfInvisibleItem %{
@@ -6971,7 +6971,7 @@ class StepVisual_PresentedItem : public MMgt_TShared {
 };
 %extend StepVisual_PresentedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentedItem::~StepVisual_PresentedItem %{
@@ -7057,7 +7057,7 @@ class StepVisual_PreDefinedTextFont : public StepVisual_PreDefinedItem {
 };
 %extend StepVisual_PreDefinedTextFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PreDefinedTextFont::~StepVisual_PreDefinedTextFont %{
@@ -7104,7 +7104,7 @@ class StepVisual_CameraModelD3 : public StepVisual_CameraModel {
 };
 %extend StepVisual_CameraModelD3 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraModelD3::~StepVisual_CameraModelD3 %{
@@ -7196,7 +7196,7 @@ class StepVisual_SurfaceStyleControlGrid : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleControlGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleControlGrid::~StepVisual_SurfaceStyleControlGrid %{
@@ -7251,7 +7251,7 @@ class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfFillStyleSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfFillStyleSelect::~StepVisual_HArray1OfFillStyleSelect %{
@@ -7357,7 +7357,7 @@ class StepVisual_HArray1OfPresentationStyleAssignment : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfPresentationStyleAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfPresentationStyleAssignment::~StepVisual_HArray1OfPresentationStyleAssignment %{
@@ -7392,7 +7392,7 @@ class StepVisual_DraughtingModel : public StepRepr_Representation {
 };
 %extend StepVisual_DraughtingModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_DraughtingModel::~StepVisual_DraughtingModel %{
@@ -7433,7 +7433,7 @@ class StepVisual_SurfaceStyleFillArea : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleFillArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleFillArea::~StepVisual_SurfaceStyleFillArea %{
@@ -7577,7 +7577,7 @@ class StepVisual_HArray1OfBoxCharacteristicSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfBoxCharacteristicSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfBoxCharacteristicSelect::~StepVisual_HArray1OfBoxCharacteristicSelect %{
@@ -7622,7 +7622,7 @@ class StepVisual_AreaInSet : public MMgt_TShared {
 };
 %extend StepVisual_AreaInSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_AreaInSet::~StepVisual_AreaInSet %{

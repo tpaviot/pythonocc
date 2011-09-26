@@ -1222,7 +1222,7 @@ class Storage_HArrayOfCallBack : public MMgt_TShared {
 };
 %extend Storage_HArrayOfCallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_HArrayOfCallBack::~Storage_HArrayOfCallBack %{
@@ -1349,7 +1349,7 @@ class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
 };
 %extend Storage_SequenceNodeOfSeqOfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_SequenceNodeOfSeqOfPersistent::~Storage_SequenceNodeOfSeqOfPersistent %{
@@ -1479,7 +1479,7 @@ class Storage_HSeqOfCallBack : public MMgt_TShared {
 };
 %extend Storage_HSeqOfCallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_HSeqOfCallBack::~Storage_HSeqOfCallBack %{
@@ -1603,7 +1603,7 @@ class Storage_HSeqOfRoot : public MMgt_TShared {
 };
 %extend Storage_HSeqOfRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_HSeqOfRoot::~Storage_HSeqOfRoot %{
@@ -1694,7 +1694,7 @@ class Storage_Data : public MMgt_TShared {
 };
 %extend Storage_Data {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_Data::~Storage_Data %{
@@ -1737,7 +1737,7 @@ class Storage_StreamReadError : public Standard_Failure {
 };
 %extend Storage_StreamReadError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_StreamReadError::~Storage_StreamReadError %{
@@ -1778,7 +1778,7 @@ class Storage_CallBack : public MMgt_TShared {
 };
 %extend Storage_CallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_CallBack::~Storage_CallBack %{
@@ -1811,7 +1811,7 @@ class Storage_DefaultCallBack : public Storage_CallBack {
 };
 %extend Storage_DefaultCallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_DefaultCallBack::~Storage_DefaultCallBack %{
@@ -1866,7 +1866,7 @@ class Storage_HArrayOfSchema : public MMgt_TShared {
 };
 %extend Storage_HArrayOfSchema {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_HArrayOfSchema::~Storage_HArrayOfSchema %{
@@ -1921,7 +1921,7 @@ class Storage_HPArray : public MMgt_TShared {
 };
 %extend Storage_HPArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_HPArray::~Storage_HPArray %{
@@ -2035,7 +2035,7 @@ class Storage_TypedCallBack : public MMgt_TShared {
 };
 %extend Storage_TypedCallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_TypedCallBack::~Storage_TypedCallBack %{
@@ -2078,7 +2078,7 @@ class Storage_StreamExtCharParityError : public Storage_StreamReadError {
 };
 %extend Storage_StreamExtCharParityError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_StreamExtCharParityError::~Storage_StreamExtCharParityError %{
@@ -2142,7 +2142,7 @@ class Storage_InternalData : public MMgt_TShared {
 };
 %extend Storage_InternalData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_InternalData::~Storage_InternalData %{
@@ -2278,7 +2278,7 @@ class Storage_Schema : public MMgt_TShared {
 };
 %extend Storage_Schema {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_Schema::~Storage_Schema %{
@@ -2331,7 +2331,7 @@ class Storage_RootData : public MMgt_TShared {
 };
 %extend Storage_RootData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_RootData::~Storage_RootData %{
@@ -2452,7 +2452,7 @@ class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
 };
 %extend Storage_DataMapNodeOfMapOfCallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_DataMapNodeOfMapOfCallBack::~Storage_DataMapNodeOfMapOfCallBack %{
@@ -2518,7 +2518,7 @@ class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
 };
 %extend Storage_StreamUnknownTypeError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_StreamUnknownTypeError::~Storage_StreamUnknownTypeError %{
@@ -2728,7 +2728,7 @@ class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
 };
 %extend Storage_SequenceNodeOfSeqOfCallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_SequenceNodeOfSeqOfCallBack::~Storage_SequenceNodeOfSeqOfCallBack %{
@@ -2872,7 +2872,7 @@ class Storage_HSeqOfPersistent : public MMgt_TShared {
 };
 %extend Storage_HSeqOfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_HSeqOfPersistent::~Storage_HSeqOfPersistent %{
@@ -2966,7 +2966,7 @@ class Storage_StreamModeError : public Standard_Failure {
 };
 %extend Storage_StreamModeError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_StreamModeError::~Storage_StreamModeError %{
@@ -3029,7 +3029,7 @@ class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
 };
 %extend Storage_IndexedDataMapNodeOfPType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_IndexedDataMapNodeOfPType::~Storage_IndexedDataMapNodeOfPType %{
@@ -3078,7 +3078,7 @@ class Storage_TypeData : public MMgt_TShared {
 };
 %extend Storage_TypeData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_TypeData::~Storage_TypeData %{
@@ -3121,7 +3121,7 @@ class Storage_StreamWriteError : public Standard_Failure {
 };
 %extend Storage_StreamWriteError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_StreamWriteError::~Storage_StreamWriteError %{
@@ -3243,7 +3243,7 @@ class Storage_Root : public MMgt_TShared {
 };
 %extend Storage_Root {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_Root::~Storage_Root %{
@@ -3314,7 +3314,7 @@ class Storage_HeaderData : public MMgt_TShared {
 };
 %extend Storage_HeaderData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_HeaderData::~Storage_HeaderData %{
@@ -3351,7 +3351,7 @@ class Storage_SequenceNodeOfSeqOfRoot : public TCollection_SeqNode {
 };
 %extend Storage_SequenceNodeOfSeqOfRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_SequenceNodeOfSeqOfRoot::~Storage_SequenceNodeOfSeqOfRoot %{
@@ -3394,7 +3394,7 @@ class Storage_StreamFormatError : public Standard_Failure {
 };
 %extend Storage_StreamFormatError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_StreamFormatError::~Storage_StreamFormatError %{
@@ -3478,7 +3478,7 @@ class Storage_DataMapNodeOfMapOfPers : public TCollection_MapNode {
 };
 %extend Storage_DataMapNodeOfMapOfPers {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_DataMapNodeOfMapOfPers::~Storage_DataMapNodeOfMapOfPers %{
@@ -3521,7 +3521,7 @@ class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
 };
 %extend Storage_StreamTypeMismatchError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Storage_StreamTypeMismatchError::~Storage_StreamTypeMismatchError %{

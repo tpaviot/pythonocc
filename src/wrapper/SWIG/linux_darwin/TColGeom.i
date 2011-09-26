@@ -898,7 +898,7 @@ class TColGeom_HSequenceOfCurve : public MMgt_TShared {
 };
 %extend TColGeom_HSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HSequenceOfCurve::~TColGeom_HSequenceOfCurve %{
@@ -953,7 +953,7 @@ class TColGeom_HArray1OfSurface : public MMgt_TShared {
 };
 %extend TColGeom_HArray1OfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HArray1OfSurface::~TColGeom_HArray1OfSurface %{
@@ -1008,7 +1008,7 @@ class TColGeom_HArray1OfCurve : public MMgt_TShared {
 };
 %extend TColGeom_HArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HArray1OfCurve::~TColGeom_HArray1OfCurve %{
@@ -1045,7 +1045,7 @@ class TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public TCollection_SeqNo
 };
 %extend TColGeom_SequenceNodeOfSequenceOfBoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_SequenceNodeOfSequenceOfBoundedSurface::~TColGeom_SequenceNodeOfSequenceOfBoundedSurface %{
@@ -1082,7 +1082,7 @@ class TColGeom_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 };
 %extend TColGeom_SequenceNodeOfSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_SequenceNodeOfSequenceOfCurve::~TColGeom_SequenceNodeOfSequenceOfCurve %{
@@ -1271,7 +1271,7 @@ class TColGeom_HSequenceOfBoundedCurve : public MMgt_TShared {
 };
 %extend TColGeom_HSequenceOfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HSequenceOfBoundedCurve::~TColGeom_HSequenceOfBoundedCurve %{
@@ -1326,7 +1326,7 @@ class TColGeom_HArray1OfBSplineCurve : public MMgt_TShared {
 };
 %extend TColGeom_HArray1OfBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HArray1OfBSplineCurve::~TColGeom_HArray1OfBSplineCurve %{
@@ -1503,7 +1503,7 @@ class TColGeom_HArray2OfBezierSurface : public MMgt_TShared {
 };
 %extend TColGeom_HArray2OfBezierSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HArray2OfBezierSurface::~TColGeom_HArray2OfBezierSurface %{
@@ -1623,7 +1623,7 @@ class TColGeom_HArray1OfBoundedSurface : public MMgt_TShared {
 };
 %extend TColGeom_HArray1OfBoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HArray1OfBoundedSurface::~TColGeom_HArray1OfBoundedSurface %{
@@ -1684,7 +1684,7 @@ class TColGeom_HArray2OfSurface : public MMgt_TShared {
 };
 %extend TColGeom_HArray2OfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HArray2OfSurface::~TColGeom_HArray2OfSurface %{
@@ -1745,7 +1745,7 @@ class TColGeom_HArray2OfBoundedSurface : public MMgt_TShared {
 };
 %extend TColGeom_HArray2OfBoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HArray2OfBoundedSurface::~TColGeom_HArray2OfBoundedSurface %{
@@ -1782,7 +1782,7 @@ class TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public TCollection_SeqNode
 };
 %extend TColGeom_SequenceNodeOfSequenceOfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_SequenceNodeOfSequenceOfBoundedCurve::~TColGeom_SequenceNodeOfSequenceOfBoundedCurve %{
@@ -1861,7 +1861,7 @@ class TColGeom_HSequenceOfBoundedSurface : public MMgt_TShared {
 };
 %extend TColGeom_HSequenceOfBoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HSequenceOfBoundedSurface::~TColGeom_HSequenceOfBoundedSurface %{
@@ -2052,7 +2052,7 @@ class TColGeom_HArray2OfBSplineSurface : public MMgt_TShared {
 };
 %extend TColGeom_HArray2OfBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HArray2OfBSplineSurface::~TColGeom_HArray2OfBSplineSurface %{
@@ -2162,7 +2162,7 @@ class TColGeom_HArray1OfBezierCurve : public MMgt_TShared {
 };
 %extend TColGeom_HArray1OfBezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HArray1OfBezierCurve::~TColGeom_HArray1OfBezierCurve %{
@@ -2319,7 +2319,7 @@ class TColGeom_HArray1OfBoundedCurve : public MMgt_TShared {
 };
 %extend TColGeom_HArray1OfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HArray1OfBoundedCurve::~TColGeom_HArray1OfBoundedCurve %{
@@ -2504,7 +2504,7 @@ class TColGeom_HSequenceOfSurface : public MMgt_TShared {
 };
 %extend TColGeom_HSequenceOfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_HSequenceOfSurface::~TColGeom_HSequenceOfSurface %{
@@ -2541,7 +2541,7 @@ class TColGeom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 };
 %extend TColGeom_SequenceNodeOfSequenceOfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TColGeom_SequenceNodeOfSequenceOfSurface::~TColGeom_SequenceNodeOfSequenceOfSurface %{

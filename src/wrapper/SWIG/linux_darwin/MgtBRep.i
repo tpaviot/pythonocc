@@ -195,7 +195,7 @@ class MgtBRep_TranslateTool1 : public MgtTopoDS_TranslateTool1 {
 };
 %extend MgtBRep_TranslateTool1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MgtBRep_TranslateTool1::~MgtBRep_TranslateTool1 %{
@@ -307,7 +307,7 @@ class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 };
 %extend MgtBRep_TranslateTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MgtBRep_TranslateTool::~MgtBRep_TranslateTool %{

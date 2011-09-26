@@ -266,7 +266,7 @@ class StdFail_InfiniteSolutions : public Standard_Failure {
 };
 %extend StdFail_InfiniteSolutions {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdFail_InfiniteSolutions::~StdFail_InfiniteSolutions %{
@@ -309,7 +309,7 @@ class StdFail_UndefinedDerivative : public Standard_DomainError {
 };
 %extend StdFail_UndefinedDerivative {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdFail_UndefinedDerivative::~StdFail_UndefinedDerivative %{
@@ -352,7 +352,7 @@ class StdFail_UndefinedValue : public Standard_DomainError {
 };
 %extend StdFail_UndefinedValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdFail_UndefinedValue::~StdFail_UndefinedValue %{
@@ -395,7 +395,7 @@ class StdFail_NotDone : public Standard_Failure {
 };
 %extend StdFail_NotDone {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdFail_NotDone::~StdFail_NotDone %{
@@ -438,7 +438,7 @@ class StdFail_Undefined : public Standard_Failure {
 };
 %extend StdFail_Undefined {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdFail_Undefined::~StdFail_Undefined %{

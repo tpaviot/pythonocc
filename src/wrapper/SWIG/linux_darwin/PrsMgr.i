@@ -459,7 +459,7 @@ class PrsMgr_Presentation : public MMgt_TShared {
 };
 %extend PrsMgr_Presentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Presentation::~PrsMgr_Presentation %{
@@ -498,7 +498,7 @@ class PrsMgr_Presentation2d : public PrsMgr_Presentation {
 };
 %extend PrsMgr_Presentation2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Presentation2d::~PrsMgr_Presentation2d %{
@@ -541,7 +541,7 @@ class PrsMgr_Prs : public Prs3d_Presentation {
 };
 %extend PrsMgr_Prs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Prs::~PrsMgr_Prs %{
@@ -643,7 +643,7 @@ class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 };
 %extend PrsMgr_SequenceNodeOfPresentations {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_SequenceNodeOfPresentations::~PrsMgr_SequenceNodeOfPresentations %{
@@ -706,7 +706,7 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 };
 %extend PrsMgr_PresentableObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_PresentableObject::~PrsMgr_PresentableObject %{
@@ -748,7 +748,7 @@ class PrsMgr_Presentation3d : public PrsMgr_Presentation {
 };
 %extend PrsMgr_Presentation3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Presentation3d::~PrsMgr_Presentation3d %{
@@ -817,7 +817,7 @@ class PrsMgr_PresentationManager : public MMgt_TShared {
 };
 %extend PrsMgr_PresentationManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_PresentationManager::~PrsMgr_PresentationManager %{
@@ -889,7 +889,7 @@ class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
 };
 %extend PrsMgr_PresentationManager2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_PresentationManager2d::~PrsMgr_PresentationManager2d %{
@@ -954,7 +954,7 @@ class PrsMgr_PresentationManager3d : public PrsMgr_PresentationManager {
 };
 %extend PrsMgr_PresentationManager3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_PresentationManager3d::~PrsMgr_PresentationManager3d %{

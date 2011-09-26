@@ -1289,7 +1289,7 @@ class Transfer_DispatchControl : public Interface_CopyControl {
 };
 %extend Transfer_DispatchControl {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_DispatchControl::~Transfer_DispatchControl %{
@@ -1356,7 +1356,7 @@ class Transfer_ResultFromTransient : public MMgt_TShared {
 };
 %extend Transfer_ResultFromTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_ResultFromTransient::~Transfer_ResultFromTransient %{
@@ -1519,7 +1519,7 @@ class Transfer_ProcessForFinder : public MMgt_TShared {
 };
 %extend Transfer_ProcessForFinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_ProcessForFinder::~Transfer_ProcessForFinder %{
@@ -1562,7 +1562,7 @@ class Transfer_FinderProcess : public Transfer_ProcessForFinder {
 };
 %extend Transfer_FinderProcess {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_FinderProcess::~Transfer_FinderProcess %{
@@ -1625,7 +1625,7 @@ class Transfer_Binder : public MMgt_TShared {
 };
 %extend Transfer_Binder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_Binder::~Transfer_Binder %{
@@ -1670,7 +1670,7 @@ class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
 };
 %extend Transfer_SimpleBinderOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_SimpleBinderOfTransient::~Transfer_SimpleBinderOfTransient %{
@@ -1782,7 +1782,7 @@ class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
 };
 %extend Transfer_ActorOfProcessForFinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_ActorOfProcessForFinder::~Transfer_ActorOfProcessForFinder %{
@@ -1833,7 +1833,7 @@ class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
 };
 %extend Transfer_ActorOfProcessForTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_ActorOfProcessForTransient::~Transfer_ActorOfProcessForTransient %{
@@ -1912,7 +1912,7 @@ class Transfer_HSequenceOfFinder : public MMgt_TShared {
 };
 %extend Transfer_HSequenceOfFinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_HSequenceOfFinder::~Transfer_HSequenceOfFinder %{
@@ -1987,7 +1987,7 @@ class Transfer_Finder : public MMgt_TShared {
 };
 %extend Transfer_Finder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_Finder::~Transfer_Finder %{
@@ -2089,7 +2089,7 @@ class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
 };
 %extend Transfer_SequenceNodeOfSequenceOfFinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_SequenceNodeOfSequenceOfFinder::~Transfer_SequenceNodeOfSequenceOfFinder %{
@@ -2189,7 +2189,7 @@ class Transfer_ResultFromModel : public MMgt_TShared {
 };
 %extend Transfer_ResultFromModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_ResultFromModel::~Transfer_ResultFromModel %{
@@ -2230,7 +2230,7 @@ class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransi
 };
 %extend Transfer_ActorOfTransientProcess {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_ActorOfTransientProcess::~Transfer_ActorOfTransientProcess %{
@@ -2271,7 +2271,7 @@ class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
 };
 %extend Transfer_ActorDispatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_ActorDispatch::~Transfer_ActorDispatch %{
@@ -2434,7 +2434,7 @@ class Transfer_ProcessForTransient : public MMgt_TShared {
 };
 %extend Transfer_ProcessForTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_ProcessForTransient::~Transfer_ProcessForTransient %{
@@ -2477,7 +2477,7 @@ class Transfer_TransferFailure : public Interface_InterfaceError {
 };
 %extend Transfer_TransferFailure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_TransferFailure::~Transfer_TransferFailure %{
@@ -2514,7 +2514,7 @@ class Transfer_TransferDeadLoop : public Transfer_TransferFailure {
 };
 %extend Transfer_TransferDeadLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_TransferDeadLoop::~Transfer_TransferDeadLoop %{
@@ -2567,7 +2567,7 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TColle
 };
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder::~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder %{
@@ -2634,7 +2634,7 @@ class Transfer_TransientProcess : public Transfer_ProcessForTransient {
 };
 %extend Transfer_TransientProcess {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_TransientProcess::~Transfer_TransientProcess %{
@@ -2677,7 +2677,7 @@ class Transfer_TransientMapper : public Transfer_Finder {
 };
 %extend Transfer_TransientMapper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_TransientMapper::~Transfer_TransientMapper %{
@@ -2780,7 +2780,7 @@ class Transfer_MapContainer : public MMgt_TShared {
 };
 %extend Transfer_MapContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_MapContainer::~Transfer_MapContainer %{
@@ -2833,7 +2833,7 @@ class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
 };
 %extend Transfer_ActorOfFinderProcess {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_ActorOfFinderProcess::~Transfer_ActorOfFinderProcess %{
@@ -2872,7 +2872,7 @@ class Transfer_VoidBinder : public Transfer_Binder {
 };
 %extend Transfer_VoidBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_VoidBinder::~Transfer_VoidBinder %{
@@ -2988,7 +2988,7 @@ class Transfer_MultipleBinder : public Transfer_Binder {
 };
 %extend Transfer_MultipleBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_MultipleBinder::~Transfer_MultipleBinder %{
@@ -3137,7 +3137,7 @@ class Transfer_TransientListBinder : public Transfer_Binder {
 };
 %extend Transfer_TransientListBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_TransientListBinder::~Transfer_TransientListBinder %{
@@ -3174,7 +3174,7 @@ class Transfer_SequenceNodeOfSequenceOfBinder : public TCollection_SeqNode {
 };
 %extend Transfer_SequenceNodeOfSequenceOfBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_SequenceNodeOfSequenceOfBinder::~Transfer_SequenceNodeOfSequenceOfBinder %{
@@ -3213,7 +3213,7 @@ class Transfer_BinderOfTransientInteger : public Transfer_SimpleBinderOfTransien
 };
 %extend Transfer_BinderOfTransientInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_BinderOfTransientInteger::~Transfer_BinderOfTransientInteger %{
@@ -3292,7 +3292,7 @@ class Transfer_HSequenceOfBinder : public MMgt_TShared {
 };
 %extend Transfer_HSequenceOfBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_HSequenceOfBinder::~Transfer_HSequenceOfBinder %{
@@ -3372,7 +3372,7 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public TCo
 };
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient::~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient %{

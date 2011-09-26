@@ -293,7 +293,7 @@ class Bisector_Curve : public Geom2d_Curve {
 };
 %extend Bisector_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bisector_Curve::~Bisector_Curve %{
@@ -382,7 +382,7 @@ class Bisector_BisecCC : public Bisector_Curve {
 };
 %extend Bisector_BisecCC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bisector_BisecCC::~Bisector_BisecCC %{
@@ -477,7 +477,7 @@ class Bisector_BisecPC : public Bisector_Curve {
 };
 %extend Bisector_BisecPC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bisector_BisecPC::~Bisector_BisecPC %{
@@ -576,7 +576,7 @@ class Bisector_BisecAna : public Bisector_Curve {
 };
 %extend Bisector_BisecAna {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bisector_BisecAna::~Bisector_BisecAna %{

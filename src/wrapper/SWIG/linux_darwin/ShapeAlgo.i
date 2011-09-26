@@ -148,7 +148,7 @@ class ShapeAlgo_ToolContainer : public MMgt_TShared {
 };
 %extend ShapeAlgo_ToolContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeAlgo_ToolContainer::~ShapeAlgo_ToolContainer %{
@@ -213,7 +213,7 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 };
 %extend ShapeAlgo_AlgoContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeAlgo_AlgoContainer::~ShapeAlgo_AlgoContainer %{

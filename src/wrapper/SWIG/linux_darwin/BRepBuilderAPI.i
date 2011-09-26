@@ -358,7 +358,7 @@ class BRepBuilderAPI_Sewing : public MMgt_TShared {
 };
 %extend BRepBuilderAPI_Sewing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepBuilderAPI_Sewing::~BRepBuilderAPI_Sewing %{

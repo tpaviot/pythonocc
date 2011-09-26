@@ -1820,7 +1820,7 @@ class IGESSelect_ModelModifier : public IFSelect_Modifier {
 };
 %extend IGESSelect_ModelModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_ModelModifier::~IGESSelect_ModelModifier %{
@@ -1855,7 +1855,7 @@ class IGESSelect_UpdateLastChange : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_UpdateLastChange {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_UpdateLastChange::~IGESSelect_UpdateLastChange %{
@@ -1904,7 +1904,7 @@ class IGESSelect_ChangeLevelNumber : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_ChangeLevelNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_ChangeLevelNumber::~IGESSelect_ChangeLevelNumber %{
@@ -1943,7 +1943,7 @@ class IGESSelect_SignStatus : public IFSelect_Signature {
 };
 %extend IGESSelect_SignStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SignStatus::~IGESSelect_SignStatus %{
@@ -1982,7 +1982,7 @@ class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_UpdateCreationDate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_UpdateCreationDate::~IGESSelect_UpdateCreationDate %{
@@ -2025,7 +2025,7 @@ class IGESSelect_SelectName : public IFSelect_SelectExtract {
 };
 %extend IGESSelect_SelectName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectName::~IGESSelect_SelectName %{
@@ -2064,7 +2064,7 @@ class IGESSelect_SelectDrawingFrom : public IFSelect_SelectDeduct {
 };
 %extend IGESSelect_SelectDrawingFrom {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectDrawingFrom::~IGESSelect_SelectDrawingFrom %{
@@ -2103,7 +2103,7 @@ class IGESSelect_IGESTypeForm : public IFSelect_Signature {
 };
 %extend IGESSelect_IGESTypeForm {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_IGESTypeForm::~IGESSelect_IGESTypeForm %{
@@ -2148,7 +2148,7 @@ class IGESSelect_SetGlobalParameter : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_SetGlobalParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SetGlobalParameter::~IGESSelect_SetGlobalParameter %{
@@ -2207,7 +2207,7 @@ class IGESSelect_ViewSorter : public MMgt_TShared {
 };
 %extend IGESSelect_ViewSorter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_ViewSorter::~IGESSelect_ViewSorter %{
@@ -2246,7 +2246,7 @@ class IGESSelect_SelectSingleViewFrom : public IFSelect_SelectDeduct {
 };
 %extend IGESSelect_SelectSingleViewFrom {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectSingleViewFrom::~IGESSelect_SelectSingleViewFrom %{
@@ -2285,7 +2285,7 @@ class IGESSelect_ComputeStatus : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_ComputeStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_ComputeStatus::~IGESSelect_ComputeStatus %{
@@ -2324,7 +2324,7 @@ class IGESSelect_RemoveCurves : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_RemoveCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_RemoveCurves::~IGESSelect_RemoveCurves %{
@@ -2363,7 +2363,7 @@ class IGESSelect_SelectPCurves : public IFSelect_SelectExplore {
 };
 %extend IGESSelect_SelectPCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectPCurves::~IGESSelect_SelectPCurves %{
@@ -2402,7 +2402,7 @@ class IGESSelect_SelectFromDrawing : public IFSelect_SelectDeduct {
 };
 %extend IGESSelect_SelectFromDrawing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectFromDrawing::~IGESSelect_SelectFromDrawing %{
@@ -2449,7 +2449,7 @@ class IGESSelect_EditHeader : public IFSelect_Editor {
 };
 %extend IGESSelect_EditHeader {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_EditHeader::~IGESSelect_EditHeader %{
@@ -2492,7 +2492,7 @@ class IGESSelect_WorkLibrary : public IFSelect_WorkLibrary {
 };
 %extend IGESSelect_WorkLibrary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_WorkLibrary::~IGESSelect_WorkLibrary %{
@@ -2527,7 +2527,7 @@ class IGESSelect_FileModifier : public IFSelect_GeneralModifier {
 };
 %extend IGESSelect_FileModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_FileModifier::~IGESSelect_FileModifier %{
@@ -2578,7 +2578,7 @@ class IGESSelect_CounterOfLevelNumber : public IFSelect_SignCounter {
 };
 %extend IGESSelect_CounterOfLevelNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_CounterOfLevelNumber::~IGESSelect_CounterOfLevelNumber %{
@@ -2617,7 +2617,7 @@ class IGESSelect_SelectBypassSubfigure : public IFSelect_SelectExplore {
 };
 %extend IGESSelect_SelectBypassSubfigure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectBypassSubfigure::~IGESSelect_SelectBypassSubfigure %{
@@ -2658,7 +2658,7 @@ class IGESSelect_SelectSubordinate : public IFSelect_SelectExtract {
 };
 %extend IGESSelect_SelectSubordinate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectSubordinate::~IGESSelect_SelectSubordinate %{
@@ -2697,7 +2697,7 @@ class IGESSelect_AddGroup : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_AddGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_AddGroup::~IGESSelect_AddGroup %{
@@ -2736,7 +2736,7 @@ class IGESSelect_SelectFaces : public IFSelect_SelectExplore {
 };
 %extend IGESSelect_SelectFaces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectFaces::~IGESSelect_SelectFaces %{
@@ -2783,7 +2783,7 @@ class IGESSelect_EditDirPart : public IFSelect_Editor {
 };
 %extend IGESSelect_EditDirPart {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_EditDirPart::~IGESSelect_EditDirPart %{
@@ -2820,7 +2820,7 @@ class IGESSelect_IGESName : public IFSelect_Signature {
 };
 %extend IGESSelect_IGESName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_IGESName::~IGESSelect_IGESName %{
@@ -2859,7 +2859,7 @@ class IGESSelect_SelectBypassGroup : public IFSelect_SelectExplore {
 };
 %extend IGESSelect_SelectBypassGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectBypassGroup::~IGESSelect_SelectBypassGroup %{
@@ -2898,7 +2898,7 @@ class IGESSelect_Dumper : public IFSelect_SessionDumper {
 };
 %extend IGESSelect_Dumper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_Dumper::~IGESSelect_Dumper %{
@@ -2965,7 +2965,7 @@ class IGESSelect_AutoCorrect : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_AutoCorrect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_AutoCorrect::~IGESSelect_AutoCorrect %{
@@ -3004,7 +3004,7 @@ class IGESSelect_RebuildDrawings : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_RebuildDrawings {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_RebuildDrawings::~IGESSelect_RebuildDrawings %{
@@ -3043,7 +3043,7 @@ class IGESSelect_Activator : public IFSelect_Activator {
 };
 %extend IGESSelect_Activator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_Activator::~IGESSelect_Activator %{
@@ -3082,7 +3082,7 @@ class IGESSelect_UpdateFileName : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_UpdateFileName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_UpdateFileName::~IGESSelect_UpdateFileName %{
@@ -3132,7 +3132,7 @@ class IGESSelect_FloatFormat : public IGESSelect_FileModifier {
 };
 %extend IGESSelect_FloatFormat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_FloatFormat::~IGESSelect_FloatFormat %{
@@ -3171,7 +3171,7 @@ class IGESSelect_SelectFromSingleView : public IFSelect_SelectDeduct {
 };
 %extend IGESSelect_SelectFromSingleView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectFromSingleView::~IGESSelect_SelectFromSingleView %{
@@ -3214,7 +3214,7 @@ class IGESSelect_DispPerSingleView : public IFSelect_Dispatch {
 };
 %extend IGESSelect_DispPerSingleView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_DispPerSingleView::~IGESSelect_DispPerSingleView %{
@@ -3253,7 +3253,7 @@ class IGESSelect_RebuildGroups : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_RebuildGroups {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_RebuildGroups::~IGESSelect_RebuildGroups %{
@@ -3294,7 +3294,7 @@ class IGESSelect_SelectBasicGeom : public IFSelect_SelectExplore {
 };
 %extend IGESSelect_SelectBasicGeom {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectBasicGeom::~IGESSelect_SelectBasicGeom %{
@@ -3333,7 +3333,7 @@ class IGESSelect_SetVersion5 : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_SetVersion5 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SetVersion5::~IGESSelect_SetVersion5 %{
@@ -3384,7 +3384,7 @@ class IGESSelect_ChangeLevelList : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_ChangeLevelList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_ChangeLevelList::~IGESSelect_ChangeLevelList %{
@@ -3421,7 +3421,7 @@ class IGESSelect_SignColor : public IFSelect_Signature {
 };
 %extend IGESSelect_SignColor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SignColor::~IGESSelect_SignColor %{
@@ -3460,7 +3460,7 @@ class IGESSelect_SelectVisibleStatus : public IFSelect_SelectExtract {
 };
 %extend IGESSelect_SelectVisibleStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectVisibleStatus::~IGESSelect_SelectVisibleStatus %{
@@ -3511,7 +3511,7 @@ class IGESSelect_AddFileComment : public IGESSelect_FileModifier {
 };
 %extend IGESSelect_AddFileComment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_AddFileComment::~IGESSelect_AddFileComment %{
@@ -3554,7 +3554,7 @@ class IGESSelect_DispPerDrawing : public IFSelect_Dispatch {
 };
 %extend IGESSelect_DispPerDrawing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_DispPerDrawing::~IGESSelect_DispPerDrawing %{
@@ -3597,7 +3597,7 @@ class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
 };
 %extend IGESSelect_SplineToBSpline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SplineToBSpline::~IGESSelect_SplineToBSpline %{
@@ -3636,7 +3636,7 @@ class IGESSelect_SetLabel : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_SetLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SetLabel::~IGESSelect_SetLabel %{
@@ -3673,7 +3673,7 @@ class IGESSelect_SignLevelNumber : public IFSelect_Signature {
 };
 %extend IGESSelect_SignLevelNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SignLevelNumber::~IGESSelect_SignLevelNumber %{
@@ -3716,7 +3716,7 @@ class IGESSelect_SelectLevelNumber : public IFSelect_SelectExtract {
 };
 %extend IGESSelect_SelectLevelNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectLevelNumber::~IGESSelect_SelectLevelNumber %{

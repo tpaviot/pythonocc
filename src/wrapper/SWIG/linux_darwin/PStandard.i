@@ -108,7 +108,7 @@ class PStandard_ArrayNode : public Standard_Persistent {
 };
 %extend PStandard_ArrayNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PStandard_ArrayNode::~PStandard_ArrayNode %{

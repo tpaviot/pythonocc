@@ -1473,7 +1473,7 @@ class OSD_Exception : public Standard_Failure {
 };
 %extend OSD_Exception {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception::~OSD_Exception %{
@@ -1510,7 +1510,7 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 };
 %extend OSD_Exception_PRIV_INSTRUCTION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_PRIV_INSTRUCTION::~OSD_Exception_PRIV_INSTRUCTION %{
@@ -1553,7 +1553,7 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_UNDERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_UNDERFLOW::~OSD_Exception_FLT_UNDERFLOW %{
@@ -1647,7 +1647,7 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 };
 %extend OSD_Exception_CTRL_BREAK {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_CTRL_BREAK::~OSD_Exception_CTRL_BREAK %{
@@ -1690,7 +1690,7 @@ class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 };
 %extend OSD_Exception_ILLEGAL_INSTRUCTION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_ILLEGAL_INSTRUCTION::~OSD_Exception_ILLEGAL_INSTRUCTION %{
@@ -1733,7 +1733,7 @@ class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 };
 %extend OSD_Exception_IN_PAGE_ERROR {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_IN_PAGE_ERROR::~OSD_Exception_IN_PAGE_ERROR %{
@@ -1776,7 +1776,7 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 };
 %extend OSD_Exception_ACCESS_VIOLATION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_ACCESS_VIOLATION::~OSD_Exception_ACCESS_VIOLATION %{
@@ -1819,7 +1819,7 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_DIVIDE_BY_ZERO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_DIVIDE_BY_ZERO::~OSD_Exception_FLT_DIVIDE_BY_ZERO %{
@@ -1868,7 +1868,7 @@ class OSD_SystemFont : public MMgt_TShared {
 };
 %extend OSD_SystemFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SystemFont::~OSD_SystemFont %{
@@ -1911,7 +1911,7 @@ class OSD_OSDError : public Standard_Failure {
 };
 %extend OSD_OSDError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_OSDError::~OSD_OSDError %{
@@ -2073,7 +2073,7 @@ class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_INVALID_OPERATION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_INVALID_OPERATION::~OSD_Exception_FLT_INVALID_OPERATION %{
@@ -2240,7 +2240,7 @@ class OSD_Signal : public Standard_Failure {
 };
 %extend OSD_Signal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Signal::~OSD_Signal %{
@@ -2443,7 +2443,7 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_INT_OVERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_INT_OVERFLOW::~OSD_Exception_INT_OVERFLOW %{
@@ -2486,7 +2486,7 @@ class OSD_SIGHUP : public OSD_Signal {
 };
 %extend OSD_SIGHUP {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGHUP::~OSD_SIGHUP %{
@@ -2571,7 +2571,7 @@ class OSD_SIGSYS : public OSD_Signal {
 };
 %extend OSD_SIGSYS {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGSYS::~OSD_SIGSYS %{
@@ -2614,7 +2614,7 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_INEXACT_RESULT {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_INEXACT_RESULT::~OSD_Exception_FLT_INEXACT_RESULT %{
@@ -2697,7 +2697,7 @@ class OSD_FontMgr : public MMgt_TShared {
 };
 %extend OSD_FontMgr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_FontMgr::~OSD_FontMgr %{
@@ -2740,7 +2740,7 @@ class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 };
 %extend OSD_Exception_INVALID_DISPOSITION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_INVALID_DISPOSITION::~OSD_Exception_INVALID_DISPOSITION %{
@@ -2783,7 +2783,7 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_STACK_CHECK {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_STACK_CHECK::~OSD_Exception_FLT_STACK_CHECK %{
@@ -2826,7 +2826,7 @@ class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_STACK_OVERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_STACK_OVERFLOW::~OSD_Exception_STACK_OVERFLOW %{
@@ -2904,7 +2904,7 @@ class OSD_SIGQUIT : public OSD_Signal {
 };
 %extend OSD_SIGQUIT {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGQUIT::~OSD_SIGQUIT %{
@@ -2947,7 +2947,7 @@ class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 };
 %extend OSD_Exception_STATUS_NO_MEMORY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_STATUS_NO_MEMORY::~OSD_Exception_STATUS_NO_MEMORY %{
@@ -3033,7 +3033,7 @@ class OSD_SIGILL : public OSD_Signal {
 };
 %extend OSD_SIGILL {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGILL::~OSD_SIGILL %{
@@ -3168,7 +3168,7 @@ class OSD_SIGKILL : public OSD_Signal {
 };
 %extend OSD_SIGKILL {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGKILL::~OSD_SIGKILL %{
@@ -3242,7 +3242,7 @@ class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_DENORMAL_OPERAND {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_DENORMAL_OPERAND::~OSD_Exception_FLT_DENORMAL_OPERAND %{
@@ -3285,7 +3285,7 @@ class OSD_SIGBUS : public OSD_Signal {
 };
 %extend OSD_SIGBUS {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGBUS::~OSD_SIGBUS %{
@@ -3328,7 +3328,7 @@ class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_OVERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_OVERFLOW::~OSD_Exception_FLT_OVERFLOW %{
@@ -3371,7 +3371,7 @@ class OSD_Exception_NONCONTINUABLE_EXCEPTION : public OSD_Exception {
 };
 %extend OSD_Exception_NONCONTINUABLE_EXCEPTION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_NONCONTINUABLE_EXCEPTION::~OSD_Exception_NONCONTINUABLE_EXCEPTION %{
@@ -3490,7 +3490,7 @@ class OSD_SIGINT : public OSD_Signal {
 };
 %extend OSD_SIGINT {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGINT::~OSD_SIGINT %{
@@ -3533,7 +3533,7 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 };
 %extend OSD_Exception_INT_DIVIDE_BY_ZERO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_INT_DIVIDE_BY_ZERO::~OSD_Exception_INT_DIVIDE_BY_ZERO %{
@@ -3727,7 +3727,7 @@ class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 };
 %extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_ARRAY_BOUNDS_EXCEEDED::~OSD_Exception_ARRAY_BOUNDS_EXCEEDED %{
@@ -3770,7 +3770,7 @@ class OSD_SIGSEGV : public OSD_Signal {
 };
 %extend OSD_SIGSEGV {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGSEGV::~OSD_SIGSEGV %{

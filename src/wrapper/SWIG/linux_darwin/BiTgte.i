@@ -284,7 +284,7 @@ class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
 };
 %extend BiTgte_HCurveOnEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BiTgte_HCurveOnEdge::~BiTgte_HCurveOnEdge %{
@@ -329,7 +329,7 @@ class BiTgte_HCurveOnVertex : public Adaptor3d_HCurve {
 };
 %extend BiTgte_HCurveOnVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BiTgte_HCurveOnVertex::~BiTgte_HCurveOnVertex %{
@@ -368,7 +368,7 @@ class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
 };
 %extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BiTgte_DataMapNodeOfDataMapOfShapeBox::~BiTgte_DataMapNodeOfDataMapOfShapeBox %{

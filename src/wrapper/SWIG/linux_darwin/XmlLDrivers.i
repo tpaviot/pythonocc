@@ -192,7 +192,7 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %extend XmlLDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlLDrivers_DocumentRetrievalDriver::~XmlLDrivers_DocumentRetrievalDriver %{
@@ -235,7 +235,7 @@ class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %extend XmlLDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlLDrivers_DocumentStorageDriver::~XmlLDrivers_DocumentStorageDriver %{
@@ -337,7 +337,7 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 };
 %extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef::~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef %{

@@ -667,7 +667,7 @@ class HLRBRep_InternalAlgo : public MMgt_TShared {
 };
 %extend HLRBRep_InternalAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRBRep_InternalAlgo::~HLRBRep_InternalAlgo %{
@@ -1525,7 +1525,7 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 };
 %extend HLRBRep_Algo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRBRep_Algo::~HLRBRep_Algo %{
@@ -1648,6 +1648,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRBRep_ListNodeOfListOfBPnt2D;
+class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_ListNodeOfListOfBPnt2D(const HLRBRep_BiPnt2D &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		HLRBRep_BiPnt2D & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRBRep_ListNodeOfListOfBPnt2D {
+	Handle_HLRBRep_ListNodeOfListOfBPnt2D GetHandle() {
+	return *(Handle_HLRBRep_ListNodeOfListOfBPnt2D*) &$self;
+	}
+};
+%extend HLRBRep_ListNodeOfListOfBPnt2D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") HLRBRep_ListNodeOfListOfBPnt2D::~HLRBRep_ListNodeOfListOfBPnt2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_ListNodeOfListOfBPnt2D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRBRep_SequenceNodeOfSeqOfShapeBounds;
 class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 	public:
@@ -1666,7 +1703,7 @@ class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 };
 %extend HLRBRep_SequenceNodeOfSeqOfShapeBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRBRep_SequenceNodeOfSeqOfShapeBounds::~HLRBRep_SequenceNodeOfSeqOfShapeBounds %{
@@ -2212,7 +2249,7 @@ class HLRBRep_Data : public MMgt_TShared {
 };
 %extend HLRBRep_Data {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRBRep_Data::~HLRBRep_Data %{
@@ -2646,7 +2683,7 @@ class HLRBRep_AreaLimit : public MMgt_TShared {
 };
 %extend HLRBRep_AreaLimit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRBRep_AreaLimit::~HLRBRep_AreaLimit %{
@@ -2737,7 +2774,7 @@ class HLRBRep_PolyAlgo : public MMgt_TShared {
 };
 %extend HLRBRep_PolyAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRBRep_PolyAlgo::~HLRBRep_PolyAlgo %{
@@ -2871,45 +2908,6 @@ def __del__(self):
 %}
 
 %extend HLRBRep_BSurfaceTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter;
-class HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter();
-		%feature("autodoc", "1");
-		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C, const Standard_Real U0, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		void Initialize(const Standard_Address &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d P, const Standard_Real U0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin() const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point() const;
-
-};
-%feature("shadow") HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3109,7 +3107,7 @@ class HLRBRep_ListNodeOfListOfBPoint : public TCollection_MapNode {
 };
 %extend HLRBRep_ListNodeOfListOfBPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRBRep_ListNodeOfListOfBPoint::~HLRBRep_ListNodeOfListOfBPoint %{
@@ -3537,7 +3535,7 @@ class HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter :
 };
 %extend HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter %{
@@ -3601,43 +3599,6 @@ def __del__(self):
 %}
 
 %extend HLRBRep_ShapeBounds {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRBRep_ListNodeOfListOfBPnt2D;
-class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_ListNodeOfListOfBPnt2D(const HLRBRep_BiPnt2D &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		HLRBRep_BiPnt2D & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRBRep_ListNodeOfListOfBPnt2D {
-	Handle_HLRBRep_ListNodeOfListOfBPnt2D GetHandle() {
-	return *(Handle_HLRBRep_ListNodeOfListOfBPnt2D*) &$self;
-	}
-};
-%extend HLRBRep_ListNodeOfListOfBPnt2D {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") HLRBRep_ListNodeOfListOfBPnt2D::~HLRBRep_ListNodeOfListOfBPnt2D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_ListNodeOfListOfBPnt2D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3803,6 +3764,45 @@ def __del__(self):
 %}
 
 %extend HLRBRep_TheInterferenceOfInterCSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter;
+class HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter();
+		%feature("autodoc", "1");
+		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C, const Standard_Real U0, const Standard_Real TolU);
+		%feature("autodoc", "1");
+		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
+		%feature("autodoc", "1");
+		void Initialize(const Standard_Address &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt2d P, const Standard_Real U0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin() const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d Point() const;
+
+};
+%feature("shadow") HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
 	void _kill_pointed() {
 		delete $self;
 	}

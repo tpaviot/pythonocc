@@ -89,38 +89,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ChFi3d_SearchSing;
-class ChFi3d_SearchSing : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		ChFi3d_SearchSing(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") ChFi3d_SearchSing::~ChFi3d_SearchSing %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ChFi3d_SearchSing {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ChFi3d_Builder;
 class ChFi3d_Builder {
 	public:
@@ -201,6 +169,38 @@ def __del__(self):
 %}
 
 %extend ChFi3d_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ChFi3d_SearchSing;
+class ChFi3d_SearchSing : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		ChFi3d_SearchSing(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") ChFi3d_SearchSing::~ChFi3d_SearchSing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ChFi3d_SearchSing {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -189,7 +189,7 @@ class STEPEdit_EditContext : public IFSelect_Editor {
 };
 %extend STEPEdit_EditContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPEdit_EditContext::~STEPEdit_EditContext %{
@@ -234,7 +234,7 @@ class STEPEdit_EditSDR : public IFSelect_Editor {
 };
 %extend STEPEdit_EditSDR {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPEdit_EditSDR::~STEPEdit_EditSDR %{

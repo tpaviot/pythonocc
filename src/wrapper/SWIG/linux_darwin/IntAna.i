@@ -333,7 +333,7 @@ class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
 };
 %extend IntAna_ListNodeOfListOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntAna_ListNodeOfListOfCurve::~IntAna_ListNodeOfListOfCurve %{

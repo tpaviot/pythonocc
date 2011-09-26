@@ -1146,7 +1146,7 @@ class StepData_NodeOfWriterLib : public MMgt_TShared {
 };
 %extend StepData_NodeOfWriterLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_NodeOfWriterLib::~StepData_NodeOfWriterLib %{
@@ -1347,7 +1347,7 @@ class StepData_SelectMember : public MMgt_TShared {
 };
 %extend StepData_SelectMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_SelectMember::~StepData_SelectMember %{
@@ -1414,7 +1414,7 @@ class StepData_StepModel : public Interface_InterfaceModel {
 };
 %extend StepData_StepModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_StepModel::~StepData_StepModel %{
@@ -1560,7 +1560,7 @@ class StepData_FileRecognizer : public Standard_Transient {
 };
 %extend StepData_FileRecognizer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_FileRecognizer::~StepData_FileRecognizer %{
@@ -1683,7 +1683,7 @@ class StepData_PDescr : public MMgt_TShared {
 };
 %extend StepData_PDescr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_PDescr::~StepData_PDescr %{
@@ -1736,7 +1736,7 @@ class StepData_ReadWriteModule : public Interface_ReaderModule {
 };
 %extend StepData_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_ReadWriteModule::~StepData_ReadWriteModule %{
@@ -1769,7 +1769,7 @@ class StepData_DescrReadWrite : public StepData_ReadWriteModule {
 };
 %extend StepData_DescrReadWrite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_DescrReadWrite::~StepData_DescrReadWrite %{
@@ -1812,7 +1812,7 @@ class StepData_GlobalNodeOfWriterLib : public Standard_Transient {
 };
 %extend StepData_GlobalNodeOfWriterLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_GlobalNodeOfWriterLib::~StepData_GlobalNodeOfWriterLib %{
@@ -1855,7 +1855,7 @@ class StepData_SelectInt : public StepData_SelectMember {
 };
 %extend StepData_SelectInt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_SelectInt::~StepData_SelectInt %{
@@ -1923,7 +1923,7 @@ class StepData_GeneralModule : public Interface_GeneralModule {
 };
 %extend StepData_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_GeneralModule::~StepData_GeneralModule %{
@@ -2038,7 +2038,7 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 };
 %extend StepData_StepReaderData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_StepReaderData::~StepData_StepReaderData %{
@@ -2227,7 +2227,7 @@ class StepData_SelectNamed : public StepData_SelectMember {
 };
 %extend StepData_SelectNamed {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_SelectNamed::~StepData_SelectNamed %{
@@ -2278,7 +2278,7 @@ class StepData_Described : public MMgt_TShared {
 };
 %extend StepData_Described {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_Described::~StepData_Described %{
@@ -2321,7 +2321,7 @@ class StepData_Plex : public StepData_Described {
 };
 %extend StepData_Plex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_Plex::~StepData_Plex %{
@@ -2376,7 +2376,7 @@ class StepData_HArray1OfField : public MMgt_TShared {
 };
 %extend StepData_HArray1OfField {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_HArray1OfField::~StepData_HArray1OfField %{
@@ -2419,7 +2419,7 @@ class StepData_DescrGeneral : public StepData_GeneralModule {
 };
 %extend StepData_DescrGeneral {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_DescrGeneral::~StepData_DescrGeneral %{
@@ -2489,7 +2489,7 @@ class StepData_EDescr : public MMgt_TShared {
 };
 %extend StepData_EDescr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_EDescr::~StepData_EDescr %{
@@ -2550,7 +2550,7 @@ class StepData_ESDescr : public StepData_EDescr {
 };
 %extend StepData_ESDescr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_ESDescr::~StepData_ESDescr %{
@@ -2673,7 +2673,7 @@ class StepData_SelectArrReal : public StepData_SelectNamed {
 };
 %extend StepData_SelectArrReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_SelectArrReal::~StepData_SelectArrReal %{
@@ -2738,7 +2738,7 @@ class StepData_Simple : public StepData_Described {
 };
 %extend StepData_Simple {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_Simple::~StepData_Simple %{
@@ -2785,7 +2785,7 @@ class StepData_FileProtocol : public StepData_Protocol {
 };
 %extend StepData_FileProtocol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_FileProtocol::~StepData_FileProtocol %{
@@ -2888,7 +2888,7 @@ class StepData_FreeFormEntity : public MMgt_TShared {
 };
 %extend StepData_FreeFormEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_FreeFormEntity::~StepData_FreeFormEntity %{
@@ -3082,7 +3082,7 @@ class StepData_ECDescr : public StepData_EDescr {
 };
 %extend StepData_ECDescr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_ECDescr::~StepData_ECDescr %{
@@ -3123,7 +3123,7 @@ class StepData_SelectReal : public StepData_SelectMember {
 };
 %extend StepData_SelectReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_SelectReal::~StepData_SelectReal %{
@@ -3178,7 +3178,7 @@ class StepData_UndefinedEntity : public MMgt_TShared {
 };
 %extend StepData_UndefinedEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_UndefinedEntity::~StepData_UndefinedEntity %{
@@ -3258,7 +3258,7 @@ class StepData_DefaultGeneral : public StepData_GeneralModule {
 };
 %extend StepData_DefaultGeneral {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_DefaultGeneral::~StepData_DefaultGeneral %{
@@ -3299,7 +3299,7 @@ class StepData_DescrProtocol : public StepData_FileProtocol {
 };
 %extend StepData_DescrProtocol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepData_DescrProtocol::~StepData_DescrProtocol %{

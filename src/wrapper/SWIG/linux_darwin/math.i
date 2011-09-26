@@ -1448,7 +1448,7 @@ class math_NotSquare : public Standard_DimensionError {
 };
 %extend math_NotSquare {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") math_NotSquare::~math_NotSquare %{
@@ -1547,7 +1547,7 @@ class math_SingularMatrix : public Standard_Failure {
 };
 %extend math_SingularMatrix {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") math_SingularMatrix::~math_SingularMatrix %{

@@ -874,7 +874,7 @@ class ModularBuilder(object):
             self.fp.write("extend %s {\n"%class_name)
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\tStandard_Integer __hash__() {\n")
-            self.fp.write("\treturn $self->HashCode(__PYTHONOCC_MAXINT__);\n\t}\n};")
+            self.fp.write("\treturn $self->HashCode(2147483647);\n\t}\n};")
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
         #

@@ -662,7 +662,7 @@ class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
 };
 %extend LocOpe_HBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_HBuilder::~LocOpe_HBuilder %{
@@ -742,7 +742,7 @@ class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfCirc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfCirc::~LocOpe_SequenceNodeOfSequenceOfCirc %{
@@ -792,7 +792,7 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 };
 %extend LocOpe_ProjectedWires {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_ProjectedWires::~LocOpe_ProjectedWires %{
@@ -856,7 +856,7 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 };
 %extend LocOpe_WiresOnShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_WiresOnShape::~LocOpe_WiresOnShape %{
@@ -897,7 +897,7 @@ class LocOpe_GeneratedShape : public MMgt_TShared {
 };
 %extend LocOpe_GeneratedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_GeneratedShape::~LocOpe_GeneratedShape %{
@@ -1028,7 +1028,7 @@ class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfLin {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfLin::~LocOpe_SequenceNodeOfSequenceOfLin %{
@@ -1142,7 +1142,7 @@ class LocOpe_GluedShape : public LocOpe_GeneratedShape {
 };
 %extend LocOpe_GluedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_GluedShape::~LocOpe_GluedShape %{
@@ -1368,7 +1368,7 @@ class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
 };
 %extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_DataMapNodeOfDataMapOfShapePnt::~LocOpe_DataMapNodeOfDataMapOfShapePnt %{
@@ -1781,7 +1781,7 @@ class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfPntFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfPntFace::~LocOpe_SequenceNodeOfSequenceOfPntFace %{

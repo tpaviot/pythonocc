@@ -238,7 +238,7 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 };
 %extend STEPControl_ActorRead {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPControl_ActorRead::~STEPControl_ActorRead %{
@@ -283,7 +283,7 @@ class STEPControl_Controller : public XSControl_Controller {
 };
 %extend STEPControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPControl_Controller::~STEPControl_Controller %{
@@ -340,7 +340,7 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 };
 %extend STEPControl_ActorWrite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPControl_ActorWrite::~STEPControl_ActorWrite %{

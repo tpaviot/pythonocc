@@ -604,7 +604,7 @@ class STEPSelections_AssemblyComponent : public MMgt_TShared {
 };
 %extend STEPSelections_AssemblyComponent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_AssemblyComponent::~STEPSelections_AssemblyComponent %{
@@ -643,7 +643,7 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectGSCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectGSCurves::~STEPSelections_SelectGSCurves %{
@@ -682,7 +682,7 @@ class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 };
 %extend STEPSelections_SelectForTransfer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectForTransfer::~STEPSelections_SelectForTransfer %{
@@ -719,7 +719,7 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollect
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent %{
@@ -756,7 +756,7 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_S
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyLink::~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink %{
@@ -844,7 +844,7 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectInstances {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectInstances::~STEPSelections_SelectInstances %{
@@ -881,7 +881,7 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 };
 %extend STEPSelections_SelectDerived {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectDerived::~STEPSelections_SelectDerived %{
@@ -960,7 +960,7 @@ class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 };
 %extend STEPSelections_HSequenceOfAssemblyLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_HSequenceOfAssemblyLink::~STEPSelections_HSequenceOfAssemblyLink %{
@@ -1064,7 +1064,7 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectAssembly {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectAssembly::~STEPSelections_SelectAssembly %{
@@ -1113,7 +1113,7 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 };
 %extend STEPSelections_AssemblyLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_AssemblyLink::~STEPSelections_AssemblyLink %{
@@ -1152,7 +1152,7 @@ class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectFaces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectFaces::~STEPSelections_SelectFaces %{
