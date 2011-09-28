@@ -116,7 +116,7 @@ except:
 SWIG_OUT_DIR = os.path.join(os.getcwd(),'build','swig_output_%s_py%s%s'%(sys.platform,sys.version_info[0],sys.version_info[1]))
         
 if sys.platform=='win32':
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','win32')
     # Try to find OCC paths from environment analysis
 
     if sys.version_info[0]==2 and sys.version_info[1]==5:
@@ -145,7 +145,7 @@ if sys.platform=='win32':
     
 elif sys.platform=='linux2':
 
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','linux_darwin')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
     if OCC_ROOT!=None:
@@ -177,7 +177,7 @@ elif sys.platform=='linux2':
     EXTRA_LIBS = ['m','stc++',lib_python]
     
 elif sys.platform=='darwin':
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','linux_darwin')
     SWIG_OPTS = ['-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                   '-w302,401,314,509,512','-DOCC_CONVERT_SIGNALS',\
                   '-outdir','%s'%SWIG_OUT_DIR]
@@ -189,8 +189,8 @@ elif sys.platform=='darwin':
         OCC_INC = os.path.join(OCC_ROOT,'include','oce')
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
     else:
-        OCC_INC = '/usr/include/opencascade'
-        OCC_LIB = '/usr/lib'
+        OCC_INC = '/Library/OCE/0.6.0dev/include/oce'
+        OCC_LIB = '/Library/OCE/0.6.0dev/lib'
       
     SALOME_GEOM_LIB = '/usr/local/lib/'
     SALOME_SMESH_LIB = '/usr/local/lib/'        
