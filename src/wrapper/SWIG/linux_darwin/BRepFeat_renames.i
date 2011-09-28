@@ -23,3 +23,13 @@ $Author$
 $HeaderURL$
 
 */
+%rename(SampleEdges) BRepFeat::SampleEdges;
+%rename(Barycenter) BRepFeat::Barycenter;
+%rename(ParametricBarycenter) BRepFeat::ParametricBarycenter;
+%rename(ParametricMinMax) BRepFeat::ParametricMinMax;
+%rename(IsInside) BRepFeat::IsInside;
+%rename(FaceUntil) BRepFeat::FaceUntil;
+%rename(Tool) BRepFeat::Tool;
+%rename(Print) BRepFeat::Print;
+%rename(IntPar) BRepFeat_RibSlot::IntPar;
+%rename(ChoiceOfFaces) BRepFeat_RibSlot::ChoiceOfFaces;

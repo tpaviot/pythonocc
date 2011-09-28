@@ -23,3 +23,29 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Quantity_ColorDefinitionError::DownCast;
+%rename(DownCast) Handle_Quantity_PeriodDefinitionError::DownCast;
+%rename(DownCast) Handle_Quantity_HArray1OfColor::DownCast;
+%rename(DownCast) Handle_Quantity_DateDefinitionError::DownCast;
+%rename(IsValid) Quantity_Period::IsValid;
+%rename(Raise) Quantity_ColorDefinitionError::Raise;
+%rename(NewInstance) Quantity_ColorDefinitionError::NewInstance;
+%rename(Raise) Quantity_PeriodDefinitionError::Raise;
+%rename(NewInstance) Quantity_PeriodDefinitionError::NewInstance;
+%rename(SetEpsilon) Quantity_Color::SetEpsilon;
+%rename(Epsilon) Quantity_Color::Epsilon;
+%rename(Name) Quantity_Color::Name;
+%rename(StringName) Quantity_Color::StringName;
+%rename(HlsRgb) Quantity_Color::HlsRgb;
+%rename(RgbHls) Quantity_Color::RgbHls;
+%rename(Color2argb) Quantity_Color::Color2argb;
+%rename(Argb2color) Quantity_Color::Argb2color;
+%rename(Test) Quantity_Color::Test;
+%rename(IsValid) Quantity_Date::IsValid;
+%rename(IsLeap) Quantity_Date::IsLeap;
+%rename(Raise) Quantity_DateDefinitionError::Raise;
+%rename(NewInstance) Quantity_DateDefinitionError::NewInstance;
+%rename(SetQuantity) Quantity_Convert::SetQuantity;
+%rename(ConvertUserToSI) Quantity_Convert::ConvertUserToSI;
+%rename(ConvertSIToUser) Quantity_Convert::ConvertSIToUser;
+%rename(IsPhysicalQuantity) Quantity_Convert::IsPhysicalQuantity;

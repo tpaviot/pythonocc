@@ -23,3 +23,4 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles::DownCast;

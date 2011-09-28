@@ -158,7 +158,6 @@ $HeaderURL$
 #include<gp_Ax1.hxx>
 #include<HLRAlgo_InterferenceList.hxx>
 #include<HLRAlgo_Interference.hxx>
-#include<IntCurve_IConicTool.hxx>
 #include<BRepAdaptor_Curve.hxx>
 #include<gp_Dir.hxx>
 #include<HLRAlgo_Intersection.hxx>
@@ -171,6 +170,7 @@ $HeaderURL$
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<HLRBRep.hxx>
 #include<Handle_HLRAlgo_EdgesBlock.hxx>
+#include<IntCurve_IConicTool.hxx>
 #include<math_FunctionSetRoot.hxx>
 #include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>

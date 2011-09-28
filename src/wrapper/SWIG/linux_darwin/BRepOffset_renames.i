@@ -23,3 +23,27 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BRepOffset_ListNodeOfListOfInterval::DownCast;
+%rename(DownCast) Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset::DownCast;
+%rename(DownCast) Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval::DownCast;
+%rename(DownCast) Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape::DownCast;
+%rename(Surface) BRepOffset::Surface;
+%rename(Compute) BRepOffset_Inter2d::Compute;
+%rename(ConnexIntByInt) BRepOffset_Inter2d::ConnexIntByInt;
+%rename(EdgeVertices) BRepOffset_Tool::EdgeVertices;
+%rename(OriEdgeInFace) BRepOffset_Tool::OriEdgeInFace;
+%rename(OrientSection) BRepOffset_Tool::OrientSection;
+%rename(HasCommonShapes) BRepOffset_Tool::HasCommonShapes;
+%rename(Inter3D) BRepOffset_Tool::Inter3D;
+%rename(TryProject) BRepOffset_Tool::TryProject;
+%rename(PipeInter) BRepOffset_Tool::PipeInter;
+%rename(Inter2d) BRepOffset_Tool::Inter2d;
+%rename(InterOrExtent) BRepOffset_Tool::InterOrExtent;
+%rename(CheckBounds) BRepOffset_Tool::CheckBounds;
+%rename(EnLargeFace) BRepOffset_Tool::EnLargeFace;
+%rename(ExtentFace) BRepOffset_Tool::ExtentFace;
+%rename(BuildNeighbour) BRepOffset_Tool::BuildNeighbour;
+%rename(MapVertexEdges) BRepOffset_Tool::MapVertexEdges;
+%rename(Deboucle3D) BRepOffset_Tool::Deboucle3D;
+%rename(CorrectOrientation) BRepOffset_Tool::CorrectOrientation;
+%rename(Gabarit) BRepOffset_Tool::Gabarit;

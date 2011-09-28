@@ -23,3 +23,11 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_STEPEdit_EditSDR::DownCast;
+%rename(DownCast) Handle_STEPEdit_EditContext::DownCast;
+%rename(Protocol) STEPEdit::Protocol;
+%rename(NewModel) STEPEdit::NewModel;
+%rename(SignType) STEPEdit::SignType;
+%rename(NewSelectSDR) STEPEdit::NewSelectSDR;
+%rename(NewSelectPlacedItem) STEPEdit::NewSelectPlacedItem;
+%rename(NewSelectShapeRepr) STEPEdit::NewSelectShapeRepr;

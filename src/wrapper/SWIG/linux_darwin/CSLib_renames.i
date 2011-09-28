@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Normal) CSLib::Normal;
+%rename(DNNUV) CSLib::DNNUV;
+%rename(DNNormal) CSLib::DNNormal;

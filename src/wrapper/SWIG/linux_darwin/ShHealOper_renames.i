@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_ShHealOper_SplitCurve3d::DownCast;
+%rename(DownCast) Handle_ShHealOper_SplitCurve2d::DownCast;

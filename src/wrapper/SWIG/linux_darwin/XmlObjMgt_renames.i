@@ -23,3 +23,15 @@ $Author$
 $HeaderURL$
 
 */
+%rename(IdString) XmlObjMgt::IdString;
+%rename(SetExtendedString) XmlObjMgt::SetExtendedString;
+%rename(GetExtendedString) XmlObjMgt::GetExtendedString;
+%rename(GetStringValue) XmlObjMgt::GetStringValue;
+%rename(SetStringValue) XmlObjMgt::SetStringValue;
+%rename(GetTagEntryString) XmlObjMgt::GetTagEntryString;
+%rename(SetTagEntryString) XmlObjMgt::SetTagEntryString;
+%rename(FindChildElement) XmlObjMgt::FindChildElement;
+%rename(FindChildByRef) XmlObjMgt::FindChildByRef;
+%rename(FindChildByName) XmlObjMgt::FindChildByName;
+%rename(GetReal) XmlObjMgt::GetReal;
+%rename(Translate) XmlObjMgt_GP::Translate;

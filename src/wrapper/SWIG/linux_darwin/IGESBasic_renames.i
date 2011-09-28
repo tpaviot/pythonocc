@@ -23,3 +23,32 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_IGESBasic_Protocol::DownCast;
+%rename(DownCast) Handle_IGESBasic_Group::DownCast;
+%rename(DownCast) Handle_IGESBasic_ReadWriteModule::DownCast;
+%rename(DownCast) Handle_IGESBasic_SingleParent::DownCast;
+%rename(DownCast) Handle_IGESBasic_ExternalRefLibName::DownCast;
+%rename(DownCast) Handle_IGESBasic_Name::DownCast;
+%rename(DownCast) Handle_IGESBasic_HArray1OfHArray1OfIGESEntity::DownCast;
+%rename(DownCast) Handle_IGESBasic_HArray1OfHArray1OfInteger::DownCast;
+%rename(DownCast) Handle_IGESBasic_SingularSubfigure::DownCast;
+%rename(DownCast) Handle_IGESBasic_HArray1OfHArray1OfXYZ::DownCast;
+%rename(DownCast) Handle_IGESBasic_ExternalRefFileName::DownCast;
+%rename(DownCast) Handle_IGESBasic_HArray2OfHArray1OfReal::DownCast;
+%rename(DownCast) Handle_IGESBasic_Hierarchy::DownCast;
+%rename(DownCast) Handle_IGESBasic_ExternalRefFileIndex::DownCast;
+%rename(DownCast) Handle_IGESBasic_HArray1OfHArray1OfXY::DownCast;
+%rename(DownCast) Handle_IGESBasic_OrderedGroup::DownCast;
+%rename(DownCast) Handle_IGESBasic_ExternalRefName::DownCast;
+%rename(DownCast) Handle_IGESBasic_SubfigureDef::DownCast;
+%rename(DownCast) Handle_IGESBasic_ExternalReferenceFile::DownCast;
+%rename(DownCast) Handle_IGESBasic_HArray1OfHArray1OfReal::DownCast;
+%rename(DownCast) Handle_IGESBasic_GroupWithoutBackP::DownCast;
+%rename(DownCast) Handle_IGESBasic_AssocGroupType::DownCast;
+%rename(DownCast) Handle_IGESBasic_ExternalRefFile::DownCast;
+%rename(DownCast) Handle_IGESBasic_SpecificModule::DownCast;
+%rename(DownCast) Handle_IGESBasic_HArray1OfLineFontEntity::DownCast;
+%rename(DownCast) Handle_IGESBasic_OrderedGroupWithoutBackP::DownCast;
+%rename(DownCast) Handle_IGESBasic_GeneralModule::DownCast;
+%rename(Init) IGESBasic::Init;
+%rename(Protocol) IGESBasic::Protocol;

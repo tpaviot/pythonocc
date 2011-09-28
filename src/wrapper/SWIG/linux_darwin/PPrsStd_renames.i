@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_PPrsStd_AISPresentation::DownCast;
+%rename(DownCast) Handle_PPrsStd_AISPresentation_1::DownCast;

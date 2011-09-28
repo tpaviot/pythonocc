@@ -23,3 +23,14 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_PCollection_IsNotRoot::DownCast;
+%rename(DownCast) Handle_PCollection_IsContained::DownCast;
+%rename(DownCast) Handle_PCollection_IsNullTree::DownCast;
+%rename(DownCast) Handle_PCollection_HAsciiString::DownCast;
+%rename(DownCast) Handle_PCollection_HExtendedString::DownCast;
+%rename(Raise) PCollection_IsNullTree::Raise;
+%rename(NewInstance) PCollection_IsNullTree::NewInstance;
+%rename(Raise) PCollection_IsNotRoot::Raise;
+%rename(NewInstance) PCollection_IsNotRoot::NewInstance;
+%rename(Raise) PCollection_IsContained::Raise;
+%rename(NewInstance) PCollection_IsContained::NewInstance;

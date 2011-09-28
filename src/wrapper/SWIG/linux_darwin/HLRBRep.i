@@ -1076,6 +1076,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRBRep_Hider;
+class HLRBRep_Hider {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_Hider(const Handle_HLRBRep_Data &DS);
+		%feature("autodoc", "1");
+		void OwnHiding(const Standard_Integer FI);
+		%feature("autodoc", "1");
+		void Hide(const Standard_Integer FI, BRepTopAdaptor_MapOfShapeTool & MST);
+
+};
+%feature("shadow") HLRBRep_Hider::~HLRBRep_Hider %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_Hider {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRBRep_Array1OfFData;
 class HLRBRep_Array1OfFData {
 	public:
@@ -1648,43 +1675,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRBRep_ListNodeOfListOfBPnt2D;
-class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_ListNodeOfListOfBPnt2D(const HLRBRep_BiPnt2D &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		HLRBRep_BiPnt2D & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRBRep_ListNodeOfListOfBPnt2D {
-	Handle_HLRBRep_ListNodeOfListOfBPnt2D GetHandle() {
-	return *(Handle_HLRBRep_ListNodeOfListOfBPnt2D*) &$self;
-	}
-};
-%extend HLRBRep_ListNodeOfListOfBPnt2D {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") HLRBRep_ListNodeOfListOfBPnt2D::~HLRBRep_ListNodeOfListOfBPnt2D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_ListNodeOfListOfBPnt2D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor HLRBRep_SequenceNodeOfSeqOfShapeBounds;
 class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 	public:
@@ -2074,38 +2064,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter;
-class HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter(const IntCurve_IConicTool &IT, const Standard_Address &PC);
-		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real Param) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real Param) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter::~HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor HLRBRep_EdgeBuilder;
 class HLRBRep_EdgeBuilder {
 	public:
@@ -2262,33 +2220,6 @@ def __del__(self):
 %}
 
 %extend HLRBRep_Data {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRBRep_Hider;
-class HLRBRep_Hider {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_Hider(const Handle_HLRBRep_Data &DS);
-		%feature("autodoc", "1");
-		void OwnHiding(const Standard_Integer FI);
-		%feature("autodoc", "1");
-		void Hide(const Standard_Integer FI, BRepTopAdaptor_MapOfShapeTool & MST);
-
-};
-%feature("shadow") HLRBRep_Hider::~HLRBRep_Hider %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_Hider {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2908,6 +2839,45 @@ def __del__(self):
 %}
 
 %extend HLRBRep_BSurfaceTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter;
+class HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter();
+		%feature("autodoc", "1");
+		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C, const Standard_Real U0, const Standard_Real TolU);
+		%feature("autodoc", "1");
+		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
+		%feature("autodoc", "1");
+		void Initialize(const Standard_Address &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt2d P, const Standard_Real U0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin() const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d Point() const;
+
+};
+%feature("shadow") HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3605,6 +3575,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRBRep_ListNodeOfListOfBPnt2D;
+class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_ListNodeOfListOfBPnt2D(const HLRBRep_BiPnt2D &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		HLRBRep_BiPnt2D & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRBRep_ListNodeOfListOfBPnt2D {
+	Handle_HLRBRep_ListNodeOfListOfBPnt2D GetHandle() {
+	return *(Handle_HLRBRep_ListNodeOfListOfBPnt2D*) &$self;
+	}
+};
+%extend HLRBRep_ListNodeOfListOfBPnt2D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") HLRBRep_ListNodeOfListOfBPnt2D::~HLRBRep_ListNodeOfListOfBPnt2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_ListNodeOfListOfBPnt2D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRBRep_TheQuadCurvExactInterCSurf;
 class HLRBRep_TheQuadCurvExactInterCSurf {
 	public:
@@ -3770,30 +3777,23 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter;
-class HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
+%nodefaultctor HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter;
+class HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter();
-		%feature("autodoc", "1");
-		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C, const Standard_Real U0, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d P, const Standard_Address &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		void Initialize(const Standard_Address &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d P, const Standard_Real U0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin() const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point() const;
+		HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter(const IntCurve_IConicTool &IT, const Standard_Address &PC);
+		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real Param) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real Param) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%feature("shadow") HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter %{
+%feature("shadow") HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter::~HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3802,7 +3802,7 @@ def __del__(self):
 		pass
 %}
 
-%extend HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
+%extend HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter {
 	void _kill_pointed() {
 		delete $self;
 	}

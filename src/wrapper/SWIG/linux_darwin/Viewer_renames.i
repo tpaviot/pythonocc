@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Viewer_BadValue::DownCast;
+%rename(DownCast) Handle_Viewer_Viewer::DownCast;
+%rename(DownCast) Handle_Viewer_View::DownCast;
+%rename(Raise) Viewer_BadValue::Raise;
+%rename(NewInstance) Viewer_BadValue::NewInstance;

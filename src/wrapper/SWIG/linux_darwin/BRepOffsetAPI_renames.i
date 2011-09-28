@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal::DownCast;
+%rename(DownCast) Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape::DownCast;

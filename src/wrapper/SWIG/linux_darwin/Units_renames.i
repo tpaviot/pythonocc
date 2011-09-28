@@ -23,3 +23,37 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Units_Lexicon::DownCast;
+%rename(DownCast) Handle_Units_UnitsLexicon::DownCast;
+%rename(DownCast) Handle_Units_Quantity::DownCast;
+%rename(DownCast) Handle_Units_SequenceNodeOfTksSequence::DownCast;
+%rename(DownCast) Handle_Units_SequenceNodeOfQtsSequence::DownCast;
+%rename(DownCast) Handle_Units_NoSuchType::DownCast;
+%rename(DownCast) Handle_Units_Unit::DownCast;
+%rename(DownCast) Handle_Units_Token::DownCast;
+%rename(DownCast) Handle_Units_ShiftedToken::DownCast;
+%rename(DownCast) Handle_Units_SequenceNodeOfUtsSequence::DownCast;
+%rename(DownCast) Handle_Units_NoSuchUnit::DownCast;
+%rename(DownCast) Handle_Units_UnitsSequence::DownCast;
+%rename(DownCast) Handle_Units_ShiftedUnit::DownCast;
+%rename(DownCast) Handle_Units_Dimensions::DownCast;
+%rename(DownCast) Handle_Units_TokensSequence::DownCast;
+%rename(DownCast) Handle_Units_QuantitiesSequence::DownCast;
+%rename(DownCast) Handle_Units_UnitsDictionary::DownCast;
+%rename(DownCast) Handle_Units_UnitsSystem::DownCast;
+%rename(Raise) Units_NoSuchType::Raise;
+%rename(NewInstance) Units_NoSuchType::NewInstance;
+%rename(Raise) Units_NoSuchUnit::Raise;
+%rename(NewInstance) Units_NoSuchUnit::NewInstance;
+%rename(UnitsFile) Units::UnitsFile;
+%rename(LexiconFile) Units::LexiconFile;
+%rename(DictionaryOfUnits) Units::DictionaryOfUnits;
+%rename(Quantity) Units::Quantity;
+%rename(FirstQuantity) Units::FirstQuantity;
+%rename(LexiconUnits) Units::LexiconUnits;
+%rename(LexiconFormula) Units::LexiconFormula;
+%rename(NullDimensions) Units::NullDimensions;
+%rename(Convert) Units::Convert;
+%rename(ToSI) Units::ToSI;
+%rename(FromSI) Units::FromSI;
+%rename(Dimensions) Units::Dimensions;

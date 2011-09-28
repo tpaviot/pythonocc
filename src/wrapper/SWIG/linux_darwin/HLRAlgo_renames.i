@@ -23,3 +23,24 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_HLRAlgo_PolyShellData::DownCast;
+%rename(DownCast) Handle_HLRAlgo_EdgesBlock::DownCast;
+%rename(DownCast) Handle_HLRAlgo_ListNodeOfInterferenceList::DownCast;
+%rename(DownCast) Handle_HLRAlgo_HArray1OfPINod::DownCast;
+%rename(DownCast) Handle_HLRAlgo_WiresBlock::DownCast;
+%rename(DownCast) Handle_HLRAlgo_HArray1OfTData::DownCast;
+%rename(DownCast) Handle_HLRAlgo_PolyInternalData::DownCast;
+%rename(DownCast) Handle_HLRAlgo_ListNodeOfListOfBPoint::DownCast;
+%rename(DownCast) Handle_HLRAlgo_PolyData::DownCast;
+%rename(DownCast) Handle_HLRAlgo_PolyAlgo::DownCast;
+%rename(DownCast) Handle_HLRAlgo_PolyInternalNode::DownCast;
+%rename(DownCast) Handle_HLRAlgo_HArray1OfPISeg::DownCast;
+%rename(DownCast) Handle_HLRAlgo_HArray1OfPHDat::DownCast;
+%rename(UpdateMinMax) HLRAlgo::UpdateMinMax;
+%rename(EnlargeMinMax) HLRAlgo::EnlargeMinMax;
+%rename(InitMinMax) HLRAlgo::InitMinMax;
+%rename(EncodeMinMax) HLRAlgo::EncodeMinMax;
+%rename(SizeBox) HLRAlgo::SizeBox;
+%rename(DecodeMinMax) HLRAlgo::DecodeMinMax;
+%rename(CopyMinMax) HLRAlgo::CopyMinMax;
+%rename(AddMinMax) HLRAlgo::AddMinMax;

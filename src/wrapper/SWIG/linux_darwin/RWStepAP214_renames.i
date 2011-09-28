@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_RWStepAP214_ReadWriteModule::DownCast;
+%rename(DownCast) Handle_RWStepAP214_GeneralModule::DownCast;
+%rename(Init) RWStepAP214::Init;

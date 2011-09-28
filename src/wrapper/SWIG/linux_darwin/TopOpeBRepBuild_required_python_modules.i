@@ -28,10 +28,10 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TopOpeBRepDS
 import TopoDS
-import TopTools
+import TopOpeBRepDS
 import TopAbs
+import TopTools
 import TCollection
 import TColStd
 };

@@ -23,3 +23,4 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep::DownCast;

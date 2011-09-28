@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(GetShape) BlendFunc::GetShape;
+%rename(GetMinimalWeights) BlendFunc::GetMinimalWeights;
+%rename(NextShape) BlendFunc::NextShape;
+%rename(ComputeNormal) BlendFunc::ComputeNormal;
+%rename(ComputeDNormal) BlendFunc::ComputeDNormal;

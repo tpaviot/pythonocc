@@ -23,3 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_PDF_Attribute::DownCast;
+%rename(DownCast) Handle_PDF_TagSource::DownCast;
+%rename(DownCast) Handle_PDF_Reference::DownCast;
+%rename(DownCast) Handle_PDF_HAttributeArray1::DownCast;
+%rename(DownCast) Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1::DownCast;
+%rename(DownCast) Handle_PDF_Data::DownCast;

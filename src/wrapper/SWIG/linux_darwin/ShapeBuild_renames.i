@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_ShapeBuild_ReShape::DownCast;
+%rename(PlaneXOY) ShapeBuild::PlaneXOY;

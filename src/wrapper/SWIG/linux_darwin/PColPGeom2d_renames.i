@@ -23,3 +23,11 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_PColPGeom2d_HArray1OfBezierCurve::DownCast;
+%rename(DownCast) Handle_PColPGeom2d_HArray1OfCurve::DownCast;
+%rename(DownCast) Handle_PColPGeom2d_HArray1OfBSplineCurve::DownCast;
+%rename(DownCast) Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve::DownCast;
+%rename(DownCast) Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve::DownCast;
+%rename(DownCast) Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve::DownCast;
+%rename(DownCast) Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve::DownCast;
+%rename(DownCast) Handle_PColPGeom2d_HArray1OfBoundedCurve::DownCast;

@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo::DownCast;
+%rename(DownCast) Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo::DownCast;
+%rename(DownCast) Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo::DownCast;
+%rename(DownCast) Handle_Draft_Modification::DownCast;
+%rename(Angle) Draft::Angle;

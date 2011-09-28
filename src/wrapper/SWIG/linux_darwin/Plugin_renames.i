@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Plugin_DataMapNodeOfMapOfFunctions::DownCast;
+%rename(DownCast) Handle_Plugin_Failure::DownCast;
+%rename(Raise) Plugin_Failure::Raise;
+%rename(NewInstance) Plugin_Failure::NewInstance;
+%rename(Load) Plugin::Load;

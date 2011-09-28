@@ -23,3 +23,23 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_XSControl_TransferWriter::DownCast;
+%rename(DownCast) Handle_XSControl_SignTransferStatus::DownCast;
+%rename(DownCast) Handle_XSControl_TransferReader::DownCast;
+%rename(DownCast) Handle_XSControl_Vars::DownCast;
+%rename(DownCast) Handle_XSControl_SelectForTransfer::DownCast;
+%rename(DownCast) Handle_XSControl_WorkSession::DownCast;
+%rename(DownCast) Handle_XSControl_Controller::DownCast;
+%rename(DownCast) Handle_XSControl_ConnectedShapes::DownCast;
+%rename(Init) XSControl_Functions::Init;
+%rename(AdjacentEntities) XSControl_ConnectedShapes::AdjacentEntities;
+%rename(Init) XSControl_FuncShape::Init;
+%rename(MoreShapes) XSControl_FuncShape::MoreShapes;
+%rename(FileAndVar) XSControl_FuncShape::FileAndVar;
+%rename(Recorded) XSControl_Controller::Recorded;
+%rename(ListRecorded) XSControl_Controller::ListRecorded;
+%rename(PrintStatsProcess) XSControl_TransferWriter::PrintStatsProcess;
+%rename(PrintStatsProcess) XSControl_TransferReader::PrintStatsProcess;
+%rename(PrintStatsOnList) XSControl_TransferReader::PrintStatsOnList;
+%rename(Session) XSControl::Session;
+%rename(Vars) XSControl::Vars;

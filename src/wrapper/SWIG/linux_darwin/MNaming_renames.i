@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_MNaming_NamingRetrievalDriver_1::DownCast;
+%rename(DownCast) Handle_MNaming_NamingRetrievalDriver::DownCast;
+%rename(DownCast) Handle_MNaming_NamingStorageDriver::DownCast;
+%rename(DownCast) Handle_MNaming_NamedShapeRetrievalDriver::DownCast;
+%rename(DownCast) Handle_MNaming_NamedShapeStorageDriver::DownCast;
+%rename(AddStorageDrivers) MNaming::AddStorageDrivers;
+%rename(AddRetrievalDrivers) MNaming::AddRetrievalDrivers;

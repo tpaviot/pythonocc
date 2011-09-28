@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BRepClass3d_DataMapNodeOfMapOfInter::DownCast;
+%rename(FindAPointInTheFace) BRepClass3d_SolidExplorer::FindAPointInTheFace;

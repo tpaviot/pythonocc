@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(SplineCurveFromIGES) IGESConvGeom::SplineCurveFromIGES;
+%rename(IncreaseCurveContinuity) IGESConvGeom::IncreaseCurveContinuity;
+%rename(SplineSurfaceFromIGES) IGESConvGeom::SplineSurfaceFromIGES;
+%rename(IncreaseSurfaceContinuity) IGESConvGeom::IncreaseSurfaceContinuity;

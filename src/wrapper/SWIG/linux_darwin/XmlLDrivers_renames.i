@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_XmlLDrivers_DocumentStorageDriver::DownCast;
+%rename(DownCast) Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef::DownCast;
+%rename(DownCast) Handle_XmlLDrivers_DocumentRetrievalDriver::DownCast;
+%rename(Factory) XmlLDrivers::Factory;
+%rename(CreationDate) XmlLDrivers::CreationDate;
+%rename(AttributeDrivers) XmlLDrivers::AttributeDrivers;
+%rename(StorageVersion) XmlLDrivers::StorageVersion;

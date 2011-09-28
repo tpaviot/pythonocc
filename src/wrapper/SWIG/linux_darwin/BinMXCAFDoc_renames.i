@@ -23,3 +23,19 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BinMXCAFDoc_MaterialDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_DimTolDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_ColorToolDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_DocumentToolDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_GraphNodeDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_VolumeDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_LocationDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_ShapeToolDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_CentroidDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_ColorDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_DatumDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_AreaDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_LayerToolDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_DimTolToolDriver::DownCast;
+%rename(DownCast) Handle_BinMXCAFDoc_MaterialToolDriver::DownCast;
+%rename(AddDrivers) BinMXCAFDoc::AddDrivers;

@@ -23,3 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(IsInside) Partition_Loop3d::IsInside;
+%rename(Normal) Partition_Loop3d::Normal;
+%rename(CompletPart2d) Partition_Inter2d::CompletPart2d;
+%rename(FindEndVertex) Partition_Inter2d::FindEndVertex;
+%rename(AddVonE) Partition_Inter2d::AddVonE;
+%rename(GetTolerance) Partition_Inter2d::GetTolerance;

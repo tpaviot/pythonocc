@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Bisector_Curve::DownCast;
+%rename(DownCast) Handle_Bisector_BisecAna::DownCast;
+%rename(DownCast) Handle_Bisector_BisecCC::DownCast;
+%rename(DownCast) Handle_Bisector_BisecPC::DownCast;
+%rename(IsConvex) Bisector::IsConvex;

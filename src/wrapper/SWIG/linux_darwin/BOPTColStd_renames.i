@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger::DownCast;
+%rename(DownCast) Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger::DownCast;
+%rename(DownCast) Handle_BOPTColStd_ListNodeOfListOfListOfShape::DownCast;
+%rename(DownCast) Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::DownCast;
+%rename(HashCode) BOPTColStd_ShapeWithRankHasher::HashCode;
+%rename(IsEqual) BOPTColStd_ShapeWithRankHasher::IsEqual;
+%rename(PrintMessage) BOPTColStd_Dump::PrintMessage;

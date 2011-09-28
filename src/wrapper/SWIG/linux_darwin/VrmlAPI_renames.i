@@ -23,3 +23,4 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Write) VrmlAPI::Write;

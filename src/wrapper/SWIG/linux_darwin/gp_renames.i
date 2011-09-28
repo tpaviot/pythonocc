@@ -23,3 +23,21 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_gp_VectorWithNullMagnitude::DownCast;
+%rename(Resolution) gp::Resolution;
+%rename(Origin) gp::Origin;
+%rename(DX) gp::DX;
+%rename(DY) gp::DY;
+%rename(DZ) gp::DZ;
+%rename(OX) gp::OX;
+%rename(OY) gp::OY;
+%rename(OZ) gp::OZ;
+%rename(XOY) gp::XOY;
+%rename(ZOX) gp::ZOX;
+%rename(YOZ) gp::YOZ;
+%rename(Origin2d) gp::Origin2d;
+%rename(DX2d) gp::DX2d;
+%rename(DY2d) gp::DY2d;
+%rename(OX2d) gp::OX2d;
+%rename(OY2d) gp::OY2d;
+%rename(Interpolate) gp_QuaternionNLerp::Interpolate;

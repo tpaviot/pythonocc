@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_PTColStd_DataMapNodeOfTransientPersistentMap::DownCast;
+%rename(DownCast) Handle_PTColStd_DataMapNodeOfPersistentTransientMap::DownCast;
+%rename(DownCast) Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent::DownCast;
+%rename(HashCode) PTColStd_MapPersistentHasher::HashCode;
+%rename(IsEqual) PTColStd_MapPersistentHasher::IsEqual;

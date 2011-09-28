@@ -469,44 +469,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MeshVS_VectorPrsBuilder;
-class Handle_MeshVS_VectorPrsBuilder : public Handle_MeshVS_PrsBuilder {
-	public:
-		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder();
-		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder(const Handle_MeshVS_VectorPrsBuilder &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder(const MeshVS_VectorPrsBuilder *anItem);
-		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder & operator=(const Handle_MeshVS_VectorPrsBuilder &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_VectorPrsBuilder & operator=(const MeshVS_VectorPrsBuilder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MeshVS_VectorPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MeshVS_VectorPrsBuilder {
-	MeshVS_VectorPrsBuilder* GetObject() {
-	return (MeshVS_VectorPrsBuilder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MeshVS_VectorPrsBuilder::~Handle_MeshVS_VectorPrsBuilder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MeshVS_VectorPrsBuilder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString;
 class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public Handle_TCollection_MapNode {
 	public:
@@ -1223,6 +1185,44 @@ def __del__(self):
 %}
 
 %extend Handle_MeshVS_SensitiveFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MeshVS_VectorPrsBuilder;
+class Handle_MeshVS_VectorPrsBuilder : public Handle_MeshVS_PrsBuilder {
+	public:
+		%feature("autodoc", "1");
+		Handle_MeshVS_VectorPrsBuilder();
+		%feature("autodoc", "1");
+		Handle_MeshVS_VectorPrsBuilder(const Handle_MeshVS_VectorPrsBuilder &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_VectorPrsBuilder(const MeshVS_VectorPrsBuilder *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshVS_VectorPrsBuilder & operator=(const Handle_MeshVS_VectorPrsBuilder &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_VectorPrsBuilder & operator=(const MeshVS_VectorPrsBuilder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MeshVS_VectorPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MeshVS_VectorPrsBuilder {
+	MeshVS_VectorPrsBuilder* GetObject() {
+	return (MeshVS_VectorPrsBuilder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MeshVS_VectorPrsBuilder::~Handle_MeshVS_VectorPrsBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MeshVS_VectorPrsBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2526,6 +2526,51 @@ def __del__(self):
 %}
 
 %extend MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_DataMapOfIntegerTwoColors;
+class MeshVS_DataMapOfIntegerTwoColors : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_DataMapOfIntegerTwoColors(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MeshVS_DataMapOfIntegerTwoColors & Assign(const MeshVS_DataMapOfIntegerTwoColors &Other);
+		%feature("autodoc", "1");
+		MeshVS_DataMapOfIntegerTwoColors & operator=(const MeshVS_DataMapOfIntegerTwoColors &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const MeshVS_TwoColors &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const MeshVS_TwoColors & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const MeshVS_TwoColors & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		MeshVS_TwoColors & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		MeshVS_TwoColors & operator()(const Standard_Integer &K);
+
+};
+%feature("shadow") MeshVS_DataMapOfIntegerTwoColors::~MeshVS_DataMapOfIntegerTwoColors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_DataMapOfIntegerTwoColors {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3895,51 +3940,6 @@ def __del__(self):
 %}
 
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_DataMapOfIntegerTwoColors;
-class MeshVS_DataMapOfIntegerTwoColors : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_DataMapOfIntegerTwoColors(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		MeshVS_DataMapOfIntegerTwoColors & Assign(const MeshVS_DataMapOfIntegerTwoColors &Other);
-		%feature("autodoc", "1");
-		MeshVS_DataMapOfIntegerTwoColors & operator=(const MeshVS_DataMapOfIntegerTwoColors &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const MeshVS_TwoColors &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const MeshVS_TwoColors & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const MeshVS_TwoColors & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		MeshVS_TwoColors & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		MeshVS_TwoColors & operator()(const Standard_Integer &K);
-
-};
-%feature("shadow") MeshVS_DataMapOfIntegerTwoColors::~MeshVS_DataMapOfIntegerTwoColors %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_DataMapOfIntegerTwoColors {
 	void _kill_pointed() {
 		delete $self;
 	}

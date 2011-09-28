@@ -23,3 +23,18 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_TCollection_SeqNode::DownCast;
+%rename(DownCast) Handle_TCollection_HExtendedString::DownCast;
+%rename(DownCast) Handle_TCollection_AVLBaseNode::DownCast;
+%rename(DownCast) Handle_TCollection_HAsciiString::DownCast;
+%rename(DownCast) Handle_TCollection_MapNode::DownCast;
+%rename(HashCode) TCollection_AsciiString::HashCode;
+%rename(IsEqual) TCollection_AsciiString::IsEqual;
+%rename(HASHCODE) TCollection_AsciiString::HASHCODE;
+%rename(ISSIMILAR) TCollection_AsciiString::ISSIMILAR;
+%rename(NextPrimeForMap) TCollection::NextPrimeForMap;
+%rename(Height) TCollection_AVLBaseNode::Height;
+%rename(RecursiveExtent) TCollection_AVLBaseNode::RecursiveExtent;
+%rename(RecursiveTotalExtent) TCollection_AVLBaseNode::RecursiveTotalExtent;
+%rename(HashCode) TCollection_ExtendedString::HashCode;
+%rename(IsEqual) TCollection_ExtendedString::IsEqual;

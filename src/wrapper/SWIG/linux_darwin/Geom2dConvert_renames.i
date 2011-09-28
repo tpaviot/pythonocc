@@ -23,3 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(SplitBSplineCurve) Geom2dConvert::SplitBSplineCurve;
+%rename(CurveToBSplineCurve) Geom2dConvert::CurveToBSplineCurve;
+%rename(ConcatG1) Geom2dConvert::ConcatG1;
+%rename(ConcatC1) Geom2dConvert::ConcatC1;
+%rename(C0BSplineToC1BSplineCurve) Geom2dConvert::C0BSplineToC1BSplineCurve;
+%rename(C0BSplineToArrayOfC1BSplineCurve) Geom2dConvert::C0BSplineToArrayOfC1BSplineCurve;

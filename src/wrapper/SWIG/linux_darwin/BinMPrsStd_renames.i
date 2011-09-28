@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BinMPrsStd_PositionDriver::DownCast;
+%rename(DownCast) Handle_BinMPrsStd_AISPresentationDriver::DownCast;
+%rename(AddDrivers) BinMPrsStd::AddDrivers;

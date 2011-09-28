@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Geom2dAdaptor_GHCurve::DownCast;
+%rename(DownCast) Handle_Geom2dAdaptor_HCurve::DownCast;
+%rename(MakeCurve) Geom2dAdaptor::MakeCurve;

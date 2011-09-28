@@ -23,3 +23,17 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GEOM_SubShapeDriver::DownCast;
+%rename(DownCast) Handle_GEOM_Application::DownCast;
+%rename(DownCast) Handle_GEOM_Object::DownCast;
+%rename(DownCast) Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient::DownCast;
+%rename(DownCast) Handle_GEOM_Function::DownCast;
+%rename(GetEngine) GEOM_Engine::GetEngine;
+%rename(GetFunctionTreeID) GEOM_Function::GetFunctionTreeID;
+%rename(GetDependencyID) GEOM_Function::GetDependencyID;
+%rename(GetFunction) GEOM_Function::GetFunction;
+%rename(GetReferencesTreeID) GEOM_Function::GetReferencesTreeID;
+%rename(GetObject) GEOM_Object::GetObject;
+%rename(GetReferencedObject) GEOM_Object::GetReferencedObject;
+%rename(GetObjectID) GEOM_Object::GetObjectID;
+%rename(GetSubShapeID) GEOM_Object::GetSubShapeID;

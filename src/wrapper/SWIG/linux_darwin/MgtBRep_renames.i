@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_MgtBRep_TranslateTool1::DownCast;
+%rename(DownCast) Handle_MgtBRep_TranslateTool::DownCast;
+%rename(Translate) MgtBRep::Translate;
+%rename(Translate1) MgtBRep::Translate1;

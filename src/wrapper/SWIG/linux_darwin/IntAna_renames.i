@@ -23,3 +23,4 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_IntAna_ListNodeOfListOfCurve::DownCast;

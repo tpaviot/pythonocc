@@ -23,3 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_PShort_HArray2OfShortReal::DownCast;
+%rename(DownCast) Handle_PShort_HSequenceOfShortReal::DownCast;
+%rename(DownCast) Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal::DownCast;
+%rename(DownCast) Handle_PShort_HArray1OfShortReal::DownCast;
+%rename(DownCast) Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal::DownCast;
+%rename(DownCast) Handle_PShort_SeqNodeOfHSequenceOfShortReal::DownCast;

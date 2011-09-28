@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Approx_CurvlinFunc::DownCast;
+%rename(DownCast) Handle_Approx_SweepFunction::DownCast;
+%rename(DownCast) Handle_Approx_HArray1OfAdHSurface::DownCast;
+%rename(DownCast) Handle_Approx_HArray1OfGTrsf2d::DownCast;
+%rename(DownCast) Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal::DownCast;

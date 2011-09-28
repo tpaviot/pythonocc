@@ -23,3 +23,11 @@ $Author$
 $HeaderURL$
 
 */
+%rename(SplitBSplineCurve) GeomConvert::SplitBSplineCurve;
+%rename(SplitBSplineSurface) GeomConvert::SplitBSplineSurface;
+%rename(CurveToBSplineCurve) GeomConvert::CurveToBSplineCurve;
+%rename(SurfaceToBSplineSurface) GeomConvert::SurfaceToBSplineSurface;
+%rename(ConcatG1) GeomConvert::ConcatG1;
+%rename(ConcatC1) GeomConvert::ConcatC1;
+%rename(C0BSplineToC1BSplineCurve) GeomConvert::C0BSplineToC1BSplineCurve;
+%rename(C0BSplineToArrayOfC1BSplineCurve) GeomConvert::C0BSplineToArrayOfC1BSplineCurve;

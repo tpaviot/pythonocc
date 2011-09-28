@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_NCollection_BaseAllocator::DownCast;
+%rename(DownCast) Handle_NCollection_IncAllocator::DownCast;
+%rename(DownCast) Handle_NCollection_HeapAllocator::DownCast;
+%rename(CommonBaseAllocator) NCollection_BaseAllocator::CommonBaseAllocator;
+%rename(StandardCallBack) NCollection_BaseAllocator::StandardCallBack;
+%rename(PrintMemUsageStatistics) NCollection_BaseAllocator::PrintMemUsageStatistics;
+%rename(GlobalHeapAllocator) NCollection_HeapAllocator::GlobalHeapAllocator;

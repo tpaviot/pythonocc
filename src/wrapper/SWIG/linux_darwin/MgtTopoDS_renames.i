@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_MgtTopoDS_TranslateTool::DownCast;
+%rename(DownCast) Handle_MgtTopoDS_TranslateTool1::DownCast;
+%rename(Translate) MgtTopoDS::Translate;
+%rename(Translate1) MgtTopoDS::Translate1;

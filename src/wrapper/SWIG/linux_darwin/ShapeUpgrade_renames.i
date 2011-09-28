@@ -23,3 +23,27 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_ShapeUpgrade_Tool::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_FaceDivide::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_FaceDivideArea::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitSurface::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitSurfaceAngle::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_EdgeDivide::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_ClosedEdgeDivide::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_RemoveLocations::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_RemoveInternalWires::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitSurfaceArea::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_FixSmallCurves::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_FixSmallBezierCurves::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitSurfaceContinuity::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitCurve::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitCurve2d::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitCurve2dContinuity::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitCurve3d::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitCurve3dContinuity::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_ConvertCurve2dToBezier::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_ConvertCurve3dToBezier::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_WireDivide::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_ClosedFaceDivide::DownCast;
+%rename(C0BSplineToSequenceOfC1BSplineCurve) ShapeUpgrade::C0BSplineToSequenceOfC1BSplineCurve;

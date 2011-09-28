@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_TColQuantity_HArray1OfLength::DownCast;
+%rename(DownCast) Handle_TColQuantity_HArray2OfLength::DownCast;

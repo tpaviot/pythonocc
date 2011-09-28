@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Hatch_SequenceNodeOfSequenceOfLine::DownCast;
+%rename(DownCast) Handle_Hatch_SequenceNodeOfSequenceOfParameter::DownCast;

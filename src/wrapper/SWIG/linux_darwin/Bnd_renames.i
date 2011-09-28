@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Bnd_SequenceNodeOfSeqOfBox::DownCast;
+%rename(DownCast) Handle_Bnd_HArray1OfBox2d::DownCast;
+%rename(DownCast) Handle_Bnd_HArray1OfSphere::DownCast;
+%rename(DownCast) Handle_Bnd_HArray1OfBox::DownCast;

@@ -23,3 +23,34 @@ $Author$
 $HeaderURL$
 
 */
+%rename(CurrentToLS) UnitsAPI::CurrentToLS;
+%rename(CurrentToSI) UnitsAPI::CurrentToSI;
+%rename(CurrentFromLS) UnitsAPI::CurrentFromLS;
+%rename(CurrentFromSI) UnitsAPI::CurrentFromSI;
+%rename(AnyToLS) UnitsAPI::AnyToLS;
+%rename(AnyToSI) UnitsAPI::AnyToSI;
+%rename(AnyFromLS) UnitsAPI::AnyFromLS;
+%rename(AnyFromSI) UnitsAPI::AnyFromSI;
+%rename(CurrentToAny) UnitsAPI::CurrentToAny;
+%rename(CurrentFromAny) UnitsAPI::CurrentFromAny;
+%rename(AnyToAny) UnitsAPI::AnyToAny;
+%rename(LSToSI) UnitsAPI::LSToSI;
+%rename(SIToLS) UnitsAPI::SIToLS;
+%rename(SetLocalSystem) UnitsAPI::SetLocalSystem;
+%rename(LocalSystem) UnitsAPI::LocalSystem;
+%rename(SetCurrentUnit) UnitsAPI::SetCurrentUnit;
+%rename(CurrentUnit) UnitsAPI::CurrentUnit;
+%rename(Save) UnitsAPI::Save;
+%rename(Reload) UnitsAPI::Reload;
+%rename(Dimensions) UnitsAPI::Dimensions;
+%rename(DimensionLess) UnitsAPI::DimensionLess;
+%rename(DimensionMass) UnitsAPI::DimensionMass;
+%rename(DimensionLength) UnitsAPI::DimensionLength;
+%rename(DimensionTime) UnitsAPI::DimensionTime;
+%rename(DimensionElectricCurrent) UnitsAPI::DimensionElectricCurrent;
+%rename(DimensionThermodynamicTemperature) UnitsAPI::DimensionThermodynamicTemperature;
+%rename(DimensionAmountOfSubstance) UnitsAPI::DimensionAmountOfSubstance;
+%rename(DimensionLuminousIntensity) UnitsAPI::DimensionLuminousIntensity;
+%rename(DimensionPlaneAngle) UnitsAPI::DimensionPlaneAngle;
+%rename(DimensionSolidAngle) UnitsAPI::DimensionSolidAngle;
+%rename(Check) UnitsAPI::Check;

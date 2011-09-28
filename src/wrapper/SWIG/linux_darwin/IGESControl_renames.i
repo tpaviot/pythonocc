@@ -23,3 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_IGESControl_AlgoContainer::DownCast;
+%rename(DownCast) Handle_IGESControl_ActorWrite::DownCast;
+%rename(DownCast) Handle_IGESControl_Controller::DownCast;
+%rename(DownCast) Handle_IGESControl_IGESBoundary::DownCast;
+%rename(DownCast) Handle_IGESControl_ToolContainer::DownCast;
+%rename(Init) IGESControl_Controller::Init;

@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_MDocStd_DocumentStorageDriver::DownCast;
+%rename(DownCast) Handle_MDocStd_DocumentRetrievalDriver::DownCast;
+%rename(DownCast) Handle_MDocStd_XLinkRetrievalDriver::DownCast;
+%rename(DownCast) Handle_MDocStd_XLinkStorageDriver::DownCast;
+%rename(AddStorageDrivers) MDocStd::AddStorageDrivers;
+%rename(AddRetrievalDrivers) MDocStd::AddRetrievalDrivers;
+%rename(Factory) MDocStd::Factory;

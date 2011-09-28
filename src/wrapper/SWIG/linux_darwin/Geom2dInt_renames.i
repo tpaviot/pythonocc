@@ -23,3 +23,28 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::DownCast;
+%rename(Bounding) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::Bounding;
+%rename(DeflectionOverEstimation) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::DeflectionOverEstimation;
+%rename(Closed) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::Closed;
+%rename(NbSegments) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::NbSegments;
+%rename(BeginOfSeg) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::BeginOfSeg;
+%rename(EndOfSeg) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::EndOfSeg;
+%rename(TheType) Geom2dInt_Geom2dCurveTool::TheType;
+%rename(Line) Geom2dInt_Geom2dCurveTool::Line;
+%rename(Circle) Geom2dInt_Geom2dCurveTool::Circle;
+%rename(Ellipse) Geom2dInt_Geom2dCurveTool::Ellipse;
+%rename(Parabola) Geom2dInt_Geom2dCurveTool::Parabola;
+%rename(Hyperbola) Geom2dInt_Geom2dCurveTool::Hyperbola;
+%rename(EpsX) Geom2dInt_Geom2dCurveTool::EpsX;
+%rename(NbSamples) Geom2dInt_Geom2dCurveTool::NbSamples;
+%rename(FirstParameter) Geom2dInt_Geom2dCurveTool::FirstParameter;
+%rename(LastParameter) Geom2dInt_Geom2dCurveTool::LastParameter;
+%rename(Value) Geom2dInt_Geom2dCurveTool::Value;
+%rename(D0) Geom2dInt_Geom2dCurveTool::D0;
+%rename(D1) Geom2dInt_Geom2dCurveTool::D1;
+%rename(D2) Geom2dInt_Geom2dCurveTool::D2;
+%rename(NbIntervals) Geom2dInt_Geom2dCurveTool::NbIntervals;
+%rename(Intervals) Geom2dInt_Geom2dCurveTool::Intervals;
+%rename(GetInterval) Geom2dInt_Geom2dCurveTool::GetInterval;
+%rename(FindParameter) Geom2dInt_TheProjPCurOfGInter::FindParameter;

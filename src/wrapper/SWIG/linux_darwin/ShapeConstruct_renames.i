@@ -23,3 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_ShapeConstruct_ProjectCurveOnSurface::DownCast;
+%rename(FixKnots) ShapeConstruct_Curve::FixKnots;
+%rename(ConvertCurveToBSpline) ShapeConstruct::ConvertCurveToBSpline;
+%rename(ConvertSurfaceToBSpline) ShapeConstruct::ConvertSurfaceToBSpline;
+%rename(JoinPCurves) ShapeConstruct::JoinPCurves;
+%rename(JoinCurves) ShapeConstruct::JoinCurves;

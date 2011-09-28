@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BRepBuilderAPI_Sewing::DownCast;
+%rename(Plane) BRepBuilderAPI::Plane;
+%rename(Precision) BRepBuilderAPI::Precision;

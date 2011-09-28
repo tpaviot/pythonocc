@@ -23,3 +23,19 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_CDM_StdMapNodeOfMapOfDocument::DownCast;
+%rename(DownCast) Handle_CDM_DataMapNodeOfPresentationDirectory::DownCast;
+%rename(DownCast) Handle_CDM_Reference::DownCast;
+%rename(DownCast) Handle_CDM_MessageDriver::DownCast;
+%rename(DownCast) Handle_CDM_MetaData::DownCast;
+%rename(DownCast) Handle_CDM_COutMessageDriver::DownCast;
+%rename(DownCast) Handle_CDM_Document::DownCast;
+%rename(DownCast) Handle_CDM_NullMessageDriver::DownCast;
+%rename(DownCast) Handle_CDM_StackNodeOfStackOfDocument::DownCast;
+%rename(DownCast) Handle_CDM_ListNodeOfListOfDocument::DownCast;
+%rename(DownCast) Handle_CDM_DataMapNodeOfMetaDataLookUpTable::DownCast;
+%rename(DownCast) Handle_CDM_Application::DownCast;
+%rename(DownCast) Handle_CDM_ListNodeOfListOfReferences::DownCast;
+%rename(HashCode) CDM_DocumentHasher::HashCode;
+%rename(IsEqual) CDM_DocumentHasher::IsEqual;
+%rename(LookUp) CDM_MetaData::LookUp;

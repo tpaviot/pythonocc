@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_LProp_SequenceNodeOfSequenceOfCIType::DownCast;
+%rename(DownCast) Handle_LProp_BadContinuity::DownCast;
+%rename(DownCast) Handle_LProp_NotDefined::DownCast;
+%rename(Raise) LProp_BadContinuity::Raise;
+%rename(NewInstance) LProp_BadContinuity::NewInstance;
+%rename(Raise) LProp_NotDefined::Raise;
+%rename(NewInstance) LProp_NotDefined::NewInstance;

@@ -23,3 +23,15 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient::DownCast;
+%rename(DownCast) Handle_XCAFPrs_AISObject::DownCast;
+%rename(DownCast) Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle::DownCast;
+%rename(DownCast) Handle_XCAFPrs_Driver::DownCast;
+%rename(DownCast) Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape::DownCast;
+%rename(CollectStyleSettings) XCAFPrs::CollectStyleSettings;
+%rename(DispatchStyles) XCAFPrs::DispatchStyles;
+%rename(SetViewNameMode) XCAFPrs::SetViewNameMode;
+%rename(GetViewNameMode) XCAFPrs::GetViewNameMode;
+%rename(GetID) XCAFPrs_Driver::GetID;
+%rename(HashCode) XCAFPrs_Style::HashCode;
+%rename(IsEqual) XCAFPrs_Style::IsEqual;

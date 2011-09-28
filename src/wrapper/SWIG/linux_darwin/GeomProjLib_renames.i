@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Curve2d) GeomProjLib::Curve2d;
+%rename(Project) GeomProjLib::Project;
+%rename(ProjectOnPlane) GeomProjLib::ProjectOnPlane;

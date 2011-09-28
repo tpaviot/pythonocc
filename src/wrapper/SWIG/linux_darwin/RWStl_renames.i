@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(WriteBinary) RWStl::WriteBinary;
+%rename(WriteAscii) RWStl::WriteAscii;
+%rename(ReadFile) RWStl::ReadFile;
+%rename(ReadBinary) RWStl::ReadBinary;
+%rename(ReadAscii) RWStl::ReadAscii;

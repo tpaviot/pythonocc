@@ -23,3 +23,24 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI::DownCast;
+%rename(DownCast) Handle_StepToTopoDS_DataMapNodeOfDataMapOfRINames::DownCast;
+%rename(DownCast) Handle_StepToTopoDS_DataMapNodeOfDataMapOfRI::DownCast;
+%rename(DownCast) Handle_StepToTopoDS_DataMapNodeOfPointVertexMap::DownCast;
+%rename(DownCast) Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap::DownCast;
+%rename(PCurve) StepToTopoDS_GeometricTool::PCurve;
+%rename(IsSeamCurve) StepToTopoDS_GeometricTool::IsSeamCurve;
+%rename(IsLikeSeam) StepToTopoDS_GeometricTool::IsLikeSeam;
+%rename(UpdateParam3d) StepToTopoDS_GeometricTool::UpdateParam3d;
+%rename(HashCode) StepToTopoDS_CartesianPointHasher::HashCode;
+%rename(IsEqual) StepToTopoDS_CartesianPointHasher::IsEqual;
+%rename(HashCode) StepToTopoDS_PointPairHasher::HashCode;
+%rename(IsEqual) StepToTopoDS_PointPairHasher::IsEqual;
+%rename(DecodeBuilderError) StepToTopoDS::DecodeBuilderError;
+%rename(DecodeShellError) StepToTopoDS::DecodeShellError;
+%rename(DecodeFaceError) StepToTopoDS::DecodeFaceError;
+%rename(DecodeEdgeError) StepToTopoDS::DecodeEdgeError;
+%rename(DecodeVertexError) StepToTopoDS::DecodeVertexError;
+%rename(DecodeVertexLoopError) StepToTopoDS::DecodeVertexLoopError;
+%rename(DecodePolyLoopError) StepToTopoDS::DecodePolyLoopError;
+%rename(DecodeGeometricToolError) StepToTopoDS::DecodeGeometricToolError;

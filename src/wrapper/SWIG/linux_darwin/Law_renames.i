@@ -23,3 +23,18 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Law_ListNodeOfLaws::DownCast;
+%rename(DownCast) Handle_Law_Function::DownCast;
+%rename(DownCast) Handle_Law_BSpFunc::DownCast;
+%rename(DownCast) Handle_Law_Interpol::DownCast;
+%rename(DownCast) Handle_Law_BSpline::DownCast;
+%rename(DownCast) Handle_Law_S::DownCast;
+%rename(DownCast) Handle_Law_Linear::DownCast;
+%rename(DownCast) Handle_Law_Constant::DownCast;
+%rename(DownCast) Handle_Law_Composite::DownCast;
+%rename(MaxDegree) Law_BSpline::MaxDegree;
+%rename(MixBnd) Law::MixBnd;
+%rename(MixTgt) Law::MixTgt;
+%rename(Reparametrize) Law::Reparametrize;
+%rename(Scale) Law::Scale;
+%rename(ScaleCub) Law::ScaleCub;

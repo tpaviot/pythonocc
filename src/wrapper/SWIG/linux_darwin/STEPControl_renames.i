@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_STEPControl_ActorRead::DownCast;
+%rename(DownCast) Handle_STEPControl_Controller::DownCast;
+%rename(DownCast) Handle_STEPControl_ActorWrite::DownCast;
+%rename(Init) STEPControl_Controller::Init;

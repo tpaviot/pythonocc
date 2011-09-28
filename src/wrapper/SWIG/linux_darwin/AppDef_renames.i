@@ -23,3 +23,14 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_AppDef_HArray1OfMultiPointConstraint::DownCast;
+%rename(DownCast) Handle_AppDef_MyCriterionOfTheVariational::DownCast;
+%rename(FirstPoint) AppDef_MyLineTool::FirstPoint;
+%rename(LastPoint) AppDef_MyLineTool::LastPoint;
+%rename(NbP2d) AppDef_MyLineTool::NbP2d;
+%rename(NbP3d) AppDef_MyLineTool::NbP3d;
+%rename(Value) AppDef_MyLineTool::Value;
+%rename(Tangency) AppDef_MyLineTool::Tangency;
+%rename(Curvature) AppDef_MyLineTool::Curvature;
+%rename(WhatStatus) AppDef_MyLineTool::WhatStatus;
+%rename(MakeMLBetween) AppDef_MyLineTool::MakeMLBetween;

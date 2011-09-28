@@ -23,3 +23,13 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_NLPlate_HGPPConstraint::DownCast;
+%rename(DownCast) Handle_NLPlate_HPG0Constraint::DownCast;
+%rename(DownCast) Handle_NLPlate_HPG0G1Constraint::DownCast;
+%rename(DownCast) Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint::DownCast;
+%rename(DownCast) Handle_NLPlate_HPG0G2Constraint::DownCast;
+%rename(DownCast) Handle_NLPlate_HPG0G3Constraint::DownCast;
+%rename(DownCast) Handle_NLPlate_HPG1Constraint::DownCast;
+%rename(DownCast) Handle_NLPlate_HPG2Constraint::DownCast;
+%rename(DownCast) Handle_NLPlate_HPG3Constraint::DownCast;
+%rename(DownCast) Handle_NLPlate_StackNodeOfStackOfPlate::DownCast;

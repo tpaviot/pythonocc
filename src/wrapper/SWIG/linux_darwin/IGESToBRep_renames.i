@@ -23,3 +23,19 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_IGESToBRep_Actor::DownCast;
+%rename(DownCast) Handle_IGESToBRep_IGESBoundary::DownCast;
+%rename(DownCast) Handle_IGESToBRep_AlgoContainer::DownCast;
+%rename(DownCast) Handle_IGESToBRep_ToolContainer::DownCast;
+%rename(Init) IGESToBRep::Init;
+%rename(SetAlgoContainer) IGESToBRep::SetAlgoContainer;
+%rename(AlgoContainer) IGESToBRep::AlgoContainer;
+%rename(IsCurveAndSurface) IGESToBRep::IsCurveAndSurface;
+%rename(IsBasicCurve) IGESToBRep::IsBasicCurve;
+%rename(IsBasicSurface) IGESToBRep::IsBasicSurface;
+%rename(IsTopoCurve) IGESToBRep::IsTopoCurve;
+%rename(IsTopoSurface) IGESToBRep::IsTopoSurface;
+%rename(IsBRepEntity) IGESToBRep::IsBRepEntity;
+%rename(WriteShape) IGESToBRep::WriteShape;
+%rename(IGESCurveToSequenceOfIGESCurve) IGESToBRep::IGESCurveToSequenceOfIGESCurve;
+%rename(TransferPCurve) IGESToBRep::TransferPCurve;
