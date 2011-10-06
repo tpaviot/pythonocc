@@ -1,6 +1,6 @@
 import warnings
 from OCC.BRep import BRep_Tool
-from OCC.BRepAdaptor import BRepAdaptor_Curve
+from OCC.BRepAdaptor import BRepAdaptor_Curve, BRepAdaptor_HCurve
 from OCC.GCPnts import GCPnts_AbscissaPoint, GCPnts_UniformAbscissa
 from OCC.Geom import Geom_OffsetCurve, Geom_Curve, Geom_TrimmedCurve
 from OCC.KBE.base import KbeObject
@@ -11,7 +11,7 @@ from OCC.gp import *
 from OCC.Utils.Common import vertex2pnt, minimum_distance, to_adaptor_3d
 from OCC.Utils.Construct import make_edge, trim_wire, fix_continuity
 from OCC.Utils.Context import assert_isdone
-from OCC.KBE.kbe_vertex import Vertex
+from OCC.KBE.vertex import Vertex
 
 
 class IntersectCurve(object):
@@ -19,7 +19,7 @@ class IntersectCurve(object):
         self.Instance = Instance
 
     def intersect(self, other):
-        '''intersect self with a point, curve, edge, face, solid
+        '''Intersect self with a point, curve, edge, face, solid
         method wraps dealing with the various topologies
         '''
         raise NotImplementedError
@@ -93,7 +93,7 @@ class DiffGeomCurve(object):
 
 
 #===============================================================================
-#    Curve.construct
+#    Curve.Construct
 #===============================================================================
 
 class ConstructFromCurve():
@@ -121,7 +121,7 @@ class ConstructFromCurve():
             from OCC.Approx import Approx_CurveOnSurface
             pass
 
-class Edge(KbeObject):
+class Edge(KbeObject, TopoDS_Edge):
     '''
     '''
 
@@ -130,21 +130,22 @@ class Edge(KbeObject):
         '''
         assert isinstance(edge, TopoDS_Edge), 'need a TopoDS_Edge, got a %s'% edge.__class__
         KbeObject.__init__(self, 'edge')
-        self._topo_type = TopoDS_Edge
-        self.topo = edge
+        TopoDS_Edge.__init__(self, edge)
 
-        # STATE; whether cooperative classes are initialized
+        # tracking state
         self._local_properties_init    = False
         self._curvature_init           = False
         self._geometry_lookup_init     = False
         self._curve_handle = None
         self._curve = None
         self._adaptor = None
+        self._adaptor_handle = None
 
         # instantiating cooperative classes
-        self.diff_geom = DiffGeomCurve(self)
-        self.intersect = IntersectCurve(self)
-        self.construct = ConstructFromCurve(self)
+        # cooperative classes are distinct through CamelCaps from normal method -> pep8
+        self.DiffGeom = DiffGeomCurve(self)
+        self.Intersect = IntersectCurve(self)
+        self.Construct = ConstructFromCurve(self)
         #self.graphic   = GraphicCurve(self)
 
         # GeomLProp object
@@ -166,7 +167,7 @@ class Edge(KbeObject):
         if self._curve is not None and not self.is_dirty:
             pass
         else:
-            self._curve_handle  = BRep_Tool().Curve(self.topo)[0]
+            self._curve_handle  = BRep_Tool().Curve(self)[0]
             self._curve = self._curve_handle.GetObject()
         return self._curve
 
@@ -183,8 +184,28 @@ class Edge(KbeObject):
         if self._adaptor is not None and not self.is_dirty:
             pass
         else:
-            self._adaptor = BRepAdaptor_Curve(self.topo)
+            self._adaptor = BRepAdaptor_Curve(self)
+            self._adaptor_handle = BRepAdaptor_HCurve(self._adaptor)
         return self._adaptor
+
+    @property
+    def adaptor_handle(self):
+        if self._adaptor_handle is not None and not self.is_dirty:
+            pass
+        else:
+            self.adaptor
+        return self._adaptor_handle
+
+    @property
+    def geom_curve_handle(self):
+        """
+        :return: Handle_Geom_Curve adapted from `self`
+        """
+        if self._adaptor_handle is not None and not self.is_dirty:
+            pass
+        else:
+            self.adaptor
+        return self._adaptor.Curve().Curve()
 
     def _local_properties(self):
         from OCC.GeomLProp import GeomLProp_CurveTool
@@ -279,9 +300,12 @@ class Edge(KbeObject):
             return ccc.Parameter()
 
     def mid_point(self):
+        """
+        :return: the parameter at the mid point of the curve, and its corresponding gp_Pnt
+        """
         _min, _max = self.domain()
         _mid = (_min+_max) / 2.
-        return self.adaptor.Value(_mid)
+        return _mid, self.adaptor.Value(_mid),
 
     def divide_by_number_of_points(self, n_pts, lbound=None, ubound=None):
         '''returns a nested list of parameters and points on the edge
@@ -347,8 +371,25 @@ class Edge(KbeObject):
         raise NotImplementedError
 
     def __eq__(self, other):
-        # KbeObject
-        return self.brep.IsEqual(other)
+        if hasattr(other, 'topo'):
+            return self.IsEqual(other)
+        else:
+            return self.IsEqual(other)
+
+    def __ne__(self, other):
+        return not(self.__eq__(other))
+
+#    def __cmp__(self, other):
+#        return self.__eq__(other)
+
+#    def __contains__(self, item):
+#        print 'in list?'
+#        import ipdb; ipdb.set_trace()
+#        return 0
+#
+#
+    def __hash__(self):
+        return self.__hash__()
 
     @property
     def type(self):
@@ -366,10 +407,17 @@ class Edge(KbeObject):
 
     def first_vertex(self):
         # TODO: should return Vertex, not TopoDS_Vertex
-        return TopExp.FirstVertex(self.topo)
+        return TopExp.FirstVertex(self)
 
     def last_vertex(self):
-        return TopExp.LastVertex(self.topo)
+        return TopExp.LastVertex(self)
+
+    def common_vertex(self, edge):
+        vert = TopoDS_Vertex()
+        if TopExp.CommonVertex(self, edge, vert):
+            return vert
+        else:
+            return False
 
 #===============================================================================
 #    Curve.
@@ -395,7 +443,7 @@ class Edge(KbeObject):
         splits an edge to achieve a level of continuity
         :param continuity: GeomAbs_C*
         """
-        return fix_continuity(self.topo, continuity)
+        return fix_continuity(self, continuity)
 
     def continuity_to_another_curve(self, other):
         '''returns continuity between self and another curve
@@ -419,24 +467,39 @@ class Edge(KbeObject):
 #===============================================================================
 #    Curve.
 #===============================================================================
+    def is_trimmed(self):
+        '''checks if curve is trimmed
 
-    def is_planar(self, tolerance=None):
+        check if the underlying geom type is trimmed
+
+        '''
+        raise NotImplementedError
+
+
+    def is_line(self, tolerance=None):
         '''checks if the curve is planar within a tolerance
         '''
-        raise NotImplementedError
+        if self.nb_knots() == 2 and self.nb_poles() ==2:
+            return True
+        else:
+            return False
 
-    def on_surface(self, surface):
+    def is_seam(self, face):
+        """
+        :return: True if the edge has two pcurves on one surface
+        ( in the case of a sphere for example... )
+        """
+        from OCC.ShapeAnalysis import  ShapeAnalysis_Edge
+        return ShapeAnalysis_Edge(self, face)
+
+    def is_edge_on_face(self, face):
         '''checks whether curve lies on a surface or a face
         '''
-        raise NotImplementedError
+        from OCC.ShapeAnalysis import ShapeAnalysis_Edge
+        return ShapeAnalysis_Edge().HasPCurve(self, face)
 
     def on_edge(self, edge):
         '''checks if the curve lies on an edge or a border
-        '''
-        raise NotImplementedError
-
-    def is_trimmed(self):
-        '''checks if curve is trimmed
         '''
         raise NotImplementedError
 
@@ -452,9 +515,9 @@ class Edge(KbeObject):
 
         http://www.opencascade.org/org/forum/thread_1125/
         '''
-        show = super(self, Edge).show()
-        if not poles and not vertices and not knots:
-            show()
+        show = super(Edge, self).show()
+        #if not poles and not vertices and not knots:
+        #    show()
 
     def update(self, context):
         '''updates the graphic presentation when called

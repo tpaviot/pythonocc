@@ -1,20 +1,21 @@
 from OCC.Utils.Common import TOLERANCE, vertex2pnt
 from OCC.Utils.Construct import make_vertex
 from OCC.gp import gp_Pnt
+from OCC.TopoDS import TopoDS_Vertex
 from base import KbeObject
 
-class Vertex(KbeObject, gp_Pnt):
+class Vertex(KbeObject, TopoDS_Vertex):
     """
     wraps gp_Pnt
     """
     _n = 0
-    def __init__(self, x,y,z):
+    def __init__(self, vertex):
         """Constructor for KbeVertex"""
-        gp_Pnt.__init__(self, x,y,z)
         KbeObject.__init__(self,
                            #name='Vertex #{0} {1},{2},{3}'.format(self._n,  self.x, self.y, self.z)
                            name='Vertex #{0}'.format(self._n)
                                 )
+        TopoDS_Vertex.__init__(self,vertex)
         self._n += 1 # should be a property of KbeObject
 
     @staticmethod

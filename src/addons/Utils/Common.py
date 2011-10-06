@@ -538,3 +538,17 @@ def wire_to_curve(wire, tolerance=TOLERANCE, order=GeomAbs_C2, max_segment=200, 
     approx = Approx_Curve3d(hadap.GetHandle(), tolerance, order, max_segment, max_order)
     with assert_isdone(approx, 'not able to compute approximation from wire'):
         return approx.Curve().GetObject()
+
+from OCC.BRepAdaptor import *
+
+def adapt_edge_to_curve(edg):
+    '''
+    returns a curve adaptor from an edge
+    @param edg: TopoDS_Edge
+    '''
+    return BRepAdaptor_Curve(edg)
+
+def adapt_edge_to_hcurve(edg):
+    c = BRepAdaptor_HCurve()
+    c.ChangeCurve().Initialize(edg)
+    return c

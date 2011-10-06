@@ -16,7 +16,6 @@ __author__ = 'localadmin'
 from OCC.KBE.base import Display, KbeObject, GlobalProperties
 from OCC.KBE.edge import Edge
 from OCC.Utils.Construct import gp_Vec, gp_Pnt, gp_Dir, gp_Pnt2d
-from OCC.Utils.Topology import Topo
 from OCC.BRep import  BRep_Tool
 from OCC.TopoDS import  *
 
@@ -54,7 +53,7 @@ class DiffGeomSurface(object):
         '''
         if not self._curvature_initiated:
             from OCC.GeomLProp import GeomLProp_SLProps
-            self._curvature = GeomLProp_SLProps(self.instance.h_srf, u, v, 1, 1e-6)
+            self._curvature = GeomLProp_SLProps(self.instance.surface_handle, u, v, 1, 1e-6)
         else:
             self._curvature.SetParameters(u,v)
             self._curvature_initiated = True
@@ -88,31 +87,7 @@ class DiffGeomSurface(object):
             curv.TangentU(dU), curv.TangentV(dV)
             return dU, dV
         else:
-            # most likely the curvature is just out of bounds...
-            # move it a little close to the center of the surface...
-            tol = 1e-2
-
-            print 'trying to fix shit...'
-
-            domain = self.instance.domain()
-            if u in domain:
-                uorv = 'u'
-            elif v in domain:
-                uorv = 'v'
-            else:
-                raise ValueError('no curvature defined while sample does not lie on border...')
-
-            if uorv is not None:
-                indx = domain.index(u) if uorv == 'u' else domain.index(v)
-                if indx in (1,3): # v
-                    v = v + tol if indx == 1 else v - tol
-                else:
-                    u = u + tol if indx == 0 else u - tol
-                print 'hopefully fixed it?'
-                if not recurse:
-                    self.tangent(u,v, True)
-                else:
-                    return None
+            return None, None
 
     def radius(self, u, v ):
         '''returns the radius at u
@@ -223,7 +198,7 @@ class IntersectSurface(object):
             return uvw, bics.Point(), bics.Face(), bics.Transition()
 
 
-class Face(KbeObject):
+class Face(KbeObject, TopoDS_Face):
     """high level surface API
     object is a Face iff part of a Solid
     otherwise the same methods do apply, apart from the topology obviously
@@ -233,9 +208,7 @@ class Face(KbeObject):
         '''
         from OCC.TopoDS import  TopoDS_Face
         KbeObject.__init__(self, name='face')
-        self._topo_type = TopoDS_Face
-        self.topo = face
-
+        TopoDS_Face.__init__(self, face)
 
         # cooperative classes
         self.GlobalProperties = GlobalProperties(self)
@@ -269,29 +242,25 @@ class Face(KbeObject):
         self.nb_u_poles     = self.adaptor.NbUPoles
         self.nb_v_poles     = self.adaptor.NbVPoles
 
-    def show(self, *args, **kwargs):
-        # TODO: factor out once inheriting from KbeObject
-        Display()(self.topo, *args, **kwargs)
-
     def check(self):
         '''
         interesting for valdating the state of self
         '''
         from OCC.BRepCheck import BRepCheck_Face
-        bcf = BRepCheck_Face(self.topo)
+        bcf = BRepCheck_Face(self)
         return bcf
 
     def domain(self):
         '''returns the u,v domain of the curve'''
         from OCC.BRepTools import BRepTools
-        return BRepTools.UVBounds(self.topo)
+        return BRepTools.UVBounds(self)
 
     @property
     def surface(self):
         if self._srf is not None and not self.is_dirty:
             pass
         else:
-            self._h_srf = BRep_Tool_Surface(self.topo)
+            self._h_srf = BRep_Tool_Surface(self)
             self._srf = self._h_srf.GetObject()
         return self._srf
 
@@ -309,7 +278,7 @@ class Face(KbeObject):
             pass
         else:
             from OCC.BRepAdaptor import BRepAdaptor_Surface, BRepAdaptor_HSurface
-            self._adaptor = BRepAdaptor_Surface(self.topo)
+            self._adaptor = BRepAdaptor_Surface(self)
             self._adaptor_handle = BRepAdaptor_HSurface()
             self._adaptor_handle.Set(self._adaptor)
         return self._adaptor
@@ -343,7 +312,7 @@ class Face(KbeObject):
         if not self._geometry_lookup_init:
             self._geometry_lookup = GeometryTypeLookup()
             self._geometry_lookup_init = True
-        return self._geometry_lookup[self.topo]
+        return self._geometry_lookup[self]
 
     def is_closed(self):
         from OCC.ShapeAnalysis import ShapeAnalysis_Surface
@@ -361,11 +330,17 @@ class Face(KbeObject):
         else:
             return aaa.IsPlanar(), None
 
+    def is_overlapping(self, other):
+        from OCC.IntTools import IntTools_FaceFace
+        import ipdb; ipdb.set_trace()
+        overlap = IntTools_FaceFace()
+
+
     def on_trimmed(self, u, v):
         '''tests whether the surface at the u,v parameter has been trimmed
         '''
         if self._classify_uv is None:
-            self._classify_uv  = BRepTopAdaptor_FClass2d(self.topo, 1e-9)
+            self._classify_uv  = BRepTopAdaptor_FClass2d(self, 1e-9)
         uv  = gp_Pnt2d(u,v)
         if self._classify_uv.Perform(uv) == TopAbs_IN:
             return True
@@ -401,11 +376,11 @@ class Face(KbeObject):
         :return: bool, GeomAbs_Shape if it has continuity, otherwise
          False, None
         """
-        edge = edge if not hasattr(edge, 'topo') else edge.topo
-        face = face if not hasattr(face, 'topo') else face.topo
+        edge = edge if not hasattr(edge, 'topo') else edge
+        face = face if not hasattr(face, 'topo') else face
         bt = BRep_Tool()
-        if bt.HasContinuity(edge, self.topo, face):
-            continuity = bt.Continuity(edge, self.topo, face)
+        if bt.HasContinuity(edge, self, face):
+            continuity = bt.Continuity(edge, self, face)
             return True, continuity
         else:
             return False, None
@@ -465,14 +440,14 @@ class Face(KbeObject):
         pass
 
     def Edges(self):
-        return [Edge(i) for i in Topo(self.topo).edges()]
+        from OCC.Utils.Topology import Topo
+        return [Edge(i) for i in Topo(self).edges()]
 
 if __name__ == "__main__":
 
     from OCC.BRepPrimAPI import BRepPrimAPI_MakeSphere
     sph = BRepPrimAPI_MakeSphere(1,1).Face()
     fc = Face(sph)
-    import ipdb; ipdb.set_trace()
 
 
 

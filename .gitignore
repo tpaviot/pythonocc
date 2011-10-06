@@ -1,2 +1,21 @@
+<<<<<<< HEAD
 .svn
 .idea
+=======
+#ignore compiled python files
+*.pyc
+*.pyo
+*.pyw
+*.svn  # duhhh
+*.idea # pycharm IDE
+
+#ignore hxx and cpp files created by SWIG
+src/wrapper/SWIG_files/linux_darwin/*.hxx
+src/wrapper/SWIG_files/linux_darwin/*.cpp
+src/wrapper/SWIG_files/win32/*.hxx
+src/wrapper/SWIG_files/win32/*.cpp
+
+# ignore objects and archives, anywhere in the tree.
+*.[oa]
+src/build/*
+>>>>>>> master

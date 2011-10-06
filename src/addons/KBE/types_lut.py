@@ -9,7 +9,7 @@ from OCC import TopAbs
 class GeometryLookup(object):
     def __init__(self):
         self.lookup, self.reverse_lookup = {}, {}
-        # construct a geometry types / enum dict
+        # Construct a geometry types / enum dict
         for i in dir(GeomAbs):
             if i.startswith('GeomAbs_'):
                 value = GeomAbs.__dict__[i]

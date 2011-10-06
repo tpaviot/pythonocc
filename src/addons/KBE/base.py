@@ -37,20 +37,32 @@ from OCC.Adaptor3d import *
 from OCC.BRepAdaptor import *
 
 from OCC.GCPnts import *
+from OCC.KBE.types_lut import GeometryLookup, ShapeToTopology
+from OCC.Utils.Construct import *
+
+import functools
 
 #===============================================================================
 # HELPER CLASSES
 #===============================================================================
-from types_lut import GeometryLookup, ShapeToTopology
-from OCC.Utils.Construct import *
+
 
 #===============================================================================
 # DISPLAY
 #===============================================================================
 global display
 
-from jelle_utils.patterns import singleton
+class singleton(object):
+    def __init__(self, cls):
+        self.cls = cls
+        self.instance_container = []
 
+    def __call__(self, *args, **kwargs):
+        if not len(self.instance_container):
+            cls = functools.partial(self.cls, *args, **kwargs)
+            self.instance_container.append(cls())
+        return self.instance_container[0]
+        
 @singleton
 class Display(object):
     def __init__(self):
@@ -59,9 +71,9 @@ class Display(object):
     def __call__(self, *args, **kwargs):
         return self.display.DisplayShape(*args, **kwargs)
 
-#===============================================================================
-# base class ( bit inspired by pycado )
-#===============================================================================
+#============
+# base class 
+#============
 
 class KbeObject(object):
     """base class for all KBE objects"""
@@ -83,34 +95,13 @@ class KbeObject(object):
     def is_dirty(self, _bool):
         self._dirty = bool(_bool)
 
-    @property
-    def topo(self):
-        '''return the TopoDS_* object
-
-        updates when dirty
-
-        the setter is implemented in the concrete classes
-
-        '''
-        if self.is_dirty:
-            self.build()
-        return self._topods
-
-    @topo.setter
-    def topo(self, topods):
-        assert not type(topods) == None, 'you forgot to set a TopoDS_* type in the __init__ of your concrete class'
-        assert type(topods) == self._topo_type, 'expected a shell, got {0}'.format(topods)
-        self._topods = topods
-
     def copy(self):
         """
-
-        :return:
         """
         from OCC.BRepBuilderAPI import BRepBuilderAPI_Copy
-        cp = BRepBuilderAPI_Copy(self.topo)
-        cp.Perform(self.topo)
-        return ShapeToTopology()(cp.Shape())
+        cp = BRepBuilderAPI_Copy(self)
+        cp.Perform(self)
+        return self.__class__(ShapeToTopology()(cp.Shape()))
 
     def distance(self, other):
         '''
@@ -121,9 +112,9 @@ class KbeObject(object):
              minimum distance points on shp2
         '''
         if hasattr(other, 'topo'):
-            return minimum_distance(self.topo, other.topo)
+            return minimum_distance(self, other)
         else:
-            return minimum_distance(self.topo, other)
+            return minimum_distance(self, other)
 
     def show( self, *args, **kwargs):
         """
@@ -131,14 +122,17 @@ class KbeObject(object):
 
         :param update: redraw the scene or not
         """
-        Display()(self.topo, *args, **kwargs)
+        Display()(self, *args, **kwargs)
 
     def build(self):
         if self.name.startswith('Vertex'):
-            self.topo = make_vertex(self)
+            self = make_vertex(self)
 
     def __eq__(self, other):
-        return self.topo.IsEqual(other)
+        return self.IsEqual(other)
+
+    def __ne__(self, other):
+        return not(self.__eq__(other))
 
 class GlobalProperties(object):
     '''
@@ -150,15 +144,12 @@ class GlobalProperties(object):
         self.instance = instance
         self.system = GProp_GProps()
         _topo_type = self.instance.type
-
         if _topo_type == 'face' or _topo_type == 'shell':
-            BRepGProp().SurfaceProperties(self.instance.topo, self.system)
-
+            BRepGProp().SurfaceProperties(self.instance, self.system)
         elif _topo_type == 'edge':
-            BRepGProp().LinearProperties(self.instance.topo, self.system)
-
+            BRepGProp().LinearProperties(self.instance, self.system)
         elif _topo_type == 'solid':
-            BRepGProp().VolumeProperties(self.instance.topo, self.system)
+            BRepGProp().VolumeProperties(self.instance, self.system)
 
     def centre(self):
         """
@@ -178,4 +169,4 @@ class GlobalProperties(object):
         '''
         returns the bounding box of the face
         '''
-        return get_boundingbox(self.instance.topo)
+        return get_boundingbox(self.instance)

@@ -339,6 +339,8 @@ class ModularBuilder(object):
             #if method_name not in ['TypeName','Static','Template','DownCast']: # lowercase typename will raise issues
                 new_method_name = method_name.lower()
                 renamed_file_fp.write("%%rename(%s) %s::%s;\n"%(new_method_name,class_name,method_name))
+            else:
+                renamed_file_fp.write("%%rename(%s) %s::%s;\n"%(method_name,class_name,method_name))
         renamed_file_fp.close()
         
     def write_modules_to_import_files(self):
@@ -874,7 +876,7 @@ class ModularBuilder(object):
             self.fp.write("extend %s {\n"%class_name)
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\tStandard_Integer __hash__() {\n")
-            self.fp.write("\treturn $self->HashCode(__PYTHONOCC_MAXINT__);\n\t}\n};")
+            self.fp.write("\treturn $self->HashCode(2147483647);\n\t}\n};")
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
         #
