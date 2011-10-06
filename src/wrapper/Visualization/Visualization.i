@@ -22,7 +22,7 @@
 #include <Visualization.h>
 %}
 
-%include ../SWIG/ExceptionCatcher.i
+%include ../SWIG_files/ExceptionCatcher.i
 
 class Display2d {
  public:

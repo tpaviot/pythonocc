@@ -339,6 +339,8 @@ class ModularBuilder(object):
             #if method_name not in ['TypeName','Static','Template','DownCast']: # lowercase typename will raise issues
                 new_method_name = method_name.lower()
                 renamed_file_fp.write("%%rename(%s) %s::%s;\n"%(new_method_name,class_name,method_name))
+            else:
+                renamed_file_fp.write("%%rename(%s) %s::%s;\n"%(method_name,class_name,method_name))
         renamed_file_fp.close()
         
     def write_modules_to_import_files(self):
