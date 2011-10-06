@@ -195,7 +195,7 @@ class QuickTriangleMesh(MeshBase):
         else:
             self._faces = faces
         self._normals = normals
-        print 'Finisehd mesh computation in %fs'%(time.time()-init_time)
+        print 'Finished mesh computation in %fs'%(time.time()-init_time)
         return True
 
 class MEFISTOTriangleMesh(MeshBase):
@@ -417,9 +417,28 @@ def test_quicktrianglemesh():
     print a_mesh.get_normals()
     print "################"
     print a_mesh.get_faces()
-    
-    
+
+
+def mesh_vertices_faces_from_shape(shape, deflection=0.1):
+    '''
+    returns the vertices and faces of the mesh that represents the BREP
+    @param shape: TopoDS_Shape
+    '''
+    # These arguments are *SO* random...
+    fd = BRepMesh_FastDiscret(0.1, 0.1, bbox, False, False, False, False)
+    fd.Add(shape)
+    n_domain, n_vert, n_edge, n_face = fd.NbDomains(), fd.NbVertices(), fd.NbEdges(), fd.NbTriangles()
+    print 'number of mesh vertices, edges, triangles representing the BREP:', n_vert, n_edge, n_face
+    tris = [fd.Triangle(i) for i in range(1,fd.NbTriangles())]
+    verts = [fd.Vertex(i) for i in range(1,fd.NbVertices())]
+    return verts, tris
+
+
 def test():
+    from OCC.BRepPrimAPI import *
+    sphere = BRepPrimAPI_MakeSphere(1).Shape()
+    verts, faces = mesh_vertices_faces_from_shape(sphere)
+
     import time
     from OCC.Display.SimpleGui import *
     display, start_display, add_menu, add_function_to_menu = init_display()

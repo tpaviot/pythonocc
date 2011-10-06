@@ -52,6 +52,7 @@ from OCC.Utils.Context import assert_isdone
 from OCC.KBE.types_lut import GeometryLookup, ShapeToTopology
 
 from functools import wraps
+import warnings
 
 EPSILON = TOLERANCE = 1e-6
 ST = ShapeToTopology()
@@ -356,8 +357,33 @@ def make_plane(center=gp_Pnt(0,0,0),
     return face
 
 
+def make_oriented_box(v_corner, v_x, v_y, v_z):
+    """
+    produces an oriented box
+    oriented meaning here that the x,y,z axis do not have to be cartesian aligned
+
+    :param v_corner: the lower corner
+    :param v_x: gp_Vec that describes the X-axis
+    :param v_y: gp_Vec that describes the Y-axis
+    :param v_z: gp_Vec that describes the Z-axis
+    :return: TopoDS_Solid
+    """
+    verts = map(lambda x: x.as_pnt(), [v_corner, v_corner+v_x, v_corner+v_x+v_y, v_corner+v_y])
+    p = make_polygon(verts, closed=True)
+    li = make_line(v_corner.as_pnt(), (v_corner+v_z).as_pnt())
+    ooo = BRepOffsetAPI_MakePipe(p,li)
+    ooo.Build()
+    shp = ooo.Shape()
+
+    bottom = make_face(p)
+    top = translate_topods_from_vector(bottom, v_z, True)
+
+    oriented_bbox = make_solid(sew_shapes([bottom, shp, top]))
+    return oriented_bbox
+
+
 @wraps(BRepPrimAPI_MakeBox)
-def make_cube(*args):
+def make_box(*args):
     box = BRepPrimAPI_MakeBox(*args)
     box.Build()
     with assert_isdone(box, 'failed to built a cube...'):
@@ -496,8 +522,7 @@ def sew_shapes( shapes, tolerance=0.001 ):
     print 'n deleted faces:',sew.NbDeletedFaces()
     print 'n free edges',sew.NbFreeEdges()
     print 'n multiple edges:',sew.NbMultipleEdges()
-    
-    result = sew.SewedShape()
+    result = ShapeToTopology()(sew.SewedShape())
 #     ???
 #    sew.Delete()
     return result
@@ -550,6 +575,24 @@ def boolean_fuse_old(shapeToCutFrom, joiningShape):
     shape = join.Shape()
     join.Delete()
     return shape
+
+def splitter(shape, profile):
+    '''split a *shape* using a *profile*
+    :returns the splitted shape
+    '''
+    try:
+        from OCC.GEOMAlgo import GEOMAlgo_Splitter
+    except ImportError:
+        msg = "GEOM wrapper is necesary to access advanced constructs"
+        warnings.warn(msg)
+        return None
+    splitter = GEOMAlgo_Splitter()
+    splitter.AddShape(shape)
+    splitter.AddTool(profile)
+    splitter.Perform()
+    splitter_shape = splitter.Shape()
+    return splitter_shape
+
 
 def trim_wire(wire, shapeLimit1, shapeLimit2, periodic=False):
     '''return the trimmed wire that lies between `shapeLimit1` and `shapeLimit2`
