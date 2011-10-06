@@ -1,17 +1,40 @@
-import warnings
 from OCC.BRep import BRep_Tool
 from OCC.BRepAdaptor import BRepAdaptor_Curve, BRepAdaptor_HCurve
-from OCC.GCPnts import GCPnts_AbscissaPoint, GCPnts_UniformAbscissa
-from OCC.Geom import Geom_OffsetCurve, Geom_Curve, Geom_TrimmedCurve
+from OCC.GCPnts import  GCPnts_UniformAbscissa
+from OCC.Geom import Geom_OffsetCurve, Geom_TrimmedCurve
 from OCC.KBE.base import KbeObject
 from OCC.TopExp import TopExp
-from OCC.TopoDS import TopoDS_Wire, TopoDS_Edge, TopoDS_Face, TopoDS_Vertex
+from OCC.TopoDS import  TopoDS_Edge, TopoDS_Vertex
 from OCC.gp import *
 # high-level
-from OCC.Utils.Common import vertex2pnt, minimum_distance, to_adaptor_3d
-from OCC.Utils.Construct import make_edge, trim_wire, fix_continuity
+from OCC.Utils.Common import vertex2pnt, minimum_distance
+from OCC.Utils.Construct import make_edge, fix_continuity
 from OCC.Utils.Context import assert_isdone
 from OCC.KBE.vertex import Vertex
+from OCC.GeomLProp import GeomLProp_CurveTool
+from OCC.BRepLProp import BRepLProp_CLProps
+from OCC.GeomLib import GeomLib
+from OCC.GCPnts import GCPnts_AbscissaPoint
+from OCC.GeomAPI import GeomAPI_ProjectPointOnCurve
+from OCC.ShapeAnalysis import ShapeAnalysis_Edge
+
+
+## {{{ http://code.activestate.com/recipes/576563/ (r1)
+def cached_property(f):
+    """returns a cached property that is calculated by function f"""
+    def get(self):
+        try:
+            return self._property_cache[f]
+        except AttributeError:
+            self._property_cache = {}
+            x = self._property_cache[f] = f(self)
+            return x
+        except KeyError:
+            x = self._property_cache[f] = f(self)
+            return x
+
+    return property(get)
+## end of http://code.activestate.com/recipes/576563/ }}}
 
 
 class IntersectCurve(object):
@@ -28,9 +51,11 @@ class IntersectCurve(object):
 class DiffGeomCurve(object):
     def __init__(self, instance):
         self.instance = instance
-        from OCC.BRepLProp import BRepLProp_CLProps
         # initialize with random parameter: 0
-        self._curvature = BRepLProp_CLProps(self.instance.adaptor, 0, 2, self.instance.tolerance)
+
+    @property
+    def _curvature(self):
+        return BRepLProp_CLProps(self.instance.adaptor, 0, 2, self.instance.tolerance)
 
     def curvature(self, u, n, resolution=1e-7):
         self._curvature.SetParameter(u)
@@ -87,7 +112,6 @@ class DiffGeomCurve(object):
             raise AssertionError, 'n of derivative is one of [1,2,3]'
 
     def points_from_tangential_deflection(self):
-        from OCC.GCPnts import GCPnts_TangentialDeflection
         pass
 
 
@@ -98,7 +122,7 @@ class DiffGeomCurve(object):
 
 class ConstructFromCurve():
     def __init__(self, instance):
-        self.Instance = instance
+        self.instance = instance
 
     def make_face(self):
         '''returns a brep face iff self.closed()
@@ -111,15 +135,13 @@ class ConstructFromCurve():
         @param offset: the distance between self.crv and the curve to offset
         @param vec:    offset direction
         '''
-
         return Geom_OffsetCurve(self.instance.h_crv, offset, vec)
 
     def approximate_on_surface(self):
-            '''
-            approximation of a curve on surface
-            '''
-            from OCC.Approx import Approx_CurveOnSurface
-            pass
+        '''
+        approximation of a curve on surface
+        '''
+        pass
 
 class Edge(KbeObject, TopoDS_Edge):
     '''
@@ -150,16 +172,30 @@ class Edge(KbeObject, TopoDS_Edge):
 
         # GeomLProp object
         self._curvature = None
-        self._local_properties()
+        #self._local_properties()
 
         # some aliasing of useful methods
-        self.is_closed      = self.adaptor.IsClosed
-        self.is_periodic    = self.adaptor.IsPeriodic
-        self.is_rational    = self.adaptor.IsRational
-        self.continuity     = self.adaptor.Continuity
-        self.degree         = self.adaptor.Degree
-        self.nb_knots       = self.adaptor.NbKnots
-        self.nb_poles       = self.adaptor.NbPoles
+
+    def is_closed(self):
+        return self.adaptor.IsClosed()
+
+    def is_periodic(self):
+        return self.adaptor.IsPeriodic()
+
+    def is_rational(self):
+        return self.adaptor.IsRational
+
+    def continuity(self):
+        return self.adaptor.Continuity
+
+    def degree(self):
+        return self.adaptor.Degree()
+
+    def nb_knots(self):
+        return self.adaptor.NbKnots()
+
+    def nb_poles(self):
+        return self.adaptor.NbPoles()
 
 
     @property
@@ -208,7 +244,6 @@ class Edge(KbeObject, TopoDS_Edge):
         return self._adaptor.Curve().Curve()
 
     def _local_properties(self):
-        from OCC.GeomLProp import GeomLProp_CurveTool
         self._lprops_curve_tool = GeomLProp_CurveTool()
         self._local_properties_init = True
 
@@ -269,7 +304,6 @@ class Edge(KbeObject, TopoDS_Edge):
         '''
         if self.degree > 3:
             raise ValueError, 'to extend you self.curve should be <= 3, is %s ' % (self.degree)
-        from OCC.GeomLib import GeomLib
         return GeomLib().ExtendCurveToPoint(self.curve, pnt, degree, beginning)
 
 #===============================================================================
@@ -285,7 +319,6 @@ class Edge(KbeObject, TopoDS_Edge):
         if isinstance(pnt_or_vertex, TopoDS_Vertex):
             pnt = vertex2pnt(pnt_or_vertex)
 
-        from OCC.GeomAPI import GeomAPI_ProjectPointOnCurve
         poc = GeomAPI_ProjectPointOnCurve(pnt_or_vertex, self.curve_handle)
         return poc.LowerDistanceParameter(), poc.NearestPoint()
 
@@ -294,7 +327,6 @@ class Edge(KbeObject, TopoDS_Edge):
         on the curve with a distance length from u
         raises OutOfBoundary if no such parameter exists
         '''
-        from OCC.GCPnts import GCPnts_AbscissaPoint
         ccc = GCPnts_AbscissaPoint(self.adaptor, distance, close_parameter, estimate_parameter, 1e-5)
         with assert_isdone(ccc, 'couldnt compute distance on curve'):
             return ccc.Parameter()
@@ -489,13 +521,11 @@ class Edge(KbeObject, TopoDS_Edge):
         :return: True if the edge has two pcurves on one surface
         ( in the case of a sphere for example... )
         """
-        from OCC.ShapeAnalysis import  ShapeAnalysis_Edge
         return ShapeAnalysis_Edge(self, face)
 
     def is_edge_on_face(self, face):
         '''checks whether curve lies on a surface or a face
         '''
-        from OCC.ShapeAnalysis import ShapeAnalysis_Edge
         return ShapeAnalysis_Edge().HasPCurve(self, face)
 
     def on_edge(self, edge):

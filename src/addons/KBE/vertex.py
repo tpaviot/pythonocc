@@ -1,5 +1,5 @@
-from OCC.Utils.Common import TOLERANCE, vertex2pnt
 from OCC.Utils.Construct import make_vertex
+from OCC.Utils.Common import TOLERANCE, vertex2pnt
 from OCC.gp import gp_Pnt
 from OCC.TopoDS import TopoDS_Vertex
 from base import KbeObject
