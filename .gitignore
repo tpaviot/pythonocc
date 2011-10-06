@@ -2,7 +2,6 @@
 *.pyc
 *.pyo
 *.pyw
-*.svn  # duhhh
 *.idea # pycharm IDE
 
 #ignore hxx and cpp files created by SWIG
