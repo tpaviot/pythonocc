@@ -18,6 +18,16 @@ from OCC.KBE.edge import Edge
 from OCC.Utils.Construct import gp_Vec, gp_Pnt, gp_Dir, gp_Pnt2d
 from OCC.BRep import  BRep_Tool
 from OCC.TopoDS import  *
+from OCC.GeomLProp import GeomLProp_SLProps
+from OCC.BRepCheck import BRepCheck_Face
+from OCC.BRepTools import BRepTools
+from OCC.BRepAdaptor import BRepAdaptor_Surface, BRepAdaptor_HSurface
+from OCC.ShapeAnalysis import ShapeAnalysis_Surface
+from OCC.IntTools import IntTools_FaceFace
+from OCC.ShapeAnalysis import ShapeAnalysis_Surface
+from OCC.GeomProjLib import GeomProjLib
+from OCC.Utils.Topology import Topo
+
 
 '''
 
@@ -52,7 +62,7 @@ class DiffGeomSurface(object):
             curvatureType
         '''
         if not self._curvature_initiated:
-            from OCC.GeomLProp import GeomLProp_SLProps
+
             self._curvature = GeomLProp_SLProps(self.instance.surface_handle, u, v, 1, 1e-6)
         else:
             self._curvature.SetParameters(u,v)
@@ -206,7 +216,6 @@ class Face(KbeObject, TopoDS_Face):
     def __init__(self, face):
         '''
         '''
-        from OCC.TopoDS import  TopoDS_Face
         KbeObject.__init__(self, name='face')
         TopoDS_Face.__init__(self, face)
 
@@ -225,34 +234,51 @@ class Face(KbeObject, TopoDS_Face):
         self._classify_uv     = None # cache the u,v classifier, no need to rebuild for every sample
 
         # aliasing of useful methods
-        self.is_u_periodic = self.adaptor.IsUPeriodic
-        self.is_v_periodic = self.adaptor.IsVPeriodic
-        self.is_u_closed   = self.adaptor.IsUClosed
-        self.is_v_closed   = self.adaptor.IsVClosed
-        self.is_u_rational = self.adaptor.IsURational
-        self.is_u_rational = self.adaptor.IsVRational
-        self.u_degree       = self.adaptor.UDegree
-        self.v_degree       = self.adaptor.VDegree
-        self.u_continuity   = self.adaptor.UContinuity
-        self.v_continuity   = self.adaptor.VContinuity
+        def is_u_periodic(self):
+            return self.adaptor.IsUPeriodic()
 
-        # meh, RuntimeError...
-        self.nb_u_knots     = self.adaptor.NbUKnots
-        self.nb_v_knots     = self.adaptor.NbVKnots
-        self.nb_u_poles     = self.adaptor.NbUPoles
-        self.nb_v_poles     = self.adaptor.NbVPoles
+        def is_v_periodic(self):
+            return self.adaptor.IsVPeriodic()
+
+        def is_u_closed(self):
+            return self.adaptor.IsUClosed()
+
+        def is_v_closed(self):
+            return self.adaptor.IsVClosed()
+
+        def is_u_rational(self):
+            return self.adaptor.IsURational()
+
+        def is_u_rational(self):
+            return self.adaptor.IsVRational()
+
+        def u_degree(self):
+            return self.adaptor.UDegree()
+
+        def v_degree(self):
+            return self.adaptor.VDegree()
+
+        def u_continuity(self):
+            return self.adaptor.UContinuity()
+
+        def v_continuity  (self):
+            return self.adaptor.VContinuity()
+
+        # mehhh RuntimeError...
+        #def nb_u_knots     = self.adaptor.NbUKnots
+        #def nb_v_knots     = self.adaptor.NbVKnots
+        #def nb_u_poles     = self.adaptor.NbUPoles
+        #def nb_v_poles     = self.adaptor.NbVPoles
 
     def check(self):
         '''
         interesting for valdating the state of self
         '''
-        from OCC.BRepCheck import BRepCheck_Face
         bcf = BRepCheck_Face(self)
         return bcf
 
     def domain(self):
         '''returns the u,v domain of the curve'''
-        from OCC.BRepTools import BRepTools
         return BRepTools.UVBounds(self)
 
     @property
@@ -277,7 +303,6 @@ class Face(KbeObject, TopoDS_Face):
         if self._adaptor is not None and not self.is_dirty:
             pass
         else:
-            from OCC.BRepAdaptor import BRepAdaptor_Surface, BRepAdaptor_HSurface
             self._adaptor = BRepAdaptor_Surface(self)
             self._adaptor_handle = BRepAdaptor_HSurface()
             self._adaptor_handle.Set(self._adaptor)
@@ -315,7 +340,6 @@ class Face(KbeObject, TopoDS_Face):
         return self._geometry_lookup[self]
 
     def is_closed(self):
-        from OCC.ShapeAnalysis import ShapeAnalysis_Surface
         sa = ShapeAnalysis_Surface(self.surface_handle)
         sa.GetBoxUF()
         return sa.IsUClosed(), sa.IsVClosed()
@@ -331,7 +355,6 @@ class Face(KbeObject, TopoDS_Face):
             return aaa.IsPlanar(), None
 
     def is_overlapping(self, other):
-        from OCC.IntTools import IntTools_FaceFace
         import ipdb; ipdb.set_trace()
         overlap = IntTools_FaceFace()
 
@@ -357,7 +380,6 @@ class Face(KbeObject, TopoDS_Face):
         returns the uv value of a point on a surface
         @param pt:
         '''
-        from OCC.ShapeAnalysis import ShapeAnalysis_Surface
         sas = ShapeAnalysis_Surface(self.surface_handle)
         uv  = sas.ValueOfUV(pt, self.tolerance)
         return uv.Coord()
@@ -425,7 +447,6 @@ class Face(KbeObject, TopoDS_Face):
                     lbound, ubound  = BRep_Tool().Parameter(first, other), BRep_Tool().Parameter(first, other)
                     other = BRep_Tool.Curve(other, lbound, ubound).GetObject()
 
-                from OCC.GeomProjLib import GeomProjLib
                 return GeomProjLib().Project(other, self.surface_handle)
 
     def project_edge(self, edg):
@@ -440,7 +461,6 @@ class Face(KbeObject, TopoDS_Face):
         pass
 
     def Edges(self):
-        from OCC.Utils.Topology import Topo
         return [Edge(i) for i in Topo(self).edges()]
 
 if __name__ == "__main__":
