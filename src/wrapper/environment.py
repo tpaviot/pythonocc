@@ -154,8 +154,8 @@ elif sys.platform=='linux2':
     else:
         OCC_INC = '/usr/include/opencascade'
         OCC_LIB = '/usr/lib'
-    SALOME_GEOM_LIB = '/usr/local/lib'
-    SALOME_SMESH_LIB = '/usr/local/lib'
+    SALOME_GEOM_LIB = '/usr/lib'
+    SALOME_SMESH_LIB = '/usr/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
@@ -169,8 +169,8 @@ elif sys.platform=='linux2':
         DEFINE_MACROS.append(('_OCC64',None))
         SWIG_OPTS.append('-D_OCC64')
         ECA.append('-m64')
-    else:
-        ECA.append('-march=%s'%platform.machine())
+    #else:
+        #ECA.append('-march=%s'%platform.machine())
     
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
