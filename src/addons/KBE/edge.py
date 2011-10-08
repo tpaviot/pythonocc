@@ -19,24 +19,6 @@ from OCC.GeomAPI import GeomAPI_ProjectPointOnCurve
 from OCC.ShapeAnalysis import ShapeAnalysis_Edge
 
 
-## {{{ http://code.activestate.com/recipes/576563/ (r1)
-def cached_property(f):
-    """returns a cached property that is calculated by function f"""
-    def get(self):
-        try:
-            return self._property_cache[f]
-        except AttributeError:
-            self._property_cache = {}
-            x = self._property_cache[f] = f(self)
-            return x
-        except KeyError:
-            x = self._property_cache[f] = f(self)
-            return x
-
-    return property(get)
-## end of http://code.activestate.com/recipes/576563/ }}}
-
-
 class IntersectCurve(object):
     def __init__(self, Instance):
         self.Instance = Instance

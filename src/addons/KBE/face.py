@@ -152,39 +152,6 @@ class DiffGeomSurface(object):
 
 
 #===============================================================================
-#    Surface.dress_up
-#===============================================================================
-
-class DressUpSurface(object):
-    def __init__(self, instance):
-        self.instance = instance
-
-    def fillet_vertex_distance(self, vertex, distance):
-        '''fillets 3 edges at a corner
-        '''
-        pass
-
-    def fillet_edge_radius(self, edge, radius):
-        '''fillets an edge
-        '''
-        pass
-
-    def chamfer_vertex_distance(self, vertex, distance):
-        '''chamfer 3 edges at a corner
-        '''
-        pass
-
-    def chamfer_edge_angle(self, edge, angle):
-        '''chamfers the faces on edge at angle
-        '''
-        pass
-
-    def chamfer_edge_distance_distance(self, edge, distance_this_face, distance_other_face):
-        '''chamfers the face incident on edge at a given distance
-        '''
-        pass
-
-#===============================================================================
 #    Surface.intersect
 #===============================================================================
 
@@ -220,7 +187,6 @@ class Face(KbeObject, TopoDS_Face):
         TopoDS_Face.__init__(self, face)
 
         # cooperative classes
-        self.GlobalProperties = GlobalProperties(self)
         self.DiffGeom = DiffGeomSurface(self)
 
         # STATE; whether cooperative classes are yet initialized
@@ -269,13 +235,6 @@ class Face(KbeObject, TopoDS_Face):
         #def nb_v_knots     = self.adaptor.NbVKnots
         #def nb_u_poles     = self.adaptor.NbUPoles
         #def nb_v_poles     = self.adaptor.NbVPoles
-
-    def check(self):
-        '''
-        interesting for valdating the state of self
-        '''
-        bcf = BRepCheck_Face(self)
-        return bcf
 
     def domain(self):
         '''returns the u,v domain of the curve'''

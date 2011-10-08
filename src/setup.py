@@ -516,18 +516,18 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
           version=environment.VERSION,
           long_description = """PythonOCC is a Python wrapper module for the
     OpenCascade library. It contains python functions and classes
-    that will allow you to fully utilitize the OpenCascade library.
-    This version is built against OpenCascade 6.3.0""",
+    that will allow you to fully utilitize the OCE library.
+    This version is built against OCE 0.70""",
           package_dir = {'OCC.Display':os.path.join(os.getcwd(),'addons','Display'),
                          'OCC.Utils':os.path.join(os.getcwd(),'addons','Utils'),
-                         'OCC.Utils.DataExchange':os.path.join(os.getcwd(),'addons','Utils','DataExchange'),
+                         'OCC.DataExchange':os.path.join(os.getcwd(),'addons','DataExchange'),
                          'OCC.MSH':os.path.join(os.getcwd(),'addons','MSH'),
                          'OCC.PAF':os.path.join(os.getcwd(),'addons','PAF'),
                          'OCC.KBE':os.path.join(os.getcwd(),'addons','KBE'),
                          'OCC.DYN':os.path.join(os.getcwd(),'addons','DYN')},
           packages = ['OCC.Display',
                       'OCC.Utils',
-                      'OCC.Utils.DataExchange',
+                      'OCC.DataExchange',
                       'OCC.MSH',\
                       'OCC.PAF',
                       'OCC.KBE',

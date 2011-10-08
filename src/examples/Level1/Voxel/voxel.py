@@ -15,14 +15,18 @@ xN,yN,zN = 0.2,0.2,0.2
 print 'xmin, ymin, zmin,xL,yL,zL,xN,yN,zN', xmin, ymin, zmin,xL,yL,zL,xN,yN,zN
 
 
+voxels = Voxel_ROctBoolDS()
+#voxels = Voxel_BoolDS()
+#voxels = Voxel_ColorDS()
 
-voxels = Voxel_BoolDS()
-voxels = Voxel_ColorDS()
 #voxels = Voxel_BoolDS(0,0,0,
 #                       1,1,1,
 #                        xN,yN,zN )
 
-fcp = Voxel_FastConverter(sph, voxels, 0.1, 10,10,10, 1)
+fcp = Voxel_FastConverter(sph, voxels) #, 1, 10,10,10, 1)
+fcp.Convert()
+
+import ipdb; ipdb.set_trace()
 
 voxprs = Voxel_Prs()
 voxprs.SetBoolVoxels(voxels)
