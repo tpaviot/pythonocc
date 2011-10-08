@@ -101,7 +101,7 @@ bits = get_32_or_64_bits_platform()
 
 try:
     OCC_ROOT = os.environ['CASROOT']
-    OCC_INC = os.path.join(OCC_ROOT,'inc')
+    OCC_INC = os.path.join(OCC_ROOT,'include')
     if sys.platform=='win32':
         OCC_LIB = os.path.join(OCC_ROOT,'win32','lib')
     else:
@@ -112,16 +112,11 @@ except:
     OCC_INC = '/your_path'
     OCC_LIB = '/your_lib'
     
-#
-# Define HASHCODE_MAXINT. Even on 64 bits systems, HashCode method require a 32 bits Standard_Integer
-#
-HASHCODE_MAXINT = pow(2,31)-1
-
 # Define path for SWIG outdir
 SWIG_OUT_DIR = os.path.join(os.getcwd(),'build','swig_output_%s_py%s%s'%(sys.platform,sys.version_info[0],sys.version_info[1]))
         
 if sys.platform=='win32':
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','win32')
     # Try to find OCC paths from environment analysis
 
     if sys.version_info[0]==2 and sys.version_info[1]==5:
@@ -139,8 +134,7 @@ if sys.platform=='win32':
     GCC_XML_PATH = os.path.join(os.getcwd(),'..','..','..','pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
-                     ('_WINDOWS',None),('CSFDB',None),\
-                     ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]
+                     ('_WINDOWS',None),('CSFDB',None)]
     if sys.version_info[:3] >= (2,6,0):
         DEFINE_MACROS += [('HAVE_ACOSH',None),('HAVE_ASINH',None),('HAVE_ATANH',None)]
     ECA = ['/EHsc','/GL','/link','/w4251']
@@ -151,7 +145,7 @@ if sys.platform=='win32':
     
 elif sys.platform=='linux2':
 
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','linux_darwin')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
     if OCC_ROOT!=None:
@@ -166,8 +160,7 @@ elif sys.platform=='linux2':
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
-                     ('LIN',None),('LININTEL',None),('_GNU_SOURCE','1'),\
-                     ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]      
+                     ('LIN',None),('LININTEL',None),('_GNU_SOURCE','1')]      
     SWIG_OPTS = ['-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,401,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%SWIG_OUT_DIR]
@@ -184,7 +177,7 @@ elif sys.platform=='linux2':
     EXTRA_LIBS = ['m','stc++',lib_python]
     
 elif sys.platform=='darwin':
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','linux_darwin')
     SWIG_OPTS = ['-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                   '-w302,401,314,509,512','-DOCC_CONVERT_SIGNALS',\
                   '-outdir','%s'%SWIG_OUT_DIR]
@@ -193,11 +186,11 @@ elif sys.platform=='darwin':
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
     if OCC_ROOT!=None:
-        OCC_INC = os.path.join(OCC_ROOT,'inc')
+        OCC_INC = os.path.join(OCC_ROOT,'include','oce')
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
     else:
-        OCC_INC = '/usr/include/opencascade'
-        OCC_LIB = '/usr/lib'
+        OCC_INC = '/Library/OCE/0.6.0dev/include/oce'
+        OCC_LIB = '/Library/OCE/0.6.0dev/lib'
       
     SALOME_GEOM_LIB = '/usr/local/lib/'
     SALOME_SMESH_LIB = '/usr/local/lib/'        
@@ -207,8 +200,7 @@ elif sys.platform=='darwin':
         print 'gccxml was not found'
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
-                     ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
-                     ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]
+                     ('CSFDB',None),('OCC_CONVERT_SIGNALS',None)]
     ECA = ['-I/usr/X11R6/include']
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
