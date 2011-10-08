@@ -15,7 +15,7 @@ __author__ = 'localadmin'
 #===============================================================================
 from OCC.KBE.base import Display, KbeObject, GlobalProperties
 from OCC.KBE.edge import Edge
-from OCC.Utils.Construct import gp_Vec, gp_Pnt, gp_Dir, gp_Pnt2d
+from OCC.Utils.Construct import *
 from OCC.BRep import  BRep_Tool
 from OCC.TopoDS import  *
 from OCC.GeomLProp import GeomLProp_SLProps
@@ -288,16 +288,6 @@ class Face(KbeObject, TopoDS_Face):
         '''if possible, close self'''
         raise NotImplementedError
 
-    @property
-    def type(self):
-        return 'face'
-
-    def kind(self):
-        if not self._geometry_lookup_init:
-            self._geometry_lookup = GeometryTypeLookup()
-            self._geometry_lookup_init = True
-        return self._geometry_lookup[self]
-
     def is_closed(self):
         sa = ShapeAnalysis_Surface(self.surface_handle)
         sa.GetBoxUF()
@@ -409,15 +399,29 @@ class Face(KbeObject, TopoDS_Face):
                 return GeomProjLib().Project(other, self.surface_handle)
 
     def project_edge(self, edg):
-        return self.project_cur
+        if hasattr(edg, 'adaptor'):
+            return self.project_curve(self, self.adaptor)
+        return self.project_curve(self, to_adaptor_3d(edg))
+
+#    def iso_curve(self, u_or_v, param):
+#        """
+#        :return: an iso curve at parameter `param`
+#        :param u_or_v: "u" or "v"
+#        :param param:  the parameter where the iso curve lies
+#        """
+#        pass
 
     def iso_curve(self, u_or_v, param):
         """
-        :return: an iso curve at parameter `param`
-        :param u_or_v: "u" or "v"
-        :param param:  the parameter where the iso curve lies
+        get the iso curve from a u,v + parameter
+        :param u_or_v:
+        :param param:
+        :return:
         """
-        pass
+        uv = 0 if u_or_v == 'u' else 1
+        # TODO: REFACTOR, part of the Face class now...
+        iso = Adaptor3d_IsoCurve(self.adaptor_handle.GetHandle(), uv, param)
+        return iso
 
     def Edges(self):
         return [Edge(i) for i in Topo(self).edges()]

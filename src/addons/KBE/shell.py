@@ -45,10 +45,6 @@ class Shell(KbeObject, TopoDS_Shell):
         self.DressUp = DressUp(self)
         self._n += 1
 
-    @property
-    def type(self):
-        return 'shell'
-
     def analyse(self):
         """
 
