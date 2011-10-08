@@ -1,10 +1,9 @@
 '''
 this class abstract types
 '''
-from OCC import GeomAbs
+from OCC.GeomAbs import *
 from OCC.TopoDS import TopoDS
 from OCC.TopAbs import *
-from OCC import TopAbs
 
 class GeometryLookup(object):
     def __init__(self):
@@ -53,10 +52,9 @@ class TopologyLookup(object):
     '''
     def __init__(self):
         # nessecary to filter out stuff like TopAbs_IN which are related to orientation, not Topology
-        _topoTypesA = ['TopAbs_VERTEX', 'TopAbs_EDGE', 'TopAbs_EDGE', 'TopAbs_WIRE', 'TopAbs_FACE', 
-             'TopAbs_SHELL','TopAbs_SOLID','TopAbs_COMPSOLID', 'TopAbs_COMPOUND', 'TopAbs_SHAPE' ]
+        _topoTypesA = ['vertex', 'edge', 'wire', 'face', 'shell','solid','compsolid', 'compound', 'shape' ]
         
-        _topoTypesB = [TopAbs_VERTEX, TopAbs_EDGE, TopAbs_EDGE, TopAbs_WIRE, TopAbs_FACE, 
+        _topoTypesB = [ TopAbs_VERTEX, TopAbs_EDGE, TopAbs_WIRE, TopAbs_FACE,
              TopAbs_SHELL,TopAbs_SOLID,TopAbs_COMPSOLID, TopAbs_COMPOUND, TopAbs_SHAPE ]
         
         self.lookup = dict(zip(_topoTypesA, _topoTypesB))
@@ -126,8 +124,8 @@ class StateLookup(object):
     from OCC import TopAbs
     def __init__(self):
         # nessecary to filter out stuff like TopAbs_IN which are related to orientation, not Topology
-        _topoTypesA = ['TopAbs_IN', 'TopAbs_OUT', 'TopAbs_ON', 'TopAbs_UNKNOWN' ]
-        _topoTypesA = [TopAbs_IN, TopAbs_OUT, TopAbs_ON, TopAbs_UNKNOWN ]
+        _topoTypesA = ('in', 'out', 'on', 'unknown')
+        _topoTypesB = (TopAbs_IN, TopAbs_OUT, TopAbs_ON, TopAbs_UNKNOWN)
         
         self.lookup = dict(zip(_topoTypesA, _topoTypesB))
         self.reverse_lookup = {}
@@ -191,3 +189,39 @@ class ClassifyTopology(object):
     def is_gp_type(self, other):
         return True if other.__class__.__name__.split('_')[0] == 'gp' or 'jajaja' else False 
 
+class EnumLookup(object):
+    """
+    perform bi-directional lookup of Enums'...
+    """
+    def __init__(self, li_in, li_out):
+        self.d = {}
+        for a,b in zip(li_in, li_out):
+            self.d[a]=b
+            self.d[b]=a
+
+    def __getitem__(self, item):
+        return self.d[item]
+
+
+_curve_typesA = (GeomAbs_Line, GeomAbs_Circle,GeomAbs_Ellipse,GeomAbs_Hyperbola,GeomAbs_Parabola,
+GeomAbs_BezierCurve,GeomAbs_BSplineCurve,GeomAbs_OtherCurve)
+_curve_typesB = ('line', 'circle', 'ellipse','hyperbola','parabola','bezier','spline','other')
+curve_lut = EnumLookup(_curve_typesA,_curve_typesB)
+
+_surface_typesA = (GeomAbs_Plane ,GeomAbs_Cylinder, GeomAbs_Cone ,GeomAbs_Sphere, GeomAbs_Torus,
+GeomAbs_BezierSurface, GeomAbs_BSplineSurface, GeomAbs_SurfaceOfRevolution, GeomAbs_SurfaceOfExtrusion,
+GeomAbs_OffsetSurface, GeomAbs_OtherSurface )
+_surface_typesB = ('plane','cylinder', 'cone', 'sphere', 'torus', 'bezier', 'spline', 'revolution',
+'extrusion', 'offset', 'other')
+surface_lut = EnumLookup(_surface_typesA, _surface_typesB)
+
+
+
+
+
+
+
+topo_lut = TopologyLookup()
+shape_lut = ShapeToTopology()
+orient_lut = OrientationLookup()
+state_lut = StateLookup()

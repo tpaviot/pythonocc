@@ -17,35 +17,16 @@ For instance the set of methods after:
 Can be a module, class or namespace.
 
 '''
-from OCC.gp import *
-
-from OCC.TopoDS import *
-from OCC.Geom import *
-from OCC.BRep import *
-# for projection
-from OCC.GeomAPI import *
-from OCC.Extrema import *
-# for checking if a surface is planar
-from OCC.GeomLib import *
-from OCC.TopExp import *
-from OCC.BRepBuilderAPI import *
-
-# for generalizing edges/curves/analytic types
-from OCC.Adaptor2d import *
-from OCC.Adaptor3d import *
-# we'll use this, really
-from OCC.BRepAdaptor import *
-
-from OCC.GProp import GProp_GProps
-from OCC.BRepGProp import BRepGProp
-
-
-from OCC.GCPnts import *
-from OCC.KBE.types_lut import GeometryLookup, ShapeToTopology
-from OCC.Utils.Construct import *
+# occ
 from OCC.BRepBuilderAPI import BRepBuilderAPI_Copy
+from OCC.BRepGProp import BRepGProp
+from OCC.BRepCheck import *
+# occ high level
 from OCC.Display.SimpleGui import init_display
-
+from OCC.Utils.Construct import *
+# KBE
+from types_lut import shape_lut, topo_lut, orient_lut, state_lut, curve_lut, surface_lut
+# stdlib
 import functools
 
 
@@ -81,11 +62,10 @@ class KbeObject(object):
 
     def __init__(self, name=None):
         """Constructor for KbeObject"""
+        self.GlobalProperties = GlobalProperties(self)
         self.name = name
         self._dirty = False
-        self._topods = None
-        self._topo_type = None # defined in concrete class __init__ method
-        self.tolerance = 1e-7
+        self.tolerance = TOLERANCE
 
     @property
     def is_dirty(self):
@@ -97,32 +77,55 @@ class KbeObject(object):
         self._dirty = bool(_bool)
 
     @property
-    def topo(self):
-        '''return the TopoDS_* object
+    def topo_type(self):
+        return topo_lut[self.ShapeType()]
 
-        updates when dirty
+    @property
+    def geom_type(self):
+        if self.topo_type == 'edge':
+            return curve_lut[self.ShapeType()]
+        if self.topo_type == 'face':
+            return surface_lut[self.adaptor.GetType()]
+        else:
+            raise ValueError('geom_type works only for edges and faces...')
 
-        the setter is implemented in the concrete classes
+    def check(self):
+        """
+        """
 
-        '''
-        if self.is_dirty:
-            self.build()
-        return self._topods
+        _check = {
+            'vertex':   BRepCheck_Vertex,
+            'edge':     BRepCheck_Edge,
+            'wire':     BRepCheck_Wire,
+            'face':     BRepCheck_Face,
+            'shell':    BRepCheck_Shell,
+            'solid':    BRepCheck_Solid,
+        }
+        _test = _check[self.topo_type]
+        # TODO: BRepCheck will be able to inform *what* actually is the matter,
+        # though implementing this still is a bit of work...
+        raise NotImplementedError
 
-    @topo.setter
-    def topo(self, topods):
-        assert not type(topods) == None, 'you forgot to set a TopoDS_* type in the __init__ of your concrete class'
-        assert type(topods) == self._topo_type, 'expected a shell, got {0}'.format(topods)
-        self._topods = topods
+        
+    def is_valid(self):
+        analyse = BRepCheck_Analyzer(self)
+        ok = analyse.IsValid()
+        if ok:
+            return True
+        else:
+            return False
 
     def copy(self):
         """
 
         :return:
         """
-        cp = BRepBuilderAPI_Copy(self.topo)
-        cp.Perform(self.topo)
-        return ShapeToTopology()(cp.Shape())
+        cp = BRepBuilderAPI_Copy(self)
+        cp.Perform(self)
+        # get the class, construct a new instance
+        # cast the cp.Shape() to its specific TopoDS topology
+        _copy = self.__class__( shape_lut(cp.Shape()) )
+        return _copy
 
     def distance(self, other):
         '''
@@ -133,9 +136,9 @@ class KbeObject(object):
              minimum distance points on shp2
         '''
         if hasattr(other, 'topo'):
-            return minimum_distance(self.topo, other.topo)
+            return minimum_distance(self, other)
         else:
-            return minimum_distance(self.topo, other)
+            return minimum_distance(self, other)
 
     def show( self, *args, **kwargs):
         """
@@ -143,20 +146,18 @@ class KbeObject(object):
 
         :param update: redraw the scene or not
         """
-        Display()(self.topo, *args, **kwargs)
+        Display()(self, *args, **kwargs)
 
     def build(self):
         if self.name.startswith('Vertex'):
-            self.topo = make_vertex(self)
+            self = make_vertex(self)
 
     def __eq__(self, other):
-        return self.topo.IsEqual(other)
+        return self.IsEqual(other)
 
     def __ne__(self, other):
         return not(self.__eq__(other))
 
-    def __hash__(self):
-        return self.topo.__hash__()
 
 class GlobalProperties(object):
     '''
@@ -167,14 +168,16 @@ class GlobalProperties(object):
 
     @property
     def system(self):
-        self.system = GProp_GProps()
+        self._system = GProp_GProps()
+        # todo, type should be abstracted with TopoDS...
         _topo_type = self.instance.type
         if _topo_type == 'face' or _topo_type == 'shell':
-            BRepGProp().SurfaceProperties(self.instance.topo, self.system)
+            BRepGProp().SurfaceProperties(self.instance, self._system)
         elif _topo_type == 'edge':
-            BRepGProp().LinearProperties(self.instance.topo, self.system)
+            BRepGProp().LinearProperties(self.instance, self._system)
         elif _topo_type == 'solid':
-            BRepGProp().VolumeProperties(self.instance.topo, self.system)
+            BRepGProp().VolumeProperties(self.instance, self._system)
+        return self._system
 
     def centre(self):
         """
@@ -194,4 +197,15 @@ class GlobalProperties(object):
         '''
         returns the bounding box of the face
         '''
-        return get_boundingbox(self.instance.topo)
+        return get_boundingbox(self.instance)
+
+    def oriented_bbox(self):
+        """
+        return the minimal bounding box
+
+        has dependencies with scipy.spatial
+        [ has an implementation at hb-robo-code ]
+        """
+        pass
+
+

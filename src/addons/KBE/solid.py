@@ -11,6 +11,7 @@ class Solid(KbeObject, TopoDS_Solid):
         KbeObject.__init__(name='solid')
         TopoDS_Solid.__init__(self, solid)
         self.GlobalProperties = GlobalProperties(self)
+        self.DressUp = DressUp(self)
 
 
 #    def parameter_to_coordinate(self, coord):

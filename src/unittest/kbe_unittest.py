@@ -52,6 +52,10 @@ class TestEdge_Line(unittest.TestCase):
         self.assertEqual(self.edg.is_rational(), 0)
         self.assertEqual(self.edg.is_closed(), 0)
 
+    def test_lut(self):
+        self.assertTrue(self.edg.geom_type == 'spline')
+
+
 class TestFace_Sphere(unittest.TestCase):
     '''
     this test case would be much better if the methods would run on a number of test cases
@@ -83,6 +87,14 @@ class TestFace_Sphere(unittest.TestCase):
     def test_global_properties(self):
         centre = self.face.GlobalProperties.centre()
         self.assertEqual(centre, gp_Pnt(0.660189250701, 0.360663031426, 0.0))
+
+    def test_lut(self):
+        self.assertTrue(self.face.geom_type == 'sphere')
+
+    def test_raise(self):
+        print 'just here to raise...'
+        raise ValueError
+
 
 class TestVertex_Point(unittest.TestCase):
     def test_pnt(self):
