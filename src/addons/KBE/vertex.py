@@ -3,20 +3,29 @@ from OCC.Utils.Common import TOLERANCE, vertex2pnt
 from OCC.gp import gp_Pnt
 from OCC.TopoDS import TopoDS_Vertex
 from base import KbeObject
+from OCC.BRepTools import  BRepTools_Modification
 
 class Vertex(KbeObject, TopoDS_Vertex):
     """
     wraps gp_Pnt
     """
     _n = 0
-    def __init__(self, vertex):
+    def __init__(self, x,y,z):
         """Constructor for KbeVertex"""
-        KbeObject.__init__(self,
-                           #name='Vertex #{0} {1},{2},{3}'.format(self._n,  self.x, self.y, self.z)
-                           name='Vertex #{0}'.format(self._n)
-                                )
-        TopoDS_Vertex.__init__(self,vertex)
+        KbeObject.__init__(self, name='Vertex #{0}'.format(self._n))
+
         self._n += 1 # should be a property of KbeObject
+        self._pnt = gp_Pnt(x,y,z)
+        self._vertex = make_vertex(self._pnt)
+        TopoDS_Vertex.__init__(self,self._vertex)
+
+    def _update(self):
+        """
+
+        """
+        # TODO: perhaps should take an argument until which topological level
+        # topological entities bound to the vertex should be updated too...
+        BRepTools_Modification.NewPoint(self, self._pnt, TOLERANCE)
 
     @staticmethod
     def from_vertex(cls, pnt):
@@ -33,61 +42,56 @@ class Vertex(KbeObject, TopoDS_Vertex):
 
     @property
     def x(self):
-        return self.X()
+        return self._pnt.X()
 
     @x.setter
     def x(self, val):
-        self.SetX(val)
-        self.is_dirty = 1
+        self._pnt.SetX(val)
+        self._update()
+        #self.is_dirty = 1
 
     @property
     def y(self):
-        return self.Y()
+        return self._pnt.Y()
 
     @y.setter
     def y(self, val):
-        self.SetY(val)
-        self.is_dirty = 1
+        self._pnt.SetY(val)
+        self._update()
+        #self.is_dirty = 1
 
     @property
     def z(self):
-        return self.Z()
+        return self._pnt.Z()
 
     @z.setter
     def z(self, val):
-        self.SetZ(val)
-        self.is_dirty = 1
-
-    def __eq__(self, other):
-        return self.IsEqual(other, TOLERANCE)
+        self._pnt.SetZ(val)
+        self._update()
+        #self.is_dirty = 1
 
     def __repr__(self):
         return self.name
 
     @property
-    def as_topods(self):
-        '''returns a gp_Vec version of self'''
-        return make_vertex(self)
-
-    @property
     def as_vec(self):
         '''returns a gp_Vec version of self'''
-        pass
+        return gp_Vec(*self._pnt.Coord())
 
     @property
     def as_dir(self):
         '''returns a gp_Vec version of self'''
-        pass
+        return gp_Dir(*self._pnt.Coord())
 
     @property
     def as_xyz(self):
         '''returns a gp_XYZ version of self'''
-        pass
+        return gp_XYZ(*self._pnt.Coord())
 
     @property
     def as_2d(self):
         '''returns a gp_Pnt2d version of self'''
-        pass
+        return gp_Pnt2d(*self._pnt.Coord()[:2])
 
     
 

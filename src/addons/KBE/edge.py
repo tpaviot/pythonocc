@@ -17,7 +17,7 @@ from OCC.GeomLib import GeomLib
 from OCC.GCPnts import GCPnts_AbscissaPoint
 from OCC.GeomAPI import GeomAPI_ProjectPointOnCurve
 from OCC.ShapeAnalysis import ShapeAnalysis_Edge
-
+from OCC.BRep import *
 
 class IntersectCurve(object):
     def __init__(self, Instance):
@@ -225,6 +225,10 @@ class Edge(KbeObject, TopoDS_Edge):
             self.adaptor
         return self._adaptor.Curve().Curve()
 
+    @property
+    def pcurve(self, face):
+        BRep_Tool().CurveOnSurface()
+
     def _local_properties(self):
         self._lprops_curve_tool = GeomLProp_CurveTool()
         self._local_properties_init = True
@@ -405,20 +409,6 @@ class Edge(KbeObject, TopoDS_Edge):
     def __hash__(self):
         return self.__hash__()
 
-    @property
-    def type(self):
-        '''returns edge, wire, curve
-        determines whether the curve is part of a topology
-        '''
-        return 'edge'
-
-    def kind(self):
-        if not self._geometry_lookup_init:
-            self._geometry_lookup = GeometryTypeLookup()
-            self._geometry_lookup_init = True
-        return self._geometry_lookup[self.curve]
-
-
     def first_vertex(self):
         # TODO: should return Vertex, not TopoDS_Vertex
         return TopExp.FirstVertex(self)
@@ -463,6 +453,9 @@ class Edge(KbeObject, TopoDS_Edge):
         '''returns continuity between self and another curve
         '''
         return self._lprops_curve_tool(self.curve)
+
+    def continuity_from_faces(self, f1, f2):
+        return BRep_Tool_Continuity(self, f1, f2)
 
 #===============================================================================
 #    Curve.loop
