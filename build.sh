@@ -1,6 +1,7 @@
 #!/bin/sh
 
-DIST=natty git-buildpackage --git-debian-branch=hm/ubuntu --git-upstream-branch=master --git-ignore-new
+#git-buildpackage -S --git-ignore-new --git-tag
+DIST=natty git-buildpackage --git-ignore-new
 
-rm -rf .pc
-rm -rf debian/patches
+dh clean
+git clean -fd

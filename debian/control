@@ -2,13 +2,15 @@ Source: python-occ
 Section: python
 Priority: extra
 Maintainer: Henning Meyer <hmeyer@gmx.eu>
-Build-Depends: cdbs, debhelper (>= 7), python-all-dev, python-support, swig, libopencascade-dev, libx11-dev, python-occ-geom
+Build-Depends: cdbs, debhelper (>= 7), python-all-dev, python-support, swig, liboce-dev, libx11-dev
+#, python-occ-geom
 Standards-Version: 3.9.1
 
 Package: python-occ
 Architecture: i386 amd64
 Provides: ${python:Provides}
-Depends: ${misc:Depends}, ${python:Depends}, libopencascade-foundation-6.3.0, libopencascade-modeling-6.3.0, libopencascade-ocaf-6.3.0, libopencascade-ocaf-lite-6.3.0, libopencascade-visualization-6.3.0, python-occ-geom
+Depends: ${misc:Depends}, ${python:Depends}, liboce
+#, python-occ-geom
 Recommends: python-qt4 | python-wxgtk2.6 | python-wxgtk2.8
 Description: python-occ is a 3D CAD/CAE/PLM development framework.
  python-occ is a 3D CAD/CAE/PLM development framework. It provides features such as advanced topological and geometrical operations, data exchange (STEP, IGES, STL import/export), 2D and 3D meshing, rigid body simulation, parametric modeling. Packaged by Henning Meyer <hmeyer@gmx.eu>. If you like it, please consider a flattr'ing it: https://flattr.com/thing/330866/pythonocc-package-for-Ubuntu
