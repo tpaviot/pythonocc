@@ -49,7 +49,7 @@ from OCC.Geom import *
 # high level
 from OCC.Utils.Common import *
 from OCC.Utils.Context import assert_isdone
-from OCC.KBE.types_lut import GeometryLookup, ShapeToTopology
+from OCC.KBE.types_lut import shape_lut, curve_lut, surface_lut, topo_lut
 
 from functools import wraps
 import warnings

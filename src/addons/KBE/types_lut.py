@@ -97,26 +97,86 @@ class EnumLookup(object):
 _curve_typesA = (GeomAbs_Line, GeomAbs_Circle,GeomAbs_Ellipse,GeomAbs_Hyperbola,GeomAbs_Parabola,
 GeomAbs_BezierCurve,GeomAbs_BSplineCurve,GeomAbs_OtherCurve)
 _curve_typesB = ('line', 'circle', 'ellipse','hyperbola','parabola','bezier','spline','other')
-curve_lut = EnumLookup(_curve_typesA,_curve_typesB)
+
 
 _surface_typesA = (GeomAbs_Plane ,GeomAbs_Cylinder, GeomAbs_Cone ,GeomAbs_Sphere, GeomAbs_Torus,
 GeomAbs_BezierSurface, GeomAbs_BSplineSurface, GeomAbs_SurfaceOfRevolution, GeomAbs_SurfaceOfExtrusion,
 GeomAbs_OffsetSurface, GeomAbs_OtherSurface )
 _surface_typesB = ('plane','cylinder', 'cone', 'sphere', 'torus', 'bezier', 'spline', 'revolution',
 'extrusion', 'offset', 'other')
-surface_lut = EnumLookup(_surface_typesA, _surface_typesB)
+
 
 _stateA = ('in', 'out', 'on', 'unknown')
 _stateB = (TopAbs_IN, TopAbs_OUT, TopAbs_ON, TopAbs_UNKNOWN)
-state_lut = EnumLookup(_stateA, _stateB)
+
 
 _orientA = ['TopAbs_FORWARD', 'TopAbs_REVERSED', 'TopAbs_INTERNAL', 'TopAbs_EXTERNAL' ]
 _orientB = [TopAbs_FORWARD, TopAbs_REVERSED, TopAbs_INTERNAL, TopAbs_EXTERNAL ]
-orient_lut = EnumLookup(_orientA, _orientB)
+
 
 _topoTypesA = ['vertex', 'edge', 'wire', 'face', 'shell','solid','compsolid', 'compound', 'shape' ]
 _topoTypesB = [ TopAbs_VERTEX, TopAbs_EDGE, TopAbs_WIRE, TopAbs_FACE, TopAbs_SHELL,TopAbs_SOLID,
                 TopAbs_COMPSOLID, TopAbs_COMPOUND, TopAbs_SHAPE ]
 
+curve_lut = EnumLookup(_curve_typesA,_curve_typesB)
+surface_lut = EnumLookup(_surface_typesA, _surface_typesB)
+state_lut = EnumLookup(_stateA, _stateB)
+orient_lut = EnumLookup(_orientA, _orientB)
 topo_lut = EnumLookup(_topoTypesA,_topoTypesB)
 shape_lut = ShapeToTopology()
+
+# todo: refactor, these classes have been moved from the "Topology" directory
+# which had too many overlapping methods & classes, that are now part of the KBE module...
+# still need to think what to do with these...
+# what_is_face should surely become a lut [ geom_lut? ]
+# i'm not sure whether casting to a gp_* is useful...
+
+from OCC.Geom import *
+from OCC.TopAbs import *
+
+classes = dir()
+geom_classes = []
+for elem in classes:
+    if (elem.startswith('Geom') and not 'swig' in elem):
+        geom_classes.append(elem)
+
+def what_is_face(face):
+    ''' Returns all class names for which this class can be downcasted
+    '''
+    if not face.ShapeType()==TopAbs_FACE:
+        print '%s is not a TopAbs_FACE. Conversion impossible'
+        return None
+    hs = BRep_Tool().Surface(face)
+    obj = hs.GetObject()
+    result = []
+    for elem in classes:
+        if (elem.startswith('Geom') and not 'swig' in elem):
+ 	      geom_classes.append(elem)
+    # Run the test for each class
+    for geom_class in geom_classes:
+        if obj.IsKind(geom_class) and not geom_class in result:
+            result.append(geom_class)
+    return result
+
+def face_is_plane(face):
+    ''' Returns True if the TopoDS_Shape is a plane, False otherwise
+    '''
+    hs = BRep_Tool().Surface(face)
+    downcast_result = Handle_Geom_Plane().DownCast(hs)
+    # the handle is null if downcast failed or is not possible,
+    # that is to say the face is not a plane
+    if downcast_result.IsNull():
+        return False
+    else:
+        return True
+
+def shape_is_cylinder(face):
+    ''' Returns True is the TopoDS_Shape is a cylinder, False otherwise
+    '''
+    hs = BRep_Tool().Surface(face)
+    handle_geom_plane = Handle_Geom_Cylinder().DownCast(hs)
+    if downcast_result.IsNull():
+        return False
+    else:
+        return True
+
