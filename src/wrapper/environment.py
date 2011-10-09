@@ -152,7 +152,7 @@ elif sys.platform=='linux2':
         OCC_INC = os.path.join(OCC_ROOT,'inc')
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
     else:
-        OCC_INC = '/usr/include/opencascade'
+        OCC_INC = '/usr/include/oce'
         OCC_LIB = '/usr/lib'
     SALOME_GEOM_LIB = '/usr/lib'
     SALOME_SMESH_LIB = '/usr/lib'
