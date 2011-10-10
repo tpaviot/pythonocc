@@ -74,6 +74,10 @@ def get_boundingbox(shape, tol=1e-12):
 # Data type utilities
 #===============================================================================
 
+def color(r,g,b):
+    return Quantity_Color(r,g,b, Quantity_TOC_RGB)
+
+
 def to_string(_string):
     from OCC.TCollection import  TCollection_ExtendedString
     return TCollection_ExtendedString(_string)

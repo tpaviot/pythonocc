@@ -18,9 +18,8 @@ from OCC.TopoDS import *
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-import os, os.path, types
-import sys
-import subprocess
+from OCC.Utils.Common import to_string
+from OCC.Utils.Construct import color
 
 import OCC.Visualization
 import OCC.V3d
@@ -30,8 +29,10 @@ import OCC.AIS2D
 import OCC.Quantity
 import OCC.TopoDS
 import OCC.Visual3d
-
 from OCC import Prs3d
+
+import os, os.path, types, sys, subprocess
+
 
 try:
     import OCC.NIS
@@ -120,10 +121,8 @@ class BaseDriver(object):
         self._inited = True
         
         # nessecary for text rendering
-        try:
-            self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
-        except:
-            pass
+        self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
+        self.aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
 
     
         
@@ -266,29 +265,51 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             self.View.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_STRETCH, True)
         else:
             self.View.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_NONE, True )
-            
-    def DisplayMessage(self,point,text_to_write, update=True):
+
+    def DisplayMessage(self,point,text_to_write, message_color=None, update=True):
         """
-        point: a gp_Pnt instance
-        text_to_write: a string
+        :point: a gp_Pnt instance
+        :text_to_write: a string
+        :message_color: triple with the range 0-1
         """
-        # TODO - should be imported!
-        def to_string_extended(_str):
-            from OCC.TCollection import TCollection_ExtendedString as String
-            return String(_str)
-        
-        aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
         text_aspect = Prs3d.Prs3d_TextAspect()
-        Prs3d.Prs3d_Text().Draw(aPresentation.GetHandle(),
+
+        if message_color is not None:
+            text_aspect.SetColor(color(*message_color))
+
+        Prs3d.Prs3d_Text().Draw(self.aPresentation.GetHandle(),
                                  text_aspect.GetHandle(),
-                                  to_string_extended(text_to_write),
+                                  to_string(text_to_write),
                                    point)
-        aPresentation.Display()
-        # it would be more coherent if a AIS_InteractiveObject would be returned
+        self.aPresentation.Display()
+        # TODO: it would be more coherent if a AIS_InteractiveObject would be returned
         if update:
             self.Repaint()
-        return aPresentation
-#        self.Context.Display(anAIS.GetHandle())
+        return self.aPresentation
+
+
+#    def DisplayMessage(self,point,text_to_write, update=True):
+#        """
+#        point: a gp_Pnt instance
+#        text_to_write: a string
+#        """
+#        # TODO - should be imported!
+#        def to_string_extended(_str):
+#            from OCC.TCollection import TCollection_ExtendedString as String
+#            return String(_str)
+#
+#        aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
+#        text_aspect = Prs3d.Prs3d_TextAspect()
+#        Prs3d.Prs3d_Text().Draw(aPresentation.GetHandle(),
+#                                 text_aspect.GetHandle(),
+#                                  to_string_extended(text_to_write),
+#                                   point)
+#        aPresentation.Display()
+#        # it would be more coherent if a AIS_InteractiveObject would be returned
+#        if update:
+#            self.Repaint()
+#        return aPresentation
+##        self.Context.Display(anAIS.GetHandle())
 
         
 #    def DisplayShape(self, , *shapes):
