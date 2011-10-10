@@ -1,9 +1,11 @@
 from OCC.Utils.Construct import make_vertex
 from OCC.Utils.Common import TOLERANCE, vertex2pnt
-from OCC.gp import gp_Pnt
+from OCC.gp import gp_Pnt, gp_Trsf
 from OCC.TopoDS import TopoDS_Vertex
 from base import KbeObject
-from OCC.BRepTools import  BRepTools_Modification
+from OCC.BRepTools import  BRepTools_TrsfModification
+
+
 
 class Vertex(KbeObject, TopoDS_Vertex):
     """
@@ -25,8 +27,11 @@ class Vertex(KbeObject, TopoDS_Vertex):
         """
         # TODO: perhaps should take an argument until which topological level
         # topological entities bound to the vertex should be updated too...
-        BRepTools_Modification.NewPoint(self, self._pnt, TOLERANCE)
-
+        from OCC.ShapeBuild import ShapeBuild_ReShape
+        reshape = ShapeBuild_ReShape()
+        reshape.Replace(self._vertex, make_vertex(self._pnt))
+        #self = Vertex(*self._pnt.Coord())
+        
     @staticmethod
     def from_vertex(cls, pnt):
         Vertex.from_pnt(vertex2pnt(pnt))
@@ -70,6 +75,17 @@ class Vertex(KbeObject, TopoDS_Vertex):
         self._update()
         #self.is_dirty = 1
 
+    @property
+    def xyz(self):
+        return self._pnt.Coord()
+
+    @xyz.setter
+    def xyz(self, *val):
+        self._pnt.SetXYZ(*val)
+        self._update()
+        #self.is_dirty = 1
+
+
     def __repr__(self):
         return self.name
 
@@ -87,6 +103,10 @@ class Vertex(KbeObject, TopoDS_Vertex):
     def as_xyz(self):
         '''returns a gp_XYZ version of self'''
         return gp_XYZ(*self._pnt.Coord())
+
+    @property
+    def as_pnt(self):
+        return self._pnt
 
     @property
     def as_2d(self):

@@ -165,7 +165,7 @@ class Edge(KbeObject, TopoDS_Edge):
         return self.adaptor.IsPeriodic()
 
     def is_rational(self):
-        return self.adaptor.IsRational
+        return self.adaptor.IsRational()
 
     def continuity(self):
         return self.adaptor.Continuity

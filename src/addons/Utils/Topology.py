@@ -35,7 +35,8 @@ from OCC.TopoDS import *
 from OCC.TopTools import *
 from OCC.BRepTools import *
 from OCC.BRep import *
-
+from OCC.KBE.types_lut import topo_lut, shape_lut
+from OCC.Utils.Construct import vertex2pnt
 
 import sys, itertools
 #__all__ = ['Topo', 'WireExplorer']
@@ -419,22 +420,21 @@ class Topo(object):
             cnt += 1
         return cnt
 
-def dumpTopology(shape,level=0):
+def dump_topology(shape,level=0):
     """
      Print the details of an object from the top down
     """
-    from OCC.KBE.types_lut import topo_lut
     brt = BRep_Tool()
     s = shape.ShapeType()
     ts = TopoDS.TopoDS()
     print
     print "." * level,topo_lut[shape.ShapeType()],
     if s == TopAbs_VERTEX:
-        pnt = brt.Pnt(ts.Vertex(shape))
+        pnt = vertex2pnt(shape_lut[shape])
         print "<Vertex: %s %s %s>" % (pnt.X(), pnt.Y(), pnt.Z())
     it = TopoDS.TopoDS_Iterator(shape)
     while it.More():
         shp = it.Value()
         it.Next()
-        dumpTopology(shp,level + 1 )        
+        dump_topology(shp,level + 1 )
 

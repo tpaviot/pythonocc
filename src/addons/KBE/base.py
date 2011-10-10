@@ -170,7 +170,7 @@ class GlobalProperties(object):
     def system(self):
         self._system = GProp_GProps()
         # todo, type should be abstracted with TopoDS...
-        _topo_type = self.instance.type
+        _topo_type = self.instance.topo_type
         if _topo_type == 'face' or _topo_type == 'shell':
             BRepGProp().SurfaceProperties(self.instance, self._system)
         elif _topo_type == 'edge':
