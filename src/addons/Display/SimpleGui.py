@@ -188,7 +188,6 @@ def init_display():
     return display, start_display, add_menu, add_function_to_menu
     
 if __name__ == '__main__':
-    set_backend('x')
     init_display()
     from OCC.BRepPrimAPI import *
     def sphere(event=None):
