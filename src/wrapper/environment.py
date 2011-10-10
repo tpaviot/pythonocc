@@ -146,15 +146,19 @@ if sys.platform=='win32':
 elif sys.platform=='linux2':
 
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','linux_darwin')
-    os.environ['CC'] = 'g++'
-    os.environ['CPP'] = 'g++'
+    #os.environ['CC'] = 'g++'
+    #os.environ['CPP'] = 'g++'
+    if not os.getenv('CC'):
+    	os.environ['CC'] = subprocess.Popen(['which','gcc'],stdout=subprocess.PIPE).communicate()[0]
+    if not os.getenv('CPP'):
+    	os.environ['CPP'] = subprocess.Popen(['which','g++'],stdout=subprocess.PIPE).communicate()[0]
     if OCC_ROOT!=None:
         OCC_INC = os.path.join(OCC_ROOT,'inc')
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
     else:
         OCC_INC = '/usr/include/oce'
         OCC_LIB = '/usr/lib'
-    SALOME_GEOM_LIB = '/usr/lib'
+    SALOME_GEOM_LIB = '/usr/lib/SALOME-GEOM'
     SALOME_SMESH_LIB = '/usr/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
@@ -192,7 +196,7 @@ elif sys.platform=='darwin':
         OCC_INC = '/Library/OCE/0.6.0dev/include/oce'
         OCC_LIB = '/Library/OCE/0.6.0dev/lib'
       
-    SALOME_GEOM_LIB = '/usr/local/lib/'
+    SALOME_GEOM_LIB = '/usr/lib/SALOME_GEOM'
     SALOME_SMESH_LIB = '/usr/local/lib/'        
     GCC_XML_PATH = which('gccxml')
 
