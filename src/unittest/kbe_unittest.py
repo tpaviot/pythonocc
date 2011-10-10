@@ -19,8 +19,8 @@ class TestEdge_Line(unittest.TestCase):
         self.assertEqual((0.0, 1.0),domain)
 
     def test_param2pnt(self):
-        pnt = self.edg.parameter_to_point(0.0)
-        self.assertEqual(pnt.Coord(),(0,0,0))
+        vert = self.edg.parameter_to_point(0.0)
+        self.assertEqual(vert.as_pnt.Coord(),(0,0,0))
 
     def test_pnt2param(self):
         param, pnt = self.edg.project_pnt_on_edge(gp_Pnt())
@@ -91,17 +91,13 @@ class TestFace_Sphere(unittest.TestCase):
     def test_lut(self):
         self.assertTrue(self.face.geom_type == 'sphere')
 
-    def test_raise(self):
-        print 'just here to raise...'
-        raise ValueError
-
 
 class TestVertex_Point(unittest.TestCase):
     def test_pnt(self):
         v1 = Vertex(1,1,1)
         v1.x = 12
-        pnt = gp_Pnt(12, 1, 1)
-        v2 = make_vertex(pnt)
+        v2 = Vertex(12,1,1,)
+        import ipdb; ipdb.set_trace()
         self.assertEqual(v1,pnt)
         
 def suite():
