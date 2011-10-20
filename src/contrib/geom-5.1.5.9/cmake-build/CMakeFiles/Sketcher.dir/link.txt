@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG -dynamiclib -Wl,-headerpad_max_install_names   -o cmake-build/libSketcher.dylib -install_name /Users/thomas/Devel/pythonocc/src/contrib/geom-5.1.2.7/cmake-build/cmake-build/libSketcher.dylib CMakeFiles/Sketcher.dir/src/Sketcher/Sketcher_Profile.cpp.o -L/Library/OCE/0.5.0/lib -lTKernel -lTKMath -lTKBRep -lTKTopAlgo -lTKGeomAlgo -lTKG2d 
