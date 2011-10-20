@@ -538,8 +538,11 @@ else:
 SALOME_GEOM_MODULES = [
                        ('Archimede',[],[]),
                        ('SGEOM',['TDataStd','TColStd','TDF','CDM','CDF','Quantity'],[],\
-                        {'GEOM_SubShapeDriver':['GetID'],'GEOM_Engine':['GetTextureGUID']}),
-                       ('GEOMAlgo',['gp','TopoDS','Handle_TCollection'],[]),
+                        {'GEOM_SubShapeDriver':['GetID'],
+                        'GEOM_Engine':['GetTextureGUID','DumpPython'],}),
+                       ('GEOMAlgo',['gp','TopoDS','Handle_TCollection'],[],
+                       {'GEOMAlgo_Gluer2':['KeepNonSolids'],
+                       'GEOMAlgo_Gluer':['KeepNonSolids']}),
                        ('GEOMImpl',['gp','TopoDS','TDataStd','TDocStd','CDM','TDF','Handle_TCollection','CDF',
                                     'Aspect','Quantity'],\
                         ['GEOMImpl_Block6Explorer','GEOMImpl_Template','Handle_GEOMImpl_Template'],\
