@@ -31,6 +31,6 @@ import TColStd
 import Standard
 import TCollection
 import TopoDS
-import gp
 import TopAbs
+import gp
 };

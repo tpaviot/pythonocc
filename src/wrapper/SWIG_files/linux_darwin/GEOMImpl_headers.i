@@ -133,6 +133,7 @@ $HeaderURL$
 #include<GEOMImpl_PolylineDriver.hxx>
 #include<GEOMImpl_PositionDriver.hxx>
 #include<GEOMImpl_PrismDriver.hxx>
+#include<GEOMImpl_ProjectionDriver.hxx>
 #include<GEOMImpl_RevolutionDriver.hxx>
 #include<GEOMImpl_RotateDriver.hxx>
 #include<GEOMImpl_ScaleDriver.hxx>
