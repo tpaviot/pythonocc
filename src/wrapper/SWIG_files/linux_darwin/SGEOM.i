@@ -467,8 +467,6 @@ class GEOM_Engine {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object AddSubShape(Handle_GEOM_Object , Handle_TColStd_HArray1OfInteger , bool =false);
 		%feature("autodoc", "1");
-		TCollection_AsciiString DumpPython(int , Resource_DataMapOfAsciiStringAsciiString & theObjectNames, TVariablesList , bool , bool & aValidScript);
-		%feature("autodoc", "1");
 		const char * GetDumpName(const char *theStudyEntry) const;
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfAsciiString GetAllDumpNames() const;
@@ -767,9 +765,9 @@ class GEOM_Object : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const char * GetName();
 		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &theColor);
+		void SetColor(const GEOM_Object::Color &theColor);
 		%feature("autodoc", "1");
-		Quantity_Color GetColor();
+		GEOM_Object::Color GetColor();
 		%feature("autodoc", "1");
 		void SetAutoColor(bool );
 		%feature("autodoc", "1");

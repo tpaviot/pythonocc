@@ -15,8 +15,8 @@
 
 
 # first change all #include "SGEOM_*" occurences to #include "SGEOM_*"
-cp -r ./inc ./inc_pythonocc
-cd ./inc_pythonocc
+cp -r /Users/thomas/Devel/Salome/salomegeometry/trunk/inc ../../wrapper/geom/inc_pythonocc
+cd ../../wrapper/geom/inc_pythonocc
 for i in $(find . -type f); do sed 's/"GEOM_/"SGEOM_/g' $i > $i-tmp;mv $i-tmp $i; done
     
 # do the same for Handle_GEOM_* to Handle_SGEOM_*
