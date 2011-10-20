@@ -46,6 +46,9 @@ $HeaderURL$
 %rename(IsEqual) GEOMAlgo_PassKeyShapeMapHasher::IsEqual;
 %rename(CopySource) GEOMAlgo_FinderShapeOn::CopySource;
 %rename(BuildTriangulation) GEOMAlgo_FinderShapeOn::BuildTriangulation;
+%rename(MakeVertex) GEOMAlgo_Gluer2::MakeVertex;
+%rename(MapBRepShapes) GEOMAlgo_Gluer2::MapBRepShapes;
+%rename(MapShapes) GEOMAlgo_Gluer2::MapShapes;
 %rename(IsSplitToReverse) GEOMAlgo_Tools3D::IsSplitToReverse;
 %rename(Sense) GEOMAlgo_Tools3D::Sense;
 %rename(CopyFace) GEOMAlgo_Tools3D::CopyFace;
