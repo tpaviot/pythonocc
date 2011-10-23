@@ -219,6 +219,6 @@ VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
 BOOST_INC = os.path.join(os.getcwd(),'contrib')
-SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'inc_pythonocc')
+SALOME_GEOM_INC = os.path.join(os.getcwd(),'wrapper','geom','inc_pythonocc')
 SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'inc')
 
