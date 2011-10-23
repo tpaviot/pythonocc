@@ -1,3 +1,15 @@
+python-occ (0.5.9-0ubuntu3) oneiric; urgency=low
+
+  * protect from new geom release 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 23 Oct 2011 22:41:12 +0200
+
+python-occ (0.5.9-0ubuntu2) oneiric; urgency=low
+
+  * oneiric upload
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Mon, 17 Oct 2011 23:41:41 +0200
+
 python-occ (0.5.9-0ubuntu1) natty; urgency=low
 
   * Initial release

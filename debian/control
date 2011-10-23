@@ -2,14 +2,14 @@ Source: python-occ
 Section: python
 Priority: extra
 Maintainer: Henning Meyer <hmeyer@gmx.eu>
-Build-Depends: cdbs, debhelper (>= 7), python-all-dev, python-support, swig, liboce-dev, libx11-dev, libsalome-geom-dev, libx11-dev, libgl1-mesa-dev
+Build-Depends: cdbs, debhelper (>= 7), python-all-dev, python-support, swig, liboce-dev, libx11-dev, libsalome-geom-dev (< 6), libx11-dev, libgl1-mesa-dev
 #, python-occ-geom
 Standards-Version: 3.9.1
 
 Package: python-occ
 Architecture: i386 amd64
 Provides: ${python:Provides}
-Depends: ${misc:Depends}, ${python:Depends}, liboce, libsalome-geom
+Depends: ${misc:Depends}, ${python:Depends}, liboce, libsalome-geom (< 6)
 #, python-occ-geom
 Recommends: python-qt4 | python-wxgtk2.6 | python-wxgtk2.8
 Description: python-occ is a 3D CAD/CAE/PLM development framework.
