@@ -19,7 +19,7 @@
 PROJECT(pythonOCC)
 # set pythonOCC version
 SET(pythonOCC_VERSION_MAJOR 0)
-SET(pythonOCC_VERSION_MINOR 5)
+SET(pythonOCC_VERSION_MINOR 6)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
@@ -27,8 +27,6 @@ SET(CMAKE_BUILD_TYPE "Release") #Default, build in release mode
 MESSAGE(STATUS " ${CMAKE_CXX_FLAGS}") 
 SET(BUILD_SHARED_LIBS ON)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
-
-MESSAGE(STATUS " Building pythonOCC 0.5")
 
 ###################
 # General options #
@@ -45,14 +43,7 @@ FIND_PACKAGE(PythonLibs)
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 
 ##############################################################
-# 32/64 bit detection. To achieve that point, python is used.
-# From python, running:
-# >>import sys
-# >> sys.maxint
-# will return:
-# 9223372036854775807 on 64bit
-# and
-# 2147483647 on 32bit systems
+# 32/64 bit detection
 ###############################################################
 MESSAGE(STATUS " Check whether the system is 32 or 64 bit." )
 IF (${CMAKE_SIZEOF_VOID_P} MATCHES "8") # It is 64bit, otherwise 32 bit systems match 4
@@ -81,8 +72,13 @@ ELSE(OCE_FOUND)
         SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
         # Find the Standard_Real.hxx header in this path
     ELSE(WIN32) #Unix
-        SET(OCC_INCLUDE_PATH "/Library/OpenCASCADE/6.3.0/inc")
-        SET(OCC_LIB_PATH "/Library/OpenCASCADE/6.3.0/lib")
+		IF(DEFINED ENV{CASROOT})
+        	SET(OCC_INCLUDE_PATH "$ENV{CASROOT}/include/oce")
+        	SET(OCC_LIB_PATH "$ENV{CASROOT}/lib")
+		ELSE(DEFINED ENV{CASROOT})
+			SET(OCC_INCLUDE_PATH /usr/local/include/oce)
+			SET(OCC_LIB_PATH /usr/local/lib)
+		ENDIF(DEFINED ENV{CASROOT})
     ENDIF(WIN32)
 
     # Check that these paths are ok
@@ -130,13 +126,13 @@ IF(UNIX)
     MESSAGE(STATUS " -- MacOSX system detected")
     ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS -D__PYTHONOCC_MAXINT__=2147483647)
     SET(CMAKE_SWIG_FLAGS -O -DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS)
-    SET(SWIG_FILES_PATH ./src/wrapper/SWIG/linux_darwin)
+    SET(SWIG_FILES_PATH ./src/wrapper/SWIG_files/linux_darwin)
   ELSE(APPLE)
     ######### Unix/Linux ###########
     MESSAGE(STATUS " -- Unix/Linux system detected")
     ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS -D__PYTHONOCC_MAXINT__=2147483647)
     SET(CMAKE_SWIG_FLAGS -O -DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS -DLIN -DLIN_INTEL -D_GNU_SOURCE=1)
-    SET(SWIG_FILES_PATH ./src/wrapper/SWIG/linux_darwin)
+    SET(SWIG_FILES_PATH ./src/wrapper/SWIG_files/linux_darwin)
   ENDIF(APPLE)
 ELSE(UNIX)
   IF(WIN32)
