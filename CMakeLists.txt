@@ -97,7 +97,7 @@ ENDIF(OCE_FOUND)
 # by default, installed to site-packages/OCC #
 ##############################################
 EXECUTE_PROCESS(COMMAND python -c "from distutils.sysconfig import get_python_lib; import os;print os.sep.join([get_python_lib(),'OCC2'])" OUTPUT_VARIABLE python_lib)
-SET(${PROJECT_NAME}_INSTALL_DIRECTORY "${python_lib}/OCC" CACHE STRING "pythonOCC install directory" )
+SET(${PROJECT_NAME}_INSTALL_DIRECTORY "${python_lib}/OCC" CACHE PATH "pythonOCC install directory" )
 
 # List of OpenCASCADE shared libraries to link with
 SET(OCC_LIBRARIES PTKernel
