@@ -209,7 +209,6 @@ MODULES = [
            ('GeomToIGES',[],[]),
            ('GeomTools',['Handle_TCollection'],[]),
            ('GeomToStep',[],[]),
-           ('GProp',[],[]),
 #########################
 ###### BRep #############
 #########################
