@@ -111,7 +111,7 @@ SET(OCC_LIBRARIES PTKernel
                   TKSTEPBase TKSTL TKTObj TKTopAlgo
                   TKV2d TKV3d TKVRML TKXCAF TKXCAFSchema
                   TKXDEIGES TKXDESTEP TKXMesh TKXml TKXmlL TKXmlTObj
-                  TKXmlXCAF TKXSBase)
+                  TKXmlXCAF TKXSBase TKVoxel)
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
