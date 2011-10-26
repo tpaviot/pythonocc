@@ -25,7 +25,7 @@ SET(${PROJECT_NAME}_VERSION_MINOR 6)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
-SET(CMAKE_BUILD_TYPE "Release") #Default, build in release mode
+SET(CMAKE_BUILD_TYPE "MinSizeRel" CACHE STRING "Build type" FORCE)
 MESSAGE(STATUS " ${CMAKE_CXX_FLAGS}") 
 SET(BUILD_SHARED_LIBS ON)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
@@ -96,8 +96,8 @@ ENDIF(OCE_FOUND)
 # Installation directory                     #
 # by default, installed to site-packages/OCC #
 ##############################################
-EXECUTE_PROCESS(COMMAND python -c "from distutils.sysconfig import get_python_lib; import os;print os.sep.join([get_python_lib(),'OCC2'])" OUTPUT_VARIABLE python_lib)
-SET(${PROJECT_NAME}_INSTALL_DIRECTORY "${python_lib}/OCC" CACHE PATH "pythonOCC install directory" )
+EXECUTE_PROCESS(COMMAND python -c "from distutils.sysconfig import get_python_lib; import os;print get_python_lib()" OUTPUT_VARIABLE python_lib OUTPUT_STRIP_TRAILING_WHITESPACE )
+SET(${PROJECT_NAME}_INSTALL_DIRECTORY ${python_lib}/OCC CACHE PATH "pythonOCC install directory" )
 
 # List of OpenCASCADE shared libraries to link with
 SET(OCC_LIBRARIES PTKernel
