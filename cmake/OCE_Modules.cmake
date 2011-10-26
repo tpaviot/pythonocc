@@ -15,6 +15,7 @@ LIST(APPEND OCC_MODULES
 	GCE2d
 	Poly
 	GC
+	GProp
 	gp
 	GCPnts
 	TopoDS
