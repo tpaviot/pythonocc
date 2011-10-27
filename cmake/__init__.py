@@ -1,0 +1,1 @@
+VERSION = "O.6dev"

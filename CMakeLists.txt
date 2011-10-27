@@ -16,27 +16,36 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 # pythonOCC cmake build file
-PROJECT(pythonOCC)
+SET(PROJECT_NAME pythonOCC)
+PROJECT(${PROJECT_NAME})
+
 # set pythonOCC version
-SET(pythonOCC_VERSION_MAJOR 0)
-SET(pythonOCC_VERSION_MINOR 5)
+SET(${PROJECT_NAME}_VERSION_MAJOR 0)
+SET(${PROJECT_NAME}_VERSION_MINOR 6dev)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
-SET(CMAKE_BUILD_TYPE "Release") #Default, build in release mode
-MESSAGE("${CMAKE_CXX_FLAGS}") 
+SET(CMAKE_BUILD_TYPE "MinSizeRel" CACHE STRING "Build type" FORCE)
+MESSAGE(STATUS " ${CMAKE_CXX_FLAGS}") 
 SET(BUILD_SHARED_LIBS ON)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 
-MESSAGE("Building pythonOCC 0.5")
+#############################
+# Option_With_Default macro #
+#############################
+MACRO( OPTION_WITH_DEFAULT OPTION_NAME OPTION_STRING OPTION_DEFAULT )
+IF( NOT DEFINED ${OPTION_NAME} )
+	SET( ${OPTION_NAME} ${OPTION_DEFAULT} )
+ENDIF( NOT DEFINED ${OPTION_NAME} )
+	OPTION( ${OPTION_NAME} "${OPTION_STRING}" ${${OPTION_NAME}} )
+ENDMACRO( OPTION_WITH_DEFAULT OPTION_NAME OPTION_STRING OPTION_DEFAULT )
 
 ###################
 # General options #
 ###################
-
 # By default, GEOM and SMESH wrappers are disbled
-OPTION(WRAP_GEOM "Wraps the salomegeometry library (enabling parametric modeling)" OFF)
-OPTION(WRAP_SMESH "Wraps the salomesmesh library (enabling advanced meshing features" OFF)
+OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_GEOM "Wraps the salomegeometry library (enabling parametric modeling)" OFF)
+OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_SMESH "Wraps the salomesmesh library (enabling advanced meshing features" OFF)
 
 ##########
 # Python #
@@ -45,24 +54,13 @@ FIND_PACKAGE(PythonLibs)
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 
 ##############################################################
-# 32/64 bit detection. To achieve that point, python is used.
-# From python, running:
-# >>import sys
-# >> sys.maxint
-# will return:
-# 9223372036854775807 on 64bit
-# and
-# 2147483647 on 32bit systems
+# 32/64 bit detection
 ###############################################################
-MESSAGE("Check whether the system is 32 or 64 bit." )
-EXECUTE_PROCESS(COMMAND python -c "import sys;print sys.maxint" OUTPUT_VARIABLE maxint_str)
-IF (maxint_str MATCHES "2147483647")
-    MESSAGE("-- 32bit system detected")
-    SET(MODE "32bit")
-ELSE(maxint_str MATCHES "2147483647")
-    MESSAGE("-- 64bit system detected")
-    SET(MODE "64bit")
-ENDIF(maxint_str MATCHES "2147483647")
+IF (${CMAKE_SIZEOF_VOID_P} MATCHES "8")
+	# If in 64bit mode, we have to define the _OCC64 variable
+	ADD_DEFINITIONS(-D_OCC64)
+	SET(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -D_OCC64)
+ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 
 ########
 # SWIG #
@@ -74,38 +72,46 @@ INCLUDE(${SWIG_USE_FILE})
 # OpenCASCADE include and lib location #
 ########################################
 # Find OpenCASCADE library, set include and lib path
-IF(WIN32)
-    # Under Windows, check the CASROOT env variable
-    SET(OCC_INCLUDE_PATH "$ENV{CASROOT}\\inc")
-    SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
-    # Find the Standard_Real.hxx header in this path
-ELSE(WIN32) #Unix
-    SET(OCC_INCLUDE_PATH "/Library/OpenCASCADE/6.3.0/inc")
-    SET(OCC_LIB_PATH "/Library/OpenCASCADE/6.3.0/lib")
-ENDIF(WIN32)
+FIND_PACKAGE(OCE)
+IF(OCE_FOUND)
+    SET(OCC_INCLUDE_PATH ${OCE_INCLUDE_DIRS})
+ELSE(OCE_FOUND)
+    IF(WIN32)
+        # Under Windows, check the CASROOT env variable
+        SET(OCC_INCLUDE_PATH "$ENV{CASROOT}\\inc")
+        SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
+        # Find the Standard_Real.hxx header in this path
+    ELSE(WIN32) #Unix
+		IF(DEFINED ENV{CASROOT})
+        	SET(OCC_INCLUDE_PATH "$ENV{CASROOT}/include/oce")
+        	SET(OCC_LIB_PATH "$ENV{CASROOT}/lib")
+		ELSE(DEFINED ENV{CASROOT})
+			SET(OCC_INCLUDE_PATH /usr/local/include/oce CACHE STRING "OCE include path")
+			SET(OCC_LIB_PATH /usr/local/lib CACHE STRING "OCE library path")
+		ENDIF(DEFINED ENV{CASROOT})
+    ENDIF(WIN32)
+ENDIF(OCE_FOUND)
 
-# Check that these paths are ok
-FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx ${OCC_INCLUDE_PATH})
-FIND_LIBRARY(RESULT_LIB TKernel ${OCC_LIB_PATH})
-MESSAGE("${RESULT_PATH}")
-MESSAGE("${RESULT_LIB}")
-MESSAGE("-- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
-MESSAGE("-- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
+##############################################
+# Installation directory                     #
+# by default, installed to site-packages/OCC #
+##############################################
+EXECUTE_PROCESS(COMMAND python -c "from distutils.sysconfig import get_python_lib; import os;print get_python_lib()" OUTPUT_VARIABLE python_lib OUTPUT_STRIP_TRAILING_WHITESPACE )
+SET(${PROJECT_NAME}_INSTALL_DIRECTORY ${python_lib}/OCC CACHE PATH "pythonOCC install directory" )
 
 # List of OpenCASCADE shared libraries to link with
-SET(OCC_LIBRARIES BinLPlugin BinPlugin BinXCAFPlugin FWOSPlugin PTKernel
-                  StdLPlugin StdPlugin TKAdvTools TKBin TKBinL TKBinTObj TKBinXCAF
-                  TKBO TKBool TKBRep TKCAF TKCDF TKCDLFront TKCPPClient TKCPPExt
-                  TKCPPIntExt TKCPPJini TKCSFDBSchema TKernel
-                  TKFeat TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKIDLFront
+SET(OCC_LIBRARIES PTKernel
+                  TKAdvTools TKBin TKBinL TKBinTObj TKBinXCAF
+                  TKBO TKBool TKBRep TKCAF TKCDF
+                  TKernel
+                  TKFeat TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR
                   TKIGES TKLCAF TKMath TKMesh TKMeshVS TKNIS TKOffset
                   TKOpenGl TKPCAF TKPLCAF TKPrim TKPShape TKService TKShapeSchema
                   TKShHealing TKStdLSchema TKStdSchema TKSTEP TKSTEP209 TKSTEPAttr
-                  TKSTEPBase TKSTL TKTCPPExt TKTObj TKTopAlgo
-                  TKV2d TKV3d TKVRML TKWOK TKWOKTcl TKXCAF TKXCAFSchema
+                  TKSTEPBase TKSTL TKTObj TKTopAlgo
+                  TKV2d TKV3d TKVRML TKXCAF TKXCAFSchema
                   TKXDEIGES TKXDESTEP TKXMesh TKXml TKXmlL TKXmlTObj
-                  TKXmlXCAF TKXSBase XCAFPlugin
-                  XmlLPlugin XmlPlugin XmlXCAFPlugin)
+                  TKXmlXCAF TKXSBase TKVoxel)
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
@@ -115,10 +121,16 @@ LINK_DIRECTORIES(${OCC_LIB_PATH})
 #######################################
 # salomegeom include and lib location #
 #######################################
-IF(WRAP_GEOM)
-    SET(GEOM_INCLUDE_PATH ./src/contrib/SalomeGeometry/inc_pythonocc)
-    INCLUDE_DIRECTORIES(${GEOM_INCLUDE_PATH})
-ENDIF(WRAP_GEOM)
+IF(${PROJECT_NAME}_WRAP_GEOM)
+    SET(GEOM_INCLUDE_PATH /usr/local/include/geom CACHE PATH "geom include path" )
+	SET(GEOM_LIB_PATH /usr/local/lib CACHE PATH "geom library path" )
+    INCLUDE_DIRECTORIES(${GEOM_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src/wrapper/geom/inc_pythonocc)
+	SET(GEOM_LIBRARIES Archimede Exchange3DS ExchangeBREP ExchangeCSFDB
+		ExchangeIGES ExchangeOBJ ExchangeSTEP ExchangeSTL ExchangeVRML
+		GEOM GEOMAlgo GEOMImpl NMTDS NMTTools Partition
+		ShHealOper Sketcher)
+	LINK_DIRECTORIES(${GEOM_LIB_PATH})
+ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
 ######################################################
 # Configure Build settings according to the platform #
@@ -126,71 +138,84 @@ ENDIF(WRAP_GEOM)
 IF(UNIX)
   IF(APPLE)
     ######### MacOSX ###########
-    MESSAGE("-- MacOSX system detected")
-    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS -D__PYTHONOCC_MAXINT__=2147483647)
-    SET(CMAKE_SWIG_FLAGS -O -DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS)
-    SET(SWIG_FILES_PATH ./src/wrapper/SWIG/linux_darwin)
+    MESSAGE(STATUS " -- MacOSX system detected")
+	INCLUDE_DIRECTORIES(/usr/X11R6/include)
+    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS)
+    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
+		-DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS)
+    SET(SWIG_FILES_PATH src/wrapper/SWIG_files/linux_darwin)
   ELSE(APPLE)
     ######### Unix/Linux ###########
-    MESSAGE("-- Unix/Linux system detected")
-    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS -D__PYTHONOCC_MAXINT__=2147483647)
-    SET(CMAKE_SWIG_FLAGS -O -DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS -DLIN -DLIN_INTEL -D_GNU_SOURCE=1)
-    SET(SWIG_FILES_PATH ./src/wrapper/SWIG/linux_darwin)
+    MESSAGE(STATUS " -- Unix/Linux system detected")
+    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS)
+    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
+		-DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS -DLIN -DLIN_INTEL -D_GNU_SOURCE=1)
+    SET(SWIG_FILES_PATH src/wrapper/SWIG_files/linux_darwin)
   ENDIF(APPLE)
 ELSE(UNIX)
   IF(WIN32)
     ######### Windows ###########
-    MESSAGE("-- Windows system detected")
-    ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB -D__PYTHONOCC_MAXINT__=2147483647)
-    SET(CMAKE_SWIG_FLAGS -O -DCSFDB -DWIN32 -D_WINDOWS)
-    SET(SWIG_FILES_PATH ./src/wrapper/SWIG/win32)
+    MESSAGE(STATUS " -- Windows system detected")
+    ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB)
+    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
+		-DCSFDB -DWIN32 -D_WINDOWS)
+    SET(SWIG_FILES_PATH src/wrapper/SWIG_files/win32)
   ELSE(WIN32)
-    MESSAGE("Unknown platform")
+    MESSAGE(STATUS " Unknown platform")
   ENDIF(WIN32)
 ENDIF(UNIX)
-# If in 64bit mode, we have to define the _OCC64 variable
-IF (MODE MATCHES "64bit")
-    ADD_DEFINITIONS(-D_OCC64)
-    SET(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -D_OCC64)
-ENDIF(MODE MATCHES "64bit")
 
 ############################
 # OpenCASCADE Modules list #
 ############################
-LIST(APPEND OCC_MODULES "Standard" "MMgt")
+INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/OCE_Modules.cmake)
+# add an option to choose modules to compile
+FOREACH(OCC_MODULE ${OCC_MODULES})
+	OPTION_WITH_DEFAULT(OCCMODULES_WRAP_${OCC_MODULE} "Compile ${OCC_MODULE}" TRUE)
+ENDFOREACH(OCC_MODULE ${OCC_MODULES})
 
 ###############################
 # salomegeometry Modules list #
 ###############################
-LIST(APPEND GEOM_MODULES "Archimede" "SGEOM" "GEOMAlgo" "GEOMImpl" "BlockFix" "NMTDS" "Partition" "ShHealOper" "Sketcher")
+IF(${PROJECT_NAME}_WRAP_GEOM)
+	INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/GEOM_Modules.cmake)
+	FOREACH(GEOM_MODULE ${GEOM_MODULES})
+		OPTION_WITH_DEFAULT(GEOMMODULES_WRAP_${GEOM_MODULE} "Compile ${GEOM_MODULE}" TRUE)
+	ENDFOREACH(GEOM_MODULE ${GEOM_MODULES})
+	
+ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
 ###############################
 # salomesmesh Modules list #
 ###############################
-LIST(APPEND SMESH_MODULES "SMDSAbs" "SMDS" "SMESHDS" "SMESH" "StdMeshers")
+LIST(APPEND SMESH_MODULES SMDSAbs SMDS SMESHDS SMESH StdMeshers)
 
 ###################
 # Wrapper Modules #
 ###################
 
 # OpenCASCADE
+FILE(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/${SWIG_FILES_PATH})
 FOREACH(OCC_MODULE ${OCC_MODULES})
-    SET(FILE ${SWIG_FILES_PATH}/${OCC_MODULE}.i)
-	SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
-    SWIG_ADD_MODULE(${OCC_MODULE} python ${FILE})
-    SWIG_LINK_LIBRARIES(${OCC_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES})
+	IF(OCCMODULES_WRAP_${OCC_MODULE})
+    	SET(FILE ${SWIG_FILES_PATH}/${OCC_MODULE}.i)
+		SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
+    	SWIG_ADD_MODULE(${OCC_MODULE} python ${FILE})
+    	SWIG_LINK_LIBRARIES(${OCC_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES})
+	ENDIF(OCCMODULES_WRAP_${OCC_MODULE})
 ENDFOREACH(OCC_MODULE)
 
 # salomegeometry
-IF(WRAP_GEOM)
-    LINK_DIRECTORIES(${OCC_LIB_PATH})
+IF(${PROJECT_NAME}_WRAP_GEOM)
 	FOREACH(GEOM_MODULE ${GEOM_MODULES})
-	    SET(FILE ${SWIG_FILES_PATH}/${GEOM_MODULE}.i)
-		SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
-	    SWIG_ADD_MODULE(${GEOM_MODULE} python ${FILE})
-	    SWIG_LINK_LIBRARIES(${GEOM_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES} ${GEOM_LIBRARIES})
+		IF(GEOMMODULES_WRAP_${GEOM_MODULE})
+	    	SET(FILE ${SWIG_FILES_PATH}/${GEOM_MODULE}.i)
+			SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
+	    	SWIG_ADD_MODULE(${GEOM_MODULE} python ${FILE})
+	    	SWIG_LINK_LIBRARIES(${GEOM_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES} ${GEOM_LIBRARIES})
+		ENDIF(GEOMMODULES_WRAP_${GEOM_MODULE})
 	ENDFOREACH(GEOM_MODULE)
-ENDIF(WRAP_GEOM)
+ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
 # salomesmesh
 IF(WRAP_SMESH)
@@ -201,3 +226,67 @@ IF(WRAP_SMESH)
 	    SWIG_LINK_LIBRARIES(${SMESH_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES} ${SMESH_LIBRARIES})
 ENDFOREACH(OCC_MODULE)
 ENDIF(WRAP_SMESH)
+
+# Build third part modules
+# TODO : the following line is strange but necessary
+EXECUTE_PROCESS(COMMAND ${CMAKE_COMMAND} -E make_directory src/wrapper/Visualization)
+SET_SOURCE_FILES_PROPERTIES(src/wrapper/Visualization/Visualization.i PROPERTIES CPLUSPLUS ON)
+INCLUDE_DIRECTORIES(src/wrapper/Visualization)
+SET(VISUALIZATION_SOURCE_FILES
+	src/wrapper/Visualization/Visualization.i
+	src/wrapper/Visualization/Display3d.cpp
+	src/wrapper/Visualization/Display2d.cpp
+	src/wrapper/Visualization/NISDisplay3d.cpp)
+SWIG_ADD_MODULE(Visualization python ${VISUALIZATION_SOURCE_FILES})
+SWIG_LINK_LIBRARIES(Visualization ${PYTHON_LIBRARIES} ${OCC_LIBRARIES})
+
+###########################
+# create __init__.py file #
+###########################
+
+################
+# Installation #
+################
+IF(WIN32)
+	SET(EXTENSION "dll")
+ELSE(WIN32)
+	SET(EXTENSION "so")
+ENDIF(WIN32)
+
+# install pyOCC modules
+FOREACH(OCC_MODULE ${OCC_MODULES})
+	IF(OCCMODULES_WRAP_${OCC_MODULE})
+		INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${OCC_MODULE}.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+		INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/_${OCC_MODULE}.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+	ENDIF(OCCMODULES_WRAP_${OCC_MODULE})
+ENDFOREACH(OCC_MODULE)
+
+# install pyGEOM modules
+IF(${PROJECT_NAME}_WRAP_GEOM)
+	FOREACH(GEOM_MODULE ${GEOM_MODULES})
+		IF(GEOMMODULES_WRAP_${GEOM_MODULE})
+			INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${GEOM_MODULE}.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+			INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/_${GEOM_MODULE}.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+		ENDIF(OCCMODULES_WRAP_${OCC_MODULE})
+	ENDFOREACH(OCC_MODULE)
+ENDIF(${PROJECT_NAME}_WRAP_GEOM)
+
+# install third part modules
+INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/Visualization.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/_Visualization.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+# install GC
+INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/wrapper/GarbageCollector.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+# install addons
+INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/Display DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/Utils DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/MSH DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/PAF DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/KBE DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/DYN DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+# install background image
+INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/addons/Display/default_background.bmp DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY}/Display )
+# install AUTHORS and LICENSE files
+INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/AUTHORS DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+# install __init__.py file
+INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/__init__.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
