@@ -20,9 +20,38 @@
 
 %{
 #include <Visualization.h>
+#include <Tesselator.h>
+#include <Standard.hxx>
 %}
 
 %include ../SWIG_files/ExceptionCatcher.i
+
+enum theTextureMappingRule {
+	atCube,
+	atNormal,
+	atNormalAutoScale
+	};
+
+class Tesselator {
+ public:
+    Tesselator(TopoDS_Shape aShape,
+               theTextureMappingRule aTxtMapType,
+               float anAutoScaleSizeOnU,
+               float anAutoScaleSizeOnV,
+               float aDeviation,
+               float aUOrigin,
+               float aVOrigin,
+               float aURepeat,
+               float aVRepeat,
+               float aScaleU,
+               float aScaleV,
+               float aRotationAngle);
+	float* VerticesList();
+	int ObjGetTriangleCount();
+	int ObjGetVertexCount();
+	int ObjGetNormalCount();
+	void ExportShapeToJSON(char *filename);
+};
 
 class Display2d {
  public:
