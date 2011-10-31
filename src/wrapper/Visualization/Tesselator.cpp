@@ -169,17 +169,20 @@ void Tesselator::Tesselate()
       //write triangle buffer
       Standard_Integer validFaceTriCount = 0;
       Standard_Integer n1 , n2 , n3;
+      TopAbs_Orientation orient = myFace.Orientation();
       const Poly_Array1OfTriangle&   triangles   = myT->Triangles();
       this_face->tri_indexes  = new int  [triangles.Length()* 3];
       for (int nt = 1; nt <= myT->NbTriangles(); nt++) {
-        if (SST.Orientation(myFace) == TopAbs_REVERSED)
-          triangles(nt).Get(n1,n3,n2);
-        else
-          triangles(nt).Get(n1,n2,n3);
+        triangles(nt).Get(n1,n2,n3);
+        if (orient != TopAbs_FORWARD) {
+            Standard_Integer tmp=n1;
+            n1 = n2;
+            n2 = tmp;
+        }
         if (TriangleIsValid(Nodes(n1),Nodes(n2),Nodes(n3))) {
           this_face->tri_indexes[(validFaceTriCount * 3)+ 0] = n1;
-          this_face->tri_indexes[(validFaceTriCount * 3)+ 1] = n3;
-          this_face->tri_indexes[(validFaceTriCount * 3)+ 2] = n2;
+          this_face->tri_indexes[(validFaceTriCount * 3)+ 1] = n2;
+          this_face->tri_indexes[(validFaceTriCount * 3)+ 2] = n3;
           validFaceTriCount++;
         }
       }
@@ -189,6 +192,7 @@ void Tesselator::Tesselate()
   }
   JoinPrimitives();
 }
+
 
 //---------------------------INTERFACE---------------------------------------
 void Tesselator::ExportShapeToJSON(char * filename)
@@ -206,28 +210,30 @@ void Tesselator::ExportShapeToJSON(char * filename)
     for (int i=0;i<tot_triangle_count;i++) {
         ObjGetTriangle(i, vertices_idx, texcoords_idx, normals_idx);
         // First vertex
-        JSONObject << "v("<<locVertexcoord[vertices_idx[0]]<<","<<locVertexcoord[vertices_idx[1]]<<","
-            << locVertexcoord[vertices_idx[2]]<<");\n";
+        JSONObject << "v("<<locVertexcoord[vertices_idx[0]]<<","<<locVertexcoord[vertices_idx[0]+1]<<","
+            << locVertexcoord[vertices_idx[0]+2]<<");\n";
         // Second vertex
-        JSONObject << "v("<<locVertexcoord[vertices_idx[0]+1]<<","<<locVertexcoord[vertices_idx[1]+1]<<","
-            << locVertexcoord[vertices_idx[2]+1]<<");\n";
+        JSONObject << "v("<<locVertexcoord[vertices_idx[1]]<<","<<locVertexcoord[vertices_idx[1]+1]<<","
+            << locVertexcoord[vertices_idx[1]+2]<<");\n";
         // Third vertex
-        JSONObject << "v("<<locVertexcoord[vertices_idx[0]+2]<<","<<locVertexcoord[vertices_idx[1]+2]<<","
+        JSONObject << "v("<<locVertexcoord[vertices_idx[2]]<<","<<locVertexcoord[vertices_idx[2]+1]<<","
             << locVertexcoord[vertices_idx[2]+2]<<");\n";
-        JSONObject << "Writing this to a file.\n";
+        
+    
     }
     // write normals
     for (int i=0;i<tot_triangle_count;i++) {
         ObjGetTriangle(i, vertices_idx, texcoords_idx, normals_idx);
-        JSONObject << "f3("<<vertices_idx[0]<<","<<vertices_idx[1]<<","<<vertices_idx[2]<<",";
+        // vertex indices
+        JSONObject << "f3("<<i*3<<","<<1+i*3<<","<<2+i*3<<",";
         // First normal
-        JSONObject << locNormalcoord[normals_idx[0]]<<","<<locNormalcoord[normals_idx[1]]<<","
-            << locNormalcoord[normals_idx[2]]<<",";
+        JSONObject << locNormalcoord[normals_idx[0]]<<","<<locNormalcoord[normals_idx[0]+1]<<","
+            << locNormalcoord[normals_idx[0]+2]<<",";
         // Second normal
-        JSONObject << locNormalcoord[normals_idx[0]+1]<<","<<locNormalcoord[normals_idx[1]+1]<<","
-            << locNormalcoord[normals_idx[2]+1]<<",";
+        JSONObject << locNormalcoord[normals_idx[1]]<<","<<locNormalcoord[normals_idx[1]+1]<<","
+            << locNormalcoord[normals_idx[1]+2]<<",";
         // Third normal
-        JSONObject << locNormalcoord[normals_idx[0]+2]<<","<<locNormalcoord[normals_idx[1]+2]<<","
+        JSONObject << locNormalcoord[normals_idx[2]]<<","<<locNormalcoord[normals_idx[2]+1]<<","
             << locNormalcoord[normals_idx[2]+2];
         JSONObject << ");\n";
     }
