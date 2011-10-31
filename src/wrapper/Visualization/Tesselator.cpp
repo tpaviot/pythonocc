@@ -238,8 +238,6 @@ void Tesselator::ExportShapeToJSON(char * filename)
         JSONObject << ");\n";
     }
     // footer
-    JSONObject << "this.sortFacesByMaterial()\n";
-
     JSONObject << "function v( x, y, z ) {\n";
     JSONObject<< "  scope.vertices.push(new THREE.Vertex(new THREE.Vector3(x,y,z)));\n";
     JSONObject<<"}\n";
