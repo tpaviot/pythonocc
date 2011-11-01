@@ -252,7 +252,7 @@ SWIG_LINK_LIBRARIES(Visualization ${PYTHON_LIBRARIES} ${OCC_LIBRARIES})
 # Installation #
 ################
 IF(WIN32)
-	SET(EXTENSION "dll")
+	SET(EXTENSION "pyd")
 ELSE(WIN32)
 	SET(EXTENSION "so")
 ENDIF(WIN32)
