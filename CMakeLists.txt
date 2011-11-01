@@ -80,7 +80,6 @@ ELSE(OCE_FOUND)
         # Under Windows, check the CASROOT env variable
         SET(OCC_INCLUDE_PATH "$ENV{CASROOT}\\inc")
         SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
-        # Find the Standard_Real.hxx header in this path
     ELSE(WIN32) #Unix
 		IF(DEFINED ENV{CASROOT})
         	SET(OCC_INCLUDE_PATH "$ENV{CASROOT}/include/oce")
@@ -157,6 +156,11 @@ ELSE(UNIX)
     ######### Windows ###########
     MESSAGE(STATUS " -- Windows system detected")
     ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB)
+	# specific windows defines for python version >=2.6.0
+	EXECUTE_PROCESS(COMMAND python -c "import sys;print (2,6)>=sys.version_info[:2]" OUTPUT_VARIABLE PYTHON_26_OR_HIGHER OUTPUT_STRIP_TRAILING_WHITESPACE)
+	IF(${PYTHON_26_OR_HIGHER} MATCHES "True")
+	  ADD_DEFINITIONS(-DHAVE_ACOSH -DHAVE_ASINH -DHAVE_ATANH)
+	ENDIF(${PYTHON_26_OR_HIGHER} MATCHES "True")
     SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
 		-DCSFDB -DWIN32 -D_WINDOWS)
     SET(SWIG_FILES_PATH src/wrapper/SWIG_files/win32)
