@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-
-# TODO:
-# * need examples where the tangency to constraining faces is respected
-
 ##Copyright 2009-2011 Jelle Ferina (jelleferinga@gmail.com)
 ##
 ##This file is part of pythonOCC.
