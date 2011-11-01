@@ -6,7 +6,7 @@ import sys, os
 class WebGlRenderer:
     def __init__(self, background_color = "#000000"):
         self._js_filename = "shape.js"
-        self._html_filename = "essai.html"
+        self._html_filename = "webgl_topods_shape.html"
         self._background_color = background_color
         
     def DisplayShape(self,shape):

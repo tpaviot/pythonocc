@@ -2,7 +2,7 @@ import os
 
 HEADER = """
 <head>
-	<title>pythonOCC webGL example suite: cylinder head visualization</title>
+	<title>pythonOCC @VERSION@ webgl renderer</title>
 	<meta name='Author' content='Thomas Paviot - tpaviot@gmail.com'>
 	<meta name='Description' content='Cylinder head visualization using WebGL and pythonOCC'>
 	<meta name='Keywords' content='WebGl,pythonOCC, cylinder, head, CAD'>
