@@ -451,9 +451,9 @@ void Tesselator::PrepareBoxTextureCoordinates(const TopoDS_Shape& aShape)
   aBox.Get(aXmin, aYmin, aZmin, aXmax, aYmax, aZmax);
 
   //enlarge the bb so all edges have the size of the biggest one
-  Standard_Real xDim = std::abs((long)aXmax - (long)aXmin);
-  Standard_Real yDim = std::abs((long)aYmax - (long)aYmin);
-  Standard_Real zDim = std::abs((long)aZmax - (long)aZmin);
+  Standard_Real xDim = abs((long)aXmax - (long)aXmin);
+  Standard_Real yDim = abs((long)aYmax - (long)aYmin);
+  Standard_Real zDim = abs((long)aZmax - (long)aZmin);
 
   if ((xDim > yDim) && (xDim > zDim)) {
     aYmin -= (xDim - yDim) / 2;
