@@ -113,7 +113,7 @@ void Tesselator::Tesselate()
   BRepMesh::Mesh(myShape, myDeviation);
 
   for (ExpFace.Init(myShape, TopAbs_FACE); ExpFace.More(); ExpFace.Next()) {
-    TopoDS_Face    myFace    = TopoDS::Face(ExpFace.Current());
+    const TopoDS_Face&    myFace    = TopoDS::Face(ExpFace.Current());
     TopLoc_Location aLocation;
 
     Handle(Poly_Triangulation) myT = BRep_Tool::Triangulation(myFace, aLocation);
