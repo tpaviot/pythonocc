@@ -25,7 +25,7 @@ SET(${PROJECT_NAME}_VERSION_MINOR 6dev)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
-SET(CMAKE_BUILD_TYPE "MinSizeRel" CACHE STRING "Build type" FORCE)
+SET(CMAKE_BUILD_TYPE "MinSizeRel" CACHE STRING "Build type")
 MESSAGE(STATUS " ${CMAKE_CXX_FLAGS}") 
 SET(BUILD_SHARED_LIBS ON)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
@@ -80,7 +80,6 @@ ELSE(OCE_FOUND)
         # Under Windows, check the CASROOT env variable
         SET(OCC_INCLUDE_PATH "$ENV{CASROOT}\\inc")
         SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
-        # Find the Standard_Real.hxx header in this path
     ELSE(WIN32) #Unix
 		IF(DEFINED ENV{CASROOT})
         	SET(OCC_INCLUDE_PATH "$ENV{CASROOT}/include/oce")
@@ -157,6 +156,11 @@ ELSE(UNIX)
     ######### Windows ###########
     MESSAGE(STATUS " -- Windows system detected")
     ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB)
+	# specific windows defines for python version >=2.6.0
+	EXECUTE_PROCESS(COMMAND python -c "import sys;print (2,6)>=sys.version_info[:2]" OUTPUT_VARIABLE PYTHON_26_OR_HIGHER OUTPUT_STRIP_TRAILING_WHITESPACE)
+	IF(${PYTHON_26_OR_HIGHER} MATCHES "True")
+	  ADD_DEFINITIONS(-DHAVE_ACOSH -DHAVE_ASINH -DHAVE_ATANH)
+	ENDIF(${PYTHON_26_OR_HIGHER} MATCHES "True")
     SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
 		-DCSFDB -DWIN32 -D_WINDOWS)
     SET(SWIG_FILES_PATH src/wrapper/SWIG_files/win32)
@@ -168,7 +172,11 @@ ENDIF(UNIX)
 ############################
 # OpenCASCADE Modules list #
 ############################
-INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/OCE_Modules.cmake)
+IF(WIN32)
+  INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/OCE_Modules_Win.cmake)
+ELSE(WIN32)
+  INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/OCE_Modules_Unix.cmake)
+ENDIF(WIN32)
 # add an option to choose modules to compile
 FOREACH(OCC_MODULE ${OCC_MODULES})
 	OPTION_WITH_DEFAULT(OCCMODULES_WRAP_${OCC_MODULE} "Compile ${OCC_MODULE}" TRUE)
@@ -248,7 +256,7 @@ SWIG_LINK_LIBRARIES(Visualization ${PYTHON_LIBRARIES} ${OCC_LIBRARIES})
 # Installation #
 ################
 IF(WIN32)
-	SET(EXTENSION "dll")
+	SET(EXTENSION "pyd")
 ELSE(WIN32)
 	SET(EXTENSION "so")
 ENDIF(WIN32)

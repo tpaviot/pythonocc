@@ -110,7 +110,6 @@ def generate_swig_single_process(module_list):
 if __name__ == '__main__':
     check_paths()
     # Check if a module name is passed to the command line
-    modules_to_wrap = Modules.ALL_MODULES
     if len(sys.argv)>1:
         module_name_to_wrap = sys.argv[1]
         if module_name_to_wrap == 'GEOM':
@@ -129,7 +128,12 @@ if __name__ == '__main__':
         #print modules_to_wrap
         if modules_to_wrap == None:
             raise NameError,"Unknown module"
-                
+    else:
+        if sys.platform == 'win32':
+            modules_to_wrap = Modules.COMMON_MODULES + Modules.WIN_MODULES
+        else:
+            modules_to_wrap = Modules.COMMON_MODULES + Modules.UNIX_MODULES
+        
     if MULTI_PROCESS_GENERATION:
         raw_input('You''re about to generate pythonOCC SWIG files (MultiProcess mode). Hit a key to continue')
         generate_swig_multiprocess(modules_to_wrap)
