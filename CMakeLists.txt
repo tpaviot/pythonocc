@@ -172,7 +172,11 @@ ENDIF(UNIX)
 ############################
 # OpenCASCADE Modules list #
 ############################
-INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/OCE_Modules.cmake)
+IF(WIN32)
+  INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/OCE_Modules_Win.cmake)
+ELSE(WIN32)
+  INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/OCE_Modules_Unix.cmake)
+ENDIF(WIN32)
 # add an option to choose modules to compile
 FOREACH(OCC_MODULE ${OCC_MODULES})
 	OPTION_WITH_DEFAULT(OCCMODULES_WRAP_${OCC_MODULE} "Compile ${OCC_MODULE}" TRUE)
