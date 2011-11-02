@@ -135,11 +135,6 @@ class TestTopologyLocalOperations(unittest.TestCase):
         mkf.Add(wire.Wire())
         mkf.Build()
         self.assertTrue(mkf.IsDone())
-        # bit obscure why this is nessecary...
-        # segfaults without...
-        new_face = mkf.Face()
-        BRepLib_BuildCurves3d(new_face)
-        
         prism = BRepFeat_MakeDPrism(box,
                                     mkf.Face(),
                                      face,
