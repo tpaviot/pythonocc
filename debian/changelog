@@ -1,3 +1,9 @@
+python-occ (0.5.9.1-0ubuntu2) oneiric; urgency=low
+
+  * cmake dep for new build system 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Fri, 04 Nov 2011 00:21:52 +0100
+
 python-occ (0.5.9.1-0ubuntu1) oneiric; urgency=low
 
   * python-occ and geom version bump
