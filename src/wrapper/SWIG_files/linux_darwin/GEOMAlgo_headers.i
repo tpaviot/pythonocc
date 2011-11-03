@@ -62,8 +62,10 @@ $HeaderURL$
 #include<GEOMAlgo_FinderShapeOn2.hxx>
 #include<GEOMAlgo_FinderShapeOnQuad.hxx>
 #include<GEOMAlgo_GlueAnalyser.hxx>
+#include<GEOMAlgo_GlueDetector.hxx>
 #include<GEOMAlgo_Gluer.hxx>
-#include<GEOMAlgo_Gluer1.hxx>
+#include<GEOMAlgo_Gluer2.hxx>
+#include<GEOMAlgo_GluerAlgo.hxx>
 #include<GEOMAlgo_HAlgo.hxx>
 #include<GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape.hxx>
 #include<GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape.hxx>

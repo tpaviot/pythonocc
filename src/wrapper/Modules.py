@@ -30,7 +30,7 @@ TOOLKITS = {'TKernel':['Dico','FSD','MMgt','Message','NCollection','OSD','Plugin
 #
 # (string module_name, list additional headers, list classes_to_exclude, dict member_functions to exclude)
 
-MODULES = [
+COMMON_MODULES = [
            ('Standard',[],['Standard_SStream'],{'Handle_Standard_Persistent':['ShallowDump'],\
 'Standard_Failure':['operator=']}),
            ('MMgt',[],[]),
@@ -209,7 +209,6 @@ MODULES = [
            ('GeomToIGES',[],[]),
            ('GeomTools',['Handle_TCollection'],[]),
            ('GeomToStep',[],[]),
-           ('GProp',[],[]),
 #########################
 ###### BRep #############
 #########################
@@ -479,8 +478,7 @@ MODULES = [
 #####################################
 # Visualization part is OS specific #
 #####################################
-if sys.platform=='win32':
-    MODULES.extend([
+WIN_MODULES = [
              ('Graphic2d',[],[],{'Graphic2d_TransientManager':['Transform']}),
              ('Graphic3d',['gp'],['Graphic3d_GraphicDevice','Handle_Graphic3d_GraphicDevice'],\
              {'Graphic3d_Group':['SetGroupPrimitivesAspect'],'Handle_Graphic3d_GraphicDevice':['DownCast']}),
@@ -501,9 +499,9 @@ if sys.platform=='win32':
              ('XCAFPrs',['SelectMgr','TDF','Graphic3d','Aspect','Prs3d','PrsMgr','SelectBasics','Quantity'],[]),
              #('WNT',[],[]), gccxml error
              ('MeshVS',['Aspect','Graphic3d','PrsMgr','Prs3d'],[]),
-             ])
-else:
-    MODULES.extend([
+             ]
+
+UNIX_MODULES = [
                     ('Xw',['OSD','TCollection'],[]),
                     ('Graphic2d',[],[],{'Graphic2d_TransientManager':['Transform']}),
                     ('Graphic3d',['OSD','MFT','gp'],[],{'Graphic3d_Group':['SetGroupPrimitivesAspect'],
@@ -526,20 +524,21 @@ else:
                                 'SelectBasics','SelectMgr','Xw','Quantity','Prs3d','PrsMgr','Image'],[]),
                     ('NIS',['Aspect','TColStd','TCollection','Quantity','Viewer','Graphic3d','OSD','Xw',
                             'Visual3d','Image','MFT'],['NIS_Triangulated'],{'NIS_InteractiveContext':['GetDrawers']}),
-                    ('MeshVS',['OSD','MFT','Xw','Graphic3d','Aspect','Prs3d','Quantity','PrsMgr','Image'],[]),          
-                    ])
-    MODULES.extend([
+                    ('MeshVS',['OSD','MFT','Xw','Graphic3d','Aspect','Prs3d','Quantity','PrsMgr','Image'],[]),
                     ('Image',[],[]), #bug on Windows
                     ('AlienImage',['Quantity','TCollection','Aspect'],[]),
-                   ])
+                   ]
 #
 # SalomeGEOM modules
 #
 SALOME_GEOM_MODULES = [
                        ('Archimede',[],[]),
                        ('SGEOM',['TDataStd','TColStd','TDF','CDM','CDF','Quantity'],[],\
-                        {'GEOM_SubShapeDriver':['GetID'],'GEOM_Engine':['GetTextureGUID']}),
-                       ('GEOMAlgo',['gp','TopoDS','Handle_TCollection'],[]),
+                        {'GEOM_SubShapeDriver':['GetID'],
+                        'GEOM_Engine':['GetTextureGUID','DumpPython'],}),
+                       ('GEOMAlgo',['gp','TopoDS','Handle_TCollection'],[],
+                       {'GEOMAlgo_Gluer2':['KeepNonSolids'],
+                       'GEOMAlgo_Gluer':['KeepNonSolids']}),
                        ('GEOMImpl',['gp','TopoDS','TDataStd','TDocStd','CDM','TDF','Handle_TCollection','CDF',
                                     'Aspect','Quantity'],\
                         ['GEOMImpl_Block6Explorer','GEOMImpl_Template','Handle_GEOMImpl_Template'],\
@@ -601,7 +600,7 @@ else:
                                  {'StdMeshers_Hexa_3D':['OppositeVertex'],
                                   'StdMeshers_MEFISTO_2D':['LoadPoints']}))
 
-ALL_MODULES = MODULES + SALOME_GEOM_MODULES #+ SALOME_SMESH_MODULES
+#ALL_MODULES = MODULES + SALOME_GEOM_MODULES #+ SALOME_SMESH_MODULES
 
 def PythonOCCStats():
     """

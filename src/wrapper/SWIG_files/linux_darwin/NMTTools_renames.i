@@ -24,6 +24,7 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_NMTTools_ListNodeOfListOfCommonBlock::DownCast;
+%rename(DownCast) Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo::DownCast;
 %rename(DownCast) Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::DownCast;
 %rename(DownCast) Handle_NMTTools_ListNodeOfListOfCoupleOfShape::DownCast;
 %rename(DownCast) Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock::DownCast;

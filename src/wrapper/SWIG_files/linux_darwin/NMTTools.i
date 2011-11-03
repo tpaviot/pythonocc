@@ -91,6 +91,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo;
+class Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo();
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo(const Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo(const NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo & operator=(const Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo & operator=(const NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
+	NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo* GetObject() {
+	return (NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo::~Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock;
 class Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public Handle_TCollection_MapNode {
 	public:
@@ -713,6 +751,86 @@ def __del__(self):
 };
 
 
+%nodefaultctor NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo;
+class NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo();
+		%feature("autodoc", "1");
+		NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo(const NMTTools_DataMapOfIntegerFaceInfo &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const NMTTools_DataMapOfIntegerFaceInfo &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const NMTTools_FaceInfo & Value() const;
+
+};
+%feature("shadow") NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo::~NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo;
+class NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo(const Standard_Integer &K, const NMTTools_FaceInfo &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		NMTTools_FaceInfo & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
+	Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo GetHandle() {
+	return *(Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo*) &$self;
+	}
+};
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo::~NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor NMTTools_StdMapNodeOfMapOfPaveBlock;
 class NMTTools_StdMapNodeOfMapOfPaveBlock : public TCollection_MapNode {
 	public:
@@ -1263,6 +1381,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor NMTTools_DataMapOfIntegerFaceInfo;
+class NMTTools_DataMapOfIntegerFaceInfo : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_DataMapOfIntegerFaceInfo(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTTools_DataMapOfIntegerFaceInfo & Assign(const NMTTools_DataMapOfIntegerFaceInfo &Other);
+		%feature("autodoc", "1");
+		NMTTools_DataMapOfIntegerFaceInfo & operator=(const NMTTools_DataMapOfIntegerFaceInfo &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const NMTTools_FaceInfo &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const NMTTools_FaceInfo & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const NMTTools_FaceInfo & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		NMTTools_FaceInfo & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		NMTTools_FaceInfo & operator()(const Standard_Integer &K);
+
+};
+%feature("shadow") NMTTools_DataMapOfIntegerFaceInfo::~NMTTools_DataMapOfIntegerFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_DataMapOfIntegerFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor NMTTools_IndexedDataMapOfShapePaveBlock;
 class NMTTools_IndexedDataMapOfShapePaveBlock : public TCollection_BasicMap {
 	public:
@@ -1560,6 +1723,51 @@ def __del__(self):
 %}
 
 %extend NMTTools_CheckerSI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_FaceInfo;
+class NMTTools_FaceInfo {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_FaceInfo();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer theI);
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		const NMTTools_MapOfPaveBlock & PaveBlocksIn() const;
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock & ChangePaveBlocksIn();
+		%feature("autodoc", "1");
+		const TColStd_MapOfInteger & VerticesIn() const;
+		%feature("autodoc", "1");
+		TColStd_MapOfInteger & ChangeVerticesIn();
+		%feature("autodoc", "1");
+		const NMTTools_MapOfPaveBlock & PaveBlocksOn() const;
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock & ChangePaveBlocksOn();
+		%feature("autodoc", "1");
+		const TColStd_MapOfInteger & VerticesOn() const;
+		%feature("autodoc", "1");
+		TColStd_MapOfInteger & ChangeVerticesOn();
+
+};
+%feature("shadow") NMTTools_FaceInfo::~NMTTools_FaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_FaceInfo {
 	void _kill_pointed() {
 		delete $self;
 	}
