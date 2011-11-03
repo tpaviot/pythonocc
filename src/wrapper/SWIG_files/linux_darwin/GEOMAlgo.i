@@ -873,6 +873,8 @@ class GEOMAlgo_Algo {
 		Standard_Integer ErrorStatus() const;
 		%feature("autodoc", "1");
 		Standard_Integer WarningStatus() const;
+		%feature("autodoc", "1");
+		void ComputeInternalShapes(const Standard_Boolean theFlag);
 
 };
 
@@ -1526,82 +1528,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GEOMAlgo_Gluer;
-class GEOMAlgo_Gluer : public GEOMAlgo_ShapeAlgo {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_Gluer();
-		%feature("autodoc", "1");
-		void SetCheckGeometry(const Standard_Boolean aFlag);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckGeometry() const;
-		%feature("autodoc", "1");
-		void SetKeepNonSolids(const Standard_Boolean aFlag);
-		%feature("autodoc", "1");
-		virtual		void Perform();
-		%feature("autodoc", "1");
-		Standard_Integer AloneShapes() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDeleted(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		const TopTools_DataMapOfShapeListOfShape & Images() const;
-		%feature("autodoc", "1");
-		const TopTools_DataMapOfShapeShape & Origins() const;
-
-};
-%feature("shadow") GEOMAlgo_Gluer::~GEOMAlgo_Gluer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMAlgo_Gluer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_Gluer1;
-class GEOMAlgo_Gluer1 : public GEOMAlgo_Gluer {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_Gluer1();
-		%feature("autodoc", "1");
-		void SetFacesToUnglue(const GEOMAlgo_ListOfCoupleOfShapes &aLCS);
-		%feature("autodoc", "1");
-		const GEOMAlgo_ListOfCoupleOfShapes & FacesToUnglue() const;
-		%feature("autodoc", "1");
-		const GEOMAlgo_ListOfCoupleOfShapes & GluedFaces() const;
-		%feature("autodoc", "1");
-		const GEOMAlgo_ListOfCoupleOfShapes & RejectedFaces() const;
-		%feature("autodoc", "1");
-		void UnglueFaces();
-
-};
-%feature("shadow") GEOMAlgo_Gluer1::~GEOMAlgo_Gluer1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMAlgo_Gluer1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GEOMAlgo_DataMapOfShapeShapeSet;
 class GEOMAlgo_DataMapOfShapeShapeSet : public TCollection_BasicMap {
 	public:
@@ -1918,6 +1844,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor GEOMAlgo_GluerAlgo;
+class GEOMAlgo_GluerAlgo {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_GluerAlgo();
+		%feature("autodoc", "1");
+		virtual		void SetArgument(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Argument() const;
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real aT);
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		void SetCheckGeometry(const Standard_Boolean aFlag);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckGeometry() const;
+		%feature("autodoc", "1");
+		virtual		void Perform();
+		%feature("autodoc", "1");
+		virtual		void Clear();
+		%feature("autodoc", "1");
+		IntTools_Context & Context();
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeListOfShape & Images() const;
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeShape & Origins() const;
+
+};
+%feature("shadow") GEOMAlgo_GluerAlgo::~GEOMAlgo_GluerAlgo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMAlgo_GluerAlgo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo;
 class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo : public TCollection_MapNode {
 	public:
@@ -2071,6 +2042,59 @@ def __del__(self):
 };
 
 
+%nodefaultctor GEOMAlgo_Gluer2;
+class GEOMAlgo_Gluer2 : public GEOMAlgo_BuilderShape {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_Gluer2();
+		%feature("autodoc", "1");
+		void SetShapesToGlue(const TopTools_DataMapOfShapeListOfShape &aM);
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeListOfShape & ShapesToGlue() const;
+		%feature("autodoc", "1");
+		void SetKeepNonSolids(const Standard_Boolean theFlag);
+		%feature("autodoc", "1");
+		virtual		void Clear();
+		%feature("autodoc", "1");
+		virtual		void Perform();
+		%feature("autodoc", "1");
+		virtual		void CheckData();
+		%feature("autodoc", "1");
+		void Detect();
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeListOfShape & ShapesDetected() const;
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeListOfShape & ImagesToWork() const;
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape theS);
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape theS);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape theS);
+		%feature("autodoc", "1");
+		static		void MakeVertex(const TopTools_ListOfShape &theLV, TopoDS_Vertex & theV);
+		%feature("autodoc", "1");
+		static		void MapBRepShapes(const TopoDS_Shape theS, TopTools_MapOfShape & theM);
+		%feature("autodoc", "1");
+		static		void MapShapes(const TopoDS_Shape theS, TopTools_MapOfShape & theM);
+
+};
+%feature("shadow") GEOMAlgo_Gluer2::~GEOMAlgo_Gluer2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMAlgo_Gluer2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GEOMAlgo_IndexedDataMapOfIntegerShape;
 class GEOMAlgo_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
 	public:
@@ -2210,13 +2234,56 @@ def __del__(self):
 };
 
 
+%nodefaultctor GEOMAlgo_Gluer;
+class GEOMAlgo_Gluer : public GEOMAlgo_ShapeAlgo {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_Gluer();
+		%feature("autodoc", "1");
+		void SetCheckGeometry(const Standard_Boolean aFlag);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckGeometry() const;
+		%feature("autodoc", "1");
+		virtual		void Perform();
+		%feature("autodoc", "1");
+		Standard_Integer AloneShapes() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDeleted(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeListOfShape & Images() const;
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeShape & Origins() const;
+		%feature("autodoc", "1");
+		void MakeSubShapes(const TopoDS_Shape aS, TopTools_MapOfShape & aM, TopoDS_Compound & aC);
+		%feature("autodoc", "1");
+		void SetKeepNonSolids(const Standard_Boolean bFlag);
+
+};
+%feature("shadow") GEOMAlgo_Gluer::~GEOMAlgo_Gluer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMAlgo_Gluer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GEOMAlgo_GlueAnalyser;
 class GEOMAlgo_GlueAnalyser : public GEOMAlgo_Gluer {
 	public:
 		%feature("autodoc", "1");
 		GEOMAlgo_GlueAnalyser();
-		%feature("autodoc", "1");
-		virtual		void Perform();
 		%feature("autodoc", "1");
 		Standard_Boolean HasSolidsToGlue() const;
 		%feature("autodoc", "1");
@@ -2375,6 +2442,10 @@ class GEOMAlgo_ShapeSet {
 		Standard_Boolean Contains(const GEOMAlgo_ShapeSet &theSet) const;
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & GetSet() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const GEOMAlgo_ShapeSet &theOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const GEOMAlgo_ShapeSet &theOther) const;
 
 };
 %feature("shadow") GEOMAlgo_ShapeSet::~GEOMAlgo_ShapeSet %{
@@ -2900,6 +2971,31 @@ def __del__(self):
 %}
 
 %extend GEOMAlgo_Tools {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_GlueDetector;
+class GEOMAlgo_GlueDetector : public GEOMAlgo_Algo {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_GlueDetector();
+		%feature("autodoc", "1");
+		virtual		void Perform();
+
+};
+%feature("shadow") GEOMAlgo_GlueDetector::~GEOMAlgo_GlueDetector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMAlgo_GlueDetector {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -1,29 +1,16 @@
 #!/usr/bin/make -f
-# -*- makefile -*-
 
-DEB_PYTHON_SYSTEM = pysupport
-DEB_SRCDIR = $(CURDIR)/src
+DH_VERBOSE=1
 
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/python-distutils.mk
+clean:
+	dh_testdir
+	dh_auto_clean
+	rm -rf debian/tmp
+	rm -rf debian/liboce*.[sd]*
+	rm -rf debian/liboce
+	rm -rf debian/liboce-dev
 
-DEB_PYTHON_BUILD_ARGS = --disable-SMESH -j6
+%:
+	dh $@
 
-DEB_PYTHON_INSTALL_ARGS_ALL = --disable-SMESH
-
-
-build: $(PYVERS:%=build-python%)
-	touch $@
-build-python%:
-	python$* setup.py build --disable-SMESH -j6
-	touch $@
-
-install:
-	build $(PYVERS:%=install-python%)
-install-python%:
-	python$* setup.py install --root $(CURDIR)/debian/python-foo --disable-SMESH
-
-binary-arch:
-	dh_pysupport
-	dh_installdeb
-
+.PHONY: clean build 

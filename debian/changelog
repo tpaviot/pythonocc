@@ -1,3 +1,9 @@
+python-occ (0.5.9.1-0ubuntu1) oneiric; urgency=low
+
+  * python-occ and geom version bump
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Thu, 03 Nov 2011 12:25:57 +0100
+
 python-occ (0.5.9-0ubuntu3) oneiric; urgency=low
 
   * protect from new geom release 

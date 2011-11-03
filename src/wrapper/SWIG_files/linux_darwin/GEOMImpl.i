@@ -1572,6 +1572,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_GEOMImpl_ProjectionDriver;
+class Handle_GEOMImpl_ProjectionDriver : public Handle_TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_ProjectionDriver();
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_ProjectionDriver(const Handle_GEOMImpl_ProjectionDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_ProjectionDriver(const GEOMImpl_ProjectionDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_ProjectionDriver & operator=(const Handle_GEOMImpl_ProjectionDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_ProjectionDriver & operator=(const GEOMImpl_ProjectionDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_GEOMImpl_ProjectionDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOMImpl_ProjectionDriver {
+	GEOMImpl_ProjectionDriver* GetObject() {
+	return (GEOMImpl_ProjectionDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_GEOMImpl_ProjectionDriver::~Handle_GEOMImpl_ProjectionDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_GEOMImpl_ProjectionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_GEOMImpl_BlockDriver;
 class Handle_GEOMImpl_BlockDriver : public Handle_TFunction_Driver {
 	public:
@@ -2561,10 +2599,17 @@ def __del__(self):
 %nodefaultctor GEOMImpl_IShapesOperations;
 class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 	public:
+		enum ExplodeType {
+			EXPLODE_OLD_INCLUDE_MAIN,
+			EXPLODE_NEW_INCLUDE_MAIN,
+			EXPLODE_NEW_EXCLUDE_MAIN,
+		};
 		%feature("autodoc", "1");
 		GEOMImpl_IShapesOperations(GEOM_Engine* theEngine, int );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeEdge(Handle_GEOM_Object , Handle_GEOM_Object );
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakeEdgeOnCurveByLength(Handle_GEOM_Object , const GEOM_Parameter &theLength, Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeEdgeWire(Handle_GEOM_Object , const Standard_Real theLinearTolerance, const Standard_Real theAngularTolerance);
 		%feature("autodoc", "1");
@@ -2576,25 +2621,29 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeShell(std::list<Handle_GEOM_Object>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeSolidShell(Handle_GEOM_Object );
-		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeSolidShells(std::list<Handle_GEOM_Object>);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeCompound(std::list<Handle_GEOM_Object>);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeGlueFaces(Handle_GEOM_Object , const Standard_Real theTolerance, const Standard_Boolean doKeepNonSolids);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient GetGlueFaces(Handle_GEOM_Object , const Standard_Real theTolerance);
+		Handle_GEOM_Object MakeGlueFacesByList(Handle_GEOM_Object , const Standard_Real theTolerance, std::list<Handle_GEOM_Object>, const Standard_Boolean doKeepNonSolids, const Standard_Boolean doGlueAllEdges);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeGlueFacesByList(Handle_GEOM_Object , const Standard_Real theTolerance, std::list<Handle_GEOM_Object>, const Standard_Boolean doKeepNonSolids);
+		Handle_GEOM_Object MakeGlueEdges(Handle_GEOM_Object , const Standard_Real theTolerance);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient GetGlueShapes(Handle_GEOM_Object , const Standard_Real theTolerance, const TopAbs_ShapeEnum theType);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakeGlueEdgesByList(Handle_GEOM_Object , const Standard_Real theTolerance, std::list<Handle_GEOM_Object>);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfTransient GetExistingSubObjects(Handle_GEOM_Object , const Standard_Boolean theGroupsOnly);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient MakeExplode(Handle_GEOM_Object , const Standard_Integer theShapeType, const Standard_Boolean isSorted);
+		Handle_TColStd_HSequenceOfTransient MakeExplode(Handle_GEOM_Object , const Standard_Integer theShapeType, const Standard_Boolean isSorted, const GEOMImpl_IShapesOperations::ExplodeType theExplodeType=GEOMImpl_IShapesOperations::EXPLODE_NEW_INCLUDE_MAIN);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfInteger SubShapeAllIDs(Handle_GEOM_Object , const Standard_Integer theShapeType, const Standard_Boolean isSorted);
+		Handle_TColStd_HSequenceOfInteger SubShapeAllIDs(Handle_GEOM_Object , const Standard_Integer theShapeType, const Standard_Boolean isSorted, const GEOMImpl_IShapesOperations::ExplodeType theExplodeType=GEOMImpl_IShapesOperations::EXPLODE_NEW_INCLUDE_MAIN);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object GetSubShape(Handle_GEOM_Object , const Standard_Integer theID);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient MakeSubShapes(Handle_GEOM_Object , Handle_TColStd_HArray1OfInteger );
 		%feature("autodoc", "1");
 		Standard_Integer GetSubShapeIndex(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -2609,6 +2658,8 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 		Handle_TColStd_HSequenceOfInteger GetFreeFacesIDs(Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfTransient GetSharedShapes(Handle_GEOM_Object , Handle_GEOM_Object , const Standard_Integer theShapeType);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient GetSharedShapes(std::list<Handle_GEOM_Object>, const Standard_Integer theShapeType);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfTransient GetShapesOnPlane(const Handle_GEOM_Object &theShape, const Standard_Integer theShapeType, const Handle_GEOM_Object &theAx1, const GEOMAlgo_State theState);
 		%feature("autodoc", "1");
@@ -2650,11 +2701,13 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object GetShapesOnShapeAsCompound(const Handle_GEOM_Object &theCheckShape, const Handle_GEOM_Object &theShape, const Standard_Integer theShapeType, GEOMAlgo_State );
 		%feature("autodoc", "1");
-		static		void SortShapes(TopTools_ListOfShape & SL);
+		static		void SortShapes(TopTools_ListOfShape & SL, const Standard_Boolean isOldSorting=1);
 		%feature("autodoc", "1");
 		static		TopoDS_Shape CompsolidToCompound(const TopoDS_Shape theCompsolid);
 		%feature("autodoc", "1");
 		static		bool CheckTriangulation(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		static		TopAbs_ShapeEnum GetTypeOfSimplePart(const TopoDS_Shape theShape);
 
 };
 %feature("shadow") GEOMImpl_IShapesOperations::~GEOMImpl_IShapesOperations %{
@@ -2694,6 +2747,10 @@ class GEOMImpl_IGlue {
 		void SetKeepNonSolids(Standard_Boolean );
 		%feature("autodoc", "1");
 		Standard_Boolean GetKeepNonSolids();
+		%feature("autodoc", "1");
+		void SetGlueAllEdges(Standard_Boolean );
+		%feature("autodoc", "1");
+		Standard_Boolean GetGlueAllEdges();
 
 };
 %feature("shadow") GEOMImpl_IGlue::~GEOMImpl_IGlue %{
@@ -2767,6 +2824,10 @@ class GEOMImpl_IRotate {
 		void SetElevationStep(const TCollection_AsciiString &theElevationStep);
 		%feature("autodoc", "1");
 		double GetElevationStep();
+		%feature("autodoc", "1");
+		void SetDir2(gp_XYZ );
+		%feature("autodoc", "1");
+		gp_XYZ GetDir2();
 
 };
 %feature("shadow") GEOMImpl_IRotate::~GEOMImpl_IRotate %{
@@ -3133,9 +3194,9 @@ class GEOMImpl_GlueDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		static		TopoDS_Shape GlueFaces(const TopoDS_Shape theShape, const Standard_Real theTolerance, const Standard_Boolean doKeepNonSolids=1);
 		%feature("autodoc", "1");
-		TopoDS_Shape GlueFacesWithWarnings(const TopoDS_Shape theShape, const Standard_Real theTolerance, Standard_Boolean , TCollection_AsciiString & theWarning) const;
+		TopoDS_Shape GlueWithWarnings(const TopoDS_Shape theShape, const Standard_Real theTolerance, const TopAbs_ShapeEnum theShapeType, const Standard_Boolean doKeepNonSolids, TCollection_AsciiString & theWarning) const;
 		%feature("autodoc", "1");
-		static		TopoDS_Shape GlueFacesByList(const TopoDS_Shape theShape, const Standard_Real theTolerance, Standard_Boolean , const TopTools_MapOfShape &aFaces);
+		static		TopoDS_Shape GlueByList(const TopoDS_Shape theShape, const Standard_Real theTolerance, const Standard_Boolean doKeepNonSolids, const TopTools_MapOfShape &theShapesList, const Standard_Boolean doGlueAllEdges);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -3419,15 +3480,23 @@ class GEOMImpl_IPolyline {
 		%feature("autodoc", "1");
 		void SetLength(int );
 		%feature("autodoc", "1");
-		void SetIsClosed(int );
-		%feature("autodoc", "1");
 		void SetPoint(int , Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetIsClosed(bool );
 		%feature("autodoc", "1");
 		int GetLength();
 		%feature("autodoc", "1");
-		int GetIsClosed();
-		%feature("autodoc", "1");
 		Handle_GEOM_Function GetPoint(int );
+		%feature("autodoc", "1");
+		bool GetIsClosed();
+		%feature("autodoc", "1");
+		void SetConstructorType(int );
+		%feature("autodoc", "1");
+		int GetConstructorType();
+		%feature("autodoc", "1");
+		void SetCoordinates(const Handle_TColStd_HArray1OfReal &theValue);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal GetCoordinates();
 
 };
 %feature("shadow") GEOMImpl_IPolyline::~GEOMImpl_IPolyline %{
@@ -3457,6 +3526,8 @@ class GEOMImpl_IBasicOperations : public GEOM_IOperations {
 		Handle_GEOM_Object MakePointWithReference(Handle_GEOM_Object , const GEOM_Parameter &theX, const GEOM_Parameter &theY, const GEOM_Parameter &theZ);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePointOnCurve(Handle_GEOM_Object , const GEOM_Parameter &theParameter);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakePointOnCurveByLength(Handle_GEOM_Object , const GEOM_Parameter &theLength, Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePointOnCurveByCoord(Handle_GEOM_Object , const GEOM_Parameter &theXParam, const GEOM_Parameter &theYParam, const GEOM_Parameter &theZParam);
 		%feature("autodoc", "1");
@@ -3584,7 +3655,11 @@ class GEOMImpl_IMeasureOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		bool CheckShape(Handle_GEOM_Object , const Standard_Boolean theIsCheckGeom, TCollection_AsciiString & theDump);
 		%feature("autodoc", "1");
+		TCollection_AsciiString IsGoodForSolid(Handle_GEOM_Object );
+		%feature("autodoc", "1");
 		TCollection_AsciiString WhatIs(Handle_GEOM_Object );
+		%feature("autodoc", "1");
+		std::vector<bool,std::allocator<bool> > AreCoordsInside(Handle_GEOM_Object , std::vector<double> coords, double =Precision::Confusion());
 		%feature("autodoc","GetMinDistance() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		Standard_Real GetMinDistance(Handle_GEOM_Object , Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -3593,6 +3668,8 @@ class GEOMImpl_IMeasureOperations : public GEOM_IOperations {
 		void PointCoordinates(Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real GetAngle(Handle_GEOM_Object , Handle_GEOM_Object );
+		%feature("autodoc", "1");
+		Standard_Real GetAngleBtwVectors(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc","CurveCurvatureByParam() -> Standard_Real");
 
 		Standard_Real CurveCurvatureByParam(Handle_GEOM_Object , Standard_Real &OutValue);
@@ -3638,13 +3715,25 @@ class GEOMImpl_ISpline {
 		%feature("autodoc", "1");
 		void SetIsClosed(bool );
 		%feature("autodoc", "1");
+		void SetDoReordering(bool );
+		%feature("autodoc", "1");
 		void SetPoint(int , Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		int GetLength();
 		%feature("autodoc", "1");
 		bool GetIsClosed();
 		%feature("autodoc", "1");
+		bool GetDoReordering();
+		%feature("autodoc", "1");
 		Handle_GEOM_Function GetPoint(int );
+		%feature("autodoc", "1");
+		void SetConstructorType(int );
+		%feature("autodoc", "1");
+		int GetConstructorType();
+		%feature("autodoc", "1");
+		void SetCoordinates(const Handle_TColStd_HArray1OfReal &theValue);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal GetCoordinates();
 
 };
 %feature("shadow") GEOMImpl_ISpline::~GEOMImpl_ISpline %{
@@ -4381,13 +4470,13 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeTorusPntVecRR(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theRMajor, const GEOM_Parameter &theRMinor, const GEOM_Parameter &theVmin=0.0, const GEOM_Parameter &theVmax=0.0, const GEOM_Parameter &theAngle=0.0);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePrismVecH(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theH);
+		Handle_GEOM_Object MakePrismVecH(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theH, const GEOM_Parameter &theScaleFactor=-1.0e+0);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePrismVecH2Ways(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theH);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePrismTwoPnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
+		Handle_GEOM_Object MakePrismTwoPnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theScaleFactor);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePrismVecHAng(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theH, const GEOM_Parameter &theAng);
+		Handle_GEOM_Object MakePrismVecHAng(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theH, const GEOM_Parameter &theAng, const GEOM_Parameter &theScaleFactor);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePrismTwoPnt2Ways(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -4585,6 +4674,12 @@ class GEOMImpl_IPoint {
 		void SetParameter2(const TCollection_AsciiString &theParam);
 		%feature("autodoc", "1");
 		double GetParameter2();
+		%feature("autodoc", "1");
+		void SetLength(double );
+		%feature("autodoc", "1");
+		void SetLength(const TCollection_AsciiString &theLength);
+		%feature("autodoc", "1");
+		double GetLength();
 
 };
 %feature("shadow") GEOMImpl_IPoint::~GEOMImpl_IPoint %{
@@ -4735,6 +4830,8 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object OffsetShapeCopy(Handle_GEOM_Object , const GEOM_Parameter &theOffset, const GEOM_Parameter &theHeightOffset, bool );
 		%feature("autodoc", "1");
+		Handle_GEOM_Object ProjectShapeCopy(Handle_GEOM_Object , Handle_GEOM_Object );
+		%feature("autodoc", "1");
 		Handle_GEOM_Object ScaleShape(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theFactor);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object ScaleShapeCopy(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theFactor);
@@ -4760,6 +4857,8 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations {
 		Handle_GEOM_Object RotateThreePoints(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object RotateThreePointsCopy(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
+		%feature("autodoc", "1");
+		Handle_GEOM_Object TransformLikeOtherCopy(Handle_GEOM_Object , Handle_GEOM_Object );
 
 };
 %feature("shadow") GEOMImpl_ITransformOperations::~GEOMImpl_ITransformOperations %{
@@ -4982,9 +5081,9 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeArcOfEllipse(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeSplineBezier(std::list<Handle_GEOM_Object>);
+		Handle_GEOM_Object MakeSplineBezier(std::list<Handle_GEOM_Object>, bool =false);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeSplineInterpolation(std::list<Handle_GEOM_Object>, bool =false);
+		Handle_GEOM_Object MakeSplineInterpolation(std::list<Handle_GEOM_Object>, bool =false, bool =false);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeSketcher(const TCollection_AsciiString &theCommand, std::list<GEOM_Parameter>);
 		%feature("autodoc", "1");
@@ -5297,6 +5396,51 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_IFilling {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GEOMImpl_ProjectionDriver;
+class GEOMImpl_ProjectionDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_ProjectionDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOMImpl_ProjectionDriver {
+	Handle_GEOMImpl_ProjectionDriver GetHandle() {
+	return *(Handle_GEOMImpl_ProjectionDriver*) &$self;
+	}
+};
+%extend GEOMImpl_ProjectionDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GEOMImpl_ProjectionDriver::~GEOMImpl_ProjectionDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMImpl_ProjectionDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7018,6 +7162,8 @@ class GEOMImpl_PipeDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
+		static		TopoDS_Shape CreatePipeWithDifferentSections(const TopoDS_Wire theWirePath, const Handle_TopTools_HSequenceOfShape theBases, const Handle_TopTools_HSequenceOfShape theLocs, const Standard_Boolean theWithContact, const Standard_Boolean theWithCorrect);
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
@@ -7197,6 +7343,8 @@ class GEOMImpl_PrismDriver : public TFunction_Driver {
 		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
 		%feature("autodoc", "1");
 		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		TopoDS_Shape MakeScaledPrism(const TopoDS_Shape theShapeBase, const gp_Vec theVector, const Standard_Real theScaleFactor, const gp_Pnt theCDG=gp::Origin(), bool =false);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -7624,6 +7772,12 @@ class GEOMImpl_IPrism {
 		double GetDY();
 		%feature("autodoc", "1");
 		double GetDZ();
+		%feature("autodoc", "1");
+		void SetScale(double );
+		%feature("autodoc", "1");
+		void SetScale(const TCollection_AsciiString &theH);
+		%feature("autodoc", "1");
+		double GetScale();
 
 };
 %feature("shadow") GEOMImpl_IPrism::~GEOMImpl_IPrism %{

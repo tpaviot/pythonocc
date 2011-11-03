@@ -63,6 +63,7 @@ $HeaderURL$
 %rename(DownCast) Handle_GEOMImpl_CopyDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_PipeTShapeDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_TranslateDriver::DownCast;
+%rename(DownCast) Handle_GEOMImpl_ProjectionDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_BlockDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_ChamferDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_ArcDriver::DownCast;
@@ -84,10 +85,11 @@ $HeaderURL$
 %rename(SortShapes) GEOMImpl_IShapesOperations::SortShapes;
 %rename(CompsolidToCompound) GEOMImpl_IShapesOperations::CompsolidToCompound;
 %rename(CheckTriangulation) GEOMImpl_IShapesOperations::CheckTriangulation;
+%rename(GetTypeOfSimplePart) GEOMImpl_IShapesOperations::GetTypeOfSimplePart;
 %rename(GetID) GEOMImpl_OffsetDriver::GetID;
 %rename(GetID) GEOMImpl_GlueDriver::GetID;
 %rename(GlueFaces) GEOMImpl_GlueDriver::GlueFaces;
-%rename(GlueFacesByList) GEOMImpl_GlueDriver::GlueFacesByList;
+%rename(GlueByList) GEOMImpl_GlueDriver::GlueByList;
 %rename(GetID) GEOMImpl_PlaneDriver::GetID;
 %rename(GetPosition) GEOMImpl_IMeasureOperations::GetPosition;
 %rename(GetParameters) GEOMImpl_IHealingOperations::GetParameters;
@@ -104,6 +106,7 @@ $HeaderURL$
 %rename(GetID) GEOMImpl_SphereDriver::GetID;
 %rename(GetID) GEOMImpl_VariableFilletDriver::GetID;
 %rename(GetID) GEOMImpl_RotateDriver::GetID;
+%rename(GetID) GEOMImpl_ProjectionDriver::GetID;
 %rename(GetID) GEOMImpl_BoxDriver::GetID;
 %rename(GetID) GEOMImpl_ImportDriver::GetID;
 %rename(GetID) GEOMImpl_PositionDriver::GetID;
@@ -120,10 +123,12 @@ $HeaderURL$
 %rename(GetID) GEOMImpl_EllipseDriver::GetID;
 %rename(GetID) GEOMImpl_VectorDriver::GetID;
 %rename(GetID) GEOMImpl_PipeDriver::GetID;
+%rename(CreatePipeWithDifferentSections) GEOMImpl_PipeDriver::CreatePipeWithDifferentSections;
 %rename(GetID) GEOMImpl_ThickSolidDriver::GetID;
 %rename(GetID) GEOMImpl_PlateDriver::GetID;
 %rename(GetID) GEOMImpl_ThruSectionsDriver::GetID;
 %rename(GetID) GEOMImpl_PrismDriver::GetID;
+%rename(MakeScaledPrism) GEOMImpl_PrismDriver::MakeScaledPrism;
 %rename(GetID) GEOMImpl_DiskDriver::GetID;
 %rename(GetID) GEOMImpl_Fillet1dDriver::GetID;
 %rename(GetID) GEOMImpl_ArcDriver::GetID;

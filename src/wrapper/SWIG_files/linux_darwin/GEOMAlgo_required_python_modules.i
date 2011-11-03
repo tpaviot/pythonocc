@@ -36,5 +36,6 @@ import BRepAlgo
 import gp
 import Bnd
 import TCollection
+import IntTools
 import BOPTColStd
 };
