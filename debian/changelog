@@ -1,3 +1,9 @@
+python-occ (0.5.9.1-0ubuntu3) oneiric; urgency=low
+
+  * changed arch to any 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Fri, 04 Nov 2011 20:56:39 +0100
+
 python-occ (0.5.9.1-0ubuntu2) oneiric; urgency=low
 
   * cmake dep for new build system 

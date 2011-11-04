@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 7), cmake, python-all-dev, python-support, swig, li
 Standards-Version: 3.9.1
 
 Package: python-occ
-Architecture: i386 amd64
+Architecture: any
 Provides: ${python:Provides}
 Depends: ${misc:Depends}, ${python:Depends}, liboce1 (>= 0.6.0-0ubuntu9), libsalome-geom (>= 6.3.1.8-0ubuntu7)
 #, python-occ-geom
