@@ -1,3 +1,9 @@
+python-occ (0.5.9.1-0ubuntu4) oneiric; urgency=low
+
+  * added freetype dep
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sat, 05 Nov 2011 22:03:21 +0100
+
 python-occ (0.5.9.1-0ubuntu3) oneiric; urgency=low
 
   * changed arch to any 
