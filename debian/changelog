@@ -1,3 +1,9 @@
+python-occ (0.5.9.1-0ubuntu5) oneiric; urgency=low
+
+  * libftgl-dev build dep added
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 06 Nov 2011 09:41:32 +0100
+
 python-occ (0.5.9.1-0ubuntu4) oneiric; urgency=low
 
   * added freetype dep
