@@ -1,3 +1,9 @@
+python-occ (0.5.9.1-0ubuntu6) oneiric; urgency=low
+
+  * added libxmu-dev dep 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Sun, 06 Nov 2011 19:33:24 +0100
+
 python-occ (0.5.9.1-0ubuntu5) oneiric; urgency=low
 
   * libftgl-dev build dep added

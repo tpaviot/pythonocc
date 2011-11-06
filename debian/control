@@ -2,7 +2,7 @@ Source: python-occ
 Section: python
 Priority: extra
 Maintainer: Henning Meyer <hmeyer@gmx.eu>
-Build-Depends: debhelper (>= 7), cmake, python-all-dev, python-support, swig, liboce-dev (>= 0.6.0-0ubuntu9), libx11-dev, libsalome-geom-dev (>= 6.3.1.8-0ubuntu7), libx11-dev, libgl1-mesa-dev, libftgl-dev
+Build-Depends: debhelper (>= 7), cmake, python-all-dev, python-support, swig, liboce-dev (>= 0.6.0-0ubuntu9), libx11-dev, libsalome-geom-dev (>= 6.3.1.8-0ubuntu7), libx11-dev, libgl1-mesa-dev, libftgl-dev, libxmu-dev
 #, python-occ-geom
 Standards-Version: 3.9.1
 
