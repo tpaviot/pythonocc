@@ -1,3 +1,9 @@
+python-occ (0.5.9.1-0ubuntu9) maverick; urgency=low
+
+  * maverick upload 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Mon, 07 Nov 2011 23:58:51 +0100
+
 python-occ (0.5.9.1-0ubuntu8) lucid; urgency=low
 
   * included examples 
