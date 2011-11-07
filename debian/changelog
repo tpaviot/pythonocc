@@ -1,3 +1,9 @@
+python-occ (0.5.9.1-0ubuntu7) lucid; urgency=low
+
+  * lucid upload 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Mon, 07 Nov 2011 11:38:27 +0100
+
 python-occ (0.5.9.1-0ubuntu6) oneiric; urgency=low
 
   * added libxmu-dev dep 
