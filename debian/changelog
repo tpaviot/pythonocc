@@ -1,3 +1,9 @@
+python-occ (0.5.9.1-0ubuntu11) oneiric; urgency=low
+
+  * oneiric upload 
+
+ -- Henning Meyer <hmeyer@gmx.eu>  Tue, 08 Nov 2011 00:00:38 +0100
+
 python-occ (0.5.9.1-0ubuntu10) natty; urgency=low
 
   * natty upload 
