@@ -214,6 +214,7 @@ class HTMLHeader:
     
     def get_str(self):
         header_str = HEADER.replace('@background-color@','%s'%self._background_color)
+        header_str = header_str.replace('@VERSION@',OCC.VERSION)
         return header_str
         
 class HTMLBody:
