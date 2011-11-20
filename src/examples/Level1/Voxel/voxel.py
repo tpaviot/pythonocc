@@ -24,6 +24,8 @@ voxels = Voxel_ROctBoolDS()
 #                        xN,yN,zN )
 
 fcp = Voxel_FastConverter(sph, voxels) #, 1, 10,10,10, 1)
+
+fcp = Voxel_FastConverter(sph, voxels)
 fcp.Convert()
 
 import ipdb; ipdb.set_trace()

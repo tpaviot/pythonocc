@@ -325,6 +325,11 @@ class Face(KbeObject, TopoDS_Face):
             return True
         return False
 
+    def is_overlapping(self, other):
+        import ipdb; ipdb.set_trace()
+        overlap = IntTools_FaceFace()
+
+
     def on_trimmed(self, u, v):
         '''tests whether the surface at the u,v parameter has been trimmed
         '''

@@ -1,10 +1,15 @@
+
 #from OCC.Utils.Construct import make_vertex
-#from OCC.BRepPrimAPI import BRepBuilderAPI_MakeVertex
+from OCC.BRepPrimAPI import BRepBuilderAPI_MakeVertex
+
+from OCC.Utils.Construct import make_vertex
+
 from OCC.Utils.Common import TOLERANCE, vertex2pnt
 from OCC.gp import gp_Pnt, gp_Trsf
 from OCC.TopoDS import TopoDS_Vertex
 from base import KbeObject
 from OCC.BRepTools import  BRepTools_TrsfModification
+
 
 def make_vertex(*args):
     return BRepBuilderAPI_MakeVertex(*args)

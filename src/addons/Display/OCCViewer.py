@@ -35,6 +35,9 @@ from OCC.Quantity import Quantity_Color
 import os, os.path, types, sys, subprocess
 
 
+import os, os.path, types, sys, subprocess
+
+
 try:
     import OCC.NIS
     HAVE_NIS = False

@@ -55,6 +55,7 @@ from OCC.KBE.types_lut import ShapeToTopology
 from OCC.Quantity import *
 from OCC.GProp import GProp_GProps
 from OCC.GeomAbs import *
+
 from OCC import Graphic3d
 import random
 
@@ -182,7 +183,8 @@ def filter_points_by_distance( list_of_point, distance=0.1):
             tmp.append(a)
     return tmp
     
-def points_to_bspline(pnts, filter_tolerance=0.1):
+
+def points_to_bspline(pnts):
     '''
     
     '''
@@ -279,10 +281,12 @@ def interpolate_points_to_spline_no_tangency(list_of_points, filter=True, closed
 #===============================================================================
 
 def random_vec():
+    import random
     x,y,z = [random.uniform(-1,1) for i in range(3)]
     return gp_Vec(x,y,z)
 
 def random_colored_material_aspect():
+    import random
     #asp = Graphic3d.Graphic3d_MaterialAspect()
     #cc = asp.Color()
     
