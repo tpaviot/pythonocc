@@ -30,6 +30,7 @@ import OCC.Quantity
 import OCC.TopoDS
 import OCC.Visual3d
 from OCC import Prs3d
+from OCC.Quantity import Quantity_Color
 
 import os, os.path, types, sys, subprocess
 

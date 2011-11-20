@@ -225,9 +225,13 @@ class Edge(KbeObject, TopoDS_Edge):
             self.adaptor
         return self._adaptor.Curve().Curve()
 
-    @property
     def pcurve(self, face):
-        BRep_Tool().CurveOnSurface()
+        """
+        computes the 2d parametric spline that lies on the surface of the face
+        :return: Geom2d_Curve, u, v
+        """
+        crv, u,v =  BRep_Tool().CurveOnSurface(self, face)
+        return crv.GetObject(), u, v
 
     def _local_properties(self):
         self._lprops_curve_tool = GeomLProp_CurveTool()
@@ -299,11 +303,11 @@ class Edge(KbeObject, TopoDS_Edge):
     def closest(self, other):
         return minimum_distance(self.brep, other)
 
-    def project_pnt_on_edge(self, pnt_or_vertex):
+    def project_vertex(self, pnt_or_vertex):
         ''' returns the closest orthogonal project on `pnt` on edge
         '''
         if isinstance(pnt_or_vertex, TopoDS_Vertex):
-            pnt = vertex2pnt(pnt_or_vertex)
+            pnt_or_vertex = vertex2pnt(pnt_or_vertex)
 
         poc = GeomAPI_ProjectPointOnCurve(pnt_or_vertex, self.curve_handle)
         return poc.LowerDistanceParameter(), poc.NearestPoint()

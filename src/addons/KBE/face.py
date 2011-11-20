@@ -20,7 +20,7 @@ from OCC.BRep import  BRep_Tool
 from OCC.TopoDS import  *
 from OCC.GeomLProp import GeomLProp_SLProps
 from OCC.BRepCheck import BRepCheck_Face
-from OCC.BRepTools import BRepTools
+from OCC.BRepTools import BRepTools, BRepTools_UVBounds
 from OCC.BRepAdaptor import BRepAdaptor_Surface, BRepAdaptor_HSurface
 from OCC.ShapeAnalysis import ShapeAnalysis_Surface
 from OCC.IntTools import IntTools_FaceFace
@@ -237,7 +237,9 @@ class Face(KbeObject, TopoDS_Face):
         #def nb_v_poles     = self.adaptor.NbVPoles
 
     def domain(self):
-        '''returns the u,v domain of the curve'''
+        '''the u,v domain of the curve
+        :return: UMin, UMax, VMin, VMax
+        '''
         return BRepTools.UVBounds(self)
 
     @property
@@ -293,20 +295,35 @@ class Face(KbeObject, TopoDS_Face):
         sa.GetBoxUF()
         return sa.IsUClosed(), sa.IsVClosed()
 
-    def is_planar(self):
+    def is_planar(self, tol=TOLERANCE):
         '''checks if the surface is planar within a tolerance
         :return: bool, gp_Pln
         '''
-        aaa = GeomLib_IsPlanarSurface(self.surface_handle, self.tolerance)
+        aaa = GeomLib_IsPlanarSurface(self.surface_handle, tol)
         if aaa.IsPlanar():
-            return aaa.IsPlanar(), aaa.Plan()
+            return aaa.IsPlanar()# , aaa.Plan()
         else:
-            return aaa.IsPlanar(), None
+            return aaa.IsPlanar()#, None
 
     def is_overlapping(self, other):
         import ipdb; ipdb.set_trace()
         overlap = IntTools_FaceFace()
 
+    def is_trimmed(self):
+        """
+        :return: True if the Wire delimiting the Face lies on the bounds of the surface
+        if this is not the case, the wire represents a contour that delimits the face [ think cookie cutter ]
+        and implies that the surface is trimmed
+        """
+        #if not(BRep_Tool().NaturalRestriction(self)):
+        #    return True
+        _round = lambda x: round(x,3)
+        a = map(_round, BRepTools_UVBounds(self))
+        b = map(_round, self.adaptor.Surface().Surface().GetObject().Bounds())
+        if a != b:
+            print 'a,b',a,b
+            return True
+        return False
 
     def on_trimmed(self, u, v):
         '''tests whether the surface at the u,v parameter has been trimmed
@@ -361,7 +378,7 @@ class Face(KbeObject, TopoDS_Face):
 #    project curve, point on face
 #===============================================================================
 
-    def project_vertex( self, other ):
+    def project_vertex( self, pnt ):
         '''projects self with a point, curve, edge, face, solid
         method wraps dealing with the various topologies
 
@@ -369,21 +386,14 @@ class Face(KbeObject, TopoDS_Face):
             returns uv, point
 
         '''
-        if isinstance(other, TopoDS_Face):
-            raise AssertionError, 'Cannot project a face on another face'
+        if isinstance(pnt, TopoDS_Vertex):
+            pt = BRep_Tool.Pnt(pnt)
 
-        elif isinstance(other, TopoDS_Vertex):
-            pt = BRep_Tool.Pnt(other)
-            proj = GeomAPI_ProjectPointOnSurf(pt, self.surface_handle)
-            # SHOULD USE THIS!!!
-            #proj.LowerDistanceParameters()
-            ext = proj.Extrema()
-            for i in range(ext.NbExt()):
-                if proj.Point().Coord() == ext.Point(i).Value().Coord():
-                    result = ext.Point(i)
-            uv = result.Parameter()
-            pt = result.Value()
-            return uv, pt
+        proj = GeomAPI_ProjectPointOnSurf(pnt, self.surface_handle)
+        # SHOULD USE THIS!!!
+        uv = proj.LowerDistanceParameters()
+        proj_pnt = proj.NearestPoint()
+        return uv, proj_pnt
 
     def project_curve(self, other):
         # this way Geom_Circle and alike are valid too

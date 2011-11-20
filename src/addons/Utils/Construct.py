@@ -52,7 +52,7 @@ from OCC.Utils.Context import assert_isdone
 from OCC.KBE.types_lut import shape_lut, curve_lut, surface_lut, topo_lut
 
 from functools import wraps
-import warnings
+import warnings, operator
 
 EPSILON = TOLERANCE = 1e-6
 ST = ShapeToTopology()
@@ -104,6 +104,25 @@ def gp_vec_print(self):
     magn = self.Magnitude()
     return '< gp_Vec: {0}, {1}, {2}, magnitude: {3} >'.format(x,y,z, magn)
 
+def _apply(pnt, other, _operator):
+    if isinstance(other, gp_Pnt):
+        return gp_Pnt(*map(lambda x: _operator(*x), zip(pnt.Coord(), other.Coord())))
+    else:
+        return gp_Pnt(*map(lambda x: _operator(x, other), pnt.Coord()))
+
+def gp_pnt_add(self, other):
+    return _apply(self, other, operator.add)
+
+def gp_pnt_sub(self, other):
+    return _apply(self, other, operator.sub)
+
+def gp_pnt_mul(self, other):
+    return _apply(self, other, operator.mul)
+
+def gp_pnt_div(self, other):
+    return _apply(self, other, operator.div)
+
+
 # easier conversion between data types
 gp_Vec.as_pnt  = vector_to_point
 gp_Pnt.as_vec  = point_to_vector
@@ -121,6 +140,10 @@ gp_Vec.__str__ = gp_vec_print
 gp_Pnt.__repr__ = gp_pnt_print
 gp_Pnt.__str__ = gp_pnt_print
 gp_Pnt.__eq__ = gp_equal
+gp_Pnt.__add__ = gp_pnt_add
+gp_Pnt.__sub__ = gp_pnt_sub
+gp_Pnt.__mul__ = gp_pnt_mul
+gp_Pnt.__div__ = gp_pnt_div
 
 #===============================================================================
 # ---TOPOLOGY---

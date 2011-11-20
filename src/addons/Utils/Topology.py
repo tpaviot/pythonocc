@@ -116,7 +116,10 @@ class Topo(object):
                         TopAbs_COMPSOLID:   TopoDS_compsolid}
 
         if self.kbe_types:
-            from OCC.KBE import Vertex, Edge, Face, Shell, Solid
+            from OCC.KBE.vertex import  Vertex
+            from OCC.KBE.edge import  Edge
+            from OCC.KBE.face import Face
+            from OCC.KBE.solid import Shell, Solid
             kbeTypes = {    TopAbs_VERTEX:      Vertex,
                             TopAbs_EDGE:        Edge,
                             TopAbs_FACE:        Face,
