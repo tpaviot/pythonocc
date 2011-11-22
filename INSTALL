@@ -10,9 +10,8 @@ activities.
 ABOUT THIS DOCUMENT:
 ====================
 
-This file explains how to build pythonOCC from scratch under any Linux or
-MacOSX platform. Windows users are encouraged to download the precompiled
-binaries available from the pythonocc website (http://www.pythonocc.org).
+This file explains how to build pythonOCC from source on Windows, Linux or
+MacOSX platform.
 
 REQUIREMENTS:
 =============
@@ -23,24 +22,18 @@ full features:
 - the python programming language (http://www.python.org). Python 2.5 or
 higher is required,
 
-- a fortran compiler. Linux and MacOSX users should use gfortran. The Watcom
-Fortran compiler appears to be the best choice for Windows users.
-
-*NOTE* : MacOSX 10.6 (Snow Leopard) 64bit users have to use the f77 fortran
-compiler available from http://hpc.sourceforge.net/:
-Download the script build_f2c at http://hpc.sourceforge.net/buildf2c
-then:
-sudo sh buildf2c
-As a result, f77/f2c are installed in /usr/local/bin. symlinks are created in
-the /bin directory
- 
 - SWIG 1.3.36 or higher,
 
-- OpenCASCADE 6.3.0 (download from http://www.opencascade.org),
+- OCE 0.7.0 (download from https://github.com/tpaviot/oce),
 
-- CMake 2.6 or higher.
+- CMake 2.8 or higher.
 
-At the end of the compilation process, be sure the CASROOT env var is set.
+OPTIONAL:
+=========
+pythonOCC optionnaly wraps GEOM and SMESH libraries. GEOM provides parametric
+modeling features, where as SMESH is dedicated to meshing algorithms.
+GEOM can be downloaded at http://sourceforge.net/projects/salomegeometry/ and
+SMESH at http://sourceforge.net/projects/salomesmesh/.
 
 Step1 and Step2 are OS specific.
 
@@ -81,57 +74,58 @@ NOTE : you can choose to skip this step, and go directly to Step 3. However,
 you won't benefit from the wrapper over the geom library, which provides parametric
 modeling features.
 
-########################################################################
-# Step 1 and 2: GEOM and SMESH installation on Windows 2000/XP/Vista/7 #
-########################################################################
+Note that thanks to cmake, the following steps are platform independant.
 
-Step 1 : build and install the SMESH library
-============================================
-cd src
-./wrapper/build_smesh.bat
+#####################
+# Step 1: configure #
+#####################
+Let's assume the pythonocc source code is locatde in the any_dir/pythonocc/ folder.
+$ cd any_dir/pythonocc/
+$ mkdir cmake-build
+$ cd cmake-build
+$ cmake-gui ..
 
-At the end of the process, the shared library SMESH.dll is in ...
+On Windows systems, open a terminal and type the same commands:
+C:\>cd any_dir\pythonocc
+C:\any_dir\pythonocc>mkdir cmake-build
+C:\any_dir\pythonocc>cd cmake-build
+C:\any_dir\pythonocc>cmake-gui ..
 
-Step 2 : build and install the GEOM library
-============================================
-from the same directory:
-./wrapper/build_geom.bat
+This launches the cmake graphical user interface from which you can configure/generate
+project files according to your compiler/IDE.
 
-At the end of the process, the shared library GEOM.dll is in ...
+Click the "configure" button, eventually adjust settings, and click "generate". Project
+files have been generated into the cmake-build folder: Makefile if you chose Unix makefiles
+or NMake on Windows, pythonocc.xcode.Proj/ if you selected XCode/OSX, pythonocc.sln
+on Win/MSVC etc.
 
-################################
-# Step 3: platform independant #
-################################
+#################
+# Step 2: build #
+#################
 
-Step 3 : build and install pythonOCC
-====================================
+on Linux/OSX Makefiles:
+$ make
+or 
+$ make -j2
+if you xwant to speed up the compilation process
 
-cd src
-python setup.py build
-python setup.py install
+or open the project in your ide and click "Build".
 
-NOTE: By default, the wrapper for geom and smesh are enabled. That means you
-must have preivously successully compiled these libraries. If not, you can
-choose to disable the python wrapper for these libraries. For instance:
-python setup.py build --disable-GEOM --disable-SMESH
-python setup.py install --disable-GEOM --disable-SMESH
-As a consequence, you will only benefit from poor meshing features and you'll
-miss the parametric modeling framework. You will however be able to run most of
-pythonOCC.
+###################
+# Step 3: install #
+###################
 
-** Note 3.2 ** due to limitations in distutils, these two commands must be run
-sequentially, it is not possible to run 'python setup.py build install' or
-directy 'python setup.py install'.
+on Linux/OSX:
+$ make install
 
-Additional information:
-=======================
+Files are installed to the folder selected in the 1st stage (default to site-packages/OCC)
 
-You can use the following arguments to overload default parameters:
---with-geom-lib=/path_to_geom_libs 
---with-smesh-lib=/path_to_smesh_libs
---with-occ-include=/path_to_opencascade_inc
---with-occ-lib=/path_to_opencascade_libs
+################
+# Step 4: test #
+################
 
-To have details about the available customizations:
-python setup.py --help 
+Run the set of unittests to check that evrything is ok:
+$ cd src/unittests
+$ python test_all.py
 
+Also check that the examples (src/examples/Level?/*) pass.
