@@ -51,6 +51,7 @@ class Tesselator {
 	int ObjGetVertexCount();
 	int ObjGetNormalCount();
 	void ExportShapeToJSON(char *filename);
+	void SetDeviation(float aDeviation);
 };
 
 class Display2d {

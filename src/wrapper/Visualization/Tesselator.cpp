@@ -73,6 +73,9 @@ Tesselator::Tesselator(TopoDS_Shape   aShape,
     locVertexcoord = NULL;
     locNormalcoord = NULL;
     locTexcoord    = NULL;
+    // compute default deviation
+    ComputeDefaultDeviation();
+    
     Tesselate();
 }
 
@@ -90,7 +93,103 @@ Tesselator::~Tesselator()
 }
 
 //---------------------------------------------------------------------------
+void Tesselator::SetDeviation(Standard_Real aDeviation)
+{
+    myDeviation = aDeviation;   
+}
+
+
+//---------------------------------------------------------------------------
 void Tesselator::Tesselate()
+{
+    Standard_Real Umin;
+    Standard_Real Umax;
+    Standard_Real Vmin;
+    Standard_Real Vmax;
+
+    Standard_Real dUmax;
+    Standard_Real dVmax;
+
+    TopExp_Explorer       ExpFace;
+    StdPrs_ToolShadedShape   SST;
+
+    gp_Dir d;
+    gp_Pnt p;
+
+    gp_Vec2d theCoord_p;
+    gp_Pnt2d d_coord;
+
+    //Triangulate
+    BRepMesh::Mesh(myShape, myDeviation);
+
+    for (ExpFace.Init(myShape, TopAbs_FACE); ExpFace.More(); ExpFace.Next()) {
+      const TopoDS_Face&    myFace    = TopoDS::Face(ExpFace.Current());
+      TopLoc_Location aLocation;
+
+      Handle(Poly_Triangulation) myT = BRep_Tool::Triangulation(myFace, aLocation);
+
+      if (!myT.IsNull()) {
+        Poly_Connect pc(myT);
+
+        aface *this_face = new aface;
+
+        //write vertex buffer
+        const TColgp_Array1OfPnt& Nodes = myT->Nodes();
+        this_face->vertex_coord = new float[Nodes.Length() * 3];
+        this_face->number_of_coords = Nodes.Length();
+        for (int i = Nodes.Lower(); i <= Nodes.Upper(); i++) {
+          p = Nodes(i).Transformed(aLocation.Transformation());
+          this_face->vertex_coord[((i-1) * 3)+ 0] = p.X();
+          this_face->vertex_coord[((i-1) * 3)+ 1] = p.Y();
+          this_face->vertex_coord[((i-1) * 3)+ 2] = p.Z();
+        }
+
+        //write normal buffer
+        TColgp_Array1OfDir myNormal(Nodes.Lower(), Nodes.Upper());
+        SST.Normal(myFace, pc, myNormal);
+        this_face->normal_coord = new float[myNormal.Length() * 3];
+        this_face->number_of_normals = myNormal.Length();
+        for (int i = myNormal.Lower(); i <= myNormal.Upper(); i++) {
+          d = myNormal(i).Transformed(aLocation.Transformation());
+          this_face->normal_coord[((i-1) * 3)+ 0] = d.X();
+          this_face->normal_coord[((i-1) * 3)+ 1] = d.Y();
+          this_face->normal_coord[((i-1) * 3)+ 2] = d.Z();
+        }
+
+        // set uvcoords buffers to NULL
+        // necessary for JoinPrimitive to be performed
+        this_face->tex_coord = NULL;
+        this_face->number_of_texcoords = 0;
+        
+        //write triangle buffer
+        Standard_Integer validFaceTriCount = 0;
+        Standard_Integer n1 , n2 , n3;
+        TopAbs_Orientation orient = myFace.Orientation();
+        const Poly_Array1OfTriangle&   triangles   = myT->Triangles();
+        this_face->tri_indexes  = new int  [triangles.Length()* 3];
+        for (int nt = 1; nt <= myT->NbTriangles(); nt++) {
+          triangles(nt).Get(n1,n2,n3);
+          if (orient != TopAbs_FORWARD) {
+              Standard_Integer tmp=n1;
+              n1 = n2;
+              n2 = tmp;
+          }
+          if (TriangleIsValid(Nodes(n1),Nodes(n2),Nodes(n3))) {
+            this_face->tri_indexes[(validFaceTriCount * 3)+ 0] = n1;
+            this_face->tri_indexes[(validFaceTriCount * 3)+ 1] = n2;
+            this_face->tri_indexes[(validFaceTriCount * 3)+ 2] = n3;
+            validFaceTriCount++;
+          }
+        }
+        this_face->number_of_triangles = validFaceTriCount;
+        facelist.push_back(this_face);
+      }
+    }
+    JoinPrimitives();    
+}
+
+//---------------------------------------------------------------------------
+void Tesselator::TesselateWithUVCoords()
 {
   Standard_Real Umin;
   Standard_Real Umax;
@@ -210,8 +309,25 @@ void Tesselator::Tesselate()
   JoinPrimitives();
 }
 
-
 //---------------------------INTERFACE---------------------------------------
+void Tesselator::ComputeDefaultDeviation()
+{
+    // This method automatically computes precision from the bounding box of the shape
+    Bnd_Box aBox;
+    Standard_Real aXmin,aYmin ,aZmin ,aXmax ,aYmax ,aZmax;
+
+    //calculate the bounding box
+    BRepBndLib::Add(myShape, aBox);
+    aBox.Get(aXmin, aYmin, aZmin, aXmax, aYmax, aZmax);
+
+    Standard_Real xDim = abs((long)aXmax - (long)aXmin);
+    Standard_Real yDim = abs((long)aYmax - (long)aYmin);
+    Standard_Real zDim = abs((long)aZmax - (long)aZmin);
+
+    Standard_Real adeviation = sqrt(xDim*xDim+yDim*yDim+zDim*zDim)/100.;
+    myDeviation = adeviation;
+}
+
 void Tesselator::ExportShapeToJSON(char * filename)
 {
     ofstream JSONObject;
@@ -328,8 +444,83 @@ void Tesselator::ObjGetTriangle(int trianglenum, int *vertices, int *texcoords, 
 //---------------------------------------------------------------------------
 //---------------------------------HELPERS-----------------------------------
 //---------------------------------------------------------------------------
-
 void Tesselator::JoinPrimitives()
+{
+  int obP = 0;
+  int obN = 0;
+  int obT = 0;
+  int obTR = 0;
+
+  int advance = 0;
+
+  int total_poly_count = 0;
+  int total_vertex_count = 0;
+  int total_normal_count = 0;
+
+  std::vector<aface*>::iterator anIterator = facelist.begin();
+
+  while (anIterator != facelist.end()) {
+
+    aface* myface = *anIterator;
+
+    total_poly_count =  total_poly_count + myface->number_of_triangles;
+    total_vertex_count = total_vertex_count + myface->number_of_coords;
+    total_normal_count = total_normal_count + myface->number_of_normals;
+
+    anIterator++;
+  }
+
+  loc_tri_indexes= new int[total_poly_count * 3 ];
+  locVertexcoord = new float[total_vertex_count * 3 ];
+  locNormalcoord = new float[total_normal_count * 3 ];
+
+  tot_triangle_count = total_poly_count;
+  tot_vertex_count   = total_vertex_count;
+  tot_normal_count   = total_normal_count;
+
+  anIterator = facelist.begin();
+  while (anIterator != facelist.end()) {
+    aface* myface = *anIterator;
+    for (int x = 0; x < myface->number_of_coords; x++) {
+      locVertexcoord[(obP * 3) + 0] = myface->vertex_coord[(x * 3) + 0];
+      locVertexcoord[(obP * 3) + 1] = myface->vertex_coord[(x * 3) + 1];
+      locVertexcoord[(obP * 3) + 2] = myface->vertex_coord[(x * 3) + 2];
+      obP++;
+    }
+
+    for (int x = 0; x < myface->number_of_normals; x++) {
+      locNormalcoord[(obN * 3) + 0] = myface->normal_coord[(x * 3) + 0];
+      locNormalcoord[(obN * 3) + 1] = myface->normal_coord[(x * 3) + 1];
+      locNormalcoord[(obN * 3) + 2] = myface->normal_coord[(x * 3) + 2];
+      obN++;
+    }
+
+    for (int x = 0; x < myface->number_of_triangles; x++) {
+      loc_tri_indexes[(obTR * 3) + 0] = myface->tri_indexes[(x * 3) + 0] + advance - 1;
+      loc_tri_indexes[(obTR * 3) + 1] = myface->tri_indexes[(x * 3) + 1] + advance - 1;
+      loc_tri_indexes[(obTR * 3) + 2] = myface->tri_indexes[(x * 3) + 2] + advance - 1;
+      obTR++;
+    }
+
+    advance = obP;
+
+    delete [] myface->vertex_coord;
+    myface->vertex_coord = NULL;
+
+    delete [] myface->normal_coord;
+    myface->normal_coord = NULL;
+
+    delete [] myface->tri_indexes;
+    myface->tri_indexes = NULL;
+
+    delete myface;
+    myface = NULL;
+
+    anIterator++;
+  }
+}
+
+void Tesselator::JoinPrimitivesWithUVCoords()
 {
   int obP = 0;
   int obN = 0;

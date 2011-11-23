@@ -72,6 +72,7 @@ Standard_EXPORT class Tesselator
       Standard_Boolean TriangleIsValid(const gp_Pnt& P1, const gp_Pnt& P2, const gp_Pnt& P3) const;
       void PrepareBoxTextureCoordinates(const TopoDS_Shape& aShape);
       void GetBoxTextureCoordinate(const gp_Pnt& p, const gp_Dir& N1, gp_Vec2d& theCoord_p);
+      void ComputeDefaultDeviation();
 
   public:
       Tesselator(TopoDS_Shape aShape,
@@ -89,7 +90,10 @@ Standard_EXPORT class Tesselator
 
       ~Tesselator();
       void Tesselate();
+      void TesselateWithUVCoords();
       void JoinPrimitives();
+      void JoinPrimitivesWithUVCoords();
+      void SetDeviation(Standard_Real aDeviation);
       float* VerticesList();
       float* NormalsList();
       float* TextureCoordinatesList();
