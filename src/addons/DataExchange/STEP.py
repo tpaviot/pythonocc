@@ -79,22 +79,21 @@ class STEPImporter(object):
             aReader.PrintCheckTransfer(failsonly, IFSelect_ItemsByEntity)
             for n in range(1,nbr+1):
                 ok = aReader.TransferRoot(n)
-                self.nbs = aReader.NbShapes()
-                if self.nbs == 0:
+                self._nbs = aReader.NbShapes()
+                if self._nbs == 0:
                     print "At least one shape in STEP cannot be transfered"
-                elif (nbr==1 and self.nbs==1):
+                elif (nbr==1 and self._nbs==1):
                     aResShape = aReader.Shape(1)
                     if aResShape.IsNull():
                         print "At least one shape in STEP cannot be transferred"
                     self._shapes.append(aResShape)
                 else:                    
-                    for i in range(1,self.nbs+1):
+                    for i in range(1,self._nbs+1):
                         aShape = aReader.Shape(i)
                         if aShape.IsNull():
                             print "At least one shape in STEP cannot be transferred"
                         else:
                             self._shapes.append(aShape)
-                            #B.Add(compound,aShape)
             return True
         else:
             print "Error: can't read file %s"%self._filename
