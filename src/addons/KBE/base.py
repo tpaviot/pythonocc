@@ -135,10 +135,7 @@ class KbeObject(object):
              minimum distance points on shp1
              minimum distance points on shp2
         '''
-        if hasattr(other, 'topo'):
-            return minimum_distance(self, other)
-        else:
-            return minimum_distance(self, other)
+        return minimum_distance(self, other)
 
     def show( self, *args, **kwargs):
         """

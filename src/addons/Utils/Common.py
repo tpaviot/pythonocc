@@ -1,6 +1,3 @@
-from __future__ import with_statement
-
-
 # -*- coding: iso-8859-1 -*-
 #! /usr/bin/python
 
@@ -58,7 +55,7 @@ from OCC.GeomAbs import *
 
 from OCC import Graphic3d
 import random
-
+from __future__ import with_statement
 
 #===============================================================================
 # No PythonOCC dependencies...
@@ -577,12 +574,6 @@ def wire_to_curve(wire, tolerance=TOLERANCE, order=GeomAbs_C2, max_segment=200, 
     with assert_isdone(approx, 'not able to compute approximation from wire'):
         return approx.Curve().GetObject()
 
-
-
-
-# TODO: refactor
-
-
 def adapt_edge_to_curve(edg):
     '''
     returns a curve adaptor from an edge
@@ -594,5 +585,4 @@ def adapt_edge_to_hcurve(edg):
     c = BRepAdaptor_HCurve()
     c.ChangeCurve().Initialize(edg)
     return c
-
 

@@ -369,8 +369,6 @@ class Face(KbeObject, TopoDS_Face):
         :return: bool, GeomAbs_Shape if it has continuity, otherwise
          False, None
         """
-        edge = edge if not hasattr(edge, 'topo') else edge
-        face = face if not hasattr(face, 'topo') else face
         bt = BRep_Tool()
         if bt.HasContinuity(edge, self, face):
             continuity = bt.Continuity(edge, self, face)
