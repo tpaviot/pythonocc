@@ -401,8 +401,8 @@ class Face(KbeObject):
         :return: bool, GeomAbs_Shape if it has continuity, otherwise
          False, None
         """
-        edge = edge if not hasattr(edge, 'topo') else edge.topo
-        face = face if not hasattr(face, 'topo') else face.topo
+        edge = edge if not isinstance(edge,KbeObject) else edge.topo
+        face = face if not isinstance(face, KbeObject) else face.topo
         bt = BRep_Tool()
         if bt.HasContinuity(edge, self.topo, face):
             continuity = bt.Continuity(edge, self.topo, face)
