@@ -185,12 +185,8 @@ elif sys.platform=='darwin':
         SWIG_OPTS.append('-D_OCC64')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
-    if OCC_ROOT!=None:
-        OCC_INC = os.path.join(OCC_ROOT,'include','oce')
-        OCC_LIB = os.path.join(OCC_ROOT,'lib')
-    else:
-        OCC_INC = '/Library/OCE/0.6.0dev/include/oce'
-        OCC_LIB = '/Library/OCE/0.6.0dev/lib'
+    OCC_INC = '/usr/local/include/oce'
+    OCC_LIB = '/usr/local/lib'
       
     SALOME_GEOM_LIB = '/usr/local/lib/'
     SALOME_SMESH_LIB = '/usr/local/lib/'        
