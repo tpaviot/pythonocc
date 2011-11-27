@@ -387,7 +387,7 @@ class ParametricModelingContext(object):
         #return True
     
     def get_presentation(self, geom_obj):           
-        if hasattr(geom_obj, 'GetObject'):
+        if isinstance(geom_obj, Handle_GEOM_Object):
             geom_obj = geom_obj.GetObject()        
             #print 'handle'
         result_label = geom_obj.GetLastFunction().GetObject().GetEntry().FindChild(2)        

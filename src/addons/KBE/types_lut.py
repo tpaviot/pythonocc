@@ -40,7 +40,7 @@ class ShapeToTopology(object):
                 }
 
     def __call__(self, shape):
-        if hasattr(shape, "ShapeType"):
+        if isinstance(shape,TopoDS_Shape):
             return self.topoTypes[shape.ShapeType()](shape)
         else:
             raise AttributeError('shape has not method `ShapeType`')

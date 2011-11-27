@@ -353,9 +353,9 @@ def intersection_from_three_planes( planeA, planeB, planeC, show=False):
     @param planeC:
     @param show:
     '''
-    planeA = planeA if not hasattr(planeA, 'Pln') else planeA.Pln()
-    planeB = planeB if not hasattr(planeB, 'Pln') else planeB.Pln()
-    planeC = planeC if not hasattr(planeC, 'Pln') else planeC.Pln()
+    planeA = planeA if not isinstance(planeA, gp_Pln) else planeA.Pln()
+    planeB = planeB if not isinstance(planeB, gp_Pln) else planeB.Pln()
+    planeC = planeC if not isinstance(planeC, gp_Pln) else planeC.Pln()
     
 
     intersection_planes = IntAna_Int3Pln( planeA,
@@ -514,7 +514,7 @@ def to_adaptor_3d(curveType):
         return BRepAdaptor_Curve(curveType)
     elif issubclass(curveType.__class__, Geom_Curve):
         return GeomAdaptor_Curve(curveType.GetHandle())
-    elif hasattr(curveType, 'GetObject'):
+    elif isinstance(curveType, Handle_Geom_Curve):
         _crv = curveType.GetObject()
         if issubclass(_crv.__class__, Geom_Curve):
             return GeomAdaptor_Curve(curveType)

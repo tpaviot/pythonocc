@@ -34,10 +34,10 @@
 ##The fact that you are presently reading this means that you have had
 ##knowledge of the CeCILL license and that you accept its terms.
 
-import OCC
+from OCC.Standard import Handle_Standard_Transient
 
 def Downcast(handle_type):
-    assert hasattr(handle_type, 'DownCast'), '% is not a valid handle type, not DownCast method found' % (handle_type.__class__)
+    assert isinstance(handle_type, Handle_Standard_Transient), '% is not a valid handle type, not DownCast method found' % (handle_type.__class__)
     pass
 
 
