@@ -20,10 +20,10 @@ from OCC.Utils.DataExchange.STEP import STEPImporter
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 
-my_step_importer = STEPImporter("varia.stp")
+my_step_importer = STEPImporter("aube_pleine.stp")
 my_step_importer.read_file()
-#print "Number of shapes:%i"%my_step_importer.get_nbr_shapes()
-the_shapes = my_step_importer.get_shapes()
+print "Number of shapes:%i"%my_step_importer.get_nbr_shapes()
+shp = my_step_importer.get_shapes()
 
-display.DisplayColoredShape(the_shapes,'RED')
+display.DisplayColoredShape(shp,'GREEN')
 start_display()

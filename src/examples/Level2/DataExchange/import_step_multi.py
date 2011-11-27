@@ -20,10 +20,10 @@ from OCC.Utils.DataExchange.STEP import STEPImporter
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 
-my_step_importer = STEPImporter("Hayon_C3.stp")
+my_step_importer = STEPImporter("dm1-id-214.stp")
 my_step_importer.read_file()
 print "Number of shapes:%i"%my_step_importer.get_nbr_shapes()
 the_shapes = my_step_importer.get_shapes()
 
-display.DisplayShape(the_shapes)
+display.DisplayColoredShape(the_shapes,"RED")
 start_display()
