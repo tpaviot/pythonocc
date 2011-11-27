@@ -121,7 +121,7 @@ if __name__ == '__main__':
         else:
             modules_to_wrap = None
         # Try to find the module with the name provided
-            for module in Modules.ALL_MODULES:
+            for module in Modules.get_all_modules():
                 if module[0] == module_name_to_wrap:
                     modules_to_wrap = [module]
                     break

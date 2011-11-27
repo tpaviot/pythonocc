@@ -639,9 +639,15 @@ def PythonOCCStats():
         f.write('] %s\n'%elem)
     f.close()
 
+def get_all_modules():
+    if sys.platform=='win32':
+        return COMMON_MODULES+WIN_MODULES+SALOME_GEOM_MODULES+SALOME_SMESH_MODULES
+    else:
+        return COMMON_MODULES+UNIX_MODULES+SALOME_GEOM_MODULES+SALOME_SMESH_MODULES
+
 def get_wrapped_modules_names():
     wrapped_modules_names = []
-    for module in ALL_MODULES:
+    for module in get_all_modules():
         wrapped_modules_names.append(module[0])
     return wrapped_modules_names
 
