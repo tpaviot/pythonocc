@@ -364,17 +364,15 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         for shape in shapes:
             shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
             self.Context.SetColor(shape_to_display,color,0)
-
+            ais_shapes.append(shape_to_display)
             if update:
                 self.Context.Display(shape_to_display, True)
                 self.FitAll()
-
             else:
                 # don't update the view when shape_to_display is added
                 # comes in handy when adding lots and lots of objects 
                 self.Context.Display(shape_to_display, False)
-            
-        ais_shapes.append(shape_to_display)
+  
         if SOLO:
             return ais_shapes[0]
         else:
