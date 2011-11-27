@@ -53,7 +53,9 @@ class qtBaseViewer(QtGui.QWidget):
     def resizeEvent(self, event):
         if self._inited:
             self._display.OnResize()
-            
+    def paintEngine(self):
+        return None
+     
 class qtViewer2d(qtBaseViewer):    
     def __init__(self, *kargs):
         qtBaseViewer.__init__(self, *kargs)
