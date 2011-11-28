@@ -89,12 +89,6 @@ def gp_Pnt_set_state(self, state):
     '''
     self.__init__(*state)
 
-def gp_equal(self, other):
-    '''
-    overriding the __eq__ / == operator
-    '''
-    return self.IsEqual(other, TOLERANCE)
-
 def gp_pnt_print(self):
     return '< gp_Pnt: {0}, {1}, {2} >'.format(*self.Coord())
 
@@ -119,7 +113,6 @@ gp_Vec.__repr__ = gp_vec_print
 gp_Vec.__str__ = gp_vec_print
 gp_Pnt.__repr__ = gp_pnt_print
 gp_Pnt.__str__ = gp_pnt_print
-gp_Pnt.__eq__ = gp_equal
 
 #===============================================================================
 # ---TOPOLOGY---
