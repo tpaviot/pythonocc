@@ -266,7 +266,7 @@ class TestWrapperFeatures(unittest.TestCase):
         self.assertEqual(str(pnt.Coord()),'(40.0, 0.0, 0.0)')
     
     def testEqOperator(self):
-        ''' test that the == wrapper if ok
+        ''' test that the == wrapper is ok
         '''
         # test Standard
         h1 = Handle_Standard_Transient()
@@ -282,6 +282,18 @@ class TestWrapperFeatures(unittest.TestCase):
         items = [p1,line]
         res = items.index(line)
         self.assertEqual(res,1)
+
+    def testNEqOperator(self):
+        ''' test that the != wrapper is ok
+        '''
+        # test Standard
+        h1 = Handle_Standard_Transient()
+        s = Standard_Transient()
+        h2 = s.GetHandle()
+        self.assertFalse(h1!=h1)
+        self.assertTrue(h1!=h2)
+        self.assertTrue(h1!=10)
+        self.assertFalse(h2!=s)
 
 def suite():
    suite = unittest.TestSuite()
