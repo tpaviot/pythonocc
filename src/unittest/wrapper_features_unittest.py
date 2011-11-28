@@ -264,6 +264,24 @@ class TestWrapperFeatures(unittest.TestCase):
         pnt2 = lprop.Value()
         # check then that the value has not changed (it does if returned by ref)
         self.assertEqual(str(pnt.Coord()),'(40.0, 0.0, 0.0)')
+    
+    def testEqOperator(self):
+        ''' test that the == wrapper if ok
+        '''
+        # test Standard
+        h1 = Handle_Standard_Transient()
+        s = Standard_Transient()
+        h2 = s.GetHandle()
+        self.assertTrue(h1==h1)
+        self.assertFalse(h1==h2)
+        self.assertFalse(h1==10)
+        self.assertTrue(h2==s)
+        # test list.index, that uses __eq__ method
+        p1 = gp_Pnt(0,0,0)
+        line = gp_Lin(p1,gp_Dir(1,0,0))
+        items = [p1,line]
+        res = items.index(line)
+        self.assertEqual(res,1)
 
 def suite():
    suite = unittest.TestSuite()
