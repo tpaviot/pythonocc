@@ -138,6 +138,8 @@ class ModularBuilder(object):
         self.MEMBER_FUNCTIONS_TO_EXCLUDE = {}
         self.STATIC_METHODS = []
         self.ClassDocstring = ""
+        self.CLASS_WRAP_EQ = False
+        self.CLASS_WRAP_NE = False
         self.MemberfunctionDocStrings = {}
         self.ALREADY_EXPOSED = []
         self.CLASSES_TO_EXCLUDE = []
@@ -651,8 +653,34 @@ class ModularBuilder(object):
             to_write +="\t\t%s %s("%(return_type,function_name)
         #
         # Write arguments of the method
-        #
+        #        
         str,return_list,param_list,arguments, default_value,END_WITH_CONST, param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun)
+        #
+        # Check if operator==
+        #
+        if ("operator==") in function_name:
+            to_write="\t\t%extend{\n"
+            to_write+="\t\t\tbool __eq_wrapper__(%s) {\n"%str
+            to_write+="\t\t\t\tif (*self==%s) return true;\n"%param_names[0]
+            to_write+="\t\t\t\telse return false;\n"
+            to_write+="\t\t\t}\n\t\t}\n"
+            self.fp.write(to_write)
+            self.CLASS_WRAP_EQ = True
+            self._CURRENT_CLASS_EXPOSED_METHODS.append(to_write)
+            return True
+        #
+        # Check if operator!=
+        #
+        if ("operator!=") in function_name:
+            to_write="\t\t%extend{\n"
+            to_write+="\t\t\tbool __ne_wrapper__(%s) {\n"%str
+            to_write+="\t\t\t\tif (*self!=%s) return true;\n"%param_names[0]
+            to_write+="\t\t\t\telse return false;\n"
+            to_write+="\t\t\t}\n\t\t}\n"
+            self.fp.write(to_write)
+            self.CLASS_WRAP_NE = True
+            self._CURRENT_CLASS_EXPOSED_METHODS.append(to_write)
+            return True
         to_write += str
         if END_WITH_CONST:
             to_write += ") const;\n"
@@ -731,6 +759,8 @@ class ModularBuilder(object):
         """
         Process class
         """
+        self.CLASS_WRAP_EQ = False
+        self.CLASS_WRAP_NE = False
         # list with exposed member functions decl_strings
         CURRENT_CLASS_IS_ABSTRACT = False
         self._CURRENT_CLASS_EXPOSED_METHODS = []
@@ -849,6 +879,28 @@ class ModularBuilder(object):
                 self.write_function(mem_fun,CURRENT_CLASS_IS_ABSTRACT)
             elif function_name not in self.MEMBER_FUNCTIONS_TO_EXCLUDE[class_name]:
                  self.write_function(mem_fun,CURRENT_CLASS_IS_ABSTRACT)
+        # Add __eq__ method is needed
+        if self.CLASS_WRAP_EQ:
+            to_write = "\t\t%"
+            to_write += "pythoncode {\n"
+            to_write += "\t\tdef __eq__(self,right):\n"
+            to_write += "\t\t\ttry:\n"
+            to_write += "\t\t\t\treturn self.__eq_wrapper__(right)\n"
+            to_write += "\t\t\texcept:\n"
+            to_write += "\t\t\t\treturn False\n"
+            to_write += "\t\t}\n"
+            self.fp.write(to_write)
+        # Add __eq__ method is needed
+        if self.CLASS_WRAP_NE:
+            to_write = "\t\t%"
+            to_write += "pythoncode {\n"
+            to_write += "\t\tdef __ne__(self,right):\n"
+            to_write += "\t\t\ttry:\n"
+            to_write += "\t\t\t\treturn self.__ne_wrapper__(right)\n"
+            to_write += "\t\t\texcept:\n"
+            to_write += "\t\t\t\treturn True\n"
+            to_write += "\t\t}\n"
+            self.fp.write(to_write)
         self.fp.write("\n};")
         #
         # Adding a method GetObject() to Handle_* classes
