@@ -21,6 +21,7 @@ from OCC.TopoDS import *
 import os, os.path, types
 import sys
 import subprocess
+from ctypes import util
 
 import OCC.Visualization
 import OCC.V3d
@@ -40,36 +41,9 @@ except ImportError:
     HAVE_NIS = False
 
 def set_CSF_GraphicShr():
-    # First set up the CSF_GraphicShr environment variable
-    # This variable must point to the libTKOpenGl OCC dynamic library
-    # Under Linux, use the ldd tool to locate this library
-    # Use otool with MacOSX
-    
-    # First find the dynamic library for the module V3d
-    # on MacOSX, the following line should result something like:
-    # '/Library/Python/2.6/site-packages/OCC/_V3d.so'
-    v3d_module_library = sys.modules['_V3d'].__file__
-    if sys.platform == 'darwin':
-        # MacOSX : run the otool -L tool to check to which libTkOpenGl library it's linked
-        # otool -L /Library/Python/2.6/site-packages/OCC/_V3d.so | grep -i
-        p1 = subprocess.Popen(['otool','-L','%s'%v3d_module_library],stdout=subprocess.PIPE)
-    elif sys.platform =='linux2':
-        # Linux : run ldd
-        # ldd /Library/Python/2.6/site-packages/OCC/_V3d.so | grep -i
-        p1 = subprocess.Popen(['ldd','%s'%v3d_module_library],stdout=subprocess.PIPE)
-    p2 = subprocess.Popen(['grep','-i','libTkOpenGl'],stdin=p1.stdout,stdout=subprocess.PIPE)
-    output = p2.communicate()[0]
-    
-    if sys.platform == 'darwin':
-        # MacOSX : output is something like
-        #     /Library/OpenCASCADE/6.3.0//lib/libTKOpenGl.0.dylib (compatibility version 1.0.0, current version 1.0.0)
-        libTkOpenGl_library = output.split(' ')[0][1:]
-    elif sys.platform == 'linux2':
-        # Linux : output is something like
-        #     libTKOpenGl-6.3.0.so => /usr/lib/libTKOpenGl-6.3.0.so (0x0088b000)
-        libTkOpenGl_library = output.split(' ')[2]
-    # then set up the env var
-    os.environ['CSF_GraphicShr'] = libTkOpenGl_library
+    # Sets the CSF_GraphicShr env var if not already set up
+    if not os.environ.has_key('CSF_GraphicShr'):
+        os.environ['CSF_GraphicShr'] = util.find_library('TKOpenGl')
 
 if not (sys.platform == 'win32'):
     set_CSF_GraphicShr()
