@@ -383,6 +383,7 @@ COMMON_MODULES = [
             ('PGeom2d',[],[]),
             ('Plate',[],[]),
             #('PLib',[],[]), don't work
+            ('ElSLib',[],[]),
             ('PShort',[],[]),
             ('Sweep',[],[]),
             ('ProjLib',[],[],{'ProjLib_ProjectOnSurface':['Load'],'ProjLib_ProjectedCurve':['Load']}),

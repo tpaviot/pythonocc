@@ -259,6 +259,7 @@ LIST(APPEND OCC_MODULES
 	PGeom
 	PGeom2d
 	Plate
+	ElSLib
 	PShort
 	Sweep
 	ProjLib
