@@ -52,29 +52,29 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_XmlMXCAFDoc_LocationDriver;
-class Handle_XmlMXCAFDoc_LocationDriver : public Handle_XmlMDF_ADriver {
+%nodefaultctor Handle_XmlMXCAFDoc_ColorToolDriver;
+class Handle_XmlMXCAFDoc_ColorToolDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_LocationDriver();
+		Handle_XmlMXCAFDoc_ColorToolDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_LocationDriver(const Handle_XmlMXCAFDoc_LocationDriver &aHandle);
+		Handle_XmlMXCAFDoc_ColorToolDriver(const Handle_XmlMXCAFDoc_ColorToolDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_LocationDriver(const XmlMXCAFDoc_LocationDriver *anItem);
+		Handle_XmlMXCAFDoc_ColorToolDriver(const XmlMXCAFDoc_ColorToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_LocationDriver & operator=(const Handle_XmlMXCAFDoc_LocationDriver &aHandle);
+		Handle_XmlMXCAFDoc_ColorToolDriver & operator=(const Handle_XmlMXCAFDoc_ColorToolDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_LocationDriver & operator=(const XmlMXCAFDoc_LocationDriver *anItem);
+		Handle_XmlMXCAFDoc_ColorToolDriver & operator=(const XmlMXCAFDoc_ColorToolDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlMXCAFDoc_LocationDriver DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMXCAFDoc_ColorToolDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XmlMXCAFDoc_LocationDriver {
-	XmlMXCAFDoc_LocationDriver* GetObject() {
-	return (XmlMXCAFDoc_LocationDriver*)$self->Access();
+%extend Handle_XmlMXCAFDoc_ColorToolDriver {
+	XmlMXCAFDoc_ColorToolDriver* GetObject() {
+	return (XmlMXCAFDoc_ColorToolDriver*)$self->Access();
 	}
 };
-%feature("shadow") Handle_XmlMXCAFDoc_LocationDriver::~Handle_XmlMXCAFDoc_LocationDriver %{
+%feature("shadow") Handle_XmlMXCAFDoc_ColorToolDriver::~Handle_XmlMXCAFDoc_ColorToolDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -83,7 +83,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_XmlMXCAFDoc_LocationDriver {
+%extend Handle_XmlMXCAFDoc_ColorToolDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -122,44 +122,6 @@ def __del__(self):
 %}
 
 %extend Handle_XmlMXCAFDoc_GraphNodeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_XmlMXCAFDoc_DimTolToolDriver;
-class Handle_XmlMXCAFDoc_DimTolToolDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_DimTolToolDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_DimTolToolDriver(const Handle_XmlMXCAFDoc_DimTolToolDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_DimTolToolDriver(const XmlMXCAFDoc_DimTolToolDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_DimTolToolDriver & operator=(const Handle_XmlMXCAFDoc_DimTolToolDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_DimTolToolDriver & operator=(const XmlMXCAFDoc_DimTolToolDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMXCAFDoc_DimTolToolDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMXCAFDoc_DimTolToolDriver {
-	XmlMXCAFDoc_DimTolToolDriver* GetObject() {
-	return (XmlMXCAFDoc_DimTolToolDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMXCAFDoc_DimTolToolDriver::~Handle_XmlMXCAFDoc_DimTolToolDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMXCAFDoc_DimTolToolDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -356,6 +318,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_XmlMXCAFDoc_LocationDriver;
+class Handle_XmlMXCAFDoc_LocationDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_LocationDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_LocationDriver(const Handle_XmlMXCAFDoc_LocationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_LocationDriver(const XmlMXCAFDoc_LocationDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_LocationDriver & operator=(const Handle_XmlMXCAFDoc_LocationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_LocationDriver & operator=(const XmlMXCAFDoc_LocationDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMXCAFDoc_LocationDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMXCAFDoc_LocationDriver {
+	XmlMXCAFDoc_LocationDriver* GetObject() {
+	return (XmlMXCAFDoc_LocationDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMXCAFDoc_LocationDriver::~Handle_XmlMXCAFDoc_LocationDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMXCAFDoc_LocationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_XmlMXCAFDoc_MaterialDriver;
 class Handle_XmlMXCAFDoc_MaterialDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -470,44 +470,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XmlMXCAFDoc_AreaDriver;
-class Handle_XmlMXCAFDoc_AreaDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_AreaDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_AreaDriver(const Handle_XmlMXCAFDoc_AreaDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_AreaDriver(const XmlMXCAFDoc_AreaDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_AreaDriver & operator=(const Handle_XmlMXCAFDoc_AreaDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_AreaDriver & operator=(const XmlMXCAFDoc_AreaDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMXCAFDoc_AreaDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMXCAFDoc_AreaDriver {
-	XmlMXCAFDoc_AreaDriver* GetObject() {
-	return (XmlMXCAFDoc_AreaDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMXCAFDoc_AreaDriver::~Handle_XmlMXCAFDoc_AreaDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMXCAFDoc_AreaDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XmlMXCAFDoc_CentroidDriver;
 class Handle_XmlMXCAFDoc_CentroidDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -540,44 +502,6 @@ def __del__(self):
 %}
 
 %extend Handle_XmlMXCAFDoc_CentroidDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_XmlMXCAFDoc_ColorToolDriver;
-class Handle_XmlMXCAFDoc_ColorToolDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_ColorToolDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_ColorToolDriver(const Handle_XmlMXCAFDoc_ColorToolDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_ColorToolDriver(const XmlMXCAFDoc_ColorToolDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_ColorToolDriver & operator=(const Handle_XmlMXCAFDoc_ColorToolDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_ColorToolDriver & operator=(const XmlMXCAFDoc_ColorToolDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMXCAFDoc_ColorToolDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMXCAFDoc_ColorToolDriver {
-	XmlMXCAFDoc_ColorToolDriver* GetObject() {
-	return (XmlMXCAFDoc_ColorToolDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMXCAFDoc_ColorToolDriver::~Handle_XmlMXCAFDoc_ColorToolDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMXCAFDoc_ColorToolDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -622,6 +546,123 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_XmlMXCAFDoc_DimTolToolDriver;
+class Handle_XmlMXCAFDoc_DimTolToolDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_DimTolToolDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_DimTolToolDriver(const Handle_XmlMXCAFDoc_DimTolToolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_DimTolToolDriver(const XmlMXCAFDoc_DimTolToolDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_DimTolToolDriver & operator=(const Handle_XmlMXCAFDoc_DimTolToolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_DimTolToolDriver & operator=(const XmlMXCAFDoc_DimTolToolDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMXCAFDoc_DimTolToolDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMXCAFDoc_DimTolToolDriver {
+	XmlMXCAFDoc_DimTolToolDriver* GetObject() {
+	return (XmlMXCAFDoc_DimTolToolDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMXCAFDoc_DimTolToolDriver::~Handle_XmlMXCAFDoc_DimTolToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMXCAFDoc_DimTolToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_XmlMXCAFDoc_AreaDriver;
+class Handle_XmlMXCAFDoc_AreaDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_AreaDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_AreaDriver(const Handle_XmlMXCAFDoc_AreaDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_AreaDriver(const XmlMXCAFDoc_AreaDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_AreaDriver & operator=(const Handle_XmlMXCAFDoc_AreaDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_AreaDriver & operator=(const XmlMXCAFDoc_AreaDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMXCAFDoc_AreaDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMXCAFDoc_AreaDriver {
+	XmlMXCAFDoc_AreaDriver* GetObject() {
+	return (XmlMXCAFDoc_AreaDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMXCAFDoc_AreaDriver::~Handle_XmlMXCAFDoc_AreaDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMXCAFDoc_AreaDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMXCAFDoc_ColorToolDriver;
+class XmlMXCAFDoc_ColorToolDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMXCAFDoc_ColorToolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, XmlObjMgt_RRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMXCAFDoc_ColorToolDriver {
+	Handle_XmlMXCAFDoc_ColorToolDriver GetHandle() {
+	return *(Handle_XmlMXCAFDoc_ColorToolDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_ColorToolDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlMXCAFDoc_ColorToolDriver::~XmlMXCAFDoc_ColorToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMXCAFDoc_ColorToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor XmlMXCAFDoc_DocumentToolDriver;
 class XmlMXCAFDoc_DocumentToolDriver : public XmlMDF_ADriver {
 	public:
@@ -644,7 +685,7 @@ class XmlMXCAFDoc_DocumentToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_DocumentToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_DocumentToolDriver::~XmlMXCAFDoc_DocumentToolDriver %{
@@ -691,7 +732,7 @@ class XmlMXCAFDoc_LocationDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_LocationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_LocationDriver::~XmlMXCAFDoc_LocationDriver %{
@@ -732,7 +773,7 @@ class XmlMXCAFDoc_MaterialToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_MaterialToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_MaterialToolDriver::~XmlMXCAFDoc_MaterialToolDriver %{
@@ -745,47 +786,6 @@ def __del__(self):
 %}
 
 %extend XmlMXCAFDoc_MaterialToolDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMXCAFDoc_DimTolToolDriver;
-class XmlMXCAFDoc_DimTolToolDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMXCAFDoc_DimTolToolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, XmlObjMgt_RRelocationTable & theRelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMXCAFDoc_DimTolToolDriver {
-	Handle_XmlMXCAFDoc_DimTolToolDriver GetHandle() {
-	return *(Handle_XmlMXCAFDoc_DimTolToolDriver*) &$self;
-	}
-};
-%extend XmlMXCAFDoc_DimTolToolDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlMXCAFDoc_DimTolToolDriver::~XmlMXCAFDoc_DimTolToolDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMXCAFDoc_DimTolToolDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -814,7 +814,7 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_ColorDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_ColorDriver::~XmlMXCAFDoc_ColorDriver %{
@@ -855,7 +855,7 @@ class XmlMXCAFDoc_GraphNodeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_GraphNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_GraphNodeDriver::~XmlMXCAFDoc_GraphNodeDriver %{
@@ -868,6 +868,88 @@ def __del__(self):
 %}
 
 %extend XmlMXCAFDoc_GraphNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMXCAFDoc_DatumDriver;
+class XmlMXCAFDoc_DatumDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMXCAFDoc_DatumDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMXCAFDoc_DatumDriver {
+	Handle_XmlMXCAFDoc_DatumDriver GetHandle() {
+	return *(Handle_XmlMXCAFDoc_DatumDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_DatumDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlMXCAFDoc_DatumDriver::~XmlMXCAFDoc_DatumDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMXCAFDoc_DatumDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMXCAFDoc_VolumeDriver;
+class XmlMXCAFDoc_VolumeDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMXCAFDoc_VolumeDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMXCAFDoc_VolumeDriver {
+	Handle_XmlMXCAFDoc_VolumeDriver GetHandle() {
+	return *(Handle_XmlMXCAFDoc_VolumeDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_VolumeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlMXCAFDoc_VolumeDriver::~XmlMXCAFDoc_VolumeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMXCAFDoc_VolumeDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -899,88 +981,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor XmlMXCAFDoc_VolumeDriver;
-class XmlMXCAFDoc_VolumeDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMXCAFDoc_VolumeDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMXCAFDoc_VolumeDriver {
-	Handle_XmlMXCAFDoc_VolumeDriver GetHandle() {
-	return *(Handle_XmlMXCAFDoc_VolumeDriver*) &$self;
-	}
-};
-%extend XmlMXCAFDoc_VolumeDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlMXCAFDoc_VolumeDriver::~XmlMXCAFDoc_VolumeDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMXCAFDoc_VolumeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMXCAFDoc_ColorToolDriver;
-class XmlMXCAFDoc_ColorToolDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMXCAFDoc_ColorToolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, XmlObjMgt_RRelocationTable & theRelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMXCAFDoc_ColorToolDriver {
-	Handle_XmlMXCAFDoc_ColorToolDriver GetHandle() {
-	return *(Handle_XmlMXCAFDoc_ColorToolDriver*) &$self;
-	}
-};
-%extend XmlMXCAFDoc_ColorToolDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlMXCAFDoc_ColorToolDriver::~XmlMXCAFDoc_ColorToolDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMXCAFDoc_ColorToolDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor XmlMXCAFDoc_MaterialDriver;
 class XmlMXCAFDoc_MaterialDriver : public XmlMDF_ADriver {
 	public:
@@ -1003,7 +1003,7 @@ class XmlMXCAFDoc_MaterialDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_MaterialDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_MaterialDriver::~XmlMXCAFDoc_MaterialDriver %{
@@ -1044,7 +1044,7 @@ class XmlMXCAFDoc_DimTolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_DimTolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_DimTolDriver::~XmlMXCAFDoc_DimTolDriver %{
@@ -1057,6 +1057,47 @@ def __del__(self):
 %}
 
 %extend XmlMXCAFDoc_DimTolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMXCAFDoc_AreaDriver;
+class XmlMXCAFDoc_AreaDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMXCAFDoc_AreaDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMXCAFDoc_AreaDriver {
+	Handle_XmlMXCAFDoc_AreaDriver GetHandle() {
+	return *(Handle_XmlMXCAFDoc_AreaDriver*) &$self;
+	}
+};
+%extend XmlMXCAFDoc_AreaDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlMXCAFDoc_AreaDriver::~XmlMXCAFDoc_AreaDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMXCAFDoc_AreaDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1085,7 +1126,7 @@ class XmlMXCAFDoc_LayerToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_LayerToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_LayerToolDriver::~XmlMXCAFDoc_LayerToolDriver %{
@@ -1126,7 +1167,7 @@ class XmlMXCAFDoc_ShapeToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_ShapeToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_ShapeToolDriver::~XmlMXCAFDoc_ShapeToolDriver %{
@@ -1139,47 +1180,6 @@ def __del__(self):
 %}
 
 %extend XmlMXCAFDoc_ShapeToolDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMXCAFDoc_AreaDriver;
-class XmlMXCAFDoc_AreaDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMXCAFDoc_AreaDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMXCAFDoc_AreaDriver {
-	Handle_XmlMXCAFDoc_AreaDriver GetHandle() {
-	return *(Handle_XmlMXCAFDoc_AreaDriver*) &$self;
-	}
-};
-%extend XmlMXCAFDoc_AreaDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlMXCAFDoc_AreaDriver::~XmlMXCAFDoc_AreaDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMXCAFDoc_AreaDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1208,7 +1208,7 @@ class XmlMXCAFDoc_CentroidDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_CentroidDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_CentroidDriver::~XmlMXCAFDoc_CentroidDriver %{
@@ -1227,32 +1227,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor XmlMXCAFDoc_DatumDriver;
-class XmlMXCAFDoc_DatumDriver : public XmlMDF_ADriver {
+%nodefaultctor XmlMXCAFDoc_DimTolToolDriver;
+class XmlMXCAFDoc_DimTolToolDriver : public XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		XmlMXCAFDoc_DatumDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		XmlMXCAFDoc_DimTolToolDriver(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, XmlObjMgt_RRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		virtual		void Paste(const Handle_TDF_Attribute &theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XmlMXCAFDoc_DatumDriver {
-	Handle_XmlMXCAFDoc_DatumDriver GetHandle() {
-	return *(Handle_XmlMXCAFDoc_DatumDriver*) &$self;
+%extend XmlMXCAFDoc_DimTolToolDriver {
+	Handle_XmlMXCAFDoc_DimTolToolDriver GetHandle() {
+	return *(Handle_XmlMXCAFDoc_DimTolToolDriver*) &$self;
 	}
 };
-%extend XmlMXCAFDoc_DatumDriver {
+%extend XmlMXCAFDoc_DimTolToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") XmlMXCAFDoc_DatumDriver::~XmlMXCAFDoc_DatumDriver %{
+%feature("shadow") XmlMXCAFDoc_DimTolToolDriver::~XmlMXCAFDoc_DimTolToolDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1261,7 +1261,7 @@ def __del__(self):
 		pass
 %}
 
-%extend XmlMXCAFDoc_DatumDriver {
+%extend XmlMXCAFDoc_DimTolToolDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

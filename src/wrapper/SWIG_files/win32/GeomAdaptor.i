@@ -230,7 +230,7 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 };
 %extend GeomAdaptor_GHCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomAdaptor_GHCurve::~GeomAdaptor_GHCurve %{
@@ -269,7 +269,7 @@ class GeomAdaptor_HCurve : public GeomAdaptor_GHCurve {
 };
 %extend GeomAdaptor_HCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomAdaptor_HCurve::~GeomAdaptor_HCurve %{
@@ -282,6 +282,33 @@ def __del__(self):
 %}
 
 %extend GeomAdaptor_HCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomAdaptor;
+class GeomAdaptor {
+	public:
+		%feature("autodoc", "1");
+		GeomAdaptor();
+		%feature("autodoc", "1");
+		static		Handle_Geom_Curve MakeCurve(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		static		Handle_Geom_Surface MakeSurface(const Adaptor3d_Surface &S);
+
+};
+%feature("shadow") GeomAdaptor::~GeomAdaptor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomAdaptor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -312,7 +339,7 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 };
 %extend GeomAdaptor_GHSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomAdaptor_GHSurface::~GeomAdaptor_GHSurface %{
@@ -325,72 +352,6 @@ def __del__(self):
 %}
 
 %extend GeomAdaptor_GHSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomAdaptor_HSurface;
-class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
-	public:
-		%feature("autodoc", "1");
-		GeomAdaptor_HSurface();
-		%feature("autodoc", "1");
-		GeomAdaptor_HSurface(const GeomAdaptor_Surface &AS);
-		%feature("autodoc", "1");
-		GeomAdaptor_HSurface(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		GeomAdaptor_HSurface(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
-
-};
-%extend GeomAdaptor_HSurface {
-	Handle_GeomAdaptor_HSurface GetHandle() {
-	return *(Handle_GeomAdaptor_HSurface*) &$self;
-	}
-};
-%extend GeomAdaptor_HSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomAdaptor_HSurface::~GeomAdaptor_HSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomAdaptor_HSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomAdaptor;
-class GeomAdaptor {
-	public:
-		%feature("autodoc", "1");
-		GeomAdaptor();
-		%feature("autodoc", "1");
-		static		Handle_Geom_Curve MakeCurve(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		static		Handle_Geom_Surface MakeSurface(const Adaptor3d_Surface &S);
-
-};
-%feature("shadow") GeomAdaptor::~GeomAdaptor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomAdaptor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -518,6 +479,47 @@ def __del__(self):
 %}
 
 %extend GeomAdaptor_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomAdaptor_HSurface;
+class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
+	public:
+		%feature("autodoc", "1");
+		GeomAdaptor_HSurface();
+		%feature("autodoc", "1");
+		GeomAdaptor_HSurface(const GeomAdaptor_Surface &AS);
+		%feature("autodoc", "1");
+		GeomAdaptor_HSurface(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		GeomAdaptor_HSurface(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomAdaptor_HSurface {
+	Handle_GeomAdaptor_HSurface GetHandle() {
+	return *(Handle_GeomAdaptor_HSurface*) &$self;
+	}
+};
+%extend GeomAdaptor_HSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomAdaptor_HSurface::~GeomAdaptor_HSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomAdaptor_HSurface {
 	void _kill_pointed() {
 		delete $self;
 	}

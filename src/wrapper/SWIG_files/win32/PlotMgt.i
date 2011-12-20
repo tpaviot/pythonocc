@@ -184,6 +184,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PlotMgt_TextManager;
+class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
+	public:
+		%feature("autodoc", "1");
+		Handle_PlotMgt_TextManager();
+		%feature("autodoc", "1");
+		Handle_PlotMgt_TextManager(const Handle_PlotMgt_TextManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_TextManager(const PlotMgt_TextManager *anItem);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_TextManager & operator=(const Handle_PlotMgt_TextManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_TextManager & operator=(const PlotMgt_TextManager *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PlotMgt_TextManager DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PlotMgt_TextManager {
+	PlotMgt_TextManager* GetObject() {
+	return (PlotMgt_TextManager*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PlotMgt_TextManager::~Handle_PlotMgt_TextManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PlotMgt_TextManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter;
 class Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter : public Handle_TCollection_SeqNode {
 	public:
@@ -336,44 +374,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PlotMgt_TextManager;
-class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
-	public:
-		%feature("autodoc", "1");
-		Handle_PlotMgt_TextManager();
-		%feature("autodoc", "1");
-		Handle_PlotMgt_TextManager(const Handle_PlotMgt_TextManager &aHandle);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_TextManager(const PlotMgt_TextManager *anItem);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_TextManager & operator=(const Handle_PlotMgt_TextManager &aHandle);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_TextManager & operator=(const PlotMgt_TextManager *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PlotMgt_TextManager DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PlotMgt_TextManager {
-	PlotMgt_TextManager* GetObject() {
-	return (PlotMgt_TextManager*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PlotMgt_TextManager::~Handle_PlotMgt_TextManager %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PlotMgt_TextManager {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PlotMgt_PlotterAccessError;
 class Handle_PlotMgt_PlotterAccessError : public Handle_Standard_OutOfRange {
 	public:
@@ -488,6 +488,128 @@ def __del__(self):
 };
 
 
+%nodefaultctor PlotMgt_HListOfPlotterParameter;
+class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		PlotMgt_HListOfPlotterParameter();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_PlotMgt_PlotterParameter &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_PlotMgt_PlotterParameter &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_PlotMgt_PlotterParameter &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_PlotMgt_PlotterParameter &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_HListOfPlotterParameter Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_PlotMgt_PlotterParameter &anItem);
+		%feature("autodoc", "1");
+		const Handle_PlotMgt_PlotterParameter & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_PlotMgt_PlotterParameter & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const PlotMgt_ListOfPlotterParameter & Sequence() const;
+		%feature("autodoc", "1");
+		PlotMgt_ListOfPlotterParameter & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_PlotMgt_HListOfPlotterParameter ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PlotMgt_HListOfPlotterParameter {
+	Handle_PlotMgt_HListOfPlotterParameter GetHandle() {
+	return *(Handle_PlotMgt_HListOfPlotterParameter*) &$self;
+	}
+};
+%extend PlotMgt_HListOfPlotterParameter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PlotMgt_HListOfPlotterParameter::~PlotMgt_HListOfPlotterParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PlotMgt_HListOfPlotterParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PlotMgt_PlotterAccessError;
+class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		PlotMgt_PlotterAccessError();
+		%feature("autodoc", "1");
+		PlotMgt_PlotterAccessError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_PlotMgt_PlotterAccessError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PlotMgt_PlotterAccessError {
+	Handle_PlotMgt_PlotterAccessError GetHandle() {
+	return *(Handle_PlotMgt_PlotterAccessError*) &$self;
+	}
+};
+%extend PlotMgt_PlotterAccessError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PlotMgt_PlotterAccessError::~PlotMgt_PlotterAccessError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PlotMgt_PlotterAccessError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PlotMgt_PlotterDefinitionError;
 class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 	public:
@@ -512,7 +634,7 @@ class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 };
 %extend PlotMgt_PlotterDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_PlotterDefinitionError::~PlotMgt_PlotterDefinitionError %{
@@ -567,7 +689,7 @@ class PlotMgt_TextManager : public MFT_TextManager {
 };
 %extend PlotMgt_TextManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_TextManager::~PlotMgt_TextManager %{
@@ -702,7 +824,7 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 };
 %extend PlotMgt_PlotterDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_PlotterDriver::~PlotMgt_PlotterDriver %{
@@ -715,43 +837,6 @@ def __del__(self):
 %}
 
 %extend PlotMgt_PlotterDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PlotMgt_SequenceNodeOfListOfPlotterParameter;
-class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		PlotMgt_SequenceNodeOfListOfPlotterParameter(const Handle_PlotMgt_PlotterParameter &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterParameter & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
-	Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter GetHandle() {
-	return *(Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter*) &$self;
-	}
-};
-%extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PlotMgt_SequenceNodeOfListOfPlotterParameter::~PlotMgt_SequenceNodeOfListOfPlotterParameter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -823,70 +908,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor PlotMgt_HListOfPlotterParameter;
-class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
+%nodefaultctor PlotMgt_ImageDriver;
+class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
 	public:
 		%feature("autodoc", "1");
-		PlotMgt_HListOfPlotterParameter();
+		PlotMgt_ImageDriver(const Handle_PlotMgt_Plotter &aPlotter, const char * aName);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		PlotMgt_ImageDriver(const char * aName);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		virtual		void BeginDraw();
 		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_PlotMgt_PlotterParameter &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_PlotMgt_PlotterParameter &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_PlotMgt_PlotterParameter &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_PlotMgt_PlotterParameter &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_PlotMgt_HListOfPlotterParameter &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_PlotMgt_PlotterParameter &anItem);
-		%feature("autodoc", "1");
-		const Handle_PlotMgt_PlotterParameter & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterParameter & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const PlotMgt_ListOfPlotterParameter & Sequence() const;
-		%feature("autodoc", "1");
-		PlotMgt_ListOfPlotterParameter & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter ShallowCopy() const;
+		virtual		void EndDraw(const Standard_Boolean dontFlush=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PlotMgt_HListOfPlotterParameter {
-	Handle_PlotMgt_HListOfPlotterParameter GetHandle() {
-	return *(Handle_PlotMgt_HListOfPlotterParameter*) &$self;
+%extend PlotMgt_ImageDriver {
+	Handle_PlotMgt_ImageDriver GetHandle() {
+	return *(Handle_PlotMgt_ImageDriver*) &$self;
 	}
 };
-%extend PlotMgt_HListOfPlotterParameter {
+%extend PlotMgt_ImageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") PlotMgt_HListOfPlotterParameter::~PlotMgt_HListOfPlotterParameter %{
+%feature("shadow") PlotMgt_ImageDriver::~PlotMgt_ImageDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -895,7 +942,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PlotMgt_HListOfPlotterParameter {
+%extend PlotMgt_ImageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1299,7 +1346,7 @@ class PlotMgt_Plotter : public MMgt_TShared {
 };
 %extend PlotMgt_Plotter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_Plotter::~PlotMgt_Plotter %{
@@ -1312,47 +1359,6 @@ def __del__(self):
 %}
 
 %extend PlotMgt_Plotter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PlotMgt_ImageDriver;
-class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
-	public:
-		%feature("autodoc", "1");
-		PlotMgt_ImageDriver(const Handle_PlotMgt_Plotter &aPlotter, const char * aName);
-		%feature("autodoc", "1");
-		PlotMgt_ImageDriver(const char * aName);
-		%feature("autodoc", "1");
-		virtual		void BeginDraw();
-		%feature("autodoc", "1");
-		virtual		void EndDraw(const Standard_Boolean dontFlush=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PlotMgt_ImageDriver {
-	Handle_PlotMgt_ImageDriver GetHandle() {
-	return *(Handle_PlotMgt_ImageDriver*) &$self;
-	}
-};
-%extend PlotMgt_ImageDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PlotMgt_ImageDriver::~PlotMgt_ImageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PlotMgt_ImageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1411,34 +1417,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor PlotMgt_PlotterAccessError;
-class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
+%nodefaultctor PlotMgt_SequenceNodeOfListOfPlotterParameter;
+class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		PlotMgt_PlotterAccessError();
+		PlotMgt_SequenceNodeOfListOfPlotterParameter(const Handle_PlotMgt_PlotterParameter &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		PlotMgt_PlotterAccessError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_PlotMgt_PlotterAccessError NewInstance(const char * aMessage="");
+		Handle_PlotMgt_PlotterParameter & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PlotMgt_PlotterAccessError {
-	Handle_PlotMgt_PlotterAccessError GetHandle() {
-	return *(Handle_PlotMgt_PlotterAccessError*) &$self;
+%extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
+	Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter GetHandle() {
+	return *(Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter*) &$self;
 	}
 };
-%extend PlotMgt_PlotterAccessError {
+%extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") PlotMgt_PlotterAccessError::~PlotMgt_PlotterAccessError %{
+%feature("shadow") PlotMgt_SequenceNodeOfListOfPlotterParameter::~PlotMgt_SequenceNodeOfListOfPlotterParameter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1447,7 +1447,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PlotMgt_PlotterAccessError {
+%extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1508,7 +1508,7 @@ class PlotMgt_PlotterParameter : public MMgt_TShared {
 };
 %extend PlotMgt_PlotterParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_PlotterParameter::~PlotMgt_PlotterParameter %{
@@ -1563,7 +1563,7 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 };
 %extend PlotMgt_HListOfMFTFonts {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PlotMgt_HListOfMFTFonts::~PlotMgt_HListOfMFTFonts %{

@@ -59,6 +59,44 @@ enum Draft_ErrorStatus {
 
 
 
+%nodefaultctor Handle_Draft_Modification;
+class Handle_Draft_Modification : public Handle_BRepTools_Modification {
+	public:
+		%feature("autodoc", "1");
+		Handle_Draft_Modification();
+		%feature("autodoc", "1");
+		Handle_Draft_Modification(const Handle_Draft_Modification &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification(const Draft_Modification *anItem);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification & operator=(const Handle_Draft_Modification &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification & operator=(const Draft_Modification *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Draft_Modification DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Draft_Modification {
+	Draft_Modification* GetObject() {
+	return (Draft_Modification*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Draft_Modification::~Handle_Draft_Modification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Draft_Modification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo;
 class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollection_MapNode {
 	public:
@@ -129,44 +167,6 @@ def __del__(self):
 %}
 
 %extend Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Draft_Modification;
-class Handle_Draft_Modification : public Handle_BRepTools_Modification {
-	public:
-		%feature("autodoc", "1");
-		Handle_Draft_Modification();
-		%feature("autodoc", "1");
-		Handle_Draft_Modification(const Handle_Draft_Modification &aHandle);
-		%feature("autodoc", "1");
-		Handle_Draft_Modification(const Draft_Modification *anItem);
-		%feature("autodoc", "1");
-		Handle_Draft_Modification & operator=(const Handle_Draft_Modification &aHandle);
-		%feature("autodoc", "1");
-		Handle_Draft_Modification & operator=(const Draft_Modification *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Draft_Modification DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Draft_Modification {
-	Draft_Modification* GetObject() {
-	return (Draft_Modification*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Draft_Modification::~Handle_Draft_Modification %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Draft_Modification {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -250,65 +250,6 @@ def __del__(self):
 %}
 
 %extend Draft_FaceInfo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Draft_EdgeInfo;
-class Draft_EdgeInfo {
-	public:
-		%feature("autodoc", "1");
-		Draft_EdgeInfo();
-		%feature("autodoc", "1");
-		Draft_EdgeInfo(const Standard_Boolean HasNewGeometry);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Face F);
-		%feature("autodoc", "1");
-		void RootFace(const TopoDS_Face F);
-		%feature("autodoc", "1");
-		void Tangent(const gp_Pnt P);
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangent(gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		Standard_Boolean NewGeometry() const;
-		%feature("autodoc", "1");
-		void SetNewGeometry(const Standard_Boolean NewGeom);
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Geometry() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face  FirstFace() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face  SecondFace() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & FirstPC() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & SecondPC() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve & ChangeGeometry();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & ChangeFirstPC();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & ChangeSecondPC();
-		%feature("autodoc", "1");
-		const TopoDS_Face  RootFace() const;
-		%feature("autodoc", "1");
-		void Tolerance(const Standard_Real tol);
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-
-};
-%feature("shadow") Draft_EdgeInfo::~Draft_EdgeInfo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Draft_EdgeInfo {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -444,7 +385,7 @@ class Draft_Modification : public BRepTools_Modification {
 };
 %extend Draft_Modification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Draft_Modification::~Draft_Modification %{
@@ -483,7 +424,7 @@ class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode 
 };
 %extend Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfVertexVertexInfo::~Draft_DataMapNodeOfDataMapOfVertexVertexInfo %{
@@ -584,7 +525,7 @@ class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 };
 %extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo::~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo %{
@@ -648,6 +589,65 @@ def __del__(self):
 %}
 
 %extend Draft_VertexInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Draft_EdgeInfo;
+class Draft_EdgeInfo {
+	public:
+		%feature("autodoc", "1");
+		Draft_EdgeInfo();
+		%feature("autodoc", "1");
+		Draft_EdgeInfo(const Standard_Boolean HasNewGeometry);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void RootFace(const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void Tangent(const gp_Pnt P);
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangent(gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		Standard_Boolean NewGeometry() const;
+		%feature("autodoc", "1");
+		void SetNewGeometry(const Standard_Boolean NewGeom);
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & Geometry() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face  FirstFace() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face  SecondFace() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & FirstPC() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & SecondPC() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve & ChangeGeometry();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve & ChangeFirstPC();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve & ChangeSecondPC();
+		%feature("autodoc", "1");
+		const TopoDS_Face  RootFace() const;
+		%feature("autodoc", "1");
+		void Tolerance(const Standard_Real tol);
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+
+};
+%feature("shadow") Draft_EdgeInfo::~Draft_EdgeInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Draft_EdgeInfo {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -719,7 +719,7 @@ class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 };
 %extend Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfFaceFaceInfo::~Draft_DataMapNodeOfDataMapOfFaceFaceInfo %{

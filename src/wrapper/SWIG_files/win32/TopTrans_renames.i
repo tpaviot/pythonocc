@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(GetBefore) TopTrans_SurfaceTransition::GetBefore;
+%rename(GetAfter) TopTrans_SurfaceTransition::GetAfter;

@@ -49,13 +49,13 @@ $HeaderURL$
 
 %include BinObjMgt_headers.i
 
+typedef Standard_Integer * BinObjMgt_PInteger;
 typedef Standard_ExtCharacter * BinObjMgt_PExtChar;
 typedef Standard_ShortReal * BinObjMgt_PShortReal;
-typedef Standard_Real * BinObjMgt_PReal;
 typedef TColStd_DataMapOfIntegerTransient BinObjMgt_RRelocationTable;
-typedef Standard_Integer * BinObjMgt_PInteger;
 typedef TColStd_IndexedMapOfTransient BinObjMgt_SRelocationTable;
 typedef Standard_Character * BinObjMgt_PChar;
+typedef Standard_Real * BinObjMgt_PReal;
 typedef Standard_Byte * BinObjMgt_PByte;
 
 

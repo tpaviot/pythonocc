@@ -276,7 +276,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public TCollection
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape::~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape %{
@@ -438,7 +438,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public TCollection_
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal::~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal %{
@@ -551,57 +551,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepOffsetAPI_DraftAngle;
-class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
-	public:
-		%feature("autodoc", "1");
-		BRepOffsetAPI_DraftAngle();
-		%feature("autodoc", "1");
-		BRepOffsetAPI_DraftAngle(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Face F, const gp_Dir Direction, const Standard_Real Angle, const gp_Pln NeutralPlane, const Standard_Boolean Flag=1);
-		%feature("autodoc", "1");
-		Standard_Boolean AddDone() const;
-		%feature("autodoc", "1");
-		void Remove(const TopoDS_Face F);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  ProblematicShape() const;
-		%feature("autodoc", "1");
-		Draft_ErrorStatus Status() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & ConnectedFaces(const TopoDS_Face F) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & ModifiedFaces() const;
-		%feature("autodoc", "1");
-		virtual		void Build();
-		%feature("autodoc", "1");
-		void CorrectWires();
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
-
-};
-%feature("shadow") BRepOffsetAPI_DraftAngle::~BRepOffsetAPI_DraftAngle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepOffsetAPI_DraftAngle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepOffsetAPI_NormalProjection;
 class BRepOffsetAPI_NormalProjection : public BRepBuilderAPI_MakeShape {
 	public:
@@ -647,6 +596,57 @@ def __del__(self):
 %}
 
 %extend BRepOffsetAPI_NormalProjection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepOffsetAPI_DraftAngle;
+class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
+	public:
+		%feature("autodoc", "1");
+		BRepOffsetAPI_DraftAngle();
+		%feature("autodoc", "1");
+		BRepOffsetAPI_DraftAngle(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Face F, const gp_Dir Direction, const Standard_Real Angle, const gp_Pln NeutralPlane, const Standard_Boolean Flag=1);
+		%feature("autodoc", "1");
+		Standard_Boolean AddDone() const;
+		%feature("autodoc", "1");
+		void Remove(const TopoDS_Face F);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  ProblematicShape() const;
+		%feature("autodoc", "1");
+		Draft_ErrorStatus Status() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & ConnectedFaces(const TopoDS_Face F) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & ModifiedFaces() const;
+		%feature("autodoc", "1");
+		virtual		void Build();
+		%feature("autodoc", "1");
+		void CorrectWires();
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
+
+};
+%feature("shadow") BRepOffsetAPI_DraftAngle::~BRepOffsetAPI_DraftAngle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepOffsetAPI_DraftAngle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -755,6 +755,39 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepOffsetAPI_MakePipe;
+class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
+	public:
+		%feature("autodoc", "1");
+		BRepOffsetAPI_MakePipe(const TopoDS_Wire Spine, const TopoDS_Shape Profile);
+		%feature("autodoc", "1");
+		const BRepFill_Pipe & Pipe() const;
+		%feature("autodoc", "1");
+		virtual		void Build();
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape FirstShape();
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape LastShape();
+		%feature("autodoc", "1");
+		TopoDS_Shape Generated(const TopoDS_Shape SSpine, const TopoDS_Shape SProfile);
+
+};
+%feature("shadow") BRepOffsetAPI_MakePipe::~BRepOffsetAPI_MakePipe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepOffsetAPI_MakePipe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepOffsetAPI_MakeDraft;
 class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 	public:
@@ -786,39 +819,6 @@ def __del__(self):
 %}
 
 %extend BRepOffsetAPI_MakeDraft {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepOffsetAPI_MakePipe;
-class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
-	public:
-		%feature("autodoc", "1");
-		BRepOffsetAPI_MakePipe(const TopoDS_Wire Spine, const TopoDS_Shape Profile);
-		%feature("autodoc", "1");
-		const BRepFill_Pipe & Pipe() const;
-		%feature("autodoc", "1");
-		virtual		void Build();
-		%feature("autodoc", "1");
-		virtual		TopoDS_Shape FirstShape();
-		%feature("autodoc", "1");
-		virtual		TopoDS_Shape LastShape();
-		%feature("autodoc", "1");
-		TopoDS_Shape Generated(const TopoDS_Shape SSpine, const TopoDS_Shape SProfile);
-
-};
-%feature("shadow") BRepOffsetAPI_MakePipe::~BRepOffsetAPI_MakePipe %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepOffsetAPI_MakePipe {
 	void _kill_pointed() {
 		delete $self;
 	}

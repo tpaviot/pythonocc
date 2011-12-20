@@ -163,58 +163,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepSweep_Trsf;
-class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
-	public:
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		Standard_Boolean Process(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirV);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsInvariant(const TopoDS_Shape aGenS) const;
-
-};
-%feature("shadow") BRepSweep_Trsf::~BRepSweep_Trsf %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepSweep_Trsf {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepSweep_Translation;
-class BRepSweep_Translation : public BRepSweep_Trsf {
-	public:
-		%feature("autodoc", "1");
-		BRepSweep_Translation(const TopoDS_Shape S, const Sweep_NumShape &N, const TopLoc_Location &L, const gp_Vec V, const Standard_Boolean C, const Standard_Boolean Canonize=1);
-		%feature("autodoc", "1");
-		gp_Vec Vec() const;
-
-};
-%feature("shadow") BRepSweep_Translation::~BRepSweep_Translation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepSweep_Translation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepSweep_Iterator;
 class BRepSweep_Iterator {
 	public:
@@ -466,7 +414,7 @@ class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public T
 };
 %extend BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep::~BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep %{
@@ -485,11 +433,15 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepSweep_Rotation;
-class BRepSweep_Rotation : public BRepSweep_Trsf {
+%nodefaultctor BRepSweep_Trsf;
+class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 	public:
 		%feature("autodoc", "1");
-		BRepSweep_Rotation(const TopoDS_Shape S, const Sweep_NumShape &N, const TopLoc_Location &L, const gp_Ax1 A, const Quantity_PlaneAngle D, const Standard_Boolean C);
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		Standard_Boolean Process(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
 		virtual		TopoDS_Shape MakeEmptyVertex(const TopoDS_Shape aGenV, const Sweep_NumShape &aDirV);
 		%feature("autodoc", "1");
@@ -511,19 +463,44 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("autodoc", "1");
 		virtual		void SetDirectingPCurve(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape aGenE, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirE, const TopAbs_Orientation orien);
 		%feature("autodoc", "1");
-		virtual		TopAbs_Orientation DirectSolid(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
-		%feature("autodoc", "1");
 		virtual		Standard_Boolean GGDShapeIsToAdd(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const TopoDS_Shape aSubGenS, const Sweep_NumShape &aDirS) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean GDDShapeIsToAdd(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS, const Sweep_NumShape &aSubDirS) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean SeparatedWires(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const TopoDS_Shape aSubGenS, const Sweep_NumShape &aDirS) const;
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape SplitShell(const TopoDS_Shape aNewShape) const;
-		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasShape(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsInvariant(const TopoDS_Shape aGenS) const;
+		%feature("autodoc", "1");
+		virtual		void SetContinuity(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
+
+};
+%feature("shadow") BRepSweep_Trsf::~BRepSweep_Trsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepSweep_Trsf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepSweep_Rotation;
+class BRepSweep_Rotation : public BRepSweep_Trsf {
+	public:
+		%feature("autodoc", "1");
+		BRepSweep_Rotation(const TopoDS_Shape S, const Sweep_NumShape &N, const TopLoc_Location &L, const gp_Ax1 A, const Quantity_PlaneAngle D, const Standard_Boolean C);
+		%feature("autodoc", "1");
+		virtual		TopAbs_Orientation DirectSolid(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape SplitShell(const TopoDS_Shape aNewShape) const;
 		%feature("autodoc", "1");
 		gp_Ax1 Axe() const;
 		%feature("autodoc", "1");
@@ -575,6 +552,65 @@ def __del__(self):
 %}
 
 %extend BRepSweep_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepSweep_Translation;
+class BRepSweep_Translation : public BRepSweep_Trsf {
+	public:
+		%feature("autodoc", "1");
+		BRepSweep_Translation(const TopoDS_Shape S, const Sweep_NumShape &N, const TopLoc_Location &L, const gp_Vec V, const Standard_Boolean C, const Standard_Boolean Canonize=1);
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape MakeEmptyVertex(const TopoDS_Shape aGenV, const Sweep_NumShape &aDirV);
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape MakeEmptyDirectingEdge(const TopoDS_Shape aGenV, const Sweep_NumShape &aDirE);
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape MakeEmptyGeneratingEdge(const TopoDS_Shape aGenE, const Sweep_NumShape &aDirV);
+		%feature("autodoc", "1");
+		virtual		void SetParameters(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewVertex, const TopoDS_Shape aGenF, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirV);
+		%feature("autodoc", "1");
+		virtual		void SetDirectingParameter(const TopoDS_Shape aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirE, const Sweep_NumShape &aDirV);
+		%feature("autodoc", "1");
+		virtual		void SetGeneratingParameter(const TopoDS_Shape aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape aGenE, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirV);
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape MakeEmptyFace(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
+		%feature("autodoc", "1");
+		virtual		void SetPCurve(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape aGenF, const TopoDS_Shape aGenE, const Sweep_NumShape &aDirV, const TopAbs_Orientation orien);
+		%feature("autodoc", "1");
+		virtual		void SetGeneratingPCurve(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape aGenE, const Sweep_NumShape &aDirE, const Sweep_NumShape &aDirV, const TopAbs_Orientation orien);
+		%feature("autodoc", "1");
+		virtual		void SetDirectingPCurve(const TopoDS_Shape aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape aGenE, const TopoDS_Shape aGenV, const Sweep_NumShape &aDirE, const TopAbs_Orientation orien);
+		%feature("autodoc", "1");
+		virtual		TopAbs_Orientation DirectSolid(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean GGDShapeIsToAdd(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const TopoDS_Shape aSubGenS, const Sweep_NumShape &aDirS) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean GDDShapeIsToAdd(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS, const Sweep_NumShape &aSubDirS) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SeparatedWires(const TopoDS_Shape aNewShape, const TopoDS_Shape aNewSubShape, const TopoDS_Shape aGenS, const TopoDS_Shape aSubGenS, const Sweep_NumShape &aDirS) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasShape(const TopoDS_Shape aGenS, const Sweep_NumShape &aDirS) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsInvariant(const TopoDS_Shape aGenS) const;
+		%feature("autodoc", "1");
+		gp_Vec Vec() const;
+
+};
+%feature("shadow") BRepSweep_Translation::~BRepSweep_Translation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepSweep_Translation {
 	void _kill_pointed() {
 		delete $self;
 	}

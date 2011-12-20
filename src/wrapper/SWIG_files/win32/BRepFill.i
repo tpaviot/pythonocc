@@ -58,29 +58,29 @@ enum BRepFill_TransitionStyle {
 
 
 
-%nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape;
-class Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_BRepFill_ListNodeOfListOfOffsetWire;
+class Handle_BRepFill_ListNodeOfListOfOffsetWire : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape();
+		Handle_BRepFill_ListNodeOfListOfOffsetWire();
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape(const Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape &aHandle);
+		Handle_BRepFill_ListNodeOfListOfOffsetWire(const Handle_BRepFill_ListNodeOfListOfOffsetWire &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape(const BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape *anItem);
+		Handle_BRepFill_ListNodeOfListOfOffsetWire(const BRepFill_ListNodeOfListOfOffsetWire *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape & operator=(const Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape &aHandle);
+		Handle_BRepFill_ListNodeOfListOfOffsetWire & operator=(const Handle_BRepFill_ListNodeOfListOfOffsetWire &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape & operator=(const BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape *anItem);
+		Handle_BRepFill_ListNodeOfListOfOffsetWire & operator=(const BRepFill_ListNodeOfListOfOffsetWire *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_ListNodeOfListOfOffsetWire DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
-	BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape* GetObject() {
-	return (BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape*)$self->Access();
+%extend Handle_BRepFill_ListNodeOfListOfOffsetWire {
+	BRepFill_ListNodeOfListOfOffsetWire* GetObject() {
+	return (BRepFill_ListNodeOfListOfOffsetWire*)$self->Access();
 	}
 };
-%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape::~Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape %{
+%feature("shadow") Handle_BRepFill_ListNodeOfListOfOffsetWire::~Handle_BRepFill_ListNodeOfListOfOffsetWire %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -89,45 +89,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfSection;
-class Handle_BRepFill_SequenceNodeOfSequenceOfSection : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfSection();
-		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfSection(const Handle_BRepFill_SequenceNodeOfSequenceOfSection &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfSection(const BRepFill_SequenceNodeOfSequenceOfSection *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfSection & operator=(const Handle_BRepFill_SequenceNodeOfSequenceOfSection &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfSection & operator=(const BRepFill_SequenceNodeOfSequenceOfSection *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepFill_SequenceNodeOfSequenceOfSection DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepFill_SequenceNodeOfSequenceOfSection {
-	BRepFill_SequenceNodeOfSequenceOfSection* GetObject() {
-	return (BRepFill_SequenceNodeOfSequenceOfSection*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepFill_SequenceNodeOfSequenceOfSection::~Handle_BRepFill_SequenceNodeOfSequenceOfSection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepFill_SequenceNodeOfSequenceOfSection {
+%extend Handle_BRepFill_ListNodeOfListOfOffsetWire {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -204,6 +166,82 @@ def __del__(self):
 %}
 
 %extend Handle_BRepFill_Edge3DLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRepFill_DraftLaw;
+class Handle_BRepFill_DraftLaw : public Handle_BRepFill_Edge3DLaw {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepFill_DraftLaw();
+		%feature("autodoc", "1");
+		Handle_BRepFill_DraftLaw(const Handle_BRepFill_DraftLaw &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepFill_DraftLaw(const BRepFill_DraftLaw *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepFill_DraftLaw & operator=(const Handle_BRepFill_DraftLaw &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepFill_DraftLaw & operator=(const BRepFill_DraftLaw *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepFill_DraftLaw DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepFill_DraftLaw {
+	BRepFill_DraftLaw* GetObject() {
+	return (BRepFill_DraftLaw*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepFill_DraftLaw::~Handle_BRepFill_DraftLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepFill_DraftLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfSection;
+class Handle_BRepFill_SequenceNodeOfSequenceOfSection : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepFill_SequenceNodeOfSequenceOfSection();
+		%feature("autodoc", "1");
+		Handle_BRepFill_SequenceNodeOfSequenceOfSection(const Handle_BRepFill_SequenceNodeOfSequenceOfSection &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepFill_SequenceNodeOfSequenceOfSection(const BRepFill_SequenceNodeOfSequenceOfSection *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepFill_SequenceNodeOfSequenceOfSection & operator=(const Handle_BRepFill_SequenceNodeOfSequenceOfSection &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepFill_SequenceNodeOfSequenceOfSection & operator=(const BRepFill_SequenceNodeOfSequenceOfSection *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepFill_SequenceNodeOfSequenceOfSection DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepFill_SequenceNodeOfSequenceOfSection {
+	BRepFill_SequenceNodeOfSequenceOfSection* GetObject() {
+	return (BRepFill_SequenceNodeOfSequenceOfSection*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepFill_SequenceNodeOfSequenceOfSection::~Handle_BRepFill_SequenceNodeOfSequenceOfSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepFill_SequenceNodeOfSequenceOfSection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -324,6 +362,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape;
+class Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape();
+		%feature("autodoc", "1");
+		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape(const Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape(const BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape & operator=(const Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape & operator=(const BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
+	BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape* GetObject() {
+	return (BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape::~Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public Handle_TCollection_MapNode {
 	public:
@@ -356,6 +432,44 @@ def __del__(self):
 %}
 
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder;
+class Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder();
+		%feature("autodoc", "1");
+		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder(const Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder(const BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder & operator=(const Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder & operator=(const BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
+	BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder* GetObject() {
+	return (BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder::~Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -438,82 +552,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape;
-class Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape();
-		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape(const Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape(const BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape & operator=(const Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape & operator=(const BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
-	BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape* GetObject() {
-	return (BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape::~Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder;
-class Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder();
-		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder(const Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder(const BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder & operator=(const Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder & operator=(const BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
-	BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder* GetObject() {
-	return (BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder::~Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BRepFill_SectionLaw;
 class Handle_BRepFill_SectionLaw : public Handle_MMgt_TShared {
 	public:
@@ -590,29 +628,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepFill_DraftLaw;
-class Handle_BRepFill_DraftLaw : public Handle_BRepFill_Edge3DLaw {
+%nodefaultctor Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape;
+class Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepFill_DraftLaw();
+		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape();
 		%feature("autodoc", "1");
-		Handle_BRepFill_DraftLaw(const Handle_BRepFill_DraftLaw &aHandle);
+		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape(const Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DraftLaw(const BRepFill_DraftLaw *anItem);
+		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape(const BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DraftLaw & operator=(const Handle_BRepFill_DraftLaw &aHandle);
+		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape & operator=(const Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepFill_DraftLaw & operator=(const BRepFill_DraftLaw *anItem);
+		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape & operator=(const BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepFill_DraftLaw DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepFill_DraftLaw {
-	BRepFill_DraftLaw* GetObject() {
-	return (BRepFill_DraftLaw*)$self->Access();
+%extend Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape {
+	BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape* GetObject() {
+	return (BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape*)$self->Access();
 	}
 };
-%feature("shadow") Handle_BRepFill_DraftLaw::~Handle_BRepFill_DraftLaw %{
+%feature("shadow") Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape::~Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -621,45 +659,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_BRepFill_DraftLaw {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRepFill_ListNodeOfListOfOffsetWire;
-class Handle_BRepFill_ListNodeOfListOfOffsetWire : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepFill_ListNodeOfListOfOffsetWire();
-		%feature("autodoc", "1");
-		Handle_BRepFill_ListNodeOfListOfOffsetWire(const Handle_BRepFill_ListNodeOfListOfOffsetWire &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepFill_ListNodeOfListOfOffsetWire(const BRepFill_ListNodeOfListOfOffsetWire *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepFill_ListNodeOfListOfOffsetWire & operator=(const Handle_BRepFill_ListNodeOfListOfOffsetWire &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepFill_ListNodeOfListOfOffsetWire & operator=(const BRepFill_ListNodeOfListOfOffsetWire *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepFill_ListNodeOfListOfOffsetWire DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepFill_ListNodeOfListOfOffsetWire {
-	BRepFill_ListNodeOfListOfOffsetWire* GetObject() {
-	return (BRepFill_ListNodeOfListOfOffsetWire*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepFill_ListNodeOfListOfOffsetWire::~Handle_BRepFill_ListNodeOfListOfOffsetWire %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepFill_ListNodeOfListOfOffsetWire {
+%extend Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -818,29 +818,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape;
-class Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape;
+class Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape();
+		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
-		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape(const Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape &aHandle);
+		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape(const Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape(const BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape *anItem);
+		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape(const BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape & operator=(const Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape &aHandle);
+		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape & operator=(const Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape & operator=(const BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape *anItem);
+		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape & operator=(const BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape {
-	BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape* GetObject() {
-	return (BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape*)$self->Access();
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
+	BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape* GetObject() {
+	return (BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape*)$self->Access();
 	}
 };
-%feature("shadow") Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape::~Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape %{
+%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape::~Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -849,7 +849,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape {
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -905,7 +905,7 @@ class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
 };
 %extend BRepFill_CurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_CurveConstraint::~BRepFill_CurveConstraint %{
@@ -969,53 +969,50 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal;
-class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal : public TCollection_BasicMapIterator {
+%nodefaultctor BRepFill_SectionLaw;
+class BRepFill_SectionLaw : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal();
+		Standard_Integer NbLaw() const;
 		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal(const BRepFill_DataMapOfShapeSequenceOfReal &aMap);
+		const Handle_GeomFill_SectionLaw & Law(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Initialize(const BRepFill_DataMapOfShapeSequenceOfReal &aMap);
+		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
+		Standard_Boolean IsUClosed() const;
 		%feature("autodoc", "1");
-		const TColStd_SequenceOfReal & Value() const;
+		Standard_Boolean IsVClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsVertex() const;
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_SectionLaw ConcatenedLaw() const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity(const Standard_Integer Index, const Standard_Real TolAngular) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real VertexTol(const Standard_Integer Index, const Standard_Real Param) const;
+		%feature("autodoc", "1");
+		virtual		TopoDS_Vertex Vertex(const Standard_Integer Index, const Standard_Real Param) const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, TopoDS_Shape & S);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Wire W);
+		%feature("autodoc", "1");
+		TopoDS_Edge CurrentEdge();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal::~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal {
-	void _kill_pointed() {
-		delete $self;
+%extend BRepFill_SectionLaw {
+	Handle_BRepFill_SectionLaw GetHandle() {
+	return *(Handle_BRepFill_SectionLaw*) &$self;
 	}
 };
-
-
-%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape;
-class BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape();
-		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape(const BRepFill_DataMapOfOrientedShapeListOfShape &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepFill_DataMapOfOrientedShapeListOfShape &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Value() const;
-
+%extend BRepFill_SectionLaw {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
 };
-%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape::~BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape %{
+%feature("shadow") BRepFill_SectionLaw::~BRepFill_SectionLaw %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1024,7 +1021,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape {
+%extend BRepFill_SectionLaw {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1103,21 +1100,17 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepFill_SectionLaw;
-class BRepFill_SectionLaw : public MMgt_TShared {
+%nodefaultctor BRepFill_NSections;
+class BRepFill_NSections : public BRepFill_SectionLaw {
 	public:
 		%feature("autodoc", "1");
-		Standard_Integer NbLaw() const;
+		BRepFill_NSections(const TopTools_SequenceOfShape &S, const Standard_Boolean Build=1);
 		%feature("autodoc", "1");
-		const Handle_GeomFill_SectionLaw & Law(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsUClosed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsVClosed() const;
+		BRepFill_NSections(const TopTools_SequenceOfShape &S, const GeomFill_SequenceOfTrsf &Trsfs, const TColStd_SequenceOfReal &P, const Standard_Real VF, const Standard_Real VL, const Standard_Boolean Build=1);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsVertex() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_SectionLaw ConcatenedLaw() const;
 		%feature("autodoc", "1");
@@ -1127,50 +1120,9 @@ class BRepFill_SectionLaw : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		TopoDS_Vertex Vertex(const Standard_Integer Index, const Standard_Real Param) const;
 		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire W);
-		%feature("autodoc", "1");
-		TopoDS_Edge CurrentEdge();
+		virtual		void D0(const Standard_Real Param, TopoDS_Shape & S);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepFill_SectionLaw {
-	Handle_BRepFill_SectionLaw GetHandle() {
-	return *(Handle_BRepFill_SectionLaw*) &$self;
-	}
-};
-%extend BRepFill_SectionLaw {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepFill_SectionLaw::~BRepFill_SectionLaw %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFill_SectionLaw {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFill_NSections;
-class BRepFill_NSections : public BRepFill_SectionLaw {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_NSections(const TopTools_SequenceOfShape &S, const Standard_Boolean Build=1);
-		%feature("autodoc", "1");
-		BRepFill_NSections(const TopTools_SequenceOfShape &S, const GeomFill_SequenceOfTrsf &Trsfs, const TColStd_SequenceOfReal &P, const Standard_Real VF, const Standard_Real VL, const Standard_Boolean Build=1);
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real Param, TopoDS_Shape & S);
 
 };
 %extend BRepFill_NSections {
@@ -1180,7 +1132,7 @@ class BRepFill_NSections : public BRepFill_SectionLaw {
 };
 %extend BRepFill_NSections {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_NSections::~BRepFill_NSections %{
@@ -1356,7 +1308,7 @@ class BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public TCollection_SeqNode
 };
 %extend BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_SequenceNodeOfSequenceOfFaceAndOrder::~BRepFill_SequenceNodeOfSequenceOfFaceAndOrder %{
@@ -1400,45 +1352,6 @@ def __del__(self):
 %}
 
 %extend BRepFill_DataMapIteratorOfDataMapOfNodeShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape;
-class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape(const TopoDS_Shape K, const TopTools_ListOfShape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
-	Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape GetHandle() {
-	return *(Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape*) &$self;
-	}
-};
-%extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape::~BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1638,6 +1551,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepFill_DataMapOfNodeShape;
+class BRepFill_DataMapOfNodeShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfNodeShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfNodeShape & Assign(const BRepFill_DataMapOfNodeShape &Other);
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfNodeShape & operator=(const BRepFill_DataMapOfNodeShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Handle_MAT_Node &K, const TopoDS_Shape I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_MAT_Node &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Handle_MAT_Node &K);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Find(const Handle_MAT_Node &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  operator()(const Handle_MAT_Node &K) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeFind(const Handle_MAT_Node &K);
+		%feature("autodoc", "1");
+		TopoDS_Shape  operator()(const Handle_MAT_Node &K);
+
+};
+%feature("shadow") BRepFill_DataMapOfNodeShape::~BRepFill_DataMapOfNodeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFill_DataMapOfNodeShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepFill_CompatibleWires;
 class BRepFill_CompatibleWires {
 	public:
@@ -1731,7 +1689,7 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 };
 %extend BRepFill_LocationLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_LocationLaw::~BRepFill_LocationLaw %{
@@ -1764,7 +1722,7 @@ class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
 };
 %extend BRepFill_Edge3DLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_Edge3DLaw::~BRepFill_Edge3DLaw %{
@@ -1799,7 +1757,7 @@ class BRepFill_DraftLaw : public BRepFill_Edge3DLaw {
 };
 %extend BRepFill_DraftLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_DraftLaw::~BRepFill_DraftLaw %{
@@ -1818,56 +1776,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepFill_SequenceOfFaceAndOrder;
-class BRepFill_SequenceOfFaceAndOrder : public TCollection_BaseSequence {
+%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal;
+class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_SequenceOfFaceAndOrder();
+		BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal();
 		%feature("autodoc", "1");
-		void Clear();
+		BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal(const BRepFill_DataMapOfShapeSequenceOfReal &aMap);
 		%feature("autodoc", "1");
-		const BRepFill_SequenceOfFaceAndOrder & Assign(const BRepFill_SequenceOfFaceAndOrder &Other);
+		void Initialize(const BRepFill_DataMapOfShapeSequenceOfReal &aMap);
 		%feature("autodoc", "1");
-		const BRepFill_SequenceOfFaceAndOrder & operator=(const BRepFill_SequenceOfFaceAndOrder &Other);
+		const TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
-		void Append(const BRepFill_FaceAndOrder &T);
-		%feature("autodoc", "1");
-		void Append(BRepFill_SequenceOfFaceAndOrder & S);
-		%feature("autodoc", "1");
-		void Prepend(const BRepFill_FaceAndOrder &T);
-		%feature("autodoc", "1");
-		void Prepend(BRepFill_SequenceOfFaceAndOrder & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const BRepFill_FaceAndOrder &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, BRepFill_SequenceOfFaceAndOrder & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const BRepFill_FaceAndOrder &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, BRepFill_SequenceOfFaceAndOrder & S);
-		%feature("autodoc", "1");
-		const BRepFill_FaceAndOrder & First() const;
-		%feature("autodoc", "1");
-		const BRepFill_FaceAndOrder & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, BRepFill_SequenceOfFaceAndOrder & S);
-		%feature("autodoc", "1");
-		const BRepFill_FaceAndOrder & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BRepFill_FaceAndOrder & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const BRepFill_FaceAndOrder &I);
-		%feature("autodoc", "1");
-		BRepFill_FaceAndOrder & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BRepFill_FaceAndOrder & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		const TColStd_SequenceOfReal & Value() const;
 
 };
-%feature("shadow") BRepFill_SequenceOfFaceAndOrder::~BRepFill_SequenceOfFaceAndOrder %{
+%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal::~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1876,7 +1800,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepFill_SequenceOfFaceAndOrder {
+%extend BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1993,6 +1917,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepFill_DataMapOfShapeSequenceOfPnt;
+class BRepFill_DataMapOfShapeSequenceOfPnt : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfShapeSequenceOfPnt(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfShapeSequenceOfPnt & Assign(const BRepFill_DataMapOfShapeSequenceOfPnt &Other);
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfShapeSequenceOfPnt & operator=(const BRepFill_DataMapOfShapeSequenceOfPnt &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const TColgp_SequenceOfPnt &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfPnt & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfPnt & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		TColgp_SequenceOfPnt & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		TColgp_SequenceOfPnt & operator()(const TopoDS_Shape K);
+
+};
+%feature("shadow") BRepFill_DataMapOfShapeSequenceOfPnt::~BRepFill_DataMapOfShapeSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFill_DataMapOfShapeSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepFill_ListIteratorOfListOfOffsetWire;
 class BRepFill_ListIteratorOfListOfOffsetWire {
 	public:
@@ -2044,7 +2013,7 @@ class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
 };
 %extend BRepFill_ListNodeOfListOfOffsetWire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_ListNodeOfListOfOffsetWire::~BRepFill_ListNodeOfListOfOffsetWire %{
@@ -2119,6 +2088,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt;
+class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt(const TopoDS_Shape K, const TColgp_SequenceOfPnt &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		TColgp_SequenceOfPnt & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
+	Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt GetHandle() {
+	return *(Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt*) &$self;
+	}
+};
+%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt::~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepFill_ACRLaw;
 class BRepFill_ACRLaw : public BRepFill_LocationLaw {
 	public:
@@ -2135,7 +2143,7 @@ class BRepFill_ACRLaw : public BRepFill_LocationLaw {
 };
 %extend BRepFill_ACRLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_ACRLaw::~BRepFill_ACRLaw %{
@@ -2172,7 +2180,7 @@ class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
 };
 %extend BRepFill_EdgeOnSurfLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_EdgeOnSurfLaw::~BRepFill_EdgeOnSurfLaw %{
@@ -2211,7 +2219,7 @@ class BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public TCollectio
 };
 %extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape::~BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape %{
@@ -2224,83 +2232,6 @@ def __del__(self):
 %}
 
 %extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFill_PipeShell;
-class BRepFill_PipeShell : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_PipeShell(const TopoDS_Wire Spine);
-		%feature("autodoc", "1");
-		void Set(const Standard_Boolean Frenet=0);
-		%feature("autodoc", "1");
-		void Set(const gp_Ax2 Axe);
-		%feature("autodoc", "1");
-		void Set(const gp_Dir BiNormal);
-		%feature("autodoc", "1");
-		Standard_Boolean Set(const TopoDS_Shape SpineSupport);
-		%feature("autodoc", "1");
-		void Set(const TopoDS_Wire AuxiliarySpine, const Standard_Boolean CurvilinearEquivalence=1, const Standard_Boolean KeepContact=0);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape Profile, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape Profile, const TopoDS_Vertex Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
-		%feature("autodoc", "1");
-		void SetLaw(const TopoDS_Shape Profile, const Handle_Law_Function &L, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
-		%feature("autodoc", "1");
-		void SetLaw(const TopoDS_Shape Profile, const Handle_Law_Function &L, const TopoDS_Vertex Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
-		%feature("autodoc", "1");
-		void Delete(const TopoDS_Shape Profile);
-		%feature("autodoc", "1");
-		Standard_Boolean IsReady() const;
-		%feature("autodoc", "1");
-		GeomFill_PipeError GetStatus() const;
-		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real BoundTol=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAngular=1.0000000000000000208166817117216851329430937767e-2);
-		%feature("autodoc", "1");
-		void SetTransition(const BRepFill_TransitionStyle Mode=BRepFill_Modified, const Standard_Real Angmin=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real Angmax=6.0e+0);
-		%feature("autodoc", "1");
-		void Simulate(const Standard_Integer NumberOfSection, TopTools_ListOfShape & Sections);
-		%feature("autodoc", "1");
-		Standard_Boolean Build();
-		%feature("autodoc", "1");
-		Standard_Boolean MakeSolid();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  FirstShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  LastShape() const;
-		%feature("autodoc", "1");
-		void Generated(const TopoDS_Shape S, TopTools_ListOfShape & L);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepFill_PipeShell {
-	Handle_BRepFill_PipeShell GetHandle() {
-	return *(Handle_BRepFill_PipeShell*) &$self;
-	}
-};
-%extend BRepFill_PipeShell {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepFill_PipeShell::~BRepFill_PipeShell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFill_PipeShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2334,6 +2265,51 @@ def __del__(self):
 %}
 
 %extend BRepFill_Generator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepFill_DataMapOfOrientedShapeListOfShape;
+class BRepFill_DataMapOfOrientedShapeListOfShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfOrientedShapeListOfShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfOrientedShapeListOfShape & Assign(const BRepFill_DataMapOfOrientedShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		BRepFill_DataMapOfOrientedShapeListOfShape & operator=(const BRepFill_DataMapOfOrientedShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const TopTools_ListOfShape &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & operator()(const TopoDS_Shape K);
+
+};
+%feature("shadow") BRepFill_DataMapOfOrientedShapeListOfShape::~BRepFill_DataMapOfOrientedShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFill_DataMapOfOrientedShapeListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2376,7 +2352,7 @@ class BRepFill_ShapeLaw : public BRepFill_SectionLaw {
 };
 %extend BRepFill_ShapeLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_ShapeLaw::~BRepFill_ShapeLaw %{
@@ -2389,51 +2365,6 @@ def __del__(self):
 %}
 
 %extend BRepFill_ShapeLaw {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFill_DataMapOfNodeShape;
-class BRepFill_DataMapOfNodeShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_DataMapOfNodeShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepFill_DataMapOfNodeShape & Assign(const BRepFill_DataMapOfNodeShape &Other);
-		%feature("autodoc", "1");
-		BRepFill_DataMapOfNodeShape & operator=(const BRepFill_DataMapOfNodeShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_MAT_Node &K, const TopoDS_Shape I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_MAT_Node &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_MAT_Node &K);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Find(const Handle_MAT_Node &K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  operator()(const Handle_MAT_Node &K) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  ChangeFind(const Handle_MAT_Node &K);
-		%feature("autodoc", "1");
-		TopoDS_Shape  operator()(const Handle_MAT_Node &K);
-
-};
-%feature("shadow") BRepFill_DataMapOfNodeShape::~BRepFill_DataMapOfNodeShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFill_DataMapOfNodeShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2585,7 +2516,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCo
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape::~BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape %{
@@ -2690,36 +2621,68 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepFill_DataMapOfOrientedShapeListOfShape;
-class BRepFill_DataMapOfOrientedShapeListOfShape : public TCollection_BasicMap {
+%nodefaultctor BRepFill_PipeShell;
+class BRepFill_PipeShell : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_DataMapOfOrientedShapeListOfShape(const Standard_Integer NbBuckets=1);
+		BRepFill_PipeShell(const TopoDS_Wire Spine);
 		%feature("autodoc", "1");
-		BRepFill_DataMapOfOrientedShapeListOfShape & Assign(const BRepFill_DataMapOfOrientedShapeListOfShape &Other);
+		void Set(const Standard_Boolean Frenet=0);
 		%feature("autodoc", "1");
-		BRepFill_DataMapOfOrientedShapeListOfShape & operator=(const BRepFill_DataMapOfOrientedShapeListOfShape &Other);
+		void Set(const gp_Ax2 Axe);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		void Set(const gp_Dir BiNormal);
 		%feature("autodoc", "1");
-		void Clear();
+		Standard_Boolean Set(const TopoDS_Shape SpineSupport);
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const TopTools_ListOfShape &I);
+		void Set(const TopoDS_Wire AuxiliarySpine, const Standard_Boolean CurvilinearEquivalence=1, const Standard_Boolean KeepContact=0);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		void Add(const TopoDS_Shape Profile, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
+		void Add(const TopoDS_Shape Profile, const TopoDS_Vertex Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Find(const TopoDS_Shape K) const;
+		void SetLaw(const TopoDS_Shape Profile, const Handle_Law_Function &L, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & operator()(const TopoDS_Shape K) const;
+		void SetLaw(const TopoDS_Shape Profile, const Handle_Law_Function &L, const TopoDS_Vertex Location, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
-		TopTools_ListOfShape & ChangeFind(const TopoDS_Shape K);
+		void Delete(const TopoDS_Shape Profile);
 		%feature("autodoc", "1");
-		TopTools_ListOfShape & operator()(const TopoDS_Shape K);
+		Standard_Boolean IsReady() const;
+		%feature("autodoc", "1");
+		GeomFill_PipeError GetStatus() const;
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real BoundTol=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAngular=1.0000000000000000208166817117216851329430937767e-2);
+		%feature("autodoc", "1");
+		void SetTransition(const BRepFill_TransitionStyle Mode=BRepFill_Modified, const Standard_Real Angmin=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real Angmax=6.0e+0);
+		%feature("autodoc", "1");
+		void Simulate(const Standard_Integer NumberOfSection, TopTools_ListOfShape & Sections);
+		%feature("autodoc", "1");
+		Standard_Boolean Build();
+		%feature("autodoc", "1");
+		Standard_Boolean MakeSolid();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FirstShape() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  LastShape() const;
+		%feature("autodoc", "1");
+		void Generated(const TopoDS_Shape S, TopTools_ListOfShape & L);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") BRepFill_DataMapOfOrientedShapeListOfShape::~BRepFill_DataMapOfOrientedShapeListOfShape %{
+%extend BRepFill_PipeShell {
+	Handle_BRepFill_PipeShell GetHandle() {
+	return *(Handle_BRepFill_PipeShell*) &$self;
+	}
+};
+%extend BRepFill_PipeShell {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BRepFill_PipeShell::~BRepFill_PipeShell %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2728,7 +2691,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepFill_DataMapOfOrientedShapeListOfShape {
+%extend BRepFill_PipeShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2755,7 +2718,7 @@ class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
 };
 %extend BRepFill_DataMapNodeOfDataMapOfNodeShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_DataMapNodeOfDataMapOfNodeShape::~BRepFill_DataMapNodeOfDataMapOfNodeShape %{
@@ -2839,6 +2802,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepFill_FaceAndOrder;
+class BRepFill_FaceAndOrder {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_FaceAndOrder();
+		%feature("autodoc", "1");
+		BRepFill_FaceAndOrder(const TopoDS_Face aFace, const GeomAbs_Shape anOrder);
+
+};
+%feature("shadow") BRepFill_FaceAndOrder::~BRepFill_FaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFill_FaceAndOrder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepFill_MyLeastSquareOfComputeCLine;
 class BRepFill_MyLeastSquareOfComputeCLine {
 	public:
@@ -2903,7 +2891,7 @@ class BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape : pu
 };
 %extend BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape::~BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape %{
@@ -2916,45 +2904,6 @@ def __del__(self):
 %}
 
 %extend BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt;
-class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt(const TopoDS_Shape K, const TColgp_SequenceOfPnt &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		TColgp_SequenceOfPnt & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
-	Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt GetHandle() {
-	return *(Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt*) &$self;
-	}
-};
-%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt::~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2988,31 +2937,6 @@ def __del__(self):
 %}
 
 %extend BRepFill {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFill_FaceAndOrder;
-class BRepFill_FaceAndOrder {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_FaceAndOrder();
-		%feature("autodoc", "1");
-		BRepFill_FaceAndOrder(const TopoDS_Face aFace, const GeomAbs_Shape anOrder);
-
-};
-%feature("shadow") BRepFill_FaceAndOrder::~BRepFill_FaceAndOrder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFill_FaceAndOrder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3056,6 +2980,102 @@ def __del__(self):
 %}
 
 %extend BRepFill_MultiLineTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape;
+class BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape();
+		%feature("autodoc", "1");
+		BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape(const BRepFill_DataMapOfOrientedShapeListOfShape &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepFill_DataMapOfOrientedShapeListOfShape &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Value() const;
+
+};
+%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape::~BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepFill_SequenceOfFaceAndOrder;
+class BRepFill_SequenceOfFaceAndOrder : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_SequenceOfFaceAndOrder();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const BRepFill_SequenceOfFaceAndOrder & Assign(const BRepFill_SequenceOfFaceAndOrder &Other);
+		%feature("autodoc", "1");
+		const BRepFill_SequenceOfFaceAndOrder & operator=(const BRepFill_SequenceOfFaceAndOrder &Other);
+		%feature("autodoc", "1");
+		void Append(const BRepFill_FaceAndOrder &T);
+		%feature("autodoc", "1");
+		void Append(BRepFill_SequenceOfFaceAndOrder & S);
+		%feature("autodoc", "1");
+		void Prepend(const BRepFill_FaceAndOrder &T);
+		%feature("autodoc", "1");
+		void Prepend(BRepFill_SequenceOfFaceAndOrder & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const BRepFill_FaceAndOrder &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, BRepFill_SequenceOfFaceAndOrder & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const BRepFill_FaceAndOrder &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, BRepFill_SequenceOfFaceAndOrder & S);
+		%feature("autodoc", "1");
+		const BRepFill_FaceAndOrder & First() const;
+		%feature("autodoc", "1");
+		const BRepFill_FaceAndOrder & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, BRepFill_SequenceOfFaceAndOrder & S);
+		%feature("autodoc", "1");
+		const BRepFill_FaceAndOrder & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BRepFill_FaceAndOrder & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const BRepFill_FaceAndOrder &I);
+		%feature("autodoc", "1");
+		BRepFill_FaceAndOrder & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BRepFill_FaceAndOrder & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") BRepFill_SequenceOfFaceAndOrder::~BRepFill_SequenceOfFaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFill_SequenceOfFaceAndOrder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3115,7 +3135,7 @@ class BRepFill_SequenceNodeOfSequenceOfSection : public TCollection_SeqNode {
 };
 %extend BRepFill_SequenceNodeOfSequenceOfSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_SequenceNodeOfSequenceOfSection::~BRepFill_SequenceNodeOfSequenceOfSection %{
@@ -3215,7 +3235,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_Ma
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal::~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal %{
@@ -3312,36 +3332,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepFill_DataMapOfShapeSequenceOfPnt;
-class BRepFill_DataMapOfShapeSequenceOfPnt : public TCollection_BasicMap {
+%nodefaultctor BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape;
+class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_DataMapOfShapeSequenceOfPnt(const Standard_Integer NbBuckets=1);
+		BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape(const TopoDS_Shape K, const TopTools_ListOfShape &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		BRepFill_DataMapOfShapeSequenceOfPnt & Assign(const BRepFill_DataMapOfShapeSequenceOfPnt &Other);
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
-		BRepFill_DataMapOfShapeSequenceOfPnt & operator=(const BRepFill_DataMapOfShapeSequenceOfPnt &Other);
+		TopTools_ListOfShape & Value() const;
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const TColgp_SequenceOfPnt &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfPnt & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfPnt & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		TColgp_SequenceOfPnt & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		TColgp_SequenceOfPnt & operator()(const TopoDS_Shape K);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") BRepFill_DataMapOfShapeSequenceOfPnt::~BRepFill_DataMapOfShapeSequenceOfPnt %{
+%extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
+	Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape GetHandle() {
+	return *(Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape*) &$self;
+	}
+};
+%extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape::~BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3350,7 +3364,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepFill_DataMapOfShapeSequenceOfPnt {
+%extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3375,7 +3389,7 @@ class BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public TCollection_Seq
 };
 %extend BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder::~BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder %{

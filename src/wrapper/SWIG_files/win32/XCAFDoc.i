@@ -324,6 +324,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_XCAFDoc_DocumentTool;
+class Handle_XCAFDoc_DocumentTool : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_DocumentTool();
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_DocumentTool(const Handle_XCAFDoc_DocumentTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_DocumentTool(const XCAFDoc_DocumentTool *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_DocumentTool & operator=(const Handle_XCAFDoc_DocumentTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_DocumentTool & operator=(const XCAFDoc_DocumentTool *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XCAFDoc_DocumentTool DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XCAFDoc_DocumentTool {
+	XCAFDoc_DocumentTool* GetObject() {
+	return (XCAFDoc_DocumentTool*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XCAFDoc_DocumentTool::~Handle_XCAFDoc_DocumentTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XCAFDoc_DocumentTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_XCAFDoc_ColorTool;
 class Handle_XCAFDoc_ColorTool : public Handle_TDF_Attribute {
 	public:
@@ -508,44 +546,6 @@ def __del__(self):
 %}
 
 %extend Handle_XCAFDoc_ShapeTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_XCAFDoc_DocumentTool;
-class Handle_XCAFDoc_DocumentTool : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_DocumentTool();
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_DocumentTool(const Handle_XCAFDoc_DocumentTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_DocumentTool(const XCAFDoc_DocumentTool *anItem);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_DocumentTool & operator=(const Handle_XCAFDoc_DocumentTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_DocumentTool & operator=(const XCAFDoc_DocumentTool *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_DocumentTool DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XCAFDoc_DocumentTool {
-	XCAFDoc_DocumentTool* GetObject() {
-	return (XCAFDoc_DocumentTool*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XCAFDoc_DocumentTool::~Handle_XCAFDoc_DocumentTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XCAFDoc_DocumentTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -784,7 +784,7 @@ class XCAFDoc_Centroid : public TDF_Attribute {
 };
 %extend XCAFDoc_Centroid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Centroid::~XCAFDoc_Centroid %{
@@ -837,7 +837,7 @@ class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 };
 %extend XCAFDoc_ShapeMapTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_ShapeMapTool::~XCAFDoc_ShapeMapTool %{
@@ -896,7 +896,7 @@ class XCAFDoc_Material : public TDF_Attribute {
 };
 %extend XCAFDoc_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Material::~XCAFDoc_Material %{
@@ -909,6 +909,70 @@ def __del__(self):
 %}
 
 %extend XCAFDoc_Material {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XCAFDoc_Color;
+class XCAFDoc_Color : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		XCAFDoc_Color();
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Quantity_Color &C);
+		%feature("autodoc", "1");
+		static		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Quantity_NameOfColor C);
+		%feature("autodoc", "1");
+		static		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Standard_Real R, const Standard_Real G, const Standard_Real B);
+		%feature("autodoc", "1");
+		void Set(const Quantity_Color &C);
+		%feature("autodoc", "1");
+		void Set(const Quantity_NameOfColor C);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real R, const Standard_Real G, const Standard_Real B);
+		%feature("autodoc", "1");
+		Quantity_Color GetColor() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor GetNOC() const;
+		%feature("autodoc","GetRGB() -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void GetRGB(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XCAFDoc_Color {
+	Handle_XCAFDoc_Color GetHandle() {
+	return *(Handle_XCAFDoc_Color*) &$self;
+	}
+};
+%extend XCAFDoc_Color {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XCAFDoc_Color::~XCAFDoc_Color %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XCAFDoc_Color {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -998,7 +1062,7 @@ class XCAFDoc_DimTol : public TDF_Attribute {
 };
 %extend XCAFDoc_DimTol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DimTol::~XCAFDoc_DimTol %{
@@ -1011,99 +1075,6 @@ def __del__(self):
 %}
 
 %extend XCAFDoc_DimTol {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XCAFDoc_GraphNode;
-class XCAFDoc_GraphNode : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		Standard_Boolean Find(const TDF_Label &L, Handle_XCAFDoc_GraphNode & G);
-		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_GraphNode Set(const TDF_Label &L);
-		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_GraphNode Set(const TDF_Label &L, const Standard_GUID &ExplicitGraphID);
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetDefaultGraphID();
-		%feature("autodoc", "1");
-		XCAFDoc_GraphNode();
-		%feature("autodoc", "1");
-		void SetGraphID(const Standard_GUID &explicitID);
-		%feature("autodoc", "1");
-		Standard_Integer SetFather(const Handle_XCAFDoc_GraphNode &F);
-		%feature("autodoc", "1");
-		Standard_Integer SetChild(const Handle_XCAFDoc_GraphNode &Ch);
-		%feature("autodoc", "1");
-		void UnSetFather(const Handle_XCAFDoc_GraphNode &F);
-		%feature("autodoc", "1");
-		void UnSetFather(const Standard_Integer Findex);
-		%feature("autodoc", "1");
-		void UnSetChild(const Handle_XCAFDoc_GraphNode &Ch);
-		%feature("autodoc", "1");
-		void UnSetChild(const Standard_Integer Chindex);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode GetFather(const Standard_Integer Findex) const;
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode GetChild(const Standard_Integer Chindex) const;
-		%feature("autodoc", "1");
-		Standard_Integer FatherIndex(const Handle_XCAFDoc_GraphNode &F) const;
-		%feature("autodoc", "1");
-		Standard_Integer ChildIndex(const Handle_XCAFDoc_GraphNode &Ch) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsFather(const Handle_XCAFDoc_GraphNode &Ch) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsChild(const Handle_XCAFDoc_GraphNode &F) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbFathers() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbChildren() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		void BeforeForget();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFDoc_GraphNode {
-	Handle_XCAFDoc_GraphNode GetHandle() {
-	return *(Handle_XCAFDoc_GraphNode*) &$self;
-	}
-};
-%extend XCAFDoc_GraphNode {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XCAFDoc_GraphNode::~XCAFDoc_GraphNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XCAFDoc_GraphNode {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1192,7 +1163,7 @@ class XCAFDoc_ColorTool : public TDF_Attribute {
 };
 %extend XCAFDoc_ColorTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_ColorTool::~XCAFDoc_ColorTool %{
@@ -1274,7 +1245,7 @@ class XCAFDoc_SequenceNodeOfGraphNodeSequence : public TCollection_SeqNode {
 };
 %extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_SequenceNodeOfGraphNodeSequence::~XCAFDoc_SequenceNodeOfGraphNodeSequence %{
@@ -1287,68 +1258,6 @@ def __del__(self):
 %}
 
 %extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XCAFDoc_Volume;
-class XCAFDoc_Volume : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		XCAFDoc_Volume();
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Real vol);
-		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Volume Set(const TDF_Label &label, const Standard_Real vol);
-		%feature("autodoc", "1");
-		Standard_Real Get() const;
-		%feature("autodoc","Get(const label) -> Standard_Real");
-
-		static		Standard_Boolean Get(const TDF_Label &label, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFDoc_Volume {
-	Handle_XCAFDoc_Volume GetHandle() {
-	return *(Handle_XCAFDoc_Volume*) &$self;
-	}
-};
-%extend XCAFDoc_Volume {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XCAFDoc_Volume::~XCAFDoc_Volume %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XCAFDoc_Volume {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1435,7 +1344,7 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 };
 %extend XCAFDoc_LayerTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_LayerTool::~XCAFDoc_LayerTool %{
@@ -1692,7 +1601,7 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 };
 %extend XCAFDoc_ShapeTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_ShapeTool::~XCAFDoc_ShapeTool %{
@@ -1778,7 +1687,7 @@ class XCAFDoc_DimTolTool : public TDF_Attribute {
 };
 %extend XCAFDoc_DimTolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DimTolTool::~XCAFDoc_DimTolTool %{
@@ -1844,7 +1753,7 @@ class XCAFDoc_MaterialTool : public TDF_Attribute {
 };
 %extend XCAFDoc_MaterialTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_MaterialTool::~XCAFDoc_MaterialTool %{
@@ -1917,7 +1826,7 @@ class XCAFDoc_DocumentTool : public TDF_Attribute {
 };
 %extend XCAFDoc_DocumentTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DocumentTool::~XCAFDoc_DocumentTool %{
@@ -1936,34 +1845,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor XCAFDoc_Color;
-class XCAFDoc_Color : public TDF_Attribute {
+%nodefaultctor XCAFDoc_Volume;
+class XCAFDoc_Volume : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		XCAFDoc_Color();
+		XCAFDoc_Volume();
 		%feature("autodoc", "1");
 		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Quantity_Color &C);
-		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Quantity_NameOfColor C);
-		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Color Set(const TDF_Label &label, const Standard_Real R, const Standard_Real G, const Standard_Real B);
-		%feature("autodoc", "1");
-		void Set(const Quantity_Color &C);
-		%feature("autodoc", "1");
-		void Set(const Quantity_NameOfColor C);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real R, const Standard_Real G, const Standard_Real B);
-		%feature("autodoc", "1");
-		Quantity_Color GetColor() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor GetNOC() const;
-		%feature("autodoc","GetRGB() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void GetRGB(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Real vol);
+		%feature("autodoc", "1");
+		static		Handle_XCAFDoc_Volume Set(const TDF_Label &label, const Standard_Real vol);
+		%feature("autodoc", "1");
+		Standard_Real Get() const;
+		%feature("autodoc","Get(const label) -> Standard_Real");
+
+		static		Standard_Boolean Get(const TDF_Label &label, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Restore(const Handle_TDF_Attribute &With);
 		%feature("autodoc", "1");
@@ -1971,20 +1870,28 @@ class XCAFDoc_Color : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XCAFDoc_Color {
-	Handle_XCAFDoc_Color GetHandle() {
-	return *(Handle_XCAFDoc_Color*) &$self;
+%extend XCAFDoc_Volume {
+	Handle_XCAFDoc_Volume GetHandle() {
+	return *(Handle_XCAFDoc_Volume*) &$self;
 	}
 };
-%extend XCAFDoc_Color {
+%extend XCAFDoc_Volume {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") XCAFDoc_Color::~XCAFDoc_Color %{
+%feature("shadow") XCAFDoc_Volume::~XCAFDoc_Volume %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1993,7 +1900,7 @@ def __del__(self):
 		pass
 %}
 
-%extend XCAFDoc_Color {
+%extend XCAFDoc_Volume {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2036,7 +1943,7 @@ class XCAFDoc_Datum : public TDF_Attribute {
 };
 %extend XCAFDoc_Datum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Datum::~XCAFDoc_Datum %{
@@ -2049,6 +1956,99 @@ def __del__(self):
 %}
 
 %extend XCAFDoc_Datum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XCAFDoc_GraphNode;
+class XCAFDoc_GraphNode : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		Standard_Boolean Find(const TDF_Label &L, Handle_XCAFDoc_GraphNode & G);
+		%feature("autodoc", "1");
+		static		Handle_XCAFDoc_GraphNode Set(const TDF_Label &L);
+		%feature("autodoc", "1");
+		static		Handle_XCAFDoc_GraphNode Set(const TDF_Label &L, const Standard_GUID &ExplicitGraphID);
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetDefaultGraphID();
+		%feature("autodoc", "1");
+		XCAFDoc_GraphNode();
+		%feature("autodoc", "1");
+		void SetGraphID(const Standard_GUID &explicitID);
+		%feature("autodoc", "1");
+		Standard_Integer SetFather(const Handle_XCAFDoc_GraphNode &F);
+		%feature("autodoc", "1");
+		Standard_Integer SetChild(const Handle_XCAFDoc_GraphNode &Ch);
+		%feature("autodoc", "1");
+		void UnSetFather(const Handle_XCAFDoc_GraphNode &F);
+		%feature("autodoc", "1");
+		void UnSetFather(const Standard_Integer Findex);
+		%feature("autodoc", "1");
+		void UnSetChild(const Handle_XCAFDoc_GraphNode &Ch);
+		%feature("autodoc", "1");
+		void UnSetChild(const Standard_Integer Chindex);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode GetFather(const Standard_Integer Findex) const;
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode GetChild(const Standard_Integer Chindex) const;
+		%feature("autodoc", "1");
+		Standard_Integer FatherIndex(const Handle_XCAFDoc_GraphNode &F) const;
+		%feature("autodoc", "1");
+		Standard_Integer ChildIndex(const Handle_XCAFDoc_GraphNode &Ch) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsFather(const Handle_XCAFDoc_GraphNode &Ch) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsChild(const Handle_XCAFDoc_GraphNode &F) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbFathers() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbChildren() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		void BeforeForget();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XCAFDoc_GraphNode {
+	Handle_XCAFDoc_GraphNode GetHandle() {
+	return *(Handle_XCAFDoc_GraphNode*) &$self;
+	}
+};
+%extend XCAFDoc_GraphNode {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XCAFDoc_GraphNode::~XCAFDoc_GraphNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XCAFDoc_GraphNode {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2098,7 +2098,7 @@ class XCAFDoc_Area : public TDF_Attribute {
 };
 %extend XCAFDoc_Area {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Area::~XCAFDoc_Area %{
@@ -2149,7 +2149,7 @@ class XCAFDoc_Location : public TDF_Attribute {
 };
 %extend XCAFDoc_Location {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Location::~XCAFDoc_Location %{
@@ -2188,7 +2188,7 @@ class XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNode {
 };
 %extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::~XCAFDoc_DataMapNodeOfDataMapOfShapeLabel %{

@@ -296,7 +296,7 @@ class ShapeProcess_Operator : public MMgt_TShared {
 };
 %extend ShapeProcess_Operator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_Operator::~ShapeProcess_Operator %{
@@ -329,7 +329,7 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 };
 %extend ShapeProcess_UOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_UOperator::~ShapeProcess_UOperator %{
@@ -404,75 +404,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeProcess_DictionaryOfOperator;
-class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeProcess_DictionaryOfOperator();
-		%feature("autodoc", "1");
-		Standard_Boolean HasItem(const char * name, const Standard_Boolean exact=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasItem(const TCollection_AsciiString &name, const Standard_Boolean exact=1) const;
-		%feature("autodoc", "1");
-		const Handle_ShapeProcess_Operator & Item(const char * name, const Standard_Boolean exact=1) const;
-		%feature("autodoc", "1");
-		const Handle_ShapeProcess_Operator & Item(const TCollection_AsciiString &name, const Standard_Boolean exact=1) const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetItem(const char * name, Handle_ShapeProcess_Operator & anitem, const Standard_Boolean exact=1) const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetItem(const TCollection_AsciiString &name, Handle_ShapeProcess_Operator & anitem, const Standard_Boolean exact=1) const;
-		%feature("autodoc", "1");
-		void SetItem(const char * name, const Handle_ShapeProcess_Operator &anitem, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		void SetItem(const TCollection_AsciiString &name, const Handle_ShapeProcess_Operator &anitem, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Operator & NewItem(const char * name, Standard_Boolean & isvalued, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Operator & NewItem(const TCollection_AsciiString &name, Standard_Boolean & isvalued, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveItem(const char * name, const Standard_Boolean cln=1, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveItem(const TCollection_AsciiString &name, const Standard_Boolean cln=1, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		void Clean();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_DictionaryOfOperator Copy() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Complete(Handle_ShapeProcess_DictionaryOfOperator & acell) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeProcess_DictionaryOfOperator {
-	Handle_ShapeProcess_DictionaryOfOperator GetHandle() {
-	return *(Handle_ShapeProcess_DictionaryOfOperator*) &$self;
-	}
-};
-%extend ShapeProcess_DictionaryOfOperator {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ShapeProcess_DictionaryOfOperator::~ShapeProcess_DictionaryOfOperator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeProcess_DictionaryOfOperator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ShapeProcess_StackItemOfDictionaryOfOperator;
 class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 	public:
@@ -497,7 +428,7 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 };
 %extend ShapeProcess_StackItemOfDictionaryOfOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_StackItemOfDictionaryOfOperator::~ShapeProcess_StackItemOfDictionaryOfOperator %{
@@ -609,7 +540,7 @@ class ShapeProcess_Context : public MMgt_TShared {
 };
 %extend ShapeProcess_Context {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_Context::~ShapeProcess_Context %{
@@ -678,7 +609,7 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 };
 %extend ShapeProcess_ShapeContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_ShapeContext::~ShapeProcess_ShapeContext %{
@@ -691,6 +622,75 @@ def __del__(self):
 %}
 
 %extend ShapeProcess_ShapeContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeProcess_DictionaryOfOperator;
+class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeProcess_DictionaryOfOperator();
+		%feature("autodoc", "1");
+		Standard_Boolean HasItem(const char * name, const Standard_Boolean exact=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasItem(const TCollection_AsciiString &name, const Standard_Boolean exact=1) const;
+		%feature("autodoc", "1");
+		const Handle_ShapeProcess_Operator & Item(const char * name, const Standard_Boolean exact=1) const;
+		%feature("autodoc", "1");
+		const Handle_ShapeProcess_Operator & Item(const TCollection_AsciiString &name, const Standard_Boolean exact=1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetItem(const char * name, Handle_ShapeProcess_Operator & anitem, const Standard_Boolean exact=1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetItem(const TCollection_AsciiString &name, Handle_ShapeProcess_Operator & anitem, const Standard_Boolean exact=1) const;
+		%feature("autodoc", "1");
+		void SetItem(const char * name, const Handle_ShapeProcess_Operator &anitem, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		void SetItem(const TCollection_AsciiString &name, const Handle_ShapeProcess_Operator &anitem, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Operator & NewItem(const char * name, Standard_Boolean & isvalued, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Operator & NewItem(const TCollection_AsciiString &name, Standard_Boolean & isvalued, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveItem(const char * name, const Standard_Boolean cln=1, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveItem(const TCollection_AsciiString &name, const Standard_Boolean cln=1, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		void Clean();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_DictionaryOfOperator Copy() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Complete(Handle_ShapeProcess_DictionaryOfOperator & acell) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeProcess_DictionaryOfOperator {
+	Handle_ShapeProcess_DictionaryOfOperator GetHandle() {
+	return *(Handle_ShapeProcess_DictionaryOfOperator*) &$self;
+	}
+};
+%extend ShapeProcess_DictionaryOfOperator {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ShapeProcess_DictionaryOfOperator::~ShapeProcess_DictionaryOfOperator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeProcess_DictionaryOfOperator {
 	void _kill_pointed() {
 		delete $self;
 	}

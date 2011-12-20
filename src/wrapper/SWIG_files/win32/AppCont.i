@@ -52,36 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor AppCont_FitFunction;
-class AppCont_FitFunction {
-	public:
-		%feature("autodoc", "1");
-		AppCont_FitFunction(const AppCont_Function &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & Value();
-		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") AppCont_FitFunction::~AppCont_FitFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AppCont_FitFunction {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AppCont_FunctionTool2d;
 class AppCont_FunctionTool2d {
 	public:
@@ -254,6 +224,36 @@ def __del__(self):
 %}
 
 %extend AppCont_FitFunction2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AppCont_FitFunction;
+class AppCont_FitFunction {
+	public:
+		%feature("autodoc", "1");
+		AppCont_FitFunction(const AppCont_Function &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiCurve & Value();
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") AppCont_FitFunction::~AppCont_FitFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AppCont_FitFunction {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -23,3 +23,31 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_IGESAppli_ReadWriteModule::DownCast;
+%rename(DownCast) Handle_IGESAppli_PWBArtworkStackup::DownCast;
+%rename(DownCast) Handle_IGESAppli_RegionRestriction::DownCast;
+%rename(DownCast) Handle_IGESAppli_ReferenceDesignator::DownCast;
+%rename(DownCast) Handle_IGESAppli_PinNumber::DownCast;
+%rename(DownCast) Handle_IGESAppli_HArray1OfFiniteElement::DownCast;
+%rename(DownCast) Handle_IGESAppli_DrilledHole::DownCast;
+%rename(DownCast) Handle_IGESAppli_ElementResults::DownCast;
+%rename(DownCast) Handle_IGESAppli_Flow::DownCast;
+%rename(DownCast) Handle_IGESAppli_NodalDisplAndRot::DownCast;
+%rename(DownCast) Handle_IGESAppli_PWBDrilledHole::DownCast;
+%rename(DownCast) Handle_IGESAppli_NodalConstraint::DownCast;
+%rename(DownCast) Handle_IGESAppli_GeneralModule::DownCast;
+%rename(DownCast) Handle_IGESAppli_SpecificModule::DownCast;
+%rename(DownCast) Handle_IGESAppli_FlowLineSpec::DownCast;
+%rename(DownCast) Handle_IGESAppli_Protocol::DownCast;
+%rename(DownCast) Handle_IGESAppli_HArray1OfFlow::DownCast;
+%rename(DownCast) Handle_IGESAppli_Node::DownCast;
+%rename(DownCast) Handle_IGESAppli_LineWidening::DownCast;
+%rename(DownCast) Handle_IGESAppli_PipingFlow::DownCast;
+%rename(DownCast) Handle_IGESAppli_NodalResults::DownCast;
+%rename(DownCast) Handle_IGESAppli_LevelToPWBLayerMap::DownCast;
+%rename(DownCast) Handle_IGESAppli_FiniteElement::DownCast;
+%rename(DownCast) Handle_IGESAppli_PartNumber::DownCast;
+%rename(DownCast) Handle_IGESAppli_HArray1OfNode::DownCast;
+%rename(DownCast) Handle_IGESAppli_LevelFunction::DownCast;
+%rename(Init) IGESAppli::Init;
+%rename(Protocol) IGESAppli::Protocol;

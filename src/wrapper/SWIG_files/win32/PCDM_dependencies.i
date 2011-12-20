@@ -216,6 +216,6 @@ $HeaderURL$
 #include <Storage_stCONSTclCOM.hxx>
 %};
 
-%import TCollection.i
 %import Standard.i
+%import TCollection.i
 %import Storage.i

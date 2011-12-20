@@ -23,3 +23,11 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Sort) SortTools_QuickSortOfReal::Sort;
+%rename(Sort) SortTools_QuickSortOfInteger::Sort;
+%rename(Sort) SortTools_HeapSortOfInteger::Sort;
+%rename(Sort) SortTools_StraightInsertionSortOfInteger::Sort;
+%rename(Sort) SortTools_HeapSortOfReal::Sort;
+%rename(Sort) SortTools_StraightInsertionSortOfReal::Sort;
+%rename(Sort) SortTools_ShellSortOfReal::Sort;
+%rename(Sort) SortTools_ShellSortOfInteger::Sort;

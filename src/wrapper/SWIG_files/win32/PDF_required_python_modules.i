@@ -28,6 +28,6 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import PCollection
 import PColStd
+import PCollection
 };

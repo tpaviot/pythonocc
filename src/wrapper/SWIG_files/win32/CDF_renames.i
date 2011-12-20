@@ -23,3 +23,17 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_CDF_MetaDataDriverError::DownCast;
+%rename(DownCast) Handle_CDF_StoreList::DownCast;
+%rename(DownCast) Handle_CDF_Directory::DownCast;
+%rename(DownCast) Handle_CDF_Application::DownCast;
+%rename(DownCast) Handle_CDF_MetaDataDriver::DownCast;
+%rename(DownCast) Handle_CDF_MetaDataDriverFactory::DownCast;
+%rename(DownCast) Handle_CDF_Session::DownCast;
+%rename(Raise) CDF_MetaDataDriverError::Raise;
+%rename(NewInstance) CDF_MetaDataDriverError::NewInstance;
+%rename(GetLicense) CDF::GetLicense;
+%rename(IsAvailable) CDF::IsAvailable;
+%rename(Load) CDF_Application::Load;
+%rename(Exists) CDF_Session::Exists;
+%rename(CurrentSession) CDF_Session::CurrentSession;

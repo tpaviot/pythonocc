@@ -95,44 +95,6 @@ enum IFSelect_RemainMode {
 
 
 
-%nodefaultctor Handle_IFSelect_SignatureList;
-class Handle_IFSelect_SignatureList : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignatureList();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignatureList(const Handle_IFSelect_SignatureList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignatureList(const IFSelect_SignatureList *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignatureList & operator=(const Handle_IFSelect_SignatureList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignatureList & operator=(const IFSelect_SignatureList *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SignatureList DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SignatureList {
-	IFSelect_SignatureList* GetObject() {
-	return (IFSelect_SignatureList*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SignatureList::~Handle_IFSelect_SignatureList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SignatureList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IFSelect_Selection;
 class Handle_IFSelect_Selection : public Handle_MMgt_TShared {
 	public:
@@ -203,6 +165,120 @@ def __del__(self):
 %}
 
 %extend Handle_IFSelect_SelectDeduct {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_SelectAnyList;
+class Handle_IFSelect_SelectAnyList : public Handle_IFSelect_SelectDeduct {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList(const Handle_IFSelect_SelectAnyList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList(const IFSelect_SelectAnyList *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList & operator=(const Handle_IFSelect_SelectAnyList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList & operator=(const IFSelect_SelectAnyList *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SelectAnyList DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectAnyList {
+	IFSelect_SelectAnyList* GetObject() {
+	return (IFSelect_SelectAnyList*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SelectAnyList::~Handle_IFSelect_SelectAnyList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SelectAnyList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_SelectInList;
+class Handle_IFSelect_SelectInList : public Handle_IFSelect_SelectAnyList {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList(const Handle_IFSelect_SelectInList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList(const IFSelect_SelectInList *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList & operator=(const Handle_IFSelect_SelectInList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList & operator=(const IFSelect_SelectInList *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SelectInList DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectInList {
+	IFSelect_SelectInList* GetObject() {
+	return (IFSelect_SelectInList*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SelectInList::~Handle_IFSelect_SelectInList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SelectInList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_SignatureList;
+class Handle_IFSelect_SignatureList : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignatureList();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignatureList(const Handle_IFSelect_SignatureList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignatureList(const IFSelect_SignatureList *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignatureList & operator=(const Handle_IFSelect_SignatureList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignatureList & operator=(const IFSelect_SignatureList *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SignatureList DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SignatureList {
+	IFSelect_SignatureList* GetObject() {
+	return (IFSelect_SignatureList*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SignatureList::~Handle_IFSelect_SignatureList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SignatureList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -627,44 +703,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IFSelect_SelectAnyList;
-class Handle_IFSelect_SelectAnyList : public Handle_IFSelect_SelectDeduct {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyList();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyList(const Handle_IFSelect_SelectAnyList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyList(const IFSelect_SelectAnyList *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyList & operator=(const Handle_IFSelect_SelectAnyList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectAnyList & operator=(const IFSelect_SelectAnyList *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SelectAnyList DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectAnyList {
-	IFSelect_SelectAnyList* GetObject() {
-	return (IFSelect_SelectAnyList*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SelectAnyList::~Handle_IFSelect_SelectAnyList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SelectAnyList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IFSelect_AppliedModifiers;
 class Handle_IFSelect_AppliedModifiers : public Handle_MMgt_TShared {
 	public:
@@ -855,6 +893,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IFSelect_SelectUnknownEntities;
+class Handle_IFSelect_SelectUnknownEntities : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities(const Handle_IFSelect_SelectUnknownEntities &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities(const IFSelect_SelectUnknownEntities *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities & operator=(const Handle_IFSelect_SelectUnknownEntities &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities & operator=(const IFSelect_SelectUnknownEntities *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SelectUnknownEntities DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectUnknownEntities {
+	IFSelect_SelectUnknownEntities* GetObject() {
+	return (IFSelect_SelectUnknownEntities*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SelectUnknownEntities::~Handle_IFSelect_SelectUnknownEntities %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SelectUnknownEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IFSelect_SelectControl;
 class Handle_IFSelect_SelectControl : public Handle_IFSelect_Selection {
 	public:
@@ -925,6 +1001,44 @@ def __del__(self):
 %}
 
 %extend Handle_IFSelect_SelectErrorEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_IntParam;
+class Handle_IFSelect_IntParam : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam();
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam(const Handle_IFSelect_IntParam &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam(const IFSelect_IntParam *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam & operator=(const Handle_IFSelect_IntParam &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam & operator=(const IFSelect_IntParam *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_IntParam DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_IntParam {
+	IFSelect_IntParam* GetObject() {
+	return (IFSelect_IntParam*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_IntParam::~Handle_IFSelect_IntParam %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_IntParam {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1007,44 +1121,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IFSelect_SelectSent;
-class Handle_IFSelect_SelectSent : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSent();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSent(const Handle_IFSelect_SelectSent &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSent(const IFSelect_SelectSent *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSent & operator=(const Handle_IFSelect_SelectSent &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSent & operator=(const IFSelect_SelectSent *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SelectSent DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectSent {
-	IFSelect_SelectSent* GetObject() {
-	return (IFSelect_SelectSent*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SelectSent::~Handle_IFSelect_SelectSent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SelectSent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IFSelect_PacketList;
 class Handle_IFSelect_PacketList : public Handle_MMgt_TShared {
 	public:
@@ -1083,29 +1159,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IFSelect_SelectUnknownEntities;
-class Handle_IFSelect_SelectUnknownEntities : public Handle_IFSelect_SelectExtract {
+%nodefaultctor Handle_IFSelect_WorkLibrary;
+class Handle_IFSelect_WorkLibrary : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnknownEntities();
+		Handle_IFSelect_WorkLibrary();
 		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnknownEntities(const Handle_IFSelect_SelectUnknownEntities &aHandle);
+		Handle_IFSelect_WorkLibrary(const Handle_IFSelect_WorkLibrary &aHandle);
 		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnknownEntities(const IFSelect_SelectUnknownEntities *anItem);
+		Handle_IFSelect_WorkLibrary(const IFSelect_WorkLibrary *anItem);
 		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnknownEntities & operator=(const Handle_IFSelect_SelectUnknownEntities &aHandle);
+		Handle_IFSelect_WorkLibrary & operator=(const Handle_IFSelect_WorkLibrary &aHandle);
 		%feature("autodoc", "1");
-		Handle_IFSelect_SelectUnknownEntities & operator=(const IFSelect_SelectUnknownEntities *anItem);
+		Handle_IFSelect_WorkLibrary & operator=(const IFSelect_WorkLibrary *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IFSelect_SelectUnknownEntities DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IFSelect_WorkLibrary DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IFSelect_SelectUnknownEntities {
-	IFSelect_SelectUnknownEntities* GetObject() {
-	return (IFSelect_SelectUnknownEntities*)$self->Access();
+%extend Handle_IFSelect_WorkLibrary {
+	IFSelect_WorkLibrary* GetObject() {
+	return (IFSelect_WorkLibrary*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IFSelect_SelectUnknownEntities::~Handle_IFSelect_SelectUnknownEntities %{
+%feature("shadow") Handle_IFSelect_WorkLibrary::~Handle_IFSelect_WorkLibrary %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1114,7 +1190,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IFSelect_SelectUnknownEntities {
+%extend Handle_IFSelect_WorkLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_SessionPilot;
+class Handle_IFSelect_SessionPilot : public Handle_IFSelect_Activator {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot(const Handle_IFSelect_SessionPilot &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot(const IFSelect_SessionPilot *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot & operator=(const Handle_IFSelect_SessionPilot &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot & operator=(const IFSelect_SessionPilot *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SessionPilot DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SessionPilot {
+	IFSelect_SessionPilot* GetObject() {
+	return (IFSelect_SessionPilot*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SessionPilot::~Handle_IFSelect_SessionPilot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SessionPilot {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1159,6 +1273,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IFSelect_SelectSignature;
+class Handle_IFSelect_SelectSignature : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature(const Handle_IFSelect_SelectSignature &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature(const IFSelect_SelectSignature *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature & operator=(const Handle_IFSelect_SelectSignature &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature & operator=(const IFSelect_SelectSignature *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SelectSignature DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectSignature {
+	IFSelect_SelectSignature* GetObject() {
+	return (IFSelect_SelectSignature*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SelectSignature::~Handle_IFSelect_SelectSignature %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SelectSignature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier;
 class Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public Handle_TCollection_SeqNode {
 	public:
@@ -1191,158 +1343,6 @@ def __del__(self):
 %}
 
 %extend Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IFSelect_SignType;
-class Handle_IFSelect_SignType : public Handle_IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignType();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignType(const Handle_IFSelect_SignType &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignType(const IFSelect_SignType *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignType & operator=(const Handle_IFSelect_SignType &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignType & operator=(const IFSelect_SignType *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SignType DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SignType {
-	IFSelect_SignType* GetObject() {
-	return (IFSelect_SignType*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SignType::~Handle_IFSelect_SignType %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SignType {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IFSelect_Editor;
-class Handle_IFSelect_Editor : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_Editor();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Editor(const Handle_IFSelect_Editor &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Editor(const IFSelect_Editor *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Editor & operator=(const Handle_IFSelect_Editor &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Editor & operator=(const IFSelect_Editor *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_Editor DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_Editor {
-	IFSelect_Editor* GetObject() {
-	return (IFSelect_Editor*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_Editor::~Handle_IFSelect_Editor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_Editor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IFSelect_ParamEditor;
-class Handle_IFSelect_ParamEditor : public Handle_IFSelect_Editor {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_ParamEditor();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ParamEditor(const Handle_IFSelect_ParamEditor &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ParamEditor(const IFSelect_ParamEditor *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ParamEditor & operator=(const Handle_IFSelect_ParamEditor &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_ParamEditor & operator=(const IFSelect_ParamEditor *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_ParamEditor DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_ParamEditor {
-	IFSelect_ParamEditor* GetObject() {
-	return (IFSelect_ParamEditor*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_ParamEditor::~Handle_IFSelect_ParamEditor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_ParamEditor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IFSelect_WorkLibrary;
-class Handle_IFSelect_WorkLibrary : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkLibrary();
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkLibrary(const Handle_IFSelect_WorkLibrary &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkLibrary(const IFSelect_WorkLibrary *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkLibrary & operator=(const Handle_IFSelect_WorkLibrary &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkLibrary & operator=(const IFSelect_WorkLibrary *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_WorkLibrary DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_WorkLibrary {
-	IFSelect_WorkLibrary* GetObject() {
-	return (IFSelect_WorkLibrary*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_WorkLibrary::~Handle_IFSelect_WorkLibrary %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_WorkLibrary {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1501,6 +1501,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IFSelect_SelectBase;
+class Handle_IFSelect_SelectBase : public Handle_IFSelect_Selection {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase(const Handle_IFSelect_SelectBase &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase(const IFSelect_SelectBase *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase & operator=(const Handle_IFSelect_SelectBase &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase & operator=(const IFSelect_SelectBase *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SelectBase DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectBase {
+	IFSelect_SelectBase* GetObject() {
+	return (IFSelect_SelectBase*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SelectBase::~Handle_IFSelect_SelectBase %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SelectBase {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_SelectEntityNumber;
+class Handle_IFSelect_SelectEntityNumber : public Handle_IFSelect_SelectBase {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectEntityNumber();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectEntityNumber(const Handle_IFSelect_SelectEntityNumber &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectEntityNumber(const IFSelect_SelectEntityNumber *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectEntityNumber & operator=(const Handle_IFSelect_SelectEntityNumber &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectEntityNumber & operator=(const IFSelect_SelectEntityNumber *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SelectEntityNumber DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectEntityNumber {
+	IFSelect_SelectEntityNumber* GetObject() {
+	return (IFSelect_SelectEntityNumber*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SelectEntityNumber::~Handle_IFSelect_SelectEntityNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SelectEntityNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IFSelect_HSeqOfSelection;
 class Handle_IFSelect_HSeqOfSelection : public Handle_MMgt_TShared {
 	public:
@@ -1577,82 +1653,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IFSelect_SelectBase;
-class Handle_IFSelect_SelectBase : public Handle_IFSelect_Selection {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectBase();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectBase(const Handle_IFSelect_SelectBase &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectBase(const IFSelect_SelectBase *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectBase & operator=(const Handle_IFSelect_SelectBase &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectBase & operator=(const IFSelect_SelectBase *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SelectBase DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectBase {
-	IFSelect_SelectBase* GetObject() {
-	return (IFSelect_SelectBase*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SelectBase::~Handle_IFSelect_SelectBase %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SelectBase {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IFSelect_SelectModelRoots;
-class Handle_IFSelect_SelectModelRoots : public Handle_IFSelect_SelectBase {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelRoots();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelRoots(const Handle_IFSelect_SelectModelRoots &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelRoots(const IFSelect_SelectModelRoots *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelRoots & operator=(const Handle_IFSelect_SelectModelRoots &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectModelRoots & operator=(const IFSelect_SelectModelRoots *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SelectModelRoots DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectModelRoots {
-	IFSelect_SelectModelRoots* GetObject() {
-	return (IFSelect_SelectModelRoots*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SelectModelRoots::~Handle_IFSelect_SelectModelRoots %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SelectModelRoots {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IFSelect_ModelCopier;
 class Handle_IFSelect_ModelCopier : public Handle_MMgt_TShared {
 	public:
@@ -1685,6 +1685,44 @@ def __del__(self):
 %}
 
 %extend Handle_IFSelect_ModelCopier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_WorkSession;
+class Handle_IFSelect_WorkSession : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkSession();
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkSession(const Handle_IFSelect_WorkSession &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkSession(const IFSelect_WorkSession *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkSession & operator=(const Handle_IFSelect_WorkSession &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkSession & operator=(const IFSelect_WorkSession *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_WorkSession DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_WorkSession {
+	IFSelect_WorkSession* GetObject() {
+	return (IFSelect_WorkSession*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_WorkSession::~Handle_IFSelect_WorkSession %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_WorkSession {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1767,44 +1805,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IFSelect_SelectSignature;
-class Handle_IFSelect_SelectSignature : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature(const Handle_IFSelect_SelectSignature &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature(const IFSelect_SelectSignature *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature & operator=(const Handle_IFSelect_SelectSignature &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature & operator=(const IFSelect_SelectSignature *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SelectSignature DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectSignature {
-	IFSelect_SelectSignature* GetObject() {
-	return (IFSelect_SelectSignature*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SelectSignature::~Handle_IFSelect_SelectSignature %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SelectSignature {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IFSelect_SelectSignedSharing;
 class Handle_IFSelect_SelectSignedSharing : public Handle_IFSelect_SelectExplore {
 	public:
@@ -1837,6 +1837,44 @@ def __del__(self):
 %}
 
 %extend Handle_IFSelect_SelectSignedSharing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_SelectModelRoots;
+class Handle_IFSelect_SelectModelRoots : public Handle_IFSelect_SelectBase {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots(const Handle_IFSelect_SelectModelRoots &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots(const IFSelect_SelectModelRoots *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots & operator=(const Handle_IFSelect_SelectModelRoots &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots & operator=(const IFSelect_SelectModelRoots *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SelectModelRoots DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectModelRoots {
+	IFSelect_SelectModelRoots* GetObject() {
+	return (IFSelect_SelectModelRoots*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SelectModelRoots::~Handle_IFSelect_SelectModelRoots %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SelectModelRoots {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2027,44 +2065,6 @@ def __del__(self):
 %}
 
 %extend Handle_IFSelect_DispPerSignature {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IFSelect_SelectInList;
-class Handle_IFSelect_SelectInList : public Handle_IFSelect_SelectAnyList {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectInList();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectInList(const Handle_IFSelect_SelectInList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectInList(const IFSelect_SelectInList *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectInList & operator=(const Handle_IFSelect_SelectInList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectInList & operator=(const IFSelect_SelectInList *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SelectInList DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectInList {
-	IFSelect_SelectInList* GetObject() {
-	return (IFSelect_SelectInList*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SelectInList::~Handle_IFSelect_SelectInList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SelectInList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2337,6 +2337,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IFSelect_Editor;
+class Handle_IFSelect_Editor : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor();
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor(const Handle_IFSelect_Editor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor(const IFSelect_Editor *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor & operator=(const Handle_IFSelect_Editor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor & operator=(const IFSelect_Editor *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_Editor DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_Editor {
+	IFSelect_Editor* GetObject() {
+	return (IFSelect_Editor*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_Editor::~Handle_IFSelect_Editor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_Editor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_ParamEditor;
+class Handle_IFSelect_ParamEditor : public Handle_IFSelect_Editor {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor();
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor(const Handle_IFSelect_ParamEditor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor(const IFSelect_ParamEditor *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor & operator=(const Handle_IFSelect_ParamEditor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor & operator=(const IFSelect_ParamEditor *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_ParamEditor DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_ParamEditor {
+	IFSelect_ParamEditor* GetObject() {
+	return (IFSelect_ParamEditor*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_ParamEditor::~Handle_IFSelect_ParamEditor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_ParamEditor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IFSelect_SequenceNodeOfTSeqOfDispatch;
 class Handle_IFSelect_SequenceNodeOfTSeqOfDispatch : public Handle_TCollection_SeqNode {
 	public:
@@ -2413,29 +2489,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IFSelect_IntParam;
-class Handle_IFSelect_IntParam : public Handle_MMgt_TShared {
+%nodefaultctor Handle_IFSelect_SelectSent;
+class Handle_IFSelect_SelectSent : public Handle_IFSelect_SelectExtract {
 	public:
 		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam();
+		Handle_IFSelect_SelectSent();
 		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam(const Handle_IFSelect_IntParam &aHandle);
+		Handle_IFSelect_SelectSent(const Handle_IFSelect_SelectSent &aHandle);
 		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam(const IFSelect_IntParam *anItem);
+		Handle_IFSelect_SelectSent(const IFSelect_SelectSent *anItem);
 		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam & operator=(const Handle_IFSelect_IntParam &aHandle);
+		Handle_IFSelect_SelectSent & operator=(const Handle_IFSelect_SelectSent &aHandle);
 		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam & operator=(const IFSelect_IntParam *anItem);
+		Handle_IFSelect_SelectSent & operator=(const IFSelect_SelectSent *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IFSelect_IntParam DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IFSelect_SelectSent DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IFSelect_IntParam {
-	IFSelect_IntParam* GetObject() {
-	return (IFSelect_IntParam*)$self->Access();
+%extend Handle_IFSelect_SelectSent {
+	IFSelect_SelectSent* GetObject() {
+	return (IFSelect_SelectSent*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IFSelect_IntParam::~Handle_IFSelect_IntParam %{
+%feature("shadow") Handle_IFSelect_SelectSent::~Handle_IFSelect_SelectSent %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2444,7 +2520,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IFSelect_IntParam {
+%extend Handle_IFSelect_SelectSent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2483,6 +2559,44 @@ def __del__(self):
 %}
 
 %extend Handle_IFSelect_Act {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IFSelect_SignType;
+class Handle_IFSelect_SignType : public Handle_IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType(const Handle_IFSelect_SignType &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType(const IFSelect_SignType *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType & operator=(const Handle_IFSelect_SignType &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType & operator=(const IFSelect_SignType *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SignType DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SignType {
+	IFSelect_SignType* GetObject() {
+	return (IFSelect_SignType*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IFSelect_SignType::~Handle_IFSelect_SignType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IFSelect_SignType {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2641,44 +2755,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IFSelect_WorkSession;
-class Handle_IFSelect_WorkSession : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession();
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession(const Handle_IFSelect_WorkSession &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession(const IFSelect_WorkSession *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession & operator=(const Handle_IFSelect_WorkSession &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession & operator=(const IFSelect_WorkSession *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_WorkSession DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_WorkSession {
-	IFSelect_WorkSession* GetObject() {
-	return (IFSelect_WorkSession*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_WorkSession::~Handle_IFSelect_WorkSession %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_WorkSession {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel;
 class Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public Handle_TCollection_SeqNode {
 	public:
@@ -2831,44 +2907,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IFSelect_SessionPilot;
-class Handle_IFSelect_SessionPilot : public Handle_IFSelect_Activator {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionPilot();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionPilot(const Handle_IFSelect_SessionPilot &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionPilot(const IFSelect_SessionPilot *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionPilot & operator=(const Handle_IFSelect_SessionPilot &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionPilot & operator=(const IFSelect_SessionPilot *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SessionPilot DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SessionPilot {
-	IFSelect_SessionPilot* GetObject() {
-	return (IFSelect_SessionPilot*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SessionPilot::~Handle_IFSelect_SessionPilot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SessionPilot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IFSelect_SequenceNodeOfTSeqOfSelection;
 class Handle_IFSelect_SequenceNodeOfTSeqOfSelection : public Handle_TCollection_SeqNode {
 	public:
@@ -2901,44 +2939,6 @@ def __del__(self):
 %}
 
 %extend Handle_IFSelect_SequenceNodeOfTSeqOfSelection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IFSelect_SelectEntityNumber;
-class Handle_IFSelect_SelectEntityNumber : public Handle_IFSelect_SelectBase {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectEntityNumber();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectEntityNumber(const Handle_IFSelect_SelectEntityNumber &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectEntityNumber(const IFSelect_SelectEntityNumber *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectEntityNumber & operator=(const Handle_IFSelect_SelectEntityNumber &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectEntityNumber & operator=(const IFSelect_SelectEntityNumber *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SelectEntityNumber DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectEntityNumber {
-	IFSelect_SelectEntityNumber* GetObject() {
-	return (IFSelect_SelectEntityNumber*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IFSelect_SelectEntityNumber::~Handle_IFSelect_SelectEntityNumber %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IFSelect_SelectEntityNumber {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3007,7 +3007,7 @@ class IFSelect_Selection : public MMgt_TShared {
 };
 %extend IFSelect_Selection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_Selection::~IFSelect_Selection %{
@@ -3050,7 +3050,7 @@ class IFSelect_SelectDeduct : public IFSelect_Selection {
 };
 %extend IFSelect_SelectDeduct {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectDeduct::~IFSelect_SelectDeduct %{
@@ -3091,7 +3091,7 @@ class IFSelect_SelectExtract : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectExtract {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectExtract::~IFSelect_SelectExtract %{
@@ -3104,134 +3104,6 @@ def __del__(self):
 %}
 
 %extend IFSelect_SelectExtract {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectUnknownEntities;
-class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectUnknownEntities();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectUnknownEntities {
-	Handle_IFSelect_SelectUnknownEntities GetHandle() {
-	return *(Handle_IFSelect_SelectUnknownEntities*) &$self;
-	}
-};
-%extend IFSelect_SelectUnknownEntities {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectUnknownEntities::~IFSelect_SelectUnknownEntities %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectUnknownEntities {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_Signature;
-class IFSelect_Signature : public Interface_SignType {
-	public:
-		%feature("autodoc", "1");
-		void SetIntCase(const Standard_Boolean hasmin, const Standard_Integer valmin, const Standard_Boolean hasmax, const Standard_Integer valmax);
-		%feature("autodoc","IsIntCase() -> [Standard_Integer, Standard_Integer]");
-
-		Standard_Boolean IsIntCase(Standard_Boolean & hasmin, Standard_Integer &OutValue, Standard_Boolean & hasmax, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		void AddCase(const char * acase);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString CaseList() const;
-		%feature("autodoc", "1");
-		virtual		char * Name() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
-		%feature("autodoc", "1");
-		static		Standard_Boolean MatchValue(const char * val, const TCollection_AsciiString &text, const Standard_Boolean exact);
-		%feature("autodoc", "1");
-		static		char * IntValue(const Standard_Integer val);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_Signature {
-	Handle_IFSelect_Signature GetHandle() {
-	return *(Handle_IFSelect_Signature*) &$self;
-	}
-};
-%extend IFSelect_Signature {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_Signature::~IFSelect_Signature %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_Signature {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SignMultiple;
-class IFSelect_SignMultiple : public IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SignMultiple(const char * name);
-		%feature("autodoc", "1");
-		void Add(const Handle_IFSelect_Signature &subsign, const Standard_Integer width=0, const Standard_Boolean maxi=0);
-		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-
-};
-%extend IFSelect_SignMultiple {
-	Handle_IFSelect_SignMultiple GetHandle() {
-	return *(Handle_IFSelect_SignMultiple*) &$self;
-	}
-};
-%extend IFSelect_SignMultiple {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SignMultiple::~IFSelect_SignMultiple %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SignMultiple {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3262,7 +3134,7 @@ class IFSelect_SelectExplore : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectExplore {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectExplore::~IFSelect_SelectExplore %{
@@ -3301,7 +3173,7 @@ class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectErrorEntities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectErrorEntities::~IFSelect_SelectErrorEntities %{
@@ -3402,7 +3274,7 @@ class IFSelect_Activator : public MMgt_TShared {
 };
 %extend IFSelect_Activator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_Activator::~IFSelect_Activator %{
@@ -3437,7 +3309,7 @@ class IFSelect_Act : public IFSelect_Activator {
 };
 %extend IFSelect_Act {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_Act::~IFSelect_Act %{
@@ -3482,7 +3354,7 @@ class IFSelect_SelectControl : public IFSelect_Selection {
 };
 %extend IFSelect_SelectControl {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectControl::~IFSelect_SelectControl %{
@@ -3519,7 +3391,7 @@ class IFSelect_SelectDiff : public IFSelect_SelectControl {
 };
 %extend IFSelect_SelectDiff {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectDiff::~IFSelect_SelectDiff %{
@@ -3581,7 +3453,7 @@ class IFSelect_SelectBase : public IFSelect_Selection {
 };
 %extend IFSelect_SelectBase {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectBase::~IFSelect_SelectBase %{
@@ -3648,7 +3520,7 @@ class IFSelect_SelectPointed : public IFSelect_SelectBase {
 };
 %extend IFSelect_SelectPointed {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectPointed::~IFSelect_SelectPointed %{
@@ -3711,7 +3583,7 @@ class IFSelect_Dispatch : public MMgt_TShared {
 };
 %extend IFSelect_Dispatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_Dispatch::~IFSelect_Dispatch %{
@@ -3750,7 +3622,7 @@ class IFSelect_DispPerSignature : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerSignature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_DispPerSignature::~IFSelect_DispPerSignature %{
@@ -3852,7 +3724,7 @@ class IFSelect_SequenceNodeOfTSeqOfSelection : public TCollection_SeqNode {
 };
 %extend IFSelect_SequenceNodeOfTSeqOfSelection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SequenceNodeOfTSeqOfSelection::~IFSelect_SequenceNodeOfTSeqOfSelection %{
@@ -3889,7 +3761,7 @@ class IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public TCollection_Seq
 };
 %extend IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SequenceNodeOfSequenceOfAppliedModifiers::~IFSelect_SequenceNodeOfSequenceOfAppliedModifiers %{
@@ -3966,7 +3838,7 @@ class IFSelect_Editor : public MMgt_TShared {
 };
 %extend IFSelect_Editor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_Editor::~IFSelect_Editor %{
@@ -4050,6 +3922,140 @@ def __del__(self):
 };
 
 
+%nodefaultctor IFSelect_SelectCombine;
+class IFSelect_SelectCombine : public IFSelect_Selection {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer NbInputs() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection Input(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer InputRank(const Handle_IFSelect_Selection &sel) const;
+		%feature("autodoc", "1");
+		void Add(const Handle_IFSelect_Selection &sel, const Standard_Integer atnum=0);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_IFSelect_Selection &sel);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Standard_Integer num);
+		%feature("autodoc", "1");
+		virtual		void FillIterator(IFSelect_SelectionIterator & iter) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectCombine {
+	Handle_IFSelect_SelectCombine GetHandle() {
+	return *(Handle_IFSelect_SelectCombine*) &$self;
+	}
+};
+%extend IFSelect_SelectCombine {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SelectCombine::~IFSelect_SelectCombine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SelectCombine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_Signature;
+class IFSelect_Signature : public Interface_SignType {
+	public:
+		%feature("autodoc", "1");
+		void SetIntCase(const Standard_Boolean hasmin, const Standard_Integer valmin, const Standard_Boolean hasmax, const Standard_Integer valmax);
+		%feature("autodoc","IsIntCase() -> [Standard_Integer, Standard_Integer]");
+
+		Standard_Boolean IsIntCase(Standard_Boolean & hasmin, Standard_Integer &OutValue, Standard_Boolean & hasmax, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void AddCase(const char * acase);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString CaseList() const;
+		%feature("autodoc", "1");
+		virtual		char * Name() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
+		%feature("autodoc", "1");
+		static		Standard_Boolean MatchValue(const char * val, const TCollection_AsciiString &text, const Standard_Boolean exact);
+		%feature("autodoc", "1");
+		static		char * IntValue(const Standard_Integer val);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_Signature {
+	Handle_IFSelect_Signature GetHandle() {
+	return *(Handle_IFSelect_Signature*) &$self;
+	}
+};
+%extend IFSelect_Signature {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_Signature::~IFSelect_Signature %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_Signature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SignType;
+class IFSelect_SignType : public IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SignType(const Standard_Boolean nopk=0);
+		%feature("autodoc", "1");
+		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+
+};
+%extend IFSelect_SignType {
+	Handle_IFSelect_SignType GetHandle() {
+	return *(Handle_IFSelect_SignType*) &$self;
+	}
+};
+%extend IFSelect_SignType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SignType::~IFSelect_SignType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SignType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IFSelect_Transformer;
 class IFSelect_Transformer : public MMgt_TShared {
 	public:
@@ -4072,7 +4078,7 @@ class IFSelect_Transformer : public MMgt_TShared {
 };
 %extend IFSelect_Transformer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_Transformer::~IFSelect_Transformer %{
@@ -4133,7 +4139,7 @@ class IFSelect_TransformStandard : public IFSelect_Transformer {
 };
 %extend IFSelect_TransformStandard {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_TransformStandard::~IFSelect_TransformStandard %{
@@ -4146,90 +4152,6 @@ def __del__(self):
 %}
 
 %extend IFSelect_TransformStandard {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectCombine;
-class IFSelect_SelectCombine : public IFSelect_Selection {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer NbInputs() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection Input(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer InputRank(const Handle_IFSelect_Selection &sel) const;
-		%feature("autodoc", "1");
-		void Add(const Handle_IFSelect_Selection &sel, const Standard_Integer atnum=0);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_IFSelect_Selection &sel);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Standard_Integer num);
-		%feature("autodoc", "1");
-		virtual		void FillIterator(IFSelect_SelectionIterator & iter) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectCombine {
-	Handle_IFSelect_SelectCombine GetHandle() {
-	return *(Handle_IFSelect_SelectCombine*) &$self;
-	}
-};
-%extend IFSelect_SelectCombine {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectCombine::~IFSelect_SelectCombine %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectCombine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SignType;
-class IFSelect_SignType : public IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SignType(const Standard_Boolean nopk=0);
-		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SignType {
-	Handle_IFSelect_SignType GetHandle() {
-	return *(Handle_IFSelect_SignType*) &$self;
-	}
-};
-%extend IFSelect_SignType {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SignType::~IFSelect_SignType %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SignType {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4317,6 +4239,93 @@ def __del__(self):
 };
 
 
+%nodefaultctor IFSelect_SessionPilot;
+class IFSelect_SessionPilot : public IFSelect_Activator {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SessionPilot(const char * prompt="");
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkSession Session() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkLibrary Library() const;
+		%feature("autodoc", "1");
+		Standard_Boolean RecordMode() const;
+		%feature("autodoc", "1");
+		void SetSession(const Handle_IFSelect_WorkSession &WS);
+		%feature("autodoc", "1");
+		void SetLibrary(const Handle_IFSelect_WorkLibrary &WL);
+		%feature("autodoc", "1");
+		void SetRecordMode(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		void SetCommandLine(const TCollection_AsciiString &command);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & CommandLine() const;
+		%feature("autodoc", "1");
+		char * CommandPart(const Standard_Integer numarg=0) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbWords() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Word(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		char * Arg(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveWord(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Integer NbCommands() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Command(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus RecordItem(const Handle_Standard_Transient &item);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient RecordedItem() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus ReadScript(const char * file="");
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus Perform();
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus ExecuteAlias(const TCollection_AsciiString &aliasname);
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus Execute(const TCollection_AsciiString &command);
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus ExecuteCounter(const Handle_IFSelect_SignCounter &counter, const Standard_Integer numword, const IFSelect_PrintCount mode=IFSelect_CountByItem);
+		%feature("autodoc", "1");
+		Standard_Integer Number(const char * val) const;
+		%feature("autodoc", "1");
+		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const Handle_IFSelect_SessionPilot &session);
+		%feature("autodoc", "1");
+		virtual		char * Help(const Standard_Integer number) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SessionPilot {
+	Handle_IFSelect_SessionPilot GetHandle() {
+	return *(Handle_IFSelect_SessionPilot*) &$self;
+	}
+};
+%extend IFSelect_SessionPilot {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SessionPilot::~IFSelect_SessionPilot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SessionPilot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IFSelect_PacketList;
 class IFSelect_PacketList : public MMgt_TShared {
 	public:
@@ -4357,7 +4366,7 @@ class IFSelect_PacketList : public MMgt_TShared {
 };
 %extend IFSelect_PacketList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_PacketList::~IFSelect_PacketList %{
@@ -4394,7 +4403,7 @@ class IFSelect_SelectAnyType : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectAnyType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectAnyType::~IFSelect_SelectAnyType %{
@@ -4433,7 +4442,7 @@ class IFSelect_SelectType : public IFSelect_SelectAnyType {
 };
 %extend IFSelect_SelectType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectType::~IFSelect_SelectType %{
@@ -4510,7 +4519,7 @@ class IFSelect_ModelCopier : public MMgt_TShared {
 };
 %extend IFSelect_ModelCopier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_ModelCopier::~IFSelect_ModelCopier %{
@@ -4529,42 +4538,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor IFSelect_GeneralModifier;
-class IFSelect_GeneralModifier : public MMgt_TShared {
+%nodefaultctor IFSelect_SelectUnknownEntities;
+class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
 	public:
 		%feature("autodoc", "1");
-		Standard_Boolean MayChangeGraph() const;
+		IFSelect_SelectUnknownEntities();
 		%feature("autodoc", "1");
-		void SetDispatch(const Handle_IFSelect_Dispatch &disp);
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
-		Handle_IFSelect_Dispatch Dispatch() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Applies(const Handle_IFSelect_Dispatch &disp) const;
-		%feature("autodoc", "1");
-		void SetSelection(const Handle_IFSelect_Selection &sel);
-		%feature("autodoc", "1");
-		void ResetSelection();
-		%feature("autodoc", "1");
-		Standard_Boolean HasSelection() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection Selection() const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
+		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IFSelect_GeneralModifier {
-	Handle_IFSelect_GeneralModifier GetHandle() {
-	return *(Handle_IFSelect_GeneralModifier*) &$self;
+%extend IFSelect_SelectUnknownEntities {
+	Handle_IFSelect_SelectUnknownEntities GetHandle() {
+	return *(Handle_IFSelect_SelectUnknownEntities*) &$self;
 	}
 };
-%extend IFSelect_GeneralModifier {
+%extend IFSelect_SelectUnknownEntities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IFSelect_GeneralModifier::~IFSelect_GeneralModifier %{
+%feature("shadow") IFSelect_SelectUnknownEntities::~IFSelect_SelectUnknownEntities %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4573,31 +4570,43 @@ def __del__(self):
 		pass
 %}
 
-%extend IFSelect_GeneralModifier {
+%extend IFSelect_SelectUnknownEntities {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor IFSelect_Modifier;
-class IFSelect_Modifier : public IFSelect_GeneralModifier {
+%nodefaultctor IFSelect_SelectSignedShared;
+class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Perform(IFSelect_ContextModif & ctx, const Handle_Interface_InterfaceModel &target, const Handle_Interface_Protocol &protocol, Interface_CopyTool & TC) const;
+		IFSelect_SelectSignedShared(const Handle_IFSelect_Signature &matcher, const char * signtext, const Standard_Boolean exact=1, const Standard_Integer level=0);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Signature Signature() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & SignatureText() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsExact() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExploreLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IFSelect_Modifier {
-	Handle_IFSelect_Modifier GetHandle() {
-	return *(Handle_IFSelect_Modifier*) &$self;
+%extend IFSelect_SelectSignedShared {
+	Handle_IFSelect_SelectSignedShared GetHandle() {
+	return *(Handle_IFSelect_SelectSignedShared*) &$self;
 	}
 };
-%extend IFSelect_Modifier {
+%extend IFSelect_SelectSignedShared {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IFSelect_Modifier::~IFSelect_Modifier %{
+%feature("shadow") IFSelect_SelectSignedShared::~IFSelect_SelectSignedShared %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4606,7 +4615,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IFSelect_Modifier {
+%extend IFSelect_SelectSignedShared {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4645,7 +4654,7 @@ class IFSelect_DispPerCount : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerCount {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_DispPerCount::~IFSelect_DispPerCount %{
@@ -4682,7 +4691,7 @@ class IFSelect_SequenceNodeOfTSeqOfDispatch : public TCollection_SeqNode {
 };
 %extend IFSelect_SequenceNodeOfTSeqOfDispatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SequenceNodeOfTSeqOfDispatch::~IFSelect_SequenceNodeOfTSeqOfDispatch %{
@@ -4821,7 +4830,7 @@ class IFSelect_SignatureList : public MMgt_TShared {
 };
 %extend IFSelect_SignatureList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SignatureList::~IFSelect_SignatureList %{
@@ -4860,7 +4869,7 @@ class IFSelect_CheckCounter : public IFSelect_SignatureList {
 };
 %extend IFSelect_CheckCounter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_CheckCounter::~IFSelect_CheckCounter %{
@@ -4873,225 +4882,6 @@ def __del__(self):
 %}
 
 %extend IFSelect_CheckCounter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectEntityNumber;
-class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectEntityNumber();
-		%feature("autodoc", "1");
-		void SetNumber(const Handle_IFSelect_IntParam &num);
-		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam Number() const;
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectEntityNumber {
-	Handle_IFSelect_SelectEntityNumber GetHandle() {
-	return *(Handle_IFSelect_SelectEntityNumber*) &$self;
-	}
-};
-%extend IFSelect_SelectEntityNumber {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectEntityNumber::~IFSelect_SelectEntityNumber %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectEntityNumber {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_EditForm;
-class IFSelect_EditForm : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_EditForm(const Handle_IFSelect_Editor &editor, const Standard_Boolean readonly, const Standard_Boolean undoable, const char * label="");
-		%feature("autodoc", "1");
-		IFSelect_EditForm(const Handle_IFSelect_Editor &editor, const TColStd_SequenceOfInteger &nums, const Standard_Boolean readonly, const Standard_Boolean undoable, const char * label="");
-		%feature("autodoc","1");
-		%extend {
-				Standard_Boolean GetEditKeepStatus() {
-				return (Standard_Boolean) $self->EditKeepStatus();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetEditKeepStatus(Standard_Boolean value ) {
-				$self->EditKeepStatus()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		char * Label() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLoaded() const;
-		%feature("autodoc", "1");
-		void ClearData();
-		%feature("autodoc", "1");
-		void SetData(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		void SetEntity(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void SetModel(const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Entity() const;
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_Editor Editor() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsComplete() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbValues(const Standard_Boolean editable) const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberFromRank(const Standard_Integer rank) const;
-		%feature("autodoc", "1");
-		Standard_Integer RankFromNumber(const Standard_Integer number) const;
-		%feature("autodoc", "1");
-		Standard_Integer NameNumber(const char * name) const;
-		%feature("autodoc", "1");
-		Standard_Integer NameRank(const char * name) const;
-		%feature("autodoc", "1");
-		void LoadDefault();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean LoadData(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		Standard_Boolean LoadEntity(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		Standard_Boolean LoadModel(const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		Standard_Boolean LoadData();
-		%feature("autodoc", "1");
-		Handle_IFSelect_ListEditor ListEditor(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void LoadValue(const Standard_Integer num, const Handle_TCollection_HAsciiString &val);
-		%feature("autodoc", "1");
-		void LoadList(const Standard_Integer num, const Handle_TColStd_HSequenceOfHAsciiString &list);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString OriginalValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString OriginalList(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString EditedValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString EditedList(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsModified(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTouched(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Modify(const Standard_Integer num, const Handle_TCollection_HAsciiString &newval, const Standard_Boolean enforce=0);
-		%feature("autodoc", "1");
-		Standard_Boolean ModifyList(const Standard_Integer num, const Handle_IFSelect_ListEditor &edited, const Standard_Boolean enforce=0);
-		%feature("autodoc", "1");
-		Standard_Boolean ModifyListValue(const Standard_Integer num, const Handle_TColStd_HSequenceOfHAsciiString &list, const Standard_Boolean enforce=0);
-		%feature("autodoc", "1");
-		Standard_Boolean Touch(const Standard_Integer num, const Handle_TCollection_HAsciiString &newval);
-		%feature("autodoc", "1");
-		Standard_Boolean TouchList(const Standard_Integer num, const Handle_TColStd_HSequenceOfHAsciiString &newlist);
-		%feature("autodoc", "1");
-		void ClearEdit(const Standard_Integer num=0);
-		%feature("autodoc", "1");
-		void PrintDefs(const Handle_Message_Messenger &S) const;
-		%feature("autodoc", "1");
-		void PrintValues(const Handle_Message_Messenger &S, const Standard_Integer what, const Standard_Boolean names, const Standard_Boolean alsolist=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Apply();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean ApplyData(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		Standard_Boolean Undo();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_EditForm {
-	Handle_IFSelect_EditForm GetHandle() {
-	return *(Handle_IFSelect_EditForm*) &$self;
-	}
-};
-%extend IFSelect_EditForm {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_EditForm::~IFSelect_EditForm %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_EditForm {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectSignedShared;
-class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectSignedShared(const Handle_IFSelect_Signature &matcher, const char * signtext, const Standard_Boolean exact=1, const Standard_Integer level=0);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Signature Signature() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & SignatureText() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsExact() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExploreLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectSignedShared {
-	Handle_IFSelect_SelectSignedShared GetHandle() {
-	return *(Handle_IFSelect_SelectSignedShared*) &$self;
-	}
-};
-%extend IFSelect_SelectSignedShared {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectSignedShared::~IFSelect_SelectSignedShared %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectSignedShared {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5130,7 +4920,7 @@ class IFSelect_SelectSuite : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectSuite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectSuite::~IFSelect_SelectSuite %{
@@ -5175,7 +4965,7 @@ class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 };
 %extend IFSelect_SelectSignedSharing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectSignedSharing::~IFSelect_SelectSignedSharing %{
@@ -5247,7 +5037,7 @@ class IFSelect_SelectShared : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectShared {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectShared::~IFSelect_SelectShared %{
@@ -5292,7 +5082,7 @@ class IFSelect_SelectSent : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectSent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectSent::~IFSelect_SelectSent %{
@@ -5344,7 +5134,7 @@ class IFSelect_WorkLibrary : public Standard_Transient {
 };
 %extend IFSelect_WorkLibrary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_WorkLibrary::~IFSelect_WorkLibrary %{
@@ -5383,7 +5173,7 @@ class IFSelect_SelectModelRoots : public IFSelect_SelectBase {
 };
 %extend IFSelect_SelectModelRoots {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectModelRoots::~IFSelect_SelectModelRoots %{
@@ -5448,7 +5238,7 @@ class IFSelect_SelectAnyList : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectAnyList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectAnyList::~IFSelect_SelectAnyList %{
@@ -5499,7 +5289,7 @@ class IFSelect_DispPerFiles : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerFiles {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_DispPerFiles::~IFSelect_DispPerFiles %{
@@ -5518,6 +5308,90 @@ def __del__(self):
 };
 
 
+%nodefaultctor IFSelect_GeneralModifier;
+class IFSelect_GeneralModifier : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean MayChangeGraph() const;
+		%feature("autodoc", "1");
+		void SetDispatch(const Handle_IFSelect_Dispatch &disp);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Dispatch Dispatch() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Applies(const Handle_IFSelect_Dispatch &disp) const;
+		%feature("autodoc", "1");
+		void SetSelection(const Handle_IFSelect_Selection &sel);
+		%feature("autodoc", "1");
+		void ResetSelection();
+		%feature("autodoc", "1");
+		Standard_Boolean HasSelection() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection Selection() const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_GeneralModifier {
+	Handle_IFSelect_GeneralModifier GetHandle() {
+	return *(Handle_IFSelect_GeneralModifier*) &$self;
+	}
+};
+%extend IFSelect_GeneralModifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_GeneralModifier::~IFSelect_GeneralModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_GeneralModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_Modifier;
+class IFSelect_Modifier : public IFSelect_GeneralModifier {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Perform(IFSelect_ContextModif & ctx, const Handle_Interface_InterfaceModel &target, const Handle_Interface_Protocol &protocol, Interface_CopyTool & TC) const;
+
+};
+%extend IFSelect_Modifier {
+	Handle_IFSelect_Modifier GetHandle() {
+	return *(Handle_IFSelect_Modifier*) &$self;
+	}
+};
+%extend IFSelect_Modifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_Modifier::~IFSelect_Modifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_Modifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IFSelect_ModifEditForm;
 class IFSelect_ModifEditForm : public IFSelect_Modifier {
 	public:
@@ -5525,12 +5399,6 @@ class IFSelect_ModifEditForm : public IFSelect_Modifier {
 		IFSelect_ModifEditForm(const Handle_IFSelect_EditForm &editform);
 		%feature("autodoc", "1");
 		Handle_IFSelect_EditForm EditForm() const;
-		%feature("autodoc", "1");
-		virtual		void Perform(IFSelect_ContextModif & ctx, const Handle_Interface_InterfaceModel &target, const Handle_Interface_Protocol &protocol, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend IFSelect_ModifEditForm {
@@ -5540,7 +5408,7 @@ class IFSelect_ModifEditForm : public IFSelect_Modifier {
 };
 %extend IFSelect_ModifEditForm {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_ModifEditForm::~IFSelect_ModifEditForm %{
@@ -5553,1420 +5421,6 @@ def __del__(self):
 %}
 
 %extend IFSelect_ModifEditForm {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SignCounter;
-class IFSelect_SignCounter : public IFSelect_SignatureList {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SignCounter(const Standard_Boolean withmap=1, const Standard_Boolean withlist=0);
-		%feature("autodoc", "1");
-		IFSelect_SignCounter(const Handle_IFSelect_Signature &matcher, const Standard_Boolean withmap=1, const Standard_Boolean withlist=0);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Signature Signature() const;
-		%feature("autodoc", "1");
-		void SetMap(const Standard_Boolean withmap);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AddEntity(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		virtual		void AddSign(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		void AddList(const Handle_TColStd_HSequenceOfTransient &list, const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		virtual		void AddWithGraph(const Handle_TColStd_HSequenceOfTransient &list, const Interface_Graph &graph);
-		%feature("autodoc", "1");
-		void AddModel(const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		void AddFromSelection(const Handle_IFSelect_Selection &sel, const Interface_Graph &G);
-		%feature("autodoc", "1");
-		void SetSelection(const Handle_IFSelect_Selection &sel);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection Selection() const;
-		%feature("autodoc", "1");
-		void SetSelMode(const Standard_Integer selmode);
-		%feature("autodoc", "1");
-		Standard_Integer SelMode() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ComputeSelected(const Interface_Graph &G, const Standard_Boolean forced=0);
-		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString Sign(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		char * ComputedSign(const Handle_Standard_Transient &ent, const Interface_Graph &G);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SignCounter {
-	Handle_IFSelect_SignCounter GetHandle() {
-	return *(Handle_IFSelect_SignCounter*) &$self;
-	}
-};
-%extend IFSelect_SignCounter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SignCounter::~IFSelect_SignCounter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SignCounter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_TSeqOfSelection;
-class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_TSeqOfSelection();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const IFSelect_TSeqOfSelection & Assign(const IFSelect_TSeqOfSelection &Other);
-		%feature("autodoc", "1");
-		const IFSelect_TSeqOfSelection & operator=(const IFSelect_TSeqOfSelection &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_IFSelect_Selection &T);
-		%feature("autodoc", "1");
-		void Append(IFSelect_TSeqOfSelection & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_IFSelect_Selection &T);
-		%feature("autodoc", "1");
-		void Prepend(IFSelect_TSeqOfSelection & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_IFSelect_Selection &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_IFSelect_Selection &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & First() const;
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IFSelect_Selection &I);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") IFSelect_TSeqOfSelection::~IFSelect_TSeqOfSelection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_TSeqOfSelection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectModelEntities;
-class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectModelEntities();
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator CompleteResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectModelEntities {
-	Handle_IFSelect_SelectModelEntities GetHandle() {
-	return *(Handle_IFSelect_SelectModelEntities*) &$self;
-	}
-};
-%extend IFSelect_SelectModelEntities {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectModelEntities::~IFSelect_SelectModelEntities %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectModelEntities {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_DispGlobal;
-class IFSelect_DispGlobal : public IFSelect_Dispatch {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_DispGlobal();
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc","LimitedMax(Standard_Integer nbent) -> Standard_Integer");
-
-		virtual		Standard_Boolean LimitedMax(const Standard_Integer nbent, Standard_Integer &OutValue) const;
-		%feature("autodoc","PacketsCount(const G) -> Standard_Integer");
-
-		virtual		Standard_Boolean PacketsCount(const Interface_Graph &G, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_DispGlobal {
-	Handle_IFSelect_DispGlobal GetHandle() {
-	return *(Handle_IFSelect_DispGlobal*) &$self;
-	}
-};
-%extend IFSelect_DispGlobal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_DispGlobal::~IFSelect_DispGlobal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_DispGlobal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SequenceOfInterfaceModel;
-class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SequenceOfInterfaceModel();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const IFSelect_SequenceOfInterfaceModel & Assign(const IFSelect_SequenceOfInterfaceModel &Other);
-		%feature("autodoc", "1");
-		const IFSelect_SequenceOfInterfaceModel & operator=(const IFSelect_SequenceOfInterfaceModel &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Interface_InterfaceModel &T);
-		%feature("autodoc", "1");
-		void Append(IFSelect_SequenceOfInterfaceModel & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Interface_InterfaceModel &T);
-		%feature("autodoc", "1");
-		void Prepend(IFSelect_SequenceOfInterfaceModel & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Interface_InterfaceModel &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, IFSelect_SequenceOfInterfaceModel & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Interface_InterfaceModel &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, IFSelect_SequenceOfInterfaceModel & S);
-		%feature("autodoc", "1");
-		const Handle_Interface_InterfaceModel & First() const;
-		%feature("autodoc", "1");
-		const Handle_Interface_InterfaceModel & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, IFSelect_SequenceOfInterfaceModel & S);
-		%feature("autodoc", "1");
-		const Handle_Interface_InterfaceModel & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Interface_InterfaceModel & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Interface_InterfaceModel &I);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") IFSelect_SequenceOfInterfaceModel::~IFSelect_SequenceOfInterfaceModel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SequenceOfInterfaceModel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_IntParam;
-class IFSelect_IntParam : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_IntParam();
-		%feature("autodoc", "1");
-		void SetStaticName(const char * statname);
-		%feature("autodoc", "1");
-		Standard_Integer Value() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer val);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_IntParam {
-	Handle_IFSelect_IntParam GetHandle() {
-	return *(Handle_IFSelect_IntParam*) &$self;
-	}
-};
-%extend IFSelect_IntParam {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_IntParam::~IFSelect_IntParam %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_IntParam {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectRange;
-class IFSelect_SelectRange : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectRange();
-		%feature("autodoc", "1");
-		void SetRange(const Handle_IFSelect_IntParam &rankfrom, const Handle_IFSelect_IntParam &rankto);
-		%feature("autodoc", "1");
-		void SetOne(const Handle_IFSelect_IntParam &rank);
-		%feature("autodoc", "1");
-		void SetFrom(const Handle_IFSelect_IntParam &rankfrom);
-		%feature("autodoc", "1");
-		void SetUntil(const Handle_IFSelect_IntParam &rankto);
-		%feature("autodoc", "1");
-		Standard_Boolean HasLower() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerValue() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasUpper() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam Upper() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperValue() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectRange {
-	Handle_IFSelect_SelectRange GetHandle() {
-	return *(Handle_IFSelect_SelectRange*) &$self;
-	}
-};
-%extend IFSelect_SelectRange {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectRange::~IFSelect_SelectRange %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectRange {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_GraphCounter;
-class IFSelect_GraphCounter : public IFSelect_SignCounter {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_GraphCounter(const Standard_Boolean withmap=1, const Standard_Boolean withlist=0);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectDeduct Applied() const;
-		%feature("autodoc", "1");
-		void SetApplied(const Handle_IFSelect_SelectDeduct &sel);
-		%feature("autodoc", "1");
-		virtual		void AddWithGraph(const Handle_TColStd_HSequenceOfTransient &list, const Interface_Graph &graph);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_GraphCounter {
-	Handle_IFSelect_GraphCounter GetHandle() {
-	return *(Handle_IFSelect_GraphCounter*) &$self;
-	}
-};
-%extend IFSelect_GraphCounter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_GraphCounter::~IFSelect_GraphCounter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_GraphCounter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectFlag;
-class IFSelect_SelectFlag : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectFlag(const char * flagname);
-		%feature("autodoc", "1");
-		char * FlagName() const;
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectFlag {
-	Handle_IFSelect_SelectFlag GetHandle() {
-	return *(Handle_IFSelect_SelectFlag*) &$self;
-	}
-};
-%extend IFSelect_SelectFlag {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectFlag::~IFSelect_SelectFlag %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectFlag {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_ListEditor;
-class IFSelect_ListEditor : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_ListEditor();
-		%feature("autodoc", "1");
-		IFSelect_ListEditor(const Handle_Interface_TypedValue &def, const Standard_Integer max=0);
-		%feature("autodoc", "1");
-		void LoadModel(const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		void LoadValues(const Handle_TColStd_HSequenceOfHAsciiString &vals);
-		%feature("autodoc", "1");
-		void SetTouched();
-		%feature("autodoc", "1");
-		void ClearEdit();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean LoadEdited(const Handle_TColStd_HSequenceOfHAsciiString &list);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetValue(const Standard_Integer num, const Handle_TCollection_HAsciiString &val);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AddValue(const Handle_TCollection_HAsciiString &val, const Standard_Integer atnum=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Remove(const Standard_Integer num=0, const Standard_Integer howmany=1);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString OriginalValues() const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString EditedValues() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbValues(const Standard_Boolean edited=1) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Value(const Standard_Integer num, const Standard_Boolean edited=1) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsChanged(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsModified(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAdded(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTouched() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_ListEditor {
-	Handle_IFSelect_ListEditor GetHandle() {
-	return *(Handle_IFSelect_ListEditor*) &$self;
-	}
-};
-%extend IFSelect_ListEditor {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_ListEditor::~IFSelect_ListEditor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_ListEditor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SessionDumper;
-class IFSelect_SessionDumper : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_SessionDumper First();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SessionDumper Next() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean WriteOwn(IFSelect_SessionFile & file, const Handle_Standard_Transient &item) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean ReadOwn(IFSelect_SessionFile & file, const TCollection_AsciiString &type, Handle_Standard_Transient & item) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SessionDumper {
-	Handle_IFSelect_SessionDumper GetHandle() {
-	return *(Handle_IFSelect_SessionDumper*) &$self;
-	}
-};
-%extend IFSelect_SessionDumper {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SessionDumper::~IFSelect_SessionDumper %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SessionDumper {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_BasicDumper;
-class IFSelect_BasicDumper : public IFSelect_SessionDumper {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_BasicDumper();
-
-};
-%extend IFSelect_BasicDumper {
-	Handle_IFSelect_BasicDumper GetHandle() {
-	return *(Handle_IFSelect_BasicDumper*) &$self;
-	}
-};
-%extend IFSelect_BasicDumper {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_BasicDumper::~IFSelect_BasicDumper %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_BasicDumper {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_AppliedModifiers;
-class IFSelect_AppliedModifiers : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_AppliedModifiers(const Standard_Integer nbmax, const Standard_Integer nbent);
-		%feature("autodoc", "1");
-		Standard_Boolean AddModif(const Handle_IFSelect_GeneralModifier &modif);
-		%feature("autodoc", "1");
-		Standard_Boolean AddNum(const Standard_Integer nument);
-		%feature("autodoc", "1");
-		Standard_Integer Count() const;
-		%feature("autodoc","Item(Standard_Integer num) -> Standard_Integer");
-
-		Standard_Boolean Item(const Standard_Integer num, Handle_IFSelect_GeneralModifier & modif, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		Standard_Integer ItemNum(const Standard_Integer nument) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfInteger ItemList() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsForAll() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_AppliedModifiers {
-	Handle_IFSelect_AppliedModifiers GetHandle() {
-	return *(Handle_IFSelect_AppliedModifiers*) &$self;
-	}
-};
-%extend IFSelect_AppliedModifiers {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_AppliedModifiers::~IFSelect_AppliedModifiers %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_AppliedModifiers {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectIntersection;
-class IFSelect_SelectIntersection : public IFSelect_SelectCombine {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectIntersection();
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectIntersection {
-	Handle_IFSelect_SelectIntersection GetHandle() {
-	return *(Handle_IFSelect_SelectIntersection*) &$self;
-	}
-};
-%extend IFSelect_SelectIntersection {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectIntersection::~IFSelect_SelectIntersection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectIntersection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_ShareOut;
-class IFSelect_ShareOut : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_ShareOut();
-		%feature("autodoc", "1");
-		void Clear(const Standard_Boolean onlydisp);
-		%feature("autodoc", "1");
-		void ClearResult(const Standard_Boolean alsoname);
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveItem(const Handle_Standard_Transient &item);
-		%feature("autodoc", "1");
-		Standard_Integer LastRun() const;
-		%feature("autodoc", "1");
-		void SetLastRun(const Standard_Integer last);
-		%feature("autodoc", "1");
-		Standard_Integer NbDispatches() const;
-		%feature("autodoc", "1");
-		Standard_Integer DispatchRank(const Handle_IFSelect_Dispatch &disp) const;
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Dispatch & Dispatch(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void AddDispatch(const Handle_IFSelect_Dispatch &disp);
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveDispatch(const Standard_Integer rank);
-		%feature("autodoc", "1");
-		void AddModifier(const Handle_IFSelect_GeneralModifier &modifier, const Standard_Integer atnum);
-		%feature("autodoc", "1");
-		void AddModifier(const Handle_IFSelect_GeneralModifier &modifier, const Standard_Integer dispnum, const Standard_Integer atnum);
-		%feature("autodoc", "1");
-		void AddModif(const Handle_IFSelect_GeneralModifier &modifier, const Standard_Boolean formodel, const Standard_Integer atnum=0);
-		%feature("autodoc", "1");
-		Standard_Integer NbModifiers(const Standard_Boolean formodel) const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_GeneralModifier GeneralModifier(const Standard_Boolean formodel, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_Modifier ModelModifier(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer ModifierRank(const Handle_IFSelect_GeneralModifier &modifier) const;
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveModifier(const Standard_Boolean formodel, const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean ChangeModifierRank(const Standard_Boolean formodel, const Standard_Integer befor, const Standard_Integer after);
-		%feature("autodoc", "1");
-		Standard_Boolean SetRootName(const Standard_Integer num, const Handle_TCollection_HAsciiString &name);
-		%feature("autodoc", "1");
-		Standard_Boolean HasRootName(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString RootName(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer RootNumber(const Handle_TCollection_HAsciiString &name) const;
-		%feature("autodoc", "1");
-		void SetPrefix(const Handle_TCollection_HAsciiString &pref);
-		%feature("autodoc", "1");
-		Standard_Boolean SetDefaultRootName(const Handle_TCollection_HAsciiString &defrt);
-		%feature("autodoc", "1");
-		void SetExtension(const Handle_TCollection_HAsciiString &ext);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Prefix() const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString DefaultRootName() const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Extension() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString FileName(const Standard_Integer dnum, const Standard_Integer pnum, const Standard_Integer nbpack=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_ShareOut {
-	Handle_IFSelect_ShareOut GetHandle() {
-	return *(Handle_IFSelect_ShareOut*) &$self;
-	}
-};
-%extend IFSelect_ShareOut {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_ShareOut::~IFSelect_ShareOut %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_ShareOut {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SessionFile;
-class IFSelect_SessionFile {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SessionFile(const Handle_IFSelect_WorkSession &WS);
-		%feature("autodoc", "1");
-		IFSelect_SessionFile(const Handle_IFSelect_WorkSession &WS, const char * filename);
-		%feature("autodoc", "1");
-		void ClearLines();
-		%feature("autodoc", "1");
-		Standard_Integer NbLines() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Line(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void AddLine(const char * line);
-		%feature("autodoc", "1");
-		void RemoveLastLine();
-		%feature("autodoc", "1");
-		Standard_Boolean WriteFile(const char * name);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadFile(const char * name);
-		%feature("autodoc", "1");
-		Standard_Boolean RecognizeFile(const char * headerline);
-		%feature("autodoc", "1");
-		Standard_Integer Write(const char * filename);
-		%feature("autodoc", "1");
-		Standard_Integer Read(const char * filename);
-		%feature("autodoc", "1");
-		Standard_Integer WriteSession();
-		%feature("autodoc", "1");
-		Standard_Integer WriteEnd();
-		%feature("autodoc", "1");
-		void WriteLine(const char * line, const Standard_Character follow=0);
-		%feature("autodoc", "1");
-		Standard_Boolean WriteOwn(const Handle_Standard_Transient &item);
-		%feature("autodoc", "1");
-		Standard_Integer ReadSession();
-		%feature("autodoc", "1");
-		Standard_Integer ReadEnd();
-		%feature("autodoc", "1");
-		Standard_Boolean ReadLine();
-		%feature("autodoc", "1");
-		void SplitLine(const char * line);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadOwn(Handle_Standard_Transient & item);
-		%feature("autodoc", "1");
-		void AddItem(const Handle_Standard_Transient &item, const Standard_Boolean active=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession WorkSession() const;
-		%feature("autodoc", "1");
-		void NewItem(const Standard_Integer ident, const Handle_Standard_Transient &par);
-		%feature("autodoc", "1");
-		void SetOwn(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		void SendVoid();
-		%feature("autodoc", "1");
-		void SendItem(const Handle_Standard_Transient &par);
-		%feature("autodoc", "1");
-		void SendText(const char * text);
-		%feature("autodoc", "1");
-		void SetLastGeneral(const Standard_Integer lastgen);
-		%feature("autodoc", "1");
-		Standard_Integer NbParams() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsVoid(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsText(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & ParamValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString TextValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient ItemValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%feature("shadow") IFSelect_SessionFile::~IFSelect_SessionFile %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SessionFile {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectUnion;
-class IFSelect_SelectUnion : public IFSelect_SelectCombine {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectUnion();
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectUnion {
-	Handle_IFSelect_SelectUnion GetHandle() {
-	return *(Handle_IFSelect_SelectUnion*) &$self;
-	}
-};
-%extend IFSelect_SelectUnion {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectUnion::~IFSelect_SelectUnion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectUnion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SignAncestor;
-class IFSelect_SignAncestor : public IFSelect_SignType {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SignAncestor(const Standard_Boolean nopk=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SignAncestor {
-	Handle_IFSelect_SignAncestor GetHandle() {
-	return *(Handle_IFSelect_SignAncestor*) &$self;
-	}
-};
-%extend IFSelect_SignAncestor {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SignAncestor::~IFSelect_SignAncestor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SignAncestor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SignValidity;
-class IFSelect_SignValidity : public IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SignValidity();
-		%feature("autodoc", "1");
-		static		char * CVal(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SignValidity {
-	Handle_IFSelect_SignValidity GetHandle() {
-	return *(Handle_IFSelect_SignValidity*) &$self;
-	}
-};
-%extend IFSelect_SignValidity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SignValidity::~IFSelect_SignValidity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SignValidity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SignCategory;
-class IFSelect_SignCategory : public IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SignCategory();
-		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SignCategory {
-	Handle_IFSelect_SignCategory GetHandle() {
-	return *(Handle_IFSelect_SignCategory*) &$self;
-	}
-};
-%extend IFSelect_SignCategory {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SignCategory::~IFSelect_SignCategory %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SignCategory {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectSignature;
-class IFSelect_SelectSignature : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectSignature(const Handle_IFSelect_Signature &matcher, const char * signtext, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		IFSelect_SelectSignature(const Handle_IFSelect_Signature &matcher, const TCollection_AsciiString &signtext, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		IFSelect_SelectSignature(const Handle_IFSelect_SignCounter &matcher, const char * signtext, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		Handle_IFSelect_Signature Signature() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_SignCounter Counter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SortInGraph(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & SignatureText() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsExact() const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectSignature {
-	Handle_IFSelect_SelectSignature GetHandle() {
-	return *(Handle_IFSelect_SelectSignature*) &$self;
-	}
-};
-%extend IFSelect_SelectSignature {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectSignature::~IFSelect_SelectSignature %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectSignature {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_ParamEditor;
-class IFSelect_ParamEditor : public IFSelect_Editor {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_ParamEditor(const Standard_Integer nbmax=100, const char * label="");
-		%feature("autodoc", "1");
-		void AddValue(const Handle_Interface_TypedValue &val, const char * shortname="");
-		%feature("autodoc", "1");
-		void AddConstantText(const char * val, const char * shortname, const char * completename="");
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_IFSelect_EditForm &form) const;
-		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString StringValue(const Handle_IFSelect_EditForm &form, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Load(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Apply(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		static		Handle_IFSelect_ParamEditor StaticEditor(const Handle_TColStd_HSequenceOfHAsciiString &list, const char * label="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_ParamEditor {
-	Handle_IFSelect_ParamEditor GetHandle() {
-	return *(Handle_IFSelect_ParamEditor*) &$self;
-	}
-};
-%extend IFSelect_ParamEditor {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_ParamEditor::~IFSelect_ParamEditor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_ParamEditor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectRoots;
-class IFSelect_SelectRoots : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectRoots();
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectRoots {
-	Handle_IFSelect_SelectRoots GetHandle() {
-	return *(Handle_IFSelect_SelectRoots*) &$self;
-	}
-};
-%extend IFSelect_SelectRoots {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectRoots::~IFSelect_SelectRoots %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectRoots {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_ContextWrite;
-class IFSelect_ContextWrite {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_ContextWrite(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &proto, const Handle_IFSelect_AppliedModifiers &applieds, const char * filename);
-		%feature("autodoc", "1");
-		IFSelect_ContextWrite(const Handle_Interface_HGraph &hgraph, const Handle_Interface_Protocol &proto, const Handle_IFSelect_AppliedModifiers &applieds, const char * filename);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model() const;
-		%feature("autodoc", "1");
-		Handle_Interface_Protocol Protocol() const;
-		%feature("autodoc", "1");
-		char * FileName() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_AppliedModifiers AppliedModifiers() const;
-		%feature("autodoc", "1");
-		const Interface_Graph & Graph();
-		%feature("autodoc", "1");
-		Standard_Integer NbModifiers() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SetModifier(const Standard_Integer numod);
-		%feature("autodoc", "1");
-		Handle_IFSelect_GeneralModifier FileModifier() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsForNone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsForAll() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbEntities() const;
-		%feature("autodoc", "1");
-		void Start();
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Value() const;
-		%feature("autodoc", "1");
-		void AddCheck(const Handle_Interface_Check &check);
-		%feature("autodoc", "1");
-		void AddWarning(const Handle_Standard_Transient &start, const char * mess, const char * orig="");
-		%feature("autodoc", "1");
-		void AddFail(const Handle_Standard_Transient &start, const char * mess, const char * orig="");
-		%feature("autodoc", "1");
-		Handle_Interface_Check CCheck(const Standard_Integer num=0);
-		%feature("autodoc", "1");
-		Handle_Interface_Check CCheck(const Handle_Standard_Transient &start);
-		%feature("autodoc", "1");
-		Interface_CheckIterator CheckList() const;
-
-};
-%feature("shadow") IFSelect_ContextWrite::~IFSelect_ContextWrite %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_ContextWrite {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SequenceNodeOfSequenceOfGeneralModifier;
-class IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SequenceNodeOfSequenceOfGeneralModifier(const Handle_IFSelect_GeneralModifier &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_IFSelect_GeneralModifier & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
-	Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier GetHandle() {
-	return *(Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier*) &$self;
-	}
-};
-%extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SequenceNodeOfSequenceOfGeneralModifier::~IFSelect_SequenceNodeOfSequenceOfGeneralModifier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_HSeqOfSelection;
-class IFSelect_HSeqOfSelection : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_HSeqOfSelection();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_IFSelect_Selection &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_IFSelect_HSeqOfSelection &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_IFSelect_Selection &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_IFSelect_HSeqOfSelection &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_IFSelect_HSeqOfSelection &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_IFSelect_HSeqOfSelection &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_IFSelect_HSeqOfSelection Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
-		%feature("autodoc", "1");
-		const Handle_IFSelect_Selection & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_Selection & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const IFSelect_TSeqOfSelection & Sequence() const;
-		%feature("autodoc", "1");
-		IFSelect_TSeqOfSelection & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_IFSelect_HSeqOfSelection ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_HSeqOfSelection {
-	Handle_IFSelect_HSeqOfSelection GetHandle() {
-	return *(Handle_IFSelect_HSeqOfSelection*) &$self;
-	}
-};
-%extend IFSelect_HSeqOfSelection {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_HSeqOfSelection::~IFSelect_HSeqOfSelection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_HSeqOfSelection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_DispPerOne;
-class IFSelect_DispPerOne : public IFSelect_Dispatch {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_DispPerOne();
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc","LimitedMax(Standard_Integer nbent) -> Standard_Integer");
-
-		virtual		Standard_Boolean LimitedMax(const Standard_Integer nbent, Standard_Integer &OutValue) const;
-		%feature("autodoc","PacketsCount(const G) -> Standard_Integer");
-
-		virtual		Standard_Boolean PacketsCount(const Interface_Graph &G, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_DispPerOne {
-	Handle_IFSelect_DispPerOne GetHandle() {
-	return *(Handle_IFSelect_DispPerOne*) &$self;
-	}
-};
-%extend IFSelect_DispPerOne {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_DispPerOne::~IFSelect_DispPerOne %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_DispPerOne {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7311,7 +5765,7 @@ class IFSelect_WorkSession : public MMgt_TShared {
 };
 %extend IFSelect_WorkSession {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_WorkSession::~IFSelect_WorkSession %{
@@ -7330,26 +5784,58 @@ def __del__(self):
 };
 
 
-%nodefaultctor IFSelect_SelectIncorrectEntities;
-class IFSelect_SelectIncorrectEntities : public IFSelect_SelectFlag {
+%nodefaultctor IFSelect_SignCounter;
+class IFSelect_SignCounter : public IFSelect_SignatureList {
 	public:
 		%feature("autodoc", "1");
-		IFSelect_SelectIncorrectEntities();
+		IFSelect_SignCounter(const Standard_Boolean withmap=1, const Standard_Boolean withlist=0);
+		%feature("autodoc", "1");
+		IFSelect_SignCounter(const Handle_IFSelect_Signature &matcher, const Standard_Boolean withmap=1, const Standard_Boolean withlist=0);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Signature Signature() const;
+		%feature("autodoc", "1");
+		void SetMap(const Standard_Boolean withmap);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AddEntity(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		virtual		void AddSign(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		void AddList(const Handle_TColStd_HSequenceOfTransient &list, const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		virtual		void AddWithGraph(const Handle_TColStd_HSequenceOfTransient &list, const Interface_Graph &graph);
+		%feature("autodoc", "1");
+		void AddModel(const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		void AddFromSelection(const Handle_IFSelect_Selection &sel, const Interface_Graph &G);
+		%feature("autodoc", "1");
+		void SetSelection(const Handle_IFSelect_Selection &sel);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection Selection() const;
+		%feature("autodoc", "1");
+		void SetSelMode(const Standard_Integer selmode);
+		%feature("autodoc", "1");
+		Standard_Integer SelMode() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ComputeSelected(const Interface_Graph &G, const Standard_Boolean forced=0);
+		%feature("autodoc", "1");
+		virtual		Handle_TCollection_HAsciiString Sign(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		char * ComputedSign(const Handle_Standard_Transient &ent, const Interface_Graph &G);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IFSelect_SelectIncorrectEntities {
-	Handle_IFSelect_SelectIncorrectEntities GetHandle() {
-	return *(Handle_IFSelect_SelectIncorrectEntities*) &$self;
+%extend IFSelect_SignCounter {
+	Handle_IFSelect_SignCounter GetHandle() {
+	return *(Handle_IFSelect_SignCounter*) &$self;
 	}
 };
-%extend IFSelect_SelectIncorrectEntities {
+%extend IFSelect_SignCounter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IFSelect_SelectIncorrectEntities::~IFSelect_SelectIncorrectEntities %{
+%feature("shadow") IFSelect_SignCounter::~IFSelect_SignCounter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -7358,85 +5844,39 @@ def __del__(self):
 		pass
 %}
 
-%extend IFSelect_SelectIncorrectEntities {
+%extend IFSelect_SignCounter {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor IFSelect_SessionPilot;
-class IFSelect_SessionPilot : public IFSelect_Activator {
+%nodefaultctor IFSelect_SelectRootComps;
+class IFSelect_SelectRootComps : public IFSelect_SelectExtract {
 	public:
 		%feature("autodoc", "1");
-		IFSelect_SessionPilot(const char * prompt="");
+		IFSelect_SelectRootComps();
 		%feature("autodoc", "1");
-		Handle_IFSelect_WorkSession Session() const;
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
 		%feature("autodoc", "1");
-		Handle_IFSelect_WorkLibrary Library() const;
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
-		Standard_Boolean RecordMode() const;
-		%feature("autodoc", "1");
-		void SetSession(const Handle_IFSelect_WorkSession &WS);
-		%feature("autodoc", "1");
-		void SetLibrary(const Handle_IFSelect_WorkLibrary &WL);
-		%feature("autodoc", "1");
-		void SetRecordMode(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		void SetCommandLine(const TCollection_AsciiString &command);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & CommandLine() const;
-		%feature("autodoc", "1");
-		char * CommandPart(const Standard_Integer numarg=0) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbWords() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Word(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		char * Arg(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveWord(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Integer NbCommands() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Command(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus RecordItem(const Handle_Standard_Transient &item);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient RecordedItem() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus ReadScript(const char * file="");
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus Perform();
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus ExecuteAlias(const TCollection_AsciiString &aliasname);
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus Execute(const TCollection_AsciiString &command);
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus ExecuteCounter(const Handle_IFSelect_SignCounter &counter, const Standard_Integer numword, const IFSelect_PrintCount mode=IFSelect_CountByItem);
-		%feature("autodoc", "1");
-		Standard_Integer Number(const char * val) const;
-		%feature("autodoc", "1");
-		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const Handle_IFSelect_SessionPilot &session);
-		%feature("autodoc", "1");
-		virtual		char * Help(const Standard_Integer number) const;
+		virtual		TCollection_AsciiString ExtractLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IFSelect_SessionPilot {
-	Handle_IFSelect_SessionPilot GetHandle() {
-	return *(Handle_IFSelect_SessionPilot*) &$self;
+%extend IFSelect_SelectRootComps {
+	Handle_IFSelect_SelectRootComps GetHandle() {
+	return *(Handle_IFSelect_SelectRootComps*) &$self;
 	}
 };
-%extend IFSelect_SessionPilot {
+%extend IFSelect_SelectRootComps {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IFSelect_SessionPilot::~IFSelect_SessionPilot %{
+%feature("shadow") IFSelect_SelectRootComps::~IFSelect_SelectRootComps %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -7445,7 +5885,476 @@ def __del__(self):
 		pass
 %}
 
-%extend IFSelect_SessionPilot {
+%extend IFSelect_SelectRootComps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_TSeqOfSelection;
+class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_TSeqOfSelection();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const IFSelect_TSeqOfSelection & Assign(const IFSelect_TSeqOfSelection &Other);
+		%feature("autodoc", "1");
+		const IFSelect_TSeqOfSelection & operator=(const IFSelect_TSeqOfSelection &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_IFSelect_Selection &T);
+		%feature("autodoc", "1");
+		void Append(IFSelect_TSeqOfSelection & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_IFSelect_Selection &T);
+		%feature("autodoc", "1");
+		void Prepend(IFSelect_TSeqOfSelection & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_IFSelect_Selection &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_IFSelect_Selection &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & First() const;
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, IFSelect_TSeqOfSelection & S);
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IFSelect_Selection &I);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") IFSelect_TSeqOfSelection::~IFSelect_TSeqOfSelection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_TSeqOfSelection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SelectModelEntities;
+class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectModelEntities();
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator CompleteResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectModelEntities {
+	Handle_IFSelect_SelectModelEntities GetHandle() {
+	return *(Handle_IFSelect_SelectModelEntities*) &$self;
+	}
+};
+%extend IFSelect_SelectModelEntities {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SelectModelEntities::~IFSelect_SelectModelEntities %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SelectModelEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_DispGlobal;
+class IFSelect_DispGlobal : public IFSelect_Dispatch {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_DispGlobal();
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc","LimitedMax(Standard_Integer nbent) -> Standard_Integer");
+
+		virtual		Standard_Boolean LimitedMax(const Standard_Integer nbent, Standard_Integer &OutValue) const;
+		%feature("autodoc","PacketsCount(const G) -> Standard_Integer");
+
+		virtual		Standard_Boolean PacketsCount(const Interface_Graph &G, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_DispGlobal {
+	Handle_IFSelect_DispGlobal GetHandle() {
+	return *(Handle_IFSelect_DispGlobal*) &$self;
+	}
+};
+%extend IFSelect_DispGlobal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_DispGlobal::~IFSelect_DispGlobal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_DispGlobal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SequenceOfInterfaceModel;
+class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SequenceOfInterfaceModel();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const IFSelect_SequenceOfInterfaceModel & Assign(const IFSelect_SequenceOfInterfaceModel &Other);
+		%feature("autodoc", "1");
+		const IFSelect_SequenceOfInterfaceModel & operator=(const IFSelect_SequenceOfInterfaceModel &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Interface_InterfaceModel &T);
+		%feature("autodoc", "1");
+		void Append(IFSelect_SequenceOfInterfaceModel & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Interface_InterfaceModel &T);
+		%feature("autodoc", "1");
+		void Prepend(IFSelect_SequenceOfInterfaceModel & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Interface_InterfaceModel &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, IFSelect_SequenceOfInterfaceModel & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Interface_InterfaceModel &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, IFSelect_SequenceOfInterfaceModel & S);
+		%feature("autodoc", "1");
+		const Handle_Interface_InterfaceModel & First() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_InterfaceModel & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, IFSelect_SequenceOfInterfaceModel & S);
+		%feature("autodoc", "1");
+		const Handle_Interface_InterfaceModel & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Interface_InterfaceModel & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Interface_InterfaceModel &I);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") IFSelect_SequenceOfInterfaceModel::~IFSelect_SequenceOfInterfaceModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SequenceOfInterfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_IntParam;
+class IFSelect_IntParam : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_IntParam();
+		%feature("autodoc", "1");
+		void SetStaticName(const char * statname);
+		%feature("autodoc", "1");
+		Standard_Integer Value() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer val);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_IntParam {
+	Handle_IFSelect_IntParam GetHandle() {
+	return *(Handle_IFSelect_IntParam*) &$self;
+	}
+};
+%extend IFSelect_IntParam {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_IntParam::~IFSelect_IntParam %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_IntParam {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SelectRange;
+class IFSelect_SelectRange : public IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectRange();
+		%feature("autodoc", "1");
+		void SetRange(const Handle_IFSelect_IntParam &rankfrom, const Handle_IFSelect_IntParam &rankto);
+		%feature("autodoc", "1");
+		void SetOne(const Handle_IFSelect_IntParam &rank);
+		%feature("autodoc", "1");
+		void SetFrom(const Handle_IFSelect_IntParam &rankfrom);
+		%feature("autodoc", "1");
+		void SetUntil(const Handle_IFSelect_IntParam &rankto);
+		%feature("autodoc", "1");
+		Standard_Boolean HasLower() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerValue() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasUpper() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam Upper() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperValue() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExtractLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectRange {
+	Handle_IFSelect_SelectRange GetHandle() {
+	return *(Handle_IFSelect_SelectRange*) &$self;
+	}
+};
+%extend IFSelect_SelectRange {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SelectRange::~IFSelect_SelectRange %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SelectRange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_GraphCounter;
+class IFSelect_GraphCounter : public IFSelect_SignCounter {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_GraphCounter(const Standard_Boolean withmap=1, const Standard_Boolean withlist=0);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDeduct Applied() const;
+		%feature("autodoc", "1");
+		void SetApplied(const Handle_IFSelect_SelectDeduct &sel);
+		%feature("autodoc", "1");
+		virtual		void AddWithGraph(const Handle_TColStd_HSequenceOfTransient &list, const Interface_Graph &graph);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_GraphCounter {
+	Handle_IFSelect_GraphCounter GetHandle() {
+	return *(Handle_IFSelect_GraphCounter*) &$self;
+	}
+};
+%extend IFSelect_GraphCounter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_GraphCounter::~IFSelect_GraphCounter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_GraphCounter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SelectFlag;
+class IFSelect_SelectFlag : public IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectFlag(const char * flagname);
+		%feature("autodoc", "1");
+		char * FlagName() const;
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExtractLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectFlag {
+	Handle_IFSelect_SelectFlag GetHandle() {
+	return *(Handle_IFSelect_SelectFlag*) &$self;
+	}
+};
+%extend IFSelect_SelectFlag {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SelectFlag::~IFSelect_SelectFlag %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SelectFlag {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_ListEditor;
+class IFSelect_ListEditor : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_ListEditor();
+		%feature("autodoc", "1");
+		IFSelect_ListEditor(const Handle_Interface_TypedValue &def, const Standard_Integer max=0);
+		%feature("autodoc", "1");
+		void LoadModel(const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		void LoadValues(const Handle_TColStd_HSequenceOfHAsciiString &vals);
+		%feature("autodoc", "1");
+		void SetTouched();
+		%feature("autodoc", "1");
+		void ClearEdit();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean LoadEdited(const Handle_TColStd_HSequenceOfHAsciiString &list);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetValue(const Standard_Integer num, const Handle_TCollection_HAsciiString &val);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AddValue(const Handle_TCollection_HAsciiString &val, const Standard_Integer atnum=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Remove(const Standard_Integer num=0, const Standard_Integer howmany=1);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHAsciiString OriginalValues() const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHAsciiString EditedValues() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbValues(const Standard_Boolean edited=1) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Value(const Standard_Integer num, const Standard_Boolean edited=1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsChanged(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsModified(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAdded(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTouched() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_ListEditor {
+	Handle_IFSelect_ListEditor GetHandle() {
+	return *(Handle_IFSelect_ListEditor*) &$self;
+	}
+};
+%extend IFSelect_ListEditor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_ListEditor::~IFSelect_ListEditor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_ListEditor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7517,6 +6426,1132 @@ def __del__(self):
 };
 
 
+%nodefaultctor IFSelect_SessionDumper;
+class IFSelect_SessionDumper : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_SessionDumper First();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionDumper Next() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean WriteOwn(IFSelect_SessionFile & file, const Handle_Standard_Transient &item) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean ReadOwn(IFSelect_SessionFile & file, const TCollection_AsciiString &type, Handle_Standard_Transient & item) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SessionDumper {
+	Handle_IFSelect_SessionDumper GetHandle() {
+	return *(Handle_IFSelect_SessionDumper*) &$self;
+	}
+};
+%extend IFSelect_SessionDumper {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SessionDumper::~IFSelect_SessionDumper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SessionDumper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_BasicDumper;
+class IFSelect_BasicDumper : public IFSelect_SessionDumper {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_BasicDumper();
+
+};
+%extend IFSelect_BasicDumper {
+	Handle_IFSelect_BasicDumper GetHandle() {
+	return *(Handle_IFSelect_BasicDumper*) &$self;
+	}
+};
+%extend IFSelect_BasicDumper {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_BasicDumper::~IFSelect_BasicDumper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_BasicDumper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_AppliedModifiers;
+class IFSelect_AppliedModifiers : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_AppliedModifiers(const Standard_Integer nbmax, const Standard_Integer nbent);
+		%feature("autodoc", "1");
+		Standard_Boolean AddModif(const Handle_IFSelect_GeneralModifier &modif);
+		%feature("autodoc", "1");
+		Standard_Boolean AddNum(const Standard_Integer nument);
+		%feature("autodoc", "1");
+		Standard_Integer Count() const;
+		%feature("autodoc","Item(Standard_Integer num) -> Standard_Integer");
+
+		Standard_Boolean Item(const Standard_Integer num, Handle_IFSelect_GeneralModifier & modif, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		Standard_Integer ItemNum(const Standard_Integer nument) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfInteger ItemList() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsForAll() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_AppliedModifiers {
+	Handle_IFSelect_AppliedModifiers GetHandle() {
+	return *(Handle_IFSelect_AppliedModifiers*) &$self;
+	}
+};
+%extend IFSelect_AppliedModifiers {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_AppliedModifiers::~IFSelect_AppliedModifiers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_AppliedModifiers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_ShareOut;
+class IFSelect_ShareOut : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_ShareOut();
+		%feature("autodoc", "1");
+		void Clear(const Standard_Boolean onlydisp);
+		%feature("autodoc", "1");
+		void ClearResult(const Standard_Boolean alsoname);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveItem(const Handle_Standard_Transient &item);
+		%feature("autodoc", "1");
+		Standard_Integer LastRun() const;
+		%feature("autodoc", "1");
+		void SetLastRun(const Standard_Integer last);
+		%feature("autodoc", "1");
+		Standard_Integer NbDispatches() const;
+		%feature("autodoc", "1");
+		Standard_Integer DispatchRank(const Handle_IFSelect_Dispatch &disp) const;
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Dispatch & Dispatch(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void AddDispatch(const Handle_IFSelect_Dispatch &disp);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveDispatch(const Standard_Integer rank);
+		%feature("autodoc", "1");
+		void AddModifier(const Handle_IFSelect_GeneralModifier &modifier, const Standard_Integer atnum);
+		%feature("autodoc", "1");
+		void AddModifier(const Handle_IFSelect_GeneralModifier &modifier, const Standard_Integer dispnum, const Standard_Integer atnum);
+		%feature("autodoc", "1");
+		void AddModif(const Handle_IFSelect_GeneralModifier &modifier, const Standard_Boolean formodel, const Standard_Integer atnum=0);
+		%feature("autodoc", "1");
+		Standard_Integer NbModifiers(const Standard_Boolean formodel) const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_GeneralModifier GeneralModifier(const Standard_Boolean formodel, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_Modifier ModelModifier(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer ModifierRank(const Handle_IFSelect_GeneralModifier &modifier) const;
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveModifier(const Standard_Boolean formodel, const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean ChangeModifierRank(const Standard_Boolean formodel, const Standard_Integer befor, const Standard_Integer after);
+		%feature("autodoc", "1");
+		Standard_Boolean SetRootName(const Standard_Integer num, const Handle_TCollection_HAsciiString &name);
+		%feature("autodoc", "1");
+		Standard_Boolean HasRootName(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString RootName(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer RootNumber(const Handle_TCollection_HAsciiString &name) const;
+		%feature("autodoc", "1");
+		void SetPrefix(const Handle_TCollection_HAsciiString &pref);
+		%feature("autodoc", "1");
+		Standard_Boolean SetDefaultRootName(const Handle_TCollection_HAsciiString &defrt);
+		%feature("autodoc", "1");
+		void SetExtension(const Handle_TCollection_HAsciiString &ext);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Prefix() const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString DefaultRootName() const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Extension() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString FileName(const Standard_Integer dnum, const Standard_Integer pnum, const Standard_Integer nbpack=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_ShareOut {
+	Handle_IFSelect_ShareOut GetHandle() {
+	return *(Handle_IFSelect_ShareOut*) &$self;
+	}
+};
+%extend IFSelect_ShareOut {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_ShareOut::~IFSelect_ShareOut %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_ShareOut {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_EditForm;
+class IFSelect_EditForm : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_EditForm(const Handle_IFSelect_Editor &editor, const Standard_Boolean readonly, const Standard_Boolean undoable, const char * label="");
+		%feature("autodoc", "1");
+		IFSelect_EditForm(const Handle_IFSelect_Editor &editor, const TColStd_SequenceOfInteger &nums, const Standard_Boolean readonly, const Standard_Boolean undoable, const char * label="");
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetEditKeepStatus() {
+				return (Standard_Boolean) $self->EditKeepStatus();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetEditKeepStatus(Standard_Boolean value ) {
+				$self->EditKeepStatus()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		char * Label() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsLoaded() const;
+		%feature("autodoc", "1");
+		void ClearData();
+		%feature("autodoc", "1");
+		void SetData(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		void SetEntity(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void SetModel(const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Entity() const;
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor Editor() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsComplete() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbValues(const Standard_Boolean editable) const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberFromRank(const Standard_Integer rank) const;
+		%feature("autodoc", "1");
+		Standard_Integer RankFromNumber(const Standard_Integer number) const;
+		%feature("autodoc", "1");
+		Standard_Integer NameNumber(const char * name) const;
+		%feature("autodoc", "1");
+		Standard_Integer NameRank(const char * name) const;
+		%feature("autodoc", "1");
+		void LoadDefault();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean LoadData(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		Standard_Boolean LoadEntity(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		Standard_Boolean LoadModel(const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		Standard_Boolean LoadData();
+		%feature("autodoc", "1");
+		Handle_IFSelect_ListEditor ListEditor(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void LoadValue(const Standard_Integer num, const Handle_TCollection_HAsciiString &val);
+		%feature("autodoc", "1");
+		void LoadList(const Standard_Integer num, const Handle_TColStd_HSequenceOfHAsciiString &list);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString OriginalValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHAsciiString OriginalList(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString EditedValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHAsciiString EditedList(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsModified(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTouched(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Modify(const Standard_Integer num, const Handle_TCollection_HAsciiString &newval, const Standard_Boolean enforce=0);
+		%feature("autodoc", "1");
+		Standard_Boolean ModifyList(const Standard_Integer num, const Handle_IFSelect_ListEditor &edited, const Standard_Boolean enforce=0);
+		%feature("autodoc", "1");
+		Standard_Boolean ModifyListValue(const Standard_Integer num, const Handle_TColStd_HSequenceOfHAsciiString &list, const Standard_Boolean enforce=0);
+		%feature("autodoc", "1");
+		Standard_Boolean Touch(const Standard_Integer num, const Handle_TCollection_HAsciiString &newval);
+		%feature("autodoc", "1");
+		Standard_Boolean TouchList(const Standard_Integer num, const Handle_TColStd_HSequenceOfHAsciiString &newlist);
+		%feature("autodoc", "1");
+		void ClearEdit(const Standard_Integer num=0);
+		%feature("autodoc", "1");
+		void PrintDefs(const Handle_Message_Messenger &S) const;
+		%feature("autodoc", "1");
+		void PrintValues(const Handle_Message_Messenger &S, const Standard_Integer what, const Standard_Boolean names, const Standard_Boolean alsolist=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Apply();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean ApplyData(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		Standard_Boolean Undo();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_EditForm {
+	Handle_IFSelect_EditForm GetHandle() {
+	return *(Handle_IFSelect_EditForm*) &$self;
+	}
+};
+%extend IFSelect_EditForm {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_EditForm::~IFSelect_EditForm %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_EditForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SessionFile;
+class IFSelect_SessionFile {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SessionFile(const Handle_IFSelect_WorkSession &WS);
+		%feature("autodoc", "1");
+		IFSelect_SessionFile(const Handle_IFSelect_WorkSession &WS, const char * filename);
+		%feature("autodoc", "1");
+		void ClearLines();
+		%feature("autodoc", "1");
+		Standard_Integer NbLines() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Line(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void AddLine(const char * line);
+		%feature("autodoc", "1");
+		void RemoveLastLine();
+		%feature("autodoc", "1");
+		Standard_Boolean WriteFile(const char * name);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadFile(const char * name);
+		%feature("autodoc", "1");
+		Standard_Boolean RecognizeFile(const char * headerline);
+		%feature("autodoc", "1");
+		Standard_Integer Write(const char * filename);
+		%feature("autodoc", "1");
+		Standard_Integer Read(const char * filename);
+		%feature("autodoc", "1");
+		Standard_Integer WriteSession();
+		%feature("autodoc", "1");
+		Standard_Integer WriteEnd();
+		%feature("autodoc", "1");
+		void WriteLine(const char * line, const Standard_Character follow=0);
+		%feature("autodoc", "1");
+		Standard_Boolean WriteOwn(const Handle_Standard_Transient &item);
+		%feature("autodoc", "1");
+		Standard_Integer ReadSession();
+		%feature("autodoc", "1");
+		Standard_Integer ReadEnd();
+		%feature("autodoc", "1");
+		Standard_Boolean ReadLine();
+		%feature("autodoc", "1");
+		void SplitLine(const char * line);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadOwn(Handle_Standard_Transient & item);
+		%feature("autodoc", "1");
+		void AddItem(const Handle_Standard_Transient &item, const Standard_Boolean active=1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkSession WorkSession() const;
+		%feature("autodoc", "1");
+		void NewItem(const Standard_Integer ident, const Handle_Standard_Transient &par);
+		%feature("autodoc", "1");
+		void SetOwn(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		void SendVoid();
+		%feature("autodoc", "1");
+		void SendItem(const Handle_Standard_Transient &par);
+		%feature("autodoc", "1");
+		void SendText(const char * text);
+		%feature("autodoc", "1");
+		void SetLastGeneral(const Standard_Integer lastgen);
+		%feature("autodoc", "1");
+		Standard_Integer NbParams() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsVoid(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsText(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & ParamValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString TextValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient ItemValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%feature("shadow") IFSelect_SessionFile::~IFSelect_SessionFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SessionFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SelectUnion;
+class IFSelect_SelectUnion : public IFSelect_SelectCombine {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectUnion();
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectUnion {
+	Handle_IFSelect_SelectUnion GetHandle() {
+	return *(Handle_IFSelect_SelectUnion*) &$self;
+	}
+};
+%extend IFSelect_SelectUnion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SelectUnion::~IFSelect_SelectUnion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SelectUnion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SignValidity;
+class IFSelect_SignValidity : public IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SignValidity();
+		%feature("autodoc", "1");
+		static		char * CVal(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SignValidity {
+	Handle_IFSelect_SignValidity GetHandle() {
+	return *(Handle_IFSelect_SignValidity*) &$self;
+	}
+};
+%extend IFSelect_SignValidity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SignValidity::~IFSelect_SignValidity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SignValidity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SignAncestor;
+class IFSelect_SignAncestor : public IFSelect_SignType {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SignAncestor(const Standard_Boolean nopk=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SignAncestor {
+	Handle_IFSelect_SignAncestor GetHandle() {
+	return *(Handle_IFSelect_SignAncestor*) &$self;
+	}
+};
+%extend IFSelect_SignAncestor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SignAncestor::~IFSelect_SignAncestor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SignAncestor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SignCategory;
+class IFSelect_SignCategory : public IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SignCategory();
+		%feature("autodoc", "1");
+		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SignCategory {
+	Handle_IFSelect_SignCategory GetHandle() {
+	return *(Handle_IFSelect_SignCategory*) &$self;
+	}
+};
+%extend IFSelect_SignCategory {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SignCategory::~IFSelect_SignCategory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SignCategory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SelectSignature;
+class IFSelect_SelectSignature : public IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectSignature(const Handle_IFSelect_Signature &matcher, const char * signtext, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		IFSelect_SelectSignature(const Handle_IFSelect_Signature &matcher, const TCollection_AsciiString &signtext, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		IFSelect_SelectSignature(const Handle_IFSelect_SignCounter &matcher, const char * signtext, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Signature Signature() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCounter Counter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SortInGraph(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & SignatureText() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsExact() const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExtractLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectSignature {
+	Handle_IFSelect_SelectSignature GetHandle() {
+	return *(Handle_IFSelect_SelectSignature*) &$self;
+	}
+};
+%extend IFSelect_SelectSignature {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SelectSignature::~IFSelect_SelectSignature %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SelectSignature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SelectEntityNumber;
+class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectEntityNumber();
+		%feature("autodoc", "1");
+		void SetNumber(const Handle_IFSelect_IntParam &num);
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam Number() const;
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectEntityNumber {
+	Handle_IFSelect_SelectEntityNumber GetHandle() {
+	return *(Handle_IFSelect_SelectEntityNumber*) &$self;
+	}
+};
+%extend IFSelect_SelectEntityNumber {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SelectEntityNumber::~IFSelect_SelectEntityNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SelectEntityNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_ParamEditor;
+class IFSelect_ParamEditor : public IFSelect_Editor {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_ParamEditor(const Standard_Integer nbmax=100, const char * label="");
+		%feature("autodoc", "1");
+		void AddValue(const Handle_Interface_TypedValue &val, const char * shortname="");
+		%feature("autodoc", "1");
+		void AddConstantText(const char * val, const char * shortname, const char * completename="");
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize(const Handle_IFSelect_EditForm &form) const;
+		%feature("autodoc", "1");
+		virtual		Handle_TCollection_HAsciiString StringValue(const Handle_IFSelect_EditForm &form, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Load(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Apply(const Handle_IFSelect_EditForm &form, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		static		Handle_IFSelect_ParamEditor StaticEditor(const Handle_TColStd_HSequenceOfHAsciiString &list, const char * label="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_ParamEditor {
+	Handle_IFSelect_ParamEditor GetHandle() {
+	return *(Handle_IFSelect_ParamEditor*) &$self;
+	}
+};
+%extend IFSelect_ParamEditor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_ParamEditor::~IFSelect_ParamEditor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_ParamEditor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SignMultiple;
+class IFSelect_SignMultiple : public IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SignMultiple(const char * name);
+		%feature("autodoc", "1");
+		void Add(const Handle_IFSelect_Signature &subsign, const Standard_Integer width=0, const Standard_Boolean maxi=0);
+		%feature("autodoc", "1");
+		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SignMultiple {
+	Handle_IFSelect_SignMultiple GetHandle() {
+	return *(Handle_IFSelect_SignMultiple*) &$self;
+	}
+};
+%extend IFSelect_SignMultiple {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SignMultiple::~IFSelect_SignMultiple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SignMultiple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SelectRoots;
+class IFSelect_SelectRoots : public IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectRoots();
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExtractLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectRoots {
+	Handle_IFSelect_SelectRoots GetHandle() {
+	return *(Handle_IFSelect_SelectRoots*) &$self;
+	}
+};
+%extend IFSelect_SelectRoots {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SelectRoots::~IFSelect_SelectRoots %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SelectRoots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_ContextWrite;
+class IFSelect_ContextWrite {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_ContextWrite(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &proto, const Handle_IFSelect_AppliedModifiers &applieds, const char * filename);
+		%feature("autodoc", "1");
+		IFSelect_ContextWrite(const Handle_Interface_HGraph &hgraph, const Handle_Interface_Protocol &proto, const Handle_IFSelect_AppliedModifiers &applieds, const char * filename);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		Handle_Interface_Protocol Protocol() const;
+		%feature("autodoc", "1");
+		char * FileName() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_AppliedModifiers AppliedModifiers() const;
+		%feature("autodoc", "1");
+		const Interface_Graph & Graph();
+		%feature("autodoc", "1");
+		Standard_Integer NbModifiers() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SetModifier(const Standard_Integer numod);
+		%feature("autodoc", "1");
+		Handle_IFSelect_GeneralModifier FileModifier() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsForNone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsForAll() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbEntities() const;
+		%feature("autodoc", "1");
+		void Start();
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Value() const;
+		%feature("autodoc", "1");
+		void AddCheck(const Handle_Interface_Check &check);
+		%feature("autodoc", "1");
+		void AddWarning(const Handle_Standard_Transient &start, const char * mess, const char * orig="");
+		%feature("autodoc", "1");
+		void AddFail(const Handle_Standard_Transient &start, const char * mess, const char * orig="");
+		%feature("autodoc", "1");
+		Handle_Interface_Check CCheck(const Standard_Integer num=0);
+		%feature("autodoc", "1");
+		Handle_Interface_Check CCheck(const Handle_Standard_Transient &start);
+		%feature("autodoc", "1");
+		Interface_CheckIterator CheckList() const;
+
+};
+%feature("shadow") IFSelect_ContextWrite::~IFSelect_ContextWrite %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_ContextWrite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SelectInList;
+class IFSelect_SelectInList : public IFSelect_SelectAnyList {
+	public:
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Transient ListedEntity(const Standard_Integer num, const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		void FillResult(const Standard_Integer n1, const Standard_Integer n2, const Handle_Standard_Transient &ent, Interface_EntityIterator & result) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectInList {
+	Handle_IFSelect_SelectInList GetHandle() {
+	return *(Handle_IFSelect_SelectInList*) &$self;
+	}
+};
+%extend IFSelect_SelectInList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SelectInList::~IFSelect_SelectInList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SelectInList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SequenceNodeOfSequenceOfGeneralModifier;
+class IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SequenceNodeOfSequenceOfGeneralModifier(const Handle_IFSelect_GeneralModifier &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_IFSelect_GeneralModifier & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
+	Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier GetHandle() {
+	return *(Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier*) &$self;
+	}
+};
+%extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SequenceNodeOfSequenceOfGeneralModifier::~IFSelect_SequenceNodeOfSequenceOfGeneralModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_HSeqOfSelection;
+class IFSelect_HSeqOfSelection : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_HSeqOfSelection();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_IFSelect_Selection &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_IFSelect_HSeqOfSelection &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_IFSelect_Selection &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_IFSelect_HSeqOfSelection &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_IFSelect_HSeqOfSelection &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_IFSelect_HSeqOfSelection &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_IFSelect_HSeqOfSelection Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_IFSelect_Selection &anItem);
+		%feature("autodoc", "1");
+		const Handle_IFSelect_Selection & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const IFSelect_TSeqOfSelection & Sequence() const;
+		%feature("autodoc", "1");
+		IFSelect_TSeqOfSelection & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_IFSelect_HSeqOfSelection ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_HSeqOfSelection {
+	Handle_IFSelect_HSeqOfSelection GetHandle() {
+	return *(Handle_IFSelect_HSeqOfSelection*) &$self;
+	}
+};
+%extend IFSelect_HSeqOfSelection {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_HSeqOfSelection::~IFSelect_HSeqOfSelection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_HSeqOfSelection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_DispPerOne;
+class IFSelect_DispPerOne : public IFSelect_Dispatch {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_DispPerOne();
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc","LimitedMax(Standard_Integer nbent) -> Standard_Integer");
+
+		virtual		Standard_Boolean LimitedMax(const Standard_Integer nbent, Standard_Integer &OutValue) const;
+		%feature("autodoc","PacketsCount(const G) -> Standard_Integer");
+
+		virtual		Standard_Boolean PacketsCount(const Interface_Graph &G, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_DispPerOne {
+	Handle_IFSelect_DispPerOne GetHandle() {
+	return *(Handle_IFSelect_DispPerOne*) &$self;
+	}
+};
+%extend IFSelect_DispPerOne {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_DispPerOne::~IFSelect_DispPerOne %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_DispPerOne {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFSelect_SelectIncorrectEntities;
+class IFSelect_SelectIncorrectEntities : public IFSelect_SelectFlag {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectIncorrectEntities();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectIncorrectEntities {
+	Handle_IFSelect_SelectIncorrectEntities GetHandle() {
+	return *(Handle_IFSelect_SelectIncorrectEntities*) &$self;
+	}
+};
+%extend IFSelect_SelectIncorrectEntities {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IFSelect_SelectIncorrectEntities::~IFSelect_SelectIncorrectEntities %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFSelect_SelectIncorrectEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IFSelect_SequenceNodeOfSequenceOfInterfaceModel;
 class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNode {
 	public:
@@ -7535,7 +7570,7 @@ class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNo
 };
 %extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SequenceNodeOfSequenceOfInterfaceModel::~IFSelect_SequenceNodeOfSequenceOfInterfaceModel %{
@@ -7548,47 +7583,6 @@ def __del__(self):
 %}
 
 %extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectRootComps;
-class IFSelect_SelectRootComps : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectRootComps();
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectRootComps {
-	Handle_IFSelect_SelectRootComps GetHandle() {
-	return *(Handle_IFSelect_SelectRootComps*) &$self;
-	}
-};
-%extend IFSelect_SelectRootComps {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IFSelect_SelectRootComps::~IFSelect_SelectRootComps %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFSelect_SelectRootComps {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7615,7 +7609,7 @@ class IFSelect_SelectSharing : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectSharing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_SelectSharing::~IFSelect_SelectSharing %{
@@ -7634,28 +7628,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor IFSelect_SelectInList;
-class IFSelect_SelectInList : public IFSelect_SelectAnyList {
+%nodefaultctor IFSelect_SelectIntersection;
+class IFSelect_SelectIntersection : public IFSelect_SelectCombine {
 	public:
 		%feature("autodoc", "1");
-		virtual		Handle_Standard_Transient ListedEntity(const Standard_Integer num, const Handle_Standard_Transient &ent) const;
+		IFSelect_SelectIntersection();
 		%feature("autodoc", "1");
-		virtual		void FillResult(const Standard_Integer n1, const Standard_Integer n2, const Handle_Standard_Transient &ent, Interface_EntityIterator & result) const;
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IFSelect_SelectInList {
-	Handle_IFSelect_SelectInList GetHandle() {
-	return *(Handle_IFSelect_SelectInList*) &$self;
+%extend IFSelect_SelectIntersection {
+	Handle_IFSelect_SelectIntersection GetHandle() {
+	return *(Handle_IFSelect_SelectIntersection*) &$self;
 	}
 };
-%extend IFSelect_SelectInList {
+%extend IFSelect_SelectIntersection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IFSelect_SelectInList::~IFSelect_SelectInList %{
+%feature("shadow") IFSelect_SelectIntersection::~IFSelect_SelectIntersection %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -7664,7 +7660,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IFSelect_SelectInList {
+%extend IFSelect_SelectIntersection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7691,7 +7687,7 @@ class IFSelect_ModifReorder : public IFSelect_Modifier {
 };
 %extend IFSelect_ModifReorder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IFSelect_ModifReorder::~IFSelect_ModifReorder %{

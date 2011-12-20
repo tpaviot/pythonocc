@@ -78,6 +78,44 @@ enum BOPTools_CheckStatus {
 
 
 
+%nodefaultctor Handle_BOPTools_ListNodeOfListOfPaveBlock;
+class Handle_BOPTools_ListNodeOfListOfPaveBlock : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfPaveBlock();
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfPaveBlock(const Handle_BOPTools_ListNodeOfListOfPaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfPaveBlock(const BOPTools_ListNodeOfListOfPaveBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfPaveBlock & operator=(const Handle_BOPTools_ListNodeOfListOfPaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfPaveBlock & operator=(const BOPTools_ListNodeOfListOfPaveBlock *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BOPTools_ListNodeOfListOfPaveBlock DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOPTools_ListNodeOfListOfPaveBlock {
+	BOPTools_ListNodeOfListOfPaveBlock* GetObject() {
+	return (BOPTools_ListNodeOfListOfPaveBlock*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BOPTools_ListNodeOfListOfPaveBlock::~Handle_BOPTools_ListNodeOfListOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BOPTools_ListNodeOfListOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BOPTools_SequenceNodeOfSequenceOfCurves;
 class Handle_BOPTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection_SeqNode {
 	public:
@@ -230,44 +268,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BOPTools_ListNodeOfListOfCheckResults;
-class Handle_BOPTools_ListNodeOfListOfCheckResults : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCheckResults();
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCheckResults(const Handle_BOPTools_ListNodeOfListOfCheckResults &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCheckResults(const BOPTools_ListNodeOfListOfCheckResults *anItem);
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCheckResults & operator=(const Handle_BOPTools_ListNodeOfListOfCheckResults &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCheckResults & operator=(const BOPTools_ListNodeOfListOfCheckResults *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BOPTools_ListNodeOfListOfCheckResults DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOPTools_ListNodeOfListOfCheckResults {
-	BOPTools_ListNodeOfListOfCheckResults* GetObject() {
-	return (BOPTools_ListNodeOfListOfCheckResults*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BOPTools_ListNodeOfListOfCheckResults::~Handle_BOPTools_ListNodeOfListOfCheckResults %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BOPTools_ListNodeOfListOfCheckResults {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet;
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public Handle_TCollection_MapNode {
 	public:
@@ -382,6 +382,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BOPTools_ListNodeOfListOfCheckResults;
+class Handle_BOPTools_ListNodeOfListOfCheckResults : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfCheckResults();
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfCheckResults(const Handle_BOPTools_ListNodeOfListOfCheckResults &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfCheckResults(const BOPTools_ListNodeOfListOfCheckResults *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfCheckResults & operator=(const Handle_BOPTools_ListNodeOfListOfCheckResults &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfCheckResults & operator=(const BOPTools_ListNodeOfListOfCheckResults *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BOPTools_ListNodeOfListOfCheckResults DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOPTools_ListNodeOfListOfCheckResults {
+	BOPTools_ListNodeOfListOfCheckResults* GetObject() {
+	return (BOPTools_ListNodeOfListOfCheckResults*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BOPTools_ListNodeOfListOfCheckResults::~Handle_BOPTools_ListNodeOfListOfCheckResults %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BOPTools_ListNodeOfListOfCheckResults {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo;
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public Handle_TCollection_MapNode {
 	public:
@@ -458,44 +496,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BOPTools_ListNodeOfListOfPaveBlock;
-class Handle_BOPTools_ListNodeOfListOfPaveBlock : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPaveBlock();
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPaveBlock(const Handle_BOPTools_ListNodeOfListOfPaveBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPaveBlock(const BOPTools_ListNodeOfListOfPaveBlock *anItem);
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPaveBlock & operator=(const Handle_BOPTools_ListNodeOfListOfPaveBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfPaveBlock & operator=(const BOPTools_ListNodeOfListOfPaveBlock *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BOPTools_ListNodeOfListOfPaveBlock DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOPTools_ListNodeOfListOfPaveBlock {
-	BOPTools_ListNodeOfListOfPaveBlock* GetObject() {
-	return (BOPTools_ListNodeOfListOfPaveBlock*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BOPTools_ListNodeOfListOfPaveBlock::~Handle_BOPTools_ListNodeOfListOfPaveBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BOPTools_ListNodeOfListOfPaveBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfShapeEnum;
 class Handle_BOPTools_ListNodeOfListOfShapeEnum : public Handle_TCollection_MapNode {
 	public:
@@ -528,6 +528,44 @@ def __del__(self):
 %}
 
 %extend Handle_BOPTools_ListNodeOfListOfShapeEnum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock;
+class Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock();
+		%feature("autodoc", "1");
+		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock(const Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock(const BOPTools_SequenceNodeOfSequenceOfPaveBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock & operator=(const Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock & operator=(const BOPTools_SequenceNodeOfSequenceOfPaveBlock *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock {
+	BOPTools_SequenceNodeOfSequenceOfPaveBlock* GetObject() {
+	return (BOPTools_SequenceNodeOfSequenceOfPaveBlock*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock::~Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -604,44 +642,6 @@ def __del__(self):
 %}
 
 %extend Handle_BOPTools_ListNodeOfListOfCoupleOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock;
-class Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock();
-		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock(const Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock(const BOPTools_SequenceNodeOfSequenceOfPaveBlock *anItem);
-		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock & operator=(const Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock & operator=(const BOPTools_SequenceNodeOfSequenceOfPaveBlock *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock {
-	BOPTools_SequenceNodeOfSequenceOfPaveBlock* GetObject() {
-	return (BOPTools_SequenceNodeOfSequenceOfPaveBlock*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock::~Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -756,43 +756,6 @@ def __del__(self):
 %}
 
 %extend Handle_BOPTools_ListNodeOfListOfPave {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTools_Interference;
-class BOPTools_Interference {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_Interference();
-		%feature("autodoc", "1");
-		BOPTools_Interference(const Standard_Integer aWith, const BooleanOperations_KindOfInterference aType, const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetWith(const Standard_Integer aWith);
-		%feature("autodoc", "1");
-		void SetType(const BooleanOperations_KindOfInterference aType);
-		%feature("autodoc", "1");
-		void SetIndex(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		Standard_Integer With() const;
-		%feature("autodoc", "1");
-		BooleanOperations_KindOfInterference Type() const;
-		%feature("autodoc", "1");
-		Standard_Integer Index() const;
-
-};
-%feature("shadow") BOPTools_Interference::~BOPTools_Interference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_Interference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -920,6 +883,39 @@ def __del__(self):
 };
 
 
+%nodefaultctor BOPTools_ListIteratorOfListOfPave;
+class BOPTools_ListIteratorOfListOfPave {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_ListIteratorOfListOfPave();
+		%feature("autodoc", "1");
+		BOPTools_ListIteratorOfListOfPave(const BOPTools_ListOfPave &L);
+		%feature("autodoc", "1");
+		void Initialize(const BOPTools_ListOfPave &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BOPTools_Pave & Value() const;
+
+};
+%feature("shadow") BOPTools_ListIteratorOfListOfPave::~BOPTools_ListIteratorOfListOfPave %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_ListIteratorOfListOfPave {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BOPTools_SequenceNodeOfSequenceOfPaveBlock;
 class BOPTools_SequenceNodeOfSequenceOfPaveBlock : public TCollection_SeqNode {
 	public:
@@ -938,7 +934,7 @@ class BOPTools_SequenceNodeOfSequenceOfPaveBlock : public TCollection_SeqNode {
 };
 %extend BOPTools_SequenceNodeOfSequenceOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_SequenceNodeOfSequenceOfPaveBlock::~BOPTools_SequenceNodeOfSequenceOfPaveBlock %{
@@ -1110,71 +1106,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_SequenceOfCurves;
-class BOPTools_SequenceOfCurves : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_SequenceOfCurves();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const BOPTools_SequenceOfCurves & Assign(const BOPTools_SequenceOfCurves &Other);
-		%feature("autodoc", "1");
-		const BOPTools_SequenceOfCurves & operator=(const BOPTools_SequenceOfCurves &Other);
-		%feature("autodoc", "1");
-		void Append(const BOPTools_Curve &T);
-		%feature("autodoc", "1");
-		void Append(BOPTools_SequenceOfCurves & S);
-		%feature("autodoc", "1");
-		void Prepend(const BOPTools_Curve &T);
-		%feature("autodoc", "1");
-		void Prepend(BOPTools_SequenceOfCurves & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const BOPTools_Curve &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const BOPTools_Curve &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
-		%feature("autodoc", "1");
-		const BOPTools_Curve & First() const;
-		%feature("autodoc", "1");
-		const BOPTools_Curve & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
-		%feature("autodoc", "1");
-		const BOPTools_Curve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BOPTools_Curve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const BOPTools_Curve &I);
-		%feature("autodoc", "1");
-		BOPTools_Curve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BOPTools_Curve & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") BOPTools_SequenceOfCurves::~BOPTools_SequenceOfCurves %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_SequenceOfCurves {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BOPTools_PointBetween;
 class BOPTools_PointBetween {
 	public:
@@ -1229,7 +1160,7 @@ class BOPTools_ListNodeOfListOfPave : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfPave {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfPave::~BOPTools_ListNodeOfListOfPave %{
@@ -1291,18 +1222,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_ESInterference;
-class BOPTools_ESInterference : public BOPTools_ShapeShapeInterference {
+%nodefaultctor BOPTools_ListNodeOfListOfPaveBlock;
+class BOPTools_ListNodeOfListOfPaveBlock : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_ESInterference();
+		BOPTools_ListNodeOfListOfPaveBlock(const BOPTools_PaveBlock &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		BOPTools_ESInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const IntTools_CommonPrt &aCPart);
+		BOPTools_PaveBlock & Value() const;
 		%feature("autodoc", "1");
-		const IntTools_CommonPrt & CommonPrt() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") BOPTools_ESInterference::~BOPTools_ESInterference %{
+%extend BOPTools_ListNodeOfListOfPaveBlock {
+	Handle_BOPTools_ListNodeOfListOfPaveBlock GetHandle() {
+	return *(Handle_BOPTools_ListNodeOfListOfPaveBlock*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfPaveBlock {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BOPTools_ListNodeOfListOfPaveBlock::~BOPTools_ListNodeOfListOfPaveBlock %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1311,7 +1252,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_ESInterference {
+%extend BOPTools_ListNodeOfListOfPaveBlock {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1353,46 +1294,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_IndexedDataMapOfShapeWithState;
-class BOPTools_IndexedDataMapOfShapeWithState : public TCollection_BasicMap {
+%nodefaultctor BOPTools_IMapOfPaveBlock;
+class BOPTools_IMapOfPaveBlock : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_IndexedDataMapOfShapeWithState(const Standard_Integer NbBuckets=1);
+		BOPTools_IMapOfPaveBlock(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		BOPTools_IndexedDataMapOfShapeWithState & Assign(const BOPTools_IndexedDataMapOfShapeWithState &Other);
+		BOPTools_IMapOfPaveBlock & Assign(const BOPTools_IMapOfPaveBlock &Other);
 		%feature("autodoc", "1");
-		BOPTools_IndexedDataMapOfShapeWithState & operator=(const BOPTools_IndexedDataMapOfShapeWithState &Other);
+		BOPTools_IMapOfPaveBlock & operator=(const BOPTools_IMapOfPaveBlock &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape K, const BooleanOperations_StateOfShape &I);
+		Standard_Integer Add(const BOPTools_PaveBlock &K);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BooleanOperations_StateOfShape &T);
+		void Substitute(const Standard_Integer I, const BOPTools_PaveBlock &K);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		Standard_Boolean Contains(const BOPTools_PaveBlock &K) const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		const BOPTools_PaveBlock & FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const BooleanOperations_StateOfShape & FindFromIndex(const Standard_Integer I) const;
+		const BOPTools_PaveBlock & operator()(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		const BooleanOperations_StateOfShape & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		BooleanOperations_StateOfShape & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		BooleanOperations_StateOfShape & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const BooleanOperations_StateOfShape & FindFromKey(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		BooleanOperations_StateOfShape & ChangeFromKey(const TopoDS_Shape K);
+		Standard_Integer FindIndex(const BOPTools_PaveBlock &K) const;
 
 };
-%feature("shadow") BOPTools_IndexedDataMapOfShapeWithState::~BOPTools_IndexedDataMapOfShapeWithState %{
+%feature("shadow") BOPTools_IMapOfPaveBlock::~BOPTools_IMapOfPaveBlock %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1401,7 +1332,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_IndexedDataMapOfShapeWithState {
+%extend BOPTools_IMapOfPaveBlock {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1460,51 +1391,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_IMapOfPaveBlock;
-class BOPTools_IMapOfPaveBlock : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_IMapOfPaveBlock(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BOPTools_IMapOfPaveBlock & Assign(const BOPTools_IMapOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		BOPTools_IMapOfPaveBlock & operator=(const BOPTools_IMapOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const BOPTools_PaveBlock &K);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const BOPTools_PaveBlock &K);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const BOPTools_PaveBlock &K) const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const BOPTools_PaveBlock &K) const;
-
-};
-%feature("shadow") BOPTools_IMapOfPaveBlock::~BOPTools_IMapOfPaveBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_IMapOfPaveBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BOPTools_Array1OfPave;
 class BOPTools_Array1OfPave {
 	public:
@@ -1556,35 +1442,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_RoughShapeIntersector;
-class BOPTools_RoughShapeIntersector {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_RoughShapeIntersector(const BooleanOperations_PShapesDataStructure &PDS);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const Handle_BOPTools_HArray2OfIntersectionStatus & TableOfStatus() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%feature("shadow") BOPTools_RoughShapeIntersector::~BOPTools_RoughShapeIntersector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_RoughShapeIntersector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet;
 class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public TCollection_MapNode {
 	public:
@@ -1629,7 +1486,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public TColl
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet::~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet %{
@@ -1648,52 +1505,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_ListOfCoupleOfInteger;
-class BOPTools_ListOfCoupleOfInteger {
+%nodefaultctor BOPTools_Curve;
+class BOPTools_Curve {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_ListOfCoupleOfInteger();
+		BOPTools_Curve();
 		%feature("autodoc", "1");
-		void Assign(const BOPTools_ListOfCoupleOfInteger &Other);
+		BOPTools_Curve(const IntTools_Curve &aIC);
 		%feature("autodoc", "1");
-		void operator=(const BOPTools_ListOfCoupleOfInteger &Other);
+		void SetCurve(const IntTools_Curve &aIC);
 		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
+		const IntTools_Curve & Curve() const;
 		%feature("autodoc", "1");
-		void Clear();
+		BOPTools_PaveSet & Set();
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		void AppendNewBlock(const BOPTools_PaveBlock &aPB);
 		%feature("autodoc", "1");
-		void Prepend(const BOPTools_CoupleOfInteger &I);
+		const BOPTools_ListOfPaveBlock & NewPaveBlocks() const;
 		%feature("autodoc", "1");
-		void Prepend(const BOPTools_CoupleOfInteger &I, BOPTools_ListIteratorOfListOfCoupleOfInteger & theIt);
-		%feature("autodoc", "1");
-		void Prepend(BOPTools_ListOfCoupleOfInteger & Other);
-		%feature("autodoc", "1");
-		void Append(const BOPTools_CoupleOfInteger &I);
-		%feature("autodoc", "1");
-		void Append(const BOPTools_CoupleOfInteger &I, BOPTools_ListIteratorOfListOfCoupleOfInteger & theIt);
-		%feature("autodoc", "1");
-		void Append(BOPTools_ListOfCoupleOfInteger & Other);
-		%feature("autodoc", "1");
-		BOPTools_CoupleOfInteger & First() const;
-		%feature("autodoc", "1");
-		BOPTools_CoupleOfInteger & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(BOPTools_ListIteratorOfListOfCoupleOfInteger & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const BOPTools_CoupleOfInteger &I, BOPTools_ListIteratorOfListOfCoupleOfInteger & It);
-		%feature("autodoc", "1");
-		void InsertBefore(BOPTools_ListOfCoupleOfInteger & Other, BOPTools_ListIteratorOfListOfCoupleOfInteger & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const BOPTools_CoupleOfInteger &I, BOPTools_ListIteratorOfListOfCoupleOfInteger & It);
-		%feature("autodoc", "1");
-		void InsertAfter(BOPTools_ListOfCoupleOfInteger & Other, BOPTools_ListIteratorOfListOfCoupleOfInteger & It);
+		TColStd_ListOfInteger & TechnoVertices();
 
 };
-%feature("shadow") BOPTools_ListOfCoupleOfInteger::~BOPTools_ListOfCoupleOfInteger %{
+%feature("shadow") BOPTools_Curve::~BOPTools_Curve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1702,23 +1535,35 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_ListOfCoupleOfInteger {
+%extend BOPTools_Curve {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor BOPTools_QuickSortPave;
-class BOPTools_QuickSortPave {
+%nodefaultctor BOPTools_Interference;
+class BOPTools_Interference {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_QuickSortPave();
+		BOPTools_Interference();
 		%feature("autodoc", "1");
-		static		void Sort(BOPTools_Array1OfPave & TheArray, const BOPTools_ComparePave &Comp);
+		BOPTools_Interference(const Standard_Integer aWith, const BooleanOperations_KindOfInterference aType, const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetWith(const Standard_Integer aWith);
+		%feature("autodoc", "1");
+		void SetType(const BooleanOperations_KindOfInterference aType);
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		Standard_Integer With() const;
+		%feature("autodoc", "1");
+		BooleanOperations_KindOfInterference Type() const;
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
 
 };
-%feature("shadow") BOPTools_QuickSortPave::~BOPTools_QuickSortPave %{
+%feature("shadow") BOPTools_Interference::~BOPTools_Interference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1727,7 +1572,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_QuickSortPave {
+%extend BOPTools_Interference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1766,7 +1611,7 @@ class BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public TCollection_
 };
 %extend BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger::~BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger %{
@@ -1840,138 +1685,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_CArray1OfEEInterference;
-class BOPTools_CArray1OfEEInterference {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_CArray1OfEEInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer Append(const BOPTools_EEInterference &Value);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const BOPTools_EEInterference & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BOPTools_EEInterference & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		BOPTools_EEInterference & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BOPTools_EEInterference & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
-		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
-
-};
-%feature("shadow") BOPTools_CArray1OfEEInterference::~BOPTools_CArray1OfEEInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_CArray1OfEEInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTools_IteratorOfCoupleOfShape;
-class BOPTools_IteratorOfCoupleOfShape {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_IteratorOfCoupleOfShape();
-		%feature("autodoc", "1");
-		BOPTools_IteratorOfCoupleOfShape(const BooleanOperations_PShapesDataStructure &PDS, const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
-		%feature("autodoc", "1");
-		void SetDataStructure(const BooleanOperations_PShapesDataStructure &PDS);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		virtual		void Next();
-		%feature("autodoc","Current() -> [Standard_Integer, Standard_Integer]");
-
-		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
-		%feature("autodoc", "1");
-		const BOPTools_ListOfCoupleOfInteger & ListOfCouple() const;
-		%feature("autodoc", "1");
-		void SetIntersectionStatus(const Standard_Integer Index1, const Standard_Integer Index2, const BOPTools_IntersectionStatus theStatus);
-		%feature("autodoc", "1");
-		const Handle_BOPTools_HArray2OfIntersectionStatus & GetTableOfIntersectionStatus() const;
-		%feature("autodoc", "1");
-		void DumpTableOfIntersectionStatus() const;
-
-};
-%feature("shadow") BOPTools_IteratorOfCoupleOfShape::~BOPTools_IteratorOfCoupleOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_IteratorOfCoupleOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTools_Curve;
-class BOPTools_Curve {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_Curve();
-		%feature("autodoc", "1");
-		BOPTools_Curve(const IntTools_Curve &aIC);
-		%feature("autodoc", "1");
-		void SetCurve(const IntTools_Curve &aIC);
-		%feature("autodoc", "1");
-		const IntTools_Curve & Curve() const;
-		%feature("autodoc", "1");
-		BOPTools_PaveSet & Set();
-		%feature("autodoc", "1");
-		void AppendNewBlock(const BOPTools_PaveBlock &aPB);
-		%feature("autodoc", "1");
-		const BOPTools_ListOfPaveBlock & NewPaveBlocks() const;
-		%feature("autodoc", "1");
-		TColStd_ListOfInteger & TechnoVertices();
-
-};
-%feature("shadow") BOPTools_Curve::~BOPTools_Curve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_Curve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BOPTools_SequenceNodeOfSequenceOfCurves;
 class BOPTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 	public:
@@ -1990,7 +1703,7 @@ class BOPTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 };
 %extend BOPTools_SequenceNodeOfSequenceOfCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_SequenceNodeOfSequenceOfCurves::~BOPTools_SequenceNodeOfSequenceOfCurves %{
@@ -2043,7 +1756,7 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public TColle
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger::~BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger %{
@@ -2080,7 +1793,7 @@ class BOPTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCommonBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfCommonBlock::~BOPTools_ListNodeOfListOfCommonBlock %{
@@ -2142,6 +1855,144 @@ def __del__(self):
 %}
 
 %extend BOPTools_CommonBlockPool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_PCurveMaker;
+class BOPTools_PCurveMaker {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_PCurveMaker(const BOPTools_PaveFiller &aFiller);
+		%feature("autodoc", "1");
+		void Do();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%feature("shadow") BOPTools_PCurveMaker::~BOPTools_PCurveMaker %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_PCurveMaker {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_SequenceOfPaveBlock;
+class BOPTools_SequenceOfPaveBlock : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_SequenceOfPaveBlock();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const BOPTools_SequenceOfPaveBlock & Assign(const BOPTools_SequenceOfPaveBlock &Other);
+		%feature("autodoc", "1");
+		const BOPTools_SequenceOfPaveBlock & operator=(const BOPTools_SequenceOfPaveBlock &Other);
+		%feature("autodoc", "1");
+		void Append(const BOPTools_PaveBlock &T);
+		%feature("autodoc", "1");
+		void Append(BOPTools_SequenceOfPaveBlock & S);
+		%feature("autodoc", "1");
+		void Prepend(const BOPTools_PaveBlock &T);
+		%feature("autodoc", "1");
+		void Prepend(BOPTools_SequenceOfPaveBlock & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const BOPTools_PaveBlock &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, BOPTools_SequenceOfPaveBlock & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const BOPTools_PaveBlock &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, BOPTools_SequenceOfPaveBlock & S);
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & First() const;
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, BOPTools_SequenceOfPaveBlock & S);
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const BOPTools_PaveBlock &I);
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") BOPTools_SequenceOfPaveBlock::~BOPTools_SequenceOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_SequenceOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_IteratorOfCoupleOfShape;
+class BOPTools_IteratorOfCoupleOfShape {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_IteratorOfCoupleOfShape();
+		%feature("autodoc", "1");
+		BOPTools_IteratorOfCoupleOfShape(const BooleanOperations_PShapesDataStructure &PDS, const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
+		%feature("autodoc", "1");
+		void SetDataStructure(const BooleanOperations_PShapesDataStructure &PDS);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		virtual		void Next();
+		%feature("autodoc","Current() -> [Standard_Integer, Standard_Integer]");
+
+		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
+		%feature("autodoc", "1");
+		const BOPTools_ListOfCoupleOfInteger & ListOfCouple() const;
+		%feature("autodoc", "1");
+		void SetIntersectionStatus(const Standard_Integer Index1, const Standard_Integer Index2, const BOPTools_IntersectionStatus theStatus);
+		%feature("autodoc", "1");
+		const Handle_BOPTools_HArray2OfIntersectionStatus & GetTableOfIntersectionStatus() const;
+		%feature("autodoc", "1");
+		void DumpTableOfIntersectionStatus() const;
+
+};
+%feature("shadow") BOPTools_IteratorOfCoupleOfShape::~BOPTools_IteratorOfCoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_IteratorOfCoupleOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2218,28 +2069,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_ListNodeOfListOfInterference;
-class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
+%nodefaultctor BOPTools_SplitShapesPool;
+class BOPTools_SplitShapesPool {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_ListNodeOfListOfInterference(const BOPTools_Interference &I, const TCollection_MapNodePtr &n);
+		BOPTools_SplitShapesPool(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
 		%feature("autodoc", "1");
-		BOPTools_Interference & Value() const;
+		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Integer FactLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer Append(const BOPTools_ListOfPaveBlock &Value);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const BOPTools_ListOfPaveBlock & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BOPTools_ListOfPaveBlock & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		BOPTools_ListOfPaveBlock & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BOPTools_ListOfPaveBlock & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetBlockLength(const Standard_Integer aBL);
+		%feature("autodoc", "1");
+		Standard_Integer BlockLength() const;
 
 };
-%extend BOPTools_ListNodeOfListOfInterference {
-	Handle_BOPTools_ListNodeOfListOfInterference GetHandle() {
-	return *(Handle_BOPTools_ListNodeOfListOfInterference*) &$self;
-	}
-};
-%extend BOPTools_ListNodeOfListOfInterference {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BOPTools_ListNodeOfListOfInterference::~BOPTools_ListNodeOfListOfInterference %{
+%feature("shadow") BOPTools_SplitShapesPool::~BOPTools_SplitShapesPool %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2248,7 +2111,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_ListNodeOfListOfInterference {
+%extend BOPTools_SplitShapesPool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2273,7 +2136,7 @@ class BOPTools_ListNodeOfListOfCoupleOfInteger : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCoupleOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfCoupleOfInteger::~BOPTools_ListNodeOfListOfCoupleOfInteger %{
@@ -2286,6 +2149,39 @@ def __del__(self):
 %}
 
 %extend BOPTools_ListNodeOfListOfCoupleOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_PaveBlockIterator;
+class BOPTools_PaveBlockIterator {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_PaveBlockIterator();
+		%feature("autodoc", "1");
+		BOPTools_PaveBlockIterator(const Standard_Integer aEdge, const BOPTools_PaveSet &aPaveSet);
+		%feature("autodoc", "1");
+		void Initialize(const Standard_Integer aEdge, const BOPTools_PaveSet &aPaveSet);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & Value();
+
+};
+%feature("shadow") BOPTools_PaveBlockIterator::~BOPTools_PaveBlockIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_PaveBlockIterator {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2418,6 +2314,61 @@ def __del__(self):
 };
 
 
+%nodefaultctor BOPTools_IndexedDataMapOfShapeWithState;
+class BOPTools_IndexedDataMapOfShapeWithState : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_IndexedDataMapOfShapeWithState(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BOPTools_IndexedDataMapOfShapeWithState & Assign(const BOPTools_IndexedDataMapOfShapeWithState &Other);
+		%feature("autodoc", "1");
+		BOPTools_IndexedDataMapOfShapeWithState & operator=(const BOPTools_IndexedDataMapOfShapeWithState &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape K, const BooleanOperations_StateOfShape &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BooleanOperations_StateOfShape &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BooleanOperations_StateOfShape & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BooleanOperations_StateOfShape & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		BooleanOperations_StateOfShape & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		BooleanOperations_StateOfShape & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const BooleanOperations_StateOfShape & FindFromKey(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		BooleanOperations_StateOfShape & ChangeFromKey(const TopoDS_Shape K);
+
+};
+%feature("shadow") BOPTools_IndexedDataMapOfShapeWithState::~BOPTools_IndexedDataMapOfShapeWithState %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_IndexedDataMapOfShapeWithState {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BOPTools_EEInterference;
 class BOPTools_EEInterference : public BOPTools_ShapeShapeInterference {
 	public:
@@ -2439,6 +2390,35 @@ def __del__(self):
 %}
 
 %extend BOPTools_EEInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_RoughShapeIntersector;
+class BOPTools_RoughShapeIntersector {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_RoughShapeIntersector(const BooleanOperations_PShapesDataStructure &PDS);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const Handle_BOPTools_HArray2OfIntersectionStatus & TableOfStatus() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%feature("shadow") BOPTools_RoughShapeIntersector::~BOPTools_RoughShapeIntersector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_RoughShapeIntersector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2623,40 +2603,52 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_CArray1OfVVInterference;
-class BOPTools_CArray1OfVVInterference {
+%nodefaultctor BOPTools_ListOfInterference;
+class BOPTools_ListOfInterference {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_CArray1OfVVInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
+		BOPTools_ListOfInterference();
 		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
+		void Assign(const BOPTools_ListOfInterference &Other);
 		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void operator=(const BOPTools_ListOfInterference &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Append(const BOPTools_VVInterference &Value);
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
+		void Prepend(const BOPTools_Interference &I);
 		%feature("autodoc", "1");
-		const BOPTools_VVInterference & Value(const Standard_Integer Index) const;
+		void Prepend(const BOPTools_Interference &I, BOPTools_ListIteratorOfListOfInterference & theIt);
 		%feature("autodoc", "1");
-		const BOPTools_VVInterference & operator()(const Standard_Integer Index) const;
+		void Prepend(BOPTools_ListOfInterference & Other);
 		%feature("autodoc", "1");
-		BOPTools_VVInterference & ChangeValue(const Standard_Integer Index);
+		void Append(const BOPTools_Interference &I);
 		%feature("autodoc", "1");
-		BOPTools_VVInterference & operator()(const Standard_Integer Index);
+		void Append(const BOPTools_Interference &I, BOPTools_ListIteratorOfListOfInterference & theIt);
 		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
+		void Append(BOPTools_ListOfInterference & Other);
 		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
+		BOPTools_Interference & First() const;
+		%feature("autodoc", "1");
+		BOPTools_Interference & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(BOPTools_ListIteratorOfListOfInterference & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const BOPTools_Interference &I, BOPTools_ListIteratorOfListOfInterference & It);
+		%feature("autodoc", "1");
+		void InsertBefore(BOPTools_ListOfInterference & Other, BOPTools_ListIteratorOfListOfInterference & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const BOPTools_Interference &I, BOPTools_ListIteratorOfListOfInterference & It);
+		%feature("autodoc", "1");
+		void InsertAfter(BOPTools_ListOfInterference & Other, BOPTools_ListIteratorOfListOfInterference & It);
 
 };
-%feature("shadow") BOPTools_CArray1OfVVInterference::~BOPTools_CArray1OfVVInterference %{
+%feature("shadow") BOPTools_ListOfInterference::~BOPTools_ListOfInterference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2665,7 +2657,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_CArray1OfVVInterference {
+%extend BOPTools_ListOfInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2721,6 +2713,43 @@ def __del__(self):
 %}
 
 %extend BOPTools_IndexedDataMapOfIntegerPaveSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_ListNodeOfListOfShapeEnum;
+class BOPTools_ListNodeOfListOfShapeEnum : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_ListNodeOfListOfShapeEnum(const TopAbs_ShapeEnum &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOPTools_ListNodeOfListOfShapeEnum {
+	Handle_BOPTools_ListNodeOfListOfShapeEnum GetHandle() {
+	return *(Handle_BOPTools_ListNodeOfListOfShapeEnum*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfShapeEnum {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BOPTools_ListNodeOfListOfShapeEnum::~BOPTools_ListNodeOfListOfShapeEnum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_ListNodeOfListOfShapeEnum {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2879,56 +2908,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_SequenceOfPaveBlock;
-class BOPTools_SequenceOfPaveBlock : public TCollection_BaseSequence {
+%nodefaultctor BOPTools_ESInterference;
+class BOPTools_ESInterference : public BOPTools_ShapeShapeInterference {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_SequenceOfPaveBlock();
+		BOPTools_ESInterference();
 		%feature("autodoc", "1");
-		void Clear();
+		BOPTools_ESInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const IntTools_CommonPrt &aCPart);
 		%feature("autodoc", "1");
-		const BOPTools_SequenceOfPaveBlock & Assign(const BOPTools_SequenceOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		const BOPTools_SequenceOfPaveBlock & operator=(const BOPTools_SequenceOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		void Append(const BOPTools_PaveBlock &T);
-		%feature("autodoc", "1");
-		void Append(BOPTools_SequenceOfPaveBlock & S);
-		%feature("autodoc", "1");
-		void Prepend(const BOPTools_PaveBlock &T);
-		%feature("autodoc", "1");
-		void Prepend(BOPTools_SequenceOfPaveBlock & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const BOPTools_PaveBlock &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, BOPTools_SequenceOfPaveBlock & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const BOPTools_PaveBlock &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, BOPTools_SequenceOfPaveBlock & S);
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & First() const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, BOPTools_SequenceOfPaveBlock & S);
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const BOPTools_PaveBlock &I);
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		const IntTools_CommonPrt & CommonPrt() const;
 
 };
-%feature("shadow") BOPTools_SequenceOfPaveBlock::~BOPTools_SequenceOfPaveBlock %{
+%feature("shadow") BOPTools_ESInterference::~BOPTools_ESInterference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2937,105 +2928,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_SequenceOfPaveBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTools_CArray1OfVSInterference;
-class BOPTools_CArray1OfVSInterference {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_CArray1OfVSInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer Append(const BOPTools_VSInterference &Value);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const BOPTools_VSInterference & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BOPTools_VSInterference & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		BOPTools_VSInterference & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BOPTools_VSInterference & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
-		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
-
-};
-%feature("shadow") BOPTools_CArray1OfVSInterference::~BOPTools_CArray1OfVSInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_CArray1OfVSInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTools_SplitShapesPool;
-class BOPTools_SplitShapesPool {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_SplitShapesPool(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer Append(const BOPTools_ListOfPaveBlock &Value);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const BOPTools_ListOfPaveBlock & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BOPTools_ListOfPaveBlock & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		BOPTools_ListOfPaveBlock & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BOPTools_ListOfPaveBlock & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
-		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
-
-};
-%feature("shadow") BOPTools_SplitShapesPool::~BOPTools_SplitShapesPool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_SplitShapesPool {
+%extend BOPTools_ESInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3086,7 +2979,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public TColle
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo::~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo %{
@@ -3138,69 +3031,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_IndexedMapOfCoupleOfInteger;
-class BOPTools_IndexedMapOfCoupleOfInteger : public TCollection_BasicMap {
+%nodefaultctor BOPTools_ListIteratorOfListOfCommonBlock;
+class BOPTools_ListIteratorOfListOfCommonBlock {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_IndexedMapOfCoupleOfInteger(const Standard_Integer NbBuckets=1);
+		BOPTools_ListIteratorOfListOfCommonBlock();
 		%feature("autodoc", "1");
-		BOPTools_IndexedMapOfCoupleOfInteger & Assign(const BOPTools_IndexedMapOfCoupleOfInteger &Other);
+		BOPTools_ListIteratorOfListOfCommonBlock(const BOPTools_ListOfCommonBlock &L);
 		%feature("autodoc", "1");
-		BOPTools_IndexedMapOfCoupleOfInteger & operator=(const BOPTools_IndexedMapOfCoupleOfInteger &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const BOPTools_CoupleOfInteger &K);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const BOPTools_CoupleOfInteger &K);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const BOPTools_CoupleOfInteger &K) const;
-		%feature("autodoc", "1");
-		const BOPTools_CoupleOfInteger & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOPTools_CoupleOfInteger & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const BOPTools_CoupleOfInteger &K) const;
-
-};
-%feature("shadow") BOPTools_IndexedMapOfCoupleOfInteger::~BOPTools_IndexedMapOfCoupleOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_IndexedMapOfCoupleOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTools_PaveBlockIterator;
-class BOPTools_PaveBlockIterator {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_PaveBlockIterator();
-		%feature("autodoc", "1");
-		BOPTools_PaveBlockIterator(const Standard_Integer aEdge, const BOPTools_PaveSet &aPaveSet);
-		%feature("autodoc", "1");
-		void Initialize(const Standard_Integer aEdge, const BOPTools_PaveSet &aPaveSet);
+		void Initialize(const BOPTools_ListOfCommonBlock &L);
 		%feature("autodoc", "1");
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc", "1");
-		BOPTools_PaveBlock & Value();
+		BOPTools_CommonBlock & Value() const;
 
 };
-%feature("shadow") BOPTools_PaveBlockIterator::~BOPTools_PaveBlockIterator %{
+%feature("shadow") BOPTools_ListIteratorOfListOfCommonBlock::~BOPTools_ListIteratorOfListOfCommonBlock %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3209,7 +3057,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_PaveBlockIterator {
+%extend BOPTools_ListIteratorOfListOfCommonBlock {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3247,95 +3095,6 @@ def __del__(self):
 %}
 
 %extend BOPTools_InterferenceLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTools_VEInterference;
-class BOPTools_VEInterference : public BOPTools_ShapeShapeInterference {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_VEInterference();
-		%feature("autodoc", "1");
-		BOPTools_VEInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const Standard_Real aT);
-		%feature("autodoc", "1");
-		void SetParameter(const Standard_Real aT);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-
-};
-%feature("shadow") BOPTools_VEInterference::~BOPTools_VEInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_VEInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTools_ListIteratorOfListOfCommonBlock;
-class BOPTools_ListIteratorOfListOfCommonBlock {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_ListIteratorOfListOfCommonBlock();
-		%feature("autodoc", "1");
-		BOPTools_ListIteratorOfListOfCommonBlock(const BOPTools_ListOfCommonBlock &L);
-		%feature("autodoc", "1");
-		void Initialize(const BOPTools_ListOfCommonBlock &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		BOPTools_CommonBlock & Value() const;
-
-};
-%feature("shadow") BOPTools_ListIteratorOfListOfCommonBlock::~BOPTools_ListIteratorOfListOfCommonBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_ListIteratorOfListOfCommonBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTools_CoupleOfIntegerMapHasher;
-class BOPTools_CoupleOfIntegerMapHasher {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_CoupleOfIntegerMapHasher();
-		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const BOPTools_CoupleOfInteger &aPKey, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const BOPTools_CoupleOfInteger &aPKey1, const BOPTools_CoupleOfInteger &aPKey2);
-
-};
-%feature("shadow") BOPTools_CoupleOfIntegerMapHasher::~BOPTools_CoupleOfIntegerMapHasher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_CoupleOfIntegerMapHasher {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3384,7 +3143,7 @@ class BOPTools_HArray2OfIntersectionStatus : public MMgt_TShared {
 };
 %extend BOPTools_HArray2OfIntersectionStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_HArray2OfIntersectionStatus::~BOPTools_HArray2OfIntersectionStatus %{
@@ -3397,39 +3156,6 @@ def __del__(self):
 %}
 
 %extend BOPTools_HArray2OfIntersectionStatus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTools_ListIteratorOfListOfPave;
-class BOPTools_ListIteratorOfListOfPave {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_ListIteratorOfListOfPave();
-		%feature("autodoc", "1");
-		BOPTools_ListIteratorOfListOfPave(const BOPTools_ListOfPave &L);
-		%feature("autodoc", "1");
-		void Initialize(const BOPTools_ListOfPave &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		BOPTools_Pave & Value() const;
-
-};
-%feature("shadow") BOPTools_ListIteratorOfListOfPave::~BOPTools_ListIteratorOfListOfPave %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_ListIteratorOfListOfPave {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3508,6 +3234,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor BOPTools_IndexedMapOfCoupleOfInteger;
+class BOPTools_IndexedMapOfCoupleOfInteger : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_IndexedMapOfCoupleOfInteger(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BOPTools_IndexedMapOfCoupleOfInteger & Assign(const BOPTools_IndexedMapOfCoupleOfInteger &Other);
+		%feature("autodoc", "1");
+		BOPTools_IndexedMapOfCoupleOfInteger & operator=(const BOPTools_IndexedMapOfCoupleOfInteger &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const BOPTools_CoupleOfInteger &K);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const BOPTools_CoupleOfInteger &K);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const BOPTools_CoupleOfInteger &K) const;
+		%feature("autodoc", "1");
+		const BOPTools_CoupleOfInteger & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOPTools_CoupleOfInteger & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const BOPTools_CoupleOfInteger &K) const;
+
+};
+%feature("shadow") BOPTools_IndexedMapOfCoupleOfInteger::~BOPTools_IndexedMapOfCoupleOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_IndexedMapOfCoupleOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BOPTools_CommonBlockAPI;
 class BOPTools_CommonBlockAPI {
 	public:
@@ -3571,7 +3342,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TColl
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState::~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState %{
@@ -3658,28 +3429,52 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_ListNodeOfListOfPaveBlock;
-class BOPTools_ListNodeOfListOfPaveBlock : public TCollection_MapNode {
+%nodefaultctor BOPTools_ListOfCoupleOfInteger;
+class BOPTools_ListOfCoupleOfInteger {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_ListNodeOfListOfPaveBlock(const BOPTools_PaveBlock &I, const TCollection_MapNodePtr &n);
+		BOPTools_ListOfCoupleOfInteger();
 		%feature("autodoc", "1");
-		BOPTools_PaveBlock & Value() const;
+		void Assign(const BOPTools_ListOfCoupleOfInteger &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void operator=(const BOPTools_ListOfCoupleOfInteger &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const BOPTools_CoupleOfInteger &I);
+		%feature("autodoc", "1");
+		void Prepend(const BOPTools_CoupleOfInteger &I, BOPTools_ListIteratorOfListOfCoupleOfInteger & theIt);
+		%feature("autodoc", "1");
+		void Prepend(BOPTools_ListOfCoupleOfInteger & Other);
+		%feature("autodoc", "1");
+		void Append(const BOPTools_CoupleOfInteger &I);
+		%feature("autodoc", "1");
+		void Append(const BOPTools_CoupleOfInteger &I, BOPTools_ListIteratorOfListOfCoupleOfInteger & theIt);
+		%feature("autodoc", "1");
+		void Append(BOPTools_ListOfCoupleOfInteger & Other);
+		%feature("autodoc", "1");
+		BOPTools_CoupleOfInteger & First() const;
+		%feature("autodoc", "1");
+		BOPTools_CoupleOfInteger & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(BOPTools_ListIteratorOfListOfCoupleOfInteger & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const BOPTools_CoupleOfInteger &I, BOPTools_ListIteratorOfListOfCoupleOfInteger & It);
+		%feature("autodoc", "1");
+		void InsertBefore(BOPTools_ListOfCoupleOfInteger & Other, BOPTools_ListIteratorOfListOfCoupleOfInteger & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const BOPTools_CoupleOfInteger &I, BOPTools_ListIteratorOfListOfCoupleOfInteger & It);
+		%feature("autodoc", "1");
+		void InsertAfter(BOPTools_ListOfCoupleOfInteger & Other, BOPTools_ListIteratorOfListOfCoupleOfInteger & It);
 
 };
-%extend BOPTools_ListNodeOfListOfPaveBlock {
-	Handle_BOPTools_ListNodeOfListOfPaveBlock GetHandle() {
-	return *(Handle_BOPTools_ListNodeOfListOfPaveBlock*) &$self;
-	}
-};
-%extend BOPTools_ListNodeOfListOfPaveBlock {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BOPTools_ListNodeOfListOfPaveBlock::~BOPTools_ListNodeOfListOfPaveBlock %{
+%feature("shadow") BOPTools_ListOfCoupleOfInteger::~BOPTools_ListOfCoupleOfInteger %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3688,7 +3483,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_ListNodeOfListOfPaveBlock {
+%extend BOPTools_ListOfCoupleOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3756,55 +3551,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_CArray1OfSSInterference;
-class BOPTools_CArray1OfSSInterference {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_CArray1OfSSInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer Append(const BOPTools_SSInterference &Value);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const BOPTools_SSInterference & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BOPTools_SSInterference & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		BOPTools_SSInterference & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BOPTools_SSInterference & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
-		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
-
-};
-%feature("shadow") BOPTools_CArray1OfSSInterference::~BOPTools_CArray1OfSSInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_CArray1OfSSInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BOPTools_ComparePave;
 class BOPTools_ComparePave {
 	public:
@@ -3864,7 +3610,7 @@ class BOPTools_CoupleOfInteger {
 };
 %extend BOPTools_CoupleOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_CoupleOfInteger::~BOPTools_CoupleOfInteger %{
@@ -3877,6 +3623,35 @@ def __del__(self):
 %}
 
 %extend BOPTools_CoupleOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_VEInterference;
+class BOPTools_VEInterference : public BOPTools_ShapeShapeInterference {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_VEInterference();
+		%feature("autodoc", "1");
+		BOPTools_VEInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const Standard_Real aT);
+		%feature("autodoc", "1");
+		void SetParameter(const Standard_Real aT);
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+
+};
+%feature("shadow") BOPTools_VEInterference::~BOPTools_VEInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_VEInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3901,7 +3676,7 @@ class BOPTools_ListNodeOfListOfCheckResults : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCheckResults {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfCheckResults::~BOPTools_ListNodeOfListOfCheckResults %{
@@ -4013,7 +3788,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public TCollec
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState::~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState %{
@@ -4274,6 +4049,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor BOPTools_ListNodeOfListOfInterference;
+class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_ListNodeOfListOfInterference(const BOPTools_Interference &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		BOPTools_Interference & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOPTools_ListNodeOfListOfInterference {
+	Handle_BOPTools_ListNodeOfListOfInterference GetHandle() {
+	return *(Handle_BOPTools_ListNodeOfListOfInterference*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BOPTools_ListNodeOfListOfInterference::~BOPTools_ListNodeOfListOfInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_ListNodeOfListOfInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BOPTools_CArray1OfPave;
 class BOPTools_CArray1OfPave {
 	public:
@@ -4357,7 +4169,7 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : public TCol
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock::~BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock %{
@@ -4370,6 +4182,131 @@ def __del__(self):
 %}
 
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_Pave;
+class BOPTools_Pave {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_Pave();
+		%feature("autodoc", "1");
+		BOPTools_Pave(const Standard_Integer Index, const Standard_Real aParam, const BooleanOperations_KindOfInterference aType=BooleanOperations_UnknownInterference);
+		%feature("autodoc", "1");
+		void SetParam(const Standard_Real aParam);
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetType(const BooleanOperations_KindOfInterference aType);
+		%feature("autodoc", "1");
+		void SetInterference(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Real Param() const;
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		BooleanOperations_KindOfInterference Type() const;
+		%feature("autodoc", "1");
+		Standard_Integer Interference() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const BOPTools_Pave &Other) const;
+
+};
+%feature("shadow") BOPTools_Pave::~BOPTools_Pave %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_Pave {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_CArray1OfVSInterference;
+class BOPTools_CArray1OfVSInterference {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_CArray1OfVSInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer theNewLength);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Integer FactLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer Append(const BOPTools_VSInterference &Value);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const BOPTools_VSInterference & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BOPTools_VSInterference & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		BOPTools_VSInterference & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BOPTools_VSInterference & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetBlockLength(const Standard_Integer aBL);
+		%feature("autodoc", "1");
+		Standard_Integer BlockLength() const;
+
+};
+%feature("shadow") BOPTools_CArray1OfVSInterference::~BOPTools_CArray1OfVSInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_CArray1OfVSInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_ListIteratorOfListOfPaveBlock;
+class BOPTools_ListIteratorOfListOfPaveBlock {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_ListIteratorOfListOfPaveBlock();
+		%feature("autodoc", "1");
+		BOPTools_ListIteratorOfListOfPaveBlock(const BOPTools_ListOfPaveBlock &L);
+		%feature("autodoc", "1");
+		void Initialize(const BOPTools_ListOfPaveBlock &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & Value() const;
+
+};
+%feature("shadow") BOPTools_ListIteratorOfListOfPaveBlock::~BOPTools_ListIteratorOfListOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_ListIteratorOfListOfPaveBlock {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4411,52 +4348,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_ListOfCheckResults;
-class BOPTools_ListOfCheckResults {
+%nodefaultctor BOPTools_CArray1OfEEInterference;
+class BOPTools_CArray1OfEEInterference {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_ListOfCheckResults();
+		BOPTools_CArray1OfEEInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
 		%feature("autodoc", "1");
-		void Assign(const BOPTools_ListOfCheckResults &Other);
+		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
-		void operator=(const BOPTools_ListOfCheckResults &Other);
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
-		void Clear();
+		Standard_Integer FactLength() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		Standard_Integer Append(const BOPTools_EEInterference &Value);
 		%feature("autodoc", "1");
-		void Prepend(const BOPTools_CheckResult &I);
+		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void Prepend(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & theIt);
+		const BOPTools_EEInterference & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Prepend(BOPTools_ListOfCheckResults & Other);
+		const BOPTools_EEInterference & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Append(const BOPTools_CheckResult &I);
+		BOPTools_EEInterference & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void Append(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & theIt);
+		BOPTools_EEInterference & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void Append(BOPTools_ListOfCheckResults & Other);
+		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
-		BOPTools_CheckResult & First() const;
-		%feature("autodoc", "1");
-		BOPTools_CheckResult & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(BOPTools_ListIteratorOfListOfCheckResults & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & It);
-		%feature("autodoc", "1");
-		void InsertBefore(BOPTools_ListOfCheckResults & Other, BOPTools_ListIteratorOfListOfCheckResults & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & It);
-		%feature("autodoc", "1");
-		void InsertAfter(BOPTools_ListOfCheckResults & Other, BOPTools_ListIteratorOfListOfCheckResults & It);
+		Standard_Integer BlockLength() const;
 
 };
-%feature("shadow") BOPTools_ListOfCheckResults::~BOPTools_ListOfCheckResults %{
+%feature("shadow") BOPTools_CArray1OfEEInterference::~BOPTools_CArray1OfEEInterference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4465,7 +4390,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_ListOfCheckResults {
+%extend BOPTools_CArray1OfEEInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4650,15 +4575,15 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_ListOfInterference;
-class BOPTools_ListOfInterference {
+%nodefaultctor BOPTools_ListOfCheckResults;
+class BOPTools_ListOfCheckResults {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_ListOfInterference();
+		BOPTools_ListOfCheckResults();
 		%feature("autodoc", "1");
-		void Assign(const BOPTools_ListOfInterference &Other);
+		void Assign(const BOPTools_ListOfCheckResults &Other);
 		%feature("autodoc", "1");
-		void operator=(const BOPTools_ListOfInterference &Other);
+		void operator=(const BOPTools_ListOfCheckResults &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -4666,36 +4591,36 @@ class BOPTools_ListOfInterference {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Prepend(const BOPTools_Interference &I);
+		void Prepend(const BOPTools_CheckResult &I);
 		%feature("autodoc", "1");
-		void Prepend(const BOPTools_Interference &I, BOPTools_ListIteratorOfListOfInterference & theIt);
+		void Prepend(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & theIt);
 		%feature("autodoc", "1");
-		void Prepend(BOPTools_ListOfInterference & Other);
+		void Prepend(BOPTools_ListOfCheckResults & Other);
 		%feature("autodoc", "1");
-		void Append(const BOPTools_Interference &I);
+		void Append(const BOPTools_CheckResult &I);
 		%feature("autodoc", "1");
-		void Append(const BOPTools_Interference &I, BOPTools_ListIteratorOfListOfInterference & theIt);
+		void Append(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & theIt);
 		%feature("autodoc", "1");
-		void Append(BOPTools_ListOfInterference & Other);
+		void Append(BOPTools_ListOfCheckResults & Other);
 		%feature("autodoc", "1");
-		BOPTools_Interference & First() const;
+		BOPTools_CheckResult & First() const;
 		%feature("autodoc", "1");
-		BOPTools_Interference & Last() const;
+		BOPTools_CheckResult & Last() const;
 		%feature("autodoc", "1");
 		void RemoveFirst();
 		%feature("autodoc", "1");
-		void Remove(BOPTools_ListIteratorOfListOfInterference & It);
+		void Remove(BOPTools_ListIteratorOfListOfCheckResults & It);
 		%feature("autodoc", "1");
-		void InsertBefore(const BOPTools_Interference &I, BOPTools_ListIteratorOfListOfInterference & It);
+		void InsertBefore(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & It);
 		%feature("autodoc", "1");
-		void InsertBefore(BOPTools_ListOfInterference & Other, BOPTools_ListIteratorOfListOfInterference & It);
+		void InsertBefore(BOPTools_ListOfCheckResults & Other, BOPTools_ListIteratorOfListOfCheckResults & It);
 		%feature("autodoc", "1");
-		void InsertAfter(const BOPTools_Interference &I, BOPTools_ListIteratorOfListOfInterference & It);
+		void InsertAfter(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & It);
 		%feature("autodoc", "1");
-		void InsertAfter(BOPTools_ListOfInterference & Other, BOPTools_ListIteratorOfListOfInterference & It);
+		void InsertAfter(BOPTools_ListOfCheckResults & Other, BOPTools_ListIteratorOfListOfCheckResults & It);
 
 };
-%feature("shadow") BOPTools_ListOfInterference::~BOPTools_ListOfInterference %{
+%feature("shadow") BOPTools_ListOfCheckResults::~BOPTools_ListOfCheckResults %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4704,35 +4629,47 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_ListOfInterference {
+%extend BOPTools_ListOfCheckResults {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor BOPTools_ListNodeOfListOfShapeEnum;
-class BOPTools_ListNodeOfListOfShapeEnum : public TCollection_MapNode {
+%nodefaultctor BOPTools_CArray1OfSSInterference;
+class BOPTools_CArray1OfSSInterference {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_ListNodeOfListOfShapeEnum(const TopAbs_ShapeEnum &I, const TCollection_MapNodePtr &n);
+		BOPTools_CArray1OfSSInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
 		%feature("autodoc", "1");
-		TopAbs_ShapeEnum & Value() const;
+		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Integer FactLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer Append(const BOPTools_SSInterference &Value);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const BOPTools_SSInterference & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BOPTools_SSInterference & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		BOPTools_SSInterference & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BOPTools_SSInterference & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetBlockLength(const Standard_Integer aBL);
+		%feature("autodoc", "1");
+		Standard_Integer BlockLength() const;
 
 };
-%extend BOPTools_ListNodeOfListOfShapeEnum {
-	Handle_BOPTools_ListNodeOfListOfShapeEnum GetHandle() {
-	return *(Handle_BOPTools_ListNodeOfListOfShapeEnum*) &$self;
-	}
-};
-%extend BOPTools_ListNodeOfListOfShapeEnum {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BOPTools_ListNodeOfListOfShapeEnum::~BOPTools_ListNodeOfListOfShapeEnum %{
+%feature("shadow") BOPTools_CArray1OfSSInterference::~BOPTools_CArray1OfSSInterference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4741,7 +4678,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_ListNodeOfListOfShapeEnum {
+%extend BOPTools_CArray1OfSSInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4803,18 +4740,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_PCurveMaker;
-class BOPTools_PCurveMaker {
+%nodefaultctor BOPTools_SequenceOfCurves;
+class BOPTools_SequenceOfCurves : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_PCurveMaker(const BOPTools_PaveFiller &aFiller);
+		BOPTools_SequenceOfCurves();
 		%feature("autodoc", "1");
-		void Do();
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		const BOPTools_SequenceOfCurves & Assign(const BOPTools_SequenceOfCurves &Other);
+		%feature("autodoc", "1");
+		const BOPTools_SequenceOfCurves & operator=(const BOPTools_SequenceOfCurves &Other);
+		%feature("autodoc", "1");
+		void Append(const BOPTools_Curve &T);
+		%feature("autodoc", "1");
+		void Append(BOPTools_SequenceOfCurves & S);
+		%feature("autodoc", "1");
+		void Prepend(const BOPTools_Curve &T);
+		%feature("autodoc", "1");
+		void Prepend(BOPTools_SequenceOfCurves & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const BOPTools_Curve &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const BOPTools_Curve &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
+		%feature("autodoc", "1");
+		const BOPTools_Curve & First() const;
+		%feature("autodoc", "1");
+		const BOPTools_Curve & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
+		%feature("autodoc", "1");
+		const BOPTools_Curve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BOPTools_Curve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const BOPTools_Curve &I);
+		%feature("autodoc", "1");
+		BOPTools_Curve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BOPTools_Curve & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%feature("shadow") BOPTools_PCurveMaker::~BOPTools_PCurveMaker %{
+%feature("shadow") BOPTools_SequenceOfCurves::~BOPTools_SequenceOfCurves %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4823,7 +4798,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_PCurveMaker {
+%extend BOPTools_SequenceOfCurves {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4946,24 +4921,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_ListIteratorOfListOfPaveBlock;
-class BOPTools_ListIteratorOfListOfPaveBlock {
+%nodefaultctor BOPTools_CoupleOfIntegerMapHasher;
+class BOPTools_CoupleOfIntegerMapHasher {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_ListIteratorOfListOfPaveBlock();
+		BOPTools_CoupleOfIntegerMapHasher();
 		%feature("autodoc", "1");
-		BOPTools_ListIteratorOfListOfPaveBlock(const BOPTools_ListOfPaveBlock &L);
+		static		Standard_Integer HashCode(const BOPTools_CoupleOfInteger &aPKey, const Standard_Integer Upper);
 		%feature("autodoc", "1");
-		void Initialize(const BOPTools_ListOfPaveBlock &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & Value() const;
+		static		Standard_Boolean IsEqual(const BOPTools_CoupleOfInteger &aPKey1, const BOPTools_CoupleOfInteger &aPKey2);
 
 };
-%feature("shadow") BOPTools_ListIteratorOfListOfPaveBlock::~BOPTools_ListIteratorOfListOfPaveBlock %{
+%feature("shadow") BOPTools_CoupleOfIntegerMapHasher::~BOPTools_CoupleOfIntegerMapHasher %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4972,41 +4941,47 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_ListIteratorOfListOfPaveBlock {
+%extend BOPTools_CoupleOfIntegerMapHasher {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor BOPTools_Pave;
-class BOPTools_Pave {
+%nodefaultctor BOPTools_CArray1OfVVInterference;
+class BOPTools_CArray1OfVVInterference {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_Pave();
+		BOPTools_CArray1OfVVInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
 		%feature("autodoc", "1");
-		BOPTools_Pave(const Standard_Integer Index, const Standard_Real aParam, const BooleanOperations_KindOfInterference aType=BooleanOperations_UnknownInterference);
+		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
-		void SetParam(const Standard_Real aParam);
+		void Destroy();
 		%feature("autodoc", "1");
-		void SetIndex(const Standard_Integer Index);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void SetType(const BooleanOperations_KindOfInterference aType);
+		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
-		void SetInterference(const Standard_Integer Index);
+		Standard_Integer FactLength() const;
 		%feature("autodoc", "1");
-		Standard_Real Param() const;
+		Standard_Integer Append(const BOPTools_VVInterference &Value);
 		%feature("autodoc", "1");
-		Standard_Integer Index() const;
+		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		BooleanOperations_KindOfInterference Type() const;
+		const BOPTools_VVInterference & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Integer Interference() const;
+		const BOPTools_VVInterference & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const BOPTools_Pave &Other) const;
+		BOPTools_VVInterference & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BOPTools_VVInterference & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetBlockLength(const Standard_Integer aBL);
+		%feature("autodoc", "1");
+		Standard_Integer BlockLength() const;
 
 };
-%feature("shadow") BOPTools_Pave::~BOPTools_Pave %{
+%feature("shadow") BOPTools_CArray1OfVVInterference::~BOPTools_CArray1OfVVInterference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -5015,7 +4990,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BOPTools_Pave {
+%extend BOPTools_CArray1OfVVInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5054,7 +5029,7 @@ class BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public TCollection_MapNode {
 };
 %extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedMapNodeOfIMapOfPaveBlock::~BOPTools_IndexedMapNodeOfIMapOfPaveBlock %{
@@ -5067,6 +5042,31 @@ def __del__(self):
 %}
 
 %extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_QuickSortPave;
+class BOPTools_QuickSortPave {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_QuickSortPave();
+		%feature("autodoc", "1");
+		static		void Sort(BOPTools_Array1OfPave & TheArray, const BOPTools_ComparePave &Comp);
+
+};
+%feature("shadow") BOPTools_QuickSortPave::~BOPTools_QuickSortPave %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_QuickSortPave {
 	void _kill_pointed() {
 		delete $self;
 	}

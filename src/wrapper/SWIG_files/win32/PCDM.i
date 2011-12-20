@@ -78,44 +78,6 @@ enum PCDM_TypeOfFileDriver {
 
 
 
-%nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfReference;
-class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference();
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PCDM_SequenceNodeOfSequenceOfReference DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
-	PCDM_SequenceNodeOfSequenceOfReference* GetObject() {
-	return (PCDM_SequenceNodeOfSequenceOfReference*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PCDM_SequenceNodeOfSequenceOfReference::~Handle_PCDM_SequenceNodeOfSequenceOfReference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PCDM_Document;
 class Handle_PCDM_Document : public Handle_Standard_Persistent {
 	public:
@@ -382,29 +344,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PCDM_ReferenceIterator;
-class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
+%nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfReference;
+class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_PCDM_ReferenceIterator();
+		Handle_PCDM_SequenceNodeOfSequenceOfReference();
 		%feature("autodoc", "1");
-		Handle_PCDM_ReferenceIterator(const Handle_PCDM_ReferenceIterator &aHandle);
+		Handle_PCDM_SequenceNodeOfSequenceOfReference(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
 		%feature("autodoc", "1");
-		Handle_PCDM_ReferenceIterator(const PCDM_ReferenceIterator *anItem);
+		Handle_PCDM_SequenceNodeOfSequenceOfReference(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_ReferenceIterator & operator=(const Handle_PCDM_ReferenceIterator &aHandle);
+		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
 		%feature("autodoc", "1");
-		Handle_PCDM_ReferenceIterator & operator=(const PCDM_ReferenceIterator *anItem);
+		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PCDM_ReferenceIterator DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PCDM_SequenceNodeOfSequenceOfReference DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_PCDM_ReferenceIterator {
-	PCDM_ReferenceIterator* GetObject() {
-	return (PCDM_ReferenceIterator*)$self->Access();
+%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
+	PCDM_SequenceNodeOfSequenceOfReference* GetObject() {
+	return (PCDM_SequenceNodeOfSequenceOfReference*)$self->Access();
 	}
 };
-%feature("shadow") Handle_PCDM_ReferenceIterator::~Handle_PCDM_ReferenceIterator %{
+%feature("shadow") Handle_PCDM_SequenceNodeOfSequenceOfReference::~Handle_PCDM_SequenceNodeOfSequenceOfReference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -413,7 +375,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PCDM_ReferenceIterator {
+%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -496,30 +458,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor PCDM_Reader;
-class PCDM_Reader : public Standard_Transient {
+%nodefaultctor Handle_PCDM_ReferenceIterator;
+class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		virtual		Handle_CDM_Document CreateDocument();
+		Handle_PCDM_ReferenceIterator();
 		%feature("autodoc", "1");
-		virtual		void Read(const TCollection_ExtendedString &aFileName, const Handle_CDM_Document &aNewDocument, const Handle_CDM_Application &anApplication);
+		Handle_PCDM_ReferenceIterator(const Handle_PCDM_ReferenceIterator &aHandle);
 		%feature("autodoc", "1");
-		PCDM_ReaderStatus GetStatus() const;
+		Handle_PCDM_ReferenceIterator(const PCDM_ReferenceIterator *anItem);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_PCDM_ReferenceIterator & operator=(const Handle_PCDM_ReferenceIterator &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_ReferenceIterator & operator=(const PCDM_ReferenceIterator *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PCDM_ReferenceIterator DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend PCDM_Reader {
-	Handle_PCDM_Reader GetHandle() {
-	return *(Handle_PCDM_Reader*) &$self;
+%extend Handle_PCDM_ReferenceIterator {
+	PCDM_ReferenceIterator* GetObject() {
+	return (PCDM_ReferenceIterator*)$self->Access();
 	}
 };
-%extend PCDM_Reader {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PCDM_Reader::~PCDM_Reader %{
+%feature("shadow") Handle_PCDM_ReferenceIterator::~Handle_PCDM_ReferenceIterator %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -528,54 +489,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PCDM_Reader {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PCDM_RetrievalDriver;
-class PCDM_RetrievalDriver : public PCDM_Reader {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Make(const Handle_PCDM_Document &aPCDM, const Handle_CDM_Document &aNewDocument);
-		%feature("autodoc", "1");
-		virtual		TCollection_ExtendedString SchemaName() const;
-		%feature("autodoc", "1");
-		virtual		void LoadExtensions(const Handle_Storage_Schema &aSchema, const TColStd_SequenceOfExtendedString &Extensions, const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		static		void RaiseIfUnknownTypes(const Handle_Storage_Schema &aSchema, const TCollection_ExtendedString &aFileName);
-		%feature("autodoc", "1");
-		static		Standard_Integer DocumentVersion(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		static		Standard_Integer ReferenceCounter(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		void SetFormat(const TCollection_ExtendedString &aformat);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString GetFormat() const;
-
-};
-%extend PCDM_RetrievalDriver {
-	Handle_PCDM_RetrievalDriver GetHandle() {
-	return *(Handle_PCDM_RetrievalDriver*) &$self;
-	}
-};
-%extend PCDM_RetrievalDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PCDM_RetrievalDriver::~PCDM_RetrievalDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PCDM_RetrievalDriver {
+%extend Handle_PCDM_ReferenceIterator {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -598,7 +512,7 @@ class PCDM_Writer : public Standard_Transient {
 };
 %extend PCDM_Writer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PCDM_Writer::~PCDM_Writer %{
@@ -617,28 +531,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor PCDM_SequenceNodeOfSequenceOfReference;
-class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
+%nodefaultctor PCDM_Reader;
+class PCDM_Reader : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		PCDM_SequenceNodeOfSequenceOfReference(const PCDM_Reference &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		virtual		Handle_CDM_Document CreateDocument();
 		%feature("autodoc", "1");
-		PCDM_Reference & Value() const;
+		virtual		void Read(const TCollection_ExtendedString &aFileName, const Handle_CDM_Document &aNewDocument, const Handle_CDM_Application &anApplication);
+		%feature("autodoc", "1");
+		PCDM_ReaderStatus GetStatus() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PCDM_SequenceNodeOfSequenceOfReference {
-	Handle_PCDM_SequenceNodeOfSequenceOfReference GetHandle() {
-	return *(Handle_PCDM_SequenceNodeOfSequenceOfReference*) &$self;
+%extend PCDM_Reader {
+	Handle_PCDM_Reader GetHandle() {
+	return *(Handle_PCDM_Reader*) &$self;
 	}
 };
-%extend PCDM_SequenceNodeOfSequenceOfReference {
+%extend PCDM_Reader {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") PCDM_SequenceNodeOfSequenceOfReference::~PCDM_SequenceNodeOfSequenceOfReference %{
+%feature("shadow") PCDM_Reader::~PCDM_Reader %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -647,7 +563,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PCDM_SequenceNodeOfSequenceOfReference {
+%extend PCDM_Reader {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -862,7 +778,7 @@ class PCDM_ReferenceIterator : public Standard_Transient {
 };
 %extend PCDM_ReferenceIterator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PCDM_ReferenceIterator::~PCDM_ReferenceIterator %{
@@ -875,6 +791,57 @@ def __del__(self):
 %}
 
 %extend PCDM_ReferenceIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PCDM_RetrievalDriver;
+class PCDM_RetrievalDriver : public PCDM_Reader {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Read(const TCollection_ExtendedString &aFileName, const Handle_CDM_Document &aNewDocument, const Handle_CDM_Application &anApplication);
+		%feature("autodoc", "1");
+		virtual		void Make(const Handle_PCDM_Document &aPCDM, const Handle_CDM_Document &aNewDocument);
+		%feature("autodoc", "1");
+		virtual		TCollection_ExtendedString SchemaName() const;
+		%feature("autodoc", "1");
+		virtual		void LoadExtensions(const Handle_Storage_Schema &aSchema, const TColStd_SequenceOfExtendedString &Extensions, const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		static		void RaiseIfUnknownTypes(const Handle_Storage_Schema &aSchema, const TCollection_ExtendedString &aFileName);
+		%feature("autodoc", "1");
+		static		Standard_Integer DocumentVersion(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		static		Standard_Integer ReferenceCounter(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		void SetFormat(const TCollection_ExtendedString &aformat);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString GetFormat() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PCDM_RetrievalDriver {
+	Handle_PCDM_RetrievalDriver GetHandle() {
+	return *(Handle_PCDM_RetrievalDriver*) &$self;
+	}
+};
+%extend PCDM_RetrievalDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PCDM_RetrievalDriver::~PCDM_RetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PCDM_RetrievalDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -905,7 +872,7 @@ class PCDM_DriverError : public Standard_Failure {
 };
 %extend PCDM_DriverError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PCDM_DriverError::~PCDM_DriverError %{
@@ -966,7 +933,7 @@ class PCDM_ReadWriter : public Standard_Transient {
 };
 %extend PCDM_ReadWriter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PCDM_ReadWriter::~PCDM_ReadWriter %{
@@ -985,28 +952,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor PCDM_SequenceNodeOfSequenceOfDocument;
-class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
+%nodefaultctor PCDM_SequenceNodeOfSequenceOfReference;
+class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		PCDM_SequenceNodeOfSequenceOfDocument(const Handle_PCDM_Document &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		PCDM_SequenceNodeOfSequenceOfReference(const PCDM_Reference &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		Handle_PCDM_Document & Value() const;
+		PCDM_Reference & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PCDM_SequenceNodeOfSequenceOfDocument {
-	Handle_PCDM_SequenceNodeOfSequenceOfDocument GetHandle() {
-	return *(Handle_PCDM_SequenceNodeOfSequenceOfDocument*) &$self;
+%extend PCDM_SequenceNodeOfSequenceOfReference {
+	Handle_PCDM_SequenceNodeOfSequenceOfReference GetHandle() {
+	return *(Handle_PCDM_SequenceNodeOfSequenceOfReference*) &$self;
 	}
 };
-%extend PCDM_SequenceNodeOfSequenceOfDocument {
+%extend PCDM_SequenceNodeOfSequenceOfReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") PCDM_SequenceNodeOfSequenceOfDocument::~PCDM_SequenceNodeOfSequenceOfDocument %{
+%feature("shadow") PCDM_SequenceNodeOfSequenceOfReference::~PCDM_SequenceNodeOfSequenceOfReference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1015,7 +982,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PCDM_SequenceNodeOfSequenceOfDocument {
+%extend PCDM_SequenceNodeOfSequenceOfReference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1056,7 +1023,7 @@ class PCDM_ReadWriter_1 : public PCDM_ReadWriter {
 };
 %extend PCDM_ReadWriter_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PCDM_ReadWriter_1::~PCDM_ReadWriter_1 %{
@@ -1093,7 +1060,7 @@ class PCDM_Document : public Standard_Persistent {
 };
 %extend PCDM_Document {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PCDM_Document::~PCDM_Document %{
@@ -1106,6 +1073,43 @@ def __del__(self):
 %}
 
 %extend PCDM_Document {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PCDM_SequenceNodeOfSequenceOfDocument;
+class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		PCDM_SequenceNodeOfSequenceOfDocument(const Handle_PCDM_Document &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_PCDM_Document & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PCDM_SequenceNodeOfSequenceOfDocument {
+	Handle_PCDM_SequenceNodeOfSequenceOfDocument GetHandle() {
+	return *(Handle_PCDM_SequenceNodeOfSequenceOfDocument*) &$self;
+	}
+};
+%extend PCDM_SequenceNodeOfSequenceOfDocument {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PCDM_SequenceNodeOfSequenceOfDocument::~PCDM_SequenceNodeOfSequenceOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PCDM_SequenceNodeOfSequenceOfDocument {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -23,3 +23,4 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Approximation) AdvApprox_ApproxAFunction::Approximation;

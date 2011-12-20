@@ -702,7 +702,7 @@ $HeaderURL$
 %};
 
 %import StepBasic.i
-%import StepVisual.i
 %import MMgt.i
+%import StepVisual.i
 %import StepData.i
 %import Standard.i

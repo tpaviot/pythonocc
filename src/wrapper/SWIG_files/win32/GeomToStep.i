@@ -77,6 +77,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomToStep_MakeSurfaceOfLinearExtrusion;
+class GeomToStep_MakeSurfaceOfLinearExtrusion : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeSurfaceOfLinearExtrusion(const Handle_Geom_SurfaceOfLinearExtrusion &CSurf);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_SurfaceOfLinearExtrusion & Value() const;
+
+};
+%feature("shadow") GeomToStep_MakeSurfaceOfLinearExtrusion::~GeomToStep_MakeSurfaceOfLinearExtrusion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomToStep_MakeSurfaceOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomToStep_MakeLine;
 class GeomToStep_MakeLine : public GeomToStep_Root {
 	public:
@@ -102,31 +127,6 @@ def __del__(self):
 %}
 
 %extend GeomToStep_MakeLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeSurfaceOfLinearExtrusion;
-class GeomToStep_MakeSurfaceOfLinearExtrusion : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeSurfaceOfLinearExtrusion(const Handle_Geom_SurfaceOfLinearExtrusion &CSurf);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_SurfaceOfLinearExtrusion & Value() const;
-
-};
-%feature("shadow") GeomToStep_MakeSurfaceOfLinearExtrusion::~GeomToStep_MakeSurfaceOfLinearExtrusion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomToStep_MakeSurfaceOfLinearExtrusion {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -164,16 +164,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakeElementarySurface;
-class GeomToStep_MakeElementarySurface : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakePolyline;
+class GeomToStep_MakePolyline : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeElementarySurface(const Handle_Geom_ElementarySurface &S);
+		GeomToStep_MakePolyline(const TColgp_Array1OfPnt &P);
 		%feature("autodoc", "1");
-		const Handle_StepGeom_ElementarySurface & Value() const;
+		GeomToStep_MakePolyline(const TColgp_Array1OfPnt2d &P);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Polyline & Value() const;
 
 };
-%feature("shadow") GeomToStep_MakeElementarySurface::~GeomToStep_MakeElementarySurface %{
+%feature("shadow") GeomToStep_MakePolyline::~GeomToStep_MakePolyline %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -182,7 +184,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomToStep_MakeElementarySurface {
+%extend GeomToStep_MakePolyline {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -233,37 +235,6 @@ def __del__(self):
 %}
 
 %extend GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeDirection;
-class GeomToStep_MakeDirection : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const gp_Dir D);
-		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const gp_Dir2d D);
-		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const Handle_Geom_Direction &D);
-		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const Handle_Geom2d_Direction &D);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_Direction & Value() const;
-
-};
-%feature("shadow") GeomToStep_MakeDirection::~GeomToStep_MakeDirection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomToStep_MakeDirection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -513,31 +484,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakeRectangularTrimmedSurface;
-class GeomToStep_MakeRectangularTrimmedSurface : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeRectangularTrimmedSurface(const Handle_Geom_RectangularTrimmedSurface &RTSurf);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_RectangularTrimmedSurface & Value() const;
-
-};
-%feature("shadow") GeomToStep_MakeRectangularTrimmedSurface::~GeomToStep_MakeRectangularTrimmedSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomToStep_MakeRectangularTrimmedSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomToStep_MakeBSplineSurfaceWithKnots;
 class GeomToStep_MakeBSplineSurfaceWithKnots : public GeomToStep_Root {
 	public:
@@ -557,6 +503,31 @@ def __del__(self):
 %}
 
 %extend GeomToStep_MakeBSplineSurfaceWithKnots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeToroidalSurface;
+class GeomToStep_MakeToroidalSurface : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeToroidalSurface(const Handle_Geom_ToroidalSurface &TorSurf);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_ToroidalSurface & Value() const;
+
+};
+%feature("shadow") GeomToStep_MakeToroidalSurface::~GeomToStep_MakeToroidalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomToStep_MakeToroidalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -615,31 +586,6 @@ def __del__(self):
 %}
 
 %extend GeomToStep_MakeCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeToroidalSurface;
-class GeomToStep_MakeToroidalSurface : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeToroidalSurface(const Handle_Geom_ToroidalSurface &TorSurf);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_ToroidalSurface & Value() const;
-
-};
-%feature("shadow") GeomToStep_MakeToroidalSurface::~GeomToStep_MakeToroidalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomToStep_MakeToroidalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -725,18 +671,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakePolyline;
-class GeomToStep_MakePolyline : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakeRectangularTrimmedSurface;
+class GeomToStep_MakeRectangularTrimmedSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakePolyline(const TColgp_Array1OfPnt &P);
+		GeomToStep_MakeRectangularTrimmedSurface(const Handle_Geom_RectangularTrimmedSurface &RTSurf);
 		%feature("autodoc", "1");
-		GeomToStep_MakePolyline(const TColgp_Array1OfPnt2d &P);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_Polyline & Value() const;
+		const Handle_StepGeom_RectangularTrimmedSurface & Value() const;
 
 };
-%feature("shadow") GeomToStep_MakePolyline::~GeomToStep_MakePolyline %{
+%feature("shadow") GeomToStep_MakeRectangularTrimmedSurface::~GeomToStep_MakeRectangularTrimmedSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -745,7 +689,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomToStep_MakePolyline {
+%extend GeomToStep_MakeRectangularTrimmedSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -881,6 +825,62 @@ def __del__(self):
 %}
 
 %extend GeomToStep_MakeConic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeDirection;
+class GeomToStep_MakeDirection : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeDirection(const gp_Dir D);
+		%feature("autodoc", "1");
+		GeomToStep_MakeDirection(const gp_Dir2d D);
+		%feature("autodoc", "1");
+		GeomToStep_MakeDirection(const Handle_Geom_Direction &D);
+		%feature("autodoc", "1");
+		GeomToStep_MakeDirection(const Handle_Geom2d_Direction &D);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Direction & Value() const;
+
+};
+%feature("shadow") GeomToStep_MakeDirection::~GeomToStep_MakeDirection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomToStep_MakeDirection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeElementarySurface;
+class GeomToStep_MakeElementarySurface : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeElementarySurface(const Handle_Geom_ElementarySurface &S);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_ElementarySurface & Value() const;
+
+};
+%feature("shadow") GeomToStep_MakeElementarySurface::~GeomToStep_MakeElementarySurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomToStep_MakeElementarySurface {
 	void _kill_pointed() {
 		delete $self;
 	}

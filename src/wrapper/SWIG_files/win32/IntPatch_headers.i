@@ -93,9 +93,9 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<gp_Pnt2d.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<TColStd_Array1OfReal.hxx>
-#include<gp_Pnt2d.hxx>
 #include<gp_Vec2d.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>
@@ -119,12 +119,12 @@ $HeaderURL$
 #include<Bnd_Box2d.hxx>
 #include<IntSurf_PntOn2S.hxx>
 #include<IntSurf_PathPoint.hxx>
+#include<gp_Dir.hxx>
+#include<gp_Dir2d.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Parab.hxx>
 #include<gp_Hypr.hxx>
-#include<gp_Dir.hxx>
-#include<gp_Dir2d.hxx>
 #include<math_FunctionSetRoot.hxx>
 %}

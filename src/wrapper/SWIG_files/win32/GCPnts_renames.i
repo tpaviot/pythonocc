@@ -23,3 +23,4 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Length) GCPnts_AbscissaPoint::Length;

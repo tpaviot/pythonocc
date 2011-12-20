@@ -128,6 +128,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PGeom2d_BoundedCurve;
+class Handle_PGeom2d_BoundedCurve : public Handle_PGeom2d_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom2d_BoundedCurve();
+		%feature("autodoc", "1");
+		Handle_PGeom2d_BoundedCurve(const Handle_PGeom2d_BoundedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_BoundedCurve(const PGeom2d_BoundedCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_BoundedCurve & operator=(const Handle_PGeom2d_BoundedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_BoundedCurve & operator=(const PGeom2d_BoundedCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom2d_BoundedCurve DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom2d_BoundedCurve {
+	PGeom2d_BoundedCurve* GetObject() {
+	return (PGeom2d_BoundedCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom2d_BoundedCurve::~Handle_PGeom2d_BoundedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom2d_BoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PGeom2d_OffsetCurve;
 class Handle_PGeom2d_OffsetCurve : public Handle_PGeom2d_Curve {
 	public:
@@ -198,6 +236,120 @@ def __del__(self):
 %}
 
 %extend Handle_PGeom2d_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PGeom2d_Vector;
+class Handle_PGeom2d_Vector : public Handle_PGeom2d_Geometry {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Vector();
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Vector(const Handle_PGeom2d_Vector &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Vector(const PGeom2d_Vector *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Vector & operator=(const Handle_PGeom2d_Vector &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Vector & operator=(const PGeom2d_Vector *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom2d_Vector DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom2d_Vector {
+	PGeom2d_Vector* GetObject() {
+	return (PGeom2d_Vector*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom2d_Vector::~Handle_PGeom2d_Vector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom2d_Vector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PGeom2d_Direction;
+class Handle_PGeom2d_Direction : public Handle_PGeom2d_Vector {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Direction();
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Direction(const Handle_PGeom2d_Direction &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Direction(const PGeom2d_Direction *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Direction & operator=(const Handle_PGeom2d_Direction &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Direction & operator=(const PGeom2d_Direction *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom2d_Direction DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom2d_Direction {
+	PGeom2d_Direction* GetObject() {
+	return (PGeom2d_Direction*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom2d_Direction::~Handle_PGeom2d_Direction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom2d_Direction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PGeom2d_VectorWithMagnitude;
+class Handle_PGeom2d_VectorWithMagnitude : public Handle_PGeom2d_Vector {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom2d_VectorWithMagnitude();
+		%feature("autodoc", "1");
+		Handle_PGeom2d_VectorWithMagnitude(const Handle_PGeom2d_VectorWithMagnitude &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_VectorWithMagnitude(const PGeom2d_VectorWithMagnitude *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_VectorWithMagnitude & operator=(const Handle_PGeom2d_VectorWithMagnitude &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_VectorWithMagnitude & operator=(const PGeom2d_VectorWithMagnitude *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom2d_VectorWithMagnitude DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom2d_VectorWithMagnitude {
+	PGeom2d_VectorWithMagnitude* GetObject() {
+	return (PGeom2d_VectorWithMagnitude*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom2d_VectorWithMagnitude::~Handle_PGeom2d_VectorWithMagnitude %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom2d_VectorWithMagnitude {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -280,29 +432,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PGeom2d_Vector;
-class Handle_PGeom2d_Vector : public Handle_PGeom2d_Geometry {
+%nodefaultctor Handle_PGeom2d_Circle;
+class Handle_PGeom2d_Circle : public Handle_PGeom2d_Conic {
 	public:
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Vector();
+		Handle_PGeom2d_Circle();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Vector(const Handle_PGeom2d_Vector &aHandle);
+		Handle_PGeom2d_Circle(const Handle_PGeom2d_Circle &aHandle);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Vector(const PGeom2d_Vector *anItem);
+		Handle_PGeom2d_Circle(const PGeom2d_Circle *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Vector & operator=(const Handle_PGeom2d_Vector &aHandle);
+		Handle_PGeom2d_Circle & operator=(const Handle_PGeom2d_Circle &aHandle);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Vector & operator=(const PGeom2d_Vector *anItem);
+		Handle_PGeom2d_Circle & operator=(const PGeom2d_Circle *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PGeom2d_Vector DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PGeom2d_Circle DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PGeom2d_Vector {
-	PGeom2d_Vector* GetObject() {
-	return (PGeom2d_Vector*)$self->Access();
+%extend Handle_PGeom2d_Circle {
+	PGeom2d_Circle* GetObject() {
+	return (PGeom2d_Circle*)$self->Access();
 	}
 };
-%feature("shadow") Handle_PGeom2d_Vector::~Handle_PGeom2d_Vector %{
+%feature("shadow") Handle_PGeom2d_Circle::~Handle_PGeom2d_Circle %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -311,121 +463,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PGeom2d_Vector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PGeom2d_VectorWithMagnitude;
-class Handle_PGeom2d_VectorWithMagnitude : public Handle_PGeom2d_Vector {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom2d_VectorWithMagnitude();
-		%feature("autodoc", "1");
-		Handle_PGeom2d_VectorWithMagnitude(const Handle_PGeom2d_VectorWithMagnitude &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_VectorWithMagnitude(const PGeom2d_VectorWithMagnitude *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_VectorWithMagnitude & operator=(const Handle_PGeom2d_VectorWithMagnitude &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_VectorWithMagnitude & operator=(const PGeom2d_VectorWithMagnitude *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom2d_VectorWithMagnitude DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom2d_VectorWithMagnitude {
-	PGeom2d_VectorWithMagnitude* GetObject() {
-	return (PGeom2d_VectorWithMagnitude*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom2d_VectorWithMagnitude::~Handle_PGeom2d_VectorWithMagnitude %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom2d_VectorWithMagnitude {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PGeom2d_BoundedCurve;
-class Handle_PGeom2d_BoundedCurve : public Handle_PGeom2d_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BoundedCurve();
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BoundedCurve(const Handle_PGeom2d_BoundedCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BoundedCurve(const PGeom2d_BoundedCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BoundedCurve & operator=(const Handle_PGeom2d_BoundedCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BoundedCurve & operator=(const PGeom2d_BoundedCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom2d_BoundedCurve DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom2d_BoundedCurve {
-	PGeom2d_BoundedCurve* GetObject() {
-	return (PGeom2d_BoundedCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom2d_BoundedCurve::~Handle_PGeom2d_BoundedCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom2d_BoundedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PGeom2d_BezierCurve;
-class Handle_PGeom2d_BezierCurve : public Handle_PGeom2d_BoundedCurve {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BezierCurve();
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BezierCurve(const Handle_PGeom2d_BezierCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BezierCurve(const PGeom2d_BezierCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BezierCurve & operator=(const Handle_PGeom2d_BezierCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BezierCurve & operator=(const PGeom2d_BezierCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom2d_BezierCurve DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom2d_BezierCurve {
-	PGeom2d_BezierCurve* GetObject() {
-	return (PGeom2d_BezierCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom2d_BezierCurve::~Handle_PGeom2d_BezierCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom2d_BezierCurve {
+%extend Handle_PGeom2d_Circle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -464,44 +502,6 @@ def __del__(self):
 %}
 
 %extend Handle_PGeom2d_AxisPlacement {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PGeom2d_Circle;
-class Handle_PGeom2d_Circle : public Handle_PGeom2d_Conic {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Circle();
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Circle(const Handle_PGeom2d_Circle &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Circle(const PGeom2d_Circle *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Circle & operator=(const Handle_PGeom2d_Circle &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Circle & operator=(const PGeom2d_Circle *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom2d_Circle DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom2d_Circle {
-	PGeom2d_Circle* GetObject() {
-	return (PGeom2d_Circle*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom2d_Circle::~Handle_PGeom2d_Circle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom2d_Circle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -660,29 +660,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PGeom2d_Direction;
-class Handle_PGeom2d_Direction : public Handle_PGeom2d_Vector {
+%nodefaultctor Handle_PGeom2d_BezierCurve;
+class Handle_PGeom2d_BezierCurve : public Handle_PGeom2d_BoundedCurve {
 	public:
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Direction();
+		Handle_PGeom2d_BezierCurve();
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Direction(const Handle_PGeom2d_Direction &aHandle);
+		Handle_PGeom2d_BezierCurve(const Handle_PGeom2d_BezierCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Direction(const PGeom2d_Direction *anItem);
+		Handle_PGeom2d_BezierCurve(const PGeom2d_BezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Direction & operator=(const Handle_PGeom2d_Direction &aHandle);
+		Handle_PGeom2d_BezierCurve & operator=(const Handle_PGeom2d_BezierCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_PGeom2d_Direction & operator=(const PGeom2d_Direction *anItem);
+		Handle_PGeom2d_BezierCurve & operator=(const PGeom2d_BezierCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PGeom2d_Direction DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PGeom2d_BezierCurve DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PGeom2d_Direction {
-	PGeom2d_Direction* GetObject() {
-	return (PGeom2d_Direction*)$self->Access();
+%extend Handle_PGeom2d_BezierCurve {
+	PGeom2d_BezierCurve* GetObject() {
+	return (PGeom2d_BezierCurve*)$self->Access();
 	}
 };
-%feature("shadow") Handle_PGeom2d_Direction::~Handle_PGeom2d_Direction %{
+%feature("shadow") Handle_PGeom2d_BezierCurve::~Handle_PGeom2d_BezierCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -691,7 +691,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PGeom2d_Direction {
+%extend Handle_PGeom2d_BezierCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -830,7 +830,7 @@ class PGeom2d_Geometry : public Standard_Persistent {
 };
 %extend PGeom2d_Geometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Geometry::~PGeom2d_Geometry %{
@@ -865,7 +865,7 @@ class PGeom2d_Curve : public PGeom2d_Geometry {
 };
 %extend PGeom2d_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Curve::~PGeom2d_Curve %{
@@ -900,7 +900,7 @@ class PGeom2d_BoundedCurve : public PGeom2d_Curve {
 };
 %extend PGeom2d_BoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_BoundedCurve::~PGeom2d_BoundedCurve %{
@@ -941,7 +941,7 @@ class PGeom2d_Conic : public PGeom2d_Curve {
 };
 %extend PGeom2d_Conic {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Conic::~PGeom2d_Conic %{
@@ -1007,7 +1007,7 @@ class PGeom2d_TrimmedCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_TrimmedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_TrimmedCurve::~PGeom2d_TrimmedCurve %{
@@ -1020,87 +1020,6 @@ def __del__(self):
 %}
 
 %extend PGeom2d_TrimmedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PGeom2d_Vector;
-class PGeom2d_Vector : public PGeom2d_Geometry {
-	public:
-		%feature("autodoc", "1");
-		void Vec(const gp_Vec2d aVec);
-		%feature("autodoc", "1");
-		gp_Vec2d Vec() const;
-		%feature("autodoc", "1");
-		PGeom2d_Vector(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Vec2d  _CSFDB_GetPGeom2d_Vectorvec() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom2d_Vector {
-	Handle_PGeom2d_Vector GetHandle() {
-	return *(Handle_PGeom2d_Vector*) &$self;
-	}
-};
-%extend PGeom2d_Vector {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PGeom2d_Vector::~PGeom2d_Vector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PGeom2d_Vector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend PGeom2d_Vector {
-	PGeom2d_Vector () {}
-};
-
-
-%nodefaultctor PGeom2d_Direction;
-class PGeom2d_Direction : public PGeom2d_Vector {
-	public:
-		%feature("autodoc", "1");
-		PGeom2d_Direction();
-		%feature("autodoc", "1");
-		PGeom2d_Direction(const gp_Vec2d aVec);
-		%feature("autodoc", "1");
-		PGeom2d_Direction(const Storage_stCONSTclCOM &a);
-
-};
-%extend PGeom2d_Direction {
-	Handle_PGeom2d_Direction GetHandle() {
-	return *(Handle_PGeom2d_Direction*) &$self;
-	}
-};
-%extend PGeom2d_Direction {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PGeom2d_Direction::~PGeom2d_Direction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PGeom2d_Direction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1135,7 +1054,7 @@ class PGeom2d_Parabola : public PGeom2d_Conic {
 };
 %extend PGeom2d_Parabola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Parabola::~PGeom2d_Parabola %{
@@ -1154,46 +1073,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor PGeom2d_Ellipse;
-class PGeom2d_Ellipse : public PGeom2d_Conic {
+%nodefaultctor PGeom2d_Vector;
+class PGeom2d_Vector : public PGeom2d_Geometry {
 	public:
 		%feature("autodoc", "1");
-		PGeom2d_Ellipse();
+		void Vec(const gp_Vec2d aVec);
 		%feature("autodoc", "1");
-		PGeom2d_Ellipse(const gp_Ax22d aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		gp_Vec2d Vec() const;
 		%feature("autodoc", "1");
-		void MajorRadius(const Standard_Real aMajorRadius);
+		PGeom2d_Vector(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		void MinorRadius(const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		PGeom2d_Ellipse(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom2d_EllipsemajorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom2d_EllipsemajorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom2d_EllipseminorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom2d_EllipseminorRadius(const Standard_Real p);
+		const gp_Vec2d  _CSFDB_GetPGeom2d_Vectorvec() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PGeom2d_Ellipse {
-	Handle_PGeom2d_Ellipse GetHandle() {
-	return *(Handle_PGeom2d_Ellipse*) &$self;
+%extend PGeom2d_Vector {
+	Handle_PGeom2d_Vector GetHandle() {
+	return *(Handle_PGeom2d_Vector*) &$self;
 	}
 };
-%extend PGeom2d_Ellipse {
+%extend PGeom2d_Vector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") PGeom2d_Ellipse::~PGeom2d_Ellipse %{
+%feature("shadow") PGeom2d_Vector::~PGeom2d_Vector %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1202,7 +1107,129 @@ def __del__(self):
 		pass
 %}
 
-%extend PGeom2d_Ellipse {
+%extend PGeom2d_Vector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend PGeom2d_Vector {
+	PGeom2d_Vector () {}
+};
+
+
+%nodefaultctor PGeom2d_Point;
+class PGeom2d_Point : public PGeom2d_Geometry {
+	public:
+		%feature("autodoc", "1");
+		PGeom2d_Point(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		PGeom2d_Point();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom2d_Point {
+	Handle_PGeom2d_Point GetHandle() {
+	return *(Handle_PGeom2d_Point*) &$self;
+	}
+};
+%extend PGeom2d_Point {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PGeom2d_Point::~PGeom2d_Point %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PGeom2d_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PGeom2d_CartesianPoint;
+class PGeom2d_CartesianPoint : public PGeom2d_Point {
+	public:
+		%feature("autodoc", "1");
+		PGeom2d_CartesianPoint();
+		%feature("autodoc", "1");
+		PGeom2d_CartesianPoint(const gp_Pnt2d aPnt2d);
+		%feature("autodoc", "1");
+		void Pnt(const gp_Pnt2d aPnt2d);
+		%feature("autodoc", "1");
+		gp_Pnt2d Pnt() const;
+		%feature("autodoc", "1");
+		PGeom2d_CartesianPoint(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Pnt2d  _CSFDB_GetPGeom2d_CartesianPointpnt() const;
+
+};
+%extend PGeom2d_CartesianPoint {
+	Handle_PGeom2d_CartesianPoint GetHandle() {
+	return *(Handle_PGeom2d_CartesianPoint*) &$self;
+	}
+};
+%extend PGeom2d_CartesianPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PGeom2d_CartesianPoint::~PGeom2d_CartesianPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PGeom2d_CartesianPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PGeom2d_Direction;
+class PGeom2d_Direction : public PGeom2d_Vector {
+	public:
+		%feature("autodoc", "1");
+		PGeom2d_Direction();
+		%feature("autodoc", "1");
+		PGeom2d_Direction(const gp_Vec2d aVec);
+		%feature("autodoc", "1");
+		PGeom2d_Direction(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom2d_Direction {
+	Handle_PGeom2d_Direction GetHandle() {
+	return *(Handle_PGeom2d_Direction*) &$self;
+	}
+};
+%extend PGeom2d_Direction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PGeom2d_Direction::~PGeom2d_Direction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PGeom2d_Direction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1237,7 +1264,7 @@ class PGeom2d_Circle : public PGeom2d_Conic {
 };
 %extend PGeom2d_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Circle::~PGeom2d_Circle %{
@@ -1292,7 +1319,7 @@ class PGeom2d_Hyperbola : public PGeom2d_Conic {
 };
 %extend PGeom2d_Hyperbola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Hyperbola::~PGeom2d_Hyperbola %{
@@ -1347,7 +1374,7 @@ class PGeom2d_OffsetCurve : public PGeom2d_Curve {
 };
 %extend PGeom2d_OffsetCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_OffsetCurve::~PGeom2d_OffsetCurve %{
@@ -1392,7 +1419,7 @@ class PGeom2d_Transformation : public Standard_Persistent {
 };
 %extend PGeom2d_Transformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Transformation::~PGeom2d_Transformation %{
@@ -1431,7 +1458,7 @@ class PGeom2d_VectorWithMagnitude : public PGeom2d_Vector {
 };
 %extend PGeom2d_VectorWithMagnitude {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_VectorWithMagnitude::~PGeom2d_VectorWithMagnitude %{
@@ -1494,7 +1521,7 @@ class PGeom2d_BezierCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_BezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_BezierCurve::~PGeom2d_BezierCurve %{
@@ -1539,7 +1566,7 @@ class PGeom2d_Line : public PGeom2d_Curve {
 };
 %extend PGeom2d_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Line::~PGeom2d_Line %{
@@ -1552,86 +1579,6 @@ def __del__(self):
 %}
 
 %extend PGeom2d_Line {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PGeom2d_Point;
-class PGeom2d_Point : public PGeom2d_Geometry {
-	public:
-		%feature("autodoc", "1");
-		PGeom2d_Point(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		PGeom2d_Point();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom2d_Point {
-	Handle_PGeom2d_Point GetHandle() {
-	return *(Handle_PGeom2d_Point*) &$self;
-	}
-};
-%extend PGeom2d_Point {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PGeom2d_Point::~PGeom2d_Point %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PGeom2d_Point {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PGeom2d_CartesianPoint;
-class PGeom2d_CartesianPoint : public PGeom2d_Point {
-	public:
-		%feature("autodoc", "1");
-		PGeom2d_CartesianPoint();
-		%feature("autodoc", "1");
-		PGeom2d_CartesianPoint(const gp_Pnt2d aPnt2d);
-		%feature("autodoc", "1");
-		void Pnt(const gp_Pnt2d aPnt2d);
-		%feature("autodoc", "1");
-		gp_Pnt2d Pnt() const;
-		%feature("autodoc", "1");
-		PGeom2d_CartesianPoint(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Pnt2d  _CSFDB_GetPGeom2d_CartesianPointpnt() const;
-
-};
-%extend PGeom2d_CartesianPoint {
-	Handle_PGeom2d_CartesianPoint GetHandle() {
-	return *(Handle_PGeom2d_CartesianPoint*) &$self;
-	}
-};
-%extend PGeom2d_CartesianPoint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PGeom2d_CartesianPoint::~PGeom2d_CartesianPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PGeom2d_CartesianPoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1714,7 +1661,7 @@ class PGeom2d_BSplineCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_BSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_BSplineCurve::~PGeom2d_BSplineCurve %{
@@ -1727,6 +1674,61 @@ def __del__(self):
 %}
 
 %extend PGeom2d_BSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PGeom2d_Ellipse;
+class PGeom2d_Ellipse : public PGeom2d_Conic {
+	public:
+		%feature("autodoc", "1");
+		PGeom2d_Ellipse();
+		%feature("autodoc", "1");
+		PGeom2d_Ellipse(const gp_Ax22d aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		void MajorRadius(const Standard_Real aMajorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		void MinorRadius(const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		PGeom2d_Ellipse(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom2d_EllipsemajorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom2d_EllipsemajorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom2d_EllipseminorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom2d_EllipseminorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom2d_Ellipse {
+	Handle_PGeom2d_Ellipse GetHandle() {
+	return *(Handle_PGeom2d_Ellipse*) &$self;
+	}
+};
+%extend PGeom2d_Ellipse {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PGeom2d_Ellipse::~PGeom2d_Ellipse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PGeom2d_Ellipse {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1759,7 +1761,7 @@ class PGeom2d_AxisPlacement : public PGeom2d_Geometry {
 };
 %extend PGeom2d_AxisPlacement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom2d_AxisPlacement::~PGeom2d_AxisPlacement %{

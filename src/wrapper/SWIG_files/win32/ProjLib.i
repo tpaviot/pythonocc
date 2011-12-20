@@ -90,44 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt;
-class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
-	ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt* GetObject() {
-	return (ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt::~Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ProjLib_HCompProjectedCurve;
 class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	public:
@@ -160,6 +122,44 @@ def __del__(self):
 %}
 
 %extend Handle_ProjLib_HCompProjectedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt;
+class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt();
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
+	ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt* GetObject() {
+	return (ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt::~Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -541,47 +541,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ProjLib_Sphere;
-class ProjLib_Sphere : public ProjLib_Projector {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_Sphere();
-		%feature("autodoc", "1");
-		ProjLib_Sphere(const gp_Sphere Sp);
-		%feature("autodoc", "1");
-		ProjLib_Sphere(const gp_Sphere Sp, const gp_Circ C);
-		%feature("autodoc", "1");
-		void Init(const gp_Sphere Sp);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Lin L);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Circ C);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Elips E);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Parab P);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Hypr H);
-		%feature("autodoc", "1");
-		void SetInBounds(const Standard_Real U);
-
-};
-%feature("shadow") ProjLib_Sphere::~ProjLib_Sphere %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ProjLib_Sphere {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ProjLib_HSequenceOfHSequenceOfPnt;
 class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
 	public:
@@ -642,7 +601,7 @@ class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
 };
 %extend ProjLib_HSequenceOfHSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ProjLib_HSequenceOfHSequenceOfPnt::~ProjLib_HSequenceOfHSequenceOfPnt %{
@@ -685,7 +644,7 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 };
 %extend ProjLib_HProjectedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ProjLib_HProjectedCurve::~ProjLib_HProjectedCurve %{
@@ -698,45 +657,6 @@ def __del__(self):
 %}
 
 %extend ProjLib_HProjectedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ProjLib_Torus;
-class ProjLib_Torus : public ProjLib_Projector {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_Torus();
-		%feature("autodoc", "1");
-		ProjLib_Torus(const gp_Torus To);
-		%feature("autodoc", "1");
-		ProjLib_Torus(const gp_Torus To, const gp_Circ C);
-		%feature("autodoc", "1");
-		void Init(const gp_Torus To);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Lin L);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Circ C);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Elips E);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Parab P);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Hypr H);
-
-};
-%feature("shadow") ProjLib_Torus::~ProjLib_Torus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ProjLib_Torus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -761,7 +681,7 @@ class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNod
 };
 %extend ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt::~ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt %{
@@ -860,6 +780,86 @@ def __del__(self):
 %}
 
 %extend ProjLib_ProjectOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ProjLib_Torus;
+class ProjLib_Torus : public ProjLib_Projector {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_Torus();
+		%feature("autodoc", "1");
+		ProjLib_Torus(const gp_Torus To);
+		%feature("autodoc", "1");
+		ProjLib_Torus(const gp_Torus To, const gp_Circ C);
+		%feature("autodoc", "1");
+		void Init(const gp_Torus To);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Lin L);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Circ C);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Elips E);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Parab P);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Hypr H);
+
+};
+%feature("shadow") ProjLib_Torus::~ProjLib_Torus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ProjLib_Torus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ProjLib_Sphere;
+class ProjLib_Sphere : public ProjLib_Projector {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_Sphere();
+		%feature("autodoc", "1");
+		ProjLib_Sphere(const gp_Sphere Sp);
+		%feature("autodoc", "1");
+		ProjLib_Sphere(const gp_Sphere Sp, const gp_Circ C);
+		%feature("autodoc", "1");
+		void Init(const gp_Sphere Sp);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Lin L);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Circ C);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Elips E);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Parab P);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Hypr H);
+		%feature("autodoc", "1");
+		void SetInBounds(const Standard_Real U);
+
+};
+%feature("shadow") ProjLib_Sphere::~ProjLib_Sphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ProjLib_Sphere {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1098,7 +1098,7 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 };
 %extend ProjLib_HCompProjectedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ProjLib_HCompProjectedCurve::~ProjLib_HCompProjectedCurve %{

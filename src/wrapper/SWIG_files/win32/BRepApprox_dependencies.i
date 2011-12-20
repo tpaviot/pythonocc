@@ -257,10 +257,10 @@ $HeaderURL$
 %};
 
 %import MMgt.i
-%import Standard.i
-%import AppParCurves.i
 %import math.i
+%import Standard.i
 %import Approx.i
+%import AppParCurves.i
 %import IntImp.i
 %import ApproxInt.i
 %import GeomAbs.i

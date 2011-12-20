@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_StlMesh_MeshDomain::DownCast;
+%rename(DownCast) Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain::DownCast;
+%rename(DownCast) Handle_StlMesh_MeshTriangle::DownCast;
+%rename(DownCast) Handle_StlMesh_SequenceNodeOfSequenceOfMesh::DownCast;
+%rename(DownCast) Handle_StlMesh_Mesh::DownCast;
+%rename(DownCast) Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle::DownCast;
+%rename(Merge) StlMesh::Merge;

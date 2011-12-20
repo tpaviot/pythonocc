@@ -68,11 +68,11 @@ enum BRepLib_FaceError {
 	BRepLib_ParametersOutOfRange,
 	};
 
-enum BRepLib_ShellError {
-	BRepLib_ShellDone,
-	BRepLib_EmptyShell,
-	BRepLib_DisconnectedShell,
-	BRepLib_ShellParametersOutOfRange,
+enum BRepLib_WireError {
+	BRepLib_WireDone,
+	BRepLib_EmptyWire,
+	BRepLib_DisconnectedWire,
+	BRepLib_NonManifoldWire,
 	};
 
 enum BRepLib_ShapeModification {
@@ -83,11 +83,11 @@ enum BRepLib_ShapeModification {
 	BRepLib_BoundaryModified,
 	};
 
-enum BRepLib_WireError {
-	BRepLib_WireDone,
-	BRepLib_EmptyWire,
-	BRepLib_DisconnectedWire,
-	BRepLib_NonManifoldWire,
+enum BRepLib_ShellError {
+	BRepLib_ShellDone,
+	BRepLib_EmptyShell,
+	BRepLib_DisconnectedShell,
+	BRepLib_ShellParametersOutOfRange,
 	};
 
 
@@ -181,6 +181,55 @@ def __del__(self):
 %}
 
 %extend BRepLib_MakeVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepLib_MakeWire;
+class BRepLib_MakeWire : public BRepLib_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		BRepLib_MakeWire();
+		%feature("autodoc", "1");
+		BRepLib_MakeWire(const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		BRepLib_MakeWire(const TopoDS_Edge E1, const TopoDS_Edge E2);
+		%feature("autodoc", "1");
+		BRepLib_MakeWire(const TopoDS_Edge E1, const TopoDS_Edge E2, const TopoDS_Edge E3);
+		%feature("autodoc", "1");
+		BRepLib_MakeWire(const TopoDS_Edge E1, const TopoDS_Edge E2, const TopoDS_Edge E3, const TopoDS_Edge E4);
+		%feature("autodoc", "1");
+		BRepLib_MakeWire(const TopoDS_Wire W);
+		%feature("autodoc", "1");
+		BRepLib_MakeWire(const TopoDS_Wire W, const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Wire W);
+		%feature("autodoc", "1");
+		void Add(const TopTools_ListOfShape &L);
+		%feature("autodoc", "1");
+		BRepLib_WireError Error() const;
+		%feature("autodoc", "1");
+		const TopoDS_Wire  Wire() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge  Edge() const;
+		%feature("autodoc", "1");
+		const TopoDS_Vertex  Vertex() const;
+
+};
+%feature("shadow") BRepLib_MakeWire::~BRepLib_MakeWire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepLib_MakeWire {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -407,139 +456,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepLib_MakeShell;
-class BRepLib_MakeShell : public BRepLib_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		BRepLib_MakeShell();
-		%feature("autodoc", "1");
-		BRepLib_MakeShell(const Handle_Geom_Surface &S, const Standard_Boolean Segment=0);
-		%feature("autodoc", "1");
-		BRepLib_MakeShell(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Boolean Segment=0);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Boolean Segment=0);
-		%feature("autodoc", "1");
-		BRepLib_ShellError Error() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shell  Shell() const;
-
-};
-%feature("shadow") BRepLib_MakeShell::~BRepLib_MakeShell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepLib_MakeShell {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepLib;
-class BRepLib {
-	public:
-		%feature("autodoc", "1");
-		BRepLib();
-		%feature("autodoc", "1");
-		static		void Precision(const Standard_Real P);
-		%feature("autodoc", "1");
-		static		Standard_Real Precision();
-		%feature("autodoc", "1");
-		static		void Plane(const Handle_Geom_Plane &P);
-		%feature("autodoc", "1");
-		static		const Handle_Geom_Plane & Plane();
-		%feature("autodoc", "1");
-		static		Standard_Boolean CheckSameRange(const TopoDS_Edge E, const Standard_Real Confusion=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		static		void SameRange(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5);
-		%feature("autodoc", "1");
-		static		Standard_Boolean BuildCurve3d(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Integer MaxDegree=14, const Standard_Integer MaxSegment=0);
-		%feature("autodoc", "1");
-		static		Standard_Boolean BuildCurves3d(const TopoDS_Shape S, const Standard_Real Tolerance, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Integer MaxDegree=14, const Standard_Integer MaxSegment=0);
-		%feature("autodoc", "1");
-		static		Standard_Boolean BuildCurves3d(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		static		Standard_Boolean UpdateEdgeTol(const TopoDS_Edge E, const Standard_Real MinToleranceRequest, const Standard_Real MaxToleranceToCheck);
-		%feature("autodoc", "1");
-		static		Standard_Boolean UpdateEdgeTolerance(const TopoDS_Shape S, const Standard_Real MinToleranceRequest, const Standard_Real MaxToleranceToCheck);
-		%feature("autodoc", "1");
-		static		void SameParameter(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5);
-		%feature("autodoc", "1");
-		static		void SameParameter(const TopoDS_Shape S, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean forced=0);
-		%feature("autodoc", "1");
-		static		void UpdateTolerances(const TopoDS_Shape S, const Standard_Boolean verifyFaceTolerance=0);
-		%feature("autodoc", "1");
-		static		Standard_Boolean OrientClosedSolid(TopoDS_Solid & solid);
-		%feature("autodoc", "1");
-		static		void EncodeRegularity(const TopoDS_Shape S, const Standard_Real TolAng=1.0000000000000000364321973154977415791655470656e-10);
-		%feature("autodoc", "1");
-		static		void EncodeRegularity(TopoDS_Edge & S, const TopoDS_Face F1, const TopoDS_Face F2, const Standard_Real TolAng=1.0000000000000000364321973154977415791655470656e-10);
-		%feature("autodoc", "1");
-		static		void SortFaces(const TopoDS_Shape S, TopTools_ListOfShape & LF);
-		%feature("autodoc", "1");
-		static		void ReverseSortFaces(const TopoDS_Shape S, TopTools_ListOfShape & LF);
-
-};
-%feature("shadow") BRepLib::~BRepLib %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepLib {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepLib_FuseEdges;
-class BRepLib_FuseEdges {
-	public:
-		%feature("autodoc", "1");
-		BRepLib_FuseEdges(const TopoDS_Shape theShape, const Standard_Boolean PerformNow=0);
-		%feature("autodoc", "1");
-		void AvoidEdges(const TopTools_IndexedMapOfShape &theMapEdg);
-		%feature("autodoc", "1");
-		void SetConcatBSpl(const Standard_Boolean theConcatBSpl=1);
-		%feature("autodoc", "1");
-		void Edges(TopTools_DataMapOfIntegerListOfShape & theMapLstEdg);
-		%feature("autodoc", "1");
-		void ResultEdges(TopTools_DataMapOfIntegerShape & theMapEdg);
-		%feature("autodoc", "1");
-		void Faces(TopTools_DataMapOfShapeShape & theMapFac);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Shape();
-		%feature("autodoc", "1");
-		Standard_Integer const NbVertices();
-		%feature("autodoc", "1");
-		void Perform();
-
-};
-%feature("shadow") BRepLib_FuseEdges::~BRepLib_FuseEdges %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepLib_FuseEdges {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepLib_MakePolygon;
 class BRepLib_MakePolygon : public BRepLib_MakeShape {
 	public:
@@ -585,6 +501,117 @@ def __del__(self):
 %}
 
 %extend BRepLib_MakePolygon {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepLib_MakeShell;
+class BRepLib_MakeShell : public BRepLib_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		BRepLib_MakeShell();
+		%feature("autodoc", "1");
+		BRepLib_MakeShell(const Handle_Geom_Surface &S, const Standard_Boolean Segment=0);
+		%feature("autodoc", "1");
+		BRepLib_MakeShell(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Boolean Segment=0);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Boolean Segment=0);
+		%feature("autodoc", "1");
+		BRepLib_ShellError Error() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shell  Shell() const;
+
+};
+%feature("shadow") BRepLib_MakeShell::~BRepLib_MakeShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepLib_MakeShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepLib_FindSurface;
+class BRepLib_FindSurface {
+	public:
+		%feature("autodoc", "1");
+		BRepLib_FindSurface();
+		%feature("autodoc", "1");
+		BRepLib_FindSurface(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
+		%feature("autodoc", "1");
+		Standard_Boolean Found() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Surface Surface() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		Standard_Real ToleranceReached() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Existed() const;
+		%feature("autodoc", "1");
+		TopLoc_Location Location() const;
+
+};
+%feature("shadow") BRepLib_FindSurface::~BRepLib_FindSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepLib_FindSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepLib_FuseEdges;
+class BRepLib_FuseEdges {
+	public:
+		%feature("autodoc", "1");
+		BRepLib_FuseEdges(const TopoDS_Shape theShape, const Standard_Boolean PerformNow=0);
+		%feature("autodoc", "1");
+		void AvoidEdges(const TopTools_IndexedMapOfShape &theMapEdg);
+		%feature("autodoc", "1");
+		void SetConcatBSpl(const Standard_Boolean theConcatBSpl=1);
+		%feature("autodoc", "1");
+		void Edges(TopTools_DataMapOfIntegerListOfShape & theMapLstEdg);
+		%feature("autodoc", "1");
+		void ResultEdges(TopTools_DataMapOfIntegerShape & theMapEdg);
+		%feature("autodoc", "1");
+		void Faces(TopTools_DataMapOfShapeShape & theMapFac);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Shape();
+		%feature("autodoc", "1");
+		Standard_Integer const NbVertices();
+		%feature("autodoc", "1");
+		void Perform();
+
+};
+%feature("shadow") BRepLib_FuseEdges::~BRepLib_FuseEdges %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepLib_FuseEdges {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -709,40 +736,52 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepLib_MakeWire;
-class BRepLib_MakeWire : public BRepLib_MakeShape {
+%nodefaultctor BRepLib;
+class BRepLib {
 	public:
 		%feature("autodoc", "1");
-		BRepLib_MakeWire();
+		BRepLib();
 		%feature("autodoc", "1");
-		BRepLib_MakeWire(const TopoDS_Edge E);
+		static		void Precision(const Standard_Real P);
 		%feature("autodoc", "1");
-		BRepLib_MakeWire(const TopoDS_Edge E1, const TopoDS_Edge E2);
+		static		Standard_Real Precision();
 		%feature("autodoc", "1");
-		BRepLib_MakeWire(const TopoDS_Edge E1, const TopoDS_Edge E2, const TopoDS_Edge E3);
+		static		void Plane(const Handle_Geom_Plane &P);
 		%feature("autodoc", "1");
-		BRepLib_MakeWire(const TopoDS_Edge E1, const TopoDS_Edge E2, const TopoDS_Edge E3, const TopoDS_Edge E4);
+		static		const Handle_Geom_Plane & Plane();
 		%feature("autodoc", "1");
-		BRepLib_MakeWire(const TopoDS_Wire W);
+		static		Standard_Boolean CheckSameRange(const TopoDS_Edge E, const Standard_Real Confusion=9.9999999999999997988664762925561536725284350613e-13);
 		%feature("autodoc", "1");
-		BRepLib_MakeWire(const TopoDS_Wire W, const TopoDS_Edge E);
+		static		void SameRange(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge E);
+		static		Standard_Boolean BuildCurve3d(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Integer MaxDegree=14, const Standard_Integer MaxSegment=0);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Wire W);
+		static		Standard_Boolean BuildCurves3d(const TopoDS_Shape S, const Standard_Real Tolerance, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Integer MaxDegree=14, const Standard_Integer MaxSegment=0);
 		%feature("autodoc", "1");
-		void Add(const TopTools_ListOfShape &L);
+		static		Standard_Boolean BuildCurves3d(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		BRepLib_WireError Error() const;
+		static		Standard_Boolean UpdateEdgeTol(const TopoDS_Edge E, const Standard_Real MinToleranceRequest, const Standard_Real MaxToleranceToCheck);
 		%feature("autodoc", "1");
-		const TopoDS_Wire  Wire() const;
+		static		Standard_Boolean UpdateEdgeTolerance(const TopoDS_Shape S, const Standard_Real MinToleranceRequest, const Standard_Real MaxToleranceToCheck);
 		%feature("autodoc", "1");
-		const TopoDS_Edge  Edge() const;
+		static		void SameParameter(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5);
 		%feature("autodoc", "1");
-		const TopoDS_Vertex  Vertex() const;
+		static		void SameParameter(const TopoDS_Shape S, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean forced=0);
+		%feature("autodoc", "1");
+		static		void UpdateTolerances(const TopoDS_Shape S, const Standard_Boolean verifyFaceTolerance=0);
+		%feature("autodoc", "1");
+		static		Standard_Boolean OrientClosedSolid(TopoDS_Solid & solid);
+		%feature("autodoc", "1");
+		static		void EncodeRegularity(const TopoDS_Shape S, const Standard_Real TolAng=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		static		void EncodeRegularity(TopoDS_Edge & S, const TopoDS_Face F1, const TopoDS_Face F2, const Standard_Real TolAng=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		static		void SortFaces(const TopoDS_Shape S, TopTools_ListOfShape & LF);
+		%feature("autodoc", "1");
+		static		void ReverseSortFaces(const TopoDS_Shape S, TopTools_ListOfShape & LF);
 
 };
-%feature("shadow") BRepLib_MakeWire::~BRepLib_MakeWire %{
+%feature("shadow") BRepLib::~BRepLib %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -751,46 +790,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepLib_MakeWire {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepLib_FindSurface;
-class BRepLib_FindSurface {
-	public:
-		%feature("autodoc", "1");
-		BRepLib_FindSurface();
-		%feature("autodoc", "1");
-		BRepLib_FindSurface(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
-		%feature("autodoc", "1");
-		Standard_Boolean Found() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		Standard_Real ToleranceReached() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Existed() const;
-		%feature("autodoc", "1");
-		TopLoc_Location Location() const;
-
-};
-%feature("shadow") BRepLib_FindSurface::~BRepLib_FindSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepLib_FindSurface {
+%extend BRepLib {
 	void _kill_pointed() {
 		delete $self;
 	}

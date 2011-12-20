@@ -130,24 +130,42 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomConvert_BSplineSurfaceKnotSplitting;
-class GeomConvert_BSplineSurfaceKnotSplitting {
+%nodefaultctor GeomConvert_CompBezierSurfacesToBSplineSurface;
+class GeomConvert_CompBezierSurfacesToBSplineSurface {
 	public:
 		%feature("autodoc", "1");
-		GeomConvert_BSplineSurfaceKnotSplitting(const Handle_Geom_BSplineSurface &BasisSurface, const Standard_Integer UContinuityRange, const Standard_Integer VContinuityRange);
+		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers);
 		%feature("autodoc", "1");
-		Standard_Integer NbUSplits() const;
+		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const Standard_Real Tolerance, const Standard_Boolean RemoveKnots=1);
 		%feature("autodoc", "1");
-		Standard_Integer NbVSplits() const;
+		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const GeomAbs_Shape UContinuity=GeomAbs_C0, const GeomAbs_Shape VContinuity=GeomAbs_C0, const Standard_Real Tolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		void Splitting(TColStd_Array1OfInteger & USplit, TColStd_Array1OfInteger & VSplit) const;
+		Standard_Integer NbUKnots() const;
 		%feature("autodoc", "1");
-		Standard_Integer USplitValue(const Standard_Integer UIndex) const;
+		Standard_Integer NbUPoles() const;
 		%feature("autodoc", "1");
-		Standard_Integer VSplitValue(const Standard_Integer VIndex) const;
+		Standard_Integer NbVKnots() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbVPoles() const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HArray2OfPnt & Poles() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & UKnots() const;
+		%feature("autodoc", "1");
+		Standard_Integer UDegree() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & VKnots() const;
+		%feature("autodoc", "1");
+		Standard_Integer VDegree() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfInteger & UMultiplicities() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfInteger & VMultiplicities() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
 
 };
-%feature("shadow") GeomConvert_BSplineSurfaceKnotSplitting::~GeomConvert_BSplineSurfaceKnotSplitting %{
+%feature("shadow") GeomConvert_CompBezierSurfacesToBSplineSurface::~GeomConvert_CompBezierSurfacesToBSplineSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -156,7 +174,34 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomConvert_BSplineSurfaceKnotSplitting {
+%extend GeomConvert_CompBezierSurfacesToBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomConvert_CompCurveToBSplineCurve;
+class GeomConvert_CompCurveToBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		GeomConvert_CompCurveToBSplineCurve(const Handle_Geom_BoundedCurve &BasisCurve, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Geom_BoundedCurve &NewCurve, const Standard_Real Tolerance, const Standard_Boolean After=0, const Standard_Boolean WithRatio=1, const Standard_Integer MinM=0);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve BSplineCurve() const;
+
+};
+%feature("shadow") GeomConvert_CompCurveToBSplineCurve::~GeomConvert_CompCurveToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomConvert_CompCurveToBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -186,6 +231,39 @@ def __del__(self):
 %}
 
 %extend GeomConvert_BSplineCurveKnotSplitting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomConvert_BSplineSurfaceKnotSplitting;
+class GeomConvert_BSplineSurfaceKnotSplitting {
+	public:
+		%feature("autodoc", "1");
+		GeomConvert_BSplineSurfaceKnotSplitting(const Handle_Geom_BSplineSurface &BasisSurface, const Standard_Integer UContinuityRange, const Standard_Integer VContinuityRange);
+		%feature("autodoc", "1");
+		Standard_Integer NbUSplits() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbVSplits() const;
+		%feature("autodoc", "1");
+		void Splitting(TColStd_Array1OfInteger & USplit, TColStd_Array1OfInteger & VSplit) const;
+		%feature("autodoc", "1");
+		Standard_Integer USplitValue(const Standard_Integer UIndex) const;
+		%feature("autodoc", "1");
+		Standard_Integer VSplitValue(const Standard_Integer VIndex) const;
+
+};
+%feature("shadow") GeomConvert_BSplineSurfaceKnotSplitting::~GeomConvert_BSplineSurfaceKnotSplitting %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomConvert_BSplineSurfaceKnotSplitting {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -243,70 +321,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomConvert_BSplineSurfaceToBezierSurface;
-class GeomConvert_BSplineSurfaceToBezierSurface {
-	public:
-		%feature("autodoc", "1");
-		GeomConvert_BSplineSurfaceToBezierSurface(const Handle_Geom_BSplineSurface &BasisSurface);
-		%feature("autodoc", "1");
-		GeomConvert_BSplineSurfaceToBezierSurface(const Handle_Geom_BSplineSurface &BasisSurface, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Real ParametricTolerance);
-		%feature("autodoc", "1");
-		Handle_Geom_BezierSurface Patch(const Standard_Integer UIndex, const Standard_Integer VIndex);
-		%feature("autodoc", "1");
-		void Patches(TColGeom_Array2OfBezierSurface & Surfaces);
-		%feature("autodoc", "1");
-		void UKnots(TColStd_Array1OfReal & TKnots) const;
-		%feature("autodoc", "1");
-		void VKnots(TColStd_Array1OfReal & TKnots) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbUPatches() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbVPatches() const;
-
-};
-%feature("shadow") GeomConvert_BSplineSurfaceToBezierSurface::~GeomConvert_BSplineSurfaceToBezierSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomConvert_BSplineSurfaceToBezierSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomConvert_CompCurveToBSplineCurve;
-class GeomConvert_CompCurveToBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomConvert_CompCurveToBSplineCurve(const Handle_Geom_BoundedCurve &BasisCurve, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Geom_BoundedCurve &NewCurve, const Standard_Real Tolerance, const Standard_Boolean After=0, const Standard_Boolean WithRatio=1, const Standard_Integer MinM=0);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve BSplineCurve() const;
-
-};
-%feature("shadow") GeomConvert_CompCurveToBSplineCurve::~GeomConvert_CompCurveToBSplineCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomConvert_CompCurveToBSplineCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomConvert_BSplineCurveToBezierCurve;
 class GeomConvert_BSplineCurveToBezierCurve {
 	public:
@@ -340,42 +354,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomConvert_CompBezierSurfacesToBSplineSurface;
-class GeomConvert_CompBezierSurfacesToBSplineSurface {
+%nodefaultctor GeomConvert_BSplineSurfaceToBezierSurface;
+class GeomConvert_BSplineSurfaceToBezierSurface {
 	public:
 		%feature("autodoc", "1");
-		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers);
+		GeomConvert_BSplineSurfaceToBezierSurface(const Handle_Geom_BSplineSurface &BasisSurface);
 		%feature("autodoc", "1");
-		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const Standard_Real Tolerance, const Standard_Boolean RemoveKnots=1);
+		GeomConvert_BSplineSurfaceToBezierSurface(const Handle_Geom_BSplineSurface &BasisSurface, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Real ParametricTolerance);
 		%feature("autodoc", "1");
-		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const GeomAbs_Shape UContinuity=GeomAbs_C0, const GeomAbs_Shape VContinuity=GeomAbs_C0, const Standard_Real Tolerance=1.00000000000000004792173602385929598312941379845e-4);
+		Handle_Geom_BezierSurface Patch(const Standard_Integer UIndex, const Standard_Integer VIndex);
 		%feature("autodoc", "1");
-		Standard_Integer NbUKnots() const;
+		void Patches(TColGeom_Array2OfBezierSurface & Surfaces);
 		%feature("autodoc", "1");
-		Standard_Integer NbUPoles() const;
+		void UKnots(TColStd_Array1OfReal & TKnots) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbVKnots() const;
+		void VKnots(TColStd_Array1OfReal & TKnots) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbVPoles() const;
+		Standard_Integer NbUPatches() const;
 		%feature("autodoc", "1");
-		const Handle_TColgp_HArray2OfPnt & Poles() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & UKnots() const;
-		%feature("autodoc", "1");
-		Standard_Integer UDegree() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & VKnots() const;
-		%feature("autodoc", "1");
-		Standard_Integer VDegree() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfInteger & UMultiplicities() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfInteger & VMultiplicities() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		Standard_Integer NbVPatches() const;
 
 };
-%feature("shadow") GeomConvert_CompBezierSurfacesToBSplineSurface::~GeomConvert_CompBezierSurfacesToBSplineSurface %{
+%feature("shadow") GeomConvert_BSplineSurfaceToBezierSurface::~GeomConvert_BSplineSurfaceToBezierSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -384,7 +384,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomConvert_CompBezierSurfacesToBSplineSurface {
+%extend GeomConvert_BSplineSurfaceToBezierSurface {
 	void _kill_pointed() {
 		delete $self;
 	}

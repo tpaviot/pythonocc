@@ -164,8 +164,8 @@ $HeaderURL$
 #include <TopAbs_State.hxx>
 %};
 
-%import TCollection.i
 %import MMgt.i
+%import TCollection.i
 %import Standard.i
 %import TopAbs.i
 %import ShapeExtend.i

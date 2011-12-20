@@ -191,6 +191,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder;
+class Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder();
+		%feature("autodoc", "1");
+		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder(const Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder(const MeshVS_SequenceNodeOfSequenceOfPrsBuilder *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder & operator=(const Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder & operator=(const MeshVS_SequenceNodeOfSequenceOfPrsBuilder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
+	MeshVS_SequenceNodeOfSequenceOfPrsBuilder* GetObject() {
+	return (MeshVS_SequenceNodeOfSequenceOfPrsBuilder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_MeshVS_PrsBuilder;
 class Handle_MeshVS_PrsBuilder : public Handle_MMgt_TShared {
 	public:
@@ -337,6 +375,44 @@ def __del__(self):
 %}
 
 %extend Handle_MeshVS_Mesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MeshVS_SensitiveSegment;
+class Handle_MeshVS_SensitiveSegment : public Handle_Select3D_SensitiveSegment {
+	public:
+		%feature("autodoc", "1");
+		Handle_MeshVS_SensitiveSegment();
+		%feature("autodoc", "1");
+		Handle_MeshVS_SensitiveSegment(const Handle_MeshVS_SensitiveSegment &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_SensitiveSegment(const MeshVS_SensitiveSegment *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshVS_SensitiveSegment & operator=(const Handle_MeshVS_SensitiveSegment &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_SensitiveSegment & operator=(const MeshVS_SensitiveSegment *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MeshVS_SensitiveSegment DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MeshVS_SensitiveSegment {
+	MeshVS_SensitiveSegment* GetObject() {
+	return (MeshVS_SensitiveSegment*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MeshVS_SensitiveSegment::~Handle_MeshVS_SensitiveSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MeshVS_SensitiveSegment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -609,44 +685,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MeshVS_SensitiveSegment;
-class Handle_MeshVS_SensitiveSegment : public Handle_Select3D_SensitiveSegment {
-	public:
-		%feature("autodoc", "1");
-		Handle_MeshVS_SensitiveSegment();
-		%feature("autodoc", "1");
-		Handle_MeshVS_SensitiveSegment(const Handle_MeshVS_SensitiveSegment &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_SensitiveSegment(const MeshVS_SensitiveSegment *anItem);
-		%feature("autodoc", "1");
-		Handle_MeshVS_SensitiveSegment & operator=(const Handle_MeshVS_SensitiveSegment &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_SensitiveSegment & operator=(const MeshVS_SensitiveSegment *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MeshVS_SensitiveSegment DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MeshVS_SensitiveSegment {
-	MeshVS_SensitiveSegment* GetObject() {
-	return (MeshVS_SensitiveSegment*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MeshVS_SensitiveSegment::~Handle_MeshVS_SensitiveSegment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MeshVS_SensitiveSegment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString;
 class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public Handle_TCollection_MapNode {
 	public:
@@ -761,29 +799,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder;
-class Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_MeshVS_SensitivePolyhedron;
+class Handle_MeshVS_SensitivePolyhedron : public Handle_Select3D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder();
+		Handle_MeshVS_SensitivePolyhedron();
 		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder(const Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder &aHandle);
+		Handle_MeshVS_SensitivePolyhedron(const Handle_MeshVS_SensitivePolyhedron &aHandle);
 		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder(const MeshVS_SequenceNodeOfSequenceOfPrsBuilder *anItem);
+		Handle_MeshVS_SensitivePolyhedron(const MeshVS_SensitivePolyhedron *anItem);
 		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder & operator=(const Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder &aHandle);
+		Handle_MeshVS_SensitivePolyhedron & operator=(const Handle_MeshVS_SensitivePolyhedron &aHandle);
 		%feature("autodoc", "1");
-		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder & operator=(const MeshVS_SequenceNodeOfSequenceOfPrsBuilder *anItem);
+		Handle_MeshVS_SensitivePolyhedron & operator=(const MeshVS_SensitivePolyhedron *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MeshVS_SensitivePolyhedron DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
-	MeshVS_SequenceNodeOfSequenceOfPrsBuilder* GetObject() {
-	return (MeshVS_SequenceNodeOfSequenceOfPrsBuilder*)$self->Access();
+%extend Handle_MeshVS_SensitivePolyhedron {
+	MeshVS_SensitivePolyhedron* GetObject() {
+	return (MeshVS_SensitivePolyhedron*)$self->Access();
 	}
 };
-%feature("shadow") Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
+%feature("shadow") Handle_MeshVS_SensitivePolyhedron::~Handle_MeshVS_SensitivePolyhedron %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -792,7 +830,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
+%extend Handle_MeshVS_SensitivePolyhedron {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1065,44 +1103,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MeshVS_StdMapNodeOfMapOfTwoNodes;
-class Handle_MeshVS_StdMapNodeOfMapOfTwoNodes : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes();
-		%feature("autodoc", "1");
-		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes(const Handle_MeshVS_StdMapNodeOfMapOfTwoNodes &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes(const MeshVS_StdMapNodeOfMapOfTwoNodes *anItem);
-		%feature("autodoc", "1");
-		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes & operator=(const Handle_MeshVS_StdMapNodeOfMapOfTwoNodes &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes & operator=(const MeshVS_StdMapNodeOfMapOfTwoNodes *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MeshVS_StdMapNodeOfMapOfTwoNodes {
-	MeshVS_StdMapNodeOfMapOfTwoNodes* GetObject() {
-	return (MeshVS_StdMapNodeOfMapOfTwoNodes*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MeshVS_StdMapNodeOfMapOfTwoNodes::~Handle_MeshVS_StdMapNodeOfMapOfTwoNodes %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MeshVS_StdMapNodeOfMapOfTwoNodes {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MeshVS_NodalColorPrsBuilder;
 class Handle_MeshVS_NodalColorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 	public:
@@ -1135,44 +1135,6 @@ def __del__(self):
 %}
 
 %extend Handle_MeshVS_NodalColorPrsBuilder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_MeshVS_SensitivePolyhedron;
-class Handle_MeshVS_SensitivePolyhedron : public Handle_Select3D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_MeshVS_SensitivePolyhedron();
-		%feature("autodoc", "1");
-		Handle_MeshVS_SensitivePolyhedron(const Handle_MeshVS_SensitivePolyhedron &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_SensitivePolyhedron(const MeshVS_SensitivePolyhedron *anItem);
-		%feature("autodoc", "1");
-		Handle_MeshVS_SensitivePolyhedron & operator=(const Handle_MeshVS_SensitivePolyhedron &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshVS_SensitivePolyhedron & operator=(const MeshVS_SensitivePolyhedron *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MeshVS_SensitivePolyhedron DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MeshVS_SensitivePolyhedron {
-	MeshVS_SensitivePolyhedron* GetObject() {
-	return (MeshVS_SensitivePolyhedron*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MeshVS_SensitivePolyhedron::~Handle_MeshVS_SensitivePolyhedron %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MeshVS_SensitivePolyhedron {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1249,6 +1211,44 @@ def __del__(self):
 %}
 
 %extend Handle_MeshVS_HArray1OfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MeshVS_StdMapNodeOfMapOfTwoNodes;
+class Handle_MeshVS_StdMapNodeOfMapOfTwoNodes : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes();
+		%feature("autodoc", "1");
+		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes(const Handle_MeshVS_StdMapNodeOfMapOfTwoNodes &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes(const MeshVS_StdMapNodeOfMapOfTwoNodes *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes & operator=(const Handle_MeshVS_StdMapNodeOfMapOfTwoNodes &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes & operator=(const MeshVS_StdMapNodeOfMapOfTwoNodes *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MeshVS_StdMapNodeOfMapOfTwoNodes DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MeshVS_StdMapNodeOfMapOfTwoNodes {
+	MeshVS_StdMapNodeOfMapOfTwoNodes* GetObject() {
+	return (MeshVS_StdMapNodeOfMapOfTwoNodes*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MeshVS_StdMapNodeOfMapOfTwoNodes::~Handle_MeshVS_StdMapNodeOfMapOfTwoNodes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MeshVS_StdMapNodeOfMapOfTwoNodes {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1362,6 +1362,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor MeshVS_MapIteratorOfMapOfTwoNodes;
+class MeshVS_MapIteratorOfMapOfTwoNodes : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_MapIteratorOfMapOfTwoNodes();
+		%feature("autodoc", "1");
+		MeshVS_MapIteratorOfMapOfTwoNodes(const MeshVS_MapOfTwoNodes &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const MeshVS_MapOfTwoNodes &aMap);
+		%feature("autodoc", "1");
+		const MeshVS_TwoNodes & Key() const;
+
+};
+%feature("shadow") MeshVS_MapIteratorOfMapOfTwoNodes::~MeshVS_MapIteratorOfMapOfTwoNodes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_MapIteratorOfMapOfTwoNodes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString;
 class MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString : public TCollection_BasicMapIterator {
 	public:
@@ -1387,6 +1416,29 @@ def __del__(self):
 %}
 
 %extend MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_TwoColors;
+class MeshVS_TwoColors {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_TwoColors();
+
+};
+%feature("shadow") MeshVS_TwoColors::~MeshVS_TwoColors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_TwoColors {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1451,7 +1503,7 @@ class MeshVS_DataSource : public MMgt_TShared {
 };
 %extend MeshVS_DataSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataSource::~MeshVS_DataSource %{
@@ -1490,7 +1542,7 @@ class MeshVS_DataSource3D : public MeshVS_DataSource {
 };
 %extend MeshVS_DataSource3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataSource3D::~MeshVS_DataSource3D %{
@@ -1554,22 +1606,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerOwner;
-class MeshVS_DataMapIteratorOfDataMapOfIntegerOwner : public TCollection_BasicMapIterator {
+%nodefaultctor MeshVS_StdMapNodeOfMapOfTwoNodes;
+class MeshVS_StdMapNodeOfMapOfTwoNodes : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_DataMapIteratorOfDataMapOfIntegerOwner();
+		MeshVS_StdMapNodeOfMapOfTwoNodes(const MeshVS_TwoNodes &K, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		MeshVS_DataMapIteratorOfDataMapOfIntegerOwner(const MeshVS_DataMapOfIntegerOwner &aMap);
+		MeshVS_TwoNodes & Key() const;
 		%feature("autodoc", "1");
-		void Initialize(const MeshVS_DataMapOfIntegerOwner &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_EntityOwner & Value() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerOwner::~MeshVS_DataMapIteratorOfDataMapOfIntegerOwner %{
+%extend MeshVS_StdMapNodeOfMapOfTwoNodes {
+	Handle_MeshVS_StdMapNodeOfMapOfTwoNodes GetHandle() {
+	return *(Handle_MeshVS_StdMapNodeOfMapOfTwoNodes*) &$self;
+	}
+};
+%extend MeshVS_StdMapNodeOfMapOfTwoNodes {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MeshVS_StdMapNodeOfMapOfTwoNodes::~MeshVS_StdMapNodeOfMapOfTwoNodes %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1578,7 +1636,56 @@ def __del__(self):
 		pass
 %}
 
-%extend MeshVS_DataMapIteratorOfDataMapOfIntegerOwner {
+%extend MeshVS_StdMapNodeOfMapOfTwoNodes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerColor;
+class MeshVS_DataMapNodeOfDataMapOfIntegerColor : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_DataMapNodeOfDataMapOfIntegerColor(const Standard_Integer &K, const Quantity_Color &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Quantity_Color & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerColor {
+	Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor GetHandle() {
+	return *(Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor*) &$self;
+	}
+};
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerColor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerColor::~MeshVS_DataMapNodeOfDataMapOfIntegerColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerColor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1634,7 +1741,7 @@ class MeshVS_DeformedDataSource : public MeshVS_DataSource {
 };
 %extend MeshVS_DeformedDataSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DeformedDataSource::~MeshVS_DeformedDataSource %{
@@ -1684,6 +1791,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor MeshVS_SequenceNodeOfSequenceOfPrsBuilder;
+class MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_SequenceNodeOfSequenceOfPrsBuilder(const Handle_MeshVS_PrsBuilder &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_MeshVS_PrsBuilder & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
+	Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder GetHandle() {
+	return *(Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder*) &$self;
+	}
+};
+%extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerVector;
 class MeshVS_DataMapIteratorOfDataMapOfIntegerVector : public TCollection_BasicMapIterator {
 	public:
@@ -1709,43 +1853,6 @@ def __del__(self):
 %}
 
 %extend MeshVS_DataMapIteratorOfDataMapOfIntegerVector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_SequenceNodeOfSequenceOfPrsBuilder;
-class MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_SequenceNodeOfSequenceOfPrsBuilder(const Handle_MeshVS_PrsBuilder &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_MeshVS_PrsBuilder & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
-	Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder GetHandle() {
-	return *(Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder*) &$self;
-	}
-};
-%extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1828,29 +1935,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor MeshVS_TwoNodes;
-class MeshVS_TwoNodes {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_TwoNodes(Standard_Integer =0, Standard_Integer =0);
-
-};
-%feature("shadow") MeshVS_TwoNodes::~MeshVS_TwoNodes %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_TwoNodes {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor MeshVS_Buffer;
 class MeshVS_Buffer {
 	public:
@@ -1868,6 +1952,71 @@ def __del__(self):
 %}
 
 %extend MeshVS_Buffer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_SequenceOfPrsBuilder;
+class MeshVS_SequenceOfPrsBuilder : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_SequenceOfPrsBuilder();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const MeshVS_SequenceOfPrsBuilder & Assign(const MeshVS_SequenceOfPrsBuilder &Other);
+		%feature("autodoc", "1");
+		const MeshVS_SequenceOfPrsBuilder & operator=(const MeshVS_SequenceOfPrsBuilder &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_MeshVS_PrsBuilder &T);
+		%feature("autodoc", "1");
+		void Append(MeshVS_SequenceOfPrsBuilder & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_MeshVS_PrsBuilder &T);
+		%feature("autodoc", "1");
+		void Prepend(MeshVS_SequenceOfPrsBuilder & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_MeshVS_PrsBuilder &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, MeshVS_SequenceOfPrsBuilder & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_MeshVS_PrsBuilder &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, MeshVS_SequenceOfPrsBuilder & S);
+		%feature("autodoc", "1");
+		const Handle_MeshVS_PrsBuilder & First() const;
+		%feature("autodoc", "1");
+		const Handle_MeshVS_PrsBuilder & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, MeshVS_SequenceOfPrsBuilder & S);
+		%feature("autodoc", "1");
+		const Handle_MeshVS_PrsBuilder & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_MeshVS_PrsBuilder & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_MeshVS_PrsBuilder &I);
+		%feature("autodoc", "1");
+		Handle_MeshVS_PrsBuilder & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_MeshVS_PrsBuilder & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") MeshVS_SequenceOfPrsBuilder::~MeshVS_SequenceOfPrsBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_SequenceOfPrsBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1910,7 +2059,7 @@ class MeshVS_HArray1OfSequenceOfInteger : public MMgt_TShared {
 };
 %extend MeshVS_HArray1OfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_HArray1OfSequenceOfInteger::~MeshVS_HArray1OfSequenceOfInteger %{
@@ -2004,7 +2153,7 @@ class MeshVS_PrsBuilder : public MMgt_TShared {
 };
 %extend MeshVS_PrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_PrsBuilder::~MeshVS_PrsBuilder %{
@@ -2060,7 +2209,7 @@ class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_VectorPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_VectorPrsBuilder::~MeshVS_VectorPrsBuilder %{
@@ -2124,40 +2273,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerColor;
-class MeshVS_DataMapNodeOfDataMapOfIntegerColor : public TCollection_MapNode {
+%nodefaultctor MeshVS_SensitiveSegment;
+class MeshVS_SensitiveSegment : public Select3D_SensitiveSegment {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_DataMapNodeOfDataMapOfIntegerColor(const Standard_Integer &K, const Quantity_Color &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
+		MeshVS_SensitiveSegment(const Handle_SelectBasics_EntityOwner &theOwner, const gp_Pnt theFirstP, const gp_Pnt theLastP, const Standard_Integer theMaxRect=1);
 		%feature("autodoc", "1");
-		Quantity_Color & Value() const;
+		virtual		void Project(const Handle_Select3D_Projector &aProjector);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerColor {
-	Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor GetHandle() {
-	return *(Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor*) &$self;
+%extend MeshVS_SensitiveSegment {
+	Handle_MeshVS_SensitiveSegment GetHandle() {
+	return *(Handle_MeshVS_SensitiveSegment*) &$self;
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerColor {
+%extend MeshVS_SensitiveSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerColor::~MeshVS_DataMapNodeOfDataMapOfIntegerColor %{
+%feature("shadow") MeshVS_SensitiveSegment::~MeshVS_SensitiveSegment %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2166,7 +2307,7 @@ def __del__(self):
 		pass
 %}
 
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerColor {
+%extend MeshVS_SensitiveSegment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2268,7 +2409,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerBoolean::~MeshVS_DataMapNodeOfDataMapOfIntegerBoolean %{
@@ -2318,7 +2459,7 @@ class MeshVS_SensitivePolyhedron : public Select3D_SensitiveEntity {
 };
 %extend MeshVS_SensitivePolyhedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitivePolyhedron::~MeshVS_SensitivePolyhedron %{
@@ -2337,32 +2478,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor MeshVS_SensitiveSegment;
-class MeshVS_SensitiveSegment : public Select3D_SensitiveSegment {
+%nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerMaterial;
+class MeshVS_DataMapNodeOfDataMapOfIntegerMaterial : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_SensitiveSegment(const Handle_SelectBasics_EntityOwner &theOwner, const gp_Pnt theFirstP, const gp_Pnt theLastP, const Standard_Integer theMaxRect=1);
+		MeshVS_DataMapNodeOfDataMapOfIntegerMaterial(const Standard_Integer &K, const Graphic3d_MaterialAspect &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		virtual		void Project(const Handle_Select3D_Projector &aProjector);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
+		Graphic3d_MaterialAspect & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend MeshVS_SensitiveSegment {
-	Handle_MeshVS_SensitiveSegment GetHandle() {
-	return *(Handle_MeshVS_SensitiveSegment*) &$self;
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
+	Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial GetHandle() {
+	return *(Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial*) &$self;
 	}
 };
-%extend MeshVS_SensitiveSegment {
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") MeshVS_SensitiveSegment::~MeshVS_SensitiveSegment %{
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMaterial::~MeshVS_DataMapNodeOfDataMapOfIntegerMaterial %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2371,7 +2520,7 @@ def __del__(self):
 		pass
 %}
 
-%extend MeshVS_SensitiveSegment {
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2403,71 +2552,6 @@ def __del__(self):
 %}
 
 %extend MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_SequenceOfPrsBuilder;
-class MeshVS_SequenceOfPrsBuilder : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_SequenceOfPrsBuilder();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const MeshVS_SequenceOfPrsBuilder & Assign(const MeshVS_SequenceOfPrsBuilder &Other);
-		%feature("autodoc", "1");
-		const MeshVS_SequenceOfPrsBuilder & operator=(const MeshVS_SequenceOfPrsBuilder &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_MeshVS_PrsBuilder &T);
-		%feature("autodoc", "1");
-		void Append(MeshVS_SequenceOfPrsBuilder & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_MeshVS_PrsBuilder &T);
-		%feature("autodoc", "1");
-		void Prepend(MeshVS_SequenceOfPrsBuilder & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_MeshVS_PrsBuilder &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, MeshVS_SequenceOfPrsBuilder & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_MeshVS_PrsBuilder &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, MeshVS_SequenceOfPrsBuilder & S);
-		%feature("autodoc", "1");
-		const Handle_MeshVS_PrsBuilder & First() const;
-		%feature("autodoc", "1");
-		const Handle_MeshVS_PrsBuilder & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, MeshVS_SequenceOfPrsBuilder & S);
-		%feature("autodoc", "1");
-		const Handle_MeshVS_PrsBuilder & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_MeshVS_PrsBuilder & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MeshVS_PrsBuilder &I);
-		%feature("autodoc", "1");
-		Handle_MeshVS_PrsBuilder & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_MeshVS_PrsBuilder & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") MeshVS_SequenceOfPrsBuilder::~MeshVS_SequenceOfPrsBuilder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_SequenceOfPrsBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2552,7 +2636,7 @@ class MeshVS_SensitiveMesh : public Select3D_SensitiveEntity {
 };
 %extend MeshVS_SensitiveMesh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitiveMesh::~MeshVS_SensitiveMesh %{
@@ -2565,6 +2649,33 @@ def __del__(self):
 %}
 
 %extend MeshVS_SensitiveMesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_ColorHasher;
+class MeshVS_ColorHasher : public TColStd_MapIntegerHasher {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_ColorHasher();
+		%feature("autodoc", "1");
+		static		Standard_Integer HashCode(const Quantity_Color &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEqual(const Quantity_Color &K1, const Quantity_Color &K2);
+
+};
+%feature("shadow") MeshVS_ColorHasher::~MeshVS_ColorHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_ColorHasher {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2601,7 +2712,7 @@ class MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger : public TCollecti
 };
 %extend MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger::~MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger %{
@@ -2659,33 +2770,6 @@ def __del__(self):
 %}
 
 %extend MeshVS_DataMapOfIntegerColor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_ColorHasher;
-class MeshVS_ColorHasher : public TColStd_MapIntegerHasher {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_ColorHasher();
-		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const Quantity_Color &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const Quantity_Color &K1, const Quantity_Color &K2);
-
-};
-%feature("shadow") MeshVS_ColorHasher::~MeshVS_ColorHasher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_ColorHasher {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2767,7 +2851,7 @@ class MeshVS_NodalColorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_NodalColorPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_NodalColorPrsBuilder::~MeshVS_NodalColorPrsBuilder %{
@@ -2842,7 +2926,7 @@ class MeshVS_Drawer : public MMgt_TShared {
 };
 %extend MeshVS_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_Drawer::~MeshVS_Drawer %{
@@ -2891,7 +2975,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerVector : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerVector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerVector::~MeshVS_DataMapNodeOfDataMapOfIntegerVector %{
@@ -2940,7 +3024,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public TCollection_MapNo
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString::~MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString %{
@@ -3059,7 +3143,7 @@ class MeshVS_TextPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_TextPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_TextPrsBuilder::~MeshVS_TextPrsBuilder %{
@@ -3211,61 +3295,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor MeshVS_MeshEntityOwner;
-class MeshVS_MeshEntityOwner : public SelectMgr_EntityOwner {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_MeshEntityOwner(const SelectMgr_SOPtr &SelObj, const Standard_Integer ID, const Standard_Address MeshEntity, const MeshVS_EntityType &Type, const Standard_Integer Priority=0, const Standard_Boolean IsGroup=0);
-		%feature("autodoc", "1");
-		Standard_Address Owner() const;
-		%feature("autodoc", "1");
-		MeshVS_EntityType Type() const;
-		%feature("autodoc", "1");
-		Standard_Integer ID() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsGroup() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsHilighted(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0) const;
-		%feature("autodoc", "1");
-		virtual		void Hilight();
-		%feature("autodoc", "1");
-		virtual		void Hilight(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
-		%feature("autodoc", "1");
-		virtual		void HilightWithColor(const Handle_PrsMgr_PresentationManager3d &PM, const Quantity_NameOfColor theColor, const Standard_Integer Mode=0);
-		%feature("autodoc", "1");
-		virtual		void Unhilight(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
-		%feature("autodoc", "1");
-		virtual		void Clear(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MeshVS_MeshEntityOwner {
-	Handle_MeshVS_MeshEntityOwner GetHandle() {
-	return *(Handle_MeshVS_MeshEntityOwner*) &$self;
-	}
-};
-%extend MeshVS_MeshEntityOwner {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MeshVS_MeshEntityOwner::~MeshVS_MeshEntityOwner %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_MeshEntityOwner {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors;
 class MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors : public TCollection_MapNode {
 	public:
@@ -3296,7 +3325,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors : public TCollection_MapNode
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors::~MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors %{
@@ -3357,7 +3386,7 @@ class MeshVS_ElementalColorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_ElementalColorPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_ElementalColorPrsBuilder::~MeshVS_ElementalColorPrsBuilder %{
@@ -3396,7 +3425,7 @@ class MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger : public TCollection_MapNod
 };
 %extend MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger %{
@@ -3477,14 +3506,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor MeshVS_TwoColors;
-class MeshVS_TwoColors {
+%nodefaultctor MeshVS_Tool;
+class MeshVS_Tool {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_TwoColors();
+		MeshVS_Tool();
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_AspectFillArea3d CreateAspectFillArea3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_AspectFillArea3d CreateAspectFillArea3d(const Handle_MeshVS_Drawer &theDr, const Graphic3d_MaterialAspect &Mat, const Standard_Boolean UseDefaults=1);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_AspectLine3d CreateAspectLine3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_AspectMarker3d CreateAspectMarker3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_AspectText3d CreateAspectText3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
+		%feature("autodoc", "1");
+		static		Standard_Boolean GetNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
+		%feature("autodoc", "1");
+		static		Standard_Boolean GetAverageNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
 
 };
-%feature("shadow") MeshVS_TwoColors::~MeshVS_TwoColors %{
+%feature("shadow") MeshVS_Tool::~MeshVS_Tool %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3493,7 +3536,7 @@ def __del__(self):
 		pass
 %}
 
-%extend MeshVS_TwoColors {
+%extend MeshVS_Tool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3522,7 +3565,7 @@ class MeshVS_SensitiveFace : public Select3D_SensitiveFace {
 };
 %extend MeshVS_SensitiveFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_SensitiveFace::~MeshVS_SensitiveFace %{
@@ -3535,104 +3578,6 @@ def __del__(self):
 %}
 
 %extend MeshVS_SensitiveFace {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerMaterial;
-class MeshVS_DataMapNodeOfDataMapOfIntegerMaterial : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_DataMapNodeOfDataMapOfIntegerMaterial(const Standard_Integer &K, const Graphic3d_MaterialAspect &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Graphic3d_MaterialAspect & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
-	Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial GetHandle() {
-	return *(Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial*) &$self;
-	}
-};
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMaterial::~MeshVS_DataMapNodeOfDataMapOfIntegerMaterial %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner;
-class MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner(const Standard_Integer &K, const Handle_MeshVS_MeshEntityOwner &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Handle_MeshVS_MeshEntityOwner & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
-	Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner GetHandle() {
-	return *(Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner*) &$self;
-	}
-};
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3684,6 +3629,29 @@ def __del__(self):
 };
 
 
+%nodefaultctor MeshVS_TwoNodes;
+class MeshVS_TwoNodes {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_TwoNodes(Standard_Integer =0, Standard_Integer =0);
+
+};
+%feature("shadow") MeshVS_TwoNodes::~MeshVS_TwoNodes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_TwoNodes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerOwner;
 class MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public TCollection_MapNode {
 	public:
@@ -3714,7 +3682,7 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public TCollection_MapNode {
 };
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerOwner %{
@@ -3727,6 +3695,86 @@ def __del__(self):
 %}
 
 %extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner;
+class MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner(const Standard_Integer &K, const Handle_MeshVS_MeshEntityOwner &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Handle_MeshVS_MeshEntityOwner & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
+	Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner GetHandle() {
+	return *(Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner*) &$self;
+	}
+};
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerOwner;
+class MeshVS_DataMapIteratorOfDataMapOfIntegerOwner : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		MeshVS_DataMapIteratorOfDataMapOfIntegerOwner();
+		%feature("autodoc", "1");
+		MeshVS_DataMapIteratorOfDataMapOfIntegerOwner(const MeshVS_DataMapOfIntegerOwner &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const MeshVS_DataMapOfIntegerOwner &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_EntityOwner & Value() const;
+
+};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerOwner::~MeshVS_DataMapIteratorOfDataMapOfIntegerOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfIntegerOwner {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3823,7 +3871,7 @@ class MeshVS_Mesh : public AIS_InteractiveObject {
 };
 %extend MeshVS_Mesh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_Mesh::~MeshVS_Mesh %{
@@ -3836,72 +3884,6 @@ def __del__(self):
 %}
 
 %extend MeshVS_Mesh {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_Tool;
-class MeshVS_Tool {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_Tool();
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_AspectFillArea3d CreateAspectFillArea3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_AspectFillArea3d CreateAspectFillArea3d(const Handle_MeshVS_Drawer &theDr, const Graphic3d_MaterialAspect &Mat, const Standard_Boolean UseDefaults=1);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_AspectLine3d CreateAspectLine3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_AspectMarker3d CreateAspectMarker3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_AspectText3d CreateAspectText3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
-		%feature("autodoc", "1");
-		static		Standard_Boolean GetNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
-		%feature("autodoc", "1");
-		static		Standard_Boolean GetAverageNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
-
-};
-%feature("shadow") MeshVS_Tool::~MeshVS_Tool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_Tool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MeshVS_MapIteratorOfMapOfTwoNodes;
-class MeshVS_MapIteratorOfMapOfTwoNodes : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		MeshVS_MapIteratorOfMapOfTwoNodes();
-		%feature("autodoc", "1");
-		MeshVS_MapIteratorOfMapOfTwoNodes(const MeshVS_MapOfTwoNodes &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const MeshVS_MapOfTwoNodes &aMap);
-		%feature("autodoc", "1");
-		const MeshVS_TwoNodes & Key() const;
-
-};
-%feature("shadow") MeshVS_MapIteratorOfMapOfTwoNodes::~MeshVS_MapIteratorOfMapOfTwoNodes %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MeshVS_MapIteratorOfMapOfTwoNodes {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3928,7 +3910,7 @@ class MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public TCollection_Ma
 };
 %extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger %{
@@ -4066,7 +4048,7 @@ class MeshVS_MeshPrsBuilder : public MeshVS_PrsBuilder {
 };
 %extend MeshVS_MeshPrsBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_MeshPrsBuilder::~MeshVS_MeshPrsBuilder %{
@@ -4123,7 +4105,7 @@ class MeshVS_MeshOwner : public SelectMgr_EntityOwner {
 };
 %extend MeshVS_MeshOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_MeshOwner::~MeshVS_MeshOwner %{
@@ -4173,28 +4155,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor MeshVS_StdMapNodeOfMapOfTwoNodes;
-class MeshVS_StdMapNodeOfMapOfTwoNodes : public TCollection_MapNode {
+%nodefaultctor MeshVS_MeshEntityOwner;
+class MeshVS_MeshEntityOwner : public SelectMgr_EntityOwner {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_StdMapNodeOfMapOfTwoNodes(const MeshVS_TwoNodes &K, const TCollection_MapNodePtr &n);
+		MeshVS_MeshEntityOwner(const SelectMgr_SOPtr &SelObj, const Standard_Integer ID, const Standard_Address MeshEntity, const MeshVS_EntityType &Type, const Standard_Integer Priority=0, const Standard_Boolean IsGroup=0);
 		%feature("autodoc", "1");
-		MeshVS_TwoNodes & Key() const;
+		Standard_Address Owner() const;
+		%feature("autodoc", "1");
+		MeshVS_EntityType Type() const;
+		%feature("autodoc", "1");
+		Standard_Integer ID() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsGroup() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsHilighted(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0) const;
+		%feature("autodoc", "1");
+		virtual		void Hilight();
+		%feature("autodoc", "1");
+		virtual		void Hilight(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
+		%feature("autodoc", "1");
+		virtual		void HilightWithColor(const Handle_PrsMgr_PresentationManager3d &PM, const Quantity_NameOfColor theColor, const Standard_Integer Mode=0);
+		%feature("autodoc", "1");
+		virtual		void Unhilight(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
+		%feature("autodoc", "1");
+		virtual		void Clear(const Handle_PrsMgr_PresentationManager &PM, const Standard_Integer Mode=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend MeshVS_StdMapNodeOfMapOfTwoNodes {
-	Handle_MeshVS_StdMapNodeOfMapOfTwoNodes GetHandle() {
-	return *(Handle_MeshVS_StdMapNodeOfMapOfTwoNodes*) &$self;
+%extend MeshVS_MeshEntityOwner {
+	Handle_MeshVS_MeshEntityOwner GetHandle() {
+	return *(Handle_MeshVS_MeshEntityOwner*) &$self;
 	}
 };
-%extend MeshVS_StdMapNodeOfMapOfTwoNodes {
+%extend MeshVS_MeshEntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") MeshVS_StdMapNodeOfMapOfTwoNodes::~MeshVS_StdMapNodeOfMapOfTwoNodes %{
+%feature("shadow") MeshVS_MeshEntityOwner::~MeshVS_MeshEntityOwner %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4203,7 +4203,7 @@ def __del__(self):
 		pass
 %}
 
-%extend MeshVS_StdMapNodeOfMapOfTwoNodes {
+%extend MeshVS_MeshEntityOwner {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4241,7 +4241,7 @@ class MeshVS_DummySensitiveEntity : public SelectBasics_SensitiveEntity {
 };
 %extend MeshVS_DummySensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MeshVS_DummySensitiveEntity::~MeshVS_DummySensitiveEntity %{

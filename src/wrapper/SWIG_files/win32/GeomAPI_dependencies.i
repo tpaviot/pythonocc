@@ -265,7 +265,7 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import Quantity.i
 %import Standard.i
+%import Quantity.i
 %import GeomAbs.i
 %import Approx.i

@@ -199,6 +199,6 @@ $HeaderURL$
 #include <math_Vector.hxx>
 %};
 
-%import math.i
 %import Standard.i
+%import math.i
 %import GeomAbs.i

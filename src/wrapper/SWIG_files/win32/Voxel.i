@@ -195,33 +195,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Voxel_SplitData;
-class Voxel_SplitData {
-	public:
-		%feature("autodoc", "1");
-		Voxel_SplitData();
-		%feature("autodoc", "1");
-		Standard_Address & GetValues();
-		%feature("autodoc", "1");
-		Standard_Address & GetSplitData();
-
-};
-%feature("shadow") Voxel_SplitData::~Voxel_SplitData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Voxel_SplitData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Voxel_FloatDS;
 class Voxel_FloatDS : public Voxel_DS {
 	public:
@@ -345,27 +318,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor Voxel_Selector;
-class Voxel_Selector {
+%nodefaultctor Voxel_SplitData;
+class Voxel_SplitData {
 	public:
 		%feature("autodoc", "1");
-		Voxel_Selector();
+		Voxel_SplitData();
 		%feature("autodoc", "1");
-		Voxel_Selector(const Handle_V3d_View &view);
+		Standard_Address & GetValues();
 		%feature("autodoc", "1");
-		void Init(const Handle_V3d_View &view);
-		%feature("autodoc", "1");
-		void SetVoxels(const Voxel_BoolDS &voxels);
-		%feature("autodoc", "1");
-		void SetVoxels(const Voxel_ColorDS &voxels);
-		%feature("autodoc", "1");
-		void SetVoxels(const Voxel_ROctBoolDS &voxels);
-		%feature("autodoc","Detect(Standard_Integer winx, Standard_Integer winy) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		Standard_Boolean Detect(const Standard_Integer winx, const Standard_Integer winy, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		Standard_Address & GetSplitData();
 
 };
-%feature("shadow") Voxel_Selector::~Voxel_Selector %{
+%feature("shadow") Voxel_SplitData::~Voxel_SplitData %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -374,7 +338,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Voxel_Selector {
+%extend Voxel_SplitData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -431,7 +395,7 @@ class Voxel_Prs : public AIS_InteractiveObject {
 };
 %extend Voxel_Prs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Voxel_Prs::~Voxel_Prs %{
@@ -634,6 +598,42 @@ def __del__(self):
 %}
 
 %extend Voxel_CollisionDetection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Voxel_Selector;
+class Voxel_Selector {
+	public:
+		%feature("autodoc", "1");
+		Voxel_Selector();
+		%feature("autodoc", "1");
+		Voxel_Selector(const Handle_V3d_View &view);
+		%feature("autodoc", "1");
+		void Init(const Handle_V3d_View &view);
+		%feature("autodoc", "1");
+		void SetVoxels(const Voxel_BoolDS &voxels);
+		%feature("autodoc", "1");
+		void SetVoxels(const Voxel_ColorDS &voxels);
+		%feature("autodoc", "1");
+		void SetVoxels(const Voxel_ROctBoolDS &voxels);
+		%feature("autodoc","Detect(Standard_Integer winx, Standard_Integer winy) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		Standard_Boolean Detect(const Standard_Integer winx, const Standard_Integer winy, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+
+};
+%feature("shadow") Voxel_Selector::~Voxel_Selector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Voxel_Selector {
 	void _kill_pointed() {
 		delete $self;
 	}

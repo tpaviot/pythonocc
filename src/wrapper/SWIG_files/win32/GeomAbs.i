@@ -50,13 +50,21 @@ $HeaderURL$
 %include GeomAbs_headers.i
 
 
-enum GeomAbs_CurveForm {
-	GeomAbs_PolylineForm,
-	GeomAbs_CircularForm,
-	GeomAbs_EllipticForm,
-	GeomAbs_HyperbolicForm,
-	GeomAbs_ParabolicForm,
-	GeomAbs_OtherCurveForm,
+enum GeomAbs_UVSense {
+	GeomAbs_SameUV,
+	GeomAbs_SameU,
+	GeomAbs_SameV,
+	GeomAbs_OppositeUV,
+	};
+
+enum GeomAbs_Shape {
+	GeomAbs_C0,
+	GeomAbs_G1,
+	GeomAbs_C1,
+	GeomAbs_G2,
+	GeomAbs_C2,
+	GeomAbs_C3,
+	GeomAbs_CN,
 	};
 
 enum GeomAbs_SurfaceType {
@@ -73,14 +81,13 @@ enum GeomAbs_SurfaceType {
 	GeomAbs_OtherSurface,
 	};
 
-enum GeomAbs_Shape {
-	GeomAbs_C0,
-	GeomAbs_G1,
-	GeomAbs_C1,
-	GeomAbs_G2,
-	GeomAbs_C2,
-	GeomAbs_C3,
-	GeomAbs_CN,
+enum GeomAbs_CurveForm {
+	GeomAbs_PolylineForm,
+	GeomAbs_CircularForm,
+	GeomAbs_EllipticForm,
+	GeomAbs_HyperbolicForm,
+	GeomAbs_ParabolicForm,
+	GeomAbs_OtherCurveForm,
 	};
 
 enum GeomAbs_IsoType {
@@ -100,13 +107,6 @@ enum GeomAbs_BSplKnotDistribution {
 	GeomAbs_Uniform,
 	GeomAbs_QuasiUniform,
 	GeomAbs_PiecewiseBezier,
-	};
-
-enum GeomAbs_UVSense {
-	GeomAbs_SameUV,
-	GeomAbs_SameU,
-	GeomAbs_SameV,
-	GeomAbs_OppositeUV,
 	};
 
 enum GeomAbs_SurfaceForm {

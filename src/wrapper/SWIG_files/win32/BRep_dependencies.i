@@ -188,8 +188,8 @@ $HeaderURL$
 #include <TopoDS_Wire.hxx>
 %};
 
+%import TopoDS.i
 %import TCollection.i
 %import MMgt.i
-%import TopoDS.i
 %import Standard.i
 %import GeomAbs.i

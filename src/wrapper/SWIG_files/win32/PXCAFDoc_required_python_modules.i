@@ -28,9 +28,9 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import PCollection
 import PColStd
+import PCollection
+import Quantity
 import PTopLoc
 import gp
-import Quantity
 };

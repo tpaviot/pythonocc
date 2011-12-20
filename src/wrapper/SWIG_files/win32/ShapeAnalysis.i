@@ -53,120 +53,6 @@ typedef NCollection_UBTree<int, Bnd_Box> ShapeAnalysis_BoxBndTree;
 
 
 
-%nodefaultctor Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds;
-class Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds();
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds(const Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds(const ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds & operator=(const Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds & operator=(const ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
-	ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds* GetObject() {
-	return (ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds::~Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeAnalysis_FreeBoundData;
-class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData();
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData(const Handle_ShapeAnalysis_FreeBoundData &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData(const ShapeAnalysis_FreeBoundData *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData & operator=(const Handle_ShapeAnalysis_FreeBoundData &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData & operator=(const ShapeAnalysis_FreeBoundData *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_FreeBoundData DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeAnalysis_FreeBoundData {
-	ShapeAnalysis_FreeBoundData* GetObject() {
-	return (ShapeAnalysis_FreeBoundData*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeAnalysis_FreeBoundData::~Handle_ShapeAnalysis_FreeBoundData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeAnalysis_FreeBoundData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeAnalysis_Wire;
-class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Wire();
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Wire(const Handle_ShapeAnalysis_Wire &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Wire(const ShapeAnalysis_Wire *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Wire & operator=(const Handle_ShapeAnalysis_Wire &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Wire & operator=(const ShapeAnalysis_Wire *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_Wire DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeAnalysis_Wire {
-	ShapeAnalysis_Wire* GetObject() {
-	return (ShapeAnalysis_Wire*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeAnalysis_Wire::~Handle_ShapeAnalysis_Wire %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeAnalysis_Wire {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ShapeAnalysis_TransferParameters;
 class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 	public:
@@ -237,6 +123,120 @@ def __del__(self):
 %}
 
 %extend Handle_ShapeAnalysis_TransferParametersProj {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds;
+class Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds();
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds(const Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds(const ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds & operator=(const Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds & operator=(const ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
+	ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds* GetObject() {
+	return (ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds::~Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeAnalysis_Surface;
+class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_Surface();
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_Surface(const Handle_ShapeAnalysis_Surface &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_Surface(const ShapeAnalysis_Surface *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_Surface & operator=(const Handle_ShapeAnalysis_Surface &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_Surface & operator=(const ShapeAnalysis_Surface *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeAnalysis_Surface DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeAnalysis_Surface {
+	ShapeAnalysis_Surface* GetObject() {
+	return (ShapeAnalysis_Surface*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeAnalysis_Surface::~Handle_ShapeAnalysis_Surface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeAnalysis_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeAnalysis_FreeBoundData;
+class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData();
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData(const Handle_ShapeAnalysis_FreeBoundData &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData(const ShapeAnalysis_FreeBoundData *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData & operator=(const Handle_ShapeAnalysis_FreeBoundData &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData & operator=(const ShapeAnalysis_FreeBoundData *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeAnalysis_FreeBoundData DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeAnalysis_FreeBoundData {
+	ShapeAnalysis_FreeBoundData* GetObject() {
+	return (ShapeAnalysis_FreeBoundData*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeAnalysis_FreeBoundData::~Handle_ShapeAnalysis_FreeBoundData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeAnalysis_FreeBoundData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -319,29 +319,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeAnalysis_Surface;
-class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
+%nodefaultctor Handle_ShapeAnalysis_Wire;
+class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Surface();
+		Handle_ShapeAnalysis_Wire();
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Surface(const Handle_ShapeAnalysis_Surface &aHandle);
+		Handle_ShapeAnalysis_Wire(const Handle_ShapeAnalysis_Wire &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Surface(const ShapeAnalysis_Surface *anItem);
+		Handle_ShapeAnalysis_Wire(const ShapeAnalysis_Wire *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Surface & operator=(const Handle_ShapeAnalysis_Surface &aHandle);
+		Handle_ShapeAnalysis_Wire & operator=(const Handle_ShapeAnalysis_Wire &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_Surface & operator=(const ShapeAnalysis_Surface *anItem);
+		Handle_ShapeAnalysis_Wire & operator=(const ShapeAnalysis_Wire *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_Surface DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeAnalysis_Wire DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ShapeAnalysis_Surface {
-	ShapeAnalysis_Surface* GetObject() {
-	return (ShapeAnalysis_Surface*)$self->Access();
+%extend Handle_ShapeAnalysis_Wire {
+	ShapeAnalysis_Wire* GetObject() {
+	return (ShapeAnalysis_Wire*)$self->Access();
 	}
 };
-%feature("shadow") Handle_ShapeAnalysis_Surface::~Handle_ShapeAnalysis_Surface %{
+%feature("shadow") Handle_ShapeAnalysis_Wire::~Handle_ShapeAnalysis_Wire %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -350,7 +350,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_ShapeAnalysis_Surface {
+%extend Handle_ShapeAnalysis_Wire {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -386,6 +386,174 @@ def __del__(self):
 %}
 
 %extend ShapeAnalysis_ShapeTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeAnalysis_Surface;
+class ShapeAnalysis_Surface : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeAnalysis_Surface(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void Init(const Handle_ShapeAnalysis_Surface &other);
+		%feature("autodoc", "1");
+		void SetDomain(const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & Surface() const;
+		%feature("autodoc", "1");
+		const Handle_GeomAdaptor_HSurface & Adaptor3d();
+		%feature("autodoc", "1");
+		const Handle_GeomAdaptor_HSurface & TrueAdaptor3d() const;
+		%feature("autodoc", "1");
+		Standard_Real Gap() const;
+		%feature("autodoc", "1");
+		gp_Pnt Value(const Standard_Real u, const Standard_Real v);
+		%feature("autodoc", "1");
+		gp_Pnt Value(const gp_Pnt2d p2d);
+		%feature("autodoc", "1");
+		Standard_Boolean HasSingularities(const Standard_Real preci);
+		%feature("autodoc", "1");
+		Standard_Integer NbSingularities(const Standard_Real preci);
+		%feature("autodoc","Singularity(Standard_Integer num) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		Standard_Boolean Singularity(const Standard_Integer num, Standard_Real &OutValue, gp_Pnt & P3d, gp_Pnt2d & firstP2d, gp_Pnt2d & lastP2d, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & uisodeg);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDegenerated(const gp_Pnt P3d, const Standard_Real preci);
+		%feature("autodoc","DegeneratedValues(const P3d, Standard_Real preci, Standard_Boolean forward=1) -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean DegeneratedValues(const gp_Pnt P3d, const Standard_Real preci, gp_Pnt2d & firstP2d, gp_Pnt2d & lastP2d, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean forward=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ProjectDegenerated(const gp_Pnt P3d, const Standard_Real preci, const gp_Pnt2d neighbour, gp_Pnt2d & result);
+		%feature("autodoc", "1");
+		Standard_Boolean ProjectDegenerated(const Standard_Integer nbrPnt, const TColgp_Array1OfPnt &points, TColgp_Array1OfPnt2d & pnt2d, const Standard_Real preci, const Standard_Boolean direct);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDegenerated(const gp_Pnt2d p2d1, const gp_Pnt2d p2d2, const Standard_Real tol, const Standard_Real ratio);
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void ComputeBoundIsos();
+		%feature("autodoc", "1");
+		Handle_Geom_Curve UIso(const Standard_Real U);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve VIso(const Standard_Real V);
+		%feature("autodoc", "1");
+		Standard_Boolean IsUClosed(const Standard_Real preci=-0x000000001);
+		%feature("autodoc", "1");
+		Standard_Boolean IsVClosed(const Standard_Real preci=-0x000000001);
+		%feature("autodoc", "1");
+		gp_Pnt2d ValueOfUV(const gp_Pnt P3D, const Standard_Real preci);
+		%feature("autodoc", "1");
+		gp_Pnt2d NextValueOfUV(const gp_Pnt2d p2dPrev, const gp_Pnt P3D, const Standard_Real preci, const Standard_Real maxpreci=-1.0e+0);
+		%feature("autodoc","UVFromIso(const P3D, Standard_Real preci) -> [Standard_Real, Standard_Real]");
+
+		Standard_Real UVFromIso(const gp_Pnt P3D, const Standard_Real preci, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Real UCloseVal() const;
+		%feature("autodoc", "1");
+		Standard_Real VCloseVal() const;
+		%feature("autodoc", "1");
+		const Bnd_Box & GetBoxUF();
+		%feature("autodoc", "1");
+		const Bnd_Box & GetBoxUL();
+		%feature("autodoc", "1");
+		const Bnd_Box & GetBoxVF();
+		%feature("autodoc", "1");
+		const Bnd_Box & GetBoxVL();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeAnalysis_Surface {
+	Handle_ShapeAnalysis_Surface GetHandle() {
+	return *(Handle_ShapeAnalysis_Surface*) &$self;
+	}
+};
+%extend ShapeAnalysis_Surface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ShapeAnalysis_Surface::~ShapeAnalysis_Surface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeAnalysis_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeAnalysis_SequenceOfFreeBounds;
+class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		ShapeAnalysis_SequenceOfFreeBounds();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const ShapeAnalysis_SequenceOfFreeBounds & Assign(const ShapeAnalysis_SequenceOfFreeBounds &Other);
+		%feature("autodoc", "1");
+		const ShapeAnalysis_SequenceOfFreeBounds & operator=(const ShapeAnalysis_SequenceOfFreeBounds &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_ShapeAnalysis_FreeBoundData &T);
+		%feature("autodoc", "1");
+		void Append(ShapeAnalysis_SequenceOfFreeBounds & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_ShapeAnalysis_FreeBoundData &T);
+		%feature("autodoc", "1");
+		void Prepend(ShapeAnalysis_SequenceOfFreeBounds & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
+		%feature("autodoc", "1");
+		const Handle_ShapeAnalysis_FreeBoundData & First() const;
+		%feature("autodoc", "1");
+		const Handle_ShapeAnalysis_FreeBoundData & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
+		%feature("autodoc", "1");
+		const Handle_ShapeAnalysis_FreeBoundData & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_ShapeAnalysis_FreeBoundData & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &I);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") ShapeAnalysis_SequenceOfFreeBounds::~ShapeAnalysis_SequenceOfFreeBounds %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeAnalysis_SequenceOfFreeBounds {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -503,7 +671,7 @@ class ShapeAnalysis_TransferParameters : public MMgt_TShared {
 };
 %extend ShapeAnalysis_TransferParameters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_TransferParameters::~ShapeAnalysis_TransferParameters %{
@@ -763,71 +931,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeAnalysis_Edge;
-class ShapeAnalysis_Edge {
+%nodefaultctor ShapeAnalysis_Shell;
+class ShapeAnalysis_Shell {
 	public:
 		%feature("autodoc", "1");
-		ShapeAnalysis_Edge();
+		ShapeAnalysis_Shell();
 		%feature("autodoc", "1");
-		Standard_Boolean HasCurve3d(const TopoDS_Edge edge) const;
-		%feature("autodoc","Curve3d(const edge, Standard_Boolean orient=1) -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean Curve3d(const TopoDS_Edge edge, Handle_Geom_Curve & C3d, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean orient=1) const;
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean IsClosed3d(const TopoDS_Edge edge) const;
+		void LoadShells(const TopoDS_Shape shape);
 		%feature("autodoc", "1");
-		Standard_Boolean HasPCurve(const TopoDS_Edge edge, const TopoDS_Face face) const;
+		Standard_Boolean CheckOrientedShells(const TopoDS_Shape shape, const Standard_Boolean alsofree=0, const Standard_Boolean checkinternaledges=0);
 		%feature("autodoc", "1");
-		Standard_Boolean HasPCurve(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location) const;
-		%feature("autodoc","PCurve(const edge, const face, Standard_Boolean orient=1) -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean PCurve(const TopoDS_Edge edge, const TopoDS_Face face, Handle_Geom2d_Curve & C2d, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean orient=1) const;
-		%feature("autodoc","PCurve(const edge, const surface, const location, Standard_Boolean orient=1) -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean PCurve(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, Handle_Geom2d_Curve & C2d, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean orient=1) const;
+		Standard_Boolean IsLoaded(const TopoDS_Shape shape) const;
 		%feature("autodoc", "1");
-		Standard_Boolean BoundUV(const TopoDS_Edge edge, const TopoDS_Face face, gp_Pnt2d & first, gp_Pnt2d & last) const;
+		Standard_Integer NbLoaded() const;
 		%feature("autodoc", "1");
-		Standard_Boolean BoundUV(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, gp_Pnt2d & first, gp_Pnt2d & last) const;
+		TopoDS_Shape Loaded(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSeam(const TopoDS_Edge edge, const TopoDS_Face face) const;
+		Standard_Boolean HasBadEdges() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSeam(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location) const;
+		TopoDS_Compound BadEdges() const;
 		%feature("autodoc", "1");
-		TopoDS_Vertex FirstVertex(const TopoDS_Edge edge) const;
+		Standard_Boolean HasFreeEdges() const;
 		%feature("autodoc", "1");
-		TopoDS_Vertex LastVertex(const TopoDS_Edge edge) const;
+		TopoDS_Compound FreeEdges() const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetEndTangent2d(const TopoDS_Edge edge, const TopoDS_Face face, const Standard_Boolean atEnd, gp_Pnt2d & pos, gp_Vec2d & tang, const Standard_Real dparam=0.0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetEndTangent2d(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, const Standard_Boolean atEnd, gp_Pnt2d & pos, gp_Vec2d & tang, const Standard_Real dparam=0.0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean CheckVerticesWithCurve3d(const TopoDS_Edge edge, const Standard_Real preci=-0x000000001, const Standard_Integer vtx=0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckVerticesWithPCurve(const TopoDS_Edge edge, const TopoDS_Face face, const Standard_Real preci=-0x000000001, const Standard_Integer vtx=0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckVerticesWithPCurve(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, const Standard_Real preci=-0x000000001, const Standard_Integer vtx=0);
-		%feature("autodoc","CheckVertexTolerance(const edge, const face) -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean CheckVertexTolerance(const TopoDS_Edge edge, const TopoDS_Face face, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","CheckVertexTolerance(const edge) -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean CheckVertexTolerance(const TopoDS_Edge edge, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckCurve3dWithPCurve(const TopoDS_Edge edge, const TopoDS_Face face);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckCurve3dWithPCurve(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location);
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
-		%feature("autodoc","CheckSameParameter(const edge, Standard_Integer NbControl=23) -> Standard_Real");
-
-		Standard_Boolean CheckSameParameter(const TopoDS_Edge edge, Standard_Real &OutValue, const Standard_Integer NbControl=23);
-		%feature("autodoc","CheckOverlapping(const theEdge1, const theEdge2, Standard_Real theDomainDist=0.0) -> Standard_Real");
-
-		Standard_Boolean CheckOverlapping(const TopoDS_Edge theEdge1, const TopoDS_Edge theEdge2, Standard_Real &OutValue, const Standard_Real theDomainDist=0.0);
+		Standard_Boolean HasConnectedEdges() const;
 
 };
-%feature("shadow") ShapeAnalysis_Edge::~ShapeAnalysis_Edge %{
+%feature("shadow") ShapeAnalysis_Shell::~ShapeAnalysis_Shell %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -836,7 +969,73 @@ def __del__(self):
 		pass
 %}
 
-%extend ShapeAnalysis_Edge {
+%extend ShapeAnalysis_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeAnalysis_FreeBoundsProperties;
+class ShapeAnalysis_FreeBoundsProperties {
+	public:
+		%feature("autodoc", "1");
+		ShapeAnalysis_FreeBoundsProperties();
+		%feature("autodoc", "1");
+		ShapeAnalysis_FreeBoundsProperties(const TopoDS_Shape shape, const Standard_Real tolerance, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=0);
+		%feature("autodoc", "1");
+		ShapeAnalysis_FreeBoundsProperties(const TopoDS_Shape shape, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=0);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape shape, const Standard_Real tolerance, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=0);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape shape, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=0);
+		%feature("autodoc", "1");
+		Standard_Boolean Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean IsLoaded() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape Shape() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbFreeBounds() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbClosedFreeBounds() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbOpenFreeBounds() const;
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds ClosedFreeBounds() const;
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds OpenFreeBounds() const;
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData ClosedFreeBound(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData OpenFreeBound(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean DispatchBounds();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckContours(const Standard_Real prec=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckNotches(const Standard_Real prec=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckNotches(Handle_ShapeAnalysis_FreeBoundData & fbData, const Standard_Real prec=0.0);
+		%feature("autodoc","CheckNotches(const freebound, Standard_Integer num, Standard_Real prec=0.0) -> Standard_Real");
+
+		Standard_Boolean CheckNotches(const TopoDS_Wire freebound, const Standard_Integer num, TopoDS_Wire & notch, Standard_Real &OutValue, const Standard_Real prec=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean FillProperties(Handle_ShapeAnalysis_FreeBoundData & fbData, const Standard_Real prec=0.0);
+
+};
+%feature("shadow") ShapeAnalysis_FreeBoundsProperties::~ShapeAnalysis_FreeBoundsProperties %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeAnalysis_FreeBoundsProperties {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -863,7 +1062,7 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_M
 };
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal::~ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal %{
@@ -934,7 +1133,7 @@ class ShapeAnalysis_FreeBoundData : public MMgt_TShared {
 };
 %extend ShapeAnalysis_FreeBoundData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_FreeBoundData::~ShapeAnalysis_FreeBoundData %{
@@ -1013,7 +1212,7 @@ class ShapeAnalysis_HSequenceOfFreeBounds : public MMgt_TShared {
 };
 %extend ShapeAnalysis_HSequenceOfFreeBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_HSequenceOfFreeBounds::~ShapeAnalysis_HSequenceOfFreeBounds %{
@@ -1167,7 +1366,7 @@ class ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public TCollection_SeqN
 };
 %extend ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds::~ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds %{
@@ -1186,56 +1385,63 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeAnalysis_SequenceOfFreeBounds;
-class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
+%nodefaultctor ShapeAnalysis_WireVertex;
+class ShapeAnalysis_WireVertex {
 	public:
 		%feature("autodoc", "1");
-		ShapeAnalysis_SequenceOfFreeBounds();
+		ShapeAnalysis_WireVertex();
 		%feature("autodoc", "1");
-		void Clear();
+		void Init(const TopoDS_Wire wire, const Standard_Real preci);
 		%feature("autodoc", "1");
-		const ShapeAnalysis_SequenceOfFreeBounds & Assign(const ShapeAnalysis_SequenceOfFreeBounds &Other);
+		void Init(const Handle_ShapeExtend_WireData &swbd, const Standard_Real preci);
 		%feature("autodoc", "1");
-		const ShapeAnalysis_SequenceOfFreeBounds & operator=(const ShapeAnalysis_SequenceOfFreeBounds &Other);
+		void Load(const TopoDS_Wire wire);
 		%feature("autodoc", "1");
-		void Append(const Handle_ShapeAnalysis_FreeBoundData &T);
+		void Load(const Handle_ShapeExtend_WireData &sbwd);
 		%feature("autodoc", "1");
-		void Append(ShapeAnalysis_SequenceOfFreeBounds & S);
+		void SetPrecision(const Standard_Real preci);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_ShapeAnalysis_FreeBoundData &T);
+		void Analyze();
 		%feature("autodoc", "1");
-		void Prepend(ShapeAnalysis_SequenceOfFreeBounds & S);
+		void SetSameVertex(const Standard_Integer num);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &I);
+		void SetSameCoords(const Standard_Integer num);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
+		void SetClose(const Standard_Integer num);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &T);
+		void SetEnd(const Standard_Integer num, const gp_XYZ pos, const Standard_Real ufol);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
+		void SetStart(const Standard_Integer num, const gp_XYZ pos, const Standard_Real upre);
 		%feature("autodoc", "1");
-		const Handle_ShapeAnalysis_FreeBoundData & First() const;
+		void SetInters(const Standard_Integer num, const gp_XYZ pos, const Standard_Real upre, const Standard_Real ufol);
 		%feature("autodoc", "1");
-		const Handle_ShapeAnalysis_FreeBoundData & Last() const;
+		void SetDisjoined(const Standard_Integer num);
 		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, ShapeAnalysis_SequenceOfFreeBounds & S);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		const Handle_ShapeAnalysis_FreeBoundData & Value(const Standard_Integer Index) const;
+		Standard_Real Precision() const;
 		%feature("autodoc", "1");
-		const Handle_ShapeAnalysis_FreeBoundData & operator()(const Standard_Integer Index) const;
+		Standard_Integer NbEdges() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_ShapeAnalysis_FreeBoundData &I);
+		const Handle_ShapeExtend_WireData & WireData() const;
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData & ChangeValue(const Standard_Integer Index);
+		Standard_Integer Status(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData & operator()(const Standard_Integer Index);
+		gp_XYZ Position(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
+		Standard_Real UPrevious(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Standard_Real UFollowing(const Standard_Integer num) const;
+		%feature("autodoc","Data(Standard_Integer num) -> [Standard_Real, Standard_Real]");
+
+		Standard_Integer Data(const Standard_Integer num, gp_XYZ & pos, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer NextStatus(const Standard_Integer stat, const Standard_Integer num=0) const;
+		%feature("autodoc", "1");
+		Standard_Integer NextCriter(const Standard_Integer crit, const Standard_Integer num=0) const;
 
 };
-%feature("shadow") ShapeAnalysis_SequenceOfFreeBounds::~ShapeAnalysis_SequenceOfFreeBounds %{
+%feature("shadow") ShapeAnalysis_WireVertex::~ShapeAnalysis_WireVertex %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1244,7 +1450,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ShapeAnalysis_SequenceOfFreeBounds {
+%extend ShapeAnalysis_WireVertex {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1372,7 +1578,7 @@ class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParame
 };
 %extend ShapeAnalysis_TransferParametersProj {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_TransferParametersProj::~ShapeAnalysis_TransferParametersProj %{
@@ -1552,7 +1758,7 @@ class ShapeAnalysis_Wire : public MMgt_TShared {
 };
 %extend ShapeAnalysis_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeAnalysis_Wire::~ShapeAnalysis_Wire %{
@@ -1571,63 +1777,71 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeAnalysis_WireVertex;
-class ShapeAnalysis_WireVertex {
+%nodefaultctor ShapeAnalysis_Edge;
+class ShapeAnalysis_Edge {
 	public:
 		%feature("autodoc", "1");
-		ShapeAnalysis_WireVertex();
+		ShapeAnalysis_Edge();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire wire, const Standard_Real preci);
-		%feature("autodoc", "1");
-		void Init(const Handle_ShapeExtend_WireData &swbd, const Standard_Real preci);
-		%feature("autodoc", "1");
-		void Load(const TopoDS_Wire wire);
-		%feature("autodoc", "1");
-		void Load(const Handle_ShapeExtend_WireData &sbwd);
-		%feature("autodoc", "1");
-		void SetPrecision(const Standard_Real preci);
-		%feature("autodoc", "1");
-		void Analyze();
-		%feature("autodoc", "1");
-		void SetSameVertex(const Standard_Integer num);
-		%feature("autodoc", "1");
-		void SetSameCoords(const Standard_Integer num);
-		%feature("autodoc", "1");
-		void SetClose(const Standard_Integer num);
-		%feature("autodoc", "1");
-		void SetEnd(const Standard_Integer num, const gp_XYZ pos, const Standard_Real ufol);
-		%feature("autodoc", "1");
-		void SetStart(const Standard_Integer num, const gp_XYZ pos, const Standard_Real upre);
-		%feature("autodoc", "1");
-		void SetInters(const Standard_Integer num, const gp_XYZ pos, const Standard_Real upre, const Standard_Real ufol);
-		%feature("autodoc", "1");
-		void SetDisjoined(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Precision() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbEdges() const;
-		%feature("autodoc", "1");
-		const Handle_ShapeExtend_WireData & WireData() const;
-		%feature("autodoc", "1");
-		Standard_Integer Status(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		gp_XYZ Position(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Real UPrevious(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Real UFollowing(const Standard_Integer num) const;
-		%feature("autodoc","Data(Standard_Integer num) -> [Standard_Real, Standard_Real]");
+		Standard_Boolean HasCurve3d(const TopoDS_Edge edge) const;
+		%feature("autodoc","Curve3d(const edge, Standard_Boolean orient=1) -> [Standard_Real, Standard_Real]");
 
-		Standard_Integer Data(const Standard_Integer num, gp_XYZ & pos, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		Standard_Boolean Curve3d(const TopoDS_Edge edge, Handle_Geom_Curve & C3d, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean orient=1) const;
 		%feature("autodoc", "1");
-		Standard_Integer NextStatus(const Standard_Integer stat, const Standard_Integer num=0) const;
+		Standard_Boolean IsClosed3d(const TopoDS_Edge edge) const;
 		%feature("autodoc", "1");
-		Standard_Integer NextCriter(const Standard_Integer crit, const Standard_Integer num=0) const;
+		Standard_Boolean HasPCurve(const TopoDS_Edge edge, const TopoDS_Face face) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasPCurve(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location) const;
+		%feature("autodoc","PCurve(const edge, const face, Standard_Boolean orient=1) -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean PCurve(const TopoDS_Edge edge, const TopoDS_Face face, Handle_Geom2d_Curve & C2d, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean orient=1) const;
+		%feature("autodoc","PCurve(const edge, const surface, const location, Standard_Boolean orient=1) -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean PCurve(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, Handle_Geom2d_Curve & C2d, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean orient=1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean BoundUV(const TopoDS_Edge edge, const TopoDS_Face face, gp_Pnt2d & first, gp_Pnt2d & last) const;
+		%feature("autodoc", "1");
+		Standard_Boolean BoundUV(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, gp_Pnt2d & first, gp_Pnt2d & last) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSeam(const TopoDS_Edge edge, const TopoDS_Face face) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSeam(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location) const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex FirstVertex(const TopoDS_Edge edge) const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex LastVertex(const TopoDS_Edge edge) const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetEndTangent2d(const TopoDS_Edge edge, const TopoDS_Face face, const Standard_Boolean atEnd, gp_Pnt2d & pos, gp_Vec2d & tang, const Standard_Real dparam=0.0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetEndTangent2d(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, const Standard_Boolean atEnd, gp_Pnt2d & pos, gp_Vec2d & tang, const Standard_Real dparam=0.0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean CheckVerticesWithCurve3d(const TopoDS_Edge edge, const Standard_Real preci=-0x000000001, const Standard_Integer vtx=0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckVerticesWithPCurve(const TopoDS_Edge edge, const TopoDS_Face face, const Standard_Real preci=-0x000000001, const Standard_Integer vtx=0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckVerticesWithPCurve(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, const Standard_Real preci=-0x000000001, const Standard_Integer vtx=0);
+		%feature("autodoc","CheckVertexTolerance(const edge, const face) -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean CheckVertexTolerance(const TopoDS_Edge edge, const TopoDS_Face face, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","CheckVertexTolerance(const edge) -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean CheckVertexTolerance(const TopoDS_Edge edge, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckCurve3dWithPCurve(const TopoDS_Edge edge, const TopoDS_Face face);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckCurve3dWithPCurve(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location);
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc","CheckSameParameter(const edge, Standard_Integer NbControl=23) -> Standard_Real");
+
+		Standard_Boolean CheckSameParameter(const TopoDS_Edge edge, Standard_Real &OutValue, const Standard_Integer NbControl=23);
+		%feature("autodoc","CheckOverlapping(const theEdge1, const theEdge2, Standard_Real theDomainDist=0.0) -> Standard_Real");
+
+		Standard_Boolean CheckOverlapping(const TopoDS_Edge theEdge1, const TopoDS_Edge theEdge2, Standard_Real &OutValue, const Standard_Real theDomainDist=0.0);
 
 };
-%feature("shadow") ShapeAnalysis_WireVertex::~ShapeAnalysis_WireVertex %{
+%feature("shadow") ShapeAnalysis_Edge::~ShapeAnalysis_Edge %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1636,7 +1850,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ShapeAnalysis_WireVertex {
+%extend ShapeAnalysis_Edge {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1696,220 +1910,6 @@ def __del__(self):
 %}
 
 %extend ShapeAnalysis_Geom {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeAnalysis_Surface;
-class ShapeAnalysis_Surface : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeAnalysis_Surface(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Init(const Handle_ShapeAnalysis_Surface &other);
-		%feature("autodoc", "1");
-		void SetDomain(const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Surface() const;
-		%feature("autodoc", "1");
-		const Handle_GeomAdaptor_HSurface & Adaptor3d();
-		%feature("autodoc", "1");
-		const Handle_GeomAdaptor_HSurface & TrueAdaptor3d() const;
-		%feature("autodoc", "1");
-		Standard_Real Gap() const;
-		%feature("autodoc", "1");
-		gp_Pnt Value(const Standard_Real u, const Standard_Real v);
-		%feature("autodoc", "1");
-		gp_Pnt Value(const gp_Pnt2d p2d);
-		%feature("autodoc", "1");
-		Standard_Boolean HasSingularities(const Standard_Real preci);
-		%feature("autodoc", "1");
-		Standard_Integer NbSingularities(const Standard_Real preci);
-		%feature("autodoc","Singularity(Standard_Integer num) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		Standard_Boolean Singularity(const Standard_Integer num, Standard_Real &OutValue, gp_Pnt & P3d, gp_Pnt2d & firstP2d, gp_Pnt2d & lastP2d, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & uisodeg);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDegenerated(const gp_Pnt P3d, const Standard_Real preci);
-		%feature("autodoc","DegeneratedValues(const P3d, Standard_Real preci, Standard_Boolean forward=1) -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean DegeneratedValues(const gp_Pnt P3d, const Standard_Real preci, gp_Pnt2d & firstP2d, gp_Pnt2d & lastP2d, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean forward=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ProjectDegenerated(const gp_Pnt P3d, const Standard_Real preci, const gp_Pnt2d neighbour, gp_Pnt2d & result);
-		%feature("autodoc", "1");
-		Standard_Boolean ProjectDegenerated(const Standard_Integer nbrPnt, const TColgp_Array1OfPnt &points, TColgp_Array1OfPnt2d & pnt2d, const Standard_Real preci, const Standard_Boolean direct);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDegenerated(const gp_Pnt2d p2d1, const gp_Pnt2d p2d2, const Standard_Real tol, const Standard_Real ratio);
-		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void ComputeBoundIsos();
-		%feature("autodoc", "1");
-		Handle_Geom_Curve UIso(const Standard_Real U);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve VIso(const Standard_Real V);
-		%feature("autodoc", "1");
-		Standard_Boolean IsUClosed(const Standard_Real preci=-0x000000001);
-		%feature("autodoc", "1");
-		Standard_Boolean IsVClosed(const Standard_Real preci=-0x000000001);
-		%feature("autodoc", "1");
-		gp_Pnt2d ValueOfUV(const gp_Pnt P3D, const Standard_Real preci);
-		%feature("autodoc", "1");
-		gp_Pnt2d NextValueOfUV(const gp_Pnt2d p2dPrev, const gp_Pnt P3D, const Standard_Real preci, const Standard_Real maxpreci=-1.0e+0);
-		%feature("autodoc","UVFromIso(const P3D, Standard_Real preci) -> [Standard_Real, Standard_Real]");
-
-		Standard_Real UVFromIso(const gp_Pnt P3D, const Standard_Real preci, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Real UCloseVal() const;
-		%feature("autodoc", "1");
-		Standard_Real VCloseVal() const;
-		%feature("autodoc", "1");
-		const Bnd_Box & GetBoxUF();
-		%feature("autodoc", "1");
-		const Bnd_Box & GetBoxUL();
-		%feature("autodoc", "1");
-		const Bnd_Box & GetBoxVF();
-		%feature("autodoc", "1");
-		const Bnd_Box & GetBoxVL();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeAnalysis_Surface {
-	Handle_ShapeAnalysis_Surface GetHandle() {
-	return *(Handle_ShapeAnalysis_Surface*) &$self;
-	}
-};
-%extend ShapeAnalysis_Surface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ShapeAnalysis_Surface::~ShapeAnalysis_Surface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeAnalysis_Surface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeAnalysis_Shell;
-class ShapeAnalysis_Shell {
-	public:
-		%feature("autodoc", "1");
-		ShapeAnalysis_Shell();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void LoadShells(const TopoDS_Shape shape);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckOrientedShells(const TopoDS_Shape shape, const Standard_Boolean alsofree=0, const Standard_Boolean checkinternaledges=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsLoaded(const TopoDS_Shape shape) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbLoaded() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape Loaded(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasBadEdges() const;
-		%feature("autodoc", "1");
-		TopoDS_Compound BadEdges() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasFreeEdges() const;
-		%feature("autodoc", "1");
-		TopoDS_Compound FreeEdges() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasConnectedEdges() const;
-
-};
-%feature("shadow") ShapeAnalysis_Shell::~ShapeAnalysis_Shell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeAnalysis_Shell {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeAnalysis_FreeBoundsProperties;
-class ShapeAnalysis_FreeBoundsProperties {
-	public:
-		%feature("autodoc", "1");
-		ShapeAnalysis_FreeBoundsProperties();
-		%feature("autodoc", "1");
-		ShapeAnalysis_FreeBoundsProperties(const TopoDS_Shape shape, const Standard_Real tolerance, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=0);
-		%feature("autodoc", "1");
-		ShapeAnalysis_FreeBoundsProperties(const TopoDS_Shape shape, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=0);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape shape, const Standard_Real tolerance, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=0);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape shape, const Standard_Boolean splitclosed=0, const Standard_Boolean splitopen=0);
-		%feature("autodoc", "1");
-		Standard_Boolean Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean IsLoaded() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape Shape() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbFreeBounds() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbClosedFreeBounds() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbOpenFreeBounds() const;
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_HSequenceOfFreeBounds ClosedFreeBounds() const;
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_HSequenceOfFreeBounds OpenFreeBounds() const;
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData ClosedFreeBound(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData OpenFreeBound(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean DispatchBounds();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckContours(const Standard_Real prec=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckNotches(const Standard_Real prec=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckNotches(Handle_ShapeAnalysis_FreeBoundData & fbData, const Standard_Real prec=0.0);
-		%feature("autodoc","CheckNotches(const freebound, Standard_Integer num, Standard_Real prec=0.0) -> Standard_Real");
-
-		Standard_Boolean CheckNotches(const TopoDS_Wire freebound, const Standard_Integer num, TopoDS_Wire & notch, Standard_Real &OutValue, const Standard_Real prec=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean FillProperties(Handle_ShapeAnalysis_FreeBoundData & fbData, const Standard_Real prec=0.0);
-
-};
-%feature("shadow") ShapeAnalysis_FreeBoundsProperties::~ShapeAnalysis_FreeBoundsProperties %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeAnalysis_FreeBoundsProperties {
 	void _kill_pointed() {
 		delete $self;
 	}

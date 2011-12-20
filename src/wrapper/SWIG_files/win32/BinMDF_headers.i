@@ -52,12 +52,12 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TColStd_IndexedMapOfTransient.hxx>
-#include<TColStd_SequenceOfAsciiString.hxx>
-#include<Handle_Standard_Type.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<BinObjMgt_Persistent.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
+#include<TColStd_IndexedMapOfTransient.hxx>
+#include<TColStd_SequenceOfAsciiString.hxx>
+#include<Handle_Standard_Type.hxx>
 #include<BinMDF.hxx>
 %}

@@ -23,3 +23,4 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Voxel_Prs::DownCast;

@@ -129,29 +129,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Poly_Polygon3D;
-class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Poly_HArray1OfTriangle;
+class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D();
+		Handle_Poly_HArray1OfTriangle();
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D(const Handle_Poly_Polygon3D &aHandle);
+		Handle_Poly_HArray1OfTriangle(const Handle_Poly_HArray1OfTriangle &aHandle);
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D(const Poly_Polygon3D *anItem);
+		Handle_Poly_HArray1OfTriangle(const Poly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D & operator=(const Handle_Poly_Polygon3D &aHandle);
+		Handle_Poly_HArray1OfTriangle & operator=(const Handle_Poly_HArray1OfTriangle &aHandle);
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D & operator=(const Poly_Polygon3D *anItem);
+		Handle_Poly_HArray1OfTriangle & operator=(const Poly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Poly_Polygon3D DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Poly_HArray1OfTriangle DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Poly_Polygon3D {
-	Poly_Polygon3D* GetObject() {
-	return (Poly_Polygon3D*)$self->Access();
+%extend Handle_Poly_HArray1OfTriangle {
+	Poly_HArray1OfTriangle* GetObject() {
+	return (Poly_HArray1OfTriangle*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Poly_Polygon3D::~Handle_Poly_Polygon3D %{
+%feature("shadow") Handle_Poly_HArray1OfTriangle::~Handle_Poly_HArray1OfTriangle %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -160,7 +160,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Poly_Polygon3D {
+%extend Handle_Poly_HArray1OfTriangle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -205,44 +205,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Poly_HArray1OfTriangle;
-class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle();
-		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle(const Handle_Poly_HArray1OfTriangle &aHandle);
-		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle(const Poly_HArray1OfTriangle *anItem);
-		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle & operator=(const Handle_Poly_HArray1OfTriangle &aHandle);
-		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle & operator=(const Poly_HArray1OfTriangle *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Poly_HArray1OfTriangle DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Poly_HArray1OfTriangle {
-	Poly_HArray1OfTriangle* GetObject() {
-	return (Poly_HArray1OfTriangle*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Poly_HArray1OfTriangle::~Handle_Poly_HArray1OfTriangle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Poly_HArray1OfTriangle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Poly_Triangulation;
 class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 	public:
@@ -275,6 +237,44 @@ def __del__(self):
 %}
 
 %extend Handle_Poly_Triangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Poly_Polygon3D;
+class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D();
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D(const Handle_Poly_Polygon3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D(const Poly_Polygon3D *anItem);
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D & operator=(const Handle_Poly_Polygon3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D & operator=(const Poly_Polygon3D *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Poly_Polygon3D DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Poly_Polygon3D {
+	Poly_Polygon3D* GetObject() {
+	return (Poly_Polygon3D*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Poly_Polygon3D::~Handle_Poly_Polygon3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Poly_Polygon3D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -322,29 +322,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Poly_MakeLoops3D;
-class Poly_MakeLoops3D : public Poly_MakeLoops {
-	public:
-		%feature("autodoc", "1");
-		Poly_MakeLoops3D(const Poly_MakeLoops3D::Helper *theHelper, const Handle_NCollection_BaseAllocator &theAlloc);
-
-};
-%feature("shadow") Poly_MakeLoops3D::~Poly_MakeLoops3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Poly_MakeLoops3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Poly_PolygonOnTriangulation;
 class Poly_PolygonOnTriangulation : public MMgt_TShared {
 	public:
@@ -375,7 +352,7 @@ class Poly_PolygonOnTriangulation : public MMgt_TShared {
 };
 %extend Poly_PolygonOnTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Poly_PolygonOnTriangulation::~Poly_PolygonOnTriangulation %{
@@ -497,7 +474,7 @@ class Poly_Triangulation : public MMgt_TShared {
 };
 %extend Poly_Triangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Poly_Triangulation::~Poly_Triangulation %{
@@ -620,56 +597,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Poly_Triangle;
-class Poly_Triangle {
-	public:
-		%feature("autodoc", "1");
-		Poly_Triangle();
-		%feature("autodoc", "1");
-		Poly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer Index, const Standard_Integer Node);
-		%feature("autodoc","Get() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer operator()(const Standard_Integer Index) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetChangeValue(const Standard_Integer Index) {
-				return (Standard_Integer) $self->ChangeValue(Index);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
-				$self->ChangeValue(Index)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Poly_Triangle::~Poly_Triangle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Poly_Triangle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Poly_MakeLoops2D;
 class Poly_MakeLoops2D : public Poly_MakeLoops {
 	public:
@@ -729,7 +656,7 @@ class Poly_HArray1OfTriangle : public MMgt_TShared {
 };
 %extend Poly_HArray1OfTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Poly_HArray1OfTriangle::~Poly_HArray1OfTriangle %{
@@ -742,6 +669,56 @@ def __del__(self):
 %}
 
 %extend Poly_HArray1OfTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Poly_Triangle;
+class Poly_Triangle {
+	public:
+		%feature("autodoc", "1");
+		Poly_Triangle();
+		%feature("autodoc", "1");
+		Poly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer Index, const Standard_Integer Node);
+		%feature("autodoc","Get() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer operator()(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") Poly_Triangle::~Poly_Triangle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Poly_Triangle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -873,7 +850,7 @@ class Poly_Polygon2D : public MMgt_TShared {
 };
 %extend Poly_Polygon2D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Poly_Polygon2D::~Poly_Polygon2D %{
@@ -924,7 +901,7 @@ class Poly_Polygon3D : public MMgt_TShared {
 };
 %extend Poly_Polygon3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Poly_Polygon3D::~Poly_Polygon3D %{
@@ -937,6 +914,29 @@ def __del__(self):
 %}
 
 %extend Poly_Polygon3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Poly_MakeLoops3D;
+class Poly_MakeLoops3D : public Poly_MakeLoops {
+	public:
+		%feature("autodoc", "1");
+		Poly_MakeLoops3D(const Poly_MakeLoops3D::Helper *theHelper, const Handle_NCollection_BaseAllocator &theAlloc);
+
+};
+%feature("shadow") Poly_MakeLoops3D::~Poly_MakeLoops3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Poly_MakeLoops3D {
 	void _kill_pointed() {
 		delete $self;
 	}

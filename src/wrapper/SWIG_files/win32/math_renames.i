@@ -23,3 +23,17 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_math_NotSquare::DownCast;
+%rename(DownCast) Handle_math_SingularMatrix::DownCast;
+%rename(Raise) math_SingularMatrix::Raise;
+%rename(NewInstance) math_SingularMatrix::NewInstance;
+%rename(GaussPointsMax) math::GaussPointsMax;
+%rename(GaussPoints) math::GaussPoints;
+%rename(GaussWeights) math::GaussWeights;
+%rename(KronrodPointsMax) math::KronrodPointsMax;
+%rename(OrderedGaussPointsAndWeights) math::OrderedGaussPointsAndWeights;
+%rename(KronrodPointsAndWeights) math::KronrodPointsAndWeights;
+%rename(Sort) math_QuickSortOfValueAndWeight::Sort;
+%rename(Raise) math_NotSquare::Raise;
+%rename(NewInstance) math_NotSquare::NewInstance;
+%rename(GKRule) math_KronrodSingleIntegration::GKRule;

@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_MDocStd_DocumentStorageDriver;
-class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver & operator=(const Handle_MDocStd_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver & operator=(const MDocStd_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MDocStd_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDocStd_DocumentStorageDriver {
-	MDocStd_DocumentStorageDriver* GetObject() {
-	return (MDocStd_DocumentStorageDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MDocStd_DocumentStorageDriver::~Handle_MDocStd_DocumentStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MDocStd_DocumentStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MDocStd_DocumentRetrievalDriver;
 class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDriver {
 	public:
@@ -128,29 +90,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MDocStd_XLinkRetrievalDriver;
-class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
+%nodefaultctor Handle_MDocStd_DocumentStorageDriver;
+class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkRetrievalDriver();
+		Handle_MDocStd_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkRetrievalDriver(const Handle_MDocStd_XLinkRetrievalDriver &aHandle);
+		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkRetrievalDriver(const MDocStd_XLinkRetrievalDriver *anItem);
+		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkRetrievalDriver & operator=(const Handle_MDocStd_XLinkRetrievalDriver &aHandle);
+		Handle_MDocStd_DocumentStorageDriver & operator=(const Handle_MDocStd_DocumentStorageDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkRetrievalDriver & operator=(const MDocStd_XLinkRetrievalDriver *anItem);
+		Handle_MDocStd_DocumentStorageDriver & operator=(const MDocStd_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MDocStd_XLinkRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MDocStd_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MDocStd_XLinkRetrievalDriver {
-	MDocStd_XLinkRetrievalDriver* GetObject() {
-	return (MDocStd_XLinkRetrievalDriver*)$self->Access();
+%extend Handle_MDocStd_DocumentStorageDriver {
+	MDocStd_DocumentStorageDriver* GetObject() {
+	return (MDocStd_DocumentStorageDriver*)$self->Access();
 	}
 };
-%feature("shadow") Handle_MDocStd_XLinkRetrievalDriver::~Handle_MDocStd_XLinkRetrievalDriver %{
+%feature("shadow") Handle_MDocStd_DocumentStorageDriver::~Handle_MDocStd_DocumentStorageDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -159,7 +121,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_MDocStd_XLinkRetrievalDriver {
+%extend Handle_MDocStd_DocumentStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -204,6 +166,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_MDocStd_XLinkRetrievalDriver;
+class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkRetrievalDriver();
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkRetrievalDriver(const Handle_MDocStd_XLinkRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkRetrievalDriver(const MDocStd_XLinkRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkRetrievalDriver & operator=(const Handle_MDocStd_XLinkRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkRetrievalDriver & operator=(const MDocStd_XLinkRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MDocStd_XLinkRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDocStd_XLinkRetrievalDriver {
+	MDocStd_XLinkRetrievalDriver* GetObject() {
+	return (MDocStd_XLinkRetrievalDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MDocStd_XLinkRetrievalDriver::~Handle_MDocStd_XLinkRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MDocStd_XLinkRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MDocStd_DocumentRetrievalDriver;
 class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	public:
@@ -230,7 +230,7 @@ class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %extend MDocStd_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MDocStd_DocumentRetrievalDriver::~MDocStd_DocumentRetrievalDriver %{
@@ -273,7 +273,7 @@ class MDocStd_XLinkRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDocStd_XLinkRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MDocStd_XLinkRetrievalDriver::~MDocStd_XLinkRetrievalDriver %{
@@ -318,7 +318,7 @@ class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %extend MDocStd_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MDocStd_DocumentStorageDriver::~MDocStd_DocumentStorageDriver %{
@@ -361,7 +361,7 @@ class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 };
 %extend MDocStd_XLinkStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MDocStd_XLinkStorageDriver::~MDocStd_XLinkStorageDriver %{

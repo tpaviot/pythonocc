@@ -71,6 +71,44 @@ enum IntRes2d_Position {
 
 
 
+%nodefaultctor Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;
+class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint();
+		%feature("autodoc", "1");
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+	IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint* GetObject() {
+	return (IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint::~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
 class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handle_TCollection_SeqNode {
 	public:
@@ -109,29 +147,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;
-class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_TCollection_SeqNode {
+%nodefaultctor IntRes2d_Intersection;
+class IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint();
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint &aHandle);
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *anItem);
+		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint &aHandle);
+		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *anItem);
+		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
-		static		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint DownCast(const Handle_Standard_Transient &AnObject);
+		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void SetReversedParameters(const Standard_Boolean flag);
 
 };
-%extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
-	IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint* GetObject() {
-	return (IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint::~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint %{
+%feature("shadow") IntRes2d_Intersection::~IntRes2d_Intersection %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -140,10 +175,13 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+%extend IntRes2d_Intersection {
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend IntRes2d_Intersection {
+	IntRes2d_Intersection () {}
 };
 
 
@@ -468,7 +506,7 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 };
 %extend IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment::~IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment %{
@@ -484,44 +522,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-
-
-%nodefaultctor IntRes2d_Intersection;
-class IntRes2d_Intersection {
-	public:
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void SetReversedParameters(const Standard_Boolean flag);
-
-};
-%feature("shadow") IntRes2d_Intersection::~IntRes2d_Intersection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntRes2d_Intersection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend IntRes2d_Intersection {
-	IntRes2d_Intersection () {}
 };
 
 
@@ -599,7 +599,7 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public TCollection_Se
 };
 %extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint::~IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint %{

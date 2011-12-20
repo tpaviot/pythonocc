@@ -30,6 +30,6 @@ import GarbageCollector
 import Standard
 import IGESData
 import gp
-import TColStd
 import IGESBasic
+import TColStd
 };

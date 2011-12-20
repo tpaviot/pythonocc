@@ -28,11 +28,11 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TCollection
 import IGESData
-import IGESGraph
 import IGESDimen
 import TColStd
-import IGESDefs
+import TCollection
 import gp
+import IGESGraph
+import IGESDefs
 };

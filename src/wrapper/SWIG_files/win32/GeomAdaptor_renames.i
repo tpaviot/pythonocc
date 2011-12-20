@@ -23,3 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GeomAdaptor_GHCurve::DownCast;
+%rename(DownCast) Handle_GeomAdaptor_HCurve::DownCast;
+%rename(DownCast) Handle_GeomAdaptor_GHSurface::DownCast;
+%rename(DownCast) Handle_GeomAdaptor_HSurface::DownCast;
+%rename(MakeCurve) GeomAdaptor::MakeCurve;
+%rename(MakeSurface) GeomAdaptor::MakeSurface;

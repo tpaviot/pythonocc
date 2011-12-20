@@ -52,10 +52,10 @@ $HeaderURL$
 typedef NCollection_BaseCollection<char> NCollection_BaseCollCharacter;
 typedef NCollection_BaseCollection<double> NCollection_BaseCollReal;
 typedef NCollection_BaseCollection<TCollection_AsciiString> NCollection_BaseCollAsciiString;
-typedef NCollection_BaseCollection<unsigned int> NCollection_BaseCollBoolean;
 typedef NCollection_BaseCollection<Handle_Standard_Transient> NCollection_BaseCollTransient;
-typedef NCollection_BaseCollection<int> NCollection_BaseCollInteger;
+typedef NCollection_BaseCollection<unsigned int> NCollection_BaseCollBoolean;
 typedef NCollection_BaseCollection<TCollection_ExtendedString> NCollection_BaseCollExtendedString;
+typedef NCollection_BaseCollection<int> NCollection_BaseCollInteger;
 
 
 
@@ -197,7 +197,7 @@ class NCollection_BaseAllocator : public MMgt_TShared {
 };
 %extend NCollection_BaseAllocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NCollection_BaseAllocator::~NCollection_BaseAllocator %{
@@ -239,7 +239,7 @@ class NCollection_HeapAllocator : public NCollection_BaseAllocator {
 };
 %extend NCollection_HeapAllocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NCollection_HeapAllocator::~NCollection_HeapAllocator %{
@@ -260,6 +260,23 @@ def __del__(self):
 	NCollection_HeapAllocator () {}
 };
 
+
+%nodefaultctor NCollection_SparseArrayBase;
+
+
+%nodefaultdtor NCollection_SparseArrayBase;
+class NCollection_SparseArrayBase {
+	public:
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Size() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasValue(const Standard_Integer theIndex) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnsetValue(const Standard_Integer theIndex);
+
+};
 
 %nodefaultctor NCollection_SeqNode;
 class NCollection_SeqNode {
@@ -384,7 +401,7 @@ class NCollection_IncAllocator : public NCollection_BaseAllocator {
 };
 %extend NCollection_IncAllocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NCollection_IncAllocator::~NCollection_IncAllocator %{
@@ -431,23 +448,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor NCollection_SparseArrayBase;
-
-
-%nodefaultdtor NCollection_SparseArrayBase;
-class NCollection_SparseArrayBase {
-	public:
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Size() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasValue(const Standard_Integer theIndex) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnsetValue(const Standard_Integer theIndex);
-
-};
-
 %nodefaultctor NCollection_BaseVector;
 
 
@@ -469,8 +469,6 @@ class NCollection_ListNode {
 	public:
 		%feature("autodoc", "1");
 		NCollection_ListNode(NCollection_ListNode* theNext);
-		%feature("autodoc", "1");
-		* NCollection_ListNode & Next();
 		%feature("autodoc", "1");
 		NCollection_ListNode * Next() const;
 

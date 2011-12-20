@@ -58,44 +58,6 @@ enum LocOpe_Operation {
 
 
 
-%nodefaultctor Handle_LocOpe_ProjectedWires;
-class Handle_LocOpe_ProjectedWires : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_LocOpe_ProjectedWires();
-		%feature("autodoc", "1");
-		Handle_LocOpe_ProjectedWires(const Handle_LocOpe_ProjectedWires &aHandle);
-		%feature("autodoc", "1");
-		Handle_LocOpe_ProjectedWires(const LocOpe_ProjectedWires *anItem);
-		%feature("autodoc", "1");
-		Handle_LocOpe_ProjectedWires & operator=(const Handle_LocOpe_ProjectedWires &aHandle);
-		%feature("autodoc", "1");
-		Handle_LocOpe_ProjectedWires & operator=(const LocOpe_ProjectedWires *anItem);
-		%feature("autodoc", "1");
-		static		Handle_LocOpe_ProjectedWires DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_LocOpe_ProjectedWires {
-	LocOpe_ProjectedWires* GetObject() {
-	return (LocOpe_ProjectedWires*)$self->Access();
-	}
-};
-%feature("shadow") Handle_LocOpe_ProjectedWires::~Handle_LocOpe_ProjectedWires %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_LocOpe_ProjectedWires {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt;
 class Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt : public Handle_TCollection_MapNode {
 	public:
@@ -128,6 +90,82 @@ def __del__(self):
 %}
 
 %extend Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_LocOpe_GeneratedShape;
+class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_LocOpe_GeneratedShape();
+		%feature("autodoc", "1");
+		Handle_LocOpe_GeneratedShape(const Handle_LocOpe_GeneratedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_LocOpe_GeneratedShape(const LocOpe_GeneratedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_LocOpe_GeneratedShape & operator=(const Handle_LocOpe_GeneratedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_LocOpe_GeneratedShape & operator=(const LocOpe_GeneratedShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_LocOpe_GeneratedShape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_LocOpe_GeneratedShape {
+	LocOpe_GeneratedShape* GetObject() {
+	return (LocOpe_GeneratedShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_LocOpe_GeneratedShape::~Handle_LocOpe_GeneratedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_LocOpe_GeneratedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_LocOpe_ProjectedWires;
+class Handle_LocOpe_ProjectedWires : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_LocOpe_ProjectedWires();
+		%feature("autodoc", "1");
+		Handle_LocOpe_ProjectedWires(const Handle_LocOpe_ProjectedWires &aHandle);
+		%feature("autodoc", "1");
+		Handle_LocOpe_ProjectedWires(const LocOpe_ProjectedWires *anItem);
+		%feature("autodoc", "1");
+		Handle_LocOpe_ProjectedWires & operator=(const Handle_LocOpe_ProjectedWires &aHandle);
+		%feature("autodoc", "1");
+		Handle_LocOpe_ProjectedWires & operator=(const LocOpe_ProjectedWires *anItem);
+		%feature("autodoc", "1");
+		static		Handle_LocOpe_ProjectedWires DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_LocOpe_ProjectedWires {
+	LocOpe_ProjectedWires* GetObject() {
+	return (LocOpe_ProjectedWires*)$self->Access();
+	}
+};
+%feature("shadow") Handle_LocOpe_ProjectedWires::~Handle_LocOpe_ProjectedWires %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_LocOpe_ProjectedWires {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -204,44 +242,6 @@ def __del__(self):
 %}
 
 %extend Handle_LocOpe_SequenceNodeOfSequenceOfPntFace {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_LocOpe_GeneratedShape;
-class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_LocOpe_GeneratedShape();
-		%feature("autodoc", "1");
-		Handle_LocOpe_GeneratedShape(const Handle_LocOpe_GeneratedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_LocOpe_GeneratedShape(const LocOpe_GeneratedShape *anItem);
-		%feature("autodoc", "1");
-		Handle_LocOpe_GeneratedShape & operator=(const Handle_LocOpe_GeneratedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_LocOpe_GeneratedShape & operator=(const LocOpe_GeneratedShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_LocOpe_GeneratedShape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_LocOpe_GeneratedShape {
-	LocOpe_GeneratedShape* GetObject() {
-	return (LocOpe_GeneratedShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_LocOpe_GeneratedShape::~Handle_LocOpe_GeneratedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_LocOpe_GeneratedShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -465,6 +465,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor LocOpe_BuildWires;
+class LocOpe_BuildWires {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_BuildWires();
+		%feature("autodoc", "1");
+		LocOpe_BuildWires(const TopTools_ListOfShape &Ledges, const Handle_LocOpe_ProjectedWires &PW);
+		%feature("autodoc", "1");
+		void Perform(const TopTools_ListOfShape &Ledges, const Handle_LocOpe_ProjectedWires &PW);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Result() const;
+
+};
+%feature("shadow") LocOpe_BuildWires::~LocOpe_BuildWires %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend LocOpe_BuildWires {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor LocOpe_Pipe;
 class LocOpe_Pipe {
 	public:
@@ -598,78 +629,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor LocOpe_BuildWires;
-class LocOpe_BuildWires {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_BuildWires();
-		%feature("autodoc", "1");
-		LocOpe_BuildWires(const TopTools_ListOfShape &Ledges, const Handle_LocOpe_ProjectedWires &PW);
-		%feature("autodoc", "1");
-		void Perform(const TopTools_ListOfShape &Ledges, const Handle_LocOpe_ProjectedWires &PW);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Result() const;
-
-};
-%feature("shadow") LocOpe_BuildWires::~LocOpe_BuildWires %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend LocOpe_BuildWires {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor LocOpe_GeneratedShape;
-class LocOpe_GeneratedShape : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & GeneratingEdges();
-		%feature("autodoc", "1");
-		virtual		TopoDS_Edge Generated(const TopoDS_Vertex V);
-		%feature("autodoc", "1");
-		virtual		TopoDS_Face Generated(const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & OrientedFaces();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend LocOpe_GeneratedShape {
-	Handle_LocOpe_GeneratedShape GetHandle() {
-	return *(Handle_LocOpe_GeneratedShape*) &$self;
-	}
-};
-%extend LocOpe_GeneratedShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") LocOpe_GeneratedShape::~LocOpe_GeneratedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend LocOpe_GeneratedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor LocOpe_ProjectedWires;
 class LocOpe_ProjectedWires : public MMgt_TShared {
 	public:
@@ -701,7 +660,7 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 };
 %extend LocOpe_ProjectedWires {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_ProjectedWires::~LocOpe_ProjectedWires %{
@@ -746,7 +705,7 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 };
 %extend LocOpe_WiresOnShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_WiresOnShape::~LocOpe_WiresOnShape %{
@@ -826,7 +785,7 @@ class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfCirc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfCirc::~LocOpe_SequenceNodeOfSequenceOfCirc %{
@@ -839,6 +798,45 @@ def __del__(self):
 %}
 
 %extend LocOpe_SequenceNodeOfSequenceOfCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor LocOpe_PntFace;
+class LocOpe_PntFace {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_PntFace();
+		%feature("autodoc", "1");
+		LocOpe_PntFace(const gp_Pnt P, const TopoDS_Face F, const TopAbs_Orientation Or, const Standard_Real Par, const Standard_Real UPar, const Standard_Real VPar);
+		%feature("autodoc", "1");
+		const gp_Pnt  Pnt() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face  Face() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation & ChangeOrientation();
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		Standard_Real UParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real VParameter() const;
+
+};
+%feature("shadow") LocOpe_PntFace::~LocOpe_PntFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend LocOpe_PntFace {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -876,17 +874,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor LocOpe_GluedShape;
-class LocOpe_GluedShape : public LocOpe_GeneratedShape {
+%nodefaultctor LocOpe_SequenceNodeOfSequenceOfPntFace;
+class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		LocOpe_GluedShape();
+		LocOpe_SequenceNodeOfSequenceOfPntFace(const LocOpe_PntFace &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		LocOpe_GluedShape(const TopoDS_Shape S);
+		LocOpe_PntFace & Value() const;
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void GlueOnFace(const TopoDS_Face F);
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
+	Handle_LocOpe_SequenceNodeOfSequenceOfPntFace GetHandle() {
+	return *(Handle_LocOpe_SequenceNodeOfSequenceOfPntFace*) &$self;
+	}
+};
+%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") LocOpe_SequenceNodeOfSequenceOfPntFace::~LocOpe_SequenceNodeOfSequenceOfPntFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor LocOpe_GeneratedShape;
+class LocOpe_GeneratedShape : public MMgt_TShared {
+	public:
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & GeneratingEdges();
 		%feature("autodoc", "1");
@@ -899,6 +926,45 @@ class LocOpe_GluedShape : public LocOpe_GeneratedShape {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
+%extend LocOpe_GeneratedShape {
+	Handle_LocOpe_GeneratedShape GetHandle() {
+	return *(Handle_LocOpe_GeneratedShape*) &$self;
+	}
+};
+%extend LocOpe_GeneratedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") LocOpe_GeneratedShape::~LocOpe_GeneratedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend LocOpe_GeneratedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor LocOpe_GluedShape;
+class LocOpe_GluedShape : public LocOpe_GeneratedShape {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_GluedShape();
+		%feature("autodoc", "1");
+		LocOpe_GluedShape(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void GlueOnFace(const TopoDS_Face F);
+
+};
 %extend LocOpe_GluedShape {
 	Handle_LocOpe_GluedShape GetHandle() {
 	return *(Handle_LocOpe_GluedShape*) &$self;
@@ -906,7 +972,7 @@ class LocOpe_GluedShape : public LocOpe_GeneratedShape {
 };
 %extend LocOpe_GluedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_GluedShape::~LocOpe_GluedShape %{
@@ -919,45 +985,6 @@ def __del__(self):
 %}
 
 %extend LocOpe_GluedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor LocOpe_DataMapNodeOfDataMapOfShapePnt;
-class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_DataMapNodeOfDataMapOfShapePnt(const TopoDS_Shape K, const gp_Pnt I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		gp_Pnt  Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
-	Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt GetHandle() {
-	return *(Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt*) &$self;
-	}
-};
-%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") LocOpe_DataMapNodeOfDataMapOfShapePnt::~LocOpe_DataMapNodeOfDataMapOfShapePnt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1025,7 +1052,7 @@ class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfLin {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfLin::~LocOpe_SequenceNodeOfSequenceOfLin %{
@@ -1064,7 +1091,7 @@ class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
 };
 %extend LocOpe_HBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LocOpe_HBuilder::~LocOpe_HBuilder %{
@@ -1083,22 +1110,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor LocOpe_DataMapIteratorOfDataMapOfShapePnt;
-class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIterator {
+%nodefaultctor LocOpe_DataMapNodeOfDataMapOfShapePnt;
+class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		LocOpe_DataMapIteratorOfDataMapOfShapePnt();
+		LocOpe_DataMapNodeOfDataMapOfShapePnt(const TopoDS_Shape K, const gp_Pnt I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		LocOpe_DataMapIteratorOfDataMapOfShapePnt(const LocOpe_DataMapOfShapePnt &aMap);
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
-		void Initialize(const LocOpe_DataMapOfShapePnt &aMap);
+		gp_Pnt  Value() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Value() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") LocOpe_DataMapIteratorOfDataMapOfShapePnt::~LocOpe_DataMapIteratorOfDataMapOfShapePnt %{
+%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
+	Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt GetHandle() {
+	return *(Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt*) &$self;
+	}
+};
+%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") LocOpe_DataMapNodeOfDataMapOfShapePnt::~LocOpe_DataMapNodeOfDataMapOfShapePnt %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1107,7 +1142,7 @@ def __del__(self):
 		pass
 %}
 
-%extend LocOpe_DataMapIteratorOfDataMapOfShapePnt {
+%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1204,40 +1239,54 @@ def __del__(self):
 };
 
 
-%nodefaultctor LocOpe_CurveShapeIntersector;
-class LocOpe_CurveShapeIntersector {
+%nodefaultctor LocOpe_Builder;
+class LocOpe_Builder {
 	public:
 		%feature("autodoc", "1");
-		LocOpe_CurveShapeIntersector();
+		LocOpe_Builder();
 		%feature("autodoc", "1");
-		LocOpe_CurveShapeIntersector(const gp_Ax1 Axis, const TopoDS_Shape S);
+		LocOpe_Builder(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		LocOpe_CurveShapeIntersector(const gp_Circ C, const TopoDS_Shape S);
+		LocOpe_Builder(const TopoDS_Shape S, const TopoDS_Shape Tool);
 		%feature("autodoc", "1");
-		void Init(const gp_Ax1 Axis, const TopoDS_Shape S);
+		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Init(const gp_Circ C, const TopoDS_Shape S);
+		void Init(const TopoDS_Shape S, const TopoDS_Shape Tool);
+		%feature("autodoc", "1");
+		void Perform(const TopoDS_Shape Tool, const TopTools_ListOfShape &L, const Standard_Boolean Fuse);
+		%feature("autodoc", "1");
+		void Perform(const TopTools_ListOfShape &LShape, const TopTools_ListOfShape &LTool, const Standard_Boolean Fuse);
+		%feature("autodoc", "1");
+		void BuildPartsOfTool();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & PartsOfTool() const;
+		%feature("autodoc", "1");
+		void RemovePart(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void ActivatePart(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void PerformResult();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
+		Standard_Boolean IsInvDone() const;
 		%feature("autodoc", "1");
-		const LocOpe_PntFace & Point(const Standard_Integer I) const;
-		%feature("autodoc","LocalizeAfter(Standard_Real From) -> [Standard_Integer, Standard_Integer]");
-
-		Standard_Boolean LocalizeAfter(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeBefore(Standard_Real From) -> [Standard_Integer, Standard_Integer]");
-
-		Standard_Boolean LocalizeBefore(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeAfter(Standard_Integer FromInd) -> [Standard_Integer, Standard_Integer]");
-
-		Standard_Boolean LocalizeAfter(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeBefore(Standard_Integer FromInd) -> [Standard_Integer, Standard_Integer]");
-
-		Standard_Boolean LocalizeBefore(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		const TopoDS_Shape  ResultingShape() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  OriginalShape() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Tool() const;
+		%feature("autodoc", "1");
+		const Handle_BOP_HistoryCollector & History() const;
+		%feature("autodoc", "1");
+		void InvalidateParts();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Edges() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & TgtEdges() const;
 
 };
-%feature("shadow") LocOpe_CurveShapeIntersector::~LocOpe_CurveShapeIntersector %{
+%feature("shadow") LocOpe_Builder::~LocOpe_Builder %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1246,7 +1295,7 @@ def __del__(self):
 		pass
 %}
 
-%extend LocOpe_CurveShapeIntersector {
+%extend LocOpe_Builder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1294,30 +1343,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor LocOpe_PntFace;
-class LocOpe_PntFace {
+%nodefaultctor LocOpe_CurveShapeIntersector;
+class LocOpe_CurveShapeIntersector {
 	public:
 		%feature("autodoc", "1");
-		LocOpe_PntFace();
+		LocOpe_CurveShapeIntersector();
 		%feature("autodoc", "1");
-		LocOpe_PntFace(const gp_Pnt P, const TopoDS_Face F, const TopAbs_Orientation Or, const Standard_Real Par, const Standard_Real UPar, const Standard_Real VPar);
+		LocOpe_CurveShapeIntersector(const gp_Ax1 Axis, const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		const gp_Pnt  Pnt() const;
+		LocOpe_CurveShapeIntersector(const gp_Circ C, const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		const TopoDS_Face  Face() const;
+		void Init(const gp_Ax1 Axis, const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
+		void Init(const gp_Circ C, const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		TopAbs_Orientation & ChangeOrientation();
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
+		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
-		Standard_Real UParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real VParameter() const;
+		const LocOpe_PntFace & Point(const Standard_Integer I) const;
+		%feature("autodoc","LocalizeAfter(Standard_Real From) -> [Standard_Integer, Standard_Integer]");
+
+		Standard_Boolean LocalizeAfter(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","LocalizeBefore(Standard_Real From) -> [Standard_Integer, Standard_Integer]");
+
+		Standard_Boolean LocalizeBefore(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","LocalizeAfter(Standard_Integer FromInd) -> [Standard_Integer, Standard_Integer]");
+
+		Standard_Boolean LocalizeAfter(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","LocalizeBefore(Standard_Integer FromInd) -> [Standard_Integer, Standard_Integer]");
+
+		Standard_Boolean LocalizeBefore(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
-%feature("shadow") LocOpe_PntFace::~LocOpe_PntFace %{
+%feature("shadow") LocOpe_CurveShapeIntersector::~LocOpe_CurveShapeIntersector %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1326,7 +1385,7 @@ def __del__(self):
 		pass
 %}
 
-%extend LocOpe_PntFace {
+%extend LocOpe_CurveShapeIntersector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1392,69 +1451,6 @@ def __del__(self):
 %}
 
 %extend LocOpe_SequenceOfLin {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor LocOpe_Builder;
-class LocOpe_Builder {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_Builder();
-		%feature("autodoc", "1");
-		LocOpe_Builder(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		LocOpe_Builder(const TopoDS_Shape S, const TopoDS_Shape Tool);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const TopoDS_Shape Tool);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape Tool, const TopTools_ListOfShape &L, const Standard_Boolean Fuse);
-		%feature("autodoc", "1");
-		void Perform(const TopTools_ListOfShape &LShape, const TopTools_ListOfShape &LTool, const Standard_Boolean Fuse);
-		%feature("autodoc", "1");
-		void BuildPartsOfTool();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & PartsOfTool() const;
-		%feature("autodoc", "1");
-		void RemovePart(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void ActivatePart(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void PerformResult();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsInvDone() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  ResultingShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  OriginalShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Tool() const;
-		%feature("autodoc", "1");
-		const Handle_BOP_HistoryCollector & History() const;
-		%feature("autodoc", "1");
-		void InvalidateParts();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Edges() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & TgtEdges() const;
-
-};
-%feature("shadow") LocOpe_Builder::~LocOpe_Builder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend LocOpe_Builder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1557,6 +1553,37 @@ def __del__(self):
 %}
 
 %extend LocOpe_FindEdges {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor LocOpe_DataMapIteratorOfDataMapOfShapePnt;
+class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_DataMapIteratorOfDataMapOfShapePnt();
+		%feature("autodoc", "1");
+		LocOpe_DataMapIteratorOfDataMapOfShapePnt(const LocOpe_DataMapOfShapePnt &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const LocOpe_DataMapOfShapePnt &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Value() const;
+
+};
+%feature("shadow") LocOpe_DataMapIteratorOfDataMapOfShapePnt::~LocOpe_DataMapIteratorOfDataMapOfShapePnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend LocOpe_DataMapIteratorOfDataMapOfShapePnt {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1738,43 +1765,6 @@ def __del__(self):
 %}
 
 %extend LocOpe_LinearForm {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor LocOpe_SequenceNodeOfSequenceOfPntFace;
-class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_SequenceNodeOfSequenceOfPntFace(const LocOpe_PntFace &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		LocOpe_PntFace & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
-	Handle_LocOpe_SequenceNodeOfSequenceOfPntFace GetHandle() {
-	return *(Handle_LocOpe_SequenceNodeOfSequenceOfPntFace*) &$self;
-	}
-};
-%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") LocOpe_SequenceNodeOfSequenceOfPntFace::~LocOpe_SequenceNodeOfSequenceOfPntFace %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
 	void _kill_pointed() {
 		delete $self;
 	}

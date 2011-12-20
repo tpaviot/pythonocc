@@ -27,10 +27,10 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Standard
-import IGESData
 import IGESToBRep
+import Standard
 import Interface
 import Transfer
 import IFSelect
+import IGESData
 };

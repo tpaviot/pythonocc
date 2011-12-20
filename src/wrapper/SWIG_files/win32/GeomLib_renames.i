@@ -23,3 +23,21 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Parameter) GeomLib_Tool::Parameter;
+%rename(Parameters) GeomLib_Tool::Parameters;
+%rename(To3d) GeomLib::To3d;
+%rename(GTransform) GeomLib::GTransform;
+%rename(SameRange) GeomLib::SameRange;
+%rename(BuildCurve3d) GeomLib::BuildCurve3d;
+%rename(AdjustExtremity) GeomLib::AdjustExtremity;
+%rename(ExtendCurveToPoint) GeomLib::ExtendCurveToPoint;
+%rename(ExtendSurfByLength) GeomLib::ExtendSurfByLength;
+%rename(AxeOfInertia) GeomLib::AxeOfInertia;
+%rename(Inertia) GeomLib::Inertia;
+%rename(RemovePointsFromArray) GeomLib::RemovePointsFromArray;
+%rename(DensifyArray1OfReal) GeomLib::DensifyArray1OfReal;
+%rename(FuseIntervals) GeomLib::FuseIntervals;
+%rename(EvalMaxParametricDistance) GeomLib::EvalMaxParametricDistance;
+%rename(EvalMaxDistanceAlongParameter) GeomLib::EvalMaxDistanceAlongParameter;
+%rename(CancelDenominatorDerivative) GeomLib::CancelDenominatorDerivative;
+%rename(NormEstim) GeomLib::NormEstim;

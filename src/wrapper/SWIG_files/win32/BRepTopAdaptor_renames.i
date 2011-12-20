@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BRepTopAdaptor_HVertex::DownCast;
+%rename(DownCast) Handle_BRepTopAdaptor_TopolTool::DownCast;
+%rename(DownCast) Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool::DownCast;

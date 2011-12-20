@@ -106,7 +106,7 @@ class PMMgt_PManaged : public Standard_Persistent {
 };
 %extend PMMgt_PManaged {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PMMgt_PManaged::~PMMgt_PManaged %{

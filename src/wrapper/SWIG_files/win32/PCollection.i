@@ -252,6 +252,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor PCollection_PrivCompareOfInteger;
+class PCollection_PrivCompareOfInteger {
+	public:
+		%feature("autodoc", "1");
+		PCollection_PrivCompareOfInteger();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Standard_Integer &Left, const Standard_Integer &Right) const;
+
+};
+%feature("shadow") PCollection_PrivCompareOfInteger::~PCollection_PrivCompareOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PCollection_PrivCompareOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PCollection_IsNullTree;
 class PCollection_IsNullTree : public Standard_Failure {
 	public:
@@ -276,7 +305,7 @@ class PCollection_IsNullTree : public Standard_Failure {
 };
 %extend PCollection_IsNullTree {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PCollection_IsNullTree::~PCollection_IsNullTree %{
@@ -289,35 +318,6 @@ def __del__(self):
 %}
 
 %extend PCollection_IsNullTree {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PCollection_PrivCompareOfInteger;
-class PCollection_PrivCompareOfInteger {
-	public:
-		%feature("autodoc", "1");
-		PCollection_PrivCompareOfInteger();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Standard_Integer &Left, const Standard_Integer &Right) const;
-
-};
-%feature("shadow") PCollection_PrivCompareOfInteger::~PCollection_PrivCompareOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PCollection_PrivCompareOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -348,7 +348,7 @@ class PCollection_IsNotRoot : public Standard_Failure {
 };
 %extend PCollection_IsNotRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PCollection_IsNotRoot::~PCollection_IsNotRoot %{
@@ -391,7 +391,7 @@ class PCollection_IsContained : public Standard_Failure {
 };
 %extend PCollection_IsContained {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PCollection_IsContained::~PCollection_IsContained %{
@@ -404,135 +404,6 @@ def __del__(self):
 %}
 
 %extend PCollection_IsContained {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PCollection_HExtendedString;
-class PCollection_HExtendedString : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PCollection_HExtendedString(const TCollection_ExtendedString &S);
-		%feature("autodoc", "1");
-		PCollection_HExtendedString(const Standard_ExtCharacter C);
-		%feature("autodoc", "1");
-		PCollection_HExtendedString(const Handle_PCollection_HExtendedString &S, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		PCollection_HExtendedString(const char * astring);
-		%feature("autodoc", "1");
-		PCollection_HExtendedString(const Handle_PCollection_HAsciiString &S);
-		%feature("autodoc", "1");
-		void Append(const Handle_PCollection_HExtendedString &S);
-		%feature("autodoc", "1");
-		void Center(const Standard_Integer Width, const Standard_ExtCharacter Filler);
-		%feature("autodoc", "1");
-		void ChangeAll(const Standard_ExtCharacter C, const Standard_ExtCharacter NewC);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		TCollection_ExtendedString Convert() const;
-		%feature("autodoc", "1");
-		Standard_Integer FirstLocationInSet(const Handle_PCollection_HExtendedString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		Standard_Integer FirstLocationNotInSet(const Handle_PCollection_HExtendedString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_PCollection_HExtendedString &S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_PCollection_HExtendedString &S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsAscii() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDifferent(const Handle_PCollection_HExtendedString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsGreater(const Handle_PCollection_HExtendedString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLess(const Handle_PCollection_HExtendedString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameString(const Handle_PCollection_HExtendedString &S) const;
-		%feature("autodoc", "1");
-		void LeftAdjust();
-		%feature("autodoc", "1");
-		void LeftJustify(const Standard_Integer Width, const Standard_ExtCharacter Filler);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Standard_ExtCharacter C, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Handle_PCollection_HExtendedString &S, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_PCollection_HExtendedString &S);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		void RemoveAll(const Standard_ExtCharacter C);
-		%feature("autodoc", "1");
-		void RightAdjust();
-		%feature("autodoc", "1");
-		void RightJustify(const Standard_Integer Width, const Standard_ExtCharacter Filler);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_ExtCharacter C);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PCollection_HExtendedString &S);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString Split(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString SubString(const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		Standard_Integer UsefullLength() const;
-		%feature("autodoc", "1");
-		Standard_ExtCharacter Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PCollection_HExtendedString();
-		%feature("autodoc", "1");
-		PCollection_HExtendedString(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const DBC_VArrayOfExtCharacter & _CSFDB_GetPCollection_HExtendedStringData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PCollection_HExtendedString {
-	Handle_PCollection_HExtendedString GetHandle() {
-	return *(Handle_PCollection_HExtendedString*) &$self;
-	}
-};
-%extend PCollection_HExtendedString {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PCollection_HExtendedString::~PCollection_HExtendedString %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PCollection_HExtendedString {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -669,7 +540,7 @@ class PCollection_HAsciiString : public Standard_Persistent {
 };
 %extend PCollection_HAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PCollection_HAsciiString::~PCollection_HAsciiString %{
@@ -709,6 +580,135 @@ def __del__(self):
 %}
 
 %extend PCollection_CompareOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PCollection_HExtendedString;
+class PCollection_HExtendedString : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PCollection_HExtendedString(const TCollection_ExtendedString &S);
+		%feature("autodoc", "1");
+		PCollection_HExtendedString(const Standard_ExtCharacter C);
+		%feature("autodoc", "1");
+		PCollection_HExtendedString(const Handle_PCollection_HExtendedString &S, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		%feature("autodoc", "1");
+		PCollection_HExtendedString(const char * astring);
+		%feature("autodoc", "1");
+		PCollection_HExtendedString(const Handle_PCollection_HAsciiString &S);
+		%feature("autodoc", "1");
+		void Append(const Handle_PCollection_HExtendedString &S);
+		%feature("autodoc", "1");
+		void Center(const Standard_Integer Width, const Standard_ExtCharacter Filler);
+		%feature("autodoc", "1");
+		void ChangeAll(const Standard_ExtCharacter C, const Standard_ExtCharacter NewC);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		TCollection_ExtendedString Convert() const;
+		%feature("autodoc", "1");
+		Standard_Integer FirstLocationInSet(const Handle_PCollection_HExtendedString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		%feature("autodoc", "1");
+		Standard_Integer FirstLocationNotInSet(const Handle_PCollection_HExtendedString &Set, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_PCollection_HExtendedString &S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_PCollection_HExtendedString &S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsAscii() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDifferent(const Handle_PCollection_HExtendedString &other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsGreater(const Handle_PCollection_HExtendedString &other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsLess(const Handle_PCollection_HExtendedString &other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSameString(const Handle_PCollection_HExtendedString &S) const;
+		%feature("autodoc", "1");
+		void LeftAdjust();
+		%feature("autodoc", "1");
+		void LeftJustify(const Standard_Integer Width, const Standard_ExtCharacter Filler);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Standard_ExtCharacter C, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Handle_PCollection_HExtendedString &S, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_PCollection_HExtendedString &S);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		%feature("autodoc", "1");
+		void RemoveAll(const Standard_ExtCharacter C);
+		%feature("autodoc", "1");
+		void RightAdjust();
+		%feature("autodoc", "1");
+		void RightJustify(const Standard_Integer Width, const Standard_ExtCharacter Filler);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_ExtCharacter C);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_PCollection_HExtendedString &S);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString Split(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString SubString(const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		%feature("autodoc", "1");
+		Standard_Integer UsefullLength() const;
+		%feature("autodoc", "1");
+		Standard_ExtCharacter Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PCollection_HExtendedString();
+		%feature("autodoc", "1");
+		PCollection_HExtendedString(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const DBC_VArrayOfExtCharacter & _CSFDB_GetPCollection_HExtendedStringData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PCollection_HExtendedString {
+	Handle_PCollection_HExtendedString GetHandle() {
+	return *(Handle_PCollection_HExtendedString*) &$self;
+	}
+};
+%extend PCollection_HExtendedString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PCollection_HExtendedString::~PCollection_HExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PCollection_HExtendedString {
 	void _kill_pointed() {
 		delete $self;
 	}

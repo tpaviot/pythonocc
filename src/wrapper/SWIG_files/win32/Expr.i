@@ -166,29 +166,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Expr_ArcSine;
-class Handle_Expr_ArcSine : public Handle_Expr_UnaryExpression {
+%nodefaultctor Handle_Expr_SquareRoot;
+class Handle_Expr_SquareRoot : public Handle_Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Handle_Expr_ArcSine();
+		Handle_Expr_SquareRoot();
 		%feature("autodoc", "1");
-		Handle_Expr_ArcSine(const Handle_Expr_ArcSine &aHandle);
+		Handle_Expr_SquareRoot(const Handle_Expr_SquareRoot &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_ArcSine(const Expr_ArcSine *anItem);
+		Handle_Expr_SquareRoot(const Expr_SquareRoot *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArcSine & operator=(const Handle_Expr_ArcSine &aHandle);
+		Handle_Expr_SquareRoot & operator=(const Handle_Expr_SquareRoot &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_ArcSine & operator=(const Expr_ArcSine *anItem);
+		Handle_Expr_SquareRoot & operator=(const Expr_SquareRoot *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Expr_ArcSine DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Expr_SquareRoot DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Expr_ArcSine {
-	Expr_ArcSine* GetObject() {
-	return (Expr_ArcSine*)$self->Access();
+%extend Handle_Expr_SquareRoot {
+	Expr_SquareRoot* GetObject() {
+	return (Expr_SquareRoot*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Expr_ArcSine::~Handle_Expr_ArcSine %{
+%feature("shadow") Handle_Expr_SquareRoot::~Handle_Expr_SquareRoot %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -197,36 +197,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Expr_ArcSine {
+%extend Handle_Expr_SquareRoot {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_Expr_UnaryMinus;
-class Handle_Expr_UnaryMinus : public Handle_Expr_UnaryExpression {
+%nodefaultctor Handle_Expr_ArgTanh;
+class Handle_Expr_ArgTanh : public Handle_Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryMinus();
+		Handle_Expr_ArgTanh();
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryMinus(const Handle_Expr_UnaryMinus &aHandle);
+		Handle_Expr_ArgTanh(const Handle_Expr_ArgTanh &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryMinus(const Expr_UnaryMinus *anItem);
+		Handle_Expr_ArgTanh(const Expr_ArgTanh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryMinus & operator=(const Handle_Expr_UnaryMinus &aHandle);
+		Handle_Expr_ArgTanh & operator=(const Handle_Expr_ArgTanh &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_UnaryMinus & operator=(const Expr_UnaryMinus *anItem);
+		Handle_Expr_ArgTanh & operator=(const Expr_ArgTanh *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Expr_UnaryMinus DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Expr_ArgTanh DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Expr_UnaryMinus {
-	Expr_UnaryMinus* GetObject() {
-	return (Expr_UnaryMinus*)$self->Access();
+%extend Handle_Expr_ArgTanh {
+	Expr_ArgTanh* GetObject() {
+	return (Expr_ArgTanh*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Expr_UnaryMinus::~Handle_Expr_UnaryMinus %{
+%feature("shadow") Handle_Expr_ArgTanh::~Handle_Expr_ArgTanh %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -235,7 +235,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Expr_UnaryMinus {
+%extend Handle_Expr_ArgTanh {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -274,6 +274,82 @@ def __del__(self):
 %}
 
 %extend Handle_Expr_ExprFailure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Expr_InvalidFunction;
+class Handle_Expr_InvalidFunction : public Handle_Expr_ExprFailure {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidFunction();
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidFunction(const Handle_Expr_InvalidFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidFunction(const Expr_InvalidFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidFunction & operator=(const Handle_Expr_InvalidFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidFunction & operator=(const Expr_InvalidFunction *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Expr_InvalidFunction DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_InvalidFunction {
+	Expr_InvalidFunction* GetObject() {
+	return (Expr_InvalidFunction*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Expr_InvalidFunction::~Handle_Expr_InvalidFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Expr_InvalidFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Expr_UnaryMinus;
+class Handle_Expr_UnaryMinus : public Handle_Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_UnaryMinus();
+		%feature("autodoc", "1");
+		Handle_Expr_UnaryMinus(const Handle_Expr_UnaryMinus &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_UnaryMinus(const Expr_UnaryMinus *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_UnaryMinus & operator=(const Handle_Expr_UnaryMinus &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_UnaryMinus & operator=(const Expr_UnaryMinus *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Expr_UnaryMinus DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_UnaryMinus {
+	Expr_UnaryMinus* GetObject() {
+	return (Expr_UnaryMinus*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Expr_UnaryMinus::~Handle_Expr_UnaryMinus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Expr_UnaryMinus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -350,6 +426,82 @@ def __del__(self):
 %}
 
 %extend Handle_Expr_NumericValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Expr_GeneralFunction;
+class Handle_Expr_GeneralFunction : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction();
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction(const Handle_Expr_GeneralFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction(const Expr_GeneralFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction & operator=(const Handle_Expr_GeneralFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction & operator=(const Expr_GeneralFunction *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Expr_GeneralFunction DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_GeneralFunction {
+	Expr_GeneralFunction* GetObject() {
+	return (Expr_GeneralFunction*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Expr_GeneralFunction::~Handle_Expr_GeneralFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Expr_GeneralFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Expr_NamedFunction;
+class Handle_Expr_NamedFunction : public Handle_Expr_GeneralFunction {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_NamedFunction();
+		%feature("autodoc", "1");
+		Handle_Expr_NamedFunction(const Handle_Expr_NamedFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedFunction(const Expr_NamedFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedFunction & operator=(const Handle_Expr_NamedFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedFunction & operator=(const Expr_NamedFunction *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Expr_NamedFunction DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_NamedFunction {
+	Expr_NamedFunction* GetObject() {
+	return (Expr_NamedFunction*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Expr_NamedFunction::~Handle_Expr_NamedFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Expr_NamedFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -502,6 +654,44 @@ def __del__(self):
 %}
 
 %extend Handle_Expr_ArcCosine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown;
+class Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown();
+		%feature("autodoc", "1");
+		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown(const Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown(const Expr_IndexedMapNodeOfMapOfNamedUnknown *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown & operator=(const Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown & operator=(const Expr_IndexedMapNodeOfMapOfNamedUnknown *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown {
+	Expr_IndexedMapNodeOfMapOfNamedUnknown* GetObject() {
+	return (Expr_IndexedMapNodeOfMapOfNamedUnknown*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown::~Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -774,29 +964,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Expr_ArgSinh;
-class Handle_Expr_ArgSinh : public Handle_Expr_UnaryExpression {
+%nodefaultctor Handle_Expr_ArcSine;
+class Handle_Expr_ArcSine : public Handle_Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Handle_Expr_ArgSinh();
+		Handle_Expr_ArcSine();
 		%feature("autodoc", "1");
-		Handle_Expr_ArgSinh(const Handle_Expr_ArgSinh &aHandle);
+		Handle_Expr_ArcSine(const Handle_Expr_ArcSine &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_ArgSinh(const Expr_ArgSinh *anItem);
+		Handle_Expr_ArcSine(const Expr_ArcSine *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_ArgSinh & operator=(const Handle_Expr_ArgSinh &aHandle);
+		Handle_Expr_ArcSine & operator=(const Handle_Expr_ArcSine &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_ArgSinh & operator=(const Expr_ArgSinh *anItem);
+		Handle_Expr_ArcSine & operator=(const Expr_ArcSine *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Expr_ArgSinh DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Expr_ArcSine DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Expr_ArgSinh {
-	Expr_ArgSinh* GetObject() {
-	return (Expr_ArgSinh*)$self->Access();
+%extend Handle_Expr_ArcSine {
+	Expr_ArcSine* GetObject() {
+	return (Expr_ArcSine*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Expr_ArgSinh::~Handle_Expr_ArgSinh %{
+%feature("shadow") Handle_Expr_ArcSine::~Handle_Expr_ArcSine %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -805,36 +995,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Expr_ArgSinh {
+%extend Handle_Expr_ArcSine {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_Expr_InvalidFunction;
-class Handle_Expr_InvalidFunction : public Handle_Expr_ExprFailure {
+%nodefaultctor Handle_Expr_Sinh;
+class Handle_Expr_Sinh : public Handle_Expr_UnaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidFunction();
+		Handle_Expr_Sinh();
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidFunction(const Handle_Expr_InvalidFunction &aHandle);
+		Handle_Expr_Sinh(const Handle_Expr_Sinh &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidFunction(const Expr_InvalidFunction *anItem);
+		Handle_Expr_Sinh(const Expr_Sinh *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidFunction & operator=(const Handle_Expr_InvalidFunction &aHandle);
+		Handle_Expr_Sinh & operator=(const Handle_Expr_Sinh &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_InvalidFunction & operator=(const Expr_InvalidFunction *anItem);
+		Handle_Expr_Sinh & operator=(const Expr_Sinh *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Expr_InvalidFunction DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Expr_Sinh DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Expr_InvalidFunction {
-	Expr_InvalidFunction* GetObject() {
-	return (Expr_InvalidFunction*)$self->Access();
+%extend Handle_Expr_Sinh {
+	Expr_Sinh* GetObject() {
+	return (Expr_Sinh*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Expr_InvalidFunction::~Handle_Expr_InvalidFunction %{
+%feature("shadow") Handle_Expr_Sinh::~Handle_Expr_Sinh %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -843,7 +1033,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Expr_InvalidFunction {
+%extend Handle_Expr_Sinh {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1192,44 +1382,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Expr_NotAssigned;
-class Handle_Expr_NotAssigned : public Handle_Expr_ExprFailure {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_NotAssigned();
-		%feature("autodoc", "1");
-		Handle_Expr_NotAssigned(const Handle_Expr_NotAssigned &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_NotAssigned(const Expr_NotAssigned *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_NotAssigned & operator=(const Handle_Expr_NotAssigned &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_NotAssigned & operator=(const Expr_NotAssigned *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Expr_NotAssigned DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_NotAssigned {
-	Expr_NotAssigned* GetObject() {
-	return (Expr_NotAssigned*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Expr_NotAssigned::~Handle_Expr_NotAssigned %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Expr_NotAssigned {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Expr_NamedUnknown;
 class Handle_Expr_NamedUnknown : public Handle_Expr_NamedExpression {
 	public:
@@ -1344,6 +1496,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Expr_ArgSinh;
+class Handle_Expr_ArgSinh : public Handle_Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_ArgSinh();
+		%feature("autodoc", "1");
+		Handle_Expr_ArgSinh(const Handle_Expr_ArgSinh &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_ArgSinh(const Expr_ArgSinh *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_ArgSinh & operator=(const Handle_Expr_ArgSinh &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_ArgSinh & operator=(const Expr_ArgSinh *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Expr_ArgSinh DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_ArgSinh {
+	Expr_ArgSinh* GetObject() {
+	return (Expr_ArgSinh*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Expr_ArgSinh::~Handle_Expr_ArgSinh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Expr_ArgSinh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Expr_UnaryFunction;
 class Handle_Expr_UnaryFunction : public Handle_Expr_UnaryExpression {
 	public:
@@ -1420,29 +1610,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Expr_BinaryFunction;
-class Handle_Expr_BinaryFunction : public Handle_Expr_BinaryExpression {
+%nodefaultctor Handle_Expr_Equal;
+class Handle_Expr_Equal : public Handle_Expr_SingleRelation {
 	public:
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryFunction();
+		Handle_Expr_Equal();
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryFunction(const Handle_Expr_BinaryFunction &aHandle);
+		Handle_Expr_Equal(const Handle_Expr_Equal &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryFunction(const Expr_BinaryFunction *anItem);
+		Handle_Expr_Equal(const Expr_Equal *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryFunction & operator=(const Handle_Expr_BinaryFunction &aHandle);
+		Handle_Expr_Equal & operator=(const Handle_Expr_Equal &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_BinaryFunction & operator=(const Expr_BinaryFunction *anItem);
+		Handle_Expr_Equal & operator=(const Expr_Equal *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Expr_BinaryFunction DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Expr_Equal DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Expr_BinaryFunction {
-	Expr_BinaryFunction* GetObject() {
-	return (Expr_BinaryFunction*)$self->Access();
+%extend Handle_Expr_Equal {
+	Expr_Equal* GetObject() {
+	return (Expr_Equal*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Expr_BinaryFunction::~Handle_Expr_BinaryFunction %{
+%feature("shadow") Handle_Expr_Equal::~Handle_Expr_Equal %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1451,7 +1641,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Expr_BinaryFunction {
+%extend Handle_Expr_Equal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1496,82 +1686,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Expr_SquareRoot;
-class Handle_Expr_SquareRoot : public Handle_Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_SquareRoot();
-		%feature("autodoc", "1");
-		Handle_Expr_SquareRoot(const Handle_Expr_SquareRoot &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_SquareRoot(const Expr_SquareRoot *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_SquareRoot & operator=(const Handle_Expr_SquareRoot &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_SquareRoot & operator=(const Expr_SquareRoot *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Expr_SquareRoot DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_SquareRoot {
-	Expr_SquareRoot* GetObject() {
-	return (Expr_SquareRoot*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Expr_SquareRoot::~Handle_Expr_SquareRoot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Expr_SquareRoot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Expr_Sinh;
-class Handle_Expr_Sinh : public Handle_Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_Sinh();
-		%feature("autodoc", "1");
-		Handle_Expr_Sinh(const Handle_Expr_Sinh &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_Sinh(const Expr_Sinh *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_Sinh & operator=(const Handle_Expr_Sinh &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_Sinh & operator=(const Expr_Sinh *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Expr_Sinh DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_Sinh {
-	Expr_Sinh* GetObject() {
-	return (Expr_Sinh*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Expr_Sinh::~Handle_Expr_Sinh %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Expr_Sinh {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Expr_Cosh;
 class Handle_Expr_Cosh : public Handle_Expr_UnaryExpression {
 	public:
@@ -1610,44 +1724,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Expr_Equal;
-class Handle_Expr_Equal : public Handle_Expr_SingleRelation {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_Equal();
-		%feature("autodoc", "1");
-		Handle_Expr_Equal(const Handle_Expr_Equal &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_Equal(const Expr_Equal *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_Equal & operator=(const Handle_Expr_Equal &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_Equal & operator=(const Expr_Equal *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Expr_Equal DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_Equal {
-	Expr_Equal* GetObject() {
-	return (Expr_Equal*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Expr_Equal::~Handle_Expr_Equal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Expr_Equal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Expr_Sine;
 class Handle_Expr_Sine : public Handle_Expr_UnaryExpression {
 	public:
@@ -1680,6 +1756,44 @@ def __del__(self):
 %}
 
 %extend Handle_Expr_Sine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Expr_NotAssigned;
+class Handle_Expr_NotAssigned : public Handle_Expr_ExprFailure {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_NotAssigned();
+		%feature("autodoc", "1");
+		Handle_Expr_NotAssigned(const Handle_Expr_NotAssigned &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NotAssigned(const Expr_NotAssigned *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_NotAssigned & operator=(const Handle_Expr_NotAssigned &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NotAssigned & operator=(const Expr_NotAssigned *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Expr_NotAssigned DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_NotAssigned {
+	Expr_NotAssigned* GetObject() {
+	return (Expr_NotAssigned*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Expr_NotAssigned::~Handle_Expr_NotAssigned %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Expr_NotAssigned {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1762,29 +1876,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Expr_GeneralFunction;
-class Handle_Expr_GeneralFunction : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Expr_BinaryFunction;
+class Handle_Expr_BinaryFunction : public Handle_Expr_BinaryExpression {
 	public:
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction();
+		Handle_Expr_BinaryFunction();
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction(const Handle_Expr_GeneralFunction &aHandle);
+		Handle_Expr_BinaryFunction(const Handle_Expr_BinaryFunction &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction(const Expr_GeneralFunction *anItem);
+		Handle_Expr_BinaryFunction(const Expr_BinaryFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction & operator=(const Handle_Expr_GeneralFunction &aHandle);
+		Handle_Expr_BinaryFunction & operator=(const Handle_Expr_BinaryFunction &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction & operator=(const Expr_GeneralFunction *anItem);
+		Handle_Expr_BinaryFunction & operator=(const Expr_BinaryFunction *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Expr_GeneralFunction DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Expr_BinaryFunction DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Expr_GeneralFunction {
-	Expr_GeneralFunction* GetObject() {
-	return (Expr_GeneralFunction*)$self->Access();
+%extend Handle_Expr_BinaryFunction {
+	Expr_BinaryFunction* GetObject() {
+	return (Expr_BinaryFunction*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Expr_GeneralFunction::~Handle_Expr_GeneralFunction %{
+%feature("shadow") Handle_Expr_BinaryFunction::~Handle_Expr_BinaryFunction %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1793,36 +1907,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Expr_GeneralFunction {
+%extend Handle_Expr_BinaryFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown;
-class Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_Expr_GreaterThan;
+class Handle_Expr_GreaterThan : public Handle_Expr_SingleRelation {
 	public:
 		%feature("autodoc", "1");
-		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown();
+		Handle_Expr_GreaterThan();
 		%feature("autodoc", "1");
-		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown(const Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown &aHandle);
+		Handle_Expr_GreaterThan(const Handle_Expr_GreaterThan &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown(const Expr_IndexedMapNodeOfMapOfNamedUnknown *anItem);
+		Handle_Expr_GreaterThan(const Expr_GreaterThan *anItem);
 		%feature("autodoc", "1");
-		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown & operator=(const Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown &aHandle);
+		Handle_Expr_GreaterThan & operator=(const Handle_Expr_GreaterThan &aHandle);
 		%feature("autodoc", "1");
-		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown & operator=(const Expr_IndexedMapNodeOfMapOfNamedUnknown *anItem);
+		Handle_Expr_GreaterThan & operator=(const Expr_GreaterThan *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Expr_GreaterThan DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown {
-	Expr_IndexedMapNodeOfMapOfNamedUnknown* GetObject() {
-	return (Expr_IndexedMapNodeOfMapOfNamedUnknown*)$self->Access();
+%extend Handle_Expr_GreaterThan {
+	Expr_GreaterThan* GetObject() {
+	return (Expr_GreaterThan*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown::~Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown %{
+%feature("shadow") Handle_Expr_GreaterThan::~Handle_Expr_GreaterThan %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1831,7 +1945,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown {
+%extend Handle_Expr_GreaterThan {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1914,44 +2028,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Expr_NamedFunction;
-class Handle_Expr_NamedFunction : public Handle_Expr_GeneralFunction {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_NamedFunction();
-		%feature("autodoc", "1");
-		Handle_Expr_NamedFunction(const Handle_Expr_NamedFunction &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_NamedFunction(const Expr_NamedFunction *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_NamedFunction & operator=(const Handle_Expr_NamedFunction &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_NamedFunction & operator=(const Expr_NamedFunction *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Expr_NamedFunction DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_NamedFunction {
-	Expr_NamedFunction* GetObject() {
-	return (Expr_NamedFunction*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Expr_NamedFunction::~Handle_Expr_NamedFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Expr_NamedFunction {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Expr_SystemRelation;
 class Handle_Expr_SystemRelation : public Handle_Expr_GeneralRelation {
 	public:
@@ -2022,44 +2098,6 @@ def __del__(self):
 %}
 
 %extend Handle_Expr_LessThanOrEqual {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Expr_ArgTanh;
-class Handle_Expr_ArgTanh : public Handle_Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_ArgTanh();
-		%feature("autodoc", "1");
-		Handle_Expr_ArgTanh(const Handle_Expr_ArgTanh &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_ArgTanh(const Expr_ArgTanh *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_ArgTanh & operator=(const Handle_Expr_ArgTanh &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_ArgTanh & operator=(const Expr_ArgTanh *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Expr_ArgTanh DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_ArgTanh {
-	Expr_ArgTanh* GetObject() {
-	return (Expr_ArgTanh*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Expr_ArgTanh::~Handle_Expr_ArgTanh %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Expr_ArgTanh {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2142,44 +2180,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Expr_GreaterThan;
-class Handle_Expr_GreaterThan : public Handle_Expr_SingleRelation {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan();
-		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan(const Handle_Expr_GreaterThan &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan(const Expr_GreaterThan *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan & operator=(const Handle_Expr_GreaterThan &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan & operator=(const Expr_GreaterThan *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Expr_GreaterThan DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_GreaterThan {
-	Expr_GreaterThan* GetObject() {
-	return (Expr_GreaterThan*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Expr_GreaterThan::~Handle_Expr_GreaterThan %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Expr_GreaterThan {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Expr_Square;
 class Handle_Expr_Square : public Handle_Expr_UnaryExpression {
 	public:
@@ -2250,7 +2250,7 @@ class Expr_IndexedMapNodeOfMapOfNamedUnknown : public TCollection_MapNode {
 };
 %extend Expr_IndexedMapNodeOfMapOfNamedUnknown {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_IndexedMapNodeOfMapOfNamedUnknown::~Expr_IndexedMapNodeOfMapOfNamedUnknown %{
@@ -2315,7 +2315,7 @@ class Expr_GeneralExpression : public MMgt_TShared {
 };
 %extend Expr_GeneralExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_GeneralExpression::~Expr_GeneralExpression %{
@@ -2354,7 +2354,7 @@ class Expr_BinaryExpression : public Expr_GeneralExpression {
 };
 %extend Expr_BinaryExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_BinaryExpression::~Expr_BinaryExpression %{
@@ -2387,7 +2387,7 @@ class Expr_Division : public Expr_BinaryExpression {
 };
 %extend Expr_Division {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Division::~Expr_Division %{
@@ -2400,86 +2400,6 @@ def __del__(self):
 %}
 
 %extend Expr_Division {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_ExprFailure;
-class Expr_ExprFailure : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Expr_ExprFailure();
-		%feature("autodoc", "1");
-		Expr_ExprFailure(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Expr_ExprFailure NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_ExprFailure {
-	Handle_Expr_ExprFailure GetHandle() {
-	return *(Handle_Expr_ExprFailure*) &$self;
-	}
-};
-%extend Expr_ExprFailure {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_ExprFailure::~Expr_ExprFailure %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_ExprFailure {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_NotEvaluable;
-class Expr_NotEvaluable : public Expr_ExprFailure {
-	public:
-		%feature("autodoc", "1");
-		Expr_NotEvaluable();
-		%feature("autodoc", "1");
-		Expr_NotEvaluable(const char * AString);
-		%feature("autodoc", "1");
-		static		Handle_Expr_NotEvaluable NewInstance(const char * aMessage="");
-
-};
-%extend Expr_NotEvaluable {
-	Handle_Expr_NotEvaluable GetHandle() {
-	return *(Handle_Expr_NotEvaluable*) &$self;
-	}
-};
-%extend Expr_NotEvaluable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_NotEvaluable::~Expr_NotEvaluable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_NotEvaluable {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2516,7 +2436,7 @@ class Expr_UnaryExpression : public Expr_GeneralExpression {
 };
 %extend Expr_UnaryExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_UnaryExpression::~Expr_UnaryExpression %{
@@ -2529,6 +2449,133 @@ def __del__(self):
 %}
 
 %extend Expr_UnaryExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_Sinh;
+class Expr_Sinh : public Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_Sinh(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+
+};
+%extend Expr_Sinh {
+	Handle_Expr_Sinh GetHandle() {
+	return *(Handle_Expr_Sinh*) &$self;
+	}
+};
+%extend Expr_Sinh {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_Sinh::~Expr_Sinh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_Sinh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_ExprFailure;
+class Expr_ExprFailure : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Expr_ExprFailure();
+		%feature("autodoc", "1");
+		Expr_ExprFailure(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Expr_ExprFailure NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_ExprFailure {
+	Handle_Expr_ExprFailure GetHandle() {
+	return *(Handle_Expr_ExprFailure*) &$self;
+	}
+};
+%extend Expr_ExprFailure {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_ExprFailure::~Expr_ExprFailure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_ExprFailure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_NotEvaluable;
+class Expr_NotEvaluable : public Expr_ExprFailure {
+	public:
+		%feature("autodoc", "1");
+		Expr_NotEvaluable();
+		%feature("autodoc", "1");
+		Expr_NotEvaluable(const char * AString);
+		%feature("autodoc", "1");
+		static		Handle_Expr_NotEvaluable NewInstance(const char * aMessage="");
+
+};
+%extend Expr_NotEvaluable {
+	Handle_Expr_NotEvaluable GetHandle() {
+	return *(Handle_Expr_NotEvaluable*) &$self;
+	}
+};
+%extend Expr_NotEvaluable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_NotEvaluable::~Expr_NotEvaluable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_NotEvaluable {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2554,6 +2601,8 @@ class Expr_Exponential : public Expr_UnaryExpression {
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Expr_Exponential {
@@ -2563,7 +2612,7 @@ class Expr_Exponential : public Expr_UnaryExpression {
 };
 %extend Expr_Exponential {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Exponential::~Expr_Exponential %{
@@ -2612,7 +2661,7 @@ class Expr_Exponentiate : public Expr_BinaryExpression {
 };
 %extend Expr_Exponentiate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Exponentiate::~Expr_Exponentiate %{
@@ -2655,7 +2704,7 @@ class Expr_NotAssigned : public Expr_ExprFailure {
 };
 %extend Expr_NotAssigned {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_NotAssigned::~Expr_NotAssigned %{
@@ -2704,7 +2753,7 @@ class Expr_ArcCosine : public Expr_UnaryExpression {
 };
 %extend Expr_ArcCosine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_ArcCosine::~Expr_ArcCosine %{
@@ -2747,7 +2796,7 @@ class Expr_InvalidFunction : public Expr_ExprFailure {
 };
 %extend Expr_InvalidFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_InvalidFunction::~Expr_InvalidFunction %{
@@ -2802,7 +2851,7 @@ class Expr_GeneralRelation : public MMgt_TShared {
 };
 %extend Expr_GeneralRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_GeneralRelation::~Expr_GeneralRelation %{
@@ -2841,7 +2890,7 @@ class Expr_SingleRelation : public Expr_GeneralRelation {
 };
 %extend Expr_SingleRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_SingleRelation::~Expr_SingleRelation %{
@@ -2874,7 +2923,7 @@ class Expr_LessThan : public Expr_SingleRelation {
 };
 %extend Expr_LessThan {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_LessThan::~Expr_LessThan %{
@@ -2887,157 +2936,6 @@ def __del__(self):
 %}
 
 %extend Expr_LessThan {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_UnaryMinus;
-class Expr_UnaryMinus : public Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_UnaryMinus(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression NDerivative(const Handle_Expr_NamedUnknown &X, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_UnaryMinus {
-	Handle_Expr_UnaryMinus GetHandle() {
-	return *(Handle_Expr_UnaryMinus*) &$self;
-	}
-};
-%extend Expr_UnaryMinus {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_UnaryMinus::~Expr_UnaryMinus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_UnaryMinus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_LogOfe;
-class Expr_LogOfe : public Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_LogOfe(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_LogOfe {
-	Handle_Expr_LogOfe GetHandle() {
-	return *(Handle_Expr_LogOfe*) &$self;
-	}
-};
-%extend Expr_LogOfe {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_LogOfe::~Expr_LogOfe %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_LogOfe {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_BinaryFunction;
-class Expr_BinaryFunction : public Expr_BinaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_BinaryFunction(const Handle_Expr_GeneralFunction &func, const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction Function() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_BinaryFunction {
-	Handle_Expr_BinaryFunction GetHandle() {
-	return *(Handle_Expr_BinaryFunction*) &$self;
-	}
-};
-%extend Expr_BinaryFunction {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_BinaryFunction::~Expr_BinaryFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_BinaryFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3073,37 +2971,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Expr;
-class Expr {
-	public:
-		%feature("autodoc", "1");
-		Expr();
-		%feature("autodoc", "1");
-		static		Handle_Expr_GeneralExpression CopyShare(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbOfFreeVariables(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbOfFreeVariables(const Handle_Expr_GeneralRelation &exp);
-		%feature("autodoc", "1");
-		static		Standard_Real Sign(const Standard_Real val);
-
-};
-%feature("shadow") Expr::~Expr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Expr_SequenceNodeOfSequenceOfGeneralRelation;
 class Expr_SequenceNodeOfSequenceOfGeneralRelation : public TCollection_SeqNode {
 	public:
@@ -3122,7 +2989,7 @@ class Expr_SequenceNodeOfSequenceOfGeneralRelation : public TCollection_SeqNode 
 };
 %extend Expr_SequenceNodeOfSequenceOfGeneralRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_SequenceNodeOfSequenceOfGeneralRelation::~Expr_SequenceNodeOfSequenceOfGeneralRelation %{
@@ -3171,7 +3038,7 @@ class Expr_Absolute : public Expr_UnaryExpression {
 };
 %extend Expr_Absolute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Absolute::~Expr_Absolute %{
@@ -3214,7 +3081,7 @@ class Expr_NamedExpression : public Expr_GeneralExpression {
 };
 %extend Expr_NamedExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_NamedExpression::~Expr_NamedExpression %{
@@ -3273,7 +3140,7 @@ class Expr_NamedConstant : public Expr_NamedExpression {
 };
 %extend Expr_NamedConstant {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_NamedConstant::~Expr_NamedConstant %{
@@ -3286,6 +3153,57 @@ def __del__(self):
 %}
 
 %extend Expr_NamedConstant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_UnaryMinus;
+class Expr_UnaryMinus : public Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_UnaryMinus(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression NDerivative(const Handle_Expr_NamedUnknown &X, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_UnaryMinus {
+	Handle_Expr_UnaryMinus GetHandle() {
+	return *(Handle_Expr_UnaryMinus*) &$self;
+	}
+};
+%extend Expr_UnaryMinus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_UnaryMinus::~Expr_UnaryMinus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_UnaryMinus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3324,7 +3242,7 @@ class Expr_UnaryFunction : public Expr_UnaryExpression {
 };
 %extend Expr_UnaryFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_UnaryFunction::~Expr_UnaryFunction %{
@@ -3337,6 +3255,55 @@ def __del__(self):
 %}
 
 %extend Expr_UnaryFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_LogOfe;
+class Expr_LogOfe : public Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_LogOfe(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_LogOfe {
+	Handle_Expr_LogOfe GetHandle() {
+	return *(Handle_Expr_LogOfe*) &$self;
+	}
+};
+%extend Expr_LogOfe {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_LogOfe::~Expr_LogOfe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_LogOfe {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3375,7 +3342,7 @@ class Expr_PolyExpression : public Expr_GeneralExpression {
 };
 %extend Expr_PolyExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_PolyExpression::~Expr_PolyExpression %{
@@ -3424,7 +3391,7 @@ class Expr_PolyFunction : public Expr_PolyExpression {
 };
 %extend Expr_PolyFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_PolyFunction::~Expr_PolyFunction %{
@@ -3469,7 +3436,7 @@ class Expr_Different : public Expr_SingleRelation {
 };
 %extend Expr_Different {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Different::~Expr_Different %{
@@ -3518,7 +3485,7 @@ class Expr_SquareRoot : public Expr_UnaryExpression {
 };
 %extend Expr_SquareRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_SquareRoot::~Expr_SquareRoot %{
@@ -3648,7 +3615,7 @@ class Expr_NamedUnknown : public Expr_NamedExpression {
 };
 %extend Expr_NamedUnknown {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_NamedUnknown::~Expr_NamedUnknown %{
@@ -3661,6 +3628,55 @@ def __del__(self):
 %}
 
 %extend Expr_NamedUnknown {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_Square;
+class Expr_Square : public Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_Square(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_Square {
+	Handle_Expr_Square GetHandle() {
+	return *(Handle_Expr_Square*) &$self;
+	}
+};
+%extend Expr_Square {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_Square::~Expr_Square %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_Square {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3697,7 +3713,7 @@ class Expr_ArgCosh : public Expr_UnaryExpression {
 };
 %extend Expr_ArgCosh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_ArgCosh::~Expr_ArgCosh %{
@@ -3710,51 +3726,6 @@ def __del__(self):
 %}
 
 %extend Expr_ArgCosh {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_GreaterThanOrEqual;
-class Expr_GreaterThanOrEqual : public Expr_SingleRelation {
-	public:
-		%feature("autodoc", "1");
-		Expr_GreaterThanOrEqual(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSatisfied() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralRelation Simplified() const;
-		%feature("autodoc", "1");
-		virtual		void Simplify();
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralRelation Copy() const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_GreaterThanOrEqual {
-	Handle_Expr_GreaterThanOrEqual GetHandle() {
-	return *(Handle_Expr_GreaterThanOrEqual*) &$self;
-	}
-};
-%extend Expr_GreaterThanOrEqual {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_GreaterThanOrEqual::~Expr_GreaterThanOrEqual %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_GreaterThanOrEqual {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3806,6 +3777,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor Expr_GreaterThanOrEqual;
+class Expr_GreaterThanOrEqual : public Expr_SingleRelation {
+	public:
+		%feature("autodoc", "1");
+		Expr_GreaterThanOrEqual(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSatisfied() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralRelation Simplified() const;
+		%feature("autodoc", "1");
+		virtual		void Simplify();
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralRelation Copy() const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_GreaterThanOrEqual {
+	Handle_Expr_GreaterThanOrEqual GetHandle() {
+	return *(Handle_Expr_GreaterThanOrEqual*) &$self;
+	}
+};
+%extend Expr_GreaterThanOrEqual {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_GreaterThanOrEqual::~Expr_GreaterThanOrEqual %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_GreaterThanOrEqual {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Expr_SystemRelation;
 class Expr_SystemRelation : public Expr_GeneralRelation {
 	public:
@@ -3848,7 +3864,7 @@ class Expr_SystemRelation : public Expr_GeneralRelation {
 };
 %extend Expr_SystemRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_SystemRelation::~Expr_SystemRelation %{
@@ -3861,6 +3877,57 @@ def __del__(self):
 %}
 
 %extend Expr_SystemRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_BinaryFunction;
+class Expr_BinaryFunction : public Expr_BinaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_BinaryFunction(const Handle_Expr_GeneralFunction &func, const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction Function() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_BinaryFunction {
+	Handle_Expr_BinaryFunction GetHandle() {
+	return *(Handle_Expr_BinaryFunction*) &$self;
+	}
+};
+%extend Expr_BinaryFunction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_BinaryFunction::~Expr_BinaryFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_BinaryFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3897,7 +3964,7 @@ class Expr_ArgSinh : public Expr_UnaryExpression {
 };
 %extend Expr_ArgSinh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_ArgSinh::~Expr_ArgSinh %{
@@ -3999,7 +4066,7 @@ class Expr_Product : public Expr_PolyExpression {
 };
 %extend Expr_Product {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Product::~Expr_Product %{
@@ -4044,7 +4111,7 @@ class Expr_Equal : public Expr_SingleRelation {
 };
 %extend Expr_Equal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Equal::~Expr_Equal %{
@@ -4057,55 +4124,6 @@ def __del__(self):
 %}
 
 %extend Expr_Equal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_Square;
-class Expr_Square : public Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_Square(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_Square {
-	Handle_Expr_Square GetHandle() {
-	return *(Handle_Expr_Square*) &$self;
-	}
-};
-%extend Expr_Square {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_Square::~Expr_Square %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_Square {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4136,7 +4154,7 @@ class Expr_InvalidOperand : public Expr_ExprFailure {
 };
 %extend Expr_InvalidOperand {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_InvalidOperand::~Expr_InvalidOperand %{
@@ -4149,55 +4167,6 @@ def __del__(self):
 %}
 
 %extend Expr_InvalidOperand {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_ArgTanh;
-class Expr_ArgTanh : public Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_ArgTanh(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_ArgTanh {
-	Handle_Expr_ArgTanh GetHandle() {
-	return *(Handle_Expr_ArgTanh*) &$self;
-	}
-};
-%extend Expr_ArgTanh {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_ArgTanh::~Expr_ArgTanh %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_ArgTanh {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4234,7 +4203,7 @@ class Expr_Cosine : public Expr_UnaryExpression {
 };
 %extend Expr_Cosine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Cosine::~Expr_Cosine %{
@@ -4283,7 +4252,7 @@ class Expr_Tangent : public Expr_UnaryExpression {
 };
 %extend Expr_Tangent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Tangent::~Expr_Tangent %{
@@ -4296,35 +4265,6 @@ def __del__(self):
 %}
 
 %extend Expr_Tangent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_RUIterator;
-class Expr_RUIterator {
-	public:
-		%feature("autodoc", "1");
-		Expr_RUIterator(const Handle_Expr_GeneralRelation &rel);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_Expr_NamedUnknown Value() const;
-
-};
-%feature("shadow") Expr_RUIterator::~Expr_RUIterator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_RUIterator {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4376,6 +4316,37 @@ def __del__(self):
 %}
 
 %extend Expr_Array1OfGeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr;
+class Expr {
+	public:
+		%feature("autodoc", "1");
+		Expr();
+		%feature("autodoc", "1");
+		static		Handle_Expr_GeneralExpression CopyShare(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbOfFreeVariables(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbOfFreeVariables(const Handle_Expr_GeneralRelation &exp);
+		%feature("autodoc", "1");
+		static		Standard_Real Sign(const Standard_Real val);
+
+};
+%feature("shadow") Expr::~Expr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4441,7 +4412,7 @@ class Expr_Tanh : public Expr_UnaryExpression {
 };
 %extend Expr_Tanh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Tanh::~Expr_Tanh %{
@@ -4606,7 +4577,7 @@ class Expr_ArcSine : public Expr_UnaryExpression {
 };
 %extend Expr_ArcSine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_ArcSine::~Expr_ArcSine %{
@@ -4619,6 +4590,84 @@ def __del__(self):
 %}
 
 %extend Expr_ArcSine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_RUIterator;
+class Expr_RUIterator {
+	public:
+		%feature("autodoc", "1");
+		Expr_RUIterator(const Handle_Expr_GeneralRelation &rel);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_Expr_NamedUnknown Value() const;
+
+};
+%feature("shadow") Expr_RUIterator::~Expr_RUIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_RUIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_ArgTanh;
+class Expr_ArgTanh : public Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_ArgTanh(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_ArgTanh {
+	Handle_Expr_ArgTanh GetHandle() {
+	return *(Handle_Expr_ArgTanh*) &$self;
+	}
+};
+%extend Expr_ArgTanh {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_ArgTanh::~Expr_ArgTanh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_ArgTanh {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4659,7 +4708,7 @@ class Expr_Sum : public Expr_PolyExpression {
 };
 %extend Expr_Sum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Sum::~Expr_Sum %{
@@ -4672,6 +4721,43 @@ def __del__(self):
 %}
 
 %extend Expr_Sum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_SequenceNodeOfSequenceOfGeneralExpression;
+class Expr_SequenceNodeOfSequenceOfGeneralExpression : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Expr_SequenceNodeOfSequenceOfGeneralExpression(const Handle_Expr_GeneralExpression &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralExpression & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_SequenceNodeOfSequenceOfGeneralExpression {
+	Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression GetHandle() {
+	return *(Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression*) &$self;
+	}
+};
+%extend Expr_SequenceNodeOfSequenceOfGeneralExpression {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_SequenceNodeOfSequenceOfGeneralExpression::~Expr_SequenceNodeOfSequenceOfGeneralExpression %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_SequenceNodeOfSequenceOfGeneralExpression {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4704,7 +4790,7 @@ class Expr_GreaterThan : public Expr_SingleRelation {
 };
 %extend Expr_GreaterThan {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_GreaterThan::~Expr_GreaterThan %{
@@ -4717,43 +4803,6 @@ def __del__(self):
 %}
 
 %extend Expr_GreaterThan {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_SequenceNodeOfSequenceOfGeneralExpression;
-class Expr_SequenceNodeOfSequenceOfGeneralExpression : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Expr_SequenceNodeOfSequenceOfGeneralExpression(const Handle_Expr_GeneralExpression &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_SequenceNodeOfSequenceOfGeneralExpression {
-	Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression GetHandle() {
-	return *(Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression*) &$self;
-	}
-};
-%extend Expr_SequenceNodeOfSequenceOfGeneralExpression {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_SequenceNodeOfSequenceOfGeneralExpression::~Expr_SequenceNodeOfSequenceOfGeneralExpression %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_SequenceNodeOfSequenceOfGeneralExpression {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4784,7 +4833,7 @@ class Expr_InvalidAssignment : public Expr_ExprFailure {
 };
 %extend Expr_InvalidAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_InvalidAssignment::~Expr_InvalidAssignment %{
@@ -4835,7 +4884,7 @@ class Expr_Difference : public Expr_BinaryExpression {
 };
 %extend Expr_Difference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Difference::~Expr_Difference %{
@@ -4884,7 +4933,7 @@ class Expr_ArcTangent : public Expr_UnaryExpression {
 };
 %extend Expr_ArcTangent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_ArcTangent::~Expr_ArcTangent %{
@@ -4897,200 +4946,6 @@ def __del__(self):
 %}
 
 %extend Expr_ArcTangent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_Cosh;
-class Expr_Cosh : public Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_Cosh(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_Cosh {
-	Handle_Expr_Cosh GetHandle() {
-	return *(Handle_Expr_Cosh*) &$self;
-	}
-};
-%extend Expr_Cosh {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_Cosh::~Expr_Cosh %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_Cosh {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_GeneralFunction;
-class Expr_GeneralFunction : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbOfVariables() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_NamedUnknown Variable(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralFunction Copy() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var, const Standard_Integer deg) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralFunction &func) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinearOnVariable(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString GetStringName() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_GeneralFunction {
-	Handle_Expr_GeneralFunction GetHandle() {
-	return *(Handle_Expr_GeneralFunction*) &$self;
-	}
-};
-%extend Expr_GeneralFunction {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_GeneralFunction::~Expr_GeneralFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_GeneralFunction {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_FunctionDerivative;
-class Expr_FunctionDerivative : public Expr_GeneralFunction {
-	public:
-		%feature("autodoc", "1");
-		Expr_FunctionDerivative(const Handle_Expr_GeneralFunction &func, const Handle_Expr_NamedUnknown &withX, const Standard_Integer deg);
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &values) const;
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction Function() const;
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Handle_Expr_NamedUnknown DerivVariable() const;
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression Expression() const;
-		%feature("autodoc", "1");
-		void UpdateExpression();
-
-};
-%extend Expr_FunctionDerivative {
-	Handle_Expr_FunctionDerivative GetHandle() {
-	return *(Handle_Expr_FunctionDerivative*) &$self;
-	}
-};
-%extend Expr_FunctionDerivative {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_FunctionDerivative::~Expr_FunctionDerivative %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_FunctionDerivative {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_LogOf10;
-class Expr_LogOf10 : public Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_LogOf10(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_LogOf10 {
-	Handle_Expr_LogOf10 GetHandle() {
-	return *(Handle_Expr_LogOf10*) &$self;
-	}
-};
-%extend Expr_LogOf10 {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_LogOf10::~Expr_LogOf10 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_LogOf10 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5145,7 +5000,7 @@ class Expr_NumericValue : public Expr_GeneralExpression {
 };
 %extend Expr_NumericValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_NumericValue::~Expr_NumericValue %{
@@ -5158,6 +5013,200 @@ def __del__(self):
 %}
 
 %extend Expr_NumericValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_Cosh;
+class Expr_Cosh : public Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_Cosh(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_Cosh {
+	Handle_Expr_Cosh GetHandle() {
+	return *(Handle_Expr_Cosh*) &$self;
+	}
+};
+%extend Expr_Cosh {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_Cosh::~Expr_Cosh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_Cosh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_GeneralFunction;
+class Expr_GeneralFunction : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbOfVariables() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_NamedUnknown Variable(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralFunction Copy() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var, const Standard_Integer deg) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralFunction &func) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinearOnVariable(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString GetStringName() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_GeneralFunction {
+	Handle_Expr_GeneralFunction GetHandle() {
+	return *(Handle_Expr_GeneralFunction*) &$self;
+	}
+};
+%extend Expr_GeneralFunction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_GeneralFunction::~Expr_GeneralFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_GeneralFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_FunctionDerivative;
+class Expr_FunctionDerivative : public Expr_GeneralFunction {
+	public:
+		%feature("autodoc", "1");
+		Expr_FunctionDerivative(const Handle_Expr_GeneralFunction &func, const Handle_Expr_NamedUnknown &withX, const Standard_Integer deg);
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &values) const;
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction Function() const;
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Handle_Expr_NamedUnknown DerivVariable() const;
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralExpression Expression() const;
+		%feature("autodoc", "1");
+		void UpdateExpression();
+
+};
+%extend Expr_FunctionDerivative {
+	Handle_Expr_FunctionDerivative GetHandle() {
+	return *(Handle_Expr_FunctionDerivative*) &$self;
+	}
+};
+%extend Expr_FunctionDerivative {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_FunctionDerivative::~Expr_FunctionDerivative %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_FunctionDerivative {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Expr_LogOf10;
+class Expr_LogOf10 : public Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_LogOf10(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_LogOf10 {
+	Handle_Expr_LogOf10 GetHandle() {
+	return *(Handle_Expr_LogOf10*) &$self;
+	}
+};
+%extend Expr_LogOf10 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Expr_LogOf10::~Expr_LogOf10 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Expr_LogOf10 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5206,7 +5255,7 @@ class Expr_NamedFunction : public Expr_GeneralFunction {
 };
 %extend Expr_NamedFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_NamedFunction::~Expr_NamedFunction %{
@@ -5255,7 +5304,7 @@ class Expr_Sine : public Expr_UnaryExpression {
 };
 %extend Expr_Sine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_Sine::~Expr_Sine %{
@@ -5268,55 +5317,6 @@ def __del__(self):
 %}
 
 %extend Expr_Sine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Expr_Sinh;
-class Expr_Sinh : public Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_Sinh(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_Sinh {
-	Handle_Expr_Sinh GetHandle() {
-	return *(Handle_Expr_Sinh*) &$self;
-	}
-};
-%extend Expr_Sinh {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Expr_Sinh::~Expr_Sinh %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Expr_Sinh {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5349,7 +5349,7 @@ class Expr_LessThanOrEqual : public Expr_SingleRelation {
 };
 %extend Expr_LessThanOrEqual {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Expr_LessThanOrEqual::~Expr_LessThanOrEqual %{

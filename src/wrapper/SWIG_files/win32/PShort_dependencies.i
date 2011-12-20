@@ -156,6 +156,6 @@ $HeaderURL$
 %};
 
 %import Standard.i
-%import PMMgt.i
 %import PStandard.i
+%import PMMgt.i
 %import DBC.i

@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DecodeColor) IGESCAFControl::DecodeColor;
+%rename(EncodeColor) IGESCAFControl::EncodeColor;

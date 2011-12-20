@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_XmlMFunction_GraphNodeDriver;
-class Handle_XmlMFunction_GraphNodeDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver(const Handle_XmlMFunction_GraphNodeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver(const XmlMFunction_GraphNodeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver & operator=(const Handle_XmlMFunction_GraphNodeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver & operator=(const XmlMFunction_GraphNodeDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMFunction_GraphNodeDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMFunction_GraphNodeDriver {
-	XmlMFunction_GraphNodeDriver* GetObject() {
-	return (XmlMFunction_GraphNodeDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMFunction_GraphNodeDriver::~Handle_XmlMFunction_GraphNodeDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMFunction_GraphNodeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XmlMFunction_FunctionDriver;
 class Handle_XmlMFunction_FunctionDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -122,6 +84,44 @@ def __del__(self):
 %}
 
 %extend Handle_XmlMFunction_FunctionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_XmlMFunction_GraphNodeDriver;
+class Handle_XmlMFunction_GraphNodeDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver(const Handle_XmlMFunction_GraphNodeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver(const XmlMFunction_GraphNodeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver & operator=(const Handle_XmlMFunction_GraphNodeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver & operator=(const XmlMFunction_GraphNodeDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMFunction_GraphNodeDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMFunction_GraphNodeDriver {
+	XmlMFunction_GraphNodeDriver* GetObject() {
+	return (XmlMFunction_GraphNodeDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMFunction_GraphNodeDriver::~Handle_XmlMFunction_GraphNodeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMFunction_GraphNodeDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -188,7 +188,7 @@ class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_ScopeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMFunction_ScopeDriver::~XmlMFunction_ScopeDriver %{
@@ -254,7 +254,7 @@ class XmlMFunction_GraphNodeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_GraphNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMFunction_GraphNodeDriver::~XmlMFunction_GraphNodeDriver %{
@@ -295,7 +295,7 @@ class XmlMFunction_FunctionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_FunctionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMFunction_FunctionDriver::~XmlMFunction_FunctionDriver %{

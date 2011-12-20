@@ -258,9 +258,9 @@ $HeaderURL$
 #include<Handle_StepBasic_UncertaintyMeasureWithUnit.hxx>
 #include<Handle_StepBasic_MeasureWithUnit.hxx>
 #include<Handle_StepBasic_LengthMeasureWithUnit.hxx>
-#include<Handle_StepBasic_HArray1OfNamedUnit.hxx>
-#include<Handle_StepBasic_NamedUnit.hxx>
 #include<Handle_StepBasic_ProductDefinitionFormation.hxx>
 #include<Handle_StepBasic_MeasureValueMember.hxx>
 #include<StepBasic_Unit.hxx>
+#include<Handle_StepBasic_HArray1OfNamedUnit.hxx>
+#include<Handle_StepBasic_NamedUnit.hxx>
 %}

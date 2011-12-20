@@ -50,11 +50,6 @@ $HeaderURL$
 %include Vrml_headers.i
 
 
-enum Vrml_ShapeType {
-	Vrml_UNKNOWN_SHAPE_TYPE,
-	Vrml_SOLID,
-	};
-
 enum Vrml_SFImageNumber {
 	Vrml_NULL,
 	Vrml_ONE,
@@ -68,10 +63,9 @@ enum Vrml_FaceType {
 	Vrml_CONVEX,
 	};
 
-enum Vrml_VertexOrdering {
-	Vrml_UNKNOWN_ORDERING,
-	Vrml_CLOCKWISE,
-	Vrml_COUNTERCLOCKWISE,
+enum Vrml_ShapeType {
+	Vrml_UNKNOWN_SHAPE_TYPE,
+	Vrml_SOLID,
 	};
 
 enum Vrml_SeparatorRenderCulling {
@@ -91,21 +85,16 @@ enum Vrml_MaterialBindingAndNormalBinding {
 	Vrml_PER_VERTEX_INDEXED,
 	};
 
-enum Vrml_FontStyleStyle {
-	Vrml_NONE,
-	Vrml_BOLD,
-	Vrml_ITALIC,
-	};
-
 enum Vrml_ConeParts {
 	Vrml_ConeSIDES,
 	Vrml_ConeBOTTOM,
 	Vrml_ConeALL,
 	};
 
-enum Vrml_WWWAnchorMap {
-	Vrml_MAP_NONE,
-	Vrml_POINT,
+enum Vrml_FontStyleStyle {
+	Vrml_NONE,
+	Vrml_BOLD,
+	Vrml_ITALIC,
 	};
 
 enum Vrml_AsciiTextJustification {
@@ -121,10 +110,15 @@ enum Vrml_CylinderParts {
 	Vrml_CylinderALL,
 	};
 
-enum Vrml_FontStyleFamily {
-	Vrml_SERIF,
-	Vrml_SANS,
-	Vrml_TYPEWRITER,
+enum Vrml_VertexOrdering {
+	Vrml_UNKNOWN_ORDERING,
+	Vrml_CLOCKWISE,
+	Vrml_COUNTERCLOCKWISE,
+	};
+
+enum Vrml_WWWAnchorMap {
+	Vrml_MAP_NONE,
+	Vrml_POINT,
 	};
 
 enum Vrml_Texture2Wrap {
@@ -132,6 +126,50 @@ enum Vrml_Texture2Wrap {
 	Vrml_CLAMP,
 	};
 
+enum Vrml_FontStyleFamily {
+	Vrml_SERIF,
+	Vrml_SANS,
+	Vrml_TYPEWRITER,
+	};
+
+
+
+%nodefaultctor Handle_Vrml_Coordinate3;
+class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Vrml_Coordinate3();
+		%feature("autodoc", "1");
+		Handle_Vrml_Coordinate3(const Handle_Vrml_Coordinate3 &aHandle);
+		%feature("autodoc", "1");
+		Handle_Vrml_Coordinate3(const Vrml_Coordinate3 *anItem);
+		%feature("autodoc", "1");
+		Handle_Vrml_Coordinate3 & operator=(const Handle_Vrml_Coordinate3 &aHandle);
+		%feature("autodoc", "1");
+		Handle_Vrml_Coordinate3 & operator=(const Vrml_Coordinate3 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Vrml_Coordinate3 DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Vrml_Coordinate3 {
+	Vrml_Coordinate3* GetObject() {
+	return (Vrml_Coordinate3*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Vrml_Coordinate3::~Handle_Vrml_Coordinate3 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Vrml_Coordinate3 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Vrml_AsciiText;
@@ -172,29 +210,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Vrml_LOD;
-class Handle_Vrml_LOD : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Vrml_IndexedLineSet;
+class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Vrml_LOD();
+		Handle_Vrml_IndexedLineSet();
 		%feature("autodoc", "1");
-		Handle_Vrml_LOD(const Handle_Vrml_LOD &aHandle);
+		Handle_Vrml_IndexedLineSet(const Handle_Vrml_IndexedLineSet &aHandle);
 		%feature("autodoc", "1");
-		Handle_Vrml_LOD(const Vrml_LOD *anItem);
+		Handle_Vrml_IndexedLineSet(const Vrml_IndexedLineSet *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_LOD & operator=(const Handle_Vrml_LOD &aHandle);
+		Handle_Vrml_IndexedLineSet & operator=(const Handle_Vrml_IndexedLineSet &aHandle);
 		%feature("autodoc", "1");
-		Handle_Vrml_LOD & operator=(const Vrml_LOD *anItem);
+		Handle_Vrml_IndexedLineSet & operator=(const Vrml_IndexedLineSet *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_LOD DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_IndexedLineSet DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Vrml_LOD {
-	Vrml_LOD* GetObject() {
-	return (Vrml_LOD*)$self->Access();
+%extend Handle_Vrml_IndexedLineSet {
+	Vrml_IndexedLineSet* GetObject() {
+	return (Vrml_IndexedLineSet*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Vrml_LOD::~Handle_Vrml_LOD %{
+%feature("shadow") Handle_Vrml_IndexedLineSet::~Handle_Vrml_IndexedLineSet %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -203,45 +241,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Vrml_LOD {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Vrml_Coordinate3;
-class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Vrml_Coordinate3();
-		%feature("autodoc", "1");
-		Handle_Vrml_Coordinate3(const Handle_Vrml_Coordinate3 &aHandle);
-		%feature("autodoc", "1");
-		Handle_Vrml_Coordinate3(const Vrml_Coordinate3 *anItem);
-		%feature("autodoc", "1");
-		Handle_Vrml_Coordinate3 & operator=(const Handle_Vrml_Coordinate3 &aHandle);
-		%feature("autodoc", "1");
-		Handle_Vrml_Coordinate3 & operator=(const Vrml_Coordinate3 *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Vrml_Coordinate3 DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Vrml_Coordinate3 {
-	Vrml_Coordinate3* GetObject() {
-	return (Vrml_Coordinate3*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Vrml_Coordinate3::~Handle_Vrml_Coordinate3 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Vrml_Coordinate3 {
+%extend Handle_Vrml_IndexedLineSet {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -362,29 +362,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Vrml_IndexedLineSet;
-class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Vrml_LOD;
+class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedLineSet();
+		Handle_Vrml_LOD();
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedLineSet(const Handle_Vrml_IndexedLineSet &aHandle);
+		Handle_Vrml_LOD(const Handle_Vrml_LOD &aHandle);
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedLineSet(const Vrml_IndexedLineSet *anItem);
+		Handle_Vrml_LOD(const Vrml_LOD *anItem);
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedLineSet & operator=(const Handle_Vrml_IndexedLineSet &aHandle);
+		Handle_Vrml_LOD & operator=(const Handle_Vrml_LOD &aHandle);
 		%feature("autodoc", "1");
-		Handle_Vrml_IndexedLineSet & operator=(const Vrml_IndexedLineSet *anItem);
+		Handle_Vrml_LOD & operator=(const Vrml_LOD *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Vrml_IndexedLineSet DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Vrml_LOD DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Vrml_IndexedLineSet {
-	Vrml_IndexedLineSet* GetObject() {
-	return (Vrml_IndexedLineSet*)$self->Access();
+%extend Handle_Vrml_LOD {
+	Vrml_LOD* GetObject() {
+	return (Vrml_LOD*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Vrml_IndexedLineSet::~Handle_Vrml_IndexedLineSet %{
+%feature("shadow") Handle_Vrml_LOD::~Handle_Vrml_LOD %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -393,7 +393,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Vrml_IndexedLineSet {
+%extend Handle_Vrml_LOD {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -556,28 +556,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor Vrml_MaterialBinding;
-class Vrml_MaterialBinding {
+%nodefaultctor Vrml;
+class Vrml {
 	public:
 		%feature("autodoc", "1");
-		Vrml_MaterialBinding(const Vrml_MaterialBindingAndNormalBinding aValue);
-		%feature("autodoc", "1");
-		Vrml_MaterialBinding();
-		%feature("autodoc", "1");
-		void SetValue(const Vrml_MaterialBindingAndNormalBinding aValue);
-		%feature("autodoc", "1");
-		Vrml_MaterialBindingAndNormalBinding Value() const;
+		Vrml();
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
-			std::string PrintToString() {
+			std::string VrmlHeaderWriterToString() {
 			std::stringstream s;
-			self->Print(s);
+			self->VrmlHeaderWriter(s);
 			return s.str();}
 		};
+		%feature("autodoc", "1");
+		static		Standard_OStream & CommentWriter(const char * aComment, Standard_OStream & anOStream);
 
 };
-%feature("shadow") Vrml_MaterialBinding::~Vrml_MaterialBinding %{
+%feature("shadow") Vrml::~Vrml %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -586,7 +582,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Vrml_MaterialBinding {
+%extend Vrml {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -624,23 +620,23 @@ def __del__(self):
 };
 
 
-%nodefaultctor Vrml_FontStyle;
-class Vrml_FontStyle {
+%nodefaultctor Vrml_Cube;
+class Vrml_Cube {
 	public:
 		%feature("autodoc", "1");
-		Vrml_FontStyle(const Standard_Real aSize=10, const Vrml_FontStyleFamily aFamily=Vrml_SERIF, const Vrml_FontStyleStyle aStyle=Vrml_NONE);
+		Vrml_Cube(const Standard_Real aWidth=2, const Standard_Real aHeight=2, const Standard_Real aDepth=2);
 		%feature("autodoc", "1");
-		void SetSize(const Standard_Real aSize);
+		void SetWidth(const Standard_Real aWidth);
 		%feature("autodoc", "1");
-		Standard_Real Size() const;
+		Standard_Real Width() const;
 		%feature("autodoc", "1");
-		void SetFamily(const Vrml_FontStyleFamily aFamily);
+		void SetHeight(const Standard_Real aHeight);
 		%feature("autodoc", "1");
-		Vrml_FontStyleFamily Family() const;
+		Standard_Real Height() const;
 		%feature("autodoc", "1");
-		void SetStyle(const Vrml_FontStyleStyle aStyle);
+		void SetDepth(const Standard_Real aDepth);
 		%feature("autodoc", "1");
-		Vrml_FontStyleStyle Style() const;
+		Standard_Real Depth() const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -651,7 +647,7 @@ class Vrml_FontStyle {
 		};
 
 };
-%feature("shadow") Vrml_FontStyle::~Vrml_FontStyle %{
+%feature("shadow") Vrml_Cube::~Vrml_Cube %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -660,7 +656,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Vrml_FontStyle {
+%extend Vrml_Cube {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -716,45 +712,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Vrml_Instancing;
-class Vrml_Instancing {
-	public:
-		%feature("autodoc", "1");
-		Vrml_Instancing(const TCollection_AsciiString &aString);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DEFToString() {
-			std::stringstream s;
-			self->DEF(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string USEToString() {
-			std::stringstream s;
-			self->USE(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") Vrml_Instancing::~Vrml_Instancing %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Vrml_Instancing {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Vrml_Sphere;
 class Vrml_Sphere {
 	public:
@@ -784,6 +741,43 @@ def __del__(self):
 %}
 
 %extend Vrml_Sphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Vrml_Translation;
+class Vrml_Translation {
+	public:
+		%feature("autodoc", "1");
+		Vrml_Translation();
+		%feature("autodoc", "1");
+		Vrml_Translation(const gp_Vec aTranslation);
+		%feature("autodoc", "1");
+		void SetTranslation(const gp_Vec aTranslation);
+		%feature("autodoc", "1");
+		gp_Vec Translation() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") Vrml_Translation::~Vrml_Translation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Vrml_Translation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -893,7 +887,7 @@ class Vrml_AsciiText : public MMgt_TShared {
 };
 %extend Vrml_AsciiText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Vrml_AsciiText::~Vrml_AsciiText %{
@@ -954,7 +948,7 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 };
 %extend Vrml_IndexedLineSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Vrml_IndexedLineSet::~Vrml_IndexedLineSet %{
@@ -1058,7 +1052,7 @@ class Vrml_SFImage : public MMgt_TShared {
 };
 %extend Vrml_SFImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Vrml_SFImage::~Vrml_SFImage %{
@@ -1071,129 +1065,6 @@ def __del__(self):
 %}
 
 %extend Vrml_SFImage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Vrml_PerspectiveCamera;
-class Vrml_PerspectiveCamera {
-	public:
-		%feature("autodoc", "1");
-		Vrml_PerspectiveCamera();
-		%feature("autodoc", "1");
-		Vrml_PerspectiveCamera(const gp_Vec aPosition, const Vrml_SFRotation &aOrientation, const Standard_Real aFocalDistance, const Standard_Real aHeightAngle);
-		%feature("autodoc", "1");
-		void SetPosition(const gp_Vec aPosition);
-		%feature("autodoc", "1");
-		gp_Vec Position() const;
-		%feature("autodoc", "1");
-		void SetOrientation(const Vrml_SFRotation &aOrientation);
-		%feature("autodoc", "1");
-		Vrml_SFRotation Orientation() const;
-		%feature("autodoc", "1");
-		void SetFocalDistance(const Standard_Real aFocalDistance);
-		%feature("autodoc", "1");
-		Standard_Real FocalDistance() const;
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real aHeightAngle);
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") Vrml_PerspectiveCamera::~Vrml_PerspectiveCamera %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Vrml_PerspectiveCamera {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Vrml_Rotation;
-class Vrml_Rotation {
-	public:
-		%feature("autodoc", "1");
-		Vrml_Rotation();
-		%feature("autodoc", "1");
-		Vrml_Rotation(const Vrml_SFRotation &aRotation);
-		%feature("autodoc", "1");
-		void SetRotation(const Vrml_SFRotation &aRotation);
-		%feature("autodoc", "1");
-		Vrml_SFRotation Rotation() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") Vrml_Rotation::~Vrml_Rotation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Vrml_Rotation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Vrml_NormalBinding;
-class Vrml_NormalBinding {
-	public:
-		%feature("autodoc", "1");
-		Vrml_NormalBinding(const Vrml_MaterialBindingAndNormalBinding aValue);
-		%feature("autodoc", "1");
-		Vrml_NormalBinding();
-		%feature("autodoc", "1");
-		void SetValue(const Vrml_MaterialBindingAndNormalBinding aValue);
-		%feature("autodoc", "1");
-		Vrml_MaterialBindingAndNormalBinding Value() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") Vrml_NormalBinding::~Vrml_NormalBinding %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Vrml_NormalBinding {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1230,7 +1101,7 @@ class Vrml_Normal : public MMgt_TShared {
 };
 %extend Vrml_Normal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Vrml_Normal::~Vrml_Normal %{
@@ -1243,55 +1114,6 @@ def __del__(self):
 %}
 
 %extend Vrml_Normal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Vrml_Texture2Transform;
-class Vrml_Texture2Transform {
-	public:
-		%feature("autodoc", "1");
-		Vrml_Texture2Transform();
-		%feature("autodoc", "1");
-		Vrml_Texture2Transform(const gp_Vec2d aTranslation, const Standard_Real aRotation, const gp_Vec2d aScaleFactor, const gp_Vec2d aCenter);
-		%feature("autodoc", "1");
-		void SetTranslation(const gp_Vec2d aTranslation);
-		%feature("autodoc", "1");
-		gp_Vec2d Translation() const;
-		%feature("autodoc", "1");
-		void SetRotation(const Standard_Real aRotation);
-		%feature("autodoc", "1");
-		Standard_Real Rotation() const;
-		%feature("autodoc", "1");
-		void SetScaleFactor(const gp_Vec2d aScaleFactor);
-		%feature("autodoc", "1");
-		gp_Vec2d ScaleFactor() const;
-		%feature("autodoc", "1");
-		void SetCenter(const gp_Vec2d aCenter);
-		%feature("autodoc", "1");
-		gp_Vec2d Center() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") Vrml_Texture2Transform::~Vrml_Texture2Transform %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Vrml_Texture2Transform {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1381,7 +1203,7 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 };
 %extend Vrml_Coordinate3 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Vrml_Coordinate3::~Vrml_Coordinate3 %{
@@ -1437,6 +1259,102 @@ def __del__(self):
 %}
 
 %extend Vrml_Cylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Vrml_Texture2Transform;
+class Vrml_Texture2Transform {
+	public:
+		%feature("autodoc", "1");
+		Vrml_Texture2Transform();
+		%feature("autodoc", "1");
+		Vrml_Texture2Transform(const gp_Vec2d aTranslation, const Standard_Real aRotation, const gp_Vec2d aScaleFactor, const gp_Vec2d aCenter);
+		%feature("autodoc", "1");
+		void SetTranslation(const gp_Vec2d aTranslation);
+		%feature("autodoc", "1");
+		gp_Vec2d Translation() const;
+		%feature("autodoc", "1");
+		void SetRotation(const Standard_Real aRotation);
+		%feature("autodoc", "1");
+		Standard_Real Rotation() const;
+		%feature("autodoc", "1");
+		void SetScaleFactor(const gp_Vec2d aScaleFactor);
+		%feature("autodoc", "1");
+		gp_Vec2d ScaleFactor() const;
+		%feature("autodoc", "1");
+		void SetCenter(const gp_Vec2d aCenter);
+		%feature("autodoc", "1");
+		gp_Vec2d Center() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") Vrml_Texture2Transform::~Vrml_Texture2Transform %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Vrml_Texture2Transform {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Vrml_ShapeHints;
+class Vrml_ShapeHints {
+	public:
+		%feature("autodoc", "1");
+		Vrml_ShapeHints(const Vrml_VertexOrdering aVertexOrdering=Vrml_UNKNOWN_ORDERING, const Vrml_ShapeType aShapeType=Vrml_UNKNOWN_SHAPE_TYPE, const Vrml_FaceType aFaceType=Vrml_CONVEX, const Standard_Real aAngle=5.0e-1);
+		%feature("autodoc", "1");
+		void SetVertexOrdering(const Vrml_VertexOrdering aVertexOrdering);
+		%feature("autodoc", "1");
+		Vrml_VertexOrdering VertexOrdering() const;
+		%feature("autodoc", "1");
+		void SetShapeType(const Vrml_ShapeType aShapeType);
+		%feature("autodoc", "1");
+		Vrml_ShapeType ShapeType() const;
+		%feature("autodoc", "1");
+		void SetFaceType(const Vrml_FaceType aFaceType);
+		%feature("autodoc", "1");
+		Vrml_FaceType FaceType() const;
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real aAngle);
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") Vrml_ShapeHints::~Vrml_ShapeHints %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Vrml_ShapeHints {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1526,7 +1444,7 @@ class Vrml_LOD : public MMgt_TShared {
 };
 %extend Vrml_LOD {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Vrml_LOD::~Vrml_LOD %{
@@ -1545,23 +1463,17 @@ def __del__(self):
 };
 
 
-%nodefaultctor Vrml_Cone;
-class Vrml_Cone {
+%nodefaultctor Vrml_MaterialBinding;
+class Vrml_MaterialBinding {
 	public:
 		%feature("autodoc", "1");
-		Vrml_Cone(const Vrml_ConeParts aParts=Vrml_ConeALL, const Standard_Real aBottomRadius=1, const Standard_Real aHeight=2);
+		Vrml_MaterialBinding(const Vrml_MaterialBindingAndNormalBinding aValue);
 		%feature("autodoc", "1");
-		void SetParts(const Vrml_ConeParts aParts);
+		Vrml_MaterialBinding();
 		%feature("autodoc", "1");
-		Vrml_ConeParts Parts() const;
+		void SetValue(const Vrml_MaterialBindingAndNormalBinding aValue);
 		%feature("autodoc", "1");
-		void SetBottomRadius(const Standard_Real aBottomRadius);
-		%feature("autodoc", "1");
-		Standard_Real BottomRadius() const;
-		%feature("autodoc", "1");
-		void SetHeight(const Standard_Real aHeight);
-		%feature("autodoc", "1");
-		Standard_Real Height() const;
+		Vrml_MaterialBindingAndNormalBinding Value() const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1572,7 +1484,7 @@ class Vrml_Cone {
 		};
 
 };
-%feature("shadow") Vrml_Cone::~Vrml_Cone %{
+%feature("shadow") Vrml_MaterialBinding::~Vrml_MaterialBinding %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1581,55 +1493,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Vrml_Cone {
+%extend Vrml_MaterialBinding {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Vrml;
-class Vrml {
+%nodefaultctor Vrml_PerspectiveCamera;
+class Vrml_PerspectiveCamera {
 	public:
 		%feature("autodoc", "1");
-		Vrml();
+		Vrml_PerspectiveCamera();
 		%feature("autodoc", "1");
+		Vrml_PerspectiveCamera(const gp_Vec aPosition, const Vrml_SFRotation &aOrientation, const Standard_Real aFocalDistance, const Standard_Real aHeightAngle);
 		%feature("autodoc", "1");
-		%extend{
-			std::string VrmlHeaderWriterToString() {
-			std::stringstream s;
-			self->VrmlHeaderWriter(s);
-			return s.str();}
-		};
+		void SetPosition(const gp_Vec aPosition);
 		%feature("autodoc", "1");
-		static		Standard_OStream & CommentWriter(const char * aComment, Standard_OStream & anOStream);
-
-};
-%feature("shadow") Vrml::~Vrml %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Vrml {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Vrml_Info;
-class Vrml_Info {
-	public:
+		gp_Vec Position() const;
 		%feature("autodoc", "1");
-		Vrml_Info(const TCollection_AsciiString &aString="<Undefined info>");
+		void SetOrientation(const Vrml_SFRotation &aOrientation);
 		%feature("autodoc", "1");
-		void SetString(const TCollection_AsciiString &aString);
+		Vrml_SFRotation Orientation() const;
 		%feature("autodoc", "1");
-		TCollection_AsciiString String() const;
+		void SetFocalDistance(const Standard_Real aFocalDistance);
+		%feature("autodoc", "1");
+		Standard_Real FocalDistance() const;
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real aHeightAngle);
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1640,7 +1533,7 @@ class Vrml_Info {
 		};
 
 };
-%feature("shadow") Vrml_Info::~Vrml_Info %{
+%feature("shadow") Vrml_PerspectiveCamera::~Vrml_PerspectiveCamera %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1649,50 +1542,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Vrml_Info {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Vrml_Cube;
-class Vrml_Cube {
-	public:
-		%feature("autodoc", "1");
-		Vrml_Cube(const Standard_Real aWidth=2, const Standard_Real aHeight=2, const Standard_Real aDepth=2);
-		%feature("autodoc", "1");
-		void SetWidth(const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		Standard_Real Width() const;
-		%feature("autodoc", "1");
-		void SetHeight(const Standard_Real aHeight);
-		%feature("autodoc", "1");
-		Standard_Real Height() const;
-		%feature("autodoc", "1");
-		void SetDepth(const Standard_Real aDepth);
-		%feature("autodoc", "1");
-		Standard_Real Depth() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") Vrml_Cube::~Vrml_Cube %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Vrml_Cube {
+%extend Vrml_PerspectiveCamera {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1785,6 +1635,88 @@ def __del__(self):
 };
 
 
+%nodefaultctor Vrml_Instancing;
+class Vrml_Instancing {
+	public:
+		%feature("autodoc", "1");
+		Vrml_Instancing(const TCollection_AsciiString &aString);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DEFToString() {
+			std::stringstream s;
+			self->DEF(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string USEToString() {
+			std::stringstream s;
+			self->USE(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") Vrml_Instancing::~Vrml_Instancing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Vrml_Instancing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Vrml_FontStyle;
+class Vrml_FontStyle {
+	public:
+		%feature("autodoc", "1");
+		Vrml_FontStyle(const Standard_Real aSize=10, const Vrml_FontStyleFamily aFamily=Vrml_SERIF, const Vrml_FontStyleStyle aStyle=Vrml_NONE);
+		%feature("autodoc", "1");
+		void SetSize(const Standard_Real aSize);
+		%feature("autodoc", "1");
+		Standard_Real Size() const;
+		%feature("autodoc", "1");
+		void SetFamily(const Vrml_FontStyleFamily aFamily);
+		%feature("autodoc", "1");
+		Vrml_FontStyleFamily Family() const;
+		%feature("autodoc", "1");
+		void SetStyle(const Vrml_FontStyleStyle aStyle);
+		%feature("autodoc", "1");
+		Vrml_FontStyleStyle Style() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") Vrml_FontStyle::~Vrml_FontStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Vrml_FontStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Vrml_WWWAnchor;
 class Vrml_WWWAnchor {
 	public:
@@ -1822,6 +1754,41 @@ def __del__(self):
 %}
 
 %extend Vrml_WWWAnchor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Vrml_Info;
+class Vrml_Info {
+	public:
+		%feature("autodoc", "1");
+		Vrml_Info(const TCollection_AsciiString &aString="<Undefined info>");
+		%feature("autodoc", "1");
+		void SetString(const TCollection_AsciiString &aString);
+		%feature("autodoc", "1");
+		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") Vrml_Info::~Vrml_Info %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Vrml_Info {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1878,7 +1845,7 @@ class Vrml_Material : public MMgt_TShared {
 };
 %extend Vrml_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Vrml_Material::~Vrml_Material %{
@@ -1897,27 +1864,17 @@ def __del__(self):
 };
 
 
-%nodefaultctor Vrml_ShapeHints;
-class Vrml_ShapeHints {
+%nodefaultctor Vrml_Rotation;
+class Vrml_Rotation {
 	public:
 		%feature("autodoc", "1");
-		Vrml_ShapeHints(const Vrml_VertexOrdering aVertexOrdering=Vrml_UNKNOWN_ORDERING, const Vrml_ShapeType aShapeType=Vrml_UNKNOWN_SHAPE_TYPE, const Vrml_FaceType aFaceType=Vrml_CONVEX, const Standard_Real aAngle=5.0e-1);
+		Vrml_Rotation();
 		%feature("autodoc", "1");
-		void SetVertexOrdering(const Vrml_VertexOrdering aVertexOrdering);
+		Vrml_Rotation(const Vrml_SFRotation &aRotation);
 		%feature("autodoc", "1");
-		Vrml_VertexOrdering VertexOrdering() const;
+		void SetRotation(const Vrml_SFRotation &aRotation);
 		%feature("autodoc", "1");
-		void SetShapeType(const Vrml_ShapeType aShapeType);
-		%feature("autodoc", "1");
-		Vrml_ShapeType ShapeType() const;
-		%feature("autodoc", "1");
-		void SetFaceType(const Vrml_FaceType aFaceType);
-		%feature("autodoc", "1");
-		Vrml_FaceType FaceType() const;
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real aAngle);
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
+		Vrml_SFRotation Rotation() const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1928,7 +1885,7 @@ class Vrml_ShapeHints {
 		};
 
 };
-%feature("shadow") Vrml_ShapeHints::~Vrml_ShapeHints %{
+%feature("shadow") Vrml_Rotation::~Vrml_Rotation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1937,7 +1894,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Vrml_ShapeHints {
+%extend Vrml_Rotation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2057,43 +2014,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Vrml_Translation;
-class Vrml_Translation {
-	public:
-		%feature("autodoc", "1");
-		Vrml_Translation();
-		%feature("autodoc", "1");
-		Vrml_Translation(const gp_Vec aTranslation);
-		%feature("autodoc", "1");
-		void SetTranslation(const gp_Vec aTranslation);
-		%feature("autodoc", "1");
-		gp_Vec Translation() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") Vrml_Translation::~Vrml_Translation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Vrml_Translation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Vrml_SFRotation;
 class Vrml_SFRotation {
 	public:
@@ -2166,6 +2086,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor Vrml_NormalBinding;
+class Vrml_NormalBinding {
+	public:
+		%feature("autodoc", "1");
+		Vrml_NormalBinding(const Vrml_MaterialBindingAndNormalBinding aValue);
+		%feature("autodoc", "1");
+		Vrml_NormalBinding();
+		%feature("autodoc", "1");
+		void SetValue(const Vrml_MaterialBindingAndNormalBinding aValue);
+		%feature("autodoc", "1");
+		Vrml_MaterialBindingAndNormalBinding Value() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") Vrml_NormalBinding::~Vrml_NormalBinding %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Vrml_NormalBinding {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Vrml_TextureCoordinate2;
 class Vrml_TextureCoordinate2 : public MMgt_TShared {
 	public:
@@ -2196,7 +2153,7 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 };
 %extend Vrml_TextureCoordinate2 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Vrml_TextureCoordinate2::~Vrml_TextureCoordinate2 %{
@@ -2209,6 +2166,49 @@ def __del__(self):
 %}
 
 %extend Vrml_TextureCoordinate2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Vrml_Cone;
+class Vrml_Cone {
+	public:
+		%feature("autodoc", "1");
+		Vrml_Cone(const Vrml_ConeParts aParts=Vrml_ConeALL, const Standard_Real aBottomRadius=1, const Standard_Real aHeight=2);
+		%feature("autodoc", "1");
+		void SetParts(const Vrml_ConeParts aParts);
+		%feature("autodoc", "1");
+		Vrml_ConeParts Parts() const;
+		%feature("autodoc", "1");
+		void SetBottomRadius(const Standard_Real aBottomRadius);
+		%feature("autodoc", "1");
+		Standard_Real BottomRadius() const;
+		%feature("autodoc", "1");
+		void SetHeight(const Standard_Real aHeight);
+		%feature("autodoc", "1");
+		Standard_Real Height() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") Vrml_Cone::~Vrml_Cone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Vrml_Cone {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2257,7 +2257,7 @@ class Vrml_IndexedFaceSet : public MMgt_TShared {
 };
 %extend Vrml_IndexedFaceSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Vrml_IndexedFaceSet::~Vrml_IndexedFaceSet %{

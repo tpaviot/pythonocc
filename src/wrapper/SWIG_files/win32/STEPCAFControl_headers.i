@@ -234,14 +234,14 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_StepShape_ShapeDefinitionRepresentation.hxx>
 #include<Handle_XSControl_WorkSession.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<TDF_Label.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_StepBasic_ProductDefinition.hxx>
-#include<Handle_StepShape_ShapeDefinitionRepresentation.hxx>
-#include<TCollection_AsciiString.hxx>
 #include<Handle_TDocStd_Document.hxx>
+#include<TCollection_AsciiString.hxx>
 #include<Handle_StepRepr_NextAssemblyUsageOccurrence.hxx>
 #include<Handle_XCAFDoc_ShapeTool.hxx>
 #include<STEPConstruct_Tool.hxx>

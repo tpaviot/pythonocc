@@ -66,20 +66,25 @@ enum Visual3d_TypeOfModel {
 	Visual3d_TOM_VERTEX,
 	};
 
-enum Visual3d_TypeOfOrder {
-	Visual3d_TOO_TOPFIRST,
-	Visual3d_TOO_BOTTOMFIRST,
-	};
-
 enum Visual3d_TypeOfBackfacingModel {
 	Visual3d_TOBM_AUTOMATIC,
 	Visual3d_TOBM_FORCE,
 	Visual3d_TOBM_DISABLE,
 	};
 
+enum Visual3d_TypeOfOrder {
+	Visual3d_TOO_TOPFIRST,
+	Visual3d_TOO_BOTTOMFIRST,
+	};
+
 enum Visual3d_TypeOfProjection {
 	Visual3d_TOP_PERSPECTIVE,
 	Visual3d_TOP_PARALLEL,
+	};
+
+enum Visual3d_TypeOfVisualization {
+	Visual3d_TOV_WIREFRAME,
+	Visual3d_TOV_SHADING,
 	};
 
 enum Visual3d_TypeOfAnswer {
@@ -93,11 +98,6 @@ enum Visual3d_TypeOfLightSource {
 	Visual3d_TOLS_DIRECTIONAL,
 	Visual3d_TOLS_POSITIONAL,
 	Visual3d_TOLS_SPOT,
-	};
-
-enum Visual3d_TypeOfVisualization {
-	Visual3d_TOV_WIREFRAME,
-	Visual3d_TOV_SHADING,
 	};
 
 
@@ -172,6 +172,82 @@ def __del__(self):
 %}
 
 %extend Handle_Visual3d_PickError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Visual3d_DepthCueingDefinitionError;
+class Handle_Visual3d_DepthCueingDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_DepthCueingDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Visual3d_DepthCueingDefinitionError(const Handle_Visual3d_DepthCueingDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_DepthCueingDefinitionError(const Visual3d_DepthCueingDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_DepthCueingDefinitionError & operator=(const Handle_Visual3d_DepthCueingDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_DepthCueingDefinitionError & operator=(const Visual3d_DepthCueingDefinitionError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Visual3d_DepthCueingDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_DepthCueingDefinitionError {
+	Visual3d_DepthCueingDefinitionError* GetObject() {
+	return (Visual3d_DepthCueingDefinitionError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Visual3d_DepthCueingDefinitionError::~Handle_Visual3d_DepthCueingDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Visual3d_DepthCueingDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Visual3d_HSetOfView;
+class Handle_Visual3d_HSetOfView : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfView();
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfView(const Handle_Visual3d_HSetOfView &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfView(const Visual3d_HSetOfView *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfView & operator=(const Handle_Visual3d_HSetOfView &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfView & operator=(const Visual3d_HSetOfView *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Visual3d_HSetOfView DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_HSetOfView {
+	Visual3d_HSetOfView* GetObject() {
+	return (Visual3d_HSetOfView*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Visual3d_HSetOfView::~Handle_Visual3d_HSetOfView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Visual3d_HSetOfView {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -330,29 +406,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Visual3d_HSetOfView;
-class Handle_Visual3d_HSetOfView : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Visual3d_ClipPlane;
+class Handle_Visual3d_ClipPlane : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView();
+		Handle_Visual3d_ClipPlane();
 		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView(const Handle_Visual3d_HSetOfView &aHandle);
+		Handle_Visual3d_ClipPlane(const Handle_Visual3d_ClipPlane &aHandle);
 		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView(const Visual3d_HSetOfView *anItem);
+		Handle_Visual3d_ClipPlane(const Visual3d_ClipPlane *anItem);
 		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView & operator=(const Handle_Visual3d_HSetOfView &aHandle);
+		Handle_Visual3d_ClipPlane & operator=(const Handle_Visual3d_ClipPlane &aHandle);
 		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView & operator=(const Visual3d_HSetOfView *anItem);
+		Handle_Visual3d_ClipPlane & operator=(const Visual3d_ClipPlane *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Visual3d_HSetOfView DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Visual3d_ClipPlane DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Visual3d_HSetOfView {
-	Visual3d_HSetOfView* GetObject() {
-	return (Visual3d_HSetOfView*)$self->Access();
+%extend Handle_Visual3d_ClipPlane {
+	Visual3d_ClipPlane* GetObject() {
+	return (Visual3d_ClipPlane*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Visual3d_HSetOfView::~Handle_Visual3d_HSetOfView %{
+%feature("shadow") Handle_Visual3d_ClipPlane::~Handle_Visual3d_ClipPlane %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -361,7 +437,121 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Visual3d_HSetOfView {
+%extend Handle_Visual3d_ClipPlane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Visual3d_ViewManagerDefinitionError;
+class Handle_Visual3d_ViewManagerDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManagerDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManagerDefinitionError(const Handle_Visual3d_ViewManagerDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManagerDefinitionError(const Visual3d_ViewManagerDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManagerDefinitionError & operator=(const Handle_Visual3d_ViewManagerDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManagerDefinitionError & operator=(const Visual3d_ViewManagerDefinitionError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Visual3d_ViewManagerDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_ViewManagerDefinitionError {
+	Visual3d_ViewManagerDefinitionError* GetObject() {
+	return (Visual3d_ViewManagerDefinitionError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Visual3d_ViewManagerDefinitionError::~Handle_Visual3d_ViewManagerDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Visual3d_ViewManagerDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Visual3d_View;
+class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_View();
+		%feature("autodoc", "1");
+		Handle_Visual3d_View(const Handle_Visual3d_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_View(const Visual3d_View *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_View & operator=(const Handle_Visual3d_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_View & operator=(const Visual3d_View *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Visual3d_View DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_View {
+	Visual3d_View* GetObject() {
+	return (Visual3d_View*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Visual3d_View::~Handle_Visual3d_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Visual3d_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Visual3d_LayerDefinitionError;
+class Handle_Visual3d_LayerDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_LayerDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Visual3d_LayerDefinitionError(const Handle_Visual3d_LayerDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_LayerDefinitionError(const Visual3d_LayerDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_LayerDefinitionError & operator=(const Handle_Visual3d_LayerDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_LayerDefinitionError & operator=(const Visual3d_LayerDefinitionError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Visual3d_LayerDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_LayerDefinitionError {
+	Visual3d_LayerDefinitionError* GetObject() {
+	return (Visual3d_LayerDefinitionError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Visual3d_LayerDefinitionError::~Handle_Visual3d_LayerDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Visual3d_LayerDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -444,120 +634,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Visual3d_View;
-class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_View();
-		%feature("autodoc", "1");
-		Handle_Visual3d_View(const Handle_Visual3d_View &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_View(const Visual3d_View *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_View & operator=(const Handle_Visual3d_View &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_View & operator=(const Visual3d_View *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Visual3d_View DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_View {
-	Visual3d_View* GetObject() {
-	return (Visual3d_View*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Visual3d_View::~Handle_Visual3d_View %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Visual3d_View {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Visual3d_ViewManager;
-class Handle_Visual3d_ViewManager : public Handle_Graphic3d_StructureManager {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManager();
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManager(const Handle_Visual3d_ViewManager &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManager(const Visual3d_ViewManager *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManager & operator=(const Handle_Visual3d_ViewManager &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManager & operator=(const Visual3d_ViewManager *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Visual3d_ViewManager DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_ViewManager {
-	Visual3d_ViewManager* GetObject() {
-	return (Visual3d_ViewManager*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Visual3d_ViewManager::~Handle_Visual3d_ViewManager %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Visual3d_ViewManager {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Visual3d_LayerDefinitionError;
-class Handle_Visual3d_LayerDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_LayerDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Visual3d_LayerDefinitionError(const Handle_Visual3d_LayerDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_LayerDefinitionError(const Visual3d_LayerDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_LayerDefinitionError & operator=(const Handle_Visual3d_LayerDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_LayerDefinitionError & operator=(const Visual3d_LayerDefinitionError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Visual3d_LayerDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_LayerDefinitionError {
-	Visual3d_LayerDefinitionError* GetObject() {
-	return (Visual3d_LayerDefinitionError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Visual3d_LayerDefinitionError::~Handle_Visual3d_LayerDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Visual3d_LayerDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Visual3d_HSetOfClipPlane;
 class Handle_Visual3d_HSetOfClipPlane : public Handle_MMgt_TShared {
 	public:
@@ -590,6 +666,44 @@ def __del__(self):
 %}
 
 %extend Handle_Visual3d_HSetOfClipPlane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Visual3d_HSequenceOfPickPath;
+class Handle_Visual3d_HSequenceOfPickPath : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSequenceOfPickPath();
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSequenceOfPickPath(const Handle_Visual3d_HSequenceOfPickPath &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSequenceOfPickPath(const Visual3d_HSequenceOfPickPath *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSequenceOfPickPath & operator=(const Handle_Visual3d_HSequenceOfPickPath &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSequenceOfPickPath & operator=(const Visual3d_HSequenceOfPickPath *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Visual3d_HSequenceOfPickPath DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_HSequenceOfPickPath {
+	Visual3d_HSequenceOfPickPath* GetObject() {
+	return (Visual3d_HSequenceOfPickPath*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Visual3d_HSequenceOfPickPath::~Handle_Visual3d_HSequenceOfPickPath %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Visual3d_HSequenceOfPickPath {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -710,6 +824,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Visual3d_ViewManager;
+class Handle_Visual3d_ViewManager : public Handle_Graphic3d_StructureManager {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManager();
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManager(const Handle_Visual3d_ViewManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManager(const Visual3d_ViewManager *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManager & operator=(const Handle_Visual3d_ViewManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewManager & operator=(const Visual3d_ViewManager *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Visual3d_ViewManager DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_ViewManager {
+	Visual3d_ViewManager* GetObject() {
+	return (Visual3d_ViewManager*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Visual3d_ViewManager::~Handle_Visual3d_ViewManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Visual3d_ViewManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Visual3d_ClipDefinitionError;
 class Handle_Visual3d_ClipDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -786,82 +938,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Visual3d_DepthCueingDefinitionError;
-class Handle_Visual3d_DepthCueingDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_DepthCueingDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Visual3d_DepthCueingDefinitionError(const Handle_Visual3d_DepthCueingDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_DepthCueingDefinitionError(const Visual3d_DepthCueingDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_DepthCueingDefinitionError & operator=(const Handle_Visual3d_DepthCueingDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_DepthCueingDefinitionError & operator=(const Visual3d_DepthCueingDefinitionError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Visual3d_DepthCueingDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_DepthCueingDefinitionError {
-	Visual3d_DepthCueingDefinitionError* GetObject() {
-	return (Visual3d_DepthCueingDefinitionError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Visual3d_DepthCueingDefinitionError::~Handle_Visual3d_DepthCueingDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Visual3d_DepthCueingDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Visual3d_ClipPlane;
-class Handle_Visual3d_ClipPlane : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane();
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane(const Handle_Visual3d_ClipPlane &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane(const Visual3d_ClipPlane *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane & operator=(const Handle_Visual3d_ClipPlane &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane & operator=(const Visual3d_ClipPlane *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Visual3d_ClipPlane DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_ClipPlane {
-	Visual3d_ClipPlane* GetObject() {
-	return (Visual3d_ClipPlane*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Visual3d_ClipPlane::~Handle_Visual3d_ClipPlane %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Visual3d_ClipPlane {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Visual3d_ListNodeOfSetListOfSetOfView;
 class Handle_Visual3d_ListNodeOfSetListOfSetOfView : public Handle_TCollection_MapNode {
 	public:
@@ -894,44 +970,6 @@ def __del__(self):
 %}
 
 %extend Handle_Visual3d_ListNodeOfSetListOfSetOfView {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Visual3d_ViewManagerDefinitionError;
-class Handle_Visual3d_ViewManagerDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError(const Handle_Visual3d_ViewManagerDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError(const Visual3d_ViewManagerDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError & operator=(const Handle_Visual3d_ViewManagerDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewManagerDefinitionError & operator=(const Visual3d_ViewManagerDefinitionError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Visual3d_ViewManagerDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_ViewManagerDefinitionError {
-	Visual3d_ViewManagerDefinitionError* GetObject() {
-	return (Visual3d_ViewManagerDefinitionError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Visual3d_ViewManagerDefinitionError::~Handle_Visual3d_ViewManagerDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Visual3d_ViewManagerDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1008,44 +1046,6 @@ def __del__(self):
 %}
 
 %extend Handle_Visual3d_TransientDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Visual3d_HSequenceOfPickPath;
-class Handle_Visual3d_HSequenceOfPickPath : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSequenceOfPickPath();
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSequenceOfPickPath(const Handle_Visual3d_HSequenceOfPickPath &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSequenceOfPickPath(const Visual3d_HSequenceOfPickPath *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSequenceOfPickPath & operator=(const Handle_Visual3d_HSequenceOfPickPath &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSequenceOfPickPath & operator=(const Visual3d_HSequenceOfPickPath *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Visual3d_HSequenceOfPickPath DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_HSequenceOfPickPath {
-	Visual3d_HSequenceOfPickPath* GetObject() {
-	return (Visual3d_HSequenceOfPickPath*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Visual3d_HSequenceOfPickPath::~Handle_Visual3d_HSequenceOfPickPath %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Visual3d_HSequenceOfPickPath {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1166,39 +1166,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Visual3d_SetIteratorOfSetOfLight;
-class Visual3d_SetIteratorOfSetOfLight {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_SetIteratorOfSetOfLight();
-		%feature("autodoc", "1");
-		Visual3d_SetIteratorOfSetOfLight(const Visual3d_SetOfLight &S);
-		%feature("autodoc", "1");
-		void Initialize(const Visual3d_SetOfLight &S);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_Visual3d_Light & Value() const;
-
-};
-%feature("shadow") Visual3d_SetIteratorOfSetOfLight::~Visual3d_SetIteratorOfSetOfLight %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Visual3d_SetIteratorOfSetOfLight {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Visual3d_ContextPick;
 class Visual3d_ContextPick {
 	public:
@@ -1297,6 +1264,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor Visual3d_ViewMappingDefinitionError;
+class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_ViewMappingDefinitionError();
+		%feature("autodoc", "1");
+		Visual3d_ViewMappingDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Visual3d_ViewMappingDefinitionError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_ViewMappingDefinitionError {
+	Handle_Visual3d_ViewMappingDefinitionError GetHandle() {
+	return *(Handle_Visual3d_ViewMappingDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ViewMappingDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Visual3d_ViewMappingDefinitionError::~Visual3d_ViewMappingDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Visual3d_ViewMappingDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Visual3d_TransformError;
 class Visual3d_TransformError : public Standard_OutOfRange {
 	public:
@@ -1321,7 +1331,7 @@ class Visual3d_TransformError : public Standard_OutOfRange {
 };
 %extend Visual3d_TransformError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_TransformError::~Visual3d_TransformError %{
@@ -1431,6 +1441,69 @@ def __del__(self):
 };
 
 
+%nodefaultctor Visual3d_HSetOfClipPlane;
+class Visual3d_HSetOfClipPlane : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_HSetOfClipPlane();
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Visual3d_ClipPlane &T);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_Visual3d_ClipPlane &T);
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfClipPlane Union(const Handle_Visual3d_HSetOfClipPlane &B) const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfClipPlane Intersection(const Handle_Visual3d_HSetOfClipPlane &B) const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfClipPlane Difference(const Handle_Visual3d_HSetOfClipPlane &B) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_Visual3d_ClipPlane &T) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsASubset(const Handle_Visual3d_HSetOfClipPlane &S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAProperSubset(const Handle_Visual3d_HSetOfClipPlane &S) const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfClipPlane ShallowCopy() const;
+		%feature("autodoc", "1");
+		const Visual3d_SetOfClipPlane & Set() const;
+		%feature("autodoc", "1");
+		Visual3d_SetOfClipPlane & ChangeSet();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_HSetOfClipPlane {
+	Handle_Visual3d_HSetOfClipPlane GetHandle() {
+	return *(Handle_Visual3d_HSetOfClipPlane*) &$self;
+	}
+};
+%extend Visual3d_HSetOfClipPlane {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Visual3d_HSetOfClipPlane::~Visual3d_HSetOfClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Visual3d_HSetOfClipPlane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Visual3d_LayerDefinitionError;
 class Visual3d_LayerDefinitionError : public Standard_OutOfRange {
 	public:
@@ -1455,7 +1528,7 @@ class Visual3d_LayerDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_LayerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_LayerDefinitionError::~Visual3d_LayerDefinitionError %{
@@ -1498,7 +1571,7 @@ class Visual3d_DepthCueingDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_DepthCueingDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_DepthCueingDefinitionError::~Visual3d_DepthCueingDefinitionError %{
@@ -1511,49 +1584,6 @@ def __del__(self):
 %}
 
 %extend Visual3d_DepthCueingDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Visual3d_LayerItem;
-class Visual3d_LayerItem : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_LayerItem();
-		%feature("autodoc", "1");
-		virtual		void ComputeLayerPrs();
-		%feature("autodoc", "1");
-		virtual		void RedrawLayerPrs();
-		%feature("autodoc", "1");
-		Standard_Boolean IsNeedToRecompute() const;
-		%feature("autodoc", "1");
-		void SetNeedToRecompute(const Standard_Boolean NeedToRecompute=1);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_LayerItem {
-	Handle_Visual3d_LayerItem GetHandle() {
-	return *(Handle_Visual3d_LayerItem*) &$self;
-	}
-};
-%extend Visual3d_LayerItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Visual3d_LayerItem::~Visual3d_LayerItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Visual3d_LayerItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1584,7 +1614,7 @@ class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_TransientDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_TransientDefinitionError::~Visual3d_TransientDefinitionError %{
@@ -1706,43 +1736,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Visual3d_ListNodeOfSetListOfSetOfClipPlane;
-class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ListNodeOfSetListOfSetOfClipPlane(const Handle_Visual3d_ClipPlane &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
-	Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane GetHandle() {
-	return *(Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane*) &$self;
-	}
-};
-%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Visual3d_ListNodeOfSetListOfSetOfClipPlane::~Visual3d_ListNodeOfSetListOfSetOfClipPlane %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Visual3d_ListIteratorOfSetListOfSetOfLight;
 class Visual3d_ListIteratorOfSetListOfSetOfLight {
 	public:
@@ -1794,7 +1787,7 @@ class Visual3d_ListNodeOfSetListOfSetOfLight : public TCollection_MapNode {
 };
 %extend Visual3d_ListNodeOfSetListOfSetOfLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ListNodeOfSetListOfSetOfLight::~Visual3d_ListNodeOfSetListOfSetOfLight %{
@@ -1837,7 +1830,7 @@ class Visual3d_ViewOrientationDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewOrientationDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewOrientationDefinitionError::~Visual3d_ViewOrientationDefinitionError %{
@@ -1880,7 +1873,7 @@ class Visual3d_ViewManagerDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewManagerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewManagerDefinitionError::~Visual3d_ViewManagerDefinitionError %{
@@ -1960,43 +1953,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Visual3d_ListNodeOfSetListOfSetOfView;
-class Visual3d_ListNodeOfSetListOfSetOfView : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ListNodeOfSetListOfSetOfView(const Handle_Visual3d_View &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Visual3d_View & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_ListNodeOfSetListOfSetOfView {
-	Handle_Visual3d_ListNodeOfSetListOfSetOfView GetHandle() {
-	return *(Handle_Visual3d_ListNodeOfSetListOfSetOfView*) &$self;
-	}
-};
-%extend Visual3d_ListNodeOfSetListOfSetOfView {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Visual3d_ListNodeOfSetListOfSetOfView::~Visual3d_ListNodeOfSetListOfSetOfView %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Visual3d_ListNodeOfSetListOfSetOfView {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Visual3d_SetListOfSetOfClipPlane;
 class Visual3d_SetListOfSetOfClipPlane {
 	public:
@@ -2058,54 +2014,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor Visual3d_HSetOfView;
-class Visual3d_HSetOfView : public MMgt_TShared {
+%nodefaultctor Visual3d_ListNodeOfSetListOfSetOfClipPlane;
+class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Visual3d_HSetOfView();
+		Visual3d_ListNodeOfSetListOfSetOfClipPlane(const Handle_Visual3d_ClipPlane &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Visual3d_View &T);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Visual3d_View &T);
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView Union(const Handle_Visual3d_HSetOfView &B) const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView Intersection(const Handle_Visual3d_HSetOfView &B) const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView Difference(const Handle_Visual3d_HSetOfView &B) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Visual3d_View &T) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsASubset(const Handle_Visual3d_HSetOfView &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAProperSubset(const Handle_Visual3d_HSetOfView &S) const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView ShallowCopy() const;
-		%feature("autodoc", "1");
-		const Visual3d_SetOfView & Set() const;
-		%feature("autodoc", "1");
-		Visual3d_SetOfView & ChangeSet();
+		Handle_Visual3d_ClipPlane & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Visual3d_HSetOfView {
-	Handle_Visual3d_HSetOfView GetHandle() {
-	return *(Handle_Visual3d_HSetOfView*) &$self;
+%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
+	Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane GetHandle() {
+	return *(Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane*) &$self;
 	}
 };
-%extend Visual3d_HSetOfView {
+%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") Visual3d_HSetOfView::~Visual3d_HSetOfView %{
+%feature("shadow") Visual3d_ListNodeOfSetListOfSetOfClipPlane::~Visual3d_ListNodeOfSetListOfSetOfClipPlane %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2114,7 +2044,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Visual3d_HSetOfView {
+%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2212,7 +2142,7 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 };
 %extend Visual3d_ViewManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewManager::~Visual3d_ViewManager %{
@@ -2225,6 +2155,39 @@ def __del__(self):
 %}
 
 %extend Visual3d_ViewManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Visual3d_SetIteratorOfSetOfLight;
+class Visual3d_SetIteratorOfSetOfLight {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_SetIteratorOfSetOfLight();
+		%feature("autodoc", "1");
+		Visual3d_SetIteratorOfSetOfLight(const Visual3d_SetOfLight &S);
+		%feature("autodoc", "1");
+		void Initialize(const Visual3d_SetOfLight &S);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_Visual3d_Light & Value() const;
+
+};
+%feature("shadow") Visual3d_SetIteratorOfSetOfLight::~Visual3d_SetIteratorOfSetOfLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Visual3d_SetIteratorOfSetOfLight {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2249,7 +2212,7 @@ class Visual3d_SequenceNodeOfSequenceOfPickPath : public TCollection_SeqNode {
 };
 %extend Visual3d_SequenceNodeOfSequenceOfPickPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_SequenceNodeOfSequenceOfPickPath::~Visual3d_SequenceNodeOfSequenceOfPickPath %{
@@ -2291,7 +2254,7 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 };
 %extend Visual3d_ClipPlane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ClipPlane::~Visual3d_ClipPlane %{
@@ -2310,28 +2273,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor Visual3d_PickDescriptor;
-class Visual3d_PickDescriptor {
+%nodefaultctor Visual3d_LayerItem;
+class Visual3d_LayerItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Visual3d_PickDescriptor(const Visual3d_ContextPick &CTX);
+		Visual3d_LayerItem();
 		%feature("autodoc", "1");
-		void AddPickPath(const Visual3d_PickPath &APickPath);
+		virtual		void ComputeLayerPrs();
 		%feature("autodoc", "1");
-		void Clear();
+		virtual		void RedrawLayerPrs();
 		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
+		Standard_Boolean IsNeedToRecompute() const;
 		%feature("autodoc", "1");
-		Handle_Visual3d_HSequenceOfPickPath PickPath() const;
+		void SetNeedToRecompute(const Standard_Boolean NeedToRecompute=1);
 		%feature("autodoc", "1");
-		Handle_Graphic3d_Structure TopStructure() const;
-		%feature("autodoc", "1");
-		Standard_Integer TopPickId() const;
-		%feature("autodoc", "1");
-		Standard_Integer TopElementNumber() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Visual3d_PickDescriptor::~Visual3d_PickDescriptor %{
+%extend Visual3d_LayerItem {
+	Handle_Visual3d_LayerItem GetHandle() {
+	return *(Handle_Visual3d_LayerItem*) &$self;
+	}
+};
+%extend Visual3d_LayerItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Visual3d_LayerItem::~Visual3d_LayerItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2340,7 +2309,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Visual3d_PickDescriptor {
+%extend Visual3d_LayerItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2371,7 +2340,7 @@ class Visual3d_ClipDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ClipDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ClipDefinitionError::~Visual3d_ClipDefinitionError %{
@@ -2414,7 +2383,7 @@ class Visual3d_LightDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_LightDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_LightDefinitionError::~Visual3d_LightDefinitionError %{
@@ -2545,7 +2514,7 @@ class Visual3d_Layer : public MMgt_TShared {
 };
 %extend Visual3d_Layer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_Layer::~Visual3d_Layer %{
@@ -2588,7 +2557,7 @@ class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ZClippingDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ZClippingDefinitionError::~Visual3d_ZClippingDefinitionError %{
@@ -2663,7 +2632,7 @@ class Visual3d_Light : public MMgt_TShared {
 };
 %extend Visual3d_Light {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_Light::~Visual3d_Light %{
@@ -2792,7 +2761,7 @@ class Visual3d_HSetOfLight : public MMgt_TShared {
 };
 %extend Visual3d_HSetOfLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_HSetOfLight::~Visual3d_HSetOfLight %{
@@ -2811,54 +2780,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor Visual3d_HSetOfClipPlane;
-class Visual3d_HSetOfClipPlane : public MMgt_TShared {
+%nodefaultctor Visual3d_ListNodeOfSetListOfSetOfView;
+class Visual3d_ListNodeOfSetListOfSetOfView : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Visual3d_HSetOfClipPlane();
+		Visual3d_ListNodeOfSetListOfSetOfView(const Handle_Visual3d_View &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Visual3d_ClipPlane &T);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Visual3d_ClipPlane &T);
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfClipPlane Union(const Handle_Visual3d_HSetOfClipPlane &B) const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfClipPlane Intersection(const Handle_Visual3d_HSetOfClipPlane &B) const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfClipPlane Difference(const Handle_Visual3d_HSetOfClipPlane &B) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Visual3d_ClipPlane &T) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsASubset(const Handle_Visual3d_HSetOfClipPlane &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAProperSubset(const Handle_Visual3d_HSetOfClipPlane &S) const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfClipPlane ShallowCopy() const;
-		%feature("autodoc", "1");
-		const Visual3d_SetOfClipPlane & Set() const;
-		%feature("autodoc", "1");
-		Visual3d_SetOfClipPlane & ChangeSet();
+		Handle_Visual3d_View & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Visual3d_HSetOfClipPlane {
-	Handle_Visual3d_HSetOfClipPlane GetHandle() {
-	return *(Handle_Visual3d_HSetOfClipPlane*) &$self;
+%extend Visual3d_ListNodeOfSetListOfSetOfView {
+	Handle_Visual3d_ListNodeOfSetListOfSetOfView GetHandle() {
+	return *(Handle_Visual3d_ListNodeOfSetListOfSetOfView*) &$self;
 	}
 };
-%extend Visual3d_HSetOfClipPlane {
+%extend Visual3d_ListNodeOfSetListOfSetOfView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") Visual3d_HSetOfClipPlane::~Visual3d_HSetOfClipPlane %{
+%feature("shadow") Visual3d_ListNodeOfSetListOfSetOfView::~Visual3d_ListNodeOfSetListOfSetOfView %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2867,7 +2810,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Visual3d_HSetOfClipPlane {
+%extend Visual3d_ListNodeOfSetListOfSetOfView {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2913,6 +2856,154 @@ def __del__(self):
 %}
 
 %extend Visual3d_SetOfLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Visual3d_TransientManager;
+class Visual3d_TransientManager : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_TransientManager();
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		static		Standard_Boolean BeginDraw(const Handle_Visual3d_View &aView, const Standard_Boolean DoubleBuffer=0, const Standard_Boolean RetainMode=0);
+		%feature("autodoc", "1");
+		static		void EndDraw(const Standard_Boolean Synchronize=0);
+		%feature("autodoc", "1");
+		static		void ClearDraw(const Handle_Visual3d_View &aView, const Standard_Boolean aFlush=1);
+		%feature("autodoc", "1");
+		static		Standard_Boolean BeginAddDraw(const Handle_Visual3d_View &aView);
+		%feature("autodoc", "1");
+		static		void EndAddDraw();
+		%feature("autodoc", "1");
+		static		void BeginPolyline();
+		%feature("autodoc", "1");
+		static		void BeginPolygon();
+		%feature("autodoc", "1");
+		static		void BeginTriangleMesh();
+		%feature("autodoc", "1");
+		static		void BeginMarker();
+		%feature("autodoc", "1");
+		static		void BeginBezier();
+		%feature("autodoc", "1");
+		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Boolean AFlag=1);
+		%feature("autodoc", "1");
+		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real W, const Standard_Boolean AFlag=1);
+		%feature("autodoc", "1");
+		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real NX, const Standard_Real NY, const Standard_Real NZ, const Standard_Boolean AFlag=1);
+		%feature("autodoc", "1");
+		static		void ClosePrimitive();
+		%feature("autodoc", "1");
+		static		void DrawText(const TCollection_ExtendedString &AText, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle=0.0, const Graphic3d_TextPath ATp=Graphic3d_TP_RIGHT, const Graphic3d_HorizontalTextAlignment AHta=Graphic3d_HTA_LEFT, const Graphic3d_VerticalTextAlignment AVta=Graphic3d_VTA_BOTTOM);
+		%feature("autodoc", "1");
+		static		void DrawStructure(const Handle_Graphic3d_Structure &AStructure);
+		%feature("autodoc", "1");
+		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectLine3d &CTX);
+		%feature("autodoc", "1");
+		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectFillArea3d &CTX);
+		%feature("autodoc", "1");
+		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectText3d &CTX);
+		%feature("autodoc", "1");
+		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectMarker3d &CTX);
+		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		static		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		static		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		static		void SetTransform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType=Graphic3d_TOC_REPLACE);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_TransientManager {
+	Handle_Visual3d_TransientManager GetHandle() {
+	return *(Handle_Visual3d_TransientManager*) &$self;
+	}
+};
+%extend Visual3d_TransientManager {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Visual3d_TransientManager::~Visual3d_TransientManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Visual3d_TransientManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Visual3d_HSetOfView;
+class Visual3d_HSetOfView : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_HSetOfView();
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Visual3d_View &T);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_Visual3d_View &T);
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfView Union(const Handle_Visual3d_HSetOfView &B) const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfView Intersection(const Handle_Visual3d_HSetOfView &B) const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfView Difference(const Handle_Visual3d_HSetOfView &B) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_Visual3d_View &T) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsASubset(const Handle_Visual3d_HSetOfView &S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAProperSubset(const Handle_Visual3d_HSetOfView &S) const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfView ShallowCopy() const;
+		%feature("autodoc", "1");
+		const Visual3d_SetOfView & Set() const;
+		%feature("autodoc", "1");
+		Visual3d_SetOfView & ChangeSet();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_HSetOfView {
+	Handle_Visual3d_HSetOfView GetHandle() {
+	return *(Handle_Visual3d_HSetOfView*) &$self;
+	}
+};
+%extend Visual3d_HSetOfView {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Visual3d_HSetOfView::~Visual3d_HSetOfView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Visual3d_HSetOfView {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3033,9 +3124,6 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		void TriedronErase();
 		%feature("autodoc", "1");
 		void TriedronEcho(const Aspect_TypeOfTriedronEcho AType=Aspect_TOTE_NONE);
-		%feature("autodoc","GetGraduatedTrihedron() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		void GetGraduatedTrihedron(char * & xname, char * & yname, char * & zname, Standard_Boolean & xdrawname, Standard_Boolean & ydrawname, Standard_Boolean & zdrawname, Standard_Boolean & xdrawvalues, Standard_Boolean & ydrawvalues, Standard_Boolean & zdrawvalues, Standard_Boolean & drawgrid, Standard_Boolean & drawaxes, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & xdrawtickmarks, Standard_Boolean & ydrawtickmarks, Standard_Boolean & zdrawtickmarks, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Quantity_Color & gridcolor, Quantity_Color & xnamecolor, Quantity_Color & ynamecolor, Quantity_Color & znamecolor, Quantity_Color & xcolor, Quantity_Color & ycolor, Quantity_Color & zcolor, char * & fontOfNames, OSD_FontAspect & styleOfNames, Standard_Integer &OutValue, char * & fontOfValues, OSD_FontAspect & styleOfValues, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void GraduatedTrihedronDisplay(const char * xname, const char * yname, const char * zname, const Standard_Boolean xdrawname, const Standard_Boolean ydrawname, const Standard_Boolean zdrawname, const Standard_Boolean xdrawvalues, const Standard_Boolean ydrawvalues, const Standard_Boolean zdrawvalues, const Standard_Boolean drawgrid, const Standard_Boolean drawaxes, const Standard_Integer nbx, const Standard_Integer nby, const Standard_Integer nbz, const Standard_Integer xoffset, const Standard_Integer yoffset, const Standard_Integer zoffset, const Standard_Integer xaxisoffset, const Standard_Integer yaxisoffset, const Standard_Integer zaxisoffset, const Standard_Boolean xdrawtickmarks, const Standard_Boolean ydrawtickmarks, const Standard_Boolean zdrawtickmarks, const Standard_Integer xtickmarklength, const Standard_Integer ytickmarklength, const Standard_Integer ztickmarklength, const Quantity_Color &gridcolor, const Quantity_Color &xnamecolor, const Quantity_Color &ynamecolor, const Quantity_Color &znamecolor, const Quantity_Color &xcolor, const Quantity_Color &ycolor, const Quantity_Color &zcolor, const char * fontOfNames, const OSD_FontAspect styleOfNames, const Standard_Integer sizeOfNames, const char * fontOfValues, const OSD_FontAspect styleOfValues, const Standard_Integer sizeOfValues);
 		%feature("autodoc", "1");
@@ -3157,7 +3245,7 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 };
 %extend Visual3d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_View::~Visual3d_View %{
@@ -3170,6 +3258,43 @@ def __del__(self):
 %}
 
 %extend Visual3d_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Visual3d_PickDescriptor;
+class Visual3d_PickDescriptor {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_PickDescriptor(const Visual3d_ContextPick &CTX);
+		%feature("autodoc", "1");
+		void AddPickPath(const Visual3d_PickPath &APickPath);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Depth() const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSequenceOfPickPath PickPath() const;
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Structure TopStructure() const;
+		%feature("autodoc", "1");
+		Standard_Integer TopPickId() const;
+		%feature("autodoc", "1");
+		Standard_Integer TopElementNumber() const;
+
+};
+%feature("shadow") Visual3d_PickDescriptor::~Visual3d_PickDescriptor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Visual3d_PickDescriptor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3200,7 +3325,7 @@ class Visual3d_ViewDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ViewDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ViewDefinitionError::~Visual3d_ViewDefinitionError %{
@@ -3213,91 +3338,6 @@ def __del__(self):
 %}
 
 %extend Visual3d_ViewDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Visual3d_TransientManager;
-class Visual3d_TransientManager : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_TransientManager();
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		static		Standard_Boolean BeginDraw(const Handle_Visual3d_View &aView, const Standard_Boolean DoubleBuffer=0, const Standard_Boolean RetainMode=0);
-		%feature("autodoc", "1");
-		static		void EndDraw(const Standard_Boolean Synchronize=0);
-		%feature("autodoc", "1");
-		static		void ClearDraw(const Handle_Visual3d_View &aView, const Standard_Boolean aFlush=1);
-		%feature("autodoc", "1");
-		static		Standard_Boolean BeginAddDraw(const Handle_Visual3d_View &aView);
-		%feature("autodoc", "1");
-		static		void EndAddDraw();
-		%feature("autodoc", "1");
-		static		void BeginPolyline();
-		%feature("autodoc", "1");
-		static		void BeginPolygon();
-		%feature("autodoc", "1");
-		static		void BeginTriangleMesh();
-		%feature("autodoc", "1");
-		static		void BeginMarker();
-		%feature("autodoc", "1");
-		static		void BeginBezier();
-		%feature("autodoc", "1");
-		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Boolean AFlag=1);
-		%feature("autodoc", "1");
-		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real W, const Standard_Boolean AFlag=1);
-		%feature("autodoc", "1");
-		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real NX, const Standard_Real NY, const Standard_Real NZ, const Standard_Boolean AFlag=1);
-		%feature("autodoc", "1");
-		static		void ClosePrimitive();
-		%feature("autodoc", "1");
-		static		void DrawText(const TCollection_ExtendedString &AText, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle=0.0, const Graphic3d_TextPath ATp=Graphic3d_TP_RIGHT, const Graphic3d_HorizontalTextAlignment AHta=Graphic3d_HTA_LEFT, const Graphic3d_VerticalTextAlignment AVta=Graphic3d_VTA_BOTTOM);
-		%feature("autodoc", "1");
-		static		void DrawStructure(const Handle_Graphic3d_Structure &AStructure);
-		%feature("autodoc", "1");
-		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectLine3d &CTX);
-		%feature("autodoc", "1");
-		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectFillArea3d &CTX);
-		%feature("autodoc", "1");
-		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectText3d &CTX);
-		%feature("autodoc", "1");
-		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectMarker3d &CTX);
-		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		static		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		static		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		static		void SetTransform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType=Graphic3d_TOC_REPLACE);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_TransientManager {
-	Handle_Visual3d_TransientManager GetHandle() {
-	return *(Handle_Visual3d_TransientManager*) &$self;
-	}
-};
-%extend Visual3d_TransientManager {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Visual3d_TransientManager::~Visual3d_TransientManager %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Visual3d_TransientManager {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3328,7 +3368,7 @@ class Visual3d_PickError : public Standard_OutOfRange {
 };
 %extend Visual3d_PickError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_PickError::~Visual3d_PickError %{
@@ -3445,49 +3485,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Visual3d_ViewMappingDefinitionError;
-class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ViewMappingDefinitionError();
-		%feature("autodoc", "1");
-		Visual3d_ViewMappingDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Visual3d_ViewMappingDefinitionError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_ViewMappingDefinitionError {
-	Handle_Visual3d_ViewMappingDefinitionError GetHandle() {
-	return *(Handle_Visual3d_ViewMappingDefinitionError*) &$self;
-	}
-};
-%extend Visual3d_ViewMappingDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Visual3d_ViewMappingDefinitionError::~Visual3d_ViewMappingDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Visual3d_ViewMappingDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Visual3d_SetOfClipPlane;
 class Visual3d_SetOfClipPlane {
 	public:
@@ -3557,7 +3554,7 @@ class Visual3d_ContextPickDefinitionError : public Standard_OutOfRange {
 };
 %extend Visual3d_ContextPickDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_ContextPickDefinitionError::~Visual3d_ContextPickDefinitionError %{
@@ -3636,7 +3633,7 @@ class Visual3d_HSequenceOfPickPath : public MMgt_TShared {
 };
 %extend Visual3d_HSequenceOfPickPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Visual3d_HSequenceOfPickPath::~Visual3d_HSequenceOfPickPath %{

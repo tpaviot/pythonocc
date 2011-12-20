@@ -77,6 +77,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor SortTools_QuickSortOfInteger;
+class SortTools_QuickSortOfInteger {
+	public:
+		%feature("autodoc", "1");
+		SortTools_QuickSortOfInteger();
+		%feature("autodoc", "1");
+		static		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
+
+};
+%feature("shadow") SortTools_QuickSortOfInteger::~SortTools_QuickSortOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SortTools_QuickSortOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor SortTools_HeapSortOfInteger;
 class SortTools_HeapSortOfInteger {
 	public:
@@ -171,31 +196,6 @@ def __del__(self):
 %}
 
 %extend SortTools_StraightInsertionSortOfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SortTools_QuickSortOfInteger;
-class SortTools_QuickSortOfInteger {
-	public:
-		%feature("autodoc", "1");
-		SortTools_QuickSortOfInteger();
-		%feature("autodoc", "1");
-		static		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
-
-};
-%feature("shadow") SortTools_QuickSortOfInteger::~SortTools_QuickSortOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SortTools_QuickSortOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}

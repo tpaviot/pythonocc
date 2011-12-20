@@ -53,6 +53,12 @@ typedef NCollection_BaseCollection<SelectMgr_SequenceOfOwner> SelectMgr_Collecti
 typedef SelectMgr_SelectableObject * SelectMgr_SOPtr;
 typedef NCollection_DataMap<Handle_SelectMgr_SelectableObject, SelectMgr_SequenceOfOwner> SelectMgr_DataMapOfObjectOwners;
 
+enum SelectMgr_TypeOfUpdate {
+	SelectMgr_TOU_Full,
+	SelectMgr_TOU_Partial,
+	SelectMgr_TOU_None,
+	};
+
 enum SelectMgr_StateOfSelection {
 	SelectMgr_SOS_Activated,
 	SelectMgr_SOS_Deactivated,
@@ -61,12 +67,44 @@ enum SelectMgr_StateOfSelection {
 	SelectMgr_SOS_Unknown,
 	};
 
-enum SelectMgr_TypeOfUpdate {
-	SelectMgr_TOU_Full,
-	SelectMgr_TOU_Partial,
-	SelectMgr_TOU_None,
-	};
 
+
+%nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive;
+class Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive();
+		%feature("autodoc", "1");
+		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive(const Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive(const SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive & operator=(const Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive & operator=(const SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive *anItem);
+		%feature("autodoc", "1");
+		static		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
+	SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive* GetObject() {
+	return (SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive*)$self->Access();
+	}
+};
+%feature("shadow") Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive::~Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_Filter;
@@ -183,6 +221,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_SelectMgr_ViewerSelector;
+class Handle_SelectMgr_ViewerSelector : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_SelectMgr_ViewerSelector();
+		%feature("autodoc", "1");
+		Handle_SelectMgr_ViewerSelector(const Handle_SelectMgr_ViewerSelector &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_ViewerSelector(const SelectMgr_ViewerSelector *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_ViewerSelector & operator=(const Handle_SelectMgr_ViewerSelector &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_ViewerSelector & operator=(const SelectMgr_ViewerSelector *anItem);
+		%feature("autodoc", "1");
+		static		Handle_SelectMgr_ViewerSelector DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_SelectMgr_ViewerSelector {
+	SelectMgr_ViewerSelector* GetObject() {
+	return (SelectMgr_ViewerSelector*)$self->Access();
+	}
+};
+%feature("shadow") Handle_SelectMgr_ViewerSelector::~Handle_SelectMgr_ViewerSelector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_SelectMgr_ViewerSelector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_SelectMgr_EntityOwner;
 class Handle_SelectMgr_EntityOwner : public Handle_SelectBasics_EntityOwner {
 	public:
@@ -259,29 +335,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_SelectMgr_ViewerSelector;
-class Handle_SelectMgr_ViewerSelector : public Handle_MMgt_TShared {
+%nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfFilter;
+class Handle_SelectMgr_SequenceNodeOfSequenceOfFilter : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_SelectMgr_ViewerSelector();
+		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter();
 		%feature("autodoc", "1");
-		Handle_SelectMgr_ViewerSelector(const Handle_SelectMgr_ViewerSelector &aHandle);
+		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter(const Handle_SelectMgr_SequenceNodeOfSequenceOfFilter &aHandle);
 		%feature("autodoc", "1");
-		Handle_SelectMgr_ViewerSelector(const SelectMgr_ViewerSelector *anItem);
+		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter(const SelectMgr_SequenceNodeOfSequenceOfFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectMgr_ViewerSelector & operator=(const Handle_SelectMgr_ViewerSelector &aHandle);
+		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter & operator=(const Handle_SelectMgr_SequenceNodeOfSequenceOfFilter &aHandle);
 		%feature("autodoc", "1");
-		Handle_SelectMgr_ViewerSelector & operator=(const SelectMgr_ViewerSelector *anItem);
+		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter & operator=(const SelectMgr_SequenceNodeOfSequenceOfFilter *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_ViewerSelector DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_SelectMgr_ViewerSelector {
-	SelectMgr_ViewerSelector* GetObject() {
-	return (SelectMgr_ViewerSelector*)$self->Access();
+%extend Handle_SelectMgr_SequenceNodeOfSequenceOfFilter {
+	SelectMgr_SequenceNodeOfSequenceOfFilter* GetObject() {
+	return (SelectMgr_SequenceNodeOfSequenceOfFilter*)$self->Access();
 	}
 };
-%feature("shadow") Handle_SelectMgr_ViewerSelector::~Handle_SelectMgr_ViewerSelector %{
+%feature("shadow") Handle_SelectMgr_SequenceNodeOfSequenceOfFilter::~Handle_SelectMgr_SequenceNodeOfSequenceOfFilter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -290,45 +366,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_SelectMgr_ViewerSelector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
-class Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors();
-		%feature("autodoc", "1");
-		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors(const Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors(const SelectMgr_DataMapNodeOfDataMapOfObjectSelectors *anItem);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors & operator=(const Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors & operator=(const SelectMgr_DataMapNodeOfDataMapOfObjectSelectors *anItem);
-		%feature("autodoc", "1");
-		static		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
-	SelectMgr_DataMapNodeOfDataMapOfObjectSelectors* GetObject() {
-	return (SelectMgr_DataMapNodeOfDataMapOfObjectSelectors*)$self->Access();
-	}
-};
-%feature("shadow") Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors::~Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+%extend Handle_SelectMgr_SequenceNodeOfSequenceOfFilter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -449,44 +487,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfFilter;
-class Handle_SelectMgr_SequenceNodeOfSequenceOfFilter : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter();
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter(const Handle_SelectMgr_SequenceNodeOfSequenceOfFilter &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter(const SelectMgr_SequenceNodeOfSequenceOfFilter *anItem);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter & operator=(const Handle_SelectMgr_SequenceNodeOfSequenceOfFilter &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter & operator=(const SelectMgr_SequenceNodeOfSequenceOfFilter *anItem);
-		%feature("autodoc", "1");
-		static		Handle_SelectMgr_SequenceNodeOfSequenceOfFilter DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_SelectMgr_SequenceNodeOfSequenceOfFilter {
-	SelectMgr_SequenceNodeOfSequenceOfFilter* GetObject() {
-	return (SelectMgr_SequenceNodeOfSequenceOfFilter*)$self->Access();
-	}
-};
-%feature("shadow") Handle_SelectMgr_SequenceNodeOfSequenceOfFilter::~Handle_SelectMgr_SequenceNodeOfSequenceOfFilter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_SelectMgr_SequenceNodeOfSequenceOfFilter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
 class Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public Handle_TCollection_MapNode {
 	public:
@@ -525,29 +525,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive;
-class Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
+class Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive();
+		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors();
 		%feature("autodoc", "1");
-		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive(const Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive &aHandle);
+		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors(const Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors &aHandle);
 		%feature("autodoc", "1");
-		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive(const SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive *anItem);
+		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors(const SelectMgr_DataMapNodeOfDataMapOfObjectSelectors *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive & operator=(const Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive &aHandle);
+		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors & operator=(const Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors &aHandle);
 		%feature("autodoc", "1");
-		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive & operator=(const SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive *anItem);
+		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors & operator=(const SelectMgr_DataMapNodeOfDataMapOfObjectSelectors *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
-	SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive* GetObject() {
-	return (SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive*)$self->Access();
+%extend Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+	SelectMgr_DataMapNodeOfDataMapOfObjectSelectors* GetObject() {
+	return (SelectMgr_DataMapNodeOfDataMapOfObjectSelectors*)$self->Access();
 	}
 };
-%feature("shadow") Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive::~Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive %{
+%feature("shadow") Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors::~Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -556,7 +556,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
+%extend Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -791,6 +791,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor SelectMgr_SequenceNodeOfSequenceOfOwner;
+class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_SequenceNodeOfSequenceOfOwner(const Handle_SelectMgr_EntityOwner &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_EntityOwner & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectMgr_SequenceNodeOfSequenceOfOwner {
+	Handle_SelectMgr_SequenceNodeOfSequenceOfOwner GetHandle() {
+	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfOwner*) &$self;
+	}
+};
+%extend SelectMgr_SequenceNodeOfSequenceOfOwner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") SelectMgr_SequenceNodeOfSequenceOfOwner::~SelectMgr_SequenceNodeOfSequenceOfOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectMgr_SequenceNodeOfSequenceOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive;
 class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_BasicMapIterator {
 	public:
@@ -840,7 +877,7 @@ class SelectMgr_ListNodeOfListOfFilter : public TCollection_MapNode {
 };
 %extend SelectMgr_ListNodeOfListOfFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectMgr_ListNodeOfListOfFilter::~SelectMgr_ListNodeOfListOfFilter %{
@@ -877,7 +914,7 @@ class SelectMgr_Filter : public MMgt_TShared {
 };
 %extend SelectMgr_Filter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectMgr_Filter::~SelectMgr_Filter %{
@@ -920,7 +957,7 @@ class SelectMgr_CompositionFilter : public SelectMgr_Filter {
 };
 %extend SelectMgr_CompositionFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectMgr_CompositionFilter::~SelectMgr_CompositionFilter %{
@@ -955,7 +992,7 @@ class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 };
 %extend SelectMgr_AndFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectMgr_AndFilter::~SelectMgr_AndFilter %{
@@ -1120,7 +1157,7 @@ class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
 };
 %extend SelectMgr_EntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectMgr_EntityOwner::~SelectMgr_EntityOwner %{
@@ -1169,7 +1206,7 @@ class SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public TCollection_MapN
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive::~SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive %{
@@ -1182,6 +1219,43 @@ def __del__(self):
 %}
 
 %extend SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SelectMgr_OrFilter;
+class SelectMgr_OrFilter : public SelectMgr_CompositionFilter {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_OrFilter();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anobj) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectMgr_OrFilter {
+	Handle_SelectMgr_OrFilter GetHandle() {
+	return *(Handle_SelectMgr_OrFilter*) &$self;
+	}
+};
+%extend SelectMgr_OrFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") SelectMgr_OrFilter::~SelectMgr_OrFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectMgr_OrFilter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1224,7 +1298,7 @@ class SelectMgr_Selection : public MMgt_TShared {
 };
 %extend SelectMgr_Selection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectMgr_Selection::~SelectMgr_Selection %{
@@ -1288,93 +1362,42 @@ def __del__(self):
 };
 
 
-%nodefaultctor SelectMgr_SequenceOfSelection;
-class SelectMgr_SequenceOfSelection : public TCollection_BaseSequence {
+%nodefaultctor SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
+class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		SelectMgr_SequenceOfSelection();
+		SelectMgr_IndexedMapNodeOfIndexedMapOfOwner(const Handle_SelectMgr_EntityOwner &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		void Clear();
+		Handle_SelectMgr_EntityOwner & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		const SelectMgr_SequenceOfSelection & Assign(const SelectMgr_SequenceOfSelection &Other);
-		%feature("autodoc", "1");
-		const SelectMgr_SequenceOfSelection & operator=(const SelectMgr_SequenceOfSelection &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_SelectMgr_Selection &T);
-		%feature("autodoc", "1");
-		void Append(SelectMgr_SequenceOfSelection & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_SelectMgr_Selection &T);
-		%feature("autodoc", "1");
-		void Prepend(SelectMgr_SequenceOfSelection & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_SelectMgr_Selection &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, SelectMgr_SequenceOfSelection & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_SelectMgr_Selection &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, SelectMgr_SequenceOfSelection & S);
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_Selection & First() const;
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_Selection & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, SelectMgr_SequenceOfSelection & S);
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_Selection & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_Selection & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_SelectMgr_Selection &I);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_Selection & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_Selection & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") SelectMgr_SequenceOfSelection::~SelectMgr_SequenceOfSelection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_SequenceOfSelection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelector;
-class SelectMgr_SequenceNodeOfSequenceOfSelector : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_SequenceNodeOfSequenceOfSelector(const Handle_SelectMgr_ViewerSelector &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_ViewerSelector & Value() const;
+		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend SelectMgr_SequenceNodeOfSequenceOfSelector {
-	Handle_SelectMgr_SequenceNodeOfSequenceOfSelector GetHandle() {
-	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfSelector*) &$self;
+%extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
+	Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner GetHandle() {
+	return *(Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner*) &$self;
 	}
 };
-%extend SelectMgr_SequenceNodeOfSequenceOfSelector {
+%extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") SelectMgr_SequenceNodeOfSequenceOfSelector::~SelectMgr_SequenceNodeOfSequenceOfSelector %{
+%feature("shadow") SelectMgr_IndexedMapNodeOfIndexedMapOfOwner::~SelectMgr_IndexedMapNodeOfIndexedMapOfOwner %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1383,44 +1406,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SelectMgr_SequenceNodeOfSequenceOfSelector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectMgr_OrFilter;
-class SelectMgr_OrFilter : public SelectMgr_CompositionFilter {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_OrFilter();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anobj) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectMgr_OrFilter {
-	Handle_SelectMgr_OrFilter GetHandle() {
-	return *(Handle_SelectMgr_OrFilter*) &$self;
-	}
-};
-%extend SelectMgr_OrFilter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") SelectMgr_OrFilter::~SelectMgr_OrFilter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_OrFilter {
+%extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1472,30 +1458,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
-class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNode {
+%nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelector;
+class SelectMgr_SequenceNodeOfSequenceOfSelector : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		SelectMgr_DataMapNodeOfDataMapOfObjectSelectors(const Handle_SelectMgr_SelectableObject &K, const SelectMgr_SequenceOfSelector &I, const TCollection_MapNodePtr &n);
+		SelectMgr_SequenceNodeOfSequenceOfSelector(const Handle_SelectMgr_ViewerSelector &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectableObject & Key() const;
-		%feature("autodoc", "1");
-		SelectMgr_SequenceOfSelector & Value() const;
+		Handle_SelectMgr_ViewerSelector & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
-	Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors GetHandle() {
-	return *(Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors*) &$self;
+%extend SelectMgr_SequenceNodeOfSequenceOfSelector {
+	Handle_SelectMgr_SequenceNodeOfSequenceOfSelector GetHandle() {
+	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfSelector*) &$self;
 	}
 };
-%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+%extend SelectMgr_SequenceNodeOfSequenceOfSelector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") SelectMgr_DataMapNodeOfDataMapOfObjectSelectors::~SelectMgr_DataMapNodeOfDataMapOfObjectSelectors %{
+%feature("shadow") SelectMgr_SequenceNodeOfSequenceOfSelector::~SelectMgr_SequenceNodeOfSequenceOfSelector %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1504,204 +1488,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectMgr_SortCriterion;
-class SelectMgr_SortCriterion {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_SortCriterion();
-		%feature("autodoc", "1");
-		SelectMgr_SortCriterion(const Standard_Integer thePriority, const Standard_Real theDepth, const Standard_Real theMinDist, const Standard_Real theTol, const Standard_Boolean PreferClosest);
-		%feature("autodoc", "1");
-		void SetPriority(const Standard_Integer Prior);
-		%feature("autodoc", "1");
-		void SetDepth(const Standard_Real Depth);
-		%feature("autodoc", "1");
-		void SetMinDist(const Standard_Real Dist);
-		%feature("autodoc", "1");
-		void SetTol(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Integer Priority() const;
-		%feature("autodoc", "1");
-		Standard_Real Depth() const;
-		%feature("autodoc", "1");
-		Standard_Real MinDist() const;
-		%feature("autodoc", "1");
-		Standard_Real Tol() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsGreater(const SelectMgr_SortCriterion &anOtherCriterion) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator>(const SelectMgr_SortCriterion &anOtherCriterion) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLower(const SelectMgr_SortCriterion &anOtherCriterion) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator<(const SelectMgr_SortCriterion &anOtherCriterion) const;
-
-};
-%feature("shadow") SelectMgr_SortCriterion::~SelectMgr_SortCriterion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_SortCriterion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation;
-class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation();
-		%feature("autodoc", "1");
-		SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation(const SelectMgr_DataMapOfSelectionActivation &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const SelectMgr_DataMapOfSelectionActivation &aMap);
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_Selection & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%feature("shadow") SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation::~SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectMgr_DataMapNodeOfDataMapOfSelectionActivation;
-class SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_DataMapNodeOfDataMapOfSelectionActivation(const Handle_SelectMgr_Selection &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_Selection & Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue() {
-				return (Standard_Integer) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
-	Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation GetHandle() {
-	return *(Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation*) &$self;
-	}
-};
-%extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") SelectMgr_DataMapNodeOfDataMapOfSelectionActivation::~SelectMgr_DataMapNodeOfDataMapOfSelectionActivation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors;
-class SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors();
-		%feature("autodoc", "1");
-		SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors(const SelectMgr_DataMapOfObjectSelectors &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const SelectMgr_DataMapOfObjectSelectors &aMap);
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_SelectableObject & Key() const;
-		%feature("autodoc", "1");
-		const SelectMgr_SequenceOfSelector & Value() const;
-
-};
-%feature("shadow") SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors::~SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectMgr_SequenceNodeOfSequenceOfFilter;
-class SelectMgr_SequenceNodeOfSequenceOfFilter : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_SequenceNodeOfSequenceOfFilter(const Handle_SelectMgr_Filter &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_Filter & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectMgr_SequenceNodeOfSequenceOfFilter {
-	Handle_SelectMgr_SequenceNodeOfSequenceOfFilter GetHandle() {
-	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfFilter*) &$self;
-	}
-};
-%extend SelectMgr_SequenceNodeOfSequenceOfFilter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") SelectMgr_SequenceNodeOfSequenceOfFilter::~SelectMgr_SequenceNodeOfSequenceOfFilter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_SequenceNodeOfSequenceOfFilter {
+%extend SelectMgr_SequenceNodeOfSequenceOfSelector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1773,6 +1560,154 @@ def __del__(self):
 };
 
 
+%nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation;
+class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation();
+		%feature("autodoc", "1");
+		SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation(const SelectMgr_DataMapOfSelectionActivation &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const SelectMgr_DataMapOfSelectionActivation &aMap);
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_Selection & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Integer & Value() const;
+
+};
+%feature("shadow") SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation::~SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SelectMgr_DataMapNodeOfDataMapOfSelectionActivation;
+class SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_DataMapNodeOfDataMapOfSelectionActivation(const Handle_SelectMgr_Selection &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_Selection & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
+	Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation GetHandle() {
+	return *(Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation*) &$self;
+	}
+};
+%extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") SelectMgr_DataMapNodeOfDataMapOfSelectionActivation::~SelectMgr_DataMapNodeOfDataMapOfSelectionActivation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors;
+class SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors();
+		%feature("autodoc", "1");
+		SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors(const SelectMgr_DataMapOfObjectSelectors &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const SelectMgr_DataMapOfObjectSelectors &aMap);
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_SelectableObject & Key() const;
+		%feature("autodoc", "1");
+		const SelectMgr_SequenceOfSelector & Value() const;
+
+};
+%feature("shadow") SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors::~SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SelectMgr_SequenceNodeOfSequenceOfFilter;
+class SelectMgr_SequenceNodeOfSequenceOfFilter : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_SequenceNodeOfSequenceOfFilter(const Handle_SelectMgr_Filter &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_Filter & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectMgr_SequenceNodeOfSequenceOfFilter {
+	Handle_SelectMgr_SequenceNodeOfSequenceOfFilter GetHandle() {
+	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfFilter*) &$self;
+	}
+};
+%extend SelectMgr_SequenceNodeOfSequenceOfFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") SelectMgr_SequenceNodeOfSequenceOfFilter::~SelectMgr_SequenceNodeOfSequenceOfFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectMgr_SequenceNodeOfSequenceOfFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor SelectMgr_SelectableObject;
 class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
 	public:
@@ -1827,7 +1762,7 @@ class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
 };
 %extend SelectMgr_SelectableObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectMgr_SelectableObject::~SelectMgr_SelectableObject %{
@@ -1840,108 +1775,6 @@ def __del__(self):
 %}
 
 %extend SelectMgr_SelectableObject {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelection;
-class SelectMgr_SequenceNodeOfSequenceOfSelection : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_SequenceNodeOfSequenceOfSelection(const Handle_SelectMgr_Selection &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_Selection & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectMgr_SequenceNodeOfSequenceOfSelection {
-	Handle_SelectMgr_SequenceNodeOfSequenceOfSelection GetHandle() {
-	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfSelection*) &$self;
-	}
-};
-%extend SelectMgr_SequenceNodeOfSequenceOfSelection {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") SelectMgr_SequenceNodeOfSequenceOfSelection::~SelectMgr_SequenceNodeOfSequenceOfSelection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_SequenceNodeOfSequenceOfSelection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectMgr_SequenceOfOwner;
-class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_SequenceOfOwner();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const SelectMgr_SequenceOfOwner & Assign(const SelectMgr_SequenceOfOwner &Other);
-		%feature("autodoc", "1");
-		const SelectMgr_SequenceOfOwner & operator=(const SelectMgr_SequenceOfOwner &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_SelectMgr_EntityOwner &T);
-		%feature("autodoc", "1");
-		void Append(SelectMgr_SequenceOfOwner & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_SelectMgr_EntityOwner &T);
-		%feature("autodoc", "1");
-		void Prepend(SelectMgr_SequenceOfOwner & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_SelectMgr_EntityOwner &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, SelectMgr_SequenceOfOwner & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_SelectMgr_EntityOwner &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, SelectMgr_SequenceOfOwner & S);
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_EntityOwner & First() const;
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_EntityOwner & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, SelectMgr_SequenceOfOwner & S);
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_EntityOwner & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_EntityOwner & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_SelectMgr_EntityOwner &I);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") SelectMgr_SequenceOfOwner::~SelectMgr_SequenceOfOwner %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_SequenceOfOwner {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1997,6 +1830,110 @@ def __del__(self):
 %}
 
 %extend SelectMgr_IndexedDataMapOfOwnerCriterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SelectMgr_DataMapOfSelectionActivation;
+class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_DataMapOfSelectionActivation(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		SelectMgr_DataMapOfSelectionActivation & Assign(const SelectMgr_DataMapOfSelectionActivation &Other);
+		%feature("autodoc", "1");
+		SelectMgr_DataMapOfSelectionActivation & operator=(const SelectMgr_DataMapOfSelectionActivation &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Handle_SelectMgr_Selection &K, const Standard_Integer &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_SelectMgr_Selection &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Handle_SelectMgr_Selection &K);
+		%feature("autodoc", "1");
+		const Standard_Integer & Find(const Handle_SelectMgr_Selection &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const Handle_SelectMgr_Selection &K) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const Handle_SelectMgr_Selection &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const Handle_SelectMgr_Selection &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Handle_SelectMgr_Selection &K);
+
+};
+%feature("shadow") SelectMgr_DataMapOfSelectionActivation::~SelectMgr_DataMapOfSelectionActivation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectMgr_DataMapOfSelectionActivation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SelectMgr_SortCriterion;
+class SelectMgr_SortCriterion {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_SortCriterion();
+		%feature("autodoc", "1");
+		SelectMgr_SortCriterion(const Standard_Integer thePriority, const Standard_Real theDepth, const Standard_Real theMinDist, const Standard_Real theTol, const Standard_Boolean PreferClosest);
+		%feature("autodoc", "1");
+		void SetPriority(const Standard_Integer Prior);
+		%feature("autodoc", "1");
+		void SetDepth(const Standard_Real Depth);
+		%feature("autodoc", "1");
+		void SetMinDist(const Standard_Real Dist);
+		%feature("autodoc", "1");
+		void SetTol(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Integer Priority() const;
+		%feature("autodoc", "1");
+		Standard_Real Depth() const;
+		%feature("autodoc", "1");
+		Standard_Real MinDist() const;
+		%feature("autodoc", "1");
+		Standard_Real Tol() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsGreater(const SelectMgr_SortCriterion &anOtherCriterion) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator>(const SelectMgr_SortCriterion &anOtherCriterion) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsLower(const SelectMgr_SortCriterion &anOtherCriterion) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator<(const SelectMgr_SortCriterion &anOtherCriterion) const;
+
+};
+%feature("shadow") SelectMgr_SortCriterion::~SelectMgr_SortCriterion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectMgr_SortCriterion {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2068,46 +2005,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor SelectMgr_DataMapOfSelectionActivation;
-class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
+%nodefaultctor SelectMgr_SequenceOfSelection;
+class SelectMgr_SequenceOfSelection : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		SelectMgr_DataMapOfSelectionActivation(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		SelectMgr_DataMapOfSelectionActivation & Assign(const SelectMgr_DataMapOfSelectionActivation &Other);
-		%feature("autodoc", "1");
-		SelectMgr_DataMapOfSelectionActivation & operator=(const SelectMgr_DataMapOfSelectionActivation &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		SelectMgr_SequenceOfSelection();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_SelectMgr_Selection &K, const Standard_Integer &I);
+		const SelectMgr_SequenceOfSelection & Assign(const SelectMgr_SequenceOfSelection &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_SelectMgr_Selection &K) const;
+		const SelectMgr_SequenceOfSelection & operator=(const SelectMgr_SequenceOfSelection &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_SelectMgr_Selection &K);
+		void Append(const Handle_SelectMgr_Selection &T);
 		%feature("autodoc", "1");
-		const Standard_Integer & Find(const Handle_SelectMgr_Selection &K) const;
+		void Append(SelectMgr_SequenceOfSelection & S);
 		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const Handle_SelectMgr_Selection &K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetChangeFind(const Handle_SelectMgr_Selection &K) {
-				return (Standard_Integer) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Integer value ,const Handle_SelectMgr_Selection &K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
+		void Prepend(const Handle_SelectMgr_Selection &T);
 		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Handle_SelectMgr_Selection &K);
+		void Prepend(SelectMgr_SequenceOfSelection & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_SelectMgr_Selection &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, SelectMgr_SequenceOfSelection & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_SelectMgr_Selection &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, SelectMgr_SequenceOfSelection & S);
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_Selection & First() const;
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_Selection & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, SelectMgr_SequenceOfSelection & S);
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_Selection & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_Selection & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_SelectMgr_Selection &I);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_Selection & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_Selection & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%feature("shadow") SelectMgr_DataMapOfSelectionActivation::~SelectMgr_DataMapOfSelectionActivation %{
+%feature("shadow") SelectMgr_SequenceOfSelection::~SelectMgr_SequenceOfSelection %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2116,49 +2063,35 @@ def __del__(self):
 		pass
 %}
 
-%extend SelectMgr_DataMapOfSelectionActivation {
+%extend SelectMgr_SequenceOfSelection {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
-class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {
+%nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelection;
+class SelectMgr_SequenceNodeOfSequenceOfSelection : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		SelectMgr_IndexedMapNodeOfIndexedMapOfOwner(const Handle_SelectMgr_EntityOwner &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		SelectMgr_SequenceNodeOfSequenceOfSelection(const Handle_SelectMgr_Selection &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner & Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
+		Handle_SelectMgr_Selection & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
-	Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner GetHandle() {
-	return *(Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner*) &$self;
+%extend SelectMgr_SequenceNodeOfSequenceOfSelection {
+	Handle_SelectMgr_SequenceNodeOfSequenceOfSelection GetHandle() {
+	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfSelection*) &$self;
 	}
 };
-%extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
+%extend SelectMgr_SequenceNodeOfSequenceOfSelection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") SelectMgr_IndexedMapNodeOfIndexedMapOfOwner::~SelectMgr_IndexedMapNodeOfIndexedMapOfOwner %{
+%feature("shadow") SelectMgr_SequenceNodeOfSequenceOfSelection::~SelectMgr_SequenceNodeOfSequenceOfSelection %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2167,7 +2100,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
+%extend SelectMgr_SequenceNodeOfSequenceOfSelection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2219,28 +2152,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor SelectMgr_SequenceNodeOfSequenceOfOwner;
-class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
+%nodefaultctor SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
+class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		SelectMgr_SequenceNodeOfSequenceOfOwner(const Handle_SelectMgr_EntityOwner &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		SelectMgr_DataMapNodeOfDataMapOfObjectSelectors(const Handle_SelectMgr_SelectableObject &K, const SelectMgr_SequenceOfSelector &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner & Value() const;
+		Handle_SelectMgr_SelectableObject & Key() const;
+		%feature("autodoc", "1");
+		SelectMgr_SequenceOfSelector & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend SelectMgr_SequenceNodeOfSequenceOfOwner {
-	Handle_SelectMgr_SequenceNodeOfSequenceOfOwner GetHandle() {
-	return *(Handle_SelectMgr_SequenceNodeOfSequenceOfOwner*) &$self;
+%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+	Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors GetHandle() {
+	return *(Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors*) &$self;
 	}
 };
-%extend SelectMgr_SequenceNodeOfSequenceOfOwner {
+%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") SelectMgr_SequenceNodeOfSequenceOfOwner::~SelectMgr_SequenceNodeOfSequenceOfOwner %{
+%feature("shadow") SelectMgr_DataMapNodeOfDataMapOfObjectSelectors::~SelectMgr_DataMapNodeOfDataMapOfObjectSelectors %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2249,7 +2184,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SelectMgr_SequenceNodeOfSequenceOfOwner {
+%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2317,7 +2252,7 @@ class SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : public TCol
 };
 %extend SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion::~SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion %{
@@ -2330,6 +2265,71 @@ def __del__(self):
 %}
 
 %extend SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SelectMgr_SequenceOfOwner;
+class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_SequenceOfOwner();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const SelectMgr_SequenceOfOwner & Assign(const SelectMgr_SequenceOfOwner &Other);
+		%feature("autodoc", "1");
+		const SelectMgr_SequenceOfOwner & operator=(const SelectMgr_SequenceOfOwner &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_SelectMgr_EntityOwner &T);
+		%feature("autodoc", "1");
+		void Append(SelectMgr_SequenceOfOwner & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_SelectMgr_EntityOwner &T);
+		%feature("autodoc", "1");
+		void Prepend(SelectMgr_SequenceOfOwner & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_SelectMgr_EntityOwner &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, SelectMgr_SequenceOfOwner & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_SelectMgr_EntityOwner &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, SelectMgr_SequenceOfOwner & S);
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_EntityOwner & First() const;
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_EntityOwner & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, SelectMgr_SequenceOfOwner & S);
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_EntityOwner & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_EntityOwner & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_SelectMgr_EntityOwner &I);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_EntityOwner & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_EntityOwner & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") SelectMgr_SequenceOfOwner::~SelectMgr_SequenceOfOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectMgr_SequenceOfOwner {
 	void _kill_pointed() {
 		delete $self;
 	}

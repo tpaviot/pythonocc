@@ -454,12 +454,12 @@ $HeaderURL$
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Edge.hxx>
 #include<Handle_ShapeAnalysis_Surface.hxx>
-#include<TColgp_Array1OfPnt.hxx>
-#include<TColStd_Array1OfReal.hxx>
-#include<TColStd_Array1OfInteger.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
+#include<TColStd_Array1OfReal.hxx>
+#include<TColgp_Array1OfPnt.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
+#include<TColStd_Array1OfInteger.hxx>
 %}

@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BinXCAFDrivers_DocumentStorageDriver::DownCast;
+%rename(DownCast) Handle_BinXCAFDrivers_DocumentRetrievalDriver::DownCast;
+%rename(Factory) BinXCAFDrivers::Factory;
+%rename(AttributeDrivers) BinXCAFDrivers::AttributeDrivers;

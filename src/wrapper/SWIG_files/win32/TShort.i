@@ -240,7 +240,7 @@ class TShort_HArray1OfShortReal : public MMgt_TShared {
 };
 %extend TShort_HArray1OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TShort_HArray1OfShortReal::~TShort_HArray1OfShortReal %{
@@ -375,43 +375,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TShort_SequenceNodeOfSequenceOfShortReal;
-class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TShort_SequenceNodeOfSequenceOfShortReal(const Standard_ShortReal &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Standard_ShortReal & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TShort_SequenceNodeOfSequenceOfShortReal {
-	Handle_TShort_SequenceNodeOfSequenceOfShortReal GetHandle() {
-	return *(Handle_TShort_SequenceNodeOfSequenceOfShortReal*) &$self;
-	}
-};
-%extend TShort_SequenceNodeOfSequenceOfShortReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TShort_SequenceNodeOfSequenceOfShortReal::~TShort_SequenceNodeOfSequenceOfShortReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TShort_SequenceNodeOfSequenceOfShortReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TShort_HArray2OfShortReal;
 class TShort_HArray2OfShortReal : public MMgt_TShared {
 	public:
@@ -454,7 +417,7 @@ class TShort_HArray2OfShortReal : public MMgt_TShared {
 };
 %extend TShort_HArray2OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TShort_HArray2OfShortReal::~TShort_HArray2OfShortReal %{
@@ -533,7 +496,7 @@ class TShort_HSequenceOfShortReal : public MMgt_TShared {
 };
 %extend TShort_HSequenceOfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TShort_HSequenceOfShortReal::~TShort_HSequenceOfShortReal %{
@@ -601,6 +564,43 @@ def __del__(self):
 %}
 
 %extend TShort_Array2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TShort_SequenceNodeOfSequenceOfShortReal;
+class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TShort_SequenceNodeOfSequenceOfShortReal(const Standard_ShortReal &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Standard_ShortReal & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TShort_SequenceNodeOfSequenceOfShortReal {
+	Handle_TShort_SequenceNodeOfSequenceOfShortReal GetHandle() {
+	return *(Handle_TShort_SequenceNodeOfSequenceOfShortReal*) &$self;
+	}
+};
+%extend TShort_SequenceNodeOfSequenceOfShortReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") TShort_SequenceNodeOfSequenceOfShortReal::~TShort_SequenceNodeOfSequenceOfShortReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TShort_SequenceNodeOfSequenceOfShortReal {
 	void _kill_pointed() {
 		delete $self;
 	}

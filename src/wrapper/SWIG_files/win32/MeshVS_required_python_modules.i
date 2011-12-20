@@ -31,12 +31,12 @@ import Standard
 import TCollection
 import TColStd
 import Bnd
-import SelectMgr
+import Quantity
 import Graphic3d
 import gp
-import Quantity
 import SelectBasics
 import PrsMgr
 import Select3D
 import Aspect
+import SelectMgr
 };

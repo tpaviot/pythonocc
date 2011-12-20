@@ -182,8 +182,8 @@ $HeaderURL$
 #include <TopAbs_State.hxx>
 %};
 
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import Adaptor3d.i
 %import Standard.i
 %import GeomAbs.i

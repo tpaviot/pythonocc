@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_MFunction_FunctionRetrievalDriver::DownCast;
+%rename(DownCast) Handle_MFunction_FunctionStorageDriver::DownCast;
+%rename(AddStorageDrivers) MFunction::AddStorageDrivers;
+%rename(AddRetrievalDrivers) MFunction::AddRetrievalDrivers;

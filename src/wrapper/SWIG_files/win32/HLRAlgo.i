@@ -166,29 +166,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_HLRAlgo_HArray1OfTData;
-class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
+%nodefaultctor Handle_HLRAlgo_HArray1OfPHDat;
+class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfTData();
+		Handle_HLRAlgo_HArray1OfPHDat();
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfTData(const Handle_HLRAlgo_HArray1OfTData &aHandle);
+		Handle_HLRAlgo_HArray1OfPHDat(const Handle_HLRAlgo_HArray1OfPHDat &aHandle);
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfTData(const HLRAlgo_HArray1OfTData *anItem);
+		Handle_HLRAlgo_HArray1OfPHDat(const HLRAlgo_HArray1OfPHDat *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfTData & operator=(const Handle_HLRAlgo_HArray1OfTData &aHandle);
+		Handle_HLRAlgo_HArray1OfPHDat & operator=(const Handle_HLRAlgo_HArray1OfPHDat &aHandle);
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfTData & operator=(const HLRAlgo_HArray1OfTData *anItem);
+		Handle_HLRAlgo_HArray1OfPHDat & operator=(const HLRAlgo_HArray1OfPHDat *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_HArray1OfTData DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_HArray1OfPHDat DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_HLRAlgo_HArray1OfTData {
-	HLRAlgo_HArray1OfTData* GetObject() {
-	return (HLRAlgo_HArray1OfTData*)$self->Access();
+%extend Handle_HLRAlgo_HArray1OfPHDat {
+	HLRAlgo_HArray1OfPHDat* GetObject() {
+	return (HLRAlgo_HArray1OfPHDat*)$self->Access();
 	}
 };
-%feature("shadow") Handle_HLRAlgo_HArray1OfTData::~Handle_HLRAlgo_HArray1OfTData %{
+%feature("shadow") Handle_HLRAlgo_HArray1OfPHDat::~Handle_HLRAlgo_HArray1OfPHDat %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -197,7 +197,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_HLRAlgo_HArray1OfTData {
+%extend Handle_HLRAlgo_HArray1OfPHDat {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -318,44 +318,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_HLRAlgo_PolyInternalData;
-class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalData();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalData(const Handle_HLRAlgo_PolyInternalData &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalData(const HLRAlgo_PolyInternalData *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalData & operator=(const Handle_HLRAlgo_PolyInternalData &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalData & operator=(const HLRAlgo_PolyInternalData *anItem);
-		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_PolyInternalData DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_PolyInternalData {
-	HLRAlgo_PolyInternalData* GetObject() {
-	return (HLRAlgo_PolyInternalData*)$self->Access();
-	}
-};
-%feature("shadow") Handle_HLRAlgo_PolyInternalData::~Handle_HLRAlgo_PolyInternalData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_HLRAlgo_PolyInternalData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_HLRAlgo_ListNodeOfListOfBPoint;
 class Handle_HLRAlgo_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode {
 	public:
@@ -388,6 +350,44 @@ def __del__(self):
 %}
 
 %extend Handle_HLRAlgo_ListNodeOfListOfBPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_HLRAlgo_HArray1OfTData;
+class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfTData();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfTData(const Handle_HLRAlgo_HArray1OfTData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfTData(const HLRAlgo_HArray1OfTData *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfTData & operator=(const Handle_HLRAlgo_HArray1OfTData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfTData & operator=(const HLRAlgo_HArray1OfTData *anItem);
+		%feature("autodoc", "1");
+		static		Handle_HLRAlgo_HArray1OfTData DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_HArray1OfTData {
+	HLRAlgo_HArray1OfTData* GetObject() {
+	return (HLRAlgo_HArray1OfTData*)$self->Access();
+	}
+};
+%feature("shadow") Handle_HLRAlgo_HArray1OfTData::~Handle_HLRAlgo_HArray1OfTData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_HLRAlgo_HArray1OfTData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -470,6 +470,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_HLRAlgo_PolyInternalData;
+class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalData();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalData(const Handle_HLRAlgo_PolyInternalData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalData(const HLRAlgo_PolyInternalData *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalData & operator=(const Handle_HLRAlgo_PolyInternalData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalData & operator=(const HLRAlgo_PolyInternalData *anItem);
+		%feature("autodoc", "1");
+		static		Handle_HLRAlgo_PolyInternalData DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_PolyInternalData {
+	HLRAlgo_PolyInternalData* GetObject() {
+	return (HLRAlgo_PolyInternalData*)$self->Access();
+	}
+};
+%feature("shadow") Handle_HLRAlgo_PolyInternalData::~Handle_HLRAlgo_PolyInternalData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_HLRAlgo_PolyInternalData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_HLRAlgo_PolyInternalNode;
 class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 	public:
@@ -502,44 +540,6 @@ def __del__(self):
 %}
 
 %extend Handle_HLRAlgo_PolyInternalNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_HLRAlgo_HArray1OfPHDat;
-class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPHDat();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPHDat(const Handle_HLRAlgo_HArray1OfPHDat &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPHDat(const HLRAlgo_HArray1OfPHDat *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPHDat & operator=(const Handle_HLRAlgo_HArray1OfPHDat &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPHDat & operator=(const HLRAlgo_HArray1OfPHDat *anItem);
-		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_HArray1OfPHDat DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_HArray1OfPHDat {
-	HLRAlgo_HArray1OfPHDat* GetObject() {
-	return (HLRAlgo_HArray1OfPHDat*)$self->Access();
-	}
-};
-%feature("shadow") Handle_HLRAlgo_HArray1OfPHDat::~Handle_HLRAlgo_HArray1OfPHDat %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_HLRAlgo_HArray1OfPHDat {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -666,7 +666,7 @@ class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPISeg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfPISeg::~HLRAlgo_HArray1OfPISeg %{
@@ -705,7 +705,7 @@ class HLRAlgo_PolyInternalNode : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyInternalNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyInternalNode::~HLRAlgo_PolyInternalNode %{
@@ -769,35 +769,6 @@ def __del__(self):
 %}
 
 %extend HLRAlgo_Array1OfPINod {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRAlgo_PolyHidingData;
-class HLRAlgo_PolyHidingData {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_PolyHidingData();
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer Index, const Standard_Integer Minim, const Standard_Integer Maxim, const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
-		%feature("autodoc", "1");
-		Standard_Address IndexAndMinMax() const;
-		%feature("autodoc", "1");
-		Standard_Address Plan() const;
-
-};
-%feature("shadow") HLRAlgo_PolyHidingData::~HLRAlgo_PolyHidingData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRAlgo_PolyHidingData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1035,7 +1006,7 @@ class HLRAlgo_EdgesBlock : public MMgt_TShared {
 };
 %extend HLRAlgo_EdgesBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_EdgesBlock::~HLRAlgo_EdgesBlock %{
@@ -1072,7 +1043,7 @@ class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
 };
 %extend HLRAlgo_ListNodeOfListOfBPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_ListNodeOfListOfBPoint::~HLRAlgo_ListNodeOfListOfBPoint %{
@@ -1142,6 +1113,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRAlgo_PolyHidingData;
+class HLRAlgo_PolyHidingData {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_PolyHidingData();
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer Index, const Standard_Integer Minim, const Standard_Integer Maxim, const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
+		%feature("autodoc", "1");
+		Standard_Address IndexAndMinMax() const;
+		%feature("autodoc", "1");
+		Standard_Address Plan() const;
+
+};
+%feature("shadow") HLRAlgo_PolyHidingData::~HLRAlgo_PolyHidingData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRAlgo_PolyHidingData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRAlgo_ListNodeOfInterferenceList;
 class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
 	public:
@@ -1160,7 +1160,7 @@ class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
 };
 %extend HLRAlgo_ListNodeOfInterferenceList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_ListNodeOfInterferenceList::~HLRAlgo_ListNodeOfInterferenceList %{
@@ -1205,7 +1205,7 @@ class HLRAlgo_WiresBlock : public MMgt_TShared {
 };
 %extend HLRAlgo_WiresBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_WiresBlock::~HLRAlgo_WiresBlock %{
@@ -1266,7 +1266,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyAlgo::~HLRAlgo_PolyAlgo %{
@@ -1315,7 +1315,7 @@ class HLRAlgo_PolyShellData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyShellData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyShellData::~HLRAlgo_PolyShellData %{
@@ -1425,7 +1425,7 @@ class HLRAlgo_PolyData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyData::~HLRAlgo_PolyData %{
@@ -1562,7 +1562,7 @@ class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPHDat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfPHDat::~HLRAlgo_HArray1OfPHDat %{
@@ -1678,7 +1678,7 @@ class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPINod {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfPINod::~HLRAlgo_HArray1OfPINod %{
@@ -1806,7 +1806,7 @@ class HLRAlgo_PolyInternalData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyInternalData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyInternalData::~HLRAlgo_PolyInternalData %{
@@ -1925,7 +1925,7 @@ class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfTData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfTData::~HLRAlgo_HArray1OfTData %{

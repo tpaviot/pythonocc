@@ -29,9 +29,9 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TopTools
+import TopAbs
 import TopoDS
 import TCollection
-import TopAbs
 import BooleanOperations
 import BOPTColStd
 import gp

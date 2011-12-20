@@ -90,82 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PShort_HSequenceOfShortReal;
-class Handle_PShort_HSequenceOfShortReal : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PShort_HSequenceOfShortReal();
-		%feature("autodoc", "1");
-		Handle_PShort_HSequenceOfShortReal(const Handle_PShort_HSequenceOfShortReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_PShort_HSequenceOfShortReal(const PShort_HSequenceOfShortReal *anItem);
-		%feature("autodoc", "1");
-		Handle_PShort_HSequenceOfShortReal & operator=(const Handle_PShort_HSequenceOfShortReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_PShort_HSequenceOfShortReal & operator=(const PShort_HSequenceOfShortReal *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PShort_HSequenceOfShortReal DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PShort_HSequenceOfShortReal {
-	PShort_HSequenceOfShortReal* GetObject() {
-	return (PShort_HSequenceOfShortReal*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PShort_HSequenceOfShortReal::~Handle_PShort_HSequenceOfShortReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PShort_HSequenceOfShortReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PShort_SeqNodeOfHSequenceOfShortReal;
-class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal();
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal(const PShort_SeqNodeOfHSequenceOfShortReal *anItem);
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal & operator=(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal & operator=(const PShort_SeqNodeOfHSequenceOfShortReal *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PShort_SeqNodeOfHSequenceOfShortReal DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PShort_SeqNodeOfHSequenceOfShortReal {
-	PShort_SeqNodeOfHSequenceOfShortReal* GetObject() {
-	return (PShort_SeqNodeOfHSequenceOfShortReal*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PShort_SeqNodeOfHSequenceOfShortReal::~Handle_PShort_SeqNodeOfHSequenceOfShortReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PShort_SeqNodeOfHSequenceOfShortReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal;
 class Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public Handle_PStandard_ArrayNode {
 	public:
@@ -198,6 +122,44 @@ def __del__(self):
 %}
 
 %extend Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PShort_HSequenceOfShortReal;
+class Handle_PShort_HSequenceOfShortReal : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PShort_HSequenceOfShortReal();
+		%feature("autodoc", "1");
+		Handle_PShort_HSequenceOfShortReal(const Handle_PShort_HSequenceOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_HSequenceOfShortReal(const PShort_HSequenceOfShortReal *anItem);
+		%feature("autodoc", "1");
+		Handle_PShort_HSequenceOfShortReal & operator=(const Handle_PShort_HSequenceOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_HSequenceOfShortReal & operator=(const PShort_HSequenceOfShortReal *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PShort_HSequenceOfShortReal DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PShort_HSequenceOfShortReal {
+	PShort_HSequenceOfShortReal* GetObject() {
+	return (PShort_HSequenceOfShortReal*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PShort_HSequenceOfShortReal::~Handle_PShort_HSequenceOfShortReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PShort_HSequenceOfShortReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -280,6 +242,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PShort_SeqNodeOfHSequenceOfShortReal;
+class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal();
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal(const PShort_SeqNodeOfHSequenceOfShortReal *anItem);
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal & operator=(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal & operator=(const PShort_SeqNodeOfHSequenceOfShortReal *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PShort_SeqNodeOfHSequenceOfShortReal DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PShort_SeqNodeOfHSequenceOfShortReal {
+	PShort_SeqNodeOfHSequenceOfShortReal* GetObject() {
+	return (PShort_SeqNodeOfHSequenceOfShortReal*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PShort_SeqNodeOfHSequenceOfShortReal::~Handle_PShort_SeqNodeOfHSequenceOfShortReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PShort_SeqNodeOfHSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PShort_VArrayTNodeOfFieldOfHArray2OfShortReal;
 class PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
 	public:
@@ -344,53 +344,6 @@ def __del__(self):
 %}
 
 %extend PShort_FieldOfHArray1OfShortReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PShort_VArrayNodeOfFieldOfHArray1OfShortReal;
-class PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PShort_VArrayNodeOfFieldOfHArray1OfShortReal();
-		%feature("autodoc", "1");
-		PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const Standard_ShortReal &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_ShortReal &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetPShort_VArrayNodeOfFieldOfHArray1OfShortRealmyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_VArrayNodeOfFieldOfHArray1OfShortRealmyValue(const Standard_ShortReal p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
-	Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal GetHandle() {
-	return *(Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal*) &$self;
-	}
-};
-%extend PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PShort_VArrayNodeOfFieldOfHArray1OfShortReal::~PShort_VArrayNodeOfFieldOfHArray1OfShortReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -487,7 +440,7 @@ class PShort_HSequenceOfShortReal : public Standard_Persistent {
 };
 %extend PShort_HSequenceOfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PShort_HSequenceOfShortReal::~PShort_HSequenceOfShortReal %{
@@ -500,6 +453,53 @@ def __del__(self):
 %}
 
 %extend PShort_HSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PShort_VArrayNodeOfFieldOfHArray1OfShortReal;
+class PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PShort_VArrayNodeOfFieldOfHArray1OfShortReal();
+		%feature("autodoc", "1");
+		PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const Standard_ShortReal &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_ShortReal &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetPShort_VArrayNodeOfFieldOfHArray1OfShortRealmyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPShort_VArrayNodeOfFieldOfHArray1OfShortRealmyValue(const Standard_ShortReal p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
+	Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal GetHandle() {
+	return *(Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal*) &$self;
+	}
+};
+%extend PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PShort_VArrayNodeOfFieldOfHArray1OfShortReal::~PShort_VArrayNodeOfFieldOfHArray1OfShortReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -575,7 +575,7 @@ class PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public PStandard_ArrayNode 
 };
 %extend PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PShort_VArrayNodeOfFieldOfHArray2OfShortReal::~PShort_VArrayNodeOfFieldOfHArray2OfShortReal %{
@@ -588,37 +588,6 @@ def __del__(self):
 %}
 
 %extend PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PShort_SeqExplorerOfHSequenceOfShortReal;
-class PShort_SeqExplorerOfHSequenceOfShortReal {
-	public:
-		%feature("autodoc", "1");
-		PShort_SeqExplorerOfHSequenceOfShortReal(const Handle_PShort_HSequenceOfShortReal &S);
-		%feature("autodoc", "1");
-		Standard_ShortReal Value(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_ShortReal &T);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Standard_ShortReal &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Standard_ShortReal &T);
-
-};
-%feature("shadow") PShort_SeqExplorerOfHSequenceOfShortReal::~PShort_SeqExplorerOfHSequenceOfShortReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PShort_SeqExplorerOfHSequenceOfShortReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -691,7 +660,7 @@ class PShort_HArray2OfShortReal : public Standard_Persistent {
 };
 %extend PShort_HArray2OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PShort_HArray2OfShortReal::~PShort_HArray2OfShortReal %{
@@ -733,73 +702,6 @@ def __del__(self):
 %}
 
 %extend PShort_VArrayTNodeOfFieldOfHArray1OfShortReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PShort_SeqNodeOfHSequenceOfShortReal;
-class PShort_SeqNodeOfHSequenceOfShortReal : public PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		PShort_SeqNodeOfHSequenceOfShortReal(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &TheLast, const Standard_ShortReal &TheItem);
-		%feature("autodoc", "1");
-		PShort_SeqNodeOfHSequenceOfShortReal(const Standard_ShortReal &TheItem, const Handle_PShort_SeqNodeOfHSequenceOfShortReal &TheFirst);
-		%feature("autodoc", "1");
-		PShort_SeqNodeOfHSequenceOfShortReal(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &ThePrevious, const Handle_PShort_SeqNodeOfHSequenceOfShortReal &TheNext, const Standard_ShortReal &TheItem);
-		%feature("autodoc", "1");
-		Standard_ShortReal Value() const;
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal Next() const;
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal Previous() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_ShortReal &AnItem);
-		%feature("autodoc", "1");
-		void SetNext(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &ANode);
-		%feature("autodoc", "1");
-		void SetPrevious(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &ANode);
-		%feature("autodoc", "1");
-		PShort_SeqNodeOfHSequenceOfShortReal();
-		%feature("autodoc", "1");
-		PShort_SeqNodeOfHSequenceOfShortReal(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_SeqNodeOfHSequenceOfShortRealMyPrevious() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_SeqNodeOfHSequenceOfShortRealMyPrevious(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetPShort_SeqNodeOfHSequenceOfShortRealMyItem() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_SeqNodeOfHSequenceOfShortRealMyItem(const Standard_ShortReal p);
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_SeqNodeOfHSequenceOfShortRealMyNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_SeqNodeOfHSequenceOfShortRealMyNext(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PShort_SeqNodeOfHSequenceOfShortReal {
-	Handle_PShort_SeqNodeOfHSequenceOfShortReal GetHandle() {
-	return *(Handle_PShort_SeqNodeOfHSequenceOfShortReal*) &$self;
-	}
-};
-%extend PShort_SeqNodeOfHSequenceOfShortReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PShort_SeqNodeOfHSequenceOfShortReal::~PShort_SeqNodeOfHSequenceOfShortReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PShort_SeqNodeOfHSequenceOfShortReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -858,7 +760,7 @@ class PShort_HArray1OfShortReal : public Standard_Persistent {
 };
 %extend PShort_HArray1OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PShort_HArray1OfShortReal::~PShort_HArray1OfShortReal %{
@@ -871,6 +773,104 @@ def __del__(self):
 %}
 
 %extend PShort_HArray1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PShort_SeqExplorerOfHSequenceOfShortReal;
+class PShort_SeqExplorerOfHSequenceOfShortReal {
+	public:
+		%feature("autodoc", "1");
+		PShort_SeqExplorerOfHSequenceOfShortReal(const Handle_PShort_HSequenceOfShortReal &S);
+		%feature("autodoc", "1");
+		Standard_ShortReal Value(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_ShortReal &T);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Standard_ShortReal &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Standard_ShortReal &T);
+
+};
+%feature("shadow") PShort_SeqExplorerOfHSequenceOfShortReal::~PShort_SeqExplorerOfHSequenceOfShortReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PShort_SeqExplorerOfHSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PShort_SeqNodeOfHSequenceOfShortReal;
+class PShort_SeqNodeOfHSequenceOfShortReal : public PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		PShort_SeqNodeOfHSequenceOfShortReal(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &TheLast, const Standard_ShortReal &TheItem);
+		%feature("autodoc", "1");
+		PShort_SeqNodeOfHSequenceOfShortReal(const Standard_ShortReal &TheItem, const Handle_PShort_SeqNodeOfHSequenceOfShortReal &TheFirst);
+		%feature("autodoc", "1");
+		PShort_SeqNodeOfHSequenceOfShortReal(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &ThePrevious, const Handle_PShort_SeqNodeOfHSequenceOfShortReal &TheNext, const Standard_ShortReal &TheItem);
+		%feature("autodoc", "1");
+		Standard_ShortReal Value() const;
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal Next() const;
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal Previous() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_ShortReal &AnItem);
+		%feature("autodoc", "1");
+		void SetNext(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &ANode);
+		%feature("autodoc", "1");
+		void SetPrevious(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &ANode);
+		%feature("autodoc", "1");
+		PShort_SeqNodeOfHSequenceOfShortReal();
+		%feature("autodoc", "1");
+		PShort_SeqNodeOfHSequenceOfShortReal(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_SeqNodeOfHSequenceOfShortRealMyPrevious() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPShort_SeqNodeOfHSequenceOfShortRealMyPrevious(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetPShort_SeqNodeOfHSequenceOfShortRealMyItem() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPShort_SeqNodeOfHSequenceOfShortRealMyItem(const Standard_ShortReal p);
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_SeqNodeOfHSequenceOfShortRealMyNext() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPShort_SeqNodeOfHSequenceOfShortRealMyNext(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PShort_SeqNodeOfHSequenceOfShortReal {
+	Handle_PShort_SeqNodeOfHSequenceOfShortReal GetHandle() {
+	return *(Handle_PShort_SeqNodeOfHSequenceOfShortReal*) &$self;
+	}
+};
+%extend PShort_SeqNodeOfHSequenceOfShortReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PShort_SeqNodeOfHSequenceOfShortReal::~PShort_SeqNodeOfHSequenceOfShortReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PShort_SeqNodeOfHSequenceOfShortReal {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint::DownCast;
+%rename(DownCast) Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment::DownCast;

@@ -134,71 +134,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Hatch_SequenceOfParameter;
-class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Hatch_SequenceOfParameter();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Hatch_SequenceOfParameter & Assign(const Hatch_SequenceOfParameter &Other);
-		%feature("autodoc", "1");
-		const Hatch_SequenceOfParameter & operator=(const Hatch_SequenceOfParameter &Other);
-		%feature("autodoc", "1");
-		void Append(const Hatch_Parameter &T);
-		%feature("autodoc", "1");
-		void Append(Hatch_SequenceOfParameter & S);
-		%feature("autodoc", "1");
-		void Prepend(const Hatch_Parameter &T);
-		%feature("autodoc", "1");
-		void Prepend(Hatch_SequenceOfParameter & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Hatch_Parameter &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Hatch_SequenceOfParameter & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Hatch_Parameter &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Hatch_SequenceOfParameter & S);
-		%feature("autodoc", "1");
-		const Hatch_Parameter & First() const;
-		%feature("autodoc", "1");
-		const Hatch_Parameter & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Hatch_SequenceOfParameter & S);
-		%feature("autodoc", "1");
-		const Hatch_Parameter & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Hatch_Parameter & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Hatch_Parameter &I);
-		%feature("autodoc", "1");
-		Hatch_Parameter & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Hatch_Parameter & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Hatch_SequenceOfParameter::~Hatch_SequenceOfParameter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Hatch_SequenceOfParameter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Hatch_SequenceNodeOfSequenceOfLine;
 class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 	public:
@@ -217,7 +152,7 @@ class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 };
 %extend Hatch_SequenceNodeOfSequenceOfLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Hatch_SequenceNodeOfSequenceOfLine::~Hatch_SequenceNodeOfSequenceOfLine %{
@@ -395,6 +330,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor Hatch_SequenceOfParameter;
+class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Hatch_SequenceOfParameter();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Hatch_SequenceOfParameter & Assign(const Hatch_SequenceOfParameter &Other);
+		%feature("autodoc", "1");
+		const Hatch_SequenceOfParameter & operator=(const Hatch_SequenceOfParameter &Other);
+		%feature("autodoc", "1");
+		void Append(const Hatch_Parameter &T);
+		%feature("autodoc", "1");
+		void Append(Hatch_SequenceOfParameter & S);
+		%feature("autodoc", "1");
+		void Prepend(const Hatch_Parameter &T);
+		%feature("autodoc", "1");
+		void Prepend(Hatch_SequenceOfParameter & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Hatch_Parameter &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Hatch_SequenceOfParameter & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Hatch_Parameter &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Hatch_SequenceOfParameter & S);
+		%feature("autodoc", "1");
+		const Hatch_Parameter & First() const;
+		%feature("autodoc", "1");
+		const Hatch_Parameter & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Hatch_SequenceOfParameter & S);
+		%feature("autodoc", "1");
+		const Hatch_Parameter & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Hatch_Parameter & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Hatch_Parameter &I);
+		%feature("autodoc", "1");
+		Hatch_Parameter & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Hatch_Parameter & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Hatch_SequenceOfParameter::~Hatch_SequenceOfParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Hatch_SequenceOfParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Hatch_Parameter;
 class Hatch_Parameter {
 	public:
@@ -438,7 +438,7 @@ class Hatch_SequenceNodeOfSequenceOfParameter : public TCollection_SeqNode {
 };
 %extend Hatch_SequenceNodeOfSequenceOfParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Hatch_SequenceNodeOfSequenceOfParameter::~Hatch_SequenceNodeOfSequenceOfParameter %{

@@ -208,6 +208,6 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import PTopoDS.i
 %import Standard.i
+%import PTopoDS.i
 %import GeomAbs.i

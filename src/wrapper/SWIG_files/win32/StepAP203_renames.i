@@ -23,3 +23,24 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_StepAP203_Change::DownCast;
+%rename(DownCast) Handle_StepAP203_HArray1OfWorkItem::DownCast;
+%rename(DownCast) Handle_StepAP203_CcDesignPersonAndOrganizationAssignment::DownCast;
+%rename(DownCast) Handle_StepAP203_CcDesignSpecificationReference::DownCast;
+%rename(DownCast) Handle_StepAP203_StartRequest::DownCast;
+%rename(DownCast) Handle_StepAP203_HArray1OfPersonOrganizationItem::DownCast;
+%rename(DownCast) Handle_StepAP203_CcDesignDateAndTimeAssignment::DownCast;
+%rename(DownCast) Handle_StepAP203_CcDesignApproval::DownCast;
+%rename(DownCast) Handle_StepAP203_HArray1OfChangeRequestItem::DownCast;
+%rename(DownCast) Handle_StepAP203_StartWork::DownCast;
+%rename(DownCast) Handle_StepAP203_HArray1OfStartRequestItem::DownCast;
+%rename(DownCast) Handle_StepAP203_CcDesignSecurityClassification::DownCast;
+%rename(DownCast) Handle_StepAP203_HArray1OfApprovedItem::DownCast;
+%rename(DownCast) Handle_StepAP203_HArray1OfSpecifiedItem::DownCast;
+%rename(DownCast) Handle_StepAP203_CcDesignContract::DownCast;
+%rename(DownCast) Handle_StepAP203_HArray1OfDateTimeItem::DownCast;
+%rename(DownCast) Handle_StepAP203_CcDesignCertification::DownCast;
+%rename(DownCast) Handle_StepAP203_HArray1OfContractedItem::DownCast;
+%rename(DownCast) Handle_StepAP203_HArray1OfClassifiedItem::DownCast;
+%rename(DownCast) Handle_StepAP203_HArray1OfCertifiedItem::DownCast;
+%rename(DownCast) Handle_StepAP203_ChangeRequest::DownCast;

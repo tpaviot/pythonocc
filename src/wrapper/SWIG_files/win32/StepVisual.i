@@ -156,44 +156,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepVisual_CompositeText;
-class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_CompositeText();
-		%feature("autodoc", "1");
-		Handle_StepVisual_CompositeText(const Handle_StepVisual_CompositeText &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CompositeText(const StepVisual_CompositeText *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CompositeText & operator=(const Handle_StepVisual_CompositeText &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CompositeText & operator=(const StepVisual_CompositeText *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_CompositeText DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_CompositeText {
-	StepVisual_CompositeText* GetObject() {
-	return (StepVisual_CompositeText*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_CompositeText::~Handle_StepVisual_CompositeText %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_CompositeText {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepVisual_Invisibility;
 class Handle_StepVisual_Invisibility : public Handle_MMgt_TShared {
 	public:
@@ -226,44 +188,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_Invisibility {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_CameraModel;
-class Handle_StepVisual_CameraModel : public Handle_StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_CameraModel();
-		%feature("autodoc", "1");
-		Handle_StepVisual_CameraModel(const Handle_StepVisual_CameraModel &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CameraModel(const StepVisual_CameraModel *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CameraModel & operator=(const Handle_StepVisual_CameraModel &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CameraModel & operator=(const StepVisual_CameraModel *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_CameraModel DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_CameraModel {
-	StepVisual_CameraModel* GetObject() {
-	return (StepVisual_CameraModel*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_CameraModel::~Handle_StepVisual_CameraModel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_CameraModel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -416,44 +340,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_PreDefinedColour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_CameraUsage;
-class Handle_StepVisual_CameraUsage : public Handle_StepRepr_RepresentationMap {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_CameraUsage();
-		%feature("autodoc", "1");
-		Handle_StepVisual_CameraUsage(const Handle_StepVisual_CameraUsage &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CameraUsage(const StepVisual_CameraUsage *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CameraUsage & operator=(const Handle_StepVisual_CameraUsage &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CameraUsage & operator=(const StepVisual_CameraUsage *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_CameraUsage DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_CameraUsage {
-	StepVisual_CameraUsage* GetObject() {
-	return (StepVisual_CameraUsage*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_CameraUsage::~Handle_StepVisual_CameraUsage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_CameraUsage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -840,29 +726,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepVisual_HArray1OfTextOrCharacter;
-class Handle_StepVisual_HArray1OfTextOrCharacter : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepVisual_PresentationLayerAssignment;
+class Handle_StepVisual_PresentationLayerAssignment : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfTextOrCharacter();
+		Handle_StepVisual_PresentationLayerAssignment();
 		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfTextOrCharacter(const Handle_StepVisual_HArray1OfTextOrCharacter &aHandle);
+		Handle_StepVisual_PresentationLayerAssignment(const Handle_StepVisual_PresentationLayerAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfTextOrCharacter(const StepVisual_HArray1OfTextOrCharacter *anItem);
+		Handle_StepVisual_PresentationLayerAssignment(const StepVisual_PresentationLayerAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfTextOrCharacter & operator=(const Handle_StepVisual_HArray1OfTextOrCharacter &aHandle);
+		Handle_StepVisual_PresentationLayerAssignment & operator=(const Handle_StepVisual_PresentationLayerAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfTextOrCharacter & operator=(const StepVisual_HArray1OfTextOrCharacter *anItem);
+		Handle_StepVisual_PresentationLayerAssignment & operator=(const StepVisual_PresentationLayerAssignment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepVisual_HArray1OfTextOrCharacter DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepVisual_PresentationLayerAssignment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_HArray1OfTextOrCharacter {
-	StepVisual_HArray1OfTextOrCharacter* GetObject() {
-	return (StepVisual_HArray1OfTextOrCharacter*)$self->Access();
+%extend Handle_StepVisual_PresentationLayerAssignment {
+	StepVisual_PresentationLayerAssignment* GetObject() {
+	return (StepVisual_PresentationLayerAssignment*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepVisual_HArray1OfTextOrCharacter::~Handle_StepVisual_HArray1OfTextOrCharacter %{
+%feature("shadow") Handle_StepVisual_PresentationLayerAssignment::~Handle_StepVisual_PresentationLayerAssignment %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -871,36 +757,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepVisual_HArray1OfTextOrCharacter {
+%extend Handle_StepVisual_PresentationLayerAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepVisual_CameraModelD2;
-class Handle_StepVisual_CameraModelD2 : public Handle_StepVisual_CameraModel {
+%nodefaultctor Handle_StepVisual_CameraModel;
+class Handle_StepVisual_CameraModel : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_CameraModelD2();
+		Handle_StepVisual_CameraModel();
 		%feature("autodoc", "1");
-		Handle_StepVisual_CameraModelD2(const Handle_StepVisual_CameraModelD2 &aHandle);
+		Handle_StepVisual_CameraModel(const Handle_StepVisual_CameraModel &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_CameraModelD2(const StepVisual_CameraModelD2 *anItem);
+		Handle_StepVisual_CameraModel(const StepVisual_CameraModel *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_CameraModelD2 & operator=(const Handle_StepVisual_CameraModelD2 &aHandle);
+		Handle_StepVisual_CameraModel & operator=(const Handle_StepVisual_CameraModel &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_CameraModelD2 & operator=(const StepVisual_CameraModelD2 *anItem);
+		Handle_StepVisual_CameraModel & operator=(const StepVisual_CameraModel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepVisual_CameraModelD2 DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepVisual_CameraModel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_CameraModelD2 {
-	StepVisual_CameraModelD2* GetObject() {
-	return (StepVisual_CameraModelD2*)$self->Access();
+%extend Handle_StepVisual_CameraModel {
+	StepVisual_CameraModel* GetObject() {
+	return (StepVisual_CameraModel*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepVisual_CameraModelD2::~Handle_StepVisual_CameraModelD2 %{
+%feature("shadow") Handle_StepVisual_CameraModel::~Handle_StepVisual_CameraModel %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -909,7 +795,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepVisual_CameraModelD2 {
+%extend Handle_StepVisual_CameraModel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -948,6 +834,158 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_CameraModelD3 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_HArray1OfTextOrCharacter;
+class Handle_StepVisual_HArray1OfTextOrCharacter : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfTextOrCharacter();
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfTextOrCharacter(const Handle_StepVisual_HArray1OfTextOrCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfTextOrCharacter(const StepVisual_HArray1OfTextOrCharacter *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfTextOrCharacter & operator=(const Handle_StepVisual_HArray1OfTextOrCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfTextOrCharacter & operator=(const StepVisual_HArray1OfTextOrCharacter *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_HArray1OfTextOrCharacter DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_HArray1OfTextOrCharacter {
+	StepVisual_HArray1OfTextOrCharacter* GetObject() {
+	return (StepVisual_HArray1OfTextOrCharacter*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_HArray1OfTextOrCharacter::~Handle_StepVisual_HArray1OfTextOrCharacter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_HArray1OfTextOrCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_ColourSpecification;
+class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourSpecification();
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourSpecification(const Handle_StepVisual_ColourSpecification &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourSpecification(const StepVisual_ColourSpecification *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourSpecification & operator=(const Handle_StepVisual_ColourSpecification &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourSpecification & operator=(const StepVisual_ColourSpecification *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_ColourSpecification DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_ColourSpecification {
+	StepVisual_ColourSpecification* GetObject() {
+	return (StepVisual_ColourSpecification*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_ColourSpecification::~Handle_StepVisual_ColourSpecification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_ColourSpecification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_TextStyleForDefinedFont;
+class Handle_StepVisual_TextStyleForDefinedFont : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleForDefinedFont();
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleForDefinedFont(const Handle_StepVisual_TextStyleForDefinedFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleForDefinedFont(const StepVisual_TextStyleForDefinedFont *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleForDefinedFont & operator=(const Handle_StepVisual_TextStyleForDefinedFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleForDefinedFont & operator=(const StepVisual_TextStyleForDefinedFont *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_TextStyleForDefinedFont DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_TextStyleForDefinedFont {
+	StepVisual_TextStyleForDefinedFont* GetObject() {
+	return (StepVisual_TextStyleForDefinedFont*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_TextStyleForDefinedFont::~Handle_StepVisual_TextStyleForDefinedFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_TextStyleForDefinedFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_CameraModelD2;
+class Handle_StepVisual_CameraModelD2 : public Handle_StepVisual_CameraModel {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModelD2();
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModelD2(const Handle_StepVisual_CameraModelD2 &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModelD2(const StepVisual_CameraModelD2 *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModelD2 & operator=(const Handle_StepVisual_CameraModelD2 &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModelD2 & operator=(const StepVisual_CameraModelD2 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_CameraModelD2 DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_CameraModelD2 {
+	StepVisual_CameraModelD2* GetObject() {
+	return (StepVisual_CameraModelD2*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_CameraModelD2::~Handle_StepVisual_CameraModelD2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_CameraModelD2 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1144,44 +1182,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepVisual_PresentationLayerAssignment;
-class Handle_StepVisual_PresentationLayerAssignment : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerAssignment();
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerAssignment(const Handle_StepVisual_PresentationLayerAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerAssignment(const StepVisual_PresentationLayerAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerAssignment & operator=(const Handle_StepVisual_PresentationLayerAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerAssignment & operator=(const StepVisual_PresentationLayerAssignment *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_PresentationLayerAssignment DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_PresentationLayerAssignment {
-	StepVisual_PresentationLayerAssignment* GetObject() {
-	return (StepVisual_PresentationLayerAssignment*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_PresentationLayerAssignment::~Handle_StepVisual_PresentationLayerAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_PresentationLayerAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepVisual_PresentationArea;
 class Handle_StepVisual_PresentationArea : public Handle_StepVisual_PresentationRepresentation {
 	public:
@@ -1252,82 +1252,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_MechanicalDesignGeometricPresentationArea {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_PresentationStyleAssignment;
-class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment();
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment(const StepVisual_PresentationStyleAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment & operator=(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment & operator=(const StepVisual_PresentationStyleAssignment *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_PresentationStyleAssignment DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_PresentationStyleAssignment {
-	StepVisual_PresentationStyleAssignment* GetObject() {
-	return (StepVisual_PresentationStyleAssignment*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_PresentationStyleAssignment::~Handle_StepVisual_PresentationStyleAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_PresentationStyleAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_PresentationStyleByContext;
-class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_PresentationStyleAssignment {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleByContext();
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleByContext(const Handle_StepVisual_PresentationStyleByContext &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleByContext(const StepVisual_PresentationStyleByContext *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleByContext & operator=(const Handle_StepVisual_PresentationStyleByContext &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleByContext & operator=(const StepVisual_PresentationStyleByContext *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_PresentationStyleByContext DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_PresentationStyleByContext {
-	StepVisual_PresentationStyleByContext* GetObject() {
-	return (StepVisual_PresentationStyleByContext*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_PresentationStyleByContext::~Handle_StepVisual_PresentationStyleByContext %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_PresentationStyleByContext {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1448,6 +1372,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepVisual_SurfaceStyleControlGrid;
+class Handle_StepVisual_SurfaceStyleControlGrid : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleControlGrid();
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleControlGrid(const Handle_StepVisual_SurfaceStyleControlGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleControlGrid(const StepVisual_SurfaceStyleControlGrid *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleControlGrid & operator=(const Handle_StepVisual_SurfaceStyleControlGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleControlGrid & operator=(const StepVisual_SurfaceStyleControlGrid *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_SurfaceStyleControlGrid DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_SurfaceStyleControlGrid {
+	StepVisual_SurfaceStyleControlGrid* GetObject() {
+	return (StepVisual_SurfaceStyleControlGrid*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_SurfaceStyleControlGrid::~Handle_StepVisual_SurfaceStyleControlGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_SurfaceStyleControlGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepVisual_SurfaceSideStyle;
 class Handle_StepVisual_SurfaceSideStyle : public Handle_MMgt_TShared {
 	public:
@@ -1480,6 +1442,82 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_SurfaceSideStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_CurveStyleFont;
+class Handle_StepVisual_CurveStyleFont : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyleFont();
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyleFont(const Handle_StepVisual_CurveStyleFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyleFont(const StepVisual_CurveStyleFont *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyleFont & operator=(const Handle_StepVisual_CurveStyleFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyleFont & operator=(const StepVisual_CurveStyleFont *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_CurveStyleFont DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_CurveStyleFont {
+	StepVisual_CurveStyleFont* GetObject() {
+	return (StepVisual_CurveStyleFont*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_CurveStyleFont::~Handle_StepVisual_CurveStyleFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_CurveStyleFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_CompositeText;
+class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_CompositeText();
+		%feature("autodoc", "1");
+		Handle_StepVisual_CompositeText(const Handle_StepVisual_CompositeText &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CompositeText(const StepVisual_CompositeText *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CompositeText & operator=(const Handle_StepVisual_CompositeText &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CompositeText & operator=(const StepVisual_CompositeText *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_CompositeText DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_CompositeText {
+	StepVisual_CompositeText* GetObject() {
+	return (StepVisual_CompositeText*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_CompositeText::~Handle_StepVisual_CompositeText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_CompositeText {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1594,44 +1632,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_FillAreaStyle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_ColourSpecification;
-class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourSpecification();
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourSpecification(const Handle_StepVisual_ColourSpecification &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourSpecification(const StepVisual_ColourSpecification *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourSpecification & operator=(const Handle_StepVisual_ColourSpecification &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourSpecification & operator=(const StepVisual_ColourSpecification *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_ColourSpecification DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_ColourSpecification {
-	StepVisual_ColourSpecification* GetObject() {
-	return (StepVisual_ColourSpecification*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_ColourSpecification::~Handle_StepVisual_ColourSpecification %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_ColourSpecification {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2056,29 +2056,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepVisual_TextStyleForDefinedFont;
-class Handle_StepVisual_TextStyleForDefinedFont : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepVisual_CameraImage3dWithScale;
+class Handle_StepVisual_CameraImage3dWithScale : public Handle_StepVisual_CameraImage {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_TextStyleForDefinedFont();
+		Handle_StepVisual_CameraImage3dWithScale();
 		%feature("autodoc", "1");
-		Handle_StepVisual_TextStyleForDefinedFont(const Handle_StepVisual_TextStyleForDefinedFont &aHandle);
+		Handle_StepVisual_CameraImage3dWithScale(const Handle_StepVisual_CameraImage3dWithScale &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_TextStyleForDefinedFont(const StepVisual_TextStyleForDefinedFont *anItem);
+		Handle_StepVisual_CameraImage3dWithScale(const StepVisual_CameraImage3dWithScale *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_TextStyleForDefinedFont & operator=(const Handle_StepVisual_TextStyleForDefinedFont &aHandle);
+		Handle_StepVisual_CameraImage3dWithScale & operator=(const Handle_StepVisual_CameraImage3dWithScale &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_TextStyleForDefinedFont & operator=(const StepVisual_TextStyleForDefinedFont *anItem);
+		Handle_StepVisual_CameraImage3dWithScale & operator=(const StepVisual_CameraImage3dWithScale *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepVisual_TextStyleForDefinedFont DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepVisual_CameraImage3dWithScale DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_TextStyleForDefinedFont {
-	StepVisual_TextStyleForDefinedFont* GetObject() {
-	return (StepVisual_TextStyleForDefinedFont*)$self->Access();
+%extend Handle_StepVisual_CameraImage3dWithScale {
+	StepVisual_CameraImage3dWithScale* GetObject() {
+	return (StepVisual_CameraImage3dWithScale*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepVisual_TextStyleForDefinedFont::~Handle_StepVisual_TextStyleForDefinedFont %{
+%feature("shadow") Handle_StepVisual_CameraImage3dWithScale::~Handle_StepVisual_CameraImage3dWithScale %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2087,7 +2087,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepVisual_TextStyleForDefinedFont {
+%extend Handle_StepVisual_CameraImage3dWithScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_BackgroundColour;
+class Handle_StepVisual_BackgroundColour : public Handle_StepVisual_Colour {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_BackgroundColour();
+		%feature("autodoc", "1");
+		Handle_StepVisual_BackgroundColour(const Handle_StepVisual_BackgroundColour &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_BackgroundColour(const StepVisual_BackgroundColour *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_BackgroundColour & operator=(const Handle_StepVisual_BackgroundColour &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_BackgroundColour & operator=(const StepVisual_BackgroundColour *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_BackgroundColour DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_BackgroundColour {
+	StepVisual_BackgroundColour* GetObject() {
+	return (StepVisual_BackgroundColour*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_BackgroundColour::~Handle_StepVisual_BackgroundColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_BackgroundColour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2202,44 +2240,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_HArray1OfBoxCharacteristicSelect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_PreDefinedTextFont;
-class Handle_StepVisual_PreDefinedTextFont : public Handle_StepVisual_PreDefinedItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_PreDefinedTextFont();
-		%feature("autodoc", "1");
-		Handle_StepVisual_PreDefinedTextFont(const Handle_StepVisual_PreDefinedTextFont &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PreDefinedTextFont(const StepVisual_PreDefinedTextFont *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PreDefinedTextFont & operator=(const Handle_StepVisual_PreDefinedTextFont &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PreDefinedTextFont & operator=(const StepVisual_PreDefinedTextFont *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_PreDefinedTextFont DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_PreDefinedTextFont {
-	StepVisual_PreDefinedTextFont* GetObject() {
-	return (StepVisual_PreDefinedTextFont*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_PreDefinedTextFont::~Handle_StepVisual_PreDefinedTextFont %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_PreDefinedTextFont {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2474,44 +2474,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleSelect;
-class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleSelect();
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleSelect(const Handle_StepVisual_HArray1OfPresentationStyleSelect &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleSelect(const StepVisual_HArray1OfPresentationStyleSelect *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleSelect & operator=(const Handle_StepVisual_HArray1OfPresentationStyleSelect &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleSelect & operator=(const StepVisual_HArray1OfPresentationStyleSelect *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_HArray1OfPresentationStyleSelect DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
-	StepVisual_HArray1OfPresentationStyleSelect* GetObject() {
-	return (StepVisual_HArray1OfPresentationStyleSelect*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_HArray1OfPresentationStyleSelect::~Handle_StepVisual_HArray1OfPresentationStyleSelect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepVisual_AnnotationTextOccurrence;
 class Handle_StepVisual_AnnotationTextOccurrence : public Handle_StepVisual_AnnotationOccurrence {
 	public:
@@ -2626,6 +2588,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepVisual_PresentationStyleAssignment;
+class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment();
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment(const StepVisual_PresentationStyleAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment & operator=(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment & operator=(const StepVisual_PresentationStyleAssignment *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_PresentationStyleAssignment DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_PresentationStyleAssignment {
+	StepVisual_PresentationStyleAssignment* GetObject() {
+	return (StepVisual_PresentationStyleAssignment*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_PresentationStyleAssignment::~Handle_StepVisual_PresentationStyleAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_PresentationStyleAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepVisual_CompositeTextWithExtent;
 class Handle_StepVisual_CompositeTextWithExtent : public Handle_StepVisual_CompositeText {
 	public:
@@ -2658,6 +2658,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_CompositeTextWithExtent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_HArray1OfStyleContextSelect;
+class Handle_StepVisual_HArray1OfStyleContextSelect : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfStyleContextSelect();
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfStyleContextSelect(const Handle_StepVisual_HArray1OfStyleContextSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfStyleContextSelect(const StepVisual_HArray1OfStyleContextSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfStyleContextSelect & operator=(const Handle_StepVisual_HArray1OfStyleContextSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfStyleContextSelect & operator=(const StepVisual_HArray1OfStyleContextSelect *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_HArray1OfStyleContextSelect DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_HArray1OfStyleContextSelect {
+	StepVisual_HArray1OfStyleContextSelect* GetObject() {
+	return (StepVisual_HArray1OfStyleContextSelect*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_HArray1OfStyleContextSelect::~Handle_StepVisual_HArray1OfStyleContextSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_HArray1OfStyleContextSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2734,120 +2772,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_SurfaceStyleBoundary {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_HArray1OfLayeredItem;
-class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfLayeredItem();
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfLayeredItem(const Handle_StepVisual_HArray1OfLayeredItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfLayeredItem(const StepVisual_HArray1OfLayeredItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfLayeredItem & operator=(const Handle_StepVisual_HArray1OfLayeredItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfLayeredItem & operator=(const StepVisual_HArray1OfLayeredItem *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_HArray1OfLayeredItem DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_HArray1OfLayeredItem {
-	StepVisual_HArray1OfLayeredItem* GetObject() {
-	return (StepVisual_HArray1OfLayeredItem*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_HArray1OfLayeredItem::~Handle_StepVisual_HArray1OfLayeredItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_HArray1OfLayeredItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_PresentationLayerUsage;
-class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerUsage();
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerUsage(const Handle_StepVisual_PresentationLayerUsage &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerUsage(const StepVisual_PresentationLayerUsage *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerUsage & operator=(const Handle_StepVisual_PresentationLayerUsage &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationLayerUsage & operator=(const StepVisual_PresentationLayerUsage *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_PresentationLayerUsage DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_PresentationLayerUsage {
-	StepVisual_PresentationLayerUsage* GetObject() {
-	return (StepVisual_PresentationLayerUsage*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_PresentationLayerUsage::~Handle_StepVisual_PresentationLayerUsage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_PresentationLayerUsage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_HArray1OfStyleContextSelect;
-class Handle_StepVisual_HArray1OfStyleContextSelect : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfStyleContextSelect();
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfStyleContextSelect(const Handle_StepVisual_HArray1OfStyleContextSelect &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfStyleContextSelect(const StepVisual_HArray1OfStyleContextSelect *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfStyleContextSelect & operator=(const Handle_StepVisual_HArray1OfStyleContextSelect &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfStyleContextSelect & operator=(const StepVisual_HArray1OfStyleContextSelect *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_HArray1OfStyleContextSelect DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_HArray1OfStyleContextSelect {
-	StepVisual_HArray1OfStyleContextSelect* GetObject() {
-	return (StepVisual_HArray1OfStyleContextSelect*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_HArray1OfStyleContextSelect::~Handle_StepVisual_HArray1OfStyleContextSelect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_HArray1OfStyleContextSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2968,29 +2892,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepVisual_BackgroundColour;
-class Handle_StepVisual_BackgroundColour : public Handle_StepVisual_Colour {
+%nodefaultctor Handle_StepVisual_HArray1OfLayeredItem;
+class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_BackgroundColour();
+		Handle_StepVisual_HArray1OfLayeredItem();
 		%feature("autodoc", "1");
-		Handle_StepVisual_BackgroundColour(const Handle_StepVisual_BackgroundColour &aHandle);
+		Handle_StepVisual_HArray1OfLayeredItem(const Handle_StepVisual_HArray1OfLayeredItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_BackgroundColour(const StepVisual_BackgroundColour *anItem);
+		Handle_StepVisual_HArray1OfLayeredItem(const StepVisual_HArray1OfLayeredItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_BackgroundColour & operator=(const Handle_StepVisual_BackgroundColour &aHandle);
+		Handle_StepVisual_HArray1OfLayeredItem & operator=(const Handle_StepVisual_HArray1OfLayeredItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_BackgroundColour & operator=(const StepVisual_BackgroundColour *anItem);
+		Handle_StepVisual_HArray1OfLayeredItem & operator=(const StepVisual_HArray1OfLayeredItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepVisual_BackgroundColour DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepVisual_HArray1OfLayeredItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_BackgroundColour {
-	StepVisual_BackgroundColour* GetObject() {
-	return (StepVisual_BackgroundColour*)$self->Access();
+%extend Handle_StepVisual_HArray1OfLayeredItem {
+	StepVisual_HArray1OfLayeredItem* GetObject() {
+	return (StepVisual_HArray1OfLayeredItem*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepVisual_BackgroundColour::~Handle_StepVisual_BackgroundColour %{
+%feature("shadow") Handle_StepVisual_HArray1OfLayeredItem::~Handle_StepVisual_HArray1OfLayeredItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2999,36 +2923,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepVisual_BackgroundColour {
+%extend Handle_StepVisual_HArray1OfLayeredItem {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepVisual_CameraImage3dWithScale;
-class Handle_StepVisual_CameraImage3dWithScale : public Handle_StepVisual_CameraImage {
+%nodefaultctor Handle_StepVisual_PreDefinedTextFont;
+class Handle_StepVisual_PreDefinedTextFont : public Handle_StepVisual_PreDefinedItem {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_CameraImage3dWithScale();
+		Handle_StepVisual_PreDefinedTextFont();
 		%feature("autodoc", "1");
-		Handle_StepVisual_CameraImage3dWithScale(const Handle_StepVisual_CameraImage3dWithScale &aHandle);
+		Handle_StepVisual_PreDefinedTextFont(const Handle_StepVisual_PreDefinedTextFont &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_CameraImage3dWithScale(const StepVisual_CameraImage3dWithScale *anItem);
+		Handle_StepVisual_PreDefinedTextFont(const StepVisual_PreDefinedTextFont *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_CameraImage3dWithScale & operator=(const Handle_StepVisual_CameraImage3dWithScale &aHandle);
+		Handle_StepVisual_PreDefinedTextFont & operator=(const Handle_StepVisual_PreDefinedTextFont &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_CameraImage3dWithScale & operator=(const StepVisual_CameraImage3dWithScale *anItem);
+		Handle_StepVisual_PreDefinedTextFont & operator=(const StepVisual_PreDefinedTextFont *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepVisual_CameraImage3dWithScale DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepVisual_PreDefinedTextFont DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_CameraImage3dWithScale {
-	StepVisual_CameraImage3dWithScale* GetObject() {
-	return (StepVisual_CameraImage3dWithScale*)$self->Access();
+%extend Handle_StepVisual_PreDefinedTextFont {
+	StepVisual_PreDefinedTextFont* GetObject() {
+	return (StepVisual_PreDefinedTextFont*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepVisual_CameraImage3dWithScale::~Handle_StepVisual_CameraImage3dWithScale %{
+%feature("shadow") Handle_StepVisual_PreDefinedTextFont::~Handle_StepVisual_PreDefinedTextFont %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3037,36 +2961,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepVisual_CameraImage3dWithScale {
+%extend Handle_StepVisual_PreDefinedTextFont {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepVisual_CurveStyleFont;
-class Handle_StepVisual_CurveStyleFont : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepVisual_CameraUsage;
+class Handle_StepVisual_CameraUsage : public Handle_StepRepr_RepresentationMap {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyleFont();
+		Handle_StepVisual_CameraUsage();
 		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyleFont(const Handle_StepVisual_CurveStyleFont &aHandle);
+		Handle_StepVisual_CameraUsage(const Handle_StepVisual_CameraUsage &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyleFont(const StepVisual_CurveStyleFont *anItem);
+		Handle_StepVisual_CameraUsage(const StepVisual_CameraUsage *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyleFont & operator=(const Handle_StepVisual_CurveStyleFont &aHandle);
+		Handle_StepVisual_CameraUsage & operator=(const Handle_StepVisual_CameraUsage &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyleFont & operator=(const StepVisual_CurveStyleFont *anItem);
+		Handle_StepVisual_CameraUsage & operator=(const StepVisual_CameraUsage *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepVisual_CurveStyleFont DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepVisual_CameraUsage DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_CurveStyleFont {
-	StepVisual_CurveStyleFont* GetObject() {
-	return (StepVisual_CurveStyleFont*)$self->Access();
+%extend Handle_StepVisual_CameraUsage {
+	StepVisual_CameraUsage* GetObject() {
+	return (StepVisual_CameraUsage*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepVisual_CurveStyleFont::~Handle_StepVisual_CurveStyleFont %{
+%feature("shadow") Handle_StepVisual_CameraUsage::~Handle_StepVisual_CameraUsage %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3075,36 +2999,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepVisual_CurveStyleFont {
+%extend Handle_StepVisual_CameraUsage {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepVisual_SurfaceStyleControlGrid;
-class Handle_StepVisual_SurfaceStyleControlGrid : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepVisual_PresentationStyleByContext;
+class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_PresentationStyleAssignment {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_SurfaceStyleControlGrid();
+		Handle_StepVisual_PresentationStyleByContext();
 		%feature("autodoc", "1");
-		Handle_StepVisual_SurfaceStyleControlGrid(const Handle_StepVisual_SurfaceStyleControlGrid &aHandle);
+		Handle_StepVisual_PresentationStyleByContext(const Handle_StepVisual_PresentationStyleByContext &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_SurfaceStyleControlGrid(const StepVisual_SurfaceStyleControlGrid *anItem);
+		Handle_StepVisual_PresentationStyleByContext(const StepVisual_PresentationStyleByContext *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_SurfaceStyleControlGrid & operator=(const Handle_StepVisual_SurfaceStyleControlGrid &aHandle);
+		Handle_StepVisual_PresentationStyleByContext & operator=(const Handle_StepVisual_PresentationStyleByContext &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_SurfaceStyleControlGrid & operator=(const StepVisual_SurfaceStyleControlGrid *anItem);
+		Handle_StepVisual_PresentationStyleByContext & operator=(const StepVisual_PresentationStyleByContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepVisual_SurfaceStyleControlGrid DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepVisual_PresentationStyleByContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_SurfaceStyleControlGrid {
-	StepVisual_SurfaceStyleControlGrid* GetObject() {
-	return (StepVisual_SurfaceStyleControlGrid*)$self->Access();
+%extend Handle_StepVisual_PresentationStyleByContext {
+	StepVisual_PresentationStyleByContext* GetObject() {
+	return (StepVisual_PresentationStyleByContext*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepVisual_SurfaceStyleControlGrid::~Handle_StepVisual_SurfaceStyleControlGrid %{
+%feature("shadow") Handle_StepVisual_PresentationStyleByContext::~Handle_StepVisual_PresentationStyleByContext %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3113,7 +3037,83 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepVisual_SurfaceStyleControlGrid {
+%extend Handle_StepVisual_PresentationStyleByContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_PresentationLayerUsage;
+class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationLayerUsage();
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationLayerUsage(const Handle_StepVisual_PresentationLayerUsage &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationLayerUsage(const StepVisual_PresentationLayerUsage *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationLayerUsage & operator=(const Handle_StepVisual_PresentationLayerUsage &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationLayerUsage & operator=(const StepVisual_PresentationLayerUsage *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_PresentationLayerUsage DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_PresentationLayerUsage {
+	StepVisual_PresentationLayerUsage* GetObject() {
+	return (StepVisual_PresentationLayerUsage*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_PresentationLayerUsage::~Handle_StepVisual_PresentationLayerUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_PresentationLayerUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleSelect;
+class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfPresentationStyleSelect();
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfPresentationStyleSelect(const Handle_StepVisual_HArray1OfPresentationStyleSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfPresentationStyleSelect(const StepVisual_HArray1OfPresentationStyleSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfPresentationStyleSelect & operator=(const Handle_StepVisual_HArray1OfPresentationStyleSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfPresentationStyleSelect & operator=(const StepVisual_HArray1OfPresentationStyleSelect *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_HArray1OfPresentationStyleSelect DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
+	StepVisual_HArray1OfPresentationStyleSelect* GetObject() {
+	return (StepVisual_HArray1OfPresentationStyleSelect*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_HArray1OfPresentationStyleSelect::~Handle_StepVisual_HArray1OfPresentationStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3146,7 +3146,7 @@ class StepVisual_CurveStyleFontPattern : public MMgt_TShared {
 };
 %extend StepVisual_CurveStyleFontPattern {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CurveStyleFontPattern::~StepVisual_CurveStyleFontPattern %{
@@ -3191,7 +3191,7 @@ class StepVisual_Invisibility : public MMgt_TShared {
 };
 %extend StepVisual_Invisibility {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_Invisibility::~StepVisual_Invisibility %{
@@ -3230,7 +3230,7 @@ class StepVisual_ContextDependentInvisibility : public StepVisual_Invisibility {
 };
 %extend StepVisual_ContextDependentInvisibility {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ContextDependentInvisibility::~StepVisual_ContextDependentInvisibility %{
@@ -3243,6 +3243,41 @@ def __del__(self):
 %}
 
 %extend StepVisual_ContextDependentInvisibility {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_CameraUsage;
+class StepVisual_CameraUsage : public StepRepr_RepresentationMap {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_CameraUsage();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_CameraUsage {
+	Handle_StepVisual_CameraUsage GetHandle() {
+	return *(Handle_StepVisual_CameraUsage*) &$self;
+	}
+};
+%extend StepVisual_CameraUsage {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_CameraUsage::~StepVisual_CameraUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_CameraUsage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3280,26 +3315,42 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepVisual_CameraUsage;
-class StepVisual_CameraUsage : public StepRepr_RepresentationMap {
+%nodefaultctor StepVisual_Array1OfBoxCharacteristicSelect;
+class StepVisual_Array1OfBoxCharacteristicSelect {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_CameraUsage();
+		StepVisual_Array1OfBoxCharacteristicSelect(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		StepVisual_Array1OfBoxCharacteristicSelect(const StepVisual_BoxCharacteristicSelect &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepVisual_BoxCharacteristicSelect &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfBoxCharacteristicSelect & Assign(const StepVisual_Array1OfBoxCharacteristicSelect &Other);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfBoxCharacteristicSelect & operator=(const StepVisual_Array1OfBoxCharacteristicSelect &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepVisual_BoxCharacteristicSelect &Value);
+		%feature("autodoc", "1");
+		const StepVisual_BoxCharacteristicSelect & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepVisual_BoxCharacteristicSelect & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepVisual_BoxCharacteristicSelect & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepVisual_BoxCharacteristicSelect & operator()(const Standard_Integer Index);
 
 };
-%extend StepVisual_CameraUsage {
-	Handle_StepVisual_CameraUsage GetHandle() {
-	return *(Handle_StepVisual_CameraUsage*) &$self;
-	}
-};
-%extend StepVisual_CameraUsage {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_CameraUsage::~StepVisual_CameraUsage %{
+%feature("shadow") StepVisual_Array1OfBoxCharacteristicSelect::~StepVisual_Array1OfBoxCharacteristicSelect %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3308,7 +3359,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepVisual_CameraUsage {
+%extend StepVisual_Array1OfBoxCharacteristicSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3351,7 +3402,7 @@ class StepVisual_HArray1OfDirectionCountSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfDirectionCountSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfDirectionCountSelect::~StepVisual_HArray1OfDirectionCountSelect %{
@@ -3508,7 +3559,7 @@ class StepVisual_HArray1OfCurveStyleFontPattern : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfCurveStyleFontPattern {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfCurveStyleFontPattern::~StepVisual_HArray1OfCurveStyleFontPattern %{
@@ -3553,7 +3604,7 @@ class StepVisual_PresentedItemRepresentation : public MMgt_TShared {
 };
 %extend StepVisual_PresentedItemRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentedItemRepresentation::~StepVisual_PresentedItemRepresentation %{
@@ -3566,6 +3617,148 @@ def __del__(self):
 %}
 
 %extend StepVisual_PresentedItemRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_SurfaceStyleFillArea;
+class StepVisual_SurfaceStyleFillArea : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_SurfaceStyleFillArea();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepVisual_FillAreaStyle &aFillArea);
+		%feature("autodoc", "1");
+		void SetFillArea(const Handle_StepVisual_FillAreaStyle &aFillArea);
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyle FillArea() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_SurfaceStyleFillArea {
+	Handle_StepVisual_SurfaceStyleFillArea GetHandle() {
+	return *(Handle_StepVisual_SurfaceStyleFillArea*) &$self;
+	}
+};
+%extend StepVisual_SurfaceStyleFillArea {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_SurfaceStyleFillArea::~StepVisual_SurfaceStyleFillArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_SurfaceStyleFillArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_PresentationRepresentation;
+class StepVisual_PresentationRepresentation : public StepRepr_Representation {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PresentationRepresentation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_PresentationRepresentation {
+	Handle_StepVisual_PresentationRepresentation GetHandle() {
+	return *(Handle_StepVisual_PresentationRepresentation*) &$self;
+	}
+};
+%extend StepVisual_PresentationRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_PresentationRepresentation::~StepVisual_PresentationRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_PresentationRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_PresentationArea;
+class StepVisual_PresentationArea : public StepVisual_PresentationRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PresentationArea();
+
+};
+%extend StepVisual_PresentationArea {
+	Handle_StepVisual_PresentationArea GetHandle() {
+	return *(Handle_StepVisual_PresentationArea*) &$self;
+	}
+};
+%extend StepVisual_PresentationArea {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_PresentationArea::~StepVisual_PresentationArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_PresentationArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_MechanicalDesignGeometricPresentationArea;
+class StepVisual_MechanicalDesignGeometricPresentationArea : public StepVisual_PresentationArea {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_MechanicalDesignGeometricPresentationArea();
+
+};
+%extend StepVisual_MechanicalDesignGeometricPresentationArea {
+	Handle_StepVisual_MechanicalDesignGeometricPresentationArea GetHandle() {
+	return *(Handle_StepVisual_MechanicalDesignGeometricPresentationArea*) &$self;
+	}
+};
+%extend StepVisual_MechanicalDesignGeometricPresentationArea {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_MechanicalDesignGeometricPresentationArea::~StepVisual_MechanicalDesignGeometricPresentationArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_MechanicalDesignGeometricPresentationArea {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3595,6 +3788,90 @@ def __del__(self):
 %}
 
 %extend StepVisual_PresentationRepresentationSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_StyledItem;
+class StepVisual_StyledItem : public StepRepr_RepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_StyledItem();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aStyles, const Handle_StepRepr_RepresentationItem &aItem);
+		%feature("autodoc", "1");
+		void SetStyles(const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aStyles);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfPresentationStyleAssignment Styles() const;
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment StylesValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbStyles() const;
+		%feature("autodoc", "1");
+		void SetItem(const Handle_StepRepr_RepresentationItem &aItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem Item() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_StyledItem {
+	Handle_StepVisual_StyledItem GetHandle() {
+	return *(Handle_StepVisual_StyledItem*) &$self;
+	}
+};
+%extend StepVisual_StyledItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_StyledItem::~StepVisual_StyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_StyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_AnnotationOccurrence;
+class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_AnnotationOccurrence();
+
+};
+%extend StepVisual_AnnotationOccurrence {
+	Handle_StepVisual_AnnotationOccurrence GetHandle() {
+	return *(Handle_StepVisual_AnnotationOccurrence*) &$self;
+	}
+};
+%extend StepVisual_AnnotationOccurrence {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_AnnotationOccurrence::~StepVisual_AnnotationOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_AnnotationOccurrence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3637,7 +3914,7 @@ class StepVisual_HArray1OfStyleContextSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfStyleContextSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfStyleContextSelect::~StepVisual_HArray1OfStyleContextSelect %{
@@ -3723,7 +4000,7 @@ class StepVisual_HArray1OfPresentationStyleSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfPresentationStyleSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfPresentationStyleSelect::~StepVisual_HArray1OfPresentationStyleSelect %{
@@ -3736,6 +4013,53 @@ def __del__(self):
 %}
 
 %extend StepVisual_HArray1OfPresentationStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_PlanarExtent;
+class StepVisual_PlanarExtent : public StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PlanarExtent();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Real aSizeInX, const Standard_Real aSizeInY);
+		%feature("autodoc", "1");
+		void SetSizeInX(const Standard_Real aSizeInX);
+		%feature("autodoc", "1");
+		Standard_Real SizeInX() const;
+		%feature("autodoc", "1");
+		void SetSizeInY(const Standard_Real aSizeInY);
+		%feature("autodoc", "1");
+		Standard_Real SizeInY() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_PlanarExtent {
+	Handle_StepVisual_PlanarExtent GetHandle() {
+	return *(Handle_StepVisual_PlanarExtent*) &$self;
+	}
+};
+%extend StepVisual_PlanarExtent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_PlanarExtent::~StepVisual_PlanarExtent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_PlanarExtent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3768,7 +4092,7 @@ class StepVisual_PresentationStyleAssignment : public MMgt_TShared {
 };
 %extend StepVisual_PresentationStyleAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationStyleAssignment::~StepVisual_PresentationStyleAssignment %{
@@ -3807,7 +4131,7 @@ class StepVisual_PresentationStyleByContext : public StepVisual_PresentationStyl
 };
 %extend StepVisual_PresentationStyleByContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationStyleByContext::~StepVisual_PresentationStyleByContext %{
@@ -3860,7 +4184,7 @@ class StepVisual_CurveStyle : public MMgt_TShared {
 };
 %extend StepVisual_CurveStyle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CurveStyle::~StepVisual_CurveStyle %{
@@ -3901,7 +4225,7 @@ class StepVisual_SurfaceStyleSilhouette : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleSilhouette {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleSilhouette::~StepVisual_SurfaceStyleSilhouette %{
@@ -3936,7 +4260,7 @@ class StepVisual_Colour : public MMgt_TShared {
 };
 %extend StepVisual_Colour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_Colour::~StepVisual_Colour %{
@@ -3975,7 +4299,7 @@ class StepVisual_BackgroundColour : public StepVisual_Colour {
 };
 %extend StepVisual_BackgroundColour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_BackgroundColour::~StepVisual_BackgroundColour %{
@@ -4016,7 +4340,7 @@ class StepVisual_PreDefinedItem : public MMgt_TShared {
 };
 %extend StepVisual_PreDefinedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PreDefinedItem::~StepVisual_PreDefinedItem %{
@@ -4049,7 +4373,7 @@ class StepVisual_PreDefinedCurveFont : public StepVisual_PreDefinedItem {
 };
 %extend StepVisual_PreDefinedCurveFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PreDefinedCurveFont::~StepVisual_PreDefinedCurveFont %{
@@ -4082,7 +4406,7 @@ class StepVisual_DraughtingPreDefinedCurveFont : public StepVisual_PreDefinedCur
 };
 %extend StepVisual_DraughtingPreDefinedCurveFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_DraughtingPreDefinedCurveFont::~StepVisual_DraughtingPreDefinedCurveFont %{
@@ -4155,7 +4479,7 @@ class StepVisual_ViewVolume : public MMgt_TShared {
 };
 %extend StepVisual_ViewVolume {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ViewVolume::~StepVisual_ViewVolume %{
@@ -4174,30 +4498,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepVisual_PreDefinedColour;
-class StepVisual_PreDefinedColour : public StepVisual_Colour {
+%nodefaultctor StepVisual_SurfaceStyleBoundary;
+class StepVisual_SurfaceStyleBoundary : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_PreDefinedColour();
+		StepVisual_SurfaceStyleBoundary();
 		%feature("autodoc", "1");
-		void SetPreDefinedItem(const Handle_StepVisual_PreDefinedItem &item);
+		virtual		void Init(const Handle_StepVisual_CurveStyle &aStyleOfBoundary);
 		%feature("autodoc", "1");
-		const Handle_StepVisual_PreDefinedItem & GetPreDefinedItem() const;
+		void SetStyleOfBoundary(const Handle_StepVisual_CurveStyle &aStyleOfBoundary);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyle StyleOfBoundary() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepVisual_PreDefinedColour {
-	Handle_StepVisual_PreDefinedColour GetHandle() {
-	return *(Handle_StepVisual_PreDefinedColour*) &$self;
+%extend StepVisual_SurfaceStyleBoundary {
+	Handle_StepVisual_SurfaceStyleBoundary GetHandle() {
+	return *(Handle_StepVisual_SurfaceStyleBoundary*) &$self;
 	}
 };
-%extend StepVisual_PreDefinedColour {
+%extend StepVisual_SurfaceStyleBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepVisual_PreDefinedColour::~StepVisual_PreDefinedColour %{
+%feature("shadow") StepVisual_SurfaceStyleBoundary::~StepVisual_SurfaceStyleBoundary %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4206,105 +4532,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepVisual_PreDefinedColour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_StyledItem;
-class StepVisual_StyledItem : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_StyledItem();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aStyles, const Handle_StepRepr_RepresentationItem &aItem);
-		%feature("autodoc", "1");
-		void SetStyles(const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aStyles);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleAssignment Styles() const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment StylesValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbStyles() const;
-		%feature("autodoc", "1");
-		void SetItem(const Handle_StepRepr_RepresentationItem &aItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem Item() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_StyledItem {
-	Handle_StepVisual_StyledItem GetHandle() {
-	return *(Handle_StepVisual_StyledItem*) &$self;
-	}
-};
-%extend StepVisual_StyledItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_StyledItem::~StepVisual_StyledItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_StyledItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_PlanarExtent;
-class StepVisual_PlanarExtent : public StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PlanarExtent();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Real aSizeInX, const Standard_Real aSizeInY);
-		%feature("autodoc", "1");
-		void SetSizeInX(const Standard_Real aSizeInX);
-		%feature("autodoc", "1");
-		Standard_Real SizeInX() const;
-		%feature("autodoc", "1");
-		void SetSizeInY(const Standard_Real aSizeInY);
-		%feature("autodoc", "1");
-		Standard_Real SizeInY() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_PlanarExtent {
-	Handle_StepVisual_PlanarExtent GetHandle() {
-	return *(Handle_StepVisual_PlanarExtent*) &$self;
-	}
-};
-%extend StepVisual_PlanarExtent {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_PlanarExtent::~StepVisual_PlanarExtent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_PlanarExtent {
+%extend StepVisual_SurfaceStyleBoundary {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4317,11 +4545,15 @@ class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
 		%feature("autodoc", "1");
 		StepVisual_PlanarBox();
 		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Real aSizeInX, const Standard_Real aSizeInY);
+		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Real aSizeInX, const Standard_Real aSizeInY, const StepGeom_Axis2Placement &aPlacement);
 		%feature("autodoc", "1");
 		void SetPlacement(const StepGeom_Axis2Placement &aPlacement);
 		%feature("autodoc", "1");
 		StepGeom_Axis2Placement Placement() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepVisual_PlanarBox {
@@ -4331,7 +4563,7 @@ class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
 };
 %extend StepVisual_PlanarBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PlanarBox::~StepVisual_PlanarBox %{
@@ -4344,6 +4576,61 @@ def __del__(self):
 %}
 
 %extend StepVisual_PlanarBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_HArray1OfFillStyleSelect;
+class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_HArray1OfFillStyleSelect(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepVisual_HArray1OfFillStyleSelect(const Standard_Integer Low, const Standard_Integer Up, const StepVisual_FillStyleSelect &V);
+		%feature("autodoc", "1");
+		void Init(const StepVisual_FillStyleSelect &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepVisual_FillStyleSelect &Value);
+		%feature("autodoc", "1");
+		const StepVisual_FillStyleSelect & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepVisual_FillStyleSelect & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfFillStyleSelect & Array1() const;
+		%feature("autodoc", "1");
+		StepVisual_Array1OfFillStyleSelect & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_HArray1OfFillStyleSelect {
+	Handle_StepVisual_HArray1OfFillStyleSelect GetHandle() {
+	return *(Handle_StepVisual_HArray1OfFillStyleSelect*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfFillStyleSelect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_HArray1OfFillStyleSelect::~StepVisual_HArray1OfFillStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_HArray1OfFillStyleSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4374,7 +4661,7 @@ class StepVisual_OverRidingStyledItem : public StepVisual_StyledItem {
 };
 %extend StepVisual_OverRidingStyledItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_OverRidingStyledItem::~StepVisual_OverRidingStyledItem %{
@@ -4417,7 +4704,7 @@ class StepVisual_ContextDependentOverRidingStyledItem : public StepVisual_OverRi
 };
 %extend StepVisual_ContextDependentOverRidingStyledItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ContextDependentOverRidingStyledItem::~StepVisual_ContextDependentOverRidingStyledItem %{
@@ -4430,107 +4717,6 @@ def __del__(self):
 %}
 
 %extend StepVisual_ContextDependentOverRidingStyledItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_PresentationRepresentation;
-class StepVisual_PresentationRepresentation : public StepRepr_Representation {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PresentationRepresentation();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_PresentationRepresentation {
-	Handle_StepVisual_PresentationRepresentation GetHandle() {
-	return *(Handle_StepVisual_PresentationRepresentation*) &$self;
-	}
-};
-%extend StepVisual_PresentationRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_PresentationRepresentation::~StepVisual_PresentationRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_PresentationRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_PresentationArea;
-class StepVisual_PresentationArea : public StepVisual_PresentationRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PresentationArea();
-
-};
-%extend StepVisual_PresentationArea {
-	Handle_StepVisual_PresentationArea GetHandle() {
-	return *(Handle_StepVisual_PresentationArea*) &$self;
-	}
-};
-%extend StepVisual_PresentationArea {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_PresentationArea::~StepVisual_PresentationArea %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_PresentationArea {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_MechanicalDesignGeometricPresentationArea;
-class StepVisual_MechanicalDesignGeometricPresentationArea : public StepVisual_PresentationArea {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_MechanicalDesignGeometricPresentationArea();
-
-};
-%extend StepVisual_MechanicalDesignGeometricPresentationArea {
-	Handle_StepVisual_MechanicalDesignGeometricPresentationArea GetHandle() {
-	return *(Handle_StepVisual_MechanicalDesignGeometricPresentationArea*) &$self;
-	}
-};
-%extend StepVisual_MechanicalDesignGeometricPresentationArea {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_MechanicalDesignGeometricPresentationArea::~StepVisual_MechanicalDesignGeometricPresentationArea %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_MechanicalDesignGeometricPresentationArea {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4568,59 +4754,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepVisual_PointStyle;
-class StepVisual_PointStyle : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PointStyle();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepVisual_MarkerSelect &aMarker, const StepBasic_SizeSelect &aMarkerSize, const Handle_StepVisual_Colour &aMarkerColour);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetMarker(const StepVisual_MarkerSelect &aMarker);
-		%feature("autodoc", "1");
-		StepVisual_MarkerSelect Marker() const;
-		%feature("autodoc", "1");
-		void SetMarkerSize(const StepBasic_SizeSelect &aMarkerSize);
-		%feature("autodoc", "1");
-		StepBasic_SizeSelect MarkerSize() const;
-		%feature("autodoc", "1");
-		void SetMarkerColour(const Handle_StepVisual_Colour &aMarkerColour);
-		%feature("autodoc", "1");
-		Handle_StepVisual_Colour MarkerColour() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_PointStyle {
-	Handle_StepVisual_PointStyle GetHandle() {
-	return *(Handle_StepVisual_PointStyle*) &$self;
-	}
-};
-%extend StepVisual_PointStyle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_PointStyle::~StepVisual_PointStyle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_PointStyle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepVisual_MarkerMember;
 class StepVisual_MarkerMember : public StepData_SelectInt {
 	public:
@@ -4651,7 +4784,7 @@ class StepVisual_MarkerMember : public StepData_SelectInt {
 };
 %extend StepVisual_MarkerMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_MarkerMember::~StepVisual_MarkerMember %{
@@ -4664,94 +4797,6 @@ def __del__(self):
 %}
 
 %extend StepVisual_MarkerMember {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_TextStyle;
-class StepVisual_TextStyle : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_TextStyle();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetCharacterAppearance(const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance);
-		%feature("autodoc", "1");
-		Handle_StepVisual_TextStyleForDefinedFont CharacterAppearance() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_TextStyle {
-	Handle_StepVisual_TextStyle GetHandle() {
-	return *(Handle_StepVisual_TextStyle*) &$self;
-	}
-};
-%extend StepVisual_TextStyle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_TextStyle::~StepVisual_TextStyle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_TextStyle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_TextStyleWithBoxCharacteristics;
-class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_TextStyleWithBoxCharacteristics();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance, const Handle_StepVisual_HArray1OfBoxCharacteristicSelect &aCharacteristics);
-		%feature("autodoc", "1");
-		void SetCharacteristics(const Handle_StepVisual_HArray1OfBoxCharacteristicSelect &aCharacteristics);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfBoxCharacteristicSelect Characteristics() const;
-		%feature("autodoc", "1");
-		StepVisual_BoxCharacteristicSelect CharacteristicsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbCharacteristics() const;
-
-};
-%extend StepVisual_TextStyleWithBoxCharacteristics {
-	Handle_StepVisual_TextStyleWithBoxCharacteristics GetHandle() {
-	return *(Handle_StepVisual_TextStyleWithBoxCharacteristics*) &$self;
-	}
-};
-%extend StepVisual_TextStyleWithBoxCharacteristics {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_TextStyleWithBoxCharacteristics::~StepVisual_TextStyleWithBoxCharacteristics %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_TextStyleWithBoxCharacteristics {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4789,40 +4834,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepVisual_SurfaceStyleParameterLine;
-class StepVisual_SurfaceStyleParameterLine : public MMgt_TShared {
+%nodefaultctor StepVisual_CameraModel;
+class StepVisual_CameraModel : public StepGeom_GeometricRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_SurfaceStyleParameterLine();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepVisual_CurveStyle &aStyleOfParameterLines, const Handle_StepVisual_HArray1OfDirectionCountSelect &aDirectionCounts);
-		%feature("autodoc", "1");
-		void SetStyleOfParameterLines(const Handle_StepVisual_CurveStyle &aStyleOfParameterLines);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyle StyleOfParameterLines() const;
-		%feature("autodoc", "1");
-		void SetDirectionCounts(const Handle_StepVisual_HArray1OfDirectionCountSelect &aDirectionCounts);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfDirectionCountSelect DirectionCounts() const;
-		%feature("autodoc", "1");
-		StepVisual_DirectionCountSelect DirectionCountsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbDirectionCounts() const;
+		StepVisual_CameraModel();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepVisual_SurfaceStyleParameterLine {
-	Handle_StepVisual_SurfaceStyleParameterLine GetHandle() {
-	return *(Handle_StepVisual_SurfaceStyleParameterLine*) &$self;
+%extend StepVisual_CameraModel {
+	Handle_StepVisual_CameraModel GetHandle() {
+	return *(Handle_StepVisual_CameraModel*) &$self;
 	}
 };
-%extend StepVisual_SurfaceStyleParameterLine {
+%extend StepVisual_CameraModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepVisual_SurfaceStyleParameterLine::~StepVisual_SurfaceStyleParameterLine %{
+%feature("shadow") StepVisual_CameraModel::~StepVisual_CameraModel %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4831,7 +4862,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepVisual_SurfaceStyleParameterLine {
+%extend StepVisual_CameraModel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4854,7 +4885,7 @@ class StepVisual_CameraImage : public StepRepr_MappedItem {
 };
 %extend StepVisual_CameraImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraImage::~StepVisual_CameraImage %{
@@ -4887,7 +4918,7 @@ class StepVisual_CameraImage3dWithScale : public StepVisual_CameraImage {
 };
 %extend StepVisual_CameraImage3dWithScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraImage3dWithScale::~StepVisual_CameraImage3dWithScale %{
@@ -4934,7 +4965,7 @@ class StepVisual_CompositeText : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepVisual_CompositeText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CompositeText::~StepVisual_CompositeText %{
@@ -4947,37 +4978,6 @@ def __del__(self):
 %}
 
 %extend StepVisual_CompositeText {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_PresentationStyleSelect;
-class StepVisual_PresentationStyleSelect : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PresentationStyleSelect();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_PointStyle PointStyle() const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyle CurveStyle() const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_SurfaceStyleUsage SurfaceStyleUsage() const;
-
-};
-%feature("shadow") StepVisual_PresentationStyleSelect::~StepVisual_PresentationStyleSelect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_PresentationStyleSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5000,7 +5000,7 @@ class StepVisual_ExternallyDefinedCurveFont : public StepBasic_ExternallyDefined
 };
 %extend StepVisual_ExternallyDefinedCurveFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ExternallyDefinedCurveFont::~StepVisual_ExternallyDefinedCurveFont %{
@@ -5055,7 +5055,7 @@ class StepVisual_HArray1OfLayeredItem : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfLayeredItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfLayeredItem::~StepVisual_HArray1OfLayeredItem %{
@@ -5096,7 +5096,7 @@ class StepVisual_ColourSpecification : public StepVisual_Colour {
 };
 %extend StepVisual_ColourSpecification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ColourSpecification::~StepVisual_ColourSpecification %{
@@ -5143,7 +5143,7 @@ class StepVisual_ColourRgb : public StepVisual_ColourSpecification {
 };
 %extend StepVisual_ColourRgb {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_ColourRgb::~StepVisual_ColourRgb %{
@@ -5247,7 +5247,7 @@ class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
 };
 %extend StepVisual_PresentationLayerAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationLayerAssignment::~StepVisual_PresentationLayerAssignment %{
@@ -5292,7 +5292,7 @@ class StepVisual_FillAreaStyleColour : public MMgt_TShared {
 };
 %extend StepVisual_FillAreaStyleColour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_FillAreaStyleColour::~StepVisual_FillAreaStyleColour %{
@@ -5358,7 +5358,7 @@ class StepVisual_PresentationView : public StepVisual_PresentationRepresentation
 };
 %extend StepVisual_PresentationView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationView::~StepVisual_PresentationView %{
@@ -5403,7 +5403,7 @@ class StepVisual_PresentationLayerUsage : public MMgt_TShared {
 };
 %extend StepVisual_PresentationLayerUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationLayerUsage::~StepVisual_PresentationLayerUsage %{
@@ -5462,7 +5462,7 @@ class StepVisual_TextLiteral : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepVisual_TextLiteral {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_TextLiteral::~StepVisual_TextLiteral %{
@@ -5507,7 +5507,7 @@ class StepVisual_PresentationSize : public MMgt_TShared {
 };
 %extend StepVisual_PresentationSize {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentationSize::~StepVisual_PresentationSize %{
@@ -5599,7 +5599,7 @@ class StepVisual_TextStyleForDefinedFont : public MMgt_TShared {
 };
 %extend StepVisual_TextStyleForDefinedFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_TextStyleForDefinedFont::~StepVisual_TextStyleForDefinedFont %{
@@ -5618,26 +5618,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepVisual_CameraModel;
-class StepVisual_CameraModel : public StepGeom_GeometricRepresentationItem {
+%nodefaultctor StepVisual_SurfaceStyleParameterLine;
+class StepVisual_SurfaceStyleParameterLine : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_CameraModel();
+		StepVisual_SurfaceStyleParameterLine();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepVisual_CurveStyle &aStyleOfParameterLines, const Handle_StepVisual_HArray1OfDirectionCountSelect &aDirectionCounts);
+		%feature("autodoc", "1");
+		void SetStyleOfParameterLines(const Handle_StepVisual_CurveStyle &aStyleOfParameterLines);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyle StyleOfParameterLines() const;
+		%feature("autodoc", "1");
+		void SetDirectionCounts(const Handle_StepVisual_HArray1OfDirectionCountSelect &aDirectionCounts);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfDirectionCountSelect DirectionCounts() const;
+		%feature("autodoc", "1");
+		StepVisual_DirectionCountSelect DirectionCountsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbDirectionCounts() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepVisual_CameraModel {
-	Handle_StepVisual_CameraModel GetHandle() {
-	return *(Handle_StepVisual_CameraModel*) &$self;
+%extend StepVisual_SurfaceStyleParameterLine {
+	Handle_StepVisual_SurfaceStyleParameterLine GetHandle() {
+	return *(Handle_StepVisual_SurfaceStyleParameterLine*) &$self;
 	}
 };
-%extend StepVisual_CameraModel {
+%extend StepVisual_SurfaceStyleParameterLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepVisual_CameraModel::~StepVisual_CameraModel %{
+%feature("shadow") StepVisual_SurfaceStyleParameterLine::~StepVisual_SurfaceStyleParameterLine %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -5646,7 +5660,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepVisual_CameraModel {
+%extend StepVisual_SurfaceStyleParameterLine {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5670,6 +5684,8 @@ class StepVisual_CameraModelD2 : public StepVisual_CameraModel {
 		void SetViewWindowClipping(const Standard_Boolean aViewWindowClipping);
 		%feature("autodoc", "1");
 		Standard_Boolean ViewWindowClipping() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepVisual_CameraModelD2 {
@@ -5679,7 +5695,7 @@ class StepVisual_CameraModelD2 : public StepVisual_CameraModel {
 };
 %extend StepVisual_CameraModelD2 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraModelD2::~StepVisual_CameraModelD2 %{
@@ -5692,6 +5708,72 @@ def __del__(self):
 %}
 
 %extend StepVisual_CameraModelD2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_StyleContextSelect;
+class StepVisual_StyleContextSelect : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_StyleContextSelect();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_Representation Representation() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem RepresentationItem() const;
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSet PresentationSet() const;
+
+};
+%feature("shadow") StepVisual_StyleContextSelect::~StepVisual_StyleContextSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_StyleContextSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_PresentationSet;
+class StepVisual_PresentationSet : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PresentationSet();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_PresentationSet {
+	Handle_StepVisual_PresentationSet GetHandle() {
+	return *(Handle_StepVisual_PresentationSet*) &$self;
+	}
+};
+%extend StepVisual_PresentationSet {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_PresentationSet::~StepVisual_PresentationSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_PresentationSet {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5728,7 +5810,7 @@ class StepVisual_CurveStyleFont : public MMgt_TShared {
 };
 %extend StepVisual_CurveStyleFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CurveStyleFont::~StepVisual_CurveStyleFont %{
@@ -5741,117 +5823,6 @@ def __del__(self):
 %}
 
 %extend StepVisual_CurveStyleFont {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_SurfaceStyleFillArea;
-class StepVisual_SurfaceStyleFillArea : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_SurfaceStyleFillArea();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepVisual_FillAreaStyle &aFillArea);
-		%feature("autodoc", "1");
-		void SetFillArea(const Handle_StepVisual_FillAreaStyle &aFillArea);
-		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyle FillArea() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_SurfaceStyleFillArea {
-	Handle_StepVisual_SurfaceStyleFillArea GetHandle() {
-	return *(Handle_StepVisual_SurfaceStyleFillArea*) &$self;
-	}
-};
-%extend StepVisual_SurfaceStyleFillArea {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_SurfaceStyleFillArea::~StepVisual_SurfaceStyleFillArea %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_SurfaceStyleFillArea {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_PresentationSet;
-class StepVisual_PresentationSet : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PresentationSet();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_PresentationSet {
-	Handle_StepVisual_PresentationSet GetHandle() {
-	return *(Handle_StepVisual_PresentationSet*) &$self;
-	}
-};
-%extend StepVisual_PresentationSet {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_PresentationSet::~StepVisual_PresentationSet %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_PresentationSet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_ExternallyDefinedTextFont;
-class StepVisual_ExternallyDefinedTextFont : public StepBasic_ExternallyDefinedItem {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_ExternallyDefinedTextFont();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_ExternallyDefinedTextFont {
-	Handle_StepVisual_ExternallyDefinedTextFont GetHandle() {
-	return *(Handle_StepVisual_ExternallyDefinedTextFont*) &$self;
-	}
-};
-%extend StepVisual_ExternallyDefinedTextFont {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_ExternallyDefinedTextFont::~StepVisual_ExternallyDefinedTextFont %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_ExternallyDefinedTextFont {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5888,7 +5859,7 @@ class StepVisual_SurfaceSideStyle : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceSideStyle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceSideStyle::~StepVisual_SurfaceSideStyle %{
@@ -5901,6 +5872,55 @@ def __del__(self):
 %}
 
 %extend StepVisual_SurfaceSideStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_FillAreaStyle;
+class StepVisual_FillAreaStyle : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_FillAreaStyle();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfFillStyleSelect &aFillStyles);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetFillStyles(const Handle_StepVisual_HArray1OfFillStyleSelect &aFillStyles);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfFillStyleSelect FillStyles() const;
+		%feature("autodoc", "1");
+		StepVisual_FillStyleSelect FillStylesValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbFillStyles() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_FillAreaStyle {
+	Handle_StepVisual_FillAreaStyle GetHandle() {
+	return *(Handle_StepVisual_FillAreaStyle*) &$self;
+	}
+};
+%extend StepVisual_FillAreaStyle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_FillAreaStyle::~StepVisual_FillAreaStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_FillAreaStyle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5933,7 +5953,7 @@ class StepVisual_SurfaceStyleUsage : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleUsage::~StepVisual_SurfaceStyleUsage %{
@@ -5968,7 +5988,7 @@ class StepVisual_AnnotationText : public StepRepr_MappedItem {
 };
 %extend StepVisual_AnnotationText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_AnnotationText::~StepVisual_AnnotationText %{
@@ -6023,7 +6043,7 @@ class StepVisual_HArray1OfSurfaceStyleElementSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfSurfaceStyleElementSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfSurfaceStyleElementSelect::~StepVisual_HArray1OfSurfaceStyleElementSelect %{
@@ -6036,88 +6056,6 @@ def __del__(self):
 %}
 
 %extend StepVisual_HArray1OfSurfaceStyleElementSelect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_Array1OfBoxCharacteristicSelect;
-class StepVisual_Array1OfBoxCharacteristicSelect {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_Array1OfBoxCharacteristicSelect(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepVisual_Array1OfBoxCharacteristicSelect(const StepVisual_BoxCharacteristicSelect &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepVisual_BoxCharacteristicSelect &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepVisual_Array1OfBoxCharacteristicSelect & Assign(const StepVisual_Array1OfBoxCharacteristicSelect &Other);
-		%feature("autodoc", "1");
-		const StepVisual_Array1OfBoxCharacteristicSelect & operator=(const StepVisual_Array1OfBoxCharacteristicSelect &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepVisual_BoxCharacteristicSelect &Value);
-		%feature("autodoc", "1");
-		const StepVisual_BoxCharacteristicSelect & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepVisual_BoxCharacteristicSelect & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepVisual_BoxCharacteristicSelect & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepVisual_BoxCharacteristicSelect & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") StepVisual_Array1OfBoxCharacteristicSelect::~StepVisual_Array1OfBoxCharacteristicSelect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_Array1OfBoxCharacteristicSelect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_StyleContextSelect;
-class StepVisual_StyleContextSelect : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_StyleContextSelect();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_Representation Representation() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem RepresentationItem() const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSet PresentationSet() const;
-
-};
-%feature("shadow") StepVisual_StyleContextSelect::~StepVisual_StyleContextSelect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_StyleContextSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6150,7 +6088,7 @@ class StepVisual_AreaInSet : public MMgt_TShared {
 };
 %extend StepVisual_AreaInSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_AreaInSet::~StepVisual_AreaInSet %{
@@ -6185,7 +6123,7 @@ class StepVisual_CameraImage2dWithScale : public StepVisual_CameraImage {
 };
 %extend StepVisual_CameraImage2dWithScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraImage2dWithScale::~StepVisual_CameraImage2dWithScale %{
@@ -6198,6 +6136,59 @@ def __del__(self):
 %}
 
 %extend StepVisual_CameraImage2dWithScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_PointStyle;
+class StepVisual_PointStyle : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PointStyle();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepVisual_MarkerSelect &aMarker, const StepBasic_SizeSelect &aMarkerSize, const Handle_StepVisual_Colour &aMarkerColour);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetMarker(const StepVisual_MarkerSelect &aMarker);
+		%feature("autodoc", "1");
+		StepVisual_MarkerSelect Marker() const;
+		%feature("autodoc", "1");
+		void SetMarkerSize(const StepBasic_SizeSelect &aMarkerSize);
+		%feature("autodoc", "1");
+		StepBasic_SizeSelect MarkerSize() const;
+		%feature("autodoc", "1");
+		void SetMarkerColour(const Handle_StepVisual_Colour &aMarkerColour);
+		%feature("autodoc", "1");
+		Handle_StepVisual_Colour MarkerColour() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_PointStyle {
+	Handle_StepVisual_PointStyle GetHandle() {
+	return *(Handle_StepVisual_PointStyle*) &$self;
+	}
+};
+%extend StepVisual_PointStyle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_PointStyle::~StepVisual_PointStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_PointStyle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6235,26 +6226,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepVisual_Template;
-class StepVisual_Template : public StepRepr_Representation {
+%nodefaultctor StepVisual_PreDefinedColour;
+class StepVisual_PreDefinedColour : public StepVisual_Colour {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_Template();
+		StepVisual_PreDefinedColour();
+		%feature("autodoc", "1");
+		void SetPreDefinedItem(const Handle_StepVisual_PreDefinedItem &item);
+		%feature("autodoc", "1");
+		const Handle_StepVisual_PreDefinedItem & GetPreDefinedItem() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepVisual_Template {
-	Handle_StepVisual_Template GetHandle() {
-	return *(Handle_StepVisual_Template*) &$self;
+%extend StepVisual_PreDefinedColour {
+	Handle_StepVisual_PreDefinedColour GetHandle() {
+	return *(Handle_StepVisual_PreDefinedColour*) &$self;
 	}
 };
-%extend StepVisual_Template {
+%extend StepVisual_PreDefinedColour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepVisual_Template::~StepVisual_Template %{
+%feature("shadow") StepVisual_PreDefinedColour::~StepVisual_PreDefinedColour %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -6263,7 +6258,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepVisual_Template {
+%extend StepVisual_PreDefinedColour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6350,174 +6345,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepVisual_FillAreaStyle;
-class StepVisual_FillAreaStyle : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_FillAreaStyle();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfFillStyleSelect &aFillStyles);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetFillStyles(const Handle_StepVisual_HArray1OfFillStyleSelect &aFillStyles);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfFillStyleSelect FillStyles() const;
-		%feature("autodoc", "1");
-		StepVisual_FillStyleSelect FillStylesValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbFillStyles() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_FillAreaStyle {
-	Handle_StepVisual_FillAreaStyle GetHandle() {
-	return *(Handle_StepVisual_FillAreaStyle*) &$self;
-	}
-};
-%extend StepVisual_FillAreaStyle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_FillAreaStyle::~StepVisual_FillAreaStyle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_FillAreaStyle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_AnnotationOccurrence;
-class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_AnnotationOccurrence();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_AnnotationOccurrence {
-	Handle_StepVisual_AnnotationOccurrence GetHandle() {
-	return *(Handle_StepVisual_AnnotationOccurrence*) &$self;
-	}
-};
-%extend StepVisual_AnnotationOccurrence {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_AnnotationOccurrence::~StepVisual_AnnotationOccurrence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_AnnotationOccurrence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_CompositeTextWithExtent;
-class StepVisual_CompositeTextWithExtent : public StepVisual_CompositeText {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_CompositeTextWithExtent();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfTextOrCharacter &aCollectedText);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfTextOrCharacter &aCollectedText, const Handle_StepVisual_PlanarExtent &aExtent);
-		%feature("autodoc", "1");
-		void SetExtent(const Handle_StepVisual_PlanarExtent &aExtent);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PlanarExtent Extent() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_CompositeTextWithExtent {
-	Handle_StepVisual_CompositeTextWithExtent GetHandle() {
-	return *(Handle_StepVisual_CompositeTextWithExtent*) &$self;
-	}
-};
-%extend StepVisual_CompositeTextWithExtent {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_CompositeTextWithExtent::~StepVisual_CompositeTextWithExtent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_CompositeTextWithExtent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_SurfaceStyleBoundary;
-class StepVisual_SurfaceStyleBoundary : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_SurfaceStyleBoundary();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepVisual_CurveStyle &aStyleOfBoundary);
-		%feature("autodoc", "1");
-		void SetStyleOfBoundary(const Handle_StepVisual_CurveStyle &aStyleOfBoundary);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyle StyleOfBoundary() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_SurfaceStyleBoundary {
-	Handle_StepVisual_SurfaceStyleBoundary GetHandle() {
-	return *(Handle_StepVisual_SurfaceStyleBoundary*) &$self;
-	}
-};
-%extend StepVisual_SurfaceStyleBoundary {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_SurfaceStyleBoundary::~StepVisual_SurfaceStyleBoundary %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_SurfaceStyleBoundary {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepVisual_Array1OfLayeredItem;
 class StepVisual_Array1OfLayeredItem {
 	public:
@@ -6569,6 +6396,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepVisual_PresentationStyleSelect;
+class StepVisual_PresentationStyleSelect : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PresentationStyleSelect();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepVisual_PointStyle PointStyle() const;
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyle CurveStyle() const;
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleUsage SurfaceStyleUsage() const;
+
+};
+%feature("shadow") StepVisual_PresentationStyleSelect::~StepVisual_PresentationStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_PresentationStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepVisual_MechanicalDesignGeometricPresentationRepresentation;
 class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public StepVisual_PresentationRepresentation {
 	public:
@@ -6585,7 +6443,7 @@ class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public St
 };
 %extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_MechanicalDesignGeometricPresentationRepresentation::~StepVisual_MechanicalDesignGeometricPresentationRepresentation %{
@@ -6598,6 +6456,51 @@ def __del__(self):
 %}
 
 %extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_TextStyle;
+class StepVisual_TextStyle : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_TextStyle();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetCharacterAppearance(const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleForDefinedFont CharacterAppearance() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_TextStyle {
+	Handle_StepVisual_TextStyle GetHandle() {
+	return *(Handle_StepVisual_TextStyle*) &$self;
+	}
+};
+%extend StepVisual_TextStyle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_TextStyle::~StepVisual_TextStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_TextStyle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6620,7 +6523,7 @@ class StepVisual_DraughtingPreDefinedColour : public StepVisual_PreDefinedColour
 };
 %extend StepVisual_DraughtingPreDefinedColour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_DraughtingPreDefinedColour::~StepVisual_DraughtingPreDefinedColour %{
@@ -6690,7 +6593,7 @@ class StepVisual_TemplateInstance : public StepRepr_MappedItem {
 };
 %extend StepVisual_TemplateInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_TemplateInstance::~StepVisual_TemplateInstance %{
@@ -6703,61 +6606,6 @@ def __del__(self):
 %}
 
 %extend StepVisual_TemplateInstance {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_HArray1OfTextOrCharacter;
-class StepVisual_HArray1OfTextOrCharacter : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_HArray1OfTextOrCharacter(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepVisual_HArray1OfTextOrCharacter(const Standard_Integer Low, const Standard_Integer Up, const StepVisual_TextOrCharacter &V);
-		%feature("autodoc", "1");
-		void Init(const StepVisual_TextOrCharacter &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepVisual_TextOrCharacter &Value);
-		%feature("autodoc", "1");
-		const StepVisual_TextOrCharacter & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepVisual_TextOrCharacter & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepVisual_Array1OfTextOrCharacter & Array1() const;
-		%feature("autodoc", "1");
-		StepVisual_Array1OfTextOrCharacter & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_HArray1OfTextOrCharacter {
-	Handle_StepVisual_HArray1OfTextOrCharacter GetHandle() {
-	return *(Handle_StepVisual_HArray1OfTextOrCharacter*) &$self;
-	}
-};
-%extend StepVisual_HArray1OfTextOrCharacter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepVisual_HArray1OfTextOrCharacter::~StepVisual_HArray1OfTextOrCharacter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_HArray1OfTextOrCharacter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6786,7 +6634,7 @@ class StepVisual_SurfaceStyleSegmentationCurve : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleSegmentationCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleSegmentationCurve::~StepVisual_SurfaceStyleSegmentationCurve %{
@@ -6885,6 +6733,76 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepVisual_ExternallyDefinedTextFont;
+class StepVisual_ExternallyDefinedTextFont : public StepBasic_ExternallyDefinedItem {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_ExternallyDefinedTextFont();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_ExternallyDefinedTextFont {
+	Handle_StepVisual_ExternallyDefinedTextFont GetHandle() {
+	return *(Handle_StepVisual_ExternallyDefinedTextFont*) &$self;
+	}
+};
+%extend StepVisual_ExternallyDefinedTextFont {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_ExternallyDefinedTextFont::~StepVisual_ExternallyDefinedTextFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_ExternallyDefinedTextFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_AnnotationTextOccurrence;
+class StepVisual_AnnotationTextOccurrence : public StepVisual_AnnotationOccurrence {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_AnnotationTextOccurrence();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_AnnotationTextOccurrence {
+	Handle_StepVisual_AnnotationTextOccurrence GetHandle() {
+	return *(Handle_StepVisual_AnnotationTextOccurrence*) &$self;
+	}
+};
+%extend StepVisual_AnnotationTextOccurrence {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_AnnotationTextOccurrence::~StepVisual_AnnotationTextOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_AnnotationTextOccurrence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepVisual_HArray1OfInvisibleItem;
 class StepVisual_HArray1OfInvisibleItem : public MMgt_TShared {
 	public:
@@ -6921,7 +6839,7 @@ class StepVisual_HArray1OfInvisibleItem : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfInvisibleItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfInvisibleItem::~StepVisual_HArray1OfInvisibleItem %{
@@ -6956,7 +6874,7 @@ class StepVisual_PresentedItem : public MMgt_TShared {
 };
 %extend StepVisual_PresentedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PresentedItem::~StepVisual_PresentedItem %{
@@ -7077,26 +6995,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepVisual_AnnotationTextOccurrence;
-class StepVisual_AnnotationTextOccurrence : public StepVisual_AnnotationOccurrence {
+%nodefaultctor StepVisual_CompositeTextWithExtent;
+class StepVisual_CompositeTextWithExtent : public StepVisual_CompositeText {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_AnnotationTextOccurrence();
+		StepVisual_CompositeTextWithExtent();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfTextOrCharacter &aCollectedText);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfTextOrCharacter &aCollectedText, const Handle_StepVisual_PlanarExtent &aExtent);
+		%feature("autodoc", "1");
+		void SetExtent(const Handle_StepVisual_PlanarExtent &aExtent);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PlanarExtent Extent() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepVisual_AnnotationTextOccurrence {
-	Handle_StepVisual_AnnotationTextOccurrence GetHandle() {
-	return *(Handle_StepVisual_AnnotationTextOccurrence*) &$self;
+%extend StepVisual_CompositeTextWithExtent {
+	Handle_StepVisual_CompositeTextWithExtent GetHandle() {
+	return *(Handle_StepVisual_CompositeTextWithExtent*) &$self;
 	}
 };
-%extend StepVisual_AnnotationTextOccurrence {
+%extend StepVisual_CompositeTextWithExtent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepVisual_AnnotationTextOccurrence::~StepVisual_AnnotationTextOccurrence %{
+%feature("shadow") StepVisual_CompositeTextWithExtent::~StepVisual_CompositeTextWithExtent %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -7105,7 +7031,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepVisual_AnnotationTextOccurrence {
+%extend StepVisual_CompositeTextWithExtent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7128,7 +7054,7 @@ class StepVisual_PreDefinedTextFont : public StepVisual_PreDefinedItem {
 };
 %extend StepVisual_PreDefinedTextFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_PreDefinedTextFont::~StepVisual_PreDefinedTextFont %{
@@ -7175,7 +7101,7 @@ class StepVisual_CameraModelD3 : public StepVisual_CameraModel {
 };
 %extend StepVisual_CameraModelD3 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_CameraModelD3::~StepVisual_CameraModelD3 %{
@@ -7267,7 +7193,7 @@ class StepVisual_SurfaceStyleControlGrid : public MMgt_TShared {
 };
 %extend StepVisual_SurfaceStyleControlGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_SurfaceStyleControlGrid::~StepVisual_SurfaceStyleControlGrid %{
@@ -7286,46 +7212,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepVisual_HArray1OfFillStyleSelect;
-class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
+%nodefaultctor StepVisual_Template;
+class StepVisual_Template : public StepRepr_Representation {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_HArray1OfFillStyleSelect(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepVisual_HArray1OfFillStyleSelect(const Standard_Integer Low, const Standard_Integer Up, const StepVisual_FillStyleSelect &V);
-		%feature("autodoc", "1");
-		void Init(const StepVisual_FillStyleSelect &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepVisual_FillStyleSelect &Value);
-		%feature("autodoc", "1");
-		const StepVisual_FillStyleSelect & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepVisual_FillStyleSelect & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepVisual_Array1OfFillStyleSelect & Array1() const;
-		%feature("autodoc", "1");
-		StepVisual_Array1OfFillStyleSelect & ChangeArray1();
+		StepVisual_Template();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepVisual_HArray1OfFillStyleSelect {
-	Handle_StepVisual_HArray1OfFillStyleSelect GetHandle() {
-	return *(Handle_StepVisual_HArray1OfFillStyleSelect*) &$self;
+%extend StepVisual_Template {
+	Handle_StepVisual_Template GetHandle() {
+	return *(Handle_StepVisual_Template*) &$self;
 	}
 };
-%extend StepVisual_HArray1OfFillStyleSelect {
+%extend StepVisual_Template {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepVisual_HArray1OfFillStyleSelect::~StepVisual_HArray1OfFillStyleSelect %{
+%feature("shadow") StepVisual_Template::~StepVisual_Template %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -7334,7 +7240,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepVisual_HArray1OfFillStyleSelect {
+%extend StepVisual_Template {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7377,7 +7283,7 @@ class StepVisual_HArray1OfPresentationStyleAssignment : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfPresentationStyleAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfPresentationStyleAssignment::~StepVisual_HArray1OfPresentationStyleAssignment %{
@@ -7439,7 +7345,7 @@ class StepVisual_DraughtingModel : public StepRepr_Representation {
 };
 %extend StepVisual_DraughtingModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_DraughtingModel::~StepVisual_DraughtingModel %{
@@ -7452,6 +7358,108 @@ def __del__(self):
 %}
 
 %extend StepVisual_DraughtingModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_TextStyleWithBoxCharacteristics;
+class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_TextStyleWithBoxCharacteristics();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_TextStyleForDefinedFont &aCharacterAppearance, const Handle_StepVisual_HArray1OfBoxCharacteristicSelect &aCharacteristics);
+		%feature("autodoc", "1");
+		void SetCharacteristics(const Handle_StepVisual_HArray1OfBoxCharacteristicSelect &aCharacteristics);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfBoxCharacteristicSelect Characteristics() const;
+		%feature("autodoc", "1");
+		StepVisual_BoxCharacteristicSelect CharacteristicsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbCharacteristics() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_TextStyleWithBoxCharacteristics {
+	Handle_StepVisual_TextStyleWithBoxCharacteristics GetHandle() {
+	return *(Handle_StepVisual_TextStyleWithBoxCharacteristics*) &$self;
+	}
+};
+%extend StepVisual_TextStyleWithBoxCharacteristics {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_TextStyleWithBoxCharacteristics::~StepVisual_TextStyleWithBoxCharacteristics %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_TextStyleWithBoxCharacteristics {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepVisual_HArray1OfTextOrCharacter;
+class StepVisual_HArray1OfTextOrCharacter : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_HArray1OfTextOrCharacter(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepVisual_HArray1OfTextOrCharacter(const Standard_Integer Low, const Standard_Integer Up, const StepVisual_TextOrCharacter &V);
+		%feature("autodoc", "1");
+		void Init(const StepVisual_TextOrCharacter &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepVisual_TextOrCharacter &Value);
+		%feature("autodoc", "1");
+		const StepVisual_TextOrCharacter & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepVisual_TextOrCharacter & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfTextOrCharacter & Array1() const;
+		%feature("autodoc", "1");
+		StepVisual_Array1OfTextOrCharacter & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_HArray1OfTextOrCharacter {
+	Handle_StepVisual_HArray1OfTextOrCharacter GetHandle() {
+	return *(Handle_StepVisual_HArray1OfTextOrCharacter*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfTextOrCharacter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepVisual_HArray1OfTextOrCharacter::~StepVisual_HArray1OfTextOrCharacter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_HArray1OfTextOrCharacter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7503,7 +7511,7 @@ class StepVisual_DraughtingAnnotationOccurrence : public StepVisual_AnnotationOc
 };
 %extend StepVisual_DraughtingAnnotationOccurrence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_DraughtingAnnotationOccurrence::~StepVisual_DraughtingAnnotationOccurrence %{
@@ -7618,7 +7626,7 @@ class StepVisual_HArray1OfBoxCharacteristicSelect : public MMgt_TShared {
 };
 %extend StepVisual_HArray1OfBoxCharacteristicSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepVisual_HArray1OfBoxCharacteristicSelect::~StepVisual_HArray1OfBoxCharacteristicSelect %{

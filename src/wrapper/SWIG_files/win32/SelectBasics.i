@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_SelectBasics_SequenceNodeOfSequenceOfOwner;
-class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner();
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
-		%feature("autodoc", "1");
-		static		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
-	SelectBasics_SequenceNodeOfSequenceOfOwner* GetObject() {
-	return (SelectBasics_SequenceNodeOfSequenceOfOwner*)$self->Access();
-	}
-};
-%feature("shadow") Handle_SelectBasics_SequenceNodeOfSequenceOfOwner::~Handle_SelectBasics_SequenceNodeOfSequenceOfOwner %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_SelectBasics_ListNodeOfListOfBox2d;
 class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapNode {
 	public:
@@ -128,29 +90,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_SelectBasics_SensitiveEntity;
-class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
+%nodefaultctor Handle_SelectBasics_EntityOwner;
+class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity();
+		Handle_SelectBasics_EntityOwner();
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity(const Handle_SelectBasics_SensitiveEntity &aHandle);
+		Handle_SelectBasics_EntityOwner(const Handle_SelectBasics_EntityOwner &aHandle);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity(const SelectBasics_SensitiveEntity *anItem);
+		Handle_SelectBasics_EntityOwner(const SelectBasics_EntityOwner *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & operator=(const Handle_SelectBasics_SensitiveEntity &aHandle);
+		Handle_SelectBasics_EntityOwner & operator=(const Handle_SelectBasics_EntityOwner &aHandle);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & operator=(const SelectBasics_SensitiveEntity *anItem);
+		Handle_SelectBasics_EntityOwner & operator=(const SelectBasics_EntityOwner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectBasics_SensitiveEntity DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_EntityOwner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_SelectBasics_SensitiveEntity {
-	SelectBasics_SensitiveEntity* GetObject() {
-	return (SelectBasics_SensitiveEntity*)$self->Access();
+%extend Handle_SelectBasics_EntityOwner {
+	SelectBasics_EntityOwner* GetObject() {
+	return (SelectBasics_EntityOwner*)$self->Access();
 	}
 };
-%feature("shadow") Handle_SelectBasics_SensitiveEntity::~Handle_SelectBasics_SensitiveEntity %{
+%feature("shadow") Handle_SelectBasics_EntityOwner::~Handle_SelectBasics_EntityOwner %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -159,7 +121,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_SelectBasics_SensitiveEntity {
+%extend Handle_SelectBasics_EntityOwner {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -204,29 +166,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_SelectBasics_EntityOwner;
-class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
+%nodefaultctor Handle_SelectBasics_SensitiveEntity;
+class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_SelectBasics_EntityOwner();
+		Handle_SelectBasics_SensitiveEntity();
 		%feature("autodoc", "1");
-		Handle_SelectBasics_EntityOwner(const Handle_SelectBasics_EntityOwner &aHandle);
+		Handle_SelectBasics_SensitiveEntity(const Handle_SelectBasics_SensitiveEntity &aHandle);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_EntityOwner(const SelectBasics_EntityOwner *anItem);
+		Handle_SelectBasics_SensitiveEntity(const SelectBasics_SensitiveEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_EntityOwner & operator=(const Handle_SelectBasics_EntityOwner &aHandle);
+		Handle_SelectBasics_SensitiveEntity & operator=(const Handle_SelectBasics_SensitiveEntity &aHandle);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_EntityOwner & operator=(const SelectBasics_EntityOwner *anItem);
+		Handle_SelectBasics_SensitiveEntity & operator=(const SelectBasics_SensitiveEntity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_SelectBasics_EntityOwner DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_SelectBasics_SensitiveEntity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_SelectBasics_EntityOwner {
-	SelectBasics_EntityOwner* GetObject() {
-	return (SelectBasics_EntityOwner*)$self->Access();
+%extend Handle_SelectBasics_SensitiveEntity {
+	SelectBasics_SensitiveEntity* GetObject() {
+	return (SelectBasics_SensitiveEntity*)$self->Access();
 	}
 };
-%feature("shadow") Handle_SelectBasics_EntityOwner::~Handle_SelectBasics_EntityOwner %{
+%feature("shadow") Handle_SelectBasics_SensitiveEntity::~Handle_SelectBasics_SensitiveEntity %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -235,7 +197,82 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_SelectBasics_EntityOwner {
+%extend Handle_SelectBasics_SensitiveEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_SelectBasics_SequenceNodeOfSequenceOfOwner;
+class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner();
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
+		%feature("autodoc", "1");
+		static		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
+	SelectBasics_SequenceNodeOfSequenceOfOwner* GetObject() {
+	return (SelectBasics_SequenceNodeOfSequenceOfOwner*)$self->Access();
+	}
+};
+%feature("shadow") Handle_SelectBasics_SequenceNodeOfSequenceOfOwner::~Handle_SelectBasics_SequenceNodeOfSequenceOfOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SelectBasics_ListNodeOfListOfSensitive;
+class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		SelectBasics_ListNodeOfListOfSensitive(const Handle_SelectBasics_SensitiveEntity &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectBasics_ListNodeOfListOfSensitive {
+	Handle_SelectBasics_ListNodeOfListOfSensitive GetHandle() {
+	return *(Handle_SelectBasics_ListNodeOfListOfSensitive*) &$self;
+	}
+};
+%extend SelectBasics_ListNodeOfListOfSensitive {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") SelectBasics_ListNodeOfListOfSensitive::~SelectBasics_ListNodeOfListOfSensitive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectBasics_ListNodeOfListOfSensitive {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -338,7 +375,7 @@ class SelectBasics_EntityOwner : public MMgt_TShared {
 };
 %extend SelectBasics_EntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectBasics_EntityOwner::~SelectBasics_EntityOwner %{
@@ -375,7 +412,7 @@ class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
 };
 %extend SelectBasics_ListNodeOfListOfBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectBasics_ListNodeOfListOfBox2d::~SelectBasics_ListNodeOfListOfBox2d %{
@@ -566,7 +603,7 @@ class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectBasics_SequenceNodeOfSequenceOfOwner::~SelectBasics_SequenceNodeOfSequenceOfOwner %{
@@ -685,7 +722,7 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 };
 %extend SelectBasics_SensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") SelectBasics_SensitiveEntity::~SelectBasics_SensitiveEntity %{
@@ -763,43 +800,6 @@ def __del__(self):
 %}
 
 %extend SelectBasics_SequenceOfOwner {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SelectBasics_ListNodeOfListOfSensitive;
-class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		SelectBasics_ListNodeOfListOfSensitive(const Handle_SelectBasics_SensitiveEntity &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectBasics_ListNodeOfListOfSensitive {
-	Handle_SelectBasics_ListNodeOfListOfSensitive GetHandle() {
-	return *(Handle_SelectBasics_ListNodeOfListOfSensitive*) &$self;
-	}
-};
-%extend SelectBasics_ListNodeOfListOfSensitive {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") SelectBasics_ListNodeOfListOfSensitive::~SelectBasics_ListNodeOfListOfSensitive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectBasics_ListNodeOfListOfSensitive {
 	void _kill_pointed() {
 		delete $self;
 	}

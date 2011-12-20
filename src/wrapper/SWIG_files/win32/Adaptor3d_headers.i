@@ -69,8 +69,10 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TColStd_Array1OfReal.hxx>
+#include<Handle_Adaptor2d_HCurve2d.hxx>
+#include<gp_Pnt2d.hxx>
 #include<gp_Pnt.hxx>
+#include<TColStd_Array1OfReal.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Cylinder.hxx>
@@ -81,8 +83,6 @@ $HeaderURL$
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Dir.hxx>
-#include<Handle_Adaptor2d_HCurve2d.hxx>
-#include<gp_Pnt2d.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Elips.hxx>

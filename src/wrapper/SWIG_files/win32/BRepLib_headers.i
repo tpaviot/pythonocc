@@ -54,6 +54,8 @@ $HeaderURL$
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Edge.hxx>
 #include<gp_Pnt.hxx>
+#include<TopoDS_Wire.hxx>
+#include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
@@ -69,11 +71,8 @@ $HeaderURL$
 #include<gp_Elips2d.hxx>
 #include<gp_Hypr2d.hxx>
 #include<gp_Parab2d.hxx>
-#include<BRepLib.hxx>
-#include<Handle_Geom_Plane.hxx>
 #include<TopoDS_Shape.hxx>
-#include<TopoDS_Solid.hxx>
-#include<TopTools_ListOfShape.hxx>
+#include<TopLoc_Location.hxx>
 #include<TopTools_IndexedMapOfShape.hxx>
 #include<TopTools_DataMapOfIntegerListOfShape.hxx>
 #include<TopTools_DataMapOfIntegerShape.hxx>
@@ -83,8 +82,9 @@ $HeaderURL$
 #include<gp_Cone.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
-#include<TopoDS_Wire.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Shell.hxx>
-#include<TopLoc_Location.hxx>
+#include<TopoDS_Solid.hxx>
+#include<BRepLib.hxx>
+#include<Handle_Geom_Plane.hxx>
 %}

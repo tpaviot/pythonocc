@@ -242,49 +242,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdFail_Undefined;
-class StdFail_Undefined : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		StdFail_Undefined();
-		%feature("autodoc", "1");
-		StdFail_Undefined(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_StdFail_Undefined NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StdFail_Undefined {
-	Handle_StdFail_Undefined GetHandle() {
-	return *(Handle_StdFail_Undefined*) &$self;
-	}
-};
-%extend StdFail_Undefined {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StdFail_Undefined::~StdFail_Undefined %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdFail_Undefined {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdFail_UndefinedDerivative;
 class StdFail_UndefinedDerivative : public Standard_DomainError {
 	public:
@@ -309,7 +266,7 @@ class StdFail_UndefinedDerivative : public Standard_DomainError {
 };
 %extend StdFail_UndefinedDerivative {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdFail_UndefinedDerivative::~StdFail_UndefinedDerivative %{
@@ -352,7 +309,7 @@ class StdFail_InfiniteSolutions : public Standard_Failure {
 };
 %extend StdFail_InfiniteSolutions {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdFail_InfiniteSolutions::~StdFail_InfiniteSolutions %{
@@ -395,7 +352,7 @@ class StdFail_NotDone : public Standard_Failure {
 };
 %extend StdFail_NotDone {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdFail_NotDone::~StdFail_NotDone %{
@@ -408,6 +365,49 @@ def __del__(self):
 %}
 
 %extend StdFail_NotDone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdFail_Undefined;
+class StdFail_Undefined : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		StdFail_Undefined();
+		%feature("autodoc", "1");
+		StdFail_Undefined(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_StdFail_Undefined NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StdFail_Undefined {
+	Handle_StdFail_Undefined GetHandle() {
+	return *(Handle_StdFail_Undefined*) &$self;
+	}
+};
+%extend StdFail_Undefined {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StdFail_Undefined::~StdFail_Undefined %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdFail_Undefined {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -438,7 +438,7 @@ class StdFail_UndefinedValue : public Standard_DomainError {
 };
 %extend StdFail_UndefinedValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdFail_UndefinedValue::~StdFail_UndefinedValue %{

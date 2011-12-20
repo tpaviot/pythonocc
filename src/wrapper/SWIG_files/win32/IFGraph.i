@@ -276,6 +276,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor IFGraph_Articulations;
+class IFGraph_Articulations : public Interface_GraphContent {
+	public:
+		%feature("autodoc", "1");
+		IFGraph_Articulations(const Interface_Graph &agraph, const Standard_Boolean whole);
+		%feature("autodoc", "1");
+		void GetFromEntity(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void GetFromIter(const Interface_EntityIterator &iter);
+		%feature("autodoc", "1");
+		void ResetData();
+		%feature("autodoc", "1");
+		virtual		void Evaluate();
+
+};
+%feature("shadow") IFGraph_Articulations::~IFGraph_Articulations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFGraph_Articulations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IFGraph_AllShared;
 class IFGraph_AllShared : public Interface_GraphContent {
 	public:
@@ -303,37 +334,6 @@ def __del__(self):
 %}
 
 %extend IFGraph_AllShared {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFGraph_Articulations;
-class IFGraph_Articulations : public Interface_GraphContent {
-	public:
-		%feature("autodoc", "1");
-		IFGraph_Articulations(const Interface_Graph &agraph, const Standard_Boolean whole);
-		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void GetFromIter(const Interface_EntityIterator &iter);
-		%feature("autodoc", "1");
-		void ResetData();
-		%feature("autodoc", "1");
-		virtual		void Evaluate();
-
-};
-%feature("shadow") IFGraph_Articulations::~IFGraph_Articulations %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFGraph_Articulations {
 	void _kill_pointed() {
 		delete $self;
 	}

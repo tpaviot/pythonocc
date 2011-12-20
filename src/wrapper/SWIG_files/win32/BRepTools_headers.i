@@ -113,7 +113,6 @@ $HeaderURL$
 #include<Handle_Geom_Curve.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_Geom2d_Curve.hxx>
-#include<TColgp_SequenceOfPnt2d.hxx>
 #include<BRepTools.hxx>
 #include<TopoDS_Wire.hxx>
 #include<Bnd_Box2d.hxx>
@@ -125,5 +124,6 @@ $HeaderURL$
 #include<Handle_Message_ProgressIndicator.hxx>
 #include<gp_GTrsf.hxx>
 #include<gp_Trsf.hxx>
+#include<TColgp_SequenceOfPnt2d.hxx>
 #include<TopTools_ListOfShape.hxx>
 %}

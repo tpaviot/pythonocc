@@ -59,9 +59,9 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
+#include<Handle_TColStd_HArray1OfReal.hxx>
+#include<Handle_TColStd_HArray1OfBoolean.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<Law.hxx>
-#include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Adaptor3d_Curve.hxx>
-#include<Handle_TColStd_HArray1OfBoolean.hxx>
 %}

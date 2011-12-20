@@ -297,43 +297,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepPrim_FaceBuilder;
-class BRepPrim_FaceBuilder {
-	public:
-		%feature("autodoc", "1");
-		BRepPrim_FaceBuilder();
-		%feature("autodoc", "1");
-		BRepPrim_FaceBuilder(const BRep_Builder &B, const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		BRepPrim_FaceBuilder(const BRep_Builder &B, const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
-		%feature("autodoc", "1");
-		void Init(const BRep_Builder &B, const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Init(const BRep_Builder &B, const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
-		%feature("autodoc", "1");
-		const TopoDS_Face  Face() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge  Edge(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopoDS_Vertex  Vertex(const Standard_Integer I) const;
-
-};
-%feature("shadow") BRepPrim_FaceBuilder::~BRepPrim_FaceBuilder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepPrim_FaceBuilder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepPrim_GWedge;
 class BRepPrim_GWedge {
 	public:
@@ -407,6 +370,43 @@ def __del__(self):
 %}
 
 %extend BRepPrim_GWedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepPrim_FaceBuilder;
+class BRepPrim_FaceBuilder {
+	public:
+		%feature("autodoc", "1");
+		BRepPrim_FaceBuilder();
+		%feature("autodoc", "1");
+		BRepPrim_FaceBuilder(const BRep_Builder &B, const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		BRepPrim_FaceBuilder(const BRep_Builder &B, const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		%feature("autodoc", "1");
+		void Init(const BRep_Builder &B, const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void Init(const BRep_Builder &B, const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		%feature("autodoc", "1");
+		const TopoDS_Face  Face() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge  Edge(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopoDS_Vertex  Vertex(const Standard_Integer I) const;
+
+};
+%feature("shadow") BRepPrim_FaceBuilder::~BRepPrim_FaceBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepPrim_FaceBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}

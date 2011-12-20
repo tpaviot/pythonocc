@@ -52,55 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor GeomAPI_ExtremaSurfaceSurface;
-class GeomAPI_ExtremaSurfaceSurface {
-	public:
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaSurfaceSurface();
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
-		%feature("autodoc", "1");
-		Standard_Integer NbExtrema() const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
-		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void NearestPoints(gp_Pnt & P1, gp_Pnt & P2) const;
-		%feature("autodoc","LowerDistanceParameters() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length LowerDistance() const;
-		%feature("autodoc", "1");
-		const Extrema_ExtSS & Extrema() const;
-
-};
-%feature("shadow") GeomAPI_ExtremaSurfaceSurface::~GeomAPI_ExtremaSurfaceSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomAPI_ExtremaSurfaceSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomAPI_IntCS;
 class GeomAPI_IntCS {
 	public:
@@ -284,60 +235,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomAPI_ProjectPointOnCurve;
-class GeomAPI_ProjectPointOnCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve();
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve(const gp_Pnt P, const Handle_Geom_Curve &Curve);
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve(const gp_Pnt P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt P, const Handle_Geom_Curve &Curve);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt P);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		gp_Pnt Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Parameter(const Standard_Integer Index) const;
-		%feature("autodoc","Parameter(Standard_Integer Index) -> Standard_Real");
-
-		void Parameter(const Standard_Integer Index, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Pnt NearestPoint() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter LowerDistanceParameter() const;
-		%feature("autodoc", "1");
-		Quantity_Length LowerDistance() const;
-		%feature("autodoc", "1");
-		const Extrema_ExtPC & Extrema() const;
-
-};
-%feature("shadow") GeomAPI_ProjectPointOnCurve::~GeomAPI_ProjectPointOnCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomAPI_ProjectPointOnCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomAPI_PointsToBSpline;
 class GeomAPI_PointsToBSpline {
 	public:
@@ -375,6 +272,55 @@ def __del__(self):
 %}
 
 %extend GeomAPI_PointsToBSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomAPI_ExtremaSurfaceSurface;
+class GeomAPI_ExtremaSurfaceSurface {
+	public:
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaSurfaceSurface();
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
+		%feature("autodoc", "1");
+		Standard_Integer NbExtrema() const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length Distance(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void NearestPoints(gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","LowerDistanceParameters() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length LowerDistance() const;
+		%feature("autodoc", "1");
+		const Extrema_ExtSS & Extrema() const;
+
+};
+%feature("shadow") GeomAPI_ExtremaSurfaceSurface::~GeomAPI_ExtremaSurfaceSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomAPI_ExtremaSurfaceSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -446,6 +392,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomAPI;
+class GeomAPI {
+	public:
+		%feature("autodoc", "1");
+		GeomAPI();
+		%feature("autodoc", "1");
+		static		Handle_Geom2d_Curve To2d(const Handle_Geom_Curve &C, const gp_Pln P);
+		%feature("autodoc", "1");
+		static		Handle_Geom_Curve To3d(const Handle_Geom2d_Curve &C, const gp_Pln P);
+
+};
+%feature("shadow") GeomAPI::~GeomAPI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomAPI_PointsToBSplineSurface;
 class GeomAPI_PointsToBSplineSurface {
 	public:
@@ -495,18 +468,45 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomAPI;
-class GeomAPI {
+%nodefaultctor GeomAPI_ProjectPointOnCurve;
+class GeomAPI_ProjectPointOnCurve {
 	public:
 		%feature("autodoc", "1");
-		GeomAPI();
+		GeomAPI_ProjectPointOnCurve();
 		%feature("autodoc", "1");
-		static		Handle_Geom2d_Curve To2d(const Handle_Geom_Curve &C, const gp_Pln P);
+		GeomAPI_ProjectPointOnCurve(const gp_Pnt P, const Handle_Geom_Curve &Curve);
 		%feature("autodoc", "1");
-		static		Handle_Geom_Curve To3d(const Handle_Geom2d_Curve &C, const gp_Pln P);
+		GeomAPI_ProjectPointOnCurve(const gp_Pnt P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt P, const Handle_Geom_Curve &Curve);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt P);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		gp_Pnt Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Parameter(const Standard_Integer Index) const;
+		%feature("autodoc","Parameter(Standard_Integer Index) -> Standard_Real");
+
+		void Parameter(const Standard_Integer Index, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length Distance(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Pnt NearestPoint() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter LowerDistanceParameter() const;
+		%feature("autodoc", "1");
+		Quantity_Length LowerDistance() const;
+		%feature("autodoc", "1");
+		const Extrema_ExtPC & Extrema() const;
 
 };
-%feature("shadow") GeomAPI::~GeomAPI %{
+%feature("shadow") GeomAPI_ProjectPointOnCurve::~GeomAPI_ProjectPointOnCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -515,7 +515,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomAPI {
+%extend GeomAPI_ProjectPointOnCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

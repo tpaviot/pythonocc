@@ -50,6 +50,14 @@ $HeaderURL$
 %include GProp_headers.i
 
 
+enum GProp_EquaType {
+	GProp_Plane,
+	GProp_Line,
+	GProp_Point,
+	GProp_Space,
+	GProp_None,
+	};
+
 enum GProp_ValueType {
 	GProp_Mass,
 	GProp_CenterMassX,
@@ -62,14 +70,6 @@ enum GProp_ValueType {
 	GProp_InertiaXZ,
 	GProp_InertiaYZ,
 	GProp_Unknown,
-	};
-
-enum GProp_EquaType {
-	GProp_Plane,
-	GProp_Line,
-	GProp_Point,
-	GProp_Space,
-	GProp_None,
 	};
 
 
@@ -266,7 +266,7 @@ class GProp_UndefinedAxis : public Standard_DomainError {
 };
 %extend GProp_UndefinedAxis {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GProp_UndefinedAxis::~GProp_UndefinedAxis %{

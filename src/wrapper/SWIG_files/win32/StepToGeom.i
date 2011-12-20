@@ -127,16 +127,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToGeom_MakeAxis1Placement;
-class StepToGeom_MakeAxis1Placement {
+%nodefaultctor StepToGeom_MakeRectangularTrimmedSurface;
+class StepToGeom_MakeRectangularTrimmedSurface {
 	public:
 		%feature("autodoc", "1");
-		StepToGeom_MakeAxis1Placement();
+		StepToGeom_MakeRectangularTrimmedSurface();
 		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_Axis1Placement &SA, Handle_Geom_Axis1Placement & CA);
+		static		Standard_Boolean Convert(const Handle_StepGeom_RectangularTrimmedSurface &SS, Handle_Geom_RectangularTrimmedSurface & CS);
 
 };
-%feature("shadow") StepToGeom_MakeAxis1Placement::~StepToGeom_MakeAxis1Placement %{
+%feature("shadow") StepToGeom_MakeRectangularTrimmedSurface::~StepToGeom_MakeRectangularTrimmedSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -145,57 +145,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepToGeom_MakeAxis1Placement {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepToGeom_Root;
-class StepToGeom_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_Root();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%feature("shadow") StepToGeom_Root::~StepToGeom_Root %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToGeom_Root {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepToGeom_MakePolyline;
-class StepToGeom_MakePolyline : public StepToGeom_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakePolyline();
-		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_Polyline &SPL, Handle_Geom_BSplineCurve & CC);
-
-};
-%feature("shadow") StepToGeom_MakePolyline::~StepToGeom_MakePolyline %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToGeom_MakePolyline {
+%extend StepToGeom_MakeRectangularTrimmedSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -227,16 +177,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToGeom_MakeConic;
-class StepToGeom_MakeConic {
+%nodefaultctor StepToGeom_MakeAxis1Placement;
+class StepToGeom_MakeAxis1Placement {
 	public:
 		%feature("autodoc", "1");
-		StepToGeom_MakeConic();
+		StepToGeom_MakeAxis1Placement();
 		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_Conic &SC, Handle_Geom_Conic & CC);
+		static		Standard_Boolean Convert(const Handle_StepGeom_Axis1Placement &SA, Handle_Geom_Axis1Placement & CA);
 
 };
-%feature("shadow") StepToGeom_MakeConic::~StepToGeom_MakeConic %{
+%feature("shadow") StepToGeom_MakeAxis1Placement::~StepToGeom_MakeAxis1Placement %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -245,7 +195,32 @@ def __del__(self):
 		pass
 %}
 
-%extend StepToGeom_MakeConic {
+%extend StepToGeom_MakeAxis1Placement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeCurve2d;
+class StepToGeom_MakeCurve2d {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeCurve2d();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Convert(const Handle_StepGeom_Curve &SC, Handle_Geom2d_Curve & CC);
+
+};
+%feature("shadow") StepToGeom_MakeCurve2d::~StepToGeom_MakeCurve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToGeom_MakeCurve2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -271,31 +246,6 @@ def __del__(self):
 %}
 
 %extend StepToGeom_MakeEllipse {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepToGeom_MakeToroidalSurface;
-class StepToGeom_MakeToroidalSurface {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeToroidalSurface();
-		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_ToroidalSurface &SS, Handle_Geom_ToroidalSurface & CS);
-
-};
-%feature("shadow") StepToGeom_MakeToroidalSurface::~StepToGeom_MakeToroidalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToGeom_MakeToroidalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -346,6 +296,31 @@ def __del__(self):
 %}
 
 %extend StepToGeom_MakeBoundedCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeBSplineCurve2d;
+class StepToGeom_MakeBSplineCurve2d {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeBSplineCurve2d();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Convert(const Handle_StepGeom_BSplineCurve &SC, Handle_Geom2d_BSplineCurve & CC);
+
+};
+%feature("shadow") StepToGeom_MakeBSplineCurve2d::~StepToGeom_MakeBSplineCurve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToGeom_MakeBSplineCurve2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -427,6 +402,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepToGeom_MakeCartesianPoint2d;
+class StepToGeom_MakeCartesianPoint2d {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeCartesianPoint2d();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Convert(const Handle_StepGeom_CartesianPoint &SP, Handle_Geom2d_CartesianPoint & CP);
+
+};
+%feature("shadow") StepToGeom_MakeCartesianPoint2d::~StepToGeom_MakeCartesianPoint2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToGeom_MakeCartesianPoint2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepToGeom_MakeConicalSurface;
 class StepToGeom_MakeConicalSurface {
 	public:
@@ -446,6 +446,31 @@ def __del__(self):
 %}
 
 %extend StepToGeom_MakeConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeConic;
+class StepToGeom_MakeConic {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeConic();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Convert(const Handle_StepGeom_Conic &SC, Handle_Geom_Conic & CC);
+
+};
+%feature("shadow") StepToGeom_MakeConic::~StepToGeom_MakeConic %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToGeom_MakeConic {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -477,31 +502,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToGeom_MakeTrimmedCurve;
-class StepToGeom_MakeTrimmedCurve {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeTrimmedCurve();
-		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_TrimmedCurve &SC, Handle_Geom_TrimmedCurve & CC);
-
-};
-%feature("shadow") StepToGeom_MakeTrimmedCurve::~StepToGeom_MakeTrimmedCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToGeom_MakeTrimmedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepToGeom_MakeVectorWithMagnitude2d;
 class StepToGeom_MakeVectorWithMagnitude2d {
 	public:
@@ -521,6 +521,56 @@ def __del__(self):
 %}
 
 %extend StepToGeom_MakeVectorWithMagnitude2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToGeom_Root;
+class StepToGeom_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_Root();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%feature("shadow") StepToGeom_Root::~StepToGeom_Root %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToGeom_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakePolyline;
+class StepToGeom_MakePolyline : public StepToGeom_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakePolyline();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Convert(const Handle_StepGeom_Polyline &SPL, Handle_Geom_BSplineCurve & CC);
+
+};
+%feature("shadow") StepToGeom_MakePolyline::~StepToGeom_MakePolyline %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToGeom_MakePolyline {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -602,16 +652,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToGeom_MakeCartesianPoint2d;
-class StepToGeom_MakeCartesianPoint2d {
+%nodefaultctor StepToGeom_MakeParabola2d;
+class StepToGeom_MakeParabola2d {
 	public:
 		%feature("autodoc", "1");
-		StepToGeom_MakeCartesianPoint2d();
+		StepToGeom_MakeParabola2d();
 		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_CartesianPoint &SP, Handle_Geom2d_CartesianPoint & CP);
+		static		Standard_Boolean Convert(const Handle_StepGeom_Parabola &SC, Handle_Geom2d_Parabola & CC);
 
 };
-%feature("shadow") StepToGeom_MakeCartesianPoint2d::~StepToGeom_MakeCartesianPoint2d %{
+%feature("shadow") StepToGeom_MakeParabola2d::~StepToGeom_MakeParabola2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -620,7 +670,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepToGeom_MakeCartesianPoint2d {
+%extend StepToGeom_MakeParabola2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -727,31 +777,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToGeom_MakeParabola2d;
-class StepToGeom_MakeParabola2d {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeParabola2d();
-		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_Parabola &SC, Handle_Geom2d_Parabola & CC);
-
-};
-%feature("shadow") StepToGeom_MakeParabola2d::~StepToGeom_MakeParabola2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToGeom_MakeParabola2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepToGeom_MakeAxisPlacement;
 class StepToGeom_MakeAxisPlacement {
 	public:
@@ -796,6 +821,56 @@ def __del__(self):
 %}
 
 %extend StepToGeom_MakeParabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeTrimmedCurve;
+class StepToGeom_MakeTrimmedCurve {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeTrimmedCurve();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Convert(const Handle_StepGeom_TrimmedCurve &SC, Handle_Geom_TrimmedCurve & CC);
+
+};
+%feature("shadow") StepToGeom_MakeTrimmedCurve::~StepToGeom_MakeTrimmedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToGeom_MakeTrimmedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeSphericalSurface;
+class StepToGeom_MakeSphericalSurface {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeSphericalSurface();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Convert(const Handle_StepGeom_SphericalSurface &Surf, Handle_Geom_SphericalSurface & CS);
+
+};
+%feature("shadow") StepToGeom_MakeSphericalSurface::~StepToGeom_MakeSphericalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToGeom_MakeSphericalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -902,56 +977,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToGeom_MakeBSplineCurve2d;
-class StepToGeom_MakeBSplineCurve2d {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeBSplineCurve2d();
-		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_BSplineCurve &SC, Handle_Geom2d_BSplineCurve & CC);
-
-};
-%feature("shadow") StepToGeom_MakeBSplineCurve2d::~StepToGeom_MakeBSplineCurve2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToGeom_MakeBSplineCurve2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepToGeom_MakeSphericalSurface;
-class StepToGeom_MakeSphericalSurface {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeSphericalSurface();
-		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_SphericalSurface &Surf, Handle_Geom_SphericalSurface & CS);
-
-};
-%feature("shadow") StepToGeom_MakeSphericalSurface::~StepToGeom_MakeSphericalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToGeom_MakeSphericalSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepToGeom_MakeCurve;
 class StepToGeom_MakeCurve {
 	public:
@@ -1052,16 +1077,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToGeom_MakeRectangularTrimmedSurface;
-class StepToGeom_MakeRectangularTrimmedSurface {
+%nodefaultctor StepToGeom_MakeToroidalSurface;
+class StepToGeom_MakeToroidalSurface {
 	public:
 		%feature("autodoc", "1");
-		StepToGeom_MakeRectangularTrimmedSurface();
+		StepToGeom_MakeToroidalSurface();
 		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_RectangularTrimmedSurface &SS, Handle_Geom_RectangularTrimmedSurface & CS);
+		static		Standard_Boolean Convert(const Handle_StepGeom_ToroidalSurface &SS, Handle_Geom_ToroidalSurface & CS);
 
 };
-%feature("shadow") StepToGeom_MakeRectangularTrimmedSurface::~StepToGeom_MakeRectangularTrimmedSurface %{
+%feature("shadow") StepToGeom_MakeToroidalSurface::~StepToGeom_MakeToroidalSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1070,7 +1095,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepToGeom_MakeRectangularTrimmedSurface {
+%extend StepToGeom_MakeToroidalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1121,31 +1146,6 @@ def __del__(self):
 %}
 
 %extend StepToGeom_MakeAxis2Placement {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepToGeom_MakeCurve2d;
-class StepToGeom_MakeCurve2d {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeCurve2d();
-		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_Curve &SC, Handle_Geom2d_Curve & CC);
-
-};
-%feature("shadow") StepToGeom_MakeCurve2d::~StepToGeom_MakeCurve2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToGeom_MakeCurve2d {
 	void _kill_pointed() {
 		delete $self;
 	}

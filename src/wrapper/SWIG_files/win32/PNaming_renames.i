@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_PNaming_Name::DownCast;
+%rename(DownCast) Handle_PNaming_HArray1OfNamedShape::DownCast;
+%rename(DownCast) Handle_PNaming_Naming_1::DownCast;
+%rename(DownCast) Handle_PNaming_NamedShape::DownCast;
+%rename(DownCast) Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape::DownCast;
+%rename(DownCast) Handle_PNaming_Naming::DownCast;
+%rename(DownCast) Handle_PNaming_Name_1::DownCast;

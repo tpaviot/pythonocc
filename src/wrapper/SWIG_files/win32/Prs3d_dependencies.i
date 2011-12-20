@@ -570,6 +570,7 @@ $HeaderURL$
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>
 #include <Standard_Static.hxx>
+#include <Standard_StdAllocator.hxx>
 #include <Standard_Storable.hxx>
 #include <Standard_Stream.hxx>
 #include <Standard_String.hxx>
@@ -587,8 +588,8 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import MMgt.i
 %import Standard.i
+%import MMgt.i
 %import Graphic3d.i
 %import Quantity.i
 %import Aspect.i

@@ -30,8 +30,8 @@ import GarbageCollector
 import Standard
 import TopoDS
 import Geom
-import Geom2d
 import TopTools
 import GeomAbs
 import gp
+import Geom2d
 };

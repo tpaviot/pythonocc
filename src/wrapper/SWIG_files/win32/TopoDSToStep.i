@@ -164,6 +164,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopoDSToStep_Builder;
+class TopoDSToStep_Builder : public TopoDSToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		TopoDSToStep_Builder();
+		%feature("autodoc", "1");
+		TopoDSToStep_Builder(const TopoDS_Shape S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		TopoDSToStep_BuilderError Error() const;
+		%feature("autodoc", "1");
+		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
+
+};
+%feature("shadow") TopoDSToStep_Builder::~TopoDSToStep_Builder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopoDSToStep_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopoDSToStep_MakeStepVertex;
 class TopoDSToStep_MakeStepVertex : public TopoDSToStep_Root {
 	public:
@@ -189,33 +220,6 @@ def __del__(self):
 %}
 
 %extend TopoDSToStep_MakeStepVertex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopoDSToStep_MakeFacetedBrep;
-class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		TopoDSToStep_MakeFacetedBrep(const TopoDS_Shell S, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		TopoDSToStep_MakeFacetedBrep(const TopoDS_Solid S, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		const Handle_StepShape_FacetedBrep & Value() const;
-
-};
-%feature("shadow") TopoDSToStep_MakeFacetedBrep::~TopoDSToStep_MakeFacetedBrep %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopoDSToStep_MakeFacetedBrep {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -278,20 +282,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopoDSToStep_MakeShellBasedSurfaceModel;
-class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
+%nodefaultctor TopoDSToStep_MakeStepEdge;
+class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Face F, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeStepEdge();
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Shell S, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeStepEdge(const TopoDS_Edge E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Solid S, const Handle_Transfer_FinderProcess &FP);
+		void Init(const TopoDS_Edge E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		const Handle_StepShape_ShellBasedSurfaceModel & Value() const;
+		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeEdgeError Error() const;
 
 };
-%feature("shadow") TopoDSToStep_MakeShellBasedSurfaceModel::~TopoDSToStep_MakeShellBasedSurfaceModel %{
+%feature("shadow") TopoDSToStep_MakeStepEdge::~TopoDSToStep_MakeStepEdge %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -300,7 +306,34 @@ def __del__(self):
 		pass
 %}
 
-%extend TopoDSToStep_MakeShellBasedSurfaceModel {
+%extend TopoDSToStep_MakeStepEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopoDSToStep_MakeFacetedBrep;
+class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeFacetedBrep(const TopoDS_Shell S, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeFacetedBrep(const TopoDS_Solid S, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		const Handle_StepShape_FacetedBrep & Value() const;
+
+};
+%feature("shadow") TopoDSToStep_MakeFacetedBrep::~TopoDSToStep_MakeFacetedBrep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopoDSToStep_MakeFacetedBrep {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -409,37 +442,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopoDSToStep_Builder;
-class TopoDSToStep_Builder : public TopoDSToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		TopoDSToStep_Builder();
-		%feature("autodoc", "1");
-		TopoDSToStep_Builder(const TopoDS_Shape S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		TopoDSToStep_BuilderError Error() const;
-		%feature("autodoc", "1");
-		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
-
-};
-%feature("shadow") TopoDSToStep_Builder::~TopoDSToStep_Builder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopoDSToStep_Builder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopoDSToStep_MakeBrepWithVoids;
 class TopoDSToStep_MakeBrepWithVoids : public TopoDSToStep_Root {
 	public:
@@ -523,22 +525,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopoDSToStep_MakeStepEdge;
-class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
+%nodefaultctor TopoDSToStep_MakeShellBasedSurfaceModel;
+class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepEdge();
+		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Face F, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepEdge(const TopoDS_Edge E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Shell S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Edge E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_MakeShellBasedSurfaceModel(const TopoDS_Solid S, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
-		%feature("autodoc", "1");
-		TopoDSToStep_MakeEdgeError Error() const;
+		const Handle_StepShape_ShellBasedSurfaceModel & Value() const;
 
 };
-%feature("shadow") TopoDSToStep_MakeStepEdge::~TopoDSToStep_MakeStepEdge %{
+%feature("shadow") TopoDSToStep_MakeShellBasedSurfaceModel::~TopoDSToStep_MakeShellBasedSurfaceModel %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -547,7 +547,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopoDSToStep_MakeStepEdge {
+%extend TopoDSToStep_MakeShellBasedSurfaceModel {
 	void _kill_pointed() {
 		delete $self;
 	}

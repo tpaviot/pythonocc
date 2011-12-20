@@ -388,7 +388,6 @@ $HeaderURL$
 #include <Image_LookupTable.hxx>
 #include <Image_PixMap.hxx>
 #include <Image_PixelAddress.hxx>
-#include <Image_PixelFieldOfDColorImage.hxx>
 #include <Image_PixelInterpolation.hxx>
 #include <Image_PixelRowOfDColorImage.hxx>
 #include <Image_PixelRowOfDIndexedImage.hxx>
@@ -629,6 +628,7 @@ $HeaderURL$
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>
 #include <Standard_Static.hxx>
+#include <Standard_StdAllocator.hxx>
 #include <Standard_Storable.hxx>
 #include <Standard_Stream.hxx>
 #include <Standard_String.hxx>
@@ -858,6 +858,6 @@ $HeaderURL$
 %import Aspect.i
 %import Visual3d.i
 %import Quantity.i
-%import TColStd.i
 %import OSD.i
 %import Image.i
+%import TColStd.i

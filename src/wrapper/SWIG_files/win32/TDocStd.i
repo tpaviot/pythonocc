@@ -129,44 +129,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDocStd_Owner;
-class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDocStd_Owner();
-		%feature("autodoc", "1");
-		Handle_TDocStd_Owner(const Handle_TDocStd_Owner &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Owner(const TDocStd_Owner *anItem);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Owner & operator=(const Handle_TDocStd_Owner &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Owner & operator=(const TDocStd_Owner *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDocStd_Owner DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDocStd_Owner {
-	TDocStd_Owner* GetObject() {
-	return (TDocStd_Owner*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDocStd_Owner::~Handle_TDocStd_Owner %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDocStd_Owner {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
 class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TCollection_SeqNode {
 	public:
@@ -395,29 +357,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDocStd_CompoundDelta;
-class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
+%nodefaultctor Handle_TDocStd_Owner;
+class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDocStd_CompoundDelta();
+		Handle_TDocStd_Owner();
 		%feature("autodoc", "1");
-		Handle_TDocStd_CompoundDelta(const Handle_TDocStd_CompoundDelta &aHandle);
+		Handle_TDocStd_Owner(const Handle_TDocStd_Owner &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDocStd_CompoundDelta(const TDocStd_CompoundDelta *anItem);
+		Handle_TDocStd_Owner(const TDocStd_Owner *anItem);
 		%feature("autodoc", "1");
-		Handle_TDocStd_CompoundDelta & operator=(const Handle_TDocStd_CompoundDelta &aHandle);
+		Handle_TDocStd_Owner & operator=(const Handle_TDocStd_Owner &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDocStd_CompoundDelta & operator=(const TDocStd_CompoundDelta *anItem);
+		Handle_TDocStd_Owner & operator=(const TDocStd_Owner *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_CompoundDelta DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_Owner DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDocStd_CompoundDelta {
-	TDocStd_CompoundDelta* GetObject() {
-	return (TDocStd_CompoundDelta*)$self->Access();
+%extend Handle_TDocStd_Owner {
+	TDocStd_Owner* GetObject() {
+	return (TDocStd_Owner*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TDocStd_CompoundDelta::~Handle_TDocStd_CompoundDelta %{
+%feature("shadow") Handle_TDocStd_Owner::~Handle_TDocStd_Owner %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -426,7 +388,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TDocStd_CompoundDelta {
+%extend Handle_TDocStd_Owner {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -509,6 +471,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TDocStd_CompoundDelta;
+class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDocStd_CompoundDelta();
+		%feature("autodoc", "1");
+		Handle_TDocStd_CompoundDelta(const Handle_TDocStd_CompoundDelta &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_CompoundDelta(const TDocStd_CompoundDelta *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_CompoundDelta & operator=(const Handle_TDocStd_CompoundDelta &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_CompoundDelta & operator=(const TDocStd_CompoundDelta *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDocStd_CompoundDelta DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDocStd_CompoundDelta {
+	TDocStd_CompoundDelta* GetObject() {
+	return (TDocStd_CompoundDelta*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDocStd_CompoundDelta::~Handle_TDocStd_CompoundDelta %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDocStd_CompoundDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
 class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqNode {
 	public:
@@ -527,7 +527,7 @@ class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqN
 };
 %extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_SequenceNodeOfSequenceOfApplicationDelta::~TDocStd_SequenceNodeOfSequenceOfApplicationDelta %{
@@ -588,7 +588,7 @@ class TDocStd_Owner : public TDF_Attribute {
 };
 %extend TDocStd_Owner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_Owner::~TDocStd_Owner %{
@@ -601,6 +601,51 @@ def __del__(self):
 %}
 
 %extend TDocStd_Owner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_LabelIDMapDataMap;
+class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_LabelIDMapDataMap(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDocStd_LabelIDMapDataMap & Assign(const TDocStd_LabelIDMapDataMap &Other);
+		%feature("autodoc", "1");
+		TDocStd_LabelIDMapDataMap & operator=(const TDocStd_LabelIDMapDataMap &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TDF_Label &K, const TDF_IDMap &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TDF_Label &K);
+		%feature("autodoc", "1");
+		const TDF_IDMap & Find(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		const TDF_IDMap & operator()(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		TDF_IDMap & ChangeFind(const TDF_Label &K);
+		%feature("autodoc", "1");
+		TDF_IDMap & operator()(const TDF_Label &K);
+
+};
+%feature("shadow") TDocStd_LabelIDMapDataMap::~TDocStd_LabelIDMapDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_LabelIDMapDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -642,41 +687,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TDocStd_CompoundDelta;
-class TDocStd_CompoundDelta : public TDF_Delta {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_CompoundDelta();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDocStd_CompoundDelta {
-	Handle_TDocStd_CompoundDelta GetHandle() {
-	return *(Handle_TDocStd_CompoundDelta*) &$self;
-	}
-};
-%extend TDocStd_CompoundDelta {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TDocStd_CompoundDelta::~TDocStd_CompoundDelta %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_CompoundDelta {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TDocStd_DataMapNodeOfLabelIDMapDataMap;
 class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
 	public:
@@ -697,7 +707,7 @@ class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
 };
 %extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_DataMapNodeOfLabelIDMapDataMap::~TDocStd_DataMapNodeOfLabelIDMapDataMap %{
@@ -710,6 +720,41 @@ def __del__(self):
 %}
 
 %extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_XLinkTool;
+class TDocStd_XLinkTool {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_XLinkTool();
+		%feature("autodoc", "1");
+		void CopyWithLink(const TDF_Label &intarget, const TDF_Label &fromsource);
+		%feature("autodoc", "1");
+		void UpdateLink(const TDF_Label &L);
+		%feature("autodoc", "1");
+		virtual		void Copy(const TDF_Label &intarget, const TDF_Label &fromsource);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Handle_TDF_DataSet DataSet() const;
+		%feature("autodoc", "1");
+		Handle_TDF_RelocationTable RelocationTable() const;
+
+};
+%feature("shadow") TDocStd_XLinkTool::~TDocStd_XLinkTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_XLinkTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -756,7 +801,7 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 };
 %extend TDocStd_XLinkRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_XLinkRoot::~TDocStd_XLinkRoot %{
@@ -769,72 +814,6 @@ def __del__(self):
 %}
 
 %extend TDocStd_XLinkRoot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_DataMapIteratorOfLabelIDMapDataMap;
-class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_DataMapIteratorOfLabelIDMapDataMap();
-		%feature("autodoc", "1");
-		TDocStd_DataMapIteratorOfLabelIDMapDataMap(const TDocStd_LabelIDMapDataMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TDocStd_LabelIDMapDataMap &aMap);
-		%feature("autodoc", "1");
-		const TDF_Label & Key() const;
-		%feature("autodoc", "1");
-		const TDF_IDMap & Value() const;
-
-};
-%feature("shadow") TDocStd_DataMapIteratorOfLabelIDMapDataMap::~TDocStd_DataMapIteratorOfLabelIDMapDataMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_DataMapIteratorOfLabelIDMapDataMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_XLinkTool;
-class TDocStd_XLinkTool {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_XLinkTool();
-		%feature("autodoc", "1");
-		void CopyWithLink(const TDF_Label &intarget, const TDF_Label &fromsource);
-		%feature("autodoc", "1");
-		void UpdateLink(const TDF_Label &L);
-		%feature("autodoc", "1");
-		virtual		void Copy(const TDF_Label &intarget, const TDF_Label &fromsource);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Handle_TDF_DataSet DataSet() const;
-		%feature("autodoc", "1");
-		Handle_TDF_RelocationTable RelocationTable() const;
-
-};
-%feature("shadow") TDocStd_XLinkTool::~TDocStd_XLinkTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_XLinkTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -943,7 +922,7 @@ class TDocStd_Document : public CDM_Document {
 };
 %extend TDocStd_Document {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_Document::~TDocStd_Document %{
@@ -956,6 +935,41 @@ def __del__(self):
 %}
 
 %extend TDocStd_Document {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_CompoundDelta;
+class TDocStd_CompoundDelta : public TDF_Delta {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_CompoundDelta();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_CompoundDelta {
+	Handle_TDocStd_CompoundDelta GetHandle() {
+	return *(Handle_TDocStd_CompoundDelta*) &$self;
+	}
+};
+%extend TDocStd_CompoundDelta {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") TDocStd_CompoundDelta::~TDocStd_CompoundDelta %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_CompoundDelta {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1027,51 +1041,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TDocStd_LabelIDMapDataMap;
-class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_LabelIDMapDataMap(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDocStd_LabelIDMapDataMap & Assign(const TDocStd_LabelIDMapDataMap &Other);
-		%feature("autodoc", "1");
-		TDocStd_LabelIDMapDataMap & operator=(const TDocStd_LabelIDMapDataMap &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TDF_Label &K, const TDF_IDMap &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TDF_Label &K);
-		%feature("autodoc", "1");
-		const TDF_IDMap & Find(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		const TDF_IDMap & operator()(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		TDF_IDMap & ChangeFind(const TDF_Label &K);
-		%feature("autodoc", "1");
-		TDF_IDMap & operator()(const TDF_Label &K);
-
-};
-%feature("shadow") TDocStd_LabelIDMapDataMap::~TDocStd_LabelIDMapDataMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_LabelIDMapDataMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TDocStd_XLinkIterator;
 class TDocStd_XLinkIterator {
 	public:
@@ -1099,6 +1068,37 @@ def __del__(self):
 %}
 
 %extend TDocStd_XLinkIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_DataMapIteratorOfLabelIDMapDataMap;
+class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_DataMapIteratorOfLabelIDMapDataMap();
+		%feature("autodoc", "1");
+		TDocStd_DataMapIteratorOfLabelIDMapDataMap(const TDocStd_LabelIDMapDataMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TDocStd_LabelIDMapDataMap &aMap);
+		%feature("autodoc", "1");
+		const TDF_Label & Key() const;
+		%feature("autodoc", "1");
+		const TDF_IDMap & Value() const;
+
+};
+%feature("shadow") TDocStd_DataMapIteratorOfLabelIDMapDataMap::~TDocStd_DataMapIteratorOfLabelIDMapDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_DataMapIteratorOfLabelIDMapDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1148,7 +1148,7 @@ class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 };
 %extend TDocStd_SequenceNodeOfSequenceOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_SequenceNodeOfSequenceOfDocument::~TDocStd_SequenceNodeOfSequenceOfDocument %{
@@ -1223,7 +1223,7 @@ class TDocStd_Modified : public TDF_Attribute {
 };
 %extend TDocStd_Modified {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_Modified::~TDocStd_Modified %{
@@ -1300,7 +1300,7 @@ class TDocStd_XLink : public TDF_Attribute {
 };
 %extend TDocStd_XLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_XLink::~TDocStd_XLink %{
@@ -1385,7 +1385,7 @@ class TDocStd_MultiTransactionManager : public MMgt_TShared {
 };
 %extend TDocStd_MultiTransactionManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_MultiTransactionManager::~TDocStd_MultiTransactionManager %{
@@ -1448,7 +1448,7 @@ class TDocStd_Application : public CDF_Application {
 };
 %extend TDocStd_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_Application::~TDocStd_Application %{
@@ -1497,7 +1497,7 @@ class TDocStd_ApplicationDelta : public MMgt_TShared {
 };
 %extend TDocStd_ApplicationDelta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TDocStd_ApplicationDelta::~TDocStd_ApplicationDelta %{
